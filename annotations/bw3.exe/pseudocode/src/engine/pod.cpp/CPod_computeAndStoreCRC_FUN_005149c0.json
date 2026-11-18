@@ -1,0 +1,202 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 170,
+    "complexity_score": 60,
+    "cross_reference_count": 0,
+    "function_call_count": 13,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 230
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005149c0",
+    "address_range": [
+      [
+        "005149c0",
+        "00514ba9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_005149c0",
+    "signature": "void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_005149c0(CPod *this_ptr,char *pod_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a32b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005a32b0"
+    },
+    {
+      "addr": "005a43ec",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005a43ec"
+    },
+    {
+      "addr": "005a457c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005a457c"
+    },
+    {
+      "addr": "005a48e0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fwrite_FUN_005a48e0"
+    },
+    {
+      "addr": "004657f0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    },
+    {
+      "addr": "00513b90",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_cleanup_FUN_00513b90"
+    },
+    {
+      "addr": "00512f00",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_00512f00"
+    },
+    {
+      "addr": "00512f70",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_dtor_FUN_00512f70"
+    },
+    {
+      "addr": "00512fb0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0"
+    },
+    {
+      "addr": "00512d60",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_crc32UpdateByte_FUN_00512d60"
+    },
+    {
+      "addr": "0047cfa0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fb140",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.014598540145985,
+    "instruction_count": 137,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 17,
+      "CBRANCH": 6,
+      "COPY": 96,
+      "INT_ADD": 44,
+      "INT_AND": 63,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 60,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 30,
+      "INT_SUB": 64,
+      "INT_XOR": 1,
+      "LOAD": 16,
+      "POPCOUNT": 30,
+      "RETURN": 1,
+      "STORE": 63
+    },
+    "pcode_op_count": 550
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051b6e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.989
+    },
+    "bw1.exe": {
+      "addr": "0053cc60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00551000",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7823
+    },
+    "nocturne.exe": {
+      "addr": "004f8eb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7829
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      },
+      {
+        "is_param": true,
+        "name": "pod_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

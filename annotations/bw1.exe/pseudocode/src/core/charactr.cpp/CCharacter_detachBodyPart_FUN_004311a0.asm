@@ -12,10 +12,10 @@
 ; XREF[14]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412170 at 00412334
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_00413c40 at 00413d81
-;   core_carved.cpp_FUN_0042b580 at 0042b6bc
+;   core_carved.cpp_CCarved_processDismemberment_FUN_0042b580 at 0042b6bc
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00430d90 at 00430e2e
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00448b70 at 00448c4d
-;   core_demnfolk.cpp_FUN_0045c4a0 at 0045c5dc
+;   core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_0045c4a0 at 0045c5dc
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004dd390 at 004dd4c1
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e05b0 at 004e06ec
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004f3cb0 at 004f3df1

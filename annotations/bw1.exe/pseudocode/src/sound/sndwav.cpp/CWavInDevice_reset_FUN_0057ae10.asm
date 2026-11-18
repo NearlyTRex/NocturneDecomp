@@ -10,7 +10,7 @@
 ;   void* PTR_waveInReset_005d0470 = 001d099a
 ;   void* PTR_waveInUnprepareHeader_005d0478 = 001d09b6
 ;   TerminatedCString s_waveInReset_failed_005f584a
-;   undefined4 DAT_02c828d8
+;   int g_WaveInHandle
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
@@ -25,7 +25,7 @@ section .text
         ;   Label: sound_sndwav.cpp_CWavInDevice_reset_FUN_0057ae10
     PUSH ESI                            ; 0057ae11
     PUSH EDI                            ; 0057ae12
-    MOV EDX,dword ptr [0x02c828d8]      ; 0057ae13 | DAT_02c828d8
+    MOV EDX,dword ptr [0x02c828d8]      ; 0057ae13 | g_WaveInHandle
     MOV ESI,0x1                         ; 0057ae19
     TEST EDX,EDX                        ; 0057ae1e
     JNZ 0x0057ae4c                      ; 0057ae20
@@ -39,7 +39,7 @@ section .text
         ;   XREF to: 0057ae3e (CONDITIONAL_JUMP)  ; LAB_0057ae3e
     PUSH 0x20                           ; 0057ae2e
     PUSH EDI                            ; 0057ae30
-    MOV EAX,[0x02c828d8]                ; 0057ae31 | DAT_02c828d8
+    MOV EAX,[0x02c828d8]                ; 0057ae31 | g_WaveInHandle
     PUSH EAX                            ; 0057ae36
     CALL dword ptr CS:[0x5d0478]        ; 0057ae37 | PTR_waveInUnprepareHeader_005d0478
     ADD EBX,0x4                         ; 0057ae3e

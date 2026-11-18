@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 40,
+    "complexity_score": 60,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 89
   },
@@ -25,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavOutDevice_poll_FUN_0057ab10",
-    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0057ab10(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0057ab10(CWavOutDevice *this_ptr)"
   },
   "function_calls": [
     {
@@ -54,8 +54,8 @@
     },
     {
       "addr": "02c828d4",
-      "name": "DAT_02c828d4",
-      "type": "undefined4",
+      "name": "g_WaveOutNumBuffers",
+      "type": "int",
       "value": null
     }
   ],
@@ -63,9 +63,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 3,
-    "declared_stack_bytes": 12,
-    "estimated_params": 3,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -123,10 +123,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -135,31 +135,33 @@
         "offset": 4,
         "size": 4,
         "type": "CWavOutDevice *"
-      },
-      {
-        "is_param": true,
-        "name": "output_buffer",
-        "offset": 8,
-        "size": 4,
-        "type": "short *"
-      },
-      {
-        "is_param": true,
-        "name": "num_samples",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_WaveOutHeaders",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_WaveOutHeaders + iVar2) == 0) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)g_WaveOutBuffers",
+      "severity": "moderate",
+      "text": "(*(int *)((int)g_WaveOutBuffers + iVar2) == 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)g_WaveOutHeaders",
+      "severity": "moderate",
+      "text": "if (((*(byte *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0x10) & 1) != 0) &&",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

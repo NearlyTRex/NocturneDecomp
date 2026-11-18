@@ -121,7 +121,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004d8720(CDemonMission
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description );
 void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004d8c00(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description);
 void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission *this_ptr,CDemonActor *actor);
-void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *param_2);
+void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission *this_ptr,CDemonActor *actor_ptr);
 int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_004d8d80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004d8db0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(CDemonMission *this_ptr);
@@ -133,7 +133,7 @@ void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004d90e0(CDemo
 void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_004d92a0(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004d93d0(CDemonMission *this_ptr,char *param_2);
+void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004d93d0(CDemonMission *this_ptr,char *set_name);
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004d9650(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004d9680(CDemonMission *this_ptr,char *out_buf,char *base_name);

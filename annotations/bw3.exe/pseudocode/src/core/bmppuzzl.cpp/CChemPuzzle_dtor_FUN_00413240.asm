@@ -8,15 +8,15 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_CChemPuzzleVTable = 00413240
+;   TerminatedCString g_CChemPuzzleVTable
 ;   WatcomTypeInfo g_CChemPuzzleTypeInfo
 ;
 ; Called Functions:
 ;   core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00411980
 ;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50Chem_FUN_004144a0
 ;   crt_memory.c___vec_delete_FUN_005a308f
-;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a30c4
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
+;   crt_unknown.c_free_FUN_005a30b6
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d300
 ;
 ; *****************************************************************************
@@ -30,7 +30,7 @@ section .text
     JNZ 0x0041328b                      ; 0041324a
         ;   XREF to: 0041328b (CONDITIONAL_JUMP)  ; LAB_0041328b
     PUSH 0x0                            ; 0041324c
-    MOV dword ptr [EBX],0x5dbee4        ; 0041324e | g_CChemPuzzleVTable
+    MOV dword ptr [EBX],0x5dbee4        ; 0041324e | = "@2A"
     ADD EBX,0x70                        ; 00413254
     PUSH EBX                            ; 00413257
     CALL core_bmppuzzl.cpp_SButtonStruct_arrdtor50Chem_FUN_004144a0 ; 00413258
@@ -63,16 +63,16 @@ section .text
         ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00413296
     PUSH EAX                            ; 00413299
-    CALL crt_unknown.c_FUN_005a30b6     ; 0041329a
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 0041329a
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 0041329f
     MOV EAX,EBX                         ; 004132a2
     POP EBX                             ; 004132a4
     RET                                 ; 004132a5
     PUSH EAX                            ; 004132a6
         ;   Label: LAB_004132a6
-    CALL crt_unknown.c_FUN_005a30c4     ; 004132a7
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 004132a7
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 004132ac
     MOV EAX,EBX                         ; 004132af
     POP EBX                             ; 004132b1

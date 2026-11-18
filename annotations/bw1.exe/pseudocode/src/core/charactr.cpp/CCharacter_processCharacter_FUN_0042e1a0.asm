@@ -23,18 +23,18 @@
 ;   ... and 39 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d592f
-;   undefined4 DAT_005fd614
+;   double g_DOUBLE_005d592f = 0.0100000000000000
+;   float g_FLOAT_005fd614 = 9999
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CScript* g_CScriptPtr = 01e81c80
 ;   CGame g_CGameInstance
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
+;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00432e00
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00432690
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0
-;   core_charactr.cpp_FUN_00432e00
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004d6340
 ;   core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ea770
 ;   core_script.cpp_CScript_setSpeaker_FUN_0054aca0
@@ -69,8 +69,8 @@ section .text
     ADD ESP,0x8                         ; 0042e1d8
     PUSH dword ptr [ESP + 0x4c]         ; 0042e1db
     PUSH EBP                            ; 0042e1df
-    CALL core_charactr.cpp_FUN_00432e00 ; 0042e1e0
-        ;   XREF to: 00432e00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432e00()
+    CALL core_charactr.cpp_CCharacter_advanceGesture_FUN_00432e00 ; 0042e1e0
+        ;   XREF to: 00432e00 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_advanceGesture_FUN_00432e00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0042e1e5
     FLD float ptr [EBP + 0xb9f0]        ; 0042e1e8
     FSUB float ptr [ESP + 0x4c]         ; 0042e1ee
@@ -127,7 +127,7 @@ section .text
     JNZ 0x0042e361                      ; 0042e28a
         ;   XREF to: 0042e361 (CONDITIONAL_JUMP)  ; LAB_0042e361
     FLD float ptr [EBP + 0x2504]        ; 0042e290
-    FCOMP float ptr [0x005fd614]        ; 0042e296 | DAT_005fd614
+    FCOMP float ptr [0x005fd614]        ; 0042e296 | g_FLOAT_005fd614
     FNSTSW AX                           ; 0042e29c
     SAHF                                ; 0042e29e
     JZ 0x0042e365                       ; 0042e29f
@@ -139,7 +139,7 @@ section .text
     FLD float ptr [EBP + 0x2504]        ; 0042e2b8
     FXCH                                ; 0042e2be
     FSTP float ptr [EBP + 0x24]         ; 0042e2c0
-    FCOMP float ptr [0x005fd614]        ; 0042e2c3 | DAT_005fd614
+    FCOMP float ptr [0x005fd614]        ; 0042e2c3 | g_FLOAT_005fd614
     FNSTSW AX                           ; 0042e2c9
     SAHF                                ; 0042e2cb
     JZ 0x0042e2d7                       ; 0042e2cc
@@ -159,7 +159,7 @@ section .text
     ADD ESP,0xc                         ; 0042e2f7
     FLD float ptr [EBP + 0x2504]        ; 0042e2fa
         ;   Label: LAB_0042e2fa
-    FADD double ptr [0x005d592f]        ; 0042e300 | DAT_005d592f
+    FADD double ptr [0x005d592f]        ; 0042e300 | g_DOUBLE_005d592f
     FLD float ptr [EBP + 0x24]          ; 0042e306
     FCOMPP                              ; 0042e309
     FNSTSW AX                           ; 0042e30b
@@ -221,7 +221,7 @@ section .text
     PUSH EBX                            ; 0042e38e
     PUSH EBP                            ; 0042e38f
     CALL core_charactr.cpp_CCharacter_computePickup_FUN_00432690 ; 0042e390
-        ;   XREF to: 00432690 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00432690(CCharacter * this_ptr, int param_2, float param_3, int * param_4)
+        ;   XREF to: 00432690 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00432690(CCharacter * this_ptr, int hand_index, float blend_time, CMatrix3x4f * carry_offset)
     ADD ESP,0x10                        ; 0042e395
     JMP 0x0042e37c                      ; 0042e398
         ;   XREF to: 0042e37c (UNCONDITIONAL_JUMP)  ; LAB_0042e37c
@@ -252,8 +252,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 0042e3dc
     PUSH EAX                            ; 0042e3e0
     MOVSD.REP ES:EDI,ESI                ; 0042e3e1
-    CALL core_box.cpp_FUN_004207b0      ; 0042e3e3
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 0042e3e3
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0042e3e8
     TEST EAX,EAX                        ; 0042e3eb
     JZ 0x0042e354                       ; 0042e3ed

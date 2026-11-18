@@ -9,19 +9,19 @@
 SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a8510(SPageResourceText *this_ptr,uint flags)
 
 {
-  SPageResourceText *pSVar1;
-  void *ptr;
+  SPageResourceText *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_PageResource_TextTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_PageResource_TextTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).vtable = &g_SPageResourceTextVTable;
-  pSVar1 = (SPageResourceText *)core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0(&this_ptr->base);
+  ptr = (SPageResourceText *)core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0(&this_ptr->base);
   if ((flags & 2) == 0) {
-    return pSVar1;
+    return ptr;
   }
-  FUN_005a30c4(pSVar1);
-  return pSVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

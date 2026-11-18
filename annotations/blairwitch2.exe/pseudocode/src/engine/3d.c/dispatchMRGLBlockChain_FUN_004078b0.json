@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 44,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 2,
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 41
+    "total_lines": 40
   },
   "cross_references": [
     {
@@ -45,15 +44,15 @@
   "globals": [
     {
       "addr": "006093c4",
-      "name": "PTR_engine_3d.c_badMRGLStruct_FUN_00403800_006093c4",
-      "type": "undefined1*",
-      "value": "00403800"
+      "name": "g_ARRAY_PTR_006093c4",
+      "type": "void*[67]",
+      "value": null
     },
     {
       "addr": "006141e0",
-      "name": "DAT_006141e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_VertexProcessingEnabled",
+      "type": "uint",
+      "value": "0x1"
     }
   ],
   "param_estimates": {
@@ -115,6 +114,18 @@
     "pcode_op_count": 65
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "004076e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9444
+    },
+    "bw3.exe": {
+      "addr": "00407720",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9444
+    },
     "nocedit.exe": {
       "addr": "00407890",
       "by": "name",
@@ -147,19 +158,11 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 11,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)(&PTR_engine_3d_c_badMRGLStruct_FUN_00403800_006093c4)[iVar1])(chain);",
+      "text": "chain = (SMRGLHeaderExtended *)(*(code *)g_ARRAY_PTR_006093c4[iVar1])(chain);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_006141e0",
-      "severity": "mild",
-      "text": "DAT_006141e0 = 1;",
-      "type": "undefined_data"
     }
   ]
 }

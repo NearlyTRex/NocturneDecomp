@@ -10,11 +10,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_hotdemon_die_wav_005e51e7
 ;   TerminatedCString s_hotdemon_hurt_wav_005e51f8
-;   undefined4 DAT_005e5212
-;   undefined4 DAT_0061c010
+;   double g_DOUBLE_005e5212 = 2
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -94,15 +94,15 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004f064d
     ADD EAX,0x1c                        ; 004f0650
     FLD ST0                             ; 004f0653
-    FMUL double ptr [0x005e5212]        ; 004f0655 | DAT_005e5212
+    FMUL double ptr [0x005e5212]        ; 004f0655 | g_DOUBLE_005e5212
     PUSH EAX                            ; 004f065b
     LEA ESI,[ESP + 0x18]                ; 004f065c
     LEA EDI,[ESP + 0xc]                 ; 004f0660
     PUSH EBP                            ; 004f0664
     FSTP ST1                            ; 004f0665
     FSTP float ptr [EAX + -0x18]        ; 004f0667
-    CALL core_actor.cpp_FUN_00408b40    ; 004f066a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004f066a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x1c]                ; 004f066f
     ADD ESP,0x8                         ; 004f0673
     XOR EBX,EBX                         ; 004f0676
@@ -118,7 +118,7 @@ section .text
     PUSH 0x0                            ; 004f0689
     LEA EAX,[ESP + 0x1c]                ; 004f068b
     PUSH EAX                            ; 004f068f
-    MOV EDI,dword ptr [0x0061c010]      ; 004f0690 | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 004f0690 | g_CFireEffectPtr
     PUSH EDI                            ; 004f0696
     INC EBX                             ; 004f0697
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004f0698

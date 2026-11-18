@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateEventA_005d0524 = 001d0c7c
-;   undefined4 DAT_00626840
+;   int g_INT_00626840 = -0x80000000
 ;
 ; Called Functions:
 ;   CreateEventA
@@ -29,9 +29,9 @@ section .text
     TEST EAX,EAX                        ; 005c8dc9
     JNZ 0x005c8dda                      ; 005c8dcb
         ;   XREF to: 005c8dda (CONDITIONAL_JUMP)  ; LAB_005c8dda
-    MOV EDX,dword ptr [0x00626840]      ; 005c8dcd | DAT_00626840
+    MOV EDX,dword ptr [0x00626840]      ; 005c8dcd | g_INT_00626840
     INC EDX                             ; 005c8dd3
-    MOV dword ptr [0x00626840],EDX      ; 005c8dd4 | DAT_00626840
+    MOV dword ptr [0x00626840],EDX      ; 005c8dd4 | g_INT_00626840
     MOV EAX,EDX                         ; 005c8dda
         ;   Label: LAB_005c8dda
     RET                                 ; 005c8ddc

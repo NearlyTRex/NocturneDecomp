@@ -10,9 +10,9 @@
 ; undefined        Stack[-0x1014]:1  local_1014
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[95]:
+; XREF[97]:
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 at 00408a62
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a6c1
-;   core_actor.cpp_FUN_00408a50 at 00408a62
 ;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e600 at 0040e625
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fc43
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411cae
@@ -21,18 +21,18 @@
 ;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 004150e5
 ;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00415cd0 at 00415de8
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 0041926c
-;   ... and 85 more
+;   ... and 87 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cdc35
-;   undefined4 DAT_005cdc38
+;   TerminatedCString s_at_005cdc35
+;   TerminatedCString s_s_005cdc38
 ;   TerminatedCString s_console_txt_00609ed8
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fopen_FUN_005b910c
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;   crt_stdio.c_vsprintf_FUN_005b7768
-;   crt_unknown.c_FUN_005b8010
 ;   engine_console.cpp_CConsole_writeChar_FUN_004367e0
 ;
 ; *****************************************************************************
@@ -101,7 +101,7 @@ section .text
     POP ESI                             ; 0043679a
     POP EBX                             ; 0043679b
     RET                                 ; 0043679c
-    PUSH 0x5cdc35                       ; 0043679d | DAT_005cdc35
+    PUSH 0x5cdc35                       ; 0043679d | = "at"
         ;   Label: LAB_0043679d
     PUSH 0x609ed8                       ; 004367a2 | = "console.txt"
     CALL crt_stdio.c_fopen_FUN_005b910c ; 004367a7
@@ -113,14 +113,14 @@ section .text
         ;   XREF to: 00436792 (CONDITIONAL_JUMP)  ; LAB_00436792
     MOV EAX,ESP                         ; 004367b5
     PUSH EAX                            ; 004367b7
-    PUSH 0x5cdc38                       ; 004367b8 | DAT_005cdc38
+    PUSH 0x5cdc38                       ; 004367b8 | = "%s"
     PUSH EBX                            ; 004367bd
-    CALL crt_unknown.c_FUN_005b8010     ; 004367be
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004367be
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004367c3
     PUSH EBX                            ; 004367c6
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004367c7
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 004367cc
     ADD ESP,0x1004                      ; 004367cf
     POP EBP                             ; 004367d5

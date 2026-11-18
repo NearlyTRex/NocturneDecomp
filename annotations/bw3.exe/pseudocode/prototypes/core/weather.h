@@ -9,38 +9,38 @@
 // Address: 0057bd20
 void __cdecl staticInit(void);
 
-// Original: core_weather.cpp_FUN_0057bd80
+// Original: core_weather.cpp_CWeather_ctor_FUN_0057bd80
 // Address: 0057bd80
-int FUN_0057bd80(int param_1);
+CWeather * __cdecl CWeather::ctor(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0057bda0
+// Original: core_weather.cpp_CWeather_update_FUN_0057bda0
 // Address: 0057bda0
-void FUN_0057bda0(CWeather *param_1);
+void __cdecl CWeather::update(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0057c2c0
+// Original: core_weather.cpp_getCurrentCameraAmbientValue_FUN_0057c2c0
 // Address: 0057c2c0
-float FUN_0057c2c0(void);
+int __cdecl getCurrentCameraAmbientValue(void);
 
-// Original: core_weather.cpp_FUN_0057c2e0
+// Original: core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0
 // Address: 0057c2e0
-void FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_3);
+void __cdecl CWeather::createLightningStrike(CWeather *this_ptr,float flash_timer,int play_sound);
 
 // Original: core_weather.cpp_CWeather_createThunder_FUN_0057c840
 // Address: 0057c840
 void __cdecl CWeather::createThunder(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0057c890
+// Original: core_weather.cpp_CWeather_renderParticles_FUN_0057c890
 // Address: 0057c890
-void __cdecl FUN_0057c890(CWeather *this_ptr);
+void __cdecl CWeather::renderParticles(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0057d050
+// Original: core_weather.cpp_CWeather_setWeatherType_FUN_0057d050
 // Address: 0057d050
-void FUN_0057d050(int *param_1,int param_2);
+void __cdecl CWeather::setWeatherType(CWeather *this_ptr,EWeatherType type);
 
-// Original: core_weather.cpp_FUN_0057d1a0
+// Original: core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0
 // Address: 0057d1a0
-void FUN_0057d1a0(int *param_1,float *param_2,int *param_3);
+void __cdecl CWeather::setOriginAndRotation(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 
-// Original: core_weather.cpp_FUN_0057d420
+// Original: core_weather.cpp_CWeather_preloadAssets_FUN_0057d420
 // Address: 0057d420
-void FUN_0057d420(undefined4 param_1,int param_2);
+void __cdecl CWeather::preloadAssets(CWeather *this_ptr,EWeatherType type);

@@ -29,17 +29,17 @@ void __cdecl CDjien::setup(CDjien *this_ptr);
 // Address: 00460230
 void __cdecl CDjien::process(CDjien *this_ptr,float delta_time);
 
-// Original: core_djien.cpp_FUN_00460960
+// Original: core_djien.cpp_CDjien_hesitate_FUN_00460960
 // Address: 00460960
-void FUN_00460960(int param_1);
+void __cdecl CDjien::hesitate(CDjien *this_ptr);
 
-// Original: core_djien.cpp_FUN_004609c0
+// Original: core_djien.cpp_CDjien_doStumpAttack_FUN_004609c0
 // Address: 004609c0
-void FUN_004609c0(CEnemy *param_1);
+void __cdecl CDjien::doStumpAttack(CDjien *this_ptr);
 
-// Original: core_djien.cpp_FUN_00460cb0
+// Original: core_djien.cpp_CDjien_blowApart_FUN_00460cb0
 // Address: 00460cb0
-void FUN_00460cb0(CCharacter *param_1);
+void __cdecl CDjien::blowApart(CDjien *this_ptr);
 
 // Original: core_djien.cpp_CDjien_archive_FUN_00460e80
 // Address: 00460e80
@@ -69,9 +69,9 @@ int __cdecl CDjien::getSackIndex(CDjien *this_ptr,int part_id);
 // Address: 00461590
 int __cdecl CDjien::getTargetPoints(CDjien *this_ptr,CVector3f *out_points_array);
 
-// Original: core_djien.cpp_FUN_004615b0
+// Original: core_djien.cpp_CDjien_getSackTargetPoints_FUN_004615b0
 // Address: 004615b0
-int FUN_004615b0(int param_1,int param_2,int param_3);
+int __cdecl CDjien::getSackTargetPoints(CDjien *this_ptr,CVector3f *out_points,int *out_sack_parts);
 
 // Original: core_djien.cpp_CDjien_dtor_FUN_004623b0
 // Address: 004623b0
@@ -81,6 +81,6 @@ CDjien * __cdecl CDjien::dtor(CDjien *this_ptr,uint flags);
 // Address: 00462440
 SDjienBox * __cdecl SDjienBox::ctor(SDjienBox *this_ptr);
 
-// Original: core_djien.cpp_FUN_00462450
+// Original: core_djien.cpp_staticInit_FUN_00462450
 // Address: 00462450
-void FUN_00462450(void);
+void __cdecl staticInit(void);

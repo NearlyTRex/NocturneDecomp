@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_0046ffa5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
@@ -34,58 +32,59 @@ void __edi_esi_ebx core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_00
   uVar1 = uVar1 >> 0x10;
   iVar2 = (uVar8 >> 0x10) - uVar1;
   if (iVar2 != 0 && uVar1 <= uVar8 >> 0x10) {
-    puVar6 = (uint *)(*(int *)(&DAT_01c60dac + scanline_y * 4) + uVar1 * 4);
+    puVar5 = g_ZBufferScanlineArray[scanline_y] + uVar1;
     iVar4 = (int)((ulonglong)
                   ((longlong)((left_edge->base).depth_current - (pSVar7->base).depth_current) *
-                  (longlong)*(int *)(&DAT_01c6b5d0 + (iVar2 + 1) * 4)) >> 0x20);
+                  (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar9 = (pSVar7->base).depth_current;
-    while (iVar3 = iVar2 + -4, puVar5 = puVar6, 3 < iVar2) {
+    while (iVar3 = iVar2 + -4, puVar6 = puVar5, 3 < iVar2) {
       uVar8 = uVar9 + iVar4 + iVar4;
       uVar1 = uVar8 + iVar4;
-      _DAT_01bdd810 =
-           ((((_DAT_01bdd810 - (uint)(uVar9 >> 8 < *puVar6)) -
-             (uint)(uVar9 + iVar4 >> 8 < puVar6[1])) - (uint)(uVar8 >> 8 < puVar6[2])) + 4) -
-           (uint)(uVar1 >> 8 < puVar6[3]);
+      g_RenderPixelCounter =
+           ((((g_RenderPixelCounter - (uint)(uVar9 >> 8 < *puVar5)) -
+             (uint)(uVar9 + iVar4 >> 8 < puVar5[1])) - (uint)(uVar8 >> 8 < puVar5[2])) + 4) -
+           (uint)(uVar1 >> 8 < puVar5[3]);
       uVar9 = uVar1 + iVar4;
-      puVar5 = puVar6 + 4;
+      puVar6 = puVar5 + 4;
       iVar3 = iVar2 + -8;
       if (iVar2 + -4 < 4) break;
       uVar8 = uVar9 + iVar4 + iVar4;
       uVar1 = uVar8 + iVar4;
-      _DAT_01bdd810 =
-           ((((_DAT_01bdd810 - (uint)(uVar9 >> 8 < *puVar5)) -
-             (uint)(uVar9 + iVar4 >> 8 < puVar6[5])) - (uint)(uVar8 >> 8 < puVar6[6])) + 4) -
-           (uint)(uVar1 >> 8 < puVar6[7]);
+      g_RenderPixelCounter =
+           ((((g_RenderPixelCounter - (uint)(uVar9 >> 8 < *puVar6)) -
+             (uint)(uVar9 + iVar4 >> 8 < puVar5[5])) - (uint)(uVar8 >> 8 < puVar5[6])) + 4) -
+           (uint)(uVar1 >> 8 < puVar5[7]);
       uVar9 = uVar1 + iVar4;
-      puVar5 = puVar6 + 8;
+      puVar6 = puVar5 + 8;
       iVar3 = iVar2 + -0xc;
       if (iVar2 + -8 < 4) break;
       uVar8 = uVar9 + iVar4 + iVar4;
       uVar1 = uVar8 + iVar4;
-      _DAT_01bdd810 =
-           ((((_DAT_01bdd810 - (uint)(uVar9 >> 8 < *puVar5)) -
-             (uint)(uVar9 + iVar4 >> 8 < puVar6[9])) - (uint)(uVar8 >> 8 < puVar6[10])) + 4) -
-           (uint)(uVar1 >> 8 < puVar6[0xb]);
+      g_RenderPixelCounter =
+           ((((g_RenderPixelCounter - (uint)(uVar9 >> 8 < *puVar6)) -
+             (uint)(uVar9 + iVar4 >> 8 < puVar5[9])) - (uint)(uVar8 >> 8 < puVar5[10])) + 4) -
+           (uint)(uVar1 >> 8 < puVar5[0xb]);
       uVar9 = uVar1 + iVar4;
-      puVar5 = puVar6 + 0xc;
+      puVar6 = puVar5 + 0xc;
       iVar3 = iVar2 + -0x10;
       if (iVar2 + -0xc < 4) break;
       uVar8 = uVar9 + iVar4 + iVar4;
       uVar1 = uVar8 + iVar4;
-      _DAT_01bdd810 =
-           ((((_DAT_01bdd810 - (uint)(uVar9 >> 8 < *puVar5)) -
-             (uint)(uVar9 + iVar4 >> 8 < puVar6[0xd])) - (uint)(uVar8 >> 8 < puVar6[0xe])) + 4) -
-           (uint)(uVar1 >> 8 < puVar6[0xf]);
+      g_RenderPixelCounter =
+           ((((g_RenderPixelCounter - (uint)(uVar9 >> 8 < *puVar6)) -
+             (uint)(uVar9 + iVar4 >> 8 < puVar5[0xd])) - (uint)(uVar8 >> 8 < puVar5[0xe])) + 4) -
+           (uint)(uVar1 >> 8 < puVar5[0xf]);
       uVar9 = uVar1 + iVar4;
-      puVar6 = puVar6 + 0x10;
+      puVar5 = puVar5 + 0x10;
       iVar2 = iVar3;
     }
     if (-4 < iVar3) {
-      _DAT_01bdd810 = (_DAT_01bdd810 + 1) - (uint)(uVar9 >> 8 < *puVar5);
+      g_RenderPixelCounter = (g_RenderPixelCounter + 1) - (uint)(uVar9 >> 8 < *puVar6);
       if (iVar3 != -3 && 0 < iVar3 + 4) {
-        _DAT_01bdd810 = (_DAT_01bdd810 + 1) - (uint)(uVar9 + iVar4 >> 8 < puVar5[1]);
+        g_RenderPixelCounter = (g_RenderPixelCounter + 1) - (uint)(uVar9 + iVar4 >> 8 < puVar6[1]);
         if (1 < iVar3 + 3) {
-          _DAT_01bdd810 = (_DAT_01bdd810 + 1) - (uint)(uVar9 + iVar4 + iVar4 >> 8 < puVar5[2]);
+          g_RenderPixelCounter =
+               (g_RenderPixelCounter + 1) - (uint)(uVar9 + iVar4 + iVar4 >> 8 < puVar6[2]);
         }
       }
     }

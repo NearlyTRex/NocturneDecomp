@@ -7,19 +7,19 @@
 ; uint             Stack[0x4]:4   flags
 ;
 ; XREF[4]:
-;   core_menu.cpp_FUN_004e94f0 at 004e9e3a
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9e3a
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 00560227
-;   core_sound.cpp_FUN_0055f6b0 at 0055f7b5
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f222
+;   core_sound.cpp_processTrainSounds_FUN_0055f6b0 at 0055f7b5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ceb91c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555f00 | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555f00 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxFlags_FUN_00555f00
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555f06
     SUB EAX,EDX                         ; 00555f0d

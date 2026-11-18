@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 43,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 21
   },
   "cross_references": [],
@@ -31,15 +29,15 @@
     {
       "addr": "005a3770",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3770"
+      "name": "crt_unknown.c_debugFree_FUN_005a3770"
     }
   ],
   "globals": [
     {
       "addr": "00607bdc",
-      "name": "DAT_00607bdc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -101,30 +99,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_00607bdc",
-      "severity": "mild",
-      "text": "if (DAT_00607bdc != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_00607bdc",
-      "severity": "mild",
-      "text": "FUN_005a3770(DAT_00607bdc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00607bdc",
-      "severity": "mild",
-      "text": "DAT_00607bdc = 0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

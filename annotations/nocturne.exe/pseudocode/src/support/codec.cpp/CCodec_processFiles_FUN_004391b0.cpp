@@ -18,9 +18,11 @@ int __cdecl support_codec_cpp_CCodec_processFiles_FUN_004391b0(CCodec *this_ptr,
   int local_30;
   int iStack_14;
   
-  crt_fstream_cpp_ifstream_ctor_FUN_00565072(local_110,0,input_file_path,0x101,0x000001A4);
+  crt_fstream_cpp_ifstream_ctor_FUN_00565072
+            (local_110,0,input_file_path,0x101,g_DefaultStreamBufferSize);
   if (local_ac == 0) {
-    crt_fstream_cpp_ofstream_ctor_FUN_0056511e(local_90,0,output_file_path,0x112,0x000001A4);
+    crt_fstream_cpp_ofstream_ctor_FUN_0056511e
+              (local_90,0,output_file_path,0x112,g_DefaultStreamBufferSize);
     if (local_30 == 0) {
       (*this_ptr->vtable->init)(this_ptr);
       iStack_14 = 0x7fffffff;

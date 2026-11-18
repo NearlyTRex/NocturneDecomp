@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 181,
+    "complexity_score": 182,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 96,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 97,
     "suspect_count": 8,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 319
+    "total_lines": 320
   },
   "cross_references": [
     {
       "addr": "0052f2a0",
       "from_addr": "0052f8d7",
-      "name": "core_set.cpp_FUN_0052f2a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,31 +54,31 @@
   "globals": [
     {
       "addr": "005e609c",
-      "name": "DAT_005e609c",
-      "type": "undefined4",
+      "name": "s_g_005e609c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "020b1528",
-      "name": "DAT_020b1528",
+      "name": "g_VDCameraSortIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020b152c",
-      "name": "DAT_020b152c",
+      "name": "g_VDCameraSortIndices[2]",
       "type": "undefined4",
       "value": null
     }
@@ -89,7 +89,7 @@
       {
         "call_addr": "0052f8d7",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052f2a0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,6 +144,18 @@
     "pcode_op_count": 954
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "0055b4f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3908
+    },
+    "bw3.exe": {
+      "addr": "00540eb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3908
+    },
     "nocedit.exe": {
       "addr": "00575f70",
       "by": "name",
@@ -252,68 +264,68 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)g_VDCameraSortIndices",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VDCameraSortIndices + iVar5) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 36,
-      "match": "DAT_0209394c",
-      "severity": "mild",
-      "text": "if (*(float *)(&DAT_0209394c + *(int *)(local_28 + 0x20b1524) * 4) <",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_VDCameraSortIndices",
+      "severity": "moderate",
+      "text": "if (g_FLOAT_ARRAY_0209394c[*(int *)((int)g_VDCameraSortIndices + local_28)] <",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 37,
-      "match": "DAT_0209394c",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_0209394c + *(int *)(iVar4 + 0x20b1524) * 4)) {",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_VDCameraSortIndices",
+      "severity": "moderate",
+      "text": "g_FLOAT_ARRAY_0209394c[*(int *)((int)g_VDCameraSortIndices + iVar4)]) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "iVar5 = DAT_006141bc + -0xb2;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)g_VDCameraSortIndices",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "local_20 = DAT_006141bc + -0xbd;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)g_VDCameraSortIndices",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + local_28) =",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "local_24 = DAT_006141bc + -0x18;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(uint *)((int)g_VDCameraSortIndices",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_005e609c",
-      "severity": "mild",
-      "text": "_sprintf(local_98,&DAT_005e609c);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)g_VDCameraSortIndices",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4) = uVar1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "if (DAT_006141b8 < iVar4 + 0x42) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "bVar2 = DAT_006141bc < local_24;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)g_VDCameraSortIndices",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)g_VDCameraSortIndices + local_1c);",
+      "type": "pointer_cast"
     }
   ]
 }

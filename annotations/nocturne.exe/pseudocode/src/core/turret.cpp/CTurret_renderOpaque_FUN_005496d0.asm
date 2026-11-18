@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -96,7 +96,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 00549761
     PUSH EAX                            ; 00549764
     MOV ECX,dword ptr [0x005ae704]      ; 00549765 | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 0054976b | DAT_01b4d738
+    PUSH ECX                            ; 0054976b | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0054976c
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00549771
@@ -104,7 +104,7 @@ section .text
     LEA EAX,[EBX + 0x570]               ; 00549776
     PUSH EAX                            ; 0054977c
     MOV EDI,dword ptr [0x005ae704]      ; 0054977d | g_CDemonRenderer_PTR_005ae704
-    PUSH EDI                            ; 00549783 | DAT_01b4d738
+    PUSH EDI                            ; 00549783 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00549784
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 00549789
@@ -124,7 +124,7 @@ section .text
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 005497b3
     MOV EBP,dword ptr [0x005ae704]      ; 005497b6 | g_CDemonRenderer_PTR_005ae704
-    PUSH EBP                            ; 005497bc | DAT_01b4d738
+    PUSH EBP                            ; 005497bc | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 005497bd
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005497c2

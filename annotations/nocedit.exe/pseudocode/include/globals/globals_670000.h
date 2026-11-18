@@ -100,22 +100,22 @@ extern SMRGLTextureBasic g_FireEffectHeadliteTexture;
 extern SMRGLTextureBasic g_FireEffectBlastTexture;
 extern SMRGLTextureBasic g_FireEffectPopcornTexture;
 extern SMRGLTextureBasic g_FireEffectRainDropTexture;
-extern SMRGLTextureBasic SMRGLTextureBasic_0067b0c8;
-extern SMRGLTextureBasic SMRGLTextureBasic_0067b514;
+extern SMRGLTextureBasic g_FlameGlowTexture;
+extern SMRGLTextureBasic g_FliesTexture;
 extern SMRGLTextureBasic g_FontTextureInfo;
 extern SMRGLTextureBasic DAT_0067B948;
 extern SMRGLTextureBasic g_BloodParticleTexture;
 extern SMRGLTextureBasic g_FootstepTexture;
 extern SMRGLTextureBasic g_Inventory3DTextureAtlas;
 extern SMRGLTextureBasic g_LoadingMoonGlowTexture;
-extern SMRGLTextureBasic SMRGLTextureBasic_0067d150;
+extern SMRGLTextureBasic g_MarqueeSparkTexture;
 
 // SMRGLTextureBasic[116]
 extern SMRGLTextureBasic g_BloodPoolAnimTextures[116];
 
 // SMRGLTextureBasic[40]
 extern SMRGLTextureBasic g_FireEffectSmokeParticleTextures[40];
-extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067b100[40];
+extern SMRGLTextureBasic g_FlameFrameTextures[40];
 
 // SMRGLTextureBasic[4]
 extern SMRGLTextureBasic g_BloodSplatTextures[4];
@@ -343,9 +343,9 @@ extern int g_CMansionPuzzleCircleClassVersion;
 extern int g_CMirrorHackClassVersion;
 extern int g_CMarqueeClassVersion;
 extern int g_CMeleeClassVersion;
-extern int INT_0067d390;
+extern int g_LodPreviewLabelVertex;
 extern int g_EnableMidpointSampling;
-extern int INT_0067d39c;
+extern int g_LodChooserSelectedLod;
 extern int g_CMimicClassVersion;
 extern int g_CMineCarClassVersion;
 extern int g_CPUInfoBasicInfo2;

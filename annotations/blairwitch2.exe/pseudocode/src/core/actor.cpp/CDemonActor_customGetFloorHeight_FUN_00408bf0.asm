@@ -12,11 +12,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005ca565
 ;   TerminatedCString s_CDemonActor_customGetFlo_005ca577
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -26,10 +26,10 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0
     MOV ECX,0x2ee                       ; 00408bf5
     PUSH 0x5ca577                       ; 00408bfa | = "CDemonActor::customGetFloorHeight sho..."
-    MOV dword ptr [0x01d046a0],EDX      ; 00408bff | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00408c05 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00408c0b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00408bff | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00408c05 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00408c0b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00408c10
     LEA EAX,[EAX]                       ; 00408c13
     LEA EDX,[EDX]                       ; 00408c19

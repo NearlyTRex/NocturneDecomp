@@ -22,7 +22,7 @@ int __cdecl core_dlight_cpp_CDemonLight_testVisibility_FUN_004665c0(CDemonLight 
   SStack_38.surface_normal.C.i = 0;
   SStack_38.surface_normal.B.i = 0;
   SStack_38.surface_normal.A.i = 0;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(g_CDemonRenderer_PTR_00612560,1);
   uStack_20 = 0;
   uStack_1c = 4;
   uStack_18 = 6;
@@ -71,6 +71,6 @@ int __cdecl core_dlight_cpp_CDemonLight_testVisibility_FUN_004665c0(CDemonLight 
   }
   iVar1 = 1;
 LAB_0046662f:
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(g_CDemonRenderer_PTR_00612560,0);
   return iVar1;
 }

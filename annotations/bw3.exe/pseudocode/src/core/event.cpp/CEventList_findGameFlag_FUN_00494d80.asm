@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
+;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0 at 00494900
 ;   core_event.cpp_CEventList_resolveVariable_FUN_00491a10 at 00491a76
-;   core_event.cpp_FUN_004948e0 at 00494900
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260

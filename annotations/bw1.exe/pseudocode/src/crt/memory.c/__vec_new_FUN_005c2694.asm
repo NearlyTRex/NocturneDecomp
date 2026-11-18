@@ -1,12 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_memory_c___vec_new_FUN_005c2694(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void * __cdecl crt_memory_c___vec_new_FUN_005c2694(void *array_memory,int element_count,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   array_memory
+; int              Stack[0x8]:4   element_count
+; WatcomTypeInfo * Stack[0xc]:4   type_info
 ;
 ; XREF[4]:
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0 at 005386a9
-;   cockpit_pkbmpset.cpp_FUN_005389c0 at 00538a0c
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005389c0 at 00538a0c
 ;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40 at 0048aa76
 ;   shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690 at 00494729
 ;

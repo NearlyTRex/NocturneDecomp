@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 416,
-    "complexity_score": 132,
+    "complexity_score": 116,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 117,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 533
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 116,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 532
   },
   "cross_references": [],
   "function": {
@@ -32,9 +30,9 @@
   "globals": [
     {
       "addr": "0059832e",
-      "name": "DAT_0059832e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_GramSchmidtBlendFactor",
+      "type": "double",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -86,6 +84,24 @@
     "pcode_op_count": 3020
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00592c90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005b67e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005849c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
     "nocedit.exe": {
       "addr": "005f6690",
       "by": "name",
@@ -315,14 +331,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

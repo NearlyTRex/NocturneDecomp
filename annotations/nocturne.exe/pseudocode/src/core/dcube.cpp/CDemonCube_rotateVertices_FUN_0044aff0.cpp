@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube *this_ptr,uint rendering_mode)
 
 {
@@ -46,9 +44,9 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube *t
   output = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
   if (0 < this_ptr->vertex_count) {
     do {
-      local_48.x = (int)ROUND(pCVar4->x * _DAT_0059be10);
-      local_48.y = (int)ROUND(pCVar4->y * _DAT_0059be10);
-      local_48.z = (int)ROUND(pCVar4->z * _DAT_0059be10);
+      local_48.x = (int)ROUND(pCVar4->x * 256.0f);
+      local_48.y = (int)ROUND(pCVar4->y * 256.0f);
+      local_48.z = (int)ROUND(pCVar4->z * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c(&output->projected_vertex,&local_48);
       if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
         local_20 = local_20 + 1;
@@ -64,11 +62,11 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube *t
                 (g_CDemonRenderer_PTR_005ae704,0);
     }
   }
-  if ((DAT_014b8488 & 1) == 0) {
-    DAT_014b8488 = DAT_014b8488 | 1;
-    _DAT_014b847c = 0x3f13cd3a;
-    _DAT_014b8484 = 0x3f13cd3a;
-    _DAT_014b8480 = 0xbf13cd3a;
+  if ((g_ColorConstantsInitialized & 1) == 0) {
+    g_ColorConstantsInitialized = g_ColorConstantsInitialized | 1;
+    g_StaticColorVector.x = 0.57735026;
+    g_StaticColorVector.z = 0.57735026;
+    g_StaticColorVector.y = -0.57735026;
   }
   local_14 = 0;
   if (0 < this_ptr->triangle_count) {

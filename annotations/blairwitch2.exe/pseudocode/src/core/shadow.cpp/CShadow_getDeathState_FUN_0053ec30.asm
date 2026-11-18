@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_0053ec30(CShadow *this_ptr)
+; EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_0053ec30(CShadow *this_ptr)
 ;
 ; Parameters:
 ; CShadow *        Stack[0x4]:4   this_ptr
@@ -10,7 +10,7 @@
 ;   undefined1* switchdataD_0053ec18 = 0053ec3f
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     ADD EAX,0x2b4                       ; 0053ec4e
         ;   Label: LAB_0053ec4e
     PUSH EAX                            ; 0053ec53
-    CALL core_motion.cpp_FUN_005035c0   ; 0053ec54
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0053ec54
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0053ec59
     SUB EAX,0xd                         ; 0053ec5c
     ADD ESP,0x4                         ; 0053ec5f

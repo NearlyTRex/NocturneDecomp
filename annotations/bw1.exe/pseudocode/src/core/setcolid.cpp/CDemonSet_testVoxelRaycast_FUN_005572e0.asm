@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   end_pos
 ;
 ; XREF[2]:
-;   core_enemy.cpp_FUN_004a0980 at 004a0a8a
+;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980 at 004a0a8a
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0 at 0050ff4c
 ;
 ; Referenced Globals:

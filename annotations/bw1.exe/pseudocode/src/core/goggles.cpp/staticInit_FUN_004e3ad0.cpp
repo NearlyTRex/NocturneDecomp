@@ -10,7 +10,7 @@ void __cdecl core_goggles_cpp_staticInit_FUN_004e3ad0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CGogglesClassInfo,"?CGoggles" + 1,
+            (&g_CGogglesClassInfo,"CGoggles",
              core_goggles_cpp_factoryFuncGoggles_FUN_004e3b00,&g_CGogglesClassVersion,1,
              &g_CDemonActorClassInfo);
   return;

@@ -6,18 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform *this_ptr)
 
 {
   CLocation *out_pos;
   UOrientationVector *out_euler;
   float *pfVar1;
-  byte bVar2;
+  uint *puVar2;
+  uint *puVar3;
+  byte bVar4;
   float afStackY_1874 [1523];
-  uint local_98;
-  uint local_88;
+  CQuaternion4f local_98;
+  CQuaternion4f local_88;
   CVector3f local_78;
   float local_6c;
   float local_68;
@@ -31,8 +31,9 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
   float local_48;
   float local_44;
   float local_40;
-  float local_3c;
-  float afStack_38 [4];
+  CVector3f local_3c;
+  float local_30;
+  float local_2c;
   float local_28;
   float local_24;
   float local_20;
@@ -40,7 +41,7 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
   float local_18;
   int local_14;
   
-  bVar2 = 0;
+  bVar4 = 0;
   if (this_ptr->param < 0.0) {
     this_ptr->param = 0.0;
   }
@@ -67,29 +68,27 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
     local_54 = local_60;
     local_50 = local_5c;
     local_4c = local_58;
-    afStack_38[2] = local_6c;
-    afStack_38[3] = local_68;
+    local_30 = local_6c;
+    local_2c = local_68;
     local_28 = local_64;
     local_24 = local_48;
     local_20 = local_44;
     local_1c = local_40;
     core_xform_cpp_slerpQuaternion_FUN_00593df0
-              (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param);
-    local_98 = local_88;
-    *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * 0xfffffffe * 4) =
-         *(uint *)(&stack0xffffff7c + (uint)bVar2 * -8);
-    *(uint *)(&stack0xffffff70 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-         *(uint *)(&stack0xffffff80 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-    *(uint *)
-     ((int)(&stack0xffffff70 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =
-         *(uint *)
-          ((int)(&stack0xffffff80 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +
-          ((uint)bVar2 * -2 + 1) * 4);
-    core_xform_cpp_FUN_005940b0(&stack0xffffff68);
-    local_78.x = local_3c;
-    *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4) = afStack_38[(uint)bVar2 * -2];
-    *(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-         afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+              (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param,&local_88);
+    local_98.w = local_88.w;
+    puVar3 = (uint *)((int)&local_98 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    puVar2 = (uint *)((int)&local_88 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    *(uint *)((int)&local_98 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&local_88 + (uint)bVar4 * -8 + 4);
+    *puVar3 = *puVar2;
+    puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
+    core_xform_cpp_quaternionToEulerAngles_FUN_005940b0(&local_98,&local_3c);
+    local_78.x = local_3c.x;
+    *(uint *)((int)&local_78 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&local_78 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     if ((CVector3f *)out_euler != &local_78) {
       (out_euler->vec).x = local_78.x;
       (this_ptr->base).orient.vec.y = local_78.y;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0048fa40(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 {
@@ -48,18 +46,18 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0048f
     this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
                             (this_ptr,local_34,local_30,local_2c);
     if (this_ptr_00 == (CDemonCube *)0x0) {
-      _DAT_01d1d400 = "..\\core\\dtrace.cpp";
-      _DAT_01d1d404 = 0xb55;
-      core_main_c_FUN_005030e0("Parity Check 999");
+      g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
+      g_INT_01d1d404 = 0xb55;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("Parity Check 999");
     }
     if (this_ptr_00->voxel_buffer1 == (SVoxelGrid *)0x0) {
       core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_00457bc0(this_ptr_00);
     }
     puVar1 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
-    *puVar1 = *puVar1 & ((&DAT_0061ab68)[local_40] ^ 0xff);
+    *puVar1 = *puVar1 & (g_VoxelYBitMasks[local_40] ^ 0xff);
     puVar1 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
     *puVar1 = *puVar1 | this_ptr_00->voxel_buffer2->voxels[local_38][local_3c] &
-                        (&DAT_0061ab68)[local_40];
+                        g_VoxelYBitMasks[local_40];
     return;
   }
   return;

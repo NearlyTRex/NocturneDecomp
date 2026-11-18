@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 105,
+    "complexity_score": 90,
     "cross_reference_count": 42,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 75,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
     "total_lines": 276
   },
@@ -321,15 +320,15 @@
   "globals": [
     {
       "addr": "005ccc9e",
-      "name": "DAT_005ccc9e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ccc9e",
+      "type": "double",
+      "value": "0.0100000000000000"
     },
     {
       "addr": "005f4084",
-      "name": "DAT_005f4084",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f4084",
+      "type": "float",
+      "value": "9999"
     },
     {
       "addr": "00616494",
@@ -523,6 +522,12 @@
       "class": "logic-change",
       "ratio": 0.9226
     },
+    "bw3.exe": {
+      "addr": "0042cd70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3461
+    },
     "nocedit.exe": {
       "addr": "00429870",
       "by": "name",
@@ -568,16 +573,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->position_delta).z = 0.0;",

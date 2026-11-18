@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00500d20(CLightGun *this_ptr,float delta_time)
 
 {
@@ -21,18 +19,18 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00500d20(CLightGun *this_pt
   
   core_weapon_cpp_CWeapon_process_FUN_005ad770(&this_ptr->base,delta_time);
   fVar2 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004fa470
-                    ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),_DAT_00603010
-                    );
-  fVar2 = (_DAT_00603010 / fVar2) * in_stack_00000018 + this_ptr->charge_level;
+                    (&g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->inventory,2.0f);
+  fVar2 = (2.0f / fVar2) * in_stack_00000018 + this_ptr->charge_level;
   this_ptr->charge_level = fVar2;
-  if (_DAT_00603010 < fVar2) {
-    this_ptr->charge_level = _DAT_00603010;
+  if (2.0f < fVar2) {
+    this_ptr->charge_level = 2.0f;
   }
   EVar1 = (this_ptr->base).weapon_state;
-  this_ptr->charge_ratio = this_ptr->charge_level / _DAT_00603010;
+  this_ptr->charge_ratio = this_ptr->charge_level / 2.0f;
   if (EVar1 == WEAPON_STATE_IN_HAND) {
-    fVar2 = (_DAT_0060301c - 0x40000000) * this_ptr->charge_ratio + 0x40000000;
-    base_frequency = _DAT_00603020 + (_DAT_00603024 - _DAT_00603020) * this_ptr->charge_ratio;
+    fVar2 = (2.5f - 2.0f) * this_ptr->charge_ratio + 2.0f;
+    base_frequency =
+         0.5f + (2.5f - 0.5f) * this_ptr->charge_ratio;
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handle);
     if (iVar3 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
@@ -48,13 +46,13 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00500d20(CLightGun *this_pt
       sound_sndmain_cpp_setSfxVolume_FUN_00573950(this_ptr->sfx_handle,fVar2);
       sound_sndmain_cpp_setSfxBaseFrequency_FUN_00573980(this_ptr->sfx_handle,base_frequency);
     }
-    core_lightgun_cpp_FUN_00500090(this_ptr);
+    core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00500090(this_ptr);
     if (this_ptr->fire_flash_pending != 0) {
       g_CDemonLightInstance.antialiasing_enabled = 1;
       filter_ptr = core_dfilter_cpp_CFilterCache_getFilter_FUN_0045d7c0
                              (g_CFilterCachePtr,"spark2.raw",0);
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00463e30(&g_CDemonLightInstance,filter_ptr,0,0,0);
-      core_weather_cpp_CWeather_createLightningStrike_FUN_005ae580(0x02C997C0,0.1,0);
+      core_weather_cpp_CWeather_createLightningStrike_FUN_005ae580(g_CWeatherPtr,0.1,0);
     }
     core_set_cpp_CDemonSet_addDynamicLight_FUN_005518e0(g_CDemonSetPtr,&g_CDemonLightInstance);
     this_ptr->fire_flash_pending = 0;

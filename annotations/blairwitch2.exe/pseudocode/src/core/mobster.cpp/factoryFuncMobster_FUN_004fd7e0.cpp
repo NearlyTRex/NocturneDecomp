@@ -11,7 +11,7 @@ CMobster * __cdecl core_mobster_cpp_factoryFuncMobster_FUN_004fd7e0(void)
 {
   CMobster *pCVar1;
   
-  pCVar1 = (CMobster *)operator_new(0x10bd0);
+  pCVar1 = operator_new(0x10bd0);
   if (pCVar1 == (CMobster *)0x0) {
     return (CMobster *)0x0;
   }

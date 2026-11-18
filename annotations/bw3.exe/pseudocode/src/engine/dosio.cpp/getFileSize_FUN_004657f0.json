@@ -16,7 +16,7 @@
     {
       "addr": "00510810",
       "from_addr": "0051083e",
-      "name": "cockpit_pkbmpset.cpp_FUN_00510810",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,7 +34,7 @@
     {
       "addr": "0048c2e0",
       "from_addr": "0048d5ab",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -46,7 +46,7 @@
     {
       "addr": "004bec20",
       "from_addr": "004bec5b",
-      "name": "core_game.cpp_FUN_004bec20",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,15 +56,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00529a70",
-      "from_addr": "0052b4d5",
-      "name": "core_script.cpp_CScript_step_FUN_00529a70",
+      "addr": "00529410",
+      "from_addr": "00529437",
+      "name": "core_script.cpp_CScript_loadScript_FUN_00529410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00529410",
-      "from_addr": "00529437",
-      "name": "core_script.cpp_FUN_00529410",
+      "addr": "00529a70",
+      "from_addr": "0052b4d5",
+      "name": "core_script.cpp_CScript_step_FUN_00529a70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -80,27 +80,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00512e70",
-      "from_addr": "00512e85",
-      "name": "engine_pod.cpp_FUN_00512e70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00513d20",
       "from_addr": "00513dc9",
-      "name": "engine_pod.cpp_FUN_00513d20",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005149c0",
       "from_addr": "00514a6c",
-      "name": "engine_pod.cpp_FUN_005149c0",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_005149c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512e70",
+      "from_addr": "00512e85",
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_00512e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056ad60",
       "from_addr": "0056ada1",
-      "name": "engine_texture.cpp_FUN_0056ad60",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_0056ad60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -166,14 +166,14 @@
   },
   "function_calls": [
     {
+      "addr": "00465660",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660"
+    },
+    {
       "addr": "004656d0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_findFile_FUN_004656d0"
-    },
-    {
-      "addr": "00465660",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00465660"
     }
   ],
   "globals": [],
@@ -183,7 +183,7 @@
       {
         "call_addr": "0048d5ab",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -216,7 +216,7 @@
       {
         "call_addr": "004bec5b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bec20",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,7 +238,7 @@
       {
         "call_addr": "00529437",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00529410",
+        "caller": "core_script.cpp_CScript_loadScript_FUN_00529410",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

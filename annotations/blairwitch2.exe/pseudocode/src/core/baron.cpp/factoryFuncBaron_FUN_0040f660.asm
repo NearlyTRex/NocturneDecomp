@@ -15,7 +15,7 @@ section .text
     PUSH 0x25740                        ; 0040f660
         ;   Label: core_baron.cpp_factoryFuncBaron_FUN_0040f660
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0040f665
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0040f66a
     TEST EAX,EAX                        ; 0040f66d
     JNZ 0x0040f672                      ; 0040f66f

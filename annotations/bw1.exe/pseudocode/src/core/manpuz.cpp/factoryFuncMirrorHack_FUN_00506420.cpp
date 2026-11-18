@@ -11,7 +11,7 @@ CMirrorHack * __cdecl core_manpuz_cpp_factoryFuncMirrorHack_FUN_00506420(void)
 {
   CMirrorHack *pCVar1;
   
-  pCVar1 = (CMirrorHack *)operator_new(0x2d8);
+  pCVar1 = operator_new(0x2d8);
   if (pCVar1 == (CMirrorHack *)0x0) {
     return (CMirrorHack *)0x0;
   }

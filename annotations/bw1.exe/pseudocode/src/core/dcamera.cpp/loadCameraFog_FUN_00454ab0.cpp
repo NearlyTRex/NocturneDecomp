@@ -20,6 +20,6 @@ void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00454ab0(SFog *fog,_FILE *file_h
     fog->temperature = 50.0;
     return;
   }
-  _fscanf(file_handle,&DAT_005d7a42);
+  _fscanf(file_handle,"%f\n");
   return;
 }

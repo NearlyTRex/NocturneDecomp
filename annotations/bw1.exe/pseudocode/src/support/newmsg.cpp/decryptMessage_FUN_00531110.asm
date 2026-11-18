@@ -18,11 +18,11 @@
 ;   TerminatedCString s_decryptMessage_error_dec_005ec681
 ;   TerminatedCString s_support_newmsg_cpp_005ec6a9
 ;   TerminatedCString s_decryptMessage_premature_005ec6bf
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -76,10 +76,10 @@ section .text
         ;   Label: LAB_00531167
     MOV EBX,0xe9                        ; 0053116c
     PUSH 0x5ec63e                       ; 00531171 | = "decryptMessage - invalid initial mask..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00531176 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0053117c | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00531182
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00531176 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 0053117c | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00531182
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00531187
     JMP 0x00531145                      ; 0053118a
         ;   XREF to: 00531145 (UNCONDITIONAL_JUMP)  ; LAB_00531145
@@ -96,10 +96,10 @@ section .text
     MOV EAX,0x5ec66b                    ; 005311a6 | = "..\\support\\newmsg.cpp"
     MOV EDX,0xf4                        ; 005311ab
     PUSH 0x5ec681                       ; 005311b0 | = "decryptMessage - error decrypting text!"
-    MOV [0x01d1d400],EAX                ; 005311b5 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 005311ba | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005311c0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 005311b5 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 005311ba | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005311c0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005311c5
     JMP 0x0053114d                      ; 005311c8
         ;   XREF to: 0053114d (UNCONDITIONAL_JUMP)  ; LAB_0053114d
@@ -107,10 +107,10 @@ section .text
         ;   Label: LAB_005311ca
     MOV EBX,0x107                       ; 005311cf
     PUSH 0x5ec6bf                       ; 005311d4 | = "decryptMessage - premature null termi..."
-    MOV dword ptr [0x01d1d400],ECX      ; 005311d9 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 005311df | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005311e5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 005311d9 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 005311df | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005311e5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005311ea
     LEA EAX,[EDI + 0x17]                ; 005311ed
     ADD ESP,0x4                         ; 005311f0

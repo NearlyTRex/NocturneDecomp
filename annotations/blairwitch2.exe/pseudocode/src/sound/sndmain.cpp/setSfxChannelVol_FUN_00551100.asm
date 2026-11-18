@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   volume
 ;
 ; XREF[7]:
-;   core_menu.cpp_FUN_004ed260 at 004edcb0
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004edcb0
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50 at 0055ac99
+;   core_sound.cpp_CSound_init_FUN_0055a1d0 at 0055a29e
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a64f
-;   core_sound.cpp_FUN_0055a1d0 at 0055a29e
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055a170 at 0055a1ad
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553953
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0 at 005523d9
@@ -19,17 +19,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e8d77
 ;   TerminatedCString s_setSfxChannelVol_invalid_005e8d8c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0263cf80
-;   undefined4 DAT_0263d038
-;   undefined4 DAT_0263d098
-;   undefined4 DAT_0263d09c
-;   undefined4 DAT_0263d150
-;   undefined4 DAT_02648e80
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[1].options.channel_index
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[1].hardware_buffer_handle
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[1].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[1].changed_flags
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30
 ;   sound_sndmain.cpp_lockSound_FUN_005532f0
 ;   sound_sndmain.cpp_unlockSound_FUN_00551440
@@ -53,14 +53,14 @@ section .text
     MOV EDX,0x5e8d77                    ; 00551110 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0x110e                      ; 00551115
     PUSH 0x5e8d8c                       ; 0055111a | = "setSfxChannelVol - invalid channel in..."
-    MOV dword ptr [0x01d046a0],EDX      ; 0055111f | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00551125 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0055112b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 0055111f | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00551125 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0055112b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00551130
     MOV EDX,dword ptr [ESP + 0x10]      ; 00551133
         ;   Label: LAB_00551133
-    MOV ESI,dword ptr [0x02648e80]      ; 00551137 | DAT_02648e80
+    MOV ESI,dword ptr [0x02648e80]      ; 00551137 | g_CSoundDevicePtr
     MOV dword ptr [EBX*0x4 + 0x26484c0],EDX ; 0055113d
     TEST ESI,ESI                        ; 00551144
     JNZ 0x0055114b                      ; 00551146
@@ -80,7 +80,7 @@ section .text
     MOV EAX,0x263cf1c                   ; 0055115a
     LEA EDX,[EAX + 0x4700]              ; 0055115f
     XOR ECX,ECX                         ; 00551165
-    CMP ECX,dword ptr [EAX + 0x64]      ; 00551167 | DAT_0263cf80 | DAT_0263d09c
+    CMP ECX,dword ptr [EAX + 0x64]      ; 00551167 | g_CSfxSlot_ARRAY_0263cf1c[0].playback_state | g_CSfxSlot_ARRAY_0263cf1c[1].playback_state
         ;   Label: LAB_00551167
     JNZ 0x0055117d                      ; 0055116a
         ;   XREF to: 0055117d (CONDITIONAL_JUMP)  ; LAB_0055117d
@@ -94,14 +94,14 @@ section .text
     POP ESI                             ; 0055117a
     POP EBX                             ; 0055117b
     RET                                 ; 0055117c
-    CMP ECX,dword ptr [EAX + 0x60]      ; 0055117d | DAT_0263d098
+    CMP ECX,dword ptr [EAX + 0x60]      ; 0055117d | g_CSfxSlot_ARRAY_0263cf1c[1].hardware_buffer_handle
         ;   Label: LAB_0055117d
     JZ 0x0055116c                       ; 00551180
         ;   XREF to: 0055116c (CONDITIONAL_JUMP)  ; LAB_0055116c
-    CMP EBX,dword ptr [EAX]             ; 00551182 | DAT_0263d038
+    CMP EBX,dword ptr [EAX]             ; 00551182 | g_CSfxSlot_ARRAY_0263cf1c[1].options.channel_index
     JNZ 0x0055116c                      ; 00551184
         ;   XREF to: 0055116c (CONDITIONAL_JUMP)  ; LAB_0055116c
-    OR byte ptr [EAX + 0x118],0x8       ; 00551186 | DAT_0263d150
+    OR byte ptr [EAX + 0x118],0x8       ; 00551186 | g_CSfxSlot_ARRAY_0263cf1c[1].changed_flags
     JMP 0x0055116c                      ; 0055118d
         ;   XREF to: 0055116c (UNCONDITIONAL_JUMP)  ; LAB_0055116c
 

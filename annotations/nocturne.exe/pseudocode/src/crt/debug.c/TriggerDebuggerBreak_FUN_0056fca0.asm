@@ -12,13 +12,13 @@
 ;   crt_startup.c_HandleRuntimeError_FUN_0056ddc0 at 0056ddce
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005c2050
+;   byte g_DebuggerIsAttached = 0x0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP byte ptr [0x005c2050],0x0       ; 0056fca0 | DAT_005c2050
+    CMP byte ptr [0x005c2050],0x0       ; 0056fca0 | g_DebuggerIsAttached
         ;   Label: crt_debug.c_TriggerDebuggerBreak_FUN_0056fca0
     JZ 0x0056fcc8                       ; 0056fca7
         ;   XREF to: 0056fcc8 (CONDITIONAL_JUMP)  ; LAB_0056fcc8

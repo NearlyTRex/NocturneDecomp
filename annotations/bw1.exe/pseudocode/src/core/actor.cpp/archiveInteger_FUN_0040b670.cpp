@@ -11,15 +11,15 @@ void __cdecl core_actor_cpp_archiveInteger_FUN_0040b670(int *int_ptr,char *prope
 {
   int iVar1;
   
-  if (DAT_007c3038 == 1) {
-    iVar1 = _fscanf(DAT_007c3034,&DAT_005d2aa9);
+  if (g_ActorReadingMode == 1) {
+    iVar1 = _fscanf(g_ActorDataFile,"%d");
     if (iVar1 != 1) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b090
                 ("Integer value",property_name);
     }
   }
   else {
-    FUN_005c03c0(DAT_007c3034,&DAT_005d2aac,&DAT_006106c0,*int_ptr);
+    _fprintf(g_ActorDataFile,"%s%d");
   }
   core_actor_cpp_archiveDescription_FUN_0040b110("Integer value",property_name);
   return;

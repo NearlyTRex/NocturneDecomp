@@ -11,9 +11,9 @@
 ;   wincore_winrun.cpp_mainWindowProc_FUN_00558d90 at 00558f18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de07f4
-;   undefined4 DAT_02de0848
-;   undefined4 DAT_02de084c
+;   BOOL g_UseMultimediaTimer
+;   int g_InputReadIndex
+;   int g_InputWriteIndex
 ;
 ; *****************************************************************************
 
@@ -21,11 +21,11 @@ section .text
 
     PUSH EBX                            ; 00558ba0
         ;   Label: wincore_winrun.cpp_enqueueInput_FUN_00558ba0
-    MOV EDX,dword ptr [0x02de084c]      ; 00558ba1 | DAT_02de084c
-    MOV ECX,dword ptr [0x02de0848]      ; 00558ba7 | DAT_02de0848
+    MOV EDX,dword ptr [0x02de084c]      ; 00558ba1 | g_InputWriteIndex
+    MOV ECX,dword ptr [0x02de0848]      ; 00558ba7 | g_InputReadIndex
     INC EDX                             ; 00558bad
     MOV EBX,dword ptr [ESP + 0x8]       ; 00558bae
-    MOV dword ptr [EDX*0x4 + 0x2de07f4],EBX ; 00558bb2 | DAT_02de07f4
+    MOV dword ptr [EDX*0x4 + 0x2de07f4],EBX ; 00558bb2 | g_UseMultimediaTimer
     CMP EDX,0x14                        ; 00558bb9
     JL 0x00558bc0                       ; 00558bbc
         ;   XREF to: 00558bc0 (CONDITIONAL_JUMP)  ; LAB_00558bc0
@@ -39,9 +39,9 @@ section .text
     JL 0x00558bcc                       ; 00558bc8
         ;   XREF to: 00558bcc (CONDITIONAL_JUMP)  ; LAB_00558bcc
     XOR ECX,ECX                         ; 00558bca
-    MOV dword ptr [0x02de0848],ECX      ; 00558bcc | DAT_02de0848
+    MOV dword ptr [0x02de0848],ECX      ; 00558bcc | g_InputReadIndex
         ;   Label: LAB_00558bcc
-    MOV dword ptr [0x02de084c],EDX      ; 00558bd2 | DAT_02de084c
+    MOV dword ptr [0x02de084c],EDX      ; 00558bd2 | g_InputWriteIndex
     POP EBX                             ; 00558bd8
     RET                                 ; 00558bd9
 

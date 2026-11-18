@@ -1,0 +1,295 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 143,
+    "complexity_score": 130,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 60,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 203
+  },
+  "cross_references": [
+    {
+      "addr": "004f70a0",
+      "from_addr": "004f71bb",
+      "name": "core_mission.cpp_CDemonMission_process_FUN_004f70a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040dbe0",
+    "address_range": [
+      [
+        "0040dbe0",
+        "0040dd9b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0",
+    "signature": "void __cdecl engine_alphabit_cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0(CAlphaBitmap *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040db50",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040db50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba18",
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005fba1c",
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "005fba20",
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "01c5faec",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01c6a974",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "01c6a978",
+      "name": "g_Hardware32BitPalette[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6af74",
+      "name": "g_BIT_INTEGER32_01c6af74",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6af78",
+      "name": "g_INT_01c6af78",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6af80",
+      "name": "g_BIT_INTEGER32_01c6af80",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6af84",
+      "name": "g_INT_01c6af84",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6af8c",
+      "name": "g_BIT_INTEGER32_01c6af8c",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6af90",
+      "name": "g_INT_01c6af90",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f71bb",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_process_FUN_004f70a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.455284552845528,
+    "instruction_count": 123,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 36,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 7,
+      "COPY": 116,
+      "INT_ADD": 46,
+      "INT_AND": 164,
+      "INT_CARRY": 8,
+      "INT_DIV": 3,
+      "INT_EQUAL": 87,
+      "INT_LEFT": 11,
+      "INT_LESS": 6,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 25,
+      "INT_OR": 38,
+      "INT_REM": 3,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 10,
+      "INT_SDIV": 2,
+      "INT_SEXT": 11,
+      "INT_SLESS": 46,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 19,
+      "INT_XOR": 11,
+      "INT_ZEXT": 13,
+      "LOAD": 26,
+      "POPCOUNT": 40,
+      "RETURN": 1,
+      "STORE": 20,
+      "SUBPIECE": 16
+    },
+    "pcode_op_count": 794
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040d9a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAlphaBitmap *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)g_Hardware32BitPalette",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)g_Hardware32BitPalette + local_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(ushort *)((int)g_Hardware16BitPalette",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(ushort *)(*(int *)((int)g_ScreenBufferArray + local_1c) + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + iVar3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(ushort *)(*(int *)((int)g_ScreenBufferArray + local_1c) + iVar4) =",
+      "type": "pointer_truncation"
+    }
+  ]
+}

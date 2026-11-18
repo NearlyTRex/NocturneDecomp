@@ -83,8 +83,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
     if ((dVar6 < 0.0) || (1.0 < dVar6)) break;
     this_ptr_01 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,
-                             g_CCharacterActorType_00765a60.name_hash);
+                            (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr_01 != (CCharacter *)0x0) &&
        (EVar5 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
        0 < (int)EVar5)) {
@@ -92,17 +91,16 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
     }
     pCStack_14 = (CGlass *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSetPtr->collision_actor,g_CGlassActorType_01c78c40.name_hash);
+                           (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
     this_ptr_02 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,g_CTriggerActorType_02dd1084.name_hash)
-    ;
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
     CStack_20.x = (float)this_ptr_02;
     if (this_ptr_01 == (CCharacter *)0x0) {
       if (pCStack_14 == (CGlass *)0x0) {
         if (this_ptr_02 == (CTrigger *)0x0) {
           core_fire_cpp_CFireEffect_createStake_FUN_0048b070
-                    (g_CFireEffect_PTR_005b80f0,&g_CDemonSetPtr->collision_impact_position,
+                    (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                      &(this_ptr->base).base.orient.vec,&g_CDemonSetPtr->collision_normal,
                      g_CDemonSetPtr->ground_type);
           break;

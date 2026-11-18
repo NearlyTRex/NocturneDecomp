@@ -9,5 +9,5 @@
 float __cdecl cockpit_drawsurf_cpp_getDashAnimationThreshold_FUN_0045d0e0(void)
 
 {
-  return DAT_005ae6f8;
+  return g_DashAnimationThreshold;
 }

@@ -30,10 +30,10 @@
 ;   TerminatedCString s_Mute_00593ab9
 ;   TerminatedCString s_SfxChannel_dEnabled_00593abe
 ;   TerminatedCString s_SfxChannel_dVol_00593ad2
-;   undefined4 DAT_005bea60
-;   undefined4 DAT_005bea74
-;   undefined4 DAT_005beba0
-;   undefined4 DAT_005beba4
+;   int g_MaxSoundChannels = 0x20
+;   int g_CurrentSoundDevice = -0x1
+;   char[256] g_DefaultDeviceName
+;   undefined4 g_DefaultDeviceName+4
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -62,15 +62,15 @@ section .text
     MOV EBP,dword ptr [ESP + 0x2a0]     ; 00528c8a
     MOV ECX,0x40                        ; 00528c91
     LEA EDI,[ESP + 0x118]               ; 00528c96
-    MOV ESI,0x5beba0                    ; 00528c9d | DAT_005beba0
-    MOV EDX,dword ptr [0x005bea74]      ; 00528ca2 | DAT_005bea74
-    MOVSD.REP ES:EDI,ESI                ; 00528ca8 | DAT_005beba0 | DAT_005beba4
+    MOV ESI,0x5beba0                    ; 00528c9d | g_DefaultDeviceName
+    MOV EDX,dword ptr [0x005bea74]      ; 00528ca2 | g_CurrentSoundDevice
+    MOVSD.REP ES:EDI,ESI                ; 00528ca8 | g_DefaultDeviceName | g_DefaultDeviceName+4
     TEST EDX,EDX                        ; 00528caa
     JL 0x00528cec                       ; 00528cac
         ;   XREF to: 00528cec (CONDITIONAL_JUMP)  ; LAB_00528cec
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 ; 00528cae
         ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
-    MOV ECX,dword ptr [0x005bea74]      ; 00528cb3 | DAT_005bea74
+    MOV ECX,dword ptr [0x005bea74]      ; 00528cb3 | g_CurrentSoundDevice
     CMP EAX,ECX                         ; 00528cb9
     JLE 0x00528cec                      ; 00528cbb
         ;   XREF to: 00528cec (CONDITIONAL_JUMP)  ; LAB_00528cec
@@ -163,7 +163,7 @@ section .text
     XOR EBX,EBX                         ; 00528dab
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 00528dad
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004bda80(CIniFile * this_ptr, char * key, int value)
-    MOV EDX,dword ptr [0x005bea60]      ; 00528db2 | DAT_005bea60
+    MOV EDX,dword ptr [0x005bea60]      ; 00528db2 | g_MaxSoundChannels
     ADD ESP,0xc                         ; 00528db8
     TEST EDX,EDX                        ; 00528dbb
     JLE 0x00528e50                      ; 00528dbd
@@ -208,7 +208,7 @@ section .text
     INC EBX                             ; 00528e30
     CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004bdb20 ; 00528e31
         ;   XREF to: 004bdb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004bdb20(CIniFile * this_ptr, char * key, float value)
-    MOV ECX,dword ptr [0x005bea60]      ; 00528e36 | DAT_005bea60
+    MOV ECX,dword ptr [0x005bea60]      ; 00528e36 | g_MaxSoundChannels
     ADD ESP,0xc                         ; 00528e3c
     CMP EBX,ECX                         ; 00528e3f
     JL 0x00528dc3                       ; 00528e41

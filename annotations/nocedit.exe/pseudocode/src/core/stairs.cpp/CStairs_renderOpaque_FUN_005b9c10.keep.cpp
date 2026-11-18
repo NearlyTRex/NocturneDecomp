@@ -37,7 +37,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
     iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar5 != 0) {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,&SMRGLTextureBasic_00684178);
+                (g_CDemonRendererPtr2,&g_StairsTexture);
 
       // Project 4 corners per stair into vertex_buffer_ptr[N*4 + 0..3]:
       //   (-w/2, rise*N, run*N), (-w/2, rise*N, run*(N+1)),

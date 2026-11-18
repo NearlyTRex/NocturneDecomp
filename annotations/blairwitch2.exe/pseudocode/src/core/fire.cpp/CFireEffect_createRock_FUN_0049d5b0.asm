@@ -15,7 +15,7 @@
 ;   core_fire.cpp_CExplosion_activate_FUN_00498d30 at 00498e5a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c93cd4
+;   int g_RockAllocIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CRock_setup_FUN_004965f0
@@ -28,19 +28,19 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createRock_FUN_0049d5b0
     PUSH EDI                            ; 0049d5b1
     PUSH EBP                            ; 0049d5b2
-    MOV EDX,dword ptr [0x01c93cd4]      ; 0049d5b3 | DAT_01c93cd4
+    MOV EDX,dword ptr [0x01c93cd4]      ; 0049d5b3 | g_RockAllocIndex
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049d5b9
     ADD EAX,EDX                         ; 0049d5c0
     SHL EAX,0x4                         ; 0049d5c2
     INC EDX                             ; 0049d5c5
     ADD EAX,0x1c93cd8                   ; 0049d5c6
-    MOV dword ptr [0x01c93cd4],EDX      ; 0049d5cb | DAT_01c93cd4
+    MOV dword ptr [0x01c93cd4],EDX      ; 0049d5cb | g_RockAllocIndex
     CMP EDX,0x40                        ; 0049d5d1
     JL 0x0049d5e0                       ; 0049d5d4
         ;   XREF to: 0049d5e0 (CONDITIONAL_JUMP)  ; LAB_0049d5e0
     PUSH EBX                            ; 0049d5d6
     XOR EBX,EBX                         ; 0049d5d7
-    MOV dword ptr [0x01c93cd4],EBX      ; 0049d5d9 | DAT_01c93cd4
+    MOV dword ptr [0x01c93cd4],EBX      ; 0049d5d9 | g_RockAllocIndex
     POP EBX                             ; 0049d5df
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0049d5e0
         ;   Label: LAB_0049d5e0

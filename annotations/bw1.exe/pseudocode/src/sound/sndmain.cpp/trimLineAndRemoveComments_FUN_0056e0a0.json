@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 92,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 127
@@ -123,30 +122,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005f2c52",
-      "severity": "mild",
-      "text": "pcVar2 = strstr(line,&DAT_005f2c52);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "while ((line < pcVar2 && (((&DAT_00626114)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "if (((&DAT_00626114)[(byte)(*line + 1)] & 2) == 0) {",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 37,

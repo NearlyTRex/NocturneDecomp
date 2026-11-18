@@ -7,7 +7,7 @@
 ; CHealthItem *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005d99bf+1
+;   TerminatedCString s_modelName_005d99c0
 ;   TerminatedCString s_useCount_005d99ca
 ;   TerminatedCString s_hpRestored_005d99d3
 ;   TerminatedCString s_descriptiveName_005d99de
@@ -32,7 +32,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 004cdeef
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004cdef4
-    PUSH 0x5d99c0                       ; 004cdef7 | s_modelName_005d99bf+1
+    PUSH 0x5d99c0                       ; 004cdef7 | = "modelName"
     LEA EAX,[EBX + 0x2b4]               ; 004cdefc
     PUSH EAX                            ; 004cdf02
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 004cdf03

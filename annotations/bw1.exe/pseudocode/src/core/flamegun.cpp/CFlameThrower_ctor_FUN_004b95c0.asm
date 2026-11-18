@@ -10,7 +10,7 @@
 ;   core_flamegun.cpp_factoryFuncFlameThrower_FUN_004b9590 at 004b95a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006005bc
+;   float g_FLOAT_006005bc = 8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
@@ -42,7 +42,7 @@ section .text
     MOV dword ptr [EBX + 0x2e4],0x0     ; 004b9619
     MOV dword ptr [EBX + 0x2e8],0x41700000 ; 004b9623
     MOV dword ptr [EBX + 0x2ec],0x1     ; 004b962d
-    FLD float ptr [0x006005bc]          ; 004b9637 | DAT_006005bc
+    FLD float ptr [0x006005bc]          ; 004b9637 | g_FLOAT_006005bc
     MOV dword ptr [EBX + 0x584],0x0     ; 004b963d
     ADD ESP,0x8                         ; 004b9647
     MOV dword ptr [EBX + 0x580],0x0     ; 004b964a

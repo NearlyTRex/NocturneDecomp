@@ -9,18 +9,18 @@
 CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_0056f410(CTrigger *this_ptr,uint flags)
 
 {
-  CTrigger *pCVar1;
-  void *ptr;
+  CTrigger *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CTriggerTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CTriggerTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CTrigger *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
+  ptr = (CTrigger *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

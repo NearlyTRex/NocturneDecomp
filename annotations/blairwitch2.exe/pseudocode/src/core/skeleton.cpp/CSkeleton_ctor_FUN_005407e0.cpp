@@ -10,10 +10,9 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_005407e0(CSkeleton *thi
 
 {
   CSkeleton *pCVar1;
-  uint unaff_retaddr;
   
-  FUN_005badc7(8);
-  pCVar1 = (CSkeleton *)core_moon_cpp_FUN_00502760(unaff_retaddr);
+  __CHK(8);
+  pCVar1 = (CSkeleton *)core_moon_cpp_CMotionList_ctor_FUN_00502760(&this_ptr->motion_list);
   pCVar1->bone_count = 0;
   pCVar1->frame_count = 0;
   pCVar1->bone_angle_frames = (CQuaternion4f *)0x0;

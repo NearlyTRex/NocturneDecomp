@@ -22,7 +22,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 g_CGameInstance.foul_language_flag
-;   undefined4 g_CMobsterActorType_01ccdbd8.name_hash
+;   undefined4 g_CMobsterClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.enemy_count
 ;
 ; Called Functions:
@@ -147,7 +147,7 @@ section .text
     JGE 0x004dca9a                      ; 004dca4b
         ;   XREF to: 004dca9a (CONDITIONAL_JUMP)  ; LAB_004dca9a
     MOV EDX,dword ptr [ESP + 0x68]      ; 004dca4d
-    MOV ECX,dword ptr [0x01ccdc10]      ; 004dca51 | g_CMobsterActorType_01ccdbd8.name_hash
+    MOV ECX,dword ptr [0x01ccdc10]      ; 004dca51 | g_CMobsterClassInfo.name_hash
     ADD EAX,EDX                         ; 004dca57
     PUSH ECX                            ; 004dca59
     MOV ECX,dword ptr [EAX + 0x150bf8]  ; 004dca5a

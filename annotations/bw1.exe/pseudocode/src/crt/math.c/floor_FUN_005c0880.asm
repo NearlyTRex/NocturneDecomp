@@ -16,15 +16,15 @@
 ;   core_boneguy.cpp_hsvToRgb_FUN_0041b590 at 0041b6b8
 ;   core_boxactor.cpp_CBoxActor_process_FUN_00422000 at 0042203f
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00425b00 at 00425be2
-;   core_course.cpp_FUN_00447fb0 at 004481a8
+;   core_course.cpp_CCourse_interpolate_FUN_00447fb0 at 004481a8
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_0048b880 at 0048b904
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_0048b150 at 0048b1a9
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0048ee90 at 0048eead
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40 at 0048ef5d
-;   core_dtrace.cpp_FUN_0048b150 at 0048b1a9
-;   core_dtrace.cpp_FUN_0048b880 at 0048b904
 ;   ... and 17 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa9f4
+;   double g_MathDomainAdjustment = -1
 ;
 ; Called Functions:
 ;   crt_math.c_modf_FUN_005c3166
@@ -57,7 +57,7 @@ section .text
     JBE 0x005c08b9                      ; 005c08ab
         ;   XREF to: 005c08b9 (CONDITIONAL_JUMP)  ; LAB_005c08b9
     FLD double ptr [EBP + -0x14]        ; 005c08ad
-    FADD double ptr [0x005fa9f4]        ; 005c08b0 | DAT_005fa9f4
+    FADD double ptr [0x005fa9f4]        ; 005c08b0 | g_MathDomainAdjustment
     FSTP double ptr [EBP + -0x14]       ; 005c08b6
     MOV EAX,dword ptr [EBP + -0x14]     ; 005c08b9
         ;   Label: LAB_005c08b9

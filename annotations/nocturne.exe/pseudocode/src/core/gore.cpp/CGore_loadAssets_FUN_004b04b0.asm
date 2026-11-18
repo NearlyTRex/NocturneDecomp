@@ -11,17 +11,17 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005b96d4
-;   undefined4 DAT_005b96ec
-;   undefined4 DAT_005b9704
-;   undefined4 DAT_005b974c
-;   undefined4 DAT_005b9764
-;   undefined4 DAT_005b98cc
-;   undefined4 DAT_005b9d4c
-;   undefined4 DAT_005b9d64
-;   undefined4 DAT_005ba004
-;   undefined4 DAT_005ba84c
-;   undefined4 DAT_01b4d738
+;   SMRGLTextureBasic g_BloodParticleTexture
+;   SMRGLTextureBasic[4] g_BloodSplatTextures
+;   undefined4 g_BloodSplatTextures[1].base.type
+;   SMRGLTextureBasic[64] g_BloodSplatAnimTextures
+;   undefined4 g_BloodSplatAnimTextures[1].base.type
+;   undefined4 g_BloodSplatAnimTextures[16].base.type
+;   SMRGLTextureBasic[116] g_BloodPoolAnimTextures
+;   undefined4 g_BloodPoolAnimTextures[1].base.type
+;   undefined4 g_BloodPoolAnimTextures[29].base.type
+;   SMRGLTextureBasic g_FootstepTexture
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
@@ -35,18 +35,18 @@ section .text
     PUSH ESI                            ; 004b04b1
     PUSH EDI                            ; 004b04b2
     PUSH EBP                            ; 004b04b3
-    PUSH 0x5b96d4                       ; 004b04b4 | DAT_005b96d4
+    PUSH 0x5b96d4                       ; 004b04b4 | g_BloodParticleTexture
     MOV EDX,dword ptr [0x005ae704]      ; 004b04b9 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 004b04bf | DAT_01b4d738
-    MOV EBX,0x5b96ec                    ; 004b04c0 | DAT_005b96ec
+    PUSH EDX                            ; 004b04bf | g_CDemonRenderer_01b4d738
+    MOV EBX,0x5b96ec                    ; 004b04c0 | g_BloodSplatTextures
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b04c5
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-    LEA ESI,[EBX + 0x60]                ; 004b04ca | DAT_005b974c
+    LEA ESI,[EBX + 0x60]                ; 004b04ca | g_BloodSplatAnimTextures
     ADD ESP,0x8                         ; 004b04cd
-    PUSH EBX                            ; 004b04d0 | DAT_005b96ec | DAT_005b9704
+    PUSH EBX                            ; 004b04d0 | g_BloodSplatTextures | g_BloodSplatTextures[1].base.type
         ;   Label: LAB_004b04d0
     MOV ECX,dword ptr [0x005ae704]      ; 004b04d1 | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 004b04d7 | DAT_01b4d738
+    PUSH ECX                            ; 004b04d7 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b04d8
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 004b04dd
@@ -54,17 +54,17 @@ section .text
     CMP EBX,ESI                         ; 004b04e3
     JNZ 0x004b04d0                      ; 004b04e5
         ;   XREF to: 004b04d0 (CONDITIONAL_JUMP)  ; LAB_004b04d0
-    MOV EBP,0x5b974c                    ; 004b04e7 | DAT_005b974c
+    MOV EBP,0x5b974c                    ; 004b04e7 | g_BloodSplatAnimTextures
     XOR EDI,EDI                         ; 004b04ec
     ADD EBP,0x180                       ; 004b04ee
     IMUL EBX,EDI,0x180                  ; 004b04f4
         ;   Label: LAB_004b04f4
     MOV ESI,EBP                         ; 004b04fa
-    ADD EBX,0x5b974c                    ; 004b04fc | DAT_005b974c
-    PUSH EBX                            ; 004b0502 | DAT_005b974c | DAT_005b9764 | DAT_005b98cc
+    ADD EBX,0x5b974c                    ; 004b04fc | g_BloodSplatAnimTextures
+    PUSH EBX                            ; 004b0502 | g_BloodSplatAnimTextures | g_BloodSplatAnimTextures[1].base.type | g_BloodSplatAnimTextures[16].base.type
         ;   Label: LAB_004b0502
     MOV EAX,[0x005ae704]                ; 004b0503 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 004b0508 | DAT_01b4d738
+    PUSH EAX                            ; 004b0508 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b0509
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 004b050e
@@ -77,17 +77,17 @@ section .text
     CMP EDI,0x4                         ; 004b051f
     JL 0x004b04f4                       ; 004b0522
         ;   XREF to: 004b04f4 (CONDITIONAL_JUMP)  ; LAB_004b04f4
-    MOV EBP,0x5b9d4c                    ; 004b0524 | DAT_005b9d4c
+    MOV EBP,0x5b9d4c                    ; 004b0524 | g_BloodPoolAnimTextures
     XOR EDI,EDI                         ; 004b0529
     ADD EBP,0x2b8                       ; 004b052b
     IMUL EBX,EDI,0x2b8                  ; 004b0531
         ;   Label: LAB_004b0531
     MOV ESI,EBP                         ; 004b0537
-    ADD EBX,0x5b9d4c                    ; 004b0539 | DAT_005b9d4c
-    PUSH EBX                            ; 004b053f | DAT_005b9d4c | DAT_005b9d64 | DAT_005ba004
+    ADD EBX,0x5b9d4c                    ; 004b0539 | g_BloodPoolAnimTextures
+    PUSH EBX                            ; 004b053f | g_BloodPoolAnimTextures | g_BloodPoolAnimTextures[1].base.type | g_BloodPoolAnimTextures[29].base.type
         ;   Label: LAB_004b053f
     MOV EDX,dword ptr [0x005ae704]      ; 004b0540 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 004b0546 | DAT_01b4d738
+    PUSH EDX                            ; 004b0546 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b0547
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 004b054c
@@ -100,9 +100,9 @@ section .text
     CMP EDI,0x4                         ; 004b055d
     JL 0x004b0531                       ; 004b0560
         ;   XREF to: 004b0531 (CONDITIONAL_JUMP)  ; LAB_004b0531
-    PUSH 0x5ba84c                       ; 004b0562 | DAT_005ba84c
+    PUSH 0x5ba84c                       ; 004b0562 | g_FootstepTexture
     MOV ECX,dword ptr [0x005ae704]      ; 004b0567 | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 004b056d | DAT_01b4d738
+    PUSH ECX                            ; 004b056d | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b056e
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004b0573

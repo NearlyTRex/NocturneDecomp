@@ -45,9 +45,9 @@ int __cdecl CDarkwolf::shouldIgnoreForTargeting(CDarkwolf *this_ptr);
 // Address: 00598f30
 void __cdecl CDarkwolf::archive(CDarkwolf *this_ptr);
 
-// Original: core_darkwolf.cpp_FUN_00598fb0
+// Original: core_darkwolf.cpp_factoryFuncWhitewolf_FUN_00598fb0
 // Address: 00598fb0
-void FUN_00598fb0(void);
+CWhitewolf * __cdecl factoryFuncWhitewolf(void);
 
 // Original: core_darkwolf.cpp_CWhitewolf_getActorType_FUN_00598fd0
 // Address: 00598fd0

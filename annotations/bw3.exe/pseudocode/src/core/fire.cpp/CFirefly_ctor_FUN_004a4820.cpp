@@ -12,6 +12,6 @@ CFirefly * __cdecl core_fire_cpp_CFirefly_ctor_FUN_004a4820(CFirefly *this_ptr)
   CFirefly *pCVar1;
   
   pCVar1 = (CFirefly *)core_particle_cpp_CParticle_ctor_FUN_00509e10(&this_ptr->base);
-  (pCVar1->base).vtable = (CParticle_vtable *)&g_CFireflyVTable;
+  (pCVar1->base).vtable = (CParticle_vtable *)g_CFireflyVTable;
   return pCVar1;
 }

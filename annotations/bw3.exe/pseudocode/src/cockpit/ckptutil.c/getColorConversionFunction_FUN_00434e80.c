@@ -1,0 +1,22 @@
+// Name: cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80
+// Address: 00434e80
+// Address Range: [[00434e80, 00434e8f]]
+// Convention: __cdecl
+// Signature: ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80(void)
+
+#include "nocturne.h"
+
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80(void)
+
+{
+  if (g_INT_005fba20 == 8) {
+    if (g_MMXSupported != 0) {
+      return cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00434d42;
+    }
+    return cockpit_ckptutil_c_optimizedMemcpy_FUN_00434c48;
+  }
+  if (g_INT_005fba20 != 0x10) {
+    return cockpit_ckptutil_c_expandIndexedToRGB_FUN_00434c1a;
+  }
+  return cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_00434e50;
+}

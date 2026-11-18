@@ -11,7 +11,7 @@
 ;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dcbe7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d99f4
+;   double g_DOUBLE_005d99f4 = 100
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
     FLD float ptr [EDX + 0x434]         ; 004cdfa1
     FADD float ptr [ECX + 0x25a8]       ; 004cdfa7
     FST float ptr [ECX + 0x25a8]        ; 004cdfad
-    FCOMP double ptr [0x005d99f4]       ; 004cdfb3 | DAT_005d99f4
+    FCOMP double ptr [0x005d99f4]       ; 004cdfb3 | g_DOUBLE_005d99f4
     FNSTSW AX                           ; 004cdfb9
     SAHF                                ; 004cdfbb
     JBE 0x004cdfc8                      ; 004cdfbc

@@ -41,11 +41,13 @@ The scripts are imported by name, as they import each other: `conftest.py` puts
 
 ## Files not yet covered
 
-Coverage started from nothing, so the files without tests yet are listed twice in
-`pyproject.toml`: in `[tool.coverage.run] omit`, which keeps them out of the 100% floor, and in
-`[tool.ruff.lint.per-file-ignores]`, which keeps them out of the lint. A file leaves both lists in
-the change that adds its tests and clears its lint. `unit/meta/test_uncovered_lists.py` checks the
-two lists agree and name only files that exist. Nothing is ever added to them.
+Coverage started from nothing, so the files without tests yet are listed three times in
+`pyproject.toml`: in `[tool.coverage.run] omit`, which keeps them out of the 100% floor, in
+`[tool.ruff.lint.per-file-ignores]`, which keeps them out of the lint, and in `[tool.testrex]
+coverage_omit_allowed`, without which pytest-testrex fails every omit as coverage raised without a
+test. A file leaves all three in the change that adds its tests and clears its lint.
+`unit/meta/test_uncovered_lists.py` checks the three agree and name only files that exist. Nothing
+is ever added to them.
 
 ## The meta suite
 

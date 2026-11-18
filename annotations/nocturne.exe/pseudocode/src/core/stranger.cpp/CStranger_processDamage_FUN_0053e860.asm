@@ -429,7 +429,7 @@ section .text
     CMP dword ptr [EBX + 0x1faa0],0x0   ; 0053ec49
     JNZ 0x0053ec87                      ; 0053ec50
         ;   XREF to: 0053ec87 (CONDITIONAL_JUMP)  ; LAB_0053ec87
-    MOV EDX,dword ptr [0x02dd1008]      ; 0053ec52 | g_CTommyGunActorType_02dd0fd0.name_hash
+    MOV EDX,dword ptr [0x02dd1008]      ; 0053ec52 | g_CTommyGunClassInfo.name_hash
     PUSH EDX                            ; 0053ec58
     MOV ECX,dword ptr [ESI + 0x34]      ; 0053ec59
     PUSH ECX                            ; 0053ec5c

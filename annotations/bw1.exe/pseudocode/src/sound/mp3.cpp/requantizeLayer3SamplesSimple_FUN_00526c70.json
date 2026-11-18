@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 218,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 98,
-    "suspect_count": 11,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 343
   },
@@ -39,14 +38,14 @@
   "globals": [
     {
       "addr": "0061f930",
-      "name": "DAT_0061f930",
-      "type": "undefined4",
+      "name": "g_MpegRequantizationScaleTable",
+      "type": "double[17]",
       "value": null
     },
     {
       "addr": "0061f9b8",
-      "name": "DAT_0061f9b8",
-      "type": "undefined4",
+      "name": "g_MpegRequantizationOffsetTable",
+      "type": "double[17]",
       "value": null
     }
   ],
@@ -381,22 +380,6 @@
       "severity": "moderate",
       "text": "(uint)local_58[*(int *)((int)quantized_samples + local_54 + local_1c * 0x80)].",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_0061f9b8",
-      "severity": "mild",
-      "text": "(&DAT_0061f9b8 + local_58[*local_20].requantization_index * 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_0061f930",
-      "severity": "mild",
-      "text": "(&DAT_0061f930 + local_58[*local_20].requantization_index * 8);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

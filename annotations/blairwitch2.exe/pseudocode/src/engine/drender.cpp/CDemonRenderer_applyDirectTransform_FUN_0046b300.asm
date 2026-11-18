@@ -9,7 +9,7 @@
 ; CVector3i *      Stack[0xc]:4   rotation
 ;
 ; XREF[11]:
-;   core_bwspart.cpp_FUN_005a86a0 at 005a8765
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a8765
 ;   core_fire.cpp_CFireball_render_FUN_00495ca0 at 00495d00
 ;   core_fire.cpp_CFirefly_render_FUN_00495150 at 0049542b
 ;   core_fire.cpp_CLeaf_render_FUN_004968d0 at 004968fc

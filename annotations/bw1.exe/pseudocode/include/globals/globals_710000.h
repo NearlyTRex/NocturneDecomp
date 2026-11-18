@@ -4,35 +4,51 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/structs/SRenderBufferEntry.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x710000
 // =============================================================================
 
+// SRenderBufferEntry[256]
+extern SRenderBufferEntry g_RenderBufferPool[256];
+
+// int
+extern int g_StoredWindowWidth;
+extern int g_StoredWindowHeight;
+extern int g_StoredClipLeft;
+extern int g_StoredClipTop;
+extern int g_StoredClipRight;
+extern int g_StoredClipBottom;
+extern int g_StoredBitsPerPixel;
+extern int g_ScreenBufferStride;
+extern int g_CurrentPolygonColor;
+extern int g_PlaneTestCount;
+extern int g_BypassClipping;
+extern int g_INT_00713a70;
+extern int g_TexturesDisabled;
+extern int g_INT_00713a78;
+extern int g_CullingMode;
+extern int g_CurrentInvertedColor;
+extern int g_RenderResult;
+extern int g_StoredX;
+extern int g_StoredY;
+extern int g_StoredZ;
+extern int g_RenderBufferEnabled;
+extern int g_RenderBufferCount;
+
+// int[24]
+extern int g_ProcessedVertexIndices[24];
+
+// uint
+extern uint g_ProcessedVertexOffset;
+extern uint g_ProcessedVertexBackupOffset;
+
 // undefined4
-extern undefined4 DAT_007135b4;
-extern undefined4 DAT_007135b8;
-extern undefined4 DAT_007135c4;
-extern undefined4 DAT_007135c8;
-extern undefined4 DAT_007135e4;
-extern undefined4 DAT_007135e8;
-extern undefined4 DAT_007135f4;
-extern undefined4 DAT_007135f8;
-extern undefined4 DAT_0071362c;
 extern undefined4 DAT_00713638;
-extern undefined4 DAT_00713a5c;
-extern undefined4 DAT_00713a60;
-extern undefined4 DAT_00713a68;
-extern undefined4 DAT_00713a6c;
-extern undefined4 DAT_00713a70;
-extern undefined4 DAT_00713a74;
-extern undefined4 DAT_00713a78;
-extern undefined4 DAT_00713a7c;
-extern undefined4 DAT_00713a88;
-extern undefined4 DAT_00713a8c;
-extern undefined4 DAT_00713a90;
-extern undefined4 DAT_00713a98;
-extern undefined4 DAT_00713a9c;
-extern undefined4 DAT_00713af8;
-extern undefined4 DAT_00713afc;
+
+// void*
+extern void* g_SoftwareZBuffer;
+extern void* g_StoredMappedFrameBuffer;
+extern void* g_CurrentVertexData;
 

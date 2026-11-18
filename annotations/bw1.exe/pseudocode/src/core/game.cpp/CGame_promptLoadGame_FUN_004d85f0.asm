@@ -21,10 +21,10 @@
 ;   TerminatedCString s_save_005e3493
 ;   TerminatedCString s_Select_file_to_load_005e3498
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   undefined4 DAT_01cd05c0
-;   undefined4 DAT_01cd05c1
-;   undefined4 DAT_01cd05c2
-;   undefined4 DAT_01cd05c3
+;   char[256] g_CurrentSaveFile
+;   undefined4 g_CurrentSaveFile+1
+;   undefined4 g_CurrentSaveFile+2
+;   undefined4 g_CurrentSaveFile+3
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0
@@ -48,7 +48,7 @@ section .text
     PUSH 0x0                            ; 004d860a
     PUSH 0x0                            ; 004d860c
     MOV dword ptr [EBX + 0x9f8],0x0     ; 004d860e
-    PUSH 0x1cd05c0                      ; 004d8618 | DAT_01cd05c0
+    PUSH 0x1cd05c0                      ; 004d8618 | g_CurrentSaveFile
     MOV byte ptr [EBX + 0x9fc],0x0      ; 004d861d
     CALL crt_string.c_splitpath_FUN_005c2238 ; 004d8624
         ;   XREF to: 005c2238 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005c2238(char * path, char * drive, char * dir, char * fname, ...)
@@ -75,13 +75,13 @@ section .text
         ;   Label: LAB_004d865e
     MOV EDI,ESP                         ; 004d8663
     PUSH EDI                            ; 004d8665
-    MOV AL,byte ptr [ESI]               ; 004d8666 | DAT_01cd05c0 | DAT_01cd05c2
+    MOV AL,byte ptr [ESI]               ; 004d8666 | g_CurrentSaveFile | g_CurrentSaveFile+2
         ;   Label: LAB_004d8666
     MOV byte ptr [EDI],AL               ; 004d8668
     CMP AL,0x0                          ; 004d866a
     JZ 0x004d867e                       ; 004d866c
         ;   XREF to: 004d867e (CONDITIONAL_JUMP)  ; LAB_004d867e
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d866e | DAT_01cd05c1 | DAT_01cd05c3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d866e | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD ESI,0x2                         ; 004d8671
     MOV byte ptr [EDI + 0x1],AL         ; 004d8674
     ADD EDI,0x2                         ; 004d8677

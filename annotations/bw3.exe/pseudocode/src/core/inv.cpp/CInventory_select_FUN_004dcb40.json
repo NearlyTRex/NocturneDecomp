@@ -2,28 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 244,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
-    "suspect_count": 10,
+    "pseudocode_lines": 117,
+    "suspect_count": 8,
     "suspect_types": [
       "derived_field_index_pun",
-      "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 367
+    "total_lines": 370
   },
   "cross_references": [
     {
       "addr": "004d3c90",
       "from_addr": "004d3d8e",
-      "name": "core_hero.cpp_FUN_004d3c90",
+      "name": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,7 +61,7 @@
     {
       "addr": "004d20c0",
       "is_variadic": false,
-      "name": "core_health.cpp_FUN_004d20c0"
+      "name": "core_health.cpp_CHealthItem_useItem_FUN_004d20c0"
     },
     {
       "addr": "004dbaa0",
@@ -78,7 +76,7 @@
     {
       "addr": "004dd2d0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dd2d0"
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0"
     },
     {
       "addr": "004d9e40",
@@ -88,7 +86,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "00508960",
@@ -147,8 +145,8 @@
     },
     {
       "addr": "005c65c5",
-      "name": "DAT_005c65c5",
-      "type": "undefined4",
+      "name": "s_anon_005c65c5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -159,15 +157,15 @@
     },
     {
       "addr": "005c65d7",
-      "name": "DAT_005c65d7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c65d7",
+      "type": "double",
+      "value": "98"
     },
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "005fe9dc",
@@ -201,20 +199,20 @@
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -224,7 +222,7 @@
       {
         "call_addr": "004d3d8e",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d3c90",
+        "caller": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -235,7 +233,7 @@
       {
         "call_addr": "004d3e07",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d3c90",
+        "caller": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -389,22 +387,6 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_005c65c5",
-      "severity": "mild",
-      "text": "pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c65c5);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 49,
       "match": "do {",
@@ -462,9 +444,9 @@
     },
     {
       "description": "'pCVar3[4].create_event + 0x28' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x28 = 0x600, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CWaterActor::vertices[27] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 32,
+      "line": 30,
       "severity": "moderate",
-      "text": "(0x01C6E360,pCVar3[4].create_event + 0x28);",
+      "text": "(g_CEventListPtr,pCVar3[4].create_event + 0x28);",
       "type": "derived_field_index_pun"
     }
   ]

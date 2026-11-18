@@ -2,21 +2,26 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 157,
-    "cross_reference_count": 1,
+    "complexity_score": 142,
+    "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "carry_arith_idiom",
-      "concat_reconstruction",
-      "undefined_data"
+      "concat_reconstruction"
     ],
     "total_lines": 169
   },
   "cross_references": [
+    {
+      "addr": "00431070",
+      "from_addr": "004311df",
+      "name": "engine_clipper.c_clipPolygonFarPlane_FUN_00431070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00431330",
       "from_addr": "00431ccb",
@@ -40,13 +45,13 @@
   "globals": [
     {
       "addr": "00609b34",
-      "name": "DAT_00609b34",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FarPlaneDistance",
+      "type": "int",
+      "value": "0x7fffffff"
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "00431ccb",
@@ -63,6 +68,28 @@
         "call_addr": "00431d39",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004311df",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonFarPlane_FUN_00431070",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00431251",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonFarPlane_FUN_00431070",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,14 +199,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00609b34",
-      "severity": "mild",
-      "text": "uVar2 = DAT_00609b34 - (v1->projected_vertex).transformed_z;",
-      "type": "undefined_data"
-    },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 26,

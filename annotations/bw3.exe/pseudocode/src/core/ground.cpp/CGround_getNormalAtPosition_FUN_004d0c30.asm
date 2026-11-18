@@ -103,7 +103,7 @@ section .text
     LEA ESI,[ESP + 0x10]                ; 004d0d29
     MOV dword ptr [ESP + 0x30],EBX      ; 004d0d2d
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0 ; 004d0d31
-        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0()
+        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x10]                ; 004d0d36
     ADD ESP,0x4                         ; 004d0d3a
         ;   Label: LAB_004d0d3a
@@ -164,7 +164,7 @@ section .text
     LEA ESI,[ESP + 0x34]                ; 004d0dc4
     LEA EDI,[ESP + 0x28]                ; 004d0dc8
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0 ; 004d0dcc
-        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0()
+        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x34]                ; 004d0dd1
     JMP 0x004d0d3a                      ; 004d0dd5
         ;   XREF to: 004d0d3a (UNCONDITIONAL_JUMP)  ; LAB_004d0d3a
@@ -219,7 +219,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 004d0e6a
     MOV dword ptr [ESP + 0x30],EBX      ; 004d0e6e
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0 ; 004d0e72
-        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0()
+        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x4]                 ; 004d0e77
     JMP 0x004d0d3a                      ; 004d0e7b
         ;   XREF to: 004d0d3a (UNCONDITIONAL_JUMP)  ; LAB_004d0d3a
@@ -260,7 +260,7 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 004d0eea
     LEA EDI,[ESP + 0x28]                ; 004d0eee
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0 ; 004d0ef2
-        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0()
+        ;   XREF to: 004e61c0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_004e61c0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x1c]                ; 004d0ef7
     JMP 0x004d0d3a                      ; 004d0efb
         ;   XREF to: 004d0d3a (UNCONDITIONAL_JUMP)  ; LAB_004d0d3a

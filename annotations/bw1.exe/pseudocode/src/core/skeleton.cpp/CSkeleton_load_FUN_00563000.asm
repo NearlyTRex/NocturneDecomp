@@ -11,18 +11,18 @@
 ;   core_skeleton.cpp_loadSkeleton_FUN_0056b650 at 0056b6de
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f1b41
-;   undefined4 DAT_005f1b44
+;   TerminatedCString s_rb_005f1b41
+;   TerminatedCString s_data_005f1b44
 ;   TerminatedCString s_core_skeleton_cpp_005f1b49
 ;   TerminatedCString s_CSkeleton_load_Can_t_ope_005f1b5e
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CSkeleton_loadStream_FUN_00563090
 ;   crt_stdio.c_fclose_FUN_005c0d10
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;
 ; *****************************************************************************
 
@@ -34,11 +34,11 @@ section .text
     PUSH EDI                            ; 00563002
     MOV EDI,dword ptr [ESP + 0x10]      ; 00563003
     MOV ESI,dword ptr [ESP + 0x14]      ; 00563007
-    PUSH 0x5f1b41                       ; 0056300b | DAT_005f1b41
+    PUSH 0x5f1b41                       ; 0056300b | = "rb"
     PUSH ESI                            ; 00563010
-    PUSH 0x5f1b44                       ; 00563011 | DAT_005f1b44
-    CALL engine_dosio.cpp_FUN_00479180  ; 00563016
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    PUSH 0x5f1b44                       ; 00563011 | = "data"
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 00563016
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0056301b
     MOV EBX,EAX                         ; 0056301e
     TEST EAX,EAX                        ; 00563020
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_0056304d
     PUSH EBX                            ; 0056304e
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0056304f
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 00563054
     POP EDI                             ; 00563057
     POP ESI                             ; 00563058
@@ -80,10 +80,10 @@ section .text
     MOV EDX,0x5f1b49                    ; 0056305c | = "..\\core\\skeleton.cpp"
     MOV ECX,0x101                       ; 00563061
     PUSH 0x5f1b5e                       ; 00563066 | = "CSkeleton::load - Can't open %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0056306b | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00563071 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563077
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0056306b | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00563071 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563077
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0056307c
     JMP 0x00563024                      ; 0056307f
         ;   XREF to: 00563024 (UNCONDITIONAL_JUMP)  ; LAB_00563024

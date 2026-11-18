@@ -16,7 +16,7 @@
 ;   core_cloth.cpp_CCloth_render_FUN_0043f460 at 0043f484
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_00448060 at 0044816f
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_00460fa0 at 00460fd5
-;   core_dpart.cpp_FUN_00466830 at 0046688f
+;   core_dpart.cpp_CDemonPart_renderFaces_FUN_00466830 at 0046688f
 ;   core_glass.cpp_CGlass_renderBackground_FUN_004cab40 at 004cac41
 ;   core_glass.cpp_CGlass_renderOpaque_FUN_004ca5a0 at 004ca69f
 ;   core_glass.cpp_CGlass_renderTransparent_FUN_004ca770 at 004ca86e
@@ -26,16 +26,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005d06b7
 ;   TerminatedCString s_CDemonSet_rotateVerticie_005d06c7
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_005388e0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
-;   engine_special.cpp_FUN_005632a3
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 ;
 ; *****************************************************************************
 
@@ -54,25 +54,25 @@ section .text
         ;   XREF to: 00538b5a (CONDITIONAL_JUMP)  ; LAB_00538b5a
     PUSH 0x1                            ; 00538aeb
         ;   Label: LAB_00538aeb
-    MOV EDI,dword ptr [0x005f2afc]      ; 00538aed | DAT_005f2afc
-    PUSH EDI                            ; 00538af3 | DAT_01bdd7e4
+    MOV EDI,dword ptr [0x005f2afc]      ; 00538aed | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDI                            ; 00538af3 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500 ; 00538af4
         ;   XREF to: 0046d500 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(CDemonRenderer * this_ptr, int enabled)
-    MOV ESI,dword ptr [0x005f2afc]      ; 00538af9 | DAT_005f2afc
+    MOV ESI,dword ptr [0x005f2afc]      ; 00538af9 | g_CDemonRenderer_PTR_005f2afc
     ADD ESP,0x8                         ; 00538aff
     XOR EAX,EAX                         ; 00538b02
     XOR EDI,EDI                         ; 00538b04
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00538b06
     MOV dword ptr [ESP],EAX             ; 00538b0a
-    MOV ESI,dword ptr [ESI]             ; 00538b0d | DAT_01bdd7e4
+    MOV ESI,dword ptr [ESI]             ; 00538b0d | g_CDemonRenderer_01bdd7e4
     TEST EDX,EDX                        ; 00538b0f
     JLE 0x00538b37                      ; 00538b11
         ;   XREF to: 00538b37 (CONDITIONAL_JUMP)  ; LAB_00538b37
     PUSH EBP                            ; 00538b13
         ;   Label: LAB_00538b13
     PUSH ESI                            ; 00538b14
-    CALL engine_special.cpp_FUN_005632a3 ; 00538b15
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 00538b15
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     MOV AH,byte ptr [ESI + 0x13]        ; 00538b1a
     ADD ESP,0x8                         ; 00538b1d
     TEST AH,0x80                        ; 00538b20
@@ -112,17 +112,17 @@ section .text
     MOV ECX,0x5d06b7                    ; 00538b60 | = "..\\core\\set.cpp"
     MOV EBX,0xea9                       ; 00538b65
     PUSH 0x5d06c7                       ; 00538b6a | = "CDemonSet::rotateVerticies - tried to..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00538b6f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00538b75 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00538b7b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00538b6f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00538b75 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00538b7b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00538b80
     JMP 0x00538aeb                      ; 00538b83
         ;   XREF to: 00538aeb (UNCONDITIONAL_JUMP)  ; LAB_00538aeb
     PUSH 0x0                            ; 00538b88
         ;   Label: LAB_00538b88
-    MOV ESI,dword ptr [0x005f2afc]      ; 00538b8a | DAT_005f2afc
-    PUSH ESI                            ; 00538b90 | DAT_01bdd7e4
+    MOV ESI,dword ptr [0x005f2afc]      ; 00538b8a | g_CDemonRenderer_PTR_005f2afc
+    PUSH ESI                            ; 00538b90 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500 ; 00538b91
         ;   XREF to: 0046d500 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 00538b96

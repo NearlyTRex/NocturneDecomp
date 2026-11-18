@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools *this_ptr)
 
 {
@@ -24,22 +22,23 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c
   int local_14;
   
   bVar10 = 0;
-  if (_DAT_01bcd07c < 1) {
+  if (g_INT_01bcd07c < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 1783;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CEditorTools::closeWindow() called but no window was opened!");
   }
-  iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;
-  puVar7 = *(uint **)(iVar1 + 0x1bcd248);
+  iVar1 = (g_INT_01bcd07c + -1) * 0x1d8;
+  puVar7 = *(uint **)(g_CHAR_ARRAY_01bcd080 + iVar1 + 0x1c8);
   if (puVar7 != (uint *)0x0) {
-    iVar4 = g_BitsPerPixel * (*(int *)(iVar1 + 0x1bcd088) - *(int *)(iVar1 + 0x1bcd080));
+    iVar4 = g_BitsPerPixel *
+            (*(int *)(g_CHAR_ARRAY_01bcd080 + iVar1 + 8) - *(int *)(g_CHAR_ARRAY_01bcd080 + iVar1));
     iVar5 = iVar4 >> 0x1f;
     uVar2 = (int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
-    iVar4 = *(int *)(iVar1 + 0x1bcd084);
-    if (iVar4 < *(int *)(iVar1 + 0x1bcd08c)) {
+    iVar4 = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar1 + 4);
+    if (iVar4 < *(int *)(g_CHAR_ARRAY_01bcd080 + iVar1 + 0xc)) {
       local_14 = iVar4 * 4;
       do {
-        iVar5 = *(int *)(iVar1 + 0x1bcd080) * g_BitsPerPixel;
+        iVar5 = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar1) * g_BitsPerPixel;
         iVar6 = iVar5 >> 0x1f;
         iVar4 = iVar4 + 1;
         puVar8 = puVar7;
@@ -58,7 +57,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c
         }
         puVar7 = (uint *)((int)puVar7 + uVar2);
         local_14 = local_14 + 4;
-      } while (iVar4 < *(int *)(iVar1 + 0x1bcd08c));
+      } while (iVar4 < *(int *)(g_CHAR_ARRAY_01bcd080 + iVar1 + 0xc));
     }
   }
   shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(this_ptr);

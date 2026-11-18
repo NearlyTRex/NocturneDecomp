@@ -6,64 +6,63 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004995a0(CFireball *this_ptr)
 
 {
   int iVar1;
-  uint *puVar2;
+  CMatrix3x3f *pCVar2;
   uint *puVar3;
-  byte bVar4;
-  float10 fVar5;
-  float10 fVar6;
-  float10 fVar7;
+  float *pfVar4;
+  uint *puVar5;
+  byte bVar6;
+  double dVar7;
+  double dVar8;
+  double dVar9;
   float afStackY_1000 [997];
   float local_60;
   float local_54;
   float local_48;
   CVector3i local_18;
   
-  bVar4 = 0;
-  _DAT_01c73674 = 4;
-  _DAT_01c73678 = 0;
-  _DAT_01c7367c = 0;
-  _DAT_01c73680 = 0;
-  _DAT_01c73684 = 0;
-  _DAT_01c73688 = 0;
-  _DAT_01c7368c = 1;
-  _DAT_01c73690 = 2;
-  _DAT_01c73694 = 3;
-  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(DAT_005f2afc,&local_18);
-  _DAT_01c73658 = local_18.x;
-  *(uint *)(&DAT_01c7365c + (uint)bVar4 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);
-  *(uint *)(&DAT_01c73660 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  _DAT_01c7365c = 0;
-  puVar2 = (uint *)(DAT_007e2a54 + 0x10);
+  bVar6 = 0;
+  g_BillboardPrimitive.base.base.count = 4;
+  g_BillboardPrimitive.base.surface_normal.A.i = 0;
+  g_BillboardPrimitive.base.surface_normal.B.i = 0;
+  g_BillboardPrimitive.base.surface_normal.C.i = 0;
+  g_BillboardPrimitive.base.surface_normal.D.i = 0;
+  g_BillboardPrimitive.vertices[0] = 0;
+  g_BillboardPrimitive.vertices[1] = 1;
+  g_BillboardPrimitive.vertices[2] = 2;
+  g_BillboardPrimitive.vertices[3] = 3;
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
+            (g_CDemonRenderer_PTR_005f2afc,&local_18);
+  g_BillboardCameraRight.x = local_18.x;
+  *(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =
+       *(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);
+  *(uint *)((uint)bVar6 * -8 + 0x1c73660 + (uint)bVar6 * -8) =
+       *(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+  g_BillboardCameraRight.y = 0;
+  pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
+  pfVar4 = (float *)&stack0xffffffc0;
+  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *pfVar4 = pCVar2->m[0].x;
+    pCVar2 = (CMatrix3x3f *)((int)pCVar2 + (uint)bVar6 * -8 + 4);
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+  }
   puVar3 = (uint *)&stack0xffffffc0;
+  puVar5 = (uint *)&stack0xffffff98;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *puVar5 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  puVar2 = (uint *)&stack0xffffffc0;
-  puVar3 = (uint *)&stack0xffffff98;
-  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
-  }
-  fVar5 = (float10)_DAT_005c0578;
-  fVar6 = (float10)local_60 * fVar5;
-  fVar7 = (float10)local_54 * fVar5;
-  fVar5 = (float10)local_48 * fVar5;
-  round();
-  round();
-  round();
-  _DAT_01c73664 = (int)ROUND(fVar6);
-  _DAT_01c73668 = (int)ROUND(fVar7);
-  _DAT_01c7366c = (int)ROUND(fVar5);
+  dVar8 = (double)local_54 * -65536;
+  dVar9 = (double)local_48 * -65536;
+  dVar7 = round((double)local_60 * -65536);
+  dVar8 = round(dVar8);
+  dVar9 = round(dVar9);
+  g_BillboardCameraUp.x = (int)ROUND(dVar7);
+  g_BillboardCameraUp.y = (int)ROUND(dVar8);
+  g_BillboardCameraUp.z = (int)ROUND(dVar9);
   return;
 }

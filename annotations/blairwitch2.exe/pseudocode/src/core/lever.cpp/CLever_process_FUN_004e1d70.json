@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 96,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
-    "suspect_count": 2,
+    "pseudocode_lines": 65,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 242
+    "total_lines": 241
   },
   "cross_references": [],
   "function": {
@@ -48,27 +47,27 @@
   "globals": [
     {
       "addr": "005dbf3a",
-      "name": "DAT_005dbf3a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dbf3a",
+      "type": "double",
+      "value": "6"
     },
     {
       "addr": "005dbf42",
-      "name": "DAT_005dbf42",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dbf42",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "005dbf4a",
-      "name": "DAT_005dbf4a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dbf4a",
+      "type": "double",
+      "value": "0.900000000000000"
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     },
     {
       "addr": "0061b5a8",
@@ -182,16 +181,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),",
@@ -201,7 +192,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 20,
         "vtable_addr": "005f94a4"
       }

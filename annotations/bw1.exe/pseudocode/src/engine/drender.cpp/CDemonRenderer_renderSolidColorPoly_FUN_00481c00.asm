@@ -8,20 +8,20 @@
 ; SMRGLPrimitivePoly * Stack[0x8]:4   poly
 ;
 ; XREF[7]:
-;   core_dtrace.cpp_FUN_0048c510 at 0048c924
-;   core_dtri.cpp_FUN_00492300 at 0049243d
+;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_0048c510 at 0048c924
+;   core_dtri.cpp_CDemonTriangle_render_FUN_00492300 at 0049243d
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_005553e0 at 00555446
-;   core_setdir.cpp_FUN_00559c10 at 00559d06
-;   core_setdir.cpp_FUN_00559f80 at 0055ae9b
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055ae9b
+;   core_setdir.cpp_calculateActorVisibility_FUN_00559730 at 00559d06
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_005640d0 at 00564861
 ;   core_water.cpp_CWater_render_FUN_005a9f10 at 005aa522
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bc1240
-;   undefined4 DAT_01bc1244
-;   undefined4 DAT_01c4f02c
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01c51d18
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -52,7 +52,7 @@ section .text
     ADD ECX,0x4                         ; 00481c1f
         ;   Label: LAB_00481c1f
     MOV EBX,dword ptr [EAX + 0x18]      ; 00481c22
-    MOV dword ptr [ECX + 0x1bc123c],EBX ; 00481c25 | DAT_01bc1240 | DAT_01bc1244
+    MOV dword ptr [ECX + 0x1bc123c],EBX ; 00481c25 | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     INC EDX                             ; 00481c2b
     MOV EBX,dword ptr [ESI + 0x4]       ; 00481c2c
     ADD EAX,0xc                         ; 00481c2f
@@ -67,10 +67,10 @@ section .text
         ;   XREF to: 00481c88 (CONDITIONAL_JUMP)  ; LAB_00481c88
     XOR EBP,EBP                         ; 00481c46
     MOV EBX,0x486e26                    ; 00481c48
-    MOV dword ptr [0x01c51d14],EBP      ; 00481c4d | DAT_01c51d14
-    MOV dword ptr [0x01c51d18],EBP      ; 00481c53 | DAT_01c51d18
-    MOV dword ptr [0x01c4f02c],EBX      ; 00481c59 | DAT_01c4f02c
-    PUSH 0x1bc1240                      ; 00481c5f | DAT_01bc1240
+    MOV dword ptr [0x01c51d14],EBP      ; 00481c4d | g_RenderStateFlags
+    MOV dword ptr [0x01c51d18],EBP      ; 00481c53 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c4f02c],EBX      ; 00481c59 | g_ScanlineRenderFunc
+    PUSH 0x1bc1240                      ; 00481c5f | g_VertexIndexBuffer
         ;   Label: LAB_00481c5f
     MOV EDX,dword ptr [ESI + 0x4]       ; 00481c64
     PUSH EDX                            ; 00481c67
@@ -99,9 +99,9 @@ section .text
         ;   Label: LAB_00481c88
     MOV ECX,0x6                         ; 00481c8d
     MOV EAX,0x487148                    ; 00481c92
-    MOV dword ptr [0x01c51d14],EDX      ; 00481c97 | DAT_01c51d14
-    MOV dword ptr [0x01c51d18],ECX      ; 00481c9d | DAT_01c51d18
-    MOV [0x01c4f02c],EAX                ; 00481ca3 | DAT_01c4f02c
+    MOV dword ptr [0x01c51d14],EDX      ; 00481c97 | g_RenderStateFlags
+    MOV dword ptr [0x01c51d18],ECX      ; 00481c9d | g_VertexPreprocessMode
+    MOV [0x01c4f02c],EAX                ; 00481ca3 | g_ScanlineRenderFunc
     JMP 0x00481c5f                      ; 00481ca8
         ;   XREF to: 00481c5f (UNCONDITIONAL_JUMP)  ; LAB_00481c5f
 

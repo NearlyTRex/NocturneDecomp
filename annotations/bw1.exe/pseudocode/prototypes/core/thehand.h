@@ -37,9 +37,9 @@ int __cdecl CTheHand::renderOpaque(CTheHand *this_ptr);
 // Address: 005998d0
 void __cdecl CTheHand::archive(CTheHand *this_ptr);
 
-// Original: core_thehand.cpp_FUN_00599910
+// Original: core_thehand.cpp_CTheHand_findNearbyTarget_FUN_00599910
 // Address: 00599910
-undefined4 FUN_00599910(CDemonActor *param_1,char *param_2);
+int __cdecl CTheHand::findNearbyTarget(CTheHand *this_ptr,char *class_name);
 
 // Original: core_thehand.cpp_CTheHand_attractActorToward_FUN_00599a10
 // Address: 00599a10
@@ -49,9 +49,9 @@ int __cdecl CTheHand::attractActorToward(CTheHand *this_ptr,CDemonActor *actor,C
 // Address: 00599ba0
 int __cdecl CTheHand::shouldIgnoreForTargeting(CTheHand *this_ptr);
 
-// Original: core_thehand.cpp_FUN_00599be0
+// Original: core_thehand.cpp_CTheHand_getHandBoneMatrix_FUN_00599be0
 // Address: 00599be0
-void FUN_00599be0(int param_1);
+CMatrix3x4f * __stack_esi CTheHand::getHandBoneMatrix(CTheHand *this_ptr,CMatrix3x4f *out_matrix);
 
 // Original: core_thehand.cpp_CTheHand_dtor_FUN_00599c20
 // Address: 00599c20

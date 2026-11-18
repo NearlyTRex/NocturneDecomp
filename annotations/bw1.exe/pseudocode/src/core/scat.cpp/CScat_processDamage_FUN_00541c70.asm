@@ -8,9 +8,9 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_scat_die_wav_005ede9e+1
+;   TerminatedCString s_scat_die_wav_005ede9f
 ;   TerminatedCString s_scat_hurt_wav_005edeae
-;   undefined4 DAT_00604c38
+;   float g_FLOAT_00604c38 = 0.5
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   undefined4 g_CGameInstance.god_mode_enabled
@@ -49,7 +49,7 @@ section .text
     TEST ESI,ESI                        ; 00541ca8
     JZ 0x00541cfd                       ; 00541caa
         ;   XREF to: 00541cfd (CONDITIONAL_JUMP)  ; LAB_00541cfd
-    MOV EAX,[0x00604c38]                ; 00541cac | DAT_00604c38
+    MOV EAX,[0x00604c38]                ; 00541cac | g_FLOAT_00604c38
         ;   Label: LAB_00541cac
     MOV dword ptr [EBX + 0xc1d0],EAX    ; 00541cb1
     FLD float ptr [EDI + 0x4]           ; 00541cb7
@@ -121,7 +121,7 @@ section .text
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004e64d0 ; 00541d56
         ;   XREF to: 004e64d0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004e64d0(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
     ADD ESP,0x14                        ; 00541d5b
-    PUSH 0x5ede9f                       ; 00541d5e | s_scat_die_wav_005ede9e+1
+    PUSH 0x5ede9f                       ; 00541d5e | = "scat-die-?.wav"
         ;   Label: LAB_00541d5e
     MOV EAX,dword ptr [EBX + 0x154]     ; 00541d63
     PUSH EBX                            ; 00541d69

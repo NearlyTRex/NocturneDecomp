@@ -15,15 +15,15 @@
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20 at 005732b6
 ;
 ; Referenced Globals:
-;   undefined4 s_allocateHwSample_failed_005f312b+1
-;   undefined4 s_Atried_to_use_Yamaha_WAV_005f32a7+1
-;   undefined4 DAT_02c78ff0
+;   TerminatedCString s_allocateHwSample_failed_005f312c
+;   TerminatedCString s_tried_to_use_Yamaha_WAV_005f32a8
+;   int g_LastSampleAccessIndex
 ;   undefined4 g_SfxSamples[0].ref_count
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].buffer_id
 ;   undefined4 g_SfxSamples[1].is_user_sample
-;   undefined4 DAT_02c80650
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_005c10d0
@@ -72,13 +72,13 @@ section .text
     MOV ESI,ESP                         ; 0056ff0d
     MOV dword ptr [ESP + 0x110],EAX     ; 0056ff0f
     MOVSD.REP ES:EDI,ESI                ; 0056ff16
-    CMP dword ptr [0x02c80650],0x0      ; 0056ff18 | DAT_02c80650
+    CMP dword ptr [0x02c80650],0x0      ; 0056ff18 | g_CSoundDevicePtr
     JZ 0x0056ff78                       ; 0056ff1f
         ;   XREF to: 0056ff78 (CONDITIONAL_JUMP)  ; LAB_0056ff78
     XOR ESI,ESI                         ; 0056ff21
     LEA EDX,[ESP + 0x150]               ; 0056ff23
         ;   Label: LAB_0056ff23
-    MOV EAX,[0x02c80650]                ; 0056ff2a | DAT_02c80650
+    MOV EAX,[0x02c80650]                ; 0056ff2a | g_CSoundDevicePtr
     PUSH EDX                            ; 0056ff2f
     MOV ECX,dword ptr [EAX]             ; 0056ff30
     PUSH EAX                            ; 0056ff32
@@ -87,7 +87,7 @@ section .text
     TEST EAX,EAX                        ; 0056ff39
     JNZ 0x0056ff7a                      ; 0056ff3b
         ;   XREF to: 0056ff7a (CONDITIONAL_JUMP)  ; LAB_0056ff7a
-    MOV EAX,[0x02c78ff0]                ; 0056ff3d | DAT_02c78ff0
+    MOV EAX,[0x02c78ff0]                ; 0056ff3d | g_LastSampleAccessIndex
     MOV EBX,ESI                         ; 0056ff42
     IMUL ECX,EAX,0x1b0                  ; 0056ff44
     INC EAX                             ; 0056ff4a
@@ -110,7 +110,7 @@ section .text
         ;   Label: LAB_0056ff66
     JL 0x0056ff23                       ; 0056ff69
         ;   XREF to: 0056ff23 (CONDITIONAL_JUMP)  ; LAB_0056ff23
-    PUSH 0x5f312c                       ; 0056ff6b | s_allocateHwSample_failed_005f312b+1
+    PUSH 0x5f312c                       ; 0056ff6b | = "allocateHwSample - failed\n"
     CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 0056ff70
         ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 0056ff75
@@ -128,7 +128,7 @@ section .text
     POP ESI                             ; 0056ff90
     POP EBX                             ; 0056ff91
     RET                                 ; 0056ff92
-    PUSH 0x5f32a8                       ; 0056ff93 | s_Atried_to_use_Yamaha_WAV_005f32a7+1
+    PUSH 0x5f32a8                       ; 0056ff93 | = "tried to use Yamaha WAV on non-CE pla..."
         ;   Label: LAB_0056ff93
     CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 0056ff98
         ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)

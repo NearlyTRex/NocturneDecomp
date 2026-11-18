@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 116,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 165
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -45,79 +42,79 @@
     {
       "addr": "0055d723",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055d723"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0055d723"
     }
   ],
   "globals": [
     {
       "addr": "005d18ff",
-      "name": "DAT_005d18ff",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SkyDomeUCoordToAngleScale",
+      "type": "float",
+      "value": "0.0625"
     },
     {
       "addr": "005d1903",
-      "name": "DAT_005d1903",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d1903",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005d190b",
-      "name": "DAT_005d190b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SkyDomeVScale1",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005d1913",
-      "name": "DAT_005d1913",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SkyDomeVCoordToAngleScale",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "005d191b",
-      "name": "DAT_005d191b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SkyDomeVScale2",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005d1923",
-      "name": "DAT_005d1923",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SkyDomeWorldRadius",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "0060d1f4",
-      "name": "DAT_0060d1f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SkyDomeVertexScale",
+      "type": "float",
+      "value": "5"
     },
     {
       "addr": "00622034",
-      "name": "DAT_00622034",
+      "name": "g_SRenderVertex_ARRAY_00622014[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00622038",
-      "name": "DAT_00622038",
+      "name": "g_SRenderVertex_ARRAY_00622014[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0062203c",
-      "name": "DAT_0062203c",
+      "name": "g_SRenderVertex_ARRAY_00622014[0].b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00622040",
-      "name": "DAT_00622040",
+      "name": "g_SRenderVertex_ARRAY_00622014[0].a",
       "type": "undefined4",
       "value": null
     }
@@ -316,46 +313,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_00622034",
-      "severity": "mild",
-      "text": "(&DAT_00622034)[iVar2 * 4] = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_00622038",
-      "severity": "mild",
-      "text": "(&DAT_00622038)[iVar2 * 4] = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_0062203c",
-      "severity": "mild",
-      "text": "(&DAT_0062203c)[iVar2 * 4] = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_00622040",
-      "severity": "mild",
-      "text": "(&DAT_00622040)[iVar2 * 4] = 0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

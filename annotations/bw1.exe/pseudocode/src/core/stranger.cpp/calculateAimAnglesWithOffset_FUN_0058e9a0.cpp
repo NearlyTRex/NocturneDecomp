@@ -1,71 +1,74 @@
 // Name: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0058e9a0
 // Address: 0058e9a0
 // Address Range: [[0058e9a0, 0058eb44]]
-// Convention: unknown
-// Signature: float * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)
+// Convention: __stack2_esi
+// Signature: CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(CVector3f *direction,float *offset_pair,CVector3f *out_angles)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-float * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)
+CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(CVector3f *direction,float *offset_pair,CVector3f *out_angles)
 
 {
   float fVar1;
-  float fVar2;
-  float fVar3;
-  float *unaff_ESI;
-  byte bVar4;
-  float10 fVar5;
-  float *in_stack_00000004;
-  float *in_stack_00000008;
-  float afStackY_1028 [1007];
-  float fStack_40;
-  float fStack_34;
-  float fStack_30;
+  float *pfVar2;
+  byte bVar3;
+  double dVar4;
+  float afStackY_1028 [3];
+  CVector3f *apCStackY_101c [1002];
+  float fStack_4c;
+  CVector3f CStack_40;
+  float afStack_34 [2];
+  CVector3f *apCStack_2c [2];
+  float fStack_24;
+  float fStack_20;
+  float fStack_1c;
+  float fStack_18;
   
-  bVar4 = 0;
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
-  fStack_34 = fStack_40;
-  *(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8);
-  *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  fVar2 = SQRT(in_stack_00000004[2] * in_stack_00000004[2] +
-               *in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1]
-              );
-  if ((float)_DAT_005f6ed1 < fVar2) {
-    fVar1 = -*in_stack_00000008;
-    if ((((float)_DAT_005f6ed1 <= fVar2) &&
-        (fVar3 = SQRT(fVar2 * fVar2 - fVar1 * fVar1) / fVar2, fVar3 < 1.0)) && (0.0 <= fVar3)) {
-      fVar5 = (float10)fVar3;
-      acos();
-      if (0.0 <= fVar1) {
-        fStack_30 = fStack_30 + (float)fVar5;
+  bVar3 = 0;
+  apCStack_2c[1] = out_angles;
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(direction,&CStack_40);
+  afStack_34[0] = CStack_40.x;
+  afStack_34[(uint)bVar3 * -2 + 1] = afStack_34[(uint)bVar3 * -2 + -2];
+  apCStack_2c[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
+       (CVector3f *)afStack_34[(uint)bVar3 * -2 + (uint)bVar3 * -2 + -1];
+  fVar1 = SQRT(direction->z * direction->z +
+               direction->x * direction->x + direction->y * direction->y);
+  if ((float)0.01 < fVar1) {
+    fStack_1c = -*offset_pair;
+    if ((((float)0.01 <= fVar1) &&
+        (dVar4 = (double)(SQRT(fVar1 * fVar1 - fStack_1c * fStack_1c) / fVar1), dVar4 < 1.0)) &&
+       (0.0 <= dVar4)) {
+      dVar4 = acos(dVar4);
+      apCStack_2c[1] = (CVector3f *)(float)dVar4;
+      if (0.0 <= fStack_20) {
+        afStack_34[0] = afStack_34[0] + (float)apCStack_2c[1];
       }
       else {
-        fStack_30 = fStack_30 - (float)fVar5;
+        afStack_34[0] = afStack_34[0] - (float)apCStack_2c[1];
       }
-      fStack_30 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_30);
+      fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_34[0]);
+      afStack_34[0] = fStack_18;
     }
-    fVar1 = in_stack_00000008[1];
-    if (((_DAT_005f6ed1 <= (double)fVar2) &&
-        (fVar2 = SQRT(fVar2 * fVar2 - fVar1 * fVar1) / fVar2, fVar2 < 1.0)) && (0.0 <= fVar2)) {
-      fVar5 = (float10)fVar2;
-      acos();
-      if (0.0 <= fVar1) {
-        fStack_34 = fStack_34 + (float)fVar5;
+    fStack_4c = (float)((ulonglong)(double)fVar1 >> 0x20);
+    fStack_24 = offset_pair[1];
+    if (((0.01 <= (double)fStack_4c) &&
+        (dVar4 = (double)(SQRT(fStack_4c * fStack_4c - fStack_24 * fStack_24) / fStack_4c),
+        dVar4 < 1.0)) && (0.0 <= dVar4)) {
+      dVar4 = acos(dVar4);
+      fStack_20 = (float)dVar4;
+      if (0.0 <= (float)apCStack_2c[1]) {
+        CStack_40.y = CStack_40.y + fStack_20;
       }
       else {
-        fStack_34 = fStack_34 - (float)fVar5;
+        CStack_40.y = CStack_40.y - fStack_20;
       }
-      fStack_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_34);
+      fStack_1c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(CStack_40.y);
+      CStack_40.y = fStack_1c;
     }
   }
-  *unaff_ESI = fStack_34;
-  unaff_ESI[(uint)bVar4 * -2 + 1] = *(float *)((int)&stack0xffffffd0 + (uint)bVar4 * -8);
-  (unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-       *(float *)(&stack0xffffffd4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  return unaff_ESI;
+  pfVar2 = (float *)((int)apCStack_2c[0] + (uint)bVar3 * -8 + 4);
+  apCStack_2c[0]->x = CStack_40.z;
+  *pfVar2 = afStack_34[(uint)bVar3 * -2];
+  pfVar2[(uint)bVar3 * -2 + 1] = afStack_34[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  return apCStack_2c[0];
 }

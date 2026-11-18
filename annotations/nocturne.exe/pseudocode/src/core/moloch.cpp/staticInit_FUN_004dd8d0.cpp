@@ -10,8 +10,7 @@ void __cdecl core_moloch_cpp_staticInit_FUN_004dd8d0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CMolochActorType_01ccdc14,"CMoloch",
-             core_moloch_cpp_factoryFuncMoloch_FUN_004dd900,&g_INT_005bb144,1,
-             &g_CHeroActorType_01cae0ec);
+            (&g_CMolochClassInfo,"CMoloch",core_moloch_cpp_factoryFuncMoloch_FUN_004dd900,
+             &g_CMolochClassVersion,1,&g_CHeroClassInfo);
   return;
 }

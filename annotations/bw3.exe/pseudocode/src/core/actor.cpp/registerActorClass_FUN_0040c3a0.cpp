@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c3a0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)
 
 {
@@ -34,22 +32,22 @@ CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c3a0(CDemonA
   this_ptr->parent_type = parent_class_info;
   pCVar5 = this_ptr;
   while( true ) {
-    iVar3 = DAT_007df9c4;
+    iVar3 = g_NumActorClassTypes;
     bVar2 = pCVar5->class_name[0];
     pCVar5 = (CDemonActorType *)(pCVar5->class_name + 1);
     if (bVar2 == 0) break;
-    if (((&DAT_006074b8)[(byte)(bVar2 + 1)] & 0xe0) != 0) {
+    if ((g_CharacterClassificationTable[(byte)(bVar2 + 1)] & 0xe0) != 0) {
       iVar3 = tolower((uint)bVar2);
       uVar4 = iVar3 * 0x20001 + uVar4 * 0x80 + (uVar4 >> 0x19);
     }
   }
   this_ptr->name_hash = uVar4;
   if (199 < iVar3) {
-    _DAT_01d71de0 = "..\\core\\actor.cpp";
-    _DAT_01d71de4 = 0xa7b;
-    core_main_c_FUN_004e4330("Too many actor types!");
+    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+    g_INT_01d71de4 = 0xa7b;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Too many actor types!");
   }
-  (&DAT_007df9c8)[DAT_007df9c4] = this_ptr;
-  DAT_007df9c4 = DAT_007df9c4 + 1;
+  g_ActorClassRegistrations[g_NumActorClassTypes] = this_ptr;
+  g_NumActorClassTypes = g_NumActorClassTypes + 1;
   return this_ptr;
 }

@@ -11,7 +11,7 @@ CStyler * __cdecl core_styler_cpp_factoryFuncStyler_FUN_0059d720(void)
 {
   CStyler *pCVar1;
   
-  pCVar1 = (CStyler *)operator_new(0x487c8);
+  pCVar1 = operator_new(0x487c8);
   if (pCVar1 == (CStyler *)0x0) {
     return (CStyler *)0x0;
   }

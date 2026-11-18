@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0046604e) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl cockpit_drawsurf_cpp_setColor_FUN_00465ea0(int color_value)
 
@@ -18,44 +17,48 @@ void __cdecl cockpit_drawsurf_cpp_setColor_FUN_00465ea0(int color_value)
   
   bVar3 = color_value < 0;
   if (bVar3) {
-    _DAT_01ba5c38 = -color_value;
-    bVar2 = (byte)_DAT_01ba5c38;
-    _DAT_01ba5c3c = (uint)(0xff / (ulonglong)_DAT_01c35818) >> (bVar2 & 0x1f);
-    _DAT_01ba5c40 = (uint)(0xff / (ulonglong)_DAT_01c35824) >> (bVar2 & 0x1f);
-    _DAT_01ba5c44 = (uint)(0xff / (ulonglong)_DAT_01c35830) >> (bVar2 & 0x1f);
-    _DAT_01ba5c48 =
-         _DAT_01ba5c3c << (DAT_01c35814 & 0x1f) | _DAT_01ba5c40 << (DAT_01c35820 & 0x1f) |
-         _DAT_01ba5c44 << (DAT_01c3582c & 0x1f);
-    _DAT_01ba5c4c = _DAT_01ba5c48 | _DAT_01ba5c48 << 0x10;
+    g_OriginalColorValue = -color_value;
+    bVar2 = (byte)g_OriginalColorValue;
+    g_ScaledRedComponent = (uint)(0xff / (ulonglong)(uint)g_RedScaleFactor) >> (bVar2 & 0x1f);
+    g_ScaledGreenComponent = (uint)(0xff / (ulonglong)(uint)g_GreenScaleFactor) >> (bVar2 & 0x1f);
+    g_ScaledBlueComponent = (uint)(0xff / (ulonglong)(uint)g_BlueScaleFactor) >> (bVar2 & 0x1f);
+    g_PackedPixelColor =
+         g_ScaledRedComponent << (g_RedBitPosition.bytes[0] & 0x1f) |
+         g_ScaledGreenComponent << (g_GreenBitPosition.bytes[0] & 0x1f) |
+         g_ScaledBlueComponent << (g_BlueBitPosition.bytes[0] & 0x1f);
+    g_DuplicatedPixelColor = g_PackedPixelColor | g_PackedPixelColor << 0x10;
     color_value = 0;
   }
-  _DAT_01ba5c34 = (uint)bVar3;
-  _DAT_01ba5c2c = color_value & 0xff;
-  if (DAT_006141c0 < 0x10) {
-    if (DAT_006141c0 == 8) {
-      _DAT_01ba5c28 = _DAT_01ba5c2c;
+  g_UseRGBConversion = (int)bVar3;
+  g_PaletteColorIndex = color_value & 0xff;
+  if ((uint)g_INT_006141c0 < 0x10) {
+    if (g_INT_006141c0 == 8) {
+      g_CurrentDrawColor = g_PaletteColorIndex;
       return;
     }
   }
   else {
-    iVar1 = _DAT_01ba5c2c * 3;
-    if (DAT_006141c0 < 0x11) {
-      _DAT_01ba5c28 =
-           ((byte)(&DAT_01c35838)[iVar1] / _DAT_01c35818 << (DAT_01c35814 & 0x1f) |
-            (byte)(&DAT_01c35839)[iVar1] / _DAT_01c35824 << (DAT_01c35820 & 0x1f) |
-           (byte)(&DAT_01c3583a)[iVar1] / _DAT_01c35830 << (DAT_01c3582c & 0x1f)) & 0xffff;
+    iVar1 = g_PaletteColorIndex * 3;
+    if ((uint)g_INT_006141c0 < 0x11) {
+      g_CurrentDrawColor =
+           ((uint)g_UCHAR_ARRAY_01c35838[iVar1] / (uint)g_RedScaleFactor <<
+            (g_RedBitPosition.bytes[0] & 0x1f) |
+            (uint)g_UCHAR_ARRAY_01c35838[iVar1 + 1] / (uint)g_GreenScaleFactor <<
+            (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (uint)g_UCHAR_ARRAY_01c35838[iVar1 + 2] / (uint)g_BlueScaleFactor <<
+           (g_BlueBitPosition.bytes[0] & 0x1f)) & 0xffff;
       return;
     }
-    if (DAT_006141c0 == 0x20) {
-      _DAT_01ba5c28 =
-           (uint)(byte)(&DAT_01c3583a)[iVar1] << (DAT_01c3582c & 0x1f) |
-           (uint)(byte)(&DAT_01c35839)[iVar1] << (DAT_01c35820 & 0x1f) |
-           (uint)(byte)(&DAT_01c35838)[iVar1] << (DAT_01c35814 & 0x1f);
+    if (g_INT_006141c0 == 0x20) {
+      g_CurrentDrawColor =
+           (uint)g_UCHAR_ARRAY_01c35838[iVar1 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           (uint)g_UCHAR_ARRAY_01c35838[iVar1 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (uint)g_UCHAR_ARRAY_01c35838[iVar1] << (g_RedBitPosition.bytes[0] & 0x1f);
       return;
     }
   }
-  _DAT_01d046a0 = "..\\cockpit\\drawsurf.cpp";
-  _DAT_01d046a4 = 0xf6;
-  core_main_c_FUN_004e4500("Invalid bitsPerPixel in CDrawSurface::setColor");
+  g_CHAR_PTR_01d046a0 = "..\\cockpit\\drawsurf.cpp";
+  g_INT_01d046a4 = 0xf6;
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid bitsPerPixel in CDrawSurface::setColor");
   return;
 }

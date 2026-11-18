@@ -7,7 +7,7 @@
 ; CTheHand *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   undefined4 DAT_01d82088
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     TEST EAX,EAX                        ; 0056c892
     JZ 0x0056c8a8                       ; 0056c894
         ;   XREF to: 0056c8a8 (CONDITIONAL_JUMP)  ; LAB_0056c8a8
-    MOV EAX,[0x00600530]                ; 0056c896 | DAT_00600530
+    MOV EAX,[0x00600530]                ; 0056c896 | g_CDemonMission_PTR_00600530
     CMP dword ptr [EAX + 0x1008],0x0    ; 0056c89b | DAT_01d82088
     JNZ 0x0056c8a8                      ; 0056c8a2
         ;   XREF to: 0056c8a8 (CONDITIONAL_JUMP)  ; LAB_0056c8a8

@@ -47,7 +47,7 @@ void __cdecl CPlatform::renderBackground(CPlatform *this_ptr,int layer_flag);
 
 // Original: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_005123e0
 // Address: 005123e0
-CBoundingBox3D * __cdecl CPlatform::getBoundingBox(CPlatform *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CPlatform::getBoundingBox(CPlatform *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_platfrm.cpp_CPlatform_archive_FUN_00512420
 // Address: 00512420
@@ -77,9 +77,9 @@ int __cdecl CPlatform::getBlockVirtualDirectorFlag(CPlatform *this_ptr);
 // Address: 00512aa0
 void __cdecl CPlatform::attachActor(CPlatform *this_ptr,CDemonActor *actor);
 
-// Original: core_platfrm.cpp_FUN_00512be0
+// Original: core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_00512be0
 // Address: 00512be0
-void __cdecl FUN_00512be0(CPlatform *this_ptr);
+void __cdecl CPlatform::updateAttachedActors(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_dtor_FUN_00512cf0
 // Address: 00512cf0

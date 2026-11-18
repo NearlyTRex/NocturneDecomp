@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004d57e0(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -18,18 +17,10 @@ CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_
   byte bVar4;
   CMatrix3x4f CStack_a8;
   CMatrix3x4f CStack_78;
-  uint uStack_48;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_3c;
-  uint uStack_38;
-  uint uStack_34;
-  uint uStack_30;
-  uint uStack_2c;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
   uint uStack_18;
   uint uStack_14;
   uint uStack_10;
@@ -37,32 +28,33 @@ CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_
   bVar4 = 0;
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
-    uStack_2c = 0xbe6a7efa;
-    uStack_28 = 0xbca3d70a;
-    uStack_30 = 0x3ee66666;
-    if (&uStack_3c != &uStack_30) {
-      uStack_3c = 0x3ee66666;
-      uStack_38 = 0xbe6a7efa;
-      uStack_34 = 0xbca3d70a;
+    CStack_30.y = -0.229;
+    CStack_30.z = -0.02;
+    CStack_30.x = 0.45;
+    if (&CStack_3c != &CStack_30) {
+      CStack_3c.x = 0.45;
+      CStack_3c.y = -0.229;
+      CStack_3c.z = -0.02;
     }
     uStack_18 = 0xbec7ae14;
     uStack_10 = 0x3fb76c8b;
     uStack_14 = 0x3f96872b;
-    uStack_48 = 0xbec7ae14;
-    uStack_44 = 0x3f96872b;
-    uStack_40 = 0x3fb76c8b;
-    if (&uStack_24 != &uStack_48) {
-      uStack_24 = 0xbec7ae14;
-      uStack_20 = 0x3f96872b;
-      uStack_1c = 0x3fb76c8b;
+    CStack_48.x = -0.39;
+    CStack_48.y = 1.176;
+    CStack_48.z = 1.433;
+    if (&CStack_24 != &CStack_48) {
+      CStack_24.x = -0.39;
+      CStack_24.y = 1.176;
+      CStack_24.z = 1.433;
     }
   }
   else {
-    _DAT_01d046a0 = "..\\core\\icepick.cpp";
-    _DAT_01d046a4 = 0x289;
-    core_main_c_FUN_004e4500("CIcePick::getCarryObjToBodyXForm - wrong hand");
+    g_CHAR_PTR_01d046a0 = "..\\core\\icepick.cpp";
+    g_INT_01d046a4 = 0x289;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
-  core_xform_cpp_FUN_00591c10(&CStack_78,&uStack_3c,&uStack_24);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+            (&CStack_78,&CStack_3c,&CStack_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
             (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_a8);

@@ -6,9 +6,9 @@
 ;
 ; XREF[16]:
 ;   crt_io.c__chmod_FUN_005a4bd0 at 005a4be3
+;   crt_io.c_chdir_FUN_005a55b0 at 005a55be
 ;   crt_stdio.c_rename_FUN_005a5f20 at 005a5f36
 ;   crt_stdlib.c__fullpath_FUN_005a53f0 at 005a5497
-;   crt_unknown.c_FUN_005a55b0 at 005a55be
 ;   crt_unknown.c_FUN_005a9440 at 005a94e7
 ;   crt_unknown.c_FUN_005a9cf0 at 005a9d6f
 ;   crt_unknown.c_FUN_005aa0f0 at 005aa280

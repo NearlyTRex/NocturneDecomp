@@ -11,10 +11,10 @@
 ; uint             Stack[0x14]:4   blend_color
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004a9870 at 004aaab5
+;   engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870 at 004aaab5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006093c0
+;   int g_CurrentRenderColor = 0xffffff
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x1c]      ; 004a9722
     MOV ECX,dword ptr [EBP + 0x20]      ; 004a9728
     PXOR MM7,MM7                        ; 004a972e
-    MOVD MM4,dword ptr [0x006093c0]     ; 004a9731 | DAT_006093c0
+    MOVD MM4,dword ptr [0x006093c0]     ; 004a9731 | g_CurrentRenderColor
     PUNPCKLBW MM4,MM7                   ; 004a9738
     MOV EAX,0xffffffff                  ; 004a973b
     MOVD MM6,EAX                        ; 004a9740

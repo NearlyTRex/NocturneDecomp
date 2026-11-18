@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_TlsSetValue_005755cc = 001760aa
-;   undefined4 DAT_005c1ab8
+;   int g_INT_005c1ab8 = -0x1
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 0056e608
         ;   Label: crt_unknown.c_FUN_0056e608
     PUSH ESI                            ; 0056e609
-    CMP dword ptr [0x005c1ab8],-0x1     ; 0056e60a | DAT_005c1ab8
+    CMP dword ptr [0x005c1ab8],-0x1     ; 0056e60a | g_INT_005c1ab8
     JNZ 0x0056e618                      ; 0056e611
         ;   XREF to: 0056e618 (CONDITIONAL_JUMP)  ; LAB_0056e618
     XOR EAX,EAX                         ; 0056e613
@@ -61,7 +61,7 @@ section .text
     RET                                 ; 0056e64c
     PUSH EBX                            ; 0056e64d
         ;   Label: LAB_0056e64d
-    MOV ESI,dword ptr [0x005c1ab8]      ; 0056e64e | DAT_005c1ab8
+    MOV ESI,dword ptr [0x005c1ab8]      ; 0056e64e | g_INT_005c1ab8
     PUSH ESI                            ; 0056e654
     CALL dword ptr CS:[0x5755cc]        ; 0056e655 | PTR_TlsSetValue_005755cc
     MOV EAX,0x1                         ; 0056e65c

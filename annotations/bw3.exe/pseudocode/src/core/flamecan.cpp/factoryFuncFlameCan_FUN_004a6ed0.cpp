@@ -11,7 +11,7 @@ CFlameCan * __cdecl core_flamecan_cpp_factoryFuncFlameCan_FUN_004a6ed0(void)
 {
   CFlameCan *pCVar1;
   
-  pCVar1 = (CFlameCan *)operator_new(0x5e8);
+  pCVar1 = operator_new(0x5e8);
   if (pCVar1 == (CFlameCan *)0x0) {
     return (CFlameCan *)0x0;
   }

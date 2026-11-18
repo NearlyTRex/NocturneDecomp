@@ -2,23 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 48,
+    "complexity_score": 23,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 72
   },
   "cross_references": [
     {
       "addr": "0059c9c0",
       "from_addr": "0059ca44",
-      "name": "core_hpatrol.cpp_FUN_0059c9c0",
+      "name": "core_hpatrol.cpp_findNextPatrolPoint_FUN_0059c9c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,8 +60,8 @@
   "globals": [
     {
       "addr": "0061ed94",
-      "name": "DAT_0061ed94",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -95,7 +93,7 @@
       {
         "call_addr": "0059ca44",
         "call_type": "direct",
-        "caller": "core_hpatrol.cpp_FUN_0059c9c0",
+        "caller": "core_hpatrol.cpp_findNextPatrolPoint_FUN_0059c9c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,22 +202,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0061ed94",
-      "severity": "mild",
-      "text": "while (((&DAT_0061ed94)[(byte)(*string_ptr + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0061ed94",
-      "severity": "mild",
-      "text": "while (((&DAT_0061ed94)[(byte)(*string_ptr + 1)] & 0x20) != 0) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

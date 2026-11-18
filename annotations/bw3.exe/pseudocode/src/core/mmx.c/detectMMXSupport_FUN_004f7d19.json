@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 32,
+    "complexity_score": 7,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 17
   },
   "cross_references": [
@@ -45,19 +43,19 @@
   "globals": [
     {
       "addr": "0060069d",
-      "name": "DAT_0060069d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CPUFeatureFlags",
+      "type": "uint",
+      "value": "0x0"
     },
     {
       "addr": "006006a1",
-      "name": "DAT_006006a1",
-      "type": "undefined1",
-      "value": null
+      "name": "g_CPUInfoMMXSupported",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "00800000",
-      "name": "DAT_00800000",
+      "name": "g_CHAR_ARRAY_007fa464+0x5b9c",
       "type": "undefined4",
       "value": null
     }
@@ -146,22 +144,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_0060069d",
-      "severity": "mild",
-      "text": "if ((DAT_0060069d & 0x800000) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_006006a1",
-      "severity": "mild",
-      "text": "DAT_006006a1 = 1;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

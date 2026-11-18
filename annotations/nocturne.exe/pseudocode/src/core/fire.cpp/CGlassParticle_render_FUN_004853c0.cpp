@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004853c0(CGlassParticle *this_ptr)
 
 {
@@ -56,12 +54,12 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004853c0(CGlassParticle *th
   local_40.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(g_CDemonSetPtr,&local_40,(CVector3i *)0x0,0,3)
   ;
-  DAT_005c502c = (this_ptr->uv_u_per_vertex).x;
-  _DAT_005c5030 = (this_ptr->uv_v_per_vertex).x;
-  _DAT_005c505c = (this_ptr->uv_u_per_vertex).y;
-  _DAT_005c5060 = (this_ptr->uv_v_per_vertex).y;
-  _DAT_005c508c = (this_ptr->uv_u_per_vertex).z;
-  _DAT_005c5090 = (this_ptr->uv_v_per_vertex).z;
+  g_SRenderVertex_ARRAY_005c5014[0].u = (this_ptr->uv_u_per_vertex).x;
+  g_SRenderVertex_ARRAY_005c5014[0].v = (this_ptr->uv_v_per_vertex).x;
+  g_SRenderVertex_ARRAY_005c5014[1].u = (this_ptr->uv_u_per_vertex).y;
+  g_SRenderVertex_ARRAY_005c5014[1].v = (this_ptr->uv_v_per_vertex).y;
+  g_SRenderVertex_ARRAY_005c5014[2].u = (this_ptr->uv_u_per_vertex).z;
+  g_SRenderVertex_ARRAY_005c5014[2].v = (this_ptr->uv_v_per_vertex).z;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
             (g_CDemonRenderer_PTR_005ae704,&SStack_68);

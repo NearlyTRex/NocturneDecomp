@@ -7,8 +7,8 @@
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007dffb8
-;   undefined4 DAT_01c5fadc
+;   int g_INT_007dffb8
+;   int g_MouseX
 ;
 ; *****************************************************************************
 
@@ -37,9 +37,9 @@ section .text
     SUB EAX,ECX                         ; 00412a81
     SHL EAX,0x2                         ; 00412a83
     SUB EAX,ECX                         ; 00412a86
-    MOV ESI,dword ptr [0x007dffb8]      ; 00412a88 | DAT_007dffb8
+    MOV ESI,dword ptr [0x007dffb8]      ; 00412a88 | g_INT_007dffb8
     MOV dword ptr [EDX + EAX*0x4 + 0x7c],0x0 ; 00412a8e
-    CMP ESI,dword ptr [0x01c5fadc]      ; 00412a96 | DAT_01c5fadc
+    CMP ESI,dword ptr [0x01c5fadc]      ; 00412a96 | g_MouseX
     JGE 0x00412ad2                      ; 00412a9c
         ;   XREF to: 00412ad2 (CONDITIONAL_JUMP)  ; LAB_00412ad2
     MOV EAX,dword ptr [EDX + 0x34]      ; 00412a9e
@@ -49,10 +49,10 @@ section .text
     JLE 0x00412ab1                      ; 00412aa8
         ;   XREF to: 00412ab1 (CONDITIONAL_JUMP)  ; LAB_00412ab1
     MOV dword ptr [EDX + 0x34],0x2      ; 00412aaa
-    MOV EAX,[0x01c5fadc]                ; 00412ab1 | DAT_01c5fadc
+    MOV EAX,[0x01c5fadc]                ; 00412ab1 | g_MouseX
         ;   Label: LAB_00412ab1
     MOV EBX,dword ptr [EDX + 0x34]      ; 00412ab6
-    MOV [0x007dffb8],EAX                ; 00412ab9 | DAT_007dffb8
+    MOV [0x007dffb8],EAX                ; 00412ab9 | g_INT_007dffb8
     CMP EBX,0x2                         ; 00412abe
     JGE 0x00412ae6                      ; 00412ac1
         ;   XREF to: 00412ae6 (CONDITIONAL_JUMP)  ; LAB_00412ae6

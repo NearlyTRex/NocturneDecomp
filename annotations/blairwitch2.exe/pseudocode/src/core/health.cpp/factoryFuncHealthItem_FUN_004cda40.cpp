@@ -11,7 +11,7 @@ CHealthItem * __cdecl core_health_cpp_factoryFuncHealthItem_FUN_004cda40(void)
 {
   CHealthItem *pCVar1;
   
-  pCVar1 = (CHealthItem *)operator_new(0x43c);
+  pCVar1 = operator_new(0x43c);
   if (pCVar1 == (CHealthItem *)0x0) {
     return (CHealthItem *)0x0;
   }

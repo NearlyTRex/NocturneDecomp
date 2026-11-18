@@ -28,7 +28,7 @@ SPageResourceTwanaCharacter * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharac
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  _sprintf(local_10c,&DAT_005d5a62);
+  _sprintf(local_10c,"l_%s");
   (pSVar2->base).base.height = 0x4b;
   height = (pSVar2->base).base.height;
   (pSVar2->base).base.width = 0x38;

@@ -14,12 +14,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005d0b76
 ;   TerminatedCString s_CDemonSet_pushRaytraceSt_005d0b8b
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_021221f0
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_RaytraceStateStackDepth
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -31,10 +31,10 @@ section .text
     PUSH EDI                            ; 0053e872
     PUSH EBP                            ; 0053e873
     MOV EBX,dword ptr [ESP + 0x14]      ; 0053e874
-    CMP dword ptr [0x021221f0],0x5      ; 0053e878 | DAT_021221f0
+    CMP dword ptr [0x021221f0],0x5      ; 0053e878 | g_RaytraceStateStackDepth
     JG 0x0053e9e6                       ; 0053e87f
         ;   XREF to: 0053e9e6 (CONDITIONAL_JUMP)  ; LAB_0053e9e6
-    MOV EDX,dword ptr [0x021221f0]      ; 0053e885 | DAT_021221f0
+    MOV EDX,dword ptr [0x021221f0]      ; 0053e885 | g_RaytraceStateStackDepth
         ;   Label: LAB_0053e885
     LEA EAX,[EDX*0x4 + 0x0]             ; 0053e88b
     ADD EAX,EDX                         ; 0053e892
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [EDI + 0x10],EAX      ; 0053e8c9
     LEA EBP,[EDX + 0x1]                 ; 0053e8cc
     MOV EAX,dword ptr [EBX + 0x15f6ac]  ; 0053e8cf
-    MOV dword ptr [0x021221f0],EBP      ; 0053e8d5 | DAT_021221f0
+    MOV dword ptr [0x021221f0],EBP      ; 0053e8d5 | g_RaytraceStateStackDepth
     MOV dword ptr [EDI + 0x14],EAX      ; 0053e8db
     TEST EAX,EAX                        ; 0053e8de
     JLE 0x0053e900                      ; 0053e8e0
@@ -153,10 +153,10 @@ section .text
         ;   Label: LAB_0053e9e6
     MOV ESI,0x406                       ; 0053e9eb
     PUSH 0x5d0b8b                       ; 0053e9f0 | = "CDemonSet::pushRaytraceState - stack ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0053e9f5 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0053e9fb | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0053ea01
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 0053e9f5 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0053e9fb | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053ea01
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0053ea06
     JMP 0x0053e885                      ; 0053ea09
         ;   XREF to: 0053e885 (UNCONDITIONAL_JUMP)  ; LAB_0053e885

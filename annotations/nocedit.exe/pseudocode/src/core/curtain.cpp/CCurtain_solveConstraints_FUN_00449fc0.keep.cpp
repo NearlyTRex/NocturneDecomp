@@ -52,36 +52,36 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_00449fc0(CCurtain *t
     vertex->has_collision = 1;
   }
   local_18 = 0;
-  if (0 < INT_008879bc) {
+  if (0 < g_CurtainCollisionCount) {
     pCVar1 = &vertex->world_position;
     pCVar2 = &vertex->velocity;
     pfVar1 = &(vertex->world_position).z;
     pSVar12 = &this_ptr->mesh;
-    local_1c = &SCollisionInfo_ARRAY_00887e70[0].cylinder_radius;
+    local_1c = &g_CurtainCollisionInfos[0].cylinder_radius;
     do {
       if (((((float)-0.5 <= (vertex->velocity).y) ||
-           (fVar10 = CVector3f_ARRAY_008879c0[local_18].y +
-                     SCollisionInfo_ARRAY_00887e70[local_18].cylinder_top_y,
+           (fVar10 = g_CurtainCollisionPositions[local_18].y +
+                     g_CurtainCollisionInfos[local_18].cylinder_top_y,
            fVar10 <= (vertex->world_position).y)) ||
-          ((vertex->world_position).y <= CVector3f_ARRAY_008879c0[local_18].y))
+          ((vertex->world_position).y <= g_CurtainCollisionPositions[local_18].y))
          || (fVar11 = (vertex->world_position).x -
-                      CVector3f_ARRAY_008879c0[local_18].x,
+                      g_CurtainCollisionPositions[local_18].x,
             fVar12 = (vertex->world_position).z -
-                     CVector3f_ARRAY_008879c0[local_18].z,
-            SCollisionInfo_ARRAY_00887e70[local_18].cylinder_radius <=
+                     g_CurtainCollisionPositions[local_18].z,
+            g_CurtainCollisionInfos[local_18].cylinder_radius <=
             SQRT(fVar12 * fVar12 + fVar11 * fVar11))) {
-        if ((CVector3f_ARRAY_008879c0[local_18].y <= (vertex->world_position).y)
-           && (fVar10 = CVector3f_ARRAY_008879c0[local_18].y +
-                        SCollisionInfo_ARRAY_00887e70[local_18].cylinder_top_y,
+        if ((g_CurtainCollisionPositions[local_18].y <= (vertex->world_position).y)
+           && (fVar10 = g_CurtainCollisionPositions[local_18].y +
+                        g_CurtainCollisionInfos[local_18].cylinder_top_y,
               (vertex->world_position).y <= fVar10)) {
           fVar11 = (vertex->world_position).x -
-                   CVector3f_ARRAY_008879c0[local_18].x;
+                   g_CurtainCollisionPositions[local_18].x;
           fVar13 = (vertex->world_position).z -
-                   CVector3f_ARRAY_008879c0[local_18].z;
+                   g_CurtainCollisionPositions[local_18].z;
           fVar12 = SQRT(fVar11 * fVar11 + fVar13 * fVar13);
-          if (fVar12 <= SCollisionInfo_ARRAY_00887e70[local_18].cylinder_radius) {
+          if (fVar12 <= g_CurtainCollisionInfos[local_18].cylinder_radius) {
             if ((vertex->last_world_position).y < fVar10) {
-              if (CVector3f_ARRAY_008879c0[local_18].y <
+              if (g_CurtainCollisionPositions[local_18].y <
                   (vertex->last_world_position).y) {
                 if (fVar12 <= 0.0) {
                   local_104[0] = 0.0;
@@ -92,10 +92,10 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_00449fc0(CCurtain *t
                   local_fc = fVar13 * (1.0 / fVar12);
                 }
                 fVar16 = local_104[0] * *local_1c +
-                         CVector3f_ARRAY_008879c0[local_18].x;
+                         g_CurtainCollisionPositions[local_18].x;
                 fVar15 = (vertex->world_position).y;
                 fVar17 = local_fc * *local_1c +
-                         CVector3f_ARRAY_008879c0[local_18].z;
+                         g_CurtainCollisionPositions[local_18].z;
                 fVar10 = (vertex->world_position).y;
                 fVar11 = (vertex->world_position).z;
                 fVar12 = pSVar12->inv_delta_time;
@@ -113,7 +113,7 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_00449fc0(CCurtain *t
               else {
                 fVar15 = pCVar1->x;
                 fVar16 = *pfVar1;
-                fVar17 = CVector3f_ARRAY_008879c0[local_18].y;
+                fVar17 = g_CurtainCollisionPositions[local_18].y;
                 fVar10 = (vertex->world_position).y;
                 fVar11 = (vertex->world_position).z;
                 fVar12 = pSVar12->inv_delta_time;
@@ -154,7 +154,7 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_00449fc0(CCurtain *t
       }
       local_1c = local_1c + 10;
       local_18 = local_18 + 1;
-    } while (local_18 < INT_008879bc);
+    } while (local_18 < g_CurtainCollisionCount);
   }
   local_34 = 0;
   if (0 < vertex->neighbor_count) {

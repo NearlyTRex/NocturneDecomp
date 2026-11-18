@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 132,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
-      "format_string_mismatch",
-      "raw_address_constant",
-      "stack_param",
-      "undefined_data",
-      "unresolved_funcptr"
+      "stack_param"
     ],
     "total_lines": 103
   },
@@ -92,8 +88,8 @@
     },
     {
       "addr": "02dc9244",
-      "name": "DAT_02dc9244",
-      "type": "undefined4",
+      "name": "g_DirectSoundSampleBuffers",
+      "type": "IDirectSoundBuffer*[25]",
       "value": null
     }
   ],
@@ -136,6 +132,24 @@
     "pcode_op_count": 251
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005561b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6719
+    },
+    "bw1.exe": {
+      "addr": "00578be0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6719
+    },
+    "bw3.exe": {
+      "addr": "0055bd50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6719
+    },
     "nocedit.exe": {
       "addr": "005af320",
       "by": "name",
@@ -176,19 +190,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_02dc9244",
-      "severity": "mild",
-      "text": "if (((buffer_id < 1) || (0x18 < buffer_id)) || (*(int *)(&DAT_02dc9244 + buffer_id * 4) == 0)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "uStack_1ac = *(uint *)(in_stack_00000014 + 0x158);",
+      "text": "*(LPVOID *)(in_stack_00000014 + 0x160),",
       "type": "stack_param"
     },
     {
@@ -196,43 +202,24 @@
       "line": 19,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "uStack_1b0 = *(uint *)(in_stack_00000014 + 0x160);",
+      "text": "*(DWORD *)(in_stack_00000014 + 0x158),",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "DAT_02dc9244",
-      "severity": "mild",
-      "text": "piStack_1b4 = *(int **)(&DAT_02dc9244 + buffer_id * 4);",
-      "type": "undefined_data"
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "*(LPVOID *)(in_stack_00000014 + 0x164),",
+      "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unresolved stack parameter",
       "line": 21,
-      "match": "code *",
+      "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "error_code = (**(code **)(*piStack_1b4 + 0x4c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Raw hex address 0x52aed2 assigned to bare local `uStack_1ac`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_1ac` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 15,
-      "match": "0x52aed2",
-      "severity": "moderate",
-      "text": "uStack_1ac = 0x52aed2;",
-      "type": "raw_address_constant"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"DirectSoundDevice::unlockSample - Can't unlock inv...\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "DirectSoundDevice::unlockSample - Can't unlock invalid handle: %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 16,
-      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"DirectSoundDevice::unlockSample - Can't unlock invalid",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "text": "*(DWORD *)(in_stack_00000014 + 0x15c));",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

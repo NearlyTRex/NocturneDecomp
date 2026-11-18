@@ -27,7 +27,7 @@
 ;   double DOUBLE_005858c3 = 3
 ;   double DOUBLE_005858cb = 60
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CActorDestinationActorType_014b8a1c.name_hash
+;   undefined4 g_CActorDestinationClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -90,7 +90,7 @@ section .text
     MOV dword ptr [EBP + -0x8],EAX      ; 004b59c0
     JMP 0x004b5976                      ; 004b59c3
         ;   XREF to: 004b5976 (UNCONDITIONAL_JUMP)  ; LAB_004b5976
-    MOV EBX,dword ptr [0x014b8a54]      ; 004b59c5 | g_CActorDestinationActorType_014b8a1c.name_hash
+    MOV EBX,dword ptr [0x014b8a54]      ; 004b59c5 | g_CActorDestinationClassInfo.name_hash
         ;   Label: LAB_004b59c5
     PUSH EBX                            ; 004b59cb
     MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 004b59cc | g_CDemonSetInstance.actors[0]

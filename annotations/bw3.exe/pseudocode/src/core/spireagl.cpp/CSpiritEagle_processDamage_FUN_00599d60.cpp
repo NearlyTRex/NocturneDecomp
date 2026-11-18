@@ -12,7 +12,7 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_processDamage_FUN_00599d60(CSpiritEa
   CDemonActor_vtable *pCVar1;
   float fVar2;
   CDemonActorType *pCVar3;
-  byte *puVar4;
+  char *motion_name;
   
   pCVar3 = (*((this_ptr->base).base.vtable._ub)->getActorType)((CDemonActor *)this_ptr);
   if (pCVar3 == &g_CSpiritEagleClassInfo) {
@@ -23,14 +23,15 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_processDamage_FUN_00599d60(CSpiritEa
       (this_ptr->base).hit_points = 0.0;
       (*pCVar1->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(&this_ptr->base);
-      puVar4 = &DAT_005d9a11;
+      motion_name = "DIE";
     }
     else {
       if ((damage_info->damage_amount <= 0.0) || ((this_ptr->base).grabbed_by != (CDemonActor *)0x0)
          ) goto LAB_00599dc3;
-      puVar4 = &DAT_005d9a15;
+      motion_name = "DIE";
     }
-    core_spireagl_cpp_FUN_00599c80(&(this_ptr->base).model,puVar4);
+    core_spireagl_cpp_playRandomMotionVariant_FUN_00599c80(&(this_ptr->base).model.base,motion_name)
+    ;
   }
 LAB_00599dc3:
   core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(&this_ptr->base,damage_info);

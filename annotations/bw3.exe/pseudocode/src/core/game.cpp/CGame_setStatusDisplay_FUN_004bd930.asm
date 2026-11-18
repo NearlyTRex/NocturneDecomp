@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042d139
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430f04
-;   core_charactr.cpp_FUN_0042cd70 at 0042d139
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260

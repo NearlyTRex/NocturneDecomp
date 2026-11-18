@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059d7a0 = 4
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   int g_LocalHeroIndex
 ;
@@ -57,7 +57,7 @@ section .text
     PUSH EAX                            ; 0048eaa6
     LEA EAX,[ESP + 0x1c]                ; 0048eaa7
     PUSH EAX                            ; 0048eaab
-    MOV ECX,dword ptr [0x005b80f0]      ; 0048eaac | g_CFireEffect_PTR_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 0048eaac | g_CFireEffectPtr
     PUSH ECX                            ; 0048eab2
     CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0 ; 0048eab3
         ;   XREF to: 0048c3c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)

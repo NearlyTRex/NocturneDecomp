@@ -7,9 +7,9 @@
 ; SBitBuffer *     Stack[0x4]:4   bit_buffer
 ;
 ; XREF[3]:
+;   support_codec.cpp_CAsciiArmor_init_FUN_00441510 at 00441518
 ;   support_codec.cpp_CLZWCompress_init_FUN_00441140 at 00441161
 ;   support_codec.cpp_CLZWDecompress_init_FUN_00441350 at 00441371
-;   support_codec.cpp_FUN_00441510 at 00441518
 ;
 ; *****************************************************************************
 

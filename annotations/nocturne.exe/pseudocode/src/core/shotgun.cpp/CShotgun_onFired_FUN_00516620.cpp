@@ -40,7 +40,7 @@ void __cdecl core_shotgun_cpp_CShotgun_onFired_FUN_00516620(CShotgun *this_ptr)
   }
   model_ptr = core_dmodel_cpp_loadModel_FUN_004543b0("shell.kfm");
   core_fire_cpp_CFireEffect_createShell_FUN_0048c6b0
-            (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).base.location.position,
+            (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
              &(this_ptr->base).base.orient.vec,&local_30,model_ptr);
   (*((this_ptr->base).base.vtable._ub)->playSound)
             ((CDemonActor *)this_ptr,"shotgun-cock.wav");

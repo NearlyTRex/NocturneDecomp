@@ -18,16 +18,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00524940 at 00524a12
+;   core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940 at 00524a12
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005b874e
 ;   TerminatedCString s_CCharacter_advanceLayerA_005b8763
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -52,10 +52,10 @@ section .text
         ;   Label: LAB_004335a1
     MOV EBP,0x1269                      ; 004335a6
     PUSH 0x5b8763                       ; 004335ab | = "CCharacter::advanceLayerAction - inva..."
-    MOV dword ptr [0x01d71de0],EDI      ; 004335b0 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 004335b6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004335bc
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 004335b0 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 004335b6 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004335bc
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004335c1
     MOV EAX,dword ptr [EBX + 0x2f00]    ; 004335c4
         ;   Label: LAB_004335c4

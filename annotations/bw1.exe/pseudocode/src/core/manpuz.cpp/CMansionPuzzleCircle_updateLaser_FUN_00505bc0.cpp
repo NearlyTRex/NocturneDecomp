@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 
 {
@@ -18,8 +16,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(CMans
   int unaff_EDI;
   float *pfVar4;
   byte bVar5;
-  float afStackY_107c [30];
-  SPanel *apSStackY_1004 [940];
+  float afStackY_107c [970];
   byte auVar6 [12];
   byte auVar7 [12];
   byte auVar8 [12];
@@ -29,29 +26,27 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(CMans
   CMansionPuzzleCircle *in_stack_ffffff00;
   uint uVar10;
   float fVar11;
+  CVector3f *pCVar12;
   int recursion_depth;
   SLaserInfo SStack_e8;
-  float fStack_94;
-  float afStack_90 [4];
-  float fStack_80;
+  CVector3f CStack_94;
+  float fStack_88;
+  float afStack_84 [2];
   CVector3f CStack_7c;
-  float fStack_70;
-  float afStack_6c [4];
-  float fStack_5c;
-  uint uStack_58;
-  float fStack_54;
-  float fStack_50;
-  float fStack_4c;
-  float afStack_48 [5];
+  CVector3f CStack_70;
+  float fStack_64;
+  float afStack_60 [2];
+  CVector3f CStack_58;
+  CVector3f CStack_4c;
+  CVector3f CStack_40;
   CVector3f CStack_34;
-  uint uStack_28;
-  float afStack_24 [4];
-  SPanel *pSStack_14;
+  CVector3f CStack_28;
+  CVector3f CStack_1c;
   
   bVar5 = 0;
-  pSStack_14 = this_ptr->panels + panel_index;
+  CStack_1c.z = (float)(this_ptr->panels + panel_index);
   bVar1 = false;
-  if (pSStack_14->exists == 0) {
+  if (((SPanel *)CStack_1c.z)->exists == 0) {
     in_stack_fffffefc = 0x505e5f;
     in_stack_ffffff00 = this_ptr;
     iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210
@@ -74,38 +69,45 @@ LAB_00505c17:
     if (1.0 < (float)this_ptr->laser_intensity[panel_index]) {
       this_ptr->laser_intensity[panel_index] = 0x3f800000;
     }
-    core_dirmat_cpp_FUN_0045f690();
-    afStack_6c[2] = fStack_94;
-    afStack_6c[(uint)bVar5 * -2 + 3] = afStack_90[(uint)bVar5 * -2];
-    afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-         afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-    afStack_90[2] = *(float *)(unaff_EDI + 0xc) + afStack_6c[2];
-    afStack_90[3] = *(float *)(unaff_EDI + 0x10) + afStack_6c[3];
-    fStack_80 = *(float *)(unaff_EDI + 0x14) + fStack_5c;
-    fStack_4c = afStack_90[2];
-    afStack_48[(uint)bVar5 * -2] = afStack_90[(uint)bVar5 * -2 + 3];
-    afStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         afStack_90[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-    core_actor_cpp_FUN_00408b40();
-    uStack_58 = 0;
-    CStack_7c.x = fStack_70;
-    *(float *)((int)&CStack_7c + (uint)bVar5 * -8 + 4) = afStack_6c[(uint)bVar5 * -2];
-    *(float *)((int)&CStack_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-    fStack_54 = ((this_ptr->gem_pos).y - (this_ptr->emitter_pos).f.y) * _DAT_005e7541;
-    fStack_50 = -(this_ptr->panel_radius * _DAT_005e753d + (this_ptr->emitter_pos).f.z +
-                 (this_ptr->gem_pos).z) * _DAT_005e7541;
-    core_dirmat_cpp_FUN_0045f690();
-    afStack_48[2] = (float)uStack_28;
-    afStack_48[(uint)bVar5 * -2 + 3] = afStack_24[(uint)bVar5 * -2];
-    afStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-         afStack_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+              ((CMatrix3x3f *)(unaff_EDI + 0x24),&(this_ptr->emitter_pos).f,&CStack_94);
+    fStack_64 = CStack_94.x;
+    afStack_60[(uint)bVar5 * -2] = *(float *)((int)&CStack_94 + (uint)bVar5 * -8 + 4);
+    afStack_60[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+         *(float *)((int)&CStack_94 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    pCVar12 = &CStack_4c;
+    fStack_88 = *(float *)(unaff_EDI + 0xc) + fStack_64;
+    afStack_84[0] = *(float *)(unaff_EDI + 0x10) + afStack_60[0];
+    afStack_84[1] = *(float *)(unaff_EDI + 0x14) + afStack_60[1];
+    CStack_4c.x = fStack_88;
+    *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + 4) = afStack_84[(uint)bVar5 * -2];
+    *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         afStack_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40(&this_ptr->base,pCVar12,&CStack_70);
+    CStack_58.x = 0.0;
+    CStack_7c.x = CStack_70.x;
+    *(uint *)((int)&CStack_7c + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&CStack_70 + (uint)bVar5 * -8 + 4);
+    *(uint *)((int)&CStack_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         *(uint *)((int)&CStack_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    CStack_58.y = ((this_ptr->gem_pos).y - (this_ptr->emitter_pos).f.y) * 4.0f;
+    CStack_58.z = -(this_ptr->panel_radius * 2.0f + (this_ptr->emitter_pos).f.z +
+                   (this_ptr->gem_pos).z) * 4.0f;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
+              ((CMatrix3x3f *)(unaff_EDI + 0x24),&CStack_58,&CStack_28);
+    pCVar12 = &CStack_40;
+    CStack_40.x = CStack_28.x;
+    *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + 4);
+    *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     uVar10 = 0x505d9a;
-    core_actor_cpp_FUN_00408ac0();
-    CStack_34.x = afStack_24[2];
-    *(float *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) = afStack_24[(uint)bVar5 * -2 + 3];
-    *(SPanel **)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         (&pSStack_14)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(&this_ptr->base,pCVar12,&CStack_1c);
+    CStack_34.x = CStack_1c.x;
+    *(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4);
+    *(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     fVar11 = 7.380471e-39;
     core_fire_cpp_SLaserInfo_ctor_FUN_004b63e0(&SStack_e8);
@@ -151,7 +153,7 @@ LAB_00505c17:
     laser_info.stored_angle = (float)uVar10;
     laser_info.transparency = fVar11;
     core_fire_cpp_CFireEffect_traceLaser_FUN_004b6420
-              (0x01C57074,&CStack_7c,&CStack_34,laser_info,recursion_depth);
+              (g_CFireEffectPtr,&CStack_7c,&CStack_34,laser_info,recursion_depth);
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     return;
   }

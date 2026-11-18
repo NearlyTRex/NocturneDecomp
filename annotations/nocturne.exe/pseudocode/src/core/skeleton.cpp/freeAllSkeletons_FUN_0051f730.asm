@@ -9,8 +9,8 @@
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004d9900 at 004d990f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00670b60
-;   undefined4 DAT_02737ef4
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[14652].projected_vertex.inv_z
+;   int g_INT_02737ef4
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CSkeleton_free_FUN_005174e0
@@ -26,7 +26,7 @@ section .text
     MOV EBX,0x2737ef8                   ; 0051f732
     CALL core_skeleton.cpp_freeAllModels_FUN_0051f650 ; 0051f737
         ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllModels_FUN_0051f650()
-    LEA ESI,[EBX + 0x670b60]            ; 0051f73c | DAT_00670b60
+    LEA ESI,[EBX + 0x670b60]            ; 0051f73c | g_SRenderVertex_ARRAY_005c5014[14652].projected_vertex.inv_z
     PUSH EBX                            ; 0051f742
         ;   Label: LAB_0051f742
     CALL core_skeleton.cpp_CSkeleton_free_FUN_005174e0 ; 0051f743
@@ -37,7 +37,7 @@ section .text
     JNZ 0x0051f742                      ; 0051f753
         ;   XREF to: 0051f742 (CONDITIONAL_JUMP)  ; LAB_0051f742
     XOR EDX,EDX                         ; 0051f755
-    MOV dword ptr [0x02737ef4],EDX      ; 0051f757 | DAT_02737ef4
+    MOV dword ptr [0x02737ef4],EDX      ; 0051f757 | g_INT_02737ef4
     POP ESI                             ; 0051f75d
     POP EBX                             ; 0051f75e
     RET                                 ; 0051f75f

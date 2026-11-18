@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_CIcePick_005d78bb
 ;   TerminatedCString s_CHero_005d78c4
-;   undefined4 DAT_005d78cb
+;   double g_DOUBLE_005d78cb = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c790
@@ -44,7 +44,7 @@ section .text
     FMUL ST0                            ; 0057b479
     FADDP                               ; 0057b47b
     FSQRT                               ; 0057b47d
-    FCOMP double ptr [0x005d78cb]       ; 0057b47f | DAT_005d78cb
+    FCOMP double ptr [0x005d78cb]       ; 0057b47f | g_DOUBLE_005d78cb
     FNSTSW AX                           ; 0057b485
     SAHF                                ; 0057b487
     JA 0x0057b493                       ; 0057b488

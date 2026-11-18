@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_00500f20(CLightGun *this_ptr)
 
 {
@@ -18,7 +16,7 @@ float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_00500f20(CLightGun *this
   }
   fStack_8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(20.0,50.0);
   if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
-    fStack_8 = fStack_8 * _DAT_005e6ef6;
+    fStack_8 = fStack_8 * 2.0f;
   }
   return fStack_8;
 }

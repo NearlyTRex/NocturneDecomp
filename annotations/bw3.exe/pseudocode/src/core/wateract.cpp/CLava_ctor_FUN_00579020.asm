@@ -7,7 +7,7 @@
 ; CLava *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_wateract.cpp_FUN_00578ff0 at 00579003
+;   core_wateract.cpp_factoryFuncLava_FUN_00578ff0 at 00579003
 ;
 ; Called Functions:
 ;   core_wateract.cpp_CWaterActor_ctor_FUN_00577d90

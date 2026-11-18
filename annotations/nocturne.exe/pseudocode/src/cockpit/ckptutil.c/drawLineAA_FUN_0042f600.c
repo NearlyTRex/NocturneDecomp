@@ -27,7 +27,7 @@ void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int x0,int y0,int x1,int
     x1 = x0;
     y1 = iVar5;
   }
-  if ((DAT_005ad280 != 0) ||
+  if ((g_LineClippingDisabled != 0) ||
      (((((g_ClipLeft <= (int)x || (g_ClipLeft <= x1)) &&
         (((int)x <= g_ClipRight || (x1 <= g_ClipRight)))) &&
        ((g_ClipTop <= y0 || (g_ClipTop <= y1)))) && ((y0 <= g_ClipBottom || (y1 <= g_ClipBottom)))))

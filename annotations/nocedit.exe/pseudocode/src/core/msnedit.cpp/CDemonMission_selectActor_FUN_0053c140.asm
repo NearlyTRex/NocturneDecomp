@@ -27,7 +27,7 @@
 ;   TerminatedCString s_UNDO_TMP_00680800
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   int g_SelectedMotionPropertyIndex
-;   int INT_02f7c53c
+;   int g_MsnEditViewMode
 ;   undefined4 g_CEdCheckInstance.checked_state
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -67,7 +67,7 @@ section .text
     CMP EAX,EDI                         ; 0053c17c
     JNZ 0x0053c1cf                      ; 0053c17e
         ;   XREF to: 0053c1cf (CONDITIONAL_JUMP)  ; LAB_0053c1cf
-    CMP dword ptr [0x02f7c53c],0x0      ; 0053c180 | INT_02f7c53c
+    CMP dword ptr [0x02f7c53c],0x0      ; 0053c180 | g_MsnEditViewMode
         ;   Label: LAB_0053c180
     JNZ 0x0053c1a7                      ; 0053c187
         ;   XREF to: 0053c1a7 (CONDITIONAL_JUMP)  ; LAB_0053c1a7

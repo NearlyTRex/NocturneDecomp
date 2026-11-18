@@ -14,20 +14,20 @@
 ;   TerminatedCString s_MeleeAttack_005efe31
 ;   TerminatedCString s_ChaseComplete_005efe3d
 ;   TerminatedCString s_MeleeAttack_005efe4b
-;   undefined4 DAT_005efe57
-;   undefined4 DAT_005efe5f
-;   undefined4 DAT_005efe63
-;   undefined4 DAT_005fef90
-;   undefined4 DAT_005fef94
+;   double g_DOUBLE_005efe57 = 0.100000000000000
+;   float g_FLOAT_005efe5f = 70
+;   float g_FLOAT_005efe63 = 74
+;   float g_FLOAT_005fef90 = 6
+;   float g_FLOAT_005fef94 = 2
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
-;   core_muzzle.cpp_FUN_0059d7f0
-;   core_muzzle.cpp_FUN_0059d8e0
-;   core_muzzle.cpp_FUN_0059dcb0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0
+;   core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;
 ; *****************************************************************************
@@ -45,15 +45,15 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005a1f4c
     LEA ESI,[EBX + 0x2b4]               ; 005a1f4f
     PUSH ESI                            ; 005a1f55
-    CALL core_motion.cpp_FUN_005035c0   ; 005a1f56
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a1f56
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a1f5b
     ADD ESP,0x4                         ; 005a1f5e
     CMP EAX,0x2                         ; 005a1f61
     JNZ 0x005a2067                      ; 005a1f64
         ;   XREF to: 005a2067 (CONDITIONAL_JUMP)  ; LAB_005a2067
     FLD float ptr [ESI + 0x8]           ; 005a1f6a
-    FCOMP float ptr [0x005efe5f]        ; 005a1f6d | DAT_005efe5f
+    FCOMP float ptr [0x005efe5f]        ; 005a1f6d | g_FLOAT_005efe5f
     FNSTSW AX                           ; 005a1f73
     SAHF                                ; 005a1f75
     JC 0x005a201b                       ; 005a1f76
@@ -61,7 +61,7 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 005a1f7c
         ;   Label: LAB_005a1f7c
     FLD float ptr [EAX + 0x8]           ; 005a1f82
-    FCOMP float ptr [0x005efe63]        ; 005a1f85 | DAT_005efe63
+    FCOMP float ptr [0x005efe63]        ; 005a1f85 | g_FLOAT_005efe63
     FNSTSW AX                           ; 005a1f8b
     SAHF                                ; 005a1f8d
     JBE 0x005a2014                      ; 005a1f8e
@@ -83,28 +83,28 @@ section .text
     FADDP                               ; 005a1fc4
     FSQRT                               ; 005a1fc6
     LEA ESI,[EBX + 0x10af8]             ; 005a1fc8
-    FCOMP float ptr [0x005fef90]        ; 005a1fce | DAT_005fef90
+    FCOMP float ptr [0x005fef90]        ; 005a1fce | g_FLOAT_005fef90
     FNSTSW AX                           ; 005a1fd4
     SAHF                                ; 005a1fd6
     JBE 0x005a2033                      ; 005a1fd7
         ;   XREF to: 005a2033 (CONDITIONAL_JUMP)  ; LAB_005a2033
     PUSH 0x5efe0f                       ; 005a1fd9 | = "RangeAttack"
     PUSH 0x5efe1b                       ; 005a1fde | = "ChaseComplete"
-    FLD float ptr [0x005fef90]          ; 005a1fe3 | DAT_005fef90
+    FLD float ptr [0x005fef90]          ; 005a1fe3 | g_FLOAT_005fef90
     PUSH ESI                            ; 005a1fe9
     FSTP float ptr [EBX + 0x11394]      ; 005a1fea
-    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a1ff0
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a1ff0
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005a1ff5
     PUSH 0x3dcccccd                     ; 005a1ff8
     PUSH ESI                            ; 005a1ffd
-    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a1ffe
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005a1ffe
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(SStateMachine * this_ptr, float delay)
     ADD ESP,0x8                         ; 005a2003
     PUSH 0x5efe29                       ; 005a2006 | = "Chasing"
     PUSH ESI                            ; 005a200b
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a200c
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005a200c
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a2011
     MOV ESP,EBP                         ; 005a2014
         ;   Label: LAB_005a2014
@@ -126,16 +126,16 @@ section .text
     PUSH 0x5efe31                       ; 005a2033 | = "MeleeAttack"
         ;   Label: LAB_005a2033
     PUSH 0x5efe3d                       ; 005a2038 | = "ChaseComplete"
-    FLD float ptr [0x005fef94]          ; 005a203d | DAT_005fef94
+    FLD float ptr [0x005fef94]          ; 005a203d | g_FLOAT_005fef94
     PUSH ESI                            ; 005a2043
     FSTP float ptr [EBX + 0x11394]      ; 005a2044
-    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a204a
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a204a
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005a204f
     PUSH 0x5efe4b                       ; 005a2052 | = "MeleeAttack"
     PUSH ESI                            ; 005a2057
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a2058
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005a2058
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a205d
     MOV ESP,EBP                         ; 005a2060
     POP EBP                             ; 005a2062
@@ -150,8 +150,8 @@ section .text
     PUSH EBX                            ; 005a2071
     LEA ESI,[ESP + 0x8]                 ; 005a2072
     LEA EDI,[ESP + 0x14]                ; 005a2076
-    CALL core_actor.cpp_FUN_00408de0    ; 005a207a
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 005a207a
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x8]                 ; 005a207f
     ADD ESP,0x8                         ; 005a2083
     LEA EAX,[ESP + 0xc]                 ; 005a2086
@@ -162,7 +162,7 @@ section .text
     LEA ESI,[ESP + 0x28]                ; 005a208e
     LEA EDI,[ESP + 0x34]                ; 005a2092
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 005a2096
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x28]                ; 005a209b
     ADD ESP,0x4                         ; 005a209f
     MOVSD ES:EDI,ESI                    ; 005a20a2
@@ -181,7 +181,7 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 005a20c5
     FLD float ptr [ESP + 0x1c]          ; 005a20c9
         ;   Label: LAB_005a20c9
-    FCOMP double ptr [0x005efe57]       ; 005a20cd | DAT_005efe57
+    FCOMP double ptr [0x005efe57]       ; 005a20cd | g_DOUBLE_005efe57
     FNSTSW AX                           ; 005a20d3
     SAHF                                ; 005a20d5
     JBE 0x005a210a                      ; 005a20d6

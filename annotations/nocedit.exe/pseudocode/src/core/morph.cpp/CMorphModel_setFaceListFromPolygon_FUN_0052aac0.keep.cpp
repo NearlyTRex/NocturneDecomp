@@ -42,7 +42,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
       verts = (SMRGLVertex *)(poly_data + 1);
       for (N = 0; N < count - 2; N = N + 1) {
         this_ptr->faces[local_18].base.base.count = 3;
-        if (INT_02f43974 == 0) {
+        if (g_MorphReverseWinding == 0) {
           this_ptr->faces[local_18].vertices[0] = verts[0];
           this_ptr->faces[local_18].vertices[1] = verts[N + 1];
           this_ptr->faces[local_18].vertices[2] = verts[N + 2];

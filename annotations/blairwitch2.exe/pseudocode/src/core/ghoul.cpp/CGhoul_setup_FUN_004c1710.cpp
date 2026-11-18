@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004c1710(CGhoul *this_ptr)
 
 {
@@ -19,27 +17,27 @@ void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004c1710(CGhoul *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
-  _DAT_01cb821c =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"@Bip01 Head" + 1,1);
-  _DAT_01cb8228 =
+  g_GhoulIndices[0] =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",1);
+  g_GhoulIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L ForeArm",1);
-  _DAT_01cb822c =
+  g_GhoulIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_01cb8230 =
+  g_GhoulIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_01cb8234 =
+  g_GhoulIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_01cb8238 =
+  g_GhoulIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Foot",1);
-  _DAT_01cb823c =
+  g_GhoulIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Foot",1);
-  _DAT_01cb8220 =
+  g_GhoulIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_01cb8224 =
+  g_GhoulIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Hand",1);
-  _DAT_01cb8240 =
+  g_GhoulIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
-  _DAT_01cb8244 =
+  g_GhoulIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100

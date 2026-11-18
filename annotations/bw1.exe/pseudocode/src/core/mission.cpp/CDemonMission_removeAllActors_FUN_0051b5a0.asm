@@ -8,11 +8,11 @@
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_clearMissionData_FUN_0051a3b0 at 0051a3b6
-;   core_mission.cpp_FUN_0051ba60 at 0051ba96
+;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_0051ba60 at 0051ba96
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01d06aa0
+;   int g_HeroCount
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
     MOV EBP,dword ptr [0x00622c18]      ; 0051b5d7 | g_CDemonSetPtr
     XOR EDI,EDI                         ; 0051b5dd
     PUSH EBP                            ; 0051b5df | g_CDemonSetInstance
-    MOV dword ptr [0x01d06aa0],EDI      ; 0051b5e0 | DAT_01d06aa0
+    MOV dword ptr [0x01d06aa0],EDI      ; 0051b5e0 | g_HeroCount
     MOV dword ptr [EBX + 0x1454],0xffffffff ; 0051b5e6
     CALL core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00559580 ; 0051b5f0
         ;   XREF to: 00559580 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00559580(CDemonSet * this_ptr)

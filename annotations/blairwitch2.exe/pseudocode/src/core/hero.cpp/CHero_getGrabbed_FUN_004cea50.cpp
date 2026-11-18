@@ -15,9 +15,9 @@ int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004cea50(CHero *this_ptr,CDemonAc
   byte bVar3;
   float afStackY_1010 [1014];
   char *pcVar4;
-  uint local_28;
-  uint local_1c;
-  float local_14;
+  CVector3f local_28;
+  float local_1c;
+  float afStack_18 [2];
   
   bVar3 = 0;
   if (grabber == (CDemonActor *)0x0) {
@@ -26,7 +26,7 @@ int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004cea50(CHero *this_ptr,CDemonAc
   engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"CHero::startGettingGrabbed by %s, type %d\n")
   ;
   this_ptr_00 = &(this_ptr->base).model;
-  core_motion_cpp_FUN_005035c0(this_ptr_00);
+  core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
   engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  current motion is %s\n");
   if (grab_type == 0) {
     pcVar4 = "GETGRABBED";
@@ -44,13 +44,13 @@ int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004cea50(CHero *this_ptr,CDemonAc
       pcVar4 = "GETGRABBED";
     }
     else {
-      core_actor_cpp_FUN_00408de0(this_ptr,&grabber->location);
-      local_1c = local_28;
-      *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffdc + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-      if (local_14 <= 0.0) {
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                ((CDemonActor *)this_ptr,&(grabber->location).position,&local_28);
+      local_1c = local_28.x;
+      afStack_18[(uint)bVar3 * -2] = *(float *)((int)&local_28 + (uint)bVar3 * -8 + 4);
+      afStack_18[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+           *(float *)((int)&local_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+      if (afStack_18[1] <= 0.0) {
         pcVar4 = "GETGRABBED_BACK";
       }
       else {

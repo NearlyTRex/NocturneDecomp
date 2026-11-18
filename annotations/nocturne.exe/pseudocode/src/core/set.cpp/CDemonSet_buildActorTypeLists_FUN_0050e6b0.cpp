@@ -34,19 +34,19 @@ void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(CDemonSet *
       }
       pCVar1 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (actor_ptr,g_CCharacterActorType_00765a60.name_hash);
+                         (actor_ptr,g_CCharacterClassInfo.name_hash);
       this_ptr->characters[this_ptr->character_count] = pCVar1;
-      class_name_hash = g_CEnemyActorType_01bcdebc.name_hash;
+      class_name_hash = g_CEnemyClassInfo.name_hash;
       if (this_ptr->characters[this_ptr->character_count] == (CCharacter *)0x0) {
         pCVar3 = (CWayPoint *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (actor_ptr,g_CWayPointActorType_02ddf514.name_hash);
+                           (actor_ptr,g_CWayPointClassInfo.name_hash);
         this_ptr->waypoints[this_ptr->waypoint_count] = pCVar3;
         if (this_ptr->waypoints[this_ptr->waypoint_count] != (CWayPoint *)0x0) {
           this_ptr->waypoint_count = this_ptr->waypoint_count + 1;
         }
         pCVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (actor_ptr,g_CTriggerActorType_02dd1084.name_hash);
+                           (actor_ptr,g_CTriggerClassInfo.name_hash);
         if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&
            (pCVar4[2].orient_matrix.m[2].y != 0.0)) goto LAB_0050e795;
       }

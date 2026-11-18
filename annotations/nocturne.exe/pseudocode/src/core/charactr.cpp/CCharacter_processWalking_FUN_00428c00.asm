@@ -28,7 +28,7 @@
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CConsole g_CConsoleInstance
 ;   UVector3 g_ZeroVector
-;   undefined4 g_CWayPointActorType_02ddf514.name_hash
+;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -264,7 +264,7 @@ section .text
     SAHF                                ; 00428e5c
     JA 0x00428e83                       ; 00428e5d
         ;   XREF to: 00428e83 (CONDITIONAL_JUMP)  ; LAB_00428e83
-    MOV EBP,dword ptr [0x02ddf54c]      ; 00428e5f | g_CWayPointActorType_02ddf514.name_hash
+    MOV EBP,dword ptr [0x02ddf54c]      ; 00428e5f | g_CWayPointClassInfo.name_hash
     PUSH EBP                            ; 00428e65
     PUSH ESI                            ; 00428e66
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00428e67

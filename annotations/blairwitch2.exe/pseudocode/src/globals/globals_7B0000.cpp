@@ -4,6 +4,11 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x7B0000
 // =============================================================================
 
+// CDemonActor*
+CDemonActor* g_CurrentProcessingActor = {};
+CDemonActor* g_CurrentActorBeingProcessed = {};
+CDemonActor* g_LastCollisionActor = {};
+
 // CDemonActorType
 CDemonActorType g_CDemonActorClassInfo = {};
 CDemonActorType g_CAmmoClassInfo = {};
@@ -12,6 +17,7 @@ CDemonActorType g_CAnvilClassInfo = {};
 CDemonActorType g_CArmourClassInfo = {};
 CDemonActorType g_CBackgroundActorClassInfo = {};
 CDemonActorType g_CBaronClassInfo = {};
+CDemonActorType g_CBaronWeaponClassInfo = {};
 CDemonActorType g_CBarrierClassInfo = {};
 CDemonActorType g_CBatClassInfo = {};
 CDemonActorType g_CBatCreatureClassInfo = {};
@@ -22,96 +28,103 @@ CDemonActorType g_CBiggsClassInfo = {};
 CDemonActorType g_CBodyPartClassInfo = {};
 CDemonActorType g_CBoneGuyClassInfo = {};
 CDemonActorType g_CBoxActorClassInfo = {};
+CDemonActorType g_CLightActorClassInfo = {};
 CDemonActorType g_CBrideClassInfo = {};
 CDemonActorType g_CBugsClassInfo = {};
 CDemonActorType g_CCharacterClassInfo = {};
 
+// CDemonActorType*[200]
+CDemonActorType* g_ActorClassRegistrations[200] = {};
+
+// CDemonCamera*
+CDemonCamera* g_CurrentSceneCamera = {};
+
 // CDemonFilter[8]
-CDemonFilter CDemonFilter_ARRAY_007bc9ec[8] = {};
+CDemonFilter g_LightActorFilters[8] = {};
 
-// undefined1
-undefined1 DAT_007bcd0c = {};
-undefined1 DAT_007bda80 = {};
-undefined1 DAT_007bda81 = {};
-undefined1 DAT_007bda82 = {};
-undefined1 DAT_007bda83 = {};
-undefined1 DAT_007bdad8 = {};
-undefined1 DAT_007bfd10 = {};
+// CDemonGlobe
+CDemonGlobe g_CDemonGlobe_007bda98 = {};
 
-// undefined4
-undefined4 DAT_007bbff4 = {};
-undefined4 DAT_007bc034 = {};
-undefined4 DAT_007bc038 = {};
-undefined4 DAT_007bc03c = {};
-undefined4 DAT_007bc040 = {};
-undefined4 DAT_007bc044 = {};
-undefined4 DAT_007bc048 = {};
-undefined4 DAT_007bc04c = {};
-undefined4 DAT_007bc368 = {};
-undefined4 DAT_007bc498 = {};
-undefined4 DAT_007bc4cc = {};
-undefined4 DAT_007bc4d0 = {};
-undefined4 DAT_007bc4dc = {};
-undefined4 DAT_007bc74c = {};
-undefined4 DAT_007bc754 = {};
-undefined4 DAT_007bc7b8 = {};
-undefined4 DAT_007bc7c0 = {};
-undefined4 DAT_007bc7dc = {};
-undefined4 DAT_007bc7e4 = {};
-undefined4 DAT_007bc944 = {};
-undefined4 DAT_007bc948 = {};
-undefined4 DAT_007bc94c = {};
-undefined4 DAT_007bc958 = {};
-undefined4 DAT_007bc95c = {};
-undefined4 DAT_007bc968 = {};
-undefined4 DAT_007bc96c = {};
-undefined4 DAT_007bcc84 = {};
-undefined4 DAT_007bccdc = {};
-undefined4 DAT_007bcce0 = {};
-undefined4 DAT_007bcce4 = {};
-undefined4 DAT_007bcce8 = {};
-undefined4 DAT_007bccec = {};
-undefined4 DAT_007bccf0 = {};
-undefined4 DAT_007bccf4 = {};
-undefined4 DAT_007bcd00 = {};
-undefined4 DAT_007bcd08 = {};
-undefined4 DAT_007bcf48 = {};
-undefined4 DAT_007bcf4c = {};
-undefined4 DAT_007bcf50 = {};
-undefined4 DAT_007bda74 = {};
-undefined4 DAT_007bda90 = {};
-undefined4 DAT_007bdc98 = {};
-undefined4 DAT_007bdc9c = {};
-undefined4 DAT_007bdca0 = {};
-undefined4 DAT_007bee30 = {};
-undefined4 DAT_007bee34 = {};
-undefined4 DAT_007bee38 = {};
-undefined4 DAT_007bee3c = {};
-undefined4 DAT_007bee40 = {};
-undefined4 DAT_007bee44 = {};
-undefined4 DAT_007bee64 = {};
-undefined4 DAT_007bee68 = {};
-undefined4 DAT_007bee6c = {};
-undefined4 DAT_007bf434 = {};
-undefined4 DAT_007bf438 = {};
-undefined4 DAT_007bf43c = {};
-undefined4 DAT_007bf440 = {};
-undefined4 DAT_007bf4b4 = {};
-undefined4 DAT_007bf4b8 = {};
-undefined4 DAT_007bf4c0 = {};
-undefined4 DAT_007bf4f0 = {};
-undefined4 DAT_007bf4f4 = {};
-undefined4 DAT_007bf4f8 = {};
-undefined4 DAT_007bfcf8 = {};
-undefined4 DAT_007bfcfc = {};
-undefined4 DAT_007bfd00 = {};
-undefined4 DAT_007bfd04 = {};
-undefined4 DAT_007bfd08 = {};
-undefined4 DAT_007bfd0c = {};
-undefined4 DAT_007bfd14 = {};
-undefined4 DAT_007bfd3c = {};
-undefined4 DAT_007bfd44 = {};
+// CKeyFramedModelInstance
+CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance = {};
+CKeyFramedModelInstance g_StakeModelInstance = {};
 
-// undefined8
-undefined8 DAT_007bf4e8 = {};
+// CVector3f
+CVector3f g_BrideOffsetMinusX = {};
+CVector3f g_BrideOffsetPlusX = {};
+
+// SMRGLHeaderPrimitive*[2000]
+SMRGLHeaderPrimitive* g_RenderFaceArray[2000] = {};
+
+// SMRGLTextureBasic
+SMRGLTextureBasic g_SMRGLTextureBasic_007bda78 = {};
+
+// SRenderBufferEntry*[2500]
+SRenderBufferEntry* g_RenderBufferSortArray[2500] = {};
+
+// SRenderVertex*[16]
+SRenderVertex* g_ClipperCullingPointers[16] = {};
+
+// SRenderVertex[12]
+SRenderVertex g_ClipperTempBuffer[12] = {};
+
+// SRenderVertex[16]
+SRenderVertex g_SRenderVertex_ARRAY_007bee34[16] = {};
+SRenderVertex g_SRenderVertex_ARRAY_007bf4b8[16] = {};
+SRenderVertex g_ClipperOutputBuffer[16] = {};
+
+// _FILE*
+_FILE* g_ActorDataFile = {};
+
+// byte
+byte g_BYTE_007bdad8 = {};
+
+// char[52]
+char g_ActorDebugBuffer[52] = {};
+
+// float
+float g_FLOAT_007bc4dc = {};
+
+// float[100]
+float g_BoneBurnIntensity[100] = {};
+
+// float[12][12]
+float g_BugsGroundHeightGridTemp[12][12] = {};
+
+// int
+int g_RenderFaceCount = {};
+int g_ActorReadingMode = {};
+int g_IncludeCommentsWhenWriting = {};
+int g_NumActorClassTypes = {};
+int g_LightActorFiltersInitialized = {};
+int g_EtherealUVScroll = {};
+int g_EtherealBoltFrame = {};
+int g_LineBlendingDisabled = {};
+int g_INT_007bee30 = {};
+int g_INT_007bf4b4 = {};
+int g_ClipperTempCount = {};
+int g_InputVertexCount = {};
+int g_OutputVertexCount = {};
+int g_TempVertexCount = {};
+int g_IntermediateVertexCount = {};
+
+// int[11]
+int g_INT_ARRAY_007bc944[11] = {};
+int g_BrideIndices[11] = {};
+
+// int[12]
+int g_BatCreatureIndices[12] = {};
+int g_BatmanIndices[12] = {};
+
+// int[17]
+int g_BaronIndices[17] = {};
+
+// int[1]
+int g_INT_ARRAY_007bf430[1] = {};
+
+// int[700]
+int g_BugsSortedVertexIndices[700] = {};
+
+// uint
+uint g_RandomSeedValue = {};
 

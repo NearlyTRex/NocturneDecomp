@@ -12,5 +12,5 @@ char * __cdecl core_sound_cpp_CSound_getSoundModeName_FUN_0052ec90(CSound *this_
   if ((-1 < sound_mode_index) && (sound_mode_index < 0x1b)) {
     return (&PTR_s_OFF_00594c3d_005bed6c)[sound_mode_index * 4];
   }
-  return &DAT_00594bfe;
+  return "????";
 }

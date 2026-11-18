@@ -6,50 +6,49 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_00588790(int width,int height)
 
 {
   HRESULT HVar1;
   
-  DAT_00622010 = malloc
-                           (((int)((DAT_006141c0 + (DAT_006141c0 >> 0x1f) * -8) -
-                                  (uint)((DAT_006141c0 >> 0x1f) << 2 < 0)) >> 3) *
-                            DAT_006141b8 * DAT_006141bc);
-  if (DAT_00622010 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01d046a4 = 0xea;
-    core_main_c_FUN_004e4500("WDDVMEM: Fatal - out of frame buffer memory");
+  g_PTR_00622010 =
+       malloc
+                 (((int)((g_INT_006141c0 + (g_INT_006141c0 >> 0x1f) * -8) -
+                        (uint)((g_INT_006141c0 >> 0x1f) << 2 < 0)) >> 3) *
+                  g_INT_006141b8 * g_INT_006141bc);
+  if (g_PTR_00622010 == (byte *)0x0) {
+    g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01d046a4 = 0xea;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("WDDVMEM: Fatal - out of frame buffer memory");
   }
-  _DAT_02661af0 = malloc(DAT_006141b8 * DAT_006141bc * 4 + 0x40);
-  if (_DAT_02661af0 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01d046a4 = 0xef;
-    core_main_c_FUN_004e4500("WDDVMEM: Fatal - out of Z buffer memory");
+  g_PTR_02661af0 = malloc(g_INT_006141b8 * g_INT_006141bc * 4 + 0x40);
+  if (g_PTR_02661af0 == (byte *)0x0) {
+    g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01d046a4 = 0xef;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("WDDVMEM: Fatal - out of Z buffer memory");
   }
-  DAT_0070c62c = (int)_DAT_02661af0 + 0x10U & 0xfffffff0;
-  if (_DAT_02661aec != (int *)0x0) {
-    (**(code **)(*_DAT_02661aec + 8))(_DAT_02661aec);
-    _DAT_02661aec = (int *)0x0;
+  g_SoftwareZBuffer = (byte *)((uint)(g_PTR_02661af0 + 0x10) & 0xfffffff0);
+  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+    (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+    g_DirectDrawUnknown = (IUnknown *)0x0;
   }
-  if (_DAT_02661ae8 != (int *)0x0) {
-    (**(code **)(*_DAT_02661ae8 + 8))(_DAT_02661ae8);
-    _DAT_02661ae8 = (int *)0x0;
+  if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+    (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+    g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02661ae4 != (int *)0x0) {
-    (**(code **)(*_DAT_02661ae4 + 8))(_DAT_02661ae4);
-    _DAT_02661ae4 = (int *)0x0;
+  if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+    (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+    g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02661ae0 != (int *)0x0) {
-    (**(code **)(*_DAT_02661ae0 + 0x4c))(_DAT_02661ae0);
-    (**(code **)(*_DAT_02661ae0 + 8))(_DAT_02661ae0);
-    _DAT_02661ae0 = (int *)0x0;
+  if (g_DirectDrawObject != (IDirectDraw *)0x0) {
+    (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
+    (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
+    g_DirectDrawObject = (IDirectDraw *)0x0;
   }
-  HVar1 = DirectDrawCreate((GUID *)0x0,(LPDIRECTDRAW *)&DAT_02661ae0,(IUnknown *)0x0);
+  HVar1 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
   if (HVar1 == 0) {
-    (**(code **)(*_DAT_02661ae0 + 0x50))(_DAT_02661ae0,_DAT_02664628,0x11);
+    (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_MainWindowHandle,0x11);
   }
-  engine_special_cpp_loadExternalRenderer_FUN_0055e8c0(_DAT_02664628);
+  engine_special_cpp_loadExternalRenderer_FUN_0055e8c0(g_MainWindowHandle);
   return 1;
 }

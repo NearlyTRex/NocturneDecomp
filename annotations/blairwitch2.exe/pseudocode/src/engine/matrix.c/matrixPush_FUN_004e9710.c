@@ -6,32 +6,30 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_matrixPush_FUN_004e9710(void)
 
 {
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05180) = _DAT_01c38b6c;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d051a8) = _DAT_01c38b70;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d051d0) = _DAT_01c38b74;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d051f8) = _DAT_01c38b90;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05220) = _DAT_01c38b94;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05248) = _DAT_01c38b98;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05018) = _DAT_01c38b9c;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05040) = _DAT_01c38ba0;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05068) = _DAT_01c38ba4;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05090) = _DAT_01c38ba8;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d050b8) = _DAT_01c38bac;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d050e0) = _DAT_01c38bb0;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05108) = _DAT_01c38bb4;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05130) = _DAT_01c38bb8;
-  *(uint *)(_DAT_01d05014 * 4 + 0x1d05158) = _DAT_01c38bbc;
-  _DAT_01d05014 = _DAT_01d05014 + 1;
-  if (_DAT_01d05014 < 10) {
+  g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
+  g_MatrixStack_RelY[g_MatrixStackIndex] = g_RelativeY;
+  g_MatrixStack_RelZ[g_MatrixStackIndex] = g_RelativeZ;
+  g_MatrixStack_Unk1[g_MatrixStackIndex] = g_LightDirectionX;
+  g_MatrixStack_Unk2[g_MatrixStackIndex] = g_LightDirectionY;
+  g_MatrixStack_Unk3[g_MatrixStackIndex] = g_LightDirectionZ;
+  g_MatrixStack_M00[g_MatrixStackIndex] = g_INT_01c38b9c;
+  g_MatrixStack_M01[g_MatrixStackIndex] = g_INT_01c38ba0;
+  g_MatrixStack_M02[g_MatrixStackIndex] = g_INT_01c38ba4;
+  g_MatrixStack_M10[g_MatrixStackIndex] = g_INT_01c38ba8;
+  g_MatrixStack_M11[g_MatrixStackIndex] = g_INT_01c38bac;
+  g_MatrixStack_M12[g_MatrixStackIndex] = g_INT_01c38bb0;
+  g_MatrixStack_M20[g_MatrixStackIndex] = g_INT_01c38bb4;
+  g_MatrixStack_M21[g_MatrixStackIndex] = g_INT_01c38bb8;
+  g_MatrixStack_M22[g_MatrixStackIndex] = g_INT_01c38bbc;
+  g_MatrixStackIndex = g_MatrixStackIndex + 1;
+  if (g_MatrixStackIndex < 10) {
     return;
   }
-  _DAT_01d046a0 = "..\\engine\\matrix.c";
-  _DAT_01d046a4 = 0x34b;
-  core_main_c_FUN_004e4500("Matrix unbalance");
+  g_CHAR_PTR_01d046a0 = "..\\engine\\matrix.c";
+  g_INT_01d046a4 = 0x34b;
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance");
   return;
 }

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 520,
-    "complexity_score": 490,
+    "complexity_score": 465,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 240,
-    "suspect_count": 23,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "undefined_data"
+      "shadow_pointer_walk"
     ],
     "total_lines": 760
   },
@@ -93,8 +92,8 @@
     },
     {
       "addr": "01cd8b28",
-      "name": "DAT_01cd8b28",
-      "type": "undefined4",
+      "name": "g_CurrentMp3Filename",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -372,14 +371,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "(\"Side info bad: block_type == 0 in split block.  File: %s\",&DAT_01cd8b28);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 171,
       "match": "(uint *)((int)side_info_array",
@@ -418,14 +409,6 @@
       "severity": "moderate",
       "text": "iVar10 = *(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 212,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "(\"Side info bad: block_type == 0 in split block.  File: %s\",&DAT_01cd8b28);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

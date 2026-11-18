@@ -10,9 +10,9 @@
 ; int              Stack[0x10]:4   y2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d76cc4
-;   undefined4 DAT_01d7a6c4
-;   undefined4 DAT_01d7f4f4
+;   float g_FLOAT_01d76cc4
+;   int g_INT_01d7a6c4
+;   float* g_FLOAT_PTR_01d7f4f4
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_lineListD3DTL_FUN_004ee9f0
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 004f3700
         ;   Label: engine_mini3d.cpp_drawLine_FUN_004f3700
     SUB ESP,0xc                         ; 004f3701
-    MOV EBX,dword ptr [0x01d7f4f4]      ; 004f3704 | DAT_01d7f4f4
+    MOV EBX,dword ptr [0x01d7f4f4]      ; 004f3704 | g_FLOAT_PTR_01d7f4f4
     CALL engine_mini3d.cpp_nextDepth2D_FUN_004f3af0 ; 004f370a
         ;   XREF to: 004f3af0 (UNCONDITIONAL_CALL)  ; float engine_mini3d.cpp_nextDepth2D_FUN_004f3af0()
     MOV dword ptr [ESP + 0x8],EAX       ; 004f370f
@@ -37,7 +37,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004f3725
     FILD dword ptr [ESP + 0x8]          ; 004f3729
     MOV EAX,dword ptr [ESP + 0x18]      ; 004f372d
-    FLD float ptr [0x01d76cc4]          ; 004f3731 | DAT_01d76cc4
+    FLD float ptr [0x01d76cc4]          ; 004f3731 | g_FLOAT_01d76cc4
     FLD ST0                             ; 004f3737
     MOV dword ptr [ESP + 0x8],EAX       ; 004f3739
     FMULP ST2                           ; 004f373d
@@ -49,7 +49,7 @@ section .text
     FSTP float ptr [ESP]                ; 004f374e
     MOV EAX,dword ptr [ESP]             ; 004f3751
     MOV dword ptr [EBX + 0xc],EAX       ; 004f3754
-    MOV EAX,[0x01d7a6c4]                ; 004f3757 | DAT_01d7a6c4
+    MOV EAX,[0x01d7a6c4]                ; 004f3757 | g_INT_01d7a6c4
     MOV dword ptr [EBX + 0x10],EAX      ; 004f375c
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004f375f
     MOV dword ptr [ESP + 0x8],EAX       ; 004f3763
@@ -76,7 +76,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f37b8
     FSTP float ptr [EBX + 0x20]         ; 004f37bc
     MOV dword ptr [EBX + 0x2c],EAX      ; 004f37bf
-    MOV EAX,[0x01d7a6c4]                ; 004f37c2 | DAT_01d7a6c4
+    MOV EAX,[0x01d7a6c4]                ; 004f37c2 | g_INT_01d7a6c4
     FSTP float ptr [EBX + 0x24]         ; 004f37c7
     MOV dword ptr [EBX + 0x30],EAX      ; 004f37ca
     CALL engine_mini3d.cpp_lineListD3DTL_FUN_004ee9f0 ; 004f37cd

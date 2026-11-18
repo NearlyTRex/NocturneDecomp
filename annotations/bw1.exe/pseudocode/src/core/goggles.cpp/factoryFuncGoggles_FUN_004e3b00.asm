@@ -15,7 +15,7 @@ section .text
     PUSH 0x2d8                          ; 004e3b00
         ;   Label: core_goggles.cpp_factoryFuncGoggles_FUN_004e3b00
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004e3b05
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004e3b0a
     TEST EAX,EAX                        ; 004e3b0d
     JNZ 0x004e3b12                      ; 004e3b0f

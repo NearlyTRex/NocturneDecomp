@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01c6750c
+;   int g_LightningBoltAllocIndex
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 0048c425
     PUSH dword ptr [ESP + 0x14]         ; 0048c429
     PUSH EDX                            ; 0048c42d
-    MOV EDX,dword ptr [0x01c6750c]      ; 0048c42e | DAT_01c6750c
+    MOV EDX,dword ptr [0x01c6750c]      ; 0048c42e | g_LightningBoltAllocIndex
     LEA EAX,[EDX*0x4 + 0x0]             ; 0048c434
     SUB EAX,EDX                         ; 0048c43b
     SHL EAX,0x2                         ; 0048c43d
@@ -44,10 +44,10 @@ section .text
     PUSH EAX                            ; 0048c44a
     CALL core_fire.cpp_CLightningBolt_activate_FUN_00488b10 ; 0048c44b
         ;   XREF to: 00488b10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_activate_FUN_00488b10(CLightningBolt * this_ptr, CVector3f * start_position, float start_width, float end_width)
-    MOV ECX,dword ptr [0x01c6750c]      ; 0048c450 | DAT_01c6750c
+    MOV ECX,dword ptr [0x01c6750c]      ; 0048c450 | g_LightningBoltAllocIndex
     INC ECX                             ; 0048c456
     ADD ESP,0x10                        ; 0048c457
-    MOV dword ptr [0x01c6750c],ECX      ; 0048c45a | DAT_01c6750c
+    MOV dword ptr [0x01c6750c],ECX      ; 0048c45a | g_LightningBoltAllocIndex
     CMP ECX,0xa                         ; 0048c460
     JGE 0x0048c46e                      ; 0048c463
         ;   XREF to: 0048c46e (CONDITIONAL_JUMP)  ; LAB_0048c46e
@@ -59,7 +59,7 @@ section .text
     PUSH ESI                            ; 0048c46e
         ;   Label: LAB_0048c46e
     XOR ESI,ESI                         ; 0048c46f
-    MOV dword ptr [0x01c6750c],ESI      ; 0048c471 | DAT_01c6750c
+    MOV dword ptr [0x01c6750c],ESI      ; 0048c471 | g_LightningBoltAllocIndex
     POP ESI                             ; 0048c477
     CMP dword ptr [ESP + 0x14],0x0      ; 0048c478
     JNZ 0x0048c481                      ; 0048c47d

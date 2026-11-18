@@ -1,0 +1,199 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 159,
+    "complexity_score": 51,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 51,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 210
+  },
+  "cross_references": [
+    {
+      "addr": "004f91d0",
+      "from_addr": "004f91dd",
+      "name": "core_moocow.cpp_CMooCow_processDamage_FUN_004f91d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f9050",
+    "address_range": [
+      [
+        "004f9050",
+        "004f91c9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_moocow.cpp_CMooCow_processDismemberment_FUN_004f9050",
+    "signature": "void __cdecl core_moocow_cpp_CMooCow_processDismemberment_FUN_004f9050(CMooCow *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cf40"
+    },
+    {
+      "addr": "004157c0",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0"
+    },
+    {
+      "addr": "00414550",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00414550"
+    },
+    {
+      "addr": "00430520",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_00430520"
+    },
+    {
+      "addr": "00430590",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590"
+    },
+    {
+      "addr": "00434810",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_00434810"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c9213",
+      "name": "s_limb_wav_005c9213",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9224",
+      "name": "g_DOUBLE_005c9224",
+      "type": "double",
+      "value": "7"
+    },
+    {
+      "addr": "005c922c",
+      "name": "g_DOUBLE_005c922c",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "005c9234",
+      "name": "g_DOUBLE_005c9234",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "01d21320",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21510",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f91dd",
+        "call_type": "direct",
+        "caller": "core_moocow.cpp_CMooCow_processDamage_FUN_004f91d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6183206106870225,
+    "instruction_count": 131,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 8,
+      "COPY": 204,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 53,
+      "INT_AND": 45,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 42,
+      "INT_LESS": 6,
+      "INT_MULT": 1,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 21,
+      "INT_SUB": 55,
+      "LOAD": 34,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 56
+    },
+    "pcode_op_count": 605
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00521810",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMooCow *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": []
+}

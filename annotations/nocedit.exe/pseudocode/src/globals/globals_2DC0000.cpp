@@ -32,5 +32,5 @@ CLevelLoader g_CLevelLoaderInstance = {};
 
 // int
 int g_InventoryScreenHeight = {};
-int INT_02dcd794 = {};
+int g_InventoryLightAngle = {};
 

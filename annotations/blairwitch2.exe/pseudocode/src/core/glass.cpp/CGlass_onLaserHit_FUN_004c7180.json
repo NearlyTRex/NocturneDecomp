@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 153,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 53,
-    "suspect_count": 9,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 174
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 173
   },
   "cross_references": [],
   "function": {
@@ -48,38 +45,38 @@
   "globals": [
     {
       "addr": "005d9422",
-      "name": "DAT_005d9422",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d9422",
+      "type": "double",
+      "value": "0.0000152590218966964"
     },
     {
       "addr": "005d942a",
-      "name": "DAT_005d942a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d942a",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "006141c8",
-      "name": "DAT_006141c8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentTextureDimension",
+      "type": "int",
+      "value": "0x100"
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c37770",
-      "name": "DAT_01c37770",
-      "type": "undefined4",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
       "value": null
     }
   ],
@@ -179,84 +176,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,&this_ptr->broken_texture);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_006141c8",
-      "severity": "mild",
-      "text": "fVar6 = (float10)(fVar3 / fVar4 + fVar5) * (float10)DAT_006141c8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_006141c8",
-      "severity": "mild",
-      "text": "fVar7 = (float10)(1.0 - fVar1 / fVar2) * (float10)DAT_006141c8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_006141c8",
-      "severity": "mild",
-      "text": "if (DAT_006141c8 <= iStack_18) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_006141c8",
-      "severity": "mild",
-      "text": "iStack_18 = DAT_006141c8 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_006141c8",
-      "severity": "mild",
-      "text": "if (DAT_006141c8 <= iStack_14) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_006141c8",
-      "severity": "mild",
-      "text": "iStack_14 = DAT_006141c8 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_006141c8",
-      "severity": "mild",
-      "text": "if (*(char *)(iStack_18 + iStack_14 * DAT_006141c8 + _DAT_01c37770) == '\\0') {",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 188,
         "vtable_addr": "005f7a84"
       }

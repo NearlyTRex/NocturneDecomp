@@ -14,7 +14,7 @@ int * FUN_005c58e5(int *param_1)
   while( true ) {
     cVar1 = FUN_005c5f03(param_1);
     if (((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0x10) & 3) != 0) ||
-       (((&DAT_0061ed94)[(byte)(cVar1 + 1)] & 2) == 0)) break;
+       ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) == 0)) break;
     FUN_005c5f69(param_1);
   }
   return param_1;

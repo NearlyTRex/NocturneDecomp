@@ -12,9 +12,9 @@ BOOL FUN_005c2a88(void)
   BOOL BVar1;
   
   BVar1 = FUN_005c2a34(1);
-  if (DAT_0061f2a0 != -1) {
-    BVar1 = TlsFree(DAT_0061f2a0);
-    DAT_0061f2a0 = -1;
+  if (g_INT_0061f2a0 != -1) {
+    BVar1 = TlsFree(g_INT_0061f2a0);
+    g_INT_0061f2a0 = -1;
   }
   return BVar1;
 }

@@ -9,6 +9,6 @@
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_00447d30(CCourse *this_ptr,uint flags)
 
 {
-  core_course_cpp_FUN_00447ee0(this_ptr);
+  core_course_cpp_CCourse_free_FUN_00447ee0(this_ptr);
   return this_ptr;
 }

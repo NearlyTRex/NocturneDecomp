@@ -11,37 +11,38 @@ CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004e6d50(CGrav
 {
   CVector3f *pCVar1;
   CKeyFramedModel *pCVar2;
-  CKeyFramedModelInstance *this_ptr_00;
   int iVar3;
   CBoundingBox3D *unaff_ESI;
-  CBoundingBox3D *pCVar4;
+  float *pfVar4;
   CBoundingBox3D *pCVar5;
   byte bVar6;
-  float10 fVar7;
-  CBoundingBox3D CStack_24;
-  int iStack_c;
+  double dVar7;
+  float fStack_24;
+  float fStack_20;
+  float fStack_1c;
+  float fStack_18;
+  float fStack_14;
+  float fStack_10;
   
   bVar6 = 0;
-  if (*(int *)(0x01D2C900 + 0x1008) == 0) {
-    fVar7 = (float10)this_ptr->cur_frame;
-    this_ptr_00 = (CKeyFramedModelInstance *)round();
-    iStack_c = (int)ROUND(fVar7);
-    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(this_ptr_00);
-    pCVar4 = pCVar2->frame_bounds + iStack_c;
-    if (&CStack_24 != pCVar4) {
-      CStack_24.min.x = (pCVar4->min).x;
-      CStack_24.min.y = (pCVar4->min).y;
-      CStack_24.min.z = (pCVar4->min).z;
+  if (g_CDemonMission_PTR_0061f650->is_in_editor == 0) {
+    dVar7 = round((double)this_ptr->cur_frame);
+    fStack_10 = (float)(int)ROUND(dVar7);
+    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->model);
+    pCVar5 = pCVar2->frame_bounds + (int)fStack_10;
+    if ((CBoundingBox3D *)&stack0xffffffd8 != pCVar5) {
+      fStack_24 = (pCVar5->min).y;
+      fStack_20 = (pCVar5->min).z;
     }
-    if (&CStack_24.max != &pCVar4->max) {
-      CStack_24.max.x = (pCVar4->max).x;
-      CStack_24.max.y = (pCVar4->max).y;
-      CStack_24.max.z = (pCVar4->max).z;
-      pCVar4 = &CStack_24;
+    if ((CVector3f *)&fStack_1c != &pCVar5->max) {
+      fStack_1c = (pCVar5->max).x;
+      fStack_18 = (pCVar5->max).y;
+      fStack_14 = (pCVar5->max).z;
+      pfVar4 = (float *)&stack0xffffffd8;
       pCVar5 = unaff_ESI;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-        (pCVar5->min).x = *(float *)pCVar4;
-        pCVar4 = (CBoundingBox3D *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+        (pCVar5->min).x = *pfVar4;
+        pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
         pCVar5 = (CBoundingBox3D *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
       }
       return unaff_ESI;
@@ -49,23 +50,23 @@ CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004e6d50(CGrav
   }
   else {
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->model);
-    if (&CStack_24 != &pCVar2->bounds) {
-      CStack_24.min.x = (pCVar2->bounds).min.x;
-      CStack_24.min.y = (pCVar2->bounds).min.y;
-      CStack_24.min.z = (pCVar2->bounds).min.z;
+    if ((CBoundingBox3D *)&fStack_24 != &pCVar2->bounds) {
+      fStack_24 = (pCVar2->bounds).min.x;
+      fStack_20 = (pCVar2->bounds).min.y;
+      fStack_1c = (pCVar2->bounds).min.z;
     }
     pCVar1 = &(pCVar2->bounds).max;
-    if (&CStack_24.max != pCVar1) {
-      CStack_24.max.x = pCVar1->x;
-      CStack_24.max.y = (pCVar2->bounds).max.y;
-      CStack_24.max.z = (pCVar2->bounds).max.z;
+    if ((CVector3f *)&fStack_18 != pCVar1) {
+      fStack_18 = pCVar1->x;
+      fStack_14 = (pCVar2->bounds).max.y;
+      fStack_10 = (pCVar2->bounds).max.z;
     }
   }
-  pCVar4 = &CStack_24;
+  pfVar4 = (float *)&stack0xffffffd8;
   pCVar5 = unaff_ESI;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    (pCVar5->min).x = *(float *)pCVar4;
-    pCVar4 = (CBoundingBox3D *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+    (pCVar5->min).x = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
     pCVar5 = (CBoundingBox3D *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
   }
   return unaff_ESI;

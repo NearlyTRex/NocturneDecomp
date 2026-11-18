@@ -7,12 +7,12 @@
 ; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004ea280 at 004ea48e
 ;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea84a
+;   core_menu.cpp_showOptionsScreen_FUN_004ea280 at 004ea48e
 ;   core_moon.cpp_CMoon_dtor_FUN_004f9450 at 004f9456
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_00460e10
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;
 ; *****************************************************************************
@@ -29,18 +29,18 @@ section .text
     LEA EBX,[EDI + 0x8]                 ; 004f958b
         ;   Label: LAB_004f958b
     PUSH EBX                            ; 004f958e
-    CALL core_dmodel.cpp_FUN_00460e10   ; 004f958f
-        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00460e10()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10 ; 004f958f
+        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 004f9594
     LEA EBX,[EDI + 0x3a0]               ; 004f9597
     PUSH EBX                            ; 004f959d
-    CALL core_dmodel.cpp_FUN_00460e10   ; 004f959e
-        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00460e10()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10 ; 004f959e
+        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 004f95a3
     ADD EDI,0x738                       ; 004f95a6
     PUSH EDI                            ; 004f95ac
-    CALL core_dmodel.cpp_FUN_00460e10   ; 004f95ad
-        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00460e10()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10 ; 004f95ad
+        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 004f95b2
     POP EDI                             ; 004f95b5
     POP EBX                             ; 004f95b6

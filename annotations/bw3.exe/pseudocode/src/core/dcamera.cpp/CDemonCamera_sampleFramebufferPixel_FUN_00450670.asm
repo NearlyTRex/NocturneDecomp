@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00450670(CDemonCamera *this_ptr,int param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00450670(CDemonCamera *this_ptr,int vertex)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   vertex
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6af74
-;   undefined4 DAT_01c6af80
-;   undefined4 DAT_01c6af8c
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c
 ;
 ; *****************************************************************************
 
@@ -40,15 +40,15 @@ section .text
     ADD EDX,ECX                         ; 004506a7
     MOV ECX,dword ptr [EBX + 0x158]     ; 004506a9
     MOV EDX,dword ptr [ECX + EDX*0x4]   ; 004506af
-    MOV CL,byte ptr [0x01c6af74]        ; 004506b2 | DAT_01c6af74
+    MOV CL,byte ptr [0x01c6af74]        ; 004506b2 | g_BIT_INTEGER32_01c6af74
     MOV EBX,EDX                         ; 004506b8
     SHR EBX,CL                          ; 004506ba
     MOV ESI,EDX                         ; 004506bc
     AND EBX,0xff                        ; 004506be
-    MOV CL,byte ptr [0x01c6af80]        ; 004506c4 | DAT_01c6af80
+    MOV CL,byte ptr [0x01c6af80]        ; 004506c4 | g_BIT_INTEGER32_01c6af80
     SHL EBX,0x8                         ; 004506ca
     SHR ESI,CL                          ; 004506cd
-    MOV CL,byte ptr [0x01c6af8c]        ; 004506cf | DAT_01c6af8c
+    MOV CL,byte ptr [0x01c6af8c]        ; 004506cf | g_BIT_INTEGER32_01c6af8c
     AND ESI,0xff                        ; 004506d5
     MOV dword ptr [EAX + 0x20],EBX      ; 004506db
     SHR EDX,CL                          ; 004506de

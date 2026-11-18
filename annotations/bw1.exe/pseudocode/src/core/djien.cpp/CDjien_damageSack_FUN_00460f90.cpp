@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_djien_cpp_CDjien_damageSack_FUN_00460f90(CDjien *this_ptr,SDamageInfo *damage)
 
 {
@@ -22,7 +20,7 @@ void __cdecl core_djien_cpp_CDjien_damageSack_FUN_00460f90(CDjien *this_ptr,SDam
     damage->gore_multiplier = 0.0;
   }
   else {
-    fVar1 = (float)_DAT_00612270;
+    fVar1 = (float)g_INT_00612270;
     this_ptr->sack_damage[iVar2] = damage->damage_amount + this_ptr->sack_damage[iVar2];
     if (fVar1 < this_ptr->sack_damage[iVar2]) {
       this_ptr->num_sacks_blown = this_ptr->num_sacks_blown + 1;
@@ -38,8 +36,8 @@ void __cdecl core_djien_cpp_CDjien_damageSack_FUN_00460f90(CDjien *this_ptr,SDam
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"djien-heart?.wav @ 6");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(body_part);
-      this_ptr_00 = 0x01C51D80;
-      damage->gore_multiplier = damage->gore_multiplier * (float)_DAT_005d8e60;
+      this_ptr_00 = g_CEventListPtr;
+      damage->gore_multiplier = damage->gore_multiplier * (float)7;
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70(this_ptr_00,"DjienSackBlown");
       return;
     }

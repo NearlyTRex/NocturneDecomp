@@ -9,7 +9,6 @@
 #include "types/classes/C3DSLight.h"
 #include "types/classes/CBodyPart.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDeformableModel.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
@@ -18,7 +17,6 @@
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CDemonShadow.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CShadow.h"
@@ -31,6 +29,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
 #include "types/funcdefs/CDeformableModel_MotionBlendWeightFunc.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -47,18 +46,18 @@
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00540ba0(CDemonSet *this_ptr,int camera_index,float hold_time);
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00540bc0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00540be0(CDemonSet *this_ptr,char *filename);
-void core_setdir_cpp_FUN_00540c40(SIZE_T *param_1,char *param_2);
-void core_setdir_cpp_FUN_00540cf0(CDemonSet *param_1);
+void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00540c40(CDemonSet *this_ptr,char *filename);
+void __cdecl core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_setPixelGrayscale_FUN_00540e80(int x,int y,int grayscale_value);
-void core_setdir_cpp_FUN_00540eb0(int *param_1);
+void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005412b0(CDemonSet *this_ptr,_FILE *file_handle);
-undefined4 core_setdir_cpp_FUN_00541350(int param_1,int param_2,float *param_3);
+int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00541350(CDemonSet *this_ptr,int box_index,CVector3f *point);
 int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirGroup_FUN_00541410(CDemonSet *this_ptr,int box_index,CVector3f *point);
 int __cdecl core_setdir_cpp_testOBBIntersection_FUN_00541470(SVDBox *obb_a,SVDBox *obb_b);
 int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0(CDemonSet *this_ptr);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_005419e0(CDemonSet *this_ptr,int box_index);
-int core_setdir_cpp_FUN_00541a20(CDemonSet *param_1,undefined4 param_2);
-void __cdecl core_setdir_cpp_FUN_00541a60(CDemonSet *this_ptr);
+int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00541a20(CDemonSet *this_ptr,CVector3f *position);
+void __cdecl core_setdir_cpp_CDemonSet_freeThumbs_FUN_00541a60(CDemonSet *this_ptr);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_00541a70(C3DSCamera *this_ptr);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_dtor_FUN_00541aa0(C3DSCamera *this_ptr,uint flags);
 void __cdecl core_setutil_cpp_C3DSCamera_free_FUN_00541ac0(C3DSCamera *this_ptr);
@@ -84,30 +83,30 @@ void __cdecl core_shadow_cpp_staticInit_FUN_00543400(void);
 CShadow * __cdecl core_shadow_cpp_factoryFuncShadow_FUN_005434d0(void);
 CDemonActorType * __cdecl core_shadow_cpp_CShadow_getActorType_FUN_005434f0(CShadow *this_ptr);
 CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr);
-void core_shadow_cpp_FUN_00543680(CEnemy *param_1);
-void core_shadow_cpp_FUN_005438d0(CEnemy *param_1,float param_2);
+void __cdecl core_shadow_cpp_CShadow_setup_FUN_00543680(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_process_FUN_005438d0(CShadow *this_ptr,float delta_time);
 void __cdecl core_shadow_cpp_CShadow_setWalkTarget_FUN_00544fd0(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance);
-void core_shadow_cpp_FUN_00545000(int param_1);
-void core_shadow_cpp_FUN_00545040(int param_1);
-void core_shadow_cpp_FUN_00545080(int param_1);
-void core_shadow_cpp_FUN_005450c0(int param_1);
-void core_shadow_cpp_FUN_00545100(int param_1);
-void core_shadow_cpp_FUN_00545140(int param_1,float *param_2);
-void core_shadow_cpp_FUN_00545700(CCharacter *param_1);
-int core_shadow_cpp_FUN_00545710(CCharacter *param_1);
-void core_shadow_cpp_FUN_00545910(CEnemy *param_1);
-void core_shadow_cpp_FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2);
-undefined4 core_shadow_cpp_FUN_00545bd0(int param_1);
-undefined4 core_shadow_cpp_FUN_00545c10(int param_1,float *param_2);
-void core_shadow_cpp_FUN_00545c80(CCharacter *param_1);
-void core_shadow_cpp_FUN_00545e70(void);
-undefined4 core_shadow_cpp_FUN_00545e90(void);
+void __cdecl core_shadow_cpp_CShadow_playHitAlertSound_FUN_00545000(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_playAlertSound_FUN_00545040(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_playAttackSound_FUN_00545080(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_playDamageSound_FUN_005450c0(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_playDeathSound_FUN_00545100(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_renderDebugMarker_FUN_00545140(CShadow *this_ptr,CVector3f *position);
+int __cdecl core_shadow_cpp_CShadow_renderOpaque_FUN_00545700(CShadow *this_ptr);
+int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_00545710(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_archive_FUN_00545910(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_005459b0(CShadow *this_ptr,SDamageInfo *damage_info);
+EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_00545bd0(CShadow *this_ptr);
+int __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_00545c10(CShadow *this_ptr,CVector3f *out_points_array);
+void __cdecl core_shadow_cpp_CShadow_processChainConstraint_FUN_00545c80(CShadow *this_ptr);
+CShadowForest * __cdecl core_shadow_cpp_factoryFuncShadowForest_FUN_00545e70(void);
+CDemonActorType * __cdecl core_shadow_cpp_CShadowForest_getActorType_FUN_00545e90(CShadowForest *this_ptr);
 CShadowForest * __cdecl core_shadow_cpp_CShadowForest_ctor_FUN_00545ea0(CShadowForest *this_ptr);
-void core_shadow_cpp_FUN_00545f00(void);
-undefined4 core_shadow_cpp_FUN_00545f20(void);
+CSpiritShadow * __cdecl core_shadow_cpp_factoryFuncSpiritShadow_FUN_00545f00(void);
+CDemonActorType * __cdecl core_shadow_cpp_CSpiritShadow_getActorType_FUN_00545f20(CSpiritShadow *this_ptr);
 CSpiritShadow * __cdecl core_shadow_cpp_CSpiritShadow_ctor_FUN_00545f30(CSpiritShadow *this_ptr);
-void core_shadow_cpp_FUN_00545f90(void);
-undefined4 core_shadow_cpp_FUN_00545fb0(void);
+CDemonShadow * __cdecl core_shadow_cpp_factoryFuncDemonShadow_FUN_00545f90(void);
+CDemonActorType * __cdecl core_shadow_cpp_CDemonShadow_getActorType_FUN_00545fb0(CDemonShadow *this_ptr);
 CDemonShadow * __cdecl core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr);
 CDemonShadow * __cdecl core_shadow_cpp_CDemonShadow_dtor_FUN_00546020(CDemonShadow *this_ptr,uint flags);
 CSpiritShadow * __cdecl core_shadow_cpp_CSpiritShadow_dtor_FUN_005460b0(CSpiritShadow *this_ptr,uint flags);
@@ -138,7 +137,7 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_005471c0(CSimBox *this_ptr);
 void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00547280(CSimBox *this_ptr);
 void __cdecl core_simbox_cpp_CSimBox_process_FUN_005473c0(CSimBox *this_ptr,float delta_time);
 int __cdecl core_simbox_cpp_CSimBox_renderOpaque_FUN_005475a0(CSimBox *this_ptr);
-CBoundingBox3D * __cdecl core_simbox_cpp_CSimBox_getBoundingBox_FUN_00547620(CSimBox *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_simbox_cpp_CSimBox_getBoundingBox_FUN_00547620(CSimBox *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_simbox_cpp_CSimBox_archive_FUN_00547660(CSimBox *this_ptr);
 ECollisionType __cdecl core_simbox_cpp_CSimBox_getCollisionType_FUN_00547710(CSimBox *this_ptr,SCollisionInfo *collision_info);
 CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_00547720(CSimBox *this_ptr,uint flags);

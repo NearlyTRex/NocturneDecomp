@@ -11,23 +11,23 @@
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_expireDecals_FUN_0053ba00 at 0053ba10
 ;   core_set.cpp_CDemonSet_renderDecals_FUN_0053ba40 at 0053ba6b
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 0053620c
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 005352dd
-;   core_set.cpp_FUN_00535da0 at 0053620c
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.blood_flag
-;   undefined4 DAT_01d276b8
-;   undefined4 DAT_01d4a940
-;   undefined4 DAT_01d4aec8
+;   int g_BloodSplatCount
+;   int g_BloodPoolCount
+;   int g_FootstepCount
 ;
 ; Called Functions:
+;   core_gore.cpp_CBloodPool_render_FUN_004cdd30
 ;   core_gore.cpp_CBloodPool_setupRenderState_FUN_004cdc90
+;   core_gore.cpp_CBloodSplat_render_FUN_004cd690
 ;   core_gore.cpp_CBloodSplat_setupRenderState_FUN_004cd600
-;   core_gore.cpp_FUN_004cd690
-;   core_gore.cpp_FUN_004cdd30
-;   core_gore.cpp_FUN_004ce310
+;   core_gore.cpp_CFootstep_render_FUN_004ce310
 ;
 ; *****************************************************************************
 
@@ -60,7 +60,7 @@ section .text
     TEST EBP,EBP                        ; 004ce662
     JZ 0x004ce71b                       ; 004ce664
         ;   XREF to: 004ce71b (CONDITIONAL_JUMP)  ; LAB_004ce71b
-    MOV EBX,dword ptr [0x01d276b8]      ; 004ce66a | DAT_01d276b8
+    MOV EBX,dword ptr [0x01d276b8]      ; 004ce66a | g_BloodSplatCount
     XOR ESI,ESI                         ; 004ce670
     TEST EBX,EBX                        ; 004ce672
     JLE 0x004ce6a0                      ; 004ce674
@@ -70,9 +70,9 @@ section .text
         ;   Label: LAB_004ce67b
     PUSH EBX                            ; 004ce67d
     INC ESI                             ; 004ce67e
-    CALL core_gore.cpp_FUN_004cd690     ; 004ce67f
-        ;   XREF to: 004cd690 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cd690()
-    MOV ECX,dword ptr [0x01d276b8]      ; 004ce684 | DAT_01d276b8
+    CALL core_gore.cpp_CBloodSplat_render_FUN_004cd690 ; 004ce67f
+        ;   XREF to: 004cd690 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat * this_ptr, int expire_flag)
+    MOV ECX,dword ptr [0x01d276b8]      ; 004ce684 | g_BloodSplatCount
     ADD ESP,0x8                         ; 004ce68a
     ADD EBX,0x48                        ; 004ce68d
     CMP ESI,ECX                         ; 004ce690
@@ -88,7 +88,7 @@ section .text
     TEST EBP,EBP                        ; 004ce6ad
     JZ 0x004ce75c                       ; 004ce6af
         ;   XREF to: 004ce75c (CONDITIONAL_JUMP)  ; LAB_004ce75c
-    MOV ESI,dword ptr [0x01d4a940]      ; 004ce6b5 | DAT_01d4a940
+    MOV ESI,dword ptr [0x01d4a940]      ; 004ce6b5 | g_BloodPoolCount
     XOR EBX,EBX                         ; 004ce6bb
     TEST ESI,ESI                        ; 004ce6bd
     JLE 0x004ce6e0                      ; 004ce6bf
@@ -98,9 +98,9 @@ section .text
         ;   Label: LAB_004ce6c6
     PUSH ESI                            ; 004ce6c8
     INC EBX                             ; 004ce6c9
-    CALL core_gore.cpp_FUN_004cdd30     ; 004ce6ca
-        ;   XREF to: 004cdd30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cdd30()
-    MOV ECX,dword ptr [0x01d4a940]      ; 004ce6cf | DAT_01d4a940
+    CALL core_gore.cpp_CBloodPool_render_FUN_004cdd30 ; 004ce6ca
+        ;   XREF to: 004cdd30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_render_FUN_004cdd30(CBloodPool * this_ptr, int expire_flag)
+    MOV ECX,dword ptr [0x01d4a940]      ; 004ce6cf | g_BloodPoolCount
     ADD ESP,0x8                         ; 004ce6d5
     ADD ESI,0x2c                        ; 004ce6d8
     CMP EBX,ECX                         ; 004ce6db
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_004ce6e0
     JZ 0x004ce79d                       ; 004ce6e2
         ;   XREF to: 004ce79d (CONDITIONAL_JUMP)  ; LAB_004ce79d
-    MOV ESI,dword ptr [0x01d4aec8]      ; 004ce6e8 | DAT_01d4aec8
+    MOV ESI,dword ptr [0x01d4aec8]      ; 004ce6e8 | g_FootstepCount
     XOR EBX,EBX                         ; 004ce6ee
     TEST ESI,ESI                        ; 004ce6f0
     JLE 0x004ce650                      ; 004ce6f2
@@ -121,9 +121,9 @@ section .text
         ;   Label: LAB_004ce6fd
     PUSH ESI                            ; 004ce6ff
     INC EBX                             ; 004ce700
-    CALL core_gore.cpp_FUN_004ce310     ; 004ce701
-        ;   XREF to: 004ce310 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ce310()
-    MOV EDX,dword ptr [0x01d4aec8]      ; 004ce706 | DAT_01d4aec8
+    CALL core_gore.cpp_CFootstep_render_FUN_004ce310 ; 004ce701
+        ;   XREF to: 004ce310 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_render_FUN_004ce310(CFootstep * this_ptr, int expire_flag)
+    MOV EDX,dword ptr [0x01d4aec8]      ; 004ce706 | g_FootstepCount
     ADD ESP,0x8                         ; 004ce70c
     ADD ESI,0x44                        ; 004ce70f
     CMP EBX,EDX                         ; 004ce712
@@ -134,7 +134,7 @@ section .text
     POP ESI                             ; 004ce718
     POP EBX                             ; 004ce719
     RET                                 ; 004ce71a
-    MOV ECX,dword ptr [0x01d276b8]      ; 004ce71b | DAT_01d276b8
+    MOV ECX,dword ptr [0x01d276b8]      ; 004ce71b | g_BloodSplatCount
         ;   Label: LAB_004ce71b
     XOR ESI,ESI                         ; 004ce721
     TEST ECX,ECX                        ; 004ce723
@@ -145,7 +145,7 @@ section .text
         ;   Label: LAB_004ce72d
     JZ 0x004ce749                       ; 004ce734
         ;   XREF to: 004ce749 (CONDITIONAL_JUMP)  ; LAB_004ce749
-    MOV EAX,[0x01d276b8]                ; 004ce736 | DAT_01d276b8
+    MOV EAX,[0x01d276b8]                ; 004ce736 | g_BloodSplatCount
         ;   Label: LAB_004ce736
     INC ESI                             ; 004ce73b
     ADD EBX,0x48                        ; 004ce73c
@@ -159,12 +159,12 @@ section .text
     PUSH EDI                            ; 004ce74e
     ADD EAX,EBX                         ; 004ce74f
     PUSH EAX                            ; 004ce751
-    CALL core_gore.cpp_FUN_004cd690     ; 004ce752
-        ;   XREF to: 004cd690 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cd690()
+    CALL core_gore.cpp_CBloodSplat_render_FUN_004cd690 ; 004ce752
+        ;   XREF to: 004cd690 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat * this_ptr, int expire_flag)
     ADD ESP,0x8                         ; 004ce757
     JMP 0x004ce736                      ; 004ce75a
         ;   XREF to: 004ce736 (UNCONDITIONAL_JUMP)  ; LAB_004ce736
-    MOV EBX,dword ptr [0x01d4a940]      ; 004ce75c | DAT_01d4a940
+    MOV EBX,dword ptr [0x01d4a940]      ; 004ce75c | g_BloodPoolCount
         ;   Label: LAB_004ce75c
     XOR ESI,ESI                         ; 004ce762
     TEST EBX,EBX                        ; 004ce764
@@ -175,7 +175,7 @@ section .text
         ;   Label: LAB_004ce76e
     JZ 0x004ce78a                       ; 004ce775
         ;   XREF to: 004ce78a (CONDITIONAL_JUMP)  ; LAB_004ce78a
-    MOV EAX,[0x01d4a940]                ; 004ce777 | DAT_01d4a940
+    MOV EAX,[0x01d4a940]                ; 004ce777 | g_BloodPoolCount
         ;   Label: LAB_004ce777
     INC ESI                             ; 004ce77c
     ADD EBX,0x2c                        ; 004ce77d
@@ -189,12 +189,12 @@ section .text
     PUSH EDI                            ; 004ce78f
     ADD EAX,EBX                         ; 004ce790
     PUSH EAX                            ; 004ce792
-    CALL core_gore.cpp_FUN_004cdd30     ; 004ce793
-        ;   XREF to: 004cdd30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cdd30()
+    CALL core_gore.cpp_CBloodPool_render_FUN_004cdd30 ; 004ce793
+        ;   XREF to: 004cdd30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_render_FUN_004cdd30(CBloodPool * this_ptr, int expire_flag)
     ADD ESP,0x8                         ; 004ce798
     JMP 0x004ce777                      ; 004ce79b
         ;   XREF to: 004ce777 (UNCONDITIONAL_JUMP)  ; LAB_004ce777
-    MOV EBX,dword ptr [0x01d4aec8]      ; 004ce79d | DAT_01d4aec8
+    MOV EBX,dword ptr [0x01d4aec8]      ; 004ce79d | g_FootstepCount
         ;   Label: LAB_004ce79d
     XOR ESI,ESI                         ; 004ce7a3
     TEST EBX,EBX                        ; 004ce7a5
@@ -205,7 +205,7 @@ section .text
         ;   Label: LAB_004ce7af
     JZ 0x004ce7cc                       ; 004ce7b6
         ;   XREF to: 004ce7cc (CONDITIONAL_JUMP)  ; LAB_004ce7cc
-    MOV EBP,dword ptr [0x01d4aec8]      ; 004ce7b8 | DAT_01d4aec8
+    MOV EBP,dword ptr [0x01d4aec8]      ; 004ce7b8 | g_FootstepCount
         ;   Label: LAB_004ce7b8
     INC ESI                             ; 004ce7be
     ADD EBX,0x44                        ; 004ce7bf
@@ -219,8 +219,8 @@ section .text
     PUSH EDI                            ; 004ce7d1
     ADD EAX,EBX                         ; 004ce7d2
     PUSH EAX                            ; 004ce7d4
-    CALL core_gore.cpp_FUN_004ce310     ; 004ce7d5
-        ;   XREF to: 004ce310 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ce310()
+    CALL core_gore.cpp_CFootstep_render_FUN_004ce310 ; 004ce7d5
+        ;   XREF to: 004ce310 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_render_FUN_004ce310(CFootstep * this_ptr, int expire_flag)
     ADD ESP,0x8                         ; 004ce7da
     JMP 0x004ce7b8                      ; 004ce7dd
         ;   XREF to: 004ce7b8 (UNCONDITIONAL_JUMP)  ; LAB_004ce7b8

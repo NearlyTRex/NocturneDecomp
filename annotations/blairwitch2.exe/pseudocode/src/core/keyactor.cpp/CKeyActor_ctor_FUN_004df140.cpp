@@ -16,7 +16,8 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_004df140(CKeyActor *thi
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                           ((CKeyFramedModelInstance *)(pCVar1 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CKeyActorVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,(char *)0x5dbbb0);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,"key1.kfm")
+  ;
   this_ptr_00[1].part_visibility_flags[0] = 1;
   this_ptr_00[1].part_visibility_flags[1] = 0;
   return (CKeyActor *)(this_ptr_00[-2].part_visibility_flags + 0x11);

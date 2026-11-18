@@ -2,23 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 38,
+    "complexity_score": 72,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 4,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 62
+    "total_lines": 61
   },
   "cross_references": [
     {
       "addr": "0054d3c0",
       "from_addr": "0054de4f",
-      "name": "core_set.cpp_FUN_0054d3c0",
+      "name": "core_set.cpp_CDemonSet_load_FUN_0054d3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,7 +57,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00535200",
@@ -79,20 +80,20 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e6be48",
-      "name": "DAT_01e6be48",
-      "type": "undefined4",
+      "name": "g_PathMapCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -102,7 +103,7 @@
       {
         "call_addr": "0054de4f",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0054d3c0",
+        "caller": "core_set.cpp_CDemonSet_load_FUN_0054d3c0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -213,12 +214,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_PathMapList",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_PathMapList + iVar2) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)g_PathMapList",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_PathMapList + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)g_PathMapList",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_PathMapList + iVar2) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)g_PathMapList",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_PathMapList + iVar2);",
+      "type": "pointer_truncation"
     }
   ]
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_heal_cpp_CHeal_fire_FUN_004d1a10(CHeal *this_ptr)
 
 {
@@ -37,9 +35,9 @@ int __cdecl core_heal_cpp_CHeal_fire_FUN_004d1a10(CHeal *this_ptr)
   float fStack_10;
   
   bVar4 = 0;
-  afStack_40[0] = _DAT_02cfd900;
-  afStack_40[1] = _DAT_02cfd904;
-  CStack_38.x = _DAT_02cfd908;
+  afStack_40[0] = g_ZeroVector.x;
+  afStack_40[1] = g_ZeroVector.y;
+  CStack_38.x = g_ZeroVector.z;
   this_ptr->is_firing = 1;
   if (this_ptr->was_firing_prev_frame != 0) {
     return 0;
@@ -50,7 +48,7 @@ int __cdecl core_heal_cpp_CHeal_fire_FUN_004d1a10(CHeal *this_ptr)
                             ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash);
     if (this_ptr_00 != (CDemonActor *)0x0) {
       this_ptr_00[0x1b].platform_orientation_delta.y =
-           this_ptr_00[0x1b].platform_orientation_delta.y + _DAT_005c4a3f;
+           this_ptr_00[0x1b].platform_orientation_delta.y + 25.0f;
       if (0x42c80000 < (int)this_ptr_00[0x1b].platform_orientation_delta.y) {
         this_ptr_00[0x1b].platform_orientation_delta.y = 100.0;
       }
@@ -89,17 +87,17 @@ int __cdecl core_heal_cpp_CHeal_fire_FUN_004d1a10(CHeal *this_ptr)
         iVar1 = iVar1 + 1;
         fStack_10 = CStack_20.x;
         core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                  (0x01C73654,&CStack_50,&CStack_38,0x20000,0x10000,5,0xffff);
+                  (g_CFireEffect_PTR_005fc5a0,&CStack_50,&CStack_38,0x20000,0x10000,5,0xffff);
       } while (iVar1 < 0x10);
     }
     core_sound_cpp_CSound_playActorSound_FUN_005609d0
-              (0x02CF5680,(CDemonActor *)this_ptr,"wp_heal.wav",
+              (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_heal.wav",
                &(this_ptr->base).base.location.position);
     (this_ptr->base).fire_cooldown_timer = 3.0;
     return 1;
   }
   core_sound_cpp_CSound_playActorSound_FUN_005609d0
-            (0x02CF5680,(CDemonActor *)this_ptr,"wp_nomana.wav",
+            (g_CSound_PTR_006045f8,(CDemonActor *)this_ptr,"wp_nomana.wav",
              &(this_ptr->base).base.location.position);
   (this_ptr->base).fire_cooldown_timer = 1.0;
   return 0;

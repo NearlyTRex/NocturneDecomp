@@ -6,25 +6,23 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_setupViewportAndClipping_FUN_00401810(int left,int top,int right,int bottom)
 
 {
   int iVar1;
   int iVar2;
   
-  _DAT_01c6b5b0 = right;
-  _DAT_01c6b5b4 = bottom;
-  _DAT_01c6b5ac = top;
-  _DAT_01c6b5b8 = (right - left) + 1;
-  _DAT_01c6b5bc = (bottom - top) + 1;
-  iVar1 = (_DAT_01c6b5b8 / 2 & 0xffffU) - 1;
-  _DAT_01c6b5a8 = left;
-  iVar2 = (_DAT_01c6b5bc / 2 & 0xffffU) - 1;
-  _DAT_01c6b598 = iVar1 * 0x10000;
-  _DAT_01c6b5a0 = (iVar1 + left + 1) * 0x10000;
-  _DAT_01c6b59c = iVar2 * -0x10000;
-  _DAT_01c6b5a4 = (iVar2 + top + 1) * 0x10000;
+  g_INT_01c6b5b0 = right;
+  g_INT_01c6b5b4 = bottom;
+  g_INT_01c6b5ac = top;
+  g_ViewportWidth = (right - left) + 1;
+  g_ViewportHeight = (bottom - top) + 1;
+  iVar1 = (g_ViewportWidth / 2 & 0xffffU) - 1;
+  g_INT_01c6b5a8 = left;
+  iVar2 = (g_ViewportHeight / 2 & 0xffffU) - 1;
+  g_INT_01c6b598 = iVar1 * 0x10000;
+  g_INT_01c6b5a0 = (iVar1 + left + 1) * 0x10000;
+  g_INT_01c6b59c = iVar2 * -0x10000;
+  g_INT_01c6b5a4 = (iVar2 + top + 1) * 0x10000;
   return;
 }

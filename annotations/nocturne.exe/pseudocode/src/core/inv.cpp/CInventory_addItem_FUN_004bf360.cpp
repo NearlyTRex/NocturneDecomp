@@ -52,8 +52,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
      && (g_CGamePtr->letterbox_mode == 0)) {
     pcStack_34 = core_inv_cpp_getItemDisplayName_FUN_004beca0(item_actor);
     core_inv_cpp_getItemDescription_FUN_004bed10(item_actor);
-    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (item_actor,g_CAmmoActorType_007641bc.name_hash);
+    pCVar5 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040d890(item_actor,g_CAmmoClassInfo.name_hash);
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You've found : ");
     do {
       cVar1 = *pcVar6;
@@ -595,8 +594,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
     }
     iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CAmmo");
     if (iVar9 != 0) {
-      pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (item_actor,g_CAmmoActorType_007641bc.name_hash);
+      pCVar5 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040d890(item_actor,g_CAmmoClassInfo.name_hash);
       pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540((char *)&pCVar5[2].location.area_id);
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("This ammo is for your ");
       pcVar11 = acStack_234;
@@ -783,8 +781,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
     }
     iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CWeapon");
     if (iVar9 != 0) {
-      pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (item_actor,g_CWeaponActorType_02ddf970.name_hash);
+      pCVar5 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040d890(item_actor,g_CWeaponClassInfo.name_hash);
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select your ");
       pcVar11 = acStack_234;
       do {
@@ -936,11 +933,11 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     iStack_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                          (g_CBitFont_PTR_014b9904,this_ptr->message_text);
+                          (g_SmallEditorFont,this_ptr->message_text);
     this_ptr->message_display_timer = (float)iStack_14 * (float)0.025000000000000001;
   }
   pCStack_24 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040d890
-                                  (item_actor,g_CAmmoActorType_007641bc.name_hash);
+                                  (item_actor,g_CAmmoClassInfo.name_hash);
   if (pCStack_24 != (CAmmo *)0x0) {
     pcVar11 = pCStack_24->weapon_class_name;
     iVar9 = 0;
@@ -950,7 +947,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
       do {
         pcStack_2c = pcVar11;
         pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCVar10->items[0],g_CAmmoActorType_007641bc.name_hash);
+                           (pCVar10->items[0],g_CAmmoClassInfo.name_hash);
         if (((pCVar5 != (CDemonActor *)0x0) &&
             (iVar7 = _strcmp
                                (pcStack_2c,(char *)&pCVar5[2].location.area_id), iVar7 == 0)) &&
@@ -974,7 +971,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
     if (0 < this_ptr->item_count) {
       do {
         pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCVar10->items[0],g_CWeaponActorType_02ddf970.name_hash);
+                           (pCVar10->items[0],g_CWeaponClassInfo.name_hash);
         if (pCVar5 != (CDemonActor *)0x0) {
           pcVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
           iVar7 = _stricmp(pcVar11,pcVar6);
@@ -992,11 +989,11 @@ LAB_004bfff1:
       if (0 < this_ptr->item_count) {
         do {
           pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             (pCVar10->items[0],g_CWeaponActorType_02ddf970.name_hash);
+                             (pCVar10->items[0],g_CWeaponClassInfo.name_hash);
           if (pCVar5 != (CDemonActor *)0x0) {
             pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
             iVar7 = _stricmp(pcStack_28,pcVar11);
-            uVar4 = g_CTommyGunActorType_02dd0fd0.name_hash;
+            uVar4 = g_CTommyGunClassInfo.name_hash;
             if ((iVar7 == 0) && (pCVar5[4].location.position.y == (float)pCStack_24->ammo_type)) {
               pCVar5[4].location.position.x =
                    (float)((int)pCVar5[4].location.position.x + pCStack_24->ammo_count);
@@ -1045,11 +1042,9 @@ LAB_004bfff1:
       return 1;
     }
   }
-  pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (item_actor,g_CWeaponActorType_02ddf970.name_hash);
+  pCVar5 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040d890(item_actor,g_CWeaponClassInfo.name_hash);
   if (pCVar5 != (CDemonActor *)0x0) {
-    pCVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (pCVar5,g_CMeleeActorType_01cc56a4.name_hash);
+    pCVar8 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040d890(pCVar5,g_CMeleeClassInfo.name_hash);
     if (pCVar8 != (CDemonActor *)0x0) {
       this_ptr->items[this_ptr->item_count] = item_actor;
       pCVar3 = g_CDemonMission_PTR_005baf90;
@@ -1063,12 +1058,12 @@ LAB_004bfff1:
       pCStack_20 = this_ptr;
       do {
         pCVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCStack_20->items[0],g_CWeaponActorType_02ddf970.name_hash);
+                           (pCStack_20->items[0],g_CWeaponClassInfo.name_hash);
         if (pCVar8 != (CDemonActor *)0x0) {
           pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar8);
           pcVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
           iVar7 = _strcmp(pcVar6,pcVar11);
-          uVar4 = g_CTommyGunActorType_02dd0fd0.name_hash;
+          uVar4 = g_CTommyGunClassInfo.name_hash;
           if ((iVar7 == 0) && (pCVar8[4].location.position.y == pCVar5[4].location.position.y)) {
             pCVar8[4].location.position.x =
                  (float)((int)pCVar8[4].location.position.x + (int)pCVar5[4].location.position.x);
@@ -1093,7 +1088,7 @@ LAB_004bfff1:
       pCStack_18 = this_ptr;
       do {
         pCVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCStack_18->items[0],g_CAmmoActorType_007641bc.name_hash);
+                           (pCStack_18->items[0],g_CAmmoClassInfo.name_hash);
         if (pCVar8 != (CDemonActor *)0x0) {
           pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
           iVar9 = _strcmp((char *)&pCVar8[2].location.area_id,pcVar11);

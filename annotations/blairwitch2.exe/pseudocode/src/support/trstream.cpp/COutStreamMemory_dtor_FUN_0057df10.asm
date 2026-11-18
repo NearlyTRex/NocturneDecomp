@@ -8,18 +8,18 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
+;   support_codec.cpp_CCodec_finalizeBuffer_FUN_004341e0 at 00434238
+;   support_codec.cpp_CCodec_processToBuffer_FUN_00433f60 at 00433fba
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00435300 at 00435395
-;   support_codec.cpp_FUN_00433f60 at 00433fba
-;   support_codec.cpp_FUN_004341e0 at 00434238
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamMemoryTypeInfo
-;   undefined1* g_COutStreamMemoryVTable = 0057df10
+;   void*[7] g_COutStreamMemoryVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;   support_trstream.cpp_COutStream_dtor_FUN_0057d860
 ;   support_trstream.cpp_COutStreamMemory_close_FUN_0057e0d0
 ;
@@ -58,16 +58,16 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0057df50
     PUSH EAX                            ; 0057df53
-    CALL crt_unknown.c_FUN_005b7fce     ; 0057df54
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 0057df54
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 0057df59
     MOV EAX,EBX                         ; 0057df5c
     POP EBX                             ; 0057df5e
     RET                                 ; 0057df5f
     PUSH EAX                            ; 0057df60
         ;   Label: LAB_0057df60
-    CALL crt_unknown.c_FUN_005b7fdc     ; 0057df61
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 0057df61
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 0057df66
     MOV EAX,EBX                         ; 0057df69
     POP EBX                             ; 0057df6b

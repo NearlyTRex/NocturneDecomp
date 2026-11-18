@@ -13,7 +13,7 @@
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 at 004caf7b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
@@ -65,7 +65,7 @@ section .text
     TEST ECX,ECX                        ; 00526e75
     JZ 0x00526e91                       ; 00526e77
         ;   XREF to: 00526e91 (CONDITIONAL_JUMP)  ; LAB_00526e91
-    MOV EDI,dword ptr [0x02dc8318]      ; 00526e79 | DAT_02dc8318
+    MOV EDI,dword ptr [0x02dc8318]      ; 00526e79 | g_CSoundDevicePtr
     TEST EDI,EDI                        ; 00526e7f
     JZ 0x00526e91                       ; 00526e81
         ;   XREF to: 00526e91 (CONDITIONAL_JUMP)  ; LAB_00526e91

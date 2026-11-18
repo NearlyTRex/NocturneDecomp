@@ -29,8 +29,8 @@ extern CDemonActorType g_CConveyorClassInfo;
 extern CDemonActorType g_CZombieCowClassInfo;
 
 // UVector3
-extern UVector3 UNION_UVector3_00838e40;
-extern UVector3 UNION_UVector3_00838e4c;
+extern UVector3 g_ClothEditorPosition;
+extern UVector3 g_ClothEditorEuler;
 
 // char[20]
 extern char g_ClothBoneScreenshotFilename[20];

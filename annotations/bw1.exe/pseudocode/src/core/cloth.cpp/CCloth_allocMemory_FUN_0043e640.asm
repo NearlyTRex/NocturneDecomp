@@ -12,12 +12,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005d6708
 ;   TerminatedCString s_CCloth_allocMemory_Out_o_005d671a
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_free_FUN_0043e6a0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;
 ; *****************************************************************************
@@ -35,7 +35,7 @@ section .text
     SHL EAX,0x2                         ; 0043e654
     PUSH EAX                            ; 0043e657
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 0043e658
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 0043e65d
     MOV dword ptr [EBX + 0x3aafc],EAX   ; 0043e660
     TEST EAX,EAX                        ; 0043e666
@@ -47,10 +47,10 @@ section .text
         ;   Label: LAB_0043e66c
     MOV EBX,0x77                        ; 0043e671
     PUSH 0x5d671a                       ; 0043e676 | = "CCloth::allocMemory - Out of memory"
-    MOV dword ptr [0x01d1d400],ECX      ; 0043e67b | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0043e681 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043e687
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0043e67b | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 0043e681 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043e687
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043e68c
     POP EBX                             ; 0043e68f
     RET                                 ; 0043e690

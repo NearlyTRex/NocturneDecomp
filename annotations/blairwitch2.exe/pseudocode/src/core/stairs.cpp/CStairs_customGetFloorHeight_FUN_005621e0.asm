@@ -10,7 +10,7 @@
 ; float *          Stack[0x10]:4   out_floor_height
 ;
 ; Called Functions:
-;   core_dtri.cpp_FUN_00478550
+;   core_dtri.cpp_rayTriangleFloorTest_FUN_00478550
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH dword ptr [ESP + 0x20]         ; 0056220e
     PUSH ECX                            ; 00562212
     PUSH ESI                            ; 00562213
-    CALL core_dtri.cpp_FUN_00478550     ; 00562214
-        ;   XREF to: 00478550 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00478550(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00478550 ; 00562214
+        ;   XREF to: 00478550 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00478550(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00562219
     TEST EAX,EAX                        ; 0056221c
     JZ 0x00562225                       ; 0056221e

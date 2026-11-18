@@ -10,7 +10,7 @@
 ;   core_icepick.cpp_factoryFuncIcePick_FUN_004d4960 at 004d4973
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ce240
+;   core_hero.cpp_CHero_ctor_FUN_004ce240
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_icepick.cpp_CIcePick_ctor_FUN_004d4990
     MOV EDX,dword ptr [ESP + 0x8]       ; 004d4991
     PUSH EDX                            ; 004d4995
-    CALL core_hero.cpp_FUN_004ce240     ; 004d4996
-        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce240()
+    CALL core_hero.cpp_CHero_ctor_FUN_004ce240 ; 004d4996
+        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ce240(CHero * this_ptr)
     MOV EBX,EAX                         ; 004d499b
     ADD EAX,0x2b4                       ; 004d499d
     ADD ESP,0x4                         ; 004d49a2

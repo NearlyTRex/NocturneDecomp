@@ -11,7 +11,7 @@ CSuccubus * __cdecl core_succubus_cpp_factoryFuncSuccubus_FUN_0056f290(void)
 {
   CSuccubus *pCVar1;
   
-  pCVar1 = (CSuccubus *)operator_new(0x13ba4);
+  pCVar1 = operator_new(0x13ba4);
   if (pCVar1 == (CSuccubus *)0x0) {
     return (CSuccubus *)0x0;
   }

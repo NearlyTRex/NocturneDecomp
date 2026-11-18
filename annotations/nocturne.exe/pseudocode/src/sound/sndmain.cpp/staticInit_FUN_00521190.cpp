@@ -9,7 +9,7 @@
 void __cdecl sound_sndmain_cpp_staticInit_FUN_00521190(void)
 
 {
-  g_FLOAT_02dbd370 = 20.0f / 4.0f;
+  g_SoundReferenceVolumeDistance = 20.0f / 4.0f;
   __arrinit(g_CSfxSlot_ARRAY_02dbd374,0x40,&g_SSfxSlotTypeInfo_005a2180);
   __arrinit
             (g_CSfxOptions_ARRAY_02dc1b78,8,&g_SSfxOptionsTypeInfo_005a21a0);

@@ -12,7 +12,7 @@
 ;   crt_strstream.cpp_strstreambuf_ctor_FUN_00570248 at 0057024e
 ;
 ; Referenced Globals:
-;   undefined1* g_StreambufVTable = 0056ff82
+;   streambuf_vtable g_StreambufVTable
 ;
 ; *****************************************************************************
 

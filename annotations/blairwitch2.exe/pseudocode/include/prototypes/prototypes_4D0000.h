@@ -6,9 +6,9 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEnemy.h"
 #include "types/classes/CHero.h"
 #include "types/classes/CHeroPlaceholder.h"
 #include "types/classes/CHighPriestOfGardath.h"
@@ -32,6 +32,7 @@
 #include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
+#include "types/enums/EHeroType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -47,21 +48,22 @@
 
 void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004d0070(CHero *this_ptr,uint key_mask);
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004d0090(CHero *this_ptr,int ai_task);
-CCharacter * core_hero_cpp_FUN_004d00c0(int param_1,float *param_2);
+CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004d00c0(CHero *this_ptr,float *out_distance);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004d02b0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 void __cdecl core_hero_cpp_CHero_reset_FUN_004d02e0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(CHero *this_ptr,int action_type);
+int __cdecl core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004d0730(CHeroPlaceholder *this_ptr);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004d0750(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004d0780(CHero *param_1,undefined4 param_2);
+int __cdecl core_hero_cpp_CHero_findHeroAction_FUN_004d0780(CHero *this_ptr,int ignore_lock);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004d0910(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004d0930(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004d09a0(CHeroPlaceholder *this_ptr,uint flags);
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004d0a00(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
-CDemonActor * core_hero_cpp_FUN_004d0a40(int param_1);
+CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004d0a40(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004d0af0(CHeroPlaceholder *this_ptr);
-undefined8 core_hero_cpp_FUN_004d0b40(void);
+void __cdecl core_hero_cpp_initializeColorMasks_FUN_004d0b40(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004d0c90(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10(void);
 void __cdecl core_hiram_cpp_staticInit_FUN_004d0ed0(void);
@@ -115,9 +117,9 @@ CDemonActorType * __cdecl core_icepick_cpp_CIcePick_getActorType_FUN_004d4980(CI
 CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004d4990(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004d4a20(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004d4c50(CIcePick *this_ptr,float delta_time);
-void __cdecl core_icepick_cpp_FUN_004d5470(CIcePick *this_ptr,float delta_time);
-int __cdecl core_icepick_cpp_FUN_004d55e0(CIcePick *this_ptr);
-int __cdecl core_icepick_cpp_FUN_004d5780(CIcePick *this_ptr);
+void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *this_ptr,float delta_time);
+int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004d55e0(CIcePick *this_ptr);
+int __cdecl core_icepick_cpp_CIcePick_startThrowAttack_FUN_004d5780(CIcePick *this_ptr);
 CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004d57e0(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004d5950(CIcePick *this_ptr,float delta_time);
 void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004d6140(CIcePick *this_ptr,float delta_time);
@@ -144,23 +146,23 @@ ECollisionType __cdecl core_imp_cpp_CImp_getCollisionType_FUN_004d80b0(CImp *thi
 CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004d80d0(CImp *this_ptr,uint flags);
 void __cdecl engine_ini_cpp_staticInit_FUN_004d8170(void);
 int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004d8180(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
-int engine_ini_cpp_FUN_004d8360(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
+int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004d8360(CIni *this_ptr,char *section,char *key,char *filename,char *value);
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8530(CIni *this_ptr,char *section,char *key,char *value,char *filename);
 void __cdecl engine_ini_cpp_getProfileString_FUN_004d8800(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 int __cdecl engine_ini_cpp_getProfileInteger_FUN_004d8840(char *section,char *key,int default_value,char *filename);
 void __cdecl engine_ini_cpp_writeProfileString_FUN_004d88e0(char *section,char *key,char *value,char *filename);
-CIniFile * __cdecl engine_ini_cpp_FUN_004d8910(CIniFile *this_ptr,char *filename,char *section);
+CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004d8910(CIniFile *this_ptr,char *filename,char *section);
 CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004d8940(CIniFile *this_ptr,uint flags);
 void __cdecl engine_ini_cpp_initIniFile_FUN_004d8990(char *dest,char *source);
 void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004d89d0(CIniFile *this_ptr,char *section);
 void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004d8a10(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);
 void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004d8aa0(CIniFile *this_ptr,char *key,char *value);
-void engine_ini_cpp_FUN_004d8b20(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004d8b80(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004d8bc0(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004d8c30(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004d8c80(void);
-void engine_ini_cpp_FUN_004d8cf0(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile *this_ptr,char *key_name,int *value_ptr);
+void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile *this_ptr,char *key,int value);
+void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004d8bc0(CIniFile *this_ptr,char *key,float *output);
+void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004d8c30(CIniFile *this_ptr,char *key,float value);
+void __cdecl engine_ini_cpp_CIniFile_getDouble_FUN_004d8c80(CIniFile *this_ptr,char *key,double *output);
+void __cdecl engine_ini_cpp_CIniFile_setDoubleValue_FUN_004d8cf0(CIniFile *this_ptr,char *key,double value);
 CIni * __cdecl engine_ini_cpp_CIni_ctor_FUN_004d8d40(CIni *this_ptr);
 CIni * __cdecl engine_ini_cpp_CIni_dtor_FUN_004d8d50(CIni *this_ptr,uint flags);
 void __cdecl core_inivar_cpp_readIniData_FUN_004d8d60(void);
@@ -169,22 +171,22 @@ void __cdecl core_inv_cpp_staticInit_FUN_004d9c00(void);
 CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004d9db0(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9f10(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *actor_ptr);
-void core_inv_cpp_FUN_004d9ff0(float param_1,float param_2);
-void core_inv_cpp_FUN_004da130(void);
+CVector3i * __stack2_esi core_inv_cpp_screenToWorldPoint_FUN_004d9ff0(float screen_x,float screen_y,CVector3i *out_point);
+void __cdecl core_inv_cpp_renderCompass_FUN_004da130(void);
 int __cdecl core_inv_cpp_loadItem_FUN_004da720(SInventoryItemInfo *item_info,_FILE *file_handle);
-undefined4 * core_inv_cpp_FUN_004da760(undefined4 *param_1);
+CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004da760(CInventory *this_ptr);
 CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004da840(CInventory *this_ptr,uint flags);
 void __cdecl core_inv_cpp_CInventory_clear_FUN_004da860(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_initialize_FUN_004da900(CInventory *this_ptr);
 void __cdecl core_inv_cpp_loadAssets_FUN_004da990(void);
 void __cdecl core_inv_cpp_freeInventory_FUN_004dacc0(void);
 void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004dad80(CDemonActor *actor_ptr);
-undefined4 core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3);
-void core_inv_cpp_FUN_004db760(undefined4 param_1,int param_2);
+int __cdecl core_inv_cpp_CInventory_addItem_FUN_004dadb0(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message,int unused_flag);
+void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db760(CInventory *this_ptr,CWeapon *weapon);
 CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004db830(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004db880(CInventory *this_ptr,char *class_name);
-void * core_inv_cpp_FUN_004db8e0(void *param_1,int param_2,int param_3);
-void core_inv_cpp_FUN_004db9d0(CInventory *param_1,CWeapon *param_2,undefined4 param_3,int param_4);
+void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004db8e0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);
+void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction);
 void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004dbb50(CInventory *this_ptr,int direction);
 void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60(CInventory *this_ptr,int direction);
 void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha);
@@ -192,20 +194,20 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004dc2c0(CInventory *this_ptr,_FIL
 void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004dc460(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_load_FUN_004dc4b0(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004dc810(CInventory *this_ptr);
-void core_inv_cpp_setupItems_FUN_004dc850(int param_1);
-undefined4 __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *param_2);
+void __cdecl core_inv_cpp_setupItems_FUN_004dc850(CInventory *this_ptr);
+int __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *actor_ptr);
 CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *this_ptr);
 float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0(CInventory *this_ptr,float max_charge);
 void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020(CInventory *this_ptr,int ammo_type);
-undefined4 core_inv_cpp_FUN_004dd0a0(undefined4 param_1,CDemonActor *param_2,int param_3);
+int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004dd0a0(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category);
 void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270(CInventory *this_ptr,int reset_both);
 void __cdecl core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004dd2c0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_004dd2f0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004dd4e0(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd670(CInventory *this_ptr);
-void core_inv_cpp_FUN_004dd9b0(float *param_1);
+void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dd9b0(CInventory *this_ptr);
 int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004dee70(CInventory *this_ptr,uint key_mask,int show_message);
 void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_004def40(CInventory *this_ptr,uint key_mask);
 void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_004defa0(CInventory *this_ptr);
@@ -217,7 +219,7 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_004df140(CKeyActor *thi
 void __cdecl core_keyactor_cpp_CKeyActor_setup_FUN_004df1a0(CKeyActor *this_ptr);
 void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_004df1c0(CKeyActor *this_ptr,float delta_time);
 int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_004df260(CKeyActor *this_ptr);
-CBoundingBox3D * __cdecl core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004df2e0(CKeyActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004df2e0(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_004df320(CKeyActor *this_ptr);
 ECollisionType __cdecl core_keyactor_cpp_CKeyActor_getCollisionType_FUN_004df390(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_keyactor_cpp_CKeyActor_canPickup_FUN_004df3a0(CKeyActor *this_ptr,CDemonActor *picker);

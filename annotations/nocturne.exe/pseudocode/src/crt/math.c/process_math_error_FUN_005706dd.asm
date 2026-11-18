@@ -26,9 +26,9 @@
 ;   crt_math.c_set_math_errno_FUN_005706aa at 005706b9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4b78
-;   undefined4 DAT_005a4b7c
-;   undefined4 DAT_005c206c
+;   double g_DOUBLE_005a4b78 = +Infinity
+;   undefined4 g_DOUBLE_005a4b78+4
+;   int g_INT_005c206c = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_report_math_error_FUN_00572a35
@@ -96,13 +96,13 @@ section .text
     MOV EAX,EDX                         ; 0057074a
         ;   Label: LAB_0057074a
     AND EAX,0x1f                        ; 0057074c
-    MOV EAX,dword ptr [EAX*0x4 + 0x5c206c] ; 0057074f | DAT_005c206c
+    MOV EAX,dword ptr [EAX*0x4 + 0x5c206c] ; 0057074f | g_INT_005c206c
     MOV dword ptr [EBP + -0x38],EBX     ; 00570756
     MOV dword ptr [EBP + -0x34],EAX     ; 00570759
     TEST DH,0x10                        ; 0057075c
     JZ 0x0057076e                       ; 0057075f
         ;   XREF to: 0057076e (CONDITIONAL_JUMP)  ; LAB_0057076e
-    FLD double ptr [0x005a4b78]         ; 00570761 | DAT_005a4b78
+    FLD double ptr [0x005a4b78]         ; 00570761 | g_DOUBLE_005a4b78
     FCHS                                ; 00570767
     FSTP double ptr [EBP + -0x20]       ; 00570769
     JMP 0x005707b0                      ; 0057076c
@@ -130,9 +130,9 @@ section .text
         ;   Label: LAB_00570791
     JZ 0x005707a5                       ; 00570794
         ;   XREF to: 005707a5 (CONDITIONAL_JUMP)  ; LAB_005707a5
-    MOV EAX,[0x005a4b78]                ; 00570796 | DAT_005a4b78
+    MOV EAX,[0x005a4b78]                ; 00570796 | g_DOUBLE_005a4b78
     MOV dword ptr [EBP + -0x20],EAX     ; 0057079b
-    MOV EAX,[0x005a4b7c]                ; 0057079e | DAT_005a4b7c
+    MOV EAX,[0x005a4b7c]                ; 0057079e | g_DOUBLE_005a4b78+4
     JMP 0x005707ad                      ; 005707a3
         ;   XREF to: 005707ad (UNCONDITIONAL_JUMP)  ; LAB_005707ad
     MOV EAX,dword ptr [ECX]             ; 005707a5

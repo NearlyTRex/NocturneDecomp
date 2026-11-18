@@ -12,8 +12,8 @@
 ;   sound_sndmain.cpp_setMemoryBudget_FUN_00551930 at 00551944
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061bcc0
-;   undefined4 DAT_02641920
+;   int g_MaximumSoundMemoryBudget = 0x400000
+;   int g_LastSampleAccessIndex
 ;   undefined4 g_SfxSamples[1].sample_data
 ;
 ; Called Functions:
@@ -39,13 +39,13 @@ section .text
     CMP EAX,0x6b00                      ; 0054b979
     JNZ 0x0054b96b                      ; 0054b97e
         ;   XREF to: 0054b96b (CONDITIONAL_JUMP)  ; LAB_0054b96b
-    MOV EBX,dword ptr [0x0061bcc0]      ; 0054b980 | DAT_0061bcc0
+    MOV EBX,dword ptr [0x0061bcc0]      ; 0054b980 | g_MaximumSoundMemoryBudget
         ;   Label: LAB_0054b980
     LEA EAX,[ESI + EDI*0x1]             ; 0054b986
     CMP EAX,EBX                         ; 0054b989
     JLE 0x0054ba21                      ; 0054b98b
         ;   XREF to: 0054ba21 (CONDITIONAL_JUMP)  ; LAB_0054ba21
-    MOV EDX,dword ptr [0x02641920]      ; 0054b991 | DAT_02641920
+    MOV EDX,dword ptr [0x02641920]      ; 0054b991 | g_LastSampleAccessIndex
     XOR EBX,EBX                         ; 0054b997
     IMUL ECX,EDX,0x1ac                  ; 0054b999
     INC EDX                             ; 0054b99f

@@ -11,7 +11,7 @@
 ;   core_dimage.cpp_CDemonImage_dtor_FUN_0045f080 at 0045f086
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     RET                                 ; 0045f110
     PUSH EDX                            ; 0045f111
         ;   Label: LAB_0045f111
-    CALL crt_unknown.c_FUN_005c09f0     ; 0045f112
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0045f112
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0045f117
     MOV dword ptr [EBX + 0x300],0x0     ; 0045f11a
     POP EBX                             ; 0045f124

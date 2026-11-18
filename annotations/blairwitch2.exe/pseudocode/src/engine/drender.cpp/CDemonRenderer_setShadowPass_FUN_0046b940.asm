@@ -13,12 +13,12 @@
 ;   core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_0044a4d0 at 0044a512
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_0044a2d0 at 0044a343
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004c5640 at 004c56bd
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 at 00538dbf
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470 at 00538522
-;   core_setdir.cpp_FUN_00538d10 at 00538dbf
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0 at 004699f6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0070ca74
+;   int g_TexturesDisabled
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0046b940
         ;   Label: engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940
     MOV EDX,dword ptr [ESP + 0x4]       ; 0046b944
-    MOV [0x0070ca74],EAX                ; 0046b948 | DAT_0070ca74
+    MOV [0x0070ca74],EAX                ; 0046b948 | g_TexturesDisabled
     MOV dword ptr [EDX + 0x4],EAX       ; 0046b94d
     RET                                 ; 0046b950
 

@@ -216,7 +216,7 @@ extern int g_InputBuffer[20];
 extern int g_MessageFlags[600];
 
 // uint
-extern uint UINT_03f96b40;
+extern uint g_RainSoundHandle;
 
 // void*
 extern void* g_SoftwareFrameBuffer;

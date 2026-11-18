@@ -41,9 +41,9 @@ int __cdecl CKedward::renderTransparent(CKedward *this_ptr);
 // Address: 005918e0
 void __cdecl CKedward::processDamage(CKedward *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_kedward.cpp_FUN_005919a0
+// Original: core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0
 // Address: 005919a0
-void FUN_005919a0(int param_1);
+void __cdecl CKedward::resetChaseState(CKedward *this_ptr);
 
 // Original: core_kedward.cpp_CKedward_archive_FUN_005919f0
 // Address: 005919f0

@@ -10,7 +10,7 @@ void __cdecl core_basicnpc_cpp_staticInit_FUN_005a4750(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CBasicNPCClassInfo,"?CBasicNPC" + 1,
+            (&g_CBasicNPCClassInfo,"CBasicNPC",
              core_basicnpc_cpp_factoryFuncBasicNPC_FUN_005a4780,&g_CBasicNPCClassVersion,1,
              &g_CBasicEnemyClassInfo);
   return;

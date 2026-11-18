@@ -41,9 +41,9 @@ void __cdecl CHand::processMeleeAttackState(CHand *this_ptr,float delta_time);
 // Address: 005a9ff0
 void __cdecl CHand::processSleepingState(CHand *this_ptr,float delta_time);
 
-// Original: core_hand.cpp_FUN_005aa1a0
+// Original: core_hand.cpp_CHand_processAI_FUN_005aa1a0
 // Address: 005aa1a0
-void FUN_005aa1a0(int param_1);
+void __cdecl CHand::processAI(CHand *this_ptr);
 
 // Original: core_hand.cpp_CHand_processDamage_FUN_005aa1f0
 // Address: 005aa1f0

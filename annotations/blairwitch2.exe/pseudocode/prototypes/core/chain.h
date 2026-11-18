@@ -25,9 +25,9 @@ CDemonActorType * __cdecl CChain::getActorType(CChain *this_ptr);
 // Address: 005b4720
 CChain * __cdecl CChain::ctor(CChain *this_ptr);
 
-// Original: core_chain.cpp_FUN_005b4860
+// Original: core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860
 // Address: 005b4860
-void FUN_005b4860(int param_1);
+CVector3f * __stack_esi CChain::getTargetBoneWorldPosition(CChain *this_ptr,CVector3f *out_point);
 
 // Original: core_chain.cpp_CChain_setup_FUN_005b48e0
 // Address: 005b48e0
@@ -53,9 +53,9 @@ CBoundingBox3D * __cdecl CChain::getBoundingBox(CChain *this_ptr,CBoundingBox3D 
 // Address: 005b5e10
 void __cdecl CChain::archive(CChain *this_ptr);
 
-// Original: core_chain.cpp_FUN_005b5f40
+// Original: core_chain.cpp_CChain_getCollisionType_FUN_005b5f40
 // Address: 005b5f40
-undefined4 FUN_005b5f40(void);
+ECollisionType __cdecl CChain::getCollisionType(CChain *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_chain.cpp_CChain_dtor_FUN_005b5f50
 // Address: 005b5f50

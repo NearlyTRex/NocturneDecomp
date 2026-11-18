@@ -11,12 +11,12 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_006071f0
+;   CWeather* g_CWeatherPtr = 02d0c1a0
 ;   undefined4 g_CGameInstance.delta_time_float
-;   undefined4 DAT_02d0c1a0
+;   CWeather g_CWeather_02d0c1a0
 ;
 ; Called Functions:
-;   core_weather.cpp_FUN_0057d050
+;   core_weather.cpp_CWeather_setWeatherType_FUN_0057d050
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
 ; *****************************************************************************
@@ -51,10 +51,10 @@ section .text
         ;   XREF to: 004a05b9 (CONDITIONAL_JUMP)  ; LAB_004a05b9
     PUSH ESI                            ; 004a05a7
     PUSH EDX                            ; 004a05a8
-    MOV ESI,dword ptr [0x006071f0]      ; 004a05a9 | DAT_006071f0
-    PUSH ESI                            ; 004a05af | DAT_02d0c1a0
-    CALL core_weather.cpp_FUN_0057d050  ; 004a05b0
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    MOV ESI,dword ptr [0x006071f0]      ; 004a05a9 | g_CWeatherPtr
+    PUSH ESI                            ; 004a05af | g_CWeather_02d0c1a0
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004a05b0
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004a05b5
     POP ESI                             ; 004a05b8
     MOV EDI,dword ptr [EBX + 0x8]       ; 004a05b9

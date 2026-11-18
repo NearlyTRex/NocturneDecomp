@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00499a50(CStrList *this_ptr,int index,char *new_string)
 
 {
@@ -18,12 +16,12 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00499a50(CStrList *this
   
   bVar4 = 0;
   if ((index < 0) || (this_ptr->item_count <= index)) {
-    _DAT_01d1d400 = "..\\shape\\edittool.cpp";
-    _DAT_01d1d404 = 0xd0c;
-    core_main_c_FUN_005030e0("CStrList::set - invalid index");
+    g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
+    g_INT_01d1d404 = 0xd0c;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CStrList::set - invalid index");
   }
   if (new_string == (char *)0x0) {
-    new_string = &DAT_005dc4f9;
+    new_string = &g_CHAR_005dc4f9;
   }
   uVar3 = 0xffffffff;
   pcVar2 = new_string;
@@ -36,9 +34,9 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00499a50(CStrList *this
   pcVar2 = (char *)realloc(this_ptr->data_array[index],~uVar3);
   this_ptr->data_array[index] = pcVar2;
   if (this_ptr->data_array[index] == (char *)0x0) {
-    _DAT_01d1d400 = "..\\shape\\edittool.cpp";
-    _DAT_01d1d404 = 0xd15;
-    core_main_c_FUN_005030e0("CStrList::set - out of memory!");
+    g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
+    g_INT_01d1d404 = 0xd15;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CStrList::set - out of memory!");
   }
   pcVar2 = this_ptr->data_array[index];
   do {

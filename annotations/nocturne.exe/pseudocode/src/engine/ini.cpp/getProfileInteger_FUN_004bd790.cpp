@@ -15,7 +15,7 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004bd790(char *section,char *ke
   
   _sprintf(local_10c,"%d",default_value);
   iVar1 = engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0
-                    ((CIni *)0x1cae378,section,key,local_10c,local_20c,0xff,filename);
+                    (&g_CIniInstance,section,key,local_10c,local_20c,0xff,filename);
   if (iVar1 == 0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
     g_CurrentLineNumber = 555;

@@ -11,10 +11,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058d9a8
+;   char g_CHAR_0058d9a8 = \x00
 ;   TerminatedCString s_rb_0058d9a9
-;   undefined4 DAT_01e428d0
-;   undefined4 DAT_01e428d1
+;   char[65536] g_FileIOBuffer
+;   undefined4 g_FileIOBuffer+1
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380
@@ -37,7 +37,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004f7987
     MOV EDI,dword ptr [ESP + 0x20]      ; 004f798b
     PUSH ESI                            ; 004f798f
-    PUSH 0x58d9a8                       ; 004f7990 | DAT_0058d9a8
+    PUSH 0x58d9a8                       ; 004f7990 | g_CHAR_0058d9a8
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004f7995
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 004f799a
@@ -65,7 +65,7 @@ section .text
         ;   Label: LAB_004f79d0
     PUSH 0x1                            ; 004f79d1
     PUSH 0x10000                        ; 004f79d3
-    PUSH 0x1e428d0                      ; 004f79d8 | DAT_01e428d0
+    PUSH 0x1e428d0                      ; 004f79d8 | g_FileIOBuffer
     MOV EBX,0x1e428d0                   ; 004f79dd
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f79e2
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
@@ -74,7 +74,7 @@ section .text
     XOR ESI,ESI                         ; 004f79ec
     XOR EDX,EDX                         ; 004f79ee
         ;   Label: LAB_004f79ee
-    MOV DL,byte ptr [EBX]               ; 004f79f0 | DAT_01e428d0 | DAT_01e428d1
+    MOV DL,byte ptr [EBX]               ; 004f79f0 | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 004f79f2
     PUSH EAX                            ; 004f79f3
     INC EBX                             ; 004f79f4
@@ -94,7 +94,7 @@ section .text
         ;   Label: LAB_004f7a16
     PUSH 0x1                            ; 004f7a17
     PUSH EDI                            ; 004f7a19
-    PUSH 0x1e428d0                      ; 004f7a1a | DAT_01e428d0
+    PUSH 0x1e428d0                      ; 004f7a1a | g_FileIOBuffer
     MOV EBX,0x1e428d0                   ; 004f7a1f
     MOV EBP,ESI                         ; 004f7a24
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f7a26
@@ -107,7 +107,7 @@ section .text
         ;   XREF to: 004f7a60 (CONDITIONAL_JUMP)  ; LAB_004f7a60
     XOR EAX,EAX                         ; 004f7a38
         ;   Label: LAB_004f7a38
-    MOV AL,byte ptr [EBX]               ; 004f7a3a | DAT_01e428d0 | DAT_01e428d1
+    MOV AL,byte ptr [EBX]               ; 004f7a3a | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EAX                            ; 004f7a3c
     PUSH EBP                            ; 004f7a3d
     INC EBX                             ; 004f7a3e

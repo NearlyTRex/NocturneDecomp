@@ -15,7 +15,7 @@ void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_005a4110(CTVBat *this_ptr)
   else {
     core_enemy_cpp_CEnemy_archive_FUN_004a0520(&this_ptr->base);
   }
-  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->home_pos,"@homePos" + 1);
+  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->home_pos,"homePos");
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
   if (1 < g_CTVBatClassVersion) {
     core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->speed,"speed");

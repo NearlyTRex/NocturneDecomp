@@ -14,21 +14,21 @@
 ;
 ; XREF[73]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cd9f
+;   core_baal.cpp_CBaal_chooseAttack_FUN_00597700 at 005977a9
+;   core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0 at 00597bff
 ;   core_baal.cpp_CBaal_processDamage_FUN_00597af0 at 00597b40
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00597184
-;   core_baal.cpp_FUN_00597700 at 005977a9
-;   core_baal.cpp_FUN_00597be0 at 00597bff
 ;   core_bird.cpp_CBird_renderOpaque_FUN_0040fe90 at 0040ff09
-;   core_bird.cpp_FUN_00410030 at 0041008b
+;   core_bird.cpp_setRandomMotionVariant_FUN_00410030 at 0041008b
 ;   core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004133c0 at 00413b62
 ;   core_bmppuzzl.cpp_CChemPuzzle_reset_FUN_004132c0 at 0041335a
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400 at 004174ee
 ;   ... and 63 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b5ef1
-;   undefined4 DAT_005b5ef9
-;   undefined4 DAT_005b5efd
+;   double g_DOUBLE_005b5ef1 = 0.999990000000000
+;   float g_RandIntScale = 0.00003051851
+;   float g_GenRandIntScale = 5.960465E-8
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CGameInstance.is_processing
 ;
@@ -55,7 +55,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 0040ceb5
     FILD dword ptr [ESP + 0x10]         ; 0040ceb9
     MOV EAX,[0x005fe9dc]                ; 0040cebd | g_CGamePtr
-    FADD double ptr [0x005b5ef1]        ; 0040cec2 | DAT_005b5ef1
+    FADD double ptr [0x005b5ef1]        ; 0040cec2 | g_DOUBLE_005b5ef1
     MOV EDX,dword ptr [EAX + 0x260]     ; 0040cec8 | g_CGameInstance.is_processing
     FSTP double ptr [ESP]               ; 0040cece
     TEST EDX,EDX                        ; 0040ced1
@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 005a35cc (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005a35cc()
     MOV dword ptr [ESP + 0x10],EAX      ; 0040ceda
     FILD dword ptr [ESP + 0x10]         ; 0040cede
-    FMUL float ptr [0x005b5ef9]         ; 0040cee2 | DAT_005b5ef9
+    FMUL float ptr [0x005b5ef9]         ; 0040cee2 | g_RandIntScale
     FSTP float ptr [ESP + 0x8]          ; 0040cee8
         ;   Label: LAB_0040cee8
     FLD float ptr [ESP + 0x8]           ; 0040ceec
@@ -74,7 +74,7 @@ section .text
     FILD dword ptr [ESP + 0x10]         ; 0040cef7
     FADDP                               ; 0040cefb
     CALL crt_math.c_round_FUN_005a3120  ; 0040cefd
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0040cf02
     MOV ECX,dword ptr [ESP + 0xc]       ; 0040cf06
     CMP EBX,ECX                         ; 0040cf0a
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_0040cf1a
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cf1f
     FILD dword ptr [ESP + 0x10]         ; 0040cf23
-    FMUL float ptr [0x005b5efd]         ; 0040cf27 | DAT_005b5efd
+    FMUL float ptr [0x005b5efd]         ; 0040cf27 | g_GenRandIntScale
     JMP 0x0040cee8                      ; 0040cf2d
         ;   XREF to: 0040cee8 (UNCONDITIONAL_JUMP)  ; LAB_0040cee8
     MOV EAX,EBX                         ; 0040cf2f

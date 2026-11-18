@@ -28,7 +28,7 @@
 ;   TerminatedCString s_wasCreated_00577f19
 ;   TerminatedCString s_createProb_00577f24
 ;   TerminatedCString s_createEvent_00577f2f
-;   int g_INT_005acc88 = 0x7
+;   int g_CDemonActorClassVersion = 0x7
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
@@ -56,12 +56,12 @@ section .text
     PUSH EAX                            ; 0040d2f1
     CALL core_actor.cpp_archiveOrientation_FUN_0040c4f0 ; 0040d2f2
         ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040c4f0(COrientation * orient_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005acc88]      ; 0040d2f7 | g_INT_005acc88
+    MOV EDX,dword ptr [0x005acc88]      ; 0040d2f7 | g_CDemonActorClassVersion
     ADD ESP,0x8                         ; 0040d2fd
     CMP EDX,0x7                         ; 0040d300
     JL 0x0040d313                       ; 0040d303
         ;   XREF to: 0040d313 (CONDITIONAL_JUMP)  ; LAB_0040d313
-    CMP dword ptr [0x005acc88],0x6      ; 0040d305 | g_INT_005acc88
+    CMP dword ptr [0x005acc88],0x6      ; 0040d305 | g_CDemonActorClassVersion
     JGE 0x0040d333                      ; 0040d30c
         ;   XREF to: 0040d333 (CONDITIONAL_JUMP)  ; LAB_0040d333
     ADD ESP,0x4                         ; 0040d30e
@@ -74,7 +74,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0040d31d
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040d322
-    CMP dword ptr [0x005acc88],0x6      ; 0040d325 | g_INT_005acc88
+    CMP dword ptr [0x005acc88],0x6      ; 0040d325 | g_CDemonActorClassVersion
     JGE 0x0040d333                      ; 0040d32c
         ;   XREF to: 0040d333 (CONDITIONAL_JUMP)  ; LAB_0040d333
     ADD ESP,0x4                         ; 0040d32e

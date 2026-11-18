@@ -6,34 +6,32 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_popViewport_FUN_00509210(void)
 
 {
-  _DAT_01d1dfd0 = _DAT_01d1dfd0 + -1;
-  if (_DAT_01d1dfd0 < 0) {
-    _DAT_01d1d400 = "..\\engine\\matrix.c";
-    _DAT_01d1d404 = 0x56c;
-    core_main_c_FUN_005030e0("3D Window unbalance");
+  g_ViewportStackIndex = g_ViewportStackIndex + -1;
+  if (g_ViewportStackIndex < 0) {
+    g_CHAR_PTR_01d1d400 = "..\\engine\\matrix.c";
+    g_INT_01d1d404 = 0x56c;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("3D Window unbalance");
   }
-  _DAT_01c51d38 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e09c);
-  _DAT_01c51d3c = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e0c4);
-  _DAT_01c51d40 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e0ec);
-  _DAT_01c51d44 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e114);
-  _DAT_01c51d48 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e13c);
-  _DAT_01c51d4c = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e164);
-  _DAT_01c51d50 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e18c);
-  _DAT_01c51d54 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e1b4);
-  _DAT_01c51d58 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e1dc);
-  _DAT_01c4eff8 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1dfd4);
-  _DAT_01c4effc = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1dffc);
-  _DAT_01c4f000 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e024);
-  _DAT_01c4f004 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e04c);
-  DAT_0061b4c4 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e074);
-  _DAT_01c4f008 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e204);
-  _DAT_01c4f010 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e22c);
-  _DAT_01c4f00c = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e254);
-  _DAT_01c4f014 = *(uint *)(_DAT_01d1dfd0 * 4 + 0x1d1e27c);
+  g_CameraOriginX = g_ViewportStack_CameraX[g_ViewportStackIndex];
+  g_CameraOriginY = g_ViewportStack_CameraY[g_ViewportStackIndex];
+  g_CameraOriginZ = g_ViewportStack_CameraZ[g_ViewportStackIndex];
+  g_CameraRotationPitch = g_ViewportStack_RotationPitch[g_ViewportStackIndex];
+  g_CameraRotationYaw = g_ViewportStack_RotationYaw[g_ViewportStackIndex];
+  g_CameraRotationRoll = g_ViewportStack_RotationRoll[g_ViewportStackIndex];
+  g_LightDirectionX = g_ViewportStack_ExtraState1[g_ViewportStackIndex];
+  g_LightDirectionY = g_ViewportStack_ExtraState2[g_ViewportStackIndex];
+  g_LightDirectionZ = g_ViewportStack_ExtraState3[g_ViewportStackIndex];
+  g_INT_01c4eff8 = g_ViewportStack_CenterX[g_ViewportStackIndex];
+  g_INT_01c4effc = g_ViewportStack_CenterY[g_ViewportStackIndex];
+  g_INT_01c4f000 = g_ViewportStack_RightFixed[g_ViewportStackIndex];
+  g_INT_01c4f004 = g_ViewportStack_BottomFixed[g_ViewportStackIndex];
+  g_ProjectionScale = g_ViewportStack_ProjectionScale[g_ViewportStackIndex];
+  g_INT_01c4f008 = g_ViewportStack_ClipLeft[g_ViewportStackIndex];
+  g_ClipRight = g_ViewportStack_ClipRight[g_ViewportStackIndex];
+  g_INT_01c4f00c = g_ViewportStack_ClipTop[g_ViewportStackIndex];
+  g_INT_01c4f014 = g_ViewportStack_ClipBottom[g_ViewportStackIndex];
   return;
 }

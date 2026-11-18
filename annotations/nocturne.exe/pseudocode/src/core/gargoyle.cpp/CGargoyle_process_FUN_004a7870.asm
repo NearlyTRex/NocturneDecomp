@@ -64,8 +64,8 @@
 ;   float FLOAT_0059df48 = 10
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01c78b20
+;   int g_GlobalDeltaTimeInt
+;   int g_INT_01c78b20
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -316,7 +316,7 @@ section .text
     CMP EAX,EDI                         ; 004a7af3
     JGE 0x004a81b9                      ; 004a7af5
         ;   XREF to: 004a81b9 (CONDITIONAL_JUMP)  ; LAB_004a81b9
-    MOV EAX,[0x01bd1d80]                ; 004a7afb | DAT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a7afb | g_GlobalDeltaTimeInt
     MOV EDI,dword ptr [EBX + 0x108]     ; 004a7b00
     ADD EDI,EAX                         ; 004a7b06
     MOV EDX,dword ptr [EBX + 0xbd6c]    ; 004a7b08
@@ -331,7 +331,7 @@ section .text
     CMP EAX,ECX                         ; 004a7b2a
     JGE 0x004a81eb                      ; 004a7b2c
         ;   XREF to: 004a81eb (CONDITIONAL_JUMP)  ; LAB_004a81eb
-    MOV EAX,[0x01bd1d80]                ; 004a7b32 | DAT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a7b32 | g_GlobalDeltaTimeInt
     MOV ECX,dword ptr [EBX + 0x10c]     ; 004a7b37
     ADD ECX,EAX                         ; 004a7b3d
     MOV ESI,dword ptr [EBX + 0xbd70]    ; 004a7b3f
@@ -346,7 +346,7 @@ section .text
     CMP EAX,EDI                         ; 004a7b61
     JGE 0x004a821d                      ; 004a7b63
         ;   XREF to: 004a821d (CONDITIONAL_JUMP)  ; LAB_004a821d
-    MOV EAX,[0x01bd1d80]                ; 004a7b69 | DAT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a7b69 | g_GlobalDeltaTimeInt
     MOV EDI,dword ptr [EBX + 0x110]     ; 004a7b6e
     ADD EDI,EAX                         ; 004a7b74
     MOV EDX,dword ptr [EBX + 0xbd74]    ; 004a7b76
@@ -400,7 +400,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004a7beb
     ADD ESP,0x8                         ; 004a7bee
     LEA EAX,[EBP + -0x7a]               ; 004a7bf1
-    MOV EDX,dword ptr [0x01c78b20]      ; 004a7bf4 | DAT_01c78b20
+    MOV EDX,dword ptr [0x01c78b20]      ; 004a7bf4 | g_INT_01c78b20
     PUSH EAX                            ; 004a7bfa
     LEA EAX,[EDX*0x4 + 0x0]             ; 004a7bfb
     MOV dword ptr [EBP + -0x46],EBX     ; 004a7c02
@@ -925,7 +925,7 @@ section .text
     JLE 0x004a7b1e                      ; 004a81b9
         ;   XREF to: 004a7b1e (CONDITIONAL_JUMP)  ; LAB_004a7b1e
         ;   Label: LAB_004a81b9
-    MOV EAX,[0x01bd1d80]                ; 004a81bf | DAT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a81bf | g_GlobalDeltaTimeInt
     MOV ECX,dword ptr [EBX + 0x108]     ; 004a81c4
     SUB ECX,EAX                         ; 004a81ca
     MOV ESI,dword ptr [EBX + 0xbd6c]    ; 004a81cc
@@ -939,7 +939,7 @@ section .text
     JLE 0x004a7b55                      ; 004a81eb
         ;   XREF to: 004a7b55 (CONDITIONAL_JUMP)  ; LAB_004a7b55
         ;   Label: LAB_004a81eb
-    MOV EAX,[0x01bd1d80]                ; 004a81f1 | DAT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a81f1 | g_GlobalDeltaTimeInt
     MOV EDI,dword ptr [EBX + 0x10c]     ; 004a81f6
     SUB EDI,EAX                         ; 004a81fc
     MOV EDX,dword ptr [EBX + 0xbd70]    ; 004a81fe
@@ -953,7 +953,7 @@ section .text
     JLE 0x004a7906                      ; 004a821d
         ;   XREF to: 004a7906 (CONDITIONAL_JUMP)  ; LAB_004a7906
         ;   Label: LAB_004a821d
-    MOV EAX,[0x01bd1d80]                ; 004a8223 | DAT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004a8223 | g_GlobalDeltaTimeInt
     MOV ECX,dword ptr [EBX + 0x110]     ; 004a8228
     SUB ECX,EAX                         ; 004a822e
     MOV ESI,dword ptr [EBX + 0xbd74]    ; 004a8230

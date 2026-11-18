@@ -1,0 +1,516 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 221,
+    "complexity_score": 182,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 92,
+    "suspect_count": 8,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 313
+  },
+  "cross_references": [
+    {
+      "addr": "004a0480",
+      "from_addr": "004a0517",
+      "name": "core_fire.cpp_CStormEffect_activate_FUN_004a0480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b960",
+      "from_addr": "0059c0a5",
+      "name": "core_hino.cpp_CHino_process_FUN_0059b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00534890",
+      "from_addr": "00534bc9",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057d1a0",
+    "address_range": [
+      [
+        "0057d1a0",
+        "0057d417"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0",
+    "signature": "void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "0053ec70",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_disableIgnore_FUN_0053ec70"
+    },
+    {
+      "addr": "0053ebe0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0"
+    },
+    {
+      "addr": "0053ccc0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d798b",
+      "name": "g_DOUBLE_005d798b",
+      "type": "double",
+      "value": "100"
+    },
+    {
+      "addr": "005d7993",
+      "name": "g_DOUBLE_005d7993",
+      "type": "double",
+      "value": "0.785398163375000"
+    },
+    {
+      "addr": "005d799b",
+      "name": "g_DOUBLE_005d799b",
+      "type": "double",
+      "value": "-0.785398163375000"
+    },
+    {
+      "addr": "005d79a3",
+      "name": "g_FLOAT_005d79a3",
+      "type": "float",
+      "value": "50"
+    },
+    {
+      "addr": "005d79a7",
+      "name": "g_FLOAT_005d79a7",
+      "type": "float",
+      "value": "-50"
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02cfd900",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "02cfd904",
+      "name": "g_ZeroVector.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd908",
+      "name": "g_ZeroVector.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0c208",
+      "name": "g_CVector3f_02d0c208",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "02d0c20c",
+      "name": "g_CVector3f_02d0c208.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0c210",
+      "name": "g_CVector3f_02d0c208.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d11fc8",
+      "name": "DAT_02d11fc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d11fcc",
+      "name": "DAT_02d11fcc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d11fd0",
+      "name": "DAT_02d11fd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d17d88",
+      "name": "DAT_02d17d88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d17d8c",
+      "name": "DAT_02d17d8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d17d90",
+      "name": "DAT_02d17d90",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004a0517",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CStormEffect_activate_FUN_004a0480",
+        "estimated_params": 3,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00534bc9",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0059c0a5",
+        "call_type": "direct",
+        "caller": "core_hino.cpp_CHino_process_FUN_0059b960",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.614583333333333,
+    "instruction_count": 192,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CALLOTHER": 2,
+      "CBRANCH": 10,
+      "COPY": 357,
+      "FLOAT2FLOAT": 29,
+      "FLOAT_ADD": 8,
+      "FLOAT_MULT": 4,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 97,
+      "INT_AND": 58,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 56,
+      "INT_LESS": 12,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 28,
+      "INT_SUB": 31,
+      "INT_XOR": 1,
+      "LOAD": 54,
+      "POPCOUNT": 28,
+      "RETURN": 1,
+      "STORE": 61
+    },
+    "pcode_op_count": 886
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058b4f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8497
+    },
+    "bw1.exe": {
+      "addr": "005af040",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8497
+    },
+    "nocedit.exe": {
+      "addr": "005ef940",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8497
+    },
+    "nocturne.exe": {
+      "addr": "005557d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8497
+    }
+  },
+  "stack_frame": {
+    "frame_size": 112,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeather *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0057d1a9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_02d17d88",
+      "severity": "mild",
+      "text": "pCVar4 = (CVector3f *)&DAT_02d17d88;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_02d11fc8",
+      "severity": "mild",
+      "text": "pfVar3 = (float *)&DAT_02d11fc8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->direction).x = direction->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 26,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->rotation).x = rotation->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 49,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_4c.x = local_58.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 54,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_40.x = local_58.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 70,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar2->x = local_58.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 80,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4->x = g_ZeroVector.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

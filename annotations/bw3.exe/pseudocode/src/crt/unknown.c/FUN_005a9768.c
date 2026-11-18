@@ -15,10 +15,10 @@ uint FUN_005a9768(uint param_1)
   uint *puVar4;
   uint uVar5;
   
-  if (0x00000001 == 0) {
+  if (g_INT_00607e10 == 0) {
     return 0;
   }
-  if (DAT_0060793c == -2) {
+  if (g_INT_0060793c == -2) {
     return 0;
   }
   iVar1 = FUN_005a982c(&param_1);

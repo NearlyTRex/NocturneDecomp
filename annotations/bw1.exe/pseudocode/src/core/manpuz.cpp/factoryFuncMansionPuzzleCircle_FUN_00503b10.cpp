@@ -11,7 +11,7 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_factoryFuncMansionPuzzleCircle_FU
 {
   CMansionPuzzleCircle *pCVar1;
   
-  pCVar1 = (CMansionPuzzleCircle *)operator_new(0x1514);
+  pCVar1 = operator_new(0x1514);
   if (pCVar1 == (CMansionPuzzleCircle *)0x0) {
     return (CMansionPuzzleCircle *)0x0;
   }

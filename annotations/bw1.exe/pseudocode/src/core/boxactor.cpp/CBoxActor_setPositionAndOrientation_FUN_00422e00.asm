@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
-;   core_boxactor.cpp_FUN_00421e80
+;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_00421e80
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00422e73
     PUSH EDI                            ; 00422e76
         ;   Label: LAB_00422e76
-    CALL core_boxactor.cpp_FUN_00421e80 ; 00422e77
-        ;   XREF to: 00421e80 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_00421e80()
+    CALL core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_00421e80 ; 00422e77
+        ;   XREF to: 00421e80 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_00421e80(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 00422e7c
     POP EDI                             ; 00422e7f
     POP ESI                             ; 00422e80

@@ -2,23 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 125,
+    "complexity_score": 100,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 100,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 388
   },
   "cross_references": [
     {
       "addr": "005b99c8",
       "from_addr": "005b99c8",
-      "name": "crt_io.c_FUN_005b99c8",
+      "name": "crt_io.c_getFileStat_FUN_005b99c8",
       "type": "UNCONDITIONAL_JUMP"
     },
     {
@@ -52,6 +50,11 @@
       "name": "crt_errno.c_setErrno_FUN_005be180"
     },
     {
+      "addr": "005ba2e0",
+      "is_variadic": false,
+      "name": "crt_io.c_chdir_FUN_005ba2e0"
+    },
+    {
       "addr": "005b77c0",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005b77c0"
@@ -65,11 +68,6 @@
       "addr": "005b9cf0",
       "is_variadic": false,
       "name": "crt_string.c__strncpy_FUN_005b9cf0"
-    },
-    {
-      "addr": "005ba2e0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005ba2e0"
     },
     {
       "addr": "005bfcc0",
@@ -132,14 +130,14 @@
     },
     {
       "addr": "005f1a20",
-      "name": "DAT_005f1a20",
-      "type": "undefined4",
+      "name": "s_anon_005f1a20",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0061ed94",
-      "name": "DAT_0061ed94",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -346,22 +344,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005f1a20",
-      "severity": "mild",
-      "text": "(iVar3 = FUN_005c3e70(filename,&DAT_005f1a20), iVar3 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_0061ed94",
-      "severity": "mild",
-      "text": "((((((&DAT_0061ed94)[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')) &&",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

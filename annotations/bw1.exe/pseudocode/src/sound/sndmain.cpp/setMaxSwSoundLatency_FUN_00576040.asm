@@ -12,14 +12,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f4468
 ;   TerminatedCString s_setMaxSwSoundLatency_can_005f447d
-;   undefined4 DAT_005f44b8
-;   undefined4 DAT_005f44c0
-;   undefined4 DAT_00623314
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   double g_MinLatencyThreshold = 0.0500000000000000
+;   double g_MaxLatencyThreshold = 2
+;   float g_MaxSoftwareLatency = 0.5
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00575550
 ;
 ; *****************************************************************************
@@ -34,7 +34,7 @@ section .text
         ;   XREF to: 00576079 (CONDITIONAL_JUMP)  ; LAB_00576079
     FLD float ptr [ESP + 0x4]           ; 00576049
         ;   Label: LAB_00576049
-    FCOMP double ptr [0x005f44b8]       ; 0057604d | DAT_005f44b8
+    FCOMP double ptr [0x005f44b8]       ; 0057604d | g_MinLatencyThreshold
     FNSTSW AX                           ; 00576053
     SAHF                                ; 00576055
     JNC 0x00576060                      ; 00576056
@@ -42,28 +42,28 @@ section .text
     MOV dword ptr [ESP + 0x4],0x3d4ccccd ; 00576058
     FLD float ptr [ESP + 0x4]           ; 00576060
         ;   Label: LAB_00576060
-    FCOMP double ptr [0x005f44c0]       ; 00576064 | DAT_005f44c0
+    FCOMP double ptr [0x005f44c0]       ; 00576064 | g_MaxLatencyThreshold
     FNSTSW AX                           ; 0057606a
     SAHF                                ; 0057606c
     JA 0x0057609e                       ; 0057606d
         ;   XREF to: 0057609e (CONDITIONAL_JUMP)  ; LAB_0057609e
     MOV EAX,dword ptr [ESP + 0x4]       ; 0057606f
-    MOV [0x00623314],EAX                ; 00576073 | DAT_00623314
+    MOV [0x00623314],EAX                ; 00576073 | g_MaxSoftwareLatency
     RET                                 ; 00576078
     MOV EDX,0x5f4468                    ; 00576079 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_00576079
     MOV ECX,0x186e                      ; 0057607e
     PUSH 0x5f447d                       ; 00576083 | = "setMaxSwSoundLatency - can't do this ..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00576088 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0057608e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00576094
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00576088 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0057608e | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00576094
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00576099
     JMP 0x00576049                      ; 0057609c
         ;   XREF to: 00576049 (UNCONDITIONAL_JUMP)  ; LAB_00576049
     MOV dword ptr [ESP + 0x4],0x40000000 ; 0057609e
         ;   Label: LAB_0057609e
     MOV EAX,dword ptr [ESP + 0x4]       ; 005760a6
-    MOV [0x00623314],EAX                ; 005760aa | DAT_00623314
+    MOV [0x00623314],EAX                ; 005760aa | g_MaxSoftwareLatency
     RET                                 ; 005760af
 

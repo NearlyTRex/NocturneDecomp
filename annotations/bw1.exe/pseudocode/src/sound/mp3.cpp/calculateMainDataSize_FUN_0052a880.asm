@@ -13,8 +13,8 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450 at 0052ba1b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006202e8
-;   undefined4 DAT_006203a0
+;   double[2][4] g_MpegSampleRateTable
+;   undefined4 g_MpegBitrateTable[0][2][0]
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -38,7 +38,7 @@ section .text
     MOV EDX,EAX                         ; 0052a89e
     MOV EAX,dword ptr [ESP + 0x14]      ; 0052a8a0
     MOV EAX,dword ptr [EAX + 0xc]       ; 0052a8a4
-    MOV EDX,dword ptr [EDX + EAX*0x4 + 0x6203a0] ; 0052a8a7 | DAT_006203a0
+    MOV EDX,dword ptr [EDX + EAX*0x4 + 0x6203a0] ; 0052a8a7 | g_MpegBitrateTable[0][2][0]
     LEA EAX,[EDX*0x8 + 0x0]             ; 0052a8ae
     ADD EAX,EDX                         ; 0052a8b5
     SHL EAX,0x4                         ; 0052a8b7
@@ -48,10 +48,10 @@ section .text
     SHL EDX,0x5                         ; 0052a8c4
     MOV EAX,dword ptr [EAX + 0x10]      ; 0052a8c7
     FILD dword ptr [ESP + 0x4]          ; 0052a8ca
-    FDIV double ptr [EDX + EAX*0x8 + 0x6202e8] ; 0052a8ce | DAT_006202e8
+    FDIV double ptr [EDX + EAX*0x8 + 0x6202e8] ; 0052a8ce | g_MpegSampleRateTable
     MOV EAX,dword ptr [ESP + 0x14]      ; 0052a8d5
     CALL crt_math.c_round_FUN_005c03a0  ; 0052a8d9
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     MOV EDX,dword ptr [EAX]             ; 0052a8de
     FISTP dword ptr [ESP]               ; 0052a8e0
     TEST EDX,EDX                        ; 0052a8e3

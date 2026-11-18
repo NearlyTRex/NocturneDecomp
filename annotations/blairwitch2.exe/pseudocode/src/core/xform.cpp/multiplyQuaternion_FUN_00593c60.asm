@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_multiplyQuaternion_FUN_00593c60(float *param_1,float *param_2)
+; CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_00593c60(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat1_in
+; CQuaternion4f *  Stack[0x8]:4   quat2_in
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -11,13 +14,13 @@
 ;
 ; XREF[16]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40 at 00429bbe
-;   core_confedrt.cpp_FUN_005a0bd0 at 005a0d86
-;   core_doc.cpp_FUN_00450c60 at 0045176e
-;   core_doc.cpp_FUN_00455d10 at 00455e06
-;   core_doc.cpp_FUN_004562a0 at 00456375
+;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0d86
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0 at 00456375
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 0045176e
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00455e06
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbfe
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c7a5
-;   core_scat.cpp_FUN_00520140 at 00520287
+;   core_scat.cpp_CScat_blendAimBones_FUN_00520140 at 00520287
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00546da0 at 00546ed5
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40 at 00547079
 ;   ... and 6 more

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_script_cpp_CScript_processTimer_FUN_0054ac20(CScript *this_ptr,float delta_time,float *timer_value)
 
 {
   if (delta_time < 0.0) {
-    _DAT_01d1d400 = "..\\core\\script.cpp";
-    _DAT_01d1d404 = 0xf7d;
-    core_main_c_FUN_005030e0("CScript::processTimer - invalidTimeToWait");
+    g_CHAR_PTR_01d1d400 = "..\\core\\script.cpp";
+    g_INT_01d1d404 = 0xf7d;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CScript::processTimer - invalidTimeToWait");
   }
   if (this_ptr->cmd_timer < 0.0) {
     this_ptr->cmd_timer = delta_time;

@@ -8,11 +8,11 @@
 ; CDemonActor *    Stack[0x8]:4   grabber
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5629
+;   float g_FLOAT_005d5629 = 0.5
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
-;   core_motion.cpp_FUN_00524a40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
 ;
 ; *****************************************************************************
@@ -27,8 +27,8 @@ section .text
     PUSH 0xc                            ; 0042b43c
     LEA EBX,[EBP + 0x158]               ; 0042b43e
     PUSH EBX                            ; 0042b444
-    CALL core_motion.cpp_FUN_00524a40   ; 0042b445
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 0042b445
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x80],EAX      ; 0042b44a
     FLD float ptr [ESP + 0x80]          ; 0042b451
     FLDZ                                ; 0042b458
@@ -89,7 +89,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042b4e2
     MOVSD ES:EDI,ESI                    ; 0042b4e3
     MOVSD ES:EDI,ESI                    ; 0042b4e4
-    FLD float ptr [0x005d5629]          ; 0042b4e5 | DAT_005d5629
+    FLD float ptr [0x005d5629]          ; 0042b4e5 | g_FLOAT_005d5629
     FLD float ptr [ESP + 0x44]          ; 0042b4eb
     FMUL ST1                            ; 0042b4ef
     FLD float ptr [ESP + 0x48]          ; 0042b4f1
@@ -110,8 +110,8 @@ section .text
     PUSH EBP                            ; 0042b51b
     LEA ESI,[ESP + 0x64]                ; 0042b51c
     LEA EDI,[ESP + 0x34]                ; 0042b520
-    CALL core_actor.cpp_FUN_00408b40    ; 0042b524
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0042b524
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x64]                ; 0042b529
     ADD ESP,0x8                         ; 0042b52d
     LEA EAX,[ESP + 0x2c]                ; 0042b530

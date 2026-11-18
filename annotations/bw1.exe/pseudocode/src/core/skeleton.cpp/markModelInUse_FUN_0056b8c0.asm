@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_DeformableModelPool[0].model_filename[0]
-;   undefined4 DAT_027902bc
-;   undefined4 DAT_02c5fc1c
+;   char[256] g_CHAR_ARRAY_027902bc
+;   char[188] g_CHAR_ARRAY_02c5fc1c
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0
@@ -58,7 +58,7 @@ section .text
     MOV ESI,0x27903bc                   ; 0056b907
     ADD EDI,0x355c                      ; 0056b90c
     ADD ESI,0x1de28                     ; 0056b912
-    MOV dword ptr [EBX*0x4 + 0x27902bc],ECX ; 0056b918 | DAT_027902bc
+    MOV dword ptr [EBX*0x4 + 0x27902bc],ECX ; 0056b918 | g_CHAR_ARRAY_027902bc
     XOR EBX,EBX                         ; 0056b91f
     PUSH ESI                            ; 0056b921
         ;   Label: LAB_0056b921
@@ -79,7 +79,7 @@ section .text
     POP ESI                             ; 0056b93d
     POP EBX                             ; 0056b93e
     RET                                 ; 0056b93f
-    MOV dword ptr [EBX*0x4 + 0x2c5fc1c],0x1 ; 0056b940 | DAT_02c5fc1c
+    MOV dword ptr [EBX*0x4 + 0x2c5fc1c],0x1 ; 0056b940 | g_CHAR_ARRAY_02c5fc1c
         ;   Label: LAB_0056b940
     POP EBP                             ; 0056b94b
     POP EDI                             ; 0056b94c

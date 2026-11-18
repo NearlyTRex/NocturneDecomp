@@ -2,23 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 22,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 36
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
       "addr": "0049dc70",
       "from_addr": "0049dd4d",
-      "name": "shape_edittool.cpp_FUN_0049dc70",
+      "name": "shape_edittool.cpp_CEdCheck_render_FUN_0049dc70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,26 +42,26 @@
   "globals": [
     {
       "addr": "01c4f008",
-      "name": "DAT_01c4f008",
-      "type": "undefined4",
+      "name": "g_INT_01c4f008",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f00c",
-      "name": "DAT_01c4f00c",
-      "type": "undefined4",
+      "name": "g_INT_01c4f00c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f010",
-      "name": "DAT_01c4f010",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f014",
-      "name": "DAT_01c4f014",
-      "type": "undefined4",
+      "name": "g_INT_01c4f014",
+      "type": "int",
       "value": null
     }
   ],
@@ -73,7 +71,7 @@
       {
         "call_addr": "0049dd4d",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049dc70",
+        "caller": "shape_edittool.cpp_CEdCheck_render_FUN_0049dc70",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -84,7 +82,7 @@
       {
         "call_addr": "0049dd59",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049dc70",
+        "caller": "shape_edittool.cpp_CEdCheck_render_FUN_0049dc70",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -182,14 +180,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

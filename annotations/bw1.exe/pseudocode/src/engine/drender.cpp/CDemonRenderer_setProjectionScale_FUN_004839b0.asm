@@ -7,7 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   field_of_view
 ;
-; XREF[13]:
+; XREF[14]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0 at 004170dd
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700 at 0044d86f
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0 at 0044d0a9
@@ -16,14 +16,14 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fea64
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_005188a0 at 005188c2
 ;   core_moon.cpp_CMoon_render_FUN_00521e40 at 00521ef6
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 005510e2
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590 at 005555b4
-;   core_set.cpp_FUN_00550da0 at 005510e2
-;   ... and 3 more
+;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db39c
-;   undefined4 DAT_005db3a4
-;   undefined4 DAT_0061b4c4
+;   double g_ProjectionRenderDivisor = 18
+;   double g_ProjectionRenderMultiplier = 65536
+;   int g_ProjectionScale = 0x10000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -34,10 +34,10 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 004839b0
         ;   Label: engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
-    FDIVR double ptr [0x005db39c]       ; 004839b4 | DAT_005db39c
-    FMUL double ptr [0x005db3a4]        ; 004839ba | DAT_005db3a4
+    FDIVR double ptr [0x005db39c]       ; 004839b4 | g_ProjectionRenderDivisor
+    FMUL double ptr [0x005db3a4]        ; 004839ba | g_ProjectionRenderMultiplier
     CALL crt_math.c_round_FUN_005c03a0  ; 004839c0
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
-    FISTP dword ptr [0x0061b4c4]        ; 004839c5 | DAT_0061b4c4
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
+    FISTP dword ptr [0x0061b4c4]        ; 004839c5 | g_ProjectionScale
     RET                                 ; 004839cb
 

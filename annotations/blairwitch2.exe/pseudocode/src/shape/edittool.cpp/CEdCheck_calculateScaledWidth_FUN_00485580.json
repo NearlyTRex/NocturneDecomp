@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 34,
+    "complexity_score": 9,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 30
   },
   "cross_references": [
     {
-      "addr": "00485470",
-      "from_addr": "004854f8",
-      "name": "shape_edittool.cpp_FUN_00485470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004855f0",
       "from_addr": "004855f5",
-      "name": "shape_edittool.cpp_FUN_004855f0",
+      "name": "shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00485610",
       "from_addr": "0048563f",
-      "name": "shape_edittool.cpp_FUN_00485610",
+      "name": "shape_edittool.cpp_CEdCheck_render_FUN_00485610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485470",
+      "from_addr": "004854f8",
+      "name": "shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,15 +54,15 @@
   "globals": [
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     }
   ],
   "param_estimates": {
@@ -73,7 +71,7 @@
       {
         "call_addr": "004855f5",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004855f0",
+        "caller": "shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004855f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -84,7 +82,7 @@
       {
         "call_addr": "004854f8",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00485470",
+        "caller": "shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -95,7 +93,7 @@
       {
         "call_addr": "0048563f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00485610",
+        "caller": "shape_edittool.cpp_CEdCheck_render_FUN_00485610",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,22 +186,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "iVar1 = iVar1 * DAT_006141b8 * 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "return ((int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2) / DAT_006141bc;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

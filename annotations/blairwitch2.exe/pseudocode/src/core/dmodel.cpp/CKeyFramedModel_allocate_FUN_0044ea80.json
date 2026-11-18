@@ -1,0 +1,264 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 170,
+    "complexity_score": 56,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 10,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 56,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 226
+  },
+  "cross_references": [
+    {
+      "addr": "0044de20",
+      "from_addr": "0044dedf",
+      "name": "core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044e010",
+      "from_addr": "0044e0f4",
+      "name": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044ea80",
+    "address_range": [
+      [
+        "0044ea80",
+        "0044eca4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80",
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_0044ea80(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044e590",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "005b8df8",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005b8df8"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cf7af",
+      "name": "s_core_dmodel_cpp_005cf7af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf7c2",
+      "name": "s_Too_many_materials_005cf7c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf7d6",
+      "name": "s_core_dmodel_cpp_005cf7d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf7e9",
+      "name": "s_Too_many_parts_005cf7e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf7f9",
+      "name": "s_core_dmodel_cpp_005cf7f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf80c",
+      "name": "s_Out_of_memory_in_CKeyFra_005cf80c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf865",
+      "name": "s_core_dmodel_cpp_005cf865",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf878",
+      "name": "s_Out_of_memory_for_vertex_005cf878",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0044dedf",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0044e0f4",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.357664233576642,
+    "instruction_count": 137,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 28,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 11,
+      "COPY": 110,
+      "INT_ADD": 67,
+      "INT_AND": 119,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 68,
+      "INT_LEFT": 10,
+      "INT_LESS": 12,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 25,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 12,
+      "INT_SEXT": 3,
+      "INT_SLESS": 41,
+      "INT_SUB": 47,
+      "INT_XOR": 5,
+      "LOAD": 41,
+      "POPCOUNT": 31,
+      "RETURN": 3,
+      "STORE": 40,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 734
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00467650",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00461300",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00477bf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8512
+    },
+    "nocturne.exe": {
+      "addr": "004533e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9749
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "poly_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "part_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame_count",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

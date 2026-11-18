@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 107,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 6,
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unaffected_reg",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 62
+    "total_lines": 60
   },
   "cross_references": [],
   "function": {
@@ -26,23 +24,23 @@
         "0040ebc1"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_barrier.cpp_CBarrier_getBoundingBox_FUN_0040eb50",
-    "signature": "CBoundingBox3D * __cdecl core_barrier_cpp_CBarrier_getBoundingBox_FUN_0040eb50(CBarrier *this_ptr,CBoundingBox3D *out_box)"
+    "signature": "CBoundingBox3D * __stack_esi core_barrier_cpp_CBarrier_getBoundingBox_FUN_0040eb50(CBarrier *this_ptr,CBoundingBox3D *out_box)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "005b61e7",
-      "name": "DAT_005b61e7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005b61e7",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005b61ef",
-      "name": "DAT_005b61ef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005b61ef",
+      "type": "double",
+      "value": "0.100000000000000"
     }
   ],
   "param_estimates": {
@@ -50,7 +48,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "declared_stack_bytes": 8,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
     "matches_declared": true
   },
@@ -110,10 +108,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -122,13 +120,6 @@
         "offset": 4,
         "size": 4,
         "type": "CBarrier *"
-      },
-      {
-        "is_param": true,
-        "name": "out_box",
-        "offset": 8,
-        "size": 4,
-        "type": "CBoundingBox3D *"
       }
     ]
   },
@@ -151,40 +142,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CBoundingBox3D *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "pCVar4 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 28,
+      "line": 25,
       "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar4 = (CBoundingBox3D *)&(pCVar4->min).y;",

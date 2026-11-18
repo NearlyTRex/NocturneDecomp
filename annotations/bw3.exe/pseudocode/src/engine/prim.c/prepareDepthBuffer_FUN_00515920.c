@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_prim_c_prepareDepthBuffer_FUN_00515920(SRenderVertex *vertices,int vertex_count)
 
 {
   int iVar1;
   int iVar2;
   
-  if (_DAT_01c6e2b0 == 0) {
+  if (g_INT_01c6e2b0 == 0) {
     iVar2 = 0;
     if (0 < vertex_count) {
       do {

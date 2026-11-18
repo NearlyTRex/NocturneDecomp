@@ -1,0 +1,149 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 95
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056ab70",
+    "address_range": [
+      [
+        "0056ab70",
+        "0056ac10"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_storeTrueColorTexture_FUN_0056ab70",
+    "signature": "void __cdecl engine_texture_cpp_storeTrueColorTexture_FUN_0056ab70(SMRGLTextureBasic *texture,int dimension,uchar *true_color_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "00569ec0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_addTrueColorTexture_FUN_00569ec0"
+    },
+    {
+      "addr": "0056a0a0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_0056a0a0"
+    },
+    {
+      "addr": "00569ff0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_replaceTrueColorTexture_FUN_00569ff0"
+    },
+    {
+      "addr": "0056a130",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007303f4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cfd0cc",
+      "name": "g_INT_02cfd0cc",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cfd0d0",
+      "name": "g_TextureCacheInstance",
+      "type": "CTextureCache*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5833333333333335,
+    "instruction_count": 60,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 53,
+      "INT_ADD": 22,
+      "INT_AND": 17,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 25,
+      "LOAD": 15,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 24
+    },
+    "pcode_op_count": 215
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00574f60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00597b80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "dimension",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "true_color_data",
+        "offset": 12,
+        "size": 4,
+        "type": "uchar *"
+      }
+    ]
+  },
+  "suspects": []
+}

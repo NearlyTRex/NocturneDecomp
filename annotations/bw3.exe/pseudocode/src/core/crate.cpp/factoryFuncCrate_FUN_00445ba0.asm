@@ -15,7 +15,7 @@ section .text
     PUSH 0x2fc                          ; 00445ba0
         ;   Label: core_crate.cpp_factoryFuncCrate_FUN_00445ba0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00445ba5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 00445baa
     TEST EAX,EAX                        ; 00445bad
     JNZ 0x00445bb2                      ; 00445baf

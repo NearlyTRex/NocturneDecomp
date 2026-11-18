@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_imp_cpp_CImp_getActorType_FUN_004bb750(CImp *this_ptr)
 
 {
-  return &g_CImpActorType_01cae33c;
+  return &g_CImpClassInfo;
 }

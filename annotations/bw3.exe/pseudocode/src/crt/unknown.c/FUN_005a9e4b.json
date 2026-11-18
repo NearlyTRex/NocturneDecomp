@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 66,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 12
@@ -33,15 +32,15 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005a9e4b",
-    "signature": "void crt_unknown_c_FUN_005a9e4b(undefined4 *param_1)"
+    "signature": "void crt_unknown_c_FUN_005a9e4b(WatcomStaticDestructorNode *param_1)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "00607b10",
-      "name": "DAT_00607b10",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AtexitListHead",
+      "type": "WatcomStaticDestructorNode*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -117,7 +116,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005a9e4b(uint *param_1)",
+      "text": "void FUN_005a9e4b(WatcomStaticDestructorNode *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -125,32 +124,16 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = DAT_00607b10;",
+      "text": "param_1->next = g_AtexitListHead;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_00607b10",
-      "severity": "mild",
-      "text": "*param_1 = DAT_00607b10;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "DAT_00607b10 = param_1;",
+      "text": "g_AtexitListHead = param_1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_00607b10",
-      "severity": "mild",
-      "text": "DAT_00607b10 = param_1;",
-      "type": "undefined_data"
     }
   ]
 }

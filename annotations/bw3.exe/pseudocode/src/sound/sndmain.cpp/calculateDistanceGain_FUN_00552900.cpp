@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_00552900(float distance,float reference_distance,float min_distance,float max_distance)
 
 {
@@ -17,7 +15,7 @@ float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_00552900(float distanc
   if (max_distance < distance) {
     distance = max_distance;
   }
-  if (distance <= reference_distance * _DAT_005d2a32) {
+  if (distance <= reference_distance * 0.05f) {
     return 20.0;
   }
   return reference_distance / distance;

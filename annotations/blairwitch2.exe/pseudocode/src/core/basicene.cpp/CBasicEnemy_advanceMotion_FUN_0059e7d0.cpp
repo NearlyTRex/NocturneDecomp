@@ -34,6 +34,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0(CBasicEnem
   fVar1 = (this_ptr->base).speed;
   fVar2 = this_ptr->anim_speed_scale;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar1 * fVar2);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+            ((CCharacter *)this_ptr,delta_time * fVar1 * fVar2);
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPuzzle *this_ptr,int knob0,int knob1,int knob2,int speed,int transport_state)
 
 {
@@ -33,15 +31,15 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPu
   int iStack_14;
   
   bVar7 = 0;
-  _sprintf(acStack_34,&DAT_005d4002);
-  _sprintf(acStack_40,&DAT_005d4005);
-  _sprintf(acStack_4c,&DAT_005d4008);
+  _sprintf(acStack_34,"%d");
+  _sprintf(acStack_40,"%d");
+  _sprintf(acStack_4c,"%d");
   fStack_18 = ABS((float)(knob0 - this_ptr->solution[0]));
   iStack_14 = knob1 - this_ptr->solution[1];
   fStack_1c = ABS((float)iStack_14);
-  _sprintf(acStack_64c,&DAT_005d400b);
-  _sprintf(acStack_44c,&DAT_005d400e);
-  pcVar4 = &DAT_005d4011;
+  _sprintf(acStack_64c,"%f");
+  _sprintf(acStack_44c,"%f");
+  pcVar4 = "AB_1.wav @ ";
   pcVar5 = acStack_24c;
   do {
     cVar1 = *pcVar4;
@@ -73,7 +71,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPu
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = &DAT_005d401d;
+  pcVar4 = "AT_1.wav @ ";
   pcVar5 = acStack_14c;
   do {
     cVar1 = *pcVar4;
@@ -105,7 +103,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPu
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  _sprintf(acStack_54c,&DAT_005d4029);
+  _sprintf(acStack_54c,"%f");
   _sprintf(acStack_28,"AR%d_");
   pcVar5 = acStack_28;
   pcVar4 = acStack_34c;
@@ -181,7 +179,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPu
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = &DAT_005d4032;
+  pcVar4 = ".wav @ ";
   iVar3 = -1;
   pcVar5 = acStack_34c;
   do {
@@ -223,11 +221,11 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPu
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,this_ptr,acStack_24c);
+  uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(g_CSound_PTR_006236b8,this_ptr,acStack_24c);
   this_ptr->clip_sfx[1] = uVar2;
-  uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,this_ptr,acStack_14c);
+  uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(g_CSound_PTR_006236b8,this_ptr,acStack_14c);
   this_ptr->clip_sfx[2] = uVar2;
-  uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,this_ptr,acStack_34c);
+  uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(g_CSound_PTR_006236b8,this_ptr,acStack_34c);
   this_ptr->clip_sfx[0] = uVar2;
   return;
 }

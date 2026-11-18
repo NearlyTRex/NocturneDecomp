@@ -6,52 +6,53 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_00565a90(int width,int height,int bits_per_pixel)
 
 {
-  int *piVar1;
-  int iVar2;
-  bool bVar3;
+  ushort uVar1;
+  uint uVar2;
+  byte *puVar3;
+  int iVar4;
+  bool bVar5;
   
-  _DAT_02cf5fdc = 0;
+  g_FrameBufferTestResult = 0;
   if (bits_per_pixel < 0x10) {
     bits_per_pixel = 0x10;
   }
-  if ((_DAT_02cf6108 == 0) &&
-     (iVar2 = engine_special_cpp_loadExternalRenderer_FUN_00564be0(_DAT_02cf611c), iVar2 == 0)) {
+  if ((g_INT_02cf6108 == 0) &&
+     (iVar4 = engine_special_cpp_loadExternalRenderer_FUN_00564be0(g_StoredWindowHandle), iVar4 == 0
+     )) {
     return 0;
   }
-  iVar2 = (*_DAT_02cf5ff4)(width,height,bits_per_pixel,&DAT_01c5faec);
-  if (iVar2 == 0) {
-    _DAT_01c6cee8 = iVar2;
+  iVar4 = (*(code *)g_APIDLL_setVideoMode2)(width,height,bits_per_pixel,g_ScreenBufferArray);
+  if (iVar4 == 0) {
+    g_INT_01c6cee8 = iVar4;
     return 0;
   }
-  (*_DAT_02cf6058)(&DAT_01c6af98,&DAT_01c6a070);
+  (*(code *)g_APIDLL_setColorTable16)(g_UCHAR_ARRAY_01c6af98,g_ColorTable16);
   wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d4eb0();
-  (*_DAT_02cf6048)(_DAT_02cf6110,_DAT_02cf6114,_DAT_02cf6118);
-  _DAT_01c6cee8 = 1;
-  _DAT_02cf6120 = bits_per_pixel;
-  iVar2 = engine_special_cpp_FUN_00565820();
-  piVar1 = _DAT_01c5faec;
-  if (iVar2 == 0) {
+  (*(code *)g_APIDLL_setFogColor)(g_FogColorRed,g_FogColorGreen,g_FogColorBlue);
+  g_INT_01c6cee8 = 1;
+  g_INT_02cf6120 = bits_per_pixel;
+  iVar4 = engine_special_cpp_lockFrame_FUN_00565820();
+  puVar3 = g_ScreenBufferArray[0];
+  if (iVar4 == 0) {
     return 1;
   }
-  if (DAT_005fba20 == 0x10) {
-    iVar2 = *_DAT_01c5faec;
-    *(short *)_DAT_01c5faec = -0x5433;
-    bVar3 = (short)*piVar1 != -0x5433;
-    *(short *)piVar1 = (short)iVar2;
+  if (g_INT_005fba20 == 0x10) {
+    uVar1 = *(ushort *)g_ScreenBufferArray[0];
+    *(ushort *)g_ScreenBufferArray[0] = 0xabcd;
+    bVar5 = *(short *)puVar3 != -0x5433;
+    *(ushort *)puVar3 = uVar1;
   }
   else {
-    if (DAT_005fba20 != 0x20) goto LAB_00565b6a;
-    iVar2 = *_DAT_01c5faec;
-    *_DAT_01c5faec = -0x55443323;
-    bVar3 = *piVar1 != -0x55443323;
-    *piVar1 = iVar2;
+    if (g_INT_005fba20 != 0x20) goto LAB_00565b6a;
+    uVar2 = *(uint *)g_ScreenBufferArray[0];
+    *(uint *)g_ScreenBufferArray[0] = 0xaabbccdd;
+    bVar5 = *(int *)puVar3 != -0x55443323;
+    *(uint *)puVar3 = uVar2;
   }
-  _DAT_02cf5fdc = (uint)bVar3;
+  g_FrameBufferTestResult = (int)bVar5;
 LAB_00565b6a:
   engine_special_cpp_unlockFrame_FUN_00565870(0);
   return 1;

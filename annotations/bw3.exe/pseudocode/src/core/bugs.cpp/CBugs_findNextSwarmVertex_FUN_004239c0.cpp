@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004239c0(CBugs *this_ptr,SBug *bug_data)
 
 {
@@ -96,6 +94,6 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004239c0(CBugs *this_pt
   bug_data->crawl_duration =
        SQRT((float)((local_34 - local_40) * (local_34 - local_40) +
                    (local_3c - local_48) * (local_3c - local_48) +
-                   (local_38 - local_44) * (local_38 - local_44))) * (float)_DAT_005b78a1;
+                   (local_38 - local_44) * (local_38 - local_44))) * (float)0.00390625;
   return;
 }

@@ -7,12 +7,12 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_00503a30 at 00503a3f
+;   core_main.c_finalizeGameSystems_FUN_00503a30 at 00503a3f
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0
+;   support_trisock.cpp_cleanupWinsock_FUN_0059ef20
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_0059cc40
-;   support_trisock.cpp_FUN_0059ef20
 ;
 ; *****************************************************************************
 

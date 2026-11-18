@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 38,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [
+    {
+      "addr": "00434910",
+      "from_addr": "00434966",
+      "name": "support_codec.cpp_CLZWCompress_finalize_FUN_00434910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00433ad0",
+    "address_range": [
+      [
+        "00433ad0",
+        "00433b16"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_flushBitBuffer_FUN_00433ad0",
+    "signature": "int __cdecl support_codec_cpp_flushBitBuffer_FUN_00433ad0(SBitBuffer *bit_buffer,void *ostream)"
+  },
+  "function_calls": [
+    {
+      "addr": "00433a90",
+      "is_variadic": false,
+      "name": "support_codec.cpp_writeWholeBytesToStream_FUN_00433a90"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00434966",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_CLZWCompress_finalize_FUN_00434910",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.741935483870968,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 32,
+      "INT_ADD": 13,
+      "INT_AND": 18,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 17,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 9,
+      "INT_XOR": 3,
+      "LOAD": 12,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 147
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004427e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00440440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043e7e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6286
+    },
+    "nocturne.exe": {
+      "addr": "00438d60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6286
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "bit_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "SBitBuffer *"
+      },
+      {
+        "is_param": true,
+        "name": "ostream",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)ostream + 4))(ostream,(char)bit_buffer->accumulated_bits);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

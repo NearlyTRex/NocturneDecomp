@@ -11,17 +11,17 @@
 ; int              Stack[0x14]:4   selected_bitmap_index
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_00538750 at 0053879f
+;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750 at 0053879f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_00537490
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_00537500
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c___vec_new_FUN_005c2694
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_stdio.c_fread_FUN_005c0b10
@@ -67,19 +67,19 @@ section .text
         ;   Label: LAB_00538613
     MOV EDX,0x574                       ; 00538618
     PUSH 0x5ed084                       ; 0053861d
-    MOV [0x01d1d400],EAX                ; 00538622 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00538627 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053862d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 00538622 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00538627 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053862d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00538632
     MOV ECX,0x5ed0a7                    ; 00538635
         ;   Label: LAB_00538635
     MOV ESI,0x575                       ; 0053863a
     PUSH 0x5ed0bf                       ; 0053863f
-    MOV dword ptr [0x01d1d400],ECX      ; 00538644 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0053864a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00538650
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00538644 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0053864a | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00538650
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00538655
     JMP 0x005385e0                      ; 00538658
         ;   XREF to: 005385e0 (UNCONDITIONAL_JUMP)  ; LAB_005385e0
@@ -87,10 +87,10 @@ section .text
         ;   Label: LAB_0053865a
     MOV EDI,0x573                       ; 0053865f
     PUSH 0x5ed03e                       ; 00538664
-    MOV dword ptr [0x01d1d400],ESI      ; 00538669 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0053866f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00538675
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 00538669 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0053866f | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00538675
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053867a
     JMP 0x00538613                      ; 0053867d
         ;   XREF to: 00538613 (UNCONDITIONAL_JUMP)  ; LAB_00538613
@@ -109,11 +109,11 @@ section .text
     ADD EAX,0x4                         ; 0053869c
     PUSH EAX                            ; 0053869f
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 005386a0
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 005386a5
     PUSH EAX                            ; 005386a8
     CALL crt_memory.c___vec_new_FUN_005c2694 ; 005386a9
-        ;   XREF to: 005c2694 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_new_FUN_005c2694()
+        ;   XREF to: 005c2694 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_005c2694(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005386ae
     MOV dword ptr [ESP + 0x2c],EAX      ; 005386b1
     TEST EAX,EAX                        ; 005386b5

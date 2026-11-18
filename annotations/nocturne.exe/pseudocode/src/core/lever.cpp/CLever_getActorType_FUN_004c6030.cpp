@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_lever_cpp_CLever_getActorType_FUN_004c6030(CLever *this_ptr)
 
 {
-  return &g_CLeverActorType_01cc3628;
+  return &g_CLeverClassInfo;
 }

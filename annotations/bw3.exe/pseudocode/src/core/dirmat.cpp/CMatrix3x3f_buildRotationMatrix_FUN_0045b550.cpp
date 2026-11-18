@@ -16,9 +16,9 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatri
   float local_10;
   float local_c;
   
-  core_dirmat_cpp_FUN_0045bef0(&local_20,&local_1c,euler_angles);
-  core_dirmat_cpp_FUN_0045bef0(&local_18,&local_14,&euler_angles->z);
-  core_dirmat_cpp_FUN_0045bef0(&local_10,&local_c,&euler_angles->y);
+  core_dirmat_cpp_sinCos_FUN_0045bef0(&local_20,&local_1c,&euler_angles->x);
+  core_dirmat_cpp_sinCos_FUN_0045bef0(&local_18,&local_14,&euler_angles->z);
+  core_dirmat_cpp_sinCos_FUN_0045bef0(&local_10,&local_c,&euler_angles->y);
   this_ptr->m[0].x = local_c * local_14 + local_10 * local_20 * local_18;
   this_ptr->m[0].y = -local_c * local_18 + local_10 * local_20 * local_14;
   this_ptr->m[0].z = local_10 * local_1c;

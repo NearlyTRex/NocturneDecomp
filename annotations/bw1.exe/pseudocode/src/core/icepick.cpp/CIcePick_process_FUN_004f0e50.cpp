@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004f14e5) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f0e50(CIcePick *this_ptr,float delta_time)
 
@@ -39,18 +38,17 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f0e50(CIcePick *this_ptr,f
   CQuaternion4f CStack_ac;
   float afStack_9c [4];
   float fStack_8c;
-  uint uStack_88;
+  CVector3f CStack_88;
   float fStack_7c;
-  float fStack_78;
-  float fStack_74;
+  float afStack_78 [2];
   CVector3f CStack_70;
   CVector3f CStack_64;
-  uint uStack_58;
-  float afStack_54 [5];
-  uint uStack_40;
+  CVector3f CStack_58;
+  float fStack_4c;
+  float afStack_48 [2];
+  CVector3f CStack_40;
   float fStack_34;
-  float fStack_30;
-  float fStack_2c;
+  float afStack_30 [2];
   CVector3f CStack_28;
   CCharacter_full_vtable *pCStack_1c;
   float fStack_18;
@@ -66,11 +64,11 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f0e50(CIcePick *this_ptr,f
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_icepick_cpp_FUN_004f1b50(this_ptr,delta_time);
+    core_icepick_cpp_CIcePick_processAI_FUN_004f1b50(this_ptr,delta_time);
   }
   this_ptr->is_armed =
        (uint)((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0);
-  core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320((CCharacter *)this_ptr,delta_time);
   fVar14 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar14;
   if (fVar14 < 0.0) {
@@ -134,14 +132,14 @@ LAB_004f1252:
                 iVar9 = core_hero_cpp_CHero_tryInteract_FUN_004eb090(&this_ptr->base);
                 bVar2 = false;
                 if (iVar9 != 0) goto LAB_004f12f7;
-                iVar9 = core_hero_cpp_FUN_004eb3e0(this_ptr,0);
+                iVar9 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(&this_ptr->base,0);
                 if ((iVar9 != 0) && (iVar9 != 1)) {
                   core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(&this_ptr->base);
                 }
                 if ((iVar9 != 0) ||
                    (iVar9 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240
                                       (&this_ptr->base), iVar9 != 0)) goto LAB_004f12f7;
-                iVar9 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
+                iVar9 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(&this_ptr->base);
                 if (iVar9 != 0) {
                   core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
                   goto LAB_004f12f7;
@@ -196,7 +194,8 @@ switchD_004f148c_default:
                         (&(this_ptr->base).base.model.base,iVar5,1);
             }
             if (((this_ptr->base).player_input.action_state.use_item != 0) &&
-               (iVar5 = core_icepick_cpp_FUN_004f17e0(this_ptr), iVar5 == 0)) {
+               (iVar5 = core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f17e0(this_ptr),
+               iVar5 == 0)) {
               core_icepick_cpp_CIcePick_startThrowAttack_FUN_004f1980(this_ptr);
             }
           }
@@ -241,49 +240,52 @@ LAB_004f0f65:
     CStack_64.x = (this_ptr->base).base.model.accumulated_root_motion.x;
     CStack_64.y = (this_ptr->base).base.model.accumulated_root_motion.y;
     CStack_64.z = (this_ptr->base).base.model.accumulated_root_motion.z;
-    core_charactr_cpp_FUN_0042d700(this_ptr,in_stack_00000010);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,in_stack_00000010)
+    ;
     CStack_ac.z = (this_ptr->base).base.velocity.x * in_stack_00000010;
     pCVar15 = &CStack_64;
     afStack_9c[0] = (this_ptr->base).base.velocity.y * in_stack_00000010;
     afStack_9c[1] = (this_ptr->base).base.velocity.z * in_stack_00000010;
     fStack_7c = CStack_ac.z;
-    afStack_9c[(uint)bVar12 * -2 + 9] = afStack_9c[(uint)bVar12 * -2];
-    afStack_9c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 10] =
+    afStack_78[(uint)bVar12 * -2] = afStack_9c[(uint)bVar12 * -2];
+    afStack_78[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
          afStack_9c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
     fStack_34 = fStack_7c + (this_ptr->base).base.position_delta.x;
-    fStack_30 = fStack_78 + (this_ptr->base).base.position_delta.y;
-    fStack_2c = fStack_74 + (this_ptr->base).base.position_delta.z;
+    afStack_30[0] = afStack_78[0] + (this_ptr->base).base.position_delta.y;
+    afStack_30[1] = afStack_78[1] + (this_ptr->base).base.position_delta.z;
     afStack_9c[2] = fStack_34;
-    afStack_9c[(uint)bVar12 * -2 + 3] = afStack_54[(uint)bVar12 * -2 + 9];
+    afStack_9c[(uint)bVar12 * -2 + 3] = afStack_30[(uint)bVar12 * -2];
     afStack_9c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =
-         afStack_54[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 10];
+         afStack_30[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
     CStack_64.x = CStack_64.x + afStack_9c[2];
     CStack_64.y = CStack_64.y + afStack_9c[3];
     CStack_64.z = CStack_64.z + fStack_8c;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,pCVar15);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,pCVar15);
     goto LAB_004f111a;
   }
   if ((this_ptr->base).base.grabbed_type == 0) {
-    core_actor_cpp_FUN_00408bb0(this_ptr,&pCVar6->location);
-    uStack_58 = uStack_40;
-    afStack_54[(uint)bVar12 * -2] = afStack_54[(uint)bVar12 * -2 + 6];
-    afStack_54[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-         afStack_54[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 7];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&uStack_58);
-    afStack_54[2] = (float)uStack_88;
-    afStack_54[(uint)bVar12 * -2 + 3] = afStack_9c[(uint)bVar12 * -2 + 6];
-    afStack_54[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =
-         afStack_9c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 7];
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+              ((CDemonActor *)this_ptr,&(pCVar6->location).position,&CStack_40);
+    CStack_58.x = CStack_40.x;
+    *(uint *)((int)&CStack_58 + (uint)bVar12 * -8 + 4) =
+         *(uint *)((int)&CStack_40 + (uint)bVar12 * -8 + 4);
+    *(uint *)((int)&CStack_58 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
+         *(uint *)((int)&CStack_40 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&CStack_58,&CStack_88);
+    fStack_4c = CStack_88.x;
+    afStack_48[(uint)bVar12 * -2] = *(float *)((int)&CStack_88 + (uint)bVar12 * -8 + 4);
+    afStack_48[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+         *(float *)((int)&CStack_88 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
     pCStack_1c = (CCharacter_full_vtable *)
-                 core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_54[3]);
+                 core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_48[0]);
     fVar14 = (float)pCStack_1c;
-    if ((float)pCStack_1c < _DAT_005e539f) {
-      fVar14 = (float)pCStack_1c + _DAT_005e53a3;
+    if ((float)pCStack_1c < -1.570796f) {
+      fVar14 = (float)pCStack_1c + 3.141593f;
     }
-    if (_DAT_005e53a7 < fVar14) {
-      fVar14 = fVar14 + _DAT_005e53ab;
+    if (1.570796f < fVar14) {
+      fVar14 = fVar14 + -3.141593f;
     }
-    fVar3 = in_stack_00000010 * _DAT_005e53a3;
+    fVar3 = in_stack_00000010 * 3.141593f;
     fStack_18 = -fVar3;
     if (fVar14 < fStack_18) {
       fVar14 = fStack_18;
@@ -322,7 +324,7 @@ LAB_004f1107:
   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(unaff_ESI,(int)in_stack_ffffff44,1)
   ;
 LAB_004f111a:
-  core_inv_cpp_FUN_004f9f10(&(this_ptr->base).inventory);
+  core_inv_cpp_CInventory_updateInventory_FUN_004f9f10(&(this_ptr->base).inventory);
   pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c600
                      ((this_ptr->base).base.carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash)
   ;
@@ -340,8 +342,9 @@ LAB_004f111a:
   if (EVar7 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar14 = this_ptr->head_look_blend_weight;
-    iVar5 = _DAT_01d06c74;
-    core_xform_cpp_FUN_005b7ed0(&this_ptr->head_look_euler);
+    iVar5 = g_IcePickIndices[0];
+    core_xform_cpp_eulerToQuaternion_FUN_005b7ed0
+              (&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff44);
     source_quaternions = &CStack_ac;
     CStack_ac.w = in_stack_ffffff44;
     afStack_9c[(uint)bVar12 * -2 + -3] = *(float *)(&stack0xffffff48 + (uint)bVar12 * -8);
@@ -353,7 +356,7 @@ LAB_004f111a:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60
               (pCVar13,source_quaternions,fVar14,iVar5,blend_callback);
   }
-  core_icepick_cpp_FUN_004f1670(this_ptr,in_stack_00000014);
+  core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f1670(this_ptr,in_stack_00000014);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80
             ((CCharacter *)this_ptr,in_stack_00000014);
   return;

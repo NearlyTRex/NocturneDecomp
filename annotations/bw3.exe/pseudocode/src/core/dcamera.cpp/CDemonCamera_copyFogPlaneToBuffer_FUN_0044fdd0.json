@@ -2,17 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 88,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data"
+      "flattened_array_index",
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 144
+    "total_lines": 145
   },
   "cross_references": [
     {
@@ -38,43 +40,43 @@
   "globals": [
     {
       "addr": "0135ead1",
-      "name": "DAT_0135ead1",
+      "name": "g_CameraPlaneWorkBuffer.pixels[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ead2",
-      "name": "DAT_0135ead2",
+      "name": "g_CameraPlaneWorkBuffer.pixels[0][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ec10",
-      "name": "DAT_0135ec10",
+      "name": "g_CameraPlaneWorkBuffer.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ec11",
-      "name": "DAT_0135ec11",
+      "name": "g_CameraPlaneWorkBuffer.pixels[1][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ec12",
-      "name": "DAT_0135ec12",
+      "name": "g_CameraPlaneWorkBuffer.pixels[1][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ed51",
-      "name": "DAT_0135ed51",
+      "name": "g_CameraPlaneWorkBuffer.pixels[2][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01371810",
-      "name": "DAT_01371810",
+      "name": "g_CameraImageDecompressBuffer+0x140",
       "type": "undefined4",
       "value": null
     }
@@ -182,36 +184,27 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0135ead1",
-      "severity": "mild",
-      "text": "*(byte *)(iVar1 + 0x13716d1) = (&DAT_0135ead1)[iVar2];",
-      "type": "undefined_data"
+      "description": "Pointer value `&g_CameraPlaneWorkBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)&g_CameraPlaneWorkBuffer",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_CameraPlaneWorkBuffer + iVar1);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "*(byte *)(iVar5 + 0x13716d0) = (&DAT_0135ead0)[iVar4 * 0x140];",
-      "type": "undefined_data"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_CameraPlaneWorkBuffer + iVar1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "'g_CameraPlaneWorkBuffer.pixels[0][iVar5]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar5 is multiplied by 0x12c00 and stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
       "line": 38,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "*(byte *)(iVar4 + 0x13716d1) = (&DAT_0135ead0)[iVar5];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "*(byte *)(iVar2 + plane_index * 0x12c00 + 0x13716cf + iVar5) = (&DAT_0135ead0)[iVar1];",
-      "type": "undefined_data"
+      "severity": "major",
+      "text": "g_CameraImageDecompressBuffer[iVar4 + 1] = g_CameraPlaneWorkBuffer.pixels[0][iVar5];",
+      "type": "flattened_array_index"
     }
   ]
 }

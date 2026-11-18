@@ -24,14 +24,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005c9f78
 ;   TerminatedCString s_Cannot_read_or_write_mor_005c9f89
-;   undefined4 DAT_00601580
-;   undefined4 DAT_006015a0
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d94b98
+;   uint[18] g_MpegBitMaskTableMultiBit
+;   undefined4 g_MpegBitMaskTableMultiBit[8]
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fread_FUN_005a3890
 ;
 ; *****************************************************************************
@@ -74,7 +74,7 @@ section .text
     MOV BL,byte ptr [EDX]               ; 004fd621
     MOV EDX,dword ptr [EDI + 0x14]      ; 004fd623
     SUB EBP,EAX                         ; 004fd626
-    MOV ESI,dword ptr [EDX*0x4 + 0x601580] ; 004fd628 | DAT_00601580 | DAT_006015a0
+    MOV ESI,dword ptr [EDX*0x4 + 0x601580] ; 004fd628 | g_MpegBitMaskTableMultiBit | g_MpegBitMaskTableMultiBit[8]
     SUB EDX,EAX                         ; 004fd62f
     AND EBX,ESI                         ; 004fd631
     MOV CL,DL                           ; 004fd633
@@ -98,16 +98,16 @@ section .text
     POP ESI                             ; 004fd656
     POP EBX                             ; 004fd657
     RET                                 ; 004fd658
-    PUSH 0x1d94b98                      ; 004fd659 | DAT_01d94b98
+    PUSH 0x1d94b98                      ; 004fd659 | g_CurrentMp3Filename
         ;   Label: LAB_004fd659
     PUSH 0x20                           ; 004fd65e
     MOV ECX,0x5c9f78                    ; 004fd660 | = "..\\sound\\mp3.cpp"
     MOV ESI,0x2ab                       ; 004fd665
     PUSH 0x5c9f89                       ; 004fd66a | = "Cannot read or write more than %d bit..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004fd66f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004fd675 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fd67b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004fd66f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004fd675 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fd67b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004fd680
     JMP 0x004fd5fb                      ; 004fd683
         ;   XREF to: 004fd5fb (UNCONDITIONAL_JUMP)  ; LAB_004fd5fb

@@ -47,7 +47,7 @@ void __cdecl trimWhitespace(char *str);
 
 // Original: core_event.cpp_extractParenArg_FUN_00488fc0
 // Address: 00488fc0
-char * extractParenArg(int *param_1,char *param_2,int param_3,int param_4);
+char * __cdecl extractParenArg(char **cursor,char *out_buf,int max_len,int require_open_paren);
 
 // Original: core_event.cpp_parseDeathType_FUN_004890e0
 // Address: 004890e0
@@ -77,9 +77,9 @@ int __cdecl CEventList::executeCommands(CEventList *this_ptr,char *commands);
 // Address: 00489510
 int __cdecl CEventList::executeCommandString(CEventList *this_ptr,char *command_string);
 
-// Original: core_event.cpp_FUN_00489670
+// Original: core_event.cpp_CEventList_executeCommand_FUN_00489670
 // Address: 00489670
-int FUN_00489670(CEventList *param_1,char *param_2);
+int __cdecl CEventList::executeCommand(CEventList *this_ptr,char *command_buffer);
 
 // Original: core_event.cpp_CEventList_resolveVariable_FUN_0048e2b0
 // Address: 0048e2b0
@@ -113,21 +113,21 @@ int __cdecl CEventList::evaluateAtom(CEventList *this_ptr,char *expression,int *
 // Address: 00490ec0
 int __cdecl CEventList::evaluateLogicalExpr(CEventList *this_ptr,char *expression,int *parse_position);
 
-// Original: core_event.cpp_FUN_00490f80
+// Original: core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
 // Address: 00490f80
-void __cdecl FUN_00490f80(CEventList *this_ptr,char *name,int add_flag);
+void __cdecl CEventList::addOrRemovePersistentEvent(CEventList *this_ptr,char *name,int add_flag);
 
-// Original: core_event.cpp_FUN_004910b0
+// Original: core_event.cpp_CEventList_resetGameFlags_FUN_004910b0
 // Address: 004910b0
-void FUN_004910b0(CEventList *param_1);
+void __cdecl CEventList::resetGameFlags(CEventList *this_ptr);
 
-// Original: core_event.cpp_FUN_00491110
+// Original: core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110
 // Address: 00491110
-void __cdecl FUN_00491110(CEventList *this_ptr,char *name,int add_flag);
+void __cdecl CEventList::addOrRemoveGameFlag(CEventList *this_ptr,char *name,int add_flag);
 
-// Original: core_event.cpp_FUN_00491240
+// Original: core_event.cpp_CEventList_getTimerValue_FUN_00491240
 // Address: 00491240
-undefined4 FUN_00491240(int param_1,int param_2);
+float __cdecl CEventList::getTimerValue(CEventList *this_ptr,int timer_index);
 
 // Original: core_event.cpp_CEventList_setTimerEvent_FUN_00491280
 // Address: 00491280
@@ -205,13 +205,13 @@ int __cdecl CEventList::saveState(CEventList *this_ptr,_FILE *file_handle);
 // Address: 00492350
 void __cdecl CRuleList::clear(CRuleList *this_ptr);
 
-// Original: core_event.cpp_FUN_00492360
+// Original: core_event.cpp_CRuleList_insert_FUN_00492360
 // Address: 00492360
-void FUN_00492360(void);
+void __cdecl CRuleList::insert(CRuleList *this_ptr,int index,char *condition,char *event);
 
-// Original: core_event.cpp_FUN_004924a0
+// Original: core_event.cpp_CRuleList_remove_FUN_004924a0
 // Address: 004924a0
-void FUN_004924a0(void);
+void __cdecl CRuleList::remove(CRuleList *this_ptr,int index);
 
 // Original: core_event.cpp_CRuleList_findFirst_FUN_00492570
 // Address: 00492570
@@ -225,6 +225,6 @@ int __cdecl CRuleList::evaluateAndRun(CRuleList *this_ptr);
 // Address: 00492610
 CQuaternion4f * __cdecl copyQuaternion(CQuaternion4f *dest,CQuaternion4f *src);
 
-// Original: core_event.cpp_FUN_00492630
+// Original: core_event.cpp_getSelectedCameraIndex_FUN_00492630
 // Address: 00492630
-undefined4 FUN_00492630(int param_1);
+int __cdecl getSelectedCameraIndex(CDemonSet *set_ptr);

@@ -24,7 +24,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_location_005d2d2d
 ;   TerminatedCString s_orient_005d2d36
-;   undefined4 DAT_005d2d3d
+;   TerminatedCString s_fov_005d2d3d
 ;   TerminatedCString s_wasCreated_005d2d41
 ;   TerminatedCString s_createProb_005d2d4c
 ;   TerminatedCString s_createEvent_005d2d57
@@ -67,7 +67,7 @@ section .text
     ADD ESP,0x4                         ; 0040c07e
     POP EBX                             ; 0040c081
     RET                                 ; 0040c082
-    PUSH 0x5d2d3d                       ; 0040c083 | DAT_005d2d3d
+    PUSH 0x5d2d3d                       ; 0040c083 | = "fov"
         ;   Label: LAB_0040c083
     LEA EAX,[ESP + 0x4]                 ; 0040c088
     PUSH EAX                            ; 0040c08c

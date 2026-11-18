@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_004fd950(CLarva *this_ptr)
 
 {
@@ -23,9 +21,9 @@ CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_004fd950(CLarva *this_ptr)
   (pCVar3->base).base.collision_cylinder_radius = 0.5;
   (pCVar3->base).base.blood_type = BLOOD_TYPE_ICHOR;
   (pCVar3->base).base.hit_points = 15.0;
-  fVar1 = _DAT_00602d20;
+  fVar1 = 20.0f;
   pCVar3->sfx_handles[0] = 0;
-  fVar2 = _DAT_00602d24;
+  fVar2 = 100.0f;
   pCVar3->sfx_handles[1] = 0;
   (pCVar3->base).base.turn_rate = 0.7853982;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 153,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 93,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "preinc_loop_idiom",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
     "total_lines": 361
   },
@@ -41,7 +40,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c0d10",
@@ -59,6 +58,16 @@
       "name": "crt_stdio.c_fopen_FUN_005c157c"
     },
     {
+      "addr": "005c03c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
+    },
+    {
+      "addr": "005c25c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_remove_FUN_005c25c0"
+    },
+    {
       "addr": "005c30b0",
       "is_variadic": false,
       "name": "crt_stdio.c_rename_FUN_005c30b0"
@@ -69,16 +78,6 @@
       "name": "crt_string.c__strcmp_FUN_005c0f80"
     },
     {
-      "addr": "005c03c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
-    },
-    {
-      "addr": "005c25c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c25c0"
-    },
-    {
       "addr": "005bfb40",
       "is_variadic": false,
       "name": "crt_unknown.c_sprintf_FUN_005bfb40"
@@ -86,7 +85,7 @@
     {
       "addr": "004f4550",
       "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004f4550"
+      "name": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004f4550"
     }
   ],
   "globals": [
@@ -152,14 +151,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -321,16 +320,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 34,
+      "line": 33,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -338,15 +329,15 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 45,
+      "line": 44,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
     },
     {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `pcVar4` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pcVar4 = pcVar4;` self-assign, two-var `tmp = &pcVar4->field; pcVar4 = tmp;` ping-pong, or a bare `pcVar4 = pcVar4 + N;` advance followed by a `*pcVar4 =` store \u2014 plus a constant-index store on `pcVar4`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 34,
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pcVar3` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pcVar3 = pcVar3;` self-assign, two-var `tmp = &pcVar3->field; pcVar3 = tmp;` ping-pong, or a bare `pcVar3 = pcVar3 + N;` advance followed by a `*pcVar3 =` store \u2014 plus a constant-index store on `pcVar3`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 33,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",

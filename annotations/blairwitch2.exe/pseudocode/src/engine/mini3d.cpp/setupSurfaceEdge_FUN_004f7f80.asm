@@ -16,14 +16,14 @@
 ;   engine_mini3d.cpp_fillSurfaceTriangle_FUN_004f8110 at 004f8179
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00618118
-;   undefined4 DAT_00618120
-;   undefined4 DAT_01d17ab4
-;   undefined4 DAT_01d17ab8
-;   undefined4 DAT_01d17ac0
-;   undefined4 DAT_01d17ac4
-;   undefined4 DAT_01d17fb8
-;   undefined4 DAT_01d17fbc
+;   float g_FLOAT_00618118 = 0.5
+;   float g_FLOAT_00618120 = 65536
+;   int g_INT_01d17ab4
+;   SSoftwareEdge g_SSoftwareEdge_01d17ab8
+;   undefined4 g_SSoftwareEdge_01d17ab8.base.x_current
+;   undefined4 g_SSoftwareEdge_01d17ab8.base.x_gradient
+;   int g_INT_01d17fb8
+;   int g_INT_01d17fbc
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     PUSH EBP                            ; 004f7f83
     SUB ESP,0x10                        ; 004f7f84
     MOV EBP,dword ptr [ESP + 0x24]      ; 004f7f87
-    MOV EAX,[0x01d17ab4]                ; 004f7f8b | DAT_01d17ab4
+    MOV EAX,[0x01d17ab4]                ; 004f7f8b | g_INT_01d17ab4
     LEA EDI,[EAX*0x4 + 0x0]             ; 004f7f90
     ADD EDI,EAX                         ; 004f7f97
     MOV EAX,dword ptr [ESP + 0x28]      ; 004f7f99
@@ -55,31 +55,31 @@ section .text
         ;   Label: LAB_004f7fbb
     MOV EAX,EDI                         ; 004f7fbe
     FLD float ptr [EBX]                 ; 004f7fc0
-    FLD float ptr [0x00618118]          ; 004f7fc2 | DAT_00618118
+    FLD float ptr [0x00618118]          ; 004f7fc2 | g_FLOAT_00618118
     FSUBP                               ; 004f7fc8
-    FISTP dword ptr [EAX]               ; 004f7fca | DAT_01d17ab8
+    FISTP dword ptr [EAX]               ; 004f7fca | g_SSoftwareEdge_01d17ab8
     MOV EBX,dword ptr [ESP + 0x28]      ; 004f7fcc
     LEA EAX,[EDI + 0x4]                 ; 004f7fd0
     ADD EBX,0x18                        ; 004f7fd3
     FLD float ptr [EBX]                 ; 004f7fd6
-    FLD float ptr [0x00618118]          ; 004f7fd8 | DAT_00618118
+    FLD float ptr [0x00618118]          ; 004f7fd8 | g_FLOAT_00618118
     FSUBP                               ; 004f7fde
     FISTP dword ptr [EAX]               ; 004f7fe0
-    MOV EAX,dword ptr [EDI]             ; 004f7fe2 | DAT_01d17ab8
+    MOV EAX,dword ptr [EDI]             ; 004f7fe2 | g_SSoftwareEdge_01d17ab8
     CMP EAX,dword ptr [EDI + 0x4]       ; 004f7fe4
     JZ 0x004f80a8                       ; 004f7fe7
         ;   XREF to: 004f80a8 (CONDITIONAL_JUMP)  ; LAB_004f80a8
-    CMP EAX,dword ptr [0x01d17fb8]      ; 004f7fed | DAT_01d17fb8
+    CMP EAX,dword ptr [0x01d17fb8]      ; 004f7fed | g_INT_01d17fb8
     JGE 0x004f7ffa                      ; 004f7ff3
         ;   XREF to: 004f7ffa (CONDITIONAL_JUMP)  ; LAB_004f7ffa
-    MOV [0x01d17fb8],EAX                ; 004f7ff5 | DAT_01d17fb8
-    MOV EBX,dword ptr [0x01d17fbc]      ; 004f7ffa | DAT_01d17fbc
+    MOV [0x01d17fb8],EAX                ; 004f7ff5 | g_INT_01d17fb8
+    MOV EBX,dword ptr [0x01d17fbc]      ; 004f7ffa | g_INT_01d17fbc
         ;   Label: LAB_004f7ffa
     MOV EAX,dword ptr [EDI + 0x4]       ; 004f8000
     CMP EAX,EBX                         ; 004f8003
     JLE 0x004f800c                      ; 004f8005
         ;   XREF to: 004f800c (CONDITIONAL_JUMP)  ; LAB_004f800c
-    MOV [0x01d17fbc],EAX                ; 004f8007 | DAT_01d17fbc
+    MOV [0x01d17fbc],EAX                ; 004f8007 | g_INT_01d17fbc
     MOV EAX,dword ptr [ESP + 0x28]      ; 004f800c
         ;   Label: LAB_004f800c
     FLD float ptr [EAX + 0x18]          ; 004f8010
@@ -94,7 +94,7 @@ section .text
         ;   Label: LAB_004f802e
     MOV EAX,dword ptr [ESP + 0x28]      ; 004f8030
     FSUB float ptr [EBP + 0x18]         ; 004f8034
-    FILD dword ptr [EDI]                ; 004f8037 | DAT_01d17ab8
+    FILD dword ptr [EDI]                ; 004f8037 | g_SSoftwareEdge_01d17ab8
     FLD float ptr [EAX + 0x14]          ; 004f8039
     FSUB float ptr [EBP + 0x14]         ; 004f803c
     FXCH                                ; 004f803f
@@ -110,11 +110,11 @@ section .text
     FSTP float ptr [ESP + 0x4]          ; 004f8058
     FSTP float ptr [ESP]                ; 004f805c
     FLD float ptr [EBX]                 ; 004f805f
-    FLD float ptr [0x00618120]          ; 004f8061 | DAT_00618120
+    FLD float ptr [0x00618120]          ; 004f8061 | g_FLOAT_00618120
     FMULP                               ; 004f8067
-    FLD float ptr [0x00618118]          ; 004f8069 | DAT_00618118
+    FLD float ptr [0x00618118]          ; 004f8069 | g_FLOAT_00618118
     FSUBP                               ; 004f806f
-    FISTP dword ptr [EAX]               ; 004f8071 | DAT_01d17ac4
+    FISTP dword ptr [EAX]               ; 004f8071 | g_SSoftwareEdge_01d17ab8.base.x_gradient
     MOV EAX,dword ptr [ESP + 0x28]      ; 004f8073
     FLD float ptr [EAX + 0x14]          ; 004f8077
     FSUB float ptr [EBP + 0x14]         ; 004f807a
@@ -124,12 +124,12 @@ section .text
     LEA EAX,[EDI + 0x8]                 ; 004f8087
     FSTP float ptr [ESP + 0xc]          ; 004f808a
     FLD float ptr [EBX]                 ; 004f808e
-    FLD float ptr [0x00618120]          ; 004f8090 | DAT_00618120
+    FLD float ptr [0x00618120]          ; 004f8090 | g_FLOAT_00618120
     FMULP                               ; 004f8096
-    FLD float ptr [0x00618118]          ; 004f8098 | DAT_00618118
+    FLD float ptr [0x00618118]          ; 004f8098 | g_FLOAT_00618118
     FSUBP                               ; 004f809e
-    FISTP dword ptr [EAX]               ; 004f80a0 | DAT_01d17ac0
-    INC dword ptr [0x01d17ab4]          ; 004f80a2 | DAT_01d17ab4
+    FISTP dword ptr [EAX]               ; 004f80a0 | g_SSoftwareEdge_01d17ab8.base.x_current
+    INC dword ptr [0x01d17ab4]          ; 004f80a2 | g_INT_01d17ab4
     ADD ESP,0x10                        ; 004f80a8
         ;   Label: LAB_004f80a8
     POP EBP                             ; 004f80ab

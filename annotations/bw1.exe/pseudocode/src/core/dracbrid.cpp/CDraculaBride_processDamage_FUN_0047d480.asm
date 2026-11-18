@@ -8,19 +8,19 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_s_4_bride_launch_wav_005daf9b+2
+;   TerminatedCString s_bride_launch_wav_005daf9d
 ;   TerminatedCString s_bride_die_wav_005dafae
 ;   TerminatedCString s_bride_hurt_wav_005dafbd
-;   undefined4 DAT_005dafcd
-;   undefined4 DAT_0061c010
+;   double g_DOUBLE_005dafcd = 2
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_004308a0
 ;   core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_0047d430
-;   core_dracbrid.cpp_FUN_0047d920
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -72,8 +72,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0047d4df
     PUSH EBP                            ; 0047d4e0
     LEA ESI,[ESP + 0x14]                ; 0047d4e1
-    CALL core_actor.cpp_FUN_00408b40    ; 0047d4e5
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0047d4e5
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0047d4ea
     PUSH 0x0                            ; 0047d4ed
     PUSH 0x41200000                     ; 0047d4ef
@@ -135,7 +135,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0 ; 0047d57d
         ;   XREF to: 005247c0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0047d582
-    PUSH 0x5daf9d                       ; 0047d585 | s_s_4_bride_launch_wav_005daf9b+2
+    PUSH 0x5daf9d                       ; 0047d585 | = "bride-launch.wav"
     MOV EAX,dword ptr [EBP + 0x154]     ; 0047d58a
     PUSH EBP                            ; 0047d590
     CALL dword ptr [EAX + 0x30]         ; 0047d591
@@ -165,15 +165,15 @@ section .text
         ;   Label: LAB_0047d5c2
     ADD EAX,0x1c                        ; 0047d5c5
     FLD ST0                             ; 0047d5c8
-    FMUL double ptr [0x005dafcd]        ; 0047d5ca | DAT_005dafcd
+    FMUL double ptr [0x005dafcd]        ; 0047d5ca | g_DOUBLE_005dafcd
     PUSH EAX                            ; 0047d5d0
     LEA ESI,[ESP + 0x28]                ; 0047d5d1
     LEA EDI,[ESP + 0x1c]                ; 0047d5d5
     PUSH EBP                            ; 0047d5d9
     FSTP ST1                            ; 0047d5da
     FSTP float ptr [EAX + -0x18]        ; 0047d5dc
-    CALL core_actor.cpp_FUN_00408b40    ; 0047d5df
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0047d5df
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x2c]                ; 0047d5e4
     ADD ESP,0x8                         ; 0047d5e8
     XOR EBX,EBX                         ; 0047d5eb
@@ -189,7 +189,7 @@ section .text
     PUSH 0x0                            ; 0047d5fe
     LEA EAX,[ESP + 0x2c]                ; 0047d600
     PUSH EAX                            ; 0047d604
-    MOV EDI,dword ptr [0x0061c010]      ; 0047d605 | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 0047d605 | g_CFireEffectPtr
     PUSH EDI                            ; 0047d60b
     INC EBX                             ; 0047d60c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 0047d60d
@@ -214,8 +214,8 @@ section .text
         ;   Label: LAB_0047d639
     PUSH 0x5dafae                       ; 0047d63e | = "bride-die?.wav"
     PUSH EBP                            ; 0047d643
-    CALL core_dracbrid.cpp_FUN_0047d920 ; 0047d644
-        ;   XREF to: 0047d920 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0047d920(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 ; 0047d644
+        ;   XREF to: 0047d920 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 0047d649
     JMP 0x0047d5ac                      ; 0047d64c
         ;   XREF to: 0047d5ac (UNCONDITIONAL_JUMP)  ; LAB_0047d5ac
@@ -248,8 +248,8 @@ section .text
     PUSH 0x40000000                     ; 0047d68a
     PUSH 0x5dafbd                       ; 0047d68f | = "bride-hurt?.wav"
     PUSH EBP                            ; 0047d694
-    CALL core_dracbrid.cpp_FUN_0047d920 ; 0047d695
-        ;   XREF to: 0047d920 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0047d920(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 ; 0047d695
+        ;   XREF to: 0047d920 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 0047d69a
     JMP 0x0047d5ac                      ; 0047d69d
         ;   XREF to: 0047d5ac (UNCONDITIONAL_JUMP)  ; LAB_0047d5ac

@@ -10,11 +10,11 @@ void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0049d1c0(CFireEffect *this
 
 {
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_006150f4);
+            (g_CDemonRenderer_PTR_0060b280,&g_FireEffectBlackHoleTexture);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_0061510c);
+            (g_CDemonRenderer_PTR_0060b280,&g_FireEffectSparkTexture);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00615124);
+            (g_CDemonRenderer_PTR_0060b280,&g_FireEffectBlueSparkTexture);
   core_fire_cpp_loadStakeAssets_FUN_00494130();
   core_fire_cpp_loadFireBallAssets_FUN_00495900();
   core_fire_cpp_loadRockAssets_FUN_00496610();
@@ -23,6 +23,6 @@ void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0049d1c0(CFireEffect *this
   core_fire_cpp_loadGunFlashAssets_FUN_00496c40();
   core_fire_cpp_loadLightningBoltAssets_FUN_0049aab0();
   core_fire_cpp_loadDebrisAssets_FUN_00498c90();
-  core_muzzle_cpp_FUN_0059d5f0();
+  core_muzzle_cpp_loadMuzzleEffectAssets_FUN_0059d5f0();
   return;
 }

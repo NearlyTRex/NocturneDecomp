@@ -12,7 +12,7 @@ void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ac0(CCharacte
   if (this_ptr->door_target == (CDoor *)0x0) {
     return;
   }
-  core_door_cpp_FUN_0045efc0(this_ptr->door_target);
+  core_door_cpp_CDoor_onOpened_FUN_0045efc0(this_ptr->door_target);
   this_ptr->door_target = (CDoor *)0x0;
   return;
 }

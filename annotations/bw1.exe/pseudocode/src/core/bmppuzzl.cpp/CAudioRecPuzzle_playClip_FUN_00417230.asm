@@ -12,20 +12,20 @@
 ; int              Stack[0x18]:4   transport_state
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d4002
-;   undefined4 DAT_005d4005
-;   undefined4 DAT_005d4008
-;   undefined4 DAT_005d400b
-;   undefined4 DAT_005d400e
-;   undefined1 DAT_005d4011
-;   undefined1 DAT_005d4012
-;   undefined1 DAT_005d4013
-;   TerminatedCString s_s_1_wav_005d4014
-;   undefined1 DAT_005d401d
-;   undefined1 DAT_005d401e
-;   undefined1 DAT_005d401f
-;   TerminatedCString s_s_1_wav_005d4020
-;   undefined4 DAT_005d4029
+;   TerminatedCString s_d_005d4002
+;   TerminatedCString s_d_005d4005
+;   TerminatedCString s_d_005d4008
+;   TerminatedCString s_f_005d400b
+;   TerminatedCString s_f_005d400e
+;   TerminatedCString s_AB_1_wav_005d4011
+;   undefined4 s_AB_1_wav_005d4011+1
+;   undefined4 s_AB_1_wav_005d4011+2
+;   undefined4 s_AB_1_wav_005d4011+3
+;   TerminatedCString s_AT_1_wav_005d401d
+;   undefined4 s_AT_1_wav_005d401d+1
+;   undefined4 s_AT_1_wav_005d401d+2
+;   undefined4 s_AT_1_wav_005d401d+3
+;   TerminatedCString s_f_005d4029
 ;   TerminatedCString s_AR_d_005d402c
 ;   ... and 7 more
 ;
@@ -48,7 +48,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0041723f
     MOV EDX,dword ptr [EBP + 0x20]      ; 00417242
     PUSH EDX                            ; 00417245
-    PUSH 0x5d4002                       ; 00417246 | DAT_005d4002
+    PUSH 0x5d4002                       ; 00417246 | = "%d"
     LEA EAX,[ESP + 0x624]               ; 0041724b
     PUSH EAX                            ; 00417252
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00417253
@@ -56,7 +56,7 @@ section .text
     ADD ESP,0xc                         ; 00417258
     MOV ECX,dword ptr [EBP + 0x24]      ; 0041725b
     PUSH ECX                            ; 0041725e
-    PUSH 0x5d4005                       ; 0041725f | DAT_005d4005
+    PUSH 0x5d4005                       ; 0041725f | = "%d"
     LEA EAX,[ESP + 0x618]               ; 00417264
     PUSH EAX                            ; 0041726b
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0041726c
@@ -64,7 +64,7 @@ section .text
     ADD ESP,0xc                         ; 00417271
     MOV ESI,dword ptr [EBP + 0x28]      ; 00417274
     PUSH ESI                            ; 00417277
-    PUSH 0x5d4008                       ; 00417278 | DAT_005d4008
+    PUSH 0x5d4008                       ; 00417278 | = "%d"
     LEA EAX,[ESP + 0x60c]               ; 0041727d
     PUSH EAX                            ; 00417284
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00417285
@@ -84,37 +84,37 @@ section .text
     FABS                                ; 004172c1
     FXCH                                ; 004172c3
     FST float ptr [ESP + 0x638]         ; 004172c5
-    FMUL float ptr [0x005d403a]         ; 004172cc | DAT_005d403a
+    FMUL float ptr [0x005d403a]         ; 004172cc | g_FLOAT_005d403a
     FXCH                                ; 004172d2
     FSTP float ptr [ESP + 0x634]        ; 004172d4
     SUB ESP,0x8                         ; 004172db
     FSTP double ptr [ESP]               ; 004172de
-    PUSH 0x5d400b                       ; 004172e1 | DAT_005d400b
+    PUSH 0x5d400b                       ; 004172e1 | = "%f"
     LEA EAX,[ESP + 0x10]                ; 004172e6
     PUSH EAX                            ; 004172ea
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004172eb
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004172f0
     FLD float ptr [ESP + 0x634]         ; 004172f3
-    FMUL float ptr [0x005d403a]         ; 004172fa | DAT_005d403a
+    FMUL float ptr [0x005d403a]         ; 004172fa | g_FLOAT_005d403a
     SUB ESP,0x8                         ; 00417300
     FSTP double ptr [ESP]               ; 00417303
-    PUSH 0x5d400e                       ; 00417306 | DAT_005d400e
+    PUSH 0x5d400e                       ; 00417306 | = "%f"
     LEA EAX,[ESP + 0x210]               ; 0041730b
     PUSH EAX                            ; 00417312
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00417313
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00417318
-    MOV ESI,0x5d4011                    ; 0041731b | DAT_005d4011
+    MOV ESI,0x5d4011                    ; 0041731b | = "AB_1.wav @ "
     LEA EDI,[ESP + 0x404]               ; 00417320
     PUSH EDI                            ; 00417327
-    MOV AL,byte ptr [ESI]               ; 00417328 | DAT_005d4011 | DAT_005d4013
+    MOV AL,byte ptr [ESI]               ; 00417328 | = "AB_1.wav @ " | s_AB_1_wav_005d4011+2
         ;   Label: LAB_00417328
     MOV byte ptr [EDI],AL               ; 0041732a
     CMP AL,0x0                          ; 0041732c
     JZ 0x00417340                       ; 0041732e
         ;   XREF to: 00417340 (CONDITIONAL_JUMP)  ; LAB_00417340
-    MOV AL,byte ptr [ESI + 0x1]         ; 00417330 | DAT_005d4012 | = "1.wav @ "
+    MOV AL,byte ptr [ESI + 0x1]         ; 00417330 | s_AB_1_wav_005d4011+1 | s_AB_1_wav_005d4011+3
     ADD ESI,0x2                         ; 00417333
     MOV byte ptr [EDI + 0x1],AL         ; 00417336
     ADD EDI,0x2                         ; 00417339
@@ -146,16 +146,16 @@ section .text
         ;   XREF to: 00417355 (CONDITIONAL_JUMP)  ; LAB_00417355
     POP EDI                             ; 0041736d
         ;   Label: LAB_0041736d
-    MOV ESI,0x5d401d                    ; 0041736e | DAT_005d401d
+    MOV ESI,0x5d401d                    ; 0041736e | = "AT_1.wav @ "
     LEA EDI,[ESP + 0x504]               ; 00417373
     PUSH EDI                            ; 0041737a
-    MOV AL,byte ptr [ESI]               ; 0041737b | DAT_005d401d | DAT_005d401f
+    MOV AL,byte ptr [ESI]               ; 0041737b | = "AT_1.wav @ " | s_AT_1_wav_005d401d+2
         ;   Label: LAB_0041737b
     MOV byte ptr [EDI],AL               ; 0041737d
     CMP AL,0x0                          ; 0041737f
     JZ 0x00417393                       ; 00417381
         ;   XREF to: 00417393 (CONDITIONAL_JUMP)  ; LAB_00417393
-    MOV AL,byte ptr [ESI + 0x1]         ; 00417383 | DAT_005d401e | = "1.wav @ "
+    MOV AL,byte ptr [ESI + 0x1]         ; 00417383 | s_AT_1_wav_005d401d+1 | s_AT_1_wav_005d401d+3
     ADD ESI,0x2                         ; 00417386
     MOV byte ptr [EDI + 0x1],AL         ; 00417389
     ADD EDI,0x2                         ; 0041738c
@@ -187,7 +187,7 @@ section .text
         ;   XREF to: 004173ab (CONDITIONAL_JUMP)  ; LAB_004173ab
     POP EDI                             ; 004173c3
         ;   Label: LAB_004173c3
-    FLD float ptr [0x005d403e]          ; 004173c4 | DAT_005d403e
+    FLD float ptr [0x005d403e]          ; 004173c4 | g_FLOAT_005d403e
     FLD float ptr [ESP + 0x638]         ; 004173ca
     FMUL ST1                            ; 004173d1
     FLD float ptr [ESP + 0x634]         ; 004173d3
@@ -201,7 +201,7 @@ section .text
     FLD float ptr [ESP]                 ; 004173e9
     SUB ESP,0x8                         ; 004173ec
     FSTP double ptr [ESP]               ; 004173ef
-    PUSH 0x5d4029                       ; 004173f2 | DAT_005d4029
+    PUSH 0x5d4029                       ; 004173f2 | = "%f"
     LEA EAX,[ESP + 0x110]               ; 004173f7
     PUSH EAX                            ; 004173fe
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004173ff
@@ -302,7 +302,7 @@ section .text
         ;   XREF to: 004174c2 (CONDITIONAL_JUMP)  ; LAB_004174c2
     POP EDI                             ; 004174da
         ;   Label: LAB_004174da
-    MOV ESI,0x5d4032                    ; 004174db | DAT_005d4032
+    MOV ESI,0x5d4032                    ; 004174db | = ".wav @ "
     LEA EDI,[ESP + 0x304]               ; 004174e0
     PUSH EDI                            ; 004174e7
     SUB ECX,ECX                         ; 004174e8
@@ -310,13 +310,13 @@ section .text
     MOV AL,0x0                          ; 004174eb
     SCASB.REPNE ES:EDI                  ; 004174ed
     DEC EDI                             ; 004174ef
-    MOV AL,byte ptr [ESI]               ; 004174f0 | DAT_005d4032 | DAT_005d4034
+    MOV AL,byte ptr [ESI]               ; 004174f0 | = ".wav @ " | s_wav_005d4032+2
         ;   Label: LAB_004174f0
     MOV byte ptr [EDI],AL               ; 004174f2
     CMP AL,0x0                          ; 004174f4
     JZ 0x00417508                       ; 004174f6
         ;   XREF to: 00417508 (CONDITIONAL_JUMP)  ; LAB_00417508
-    MOV AL,byte ptr [ESI + 0x1]         ; 004174f8 | DAT_005d4033 | DAT_005d4035
+    MOV AL,byte ptr [ESI + 0x1]         ; 004174f8 | s_wav_005d4032+1 | s_wav_005d4032+3
     ADD ESI,0x2                         ; 004174fb
     MOV byte ptr [EDI + 0x1],AL         ; 004174fe
     ADD EDI,0x2                         ; 00417501
@@ -351,7 +351,7 @@ section .text
     LEA EAX,[ESP + 0x404]               ; 00417539
     PUSH EAX                            ; 00417540
     PUSH EBX                            ; 00417541
-    MOV ESI,dword ptr [0x006236b8]      ; 00417542 | DAT_006236b8
+    MOV ESI,dword ptr [0x006236b8]      ; 00417542 | g_CSound_PTR_006236b8
     PUSH ESI                            ; 00417548
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 00417549
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)
@@ -360,7 +360,7 @@ section .text
     LEA EAX,[ESP + 0x504]               ; 00417557
     PUSH EAX                            ; 0041755e
     PUSH EBX                            ; 0041755f
-    MOV EDI,dword ptr [0x006236b8]      ; 00417560 | DAT_006236b8
+    MOV EDI,dword ptr [0x006236b8]      ; 00417560 | g_CSound_PTR_006236b8
     PUSH EDI                            ; 00417566
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 00417567
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)
@@ -369,7 +369,7 @@ section .text
     LEA EAX,[ESP + 0x304]               ; 00417575
     PUSH EAX                            ; 0041757c
     PUSH EBX                            ; 0041757d
-    MOV EAX,[0x006236b8]                ; 0041757e | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 0041757e | g_CSound_PTR_006236b8
     PUSH EAX                            ; 00417583
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 00417584
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)

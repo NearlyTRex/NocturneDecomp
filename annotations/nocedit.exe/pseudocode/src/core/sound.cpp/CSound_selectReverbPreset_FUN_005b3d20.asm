@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_OFF_00652855
 ;   TerminatedCString s_GENERIC_00652859
-;   SSoundModeEntry[27] g_SoundModeTable
+;   SReverbPreset[27] g_ReverbPresetTable
 ;   undefined4 PTR_s_GENERIC_00681f0c
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 005b3d2c
         ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 005b3d31
-    MOV EDX,dword ptr [EBX + 0x681efc]  ; 005b3d34 | = "OFF" | s_GENERIC_00652859 | g_SoundModeTable
+    MOV EDX,dword ptr [EBX + 0x681efc]  ; 005b3d34 | = "OFF" | s_GENERIC_00652859 | g_ReverbPresetTable
         ;   Label: LAB_005b3d34
     PUSH EDX                            ; 005b3d3a | = "OFF" | s_GENERIC_00652859
     LEA EAX,[ESP + 0x4]                 ; 005b3d3b

@@ -15,7 +15,7 @@ section .text
     PUSH 0xd0bc                         ; 00596630
         ;   Label: core_baal.cpp_factoryFuncBaal_FUN_00596630
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00596635
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0059663a
     TEST EAX,EAX                        ; 0059663d
     JNZ 0x00596642                      ; 0059663f

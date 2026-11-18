@@ -6,60 +6,55 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_drawHLine_FUN_00402f30(int x1,int y,int x2)
 
 {
   ushort uVar1;
   uint uVar2;
   ulong count;
-  int iVar3;
-  ushort *puVar4;
-  uint *puVar5;
+  ushort *puVar3;
+  uint *puVar4;
   
-  if ((_DAT_01c4f00c <= y) && (y <= _DAT_01c4f014)) {
-    if (x1 < _DAT_01c4f008) {
-      x1 = _DAT_01c4f008;
+  if ((g_INT_01c4f00c <= y) && (y <= g_INT_01c4f014)) {
+    if (x1 < g_INT_01c4f008) {
+      x1 = g_INT_01c4f008;
     }
-    if (_DAT_01c4f010 < x2) {
-      x2 = _DAT_01c4f010;
+    if (g_ClipRight < x2) {
+      x2 = g_ClipRight;
     }
     count = (x2 - x1) + 1;
     if (0 < (int)count) {
-      iVar3 = y * 4;
-      if (DAT_0061b4a0 < 0x10) {
-        if (DAT_0061b4a0 != 8) {
+      if ((uint)g_INT_0061b4a0 < 0x10) {
+        if (g_INT_0061b4a0 != 8) {
 LAB_00403012:
-          _DAT_01d1d400 = "..\\engine\\2d.c";
-          _DAT_01d1d404 = 0x8a1;
-          core_main_c_FUN_005030e0("hLine - invalid bitsPerPixel");
+          g_CHAR_PTR_01d1d400 = "..\\engine\\2d.c";
+          g_INT_01d1d404 = 0x8a1;
+          core_main_c_displayErrorAndQuit_FUN_005030e0("hLine - invalid bitsPerPixel");
           return;
         }
-        memset
-                  ((void *)(x1 + *(int *)(&DAT_01c4354c + iVar3)),_DAT_01c4f020,count);
+        memset(g_ScreenBufferArray[y] + x1,g_INT_01c4f020,count);
       }
-      else if (DAT_0061b4a0 < 0x11) {
-        uVar1 = *(ushort *)(&DAT_01c4dad0 + _DAT_01c4f020 * 2);
-        puVar4 = (ushort *)(x1 * 2 + *(int *)(&DAT_01c4354c + iVar3));
+      else if ((uint)g_INT_0061b4a0 < 0x11) {
+        uVar1 = g_ColorTable16[g_INT_01c4f020];
+        puVar3 = (ushort *)(g_ScreenBufferArray[y] + x1 * 2);
         if (0 < (int)count) {
           do {
             count = count - 1;
-            *puVar4 = uVar1;
-            puVar4 = puVar4 + 1;
+            *puVar3 = uVar1;
+            puVar3 = puVar3 + 1;
           } while (0 < (int)count);
           return;
         }
       }
       else {
-        if (DAT_0061b4a0 != 0x20) goto LAB_00403012;
-        uVar2 = *(uint *)(_DAT_01c4f020 * 4 + 0x1c4dcd0);
-        puVar5 = (uint *)(x1 * 4 + *(int *)(&DAT_01c4354c + iVar3));
+        if (g_INT_0061b4a0 != 0x20) goto LAB_00403012;
+        uVar2 = g_ColorTable32[g_INT_01c4f020];
+        puVar4 = (uint *)(g_ScreenBufferArray[y] + x1 * 4);
         if (0 < (int)count) {
           do {
             count = count - 1;
-            *puVar5 = uVar2;
-            puVar5 = puVar5 + 1;
+            *puVar4 = uVar2;
+            puVar4 = puVar4 + 1;
           } while (0 < (int)count);
           return;
         }

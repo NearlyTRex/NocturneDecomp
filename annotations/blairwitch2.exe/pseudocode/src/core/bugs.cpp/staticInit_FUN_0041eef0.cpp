@@ -10,7 +10,7 @@ void __cdecl core_bugs_cpp_staticInit_FUN_0041eef0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CBugsClassInfo,(char *)0x5cc901,core_bugs_cpp_factoryFuncBugs_FUN_0041ef20,
+            (&g_CBugsClassInfo,"CBugs",core_bugs_cpp_factoryFuncBugs_FUN_0041ef20,
              &g_CBugsClassVersion,1,&g_CEnemyClassInfo);
   return;
 }

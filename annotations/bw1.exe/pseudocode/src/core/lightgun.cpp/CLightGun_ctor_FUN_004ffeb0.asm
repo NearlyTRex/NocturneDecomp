@@ -10,8 +10,8 @@
 ;   core_lightgun.cpp_factoryFuncLightGun_FUN_004ffe80 at 004ffe93
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060300c
-;   undefined4 DAT_00603010
+;   float g_FLOAT_0060300c = 8
+;   float g_FLOAT_00603010 = 2
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
@@ -44,9 +44,9 @@ section .text
     MOV dword ptr [EBX + 0x2e8],0x42000000 ; 004fff13
     MOV dword ptr [EBX + 0x2ec],0x0     ; 004fff1d
     MOV dword ptr [EBX + 0x58c],0x1     ; 004fff27
-    FLD float ptr [0x0060300c]          ; 004fff31 | DAT_0060300c
+    FLD float ptr [0x0060300c]          ; 004fff31 | g_FLOAT_0060300c
     MOV dword ptr [EBX + 0x2f0],0x1     ; 004fff37
-    FLD float ptr [0x00603010]          ; 004fff41 | DAT_00603010
+    FLD float ptr [0x00603010]          ; 004fff41 | g_FLOAT_00603010
     MOV dword ptr [EBX + 0x588],0x0     ; 004fff47
     ADD ESP,0x8                         ; 004fff51
     MOV dword ptr [EBX + 0x584],0x3f800000 ; 004fff54

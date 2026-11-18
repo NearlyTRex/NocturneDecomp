@@ -11,11 +11,11 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40 at 004e6ef7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
@@ -87,10 +87,10 @@ section .text
         ;   Label: LAB_004e744b
     MOV EAX,0x57d                       ; 004e7450
     PUSH 0x5dc660                       ; 004e7455
-    MOV dword ptr [0x01d046a0],EBP      ; 004e745a | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004e7460 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004e7465
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBP      ; 004e745a | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004e7460 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e7465
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e746a
     JMP 0x004e741d                      ; 004e746d
         ;   XREF to: 004e741d (UNCONDITIONAL_JUMP)  ; LAB_004e741d

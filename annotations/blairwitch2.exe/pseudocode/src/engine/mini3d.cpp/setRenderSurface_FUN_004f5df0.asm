@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   mode
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d0d2b4
+;   int g_INT_01d0d2b4
 ;   undefined4 DAT_01d167f0
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     SETNZ AL                            ; 004f5e02
     AND EAX,0xff                        ; 004f5e05
     INC EAX                             ; 004f5e0a
-    MOV [0x01d0d2b4],EAX                ; 004f5e0b | DAT_01d0d2b4
+    MOV [0x01d0d2b4],EAX                ; 004f5e0b | g_INT_01d0d2b4
     LEA EAX,[EBX + -0x1]                ; 004f5e10
     MOV dword ptr [ESP],EAX             ; 004f5e13
     FILD dword ptr [ESP]                ; 004f5e16

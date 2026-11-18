@@ -14,7 +14,7 @@ CZombieForest * __cdecl core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieF
   pCVar1 = core_zombie_cpp_CZombie_ctor_FUN_005888d0(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CZombieForestVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(pCVar1->base).base.model,(char *)0x5d8992);
+            (&(pCVar1->base).base.model,"bwp3_tzombie1.dfm");
   pCVar1->zombie_variant = 2;
   (pCVar1->base).base.hit_points = 25.0;
   (pCVar1->base).attack_damage = 10.0;

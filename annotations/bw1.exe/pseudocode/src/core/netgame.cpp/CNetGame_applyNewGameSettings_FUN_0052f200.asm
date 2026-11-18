@@ -63,12 +63,12 @@
 ;   TerminatedCString s_CNetGame_applyNewGameSet_005ebf14
 ;   TerminatedCString s_core_netgame_cpp_005ebf60
 ;   TerminatedCString s_Hell_froze_005ebf74
-;   undefined4 DAT_00622584
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_NetLobbyStateChanged = 0x1
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_0052e040
 ;   core_netgame.cpp_CNetGame_removePlayer_FUN_0052f890
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0052fd80
@@ -97,10 +97,10 @@ section .text
         ;   Label: LAB_0052f223
     MOV EDI,0x7e6                       ; 0052f228
     PUSH 0x5ebf14                       ; 0052f22d | = "CNetGame::applyNewGameSettings - shou..."
-    MOV dword ptr [0x01d1d400],EBX      ; 0052f232 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0052f238 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052f23e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 0052f232 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0052f238 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052f23e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052f243
     MOV ECX,0x2c                        ; 0052f246
         ;   Label: LAB_0052f246
@@ -234,10 +234,10 @@ section .text
     MOV EAX,0x5ebf60                    ; 0052f3cc | = "..\\core\\netgame.cpp"
     MOV EDX,0x811                       ; 0052f3d1
     PUSH 0x5ebf74                       ; 0052f3d6 | = "Hell froze"
-    MOV [0x01d1d400],EAX                ; 0052f3db | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0052f3e0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052f3e6
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 0052f3db | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0052f3e0 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052f3e6
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052f3eb
     MOV ECX,dword ptr [ESP + 0x154]     ; 0052f3ee
         ;   Label: LAB_0052f3ee
@@ -455,14 +455,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x154]     ; 0052f730
     XOR EAX,EBP                         ; 0052f737
     PUSH EDX                            ; 0052f739
-    MOV [0x00622584],EAX                ; 0052f73a | DAT_00622584
+    MOV [0x00622584],EAX                ; 0052f73a | g_NetLobbyStateChanged
     CALL crt_string.c__strcmp_FUN_005c0f80 ; 0052f73f
         ;   XREF to: 005c0f80 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005c0f80(char * str1, char * str2)
     ADD ESP,0x8                         ; 0052f744
     TEST EAX,EAX                        ; 0052f747
     JZ 0x0052f755                       ; 0052f749
         ;   XREF to: 0052f755 (CONDITIONAL_JUMP)  ; LAB_0052f755
-    MOV dword ptr [0x00622584],0x1      ; 0052f74b | DAT_00622584
+    MOV dword ptr [0x00622584],0x1      ; 0052f74b | g_NetLobbyStateChanged
     IMUL EDX,EBX,0x28                   ; 0052f755
         ;   Label: LAB_0052f755
     MOV EAX,dword ptr [ESP + 0x144]     ; 0052f758
@@ -470,7 +470,7 @@ section .text
     CMP EAX,dword ptr [ESP + EDX*0x1 + 0x85] ; 0052f762
     JZ 0x0052f7e6                       ; 0052f769
         ;   XREF to: 0052f7e6 (CONDITIONAL_JUMP)  ; LAB_0052f7e6
-    MOV dword ptr [0x00622584],0x1      ; 0052f76b | DAT_00622584
+    MOV dword ptr [0x00622584],0x1      ; 0052f76b | g_NetLobbyStateChanged
     MOV EAX,dword ptr [ESP + 0x178]     ; 0052f775
         ;   Label: LAB_0052f775
     PUSH EAX                            ; 0052f77c
@@ -498,7 +498,7 @@ section .text
     MOV dword ptr [ESP + 0x148],EBX     ; 0052f7da
     JMP 0x0052f406                      ; 0052f7e1
         ;   XREF to: 0052f406 (UNCONDITIONAL_JUMP)  ; LAB_0052f406
-    CMP dword ptr [0x00622584],0x0      ; 0052f7e6 | DAT_00622584
+    CMP dword ptr [0x00622584],0x0      ; 0052f7e6 | g_NetLobbyStateChanged
         ;   Label: LAB_0052f7e6
     JNZ 0x0052f775                      ; 0052f7ed
         ;   XREF to: 0052f775 (CONDITIONAL_JUMP)  ; LAB_0052f775

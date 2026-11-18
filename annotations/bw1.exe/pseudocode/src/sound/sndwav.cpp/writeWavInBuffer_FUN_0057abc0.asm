@@ -15,10 +15,10 @@
 ;   void* PTR_waveInPrepareHeader_005d046c = 001d0984
 ;   TerminatedCString s_waveOutPrepareHeader_fai_005f57f0
 ;   TerminatedCString s_waveOutWrite_failed_005f580d
-;   undefined4 DAT_02c828d8
-;   undefined4 DAT_02c82a1c
-;   undefined4 DAT_02c82a20
-;   undefined4 DAT_02c82a2c
+;   int g_WaveInHandle
+;   int g_WaveInBitsPerSample
+;   int g_WaveInChannels
+;   int g_WaveInBufferSizeSamples
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
@@ -48,21 +48,21 @@ section .text
     POP EDI                             ; 0057abe0
     POP EBX                             ; 0057abe1
     RET                                 ; 0057abe2
-    MOV EAX,[0x02c82a1c]                ; 0057abe3 | DAT_02c82a1c
+    MOV EAX,[0x02c82a1c]                ; 0057abe3 | g_WaveInBitsPerSample
         ;   Label: LAB_0057abe3
     MOV EDX,EAX                         ; 0057abe8
     SAR EDX,0x1f                        ; 0057abea
     SHL EDX,0x3                         ; 0057abed
     SBB EAX,EDX                         ; 0057abf0
     SAR EAX,0x3                         ; 0057abf2
-    IMUL EAX,dword ptr [0x02c82a2c]     ; 0057abf5 | DAT_02c82a2c
-    MOV EDX,dword ptr [0x02c82a20]      ; 0057abfc | DAT_02c82a20
+    IMUL EAX,dword ptr [0x02c82a2c]     ; 0057abf5 | g_WaveInBufferSizeSamples
+    MOV EDX,dword ptr [0x02c82a20]      ; 0057abfc | g_WaveInChannels
     IMUL EDX,EAX                        ; 0057ac02
     MOV dword ptr [ECX + 0x4],EDX       ; 0057ac05
     PUSH 0x20                           ; 0057ac08
     MOV EDI,dword ptr [EBX + 0x2c8292c] ; 0057ac0a
     PUSH EDI                            ; 0057ac10
-    MOV EBP,dword ptr [0x02c828d8]      ; 0057ac11 | DAT_02c828d8
+    MOV EBP,dword ptr [0x02c828d8]      ; 0057ac11 | g_WaveInHandle
     PUSH EBP                            ; 0057ac17
     CALL dword ptr CS:[0x5d046c]        ; 0057ac18 | PTR_waveInPrepareHeader_005d046c
     TEST EAX,EAX                        ; 0057ac1f
@@ -71,7 +71,7 @@ section .text
     PUSH 0x20                           ; 0057ac23
     MOV EAX,dword ptr [EBX + 0x2c8292c] ; 0057ac25
     PUSH EAX                            ; 0057ac2b
-    MOV EDX,dword ptr [0x02c828d8]      ; 0057ac2c | DAT_02c828d8
+    MOV EDX,dword ptr [0x02c828d8]      ; 0057ac2c | g_WaveInHandle
     PUSH EDX                            ; 0057ac32
     CALL dword ptr CS:[0x5d045c]        ; 0057ac33 | PTR_waveInAddBuffer_005d045c
     TEST EAX,EAX                        ; 0057ac3a

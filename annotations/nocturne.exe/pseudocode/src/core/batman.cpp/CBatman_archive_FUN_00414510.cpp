@@ -16,14 +16,14 @@ void __cdecl core_batman_cpp_CBatman_archive_FUN_00414510(CBatman *this_ptr)
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(model_ptr,"modelName");
   core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
-  if (g_INT_005acfbc < 2) {
-    if (g_INT_005acfbc < 3) {
+  if (g_CBatmanClassVersion < 2) {
+    if (g_CBatmanClassVersion < 3) {
       return;
     }
   }
   else {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->fall_event,"fallEvent");
-    if (g_INT_005acfbc < 3) {
+    if (g_CBatmanClassVersion < 3) {
       return;
     }
   }

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_beast_cpp_CBeast_getActorType_FUN_00415040(CBeast *this_ptr)
 
 {
-  return &g_CBeastActorType_007646b0;
+  return &g_CBeastClassInfo;
 }

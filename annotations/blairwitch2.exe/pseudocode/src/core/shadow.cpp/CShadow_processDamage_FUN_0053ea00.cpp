@@ -2,81 +2,84 @@
 // Address: 0053ea00
 // Address Range: [[0053ea00, 0053ec14]]
 // Convention: __cdecl
-// Signature: void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *param_2)
+// Signature: void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *param_2)
+void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0053ea00(CShadow *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;
-  int iVar2;
-  byte bVar3;
+  SMotion *pSVar2;
+  int iVar3;
+  byte bVar4;
   float afStackY_102c [1015];
-  uint uStack_44;
-  uint uStack_38;
-  float fStack_30;
+  CVector3f CStack_44;
+  float fStack_38;
+  float afStack_34 [2];
+  CVector3f CStack_2c;
   CMotionController *pCStack_18;
   float fStack_14;
   
-  bVar3 = 0;
-  core_shadow_cpp_FUN_0053e9a0(this_ptr,param_2);
+  bVar4 = 0;
+  core_shadow_cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0(this_ptr,damage_info);
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);
-  if (param_2->damage_type == DAMAGE_TYPE_BURN) {
-    core_shadow_cpp_FUN_0053df40(this_ptr);
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
+    core_shadow_cpp_CShadow_playHitAlertSound_FUN_0053df40(this_ptr);
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(15.0,30.0);
-    param_2->damage_amount = fStack_14 * (float)_DAT_005e6795 * param_2->damage_amount;
-    core_actor_cpp_FUN_00408d70(this_ptr,&param_2->impact_direction);
+    damage_info->damage_amount = fStack_14 * (float)10 * damage_info->damage_amount;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_2c);
   }
   pCStack_18 = &(this_ptr->base).base.model.base;
-  fVar1 = (this_ptr->base).base.hit_points - param_2->damage_amount;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    iVar2 = core_motion_cpp_FUN_005035c0(pCStack_18);
-    iVar2 = *(int *)(iVar2 + 0x24);
-    if ((((iVar2 != 0xf) && (iVar2 != 0xd)) && (iVar2 != 0x10)) && (iVar2 != 0xe)) {
-      core_actor_cpp_FUN_00408de0(this_ptr,*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x20);
-      uStack_38 = uStack_44;
-      *(uint *)(&stack0xffffffcc + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffc0 + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)(&stack0xffffffc4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-      if (0.0 < fStack_30) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(pCStack_18);
+    iVar3 = pSVar2->state_index;
+    if ((((iVar3 != 0xf) && (iVar3 != 0xd)) && (iVar3 != 0x10)) && (iVar3 != 0xe)) {
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                ((CDemonActor *)this_ptr,
+                 &(g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.location.position,
+                 &CStack_44);
+      fStack_38 = CStack_44.x;
+      afStack_34[(uint)bVar4 * -2] = *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + 4);
+      afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+           *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+      if (0.0 < afStack_34[1]) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_18,0xd,1);
-        core_shadow_cpp_FUN_0053e040(this_ptr);
+        core_shadow_cpp_CShadow_playDeathSound_FUN_0053e040(this_ptr);
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_18,0xe,1);
-        core_shadow_cpp_FUN_0053e040(this_ptr);
+        core_shadow_cpp_CShadow_playDeathSound_FUN_0053e040(this_ptr);
       }
     }
   }
   else {
     if (this_ptr->type != 2) {
-      iVar2 = core_motion_cpp_FUN_005035c0(pCStack_18);
-      iVar2 = *(int *)(iVar2 + 0x24);
-      if (((((iVar2 == 0) || (iVar2 == 5)) || ((iVar2 == 0xc || ((iVar2 == 6 || (iVar2 == 7)))))) ||
-          (iVar2 == 8)) || (iVar2 == 9)) {
-        iVar2 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,2);
-        if (iVar2 == 0) {
+      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(pCStack_18);
+      iVar3 = pSVar2->state_index;
+      if (((((iVar3 == 0) || (iVar3 == 5)) || ((iVar3 == 0xc || ((iVar3 == 6 || (iVar3 == 7)))))) ||
+          (iVar3 == 8)) || (iVar3 == 9)) {
+        iVar3 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,2);
+        if (iVar3 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                     (&(this_ptr->base).base.model.base,0x11,1);
         }
-        if (iVar2 == 1) {
+        if (iVar3 == 1) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                     (&(this_ptr->base).base.model.base,0x12,1);
         }
-        if (iVar2 == 2) {
+        if (iVar3 == 2) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                     (&(this_ptr->base).base.model.base,0x13,1);
         }
       }
     }
-    core_shadow_cpp_FUN_0053e000(this_ptr);
+    core_shadow_cpp_CShadow_playDamageSound_FUN_0053e000(this_ptr);
   }
-  core_enemy_cpp_CEnemy_processDamage_FUN_00488890(&this_ptr->base,param_2);
+  core_enemy_cpp_CEnemy_processDamage_FUN_00488890(&this_ptr->base,damage_info);
   return;
 }

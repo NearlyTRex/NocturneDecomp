@@ -13,7 +13,7 @@ void __cdecl core_larva_cpp_CLarva_archive_FUN_004c5250(CLarva *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
             (&(this_ptr->base).base.model,"modelName");
-  if (INT_005bac7c < 2) {
+  if (g_CLarvaClassVersion < 2) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&(this_ptr->base).guard_distance,"guardDistance");
   }

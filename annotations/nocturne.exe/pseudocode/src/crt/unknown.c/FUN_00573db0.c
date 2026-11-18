@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_00573db0(wchar_t param_1)
 
 {
@@ -17,8 +15,8 @@ void FUN_00573db0(wchar_t param_1)
   wchar_to_bytes(param_1,(char *)local_c);
   iVar1 = mblen((char *)local_c);
   local_c[iVar1] = 0;
-  if (((DAT_005c2144 == 0x3a4) && (_DAT_02de5c30 != 0)) &&
-     ((*(byte *)(local_c[0] + 0x2de5c41) & 1) != 0)) {
+  if (((g_CodePage == 0x3a4) && (g_MultibyteLocaleActive != 0)) &&
+     ((g_LeadByteTable[local_c[0]] & 1U) != 0)) {
     fullwidth_toupper(param_1);
   }
   else {

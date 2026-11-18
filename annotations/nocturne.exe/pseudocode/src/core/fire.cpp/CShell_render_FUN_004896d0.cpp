@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CShell_render_FUN_004896d0(CShell *this_ptr)
 
 {
@@ -28,7 +26,7 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004896d0(CShell *this_ptr)
                         (g_CDemonRenderer_PTR_005ae704);
       if (iVar1 == 0) {
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
-                  (_DAT_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+                  (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
       }
       core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
                 (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&this_ptr->euler_angles,

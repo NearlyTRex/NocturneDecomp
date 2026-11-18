@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_0058f270(void)
 
 {
@@ -19,11 +17,11 @@ void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_0058f270(void)
   iVar1 = 0;
   iVar3 = 0;
   do {
-    if (*(int *)(iVar3 + 0x2664640) == 1) {
-      (&DAT_01c37790)[iVar1] = 0;
+    if (*(int *)((int)g_MessageFlags + iVar3) == 1) {
+      g_KeyboardState[iVar1] = '\0';
     }
     iVar1 = iVar1 + 1;
-    *(uint *)(iVar3 + 0x2664640) = 0;
+    *(uint *)((int)g_MessageFlags + iVar3) = 0;
     iVar3 = iVar3 + 4;
   } while (iVar1 < 600);
   while( true ) {
@@ -31,7 +29,7 @@ void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_0058f270(void)
       TranslateMessage(&local_28);
       DispatchMessageA(&local_28);
     }
-    if (((DAT_0061e98c != 0) || (_DAT_02664630 != 0)) || (DAT_0061e990 == 0)) break;
+    if (((g_WindowActive != 0) || (g_InputDisabled != 0)) || (g_ForceMessagePump == 0)) break;
     Sleep(0x14);
   }
   return;

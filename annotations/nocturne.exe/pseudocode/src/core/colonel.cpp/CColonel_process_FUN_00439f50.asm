@@ -36,7 +36,7 @@
 ;   double DOUBLE_0057b164 = 1.59386252192652E-314
 ;   double DOUBLE_0057b16c = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   undefined4 DAT_0077ac8c
+;   int[17] g_ColonelIndices
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
@@ -271,7 +271,7 @@ section .text
     JNZ 0x0043a1dd                      ; 0043a195
         ;   XREF to: 0043a1dd (CONDITIONAL_JUMP)  ; LAB_0043a1dd
     PUSH 0x51b650                       ; 0043a197
-    MOV EDI,dword ptr [0x0077ac8c]      ; 0043a19c | DAT_0077ac8c
+    MOV EDI,dword ptr [0x0077ac8c]      ; 0043a19c | g_ColonelIndices
     PUSH EDI                            ; 0043a1a2
     LEA EAX,[EBX + 0x1fa44]             ; 0043a1a3
     PUSH dword ptr [EBX + 0x1fa50]      ; 0043a1a9

@@ -30,7 +30,7 @@ CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritE
   pSVar2[0xf].texture_name[5] = -0x67;
   pSVar2[0xf].texture_name[6] = '\x19';
   pSVar2[0xf].texture_name[7] = '?';
-  pcVar8 = (char *)0x5d98da;
+  pcVar8 = "bwp3_prcth.cth";
   pSVar2 = pCVar6[-0x27].models[0].textures;
   pSVar2[0xf].texture_name[8] = 'f';
   pSVar2[0xf].texture_name[9] = 'f';
@@ -63,7 +63,7 @@ CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritE
   } while (cVar1 != '\0');
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             ((CDeformableModelInstance *)(pCVar6[-0x2b].models[0].textures[0xd].texture_name + 0x30)
-             ,(char *)0x5d98e9);
+             ,"BWP3_EAGLE.dfm");
   pCVar6[-0x28].models[1].parts[2].vertex_count = 0;
   pCVar6[-0xffffffff00000001].dead[0xc] = '\0';
   pCVar6[-0xffffffff00000001].dead[0xd] = '\0';

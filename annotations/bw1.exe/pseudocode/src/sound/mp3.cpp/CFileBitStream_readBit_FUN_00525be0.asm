@@ -12,8 +12,8 @@
 ;   sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_00527530 at 005275a8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00620690
-;   undefined4 DAT_006206ac
+;   uint[8] g_MpegBitMaskTableSingleBit
+;   undefined4 g_MpegBitMaskTableSingleBit[7]
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005c0b10
@@ -118,7 +118,7 @@ section .text
     XOR EBX,EBX                         ; 00525c97
     DEC EDX                             ; 00525c99
     MOV BL,byte ptr [EAX]               ; 00525c9a
-    MOV EAX,dword ptr [EDX*0x4 + 0x620690] ; 00525c9c | DAT_006206ac | DAT_00620690
+    MOV EAX,dword ptr [EDX*0x4 + 0x620690] ; 00525c9c | g_MpegBitMaskTableSingleBit[7]
     MOV CL,DL                           ; 00525ca3
     AND EAX,EBX                         ; 00525ca5
     MOV dword ptr [EDI + 0x14],EDX      ; 00525ca7

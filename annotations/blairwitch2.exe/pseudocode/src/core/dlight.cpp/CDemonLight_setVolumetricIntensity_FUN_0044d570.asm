@@ -10,19 +10,19 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[9]:
-;   core_doc.cpp_FUN_00455d10 at 004561b6
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 004561b6
 ;   core_elephant.cpp_CElephantGun_process_FUN_00485a30 at 00485b08
 ;   core_lantern.cpp_CLantern_process_FUN_0059ccf0 at 0059ce4d
-;   core_lightgun.cpp_FUN_004e2bf0 at 004e2ca8
-;   core_set.cpp_FUN_0052fad0 at 0052fbf3
-;   core_set.cpp_FUN_0052fea0 at 0052ffca
+;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0 at 004e2ca8
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 at 0052fbf3
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0 at 0052ffca
 ;   core_setutil.cpp_C3DSLight_apply_FUN_0053b810 at 0053b876
 ;   core_shotgun.cpp_CShotgun_process_FUN_0053f060 at 0053f138
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0 at 0058a181
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cf57f
-;   undefined4 DAT_005cf587
+;   double g_VolumetricFilterScaleLowRes = 7
+;   double g_VolumetricFilterScaleHighRes = 3
 ;   CDemonFilter* g_GlobalFilters = 01510e18
 ;   CDemonFilter* g_PlayerFilters = 01510e18
 ;
@@ -45,10 +45,10 @@ section .text
     PUSH EBX                            ; 0044d58d
     FLD float ptr [EAX + 0x2fa8]        ; 0044d58e
     PUSH 0x0                            ; 0044d594
-    FMUL double ptr [0x005cf587]        ; 0044d596 | DAT_005cf587
+    FMUL double ptr [0x005cf587]        ; 0044d596 | g_VolumetricFilterScaleHighRes
     PUSH 0x0                            ; 0044d59c
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044d59e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0044d5a3
     MOV EDX,dword ptr [ESP + 0xc]       ; 0044d5a7
     PUSH 0x0                            ; 0044d5ab
@@ -64,10 +64,10 @@ section .text
     FLD float ptr [EAX + 0x2fa8]        ; 0044d5c3
         ;   Label: LAB_0044d5c3
     PUSH 0x0                            ; 0044d5c9
-    FMUL double ptr [0x005cf57f]        ; 0044d5cb | DAT_005cf57f
+    FMUL double ptr [0x005cf57f]        ; 0044d5cb | g_VolumetricFilterScaleLowRes
     PUSH 0x0                            ; 0044d5d1
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044d5d3
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0044d5d8
     MOV EDX,dword ptr [ESP + 0x8]       ; 0044d5dc
     PUSH 0x0                            ; 0044d5e0

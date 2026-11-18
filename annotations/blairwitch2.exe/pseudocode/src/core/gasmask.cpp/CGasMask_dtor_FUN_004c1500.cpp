@@ -9,18 +9,18 @@
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004c1500(CGasMask *this_ptr,uint flags)
 
 {
-  CGasMask *pCVar1;
-  void *ptr;
+  CGasMask *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CGasMaskTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CGasMaskTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CGasMask *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
+  ptr = (CGasMask *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

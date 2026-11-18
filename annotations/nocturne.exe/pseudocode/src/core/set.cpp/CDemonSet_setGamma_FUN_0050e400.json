@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 42,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "pointer_cast",
       "suspect_float"
     ],
     "total_lines": 78
@@ -241,6 +242,14 @@
       "severity": "mild",
       "text": "local_18 = 7.428758e-39;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)g_IntensityToValueLookupTable",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_IntensityToValueLookupTable + iVar1) = iVar5;",
+      "type": "pointer_cast"
     }
   ]
 }

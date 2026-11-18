@@ -60,14 +60,14 @@
 ;   core_fire.cpp_CFireEffect_createStake_FUN_004a25f0 at 004a26ca
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0514
+;   float g_FLOAT_005c0514 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_box.cpp_CBox_setupCorners_FUN_0041ae00
 ;   core_box.cpp_CBox_setupVelocities_FUN_0041d790
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;
 ; *****************************************************************************
@@ -99,8 +99,8 @@ section .text
     PUSH EAX                            ; 00497b0e
     MOV dword ptr [ESP + 0xd4],EDI      ; 00497b0f
     LEA EDI,[ESP + 0x78]                ; 00497b16
-    CALL core_dirmat.cpp_FUN_0045b800   ; 00497b1a
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 00497b1a
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xa8]                ; 00497b1f
     ADD ESP,0x8                         ; 00497b26
     MOVSD ES:EDI,ESI                    ; 00497b29
@@ -114,7 +114,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 00497b3b
     FMUL float ptr [ESP + 0x78]         ; 00497b3e
     FADDP                               ; 00497b42
-    FMUL float ptr [0x005c0514]         ; 00497b44 | DAT_005c0514
+    FMUL float ptr [0x005c0514]         ; 00497b44 | g_FLOAT_005c0514
     FLD float ptr [EBX]                 ; 00497b4a
     FXCH                                ; 00497b4c
     FSTP float ptr [ESP + 0xdc]         ; 00497b4e

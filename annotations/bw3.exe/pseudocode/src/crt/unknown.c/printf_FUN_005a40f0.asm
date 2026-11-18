@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   format
 ;
 ; XREF[1]:
-;   cockpit_ckptutil.c_FUN_004367e0 at 004369df
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0 at 004369df
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7e50

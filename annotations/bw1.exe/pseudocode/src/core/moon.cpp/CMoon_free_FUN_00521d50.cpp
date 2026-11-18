@@ -21,8 +21,8 @@ void __cdecl core_moon_cpp_CMoon_free_FUN_00521d50(CMoon *this_ptr)
     } while (this_ptr_00 != &CAlphaBitmap_01d33f50);
     this_ptr->is_loaded = 0;
   }
-  core_dmodel_cpp_FUN_00467160(this_ptr->models);
-  core_dmodel_cpp_FUN_00467160(this_ptr->models + 1);
-  core_dmodel_cpp_FUN_00467160(this_ptr->models + 2);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr->models);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr->models + 1);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr->models + 2);
   return;
 }

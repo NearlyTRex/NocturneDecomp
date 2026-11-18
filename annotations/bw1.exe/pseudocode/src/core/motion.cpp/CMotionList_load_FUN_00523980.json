@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 475,
-    "complexity_score": 391,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
-    "suspect_count": 24,
+    "pseudocode_lines": 120,
+    "suspect_count": 17,
     "suspect_types": [
       "alloc_magic_size",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 596
+    "total_lines": 595
   },
   "cross_references": [
     {
@@ -43,12 +41,12 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00523910",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_00523910"
+      "name": "core_morph.cpp_CMotionList_free_FUN_00523910"
     },
     {
       "addr": "005c08d0",
@@ -69,8 +67,8 @@
   "globals": [
     {
       "addr": "005ea93b",
-      "name": "DAT_005ea93b",
-      "type": "undefined4",
+      "name": "s_d_005ea93b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -99,20 +97,20 @@
     },
     {
       "addr": "005ea9f3",
-      "name": "DAT_005ea9f3",
-      "type": "undefined4",
+      "name": "s_d_005ea9f3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ea9f7",
-      "name": "DAT_005ea9f7",
-      "type": "undefined4",
+      "name": "s_s_005ea9f7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ea9fb",
-      "name": "DAT_005ea9fb",
-      "type": "undefined4",
+      "name": "s_d_005ea9fb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -147,8 +145,8 @@
     },
     {
       "addr": "005eaa36",
-      "name": "DAT_005eaa36",
-      "type": "undefined4",
+      "name": "s_d_005eaa36",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -171,8 +169,8 @@
     },
     {
       "addr": "005eaa6e",
-      "name": "DAT_005eaa6e",
-      "type": "undefined4",
+      "name": "s_d_005eaa6e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -183,26 +181,26 @@
     },
     {
       "addr": "005eaa79",
-      "name": "DAT_005eaa79",
-      "type": "undefined4",
+      "name": "s_d_005eaa79",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005eaa7c",
-      "name": "DAT_005eaa7c",
-      "type": "undefined4",
+      "name": "s_d_005eaa7c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -260,6 +258,12 @@
     "pcode_op_count": 1546
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00502820",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8716
+    },
     "bw3.exe": {
       "addr": "004fb280",
       "by": "name",
@@ -458,64 +462,8 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 16,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005ea93b",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005ea93b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005ea9f3",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005ea9f3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005ea9f7",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005ea9f7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005ea9fb",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005ea9fb);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_005eaa36",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005eaa36);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_005eaa6e",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005eaa6e);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&pSVar2->cmd` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 101,
+      "line": 100,
       "match": "(int)&pSVar2->cmd",
       "severity": "moderate",
       "text": "*(int *)((int)&pSVar2->cmd + iVar1) = local_28;",
@@ -523,7 +471,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 101,
+      "line": 100,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&pSVar2->cmd + iVar1) = local_28;",
@@ -531,7 +479,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x18 == sizeof(SMotionTransition). Replace the magic with sizeof(SMotionTransition) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 88,
+      "line": 87,
       "match": "(SMotionTransition*) alloc stride 0x18",
       "severity": "moderate",
       "text": "(SMotionTransition *)malloc(local_20->transition_count * 0x18)",

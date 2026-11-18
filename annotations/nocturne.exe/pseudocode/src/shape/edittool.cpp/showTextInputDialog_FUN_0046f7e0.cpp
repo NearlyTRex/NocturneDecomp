@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0046f7e0(char *dialog_title,char *input_buffer,int max_length,int flags,int dialog_mode)
 
 {
@@ -18,13 +16,14 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0046f7e0(char *dialog_tit
   char *source_string;
   CInputString local_150;
   
-  if (_DAT_01bcd070 == (CBitFont *)0x0) {
+  if (g_CBitFont_PTR_01bcd070 == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 139;
     core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
-  _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
-  _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01bcd070->max_char_width;
+  g_INT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_01bcd070,0x6a)
+  ;
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   source_string = input_buffer;
   if ((flags & 1U) == 0) {
@@ -33,10 +32,10 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0046f7e0(char *dialog_tit
   shape_edittool_cpp_CInputString_init_FUN_0046f0a0(&local_150,source_string,max_length,dialog_mode)
   ;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
-            (g_CEditorToolsPtr,(g_WindowWidth << 2) / 5,_DAT_01bcd9bc,dialog_title,0);
-  iVar2 = INT_005b7630;
+            (g_CEditorToolsPtr,(g_WindowWidth << 2) / 5,g_INT_01bcd9bc,dialog_title,0);
+  iVar2 = g_InputKeyMask;
   pCVar4 = &local_150;
-  INT_005b7630 = 0x7f;
+  g_InputKeyMask = 0x7f;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorToolsPtr);
     shape_edittool_cpp_CInputString_draw_FUN_0046f680(&local_150,g_ClipLeft,g_ClipTop);
@@ -46,7 +45,7 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0046f7e0(char *dialog_tit
       if (iVar3 == 0x1b) {
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorToolsPtr);
         engine_2d_c_clearInputAndWait_FUN_00403f50();
-        INT_005b7630 = iVar2;
+        g_InputKeyMask = iVar2;
         return 0;
       }
       if (iVar3 == 0xd) goto LAB_0046f968;
@@ -74,6 +73,6 @@ LAB_0046f968:
   }
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorToolsPtr);
   engine_2d_c_clearInputAndWait_FUN_00403f50();
-  INT_005b7630 = iVar2;
+  g_InputKeyMask = iVar2;
   return 1;
 }

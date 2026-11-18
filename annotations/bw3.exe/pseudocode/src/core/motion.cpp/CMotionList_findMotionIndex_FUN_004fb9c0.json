@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 24,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 87
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     {
       "addr": "0048c2e0",
       "from_addr": "00490ccc",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,13 +52,19 @@
     {
       "addr": "004fc280",
       "from_addr": "004fc29c",
-      "name": "core_motion.cpp_FUN_004fc280",
+      "name": "core_motion.cpp_CMotionController_setMotionList_FUN_004fc280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050a610",
       "from_addr": "0050a7a4",
       "name": "core_passngr.cpp_CPassenger_setup_FUN_0050a610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051ee10",
+      "from_addr": "0051ef00",
+      "name": "core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,13 +82,7 @@
     {
       "addr": "0051c1c0",
       "from_addr": "0051cba2",
-      "name": "core_prye.cpp_FUN_0051c1c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051ee10",
-      "from_addr": "0051ef00",
-      "name": "core_prye.cpp_FUN_0051ee10",
+      "name": "core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -176,7 +174,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3260",
@@ -199,14 +197,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -216,7 +214,7 @@
       {
         "call_addr": "00490ccc",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -249,7 +247,7 @@
       {
         "call_addr": "004fc29c",
         "call_type": "direct",
-        "caller": "core_motion.cpp_FUN_004fc280",
+        "caller": "core_motion.cpp_CMotionController_setMotionList_FUN_004fc280",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -260,7 +258,7 @@
       {
         "call_addr": "0051cba2",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_0051c1c0",
+        "caller": "core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -293,7 +291,7 @@
       {
         "call_addr": "0051ef00",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_0051ee10",
+        "caller": "core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -413,14 +411,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

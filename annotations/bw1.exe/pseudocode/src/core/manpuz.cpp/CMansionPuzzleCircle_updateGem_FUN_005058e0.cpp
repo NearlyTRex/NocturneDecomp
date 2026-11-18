@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time)
 
 {
@@ -41,9 +39,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0(CMansio
   float fVar11;
   
   bVar10 = 0;
-  fVar11 = (delta_time * _DAT_005e7539) / _DAT_00603444;
+  fVar11 = (delta_time * 255.0f) / 2.0f;
   pSVar9 = this_ptr->gems + gem_index;
-  core_actor_cpp_FUN_00408b40(this_ptr,&pSVar9->position);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+            (&this_ptr->base,&pSVar9->position,(CVector3f *)&stack0xffffffb8);
   world_position = (CVector3f *)&stack0xffffffc4;
   wav_filename = "manpuz-chargegemloop-red.wav";
   sfx_handle = pSVar9->sfx_handles;
@@ -68,7 +67,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0(CMansio
   core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0
             (this_ptr,in_stack_00000050,(float *)&stack0x00000024,(float *)&stack0x00000018,
              (float *)&stack0x00000020);
-  fStack00000048 = in_stack_00000030 / _DAT_00603448;
+  fStack00000048 = in_stack_00000030 / 2.0f;
   fStack00000040 = in_stack_00000038 - (pSVar9->color).r;
   bVar10 = 1;
   if (fStack00000040 < -fStack00000048) {

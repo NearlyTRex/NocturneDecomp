@@ -27,7 +27,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d3b0(CBoneGuy *thi
     return 0;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,DAT_007c4ff0,&CStack_38);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_007c4ff0[0],&CStack_38);
   CStack_44.x = CStack_38.x;
   *(uint *)((int)&CStack_44 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_38 + (uint)bVar1 * -8 + 4);
@@ -39,7 +39,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d3b0(CBoneGuy *thi
     out_points_array->z = CStack_44.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,DAT_007c5004,&CStack_80);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_007c4ff0[5],&CStack_80);
   CStack_74.x = CStack_80.x;
   *(uint *)((int)&CStack_74 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_80 + (uint)bVar1 * -8 + 4);
@@ -51,7 +51,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d3b0(CBoneGuy *thi
     out_points_array[1].z = CStack_74.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,DAT_007c5008,&CStack_14);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_007c4ff0[6],&CStack_14);
   CStack_68.x = CStack_14.x;
   *(uint *)((int)&CStack_68 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_14 + (uint)bVar1 * -8 + 4);
@@ -63,7 +63,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d3b0(CBoneGuy *thi
     out_points_array[2].z = CStack_68.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,DAT_007c5014,&CStack_50);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_007c4ff0[9],&CStack_50);
   CStack_2c.x = CStack_50.x;
   *(uint *)((int)&CStack_2c + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_50 + (uint)bVar1 * -8 + 4);
@@ -75,7 +75,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d3b0(CBoneGuy *thi
     out_points_array[3].z = CStack_2c.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,DAT_007c5018,&CStack_20);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_007c4ff0[10],&CStack_20);
   CStack_5c.x = CStack_20.x;
   *(uint *)((int)&CStack_5c + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_20 + (uint)bVar1 * -8 + 4);

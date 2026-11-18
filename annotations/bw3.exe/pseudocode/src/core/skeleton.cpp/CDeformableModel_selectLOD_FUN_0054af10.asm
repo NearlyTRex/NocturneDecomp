@@ -11,17 +11,17 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_0042f310 at 0042f42d
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 at 0042f42d
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 at 0054e3f8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CGameInstance.letterbox_mode
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041e100
+;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041e100
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;
@@ -33,8 +33,8 @@ section .text
         ;   Label: core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0054af10
     SUB ESP,0x8                         ; 0054af11
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054af14
-    MOV EDX,dword ptr [0x005f2afc]      ; 0054af18 | DAT_005f2afc
-    PUSH EDX                            ; 0054af1e | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 0054af18 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 0054af1e | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0054af1f
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0054af24
@@ -63,13 +63,13 @@ section .text
         ;   Label: LAB_0054af4d
     MOV EDI,dword ptr [ESP + 0x18]      ; 0054af4e
     PUSH EDI                            ; 0054af52
-    CALL core_box.cpp_FUN_0041e100      ; 0054af53
-        ;   XREF to: 0041e100 (UNCONDITIONAL_CALL)  ; float core_box.cpp_FUN_0041e100(CBoundingBox3D * this_ptr)
+    CALL core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041e100 ; 0054af53
+        ;   XREF to: 0041e100 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041e100(CBoundingBox3D * this_ptr)
     MOV dword ptr [ESP + 0xc],EAX       ; 0054af58
     MOV ECX,dword ptr [EBX]             ; 0054af5c
     FLD float ptr [ESP + 0xc]           ; 0054af5e
     CALL crt_math.c_round_FUN_005a3120  ; 0054af62
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     ADD ESP,0x4                         ; 0054af67
     DEC ECX                             ; 0054af6a
     FISTP dword ptr [ESP + 0x4]         ; 0054af6b

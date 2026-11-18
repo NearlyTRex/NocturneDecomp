@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042b740(CChain *this_ptr)
 
 {
-  return &g_CChainActorType_00765c30;
+  return &g_CChainClassInfo;
 }

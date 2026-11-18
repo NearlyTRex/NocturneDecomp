@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)
+; void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; CDemonActor *    Stack[0x8]:4   actor
+; uint             Stack[0xc]:4   flags
 ;
 ; XREF[10]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004189ec
 ;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 004372b3
-;   core_crate.cpp_FUN_0043a350 at 0043a3f6
+;   core_crate.cpp_CCrate_explode_FUN_0043a350 at 0043a3f6
 ;   core_flamecan.cpp_CFlameCan_process_FUN_004a0920 at 004a099f
 ;   core_helldog.cpp_CDog_processChaseFoodState_FUN_005ac0c0 at 005ac1d5
 ;   core_hiram.cpp_CHiram_process_FUN_004d1070 at 004d1102
-;   core_inv.cpp_FUN_004dadb0 at 004db4cb
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0 at 004db4cb
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 at 004f1f54
 ;   core_passngr.cpp_CPassenger_process_FUN_005117a0 at 005118e1
 ;   core_werewolf.cpp_CWerewolf_process_FUN_0058b950 at 0058bac9
@@ -23,11 +23,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_005de7c9
 ;   TerminatedCString s_CDemonMission_markActorT_005de7dd
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -54,10 +54,10 @@ section .text
     MOV EBX,0x5de7c9                    ; 004fc7eb | = "..\\core\\mission.cpp"
     MOV ESI,0x446                       ; 004fc7f0
     PUSH 0x5de7dd                       ; 004fc7f5 | = "CDemonMission::markActorToDelete - To..."
-    MOV dword ptr [0x01d046a0],EBX      ; 004fc7fa | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004fc800 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fc806
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBX      ; 004fc7fa | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004fc800 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fc806
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fc80b
     POP EBX                             ; 004fc80e
     POP ESI                             ; 004fc80f

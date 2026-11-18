@@ -35,7 +35,7 @@ int __cdecl CKeyActor::renderOpaque(CKeyActor *this_ptr);
 
 // Original: core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004df2e0
 // Address: 004df2e0
-CBoundingBox3D * __cdecl CKeyActor::getBoundingBox(CKeyActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CKeyActor::getBoundingBox(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_keyactor.cpp_CKeyActor_archive_FUN_004df320
 // Address: 004df320

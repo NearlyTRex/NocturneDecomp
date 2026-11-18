@@ -6,32 +6,30 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_0056deac(int param_1)
 
 {
-  uint *puVar1;
+  FileListNode *pFVar1;
   _FILE *file_handle;
-  uint *puVar2;
+  FileListNode *pFVar2;
   int close_flags;
   int iVar3;
   
   iVar3 = 0;
-  puVar2 = _DAT_02de4e20;
+  pFVar2 = g_AllocatedListHead;
 joined_r0x0056ded3:
-  if (puVar2 == (uint *)0x0) {
+  if (pFVar2 == (FileListNode *)0x0) {
     return iVar3;
   }
-  puVar1 = (uint *)*puVar2;
-  file_handle = (_FILE *)puVar2[1];
+  pFVar1 = pFVar2->next;
+  file_handle = pFVar2->file_struct;
   close_flags = 1;
-  puVar2 = puVar1;
+  pFVar2 = pFVar1;
   if (((file_handle->_flag & 0x4000) == 0) && ((file_handle->_flag & 0x800) == 0))
   goto code_r0x0056deec;
   goto LAB_0056def9;
 code_r0x0056deec:
-  if ((_FILE *)(&DAT_005c1894 + param_1 * 0x1a) <= file_handle) {
+  if ((_FILE *)((int)&g_StaticFilePoolStart + param_1 * 0x1a) <= file_handle) {
     if (file_handle < (_FILE *)0x5c18e2) {
       close_flags = 0;
     }

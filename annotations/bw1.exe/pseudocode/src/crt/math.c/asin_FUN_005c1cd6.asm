@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_asin_FUN_005c1cd6(void)
+; float10 __fpustack_safe crt_math_c_asin_FUN_005c1cd6(float10 sine_value)
 ;
 ;
 ; XREF[7]:
-;   core_dirmat.cpp_FUN_0045f840 at 0045f8e4
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840 at 0045f8e4
 ;   core_dirmat.cpp_angleFromSinCos_FUN_0045f770 at 0045f798
-;   core_xform.cpp_FUN_005b7c00 at 005b7c4a
-;   core_xform.cpp_FUN_005b7d60 at 005b7dac
 ;   core_xform.cpp_angleFromSinCos_FUN_005b5860 at 005b5885
 ;   core_xform.cpp_matrixToEulerAnglesZYX_FUN_005b5dd0 at 005b5ee6
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930 at 005b5a44
+;   core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005b7d60 at 005b7dac
+;   core_xform.cpp_quaternionToEulerAngles_FUN_005b7c00 at 005b7c4a
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_005c1d69
@@ -34,7 +34,7 @@ section .text
         ;   XREF to: 005c1cf0 (CONDITIONAL_JUMP)  ; LAB_005c1cf0
     FXCH                                ; 005c1ce9
     CALL crt_math.c_atan2_FUN_005c1d69  ; 005c1ceb
-        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005c1d69()
+        ;   XREF to: 005c1d69 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005c1d69(float10 y, float10 x)
     RET                                 ; 005c1cf0
         ;   Label: LAB_005c1cf0
 

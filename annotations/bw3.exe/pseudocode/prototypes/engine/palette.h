@@ -5,18 +5,22 @@
 // Function prototypes for engine/palette.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_palette.cpp_FUN_00509bb0
+// Original: engine_palette.cpp_CFont_ctor_FUN_00509b90
+// Address: 00509b90
+CFont * __cdecl CFont::ctor(CFont *this_ptr);
+
+// Original: engine_palette.cpp_CFont_dtor_FUN_00509bb0
 // Address: 00509bb0
-CFont * __cdecl FUN_00509bb0(CFont *this_ptr,uint flags);
+CFont * __cdecl CFont::dtor(CFont *this_ptr,uint flags);
 
-// Original: engine_palette.cpp_FUN_00509bc0
+// Original: engine_palette.cpp_CFont_queueText_FUN_00509bc0
 // Address: 00509bc0
-undefined4 FUN_00509bc0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
+int __cdecl CFont::queueText(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color);
 
-// Original: engine_palette.cpp_FUN_00509d90
+// Original: engine_palette.cpp_CFont_flushTextQueue_FUN_00509d90
 // Address: 00509d90
-void FUN_00509d90(int *param_1);
+void __cdecl CFont::flushTextQueue(CFont *this_ptr);
 
-// Original: engine_palette.cpp_FUN_00509e00
+// Original: engine_palette.cpp_CFont_getLineSpacing_FUN_00509e00
 // Address: 00509e00
-undefined4 FUN_00509e00(void);
+int __cdecl CFont::getLineSpacing(CFont *this_ptr);

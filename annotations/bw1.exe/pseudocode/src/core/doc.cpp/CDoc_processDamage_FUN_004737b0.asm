@@ -16,18 +16,18 @@
 ;   TerminatedCString s_hit_points_3_2f_005da388
 ;   TerminatedCString s_doc_die_wav_005da39b
 ;   TerminatedCString s_generic_doc_hit1_wav_005da3a9
-;   undefined4 DAT_005da3c4
-;   undefined4 DAT_005da3cc
-;   undefined4 DAT_005feca8
+;   double g_DOUBLE_005da3c4 = 0.450000000000000
+;   float g_FLOAT_005da3cc = 50
+;   float g_FLOAT_005feca8 = 2
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_actor.cpp_randomChance_FUN_0040cd00
@@ -87,7 +87,7 @@ section .text
     CMP dword ptr [EAX + 0x30],0xb      ; 0047380c
     JG 0x00473aa2                       ; 00473810
         ;   XREF to: 00473aa2 (CONDITIONAL_JUMP)  ; LAB_00473aa2
-    FLD float ptr [0x005feca8]          ; 00473816 | DAT_005feca8
+    FLD float ptr [0x005feca8]          ; 00473816 | g_FLOAT_005feca8
         ;   Label: LAB_00473816
     PUSH 0x5da344                       ; 0047381c | = "CBugs"
     MOV EAX,dword ptr [EBP + 0x18]      ; 00473821
@@ -109,7 +109,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 00473852
     FLD float ptr [EAX + 0x4]           ; 00473855
     FLD ST0                             ; 00473858
-    FMUL double ptr [0x005da3c4]        ; 0047385a | DAT_005da3c4
+    FMUL double ptr [0x005da3c4]        ; 0047385a | g_DOUBLE_005da3c4
     FSTP ST1                            ; 00473860
     FSTP float ptr [EAX + 0x4]          ; 00473862
     MOV EAX,dword ptr [EBP + 0x18]      ; 00473865
@@ -127,7 +127,7 @@ section .text
     JZ 0x004738b7                       ; 0047388a
         ;   XREF to: 004738b7 (CONDITIONAL_JUMP)  ; LAB_004738b7
     PUSH 0x5da354                       ; 0047388c | = "ScorpTailAttack"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00473891 | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00473891 | g_CEventListPtr
     PUSH EDI                            ; 00473897
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00473898
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -136,7 +136,7 @@ section .text
     JZ 0x004738b7                       ; 004738a2
         ;   XREF to: 004738b7 (CONDITIONAL_JUMP)  ; LAB_004738b7
     PUSH 0x5da364                       ; 004738a4 | = "HitByShadowScorp"
-    MOV EAX,[0x0061b4d0]                ; 004738a9 | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 004738a9 | g_CEventListPtr
     PUSH EAX                            ; 004738ae
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004738af
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -340,7 +340,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 00473adf
     ADD ESP,0x8                         ; 00473ae2
     FLD float ptr [EBP + -0x4]          ; 00473ae5
-    FCOMP float ptr [0x005da3cc]        ; 00473ae8 | DAT_005da3cc
+    FCOMP float ptr [0x005da3cc]        ; 00473ae8 | g_FLOAT_005da3cc
     FNSTSW AX                           ; 00473aee
     SAHF                                ; 00473af0
     SETBE AL                            ; 00473af1
@@ -427,8 +427,8 @@ section .text
     PUSH EBX                            ; 00473bbe
     LEA ESI,[EBP + -0x1c]               ; 00473bbf
     LEA EDI,[EBP + -0x28]               ; 00473bc2
-    CALL core_actor.cpp_FUN_00408bb0    ; 00473bc5
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 00473bc5
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[EBP + -0x1c]               ; 00473bca
     FLDZ                                ; 00473bcd
     MOVSD ES:EDI,ESI                    ; 00473bcf

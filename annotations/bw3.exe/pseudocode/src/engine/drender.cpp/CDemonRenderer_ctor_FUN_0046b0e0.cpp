@@ -10,7 +10,7 @@ CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0046b0e0(CDe
 
 {
   this_ptr->projection_mode = 0;
-  this_ptr->vertex_buffer_ptr = (SRenderVertex *)&DAT_0060b014;
+  this_ptr->vertex_buffer_ptr = g_SRenderVertex_ARRAY_0060b014;
   this_ptr->plane_culling_enabled = 1;
   this_ptr->face_capture_enabled = 1;
   this_ptr->alpha_mask = 0;

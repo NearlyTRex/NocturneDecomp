@@ -6,15 +6,18 @@ Category `/Nocturne/Struct/Game`.
 |---|---:|---|---:|
 | nocedit | 28 | fields | — |
 | nocturne | 28 | fields | — |
+| bw1 | 28 | fields | — |
+| blairwitch2 | 28 | fields | — |
+| bw3 | 28 | fields | — |
 
 ## Fields
 
 Offsets in hex; blank where the build's layout does not have the field.
 
-| field | type | nocedit | nocturne |
-|---|---|---:|---:|
-| `normal` | `CVector3f` | 0x0 | 0x0 |
-| `part_index` | `int` | 0xc | 0xc |
-| `lod_index` | `int` | 0x10 | 0x10 |
-| `triangle_index` | `int` | 0x14 | 0x14 |
-| `bone_index` | `int` | 0x18 | 0x18 |
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `normal` | `CVector3f` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `part_index` | `int` | 0xc | 0xc | 0xc | 0xc | 0xc |
+| `lod_index` | `int` | 0x10 | 0x10 | 0x10 | 0x10 | 0x10 |
+| `triangle_index` | `int` | 0x14 | 0x14 | 0x14 | 0x14 | 0x14 |
+| `bone_index` | `int` | 0x18 | 0x18 | 0x18 | 0x18 | 0x18 |

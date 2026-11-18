@@ -1,209 +1,189 @@
 // Name: core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 // Address: 00591de0
 // Address Range: [[00591de0, 00592275]]
-// Convention: unknown
-// Signature: float * core_xform_cpp_matrixToEulerAngles_FUN_00591de0(float *param_1)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f *matrix_in,CVector3f *euler_out)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-float * core_xform_cpp_matrixToEulerAngles_FUN_00591de0(float *param_1)
+CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f *matrix_in,CVector3f *euler_out)
 
 {
   float fVar1;
-  float *extraout_ECX;
-  float *extraout_ECX_00;
-  float *extraout_ECX_01;
-  float *extraout_ECX_02;
-  float *extraout_ECX_03;
-  float *extraout_ECX_04;
-  float *pfVar2;
-  float *extraout_ECX_05;
-  float *extraout_EDX;
-  float *extraout_EDX_00;
-  float *pfVar3;
-  float *extraout_EDX_01;
-  float *unaff_ESI;
-  byte bVar4;
-  float10 fVar5;
+  float fVar2;
+  float fVar3;
+  CVector3f *unaff_ESI;
+  float *pfVar4;
+  byte bVar5;
   float10 fVar6;
-  float afStack_103c [1022];
+  float10 fVar7;
+  double dVar8;
+  float afStack_1044 [1023];
+  float local_48;
   float local_44;
   float local_40;
   float local_3c;
   float local_38;
   float local_34;
-  float local_30;
   float local_2c;
   float local_28;
   float local_24;
   float local_20;
   float local_1c;
-  float local_18;
-  float local_14;
+  uint local_18;
   
-  bVar4 = 0;
-  local_28 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);
+  bVar5 = 0;
+  fVar1 = matrix_in->m[0].x;
+  fVar2 = matrix_in->m[0].w;
+  fVar3 = matrix_in->m[0].y;
+  local_28 = SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
   if (0.0 < local_28) {
     local_28 = 1.0 / local_28;
   }
-  local_20 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);
+  fVar1 = matrix_in->m[1].w;
+  fVar2 = matrix_in->m[1].x;
+  fVar3 = matrix_in->m[1].y;
+  local_20 = SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
   if (0.0 < local_20) {
     local_20 = 1.0 / local_20;
   }
-  local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);
+  fVar1 = matrix_in->m[2].w;
+  fVar2 = matrix_in->m[2].x;
+  fVar3 = matrix_in->m[2].y;
+  local_24 = SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
   if (0.0 < local_24) {
     local_24 = 1.0 / local_24;
   }
-  fVar1 = -param_1[6] * local_20;
-  if (_DAT_005eecfa <= fVar1) {
-    if (fVar1 <= _DAT_005eecfe) {
+  fVar1 = -matrix_in->m[1].y * local_20;
+  if (-0.99999f <= fVar1) {
+    if (fVar1 <= 0.99999f) {
       fVar6 = (float10)fVar1;
-      fVar5 = fVar6;
-      asin();
-      afStack_103c[0x3fa] = (float)fVar6;
-      local_34 = (float)SQRT((float10)1 - fVar5 * fVar5);
-      if (fVar6 < (float10)_DAT_005eed02) {
-        afStack_103c[0x3fa] = afStack_103c[0x3fa] + _DAT_005eed06;
+      fVar7 = asin(fVar6);
+      afStack_1044[0x3fb] = (float)fVar7;
+      local_38 = (float)SQRT((float10)1 - fVar6 * fVar6);
+      if (fVar7 < (float10)-3.141593f) {
+        afStack_1044[0x3fb] = (float)fVar7 + 6.283185f;
       }
-      unaff_ESI = extraout_ECX_00;
-      param_1 = extraout_EDX;
-      if (_DAT_005eed0a <= local_34) {
-        local_30 = 1.0 / local_34;
-        afStack_103c[0x3fd] = extraout_EDX[2] * local_28 * local_30;
-        local_40 = extraout_EDX[10] * local_24 * local_30;
-        if ((_DAT_005eed0e <= afStack_103c[0x3fd]) || (afStack_103c[0x3fd] <= _DAT_005eed12)) {
-          pfVar2 = extraout_ECX_00;
-          pfVar3 = extraout_EDX;
-          if (_DAT_005eed16 < local_40) {
-            if ((int)local_40 < 0x3f800000) {
-              fVar5 = (float10)local_40;
-              acos();
-              local_14 = (float)fVar5;
-              pfVar2 = extraout_ECX_04;
-              pfVar3 = extraout_EDX_01;
+      if (1e-07f <= local_38) {
+        local_34 = 1.0 / local_38;
+        afStack_1044[0x3fe] = matrix_in->m[0].y * local_2c * local_34;
+        local_44 = matrix_in->m[2].y * local_28 * local_34;
+        if ((0.707f <= afStack_1044[0x3fe]) || (afStack_1044[0x3fe] <= -0.707f))
+        {
+          if (-1.0f < local_44) {
+            if ((int)local_44 < 0x3f800000) {
+              dVar8 = acos((double)local_44);
+              local_1c = (float)dVar8;
             }
             else {
-              local_14 = 0.0;
+              local_18 = 0;
             }
           }
           else {
-            local_14 = 3.1415927;
+            local_18 = 0x40490fdb;
           }
-          if (afStack_103c[0x3fd] < 0.0) {
-            local_14 = -local_14;
-          }
-        }
-        else {
-          fVar5 = (float10)afStack_103c[0x3fd];
-          asin();
-          local_14 = (float)fVar5;
-          pfVar2 = extraout_ECX_01;
-          pfVar3 = extraout_EDX_00;
-          if (local_40 < 0.0) {
-            local_14 = _DAT_005eed1a - (float)fVar5;
-          }
-        }
-        if (local_14 < _DAT_005eed02) {
-          local_14 = local_14 + _DAT_005eed06;
-        }
-        if (_DAT_005eed1a < local_14) {
-          local_14 = local_14 + _DAT_005eed1e;
-        }
-        local_3c = pfVar3[5] * local_20 * local_30;
-        local_2c = pfVar3[4] * local_20 * local_30;
-        afStack_103c[0x3fb] = local_14;
-        if ((_DAT_005eed0e <= local_2c) || (local_2c <= _DAT_005eed12)) {
-          if (_DAT_005eed16 < local_3c) {
-            if ((int)local_3c < 0x3f800000) {
-              fVar5 = (float10)local_3c;
-              acos();
-              local_1c = (float)fVar5;
-              pfVar2 = extraout_ECX_05;
-            }
-            else {
-              local_1c = 0.0;
-            }
-          }
-          else {
-            local_1c = 3.1415927;
-          }
-          if (local_2c < 0.0) {
+          if (afStack_1044[0x3fd] < 0.0) {
             local_1c = -local_1c;
           }
         }
         else {
-          fVar5 = (float10)local_2c;
-          asin();
-          local_1c = (float)fVar5;
-          pfVar2 = extraout_ECX_02;
-          if (local_3c < 0.0) {
-            local_1c = _DAT_005eed1a - (float)fVar5;
+          fVar6 = asin((float10)afStack_1044[0x3fe]);
+          local_1c = (float)fVar6;
+          if (local_48 < 0.0) {
+            local_1c = 3.141593f - (float)fVar6;
           }
         }
-        if (local_1c < _DAT_005eed02) {
-          local_1c = local_1c + _DAT_005eed06;
+        if (local_1c < -3.141593f) {
+          local_1c = local_1c + 6.283185f;
         }
-        if (_DAT_005eed1a < local_1c) {
-          local_1c = local_1c + _DAT_005eed1e;
+        if (3.141593f < local_1c) {
+          local_1c = local_1c + -6.283185f;
         }
-        afStack_103c[0x3fc] = local_1c;
-        *pfVar2 = afStack_103c[0x3fa];
-        pfVar2[(uint)bVar4 * -2 + 1] = afStack_103c[(uint)bVar4 * -2 + 0x3fb];
-        (pfVar2 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-             afStack_103c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x3fc];
-        return pfVar2;
+        local_44 = matrix_in->m[1].x * local_28 * local_38;
+        local_34 = matrix_in->m[1].w * local_28 * local_38;
+        afStack_1044[0x3fb] = local_1c;
+        if ((0.707f <= local_34) || (local_34 <= -0.707f)) {
+          if (-1.0f < local_44) {
+            if ((int)local_44 < 0x3f800000) {
+              dVar8 = acos((double)local_44);
+              local_28 = (float)dVar8;
+            }
+            else {
+              local_24 = 0.0;
+            }
+          }
+          else {
+            local_24 = 3.1415927;
+          }
+          if (local_34 < 0.0) {
+            local_24 = -local_24;
+          }
+        }
+        else {
+          fVar6 = asin((float10)local_34);
+          local_28 = (float)fVar6;
+          if (local_48 < 0.0) {
+            local_28 = 3.141593f - (float)fVar6;
+          }
+        }
+        if (local_24 < -3.141593f) {
+          local_24 = local_24 + 6.283185f;
+        }
+        if (3.141593f < local_24) {
+          local_24 = local_24 + -6.283185f;
+        }
+        afStack_1044[0x3fc] = local_24;
+        pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
+        unaff_ESI->x = afStack_1044[0x3fa];
+        *pfVar4 = afStack_1044[(uint)bVar5 * -2 + 0x3fb];
+        pfVar4[(uint)bVar5 * -2 + 1] = afStack_1044[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x3fc];
+        return unaff_ESI;
       }
     }
     else {
-      afStack_103c[0x3fa] = 1.5707964;
+      afStack_1044[0x3fc] = 1.5707964;
     }
   }
   else {
-    afStack_103c[0x3fa] = -1.5707964;
+    afStack_1044[0x3fc] = -1.5707964;
   }
-  local_38 = *param_1 * local_28;
-  local_44 = -param_1[8] * local_24;
-  afStack_103c[0x3fc] = 0.0;
-  if ((_DAT_005eed0e <= local_44) || (local_44 <= _DAT_005eed12)) {
-    if (_DAT_005eed16 < local_38) {
-      if ((int)local_38 < 0x3f800000) {
-        fVar5 = (float10)local_38;
-        acos();
-        local_18 = (float)fVar5;
-        unaff_ESI = extraout_ECX_03;
+  local_3c = matrix_in->m[0].w * local_2c;
+  local_48 = -matrix_in->m[2].w * local_28;
+  afStack_1044[0x3fd] = 0.0;
+  if ((0.707f <= local_48) || (local_48 <= -0.707f)) {
+    if (-1.0f < local_3c) {
+      if ((int)local_3c < 0x3f800000) {
+        dVar8 = acos((double)local_3c);
+        local_20 = (float)dVar8;
       }
       else {
-        local_18 = 0.0;
+        local_1c = 0.0;
       }
     }
     else {
-      local_18 = 3.1415927;
+      local_1c = 3.1415927;
     }
-    if (local_44 < 0.0) {
-      local_18 = -local_18;
+    if (local_48 < 0.0) {
+      local_1c = -local_1c;
     }
   }
   else {
-    fVar5 = (float10)local_44;
-    asin();
-    local_18 = (float)fVar5;
-    unaff_ESI = extraout_ECX;
-    if (local_38 < 0.0) {
-      local_18 = _DAT_005eed1a - (float)fVar5;
+    fVar6 = asin((float10)local_48);
+    local_20 = (float)fVar6;
+    if (local_40 < 0.0) {
+      local_20 = 3.141593f - (float)fVar6;
     }
   }
-  if (local_18 < _DAT_005eed02) {
-    local_18 = local_18 + _DAT_005eed06;
+  if (local_1c < -3.141593f) {
+    local_1c = local_1c + 6.283185f;
   }
-  if (_DAT_005eed1a < local_18) {
-    local_18 = local_18 + _DAT_005eed1e;
+  if (3.141593f < local_1c) {
+    local_1c = local_1c + -6.283185f;
   }
-  afStack_103c[0x3fb] = local_18;
-  *unaff_ESI = afStack_103c[0x3fa];
-  unaff_ESI[(uint)bVar4 * -2 + 1] = afStack_103c[(uint)bVar4 * -2 + 0x3fb];
-  (unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-       afStack_103c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x3fc];
+  afStack_1044[0x3fc] = local_1c;
+  pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
+  unaff_ESI->x = afStack_1044[0x3fb];
+  *pfVar4 = afStack_1044[(uint)bVar5 * -2 + 0x3fc];
+  pfVar4[(uint)bVar5 * -2 + 1] = afStack_1044[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x3fd];
   return unaff_ESI;
 }

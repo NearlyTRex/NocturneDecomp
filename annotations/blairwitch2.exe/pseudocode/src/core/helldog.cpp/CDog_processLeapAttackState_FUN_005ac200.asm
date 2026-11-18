@@ -11,16 +11,16 @@
 ;   TerminatedCString s_MeleeAttack_005f0dd2
 ;   TerminatedCString s_ChaseComplete_005f0dde
 ;   TerminatedCString s_Chasing_005f0dec
-;   undefined4 DAT_005f0df6
-;   undefined4 DAT_00600c50
+;   double g_DOUBLE_005f0df6 = 0.300000000000000
+;   float g_FLOAT_00600c50 = 12
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
-;   core_motion.cpp_FUN_00503e60
-;   core_muzzle.cpp_FUN_0059d7f0
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0
 ;
 ; *****************************************************************************
 
@@ -51,13 +51,13 @@ section .text
     LEA EDI,[EBX + 0x2b4]               ; 005ac22a
         ;   Label: LAB_005ac22a
     PUSH EDI                            ; 005ac230
-    CALL core_motion.cpp_FUN_005035c0   ; 005ac231
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005ac231
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005ac236
     PUSH EDI                            ; 005ac239
     MOV ESI,dword ptr [EAX + 0x24]      ; 005ac23a
-    CALL core_motion.cpp_FUN_00503e60   ; 005ac23d
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005ac23d
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0xc],EAX       ; 005ac242
     MOV dword ptr [ESP + 0x8],ESI       ; 005ac246
     FLD float ptr [ESP + 0xc]           ; 005ac24a
@@ -67,7 +67,7 @@ section .text
     JNZ 0x005ac27a                      ; 005ac257
         ;   XREF to: 005ac27a (CONDITIONAL_JUMP)  ; LAB_005ac27a
     FLD float ptr [ESP]                 ; 005ac259
-    FCOMP double ptr [0x005f0df6]       ; 005ac25c | DAT_005f0df6
+    FCOMP double ptr [0x005f0df6]       ; 005ac25c | g_DOUBLE_005f0df6
     FNSTSW AX                           ; 005ac262
     SAHF                                ; 005ac264
     JNC 0x005ac27a                      ; 005ac265
@@ -107,16 +107,16 @@ section .text
     PUSH 0x5f0dd2                       ; 005ac2aa | = "MeleeAttack"
     ADD EBX,0x10af8                     ; 005ac2af
     PUSH 0x5f0dde                       ; 005ac2b5 | = "ChaseComplete"
-    FLD float ptr [0x00600c50]          ; 005ac2ba | DAT_00600c50
+    FLD float ptr [0x00600c50]          ; 005ac2ba | g_FLOAT_00600c50
     PUSH EBX                            ; 005ac2c0
     FSTP float ptr [EBX + 0x89c]        ; 005ac2c1
-    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005ac2c7
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005ac2c7
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005ac2cc
     PUSH 0x5f0dec                       ; 005ac2cf | = "Chasing"
     PUSH EBX                            ; 005ac2d4
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005ac2d5
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005ac2d5
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005ac2da
     MOV ESP,EBP                         ; 005ac2dd
     POP EBP                             ; 005ac2df

@@ -10,11 +10,11 @@
 ;   core_set.cpp_CDemonSet_loadAssets_FUN_005332a0 at 005332ac
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_0061e52c
-;   undefined4 DAT_0061e544
-;   undefined4 DAT_0061e6ac
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   SMRGLTextureBasic[16] g_WaterTextures
+;   undefined4 g_WaterTextures[1].base.type
+;   SMRGLPrimitiveQuad g_WaterRenderQuad
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
@@ -26,12 +26,12 @@ section .text
     PUSH EBX                            ; 00585de0
         ;   Label: core_water.cpp_CWater_captureTextures_FUN_00585de0
     PUSH ESI                            ; 00585de1
-    MOV EBX,0x61e52c                    ; 00585de2 | DAT_0061e52c
-    LEA ESI,[EBX + 0x180]               ; 00585de7 | DAT_0061e6ac
-    PUSH EBX                            ; 00585ded | DAT_0061e52c | DAT_0061e544
+    MOV EBX,0x61e52c                    ; 00585de2 | g_WaterTextures
+    LEA ESI,[EBX + 0x180]               ; 00585de7 | g_WaterRenderQuad
+    PUSH EBX                            ; 00585ded | g_WaterTextures | g_WaterTextures[1].base.type
         ;   Label: LAB_00585ded
-    MOV EDX,dword ptr [0x0060b280]      ; 00585dee | DAT_0060b280
-    PUSH EDX                            ; 00585df4 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 00585dee | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 00585df4 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 00585df5
         ;   XREF to: 0046ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 00585dfa

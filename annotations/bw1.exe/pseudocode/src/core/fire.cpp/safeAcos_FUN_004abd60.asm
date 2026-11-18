@@ -7,7 +7,7 @@
 ; float            Stack[0x4]:4   value
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df174
+;   double g_DOUBLE_005df174 = -1
 ;
 ; Called Functions:
 ;   crt_math.c_acos_FUN_005c1d04
@@ -23,7 +23,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004abd66
     FLD float ptr [EBP + 0x8]           ; 004abd69
     FST double ptr [ESP]                ; 004abd6c
-    FCOMP double ptr [0x005df174]       ; 004abd6f | DAT_005df174
+    FCOMP double ptr [0x005df174]       ; 004abd6f | g_DOUBLE_005df174
     FNSTSW AX                           ; 004abd75
     SAHF                                ; 004abd77
     JBE 0x004abd92                      ; 004abd78
@@ -48,7 +48,7 @@ section .text
     FLD double ptr [ESP]                ; 004abd9c
         ;   Label: LAB_004abd9c
     CALL crt_math.c_acos_FUN_005c1d04   ; 004abd9f
-        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005c1d04()
+        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005c1d04(double x)
     FSTP float ptr [ESP + 0x8]          ; 004abda4
     MOV EAX,dword ptr [ESP + 0x8]       ; 004abda8
     MOV ESP,EBP                         ; 004abdac

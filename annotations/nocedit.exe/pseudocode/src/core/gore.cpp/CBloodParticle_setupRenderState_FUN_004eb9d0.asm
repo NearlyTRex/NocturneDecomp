@@ -98,10 +98,10 @@ section .text
     CALL crt_math.c_round_FUN_005fe6b0  ; 004eba91
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 004eba96
-    FISTP dword ptr [0x02d8339c]        ; 004eba98 | CVector3i_02d8339c
+    FISTP dword ptr [0x02d8339c]        ; 004eba98 | g_BloodParticleViewDirection
     FXCH                                ; 004eba9e
-    FISTP dword ptr [0x02d833a0]        ; 004ebaa0 | CVector3i_02d8339c.y
-    FISTP dword ptr [0x02d833a4]        ; 004ebaa6 | CVector3i_02d8339c.z
+    FISTP dword ptr [0x02d833a0]        ; 004ebaa0 | g_BloodParticleViewDirection.y
+    FISTP dword ptr [0x02d833a4]        ; 004ebaa6 | g_BloodParticleViewDirection.z
     ADD ESP,0x5c                        ; 004ebaac
     POP EDI                             ; 004ebaaf
     POP ESI                             ; 004ebab0

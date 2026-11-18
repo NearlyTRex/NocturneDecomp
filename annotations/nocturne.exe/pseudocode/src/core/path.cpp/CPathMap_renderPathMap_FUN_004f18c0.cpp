@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_ptr,int depth,int red,int green,int fog)
 
 {
@@ -60,24 +58,24 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
             (g_CDemonRenderer_PTR_005ae704,&local_64);
   local_7c = 0x4f193f;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005be090);
-  _DAT_01e42814 = 4;
-  _DAT_01e42818 = 0;
-  _DAT_01e4281c = 0;
-  _DAT_01e42820 = 0;
-  _DAT_01e42824 = 0;
-  _DAT_01e42828 = 0;
-  _DAT_01e42834 = 1;
-  _DAT_01e42840 = 2;
-  _DAT_01e4282c = 0x800000;
-  _DAT_01e42830 = 0x800000;
-  _DAT_01e42838 = 0x800000;
-  _DAT_01e4283c = 0x800000;
-  _DAT_01e42844 = 0x800000;
-  _DAT_01e42848 = 0x800000;
-  _DAT_01e42850 = 0x800000;
-  _DAT_01e42854 = 0x800000;
-  _DAT_01e4284c = 3;
+            (g_CDemonRenderer_PTR_005ae704,&g_PathMapTexture);
+  g_PathMapQuad.base.base.count = 4;
+  g_PathMapQuad.base.surface_normal.A.i = 0;
+  g_PathMapQuad.base.surface_normal.B.i = 0;
+  g_PathMapQuad.base.surface_normal.C.i = 0;
+  g_PathMapQuad.base.surface_normal.D.i = 0;
+  g_PathMapQuad.vertices[0].vertex_index = 0;
+  g_PathMapQuad.vertices[1].vertex_index = 1;
+  g_PathMapQuad.vertices[2].vertex_index = 2;
+  g_PathMapQuad.vertices[0].texture_u = 0x800000;
+  g_PathMapQuad.vertices[0].texture_v = 0x800000;
+  g_PathMapQuad.vertices[1].texture_u = 0x800000;
+  g_PathMapQuad.vertices[1].texture_v = 0x800000;
+  g_PathMapQuad.vertices[2].texture_u = 0x800000;
+  g_PathMapQuad.vertices[2].texture_v = 0x800000;
+  g_PathMapQuad.vertices[3].texture_u = 0x800000;
+  g_PathMapQuad.vertices[3].texture_v = 0x800000;
+  g_PathMapQuad.vertices[3].vertex_index = 3;
   local_7c = 0x4f19c6;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
             (g_CDemonRenderer_PTR_005ae704,0);
@@ -93,10 +91,10 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
     do {
       pCVar7 = g_CDemonRenderer_PTR_005ae704;
       if ((-1000 < *(int *)(local_18 + 0x9c70)) && (*(int *)(local_18 + 0x9c70) < 1000)) {
-        fVar2 = g_CDemonRaytraceInstance.adjusted_size.y * _DAT_0058ce2f;
-        fVar3 = g_CDemonRaytraceInstance.adjusted_size.z * _DAT_0058ce2f;
+        fVar2 = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
+        fVar3 = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
         local_54 = *(float *)(local_18 + 0x30);
-        fVar6 = (float)_DAT_0058ce37;
+        fVar6 = (float)256;
         fVar4 = g_CDemonRaytraceInstance.bbox_min.y * fVar6;
         local_4c = local_58;
         (&local_48)[(uint)bVar9 * -2] = (&local_54)[(uint)bVar9 * -2];
@@ -105,12 +103,12 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
         fVar5 = (float)(int)local_48;
         local_14 = local_44;
         fVar1 = (float)local_44;
-        local_40 = g_CDemonRaytraceInstance.adjusted_size.x * _DAT_0058ce2f;
+        local_40 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
         local_3c = fVar2;
         local_38 = fVar3;
         round
                   ((double)((float)(int)local_4c *
-                           g_CDemonRaytraceInstance.adjusted_size.x * _DAT_0058ce2f));
+                           g_CDemonRaytraceInstance.adjusted_size.x * 256.0f));
         local_7c = 0x4f1b13;
         round((double)(fVar1 * fVar3));
         pCVar12 = (CVector3i *)0x4f1b22;
@@ -155,7 +153,7 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
         pCVar7->vertex_buffer_ptr[3].b = (int)local_3c;
         pCVar7->vertex_buffer_ptr[3].a = local_34;
         engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00460150
-                  (pCVar7,(SMRGLPrimitivePoly *)0x1e42810);
+                  (pCVar7,(SMRGLPrimitivePoly *)&g_PathMapQuad);
       }
       local_50 = local_50 + 1;
       local_18 = local_18 + 400;

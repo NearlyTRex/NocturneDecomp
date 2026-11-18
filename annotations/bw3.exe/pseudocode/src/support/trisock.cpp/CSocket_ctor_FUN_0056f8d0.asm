@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_netgame.cpp_CNetGame_ctor_FUN_00503d70 at 00503d8f
-;   support_trisock.cpp_FUN_0056fef0 at 0056ffb4
-;   support_trisock.cpp_FUN_00571030 at 0057103c
+;   support_trisock.cpp_httpConnectToUrl_FUN_0056fef0 at 0056ffb4
+;   support_trisock.cpp_initHttpRequest_FUN_00571030 at 0057103c
 ;
 ; *****************************************************************************
 

@@ -15,7 +15,7 @@ section .text
     PUSH 0x5a0                          ; 0040f750
         ;   Label: core_bindevil.cpp_factoryFuncBindEvil_FUN_0040f750
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0040f755
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0040f75a
     TEST EAX,EAX                        ; 0040f75d
     JNZ 0x0040f762                      ; 0040f75f

@@ -14,7 +14,7 @@ CZombieCemetery * __cdecl core_zombie_cpp_CZombieCemetery_ctor_FUN_0058ccc0(CZom
   pCVar1 = core_zombie_cpp_CZombie_ctor_FUN_005888d0(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CZombieCemeteryVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(pCVar1->base).base.model,(char *)0x5d8984);
+            (&(pCVar1->base).base.model,"cem_zomb2.dfm");
   pCVar1->zombie_variant = 1;
   (pCVar1->base).base.hit_points = 20.0;
   (pCVar1->base).attack_damage = 10.0;

@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b8be4
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6bc4
-;   core_game.cpp_FUN_004b82e0 at 004b8be4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Yes_I_know_what_I_m_doin_005d1fdd
@@ -23,7 +23,7 @@
 ;   shape_edittool.cpp_CStrList_add_FUN_00480e70
 ;   shape_edittool.cpp_CStrList_ctor_FUN_00480d20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00480d40
-;   shape_edittool.cpp_FUN_0047c0f0
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0047c7ba
     PUSH EAX                            ; 0047c7be
     PUSH 0x1c239f0                      ; 0047c7bf
-    CALL shape_edittool.cpp_FUN_0047c0f0 ; 0047c7c4
-        ;   XREF to: 0047c0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0047c0f0(CStrList * str_list, char * dialog_title, int dialog_mode)
+    CALL shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0 ; 0047c7c4
+        ;   XREF to: 0047c0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0(CStrList * str_list, char * dialog_title, int dialog_mode)
     ADD ESP,0xc                         ; 0047c7c9
     XOR EBX,EBX                         ; 0047c7cc
     TEST EAX,EAX                        ; 0047c7ce

@@ -11,11 +11,11 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005c502c
-;   undefined4 DAT_005c5030
-;   undefined4 DAT_006b0264
-;   undefined4 DAT_006b029c
-;   undefined4 DAT_006b02a0
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
+;   uint g_ProcessedVertexOffset
+;   int[24] g_ProcessedVertexIndices
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -34,7 +34,7 @@ section .text
     PUSH ESI                            ; 00405341
     PUSH EDI                            ; 00405342
     PUSH EBP                            ; 00405343
-    MOV EBP,dword ptr [0x006b0264]      ; 00405344 | DAT_006b0264
+    MOV EBP,dword ptr [0x006b0264]      ; 00405344 | g_ProcessedVertexOffset
     MOV EDI,dword ptr [ESP + 0x14]      ; 0040534a
     MOV EDX,dword ptr [0x01c03948]      ; 0040534e | g_MMXSupported
     LEA ESI,[EDI + 0x18]                ; 00405354
@@ -54,24 +54,24 @@ section .text
     MOV dword ptr [0x01c039a4],EDX      ; 00405381 | g_VertexPreprocessMode
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 00405387
         ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
-    MOV ECX,0x6b029c                    ; 0040538c | DAT_006b029c
+    MOV ECX,0x6b029c                    ; 0040538c | g_ProcessedVertexIndices
     ADD ESP,0x4                         ; 00405391
     MOV EAX,ESI                         ; 00405394
     MOV EDX,dword ptr [EDI + 0x4]       ; 00405396
         ;   Label: LAB_00405396
     LEA EDX,[EDX + EDX*0x2]             ; 00405399
-    MOV EBP,dword ptr [0x006b0264]      ; 0040539c | DAT_006b0264
+    MOV EBP,dword ptr [0x006b0264]      ; 0040539c | g_ProcessedVertexOffset
     CMP EBX,EDX                         ; 004053a2
     JGE 0x0040540a                      ; 004053a4
         ;   XREF to: 0040540a (CONDITIONAL_JUMP)  ; LAB_0040540a
     MOV EDX,dword ptr [EAX]             ; 004053a6
     ADD EDX,EBP                         ; 004053a8
-    MOV dword ptr [ECX],EDX             ; 004053aa | DAT_006b029c | DAT_006b02a0
+    MOV dword ptr [ECX],EDX             ; 004053aa | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX]             ; 004053ac
     ADD EDX,EBP                         ; 004053ae
     IMUL EDX,EDX,0x30                   ; 004053b0
     MOV ESI,dword ptr [EAX + 0x4]       ; 004053b3
-    MOV dword ptr [EDX + 0x5c502c],ESI  ; 004053b6 | DAT_005c502c
+    MOV dword ptr [EDX + 0x5c502c],ESI  ; 004053b6 | g_SRenderVertex_ARRAY_005c5014[0].u
     MOV EDX,dword ptr [EAX]             ; 004053bc
     ADD EDX,EBP                         ; 004053be
     IMUL ESI,EDX,0x30                   ; 004053c0
@@ -79,7 +79,7 @@ section .text
     ADD ECX,0x4                         ; 004053c6
     MOV EDX,dword ptr [EAX + -0x4]      ; 004053c9
     ADD EBX,0x3                         ; 004053cc
-    MOV dword ptr [ESI + 0x5c5030],EDX  ; 004053cf | DAT_005c5030
+    MOV dword ptr [ESI + 0x5c5030],EDX  ; 004053cf | g_SRenderVertex_ARRAY_005c5014[0].v
     JMP 0x00405396                      ; 004053d5
         ;   XREF to: 00405396 (UNCONDITIONAL_JUMP)  ; LAB_00405396
     MOV dword ptr [0x01c00c7c],0x530322 ; 004053d7 | g_ScanlineRenderFunc
@@ -97,7 +97,7 @@ section .text
         ;   Label: LAB_004053fb
     JMP 0x00405372                      ; 00405405
         ;   XREF to: 00405372 (UNCONDITIONAL_JUMP)  ; LAB_00405372
-    PUSH 0x6b029c                       ; 0040540a | DAT_006b029c
+    PUSH 0x6b029c                       ; 0040540a | g_ProcessedVertexIndices
         ;   Label: LAB_0040540a
     MOV ECX,dword ptr [EDI + 0x4]       ; 0040540f
     PUSH ECX                            ; 00405412
@@ -107,7 +107,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0040541b
     ADD EDI,0x18                        ; 00405422
     SUB EAX,EDX                         ; 00405425
-    MOV EBP,dword ptr [0x006b0264]      ; 00405427 | DAT_006b0264
+    MOV EBP,dword ptr [0x006b0264]      ; 00405427 | g_ProcessedVertexOffset
     SHL EAX,0x2                         ; 0040542d
     ADD ESP,0x8                         ; 00405430
     ADD EAX,EDI                         ; 00405433

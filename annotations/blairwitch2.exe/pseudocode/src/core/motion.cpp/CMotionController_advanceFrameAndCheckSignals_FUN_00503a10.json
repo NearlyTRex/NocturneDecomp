@@ -1,0 +1,276 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 179,
+    "complexity_score": 70,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 234
+  },
+  "cross_references": [
+    {
+      "addr": "005030c0",
+      "from_addr": "005031f2",
+      "name": "core_motion.cpp_CMotionController_advance_FUN_005030c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00503a10",
+    "address_range": [
+      [
+        "00503a10",
+        "00503bc0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503a10",
+    "signature": "int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503a10(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005039f4",
+      "name": "switchdataD_005039f4",
+      "type": "void*",
+      "value": "00503ad8"
+    },
+    {
+      "addr": "005dfd00",
+      "name": "g_DOUBLE_005dfd00",
+      "type": "double",
+      "value": "-0.000100000000000000"
+    },
+    {
+      "addr": "005dfd08",
+      "name": "g_FLOAT_005dfd08",
+      "type": "float",
+      "value": "-1"
+    },
+    {
+      "addr": "005dfd10",
+      "name": "g_DOUBLE_005dfd10",
+      "type": "double",
+      "value": "0.00100000000000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005031f2",
+        "call_type": "direct",
+        "caller": "core_motion.cpp_CMotionController_advance_FUN_005030c0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00503228",
+        "call_type": "direct",
+        "caller": "core_motion.cpp_CMotionController_advance_FUN_005030c0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.635220125786163,
+    "instruction_count": 159,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 7,
+      "BRANCH": 2,
+      "BRANCHIND": 1,
+      "CALLIND": 3,
+      "CBRANCH": 7,
+      "COPY": 399,
+      "FLOAT2FLOAT": 29,
+      "FLOAT_ADD": 7,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 8,
+      "INT2FLOAT": 8,
+      "INT_ADD": 83,
+      "INT_AND": 96,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 54,
+      "INT_LEFT": 20,
+      "INT_LESS": 10,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 26,
+      "INT_OR": 30,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 30,
+      "INT_SUB": 28,
+      "INT_XOR": 4,
+      "INT_ZEXT": 16,
+      "LOAD": 75,
+      "POPCOUNT": 26,
+      "RETURN": 3,
+      "STORE": 33
+    },
+    "pcode_op_count": 1055
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00524ba0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9141
+    },
+    "bw3.exe": {
+      "addr": "004fc4b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9141
+    },
+    "nocedit.exe": {
+      "addr": "0052de70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9649
+    },
+    "nocturne.exe": {
+      "addr": "004e1a20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9649
+    }
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "inout_motion_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "inout_frame_number",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "scale_factor",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00503a19",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar4`. Replace those `pSVar4->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 27,
+      "match": "pSVar4 = (T *)(pSVar4->motion_name + CONST)",
+      "severity": "moderate",
+      "text": "pSVar4 = (SMotion *)(pSVar4->motion_name + 8);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

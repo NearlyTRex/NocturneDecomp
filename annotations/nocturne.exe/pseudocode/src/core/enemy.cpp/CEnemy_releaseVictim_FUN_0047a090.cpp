@@ -18,7 +18,7 @@ void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CEnemy *this_ptr)
     pCVar1 = (CEnemy *)(*(((this_ptr_00->base).vtable._uc)->_uc).getGrabber)(this_ptr_00);
     if (pCVar1 == this_ptr) {
       (*(((this_ptr->victim->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr->victim);
-      if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&
+      if (((char *)(this_ptr->base).base.validation_magic == g_CHAR_ARRAY_0077d250 + 0xced3) &&
          ((this_ptr->base).model.model_ptr != (CDeformableModel *)0x0)) {
         CStack_10.z = -0.001;
         CStack_10.x = 0.0;

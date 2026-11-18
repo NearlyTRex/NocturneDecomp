@@ -1,0 +1,36 @@
+// Name: core_muzzle.cpp_SFollowFormation_ctor_FUN_0059ded0
+// Address: 0059ded0
+// Address Range: [[0059ded0, 0059df66]]
+// Convention: __cdecl
+// Signature: SFollowFormation * __cdecl core_muzzle_cpp_SFollowFormation_ctor_FUN_0059ded0(SFollowFormation *this_ptr)
+
+#include "nocturne.h"
+
+SFollowFormation * __cdecl core_muzzle_cpp_SFollowFormation_ctor_FUN_0059ded0(SFollowFormation *this_ptr)
+
+{
+  uint *puVar1;
+  uint *puVar2;
+  uint *puVar3;
+  
+  puVar1 = (uint *)__arrinit(this_ptr->slots,0x10,&g_SFollowSlotStructTypeInfo);
+  puVar1[0xf0] = 0;
+  puVar2 = puVar1;
+  do {
+    *puVar2 = 0;
+    puVar3 = puVar2 + 0xf;
+    puVar2[1] = 0;
+    puVar2[8] = 0;
+    puVar2[9] = 0;
+    puVar2[10] = 0;
+    puVar2[0xb] = 0;
+    puVar2[0xe] = 0;
+    puVar2[0xc] = 0;
+    puVar2[0xd] = 0;
+    puVar2 = puVar3;
+  } while (puVar3 != puVar1 + 0xf0);
+  puVar1[0xf2] = 0x3f000000;
+  puVar1[0xf3] = 0x40400000;
+  puVar1[0xf1] = puVar1[0xf2];
+  return (SFollowFormation *)(puVar1 + -1);
+}

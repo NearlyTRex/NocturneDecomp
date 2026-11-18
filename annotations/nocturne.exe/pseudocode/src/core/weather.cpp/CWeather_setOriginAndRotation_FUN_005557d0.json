@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 126,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_memcpy"
     ],
     "total_lines": 248
@@ -102,19 +103,19 @@
     },
     {
       "addr": "02ddfa28",
-      "name": "g_CVector3f_ARRAY_02ddfa28",
+      "name": "g_WeatherParticlePositions",
       "type": "CVector3f[200]",
       "value": null
     },
     {
       "addr": "02ddfa2c",
-      "name": "g_CVector3f_ARRAY_02ddfa28[0].y",
+      "name": "g_WeatherParticlePositions[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa30",
-      "name": "g_CVector3f_ARRAY_02ddfa28[0].z",
+      "name": "g_WeatherParticlePositions[0].z",
       "type": "undefined4",
       "value": null
     }
@@ -183,6 +184,12 @@
       "by": "name",
       "class": "identical",
       "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0057d1a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8497
     },
     "nocedit.exe": {
       "addr": "005ef940",
@@ -337,6 +344,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(float *)((int)g_WeatherParticleGroundHeights",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_WeatherParticleGroundHeights + iVar3) = fVar1;",
+      "type": "pointer_cast"
+    },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 18,

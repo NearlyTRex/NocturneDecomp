@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_REC_DIAL_WAV_005d3fe0
 ;   TerminatedCString s_REC_DIAL_WAV_005d3fee
-;   undefined4 DAT_007c397c
-;   undefined4 DAT_01c4353c
+;   int g_INT_007c397c
+;   int g_MouseX
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
@@ -43,10 +43,10 @@ section .text
     CMP EAX,dword ptr [EBX + 0x20]      ; 00416e49
     JNZ 0x00416e44                      ; 00416e4c
         ;   XREF to: 00416e44 (CONDITIONAL_JUMP)  ; LAB_00416e44
-    MOV EDX,dword ptr [0x01c4353c]      ; 00416e4e | DAT_01c4353c
+    MOV EDX,dword ptr [0x01c4353c]      ; 00416e4e | g_MouseX
         ;   Label: LAB_00416e4e
     LEA EAX,[ESI*0x4 + 0x0]             ; 00416e54
-    MOV ECX,dword ptr [0x007c397c]      ; 00416e5b | DAT_007c397c
+    MOV ECX,dword ptr [0x007c397c]      ; 00416e5b | g_INT_007c397c
     ADD EAX,EBX                         ; 00416e61
     CMP EDX,ECX                         ; 00416e63
     JLE 0x00416ebd                      ; 00416e65
@@ -58,9 +58,9 @@ section .text
     JLE 0x00416ea4                      ; 00416e71
         ;   XREF to: 00416ea4 (CONDITIONAL_JUMP)  ; LAB_00416ea4
     MOV dword ptr [EAX + 0x38],0x4      ; 00416e73
-    MOV EAX,[0x01c4353c]                ; 00416e7a | DAT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 00416e7a | g_MouseX
         ;   Label: LAB_00416e7a
-    MOV [0x007c397c],EAX                ; 00416e7f | DAT_007c397c
+    MOV [0x007c397c],EAX                ; 00416e7f | g_INT_007c397c
     LEA EAX,[ESI*0x4 + 0x0]             ; 00416e84
     ADD EAX,EBX                         ; 00416e8b
     MOV EDI,dword ptr [EAX + 0x38]      ; 00416e8d

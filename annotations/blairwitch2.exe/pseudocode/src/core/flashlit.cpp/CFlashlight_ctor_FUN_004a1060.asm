@@ -10,7 +10,7 @@
 ;   core_flashlit.cpp_factoryFuncFlashlight_FUN_004a1030 at 004a1043
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f6cac
+;   float g_FLOAT_005f6cac = 8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
@@ -39,7 +39,7 @@ section .text
     MOV dword ptr [EBX + 0x43c],0x5     ; 004a109b
     MOV dword ptr [EBX + 0x440],0x0     ; 004a10a5
     MOV dword ptr [EBX + 0x444],0x0     ; 004a10af
-    FLD float ptr [0x005f6cac]          ; 004a10b9 | DAT_005f6cac
+    FLD float ptr [0x005f6cac]          ; 004a10b9 | g_FLOAT_005f6cac
     MOV dword ptr [EBX + 0x448],0x0     ; 004a10bf
     ADD ESP,0x8                         ; 004a10c9
     MOV dword ptr [EBX + 0x6c4],0x0     ; 004a10cc

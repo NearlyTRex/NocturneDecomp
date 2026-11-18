@@ -10,8 +10,7 @@ CConstructBone * __cdecl core_construc_cpp_CConstructBone_ctor_FUN_00444550(CCon
 
 {
   CConstruct *pCVar1;
-  CConstructBone *pCVar2;
-  float10 fVar3;
+  double dVar2;
   
   pCVar1 = core_construc_cpp_CConstruct_ctor_FUN_00442420(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CConstructBoneVTable._ub;
@@ -22,8 +21,7 @@ CConstructBone * __cdecl core_construc_cpp_CConstructBone_ctor_FUN_00444550(CCon
   (pCVar1->base).pain_threshold = 10.0;
   pCVar1->construct_variant = 1;
   pCVar1->trail_texture_type = 3;
-  fVar3 = (float10)(pCVar1->base).base.hit_points;
-  pCVar2 = (CConstructBone *)round();
-  pCVar1->initial_hit_points = (int)ROUND(fVar3);
-  return pCVar2;
+  dVar2 = round((double)(pCVar1->base).base.hit_points);
+  pCVar1->initial_hit_points = (int)ROUND(dVar2);
+  return (CConstructBone *)pCVar1;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)
 
 {
@@ -19,13 +17,13 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
   int iVar5;
   char *pcVar6;
   char *pcVar7;
-  uint local_24;
+  int local_24;
   int local_20;
   char **local_1c;
   
-  this_ptr = _DAT_0152d244;
+  this_ptr = g_ThemeFont;
   if (title != (char *)0x0) {
-    engine_font_cpp_FUN_004c1dd0(_DAT_0152d244,title,400,y_position,7,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(g_ThemeFont,title,400,y_position,7,0);
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr,0x58);
     y_position = y_position + iVar1 * 2;
   }
@@ -52,14 +50,13 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
                       ((uint)((longlong)iVar5 * 48000) >> 0x10 |
                        (int)((ulonglong)((longlong)iVar5 * 48000) >> 0x20) << 0x10);
             iVar2 = iVar2 + 1;
-            engine_font_cpp_FUN_004c1dd0
-                      (this_ptr,*local_1c,(uVar3 & 3) + 0x18e,((uVar4 & 3) - 2) + y_position,7,
-                       0xffffffff);
+            engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+                      (this_ptr,*local_1c,(uVar3 & 3) + 0x18e,((uVar4 & 3) - 2) + y_position,7,-1);
           } while (iVar2 < 5);
         }
       }
       engine_3d_c_setRenderAlpha_FUN_00406bd0(48000);
-      engine_font_cpp_FUN_004c1dd0(this_ptr,*local_1c,400,y_position,local_24,0xffffffff);
+      engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(this_ptr,*local_1c,400,y_position,local_24,-1);
       y_position = y_position + iVar1;
       if (title == (char *)0x0) {
         y_position = y_position + iVar1;
@@ -69,23 +66,25 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
     } while (local_20 < menu_count);
   }
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
-  if (_DAT_01d7f1b8 == 0) {
+  if (g_UseOSFonts == 0) {
     iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
-                      (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.");
+                      (g_SmallEditorFont,"Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.");
     iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50
-                      (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.");
+                      (g_SmallEditorFont,"Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.";
   }
   else {
     iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
-                      (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
+                      (g_SmallEditorFont,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
     iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50
-                      (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
+                      (g_SmallEditorFont,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.";
   }
-  engine_font_cpp_FUN_004c1dd0(_DAT_0152d248,pcVar7,0x26b - iVar1,0x1df - iVar2,0xf8,0);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (g_SmallEditorFont,pcVar7,0x26b - iVar1,0x1df - iVar2,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0x8000);
-  engine_font_cpp_FUN_004c1dd0(_DAT_0152d248,&DAT_005e7aac,0x206,399,0xf8,0);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (g_SmallEditorFont,g_MenuTrademarkGlyph,0x206,399,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
   pcVar7 = menu_text_array[*selected_index_ptr];
   do {
@@ -98,36 +97,36 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
   } while (*pcVar6 != '\0');
   pcVar6 = (char *)0x0;
 LAB_0050a05a:
-  _DAT_01d1ee9c = 0;
-  iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x48);
+  g_MenuInputHappened = 0;
+  iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD8);
   if (iVar1 != 0) {
-    _DAT_01d1ee9c = 1;
+    g_MenuInputHappened = 1;
     iVar1 = *selected_index_ptr;
     *selected_index_ptr = iVar1 + -1;
     if (iVar1 + -1 < 0) {
       *selected_index_ptr = menu_count + -1;
     }
   }
-  iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x50);
+  iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD2);
   if (iVar1 != 0) {
     iVar1 = *selected_index_ptr;
-    _DAT_01d1ee9c = 1;
+    g_MenuInputHappened = 1;
     *selected_index_ptr = iVar1 + 1;
     if (menu_count <= iVar1 + 1) {
       *selected_index_ptr = 0;
     }
   }
   if (pcVar6 != (char *)0x0) {
-    _DAT_01d1ee8c = 0;
-    iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);
+    g_MenuLeftRightPressed = 0;
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD4);
     if (iVar1 != 0) {
-      _DAT_01d1ee8c = 1;
+      g_MenuLeftRightPressed = 1;
       return *selected_index_ptr;
     }
-    iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD6);
     if (iVar1 != 0) goto LAB_0050a120;
   }
-  iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);
+  iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_RETURN);
   if (iVar1 == 0) {
     return -1;
   }

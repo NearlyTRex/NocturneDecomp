@@ -15,7 +15,7 @@ void __cdecl core_moocow_cpp_CMooCow_processDamage_FUN_00521990(CMooCow *this_pt
   int iVar3;
   uint uVar4;
   
-  core_moocow_cpp_FUN_00521810(this_ptr,damage_info);
+  core_moocow_cpp_CMooCow_processDismemberment_FUN_00521810(this_ptr,damage_info);
   fVar1 = (this_ptr->base).hit_points - damage_info->damage_amount;
   (this_ptr->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
@@ -27,7 +27,8 @@ void __cdecl core_moocow_cpp_CMooCow_processDamage_FUN_00521990(CMooCow *this_pt
       (*((this_ptr->base).base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
     }
   }
-  iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0(0x02C82A60,this_ptr->sfx_handle);
+  iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                    (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
   if (iVar3 != 0) {
     core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(&this_ptr->base,damage_info);
     return;

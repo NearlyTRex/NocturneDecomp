@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   name
 ;
 ; XREF[3]:
-;   core_event.cpp_FUN_004a1d00 at 004a5043
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a5043
 ;   core_platfrm.cpp_CPlatform_process_FUN_00539810 at 0053990f
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00546ea4
 ;

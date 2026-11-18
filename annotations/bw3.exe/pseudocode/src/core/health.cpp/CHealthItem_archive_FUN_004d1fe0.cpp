@@ -12,8 +12,7 @@ void __cdecl core_health_cpp_CHealthItem_archive_FUN_004d1fe0(CHealthItem *this_
   char acStack_104 [256];
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0
-            (&this_ptr->model," AmodelName" + 2);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(&this_ptr->model,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->use_count,"useCount");
   core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->hp_restored,"hpRestored");
   if (g_CHealthItemClassVersion == 2) {

@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_renderBone_FUN_00437ab0
@@ -24,7 +24,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 00437a62
     PUSH 0xff                           ; 00437a66
     MOV EDX,dword ptr [0x005ae704]      ; 00437a6b | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 00437a71 | DAT_01b4d738
+    PUSH EDX                            ; 00437a71 | g_CDemonRenderer_01b4d738
     XOR EBX,EBX                         ; 00437a72
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10 ; 00437a74
         ;   XREF to: 00460f10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(CDemonRenderer * this_ptr, int color)

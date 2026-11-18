@@ -14,10 +14,10 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c90b8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e0e1c
-;   undefined4 DAT_005e0e24
-;   undefined4 DAT_005e0e2c
-;   undefined4 DAT_005e0e34
+;   double g_DOUBLE_005e0e1c = 0.800000000000000
+;   double g_DOUBLE_005e0e24 = 0.600000000000000
+;   double g_DOUBLE_005e0e2c = 0.400000000000000
+;   double g_DOUBLE_005e0e34 = 0.200000000000000
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     JNZ 0x004c6232                      ; 004c61f8
         ;   XREF to: 004c6232 (CONDITIONAL_JUMP)  ; LAB_004c6232
     FLD float ptr [ESP + 0x10]          ; 004c61fa
-    FMUL double ptr [0x005e0e1c]        ; 004c61fe | DAT_005e0e1c
+    FMUL double ptr [0x005e0e1c]        ; 004c61fe | g_DOUBLE_005e0e1c
     FSTP float ptr [ESP]                ; 004c6204
         ;   Label: LAB_004c6204
     MOV EAX,dword ptr [ESP]             ; 004c6207
@@ -47,17 +47,17 @@ section .text
     RET                                 ; 004c620d
     FLD float ptr [ESP + 0x10]          ; 004c620e
         ;   Label: LAB_004c620e
-    FMUL double ptr [0x005e0e34]        ; 004c6212 | DAT_005e0e34
+    FMUL double ptr [0x005e0e34]        ; 004c6212 | g_DOUBLE_005e0e34
     JMP 0x004c6204                      ; 004c6218
         ;   XREF to: 004c6204 (UNCONDITIONAL_JUMP)  ; LAB_004c6204
     FLD float ptr [ESP + 0x10]          ; 004c621a
         ;   Label: LAB_004c621a
-    FMUL double ptr [0x005e0e2c]        ; 004c621e | DAT_005e0e2c
+    FMUL double ptr [0x005e0e2c]        ; 004c621e | g_DOUBLE_005e0e2c
     JMP 0x004c6204                      ; 004c6224
         ;   XREF to: 004c6204 (UNCONDITIONAL_JUMP)  ; LAB_004c6204
     FLD float ptr [ESP + 0x10]          ; 004c6226
         ;   Label: LAB_004c6226
-    FMUL double ptr [0x005e0e24]        ; 004c622a | DAT_005e0e24
+    FMUL double ptr [0x005e0e24]        ; 004c622a | g_DOUBLE_005e0e24
     JMP 0x004c6204                      ; 004c6230
         ;   XREF to: 004c6204 (UNCONDITIONAL_JUMP)  ; LAB_004c6204
     MOV EAX,dword ptr [ESP + 0x10]      ; 004c6232

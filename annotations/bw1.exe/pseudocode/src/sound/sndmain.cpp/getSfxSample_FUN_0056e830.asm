@@ -16,13 +16,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_005f2fa5
-;   undefined4 DAT_005f2fab
+;   TerminatedCString s_wav_005f2fab
 ;   TerminatedCString s_sound_005f2faf
 ;   TerminatedCString s_sound_sndmain_cpp_005f2fb5
 ;   TerminatedCString s_Can_t_open_s_005f2fca
 ;   TerminatedCString s_Failed_to_lock_sample_s_005f2fd8
 ;   TerminatedCString s_Error_reading_file_data_005f2ff2
-;   undefined4 DAT_005f3012
+;   TerminatedCString s_mp3_005f3012
 ;   TerminatedCString s_sound_sndmain_cpp_005f3016
 ;   TerminatedCString s_Don_t_know_length_of_sam_005f302b
 ;   TerminatedCString s_Failed_to_lock_sample_s_005f304a
@@ -33,7 +33,7 @@
 ;   ... and 11 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdlib.c__atexit_FUN_005c1093
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   crt_string.c_memmove_FUN_005c25d0
@@ -60,7 +60,7 @@ section .text
     PUSH EDI                            ; 0056e832
     PUSH EBP                            ; 0056e833
     SUB ESP,0x22c                       ; 0056e834
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056e83a | DAT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056e83a | g_LastSampleAccessIndex
     MOV EBP,0x2c78ff4                   ; 0056e840
     MOV EDI,dword ptr [ESP + 0x240]     ; 0056e845
     XOR ESI,ESI                         ; 0056e84c
@@ -73,7 +73,7 @@ section .text
     TEST EAX,EAX                        ; 0056e858
     JNZ 0x0056ead1                      ; 0056e85a
         ;   XREF to: 0056ead1 (CONDITIONAL_JUMP)  ; LAB_0056ead1
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056e860 | DAT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056e860 | g_LastSampleAccessIndex
     MOV EAX,EBP                         ; 0056e866
     TEST EAX,EAX                        ; 0056e868
         ;   Label: LAB_0056e868
@@ -101,13 +101,13 @@ section .text
     XOR EAX,EAX                         ; 0056e896
     MOV EBP,EAX                         ; 0056e898
         ;   Label: LAB_0056e898
-    MOV dword ptr [0x02c78ff0],EBX      ; 0056e89a | DAT_02c78ff0
+    MOV dword ptr [0x02c78ff0],EBX      ; 0056e89a | g_LastSampleAccessIndex
     JZ 0x0056eac0                       ; 0056e8a0
         ;   XREF to: 0056eac0 (CONDITIONAL_JUMP)  ; LAB_0056eac0
     PUSH EAX                            ; 0056e8a6
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020 ; 0056e8a7
         ;   XREF to: 00570020 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020(CSfxSample * this_ptr)
-    MOV AH,byte ptr [0x02c68380]        ; 0056e8ac | DAT_02c68380
+    MOV AH,byte ptr [0x02c68380]        ; 0056e8ac | g_BYTE_02c68380
     ADD ESP,0x4                         ; 0056e8b2
     TEST AH,0x1                         ; 0056e8b5
     JNZ 0x0056e8df                      ; 0056e8b8
@@ -115,7 +115,7 @@ section .text
     MOV DL,AH                           ; 0056e8ba
     OR DL,0x1                           ; 0056e8bc
     PUSH 0x2c5fd50                      ; 0056e8bf
-    MOV byte ptr [0x02c68380],DL        ; 0056e8c4 | DAT_02c68380
+    MOV byte ptr [0x02c68380],DL        ; 0056e8c4 | g_BYTE_02c68380
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_0052ae40 ; 0056e8ca
         ;   XREF to: 0052ae40 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_0052ae40(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 0056e8cf
@@ -179,7 +179,7 @@ section .text
     CALL crt_string.c_memmove_FUN_005c25d0 ; 0056e955
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0056e95a
-    PUSH 0x5f2fab                       ; 0056e95d | DAT_005f2fab
+    PUSH 0x5f2fab                       ; 0056e95d | = "wav"
         ;   Label: LAB_0056e95d
     LEA EAX,[ESP + 0x4]                 ; 0056e962
     PUSH EAX                            ; 0056e966
@@ -289,7 +289,7 @@ section .text
         ;   XREF to: 00570020 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0056eabb
     XOR EAX,EAX                         ; 0056eabe
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eac0 | DAT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eac0 | g_LastSampleAccessIndex
         ;   Label: LAB_0056eac0
     ADD ESP,0x22c                       ; 0056eac6
     POP EBP                             ; 0056eacc
@@ -303,13 +303,13 @@ section .text
     CMP ESI,0x40                        ; 0056ead8
     JL 0x0056e84e                       ; 0056eadb
         ;   XREF to: 0056e84e (CONDITIONAL_JUMP)  ; LAB_0056e84e
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eae1 | DAT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eae1 | g_LastSampleAccessIndex
     XOR EAX,EAX                         ; 0056eae7
     JMP 0x0056e868                      ; 0056eae9
         ;   XREF to: 0056e868 (UNCONDITIONAL_JUMP)  ; LAB_0056e868
-    MOV dword ptr [0x02c78ff0],EBX      ; 0056eaee | DAT_02c78ff0
+    MOV dword ptr [0x02c78ff0],EBX      ; 0056eaee | g_LastSampleAccessIndex
         ;   Label: LAB_0056eaee
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eaf4 | DAT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056eaf4 | g_LastSampleAccessIndex
     ADD ESP,0x22c                       ; 0056eafa
     POP EBP                             ; 0056eb00
     POP EDI                             ; 0056eb01
@@ -337,10 +337,10 @@ section .text
     MOV ECX,0x5f2fb5                    ; 0056eb3f | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x36b                       ; 0056eb44
     PUSH 0x5f2fca                       ; 0056eb49 | = "Can't open %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0056eb4e | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056eb54 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056eb5a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0056eb4e | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0056eb54 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056eb5a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0056eb5f
     JMP 0x0056e9ae                      ; 0056eb62
         ;   XREF to: 0056e9ae (UNCONDITIONAL_JUMP)  ; LAB_0056e9ae
@@ -410,11 +410,11 @@ section .text
     ADD ESP,0xc                         ; 0056ec02
     MOV EAX,ESP                         ; 0056ec05
     PUSH EAX                            ; 0056ec07
-    CALL wincore_winrun.cpp_FUN_005b3a90 ; 0056ec08
-        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b3a90()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_005b3a90 ; 0056ec08
+        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_005b3a90(LPCSTR message)
     ADD ESP,0x4                         ; 0056ec0d
     MOV EAX,EBP                         ; 0056ec10
-    MOV EBX,dword ptr [0x02c78ff0]      ; 0056ec12 | DAT_02c78ff0
+    MOV EBX,dword ptr [0x02c78ff0]      ; 0056ec12 | g_LastSampleAccessIndex
     ADD ESP,0x22c                       ; 0056ec18
     POP EBP                             ; 0056ec1e
     POP EDI                             ; 0056ec1f
@@ -427,7 +427,7 @@ section .text
     PUSH 0x5f2ff2                       ; 0056ec2b | = "Error reading file data for %s\n"
     JMP 0x0056ea8e                      ; 0056ec30
         ;   XREF to: 0056ea8e (UNCONDITIONAL_JUMP)  ; LAB_0056ea8e
-    PUSH 0x5f3012                       ; 0056ec35 | DAT_005f3012
+    PUSH 0x5f3012                       ; 0056ec35 | = "mp3"
         ;   Label: LAB_0056ec35
     LEA EAX,[ESP + 0x4]                 ; 0056ec3a
     PUSH EAX                            ; 0056ec3e
@@ -462,10 +462,10 @@ section .text
     MOV ECX,0x5f3016                    ; 0056eca9 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x3dd                       ; 0056ecae
     PUSH 0x5f302b                       ; 0056ecb3 | = "Don't know length of sample %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0056ecb8 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056ecbe | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056ecc4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0056ecb8 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0056ecbe | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056ecc4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0056ecc9
     MOV dword ptr [EBP + 0x150],0x0     ; 0056eccc
         ;   Label: LAB_0056eccc
@@ -539,10 +539,10 @@ section .text
     MOV ECX,0x5f3086                    ; 0056edb0 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x40d                       ; 0056edb5
     PUSH 0x5f309b                       ; 0056edba | = "Unknown sample file format extension: %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0056edbf | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056edc5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056edcb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0056edbf | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0056edc5 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056edcb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     JMP 0x0056ebe8                      ; 0056edd0
         ;   XREF to: 0056ebe8 (UNCONDITIONAL_JUMP)  ; LAB_0056ebe8
 

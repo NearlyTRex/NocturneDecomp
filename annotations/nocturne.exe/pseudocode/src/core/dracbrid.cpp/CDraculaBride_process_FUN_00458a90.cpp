@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(CDraculaBride *this_ptr,float delta_time)
 
@@ -234,7 +233,7 @@ LAB_00458f79:
       while ((iVar10 < g_CDemonSetPtr->enemy_count &&
              ((pCVar15 = core_actor_cpp_castToClassHash_FUN_0040d890
                                    (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar8),
-                                    g_CDraculaBrideActorType_01b4d224.name_hash),
+                                    g_CDraculaBrideClassInfo.name_hash),
               pCVar15 == (CDemonActor *)0x0 || (*(int *)(pCVar15[0x90].create_event + 0x38) == 0))))
             ) {
         iVar10 = iVar10 + 1;
@@ -278,7 +277,7 @@ LAB_00458f79:
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                         (&local_b8,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                         _DAT_01b4d260);
+                         g_DraculaBrideIndices[0]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                         ((CDemonActor *)this_ptr,&local_100,pCVar13);
     core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar13,fVar19,pSVar20);
@@ -295,7 +294,7 @@ LAB_00458f79:
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                         (&local_184,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                         _DAT_01b4d260);
+                         g_DraculaBrideIndices[0]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                         ((CDemonActor *)this_ptr,&local_4c,pCVar13);
     core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar13,fVar19,pSVar20);
@@ -303,16 +302,16 @@ LAB_00458f79:
   case 7:
     if (this_ptr->exploded == 0) {
       pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                          (&(this_ptr->base).base.model,&local_d0,_DAT_01b4d27c);
+                          (&(this_ptr->base).base.model,&local_d0,g_DraculaBrideIndices[7]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_f4,pCVar13);
       core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0
-                (g_CFireEffect_PTR_005b80f0,&local_f4,&(this_ptr->base).base.base.orient.vec,1,0);
+                (g_CFireEffectPtr,&local_f4,&(this_ptr->base).base.base.orient.vec,1,0);
       local_a0.y = (this_ptr->base).base.base.orient.vec.y;
       local_a0.z = (this_ptr->base).base.base.orient.vec.z;
       local_a0.x = (this_ptr->base).base.base.orient.vec.x + 1.5897179988972888e-314._0_4_;
       core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0
-                (g_CFireEffect_PTR_005b80f0,&local_f4,&local_a0,1,0);
+                (g_CFireEffectPtr,&local_f4,&local_a0,1,0);
     }
     break;
   case 8:
@@ -423,7 +422,7 @@ LAB_00459978:
                        (&g_HeroActors[g_LocalHeroIndex]->base);
     if ((EVar14 == DEATH_STATE_ALIVE) &&
        (iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                          (0x01C03A10,this_ptr->rise_event), iVar8 != 0)) {
+                          (g_CEventListPtr,this_ptr->rise_event), iVar8 != 0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.base,0xd,1);
     }
@@ -490,7 +489,7 @@ LAB_00459978:
     break;
   case 0xf:
     iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->rise_event);
+                      (g_CEventListPtr,this_ptr->rise_event);
     if (iVar8 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.base,0xb,1);
@@ -512,7 +511,7 @@ LAB_00459978:
                        (&g_HeroActors[g_LocalHeroIndex]->base);
     if ((EVar14 == DEATH_STATE_ALIVE) &&
        (iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                          (0x01C03A10,this_ptr->rise_event), iVar8 != 0)) {
+                          (g_CEventListPtr,this_ptr->rise_event), iVar8 != 0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.base,0xd,1);
     }
@@ -528,7 +527,7 @@ LAB_00459978:
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                         (&local_13c,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                         _DAT_01b4d260);
+                         g_DraculaBrideIndices[0]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                         ((CDemonActor *)this_ptr,&local_94,pCVar13);
     core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar13,fVar19,pSVar20);
@@ -545,7 +544,7 @@ LAB_00459978:
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                         (&local_88,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                         _DAT_01b4d260);
+                         g_DraculaBrideIndices[0]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                         ((CDemonActor *)this_ptr,&local_16c,pCVar13);
     core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar13,fVar19,pSVar20);
@@ -562,7 +561,7 @@ LAB_00459978:
     pCVar13 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                         (&local_1c0,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                         _DAT_01b4d268);
+                         g_DraculaBrideIndices[2]);
     pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                         ((CDemonActor *)this_ptr,&local_154,pCVar13);
     core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar13,fVar19,pSVar20);
@@ -603,7 +602,7 @@ LAB_00459978:
                     ((CDemonActor *)this_ptr,&local_118,pCVar13);
           iVar8 = iVar8 + 1;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                    (g_CFireEffect_PTR_005b80f0,&local_118,0.5,&local_148,0xffff);
+                    (g_CFireEffectPtr,&local_118,0.5,&local_148,0xffff);
         } while (iVar8 < pCVar12->bone_count);
       }
       break;
@@ -667,7 +666,7 @@ LAB_00459978:
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     ((CDemonActor *)this_ptr,&local_130,pCVar13);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                    (g_CFireEffect_PTR_005b80f0,&local_130,0.5,&local_c4,0xffff);
+                    (g_CFireEffectPtr,&local_130,0.5,&local_c4,0xffff);
           iVar8 = iVar8 + 1;
         } while (iVar8 < local_20->bone_count);
       }
@@ -684,7 +683,7 @@ LAB_00459978:
     break;
   case 0x1a:
     iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->rise_event);
+                      (g_CEventListPtr,this_ptr->rise_event);
     if (iVar8 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.base,0,1);

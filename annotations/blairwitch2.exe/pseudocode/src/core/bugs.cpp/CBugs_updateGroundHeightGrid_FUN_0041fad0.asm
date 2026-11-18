@@ -47,16 +47,16 @@
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000 at 004200b8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cca0d
-;   undefined4 DAT_005cca11
-;   undefined4 DAT_005cca19
-;   undefined4 DAT_005f3e28
-;   undefined4 DAT_007bcd08
-;   undefined1 DAT_007bcd0c
+;   float g_FLOAT_005cca0d = 0.5
+;   float g_FLOAT_005cca11 = 11
+;   double g_DOUBLE_005cca19 = 0.5
+;   float g_FLOAT_005f3e28 = 0.5
+;   float[12][12] g_BugsGroundHeightGridTemp
+;   undefined4 g_BugsGroundHeightGridTemp[0][1]
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_004738d0
+;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0
 ;   crt_math.c_floor_FUN_005b84d0
 ;   crt_math.c_round_FUN_005b7ff0
 ;
@@ -80,7 +80,7 @@ section .text
     FXCH ST2                            ; 0041fafb
     FADD float ptr [EAX + 0x1e614]      ; 0041fafd
     FXCH ST3                            ; 0041fb03
-    FDIV float ptr [0x005f3e28]         ; 0041fb05 | DAT_005f3e28
+    FDIV float ptr [0x005f3e28]         ; 0041fb05 | g_FLOAT_005f3e28
     FXCH                                ; 0041fb0b
     FADD float ptr [EAX + 0x1e618]      ; 0041fb0d
     FXCH ST2                            ; 0041fb13
@@ -94,7 +94,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041fb2c
     MOVSD ES:EDI,ESI                    ; 0041fb2d
     MOVSD ES:EDI,ESI                    ; 0041fb2e
-    FLD float ptr [0x005cca0d]          ; 0041fb2f | DAT_005cca0d
+    FLD float ptr [0x005cca0d]          ; 0041fb2f | g_FLOAT_005cca0d
     FLD float ptr [ESP + 0x18]          ; 0041fb35
     FMUL ST1                            ; 0041fb39
     FLD float ptr [ESP + 0x1c]          ; 0041fb3b
@@ -146,7 +146,7 @@ section .text
     FMUL float ptr [ESP + 0x94]         ; 0041fbca
     FXCH                                ; 0041fbd1
     CALL crt_math.c_round_FUN_005b7ff0  ; 0041fbd3
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x70]        ; 0041fbd8
     SUB ESP,0x8                         ; 0041fbdc
     FSTP double ptr [ESP]               ; 0041fbdf
@@ -159,15 +159,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x70]      ; 0041fbf6
     MOV dword ptr [ESP + 0x94],EAX      ; 0041fbfa
     FILD dword ptr [ESP + 0x94]         ; 0041fc01
-    FMUL float ptr [0x005f3e28]         ; 0041fc08 | DAT_005f3e28
+    FMUL float ptr [0x005f3e28]         ; 0041fc08 | g_FLOAT_005f3e28
     MOV EAX,EBX                         ; 0041fc0e
     FSUB float ptr [EAX + 0x20]         ; 0041fc10
-    FLD float ptr [0x005f3e28]          ; 0041fc13 | DAT_005f3e28
-    FMUL float ptr [0x005cca11]         ; 0041fc19 | DAT_005cca11
-    FMUL double ptr [0x005cca19]        ; 0041fc1f | DAT_005cca19
+    FLD float ptr [0x005f3e28]          ; 0041fc13 | g_FLOAT_005f3e28
+    FMUL float ptr [0x005cca11]         ; 0041fc19 | g_FLOAT_005cca11
+    FMUL double ptr [0x005cca19]        ; 0041fc1f | g_DOUBLE_005cca19
     FXCH ST2                            ; 0041fc25
     CALL crt_math.c_round_FUN_005b7ff0  ; 0041fc27
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0041fc2c
     FSUB ST0,ST2                        ; 0041fc2e
     FXCH                                ; 0041fc30
@@ -176,7 +176,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0041fc3c
     MOV dword ptr [ESP + 0x94],EAX      ; 0041fc40
     FILD dword ptr [ESP + 0x94]         ; 0041fc47
-    FMUL float ptr [0x005f3e28]         ; 0041fc4e | DAT_005f3e28
+    FMUL float ptr [0x005f3e28]         ; 0041fc4e | g_FLOAT_005f3e28
     MOV EAX,EBX                         ; 0041fc54
     FSUB float ptr [EAX + 0x28]         ; 0041fc56
     FSUBRP                              ; 0041fc59
@@ -203,20 +203,20 @@ section .text
     MOV EAX,dword ptr [ESP + 0x88]      ; 0041fcb1
     MOV ECX,0x240                       ; 0041fcb8
     ADD EAX,0xb                         ; 0041fcbd
-    MOV EDI,0x7bcd08                    ; 0041fcc0 | DAT_007bcd08
+    MOV EDI,0x7bcd08                    ; 0041fcc0 | g_BugsGroundHeightGridTemp
     MOV dword ptr [ESP + 0x80],EAX      ; 0041fcc5
     MOV EAX,dword ptr [ESP + 0x84]      ; 0041fccc
     MOV ESI,dword ptr [ESP + 0xac]      ; 0041fcd3
     ADD EAX,0xb                         ; 0041fcda
     ADD ESI,0x174f4                     ; 0041fcdd
     MOV dword ptr [ESP + 0x7c],EAX      ; 0041fce3
-    PUSH EDI                            ; 0041fce7 | DAT_007bcd08
+    PUSH EDI                            ; 0041fce7 | g_BugsGroundHeightGridTemp
     MOV EAX,ECX                         ; 0041fce8
     SHR ECX,0x2                         ; 0041fcea
-    MOVSD.REP ES:EDI,ESI                ; 0041fced | DAT_007bcd08 | DAT_007bcd0c
+    MOVSD.REP ES:EDI,ESI                ; 0041fced | g_BugsGroundHeightGridTemp | g_BugsGroundHeightGridTemp[0][1]
     MOV CL,AL                           ; 0041fcef
     AND CL,0x3                          ; 0041fcf1
-    MOVSB.REP ES:EDI,ESI                ; 0041fcf4 | DAT_007bcd0c
+    MOVSB.REP ES:EDI,ESI                ; 0041fcf4 | g_BugsGroundHeightGridTemp[0][1]
     POP EDI                             ; 0041fcf6
     MOV ESI,dword ptr [ESP + 0xac]      ; 0041fcf7
     LEA EDI,[ESP + 0x3c]                ; 0041fcfe
@@ -253,7 +253,7 @@ section .text
         ;   Label: LAB_0041fd6f
     MOV dword ptr [ESP + 0x94],EAX      ; 0041fd76
     FILD dword ptr [ESP + 0x94]         ; 0041fd7d
-    FMUL float ptr [0x005f3e28]         ; 0041fd84 | DAT_005f3e28
+    FMUL float ptr [0x005f3e28]         ; 0041fd84 | g_FLOAT_005f3e28
     MOV EBP,dword ptr [ESP + 0x90]      ; 0041fd8a
     MOV ESI,dword ptr [ESP + 0x78]      ; 0041fd91
     XOR EBX,EBX                         ; 0041fd95
@@ -266,7 +266,7 @@ section .text
     MOV dword ptr [ESP + 0x94],EBX      ; 0041fda9
         ;   Label: LAB_0041fda9
     FILD dword ptr [ESP + 0x94]         ; 0041fdb0
-    FMUL float ptr [0x005f3e28]         ; 0041fdb7 | DAT_005f3e28
+    FMUL float ptr [0x005f3e28]         ; 0041fdb7 | g_FLOAT_005f3e28
     MOV EAX,dword ptr [ESP + 0x8c]      ; 0041fdbd
     FADD float ptr [ESP + 0x44]         ; 0041fdc4
     MOV EDX,dword ptr [ESP + 0x88]      ; 0041fdc8
@@ -283,7 +283,7 @@ section .text
     CMP EBX,dword ptr [ESP + 0x7c]      ; 0041fdf5
     JG 0x0041fe70                       ; 0041fdf9
         ;   XREF to: 0041fe70 (CONDITIONAL_JUMP)  ; LAB_0041fe70
-    MOV EAX,dword ptr [ESI + 0x7bcd08]  ; 0041fdfb | DAT_007bcd08 | DAT_007bcd0c
+    MOV EAX,dword ptr [ESI + 0x7bcd08]  ; 0041fdfb | g_BugsGroundHeightGridTemp | g_BugsGroundHeightGridTemp[0][1]
     MOV dword ptr [EDI + 0x174f4],EAX   ; 0041fe01
     ADD EDI,0x4                         ; 0041fe07
         ;   Label: LAB_0041fe07
@@ -324,8 +324,8 @@ section .text
     LEA EAX,[ESP + 0x2c]                ; 0041fe77
     PUSH EAX                            ; 0041fe7b
     PUSH 0x1fc9c68                      ; 0041fe7c | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_004738d0   ; 0041fe81
-        ;   XREF to: 004738d0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_004738d0()
+    CALL core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0 ; 0041fe81
+        ;   XREF to: 004738d0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)
     MOV dword ptr [ESP + 0xa4],EAX      ; 0041fe86
     FLD float ptr [ESP + 0xa4]          ; 0041fe8d
     ADD ESP,0x10                        ; 0041fe94

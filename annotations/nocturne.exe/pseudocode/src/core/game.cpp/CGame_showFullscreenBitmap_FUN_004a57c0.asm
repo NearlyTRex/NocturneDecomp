@@ -356,7 +356,7 @@ section .text
         ;   XREF to: 004a5ce4 (CONDITIONAL_JUMP)  ; LAB_004a5ce4
     XOR EBX,EBX                         ; 004a5b9b
         ;   Label: LAB_004a5b9b
-    CMP EBX,dword ptr [0x01bd1d94]      ; 004a5b9d | DAT_01bd1d94
+    CMP EBX,dword ptr [0x01bd1d94]      ; 004a5b9d | g_MouseButtonFlags
         ;   Label: LAB_004a5b9d
     JZ 0x004a5d15                       ; 004a5ba3
         ;   XREF to: 004a5d15 (CONDITIONAL_JUMP)  ; LAB_004a5d15
@@ -469,14 +469,14 @@ section .text
     MOV EBP,dword ptr [ECX + 0x48]      ; 004a5ceb
     MOV EAX,[0x005bac64]                ; 004a5cee | g_CKeys_PTR_005bac64
     PUSH EBP                            ; 004a5cf3
-    MOV EDX,dword ptr [EAX]             ; 004a5cf4 | g_CKeys_01cc30e4
-    PUSH EAX                            ; 004a5cf6 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004a5cf4 | g_CKeysInstance
+    PUSH EAX                            ; 004a5cf6 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004a5cf7
     ADD ESP,0x8                         ; 004a5cf9
     TEST EAX,EAX                        ; 004a5cfc
     JNZ 0x004a5b9b                      ; 004a5cfe
         ;   XREF to: 004a5b9b (CONDITIONAL_JUMP)  ; LAB_004a5b9b
-    CMP EBX,dword ptr [0x01bd1d94]      ; 004a5d04 | DAT_01bd1d94
+    CMP EBX,dword ptr [0x01bd1d94]      ; 004a5d04 | g_MouseButtonFlags
     JNZ 0x004a5b9b                      ; 004a5d0a
         ;   XREF to: 004a5b9b (CONDITIONAL_JUMP)  ; LAB_004a5b9b
     JMP 0x004a5b70                      ; 004a5d10
@@ -486,8 +486,8 @@ section .text
     MOV ESI,dword ptr [ECX + 0x48]      ; 004a5d1c
     MOV EAX,[0x005bac64]                ; 004a5d1f | g_CKeys_PTR_005bac64
     PUSH ESI                            ; 004a5d24
-    MOV EDX,dword ptr [EAX]             ; 004a5d25 | g_CKeys_01cc30e4
-    PUSH EAX                            ; 004a5d27 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004a5d25 | g_CKeysInstance
+    PUSH EAX                            ; 004a5d27 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004a5d28
     ADD ESP,0x8                         ; 004a5d2a
     TEST EAX,EAX                        ; 004a5d2d

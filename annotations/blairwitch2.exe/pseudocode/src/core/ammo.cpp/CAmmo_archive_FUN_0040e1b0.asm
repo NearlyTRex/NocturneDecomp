@@ -7,7 +7,7 @@
 ; CAmmo *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005cb0dd+1
+;   TerminatedCString s_modelName_005cb0de
 ;   TerminatedCString s_weaponClassName_005cb0e8
 ;   TerminatedCString s_ammoCount_005cb0f8
 ;   TerminatedCString s_ammoType_005cb102
@@ -29,7 +29,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 0040e1b6
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040e1bb
-    PUSH 0x5cb0de                       ; 0040e1be | s_modelName_005cb0dd+1
+    PUSH 0x5cb0de                       ; 0040e1be | = "modelName"
     LEA EAX,[EBX + 0x2b4]               ; 0040e1c3
     PUSH EAX                            ; 0040e1c9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 0040e1ca

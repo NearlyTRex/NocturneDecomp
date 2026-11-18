@@ -1,0 +1,653 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 377,
+    "complexity_score": 314,
+    "cross_reference_count": 10,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 144,
+    "suspect_count": 15,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "pointer_cast",
+      "sub84_truncation",
+      "unknown_field"
+    ],
+    "total_lines": 521
+  },
+  "cross_references": [
+    {
+      "addr": "0041b470",
+      "from_addr": "0041ba79",
+      "name": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00423050",
+      "from_addr": "0042381e",
+      "name": "core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00423050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043f160",
+      "from_addr": "0043f18c",
+      "name": "core_cloth.cpp_CCloth_renderBone_FUN_0043f160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045d170",
+      "from_addr": "0045d1a0",
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045ed70",
+      "from_addr": "0045efb9",
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045ed70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045e6a0",
+      "from_addr": "0045e6e0",
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0045e6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a390",
+      "from_addr": "0049a401",
+      "name": "core_fire.cpp_CMuzzleFlash_init_FUN_0049a390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00534890",
+      "from_addr": "00534b64",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046cc40",
+      "from_addr": "0046cc58",
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eca10",
+      "from_addr": "004eca1f",
+      "name": "engine_mini3d.cpp_setCameraMatrix_FUN_004eca10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045b9b0",
+    "address_range": [
+      [
+        "0045b9b0",
+        "0045bdaa"
+      ]
+    ],
+    "convention": "__stack_esi",
+    "is_ebp_frame": true,
+    "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0",
+    "signature": "CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0(CMatrix3x3f *this_ptr,CVector3f *euler_angles)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a4b74",
+      "is_variadic": false,
+      "name": "crt_math.c_acos_FUN_005a4b74"
+    },
+    {
+      "addr": "005a4b46",
+      "is_variadic": false,
+      "name": "crt_math.c_asin_FUN_005a4b46"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bb16e",
+      "name": "g_EulerGimbalLockThreshold",
+      "type": "double",
+      "value": "-1"
+    },
+    {
+      "addr": "005bb176",
+      "name": "g_EulerSinCosThreshold",
+      "type": "double",
+      "value": "0.707000000000000"
+    },
+    {
+      "addr": "005bb17e",
+      "name": "g_EulerSinCosThresholdNeg",
+      "type": "double",
+      "value": "-0.707000000000000"
+    },
+    {
+      "addr": "005bb186",
+      "name": "g_EulerPi",
+      "type": "double",
+      "value": "3.14159265359000"
+    },
+    {
+      "addr": "005bb18e",
+      "name": "g_EulerNegPi",
+      "type": "double",
+      "value": "-3.14159265359000"
+    },
+    {
+      "addr": "005bb196",
+      "name": "g_EulerTwoPi",
+      "type": "float",
+      "value": "6.283185"
+    },
+    {
+      "addr": "005bb19a",
+      "name": "g_EulerNegTwoPi",
+      "type": "float",
+      "value": "-6.283185"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "0041ba79",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0046cc58",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00534b64",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045d1a0",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045efb9",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045ed70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042381e",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00423050",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049a401",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CMuzzleFlash_init_FUN_0049a390",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0043f18c",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_renderBone_FUN_0043f160",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004eca1f",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_setCameraMatrix_FUN_004eca10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045e6e0",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0045e6a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.237012987012987,
+    "instruction_count": 308,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 47,
+      "BRANCH": 10,
+      "CALL": 7,
+      "CBRANCH": 27,
+      "COPY": 1162,
+      "FLOAT2FLOAT": 100,
+      "FLOAT_ADD": 6,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 27,
+      "FLOAT_LESS": 27,
+      "FLOAT_MULT": 5,
+      "FLOAT_NAN": 54,
+      "FLOAT_NEG": 2,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 14,
+      "INT_ADD": 134,
+      "INT_AND": 154,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 108,
+      "INT_LESS": 1,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 135,
+      "INT_OR": 135,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 9,
+      "INT_SUB": 23,
+      "INT_XOR": 7,
+      "INT_ZEXT": 120,
+      "LOAD": 93,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 67
+    },
+    "pcode_op_count": 2537
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004496e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045f840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00472160",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9322
+    },
+    "nocturne.exe": {
+      "addr": "0044dbd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9322
+    }
+  },
+  "stack_frame": {
+    "frame_size": 168,
+    "local_size": 164,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0045b9bb",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 31,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "afStack_1014[0x3f2] = SUB84(__BITCAST_UINT64(dVar8),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 36,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "afStack_1014[0x3de] = SUB84(__BITCAST_UINT64(dVar8),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 39,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "afStack_1014[0x3ec] = SUB84(__BITCAST_UINT64(dVar1),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 54,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(afStack_1014[0x3de],afStack_1014[0x3df])) < 0.0) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 61,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(afStack_1014[0x3ec],afStack_1014[0x3ed])) < 0.0) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 71,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "fVar3 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(afStack_1014[0x3f2],afStack_1014[0x3f1]));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 95,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if (local_38._0_4_ < (float)-3.1415926535900001) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_38._0_4_ = local_38._0_4_ + 6.283185f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_38._0_4_ = local_38._0_4_ + 6.283185f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 98,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((float)3.1415926535900001 < local_38._0_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_38._0_4_ = local_38._0_4_ + -6.283185f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_38._0_4_ = local_38._0_4_ + -6.283185f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 101,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_28[1] = local_38._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(float *)((int)euler_angles",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)euler_angles + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(float *)((int)euler_angles",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)euler_angles + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesEntry_dtor_FUN_004bbcf0
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
         ;   XREF to: 004bbcf0 (UNCONDITIONAL_CALL)  ; char * * * core_fldnotes.cpp_SNotesEntry_dtor_FUN_004bbcf0(SNotesEntry * this_ptr)
     ADD ESP,0x8                         ; 004bbfb7
     PUSH EAX                            ; 004bbfba
-    CALL crt_unknown.c_FUN_005c0344     ; 004bbfbb
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 004bbfbb
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 004bbfc0
     JMP 0x004bbf7f                      ; 004bbfc3
         ;   XREF to: 004bbf7f (UNCONDITIONAL_JUMP)  ; LAB_004bbf7f

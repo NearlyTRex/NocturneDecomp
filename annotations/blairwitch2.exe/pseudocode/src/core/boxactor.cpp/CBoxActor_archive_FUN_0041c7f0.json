@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 110,
+    "complexity_score": 84,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 25,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 85,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 328
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 84,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 327
   },
   "cross_references": [
     {
@@ -96,8 +94,8 @@
   "globals": [
     {
       "addr": "005cc52d",
-      "name": "s_L_modelName_005cc52b+2",
-      "type": "undefined4",
+      "name": "s_modelName_005cc52d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -108,14 +106,14 @@
     },
     {
       "addr": "005cc546",
-      "name": "DAT_005cc546",
-      "type": "undefined4",
+      "name": "s_fps_005cc546",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cc54a",
-      "name": "DAT_005cc54a",
-      "type": "undefined4",
+      "name": "s_rpm_005cc54a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -370,38 +368,21 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005cc546",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->fps,&DAT_005cc546);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005cc54a",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->rpm,&DAT_005cc54a);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "005f3a24"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "00600e34"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "00601094"
       }

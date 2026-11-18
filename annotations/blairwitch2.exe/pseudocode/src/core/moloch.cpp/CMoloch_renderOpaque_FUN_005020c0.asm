@@ -7,19 +7,19 @@
 ; CMoloch *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa3d8
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01d1cdc8
+;   float g_FLOAT_005fa3d8 = 2
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0
 ;   core_morph.cpp_CMorph_render_FUN_005b76a0
 ;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_005b7150
-;   core_motion.cpp_FUN_005042e0
+;   core_motion.cpp_CMotionController_render_FUN_005042e0
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;
@@ -31,8 +31,8 @@ section .text
         ;   Label: core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0
     SUB ESP,0x30                        ; 005020c1
     MOV EBX,dword ptr [ESP + 0x38]      ; 005020c4
-    MOV EDX,dword ptr [0x0060b280]      ; 005020c8 | DAT_0060b280
-    PUSH EDX                            ; 005020ce | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 005020c8 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 005020ce | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80 ; 005020cf
         ;   XREF to: 0046bc80 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005020d4
@@ -61,8 +61,8 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 00502117
     PUSH EAX                            ; 0050211b
     MOVSD.REP ES:EDI,ESI                ; 0050211c
-    CALL core_box.cpp_FUN_0041a840      ; 0050211e
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 0050211e
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 00502123
     MOV EDI,EAX                         ; 00502126
     TEST EAX,EAX                        ; 00502128
@@ -90,7 +90,7 @@ section .text
     CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_005b7150 ; 0050216e
         ;   XREF to: 005b7150 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromDeformable_FUN_005b7150(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr, int part_index)
     FLD float ptr [EBX + 0x278fc]       ; 00502173
-    FDIV float ptr [0x005fa3d8]         ; 00502179 | DAT_005fa3d8
+    FDIV float ptr [0x005fa3d8]         ; 00502179 | g_FLOAT_005fa3d8
     ADD ESP,0x10                        ; 0050217f
     SUB ESP,0x4                         ; 00502182
     FSTP float ptr [ESP]                ; 00502185
@@ -98,12 +98,12 @@ section .text
     CALL core_morph.cpp_CMorph_render_FUN_005b76a0 ; 00502189
         ;   XREF to: 005b76a0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_render_FUN_005b76a0(CMorph * this_ptr, float morph_t)
     ADD ESP,0x8                         ; 0050218e
-    CMP dword ptr [0x01d1cdc8],0x0      ; 00502191 | DAT_01d1cdc8
+    CMP dword ptr [0x01d1cdc8],0x0      ; 00502191 | g_RenderMotionDebug
         ;   Label: LAB_00502191
     JZ 0x005021c9                       ; 00502198
         ;   XREF to: 005021c9 (CONDITIONAL_JUMP)  ; LAB_005021c9
-    MOV EAX,[0x0060b280]                ; 0050219a | DAT_0060b280
-    PUSH EAX                            ; 0050219f | DAT_01ba5c50
+    MOV EAX,[0x0060b280]                ; 0050219a | g_CDemonRenderer_PTR_0060b280
+    PUSH EAX                            ; 0050219f | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 005021a0
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005021a5
@@ -113,8 +113,8 @@ section .text
     PUSH EBX                            ; 005021ac
     LEA EAX,[EBX + 0x2b4]               ; 005021ad
     PUSH EAX                            ; 005021b3
-    CALL core_motion.cpp_FUN_005042e0   ; 005021b4
-        ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_005042e0 ; 005021b4
+        ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005021b9
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 005021bc
     PUSH EBX                            ; 005021c2

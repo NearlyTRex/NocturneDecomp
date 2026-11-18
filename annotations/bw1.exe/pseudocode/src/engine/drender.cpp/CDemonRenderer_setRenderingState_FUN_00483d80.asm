@@ -17,12 +17,12 @@
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_00463460 at 004635ca
 ;   core_dlight.cpp_CDemonLight_testVisibility_FUN_004665c0 at 004665f2
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0 at 004673df
-;   core_dpart.cpp_FUN_00479f60 at 00479f74
+;   core_dpart.cpp_CDemonPart_renderFaces_FUN_00479f60 at 00479f74
 ;   ... and 13 more
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70
-;   engine_prim.c_FUN_0053d7a0
+;   engine_prim.c_setCullingMode_FUN_0053d7a0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     JZ 0x00483dba                       ; 00483d91
         ;   XREF to: 00483dba (CONDITIONAL_JUMP)  ; LAB_00483dba
     PUSH 0x2                            ; 00483d93
-    CALL engine_prim.c_FUN_0053d7a0     ; 00483d95
-        ;   XREF to: 0053d7a0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_0053d7a0(int culling_mode)
+    CALL engine_prim.c_setCullingMode_FUN_0053d7a0 ; 00483d95
+        ;   XREF to: 0053d7a0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_setCullingMode_FUN_0053d7a0(int culling_mode)
         ;   Label: LAB_00483d95
     ADD ESP,0x4                         ; 00483d9a
     CMP dword ptr [ESP + 0xc],0x0       ; 00483d9d

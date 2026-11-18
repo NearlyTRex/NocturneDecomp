@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f8ed8
+;   float g_FLOAT_005f8ed8 = 0.5
 ;
 ; *****************************************************************************
 
@@ -50,7 +50,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005a7082
     MOVSD ES:EDI,ESI                    ; 005a7083
     MOVSD ES:EDI,ESI                    ; 005a7084
-    FLD float ptr [0x005f8ed8]          ; 005a7085 | DAT_005f8ed8
+    FLD float ptr [0x005f8ed8]          ; 005a7085 | g_FLOAT_005f8ed8
     FLD float ptr [ESP + 0x48]          ; 005a708b
     FMUL ST1                            ; 005a708f
     FLD float ptr [ESP + 0x4c]          ; 005a7091

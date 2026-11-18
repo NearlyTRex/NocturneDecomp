@@ -10,7 +10,7 @@ void __cdecl core_tentacle_cpp_staticInit_FUN_005951a0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CTentacleClassInfo,"?CTentacle" + 1,
+            (&g_CTentacleClassInfo,"CTentacle",
              core_tentacle_cpp_factoryFuncTentacle_FUN_005951d0,&g_CTentacleClassVersion,2,
              &g_CEnemyClassInfo);
   return;

@@ -7,12 +7,12 @@
 ; COutStreamFile * Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004bda10 at 004bdcf7
-;   core_game.cpp_FUN_004bdfb0 at 004be24b
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be24b
+;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bdcf7
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029f6
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamFileVTable = 00574850
+;   TerminatedCString g_COutStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_005744a0
@@ -26,7 +26,7 @@ section .text
     PUSH EDX                            ; 005747c4
     CALL support_trstream.cpp_COutStream_dtor_FUN_005744a0 ; 005747c5
         ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_005744a0(COutStream * this_ptr, uint flags)
-    MOV dword ptr [EAX],0x5e5b24        ; 005747ca | g_COutStreamFileVTable
+    MOV dword ptr [EAX],0x5e5b24        ; 005747ca | = "PHW"
     ADD ESP,0x4                         ; 005747d0
     MOV dword ptr [EAX + 0x4],0x0       ; 005747d3
     RET                                 ; 005747da

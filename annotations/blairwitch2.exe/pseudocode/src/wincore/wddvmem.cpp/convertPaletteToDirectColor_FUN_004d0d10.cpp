@@ -7,14 +7,13 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004d0eb5) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10(void)
 
 {
   byte *pbVar1;
-  byte *pbVar2;
-  byte *pbVar3;
+  int iVar2;
+  int iVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
@@ -22,46 +21,50 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10(void)
   int iVar8;
   uint uVar9;
   
-  if (DAT_006141c0 == 0x10) {
+  if (g_INT_006141c0 == 0x10) {
     iVar6 = 0;
     iVar5 = 0;
     do {
-      pbVar1 = &DAT_01c35838 + iVar6;
-      pbVar2 = &DAT_01c35839 + iVar6;
-      pbVar3 = &DAT_01c3583a + iVar6;
+      pbVar1 = g_UCHAR_ARRAY_01c35838 + iVar6;
+      iVar2 = iVar6 + 1;
+      iVar3 = iVar6 + 2;
       iVar8 = iVar5 + 2;
       iVar6 = iVar6 + 3;
-      *(ushort *)(&DAT_01c34910 + iVar5) =
-           (ushort)(*pbVar3 / _DAT_01c35830 << (DAT_01c3582c & 0x1f)) |
-           (ushort)(*pbVar1 / _DAT_01c35818 << (DAT_01c35814 & 0x1f)) |
-           (ushort)(*pbVar2 / _DAT_01c35824 << (DAT_01c35820 & 0x1f));
+      *(ushort *)((int)g_ColorTable16 + iVar5) =
+           (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar3] / (uint)g_BlueScaleFactor <<
+                   (g_BlueBitPosition.bytes[0] & 0x1f)) |
+           (ushort)((uint)*pbVar1 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
+           (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar2] / (uint)g_GreenScaleFactor <<
+                   (g_GreenBitPosition.bytes[0] & 0x1f));
       iVar5 = iVar8;
     } while (iVar8 != 0x200);
-    uVar4 = 0xff >> (DAT_01c3581c & 0x1f);
-    DAT_0061c8d0 = uVar4 << ((byte)_DAT_01c35814 & 0x1f);
-    uVar7 = 0xff >> (DAT_01c35828 & 0x1f);
-    DAT_0061c8d8 = uVar7 << ((byte)_DAT_01c35820 & 0x1f);
-    uVar9 = 0xff >> (DAT_01c35834 & 0x1f);
-    DAT_0061c8e0 = uVar9 << ((byte)_DAT_01c3582c & 0x1f);
-    _DAT_0061c8e8 = (uVar4 << (DAT_01c3581c & 0x1f)) << 0x10;
-    _DAT_0061c908 = (uVar7 << (DAT_01c35828 & 0x1f)) << 8;
-    _DAT_0061c970 = _DAT_01c35834;
-    _DAT_0061c930 = _DAT_01c3581c + _DAT_01c35828 + _DAT_01c35834;
-    _DAT_0061c928 = uVar9 << (DAT_01c35834 & 0x1f);
-    _DAT_0061c950 = _DAT_01c35828 + _DAT_01c35834;
+    uVar4 = 0xff >> (g_RedDitherShift.bytes[0] & 0x1f);
+    g_RedMask16.u32[0] = uVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
+    uVar7 = 0xff >> (g_GreenDitherShift.bytes[0] & 0x1f);
+    g_GreenMask16.u32[0] = uVar7 << (g_GreenBitPosition.bytes[0] & 0x1f);
+    uVar9 = 0xff >> (g_BlueDitherShift.bytes[0] & 0x1f);
+    g_BlueMask16.u32[0] = uVar9 << (g_BlueBitPosition.bytes[0] & 0x1f);
+    g_RedMask32._0_4_ = (uVar4 << (g_RedDitherShift.bytes[0] & 0x1f)) << 0x10;
+    g_GreenMask32._0_4_ = (uVar7 << (g_GreenDitherShift.bytes[0] & 0x1f)) << 8;
+    g_BlueBitShift._0_4_ = g_BlueDitherShift;
+    g_TotalDitherShift._0_4_ =
+         g_RedDitherShift.dword + g_GreenDitherShift.dword + g_BlueDitherShift.dword;
+    g_BlueMask32._0_4_ = uVar9 << (g_BlueDitherShift.bytes[0] & 0x1f);
+    g_GreenBlueDitherShift._0_4_ = g_GreenDitherShift.dword + g_BlueDitherShift.dword;
   }
-  if (DAT_006141c0 == 0x20) {
+  if (g_INT_006141c0 == 0x20) {
     iVar6 = 0;
     iVar5 = 0;
     do {
-      pbVar1 = &DAT_01c35839 + iVar6;
-      pbVar2 = &DAT_01c3583a + iVar6;
-      pbVar3 = &DAT_01c35838 + iVar6;
+      iVar2 = iVar6 + 1;
+      iVar3 = iVar6 + 2;
+      pbVar1 = g_UCHAR_ARRAY_01c35838 + iVar6;
       iVar8 = iVar5 + 4;
       iVar6 = iVar6 + 3;
-      *(uint *)(iVar5 + 0x1c34b10) =
-           (uint)*pbVar2 << (DAT_01c3582c & 0x1f) |
-           (uint)*pbVar1 << (DAT_01c35820 & 0x1f) | (uint)*pbVar3 << (DAT_01c35814 & 0x1f);
+      *(uint *)((int)g_ColorTable32 + iVar5) =
+           (uint)g_UCHAR_ARRAY_01c35838[iVar3] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           (uint)g_UCHAR_ARRAY_01c35838[iVar2] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (uint)*pbVar1 << (g_RedBitPosition.bytes[0] & 0x1f);
       iVar5 = iVar8;
     } while (iVar8 != 0x400);
   }

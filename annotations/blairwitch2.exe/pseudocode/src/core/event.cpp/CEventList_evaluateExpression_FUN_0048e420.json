@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 68,
+    "complexity_score": 43,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 83
@@ -75,25 +74,25 @@
     },
     {
       "addr": "01c3dd10",
-      "name": "DAT_01c3dd10",
-      "type": "undefined4",
+      "name": "g_EventErrorMessageBuffer",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01c3dd11",
-      "name": "DAT_01c3dd11",
+      "name": "g_EventErrorMessageBuffer+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c3dd12",
-      "name": "DAT_01c3dd12",
+      "name": "g_EventErrorMessageBuffer+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c3dd13",
-      "name": "DAT_01c3dd13",
+      "name": "g_EventErrorMessageBuffer+3",
       "type": "undefined4",
       "value": null
     }
@@ -213,22 +212,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01c3dd10",
-      "severity": "mild",
-      "text": "DAT_01c3dd10 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01c3dd10",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_01c3dd10;",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 17,

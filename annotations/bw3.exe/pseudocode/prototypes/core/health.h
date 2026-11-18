@@ -35,7 +35,7 @@ int __cdecl CHealthItem::renderOpaque(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_getBoundingBox_FUN_004d1fa0
 // Address: 004d1fa0
-CBoundingBox3D * __cdecl CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_health.cpp_CHealthItem_archive_FUN_004d1fe0
 // Address: 004d1fe0
@@ -49,17 +49,17 @@ ECollisionType __cdecl CHealthItem::getCollisionType(CHealthItem *this_ptr,SColl
 // Address: 004d2090
 int __cdecl CHealthItem::canPickup(CHealthItem *this_ptr,CDemonActor *picker);
 
-// Original: core_health.cpp_FUN_004d20c0
+// Original: core_health.cpp_CHealthItem_useItem_FUN_004d20c0
 // Address: 004d20c0
-undefined4 FUN_004d20c0(int param_1,int param_2);
+int __cdecl CHealthItem::useItem(CHealthItem *this_ptr,CCharacter *user);
 
 // Original: core_health.cpp_CHealthItem_onPickup_FUN_004d2130
 // Address: 004d2130
 void __cdecl CHealthItem::onPickup(CHealthItem *this_ptr,CDemonActor *owner);
 
-// Original: core_health.cpp_FUN_004d2150
+// Original: core_health.cpp_factoryFuncHealthItemSmall_FUN_004d2150
 // Address: 004d2150
-void FUN_004d2150(void);
+CHealthItemSmall * __cdecl factoryFuncHealthItemSmall(void);
 
 // Original: core_health.cpp_CHealthItemSmall_getActorType_FUN_004d2170
 // Address: 004d2170

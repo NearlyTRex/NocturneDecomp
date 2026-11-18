@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_setCharacterModel_FUN_0042b440(CCharacter *this_ptr,char *model_name,char *cloth_name)
 
 {
@@ -29,12 +27,12 @@ void __cdecl core_charactr_cpp_CCharacter_setCharacterModel_FUN_0042b440(CCharac
   this_ptr->mouth_frame = 0;
   this_ptr->mouth_timer = 0.0;
   this_ptr->is_blinking = 0;
-  fVar1 = _DAT_005f4088;
+  fVar1 = 6.0f;
   this_ptr->head_part_index = -2;
   (this_ptr->model).scale_factor = this_ptr->size_scale;
   this_ptr->blink_timer = fVar1;
   core_charactr_cpp_CCharacter_computeBoundingBox_FUN_00429390(this_ptr);
-  core_charactr_cpp_FUN_004247f0(this_ptr);
+  core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_004247f0(this_ptr);
   if (0 < (this_ptr->cloth_list).count) {
     core_cloth_cpp_CClothList_remove_FUN_005b1640(&this_ptr->cloth_list,0);
   }

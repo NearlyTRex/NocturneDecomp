@@ -11,14 +11,14 @@
 ; undefined        Stack[-0x108]:1  local_108
 ;
 ; XREF[2]:
-;   core_set.cpp_FUN_00532b80 at 00533820
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00533820
 ;   core_setutil.cpp_C3DSCamera_load_FUN_00541b70 at 00541d52
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_d_005ba08e
 ;   TerminatedCString s_f_f_f_005ba098
 ;   TerminatedCString s_f_f_005ba0a2
-;   undefined4 DAT_005ba0a9
+;   TerminatedCString s_f_005ba0a9
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgets_FUN_005a3f00
@@ -89,7 +89,7 @@ section .text
     ADD EBX,0x20                        ; 00450c9d
         ;   Label: LAB_00450c9d
     PUSH EBX                            ; 00450ca0
-    PUSH 0x5ba0a9                       ; 00450ca1 | DAT_005ba0a9
+    PUSH 0x5ba0a9                       ; 00450ca1 | = "%f\n"
     PUSH ESI                            ; 00450ca6
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00450ca7
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)

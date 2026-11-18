@@ -7,7 +7,7 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_CBip01_Head_005d45b4+1
+;   TerminatedCString s_Bip01_Head_005d45b5
 ;   TerminatedCString s_Bip01_L_ForeArm_005d45c0
 ;   TerminatedCString s_Bip01_R_ForeArm_005d45d0
 ;   TerminatedCString s_Bip01_L_UpperArm_005d45e0
@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a0510
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 00569f30 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041b95c
     PUSH 0x1                            ; 0041b95f
-    PUSH 0x5d45b5                       ; 0041b961 | s_CBip01_Head_005d45b4+1
+    PUSH 0x5d45b5                       ; 0041b961 | = "Bip01 Head"
     PUSH EAX                            ; 0041b966
     MOV EBX,EAX                         ; 0041b967
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041b969
@@ -60,60 +60,60 @@ section .text
     PUSH 0x1                            ; 0041b971
     PUSH 0x5d45c0                       ; 0041b973 | = "Bip01 L ForeArm"
     PUSH EBX                            ; 0041b978
-    MOV [0x007c4ff0],EAX                ; 0041b979 | DAT_007c4ff0
+    MOV [0x007c4ff0],EAX                ; 0041b979 | g_INT_ARRAY_007c4ff0
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041b97e
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041b983
     PUSH 0x1                            ; 0041b986
     PUSH 0x5d45d0                       ; 0041b988 | = "Bip01 R ForeArm"
     PUSH EBX                            ; 0041b98d
-    MOV [0x007c4ffc],EAX                ; 0041b98e | DAT_007c4ffc
+    MOV [0x007c4ffc],EAX                ; 0041b98e | g_INT_ARRAY_007c4ff0[3]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041b993
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041b998
     PUSH 0x1                            ; 0041b99b
     PUSH 0x5d45e0                       ; 0041b99d | = "Bip01 L UpperArm"
     PUSH EBX                            ; 0041b9a2
-    MOV [0x007c5000],EAX                ; 0041b9a3 | DAT_007c5000
+    MOV [0x007c5000],EAX                ; 0041b9a3 | g_INT_ARRAY_007c4ff0[4]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041b9a8
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041b9ad
     PUSH 0x1                            ; 0041b9b0
     PUSH 0x5d45f1                       ; 0041b9b2 | = "Bip01 R UpperArm"
     PUSH EBX                            ; 0041b9b7
-    MOV [0x007c5004],EAX                ; 0041b9b8 | DAT_007c5004
+    MOV [0x007c5004],EAX                ; 0041b9b8 | g_INT_ARRAY_007c4ff0[5]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041b9bd
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041b9c2
     PUSH 0x1                            ; 0041b9c5
     PUSH 0x5d4602                       ; 0041b9c7 | = "Bip01 L Foot"
     PUSH EBX                            ; 0041b9cc
-    MOV [0x007c5008],EAX                ; 0041b9cd | DAT_007c5008
+    MOV [0x007c5008],EAX                ; 0041b9cd | g_INT_ARRAY_007c4ff0[6]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041b9d2
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041b9d7
     PUSH 0x1                            ; 0041b9da
     PUSH 0x5d460f                       ; 0041b9dc | = "Bip01 R Foot"
     PUSH EBX                            ; 0041b9e1
-    MOV [0x007c500c],EAX                ; 0041b9e2 | DAT_007c500c
+    MOV [0x007c500c],EAX                ; 0041b9e2 | g_INT_ARRAY_007c4ff0[7]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041b9e7
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041b9ec
     PUSH 0x1                            ; 0041b9ef
     PUSH 0x5d461c                       ; 0041b9f1 | = "Bip01 L Hand"
     PUSH EBX                            ; 0041b9f6
-    MOV [0x007c5010],EAX                ; 0041b9f7 | DAT_007c5010
+    MOV [0x007c5010],EAX                ; 0041b9f7 | g_INT_ARRAY_007c4ff0[8]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041b9fc
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041ba01
     PUSH 0x1                            ; 0041ba04
     PUSH 0x5d4629                       ; 0041ba06 | = "Bip01 R Hand"
     PUSH EBX                            ; 0041ba0b
-    MOV [0x007c4ff4],EAX                ; 0041ba0c | DAT_007c4ff4
+    MOV [0x007c4ff4],EAX                ; 0041ba0c | g_INT_ARRAY_007c4ff0[1]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041ba11
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041ba16
-    MOV [0x007c4ff8],EAX                ; 0041ba19 | DAT_007c4ff8
+    MOV [0x007c4ff8],EAX                ; 0041ba19 | g_INT_ARRAY_007c4ff0[2]
     PUSH 0x1                            ; 0041ba1e
     PUSH 0x5d4636                       ; 0041ba20 | = "Bip01 Spine"
     PUSH EBX                            ; 0041ba25
@@ -123,47 +123,47 @@ section .text
     PUSH 0x1                            ; 0041ba2e
     PUSH 0x5d4642                       ; 0041ba30 | = "Bip01 Spine2"
     PUSH EBX                            ; 0041ba35
-    MOV [0x007c5014],EAX                ; 0041ba36 | DAT_007c5014
+    MOV [0x007c5014],EAX                ; 0041ba36 | g_INT_ARRAY_007c4ff0[9]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041ba3b
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041ba40
     PUSH 0x1                            ; 0041ba43
     PUSH 0x5d464f                       ; 0041ba45 | = "Bip01 Head"
     PUSH EBX                            ; 0041ba4a
-    MOV [0x007c5018],EAX                ; 0041ba4b | DAT_007c5018
+    MOV [0x007c5018],EAX                ; 0041ba4b | g_INT_ARRAY_007c4ff0[10]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041ba50
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041ba55
     PUSH 0x1                            ; 0041ba58
     PUSH 0x5d465a                       ; 0041ba5a | = "Bip01 L UpperArm"
     PUSH EBX                            ; 0041ba5f
-    MOV [0x007c4ff0],EAX                ; 0041ba60 | DAT_007c4ff0
+    MOV [0x007c4ff0],EAX                ; 0041ba60 | g_INT_ARRAY_007c4ff0
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041ba65
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041ba6a
     PUSH 0x1                            ; 0041ba6d
     PUSH 0x5d466b                       ; 0041ba6f | = "Bip01 R UpperArm"
     PUSH EBX                            ; 0041ba74
-    MOV [0x007c5004],EAX                ; 0041ba75 | DAT_007c5004
+    MOV [0x007c5004],EAX                ; 0041ba75 | g_INT_ARRAY_007c4ff0[5]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041ba7a
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041ba7f
     PUSH 0x1                            ; 0041ba82
     PUSH 0x5d467c                       ; 0041ba84 | = "Bip01 Spine"
     PUSH EBX                            ; 0041ba89
-    MOV [0x007c5008],EAX                ; 0041ba8a | DAT_007c5008
+    MOV [0x007c5008],EAX                ; 0041ba8a | g_INT_ARRAY_007c4ff0[6]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041ba8f
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041ba94
     PUSH 0x1                            ; 0041ba97
     PUSH 0x5d4688                       ; 0041ba99 | = "Bip01 Spine2"
     PUSH EBX                            ; 0041ba9e
-    MOV [0x007c5014],EAX                ; 0041ba9f | DAT_007c5014
+    MOV [0x007c5014],EAX                ; 0041ba9f | g_INT_ARRAY_007c4ff0[9]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0041baa4
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0041baa9
     PUSH EDI                            ; 0041baac
-    MOV [0x007c5018],EAX                ; 0041baad | DAT_007c5018
+    MOV [0x007c5018],EAX                ; 0041baad | g_INT_ARRAY_007c4ff0[10]
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0 ; 0041bab2
         ;   XREF to: 00569eb0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(CDeformableModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0xc00]     ; 0041bab7
@@ -172,10 +172,10 @@ section .text
     CMP EAX,0x14                        ; 0041bac6
     JG 0x0041baf8                       ; 0041bac9
         ;   XREF to: 0041baf8 (CONDITIONAL_JUMP)  ; LAB_0041baf8
-    MOV EAX,[0x007c4ff4]                ; 0041bacb | DAT_007c4ff4
+    MOV EAX,[0x007c4ff4]                ; 0041bacb | g_INT_ARRAY_007c4ff0[1]
         ;   Label: LAB_0041bacb
     MOV dword ptr [ESI + 0x25a8],EAX    ; 0041bad0
-    MOV EAX,[0x007c4ff8]                ; 0041bad6 | DAT_007c4ff8
+    MOV EAX,[0x007c4ff8]                ; 0041bad6 | g_INT_ARRAY_007c4ff0[2]
     PUSH ESI                            ; 0041badb
     MOV dword ptr [ESI + 0x2620],EAX    ; 0041badc
     CALL core_enemy.cpp_CEnemy_setup_FUN_004a0510 ; 0041bae2
@@ -190,10 +190,10 @@ section .text
         ;   Label: LAB_0041baf8
     MOV EBX,0x130                       ; 0041bafd
     PUSH 0x5d46a9                       ; 0041bb02 | = "CBoneGuy::explode - Not enough contai..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0041bb07 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0041bb0d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0041bb13
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0041bb07 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 0041bb0d | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0041bb13
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0041bb18
     JMP 0x0041bacb                      ; 0041bb1b
         ;   XREF to: 0041bacb (UNCONDITIONAL_JUMP)  ; LAB_0041bacb

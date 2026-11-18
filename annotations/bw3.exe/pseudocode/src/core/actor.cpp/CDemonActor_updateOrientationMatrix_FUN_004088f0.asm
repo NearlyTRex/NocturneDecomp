@@ -18,7 +18,7 @@
 ;   core_bodypart.cpp_createBodyPart_FUN_00414550 at 004145d1
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f5e9
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00420290 at 004202ca
-;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10 at 00431ef9
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 at 0042c8b4
 ;   ... and 15 more
 ;
 ; Called Functions:

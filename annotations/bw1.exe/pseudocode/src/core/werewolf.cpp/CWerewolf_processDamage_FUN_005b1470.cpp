@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -17,7 +15,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
   uint uVar3;
   int iVar4;
   byte bVar5;
-  uint auStackY_1018 [1009];
+  float afStackY_1018 [1009];
+  CVector3f CStack_30;
   CVector3f CStack_24;
   
   bVar5 = 0;
@@ -30,17 +29,19 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
     return;
   }
   if (damage_info->ammo_type == AMMO_TYPE_SILVER) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005f9bd2;
-    core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
+    damage_info->damage_amount = damage_info->damage_amount * (float)2;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_30);
     iVar4 = 0;
+    CStack_24.x = CStack_30.x;
     *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + 4) =
-         *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);
+         *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4);
     *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+         *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (0x01C57074,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -54,8 +55,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
       if ((this_ptr->type == WEREWOLF_TYPE_TRAIN) && (g_CDemonSetPtr->last_switch_area_invalid != 0)
          ) {
         fVar1 = (this_ptr->base).base.base.location.position.x;
-        if (fVar1 <= (float)_DAT_005f9bda) {
-          if ((double)fVar1 < _DAT_005f9be2) {
+        if (fVar1 <= (float)5) {
+          if ((double)fVar1 < -5) {
             (this_ptr->base).base.base.orient.vec.y = 1.5707964;
           }
         }

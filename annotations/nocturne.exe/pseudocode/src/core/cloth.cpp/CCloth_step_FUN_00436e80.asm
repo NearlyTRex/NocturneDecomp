@@ -122,8 +122,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057ae25 = 9999
 ;   double DOUBLE_0057ae2d = 0.0100000000000000
-;   undefined4 DAT_0057ae35
-;   undefined4 DAT_0059b360
+;   double g_DOUBLE_0057ae35 = -1
+;   float g_FLOAT_0059b360 = 256
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
@@ -430,7 +430,7 @@ section .text
     FLD float ptr [ESP]                 ; 004372a1
         ;   Label: LAB_004372a1
     MOV EAX,[0x005be368]                ; 004372a4 | g_CDemonSetPtr
-    FMUL double ptr [0x0057ae35]        ; 004372a9 | DAT_0057ae35
+    FMUL double ptr [0x0057ae35]        ; 004372a9 | g_DOUBLE_0057ae35
     FLD float ptr [EAX + 0x15a878]      ; 004372af | g_CDemonSetInstance.active_fog.scroll.x
     FXCH                                ; 004372b5
     FSTP float ptr [ESP]                ; 004372b7
@@ -761,13 +761,13 @@ section .text
     ADD EBX,EDX                         ; 00437768
     INC ECX                             ; 0043776a
     FLD float ptr [EAX]                 ; 0043776b
-    FMUL float ptr [0x0059b360]         ; 0043776d | DAT_0059b360
+    FMUL float ptr [0x0059b360]         ; 0043776d | g_FLOAT_0059b360
     FISTP dword ptr [EBX]               ; 00437773
     FLD float ptr [EAX + 0x4]           ; 00437775
-    FMUL float ptr [0x0059b360]         ; 00437778 | DAT_0059b360
+    FMUL float ptr [0x0059b360]         ; 00437778 | g_FLOAT_0059b360
     FISTP dword ptr [EBX + 0x4]         ; 0043777e
     FLD float ptr [EAX + 0x8]           ; 00437781
-    FMUL float ptr [0x0059b360]         ; 00437784 | DAT_0059b360
+    FMUL float ptr [0x0059b360]         ; 00437784 | g_FLOAT_0059b360
     FISTP dword ptr [EBX + 0x8]         ; 0043778a
     ADD ESI,0x11c                       ; 0043778d
     MOV EBX,dword ptr [EDI + 0x104]     ; 00437793

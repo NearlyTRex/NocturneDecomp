@@ -34,21 +34,21 @@
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 at 00491984
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9250
-;   undefined1 DAT_005b9258
-;   undefined1 DAT_005b9259
-;   undefined1 DAT_005b925a
-;   undefined1 DAT_005b925b
-;   undefined4 DAT_006af554
-;   undefined4 DAT_006af558
-;   undefined4 DAT_006af55c
-;   undefined4 DAT_006af560
-;   undefined4 DAT_006af56c
-;   undefined4 DAT_006af570
-;   undefined4 DAT_006af574
-;   undefined4 DAT_006af578
-;   undefined4 DAT_006af57c
-;   undefined4 DAT_006af584
+;   SMRGLTextureBasic g_FontTextureInfo
+;   undefined4 g_FontTextureInfo.texture_name[0]
+;   undefined4 g_FontTextureInfo.texture_name[1]
+;   undefined4 g_FontTextureInfo.texture_name[2]
+;   undefined4 g_FontTextureInfo.texture_name[3]
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_z
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.inv_z
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].v
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].r
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].g
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19996].b
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19997].projected_vertex.transformed_x
 ;   ... and 21 more
 ;
 ; Called Functions:
@@ -77,25 +77,25 @@ section .text
     ADD ECX,EAX                         ; 00491215
     LEA ESI,[EDX + 0x4]                 ; 00491217
     SHL ECX,0x4                         ; 0049121a
-    MOV EDI,0x5b9258                    ; 0049121d | DAT_005b9258
+    MOV EDI,0x5b9258                    ; 0049121d | g_FontTextureInfo.texture_name[0]
     ADD ESI,ECX                         ; 00491222
-    PUSH EDI                            ; 00491224 | DAT_005b9258
+    PUSH EDI                            ; 00491224 | g_FontTextureInfo.texture_name[0]
     MOV AL,byte ptr [ESI]               ; 00491225
         ;   Label: LAB_00491225
-    MOV byte ptr [EDI],AL               ; 00491227 | DAT_005b9258 | DAT_005b925a
+    MOV byte ptr [EDI],AL               ; 00491227 | g_FontTextureInfo.texture_name[0] | g_FontTextureInfo.texture_name[2]
     CMP AL,0x0                          ; 00491229
     JZ 0x0049123d                       ; 0049122b
         ;   XREF to: 0049123d (CONDITIONAL_JUMP)  ; LAB_0049123d
     MOV AL,byte ptr [ESI + 0x1]         ; 0049122d
     ADD ESI,0x2                         ; 00491230
-    MOV byte ptr [EDI + 0x1],AL         ; 00491233 | DAT_005b9259 | DAT_005b925b
+    MOV byte ptr [EDI + 0x1],AL         ; 00491233 | g_FontTextureInfo.texture_name[1] | g_FontTextureInfo.texture_name[3]
     ADD EDI,0x2                         ; 00491236
     CMP AL,0x0                          ; 00491239
     JNZ 0x00491225                      ; 0049123b
         ;   XREF to: 00491225 (CONDITIONAL_JUMP)  ; LAB_00491225
     POP EDI                             ; 0049123d
         ;   Label: LAB_0049123d
-    PUSH 0x5b9250                       ; 0049123e | DAT_005b9250
+    PUSH 0x5b9250                       ; 0049123e | g_FontTextureInfo
     MOV EBP,0x4e1e                      ; 00491243
     MOV ESI,0x4e1d                      ; 00491248
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 0049124d
@@ -118,16 +118,16 @@ section .text
     XOR EAX,EBX                         ; 00491287
     MOV AL,byte ptr [ECX + 0x1c00648]   ; 00491289 | g_SourcePaletteData
     SHL EAX,0x8                         ; 0049128f
-    MOV [0x006af574],EAX                ; 00491292 | DAT_006af574
+    MOV [0x006af574],EAX                ; 00491292 | g_SRenderVertex_ARRAY_005c5014[19996].r
     XOR EAX,EAX                         ; 00491297
     MOV AL,byte ptr [ECX + 0x1c00649]   ; 00491299
     SHL EAX,0x8                         ; 0049129f
-    MOV [0x006af578],EAX                ; 004912a2 | DAT_006af578
+    MOV [0x006af578],EAX                ; 004912a2 | g_SRenderVertex_ARRAY_005c5014[19996].g
     XOR EAX,EAX                         ; 004912a7
     MOV AL,byte ptr [ECX + 0x1c0064a]   ; 004912a9
     SHL EAX,0x8                         ; 004912af
         ;   Label: LAB_004912af
-    MOV [0x006af57c],EAX                ; 004912b2 | DAT_006af57c
+    MOV [0x006af57c],EAX                ; 004912b2 | g_SRenderVertex_ARRAY_005c5014[19996].b
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004912b7
         ;   Label: LAB_004912b7
     LEA ECX,[EAX*0x4 + 0x0]             ; 004912bb
@@ -138,31 +138,31 @@ section .text
     LEA ESI,[EDX*0x4 + 0x0]             ; 004912cf
     SHL EAX,0x4                         ; 004912d6
     SUB ESI,EDX                         ; 004912d9
-    MOV dword ptr [EAX + 0x5c501c],EBX  ; 004912db | DAT_006af55c
+    MOV dword ptr [EAX + 0x5c501c],EBX  ; 004912db | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_z
     SHL ESI,0x4                         ; 004912e1
-    MOV dword ptr [EAX + 0x5c5020],EBX  ; 004912e4 | DAT_006af560
+    MOV dword ptr [EAX + 0x5c5020],EBX  ; 004912e4 | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.inv_z
     MOV ECX,0xc                         ; 004912ea
-    LEA EDI,[ESI + 0x5c5014]            ; 004912ef | DAT_006af584
-    LEA ESI,[EAX + 0x5c5014]            ; 004912f5 | DAT_006af554
-    MOVSD.REP ES:EDI,ESI                ; 004912fb | DAT_006af554 | DAT_006af584 | DAT_006af558
+    LEA EDI,[ESI + 0x5c5014]            ; 004912ef | g_SRenderVertex_ARRAY_005c5014[19997].projected_vertex.transformed_x
+    LEA ESI,[EAX + 0x5c5014]            ; 004912f5 | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x
+    MOVSD.REP ES:EDI,ESI                ; 004912fb | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[19997].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_y
     LEA ESI,[EBP*0x4 + 0x0]             ; 004912fd
     SUB ESI,EBP                         ; 00491304
     SHL ESI,0x4                         ; 00491306
     MOV ECX,0xc                         ; 00491309
-    LEA EDI,[ESI + 0x5c5014]            ; 0049130e | DAT_006af5b4
-    LEA ESI,[EAX + 0x5c5014]            ; 00491314 | DAT_006af554
+    LEA EDI,[ESI + 0x5c5014]            ; 0049130e | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_x
+    LEA ESI,[EAX + 0x5c5014]            ; 00491314 | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x
     MOV EDX,dword ptr [ESP + 0x38]      ; 0049131a
-    MOVSD.REP ES:EDI,ESI                ; 0049131e | DAT_006af554 | DAT_006af5b4 | DAT_006af558
+    MOVSD.REP ES:EDI,ESI                ; 0049131e | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_y
     LEA ESI,[EDX*0x4 + 0x0]             ; 00491320
     MOV ECX,0xc                         ; 00491327
     SUB ESI,EDX                         ; 0049132c
     MOV EDX,dword ptr [ESP + 0x6c]      ; 0049132e
     SHL ESI,0x4                         ; 00491332
     INC EDX                             ; 00491335
-    LEA EDI,[ESI + 0x5c5014]            ; 00491336 | DAT_006af5e4
-    LEA ESI,[EAX + 0x5c5014]            ; 0049133c | DAT_006af554
+    LEA EDI,[ESI + 0x5c5014]            ; 00491336 | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_x
+    LEA ESI,[EAX + 0x5c5014]            ; 0049133c | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x
     MOV dword ptr [ESP + 0x6c],EDX      ; 00491342
-    MOVSD.REP ES:EDI,ESI                ; 00491346 | DAT_006af554 | DAT_006af5e4 | DAT_006af558
+    MOVSD.REP ES:EDI,ESI                ; 00491346 | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_y
     MOV EAX,dword ptr [ESP + 0x60]      ; 00491348
     MOV EDI,dword ptr [ESP + 0x68]      ; 0049134c
     MOV ECX,dword ptr [0x01c02594]      ; 00491350 | g_UseExternalRenderer
@@ -197,7 +197,7 @@ section .text
     SUB ECX,EDX                         ; 004913bb
     SHL ECX,0x4                         ; 004913bd
     MOV EDX,dword ptr [0x01c00c54]      ; 004913c0 | g_Projection.center_y_fixed
-    MOV dword ptr [ECX + 0x5c5014],EAX  ; 004913c6 | DAT_006af554
+    MOV dword ptr [ECX + 0x5c5014],EAX  ; 004913c6 | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_x
     MOV EAX,dword ptr [ESP + 0x30]      ; 004913cc
     MOV EBX,dword ptr [0x01c00c4c]      ; 004913d0 | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 004913d6
@@ -205,7 +205,7 @@ section .text
     IMUL EDX                            ; 004913dd
     IDIV EBX                            ; 004913df
     MOV EDX,0x10000                     ; 004913e1
-    MOV dword ptr [ECX + 0x5c5018],EAX  ; 004913e6 | DAT_006af558
+    MOV dword ptr [ECX + 0x5c5018],EAX  ; 004913e6 | g_SRenderVertex_ARRAY_005c5014[19996].projected_vertex.transformed_y
     MOV ECX,dword ptr [0x01c00c50]      ; 004913ec | g_Projection.center_x_fixed
     MOV EAX,ESI                         ; 004913f2
     MOV EBX,dword ptr [0x01c00c48]      ; 004913f4 | g_Projection
@@ -218,14 +218,14 @@ section .text
     SUB ECX,EAX                         ; 0049140d
     SHL ECX,0x4                         ; 0049140f
     MOV EAX,dword ptr [ESP + 0x30]      ; 00491412
-    MOV dword ptr [ECX + 0x5c5014],EDX  ; 00491416 | DAT_006af584
+    MOV dword ptr [ECX + 0x5c5014],EDX  ; 00491416 | g_SRenderVertex_ARRAY_005c5014[19997].projected_vertex.transformed_x
     MOV EDX,dword ptr [0x01c00c54]      ; 0049141c | g_Projection.center_y_fixed
     MOV EBX,dword ptr [0x01c00c4c]      ; 00491422 | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 00491428
     MOV EDX,0x10000                     ; 0049142a
     IMUL EDX                            ; 0049142f
     IDIV EBX                            ; 00491431
-    MOV dword ptr [ECX + 0x5c5018],EAX  ; 00491433 | DAT_006af588
+    MOV dword ptr [ECX + 0x5c5018],EAX  ; 00491433 | g_SRenderVertex_ARRAY_005c5014[19997].projected_vertex.transformed_y
     MOV ECX,dword ptr [0x01c00c50]      ; 00491439 | g_Projection.center_x_fixed
     MOV EAX,ESI                         ; 0049143f
     MOV EDX,0x10000                     ; 00491441
@@ -237,7 +237,7 @@ section .text
     IDIV EBX                            ; 00491459
     SHL ECX,0x4                         ; 0049145b
     MOV EDX,dword ptr [0x01c00c54]      ; 0049145e | g_Projection.center_y_fixed
-    MOV dword ptr [ECX + 0x5c5014],EAX  ; 00491464 | DAT_006af5b4
+    MOV dword ptr [ECX + 0x5c5014],EAX  ; 00491464 | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_x
     MOV EAX,EDI                         ; 0049146a
     MOV EBX,dword ptr [0x01c00c4c]      ; 0049146c | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 00491472
@@ -245,7 +245,7 @@ section .text
     IMUL EDX                            ; 00491479
     IDIV EBX                            ; 0049147b
     MOV EDX,0x10000                     ; 0049147d
-    MOV dword ptr [ECX + 0x5c5018],EAX  ; 00491482 | DAT_006af5b8
+    MOV dword ptr [ECX + 0x5c5018],EAX  ; 00491482 | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_y
     MOV EAX,dword ptr [ESP + 0x34]      ; 00491488
     MOV ECX,dword ptr [0x01c00c50]      ; 0049148c | g_Projection.center_x_fixed
     MOV EBX,dword ptr [0x01c00c48]      ; 00491492 | g_Projection
@@ -256,7 +256,7 @@ section .text
     LEA ECX,[EDX*0x4 + 0x0]             ; 004914a2
     SUB ECX,EDX                         ; 004914a9
     SHL ECX,0x4                         ; 004914ab
-    MOV dword ptr [ECX + 0x5c5014],EAX  ; 004914ae | DAT_006af5e4
+    MOV dword ptr [ECX + 0x5c5014],EAX  ; 004914ae | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_x
     MOV EDX,dword ptr [0x01c00c54]      ; 004914b4 | g_Projection.center_y_fixed
     MOV EAX,EDI                         ; 004914ba
     MOV EBX,dword ptr [0x01c00c4c]      ; 004914bc | g_Projection.neg_half_height_fixed
@@ -264,7 +264,7 @@ section .text
     MOV EDX,0x10000                     ; 004914c4
     IMUL EDX                            ; 004914c9
     IDIV EBX                            ; 004914cb
-    MOV dword ptr [ECX + 0x5c5018],EAX  ; 004914cd | DAT_006af5e8
+    MOV dword ptr [ECX + 0x5c5018],EAX  ; 004914cd | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_y
     MOV ECX,dword ptr [ESP + 0x3c]      ; 004914d3
     PUSH ECX                            ; 004914d7
     CALL engine_matrix.c_projectCachedPoint_FUN_004cd240 ; 004914d8
@@ -328,34 +328,34 @@ section .text
     SHL ECX,0x2                         ; 00491590
     SUB ECX,EDI                         ; 00491593
     SHL ECX,0x4                         ; 00491595
-    MOV dword ptr [ECX + 0x5c502c],EBX  ; 00491598 | DAT_006af56c
-    MOV dword ptr [ECX + 0x5c5030],EDX  ; 0049159e | DAT_006af570
+    MOV dword ptr [ECX + 0x5c502c],EBX  ; 00491598 | g_SRenderVertex_ARRAY_005c5014[19996].u
+    MOV dword ptr [ECX + 0x5c5030],EDX  ; 0049159e | g_SRenderVertex_ARRAY_005c5014[19996].v
     MOV ECX,dword ptr [ESP + 0x40]      ; 004915a4
     MOV dword ptr [ESP + 0x2c],ECX      ; 004915a8
     MOV EDI,dword ptr [ESP + 0x2c]      ; 004915ac
     SHL ECX,0x2                         ; 004915b0
     SUB ECX,EDI                         ; 004915b3
     SHL ECX,0x4                         ; 004915b5
-    MOV dword ptr [ECX + 0x5c502c],EAX  ; 004915b8 | DAT_006af59c
-    MOV dword ptr [ECX + 0x5c5030],EDX  ; 004915be | DAT_006af5a0
+    MOV dword ptr [ECX + 0x5c502c],EAX  ; 004915b8 | g_SRenderVertex_ARRAY_005c5014[19997].u
+    MOV dword ptr [ECX + 0x5c5030],EDX  ; 004915be | g_SRenderVertex_ARRAY_005c5014[19997].v
     MOV EDX,EBP                         ; 004915c4
     LEA ECX,[EBP*0x4 + 0x0]             ; 004915c6
     SUB ECX,EBP                         ; 004915cd
     PUSH 0xffff                         ; 004915cf
     SHL ECX,0x4                         ; 004915d4
     MOV dword ptr [ESP + 0x24],EBP      ; 004915d7
-    MOV dword ptr [ECX + 0x5c502c],EAX  ; 004915db | DAT_006af5cc
+    MOV dword ptr [ECX + 0x5c502c],EAX  ; 004915db | g_SRenderVertex_ARRAY_005c5014[19998].u
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004915e1
-    MOV dword ptr [ECX + 0x5c5030],ESI  ; 004915e5 | DAT_006af5d0
+    MOV dword ptr [ECX + 0x5c5030],ESI  ; 004915e5 | g_SRenderVertex_ARRAY_005c5014[19998].v
     LEA ECX,[EAX*0x4 + 0x0]             ; 004915eb
     XOR EDX,EBP                         ; 004915f2
     SUB ECX,EAX                         ; 004915f4
     MOV dword ptr [ESP + 0x18],EDX      ; 004915f6
     SHL ECX,0x4                         ; 004915fa
     MOV EAX,0x4                         ; 004915fd
-    MOV dword ptr [ECX + 0x5c502c],EBX  ; 00491602 | DAT_006af5fc
+    MOV dword ptr [ECX + 0x5c502c],EBX  ; 00491602 | g_SRenderVertex_ARRAY_005c5014[19999].u
     MOV dword ptr [ESP + 0x8],EAX       ; 00491608
-    MOV dword ptr [ECX + 0x5c5030],ESI  ; 0049160c | DAT_006af600
+    MOV dword ptr [ECX + 0x5c5030],ESI  ; 0049160c | g_SRenderVertex_ARRAY_005c5014[19999].v
     XOR ECX,ECX                         ; 00491612
     MOV EAX,dword ptr [ESP + 0x40]      ; 00491614
     MOV dword ptr [ESP + 0x14],ECX      ; 00491618
@@ -387,21 +387,21 @@ section .text
     POP ESI                             ; 00491663
     POP EBX                             ; 00491664
     RET                                 ; 00491665
-    MOV EAX,[0x01c70f64]                ; 00491666 | DAT_01c70f64
+    MOV EAX,[0x01c70f64]                ; 00491666 | g_ShadowColorRed
         ;   Label: LAB_00491666
     SHL EAX,0x8                         ; 0049166b
-    MOV [0x006af574],EAX                ; 0049166e | DAT_006af574
-    MOV EAX,[0x01c70f68]                ; 00491673 | DAT_01c70f68
+    MOV [0x006af574],EAX                ; 0049166e | g_SRenderVertex_ARRAY_005c5014[19996].r
+    MOV EAX,[0x01c70f68]                ; 00491673 | g_ShadowColorGreen
     SHL EAX,0x8                         ; 00491678
-    MOV [0x006af578],EAX                ; 0049167b | DAT_006af578
-    MOV EAX,[0x01c70f6c]                ; 00491680 | DAT_01c70f6c
+    MOV [0x006af578],EAX                ; 0049167b | g_SRenderVertex_ARRAY_005c5014[19996].g
+    MOV EAX,[0x01c70f6c]                ; 00491680 | g_ShadowColorBlue
     JMP 0x004912af                      ; 00491685
         ;   XREF to: 004912af (UNCONDITIONAL_JUMP)  ; LAB_004912af
     MOV EAX,0xffff                      ; 0049168a
         ;   Label: LAB_0049168a
-    MOV [0x006af578],EAX                ; 0049168f | DAT_006af578
-    MOV [0x006af57c],EAX                ; 00491694 | DAT_006af57c
-    MOV [0x006af574],EAX                ; 00491699 | DAT_006af574
+    MOV [0x006af578],EAX                ; 0049168f | g_SRenderVertex_ARRAY_005c5014[19996].g
+    MOV [0x006af57c],EAX                ; 00491694 | g_SRenderVertex_ARRAY_005c5014[19996].b
+    MOV [0x006af574],EAX                ; 00491699 | g_SRenderVertex_ARRAY_005c5014[19996].r
     JMP 0x004912b7                      ; 0049169e
         ;   XREF to: 004912b7 (UNCONDITIONAL_JUMP)  ; LAB_004912b7
     ADD EDI,0x8000                      ; 004916a3

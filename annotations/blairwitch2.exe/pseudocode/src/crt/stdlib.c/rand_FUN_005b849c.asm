@@ -14,7 +14,7 @@
 ;   core_boxactor.cpp_CLightActor_process_FUN_0041d020 at 0041d0fa
 ;   core_bride.cpp_CBride_processDismemberment_FUN_0041e8a0 at 0041e8c3
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 0042679a
-;   core_charactr.cpp_FUN_004247f0 at 00424934
+;   core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0 at 00424934
 ;   ... and 27 more
 ;
 ; Called Functions:

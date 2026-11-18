@@ -4,6 +4,10 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x5C0000
 // =============================================================================
 
+// char
+char g_CHAR_005cc972 = '\0';
+char g_CHAR_005cfe17 = '\0';
+
 // dword
 dword DWORD_005c8000 = 0x1C80B4;
 dword DAT_005C8004 = 0;
@@ -22,9 +26,6 @@ dword DAT_005C807C = 0;
 dword DAT_005C8080 = 0;
 dword DAT_005C8090 = 0;
 dword DAT_005C8094 = 0;
-
-// undefined1
-undefined1 DAT_005ca432 = 0x00;
 
 // undefined1*
 undefined1* switchdataD_005c5088 = (undefined1*)0x005C50EB; // caseD_1

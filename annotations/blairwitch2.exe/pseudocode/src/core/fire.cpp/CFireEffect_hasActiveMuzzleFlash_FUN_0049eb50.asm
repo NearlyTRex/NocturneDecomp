@@ -7,11 +7,11 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_set.cpp_FUN_0052fad0 at 0052fd6e
-;   core_set.cpp_FUN_0052fea0 at 0053012f
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 at 0052fd6e
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0 at 0053012f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c85ffc
+;   CMuzzleFlash g_CMuzzleFlash_01c85ffc
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
 
     PUSH EBX                            ; 0049eb50
         ;   Label: core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50
-    MOV EDX,dword ptr [0x01c85ffc]      ; 0049eb51 | DAT_01c85ffc
+    MOV EDX,dword ptr [0x01c85ffc]      ; 0049eb51 | g_CMuzzleFlash_01c85ffc
     XOR EAX,EAX                         ; 0049eb57
     CMP EDX,0x1                         ; 0049eb59
     JZ 0x0049eb7c                       ; 0049eb5c

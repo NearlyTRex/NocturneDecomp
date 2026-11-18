@@ -35,24 +35,24 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 at 0052d809
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e7ca
-;   core_set.cpp_FUN_0052d3c0 at 0052d809
 ;
 ; Referenced Globals:
-;   undefined4 s_movscrn_raw_005ce3d5+1
+;   TerminatedCString s_movscrn_raw_005ce3d6
 ;   TerminatedCString s_core_dcamera_cpp_005ce3e2
 ;   TerminatedCString s_CDemonCamera_precomputeL_005ce3f6
 ;   undefined4 DAT_0083c7d4
-;   undefined4 DAT_00b667a4
-;   undefined4 DAT_0126e7a8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_LightBufferPoolIndex
+;   SCoronaLightCache g_CoronaLightCache
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0043cbe0
 ;   core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_0044cf50
 ;   core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044a810
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;
 ; *****************************************************************************
@@ -69,7 +69,7 @@ section .text
     AND ESP,0xfffffff8                  ; 0043d229
     MOV EBX,dword ptr [EBP + 0x18]      ; 0043d22c
     MOV EDX,0x80                        ; 0043d22f
-    PUSH 0x5ce3d6                       ; 0043d234 | s_movscrn_raw_005ce3d5+1
+    PUSH 0x5ce3d6                       ; 0043d234 | = "movscrn.raw"
     LEA EAX,[EBX + 0x1c74]              ; 0043d239
     XOR ECX,ECX                         ; 0043d23f
     PUSH EAX                            ; 0043d241
@@ -86,9 +86,9 @@ section .text
     TEST EAX,EAX                        ; 0043d25d
     JNZ 0x0043d26b                      ; 0043d25f
         ;   XREF to: 0043d26b (CONDITIONAL_JUMP)  ; LAB_0043d26b
-    MOV [0x0126e7a8],EAX                ; 0043d261 | DAT_0126e7a8
-    MOV [0x00b667a4],EAX                ; 0043d266 | DAT_00b667a4
-    MOV ESI,dword ptr [0x00b667a4]      ; 0043d26b | DAT_00b667a4
+    MOV [0x0126e7a8],EAX                ; 0043d261 | g_CoronaLightCache
+    MOV [0x00b667a4],EAX                ; 0043d266 | g_LightBufferPoolIndex
+    MOV ESI,dword ptr [0x00b667a4]      ; 0043d26b | g_LightBufferPoolIndex
         ;   Label: LAB_0043d26b
     LEA EAX,[ESI*0x4 + 0x0]             ; 0043d271
     ADD EAX,ESI                         ; 0043d278
@@ -96,32 +96,32 @@ section .text
     MOV ESI,EAX                         ; 0043d27d
     SHL EAX,0x4                         ; 0043d27f
     SUB EAX,ESI                         ; 0043d282
-    MOV ESI,dword ptr [0x00b667a4]      ; 0043d284 | DAT_00b667a4
+    MOV ESI,dword ptr [0x00b667a4]      ; 0043d284 | g_LightBufferPoolIndex
     INC ESI                             ; 0043d28a
     ADD EAX,0xb667a8                    ; 0043d28b
-    MOV dword ptr [0x00b667a4],ESI      ; 0043d290 | DAT_00b667a4
+    MOV dword ptr [0x00b667a4],ESI      ; 0043d290 | g_LightBufferPoolIndex
     CMP ESI,0x18                        ; 0043d296
     JBE 0x0043d29d                      ; 0043d299
         ;   XREF to: 0043d29d (CONDITIONAL_JUMP)  ; LAB_0043d29d
     XOR EAX,EAX                         ; 0043d29b
-    MOV ESI,dword ptr [0x00b667a4]      ; 0043d29d | DAT_00b667a4
+    MOV ESI,dword ptr [0x00b667a4]      ; 0043d29d | g_LightBufferPoolIndex
         ;   Label: LAB_0043d29d
     MOV dword ptr [EBX + 0x1c48],EAX    ; 0043d2a3
     LEA EAX,[ESI*0x4 + 0x0]             ; 0043d2a9
     ADD EAX,ESI                         ; 0043d2b0
     SHL EAX,0xc                         ; 0043d2b2
-    MOV EDX,dword ptr [0x00b667a4]      ; 0043d2b5 | DAT_00b667a4
+    MOV EDX,dword ptr [0x00b667a4]      ; 0043d2b5 | g_LightBufferPoolIndex
     MOV ESI,EAX                         ; 0043d2bb
     SHL EAX,0x4                         ; 0043d2bd
     INC EDX                             ; 0043d2c0
     SUB EAX,ESI                         ; 0043d2c1
-    MOV dword ptr [0x00b667a4],EDX      ; 0043d2c3 | DAT_00b667a4
+    MOV dword ptr [0x00b667a4],EDX      ; 0043d2c3 | g_LightBufferPoolIndex
     ADD EAX,0xb667a8                    ; 0043d2c9
     CMP EDX,0x18                        ; 0043d2ce
     JBE 0x0043d2d5                      ; 0043d2d1
         ;   XREF to: 0043d2d5 (CONDITIONAL_JUMP)  ; LAB_0043d2d5
     XOR EAX,EAX                         ; 0043d2d3
-    MOV ESI,dword ptr [0x00b667a4]      ; 0043d2d5 | DAT_00b667a4
+    MOV ESI,dword ptr [0x00b667a4]      ; 0043d2d5 | g_LightBufferPoolIndex
         ;   Label: LAB_0043d2d5
     MOV dword ptr [EBX + 0x1c4c],EAX    ; 0043d2db
     LEA EAX,[ESI*0x4 + 0x0]             ; 0043d2e1
@@ -130,10 +130,10 @@ section .text
     MOV ESI,EAX                         ; 0043d2ed
     SHL EAX,0x4                         ; 0043d2ef
     SUB EAX,ESI                         ; 0043d2f2
-    MOV ESI,dword ptr [0x00b667a4]      ; 0043d2f4 | DAT_00b667a4
+    MOV ESI,dword ptr [0x00b667a4]      ; 0043d2f4 | g_LightBufferPoolIndex
     INC ESI                             ; 0043d2fa
     ADD EAX,0xb667a8                    ; 0043d2fb
-    MOV dword ptr [0x00b667a4],ESI      ; 0043d300 | DAT_00b667a4
+    MOV dword ptr [0x00b667a4],ESI      ; 0043d300 | g_LightBufferPoolIndex
     CMP ESI,0x18                        ; 0043d306
     JBE 0x0043d30d                      ; 0043d309
         ;   XREF to: 0043d30d (CONDITIONAL_JUMP)  ; LAB_0043d30d
@@ -150,10 +150,10 @@ section .text
     MOV ESI,0x5ce3e2                    ; 0043d327 | = "..\\core\\dcamera.cpp"
     MOV EDI,0x6c6                       ; 0043d32c
     PUSH 0x5ce3f6                       ; 0043d331 | = "CDemonCamera::precomputeLight - Too m..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0043d336 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0043d33c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0043d342
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 0043d336 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0043d33c | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043d342
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0043d347
     PUSH EBX                            ; 0043d34a
         ;   Label: LAB_0043d34a

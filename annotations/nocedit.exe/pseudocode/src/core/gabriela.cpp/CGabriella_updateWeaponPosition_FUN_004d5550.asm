@@ -37,9 +37,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_CCrossbow_0062afa5
 ;   float FLOAT_0065e7b4 = 0.6400000
-;   UVector3 UNION_UVector3_02d7b814
-;   UVector3 UNION_UVector3_02d7b820
-;   UVector3 UNION_UVector3_02d7b82c
+;   UVector3 g_GabriellaWeaponEuler
+;   UVector3 g_GabriellaWeaponAttachEuler
+;   UVector3 g_GabriellaWeaponAttachOffset
 ;   undefined4 g_GabriellaIndices[10]
 ;   undefined4 g_GabriellaIndices[17]
 ;   UVector3 g_ZeroVector
@@ -99,7 +99,7 @@ section .text
     CALL dword ptr [EDX + 0xf0]         ; 004d55c1
     ADD ESP,0x8                         ; 004d55c7
     PUSH 0x3f87558                      ; 004d55ca | g_ZeroVector
-    PUSH 0x2d7b814                      ; 004d55cf | UNION_UVector3_02d7b814
+    PUSH 0x2d7b814                      ; 004d55cf | g_GabriellaWeaponEuler
     LEA EAX,[EBP + 0xffffff52]          ; 004d55d4
     PUSH EAX                            ; 004d55da
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 004d55db
@@ -262,8 +262,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x154]     ; 004d57de
     CALL dword ptr [EDX + 0xf0]         ; 004d57e4
     ADD ESP,0x8                         ; 004d57ea
-    PUSH 0x2d7b82c                      ; 004d57ed | UNION_UVector3_02d7b82c
-    PUSH 0x2d7b820                      ; 004d57f2 | UNION_UVector3_02d7b820
+    PUSH 0x2d7b82c                      ; 004d57ed | g_GabriellaWeaponAttachOffset
+    PUSH 0x2d7b820                      ; 004d57f2 | g_GabriellaWeaponAttachEuler
     LEA EAX,[EBP + 0xfffffe62]          ; 004d57f7
     PUSH EAX                            ; 004d57fd
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 004d57fe

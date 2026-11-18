@@ -11,25 +11,25 @@
 ;   TerminatedCString s_voicuhurt_wav_005f8e8c
 ;   TerminatedCString s_VampireBossBitesIt_005f8e9a
 ;   TerminatedCString s_voicudeath_wav_2_5_005f8ead
-;   undefined4 DAT_005f8ec8
-;   undefined4 DAT_005f8ed0
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_0061c010
-;   undefined4 DAT_0061f650
-;   undefined4 DAT_006236b8
+;   double g_DOUBLE_005f8ec8 = 2
+;   double g_DOUBLE_005f8ed0 = 25
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CFireEffect* g_CFireEffectPtr = 01c57074
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;   undefined4 g_CMeleeClassInfo.name_hash
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
-;   core_inv.cpp_FUN_004f8c40
-;   core_inv.cpp_FUN_004f8d00
+;   core_inv.cpp_CInventory_findItemByName_FUN_004f8c40
+;   core_inv.cpp_CInventory_removeItem_FUN_004f8d00
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
@@ -68,7 +68,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 005a6deb
     FSUBR float ptr [EBP + 0x2538]      ; 005a6dee
     FST float ptr [EBP + 0x2538]        ; 005a6df4
-    FCOMP double ptr [0x005f8ed0]       ; 005a6dfa | DAT_005f8ed0
+    FCOMP double ptr [0x005f8ed0]       ; 005a6dfa | g_DOUBLE_005f8ed0
     FNSTSW AX                           ; 005a6e00
     SAHF                                ; 005a6e02
     JNC 0x005a6e0f                      ; 005a6e03
@@ -114,15 +114,15 @@ section .text
         ;   Label: LAB_005a6e5d
     ADD EAX,0x1c                        ; 005a6e60
     FLD ST0                             ; 005a6e63
-    FMUL double ptr [0x005f8ec8]        ; 005a6e65 | DAT_005f8ec8
+    FMUL double ptr [0x005f8ec8]        ; 005a6e65 | g_DOUBLE_005f8ec8
     PUSH EAX                            ; 005a6e6b
     LEA ESI,[ESP + 0x10]                ; 005a6e6c
     LEA EDI,[ESP + 0x4]                 ; 005a6e70
     PUSH EBP                            ; 005a6e74
     FSTP ST1                            ; 005a6e75
     FSTP float ptr [EAX + -0x18]        ; 005a6e77
-    CALL core_actor.cpp_FUN_00408b40    ; 005a6e7a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005a6e7a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x14]                ; 005a6e7f
     ADD ESP,0x8                         ; 005a6e83
     XOR EBX,EBX                         ; 005a6e86
@@ -139,7 +139,7 @@ section .text
     PUSH ESI                            ; 005a6e9a
     LEA EAX,[ESP + 0x14]                ; 005a6e9b
     PUSH EAX                            ; 005a6e9f
-    MOV EAX,[0x0061c010]                ; 005a6ea0 | DAT_0061c010
+    MOV EAX,[0x0061c010]                ; 005a6ea0 | g_CFireEffectPtr
     PUSH EAX                            ; 005a6ea5
     INC EBX                             ; 005a6ea6
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 005a6ea7
@@ -225,8 +225,8 @@ section .text
     PUSH EBX                            ; 005a6f6e
     LEA ESI,[EAX + 0x1fae8]             ; 005a6f6f
     PUSH ESI                            ; 005a6f75
-    CALL core_inv.cpp_FUN_004f8c40      ; 005a6f76
-        ;   XREF to: 004f8c40 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_FUN_004f8c40(CInventory * this_ptr, char * item_name)
+    CALL core_inv.cpp_CInventory_findItemByName_FUN_004f8c40 ; 005a6f76
+        ;   XREF to: 004f8c40 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004f8c40(CInventory * this_ptr, char * item_name)
     ADD ESP,0x8                         ; 005a6f7b
     CMP EAX,EBX                         ; 005a6f7e
     JNZ 0x005a6f9e                      ; 005a6f80
@@ -234,11 +234,11 @@ section .text
     PUSH 0x0                            ; 005a6f82
     PUSH EBX                            ; 005a6f84
     PUSH ESI                            ; 005a6f85
-    CALL core_inv.cpp_FUN_004f8d00      ; 005a6f86
-        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004f8d00 ; 005a6f86
+        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 005a6f8b
     PUSH EBX                            ; 005a6f8e
-    MOV EDX,dword ptr [0x0061f650]      ; 005a6f8f | DAT_0061f650
+    MOV EDX,dword ptr [0x0061f650]      ; 005a6f8f | g_CDemonMission_PTR_0061f650
     PUSH EDX                            ; 005a6f95 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160 ; 005a6f96
         ;   XREF to: 0051b160 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160(CDemonMission * this_ptr, CDemonActor * actor)
@@ -250,10 +250,10 @@ section .text
     PUSH 0x0                            ; 005a6fa6
     PUSH EBP                            ; 005a6fa8
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 005a6fa9
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 005a6fae
     PUSH 0x5f8e9a                       ; 005a6fb1 | = "VampireBossBitesIt"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 005a6fb6 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 005a6fb6 | g_CEventListPtr
     PUSH ECX                            ; 005a6fbc
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 005a6fbd
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -265,7 +265,7 @@ section .text
     ADD ESP,0x4                         ; 005a6fd1
     PUSH 0x5f8ead                       ; 005a6fd4 | = "voicudeath.wav @ 2.5"
     PUSH EBP                            ; 005a6fd9
-    MOV ESI,dword ptr [0x006236b8]      ; 005a6fda | DAT_006236b8
+    MOV ESI,dword ptr [0x006236b8]      ; 005a6fda | g_CSound_PTR_006236b8
     PUSH ESI                            ; 005a6fe0
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 005a6fe1
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)

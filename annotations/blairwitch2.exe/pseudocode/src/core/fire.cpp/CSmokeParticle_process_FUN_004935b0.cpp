@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004935b0(CSmokeParticle *this_ptr)
 
 {
@@ -32,7 +30,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004935b0(CSmokeParticle *t
   
   bVar3 = 0;
   local_c = g_CGamePtr->delta_time_float;
-  this_ptr->age = local_c * _DAT_005d5342 + this_ptr->age;
+  this_ptr->age = local_c * 30.0f + this_ptr->age;
   if (0x421fffff < (int)this_ptr->age) {
     this_ptr->active = 0;
     return;

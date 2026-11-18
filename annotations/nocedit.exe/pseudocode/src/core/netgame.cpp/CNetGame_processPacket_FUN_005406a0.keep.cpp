@@ -95,7 +95,7 @@ LAB_0054097f:
       strcpy(local_1c->name, (packet->server_accept).player_name);
       iVar5 = this_ptr->local_player_index;
       this_ptr->players[iVar5].addr = (packet->server_accept).client_addr;
-      INT_02f7c8c4 = -1;
+      g_NetNextPlayerId = -1;
       return;
     }
     break;
@@ -250,16 +250,16 @@ LAB_00540df8:
     if (((this_ptr->connection_type != CONNECTION_CLIENT) || ((int)uVar2 < 0)) ||
        (uVar2 != this_ptr->server_player_index)) goto LAB_00540d18;
     if (this_ptr->network_mode == NET_MODE_LOBBY) {
-      if (INT_02f7c8c4 < (packet->simple).value) {
+      if (g_NetNextPlayerId < (packet->simple).value) {
         iVar5 = core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(this_ptr,packet);
         if (iVar5 == 0) {
           return;
         }
-        INT_02f7c8c4 = (packet->simple).value;
+        g_NetNextPlayerId = (packet->simple).value;
       }
       local_64.header.size = sizeof(SNetPacket_Simple);
       local_64.header.type = PACKET_SETTINGS_ACK;
-      local_64.value = INT_02f7c8c4;
+      local_64.value = g_NetNextPlayerId;
       core_netgame_cpp_CNetGame_send_FUN_005411c0
                 (this_ptr,this_ptr->server_player_index,&local_64.header);
       return;

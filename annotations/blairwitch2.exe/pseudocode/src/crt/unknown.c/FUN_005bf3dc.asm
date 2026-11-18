@@ -18,10 +18,10 @@
 ;   ... and 35 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006216c0
-;   undefined4 DAT_006216d0
-;   undefined4 DAT_006216d4
-;   undefined4 DAT_006216d8
+;   byte[16] g_IEEE754ExponentClassTable
+;   float g_IEEE754NormalScaleFactor = 0.9375
+;   float g_IEEE754SubnormalScaleFactor = 1.0625
+;   float g_IEEE754RenormScaleFactor = 9.223372E+18
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     RET                                 ; 005bf3fe
     SHR EAX,0x1c                        ; 005bf3ff
         ;   Label: LAB_005bf3ff
-    CMP byte ptr [EAX + 0x6216c0],0x0   ; 005bf402 | DAT_006216c0
+    CMP byte ptr [EAX + 0x6216c0],0x0   ; 005bf402 | g_IEEE754ExponentClassTable
     JNZ 0x005bf40e                      ; 005bf409
         ;   XREF to: 005bf40e (CONDITIONAL_JUMP)  ; LAB_005bf40e
     FDIVP                               ; 005bf40b
@@ -67,17 +67,17 @@ section .text
     CMP EAX,0x1                         ; 005bf443
     JZ 0x005bf45f                       ; 005bf446
         ;   XREF to: 005bf45f (CONDITIONAL_JUMP)  ; LAB_005bf45f
-    FMUL float ptr [0x006216d0]         ; 005bf448 | DAT_006216d0
+    FMUL float ptr [0x006216d0]         ; 005bf448 | g_IEEE754NormalScaleFactor
     FXCH                                ; 005bf44e
-    FMUL float ptr [0x006216d0]         ; 005bf450 | DAT_006216d0
+    FMUL float ptr [0x006216d0]         ; 005bf450 | g_IEEE754NormalScaleFactor
     FXCH                                ; 005bf456
     FLDCW word ptr [ESP + 0x1c]         ; 005bf458
     FDIVP                               ; 005bf45c
     RET                                 ; 005bf45e
-    FMUL float ptr [0x006216d4]         ; 005bf45f | DAT_006216d4
+    FMUL float ptr [0x006216d4]         ; 005bf45f | g_IEEE754SubnormalScaleFactor
         ;   Label: LAB_005bf45f
     FXCH                                ; 005bf465
-    FMUL float ptr [0x006216d4]         ; 005bf467 | DAT_006216d4
+    FMUL float ptr [0x006216d4]         ; 005bf467 | g_IEEE754SubnormalScaleFactor
     FXCH                                ; 005bf46d
     FLDCW word ptr [ESP + 0x1c]         ; 005bf46f
     FDIVP                               ; 005bf473
@@ -123,7 +123,7 @@ section .text
         ;   Label: LAB_005bf4cc
     FSTP ST0                            ; 005bf4ce
     FLD ST0                             ; 005bf4d0
-    FMUL float ptr [0x006216d8]         ; 005bf4d2 | DAT_006216d8
+    FMUL float ptr [0x006216d8]         ; 005bf4d2 | g_IEEE754RenormScaleFactor
     FSTP extended double ptr [ESP + 0x4] ; 005bf4d8
     FLD extended double ptr [ESP + 0x10] ; 005bf4dc
     FXCH                                ; 005bf4e0

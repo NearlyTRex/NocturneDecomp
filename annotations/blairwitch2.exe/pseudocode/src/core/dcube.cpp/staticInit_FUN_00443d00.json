@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 46,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 55
   },
   "cross_references": [],
@@ -98,30 +96,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_01510850",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01510850,0x10,&g_CVectorTypeInfo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_01510c24",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01510c24,0x10,&g_CVectorTypeInfo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01510ce8",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01510ce8,0x10,&g_CVectorTypeInfo);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

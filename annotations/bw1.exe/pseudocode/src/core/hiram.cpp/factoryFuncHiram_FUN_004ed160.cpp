@@ -11,7 +11,7 @@ CHiram * __cdecl core_hiram_cpp_factoryFuncHiram_FUN_004ed160(void)
 {
   CHiram *pCVar1;
   
-  pCVar1 = (CHiram *)operator_new(0x1fb1c);
+  pCVar1 = operator_new(0x1fb1c);
   if (pCVar1 == (CHiram *)0x0) {
     return (CHiram *)0x0;
   }

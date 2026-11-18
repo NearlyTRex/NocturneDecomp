@@ -6,18 +6,21 @@ A .keep replaces the .cpp/.c the exporter writes next to it. As Ghidra learns mo
 by hand, and some .keeps end up saying nothing the export does not. Those can be
 deleted; the near ones can usually be finished in Ghidra and deleted after.
 
-The two files are compared code line by code line: comments, blank lines,
-`#include` lines and whitespace are dropped, so a .keep's `// MANUAL
-RECONSTRUCTION` header and Ghidra's warnings do not count. Each .keep gets the
-share of lines the two have in common:
+The two files are compared code line by code line. Comments, blank lines and
+`#include` lines are dropped, and each line is compared token by token, so
+spacing doesn't count but string literals do: a `//` inside a string is not a
+comment. A .keep's `// MANUAL RECONSTRUCTION` header and Ghidra's warnings do
+not count. Each .keep gets the share of lines the two have in common:
 
   identical   1.0          the .keep only adds comments
   near        >= 0.95      a few lines left to move into Ghidra
   partial     >= 0.80
   rewritten   below 0.80
+  no export   there is no .cpp/.c beside the .keep to compare with
 
 A .keep that uses a shim or AUTHENTIC switch carries behaviour, not decompiler
-fixes, so it is never listed as redundant whatever its ratio.
+fixes, so it is never listed as redundant whatever its ratio; those are listed
+in their own section. The report lists every .keep exactly once.
 
 Read-only, and informational: the exit status is 0. The pseudocode export writes
 the same report to reports/keep_drift.txt.
@@ -37,10 +40,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 PROGRAMS = ("nocedit.exe", "nocturne.exe", "tridx7.dll")
 NEAR = 0.95
 PARTIAL = 0.80
-KINDS = ("identical", "near", "partial", "rewritten")
+NO_EXPORT = "no export"
+KINDS = ("identical", "near", "partial", "rewritten", NO_EXPORT)
 
-COMMENT_RE = re.compile(r"/\*.*?\*/|//[^\n]*", re.S)
-WHITESPACE_RE = re.compile(r"\s+")
+# a string or char literal is matched whole, so a `//` or `/*` inside one is not a comment
+LITERAL_OR_COMMENT_RE = re.compile(r'''"(?:\\.|[^"\\\n])*"|'(?:\\.|[^'\\\n])*'|/\*.*?\*/|//[^\n]*''', re.S)
+TOKEN_RE = re.compile(r'''"(?:\\.|[^"\\\n])*"|'(?:\\.|[^'\\\n])*'|\w+'''
+                      r'''|<<=|>>=|\.\.\.|->|\+\+|--|<<|>>|&&|\|\||::|##|[-+*/%&|^!=<>]=|\S''')
 SHIM_RE = re.compile(r"\bSHIM_|AUTHENTIC|shims/")
 KEEP_RE = re.compile(r"(.*)\.keep\.(cpp|c)$")
 
@@ -50,12 +56,22 @@ def read(path):
         return f.read()
 
 
+def strip_comments(text):
+    """text without its comments; string and char literals are kept as they are."""
+    def keep_literals(m):
+        token = m.group(0)
+        if token.startswith("/*"):
+            return "\n" * token.count("\n")
+        return "" if token.startswith("//") else token
+    return LITERAL_OR_COMMENT_RE.sub(keep_literals, text)
+
+
 def code_lines(text):
-    """The lines that are code: comments, blanks, #include lines and whitespace dropped."""
+    """The lines that are code, as space-joined tokens: comments, blanks and #include lines dropped."""
     out = []
-    for line in COMMENT_RE.sub("", text).splitlines():
-        line = WHITESPACE_RE.sub("", line)
-        if line and not line.startswith("#include"):
+    for line in strip_comments(text).splitlines():
+        line = " ".join(TOKEN_RE.findall(line))
+        if line and not line.startswith("# include"):
             out.append(line)
     return out
 
@@ -80,7 +96,7 @@ def compare(keep_text, export_text):
 
 
 def find_keeps(src_root):
-    """(keep path, export path) for each .keep that has an export beside it."""
+    """(keep path, export path or None) for each .keep under src_root."""
     for dirpath, _dirs, filenames in os.walk(src_root):
         for name in sorted(filenames):
             m = KEEP_RE.match(name)
@@ -88,8 +104,7 @@ def find_keeps(src_root):
                 continue
             base = os.path.join(dirpath, m.group(1))
             export = next((base + ext for ext in (".cpp", ".c") if os.path.exists(base + ext)), None)
-            if export:
-                yield os.path.join(dirpath, name), export
+            yield os.path.join(dirpath, name), export
 
 
 def collect(src_root):
@@ -97,30 +112,42 @@ def collect(src_root):
     rows = []
     for keep, export in find_keeps(src_root):
         text = read(keep)
-        ratio, changed = compare(text, read(export))
+        if export is None:
+            ratio, changed, kind = 0.0, len(code_lines(text)), NO_EXPORT
+        else:
+            ratio, changed = compare(text, read(export))
+            kind = kind_of(ratio)
         rows.append({"keep": keep, "ratio": ratio, "changed": changed,
-                     "kind": kind_of(ratio), "shim": bool(SHIM_RE.search(text))})
+                     "kind": kind, "shim": bool(SHIM_RE.search(text))})
     return rows
 
 
 def format_report(rows, relative_to=ROOT):
     """The text the command line prints and the exporter writes."""
-    lines = ["%d .keep files compared with the export beside them" % len(rows)]
+    lines = ["%d .keep files, each compared with the export beside it" % len(rows)]
     for kind in KINDS:
         plain = sum(1 for r in rows if r["kind"] == kind and not r["shim"])
         shim = sum(1 for r in rows if r["kind"] == kind and r["shim"])
         lines.append("  %-10s %5d   (+%d using shim/AUTHENTIC switches)" % (kind, plain, shim))
 
-    def listing(title, chosen):
+    def listing(title, chosen, with_kind=False):
         lines.extend(["", "-- %s --  %d" % (title, len(chosen))])
         for r in sorted(chosen, key=lambda r: (-r["ratio"], r["keep"])):
-            lines.append("  %.3f %4d line(s) differ  %s"
-                         % (r["ratio"], r["changed"], os.path.relpath(r["keep"], relative_to)))
+            lines.append("  %.3f %4d line(s) differ  %s%s"
+                         % (r["ratio"], r["changed"], os.path.relpath(r["keep"], relative_to),
+                            "  [%s]" % r["kind"] if with_kind else ""))
 
-    listing("REDUNDANT: identical code, no shim switch - can be deleted",
-            [r for r in rows if r["kind"] == "identical" and not r["shim"]])
-    listing("NEAR: a few lines from the export - finish in Ghidra, then delete",
-            [r for r in rows if r["kind"] == "near" and not r["shim"]])
+    def plain(kind):
+        return [r for r in rows if r["kind"] == kind and not r["shim"]]
+
+    listing("REDUNDANT: identical code, no shim switch - can be deleted", plain("identical"))
+    listing("NEAR: a few lines from the export - finish in Ghidra, then delete", plain("near"))
+    listing("PARTIAL: most lines shared with the export", plain("partial"))
+    listing("REWRITTEN: under 80% shared with the export", plain("rewritten"))
+    listing("SHIM: uses a shim/AUTHENTIC switch - carries behaviour, kept whatever its ratio",
+            [r for r in rows if r["shim"] and r["kind"] != NO_EXPORT], with_kind=True)
+    listing("NO EXPORT: no .cpp/.c beside the .keep - the function may have been renamed or removed",
+            [r for r in rows if r["kind"] == NO_EXPORT])
     return "\n".join(lines) + "\n"
 
 

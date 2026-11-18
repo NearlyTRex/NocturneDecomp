@@ -29,7 +29,7 @@ void __cdecl core_spawner_cpp_CSpawner_setup_FUN_00563910(CSpawner *this_ptr)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)0x5d54a8;
+  pcVar3 = "_spawn";
   iVar2 = -1;
   do {
     pcVar4 = pcVar5;

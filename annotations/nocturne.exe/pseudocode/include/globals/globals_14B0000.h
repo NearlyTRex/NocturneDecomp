@@ -7,30 +7,39 @@
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CFilterFX.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWinFont.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x14B0000
 // =============================================================================
 
 // CBitFont*
-extern CBitFont* g_CBitFont_PTR_014b98f8;
-extern CBitFont* g_CBitFont_PTR_014b98fc;
-extern CBitFont* g_CBitFont_PTR_014b9900;
-extern CBitFont* g_CBitFont_PTR_014b9904;
+extern CBitFont* g_MediumFont;
+extern CBitFont* g_TinyFont;
+extern CBitFont* g_ThemeFont;
+extern CBitFont* g_SmallEditorFont;
 extern CBitFont* g_CBitFont_PTR_014b9908;
-extern CBitFont* g_CBitFont_PTR_014b990c;
+extern CBitFont* g_MicroFont;
 
 // CDemonActorType
-extern CDemonActorType g_CActorDestinationActorType_014b8a1c;
+extern CDemonActorType g_CActorDestinationClassInfo;
 
 // CDemonFilter[4]
 extern CDemonFilter g_CDemonFilter_ARRAY_014b8cb8[4];
 
 // CDemonFilter[8]
-extern CDemonFilter g_CDemonFilter_ARRAY_014b8a58[8];
+extern CDemonFilter g_PlayerFilterPool[8];
+
+// CDemonGlobe*
+extern CDemonGlobe* g_CurrentGlobe;
+
+// CDemonLight*
+extern CDemonLight* g_CurrentShadowLight;
 
 // CFilterCache
 extern CFilterCache g_CFilterCacheInstance;
@@ -38,12 +47,64 @@ extern CFilterCache g_CFilterCacheInstance;
 // CFilterFX
 extern CFilterFX g_CFilterFXInstance;
 
+// CVector3f
+extern CVector3f g_DownwardRayDirection;
+extern CVector3f g_StaticColorVector;
+
 // CVector3f[16]
-extern CVector3f g_CVector3f_ARRAY_014b8490[16];
-extern CVector3f g_CVector3f_ARRAY_014b8554[16];
-extern CVector3f g_CVector3f_ARRAY_014b8618[16];
-extern CVector3f g_CVector3f_ARRAY_014b86dc[16];
-extern CVector3f g_CVector3f_ARRAY_014b87a0[16];
-extern CVector3f g_CVector3f_ARRAY_014b8864[16];
-extern CVector3f g_CVector3f_ARRAY_014b8928[16];
+extern CVector3f g_CubeInputTriangleBuffer[16];
+extern CVector3f g_ClipStageMaxYBuffer[16];
+extern CVector3f g_ClipStageMinYBuffer[16];
+extern CVector3f g_ClipStageMaxXBuffer[16];
+extern CVector3f g_ClipStageMinXBuffer[16];
+extern CVector3f g_ClipStageMinZBuffer[16];
+extern CVector3f g_CubeClippedTriangleBuffer[16];
+
+// CWinFont*
+extern CWinFont* g_CWinFont_PTR_014b9910;
+extern CWinFont* g_CWinFont_PTR_014b9914;
+extern CWinFont* g_CWinFont_PTR_014b9918;
+extern CWinFont* g_CWinFont_PTR_014b991c;
+
+// char*
+extern char* g_CoronaLightingTextureData;
+
+// float
+extern float g_FLOAT_014b89e8;
+extern float g_FLOAT_014b89f0;
+extern float g_FLOAT_014b89f4;
+extern float g_FLOAT_014b89fc;
+extern float g_FLOAT_014b8a00;
+extern float g_FLOAT_014b8a08;
+
+// int
+extern int g_FlatShadingLightLevel;
+extern int g_CoronaVisibilityEnabled;
+extern int g_CoronaTargetX;
+extern int g_CoronaTargetY;
+extern int g_CoronaTargetDepth;
+extern int g_INT_014b848c;
+extern int g_INT_014b8550;
+extern int g_INT_014b8614;
+extern int g_INT_014b86d8;
+extern int g_INT_014b879c;
+extern int g_INT_014b8860;
+extern int g_INT_014b8924;
+extern int g_INT_014b89ec;
+extern int g_INT_014b89f8;
+extern int g_INT_014b8a04;
+
+// int[240]
+extern int g_CoronaLeftIntensity[240];
+extern int g_CoronaRightIntensity[240];
+
+// uchar
+extern uchar g_DownwardRayInitialized;
+extern uchar g_ColorConstantsInitialized;
+
+// uchar[6291656]
+extern uchar g_ShadowRestoreBuffer[6291656];
+
+// uint[3]
+extern uint g_TempTriangleIndices[3];
 

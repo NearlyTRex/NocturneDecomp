@@ -4,7 +4,13 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/ddraw.h"
+#include "system/unknwn.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/classes/CWeather.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2D00000
@@ -12,6 +18,58 @@
 
 // CDemonActorType
 extern CDemonActorType g_CWaterActorClassInfo;
+extern CDemonActorType g_CDemonActorType_02d09d24;
 extern CDemonActorType g_CWayPointClassInfo;
 extern CDemonActorType g_CWeaponClassInfo;
+
+// CDemonGlobe
+extern CDemonGlobe g_WeaponCoronaGlobe;
+
+// CVector3f
+extern CVector3f g_CVector3f_02d0c208;
+
+// CVector3i
+extern CVector3i g_CVector3i_02d06e08;
+
+// CWeather
+extern CWeather g_CWeather_02d0c1a0;
+
+// IDirectDraw*
+extern IDirectDraw* g_DirectDrawObject;
+
+// IDirectDrawSurface*
+extern IDirectDrawSurface* g_DirectDrawSurface;
+extern IDirectDrawSurface* g_SoftwareRenderSurface;
+
+// IUnknown*
+extern IUnknown* g_DirectDrawUnknown;
+
+// PALETTEENTRY[256]
+extern PALETTEENTRY g_DDPaletteBuffer[256];
+
+// char[4]
+extern char g_CHAR_ARRAY_02d09d60[4];
+
+// float
+extern float g_WaterAnimationPhase;
+
+// int
+extern int g_WaterAnimationBlend;
+extern int g_INT_02d059ac;
+extern int g_INT_02d059b0;
+extern int g_FlipPending;
+extern int g_GraphicsResetFlag;
+extern int g_INT_02d0bcfc;
+extern int g_INT_02d0bd00;
+extern int g_INT_02d0bd04;
+extern int g_INT_02d0bd08;
+extern int g_INT_02d0bd0c;
+extern int g_INT_02d0bd10;
+extern int g_INT_02d0bd14;
+
+// int[4096]
+extern int g_VisibleWaterTilesY[4096];
+
+// void*
+extern void* g_PTR_02d0bcf0;
 

@@ -7,6 +7,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMouse.h"
 #include "types/classes/CPathMap.h"
+#include "types/unions/UNetPacket.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D60000
@@ -21,4 +22,21 @@ extern CMouse g_CMouseInstance;
 
 // CPathMap[12]
 extern CPathMap g_PathMapCache[12];
+
+// UNetPacket
+extern UNetPacket g_NetworkReceivePacket;
+
+// char*[500]
+extern char* g_CHAR_PTR_ARRAY_01d6325c[500];
+extern char* g_CHAR_PTR_ARRAY_01d63a2c[500];
+extern char* g_CHAR_PTR_ARRAY_01d649c8[500];
+
+// int
+extern int g_UseOSFonts;
+extern int g_LocalizationLoaded;
+extern int g_INT_01d63258;
+extern int g_INT_01d653fc;
+
+// int[499]
+extern int g_INT_ARRAY_01d641fc[499];
 

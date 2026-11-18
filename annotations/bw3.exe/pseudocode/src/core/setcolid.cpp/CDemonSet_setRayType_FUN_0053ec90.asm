@@ -11,23 +11,23 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a688
 ;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 00410755
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 0042477d
-;   core_charactr.cpp_FUN_00432330 at 004329c0
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 004329c0
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 00486ffb
 ;   core_exorcism.cpp_CExorcism_fire_FUN_0048b020 at 0048b21c
 ;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aea3c
-;   core_game.cpp_FUN_004c07b0 at 004c11a1
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c11a1
 ;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d119a
-;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 00522166
+;   core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00 at 00523374
 ;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005d0c31
 ;   TerminatedCString s_CDemonSet_setRayType_use_005d0c46
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -46,10 +46,10 @@ section .text
     MOV ECX,0x5d0c31                    ; 0053eca5 | = "..\\core\\setcolid.cpp"
     MOV EBX,0x49a                       ; 0053ecaa
     PUSH 0x5d0c46                       ; 0053ecaf | = "CDemonSet::setRayType - use setRayTyp..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0053ecb4 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0053ecba | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0053ecc0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 0053ecb4 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 0053ecba | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053ecc0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0053ecc5
     POP EBX                             ; 0053ecc8
     RET                                 ; 0053ecc9

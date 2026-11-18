@@ -47,7 +47,7 @@ int __cdecl CGhoul::canBeAttracted(CGhoul *this_ptr,CVector3f *out_attract_posit
 
 // Original: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c3da0
 // Address: 004c3da0
-CVector3f * __cdecl CGhoul::getTargetPoint(CGhoul *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi CGhoul::getTargetPoint(CGhoul *this_ptr,CVector3f *out_point);
 
 // Original: core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c3e30
 // Address: 004c3e30

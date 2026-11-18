@@ -50,7 +50,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591a9d
 ;   TerminatedCString s_CDeformableModel_compute_00591ab2
-;   undefined4 DAT_005a1eb0
+;   float g_FLOAT_005a1eb0 = 0.00390625
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -198,13 +198,13 @@ section .text
     LEA EBX,[ESP + 0x1e4]               ; 0051ae99
     ADD EAX,ECX                         ; 0051aea0
     FILD dword ptr [EAX]                ; 0051aea2
-    FMUL float ptr [0x005a1eb0]         ; 0051aea4 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051aea4 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX]                ; 0051aeaa
     FILD dword ptr [EAX + 0x4]          ; 0051aeac
-    FMUL float ptr [0x005a1eb0]         ; 0051aeaf | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051aeaf | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x4]          ; 0051aeb5
     FILD dword ptr [EAX + 0x8]          ; 0051aeb8
-    FMUL float ptr [0x005a1eb0]         ; 0051aebb | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051aebb | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x8]          ; 0051aec1
     XOR EAX,EAX                         ; 0051aec4
     MOV AX,word ptr [EDX + 0x2]         ; 0051aec6
@@ -214,13 +214,13 @@ section .text
     LEA EBX,[ESP + 0x1c0]               ; 0051aeda
     ADD EAX,ECX                         ; 0051aee1
     FILD dword ptr [EAX]                ; 0051aee3
-    FMUL float ptr [0x005a1eb0]         ; 0051aee5 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051aee5 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX]                ; 0051aeeb
     FILD dword ptr [EAX + 0x4]          ; 0051aeed
-    FMUL float ptr [0x005a1eb0]         ; 0051aef0 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051aef0 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x4]          ; 0051aef6
     FILD dword ptr [EAX + 0x8]          ; 0051aef9
-    FMUL float ptr [0x005a1eb0]         ; 0051aefc | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051aefc | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x8]          ; 0051af02
     XOR EAX,EAX                         ; 0051af05
     MOV AX,word ptr [EDX + 0x4]         ; 0051af07
@@ -230,13 +230,13 @@ section .text
     LEA EBX,[ESP + 0x1f0]               ; 0051af1b
     ADD EAX,ECX                         ; 0051af22
     FILD dword ptr [EAX]                ; 0051af24
-    FMUL float ptr [0x005a1eb0]         ; 0051af26 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051af26 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX]                ; 0051af2c
     FILD dword ptr [EAX + 0x4]          ; 0051af2e
-    FMUL float ptr [0x005a1eb0]         ; 0051af31 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051af31 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x4]          ; 0051af37
     FILD dword ptr [EAX + 0x8]          ; 0051af3a
-    FMUL float ptr [0x005a1eb0]         ; 0051af3d | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051af3d | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x8]          ; 0051af43
     FLD float ptr [ESP + 0x1f0]         ; 0051af46
     FLD float ptr [ESP + 0x1f4]         ; 0051af4d

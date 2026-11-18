@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   dest_y
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
+;   int g_INT_006141b8 = 0x140
 ;
 ; *****************************************************************************
 
@@ -46,7 +46,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 0042da29
     MOV EDI,dword ptr [ESP + 0xc]       ; 0042da2d
     ADD EDX,ECX                         ; 0042da31
-    MOV ECX,dword ptr [0x006141b8]      ; 0042da33 | DAT_006141b8
+    MOV ECX,dword ptr [0x006141b8]      ; 0042da33 | g_INT_006141b8
         ;   Label: LAB_0042da33
     IMUL ECX,EDI                        ; 0042da39
     MOV EBX,dword ptr [ESP + 0x34]      ; 0042da3c

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_shovel_cpp_CShovel_getActorType_FUN_00516a00(CShovel *this_ptr)
 
 {
-  return &g_CShovelActorType_026718d8;
+  return &g_CShovelClassInfo;
 }

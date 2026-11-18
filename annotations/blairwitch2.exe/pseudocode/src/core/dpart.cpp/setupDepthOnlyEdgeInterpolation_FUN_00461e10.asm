@@ -8,10 +8,10 @@
 ; SSoftwareEdge *  Stack[0x8]:4   vertex_b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ba51c8
-;   undefined4 DAT_01ba56cc
-;   undefined4 DAT_01ba56d0
-;   undefined4 DAT_01ba5714
+;   int g_INT_01ba51c8
+;   int g_INT_01ba56cc
+;   int g_INT_01ba56d0
+;   int g_RasterizerDepthBias
 ;
 ; *****************************************************************************
 
@@ -41,7 +41,7 @@ section .text
     MOV ECX,EAX                         ; 00461e3e
     MOV EAX,EDX                         ; 00461e40
     MOV EDX,ECX                         ; 00461e42
-    MOV ESI,dword ptr [0x01ba51c8]      ; 00461e44 | DAT_01ba51c8
+    MOV ESI,dword ptr [0x01ba51c8]      ; 00461e44 | g_INT_01ba51c8
         ;   Label: LAB_00461e44
     LEA ECX,[ESI*0x4 + 0x0]             ; 00461e4a
     ADD ECX,ESI                         ; 00461e51
@@ -49,17 +49,17 @@ section .text
     SHL ECX,0x4                         ; 00461e58
     ADD ESI,ECX                         ; 00461e5b
     MOV dword ptr [ESI],EAX             ; 00461e5d
-    MOV EBP,dword ptr [0x01ba56cc]      ; 00461e5f | DAT_01ba56cc
+    MOV EBP,dword ptr [0x01ba56cc]      ; 00461e5f | g_INT_01ba56cc
     MOV dword ptr [ESI + 0x4],EDX       ; 00461e65
     CMP EAX,EBP                         ; 00461e68
     JGE 0x00461e71                      ; 00461e6a
         ;   XREF to: 00461e71 (CONDITIONAL_JUMP)  ; LAB_00461e71
-    MOV [0x01ba56cc],EAX                ; 00461e6c | DAT_01ba56cc
-    CMP EDX,dword ptr [0x01ba56d0]      ; 00461e71 | DAT_01ba56d0
+    MOV [0x01ba56cc],EAX                ; 00461e6c | g_INT_01ba56cc
+    CMP EDX,dword ptr [0x01ba56d0]      ; 00461e71 | g_INT_01ba56d0
         ;   Label: LAB_00461e71
     JLE 0x00461e7f                      ; 00461e77
         ;   XREF to: 00461e7f (CONDITIONAL_JUMP)  ; LAB_00461e7f
-    MOV dword ptr [0x01ba56d0],EDX      ; 00461e79 | DAT_01ba56d0
+    MOV dword ptr [0x01ba56d0],EDX      ; 00461e79 | g_INT_01ba56d0
     MOV EDX,dword ptr [EBX + 0x14]      ; 00461e7f
         ;   Label: LAB_00461e7f
     MOV ECX,dword ptr [EDI + 0x14]      ; 00461e82
@@ -94,7 +94,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00461ed4
     MOV EDX,EAX                         ; 00461ed8
     MOV EAX,dword ptr [EBX + 0x10]      ; 00461eda
-    MOV EDI,dword ptr [0x01ba5714]      ; 00461edd | DAT_01ba5714
+    MOV EDI,dword ptr [0x01ba5714]      ; 00461edd | g_RasterizerDepthBias
     ADD EAX,EDX                         ; 00461ee3
     MOV EDX,dword ptr [ESI + 0x2c]      ; 00461ee5
     MOV dword ptr [ESI + 0x8],EAX       ; 00461ee8
@@ -103,11 +103,11 @@ section .text
     IMUL EDX                            ; 00461ef0
     SHRD EAX,EDX,0x10                   ; 00461ef2
     SHL EBX,0x8                         ; 00461ef6
-    MOV EBP,dword ptr [0x01ba51c8]      ; 00461ef9 | DAT_01ba51c8
+    MOV EBP,dword ptr [0x01ba51c8]      ; 00461ef9 | g_INT_01ba51c8
     SUB EBX,EDI                         ; 00461eff
     INC EBP                             ; 00461f01
     ADD EBX,EAX                         ; 00461f02
-    MOV dword ptr [0x01ba51c8],EBP      ; 00461f04 | DAT_01ba51c8
+    MOV dword ptr [0x01ba51c8],EBP      ; 00461f04 | g_INT_01ba51c8
     MOV dword ptr [ESI + 0x28],EBX      ; 00461f0a
     POP ESI                             ; 00461f0d
     POP EBP                             ; 00461f0e

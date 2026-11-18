@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_prye.cpp_CPrye_processDamage_FUN_00523e50 at 00523e92
-;   core_prye.cpp_FUN_00518cd0 at 0051a88f
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 0051a88f
 ;
 ; *****************************************************************************
 

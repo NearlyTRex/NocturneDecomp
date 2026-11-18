@@ -33,6 +33,6 @@ void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422e00(
     (this_ptr->physics_box).orientation.y = new_orientation->y;
     (this_ptr->physics_box).orientation.z = new_orientation->z;
   }
-  core_boxactor_cpp_FUN_00421e80(this_ptr);
+  core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_00421e80(this_ptr);
   return;
 }

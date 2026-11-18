@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_send_FUN_0050cd90(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet)
 
 {
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
-    _DAT_01d046a0 = "..\\core\\netgame.cpp";
-    _DAT_01d046a4 = 0x5c5;
-    core_main_c_FUN_004e4500("CNetGame::send - invalid player index");
+    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
+    g_INT_01d046a4 = 0x5c5;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::send - invalid player index");
   }
   core_netgame_cpp_CNetGame_sendPacket_FUN_0050cdf0
             (this_ptr,&this_ptr->players[player_index].addr,packet);

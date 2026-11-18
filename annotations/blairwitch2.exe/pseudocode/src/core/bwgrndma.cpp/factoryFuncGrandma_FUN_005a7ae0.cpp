@@ -11,7 +11,7 @@ CGrandma * __cdecl core_bwgrndma_cpp_factoryFuncGrandma_FUN_005a7ae0(void)
 {
   CGrandma *pCVar1;
   
-  pCVar1 = (CGrandma *)operator_new(0x11854);
+  pCVar1 = operator_new(0x11854);
   if (pCVar1 == (CGrandma *)0x0) {
     return (CGrandma *)0x0;
   }

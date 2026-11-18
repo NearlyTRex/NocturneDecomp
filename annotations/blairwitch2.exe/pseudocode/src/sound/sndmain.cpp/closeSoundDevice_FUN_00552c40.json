@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 59,
+    "complexity_score": 28,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 72
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
   },
   "cross_references": [
     {
       "addr": "004ed260",
       "from_addr": "004ee0fb",
-      "name": "core_menu.cpp_FUN_004ed260",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004ed260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,14 +65,14 @@
   "globals": [
     {
       "addr": "02648e80",
-      "name": "DAT_02648e80",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02648e88",
-      "name": "DAT_02648e88",
-      "type": "undefined4",
+      "name": "g_HasHardware3DSound",
+      "type": "int",
       "value": null
     }
   ],
@@ -139,22 +136,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)*_DAT_02648e80)(_DAT_02648e80);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

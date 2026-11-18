@@ -12,7 +12,7 @@
 ;   core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810 at 004448d5
 ;
 ; Referenced Globals:
-;   undefined8 DAT_005b4748
+;   _MMX_INTEGER g_FilterBlendConstant
 ;
 ; *****************************************************************************
 
@@ -29,18 +29,18 @@ section .text
     MOVQ MM0,qword ptr [ESI + 0xfffffec0] ; 00465390
     MOVQ MM2,qword ptr [ESI]            ; 00465397
     MOVQ MM3,qword ptr [ESI + 0x140]    ; 0046539a
-    PUNPCKLBW MM0,dword ptr [0x005b4748] ; 004653a1 | DAT_005b4748
-    PUNPCKLBW MM2,dword ptr [0x005b4748] ; 004653a8 | DAT_005b4748
-    PUNPCKLBW MM3,dword ptr [0x005b4748] ; 004653af | DAT_005b4748
+    PUNPCKLBW MM0,dword ptr [0x005b4748] ; 004653a1 | g_FilterBlendConstant
+    PUNPCKLBW MM2,dword ptr [0x005b4748] ; 004653a8 | g_FilterBlendConstant
+    PUNPCKLBW MM3,dword ptr [0x005b4748] ; 004653af | g_FilterBlendConstant
     PADDUSW MM0,MM2                     ; 004653b6
     PADDUSW MM2,MM3                     ; 004653b9
     PADDUSW MM0,MM2                     ; 004653bc
     MOVQ MM1,qword ptr [ESI + 0xfffffeb8] ; 004653bf
     MOVQ MM2,qword ptr [ESI + -0x8]     ; 004653c6
     MOVQ MM3,qword ptr [ESI + 0x138]    ; 004653ca
-    PUNPCKHBW MM1,qword ptr [0x005b4748] ; 004653d1 | DAT_005b4748
-    PUNPCKHBW MM2,qword ptr [0x005b4748] ; 004653d8 | DAT_005b4748
-    PUNPCKHBW MM3,qword ptr [0x005b4748] ; 004653df | DAT_005b4748
+    PUNPCKHBW MM1,qword ptr [0x005b4748] ; 004653d1 | g_FilterBlendConstant
+    PUNPCKHBW MM2,qword ptr [0x005b4748] ; 004653d8 | g_FilterBlendConstant
+    PUNPCKHBW MM3,qword ptr [0x005b4748] ; 004653df | g_FilterBlendConstant
     PADDUSW MM1,MM2                     ; 004653e6
     PADDUSW MM2,MM3                     ; 004653e9
     PADDUSW MM1,MM2                     ; 004653ec
@@ -56,9 +56,9 @@ section .text
     MOVQ MM1,qword ptr [ESI + 0xfffffec0] ; 0046540a
     MOVQ MM2,qword ptr [ESI]            ; 00465411
     MOVQ MM3,qword ptr [ESI + 0x140]    ; 00465414
-    PUNPCKHBW MM1,qword ptr [0x005b4748] ; 0046541b | DAT_005b4748
-    PUNPCKHBW MM2,qword ptr [0x005b4748] ; 00465422 | DAT_005b4748
-    PUNPCKHBW MM3,qword ptr [0x005b4748] ; 00465429 | DAT_005b4748
+    PUNPCKHBW MM1,qword ptr [0x005b4748] ; 0046541b | g_FilterBlendConstant
+    PUNPCKHBW MM2,qword ptr [0x005b4748] ; 00465422 | g_FilterBlendConstant
+    PUNPCKHBW MM3,qword ptr [0x005b4748] ; 00465429 | g_FilterBlendConstant
     PADDUSW MM1,MM2                     ; 00465430
     PADDUSW MM2,MM3                     ; 00465433
     PADDUSW MM1,MM2                     ; 00465436
@@ -77,9 +77,9 @@ section .text
     MOVQ MM0,qword ptr [ESI + 0xfffffec8] ; 00465461
     MOVQ MM2,qword ptr [ESI + 0x8]      ; 00465468
     MOVQ MM3,qword ptr [ESI + 0x148]    ; 0046546c
-    PUNPCKLBW MM0,dword ptr [0x005b4748] ; 00465473 | DAT_005b4748
-    PUNPCKLBW MM2,dword ptr [0x005b4748] ; 0046547a | DAT_005b4748
-    PUNPCKLBW MM3,dword ptr [0x005b4748] ; 00465481 | DAT_005b4748
+    PUNPCKLBW MM0,dword ptr [0x005b4748] ; 00465473 | g_FilterBlendConstant
+    PUNPCKLBW MM2,dword ptr [0x005b4748] ; 0046547a | g_FilterBlendConstant
+    PUNPCKLBW MM3,dword ptr [0x005b4748] ; 00465481 | g_FilterBlendConstant
     PADDUSW MM0,MM2                     ; 00465488
     PADDUSW MM2,MM3                     ; 0046548b
     PADDUSW MM0,MM2                     ; 0046548e

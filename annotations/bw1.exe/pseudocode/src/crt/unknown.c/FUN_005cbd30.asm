@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0062621d
-;   undefined4 DAT_006267b8
+;   byte g_BYTE_0062621d = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005cd4be
@@ -25,7 +25,7 @@ section .text
     MOV dword ptr [ESP + 0xc],0x4150017e ; 005cbd3c
     MOV dword ptr [ESP],0x80000000      ; 005cbd44
     MOV dword ptr [ESP + 0x4],0x4147ffff ; 005cbd4b
-    CMP byte ptr [0x0062621d],0x3       ; 005cbd53 | DAT_0062621d
+    CMP byte ptr [0x0062621d],0x3       ; 005cbd53 | g_BYTE_0062621d
     JC 0x005cbda5                       ; 005cbd5a
         ;   XREF to: 005cbda5 (CONDITIONAL_JUMP)  ; LAB_005cbda5
     MOV EAX,dword ptr [ESP + 0x8]       ; 005cbd5c
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 005cda1e (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cda1e()
     JLE 0x005cbda5                      ; 005cbd9c
         ;   XREF to: 005cbda5 (CONDITIONAL_JUMP)  ; LAB_005cbda5
-    OR byte ptr [0x006267b8],0x1        ; 005cbd9e | DAT_006267b8
+    OR byte ptr [0x006267b8],0x1        ; 005cbd9e | g_UseSoftwareMath
     ADD ESP,0x10                        ; 005cbda5
         ;   Label: LAB_005cbda5
     POP EBX                             ; 005cbda8

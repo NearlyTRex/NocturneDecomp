@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004aa2d0(CEventList *this_ptr,char *name,uint sfx_handle)
 
 {
@@ -23,9 +21,9 @@ void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004aa2d0(CEventList *thi
   iVar2 = core_event_cpp_CEventList_findSfxEntry_FUN_004aa3b0(this_ptr,name);
   if (iVar2 < 0) {
     if (0x13 < (this_ptr->sfx_handles).count) {
-      _DAT_01d1d400 = "..\\core\\event.cpp";
-      _DAT_01d1d404 = 0xefd;
-      core_main_c_FUN_005030e0("CEventList::setSfxHandle - too many sfx!");
+      g_CHAR_PTR_01d1d400 = "..\\core\\event.cpp";
+      g_INT_01d1d404 = 0xefd;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CEventList::setSfxHandle - too many sfx!");
     }
     iVar2 = (this_ptr->sfx_handles).count;
     (this_ptr->sfx_handles).count = iVar2 + 1;
@@ -40,9 +38,9 @@ void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004aa2d0(CEventList *thi
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   if (0x13 < ~uVar3 - 1) {
-    _DAT_01d1d400 = "..\\core\\event.cpp";
-    _DAT_01d1d404 = 0xf05;
-    core_main_c_FUN_005030e0("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters",name,0x13);
+    g_CHAR_PTR_01d1d400 = "..\\core\\event.cpp";
+    g_INT_01d1d404 = 0xf05;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters");
   }
   pcVar5 = pSVar4->handle_name;
   do {

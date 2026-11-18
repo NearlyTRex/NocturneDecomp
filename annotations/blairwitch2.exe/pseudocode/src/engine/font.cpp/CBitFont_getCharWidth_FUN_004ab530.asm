@@ -8,10 +8,10 @@
 ; int              Stack[0x8]:4   char_code
 ;
 ; XREF[4]:
-;   cockpit_drawsurf.cpp_FUN_00468af0 at 00468b03
+;   cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00468af0 at 00468b03
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b335b
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b3c93
-;   shape_edittool.cpp_FUN_00484f20 at 004851d4
+;   shape_edittool.cpp_CEdButton_paint_FUN_00484f20 at 004851d4
 ;
 ; *****************************************************************************
 

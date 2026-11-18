@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004e94f0 at 004e9d49
-;   core_menu.cpp_FUN_004ea280 at 004ea421
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9d49
 ;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea812
+;   core_menu.cpp_showOptionsScreen_FUN_004ea280 at 004ea421
 ;
 ; Referenced Globals:
-;   undefined4 s_splash_mp3_005d5356+1
+;   TerminatedCString s_splash_mp3_005d5357
 ;   TerminatedCString s_splash_music_22_wav_005d5362
-;   undefined4 DAT_005e49d4
-;   undefined4 DAT_005e49d8
-;   undefined4 DAT_005e49dc
+;   float g_MenuChannel1MaxVolume = 0.25
+;   float g_MenuChannel0MaxVolume = 0.25
+;   float g_MenuChannel2MaxVolume = 1
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_reset_FUN_00560930
@@ -29,11 +29,11 @@
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00556050
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0
 ;   sound_sndmain.cpp_set3DListenerOrient_FUN_00557080
-;   sound_sndmain.cpp_set3DListenerOrientRight_FUN_00558860
 ;   sound_sndmain.cpp_set3DListenerPos_FUN_00557020
 ;   sound_sndmain.cpp_set3DListenerVelocity_FUN_00557100
 ;   sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90
 ;   sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20
+;   sound_sndmain.cpp_setReverb_FUN_00558860
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90
 ;   sound_sndmain.cpp_startSfx_FUN_00556240
 ;
@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 005607da
     FLD float ptr [ESP + 0x4]           ; 005607de
     ADD ESP,0x4                         ; 005607e2
-    FCOMP float ptr [0x005e49d4]        ; 005607e5 | DAT_005e49d4
+    FCOMP float ptr [0x005e49d4]        ; 005607e5 | g_MenuChannel1MaxVolume
     FNSTSW AX                           ; 005607eb
     SAHF                                ; 005607ed
     JA 0x005608fb                       ; 005607ee
@@ -61,12 +61,12 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 005607fb
     FLD float ptr [ESP + 0x4]           ; 005607ff
     ADD ESP,0x4                         ; 00560803
-    FCOMP float ptr [0x005e49d8]        ; 00560806 | DAT_005e49d8
+    FCOMP float ptr [0x005e49d8]        ; 00560806 | g_MenuChannel0MaxVolume
     FNSTSW AX                           ; 0056080c
     SAHF                                ; 0056080e
     JBE 0x00560821                      ; 0056080f
         ;   XREF to: 00560821 (CONDITIONAL_JUMP)  ; LAB_00560821
-    PUSH dword ptr [0x005e49d8]         ; 00560811 | DAT_005e49d8
+    PUSH dword ptr [0x005e49d8]         ; 00560811 | g_MenuChannel0MaxVolume
     PUSH 0x0                            ; 00560817
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90 ; 00560819
         ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90(int channel_index, float volume)
@@ -78,12 +78,12 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 00560828
     FLD float ptr [ESP + 0x4]           ; 0056082c
     ADD ESP,0x4                         ; 00560830
-    FCOMP float ptr [0x005e49dc]        ; 00560833 | DAT_005e49dc
+    FCOMP float ptr [0x005e49dc]        ; 00560833 | g_MenuChannel2MaxVolume
     FNSTSW AX                           ; 00560839
     SAHF                                ; 0056083b
     JBE 0x0056084e                      ; 0056083c
         ;   XREF to: 0056084e (CONDITIONAL_JUMP)  ; LAB_0056084e
-    PUSH dword ptr [0x005e49dc]         ; 0056083e | DAT_005e49dc
+    PUSH dword ptr [0x005e49dc]         ; 0056083e | g_MenuChannel2MaxVolume
     PUSH 0x2                            ; 00560844
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90 ; 00560846
         ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90(int channel_index, float volume)
@@ -102,8 +102,8 @@ section .text
     PUSH 0x0                            ; 00560868
     PUSH 0x0                            ; 0056086a
     PUSH 0x0                            ; 0056086c
-    CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_00558860 ; 0056086e
-        ;   XREF to: 00558860 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_00558860(float orient_right_x, float orient_right_y, float orient_right_z)
+    CALL sound_sndmain.cpp_setReverb_FUN_00558860 ; 0056086e
+        ;   XREF to: 00558860 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setReverb_FUN_00558860(float volume, float decay_time, float damping)
     ADD ESP,0xc                         ; 00560873
     PUSH 0x0                            ; 00560876
     PUSH 0x0                            ; 00560878
@@ -149,7 +149,7 @@ section .text
     CMP EAX,0x7530                      ; 005608de
     JLE 0x00560910                      ; 005608e3
         ;   XREF to: 00560910 (CONDITIONAL_JUMP)  ; LAB_00560910
-    PUSH 0x5d5357                       ; 005608e5 | s_splash_mp3_005d5356+1
+    PUSH 0x5d5357                       ; 005608e5 | = "splash.mp3"
     CALL sound_sndmain.cpp_startSfx_FUN_00556240 ; 005608ea
         ;   XREF to: 00556240 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00556240(char * filename)
     ADD ESP,0x4                         ; 005608ef
@@ -158,7 +158,7 @@ section .text
     ADD ESP,0x4                         ; 005608f7
         ;   Label: LAB_005608f7
     RET                                 ; 005608fa
-    PUSH dword ptr [0x005e49d4]         ; 005608fb | DAT_005e49d4
+    PUSH dword ptr [0x005e49d4]         ; 005608fb | g_MenuChannel1MaxVolume
         ;   Label: LAB_005608fb
     PUSH 0x1                            ; 00560901
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90 ; 00560903

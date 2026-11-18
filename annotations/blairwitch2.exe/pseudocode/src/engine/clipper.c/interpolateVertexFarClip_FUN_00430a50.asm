@@ -8,11 +8,12 @@
 ; SRenderVertex *  Stack[0x8]:4   v2
 ; SRenderVertex *  Stack[0xc]:4   output
 ;
-; XREF[1]:
+; XREF[2]:
+;   engine_clipper.c_clipPolygonFarPlane_FUN_00431070 at 004311df
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330 at 00431ccb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00609b34
+;   int g_FarPlaneDistance = 0x7fffffff
 ;
 ; *****************************************************************************
 
@@ -30,7 +31,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x8]       ; 00430a63
     MOV ECX,dword ptr [ESI + 0x8]       ; 00430a66
     SUB EBX,EDX                         ; 00430a69
-    MOV EDX,dword ptr [0x00609b34]      ; 00430a6b | DAT_00609b34
+    MOV EDX,dword ptr [0x00609b34]      ; 00430a6b | g_FarPlaneDistance
     SUB EDX,ECX                         ; 00430a71
     CMP EDX,EBX                         ; 00430a73
     JGE 0x00430a89                      ; 00430a75

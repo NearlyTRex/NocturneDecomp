@@ -13,15 +13,15 @@
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30 at 00537c76
-;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538cfd
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30 at 00538cfd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -57,7 +57,7 @@ section .text
     SHL EAX,0x2                         ; 00537df7
     PUSH EAX                            ; 00537dfa
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00537dfb
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 00537e00
     MOV dword ptr [EBP + 0x20],EAX      ; 00537e03
     TEST EAX,EAX                        ; 00537e06
@@ -79,7 +79,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x130]     ; 00537e43
     CMP EAX,dword ptr [EBP + 0x1c]      ; 00537e4a
     JGE 0x00537fd8                      ; 00537e4d
-        ;   XREF to: 00537fd8 (CONDITIONAL_JUMP)
+        ;   XREF to: 00537fd8 (CONDITIONAL_JUMP)  ; LAB_00537fd8
     MOV EDI,dword ptr [EBP + 0x18]      ; 00537e53
     XOR EBX,EBX                         ; 00537e56
     TEST EDI,EDI                        ; 00537e58
@@ -148,10 +148,10 @@ section .text
     MOV EAX,ESP                         ; 00537f0a
     MOV ECX,0x3b6                       ; 00537f0c
     PUSH EAX                            ; 00537f11
-    MOV dword ptr [0x01d1d400],EDX      ; 00537f12 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00537f18 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00537f1e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00537f12 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00537f18 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00537f1e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00537f23
     MOV EAX,dword ptr [EBP + 0x14]      ; 00537f26
         ;   Label: LAB_00537f26
@@ -197,10 +197,10 @@ section .text
         ;   Label: LAB_00537fad
     MOV ESI,0x37e                       ; 00537fb2
     PUSH 0x5ecdfe                       ; 00537fb7
-    MOV dword ptr [0x01d1d400],EBX      ; 00537fbc | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00537fc2 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00537fc8
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 00537fbc | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00537fc2 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00537fc8
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00537fcd
     JMP 0x00537e0e                      ; 00537fd0
         ;   XREF to: 00537e0e (UNCONDITIONAL_JUMP)  ; LAB_00537e0e
@@ -208,4 +208,18 @@ section .text
         ;   Label: LAB_00537fd5
     JMP 0x00537f68                      ; 00537fd6
         ;   XREF to: 00537f68 (UNCONDITIONAL_JUMP)  ; LAB_00537f68
+    PUSH ESI                            ; 00537fd8
+        ;   Label: LAB_00537fd8
+    MOV EAX,dword ptr [EBP + 0x14]      ; 00537fd9
+    PUSH EAX                            ; 00537fdc
+    CALL crt_memory.c_realloc_FUN_005c10d0 ; 00537fdd
+        ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
+    ADD ESP,0x8                         ; 00537fe2
+    MOV dword ptr [EBP + 0x14],EAX      ; 00537fe5
+    ADD ESP,0x144                       ; 00537fe8
+    POP EBP                             ; 00537fee
+    POP EDI                             ; 00537fef
+    POP ESI                             ; 00537ff0
+    POP EBX                             ; 00537ff1
+    RET                                 ; 00537ff2
 

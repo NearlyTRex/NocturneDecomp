@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 126,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 115
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 114
   },
   "cross_references": [],
   "function": {
@@ -39,32 +35,32 @@
   "globals": [
     {
       "addr": "02c99300",
-      "name": "DAT_02c99300",
-      "type": "undefined4",
+      "name": "g_DirectDrawObject",
+      "type": "IDirectDraw*",
       "value": null
     },
     {
       "addr": "02c99304",
-      "name": "DAT_02c99304",
-      "type": "undefined4",
+      "name": "g_DirectDrawSurface",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02c99308",
-      "name": "DAT_02c99308",
-      "type": "undefined4",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02c9930c",
-      "name": "DAT_02c9930c",
-      "type": "undefined4",
+      "name": "g_DirectDrawUnknown",
+      "type": "IUnknown*",
       "value": null
     },
     {
       "addr": "02c9be68",
-      "name": "DAT_02c9be68",
-      "type": "undefined4",
+      "name": "g_MainWindowHandle",
+      "type": "HWND",
       "value": null
     }
   ],
@@ -134,70 +130,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c9930c + 8))(_DAT_02c9930c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c99308 + 8))(_DAT_02c99308);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c99304 + 8))(_DAT_02c99304);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c99300 + 0x4c))(_DAT_02c99300);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c99300 + 8))(_DAT_02c99300);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_02c99300",
-      "severity": "mild",
-      "text": "HVar1 = DirectDrawCreate((GUID *)0x0,(LPDIRECTDRAW *)&DAT_02c99300,(IUnknown *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*_DAT_02c99300 + 0x50))(_DAT_02c99300,_DAT_02c9be68,0x11);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

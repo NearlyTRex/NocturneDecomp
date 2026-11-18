@@ -2,19 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 73,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 93
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -62,9 +60,9 @@
     },
     {
       "addr": "006265f8",
-      "name": "DAT_006265f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006265f8",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "006265fc",
@@ -182,8 +180,8 @@
     },
     {
       "addr": "02c9f06c",
-      "name": "DAT_02c9f06c",
-      "type": "undefined4",
+      "name": "g_CurrentThreadTlsBlock",
+      "type": "void*",
       "value": null
     },
     {
@@ -256,22 +254,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(uint *)((int)_DAT_02c9f06c",
-      "severity": "moderate",
-      "text": "FUN_005cce60(*(uint *)((int)_DAT_02c9f06c + 0xda),_DAT_02c9f06c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_006265f8",
-      "severity": "mild",
-      "text": "TlsSetValue(DAT_006265f8,_DAT_02c9f06c);",
-      "type": "undefined_data"
     }
   ]
 }

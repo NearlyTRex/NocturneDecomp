@@ -10,19 +10,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ShotShadowWithLead_005f178f
 ;   TerminatedCString s_ShadowDead_005f17a2
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_01d06ab4
+;   CEventList* g_CEventListPtr = 01c51d80
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_shadow.cpp_FUN_0055f4f0
-;   core_shadow.cpp_FUN_0055f540
+;   core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0
+;   core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -95,15 +95,15 @@ section .text
     JNZ 0x0055ff6c                      ; 0055ff50
         ;   XREF to: 0055ff6c (CONDITIONAL_JUMP)  ; LAB_0055ff6c
     PUSH EBX                            ; 0055ff52
-    CALL core_shadow.cpp_FUN_0055f4f0   ; 0055ff53
-        ;   XREF to: 0055f4f0 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0055f4f0()
+    CALL core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0 ; 0055ff53
+        ;   XREF to: 0055f4f0 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0(CShadow * this_ptr)
     ADD ESP,0x4                         ; 0055ff58
     LEA EAX,[EBP + 0x1c]                ; 0055ff5b
     PUSH EAX                            ; 0055ff5e
     PUSH EBX                            ; 0055ff5f
     LEA ESI,[ESP + 0x10]                ; 0055ff60
-    CALL core_actor.cpp_FUN_00408b40    ; 0055ff64
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0055ff64
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0055ff69
     FLD float ptr [EBP + 0x4]           ; 0055ff6c
         ;   Label: LAB_0055ff6c
@@ -136,15 +136,15 @@ section .text
     CMP EAX,0x10                        ; 0055ffbf
     JZ 0x00560025                       ; 0055ffc2
         ;   XREF to: 00560025 (CONDITIONAL_JUMP)  ; LAB_00560025
-    MOV EAX,[0x01d06ab4]                ; 0055ffc4 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0055ffc4 | g_INT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0055ffc9
     ADD EAX,0x20                        ; 0055ffd0
     PUSH EAX                            ; 0055ffd3
     PUSH EBX                            ; 0055ffd4
     LEA ESI,[ESP + 0x1c]                ; 0055ffd5
     LEA EDI,[ESP + 0x28]                ; 0055ffd9
-    CALL core_actor.cpp_FUN_00408bb0    ; 0055ffdd
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0055ffdd
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x1c]                ; 0055ffe2
     ADD ESP,0x8                         ; 0055ffe6
     MOVSD ES:EDI,ESI                    ; 0055ffe9
@@ -165,11 +165,11 @@ section .text
         ;   Label: LAB_00560000
     ADD ESP,0xc                         ; 00560005
     PUSH EBX                            ; 00560008
-    CALL core_shadow.cpp_FUN_0055f540   ; 00560009
-        ;   XREF to: 0055f540 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0055f540()
+    CALL core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540 ; 00560009
+        ;   XREF to: 0055f540 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540(CShadow * this_ptr)
     ADD ESP,0x4                         ; 0056000e
     PUSH 0x5f17a2                       ; 00560011 | = "ShadowDead"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 00560016 | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 00560016 | g_CEventListPtr
     PUSH EDI                            ; 0056001c
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 0056001d
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -189,7 +189,7 @@ section .text
     RET                                 ; 00560036
     PUSH 0x5f178f                       ; 00560037 | = "ShotShadowWithLead"
         ;   Label: LAB_00560037
-    MOV EAX,[0x0061b4d0]                ; 0056003c | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 0056003c | g_CEventListPtr
     PUSH EAX                            ; 00560041
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00560042
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -255,8 +255,8 @@ section .text
     ADD ESP,0xc                         ; 005600c3
     PUSH EBX                            ; 005600c6
         ;   Label: LAB_005600c6
-    CALL core_shadow.cpp_FUN_0055f4f0   ; 005600c7
-        ;   XREF to: 0055f4f0 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0055f4f0()
+    CALL core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0 ; 005600c7
+        ;   XREF to: 0055f4f0 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0(CShadow * this_ptr)
     ADD ESP,0x4                         ; 005600cc
     PUSH EBP                            ; 005600cf
     PUSH EBX                            ; 005600d0

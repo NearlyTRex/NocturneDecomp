@@ -10,10 +10,10 @@
 ;   TerminatedCString s_bipHand_005f7f61
 ;   TerminatedCString s_bipArm_2_005f7f69
 ;   TerminatedCString s_bipArm_1_005f7f72
-;   undefined4 DAT_02c8ad48
-;   undefined4 DAT_02c8ad4c
-;   undefined4 DAT_02c8ad50
-;   undefined4 DAT_02c8ad54
+;   int g_INT_02c8ad48
+;   int g_INT_02c8ad4c
+;   int g_INT_02c8ad50
+;   int g_INT_02c8ad54
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a0510
@@ -52,20 +52,20 @@ section .text
     PUSH 0x1                            ; 0059910c
     PUSH 0x5f7f69                       ; 0059910e | = "bipArm 2"
     PUSH EBX                            ; 00599113
-    MOV [0x02c8ad48],EAX                ; 00599114 | DAT_02c8ad48
+    MOV [0x02c8ad48],EAX                ; 00599114 | g_INT_02c8ad48
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 00599119
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0059911e
     PUSH 0x1                            ; 00599121
     PUSH 0x5f7f72                       ; 00599123 | = "bipArm 1"
     PUSH EBX                            ; 00599128
-    MOV [0x02c8ad4c],EAX                ; 00599129 | DAT_02c8ad4c
+    MOV [0x02c8ad4c],EAX                ; 00599129 | g_INT_02c8ad4c
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0059912e
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00599133
     XOR ECX,ECX                         ; 00599136
-    MOV [0x02c8ad50],EAX                ; 00599138 | DAT_02c8ad50
-    MOV dword ptr [0x02c8ad54],ECX      ; 0059913d | DAT_02c8ad54
+    MOV [0x02c8ad50],EAX                ; 00599138 | g_INT_02c8ad50
+    MOV dword ptr [0x02c8ad54],ECX      ; 0059913d | g_INT_02c8ad54
     POP EBX                             ; 00599143
     RET                                 ; 00599144
 

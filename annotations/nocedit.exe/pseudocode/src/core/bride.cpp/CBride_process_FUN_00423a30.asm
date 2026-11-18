@@ -531,7 +531,7 @@ section .text
     ADD EAX,EDX                         ; 00423f45
     PUSH 0x3ecccccd                     ; 00423f47
     PUSH EAX                            ; 00423f4c
-    PUSH 0x822c94                       ; 00423f4d | CVector3f_00822c94
+    PUSH 0x822c94                       ; 00423f4d | g_BrideOffsetPlusX
     LEA EAX,[EBP + -0x56]               ; 00423f52
     FLD float ptr [EBP + 0x76]          ; 00423f55
     PUSH EAX                            ; 00423f58
@@ -594,7 +594,7 @@ section .text
     ADD EAX,EDX                         ; 0042400b
     PUSH 0x3ecccccd                     ; 0042400d
     PUSH EAX                            ; 00424012
-    PUSH 0x822c94                       ; 00424013 | CVector3f_00822c94
+    PUSH 0x822c94                       ; 00424013 | g_BrideOffsetPlusX
     LEA EAX,[EBP + -0x1a]               ; 00424018
     FLD float ptr [EBP + 0x76]          ; 0042401b
     PUSH EAX                            ; 0042401e
@@ -710,7 +710,7 @@ section .text
     ADD EAX,EDX                         ; 0042415c
     PUSH 0x3ecccccd                     ; 0042415e
     PUSH EAX                            ; 00424163
-    PUSH 0x822c94                       ; 00424164 | CVector3f_00822c94
+    PUSH 0x822c94                       ; 00424164 | g_BrideOffsetPlusX
     LEA EAX,[EBP + 0xa]                 ; 00424169
     FLD float ptr [EBP + 0x76]          ; 0042416c
     PUSH EAX                            ; 0042416f
@@ -788,7 +788,7 @@ section .text
     ADD EAX,EDX                         ; 00424248
     PUSH 0x3ecccccd                     ; 0042424a
     PUSH EAX                            ; 0042424f
-    PUSH 0x822c94                       ; 00424250 | CVector3f_00822c94
+    PUSH 0x822c94                       ; 00424250 | g_BrideOffsetPlusX
     LEA EAX,[EBP + -0xe]                ; 00424255
     FLD float ptr [EBP + 0x76]          ; 00424258
     PUSH EAX                            ; 0042425b

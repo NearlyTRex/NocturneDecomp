@@ -47,7 +47,7 @@
 ; Called Functions:
 ;   BringWindowToTop
 ;   core_main.c_enterMainGameMenu_FUN_00503290
-;   core_main.c_FUN_00503a30
+;   core_main.c_finalizeGameSystems_FUN_00503a30
 ;   core_main.c_initializeGameSystems_FUN_005032a0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_stdlib.c_srand_FUN_005c0870
@@ -119,7 +119,7 @@ section .text
     TEST DL,DL                          ; 005b2e76
     JZ 0x005b2f0e                       ; 005b2e78
         ;   XREF to: 005b2f0e (CONDITIONAL_JUMP)  ; LAB_005b2f0e
-    MOV ECX,dword ptr [0x02c9cb08]      ; 005b2e7e | DAT_02c9cb08
+    MOV ECX,dword ptr [0x02c9cb08]      ; 005b2e7e | g_INT_02c9cb08
     SHL ECX,0x2                         ; 005b2e84
     MOV BL,byte ptr [EAX]               ; 005b2e87 | DAT_02c9ca08 | DAT_02c9ca09 | DAT_02c9ca0b
         ;   Label: LAB_005b2e87
@@ -153,13 +153,13 @@ section .text
     CALL dword ptr CS:[0x5d0504]        ; 005b2ec2 | PTR_SetForegroundWindow_005d0504
     PUSH 0x1                            ; 005b2ec9
     CALL dword ptr CS:[0x5d0544]        ; 005b2ecb | PTR_ExitProcess_005d0544
-    MOV EBX,dword ptr [0x02c9cb08]      ; 005b2ed7 | DAT_02c9cb08
+    MOV EBX,dword ptr [0x02c9cb08]      ; 005b2ed7 | g_INT_02c9cb08
         ;   Label: LAB_005b2ed7
     ADD ECX,0x4                         ; 005b2edd
     MOV byte ptr [EAX],0x0              ; 005b2ee0 | DAT_02c9ca09
     INC EBX                             ; 005b2ee3
     MOV dword ptr [ECX + 0x2c9cb08],EDI ; 005b2ee4 | DAT_02c9ca08
-    MOV dword ptr [0x02c9cb08],EBX      ; 005b2eea | DAT_02c9cb08
+    MOV dword ptr [0x02c9cb08],EBX      ; 005b2eea | g_INT_02c9cb08
     MOV BH,byte ptr [EDX]               ; 005b2ef0 | DAT_02c9ca0a
     MOV EAX,EDX                         ; 005b2ef2
     CMP BH,0x20                         ; 005b2ef4
@@ -234,14 +234,14 @@ section .text
     MOV EBX,dword ptr [ESP + 0x6c]      ; 005b2fbf
     MOV dword ptr [ESP + 0x24],ECX      ; 005b2fc3
     CALL dword ptr CS:[0x5d04f0]        ; 005b2fc7 | PTR_RegisterClassA_005d04f0
-    MOV dword ptr [0x02c9be6c],EBP      ; 005b2fce | DAT_02c9be6c
-    CALL wincore_winrun.cpp_FUN_005b2d90 ; 005b2fd4
-        ;   XREF to: 005b2d90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2d90()
+    MOV dword ptr [0x02c9be6c],EBP      ; 005b2fce | g_INT_02c9be6c
+    CALL wincore_winrun.cpp_createMainWindow_FUN_005b2d90 ; 005b2fd4
+        ;   XREF to: 005b2d90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_createMainWindow_FUN_005b2d90()
     PUSH EBX                            ; 005b2fd9
-    MOV ESI,dword ptr [0x02c9be68]      ; 005b2fda | DAT_02c9be68
+    MOV ESI,dword ptr [0x02c9be68]      ; 005b2fda | g_MainWindowHandle
     PUSH ESI                            ; 005b2fe0
     CALL dword ptr CS:[0x5d050c]        ; 005b2fe1 | PTR_ShowWindow_005d050c
-    MOV EDI,dword ptr [0x02c9be68]      ; 005b2fe8 | DAT_02c9be68
+    MOV EDI,dword ptr [0x02c9be68]      ; 005b2fe8 | g_MainWindowHandle
     PUSH EDI                            ; 005b2fee
     CALL dword ptr CS:[0x5d0514]        ; 005b2fef | PTR_UpdateWindow_005d0514
     CALL dword ptr CS:[0x5d0588]        ; 005b2ff6 | PTR_GetCurrentProcess_005d0588
@@ -261,19 +261,19 @@ section .text
     MOV dword ptr [ESP + 0x2c],EBP      ; 005b3022
     CALL dword ptr CS:[0x5d05e8]        ; 005b3026 | PTR_GlobalMemoryStatus_005d05e8
     MOV EAX,dword ptr [ESP + 0x30]      ; 005b302d
-    MOV [0x02c9be78],EAX                ; 005b3031 | DAT_02c9be78
+    MOV [0x02c9be78],EAX                ; 005b3031 | g_TotalPhysicalMemory
     MOV EAX,dword ptr [ESP + 0x3c]      ; 005b3036
     PUSH 0x2c9cb0c                      ; 005b303a
-    MOV [0x02c9be7c],EAX                ; 005b303f | DAT_02c9be7c
-    MOV EAX,[0x02c9cb08]                ; 005b3044 | DAT_02c9cb08
+    MOV [0x02c9be7c],EAX                ; 005b303f | g_AvailableSwapSpace
+    MOV EAX,[0x02c9cb08]                ; 005b3044 | g_INT_02c9cb08
     PUSH EAX                            ; 005b3049
     CALL core_main.c_initializeGameSystems_FUN_005032a0 ; 005b304a
         ;   XREF to: 005032a0 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_005032a0(int argc, char * * argv)
     ADD ESP,0x8                         ; 005b304f
     CALL core_main.c_enterMainGameMenu_FUN_00503290 ; 005b3052
         ;   XREF to: 00503290 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_00503290()
-    CALL core_main.c_FUN_00503a30       ; 005b3057
-        ;   XREF to: 00503a30 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_00503a30()
+    CALL core_main.c_finalizeGameSystems_FUN_00503a30 ; 005b3057
+        ;   XREF to: 00503a30 (UNCONDITIONAL_CALL)  ; void core_main.c_finalizeGameSystems_FUN_00503a30()
     PUSH 0x0                            ; 005b305c
     CALL dword ptr CS:[0x5d0544]        ; 005b305e | PTR_ExitProcess_005d0544
     XOR BH,BH                           ; 005b3071

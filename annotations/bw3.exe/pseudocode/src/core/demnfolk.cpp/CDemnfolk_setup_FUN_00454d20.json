@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 148,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 5,
+    "pseudocode_lines": 82,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 289
+    "total_lines": 288
   },
   "cross_references": [],
   "function": {
@@ -135,8 +133,8 @@
     },
     {
       "addr": "005ba475",
-      "name": "DAT_005ba475",
-      "type": "undefined4",
+      "name": "s_larm_005ba475",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -147,8 +145,8 @@
     },
     {
       "addr": "005ba480",
-      "name": "DAT_005ba480",
-      "type": "undefined4",
+      "name": "s_rarm_005ba480",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -171,15 +169,15 @@
     },
     {
       "addr": "005ba497",
-      "name": "DAT_005ba497",
-      "type": "undefined4",
+      "name": "s_head_005ba497",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ba4a2",
-      "name": "DAT_005ba4a2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ba4a2",
+      "type": "double",
+      "value": "-0.75"
     }
   ],
   "param_estimates": {
@@ -259,38 +257,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005ba475",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005ba475,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005ba480",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005ba480,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_005ba497",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005ba497,1);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

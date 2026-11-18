@@ -16,9 +16,9 @@ int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_0054c770(char *filename)
   if (iVar1 < 0x200001) {
     engine_dosio_cpp_splitPath_FUN_00461070
               (filename,(char *)0x0,(char *)0x0,(char *)0x0,acStack_100);
-    iVar1 = _stricmp(acStack_100,&DAT_005e7ee9);
+    iVar1 = _stricmp(acStack_100,"mp3");
     if (iVar1 != 0) {
-      iVar1 = _stricmp(acStack_100,&DAT_005e7eed);
+      iVar1 = _stricmp(acStack_100,".mp3");
       if (iVar1 != 0) {
         return 0;
       }

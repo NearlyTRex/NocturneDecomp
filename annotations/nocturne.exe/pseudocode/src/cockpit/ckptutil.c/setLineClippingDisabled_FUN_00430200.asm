@@ -10,7 +10,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50 at 0045caa3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ad280
+;   int g_LineClippingDisabled = 0x1
 ;
 ; *****************************************************************************
 
@@ -18,6 +18,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00430200
         ;   Label: cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200
-    MOV [0x005ad280],EAX                ; 00430204 | DAT_005ad280
+    MOV [0x005ad280],EAX                ; 00430204 | g_LineClippingDisabled
     RET                                 ; 00430209
 

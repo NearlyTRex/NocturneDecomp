@@ -17,11 +17,11 @@
 ;   TerminatedCString s_Set_cooperative_level_005ea4c3
 ;   TerminatedCString s_Create_the_primary_buffe_005ea4d9
 ;   TerminatedCString s_Create_the_primary_buffe_005ea4f3
-;   undefined4 DAT_00621060
-;   undefined4 DAT_0264a5c4
-;   undefined4 DAT_0264a5c8
-;   undefined4 DAT_0264a5d0
-;   undefined4 DAT_02664628
+;   GUID g_IID_IDirectSound3DListener = IDirectSound3DListener 279afa84-4981-11ce-a521-0020af0be560
+;   IDirectSound* g_DirectSound
+;   IDirectSoundBuffer* g_DirectSoundPrimaryBuffer
+;   IDirectSound3DListener* g_DirectSound3DListener
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundCreate
@@ -29,7 +29,7 @@
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_CDirectSoundDevice_close_FUN_00555060
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
@@ -80,7 +80,7 @@ section .text
     LEA ECX,[EAX + 0x4]                 ; 00557972
     PUSH 0x0                            ; 00557975
         ;   Label: LAB_00557975
-    PUSH 0x264a5c4                      ; 00557977 | DAT_0264a5c4
+    PUSH 0x264a5c4                      ; 00557977 | g_DirectSound
     PUSH ECX                            ; 0055797c
     CALL crt_dsound.c_DirectSoundCreate ; 0055797d
         ;   XREF to: 005c7550 (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundCreate(LPGUID lp_guid, LPDIRECTSOUND * pp_ds, LPUNKNOWN p_unk_outer)
@@ -88,8 +88,8 @@ section .text
     JZ 0x005579d3                       ; 00557984
         ;   XREF to: 005579d3 (CONDITIONAL_JUMP)  ; LAB_005579d3
     PUSH EAX                            ; 00557986
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557987
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557987
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 0055798c
     PUSH EAX                            ; 0055798f
     PUSH 0x5ea4a9                       ; 00557990 | = "create DirectSound object"
@@ -117,8 +117,8 @@ section .text
     RET                                 ; 005579d2
     PUSH 0x2                            ; 005579d3
         ;   Label: LAB_005579d3
-    MOV ECX,dword ptr [0x02664628]      ; 005579d5 | DAT_02664628
-    MOV EAX,[0x0264a5c4]                ; 005579db | DAT_0264a5c4
+    MOV ECX,dword ptr [0x02664628]      ; 005579d5 | g_MainWindowHandle
+    MOV EAX,[0x0264a5c4]                ; 005579db | g_DirectSound
     PUSH ECX                            ; 005579e0
     MOV EDX,dword ptr [EAX]             ; 005579e1
     PUSH EAX                            ; 005579e3
@@ -137,8 +137,8 @@ section .text
     MOV EDI,0x11                        ; 00557a07
     PUSH 0x0                            ; 00557a0c
     LEA EDX,[ESP + 0x75c]               ; 00557a0e
-    MOV EAX,[0x0264a5c4]                ; 00557a15 | DAT_0264a5c4
-    PUSH 0x264a5c8                      ; 00557a1a | DAT_0264a5c8
+    MOV EAX,[0x0264a5c4]                ; 00557a15 | g_DirectSound
+    PUSH 0x264a5c8                      ; 00557a1a | g_DirectSoundPrimaryBuffer
     MOV dword ptr [ESP + 0x760],ESI     ; 00557a1f
     MOV dword ptr [ESP + 0x764],EDI     ; 00557a26
     PUSH EDX                            ; 00557a2d
@@ -161,9 +161,9 @@ section .text
     CMP dword ptr [EAX*0x4 + 0x264998c],0x2 ; 00557a50
     JL 0x00557a6e                       ; 00557a58
         ;   XREF to: 00557a6e (CONDITIONAL_JUMP)  ; LAB_00557a6e
-    PUSH 0x264a5d0                      ; 00557a5a | DAT_0264a5d0
-    MOV EAX,[0x0264a5c8]                ; 00557a5f | DAT_0264a5c8
-    PUSH 0x621060                       ; 00557a64 | DAT_00621060
+    PUSH 0x264a5d0                      ; 00557a5a | g_DirectSound3DListener
+    MOV EAX,[0x0264a5c8]                ; 00557a5f | g_DirectSoundPrimaryBuffer
+    PUSH 0x621060                       ; 00557a64 | g_IID_IDirectSound3DListener
     MOV EDX,dword ptr [EAX]             ; 00557a69
     PUSH EAX                            ; 00557a6b
     CALL dword ptr [EDX]                ; 00557a6c
@@ -176,8 +176,8 @@ section .text
     RET                                 ; 00557a7c
     PUSH EAX                            ; 00557a7d
         ;   Label: LAB_00557a7d
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557a7e
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557a7e
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00557a83
     PUSH EAX                            ; 00557a86
     PUSH 0x5ea4c3                       ; 00557a87 | = "Set cooperative level"
@@ -192,8 +192,8 @@ section .text
         ;   XREF to: 005579b1 (UNCONDITIONAL_JUMP)  ; LAB_005579b1
     PUSH EAX                            ; 00557aad
         ;   Label: LAB_00557aad
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557aae
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557aae
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00557ab3
     PUSH EAX                            ; 00557ab6
     PUSH 0x5ea4d9                       ; 00557ab7 | = "Create the primary buffer"
@@ -210,12 +210,12 @@ section .text
     ADD ESP,0x4                         ; 00557ad6
     PUSH 0x0                            ; 00557ad9
     MOV AH,byte ptr [ESP + 0x760]       ; 00557adb
-    PUSH 0x264a5c8                      ; 00557ae2 | DAT_0264a5c8
+    PUSH 0x264a5c8                      ; 00557ae2 | g_DirectSoundPrimaryBuffer
     LEA EDX,[ESP + 0x760]               ; 00557ae7
     AND AH,0xef                         ; 00557aee
     PUSH EDX                            ; 00557af1
     MOV byte ptr [ESP + 0x768],AH       ; 00557af2
-    MOV EAX,[0x0264a5c4]                ; 00557af9 | DAT_0264a5c4
+    MOV EAX,[0x0264a5c4]                ; 00557af9 | g_DirectSound
     PUSH EAX                            ; 00557afe
     MOV ECX,dword ptr [EAX]             ; 00557aff
     CALL dword ptr [ECX + 0xc]          ; 00557b01
@@ -223,8 +223,8 @@ section .text
     JZ 0x00557a38                       ; 00557b06
         ;   XREF to: 00557a38 (CONDITIONAL_JUMP)  ; LAB_00557a38
     PUSH EAX                            ; 00557b0c
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557b0d
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557b0d
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00557b12
     PUSH EAX                            ; 00557b15
     PUSH 0x5ea4f3                       ; 00557b16 | = "Create the primary buffer"

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_ptr,float delta_time)
 
@@ -27,7 +26,7 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
   float fStack_2c;
   float fStack_28;
   float fStack_24;
-  float fStack_20;
+  CVector3f CStack_20;
   
   bVar8 = 0;
   if (1.0 <= this_ptr->morph_time) {
@@ -38,18 +37,19 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
   iVar4 = pSVar6->state_index;
   if ((iVar4 == 0x91) || (iVar4 == 0x92)) {
     if ((iVar4 == 0x92) &&
-       ((fVar2 = delta_time / _DAT_005e36d8 + this_ptr->morph_time, this_ptr->morph_time = fVar2,
+       ((fVar2 = delta_time / 2.0f + this_ptr->morph_time, this_ptr->morph_time = fVar2,
         1.0 <= fVar2 && (this_ptr->target_actor != (CDemonActor *)0x0)))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-                (0x01D81080,this_ptr->target_actor);
-      this_ptr_01 = 0x01D81080;
+                (g_CDemonMission_PTR_00600530,this_ptr->target_actor);
+      this_ptr_01 = g_CDemonMission_PTR_00600530;
       this_ptr->target_actor = (CDemonActor *)0x0;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(this_ptr_01,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                (this_ptr_01,(CDemonActor *)this_ptr,1);
     }
   }
   else {
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (0x01C6E360,this_ptr->transform_event);
+                      (g_CEventListPtr,this_ptr->transform_event);
     if (iVar7 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,0x91,1);
       if (this_ptr->transform_wav[0] != '\0') {
@@ -71,13 +71,15 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_
     core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar7);
   }
   if (iVar4 != 0) {
-    core_actor_cpp_FUN_00408b00(this_ptr,&(this_ptr->base).base.model.accumulated_root_motion);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+              ((CDemonActor *)this_ptr,&(this_ptr->base).base.model.accumulated_root_motion,
+               &CStack_20);
     pCVar1 = &(this_ptr->base).base.base.location;
-    fStack_2c = fStack_20;
+    fStack_2c = CStack_20.x;
     *(uint *)((int)&stack0xffffffd8 + (uint)bVar8 * -8) =
-         *(uint *)(&stack0xffffffe4 + (uint)bVar8 * -8);
+         *(uint *)((int)&CStack_20 + (uint)bVar8 * -8 + 4);
     *(uint *)((int)&stack0xffffffdc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+         *(uint *)((int)&CStack_20 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
     fVar2 = (this_ptr->base).base.base.location.position.y;
     fVar3 = (this_ptr->base).base.base.location.position.z;
     (pCVar1->position).x = (pCVar1->position).x + fStack_2c;

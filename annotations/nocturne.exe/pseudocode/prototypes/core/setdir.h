@@ -31,7 +31,7 @@ void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 
 // Original: core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670
 // Address: 00513670
-void __cdecl CDemonSet::writeThumbs(CDemonSet *this_ptr,char *param_2);
+void __cdecl CDemonSet::writeThumbs(CDemonSet *this_ptr,char *filename);
 
 // Original: core_setdir.cpp_CDemonSet_saveThumbs_FUN_00513720
 // Address: 00513720

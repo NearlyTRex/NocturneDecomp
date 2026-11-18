@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission *this_ptr,CCharacter *existing_hero)
 
 {
@@ -24,7 +22,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
     iVar4 = iVar2;
   } while (iVar2 != 0x10);
   if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
-    _DAT_01cae0d4 = 1;
+    g_HeroCount = 1;
     g_LocalHeroIndex = g_CNetGamePtr->connection_type;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920
                       (this_ptr,0,g_CGamePtr->hero_number,existing_hero);
@@ -34,14 +32,14 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
     g_HeroActors[g_LocalHeroIndex]->aim_mode = g_CGamePtr->aim_mode;
   }
   else {
-    _DAT_01cae0d4 = g_CNetGamePtr->player_count;
-    if (3 < _DAT_01cae0d4) {
+    g_HeroCount = g_CNetGamePtr->player_count;
+    if (3 < g_HeroCount) {
       g_CurrentFilename = "..\\core\\mission.cpp";
       g_CurrentLineNumber = 1595;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::createHeros - too many network players for MAX_HERO");
     }
     iVar4 = 0;
-    if (0 < _DAT_01cae0d4) {
+    if (0 < g_HeroCount) {
       iVar3 = 0;
       iVar2 = 0;
       do {
@@ -57,7 +55,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
              *(uint *)(g_CNetGamePtr->players[0].name + iVar3 + 0x18);
         iVar3 = iVar3 + 0x78;
         iVar2 = iVar2 + 4;
-      } while (iVar4 < _DAT_01cae0d4);
+      } while (iVar4 < g_HeroCount);
     }
     g_LocalHeroIndex = g_CNetGamePtr->local_player_index;
   }

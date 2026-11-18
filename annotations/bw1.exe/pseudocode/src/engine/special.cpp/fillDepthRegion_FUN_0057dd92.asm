@@ -13,10 +13,10 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0 at 0041705f
 ;
 ; Referenced Globals:
-;   undefined8 DAT_00623ddc
-;   undefined4 DAT_00623de4
-;   undefined4 DAT_01c4480c
-;   undefined4 DAT_01c50948
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_INT_01c50948
 ;
 ; Called Functions:
 ;   engine_special.cpp_clearZBox_FUN_00582960
@@ -30,7 +30,7 @@ section .text
     MOV EBP,ESP                         ; 0057dd93
     PUSH ESI                            ; 0057dd95
     PUSH EDI                            ; 0057dd96
-    CMP dword ptr [0x01c50948],0x0      ; 0057dd97 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 0057dd97 | g_INT_01c50948
     JZ 0x0057ddb9                       ; 0057dd9e
         ;   XREF to: 0057ddb9 (CONDITIONAL_JUMP)  ; LAB_0057ddb9
     PUSH dword ptr [EBP + 0x14]         ; 0057dda0
@@ -59,10 +59,10 @@ section .text
     INC ECX                             ; 0057ddcb
     MOV EDX,dword ptr [EBP + 0x8]       ; 0057ddcc
     SHL EDX,0x2                         ; 0057ddcf
-    FLD double ptr [0x00623ddc]         ; 0057ddd2 | DAT_00623ddc
+    FLD double ptr [0x00623ddc]         ; 0057ddd2 | g_BufferFillZeroQword
     PUSH ECX                            ; 0057ddd8
         ;   Label: LAB_0057ddd8
-    MOV EDI,dword ptr [EBX*0x4 + 0x1c4480c] ; 0057ddd9 | DAT_01c4480c
+    MOV EDI,dword ptr [EBX*0x4 + 0x1c4480c] ; 0057ddd9 | g_ZBufferScanlineArray
     ADD EDI,EDX                         ; 0057dde0
     AND EDI,0xfffffff8                  ; 0057dde2
     SHR ECX,0x1                         ; 0057dde5
@@ -77,7 +77,7 @@ section .text
     CMP EBX,dword ptr [EBP + 0x14]      ; 0057ddf1
     JBE 0x0057ddd8                      ; 0057ddf4
         ;   XREF to: 0057ddd8 (CONDITIONAL_JUMP)  ; LAB_0057ddd8
-    FSTP double ptr [0x00623de4]        ; 0057ddf6 | DAT_00623de4
+    FSTP double ptr [0x00623de4]        ; 0057ddf6 | g_BufferFillFpuPopST0
     POPAD                               ; 0057ddfc
     POP EDI                             ; 0057ddfd
     POP ESI                             ; 0057ddfe

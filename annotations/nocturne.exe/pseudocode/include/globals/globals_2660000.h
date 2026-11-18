@@ -5,11 +5,25 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2660000
 // =============================================================================
 
 // CBoundingBox3D[2000]
-extern CBoundingBox3D g_CBoundingBox3D_ARRAY_02665930[2000];
+extern CBoundingBox3D g_VDNearbyActorBoundingBoxes[2000];
+
+// CDemonActor*[2000]
+extern CDemonActor* g_VDNearbyActorPointers[2000];
+
+// CVector3i
+extern CVector3i g_CVector3i_026635f8;
+
+// float[250]
+extern float g_FLOAT_ARRAY_02663604[250];
+
+// int
+extern int g_VDNearbyActorCount;
 

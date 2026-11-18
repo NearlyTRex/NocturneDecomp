@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 376,
-    "complexity_score": 441,
+    "complexity_score": 426,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 53,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 156,
-    "suspect_count": 24,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -70,7 +69,7 @@
     {
       "addr": "00453d80",
       "is_variadic": false,
-      "name": "core_doc.cpp_FUN_00453d80"
+      "name": "core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80"
     },
     {
       "addr": "004ce4a0",
@@ -264,9 +263,9 @@
     },
     {
       "addr": "005cfe17",
-      "name": "DAT_005cfe17",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005cfe17",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "005cfe18",
@@ -306,56 +305,56 @@
     },
     {
       "addr": "01b4d258",
-      "name": "DAT_01b4d258",
-      "type": "undefined4",
+      "name": "g_INT_01b4d258",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d25c",
-      "name": "DAT_01b4d25c",
-      "type": "undefined4",
+      "name": "g_INT_01b4d25c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d260",
-      "name": "DAT_01b4d260",
-      "type": "undefined4",
+      "name": "g_INT_01b4d260",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d264",
-      "name": "DAT_01b4d264",
-      "type": "undefined4",
+      "name": "g_INT_01b4d264",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d268",
-      "name": "DAT_01b4d268",
-      "type": "undefined4",
+      "name": "g_INT_01b4d268",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d26c",
-      "name": "DAT_01b4d26c",
-      "type": "undefined4",
+      "name": "g_INT_01b4d26c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d270",
-      "name": "DAT_01b4d270",
-      "type": "undefined4",
+      "name": "g_INT_01b4d270",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d274",
-      "name": "DAT_01b4d274",
-      "type": "undefined4",
+      "name": "g_INT_01b4d274",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d278",
-      "name": "DAT_01b4d278",
-      "type": "undefined4",
+      "name": "g_INT_01b4d278",
+      "type": "int",
       "value": null
     },
     {
@@ -378,20 +377,20 @@
     },
     {
       "addr": "01b4d288",
-      "name": "DAT_01b4d288",
-      "type": "undefined4",
+      "name": "g_INT_01b4d288",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d28c",
-      "name": "DAT_01b4d28c",
-      "type": "undefined4",
+      "name": "g_INT_01b4d28c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d290",
-      "name": "DAT_01b4d290",
-      "type": "undefined4",
+      "name": "g_INT_01b4d290",
+      "type": "int",
       "value": null
     },
     {
@@ -402,14 +401,14 @@
     },
     {
       "addr": "01b4d298",
-      "name": "DAT_01b4d298",
-      "type": "undefined4",
+      "name": "g_INT_01b4d298",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d29c",
-      "name": "DAT_01b4d29c",
-      "type": "undefined4",
+      "name": "g_INT_01b4d29c",
+      "type": "int",
       "value": null
     },
     {
@@ -426,20 +425,20 @@
     },
     {
       "addr": "01b4d2a8",
-      "name": "DAT_01b4d2a8",
-      "type": "undefined4",
+      "name": "g_INT_01b4d2a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d2ac",
-      "name": "DAT_01b4d2ac",
-      "type": "undefined4",
+      "name": "g_INT_01b4d2ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d2b0",
-      "name": "DAT_01b4d2b0",
-      "type": "undefined4",
+      "name": "g_INT_01b4d2b0",
+      "type": "int",
       "value": null
     }
   ],
@@ -579,14 +578,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 130,
-      "match": "DAT_005cfe17",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,&DAT_005cfe17);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 94,
       "match": "(int)&CStack_2c",
@@ -702,7 +693,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 8,
         "vtable_addr": "005f5174"
       }

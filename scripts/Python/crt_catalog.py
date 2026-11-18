@@ -3,10 +3,7 @@
 #
 # The human-editable source is research/10-tridx7_crt_identification/crt_functions.md
 # (markdown tables). extract_crt_catalog.py flattens it into a canonical, greppable
-# TSV data file (crt_functions.tsv) that the apply tools consume:
-#
-#   name_crt_functions.py    -> uses addr, conf, name
-#   apply_crt_signatures.py  -> uses addr, conf, name, ret, conv, params
+# TSV data file (crt_functions.tsv), kept beside it as the machine-readable form.
 #
 # TSV columns (tab-separated, one header line):
 #   addr   conf   name   ret   conv   params   note
@@ -35,9 +32,6 @@ SIG_RE = re.compile(
     r"^\s*(?P<ret>.+?)\s+(?P<conv>%s)\s*\((?P<params>.*)\)\s*$"
     % "|".join(CONVENTIONS))
 TSV_COLUMNS = ["addr", "conf", "name", "ret", "conv", "params", "note"]
-# Words that end a parameter's type rather than name it.
-TYPE_WORDS = frozenset(("char", "short", "int", "long", "float", "double", "void",
-                        "signed", "unsigned", "const", "volatile"))
 
 
 def parse_signature(sig):
@@ -56,48 +50,6 @@ def parse_signature(sig):
         return sig.strip(), "", ""
     close = sig.rfind(")")
     return sig[:paren].strip(), "", sig[paren + 1:close if close > paren else None].strip()
-
-
-def split_params(params_str):
-    """Split a parameter list into [(type, name, is_vararg), ...].
-
-    Respects nested parens (function-pointer params). 'void'/'' -> [].
-    """
-    s = params_str.strip()
-    if s == "" or s == "void":
-        return []
-    parts, depth, cur = [], 0, ""
-    for ch in s:
-        if ch == "(":
-            depth += 1
-        elif ch == ")":
-            depth -= 1
-        if ch == "," and depth == 0:
-            parts.append(cur)
-            cur = ""
-        else:
-            cur += ch
-    if cur.strip():
-        parts.append(cur)
-
-    out = []
-    for p in parts:
-        p = p.strip()
-        if p == "...":
-            out.append(("...", "", True))
-            continue
-        # trailing identifier is the name only if preceded by whitespace or '*',
-        # and is not itself part of the type ("unsigned int" has no name)
-        m = re.match(r"^(.*[\s\*])([A-Za-z_]\w*)$", p)
-        if m and m.group(2) not in TYPE_WORDS:
-            out.append((m.group(1).strip(), m.group(2), False))
-        else:
-            out.append((p, "", False))
-    return out
-
-
-def has_varargs(params_str):
-    return any(v[2] for v in split_params(params_str))
 
 
 def parse_catalog_md(path=CATALOG_MD):
@@ -162,17 +114,3 @@ def write_tsv(entries, path=CATALOG_TSV):
     with open(path, "w") as fh:
         fh.write(render_tsv(entries))
     return len(entries)
-
-
-def load_tsv(path=CATALOG_TSV):
-    """Load the canonical TSV data file into a list of entry dicts."""
-    entries = []
-    with open(path) as fh:
-        header = fh.readline().rstrip("\n").split("\t")
-        for line in fh:
-            if not line.strip():
-                continue
-            cells = line.rstrip("\n").split("\t")
-            row = dict(zip(header, cells))
-            entries.append(row)
-    return entries

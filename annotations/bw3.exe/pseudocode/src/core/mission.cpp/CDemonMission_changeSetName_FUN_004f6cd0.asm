@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004f6cd0(CDemonMission *this_ptr,int param_2,char *param_3)
+; void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004f6cd0(CDemonMission *this_ptr,int set_index,char *set_name)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; char *           Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   set_index
+; char *           Stack[0xc]:4   set_name
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052bb95
@@ -16,11 +16,11 @@
 ;   TerminatedCString s_CDemonMission_changeSetN_005c8a64
 ;   TerminatedCString s_core_mission_cpp_005c8aa1
 ;   TerminatedCString s_Tried_to_change_the_set_005c8ab5
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -46,10 +46,10 @@ section .text
     MOV ECX,0x5c8a50                    ; 004f6cea | = "..\\core\\mission.cpp"
     MOV ESI,0x3be                       ; 004f6cef
     PUSH 0x5c8a64                       ; 004f6cf4 | = "CDemonMission::changeSetName - invali..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004f6cf9 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f6cff | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f6d05
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004f6cf9 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004f6cff | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f6d05
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004f6d0a
     MOV EAX,EBX                         ; 004f6d0d
         ;   Label: LAB_004f6d0d
@@ -85,10 +85,10 @@ section .text
         ;   Label: LAB_004f6d3f
     MOV ECX,0x3c8                       ; 004f6d44
     PUSH 0x5c8ab5                       ; 004f6d49 | = "Tried to change the set file for the ..."
-    MOV dword ptr [0x01d71de0],EDX      ; 004f6d4e | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004f6d54 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f6d5a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 004f6d4e | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004f6d54 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f6d5a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f6d5f
     POP EBP                             ; 004f6d62
     POP EDI                             ; 004f6d63

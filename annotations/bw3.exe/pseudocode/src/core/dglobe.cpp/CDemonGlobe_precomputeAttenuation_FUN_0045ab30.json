@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 166,
+    "complexity_score": 26,
     "cross_reference_count": 14,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 13,
-    "suspect_types": [
-      "extra_output",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 82
   },
   "cross_references": [
@@ -67,7 +64,7 @@
     {
       "addr": "004a6dd0",
       "from_addr": "004a6e89",
-      "name": "core_flame.cpp_FUN_004a6dd0",
+      "name": "core_flame.cpp_CFlame_updateGlobe_FUN_004a6dd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -91,7 +88,7 @@
     {
       "addr": "005438d0",
       "from_addr": "0054446e",
-      "name": "core_shadow.cpp_FUN_005438d0",
+      "name": "core_shadow.cpp_CShadow_process_FUN_005438d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -123,15 +120,15 @@
   "globals": [
     {
       "addr": "005bafd9",
-      "name": "DAT_005bafd9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005bafd9",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005bafe1",
-      "name": "DAT_005bafe1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005bafe1",
+      "type": "double",
+      "value": "65536"
     }
   ],
   "param_estimates": {
@@ -151,7 +148,7 @@
       {
         "call_addr": "0054446e",
         "call_type": "direct",
-        "caller": "core_shadow.cpp_FUN_005438d0",
+        "caller": "core_shadow.cpp_CShadow_process_FUN_005438d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +192,7 @@
       {
         "call_addr": "004a6e89",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_004a6dd0",
+        "caller": "core_flame.cpp_CFlame_updateGlobe_FUN_004a6dd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -352,110 +349,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "int extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_EDX + 0x10) = (int)ROUND(fVar2);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar1);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "if (*(int *)(extraout_EDX + 0x10) < 0x10000) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(uint *)(extraout_EDX + 0x10) = 0x10000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(float *)(extraout_EDX + 0x18) = radius * radius;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "fVar1 = ((float10)*(byte *)(extraout_EDX + 0x1c) * (float10)_DAT_005bafe1) /",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "(float10)(*(int *)(extraout_EDX + 0x10) >> 0x10);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(float *)(extraout_EDX + 0x34) = 1.0 / radius;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(float *)(extraout_EDX + 0x38) = 1.0 / (radius * radius);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(fVar1);",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

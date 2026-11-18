@@ -15,7 +15,7 @@ section .text
     PUSH 0xc358                         ; 005baae0
         ;   Label: core_zombie.cpp_factoryFuncZombie_FUN_005baae0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005baae5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005baaea
     TEST EAX,EAX                        ; 005baaed
     JNZ 0x005baaf2                      ; 005baaef

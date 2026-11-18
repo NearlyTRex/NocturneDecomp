@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 213,
+    "complexity_score": 181,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 138,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 136,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 434
+    "total_lines": 432
   },
   "cross_references": [
     {
@@ -38,31 +38,31 @@
   "globals": [
     {
       "addr": "00619398",
-      "name": "DAT_00619398",
+      "name": "g_Layer3BandIndex[0].s[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061939c",
-      "name": "DAT_0061939c",
+      "name": "g_Layer3BandIndex[0].s[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006193a0",
-      "name": "DAT_006193a0",
+      "name": "g_Layer3BandIndex[0].s[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006193a4",
-      "name": "DAT_006193a4",
+      "name": "g_Layer3BandIndex[0].s[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006193a8",
-      "name": "DAT_006193a8",
+      "name": "g_Layer3BandIndex[0].s[5]",
       "type": "undefined4",
       "value": null
     }
@@ -344,60 +344,36 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_00619398",
-      "severity": "mild",
-      "text": "local_38 = *(int *)(&DAT_00619398 + local_4c);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_4c + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_00619398",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(&DAT_00619398 + local_4c);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "severity": "moderate",
+      "text": "local_38 = *(int *)((int)g_Layer3BandIndex[0].s + iVar13) - iVar6;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_0061939c",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&DAT_0061939c + local_4c);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_50 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_006193a0",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(&DAT_006193a0 + local_4c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_006193a4",
-      "severity": "mild",
-      "text": "local_34 = *(int *)(&DAT_006193a4 + local_4c) - iVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 134,
-      "match": "DAT_00619398",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(&DAT_00619398 + local_50);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 135,
-      "match": "DAT_0061939c",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&DAT_0061939c + local_50);",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "severity": "moderate",
+      "text": "local_34 = *(int *)((int)g_Layer3BandIndex[0].s + iVar13) - iVar6;",
+      "type": "pointer_cast"
     }
   ]
 }

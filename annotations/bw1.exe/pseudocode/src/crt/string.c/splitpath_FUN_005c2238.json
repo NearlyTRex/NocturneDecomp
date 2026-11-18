@@ -16,6 +16,12 @@
   },
   "cross_references": [
     {
+      "addr": "004d6990",
+      "from_addr": "004d69cb",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004d6990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d85f0",
       "from_addr": "004d8624",
       "name": "core_game.cpp_CGame_promptLoadGame_FUN_004d85f0",
@@ -24,19 +30,13 @@
     {
       "addr": "004d6420",
       "from_addr": "004d6451",
-      "name": "core_game.cpp_FUN_004d6420",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d6990",
-      "from_addr": "004d69cb",
-      "name": "core_game.cpp_FUN_004d6990",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004d6420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d77d0",
       "from_addr": "004d7851",
-      "name": "core_game.cpp_FUN_004d77d0",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +60,7 @@
     {
       "addr": "00543e00",
       "from_addr": "00543e5b",
-      "name": "core_script.cpp_FUN_00543e00",
+      "name": "core_script.cpp_CScript_loadScript_FUN_00543e00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -117,7 +117,7 @@
       {
         "call_addr": "004d69cb",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6990",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004d6990",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +128,7 @@
       {
         "call_addr": "004d6451",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6420",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004d6420",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,7 +139,7 @@
       {
         "call_addr": "004d68bb",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6420",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004d6420",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,7 +150,7 @@
       {
         "call_addr": "004d7851",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d77d0",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +172,7 @@
       {
         "call_addr": "00543e5b",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00543e00",
+        "caller": "core_script.cpp_CScript_loadScript_FUN_00543e00",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

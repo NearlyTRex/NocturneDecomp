@@ -32,8 +32,8 @@
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_00449dd0 at 00449e97
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9cf6
-;   undefined4 DAT_005b9cfe
+;   double g_DOUBLE_005b9cf6 = 0.0000152587890625
+;   double g_FloatToFixedPoint = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -49,27 +49,27 @@ section .text
     AND ESP,0xfffffff8                  ; 00449b36
     MOV EAX,dword ptr [EBP + 0x8]       ; 00449b39
     FILD dword ptr [EAX + 0x178]        ; 00449b3c
-    FMUL double ptr [0x005b9cf6]        ; 00449b42 | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449b42 | g_DOUBLE_005b9cf6
     FILD dword ptr [EAX + 0x17c]        ; 00449b48
-    FMUL double ptr [0x005b9cf6]        ; 00449b4e | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449b4e | g_DOUBLE_005b9cf6
     FILD dword ptr [EAX + 0x180]        ; 00449b54
-    FMUL double ptr [0x005b9cf6]        ; 00449b5a | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449b5a | g_DOUBLE_005b9cf6
     FILD dword ptr [EAX + 0x184]        ; 00449b60
-    FMUL double ptr [0x005b9cf6]        ; 00449b66 | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449b66 | g_DOUBLE_005b9cf6
     FILD dword ptr [EAX + 0x188]        ; 00449b6c
-    FMUL double ptr [0x005b9cf6]        ; 00449b72 | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449b72 | g_DOUBLE_005b9cf6
     FILD dword ptr [EAX + 0x18c]        ; 00449b78
-    FMUL double ptr [0x005b9cf6]        ; 00449b7e | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449b7e | g_DOUBLE_005b9cf6
     FILD dword ptr [EAX + 0x190]        ; 00449b84
-    FMUL double ptr [0x005b9cf6]        ; 00449b8a | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449b8a | g_DOUBLE_005b9cf6
     FXCH ST6                            ; 00449b90
     FSTP float ptr [ESP + 0x50]         ; 00449b92
     FILD dword ptr [EAX + 0x194]        ; 00449b96
-    FMUL double ptr [0x005b9cf6]        ; 00449b9c | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449b9c | g_DOUBLE_005b9cf6
     FXCH ST2                            ; 00449ba2
     FSTP float ptr [ESP + 0x44]         ; 00449ba4
     FILD dword ptr [EAX + 0x198]        ; 00449ba8
-    FMUL double ptr [0x005b9cf6]        ; 00449bae | DAT_005b9cf6
+    FMUL double ptr [0x005b9cf6]        ; 00449bae | g_DOUBLE_005b9cf6
     FXCH                                ; 00449bb4
     FST float ptr [ESP + 0x1c]          ; 00449bb6
     FXCH ST2                            ; 00449bba
@@ -166,7 +166,7 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 00449cd8
     FSTP float ptr [ESP]                ; 00449cdc
     FLD float ptr [ESP]                 ; 00449cdf
-    FDIVR double ptr [0x005b9cfe]       ; 00449ce2 | DAT_005b9cfe
+    FDIVR double ptr [0x005b9cfe]       ; 00449ce2 | g_FloatToFixedPoint
     FLD float ptr [ESP + 0x50]          ; 00449ce8
     FMUL float ptr [ESP + 0x44]         ; 00449cec
     FLD float ptr [ESP + 0x4c]          ; 00449cf0
@@ -194,37 +194,37 @@ section .text
     FMUL float ptr [ESP]                ; 00449d37
     FXCH ST4                            ; 00449d3a
     CALL crt_math.c_round_FUN_005a3120  ; 00449d3c
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EAX + 0x19c]       ; 00449d41
     FLD float ptr [ESP + 0x2c]          ; 00449d47
     FMUL float ptr [ESP]                ; 00449d4b
     FXCH ST3                            ; 00449d4e
     CALL crt_math.c_round_FUN_005a3120  ; 00449d50
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EAX + 0x1a0]       ; 00449d55
     FLD float ptr [ESP + 0x10]          ; 00449d5b
     FMUL float ptr [ESP]                ; 00449d5f
     FXCH ST5                            ; 00449d62
     CALL crt_math.c_round_FUN_005a3120  ; 00449d64
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST6                            ; 00449d69
     CALL crt_math.c_round_FUN_005a3120  ; 00449d6b
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST2                            ; 00449d70
     CALL crt_math.c_round_FUN_005a3120  ; 00449d72
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 00449d77
     CALL crt_math.c_round_FUN_005a3120  ; 00449d79
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST4                            ; 00449d7e
     CALL crt_math.c_round_FUN_005a3120  ; 00449d80
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST3                            ; 00449d85
     CALL crt_math.c_round_FUN_005a3120  ; 00449d87
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST5                            ; 00449d8c
     CALL crt_math.c_round_FUN_005a3120  ; 00449d8e
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST6                            ; 00449d93
     FISTP dword ptr [EAX + 0x1a4]       ; 00449d95
     FXCH                                ; 00449d9b

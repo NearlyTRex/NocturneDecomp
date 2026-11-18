@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_ptr)
 
 {
@@ -50,11 +48,11 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_p
     return;
   }
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90
-            ((CDemonGlobe *)0x2ddf9ac,(CVector3f *)(auStack_1c + 4));
-  _DAT_02ddf9e8 = 0x8000;
-  DAT_02ddf9c8 = 0x20;
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0((CDemonGlobe *)0x2ddf9ac,3.0);
-  _DAT_02ddf9cc = 0;
-  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(g_CDemonSetPtr,(CDemonGlobe *)0x2ddf9ac);
+            (&g_CDemonGlobe_02ddf9ac,(CVector3f *)(auStack_1c + 4));
+  g_CDemonGlobe_02ddf9ac.intensity_multiplier = 0x8000;
+  g_CDemonGlobe_02ddf9ac.intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(&g_CDemonGlobe_02ddf9ac,3.0);
+  g_CDemonGlobe_02ddf9ac.corona_mode = 0;
+  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(g_CDemonSetPtr,&g_CDemonGlobe_02ddf9ac);
   return;
 }

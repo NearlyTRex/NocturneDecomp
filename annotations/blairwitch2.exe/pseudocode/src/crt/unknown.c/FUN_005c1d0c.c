@@ -6,37 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_005c1d0c(int param_1)
 
 {
-  uint *puVar1;
-  byte *puVar2;
-  uint *puVar3;
+  FileListNode *pFVar1;
+  _FILE *p_Var2;
+  FileListNode *pFVar3;
   uint uVar4;
   int iVar5;
   
   iVar5 = 0;
-  puVar3 = _DAT_02680160;
+  pFVar3 = g_AllocatedListHead;
 joined_r0x005c1d33:
-  if (puVar3 == (uint *)0x0) {
+  if (pFVar3 == (FileListNode *)0x0) {
     return iVar5;
   }
-  puVar1 = (uint *)*puVar3;
-  puVar2 = (byte *)puVar3[1];
+  pFVar1 = pFVar3->next;
+  p_Var2 = pFVar3->file_struct;
   uVar4 = 1;
-  puVar3 = puVar1;
-  if (((puVar2[0xd] & 0x40) == 0) && ((puVar2[0xd] & 8) == 0)) goto code_r0x005c1d4c;
+  pFVar3 = pFVar1;
+  if (((p_Var2->_flag & 0x4000) == 0) && ((p_Var2->_flag & 0x800) == 0)) goto code_r0x005c1d4c;
   goto LAB_005c1d59;
 code_r0x005c1d4c:
-  if (&DAT_0061ef54 + param_1 * 0x1a <= puVar2) {
-    if (puVar2 < (byte *)0x61efa2) {
+  if ((_FILE *)((int)&g_StaticFilePoolStart + param_1 * 0x1a) <= p_Var2) {
+    if (p_Var2 < (_FILE *)0x61efa2) {
       uVar4 = 0;
     }
 LAB_005c1d59:
     iVar5 = iVar5 + 1;
-    FUN_005b8a04(puVar2,uVar4);
+    FUN_005b8a04(p_Var2,uVar4);
   }
   goto joined_r0x005c1d33;
 }

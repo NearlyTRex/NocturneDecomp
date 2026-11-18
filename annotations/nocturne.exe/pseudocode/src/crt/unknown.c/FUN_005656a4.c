@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 _FILE * FUN_005656a4(_FILE *param_1)
 
 {
   _FILE *file_handle;
-  uint *puVar1;
-  uint *puVar2;
+  FileListNode *pFVar1;
+  FileListNode *pFVar2;
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad0)();
-  for (puVar1 = _DAT_02de4e20; puVar1 != (uint *)0x0; puVar1 = (uint *)*puVar1) {
-    file_handle = (_FILE *)puVar1[1];
+  for (pFVar1 = g_AllocatedListHead; pFVar1 != (FileListNode *)0x0; pFVar1 = pFVar1->next) {
+    file_handle = pFVar1->file_struct;
     if (param_1 == file_handle) {
       if ((file_handle->_flag & 3) != 0) {
         _fclose(file_handle,1);
@@ -26,19 +24,19 @@ _FILE * FUN_005656a4(_FILE *param_1)
       return param_1;
     }
   }
-  puVar1 = (uint *)&DAT_02de4e24;
+  pFVar1 = (FileListNode *)&g_FreeListHeadPointer;
   do {
-    puVar2 = puVar1;
-    puVar1 = (uint *)*puVar2;
-    if (puVar1 == (uint *)0x0) {
+    pFVar2 = pFVar1;
+    pFVar1 = pFVar2->next;
+    if (pFVar1 == (FileListNode *)0x0) {
       setErrno(4);
       (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();
       return (_FILE *)0x0;
     }
-  } while (param_1 != (_FILE *)puVar1[1]);
-  *puVar2 = *puVar1;
-  *puVar1 = _DAT_02de4e20;
-  _DAT_02de4e20 = puVar1;
+  } while (param_1 != pFVar1->file_struct);
+  pFVar2->next = pFVar1->next;
+  pFVar1->next = g_AllocatedListHead;
+  g_AllocatedListHead = pFVar1;
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();
   return param_1;
 }

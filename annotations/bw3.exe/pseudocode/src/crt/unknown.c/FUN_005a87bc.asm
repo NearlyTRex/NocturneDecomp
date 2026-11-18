@@ -13,8 +13,8 @@
 ;   crt_unknown.c_FUN_005a82c0 at 005a84c2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006074b8
-;   undefined4 DAT_02d25930
+;   uchar[257] g_CharacterClassificationTable
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a82a0
@@ -88,7 +88,7 @@ section .text
     MOV EBX,EAX                         ; 005a882a
     INC AL                              ; 005a882c
     AND EAX,0xff                        ; 005a882e
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 005a8833 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 005a8833 | g_CharacterClassificationTable
     JZ 0x005a883f                       ; 005a883a
         ;   XREF to: 005a883f (CONDITIONAL_JUMP)  ; LAB_005a883f
     INC EBP                             ; 005a883c
@@ -120,7 +120,7 @@ section .text
     MOV byte ptr ES:[EDI],BL            ; 005a886c
     JMP 0x005a88c2                      ; 005a886f
         ;   XREF to: 005a88c2 (UNCONDITIONAL_JUMP)  ; LAB_005a88c2
-    MOV EAX,[0x02d25930]                ; 005a8871 | DAT_02d25930
+    MOV EAX,[0x02d25930]                ; 005a8871 | g_MultibyteLocaleActive
         ;   Label: LAB_005a8871
     MOV byte ptr [ESP + 0x4],BL         ; 005a8876
     TEST EAX,EAX                        ; 005a887a
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 005a88f8 (CONDITIONAL_JUMP)  ; LAB_005a88f8
     INC AL                              ; 005a88da
     AND EAX,0xff                        ; 005a88dc
-    TEST byte ptr [EAX + 0x6074b8],0x2  ; 005a88e1 | DAT_006074b8
+    TEST byte ptr [EAX + 0x6074b8],0x2  ; 005a88e1 | g_CharacterClassificationTable
     JZ 0x005a885d                       ; 005a88e8
         ;   XREF to: 005a885d (CONDITIONAL_JUMP)  ; LAB_005a885d
     PUSH ESI                            ; 005a88ee

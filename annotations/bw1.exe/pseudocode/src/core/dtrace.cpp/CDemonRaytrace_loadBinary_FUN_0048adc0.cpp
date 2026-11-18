@@ -2,14 +2,13 @@
 // Address: 0048adc0
 // Address Range: [[0048adc0, 0048af97]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *param_2)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *param_2)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
@@ -26,27 +25,27 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytra
   
   bVar3 = 0;
   core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_0048aab0(this_ptr);
-  _DAT_01c3d420 = 0;
-  _fread(&local_14,4,1,param_2);
+  g_INT_01c3d420 = 0;
+  _fread(&local_14,4,1,file_handle);
   if (local_14 < 1) {
-    _DAT_01d1d400 = "..\\core\\dtrace.cpp";
-    _DAT_01d1d404 = 0x148;
-    core_main_c_FUN_005030e0("CDemonRaytrace::loadBinary - invalid version");
+    g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
+    g_INT_01d1d404 = 0x148;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonRaytrace::loadBinary - invalid version");
   }
-  if (0x00000004 < local_14) {
-    _DAT_01d1d400 = "..\\core\\dtrace.cpp";
-    _DAT_01d1d404 = 0x14b;
-    core_main_c_FUN_005030e0("CDemonRaytrace::loadBinary - file is newer than .exe!");
+  if (g_INT_0061ab60 < local_14) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
+    g_INT_01d1d404 = 0x14b;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
-  _fread(&this_ptr->grid_coord,4,1,param_2);
-  _fread(&(this_ptr->grid_coord).y,4,1,param_2);
-  _fread(&(this_ptr->grid_coord).z,4,1,param_2);
-  _fread(&this_ptr->bbox_min,0xc,1,param_2);
-  _fread(&this_ptr->bbox_max,0xc,1,param_2);
-  _fread(&this_ptr->cell_size,0xc,1,param_2);
-  local_2c = (this_ptr->cell_size).x * _DAT_005db940;
-  local_28 = (this_ptr->cell_size).y * _DAT_005db940;
-  local_24 = (this_ptr->cell_size).z * _DAT_005db940;
+  _fread(&this_ptr->grid_coord,4,1,file_handle);
+  _fread(&(this_ptr->grid_coord).y,4,1,file_handle);
+  _fread(&(this_ptr->grid_coord).z,4,1,file_handle);
+  _fread(&this_ptr->bbox_min,0xc,1,file_handle);
+  _fread(&this_ptr->bbox_max,0xc,1,file_handle);
+  _fread(&this_ptr->cell_size,0xc,1,file_handle);
+  local_2c = (this_ptr->cell_size).x * 0.125f;
+  local_28 = (this_ptr->cell_size).y * 0.125f;
+  local_24 = (this_ptr->cell_size).z * 0.125f;
   local_20 = local_2c;
   (&stack0xffffffe4)[(uint)bVar3 * 0xfffffffe] =
        (float)*(uint *)((int)&stack0xffffffd8 + (uint)bVar3 * -8);
@@ -58,9 +57,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytra
     (this_ptr->adjusted_size).z = local_18;
   }
   if (local_14 < 4) {
-    _DAT_01d1d400 = "..\\core\\dtrace.cpp";
-    _DAT_01d1d404 = 0x1e2;
-    core_main_c_FUN_005030e0("Release build doesn't support old geometry");
+    g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
+    g_INT_01d1d404 = 0x1e2;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Release build doesn't support old geometry");
   }
   else {
     core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40(this_ptr);
@@ -69,15 +68,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytra
         iVar1 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z;
         iVar1 = iVar1 + 1) {
       core_dcube_cpp_CDemonCube_load_FUN_00457e50
-                ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar2),param_2);
+                ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar2),file_handle);
       iVar2 = iVar2 + 0x34;
     }
   }
-  if ((param_2->_flag & 0x20) == 0) {
+  if ((file_handle->_flag & 0x20) == 0) {
     return;
   }
-  _DAT_01d1d400 = "..\\core\\dtrace.cpp";
-  _DAT_01d1d404 = 0x1ff;
-  core_main_c_FUN_005030e0("CDemonRaytrace::loadBinary - error reading file");
+  g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
+  g_INT_01d1d404 = 0x1ff;
+  core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonRaytrace::loadBinary - error reading file");
   return;
 }

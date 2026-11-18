@@ -72,7 +72,7 @@
     {
       "addr": "00466540",
       "from_addr": "0046664d",
-      "name": "core_dpart.cpp_FUN_00466540",
+      "name": "core_dpart.cpp_CDemonPart_loadFromFile_FUN_00466540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -96,7 +96,7 @@
     {
       "addr": "004a7a70",
       "from_addr": "004a7a8c",
-      "name": "core_flashlit.cpp_FUN_004a7a70",
+      "name": "core_flashlit.cpp_updateTooltip_FUN_004a7a70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,19 +120,19 @@
     {
       "addr": "004da880",
       "from_addr": "004db4ab",
-      "name": "core_inv.cpp_FUN_004da880",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004dbd80",
       "from_addr": "004dbe21",
-      "name": "core_inv.cpp_FUN_004dbd80",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbd80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004dbe70",
       "from_addr": "004dc1f2",
-      "name": "core_inv.cpp_FUN_004dbe70",
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -162,7 +162,7 @@
     {
       "addr": "00533e60",
       "from_addr": "00534000",
-      "name": "core_set.cpp_FUN_00533e60",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -178,6 +178,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d8470",
+      "from_addr": "004d8560",
+      "name": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004d8470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d8290",
       "from_addr": "004d8382",
       "name": "engine_ini.cpp_CIni_getProfileString_FUN_004d8290",
@@ -187,12 +193,6 @@
       "addr": "004d8640",
       "from_addr": "004d8860",
       "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004d8640",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8470",
-      "from_addr": "004d8560",
-      "name": "engine_ini.cpp_FUN_004d8470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -210,13 +210,13 @@
     {
       "addr": "0047dd20",
       "from_addr": "0047df2c",
-      "name": "shape_edittool.cpp_FUN_0047dd20",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00482ea0",
       "from_addr": "00482f25",
-      "name": "shape_edittool.cpp_FUN_00482ea0",
+      "name": "shape_edittool.cpp_CStrList_populateRecursive_FUN_00482ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -240,7 +240,7 @@
     {
       "addr": "00571fc0",
       "from_addr": "005720af",
-      "name": "support_trisock.cpp_FUN_00571fc0",
+      "name": "support_trisock.cpp_copyHostent_FUN_00571fc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -363,7 +363,7 @@
       {
         "call_addr": "004d8560",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004d8470",
+        "caller": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004d8470",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

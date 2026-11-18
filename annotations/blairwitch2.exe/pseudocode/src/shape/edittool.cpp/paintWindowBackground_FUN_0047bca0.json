@@ -2,34 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 233,
+    "complexity_score": 229,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 15,
+    "pseudocode_lines": 54,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 147
+    "total_lines": 148
   },
   "cross_references": [
     {
-      "addr": "0047e760",
-      "from_addr": "0047e760",
-      "name": "shape_edittool.cpp_FUN_0047e760",
+      "addr": "0047e870",
+      "from_addr": "0047e8ed",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047e870",
-      "from_addr": "0047e8ed",
-      "name": "shape_edittool.cpp_FUN_0047e870",
+      "addr": "0047e760",
+      "from_addr": "0047e760",
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -49,7 +46,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     }
   ],
   "globals": [
@@ -67,32 +64,32 @@
     },
     {
       "addr": "006141c0",
-      "name": "DAT_006141c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c2559c",
-      "name": "DAT_01c2559c",
-      "type": "undefined4",
+      "name": "g_WindowStackCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c2a38c",
-      "name": "DAT_01c2a38c",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -102,7 +99,7 @@
       {
         "call_addr": "0047e760",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e760",
+        "caller": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760",
         "estimated_params": 0,
         "instructions_analyzed": 0,
         "method": "push_count",
@@ -113,7 +110,7 @@
       {
         "call_addr": "0047e8ed",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e870",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
         "estimated_params": 0,
         "instructions_analyzed": 10,
         "method": "push_count",
@@ -210,52 +207,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 25,
-      "match": "*(uint **)(iVar1 + 0x1c25778",
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint **)((int)g_SWindow_ARRAY_01c255a0",
       "severity": "moderate",
-      "text": "puVar7 = *(uint **)(iVar1 + 0x1c25778);",
-      "type": "raw_address_pointer_store"
+      "text": "puVar7 = *(uint **)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1d8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(iVar1 + 0x1c25784) * DAT_006141c0;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e4) * g_INT_006141c0;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "if (g_ScreenBufferArray[*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) + iVar4] !=",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 33,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "if (*(int *)(&DAT_01c2a38c + (*(int *)(iVar1 + 0x1c25780) + iVar4) * 4) != 0) {",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1dc) * g_INT_006141c0;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)(iVar1 + 0x1c2577c) * DAT_006141c0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 38,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "(*(int *)(&DAT_01c2a38c + (*(int *)(iVar1 + 0x1c25780) + iVar4) * 4) +",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "[*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) + iVar4] +",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -279,6 +276,14 @@
       "match": "(uint *)((int)puVar7",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)puVar7 + uVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "} while (iVar4 < *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8));",
       "type": "pointer_cast"
     },
     {

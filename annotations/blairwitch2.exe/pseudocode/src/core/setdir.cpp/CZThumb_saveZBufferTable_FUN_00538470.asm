@@ -13,7 +13,7 @@
 ; _FILE *          Stack[0x1c]:4   file_handle
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_005398d0 at 00539bc3
+;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_005398d0 at 00539bc3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_005e5f5d
@@ -22,18 +22,18 @@
 ;   TerminatedCString s_saveZBufferTable_not_sav_005e5fa5
 ;   TerminatedCString s_core_setdir_cpp_005e5fc3
 ;   TerminatedCString s_Out_of_memory_005e5fd6
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01c2b64c
-;   undefined4 DAT_01c2b650
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   uint*[1200] g_ZBufferScanlineArray
+;   undefined4 g_ZBufferScanlineArray[1]
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_020b0258
+;   uint*[1200] g_ZBufferScanlineArrayBackup
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0
 ;   core_setdir.cpp_CZThumb_free_FUN_005386a0
 ;   core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30
@@ -99,28 +99,28 @@ section .text
     MOV EBX,0x5e5fc3                    ; 005384da | = "..\\core\\setdir.cpp"
     MOV EDI,0x9f                        ; 005384df
     PUSH 0x5e5fd6                       ; 005384e4 | = "Out of memory"
-    MOV dword ptr [0x01d046a0],EBX      ; 005384e9 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 005384ef | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005384f5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBX      ; 005384e9 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 005384ef | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005384f5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005384fa
     MOV EBP,dword ptr [ESP + 0x2c]      ; 005384fd
         ;   Label: LAB_005384fd
     TEST EBP,EBP                        ; 00538501
     JNZ 0x00538652                      ; 00538503
         ;   XREF to: 00538652 (CONDITIONAL_JUMP)  ; LAB_00538652
-    MOV EBX,dword ptr [0x0060b280]      ; 00538509 | DAT_0060b280
-    PUSH EBX                            ; 0053850f | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 00538509 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 0053850f | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00538510
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00538515
     PUSH EBP                            ; 00538518
-    MOV EBP,dword ptr [0x0060b280]      ; 00538519 | DAT_0060b280
-    PUSH EBP                            ; 0053851f | DAT_01ba5c50
+    MOV EBP,dword ptr [0x0060b280]      ; 00538519 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBP                            ; 0053851f | g_CDemonRenderer_01ba5c50
     MOV EDI,EAX                         ; 00538520
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 00538522
         ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
-    MOV EAX,[0x020b0258]                ; 00538527 | DAT_020b0258
+    MOV EAX,[0x020b0258]                ; 00538527 | g_ZBufferScanlineArrayBackup
     ADD ESP,0x8                         ; 0053852c
     MOV EBX,dword ptr [ESI + 0x4]       ; 0053852f
     TEST EAX,EAX                        ; 00538532
@@ -129,10 +129,10 @@ section .text
     MOV EDX,0x5e5f5d                    ; 00538536 | = "..\\core\\setdir.cpp"
     MOV ECX,0x67                        ; 0053853b
     PUSH 0x5e5f70                       ; 00538540 | = "saveZBufferTable - already saved!"
-    MOV dword ptr [0x01d046a0],EDX      ; 00538545 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0053854b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00538551
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00538545 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0053854b | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00538551
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00538556
     TEST EBX,EBX                        ; 00538559
         ;   Label: LAB_00538559
@@ -142,8 +142,8 @@ section .text
     XOR EAX,EAX                         ; 00538564
     ADD EAX,0x4                         ; 00538566
         ;   Label: LAB_00538566
-    MOV EDX,dword ptr [EAX + 0x1c2b648] ; 00538569 | DAT_01c2b64c | DAT_01c2b650
-    MOV dword ptr [EAX + 0x20b0254],EDX ; 0053856f | DAT_020b0258
+    MOV EDX,dword ptr [EAX + 0x1c2b648] ; 00538569 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
+    MOV dword ptr [EAX + 0x20b0254],EDX ; 0053856f | g_ZBufferScanlineArrayBackup
     CMP EAX,ECX                         ; 00538575
     JL 0x00538566                       ; 00538577
         ;   XREF to: 00538566 (CONDITIONAL_JUMP)  ; LAB_00538566
@@ -159,8 +159,8 @@ section .text
         ;   XREF to: 005389b0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0(CZThumb * this_ptr)
     ADD ESP,0x4                         ; 0053858f
     PUSH 0x2093940                      ; 00538592
-    MOV EBX,dword ptr [0x0060b280]      ; 00538597 | DAT_0060b280
-    PUSH EBX                            ; 0053859d | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 00538597 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 0053859d | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280 ; 0053859e
         ;   XREF to: 0046b280 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280(CDemonRenderer * this_ptr, CVector3i * input_point)
     ADD ESP,0x8                         ; 005385a3
@@ -176,7 +176,7 @@ section .text
     PUSH ESI                            ; 005385c1
     CALL core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30 ; 005385c2
         ;   XREF to: 00538a30 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30(CZThumb * this_ptr)
-    MOV EAX,[0x020b0258]                ; 005385c7 | DAT_020b0258
+    MOV EAX,[0x020b0258]                ; 005385c7 | g_ZBufferScanlineArrayBackup
     ADD ESP,0x4                         ; 005385cc
     MOV ESI,dword ptr [ESI + 0x4]       ; 005385cf
     TEST EAX,EAX                        ; 005385d2
@@ -185,10 +185,10 @@ section .text
     MOV EDX,0x5e5f92                    ; 005385d6 | = "..\\core\\setdir.cpp"
     MOV ECX,0x70                        ; 005385db
     PUSH 0x5e5fa5                       ; 005385e0 | = "saveZBufferTable - not saved!"
-    MOV dword ptr [0x01d046a0],EDX      ; 005385e5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 005385eb | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005385f1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 005385e5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 005385eb | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005385f1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005385f6
     TEST ESI,ESI                        ; 005385f9
         ;   Label: LAB_005385f9
@@ -198,8 +198,8 @@ section .text
     XOR EAX,EAX                         ; 00538604
     ADD EAX,0x4                         ; 00538606
         ;   Label: LAB_00538606
-    MOV EDX,dword ptr [EAX + 0x20b0254] ; 00538609 | DAT_020b0258
-    MOV dword ptr [EAX + 0x1c2b648],EDX ; 0053860f | DAT_01c2b64c | DAT_01c2b650
+    MOV EDX,dword ptr [EAX + 0x20b0254] ; 00538609 | g_ZBufferScanlineArrayBackup
+    MOV dword ptr [EAX + 0x1c2b648],EDX ; 0053860f | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     CMP EAX,ECX                         ; 00538615
     JL 0x00538606                       ; 00538617
         ;   XREF to: 00538606 (CONDITIONAL_JUMP)  ; LAB_00538606
@@ -207,10 +207,10 @@ section .text
     NOP                                 ; 0053861f
     PUSH EDI                            ; 00538620
         ;   Label: LAB_00538620
-    MOV ESI,dword ptr [0x0060b280]      ; 00538621 | DAT_0060b280
+    MOV ESI,dword ptr [0x0060b280]      ; 00538621 | g_CDemonRenderer_PTR_0060b280
     XOR EBX,EBX                         ; 00538627
-    PUSH ESI                            ; 00538629 | DAT_01ba5c50
-    MOV dword ptr [0x020b0258],EBX      ; 0053862a | DAT_020b0258
+    PUSH ESI                            ; 00538629 | g_CDemonRenderer_01ba5c50
+    MOV dword ptr [0x020b0258],EBX      ; 0053862a | g_ZBufferScanlineArrayBackup
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 00538630
         ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 00538635

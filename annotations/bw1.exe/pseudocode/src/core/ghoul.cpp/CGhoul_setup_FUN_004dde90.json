@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 92,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 33,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 77,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 267
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 76,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 266
   },
   "cross_references": [],
   "function": {
@@ -62,8 +60,8 @@
   "globals": [
     {
       "addr": "005e3a59",
-      "name": "s_Bip01_Head_005e3a58+1",
-      "type": "undefined4",
+      "name": "s_Bip01_Head_005e3a59",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -194,67 +192,67 @@
     },
     {
       "addr": "01cd0d98",
-      "name": "DAT_01cd0d98",
-      "type": "undefined4",
+      "name": "g_GhoulIndices",
+      "type": "int[11]",
       "value": null
     },
     {
       "addr": "01cd0d9c",
-      "name": "DAT_01cd0d9c",
+      "name": "g_GhoulIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0da0",
-      "name": "DAT_01cd0da0",
+      "name": "g_GhoulIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0da4",
-      "name": "DAT_01cd0da4",
+      "name": "g_GhoulIndices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0da8",
-      "name": "DAT_01cd0da8",
+      "name": "g_GhoulIndices[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0dac",
-      "name": "DAT_01cd0dac",
+      "name": "g_GhoulIndices[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0db0",
-      "name": "DAT_01cd0db0",
+      "name": "g_GhoulIndices[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0db4",
-      "name": "DAT_01cd0db4",
+      "name": "g_GhoulIndices[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0db8",
-      "name": "DAT_01cd0db8",
+      "name": "g_GhoulIndices[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0dbc",
-      "name": "DAT_01cd0dbc",
+      "name": "g_GhoulIndices[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0dc0",
-      "name": "DAT_01cd0dc0",
+      "name": "g_GhoulIndices[10]",
       "type": "undefined4",
       "value": null
     }
@@ -330,16 +328,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

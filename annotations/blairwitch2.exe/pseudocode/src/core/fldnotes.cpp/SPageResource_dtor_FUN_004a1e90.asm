@@ -16,7 +16,7 @@
 ;   void* g_SPageResourceVTable = 004a1e90
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     RET                                 ; 004a1ea6
     PUSH EDX                            ; 004a1ea7
         ;   Label: LAB_004a1ea7
-    CALL crt_unknown.c_FUN_005b86a0     ; 004a1ea8
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 004a1ea8
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 004a1ead
     MOV dword ptr [EBX + 0x10],0x0      ; 004a1eb0
     MOV EAX,EBX                         ; 004a1eb7

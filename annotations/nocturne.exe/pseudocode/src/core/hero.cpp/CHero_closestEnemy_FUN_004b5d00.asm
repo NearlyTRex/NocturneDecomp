@@ -23,9 +23,9 @@
 ;   double DOUBLE_005858eb = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CMobsterActorType_01ccdbd8.name_hash
+;   undefined4 g_CMobsterClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.enemy_count
-;   undefined4 g_CVehicleActorType_02dd1190.name_hash
+;   undefined4 g_CVehicleClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -69,7 +69,7 @@ section .text
     RET                                 ; 004b5d5a
     MOV EBX,dword ptr [ESI + EAX*0x1 + 0x150bf8] ; 004b5d5b
         ;   Label: LAB_004b5d5b
-    MOV EAX,[0x02dd11c8]                ; 004b5d62 | g_CVehicleActorType_02dd1190.name_hash
+    MOV EAX,[0x02dd11c8]                ; 004b5d62 | g_CVehicleClassInfo.name_hash
     PUSH EAX                            ; 004b5d67
     PUSH EBX                            ; 004b5d68
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5d69
@@ -78,7 +78,7 @@ section .text
     TEST EAX,EAX                        ; 004b5d71
     JNZ 0x004b5e65                      ; 004b5d73
         ;   XREF to: 004b5e65 (CONDITIONAL_JUMP)  ; LAB_004b5e65
-    MOV EDX,dword ptr [0x01ccdc10]      ; 004b5d79 | g_CMobsterActorType_01ccdbd8.name_hash
+    MOV EDX,dword ptr [0x01ccdc10]      ; 004b5d79 | g_CMobsterClassInfo.name_hash
     PUSH EDX                            ; 004b5d7f
     PUSH EBX                            ; 004b5d80
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5d81

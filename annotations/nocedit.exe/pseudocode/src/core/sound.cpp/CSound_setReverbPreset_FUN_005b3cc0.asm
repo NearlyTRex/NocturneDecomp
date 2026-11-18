@@ -14,15 +14,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_sound_cpp_0065281b
 ;   TerminatedCString s_CSound_setReverbPreset_i_0065282d
-;   undefined4 g_SoundModeTable[0].listener_orient.x
-;   undefined4 g_SoundModeTable[0].listener_orient.y
-;   undefined4 g_SoundModeTable[0].listener_orient.z
+;   undefined4 g_ReverbPresetTable[0].reverb.volume
+;   undefined4 g_ReverbPresetTable[0].reverb.decay_time
+;   undefined4 g_ReverbPresetTable[0].reverb.damping
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
+;   core_sound.cpp_CSound_setReverb_FUN_005b3c90
 ;
 ; *****************************************************************************
 
@@ -40,13 +40,13 @@ section .text
     MOV EAX,EBX                         ; 005b3cce
         ;   Label: LAB_005b3cce
     SHL EAX,0x4                         ; 005b3cd0
-    PUSH dword ptr [EAX + 0x681f08]     ; 005b3cd3 | g_SoundModeTable[0].listener_orient.z
-    PUSH dword ptr [EAX + 0x681f04]     ; 005b3cd9 | g_SoundModeTable[0].listener_orient.y
+    PUSH dword ptr [EAX + 0x681f08]     ; 005b3cd3 | g_ReverbPresetTable[0].reverb.damping
+    PUSH dword ptr [EAX + 0x681f04]     ; 005b3cd9 | g_ReverbPresetTable[0].reverb.decay_time
     MOV EBX,dword ptr [ESP + 0x10]      ; 005b3cdf
-    PUSH dword ptr [EAX + 0x681f00]     ; 005b3ce3 | g_SoundModeTable[0].listener_orient.x
+    PUSH dword ptr [EAX + 0x681f00]     ; 005b3ce3 | g_ReverbPresetTable[0].reverb.volume
     PUSH EBX                            ; 005b3ce9
-    CALL core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90 ; 005b3cea
-        ;   XREF to: 005b3c90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)
+    CALL core_sound.cpp_CSound_setReverb_FUN_005b3c90 ; 005b3cea
+        ;   XREF to: 005b3c90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_setReverb_FUN_005b3c90(CSound * this_ptr, float volume, float decay_time, float damping)
     ADD ESP,0x10                        ; 005b3cef
     POP EBX                             ; 005b3cf2
     RET                                 ; 005b3cf3

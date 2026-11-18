@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   CNetGame* g_CNetGamePtr = 01da62f0
-;   undefined4 DAT_01d225c8
+;   char[256] g_CurrentSaveFile
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0
@@ -67,7 +67,7 @@ section .text
     JZ 0x004bf36e                       ; 004bf340
         ;   XREF to: 004bf36e (CONDITIONAL_JUMP)  ; LAB_004bf36e
     XOR AH,AH                           ; 004bf342
-    MOV byte ptr [0x01d225c8],AH        ; 004bf344 | DAT_01d225c8
+    MOV byte ptr [0x01d225c8],AH        ; 004bf344 | g_CurrentSaveFile
     MOV ESI,dword ptr [0x00603450]      ; 004bf34a | g_CNetGamePtr
         ;   Label: LAB_004bf34a
     PUSH ESI                            ; 004bf350
@@ -77,7 +77,7 @@ section .text
     TEST EAX,EAX                        ; 004bf359
     JZ 0x004bf387                       ; 004bf35b
         ;   XREF to: 004bf387 (CONDITIONAL_JUMP)  ; LAB_004bf387
-    MOV EBP,dword ptr [0x00600530]      ; 004bf35d | DAT_00600530
+    MOV EBP,dword ptr [0x00600530]      ; 004bf35d | g_CDemonMission_PTR_00600530
     PUSH EBP                            ; 004bf363
     CALL core_mission.cpp_CDemonMission_run_FUN_004f72a0 ; 004bf364
         ;   XREF to: 004f72a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_run_FUN_004f72a0(CDemonMission * this_ptr)

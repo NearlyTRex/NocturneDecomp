@@ -130,6 +130,6 @@ LAB_0056ec98:
     cVar1 = *pcVar8;
     pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
   } while (cVar1 != '\0');
-  WriteFile(*(HANDLE *)(DAT_005c1f54 + 8),local_114,~uVar6 - 1,&local_14,(LPOVERLAPPED)0x0);
+  WriteFile(g_IOControlBlock->standard_handles[2],local_114,~uVar6 - 1,&local_14,(LPOVERLAPPED)0x0);
   return 1;
 }

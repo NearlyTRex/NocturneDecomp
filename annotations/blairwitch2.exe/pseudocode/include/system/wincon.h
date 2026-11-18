@@ -20,6 +20,14 @@ typedef PHANDLER_ROUTINE_FUNC* PHANDLER_ROUTINE;
 // pointer to _INPUT_RECORD
 typedef struct _INPUT_RECORD* PINPUT_RECORD;
 
+// Structure: SIOControlBlock
+typedef struct SIOControlBlock {
+    HANDLE standard_handles[5];
+    dword console_mode;
+    dword io_flags;
+    HANDLE extended_handles[15];
+} SIOControlBlock;
+
 // Structure: _COORD
 #pragma pack(push, 2)
 typedef struct _COORD {

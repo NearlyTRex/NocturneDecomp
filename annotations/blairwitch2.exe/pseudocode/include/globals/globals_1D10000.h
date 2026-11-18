@@ -6,6 +6,9 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D10000
@@ -21,4 +24,77 @@ extern CAlphaBitmap CAlphaBitmap_ARRAY_01d1c7cc[75];
 // CDemonActorType
 extern CDemonActorType g_CMobsterClassInfo;
 extern CDemonActorType g_CMolochClassInfo;
+
+// CVector3f[32]
+extern CVector3f g_MirrorInputVertices[32];
+extern CVector3f g_MirrorOutputVertices[32];
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_MirrorTempPrimitive;
+
+// SSoftwareEdge
+extern SSoftwareEdge g_SSoftwareEdge_01d17ab8;
+
+// char
+extern char g_CHAR_01d1c630;
+
+// double[200]
+extern double g_MpegRequantPowerTable[200];
+extern double g_DOUBLE_ARRAY_01d1f418[200];
+
+// float
+extern float g_FLOAT_01d12118;
+extern float g_FLOAT_01d1211c;
+extern float g_FLOAT_01d12120;
+extern float g_FLOAT_01d12128;
+extern float g_FLOAT_01d1212c;
+extern float g_FLOAT_01d12130;
+extern float g_FLOAT_01d12138;
+extern float g_FLOAT_01d1213c;
+extern float g_FLOAT_01d12140;
+extern float g_FLOAT_01d12148;
+extern float g_FLOAT_01d1214c;
+extern float g_FLOAT_01d12150;
+extern float g_FLOAT_01d12158;
+extern float g_FLOAT_01d167ac;
+extern float g_FLOAT_01d167b0;
+extern float g_FLOAT_01d167b4;
+extern float g_FLOAT_01d167bc;
+extern float g_FLOAT_01d167c0;
+extern float g_FLOAT_01d167c4;
+extern float g_FLOAT_01d167cc;
+extern float g_FLOAT_01d167d0;
+extern float g_FLOAT_01d167d4;
+extern float g_FLOAT_01d167dc;
+extern float g_FLOAT_01d167e0;
+extern float g_FLOAT_01d167e4;
+extern float g_FLOAT_01d1cdc4;
+
+// float*
+extern float* g_FLOAT_PTR_01d12114;
+
+// float[64][32]
+extern float g_MpegSynthesisDctTable[64][32];
+
+// int
+extern int g_INT_01d12124;
+extern int g_INT_01d12134;
+extern int g_INT_01d12144;
+extern int g_INT_01d12154;
+extern int g_INT_01d17ab4;
+extern int g_INT_01d17fb8;
+extern int g_INT_01d17fbc;
+extern int g_MirrorInputVertexCount;
+extern int g_MirrorOutputVertexCount;
+extern int g_INT_01d1cdbc;
+extern int g_INT_01d1cdc0;
+extern int g_RenderMotionDebug;
+extern int g_HuffmanTablesInitialized;
+extern int g_MpegRequantTablesInitialized;
+
+// int[12]
+extern int g_MobsterIndices[12];
+
+// int[5]
+extern int g_MobsterTauntCounters[5];
 

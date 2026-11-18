@@ -10,7 +10,7 @@
 ;   undefined1* switchdataD_004d42d0 = 004d4314
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
         ;   Label: core_hotdemon.cpp_CHotDemon_getDeathState_FUN_004d42f0
     ADD EAX,0x2b4                       ; 004d42f4
     PUSH EAX                            ; 004d42f9
-    CALL core_motion.cpp_FUN_005035c0   ; 004d42fa
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d42fa
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d42ff
     SUB EAX,0x4                         ; 004d4302
     ADD ESP,0x4                         ; 004d4305

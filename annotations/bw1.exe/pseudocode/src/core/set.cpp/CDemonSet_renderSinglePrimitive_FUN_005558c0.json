@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 37,
+    "complexity_score": 12,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 34
   },
   "cross_references": [
     {
       "addr": "00420990",
       "from_addr": "00420b30",
-      "name": "core_box.cpp_FUN_00420990",
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,19 +59,19 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01bc1224",
-      "name": "DAT_01bc1224",
+      "name": "g_CDemonRenderer_01bc120c.advanced_culling_enabled",
       "type": "undefined4",
       "value": null
     }
@@ -84,7 +82,7 @@
       {
         "call_addr": "00420b30",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_00420990",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -95,7 +93,7 @@
       {
         "call_addr": "00420b9c",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_00420990",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -106,7 +104,7 @@
       {
         "call_addr": "00420c0a",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_00420990",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,7 +115,7 @@
       {
         "call_addr": "00420c76",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_00420990",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +126,7 @@
       {
         "call_addr": "00420ce4",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_00420990",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,7 +137,7 @@
       {
         "call_addr": "00420d4c",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_00420990",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,22 +266,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "if (DAT_00612560->advanced_culling_enabled != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,prim);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

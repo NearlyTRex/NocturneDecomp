@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 415,
-    "complexity_score": 187,
+    "complexity_score": 171,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 157,
-    "suspect_count": 2,
+    "pseudocode_lines": 156,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 572
+    "total_lines": 571
   },
   "cross_references": [
     {
@@ -129,7 +128,7 @@
     },
     {
       "addr": "01e533a0",
-      "name": "DAT_01e533a0",
+      "name": "g_ScatIndices[6]",
       "type": "undefined4",
       "value": null
     },
@@ -211,6 +210,18 @@
     "pcode_op_count": 2008
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005203c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6774
+    },
+    "bw1.exe": {
+      "addr": "005424f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6774
+    },
     "nocedit.exe": {
       "addr": "00558720",
       "by": "name",
@@ -372,16 +383,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 67,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "target = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);",

@@ -14,11 +14,11 @@
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00426030 at 004260f8
 ;
 ; Referenced Globals:
-;   undefined4 s_s_swarming_on_s_at_LOD_d_005d5177+1
+;   TerminatedCString s_s_swarming_on_s_at_LOD_d_005d5178
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   undefined4 DAT_007c55f4
-;   undefined4 DAT_007c55f8
-;   undefined4 DAT_007c55fc
+;   int[700] g_BugsSortedVertexIndices
+;   undefined4 g_BugsSortedVertexIndices[1]
+;   undefined4 g_BugsSortedVertexIndices[2]
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
@@ -105,7 +105,7 @@ section .text
     PUSH EBX                            ; 00427c20
     MOV EBP,dword ptr [ESP + 0x24]      ; 00427c21
     PUSH EBP                            ; 00427c25
-    PUSH 0x5d5178                       ; 00427c26 | s_s_swarming_on_s_at_LOD_d_005d5177+1
+    PUSH 0x5d5178                       ; 00427c26 | = "%s swarming on %s at LOD %d\n"
     MOV EAX,[0x00611100]                ; 00427c2b | g_CConsolePtr
     PUSH EAX                            ; 00427c30 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00427c31
@@ -144,7 +144,7 @@ section .text
         ;   XREF to: 00427cb0 (CONDITIONAL_JUMP)  ; LAB_00427cb0
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00427c95
     XOR EDX,EDX                         ; 00427c99
-    MOV dword ptr [EDX + 0x7c55f4],EAX  ; 00427c9b | DAT_007c55f4 | DAT_007c55f8
+    MOV dword ptr [EDX + 0x7c55f4],EAX  ; 00427c9b | g_BugsSortedVertexIndices | g_BugsSortedVertexIndices[1]
         ;   Label: LAB_00427c9b
     INC EAX                             ; 00427ca1
     MOV EBP,dword ptr [ECX + 0x12ee0]   ; 00427ca2
@@ -168,20 +168,20 @@ section .text
         ;   XREF to: 00427d09 (CONDITIONAL_JUMP)  ; LAB_00427d09
     SHL EBP,0x2                         ; 00427ccd
     XOR EAX,EAX                         ; 00427cd0
-    IMUL EDX,dword ptr [EAX + 0x7c55f4],0xc ; 00427cd2 | DAT_007c55f4 | DAT_007c55f8
+    IMUL EDX,dword ptr [EAX + 0x7c55f4],0xc ; 00427cd2 | g_BugsSortedVertexIndices | g_BugsSortedVertexIndices[1]
         ;   Label: LAB_00427cd2
-    IMUL ECX,dword ptr [EAX + 0x7c55f8],0xc ; 00427cd9 | DAT_007c55f8 | DAT_007c55fc
+    IMUL ECX,dword ptr [EAX + 0x7c55f8],0xc ; 00427cd9 | g_BugsSortedVertexIndices[1] | g_BugsSortedVertexIndices[2]
     MOV EDX,dword ptr [EDX + EBX*0x1 + 0x4] ; 00427ce0
     CMP EDX,dword ptr [ECX + EBX*0x1 + 0x4] ; 00427ce4
     JLE 0x00427d02                      ; 00427ce8
         ;   XREF to: 00427d02 (CONDITIONAL_JUMP)  ; LAB_00427d02
     LEA ECX,[EAX + 0x4]                 ; 00427cea
-    ADD ECX,0x7c55f4                    ; 00427ced | DAT_007c55f4
-    MOV EDX,0x7c55f4                    ; 00427cf3 | DAT_007c55f4
-    MOV ESI,dword ptr [ECX]             ; 00427cf8 | DAT_007c55f8
-    MOV EDI,dword ptr [EDX + EAX*0x1]   ; 00427cfa | DAT_007c55f4
-    MOV dword ptr [EDX + EAX*0x1],ESI   ; 00427cfd | DAT_007c55f4
-    MOV dword ptr [ECX],EDI             ; 00427d00 | DAT_007c55f8
+    ADD ECX,0x7c55f4                    ; 00427ced | g_BugsSortedVertexIndices
+    MOV EDX,0x7c55f4                    ; 00427cf3 | g_BugsSortedVertexIndices
+    MOV ESI,dword ptr [ECX]             ; 00427cf8 | g_BugsSortedVertexIndices[1]
+    MOV EDI,dword ptr [EDX + EAX*0x1]   ; 00427cfa | g_BugsSortedVertexIndices
+    MOV dword ptr [EDX + EAX*0x1],ESI   ; 00427cfd | g_BugsSortedVertexIndices
+    MOV dword ptr [ECX],EDI             ; 00427d00 | g_BugsSortedVertexIndices[1]
     ADD EAX,0x4                         ; 00427d02
         ;   Label: LAB_00427d02
     CMP EAX,EBP                         ; 00427d05
@@ -194,7 +194,7 @@ section .text
     TEST EDX,EDX                        ; 00427d12
     JGE 0x00427cc5                      ; 00427d14
         ;   XREF to: 00427cc5 (CONDITIONAL_JUMP)  ; LAB_00427cc5
-    MOV EDX,dword ptr [0x007c55f4]      ; 00427d16 | DAT_007c55f4
+    MOV EDX,dword ptr [0x007c55f4]      ; 00427d16 | g_BugsSortedVertexIndices
         ;   Label: LAB_00427d16
     LEA EAX,[EDX*0x4 + 0x0]             ; 00427d1c
     SUB EAX,EDX                         ; 00427d23
@@ -211,7 +211,7 @@ section .text
     MOV EDI,EAX                         ; 00427d41
     MOV dword ptr [EDI + 0xc29c],0xffffffff ; 00427d43
         ;   Label: LAB_00427d43
-    MOV EAX,dword ptr [ESI*0x4 + 0x7c55f4] ; 00427d4d | DAT_007c55f4
+    MOV EAX,dword ptr [ESI*0x4 + 0x7c55f4] ; 00427d4d | g_BugsSortedVertexIndices
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00427d54
     MOV dword ptr [EDI + 0xc2a0],EAX    ; 00427d58
     MOV ECX,0xf                         ; 00427d5e
@@ -265,7 +265,7 @@ section .text
     MOV dword ptr [EDX + 0x12ea8],0x0   ; 00427dde
     JMP 0x00427daa                      ; 00427de8
         ;   XREF to: 00427daa (UNCONDITIONAL_JUMP)  ; LAB_00427daa
-    IMUL EAX,dword ptr [ESI*0x4 + 0x7c55f4],0xc ; 00427dea | DAT_007c55f8
+    IMUL EAX,dword ptr [ESI*0x4 + 0x7c55f4],0xc ; 00427dea | g_BugsSortedVertexIndices[1]
         ;   Label: LAB_00427dea
     MOV ECX,dword ptr [ESP]             ; 00427df2
     CMP ECX,dword ptr [EBX + EAX*0x1 + 0x4] ; 00427df5

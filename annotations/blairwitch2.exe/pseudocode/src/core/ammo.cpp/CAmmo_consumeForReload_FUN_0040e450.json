@@ -1,0 +1,138 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 13,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "0045d2c0",
+      "from_addr": "0045d678",
+      "name": "core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc8c0",
+      "from_addr": "004dc9fa",
+      "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e450",
+    "address_range": [
+      [
+        "0040e450",
+        "0040e489"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450",
+    "signature": "int __cdecl core_ammo_cpp_CAmmo_consumeForReload_FUN_0040e450(CAmmo *this_ptr,CDoc *hero)"
+  },
+  "function_calls": [
+    {
+      "addr": "004db880",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cb23d",
+      "name": "s_CGun_005cb23d",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0045d678",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dc9fa",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.421052631578948,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 15,
+      "INT_ADD": 10,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 13,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 13,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 103
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmo *"
+      },
+      {
+        "is_param": true,
+        "name": "hero",
+        "offset": 8,
+        "size": 4,
+        "type": "CDoc *"
+      }
+    ]
+  },
+  "suspects": []
+}

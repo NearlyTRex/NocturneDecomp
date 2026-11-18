@@ -18,7 +18,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_00419c50(CBoneGuy *this_ptr)
   CBodyPart **ppCStack_14;
   
   core_enemy_cpp_CEnemy_archive_FUN_00487ec0(&this_ptr->base);
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&(this_ptr->base).speed,"@speed" + 1);
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0
             (&(this_ptr->base).base.model,"modelName");
   if (g_CBoneGuyClassVersion < 4) {

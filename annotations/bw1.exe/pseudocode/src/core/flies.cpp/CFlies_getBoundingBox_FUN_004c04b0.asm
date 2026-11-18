@@ -1,15 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e077a
-;   undefined4 DAT_005e0782
+;   double g_DOUBLE_005e077a = -0.5
+;   double g_DOUBLE_005e0782 = 0.5
 ;
 ; *****************************************************************************
 
@@ -23,11 +22,11 @@ section .text
     MOV EDX,ESI                         ; 004c04b9
     FLD float ptr [ECX + 0x158]         ; 004c04bb
     FLD ST0                             ; 004c04c1
-    FLD double ptr [0x005e077a]         ; 004c04c3 | DAT_005e077a
+    FLD double ptr [0x005e077a]         ; 004c04c3 | g_DOUBLE_005e077a
     FXCH                                ; 004c04c9
     FMUL ST1                            ; 004c04cb
     FXCH ST2                            ; 004c04cd
-    FLD double ptr [0x005e0782]         ; 004c04cf | DAT_005e0782
+    FLD double ptr [0x005e0782]         ; 004c04cf | g_DOUBLE_005e0782
     FXCH                                ; 004c04d5
     FMUL ST1                            ; 004c04d7
     FLD float ptr [ECX + 0x160]         ; 004c04d9

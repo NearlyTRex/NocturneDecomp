@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_VirtualAlloc_005755d4 = 001760d4
-;   undefined4 DAT_005c1cc8
-;   undefined4 DAT_005c1fe8
+;   int g_INT_005c1cc8 = 0x0
+;   int g_INT_005c1fe8 = 0x1
 ;
 ; Called Functions:
 ;   crt_heap.c_CalculateHeapBlockSize_FUN_00568e1c
@@ -28,7 +28,7 @@ section .text
         ;   Label: crt_heap.c_AllocateNewHeapBlock_FUN_00568d58
     PUSH ESI                            ; 00568d59
     PUSH EDI                            ; 00568d5a
-    CMP dword ptr [0x005c1fe8],0x0      ; 00568d5b | DAT_005c1fe8
+    CMP dword ptr [0x005c1fe8],0x0      ; 00568d5b | g_INT_005c1fe8
     JNZ 0x00568d6a                      ; 00568d62
         ;   XREF to: 00568d6a (CONDITIONAL_JUMP)  ; LAB_00568d6a
     XOR EAX,EAX                         ; 00568d64
@@ -36,7 +36,7 @@ section .text
     POP ESI                             ; 00568d67
     POP EBX                             ; 00568d68
     RET                                 ; 00568d69
-    CMP dword ptr [0x005c1cc8],-0x2     ; 00568d6a | DAT_005c1cc8
+    CMP dword ptr [0x005c1cc8],-0x2     ; 00568d6a | g_INT_005c1cc8
         ;   Label: LAB_00568d6a
     JNZ 0x00568d79                      ; 00568d71
         ;   XREF to: 00568d79 (CONDITIONAL_JUMP)  ; LAB_00568d79

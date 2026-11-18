@@ -26,7 +26,7 @@
 ;   undefined4 g_CGameInstance.game_control
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 g_CGameInstance.delta_time_float
-;   CKeys g_CKeys_01cc30e4
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90
@@ -160,8 +160,8 @@ section .text
     PUSH 0x1                            ; 004d22f2
         ;   Label: default
     MOV EAX,[0x005bac64]                ; 004d22f4 | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004d22f9 | g_CKeys_01cc30e4
-    MOV EBX,dword ptr [EAX]             ; 004d22fa | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004d22f9 | g_CKeysInstance
+    MOV EBX,dword ptr [EAX]             ; 004d22fa | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 004d22fc
     ADD ESP,0x8                         ; 004d22ff
     TEST EAX,EAX                        ; 004d2302

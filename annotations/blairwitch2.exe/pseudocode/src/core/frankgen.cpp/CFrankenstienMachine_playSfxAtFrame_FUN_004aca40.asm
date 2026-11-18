@@ -8,8 +8,11 @@
 ; float            Stack[0x8]:4   trigger_frame
 ; char *           Stack[0xc]:4   sfx_filename
 ;
+; XREF[1]:
+;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004ac4c0 at 004ac823
+;
 ; Referenced Globals:
-;   undefined4 DAT_01cb0620
+;   float g_FLOAT_01cb0620
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
@@ -23,7 +26,7 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 004aca40
         ;   Label: core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40
-    FCOMP float ptr [0x01cb0620]        ; 004aca44 | DAT_01cb0620
+    FCOMP float ptr [0x01cb0620]        ; 004aca44 | g_FLOAT_01cb0620
     FNSTSW AX                           ; 004aca4a
     SAHF                                ; 004aca4c
     JC 0x004aca62                       ; 004aca4d

@@ -13,7 +13,7 @@ int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004a6ba0(CEventList *t
   int iVar2;
   char (*str1) [32];
   
-  iVar1 = _stricmp(identifier,&DAT_005de184);
+  iVar1 = _stricmp(identifier,"TRUE");
   if (iVar1 != 0) {
     iVar1 = 0;
     if (0 < (this_ptr->current_events).count) {

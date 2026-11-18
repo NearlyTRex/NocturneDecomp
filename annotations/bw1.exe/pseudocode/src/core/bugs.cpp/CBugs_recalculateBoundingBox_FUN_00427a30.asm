@@ -13,8 +13,8 @@
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00426030 at 00426141
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5170
-;   undefined4 DAT_005d5174
+;   float g_FLOAT_005d5170 = -0.3333333
+;   float g_FLOAT_005d5174 = 0.3333333
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
@@ -76,7 +76,7 @@ section .text
     FLD float ptr [EDI + 0x19d88]       ; 00427ab8
     FLD float ptr [EDI + 0x19d8c]       ; 00427abe
     FXCH ST5                            ; 00427ac4
-    FLD float ptr [0x005d5170]          ; 00427ac6 | DAT_005d5170
+    FLD float ptr [0x005d5170]          ; 00427ac6 | g_FLOAT_005d5170
     FXCH                                ; 00427acc
     FADD ST0,ST1                        ; 00427ace
     FXCH ST5                            ; 00427ad0
@@ -84,7 +84,7 @@ section .text
     FXCH ST4                            ; 00427ad4
     FADDP                               ; 00427ad6
     FXCH ST2                            ; 00427ad8
-    FLD float ptr [0x005d5174]          ; 00427ada | DAT_005d5174
+    FLD float ptr [0x005d5174]          ; 00427ada | g_FLOAT_005d5174
     FXCH                                ; 00427ae0
     FADD ST0,ST1                        ; 00427ae2
     FXCH ST2                            ; 00427ae4

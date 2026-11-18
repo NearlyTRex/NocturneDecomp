@@ -2,23 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 89,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 74,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 62,
+    "suspect_count": 17,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "unaffected_reg",
+      "warning_unreachable"
     ],
-    "total_lines": 276
+    "total_lines": 264
   },
   "cross_references": [
     {
       "addr": "0053de10",
       "from_addr": "0053de63",
-      "name": "core_setcolid.cpp_FUN_0053de10",
+      "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,73 +55,73 @@
   "globals": [
     {
       "addr": "01548b58",
-      "name": "DAT_01548b58",
-      "type": "undefined4",
+      "name": "g_FLOAT_01548b58",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01548b5c",
-      "name": "DAT_01548b5c",
-      "type": "undefined4",
+      "name": "g_INT_01548b5c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01548b60",
-      "name": "DAT_01548b60",
-      "type": "undefined4",
+      "name": "g_FLOAT_01548b60",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01548b64",
-      "name": "DAT_01548b64",
-      "type": "undefined4",
+      "name": "g_FLOAT_01548b64",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01548b68",
-      "name": "DAT_01548b68",
-      "type": "undefined4",
+      "name": "g_INT_01548b68",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01548b6c",
-      "name": "DAT_01548b6c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01548b6c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01548b70",
-      "name": "DAT_01548b70",
-      "type": "undefined4",
+      "name": "g_FLOAT_01548b70",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01548b74",
-      "name": "DAT_01548b74",
-      "type": "undefined4",
+      "name": "g_INT_01548b74",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01548b78",
-      "name": "DAT_01548b78",
-      "type": "undefined4",
+      "name": "g_FLOAT_01548b78",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02cfd900",
-      "name": "DAT_02cfd900",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02cfd904",
-      "name": "DAT_02cfd904",
+      "name": "g_ZeroVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cfd908",
-      "name": "DAT_02cfd908",
+      "name": "g_ZeroVector.z",
       "type": "undefined4",
       "value": null
     }
@@ -131,7 +132,7 @@
       {
         "call_addr": "0053de63",
         "call_type": "direct",
-        "caller": "core_setcolid.cpp_FUN_0053de10",
+        "caller": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -281,12 +282,140 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unreachable code block removed",
       "line": 2,
-      "match": "WARNING: Globals starting with",
+      "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "/* WARNING: Removing unreachable block (ram,0x00474fd8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00474fe4) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00474ff8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00475002) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0047500b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00475014) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00474fcc) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "fVar4 = *(float *)(unaff_EBX + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "((double)((cylinder->bottom_y - *(float *)(unaff_EBX + 0x14)) * fVar5));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "fVar5 = ((cylinder->center_z + cylinder->dir_z) - *(float *)(unaff_EDI + 0x18)) -",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "fVar5 = (cylinder->center_z - *(float *)(unaff_EDI + 0x18)) - cylinder->radius;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 58,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "fVar2 = *(float *)(unaff_EDI + 0x18);",
+      "type": "unaffected_reg"
     }
   ]
 }

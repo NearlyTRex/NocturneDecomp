@@ -9,9 +9,10 @@
 ; Local Variables:
 ; undefined2       Stack[-0x10]:2  local_10
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790 at 0050b7e4
-;   support_trisock.cpp_FUN_00579890 at 005799db
+;   support_trisock.cpp_httpConnectToUrl_FUN_00579890 at 005799db
+;   support_trisock.cpp_httpRequestUpdate_FUN_0057ad10 at 0057addf
 ;
 ; Called Functions:
 ;   crt_wsock32.c_bind

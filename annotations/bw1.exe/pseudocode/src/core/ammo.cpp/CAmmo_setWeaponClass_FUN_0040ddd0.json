@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 213,
-    "complexity_score": 120,
+    "complexity_score": 105,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 303
@@ -35,21 +34,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fa4e0",
-      "from_addr": "004fa535",
-      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f7690",
       "from_addr": "004f8443",
-      "name": "core_inv.cpp_FUN_004f7690",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f8b70",
       "from_addr": "004f8bea",
-      "name": "core_inv.cpp_FUN_004f8b70",
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fa4e0",
+      "from_addr": "004fa535",
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -91,8 +90,8 @@
     },
     {
       "addr": "005d307c",
-      "name": "DAT_005d307c",
-      "type": "undefined4",
+      "name": "s_CGun_005d307c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -311,7 +310,7 @@
       {
         "call_addr": "004f8443",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -420,14 +419,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005d307c",
-      "severity": "mild",
-      "text": "iVar2 = _strcmp(weapon_class_name,&DAT_005d307c);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 13,

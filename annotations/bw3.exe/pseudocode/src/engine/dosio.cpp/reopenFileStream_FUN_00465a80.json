@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 179,
+    "complexity_score": 191,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 12,
+    "pseudocode_lines": 36,
+    "suspect_count": 13,
     "suspect_types": [
       "builtin_function",
       "pointer_cast",
       "stack_param",
       "unaffected_reg",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 122
+    "total_lines": 124
   },
   "cross_references": [],
   "function": {
@@ -58,20 +58,20 @@
       "name": "crt_watcom.c__mkdir_FUN_005a4e10"
     },
     {
+      "addr": "00465660",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660"
+    },
+    {
       "addr": "004656d0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_findFile_FUN_004656d0"
-    },
-    {
-      "addr": "00465660",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00465660"
     }
   ],
   "globals": [
     {
       "addr": "005e8800",
-      "name": "DAT_005e8800",
+      "name": "g_DOUBLE_005e87fc+4",
       "type": "undefined4",
       "value": null
     }
@@ -173,16 +173,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -190,15 +182,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "uint in_stack_00000014;",
+      "text": "char *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "uint in_stack_00000018;",
@@ -206,7 +198,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(int *)((int)(file_stream->_fstreambase_core).layout_info",
       "severity": "moderate",
       "text": "*(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);",
@@ -214,15 +206,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "engine_dosio_cpp_FUN_00465660(acStack_214,directory_path,in_stack_00000014);",
+      "text": "(acStack_214,directory_path,in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "if ((in_stack_00000018 & 0x52) == 0) {",
@@ -233,8 +225,16 @@
       "line": 23,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "openFile(file_stream,acStack_114,in_stack_00000018,_DAT_005e8800);",
+      "text": "(file_stream,acStack_114,in_stack_00000018,8.9170892898641982e-312._4_4_);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 23,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(file_stream,acStack_114,in_stack_00000018,8.9170892898641982e-312._4_4_);",
+      "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",
@@ -262,11 +262,19 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 36,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "openFile(file_stream,acStack_214,in_stack_00000018,_DAT_005e8800);",
+      "text": "(file_stream,acStack_214,in_stack_00000018,8.9170892898641982e-312._4_4_);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(file_stream,acStack_214,in_stack_00000018,8.9170892898641982e-312._4_4_);",
+      "type": "unknown_field"
     }
   ]
 }

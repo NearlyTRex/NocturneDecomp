@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c9a624
+;   byte g_BYTE_02c9a624
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV AL,[0x02c9a624]                 ; 005b25a0 | DAT_02c9a624
+    MOV AL,[0x02c9a624]                 ; 005b25a0 | g_BYTE_02c9a624
         ;   Label: wincore_winrun.cpp_getValue_FUN_005b25a0
     RET                                 ; 005b25a5
 

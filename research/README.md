@@ -76,6 +76,8 @@ Complete analysis of MP3 decoding and DirectSound integration.
 | `mp3_audio_system_analysis.md` | Full technical analysis |
 | `QUICK_REFERENCE.md` | Developer quick reference |
 | `sound_structures_analysis.md` | Audio structure definitions |
+| `sound_device.md` | The `CSoundDevice` slots in nocedit and BW |
+| `eax.md` | EAX 1.0 reverb: property set, payload, the 27 presets, per-camera choice, the port |
 | `decode_mp3_offline.gdb` | Decodes a file through the game's own decoder with no audio device, for bit-comparison against a reference decoder |
 
 **Key Findings:**

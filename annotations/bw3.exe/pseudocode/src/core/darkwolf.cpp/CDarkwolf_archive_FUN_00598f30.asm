@@ -7,7 +7,7 @@
 ; CDarkwolf *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005d9889+1
+;   TerminatedCString s_speed_005d988a
 ;   TerminatedCString s_modelName_005d9890
 ;   TerminatedCString s_guardDistance_005d989a
 ;   TerminatedCString s_motion_state_005d98a8
@@ -32,7 +32,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00489120 ; 00598f37
         ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00489120(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00598f3c
-    PUSH 0x5d988a                       ; 00598f3f | s_speed_005d9889+1
+    PUSH 0x5d988a                       ; 00598f3f | = "speed"
     LEA ESI,[EBX + 0xcdcc]              ; 00598f44
     PUSH ESI                            ; 00598f4a
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00598f4b

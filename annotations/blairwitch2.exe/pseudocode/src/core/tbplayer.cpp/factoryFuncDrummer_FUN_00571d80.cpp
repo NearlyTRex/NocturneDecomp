@@ -11,7 +11,7 @@ CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_00571d80(void)
 {
   CDrummer *pCVar1;
   
-  pCVar1 = (CDrummer *)operator_new(0x24350);
+  pCVar1 = operator_new(0x24350);
   if (pCVar1 == (CDrummer *)0x0) {
     return (CDrummer *)0x0;
   }

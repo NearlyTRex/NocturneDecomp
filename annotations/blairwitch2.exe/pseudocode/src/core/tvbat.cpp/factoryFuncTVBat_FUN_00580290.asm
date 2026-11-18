@@ -15,7 +15,7 @@ section .text
     PUSH 0x10d30                        ; 00580290
         ;   Label: core_tvbat.cpp_factoryFuncTVBat_FUN_00580290
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00580295
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0058029a
     TEST EAX,EAX                        ; 0058029d
     JNZ 0x005802a2                      ; 0058029f

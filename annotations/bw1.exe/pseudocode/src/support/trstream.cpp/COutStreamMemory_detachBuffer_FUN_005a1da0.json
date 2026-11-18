@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 91,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 11,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 26
@@ -28,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamMemory_detachBuffer_FUN_005a1da0",
-    "signature": "int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_005a1da0(COutStreamMemory *this_ptr,int *param_2)"
+    "signature": "int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_005a1da0(COutStreamMemory *this_ptr,int *out_length)"
   },
   "function_calls": [],
   "globals": [],
@@ -91,7 +90,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "out_length",
         "offset": 8,
         "size": 4,
         "type": "int *"
@@ -99,22 +98,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_005a1da0(COutStreamMemory *this_ptr,int *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = this_ptr->length;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 12,

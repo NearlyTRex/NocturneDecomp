@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,float delta_time)
 
 {
@@ -140,7 +138,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
   }
   if ((this_ptr->hold_pos_flag == 0) &&
      (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,this_ptr->hold_pos_condition), iVar6 != 0)) {
+                        (g_CEventListPtr,this_ptr->hold_pos_condition), iVar6 != 0)) {
     this_ptr->hold_pos_flag = 1;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -406,7 +404,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
         pCVar14 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
                             ((this_ptr->base).base.carry_hands[1].carry_actor,
-                             g_CWeaponActorType_02ddf970.name_hash);
+                             g_CWeaponClassInfo.name_hash);
         if (pCVar14 != (CCharacter *)0x0) {
           core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
           local_34 = (pCVar14->model).bone_origins[0x4f].y;
@@ -422,7 +420,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
         pCVar14 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
                             ((this_ptr->base).base.carry_hands[0].carry_actor,
-                             g_CWeaponActorType_02ddf970.name_hash);
+                             g_CWeaponClassInfo.name_hash);
         local_2c = pCVar14;
         if (pCVar14 != (CCharacter *)0x0) {
           core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
@@ -482,7 +480,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                             (&local_118,&g_ZeroVector.f,
                              (CMatrix3x4f *)
                              (this_ptr->base).base.model.bone_transform.bone_model_matrices
-                             [_DAT_01ccdbac].m);
+                             [g_MobsterIndices[1]].m);
         pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                             ((CDemonActor *)this_ptr,&local_100,pCVar13);
         core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar13,fVar16,pSVar17);
@@ -496,7 +494,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                             (&local_94,&g_ZeroVector.f,
                              (CMatrix3x4f *)
                              (this_ptr->base).base.model.bone_transform.bone_model_matrices
-                             [_DAT_01ccdbb0].m);
+                             [g_MobsterIndices[2]].m);
         pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                             ((CDemonActor *)this_ptr,&local_dc,pCVar13);
         core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar13,fVar16,pSVar17);
@@ -576,14 +574,14 @@ switchD_004db6cf_caseD_3:
     core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(this_ptr);
   }
   pCVar12 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      ((this_ptr->base).base.carry_hands[1].carry_actor,
-                       g_CWeaponActorType_02ddf970.name_hash);
+                      ((this_ptr->base).base.carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash
+                      );
   if (pCVar12 != (CDemonActor *)0x0) {
     (*((pCVar12->vtable)._ub)->process)(pCVar12,delta_time);
   }
   pCVar12 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      ((this_ptr->base).base.carry_hands[0].carry_actor,
-                       g_CWeaponActorType_02ddf970.name_hash);
+                      ((this_ptr->base).base.carry_hands[0].carry_actor,g_CWeaponClassInfo.name_hash
+                      );
   if (pCVar12 != (CDemonActor *)0x0) {
     (*((pCVar12->vtable)._ub)->process)(pCVar12,delta_time);
   }

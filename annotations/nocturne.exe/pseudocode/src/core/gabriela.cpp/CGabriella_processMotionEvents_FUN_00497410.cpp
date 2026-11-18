@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabriella *this_ptr,float delta_time)
 
 {
@@ -41,9 +39,9 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabr
     switch(iVar2) {
     case 1:
     case 7:
-      bone_index = _DAT_01c713b4;
+      bone_index = g_GabriellaIndices[7];
       if (iVar2 == 7) {
-        bone_index = _DAT_01c713b8;
+        bone_index = g_GabriellaIndices[8];
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
                 (this_ptr_00,(CVector3f *)local_58,bone_index);
@@ -86,8 +84,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabr
       break;
     case 2:
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         ((this_ptr->base).object_to_pick_up,
-                          g_CLightActorActorType_00764a9c.name_hash);
+                         ((this_ptr->base).object_to_pick_up,g_CLightActorClassInfo.name_hash);
       if (pCVar3 != (CDemonActor *)0x0) {
         if (pCVar3[4].dead2 != 1) {
           this_ptr->flashlight_angle = -0.5235988;
@@ -111,12 +108,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabr
     case 6:
       this_ptr_02 = (CCharacter *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
-                              ((this_ptr->base).base.grabbed_by,g_CEnemyActorType_01bcdebc.name_hash
-                              );
+                              ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
       local_1c = this_ptr_02;
       if (this_ptr_02 != (CCharacter *)0x0) {
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                           (this_ptr_00,(CVector3f *)(auStack_48 + 8),_DAT_01c713c8);
+                           (this_ptr_00,(CVector3f *)(auStack_48 + 8),g_GabriellaIndices[0xc]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,(CVector3f *)local_64,pCVar4);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff60);

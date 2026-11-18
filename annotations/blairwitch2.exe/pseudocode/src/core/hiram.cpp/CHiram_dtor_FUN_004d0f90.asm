@@ -13,14 +13,14 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_armour.cpp_FUN_0040f2b0
+;   core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0
 ;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
-;   core_muzzle.cpp_FUN_0059df70
+;   core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70
 ;   core_path.cpp_CPathMap_dtor_FUN_00511d10
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -42,14 +42,14 @@ section .text
     PUSH 0x0                            ; 004d0fbb
     SUB EAX,0xd040                      ; 004d0fbd
     PUSH EAX                            ; 004d0fc2
-    CALL core_armour.cpp_FUN_0040f2b0   ; 004d0fc3
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0 ; 004d0fc3
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d0fc8
     PUSH 0x0                            ; 004d0fcb
     SUB EAX,0x9c8                       ; 004d0fcd
     PUSH EAX                            ; 004d0fd2
-    CALL core_muzzle.cpp_FUN_0059df70   ; 004d0fd3
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70 ; 004d0fd3
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; SFollowFormation * core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70(SFollowFormation * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d0fd8
     PUSH 0x0                            ; 004d0fdb
     SUB EAX,0x34c                       ; 004d0fdd
@@ -84,16 +84,16 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004d1026
     PUSH EAX                            ; 004d1029
-    CALL crt_unknown.c_FUN_005b7fce     ; 004d102a
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 004d102a
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 004d102f
     MOV EAX,EBX                         ; 004d1032
     POP EBX                             ; 004d1034
     RET                                 ; 004d1035
     PUSH EAX                            ; 004d1036
         ;   Label: LAB_004d1036
-    CALL crt_unknown.c_FUN_005b7fdc     ; 004d1037
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 004d1037
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 004d103c
     MOV EAX,EBX                         ; 004d103f
     POP EBX                             ; 004d1041

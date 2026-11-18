@@ -14,27 +14,27 @@
   },
   "cross_references": [
     {
-      "addr": "0042c520",
-      "from_addr": "0042c5d5",
-      "name": "cockpit_ckptutil.c_FUN_0042c520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042dec0",
       "from_addr": "0042e034",
-      "name": "cockpit_ckptutil.c_FUN_0042dec0",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042f330",
       "from_addr": "0042f432",
-      "name": "cockpit_ckptutil.c_FUN_0042f330",
+      "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_0042f330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c520",
+      "from_addr": "0042c5d5",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042f4f0",
       "from_addr": "0042f51f",
-      "name": "cockpit_ckptutil.c_FUN_0042f4f0",
+      "name": "cockpit_ckptutil.c_rotateBitmap_FUN_0042f4f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -46,13 +46,13 @@
     {
       "addr": "005177e0",
       "from_addr": "005178d3",
-      "name": "cockpit_pkbmpset.cpp_FUN_005177e0",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00517a60",
       "from_addr": "00517a9e",
-      "name": "cockpit_pkbmpset.cpp_FUN_00517a60",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00517a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -124,7 +124,7 @@
     {
       "addr": "004bcbf0",
       "from_addr": "004bce1c",
-      "name": "core_game.cpp_FUN_004bcbf0",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -136,7 +136,7 @@
     {
       "addr": "00502820",
       "from_addr": "00502a26",
-      "name": "core_motion.cpp_FUN_00502820",
+      "name": "core_motion.cpp_CMotionList_load_FUN_00502820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -250,7 +250,7 @@
     {
       "addr": "004a7fd0",
       "from_addr": "004a8068",
-      "name": "engine_font.cpp_FUN_004a7fd0",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -274,7 +274,7 @@
     {
       "addr": "005011a0",
       "from_addr": "005011d0",
-      "name": "engine_model.c_FUN_005011a0",
+      "name": "engine_model.c_loadModelChunk_FUN_005011a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -298,7 +298,7 @@
     {
       "addr": "00575150",
       "from_addr": "005751ba",
-      "name": "engine_texture.cpp_FUN_00575150",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -316,13 +316,13 @@
     {
       "addr": "005048e0",
       "from_addr": "0050492c",
-      "name": "sound_mp3.cpp_FUN_005048e0",
+      "name": "sound_mp3.cpp_CFileBitStream_init_FUN_005048e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00509db0",
       "from_addr": "00509e29",
-      "name": "sound_mp3.cpp_FUN_00509db0",
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00509db0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -346,19 +346,19 @@
     {
       "addr": "00588670",
       "from_addr": "00588695",
-      "name": "wincore_wddvmem.cpp_FUN_00588670",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00588a50",
-      "from_addr": "00588b2f",
-      "name": "wincore_wddvmem.cpp_FUN_00588a50",
+      "name": "wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00588670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00588790",
       "from_addr": "005887b7",
       "name": "wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588a50",
+      "from_addr": "00588b2f",
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -443,7 +443,7 @@
       {
         "call_addr": "0042c5d5",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0042c520",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

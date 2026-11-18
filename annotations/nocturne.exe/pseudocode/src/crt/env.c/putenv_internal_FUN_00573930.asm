@@ -15,7 +15,7 @@
 ;   crt_unknown.c_FUN_00572b70 at 00572c9e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de54a8
+;   int g_EnvironInitialized
 ;
 ; Called Functions:
 ;   crt_env.c_updateEnvironTable_FUN_00573afc
@@ -191,7 +191,7 @@ section .text
     POP ESI                             ; 00573a7c
     POP EBX                             ; 00573a7d
     RET                                 ; 00573a7e
-    CMP dword ptr [0x02de54a8],0x0      ; 00573a7f | DAT_02de54a8
+    CMP dword ptr [0x02de54a8],0x0      ; 00573a7f | g_EnvironInitialized
         ;   Label: LAB_00573a7f
     JZ 0x00573af4                       ; 00573a86
         ;   XREF to: 00573af4 (CONDITIONAL_JUMP)  ; LAB_00573af4

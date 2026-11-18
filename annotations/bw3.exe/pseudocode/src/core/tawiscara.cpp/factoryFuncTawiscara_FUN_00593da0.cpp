@@ -11,7 +11,7 @@ CTawiscara * __cdecl core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void)
 {
   CTawiscara *pCVar1;
   
-  pCVar1 = (CTawiscara *)operator_new(0xd09c);
+  pCVar1 = operator_new(0xd09c);
   if (pCVar1 == (CTawiscara *)0x0) {
     return (CTawiscara *)0x0;
   }

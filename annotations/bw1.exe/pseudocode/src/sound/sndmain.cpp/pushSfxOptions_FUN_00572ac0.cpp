@@ -6,29 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0(void)
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  CSfxOptions *pCVar2;
+  CSfxOptions *pCVar3;
   byte bVar4;
   
   bVar4 = 0;
-  _DAT_02c78cec = _DAT_02c78cec + 1;
-  if (7 < _DAT_02c78cec) {
-    _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-    _DAT_01d1d404 = 0xe98;
-    core_main_c_FUN_005030e0("pushSfxOptions - stack full");
+  g_SfxLastSlot = g_SfxLastSlot + 1;
+  if (7 < g_SfxLastSlot) {
+    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+    g_INT_01d1d404 = 0xe98;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("pushSfxOptions - stack full");
   }
-  puVar2 = (uint *)((_DAT_02c78cec + -1) * 0x60 + 0x2c78cf0);
-  puVar3 = (uint *)(_DAT_02c78cec * 0x60 + 0x2c78cf0);
+  pCVar2 = g_CSfxOptions_ARRAY_02c78cf0 + g_SfxLastSlot + -1;
+  pCVar3 = g_CSfxOptions_ARRAY_02c78cf0 + g_SfxLastSlot;
   for (iVar1 = 0x18; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    pCVar3->channel_index = pCVar2->channel_index;
+    pCVar2 = (CSfxOptions *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3 = (CSfxOptions *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   return;
 }

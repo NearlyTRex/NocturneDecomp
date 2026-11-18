@@ -5,14 +5,19 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CFieldNotes.h"
 #include "types/classes/CGame.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRainDrop.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SHardwareEdge.h"
 #include "types/structs/SNotesMap.h"
 #include "types/structs/SNotesSection.h"
 #include "types/structs/STextView.h"
+#include "types/unions/UVector3.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CC0000
@@ -33,6 +38,9 @@ extern CAlphaBitmap CAlphaBitmap_01cc7cc0;
 // CAlphaBitmap[6]
 extern CAlphaBitmap CAlphaBitmap_ARRAY_01cc7ba8[6];
 
+// CDemonActor*
+extern CDemonActor* g_CDemonActor_PTR_01ccc3dc;
+
 // CDemonActorType
 extern CDemonActorType g_CFlameClassInfo;
 extern CDemonActorType g_CFlameCanClassInfo;
@@ -51,8 +59,17 @@ extern CFieldNotes g_CFieldNotesInstance;
 // CGame
 extern CGame g_CGameInstance;
 
+// CQuaternion4f
+extern CQuaternion4f g_GabriellaWeaponAimRotation;
+
 // CRainDrop[256]
 extern CRainDrop g_RainDropPool[256];
+
+// CVector3f
+extern CVector3f g_CVector3f_01ccc3b8;
+
+// SHardwareEdge[16]
+extern SHardwareEdge g_HardwareEdgeTable[16];
 
 // SNotesMap[4]
 extern SNotesMap SNotesMap_ARRAY_01cc55d0[4];
@@ -62,4 +79,111 @@ extern SNotesSection SNotesSection_ARRAY_01cc4474[6];
 
 // STextView
 extern STextView g_STextViewInstance;
+
+// UVector3
+extern UVector3 g_GabriellaWeaponEuler;
+extern UVector3 g_GabriellaWeaponAttachEuler;
+extern UVector3 g_GabriellaWeaponAttachOffset;
+
+// byte
+extern byte g_BYTE_01ccc3e0;
+
+// char
+extern char g_CHAR_01cc4228;
+extern char g_CHAR_01cc7f38;
+extern char g_CHAR_01cc88d0;
+
+// char[10][256]
+extern char g_WrappedTextBuffer[10][256];
+
+// char[256]
+extern char g_ScreenshotFilename[256];
+
+// char[5120]
+extern char g_ActStatsTextBuffer1[5120];
+extern char g_ActStatsTextBuffer2[5120];
+
+// char[512]
+extern char g_CHAR_ARRAY_01cc4270[512];
+
+// char[600]
+extern char g_PrevKeyboardState[600];
+
+// double
+extern double g_DOUBLE_01cc9ba0;
+
+// float
+extern float g_FastSqrtMagicSeedOne;
+extern float g_FLOAT_01cc8054;
+extern float g_FLOAT_01cc8058;
+extern float g_FLOAT_01cc805c;
+extern float g_FLOAT_01cc8060;
+extern float g_FLOAT_01cc8064;
+extern float g_FLOAT_01cc8068;
+extern float g_FLOAT_01cc806c;
+extern float g_FLOAT_01cc8070;
+extern float g_FLOAT_01cc8074;
+extern float g_FLOAT_01cc8078;
+extern float g_FLOAT_01cc807c;
+extern float g_FLOAT_01cc8080;
+extern float g_FLOAT_01cc90b0;
+extern float g_FLOAT_01cc90c8;
+extern float g_FLOAT_01cc90cc;
+extern float g_FLOAT_01cc90d0;
+extern float g_FLOAT_01cc90f8;
+extern float g_FLOAT_01cc90fc;
+extern float g_FLOAT_01cc9100;
+extern float g_FLOAT_01cc9104;
+extern float g_FLOAT_01ccc3c8;
+extern float g_FLOAT_01ccc3cc;
+extern float g_FLOAT_01ccc3d0;
+extern float g_FLOAT_01ccc3d4;
+
+// float[64][8]
+extern float g_SplineBasisTable[64][8];
+
+// int
+extern int g_RainDropAllocIndex;
+extern int g_INT_01cc4200;
+extern int g_INT_01cc4268;
+extern int g_INT_01cc4470;
+extern int g_INT_01cc55cc;
+extern int g_INT_01cc7b90;
+extern int g_INT_01cc7f1c;
+extern int g_INT_01cc7f20;
+extern int g_INT_01cc7f24;
+extern int g_INT_01cc7f28;
+extern int g_INT_01cc7f2c;
+extern int g_INT_01cc7f30;
+extern int g_INT_01cc8000;
+extern int g_FastSqrtMagic;
+extern int g_FastInvSqrtMagic;
+extern int g_FliesInitialized;
+extern int g_ShadowColor32;
+extern int g_ShadowColorRed;
+extern int g_ShadowColorGreen;
+extern int g_ShadowColorBlue;
+extern int g_INT_01cc8ce4;
+extern int g_EdgeCount;
+extern int g_EdgeListMinY;
+extern int g_EdgeListMaxY;
+extern int g_INT_01cc9ba8;
+extern int g_INT_01ccc3b0;
+extern int g_INT_01ccc3b4;
+extern int g_INT_01ccc3c4;
+extern int g_INT_01ccc3d8;
+extern int g_ScreenshotIndex;
+
+// int[20]
+extern int g_GabriellaIndices[20];
+
+// uchar
+extern uchar g_GabriellaWeaponAimRotationInitFlag;
+
+// uint
+extern uint g_FlyBlendColor;
+extern uint g_FlyInvBlendColor;
+
+// ushort
+extern ushort g_USHORT_01cc8cd2;
 

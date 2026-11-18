@@ -2,21 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 184,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 14,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast",
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 61
+    "total_lines": 60
   },
   "cross_references": [
     {
@@ -36,7 +33,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005c378c",
-    "signature": "undefined4 crt_unknown_c_FUN_005c378c(LPVOID param_1)"
+    "signature": "undefined4 crt_unknown_c_FUN_005c378c(Heap *param_1)"
   },
   "function_calls": [
     {
@@ -54,26 +51,26 @@
     },
     {
       "addr": "0061eea0",
-      "name": "DAT_0061eea0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MainHeap",
+      "type": "Heap*",
+      "value": "00000000"
     },
     {
       "addr": "0061eea4",
-      "name": "DAT_0061eea4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SecondaryHeap",
+      "type": "Heap*",
+      "value": "00000000"
     },
     {
       "addr": "0061eea8",
-      "name": "DAT_0061eea8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061eea8",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "02680150",
-      "name": "DAT_02680150",
-      "type": "undefined4",
+      "name": "g_INT_02680150",
+      "type": "int",
       "value": null
     }
   ],
@@ -155,40 +152,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_005c378c(LPVOID param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 10,
-      "match": "(uint *)((int)param_1",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)((int)param_1 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)param_1 + 8);",
+      "text": "uint FUN_005c378c(Heap *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pHVar1 = param_1->next_heap_block;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "BVar2 = VirtualFree(param_1,0,0x8000);",
@@ -196,66 +177,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_1 == (LPVOID)DAT_0061eea4) && (DAT_0061eea4 = uVar1, uVar1 == 0)) {",
+      "text": "if ((param_1 == g_SecondaryHeap) && (g_SecondaryHeap = pHVar1, pHVar1 == (Heap *)0x0)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061eea4",
-      "severity": "mild",
-      "text": "if ((param_1 == (LPVOID)DAT_0061eea4) && (DAT_0061eea4 = uVar1, uVar1 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061eea4",
-      "severity": "mild",
-      "text": "if ((param_1 == (LPVOID)DAT_0061eea4) && (DAT_0061eea4 = uVar1, uVar1 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0061eea4",
-      "severity": "mild",
-      "text": "DAT_0061eea4 = DAT_0061eea0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0061eea0",
-      "severity": "mild",
-      "text": "DAT_0061eea4 = DAT_0061eea0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Unnamed function parameter",
       "line": 15,
-      "match": "DAT_0061eea8",
-      "severity": "mild",
-      "text": "DAT_0061eea8 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 == _DAT_02680150) {",
+      "text": "if (param_1 == (Heap *)g_INT_02680150) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "_DAT_02680150 = (LPVOID)((uint)param_1 ^ (uint)_DAT_02680150);",
+      "text": "g_INT_02680150 = (uint)param_1 ^ g_INT_02680150;",
       "type": "unnamed_param"
     },
     {

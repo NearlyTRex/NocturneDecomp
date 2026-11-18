@@ -9,18 +9,18 @@
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00543070(CScat *this_ptr,uint flags)
 
 {
-  CScat *pCVar1;
-  void *ptr;
+  CScat *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CScatTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CScatTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CScat *)core_hero_cpp_FUN_004ea980(this_ptr,1);
+  ptr = (CScat *)core_hero_cpp_CHero_dtor_FUN_004ea980(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005c0344(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

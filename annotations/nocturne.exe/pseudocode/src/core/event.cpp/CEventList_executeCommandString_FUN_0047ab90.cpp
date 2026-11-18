@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(CEventList *this_ptr,char *command_string)
 
 {
@@ -42,10 +40,11 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(CEventLi
       *pcVar2 = '\0';
       iVar3 = core_event_cpp_CEventList_executeCommand_FUN_0047ac50(this_ptr,local_6c);
       if (iVar3 == 0) {
-        if (_DAT_01c08b5c != 0) {
+        if (g_EventDryRun != 0) {
           return 0;
         }
-        engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"%s\n",&DAT_01c08b60);
+        engine_console_cpp_CConsole_printf_FUN_0043ac60
+                  (g_CConsolePtr,"%s\n",g_EventErrorMessageBuffer);
       }
     }
   } while( true );

@@ -22,19 +22,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005905ea
 ;   TerminatedCString s_CDemonSet_lightVertexCol_005905fa
-;   undefined4 DAT_005c5014
-;   undefined4 DAT_005c5034
-;   undefined4 DAT_005c5038
-;   undefined4 DAT_005c503c
-;   undefined4 DAT_005c5040
-;   undefined4 DAT_01c038f4
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].r
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].g
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].b
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].a
+;   int g_INT_01c038f4
 ;   int g_CameraOriginX
 ;   int g_CameraOriginZ
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
-;   undefined4 DAT_01ffb05c
-;   undefined4 DAT_01fff224
+;   undefined4 g_IntensityToValueLookupTable[65535]
+;   int g_ColorCorrectionCount
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -101,22 +101,22 @@ section .text
     MOV EDX,ECX                         ; 0050b88c
     SHL ESI,0x4                         ; 0050b88e
     MOV EAX,dword ptr [EBX + 0x15aaa0]  ; 0050b891
-    ADD ESI,0x5c5014                    ; 0050b897 | DAT_005c5014
+    ADD ESI,0x5c5014                    ; 0050b897 | g_SRenderVertex_ARRAY_005c5014
     IMUL EDX                            ; 0050b89d
     SHRD EAX,EDX,0x10                   ; 0050b89f
-    MOV dword ptr [ESI + 0x20],EAX      ; 0050b8a3 | DAT_005c5034
+    MOV dword ptr [ESI + 0x20],EAX      ; 0050b8a3 | g_SRenderVertex_ARRAY_005c5014[0].r
     MOV EDX,ECX                         ; 0050b8a6
     MOV EAX,dword ptr [EBX + 0x15aaa4]  ; 0050b8a8
     IMUL EDX                            ; 0050b8ae
     SHRD EAX,EDX,0x10                   ; 0050b8b0
-    MOV dword ptr [ESI + 0x24],EAX      ; 0050b8b4 | DAT_005c5038
+    MOV dword ptr [ESI + 0x24],EAX      ; 0050b8b4 | g_SRenderVertex_ARRAY_005c5014[0].g
     MOV EDX,ECX                         ; 0050b8b7
     MOV EAX,dword ptr [EBX + 0x15aaa8]  ; 0050b8b9
     IMUL EDX                            ; 0050b8bf
     SHRD EAX,EDX,0x10                   ; 0050b8c1
-    MOV dword ptr [ESI + 0x28],EAX      ; 0050b8c5 | DAT_005c503c
-    MOV EAX,[0x01c038f4]                ; 0050b8c8 | DAT_01c038f4
-    MOV dword ptr [ESI + 0x2c],EAX      ; 0050b8cd | DAT_005c5040
+    MOV dword ptr [ESI + 0x28],EAX      ; 0050b8c5 | g_SRenderVertex_ARRAY_005c5014[0].b
+    MOV EAX,[0x01c038f4]                ; 0050b8c8 | g_INT_01c038f4
+    MOV dword ptr [ESI + 0x2c],EAX      ; 0050b8cd | g_SRenderVertex_ARRAY_005c5014[0].a
     ADD ESP,0x24                        ; 0050b8d0
     POP EBP                             ; 0050b8d3
     POP EDI                             ; 0050b8d4
@@ -133,11 +133,11 @@ section .text
         ;   XREF to: 0050ba7e (CONDITIONAL_JUMP)  ; LAB_0050ba7e
     MOV ECX,0xffff                      ; 0050b8e7
     MOV dword ptr [ESP + 0x20],EDX      ; 0050b8ec
-    CMP dword ptr [0x01fff224],0x0      ; 0050b8f0 | DAT_01fff224
+    CMP dword ptr [0x01fff224],0x0      ; 0050b8f0 | g_ColorCorrectionCount
         ;   Label: LAB_0050b8f0
     JLE 0x0050bb1c                      ; 0050b8f7
         ;   XREF to: 0050bb1c (CONDITIONAL_JUMP)  ; LAB_0050bb1c
-    MOV EDX,dword ptr [0x01fff5a4]      ; 0050b8fd | DAT_01fff5a4
+    MOV EDX,dword ptr [0x01fff5a4]      ; 0050b8fd | g_ColorCorrectionLightMultiplier
     MOV EAX,ECX                         ; 0050b903
     MOV EBP,dword ptr [ESP + 0x20]      ; 0050b905
     IMUL EDX                            ; 0050b909
@@ -146,7 +146,7 @@ section .text
     ADD EAX,EBP                         ; 0050b915
     IMUL EDX                            ; 0050b917
     SHRD EAX,EDX,0x10                   ; 0050b919
-    MOV EDX,dword ptr [0x01fff5a8]      ; 0050b91d | DAT_01fff5a8
+    MOV EDX,dword ptr [0x01fff5a8]      ; 0050b91d | g_ColorCorrectionColorMultiplier
     MOV dword ptr [ESP + 0x1c],EAX      ; 0050b923
     MOV EAX,ECX                         ; 0050b927
     IMUL EDX                            ; 0050b929
@@ -155,7 +155,7 @@ section .text
     ADD EAX,EBP                         ; 0050b935
     IMUL EDX                            ; 0050b937
     SHRD EAX,EDX,0x10                   ; 0050b939
-    MOV EDX,dword ptr [0x01fff5ac]      ; 0050b93d | DAT_01fff5ac
+    MOV EDX,dword ptr [0x01fff5ac]      ; 0050b93d | g_ColorCorrectionFogMultiplier
     MOV EDI,EAX                         ; 0050b943
     MOV EAX,ECX                         ; 0050b945
     IMUL EDX                            ; 0050b947
@@ -169,7 +169,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x44]      ; 0050b95d
     LEA ECX,[EAX*0x4 + 0x0]             ; 0050b961
     SUB ECX,EAX                         ; 0050b968
-    MOV EAX,0x5c5014                    ; 0050b96a | DAT_005c5014
+    MOV EAX,0x5c5014                    ; 0050b96a | g_SRenderVertex_ARRAY_005c5014
     SHL ECX,0x4                         ; 0050b96f
     ADD EAX,ECX                         ; 0050b972
     MOV ESI,dword ptr [EBX + 0x15f2f8]  ; 0050b974
@@ -268,12 +268,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0050ba50
         ;   Label: LAB_0050ba50
     MOV EDX,dword ptr [ESP + 0x18]      ; 0050ba54
-    MOV EAX,dword ptr [EAX*0x4 + 0x1fbb060] ; 0050ba58 | DAT_01ffb05c
-    MOV dword ptr [EDX + 0x20],EAX      ; 0050ba5f | DAT_005c5034
-    MOV EAX,dword ptr [EDI*0x4 + 0x1fbb060] ; 0050ba62 | DAT_01ffb05c
-    MOV dword ptr [EDX + 0x24],EAX      ; 0050ba69 | DAT_005c5038
-    MOV EAX,dword ptr [EBP*0x4 + 0x1fbb060] ; 0050ba6c | DAT_01ffb05c
-    MOV dword ptr [EDX + 0x28],EAX      ; 0050ba73 | DAT_005c503c
+    MOV EAX,dword ptr [EAX*0x4 + 0x1fbb060] ; 0050ba58 | g_IntensityToValueLookupTable[65535]
+    MOV dword ptr [EDX + 0x20],EAX      ; 0050ba5f | g_SRenderVertex_ARRAY_005c5014[0].r
+    MOV EAX,dword ptr [EDI*0x4 + 0x1fbb060] ; 0050ba62 | g_IntensityToValueLookupTable[65535]
+    MOV dword ptr [EDX + 0x24],EAX      ; 0050ba69 | g_SRenderVertex_ARRAY_005c5014[0].g
+    MOV EAX,dword ptr [EBP*0x4 + 0x1fbb060] ; 0050ba6c | g_IntensityToValueLookupTable[65535]
+    MOV dword ptr [EDX + 0x28],EAX      ; 0050ba73 | g_SRenderVertex_ARRAY_005c5014[0].b
     ADD ESP,0x24                        ; 0050ba76
     POP EBP                             ; 0050ba79
     POP EDI                             ; 0050ba7a

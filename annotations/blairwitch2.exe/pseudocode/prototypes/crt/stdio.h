@@ -9,6 +9,10 @@
 // Address: 005b7768
 int __cdecl vsprintf(char *buffer,char *format,va_list_t args);
 
+// Original: crt_stdio.c_fprintf_FUN_005b8010
+// Address: 005b8010
+int __cdecl fprintf(_FILE *file,char *format);
+
 // Original: crt_stdio.c_fscanf_FUN_005b8100
 // Address: 005b8100
 int __cdecl fscanf(_FILE *file,char *format);
@@ -27,7 +31,7 @@ SIZE_T __cdecl fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 
 // Original: crt_stdio.c_fclose_FUN_005b89c0
 // Address: 005b89c0
-undefined4 __cdecl fclose(int param_1);
+int __cdecl fclose(_FILE *file_handle);
 
 // Original: crt_stdio.c_fclose_FUN_005b8af0
 // Address: 005b8af0
@@ -52,6 +56,10 @@ char * __cdecl fgets(char *str,int num,_FILE *stream);
 // Original: crt_stdio.c_fwrite_FUN_005b9690
 // Address: 005b9690
 SIZE_T __cdecl fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
+
+// Original: crt_stdio.c_remove_FUN_005ba1e0
+// Address: 005ba1e0
+int __cdecl remove(char *filename);
 
 // Original: crt_stdio.c_sscanf_FUN_005ba8cc
 // Address: 005ba8cc

@@ -11,10 +11,10 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0050fda0 at 0050fe04
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00438ef0
+;   cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0050fd90
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH ESI                            ; 0050f99d
     PUSH 0x0                            ; 0050f99e
     PUSH EBX                            ; 0050f9a0
-    CALL cockpit_ckptutil.c_FUN_00438ef0 ; 0050f9a1
-        ;   XREF to: 00438ef0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_FUN_00438ef0(char * filename, void * buffer, int size)
+    CALL cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0 ; 0050f9a1
+        ;   XREF to: 00438ef0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0(char * filename, void * buffer, int size)
     MOV ESI,EAX                         ; 0050f9a6
     ADD ESP,0xc                         ; 0050f9a8
     TEST EAX,EAX                        ; 0050f9ab
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 0050f9e0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0(CPackedBitmap * this_ptr, uchar * raw_bitmap_data, int row_stride)
     ADD ESP,0xc                         ; 0050f9bd
     PUSH ESI                            ; 0050f9c0
-    CALL crt_unknown.c_FUN_005a3770     ; 0050f9c1
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 0050f9c1
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 0050f9c6
     CMP dword ptr [ESP + 0x10],0x0      ; 0050f9c9
     JZ 0x0050f9af                       ; 0050f9ce

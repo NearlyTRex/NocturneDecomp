@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 96,
+    "complexity_score": 66,
     "cross_reference_count": 3,
     "function_call_count": 22,
     "global_count": 17,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 66,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 316
   },
   "cross_references": [
@@ -31,7 +28,7 @@
     {
       "addr": "00494340",
       "from_addr": "0049438c",
-      "name": "shape_edittool.cpp_FUN_00494340",
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +48,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "004032b0",
@@ -62,6 +59,11 @@
       "addr": "00406bd0",
       "is_variadic": false,
       "name": "engine_3d.c_setRenderAlpha_FUN_00406bd0"
+    },
+    {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0"
     },
     {
       "addr": "004c4510",
@@ -79,14 +81,14 @@
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
     },
     {
-      "addr": "004c1dd0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c1dd0"
-    },
-    {
       "addr": "00512320",
       "is_variadic": false,
       "name": "engine_mini3d.cpp_setAlpha_FUN_00512320"
+    },
+    {
+      "addr": "0049d9e0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0"
     },
     {
       "addr": "0049d950",
@@ -104,6 +106,11 @@
       "name": "shape_edittool.cpp_CEdButton_dtor_FUN_0049d4b0"
     },
     {
+      "addr": "0049d580",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_0049d580"
+    },
+    {
       "addr": "0049d530",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_0049d530"
@@ -119,34 +126,24 @@
       "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840"
     },
     {
-      "addr": "00496dd0",
+      "addr": "00497870",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00496dd0"
-    },
-    {
-      "addr": "00496ee0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00496ee0"
+      "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00497870"
     },
     {
       "addr": "00497660",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00497660"
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00497660"
     },
     {
-      "addr": "00497870",
+      "addr": "00496ee0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00497870"
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0"
     },
     {
-      "addr": "0049d580",
+      "addr": "00496dd0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0049d580"
-    },
-    {
-      "addr": "0049d9e0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0049d9e0"
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0"
     },
     {
       "addr": "005acff0",
@@ -198,68 +195,68 @@
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01c3eb50",
-      "name": "DAT_01c3eb50",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c3eb50",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c3f538",
-      "name": "DAT_01c3f538",
-      "type": "undefined4",
+      "name": "g_EditorFontMaxCharWidth",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3f53c",
-      "name": "DAT_01c3f53c",
-      "type": "undefined4",
+      "name": "g_INT_01c3f53c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f008",
-      "name": "DAT_01c4f008",
-      "type": "undefined4",
+      "name": "g_INT_01c4f008",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f00c",
-      "name": "DAT_01c4f00c",
-      "type": "undefined4",
+      "name": "g_INT_01c4f00c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f010",
-      "name": "DAT_01c4f010",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f014",
-      "name": "DAT_01c4f014",
-      "type": "undefined4",
+      "name": "g_INT_01c4f014",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c9be70",
-      "name": "DAT_02c9be70",
-      "type": "undefined4",
+      "name": "g_InputDisabled",
+      "type": "int",
       "value": null
     }
   ],
@@ -291,7 +288,7 @@
       {
         "call_addr": "0049438c",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494340",
+        "caller": "shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -435,22 +432,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "iVar1 = DAT_0061b49c / 0x60;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

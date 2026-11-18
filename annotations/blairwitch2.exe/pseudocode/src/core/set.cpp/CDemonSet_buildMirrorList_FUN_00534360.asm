@@ -17,17 +17,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e5b8a
 ;   TerminatedCString s_CDemonSet_buildMirrorLis_005e5b9a
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CGlassClassInfo.name_hash
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
-;   core_main.c_FUN_004e4500
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_drender.cpp_pop_FUN_0046b4a0
 ;
 ; *****************************************************************************
@@ -81,8 +81,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 005343e7
     PUSH EAX                            ; 005343eb
     MOVSD.REP ES:EDI,ESI                ; 005343ec
-    CALL core_box.cpp_FUN_0041a840      ; 005343ee
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 005343ee
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 005343f3
     TEST EAX,EAX                        ; 005343f6
     JZ 0x0053443b                       ; 005343f8
@@ -98,14 +98,14 @@ section .text
     MOV EDI,0x5e5b8a                    ; 00534419 | = "..\\core\\set.cpp"
     MOV EAX,0x12d6                      ; 0053441e
     PUSH 0x5e5b9a                       ; 00534423 | = "CDemonSet::buildMirrorList - Too many..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00534428 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0053442e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00534433
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 00534428 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0053442e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00534433
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00534438
-    MOV EDX,dword ptr [0x0060b280]      ; 0053443b | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 0053443b | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_0053443b
-    PUSH EDX                            ; 00534441 | DAT_01ba5c50
+    PUSH EDX                            ; 00534441 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 00534442
         ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 00534447

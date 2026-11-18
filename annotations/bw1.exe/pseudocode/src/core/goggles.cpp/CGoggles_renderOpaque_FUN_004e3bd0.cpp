@@ -13,23 +13,26 @@ int __cdecl core_goggles_cpp_CGoggles_renderOpaque_FUN_004e3bd0(CGoggles *this_p
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  uint auStack_3c [6];
-  uint auStack_24 [6];
+  CBoundingBox3D *this_ptr_00;
+  int in_stack_ffffffc8;
+  CBoundingBox3D CStack_34;
+  uint auStack_1c [4];
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (DAT_00612560,&(this_ptr->base).location.position);
+            (g_CDemonRenderer_PTR_00612560,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-  puVar2 = auStack_24;
-  puVar3 = auStack_3c;
+  this_ptr_00 = &CStack_34;
+  puVar2 = auStack_1c;
+  puVar3 = (uint *)&stack0xffffffc4;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  iVar1 = core_box_cpp_FUN_004207b0(auStack_3c);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(this_ptr_00,in_stack_ffffffc8);
   if (iVar1 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&this_ptr->model,0.0,-1);

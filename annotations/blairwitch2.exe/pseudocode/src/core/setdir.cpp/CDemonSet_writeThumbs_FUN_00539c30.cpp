@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00539c30(CDemonSet *this_ptr,char *filename)
 
 {
@@ -19,11 +17,11 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00539c30(CDemonSet *this_
   CDemonSet *local_18;
   int local_14;
   
-  file_handle = engine_dosio_cpp_FUN_00460c70(&DAT_005e6050,filename,&DAT_005e604d);
+  file_handle = engine_dosio_cpp_getFile_FUN_00460c70("data",filename,"wb");
   if (file_handle == (_FILE *)0x0) {
-    _DAT_01d046a0 = "..\\core\\setdir.cpp";
-    _DAT_01d046a4 = 0x3cc;
-    core_main_c_FUN_004e4500("Can't create %s",filename);
+    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
+    g_INT_01d046a4 = 0x3cc;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Can't create %s");
   }
   local_14 = 0;
   if (0 < this_ptr->camera_count) {
@@ -49,9 +47,9 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00539c30(CDemonSet *this_
     } while (local_14 < this_ptr->camera_count);
   }
   if ((file_handle->_flag & 0x20) != 0) {
-    _DAT_01d046a0 = "..\\core\\setdir.cpp";
-    _DAT_01d046a4 = 0x3d7;
-    core_main_c_FUN_004e4500("Error writing %s",filename);
+    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
+    g_INT_01d046a4 = 0x3d7;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Error writing %s");
     _fclose(file_handle);
     return;
   }

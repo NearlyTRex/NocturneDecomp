@@ -1,14 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_stairs_cpp_CStairs_getBoundingBox_FUN_005849f0(CStairs *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_stairs_cpp_CStairs_getBoundingBox_FUN_005849f0(CStairs *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f634c
+;   double g_DOUBLE_005f634c = 0.5
 ;
 ; *****************************************************************************
 
@@ -19,7 +18,7 @@ section .text
     SUB ESP,0x1c                        ; 005849f1
     MOV EDX,dword ptr [ESP + 0x24]      ; 005849f4
     MOV EAX,ESI                         ; 005849f8
-    FLD double ptr [0x005f634c]         ; 005849fa | DAT_005f634c
+    FLD double ptr [0x005f634c]         ; 005849fa | g_DOUBLE_005f634c
     FLD float ptr [EDX + 0x160]         ; 00584a00
     FMUL ST1                            ; 00584a06
     FILD dword ptr [EDX + 0x16c]        ; 00584a08

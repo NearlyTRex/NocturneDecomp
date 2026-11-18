@@ -18,8 +18,8 @@
 ;   TerminatedCString s_Can_t_querry_back_for_so_0058bc45
 ;   TerminatedCString s_Initializing_network_OK_0058bc6a
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
-;   undefined4 DAT_01cea3f4
-;   undefined4 DAT_01cea3f8
+;   int g_LastPingTime
+;   uint g_CurrentGameTime
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0
@@ -96,7 +96,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0 ; 004e9de4
         ;   XREF to: 004ea6e0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004e9de9
-    MOV dword ptr [0x01cea3f8],EBP      ; 004e9dec | DAT_01cea3f8
+    MOV dword ptr [0x01cea3f8],EBP      ; 004e9dec | g_CurrentGameTime
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004e9df2
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004e9df7
@@ -104,7 +104,7 @@ section .text
     SAR EDX,0x1f                        ; 004e9dfe
     IDIV EBX                            ; 004e9e01
     PUSH 0x58bc6a                       ; 004e9e03 | = "Initializing network...OK"
-    MOV [0x01cea3f4],EAX                ; 004e9e08 | DAT_01cea3f4
+    MOV [0x01cea3f4],EAX                ; 004e9e08 | g_LastPingTime
     MOV EAX,[0x005b6d50]                ; 004e9e0d | g_CEditorToolsPtr
     PUSH EAX                            ; 004e9e12
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004e9e13

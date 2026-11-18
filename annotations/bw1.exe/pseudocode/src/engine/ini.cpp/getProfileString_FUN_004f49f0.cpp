@@ -10,6 +10,6 @@ void __cdecl engine_ini_cpp_getProfileString_FUN_004f49f0(char *section,char *ke
 
 {
   engine_ini_cpp_CIni_getProfileString_FUN_004f4370
-            ((CIni *)0x1d06d64,section,key,default_value,output_buffer,buffer_size,filename);
+            (&g_CIniInstance,section,key,default_value,output_buffer,buffer_size,filename);
   return;
 }

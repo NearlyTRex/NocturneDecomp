@@ -11,15 +11,15 @@
 ;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10 at 00473f8a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01510da8
-;   undefined4 DAT_01510dac
-;   undefined4 DAT_01510db0
-;   undefined4 DAT_01510db4
-;   undefined4 DAT_01510db8
-;   undefined4 DAT_01510dbc
-;   undefined4 DAT_01510dc0
-;   undefined4 DAT_01510dc4
-;   undefined4 DAT_01510dc8
+;   float g_FLOAT_01510da8
+;   int g_INT_01510dac
+;   float g_FLOAT_01510db0
+;   float g_FLOAT_01510db4
+;   int g_INT_01510db8
+;   float g_FLOAT_01510dbc
+;   float g_FLOAT_01510dc0
+;   int g_INT_01510dc4
+;   float g_FLOAT_01510dc8
 ;
 ; Called Functions:
 ;   core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00445010
@@ -83,9 +83,9 @@ section .text
     FLD float ptr [EAX]                 ; 00446d85
     FLD float ptr [EAX + 0x8]           ; 00446d87
     MOV EDX,dword ptr [EAX + 0x4]       ; 00446d8a
-    MOV dword ptr [0x01510db8],EDX      ; 00446d8d | DAT_01510db8
-    FSTP float ptr [0x01510dbc]         ; 00446d93 | DAT_01510dbc
-    FSTP float ptr [0x01510db4]         ; 00446d99 | DAT_01510db4
+    MOV dword ptr [0x01510db8],EDX      ; 00446d8d | g_INT_01510db8
+    FSTP float ptr [0x01510dbc]         ; 00446d93 | g_FLOAT_01510dbc
+    FSTP float ptr [0x01510db4]         ; 00446d99 | g_FLOAT_01510db4
     SHL EBP,0x5                         ; 00446d9f
         ;   Label: LAB_00446d9f
     MOV EAX,dword ptr [EDI + 0x2c]      ; 00446da2
@@ -103,18 +103,18 @@ section .text
         ;   Label: LAB_00446db5
     FLD float ptr [EAX + 0x8]           ; 00446db7
     MOV EDX,dword ptr [EAX + 0x4]       ; 00446dba
-    MOV dword ptr [0x01510dac],EDX      ; 00446dbd | DAT_01510dac
-    FSTP float ptr [0x01510db0]         ; 00446dc3 | DAT_01510db0
-    FSTP float ptr [0x01510da8]         ; 00446dc9 | DAT_01510da8
+    MOV dword ptr [0x01510dac],EDX      ; 00446dbd | g_INT_01510dac
+    FSTP float ptr [0x01510db0]         ; 00446dc3 | g_FLOAT_01510db0
+    FSTP float ptr [0x01510da8]         ; 00446dc9 | g_FLOAT_01510da8
     JMP 0x00446d72                      ; 00446dcf
         ;   XREF to: 00446d72 (UNCONDITIONAL_JUMP)  ; LAB_00446d72
     FLD float ptr [EAX]                 ; 00446dd1
         ;   Label: LAB_00446dd1
     FLD float ptr [EAX + 0x8]           ; 00446dd3
     MOV EDX,dword ptr [EAX + 0x4]       ; 00446dd6
-    MOV dword ptr [0x01510dc4],EDX      ; 00446dd9 | DAT_01510dc4
-    FSTP float ptr [0x01510dc8]         ; 00446ddf | DAT_01510dc8
-    FSTP float ptr [0x01510dc0]         ; 00446de5 | DAT_01510dc0
+    MOV dword ptr [0x01510dc4],EDX      ; 00446dd9 | g_INT_01510dc4
+    FSTP float ptr [0x01510dc8]         ; 00446ddf | g_FLOAT_01510dc8
+    FSTP float ptr [0x01510dc0]         ; 00446de5 | g_FLOAT_01510dc0
     POP EBP                             ; 00446deb
     POP EDI                             ; 00446dec
     POP ESI                             ; 00446ded

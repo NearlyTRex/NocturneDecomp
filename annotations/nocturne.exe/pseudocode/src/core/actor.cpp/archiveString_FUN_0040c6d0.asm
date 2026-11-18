@@ -24,10 +24,10 @@
 ;   TerminatedCString s_anon_00577c60
 ;   TerminatedCString s_s_s_00577c66
 ;   TerminatedCString s_String_005acc58
-;   undefined1 DAT_005acc90
+;   char[104] g_PropertyNamePrefix
 ;   uchar[257] g_CharacterClassificationTable
-;   undefined4 DAT_00763e84
-;   undefined4 DAT_00763e88
+;   _FILE* g_ActorDataFile
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDescription_FUN_0040c3a0
@@ -48,10 +48,10 @@ section .text
     PUSH EBP                            ; 0040c6d3
     MOV ESI,dword ptr [ESP + 0x14]      ; 0040c6d4
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040c6d8
-    CMP dword ptr [0x00763e88],0x1      ; 0040c6dc | DAT_00763e88
+    CMP dword ptr [0x00763e88],0x1      ; 0040c6dc | g_ActorReadingMode
     JNZ 0x0040c7b7                      ; 0040c6e3
         ;   XREF to: 0040c7b7 (CONDITIONAL_JUMP)  ; LAB_0040c7b7
-    MOV EDI,dword ptr [0x00763e84]      ; 0040c6e9 | DAT_00763e84
+    MOV EDI,dword ptr [0x00763e84]      ; 0040c6e9 | g_ActorDataFile
         ;   Label: LAB_0040c6e9
     PUSH EDI                            ; 0040c6ef
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040c6f0
@@ -71,7 +71,7 @@ section .text
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c716
         ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c71b
-    MOV EBP,dword ptr [0x00763e84]      ; 0040c71e | DAT_00763e84
+    MOV EBP,dword ptr [0x00763e84]      ; 0040c71e | g_ActorDataFile
         ;   Label: LAB_0040c71e
     PUSH EBP                            ; 0040c724
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040c725
@@ -80,7 +80,7 @@ section .text
     CMP EAX,0x22                        ; 0040c72d
     JZ 0x0040c791                       ; 0040c730
         ;   XREF to: 0040c791 (CONDITIONAL_JUMP)  ; LAB_0040c791
-    MOV EDX,dword ptr [0x00763e84]      ; 0040c732 | DAT_00763e84
+    MOV EDX,dword ptr [0x00763e84]      ; 0040c732 | g_ActorDataFile
     PUSH EDX                            ; 0040c738
     PUSH EAX                            ; 0040c739
     CALL crt_stdio.c_ungetc_FUN_00564740 ; 0040c73a
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x8                         ; 0040c73f
     PUSH ESI                            ; 0040c742
     PUSH 0x577c60                       ; 0040c743 | = "%[^\"]"
-    MOV ECX,dword ptr [0x00763e84]      ; 0040c748 | DAT_00763e84
+    MOV ECX,dword ptr [0x00763e84]      ; 0040c748 | g_ActorDataFile
     PUSH ECX                            ; 0040c74e
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c74f
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
@@ -101,7 +101,7 @@ section .text
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c762
         ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c767
-    MOV ESI,dword ptr [0x00763e84]      ; 0040c76a | DAT_00763e84
+    MOV ESI,dword ptr [0x00763e84]      ; 0040c76a | g_ActorDataFile
         ;   Label: LAB_0040c76a
     PUSH ESI                            ; 0040c770
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040c771
@@ -143,9 +143,9 @@ section .text
     RET                                 ; 0040c7b6
     PUSH ESI                            ; 0040c7b7
         ;   Label: LAB_0040c7b7
-    PUSH 0x5acc90                       ; 0040c7b8 | DAT_005acc90
+    PUSH 0x5acc90                       ; 0040c7b8 | g_PropertyNamePrefix
     PUSH 0x577c66                       ; 0040c7bd | = "%s\"%s\""
-    MOV ECX,dword ptr [0x00763e84]      ; 0040c7c2 | DAT_00763e84
+    MOV ECX,dword ptr [0x00763e84]      ; 0040c7c2 | g_ActorDataFile
     PUSH ECX                            ; 0040c7c8
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c7c9
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)

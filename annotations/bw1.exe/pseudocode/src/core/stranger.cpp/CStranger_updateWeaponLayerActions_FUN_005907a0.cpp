@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005907a0(CStranger *this_ptr,float delta_time)
 
 {
@@ -27,9 +25,8 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005907a0(C
   CDemonActor *in_stack_ffffff8c;
   float in_stack_ffffff90;
   float local_6c;
-  float fStack_68;
-  CDemonActor *pCStack_5c;
-  float afStack_58 [2];
+  CVector3f CStack_68;
+  CVector3f CStack_5c;
   CVector3f CStack_50;
   uint local_40;
   int local_3c;
@@ -93,11 +90,11 @@ LAB_0059082a:
                             ((CCharacter *)this_ptr,6);
       local_18 = 6;
       iVar6 = local_18;
-      if ((float)_DAT_005f7019 < fStack_14) {
-        fVar3 = delta_time * (float)_DAT_005f7011 + this_ptr->aim_speed_factor;
+      if ((float)0.98999999999999999 < fStack_14) {
+        fVar3 = delta_time * (float)25 + this_ptr->aim_speed_factor;
         this_ptr->aim_speed_factor = fVar3;
-        if (0x428C0000 < fVar3) {
-          this_ptr->aim_speed_factor = 0x428C0000;
+        if (70.0f < fVar3) {
+          this_ptr->aim_speed_factor = 70.0f;
         }
         if ((this_ptr->base).player_input.action_state.fire != 0) {
           return;
@@ -245,24 +242,26 @@ switchD_00590c42_caseD_3:
       if (((this_ptr->base).action_pending == 3) &&
          (fStack_14 = (float)(0xb / (longlong)pCVar4->motions[iVar6].frame_count),
          (float)(int)fStack_14 <= (this_ptr->base).base.layer_action_t)) {
-        core_stranger_cpp_FUN_005906e0(this_ptr);
-        CStack_50.x = fStack_68;
+        core_stranger_cpp_CStranger_getThrowDirection_FUN_005906e0(this_ptr,&CStack_68);
+        CStack_50.x = CStack_68.x;
         *(uint *)((int)&CStack_50 + (uint)bVar11 * -8 + 4) =
-             *(uint *)(&stack0xffffff9c + (uint)bVar11 * -8);
+             *(uint *)((int)&CStack_68 + (uint)bVar11 * -8 + 4);
         *(uint *)((int)&CStack_50 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-             *(uint *)(&stack0xffffffa0 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+             *(uint *)((int)&CStack_68 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
         local_38 = (CCharacter *)
                    core_actor_cpp_castToClassHash_FUN_0040c600
                              (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);
         local_2c = local_38;
         if (local_38 != (CCharacter *)0x0) {
-          core_actor_cpp_FUN_00408ac0(this_ptr,&CStack_50);
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0
+                    ((CDemonActor *)this_ptr,&CStack_50,&CStack_5c);
           pCVar1 = local_2c;
-          in_stack_ffffff8c = pCStack_5c;
+          in_stack_ffffff8c = (CDemonActor *)CStack_5c.x;
           pCVar10 = (local_2c->model).bone_origins + 0x51;
-          *(float *)(&stack0xffffff90 + (uint)bVar11 * -8) = afStack_58[(uint)bVar11 * -2];
-          *(float *)((int)&stack0xffffff94 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4) =
-               afStack_58[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+          *(uint *)(&stack0xffffff90 + (uint)bVar11 * -8) =
+               *(uint *)((int)&CStack_5c + (uint)bVar11 * -8 + 4);
+          *(uint *)((int)&stack0xffffff94 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4) =
+               *(uint *)((int)&CStack_5c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
           if (pCVar10 != (CVector3f *)&stack0xffffff8c) {
             pCVar10->x = (float)in_stack_ffffff8c;
             (pCVar1->model).bone_origins[0x51].y = in_stack_ffffff90;
@@ -276,7 +275,7 @@ switchD_00590c42_caseD_3:
                     ((CCharacter *)this_ptr,1,&CStack_50);
         }
         (this_ptr->base).action_pending = 0;
-        this_ptr->aim_speed_factor = 0x41200000;
+        this_ptr->aim_speed_factor = 10.0f;
       }
       if (1.0 <= (this_ptr->base).base.layer_action_t) {
         (this_ptr->base).base.layer_action_index = 0;
@@ -375,18 +374,18 @@ LAB_00590922:
       }
       pCVar9 = (this_ptr->base).target_actor;
       if ((pCVar9 != (CDemonActor *)0x0) && (local_1c == 3)) {
-        core_inv_cpp_FUN_004f8d00(local_24,pCVar9,0);
+        core_inv_cpp_CInventory_removeItem_FUN_004f8d00(local_24,pCVar9,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
-                  (0x01D2C900,(this_ptr->base).target_actor);
+                  (g_CDemonMission_PTR_0061f650,(this_ptr->base).target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
-                  ((CCharacter *)this_ptr,1,(int)(this_ptr->base).target_actor,0,0);
+                  ((CCharacter *)this_ptr,1,(this_ptr->base).target_actor,0.0,(CMatrix3x4f *)0x0);
         iVar6 = core_actor_cpp_isOfClass_FUN_0040c550
                           ((this_ptr->base).target_actor,"CTrap");
         if (iVar6 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(local_30,0x21,1);
           iVar6 = (this_ptr->base).action_pending;
           if (iVar6 != 0) {
-            shape_edittool_cpp_FUN_00494340
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar6,0x141e);
           }
           (this_ptr->base).action_pending = 2;

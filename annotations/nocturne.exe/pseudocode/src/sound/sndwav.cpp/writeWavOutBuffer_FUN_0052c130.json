@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 82,
+    "complexity_score": 124,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 2,
+    "pseudocode_lines": 54,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 194
+    "total_lines": 196
   },
   "cross_references": [
     {
@@ -107,38 +107,38 @@
     },
     {
       "addr": "02dc93a4",
-      "name": "DAT_02dc93a4",
-      "type": "undefined4",
+      "name": "g_WaveOutHandle",
+      "type": "HWAVEOUT",
       "value": null
     },
     {
       "addr": "02dc9428",
-      "name": "DAT_02dc9428",
-      "type": "undefined4",
+      "name": "g_INT_02dc9428",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc942c",
-      "name": "DAT_02dc942c",
-      "type": "undefined4",
+      "name": "g_INT_02dc942c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc9430",
-      "name": "DAT_02dc9430",
-      "type": "undefined4",
+      "name": "g_INT_02dc9430",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc9434",
-      "name": "DAT_02dc9434",
-      "type": "undefined4",
+      "name": "g_INT_02dc9434",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc9438",
-      "name": "DAT_02dc9438",
-      "type": "undefined4",
+      "name": "g_INT_02dc9438",
+      "type": "int",
       "value": null
     }
   ],
@@ -268,20 +268,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(int *)((int)local_34",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_34 + iVar6) = iVar1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)local_34",
+      "line": 42,
+      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
       "severity": "moderate",
-      "text": "*(int *)((int)local_34 + iVar5) = iVar1;",
+      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + local_14) + 4) = g_INT_02dc9438;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
+      "severity": "moderate",
+      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + local_14),0x20",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
+      "severity": "moderate",
+      "text": "MVar3 = waveOutWrite(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + local_14),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 24,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar4 = (int)((g_INT_02dc9428 + (g_INT_02dc9428 >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 25,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_INT_02dc9428 >> 0x1f) << 2 < 0)) >> 3;",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

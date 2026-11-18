@@ -1,0 +1,100 @@
+// Name: core_unionzom.cpp_CUnionZombie_processAI_FUN_005a4330
+// Address: 005a4330
+// Address Range: [[005a4330, 005a4570]]
+// Convention: __cdecl
+// Signature: void __cdecl core_unionzom_cpp_CUnionZombie_processAI_FUN_005a4330(CUnionZombie *this_ptr,float delta_time)
+
+#include "nocturne.h"
+
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_unionzom_cpp_CUnionZombie_processAI_FUN_005a4330(CUnionZombie *this_ptr,float delta_time)
+
+{
+  SStateMachine *pSVar1;
+  CCharacter *pCVar2;
+  float fVar3;
+  float fVar4;
+  int iVar5;
+  byte bVar6;
+  float afStackY_102c [1014];
+  CClothList *this_ptr_00;
+  CVector3f *wind_velocity;
+  float fStack_44;
+  float fStack_40;
+  float fStack_3c;
+  float fStack_38;
+  float fStack_34;
+  float fStack_30;
+  CVector3f CStack_2c;
+  float fStack_20;
+  float afStack_1c [4];
+  
+  bVar6 = 0;
+  core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180
+            ((this_ptr->base).base.base.base.particle_systems + 4,delta_time);
+  iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                    (&(this_ptr->base).state_machine,"Burn");
+  if (iVar5 != 0) {
+    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
+              (&(this_ptr->base).base.base.model.base,8,1);
+  }
+  pSVar1 = &(this_ptr->base).state_machine;
+  iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Death");
+  if (((iVar5 == 0) &&
+      (iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Animation"),
+      iVar5 == 0)) &&
+     (iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Burn"), iVar5 == 0
+     )) {
+    (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
+  }
+  if ((this_ptr->base).base.victim != (CCharacter *)0x0) {
+    pSVar1 = &(this_ptr->base).state_machine;
+    iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Chasing");
+    if (((iVar5 != 0) &&
+        (iVar5 = core_muzzle_cpp_SStateMachine_isRefStateTarget_FUN_0059dae0
+                           (pSVar1,"ChaseComplete","MeleeAttack"), iVar5 != 0)) &&
+       (pCVar2 = (this_ptr->base).base.victim,
+       fVar3 = (pCVar2->base).location.position.x -
+               (this_ptr->base).base.base.base.location.position.x,
+       fVar4 = (pCVar2->base).location.position.z -
+               (this_ptr->base).base.base.base.location.position.z,
+       8.0f <= SQRT(fVar4 * fVar4 + fVar3 * fVar3))) {
+      (this_ptr->base).attack_range = 8.0f;
+      core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
+                (pSVar1,"ChaseComplete","VanishAttack");
+    }
+  }
+  pSVar1 = &(this_ptr->base).state_machine;
+  iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Burn");
+  if ((((iVar5 != 0) ||
+       (iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"Chasing"),
+       iVar5 != 0)) ||
+      ((iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"MeleeAttack"),
+       iVar5 != 0 ||
+       (iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(pSVar1,"RangeAttack"),
+       iVar5 != 0)))) &&
+     (((this_ptr->base).fade_state == 0 && (fVar3 = (this_ptr->base).fade_val, fVar3 != 1.0)))) {
+    core_basicene_cpp_CBasicEnemy_setFade_FUN_005a01a0(&this_ptr->base,fVar3,1.0,0.5);
+    core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570(&this_ptr->base);
+  }
+  fStack_38 = (this_ptr->base).move_velocity.x * -2000.0f;
+  fStack_34 = (this_ptr->base).move_velocity.y * -2000.0f;
+  fStack_30 = (this_ptr->base).move_velocity.z * -2000.0f;
+  fStack_44 = fStack_38;
+  *(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8) =
+       *(uint *)((int)&stack0xffffffcc + (uint)bVar6 * -8);
+  *(uint *)((int)&stack0xffffffc4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+       *(uint *)((int)&stack0xffffffd0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  wind_velocity = &CStack_2c;
+  this_ptr_00 = &(this_ptr->base).base.base.cloth_list;
+  fStack_20 = fStack_44 * delta_time;
+  afStack_1c[0] = fStack_40 * delta_time;
+  afStack_1c[1] = fStack_3c * delta_time;
+  CStack_2c.x = fStack_44 * delta_time;
+  *(float *)((int)&CStack_2c + (uint)bVar6 * -8 + 4) = afStack_1c[(uint)bVar6 * -2];
+  *(float *)((int)&CStack_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+       afStack_1c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+  core_cloth_cpp_CClothList_setWindVelocity_FUN_005b1890(this_ptr_00,wind_velocity);
+  return;
+}

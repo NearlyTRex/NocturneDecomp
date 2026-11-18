@@ -12,13 +12,13 @@ void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00555
   int iVar1;
   
   if (g_CGamePtr->suppress_set_geometry == 0) {
-    if (DAT_00612560->advanced_culling_enabled == 0) {
+    if (g_CDemonRenderer_PTR_00612560->advanced_culling_enabled == 0) {
       iVar1 = 0;
       if (0 < count) {
         do {
           iVar1 = iVar1 + 1;
           engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00
-                    (DAT_00612560,(SMRGLPrimitivePoly *)prim);
+                    (g_CDemonRenderer_PTR_00612560,(SMRGLPrimitivePoly *)prim);
           prim = (SMRGLHeaderPrimitive *)(((SMRGLPrimitivePoly *)prim)->vertices + 4);
         } while (iVar1 < count);
         return;

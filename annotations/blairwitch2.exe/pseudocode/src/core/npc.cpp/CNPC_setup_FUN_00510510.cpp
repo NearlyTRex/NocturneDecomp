@@ -23,11 +23,11 @@ void __cdecl core_npc_cpp_CNPC_setup_FUN_00510510(CNPC *this_ptr)
   }
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
                           (&(this_ptr->base).model);
-  _DAT_01d653fc =
+  g_INT_01d653fc =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Hand",0);
   _DAT_01d65400 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Hand",0);
-  iVar1 = _DAT_01d653fc;
+  iVar1 = g_INT_01d653fc;
   (this_ptr->base).carry_hands[1].bone_index = _DAT_01d65400;
   iVar2 = (this_ptr->base).is_spectral;
   (this_ptr->base).carry_hands[0].bone_index = iVar1;

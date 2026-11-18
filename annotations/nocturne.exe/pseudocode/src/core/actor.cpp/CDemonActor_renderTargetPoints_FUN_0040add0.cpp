@@ -31,8 +31,9 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonAc
       CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * 256.0f);
       CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0xea5d0),&CStack_24);
-      iVar5 = *(int *)PTR_DAT_005ae700;
+                ((SProjectedVertex *)(*(int *)PTR_g_CDemonRenderer_01b4d738_005ae700 + 0xea5d0),
+                 &CStack_24);
+      iVar5 = *(int *)PTR_g_CDemonRenderer_01b4d738_005ae700;
       if ((*(byte *)(iVar5 + 0xea5e3) & 0x80) == 0) {
         iVar3 = *(int *)(iVar5 + 0xea5e0) >> 0x10;
         g_ActiveRenderColor = uStack_14;

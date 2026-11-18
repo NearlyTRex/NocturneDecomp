@@ -2,29 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 3074,
+    "complexity_score": 2712,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 170,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2159,
-    "suspect_count": 85,
+    "pseudocode_lines": 2142,
+    "suspect_count": 52,
     "suspect_types": [
       "bit_int_float_compare",
       "format_string_mismatch",
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "stack_ref",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_strchr",
       "unrolled_strcpy",
       "unrolled_strlen",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 7216
+    "total_lines": 7199
   },
   "cross_references": [
     {
@@ -1139,43 +1136,43 @@
     },
     {
       "addr": "0059cf1c",
-      "name": "DAT_0059cf1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ActorNameSentinel",
+      "type": "CDemonActor*",
+      "value": "0fffffff"
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b7658",
-      "name": "DAT_005b7658",
-      "type": "undefined4",
+      "name": "g_DefaultSfxHandleName",
+      "type": "char[200]",
       "value": null
     },
     {
       "addr": "005b765c",
-      "name": "DAT_005b765c",
+      "name": "g_DefaultSfxHandleName+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b7720",
-      "name": "DAT_005b7720",
-      "type": "undefined4",
+      "name": "g_DefaultCommandArg",
+      "type": "char[112]",
       "value": null
     },
     {
       "addr": "005b7724",
-      "name": "DAT_005b7724",
+      "name": "g_DefaultCommandArg+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b80f0",
-      "name": "g_CFireEffect_PTR_005b80f0",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c08d04"
     },
@@ -1211,9 +1208,9 @@
     },
     {
       "addr": "005c15b8",
-      "name": "DAT_005c15b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWeatherPtr",
+      "type": "CWeather*",
+      "value": "02ddf9f0"
     },
     {
       "addr": "005c168c",
@@ -1223,67 +1220,67 @@
     },
     {
       "addr": "00763e48",
-      "name": "g_CDemonActorActorType_00763e48",
+      "name": "g_CDemonActorClassInfo",
       "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "00763e80",
-      "name": "g_CDemonActorActorType_00763e48.name_hash",
+      "name": "g_CDemonActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764838",
-      "name": "g_CBoxActorActorType_00764800.name_hash",
+      "name": "g_CBoxActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00765a60",
-      "name": "g_CCharacterActorType_00765a60",
+      "name": "g_CCharacterClassInfo",
       "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00765c68",
-      "name": "g_CChainActorType_00765c30.name_hash",
+      "name": "g_CChainClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08b5c",
-      "name": "DAT_01c08b5c",
-      "type": "undefined4",
+      "name": "g_EventDryRun",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c08b60",
-      "name": "DAT_01c08b60",
-      "type": "undefined4",
+      "name": "g_EventErrorMessageBuffer",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01c08b61",
-      "name": "DAT_01c08b61",
+      "name": "g_EventErrorMessageBuffer+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08b62",
-      "name": "DAT_01c08b62",
+      "name": "g_EventErrorMessageBuffer+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08b63",
-      "name": "DAT_01c08b63",
+      "name": "g_EventErrorMessageBuffer+3",
       "type": "undefined4",
       "value": null
     },
@@ -1295,7 +1292,7 @@
     },
     {
       "addr": "01cc3660",
-      "name": "g_CLeverActorType_01cc3628.name_hash",
+      "name": "g_CLeverClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -1401,6 +1398,24 @@
     "pcode_op_count": 18751
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00489670",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5924
+    },
+    "bw1.exe": {
+      "addr": "004a1d00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5366
+    },
+    "bw3.exe": {
+      "addr": "0048c2e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4637
+    },
     "nocedit.exe": {
       "addr": "004aacc0",
       "by": "name",
@@ -2477,24 +2492,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "DAT_01c08b60 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 386,
+      "line": 376,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
       "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",&stack0xffffe9c4,&local_d8,&local_d4);",
@@ -2502,323 +2501,51 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 396,
+      "line": 386,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
-      "text": "iVar5 = engine_dosio_cpp_getFileSize_FUN_004568c0(\"art\",&stack0xffffe9c4);",
+      "text": "iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(\"art\",&stack0xffffe9c4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 408,
+      "line": 398,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
       "text": "(g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 424,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Error parsing fadeAmbientSound parms\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 445,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Error parsing fadeSfx parms\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 494,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "pcVar17 = &DAT_01c08b60;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 674,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Error parsing incCounter arguments\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 882,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Error parsing killSfx parms\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 917,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Error parsing killSfx parms\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 929,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Can't find matching ) in killSfx command\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 962,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Error parsing lightning command\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 986,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Error parsing playSfx parms\"",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1017,
-      "match": "DAT_005b7658",
-      "severity": "mild",
-      "text": "puVar19 = &DAT_005b7658;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 1022,
-      "match": "(char *)((int)pcVar18",
+      "line": 1016,
+      "match": "(char *)((int)pcVar14",
       "severity": "moderate",
-      "text": "pcVar18 = (char *)((int)pcVar18 +",
+      "text": "pcVar14 = (char *)((int)pcVar14 +",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 1030,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1069,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1082,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,\"Can't find matching ) in playSfx command\"",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1133,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1166,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1171,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1197,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1233,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1244,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1271,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1277,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1357,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1464,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1542,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1574,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1616,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1622,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1650,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1697,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1730,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1762,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1842,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c08b60,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1877,
-      "match": "DAT_005b7720",
-      "severity": "mild",
-      "text": "puVar19 = &DAT_005b7720;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `pCVar9` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 645,
-      "match": "(uint)pCVar9",
+      "description": "Pointer value `pCVar7` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 635,
+      "match": "(uint)pCVar7",
       "severity": "moderate",
-      "text": "local_f0 = (uint)pCVar9 ^ (uint)0x0FFFFFFF;",
+      "text": "local_f0 = (uint)pCVar7 ^ (uint)g_ActorNameSentinel;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pcVar18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1022,
-      "match": "(int)pcVar18",
+      "description": "Pointer value `g_ActorNameSentinel` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 635,
+      "match": "(uint)g_ActorNameSentinel",
       "severity": "moderate",
-      "text": "pcVar18 = (char *)((int)pcVar18 +",
+      "text": "local_f0 = (uint)pCVar7 ^ (uint)g_ActorNameSentinel;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 968,
-      "match": "0x2ddf9f0",
+      "description": "Pointer value `pcVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1016,
+      "match": "(int)pcVar14",
       "severity": "moderate",
-      "text": "(0x02DDF9F0,0.1,1);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 1708,
-      "match": "0x2ddf9f0",
-      "severity": "moderate",
-      "text": "(0x02DDF9F0,type);",
-      "type": "raw_address_constant"
+      "text": "pcVar14 = (char *)((int)pcVar14 +",
+      "type": "pointer_truncation"
     },
     {
       "actual_args": 0,
@@ -2826,8 +2553,8 @@
       "expected_args": 1,
       "format_string": "Event name %s is too long",
       "function_name": "core_event_cpp_formatEventError_FUN_0047a210",
-      "line_number": 170,
-      "match": "iVar5 = core_event_cpp_formatEventError_FUN_0047a210(\"Event name %s is too long\");",
+      "line_number": 165,
+      "match": "iVar3 = core_event_cpp_formatEventError_FUN_0047a210(\"Event name %s is too long\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2837,8 +2564,8 @@
       "expected_args": 1,
       "format_string": "Event name %s is not valid",
       "function_name": "core_event_cpp_formatEventError_FUN_0047a210",
-      "line_number": 212,
-      "match": "iVar5 = core_event_cpp_formatEventError_FUN_0047a210(\"Event name %s is not valid\");",
+      "line_number": 207,
+      "match": "iVar3 = core_event_cpp_formatEventError_FUN_0047a210(\"Event name %s is not valid\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2848,8 +2575,8 @@
       "expected_args": 1,
       "format_string": "SpotLight %s doesn't exist.",
       "function_name": "core_event_cpp_formatEventError_FUN_0047a210",
-      "line_number": 231,
-      "match": "iVar5 = core_event_cpp_formatEventError_FUN_0047a210(\"SpotLight %s doesn't exist.\");",
+      "line_number": 226,
+      "match": "iVar3 = core_event_cpp_formatEventError_FUN_0047a210(\"SpotLight %s doesn't exist.\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2859,14 +2586,14 @@
       "expected_args": 1,
       "format_string": "Can't find CDemonLight for light %s in advanceLightFilter meta-command",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 238,
+      "line_number": 233,
       "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Can't find CDemonLight for light %s in advanceLightFil",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 181,
+      "line": 176,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2874,7 +2601,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 495,
+      "line": 485,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2882,31 +2609,55 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 1019,
+      "line": 1013,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar5 = 0x32; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "text": "for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 299,
+      "line": 291,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_128.x = (pCVar1->position).x;",
+      "text": "local_128.x = (pCVar5->location).position.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 2097,
+      "line": 2036,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_134.x = (pUVar2->vec).x;",
+      "text": "local_134.x = (pCVar5->orient).vec.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 2049,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_134.x = (pCVar5->orient).vec.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 2073,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_11c.x = (pCVar6->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 2079,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_134.x = (pCVar6->orient).vec.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 163,
+      "line": 158,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2914,7 +2665,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 195,
+      "line": 190,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2922,7 +2673,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 266,
+      "line": 261,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2930,7 +2681,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 451,
+      "line": 441,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2938,7 +2689,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 587,
+      "line": 577,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2946,7 +2697,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 611,
+      "line": 601,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2954,7 +2705,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 680,
+      "line": 671,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2962,7 +2713,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 748,
+      "line": 739,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2970,7 +2721,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 773,
+      "line": 764,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2978,7 +2729,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 888,
+      "line": 879,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2986,7 +2737,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 993,
+      "line": 987,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2994,7 +2745,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1037,
+      "line": 1031,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3002,7 +2753,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1062,
+      "line": 1056,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3010,7 +2761,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1140,
+      "line": 1134,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3018,7 +2769,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1204,
+      "line": 1198,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3026,7 +2777,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1364,
+      "line": 1358,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3034,7 +2785,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1389,
+      "line": 1383,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3042,7 +2793,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1471,
+      "line": 1466,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3050,7 +2801,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1497,
+      "line": 1492,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3058,7 +2809,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1582,
+      "line": 1574,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3066,7 +2817,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1609,
+      "line": 1601,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3074,7 +2825,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1658,
+      "line": 1650,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3082,7 +2833,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1770,
+      "line": 1762,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3090,7 +2841,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1796,
+      "line": 1788,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3098,7 +2849,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1971,
+      "line": 1961,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3106,7 +2857,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1997,
+      "line": 1987,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3114,7 +2865,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2103,
+      "line": 2085,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3122,7 +2873,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '(' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '(') in a .keep.",
-      "line": 138,
+      "line": 133,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3130,7 +2881,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
-      "line": 1170,
+      "line": 1164,
       "match": "0x42c80000 < (int)local_78))",
       "severity": "moderate",
       "text": "if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {",
@@ -3138,7 +2889,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
-      "line": 1276,
+      "line": 1270,
       "match": "0x42c80000 < (int)local_60))",
       "severity": "moderate",
       "text": "if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {",
@@ -3149,7 +2900,7 @@
       "line": 2505,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0047c385: MOVSD.REP ES:EDI,ESI  ; DAT_005b7658 | DAT_005b765c",
+      "text": "// 0047c385: MOVSD.REP ES:EDI,ESI  ; g_DefaultSfxHandleName | g_DefaultSfxHandleName+4",
       "type": "unrolled_memcpy"
     },
     {
@@ -3157,7 +2908,7 @@
       "line": 4482,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0047d5fd: MOVSD.REP ES:EDI,ESI  ; DAT_005b7720 | DAT_005b7724",
+      "text": "// 0047d5fd: MOVSD.REP ES:EDI,ESI  ; g_DefaultCommandArg | g_DefaultCommandArg+4",
       "type": "unrolled_memcpy"
     }
   ]

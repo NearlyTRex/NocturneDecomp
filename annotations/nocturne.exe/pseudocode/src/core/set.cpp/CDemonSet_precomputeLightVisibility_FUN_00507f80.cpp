@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *this_ptr,int light_index)
 
 {
@@ -44,7 +42,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemo
   
   bVar12 = 0;
   CStack_50.y_min = 0;
-  bVar11 = _DAT_01fb99d0 == 0;
+  bVar11 = g_MasterLightCount == 0;
   if (bVar11) {
     core_set_cpp_CDemonSet_initScene_FUN_005084c0(this_ptr);
   }
@@ -101,23 +99,24 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemo
           iVar7 = iStack_14 * 0x1898;
           if (this_ptr->lights[iStack_14].light_type == 0) {
             iVar5 = 0;
-            if (0 < _DAT_01fb99d0) {
+            if (0 < g_MasterLightCount) {
               pCVar1 = pCStack_2c + iStack_14;
               iVar7 = 0;
               do {
                 iVar4 = _strcmp
-                                  (*(char **)(&DAT_01fb99d4 + iVar7),pCVar1->name);
+                                  (*(char **)((int)g_CDemonLight_PTR_ARRAY_01fb99d4 + iVar7),
+                                   pCVar1->name);
                 if (iVar4 == 0) break;
                 iVar5 = iVar5 + 1;
                 iVar7 = iVar7 + 4;
-              } while (iVar5 < _DAT_01fb99d0);
+              } while (iVar5 < g_MasterLightCount);
             }
-            if (iVar5 == _DAT_01fb99d0) {
+            if (iVar5 == g_MasterLightCount) {
               g_CurrentFilename = "..\\core\\set.cpp";
               g_CurrentLineNumber = 744;
               core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::precomuputeLightVisibility - Unable to find light in master list");
             }
-            light_source = *(CDemonLight **)(&DAT_01fb99d4 + iVar5 * 4);
+            light_source = g_CDemonLight_PTR_ARRAY_01fb99d4[iVar5];
             core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50
                       (&g_CDemonCameraInstance,light_source,(CRect *)0x0);
             iVar5 = core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20

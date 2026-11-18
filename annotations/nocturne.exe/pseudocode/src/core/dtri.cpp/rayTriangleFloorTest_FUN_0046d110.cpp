@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height)
 
 {
@@ -108,11 +106,11 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110(CDemonTriangle *tria
         fVar1 = (triangle->normal).z;
         uVar8 = uVar6 | uVar7 | uVar8;
         fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);
-        if ((DAT_01bc9968 & 1) == 0) {
-          DAT_01bc9968 = DAT_01bc9968 | 1;
-          _DAT_01bc9960 = -100.0;
-          _DAT_01bc995c = 0;
-          _DAT_01bc9964 = 0;
+        if ((g_FloorCacheValid & 1) == 0) {
+          g_FloorCacheValid = g_FloorCacheValid | 1;
+          g_FloorRayDirection.y = -100.0;
+          g_FloorRayDirection.x = 0.0;
+          g_FloorRayDirection.z = 0.0;
         }
         if (0.01 <= (double)fVar9) {
           fVar9 = search_radius / fVar9;
@@ -120,16 +118,16 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110(CDemonTriangle *tria
           local_64.z = fVar9 * (triangle->normal).z + position->z;
           local_64.y = position->y;
           fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
-                            (triangle,&local_64,(CVector3f *)&DAT_01bc995c);
+                            (triangle,&local_64,&g_FloorRayDirection);
           if ((0.0 <= fVar9) &&
-             (local_64.y = fVar9 * _DAT_01bc9960 + local_64.y, *out_height < local_64.y)) {
+             (local_64.y = fVar9 * g_FloorRayDirection.y + local_64.y, *out_height < local_64.y)) {
             *out_height = local_64.y;
             return 1;
           }
         }
         else if (uVar8 == 0) {
           fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
-                            (triangle,position,(CVector3f *)&DAT_01bc995c);
+                            (triangle,position,&g_FloorRayDirection);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_4c.y;

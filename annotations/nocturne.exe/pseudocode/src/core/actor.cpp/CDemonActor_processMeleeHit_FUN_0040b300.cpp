@@ -100,15 +100,15 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor 
       if ((this_ptr != pCStack_18) && (pCStack_18 != pCStack_1c)) {
         pCVar3 = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCStack_18,g_CCharacterActorType_00765a60.name_hash);
+                           (pCStack_18,g_CCharacterClassInfo.name_hash);
         if (pCVar3 == (CCharacter *)0x0) {
           pCVar5 = (CTrigger *)
                    core_actor_cpp_castToClassHash_FUN_0040d890
-                             (pCStack_18,g_CTriggerActorType_02dd1084.name_hash);
+                             (pCStack_18,g_CTriggerClassInfo.name_hash);
           if (pCVar5 == (CTrigger *)0x0) {
             pCVar6 = (CGlass *)
                      core_actor_cpp_castToClassHash_FUN_0040d890
-                               (pCStack_18,g_CGlassActorType_01c78c40.name_hash);
+                               (pCStack_18,g_CGlassClassInfo.name_hash);
             if (pCVar6 != (CGlass *)0x0) {
               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                         ((CDemonActor *)pCVar6,&CStack_74,(CVector3f *)(auStack_c0 + 4));
@@ -202,25 +202,23 @@ LAB_0040b4bd:
            , 0.0 <= fVar7 && (fVar7 <= 1.0))) {
       pCVar3 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (g_CDemonSetPtr->collision_actor,g_CCharacterActorType_00765a60.name_hash);
+                         (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
       if ((pCVar3 != (CCharacter *)0x0) &&
          (EVar8 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3), 0 < (int)EVar8)) {
         pCVar3 = (CCharacter *)0x0;
       }
       pCVar6 = (CGlass *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (g_CDemonSetPtr->collision_actor,g_CGlassActorType_01c78c40.name_hash);
+                         (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
       CStack_34.x = (float)core_actor_cpp_castToClassHash_FUN_0040d890
-                                     (g_CDemonSetPtr->collision_actor,
-                                      g_CTriggerActorType_02dd1084.name_hash);
+                                     (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash)
+      ;
       pCStack_14 = (CTrigger *)CStack_34.x;
       CStack_34.y = (float)core_actor_cpp_castToClassHash_FUN_0040d890
-                                     (g_CDemonSetPtr->collision_actor,
-                                      g_CCrateActorType_0077bd40.name_hash);
+                                     (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
       this_ptr_00 = (CFlameCan *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
-                              (g_CDemonSetPtr->collision_actor,
-                               g_CFlameCanActorType_01c70654.name_hash);
+                              (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
       pCVar5 = pCStack_14;
       if (pCVar3 == (CCharacter *)0x0) {
         if (pCVar6 == (CGlass *)0x0) {

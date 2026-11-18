@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 129,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
-    "suspect_count": 3,
+    "pseudocode_lines": 82,
+    "suspect_count": 2,
     "suspect_types": [
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 269
+    "total_lines": 267
   },
   "cross_references": [
     {
@@ -106,26 +105,26 @@
     },
     {
       "addr": "00765a60",
-      "name": "g_CCharacterActorType_00765a60",
+      "name": "g_CCharacterClassInfo",
       "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e56418",
-      "name": "DAT_01e56418",
-      "type": "undefined4",
+      "name": "g_ScriptEventsEnabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e56c2c",
-      "name": "DAT_01e56c2c",
-      "type": "undefined4",
+      "name": "g_ActorLookedUpByVariable",
+      "type": "int",
       "value": null
     }
   ],
@@ -340,16 +339,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 66,
+      "line": 63,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -357,7 +348,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 31,
+      "line": 29,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

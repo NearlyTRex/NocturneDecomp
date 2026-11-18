@@ -12,13 +12,13 @@
 ;
 ; XREF[2]:
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0 at 0040d7b7
-;   engine_alphabit.cpp_FUN_0040d8a0 at 0040d9b5
+;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0 at 0040d9b5
 ;
 ; Referenced Globals:
-;   undefined8 DAT_00605710
-;   undefined8 DAT_00605f08
-;   undefined4 DAT_01c6a974
-;   undefined4 DAT_01c6e2ac
+;   qword[512] g_QWORD_ARRAY_00605710
+;   undefined4 g_QWORD_ARRAY_00605710[255]
+;   uint[256] g_Hardware32BitPalette
+;   int g_INT_01c6e2ac
 ;
 ; *****************************************************************************
 
@@ -37,10 +37,10 @@ section .text
     SHR EBP,0x8                         ; 005630b9
     MOVZX EAX,byte ptr [ESI]            ; 005630bc
         ;   Label: LAB_005630bc
-    MOVD MM0,dword ptr [EAX*0x4 + 0x1c6a974] ; 005630bf | DAT_01c6a974
+    MOVD MM0,dword ptr [EAX*0x4 + 0x1c6a974] ; 005630bf | g_Hardware32BitPalette
     MOVZX EAX,byte ptr [EBX]            ; 005630c7
     IMUL EAX,EBP                        ; 005630ca
-    CMP dword ptr [0x01c6e2ac],0x1      ; 005630cd | DAT_01c6e2ac
+    CMP dword ptr [0x01c6e2ac],0x1      ; 005630cd | g_INT_01c6e2ac
     JZ 0x005630e4                       ; 005630d4
         ;   XREF to: 005630e4 (CONDITIONAL_JUMP)  ; LAB_005630e4
     CMP EAX,0xfde8                      ; 005630d6
@@ -52,12 +52,12 @@ section .text
     SHR EAX,0x8                         ; 005630e4
         ;   Label: LAB_005630e4
     PUNPCKLBW MM0,MM7                   ; 005630e7
-    MOVQ MM1,qword ptr [EAX*0x8 + 0x605710] ; 005630ea | DAT_00605710
+    MOVQ MM1,qword ptr [EAX*0x8 + 0x605710] ; 005630ea | g_QWORD_ARRAY_00605710
     MOVQ MM2,MM1                        ; 005630f2
-    PXOR MM2,qword ptr [0x00605f08]     ; 005630f5 | DAT_00605f08
+    PXOR MM2,qword ptr [0x00605f08]     ; 005630f5 | g_QWORD_ARRAY_00605710[255]
     MOVD MM3,dword ptr [EDI]            ; 005630fc
     PUNPCKLBW MM3,MM7                   ; 005630ff
-    CMP dword ptr [0x01c6e2ac],0x1      ; 00563102 | DAT_01c6e2ac
+    CMP dword ptr [0x01c6e2ac],0x1      ; 00563102 | g_INT_01c6e2ac
     JZ 0x0056311d                       ; 00563109
         ;   XREF to: 0056311d (CONDITIONAL_JUMP)  ; LAB_0056311d
     PMULLW MM0,MM1                      ; 0056310b

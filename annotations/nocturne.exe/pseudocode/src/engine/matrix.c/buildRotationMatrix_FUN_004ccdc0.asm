@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7648
+;   int g_ProjectionScale = 0x10000
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;   int g_ClipLeft
@@ -172,7 +172,7 @@ section .text
         ;   XREF to: 004cd0c6 (CONDITIONAL_JUMP)  ; LAB_004cd0c6
     JA 0x004cd0bf                       ; 004ccf2c
         ;   XREF to: 004cd0bf (CONDITIONAL_JUMP)  ; LAB_004cd0bf
-    MOV dword ptr [0x01cc5170],0x15555  ; 004ccf32 | DAT_01cc5170
+    MOV dword ptr [0x01cc5170],0x15555  ; 004ccf32 | g_PixelAspectCorrection
     MOV EAX,0x10000                     ; 004ccf3c
         ;   Label: LAB_004ccf3c
     MOV EBX,dword ptr [0x01c00c48]      ; 004ccf41 | g_Projection
@@ -238,25 +238,25 @@ section .text
     SHL EDX,0x2                         ; 004cd015
     SBB EAX,EDX                         ; 004cd018
     SAR EAX,0x2                         ; 004cd01a
-    MOV EBX,dword ptr [0x005b7648]      ; 004cd01d | DAT_005b7648
+    MOV EBX,dword ptr [0x005b7648]      ; 004cd01d | g_ProjectionScale
     MOV ECX,EAX                         ; 004cd023
     MOV EAX,[0x01c039e8]                ; 004cd025 | g_TransformMatrix
     MOV EDX,ECX                         ; 004cd02a
     IMUL EDX                            ; 004cd02c
     IDIV EBX                            ; 004cd02e
-    MOV EBX,dword ptr [0x005b7648]      ; 004cd030 | DAT_005b7648
+    MOV EBX,dword ptr [0x005b7648]      ; 004cd030 | g_ProjectionScale
     MOV [0x01c039e8],EAX                ; 004cd036 | g_TransformMatrix
     MOV EDX,ECX                         ; 004cd03b
     MOV EAX,[0x01c039ec]                ; 004cd03d | g_TransformMatrix.m[0].y
     IMUL EDX                            ; 004cd042
     IDIV EBX                            ; 004cd044
-    MOV EBX,dword ptr [0x005b7648]      ; 004cd046 | DAT_005b7648
+    MOV EBX,dword ptr [0x005b7648]      ; 004cd046 | g_ProjectionScale
     MOV [0x01c039ec],EAX                ; 004cd04c | g_TransformMatrix.m[0].y
     MOV EDX,ECX                         ; 004cd051
     MOV EAX,[0x01c039f4]                ; 004cd053 | g_TransformMatrix.m[1].x
     IMUL EDX                            ; 004cd058
     IDIV EBX                            ; 004cd05a
-    MOV EBX,dword ptr [0x005b7648]      ; 004cd05c | DAT_005b7648
+    MOV EBX,dword ptr [0x005b7648]      ; 004cd05c | g_ProjectionScale
     MOV [0x01c039f4],EAX                ; 004cd062 | g_TransformMatrix.m[1].x
     MOV EDX,ECX                         ; 004cd067
     MOV EAX,[0x01c039f8]                ; 004cd069 | g_TransformMatrix.m[1].y
@@ -264,12 +264,12 @@ section .text
     IDIV EBX                            ; 004cd070
     MOV [0x01c039f8],EAX                ; 004cd072 | g_TransformMatrix.m[1].y
     POP EDI                             ; 004cd077
-    MOV EBX,dword ptr [0x005b7648]      ; 004cd078 | DAT_005b7648
+    MOV EBX,dword ptr [0x005b7648]      ; 004cd078 | g_ProjectionScale
     MOV EAX,[0x01c03a00]                ; 004cd07e | g_TransformMatrix.m[2].x
     MOV EDX,ECX                         ; 004cd083
     IMUL EDX                            ; 004cd085
     IDIV EBX                            ; 004cd087
-    MOV EBX,dword ptr [0x005b7648]      ; 004cd089 | DAT_005b7648
+    MOV EBX,dword ptr [0x005b7648]      ; 004cd089 | g_ProjectionScale
     MOV [0x01c03a00],EAX                ; 004cd08f | g_TransformMatrix.m[2].x
     MOV EDX,ECX                         ; 004cd094
     MOV EAX,[0x01c03a04]                ; 004cd096 | g_TransformMatrix.m[2].y
@@ -283,7 +283,7 @@ section .text
     POP ESI                             ; 004cd0ad
     POP EBX                             ; 004cd0ae
     RET                                 ; 004cd0af
-    MOV dword ptr [0x01cc5170],0xaaaa   ; 004cd0b0 | DAT_01cc5170
+    MOV dword ptr [0x01cc5170],0xaaaa   ; 004cd0b0 | g_PixelAspectCorrection
         ;   Label: LAB_004cd0b0
     JMP 0x004ccf3c                      ; 004cd0ba
         ;   XREF to: 004ccf3c (UNCONDITIONAL_JUMP)  ; LAB_004ccf3c
@@ -291,7 +291,7 @@ section .text
         ;   Label: LAB_004cd0bf
     JZ 0x004cd0b0                       ; 004cd0c4
         ;   XREF to: 004cd0b0 (CONDITIONAL_JUMP)  ; LAB_004cd0b0
-    MOV dword ptr [0x01cc5170],0x10000  ; 004cd0c6 | DAT_01cc5170
+    MOV dword ptr [0x01cc5170],0x10000  ; 004cd0c6 | g_PixelAspectCorrection
         ;   Label: LAB_004cd0c6
     JMP 0x004ccf3c                      ; 004cd0d0
         ;   XREF to: 004ccf3c (UNCONDITIONAL_JUMP)  ; LAB_004ccf3c

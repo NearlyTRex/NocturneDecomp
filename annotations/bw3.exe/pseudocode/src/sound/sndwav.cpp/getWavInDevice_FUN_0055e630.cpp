@@ -13,7 +13,7 @@ CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_0055e630(UINT device_
   MMRESULT MVar2;
   UINT_PTR in_stack_00000008;
   
-  iVar1 = sound_sndwav_cpp_CWavInDevice_close_FUN_0055dda0((CWavInDevice *)&DAT_02cf567c);
+  iVar1 = sound_sndwav_cpp_CWavInDevice_close_FUN_0055dda0(&g_CWavInDeviceInstance);
   if (iVar1 == 0) {
     return (CWavInDevice *)0x0;
   }
@@ -21,6 +21,6 @@ CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_0055e630(UINT device_
   if (MVar2 != 0) {
     return (CWavInDevice *)0x0;
   }
-  DAT_00604518 = in_stack_00000008;
-  return (CWavInDevice *)&DAT_02cf567c;
+  g_WaveInDeviceID = in_stack_00000008;
+  return &g_CWavInDeviceInstance;
 }

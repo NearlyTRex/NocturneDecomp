@@ -11,7 +11,7 @@ CGasMask * __cdecl core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void)
 {
   CGasMask *pCVar1;
   
-  pCVar1 = (CGasMask *)operator_new(0x434);
+  pCVar1 = operator_new(0x434);
   if (pCVar1 == (CGasMask *)0x0) {
     return (CGasMask *)0x0;
   }

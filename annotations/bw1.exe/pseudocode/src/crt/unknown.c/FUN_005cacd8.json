@@ -2,17 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 101,
+    "complexity_score": 91,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "undefined_data",
+      "pointer_truncation",
       "unnamed_param"
     ],
     "total_lines": 68
@@ -47,7 +47,7 @@
     {
       "addr": "005c09f0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c09f0"
+      "name": "crt_unknown.c_debugFree_FUN_005c09f0"
     },
     {
       "addr": "005cac3c",
@@ -74,9 +74,9 @@
     },
     {
       "addr": "006265f8",
-      "name": "DAT_006265f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006265f8",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
@@ -179,19 +179,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_006265f8",
-      "severity": "mild",
-      "text": "if (DAT_006265f8 == -1) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "lpTlsValue = (LPVOID)FUN_005cac3c(param_1);",
+      "text": "lpTlsValue = (void *)FUN_005cac3c(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -203,12 +195,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_006265f8",
-      "severity": "mild",
-      "text": "TlsSetValue(DAT_006265f8,lpTlsValue);",
-      "type": "undefined_data"
+      "description": "Pointer value `lpTlsValue` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)lpTlsValue",
+      "severity": "moderate",
+      "text": "iVar1 = FUN_005cce60(*(uint *)((int)lpTlsValue + 0xda),lpTlsValue);",
+      "type": "pointer_truncation"
     },
     {
       "call_site_count": 2,

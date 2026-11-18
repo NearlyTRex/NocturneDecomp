@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_00570630 at 00570677
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1795
+;   byte g_BYTE_005c1795 = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_set_range_error_errno_FUN_00568e9c
@@ -40,7 +40,7 @@ section .text
     RET                                 ; 00572820
     RCR ECX,0x1                         ; 00572821
         ;   Label: LAB_00572821
-    CMP byte ptr [0x005c1795],0x0       ; 00572823 | DAT_005c1795
+    CMP byte ptr [0x005c1795],0x0       ; 00572823 | g_BYTE_005c1795
         ;   Label: LAB_00572823
     JZ 0x0057283b                       ; 0057282a
         ;   XREF to: 0057283b (CONDITIONAL_JUMP)  ; LAB_0057283b

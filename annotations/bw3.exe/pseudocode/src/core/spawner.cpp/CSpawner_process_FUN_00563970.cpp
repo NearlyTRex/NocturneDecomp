@@ -2,13 +2,11 @@
 // Address: 00563970
 // Address Range: [[00563970, 00563e37]]
 // Convention: __cdecl
-// Signature: void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2)
+// Signature: void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2)
+void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float delta_time)
 
 {
   UOrientationVector *pUVar1;
@@ -25,28 +23,28 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
   char *pcVar10;
   uint *puVar11;
   byte bVar12;
-  uint auStack_b0 [6];
-  uint auStack_98 [6];
-  uint uStack_80;
-  uint uStack_7c;
-  uint uStack_78;
-  CVector3f CStack_5c;
-  uint uStack_50;
-  uint uStack_4c;
-  uint uStack_48;
-  CVector3f CStack_44;
+  float in_stack_0000000c;
+  CBoundingBox3D *this_ptr_02;
+  int in_stack_ffffff58;
+  CBoundingBox3D CStack_a4;
+  uint auStack_8c [4];
+  CVector3f CStack_7c;
+  CVector3f CStack_70;
+  CVector3f CStack_64;
+  byte auStack_50 [8];
+  float fStack_48;
+  uint uStack_44;
   CVector3f CStack_38;
   float fStack_2c;
   float fStack_28;
   float fStack_24;
-  float fStack_20;
   float fStack_1c;
   float fStack_18;
   float fStack_14;
   
   bVar12 = 0;
   if (ABS(this_ptr->spawn_timer) == 0.0) {
-    this_ptr->reset_timer = this_ptr->reset_timer - param_2;
+    this_ptr->reset_timer = this_ptr->reset_timer - delta_time;
     if (0.0 < this_ptr->reset_timer) {
       return;
     }
@@ -56,7 +54,7 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
       return;
     }
     pCVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90
-                       (0x01D81080,this_ptr->spawn_name);
+                       (g_CDemonMission_PTR_00600530,this_ptr->spawn_name);
     this_ptr_00 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c840(pCVar4,g_CEnemyClassInfo.name_hash);
     if ((this_ptr_00 == (CCharacter *)0x0) ||
@@ -68,7 +66,7 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
       this_ptr->spawn_timer = this_ptr->spawn_time;
     }
     else {
-      pcVar8 = (char *)0x5d54af;
+      pcVar8 = "_dead";
       iVar6 = -1;
       do {
         pCVar9 = this_ptr_00;
@@ -91,36 +89,37 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
       this_ptr->spawn_timer = this_ptr->spawn_time;
     }
   }
-  this_ptr->spawn_timer = this_ptr->spawn_timer - param_2;
+  this_ptr->spawn_timer = this_ptr->spawn_timer - in_stack_0000000c;
   if (this_ptr->spawn_timer <= 0.0) {
     this_ptr->reset_timer = 0.5;
     this_ptr->spawn_timer = 0.0;
-    uStack_80 = 0;
-    uStack_7c = 0;
-    uStack_78 = 0x3f800000;
-    core_actor_cpp_FUN_00408b00(this_ptr,&uStack_80);
-    uStack_50 = 0;
-    uStack_4c = 0;
-    uStack_48 = 0x3fc00000;
-    core_actor_cpp_FUN_00408b00(this_ptr,&uStack_50);
-    fStack_2c = (float)core_setcolid_cpp_FUN_0053de10
-                                 (g_CDemonSetPtr,(this_ptr->base).location.position.x,
-                                  (this_ptr->base).location.position.z,0,0,0x3f800000,
-                                  (this_ptr->base).location.position.y,
-                                  (this_ptr->base).location.position.y + _DAT_005d54b7);
-    fStack_14 = fStack_2c;
+    CStack_7c.x = 0.0;
+    CStack_7c.y = 0.0;
+    CStack_7c.z = 1.0;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00(&this_ptr->base,&CStack_7c,&CStack_70);
+    auStack_50._4_4_ = 0.0;
+    fStack_48 = 0.0;
+    uStack_44 = 0x3fc00000;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+              (&this_ptr->base,(CVector3f *)(auStack_50 + 4),&CStack_64);
+    fStack_28 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10
+                          (g_CDemonSetPtr,(this_ptr->base).location.position.x,
+                           (this_ptr->base).location.position.z,0.0,0.0,1.0,
+                           (this_ptr->base).location.position.y,
+                           (this_ptr->base).location.position.y + 6.0f);
     core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
-    if (1.0 <= fStack_2c) {
+    if (1.0 <= fStack_28) {
       if (this_ptr->dont_spawn_when_in_view != 0) {
         (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-        puVar7 = auStack_98;
-        puVar11 = auStack_b0;
+        this_ptr_02 = &CStack_a4;
+        puVar7 = auStack_8c;
+        puVar11 = (uint *)&stack0xffffff54;
         for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
           *puVar11 = *puVar7;
           puVar7 = puVar7 + (uint)bVar12 * -2 + 1;
           puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
         }
-        iVar6 = core_box_cpp_FUN_0041daf0(auStack_b0);
+        iVar6 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(this_ptr_02,in_stack_ffffff58);
         if (iVar6 != 0) {
           return;
         }
@@ -184,32 +183,31 @@ void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,f
         if (pCVar5 != (CDemonActor *)0x0) {
           *(float *)(pCVar5[0x9b].create_event + 0x24) = this_ptr->start_guard_dist;
         }
-        core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,pCVar4);
-        if ((CLocation *)&CStack_44 != &pCVar4->location) {
-          CStack_44.x = (pCVar4->location).position.x;
-          CStack_44.y = (pCVar4->location).position.y;
-          CStack_44.z = (pCVar4->location).position.z;
+        core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
+                  (g_CDemonMission_PTR_00600530,pCVar4);
+        if ((CLocation *)&CStack_38 != &pCVar4->location) {
+          CStack_38.x = (pCVar4->location).position.x;
+          CStack_38.y = (pCVar4->location).position.y;
+          CStack_38.z = (pCVar4->location).position.z;
         }
-        CStack_44.y = CStack_44.y + _DAT_005d54bb;
+        CStack_38.y = CStack_38.y + 3.0f;
         iVar6 = 0;
         do {
-          fStack_28 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
-          fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
-          CStack_38.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
-          fStack_20 = fStack_24;
-          fStack_1c = fStack_28;
-          CStack_38.y = fStack_24;
-          CStack_38.z = fStack_28;
-          if (&CStack_5c != &CStack_38) {
-            CStack_5c.y = fStack_24;
-            CStack_5c.z = fStack_28;
-            CStack_5c.x = CStack_38.x;
+          fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
+          fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
+          fStack_2c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
+          fStack_14 = fStack_18;
+          fStack_28 = fStack_18;
+          fStack_24 = fStack_1c;
+          if ((float *)auStack_50 != &fStack_2c) {
+            auStack_50._4_4_ = fStack_18;
+            fStack_48 = fStack_1c;
+            auStack_50._0_4_ = fStack_2c;
           }
           iVar6 = iVar6 + 1;
-          fStack_18 = CStack_38.x;
-          fStack_14 = CStack_38.x;
           core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                    (0x01C73654,&CStack_44,&CStack_5c,0x20000,0x10000,1,0xffff);
+                    (g_CFireEffect_PTR_005fc5a0,&CStack_38,(CVector3f *)auStack_50,0x20000,0x10000,1
+                     ,0xffff);
         } while (iVar6 < 0x20);
         this_ptr->number_of_spawns = this_ptr->number_of_spawns + 1;
         return;

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004b9ae0(CHighPriestOfGardath *this_ptr)
 
 {
-  return &g_CHighPriestOfGardathActorType_01cae24c;
+  return &g_CHighPriestOfGardathClassInfo;
 }

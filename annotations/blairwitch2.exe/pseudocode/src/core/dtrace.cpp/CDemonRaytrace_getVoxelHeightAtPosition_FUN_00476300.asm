@@ -11,7 +11,7 @@
 ;   core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_00535e90 at 00535e9d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1d23
+;   float g_VoxelSizeReciprocal = 0.125
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
@@ -40,7 +40,7 @@ section .text
     FDIV float ptr [EBX + 0x30]         ; 00476326
     FXCH ST2                            ; 00476329
     CALL crt_math.c_round_FUN_005b7ff0  ; 0047632b
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 00476330
     MOV EAX,dword ptr [ESP + 0xc]       ; 00476334
     MOV dword ptr [ESP + 0x1c],EAX      ; 00476338
@@ -48,13 +48,13 @@ section .text
     FMUL float ptr [EBX + 0x28]         ; 00476340
     FADD float ptr [EBX + 0x10]         ; 00476343
     FSUBR float ptr [EDX]               ; 00476346
-    FLD float ptr [0x005d1d23]          ; 00476348 | DAT_005d1d23
+    FLD float ptr [0x005d1d23]          ; 00476348 | g_VoxelSizeReciprocal
     FLD float ptr [EBX + 0x28]          ; 0047634e
     FMUL ST1                            ; 00476351
     FDIVP ST2,ST0                       ; 00476353
     FXCH ST2                            ; 00476355
     CALL crt_math.c_round_FUN_005b7ff0  ; 00476357
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x14]        ; 0047635c
     MOV EAX,dword ptr [ESP + 0x14]      ; 00476360
     MOV dword ptr [ESP + 0x1c],EAX      ; 00476364
@@ -67,7 +67,7 @@ section .text
     FDIVP                               ; 0047637a
     FXCH ST3                            ; 0047637c
     CALL crt_math.c_round_FUN_005b7ff0  ; 0047637e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00476383
     MOV EAX,dword ptr [ESP + 0x8]       ; 00476387
     MOV dword ptr [ESP + 0x1c],EAX      ; 0047638b
@@ -79,15 +79,15 @@ section .text
     FMULP ST3                           ; 0047639f
     FDIVRP ST2,ST0                      ; 004763a1
     CALL crt_math.c_round_FUN_005b7ff0  ; 004763a3
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004763a8
     MOV EDX,dword ptr [ESP + 0x10]      ; 004763ac
     FXCH                                ; 004763b0
     CALL crt_math.c_round_FUN_005b7ff0  ; 004763b2
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 004763b7
     CALL crt_math.c_round_FUN_005b7ff0  ; 004763bb
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP]               ; 004763c0
     TEST EDX,EDX                        ; 004763c3
     JL 0x00476463                       ; 004763c5
@@ -177,7 +177,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 00476497
     FILD dword ptr [ESP + 0x1c]         ; 0047649b
     FMUL float ptr [EBX + 0x2c]         ; 0047649f
-    FMUL float ptr [0x005d1d23]         ; 004764a2 | DAT_005d1d23
+    FMUL float ptr [0x005d1d23]         ; 004764a2 | g_VoxelSizeReciprocal
     FADDP                               ; 004764a8
     FSTP float ptr [ESP + 0x4]          ; 004764aa
     MOV EAX,dword ptr [ESP + 0x4]       ; 004764ae

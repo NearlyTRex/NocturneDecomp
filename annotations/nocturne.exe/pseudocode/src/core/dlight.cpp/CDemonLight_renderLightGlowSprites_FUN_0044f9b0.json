@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 515,
-    "complexity_score": 378,
+    "complexity_score": 362,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 223,
-    "suspect_count": 12,
+    "pseudocode_lines": 222,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "stack_alignment_array",
-      "undefined_data",
       "unknown_field",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 738
+    "total_lines": 737
   },
   "cross_references": [
     {
@@ -153,55 +152,55 @@
     },
     {
       "addr": "0059c030",
-      "name": "DAT_0059c030",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059c030",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "0059c038",
-      "name": "DAT_0059c038",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059c038",
+      "type": "float",
+      "value": "0.00390625"
     },
     {
       "addr": "005ae488",
-      "name": "DAT_005ae488",
+      "name": "g_LightGlow.sprites[0].texture.base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005ae4a4",
-      "name": "DAT_005ae4a4",
+      "name": "g_LightGlow.sprites[0].params.size",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005ae4a8",
-      "name": "DAT_005ae4a8",
+      "name": "g_LightGlow.sprites[0].params.uv[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005ae4ac",
-      "name": "DAT_005ae4ac",
+      "name": "g_LightGlow.sprites[0].params.uv[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005ae4b0",
-      "name": "DAT_005ae4b0",
+      "name": "g_LightGlow.sprites[0].params.uv[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005ae4b4",
-      "name": "DAT_005ae4b4",
+      "name": "g_LightGlow.sprites[0].params.uv[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005ae4d4",
-      "name": "DAT_005ae4d4",
+      "name": "g_LightGlow.sprites[1].params.size",
       "type": "undefined4",
       "value": null
     },
@@ -213,14 +212,14 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c038f4",
-      "name": "DAT_01c038f4",
-      "type": "undefined4",
+      "name": "g_INT_01c038f4",
+      "type": "int",
       "value": null
     }
   ],
@@ -300,6 +299,24 @@
     "pcode_op_count": 2878
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044b050",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0041
+    },
+    "bw1.exe": {
+      "addr": "00463850",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0041
+    },
+    "bw3.exe": {
+      "addr": "0045d560",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0041
+    },
     "nocedit.exe": {
       "addr": "00473f90",
       "by": "name",
@@ -818,16 +835,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 10,
       "match": "afStackY_10d4",
       "severity": "moderate",
       "text": "float afStackY_10d4 [991];",
@@ -835,7 +844,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 86,
+      "line": 84,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_a4 = local_ec._0_4_;",
@@ -843,23 +852,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 107,
       "match": "._0_4_",
       "severity": "mild",
       "text": "* 4.6004211948482694e-315._0_4_) {",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_005ae488",
-      "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)&DAT_005ae488;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 120,
+      "line": 118,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar1 = (float)local_1c * 5.1299985056169162e-315._0_4_ * (this_ptr->base).fixed_point_scale;",
@@ -867,7 +868,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 135,
+      "line": 133,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_ec._8_4_ = local_74.z;",
@@ -875,15 +876,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 169,
+      "line": 167,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "local_c8._8_4_ = (uint)ROUND(local_9c[0] * _DAT_0059c030);",
+      "text": "local_c8._8_4_ = (uint)ROUND(local_9c[0] * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 112,
       "match": "(int)pCVar5",
       "severity": "moderate",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(this_ptr_00,(int)pCVar5);",
@@ -891,7 +892,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 71,
+      "line": 69,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_74.x = pCVar2->x;",
@@ -899,7 +900,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 200,
+      "line": 198,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr[2].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;",
@@ -907,11 +908,19 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 207,
+      "line": 205,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `texture` was initialized to the address of an array element's subfield (`texture = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*texture)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `texture->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 214,
+      "match": "texture = texture + N",
+      "severity": "moderate",
+      "text": "texture = texture + 2;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

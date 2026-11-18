@@ -2,23 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 40,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 110
+    "total_lines": 109
   },
   "cross_references": [
     {
       "addr": "0042cd70",
       "from_addr": "0042d228",
-      "name": "core_charactr.cpp_FUN_0042cd70",
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,8 +40,8 @@
   "globals": [
     {
       "addr": "01d5ba00",
-      "name": "DAT_01d5ba00",
-      "type": "undefined4",
+      "name": "g_HeroCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -50,7 +51,7 @@
       {
         "call_addr": "0042d228",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042cd70",
+        "caller": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,12 +228,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_CHero_PTR_ARRAY_01d5ba04",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01d5ba04` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)g_CHero_PTR_ARRAY_01d5ba04",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar4);",
+      "type": "pointer_truncation"
     }
   ]
 }

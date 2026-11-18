@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_00488020(CEnemy *this_ptr,CVector3f *out_points_array)
 
 {
@@ -41,7 +39,7 @@ int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_00488020(CEnemy *this_ptr,
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  fVar1 = (float)_DAT_005d2da1;
+  fVar1 = (float)0.29999999999999999;
   fStack_28 = fStack_58 + fStack_4c;
   afStack_24[0] = fStack_54 + fStack_48;
   afStack_24[1] = fStack_50 + fStack_44;
@@ -49,10 +47,10 @@ int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_00488020(CEnemy *this_ptr,
   afStack_24[(uint)bVar5 * -2 + 3] = afStack_24[(uint)bVar5 * -2];
   afStack_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
        afStack_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  fStack_40 = afStack_24[2] * _DAT_005d2d9d;
-  fStack_3c = afStack_24[3] * _DAT_005d2d9d;
-  fStack_38 = fStack_14 * _DAT_005d2d9d;
-  CStack_34.x = afStack_24[2] * _DAT_005d2d9d;
+  fStack_40 = afStack_24[2] * 0.5f;
+  fStack_3c = afStack_24[3] * 0.5f;
+  fStack_38 = fStack_14 * 0.5f;
+  CStack_34.x = afStack_24[2] * 0.5f;
   *(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) =
        *(uint *)((int)&stack0xffffffc4 + (uint)bVar5 * -8);
   *(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =

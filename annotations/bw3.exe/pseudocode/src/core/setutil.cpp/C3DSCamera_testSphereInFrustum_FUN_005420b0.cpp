@@ -17,24 +17,23 @@ int __cdecl core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0(C3DSCam
   float local_30;
   float local_2c;
   float local_28;
-  float local_24;
-  float local_18;
-  float fStack_14;
-  float fStack_10;
+  CVector3f local_24;
+  CVector3f local_18;
   
   bVar1 = 0;
   local_3c = world_position->x - (this_ptr->position).x;
   local_38 = world_position->y - (this_ptr->position).y;
   local_34 = world_position->z - (this_ptr->position).z;
-  local_18 = local_3c;
-  fStack_14 = local_38;
-  fStack_10 = local_34;
-  core_dirmat_cpp_FUN_0045b870(&this_ptr->rotation_matrix,&local_18);
-  local_30 = local_24;
+  local_18.x = local_3c;
+  local_18.y = local_38;
+  local_18.z = local_34;
+  core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
+            (&this_ptr->rotation_matrix,&local_18,&local_24);
+  local_30 = local_24.x;
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8);
+       *(uint *)((int)&local_24 + (uint)bVar1 * -8 + 4);
   *(uint *)((int)&stack0xffffffd8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+       *(uint *)((int)&local_24 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   if (((((this_ptr->box).min.x <= local_30 + radius) && ((this_ptr->box).min.y <= local_2c + radius)
        ) && ((this_ptr->box).min.z <= local_28 + radius)) &&
      (((local_30 - radius <= (this_ptr->box).max.x && (local_2c - radius <= (this_ptr->box).max.y))

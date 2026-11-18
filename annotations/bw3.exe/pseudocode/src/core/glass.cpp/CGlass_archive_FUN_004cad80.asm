@@ -7,7 +7,7 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_glassSize_005c4547+1
+;   TerminatedCString s_glassSize_005c4548
 ;   TerminatedCString s_glassTexture_005c4552
 ;   TerminatedCString s_opacity_005c455f
 ;   TerminatedCString s_shattered_005c4567
@@ -35,7 +35,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 004cad86
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004cad8b
-    PUSH 0x5c4548                       ; 004cad8e | s_glassSize_005c4547+1
+    PUSH 0x5c4548                       ; 004cad8e | = "glassSize"
     LEA EAX,[EBX + 0x158]               ; 004cad93
     PUSH EAX                            ; 004cad99
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 004cad9a

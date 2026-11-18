@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride)
 
 {
   short *psVar1;
   float fVar2;
-  longlong lVar3;
-  int iVar4;
+  int iVar3;
+  longlong lVar4;
   int iVar5;
   int iVar6;
   SMRGLHeaderPrimitive *pSVar7;
@@ -32,15 +30,15 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(CDemonSe
   
   bVar10 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005be680);
+            (g_CDemonRenderer_PTR_005ae704,&g_EnvMapTexture);
   if (g_CGamePtr->render_mode == 2) {
     alpha = g_CurrentAlphaValue << 8;
   }
   else {
-    lVar3 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)alpha;
+    lVar4 = (longlong)(0xffff - g_INT_01c038f4) * (longlong)alpha;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
               (g_CDemonRenderer_PTR_005ae704,
-               (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
+               (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   }
   engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
@@ -60,14 +58,15 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(CDemonSe
         iVar8 = 0;
         iVar6 = 0;
         do {
-          iVar4 = *(int *)((int)&SStack_f4.vertices[0].vertex_index + iVar8) * 0xc;
+          iVar3 = *(int *)((int)&SStack_f4.vertices[0].vertex_index + iVar8);
           iVar8 = iVar8 + 0xc;
           iVar5 = iVar5 + 1;
-          local_2c = (int)ROUND(*(float *)(&DAT_02045ab0 + iVar4));
-          fVar2 = *(float *)(&DAT_02045ab4 + iVar4);
+          local_2c = (int)ROUND(g_CVector3f_ARRAY_02045ab0[iVar3].x);
+          fVar2 = g_CVector3f_ARRAY_02045ab0[iVar3].y;
           local_28 = (int)ROUND(fVar2);
-          local_24 = (int)ROUND(*(float *)(&DAT_02045ab8 + iVar4));
-          *(int *)((int)&local_6c + iVar6) = (int)ROUND(*(float *)(&DAT_02045ab0 + iVar4)) + 0x8000;
+          local_24 = (int)ROUND(g_CVector3f_ARRAY_02045ab0[iVar3].z);
+          *(int *)((int)&local_6c + iVar6) =
+               (int)ROUND(g_CVector3f_ARRAY_02045ab0[iVar3].x) + 0x8000;
           *(int *)((int)&SStack_f4.vertices[4].vertex_index + iVar6) = 0x8000 - (int)ROUND(fVar2);
           iVar6 = iVar6 + 4;
         } while (iVar5 < SStack_f4.base.base.count);

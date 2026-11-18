@@ -9,18 +9,18 @@
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004b9a60(CFlashlight *this_ptr,uint flags)
 
 {
-  CWeapon *pCVar1;
-  void *ptr;
+  CWeapon *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CFlashlightTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CFlashlightTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
+  ptr = core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return (CFlashlight *)pCVar1;
+    return (CFlashlight *)ptr;
   }
-  FUN_005c0344(pCVar1);
-  return (CFlashlight *)pCVar1;
+  debugFreeChecked(ptr);
+  return (CFlashlight *)ptr;
 }

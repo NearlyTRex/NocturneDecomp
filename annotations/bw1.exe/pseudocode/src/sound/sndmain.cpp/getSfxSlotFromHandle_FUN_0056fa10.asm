@@ -21,8 +21,8 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c74650
-;   undefined4 DAT_02c80650
+;   undefined4 g_CSfxSlot_ARRAY_02c745ec[0].playback_state
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
@@ -59,7 +59,7 @@ section .text
     MOV EBX,0x2c745ec                   ; 0056fa42
     SHL EAX,0x2                         ; 0056fa47
     ADD EBX,EAX                         ; 0056fa4a
-    CMP ESI,dword ptr [EBX + 0x64]      ; 0056fa4c | DAT_02c74650
+    CMP ESI,dword ptr [EBX + 0x64]      ; 0056fa4c | g_CSfxSlot_ARRAY_02c745ec[0].playback_state
     JNZ 0x0056fa5d                      ; 0056fa4f
         ;   XREF to: 0056fa5d (CONDITIONAL_JUMP)  ; LAB_0056fa5d
     CMP dword ptr [ESP + 0x10],0x0      ; 0056fa51
@@ -78,7 +78,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 0056fa62
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
         ;   Label: LAB_0056fa62
-    CMP ESI,dword ptr [EBX + 0x64]      ; 0056fa67 | DAT_02c74650
+    CMP ESI,dword ptr [EBX + 0x64]      ; 0056fa67 | g_CSfxSlot_ARRAY_02c745ec[0].playback_state
     JNZ 0x0056fa90                      ; 0056fa6a
         ;   XREF to: 0056fa90 (CONDITIONAL_JUMP)  ; LAB_0056fa90
     CMP dword ptr [EBX + 0x68],0x0      ; 0056fa6c
@@ -87,7 +87,7 @@ section .text
     CMP dword ptr [EBX + 0x60],0x0      ; 0056fa72
     JZ 0x0056fa58                       ; 0056fa76
         ;   XREF to: 0056fa58 (CONDITIONAL_JUMP)  ; LAB_0056fa58
-    MOV EDX,dword ptr [0x02c80650]      ; 0056fa78 | DAT_02c80650
+    MOV EDX,dword ptr [0x02c80650]      ; 0056fa78 | g_CSoundDevicePtr
     TEST EDX,EDX                        ; 0056fa7e
     JZ 0x0056fa9a                       ; 0056fa80
         ;   XREF to: 0056fa9a (CONDITIONAL_JUMP)  ; LAB_0056fa9a

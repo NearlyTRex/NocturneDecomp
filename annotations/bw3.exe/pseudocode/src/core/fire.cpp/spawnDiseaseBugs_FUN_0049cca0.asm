@@ -13,12 +13,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBugs_005c06c0
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CBugsClassInfo.name_hash
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 0049ccb9
     PUSH EAX                            ; 0049ccbc
-    MOV EDX,dword ptr [0x00600530]      ; 0049ccbd | DAT_00600530
+    MOV EDX,dword ptr [0x00600530]      ; 0049ccbd | g_CDemonMission_PTR_00600530
     MOV EBX,EAX                         ; 0049ccc3
     PUSH EDX                            ; 0049ccc5
     MOV dword ptr [ESP + 0x2c],EAX      ; 0049ccc6
@@ -55,7 +55,7 @@ section .text
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530 ; 0049cccd
         ;   XREF to: 004f7530 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530(CDemonMission * this_ptr, CDemonActor * actor)
     FLD float ptr [EDI]                 ; 0049ccd2
-    MOV EAX,[0x01d5ba14]                ; 0049ccd4 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 0049ccd4 | g_INT_01d5ba14
     ADD ESP,0x8                         ; 0049ccd9
     FSTP float ptr [ESI]                ; 0049ccdc
     MOV EDX,dword ptr [EDI + 0x4]       ; 0049ccde
@@ -79,7 +79,7 @@ section .text
     CALL dword ptr [EAX]                ; 0049cd1d
     ADD ESP,0x4                         ; 0049cd1f
     PUSH EBX                            ; 0049cd22
-    MOV ECX,dword ptr [0x00600530]      ; 0049cd23 | DAT_00600530
+    MOV ECX,dword ptr [0x00600530]      ; 0049cd23 | g_CDemonMission_PTR_00600530
     PUSH ECX                            ; 0049cd29
     MOV EBX,0x41a00000                  ; 0049cd2a
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 0049cd2f

@@ -11,11 +11,11 @@
 ;   core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0 at 005a18e4
 ;   core_baal.cpp_CBaal_renderTransparent_FUN_00597970 at 00597a88
 ;   core_chain.cpp_CChain_renderTransparent_FUN_0042a280 at 0042a38e
-;   core_charactr.cpp_FUN_0042d8e0 at 0042d917
-;   core_charactr.cpp_FUN_0042f310 at 0042f32a
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 at 0042d917
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 at 0042f32a
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530 at 0045da56
+;   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0045e6a0 at 0045e726
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0 at 0045e1e8
-;   core_dlight.cpp_FUN_0045d530 at 0045da56
-;   core_dlight.cpp_FUN_0045e6a0 at 0045e726
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0045f5a0 at 0045f614
 ;   core_fire.cpp_CExplosion_render_FUN_0049c8e0 at 0049cc3e
 ;   ... and 30 more

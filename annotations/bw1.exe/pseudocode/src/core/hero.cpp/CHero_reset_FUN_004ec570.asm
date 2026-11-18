@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_004763c0 at 004763cc
+;   core_doc.cpp_CDoc_reset_FUN_004763c0 at 004763cc
 ;   core_stranger.cpp_CStranger_reset_FUN_00591ce0 at 00591cec
 ;
 ; Called Functions:

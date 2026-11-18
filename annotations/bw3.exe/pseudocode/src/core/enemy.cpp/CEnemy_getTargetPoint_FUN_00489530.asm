@@ -1,15 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_00489530(CEnemy *this_ptr,CVector3f *out_point)
+; CVector3f * __stack_esi core_enemy_cpp_CEnemy_getTargetPoint_FUN_00489530(CEnemy *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bdc6f
-;   undefined4 DAT_005bdc77
+;   float g_FLOAT_005bdc6f = 0.5
+;   double g_DOUBLE_005bdc77 = 0.166666666666667
 ;
 ; *****************************************************************************
 
@@ -35,7 +34,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 0048955e
     FLD float ptr [ESP + 0x28]          ; 00489560
     FSUB float ptr [ESP + 0x1c]         ; 00489564
-    FMUL double ptr [0x005bdc77]        ; 00489568 | DAT_005bdc77
+    FMUL double ptr [0x005bdc77]        ; 00489568 | g_DOUBLE_005bdc77
     FLD float ptr [ESP + 0x18]          ; 0048956e
     FLD float ptr [ESP + 0x1c]          ; 00489572
     FLD float ptr [ESP + 0x20]          ; 00489576
@@ -55,7 +54,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004895a4
     MOVSD ES:EDI,ESI                    ; 004895a5
     MOVSD ES:EDI,ESI                    ; 004895a6
-    FLD float ptr [0x005bdc6f]          ; 004895a7 | DAT_005bdc6f
+    FLD float ptr [0x005bdc6f]          ; 004895a7 | g_FLOAT_005bdc6f
     FLD float ptr [ESP + 0x48]          ; 004895ad
     FMUL ST1                            ; 004895b1
     FLD float ptr [ESP + 0x4c]          ; 004895b3

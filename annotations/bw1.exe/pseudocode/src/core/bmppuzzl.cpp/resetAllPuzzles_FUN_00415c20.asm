@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_00503a30 at 00503a33
+;   core_main.c_finalizeGameSystems_FUN_00503a30 at 00503a33
 ;   core_main.c_initializeGameSystems_FUN_005032a0 at 0050398e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c394c
+;   int[1] g_INT_ARRAY_007c394c
 ;   undefined4 DAT_007c3950
 ;   undefined4 DAT_007c3954
 ;
@@ -19,7 +19,7 @@ section .text
 
     PUSH EBX                            ; 00415c20
         ;   Label: core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20
-    MOV EDX,dword ptr [0x007c394c]      ; 00415c21 | DAT_007c394c
+    MOV EDX,dword ptr [0x007c394c]      ; 00415c21 | g_INT_ARRAY_007c394c
     XOR EBX,EBX                         ; 00415c27
     TEST EDX,EDX                        ; 00415c29
     JLE 0x00415c4e                      ; 00415c2b
@@ -33,7 +33,7 @@ section .text
     ADD ESI,0x4                         ; 00415c39
     INC EBX                             ; 00415c3c
     CALL dword ptr [EDX + 0x8]          ; 00415c3d
-    MOV ECX,dword ptr [0x007c394c]      ; 00415c40 | DAT_007c394c
+    MOV ECX,dword ptr [0x007c394c]      ; 00415c40 | g_INT_ARRAY_007c394c
     ADD ESP,0x4                         ; 00415c46
     CMP EBX,ECX                         ; 00415c49
     JL 0x00415c30                       ; 00415c4b

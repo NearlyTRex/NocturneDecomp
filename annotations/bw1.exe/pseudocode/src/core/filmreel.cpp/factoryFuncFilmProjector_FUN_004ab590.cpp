@@ -11,7 +11,7 @@ CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590
 {
   CFilmProjector *pCVar1;
   
-  pCVar1 = (CFilmProjector *)operator_new(0x3e4);
+  pCVar1 = operator_new(0x3e4);
   if (pCVar1 == (CFilmProjector *)0x0) {
     return (CFilmProjector *)0x0;
   }

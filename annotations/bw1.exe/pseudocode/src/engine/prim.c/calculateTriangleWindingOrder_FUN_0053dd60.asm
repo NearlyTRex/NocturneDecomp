@@ -14,21 +14,21 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[11]:
-;   core_dpart.cpp_FUN_0047a480 at 0047a561
-;   core_dpart.cpp_FUN_0047ab00 at 0047abdd
-;   core_zombie.cpp_FUN_005bf120 at 005bf3e1
+; XREF[12]:
+;   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0 at 0043d79c
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190 at 0043c274
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60 at 0043df2c
-;   engine_drender.cpp_FUN_00484790 at 004848a5
+;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790 at 004848a5
+;   engine_drender.cpp_renderTriangleSimple_FUN_0047ab00 at 0047abdd
+;   engine_drender.cpp_renderTriangleTextured_FUN_0047a480 at 0047a561
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720 at 0053f76d
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650 at 0053e69d
 ;   engine_prim.c_renderPolygonSoftware_FUN_0053e120 at 0053e1d3
 ;   engine_prim.c_renderScanlinePolygon_FUN_0053f080 at 0053f133
-;   ... and 1 more
+;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00713a7c
+;   int g_CullingMode
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0053dd69
     MOV EAX,dword ptr [EBP + 0x18]      ; 0053dd6c
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0053dd6f
-    CMP dword ptr [0x00713a7c],0x1      ; 0053dd72 | DAT_00713a7c
+    CMP dword ptr [0x00713a7c],0x1      ; 0053dd72 | g_CullingMode
     JNZ 0x0053dde3                      ; 0053dd79
         ;   XREF to: 0053dde3 (CONDITIONAL_JUMP)  ; LAB_0053dde3
     MOV EDI,dword ptr [EBX + 0x10]      ; 0053dd7b

@@ -21,7 +21,7 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040dbc0(CAmmo *this_ptr)
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
             (this_ptr_00,"bullet.kfm");
-  pcVar3 = &DAT_005d304a;
+  pcVar3 = "CGun";
   pCVar4 = this_ptr_00 + 1;
   do {
     cVar1 = *pcVar3;

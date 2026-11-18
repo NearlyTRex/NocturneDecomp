@@ -18,9 +18,10 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00421b10(CBugs *this_ptr,CDe
   CDeformableModel *pCVar4;
   int iVar5;
   int iVar6;
-  int iVar7;
+  uint *puVar7;
   int iVar8;
-  CBugs *pCVar9;
+  int iVar9;
+  CBugs *pCVar10;
   
   class_name_hash = g_CHeroClassInfo.name_hash;
   this_ptr->deformable_model_ptr = (CDeformableModelInstance *)0x0;
@@ -44,7 +45,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00421b10(CBugs *this_ptr,CDe
                          (this_ptr->deformable_model_ptr);
       if (pCVar4->vertex_count[this_ptr->lod_index] < 0x2bd) {
         engine_console_cpp_CConsole_printf_FUN_00436710
-                  (g_CConsolePtr,">%s swarming on %s at LOD %d\n" + 1);
+                  (g_CConsolePtr,"%s swarming on %s at LOD %d\n");
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
                            (this_ptr->deformable_model_ptr);
         core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_0041f940
@@ -55,50 +56,50 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00421b10(CBugs *this_ptr,CDe
         iVar5 = 0;
         pCVar1 = this_ptr->deformable_model_ptr->skinned_vertices_buffer;
         if (0 < this_ptr->swarm_vertex_count) {
-          iVar7 = 0;
+          iVar8 = 0;
           do {
-            *(int *)((int)&DAT_007bcf48 + iVar7) = iVar5;
+            *(int *)((int)g_BugsSortedVertexIndices + iVar8) = iVar5;
             iVar5 = iVar5 + 1;
-            iVar7 = iVar7 + 4;
+            iVar8 = iVar8 + 4;
           } while (iVar5 < this_ptr->swarm_vertex_count);
         }
         for (iVar5 = this_ptr->swarm_vertex_count + -2; -1 < iVar5; iVar5 = iVar5 + -1) {
           if (-1 < iVar5) {
-            iVar7 = 0;
+            iVar8 = 0;
             do {
-              if (pCVar1[*(int *)((int)&DAT_007bcf4c + iVar7)].y <
-                  pCVar1[*(int *)((int)&DAT_007bcf48 + iVar7)].y) {
-                uVar2 = *(uint *)((int)&DAT_007bcf48 + iVar7);
-                *(uint *)((int)&DAT_007bcf48 + iVar7) =
-                     *(uint *)((int)&DAT_007bcf4c + iVar7);
-                *(uint *)((int)&DAT_007bcf4c + iVar7) = uVar2;
+              if (pCVar1[*(int *)((int)g_BugsSortedVertexIndices + iVar8 + 4)].y <
+                  pCVar1[*(int *)((int)g_BugsSortedVertexIndices + iVar8)].y) {
+                puVar7 = (uint *)((int)g_BugsSortedVertexIndices + iVar8 + 4);
+                uVar2 = *(uint *)((int)g_BugsSortedVertexIndices + iVar8);
+                *(uint *)((int)g_BugsSortedVertexIndices + iVar8) = *puVar7;
+                *puVar7 = uVar2;
               }
-              iVar7 = iVar7 + 4;
-            } while (iVar7 <= iVar5 * 4);
+              iVar8 = iVar8 + 4;
+            } while (iVar8 <= iVar5 * 4);
           }
         }
-        iVar5 = pCVar1[DAT_007bcf48].y;
+        iVar5 = pCVar1[g_BugsSortedVertexIndices[0]].y;
+        iVar9 = 0;
         iVar8 = 0;
-        iVar7 = 0;
-        pCVar9 = this_ptr;
+        pCVar10 = this_ptr;
         if (this_ptr->count < 1) {
           return;
         }
         do {
-          pCVar9->bugs[0].current_vertex = -1;
-          pCVar9->bugs[0].dest_vertex = (&DAT_007bcf48)[iVar8];
+          pCVar10->bugs[0].current_vertex = -1;
+          pCVar10->bugs[0].dest_vertex = g_BugsSortedVertexIndices[iVar9];
           iVar6 = core_actor_cpp_getRandomInt_FUN_0040cfc0
                             (0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,
                                               this_ptr->swarm_vertex_count) / 0xf));
-          pCVar9->bugs[0].downward_bias = iVar6;
-          iVar8 = iVar8 + 1;
-          if ((this_ptr->swarm_vertex_count <= iVar8) ||
-             (iVar5 + 0x2a < pCVar1[(&DAT_007bcf48)[iVar8]].y)) {
-            iVar8 = 0;
+          pCVar10->bugs[0].downward_bias = iVar6;
+          iVar9 = iVar9 + 1;
+          if ((this_ptr->swarm_vertex_count <= iVar9) ||
+             (iVar5 + 0x2a < pCVar1[g_BugsSortedVertexIndices[iVar9]].y)) {
+            iVar9 = 0;
           }
-          iVar7 = iVar7 + 1;
-          pCVar9 = (CBugs *)&(pCVar9->base).base.base.orient_matrix.m[0].y;
-        } while (iVar7 < this_ptr->count);
+          iVar8 = iVar8 + 1;
+          pCVar10 = (CBugs *)&(pCVar10->base).base.base.orient_matrix.m[0].y;
+        } while (iVar8 < this_ptr->count);
         return;
       }
       this_ptr->lod_index = this_ptr->lod_index + 1;

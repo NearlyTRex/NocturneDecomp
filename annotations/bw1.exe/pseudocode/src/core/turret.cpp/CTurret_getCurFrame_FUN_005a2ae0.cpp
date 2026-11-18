@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005a2ae0(CTurret *this_ptr,int model_index)
 
 {
@@ -35,9 +33,9 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005a2ae0(CTurret *this_ptr
     }
     break;
   default:
-    _DAT_01d1d400 = "..\\core\\turret.cpp";
-    _DAT_01d1d404 = 0x1c1;
-    core_main_c_FUN_005030e0("CTurret::getCurFrame - invalid state");
+    g_CHAR_PTR_01d1d400 = "..\\core\\turret.cpp";
+    g_INT_01d1d404 = 0x1c1;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CTurret::getCurFrame - invalid state");
   }
   if (local_18 < 0.0) {
     local_14 = 0.0;

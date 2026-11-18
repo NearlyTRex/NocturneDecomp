@@ -10,19 +10,19 @@ void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CVampireBoss *t
 
 {
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(&this_ptr->base);
-  if (1 < INT_005c1188) {
+  if (1 < g_CVampireBossVersion) {
     core_actor_cpp_archiveMotionState_FUN_0040cb00
               (&(this_ptr->base).base.model.base,"human model motion state");
     core_actor_cpp_archiveMotionState_FUN_0040cb00
               (&(this_ptr->model).base,"bat model motion state");
   }
-  if (2 < INT_005c1188) {
+  if (2 < g_CVampireBossVersion) {
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->way_point_0,"wayPoint0");
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->way_point_1,"wayPoint1");
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->way_point_2,"wayPoint2");
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->way_point_3,"wayPoint3");
   }
-  if (INT_005c1188 < 4) {
+  if (g_CVampireBossVersion < 4) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->form,"form");

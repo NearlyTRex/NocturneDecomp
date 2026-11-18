@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_00510250(CMouse *this_ptr)
 
 {
@@ -32,7 +30,7 @@ void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_00510250(CMouse *this_ptr)
     }
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-            (this_ptr_00->cursors,_DAT_01c2a37c + -0xd,_DAT_01c2a380 + -0xc,0xffff);
+            (this_ptr_00->cursors,g_MouseX + -0xd,g_MouseY + -0xc,0xffff);
   if (this_ptr->effect_mode != 0) {
     if (this_ptr->effect_mode != 2) {
       engine_3d_c_setBlendMode_FUN_00406df0(1);
@@ -40,11 +38,11 @@ void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_00510250(CMouse *this_ptr)
       engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
                 (this_ptr->flames +
                  ((int)((this_ptr->anim_timer + iVar1 * -0x10000) - (uint)(iVar1 << 0xf < 0)) >>
-                 0x10),_DAT_01c2a37c + -0xd,_DAT_01c2a380 + -0xc,0x8000);
+                 0x10),g_MouseX + -0xd,g_MouseY + -0xc,0x8000);
       engine_3d_c_setBlendMode_FUN_00406df0(0);
     }
     iVar1 = 7;
-    this_ptr->anim_timer = this_ptr->anim_timer + _DAT_01c2a370 * 0x20;
+    this_ptr->anim_timer = this_ptr->anim_timer + g_GlobalDeltaTimeInt * 0x20;
     if (this_ptr->effect_mode == 2) {
       iVar1 = 0xf;
     }

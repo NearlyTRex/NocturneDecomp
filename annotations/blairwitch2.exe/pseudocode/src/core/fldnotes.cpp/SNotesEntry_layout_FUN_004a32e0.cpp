@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a32e0(SNotesEntry *this_ptr,STextView *view)
 
 {
@@ -19,7 +17,7 @@ int __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a32e0(SNotesEntry *this_
   int iVar4;
   int local_1c;
   
-  iVar3 = _DAT_01cab7e8;
+  iVar3 = g_INT_01cab7e8;
   this_ptr->page = view->page_index;
   if ((iVar3 != 0) || (((iVar3 = this_ptr->kind, iVar3 != 0 && (iVar3 != 2)) && (iVar3 != 5)))) {
     if (this_ptr->kind == 3) {
@@ -48,7 +46,7 @@ LAB_004a3356:
       while (cVar1 != '\0') {
         if (iVar3 != view->page_index) {
           if (this_ptr->title[0] != '\0') {
-            iVar2 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,&DAT_005d5ce8);
+            iVar2 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,"<ul>");
             if (iVar2 < 1) {
               return 0;
             }
@@ -91,11 +89,11 @@ LAB_004a3356:
       local_1c = local_1c + 1;
       goto LAB_004a3356;
     }
-    iVar3 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,&DAT_005d5d19);
+    iVar3 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,"<br>");
     if (iVar3 < 1) {
       return 0;
     }
-    iVar3 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,&DAT_005d5d1e);
+    iVar3 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,"<br>");
     if (iVar3 < 1) {
       return 0;
     }

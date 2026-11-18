@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 109,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 6,
+    "pseudocode_lines": 33,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 95
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -39,110 +38,110 @@
   "globals": [
     {
       "addr": "01c6e2fc",
-      "name": "DAT_01c6e2fc",
-      "type": "undefined4",
+      "name": "g_INT_01c6e2fc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e300",
-      "name": "DAT_01c6e300",
-      "type": "undefined4",
+      "name": "g_INT_01c6e300",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e304",
-      "name": "DAT_01c6e304",
-      "type": "undefined4",
+      "name": "g_INT_01c6e304",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e308",
-      "name": "DAT_01c6e308",
-      "type": "undefined4",
+      "name": "g_INT_01c6e308",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e30c",
-      "name": "DAT_01c6e30c",
-      "type": "undefined4",
+      "name": "g_INT_01c6e30c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e310",
-      "name": "DAT_01c6e310",
-      "type": "undefined4",
+      "name": "g_INT_01c6e310",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e314",
-      "name": "DAT_01c6e314",
-      "type": "undefined4",
+      "name": "g_INT_01c6e314",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e318",
-      "name": "DAT_01c6e318",
-      "type": "undefined4",
+      "name": "g_INT_01c6e318",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e31c",
-      "name": "DAT_01c6e31c",
-      "type": "undefined4",
+      "name": "g_INT_01c6e31c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72644",
-      "name": "DAT_01d72644",
-      "type": "undefined4",
+      "name": "g_INT_01d72644",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72648",
-      "name": "DAT_01d72648",
-      "type": "undefined4",
+      "name": "g_INT_01d72648",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d7264c",
-      "name": "DAT_01d7264c",
-      "type": "undefined4",
+      "name": "g_INT_01d7264c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72650",
-      "name": "DAT_01d72650",
-      "type": "undefined4",
+      "name": "g_INT_01d72650",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72654",
-      "name": "DAT_01d72654",
-      "type": "undefined4",
+      "name": "g_INT_01d72654",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72658",
-      "name": "DAT_01d72658",
-      "type": "undefined4",
+      "name": "g_INT_01d72658",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d7265c",
-      "name": "DAT_01d7265c",
-      "type": "undefined4",
+      "name": "g_INT_01d7265c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72660",
-      "name": "DAT_01d72660",
-      "type": "undefined4",
+      "name": "g_INT_01d72660",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72664",
-      "name": "DAT_01d72664",
-      "type": "undefined4",
+      "name": "g_INT_01d72664",
+      "type": "int",
       "value": null
     }
   ],
@@ -259,16 +258,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 12,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + alpha_index * 0xc + 0x11f0);",
@@ -276,7 +267,7 @@
     },
     {
       "description": "Pointer value `&CStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 16,
+      "line": 14,
       "match": "(int)&CStack_14",
       "severity": "moderate",
       "text": "*puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);",
@@ -284,7 +275,7 @@
     },
     {
       "description": "Pointer value `&CStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "(int)&CStack_14",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -292,7 +283,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 16,
+      "line": 14,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);",
@@ -300,7 +291,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",

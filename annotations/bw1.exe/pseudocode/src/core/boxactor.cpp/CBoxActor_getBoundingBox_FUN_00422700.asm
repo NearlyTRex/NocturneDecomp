@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_00422700(CBoxActor *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_00422700(CBoxActor *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
@@ -24,7 +23,7 @@ section .text
     FLD float ptr [EAX + 0x310]         ; 0042270b
     ADD EAX,0x158                       ; 00422711
     CALL crt_math.c_round_FUN_005c03a0  ; 00422716
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH EAX                            ; 0042271b
     FISTP dword ptr [ESP + 0x1c]        ; 0042271c
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900 ; 00422720

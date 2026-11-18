@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_004248e0(CBride *this_ptr,SDamageInfo *damage_info)
 
@@ -46,7 +45,7 @@ switchD_00424919_default:
      ((iVar1 == this_ptr->part_indices[3] || (iVar1 == this_ptr->part_indices[8])))) {
     local_20 = damage_info->dismember_prob;
     if (this_ptr->part_indices[8] == damage_info->hit_part_index) {
-      local_20 = local_20 * (float)_DAT_005d4fa8;
+      local_20 = local_20 * (float)0.33300000000000002;
     }
     if (g_CGamePtr->gratuitous_dismemberment != 0) {
       local_20 = 1.0;
@@ -76,16 +75,16 @@ switchD_00424919_default:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] == 0) {
         damage_info->damage_amount = 9999.0;
       }
-      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005d4fb0;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     }
   }
   iVar1 = damage_info->hit_part_index;
   if (iVar1 == this_ptr->part_indices[8]) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d4fc0;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
     return;
   }
   if ((iVar1 != this_ptr->part_indices[7]) && (iVar1 != this_ptr->part_indices[6])) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d4fb8;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }
   damage_info->damage_amount = damage_info->damage_amount;

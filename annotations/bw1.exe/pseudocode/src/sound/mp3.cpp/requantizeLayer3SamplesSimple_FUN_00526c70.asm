@@ -35,8 +35,8 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450 at 0052b846
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f930
-;   undefined4 DAT_0061f9b8
+;   double[17] g_MpegRequantizationScaleTable
+;   double[17] g_MpegRequantizationOffsetTable
 ;
 ; *****************************************************************************
 
@@ -232,7 +232,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0xc]       ; 00526e78
     FLD float ptr [EDX]                 ; 00526e7b
     FLD ST0                             ; 00526e7d
-    FADD double ptr [EAX*0x8 + 0x61f9b8] ; 00526e7f | DAT_0061f9b8
+    FADD double ptr [EAX*0x8 + 0x61f9b8] ; 00526e7f | g_MpegRequantizationOffsetTable
     FSTP ST1                            ; 00526e86
     MOV EAX,dword ptr [ESP + 0x48]      ; 00526e88
     FSTP float ptr [EDX]                ; 00526e8c
@@ -243,7 +243,7 @@ section .text
     FLD float ptr [EDX]                 ; 00526e99
     MOV EAX,dword ptr [EAX + 0xc]       ; 00526e9b
     FLD ST0                             ; 00526e9e
-    FMUL double ptr [EAX*0x8 + 0x61f930] ; 00526ea0 | DAT_0061f930
+    FMUL double ptr [EAX*0x8 + 0x61f930] ; 00526ea0 | g_MpegRequantizationScaleTable
     FSTP ST1                            ; 00526ea7
     FSTP float ptr [EDX]                ; 00526ea9
     JMP 0x00526ec2                      ; 00526eab

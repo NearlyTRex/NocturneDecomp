@@ -15,10 +15,10 @@
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540 at 00402562
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060936c
-;   undefined4 DAT_00609370
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
+;   int g_TextWrapEnabled = 0x1
+;   int g_CurrentTextColor = 0xf8
+;   int g_ClipRight
+;   int g_INT_01c35e54
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextMultilineColor_FUN_00401f50
@@ -35,15 +35,15 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00402443
     MOV EAX,dword ptr [ESP + 0x14]      ; 00402447
     MOV ECX,dword ptr [ESP + 0x18]      ; 0040244b
-    CMP dword ptr [0x0060936c],0x0      ; 0040244f | DAT_0060936c
+    CMP dword ptr [0x0060936c],0x0      ; 0040244f | g_TextWrapEnabled
     JZ 0x0040247e                       ; 00402456
         ;   XREF to: 0040247e (CONDITIONAL_JUMP)  ; LAB_0040247e
     PUSH EBX                            ; 00402458
-    MOV EBX,dword ptr [0x00609370]      ; 00402459 | DAT_00609370
+    MOV EBX,dword ptr [0x00609370]      ; 00402459 | g_CurrentTextColor
     PUSH EBX                            ; 0040245f
-    MOV ESI,dword ptr [0x01c35e54]      ; 00402460 | DAT_01c35e54
+    MOV ESI,dword ptr [0x01c35e54]      ; 00402460 | g_INT_01c35e54
     PUSH ESI                            ; 00402466
-    MOV EDI,dword ptr [0x01c35e50]      ; 00402467 | DAT_01c35e50
+    MOV EDI,dword ptr [0x01c35e50]      ; 00402467 | g_ClipRight
     PUSH EDI                            ; 0040246d
     PUSH ECX                            ; 0040246e
     PUSH EAX                            ; 0040246f
@@ -56,12 +56,12 @@ section .text
     POP EDI                             ; 0040247b
     POP ESI                             ; 0040247c
     RET                                 ; 0040247d
-    MOV ESI,dword ptr [0x00609370]      ; 0040247e | DAT_00609370
+    MOV ESI,dword ptr [0x00609370]      ; 0040247e | g_CurrentTextColor
         ;   Label: LAB_0040247e
     PUSH ESI                            ; 00402484
-    MOV EDI,dword ptr [0x01c35e54]      ; 00402485 | DAT_01c35e54
+    MOV EDI,dword ptr [0x01c35e54]      ; 00402485 | g_INT_01c35e54
     PUSH EDI                            ; 0040248b
-    MOV EBP,dword ptr [0x01c35e50]      ; 0040248c | DAT_01c35e50
+    MOV EBP,dword ptr [0x01c35e50]      ; 0040248c | g_ClipRight
     PUSH EBP                            ; 00402492
     PUSH ECX                            ; 00402493
     PUSH EAX                            ; 00402494

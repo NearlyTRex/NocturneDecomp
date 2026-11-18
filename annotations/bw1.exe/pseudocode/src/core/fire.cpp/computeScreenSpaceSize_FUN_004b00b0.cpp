@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_004b00b0(float depth,float min_size)
 
 {
@@ -23,16 +21,18 @@ float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_004b00b0(float depth,floa
   local_28 = 0;
   local_24 = 0;
   local_20 = depth;
-  local_34.x = (int)ROUND(_DAT_005fff94 * 0.0);
-  local_34.y = (int)ROUND(_DAT_005fff94 * 0.0);
-  local_34.z = (int)ROUND(depth * _DAT_005fff94);
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)*DAT_00612560,&local_34);
-  fVar2 = (float)_DAT_005df2bc;
-  fVar1 = (((float)*(int *)(*DAT_00612560 + 8) * (float)_DAT_005df2b4) /
-          ((float)DAT_0061b4c4 * fVar2)) * _DAT_005df2c4;
+  local_34.x = (int)ROUND(256.0f * 0.0);
+  local_34.y = (int)ROUND(256.0f * 0.0);
+  local_34.z = (int)ROUND(depth * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex,&local_34);
+  fVar2 = (float)1.52587890625e-05;
+  fVar1 = (((float)(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).
+                   transformed_z * (float)0.00390625) / ((float)g_ProjectionScale * fVar2)) *
+          0.2f;
   local_8 = min_size;
-  fVar3 = ABS(fVar1 / ((float)_DAT_01c4eff8 * fVar2));
-  fVar1 = ABS(fVar1 / ((float)_DAT_01c4effc * fVar2));
+  fVar3 = ABS(fVar1 / ((float)g_INT_01c4eff8 * fVar2));
+  fVar1 = ABS(fVar1 / ((float)g_INT_01c4effc * fVar2));
   if (min_size < fVar3) {
     local_8 = fVar3;
   }

@@ -7,17 +7,17 @@
 ; uint             Stack[0x4]:4   argb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c833d
-;   undefined4 DAT_01c6cee8
-;   undefined4 DAT_01d76c40
-;   undefined4 DAT_01d76cc8
-;   undefined4 DAT_01d76ccc
-;   undefined4 DAT_01d76cd0
-;   undefined4 DAT_01d7a6b8
-;   undefined4 DAT_01d7a6bc
-;   undefined4 DAT_01d7a6c0
-;   undefined4 DAT_01d7a6c4
-;   undefined4 DAT_02cf60a4
+;   float g_FLOAT_005c833d = 0.003921569
+;   int g_INT_01c6cee8
+;   float g_FLOAT_01d76c40
+;   float g_FLOAT_01d76cc8
+;   int g_INT_01d76ccc
+;   int g_INT_01d76cd0
+;   float g_FLOAT_01d7a6b8
+;   float g_FLOAT_01d7a6bc
+;   float g_FLOAT_01d7a6c0
+;   int g_INT_01d7a6c4
+;   void* g_APIDLL_setLightConstants
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     MOV EAX,EBX                         ; 004f35c6
     FILD dword ptr [ESP + 0x4]          ; 004f35c8
     SHR EAX,0x8                         ; 004f35cc
-    FLD float ptr [0x005c833d]          ; 004f35cf | DAT_005c833d
+    FLD float ptr [0x005c833d]          ; 004f35cf | g_FLOAT_005c833d
     FXCH                                ; 004f35d5
     FMUL ST1                            ; 004f35d7
     AND EAX,0xff                        ; 004f35d9
@@ -52,12 +52,12 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 004f3603
     FILD dword ptr [ESP + 0x4]          ; 004f3607
     FMULP ST4                           ; 004f360b
-    FLD float ptr [0x01d76c40]          ; 004f360d | DAT_01d76c40
+    FLD float ptr [0x01d76c40]          ; 004f360d | g_FLOAT_01d76c40
     FXCH ST3                            ; 004f3613
-    FSTP float ptr [0x01d7a6b8]         ; 004f3615 | DAT_01d7a6b8
+    FSTP float ptr [0x01d7a6b8]         ; 004f3615 | g_FLOAT_01d7a6b8
     FXCH                                ; 004f361b
-    FSTP float ptr [0x01d7a6bc]         ; 004f361d | DAT_01d7a6bc
-    FSTP float ptr [0x01d7a6c0]         ; 004f3623 | DAT_01d7a6c0
+    FSTP float ptr [0x01d7a6bc]         ; 004f361d | g_FLOAT_01d7a6bc
+    FSTP float ptr [0x01d7a6c0]         ; 004f3623 | g_FLOAT_01d7a6c0
     FXCH                                ; 004f3629
     FSTP float ptr [ESP]                ; 004f362b
     FCOMP float ptr [ESP]               ; 004f362e
@@ -66,27 +66,27 @@ section .text
     JZ 0x004f3651                       ; 004f3634
         ;   XREF to: 004f3651 (CONDITIONAL_JUMP)  ; LAB_004f3651
     MOV EAX,dword ptr [ESP]             ; 004f3636
-    MOV EDX,dword ptr [0x02cf60a4]      ; 004f3639 | DAT_02cf60a4
-    MOV [0x01d76c40],EAX                ; 004f363f | DAT_01d76c40
+    MOV EDX,dword ptr [0x02cf60a4]      ; 004f3639 | g_APIDLL_setLightConstants
+    MOV [0x01d76c40],EAX                ; 004f363f | g_FLOAT_01d76c40
     TEST EDX,EDX                        ; 004f3644
     JZ 0x004f3651                       ; 004f3646
         ;   XREF to: 004f3651 (CONDITIONAL_JUMP)  ; LAB_004f3651
-    CMP dword ptr [0x01c6cee8],0x0      ; 004f3648 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 004f3648 | g_INT_01c6cee8
     JNZ 0x004f365c                      ; 004f364f
         ;   XREF to: 004f365c (CONDITIONAL_JUMP)  ; LAB_004f365c
-    MOV dword ptr [0x01d7a6c4],EBX      ; 004f3651 | DAT_01d7a6c4
+    MOV dword ptr [0x01d7a6c4],EBX      ; 004f3651 | g_INT_01d7a6c4
         ;   Label: LAB_004f3651
     ADD ESP,0x8                         ; 004f3657
     POP EBX                             ; 004f365a
     RET                                 ; 004f365b
     PUSH EAX                            ; 004f365c
         ;   Label: LAB_004f365c
-    PUSH dword ptr [0x01d76cd0]         ; 004f365d | DAT_01d76cd0
-    PUSH dword ptr [0x01d76ccc]         ; 004f3663 | DAT_01d76ccc
-    PUSH dword ptr [0x01d76cc8]         ; 004f3669 | DAT_01d76cc8
-    CALL dword ptr [0x02cf60a4]         ; 004f366f | DAT_02cf60a4
+    PUSH dword ptr [0x01d76cd0]         ; 004f365d | g_INT_01d76cd0
+    PUSH dword ptr [0x01d76ccc]         ; 004f3663 | g_INT_01d76ccc
+    PUSH dword ptr [0x01d76cc8]         ; 004f3669 | g_FLOAT_01d76cc8
+    CALL dword ptr [0x02cf60a4]         ; 004f366f | g_APIDLL_setLightConstants
     ADD ESP,0x10                        ; 004f3675
-    MOV dword ptr [0x01d7a6c4],EBX      ; 004f3678 | DAT_01d7a6c4
+    MOV dword ptr [0x01d7a6c4],EBX      ; 004f3678 | g_INT_01d7a6c4
     ADD ESP,0x8                         ; 004f367e
     POP EBX                             ; 004f3681
     RET                                 ; 004f3682

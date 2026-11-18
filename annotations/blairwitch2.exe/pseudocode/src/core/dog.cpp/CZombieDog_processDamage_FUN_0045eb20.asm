@@ -9,12 +9,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dog2_wav_005d0947
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70
 ;
 ; *****************************************************************************
@@ -46,7 +46,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x10b00]   ; 0045eb55
         ;   Label: LAB_0045eb55
     PUSH EDX                            ; 0045eb5b
-    MOV ECX,dword ptr [0x0061c068]      ; 0045eb5c | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 0045eb5c | g_CSound_PTR_0061c068
     PUSH ECX                            ; 0045eb62
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70 ; 0045eb63
         ;   XREF to: 0055af70 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70(CSound * this_ptr, uint sfx_handle)
@@ -66,8 +66,8 @@ section .text
     PUSH ESI                            ; 0045eb80
         ;   Label: LAB_0045eb80
     MOV dword ptr [EBX + 0x25a8],0x0    ; 0045eb81
-    CALL core_motion.cpp_FUN_005035c0   ; 0045eb8b
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0045eb8b
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0045eb90
     ADD ESP,0x4                         ; 0045eb93
     CMP EAX,0x7                         ; 0045eb96

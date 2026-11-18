@@ -8,19 +8,19 @@
 ;
 ; XREF[5]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be820
-;   core_menu.cpp_FUN_004ed260 at 004edcbf
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004edcbf
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a75b
-;   core_sound.cpp_FUN_00559b50 at 00559c55
 ;   core_sound.cpp_playSfxInternal_FUN_005594c0 at 005596c2
+;   core_sound.cpp_processTrainSounds_FUN_00559b50 at 00559c55
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264161c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0264161c]      ; 00550380 | DAT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 00550380 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxFlags_FUN_00550380
     LEA EAX,[EDX*0x4 + 0x0]             ; 00550386
     SUB EAX,EDX                         ; 0055038d

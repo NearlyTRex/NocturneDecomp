@@ -29,25 +29,25 @@ void __cdecl CShadowsc::setup(CShadowsc *this_ptr);
 // Address: 00560630
 void __cdecl CShadowsc::process(CShadowsc *this_ptr,float delta_time);
 
-// Original: core_shadowsc.cpp_FUN_00560fe0
+// Original: core_shadowsc.cpp_CShadowsc_playGiantAttackSound_FUN_00560fe0
 // Address: 00560fe0
-void FUN_00560fe0(int param_1);
+void __cdecl CShadowsc::playGiantAttackSound(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_00561020
+// Original: core_shadowsc.cpp_CShadowsc_playAttackSound_FUN_00561020
 // Address: 00561020
-void FUN_00561020(int param_1);
+void __cdecl CShadowsc::playAttackSound(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_00561060
+// Original: core_shadowsc.cpp_CShadowsc_playHurtSound_FUN_00561060
 // Address: 00561060
-void FUN_00561060(int param_1);
+void __cdecl CShadowsc::playHurtSound(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_005610a0
+// Original: core_shadowsc.cpp_CShadowsc_playDeathSound_FUN_005610a0
 // Address: 005610a0
-void FUN_005610a0(int param_1);
+void __cdecl CShadowsc::playDeathSound(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_005610e0
+// Original: core_shadowsc.cpp_CShadowsc_playEmergeSound_FUN_005610e0
 // Address: 005610e0
-void FUN_005610e0(int param_1);
+void __cdecl CShadowsc::playEmergeSound(CShadowsc *this_ptr);
 
 // Original: core_shadowsc.cpp_CShadowsc_renderOpaque_FUN_00561120
 // Address: 00561120

@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_gb_die_1_6_wav_005d7193
 ;   TerminatedCString s_gb_hit_1_6_wav_005d71a3
-;   undefined4 DAT_005d71b3
-;   undefined4 DAT_005f7344
+;   float g_FLOAT_005d71b3 = 50
+;   float g_FLOAT_005f7344 = 0.5
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CGame g_CGameInstance
@@ -24,8 +24,8 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0
 ;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bb8b0
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -55,7 +55,7 @@ section .text
     TEST EDI,EDI                        ; 004b1c2f
     JZ 0x004b1d63                       ; 004b1c31
         ;   XREF to: 004b1d63 (CONDITIONAL_JUMP)  ; LAB_004b1d63
-    MOV EAX,[0x005f7344]                ; 004b1c37 | DAT_005f7344
+    MOV EAX,[0x005f7344]                ; 004b1c37 | g_FLOAT_005f7344
         ;   Label: LAB_004b1c37
     MOV dword ptr [EBX + 0x10a60],EAX   ; 004b1c3c
     FLD float ptr [ESI + 0x4]           ; 004b1c42
@@ -70,16 +70,16 @@ section .text
         ;   XREF to: 004b1d6b (CONDITIONAL_JUMP)  ; LAB_004b1d6b
     PUSH EDI                            ; 004b1c64
     MOV dword ptr [EBX + 0x25a8],0x0    ; 004b1c65
-    CALL core_motion.cpp_FUN_005035c0   ; 004b1c6f
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004b1c6f
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b1c74
     ADD ESP,0x4                         ; 004b1c77
     CMP EAX,0xc                         ; 004b1c7a
     JZ 0x004b1d36                       ; 004b1c7d
         ;   XREF to: 004b1d36 (CONDITIONAL_JUMP)  ; LAB_004b1d36
     PUSH EDI                            ; 004b1c83
-    CALL core_motion.cpp_FUN_005035c0   ; 004b1c84
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004b1c84
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b1c89
     ADD ESP,0x4                         ; 004b1c8c
     CMP EAX,0xb                         ; 004b1c8f
@@ -94,7 +94,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 004b1cb0
     ADD ESP,0x8                         ; 004b1cb3
     FLD float ptr [EBP + -0x4]          ; 004b1cb6
-    FCOMP float ptr [0x005d71b3]        ; 004b1cb9 | DAT_005d71b3
+    FCOMP float ptr [0x005d71b3]        ; 004b1cb9 | g_FLOAT_005d71b3
     FNSTSW AX                           ; 004b1cbf
     SAHF                                ; 004b1cc1
     SETBE AL                            ; 004b1cc2

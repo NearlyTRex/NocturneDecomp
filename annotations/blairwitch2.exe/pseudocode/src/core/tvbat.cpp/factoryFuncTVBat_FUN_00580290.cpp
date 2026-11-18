@@ -11,7 +11,7 @@ CTVBat * __cdecl core_tvbat_cpp_factoryFuncTVBat_FUN_00580290(void)
 {
   CTVBat *pCVar1;
   
-  pCVar1 = (CTVBat *)operator_new(0x10d30);
+  pCVar1 = operator_new(0x10d30);
   if (pCVar1 == (CTVBat *)0x0) {
     return (CTVBat *)0x0;
   }

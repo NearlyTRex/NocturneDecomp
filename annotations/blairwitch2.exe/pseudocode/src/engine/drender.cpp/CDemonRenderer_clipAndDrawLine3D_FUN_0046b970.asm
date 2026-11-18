@@ -10,12 +10,12 @@
 ;
 ; XREF[3]:
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620 at 0041f74d
-;   core_cloth.cpp_FUN_005b0ce0 at 005b0e80
+;   core_cloth.cpp_CCloth_renderBone_FUN_005b0ce0 at 005b0e80
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_00542410 at 00542459
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0070ca5c
-;   undefined4 DAT_01c35e60
+;   int g_CurrentPolygonColor
+;   int g_INT_01c35e60
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine3D_FUN_00401310
@@ -37,9 +37,9 @@ section .text
     PUSH EBP                            ; 0046b973
     SUB ESP,0x90                        ; 0046b974
     MOV EBP,dword ptr [ESP + 0xa4]      ; 0046b97a
-    MOV EAX,[0x0070ca5c]                ; 0046b981 | DAT_0070ca5c
+    MOV EAX,[0x0070ca5c]                ; 0046b981 | g_CurrentPolygonColor
     MOV EBX,dword ptr [ESP + 0xa8]      ; 0046b986
-    MOV [0x01c35e60],EAX                ; 0046b98d | DAT_01c35e60
+    MOV [0x01c35e60],EAX                ; 0046b98d | g_INT_01c35e60
     LEA EAX,[EBX*0x4 + 0x0]             ; 0046b992
     MOV ECX,0xc                         ; 0046b999
     SUB EAX,EBX                         ; 0046b99e

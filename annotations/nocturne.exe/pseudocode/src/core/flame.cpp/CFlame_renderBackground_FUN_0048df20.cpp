@@ -42,7 +42,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CFlame *this_pt
       for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count; iVar6 = iVar6 + 1) {
         pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4),
-                            g_CFlameActorType_01c70618.name_hash);
+                            g_CFlameClassInfo.name_hash);
         if (pCVar5 != (CDemonActor *)0x0) {
           fStack_20 = (this_ptr->base).location.position.x - (pCVar5->location).position.x;
           fStack_1c = (this_ptr->base).location.position.y - (pCVar5->location).position.y;

@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_mini3d_cpp_getBehindClipFlag_FUN_004f4990(CVector3f *point)
 
 {
   float fVar1;
   uint3 uVar2;
   
-  fVar1 = (point->z - *(float *)(_DAT_01d09918 + 0x2c)) * *(float *)(_DAT_01d09918 + 0x20) +
-          (point->y - *(float *)(_DAT_01d09918 + 0x28)) * *(float *)(_DAT_01d09918 + 0x14) +
-          (point->x - *(float *)(_DAT_01d09918 + 0x24)) * *(float *)(_DAT_01d09918 + 8);
-  uVar2 = (uint3)(CONCAT22((short)((uint)_DAT_01d09918 >> 0x10),
+  fVar1 = (point->z - *(float *)(g_PTR_01d09918 + 0x2c)) * *(float *)(g_PTR_01d09918 + 0x20) +
+          (point->y - *(float *)(g_PTR_01d09918 + 0x28)) * *(float *)(g_PTR_01d09918 + 0x14) +
+          (point->x - *(float *)(g_PTR_01d09918 + 0x24)) * *(float *)(g_PTR_01d09918 + 8);
+  uVar2 = (uint3)(CONCAT22((short)((uint)g_PTR_01d09918 >> 0x10),
                            (ushort)(0.0 < fVar1) << 8 | (ushort)NAN(fVar1) << 10 |
                            (ushort)(fVar1 == 0.0) << 0xe) >> 8);
   if (0.0 >= fVar1) {

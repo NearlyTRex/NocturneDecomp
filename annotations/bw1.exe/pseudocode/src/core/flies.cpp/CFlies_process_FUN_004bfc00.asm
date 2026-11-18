@@ -8,13 +8,13 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e0752
-;   undefined4 DAT_005e075a
+;   float g_FLOAT_005e0752 = 0.5
+;   double g_DOUBLE_005e075a = 2
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
+;   core_flies.cpp_CFlies_generateRandomPoint_FUN_004c0630
 ;   core_flies.cpp_CFlies_initFly_FUN_004c0530
-;   core_flies.cpp_FUN_004c0630
 ;   crt_math.c_floor_FUN_005c0880
 ;
 ; *****************************************************************************
@@ -82,14 +82,14 @@ section .text
     PUSH ESI                            ; 004bfc98
     LEA ESI,[ESP + 0x58]                ; 004bfc99
     LEA EDI,[ESP + 0x28]                ; 004bfc9d
-    CALL core_actor.cpp_FUN_00408b00    ; 004bfca1
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 004bfca1
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x58]                ; 004bfca6
     ADD ESP,0x8                         ; 004bfcaa
     MOVSD ES:EDI,ESI                    ; 004bfcad
     MOVSD ES:EDI,ESI                    ; 004bfcae
     MOVSD ES:EDI,ESI                    ; 004bfcaf
-    FLD float ptr [0x005e0752]          ; 004bfcb0 | DAT_005e0752
+    FLD float ptr [0x005e0752]          ; 004bfcb0 | g_FLOAT_005e0752
     FLD float ptr [ESP + 0x20]          ; 004bfcb6
     FMUL ST1                            ; 004bfcba
     FLD float ptr [ESP + 0x24]          ; 004bfcbc
@@ -218,7 +218,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 004bfe37
         ;   Label: LAB_004bfe37
     FLD ST0                             ; 004bfe3a
-    FMUL double ptr [0x005e075a]        ; 004bfe3c | DAT_005e075a
+    FMUL double ptr [0x005e075a]        ; 004bfe3c | g_DOUBLE_005e075a
     XOR EBX,EBX                         ; 004bfe42
     MOV EAX,dword ptr [EBP + 0x14]      ; 004bfe44
     MOV dword ptr [ESP + 0x70],EBX      ; 004bfe47
@@ -342,8 +342,8 @@ section .text
     PUSH EAX                            ; 004bff6a
     LEA ESI,[ESP + 0x40]                ; 004bff6b
     LEA EDI,[ESP + 0x34]                ; 004bff6f
-    CALL core_flies.cpp_FUN_004c0630    ; 004bff73
-        ;   XREF to: 004c0630 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004c0630()
+    CALL core_flies.cpp_CFlies_generateRandomPoint_FUN_004c0630 ; 004bff73
+        ;   XREF to: 004c0630 (UNCONDITIONAL_CALL)  ; CVector3f * core_flies.cpp_CFlies_generateRandomPoint_FUN_004c0630(CFlies * this_ptr, CVector3f * reference_point, CVector3f * out_point)
     ADD ESP,0x8                         ; 004bff78
     LEA ESI,[ESP + 0x38]                ; 004bff7b
     MOV EDX,dword ptr [ESP + 0x74]      ; 004bff7f

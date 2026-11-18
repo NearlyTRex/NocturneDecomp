@@ -24,15 +24,16 @@ void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int x1,int y1,in
   
   iVar1 = 0x10000;
   iVar2 = 0x10000;
-  if (0x1e0 < DAT_006141bc) {
-    iVar1 = (int)(0x2800000 / (longlong)DAT_006141b8);
-    iVar2 = (int)(0x1e00000 / (longlong)DAT_006141bc);
+  if (0x1e0 < g_INT_006141bc) {
+    iVar1 = (int)(0x2800000 / (longlong)g_INT_006141b8);
+    iVar2 = (int)(0x1e00000 / (longlong)g_INT_006141bc);
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00617da4);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,alpha);
-  this_ptr = DAT_0060b280;
-  (DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = x1 * iVar1;
+            (g_CDemonRenderer_PTR_0060b280,&g_Inventory3DTextureAtlas);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(g_CDemonRenderer_PTR_0060b280,alpha)
+  ;
+  this_ptr = g_CDemonRenderer_PTR_0060b280;
+  (g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = x1 * iVar1;
   (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y1 * iVar2;
   (this_ptr->vertex_buffer_ptr->projected_vertex).transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr->u = 0;

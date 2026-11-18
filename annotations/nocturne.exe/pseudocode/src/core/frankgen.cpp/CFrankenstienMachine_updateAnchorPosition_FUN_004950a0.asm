@@ -24,7 +24,7 @@
 ;   void* switchdataD_00495078 = 004950c1
 ;   TerminatedCString s_core_frankgen_cpp_00581d58
 ;   TerminatedCString s_WTF_00581d6d
-;   undefined4 DAT_0059db58
+;   float g_FLOAT_0059db58 = 0.00390625
 ;   float FLOAT_0059db70 = 2300
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -97,13 +97,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00495128
     MOVSD ES:EDI,ESI                    ; 00495129
     FILD dword ptr [EAX]                ; 0049512a
-    FMUL float ptr [0x0059db58]         ; 0049512c | DAT_0059db58
+    FMUL float ptr [0x0059db58]         ; 0049512c | g_FLOAT_0059db58
     FSTP float ptr [EBX]                ; 00495132
     FILD dword ptr [EAX + 0x4]          ; 00495134
-    FMUL float ptr [0x0059db58]         ; 00495137 | DAT_0059db58
+    FMUL float ptr [0x0059db58]         ; 00495137 | g_FLOAT_0059db58
     FSTP float ptr [EBX + 0x4]          ; 0049513d
     FILD dword ptr [EAX + 0x8]          ; 00495140
-    FMUL float ptr [0x0059db58]         ; 00495143 | DAT_0059db58
+    FMUL float ptr [0x0059db58]         ; 00495143 | g_FLOAT_0059db58
     FSTP float ptr [EBX + 0x8]          ; 00495149
     LEA EAX,[ESP + 0x18]                ; 0049514c
     PUSH EAX                            ; 00495150

@@ -8,11 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b62ae
-;   undefined4 DAT_005b62b6
-;   undefined4 DAT_005b62be
-;   undefined4 DAT_005b62c6
-;   undefined4 DAT_005b62ce
+;   double g_DOUBLE_005b62ae = 4
+;   double g_DOUBLE_005b62b6 = 35
+;   double g_DOUBLE_005b62be = 10
+;   double g_DOUBLE_005b62c6 = 60
+;   double g_DOUBLE_005b62ce = 0.700000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -68,18 +68,18 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0040f07d
     MOVSD ES:EDI,ESI                    ; 0040f07e
     FLD float ptr [ESP + 0x20]          ; 0040f07f
-    FMUL double ptr [0x005b62ae]        ; 0040f083 | DAT_005b62ae
+    FMUL double ptr [0x005b62ae]        ; 0040f083 | g_DOUBLE_005b62ae
     FDIV float ptr [EBP + 0x18]         ; 0040f089
-    FADD double ptr [0x005b62b6]        ; 0040f08c | DAT_005b62b6
+    FADD double ptr [0x005b62b6]        ; 0040f08c | g_DOUBLE_005b62b6
     FST float ptr [ESP]                 ; 0040f092
-    FCOMP double ptr [0x005b62be]       ; 0040f095 | DAT_005b62be
+    FCOMP double ptr [0x005b62be]       ; 0040f095 | g_DOUBLE_005b62be
     FNSTSW AX                           ; 0040f09b
     SAHF                                ; 0040f09d
     JC 0x0040f153                       ; 0040f09e
         ;   XREF to: 0040f153 (CONDITIONAL_JUMP)  ; LAB_0040f153
     FLD float ptr [ESP]                 ; 0040f0a4
         ;   Label: LAB_0040f0a4
-    FCOMP double ptr [0x005b62c6]       ; 0040f0a7 | DAT_005b62c6
+    FCOMP double ptr [0x005b62c6]       ; 0040f0a7 | g_DOUBLE_005b62c6
     FNSTSW AX                           ; 0040f0ad
     SAHF                                ; 0040f0af
     JBE 0x0040f0b9                      ; 0040f0b0
@@ -88,7 +88,7 @@ section .text
     FLD float ptr [ESP]                 ; 0040f0b9
         ;   Label: LAB_0040f0b9
     FSUB float ptr [EBX + 0x310]        ; 0040f0bc
-    FMUL double ptr [0x005b62ce]        ; 0040f0c2 | DAT_005b62ce
+    FMUL double ptr [0x005b62ce]        ; 0040f0c2 | g_DOUBLE_005b62ce
     FLD float ptr [EBX + 0x310]         ; 0040f0c8
     FXCH                                ; 0040f0ce
     FADD ST0,ST1                        ; 0040f0d0

@@ -11,15 +11,15 @@
 ;   core_boxactor.cpp_CLightActor_dtor_FUN_0041d7b0 at 0041d7c5
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_dlight.cpp_CDemonLight_dtor_FUN_00449d30_005f5074 = 00449d30
+;   CCameraView_vtable g_CCameraView_vtable_005f5074
 ;   WatcomTypeInfo g_CDemonLightTypeInfo
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0043b460
 ;   core_dlight.cpp_CDemonLight_free_FUN_00449e70
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     JNZ 0x00449d66                      ; 00449d3a
         ;   XREF to: 00449d66 (CONDITIONAL_JUMP)  ; LAB_00449d66
     PUSH EBX                            ; 00449d3c
-    MOV dword ptr [EBX + 0x3c],0x5f5074 ; 00449d3d | PTR_core_dlight.cpp_CDemonLight_dtor_FUN_00449d30_005f5074
+    MOV dword ptr [EBX + 0x3c],0x5f5074 ; 00449d3d | g_CCameraView_vtable_005f5074
     CALL core_dlight.cpp_CDemonLight_free_FUN_00449e70 ; 00449d44
         ;   XREF to: 00449e70 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_free_FUN_00449e70(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 00449d49
@@ -56,16 +56,16 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00449d71
     PUSH EAX                            ; 00449d74
-    CALL crt_unknown.c_FUN_005b7fce     ; 00449d75
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 00449d75
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 00449d7a
     MOV EAX,EBX                         ; 00449d7d
     POP EBX                             ; 00449d7f
     RET                                 ; 00449d80
     PUSH EAX                            ; 00449d81
         ;   Label: LAB_00449d81
-    CALL crt_unknown.c_FUN_005b7fdc     ; 00449d82
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 00449d82
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 00449d87
     MOV EAX,EBX                         ; 00449d8a
     POP EBX                             ; 00449d8c

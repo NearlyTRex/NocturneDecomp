@@ -7,9 +7,9 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01c4e3d0
-;   undefined4 DAT_01c50930
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   SRGBColorPalette* g_CurrentPalette
+;   uchar* g_CurrentTextureData
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -56,13 +56,13 @@ section .text
     JNZ 0x0044ff28                      ; 0044ff7e
         ;   XREF to: 0044ff28 (CONDITIONAL_JUMP)  ; LAB_0044ff28
     PUSH 0x61127c                       ; 0044ff80
-    MOV EDX,dword ptr [0x00612560]      ; 0044ff85 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 0044ff85 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 0044ff8b
     MOV ESI,0x14cea50                   ; 0044ff8c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 0044ff91
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0044ff96
-    MOV EDI,dword ptr [0x01c50930]      ; 0044ff99 | DAT_01c50930
+    MOV EDI,dword ptr [0x01c50930]      ; 0044ff99 | g_CurrentTextureData
     MOV ECX,EBP                         ; 0044ff9f
     PUSH EDI                            ; 0044ffa1
     MOV EAX,ECX                         ; 0044ffa2
@@ -74,7 +74,7 @@ section .text
     POP EDI                             ; 0044ffb0
     MOV ECX,0x300                       ; 0044ffb1
     MOV ESI,0xb81198                    ; 0044ffb6
-    MOV EDI,dword ptr [0x01c4e3d0]      ; 0044ffbb | DAT_01c4e3d0
+    MOV EDI,dword ptr [0x01c4e3d0]      ; 0044ffbb | g_CurrentPalette
     PUSH EDI                            ; 0044ffc1
     MOV EAX,ECX                         ; 0044ffc2
     SHR ECX,0x2                         ; 0044ffc4
@@ -85,7 +85,7 @@ section .text
     POP EDI                             ; 0044ffd0
     PUSH 0xb81198                       ; 0044ffd1
     PUSH 0x61127c                       ; 0044ffd6
-    MOV ECX,dword ptr [0x00612560]      ; 0044ffdb | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 0044ffdb | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 0044ffe1
     CALL engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00484fb0 ; 0044ffe2
         ;   XREF to: 00484fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00484fb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)

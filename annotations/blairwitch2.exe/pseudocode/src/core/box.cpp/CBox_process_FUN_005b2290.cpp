@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_box_cpp_CBox_process_FUN_005b2290(CBox *this_ptr,float delta_time)
 
 {
   float fVar1;
   
-  if ((float)_DAT_005f12d8 < delta_time) {
-    fVar1 = (float)_DAT_005f12e0;
+  if ((float)0.012500000000000001 < delta_time) {
+    fVar1 = (float)0.5;
     core_box_cpp_CBox_process_FUN_005b2290(this_ptr,delta_time * fVar1);
     core_box_cpp_CBox_process_FUN_005b2290(this_ptr,delta_time * fVar1);
     return;

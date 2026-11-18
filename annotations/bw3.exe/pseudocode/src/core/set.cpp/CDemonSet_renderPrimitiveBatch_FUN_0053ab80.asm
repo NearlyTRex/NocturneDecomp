@@ -27,9 +27,9 @@
 ;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005787f0 at 005789e5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CGameInstance.suppress_set_geometry
 ;   undefined4 g_CGameInstance.render_mode
 ;
@@ -90,8 +90,8 @@ section .text
     MOV dword ptr [ESP + 0x28],EAX      ; 0053ac07
     LEA EAX,[ESP + 0x4]                 ; 0053ac0b
     PUSH EAX                            ; 0053ac0f
-    MOV EDX,dword ptr [0x005f2afc]      ; 0053ac10 | DAT_005f2afc
-    PUSH EDX                            ; 0053ac16 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 0053ac10 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 0053ac16 | g_CDemonRenderer_01bdd7e4
     ADD EBX,0x48                        ; 0053ac17
     INC ESI                             ; 0053ac1a
     CALL engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330 ; 0053ac1b
@@ -107,8 +107,8 @@ section .text
     PUSH ECX                            ; 0053ac34
     PUSH EDI                            ; 0053ac35
     PUSH EBP                            ; 0053ac36
-    MOV EBX,dword ptr [0x005f2afc]      ; 0053ac37 | DAT_005f2afc
-    PUSH EBX                            ; 0053ac3d | DAT_01bdd7e4
+    MOV EBX,dword ptr [0x005f2afc]      ; 0053ac37 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBX                            ; 0053ac3d | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_0046d8f0 ; 0053ac3e
         ;   XREF to: 0046d8f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_0046d8f0(CDemonRenderer * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0053ac43
@@ -119,9 +119,9 @@ section .text
     POP ESI                             ; 0053ac4b
     POP EBX                             ; 0053ac4c
     RET                                 ; 0053ac4d
-    MOV ESI,dword ptr [0x005f2afc]      ; 0053ac4e | DAT_005f2afc
+    MOV ESI,dword ptr [0x005f2afc]      ; 0053ac4e | g_CDemonRenderer_PTR_005f2afc
         ;   Label: LAB_0053ac4e
-    PUSH ESI                            ; 0053ac54 | DAT_01bdd7e4
+    PUSH ESI                            ; 0053ac54 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0053ac55
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0053ac5a

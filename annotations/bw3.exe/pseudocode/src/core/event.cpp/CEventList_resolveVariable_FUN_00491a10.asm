@@ -11,7 +11,7 @@
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492121
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bf4c0
+;   TerminatedCString s_TRUE_005bf4c0
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findGameFlag_FUN_00494d80
@@ -30,7 +30,7 @@ section .text
     PUSH EBP                            ; 00491a13
     MOV EDI,dword ptr [ESP + 0x14]      ; 00491a14
     MOV EBP,dword ptr [ESP + 0x18]      ; 00491a18
-    PUSH 0x5bf4c0                       ; 00491a1c | DAT_005bf4c0
+    PUSH 0x5bf4c0                       ; 00491a1c | = "TRUE"
     PUSH EBP                            ; 00491a21
     CALL crt_string.c__stricmp_FUN_005a3260 ; 00491a22
         ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005a3260(char * str1, char * str2)

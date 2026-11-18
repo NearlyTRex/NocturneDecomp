@@ -1,0 +1,20 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl engine_2d_c_getTextColor_FUN_00402840(void)
+;
+;
+; XREF[1]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40 at 00469dd4
+;
+; Referenced Globals:
+;   int g_CurrentTextColor = 0xf8
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,[0x005f0770]                ; 00402840 | g_CurrentTextColor
+        ;   Label: engine_2d.c_getTextColor_FUN_00402840
+    RET                                 ; 00402845
+

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_resetAllPuzzles_FUN_0059abb0(void)
 
 {
@@ -16,14 +14,14 @@ void __cdecl core_bmppuzzl_cpp_resetAllPuzzles_FUN_0059abb0(void)
   int iVar3;
   
   iVar2 = 0;
-  if (0 < _DAT_026677b4) {
+  if (0 < g_INT_ARRAY_026677b4[0]) {
     iVar3 = 0;
     do {
       puVar1 = (uint *)(iVar3 + 0x26677b8);
       iVar3 = iVar3 + 4;
       iVar2 = iVar2 + 1;
       (**(code **)(*(int *)*puVar1 + 8))((int *)*puVar1);
-    } while (iVar2 < _DAT_026677b4);
+    } while (iVar2 < g_INT_ARRAY_026677b4[0]);
   }
   return;
 }

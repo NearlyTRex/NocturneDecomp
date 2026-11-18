@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CExplosion_activate_FUN_00498d30(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier)
 
 {
@@ -48,9 +46,9 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_00498d30(CExplosion *this_ptr
     fVar5 = (float10)fcos((float10)local_20);
     fVar6 = (float10)fsin((float10)local_14);
     fVar7 = (float10)fsin((float10)local_20);
-    local_50.y = (float)(fVar7 * (float10)_DAT_005d5516);
-    local_50.x = (float)(fVar4 * (float10)_DAT_005d5516 * fVar5);
-    local_50.z = (float)(fVar6 * (float10)_DAT_005d5516 * fVar5);
+    local_50.y = (float)(fVar7 * (float10)30.0f);
+    local_50.x = (float)(fVar4 * (float10)30.0f * fVar5);
+    local_50.z = (float)(fVar6 * (float10)30.0f * fVar5);
     puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 4);
     local_44[0].x = (this_ptr->position).x;
     *(uint *)((int)local_44 + (uint)bVar3 * -8 + 4) = *puVar2;
@@ -58,9 +56,10 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_00498d30(CExplosion *this_ptr
          puVar2[(uint)bVar3 * -2 + 1];
     local_44[0].y = local_44[0].y + 1.0;
     model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
-                          ((CKeyFramedModelInstance *)((iVar1 % 5) * 0x17c + 0x1c3ec5c));
+                          (g_CFireEffectDebrisModels + iVar1 % 5);
     iVar1 = iVar1 + 1;
-    core_fire_cpp_CFireEffect_createRock_FUN_0049d5b0(0x01C3DEB4,local_44,&local_50,model_ptr);
+    core_fire_cpp_CFireEffect_createRock_FUN_0049d5b0(g_CFireEffectPtr,local_44,&local_50,model_ptr)
+    ;
   } while (iVar1 < 10);
   return;
 }

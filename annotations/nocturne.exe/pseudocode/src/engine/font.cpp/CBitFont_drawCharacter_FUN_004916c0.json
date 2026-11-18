@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1782,
-    "complexity_score": 1009,
+    "complexity_score": 970,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 559,
-    "suspect_count": 43,
+    "pseudocode_lines": 560,
+    "suspect_count": 40,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 2341
+    "total_lines": 2342
   },
   "cross_references": [
     {
@@ -195,26 +193,26 @@
     },
     {
       "addr": "01c70f5c",
-      "name": "DAT_01c70f5c",
-      "type": "undefined4",
+      "name": "g_ShadowColor8",
+      "type": "uchar",
       "value": null
     },
     {
       "addr": "01c70f5e",
-      "name": "DAT_01c70f5e",
-      "type": "undefined4",
+      "name": "g_ShadowColor16",
+      "type": "ushort",
       "value": null
     },
     {
       "addr": "01c70f60",
-      "name": "DAT_01c70f60",
-      "type": "undefined4",
+      "name": "g_ShadowColor32",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c70f70",
-      "name": "DAT_01c70f70",
-      "type": "undefined4",
+      "name": "g_DefaultTextColor",
+      "type": "int",
       "value": null
     }
   ],
@@ -379,6 +377,24 @@
     "pcode_op_count": 10724
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a9870",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9725
+    },
+    "bw1.exe": {
+      "addr": "004c2810",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9725
+    },
+    "bw3.exe": {
+      "addr": "004b1460",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4874
+    },
     "nocedit.exe": {
       "addr": "004ce7a0",
       "by": "name",
@@ -789,19 +805,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);",
+      "text": "pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_cast"
     },
     {
@@ -809,39 +817,23 @@
       "line": 109,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);",
+      "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_01c70f5c",
-      "severity": "mild",
-      "text": "*puVar7 = DAT_01c70f5c;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 128,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);",
+      "text": "puVar9 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_01c70f70",
-      "severity": "mild",
-      "text": "*puVar7 = DAT_01c70f70;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 147,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);",
+      "text": "puVar9 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_cast"
     },
     {
@@ -849,7 +841,7 @@
       "line": 170,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 2);",
+      "text": "puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 2);",
       "type": "pointer_cast"
     },
     {
@@ -857,7 +849,7 @@
       "line": 189,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);",
       "type": "pointer_cast"
     },
     {
@@ -865,7 +857,7 @@
       "line": 240,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 2);",
       "type": "pointer_cast"
     },
     {
@@ -873,7 +865,7 @@
       "line": 259,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
+      "text": "puVar13 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
       "type": "pointer_cast"
     },
     {
@@ -881,7 +873,7 @@
       "line": 308,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_cast"
     },
     {
@@ -889,7 +881,7 @@
       "line": 327,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);",
       "type": "pointer_cast"
     },
     {
@@ -897,7 +889,7 @@
       "line": 374,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "puVar13 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_cast"
     },
     {
@@ -905,7 +897,7 @@
       "line": 391,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
       "type": "pointer_cast"
     },
     {
@@ -913,7 +905,7 @@
       "line": 441,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4);",
+      "text": "puVar12 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4);",
       "type": "pointer_cast"
     },
     {
@@ -921,7 +913,7 @@
       "line": 458,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4),local_d4,",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4),local_d4,",
       "type": "pointer_cast"
     },
     {
@@ -929,7 +921,7 @@
       "line": 472,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_cast"
     },
     {
@@ -937,7 +929,7 @@
       "line": 489,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14)),local_d4,",
       "type": "pointer_cast"
     },
     {
@@ -945,7 +937,7 @@
       "line": 502,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_cast"
     },
     {
@@ -953,7 +945,7 @@
       "line": 519,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4),local_d4,",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4),local_d4,",
       "type": "pointer_cast"
     },
     {
@@ -961,7 +953,7 @@
       "line": 533,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4);",
+      "text": "puVar12 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4);",
       "type": "pointer_cast"
     },
     {
@@ -969,7 +961,7 @@
       "line": 550,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14)),local_d4,",
       "type": "pointer_cast"
     },
     {
@@ -977,7 +969,7 @@
       "line": 90,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);",
+      "text": "pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_truncation"
     },
     {
@@ -985,7 +977,7 @@
       "line": 109,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);",
+      "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_truncation"
     },
     {
@@ -993,7 +985,7 @@
       "line": 128,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);",
+      "text": "puVar9 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_truncation"
     },
     {
@@ -1001,7 +993,7 @@
       "line": 147,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);",
+      "text": "puVar9 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_truncation"
     },
     {
@@ -1009,7 +1001,7 @@
       "line": 170,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 2);",
+      "text": "puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 2);",
       "type": "pointer_truncation"
     },
     {
@@ -1017,7 +1009,7 @@
       "line": 189,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);",
       "type": "pointer_truncation"
     },
     {
@@ -1025,7 +1017,7 @@
       "line": 240,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 2);",
       "type": "pointer_truncation"
     },
     {
@@ -1033,7 +1025,7 @@
       "line": 259,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
+      "text": "puVar13 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
       "type": "pointer_truncation"
     },
     {
@@ -1041,7 +1033,7 @@
       "line": 308,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_truncation"
     },
     {
@@ -1049,7 +1041,7 @@
       "line": 327,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);",
       "type": "pointer_truncation"
     },
     {
@@ -1057,7 +1049,7 @@
       "line": 374,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "puVar13 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_truncation"
     },
     {
@@ -1065,7 +1057,7 @@
       "line": 391,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
       "type": "pointer_truncation"
     },
     {
@@ -1073,7 +1065,7 @@
       "line": 441,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4);",
+      "text": "puVar12 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4);",
       "type": "pointer_truncation"
     },
     {
@@ -1081,7 +1073,7 @@
       "line": 458,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4),local_d4,",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4),local_d4,",
       "type": "pointer_truncation"
     },
     {
@@ -1089,7 +1081,7 @@
       "line": 472,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_truncation"
     },
     {
@@ -1097,7 +1089,7 @@
       "line": 489,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14)),local_d4,",
       "type": "pointer_truncation"
     },
     {
@@ -1105,7 +1097,7 @@
       "line": 502,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_truncation"
     },
     {
@@ -1113,7 +1105,7 @@
       "line": 519,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4),local_d4,",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4),local_d4,",
       "type": "pointer_truncation"
     },
     {
@@ -1121,7 +1113,7 @@
       "line": 533,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4);",
+      "text": "puVar12 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4);",
       "type": "pointer_truncation"
     },
     {
@@ -1129,7 +1121,7 @@
       "line": 550,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14)),local_d4,",
       "type": "pointer_truncation"
     }
   ]

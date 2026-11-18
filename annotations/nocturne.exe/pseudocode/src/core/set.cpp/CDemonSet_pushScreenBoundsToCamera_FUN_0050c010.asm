@@ -21,8 +21,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_007f7374
-;   undefined4 DAT_01b4d738
+;   CDemonCamera* g_SkipClearBuffersSceneCamera
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;   undefined4 g_Projection.center_x_fixed
@@ -38,7 +38,7 @@ section .text
     PUSH EBP                            ; 0050c010
         ;   Label: core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010
     SUB ESP,0x1c                        ; 0050c011
-    CMP dword ptr [0x007f7374],0x0      ; 0050c014 | DAT_007f7374
+    CMP dword ptr [0x007f7374],0x0      ; 0050c014 | g_SkipClearBuffersSceneCamera
     JZ 0x0050c1b5                       ; 0050c01b
         ;   XREF to: 0050c1b5 (CONDITIONAL_JUMP)  ; LAB_0050c1b5
     PUSH EDI                            ; 0050c021
@@ -48,7 +48,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 0050c028 | g_CDemonRenderer_PTR_005ae704
     MOV EDI,dword ptr [0x01c00c50]      ; 0050c02d | g_Projection.center_x_fixed
     MOV ECX,dword ptr [0x01c00c48]      ; 0050c033 | g_Projection
-    MOV ESI,dword ptr [EAX]             ; 0050c039 | DAT_01b4d738
+    MOV ESI,dword ptr [EAX]             ; 0050c039 | g_CDemonRenderer_01b4d738
     MOV EAX,[0x01c00c50]                ; 0050c03b | g_Projection.center_x_fixed
     MOV EBP,dword ptr [0x01c00c54]      ; 0050c040 | g_Projection.center_y_fixed
     SUB EAX,ECX                         ; 0050c046
@@ -176,7 +176,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 0050c173
         ;   Label: LAB_0050c173
     MOV EBX,dword ptr [ESP + 0x24]      ; 0050c177
-    MOV EDX,dword ptr [0x007f7374]      ; 0050c17b | DAT_007f7374
+    MOV EDX,dword ptr [0x007f7374]      ; 0050c17b | g_SkipClearBuffersSceneCamera
     SAR EBX,0x10                        ; 0050c181
     SAR EBP,0x10                        ; 0050c184
     PUSH EBX                            ; 0050c187

@@ -15,7 +15,7 @@ section .text
     PUSH 0x1ffc4                        ; 004e8ff0
         ;   Label: core_haystack.cpp_factoryFuncHaystack_FUN_004e8ff0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004e8ff5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004e8ffa
     TEST EAX,EAX                        ; 004e8ffd
     JNZ 0x004e9002                      ; 004e8fff

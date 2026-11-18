@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 41,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 80
   },
   "cross_references": [],
@@ -69,7 +67,7 @@
     },
     {
       "addr": "0078a123",
-      "name": "DAT_0078a123",
+      "name": "g_CHAR_ARRAY_0077d250+0xced3",
       "type": "undefined4",
       "value": null
     }
@@ -166,16 +164,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0078a123",
-      "severity": "mild",
-      "text": "if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

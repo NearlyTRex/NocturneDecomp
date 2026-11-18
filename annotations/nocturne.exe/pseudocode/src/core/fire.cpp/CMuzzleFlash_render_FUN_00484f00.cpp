@@ -36,20 +36,20 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,(uVar1 & 0x3fff) + 0x1800);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-            (&g_CKeyFramedModelInstance_01c09338,0.0,99);
+            (&g_FireEffectGunFlashModel,0.0,99);
   local_1c.x = 0.0;
   local_1c.y = 0.0;
   local_1c.z = 1.5707964;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,&local_1c,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-            (&g_CKeyFramedModelInstance_01c09338,0.0,99);
+            (&g_FireEffectGunFlashModel,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   local_28.x = 0.7853982;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&stack0xffffffd0,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-            (&g_CKeyFramedModelInstance_01c09338,0.0,99);
+            (&g_FireEffectGunFlashModel,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   g_CDemonSetPtr->lighting_quality_mode = 0;

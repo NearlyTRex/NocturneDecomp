@@ -16,11 +16,11 @@
 ;   TerminatedCString s_Too_bony_005f1ade
 ;   TerminatedCString s_core_skeleton_cpp_005f1ae8
 ;   TerminatedCString s_Out_of_hunk_in_CSkeleton_005f1afd
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CSkeleton_free_FUN_00562f70
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;
@@ -44,10 +44,10 @@ section .text
     MOV ECX,0x5f1ac9                    ; 00562e79 | = "..\\core\\skeleton.cpp"
     MOV ESI,0xc8                        ; 00562e7e
     PUSH 0x5f1ade                       ; 00562e83 | = "Too bony!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00562e88 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00562e8e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00562e94
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00562e88 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00562e8e | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00562e94
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00562e99
     MOV EAX,dword ptr [ESP + 0x14]      ; 00562e9c
         ;   Label: LAB_00562e9c
@@ -59,7 +59,7 @@ section .text
     SHL EAX,0x4                         ; 00562ebd
     PUSH EAX                            ; 00562ec0
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00562ec1
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     MOV EDX,dword ptr [EBX + 0x1ec8c]   ; 00562ec6
     MOV dword ptr [EBX + 0x1ec90],EAX   ; 00562ecc
     LEA EAX,[EDX*0x4 + 0x0]             ; 00562ed2
@@ -68,7 +68,7 @@ section .text
     SHL EAX,0x2                         ; 00562ede
     PUSH EAX                            ; 00562ee1
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00562ee2
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     MOV EDX,dword ptr [EBX + 0x1ec8c]   ; 00562ee7
     MOV dword ptr [EBX + 0x1ec94],EAX   ; 00562eed
     LEA EAX,[EDX*0x4 + 0x0]             ; 00562ef3
@@ -77,7 +77,7 @@ section .text
     SHL EAX,0x2                         ; 00562eff
     PUSH EAX                            ; 00562f02
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00562f03
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 00562f08
     MOV EBP,dword ptr [EBX + 0x1ec90]   ; 00562f0b
     MOV dword ptr [EBX + 0x1ec98],EAX   ; 00562f11
@@ -103,10 +103,10 @@ section .text
     MOV ECX,0x5f1ae8                    ; 00562f40 | = "..\\core\\skeleton.cpp"
     MOV ESI,0xdc                        ; 00562f45
     PUSH 0x5f1afd                       ; 00562f4a | = "Out of hunk in CSkeleton::allocMemory..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00562f4f | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00562f55 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00562f5b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00562f4f | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00562f55 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00562f5b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00562f60
     POP EDI                             ; 00562f63
     POP EBP                             ; 00562f64

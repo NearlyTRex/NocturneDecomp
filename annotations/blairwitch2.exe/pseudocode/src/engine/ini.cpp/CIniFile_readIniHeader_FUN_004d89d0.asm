@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_inivar.cpp_readIniData_FUN_004d8d60 at 004d8da2
 ;   core_inivar.cpp_writeIniData_FUN_004d94d0 at 004d94f8
-;   engine_ini.cpp_FUN_004d8910 at 004d8933
+;   engine_ini.cpp_CIniFile_ctor_FUN_004d8910 at 004d8933
 ;
 ; *****************************************************************************
 

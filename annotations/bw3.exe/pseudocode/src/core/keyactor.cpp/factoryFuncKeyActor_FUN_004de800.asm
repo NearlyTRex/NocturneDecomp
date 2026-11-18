@@ -15,7 +15,7 @@ section .text
     PUSH 0x31c                          ; 004de800
         ;   Label: core_keyactor.cpp_factoryFuncKeyActor_FUN_004de800
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004de805
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004de80a
     TEST EAX,EAX                        ; 004de80d
     JNZ 0x004de812                      ; 004de80f

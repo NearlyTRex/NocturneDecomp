@@ -25,13 +25,13 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0050fda0
   str1 = (CPackedBitmap *)0x0;
 LAB_0050fdc2:
   if (str1 != (CPackedBitmap *)0x0) {
-    iVar1 = _stricmp(str1->filename,(char *)0x5cbd04);
+    iVar1 = _stricmp(str1->filename,".raw");
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990
                 (this_ptr,apply_palette_flag);
       return;
     }
-    iVar1 = _stricmp(str1->filename,(char *)0x5cbd09);
+    iVar1 = _stricmp(str1->filename,".pbm");
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_00510210(this_ptr,apply_palette_flag);
       return;

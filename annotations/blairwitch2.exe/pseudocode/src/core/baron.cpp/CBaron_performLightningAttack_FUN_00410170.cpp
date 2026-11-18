@@ -6,140 +6,150 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *this_ptr)
 
 {
+  CLocation *start_position;
+  CEnemy *this_ptr_00;
   int iVar1;
   int iVar2;
-  int iVar3;
-  byte bVar4;
-  float afStackY_10d4 [36];
-  CMatrix3x4f *apCStackY_1044 [929];
-  CFireEffect *this_ptr_00;
-  CVector3f *start_position;
-  CVector3f *end_position;
+  byte bVar3;
+  float afStackY_10d4 [965];
+  CFireEffect *this_ptr_01;
+  CVector3f *start_position_00;
+  CVector3f *pCVar4;
   float end_width;
-  uint *puVar5;
   float end_spread;
-  byte local_1a0 [120];
+  CVector3f local_1a0 [10];
   SDamageInfo local_128;
-  uint uStack_ec;
-  float afStack_e8 [5];
+  CVector3f CStack_ec;
+  CVector3f CStack_e0;
   float fStack_d4;
-  uint uStack_d0;
-  uint uStack_cc;
-  uint uStack_c8;
+  float afStack_d0 [2];
+  CVector3f CStack_c8;
   CVector3f CStack_bc;
   CVector3f CStack_b0;
-  uint local_a4;
-  float afStack_a0 [2];
+  CVector3f local_a4;
   CVector3f CStack_98;
-  uint uStack_8c;
-  float afStack_88 [5];
-  float fStack_74;
+  CVector3f CStack_8c;
+  CVector3f CStack_80;
+  CVector3f CStack_74;
   float fStack_68;
-  uint uStack_64;
+  float fStack_64;
   uint uStack_60;
-  uint local_5c;
-  CMatrix3x4f *local_58 [2];
+  CVector3f local_5c;
   CVector3f CStack_50;
-  uint local_44;
-  CMatrix3x4f *local_40 [5];
-  uint uStack_2c;
-  uint uStack_20;
-  byte local_14 [4];
+  CVector3f local_44;
+  CVector3f local_38;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
+  float local_14;
   int iStack_10;
   CMatrix3x4f *local_c;
   
-  bVar4 = 0;
-  iVar1 = core_hero_cpp_FUN_004d00c0(this_ptr,local_14);
-  if (iVar1 == 0) {
+  bVar3 = 0;
+  this_ptr_00 = core_hero_cpp_CHero_closestEnemy_FUN_004d00c0(&this_ptr->base,&local_14);
+  if (this_ptr_00 == (CEnemy *)0x0) {
     return;
   }
-  core_actor_cpp_FUN_00408de0(this_ptr,iVar1 + 0x20);
-  local_44 = local_a4;
-  local_40[(uint)bVar4 * -2] = (CMatrix3x4f *)afStack_a0[(uint)bVar4 * -2];
-  local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       (CMatrix3x4f *)afStack_a0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_44);
-  local_5c = local_40[2];
-  local_58[(uint)bVar4 * -2] = local_40[(uint)bVar4 * -2 + 3];
-  local_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+            ((CDemonActor *)this_ptr,&(this_ptr_00->base).base.location.position,&local_a4);
+  local_44.x = local_a4.x;
+  *(uint *)((int)&local_44 + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)&local_a4 + (uint)bVar3 * -8 + 4);
+  *(uint *)((int)&local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+       *(uint *)((int)&local_a4 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_44,&local_38);
+  local_5c.x = local_38.x;
+  *(uint *)((int)&local_5c + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)&local_38 + (uint)bVar3 * -8 + 4);
+  *(uint *)((int)&local_5c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+       *(uint *)((int)&local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   if (&local_44 != &local_5c) {
-    local_44 = local_5c;
-    local_40[0] = local_58[0];
-    local_40[1] = local_58[1];
+    local_44.x = local_5c.x;
+    local_44.y = local_5c.y;
+    local_44.z = local_5c.z;
   }
-  local_40[0] = (CMatrix3x4f *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0((float)local_40[0]);
-  local_c = local_40[0];
-  if (((float)local_40[0] < _DAT_005cb573) || (0x3f490fdb < (int)local_40[0])) {
+  local_44.y = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_44.y);
+  local_c = (CMatrix3x4f *)local_44.y;
+  if ((local_44.y < -0.7853982f) || (0x3f490fdb < (int)local_44.y)) {
+    start_position = &(this_ptr_00->base).base.location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0049e6e0
-              (0x01C3DEB4,(CVector3f *)(iVar1 + 0x20),16.0,1,0.0);
+              (g_CFireEffectPtr,&start_position->position,16.0,1,0.0);
     core_fire_cpp_CFireEffect_createCrater_FUN_0049e630
-              (0x01C3DEB4,(CVector3f *)(iVar1 + 0x20),4.0);
+              (g_CFireEffectPtr,&start_position->position,4.0);
   }
   else {
     __arrinit(local_1a0,10,&g_CVectorTypeInfo);
-    iVar2 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x5c))(iVar1,local_1a0);
-    iStack_10 = iVar2;
-    iVar3 = rand();
-    core_actor_cpp_FUN_00408d70(iVar1,local_1a0 + (iVar3 % iVar2) * 0xc);
-    CStack_bc.x = afStack_88[2];
-    afStack_e8[(uint)bVar4 * -2 + 0xc] = afStack_88[(uint)bVar4 * -2 + 3];
-    afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd] =
-         afStack_88[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-    if (&CStack_50 != (CVector3f *)(afStack_e8 + 0xb)) {
+    iVar1 = (*((this_ptr_00->base).base.vtable._ub)->getTargetPoints)
+                      ((CDemonActor *)this_ptr_00,local_1a0);
+    iStack_10 = iVar1;
+    iVar2 = rand();
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              ((CDemonActor *)this_ptr_00,local_1a0 + iVar2 % iVar1,&CStack_80);
+    CStack_bc.x = CStack_80.x;
+    *(uint *)((int)&CStack_bc + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_80 + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_bc + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_80 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    if (&CStack_50 != &CStack_bc) {
       CStack_50.x = CStack_bc.x;
       CStack_50.y = CStack_bc.y;
       CStack_50.z = CStack_bc.z;
     }
-    iVar2 = rand();
-    core_actor_cpp_FUN_00408d70(iVar1,local_1a0 + (iVar2 % iStack_10) * 0xc);
-    fStack_d4 = (float)uStack_20;
-    afStack_e8[(uint)bVar4 * -2 + 6] = (float)local_40[(uint)bVar4 * -2 + 9];
-    afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
-         (float)local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
-    if (afStack_88 + 8 != afStack_e8 + 5) {
+    iVar1 = rand();
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              ((CDemonActor *)this_ptr_00,local_1a0 + iVar1 % iStack_10,&CStack_20);
+    fStack_d4 = CStack_20.x;
+    afStack_d0[(uint)bVar3 * -2] = *(float *)((int)&CStack_20 + (uint)bVar3 * -8 + 4);
+    afStack_d0[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+         *(float *)((int)&CStack_20 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    if (&fStack_68 != &fStack_d4) {
       fStack_68 = fStack_d4;
-      uStack_64 = uStack_d0;
-      uStack_60 = uStack_cc;
+      fStack_64 = afStack_d0[0];
+      uStack_60 = afStack_d0[1];
     }
     local_c = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
-    core_xform_cpp_FUN_00591530(&DAT_0265370c,local_c + DAT_007bc4cc);
-    puVar5 = &uStack_ec;
-    uStack_ec = uStack_2c;
-    afStack_e8[(uint)bVar4 * -2] = (float)local_40[(uint)bVar4 * -2 + 6];
-    afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         (float)local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_actor_cpp_FUN_00408d70(this_ptr,puVar5);
-    CStack_b0.x = fStack_74;
-    *(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + 4) = afStack_88[(uint)bVar4 * -2 + 6];
-    *(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_88[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_xform_cpp_FUN_00591530(&DAT_0265370c,local_c + DAT_007bc4d0);
-    puVar5 = &uStack_8c;
-    uStack_8c = uStack_c8;
-    afStack_88[(uint)bVar4 * -2] = afStack_e8[(uint)bVar4 * -2 + 9];
-    afStack_88[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
-    core_actor_cpp_FUN_00408d70(this_ptr,puVar5);
+    core_xform_cpp_transformVector3x4_FUN_00591530
+              (&g_ZeroVector,local_c + g_BaronIndices[0xd],&CStack_2c);
+    pCVar4 = &CStack_ec;
+    CStack_ec.x = CStack_2c.x;
+    *(uint *)((int)&CStack_ec + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_2c + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_ec + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_2c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              ((CDemonActor *)this_ptr,pCVar4,&CStack_74);
+    CStack_b0.x = CStack_74.x;
+    *(uint *)((int)&CStack_b0 + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_74 + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_b0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_74 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    core_xform_cpp_transformVector3x4_FUN_00591530
+              (&g_ZeroVector,local_c + g_BaronIndices[0xe],&CStack_c8);
+    pCVar4 = &CStack_8c;
+    CStack_8c.x = CStack_c8.x;
+    *(uint *)((int)&CStack_8c + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_c8 + (uint)bVar3 * -8 + 4);
+    *(uint *)((int)&CStack_8c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_c8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              ((CDemonActor *)this_ptr,pCVar4,&CStack_e0);
     end_spread = 4.0;
     end_width = 0.5;
-    iVar2 = 1;
-    end_position = &CStack_50;
-    start_position = &CStack_b0;
-    CStack_98.x = afStack_e8[2];
-    *(float *)((int)&CStack_98 + (uint)bVar4 * -8 + 4) = afStack_e8[(uint)bVar4 * -2 + 3];
-    this_ptr_00 = 0x01C3DEB4;
-    *(float *)((int)&CStack_98 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_e8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+    iVar1 = 1;
+    pCVar4 = &CStack_50;
+    start_position_00 = &CStack_b0;
+    CStack_98.x = CStack_e0.x;
+    *(uint *)((int)&CStack_98 + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&CStack_e0 + (uint)bVar3 * -8 + 4);
+    this_ptr_01 = g_CFireEffectPtr;
+    *(uint *)((int)&CStack_98 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         *(uint *)((int)&CStack_e0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760
-              (this_ptr_00,start_position,end_position,iVar2,end_width,end_spread);
+              (this_ptr_01,start_position_00,pCVar4,iVar1,end_width,end_spread);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760
-              (0x01C3DEB4,&CStack_98,&CStack_50,1,0.5,4.0);
+              (g_CFireEffectPtr,&CStack_98,&CStack_50,1,0.5,4.0);
     (*((this_ptr->base).base.base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,"baron-attack.wav");
   }
@@ -151,7 +161,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
   if ((CBaron *)local_128.wielder == (CBaron *)0x0) {
     local_128.wielder = (CDemonActor *)this_ptr;
   }
-  (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x110))(iVar1,&local_128);
-  *(uint *)(iVar1 + 0x1022c) = 0x40400000;
+  (*(((this_ptr_00->base).base.vtable._uc)->_uc).processDamage)(&this_ptr_00->base,&local_128);
+  (this_ptr_00->base).stagger_amount = 3.0;
   return;
 }

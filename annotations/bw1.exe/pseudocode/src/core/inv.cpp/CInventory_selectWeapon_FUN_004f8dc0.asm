@@ -12,12 +12,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_doc.cpp_FUN_00469550 at 0046bbc5
-;   core_game.cpp_FUN_004d0ee0 at 004d11e0
-;   core_game.cpp_FUN_004d9260 at 004d9492
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046bbc5
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0 at 004d11e0
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004d9492
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0 at 004eb046
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f8809
 ;   core_inv.cpp_CInventory_select_FUN_004f9bd0 at 004f9cec
-;   core_inv.cpp_FUN_004f7690 at 004f8809
 ;   core_scat.cpp_CScat_createDefaultWeapon_FUN_00540d50 at 00540da9
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00548fee
 ;
@@ -26,9 +26,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
+;   core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540
 ;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
-;   core_inv.cpp_FUN_004fa540
 ;
 ; *****************************************************************************
 
@@ -124,8 +124,8 @@ section .text
     PUSH ECX                            ; 004f8e59
     PUSH EAX                            ; 004f8e5a
     PUSH ESI                            ; 004f8e5b
-    CALL core_inv.cpp_FUN_004fa540      ; 004f8e5c
-        ;   XREF to: 004fa540 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004fa540()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540 ; 004f8e5c
+        ;   XREF to: 004fa540 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004f8e61
     TEST EAX,EAX                        ; 004f8e64
     JZ 0x004f8e31                       ; 004f8e66

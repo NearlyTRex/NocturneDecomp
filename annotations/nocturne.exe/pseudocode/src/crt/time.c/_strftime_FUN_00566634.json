@@ -2,19 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 307,
+    "complexity_score": 283,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 232,
-    "suspect_count": 6,
+    "pseudocode_lines": 233,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 717
+    "total_lines": 718
   },
   "cross_references": [
     {
@@ -116,31 +115,31 @@
     },
     {
       "addr": "005c17f8",
-      "name": "DAT_005c17f8",
-      "type": "undefined4",
+      "name": "g_WeekdayNamesShort",
+      "type": "char[7][4]",
       "value": null
     },
     {
       "addr": "005c1814",
-      "name": "PTR_s_Sunday_005c1814",
-      "type": "undefined1*",
-      "value": "005989e8"
+      "name": "g_WeekdayNamesLong",
+      "type": "char*[7]",
+      "value": null
     },
     {
       "addr": "005c1830",
-      "name": "DAT_005c1830",
-      "type": "undefined4",
+      "name": "g_MonthNamesShort",
+      "type": "char[12][4]",
       "value": null
     },
     {
       "addr": "005c1860",
-      "name": "PTR_s_January_005c1860",
-      "type": "undefined1*",
-      "value": "00598a2c"
+      "name": "g_MonthNamesLong",
+      "type": "char*[12]",
+      "value": null
     },
     {
       "addr": "005c1f0c",
-      "name": "PTR_DAT_005c1f0c",
+      "name": "PTR_s_EST_005c1f0c",
       "type": "void*",
       "value": "005c1e08"
     }
@@ -333,40 +332,24 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_005c17f8",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005c17f8 + time_ptr->tm_wday * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_005c1830",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005c1830 + time_ptr->tm_mon * 4;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 222,
+      "line": 223,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar3 = uVar4 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "text": "for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 227,
+      "line": 228,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar3 = uVar4 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "text": "for (uVar4 = uVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 211,
+      "line": 212,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

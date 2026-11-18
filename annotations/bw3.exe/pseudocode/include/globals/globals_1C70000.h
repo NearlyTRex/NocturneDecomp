@@ -4,12 +4,64 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CFireEffect.h"
+#include "types/classes/CFlameCan.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CSmokeParticle.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C70000
 // =============================================================================
 
+// CCharacter*[50]
+extern CCharacter* g_GunFlameCandidates[50];
+
 // CDemonActorType
 extern CDemonActorType g_CFilmReelClassInfo;
+extern CDemonActorType g_CDemonActorType_01c73618;
+
+// CFireEffect
+extern CFireEffect g_CFireEffect_01c73654;
+
+// CFlameCan*[150]
+extern CFlameCan* g_FlameCans[150];
+
+// CKeyFramedModelInstance
+extern CKeyFramedModelInstance g_FireEffectFlamingStakeModel;
+extern CKeyFramedModelInstance g_FireEffectFireballModel;
+extern CKeyFramedModelInstance g_FireEffectFireballSmallModel;
+extern CKeyFramedModelInstance g_FireEffectFireballGreenModel;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c73c88;
+extern CKeyFramedModelInstance g_FireEffectGunFlashModel;
+
+// CKeyFramedModelInstance[5]
+extern CKeyFramedModelInstance g_CFireEffectDebrisModels[5];
+
+// CSmokeParticle[2048]
+extern CSmokeParticle g_SmokeParticlePool[2048];
+
+// CVector3i
+extern CVector3i g_BillboardCameraRight;
+extern CVector3i g_BillboardCameraUp;
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_BillboardPrimitive;
+
+// char[256]
+extern char g_EventErrorMessageBuffer[256];
+
+// int
+extern int g_EventDryRun;
+extern int g_TextureAnimCounter2;
+extern int g_TextureAnimCounter1;
+extern int g_GunFlameCandidateCount;
+extern int g_FlameCanCount;
+extern int g_SmokeParticleAllocIndex;
+
+// uint[3]
+extern uint g_ShellBounceSoundHandles[3];
 

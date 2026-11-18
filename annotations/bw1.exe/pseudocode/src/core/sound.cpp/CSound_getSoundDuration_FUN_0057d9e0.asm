@@ -16,7 +16,7 @@
 ;   core_script.cpp_CScript_startDialogLine_FUN_0054aa60 at 0054aaf0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_00572390
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0057da3b
     INC DL                              ; 0057da3d
     AND EDX,0xff                        ; 0057da3f
-    TEST byte ptr [EDX + 0x626114],0x2  ; 0057da45 | DAT_00626114
+    TEST byte ptr [EDX + 0x626114],0x2  ; 0057da45 | g_CharacterClassificationTable
     JNZ 0x0057da0f                      ; 0057da4c
         ;   XREF to: 0057da0f (CONDITIONAL_JUMP)  ; LAB_0057da0f
     MOV DL,byte ptr [EBX]               ; 0057da4e

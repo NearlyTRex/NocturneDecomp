@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 228,
+    "complexity_score": 378,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 13,
+    "pseudocode_lines": 78,
+    "suspect_count": 27,
     "suspect_types": [
+      "bitcast_double_pair",
+      "displaced_global_access",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unresolved_funcptr",
+      "suspicious_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 222
+    "total_lines": 227
   },
   "cross_references": [
     {
@@ -58,86 +59,86 @@
   "globals": [
     {
       "addr": "02ce727c",
-      "name": "DAT_02ce727c",
+      "name": "g_CSfxSlot_ARRAY_02ce721c[0].hardware_buffer_handle",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ce7338",
-      "name": "DAT_02ce7338",
+      "name": "g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ce7384",
-      "name": "DAT_02ce7384",
+      "name": "g_CSfxSlot_ARRAY_02ce721c[1].options.flags",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ce7398",
-      "name": "DAT_02ce7398",
+      "name": "g_CSfxSlot_ARRAY_02ce721c[1].hardware_buffer_handle",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ce7450",
-      "name": "DAT_02ce7450",
+      "name": "g_CSfxSlot_ARRAY_02ce721c[1].changed_flags",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ce7453",
-      "name": "DAT_02ce7453",
+      "name": "g_CSfxSlot_ARRAY_02ce721c[1].changed_flags+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf2828",
-      "name": "DAT_02cf2828",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02cf2828",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02cf2838",
-      "name": "DAT_02cf2838",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02cf2838",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02cf2848",
-      "name": "DAT_02cf2848",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02cf2848",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02cf28b8",
-      "name": "DAT_02cf28b8",
-      "type": "undefined4",
+      "name": "g_INT_02cf28b8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf3280",
-      "name": "DAT_02cf3280",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02cf3288",
-      "name": "DAT_02cf3288",
-      "type": "undefined4",
+      "name": "g_HasHardware3DSound",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf3424",
-      "name": "DAT_02cf3424",
-      "type": "undefined4",
+      "name": "g_BYTE_02cf3424",
+      "type": "byte",
       "value": null
     },
     {
       "addr": "02cf3427",
-      "name": "DAT_02cf3427",
-      "type": "undefined4",
+      "name": "g_BYTE_02cf3427",
+      "type": "byte",
       "value": null
     }
   ],
@@ -224,84 +225,52 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 45,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*_DAT_02cf3280 + 0x44))",
-      "type": "unresolved_funcptr"
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)",
+      "type": "bitcast_double_pair"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*_DAT_02cf3280 + 0x4c))(_DAT_02cf3280,this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_02ceb91c",
-      "severity": "mild",
-      "text": "if (this_ptr == (CSfxSlot *)&DAT_02ceb91c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02cf3280 + 0x1c))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_02cf2828",
-      "severity": "mild",
-      "text": "(_DAT_02cf3280,*(uint *)(&DAT_02cf2828 + _DAT_02cf28b8 * 8),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_02cf2838",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02cf2838 + _DAT_02cf28b8 * 8),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
       "line": 48,
-      "match": "DAT_02cf2848",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02cf2848 + _DAT_02cf28b8 * 8),",
-      "type": "undefined_data"
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)",
+      "type": "bitcast_double_pair"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
-      "match": "code *",
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 51,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02cf3280 + 0x20))",
-      "type": "unresolved_funcptr"
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)",
+      "type": "bitcast_double_pair"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
+      "description": "Cast-and-add on &g_DOUBLE_02cf2828 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02cf2830 (at 0x02cf2830, +8 bytes).",
+      "line": 47,
+      "match": "g_DOUBLE_02cf2828",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02cf3280 + 0x24))",
-      "type": "unresolved_funcptr"
+      "text": "*(uint *)(&g_DOUBLE_02cf2828 + g_INT_02cf28b8))),",
+      "type": "suspicious_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 70,
-      "match": "code *",
+      "description": "Cast-and-add on &g_DOUBLE_02cf2838 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02cf2840 (at 0x02cf2840, +8 bytes).",
+      "line": 50,
+      "match": "g_DOUBLE_02cf2838",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02cf3280 + 0x18))(_DAT_02cf3280);",
-      "type": "unresolved_funcptr"
+      "text": "*(uint *)(&g_DOUBLE_02cf2838 + g_INT_02cf28b8))),",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_DOUBLE_02cf2848 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02cf2850 (at 0x02cf2850, +8 bytes).",
+      "line": 53,
+      "match": "g_DOUBLE_02cf2848",
+      "severity": "moderate",
+      "text": "*(uint *)(&g_DOUBLE_02cf2848 + g_INT_02cf28b8))));",
+      "type": "suspicious_cast"
     },
     {
       "description": "Pointer value `&this_ptr->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -312,12 +281,186 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `&g_DOUBLE_02cf2828` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)&g_DOUBLE_02cf2828",
+      "severity": "moderate",
+      "text": "((int)&g_DOUBLE_02cf2828 + g_INT_02cf28b8 * 8 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02cf2838` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)&g_DOUBLE_02cf2838",
+      "severity": "moderate",
+      "text": "((int)&g_DOUBLE_02cf2838 + g_INT_02cf28b8 * 8 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02cf2848` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&g_DOUBLE_02cf2848",
+      "severity": "moderate",
+      "text": "((int)&g_DOUBLE_02cf2848 + g_INT_02cf28b8 * 8 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3d_02cf2858.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)&g_CVector3d_02cf2858.x",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02cf2858.x + g_INT_02cf28b8 * 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3d_02cf2858.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)&g_CVector3d_02cf2858.y",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02cf2858.y + g_INT_02cf28b8 * 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3d_02cf2858.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 72,
+      "match": "(int)&g_CVector3d_02cf2858.z",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02cf2858.z + g_INT_02cf28b8 * 4));",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 35,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pbVar1 = (byte *)((int)&this_ptr->changed_flags + 3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 46,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&g_DOUBLE_02cf2828 + g_INT_02cf28b8 * 8 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 49,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&g_DOUBLE_02cf2838 + g_INT_02cf28b8 * 8 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&g_DOUBLE_02cf2848 + g_INT_02cf28b8 * 8 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 70,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02cf2858.x + g_INT_02cf28b8 * 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 71,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02cf2858.y + g_INT_02cf28b8 * 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 72,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02cf2858.z + g_INT_02cf28b8 * 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2cf284c] lands in g_DOUBLE_02cf2848 but intended target is g_DOUBLE_02cf2850 at 0x2cf2850 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02cf2848",
+      "displacement": "0x2cf284c",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02cf2850",
+      "line": 35,
+      "match": "0x2cf284c",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00558f69: MOV ESI,dword ptr [EAX*0x8 + 0x2cf284c]",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2cf2848] lands in g_DOUBLE_02cf2848 but intended target is g_DOUBLE_02cf2850 at 0x2cf2850 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02cf2848",
+      "displacement": "0x2cf2848",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02cf2850",
+      "line": 37,
+      "match": "0x2cf2848",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00558f71: MOV EDI,dword ptr [EAX*0x8 + 0x2cf2848]  ; g_DOUBLE_02cf2848",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2cf283c] lands in g_DOUBLE_02cf2838 but intended target is g_DOUBLE_02cf2840 at 0x2cf2840 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02cf2838",
+      "displacement": "0x2cf283c",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02cf2840",
+      "line": 39,
+      "match": "0x2cf283c",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00558f79: MOV EBP,dword ptr [EAX*0x8 + 0x2cf283c]",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2cf2838] lands in g_DOUBLE_02cf2838 but intended target is g_DOUBLE_02cf2840 at 0x2cf2840 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02cf2838",
+      "displacement": "0x2cf2838",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02cf2840",
+      "line": 41,
+      "match": "0x2cf2838",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00558f81: MOV ECX,dword ptr [EAX*0x8 + 0x2cf2838]  ; g_DOUBLE_02cf2838",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2cf282c] lands in g_DOUBLE_02cf2828 but intended target is g_DOUBLE_02cf2830 at 0x2cf2830 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02cf2828",
+      "displacement": "0x2cf282c",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02cf2830",
+      "line": 43,
+      "match": "0x2cf282c",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00558f89: MOV ESI,dword ptr [EAX*0x8 + 0x2cf282c]",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2cf2828] lands in g_DOUBLE_02cf2828 but intended target is g_DOUBLE_02cf2830 at 0x2cf2830 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02cf2828",
+      "displacement": "0x2cf2828",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02cf2830",
+      "line": 45,
+      "match": "0x2cf2828",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00558f91: MOV EDI,dword ptr [EAX*0x8 + 0x2cf2828]  ; g_DOUBLE_02cf2828",
+      "type": "displaced_global_access"
     }
   ]
 }

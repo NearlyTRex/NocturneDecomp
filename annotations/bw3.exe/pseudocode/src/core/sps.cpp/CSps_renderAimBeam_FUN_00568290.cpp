@@ -12,7 +12,8 @@ void __cdecl core_sps_cpp_CSps_renderAimBeam_FUN_00568290(CSps *this_ptr)
   int iVar1;
   SLaserInfo SStack_54;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(g_CDemonRenderer_PTR_005f2afc)
+  ;
   if (iVar1 != 0) {
     return;
   }

@@ -2,31 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 128,
+    "complexity_score": 95,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 4,
+    "pseudocode_lines": 55,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 243
+    "total_lines": 225
   },
   "cross_references": [
     {
-      "addr": "0055acd0",
-      "from_addr": "0055ad3a",
-      "name": "sound_snddx.cpp_FUN_0055acd0",
+      "addr": "0055b620",
+      "from_addr": "0055b6e2",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0055b620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055b620",
-      "from_addr": "0055b6e2",
-      "name": "sound_snddx.cpp_FUN_0055b620",
+      "addr": "0055acd0",
+      "from_addr": "0055ad3a",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_start_FUN_0055acd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +50,7 @@
     {
       "addr": "0055a670",
       "is_variadic": false,
-      "name": "sound_snddx.cpp_FUN_0055a670"
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670"
     },
     {
       "addr": "0055a560",
@@ -85,50 +84,50 @@
     },
     {
       "addr": "02cf49cc",
-      "name": "DAT_02cf49cc",
-      "type": "undefined4",
+      "name": "g_DirectSoundSecondaryBuffer",
+      "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02cf49d8",
-      "name": "DAT_02cf49d8",
-      "type": "undefined4",
+      "name": "g_StreamBitsPerSample",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf49dc",
-      "name": "DAT_02cf49dc",
-      "type": "undefined4",
+      "name": "g_StreamSampleRate",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf49e0",
-      "name": "DAT_02cf49e0",
-      "type": "undefined4",
+      "name": "g_StreamChannelCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf49e4",
-      "name": "DAT_02cf49e4",
-      "type": "undefined4",
+      "name": "g_StreamSamplesPerBlock",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf49e8",
-      "name": "DAT_02cf49e8",
-      "type": "undefined4",
+      "name": "g_StreamBlockSizeBytes",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf49ec",
-      "name": "DAT_02cf49ec",
-      "type": "undefined4",
+      "name": "g_StreamBlockCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf49f0",
-      "name": "DAT_02cf49f0",
-      "type": "undefined4",
+      "name": "g_StreamCurrentBlock",
+      "type": "int",
       "value": null
     }
   ],
@@ -233,36 +232,28 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*_DAT_02cf49cc + 0x2c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(int *)((int)apvStack_60",
+      "line": 34,
+      "match": "(LPVOID *)((int)apvStack_40",
       "severity": "moderate",
-      "text": "*(int *)((int)apvStack_60 + iVar3) = iVar4;",
+      "text": "*(LPVOID *)((int)apvStack_40 + iVar3) = pvVar4;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 65,
-      "match": "code *",
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 28,
+      "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*_DAT_02cf49cc + 0x4c))",
-      "type": "unresolved_funcptr"
+      "text": "iVar2 = (int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 29,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3;",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

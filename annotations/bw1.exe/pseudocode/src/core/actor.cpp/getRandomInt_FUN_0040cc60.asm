@@ -18,7 +18,7 @@
 ;   core_batman.cpp_CBatman_processDamage_FUN_00413f90 at 00414068
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00414fc0 at 00414ffa
 ;   core_bird.cpp_CBird_renderOpaque_FUN_00415690 at 00415709
-;   core_bird.cpp_FUN_00415830 at 0041588b
+;   core_bird.cpp_setRandomMotionVariant_FUN_00415830 at 0041588b
 ;   core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004177b0 at 00417f52
 ;   core_bmppuzzl.cpp_CChemPuzzle_reset_FUN_004176b0 at 0041774a
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041b750 at 0041b83e
@@ -26,9 +26,9 @@
 ;   ... and 55 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2ea1
-;   undefined4 DAT_005d2ea9
-;   undefined4 DAT_005d2ead
+;   double g_DOUBLE_005d2ea1 = 0.999990000000000
+;   float g_RandIntScale = 0.00003051851
+;   float g_GenRandIntScale = 5.960465E-8
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.is_processing
 ;
@@ -55,7 +55,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cc75
     FILD dword ptr [ESP + 0x10]         ; 0040cc79
     MOV EAX,[0x0061d95c]                ; 0040cc7d | g_CGamePtr
-    FADD double ptr [0x005d2ea1]        ; 0040cc82 | DAT_005d2ea1
+    FADD double ptr [0x005d2ea1]        ; 0040cc82 | g_DOUBLE_005d2ea1
     MOV EDX,dword ptr [EAX + 0x258]     ; 0040cc88 | g_CGameInstance.is_processing
     FSTP double ptr [ESP]               ; 0040cc8e
     TEST EDX,EDX                        ; 0040cc91
@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 005c084c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005c084c()
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cc9a
     FILD dword ptr [ESP + 0x10]         ; 0040cc9e
-    FMUL float ptr [0x005d2ea9]         ; 0040cca2 | DAT_005d2ea9
+    FMUL float ptr [0x005d2ea9]         ; 0040cca2 | g_RandIntScale
     FSTP float ptr [ESP + 0x8]          ; 0040cca8
         ;   Label: LAB_0040cca8
     FLD float ptr [ESP + 0x8]           ; 0040ccac
@@ -74,7 +74,7 @@ section .text
     FILD dword ptr [ESP + 0x10]         ; 0040ccb7
     FADDP                               ; 0040ccbb
     CALL crt_math.c_round_FUN_005c03a0  ; 0040ccbd
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0040ccc2
     MOV ECX,dword ptr [ESP + 0xc]       ; 0040ccc6
     CMP EBX,ECX                         ; 0040ccca
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_0040ccda
     MOV dword ptr [ESP + 0x10],EAX      ; 0040ccdf
     FILD dword ptr [ESP + 0x10]         ; 0040cce3
-    FMUL float ptr [0x005d2ead]         ; 0040cce7 | DAT_005d2ead
+    FMUL float ptr [0x005d2ead]         ; 0040cce7 | g_GenRandIntScale
     JMP 0x0040cca8                      ; 0040cced
         ;   XREF to: 0040cca8 (UNCONDITIONAL_JUMP)  ; LAB_0040cca8
     MOV EAX,EBX                         ; 0040ccef

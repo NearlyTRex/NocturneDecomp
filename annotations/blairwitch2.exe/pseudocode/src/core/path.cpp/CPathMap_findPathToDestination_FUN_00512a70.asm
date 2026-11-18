@@ -102,22 +102,22 @@
 ;   TerminatedCString s_Out_of_bounds3_005e17f4
 ;   TerminatedCString s_core_path_cpp_005e1804
 ;   TerminatedCString s_Out_of_bounds4_005e1815
-;   undefined4 DAT_0061b328
-;   undefined4 DAT_0061b34c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_01e501fc
-;   undefined4 DAT_01e50200
+;   int[9] g_PathfindingDeltaX
+;   int[9] g_PathfindingDeltaZ
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_PathfindingCurrentX
+;   int g_PathfindingCurrentZ
 ;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
+;   core_path.cpp_CPathMap_getDirection_FUN_00511df0
 ;   core_path.cpp_CPathMap_isLineWalkable_FUN_00512390
 ;   core_path.cpp_CPathMap_searchGrid_FUN_00514140
-;   core_path.cpp_FUN_00511df0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_math.c_round_FUN_005b7ff0
 ;
@@ -195,7 +195,7 @@ section .text
     LEA ESI,[ESP + 0x40]                ; 00512b46
     LEA EDI,[ESP + 0x124]               ; 00512b4a
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512b51
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x40]                ; 00512b56
     ADD ESP,0x4                         ; 00512b5a
     LEA EAX,[ESP + 0x120]               ; 00512b5d
@@ -298,7 +298,7 @@ section .text
     LEA ESI,[ESP + 0x154]               ; 00512c86
     LEA EDI,[ESP + 0x190]               ; 00512c8d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512c94
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x154]               ; 00512c99
     ADD ESP,0x4                         ; 00512ca0
     LEA EAX,[ESP + 0x18c]               ; 00512ca3
@@ -328,13 +328,13 @@ section .text
     MOV EDI,dword ptr [EBP + 0x24]      ; 00512cf1
     MOV EDX,dword ptr [EBP + 0x2c]      ; 00512cf4
     SUB EAX,EDI                         ; 00512cf7
-    MOV dword ptr [0x01e50208],EBX      ; 00512cf9 | DAT_01e50208
-    MOV [0x01e501fc],EAX                ; 00512cff | DAT_01e501fc
+    MOV dword ptr [0x01e50208],EBX      ; 00512cf9 | g_PathfindingDestZ
+    MOV [0x01e501fc],EAX                ; 00512cff | g_PathfindingCurrentX
     MOV EAX,dword ptr [EBP + 0x20]      ; 00512d04
-    MOV dword ptr [0x01e50204],EBX      ; 00512d07 | DAT_01e50204
+    MOV dword ptr [0x01e50204],EBX      ; 00512d07 | g_PathfindingDestX
     SUB EAX,EDX                         ; 00512d0d
-    MOV ECX,dword ptr [0x01e501fc]      ; 00512d0f | DAT_01e501fc
-    MOV [0x01e50200],EAX                ; 00512d15 | DAT_01e50200
+    MOV ECX,dword ptr [0x01e501fc]      ; 00512d0f | g_PathfindingCurrentX
+    MOV [0x01e50200],EAX                ; 00512d15 | g_PathfindingCurrentZ
     TEST ECX,ECX                        ; 00512d1a
     JL 0x00512d27                       ; 00512d1c
         ;   XREF to: 00512d27 (CONDITIONAL_JUMP)  ; LAB_00512d27
@@ -367,7 +367,7 @@ section .text
     LEA ESI,[ESP + 0x19c]               ; 00512d6e
     LEA EDI,[ESP + 0x148]               ; 00512d75
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512d7c
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x19c]               ; 00512d81
     ADD ESP,0x4                         ; 00512d88
     LEA EAX,[ESP + 0x144]               ; 00512d8b
@@ -408,11 +408,11 @@ section .text
         ;   Label: LAB_00512def
     MOV EAX,dword ptr [ESP + 0x1ec]     ; 00512df2
     CALL crt_math.c_round_FUN_005b7ff0  ; 00512df9
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x1d0]       ; 00512dfe
     FLD float ptr [EAX]                 ; 00512e05
     CALL crt_math.c_round_FUN_005b7ff0  ; 00512e07
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV EAX,dword ptr [ESP + 0x1d0]     ; 00512e0c
     FISTP dword ptr [ESP + 0x1d0]       ; 00512e13
     SUB EAX,dword ptr [ESP + 0x1d0]     ; 00512e1a
@@ -422,11 +422,11 @@ section .text
     FLD float ptr [EBP + 0x8]           ; 00512e26
     MOV EAX,dword ptr [ESP + 0x1ec]     ; 00512e29
     CALL crt_math.c_round_FUN_005b7ff0  ; 00512e30
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x1d0]       ; 00512e35
     FLD float ptr [EAX + 0x8]           ; 00512e3c
     CALL crt_math.c_round_FUN_005b7ff0  ; 00512e3f
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV EAX,dword ptr [ESP + 0x1d0]     ; 00512e44
     FISTP dword ptr [ESP + 0x1d0]       ; 00512e4b
     SUB EAX,dword ptr [ESP + 0x1d0]     ; 00512e52
@@ -435,9 +435,9 @@ section .text
     SUB EAX,EDX                         ; 00512e5c
     MOV ESI,dword ptr [EBP + 0x1c]      ; 00512e5e
     PUSH ESI                            ; 00512e61
-    MOV EDI,dword ptr [0x01e501fc]      ; 00512e62 | DAT_01e501fc
+    MOV EDI,dword ptr [0x01e501fc]      ; 00512e62 | g_PathfindingCurrentX
     PUSH EDI                            ; 00512e68
-    MOV EAX,[0x01e50200]                ; 00512e69 | DAT_01e50200
+    MOV EAX,[0x01e50200]                ; 00512e69 | g_PathfindingCurrentZ
     PUSH EAX                            ; 00512e6e
     PUSH EBP                            ; 00512e6f
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0 ; 00512e70
@@ -445,9 +445,9 @@ section .text
     ADD ESP,0x10                        ; 00512e75
     MOV EDX,dword ptr [EBP + 0x10]      ; 00512e78
     PUSH EDX                            ; 00512e7b
-    MOV ECX,dword ptr [0x01e50204]      ; 00512e7c | DAT_01e50204
+    MOV ECX,dword ptr [0x01e50204]      ; 00512e7c | g_PathfindingDestX
     PUSH ECX                            ; 00512e82
-    MOV ESI,dword ptr [0x01e50208]      ; 00512e83 | DAT_01e50208
+    MOV ESI,dword ptr [0x01e50208]      ; 00512e83 | g_PathfindingDestZ
     PUSH ESI                            ; 00512e89
     PUSH EBP                            ; 00512e8a
     MOV EBX,EAX                         ; 00512e8b
@@ -455,14 +455,14 @@ section .text
         ;   XREF to: 005122f0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 00512e92
     PUSH EAX                            ; 00512e95
-    MOV EDI,dword ptr [0x01e50208]      ; 00512e96 | DAT_01e50208
+    MOV EDI,dword ptr [0x01e50208]      ; 00512e96 | g_PathfindingDestZ
     PUSH EDI                            ; 00512e9c
-    MOV EAX,[0x01e50204]                ; 00512e9d | DAT_01e50204
+    MOV EAX,[0x01e50204]                ; 00512e9d | g_PathfindingDestX
     PUSH EAX                            ; 00512ea2
     PUSH EBX                            ; 00512ea3
-    MOV EDX,dword ptr [0x01e50200]      ; 00512ea4 | DAT_01e50200
+    MOV EDX,dword ptr [0x01e50200]      ; 00512ea4 | g_PathfindingCurrentZ
     PUSH EDX                            ; 00512eaa
-    MOV ECX,dword ptr [0x01e501fc]      ; 00512eab | DAT_01e501fc
+    MOV ECX,dword ptr [0x01e501fc]      ; 00512eab | g_PathfindingCurrentX
     PUSH ECX                            ; 00512eb1
     PUSH EBP                            ; 00512eb2
     CALL core_path.cpp_CPathMap_isLineWalkable_FUN_00512390 ; 00512eb3
@@ -532,7 +532,7 @@ section .text
     LEA ESI,[ESP + 0x13c]               ; 00512fb0
     LEA EDI,[ESP + 0x100]               ; 00512fb7
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512fbe
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x13c]               ; 00512fc3
     ADD ESP,0x4                         ; 00512fca
     MOVSD ES:EDI,ESI                    ; 00512fcd
@@ -583,7 +583,7 @@ section .text
     LEA ESI,[ESP + 0x28]                ; 0051305f
     LEA EDI,[ESP + 0x4]                 ; 00513063
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00513067
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x28]                ; 0051306c
     ADD ESP,0x4                         ; 00513070
     MOVSD ES:EDI,ESI                    ; 00513073
@@ -608,14 +608,14 @@ section .text
     POP ESI                             ; 005130a3
     POP EBX                             ; 005130a4
     RET                                 ; 005130a5
-    MOV EBX,dword ptr [0x01e50200]      ; 005130a6 | DAT_01e50200
+    MOV EBX,dword ptr [0x01e50200]      ; 005130a6 | g_PathfindingCurrentZ
         ;   Label: LAB_005130a6
     PUSH EBX                            ; 005130ac
-    MOV ESI,dword ptr [0x01e501fc]      ; 005130ad | DAT_01e501fc
+    MOV ESI,dword ptr [0x01e501fc]      ; 005130ad | g_PathfindingCurrentX
     PUSH ESI                            ; 005130b3
-    MOV EDI,dword ptr [0x01e50208]      ; 005130b4 | DAT_01e50208
+    MOV EDI,dword ptr [0x01e50208]      ; 005130b4 | g_PathfindingDestZ
     PUSH EDI                            ; 005130ba
-    MOV EAX,[0x01e50204]                ; 005130bb | DAT_01e50204
+    MOV EAX,[0x01e50204]                ; 005130bb | g_PathfindingDestX
     PUSH EAX                            ; 005130c0
     PUSH EBP                            ; 005130c1
     CALL core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0 ; 005130c2
@@ -627,8 +627,8 @@ section .text
     CMP EAX,0x1                         ; 005130d2
     JNZ 0x00513166                      ; 005130d5
         ;   XREF to: 00513166 (CONDITIONAL_JUMP)  ; LAB_00513166
-    MOV EDI,dword ptr [0x01e501fc]      ; 005130db | DAT_01e501fc
-    MOV EAX,[0x01e50204]                ; 005130e1 | DAT_01e50204
+    MOV EDI,dword ptr [0x01e501fc]      ; 005130db | g_PathfindingCurrentX
+    MOV EAX,[0x01e50204]                ; 005130e1 | g_PathfindingDestX
     CMP EAX,EDI                         ; 005130e6
     JLE 0x00513141                      ; 005130e8
         ;   XREF to: 00513141 (CONDITIONAL_JUMP)  ; LAB_00513141
@@ -644,8 +644,8 @@ section .text
     MOV dword ptr [EDX],0x0             ; 00513103
     PUSH EBP                            ; 00513109
     MOV dword ptr [EDX + 0x8],0x0       ; 0051310a
-    CALL core_path.cpp_FUN_00511df0     ; 00513111
-        ;   XREF to: 00511df0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00511df0()
+    CALL core_path.cpp_CPathMap_getDirection_FUN_00511df0 ; 00513111
+        ;   XREF to: 00511df0 (UNCONDITIONAL_CALL)  ; float core_path.cpp_CPathMap_getDirection_FUN_00511df0(CPathMap * this_ptr, int current_direction, int next_direction, int prev_direction, ...)
     MOV dword ptr [ESP + 0x1e4],EAX     ; 00513116
     FLD float ptr [ESP + 0x1e4]         ; 0051311d
     ADD ESP,0x14                        ; 00513124
@@ -664,9 +664,9 @@ section .text
     MOV EAX,0x4                         ; 00513143
     JMP 0x005130ef                      ; 00513148
         ;   XREF to: 005130ef (UNCONDITIONAL_JUMP)  ; LAB_005130ef
-    MOV ECX,dword ptr [0x01e50200]      ; 0051314a | DAT_01e50200
+    MOV ECX,dword ptr [0x01e50200]      ; 0051314a | g_PathfindingCurrentZ
         ;   Label: LAB_0051314a
-    CMP ECX,dword ptr [0x01e50208]      ; 00513150 | DAT_01e50208
+    CMP ECX,dword ptr [0x01e50208]      ; 00513150 | g_PathfindingDestZ
     JGE 0x0051315f                      ; 00513156
         ;   XREF to: 0051315f (CONDITIONAL_JUMP)  ; LAB_0051315f
     MOV EAX,0x1                         ; 00513158
@@ -676,9 +676,9 @@ section .text
         ;   Label: LAB_0051315f
     JMP 0x005130ef                      ; 00513164
         ;   XREF to: 005130ef (UNCONDITIONAL_JUMP)  ; LAB_005130ef
-    MOV ECX,dword ptr [0x01e50200]      ; 00513166 | DAT_01e50200
+    MOV ECX,dword ptr [0x01e50200]      ; 00513166 | g_PathfindingCurrentZ
         ;   Label: LAB_00513166
-    MOV EAX,[0x01e50208]                ; 0051316c | DAT_01e50208
+    MOV EAX,[0x01e50208]                ; 0051316c | g_PathfindingDestZ
     CMP EAX,ECX                         ; 00513171
     JLE 0x0051317f                      ; 00513173
         ;   XREF to: 0051317f (CONDITIONAL_JUMP)  ; LAB_0051317f
@@ -691,9 +691,9 @@ section .text
     MOV EAX,0x2                         ; 00513181
     JMP 0x005130ef                      ; 00513186
         ;   XREF to: 005130ef (UNCONDITIONAL_JUMP)  ; LAB_005130ef
-    MOV ESI,dword ptr [0x01e501fc]      ; 0051318b | DAT_01e501fc
+    MOV ESI,dword ptr [0x01e501fc]      ; 0051318b | g_PathfindingCurrentX
         ;   Label: LAB_0051318b
-    CMP ESI,dword ptr [0x01e50204]      ; 00513191 | DAT_01e50204
+    CMP ESI,dword ptr [0x01e50204]      ; 00513191 | g_PathfindingDestX
     JL 0x005130ea                       ; 00513197
         ;   XREF to: 005130ea (CONDITIONAL_JUMP)  ; LAB_005130ea
     MOV EAX,0x4                         ; 0051319d
@@ -734,7 +734,7 @@ section .text
     LEA ESI,[ESP + 0x1c0]               ; 00513200
     LEA EDI,[ESP + 0x184]               ; 00513207
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0051320e
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x1c0]               ; 00513213
     ADD ESP,0x4                         ; 0051321a
     LEA EAX,[ESP + 0x180]               ; 0051321d
@@ -758,7 +758,7 @@ section .text
     POP ESI                             ; 00513260
     POP EBX                             ; 00513261
     RET                                 ; 00513262
-    MOV EBX,dword ptr [0x01e50208]      ; 00513263 | DAT_01e50208
+    MOV EBX,dword ptr [0x01e50208]      ; 00513263 | g_PathfindingDestZ
         ;   Label: LAB_00513263
     LEA EAX,[EBX*0x4 + 0x0]             ; 00513269
     SUB EAX,EBX                         ; 00513270
@@ -766,7 +766,7 @@ section .text
     ADD EAX,EBX                         ; 00513275
     SHL EAX,0x4                         ; 00513277
     LEA EDX,[EAX + EBP*0x1]             ; 0051327a
-    MOV EAX,[0x01e50204]                ; 0051327d | DAT_01e50204
+    MOV EAX,[0x01e50204]                ; 0051327d | g_PathfindingDestX
     MOV EBX,dword ptr [EBP + 0x10]      ; 00513282
     MOV EAX,dword ptr [EDX + EAX*0x4 + 0x30] ; 00513285
     SUB EAX,EBX                         ; 00513289
@@ -777,8 +777,8 @@ section .text
     JG 0x005133c0                       ; 00513293
         ;   XREF to: 005133c0 (CONDITIONAL_JUMP)  ; LAB_005133c0
     MOV EBX,0xffffffff                  ; 00513299
-    MOV ESI,dword ptr [0x01e50208]      ; 0051329e | DAT_01e50208
-    MOV EDI,dword ptr [0x01e50204]      ; 005132a4 | DAT_01e50204
+    MOV ESI,dword ptr [0x01e50208]      ; 0051329e | g_PathfindingDestZ
+    MOV EDI,dword ptr [0x01e50204]      ; 005132a4 | g_PathfindingDestX
     MOV dword ptr [ESP + 0x1cc],EBX     ; 005132aa
     MOV EAX,dword ptr [ESP + 0x1cc]     ; 005132b1
         ;   Label: LAB_005132b1
@@ -786,12 +786,12 @@ section .text
     IMUL EAX,ESI,0x64                   ; 005132bf
     MOV dword ptr [ESP + 0x1cc],EBX     ; 005132c2
     XOR EBX,EBX                         ; 005132c9
-    MOV BL,byte ptr [EDI + EAX*0x1 + 0x1e5ec78] ; 005132cb | DAT_01e60032
+    MOV BL,byte ptr [EDI + EAX*0x1 + 0x1e5ec78] ; 005132cb | g_PathfindingVisited[50][50]
     TEST EBX,EBX                        ; 005132d2
     JZ 0x00513458                       ; 005132d4
         ;   XREF to: 00513458 (CONDITIONAL_JUMP)  ; LAB_00513458
-    MOV EAX,dword ptr [EBX*0x4 + 0x61b328] ; 005132da | DAT_0061b328
-    MOV EDX,dword ptr [EBX*0x4 + 0x61b34c] ; 005132e1 | DAT_0061b34c
+    MOV EAX,dword ptr [EBX*0x4 + 0x61b328] ; 005132da | g_PathfindingDeltaX
+    MOV EDX,dword ptr [EBX*0x4 + 0x61b34c] ; 005132e1 | g_PathfindingDeltaZ
     SUB EDI,EAX                         ; 005132e8
     SUB ESI,EDX                         ; 005132ea
     TEST EDI,EDI                        ; 005132ec
@@ -808,10 +808,10 @@ section .text
     MOV EAX,0x5e17e3                    ; 00513301 | = "..\\core\\path.cpp"
     MOV EDX,0x549                       ; 00513306
     PUSH 0x5e17f4                       ; 0051330b | = "Out of bounds3!"
-    MOV [0x01d046a0],EAX                ; 00513310 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00513315 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051331b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV [0x01d046a0],EAX                ; 00513310 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 00513315 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051331b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00513320
     CMP ESI,0x64                        ; 00513323
         ;   Label: LAB_00513323
@@ -820,16 +820,16 @@ section .text
     MOV ECX,0x5e1804                    ; 00513328 | = "..\\core\\path.cpp"
     MOV EAX,0x54a                       ; 0051332d
     PUSH 0x5e1815                       ; 00513332 | = "Out of bounds4!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00513337 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0051333d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00513342
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00513337 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0051333d | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00513342
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00513347
-    CMP EDI,dword ptr [0x01e501fc]      ; 0051334a | DAT_01e501fc
+    CMP EDI,dword ptr [0x01e501fc]      ; 0051334a | g_PathfindingCurrentX
         ;   Label: LAB_0051334a
     JNZ 0x005132b1                      ; 00513350
         ;   XREF to: 005132b1 (CONDITIONAL_JUMP)  ; LAB_005132b1
-    CMP ESI,dword ptr [0x01e50200]      ; 00513356 | DAT_01e50200
+    CMP ESI,dword ptr [0x01e50200]      ; 00513356 | g_PathfindingCurrentZ
     JNZ 0x005132b1                      ; 0051335c
         ;   XREF to: 005132b1 (CONDITIONAL_JUMP)  ; LAB_005132b1
     MOV ESI,dword ptr [ESP + 0x1ec]     ; 00513362
@@ -843,8 +843,8 @@ section .text
     PUSH EAX                            ; 0051338d
     PUSH EBX                            ; 0051338e
     PUSH EBP                            ; 0051338f
-    CALL core_path.cpp_FUN_00511df0     ; 00513390
-        ;   XREF to: 00511df0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00511df0()
+    CALL core_path.cpp_CPathMap_getDirection_FUN_00511df0 ; 00513390
+        ;   XREF to: 00511df0 (UNCONDITIONAL_CALL)  ; float core_path.cpp_CPathMap_getDirection_FUN_00511df0(CPathMap * this_ptr, int current_direction, int next_direction, int prev_direction, ...)
     MOV dword ptr [ESP + 0x1e4],EAX     ; 00513395
     FLD float ptr [ESP + 0x1e4]         ; 0051339c
     ADD ESP,0x14                        ; 005133a3
@@ -883,7 +883,7 @@ section .text
     LEA ESI,[ESP + 0x130]               ; 00513404
     LEA EDI,[ESP + 0x1c]                ; 0051340b
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0051340f
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x130]               ; 00513414
     ADD ESP,0x4                         ; 0051341b
     LEA EAX,[ESP + 0x18]                ; 0051341e
@@ -933,7 +933,7 @@ section .text
     LEA ESI,[ESP + 0x94]                ; 00513496
     LEA EDI,[ESP + 0x88]                ; 0051349d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 005134a4
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x94]                ; 005134a9
     ADD ESP,0x4                         ; 005134b0
     LEA EAX,[ESP + 0x84]                ; 005134b3
@@ -961,10 +961,10 @@ section .text
         ;   Label: LAB_005134f9
     MOV EAX,0x547                       ; 005134fe
     PUSH 0x5e17b2                       ; 00513503 | = "Out of bounds1!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00513508 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0051350e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00513513
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00513508 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0051350e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00513513
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00513518
     JMP 0x005132f4                      ; 0051351b
         ;   XREF to: 005132f4 (UNCONDITIONAL_JUMP)  ; LAB_005132f4
@@ -972,10 +972,10 @@ section .text
         ;   Label: LAB_00513520
     MOV ECX,0x548                       ; 00513525
     PUSH 0x5e17d3                       ; 0051352a | = "Out of bounds2!"
-    MOV dword ptr [0x01d046a0],EDX      ; 0051352f | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00513535 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0051353b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 0051352f | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00513535 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051353b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00513540
     JMP 0x005132fc                      ; 00513543
         ;   XREF to: 005132fc (UNCONDITIONAL_JUMP)  ; LAB_005132fc

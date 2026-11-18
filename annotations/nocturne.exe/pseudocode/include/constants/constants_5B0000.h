@@ -23,60 +23,7 @@ static TerminatedCString s_CElephantGun_005b75cc = "$CElephantGun$$";
 static TerminatedCString s_CEmitter_005b75e4 = "$CEmitter$$";
 static TerminatedCString s_SLaserInfo_005b75f4 = "$SLaserInfo$$";
 static TerminatedCString s_CFilmProjector_005b8024 = "$CFilmProjector$$";
-static TerminatedCString s_SPFB0050_RAW_005b80fc = "SPFB0050.RAW";
-static TerminatedCString s_SPFB0051_RAW_005b8114 = "SPFB0051.RAW";
-static TerminatedCString s_SPFB0052_RAW_005b812c = "SPFB0052.RAW";
-static TerminatedCString s_SPFB0053_RAW_005b8144 = "SPFB0053.RAW";
-static TerminatedCString s_SPFB0054_RAW_005b815c = "SPFB0054.RAW";
-static TerminatedCString s_SPFB0055_RAW_005b8174 = "SPFB0055.RAW";
-static TerminatedCString s_SPFB0056_RAW_005b818c = "SPFB0056.RAW";
-static TerminatedCString s_SPFB0057_RAW_005b81a4 = "SPFB0057.RAW";
-static TerminatedCString s_SPFB0058_RAW_005b81bc = "SPFB0058.RAW";
-static TerminatedCString s_SPFB0059_RAW_005b81d4 = "SPFB0059.RAW";
-static TerminatedCString s_SPFB0060_RAW_005b81ec = "SPFB0060.RAW";
-static TerminatedCString s_SPFB0061_RAW_005b8204 = "SPFB0061.RAW";
-static TerminatedCString s_SPFB0062_RAW_005b821c = "SPFB0062.RAW";
-static TerminatedCString s_SPFB0063_RAW_005b8234 = "SPFB0063.RAW";
-static TerminatedCString s_SPFB0064_RAW_005b824c = "SPFB0064.RAW";
-static TerminatedCString s_SPFB0065_RAW_005b8264 = "SPFB0065.RAW";
-static TerminatedCString s_SPFB0066_RAW_005b827c = "SPFB0066.RAW";
-static TerminatedCString s_SPFB0067_RAW_005b8294 = "SPFB0067.RAW";
-static TerminatedCString s_SPFB0068_RAW_005b82ac = "SPFB0068.RAW";
-static TerminatedCString s_SPFB0069_RAW_005b82c4 = "SPFB0069.RAW";
-static TerminatedCString s_SPFB0070_RAW_005b82dc = "SPFB0070.RAW";
-static TerminatedCString s_SPFB0071_RAW_005b82f4 = "SPFB0071.RAW";
-static TerminatedCString s_SPFB0072_RAW_005b830c = "SPFB0072.RAW";
-static TerminatedCString s_SPFB0073_RAW_005b8324 = "SPFB0073.RAW";
-static TerminatedCString s_SPFB0074_RAW_005b833c = "SPFB0074.RAW";
-static TerminatedCString s_SPFB0075_RAW_005b8354 = "SPFB0075.RAW";
-static TerminatedCString s_SPFB0076_RAW_005b836c = "SPFB0076.RAW";
-static TerminatedCString s_SPFB0077_RAW_005b8384 = "SPFB0077.RAW";
-static TerminatedCString s_SPFB0078_RAW_005b839c = "SPFB0078.RAW";
-static TerminatedCString s_SPFB0079_RAW_005b83b4 = "SPFB0079.RAW";
-static TerminatedCString s_SPFB0080_RAW_005b83cc = "SPFB0080.RAW";
-static TerminatedCString s_SPFB0081_RAW_005b83e4 = "SPFB0081.RAW";
-static TerminatedCString s_SPFB0082_RAW_005b83fc = "SPFB0082.RAW";
-static TerminatedCString s_SPFB0083_RAW_005b8414 = "SPFB0083.RAW";
-static TerminatedCString s_SPFB0084_RAW_005b842c = "SPFB0084.RAW";
-static TerminatedCString s_SPFB0085_RAW_005b8444 = "SPFB0085.RAW";
-static TerminatedCString s_SPFB0086_RAW_005b845c = "SPFB0086.RAW";
-static TerminatedCString s_SPFB0087_RAW_005b8474 = "SPFB0087.RAW";
-static TerminatedCString s_SPFB0088_RAW_005b848c = "SPFB0088.RAW";
-static TerminatedCString s_SPFB0089_RAW_005b84a4 = "SPFB0089.RAW";
-static TerminatedCString s_BHOLE_RAW_005b84bc = "BHOLE.RAW";
-static TerminatedCString s_SPARK_RAW_005b84d4 = "SPARK.RAW";
-static TerminatedCString s_BLUSPARK_RAW_005b84ec = "BLUSPARK.RAW";
 static TerminatedCString s_GRNSPARK_RAW_005b8504 = "GRNSPARK.RAW";
-static TerminatedCString s_REDSPARK_RAW_005b851c = "REDSPARK.RAW";
-static TerminatedCString s_LASER_RAW_005b8534 = "LASER.RAW";
-static TerminatedCString s_BEAMFUZZ_RAW_005b854c = "BEAMFUZZ.RAW";
-static TerminatedCString s_RETICLE_RAW_005b8564 = "RETICLE.RAW";
-static TerminatedCString s_HEADLITE_RAW_005b857c = "HEADLITE.RAW";
-static TerminatedCString s_BLAST1_RAW_005b8b04 = "BLAST1.RAW";
-static TerminatedCString s_BOLT1_RAW_005b8b1c = "BOLT1.RAW";
-static TerminatedCString s_BOLT2_RAW_005b8b34 = "BOLT2.RAW";
-static TerminatedCString s_POPCORN_RAW_005b8bac = "POPCORN.RAW";
-static TerminatedCString s_RAINDRP1_RAW_005b8bc4 = "RAINDRP1.RAW";
 static TerminatedCString s_CRainDrop_005b8c14 = "$CRainDrop$$";
 static TerminatedCString s_CLightningBolt_005b8c64 = "$CLightningBolt$$";
 static TerminatedCString s_CGunFlame_005b8c84 = "$CGunFlame$$";
@@ -89,7 +36,6 @@ static TerminatedCString s_CGlassParticle_005b8d54 = "$CGlassParticle$$";
 static TerminatedCString s_CMuzzleFlash_005b8d74 = "$CMuzzleFlash$$";
 static TerminatedCString s_CBulletHole_005b8db4 = "$CBulletHole$$";
 static TerminatedCString s_CSmokeParticle_005b8dd4 = "$CSmokeParticle$$";
-static TerminatedCString s_GLOW1_RAW_005b8df0 = "GLOW1.RAW";
 static TerminatedCString s_CAN0100_RAW_005b8ec8 = "CAN0100.RAW";
 static TerminatedCString s_CAN1100_RAW_005b8f40 = "CAN1100.RAW";
 static TerminatedCString s_BF0100_RAW_005b8f88 = "BF0100.RAW";
@@ -104,7 +50,6 @@ static TerminatedCString s_BF1500_RAW_005b91b0 = "BF1500.RAW";
 static TerminatedCString s_CFlameCan_005b91cc = "$CFlameCan$$";
 static TerminatedCString s_CFlameThrower_005b91e4 = "$CFlameThrower$$";
 static TerminatedCString s_CFlashlight_005b9200 = "$CFlashlight$$";
-static TerminatedCString s_BBWHITE_RAW_005b921c = "BBWHITE.RAW";
 static TerminatedCString s_CFlies_005b9230 = "$CFlies$$";
 static TerminatedCString s_SFly_CFlies_005b9240 = "$SFly$:CFlies$$";
 static TerminatedCString s_CART_Precision_Racing_v1_005b9268 = "CART Precision Racing v1.00";
@@ -121,77 +66,6 @@ static TerminatedCString s_CGasMask_005b9644 = "$CGasMask$$";
 static TerminatedCString s_CGhoul_005b965c = "$CGhoul$$";
 static TerminatedCString s_s_7YEARS_RAW_005b9674 = "7YEARS.RAW";
 static TerminatedCString s_CGlass_005b9688 = "$CGlass$$";
-static TerminatedCString s_BGLOB_RAW_005b96dc = "BGLOB.RAW";
-static TerminatedCString s_BVSP1_16_RAW_005b98bc = "BVSP1-16.RAW";
-static TerminatedCString s_BVSP2_16_RAW_005b9a3c = "BVSP2-16.RAW";
-static TerminatedCString s_BVSP3_16_RAW_005b9bbc = "BVSP3-16.RAW";
-static TerminatedCString s_BVSP4_16_RAW_005b9d3c = "BVSP4-16.RAW";
-static TerminatedCString s_BPOL1_10_RAW_005b9e2c = "BPOL1-10.RAW";
-static TerminatedCString s_BPOL1_11_RAW_005b9e44 = "BPOL1-11.RAW";
-static TerminatedCString s_BPOL1_12_RAW_005b9e5c = "BPOL1-12.RAW";
-static TerminatedCString s_BPOL1_13_RAW_005b9e74 = "BPOL1-13.RAW";
-static TerminatedCString s_BPOL1_16_RAW_005b9ebc = "BPOL1-16.RAW";
-static TerminatedCString s_BPOL1_24_RAW_005b9f7c = "BPOL1-24.RAW";
-static TerminatedCString s_BPOL2_10_RAW_005ba0e4 = "BPOL2-10.RAW";
-static TerminatedCString s_BPOL2_11_RAW_005ba0fc = "BPOL2-11.RAW";
-static TerminatedCString s_BPOL2_12_RAW_005ba114 = "BPOL2-12.RAW";
-static TerminatedCString s_BPOL2_13_RAW_005ba12c = "BPOL2-13.RAW";
-static TerminatedCString s_BPOL2_14_RAW_005ba144 = "BPOL2-14.RAW";
-static TerminatedCString s_BPOL2_16_RAW_005ba174 = "BPOL2-16.RAW";
-static TerminatedCString s_BPOL2_19_RAW_005ba1bc = "BPOL2-19.RAW";
-static TerminatedCString s_BPOL2_20_RAW_005ba1d4 = "BPOL2-20.RAW";
-static TerminatedCString s_BPOL2_21_RAW_005ba1ec = "BPOL2-21.RAW";
-static TerminatedCString s_BPOL2_22_RAW_005ba204 = "BPOL2-22.RAW";
-static TerminatedCString s_BPOL2_23_RAW_005ba21c = "BPOL2-23.RAW";
-static TerminatedCString s_BPOL2_24_RAW_005ba234 = "BPOL2-24.RAW";
-static TerminatedCString s_BPOL2_26_RAW_005ba264 = "BPOL2-26.RAW";
-static TerminatedCString s_BPOL2_27_RAW_005ba27c = "BPOL2-27.RAW";
-static TerminatedCString s_BPOL3_14_RAW_005ba3fc = "BPOL3-14.RAW";
-static TerminatedCString s_BPOL3_15_RAW_005ba414 = "BPOL3-15.RAW";
-static TerminatedCString s_BPOL3_16_RAW_005ba42c = "BPOL3-16.RAW";
-static TerminatedCString s_BPOL3_17_RAW_005ba444 = "BPOL3-17.RAW";
-static TerminatedCString s_BPOL3_18_RAW_005ba45c = "BPOL3-18.RAW";
-static TerminatedCString s_BPOL3_19_RAW_005ba474 = "BPOL3-19.RAW";
-static TerminatedCString s_BPOL3_20_RAW_005ba48c = "BPOL3-20.RAW";
-static TerminatedCString s_BPOL3_21_RAW_005ba4a4 = "BPOL3-21.RAW";
-static TerminatedCString s_BPOL3_22_RAW_005ba4bc = "BPOL3-22.RAW";
-static TerminatedCString s_BPOL3_23_RAW_005ba4d4 = "BPOL3-23.RAW";
-static TerminatedCString s_BPOL3_24_RAW_005ba4ec = "BPOL3-24.RAW";
-static TerminatedCString s_BPOL3_25_RAW_005ba504 = "BPOL3-25.RAW";
-static TerminatedCString s_BPOL3_26_RAW_005ba51c = "BPOL3-26.RAW";
-static TerminatedCString s_BPOL3_27_RAW_005ba534 = "BPOL3-27.RAW";
-static TerminatedCString s_BPOL3_28_RAW_005ba54c = "BPOL3-28.RAW";
-static TerminatedCString s_BPOL3_29_RAW_005ba564 = "BPOL3-29.RAW";
-static TerminatedCString s_BPOL4_01_RAW_005ba57c = "BPOL4-01.RAW";
-static TerminatedCString s_BPOL4_02_RAW_005ba594 = "BPOL4-02.RAW";
-static TerminatedCString s_BPOL4_03_RAW_005ba5ac = "BPOL4-03.RAW";
-static TerminatedCString s_BPOL4_04_RAW_005ba5c4 = "BPOL4-04.RAW";
-static TerminatedCString s_BPOL4_05_RAW_005ba5dc = "BPOL4-05.RAW";
-static TerminatedCString s_BPOL4_06_RAW_005ba5f4 = "BPOL4-06.RAW";
-static TerminatedCString s_BPOL4_07_RAW_005ba60c = "BPOL4-07.RAW";
-static TerminatedCString s_BPOL4_08_RAW_005ba624 = "BPOL4-08.RAW";
-static TerminatedCString s_BPOL4_09_RAW_005ba63c = "BPOL4-09.RAW";
-static TerminatedCString s_BPOL4_10_RAW_005ba654 = "BPOL4-10.RAW";
-static TerminatedCString s_BPOL4_11_RAW_005ba66c = "BPOL4-11.RAW";
-static TerminatedCString s_BPOL4_12_RAW_005ba684 = "BPOL4-12.RAW";
-static TerminatedCString s_BPOL4_13_RAW_005ba69c = "BPOL4-13.RAW";
-static TerminatedCString s_BPOL4_14_RAW_005ba6b4 = "BPOL4-14.RAW";
-static TerminatedCString s_BPOL4_15_RAW_005ba6cc = "BPOL4-15.RAW";
-static TerminatedCString s_BPOL4_16_RAW_005ba6e4 = "BPOL4-16.RAW";
-static TerminatedCString s_BPOL4_17_RAW_005ba6fc = "BPOL4-17.RAW";
-static TerminatedCString s_BPOL4_18_RAW_005ba714 = "BPOL4-18.RAW";
-static TerminatedCString s_BPOL4_19_RAW_005ba72c = "BPOL4-19.RAW";
-static TerminatedCString s_BPOL4_20_RAW_005ba744 = "BPOL4-20.RAW";
-static TerminatedCString s_BPOL4_21_RAW_005ba75c = "BPOL4-21.RAW";
-static TerminatedCString s_BPOL4_22_RAW_005ba774 = "BPOL4-22.RAW";
-static TerminatedCString s_BPOL4_23_RAW_005ba78c = "BPOL4-23.RAW";
-static TerminatedCString s_BPOL4_24_RAW_005ba7a4 = "BPOL4-24.RAW";
-static TerminatedCString s_BPOL4_25_RAW_005ba7bc = "BPOL4-25.RAW";
-static TerminatedCString s_BPOL4_26_RAW_005ba7d4 = "BPOL4-26.RAW";
-static TerminatedCString s_BPOL4_27_RAW_005ba7ec = "BPOL4-27.RAW";
-static TerminatedCString s_BPOL4_28_RAW_005ba804 = "BPOL4-28.RAW";
-static TerminatedCString s_BPOL4_29_RAW_005ba81c = "BPOL4-29.RAW";
-static TerminatedCString s_FOOTSTEP_RAW_005ba854 = "FOOTSTEP.RAW";
 static TerminatedCString s_CFootstep_005ba868 = "$CFootstep$$";
 static TerminatedCString s_CBloodPool_005ba87c = "$CBloodPool$$";
 static TerminatedCString s_CBloodSplat_005ba890 = "$CBloodSplat$$";
@@ -222,7 +96,6 @@ static TerminatedCString s_Messages_005baa50 = "Messages";
 static TerminatedCString s_CD_ROM_005baa60 = "CD-ROM";
 static TerminatedCString s_Fonts_005baa68 = "Fonts";
 static TerminatedCString s_Debug_005baa70 = "Debug";
-static TerminatedCString s_INV3D_RAW_005bac3c = "INV3D.RAW";
 static TerminatedCString s_CKeyActor_005bac54 = "$CKeyActor$$";
 static TerminatedCString s_CLadder_005bac70 = "$CLadder$$";
 static TerminatedCString s_CLarva_005bac84 = "$CLarva$$";
@@ -234,11 +107,8 @@ static TerminatedCString s_CMirrorHack_005bad78 = "$CMirrorHack$$";
 static TerminatedCString s_SReflector_005bad8c = "$SReflector$$";
 static TerminatedCString s_SGem_005bada0 = "$SGem$$";
 static TerminatedCString s_SPanel_005badac = "$SPanel$$";
-static TerminatedCString s_SPARK_RAW_005badc4 = "SPARK.RAW";
 static TerminatedCString s_CMarquee_005badd8 = "$CMarquee$$";
 static TerminatedCString s_CMelee_005badec = "$CMelee$$";
-static TerminatedCString s_F0100_RAW_005bae60 = "F0100.RAW";
-static TerminatedCString s_F0300_RAW_005bae78 = "F0300.RAW";
 static TerminatedCString s_CMoon_005baf3c = "$CMoon$$";
 static TerminatedCString s_CMimic_005baf50 = "$CMimic$$";
 static TerminatedCString s_CMineCar_005baf64 = "$CMineCar$$";
@@ -256,7 +126,6 @@ static TerminatedCString s_GSPlayer_PGameSettingsCh_005bdf00 = "$GSPlayer$:PGame
 static TerminatedCString s_SChatHistory_005bdf28 = "$SChatHistory$$";
 static TerminatedCString s_CMouse_005be068 = "$CMouse$$";
 static TerminatedCString s_CPassenger_005be080 = "$CPassenger$$";
-static TerminatedCString s_HEADLITE_RAW_005be098 = "HEADLITE.RAW";
 static TerminatedCString s_CPathMap_005be158 = "$CPathMap$$";
 static TerminatedCString s_CPendulum_005be16c = "$CPendulum$$";
 static TerminatedCString s_CPackedBitmap_005be188 = "$CPackedBitmap$$";
@@ -267,7 +136,6 @@ static TerminatedCString s_CScat_005be1f0 = "$CScat$$";
 static TerminatedCString s_none_005be228 = "(none)";
 static TerminatedCString s_CScript_005be304 = "$CScript$$";
 static TerminatedCString s_CSentinel_005be318 = "$CSentinel$$";
-static TerminatedCString s_BACKGND_RAW_005be688 = "BACKGND.RAW";
 static TerminatedCString s_SRoom_CDemonSet_005be6ac = "$SRoom$:CDemonSet$$";
 static TerminatedCString s_C3DSCamera_005be6d8 = "$C3DSCamera$$";
 static TerminatedCString s_CDemonRaytrace_005be6ec = "$CDemonRaytrace$$";
@@ -276,7 +144,6 @@ static TerminatedCString s_CDemonSet_005be718 = "$CDemonSet$$";
 static TerminatedCString s_SIntersectXZCylinder_005be729 = "$SIntersectXZCylinder$$";
 static TerminatedCString s_SCollisionReturnInfo_005be745 = "$SCollisionReturnInfo$$";
 static TerminatedCString s_SRaytraceState_005be761 = "$SRaytraceState$$";
-static TerminatedCString s_HEADLITE_RAW_005be92c = "HEADLITE.RAW";
 static TerminatedCString s_CShotgun_005be944 = "$CShotgun$$";
 static TerminatedCString s_CShovel_005be958 = "$CShovel$$";
 static TerminatedCString s_CSimBox_005be96c = "$CSimBox$$";
@@ -289,7 +156,6 @@ static TerminatedCString s_CMP3Decoder_005beca4 = "$CMP3Decoder$$";
 static TerminatedCString s_SfxSample_005becc4 = "$SfxSample$$";
 static TerminatedCString s_SfxOptions_005bece4 = "$SfxOptions$$";
 static TerminatedCString s_SfxSlot_005bed04 = "$SfxSlot$$";
-static TerminatedCString s_DEST_005bed39 = ":DEST";
 static TerminatedCString s_STrainNoise_005beff4 = "$STrainNoise$$";
 
 // char*[5][13] constants
@@ -301,10 +167,89 @@ static char* g_ChapterMissionFiles[5][13] = {
     {"hq-act5.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr}
 };
 
+// char*[9] constants
+static char* g_DirectionCharacters[9] = {
+    "x", "N", "S", "E",
+    "W", "NE", "NW", "SE",
+    "SW"
+};
+
+// char[4] constants
+static char g_CHAR_ARRAY_005b9384[4] = "EFD";
+
+// double[17] constants
+static double g_MpegRequantizationScaleTable[17] = {
+    1.3333333333299999, 1.6000000000000001, 1.1428571428600001, 1.7777777777699999,
+    1.06666666666, 1.0322580645199999, 1.01587301587, 1.0078740157499999,
+    1.00392156863, 1.0019569471600001, 1.0009775171099999, 1.00048851979,
+    1.00024420024, 1.0001220852199999, 1.00006103888, 1.00003051851,
+    1.00001525902
+};
+static double g_MpegRequantizationOffsetTable[17] = {
+    0.5, 0.5, 0.25, 0.5,
+    0.125, 0.0625, 0.03125, 0.015625,
+    0.0078125, 0.00390625, 0.001953125, 0.0009765625,
+    0.00048828125, 0.00024414062999999998, 0.00012207031, 6.1035159999999999e-05,
+    3.0517579999999999e-05
+};
+
+// double[2][4] constants
+static double g_MpegSampleRateTable[2][4] = {
+    {22.050000000000001, 24.0, 16.0, 0.0},
+    {44.100000000000001, 48.0, 32.0, 0.0}
+};
+
+// double[64] constants
+static double g_MpegScalefactorTable[64] = {
+    2, 1.5874010519682, 1.2599210498948701, 1,
+    0.79370052598410001, 0.62996052494744004, 0.5, 0.39685026299205001,
+    0.31498026247372002, 0.25, 0.19842513149602001, 0.15749013123686001,
+    0.125, 0.099212565748010004, 0.078745065618430005, 0.0625,
+    0.049606282874009998, 0.039372532809209999, 0.03125, 0.024803141436999999,
+    0.019686266404609999, 0.015625, 0.0124015707185, 0.0098431332023000001,
+    0.0078125, 0.0062007853592499999, 0.0049215666011500001, 0.00390625,
+    0.0031003926796299998, 0.0024607833005799999, 0.001953125, 0.00155019633981,
+    0.00123039165029, 0.0009765625, 0.00077509816991000002, 0.00061519582513999997,
+    0.00048828125, 0.00038754908495, 0.00030759791256999998, 0.000244140625,
+    0.00019377454248000001, 0.00015379895629000001, 0.0001220703125, 9.6887271240000006e-05,
+    7.6899478140000002e-05, 6.103515625e-05, 4.8443635620000003e-05, 3.8449739070000001e-05,
+    3.0517578130000002e-05, 2.4221817810000002e-05, 1.9224869539999999e-05, 1.5258789059999999e-05,
+    1.2110908899999999e-05, 9.6124347699999994e-06, 7.6293945299999996e-06, 6.0554544499999996e-06,
+    4.8062173799999998e-06, 3.8146972699999997e-06, 3.0277272300000001e-06, 2.4031086899999999e-06,
+    1.9073486299999999e-06, 1.5138636099999999e-06, 1.2015543500000001e-06, 9.9999999999999995e-21
+};
+
+// double[8] constants
+static double g_Mp3AntiAliasCSSource[8] = {
+    -0.59999999999999998, -0.53500000000000003, -0.33000000000000002, -0.185,
+    -0.095000000000000001, -0.041000000000000002, -0.014200000000000001, -0.0037000000000000002
+};
+
 // float constants
+static float g_MovieRecordingTargetFPS = 30.0f;
 static float FLOAT_005ba82c = 1.0f;
 static float FLOAT_005ba830 = -1.0f;
 static float FLOAT_005ba83c = 1.0f;
+
+// float[16][32] constants
+static float g_MpegSynthesisWindow[16][32] = {
+    {0.0f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -3.05180001e-05f, -3.05180001e-05f, -3.05180001e-05f, -3.05180001e-05f, -4.57759998e-05f, -4.57759998e-05f, -6.10349998e-05f, -6.10349998e-05f, -7.62940035e-05f, -7.62940035e-05f, -9.15530036e-05f, -0.000106811996f, -0.000106811996f, -0.00012207f, -0.000137329f, -0.000152588007f, -0.000167847f, -0.000198363996f, -0.000213623003f, -0.000244141003f, -0.000259399007f, -0.000289916992f, -0.000320435007f, -0.000366210996f, -0.00039672901f},
+    {-0.000442504999f, -0.000473021995f, -0.000534058025f, -0.000579833984f, -0.000625610002f, -0.000686645973f, -0.000747681013f, -0.000808715995f, -0.000885009998f, -0.000961304002f, -0.00103759801f, -0.00111389195f, -0.00120544399f, -0.00129699695f, -0.00138855004f, -0.001480103f, -0.00158691395f, -0.00169372605f, -0.00178527797f, -0.00190734898f, -0.00201415992f, -0.00212097191f, -0.00224304199f, -0.00234985398f, -0.00245666504f, -0.00257873489f, -0.00268554711f, -0.00279235793f, -0.00289916992f, -0.00299072289f, -0.00308227492f, -0.00317382789f},
+    {0.00325012207f, 0.00332641602f, 0.00338745094f, 0.003433228f, 0.00346374488f, 0.00347900391f, 0.00347900391f, 0.00346374488f, 0.00341796898f, 0.00337219192f, 0.00328064011f, 0.00317382789f, 0.00305175805f, 0.0028839109f, 0.0027008059f, 0.00248718308f, 0.00222778297f, 0.00193786598f, 0.00161743199f, 0.00126647903f, 0.000869750977f, 0.000442504999f, -3.05180001e-05f, -0.000549315999f, -0.00109863305f, -0.00169372605f, -0.00233459496f, -0.00300598098f, -0.003723145f, -0.00448608398f, -0.0052947998f, -0.00611877395f},
+    {-0.00700378418f, -0.00791931245f, -0.00886535645f, -0.00984191895f, -0.010848999f, -0.0118865967f, -0.0129394531f, -0.0140228271f, -0.01512146f, -0.0162353516f, -0.0173492432f, -0.0184631348f, -0.0195770264f, -0.020690918f, -0.0217895508f, -0.022857666f, -0.0239105225f, -0.0249328613f, -0.0259094238f, -0.02684021f, -0.0277252197f, -0.0285339355f, -0.0292816162f, -0.0299377441f, -0.0305328369f, -0.0310058594f, -0.0313873291f, -0.0316619873f, -0.0318145752f, -0.0318450928f, -0.0317382812f, -0.0314788818f},
+    {0.0310821533f, 0.0305175781f, 0.0297851562f, 0.0288848877f, 0.0278015137f, 0.0265350342f, 0.0250854492f, 0.0234222412f, 0.0215759277f, 0.01953125f, 0.0172576904f, 0.0148010254f, 0.0121154794f, 0.00923156738f, 0.0061340332f, 0.00282287598f, -0.000686645973f, -0.00439453078f, -0.00831604004f, -0.0124206543f, -0.016708374f, -0.0211791992f, -0.0258178711f, -0.0306091309f, -0.0355529785f, -0.0406341553f, -0.0458374023f, -0.0511322021f, -0.0565338135f, -0.06199646f, -0.0675201416f, -0.073059082f},
+    {-0.07862854f, -0.0841827393f, -0.0897064209f, -0.0951690674f, -0.100540161f, -0.105819702f, -0.110946655f, -0.115921021f, -0.120697021f, -0.125259399f, -0.129562378f, -0.133590698f, -0.137298584f, -0.140670776f, -0.143676758f, -0.146255493f, -0.148422241f, -0.150115967f, -0.151306152f, -0.15196228f, -0.152069092f, -0.151596069f, -0.150497437f, -0.148773193f, -0.146362305f, -0.143264771f, -0.139450073f, -0.134887695f, -0.129577637f, -0.123474121f, -0.116577148f, -0.108856201f},
+    {0.100311279f, 0.090927124f, 0.0806884766f, 0.0695953369f, 0.0576171875f, 0.0447845459f, 0.0310821533f, 0.0165100098f, 0.001068115f, -0.0152282706f, -0.0323791504f, -0.0503540039f, -0.0691680908f, -0.0887756348f, -0.109161377f, -0.130310059f, -0.152206421f, -0.174789429f, -0.198059082f, -0.221984863f, -0.246505737f, -0.271591187f, -0.297210693f, -0.323318481f, -0.349868774f, -0.376800537f, -0.404083252f, -0.431655884f, -0.459472656f, -0.487472534f, -0.515609741f, -0.543823242f},
+    {-0.572036743f, -0.600219727f, -0.628295898f, -0.656219482f, -0.683914185f, -0.71131897f, -0.738372803f, -0.765029907f, -0.791213989f, -0.816864014f, -0.841949463f, -0.866363525f, -0.890090942f, -0.91305542f, -0.935195923f, -0.956481934f, -0.976852417f, -0.996246338f, -1.01461792f, -1.03193665f, -1.04815674f, -1.06321716f, -1.07711792f, -1.08978271f, -1.10121155f, -1.1113739f, -1.120224f, -1.12774658f, -1.13392639f, -1.13876343f, -1.14221191f, -1.14428711f},
+    {1.14498901f, 1.14428711f, 1.14221191f, 1.13876343f, 1.13392639f, 1.12774658f, 1.120224f, 1.1113739f, 1.10121155f, 1.08978271f, 1.07711792f, 1.06321716f, 1.04815674f, 1.03193665f, 1.01461792f, 0.996246338f, 0.976852417f, 0.956481934f, 0.935195923f, 0.91305542f, 0.890090942f, 0.866363525f, 0.841949463f, 0.816864014f, 0.791213989f, 0.765029907f, 0.738372803f, 0.71131897f, 0.683914185f, 0.656219482f, 0.628295898f, 0.600219727f},
+    {0.572036743f, 0.543823242f, 0.515609741f, 0.487472534f, 0.459472656f, 0.431655884f, 0.404083252f, 0.376800537f, 0.349868774f, 0.323318481f, 0.297210693f, 0.271591187f, 0.246505737f, 0.221984863f, 0.198059082f, 0.174789429f, 0.152206421f, 0.130310059f, 0.109161377f, 0.0887756348f, 0.0691680908f, 0.0503540039f, 0.0323791504f, 0.0152282706f, -0.001068115f, -0.0165100098f, -0.0310821533f, -0.0447845459f, -0.0576171875f, -0.0695953369f, -0.0806884766f, -0.090927124f},
+    {0.100311279f, 0.108856201f, 0.116577148f, 0.123474121f, 0.129577637f, 0.134887695f, 0.139450073f, 0.143264771f, 0.146362305f, 0.148773193f, 0.150497437f, 0.151596069f, 0.152069092f, 0.15196228f, 0.151306152f, 0.150115967f, 0.148422241f, 0.146255493f, 0.143676758f, 0.140670776f, 0.137298584f, 0.133590698f, 0.129562378f, 0.125259399f, 0.120697021f, 0.115921021f, 0.110946655f, 0.105819702f, 0.100540161f, 0.0951690674f, 0.0897064209f, 0.0841827393f},
+    {0.07862854f, 0.073059082f, 0.0675201416f, 0.06199646f, 0.0565338135f, 0.0511322021f, 0.0458374023f, 0.0406341553f, 0.0355529785f, 0.0306091309f, 0.0258178711f, 0.0211791992f, 0.016708374f, 0.0124206543f, 0.00831604004f, 0.00439453078f, 0.000686645973f, -0.00282287598f, -0.0061340332f, -0.00923156738f, -0.0121154794f, -0.0148010254f, -0.0172576904f, -0.01953125f, -0.0215759277f, -0.0234222412f, -0.0250854492f, -0.0265350342f, -0.0278015137f, -0.0288848877f, -0.0297851562f, -0.0305175781f},
+    {0.0310821533f, 0.0314788818f, 0.0317382812f, 0.0318450928f, 0.0318145752f, 0.0316619873f, 0.0313873291f, 0.0310058594f, 0.0305328369f, 0.0299377441f, 0.0292816162f, 0.0285339355f, 0.0277252197f, 0.02684021f, 0.0259094238f, 0.0249328613f, 0.0239105225f, 0.022857666f, 0.0217895508f, 0.020690918f, 0.0195770264f, 0.0184631348f, 0.0173492432f, 0.0162353516f, 0.01512146f, 0.0140228271f, 0.0129394531f, 0.0118865967f, 0.010848999f, 0.00984191895f, 0.00886535645f, 0.00791931245f},
+    {0.00700378418f, 0.00611877395f, 0.0052947998f, 0.00448608398f, 0.003723145f, 0.00300598098f, 0.00233459496f, 0.00169372605f, 0.00109863305f, 0.000549315999f, 3.05180001e-05f, -0.000442504999f, -0.000869750977f, -0.00126647903f, -0.00161743199f, -0.00193786598f, -0.00222778297f, -0.00248718308f, -0.0027008059f, -0.0028839109f, -0.00305175805f, -0.00317382789f, -0.00328064011f, -0.00337219192f, -0.00341796898f, -0.00346374488f, -0.00347900391f, -0.00347900391f, -0.00346374488f, -0.003433228f, -0.00338745094f, -0.00332641602f},
+    {0.00325012207f, 0.00317382789f, 0.00308227492f, 0.00299072289f, 0.00289916992f, 0.00279235793f, 0.00268554711f, 0.00257873489f, 0.00245666504f, 0.00234985398f, 0.00224304199f, 0.00212097191f, 0.00201415992f, 0.00190734898f, 0.00178527797f, 0.00169372605f, 0.00158691395f, 0.001480103f, 0.00138855004f, 0.00129699695f, 0.00120544399f, 0.00111389195f, 0.00103759801f, 0.000961304002f, 0.000885009998f, 0.000808715995f, 0.000747681013f, 0.000686645973f, 0.000625610002f, 0.000579833984f, 0.000534058025f, 0.000473021995f},
+    {0.000442504999f, 0.00039672901f, 0.000366210996f, 0.000320435007f, 0.000289916992f, 0.000259399007f, 0.000244141003f, 0.000213623003f, 0.000198363996f, 0.000167847f, 0.000152588007f, 0.000137329f, 0.00012207f, 0.000106811996f, 0.000106811996f, 9.15530036e-05f, 7.62940035e-05f, 7.62940035e-05f, 6.10349998e-05f, 6.10349998e-05f, 4.57759998e-05f, 4.57759998e-05f, 3.05180001e-05f, 3.05180001e-05f, 3.05180001e-05f, 3.05180001e-05f, 1.52590001e-05f, 1.52590001e-05f, 1.52590001e-05f, 1.52590001e-05f, 1.52590001e-05f, 1.52590001e-05f}
+};
 
 // int constants
 static int DAT_005B6D24 = 0x1;
@@ -333,11 +278,8 @@ static string s_CNetGame_005bdf3c = "$CNetGame$$";
 static string s_SVDBox_005be69c = "$SVDBox$$";
 static string s_C3DSLight_005be6c4 = "$C3DSLight$$";
 
-// undefined1 constants
-static undefined1 DAT_005b6d08 = 0x01;
-static undefined1 DAT_005b6d09 = 0x02;
-static undefined1 DAT_005b9384 = 0x45;
-static undefined1 DAT_005b9385 = 0x46;
+// uchar[8] constants
+static uchar g_VoxelYBitMasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined1* constants
 static undefined1* DAT_005BAF20 = (undefined1*)s_f0500_00589213;
@@ -377,109 +319,12 @@ static undefined1* DAT_005BB200 = (undefined1*)s_noc00026_0058aa58;
 static undefined1* DAT_005BB204 = (undefined1*)s_noc00027_0058aa61;
 static undefined1* DAT_005BB208 = (undefined1*)s_noc00028_0058aa6a;
 static undefined1* DAT_005BB20C = (undefined1*)s_noc00029_0058aa73;
-static undefined1* DAT_005BE130 = (undefined1*)s_x_0058cecf;
-static undefined1* DAT_005BE134 = (undefined1*)s_N_0058ced1;
-static undefined1* DAT_005BE138 = (undefined1*)s_S_0058ced3;
-static undefined1* DAT_005BE13C = (undefined1*)s_E_0058ced5;
-static undefined1* DAT_005BE140 = (undefined1*)s_W_0058ced7;
-static undefined1* DAT_005BE144 = (undefined1*)s_NE_0058ced9;
-static undefined1* DAT_005BE148 = (undefined1*)s_NW_0058cedc;
-static undefined1* DAT_005BE14C = (undefined1*)s_SE_0058cedf;
-static undefined1* DAT_005BE150 = (undefined1*)s_SW_0058cee2;
 static undefined1* DAT_005BEA54 = (undefined1*)s_anon_00593b8a;
 static undefined1* DAT_005BEA58 = (undefined1*)s_anon_00593b8c;
 static undefined1* DAT_005BEA5C = (undefined1*)s_anon_00593b8d;
 
 // undefined4 constants
-static undefined4 DAT_005b5d20 = 0x01000100;
-static undefined4 DAT_005b5d40 = 0x02000200;
-static undefined4 DAT_005b5d60 = 0x03000300;
-static undefined4 DAT_005b5d80 = 0x04000400;
-static undefined4 DAT_005b5da0 = 0x05000500;
-static undefined4 DAT_005b5dc0 = 0x06000600;
-static undefined4 DAT_005b5de0 = 0x07000700;
-static undefined4 DAT_005b5e00 = 0x08000800;
-static undefined4 DAT_005b5e20 = 0x09000900;
-static undefined4 DAT_005b5e40 = 0x0A000A00;
-static undefined4 DAT_005b5e60 = 0x0B000B00;
-static undefined4 DAT_005b5e80 = 0x0C000C00;
-static undefined4 DAT_005b5ea0 = 0x0D000D00;
-static undefined4 DAT_005b5ec0 = 0x0E000E00;
-static undefined4 DAT_005b5ee0 = 0x0F000F00;
-static undefined4 DAT_005b5f00 = 0x10001000;
-static undefined4 DAT_005b5f20 = 0x11001100;
-static undefined4 DAT_005b5f40 = 0x12001200;
-static undefined4 DAT_005b5f60 = 0x13001300;
-static undefined4 DAT_005b5f80 = 0x14001400;
-static undefined4 DAT_005b5fa0 = 0x15001500;
-static undefined4 DAT_005b5fc0 = 0x16001600;
-static undefined4 DAT_005b5fe0 = 0x17001700;
-static undefined4 DAT_005b6000 = 0x18001800;
-static undefined4 DAT_005b6020 = 0x19001900;
-static undefined4 DAT_005b6040 = 0x1A001A00;
-static undefined4 DAT_005b6060 = 0x1B001B00;
-static undefined4 DAT_005b6080 = 0x1C001C00;
-static undefined4 DAT_005b60a0 = 0x1D001D00;
-static undefined4 DAT_005b60c0 = 0x1E001E00;
-static undefined4 DAT_005b60e0 = 0x1F001F00;
-static undefined4 DAT_005b6100 = 0x20002000;
-static undefined4 DAT_005b6120 = 0x21002100;
-static undefined4 DAT_005b6140 = 0x22002200;
-static undefined4 DAT_005b6160 = 0x23002300;
-static undefined4 DAT_005b6180 = 0x24002400;
-static undefined4 DAT_005b61a0 = 0x25002500;
-static undefined4 DAT_005b61c0 = 0x26002600;
-static undefined4 DAT_005b61e0 = 0x27002700;
-static undefined4 DAT_005b6200 = 0x28002800;
-static undefined4 DAT_005b6220 = 0x29002900;
-static undefined4 DAT_005b6240 = 0x2A002A00;
-static undefined4 DAT_005b6260 = 0x2B002B00;
-static undefined4 DAT_005b6280 = 0x2C002C00;
-static undefined4 DAT_005b62a0 = 0x2D002D00;
-static undefined4 DAT_005b62c0 = 0x2E002E00;
-static undefined4 DAT_005b62e0 = 0x2F002F00;
-static undefined4 DAT_005b6300 = 0x30003000;
-static undefined4 DAT_005b6320 = 0x31003100;
-static undefined4 DAT_005b6340 = 0x32003200;
-static undefined4 DAT_005b6360 = 0x33003300;
-static undefined4 DAT_005b6380 = 0x34003400;
-static undefined4 DAT_005b63a0 = 0x35003500;
-static undefined4 DAT_005b63c0 = 0x36003600;
-static undefined4 DAT_005b63e0 = 0x37003700;
-static undefined4 DAT_005b6400 = 0x38003800;
-static undefined4 DAT_005b6420 = 0x39003900;
-static undefined4 DAT_005b6440 = 0x3A003A00;
-static undefined4 DAT_005b6460 = 0x3B003B00;
-static undefined4 DAT_005b6480 = 0x3C003C00;
-static undefined4 DAT_005b64a0 = 0x3D003D00;
-static undefined4 DAT_005b64c0 = 0x3E003E00;
-static undefined4 DAT_005b64e0 = 0x3F003F00;
-static undefined4 DAT_005b6d00 = 0x00000004;
-static undefined4 DAT_005b7650 = 0x01C03A10;
-static undefined4 DAT_005b9364 = 0x00000040;
-static undefined4 DAT_005b9368 = 0x00000040;
-static undefined4 DAT_005bc00c = 0x00000080;
-static undefined4 DAT_005bc030 = 0x000000FF;
 static undefined4 DAT_005be180 = 0x1A474250;
-static undefined4 DAT_005be37c = 0x00000180;
-static undefined4 DAT_005be380 = 0x00000200;
-static undefined4 DAT_005be384 = 0x00000180;
-static undefined4 DAT_005be504 = 0x00000080;
-static undefined4 DAT_005be77c = 0xFFFFFFFF;
-static undefined4 DAT_005be7c4 = 0x00000001;
-static undefined4 DAT_005be7d4 = 0x00000001;
-static undefined4 DAT_005be978 = 0x00000003;
-static undefined4 DAT_005be97c = 0x00000007;
-
-// undefined8 constants
-static undefined8 DAT_005b4790 = 0x0008000800080008;
-static undefined8 DAT_005b4798 = 0x0004000400040004;
-static undefined8 DAT_005b47a0 = 0x000C000C000C000C;
-static undefined8 DAT_005b47b0 = 0x0040004000400040;
-static undefined8 DAT_005b47b8 = 0x0020002000200020;
-static undefined8 DAT_005b47c0 = 0x0060006000600060;
-static undefined8 DAT_005bbc00 = 0xBFE3333333333333;
-static undefined8 DAT_005bbc08 = 0xBFE11EB851EB851F;
 
 // void* constants
 static void* DAT_005B7F94 = (void*)0x004819E8; // caseD_1

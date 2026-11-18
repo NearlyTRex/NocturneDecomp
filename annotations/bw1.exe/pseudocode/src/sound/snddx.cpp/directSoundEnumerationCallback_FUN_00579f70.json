@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 214,
-    "complexity_score": 178,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 7,
+    "pseudocode_lines": 91,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "raw_address_constant",
+      "unresolved_funcptr"
     ],
-    "total_lines": 302
+    "total_lines": 305
   },
   "cross_references": [
     {
@@ -61,7 +60,7 @@
     {
       "addr": "00577500",
       "is_variadic": false,
-      "name": "sound_snddx.cpp_FUN_00577500"
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500"
     },
     {
       "addr": "005773f0",
@@ -71,20 +70,20 @@
     {
       "addr": "005b3a90",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005b3a90"
+      "name": "wincore_winrun.cpp_outputDebugString_FUN_005b3a90"
     }
   ],
   "globals": [
     {
       "addr": "006235d0",
-      "name": "DAT_006235d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DirectSoundDeviceCount",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "02c823dc",
-      "name": "DAT_02c823dc",
-      "type": "undefined4",
+      "name": "g_INT_02c823dc",
+      "type": "int",
       "value": null
     }
   ],
@@ -195,22 +194,6 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_006235d0",
-      "severity": "mild",
-      "text": "if (0xb < DAT_006235d0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 45,
       "match": "code *",
@@ -219,36 +202,20 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_006235d0",
-      "severity": "mild",
-      "text": "iVar2 = DAT_006235d0 * 0x11c;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 59,
       "match": "(uint *)((int)device_guid",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)device_guid + (uint)bVar7 * -8 + 4);",
+      "text": "puVar4 = (uint *)((int)device_guid + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_006235d0",
-      "severity": "mild",
-      "text": "DAT_006235d0 = DAT_006235d0 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_006235d0",
-      "severity": "mild",
-      "text": "DAT_006235d0 = DAT_006235d0 + 1;",
-      "type": "undefined_data"
+      "description": "Raw hex literal 0x2c8104c matches address of g_DirectSoundDevices (+8 bytes into) (type SDirectSoundDeviceInfo[8]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 58,
+      "match": "0x2c8104c",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)(iVar3 + 0x2c8104c + (uint)bVar8 * -8);",
+      "type": "raw_address_constant"
     }
   ]
 }

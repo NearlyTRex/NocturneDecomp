@@ -2,19 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 151,
+    "complexity_score": 250,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 21,
     "suspect_types": [
-      "undefined_data",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "displaced_global_access",
+      "pointer_cast",
+      "pointer_truncation",
+      "suspicious_cast",
+      "unknown_field"
     ],
-    "total_lines": 35
+    "total_lines": 34
   },
   "cross_references": [
     {
@@ -63,32 +65,32 @@
   "globals": [
     {
       "addr": "02c7fbf8",
-      "name": "DAT_02c7fbf8",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fbf8",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc08",
-      "name": "DAT_02c7fc08",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fc08",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc18",
-      "name": "DAT_02c7fc18",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fc18",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc88",
-      "name": "DAT_02c7fc88",
-      "type": "undefined4",
+      "name": "g_INT_02c7fc88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c807f4",
-      "name": "DAT_02c807f4",
-      "type": "undefined4",
+      "name": "g_BYTE_02c807f4",
+      "type": "byte",
       "value": null
     }
   ],
@@ -213,35 +215,35 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Unknown/mangled field access",
+      "line": 9,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "*(uint *)(&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88) = pos_x._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 10,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fbf8 + iVar1 * 8 + 4) = pos_x._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 11,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8) = pos_x._0_4_;",
+      "text": "*(uint *)(&g_DOUBLE_02c7fc08 + iVar1) = pos_y._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_02c7fbf8",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8) = pos_x._0_4_;",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 12,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "*(uint *)(iVar1 * 8 + 0x2c7fbfc) = pos_x._4_4_;",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fc08 + iVar1 * 8 + 4) = pos_y._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -249,64 +251,166 @@
       "line": 13,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_02c7fc08 + iVar1 * 8) = pos_y._0_4_;",
+      "text": "*(uint *)(&g_DOUBLE_02c7fc18 + iVar1) = pos_z._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_02c7fc08",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02c7fc08 + iVar1 * 8) = pos_y._0_4_;",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 14,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "*(uint *)(iVar1 * 8 + 0x2c7fc0c) = pos_y._4_4_;",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fc18 + iVar1 * 8 + 4) = pos_z._4_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 15,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02c7fc18 + iVar1 * 8) = pos_z._0_4_;",
-      "type": "unknown_field"
+      "description": "Cast-and-add on &g_DOUBLE_02c7fbf8 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc00 (at 0x02c7fc00, +8 bytes).",
+      "line": 9,
+      "match": "g_DOUBLE_02c7fbf8",
+      "severity": "moderate",
+      "text": "*(uint *)(&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88) = pos_x._0_4_;",
+      "type": "suspicious_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_02c7fc18",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02c7fc18 + iVar1 * 8) = pos_z._0_4_;",
-      "type": "undefined_data"
+      "description": "Cast-and-add on &g_DOUBLE_02c7fc08 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc10 (at 0x02c7fc10, +8 bytes).",
+      "line": 11,
+      "match": "g_DOUBLE_02c7fc08",
+      "severity": "moderate",
+      "text": "*(uint *)(&g_DOUBLE_02c7fc08 + iVar1) = pos_y._0_4_;",
+      "type": "suspicious_cast"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Cast-and-add on &g_DOUBLE_02c7fc18 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc20 (at 0x02c7fc20, +8 bytes).",
+      "line": 13,
+      "match": "g_DOUBLE_02c7fc18",
+      "severity": "moderate",
+      "text": "*(uint *)(&g_DOUBLE_02c7fc18 + iVar1) = pos_z._0_4_;",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02c7fbf8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 10,
+      "match": "(int)&g_DOUBLE_02c7fbf8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fbf8 + iVar1 * 8 + 4) = pos_x._4_4_;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02c7fc08` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)&g_DOUBLE_02c7fc08",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fc08 + iVar1 * 8 + 4) = pos_y._4_4_;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02c7fc18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)&g_DOUBLE_02c7fc18",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fc18 + iVar1 * 8 + 4) = pos_z._4_4_;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 10,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fbf8 + iVar1 * 8 + 4) = pos_x._4_4_;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 12,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fc08 + iVar1 * 8 + 4) = pos_y._4_4_;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 14,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_DOUBLE_02c7fc18 + iVar1 * 8 + 4) = pos_z._4_4_;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fbf8] lands in g_DOUBLE_02c7fbf8 but intended target is g_DOUBLE_02c7fc00 at 0x2c7fc00 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fbf8",
+      "displacement": "0x2c7fbf8",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc00",
+      "line": 6,
+      "match": "0x2c7fbf8",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00573ece: MOV dword ptr [EAX*0x8 + 0x2c7fbf8],EDX  ; g_DOUBLE_02c7fbf8",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fbfc] lands in g_DOUBLE_02c7fbf8 but intended target is g_DOUBLE_02c7fc00 at 0x2c7fc00 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fbf8",
+      "displacement": "0x2c7fbfc",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc00",
+      "line": 8,
+      "match": "0x2c7fbfc",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00573ed9: MOV dword ptr [EAX*0x8 + 0x2c7fbfc],EDX",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc08] lands in g_DOUBLE_02c7fc08 but intended target is g_DOUBLE_02c7fc10 at 0x2c7fc10 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc08",
+      "displacement": "0x2c7fc08",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc10",
+      "line": 10,
+      "match": "0x2c7fc08",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00573ee4: MOV dword ptr [EAX*0x8 + 0x2c7fc08],EDX  ; g_DOUBLE_02c7fc08",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc0c] lands in g_DOUBLE_02c7fc08 but intended target is g_DOUBLE_02c7fc10 at 0x2c7fc10 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc08",
+      "displacement": "0x2c7fc0c",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc10",
+      "line": 12,
+      "match": "0x2c7fc0c",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00573eef: MOV dword ptr [EAX*0x8 + 0x2c7fc0c],EDX",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc18] lands in g_DOUBLE_02c7fc18 but intended target is g_DOUBLE_02c7fc20 at 0x2c7fc20 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc18",
+      "displacement": "0x2c7fc18",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc20",
+      "line": 14,
+      "match": "0x2c7fc18",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00573efa: MOV dword ptr [EAX*0x8 + 0x2c7fc18],EDX  ; g_DOUBLE_02c7fc18",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc1c] lands in g_DOUBLE_02c7fc18 but intended target is g_DOUBLE_02c7fc20 at 0x2c7fc20 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc18",
+      "displacement": "0x2c7fc1c",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc20",
       "line": 16,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)(iVar1 * 8 + 0x2c7fc1c) = pos_z._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_02c807f4",
-      "severity": "mild",
-      "text": "DAT_02c807f4 = DAT_02c807f4 | 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_02c807f4",
-      "severity": "mild",
-      "text": "DAT_02c807f4 = DAT_02c807f4 | 2;",
-      "type": "undefined_data"
+      "match": "0x2c7fc1c",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00573f05: MOV dword ptr [EAX*0x8 + 0x2c7fc1c],EDX",
+      "type": "displaced_global_access"
     }
   ]
 }

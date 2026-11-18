@@ -1,0 +1,16 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl core_baron_cpp_CBaron_renderOpaque_FUN_00410660(CBaron *this_ptr)
+;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
+;
+; *****************************************************************************
+
+section .text
+
+    XOR EAX,EAX                         ; 00410660
+        ;   Label: core_baron.cpp_CBaron_renderOpaque_FUN_00410660
+    RET                                 ; 00410662
+

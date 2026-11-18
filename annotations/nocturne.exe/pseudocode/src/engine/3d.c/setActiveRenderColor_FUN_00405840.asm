@@ -9,27 +9,27 @@
 ;   engine_3d.c_drawLineStrip3D_FUN_00405900 at 00405907
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005acbc4
-;   undefined4 DAT_006b0260
+;   int[16] g_ColorLookupTable
+;   int g_CurrentPolygonColor
 ;   int g_ActiveRenderColor
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x006b0260]      ; 00405840 | DAT_006b0260
+    MOV EDX,dword ptr [0x006b0260]      ; 00405840 | g_CurrentPolygonColor
         ;   Label: engine_3d.c_setActiveRenderColor_FUN_00405840
     TEST EDX,EDX                        ; 00405846
     JL 0x0040585e                       ; 00405848
         ;   XREF to: 0040585e (CONDITIONAL_JUMP)  ; LAB_0040585e
-    MOV ECX,dword ptr [EDX*0x4 + 0x5acbc4] ; 0040584a | DAT_005acbc4
+    MOV ECX,dword ptr [EDX*0x4 + 0x5acbc4] ; 0040584a | g_ColorLookupTable
     MOV dword ptr [0x01c00c70],ECX      ; 00405851 | g_ActiveRenderColor
-    MOV dword ptr [0x006b0260],EDX      ; 00405857 | DAT_006b0260
+    MOV dword ptr [0x006b0260],EDX      ; 00405857 | g_CurrentPolygonColor
     RET                                 ; 0040585d
     MOV ECX,EDX                         ; 0040585e
         ;   Label: LAB_0040585e
     NEG ECX                             ; 00405860
     MOV dword ptr [0x01c00c70],ECX      ; 00405862 | g_ActiveRenderColor
-    MOV dword ptr [0x006b0260],EDX      ; 00405868 | DAT_006b0260
+    MOV dword ptr [0x006b0260],EDX      ; 00405868 | g_CurrentPolygonColor
     RET                                 ; 0040586e
 

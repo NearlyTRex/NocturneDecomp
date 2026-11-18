@@ -8,10 +8,10 @@
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db0 at 00481e89
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bc1238
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01c4480c
-;   undefined4 DAT_01c4f030
+;   int g_RenderPixelCounter
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
+;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     SHR EAX,0x10                        ; 00487435
         ;   Label: LAB_00487435
     SHR ECX,0x10                        ; 00487438
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c4480c] ; 0048743b | DAT_01c4480c
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c4354c] ; 00487442 | DAT_01c4354c
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c4480c] ; 0048743b | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c4354c] ; 00487442 | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00487449
     JLE 0x004875ac                      ; 0048744b
         ;   XREF to: 004875ac (CONDITIONAL_JUMP)  ; LAB_004875ac
@@ -42,12 +42,12 @@ section .text
     INC ECX                             ; 00487458
     MOV EAX,dword ptr [EDI + 0x28]      ; 00487459
     SUB EAX,dword ptr [ESI + 0x28]      ; 0048745c
-    IMUL dword ptr [ECX*0x4 + 0x1c4f030] ; 0048745f | DAT_01c4f030
+    IMUL dword ptr [ECX*0x4 + 0x1c4f030] ; 0048745f | g_ReciprocalLookupTable
     MOV EDI,EBX                         ; 00487466
     MOV EBX,EBP                         ; 00487468
     DEC ECX                             ; 0048746a
     MOV ESI,dword ptr [ESI + 0x28]      ; 0048746b
-    MOV EAX,[0x01bc1238]                ; 0048746e | DAT_01bc1238
+    MOV EAX,[0x01bc1238]                ; 0048746e | g_RenderPixelCounter
     SUB ECX,0x4                         ; 00487473
         ;   Label: LAB_00487473
     JL 0x00487578                       ; 00487476
@@ -175,7 +175,7 @@ section .text
     SHR EBP,0x8                         ; 0048759e
     CMP EBP,dword ptr [EBX + 0x8]       ; 004875a1
     SBB EAX,-0x1                        ; 004875a4
-    MOV [0x01bc1238],EAX                ; 004875a7 | DAT_01bc1238
+    MOV [0x01bc1238],EAX                ; 004875a7 | g_RenderPixelCounter
         ;   Label: LAB_004875a7
     POP EBP                             ; 004875ac
         ;   Label: LAB_004875ac

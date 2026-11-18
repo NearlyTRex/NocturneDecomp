@@ -14,9 +14,9 @@
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 0042688d
-;   core_doc.cpp_FUN_00455170 at 00455251
-;   core_gabriela.cpp_FUN_004b20d0 at 004b21a5
-;   core_stranger.cpp_FUN_00567430 at 00567511
+;   core_doc.cpp_CDoc_extractTurnPose_FUN_00455170 at 00455251
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 at 004b21a5
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430 at 00567511
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890

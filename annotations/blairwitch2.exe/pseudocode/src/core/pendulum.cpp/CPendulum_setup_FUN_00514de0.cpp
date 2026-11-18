@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_00514de0(CPendulum *this_ptr)
 
@@ -60,7 +59,8 @@ void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_00514de0(CPendulum *this_ptr)
     fStack_3c = fStack_54;
     fStack_38 = fStack_50;
   }
-  this_ptr->period = SQRT((fStack_3c - fStack_48) * (float)_DAT_005e1a12) * (float)_DAT_005e1a1a;
+  this_ptr->period =
+       SQRT((fStack_3c - fStack_48) * (float)0.03125) * (float)6.2831853070000001;
   fStack_34 = fStack_4c + fStack_40;
   fStack_30 = fStack_48 + fStack_3c;
   fStack_2c = fStack_44 + fStack_38;
@@ -68,8 +68,8 @@ void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_00514de0(CPendulum *this_ptr)
   (&stack0xffffffdc)[(uint)bVar4 * -2 + 3] = (&stack0xffffffd0)[(uint)bVar4 * 0xfffffffe];
   (&stack0xffffffdc)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
        (&stack0xffffffd0)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  fStack_10 = fStack_1c * _DAT_005e1a22;
-  fStack_28 = fStack_1c * _DAT_005e1a22;
+  fStack_10 = fStack_1c * 0.5f;
+  fStack_28 = fStack_1c * 0.5f;
   (&stack0xffffffdc)[(uint)bVar4 * 0xfffffffe] =
        (float)*(uint *)(&stack0xfffffff4 + (uint)bVar4 * -8);
   (&stack0xffffffdc)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =

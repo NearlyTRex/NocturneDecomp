@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 76,
+    "complexity_score": 15,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 45
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -31,7 +28,7 @@
     {
       "addr": "00449600",
       "from_addr": "004496a6",
-      "name": "core_crate.cpp_FUN_00449600",
+      "name": "core_crate.cpp_CCrate_explode_FUN_00449600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,7 +46,7 @@
     {
       "addr": "004f7690",
       "from_addr": "004f85a2",
-      "name": "core_inv.cpp_FUN_004f7690",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -81,13 +78,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740",
-    "signature": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)"
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission *this_ptr,CDemonActor *actor,uint flags)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     }
   ],
   "globals": [
@@ -105,14 +102,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -122,7 +119,7 @@
       {
         "call_addr": "004f85a2",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,7 +130,7 @@
       {
         "call_addr": "004f8643",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,7 +141,7 @@
       {
         "call_addr": "004f8705",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,7 +152,7 @@
       {
         "call_addr": "004f898a",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +163,7 @@
       {
         "call_addr": "004f89c3",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +174,7 @@
       {
         "call_addr": "004f8a85",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +185,7 @@
       {
         "call_addr": "004496a6",
         "call_type": "direct",
-        "caller": "core_crate.cpp_FUN_00449600",
+        "caller": "core_crate.cpp_CCrate_explode_FUN_00449600",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -302,60 +299,19 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "actor",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonActor *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "flags",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->delete_queue_actors[this_ptr->delete_queue_count] = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr->delete_queue_flags[this_ptr->delete_queue_count] = param_3;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

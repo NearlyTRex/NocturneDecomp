@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_flamecan_cpp_CFlameCan_getActorType_FUN_0048e360(CFlameCan *this_ptr)
 
 {
-  return &g_CFlameCanActorType_01c70654;
+  return &g_CFlameCanClassInfo;
 }

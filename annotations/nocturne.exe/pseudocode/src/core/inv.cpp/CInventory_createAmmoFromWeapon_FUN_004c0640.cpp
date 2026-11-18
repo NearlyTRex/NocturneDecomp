@@ -2,11 +2,11 @@
 // Address: 004c0640
 // Address Range: [[004c0640, 004c0703]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int param_2)
+// Signature: void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int weapon)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int param_2)
+void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int weapon)
 
 {
   char cVar1;
@@ -14,7 +14,7 @@ void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventor
   CAmmo *this_ptr_00;
   char *pcVar3;
   
-  if (*(int *)(param_2 + 0x564) == -1) {
+  if (*(int *)(weapon + 0x564) == -1) {
     return;
   }
   pCVar2 = operator_new(0x314);
@@ -27,9 +27,9 @@ void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventor
     g_CurrentLineNumber = 765;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory");
   }
-  this_ptr_00->ammo_count = *(int *)(param_2 + 0x560);
-  this_ptr_00->ammo_type = *(EAmmoType *)(param_2 + 0x564);
-  pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0((CDemonActor *)param_2);
+  this_ptr_00->ammo_count = *(int *)(weapon + 0x560);
+  this_ptr_00->ammo_type = *(EAmmoType *)(weapon + 0x564);
+  pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0((CDemonActor *)weapon);
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(this_ptr_00,pcVar3);
   (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
   pcVar3 = "Some_ammo";

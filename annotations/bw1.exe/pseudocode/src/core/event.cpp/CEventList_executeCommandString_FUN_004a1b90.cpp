@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004a1b90(CEventList *this_ptr,char *command_string)
 
 {
@@ -18,7 +16,7 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004a1b90(CEventLi
   char local_208 [512];
   
   do {
-    while (((&DAT_00626114)[(byte)(*command_string + 1)] & 2) != 0) {
+    while ((g_CharacterClassificationTable[(byte)(*command_string + 1)] & 2) != 0) {
       command_string = command_string + 1;
     }
     cVar1 = *command_string;
@@ -35,17 +33,17 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004a1b90(CEventLi
       pcVar4 = pcVar4 + 1;
     }
     while ((command_string = pcVar4 + 1, local_208 < pcVar2 &&
-           (((&DAT_00626114)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
+           ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
       pcVar2 = pcVar2 + -1;
     }
     if (local_208 < pcVar2) {
       *pcVar2 = '\0';
-      iVar3 = core_event_cpp_FUN_004a1d00(this_ptr,local_208);
+      iVar3 = core_event_cpp_CEventList_executeCommand_FUN_004a1d00(this_ptr,local_208);
       if (iVar3 == 0) {
-        if (_DAT_01c56ecc != 0) {
+        if (g_EventDryRun != 0) {
           return 0;
         }
-        engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,&DAT_005dcd8e);
+        engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s\n");
       }
     }
   } while( true );

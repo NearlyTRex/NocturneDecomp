@@ -5,30 +5,42 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CTommyGunActorType_02dd0fd0 = {};
-CDemonActorType g_CTrapActorType_02dd100c = {};
-CDemonActorType g_CTrashActorType_02dd1048 = {};
-CDemonActorType g_CTriggerActorType_02dd1084 = {};
-CDemonActorType g_CTurretActorType_02dd10d0 = {};
-CDemonActorType g_CTVBatActorType_02dd110c = {};
-CDemonActorType g_CVampireBossActorType_02dd1148 = {};
-CDemonActorType g_CVehicleActorType_02dd1190 = {};
-CDemonActorType g_CCryptVesselActorType_02dd11cc = {};
-CDemonActorType g_CWaterActorActorType_02ddd598 = {};
-CDemonActorType g_CWayPointActorType_02ddf514 = {};
-CDemonActorType g_CWeaponActorType_02ddf970 = {};
+CDemonActorType g_CTommyGunClassInfo = {};
+CDemonActorType g_CTrapClassInfo = {};
+CDemonActorType g_CTrashClassInfo = {};
+CDemonActorType g_CTriggerClassInfo = {};
+CDemonActorType g_CTurretClassInfo = {};
+CDemonActorType g_CTVBatClassInfo = {};
+CDemonActorType g_CVampireBossClassInfo = {};
+CDemonActorType g_CVehicleClassInfo = {};
+CDemonActorType g_CCryptVesselClassInfo = {};
+CDemonActorType g_CWaterActorClassInfo = {};
+CDemonActorType g_CWayPointClassInfo = {};
+CDemonActorType g_CWeaponClassInfo = {};
+
+// CDemonGlobe
+CDemonGlobe g_CDemonGlobe_02ddf9ac = {};
+
+// CTerrain
+CTerrain g_CTerrainInstance = {};
+
+// CTextureCache*
+CTextureCache* g_TextureCacheInstance = {};
 
 // CVector3f[100]
-CVector3f g_CVector3f_ARRAY_02dd9268[100] = {};
+CVector3f g_WaterActorCollisionPositions[100] = {};
 
 // CVector3f[200]
-CVector3f g_CVector3f_ARRAY_02ddfa28[200] = {};
+CVector3f g_WeatherParticlePositions[200] = {};
+
+// CVector3i
+CVector3i g_CVector3i_02dda6b8 = {};
 
 // CWater
 CWater g_CWaterInstance = {};
 
 // CWeather
-CWeather g_CWeather_02ddf9f0 = {};
+CWeather g_CWeatherInstance = {};
 
 // IDirectDraw*
 IDirectDraw* g_DirectDrawObject = {};
@@ -40,11 +52,44 @@ IDirectDrawSurface* g_SoftwareRenderSurface = {};
 // IUnknown*
 IUnknown* g_DirectDrawUnknown = {};
 
+// PALETTEENTRY[256]
+PALETTEENTRY g_DDPaletteBuffer[256] = {};
+
 // SCollisionInfo[100]
-SCollisionInfo g_SCollisionInfo_ARRAY_02dd9718[100] = {};
+SCollisionInfo g_WaterActorCollisionInfos[100] = {};
+
+// SMRGLTextureModel
+SMRGLTextureModel g_CurrentTexture = {};
 
 // UVector3
 UVector3 g_ZeroVector = {};
+
+// char[4]
+char g_CHAR_ARRAY_02ddd5d4[4] = {};
+
+// float
+float g_FLOAT_02dd1220 = {};
+float g_FLOAT_02dd1224 = {};
+float g_FLOAT_02dd1228 = {};
+float g_WaterAnimationPhase = {};
+
+// int
+int g_CurrentTextureIndex = {};
+int g_WaterAnimationTimer = {};
+int g_WaterCurrentFrame = {};
+int g_VisibleWaterTileCount = {};
+int g_WaterAnimationBlend = {};
+int g_FlipPending = {};
+int g_GraphicsResetFlag = {};
+int g_Display24BitFallback = {};
+
+// int[4096]
+int g_VisibleWaterTilesX[4096] = {};
+int g_VisibleWaterTilesY[4096] = {};
+
+// uchar[4]
+uchar g_BroadcastIP[4] = {};
+uchar g_AnyAddressIP[4] = {};
 
 // void*
 void* g_SoftwareFrameBuffer = {};

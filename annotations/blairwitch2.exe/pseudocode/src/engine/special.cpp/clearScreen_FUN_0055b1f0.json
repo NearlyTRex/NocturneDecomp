@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 101,
+    "complexity_score": 30,
     "cross_reference_count": 29,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 74
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -35,15 +32,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00446f50",
-      "from_addr": "00446f89",
-      "name": "core_dcube.cpp_FUN_00446f50",
+      "addr": "004bdc20",
+      "from_addr": "004bdc59",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004bdc20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bdfb0",
       "from_addr": "004be011",
       "name": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bbf70",
+      "from_addr": "004bc0cf",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b5190",
+      "from_addr": "004b5284",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,39 +68,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b5190",
-      "from_addr": "004b5284",
-      "name": "core_game.cpp_FUN_004b5190",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bbf70",
-      "from_addr": "004bc0cf",
-      "name": "core_game.cpp_FUN_004bbf70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004bcbf0",
       "from_addr": "004bcde7",
-      "name": "core_game.cpp_FUN_004bcbf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bdc20",
-      "from_addr": "004bdc59",
-      "name": "core_game.cpp_FUN_004bdc20",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e1480",
       "from_addr": "004e15c3",
-      "name": "core_level.cpp_FUN_004e1480",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e45e0",
-      "from_addr": "004e45f0",
-      "name": "core_main.c_FUN_004e45e0",
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004e1480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,9 +86,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004e45e0",
+      "from_addr": "004e45f0",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_004e45e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004eed60",
       "from_addr": "004ef9ce",
-      "name": "core_menu.cpp_FUN_004eed60",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eed60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -157,7 +148,7 @@
     {
       "addr": "0052f2a0",
       "from_addr": "0052fab5",
-      "name": "core_set.cpp_FUN_0052f2a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -167,21 +158,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047be90",
-      "from_addr": "0047bee6",
-      "name": "shape_edittool.cpp_FUN_0047be90",
+      "addr": "00446f50",
+      "from_addr": "00446f89",
+      "name": "shape_design.c_showHelpFile_FUN_00446f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00588a50",
-      "from_addr": "00588d95",
-      "name": "wincore_wddvmem.cpp_FUN_00588a50",
+      "addr": "0047be90",
+      "from_addr": "0047bee6",
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00588de0",
       "from_addr": "00588e0a",
       "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00588de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588a50",
+      "from_addr": "00588d95",
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -213,50 +210,50 @@
   "globals": [
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "006141c0",
-      "name": "DAT_006141c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "0061c78c",
-      "name": "DAT_0061c78c",
-      "type": "undefined8",
-      "value": null
+      "name": "g_BufferFillZeroQword",
+      "type": "double",
+      "value": "0.0"
     },
     {
       "addr": "0061c794",
-      "name": "DAT_0061c794",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BufferFillFpuPopST0",
+      "type": "double",
+      "value": "0.0"
     },
     {
       "addr": "01c2a38c",
-      "name": "DAT_01c2a38c",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c2a390",
-      "name": "DAT_01c2a390",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     }
   ],
@@ -326,54 +323,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0061c78c",
-      "severity": "mild",
-      "text": "_DAT_0061c794 = DAT_0061c78c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "puVar5 = *(ulonglong **)(&DAT_01c2a38c + iVar4 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "uVar2 = (uint)(DAT_006141b8 * DAT_006141c0) >> 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "uVar2 = (uint)(DAT_006141b8 * DAT_006141c0) >> 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "} while (iVar4 < DAT_006141bc);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

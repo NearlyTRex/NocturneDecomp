@@ -127,15 +127,64 @@ SUSPECT_SEVERITY = {
 
 
 
+# Ghidra warnings that only note what the decompiler did, with the code beside them
+# correct: a callee it inlined, or a block it dropped as unreachable. They are still
+# reported, but don't count against a function's "clean" status. The warnings that
+# mean the output may be wrong (an unrecovered jump table, type propagation not
+# settling, an indirect jump treated as a call) still count.
+BENIGN_WARNINGS = frozenset({
+    'warning_inlined_function',     # WARNING: Inlined function: <name>
+    'warning_is_inlined',           # WARNING: This is an inlined function
+    'warning_unreachable',          # WARNING: Removing unreachable block
+})
+
+
+# Functions that really end the process or thread, each checked against its body.
+# "WARNING: Subroutine does not return" before a call to one of them is true and the
+# code around it is right. Before any other call it still counts: a function Ghidra
+# wrongly marks noreturn loses the code after the call, and the warning is the only sign.
+EXIT_FUNCTIONS = frozenset({
+    'ExitProcess',
+    'ExitThread',
+    'fatalError',                   # tridx7: APIDLLkill, MessageBoxA, ExitProcess(1)
+    'displayMessageBoxAndQuit',     # nocedit/nocturne: MessageBoxA, ExitProcess(1)
+})
+
+_CALL_AT_START_RE = re.compile(r'^\s*([A-Za-z_]\w*)\s*\(')
+_FUN_SUFFIX_RE = re.compile(r'_FUN_[0-9a-fA-F]{8}$')
+
+
+def call_after(lines, index):
+    """The function called at the start of the first non-blank line after lines[index], or None."""
+    for line in lines[index + 1:]:
+        if line.strip():
+            m = _CALL_AT_START_RE.match(line)
+            return m.group(1) if m else None
+    return None
+
+
+def is_exit_function(name):
+    """True for an EXIT_FUNCTIONS name, bare or exported (`dll_dx7_cpp_fatalError_FUN_10002340`)."""
+    if not name:
+        return False
+    base = _FUN_SUFFIX_RE.sub('', name)
+    return any(base == n or base.endswith('_' + n) for n in EXIT_FUNCTIONS)
+
+
 def is_safe_suspect(suspect):
-    """Check if a suspect is a safe intrinsic that doesn't affect clean status.
+    """Check if a suspect doesn't affect clean status: a safe intrinsic or a benign warning.
 
     Args:
-        suspect: A suspect dictionary with 'type' and 'match' keys
+        suspect: A suspect dictionary with 'type' and 'match' keys, and 'callee'
+                 for a warning_noreturn
 
     Returns:
-        True if this suspect is a safe decompiler intrinsic
+        True if this suspect is a safe decompiler intrinsic or a benign Ghidra warning
     """
+    if suspect.get('type') in BENIGN_WARNINGS:
+        return True
+    if suspect.get('type') == 'warning_noreturn':
+        return is_exit_function(suspect.get('callee'))
     return (suspect.get('type') == 'decompiler_intrinsic' and
             suspect.get('match') in SAFE_INTRINSICS)
 
@@ -143,7 +192,7 @@ def is_safe_suspect(suspect):
 
 
 def has_only_safe_suspects(suspects):
-    """Check if all suspects in a list are safe intrinsics.
+    """Check if all suspects in a list are safe intrinsics or benign warnings.
 
     A function with only safe suspects is considered "effectively clean"
     for reporting purposes.
@@ -152,7 +201,7 @@ def has_only_safe_suspects(suspects):
         suspects: List of suspect dictionaries
 
     Returns:
-        True if the list is empty or contains only safe intrinsics
+        True if the list is empty or every suspect is safe
     """
     if not suspects:
         return True
@@ -365,12 +414,20 @@ def _parse_call_arguments(line, start_pos):
     paren_depth = 1
     args_str = ''
     i = start_pos
+    in_string = False
 
+    # a paren inside a string literal (`"(%d"`) doesn't open or close the call
     while i < len(line) and paren_depth > 0:
         char = line[i]
-        if char == '(':
+        if in_string and char == '\\':
+            args_str += line[i:i + 2]
+            i += 2
+            continue
+        if char == '"':
+            in_string = not in_string
+        elif char == '(' and not in_string:
             paren_depth += 1
-        elif char == ')':
+        elif char == ')' and not in_string:
             paren_depth -= 1
         if paren_depth > 0:
             args_str += char

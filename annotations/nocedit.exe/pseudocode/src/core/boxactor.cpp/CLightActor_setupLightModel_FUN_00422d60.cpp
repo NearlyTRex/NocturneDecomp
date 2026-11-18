@@ -70,10 +70,10 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightAc
       (this_ptr->light).light_enabled_flag = 0;
       (this_ptr->light).base.base.focal_length = 56.0;
       (this_ptr->light).base.max_distance = 32.0;
-      iVar2 = INT_008229ac;
+      iVar2 = g_LightActorFiltersInitialized;
       (this_ptr->base).pickup_type = BOX_PICKUP_CARRY;
       if (iVar2 == 0) {
-        this_ptr_01 = CDemonFilter_ARRAY_008229ec;
+        this_ptr_01 = g_LightActorFilters;
         iVar3 = 0;
         do {
           _sprintf(acStack_d0,"lantern%d.raw",iVar3);
@@ -81,10 +81,10 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightAc
           core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(this_ptr_01,acStack_d0);
           this_ptr_01 = this_ptr_01 + 1;
         } while (iVar3 < 8);
-        INT_008229ac = 1;
+        g_LightActorFiltersInitialized = 1;
       }
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-                (&this_ptr->light,CDemonFilter_ARRAY_008229ec,0,0,0);
+                (&this_ptr->light,g_LightActorFilters,0,0,0);
       return;
     }
   }

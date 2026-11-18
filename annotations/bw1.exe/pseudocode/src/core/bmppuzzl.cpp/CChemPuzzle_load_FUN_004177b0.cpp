@@ -64,7 +64,7 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_load_FUN_004177b0(CChemPuzzle *this_p
     this_ptr->selected_button = 0;
     this_ptr->hovering = 0;
     this_ptr->dropper_level = 0;
-    DAT_007c397c = 0xffffffff;
+    g_INT_007c397c = -1;
     this_ptr->result = -1;
     return;
   }
@@ -87,7 +87,7 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_load_FUN_004177b0(CChemPuzzle *this_p
   this_ptr->selected_button = 0;
   this_ptr->hovering = 0;
   this_ptr->cursor_offset_x[0] = 0x1e;
-  DAT_007c397c = 0xffffffff;
+  g_INT_007c397c = -1;
   this_ptr->result = -1;
   pCVar2 = this_ptr;
   do {
@@ -189,33 +189,35 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_load_FUN_004177b0(CChemPuzzle *this_p
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x1b,"nickel3wet",0x7e,0x78,1,0x1cd,0x14b,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
-            (this_ptr,0x1c,0x5d41a4,0x80,0x76,1,0x144,0x164,0);
+            (this_ptr,0x1c,"penny1",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x1d,"penny1cor",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
-            (this_ptr,0x1e,0x5d41b5,0x80,0x76,1,0x144,0x164,0);
+            (this_ptr,0x1e,"penny1wet",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
-            (this_ptr,0x1f,0x5d41bf,0x80,0x76,1,0x144,0x164,0);
+            (this_ptr,0x1f,"penny2",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x20,"penny2cor",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
-            (this_ptr,0x21,0x5d41d0,0x80,0x76,1,0x144,0x164,0);
+            (this_ptr,0x21,"penny2wet",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
-            (this_ptr,0x22,0x5d41da,0x80,0x76,1,0x144,0x164,0);
+            (this_ptr,0x22,"penny3",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x23,"penny3cor",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
-            (this_ptr,0x24,0x5d41eb,0x80,0x76,1,0x144,0x164,0);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x25,0x5d41f5,0x30,0x19,1,8,0xa0,1);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x26,0x5d41fc,0x30,0x19,1,0x4f,0x82,1)
-  ;
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x27,0x5d4203,0x30,0x19,1,0x95,99,1);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x28,0x5d420a,0x30,0x19,1,0xd7,0x44,1)
-  ;
+            (this_ptr,0x24,"penny3wet",0x80,0x76,1,0x144,0x164,0);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
-            (this_ptr,0x29,0x5d4211,0x30,0x19,1,0x117,0x27,1);
-  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,0x2a,0x5d4218,0x30,0x19,1,0x156,0xd,1)
-  ;
+            (this_ptr,0x25,"mouth1",0x30,0x19,1,8,0xa0,1);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,0x26,"mouth2",0x30,0x19,1,0x4f,0x82,1);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,0x27,"mouth3",0x30,0x19,1,0x95,99,1);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,0x28,"mouth4",0x30,0x19,1,0xd7,0x44,1);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,0x29,"mouth5",0x30,0x19,1,0x117,0x27,1);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
+            (this_ptr,0x2a,"mouth6",0x30,0x19,1,0x156,0xd,1);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x2b,"chem_exit",0x1e,0x20,1,0x262,0x1b8,1);
   (**(code **)((int)(this_ptr->base).vtable + 0x28))

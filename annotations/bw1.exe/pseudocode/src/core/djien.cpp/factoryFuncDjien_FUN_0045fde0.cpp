@@ -11,7 +11,7 @@ CDjien * __cdecl core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
 {
   CDjien *pCVar1;
   
-  pCVar1 = (CDjien *)operator_new(0xc9cc);
+  pCVar1 = operator_new(0xc9cc);
   if (pCVar1 == (CDjien *)0x0) {
     return (CDjien *)0x0;
   }

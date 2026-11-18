@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 39,
+    "complexity_score": 54,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 75
   },
@@ -73,7 +74,7 @@
   "globals": [
     {
       "addr": "005c1da9",
-      "name": "DAT_005c1da9",
+      "name": "g_DOUBLE_005c1da4+5",
       "type": "undefined4",
       "value": null
     },
@@ -157,12 +158,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `&g_DOUBLE_005c1da4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 23,
-      "match": "DAT_005c1da9",
-      "severity": "mild",
-      "text": "error_code = *(int *)(&DAT_005c1da9 + windows_error) >> 0x18;",
-      "type": "undefined_data"
+      "match": "(int)&g_DOUBLE_005c1da4",
+      "severity": "moderate",
+      "text": "error_code = *(int *)((int)&g_DOUBLE_005c1da4 + windows_error + 5) >> 0x18;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 23,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "error_code = *(int *)((int)&g_DOUBLE_005c1da4 + windows_error + 5) >> 0x18;",
+      "type": "pointer_cast"
     }
   ]
 }

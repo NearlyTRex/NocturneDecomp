@@ -33,13 +33,14 @@ void __cdecl core_baal_cpp_CBaal_processDamage_FUN_00597af0(CBaal *this_ptr,SDam
       }
     }
     else {
-      iVar3 = core_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+      iVar3 = core_enemy_cpp_CEnemy_testPainThreshold_FUN_0048a1b0
+                        (&this_ptr->base,damage_info->damage_amount);
       if (iVar3 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,7,1);
       }
       iVar3 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
       if (0x5a < iVar3) {
-        core_baal_cpp_FUN_00597be0(this_ptr,0);
+        core_baal_cpp_CBaal_chooseRandomMotion_FUN_00597be0(this_ptr,0);
       }
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);

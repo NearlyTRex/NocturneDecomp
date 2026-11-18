@@ -10,7 +10,7 @@
     "pseudocode_lines": 66,
     "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant"
+      "pointer_truncation"
     ],
     "total_lines": 253
   },
@@ -213,7 +213,7 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     }
@@ -281,6 +281,24 @@
     "pcode_op_count": 593
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ee1a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9583
+    },
+    "bw1.exe": {
+      "addr": "0050c990",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8171
+    },
+    "bw3.exe": {
+      "addr": "004ea280",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9225
+    },
     "nocedit.exe": {
       "addr": "00512d30",
       "by": "name",
@@ -313,12 +331,12 @@
   },
   "suspects": [
     {
-      "description": "Raw hex address 0x1cc7900 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 16,
-      "match": "0x1cc7900",
+      "description": "Pointer value `g_OptionsMenuPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)g_OptionsMenuPointers",
       "severity": "moderate",
-      "text": "iVar4 = 0x1cc7900;",
-      "type": "raw_address_constant"
+      "text": "*(char (**) [256])((int)g_OptionsMenuPointers + iVar2) = pacVar4;",
+      "type": "pointer_truncation"
     }
   ]
 }

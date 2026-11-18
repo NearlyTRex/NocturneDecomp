@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
 ;   TerminatedCString s_Lock_hw_sample_buffer_005942e8
-;   undefined4 DAT_02dc9244
+;   IDirectSoundBuffer*[25] g_DirectSoundSampleBuffers
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -42,7 +42,7 @@ section .text
     POP ESI                             ; 0052ade7
     POP EBX                             ; 0052ade8
     RET                                 ; 0052ade9
-    CMP dword ptr [ESI*0x4 + 0x2dc9244],0x0 ; 0052adea | DAT_02dc9244
+    CMP dword ptr [ESI*0x4 + 0x2dc9244],0x0 ; 0052adea | g_DirectSoundSampleBuffers
         ;   Label: LAB_0052adea
     JZ 0x0052addf                       ; 0052adf2
         ;   XREF to: 0052addf (CONDITIONAL_JUMP)  ; LAB_0052addf
@@ -63,7 +63,7 @@ section .text
     IMUL EDX,EAX                        ; 0052ae22
     IMUL EAX,dword ptr [ESP + 0x1b8]    ; 0052ae25
     PUSH EDX                            ; 0052ae2d
-    MOV ESI,dword ptr [ESI*0x4 + 0x2dc9244] ; 0052ae2e | DAT_02dc9244
+    MOV ESI,dword ptr [ESI*0x4 + 0x2dc9244] ; 0052ae2e | g_DirectSoundSampleBuffers
     PUSH EAX                            ; 0052ae35
     MOV ECX,dword ptr [ESI]             ; 0052ae36
     PUSH ESI                            ; 0052ae38

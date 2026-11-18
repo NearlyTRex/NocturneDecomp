@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7e70(CImp *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -19,24 +17,25 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7e70(CImp *this_ptr,SDamage
   byte bVar5;
   float afStackY_1010 [1009];
   char *sound_name;
-  float fStack_28;
+  CVector3f CStack_28;
   CVector3f CStack_1c;
   
   bVar5 = 0;
   sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handles[0]);
   if (damage_info->ammo_type == AMMO_TYPE_MERCURY) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005c56a0;
-    core_actor_cpp_FUN_00408b80(this_ptr,&damage_info->impact_direction);
+    damage_info->damage_amount = damage_info->damage_amount * (float)2;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_28);
     iVar4 = 0;
-    CStack_1c.x = fStack_28;
+    CStack_1c.x = CStack_28.x;
     *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4) =
-         *(uint *)(&stack0xffffffdc + (uint)bVar5 * -8);
+         *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + 4);
     *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         *(uint *)(&stack0xffffffe0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+         *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-                (0x01C73654,&CStack_1c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_005fc5a0,&CStack_1c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   core_imp_cpp_CImp_processDismemberment_FUN_004d7bd0(this_ptr,damage_info);
@@ -55,7 +54,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7e70(CImp *this_ptr,SDamage
     if ((pSVar2->state_index == 6) || (pSVar2->state_index == 7)) goto LAB_004d7f72;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,6,1);
     sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handles[1]);
-    sound_name = "@imp-die?.wav" + 1;
+    sound_name = "imp-die?.wav";
   }
   uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
   this_ptr->sfx_handles[1] = uVar3;

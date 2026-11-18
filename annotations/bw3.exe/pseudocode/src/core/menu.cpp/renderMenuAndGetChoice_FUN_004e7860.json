@@ -1,0 +1,388 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 415,
+    "complexity_score": 156,
+    "cross_reference_count": 5,
+    "function_call_count": 8,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 141,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strchr"
+    ],
+    "total_lines": 556
+  },
+  "cross_references": [
+    {
+      "addr": "004e8f80",
+      "from_addr": "004e9263",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_004e8f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e85a0",
+      "from_addr": "004e89ee",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_004e85a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e94f0",
+      "from_addr": "004e9bd1",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea4d0",
+      "from_addr": "004ea707",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea280",
+      "from_addr": "004ea3be",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004ea280",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e7860",
+    "address_range": [
+      [
+        "004e7860",
+        "004e7cfb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860",
+    "signature": "int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f99b0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004f99b0"
+    },
+    {
+      "addr": "005a35cc",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005a35cc"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "00406bf0",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406bf0"
+    },
+    {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004b0a20"
+    },
+    {
+      "addr": "004b30f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0"
+    },
+    {
+      "addr": "004b2b30",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30"
+    },
+    {
+      "addr": "004b2a80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c71f6",
+      "name": "s_Blair_Witch_Volume_III_T_005c71f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00600284",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d70a78"
+    },
+    {
+      "addr": "01549aac",
+      "name": "g_CBitFont_PTR_01549aac",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01549ab0",
+      "name": "g_CBitFont_PTR_01549ab0",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01549ab4",
+      "name": "g_SmallEditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01d70a78",
+      "name": "g_PTR_01d70a78",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "01d737d4",
+      "name": "g_INT_01d737d4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d737e4",
+      "name": "g_INT_01d737e4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01dd4890",
+      "name": "g_UseOSFonts",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004ea707",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004ea3be",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showOptionsScreen_FUN_004ea280",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004e89ee",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_configureGraphicsOptions_FUN_004e85a0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004e9bd1",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004e9263",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_configureCustomKeys_FUN_004e8f80",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.27027027027027,
+    "instruction_count": 333,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "CALL": 19,
+      "CALLIND": 5,
+      "CBRANCH": 27,
+      "COPY": 263,
+      "INT_ADD": 106,
+      "INT_AND": 202,
+      "INT_CARRY": 33,
+      "INT_EQUAL": 164,
+      "INT_LEFT": 3,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 11,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 37,
+      "INT_SEXT": 3,
+      "INT_SLESS": 85,
+      "INT_SUB": 113,
+      "INT_XOR": 7,
+      "LOAD": 71,
+      "POPCOUNT": 81,
+      "RETURN": 3,
+      "STORE": 106,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1422
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004eb0e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4007
+    },
+    "bw1.exe": {
+      "addr": "00509e20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6522
+    },
+    "nocedit.exe": {
+      "addr": "00510000",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5586
+    },
+    "nocturne.exe": {
+      "addr": "004cf440",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6522
+    }
+  },
+  "stack_frame": {
+    "frame_size": 264,
+    "local_size": 244,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "menu_text_array",
+        "offset": 4,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "menu_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "selected_index_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "y_position",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "title",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
+      "line": 99,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

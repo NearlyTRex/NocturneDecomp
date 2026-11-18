@@ -13,16 +13,16 @@
 ;   crt_unknown.c_FUN_005bfc84 at 005bfc97
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006217dc
-;   undefined1* PTR_crt_unknown.c_FUN_005c3dd0_006217ec = 005c3dd0
-;   undefined4 DAT_00621820
-;   undefined4 DAT_00621824
-;   undefined4 DAT_00621828
-;   undefined4 DAT_00621832
-;   undefined4 DAT_0062183c
-;   undefined4 DAT_00621846
-;   undefined4 DAT_00621850
-;   undefined4 DAT_0062185a
+;   double g_DOUBLE_006217dc = 1
+;   void*[8] g_ARRAY_PTR_006217ec
+;   float g_FLOAT_00621820 = 16
+;   float g_FLOAT_00621824 = 0.0625
+;   float10 g_FLOAT10_00621828 = -0.3333333333333333333
+;   float10 g_FLOAT10_00621832 = 0.1999999999999994471
+;   float10 g_FLOAT10_0062183c = -0.1428571428555127940
+;   float10 g_FLOAT10_00621846 = 0.1111111089064621512
+;   float10 g_FLOAT10_00621850 = -0.09090758475228815823
+;   float10 g_FLOAT10_0062185a = 0.07641690805844016167
 ;   undefined4 DAT_00621864
 ;
 ; Called Functions:
@@ -87,18 +87,18 @@ section .text
     CALL crt_unknown.c_FUN_005bf4f3     ; 005c3d06
         ;   XREF to: 005bf4f3 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bf4f3()
     POP EAX                             ; 005c3d0b
-    FLD float ptr [0x00621820]          ; 005c3d0c | DAT_00621820
+    FLD float ptr [0x00621820]          ; 005c3d0c | g_FLOAT_00621820
     FMUL ST1                            ; 005c3d12
     FISTP dword ptr [ESP + 0x20]        ; 005c3d14
     MOV ECX,dword ptr [ESP + 0x20]      ; 005c3d18
     SHL ECX,0x4                         ; 005c3d1c
     FILD dword ptr [ESP + 0x20]         ; 005c3d1f
-    FMUL float ptr [0x00621824]         ; 005c3d23 | DAT_00621824
+    FMUL float ptr [0x00621824]         ; 005c3d23 | g_FLOAT_00621824
     FLD ST1                             ; 005c3d29
     FSUB ST0,ST1                        ; 005c3d2b
     FXCH                                ; 005c3d2d
     FMULP ST2                           ; 005c3d2f
-    FLD double ptr [0x006217dc]         ; 005c3d31 | DAT_006217dc
+    FLD double ptr [0x006217dc]         ; 005c3d31 | g_DOUBLE_006217dc
     FADDP ST2,ST0                       ; 005c3d37
     PUSH EAX                            ; 005c3d39
     MOV EAX,0xf                         ; 005c3d3a
@@ -111,23 +111,23 @@ section .text
     FMUL ST1                            ; 005c3d4b
     FLD ST0                             ; 005c3d4d
     FMUL ST1                            ; 005c3d4f
-    FLD extended double ptr [0x0062185a] ; 005c3d51 | DAT_0062185a
-    FLD extended double ptr [0x00621850] ; 005c3d57 | DAT_00621850
+    FLD extended double ptr [0x0062185a] ; 005c3d51 | g_FLOAT10_0062185a
+    FLD extended double ptr [0x00621850] ; 005c3d57 | g_FLOAT10_00621850
     FXCH                                ; 005c3d5d
     FMUL ST2                            ; 005c3d5f
-    FLD extended double ptr [0x00621846] ; 005c3d61 | DAT_00621846
+    FLD extended double ptr [0x00621846] ; 005c3d61 | g_FLOAT10_00621846
     FXCH ST2                            ; 005c3d67
     FMUL ST3                            ; 005c3d69
-    FLD extended double ptr [0x0062183c] ; 005c3d6b | DAT_0062183c
+    FLD extended double ptr [0x0062183c] ; 005c3d6b | g_FLOAT10_0062183c
     FXCH ST2                            ; 005c3d71
     FMUL ST5                            ; 005c3d73
     FXCH ST3                            ; 005c3d75
     FMULP ST4                           ; 005c3d77
-    FLD extended double ptr [0x00621832] ; 005c3d79 | DAT_00621832
+    FLD extended double ptr [0x00621832] ; 005c3d79 | g_FLOAT10_00621832
     FXCH ST3                            ; 005c3d7f
     FADDP ST4,ST0                       ; 005c3d81
     MOV EAX,dword ptr [ESP + 0x14]      ; 005c3d83
-    FLD extended double ptr [0x00621828] ; 005c3d87 | DAT_00621828
+    FLD extended double ptr [0x00621828] ; 005c3d87 | g_FLOAT10_00621828
     FXCH                                ; 005c3d8d
     SHL EAX,0x10                        ; 005c3d8f
     FMUL ST6                            ; 005c3d92
@@ -154,7 +154,7 @@ section .text
     FADDP                               ; 005c3dbf
     FLD extended double ptr [ECX + 0x621864] ; 005c3dc1 | DAT_00621864
     FADDP                               ; 005c3dc7
-    JMP dword ptr [EDX*0x4 + 0x6217ec]  ; 005c3dc9 | PTR_crt_unknown.c_FUN_005c3dd0_006217ec
+    JMP dword ptr [EDX*0x4 + 0x6217ec]  ; 005c3dc9 | g_ARRAY_PTR_006217ec
     FLD extended double ptr [ESP]       ; 005c3e60
         ;   Label: LAB_005c3e60
     FLD extended double ptr [ESP + 0xc] ; 005c3e63

@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 60,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 26
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -50,38 +47,38 @@
   "globals": [
     {
       "addr": "0061b4b4",
-      "name": "DAT_0061b4b4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CPUFamily",
+      "type": "uint",
+      "value": "0x5"
     },
     {
       "addr": "0061f7b8",
-      "name": "DAT_0061f7b8",
-      "type": "undefined1",
-      "value": null
+      "name": "g_CPUInfoFamily",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "0061f7bc",
-      "name": "DAT_0061f7bc",
-      "type": "undefined1",
-      "value": null
+      "name": "g_CPUInfoIntelCPU",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "0061f7c1",
-      "name": "DAT_0061f7c1",
-      "type": "undefined1",
-      "value": null
+      "name": "g_CPUInfoMMXSupported",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "01c51d00",
-      "name": "DAT_01c51d00",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d04",
-      "name": "DAT_01c51d04",
-      "type": "undefined4",
+      "name": "g_CPUModel",
+      "type": "int",
       "value": null
     }
   ],
@@ -160,38 +157,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0061f7c1",
-      "severity": "mild",
-      "text": "_DAT_01c51d00 = (uint)DAT_0061f7c1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_0061f7b8",
-      "severity": "mild",
-      "text": "_DAT_0061b4b4 = (uint)DAT_0061f7b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0061f7bc",
-      "severity": "mild",
-      "text": "_DAT_01c51d04 = (uint)DAT_0061f7bc;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

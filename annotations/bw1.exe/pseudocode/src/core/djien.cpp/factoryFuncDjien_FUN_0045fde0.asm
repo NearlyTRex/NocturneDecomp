@@ -15,7 +15,7 @@ section .text
     PUSH 0xc9cc                         ; 0045fde0
         ;   Label: core_djien.cpp_factoryFuncDjien_FUN_0045fde0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0045fde5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0045fdea
     TEST EAX,EAX                        ; 0045fded
     JNZ 0x0045fdf2                      ; 0045fdef

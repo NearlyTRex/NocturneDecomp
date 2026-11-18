@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 135,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 173
   },
@@ -67,15 +66,15 @@
   "globals": [
     {
       "addr": "005df358",
-      "name": "DAT_005df358",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005df358",
+      "type": "float",
+      "value": "30"
     },
     {
       "addr": "0061c010",
-      "name": "DAT_0061c010",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "01c57074"
     },
     {
       "addr": "00622c18",
@@ -265,16 +264,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 14,
       "match": "afStackY_102c",
       "severity": "moderate",
       "text": "float afStackY_102c [1010];",
@@ -282,7 +273,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 4);",
@@ -290,7 +281,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 47,
       "match": "(uint *)((int)local_44",
       "severity": "moderate",
       "text": "*(uint *)((int)local_44 + (uint)bVar3 * -8 + 4) = *puVar2;",
@@ -298,7 +289,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(uint *)((int)local_44",
       "severity": "moderate",
       "text": "*(uint *)((int)local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
@@ -306,7 +297,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 24,
+      "line": 22,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->position).x = position->x;",

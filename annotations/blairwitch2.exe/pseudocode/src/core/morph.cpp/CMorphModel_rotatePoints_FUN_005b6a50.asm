@@ -39,23 +39,23 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_005f177f
 ;   TerminatedCString s_CMorphModel_rotatePoints_005f1791
-;   undefined4 DAT_006013a0
-;   undefined4 DAT_0060b280
+;   float g_FLOAT_006013a0 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ba5c50
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0267a38c
-;   undefined4 DAT_0267a390
-;   undefined4 DAT_0267a394
+;   CVector3i[2000] g_MorphVertexBuffer
+;   undefined4 g_MorphVertexBuffer[0].y
+;   undefined4 g_MorphVertexBuffer[0].z
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00532190
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00531ca0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -153,26 +153,26 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005b6b4f
     MOVSD ES:EDI,ESI                    ; 005b6b50
     FLD float ptr [EAX]                 ; 005b6b51
-    FMUL float ptr [0x006013a0]         ; 005b6b53 | DAT_006013a0
-    FISTP dword ptr [EBX]               ; 005b6b59 | DAT_0267a38c
+    FMUL float ptr [0x006013a0]         ; 005b6b53 | g_FLOAT_006013a0
+    FISTP dword ptr [EBX]               ; 005b6b59 | g_MorphVertexBuffer
     FLD float ptr [EAX + 0x4]           ; 005b6b5b
-    FMUL float ptr [0x006013a0]         ; 005b6b5e | DAT_006013a0
-    FISTP dword ptr [EBX + 0x4]         ; 005b6b64 | DAT_0267a390
+    FMUL float ptr [0x006013a0]         ; 005b6b5e | g_FLOAT_006013a0
+    FISTP dword ptr [EBX + 0x4]         ; 005b6b64 | g_MorphVertexBuffer[0].y
     FLD float ptr [EAX + 0x8]           ; 005b6b67
-    FMUL float ptr [0x006013a0]         ; 005b6b6a | DAT_006013a0
-    FISTP dword ptr [EBX + 0x8]         ; 005b6b70 | DAT_0267a394
-    MOV EAX,[0x0060b280]                ; 005b6b73 | DAT_0060b280
+    FMUL float ptr [0x006013a0]         ; 005b6b6a | g_FLOAT_006013a0
+    FISTP dword ptr [EBX + 0x8]         ; 005b6b70 | g_MorphVertexBuffer[0].z
+    MOV EAX,[0x0060b280]                ; 005b6b73 | g_CDemonRenderer_PTR_0060b280
     MOV EDX,dword ptr [ESP + 0x5c]      ; 005b6b78
-    MOV EAX,dword ptr [EAX]             ; 005b6b7c | DAT_01ba5c50
-    PUSH EBP                            ; 005b6b7e | DAT_0267a38c
+    MOV EAX,dword ptr [EAX]             ; 005b6b7c | g_CDemonRenderer_01ba5c50
+    PUSH EBP                            ; 005b6b7e | g_MorphVertexBuffer
     ADD EAX,EDX                         ; 005b6b7f
     PUSH EAX                            ; 005b6b81
-    CALL engine_special.cpp_FUN_0055d723 ; 005b6b82
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 005b6b82
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 005b6b87
-    MOV EAX,[0x0060b280]                ; 005b6b8a | DAT_0060b280
+    MOV EAX,[0x0060b280]                ; 005b6b8a | g_CDemonRenderer_PTR_0060b280
     MOV ECX,dword ptr [ESP + 0x5c]      ; 005b6b8f
-    MOV EAX,dword ptr [EAX]             ; 005b6b93 | DAT_01ba5c50
+    MOV EAX,dword ptr [EAX]             ; 005b6b93 | g_CDemonRenderer_01ba5c50
     ADD EAX,ECX                         ; 005b6b95
     MOV EAX,dword ptr [EAX + 0x10]      ; 005b6b97
     TEST EAX,0x80000000                 ; 005b6b9a
@@ -214,10 +214,10 @@ section .text
         ;   Label: LAB_005b6bf9
     MOV EBX,0x1f8                       ; 005b6bfe
     PUSH 0x5f1791                       ; 005b6c03 | = "CMorphModel::rotatePoints - too many ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 005b6c08 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 005b6c0e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b6c14
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 005b6c08 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 005b6c0e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b6c14
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b6c19
     JMP 0x005b6a68                      ; 005b6c1c
         ;   XREF to: 005b6a68 (UNCONDITIONAL_JUMP)  ; LAB_005b6a68
@@ -238,7 +238,7 @@ section .text
     PUSH EBP                            ; 005b6c40
     PUSH 0x3                            ; 005b6c41
     MOV EAX,dword ptr [ESP + 0x7c]      ; 005b6c43
-    PUSH 0x267a38c                      ; 005b6c47 | DAT_0267a38c
+    PUSH 0x267a38c                      ; 005b6c47 | g_MorphVertexBuffer
     MOV EBX,dword ptr [EAX + 0x60]      ; 005b6c4c
     PUSH EBX                            ; 005b6c4f
     MOV ESI,dword ptr [EAX + 0x5c]      ; 005b6c50
@@ -252,8 +252,8 @@ section .text
     ADD ESP,0x1c                        ; 005b6c64
     MOV EAX,dword ptr [ESP + 0x48]      ; 005b6c67
     PUSH EAX                            ; 005b6c6b
-    MOV EDX,dword ptr [0x0060b280]      ; 005b6c6c | DAT_0060b280
-    PUSH EDX                            ; 005b6c72 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 005b6c6c | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 005b6c72 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920 ; 005b6c73
         ;   XREF to: 0046b920 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 005b6c78

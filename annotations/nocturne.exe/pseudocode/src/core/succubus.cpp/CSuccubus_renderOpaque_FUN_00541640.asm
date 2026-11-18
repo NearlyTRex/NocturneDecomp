@@ -11,8 +11,8 @@
 ; Referenced Globals:
 ;   float FLOAT_005a28d8 = 4
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01cd4318
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -38,7 +38,7 @@ section .text
     SUB ESP,0x1c                        ; 00541642
     MOV EBX,dword ptr [ESP + 0x28]      ; 00541645
     MOV EDX,dword ptr [0x005ae704]      ; 00541649 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0054164f | DAT_01b4d738
+    PUSH EDX                            ; 0054164f | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00541650
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00541655
@@ -91,12 +91,12 @@ section .text
         ;   XREF to: 004385a0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_render_FUN_004385a0(CClothList * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 005416d5
         ;   Label: LAB_005416d5
-    CMP dword ptr [0x01cd4318],0x0      ; 005416d8 | DAT_01cd4318
+    CMP dword ptr [0x01cd4318],0x0      ; 005416d8 | g_RenderMotionDebug
         ;   Label: LAB_005416d8
     JZ 0x00541711                       ; 005416df
         ;   XREF to: 00541711 (CONDITIONAL_JUMP)  ; LAB_00541711
     MOV EDX,dword ptr [0x005ae704]      ; 005416e1 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 005416e7 | DAT_01b4d738
+    PUSH EDX                            ; 005416e7 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 005416e8
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005416ed

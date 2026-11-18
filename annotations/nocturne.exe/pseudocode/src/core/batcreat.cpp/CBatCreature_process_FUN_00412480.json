@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 428,
+    "complexity_score": 413,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 343,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memset",
       "warning_type_propagation"
     ],
@@ -244,8 +243,8 @@
     },
     {
       "addr": "007645a4",
-      "name": "DAT_007645a4",
-      "type": "undefined4",
+      "name": "g_INT_007645a4",
+      "type": "int",
       "value": null
     },
     {
@@ -722,14 +721,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 269,
-      "match": "DAT_007645a4",
-      "severity": "mild",
-      "text": "DAT_007645a4);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",

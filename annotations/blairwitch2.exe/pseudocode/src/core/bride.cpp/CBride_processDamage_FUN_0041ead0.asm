@@ -10,18 +10,18 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ub_die_wav_005cc8d9
 ;   TerminatedCString s_ub_hurt_wav_005cc8e5
-;   undefined4 DAT_005cc8f9
-;   undefined4 DAT_00614d30
+;   double g_DOUBLE_005cc8f9 = 2
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_bride.cpp_CBride_processDismemberment_FUN_0041e8a0
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -72,8 +72,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041eb2e
     PUSH ECX                            ; 0041eb2f
     LEA ESI,[EBP + -0x2c]               ; 0041eb30
-    CALL core_actor.cpp_FUN_00408d70    ; 0041eb33
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0041eb33
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0041eb38
     PUSH 0x0                            ; 0041eb3b
     PUSH 0x41200000                     ; 0041eb3d
@@ -123,8 +123,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0041ebb5
     PUSH EBX                            ; 0041ebb8
     MOV dword ptr [EAX + 0x25a8],0x0    ; 0041ebb9
-    CALL core_motion.cpp_FUN_005035c0   ; 0041ebc3
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0041ebc3
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0041ebc8
     ADD ESP,0x4                         ; 0041ebcb
     CMP EAX,0xe                         ; 0041ebce
@@ -179,7 +179,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0041ec48
         ;   Label: LAB_0041ec48
     FLD ST0                             ; 0041ec4b
-    FMUL double ptr [0x005cc8f9]        ; 0041ec4d | DAT_005cc8f9
+    FMUL double ptr [0x005cc8f9]        ; 0041ec4d | g_DOUBLE_005cc8f9
     ADD EAX,0x1c                        ; 0041ec53
     MOV EBX,dword ptr [EBP + 0x14]      ; 0041ec56
     PUSH EAX                            ; 0041ec59
@@ -188,8 +188,8 @@ section .text
     PUSH EBX                            ; 0041ec60
     FSTP ST1                            ; 0041ec61
     FSTP float ptr [EAX + -0x18]        ; 0041ec63
-    CALL core_actor.cpp_FUN_00408d70    ; 0041ec66
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0041ec66
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[EBP + -0x50]               ; 0041ec6b
     XOR EBX,EBX                         ; 0041ec6e
     MOVSD ES:EDI,ESI                    ; 0041ec70
@@ -205,7 +205,7 @@ section .text
     PUSH 0x0                            ; 0041ec84
     LEA EAX,[EBP + -0x14]               ; 0041ec86
     PUSH EAX                            ; 0041ec89
-    MOV EDI,dword ptr [0x00614d30]      ; 0041ec8a | DAT_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 0041ec8a | g_CFireEffectPtr
     PUSH EDI                            ; 0041ec90
     INC EBX                             ; 0041ec91
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 0041ec92

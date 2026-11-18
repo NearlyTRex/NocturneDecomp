@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_CHero_removeMatchingKeys_FUN_004d41e0 at 004d41ef
-;   core_hero.cpp_FUN_004d4410 at 004d446e
+;   core_hero.cpp_CHero_reset_FUN_004d4410 at 004d446e
 ;
 ; Referenced Globals:
 ;   undefined4 g_CKeyActorClassInfo.name_hash

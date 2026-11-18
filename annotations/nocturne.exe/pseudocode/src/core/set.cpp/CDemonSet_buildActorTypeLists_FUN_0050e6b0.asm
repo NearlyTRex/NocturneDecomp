@@ -11,10 +11,10 @@
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0 at 004d8f32
 ;
 ; Referenced Globals:
-;   undefined4 g_CCharacterActorType_00765a60.name_hash
-;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
-;   undefined4 g_CTriggerActorType_02dd1084.name_hash
-;   undefined4 g_CWayPointActorType_02ddf514.name_hash
+;   undefined4 g_CCharacterClassInfo.name_hash
+;   undefined4 g_CEnemyClassInfo.name_hash
+;   undefined4 g_CTriggerClassInfo.name_hash
+;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -52,7 +52,7 @@ section .text
         ;   Label: LAB_0050e714
     MOV dword ptr [EBX + EAX*0x4 + 0x158908],ESI ; 0050e71a
     INC dword ptr [EBX + 0x158904]      ; 0050e721
-    MOV EAX,[0x00765a98]                ; 0050e727 | g_CCharacterActorType_00765a60.name_hash
+    MOV EAX,[0x00765a98]                ; 0050e727 | g_CCharacterClassInfo.name_hash
         ;   Label: LAB_0050e727
     PUSH EAX                            ; 0050e72c
     PUSH ESI                            ; 0050e72d
@@ -66,7 +66,7 @@ section .text
     TEST EDX,EDX                        ; 0050e750
     JZ 0x0050e7bf                       ; 0050e752
         ;   XREF to: 0050e7bf (CONDITIONAL_JUMP)  ; LAB_0050e7bf
-    MOV EAX,[0x01bcdef4]                ; 0050e754 | g_CEnemyActorType_01bcdebc.name_hash
+    MOV EAX,[0x01bcdef4]                ; 0050e754 | g_CEnemyClassInfo.name_hash
     MOV EDX,dword ptr [EBX + 0x14ecb0]  ; 0050e759
     PUSH EAX                            ; 0050e75f
     INC EDX                             ; 0050e760
@@ -101,7 +101,7 @@ section .text
     POP ESI                             ; 0050e7bc
     POP EBX                             ; 0050e7bd
     RET                                 ; 0050e7be
-    MOV ECX,dword ptr [0x02ddf54c]      ; 0050e7bf | g_CWayPointActorType_02ddf514.name_hash
+    MOV ECX,dword ptr [0x02ddf54c]      ; 0050e7bf | g_CWayPointClassInfo.name_hash
         ;   Label: LAB_0050e7bf
     PUSH ECX                            ; 0050e7c5
     PUSH ESI                            ; 0050e7c6
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 0050e7f6 (CONDITIONAL_JUMP)  ; LAB_0050e7f6
     LEA ECX,[EAX + 0x1]                 ; 0050e7ed
     MOV dword ptr [EBX + 0x154a7c],ECX  ; 0050e7f0
-    MOV EAX,[0x02dd10bc]                ; 0050e7f6 | g_CTriggerActorType_02dd1084.name_hash
+    MOV EAX,[0x02dd10bc]                ; 0050e7f6 | g_CTriggerClassInfo.name_hash
         ;   Label: LAB_0050e7f6
     PUSH EAX                            ; 0050e7fb
     PUSH ESI                            ; 0050e7fc

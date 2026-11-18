@@ -16,19 +16,19 @@
     {
       "addr": "004e94f0",
       "from_addr": "004e9d49",
-      "name": "core_menu.cpp_FUN_004e94f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ea280",
-      "from_addr": "004ea421",
-      "name": "core_menu.cpp_FUN_004ea280",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ea4d0",
       "from_addr": "004ea812",
       "name": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea280",
+      "from_addr": "004ea421",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004ea280",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -86,11 +86,6 @@
       "name": "sound_sndmain.cpp_set3DListenerOrient_FUN_00557080"
     },
     {
-      "addr": "00558860",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_set3DListenerOrientRight_FUN_00558860"
-    },
-    {
       "addr": "00557020",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_set3DListenerPos_FUN_00557020"
@@ -111,6 +106,11 @@
       "name": "sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20"
     },
     {
+      "addr": "00558860",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setReverb_FUN_00558860"
+    },
+    {
       "addr": "00556c90",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90"
@@ -124,8 +124,8 @@
   "globals": [
     {
       "addr": "005d5357",
-      "name": "s_splash_mp3_005d5356+1",
-      "type": "undefined4",
+      "name": "s_splash_mp3_005d5357",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -136,21 +136,21 @@
     },
     {
       "addr": "005e49d4",
-      "name": "DAT_005e49d4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MenuChannel1MaxVolume",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "005e49d8",
-      "name": "DAT_005e49d8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MenuChannel0MaxVolume",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "005e49dc",
-      "name": "DAT_005e49dc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MenuChannel2MaxVolume",
+      "type": "float",
+      "value": "1"
     }
   ],
   "param_estimates": {
@@ -192,7 +192,7 @@
       {
         "call_addr": "004ea421",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ea280",
+        "caller": "core_menu.cpp_showOptionsScreen_FUN_004ea280",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +214,7 @@
       {
         "call_addr": "004ea47c",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ea280",
+        "caller": "core_menu.cpp_showOptionsScreen_FUN_004ea280",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +225,7 @@
       {
         "call_addr": "004e9d49",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -236,7 +236,7 @@
       {
         "call_addr": "004e9da6",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -247,7 +247,7 @@
       {
         "call_addr": "004ea079",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,7 +258,7 @@
       {
         "call_addr": "004ea0f2",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

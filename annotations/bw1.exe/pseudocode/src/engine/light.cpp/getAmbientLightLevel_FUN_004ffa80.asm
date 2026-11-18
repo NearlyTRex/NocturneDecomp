@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f310
+;   int g_AmbientLightLevel = 0x8000
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x0061f310]                ; 004ffa80 | DAT_0061f310
+    MOV EAX,[0x0061f310]                ; 004ffa80 | g_AmbientLightLevel
         ;   Label: engine_light.cpp_getAmbientLightLevel_FUN_004ffa80
     RET                                 ; 004ffa85
 

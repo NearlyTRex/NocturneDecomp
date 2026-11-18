@@ -10,8 +10,7 @@ CConstructRed * __cdecl core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConst
 
 {
   CConstruct *pCVar1;
-  CConstructRed *pCVar2;
-  float10 fVar3;
+  double dVar2;
   
   pCVar1 = core_construc_cpp_CConstruct_ctor_FUN_00442420(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CConstructRedVTable._ub;
@@ -20,8 +19,7 @@ CConstructRed * __cdecl core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConst
   (pCVar1->base).pain_threshold = 10.0;
   pCVar1->construct_variant = 2;
   pCVar1->trail_texture_type = 2;
-  fVar3 = (float10)(pCVar1->base).base.hit_points;
-  pCVar2 = (CConstructRed *)round();
-  (pCVar2->base).initial_hit_points = (int)ROUND(fVar3);
-  return pCVar2;
+  dVar2 = round((double)(pCVar1->base).base.hit_points);
+  pCVar1->initial_hit_points = (int)ROUND(dVar2);
+  return (CConstructRed *)pCVar1;
 }

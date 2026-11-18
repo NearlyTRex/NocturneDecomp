@@ -47,7 +47,7 @@ int __cdecl CBride::getTargetPoints(CBride *this_ptr,CVector3f *out_points_array
 
 // Original: core_bride.cpp_CBride_getTargetPoint_FUN_0041ede0
 // Address: 0041ede0
-CVector3f * __cdecl CBride::getTargetPoint(CBride *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi CBride::getTargetPoint(CBride *this_ptr,CVector3f *out_point);
 
 // Original: core_bride.cpp_CBride_dtor_FUN_0041ee50
 // Address: 0041ee50

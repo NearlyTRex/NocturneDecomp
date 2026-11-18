@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 141,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 23,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 111,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 451
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 110,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 450
   },
   "cross_references": [
     {
@@ -237,38 +234,38 @@
     },
     {
       "addr": "005eecb3",
-      "name": "DAT_005eecb3",
-      "type": "undefined4",
+      "name": "s_rb_005eecb3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "02664628",
-      "name": "DAT_02664628",
-      "type": "undefined4",
+      "name": "g_MainWindowHandle",
+      "type": "HWND",
       "value": null
     },
     {
       "addr": "02665a48",
-      "name": "DAT_02665a48",
-      "type": "undefined4",
+      "name": "g_MovieWindowHandle",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02665a4c",
-      "name": "DAT_02665a4c",
-      "type": "undefined4",
+      "name": "g_MovieHandle",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02665a50",
-      "name": "DAT_02665a50",
-      "type": "undefined4",
+      "name": "g_MoviePlaying",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02665a58",
-      "name": "DAT_02665a58",
-      "type": "undefined4",
+      "name": "g_FullscreenMovie",
+      "type": "int",
       "value": null
     }
   ],
@@ -482,22 +479,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005eecb3",
-      "severity": "mild",
-      "text": "p_Var3 = _fopen(local_74,&DAT_005eecb3);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

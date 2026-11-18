@@ -26,7 +26,7 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(CBaron *this_ptr,C
       (this_ptr->target_actor == (CDemonActor *)0x0)) &&
      ((this_ptr_00 = (CCharacter *)
                      core_actor_cpp_castToClassHash_FUN_0040d890
-                               (target,g_CCharacterActorType_00765a60.name_hash),
+                               (target,g_CCharacterClassInfo.name_hash),
       this_ptr_00 == (CCharacter *)0x0 ||
       (EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), (int)EVar4 < 1
       )))) {

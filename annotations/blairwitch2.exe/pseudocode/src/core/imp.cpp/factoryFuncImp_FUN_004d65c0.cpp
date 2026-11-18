@@ -11,7 +11,7 @@ CImp * __cdecl core_imp_cpp_factoryFuncImp_FUN_004d65c0(void)
 {
   CImp *pCVar1;
   
-  pCVar1 = (CImp *)operator_new(0x10b30);
+  pCVar1 = operator_new(0x10b30);
   if (pCVar1 == (CImp *)0x0) {
     return (CImp *)0x0;
   }

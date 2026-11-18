@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __esi engine_matrix_c_getCameraRotation_FUN_004ea3e0(CVector3i *output)
 
 {
   int iVar1;
   int iVar2;
   
-  iVar2 = _DAT_01c38b8c;
-  iVar1 = _DAT_01c38b88;
-  output->x = _DAT_01c38b84;
+  iVar2 = g_CameraRotationRoll;
+  iVar1 = g_CameraRotationYaw;
+  output->x = g_CameraRotationPitch;
   output->y = iVar1;
   output->z = iVar2;
   return;

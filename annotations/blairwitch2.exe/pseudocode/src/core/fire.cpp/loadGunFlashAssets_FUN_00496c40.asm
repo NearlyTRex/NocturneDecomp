@@ -8,7 +8,7 @@
 ;   core_fire.cpp_CFireEffect_loadAssets_FUN_0049d1c0 at 0049d216
 ;
 ; Referenced Globals:
-;   undefined4 s_gunflash_kfm_005d5441+1
+;   TerminatedCString s_gunflash_kfm_005d5442
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
@@ -18,7 +18,7 @@
 
 section .text
 
-    PUSH 0x5d5442                       ; 00496c40 | s_gunflash_kfm_005d5441+1
+    PUSH 0x5d5442                       ; 00496c40 | = "gunflash.kfm"
         ;   Label: core_fire.cpp_loadGunFlashAssets_FUN_00496c40
     PUSH 0x1c3ead8                      ; 00496c45
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70 ; 00496c4a

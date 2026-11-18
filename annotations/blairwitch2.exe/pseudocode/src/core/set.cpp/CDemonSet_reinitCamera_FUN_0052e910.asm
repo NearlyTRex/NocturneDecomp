@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   screen_height
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b82e0 at 004b84bd
-;   core_game.cpp_FUN_004b90d0 at 004b957c
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b957c
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b84bd
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0043b570

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_005492b0(CTerrain *this_ptr)
 
 {
@@ -17,6 +15,6 @@ void __cdecl core_terrain_cpp_CTerrain_init_FUN_005492b0(CTerrain *this_ptr)
   this_ptr->animation_counter = 0;
   core_ground_cpp_CGround_init_FUN_004b13d0(this_ptr_00);
   core_ground_cpp_CGround_load_FUN_004b14d0(g_CGroundPtr,"junk.jnk");
-  _DAT_02dd10cc = 1;
+  g_CTerrainInstance.initialized = 1;
   return;
 }

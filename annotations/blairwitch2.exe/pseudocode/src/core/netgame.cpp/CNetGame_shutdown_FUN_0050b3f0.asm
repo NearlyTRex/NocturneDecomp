@@ -7,7 +7,7 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e4e20 at 004e4e2f
+;   core_main.c_finalizeGameSystems_FUN_004e4e20 at 004e4e2f
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0

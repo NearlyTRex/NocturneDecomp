@@ -9,18 +9,18 @@
 CAmmoMana * __cdecl core_ammo_cpp_CAmmoMana_dtor_FUN_0040e4c0(CAmmoMana *this_ptr,uint flags)
 
 {
-  CDemonActor *pCVar1;
-  void *ptr;
+  CDemonActor *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CAmmoManaTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CAmmoManaTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  ptr = core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
   if ((flags & 2) == 0) {
-    return (CAmmoMana *)pCVar1;
+    return (CAmmoMana *)ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return (CAmmoMana *)pCVar1;
+  debugFreeChecked(ptr);
+  return (CAmmoMana *)ptr;
 }

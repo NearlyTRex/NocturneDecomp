@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript *this_ptr)
 
 {
@@ -15,6 +13,6 @@ int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript *thi
   
   dVar1 = round
                     ((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
-                             _DAT_01e56c20));
+                             g_ScriptTimeScale));
   return (int)ROUND(dVar1);
 }

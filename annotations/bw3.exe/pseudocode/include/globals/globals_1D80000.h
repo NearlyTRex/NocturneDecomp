@@ -6,6 +6,10 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D80000
@@ -21,4 +25,38 @@ extern CAlphaBitmap g_MoonAnimTextures[30];
 
 // CDemonActorType
 extern CDemonActorType g_CMooCowClassInfo;
+
+// CVector3f[32]
+extern CVector3f g_MirrorInputVertices[32];
+extern CVector3f g_MirrorOutputVertices[32];
+
+// CVector3i[2000]
+extern CVector3i g_MorphVertexBuffer[2000];
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_MirrorTempPrimitive;
+
+// SSoftwareEdge
+extern SSoftwareEdge g_SSoftwareEdge_01d80848;
+
+// char
+extern char g_CHAR_01d882a0;
+extern char g_CHAR_01d88308;
+
+// float
+extern float g_MoonAnimationTimer;
+
+// float[64][32]
+extern float g_MpegSynthesisDctTable[64][32];
+
+// int
+extern int g_INT_01d80844;
+extern int g_INT_01d80d48;
+extern int g_INT_01d80d4c;
+extern int g_MirrorInputVertexCount;
+extern int g_MirrorOutputVertexCount;
+extern int g_INT_01d8863c;
+extern int g_INT_01d88640;
+extern int g_MorphReverseWinding;
+extern int g_RenderMotionDebug;
 

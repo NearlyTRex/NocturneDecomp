@@ -17,7 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_00470310(CEditor
   byte *puStack_c;
   
   puStack_c = &stack0x0000000c;
-  _vsprintf((char *)0x1bcb8d0,format_string,(va_list_t)&puStack_c);
+  _vsprintf(g_CHAR_ARRAY_01bcb8d0,format_string,(va_list_t)&puStack_c);
   puStack_c = (byte *)0x0;
   shape_edittool_cpp_CPickList_ctor_FUN_00474c90(&CStack_17c);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es");
@@ -36,7 +36,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_00470310(CEditor
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
   iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                    (&CStack_17c,(char *)0x1bcb8d0,-1);
+                    (&CStack_17c,g_CHAR_ARRAY_01bcb8d0,-1);
   shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&CStack_17c,0);
   return (uint)(iVar4 == 0);
 }

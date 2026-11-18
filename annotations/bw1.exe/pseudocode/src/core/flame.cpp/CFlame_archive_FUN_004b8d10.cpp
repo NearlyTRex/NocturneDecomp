@@ -10,7 +10,7 @@ void __cdecl core_flame_cpp_CFlame_archive_FUN_004b8d10(CFlame *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
-  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->flame_size,"?flameSize" + 1);
+  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->flame_size,"flameSize");
   if (1 < g_CFlameClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->which_flame,"whichFlame");
     core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->globe_scalar,"globeScalar");

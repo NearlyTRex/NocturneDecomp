@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 97,
+    "complexity_score": 66,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 28,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 67,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 313
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 66,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 312
   },
   "cross_references": [
     {
@@ -202,9 +199,9 @@
     },
     {
       "addr": "00586e60",
-      "name": "DAT_00586e60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_00586e60",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "005b7620",
@@ -220,13 +217,13 @@
     },
     {
       "addr": "005bab60",
-      "name": "INT_005bab60",
+      "name": "g_InventoryWidth",
       "type": "int",
       "value": "0xd0"
     },
     {
       "addr": "005bab64",
-      "name": "INT_005bab64",
+      "name": "g_InventoryHeight",
       "type": "int",
       "value": "0x60"
     },
@@ -238,14 +235,14 @@
     },
     {
       "addr": "01cb03d0",
-      "name": "DAT_01cb03d0",
-      "type": "undefined4",
+      "name": "g_ItemDefinitionCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc30a0",
-      "name": "DAT_01cc30a0",
-      "type": "undefined4",
+      "name": "g_InventoryScreenHeight",
+      "type": "int",
       "value": null
     }
   ],
@@ -329,6 +326,12 @@
       "class": "logic-change",
       "ratio": 0.5185
     },
+    "bw1.exe": {
+      "addr": "004f70e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3956
+    },
     "bw3.exe": {
       "addr": "004da570",
       "by": "name",
@@ -350,22 +353,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_00586e60",
-      "severity": "mild",
-      "text": "(&DAT_00586e60,\"itemlist.txt\",\"rt\");",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

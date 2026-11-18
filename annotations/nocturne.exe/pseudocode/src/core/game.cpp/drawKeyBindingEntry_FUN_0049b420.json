@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 32,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 84
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -65,26 +63,26 @@
     },
     {
       "addr": "014b9900",
-      "name": "g_CBitFont_PTR_014b9900",
+      "name": "g_ThemeFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c78adc",
-      "name": "DAT_01c78adc",
-      "type": "undefined4",
+      "name": "g_HelpCursorX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c78ae0",
-      "name": "DAT_01c78ae0",
-      "type": "undefined4",
+      "name": "g_HelpCursorY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c78ae4",
-      "name": "DAT_01c78ae4",
-      "type": "undefined4",
+      "name": "g_HelpLineHeight",
+      "type": "int",
       "value": null
     }
   ],
@@ -188,14 +186,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

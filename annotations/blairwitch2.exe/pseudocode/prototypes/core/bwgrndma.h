@@ -29,9 +29,9 @@ void __cdecl CGrandma::setup(CGrandma *this_ptr);
 // Address: 005a7c20
 void __cdecl CGrandma::processStates(CGrandma *this_ptr,float delta_time,int mode);
 
-// Original: core_bwgrndma.cpp_FUN_005a7c40
+// Original: core_bwgrndma.cpp_CGrandma_processAI_FUN_005a7c40
 // Address: 005a7c40
-void FUN_005a7c40(int param_1);
+void __cdecl CGrandma::processAI(CGrandma *this_ptr,float delta_time);
 
 // Original: core_bwgrndma.cpp_CGrandma_processDeathState_FUN_005a7c90
 // Address: 005a7c90
@@ -61,10 +61,10 @@ CMatrix3x4f * __stack2_esi CGrandma::getCarryObjToBodyXForm(CGrandma *this_ptr,i
 // Address: 005a7e10
 CGrandma * __cdecl CGrandma::dtor(CGrandma *this_ptr,uint flags);
 
-// Original: core_bwgrndma.cpp_FUN_005a7eb0
+// Original: core_bwgrndma.cpp_staticInit_FUN_005a7eb0
 // Address: 005a7eb0
-void FUN_005a7eb0(void);
+void __cdecl staticInit(void);
 
-// Original: core_bwgrndma.cpp_FUN_005a7ed0
+// Original: core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0
 // Address: 005a7ed0
-bool FUN_005a7ed0(void);
+int __cdecl shouldSpawnParticle(void);

@@ -13,7 +13,7 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052d9da
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141bc
+;   int g_INT_006141bc = 0xc8
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00441f40
@@ -35,7 +35,7 @@ section .text
     PUSH EBX                            ; 0043b4d0
     CALL core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00443180 ; 0043b4d1
         ;   XREF to: 00443180 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00443180(CDemonCamera * this_ptr, int gamma_value)
-    MOV EAX,[0x006141bc]                ; 0043b4d6 | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 0043b4d6 | g_INT_006141bc
     ADD ESP,0x8                         ; 0043b4db
     CMP EAX,0x1e0                       ; 0043b4de
     JLE 0x0043b4ea                      ; 0043b4e3

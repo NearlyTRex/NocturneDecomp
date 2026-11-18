@@ -6,57 +6,52 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation)
 
 {
-  int rot_y;
-  int extraout_ECX;
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
-  int rot_z;
-  int translate_x;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  double dVar5;
+  double dVar6;
   int iVar7;
-  int translate_z;
-  CVector3f *translate_y;
-  CVector3f *translate_z_00;
+  int iVar8;
+  int iVar9;
+  int iVar10;
   
   if (translation == (CVector3f *)0x0) {
-    fVar1 = (float10)euler_angles->y * (float10)_DAT_005db38c * (float10)_DAT_005db394;
-    fVar5 = (float10)euler_angles->x * (float10)_DAT_005db38c * (float10)_DAT_005db394;
-    translate_y = translation;
-    translate_z_00 = translation;
-    round();
-    round();
-    iVar7 = (int)ROUND(fVar1);
-    round();
+    fVar1 = euler_angles->z * 0.3183099f;
+    fVar2 = euler_angles->x * 0.3183099f;
+    fVar3 = (float)32768;
+    iVar10 = 0x483893;
+    dVar5 = round((double)(euler_angles->y * 0.3183099f * fVar3));
+    iVar9 = 0x48389a;
+    dVar6 = round((double)(fVar1 * fVar3));
+    iVar7 = (int)ROUND(dVar5);
+    iVar8 = 0x4838b4;
+    dVar5 = round((double)(fVar2 * fVar3));
     engine_matrix_c_matrixPushAndTransform_FUN_00507c70
-              ((int)ROUND(fVar5),rot_y,iVar7,(int)translation,(int)translate_y,(int)translate_z_00);
+              ((int)ROUND(dVar5),(int)ROUND(dVar6),iVar8,iVar7,iVar9,iVar10);
     return;
   }
-  fVar5 = (float10)translation->y * (float10)_DAT_005db384;
-  fVar6 = (float10)translation->x * (float10)_DAT_005db384;
-  fVar1 = (float10)_DAT_005db38c;
-  fVar2 = (float10)_DAT_005db394;
-  fVar3 = (float10)euler_angles->y * fVar1 * fVar2;
-  fVar4 = (float10)euler_angles->z * fVar1 * fVar2;
-  fVar2 = (float10)euler_angles->x * fVar1 * fVar2;
-  round();
-  round();
-  round();
-  iVar7 = (int)ROUND(fVar5);
-  translate_x = (int)ROUND(fVar6);
-  round();
-  round();
-  rot_z = (int)ROUND(fVar3);
-  translate_z = extraout_ECX;
-  round();
+  dVar5 = (double)translation->y * 256;
+  dVar6 = (double)translation->x * 256;
+  fVar1 = euler_angles->y * 0.3183099f;
+  fVar2 = euler_angles->z * 0.3183099f;
+  fVar3 = euler_angles->x * 0.3183099f;
+  fVar4 = (float)32768;
+  round((double)translation->z * 256);
+  dVar5 = round(dVar5);
+  dVar6 = round(dVar6);
+  iVar7 = (int)ROUND(dVar5);
+  iVar8 = (int)ROUND(dVar6);
+  dVar5 = round((double)(fVar1 * fVar4));
+  dVar6 = round((double)(fVar2 * fVar4));
+  iVar9 = (int)ROUND(dVar5);
+  iVar10 = 0x483968;
+  dVar5 = round((double)(fVar3 * fVar4));
   engine_matrix_c_matrixPushAndTransform_FUN_00507c70
-            ((int)ROUND(fVar2),(int)ROUND(fVar4),rot_z,translate_x,iVar7,translate_z);
+            ((int)ROUND(dVar5),(int)ROUND(dVar6),iVar10,iVar9,iVar8,iVar7);
   return;
 }

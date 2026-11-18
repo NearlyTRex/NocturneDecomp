@@ -13,14 +13,14 @@
 ;   sound_sndmain.cpp_audioThreadProc_FUN_00558d20 at 00558d5e
 ;   sound_sndmain.cpp_killSoundThread_FUN_00558e10 at 00558e39
 ;   sound_sndmain.cpp_startSoundThread_FUN_00558d70 at 00558ded
-;   support_trisock.cpp_FUN_00570ae0 at 00570c31
-;   support_trisock.cpp_FUN_00570e20 at 00570e58
-;   support_trisock.cpp_FUN_00570ea0 at 00570f22
-;   support_trisock.cpp_FUN_00571f10 at 00571f94
+;   support_trisock.cpp_cleanupWinsock_FUN_00571f10 at 00571f94
+;   support_trisock.cpp_dnsLookupThreadProc_FUN_00570ae0 at 00570c31
+;   support_trisock.cpp_dnsRequestGetResult_FUN_00570e20 at 00570e58
+;   support_trisock.cpp_dnsRequestQueue_FUN_00570ea0 at 00570f22
 ;
 ; Referenced Globals:
 ;   void* PTR_Sleep_005b3658 = 001b4236
-;   undefined4 DAT_005d7e9b
+;   double g_SecondsToMillisecondsSleepMultiplier = 1000
 ;
 ; Called Functions:
 ;   crt_math.c_ceil_FUN_005a6067
@@ -45,7 +45,7 @@ section .text
     RET                                 ; 00581a5a
     FLD double ptr [ESP + 0xc]          ; 00581a5b
         ;   Label: LAB_00581a5b
-    FMUL double ptr [0x005d7e9b]        ; 00581a5f | DAT_005d7e9b
+    FMUL double ptr [0x005d7e9b]        ; 00581a5f | g_SecondsToMillisecondsSleepMultiplier
     SUB ESP,0x8                         ; 00581a65
     FSTP double ptr [ESP]               ; 00581a68
     CALL crt_math.c_ceil_FUN_005a6067   ; 00581a6b
@@ -55,7 +55,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 00581a78
     ADD ESP,0x8                         ; 00581a7c
     CALL crt_math.c_round_FUN_005a3120  ; 00581a7f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP qword ptr [ESP]               ; 00581a84
     MOV EAX,dword ptr [ESP]             ; 00581a87
     PUSH EAX                            ; 00581a8a

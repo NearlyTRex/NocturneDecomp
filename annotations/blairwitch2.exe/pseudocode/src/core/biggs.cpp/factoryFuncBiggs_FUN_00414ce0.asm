@@ -15,7 +15,7 @@ section .text
     PUSH 0x1190c                        ; 00414ce0
         ;   Label: core_biggs.cpp_factoryFuncBiggs_FUN_00414ce0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00414ce5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 00414cea
     TEST EAX,EAX                        ; 00414ced
     JNZ 0x00414cf2                      ; 00414cef

@@ -24,7 +24,7 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_004385e0(CConveyor *this_pt
   float fStack_38;
   float fStack_34;
   float fStack_30;
-  float fStack_2c;
+  CVector3f CStack_2c;
   char *pcStack_20;
   CVector3f *pCStack_1c;
   int iStack_18;
@@ -32,12 +32,12 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_004385e0(CConveyor *this_pt
   
   bVar2 = 0;
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (0x01C38BC0,this_ptr->start_event);
+                    (g_CEventListPtr,this_ptr->start_event);
   if (iVar1 != 0) {
     this_ptr->state = 1;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (0x01C38BC0,this_ptr->stop_event);
+                    (g_CEventListPtr,this_ptr->stop_event);
   if (iVar1 == 0) {
     if (this_ptr->state != 0) {
       pCStack_1c = &this_ptr->direction;
@@ -48,12 +48,13 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_004385e0(CConveyor *this_pt
         if ((this_ptr == (CConveyor *)actor_ptr->standing_platform) &&
            ((((CConveyor *)actor_ptr->standing_platform)->actor_class[0] == '\0' ||
             (iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(actor_ptr,pcStack_20), iVar1 != 0)))) {
-          core_actor_cpp_FUN_00408cf0(this_ptr,pCStack_1c);
-          fStack_50 = fStack_2c;
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                    ((CDemonActor *)this_ptr,pCStack_1c,&CStack_2c);
+          fStack_50 = CStack_2c.x;
           *(uint *)((int)&stack0xffffffb4 + (uint)bVar2 * -8) =
-               *(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
+               *(uint *)((int)&CStack_2c + (uint)bVar2 * -8 + 4);
           *(uint *)((int)&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-               *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+               *(uint *)((int)&CStack_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
           fStack_44 = fStack_50 * delta_time;
           fStack_40 = fStack_4c * delta_time;
           fStack_3c = fStack_48 * delta_time;

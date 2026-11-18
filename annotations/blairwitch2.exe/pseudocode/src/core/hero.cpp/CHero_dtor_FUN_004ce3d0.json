@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 85,
+    "complexity_score": 130,
     "cross_reference_count": 10,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 4,
+    "pseudocode_lines": 35,
+    "suspect_count": 8,
     "suspect_types": [
       "negative_offset",
-      "raw_address_pointer_store",
-      "undefined_data"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 105
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -99,7 +99,7 @@
     {
       "addr": "0040f2b0",
       "is_variadic": false,
-      "name": "core_armour.cpp_FUN_0040f2b0"
+      "name": "core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0"
     },
     {
       "addr": "005b1480",
@@ -114,7 +114,7 @@
     {
       "addr": "0059df70",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059df70"
+      "name": "core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70"
     },
     {
       "addr": "00511d10",
@@ -130,8 +130,8 @@
   "globals": [
     {
       "addr": "005f8274",
-      "name": "DAT_005f8274",
-      "type": "undefined4",
+      "name": "g_ARRAY_PTR_005f8274",
+      "type": "void*[92]",
       "value": null
     }
   ],
@@ -282,6 +282,18 @@
     "pcode_op_count": 308
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "004ea980",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8544
+    },
+    "bw3.exe": {
+      "addr": "004d2620",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8544
+    },
     "nocedit.exe": {
       "addr": "004f2470",
       "by": "name",
@@ -320,42 +332,74 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005f8274",
-      "severity": "mild",
-      "text": "(this_ptr->base).base.vtable._ub = (CDemonActor_vtable *)&DAT_005f8274;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(CHero **)((int)g_CHero_PTR_ARRAY_01cedee4",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CHero **)((int)g_CHero_PTR_ARRAY_01cedee4 + iVar1)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 15,
-      "match": "*(CHero **)(iVar1 + 0x1cedee4",
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)g_CHero_PTR_ARRAY_01cedee4",
       "severity": "moderate",
-      "text": "if (this_ptr == *(CHero **)(iVar1 + 0x1cedee4)) {",
-      "type": "raw_address_pointer_store"
+      "text": "*(uint *)((int)g_CHero_PTR_ARRAY_01cedee4 + iVar1) = 0;",
+      "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 27,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "iVar1 = core_armour_cpp_FUN_0040f2b0(pCVar3[-1].height_cache[0x42] + 0x44,0);",
+      "text": "((CFlame *)(pCVar3[-1].height_cache[0x42] + 0x44),0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 29,
+      "match": "pCVar4[-3].",
+      "severity": "mild",
+      "text": "((SFollowFormation *)&pCVar4[-3].base.particle_systems[3].max_particles,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 31,
-      "match": "pCVar5[-1].",
+      "match": "pSVar5[-1].",
       "severity": "mild",
-      "text": "(pCVar5[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
+      "text": "((CClothList *)&pSVar5[-1].slots[2].offset.y,0);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 36,
+      "match": "pCVar7[-1].",
+      "severity": "mild",
+      "text": "(pCVar7[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cedee4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)g_CHero_PTR_ARRAY_01cedee4",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CHero **)((int)g_CHero_PTR_ARRAY_01cedee4 + iVar1)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cedee4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)g_CHero_PTR_ARRAY_01cedee4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CHero_PTR_ARRAY_01cedee4 + iVar1) = 0;",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 216,
         "vtable_addr": "005f8274"
       }

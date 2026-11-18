@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00432690(CCharacter *this_ptr,int param_2,float param_3,int *param_4)
+; void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00432690(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; float            Stack[0xc]:4   param_3
-; int *            Stack[0x10]:4   param_4
+; int              Stack[0x8]:4   hand_index
+; float            Stack[0xc]:4   blend_time
+; CMatrix3x4f *    Stack[0x10]:4   carry_offset
 ; Local Variables:
 ; undefined8       Stack[-0x168]:8  local_168
 ; undefined        Stack[-0x160]:1  local_160
@@ -25,13 +25,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005d5c34
 ;   TerminatedCString s_CCharacter_computePickup_005d5c49
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
-;   core_xform.cpp_FUN_005b5620
-;   core_xform.cpp_FUN_005b5760
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_inverse_FUN_005b6380
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
@@ -66,8 +66,8 @@ section .text
     PUSH EAX                            ; 004326cd
     LEA EAX,[ESP + 0xa0]                ; 004326ce
     PUSH EAX                            ; 004326d5
-    CALL core_xform.cpp_FUN_005b5620    ; 004326d6
-        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 004326d6
+        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004326db
     MOV EAX,dword ptr [EBP + 0x14]      ; 004326de
     ADD EAX,0x30                        ; 004326e1
@@ -77,8 +77,8 @@ section .text
     PUSH EAX                            ; 004326eb
     LEA EAX,[ESP + 0xd0]                ; 004326ec
     PUSH EAX                            ; 004326f3
-    CALL core_xform.cpp_FUN_005b5760    ; 004326f4
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 004326f4
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004326f9
     LEA EAX,[ESP + 0x98]                ; 004326fc
     PUSH EAX                            ; 00432703
@@ -114,7 +114,7 @@ section .text
     PUSH EAX                            ; 0043276b
     LEA ESI,[ESP + 0x12c]               ; 0043276c
     CALL core_xform.cpp_inverse_FUN_005b6380 ; 00432773
-        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_inverse_FUN_005b6380()
+        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005b6380(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     FLDZ                                ; 00432778
     MOV ECX,0xc                         ; 0043277a
     LEA ESI,[ESP + 0x12c]               ; 0043277f
@@ -151,10 +151,10 @@ section .text
     MOV ECX,0x5d5c34                    ; 004327c1 | = "..\\core\\charactr.cpp"
     MOV EDI,0xdef                       ; 004327c6
     PUSH 0x5d5c49                       ; 004327cb | = "CCharacter::computePickup - invalid h..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004327d0 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 004327d6 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004327dc
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 004327d0 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 004327d6 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004327dc
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 004327e1
     JMP 0x004326c3                      ; 004327e4
         ;   XREF to: 004326c3 (UNCONDITIONAL_JUMP)  ; LAB_004326c3

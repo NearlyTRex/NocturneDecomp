@@ -33,12 +33,12 @@
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_0049e680 at 0049e6b0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f6500
+;   float g_FLOAT_005f6500 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;
 ; *****************************************************************************
 
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x80],EAX      ; 0049a1f1
     FLD float ptr [ESP + 0x80]          ; 0049a1f8
-    FLD float ptr [0x005f6500]          ; 0049a1ff | DAT_005f6500
+    FLD float ptr [0x005f6500]          ; 0049a1ff | g_FLOAT_005f6500
     ADD ESP,0x8                         ; 0049a205
     FMULP                               ; 0049a208
     PUSH 0x41980000                     ; 0049a20a
@@ -129,8 +129,8 @@ section .text
     PUSH EAX                            ; 0049a2d4
     MOV dword ptr [ESP + 0x3c],EDX      ; 0049a2d5
     MOV dword ptr [ESP + 0x40],EDX      ; 0049a2d9
-    CALL core_dirmat.cpp_FUN_00449530   ; 0049a2dd
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 0049a2dd
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x54]                ; 0049a2e2
     LEA EAX,[ESP + 0x30]                ; 0049a2e6
     ADD ESP,0x8                         ; 0049a2ea

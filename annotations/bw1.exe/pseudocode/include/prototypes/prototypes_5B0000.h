@@ -4,16 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/basetsd.h"
 #include "system/stdarg.h"
 #include "system/stdlib.h"
 #include "system/winbase.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CIniFile.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
@@ -26,6 +26,7 @@
 #include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5B0000
@@ -39,17 +40,17 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005b1330(CWerewolf *this_pt
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_005b17a0(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005b17e0(CWerewolf *this_ptr,CVector3f *out_points_array);
-void core_werewolf_cpp_FUN_005b1850(CCharacter *param_1);
+void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_005b1850(CWerewolf *this_ptr);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005b1a40(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005b1ad0(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005b1b90(CWinFont *this_ptr,uint flags);
 int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005b1c00(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color);
-void engine_winfont_cpp_FUN_005b1c50(int param_1,undefined4 param_2,LPCSTR param_3,int param_4,int param_5,undefined4 param_6);
+void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005b1c50(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color);
 int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005b1e90(CWinFont *this_ptr,int width,int height);
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005b2080(CWinFont *this_ptr);
 int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_005b2100(CWinFont *this_ptr,char *text_string);
 int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_005b2160(CWinFont *this_ptr,char *text_string);
-undefined4 engine_winfont_cpp_FUN_005b21d0(void);
+int __cdecl engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005b21d0(CWinFont *this_ptr);
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005b21e0(void);
 void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_005b2410(void);
 int __cdecl wincore_winrun_cpp_getTime_FUN_005b2420(void);
@@ -58,15 +59,15 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_005b2510(void);
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(void);
 char __cdecl wincore_winrun_cpp_getValue_FUN_005b25a0(void);
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_005b25b0(int input_value);
-void wincore_winrun_cpp_FUN_005b25f0(undefined4 param_1);
+void __cdecl wincore_winrun_cpp_setValue_FUN_005b25f0(int val);
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_005b2610(int x_coord,int y_coord);
 void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005b2650(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005b2740(void);
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005b2750(int x,int y);
-LRESULT __stdcall wincore_winrun_cpp_FUN_005b27d0(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
-void __cdecl wincore_winrun_cpp_FUN_005b2cf0(void);
-void wincore_winrun_cpp_FUN_005b2d90(void);
-void wincore_winrun_cpp_FUN_005b2de0(void);
+LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005b27d0(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
+void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0(void);
+void __cdecl wincore_winrun_cpp_createMainWindow_FUN_005b2d90(void);
+void __cdecl wincore_winrun_cpp_destroyMainWindow_FUN_005b2de0(void);
 int __stdcall wincore_winrun_cpp_winMain_FUN_005b2e00(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005b3080(char *message);
 char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005b30e0(EInputCodeType keycode);
@@ -76,97 +77,99 @@ int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_005b3770(HANDLE mutex_han
 void __cdecl wincore_winrun_cpp_releaseMutex_FUN_005b37b0(HANDLE mutex_handle);
 HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_005b37d0(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param);
 int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005b3800(HANDLE hThread,int priority_level);
-void wincore_winrun_cpp_FUN_005b3840(HANDLE param_1);
+void __cdecl wincore_winrun_cpp_closeThread_FUN_005b3840(HANDLE thread_handle);
 void __cdecl wincore_winrun_cpp_sleep_FUN_005b3860(double seconds);
 void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005b38c0(char *buffer);
 void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_005b3990(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005b3a10(char *key_path,char *value_name,char *value_data);
-void wincore_winrun_cpp_FUN_005b3a90(LPCSTR param_1);
+void __cdecl wincore_winrun_cpp_outputDebugString_FUN_005b3a90(LPCSTR message);
 void __cdecl wincore_winrun_cpp_initJoystick_FUN_005b3aa0(void);
 void __cdecl wincore_winrun_cpp_doNothing2_FUN_005b3b10(void);
 void __cdecl wincore_winrun_cpp_getJoystickState_FUN_005b3b30(void);
-float wincore_winrun_cpp_FUN_005b3c90(int param_1,int *param_2,float param_3,float param_4);
-void wincore_winrun_cpp_FUN_005b3d70(int param_1);
-void wincore_winrun_cpp_FUN_005b4190(void);
-void wincore_winrun_cpp_FUN_005b41c0(int param_1,int param_2,UINT_PTR param_3);
-void wincore_winrun_cpp_FUN_005b42d0(int param_1);
-void wincore_winrun_cpp_FUN_005b42f0(void);
-void wincore_winrun_cpp_FUN_005b4320(float param_1);
-float wincore_winrun_cpp_FUN_005b43a0(void);
-void wincore_winrun_cpp_FUN_005b4400(int param_1);
-void wincore_winrun_cpp_FUN_005b4450(undefined4 param_1);
-undefined4 wincore_winrun_cpp_FUN_005b4460(undefined4 param_1);
-void wincore_winrun_cpp_FUN_005b44a0(undefined4 param_1);
-void wincore_winrun_cpp_FUN_005b4650(void);
-void wincore_winrun_cpp_FUN_005b48c0(void);
+float __cdecl wincore_winrun_cpp_normalizeControllerAxis_FUN_005b3c90(int raw_value,int *axis_calibration,float out_min,float out_max);
+void __cdecl wincore_winrun_cpp_pollController_FUN_005b3d70(int controller_index);
+void __cdecl wincore_winrun_cpp_pollAllControllers_FUN_005b4190(void);
+void __cdecl wincore_winrun_cpp_initController_FUN_005b41c0(int controller_index,int controller_type,uint pc_port);
+void __cdecl wincore_winrun_cpp_clearController_FUN_005b42d0(int controller_index);
+void __cdecl wincore_winrun_cpp_resetInputIdleTimers_FUN_005b42f0(void);
+void __cdecl wincore_winrun_cpp_updateInputIdleTimers_FUN_005b4320(float delta_time);
+float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_005b43a0(void);
+void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005b4400(int controller_index);
+void __cdecl wincore_winrun_cpp_pollControllerWrapper_FUN_005b4450(int controller_index);
+void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_005b4460(int controller_index);
+void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_005b44a0(CIniFile *ini);
+void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_005b4650(CIniFile *ini);
+void __cdecl wincore_winrun_cpp_positionMovieWindow_FUN_005b47d0(HWND parent_window);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_005b4980(HWND window_handle);
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_005b49d0(HWND parent_window,char *movie_filename);
 void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_005b4c60(HWND notify_window,int play_state);
 int __cdecl wincore_winvideo_cpp_playMovie_FUN_005b4cd0(char *directory_path,char *movie_filename);
-void core_xform_cpp_FUN_005b5080(float *param_1,float *param_2);
+CVector3f * __stack2_esi core_xform_cpp_transformVector3x4_FUN_005b5080(CVector3f *input_vector,CMatrix3x4f *matrix,CVector3f *output_vector);
 CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005b5100(CVector3f *input_output_vector,CMatrix3x4f *matrix);
 CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005b53b0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b);
 void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005b53f0(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_somebodyWriteMe_FUN_005b5450(void);
 void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_005b5480(CMatrix3x4f *matrix);
-void core_xform_cpp_FUN_005b54d0(float *param_1);
+void __cdecl core_xform_cpp_normalizeMatrix_FUN_005b54d0(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_clearTranslation_FUN_005b5600(CMatrix3x4f *matrix);
-void __cdecl core_xform_cpp_FUN_005b5620(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
-void __cdecl core_xform_cpp_FUN_005b5760(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
-float core_xform_cpp_angleFromSinCos_FUN_005b5860(float param_1,float param_2);
-float * core_xform_cpp_matrixToEulerAngles_FUN_005b5930(float *param_1);
-float * core_xform_cpp_matrixToEulerAnglesZYX_FUN_005b5dd0(float *param_1);
-void core_xform_cpp_FUN_005b6270(int param_1);
-void core_xform_cpp_FUN_005b62b0(undefined4 param_1);
+void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005b5620(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
+void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
+float __cdecl core_xform_cpp_angleFromSinCos_FUN_005b5860(float sin_value,float cos_value);
+CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f *matrix_in,CVector3f *euler_out);
+CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005b5dd0(CMatrix3x4f *matrix_ptr,CVector3f *euler_out);
+CVector3f * __stack_esi core_xform_cpp_getTranslation_FUN_005b6270(CMatrix3x4f *matrix_in,CVector3f *vector_out);
+CVector3f * __stack_esi core_xform_cpp_invertAndGetTranslation_FUN_005b62b0(CMatrix3x4f *matrix_in,CVector3f *vector_out);
 double __cdecl core_xform_cpp_determinant_FUN_005b6330(CMatrix3x4f *matrix);
-void core_xform_cpp_inverse_FUN_005b6380(CMatrix3x4f *param_1);
+CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005b6380(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out);
 float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_005b65b0(CMatrix3x4f *matrix);
-void core_xform_cpp_FUN_005b6920(void);
+void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_005b67e0(CMatrix3x3f *matrix,int preserve_scale);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_005b6d90(float angle_radians,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_005b6e10(float angle_radians,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_005b7030(float x_offset,CMatrix3x4f *matrix_out);
-void core_xform_cpp_FUN_005b7090(void);
+CMatrix3x4f * __stack_esi core_xform_cpp_buildYFlipMatrix_FUN_005b7090(float y_offset,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_005b70f0(float z_offset,CMatrix3x4f *matrix_out);
-void core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(undefined4 *param_1,undefined4 *param_2,float param_3);
+CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,float t,CMatrix3x4f *matrix_out);
 CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005b7410(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_005b7560(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out);
-void core_xform_cpp_matrixToQuaternion_FUN_005b75a0(float *param_1);
-void core_xform_cpp_negateFirstComponent_FUN_005b7750(float *param_1);
+CQuaternion4f * __stack_esi core_xform_cpp_matrixToQuaternion_FUN_005b75a0(CMatrix3x3f *matrix_in,CQuaternion4f *quat_out);
+CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_005b7750(CQuaternion4f *vector_in,CQuaternion4f *vector_out);
 void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_005b7790(CQuaternion4f *quaternion);
-void core_xform_cpp_multiplyQuaternion_FUN_005b77b0(float *param_1,float *param_2);
+CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_005b77b0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out);
 void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_005b78a0(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out);
-float * core_xform_cpp_slerpQuaternion_FUN_005b7940(float *param_1,float *param_2,float param_3);
-void core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(float param_1);
-void core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(float param_1);
-void core_xform_cpp_quaternionFromAngleZ_FUN_005b7b70(float param_1);
-void core_xform_cpp_quaternionFromAxisAngle_FUN_005b7bb0(float param_1,float *param_2);
-float * core_xform_cpp_FUN_005b7c00(float *param_1);
-float * core_xform_cpp_FUN_005b7d60(float *param_1);
-void core_xform_cpp_FUN_005b7ed0(float *param_1);
-void core_xform_cpp_FUN_005b7ff0(float *param_1);
+CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005b7940(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out);
+CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(float angle_radians,CQuaternion4f *quat_out);
+CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(float angle_radians,CQuaternion4f *quat_out);
+CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_005b7b70(float angle_radians,CQuaternion4f *quat_out);
+CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_005b7bb0(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out);
+CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAngles_FUN_005b7c00(CQuaternion4f *quat_in,CVector3f *out_euler);
+CVector3f * __stack_esi core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005b7d60(CQuaternion4f *quat_in,CVector3f *vector_out);
+CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_005b7ed0(CVector3f *euler_angles,CQuaternion4f *quat_out);
+CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005b7ff0(CVector3f *euler_angles,CQuaternion4f *quat_out);
 void __cdecl core_yow_cpp_staticInit_FUN_005b8100(void);
 CYow * __cdecl core_yow_cpp_factoryFuncYow_FUN_005b8130(void);
 CDemonActorType * __cdecl core_yow_cpp_CYow_getActorType_FUN_005b8150(CYow *this_ptr);
 CYow * __cdecl core_yow_cpp_CYow_ctor_FUN_005b8160(CYow *this_ptr);
 void __cdecl core_yow_cpp_CYow_setup_FUN_005b81d0(CYow *this_ptr);
-void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float param_2);
-void core_yow_cpp_FUN_005b8eb0(CCharacter *param_1,int *param_2);
+void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float delta_time);
+void __cdecl core_yow_cpp_CYow_processDismemberment_FUN_005b8eb0(CYow *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_yow_cpp_CYow_archive_FUN_005b9110(CYow *this_ptr);
-void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamageInfo *param_2);
-int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *param_2);
+void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *out_points_array);
 CYow * __cdecl core_yow_cpp_CYow_dtor_FUN_005b95a0(CYow *this_ptr,uint flags);
 void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_005b9630(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_005b96f0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_005b97b0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_005b9870(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
+void __cdecl core_xform_cpp_clipPolygonStage2_FUN_005b9ab0(void);
 void __cdecl core_xform_cpp_clipPolygonStage3_FUN_005b9c30(void);
+void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005b9da0(void);
 void __cdecl core_xform_cpp_clampClippedVertices_FUN_005b9f10(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_005ba700(void);
-float core_zombie_cpp_FUN_005ba730(int param_1);
-void core_zombie_cpp_FUN_005ba7d0(int param_1);
-void core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(int param_1);
+float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005ba730(CDemonActor *actor);
+CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointLocal_FUN_005ba7d0(CDemonActor *actor,CVector3f *out_point);
+CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(CDemonActor *actor,CVector3f *out_point);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_005ba990(CVector3f *dimensions);
 CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_005baae0(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombie_getActorType_FUN_005bab00(CZombie *this_ptr);
@@ -191,9 +194,9 @@ int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005bece0(CZombie *this_ptr,CD
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005bed50(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_005bed80(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005bedf0(CZombie *this_ptr,uint flags);
-void core_zombie_cpp_FUN_005bee80(void);
-int * core_zombie_cpp_FUN_005bf0e0(void);
-void __cdecl core_zombie_cpp_FUN_005bf120(SRenderVertex *vertex_buffer,int vertex_count);
+void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,SRenderVertex *v1);
+SSoftwareEdge * __cdecl core_zombie_cpp_findRasterizerEdge_FUN_005bf0e0(int y_start,SSoftwareEdge *exclude_edge);
+void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005bf120(SRenderVertex *vertex_buffer,int vertex_count);
 void __cdecl engine_zraster_c_rasterizePolygonCustom_FUN_005bf640(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_zraster_c_rasterizePolygonCustom_FUN_005bf640(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {

@@ -8,9 +8,9 @@
 ;   crt_unknown.c_FUN_005c7040 at 005c706e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f758
-;   undefined4 DAT_0061f889
-;   undefined4 DAT_026807f0
+;   uint g_CodePage = 0x1
+;   char[256] g_ShiftJIS_TrailByteTable
+;   int g_MultibyteLocaleActive
 ;
 ; *****************************************************************************
 
@@ -18,10 +18,10 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 005c7090
         ;   Label: crt_unknown.c_FUN_005c7090
-    CMP dword ptr [0x026807f0],0x0      ; 005c7094 | DAT_026807f0
+    CMP dword ptr [0x026807f0],0x0      ; 005c7094 | g_MultibyteLocaleActive
     JZ 0x005c70c6                       ; 005c709b
         ;   XREF to: 005c70c6 (CONDITIONAL_JUMP)  ; LAB_005c70c6
-    CMP dword ptr [0x0061f758],0x3a4    ; 005c709d | DAT_0061f758
+    CMP dword ptr [0x0061f758],0x3a4    ; 005c709d | g_CodePage
     JZ 0x005c70b3                       ; 005c70a7
         ;   XREF to: 005c70b3 (CONDITIONAL_JUMP)  ; LAB_005c70b3
     TEST EAX,EAX                        ; 005c70a9
@@ -31,7 +31,7 @@ section .text
     RET                                 ; 005c70b2
     AND EAX,0xff                        ; 005c70b3
         ;   Label: LAB_005c70b3
-    MOV AL,byte ptr [EAX + 0x61f889]    ; 005c70b8 | DAT_0061f889
+    MOV AL,byte ptr [EAX + 0x61f889]    ; 005c70b8 | g_ShiftJIS_TrailByteTable
     AND AL,0x8                          ; 005c70be
     AND EAX,0xff                        ; 005c70c0
     RET                                 ; 005c70c5

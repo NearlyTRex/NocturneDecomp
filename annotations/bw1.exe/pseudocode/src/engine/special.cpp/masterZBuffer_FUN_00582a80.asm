@@ -11,14 +11,14 @@
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_0044d610 at 0044d6e5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_02c83408
+;   int g_INT_01c50948
+;   void* g_APIDLL_masterZBuffer
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c50948],0x0      ; 00582a80 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 00582a80 | g_INT_01c50948
         ;   Label: engine_special.cpp_masterZBuffer_FUN_00582a80
     JNZ 0x00582a8c                      ; 00582a87
         ;   XREF to: 00582a8c (CONDITIONAL_JUMP)  ; LAB_00582a8c
@@ -27,7 +27,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 00582a8c
         ;   Label: LAB_00582a8c
     PUSH ECX                            ; 00582a90
-    CALL dword ptr [0x02c83408]         ; 00582a91 | DAT_02c83408
+    CALL dword ptr [0x02c83408]         ; 00582a91 | g_APIDLL_masterZBuffer
     ADD ESP,0x4                         ; 00582a97
     RET                                 ; 00582a9a
 

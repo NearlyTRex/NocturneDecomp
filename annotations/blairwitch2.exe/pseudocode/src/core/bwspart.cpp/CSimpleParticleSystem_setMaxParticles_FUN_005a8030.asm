@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem *this_ptr,int param_2)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem *this_ptr,int max_particles)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   max_particles
 ;
 ; XREF[9]:
 ;   core_confedrt.cpp_CConfederate_setup_FUN_005a0a90 at 005a0b04

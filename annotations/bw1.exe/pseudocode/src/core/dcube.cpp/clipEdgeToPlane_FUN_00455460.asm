@@ -14,18 +14,22 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
-; XREF[2]:
+; XREF[6]:
 ;   core_dcube.cpp_clipPolygonAgainstMaxX_FUN_004558d0 at 004559aa
+;   core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00455600 at 004556dc
 ;   core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455d00 at 00455de2
+;   core_dcube.cpp_clipPolygonAgainstMinY_FUN_00455760 at 00455842
+;   core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00455b90 at 00455c72
+;   core_dcube.cpp_clipTriangleToAABB_FUN_004570e0 at 004576f1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcube_cpp_005d7a87
 ;   TerminatedCString s_Bad_clip_005d7a99
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -189,10 +193,10 @@ section .text
         ;   Label: LAB_004555b6
     MOV EDX,0x6e                        ; 004555bb
     PUSH 0x5d7a99                       ; 004555c0 | = "Bad clip!"
-    MOV [0x01d1d400],EAX                ; 004555c5 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 004555ca | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004555d0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 004555c5 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 004555ca | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004555d0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004555d5
     JMP 0x004554ac                      ; 004555d8
         ;   XREF to: 004554ac (UNCONDITIONAL_JUMP)  ; LAB_004554ac

@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createToss_FUN_004a3920(CFireEffect *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time,uint sfx_handle)
 
 {
   int iVar1;
   
-  if (fuse_time < (float)_DAT_005c0a40) {
+  if (fuse_time < (float)0.0001) {
     fuse_time = 0.0001;
   }
   iVar1 = core_fire_cpp_CFireEffect_allocateToss_FUN_004a3a30

@@ -13,10 +13,10 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bc1f
 ;
 ; Referenced Globals:
-;   undefined8 DAT_0061c78c
-;   undefined4 DAT_0061c794
-;   undefined4 DAT_01c2b64c
-;   undefined4 DAT_01c37788
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_INT_01c37788
 ;
 ; Called Functions:
 ;   engine_special.cpp_clearZBox_FUN_0055ff10
@@ -30,7 +30,7 @@ section .text
     MOV EBP,ESP                         ; 0055b343
     PUSH ESI                            ; 0055b345
     PUSH EDI                            ; 0055b346
-    CMP dword ptr [0x01c37788],0x0      ; 0055b347 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 0055b347 | g_INT_01c37788
     JZ 0x0055b369                       ; 0055b34e
         ;   XREF to: 0055b369 (CONDITIONAL_JUMP)  ; LAB_0055b369
     PUSH dword ptr [EBP + 0x14]         ; 0055b350
@@ -59,10 +59,10 @@ section .text
     INC ECX                             ; 0055b37b
     MOV EDX,dword ptr [EBP + 0x8]       ; 0055b37c
     SHL EDX,0x2                         ; 0055b37f
-    FLD double ptr [0x0061c78c]         ; 0055b382 | DAT_0061c78c
+    FLD double ptr [0x0061c78c]         ; 0055b382 | g_BufferFillZeroQword
     PUSH ECX                            ; 0055b388
         ;   Label: LAB_0055b388
-    MOV EDI,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0055b389 | DAT_01c2b64c
+    MOV EDI,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0055b389 | g_ZBufferScanlineArray
     ADD EDI,EDX                         ; 0055b390
     AND EDI,0xfffffff8                  ; 0055b392
     SHR ECX,0x1                         ; 0055b395
@@ -77,7 +77,7 @@ section .text
     CMP EBX,dword ptr [EBP + 0x14]      ; 0055b3a1
     JBE 0x0055b388                      ; 0055b3a4
         ;   XREF to: 0055b388 (CONDITIONAL_JUMP)  ; LAB_0055b388
-    FSTP double ptr [0x0061c794]        ; 0055b3a6 | DAT_0061c794
+    FSTP double ptr [0x0061c794]        ; 0055b3a6 | g_BufferFillFpuPopST0
     POPAD                               ; 0055b3ac
     POP EDI                             ; 0055b3ad
     POP ESI                             ; 0055b3ae

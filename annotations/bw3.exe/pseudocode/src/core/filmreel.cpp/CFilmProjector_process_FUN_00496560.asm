@@ -8,19 +8,19 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c049b
+;   float g_FLOAT_005c049b = 3.141593
 ;   CFilterFX* g_CFilterFXPtr = 01549a94
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   undefined4 g_CFilmReelClassInfo.name_hash
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_dest.cpp_CActorDestination_process_FUN_004591f0
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_00459d00
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
@@ -59,7 +59,7 @@ section .text
     FLD float ptr [ESP + 0x1c]          ; 004965a3
         ;   Label: LAB_004965a3
     MOV EAX,dword ptr [EBX + 0x158]     ; 004965a7
-    FMUL float ptr [0x005c049b]         ; 004965ad | DAT_005c049b
+    FMUL float ptr [0x005c049b]         ; 004965ad | g_FLOAT_005c049b
     FLD float ptr [EAX + 0x38]          ; 004965b3
     FSUB ST0,ST1                        ; 004965b6
     FSTP float ptr [EAX + 0x38]         ; 004965b8
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 00496582 (CONDITIONAL_JUMP)  ; LAB_00496582
     LEA EAX,[EBX + 0x374]               ; 004965f2
     PUSH EAX                            ; 004965f8
-    MOV ESI,dword ptr [0x005fba60]      ; 004965f9 | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004965f9 | g_CEventListPtr
     PUSH ESI                            ; 004965ff
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00496600
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -115,10 +115,10 @@ section .text
     MOV ECX,0x5c043d                    ; 00496642
     MOV EDI,0x11d                       ; 00496647
     PUSH 0x5c0452                       ; 0049664c
-    MOV dword ptr [0x01d71de0],ECX      ; 00496651 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00496657 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0049665d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00496651 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 00496657 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0049665d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00496662
     LEA EAX,[ESI + 0x2d8]               ; 00496665
         ;   Label: LAB_00496665

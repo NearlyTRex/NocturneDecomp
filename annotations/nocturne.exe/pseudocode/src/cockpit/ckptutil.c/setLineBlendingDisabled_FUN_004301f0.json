@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [],
@@ -31,8 +29,8 @@
   "globals": [
     {
       "addr": "00766c6c",
-      "name": "DAT_00766c6c",
-      "type": "undefined4",
+      "name": "g_LineBlendingDisabled",
+      "type": "int",
       "value": null
     }
   ],
@@ -57,17 +55,23 @@
     "pcode_op_count": 7
   },
   "siblings": {
-    "bw1.exe": {
-      "addr": "0043a010",
+    "blairwitch2.exe": {
+      "addr": "0042f310",
       "by": "name",
-      "class": "logic-change",
-      "ratio": 0.8
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0043a020",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
     },
     "bw3.exe": {
-      "addr": "00437c20",
+      "addr": "00437c30",
       "by": "name",
-      "class": "logic-change",
-      "ratio": 0.8
+      "class": "identical",
+      "ratio": 1.0
     },
     "nocedit.exe": {
       "addr": "00434670",
@@ -92,14 +96,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_00766c6c",
-      "severity": "mild",
-      "text": "DAT_00766c6c = disabled;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

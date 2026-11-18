@@ -125,9 +125,9 @@ int __cdecl CSound::getReverbPresetCount(CSound *this_ptr);
 // Address: 005b3c70
 char * __cdecl CSound::getSoundModeName(CSound *this_ptr,int sound_mode_index);
 
-// Original: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
+// Original: core_sound.cpp_CSound_setReverb_FUN_005b3c90
 // Address: 005b3c90
-void __cdecl CSound::set3DListenerOrientRight(CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z);
+void __cdecl CSound::setReverb(CSound *this_ptr,float volume,float decay_time,float damping);
 
 // Original: core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0
 // Address: 005b3cc0

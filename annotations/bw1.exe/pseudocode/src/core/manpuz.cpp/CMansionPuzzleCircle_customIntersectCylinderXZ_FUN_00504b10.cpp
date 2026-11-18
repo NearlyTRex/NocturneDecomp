@@ -29,7 +29,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_
   pSVar3 = this_ptr->panels;
   do {
     while (pSVar3->exists != 0) {
-      core_setcolid_cpp_FUN_005580d0
+      core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_005580d0
                 (g_CDemonSetPtr,cylinder,&CStack_24,&pSVar3->local_position,&pSVar3->rotation_matrix
                 );
       pSVar3 = pSVar3 + 1;

@@ -10,9 +10,9 @@
 ;   core_werewolf.cpp_factoryFuncWerewolf_FUN_0057d520 at 0057d533
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e63a0
-;   undefined4 DAT_005e63a4
-;   undefined4 DAT_005e63a8
+;   float g_FLOAT_005e63a0 = 50
+;   float g_FLOAT_005e63a4 = 100
+;   float g_FLOAT_005e63a8 = 10
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -41,11 +41,11 @@ section .text
     MOV dword ptr [EBX + 0xd054],0x0    ; 0057d58b
     MOV dword ptr [EBX + 0xd06c],0x1    ; 0057d595
     MOV dword ptr [EBX + 0xd080],0x0    ; 0057d59f
-    FLD float ptr [0x005e63a0]          ; 0057d5a9 | DAT_005e63a0
+    FLD float ptr [0x005e63a0]          ; 0057d5a9 | g_FLOAT_005e63a0
     MOV dword ptr [EBX + 0xd084],0x40a00000 ; 0057d5af
-    FLD float ptr [0x005e63a4]          ; 0057d5b9 | DAT_005e63a4
+    FLD float ptr [0x005e63a4]          ; 0057d5b9 | g_FLOAT_005e63a4
     MOV dword ptr [EBX + 0xd088],0x0    ; 0057d5bf
-    FLD float ptr [0x005e63a8]          ; 0057d5c9 | DAT_005e63a8
+    FLD float ptr [0x005e63a8]          ; 0057d5c9 | g_FLOAT_005e63a8
     MOV dword ptr [EBX + 0xd08c],0x0    ; 0057d5cf
     ADD ESP,0x8                         ; 0057d5d9
     MOV dword ptr [EBX + 0xd090],0x0    ; 0057d5dc

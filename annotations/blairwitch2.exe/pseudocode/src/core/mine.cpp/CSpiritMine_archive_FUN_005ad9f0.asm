@@ -7,7 +7,7 @@
 ; CSpiritMine *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_sleepTime_005f0efa+1
+;   TerminatedCString s_sleepTime_005f0efb
 ;   TerminatedCString s_effectTime_005f0f05
 ;   TerminatedCString s_effectDamage_005f0f10
 ;   TerminatedCString s_triggerRadius_005f0f1d
@@ -27,7 +27,7 @@ section .text
     CALL core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0 ; 005ad9f6
         ;   XREF to: 0041c7f0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 005ad9fb
-    PUSH 0x5f0efb                       ; 005ad9fe | s_sleepTime_005f0efa+1
+    PUSH 0x5f0efb                       ; 005ad9fe | = "sleepTime"
     LEA EAX,[EBX + 0x7dc]               ; 005ada03
     PUSH EAX                            ; 005ada09
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 005ada0a

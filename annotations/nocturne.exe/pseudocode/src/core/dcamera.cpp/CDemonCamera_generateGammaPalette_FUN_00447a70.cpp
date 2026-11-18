@@ -32,12 +32,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(CDe
     dVar8 = round((double)(fVar6 * fVar7));
     uVar1 = (uint)ROUND(dVar8);
     iVar4 = iVar4 + 1;
-    *(uint *)(&DAT_00b0e1fc + iVar3) = uVar1 << 0x18 | uVar1 << 0x10 | uVar1 << 8 | uVar1;
+    *(uint *)((int)g_UINT_ARRAY_00b0e1fc + iVar3) =
+         uVar1 << 0x18 | uVar1 << 0x10 | uVar1 << 8 | uVar1;
     iVar3 = iVar3 + 4;
   } while (iVar4 < 0x100);
   engine_special_cpp_setFogColor_FUN_00532af0
-            (*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff,
-             *(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff,
-             *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);
+            (g_UINT_ARRAY_00b0e1fc[(int)g_CHAR_ARRAY_005ad450] & 0xff,
+             g_UINT_ARRAY_00b0e1fc[g_INT_005ad454] & 0xff,
+             g_UINT_ARRAY_00b0e1fc[g_INT_005ad458] & 0xff);
   return;
 }

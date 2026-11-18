@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 118,
+    "complexity_score": 102,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 2,
+    "pseudocode_lines": 87,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 324
+    "total_lines": 323
   },
   "cross_references": [
     {
@@ -31,13 +30,13 @@
     {
       "addr": "004f7690",
       "from_addr": "004f7883",
-      "name": "core_inv.cpp_FUN_004f7690",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050d640",
       "from_addr": "0050e60e",
-      "name": "core_menu.cpp_FUN_0050d640",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_0050d640",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -200,14 +199,14 @@
     },
     {
       "addr": "01d1ee90",
-      "name": "DAT_01d1ee90",
-      "type": "undefined4",
+      "name": "g_INT_01d1ee90",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d219e0",
-      "name": "DAT_01d219e0",
-      "type": "undefined4",
+      "name": "g_StringBufferIndex",
+      "type": "int",
       "value": null
     }
   ],
@@ -410,16 +409,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 80,
+      "line": 78,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -14,33 +14,27 @@
   },
   "cross_references": [
     {
-      "addr": "0043b2e0",
-      "from_addr": "0043b375",
-      "name": "cockpit_ckptutil.c_FUN_0043b2e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00437490",
       "from_addr": "004375b3",
       "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d6420",
-      "from_addr": "004d67d6",
-      "name": "core_game.cpp_FUN_004d6420",
+      "addr": "0043b2e0",
+      "from_addr": "0043b375",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d6990",
       "from_addr": "004d6ce9",
-      "name": "core_game.cpp_FUN_004d6990",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004d6990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00401590",
-      "from_addr": "004015d5",
-      "name": "engine_2d.c_FUN_00401590",
+      "addr": "004d6420",
+      "from_addr": "004d67d6",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004d6420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,27 +50,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00401590",
+      "from_addr": "004015d5",
+      "name": "engine_2d.c_loadPaletteFile_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c0cd0",
       "from_addr": "004c0eee",
       "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c0fa0",
-      "from_addr": "004c1164",
-      "name": "engine_font.cpp_FUN_004c0fa0",
+      "addr": "004c1580",
+      "from_addr": "004c1785",
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004c1580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c1580",
-      "from_addr": "004c1785",
-      "name": "engine_font.cpp_FUN_004c1580",
+      "addr": "004c0fa0",
+      "from_addr": "004c1164",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053b250",
       "from_addr": "0053b2e6",
-      "name": "engine_pod.cpp_FUN_0053b250",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -88,7 +88,7 @@
     {
       "addr": "00597d70",
       "from_addr": "00597ea6",
-      "name": "engine_texture.cpp_FUN_00597d70",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_00597d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -154,7 +154,7 @@
       {
         "call_addr": "004d6ce9",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6990",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004d6990",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +176,7 @@
       {
         "call_addr": "004015d5",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401590",
+        "caller": "engine_2d.c_loadPaletteFile_FUN_00401590",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -209,7 +209,7 @@
       {
         "call_addr": "0043b375",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0043b2e0",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,7 +220,7 @@
       {
         "call_addr": "0043b3fb",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0043b2e0",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -231,7 +231,7 @@
       {
         "call_addr": "004d67d6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6420",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004d6420",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

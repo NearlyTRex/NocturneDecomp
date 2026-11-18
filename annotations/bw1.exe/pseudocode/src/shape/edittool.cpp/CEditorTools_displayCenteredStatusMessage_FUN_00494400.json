@@ -2,25 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 78,
+    "complexity_score": 39,
     "cross_reference_count": 7,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 4,
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 106
+    "total_lines": 107
   },
   "cross_references": [
     {
       "addr": "0050d640",
       "from_addr": "0050e847",
-      "name": "core_menu.cpp_FUN_0050d640",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_0050d640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052c600",
+      "from_addr": "0052c616",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0052c600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,21 +46,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052c600",
-      "from_addr": "0052c616",
-      "name": "core_netgame.cpp_FUN_0052c600",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053bfc0",
       "from_addr": "0053c016",
-      "name": "engine_pod.cpp_FUN_0053bfc0",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053cc60",
       "from_addr": "0053cc7e",
-      "name": "engine_pod.cpp_FUN_0053cc60",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0053cc60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -76,7 +74,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005bfb18",
@@ -129,50 +127,50 @@
     },
     {
       "addr": "0061b498",
-      "name": "DAT_0061b498",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01c3eb50",
-      "name": "DAT_01c3eb50",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c3eb50",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c3f538",
-      "name": "DAT_01c3f538",
-      "type": "undefined4",
+      "name": "g_EditorFontMaxCharWidth",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3f53c",
-      "name": "DAT_01c3f53c",
-      "type": "undefined4",
+      "name": "g_INT_01c3f53c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3f574",
-      "name": "DAT_01c3f574",
-      "type": "undefined4",
+      "name": "g_StatusTextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -206,6 +204,12 @@
     "pcode_op_count": 328
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047be90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9275
+    },
     "bw3.exe": {
       "addr": "0047cfa0",
       "by": "name",
@@ -264,36 +268,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 17,
+      "line": 16,
       "match": "&stack0x0000000c",
       "severity": "moderate",
       "text": "local_14 = &stack0x0000000c;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "(_DAT_01c3eb50,DAT_0061b498 / 2,DAT_0061b49c / 2,_DAT_01c3f574,-1,local_414);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "(_DAT_01c3eb50,DAT_0061b498 / 2,DAT_0061b49c / 2,_DAT_01c3f574,-1,local_414);",
-      "type": "undefined_data"
     }
   ]
 }

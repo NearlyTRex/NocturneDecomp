@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004cfb00(CHero *this_ptr)
 
 {
@@ -16,11 +13,11 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004cfb00(CHero *this_ptr)
   int iVar1;
   byte bVar2;
   float afStackY_1038 [1012];
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_34;
-  float local_2c;
+  CVector3f local_50;
+  CVector3f local_44;
+  float local_38;
+  float local_34 [2];
+  CVector3f local_2c;
   CDemonActor *local_20;
   int local_1c;
   int local_18;
@@ -37,21 +34,23 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004cfb00(CHero *this_ptr)
       if ((this_ptr_00 != (CActorDestination *)0x0) &&
          (iVar1 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004473f0(this_ptr_00,local_20),
          iVar1 != 0)) {
-        core_actor_cpp_FUN_00408de0(this_ptr,&(this_ptr_00->base).location);
-        local_44 = local_2c;
-        (&stack0xffffffc0)[(uint)bVar2 * 0xfffffffe] =
-             (float)*(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
-        *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-             *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-        if (((1.0 <= (double)local_40) &&
-            ((((double)local_40 <= _DAT_005d9d34 && ((float)_DAT_005d9d3c <= local_3c)) &&
-             ((double)local_3c <= _DAT_005d9d44)))) && (ABS(local_44) <= (float)_DAT_005d9d44)) {
-          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffbc);
-          *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =
-               *(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8);
-          *(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-               *(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-          if (ABS(local_34) <= (float)_DAT_005d9d4c) {
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                  ((CDemonActor *)this_ptr,&(this_ptr_00->base).location.position,&local_2c);
+        local_44.x = local_2c.x;
+        *(uint *)((int)&local_44 + (uint)bVar2 * -8 + 4) =
+             *(uint *)((int)&local_2c + (uint)bVar2 * -8 + 4);
+        *(uint *)((int)&local_44 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+             *(uint *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+        if (((1.0 <= (double)local_44.y) &&
+            ((((double)local_44.y <= 6 && ((float)0.5 <= local_44.z))
+             && ((double)local_44.z <= 3)))) &&
+           (ABS(local_44.x) <= (float)3)) {
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_44,&local_50);
+          local_38 = local_50.x;
+          local_34[(uint)bVar2 * -2] = *(float *)((int)&local_50 + (uint)bVar2 * -8 + 4);
+          local_34[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+               *(float *)((int)&local_50 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+          if (ABS(local_34[0]) <= (float)60) {
             this_ptr->hero_action_range = 0.0;
             this_ptr->hero_action = 5;
             this_ptr->hero_action_actor = local_20;

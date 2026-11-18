@@ -6,25 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0058b4f0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation)
 
 {
   float fVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   int iVar3;
   float10 fVar4;
   float10 fVar5;
-  float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
+  CVector3f local_50;
+  CVector3f local_44;
+  CVector3f local_38;
   double local_24;
   float local_18;
   float local_14;
@@ -40,45 +32,47 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0058b4f0(CWeathe
     (this_ptr->rotation).z = rotation->z;
   }
   if (this_ptr->weather_type != WEATHER_TYPE_NONE) {
-    pfVar2 = (float *)&DAT_02661fb8;
+    pCVar2 = g_WeatherParticlePositions;
     iVar3 = 0;
     do {
       local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(5.0,50.0);
       local_14 = local_18;
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
-                           (rotation->y + (float)_DAT_005ee5e2,rotation->y + (float)_DAT_005ee5da);
+                           (rotation->y + (float)-0.78539816337500001,
+                            rotation->y + (float)0.78539816337500001);
       fVar4 = (float10)fsin((float10)local_14);
       fVar5 = (float10)fcos((float10)local_14);
-      local_38 = (float)(fVar4 * (float10)local_18 + (float10)direction->x);
-      local_34 = direction->y;
-      local_30 = (float)(fVar5 * (float10)local_18 + (float10)direction->z);
+      local_38.x = (float)(fVar4 * (float10)local_18 + (float10)direction->x);
+      local_38.y = direction->y;
+      local_38.z = (float)(fVar5 * (float10)local_18 + (float10)direction->z);
       if (&local_50 != &local_38) {
-        local_50 = local_38;
-        local_4c = local_34;
-        local_48 = local_30;
+        local_50.x = local_38.x;
+        local_50.y = local_38.y;
+        local_50.z = local_38.z;
       }
       if (&local_44 != &local_38) {
-        local_44 = local_38;
-        local_40 = local_34;
-        local_3c = local_30;
+        local_44.x = local_38.x;
+        local_44.y = local_38.y;
+        local_44.z = local_38.z;
       }
-      local_4c = local_4c + _DAT_005ee5ea;
-      local_40 = local_40 + _DAT_005ee5ee;
+      local_50.y = local_50.y + 50.0f;
+      local_44.y = local_44.y + -50.0f;
       core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00537e90(g_CDemonSetPtr);
-      local_14 = (float)core_setcolid_cpp_FUN_00535ee0(g_CDemonSetPtr,&local_50,&local_44);
-      fVar1 = (local_40 - local_4c) * local_14 + local_4c;
-      *(float *)(iVar3 + 0x2662918) = fVar1;
+      local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_00535ee0
+                           (g_CDemonSetPtr,&local_50,&local_44);
+      fVar1 = (local_44.y - local_50.y) * local_14 + local_50.y;
+      *(float *)((int)g_WeatherParticleGroundHeights + iVar3) = fVar1;
       local_24 = (double)fVar1;
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
-      local_34 = local_14 * (float)_DAT_005ee5d2 + (float)local_24;
-      if (pfVar2 != &local_38) {
-        *pfVar2 = local_38;
-        pfVar2[1] = local_34;
-        pfVar2[2] = local_30;
+      local_38.y = local_14 * (float)100 + (float)local_24;
+      if (pCVar2 != &local_38) {
+        pCVar2->x = local_38.x;
+        pCVar2->y = local_38.y;
+        pCVar2->z = local_38.z;
       }
       iVar3 = iVar3 + 4;
-      pfVar2 = pfVar2 + 3;
+      pCVar2 = pCVar2 + 1;
     } while (iVar3 != 800);
     this_ptr->flash_timer = 0.0;
     this_ptr->lightning_active = 0;

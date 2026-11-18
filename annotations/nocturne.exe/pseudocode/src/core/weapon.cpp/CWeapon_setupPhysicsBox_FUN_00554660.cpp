@@ -18,7 +18,7 @@ void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_00554660(CWeapon *this_
   float fStack_8;
   
   if (((this_ptr->model).model_ptr != (CKeyFramedModel *)0x0) &&
-     ((byte *)(this_ptr->base).validation_magic == &DAT_0078a123)) {
+     ((char *)(this_ptr->base).validation_magic == g_CHAR_ARRAY_0077d250 + 0xced3)) {
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_4c);
     fStack_10 = CStack_4c.min.x + CStack_4c.max.x;
     fStack_c = CStack_4c.min.y + CStack_4c.max.y;

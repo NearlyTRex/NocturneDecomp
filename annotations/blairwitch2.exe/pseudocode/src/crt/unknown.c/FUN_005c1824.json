@@ -2,19 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 457,
+    "complexity_score": 460,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 19,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 122,
-    "suspect_count": 32,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 125,
+    "suspect_count": 31,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
+      "suspicious_cast",
       "unnamed_param"
     ],
-    "total_lines": 442
+    "total_lines": 445
   },
   "cross_references": [
     {
@@ -26,7 +28,7 @@
     {
       "addr": "005c43e0",
       "from_addr": "005c4510",
-      "name": "crt_unknown.c_FUN_005c43e0",
+      "name": "crt_unknown.c__mktime_FUN_005c43e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,61 +64,61 @@
   "globals": [
     {
       "addr": "006013f2",
-      "name": "DAT_006013f2",
+      "name": "g_DOUBLE_006013ec+6",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006013f4",
-      "name": "DAT_006013f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DaysInMonth_Normal",
+      "type": "short",
+      "value": "0x0"
     },
     {
       "addr": "006013f6",
-      "name": "DAT_006013f6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006013f6",
+      "type": "int",
+      "value": "0x3b001f"
     },
     {
       "addr": "0060140c",
-      "name": "DAT_0060140c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SHORT_0060140c",
+      "type": "short",
+      "value": "0x16d"
     },
     {
       "addr": "0060140e",
-      "name": "DAT_0060140e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DaysInMonth_Leap",
+      "type": "short",
+      "value": "0x0"
     },
     {
       "addr": "0061f4e4",
-      "name": "DAT_0061f4e4",
-      "type": "undefined4",
+      "name": "g_DstStartRule",
+      "type": "dst_rule",
       "value": null
     },
     {
       "addr": "0061f4f0",
-      "name": "DAT_0061f4f0",
+      "name": "g_DstStartRule.day",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f4f4",
-      "name": "DAT_0061f4f4",
+      "name": "g_DstStartRule.month",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f4fc",
-      "name": "DAT_0061f4fc",
+      "name": "g_DstStartRule.day_of_year",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061f500",
-      "name": "DAT_0061f500",
+      "name": "g_DstStartRule.rule_type",
       "type": "undefined4",
       "value": null
     },
@@ -128,9 +130,9 @@
     },
     {
       "addr": "0061f508",
-      "name": "DAT_0061f508",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DstTransitionSecond",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061f514",
@@ -164,13 +166,13 @@
     },
     {
       "addr": "0061f5ad",
-      "name": "DAT_0061f5ad",
-      "type": "undefined1",
+      "name": "s_EDT_0061f5ad",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0061f634",
-      "name": "PTR_DAT_0061f634",
+      "name": "PTR_s_EDT_0061f634",
       "type": "void*",
       "value": "0061f5ad"
     }
@@ -192,7 +194,7 @@
       {
         "call_addr": "005c4510",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005c43e0",
+        "caller": "crt_unknown.c__mktime_FUN_005c43e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -343,66 +345,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_005c17c8(&DAT_0061f4e4,&DAT_0061f508,*(uint *)(param_1 + 0x14));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0061f4e4",
-      "severity": "mild",
-      "text": "uVar1 = FUN_005c17c8(&DAT_0061f4e4,&DAT_0061f508,*(uint *)(param_1 + 0x14));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0061f508",
-      "severity": "mild",
-      "text": "uVar1 = FUN_005c17c8(&DAT_0061f4e4,&DAT_0061f508,*(uint *)(param_1 + 0x14));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_0061f4e4",
-      "severity": "mild",
-      "text": "puVar7 = (uint *)&DAT_0061f4e4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0061f508",
-      "severity": "mild",
-      "text": "puVar9 = &DAT_0061f508;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0061f508",
-      "severity": "mild",
-      "text": "puVar7 = &DAT_0061f508;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0061f4e4",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)&DAT_0061f4e4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(param_1 + 0x10);",
+      "text": "(&g_DstStartRule,&g_DstTransitionSecond,*(uint *)(param_1 + 0x14));",
       "type": "unnamed_param"
     },
     {
@@ -410,55 +356,31 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
+      "text": "iVar5 = *(int *)(param_1 + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar2 = FUN_005c1690(*(int *)(param_1 + 0x14) + 0x76c);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_006013f4",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_006013f4 + iVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_006013f2",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_006013f2 + iVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_0060140e",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_0060140e + iVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_0060140c",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_0060140c + iVar6);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(dst_rule *)((int)piVar7",
+      "severity": "moderate",
+      "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 0) {",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - puVar7[6]) % 7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - puVar7[6]) % 7;",
+      "text": "iVar4 = *(int *)(param_1 + 0xc) -",
       "type": "unnamed_param"
     },
     {
@@ -466,28 +388,108 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = (*(int *)(param_1 + 0xc) + -1) - ((*(int *)(param_1 + 0x18) + 6) - puVar7[6]) % 7;",
+      "text": "((*(int *)(param_1 + 0x18) + 7) - ((dst_rule *)piVar7)->day_of_year) % 7;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = (*(int *)(param_1 + 0xc) + -1) - ((*(int *)(param_1 + 0x18) + 6) - puVar7[6]) % 7;",
+      "text": "iVar6 = (*(int *)(param_1 + 0xc) + -1) -",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = FUN_005c1af8(param_1,puVar7);",
+      "text": "((*(int *)(param_1 + 0x18) + 6) - ((dst_rule *)piVar7)->day_of_year) % 7;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = FUN_005c1af8(param_1,piVar7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(dst_rule *)((int)piVar7",
+      "severity": "moderate",
+      "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = FUN_005c1690(*(int *)(param_1 + 0x14) + 0x76c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((local_14 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 1, *(int *)(param_1 + 0x1c) == local_14))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((local_14 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 1, *(int *)(param_1 + 0x1c) == local_14))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - pdVar9->day_of_year) % 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - pdVar9->day_of_year) % 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = (*(int *)(param_1 + 0xc) + -1) -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((*(int *)(param_1 + 0x18) + 6) - pdVar9->day_of_year) % 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar8 = FUN_005c1af8(param_1,pdVar9);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = FUN_005c1690(*(int *)(param_1 + 0x14) + 0x76c);",
@@ -495,91 +497,83 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 119,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((local_14 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 1, *(int *)(param_1 + 0x1c) == local_14))",
+      "text": "if ((iVar5 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 0, iVar5 == *(int *)(param_1 + 0x1c)))",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 119,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((local_14 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 1, *(int *)(param_1 + 0x1c) == local_14))",
+      "text": "if ((iVar5 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 0, iVar5 == *(int *)(param_1 + 0x1c)))",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - puVar9[6]) % 7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - puVar9[6]) % 7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = (*(int *)(param_1 + 0xc) + -1) - ((*(int *)(param_1 + 0x18) + 6) - puVar9[6]) % 7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = (*(int *)(param_1 + 0xc) + -1) - ((*(int *)(param_1 + 0x18) + 6) - puVar9[6]) % 7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar8 = FUN_005c1af8(param_1,puVar9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = FUN_005c1690(*(int *)(param_1 + 0x14) + 0x76c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((iVar4 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 0, iVar4 == *(int *)(param_1 + 0x1c)))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((iVar4 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 0, iVar4 == *(int *)(param_1 + 0x1c)))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 126,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x20) = uVar8;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_006013f6 (at 0x006013f6, +2 bytes).",
+      "line": 31,
+      "match": "g_DaysInMonth_Normal",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FontTable (at 0x00601440, +50 bytes).",
+      "line": 35,
+      "match": "g_DaysInMonth_Leap",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_SHORT_0060140c \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DaysInMonth_Leap (at 0x0060140e, +2 bytes).",
+      "line": 36,
+      "match": "g_SHORT_0060140c",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)(&g_SHORT_0060140c + iVar5);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_006013ec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&g_DOUBLE_006013ec",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)&g_DOUBLE_006013ec + iVar5 * 2 + 6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)piVar7",
+      "severity": "moderate",
+      "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)piVar7",
+      "severity": "moderate",
+      "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 32,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)&g_DOUBLE_006013ec + iVar5 * 2 + 6);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

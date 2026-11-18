@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 59,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 69
   },
@@ -107,28 +108,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c59e84",
-      "severity": "mild",
-      "text": "vertex2 = (CVector3f *)&DAT_01c59e84;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(float *)((int)vertex2",
+      "severity": "moderate",
+      "text": "vertex2 = (float *)((int)vertex2 + 0xc);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01c59e90",
-      "severity": "mild",
-      "text": "vertex3 = (CVector3f *)&DAT_01c59e90;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01c59e78",
-      "severity": "mild",
-      "text": "(this_ptr,(CVector3f *)&DAT_01c59e78,vertex2,vertex3);",
-      "type": "undefined_data"
+      "description": "Pointer value `vertex2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)vertex2",
+      "severity": "moderate",
+      "text": "vertex2 = (float *)((int)vertex2 + 0xc);",
+      "type": "pointer_truncation"
     }
   ]
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_drawFullScreenQuad_FUN_00566080(int color)
 
 {
@@ -23,15 +21,15 @@ int __cdecl engine_special_cpp_drawFullScreenQuad_FUN_00566080(int color)
   int iStack_1c;
   
   memset(&SStack_c0,0,0xc0);
-  SStack_c0.projected_vertex.screen_x = _DAT_01c6b5a8 << 0x10;
-  SStack_c0.projected_vertex.screen_y = _DAT_01c6b5ac << 0x10;
-  iStack_80 = _DAT_01c6b5b0 << 0x10;
-  iStack_4c = _DAT_01c6b5b4 << 0x10;
-  SStack_c0.projected_vertex.transformed_z = _DAT_0060683c;
-  iStack_88 = _DAT_0060683c;
-  iStack_58 = _DAT_0060683c;
-  iStack_28 = _DAT_0060683c;
-  _DAT_01c6b5c0 = color;
+  SStack_c0.projected_vertex.screen_x = g_INT_01c6b5a8 << 0x10;
+  SStack_c0.projected_vertex.screen_y = g_INT_01c6b5ac << 0x10;
+  iStack_80 = g_INT_01c6b5b0 << 0x10;
+  iStack_4c = g_INT_01c6b5b4 << 0x10;
+  SStack_c0.projected_vertex.transformed_z = g_INT_0060683c;
+  iStack_88 = g_INT_0060683c;
+  iStack_58 = g_INT_0060683c;
+  iStack_28 = g_INT_0060683c;
+  g_INT_01c6b5c0 = color;
   iStack_7c = SStack_c0.projected_vertex.screen_y;
   iStack_50 = iStack_80;
   iStack_20 = SStack_c0.projected_vertex.screen_x;

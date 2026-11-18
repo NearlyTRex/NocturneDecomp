@@ -11,7 +11,7 @@ CDrip * __cdecl core_drip_cpp_factoryFuncDrip_FUN_0046ea20(void)
 {
   CDrip *pCVar1;
   
-  pCVar1 = (CDrip *)operator_new(0x33c);
+  pCVar1 = operator_new(0x33c);
   if (pCVar1 == (CDrip *)0x0) {
     return (CDrip *)0x0;
   }

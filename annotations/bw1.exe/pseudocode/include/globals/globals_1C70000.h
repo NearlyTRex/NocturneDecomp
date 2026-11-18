@@ -13,3 +13,7 @@
 // CStake[256]
 extern CStake g_StakePool[256];
 
+// int
+extern int g_StakeActiveCount;
+extern int g_StakeAllocIndex;
+

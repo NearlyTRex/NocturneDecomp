@@ -28,8 +28,8 @@
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 at 004a3b27
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df900
-;   undefined4 DAT_005df904
+;   float g_FLOAT_005df900 = 2
+;   float g_FLOAT_005df904 = 3
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -55,7 +55,7 @@ section .text
         ;   Label: LAB_0049e1bb
     JNZ 0x0049e31d                      ; 0049e1be
         ;   XREF to: 0049e31d (CONDITIONAL_JUMP)  ; LAB_0049e31d
-    MOV EAX,[0x005df904]                ; 0049e1c4 | DAT_005df904
+    MOV EAX,[0x005df904]                ; 0049e1c4 | g_FLOAT_005df904
     MOV dword ptr [EBX + 0xc],EAX       ; 0049e1c9
     CMP EBP,0x2                         ; 0049e1cc
         ;   Label: LAB_0049e1cc
@@ -183,7 +183,7 @@ section .text
         ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x58],EAX      ; 0049e32c
     FLD float ptr [ESP + 0x58]          ; 0049e330
-    FMUL float ptr [0x005df900]         ; 0049e334 | DAT_005df900
+    FMUL float ptr [0x005df900]         ; 0049e334 | g_FLOAT_005df900
     ADD ESP,0x8                         ; 0049e33a
     FSTP float ptr [EBX + 0xc]          ; 0049e33d
     JMP 0x0049e1cc                      ; 0049e340

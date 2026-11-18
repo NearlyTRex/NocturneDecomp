@@ -9,10 +9,10 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfa61
-;   core_menu.cpp_FUN_0050d640 at 0050e938
+;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e938
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4ac
+;   int g_InputKeyMask = 0x7f
 ;
 ; *****************************************************************************
 
@@ -23,10 +23,10 @@ section .text
     JZ 0x004fd2c3                       ; 004fd2b5
         ;   XREF to: 004fd2c3 (CONDITIONAL_JUMP)  ; LAB_004fd2c3
     MOV EDX,0x1ff                       ; 004fd2b7
-    MOV dword ptr [0x0061b4ac],EDX      ; 004fd2bc | DAT_0061b4ac
+    MOV dword ptr [0x0061b4ac],EDX      ; 004fd2bc | g_InputKeyMask
     RET                                 ; 004fd2c2
     MOV EDX,0x7f                        ; 004fd2c3
         ;   Label: LAB_004fd2c3
-    MOV dword ptr [0x0061b4ac],EDX      ; 004fd2c8 | DAT_0061b4ac
+    MOV dword ptr [0x0061b4ac],EDX      ; 004fd2c8 | g_InputKeyMask
     RET                                 ; 004fd2ce
 

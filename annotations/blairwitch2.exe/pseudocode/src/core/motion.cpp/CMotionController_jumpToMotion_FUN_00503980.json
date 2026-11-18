@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 31,
+    "complexity_score": 15,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 54
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
   },
   "cross_references": [
     {
@@ -30,7 +28,7 @@
     {
       "addr": "00489670",
       "from_addr": "0048da7a",
-      "name": "core_event.cpp_FUN_00489670",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,9 +84,9 @@
   "globals": [
     {
       "addr": "005dfcfc",
-      "name": "DAT_005dfcfc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MotionControllerTargetFrameEnd2",
+      "type": "float",
+      "value": "-1"
     }
   ],
   "param_estimates": {
@@ -97,7 +95,7 @@
       {
         "call_addr": "0048da7a",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -280,14 +278,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

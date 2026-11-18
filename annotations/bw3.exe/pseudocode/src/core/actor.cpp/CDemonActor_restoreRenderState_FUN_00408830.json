@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 7,
     "complexity_score": 5,
-    "cross_reference_count": 64,
+    "cross_reference_count": 65,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "clean",
@@ -292,13 +292,19 @@
     {
       "addr": "0053f940",
       "from_addr": "00540472",
-      "name": "core_setdir.cpp_FUN_0053f940",
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f0f0",
+      "from_addr": "0053f2c8",
+      "name": "core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00545710",
       "from_addr": "005458d8",
-      "name": "core_shadow.cpp_FUN_00545710",
+      "name": "core_shadow.cpp_CShadow_renderTransparent_FUN_00545710",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -420,9 +426,9 @@
   "globals": [
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     }
   ],
   "pcode_summary": {

@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0059388e
 ;   TerminatedCString s_enableHwSoundMixing_Can_005938a3
-;   undefined4 DAT_005bea78
+;   int g_HardwareMixingEnabled = 0x1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -32,7 +32,7 @@ section .text
     JNZ 0x005284b3                      ; 005284a7
         ;   XREF to: 005284b3 (CONDITIONAL_JUMP)  ; LAB_005284b3
     MOV EAX,dword ptr [ESP + 0x4]       ; 005284a9
-    MOV [0x005bea78],EAX                ; 005284ad | DAT_005bea78
+    MOV [0x005bea78],EAX                ; 005284ad | g_HardwareMixingEnabled
     RET                                 ; 005284b2
     MOV EDX,0x59388e                    ; 005284b3 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_005284b3
@@ -44,6 +44,6 @@ section .text
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005284d3
     MOV EAX,dword ptr [ESP + 0x4]       ; 005284d6
-    MOV [0x005bea78],EAX                ; 005284da | DAT_005bea78
+    MOV [0x005bea78],EAX                ; 005284da | g_HardwareMixingEnabled
     RET                                 ; 005284df
 

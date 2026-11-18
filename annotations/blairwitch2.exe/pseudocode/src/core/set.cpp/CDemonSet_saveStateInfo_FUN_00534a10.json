@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 69,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 4,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data"
-    ],
-    "total_lines": 74
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
   },
   "cross_references": [
     {
       "addr": "004bb9b0",
       "from_addr": "004bbc20",
-      "name": "core_game.cpp_FUN_004bb9b0",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bb9b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,20 +36,20 @@
     {
       "addr": "005b8010",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8010"
+      "name": "crt_stdio.c_fprintf_FUN_005b8010"
     }
   ],
   "globals": [
     {
       "addr": "005e5bda",
-      "name": "s_Set_state_version_005e5bd9+1",
-      "type": "undefined4",
+      "name": "s_Set_state_version_005e5bda",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e5bf0",
-      "name": "DAT_005e5bf0",
-      "type": "undefined4",
+      "name": "s_s_1_005e5bf0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -63,14 +60,14 @@
     },
     {
       "addr": "005e5c12",
-      "name": "DAT_005e5c12",
-      "type": "undefined4",
+      "name": "s_d_005e5c12",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e5c16",
-      "name": "DAT_005e5c16",
-      "type": "undefined4",
+      "name": "s_d_005e5c16",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -80,7 +77,7 @@
       {
         "call_addr": "004bbc20",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb9b0",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004bb9b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -122,6 +119,18 @@
     "pcode_op_count": 193
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "00555d20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6423
+    },
+    "bw3.exe": {
+      "addr": "0053b6e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6423
+    },
     "nocedit.exe": {
       "addr": "005711b0",
       "by": "name",
@@ -158,38 +167,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005e5bf0",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005e5bf0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005e5c12",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005e5c12,this_ptr->camera_count);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005e5c16",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005e5c16,pCVar2->cameras[0].enabled);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 18,
-      "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

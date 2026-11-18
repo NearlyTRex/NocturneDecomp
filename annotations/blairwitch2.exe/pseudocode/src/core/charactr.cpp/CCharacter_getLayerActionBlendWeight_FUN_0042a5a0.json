@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 52,
     "complexity_score": 12,
-    "cross_reference_count": 19,
+    "cross_reference_count": 21,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -20,6 +20,24 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004568e0",
+      "from_addr": "00456be5",
+      "name": "core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_004568e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045d2c0",
+      "from_addr": "0045d3ca",
+      "name": "core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045df30",
+      "from_addr": "0045df89",
+      "name": "core_doc.cpp_CDoc_isLanternToggleBlocked_FUN_0045df30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004555c0",
       "from_addr": "004559c6",
       "name": "core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0",
@@ -32,39 +50,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004568e0",
-      "from_addr": "00456be5",
-      "name": "core_doc.cpp_FUN_004568e0",
+      "addr": "004583f0",
+      "from_addr": "0045840f",
+      "name": "core_doc.cpp_CDoc_tryClimbLadder_FUN_004583f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004583f0",
-      "from_addr": "0045840f",
-      "name": "core_doc.cpp_FUN_004583f0",
+      "addr": "00458930",
+      "from_addr": "0045894f",
+      "name": "core_doc.cpp_CDoc_tryDescendLadder_FUN_00458930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458e80",
+      "from_addr": "00458eb8",
+      "name": "core_doc.cpp_CDoc_tryPlaceObject_FUN_00458e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0045bdc0",
       "from_addr": "0045c253",
-      "name": "core_doc.cpp_FUN_0045bdc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045d2c0",
-      "from_addr": "0045d3ca",
-      "name": "core_doc.cpp_FUN_0045d2c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045df30",
-      "from_addr": "0045df89",
-      "name": "core_doc.cpp_FUN_0045df30",
+      "name": "core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0051fa90",
       "from_addr": "0051faed",
       "name": "core_scat.cpp_CScat_renderOpaque_FUN_0051fa90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00568500",
+      "from_addr": "005687a3",
+      "name": "core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,12 +138,6 @@
       "from_addr": "0056ded4",
       "name": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00568500",
-      "from_addr": "005687a3",
-      "name": "core_stranger.cpp_FUN_00568500",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -144,7 +156,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 39,
+    "call_site_count": 41,
     "call_sites": [
       {
         "call_addr": "004559c6",
@@ -204,7 +216,7 @@
       {
         "call_addr": "0045c253",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0045bdc0",
+        "caller": "core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,7 +227,7 @@
       {
         "call_addr": "0045d3ca",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0045d2c0",
+        "caller": "core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -226,7 +238,7 @@
       {
         "call_addr": "0045d58c",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0045d2c0",
+        "caller": "core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -237,7 +249,7 @@
       {
         "call_addr": "0045df89",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0045df30",
+        "caller": "core_doc.cpp_CDoc_isLanternToggleBlocked_FUN_0045df30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -248,7 +260,7 @@
       {
         "call_addr": "0045dfa5",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0045df30",
+        "caller": "core_doc.cpp_CDoc_isLanternToggleBlocked_FUN_0045df30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

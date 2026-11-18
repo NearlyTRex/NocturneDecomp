@@ -1,0 +1,200 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 8,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 87
+  },
+  "cross_references": [
+    {
+      "addr": "00540be0",
+      "from_addr": "00540c12",
+      "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00540be0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00540c40",
+    "address_range": [
+      [
+        "00540c40",
+        "00540ce5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40",
+    "signature": "void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00540c40(CDemonSet *this_ptr,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a48e0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fwrite_FUN_005a48e0"
+    },
+    {
+      "addr": "004659c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_004659c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d0cc6",
+      "name": "s_wb_005d0cc6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0cc9",
+      "name": "s_data_005d0cc9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0cce",
+      "name": "s_core_setdir_cpp_005d0cce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0ce1",
+      "name": "s_Can_t_create_s_005d0ce1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0cf1",
+      "name": "s_core_setdir_cpp_005d0cf1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d04",
+      "name": "s_Error_writing_s_005d0d04",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00540c12",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00540be0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.625,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 50,
+      "INT_ADD": 19,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 23,
+      "LOAD": 14,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 23
+    },
+    "pcode_op_count": 203
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00539c30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4966
+    },
+    "bw1.exe": {
+      "addr": "0055b280",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00575e40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4056
+    },
+    "nocturne.exe": {
+      "addr": "00513670",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -12,11 +12,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_005eda2f
 ;   TerminatedCString s_CPod_init_No_POD_to_init_005eda41
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -37,10 +37,10 @@ section .text
         ;   Label: LAB_0053c8b0
     MOV ECX,0x4a2                       ; 0053c8b5
     PUSH 0x5eda41                       ; 0053c8ba | = "CPod::init - No .POD to init!"
-    MOV dword ptr [0x01d1d400],EDX      ; 0053c8bf | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0053c8c5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053c8cb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0053c8bf | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0053c8c5 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053c8cb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053c8d0
     CMP dword ptr [EBX],0x0             ; 0053c8d3
     JZ 0x0053c8da                       ; 0053c8d6

@@ -48,7 +48,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_58);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  iVar5 = INT_02d7a7c0;
+  iVar5 = g_FliesInitialized;
   if (iVar3 != 0) {
     this_ptr->is_visible = 1;
     if (iVar5 == 0) {
@@ -61,7 +61,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
                   (*out_basis,(fVar2 + (float)0.5) * (float)0.015625,0.0);
         out_basis = out_basis + 1;
       } while (iVar6 < 0x40);
-      INT_02d7a7c0 = 1;
+      g_FliesInitialized = 1;
     }
     pCVar2 = g_CDemonRendererPtr2;
     if (g_UseExternalRenderer == 0) {
@@ -99,7 +99,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
       pCVar2->vertex_buffer_ptr->a = iVar5;
       pCVar2->vertex_buffer_ptr[1].a = iVar5;
       pCVar2->vertex_buffer_ptr[2].a = iVar5;
-      engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&SMRGLTextureBasic_0067b514);
+      engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&g_FliesTexture);
     }
     iStack_24 = 0;
     if (0 < this_ptr->fly_count) {

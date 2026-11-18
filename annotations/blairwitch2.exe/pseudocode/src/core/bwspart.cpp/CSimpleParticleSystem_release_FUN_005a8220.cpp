@@ -14,6 +14,6 @@ void __cdecl core_bwspart_cpp_CSimpleParticleSystem_release_FUN_005a8220(CSimple
   if (this_ptr->particles == (void *)0x0) {
     return;
   }
-  FUN_005b86a0(this_ptr->particles);
+  debugFree(this_ptr->particles);
   return;
 }

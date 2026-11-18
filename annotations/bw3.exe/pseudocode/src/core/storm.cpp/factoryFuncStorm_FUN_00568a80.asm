@@ -15,7 +15,7 @@ section .text
     PUSH 0x594                          ; 00568a80
         ;   Label: core_storm.cpp_factoryFuncStorm_FUN_00568a80
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00568a85
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 00568a8a
     TEST EAX,EAX                        ; 00568a8d
     JNZ 0x00568a92                      ; 00568a8f

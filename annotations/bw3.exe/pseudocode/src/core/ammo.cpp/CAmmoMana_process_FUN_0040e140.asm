@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6109
-;   undefined4 DAT_005b610d
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005b6109 = 10
+;   float g_FLOAT_005b610d = 1.5
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 004625a0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040e156
     FLD float ptr [ESP + 0x44]          ; 0040e159
-    FMUL float ptr [0x005b6109]         ; 0040e15d | DAT_005b6109
+    FMUL float ptr [0x005b6109]         ; 0040e15d | g_FLOAT_005b6109
     PUSH 0x3f866666                     ; 0040e163
     MOV EAX,dword ptr [EAX + 0x100]     ; 0040e168
     PUSH 0x3f733333                     ; 0040e16e
@@ -62,7 +62,7 @@ section .text
     MOV EDI,ESP                         ; 0040e1b6
     LEA ESI,[ESP + 0xc]                 ; 0040e1b8
     MOV EAX,dword ptr [EBX + 0x20]      ; 0040e1bc
-    FADD float ptr [0x005b610d]         ; 0040e1bf | DAT_005b610d
+    FADD float ptr [0x005b610d]         ; 0040e1bf | g_FLOAT_005b610d
     MOV dword ptr [ESP + 0xc],EAX       ; 0040e1c5
     FSTP float ptr [ESP + 0x10]         ; 0040e1c9
     MOV EAX,dword ptr [EBX + 0x28]      ; 0040e1cd
@@ -88,7 +88,7 @@ section .text
     PUSH 0x2cfd900                      ; 0040e1fe
     LEA EAX,[ESP + 0x28]                ; 0040e203
     PUSH EAX                            ; 0040e207
-    MOV EDX,dword ptr [0x005fc5a0]      ; 0040e208 | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 0040e208 | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 0040e20e
     CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 0040e20f
         ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)

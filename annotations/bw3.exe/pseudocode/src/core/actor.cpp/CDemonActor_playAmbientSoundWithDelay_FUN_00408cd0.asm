@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   delay
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_00560ab0
@@ -27,7 +27,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 00408cdd
     PUSH ECX                            ; 00408ce1
     PUSH EDX                            ; 00408ce2
-    MOV EBX,dword ptr [0x006045f8]      ; 00408ce3 | DAT_006045f8
+    MOV EBX,dword ptr [0x006045f8]      ; 00408ce3 | g_CSound_PTR_006045f8
     PUSH EBX                            ; 00408ce9
     CALL core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_00560ab0 ; 00408cea
         ;   XREF to: 00560ab0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_00560ab0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker, ...)

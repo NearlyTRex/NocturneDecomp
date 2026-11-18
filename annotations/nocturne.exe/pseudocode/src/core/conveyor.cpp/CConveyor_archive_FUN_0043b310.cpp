@@ -15,7 +15,7 @@ void __cdecl core_conveyor_cpp_CConveyor_archive_FUN_0043b310(CConveyor *this_pt
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->start_event,"startEvent");
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->stop_event,"stopEvent");
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->state,"state");
-  if (g_INT_005ad380 < 2) {
+  if (g_CConveyorClassVersion < 2) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->actor_class,"actorClass");

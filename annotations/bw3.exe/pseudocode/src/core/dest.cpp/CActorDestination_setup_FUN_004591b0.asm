@@ -10,7 +10,7 @@
 ;   core_filmreel.cpp_CFilmProjector_setup_FUN_00496520 at 00496526
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 004591b5
     CALL core_actor.cpp_CDemonActor_setup_FUN_00408890 ; 004591b6
         ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408890(CDemonActor * this_ptr)
-    MOV EAX,[0x00600530]                ; 004591bb | DAT_00600530
+    MOV EAX,[0x00600530]                ; 004591bb | g_CDemonMission_PTR_00600530
     MOV dword ptr [EBX + 0xf8],0x0      ; 004591c0
     MOV EAX,dword ptr [EAX + 0x1008]    ; 004591ca
     MOV dword ptr [EBX + 0x184],0x0     ; 004591d0

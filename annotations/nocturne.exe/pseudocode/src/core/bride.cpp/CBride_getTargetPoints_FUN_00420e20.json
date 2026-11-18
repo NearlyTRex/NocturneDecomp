@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 92,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
@@ -39,13 +38,13 @@
   "globals": [
     {
       "addr": "00764b2c",
-      "name": "DAT_00764b2c",
-      "type": "undefined4",
+      "name": "g_BrideIndices",
+      "type": "int[11]",
       "value": null
     },
     {
       "addr": "00764b50",
-      "name": "DAT_00764b50",
+      "name": "g_BrideIndices[9]",
       "type": "undefined4",
       "value": null
     }
@@ -153,22 +152,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00764b2c",
-      "severity": "mild",
-      "text": "(this_ptr_00,&local_10,DAT_00764b2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_00764b50",
-      "severity": "mild",
-      "text": "(this_ptr_00,&local_1c,DAT_00764b50);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",

@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_00453ec0
+;   core_dcube.cpp_CDemonCube_freeMemory_FUN_00453ec0
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_dcube.cpp_CDemonCube_dtor_FUN_00453cf0
     MOV EBX,dword ptr [ESP + 0x8]       ; 00453cf1
     PUSH EBX                            ; 00453cf5
-    CALL core_dcube.cpp_FUN_00453ec0    ; 00453cf6
-        ;   XREF to: 00453ec0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_FUN_00453ec0()
+    CALL core_dcube.cpp_CDemonCube_freeMemory_FUN_00453ec0 ; 00453cf6
+        ;   XREF to: 00453ec0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_freeMemory_FUN_00453ec0(CDemonCube * this_ptr)
     ADD ESP,0x4                         ; 00453cfb
     MOV EAX,EBX                         ; 00453cfe
     POP EBX                             ; 00453d00

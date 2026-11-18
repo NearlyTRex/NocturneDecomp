@@ -97,7 +97,7 @@ USAGE
 
 import os
 import json
-from ghidra_annotations.util.log import log_info
+from ghidra_annotations.util.log import log_info, log_warning
 from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 
 
@@ -127,15 +127,12 @@ def generate_callfixups_file(pseudocode_dir):
     # Use cached callfixups (preloaded before cleanup)
     callfixups = callfixups_cache.get_global_cache()
 
-    # Write the callfixups file as a top-level array
-    try:
-        with open(callfixups_path, 'w') as f:
-            json.dump(callfixups, f, indent=2)
-            f.write("\n")
-        log_info("Generated %s with %d callfixups" % (callfixups_path, len(callfixups)))
-    except Exception as e:
-        log_info("Failed to write callfixups.json: %s" % str(e))
-
+    # Write the callfixups file as a top-level array. A failure is not caught: the
+    # cleanup has already deleted the old file, so this copy is the only one left.
+    with open(callfixups_path, 'w') as f:
+        json.dump(callfixups, f, indent=2)
+        f.write("\n")
+    log_info("Generated %s with %d callfixups" % (callfixups_path, len(callfixups)))
     return callfixups_path
 
 
@@ -146,16 +143,20 @@ def load_callfixups_json(json_path):
         json_path: Path to callfixups.json
 
     Returns:
-        List of callfixup definitions, or empty list if not found
+        List of callfixup definitions, or empty list if not found or unreadable
     """
     if not json_path or not os.path.exists(json_path):
         return []
-
     try:
         with open(json_path, 'r') as f:
-            return json.load(f)
-    except Exception:
+            data = json.load(f)
+    except (OSError, ValueError) as e:
+        log_warning("Could not read callfixups from %s: %s" % (json_path, e))
         return []
+    if not isinstance(data, list):
+        log_warning("%s is not a list of callfixups; ignored" % json_path)
+        return []
+    return data
 
 
 def register_callfixups(callfixups_json_path=None):
@@ -215,9 +216,3 @@ def register_callfixups(callfixups_json_path=None):
 
     log_info("Registered %d callfixups" % registered_count)
     return registered_count
-
-
-def clear_callfixups():
-    """Clear all registered callfixups."""
-    from ghidra.app.decompiler import DecompileCallback
-    DecompileCallback.clearCallFixups()

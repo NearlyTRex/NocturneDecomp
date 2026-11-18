@@ -18,13 +18,31 @@
     {
       "addr": "004a1570",
       "from_addr": "004a1618",
-      "name": "core_flashlit.cpp_FUN_004a1570",
+      "name": "core_flashlit.cpp_updateTooltip_FUN_004a1570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eb0e0",
       "from_addr": "004eb1ec",
-      "name": "core_menu.cpp_FUN_004eb0e0",
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00484f20",
+      "from_addr": "00484f7b",
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_00484f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485610",
+      "from_addr": "0048566a",
+      "name": "shape_edittool.cpp_CEdCheck_render_FUN_00485610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485470",
+      "from_addr": "004854e5",
+      "name": "shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,25 +54,7 @@
     {
       "addr": "0047e870",
       "from_addr": "0047ec0f",
-      "name": "shape_edittool.cpp_FUN_0047e870",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00484f20",
-      "from_addr": "00484f7b",
-      "name": "shape_edittool.cpp_FUN_00484f20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00485470",
-      "from_addr": "004854e5",
-      "name": "shape_edittool.cpp_FUN_00485470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00485610",
-      "from_addr": "0048566a",
-      "name": "shape_edittool.cpp_FUN_00485610",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -129,7 +129,7 @@
       {
         "call_addr": "0047ec0f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e870",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,7 +140,7 @@
       {
         "call_addr": "0047ec2b",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e870",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,7 +151,7 @@
       {
         "call_addr": "00484f7b",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00484f20",
+        "caller": "shape_edittool.cpp_CEdButton_paint_FUN_00484f20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "004eb1ec",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eb0e0",
+        "caller": "core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -184,7 +184,7 @@
       {
         "call_addr": "004a1618",
         "call_type": "direct",
-        "caller": "core_flashlit.cpp_FUN_004a1570",
+        "caller": "core_flashlit.cpp_updateTooltip_FUN_004a1570",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +195,7 @@
       {
         "call_addr": "004854e5",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00485470",
+        "caller": "shape_edittool.cpp_CEdCheck_setupWithText_FUN_00485470",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

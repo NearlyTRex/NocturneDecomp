@@ -30,10 +30,10 @@ CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(CHero *this_ptr,f
   for (iVar5 = 0; iVar5 < g_CDemonSetPtr->enemy_count; iVar5 = iVar5 + 1) {
     this_ptr_00 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + iVar4);
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       ((CDemonActor *)this_ptr_00,g_CVehicleActorType_02dd1190.name_hash);
+                       ((CDemonActor *)this_ptr_00,g_CVehicleClassInfo.name_hash);
     if (pCVar1 == (CDemonActor *)0x0) {
       pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         ((CDemonActor *)this_ptr_00,g_CMobsterActorType_01ccdbd8.name_hash);
+                         ((CDemonActor *)this_ptr_00,g_CMobsterClassInfo.name_hash);
       if ((pCVar1 == (CDemonActor *)0x0) || (pCVar1[0x90].orient_matrix.m[1].x == 0.0)) {
         EVar2 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr_00->base);
         if (EVar2 == DEATH_STATE_ALIVE) {

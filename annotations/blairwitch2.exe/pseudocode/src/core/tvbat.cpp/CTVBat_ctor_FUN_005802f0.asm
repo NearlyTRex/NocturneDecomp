@@ -10,8 +10,8 @@
 ;   core_tvbat.cpp_factoryFuncTVBat_FUN_00580290 at 005802a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ed844
-;   undefined4 DAT_005ed848
+;   float g_FLOAT_005ed844 = 10
+;   float g_FLOAT_005ed848 = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0058038a
     FLD float ptr [ESP + 0xc]           ; 0058038e
     ADD ESP,0x8                         ; 00580392
-    FMUL float ptr [0x005ed844]         ; 00580395 | DAT_005ed844
+    FMUL float ptr [0x005ed844]         ; 00580395 | g_FLOAT_005ed844
     PUSH 0x3f8ccccd                     ; 0058039b
     PUSH 0x3f666666                     ; 005803a0
     FSTP float ptr [EBX + 0x10c98]      ; 005803a5
@@ -72,7 +72,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 005803b0
     FLD float ptr [ESP + 0xc]           ; 005803b4
     ADD ESP,0x8                         ; 005803b8
-    FMUL float ptr [0x005ed848]         ; 005803bb | DAT_005ed848
+    FMUL float ptr [0x005ed848]         ; 005803bb | g_FLOAT_005ed848
     PUSH 0x3f800000                     ; 005803c1
     FSTP float ptr [ESP + 0x4]          ; 005803c6
     MOV EAX,dword ptr [ESP + 0x4]       ; 005803ca

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_imp_cpp_CImp_setup_FUN_004d6660(CImp *this_ptr)
 
 {
@@ -21,39 +19,39 @@ void __cdecl core_imp_cpp_CImp_setup_FUN_004d6660(CImp *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
-  _DAT_01cee138 =
+  g_ImpIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",1);
-  _DAT_01cee144 =
+  g_ImpIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L ForeArm",1);
-  _DAT_01cee148 =
+  g_ImpIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_01cee14c =
+  g_ImpIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_01cee150 =
+  g_ImpIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_01cee154 =
+  g_ImpIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Foot",1);
-  _DAT_01cee158 =
+  g_ImpIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Foot",1);
-  _DAT_01cee13c =
+  g_ImpIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_01cee140 =
+  g_ImpIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Hand",1);
-  _DAT_01cee15c =
+  g_ImpIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
-  _DAT_01cee160 =
+  g_ImpIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine1",1);
-  _DAT_01cee164 =
+  g_ImpIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
-  _DAT_01cee138 =
+  g_ImpIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",1);
-  _DAT_01cee14c =
+  g_ImpIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_01cee150 =
+  g_ImpIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_01cee15c =
+  g_ImpIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
-  _DAT_01cee164 =
+  g_ImpIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
@@ -91,9 +89,9 @@ void __cdecl core_imp_cpp_CImp_setup_FUN_004d6660(CImp *this_ptr)
   this_ptr->sfx_handles[0] = 0;
   this_ptr->sfx_handles[1] = 0;
   this_ptr->part_indices[10] = iVar1;
-  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01cee13c;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_ImpIndices[1];
   (this_ptr->base).base.carry_hands[0].secondary_bone_index = this_ptr->part_indices[1];
-  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_01cee140;
+  (this_ptr->base).base.carry_hands[1].bone_index = g_ImpIndices[2];
   (this_ptr->base).base.carry_hands[1].secondary_bone_index = this_ptr->part_indices[3];
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(10.0,20.0);
   this_ptr->laugh_timer = fVar2;

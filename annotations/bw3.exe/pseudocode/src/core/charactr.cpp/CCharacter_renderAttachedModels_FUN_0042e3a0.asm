@@ -19,12 +19,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042d8e0 at 0042d9ad
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 at 0042d9ad
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_007e2b34
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CKeyFramedModelInstance g_StakeModelInstance
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
@@ -94,7 +94,7 @@ section .text
     PUSH EAX                            ; 0042e43c
     LEA ESI,[ESP + 0x7c]                ; 0042e43d
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 0042e441
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00583b10(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x4                         ; 0042e446
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0042e449
     MOV dword ptr [ESP + 0x6c],EAX      ; 0042e44d
@@ -111,19 +111,19 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042e473
     MOVSD ES:EDI,ESI                    ; 0042e474
     PUSH EAX                            ; 0042e475
-    MOV ESI,dword ptr [0x005f2afc]      ; 0042e476 | DAT_005f2afc
-    PUSH ESI                            ; 0042e47c | DAT_01bdd7e4
+    MOV ESI,dword ptr [0x005f2afc]      ; 0042e476 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ESI                            ; 0042e47c | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30 ; 0042e47d
         ;   XREF to: 0046cf30 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0042e482
     PUSH -0x1                           ; 0042e485
     PUSH 0x0                            ; 0042e487
-    PUSH 0x7e2b34                       ; 0042e489 | DAT_007e2b34
+    PUSH 0x7e2b34                       ; 0042e489 | g_StakeModelInstance
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540 ; 0042e48e
         ;   XREF to: 00462540 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0042e493
-    MOV EDI,dword ptr [0x005f2afc]      ; 0042e496 | DAT_005f2afc
-    PUSH EDI                            ; 0042e49c | DAT_01bdd7e4
+    MOV EDI,dword ptr [0x005f2afc]      ; 0042e496 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDI                            ; 0042e49c | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_pop_FUN_0046d080 ; 0042e49d
         ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0042e4a2

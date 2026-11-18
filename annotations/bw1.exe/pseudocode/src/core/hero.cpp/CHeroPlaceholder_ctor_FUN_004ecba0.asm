@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004ecb70 at 004ecb83
-;   core_mission.cpp_FUN_0051c240 at 0051c323
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240 at 0051c323
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDoc_005e4b98

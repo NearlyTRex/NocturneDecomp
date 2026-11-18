@@ -15,13 +15,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005d5b6e
 ;   TerminatedCString s_Out_of_memory_005d5b83
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SPageResourceText_ctor_FUN_004a1f80
 ;   core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
@@ -40,7 +40,7 @@ section .text
         ;   Label: LAB_004a2b3d
     PUSH 0x120                          ; 004a2b3e
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004a2b43
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004a2b48
     TEST EAX,EAX                        ; 004a2b4b
     JZ 0x004a2b60                       ; 004a2b4d
@@ -62,10 +62,10 @@ section .text
     MOV ECX,0x5d5b6e                    ; 004a2b67 | = "..\\core\\fldnotes.cpp"
     MOV EDI,0x538                       ; 004a2b6c
     PUSH 0x5d5b83                       ; 004a2b71 | = "Out of memory"
-    MOV dword ptr [0x01d046a0],ECX      ; 004a2b76 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004a2b7c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a2b82
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 004a2b76 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 004a2b7c | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a2b82
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a2b87
     POP EDI                             ; 004a2b8a
     MOV EAX,dword ptr [EBX + 0x40]      ; 004a2b8b

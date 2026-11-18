@@ -4,6 +4,18 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x1D10000
 // =============================================================================
 
+// UNetPacket
+UNetPacket g_NetworkReceivePacket = {};
+
+// char*[500]
+char* g_MessageKeys[500] = {};
+char* g_MessageTexts[500] = {};
+
+// char[500][128]
+char g_MessageKeyStorage[500][128] = {};
+
 // int
-int g_INT_01d16408 = {};
+int g_UseOSFonts = {};
+int g_LocalizationLoaded = {};
+int g_LocalizedStringCount = {};
 

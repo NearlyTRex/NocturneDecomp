@@ -1,0 +1,293 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 390,
+    "complexity_score": 168,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 118,
+    "suspect_count": 4,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "unrolled_memset"
+    ],
+    "total_lines": 508
+  },
+  "cross_references": [
+    {
+      "addr": "004b5190",
+      "from_addr": "004b532d",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005493d0",
+    "address_range": [
+      [
+        "005493d0",
+        "00549767"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_slew.cpp_CSlew_processInput_FUN_005493d0",
+    "signature": "void __cdecl core_slew_cpp_CSlew_processInput_FUN_005493d0(CSlew *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e7619",
+      "name": "g_DOUBLE_005e7619",
+      "type": "double",
+      "value": "10"
+    },
+    {
+      "addr": "005e7621",
+      "name": "g_DOUBLE_005e7621",
+      "type": "double",
+      "value": "0.0500000000000000"
+    },
+    {
+      "addr": "005e7629",
+      "name": "g_FLOAT_005e7629",
+      "type": "float",
+      "value": "3.141593"
+    },
+    {
+      "addr": "005e7631",
+      "name": "g_DOUBLE_005e7631",
+      "type": "double",
+      "value": "8"
+    },
+    {
+      "addr": "005e7639",
+      "name": "g_DOUBLE_005e7639",
+      "type": "double",
+      "value": "30"
+    },
+    {
+      "addr": "005e7641",
+      "name": "g_FLOAT_005e7641",
+      "type": "float",
+      "value": "-1.570796"
+    },
+    {
+      "addr": "005e7645",
+      "name": "g_FLOAT_005e7645",
+      "type": "float",
+      "value": "1.570796"
+    },
+    {
+      "addr": "005e7649",
+      "name": "g_FLOAT_005e7649",
+      "type": "float",
+      "value": "-3.141593"
+    },
+    {
+      "addr": "005e764d",
+      "name": "g_FLOAT_005e764d",
+      "type": "float",
+      "value": "6.283185"
+    },
+    {
+      "addr": "005e7651",
+      "name": "g_FLOAT_005e7651",
+      "type": "float",
+      "value": "-6.283185"
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "00617dd4",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d02f84"
+    },
+    {
+      "addr": "01cb6b84",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d02f84",
+      "name": "g_PTR_01d02f84",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b532d",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b5190",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.099706744868035,
+    "instruction_count": 341,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 5,
+      "BRANCH": 1,
+      "CALLIND": 17,
+      "CALLOTHER": 8,
+      "CBRANCH": 23,
+      "COPY": 1167,
+      "FLOAT2FLOAT": 94,
+      "FLOAT_ADD": 21,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 13,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 7,
+      "INT_ADD": 99,
+      "INT_AND": 111,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 12,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 15,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 39,
+      "INT_SUB": 57,
+      "INT_ZEXT": 12,
+      "LOAD": 97,
+      "POPCOUNT": 39,
+      "RETURN": 2,
+      "STORE": 86
+    },
+    "pcode_op_count": 2080
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0056ba50",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005505e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a20b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.919
+    },
+    "nocturne.exe": {
+      "addr": "0051f980",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.919
+    }
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSlew *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005493d7",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 97,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->orientation).vec.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40490fdb is the IEEE 754 bit pattern of 3.14159f. Rewrite in a .keep as a plain float compare against 3.14159f.",
+      "line": 104,
+      "match": "0x40490fdb < (int)(this_ptr->orientation).vec.y)",
+      "severity": "moderate",
+      "text": "if (0x40490fdb < (int)(this_ptr->orientation).vec.y) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40490fdb is the IEEE 754 bit pattern of 3.14159f. Rewrite in a .keep as a plain float compare against 3.14159f.",
+      "line": 110,
+      "match": "0x40490fdb < (int)(this_ptr->orientation).vec.x)",
+      "severity": "moderate",
+      "text": "if (0x40490fdb < (int)(this_ptr->orientation).vec.x) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40490fdb is the IEEE 754 bit pattern of 3.14159f. Rewrite in a .keep as a plain float compare against 3.14159f.",
+      "line": 116,
+      "match": "0x40490fdb < (int)(this_ptr->orientation).vec.z)",
+      "severity": "moderate",
+      "text": "if (0x40490fdb < (int)(this_ptr->orientation).vec.z) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

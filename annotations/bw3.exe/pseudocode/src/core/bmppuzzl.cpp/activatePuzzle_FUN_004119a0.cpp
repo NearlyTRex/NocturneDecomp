@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_activatePuzzle_FUN_004119a0(CPuzzle *puzzle,int activate)
 
 {
-  DAT_007dffb4 = (CPuzzle *)activate;
+  g_CPuzzle_PTR_007dffb4 = (CPuzzle *)activate;
   if (activate != 0) {
-    DAT_007dffb4 = puzzle;
-    DAT_007dffbc = _DAT_01c5fae4;
+    g_CPuzzle_PTR_007dffb4 = puzzle;
+    g_INT_007dffbc = g_MouseButtonFlags.dword;
   }
   (**(code **)((int)puzzle->vtable + 0x14))(puzzle,activate);
-  core_game_cpp_FUN_004ba490(g_CGamePtr);
+  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(g_CGamePtr);
   return;
 }

@@ -12,17 +12,17 @@
 ;   core_platfrm.cpp_CPlatform_setup_FUN_005112b0 at 0051130d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00444910
-;   core_course.cpp_FUN_00444aa0
-;   core_main.c_FUN_004e4330
+;   core_course.cpp_CCourse_allocMemory_FUN_00444910
+;   core_course.cpp_CCourse_free_FUN_00444aa0
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_fscanf_FUN_005a3230
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;
 ; *****************************************************************************
 
@@ -37,14 +37,14 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 00444977
     MOV EBX,dword ptr [ESP + 0x20]      ; 0044497b
     PUSH EDI                            ; 0044497f
-    CALL core_course.cpp_FUN_00444aa0   ; 00444980
-        ;   XREF to: 00444aa0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00444aa0()
+    CALL core_course.cpp_CCourse_free_FUN_00444aa0 ; 00444980
+        ;   XREF to: 00444aa0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_00444aa0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00444985
     PUSH 0x5b983c                       ; 00444988
     PUSH EBX                            ; 0044498d
     PUSH 0x5b983f                       ; 0044498e
-    CALL engine_dosio.cpp_FUN_004659c0  ; 00444993
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00444993
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00444998
     MOV EBP,EAX                         ; 0044499b
     TEST EAX,EAX                        ; 0044499d
@@ -96,8 +96,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4]       ; 004449f5
     PUSH EBX                            ; 004449f9
     PUSH EDI                            ; 004449fa
-    CALL core_course.cpp_FUN_00444910   ; 004449fb
-        ;   XREF to: 00444910 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00444910()
+    CALL core_course.cpp_CCourse_allocMemory_FUN_00444910 ; 004449fb
+        ;   XREF to: 00444910 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00444910(CCourse * this_ptr, int count)
     MOV EBX,EBP                         ; 00444a00
     ADD ESP,0x8                         ; 00444a02
     PUSH EBX                            ; 00444a05
@@ -150,7 +150,7 @@ section .text
     PUSH EBP                            ; 00444a60
         ;   Label: LAB_00444a60
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00444a61
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 00444a66
     ADD ESP,0x8                         ; 00444a69
     POP EBP                             ; 00444a6c
@@ -163,10 +163,10 @@ section .text
     MOV EDX,0x5b9844                    ; 00444a72
     MOV ECX,0x7c                        ; 00444a77
     PUSH 0x5b9857                       ; 00444a7c
-    MOV dword ptr [0x01d71de0],EDX      ; 00444a81 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00444a87 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00444a8d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 00444a81 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00444a87 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00444a8d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00444a92
     JMP 0x004449a5                      ; 00444a95
         ;   XREF to: 004449a5 (UNCONDITIONAL_JUMP)  ; LAB_004449a5

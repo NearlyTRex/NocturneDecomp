@@ -6,25 +6,25 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mimic_cpp_CMimic_process_FUN_004f08a0(CMimic *this_ptr,float delta_time)
 
 {
   float fVar1;
   uint uVar2;
   int iVar3;
+  SMotion *pSVar4;
   
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
-    _DAT_01d046a0 = "..\\core\\mimic.cpp";
-    _DAT_01d046a4 = 0x130;
-    core_main_c_FUN_004e4500("CMimic::setup - can't use mimic in multi-player!");
+    g_CHAR_PTR_01d046a0 = "..\\core\\mimic.cpp";
+    g_INT_01d046a4 = 0x130;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMimic::setup - can't use mimic in multi-player!");
   }
-  iVar3 = _DAT_01cedef4;
-  (this_ptr->base).base.base.scale.x = *(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x108);
-  (this_ptr->base).base.base.scale.y = *(int *)(*(int *)(iVar3 * 4 + 0x1cedee4) + 0x10c);
+  iVar3 = g_INT_01cedef4;
+  (this_ptr->base).base.base.scale.x =
+       (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.scale.x;
+  (this_ptr->base).base.base.scale.y = (g_CHero_PTR_ARRAY_01cedee4[iVar3]->base).base.scale.y;
   fVar1 = this_ptr->morph_blend;
-  (this_ptr->base).base.base.scale.z = *(int *)(*(int *)(iVar3 * 4 + 0x1cedee4) + 0x110);
+  (this_ptr->base).base.base.scale.z = (g_CHero_PTR_ARRAY_01cedee4[iVar3]->base).base.scale.z;
   if (0.0 <= fVar1) {
     core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(this_ptr,delta_time);
     return;
@@ -35,15 +35,16 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004f08a0(CMimic *this_ptr,float d
     if (this_ptr->attack_mode < 2) {
       if ((this_ptr->attack_mode < 1) &&
          (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                            (0x01C38BC0,this_ptr->attack_condition), iVar3 != 0)) {
+                            (g_CEventListPtr,this_ptr->attack_condition), iVar3 != 0)) {
         this_ptr->attack_mode = 1;
       }
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (0x01C38BC0,this_ptr->mirror_condition);
+                        (g_CEventListPtr,this_ptr->mirror_condition);
       if ((iVar3 != 0) &&
          (core_mimic_cpp_CMimic_updatePose_FUN_004f0a50(this_ptr), this_ptr->attack_mode == 1)) {
-        iVar3 = core_motion_cpp_FUN_005035c0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2b4);
-        uVar2 = *(uint *)(iVar3 + 0x24);
+        pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                           (&(g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).model.base);
+        uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_004f09fa:
           core_mimic_cpp_CMimic_setupCloth_FUN_004f17a0(this_ptr);

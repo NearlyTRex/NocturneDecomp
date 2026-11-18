@@ -21,7 +21,7 @@ uint FUN_005c12d0(byte *param_1,byte *param_2)
   bVar5 = false;
   bVar3 = false;
   if (param_2 != (byte *)0x0) {
-    if (DAT_00626770 == 1) {
+    if (g_INT_00626770 == 1) {
       param_2[0] = 1;
       param_2[1] = 0;
       param_2[2] = 0;
@@ -106,7 +106,7 @@ LAB_005c1322:
     bVar1 = param_1[2];
     param_1 = param_1 + 1;
   }
-  if ((!bVar4) && (0x00000100 == 0x200)) {
+  if ((!bVar4) && (g_INT_006264e0 == 0x200)) {
     uVar6 = uVar6 | 0x40;
   }
   return uVar6;

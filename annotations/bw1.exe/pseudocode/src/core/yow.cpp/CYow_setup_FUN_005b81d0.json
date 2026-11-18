@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 120,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 70,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_type_propagation"
     ],
     "total_lines": 241
@@ -116,14 +115,14 @@
     },
     {
       "addr": "005fa23b",
-      "name": "DAT_005fa23b",
-      "type": "undefined4",
+      "name": "s_larm_005fa23b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005fa240",
-      "name": "DAT_005fa240",
-      "type": "undefined4",
+      "name": "s_rarm_005fa240",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -152,8 +151,8 @@
     },
     {
       "addr": "005fa25d",
-      "name": "DAT_005fa25d",
-      "type": "undefined4",
+      "name": "s_head_005fa25d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -182,9 +181,9 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     }
   ],
   "param_estimates": {
@@ -251,30 +250,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005fa23b",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005fa23b,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005fa240",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005fa240,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005fa25d",
-      "severity": "mild",
-      "text": "(this_ptr_02,&DAT_005fa25d,1);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

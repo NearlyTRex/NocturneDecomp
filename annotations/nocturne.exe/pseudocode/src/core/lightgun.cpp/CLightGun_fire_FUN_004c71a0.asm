@@ -381,7 +381,7 @@ section .text
     FLD float ptr [EAX + 0x2e0]         ; 004c7617
     FMUL float ptr [ESP + 0x8]          ; 004c761d
     FSTP float ptr [EAX + 0x584]        ; 004c7621
-    MOV EAX,[0x00765a98]                ; 004c7627 | g_CCharacterActorType_00765a60.name_hash
+    MOV EAX,[0x00765a98]                ; 004c7627 | g_CCharacterClassInfo.name_hash
     PUSH EAX                            ; 004c762c
     MOV EAX,[0x005be368]                ; 004c762d | g_CDemonSetPtr
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 004c7632 | g_CDemonSetInstance.collision_actor
@@ -402,7 +402,7 @@ section .text
         ;   XREF to: 004c7669 (CONDITIONAL_JUMP)  ; LAB_004c7669
     XOR ECX,ECX                         ; 004c7660
     MOV dword ptr [ESP + 0x104],ECX     ; 004c7662
-    MOV EBX,dword ptr [0x01c78c78]      ; 004c7669 | g_CGlassActorType_01c78c40.name_hash
+    MOV EBX,dword ptr [0x01c78c78]      ; 004c7669 | g_CGlassClassInfo.name_hash
         ;   Label: LAB_004c7669
     MOV EAX,[0x005be368]                ; 004c766f | g_CDemonSetPtr
     PUSH EBX                            ; 004c7674
@@ -412,7 +412,7 @@ section .text
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c7681
     MOV ESI,EAX                         ; 004c7684
-    MOV EAX,[0x02dd10bc]                ; 004c7686 | g_CTriggerActorType_02dd1084.name_hash
+    MOV EAX,[0x02dd10bc]                ; 004c7686 | g_CTriggerClassInfo.name_hash
     PUSH EAX                            ; 004c768b
     MOV EAX,[0x005be368]                ; 004c768c | g_CDemonSetPtr
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 004c7691 | g_CDemonSetInstance.collision_actor

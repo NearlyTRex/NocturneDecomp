@@ -1,0 +1,529 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 268,
+    "complexity_score": 145,
+    "cross_reference_count": 2,
+    "function_call_count": 17,
+    "global_count": 37,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 110,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_strcpy"
+    ],
+    "total_lines": 378
+  },
+  "cross_references": [
+    {
+      "addr": "004e45e0",
+      "from_addr": "004e466c",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_004e45e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee3f0",
+      "from_addr": "004ee6a6",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bc840",
+    "address_range": [
+      [
+        "004bc840",
+        "004bcb4a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_showChapterSelect_FUN_004bc840",
+    "signature": "void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004bc840(CGame *this_ptr,int select_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "004910b0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_resetGameFlags_FUN_004910b0"
+    },
+    {
+      "addr": "004a50b0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0"
+    },
+    {
+      "addr": "004bbf70",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70"
+    },
+    {
+      "addr": "004e1480",
+      "is_variadic": false,
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004e1480"
+    },
+    {
+      "addr": "004fd0e0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0"
+    },
+    {
+      "addr": "004fb490",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_load_FUN_004fb490"
+    },
+    {
+      "addr": "004fcb00",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_run_FUN_004fcb00"
+    },
+    {
+      "addr": "004fce00",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004fce00"
+    },
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "005b910c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005b910c"
+    },
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    },
+    {
+      "addr": "00460c70",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00460c70"
+    },
+    {
+      "addr": "004d8910",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_ctor_FUN_004d8910"
+    },
+    {
+      "addr": "004d8940",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_dtor_FUN_004d8940"
+    },
+    {
+      "addr": "004d8b20",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20"
+    },
+    {
+      "addr": "0047c970",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d867f",
+      "name": "s_rb_005d867f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8682",
+      "name": "s_blairhero_pod_005d8682",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8690",
+      "name": "g_CHAR_005d8690",
+      "type": "char",
+      "value": "\u0000"
+    },
+    {
+      "addr": "005d8691",
+      "name": "s_rt_005d8691",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8694",
+      "name": "s_pod_ini_005d8694",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d869c",
+      "name": "s_Game_005d869c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d86a1",
+      "name": "s_system_nocturne_ini_005d86a1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d86b5",
+      "name": "s_Act1Code_005d86b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d86be",
+      "name": "s_Coffin_Rock_005d86be",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d86ca",
+      "name": "s_rt_005d86ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d86cd",
+      "name": "s_world_005d86cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d86d3",
+      "name": "s_msn_005d86d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d86d9",
+      "name": "s_world_005d86d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d86df",
+      "name": "s_Select_mission_to_play_005d86df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8aee",
+      "name": "s_awakening_msn_005d8aee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8aef",
+      "name": "s_awakening_msn_005d8aee+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d8af0",
+      "name": "s_awakening_msn_005d8aee+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d8af1",
+      "name": "s_awakening_msn_005d8aee+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "006141f0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
+    },
+    {
+      "addr": "00616044",
+      "name": "g_CFieldNotesPtr",
+      "type": "CFieldNotes*",
+      "value": "01caf56c"
+    },
+    {
+      "addr": "006165a8",
+      "name": "PTR_s_awakening_msn_005d8aee_006165a8",
+      "type": "void*",
+      "value": "005d8aee"
+    },
+    {
+      "addr": "006166ac",
+      "name": "DAT_006166ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00617e10",
+      "name": "g_CLevelLoaderPtr",
+      "type": "CLevelLoader*",
+      "value": "01d03000"
+    },
+    {
+      "addr": "00618170",
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
+    },
+    {
+      "addr": "01511cc0",
+      "name": "g_ThemeFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01c25590",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01cb7b50",
+      "name": "g_CurrentSaveFile",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "01cb7b51",
+      "name": "g_CurrentSaveFile+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7b52",
+      "name": "g_CurrentSaveFile+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7b53",
+      "name": "g_CurrentSaveFile+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7f78",
+      "name": "g_ChapterDisplayName",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "01cb7f79",
+      "name": "g_ChapterDisplayName+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7f7a",
+      "name": "g_ChapterDisplayName+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7f7b",
+      "name": "g_ChapterDisplayName+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb8078",
+      "name": "g_ChapterDisplayYear",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb807c",
+      "name": "g_OverlayDisplayTimer",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004e466c",
+        "call_type": "direct",
+        "caller": "core_main.c_showDeveloperToolsMenu_FUN_004e45e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ee6a6",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.004694835680751,
+    "instruction_count": 213,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 3,
+      "CALL": 20,
+      "CBRANCH": 15,
+      "COPY": 163,
+      "INT_ADD": 67,
+      "INT_AND": 111,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 102,
+      "INT_LESS": 8,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 27,
+      "INT_SLESS": 51,
+      "INT_SUB": 80,
+      "INT_XOR": 7,
+      "LOAD": 19,
+      "POPCOUNT": 51,
+      "RETURN": 1,
+      "STORE": 88
+    },
+    "pcode_op_count": 853
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d7250",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0737
+    },
+    "bw3.exe": {
+      "addr": "004be8d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8772
+    },
+    "nocedit.exe": {
+      "addr": "004e1cb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0321
+    },
+    "nocturne.exe": {
+      "addr": "004a4b50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0389
+    }
+  },
+  "stack_frame": {
+    "frame_size": 816,
+    "local_size": 808,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_324",
+        "offset": -804,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_11f",
+        "offset": -287,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "select_mode",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 52,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 67,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 85,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

@@ -1,17 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0057ab10(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0057ab10(CWavOutDevice *this_ptr)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
-; short *          Stack[0x8]:4   output_buffer
-; int              Stack[0xc]:4   num_samples
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_WavOutDevice_poll_NULL_p_005f579f
 ;   TerminatedCString s_WavOutDevice_poll_sendWa_005f57c3
-;   undefined4 DAT_02c828d4
+;   int g_WaveOutNumBuffers
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
@@ -27,7 +25,7 @@ section .text
     PUSH EDI                            ; 0057ab12
     PUSH EBP                            ; 0057ab13
     MOV EDI,0x1                         ; 0057ab14
-    MOV EDX,dword ptr [0x02c828d4]      ; 0057ab19 | DAT_02c828d4
+    MOV EDX,dword ptr [0x02c828d4]      ; 0057ab19 | g_WaveOutNumBuffers
     XOR ESI,ESI                         ; 0057ab1f
     TEST EDX,EDX                        ; 0057ab21
     JLE 0x0057ab4e                      ; 0057ab23
@@ -44,7 +42,7 @@ section .text
     TEST byte ptr [EBP + 0x10],0x1      ; 0057ab3a
     JNZ 0x0057ab66                      ; 0057ab3e
         ;   XREF to: 0057ab66 (CONDITIONAL_JUMP)  ; LAB_0057ab66
-    MOV ECX,dword ptr [0x02c828d4]      ; 0057ab40 | DAT_02c828d4
+    MOV ECX,dword ptr [0x02c828d4]      ; 0057ab40 | g_WaveOutNumBuffers
         ;   Label: LAB_0057ab40
     INC ESI                             ; 0057ab46
     ADD EBX,0x4                         ; 0057ab47

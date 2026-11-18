@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 26,
+    "complexity_score": 12,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 37
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
   },
   "cross_references": [],
   "function": {
@@ -36,7 +34,7 @@
     {
       "addr": "00490f80",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_00490f80"
+      "name": "core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80"
     }
   ],
   "globals": [
@@ -48,15 +46,15 @@
     },
     {
       "addr": "005f01fe",
-      "name": "DAT_005f01fe",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f01fe",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     }
   ],
   "param_estimates": {
@@ -123,20 +121,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 272,
         "vtable_addr": "005ff374"
       }

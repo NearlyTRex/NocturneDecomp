@@ -10,10 +10,10 @@
 ; int              Stack[0x10]:4   render_flags
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_01e7dac8
-;   undefined4 DAT_02c833c8
-;   undefined4 DAT_02c833d4
+;   int g_INT_01c50948
+;   int g_RenderedTriangleCount
+;   void* g_APIDLL_drawPolygon2
+;   void* g_APIDLL_drawPolyList3
 ;
 ; *****************************************************************************
 
@@ -28,16 +28,16 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 00582627
     MOV EBX,dword ptr [ESP + 0x24]      ; 0058262b
     MOV EBP,dword ptr [ESP + 0x28]      ; 0058262f
-    CMP dword ptr [0x01c50948],0x0      ; 00582633 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 00582633 | g_INT_01c50948
     JZ 0x005826bd                       ; 0058263a
         ;   XREF to: 005826bd (CONDITIONAL_JUMP)  ; LAB_005826bd
-    MOV EAX,[0x01e7dac8]                ; 00582640 | DAT_01e7dac8
-    MOV ECX,dword ptr [0x02c833d4]      ; 00582645 | DAT_02c833d4
+    MOV EAX,[0x01e7dac8]                ; 00582640 | g_RenderedTriangleCount
+    MOV ECX,dword ptr [0x02c833d4]      ; 00582645 | g_APIDLL_drawPolyList3
     ADD EAX,EBP                         ; 0058264b
     TEST ECX,ECX                        ; 0058264d
     JNZ 0x005826c7                      ; 0058264f
         ;   XREF to: 005826c7 (CONDITIONAL_JUMP)  ; LAB_005826c7
-    MOV [0x01e7dac8],EAX                ; 00582655 | DAT_01e7dac8
+    MOV [0x01e7dac8],EAX                ; 00582655 | g_RenderedTriangleCount
     XOR ESI,ESI                         ; 0058265a
     TEST EBP,EBP                        ; 0058265c
     JLE 0x005826b0                      ; 0058265e
@@ -65,7 +65,7 @@ section .text
     PUSH EAX                            ; 00582698
     INC ESI                             ; 00582699
     MOV dword ptr [ESP + 0x14],EDX      ; 0058269a
-    CALL dword ptr [0x02c833c8]         ; 0058269e | DAT_02c833c8
+    CALL dword ptr [0x02c833c8]         ; 0058269e | g_APIDLL_drawPolygon2
     ADD ESP,0xc                         ; 005826a4
     CMP ESI,EBP                         ; 005826a7
     JL 0x00582660                       ; 005826a9
@@ -94,8 +94,8 @@ section .text
     PUSH EBP                            ; 005826cc
     PUSH EBX                            ; 005826cd
     PUSH EDI                            ; 005826ce
-    MOV [0x01e7dac8],EAX                ; 005826cf | DAT_01e7dac8
-    CALL dword ptr [0x02c833d4]         ; 005826d4 | DAT_02c833d4
+    MOV [0x01e7dac8],EAX                ; 005826cf | g_RenderedTriangleCount
+    CALL dword ptr [0x02c833d4]         ; 005826d4 | g_APIDLL_drawPolyList3
     ADD ESP,0x10                        ; 005826da
     ADD ESP,0xc                         ; 005826dd
     POP EBP                             ; 005826e0

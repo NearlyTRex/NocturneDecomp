@@ -1,0 +1,905 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 710,
+    "complexity_score": 613,
+    "cross_reference_count": 8,
+    "function_call_count": 21,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 248,
+    "suspect_count": 36,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 958
+  },
+  "cross_references": [
+    {
+      "addr": "004e80f0",
+      "from_addr": "004e818f",
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d0a0",
+      "from_addr": "0047d114",
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047d0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047e470",
+      "from_addr": "0047e55a",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ee50",
+      "from_addr": "0047eefb",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004843d0",
+      "from_addr": "004843e1",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c8e0",
+      "from_addr": "0047cac2",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d855",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c2c0",
+      "from_addr": "0047c48c",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047fa80",
+    "address_range": [
+      [
+        "0047fa80",
+        "004801f6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80",
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(CEditorTools *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "00402f30",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawHLine_FUN_00402f30"
+    },
+    {
+      "addr": "00403040",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawVLine_FUN_00403040"
+    },
+    {
+      "addr": "004031c0",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectColor_FUN_004031c0"
+    },
+    {
+      "addr": "00403250",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403250"
+    },
+    {
+      "addr": "00406bf0",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406bf0"
+    },
+    {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004b0a20"
+    },
+    {
+      "addr": "004b30f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0"
+    },
+    {
+      "addr": "004b2b30",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30"
+    },
+    {
+      "addr": "004b2a80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
+    },
+    {
+      "addr": "004e6c50",
+      "is_variadic": false,
+      "name": "engine_matrix.c_popViewport_FUN_004e6c50"
+    },
+    {
+      "addr": "004e6af0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pushViewport_FUN_004e6af0"
+    },
+    {
+      "addr": "004f3ab0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawHLine_FUN_004f3ab0"
+    },
+    {
+      "addr": "004f3a60",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawRect_FUN_004f3a60"
+    },
+    {
+      "addr": "004f3ad0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawVLine_FUN_004f3ad0"
+    },
+    {
+      "addr": "004f37e0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_fillRect_FUN_004f37e0"
+    },
+    {
+      "addr": "004ed150",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_getRenderViewport_FUN_004ed150"
+    },
+    {
+      "addr": "004edaf0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setAlpha_FUN_004edaf0"
+    },
+    {
+      "addr": "004f3520",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_004f3520"
+    },
+    {
+      "addr": "004ed020",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setRenderViewport_FUN_004ed020"
+    },
+    {
+      "addr": "0047cd80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_paintWindowBackground_FUN_0047cd80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bcd25",
+      "name": "s_shape_edittool_cpp_005bcd25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bcd3b",
+      "name": "s_gEdFont_must_be_set_by_t_005bcd3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd235",
+      "name": "s_shape_edittool_cpp_005bd235",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd24b",
+      "name": "s_CEditorTools_paintWindow_005bd24b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd288",
+      "name": "s_j_005bd288",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01c5b0e0",
+      "name": "g_CBitFont_PTR_01c5b0e0",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01c5b104",
+      "name": "g_WindowStackCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5bae0",
+      "name": "g_EditorFontMaxCharWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5bae4",
+      "name": "g_INT_01c5bae4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5baec",
+      "name": "g_INT_01c5baec",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5baf0",
+      "name": "g_WindowContentColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5baf4",
+      "name": "g_WindowBorderHighlightColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5baf8",
+      "name": "g_WindowBorderShadowColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5bafc",
+      "name": "g_TitleBarColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5bb00",
+      "name": "g_TitleBarFillColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6af98",
+      "name": "g_UCHAR_ARRAY_01c6af98",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "01c6af99",
+      "name": "g_UCHAR_ARRAY_01c6af98+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6af9a",
+      "name": "g_UCHAR_ARRAY_01c6af98+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5ac",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6b5c0",
+      "name": "g_INT_01c6b5c0",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0047cac2",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004843e1",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047d855",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047e55a",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047c48c",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047eefb",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e818f",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047d114",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047d0a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.4425675675675675,
+    "instruction_count": 592,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 170,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 17,
+      "CALL": 42,
+      "CBRANCH": 21,
+      "COPY": 544,
+      "FLOAT2FLOAT": 4,
+      "INT2FLOAT": 4,
+      "INT_ADD": 162,
+      "INT_AND": 833,
+      "INT_CARRY": 46,
+      "INT_EQUAL": 462,
+      "INT_LEFT": 58,
+      "INT_LESS": 39,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 76,
+      "INT_OR": 183,
+      "INT_SBORROW": 53,
+      "INT_SCARRY": 58,
+      "INT_SLESS": 271,
+      "INT_SRIGHT": 13,
+      "INT_SUB": 233,
+      "INT_XOR": 47,
+      "INT_ZEXT": 1,
+      "LOAD": 99,
+      "POPCOUNT": 213,
+      "RETURN": 1,
+      "STORE": 160
+    },
+    "pcode_op_count": 3814
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047e870",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00496ee0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a0f80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2631
+    },
+    "nocturne.exe": {
+      "addr": "004722b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2788
+    }
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 88,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "(*piVar6,iVar4,(*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) - *piVar6) + 1,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "(*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) - iVar4) + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "local_18 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "local_20 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4) + 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 116,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "local_14 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "((float)*piVar6,(float)*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "(float)local_14,(float)(*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + 1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "(*piVar6,*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 145,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "(*piVar6 + 1,*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4) + 1,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "(*piVar6,*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 162,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "(*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -1,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0xc) + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 167,
+      "match": "(char *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "if (*(char *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0x48) != '\\0') {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b5ac = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "local_34 = g_INT_01c5bae4 / 2 + *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4) + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 195,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar1 = g_INT_01c5bae4 / 2 + *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 196,
+      "match": "(char *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "text = (char *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0x48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 210,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar4 = iVar4 + *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 221,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 239,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 8) + -2;",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -145,7 +145,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdcb1
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004bdcb6
-    PUSH 0x1cae37c                      ; 004bdcb9 | DAT_01cae37c
+    PUSH 0x1cae37c                      ; 004bdcb9 | g_FirstTimeFlag
     PUSH 0x5867da                       ; 004bdcbe | = "firstTimeFlag"
     LEA EAX,[ESP + 0x10]                ; 004bdcc3
     PUSH EAX                            ; 004bdcc7
@@ -214,13 +214,13 @@ section .text
     MOV dword ptr [EAX + 0x18],0x0      ; 004bdd7e | g_CGameInstance.nudity_flag
     MOV dword ptr [EAX + 0x1c],0x0      ; 004bdd85 | g_CGameInstance.foul_language_flag
     MOV dword ptr [EAX + 0x14],0x0      ; 004bdd8c | g_CGameInstance.blood_flag
-    PUSH 0x1cc64a4                      ; 004bdd93 | DAT_01cc64a4
+    PUSH 0x1cc64a4                      ; 004bdd93 | g_CurrentGraphicsBoard
         ;   Label: LAB_004bdd93
     PUSH 0x586831                       ; 004bdd98 | = "currentBoard"
     LEA EAX,[ESP + 0x10]                ; 004bdd9d
     XOR EDI,EDI                         ; 004bdda1
     PUSH EAX                            ; 004bdda3
-    MOV dword ptr [0x01cc64a4],EDI      ; 004bdda4 | DAT_01cc64a4
+    MOV dword ptr [0x01cc64a4],EDI      ; 004bdda4 | g_CurrentGraphicsBoard
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bddaa
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004bddaf

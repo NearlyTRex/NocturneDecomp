@@ -16,12 +16,12 @@
 ;   core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_005b0b70 at 005b0b9d
 ;
 ; Referenced Globals:
-;   undefined4 s_STAND_005d5b4e+1
+;   TerminatedCString s_STAND_005d5b4f
 ;   TerminatedCString s_STAND_005d5b55
 ;   TerminatedCString s_CCharacter_005d5b5b
-;   undefined4 DAT_005d5b67
-;   undefined4 DAT_005d5b6f
-;   undefined4 DAT_005d5b73
+;   double g_DOUBLE_005d5b67 = 0.5
+;   float g_FLOAT_005d5b6f = 5
+;   float g_FLOAT_005d5b73 = 60
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c550
@@ -55,7 +55,7 @@ section .text
     JZ 0x004320b5                       ; 00432087
         ;   XREF to: 004320b5 (CONDITIONAL_JUMP)  ; LAB_004320b5
     PUSH EDI                            ; 00432089
-    PUSH 0x5d5b4f                       ; 0043208a | s_STAND_005d5b4e+1
+    PUSH 0x5d5b4f                       ; 0043208a | = "STAND"
     PUSH ESI                            ; 0043208f
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 00432090
         ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController * this_ptr)
@@ -116,9 +116,9 @@ section .text
     FMUL ST0                            ; 0043212f
     FADDP                               ; 00432131
     FSQRT                               ; 00432133
-    FMUL double ptr [0x005d5b67]        ; 00432135 | DAT_005d5b67
+    FMUL double ptr [0x005d5b67]        ; 00432135 | g_DOUBLE_005d5b67
     FST float ptr [ESP + 0x8]           ; 0043213b
-    FCOMP float ptr [0x005d5b6f]        ; 0043213f | DAT_005d5b6f
+    FCOMP float ptr [0x005d5b6f]        ; 0043213f | g_FLOAT_005d5b6f
     FNSTSW AX                           ; 00432145
     SAHF                                ; 00432147
     JNC 0x00432185                      ; 00432148
@@ -142,7 +142,7 @@ section .text
         ;   XREF to: 004320d5 (UNCONDITIONAL_JUMP)  ; LAB_004320d5
     FLD float ptr [ESP + 0x8]           ; 00432185
         ;   Label: LAB_00432185
-    FCOMP float ptr [0x005d5b73]        ; 00432189 | DAT_005d5b73
+    FCOMP float ptr [0x005d5b73]        ; 00432189 | g_FLOAT_005d5b73
     FNSTSW AX                           ; 0043218f
     SAHF                                ; 00432191
     JBE 0x00432152                      ; 00432192

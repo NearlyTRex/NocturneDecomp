@@ -13,26 +13,27 @@ void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00428d60(CCharac
   CVector3f *drop_position;
   byte bVar1;
   float afStackY_1014 [1015];
-  float local_2c;
-  CVector3f local_20;
+  CVector3f local_2c;
+  float local_20;
+  float local_1c [2];
   CVector3f local_14;
   
   bVar1 = 0;
   if (this_ptr->carry_hands[hand_index].carry_actor != (CDemonActor *)0x0) {
     drop_position = (CVector3f *)0x0;
     if (drop_direction != (CVector3f *)0x0) {
-      core_actor_cpp_FUN_00408cf0(this_ptr,drop_direction);
-      local_20.x = local_2c;
-      *(uint *)((int)&local_20 + (uint)bVar1 * -8 + 4) =
-           *(uint *)(&stack0xffffffd8 + (uint)bVar1 * -8);
-      *(uint *)((int)&local_20 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
-           *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-      if (&local_14 != &local_20) {
-        local_14.x = local_20.x;
-        local_14.y = local_20.y;
-        local_14.z = local_20.z;
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                (&this_ptr->base,drop_direction,&local_2c);
+      local_20 = local_2c.x;
+      local_1c[(uint)bVar1 * -2] = *(float *)((int)&local_2c + (uint)bVar1 * -8 + 4);
+      local_1c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+           *(float *)((int)&local_2c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+      if (local_1c + 2 != &local_20) {
+        local_14.x = local_20;
+        local_14.y = local_1c[0];
+        local_14.z = local_1c[1];
       }
-      drop_position = &local_14;
+      drop_position = (CVector3f *)(local_1c + 2);
     }
     this_ptr_00 = this_ptr->carry_hands[hand_index].carry_actor;
     (*((this_ptr_00->vtable)._ub)->onDropped)(this_ptr_00,drop_position);

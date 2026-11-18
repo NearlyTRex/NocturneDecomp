@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -22,6 +20,7 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
   float afStackY_1020 [1009];
   CMotionController *this_ptr_01;
   float fStack_30;
+  CVector3f CStack_2c;
   CMotionController *pCStack_18;
   float fStack_14;
   
@@ -40,21 +39,21 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
     damage_info->damage_amount = 0.0;
     return;
   }
-  (this_ptr->base).invincibility_timer = _DAT_005feca8;
+  (this_ptr->base).invincibility_timer = 2.0f;
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->wielder,"CBugs");
   if (iVar2 != 0) {
     (this_ptr->base).invincibility_timer = 0.15;
   }
   if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005da3c4;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.45000000000000001;
   }
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->wielder,"CShadowsc");
   if ((iVar2 != 0) &&
      (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (0x01C51D80,"ScorpTailAttack"), iVar2 != 0)) {
-    core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,"HitByShadowScorp")
-    ;
+                        (g_CEventListPtr,"ScorpTailAttack"), iVar2 != 0)) {
+    core_event_cpp_CEventList_executeCommands_FUN_004a1b70
+              (g_CEventListPtr,"HitByShadowScorp");
   }
   this_ptr_00 = g_CConsolePtr;
   if (((g_CGamePtr->auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&
@@ -83,7 +82,7 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
         else {
           iVar2 = 1;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,100.0);
-          desired_state_index = (fStack_14 <= _DAT_005da3cc) + 0x2a;
+          desired_state_index = (fStack_14 <= 50.0f) + 0x2a;
           this_ptr_01 = &(this_ptr->base).base.model.base;
         }
       }
@@ -125,11 +124,12 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
                        (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
     if (pCVar5 == (CDemonActor *)0x0) {
       if (damage_info->damage_type == DAMAGE_TYPE_SHADOW) {
-        core_actor_cpp_FUN_00408bb0(this_ptr);
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
+                  ((CDemonActor *)this_ptr,&(damage_info->wielder->location).position,&CStack_2c);
         *(uint *)(&stack0xffffffcc + (uint)bVar6 * -8) =
-             *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8);
+             *(uint *)((int)&CStack_2c + (uint)bVar6 * -8 + 4);
         *(uint *)((int)&stack0xffffffd0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-             *(uint *)(&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+             *(uint *)((int)&CStack_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
         if (fStack_30 <= 0.0) {
           iVar2 = 0x83;
         }

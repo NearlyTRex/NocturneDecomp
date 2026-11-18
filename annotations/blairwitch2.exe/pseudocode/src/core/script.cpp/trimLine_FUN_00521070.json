@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 89,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 4,
+    "pseudocode_lines": 41,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 127
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -45,14 +44,14 @@
   "globals": [
     {
       "addr": "005e2c7e",
-      "name": "DAT_005e2c7e",
-      "type": "undefined4",
+      "name": "s_anon_005e2c7e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0061ed94",
-      "name": "DAT_0061ed94",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -156,32 +155,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_0061ed94",
-      "severity": "mild",
-      "text": "while (pcVar3 = output_buffer, ((&DAT_0061ed94)[(byte)(*input_line + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005e2c7e",
-      "severity": "mild",
-      "text": "pcVar2 = strstr(output_buffer,&DAT_005e2c7e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0061ed94",
-      "severity": "mild",
-      "text": "while ((output_buffer < pcVar2 && (((&DAT_0061ed94)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 13,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

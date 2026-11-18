@@ -8,10 +8,10 @@
 ; int              Stack[0x8]:4   layer_flag
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0bf4
-;   undefined4 DAT_005f2afc
+;   double g_DOUBLE_005c0bf4 = 5
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   undefined4 g_CFlameClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -21,7 +21,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;
 ; *****************************************************************************
@@ -37,9 +37,9 @@ section .text
     SUB ESP,0x54                        ; 004a6a56
     AND ESP,0xfffffff8                  ; 004a6a59
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a6a5c
-    MOV EDX,dword ptr [0x005f2afc]      ; 004a6a5f | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 004a6a5f | g_CDemonRenderer_PTR_005f2afc
     MOV dword ptr [EAX + 0x2a0],0x0     ; 004a6a65
-    PUSH EDX                            ; 004a6a6f | DAT_01bdd7e4
+    PUSH EDX                            ; 004a6a6f | g_CDemonRenderer_01bdd7e4
     MOV dword ptr [EAX + 0x298],0x0     ; 004a6a70
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 004a6a7a
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
@@ -75,8 +75,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 004a6abf
     PUSH EAX                            ; 004a6ac3
     MOVSD.REP ES:EDI,ESI                ; 004a6ac4
-    CALL core_box.cpp_FUN_0041daf0      ; 004a6ac6
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 004a6ac6
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 004a6acb
     PUSH EBX                            ; 004a6ace
     MOV dword ptr [EBX + 0x290],EAX     ; 004a6acf
@@ -183,7 +183,7 @@ section .text
     FADDP                               ; 004a6be8
     ADD EAX,0x20                        ; 004a6bea
     FSQRT                               ; 004a6bed
-    FCOMP double ptr [0x005c0bf4]       ; 004a6bef | DAT_005c0bf4
+    FCOMP double ptr [0x005c0bf4]       ; 004a6bef | g_DOUBLE_005c0bf4
     FNSTSW AX                           ; 004a6bf5
     SAHF                                ; 004a6bf7
     JNC 0x004a6b77                      ; 004a6bf8

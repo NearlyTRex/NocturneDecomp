@@ -9,42 +9,43 @@
 void __cdecl core_ghostchi_cpp_CGhostChild_processSleepState_FUN_005a9770(CGhostChild *this_ptr,float delta_time)
 
 {
-  SStateMachine *pSVar1;
-  uint uVar2;
-  float fVar3;
+  SStateMachine *this_ptr_00;
+  uint uVar1;
+  float fVar2;
   
   (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
             (&(this_ptr->base).base.base.model.base,4,1);
-  uVar2 = this_ptr->sleep_phase;
-  if (uVar2 == 0) {
-    fVar3 = (this_ptr->base).fade_val;
+  uVar1 = this_ptr->sleep_phase;
+  if (uVar1 == 0) {
+    fVar2 = (this_ptr->base).fade_val;
     (this_ptr->base).base.base.is_spectral = 1;
-    core_basicene_cpp_FUN_005a01a0(this_ptr,fVar3,0,0x3f000000);
-    core_basicene_cpp_FUN_0059f570(this_ptr);
+    core_basicene_cpp_CBasicEnemy_setFade_FUN_005a01a0(&this_ptr->base,fVar2,0.0,0.5);
+    core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570(&this_ptr->base);
     this_ptr->sleep_phase = 1;
     this_ptr->sleep_timer = this_ptr->sleep_time;
     return;
   }
-  if (uVar2 < 2) {
-    fVar3 = this_ptr->sleep_timer - delta_time;
+  if (uVar1 < 2) {
+    fVar2 = this_ptr->sleep_timer - delta_time;
     (this_ptr->base).base.base.is_spectral = 1;
-    this_ptr->sleep_timer = fVar3;
-    if (0.0 < fVar3) {
+    this_ptr->sleep_timer = fVar2;
+    if (0.0 < fVar2) {
       return;
     }
-    fVar3 = (this_ptr->base).fade_val;
+    fVar2 = (this_ptr->base).fade_val;
     this_ptr->sleep_timer = 0.0;
-    core_basicene_cpp_FUN_005a01a0(this_ptr,fVar3,0x3f800000,0x3f800000);
-    core_basicene_cpp_FUN_0059f570(this_ptr);
+    core_basicene_cpp_CBasicEnemy_setFade_FUN_005a01a0(&this_ptr->base,fVar2,1.0,1.0);
+    core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570(&this_ptr->base);
     this_ptr->sleep_phase = 2;
     return;
   }
-  if (uVar2 == 2) {
-    pSVar1 = &(this_ptr->base).state_machine;
+  if (uVar1 == 2) {
+    this_ptr_00 = &(this_ptr->base).state_machine;
     (this_ptr->base).base.base.is_spectral = 0;
-    core_muzzle_cpp_FUN_0059dcb0(pSVar1,0);
-    core_muzzle_cpp_FUN_0059d880(pSVar1,"SleepComplete");
+    core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_00,0.0);
+    core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880(this_ptr_00,"SleepComplete")
+    ;
     this_ptr->sleep_phase = 3;
     return;
   }

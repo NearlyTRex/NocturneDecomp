@@ -1,0 +1,120 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
+  },
+  "cross_references": [
+    {
+      "addr": "0053ea00",
+      "from_addr": "0053ea11",
+      "name": "core_shadow.cpp_CShadow_processDamage_FUN_0053ea00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053e9a0",
+    "address_range": [
+      [
+        "0053e9a0",
+        "0053e9fc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shadow.cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0",
+    "signature": "void __cdecl core_shadow_cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0(CShadow *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e6785",
+      "name": "g_DOUBLE_005e6785",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "005e678d",
+      "name": "g_DOUBLE_005e678d",
+      "type": "double",
+      "value": "5"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053ea11",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_CShadow_processDamage_FUN_0053ea00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.212121212121212,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 3,
+      "COPY": 90,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 2,
+      "INT_ADD": 20,
+      "INT_AND": 14,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 5,
+      "LOAD": 15,
+      "POPCOUNT": 7,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 205
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadow *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -17,19 +17,19 @@
 ;   core_curtain.cpp_CCurtain_setup_FUN_0044a380 at 0044a3a9
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0 at 00450678
 ;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20 at 0044ff91
-;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190 at 004647cc
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00463820 at 00463d29
 ;   ... and 64 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db526
 ;   TerminatedCString s_CDR_texture_Too_many_cap_005db53c
-;   undefined4 DAT_01bc1284
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_CaptureTextureCount
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
-;   engine_texture.cpp_FUN_00597a20
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
+;   engine_texture.cpp_ensureTextureLoaded_FUN_00597a20
 ;
 ; *****************************************************************************
 
@@ -40,29 +40,29 @@ section .text
     PUSH EBP                            ; 00484f01
     MOV ESI,dword ptr [ESP + 0x10]      ; 00484f02
     PUSH ESI                            ; 00484f06
-    CALL engine_texture.cpp_FUN_00597a20 ; 00484f07
-        ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00597a20()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_00597a20 ; 00484f07
+        ;   XREF to: 00597a20 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00597a20(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 00484f0c
     MOV EAX,dword ptr [ESP + 0xc]       ; 00484f0f
     CMP dword ptr [EAX + 0x1c],0x0      ; 00484f13
     JZ 0x00484f90                       ; 00484f17
         ;   XREF to: 00484f90 (CONDITIONAL_JUMP)  ; LAB_00484f90
     PUSH EDI                            ; 00484f19
-    MOV ECX,dword ptr [0x01bc1284]      ; 00484f1a | DAT_01bc1284
+    MOV ECX,dword ptr [0x01bc1284]      ; 00484f1a | g_CaptureTextureCount
     INC ECX                             ; 00484f20
-    MOV dword ptr [0x01bc1284],ECX      ; 00484f21 | DAT_01bc1284
+    MOV dword ptr [0x01bc1284],ECX      ; 00484f21 | g_CaptureTextureCount
     CMP ECX,0x64                        ; 00484f27
     JLE 0x00484f4f                      ; 00484f2a
         ;   XREF to: 00484f4f (CONDITIONAL_JUMP)  ; LAB_00484f4f
     MOV EDI,0x5db526                    ; 00484f2c | = "..\\engine\\drender.cpp"
     MOV EBP,0xbf3                       ; 00484f31
     PUSH 0x5db53c                       ; 00484f36 | = "CDR::texture - Too many captured text..."
-    MOV dword ptr [0x01d1d400],EDI      ; 00484f3b | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00484f41 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00484f47
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 00484f3b | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 00484f41 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00484f47
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00484f4c
-    MOV EDX,dword ptr [0x01bc1284]      ; 00484f4f | DAT_01bc1284
+    MOV EDX,dword ptr [0x01bc1284]      ; 00484f4f | g_CaptureTextureCount
         ;   Label: LAB_00484f4f
     LEA EAX,[EDX*0x8 + 0x0]             ; 00484f55
     ADD EAX,EDX                         ; 00484f5c

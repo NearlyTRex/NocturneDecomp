@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(CDemonSet *this_ptr)
 
 {
@@ -25,29 +23,29 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(CDemonSet *this_ptr)
     this_ptr_00 = this_ptr->lights;
     do {
       if (this_ptr_00->light_type == 0) {
-        light = *(CDemonLight **)(&DAT_01fb99d4 + local_14);
+        light = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fb99d4 + local_14);
         if (light == (CDemonLight *)0x0) {
           return;
         }
         local_18 = 0;
-        if (0 < _DAT_01fb9b54) {
+        if (0 < g_INT_01fb9b54) {
           iVar1 = 0;
           do {
-            if (light == *(CDemonLight **)(&DAT_01fb9b58 + iVar1)) {
+            if (light == *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fb9b58 + iVar1)) {
               local_18 = 1;
               break;
             }
             iVar1 = iVar1 + 4;
-          } while (iVar1 < _DAT_01fb9b54 * 4);
+          } while (iVar1 < g_INT_01fb9b54 * 4);
         }
         core_setutil_cpp_C3DSLight_process_FUN_00515420(this_ptr_00,light,local_18);
         _sprintf(local_118,"%son",this_ptr_00->name);
-        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,local_118);
+        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(g_CEventListPtr,local_118);
         if (iVar1 != 0) {
           light->light_enabled_flag = 1;
         }
         _sprintf(local_118,"%soff",this_ptr_00->name);
-        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,local_118);
+        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(g_CEventListPtr,local_118);
         if (iVar1 != 0) {
           light->light_enabled_flag = 0;
         }

@@ -18,11 +18,11 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_script.cpp_CScript_resetDialogState_FUN_00529b00
 ;   core_script.cpp_CScript_step_FUN_00522350
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
@@ -69,7 +69,7 @@ section .text
     PUSH EBX                            ; 00529b89
     MOV EDI,dword ptr [EBX + 0x44]      ; 00529b8a
     CALL core_script.cpp_CScript_step_FUN_00522350 ; 00529b8d
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * param_2)
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * time_remaining)
     ADD ESP,0x8                         ; 00529b92
     TEST EAX,EAX                        ; 00529b95
     JL 0x00529bd0                       ; 00529b97
@@ -82,14 +82,14 @@ section .text
     MOV EBP,0x5e4e47                    ; 00529ba2 | = "..\\core\\script.cpp"
     MOV EAX,0x1192                      ; 00529ba7
     MOV EDI,dword ptr [EBX + 0x44]      ; 00529bac
-    MOV [0x01d046a4],EAX                ; 00529baf | DAT_01d046a4
+    MOV [0x01d046a4],EAX                ; 00529baf | g_INT_01d046a4
     MOV EAX,dword ptr [EBX + 0x30]      ; 00529bb4
-    MOV dword ptr [0x01d046a0],EBP      ; 00529bb7 | DAT_01d046a0
+    MOV dword ptr [0x01d046a0],EBP      ; 00529bb7 | g_CHAR_PTR_01d046a0
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00529bbd
     PUSH EDX                            ; 00529bc0
     PUSH 0x5e4e5a                       ; 00529bc1 | = "Infinite loop detected trying to skip..."
-    CALL core_main.c_FUN_004e4500       ; 00529bc6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00529bc6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00529bcb
     JMP 0x00529b60                      ; 00529bce
         ;   XREF to: 00529b60 (UNCONDITIONAL_JUMP)  ; LAB_00529b60

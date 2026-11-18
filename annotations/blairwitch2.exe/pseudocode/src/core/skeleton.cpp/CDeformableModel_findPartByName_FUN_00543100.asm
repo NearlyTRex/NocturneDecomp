@@ -12,7 +12,7 @@
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_004116f0 at 00411893
 ;   core_batman.cpp_CBatman_setup_FUN_00412be0 at 00412d82
 ;   core_bride.cpp_CBride_setup_FUN_0041d9c0 at 0041dade
-;   core_charactr.cpp_FUN_004247f0 at 004249be
+;   core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0 at 004249be
 ;   core_construc.cpp_CConstruct_setup_FUN_00436be0 at 00436d3f
 ;   core_cow.cpp_CZombieCow_setup_FUN_00439150 at 004391b9
 ;   core_dracbrid.cpp_CDraculaBride_setup_FUN_00462c90 at 00462dfa
@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e7025
 ;   TerminatedCString s_Can_t_find_part_s_in_mod_005e703a
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
@@ -87,10 +87,10 @@ section .text
     MOV ESI,0x5e7025                    ; 0054315a | = "..\\core\\skeleton.cpp"
     MOV EAX,0x5d7                       ; 0054315f
     PUSH 0x5e703a                       ; 00543164 | = "Can't find part %s in model %s"
-    MOV dword ptr [0x01d046a0],ESI      ; 00543169 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0054316f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00543174
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 00543169 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0054316f | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00543174
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00543179
     MOV EAX,0xffffffff                  ; 0054317c
     POP EBP                             ; 00543181

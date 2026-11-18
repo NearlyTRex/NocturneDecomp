@@ -5,6 +5,23 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CPendulumActorType_01e42858 = {};
-CDemonActorType g_CPlatformActorType_01e42894 = {};
+CDemonActorType g_CPendulumClassInfo = {};
+CDemonActorType g_CPlatformClassInfo = {};
+
+// SMRGLPrimitiveQuad
+SMRGLPrimitiveQuad g_PathMapQuad = {};
+
+// char[101][100]
+char g_PathfindingVisited[101][100] = {};
+
+// char[65536]
+char g_FileIOBuffer[65536] = {};
+
+// int
+int g_PathfindingQueueHead = {};
+int g_PathfindingQueueTail = {};
+int g_PathfindingNodesExpanded = {};
+
+// uchar
+uchar g_PathfindingVisitedMinus1 = {};
 

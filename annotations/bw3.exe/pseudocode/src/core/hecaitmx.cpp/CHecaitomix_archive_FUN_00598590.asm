@@ -7,7 +7,7 @@
 ; CHecaitomix *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005d97b6+1
+;   TerminatedCString s_speed_005d97b7
 ;   TerminatedCString s_modelName_005d97bd
 ;   TerminatedCString s_guardDistance_005d97c7
 ;   TerminatedCString s_motion_state_005d97d5
@@ -30,7 +30,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00489120 ; 00598597
         ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00489120(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0059859c
-    PUSH 0x5d97b7                       ; 0059859f | s_speed_005d97b6+1
+    PUSH 0x5d97b7                       ; 0059859f | = "speed"
     LEA EBX,[ESI + 0xcdcc]              ; 005985a4
     PUSH EBX                            ; 005985aa
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 005985ab

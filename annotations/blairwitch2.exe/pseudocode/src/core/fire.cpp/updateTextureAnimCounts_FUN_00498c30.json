@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 28,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 40
+    "total_lines": 39
   },
   "cross_references": [
     {
@@ -38,20 +38,20 @@
   "globals": [
     {
       "addr": "01c2a370",
-      "name": "DAT_01c2a370",
-      "type": "undefined4",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3ec54",
-      "name": "DAT_01c3ec54",
-      "type": "undefined4",
+      "name": "g_TextureAnimCounter2",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3ec58",
-      "name": "DAT_01c3ec58",
-      "type": "undefined4",
+      "name": "g_TextureAnimCounter1",
+      "type": "int",
       "value": null
     }
   ],
@@ -142,12 +142,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 7,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar1 = g_GlobalDeltaTimeInt >> 0x1f;",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

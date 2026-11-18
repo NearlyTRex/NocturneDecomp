@@ -14,15 +14,15 @@
   },
   "cross_references": [
     {
-      "addr": "004c0ca0",
-      "from_addr": "004c0cc3",
-      "name": "engine_font.cpp_CBitFont_openFontFile_FUN_004c0ca0",
+      "addr": "004c1580",
+      "from_addr": "004c17c5",
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004c1580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c1580",
-      "from_addr": "004c17c5",
-      "name": "engine_font.cpp_FUN_004c1580",
+      "addr": "004c0ca0",
+      "from_addr": "004c0cc3",
+      "name": "engine_font.cpp_CBitFont_openFontFile_FUN_004c0ca0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,14 +40,14 @@
   },
   "function_calls": [
     {
+      "addr": "004c1830",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_free_FUN_004c1830"
+    },
+    {
       "addr": "004c0cd0",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0"
-    },
-    {
-      "addr": "004c1830",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c1830"
     }
   ],
   "globals": [],
@@ -68,7 +68,7 @@
       {
         "call_addr": "004c17c5",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004c1580",
+        "caller": "engine_font.cpp_CBitFont_loadFromFile_FUN_004c1580",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -11,7 +11,7 @@ int * __cdecl core_script_cpp_getActionState_FUN_00543540(SPlayerActionState *ac
 {
   int iVar1;
   
-  iVar1 = _stricmp(action_name,&DAT_005ee0da);
+  iVar1 = _stricmp(action_name,"walk");
   if (iVar1 == 0) {
     return &action_state->walk;
   }
@@ -19,11 +19,11 @@ int * __cdecl core_script_cpp_getActionState_FUN_00543540(SPlayerActionState *ac
   if (iVar1 == 0) {
     return &action_state->backup;
   }
-  iVar1 = _stricmp(action_name,&DAT_005ee0e6);
+  iVar1 = _stricmp(action_name,"run");
   if (iVar1 == 0) {
     return &action_state->run;
   }
-  iVar1 = _stricmp(action_name,&DAT_005ee0ea);
+  iVar1 = _stricmp(action_name,"fire");
   if (iVar1 == 0) {
     return &action_state->fire;
   }
@@ -35,11 +35,11 @@ int * __cdecl core_script_cpp_getActionState_FUN_00543540(SPlayerActionState *ac
   if (iVar1 == 0) {
     return &action_state->light;
   }
-  iVar1 = _stricmp(action_name,&DAT_005ee0fd);
+  iVar1 = _stricmp(action_name,"draw");
   if (iVar1 == 0) {
     return &action_state->draw;
   }
-  iVar1 = _stricmp(action_name,&DAT_005ee102);
+  iVar1 = _stricmp(action_name,"jump");
   if (iVar1 == 0) {
     return &action_state->jump;
   }

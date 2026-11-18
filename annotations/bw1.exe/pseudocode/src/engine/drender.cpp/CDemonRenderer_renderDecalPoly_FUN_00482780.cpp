@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_00482780(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -29,7 +27,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_00482780(CDem
             this_ptr->vertex_buffer_ptr[iVar1].u = pSVar3->vertices[0].texture_u;
             this_ptr->vertex_buffer_ptr[iVar1].v = pSVar3->vertices[0].texture_v;
           }
-          *(int *)(&DAT_01bc1240 + iVar4) = iVar1;
+          *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
           pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
           iVar2 = iVar2 + 1;
           iVar4 = iVar4 + 4;
@@ -42,7 +40,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_00482780(CDem
         iVar4 = 0;
         pSVar3 = poly;
         do {
-          *(int *)(&DAT_01bc1240 + iVar4) = pSVar3->vertices[0].vertex_index;
+          *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar3->vertices[0].vertex_index;
           iVar4 = iVar4 + 4;
           iVar2 = iVar2 + 1;
           pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
@@ -50,17 +48,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_00482780(CDem
       }
     }
     if (this_ptr->shadow_pass_active == 0) {
-      _DAT_01c51d14 = 0x41;
-      _DAT_01c51d18 = 6;
-      _DAT_01c4f02c = core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_00487d8d;
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST);
+      g_VertexPreprocessMode = 6;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_00487d8d;
     }
     else {
-      _DAT_01c51d14 = 0;
-      _DAT_01c51d18 = 0;
-      _DAT_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
+      g_RenderStateFlags.dword = 0;
+      g_VertexPreprocessMode = 0;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
-              (this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);
+              (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
   }
   return;
 }

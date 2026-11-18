@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterActor *this_ptr)
 
 {
@@ -15,7 +13,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
   longlong lVar2;
   int iVar3;
   CBoundingBox3D *this_ptr_00;
-  int *piVar4;
+  CVector3i *pCVar4;
   SWaterVertex *pSVar5;
   SMRGLPrimitivePoly *poly;
   CVector3f *vertex_position;
@@ -38,20 +36,20 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
                 (g_CDemonRenderer_PTR_005ae704,
                  (SMRGLTextureBasic *)(&DAT_005c13cc + this_ptr->texture_frame * 0x18));
       if (0 < this_ptr->vertex_count) {
-        piVar4 = (int *)&DAT_02dda6b8;
+        pCVar4 = &g_CVector3i_02dda6b8;
         pSVar5 = this_ptr->vertices;
         do {
-          *piVar4 = (int)ROUND((pSVar5->local_position).x * _DAT_005a3ed0);
-          piVar4[1] = (int)ROUND((pSVar5->local_position).y * _DAT_005a3ed0);
-          piVar4[2] = (int)ROUND((pSVar5->local_position).z * _DAT_005a3ed0);
+          pCVar4->x = (int)ROUND((pSVar5->local_position).x * 256.0f);
+          pCVar4->y = (int)ROUND((pSVar5->local_position).y * 256.0f);
+          pCVar4->z = (int)ROUND((pSVar5->local_position).z * 256.0f);
           iVar3 = iVar3 + 1;
           pSVar5 = pSVar5 + 1;
-          piVar4 = piVar4 + 3;
+          pCVar4 = pCVar4 + 1;
         } while (iVar3 < this_ptr->vertex_count);
       }
       iVar3 = 0;
       core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-                (g_CDemonSetPtr,this_ptr->vertex_count,(CVector3i *)&DAT_02dda6b8);
+                (g_CDemonSetPtr,this_ptr->vertex_count,&g_CVector3i_02dda6b8);
       if (0 < this_ptr->vertex_count) {
         vertex_position = &this_ptr->vertices[0].world_position;
         iVar6 = 0;

@@ -1,0 +1,325 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 103,
+    "complexity_score": 72,
+    "cross_reference_count": 7,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 145
+  },
+  "cross_references": [
+    {
+      "addr": "0045bdc0",
+      "from_addr": "0045c85d",
+      "name": "core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da860",
+      "from_addr": "004da883",
+      "name": "core_inv.cpp_CInventory_clear_FUN_004da860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004def40",
+      "from_addr": "004def7c",
+      "name": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004def40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc8c0",
+      "from_addr": "004dca6a",
+      "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522350",
+      "from_addr": "00526a40",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056db50",
+      "from_addr": "0056dd3d",
+      "name": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583160",
+      "from_addr": "00583346",
+      "name": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004db8e0",
+    "address_range": [
+      [
+        "004db8e0",
+        "004db9c4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_removeItem_FUN_004db8e0",
+    "signature": "void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004db8e0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_deleteActor_FUN_00408730"
+    },
+    {
+      "addr": "005ba1f0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005ba1f0"
+    },
+    {
+      "addr": "00436710",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005db732",
+      "name": "s_Deleting_s_005db732",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00609ed0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007c158c"
+    },
+    {
+      "addr": "007c158c",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "00526a40",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004da883",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_clear_FUN_004da860",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004def7c",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004def40",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0045c85d",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0045c8c6",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004dca6a",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004dcbfe",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056dd3d",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00583346",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.780487804878049,
+    "instruction_count": 82,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 8,
+      "COPY": 65,
+      "INT_ADD": 43,
+      "INT_AND": 84,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 54,
+      "INT_LEFT": 6,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 31,
+      "INT_SUB": 26,
+      "INT_XOR": 4,
+      "LOAD": 24,
+      "POPCOUNT": 25,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 474
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004f8d00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.731
+    },
+    "bw3.exe": {
+      "addr": "004dbaa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7626
+    },
+    "nocedit.exe": {
+      "addr": "004fea70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7626
+    },
+    "nocturne.exe": {
+      "addr": "004c07b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7626
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "item_to_remove",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "should_delete_actor",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 41,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CInventory *)&pCVar1->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar2 - iVar4) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 24,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

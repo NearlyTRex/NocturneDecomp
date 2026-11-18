@@ -46,8 +46,8 @@
 ;   double DOUBLE_0062a136 = 0.5
 ;   float FLOAT_0065e010 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic SMRGLTextureBasic_0067b0c8
-;   SMRGLTextureBasic[40] SMRGLTextureBasic_ARRAY_0067b100
+;   SMRGLTextureBasic g_FlameGlowTexture
+;   SMRGLTextureBasic[40] g_FlameFrameTextures
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_RenderVertexBuffer[0].u
@@ -408,7 +408,7 @@ section .text
     IDIV ECX                            ; 004ca587
     IMUL EDX,EDX,0x18                   ; 004ca589
     IMUL EAX,dword ptr [EBP + 0x1a8],0xc0 ; 004ca58c
-    ADD EAX,0x67b100                    ; 004ca596 | SMRGLTextureBasic_ARRAY_0067b100
+    ADD EAX,0x67b100                    ; 004ca596 | g_FlameFrameTextures
     ADD EDX,EAX                         ; 004ca59b
     PUSH EDX                            ; 004ca59d
     MOV EBX,dword ptr [0x006703ec]      ; 004ca59e | g_CDemonRendererPtr2
@@ -670,7 +670,7 @@ section .text
     MOV dword ptr [EDX + 0xa8],0x80000  ; 004ca979
     MOV EDI,0x3                         ; 004ca983
     MOV EDX,dword ptr [EAX]             ; 004ca988 | g_CDemonRendererInstance
-    PUSH 0x67b0c8                       ; 004ca98a | SMRGLTextureBasic_0067b0c8
+    PUSH 0x67b0c8                       ; 004ca98a | g_FlameGlowTexture
     XOR EBX,EBX                         ; 004ca98f
     MOV dword ptr [EDX + 0xac],0x80000  ; 004ca991
     PUSH EAX                            ; 004ca99b | g_CDemonRendererInstance

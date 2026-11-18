@@ -7,7 +7,7 @@
 ; CTentacle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 DAT_01d192f8
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     TEST EAX,EAX                        ; 00572f62
     JZ 0x00572f78                       ; 00572f64
         ;   XREF to: 00572f78 (CONDITIONAL_JUMP)  ; LAB_00572f78
-    MOV EAX,[0x00618170]                ; 00572f66 | DAT_00618170
+    MOV EAX,[0x00618170]                ; 00572f66 | g_CDemonMission_PTR_00618170
     CMP dword ptr [EAX + 0x1008],0x0    ; 00572f6b | DAT_01d192f8
     JNZ 0x00572f78                      ; 00572f72
         ;   XREF to: 00572f78 (CONDITIONAL_JUMP)  ; LAB_00572f78

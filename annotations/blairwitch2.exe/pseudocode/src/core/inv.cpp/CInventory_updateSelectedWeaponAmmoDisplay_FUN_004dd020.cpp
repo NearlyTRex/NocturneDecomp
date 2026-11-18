@@ -17,7 +17,8 @@ void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd02
   this_ptr->ammo_ptr->ammo_count = this_ptr->selected_weapons[this_ptr->current_group]->ammo_count;
   this_ptr->ammo_ptr->ammo_type = this_ptr->selected_weapons[this_ptr->current_group]->ammo_type;
   weapon_class_name =
-       (char *)core_actor_cpp_FUN_00408a50(this_ptr->selected_weapons[this_ptr->current_group]);
+       core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50
+                 (&this_ptr->selected_weapons[this_ptr->current_group]->base);
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr->ammo_ptr,weapon_class_name);
   return;
 }

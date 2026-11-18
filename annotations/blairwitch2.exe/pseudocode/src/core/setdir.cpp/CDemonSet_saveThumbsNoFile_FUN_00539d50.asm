@@ -7,10 +7,10 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_00539860 at 00539884
+;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00539860 at 00539884
 ;
 ; Called Functions:
-;   core_setdir.cpp_FUN_005398d0
+;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_005398d0
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
         ;   Label: core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00539d50
     MOV EDX,dword ptr [ESP + 0x8]       ; 00539d52
     PUSH EDX                            ; 00539d56
-    CALL core_setdir.cpp_FUN_005398d0   ; 00539d57
-        ;   XREF to: 005398d0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005398d0()
+    CALL core_setdir.cpp_CDemonSet_saveThumbs_FUN_005398d0 ; 00539d57
+        ;   XREF to: 005398d0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbs_FUN_005398d0(CDemonSet * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00539d5c
     RET                                 ; 00539d5f
 

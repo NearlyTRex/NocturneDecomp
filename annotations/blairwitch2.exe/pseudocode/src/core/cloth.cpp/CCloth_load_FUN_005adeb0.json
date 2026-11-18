@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 387,
-    "complexity_score": 401,
+    "complexity_score": 300,
     "cross_reference_count": 5,
     "function_call_count": 9,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
-    "suspect_count": 24,
+    "pseudocode_lines": 135,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 523
+    "total_lines": 522
   },
   "cross_references": [
     {
@@ -71,7 +69,7 @@
     {
       "addr": "005ae420",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_005ae420"
+      "name": "core_cloth.cpp_CCloth_initializeConnections_FUN_005ae420"
     },
     {
       "addr": "0044efe0",
@@ -86,7 +84,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b89c0",
@@ -106,14 +104,14 @@
     {
       "addr": "00460c70",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460c70"
+      "name": "engine_dosio.cpp_getFile_FUN_00460c70"
     }
   ],
   "globals": [
     {
       "addr": "005f0f71",
-      "name": "DAT_005f0f71",
-      "type": "undefined4",
+      "name": "s_rt_005f0f71",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -136,8 +134,8 @@
     },
     {
       "addr": "005f0fb3",
-      "name": "DAT_005f0fb3",
-      "type": "undefined4",
+      "name": "s_d_005f0fb3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -154,8 +152,8 @@
     },
     {
       "addr": "005f1011",
-      "name": "DAT_005f1011",
-      "type": "undefined4",
+      "name": "s_s_005f1011",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -172,32 +170,32 @@
     },
     {
       "addr": "005f1041",
-      "name": "DAT_005f1041",
-      "type": "undefined4",
+      "name": "s_f_005f1041",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005f1045",
-      "name": "DAT_005f1045",
-      "type": "undefined4",
+      "name": "s_d_005f1045",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005f1049",
-      "name": "DAT_005f1049",
-      "type": "undefined4",
+      "name": "s_d_005f1049",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005f104d",
-      "name": "DAT_005f104d",
-      "type": "undefined4",
+      "name": "s_d_005f104d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005f1051",
-      "name": "DAT_005f1051",
-      "type": "undefined4",
+      "name": "s_d_005f1051",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -208,68 +206,68 @@
     },
     {
       "addr": "006011a8",
-      "name": "DAT_006011a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011a8",
+      "type": "float",
+      "value": "0.00390625"
     },
     {
       "addr": "006011b8",
-      "name": "DAT_006011b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011b8",
+      "type": "float",
+      "value": "0.125"
     },
     {
       "addr": "006011bc",
-      "name": "DAT_006011bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011bc",
+      "type": "float",
+      "value": "32"
     },
     {
       "addr": "006011c0",
-      "name": "DAT_006011c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011c0",
+      "type": "float",
+      "value": "0.9000000"
     },
     {
       "addr": "006011c4",
-      "name": "DAT_006011c4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011c4",
+      "type": "float",
+      "value": "0.005000000"
     },
     {
       "addr": "006011c8",
-      "name": "DAT_006011c8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011c8",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "006011cc",
-      "name": "DAT_006011cc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011cc",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "006011d0",
-      "name": "DAT_006011d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011d0",
+      "type": "float",
+      "value": "0.05000000"
     },
     {
       "addr": "006011d4",
-      "name": "DAT_006011d4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006011d4",
+      "type": "float",
+      "value": "0.1500000"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -532,80 +530,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005f0f71",
-      "severity": "mild",
-      "text": "local_30 = engine_dosio_cpp_FUN_00460c70(\"models\",filename,&DAT_005f0f71);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005f0fb3",
-      "severity": "mild",
-      "text": "_fscanf(p_Var8,&DAT_005f0fb3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005f1011",
-      "severity": "mild",
-      "text": "_fscanf(p_Var8,&DAT_005f1011);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_005f1041",
-      "severity": "mild",
-      "text": "_fscanf(p_Var8,&DAT_005f1041);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_005f1045",
-      "severity": "mild",
-      "text": "_fscanf(p_Var8,&DAT_005f1045);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005f1049",
-      "severity": "mild",
-      "text": "_fscanf(p_Var8,&DAT_005f1049);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_005f104d",
-      "severity": "mild",
-      "text": "_fscanf(local_30,&DAT_005f104d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
-      "match": "DAT_005f1051",
-      "severity": "mild",
-      "text": "_fscanf(p_Var8,&DAT_005f1051);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 115,
+      "line": 113,
       "match": "(CVector3f *)((int)(local_18 + 0xe) +",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);",
@@ -613,7 +539,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 118,
+      "line": 116,
       "match": "(CVector3f *)((int)(local_24 + 0xe) +",
       "severity": "moderate",
       "text": "local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);",
@@ -621,7 +547,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 134,
+      "line": 132,
       "match": "(CVector3f *)((int)(pCVar10 + 0x17) +",
       "severity": "moderate",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",
@@ -629,7 +555,7 @@
     },
     {
       "description": "Pointer value `(local_18 + 0xe)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 115,
+      "line": 113,
       "match": "(int)(local_18 + 0xe)",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);",
@@ -637,7 +563,7 @@
     },
     {
       "description": "Pointer value `(local_24 + 0xe)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 118,
+      "line": 116,
       "match": "(int)(local_24 + 0xe)",
       "severity": "moderate",
       "text": "local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);",
@@ -645,7 +571,7 @@
     },
     {
       "description": "Pointer value `(pCVar10 + 0x17)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 134,
+      "line": 132,
       "match": "(int)(pCVar10 + 0x17)",
       "severity": "moderate",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",
@@ -653,7 +579,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 129,
+      "line": 127,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar12);",
@@ -661,7 +587,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_14` was initialized to the address of an array element's subfield (`local_14 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 114,
+      "line": 112,
       "match": "local_14 = local_14 + N",
       "severity": "moderate",
       "text": "local_14 = local_14 + 0x2b;",
@@ -669,7 +595,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via element-arithmetic `(int)(local_18 + N) + M`, where `N*sizeof(*local_18) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_18->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 115,
+      "line": 113,
       "match": "local_18 = (T *)((int)(local_18 + N) + M)",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);",
@@ -677,7 +603,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_20` was initialized to the address of an array element's subfield (`local_20 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_20)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_20->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 116,
+      "line": 114,
       "match": "local_20 = local_20 + N",
       "severity": "moderate",
       "text": "local_20 = local_20 + 0x2b;",
@@ -685,7 +611,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_1c` was initialized to the address of an array element's subfield (`local_1c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_1c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_1c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 117,
+      "line": 115,
       "match": "local_1c = local_1c + N",
       "severity": "moderate",
       "text": "local_1c = local_1c + 0x2b;",
@@ -693,7 +619,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via element-arithmetic `(int)(local_24 + N) + M`, where `N*sizeof(*local_24) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_24->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 118,
+      "line": 116,
       "match": "local_24 = (T *)((int)(local_24 + N) + M)",
       "severity": "moderate",
       "text": "local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);",
@@ -701,7 +627,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_2c` was initialized to the address of an array element's subfield (`local_2c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_2c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_2c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 119,
+      "line": 117,
       "match": "local_2c = local_2c + N",
       "severity": "moderate",
       "text": "local_2c = local_2c + 0x2b;",
@@ -709,7 +635,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_28` was initialized to the address of an array element's subfield (`local_28 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_28)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_28->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 120,
+      "line": 118,
       "match": "local_28 = local_28 + N",
       "severity": "moderate",
       "text": "local_28 = local_28 + 0x2b;",
@@ -717,7 +643,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via element-arithmetic `(int)(pCVar10 + N) + M`, where `N*sizeof(*pCVar10) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar10->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 134,
+      "line": 132,
       "match": "pCVar10 = (T *)((int)(pCVar10 + N) + M)",
       "severity": "moderate",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",

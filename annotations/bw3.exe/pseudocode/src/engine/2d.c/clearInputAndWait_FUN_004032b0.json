@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 53,
+    "complexity_score": 28,
     "cross_reference_count": 23,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 28,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 72
   },
   "cross_references": [
@@ -42,25 +40,25 @@
     {
       "addr": "004bec20",
       "from_addr": "004befb2",
-      "name": "core_game.cpp_FUN_004bec20",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e4400",
       "from_addr": "004e4447",
-      "name": "core_main.c_FUN_004e4400",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004eae80",
-      "from_addr": "004ec1b2",
-      "name": "core_menu.cpp_FUN_004eae80",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_004e4400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e80f0",
       "from_addr": "004e815d",
       "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eae80",
+      "from_addr": "004ec1b2",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -96,7 +94,7 @@
     {
       "addr": "00532b80",
       "from_addr": "00533b5b",
-      "name": "core_set.cpp_FUN_00532b80",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00532b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -144,7 +142,7 @@
     {
       "addr": "00580a50",
       "from_addr": "00580b6e",
-      "name": "wincore_winrun.cpp_FUN_00580a50",
+      "name": "wincore_winrun.cpp_mainWindowProc_FUN_00580a50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -186,8 +184,8 @@
   "globals": [
     {
       "addr": "01c6cef0",
-      "name": "DAT_01c6cef0",
-      "type": "undefined4",
+      "name": "g_KeyboardState",
+      "type": "char[4952]",
       "value": null
     }
   ],
@@ -253,22 +251,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01c6cef0",
-      "severity": "mild",
-      "text": "(&DAT_01c6cef0)[iVar2] = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_01c6cef0",
-      "severity": "mild",
-      "text": "(&DAT_01c6cef0)[iVar2] = 0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

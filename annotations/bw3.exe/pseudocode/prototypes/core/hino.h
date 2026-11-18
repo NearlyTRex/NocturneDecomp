@@ -21,9 +21,9 @@ CDemonActorType * __cdecl CHino::getActorType(CHino *this_ptr);
 // Address: 0059b670
 CHino * __cdecl CHino::ctor(CHino *this_ptr);
 
-// Original: core_hino.cpp_FUN_0059b740
+// Original: core_hino.cpp_percentToFixedAlpha_FUN_0059b740
 // Address: 0059b740
-int FUN_0059b740(int param_1);
+int __cdecl percentToFixedAlpha(int percent);
 
 // Original: core_hino.cpp_CHino_setup_FUN_0059b770
 // Address: 0059b770
@@ -33,9 +33,9 @@ void __cdecl CHino::setup(CHino *this_ptr);
 // Address: 0059b960
 void __cdecl CHino::process(CHino *this_ptr,float delta_time);
 
-// Original: core_hino.cpp_FUN_0059d000
+// Original: core_hino.cpp_CHino_isHeroAtPlatform_FUN_0059d000
 // Address: 0059d000
-bool FUN_0059d000(void);
+int __cdecl CHino::isHeroAtPlatform(CHino *this_ptr);
 
 // Original: core_hino.cpp_CHino_renderTransparent_FUN_0059d120
 // Address: 0059d120

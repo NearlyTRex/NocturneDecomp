@@ -14,8 +14,8 @@
 ;   engine_font.cpp_CBitFont_printCenterFV_FUN_004b1150 at 004b119a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5b0
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5b0
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0
@@ -40,8 +40,8 @@ section .text
     PUSH ESI                            ; 004b10c7
     MOV EBP,dword ptr [ESP + 0x24]      ; 004b10c8
     PUSH EDX                            ; 004b10cc
-    MOV EDI,dword ptr [0x01c6b5b0]      ; 004b10cd | DAT_01c6b5b0
-    MOV EBX,dword ptr [0x01c6b5a8]      ; 004b10d3 | DAT_01c6b5a8
+    MOV EDI,dword ptr [0x01c6b5b0]      ; 004b10cd | g_INT_01c6b5b0
+    MOV EBX,dword ptr [0x01c6b5a8]      ; 004b10d3 | g_INT_01c6b5a8
     PUSH EBP                            ; 004b10d9
     ADD EBX,EDI                         ; 004b10da
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004b10dc

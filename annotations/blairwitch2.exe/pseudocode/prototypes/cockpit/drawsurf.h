@@ -65,9 +65,9 @@ void __cdecl CDrawSurface::drawClippedLine(CDrawSurface *this_ptr,int x1,int y1,
 // Address: 00466960
 void __cdecl CDrawSurface::drawLineBresenham(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
-// Original: cockpit_drawsurf.cpp_FUN_00466a50
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00466a50
 // Address: 00466a50
-void FUN_00466a50(CDrawSurface *param_1,int param_2,int param_3,int param_4);
+void __cdecl CDrawSurface::drawDashedLine(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
 // Original: cockpit_drawsurf.cpp_computeCohenSutherlandOutcode_FUN_00466c60
 // Address: 00466c60
@@ -97,33 +97,33 @@ void __cdecl CDrawSurface::drawRectangleOutline(CDrawSurface *this_ptr,int x,int
 // Address: 004673b0
 void __cdecl CDrawSurface::drawSurfaceBorder(CDrawSurface *this_ptr);
 
-// Original: cockpit_drawsurf.cpp_FUN_004674b0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_004674b0
 // Address: 004674b0
-void FUN_004674b0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CDrawSurface::drawSolidRectangle(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
-// Original: cockpit_drawsurf.cpp_FUN_00467610
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610
 // Address: 00467610
-void __cdecl FUN_00467610(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
+void __cdecl CDrawSurface::drawAnimatedDashedLine(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
-// Original: cockpit_drawsurf.cpp_FUN_004677e0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0
 // Address: 004677e0
-void __cdecl FUN_004677e0(CDrawSurface *this_ptr);
+void __cdecl CDrawSurface::drawAnimatedFullSurface(CDrawSurface *this_ptr);
 
-// Original: cockpit_drawsurf.cpp_FUN_004678e0
+// Original: cockpit_drawsurf.cpp_getDashLength_FUN_004678e0
 // Address: 004678e0
-undefined4 FUN_004678e0(void);
+int __cdecl getDashLength(void);
 
-// Original: cockpit_drawsurf.cpp_FUN_004678f0
+// Original: cockpit_drawsurf.cpp_getDashAnimationThreshold_FUN_004678f0
 // Address: 004678f0
-undefined4 FUN_004678f0(void);
+float __cdecl getDashAnimationThreshold(void);
 
-// Original: cockpit_drawsurf.cpp_FUN_00467900
+// Original: cockpit_drawsurf.cpp_setDashLength_FUN_00467900
 // Address: 00467900
-void FUN_00467900(void);
+void __cdecl setDashLength(int length);
 
-// Original: cockpit_drawsurf.cpp_FUN_00467910
+// Original: cockpit_drawsurf.cpp_setDashAnimationThreshold_FUN_00467910
 // Address: 00467910
-void FUN_00467910(undefined4 param_1);
+void __cdecl setDashAnimationThreshold(float threshold);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00467920
 // Address: 00467920
@@ -215,7 +215,7 @@ void __cdecl CDrawSurface::drawTextCenteredInAreaWithWidthPrintf(CDrawSurface *t
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00468900
 // Address: 00468900
-void __cdecl CDrawSurface::drawTextCenteredFullWidth(CDrawSurface *this_ptr,char *param_2,int param_3);
+void __cdecl CDrawSurface::drawTextCenteredFullWidth(CDrawSurface *this_ptr,char *text,int y);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00468920
 // Address: 00468920
@@ -233,9 +233,9 @@ void __cdecl CDrawSurface::drawTextCenteredFullSurface(CDrawSurface *this_ptr,ch
 // Address: 00468a90
 void __cdecl CDrawSurface::drawTextCenteredFullSurfacePrintf(CDrawSurface *this_ptr,char *format);
 
-// Original: cockpit_drawsurf.cpp_FUN_00468af0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00468af0
 // Address: 00468af0
-int FUN_00468af0(void);
+int __cdecl CDrawSurface::getCharWidth(CDrawSurface *this_ptr,int char_code);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00468b30
 // Address: 00468b30

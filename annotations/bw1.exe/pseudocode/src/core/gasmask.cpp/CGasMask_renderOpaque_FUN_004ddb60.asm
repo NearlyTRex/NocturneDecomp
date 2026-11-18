@@ -7,10 +7,10 @@
 ; CGasMask *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
@@ -28,7 +28,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x40]      ; 004ddb66
     LEA EAX,[EBX + 0x20]                ; 004ddb6a
     PUSH EAX                            ; 004ddb6d
-    MOV EDX,dword ptr [0x00612560]      ; 004ddb6e | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 004ddb6e | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 004ddb74
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0 ; 004ddb75
         ;   XREF to: 004837b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -36,7 +36,7 @@ section .text
     PUSH 0x0                            ; 004ddb7d
     LEA EAX,[EBX + 0x30]                ; 004ddb7f
     PUSH EAX                            ; 004ddb82
-    MOV ECX,dword ptr [0x00612560]      ; 004ddb83 | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 004ddb83 | g_CDemonRenderer_PTR_00612560
     PUSH ECX                            ; 004ddb89
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850 ; 004ddb8a
         ;   XREF to: 00483850 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
@@ -53,14 +53,14 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 004ddbb2
     PUSH EAX                            ; 004ddbb6
     MOVSD.REP ES:EDI,ESI                ; 004ddbb7
-    CALL core_box.cpp_FUN_004207b0      ; 004ddbb9
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 004ddbb9
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 004ddbbe
     MOV ESI,EAX                         ; 004ddbc1
     TEST EAX,EAX                        ; 004ddbc3
     JNZ 0x004ddbdf                      ; 004ddbc5
         ;   XREF to: 004ddbdf (CONDITIONAL_JUMP)  ; LAB_004ddbdf
-    MOV EBX,dword ptr [0x00612560]      ; 004ddbc7 | DAT_00612560
+    MOV EBX,dword ptr [0x00612560]      ; 004ddbc7 | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_004ddbc7
     PUSH EBX                            ; 004ddbcd
     CALL engine_drender.cpp_pop_FUN_004839a0 ; 004ddbce

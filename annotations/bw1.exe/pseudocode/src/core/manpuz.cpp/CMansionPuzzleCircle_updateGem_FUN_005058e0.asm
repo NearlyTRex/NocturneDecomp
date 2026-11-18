@@ -12,12 +12,12 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400 at 00504469
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7539
-;   undefined4 DAT_00603444
-;   undefined4 DAT_00603448
+;   float g_FLOAT_005e7539 = 255
+;   float g_FLOAT_00603444 = 2
+;   float g_FLOAT_00603448 = 2
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_00506200
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210
@@ -38,9 +38,9 @@ section .text
     SUB ESP,0x38                        ; 005058e4
     MOV EBP,dword ptr [ESP + 0x4c]      ; 005058e7
     FLD float ptr [ESP + 0x54]          ; 005058eb
-    FMUL float ptr [0x005e7539]         ; 005058ef | DAT_005e7539
+    FMUL float ptr [0x005e7539]         ; 005058ef | g_FLOAT_005e7539
     FST float ptr [ESP + 0x1c]          ; 005058f5
-    FDIV float ptr [0x00603444]         ; 005058f9 | DAT_00603444
+    FDIV float ptr [0x00603444]         ; 005058f9 | g_FLOAT_00603444
     MOV EDX,dword ptr [ESP + 0x50]      ; 005058ff
     LEA EAX,[EDX*0x4 + 0x0]             ; 00505903
     SUB EAX,EDX                         ; 0050590a
@@ -54,8 +54,8 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 00505920
     PUSH EBP                            ; 00505924
     FSTP float ptr [ESP + 0x3c]         ; 00505925
-    CALL core_actor.cpp_FUN_00408b40    ; 00505929
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00505929
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0050592e
     LEA EAX,[ESP + 0xc]                 ; 00505931
     PUSH EAX                            ; 00505935
@@ -120,7 +120,7 @@ section .text
         ;   XREF to: 005056f0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0(CMansionPuzzleCircle * this_ptr, int panel_index, float * out_r, float * out_g, ...)
     ADD ESP,0x14                        ; 005059de
     FLD float ptr [ESP + 0x1c]          ; 005059e1
-    FDIV float ptr [0x00603448]         ; 005059e5 | DAT_00603448
+    FDIV float ptr [0x00603448]         ; 005059e5 | g_FLOAT_00603448
     FLD float ptr [ESP + 0x24]          ; 005059eb
     FSUB float ptr [EBX]                ; 005059ef
     MOV EDX,0x1                         ; 005059f1

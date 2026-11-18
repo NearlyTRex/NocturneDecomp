@@ -16,16 +16,16 @@
 ;   core_ground.cpp_CGround_transformAndStoreVertices_FUN_004e7780 at 004e7b48
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00629014
-;   undefined4 DAT_0062901c
-;   undefined4 DAT_00629034
-;   undefined4 DAT_00629038
-;   undefined4 DAT_0062903c
-;   undefined4 DAT_00629040
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_00629014
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].projected_vertex.transformed_z
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].r
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].g
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].b
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].a
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_getVertexIndex_FUN_004e7670
-;   engine_special.cpp_FUN_0058043c
+;   engine_special.cpp_transformPoint_FUN_0058043c
 ;
 ; *****************************************************************************
 
@@ -79,28 +79,28 @@ section .text
     MOV EDX,ESP                         ; 004e7705
     SHL EDI,0x4                         ; 004e7707
     PUSH EDX                            ; 004e770a
-    ADD EDI,0x629014                    ; 004e770b | DAT_00629014
+    ADD EDI,0x629014                    ; 004e770b | g_SRenderVertex_ARRAY_00629014
     PUSH EDI                            ; 004e7711
     MOV dword ptr [ESP + 0xc],EBX       ; 004e7712
-    CALL engine_special.cpp_FUN_0058043c ; 004e7716
-        ;   XREF to: 0058043c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0058043c(SProjectedVertex * output, CVector3i * input)
-    MOV dword ptr [EDI + 0x20],0x3fff   ; 004e771b | DAT_00629034
-    MOV dword ptr [EDI + 0x24],0x3fff   ; 004e7722 | DAT_00629038
+    CALL engine_special.cpp_transformPoint_FUN_0058043c ; 004e7716
+        ;   XREF to: 0058043c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0058043c(SProjectedVertex * output, CVector3i * input)
+    MOV dword ptr [EDI + 0x20],0x3fff   ; 004e771b | g_SRenderVertex_ARRAY_00629014[0].r
+    MOV dword ptr [EDI + 0x24],0x3fff   ; 004e7722 | g_SRenderVertex_ARRAY_00629014[0].g
     ADD ESP,0x8                         ; 004e7729
-    MOV EBX,dword ptr [EDI + 0x8]       ; 004e772c | DAT_0062901c
-    MOV dword ptr [EDI + 0x28],0x3fff   ; 004e772f | DAT_0062903c
+    MOV EBX,dword ptr [EDI + 0x8]       ; 004e772c | g_SRenderVertex_ARRAY_00629014[0].projected_vertex.transformed_z
+    MOV dword ptr [EDI + 0x28],0x3fff   ; 004e772f | g_SRenderVertex_ARRAY_00629014[0].b
     TEST EBX,EBX                        ; 004e7736
     JL 0x004e7762                       ; 004e7738
         ;   XREF to: 004e7762 (CONDITIONAL_JUMP)  ; LAB_004e7762
     MOV EBP,dword ptr [ESI + 0x1c]      ; 004e773a
     MOV EBX,dword ptr [ESI + 0x10]      ; 004e773d
     IMUL EBX,EBP                        ; 004e7740
-    MOV EDX,dword ptr [EDI + 0x8]       ; 004e7743 | DAT_0062901c
+    MOV EDX,dword ptr [EDI + 0x8]       ; 004e7743 | g_SRenderVertex_ARRAY_00629014[0].projected_vertex.transformed_z
     SHL EDX,0x8                         ; 004e7746
     MOV EAX,EDX                         ; 004e7749
     SAR EDX,0x1f                        ; 004e774b
     IDIV EBX                            ; 004e774e
-    MOV dword ptr [EDI + 0x2c],EAX      ; 004e7750 | DAT_00629040
+    MOV dword ptr [EDI + 0x2c],EAX      ; 004e7750 | g_SRenderVertex_ARRAY_00629014[0].a
     CMP EAX,0xffff                      ; 004e7753
     JG 0x004e776b                       ; 004e7758
         ;   XREF to: 004e776b (CONDITIONAL_JUMP)  ; LAB_004e776b
@@ -111,11 +111,11 @@ section .text
     POP ESI                             ; 004e775f
     POP EBX                             ; 004e7760
     RET                                 ; 004e7761
-    MOV dword ptr [EDI + 0x2c],0x0      ; 004e7762 | DAT_00629040
+    MOV dword ptr [EDI + 0x2c],0x0      ; 004e7762 | g_SRenderVertex_ARRAY_00629014[0].a
         ;   Label: LAB_004e7762
     JMP 0x004e775a                      ; 004e7769
         ;   XREF to: 004e775a (UNCONDITIONAL_JUMP)  ; LAB_004e775a
-    MOV dword ptr [EDI + 0x2c],0xffff   ; 004e776b | DAT_00629040
+    MOV dword ptr [EDI + 0x2c],0xffff   ; 004e776b | g_SRenderVertex_ARRAY_00629014[0].a
         ;   Label: LAB_004e776b
     ADD ESP,0xc                         ; 004e7772
     POP EBP                             ; 004e7775

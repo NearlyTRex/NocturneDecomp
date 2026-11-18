@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 53,
+    "complexity_score": 39,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 3,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
     "suspect_types": [
-      "suspect_float",
-      "undefined_data"
+      "suspect_float"
     ],
-    "total_lines": 46
+    "total_lines": 47
   },
   "cross_references": [
     {
@@ -51,7 +50,7 @@
   "globals": [
     {
       "addr": "007bcc84",
-      "name": "DAT_007bcc84",
+      "name": "g_CLightActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -157,16 +156,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_007bcc84",
-      "severity": "mild",
-      "text": "((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007bcc84);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 11,
+      "line": 12,
       "match": "2.8026e-45",
       "severity": "mild",
       "text": "((fVar1 = pCVar2[2].particle_systems[4].position.z, fVar1 == 2.8026e-45 ||",
@@ -174,7 +165,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 12,
+      "line": 13,
       "match": "4.2039e-45",
       "severity": "mild",
       "text": "(fVar1 == 4.2039e-45)))) {",

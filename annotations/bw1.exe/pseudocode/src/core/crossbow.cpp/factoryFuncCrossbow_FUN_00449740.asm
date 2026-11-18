@@ -15,7 +15,7 @@ section .text
     PUSH 0x820                          ; 00449740
         ;   Label: core_crossbow.cpp_factoryFuncCrossbow_FUN_00449740
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00449745
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0044974a
     TEST EAX,EAX                        ; 0044974d
     JNZ 0x00449752                      ; 0044974f

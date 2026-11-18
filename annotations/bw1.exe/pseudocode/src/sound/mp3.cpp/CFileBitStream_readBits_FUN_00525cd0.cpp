@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0(CFileBitStream *this_ptr,int num_bits)
 
 {
@@ -18,9 +16,9 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0(CFileBitStream *
   
   local_14 = 0;
   if (0x20 < num_bits) {
-    _DAT_01d1d400 = "..\\sound\\mp3.cpp";
-    _DAT_01d1d404 = 0x2ab;
-    core_main_c_FUN_005030e0("Cannot read or write more than %d bits at a time.  File: %s",0x20,&DAT_01d404c8);
+    g_CHAR_PTR_01d1d400 = "..\\sound\\mp3.cpp";
+    g_INT_01d1d404 = 0x2ab;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Cannot read or write more than %d bits at a time.  File: %s");
   }
   this_ptr->total_bits_read = this_ptr->total_bits_read + num_bits;
   do {
@@ -78,8 +76,8 @@ LAB_00525cfc:
     iVar2 = this_ptr->bits_available - iVar2;
     local_14 = local_14 |
                ((int)((uint)(byte)this_ptr->buffer[this_ptr->current_byte_index] &
-                     *(uint *)(&DAT_006206b0 + this_ptr->bits_available * 4)) >>
-               ((byte)iVar2 & 0x1f)) << ((byte)num_bits & 0x1f);
+                     g_MpegBitMaskTableMultiBit[this_ptr->bits_available]) >> ((byte)iVar2 & 0x1f))
+               << ((byte)num_bits & 0x1f);
     this_ptr->bits_available = iVar2;
   } while( true );
 }

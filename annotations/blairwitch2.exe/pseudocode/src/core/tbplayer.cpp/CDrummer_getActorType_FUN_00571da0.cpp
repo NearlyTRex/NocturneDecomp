@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_tbplayer_cpp_CDrummer_getActorType_FUN_00571da0(CDrummer *this_ptr)
 
 {
-  return (CDemonActorType *)0x264bffc;
+  return &g_CDemonActorType_0264bffc;
 }

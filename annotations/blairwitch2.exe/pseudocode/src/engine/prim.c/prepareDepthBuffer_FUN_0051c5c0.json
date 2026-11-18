@@ -2,31 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 56,
+    "complexity_score": 40,
     "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 104
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
   },
   "cross_references": [
-    {
-      "addr": "004625f0",
-      "from_addr": "0046270a",
-      "name": "core_dpart.cpp_FUN_004625f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059a0b0",
-      "from_addr": "0059a3c0",
-      "name": "core_zombie.cpp_FUN_0059a0b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0059a5d0",
       "from_addr": "0059a85b",
@@ -40,9 +26,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051da80",
-      "from_addr": "0051dd99",
-      "name": "engine_prim.c_FUN_0051da80",
+      "addr": "004625f0",
+      "from_addr": "0046270a",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -55,6 +41,18 @@
       "addr": "0051cb20",
       "from_addr": "0051cd28",
       "name": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051da80",
+      "from_addr": "0051dd99",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_0051da80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a0b0",
+      "from_addr": "0059a3c0",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -74,8 +72,8 @@
   "globals": [
     {
       "addr": "01c38b50",
-      "name": "DAT_01c38b50",
-      "type": "undefined4",
+      "name": "g_ProcessorType",
+      "type": "int",
       "value": null
     }
   ],
@@ -85,7 +83,7 @@
       {
         "call_addr": "0046270a",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_004625f0",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,7 +94,7 @@
       {
         "call_addr": "0059a3c0",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0059a0b0",
+        "caller": "engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +105,7 @@
       {
         "call_addr": "0051dd99",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0051da80",
+        "caller": "engine_prim.c_renderScanlinePolygon_FUN_0051da80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -244,14 +242,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

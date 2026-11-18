@@ -10,19 +10,19 @@
 ; XREF[6]:
 ;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00482770 at 0048279a
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00482350 at 00482387
+;   shape_edittool.cpp_CPickList_insert_FUN_00483c30 at 00483c59
+;   shape_edittool.cpp_CPickList_remove_FUN_00483cb0 at 00483cdf
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 0048363c
-;   shape_edittool.cpp_FUN_00483c30 at 00483c59
-;   shape_edittool.cpp_FUN_00483cb0 at 00483cdf
-;   shape_edittool.cpp_FUN_00483e10 at 00483e2d
+;   shape_edittool.cpp_CPickList_swap_FUN_00483e10 at 00483e2d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d2997
 ;   TerminatedCString s_CPickList_isItemEnabled_005d29ad
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -44,10 +44,10 @@ section .text
     MOV ECX,0x5d2997                    ; 00483ab3 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x1104                      ; 00483ab8
     PUSH 0x5d29ad                       ; 00483abd | = "CPickList::isItemEnabled - invalid index"
-    MOV dword ptr [0x01d046a0],ECX      ; 00483ac2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00483ac8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00483ace
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00483ac2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00483ac8 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00483ace
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00483ad3
     POP EDI                             ; 00483ad6
     CMP EBX,dword ptr [ESI + 0x1ac]     ; 00483ad7

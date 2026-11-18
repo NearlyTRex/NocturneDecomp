@@ -6,15 +6,18 @@ Category `/Nocturne/Struct/Game`.
 |---|---:|---|---:|
 | nocedit | 276 | fields | — |
 | nocturne | 276 | fields | — |
+| bw1 | 276 | fields | — |
+| blairwitch2 | 276 | fields | — |
+| bw3 | 276 | fields | — |
 
 ## Fields
 
 Offsets in hex; blank where the build's layout does not have the field.
 
-| field | type | nocedit | nocturne |
-|---|---|---:|---:|
-| `timestamp` | `uint` | 0x0 | 0x0 |
-| `sequence_number` | `uint` | 0x4 | 0x4 |
-| `ack_flags` | `_BIT_INTEGER32` | 0x8 | 0x8 |
-| `player_timestamps` | `uint[2]` | 0xc | 0xc |
-| `message` | `char[256]` | 0x14 | 0x14 |
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `timestamp` | `uint` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `sequence_number` | `uint` | 0x4 | 0x4 | 0x4 | 0x4 | 0x4 |
+| `ack_flags` | `_BIT_INTEGER32` | 0x8 | 0x8 | 0x8 | 0x8 | 0x8 |
+| `player_timestamps` | `uint[2]` | 0xc | 0xc | 0xc | 0xc | 0xc |
+| `message` | `char[256]` | 0x14 | 0x14 | 0x14 | 0x14 | 0x14 |

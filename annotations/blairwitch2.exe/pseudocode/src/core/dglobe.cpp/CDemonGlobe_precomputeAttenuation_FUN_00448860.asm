@@ -16,16 +16,16 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 00486e2d
 ;   core_fire.cpp_CFireball_process_FUN_00495960 at 004959fa
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_004969a0 at 004969cd
-;   core_flame.cpp_FUN_004a0590 at 004a0649
+;   core_flame.cpp_CFlame_updateGlobe_FUN_004a0590 at 004a0649
 ;   core_keyactor.cpp_CKeyActor_process_FUN_004df1c0 at 004df237
-;   core_mine.cpp_FUN_005ad940 at 005ad9cc
+;   core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940 at 005ad9cc
 ;   core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360 at 0059d38d
 ;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053d008
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cf002
-;   undefined4 DAT_005cf00a
+;   float g_FLOAT_005cf002 = 256
+;   double g_DOUBLE_005cf00a = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -40,17 +40,17 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 00448867
     FMUL ST0                            ; 0044886b
     FLD float ptr [ESP + 0x10]          ; 0044886d
-    FMUL float ptr [0x005cf002]         ; 00448871 | DAT_005cf002
+    FMUL float ptr [0x005cf002]         ; 00448871 | g_FLOAT_005cf002
     MOV EAX,dword ptr [ESP + 0x10]      ; 00448877
     FXCH                                ; 0044887b
-    FMUL double ptr [0x005cf00a]        ; 0044887d | DAT_005cf00a
+    FMUL double ptr [0x005cf00a]        ; 0044887d | g_DOUBLE_005cf00a
     MOV dword ptr [EDX + 0x30],EAX      ; 00448883
     FXCH                                ; 00448886
     CALL crt_math.c_round_FUN_005b7ff0  ; 00448888
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0044888d
     CALL crt_math.c_round_FUN_005b7ff0  ; 0044888f
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EDX + 0x10]        ; 00448894
     MOV ECX,dword ptr [EDX + 0x10]      ; 00448897
     FISTP dword ptr [EDX + 0xc]         ; 0044889a
@@ -74,7 +74,7 @@ section .text
     MOV EAX,dword ptr [EDX + 0x10]      ; 004488c5
     FILD word ptr [ESP + 0x4]           ; 004488c8
     SAR EAX,0x10                        ; 004488cc
-    FMUL double ptr [0x005cf00a]        ; 004488cf | DAT_005cf00a
+    FMUL double ptr [0x005cf00a]        ; 004488cf | g_DOUBLE_005cf00a
     MOV dword ptr [ESP],EAX             ; 004488d5
     FILD dword ptr [ESP]                ; 004488d8
     FDIVP                               ; 004488db
@@ -82,7 +82,7 @@ section .text
     FSTP float ptr [EDX + 0x34]         ; 004488df
     FSTP float ptr [EDX + 0x38]         ; 004488e2
     CALL crt_math.c_round_FUN_005b7ff0  ; 004488e5
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EDX + 0x14]        ; 004488ea
     ADD ESP,0x8                         ; 004488ed
     RET                                 ; 004488f0

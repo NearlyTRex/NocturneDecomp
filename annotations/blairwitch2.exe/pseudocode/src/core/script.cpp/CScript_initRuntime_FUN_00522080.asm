@@ -10,25 +10,25 @@
 ; undefined1       Stack[-0x6f]:1  local_6f
 ;
 ; XREF[3]:
-;   core_mission.cpp_FUN_004fce00 at 004fced8
-;   core_script.cpp_FUN_00521cf0 at 00521e26
-;   core_script.cpp_FUN_00521ff0 at 0052200f
+;   core_mission.cpp_CDemonMission_startMission_FUN_004fce00 at 004fced8
+;   core_script.cpp_CScript_loadScript_FUN_00521cf0 at 00521e26
+;   core_script.cpp_CScript_validateSyntax_FUN_00521ff0 at 0052200f
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005e2f9d
-;   undefined1 DAT_005e2f9e
-;   undefined1 DAT_005e2f9f
-;   undefined1 DAT_005e2fa0
+;   TerminatedCString s_wav_005e2f9d
+;   undefined4 s_wav_005e2f9d+1
+;   undefined4 s_wav_005e2f9d+2
+;   undefined4 s_wav_005e2f9d+3
 ;   TerminatedCString s_smill_wav_005e2fa2
-;   undefined1 DAT_005e2fac
-;   undefined1 DAT_005e2fad
-;   undefined1 DAT_005e2fae
-;   undefined1 DAT_005e2faf
+;   TerminatedCString s_s_0_85_005e2fac
+;   undefined4 s_s_0_85_005e2fac+1
+;   undefined4 s_s_0_85_005e2fac+2
+;   undefined4 s_s_0_85_005e2fac+3
 ;   TerminatedCString s_town_wav_005e2fb2
-;   undefined1 DAT_005e2fbb
-;   undefined1 DAT_005e2fbc
-;   undefined1 DAT_005e2fbd
-;   undefined1 DAT_005e2fbe
+;   TerminatedCString s_s_0_85_005e2fbb
+;   undefined4 s_s_0_85_005e2fbb+1
+;   undefined4 s_s_0_85_005e2fbb+2
+;   undefined4 s_s_0_85_005e2fbb+3
 ;   CGame* g_CGamePtr = 01cb6900
 ;   ... and 8 more
 ;
@@ -52,7 +52,7 @@ section .text
     MOV dword ptr [EBX + 0x48],0xbf800000 ; 00522095
     MOV dword ptr [EBX + 0x4c],0xbf800000 ; 0052209c
     MOV dword ptr [EBX],0x0             ; 005220a3
-    MOV EAX,[0x01cedef4]                ; 005220a9 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005220a9 | g_INT_01cedef4
     MOV dword ptr [EBX + 0x4],0x0       ; 005220ae
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 005220b5
     MOV dword ptr [EBX + 0x18],0x0      ; 005220bc
@@ -66,7 +66,7 @@ section .text
     MOV dword ptr [EAX + 0x244],EDX     ; 005220e9 | g_CGameInstance.letterbox_mode
     LEA EAX,[ESP + 0x4]                 ; 005220ef
     PUSH EAX                            ; 005220f3
-    MOV dword ptr [0x01e65900],EDX      ; 005220f4 | DAT_01e65900
+    MOV dword ptr [0x01e65900],EDX      ; 005220f4 | g_ScriptTimeScale
     MOV dword ptr [EBX + 0x450],0xbf800000 ; 005220fa
     PUSH EDX                            ; 00522104
     MOV dword ptr [EBX + 0x454],0xffffffff ; 00522105
@@ -75,12 +75,12 @@ section .text
     ADD EAX,0x14d0f0                    ; 00522115
     MOV dword ptr [EBX + 0x458],EDX     ; 0052211a
     PUSH EAX                            ; 00522120
-    MOV dword ptr [0x01e65908],EDX      ; 00522121 | DAT_01e65908
+    MOV dword ptr [0x01e65908],EDX      ; 00522121 | g_ScriptLoopWarningShown
     MOV dword ptr [EBX + 0x14],EDX      ; 00522127
     CALL crt_string.c_splitpath_FUN_005b9e58 ; 0052212a
         ;   XREF to: 005b9e58 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005b9e58(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 0052212f
-    MOV ESI,0x5e2f9d                    ; 00522132 | DAT_005e2f9d
+    MOV ESI,0x5e2f9d                    ; 00522132 | = ".wav"
     MOV EDI,ESP                         ; 00522137
     PUSH EDI                            ; 00522139
     SUB ECX,ECX                         ; 0052213a
@@ -88,13 +88,13 @@ section .text
     MOV AL,0x0                          ; 0052213d
     SCASB.REPNE ES:EDI                  ; 0052213f
     DEC EDI                             ; 00522141
-    MOV AL,byte ptr [ESI]               ; 00522142 | DAT_005e2f9d | DAT_005e2f9f
+    MOV AL,byte ptr [ESI]               ; 00522142 | = ".wav" | s_wav_005e2f9d+2
         ;   Label: LAB_00522142
     MOV byte ptr [EDI],AL               ; 00522144
     CMP AL,0x0                          ; 00522146
     JZ 0x0052215a                       ; 00522148
         ;   XREF to: 0052215a (CONDITIONAL_JUMP)  ; LAB_0052215a
-    MOV AL,byte ptr [ESI + 0x1]         ; 0052214a | DAT_005e2f9e | DAT_005e2fa0
+    MOV AL,byte ptr [ESI + 0x1]         ; 0052214a | s_wav_005e2f9d+1 | s_wav_005e2f9d+3
     ADD ESI,0x2                         ; 0052214d
     MOV byte ptr [EDI + 0x1],AL         ; 00522150
     ADD EDI,0x2                         ; 00522153
@@ -112,7 +112,7 @@ section .text
     TEST EAX,EAX                        ; 0052216d
     JNZ 0x0052219a                      ; 0052216f
         ;   XREF to: 0052219a (CONDITIONAL_JUMP)  ; LAB_0052219a
-    MOV ESI,0x5e2fac                    ; 00522171 | DAT_005e2fac
+    MOV ESI,0x5e2fac                    ; 00522171 | = "@0.85"
     MOV EDI,ESP                         ; 00522176
     PUSH EDI                            ; 00522178
     SUB ECX,ECX                         ; 00522179
@@ -120,13 +120,13 @@ section .text
     MOV AL,0x0                          ; 0052217c
     SCASB.REPNE ES:EDI                  ; 0052217e
     DEC EDI                             ; 00522180
-    MOV AL,byte ptr [ESI]               ; 00522181 | DAT_005e2fac | DAT_005e2fae
+    MOV AL,byte ptr [ESI]               ; 00522181 | = "@0.85" | s_s_0_85_005e2fac+2
         ;   Label: LAB_00522181
     MOV byte ptr [EDI],AL               ; 00522183
     CMP AL,0x0                          ; 00522185
     JZ 0x00522199                       ; 00522187
         ;   XREF to: 00522199 (CONDITIONAL_JUMP)  ; LAB_00522199
-    MOV AL,byte ptr [ESI + 0x1]         ; 00522189 | DAT_005e2fad | DAT_005e2faf
+    MOV AL,byte ptr [ESI + 0x1]         ; 00522189 | s_s_0_85_005e2fac+1 | s_s_0_85_005e2fac+3
     ADD ESI,0x2                         ; 0052218c
     MOV byte ptr [EDI + 0x1],AL         ; 0052218f
     ADD EDI,0x2                         ; 00522192
@@ -148,7 +148,7 @@ section .text
     MOV EAX,ESP                         ; 005221b0
         ;   Label: LAB_005221b0
     PUSH EAX                            ; 005221b2
-    MOV ESI,dword ptr [0x0061c068]      ; 005221b3 | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 005221b3 | g_CSound_PTR_0061c068
     PUSH ESI                            ; 005221b9
     CALL core_sound.cpp_CSound_playAmbientSound_FUN_0055adc0 ; 005221ba
         ;   XREF to: 0055adc0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playAmbientSound_FUN_0055adc0(CSound * this_ptr, char * sound_name)
@@ -159,7 +159,7 @@ section .text
     POP ESI                             ; 005221cd
     POP EBX                             ; 005221ce
     RET                                 ; 005221cf
-    MOV ESI,0x5e2fbb                    ; 005221d0 | DAT_005e2fbb
+    MOV ESI,0x5e2fbb                    ; 005221d0 | = "@0.85"
         ;   Label: LAB_005221d0
     MOV EDI,ESP                         ; 005221d5
     PUSH EDI                            ; 005221d7
@@ -168,13 +168,13 @@ section .text
     MOV AL,0x0                          ; 005221db
     SCASB.REPNE ES:EDI                  ; 005221dd
     DEC EDI                             ; 005221df
-    MOV AL,byte ptr [ESI]               ; 005221e0 | DAT_005e2fbb | DAT_005e2fbd
+    MOV AL,byte ptr [ESI]               ; 005221e0 | = "@0.85" | s_s_0_85_005e2fbb+2
         ;   Label: LAB_005221e0
     MOV byte ptr [EDI],AL               ; 005221e2
     CMP AL,0x0                          ; 005221e4
     JZ 0x005221f8                       ; 005221e6
         ;   XREF to: 005221f8 (CONDITIONAL_JUMP)  ; LAB_005221f8
-    MOV AL,byte ptr [ESI + 0x1]         ; 005221e8 | DAT_005e2fbc | DAT_005e2fbe
+    MOV AL,byte ptr [ESI + 0x1]         ; 005221e8 | s_s_0_85_005e2fbb+1 | s_s_0_85_005e2fbb+3
     ADD ESI,0x2                         ; 005221eb
     MOV byte ptr [EDI + 0x1],AL         ; 005221ee
     ADD EDI,0x2                         ; 005221f1

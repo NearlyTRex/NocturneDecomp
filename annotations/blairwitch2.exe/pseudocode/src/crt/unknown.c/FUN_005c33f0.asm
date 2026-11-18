@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_MultiByteToWideChar_005c85f0 = 001c9048
-;   undefined4 DAT_0061f758
-;   undefined4 DAT_026807f0
+;   uint g_CodePage = 0x1
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c0e50
@@ -58,7 +58,7 @@ section .text
     POP ESI                             ; 005c3428
     POP EBX                             ; 005c3429
     RET                                 ; 005c342a
-    CMP dword ptr [0x026807f0],0x0      ; 005c342b | DAT_026807f0
+    CMP dword ptr [0x026807f0],0x0      ; 005c342b | g_MultibyteLocaleActive
         ;   Label: LAB_005c342b
     JZ 0x005c344d                       ; 005c3432
         ;   XREF to: 005c344d (CONDITIONAL_JUMP)  ; LAB_005c344d
@@ -90,7 +90,7 @@ section .text
         ;   Label: LAB_005c3467
     PUSH EBX                            ; 005c3468
     PUSH 0x8                            ; 005c3469
-    MOV EBX,dword ptr [0x0061f758]      ; 005c346b | DAT_0061f758
+    MOV EBX,dword ptr [0x0061f758]      ; 005c346b | g_CodePage
     PUSH EBX                            ; 005c3471
     CALL dword ptr CS:[0x5c85f0]        ; 005c3472 | PTR_MultiByteToWideChar_005c85f0
     TEST EAX,EAX                        ; 005c3479

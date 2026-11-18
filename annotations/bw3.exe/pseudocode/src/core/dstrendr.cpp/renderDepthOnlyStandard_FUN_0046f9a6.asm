@@ -18,8 +18,8 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c6b5d4
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ReciprocalLookupTable[1]
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     SHR EAX,0x10                        ; 0046f9b5
         ;   Label: LAB_0046f9b5
     SHR ECX,0x10                        ; 0046f9b8
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c5faec] ; 0046f9bb | DAT_01c5faec
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c5faec] ; 0046f9bb | g_ScreenBufferArray
     SUB ECX,EAX                         ; 0046f9c2
     JLE 0x0046f9f1                      ; 0046f9c4
         ;   XREF to: 0046f9f1 (CONDITIONAL_JUMP)  ; LAB_0046f9f1
@@ -46,7 +46,7 @@ section .text
     ADD EBX,EAX                         ; 0046f9c8
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046f9ca
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046f9cd
-    IMUL dword ptr [ECX*0x4 + 0x1c6b5d4] ; 0046f9d0 | DAT_01c6b5d4
+    IMUL dword ptr [ECX*0x4 + 0x1c6b5d4] ; 0046f9d0 | g_ReciprocalLookupTable[1]
     MOV ESI,dword ptr [ESI + 0x28]      ; 0046f9d7
     MOV EAX,ESI                         ; 0046f9da
         ;   Label: LAB_0046f9da

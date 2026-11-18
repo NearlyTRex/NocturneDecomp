@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 89,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 74,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 157
   },
   "cross_references": [
@@ -36,21 +34,21 @@
   },
   "function_calls": [
     {
-      "addr": "004b8e60",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b8e60"
-    },
-    {
       "addr": "004c4d10",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004c4d10"
+      "name": "core_game.cpp_CGame_resetMusic_FUN_004c4d10"
+    },
+    {
+      "addr": "004b8e60",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60"
     }
   ],
   "globals": [
     {
       "addr": "01d225c8",
-      "name": "DAT_01d225c8",
-      "type": "undefined4",
+      "name": "g_CurrentSaveFile",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -138,16 +136,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_01d225c8",
-      "severity": "mild",
-      "text": "DAT_01d225c8 = 0;",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

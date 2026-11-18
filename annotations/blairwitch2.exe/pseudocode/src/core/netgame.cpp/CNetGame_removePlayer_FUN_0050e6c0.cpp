@@ -6,27 +6,25 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_0050e6c0(CNetGame *this_ptr,int player_index)
 
 {
   int iVar1;
-  byte *src;
-  byte *src_00;
-  byte *dest;
+  void *src;
+  uint *src_00;
+  void *dest;
   int iVar2;
-  void *local_14;
+  uint *local_14;
   
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
-    _DAT_01d046a0 = "..\\core\\netgame.cpp";
-    _DAT_01d046a4 = 0x862;
-    core_main_c_FUN_004e4500("CNetGame::removePlayer - invalid player index");
+    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
+    g_INT_01d046a4 = 0x862;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::removePlayer - invalid player index");
   }
   if (player_index == this_ptr->local_player_index) {
-    _DAT_01d046a0 = "..\\core\\netgame.cpp";
-    _DAT_01d046a4 = 0x869;
-    core_main_c_FUN_004e4500("CNetGame::removePlayer - tried to remove myself!");
+    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
+    g_INT_01d046a4 = 0x869;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::removePlayer - tried to remove myself!");
   }
   if (player_index == this_ptr->server_player_index) {
     this_ptr->server_player_index = -1;
@@ -40,21 +38,21 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_0050e6c0(CNetGame *this_
   memmove
             (this_ptr->players + player_index,this_ptr->players + player_index + 1,
              (iVar1 - player_index) * 0x80);
-  if (0 < _DAT_01d51050) {
-    dest = &DAT_01d5105c + player_index;
-    src = &DAT_01d5105d + player_index;
-    local_14 = (void *)(player_index * 4 + 0x1d51060);
-    src_00 = &DAT_01d51064 + player_index * 4;
+  if (0 < g_ChatOutCount) {
+    dest = (void *)((int)g_ChatOutMessages[0].player_timestamps + player_index + -4);
+    src = (void *)((int)g_ChatOutMessages[0].player_timestamps + player_index + -3);
+    local_14 = g_ChatOutMessages[0].player_timestamps + player_index;
+    src_00 = g_ChatOutMessages[0].player_timestamps + player_index + 1;
     do {
       memmove(dest,src,this_ptr->player_count - player_index);
       iVar2 = iVar2 + 1;
-      src = src + 0x114;
+      src = (void *)((int)src + 0x114);
       memmove(local_14,src_00,(this_ptr->player_count - player_index) * 4)
       ;
-      dest = dest + 0x114;
-      src_00 = src_00 + 0x114;
-      local_14 = (void *)((int)local_14 + 0x114);
-    } while (iVar2 < _DAT_01d51050);
+      dest = (void *)((int)dest + 0x114);
+      src_00 = src_00 + 0x45;
+      local_14 = local_14 + 0x45;
+    } while (iVar2 < g_ChatOutCount);
   }
   if (player_index < this_ptr->server_player_index) {
     this_ptr->server_player_index = this_ptr->server_player_index + -1;

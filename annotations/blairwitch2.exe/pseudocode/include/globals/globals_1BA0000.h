@@ -4,12 +4,57 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonRenderer.h"
+#include "types/structs/SFace.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1BA0000
 // =============================================================================
 
+// CBitFont*
+extern CBitFont* g_CurrentFont;
+
 // CDemonActorType
 extern CDemonActorType g_CDraculaBrideClassInfo;
+
+// CDemonRenderer
+extern CDemonRenderer g_CDemonRenderer_01ba5c50;
+
+// SFace[5000]
+extern SFace g_CapturedFaces[5000];
+
+// float
+extern float g_FLOAT_01ba5990;
+extern float g_FLOAT_01ba5994;
+extern float g_FLOAT_01ba599c;
+extern float g_FLOAT_01ba59a0;
+
+// int
+extern int g_INT_01ba51c8;
+extern int g_INT_01ba56cc;
+extern int g_INT_01ba56d0;
+extern int g_RasterizerDepthBias;
+extern int g_INT_01ba5998;
+extern int g_INT_01ba59a4;
+extern int g_CurrentDrawColor;
+extern int g_PaletteColorIndex;
+extern int g_UseRGBConversion;
+extern int g_OriginalColorValue;
+extern int g_ScaledRedComponent;
+extern int g_ScaledGreenComponent;
+extern int g_ScaledBlueComponent;
+extern int g_PackedPixelColor;
+extern int g_DuplicatedPixelColor;
+extern int g_RenderPixelCounter;
+extern int g_RenderAbortFlag;
+extern int g_CaptureFaceCount;
+extern int g_CaptureTextureCount;
+
+// int[16]
+extern int g_VertexIndexBuffer[16];
+
+// int[8]
+extern int g_DraculaBrideIndices[8];
 

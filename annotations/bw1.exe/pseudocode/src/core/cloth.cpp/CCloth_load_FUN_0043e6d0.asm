@@ -27,33 +27,33 @@
 ;   core_vampboss.cpp_CVampireBoss_setup_FUN_005a52a0 at 005a52e2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d673e
+;   TerminatedCString s_rt_005d673e
 ;   TerminatedCString s_models_005d6741
 ;   TerminatedCString s_core_cloth_cpp_005d6748
 ;   TerminatedCString s_CCloth_load_Unable_to_op_005d675a
-;   undefined4 DAT_005d6780
+;   TerminatedCString s_d_005d6780
 ;   TerminatedCString s_core_cloth_cpp_005d6784
 ;   TerminatedCString s_s_is_version_d_this_EXE_005d6796
-;   undefined4 DAT_005d67de
+;   TerminatedCString s_s_005d67de
 ;   TerminatedCString s_f_f_f_f_f_f_005d67e2
 ;   TerminatedCString s_f_f_f_f_f_f_f_f_005d67f5
-;   undefined4 DAT_005d680e
-;   undefined4 DAT_005d6812
-;   undefined4 DAT_005d6816
-;   undefined4 DAT_005d681a
-;   undefined4 DAT_005d681e
+;   TerminatedCString s_f_005d680e
+;   TerminatedCString s_d_005d6812
+;   TerminatedCString s_d_005d6816
+;   TerminatedCString s_d_005d681a
+;   TerminatedCString s_d_005d681e
 ;   ... and 12 more
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_allocMemory_FUN_0043e640
-;   core_cloth.cpp_FUN_0043ec40
+;   core_cloth.cpp_CCloth_initializeConnections_FUN_0043ec40
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00467bc0
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fgets_FUN_005c1180
 ;   crt_stdio.c_fscanf_FUN_005c04b0
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;
 ; *****************************************************************************
 
@@ -67,11 +67,11 @@ section .text
     SUB ESP,0x228                       ; 0043e6d4
     MOV ESI,dword ptr [ESP + 0x23c]     ; 0043e6da
     MOV EBX,dword ptr [ESP + 0x240]     ; 0043e6e1
-    PUSH 0x5d673e                       ; 0043e6e8 | DAT_005d673e
+    PUSH 0x5d673e                       ; 0043e6e8 | = "rt"
     PUSH EBX                            ; 0043e6ed
     PUSH 0x5d6741                       ; 0043e6ee | = "models"
-    CALL engine_dosio.cpp_FUN_00479180  ; 0043e6f3
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0043e6f3
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0043e6f8
     MOV dword ptr [ESP + 0x208],EAX     ; 0043e6fb
     TEST EAX,EAX                        ; 0043e702
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0xc                         ; 0043e724
     LEA EAX,[ESI + 0x3ab20]             ; 0043e727
     PUSH EAX                            ; 0043e72d
-    PUSH 0x5d6780                       ; 0043e72e | DAT_005d6780
+    PUSH 0x5d6780                       ; 0043e72e | = "%d\n"
     PUSH EDI                            ; 0043e733
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0043e734
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -103,10 +103,10 @@ section .text
     MOV EDX,0x5d6784                    ; 0043e74b | = "..\\core\\cloth.cpp"
     MOV ECX,0xa2                        ; 0043e750
     PUSH 0x5d6796                       ; 0043e755 | = "%s is version %d, this .EXE is old an..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0043e75a | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0043e760 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043e766
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0043e75a | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0043e760 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043e766
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0043e76b
     MOV EBP,dword ptr [ESP + 0x208]     ; 0043e76e
         ;   Label: LAB_0043e76e
@@ -119,7 +119,7 @@ section .text
     ADD ESP,0xc                         ; 0043e788
     MOV EAX,ESP                         ; 0043e78b
     PUSH EAX                            ; 0043e78d
-    PUSH 0x5d67de                       ; 0043e78e | DAT_005d67de
+    PUSH 0x5d67de                       ; 0043e78e | = "%s\n"
     PUSH EBP                            ; 0043e793
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0043e794
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -163,17 +163,17 @@ section .text
     PUSH EBX                            ; 0043e818
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0043e819
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
-    FLD float ptr [0x005fd8e8]          ; 0043e81e | DAT_005fd8e8
-    FLD float ptr [0x005fd8ec]          ; 0043e824 | DAT_005fd8ec
-    FLD float ptr [0x005fd8f0]          ; 0043e82a | DAT_005fd8f0
-    FLD float ptr [0x005fd8f4]          ; 0043e830 | DAT_005fd8f4
-    FLD float ptr [0x005fd8f8]          ; 0043e836 | DAT_005fd8f8
-    FLD float ptr [0x005fd8fc]          ; 0043e83c | DAT_005fd8fc
-    FLD float ptr [0x005fd900]          ; 0043e842 | DAT_005fd900
+    FLD float ptr [0x005fd8e8]          ; 0043e81e | g_FLOAT_005fd8e8
+    FLD float ptr [0x005fd8ec]          ; 0043e824 | g_FLOAT_005fd8ec
+    FLD float ptr [0x005fd8f0]          ; 0043e82a | g_FLOAT_005fd8f0
+    FLD float ptr [0x005fd8f4]          ; 0043e830 | g_FLOAT_005fd8f4
+    FLD float ptr [0x005fd8f8]          ; 0043e836 | g_FLOAT_005fd8f8
+    FLD float ptr [0x005fd8fc]          ; 0043e83c | g_FLOAT_005fd8fc
+    FLD float ptr [0x005fd900]          ; 0043e842 | g_FLOAT_005fd900
     ADD ESP,0x20                        ; 0043e848
     FXCH ST6                            ; 0043e84b
     FSTP float ptr [ESI + 0x37b18]      ; 0043e84d
-    FLD float ptr [0x005fd904]          ; 0043e853 | DAT_005fd904
+    FLD float ptr [0x005fd904]          ; 0043e853 | g_FLOAT_005fd904
     FXCH ST5                            ; 0043e859
     FSTP float ptr [ESI + 0x37b1c]      ; 0043e85b
     FXCH ST3                            ; 0043e861
@@ -196,7 +196,7 @@ section .text
     ADD ESP,0xc                         ; 0043e8a5
     LEA EAX,[ESI + 0x37b48]             ; 0043e8a8
     PUSH EAX                            ; 0043e8ae
-    PUSH 0x5d680e                       ; 0043e8af | DAT_005d680e
+    PUSH 0x5d680e                       ; 0043e8af | = "%f\n"
     PUSH EDI                            ; 0043e8b4
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0043e8b5
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -214,7 +214,7 @@ section .text
     ADD ESP,0xc                         ; 0043e8df
     LEA EAX,[ESI + 0x37b44]             ; 0043e8e2
     PUSH EAX                            ; 0043e8e8
-    PUSH 0x5d6812                       ; 0043e8e9 | DAT_005d6812
+    PUSH 0x5d6812                       ; 0043e8e9 | = "%d\n"
     PUSH EDI                            ; 0043e8ee
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0043e8ef
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -230,7 +230,7 @@ section .text
     ADD ESP,0xc                         ; 0043e911
     LEA EAX,[ESI + 0x39ce8]             ; 0043e914
     PUSH EAX                            ; 0043e91a
-    PUSH 0x5d6816                       ; 0043e91b | DAT_005d6816
+    PUSH 0x5d6816                       ; 0043e91b | = "%d\n"
     PUSH EBX                            ; 0043e920
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0043e921
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -254,7 +254,7 @@ section .text
     LEA EDI,[ESI + 0x39cec]             ; 0043e954
     PUSH EDI                            ; 0043e95a
         ;   Label: LAB_0043e95a
-    PUSH 0x5d681a                       ; 0043e95b | DAT_005d681a
+    PUSH 0x5d681a                       ; 0043e95b | = "%d\n"
     MOV EDX,dword ptr [ESP + 0x210]     ; 0043e960
     PUSH EDX                            ; 0043e967
     INC EBX                             ; 0043e968
@@ -269,8 +269,8 @@ section .text
     MOV EAX,EAX                         ; 0043e97e
     PUSH ESI                            ; 0043e980
         ;   Label: LAB_0043e980
-    CALL core_cloth.cpp_FUN_0043ec40    ; 0043e981
-        ;   XREF to: 0043ec40 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ec40(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_initializeConnections_FUN_0043ec40 ; 0043e981
+        ;   XREF to: 0043ec40 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_initializeConnections_FUN_0043ec40(CCloth * this_ptr)
     ADD ESP,0x4                         ; 0043e986
     MOV EBX,dword ptr [ESP + 0x208]     ; 0043e989
     PUSH EBX                            ; 0043e990
@@ -282,7 +282,7 @@ section .text
     ADD ESP,0xc                         ; 0043e9a3
     LEA EAX,[ESI + 0x37b4c]             ; 0043e9a6
     PUSH EAX                            ; 0043e9ac
-    PUSH 0x5d681e                       ; 0043e9ad | DAT_005d681e
+    PUSH 0x5d681e                       ; 0043e9ad | = "%d\n"
     PUSH EBX                            ; 0043e9b2
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0043e9b3
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -373,7 +373,7 @@ section .text
     PUSH EBX                            ; 0043eb57
     XOR EDI,EDI                         ; 0043eb58
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0043eb5a
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     MOV EBP,dword ptr [ESI + 0x104]     ; 0043eb5f
     ADD ESP,0x4                         ; 0043eb65
     TEST EBP,EBP                        ; 0043eb68
@@ -387,13 +387,13 @@ section .text
     ADD EAX,EBP                         ; 0043eb7c
     INC EDI                             ; 0043eb7e
     FILD dword ptr [EAX]                ; 0043eb7f
-    FMUL float ptr [0x005fd8d8]         ; 0043eb81 | DAT_005fd8d8
+    FMUL float ptr [0x005fd8d8]         ; 0043eb81 | g_FLOAT_005fd8d8
     FSTP float ptr [EBX]                ; 0043eb87
     FILD dword ptr [EAX + 0x4]          ; 0043eb89
-    FMUL float ptr [0x005fd8d8]         ; 0043eb8c | DAT_005fd8d8
+    FMUL float ptr [0x005fd8d8]         ; 0043eb8c | g_FLOAT_005fd8d8
     FSTP float ptr [EBX + 0x4]          ; 0043eb92
     FILD dword ptr [EAX + 0x8]          ; 0043eb95
-    FMUL float ptr [0x005fd8d8]         ; 0043eb98 | DAT_005fd8d8
+    FMUL float ptr [0x005fd8d8]         ; 0043eb98 | g_FLOAT_005fd8d8
     FSTP float ptr [EBX + 0x8]          ; 0043eb9e
     ADD EDX,0x11c                       ; 0043eba1
     MOV EAX,dword ptr [ESI + 0x104]     ; 0043eba7
@@ -415,10 +415,10 @@ section .text
     MOV EDX,0x5d6748                    ; 0043ebcc | = "..\\core\\cloth.cpp"
     MOV ECX,0x9b                        ; 0043ebd1
     PUSH 0x5d675a                       ; 0043ebd6 | = "CCloth::load - Unable to open file %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0043ebdb | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0043ebe1 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043ebe7
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0043ebdb | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0043ebe1 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043ebe7
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0043ebec
     JMP 0x0043e70a                      ; 0043ebef
         ;   XREF to: 0043e70a (UNCONDITIONAL_JUMP)  ; LAB_0043e70a

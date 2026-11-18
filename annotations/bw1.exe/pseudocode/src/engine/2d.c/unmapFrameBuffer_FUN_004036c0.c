@@ -6,37 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_unmapFrameBuffer_FUN_004036c0(void)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  byte *puVar3;
   
-  if (_DAT_00713a38 == 0) {
-    _DAT_01d1d400 = "..\\engine\\2d.c";
-    _DAT_01d1d404 = 0x9e5;
-    core_main_c_FUN_005030e0("unmapFrameBuffer - frame buffer was not mapped!");
+  if (g_StoredWindowWidth == 0) {
+    g_CHAR_PTR_01d1d400 = "..\\engine\\2d.c";
+    g_INT_01d1d404 = 0x9e5;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("unmapFrameBuffer - frame buffer was not mapped!");
   }
-  DAT_0061b498 = _DAT_00713a38;
-  DAT_0061b49c = _DAT_00713a3c;
-  _DAT_01c4f008 = _DAT_00713a40;
-  _DAT_01c4f00c = _DAT_00713a44;
-  _DAT_01c4f010 = _DAT_00713a48;
-  _DAT_01c4f014 = _DAT_00713a4c;
-  DAT_0061b4a0 = _DAT_00713a50;
-  if (0 < _DAT_00713a3c) {
-    iVar1 = _DAT_00713a3c * 4;
+  g_INT_0061b498 = g_StoredWindowWidth;
+  g_INT_0061b49c = g_StoredWindowHeight;
+  g_INT_01c4f008 = g_StoredClipLeft;
+  g_INT_01c4f00c = g_StoredClipTop;
+  g_ClipRight = g_StoredClipRight;
+  g_INT_01c4f014 = g_StoredClipBottom;
+  g_INT_0061b4a0 = g_StoredBitsPerPixel;
+  if (0 < g_StoredWindowHeight) {
+    iVar1 = g_StoredWindowHeight * 4;
     iVar2 = 0;
-    iVar3 = _DAT_00713a54;
+    puVar3 = g_StoredMappedFrameBuffer;
     do {
-      *(int *)(&DAT_01c4354c + iVar2) = iVar3;
+      *(byte **)((int)g_ScreenBufferArray + iVar2) = puVar3;
       iVar2 = iVar2 + 4;
-      iVar3 = iVar3 + _DAT_00713a58;
+      puVar3 = puVar3 + g_ScreenBufferStride;
     } while (iVar2 < iVar1);
   }
-  _DAT_00713a38 = 0;
+  g_StoredWindowWidth = 0;
   return;
 }

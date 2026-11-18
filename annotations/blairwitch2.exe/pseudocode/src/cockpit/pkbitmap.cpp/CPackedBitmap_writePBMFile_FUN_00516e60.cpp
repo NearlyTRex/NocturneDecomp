@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_00516e60(CPackedBitmap *this_ptr,_FILE *file_handle)
 
 {
@@ -41,8 +39,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_00516e60(CPacke
   if ((file_handle->_flag & 0x20) == 0) {
     return;
   }
-  _DAT_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
-  _DAT_01d046a4 = 0x49c;
-  core_main_c_FUN_004e4500("Error writing PBM");
+  g_CHAR_PTR_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
+  g_INT_01d046a4 = 0x49c;
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Error writing PBM");
   return;
 }

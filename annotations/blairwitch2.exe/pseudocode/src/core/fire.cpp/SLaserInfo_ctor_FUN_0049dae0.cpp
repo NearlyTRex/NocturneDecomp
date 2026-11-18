@@ -16,6 +16,6 @@ SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_0049dae0(SLaserInfo *this
   (this_ptr->color).b = 0;
   this_ptr->is_hero_weapon = 0;
   this_ptr->is_damaging = 0;
-  this_ptr->beam_width = 0x3CA3D70A;
+  this_ptr->beam_width = 0.02f;
   return this_ptr;
 }

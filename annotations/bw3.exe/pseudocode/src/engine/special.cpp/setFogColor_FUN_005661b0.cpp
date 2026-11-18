@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_setFogColor_FUN_005661b0(int red,int green,int blue)
 
 {
   int iVar1;
   
-  _DAT_02cf6114 = green;
-  _DAT_02cf6118 = blue;
-  _DAT_02cf6110 = red;
-  if (_DAT_01c6cee8 == 0) {
+  g_FogColorGreen = green;
+  g_FogColorBlue = blue;
+  g_FogColorRed = red;
+  if (g_INT_01c6cee8 == 0) {
     return 0;
   }
-  iVar1 = (*_DAT_02cf6048)(red,green,blue);
+  iVar1 = (*(code *)g_APIDLL_setFogColor)(red,green,blue);
   return iVar1;
 }

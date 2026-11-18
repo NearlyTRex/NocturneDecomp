@@ -19,7 +19,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_00458950(CDemnfolk *t
   char *sound_name;
   
   if ((this_ptr->base).base.is_invulnerable == 0) {
-    core_demnfolk_cpp_FUN_00458680((CZombie *)this_ptr,damage_info);
+    core_demnfolk_cpp_CDemnfolk_processDismemberment_FUN_00458680(this_ptr,damage_info);
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseVictim)((CCharacter *)this_ptr);
     iVar3 = this_ptr->part_indices[6];
     (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount
@@ -64,7 +64,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_00458950(CDemnfolk *t
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                          (&(this_ptr->base).base.model.base);
       if ((pSVar2->state_index != 0x19) && (pSVar2->state_index != 0x18)) {
-        core_demnfolk_cpp_FUN_00458180(this_ptr);
+        core_demnfolk_cpp_CDemnfolk_dropAndClearTarget_FUN_00458180(this_ptr);
         iVar3 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
         iVar3 = iVar3 + 0x13;
         if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0)
@@ -93,7 +93,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_00458950(CDemnfolk *t
   }
   else {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150
-              (0x01C6E360,"@ShotInvulnerable" + 1);
+              (g_CEventListPtr,"ShotInvulnerable");
   }
   return;
 }

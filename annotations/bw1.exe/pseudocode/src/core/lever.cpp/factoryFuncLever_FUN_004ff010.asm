@@ -15,7 +15,7 @@ section .text
     PUSH 0x814                          ; 004ff010
         ;   Label: core_lever.cpp_factoryFuncLever_FUN_004ff010
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004ff015
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004ff01a
     TEST EAX,EAX                        ; 004ff01d
     JNZ 0x004ff022                      ; 004ff01f

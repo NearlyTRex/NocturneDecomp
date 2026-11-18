@@ -27,7 +27,7 @@ void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004a0430(char *cheat_code
   } while (cVar1 != '\0');
   iVar6 = 0;
   for (iVar5 = ~uVar4 - 1; 0 < iVar5; iVar5 = iVar5 + -1) {
-    bVar2 = *(byte *)(iVar5 + 0x1c78aef);
+    bVar2 = g_InputHistory[iVar5];
     uVar3 = toupper((uint)(byte)*cheat_code);
     if (bVar2 == uVar3) {
       iVar6 = iVar6 + 1;
@@ -37,7 +37,7 @@ void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004a0430(char *cheat_code
   if (iVar6 != ~uVar4 - 1) {
     return;
   }
-  DAT_01c78af0 = 0;
+  g_InputHistory[1] = '\0';
   core_game_cpp_giveHeroWeapon_FUN_004a02e0(class_name);
   core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGamePtr,message,5.0);
   core_sound_cpp_CSound_playSound_FUN_0052ea40

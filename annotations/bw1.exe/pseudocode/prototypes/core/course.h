@@ -15,20 +15,20 @@ CCourse * __cdecl CCourse::dtor(CCourse *this_ptr,uint flags);
 
 // Original: core_course.cpp_CCourse_allocMemory_FUN_00447d50
 // Address: 00447d50
-void __cdecl CCourse::allocMemory(CCourse *this_ptr,int param_2);
+void __cdecl CCourse::allocMemory(CCourse *this_ptr,int count);
 
 // Original: core_course.cpp_CCourse_load_FUN_00447db0
 // Address: 00447db0
 void __cdecl CCourse::load(CCourse *this_ptr,char *filename);
 
-// Original: core_course.cpp_FUN_00447ee0
+// Original: core_course.cpp_CCourse_free_FUN_00447ee0
 // Address: 00447ee0
-void FUN_00447ee0(undefined4 *param_1);
+void __cdecl CCourse::free(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_evaluate_FUN_00447f00
 // Address: 00447f00
 void __cdecl CCourse::evaluate(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 
-// Original: core_course.cpp_FUN_00447fb0
+// Original: core_course.cpp_CCourse_interpolate_FUN_00447fb0
 // Address: 00447fb0
-void __cdecl FUN_00447fb0(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
+void __cdecl CCourse::interpolate(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);

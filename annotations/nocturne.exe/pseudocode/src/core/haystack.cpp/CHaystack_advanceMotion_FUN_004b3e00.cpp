@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004b3e00(CHaystack *this_ptr,float delta_time)
 
@@ -19,11 +18,11 @@ void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004b3e00(CHaystack *t
                       (&(this_ptr->base).base.model.base,&delta_time);
     switch(iVar1) {
     case 0x65:
-      core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(this_ptr,_DAT_01cae04c);
+      core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(this_ptr,g_HaystackIndices[0xd]);
       iVar1 = this_ptr->attack_side;
       goto LAB_004b3e4c;
     case 0x66:
-      core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(this_ptr,_DAT_01cae050);
+      core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(this_ptr,g_HaystackIndices[0xe]);
       iVar1 = this_ptr->attack_side;
 LAB_004b3e4c:
       this_ptr->attack_side = (uint)(iVar1 == 0);

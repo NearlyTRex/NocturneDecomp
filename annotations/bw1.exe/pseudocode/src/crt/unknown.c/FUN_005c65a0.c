@@ -12,7 +12,7 @@ int FUN_005c65a0(void)
   int iVar1;
   int iVar2;
   
-  iVar1 = DAT_006265c8;
+  iVar1 = g_ConsoleInitializationFlag;
   iVar2 = FUN_005cb928();
   if ((iVar2 != -1) && (iVar1 == 0)) {
     FUN_005cb9c0(iVar2);

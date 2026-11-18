@@ -35,7 +35,7 @@ int __cdecl CSimBox::renderOpaque(CSimBox *this_ptr);
 
 // Original: core_simbox.cpp_CSimBox_getBoundingBox_FUN_00562a00
 // Address: 00562a00
-CBoundingBox3D * __cdecl CSimBox::getBoundingBox(CSimBox *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CSimBox::getBoundingBox(CSimBox *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_simbox.cpp_CSimBox_archive_FUN_00562a40
 // Address: 00562a40

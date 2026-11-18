@@ -25,9 +25,9 @@ CTeleportDest * __cdecl CTeleportDest::ctor(CTeleportDest *this_ptr);
 // Address: 00572260
 CBoundingBox3D * __cdecl CTeleportDest::getBoundingBox(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_teleport.cpp_CTeleport_getCollisionType_FUN_005722b0
+// Original: core_teleport.cpp_CTeleportDest_getCollisionType_FUN_005722b0
 // Address: 005722b0
-undefined4 __cdecl CTeleport::getCollisionType(CTeleport *this_ptr);
+ECollisionType __cdecl CTeleportDest::getCollisionType(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_teleport.cpp_factoryFuncTeleport_FUN_005722c0
 // Address: 005722c0
@@ -47,7 +47,7 @@ void __cdecl CTeleport::process(CTeleport *this_ptr,float delta_time);
 
 // Original: core_teleport.cpp_CTeleport_getBoundingBox_FUN_00572410
 // Address: 00572410
-CBoundingBox3D * __cdecl CTeleport::getBoundingBox(CTeleport *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CTeleport::getBoundingBox(CTeleport *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_teleport.cpp_CTeleport_archive_FUN_00572490
 // Address: 00572490

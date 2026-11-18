@@ -8,13 +8,13 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_s_4_batman_die_wav_005d3b67+2
+;   TerminatedCString s_batman_die_wav_005d3b69
 ;   TerminatedCString s_batman_hurt_wav_005d3b78
-;   undefined4 DAT_005d3b89
-;   undefined4 DAT_0061c010
+;   double g_DOUBLE_005d3b89 = 2
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_00413c40
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_004308a0
@@ -74,8 +74,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00413ffe
     PUSH EBP                            ; 00413fff
     LEA ESI,[ESP + 0x20]                ; 00414000
-    CALL core_actor.cpp_FUN_00408b40    ; 00414004
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00414004
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00414009
     PUSH 0x0                            ; 0041400c
     PUSH 0x41200000                     ; 0041400e
@@ -173,15 +173,15 @@ section .text
         ;   Label: LAB_004140df
     ADD EAX,0x1c                        ; 004140e2
     FLD ST0                             ; 004140e5
-    FMUL double ptr [0x005d3b89]        ; 004140e7 | DAT_005d3b89
+    FMUL double ptr [0x005d3b89]        ; 004140e7 | g_DOUBLE_005d3b89
     PUSH EAX                            ; 004140ed
     LEA ESI,[ESP + 0x28]                ; 004140ee
     LEA EDI,[ESP + 0x4]                 ; 004140f2
     PUSH EBP                            ; 004140f6
     FSTP ST1                            ; 004140f7
     FSTP float ptr [EAX + -0x18]        ; 004140f9
-    CALL core_actor.cpp_FUN_00408b40    ; 004140fc
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004140fc
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x2c]                ; 00414101
     ADD ESP,0x8                         ; 00414105
     XOR EBX,EBX                         ; 00414108
@@ -197,7 +197,7 @@ section .text
     PUSH ESI                            ; 0041411f
     LEA EAX,[ESP + 0x14]                ; 00414120
     PUSH EAX                            ; 00414124
-    MOV EDI,dword ptr [0x0061c010]      ; 00414125 | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 00414125 | g_CFireEffectPtr
     PUSH EDI                            ; 0041412b
     INC EBX                             ; 0041412c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 0041412d
@@ -232,7 +232,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00573a80 ; 0041417b
         ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00573a80(uint sfx_handle)
     ADD ESP,0x4                         ; 00414180
-    PUSH 0x5d3b69                       ; 00414183 | s_s_4_batman_die_wav_005d3b67+2
+    PUSH 0x5d3b69                       ; 00414183 | = "batman-die.wav"
     MOV EAX,dword ptr [EBP + 0x154]     ; 00414188
     PUSH EBP                            ; 0041418e
     CALL dword ptr [EAX + 0x2c]         ; 0041418f

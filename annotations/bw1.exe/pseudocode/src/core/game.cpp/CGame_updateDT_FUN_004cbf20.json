@@ -1,0 +1,353 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 123,
+    "complexity_score": 53,
+    "cross_reference_count": 8,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 176
+  },
+  "cross_references": [
+    {
+      "addr": "004ce580",
+      "from_addr": "004ce636",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004ce580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8e50",
+      "from_addr": "004d90e7",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d77d0",
+      "from_addr": "004d7d33",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b470",
+      "from_addr": "0050b4b4",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_0050b470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050aa90",
+      "from_addr": "0050ab43",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_0050aa90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ba70",
+      "from_addr": "0050bab9",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050cc90",
+      "from_addr": "0050cd67",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c990",
+      "from_addr": "0050c9e0",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cbf20",
+    "address_range": [
+      [
+        "004cbf20",
+        "004cc0b8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_game.cpp_CGame_updateDT_FUN_004cbf20",
+    "signature": "void __cdecl core_game_cpp_CGame_updateDT_FUN_004cbf20(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "005b2420",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e136c",
+      "name": "g_DOUBLE_005e136c",
+      "type": "double",
+      "value": "0.900000000000000"
+    },
+    {
+      "addr": "005e1374",
+      "name": "g_DOUBLE_005e1374",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "005e137c",
+      "name": "g_MovieRecordingFrameBase",
+      "type": "float",
+      "value": "65536"
+    },
+    {
+      "addr": "005e1384",
+      "name": "g_DeltaTimeToSeconds",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0061d968",
+      "name": "g_MovieRecordingTargetFPS",
+      "type": "float",
+      "value": "30"
+    },
+    {
+      "addr": "01c43530",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0c3c",
+      "name": "g_MovieRecordingActive",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "0050cd67",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ce636",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004ce580",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ce83d",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004ce580",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d7d33",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d90e7",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050c9e0",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050ab43",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_configureGraphicsOptions_FUN_0050aa90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050bab9",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050b4b4",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_configureCustomKeys_FUN_0050b470",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.431578947368421,
+    "instruction_count": 95,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 5,
+      "BRANCH": 4,
+      "CALL": 3,
+      "CBRANCH": 10,
+      "COPY": 238,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 8,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 5,
+      "INT_ADD": 35,
+      "INT_AND": 54,
+      "INT_EQUAL": 21,
+      "INT_LEFT": 17,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 25,
+      "INT_OR": 25,
+      "INT_SBORROW": 6,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 10,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 14,
+      "INT_ZEXT": 18,
+      "LOAD": 21,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "ROUND": 2,
+      "STORE": 23,
+      "SUBPIECE": 2,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 611
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b3010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5468
+    },
+    "bw3.exe": {
+      "addr": "004b4440",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d7d90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5468
+    },
+    "nocturne.exe": {
+      "addr": "0049a8a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5468
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004cbf29",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

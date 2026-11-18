@@ -9,13 +9,13 @@
 // Address: 00478dc0
 void __cdecl getRelativeFilePath(char *dest_path,char *directory,char *filename);
 
-// Original: engine_dosio.cpp_FUN_00478e10
+// Original: engine_dosio.cpp_setRelativeFilePathHook_FUN_00478e10
 // Address: 00478e10
-void FUN_00478e10(undefined *param_1);
+void __cdecl setRelativeFilePathHook(void *hook);
 
-// Original: engine_dosio.cpp_FUN_00478e20
+// Original: engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20
 // Address: 00478e20
-void FUN_00478e20(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl callRelativeFilePathHook(char *dest_path,char *directory,char *filename);
 
 // Original: engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40
 // Address: 00478e40
@@ -33,9 +33,9 @@ int __cdecl findFileNormally(SFoundFileInfo *info);
 // Address: 00478fb0
 int __cdecl getFileSize(char *directory,char *filename);
 
-// Original: engine_dosio.cpp_FUN_00479180
+// Original: engine_dosio.cpp_getFile_FUN_00479180
 // Address: 00479180
-_FILE * __cdecl FUN_00479180(char *directory,char *filename,char *mode);
+_FILE * __cdecl getFile(char *directory,char *filename,char *mode);
 
 // Original: engine_dosio.cpp_reopenFileStream_FUN_00479240
 // Address: 00479240
@@ -67,7 +67,7 @@ void __cdecl CFileFinder::reset(CFileFinder *this_ptr);
 
 // Original: engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0
 // Address: 004794b0
-void __cdecl CFileFinder::convertStruct(CFileFinder *this_ptr,byte *param_2);
+void __cdecl CFileFinder::convertStruct(CFileFinder *this_ptr,byte *find_data);
 
 // Original: engine_dosio.cpp_splitPath_FUN_00479580
 // Address: 00479580
@@ -77,9 +77,9 @@ void __cdecl splitPath(char *full_path,char *drive,char *directory,char *filenam
 // Address: 004795b0
 void __cdecl makePath(char *full_path,char *drive,char *directory,char *filename,char *extension);
 
-// Original: engine_dosio.cpp_FUN_004795e0
+// Original: engine_dosio.cpp_ensureTrailingSlash_FUN_004795e0
 // Address: 004795e0
-void __cdecl FUN_004795e0(char *input_path,char *drive,char *output_path);
+void __cdecl ensureTrailingSlash(char *input_path,char *drive,char *output_path);
 
 // Original: engine_dosio.cpp_changeFileExtension_FUN_004796b0
 // Address: 004796b0
@@ -89,14 +89,14 @@ void __cdecl changeFileExtension(char *path,char *new_extension);
 // Address: 00479720
 int __cdecl getFullPath(char *output_path,char *input_path);
 
-// Original: engine_dosio.cpp_FUN_00479770
+// Original: engine_dosio.cpp_resolveRelativePath_FUN_00479770
 // Address: 00479770
-void FUN_00479770(char *param_1,char *param_2,char *param_3);
+void __cdecl resolveRelativePath(char *base_path,char *path,char *out_path);
 
-// Original: engine_dosio.cpp_FUN_004798c0
+// Original: engine_dosio.cpp_createDirectoryTree_FUN_004798c0
 // Address: 004798c0
-bool FUN_004798c0(char *param_1);
+int __cdecl createDirectoryTree(char *directory);
 
-// Original: engine_dosio.cpp_FUN_00479950
+// Original: engine_dosio.cpp_deleteFile_FUN_00479950
 // Address: 00479950
-bool FUN_00479950(char *param_1);
+int __cdecl deleteFile(char *filename);

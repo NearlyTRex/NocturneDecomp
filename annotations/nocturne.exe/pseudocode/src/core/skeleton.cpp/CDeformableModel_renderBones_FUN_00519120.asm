@@ -19,9 +19,9 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderBones_FUN_0051f060 at 0051f075
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a1ea8
+;   float g_FLOAT_005a1ea8 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130
@@ -63,23 +63,23 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00519164
     MOV EDX,dword ptr [0x005ae704]      ; 00519168 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 0051916e
-    FMUL float ptr [0x005a1ea8]         ; 00519170 | DAT_005a1ea8
+    FMUL float ptr [0x005a1ea8]         ; 00519170 | g_FLOAT_005a1ea8
     FISTP dword ptr [EBX]               ; 00519176
     FLD float ptr [EAX + 0x4]           ; 00519178
-    FMUL float ptr [0x005a1ea8]         ; 0051917b | DAT_005a1ea8
+    FMUL float ptr [0x005a1ea8]         ; 0051917b | g_FLOAT_005a1ea8
     FISTP dword ptr [EBX + 0x4]         ; 00519181
     FLD float ptr [EAX + 0x8]           ; 00519184
-    FMUL float ptr [0x005a1ea8]         ; 00519187 | DAT_005a1ea8
+    FMUL float ptr [0x005a1ea8]         ; 00519187 | g_FLOAT_005a1ea8
     FISTP dword ptr [EBX + 0x8]         ; 0051918d
     MOV EAX,ESP                         ; 00519190
     PUSH EAX                            ; 00519192
-    MOV EAX,dword ptr [EDX]             ; 00519193 | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 00519193 | g_CDemonRenderer_01b4d738
     ADD EAX,0xea5d0                     ; 00519195
     PUSH EAX                            ; 0051919a
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0051919b
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005ae704]                ; 005191a0 | g_CDemonRenderer_PTR_005ae704
-    MOV EAX,dword ptr [EAX]             ; 005191a5 | DAT_01b4d738
+    MOV EAX,dword ptr [EAX]             ; 005191a5 | g_CDemonRenderer_01b4d738
     ADD ESP,0x8                         ; 005191a7
     MOV DL,byte ptr [EAX + 0xea5e3]     ; 005191aa
     ADD EAX,0xea5d0                     ; 005191b0

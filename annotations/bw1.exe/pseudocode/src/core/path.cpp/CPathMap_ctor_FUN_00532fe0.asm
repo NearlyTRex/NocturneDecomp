@@ -12,12 +12,12 @@
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670 at 00531687
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01e6be48
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_PathMapCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_path.cpp_CPathMap_reset_FUN_00535200
 ;
 ; *****************************************************************************
@@ -35,16 +35,16 @@ section .text
     MOV dword ptr [EBX + 0x138b0],EAX   ; 00532ffd
     CALL core_path.cpp_CPathMap_reset_FUN_00535200 ; 00533003
         ;   XREF to: 00535200 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_00535200(CPathMap * this_ptr)
-    MOV EDX,dword ptr [0x01e6be48]      ; 00533008 | DAT_01e6be48
+    MOV EDX,dword ptr [0x01e6be48]      ; 00533008 | g_PathMapCount
     ADD ESP,0x4                         ; 0053300e
     CMP EDX,0xc8                        ; 00533011
     JGE 0x00533033                      ; 00533017
         ;   XREF to: 00533033 (CONDITIONAL_JUMP)  ; LAB_00533033
-    MOV EAX,[0x01e6be48]                ; 00533019 | DAT_01e6be48
+    MOV EAX,[0x01e6be48]                ; 00533019 | g_PathMapCount
         ;   Label: LAB_00533019
     LEA EDI,[EAX + 0x1]                 ; 0053301e
     MOV dword ptr [EAX*0x4 + 0x1e6be4c],EBX ; 00533021
-    MOV dword ptr [0x01e6be48],EDI      ; 00533028 | DAT_01e6be48
+    MOV dword ptr [0x01e6be48],EDI      ; 00533028 | g_PathMapCount
     MOV EAX,EBX                         ; 0053302e
     POP EDI                             ; 00533030
     POP EBX                             ; 00533031
@@ -54,10 +54,10 @@ section .text
     MOV ECX,0x5ec906                    ; 00533034
     MOV ESI,0x123                       ; 00533039
     PUSH 0x5ec917                       ; 0053303e
-    MOV dword ptr [0x01d1d400],ECX      ; 00533043 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00533049 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053304f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00533043 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00533049 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053304f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00533054
     POP ESI                             ; 00533057
     JMP 0x00533019                      ; 00533058

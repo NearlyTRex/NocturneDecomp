@@ -15,10 +15,10 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0 at 0055528b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c7554
-;   undefined4 DAT_007c7558
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01c51d18
+;   int g_INT_007c7554
+;   SRenderVertex[16] g_SRenderVertex_ARRAY_007c7558
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
@@ -74,11 +74,11 @@ section .text
     MOV EBP,dword ptr [EBX + 0x4]       ; 00483c99
     MOV EDI,0x6                         ; 00483c9c
     PUSH EBP                            ; 00483ca1
-    MOV dword ptr [0x01c51d14],ESI      ; 00483ca2 | DAT_01c51d14
-    MOV dword ptr [0x01c51d18],EDI      ; 00483ca8 | DAT_01c51d18
+    MOV dword ptr [0x01c51d14],ESI      ; 00483ca2 | g_RenderStateFlags
+    MOV dword ptr [0x01c51d18],EDI      ; 00483ca8 | g_VertexPreprocessMode
     CALL core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0 ; 00483cae
         ;   XREF to: 005b9fc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_count, int * vertex_indices)
-    MOV EAX,[0x007c7554]                ; 00483cb3 | DAT_007c7554
+    MOV EAX,[0x007c7554]                ; 00483cb3 | g_INT_007c7554
     ADD ESP,0x8                         ; 00483cb8
     CMP EAX,0x2                         ; 00483cbb
     JLE 0x00483c6c                      ; 00483cbe
@@ -86,7 +86,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00483cc0
     PUSH EDX                            ; 00483cc4
     PUSH EAX                            ; 00483cc5
-    PUSH 0x7c7558                       ; 00483cc6 | DAT_007c7558
+    PUSH 0x7c7558                       ; 00483cc6 | g_SRenderVertex_ARRAY_007c7558
     CALL engine_zraster.c_rasterizePolygonCustom_FUN_005bf640 ; 00483ccb
         ;   XREF to: 005bf640 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizePolygonCustom_FUN_005bf640(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 00483cd0

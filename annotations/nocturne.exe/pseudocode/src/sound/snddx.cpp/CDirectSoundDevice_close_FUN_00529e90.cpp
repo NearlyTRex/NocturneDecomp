@@ -6,45 +6,43 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(CDirectSoundDevice *this_ptr)
 
 {
-  int *piVar1;
-  int iVar2;
-  int *piVar3;
+  IDirectSoundBuffer *this_ptr_00;
+  int iVar1;
+  IDirectSoundBuffer **ppIVar2;
   
-  iVar2 = (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
-  piVar3 = (int *)&DAT_02dc9244;
+  iVar1 = (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
+  ppIVar2 = g_DirectSoundSampleBuffers;
   do {
-    piVar1 = (int *)*piVar3;
-    if (piVar1 != (int *)0x0) {
-      (**(code **)(*piVar1 + 8))(piVar1);
-      *piVar3 = 0;
+    this_ptr_00 = *ppIVar2;
+    if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
+      (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
+      *ppIVar2 = (IDirectSoundBuffer *)0x0;
     }
-    piVar3 = piVar3 + 1;
-  } while (piVar3 != (int *)0x2dc92a8);
-  if (_DAT_02dc9220 != (int *)0x0) {
-    (**(code **)(*_DAT_02dc9220 + 8))(_DAT_02dc9220);
-    _DAT_02dc9220 = (int *)0x0;
+    ppIVar2 = ppIVar2 + 1;
+  } while (ppIVar2 != g_DirectSoundHardwareSfxBuffers);
+  if (g_DirectSound3DListener != (IDirectSound3DListener *)0x0) {
+    (*g_DirectSound3DListener->vtable->Release)((IUnknown *)g_DirectSound3DListener);
+    g_DirectSound3DListener = (IDirectSound3DListener *)0x0;
   }
-  if (_DAT_02dc921c != (int *)0x0) {
-    (**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c);
-    _DAT_02dc921c = (int *)0x0;
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    (*g_DirectSoundSecondaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundSecondaryBuffer);
+    g_DirectSoundSecondaryBuffer = (IDirectSoundBuffer *)0x0;
   }
-  if (_DAT_02dc9224 != (int *)0x0) {
-    (**(code **)(*_DAT_02dc9224 + 8))(_DAT_02dc9224);
-    _DAT_02dc9224 = (int *)0x0;
+  if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
+    (*g_DirectSoundPropertySet->vtable->Release)((IUnknown *)g_DirectSoundPropertySet);
+    g_DirectSoundPropertySet = (IKsPropertySet *)0x0;
   }
-  if (_DAT_02dc9218 != (int *)0x0) {
-    (**(code **)(*_DAT_02dc9218 + 8))(_DAT_02dc9218);
-    _DAT_02dc9218 = (int *)0x0;
+  if (g_DirectSoundPrimaryBuffer != (IDirectSoundBuffer *)0x0) {
+    (*g_DirectSoundPrimaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundPrimaryBuffer);
+    g_DirectSoundPrimaryBuffer = (IDirectSoundBuffer *)0x0;
   }
-  if (_DAT_02dc9214 == (int *)0x0) {
-    return (uint)(iVar2 != 0);
+  if (g_DirectSound == (IDirectSound *)0x0) {
+    return (uint)(iVar1 != 0);
   }
-  (**(code **)(*_DAT_02dc9214 + 8))(_DAT_02dc9214);
-  _DAT_02dc9214 = (int *)0x0;
-  return (uint)(iVar2 != 0);
+  (*g_DirectSound->vtable->Release)((IUnknown *)g_DirectSound);
+  g_DirectSound = (IDirectSound *)0x0;
+  return (uint)(iVar1 != 0);
 }

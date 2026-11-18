@@ -193,7 +193,7 @@ int g_InputBuffer[20] = {};
 int g_MessageFlags[600] = {};
 
 // uint
-uint UINT_03f96b40 = {};
+uint g_RainSoundHandle = {};
 
 // void*
 void* g_SoftwareFrameBuffer = {};

@@ -7,7 +7,7 @@
 ; CKedward *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005d8ecb+1
+;   TerminatedCString s_speed_005d8ecc
 ;   TerminatedCString s_modelName_005d8ed2
 ;   TerminatedCString s_guardDistance_005d8edc
 ;   TerminatedCString s_motion_state_005d8eea
@@ -35,7 +35,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00489120 ; 005919f7
         ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00489120(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 005919fc
-    PUSH 0x5d8ecc                       ; 005919ff | s_speed_005d8ecb+1
+    PUSH 0x5d8ecc                       ; 005919ff | = "speed"
     LEA EAX,[EBX + 0xcdcc]              ; 00591a04
     PUSH EAX                            ; 00591a0a
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00591a0b

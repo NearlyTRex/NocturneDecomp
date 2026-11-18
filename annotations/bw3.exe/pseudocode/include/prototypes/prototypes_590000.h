@@ -5,7 +5,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBaal.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDarkwolf.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -37,7 +36,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
 int __cdecl core_kedward_cpp_CKedward_renderOpaque_FUN_00591670(CKedward *this_ptr);
 int __cdecl core_kedward_cpp_CKedward_renderTransparent_FUN_00591680(CKedward *this_ptr);
 void __cdecl core_kedward_cpp_CKedward_processDamage_FUN_005918e0(CKedward *this_ptr,SDamageInfo *damage_info);
-void core_kedward_cpp_FUN_005919a0(int param_1);
+void __cdecl core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(CKedward *this_ptr);
 void __cdecl core_kedward_cpp_CKedward_archive_FUN_005919f0(CKedward *this_ptr);
 CKedward * __cdecl core_kedward_cpp_CKedward_dtor_FUN_00591ab0(CKedward *this_ptr,uint flags);
 void __cdecl core_mattnntt_cpp_staticInit_FUN_00591b40(void);
@@ -49,7 +48,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
 int __cdecl core_mattnntt_cpp_CMattanntote_renderOpaque_FUN_00593700(CMattanntote *this_ptr);
 int __cdecl core_mattnntt_cpp_CMattanntote_renderTransparent_FUN_00593710(CMattanntote *this_ptr);
 void __cdecl core_mattnntt_cpp_CMattanntote_processDamage_FUN_005939b0(CMattanntote *this_ptr,SDamageInfo *damage_info);
-void core_mattnntt_cpp_FUN_00593a90(int param_1);
+void __cdecl core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote *this_ptr);
 CMatrix3x4f * __stack2_esi core_mattnntt_cpp_CMattanntote_getCarryObjToBodyXForm_FUN_00593ae0(CMattanntote *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_mattnntt_cpp_CMattanntote_archive_FUN_00593c10(CMattanntote *this_ptr);
 CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags);
@@ -58,16 +57,16 @@ CTawiscara * __cdecl core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void);
 CDemonActorType * __cdecl core_tawiscara_cpp_CTawiscara_getActorType_FUN_00593dc0(CTawiscara *this_ptr);
 CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr);
 void __cdecl core_tawiscara_cpp_CTawiscara_setup_FUN_00593e80(CTawiscara *this_ptr);
-void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this_ptr,float param_2);
+void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this_ptr,float delta_time);
 void __cdecl core_tawiscara_cpp_CTawiscara_setWalkTarget_FUN_005956d0(CTawiscara *this_ptr,CDemonActor *target,float min_distance,float max_distance);
-void core_tawiscara_cpp_FUN_00595710(int param_1);
-void core_tawiscara_cpp_FUN_00595760(int param_1,float *param_2);
+void __cdecl core_tawiscara_cpp_CTawiscara_playHowl_FUN_00595710(CTawiscara *this_ptr);
+void __cdecl core_tawiscara_cpp_CTawiscara_renderEyeGlow_FUN_00595760(CTawiscara *this_ptr,CVector3f *eye_position);
 int __cdecl core_tawiscara_cpp_CTawiscara_renderTransparent_FUN_00595d20(CTawiscara *this_ptr);
 void __cdecl core_tawiscara_cpp_CTawiscara_archive_FUN_00595e90(CTawiscara *this_ptr);
 void __cdecl core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90(CTawiscara *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_tawiscara_cpp_CTawiscara_getDeathState_FUN_005962d0(CTawiscara *this_ptr);
 int __cdecl core_tawiscara_cpp_CTawiscara_getTargetPoints_FUN_00596310(CTawiscara *this_ptr,CVector3f *out_points_array);
-void core_tawiscara_cpp_FUN_00596380(CCharacter *param_1);
+void __cdecl core_tawiscara_cpp_CTawiscara_processChainConstraint_FUN_00596380(CTawiscara *this_ptr);
 CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570(CTawiscara *this_ptr,uint flags);
 void __cdecl core_baal_cpp_staticInit_FUN_00596600(void);
 CBaal * __cdecl core_baal_cpp_factoryFuncBaal_FUN_00596630(void);
@@ -75,12 +74,12 @@ CDemonActorType * __cdecl core_baal_cpp_CBaal_getActorType_FUN_00596650(CBaal *t
 CBaal * __cdecl core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr);
 void __cdecl core_baal_cpp_CBaal_setup_FUN_00596730(CBaal *this_ptr);
 void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delta_time);
-void core_baal_cpp_FUN_00597700(int param_1);
+void __cdecl core_baal_cpp_CBaal_chooseAttack_FUN_00597700(CBaal *this_ptr);
 CMatrix3x4f * __stack2_esi core_baal_cpp_CBaal_getCarryObjToBodyXForm_FUN_00597810(CBaal *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_baal_cpp_CBaal_renderOpaque_FUN_00597940(CBaal *this_ptr);
 int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr);
 void __cdecl core_baal_cpp_CBaal_processDamage_FUN_00597af0(CBaal *this_ptr,SDamageInfo *damage_info);
-void core_baal_cpp_FUN_00597be0(int param_1,int param_2);
+void __cdecl core_baal_cpp_CBaal_chooseRandomMotion_FUN_00597be0(CBaal *this_ptr,int allow_stand);
 void __cdecl core_baal_cpp_CBaal_archive_FUN_00597c70(CBaal *this_ptr);
 CBaal * __cdecl core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags);
 void __cdecl core_hecaitmx_cpp_staticInit_FUN_00597d90(void);
@@ -104,7 +103,7 @@ int __cdecl core_darkwolf_cpp_CDarkwolf_renderOpaque_FUN_00598e00(CDarkwolf *thi
 int __cdecl core_darkwolf_cpp_CDarkwolf_isInvulnerable_FUN_00598ef0(CDarkwolf *this_ptr);
 int __cdecl core_darkwolf_cpp_CDarkwolf_shouldIgnoreForTargeting_FUN_00598f00(CDarkwolf *this_ptr);
 void __cdecl core_darkwolf_cpp_CDarkwolf_archive_FUN_00598f30(CDarkwolf *this_ptr);
-void core_darkwolf_cpp_FUN_00598fb0(void);
+CWhitewolf * __cdecl core_darkwolf_cpp_factoryFuncWhitewolf_FUN_00598fb0(void);
 CDemonActorType * __cdecl core_darkwolf_cpp_CWhitewolf_getActorType_FUN_00598fd0(CWhitewolf *this_ptr);
 CWhitewolf * __cdecl core_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0(CWhitewolf *this_ptr);
 CWhitewolf * __cdecl core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030(CWhitewolf *this_ptr,uint flags);
@@ -119,7 +118,7 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_renderBackground_FUN_00599a40(CSpiri
 int __cdecl core_spireagl_cpp_CSpiritEagle_renderOpaque_FUN_00599a70(CSpiritEagle *this_ptr);
 int __cdecl core_spireagl_cpp_CSpiritEagle_renderTransparent_FUN_00599b20(CSpiritEagle *this_ptr);
 void __cdecl core_spireagl_cpp_CSpiritEagle_archive_FUN_00599bc0(CSpiritEagle *this_ptr);
-undefined4 core_spireagl_cpp_FUN_00599c80(CMotionController *param_1,char *param_2);
+int __cdecl core_spireagl_cpp_playRandomMotionVariant_FUN_00599c80(CMotionController *controller,char *motion_name);
 void __cdecl core_spireagl_cpp_CSpiritEagle_processDamage_FUN_00599d60(CSpiritEagle *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_spireagl_cpp_CSpiritEagle_isInvulnerable_FUN_00599e10(CSpiritEagle *this_ptr);
 CPathMap * __cdecl core_spireagl_cpp_CSpiritEagle_getPathMap_FUN_00599e30(CSpiritEagle *this_ptr);
@@ -156,10 +155,10 @@ void __cdecl core_hino_cpp_staticInit_FUN_0059b610(void);
 CHino * __cdecl core_hino_cpp_factoryFuncHino_FUN_0059b640(void);
 CDemonActorType * __cdecl core_hino_cpp_CHino_getActorType_FUN_0059b660(CHino *this_ptr);
 CHino * __cdecl core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr);
-int core_hino_cpp_FUN_0059b740(int param_1);
+int __cdecl core_hino_cpp_percentToFixedAlpha_FUN_0059b740(int percent);
 void __cdecl core_hino_cpp_CHino_setup_FUN_0059b770(CHino *this_ptr);
 void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delta_time);
-bool core_hino_cpp_FUN_0059d000(void);
+int __cdecl core_hino_cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino *this_ptr);
 int __cdecl core_hino_cpp_CHino_renderTransparent_FUN_0059d120(CHino *this_ptr);
 void __cdecl core_hino_cpp_CHino_archive_FUN_0059d310(CHino *this_ptr);
 void __cdecl core_hino_cpp_CHino_processDamage_FUN_0059d360(CHino *this_ptr,SDamageInfo *damage_info);

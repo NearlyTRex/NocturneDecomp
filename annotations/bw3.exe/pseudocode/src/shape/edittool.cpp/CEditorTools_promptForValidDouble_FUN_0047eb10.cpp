@@ -18,7 +18,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_0047eb10(CE
     acStack_30[0] = '\0';
   }
   else {
-    _sprintf(acStack_30,(char *)0x5bd038);
+    _sprintf(acStack_30,"%.15g");
   }
   while( true ) {
     while( true ) {
@@ -27,7 +27,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_0047eb10(CE
       if (iVar1 == 0) {
         return 0;
       }
-      iVar1 = sscanf(acStack_30,(char *)0x5bd03e);
+      iVar1 = sscanf(acStack_30,"%lf");
       if (iVar1 == 1) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                 (this_ptr,"Please enter a valid number.");

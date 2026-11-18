@@ -11,7 +11,7 @@
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270 at 004b52d1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01af4e98
+;   uint g_UINT_01af4e98
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 00456650
         ;   Label: core_door.cpp_CDoor_onLocked_FUN_00456650
     MOV EBX,dword ptr [ESP + 0x8]       ; 00456651
-    MOV EDX,dword ptr [0x01af4e98]      ; 00456655 | DAT_01af4e98
+    MOV EDX,dword ptr [0x01af4e98]      ; 00456655 | g_UINT_01af4e98
     PUSH EDX                            ; 0045665b
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 0045665c
         ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
@@ -40,7 +40,7 @@ section .text
     PUSH EBX                            ; 00456677
     CALL dword ptr [EAX + 0x24]         ; 00456678
     ADD ESP,0x8                         ; 0045667b
-    MOV [0x01af4e98],EAX                ; 0045667e | DAT_01af4e98
+    MOV [0x01af4e98],EAX                ; 0045667e | g_UINT_01af4e98
     POP EBX                             ; 00456683
     RET                                 ; 00456684
 

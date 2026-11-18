@@ -70,7 +70,8 @@ CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004f3a50
   CStack_54.x = -0.683;
   CStack_54.z = 0.993;
 LAB_004f3b3e:
-  core_xform_cpp_FUN_005b5760(&CStack_cc,&CStack_18,&CStack_54);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+            (&CStack_cc,&CStack_18,&CStack_54);
   core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
             (&CStack_cc,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_9c);

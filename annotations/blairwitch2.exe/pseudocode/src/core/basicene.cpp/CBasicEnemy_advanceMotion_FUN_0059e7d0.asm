@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
-;   core_charactr.cpp_FUN_0042b2a0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     FSTP float ptr [EBX + 0x2594]       ; 0059e82d
     FSTP float ptr [ESP]                ; 0059e833
     PUSH EBX                            ; 0059e836
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 0059e837
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 0059e837
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059e83c
     MOV ESP,EBP                         ; 0059e83f
     POP EBP                             ; 0059e841

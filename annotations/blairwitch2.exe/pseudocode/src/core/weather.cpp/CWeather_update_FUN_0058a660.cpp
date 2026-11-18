@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weather_cpp_CWeather_update_FUN_0058a660(CWeather *this_ptr)
 
 {
@@ -15,10 +13,11 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_0058a660(CWeather *this_ptr)
   float fVar2;
   float fVar3;
   int iVar4;
-  byte bVar5;
-  float10 fVar6;
+  uint *puVar5;
+  byte bVar6;
   float10 fVar7;
   float10 fVar8;
+  float10 fVar9;
   float afStackY_1018 [1011];
   float local_34;
   CVector3f local_30;
@@ -28,7 +27,7 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_0058a660(CWeather *this_ptr)
   int local_18;
   float local_14;
   
-  bVar5 = 0;
+  bVar6 = 0;
   fVar1 = g_CGamePtr->delta_time_float;
   local_24 = fVar1;
   if (this_ptr->lightning_active != 0) {
@@ -36,10 +35,10 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_0058a660(CWeather *this_ptr)
     this_ptr->flash_timer = fVar2;
     if (0.0 <= fVar2) {
       iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                        (0x01C38BC0,"?noLightningFlash" + 1);
+                        (g_CEventListPtr,"noLightningFlash");
       if (iVar4 == 0) {
         local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
-        local_20 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_005ee572 -
+        local_20 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 -
                    local_24;
         if (local_20 < this_ptr->base_ambient) {
           local_20 = this_ptr->base_ambient;
@@ -58,35 +57,36 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_0058a660(CWeather *this_ptr)
   }
 LAB_0058a68c:
   if (this_ptr->weather_type == WEATHER_TYPE_NONE) {
-    sound_sndmain_cpp_killSfx_FUN_00551050(_DAT_02662d00);
+    sound_sndmain_cpp_killSfx_FUN_00551050(g_RainSoundHandle);
     return;
   }
   iVar4 = 0;
   local_1c = 0;
   local_18 = 0;
   do {
-    *(byte *)(local_1c + 0x2662c38) = 0;
-    fVar2 = *(float *)(&DAT_02661fbc + iVar4) - this_ptr->particle_speed * fVar1;
-    *(float *)(&DAT_02661fbc + iVar4) = fVar2;
-    if ((fVar2 < *(float *)(local_18 + 0x2662918)) &&
-       (*(float *)(&DAT_02661fbc + iVar4) = *(float *)(&DAT_02661fbc + iVar4) + _DAT_005ee592,
+    g_WeatherParticleHitGround[local_1c] = '\0';
+    fVar2 = *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) -
+            this_ptr->particle_speed * fVar1;
+    *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) = fVar2;
+    if ((fVar2 < *(float *)((int)g_WeatherParticleGroundHeights + local_18)) &&
+       (*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) =
+             *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) + 100.0f,
        this_ptr->weather_type == WEATHER_TYPE_RAIN)) {
-      fVar2 = *(float *)(local_18 + 0x2662918);
-      local_30.x = *(float *)(&DAT_02661fb8 + iVar4);
-      *(uint *)((int)&local_30 + (uint)bVar5 * -8 + 4) =
-           *(uint *)(&DAT_02661fbc + (uint)bVar5 * -8 + iVar4);
-      *(uint *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-           *(uint *)
-            ((int)(&DAT_02661fbc + (uint)bVar5 * -8 + iVar4) + ((uint)bVar5 * -2 + 1) * 4);
+      fVar2 = *(float *)((int)g_WeatherParticleGroundHeights + local_18);
+      puVar5 = (uint *)(iVar4 + 0x2661fbc + (uint)bVar6 * -8);
+      local_30.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);
+      *(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4) = *puVar5;
+      *(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+           puVar5[(uint)bVar6 * -2 + 1];
       local_30.y = fVar2;
-      core_fire_cpp_CFireEffect_createRainDrop_FUN_0049ea20(0x01C3DEB4,&local_30,(CVector3f *)0x0)
-      ;
-      core_fire_cpp_CFireEffect_createRainDrop_FUN_0049ea20(0x01C3DEB4,&local_30,(CVector3f *)0x0)
-      ;
-      core_fire_cpp_CFireEffect_createRainDrop_FUN_0049ea20(0x01C3DEB4,&local_30,(CVector3f *)0x0)
-      ;
-      core_fire_cpp_CFireEffect_createRainDrop_FUN_0049ea20(0x01C3DEB4,&local_30,(CVector3f *)0x0)
-      ;
+      core_fire_cpp_CFireEffect_createRainDrop_FUN_0049ea20
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0);
+      core_fire_cpp_CFireEffect_createRainDrop_FUN_0049ea20
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0);
+      core_fire_cpp_CFireEffect_createRainDrop_FUN_0049ea20
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0);
+      core_fire_cpp_CFireEffect_createRainDrop_FUN_0049ea20
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0);
     }
     iVar4 = iVar4 + 0xc;
     local_1c = local_1c + 1;
@@ -112,12 +112,12 @@ LAB_0058a68c:
                              (0.1,this_ptr->max_flash_interval);
         this_ptr->sub_flash_interval = local_14;
         iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                          (0x01C38BC0,"noLightningFlash");
+                          (g_CEventListPtr,"noLightningFlash");
         if (iVar4 == 0) {
           this_ptr->lightning_active = 1;
           local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
           fVar3 = (float)g_CDemonCameraInstance.corona_blend_factor;
-          fVar2 = (float)_DAT_005ee572;
+          fVar2 = (float)1.5259021896696401e-05;
           this_ptr->base_ambient = fVar3 * fVar2;
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.1,0.3);
           local_34 = local_14 + fVar3 * fVar2;
@@ -125,30 +125,30 @@ LAB_0058a68c:
             local_34 = 1.0;
           }
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
-                               (0.01,local_34 * (float)_DAT_005ee57a);
+                               (0.01,local_34 * (float)0.59999999999999998);
           this_ptr->flash_timer = local_14;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00441e80
                     (&g_CDemonCameraInstance,local_34);
         }
       }
     }
-    if ((float)_DAT_005ee582 <= this_ptr->max_flash_interval) {
+    if ((float)15 <= this_ptr->max_flash_interval) {
       this_ptr->max_flash_interval = 15.0;
     }
     else {
-      fVar8 = (float10)1;
-      fVar6 = (float10)1.4426950408889634 *
-              ((float10)fVar1 * (float10)_DAT_005ee58a +
+      fVar9 = (float10)1;
+      fVar7 = (float10)1.4426950408889634 *
+              ((float10)fVar1 * (float10)0.10000000000000001 +
               (float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);
-      fVar7 = (float10)f2xm1(fVar6 - (fVar6 / fVar8) * fVar8);
-      fVar8 = (float10)fscale(fVar7 + fVar8,fVar6);
-      this_ptr->max_flash_interval = (float)fVar8;
+      fVar8 = (float10)f2xm1(fVar7 - (fVar7 / fVar9) * fVar9);
+      fVar9 = (float10)fscale(fVar8 + fVar9,fVar7);
+      this_ptr->max_flash_interval = (float)fVar9;
     }
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(_DAT_02662d00);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(g_RainSoundHandle);
     if (iVar4 == 0) {
-      _DAT_02662d00 =
-           core_sound_cpp_CSound_playSound_FUN_0055ae30(0x0264B290,this_ptr,"rain.wav @ .1")
-      ;
+      g_RainSoundHandle =
+           core_sound_cpp_CSound_playSound_FUN_0055ae30
+                     (g_CSound_PTR_0061c068,this_ptr,"rain.wav @ .1");
       return;
     }
   }

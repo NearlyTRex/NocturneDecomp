@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 98,
+    "complexity_score": 64,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 6,
+    "pseudocode_lines": 29,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 106
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -67,33 +66,33 @@
     },
     {
       "addr": "005c1d54",
-      "name": "DAT_005c1d54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IsSpecialDeviceFuncPtr",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "005c1d58",
-      "name": "DAT_005c1d58",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SpecialDeviceCleanupFunc",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "005c1d60",
-      "name": "DAT_005c1d60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SpecialDeviceCloseFunc",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "005c1f54",
-      "name": "DAT_005c1f54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     },
     {
       "addr": "005c1f90",
-      "name": "DAT_005c1f90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
     }
   ],
   "param_estimates": {
@@ -209,52 +208,28 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "hObject = *(HANDLE *)(DAT_005c1f54 + fd * 4);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((DAT_005c1d60 == (code *)0x0) || (iVar2 = (*DAT_005c1d54)(fd), iVar2 == 0)) {",
+      "text": "(iVar2 = (*(code *)g_IsSpecialDeviceFuncPtr)(fd), iVar2 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005c1d60",
-      "severity": "mild",
-      "text": "if ((DAT_005c1d60 == (code *)0x0) || (iVar2 = (*DAT_005c1d54)(fd), iVar2 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005c1d54",
-      "severity": "mild",
-      "text": "if ((DAT_005c1d60 == (code *)0x0) || (iVar2 = (*DAT_005c1d54)(fd), iVar2 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005c1d58",
-      "severity": "mild",
-      "text": "(*DAT_005c1d58)(fd);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 26,
-      "match": "DAT_005c1d60",
-      "severity": "mild",
-      "text": "(*DAT_005c1d60)(iVar2);",
-      "type": "undefined_data"
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_SpecialDeviceCleanupFunc)(fd);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 27,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_SpecialDeviceCloseFunc)(iVar2);",
+      "type": "unresolved_funcptr"
     }
   ]
 }

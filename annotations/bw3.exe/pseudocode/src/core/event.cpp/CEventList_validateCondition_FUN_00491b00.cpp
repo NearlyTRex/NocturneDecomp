@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_00491b00(CEventList *this_ptr,char *expression)
 
 {
   int iVar1;
   
   if (*expression != '\0') {
-    _DAT_01c734ac = 1;
+    g_EventDryRun = 1;
     iVar1 = core_event_cpp_CEventList_evaluateExpression_FUN_00491b80(this_ptr,expression);
-    _DAT_01c734ac = 0;
+    g_EventDryRun = 0;
     if (iVar1 < 0) {
-      return &DAT_01c734b0;
+      return g_EventErrorMessageBuffer;
     }
   }
   return (char *)0x0;

@@ -14,6 +14,6 @@ void __cdecl core_marquee_cpp_CMarquee_archive_FUN_004e84a0(CMarquee *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->total_time,"totalTime");
   core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->param,"param");
   core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->phase,"phase");
-  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->type,&DAT_005dc779);
+  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->type,"type");
   return;
 }

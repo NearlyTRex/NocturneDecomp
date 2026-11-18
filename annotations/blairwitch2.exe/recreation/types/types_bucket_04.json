@@ -234,6 +234,27 @@
     "variadic":false
   },
   {
+    "kind":"funcdef",
+    "name":"CDemonActor_vfunc0",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonCubeTriangle",
     "size":32
@@ -466,6 +487,33 @@
     "size":4
   },
   {
+    "kind":"class",
+    "name":"CSoundDeviceBasic_vtable",
+    "size":20,
+    "vtable_slots":[
+      {
+        "name":"close",
+        "offset":0
+      },
+      {
+        "name":"start",
+        "offset":4
+      },
+      {
+        "name":"reset",
+        "offset":8
+      },
+      {
+        "name":"setMode",
+        "offset":12
+      },
+      {
+        "name":"poll",
+        "offset":16
+      }
+    ]
+  },
+  {
     "kind":"funcdef",
     "name":"CSoundDevice_reset",
     "params":[
@@ -571,6 +619,11 @@
     },
     "size":-1,
     "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CVector4i",
+    "size":16
   },
   {
     "kind":"funcdef",

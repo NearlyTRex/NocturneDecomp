@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 27,
+    "complexity_score": 11,
     "cross_reference_count": 17,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 32
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
   },
   "cross_references": [
     {
@@ -24,7 +22,7 @@
     {
       "addr": "005a14e0",
       "from_addr": "005a17f5",
-      "name": "core_confedrt.cpp_FUN_005a14e0",
+      "name": "core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,15 +32,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004599a0",
-      "from_addr": "00459a37",
-      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_004599a0",
+      "addr": "00459ff0",
+      "from_addr": "0045a879",
+      "name": "core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00459ff0",
-      "from_addr": "0045a879",
-      "name": "core_doc.cpp_FUN_00459ff0",
+      "addr": "004599a0",
+      "from_addr": "00459a37",
+      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_004599a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,21 +50,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004aeb00",
+      "from_addr": "004af153",
+      "name": "core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b11a0",
       "from_addr": "004b1488",
       "name": "core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004aeb00",
-      "from_addr": "004af153",
-      "name": "core_gabriela.cpp_FUN_004aeb00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004be8a0",
       "from_addr": "004bee30",
-      "name": "core_game.cpp_FUN_004be8a0",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,7 +76,7 @@
     {
       "addr": "00520a60",
       "from_addr": "00520d48",
-      "name": "core_scat.cpp_FUN_00520a60",
+      "name": "core_scat.cpp_CScat_scoreAimTarget_FUN_00520a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -88,15 +86,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056b770",
-      "from_addr": "0056b800",
-      "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770",
+      "addr": "0056bf00",
+      "from_addr": "0056c740",
+      "name": "core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056bf00",
-      "from_addr": "0056c740",
-      "name": "core_stranger.cpp_FUN_0056bf00",
+      "addr": "0056b770",
+      "from_addr": "0056b800",
+      "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -114,7 +112,7 @@
     {
       "addr": "005a5460",
       "from_addr": "005a5775",
-      "name": "core_union.cpp_FUN_005a5460",
+      "name": "core_union.cpp_CUnion_fireShotgun_FUN_005a5460",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -134,7 +132,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     }
   ],
   "globals": [
@@ -152,14 +150,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -169,7 +167,7 @@
       {
         "call_addr": "004bee30",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004be8a0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,7 +178,7 @@
       {
         "call_addr": "004bef8d",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004be8a0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,7 +189,7 @@
       {
         "call_addr": "0045a879",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00459ff0",
+        "caller": "core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -202,7 +200,7 @@
       {
         "call_addr": "00520d48",
         "call_type": "direct",
-        "caller": "core_scat.cpp_FUN_00520a60",
+        "caller": "core_scat.cpp_CScat_scoreAimTarget_FUN_00520a60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,7 +211,7 @@
       {
         "call_addr": "0056c740",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_0056bf00",
+        "caller": "core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -224,7 +222,7 @@
       {
         "call_addr": "005a17f5",
         "call_type": "direct",
-        "caller": "core_confedrt.cpp_FUN_005a14e0",
+        "caller": "core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -235,7 +233,7 @@
       {
         "call_addr": "005a5775",
         "call_type": "direct",
-        "caller": "core_union.cpp_FUN_005a5460",
+        "caller": "core_union.cpp_CUnion_fireShotgun_FUN_005a5460",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -355,14 +353,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

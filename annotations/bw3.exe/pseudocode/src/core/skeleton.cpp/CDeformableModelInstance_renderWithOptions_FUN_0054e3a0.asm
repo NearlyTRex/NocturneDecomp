@@ -13,14 +13,14 @@
 ; XREF[12]:
 ;   core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0 at 005a190f
 ;   core_baal.cpp_CBaal_renderTransparent_FUN_00597970 at 00597ab2
-;   core_charactr.cpp_FUN_0042d8e0 at 0042d92b
-;   core_charactr.cpp_FUN_0042f010 at 0042f1d0
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042f010 at 0042f1d0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 at 0042d92b
 ;   core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480 at 00598530
 ;   core_hino.cpp_CHino_renderTransparent_FUN_0059d120 at 0059d2c4
 ;   core_kedward.cpp_CKedward_renderTransparent_FUN_00591680 at 005917b6
 ;   core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710 at 00593896
 ;   core_npc.cpp_CNPC_renderTransparent_FUN_005095f0 at 0050974f
-;   core_shadow.cpp_FUN_00545710 at 0054588b
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_00545710 at 0054588b
 ;   ... and 2 more
 ;
 ; Called Functions:

@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 36,
     "complexity_score": 45,
-    "cross_reference_count": 80,
+    "cross_reference_count": 81,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -187,7 +187,7 @@
     {
       "addr": "004a76f0",
       "from_addr": "004a76fc",
-      "name": "core_flashlit.cpp_FUN_004a76f0",
+      "name": "core_flashlit.cpp_staticInit_FUN_004a76f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -215,21 +215,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004caeb0",
+      "from_addr": "004caed4",
+      "name": "core_glass.cpp_CGlass_createShatterParticles_FUN_004caeb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c9ba0",
       "from_addr": "004c9bca",
       "name": "core_glass.cpp_CGlass_ctor_FUN_004c9ba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004caeb0",
-      "from_addr": "004caed4",
-      "name": "core_glass.cpp_FUN_004caeb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004cc040",
       "from_addr": "004cc082",
-      "name": "core_glass.cpp_FUN_004cc040",
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004cc040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -247,7 +247,7 @@
     {
       "addr": "004d4230",
       "from_addr": "004d42e2",
-      "name": "core_hero.cpp_FUN_004d4230",
+      "name": "core_hero.cpp_CHero_closestEnemy_FUN_004d4230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -325,7 +325,7 @@
     {
       "addr": "00522b00",
       "from_addr": "00522f04",
-      "name": "core_prye.cpp_FUN_00522b00",
+      "name": "core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -343,13 +343,13 @@
     {
       "addr": "0053bc80",
       "from_addr": "0053c01f",
-      "name": "core_setcolid.cpp_FUN_0053bc80",
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053da90",
       "from_addr": "0053daac",
-      "name": "core_setcolid.cpp_FUN_0053da90",
+      "name": "core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -463,7 +463,7 @@
     {
       "addr": "00481350",
       "from_addr": "0048137b",
-      "name": "shape_edittool.cpp_FUN_00481350",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -473,27 +473,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056fef0",
-      "from_addr": "0056ff4b",
-      "name": "support_trisock.cpp_FUN_0056fef0",
+      "addr": "00570ae0",
+      "from_addr": "00570baa",
+      "name": "support_trisock.cpp_dnsLookupThreadProc_FUN_00570ae0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00570ae0",
-      "from_addr": "00570baa",
-      "name": "support_trisock.cpp_FUN_00570ae0",
+      "addr": "0056fef0",
+      "from_addr": "0056ff4b",
+      "name": "support_trisock.cpp_httpConnectToUrl_FUN_0056fef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571340",
+      "from_addr": "00571379",
+      "name": "support_trisock.cpp_httpRequestUpdate_FUN_00571340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00570d30",
       "from_addr": "00570d43",
-      "name": "support_trisock.cpp_FUN_00570d30",
+      "name": "support_trisock.cpp_initDnsRequest_FUN_00570d30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00572310",
       "from_addr": "00572321",
-      "name": "support_trisock.cpp_FUN_00572310",
+      "name": "support_trisock.cpp_initHostInfo_FUN_00572310",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -561,7 +567,7 @@
       {
         "call_addr": "004cc082",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004cc040",
+        "caller": "core_glass.cpp_CGlass_shatter_FUN_004cc040",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -572,7 +578,7 @@
       {
         "call_addr": "004caed4",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004caeb0",
+        "caller": "core_glass.cpp_CGlass_createShatterParticles_FUN_004caeb0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -583,7 +589,7 @@
       {
         "call_addr": "0053c01f",
         "call_type": "direct",
-        "caller": "core_setcolid.cpp_FUN_0053bc80",
+        "caller": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_initializeRecordingDevice_FUN_005758e0(void)
 
 {
@@ -17,14 +15,14 @@ int __cdecl sound_sndmain_cpp_initializeRecordingDevice_FUN_005758e0(void)
   if (iVar1 == 0) {
     return 0;
   }
-  sound_sndmain_cpp_selectRecordingDevice_FUN_00575870(DAT_0062331c);
-  if (-1 < DAT_0062331c) {
-    if (*(int *)(DAT_0062331c * 0x108 + 0x2c808f8) == 0) {
-      _DAT_02c81038 =
-           sound_sndwav_cpp_getWavInDevice_FUN_0057b500(*(UINT *)(DAT_0062331c * 0x108 + 0x2c808fc))
-      ;
+  sound_sndmain_cpp_selectRecordingDevice_FUN_00575870(g_CurrentRecordingDevice);
+  if (-1 < g_CurrentRecordingDevice) {
+    if (g_RecordingDevices[g_CurrentRecordingDevice].api_type == 0) {
+      g_RecordingDeviceInterface =
+           &sound_sndwav_cpp_getWavInDevice_FUN_0057b500
+                      (g_RecordingDevices[g_CurrentRecordingDevice].device_id)->base;
     }
-    if (_DAT_02c81038 != (CWavInDevice *)0x0) {
+    if (g_RecordingDeviceInterface != (CSoundDevice *)0x0) {
       return 1;
     }
   }

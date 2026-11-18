@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 70,
+    "complexity_score": 61,
     "cross_reference_count": 9,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 3,
+    "pseudocode_lines": 31,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_param",
+      "pointer_cast",
       "unrolled_memcpy"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -81,13 +81,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050",
-    "signature": "void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *param_2)"
+    "signature": "void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *owner)"
   },
   "function_calls": [
     {
       "addr": "005a84c0",
       "is_variadic": false,
-      "name": "core_bwspart.cpp_FUN_005a84c0"
+      "name": "core_bwspart.cpp_initSimpleParticle_FUN_005a84c0"
     },
     {
       "addr": "005b8580",
@@ -262,33 +262,25 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "owner",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonActor *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->owner = param_2;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(void *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "core_bwspart_cpp_initSimpleParticle_FUN_005a84c0((void *)((int)this_ptr->particles + iVar4))",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 25,
+      "line": 26,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->position).x = (pCVar1->location).position.x;",

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 117,
+    "complexity_score": 84,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 14,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 151
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -43,14 +42,14 @@
   },
   "function_calls": [
     {
-      "addr": "00581f50",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00581f50"
-    },
-    {
       "addr": "00581310",
       "is_variadic": false,
       "name": "engine_special.cpp_loadExternalRenderer_FUN_00581310"
+    },
+    {
+      "addr": "00581f50",
+      "is_variadic": false,
+      "name": "engine_special.cpp_lockFrame_FUN_00581f50"
     },
     {
       "addr": "00581fa0",
@@ -66,86 +65,86 @@
   "globals": [
     {
       "addr": "0061b4a0",
-      "name": "DAT_0061b4a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c4354c",
-      "name": "DAT_01c4354c",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c4e9f8",
-      "name": "DAT_01c4e9f8",
-      "type": "undefined4",
+      "name": "g_UCHAR_ARRAY_01c4e9f8",
+      "type": "uchar[768]",
       "value": null
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83380",
-      "name": "DAT_02c83380",
-      "type": "undefined4",
+      "name": "g_FrameBufferTestResult",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83398",
-      "name": "DAT_02c83398",
-      "type": "undefined4",
+      "name": "g_APIDLL_setVideoMode2",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833ec",
-      "name": "DAT_02c833ec",
-      "type": "undefined4",
+      "name": "g_APIDLL_setFogColor",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c833fc",
-      "name": "DAT_02c833fc",
-      "type": "undefined4",
+      "name": "g_APIDLL_setColorTable16",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02c834ac",
-      "name": "DAT_02c834ac",
-      "type": "undefined4",
+      "name": "g_LoadedExternalDLLRenderer",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c834b4",
-      "name": "DAT_02c834b4",
-      "type": "undefined4",
+      "name": "g_FogColorRed",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c834b8",
-      "name": "DAT_02c834b8",
-      "type": "undefined4",
+      "name": "g_FogColorGreen",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c834bc",
-      "name": "DAT_02c834bc",
-      "type": "undefined4",
+      "name": "g_FogColorBlue",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c834c0",
-      "name": "DAT_02c834c0",
-      "type": "undefined4",
+      "name": "g_StoredWindowHandle",
+      "type": "HWND",
       "value": null
     },
     {
       "addr": "02c834c4",
-      "name": "DAT_02c834c4",
-      "type": "undefined4",
+      "name": "g_INT_02c834c4",
+      "type": "int",
       "value": null
     }
   ],
@@ -266,52 +265,28 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 20,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)g_APIDLL_setVideoMode2)(width,height,bits_per_pixel,g_ScreenBufferArray);",
+      "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "iVar2 = (*_DAT_02c83398)(width,height,bits_per_pixel,&DAT_01c4354c);",
-      "type": "undefined_data"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 25,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_APIDLL_setColorTable16)(g_UCHAR_ARRAY_01c4e9f8,g_ColorTable16);",
+      "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01c4e9f8",
-      "severity": "mild",
-      "text": "(*_DAT_02c833fc)(&DAT_01c4e9f8,&DAT_01c4dad0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01c4dad0",
-      "severity": "mild",
-      "text": "(*_DAT_02c833fc)(&DAT_01c4e9f8,&DAT_01c4dad0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "if (DAT_0061b4a0 == 0x10) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "if (DAT_0061b4a0 != 0x20) goto LAB_0058229a;",
-      "type": "undefined_data"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 27,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_APIDLL_setFogColor)(g_FogColorRed,g_FogColorGreen,g_FogColorBlue);",
+      "type": "unresolved_funcptr"
     }
   ]
 }

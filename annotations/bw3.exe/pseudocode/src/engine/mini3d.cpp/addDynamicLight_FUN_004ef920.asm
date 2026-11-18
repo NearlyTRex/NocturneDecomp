@@ -13,10 +13,10 @@
 ; uint             Stack[0x1c]:4   arg7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c818d
-;   undefined4 DAT_01c6cee8
-;   undefined4 DAT_01d79784
-;   undefined4 DAT_02cf6100
+;   double g_DOUBLE_005c818d = 2
+;   int g_INT_01c6cee8
+;   int g_INT_01d79784
+;   void* g_PTR_02cf6100
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
@@ -33,7 +33,7 @@ section .text
     PUSH EDI                            ; 004ef922
     SUB ESP,0x1c                        ; 004ef923
     MOV ESI,dword ptr [ESP + 0x2c]      ; 004ef926
-    MOV EDX,dword ptr [0x01d79784]      ; 004ef92a | DAT_01d79784
+    MOV EDX,dword ptr [0x01d79784]      ; 004ef92a | g_INT_01d79784
     CMP EDX,0x32                        ; 004ef930
     JGE 0x004efa07                      ; 004ef933
         ;   XREF to: 004efa07 (CONDITIONAL_JUMP)  ; LAB_004efa07
@@ -47,7 +47,7 @@ section .text
     MOV EAX,EDX                         ; 004ef951
     INC EAX                             ; 004ef953
     MOV DL,0x1                          ; 004ef954
-    MOV [0x01d79784],EAX                ; 004ef956 | DAT_01d79784
+    MOV [0x01d79784],EAX                ; 004ef956 | g_INT_01d79784
     MOV byte ptr [EAX + 0x1d7a65f],DL   ; 004ef95b
     CMP EBX,ESI                         ; 004ef961
     JZ 0x004ef975                       ; 004ef963
@@ -90,7 +90,7 @@ section .text
     MOV dword ptr [EBX + 0x44],EAX      ; 004ef9cf
     MOV EAX,dword ptr [ESP + 0x44]      ; 004ef9d2
     MOV dword ptr [EBX + 0x48],EAX      ; 004ef9d6
-    MOV EDI,dword ptr [0x02cf6100]      ; 004ef9d9 | DAT_02cf6100
+    MOV EDI,dword ptr [0x02cf6100]      ; 004ef9d9 | g_PTR_02cf6100
     FXCH ST5                            ; 004ef9df
     FSTP float ptr [EBX + 0xc]          ; 004ef9e1
     FXCH ST3                            ; 004ef9e4
@@ -104,7 +104,7 @@ section .text
     TEST EDI,EDI                        ; 004ef9fa
     JZ 0x004efa07                       ; 004ef9fc
         ;   XREF to: 004efa07 (CONDITIONAL_JUMP)  ; LAB_004efa07
-    CMP dword ptr [0x01c6cee8],0x0      ; 004ef9fe | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 004ef9fe | g_INT_01c6cee8
     JNZ 0x004efa0e                      ; 004efa05
         ;   XREF to: 004efa0e (CONDITIONAL_JUMP)  ; LAB_004efa0e
     ADD ESP,0x1c                        ; 004efa07
@@ -136,7 +136,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 004efa4a
     FLD1                                ; 004efa4e
     FPATAN                              ; 004efa50
-    FMUL double ptr [0x005c818d]        ; 004efa52 | DAT_005c818d
+    FMUL double ptr [0x005c818d]        ; 004efa52 | g_DOUBLE_005c818d
     PUSH dword ptr [EBX + 0x48]         ; 004efa58
     PUSH dword ptr [EBX + 0x44]         ; 004efa5b
     PUSH dword ptr [EBX + 0x40]         ; 004efa5e
@@ -147,7 +147,7 @@ section .text
     PUSH EAX                            ; 004efa71
     LEA EAX,[ESP + 0x24]                ; 004efa72
     PUSH EAX                            ; 004efa76
-    CALL dword ptr [0x02cf6100]         ; 004efa77 | DAT_02cf6100
+    CALL dword ptr [0x02cf6100]         ; 004efa77 | g_PTR_02cf6100
     ADD ESP,0x1c                        ; 004efa7d
     ADD ESP,0x1c                        ; 004efa80
     POP EDI                             ; 004efa83

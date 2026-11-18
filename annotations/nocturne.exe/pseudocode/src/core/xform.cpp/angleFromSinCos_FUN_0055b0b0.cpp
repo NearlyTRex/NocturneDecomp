@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_xform_cpp_angleFromSinCos_FUN_0055b0b0(double sin_value,double cos_value)
 
 {
@@ -15,8 +13,8 @@ float __cdecl core_xform_cpp_angleFromSinCos_FUN_0055b0b0(double sin_value,doubl
   double dVar2;
   float local_c;
   
-  if ((_DAT_0059825e <= sin_value) || (sin_value <= _DAT_00598266)) {
-    if ((_DAT_0059826e < cos_value) && (cos_value < 1.0)) {
+  if ((0.70699999999999996 <= sin_value) || (sin_value <= -0.70699999999999996)) {
+    if ((-1 < cos_value) && (cos_value < 1.0)) {
       dVar2 = acos(cos_value);
       local_c = (float)dVar2;
     }
@@ -28,14 +26,14 @@ float __cdecl core_xform_cpp_angleFromSinCos_FUN_0055b0b0(double sin_value,doubl
     fVar1 = asin((float10)sin_value);
     local_c = (float)fVar1;
     if (cos_value < 0.0) {
-      local_c = (float)_DAT_00598276 - local_c;
+      local_c = (float)3.1415926535900001 - local_c;
     }
   }
-  if (local_c < (float)_DAT_0059827e) {
-    local_c = local_c + _DAT_00598286;
+  if (local_c < (float)-3.1415926535900001) {
+    local_c = local_c + 6.283185f;
   }
-  if ((float)_DAT_00598276 < local_c) {
-    return local_c + _DAT_0059828a;
+  if ((float)3.1415926535900001 < local_c) {
+    return local_c + -6.283185f;
   }
   return local_c;
 }

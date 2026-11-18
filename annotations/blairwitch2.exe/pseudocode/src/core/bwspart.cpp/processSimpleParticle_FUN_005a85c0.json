@@ -1,0 +1,349 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 209,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 18,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 105
+  },
+  "cross_references": [
+    {
+      "addr": "005a8180",
+      "from_addr": "005a81fb",
+      "name": "core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a85c0",
+    "address_range": [
+      [
+        "005a85c0",
+        "005a8691"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bwspart.cpp_processSimpleParticle_FUN_005a85c0",
+    "signature": "void __cdecl core_bwspart_cpp_processSimpleParticle_FUN_005a85c0(void *particle,float delta_time)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005a81fb",
+        "call_type": "direct",
+        "caller": "core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.2368421052631575,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 2,
+      "COPY": 306,
+      "FLOAT2FLOAT": 31,
+      "FLOAT_ADD": 6,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 52,
+      "INT_AND": 11,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 16,
+      "INT_ZEXT": 16,
+      "LOAD": 29,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 550
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "particle",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "fVar1 = *(float *)((int)particle + 8) - delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 8) = fVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)((int)particle",
+      "severity": "moderate",
+      "text": "*(uint *)((int)particle + 8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "fVar3 = *(float *)((int)particle + 0x30) + *(float *)((int)particle + 0x3c) * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "fVar3 = *(float *)((int)particle + 0x30) + *(float *)((int)particle + 0x3c) * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x30) = fVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "fVar2 = *(float *)((int)particle + 0x34) + *(float *)((int)particle + 0x40) * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "fVar2 = *(float *)((int)particle + 0x34) + *(float *)((int)particle + 0x40) * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "fVar1 = *(float *)((int)particle + 0x38) + *(float *)((int)particle + 0x44) * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "fVar1 = *(float *)((int)particle + 0x38) + *(float *)((int)particle + 0x44) * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x34) = fVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x38) = fVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x24) = *(float *)((int)particle + 0x24) + fVar3 * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x24) = *(float *)((int)particle + 0x24) + fVar3 * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x28) = *(float *)((int)particle + 0x28) + fVar2 * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x28) = *(float *)((int)particle + 0x28) + fVar2 * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x2c) = *(float *)((int)particle + 0x2c) + fVar1 * delta_time;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(float *)((int)particle",
+      "severity": "moderate",
+      "text": "*(float *)((int)particle + 0x2c) = *(float *)((int)particle + 0x2c) + fVar1 * delta_time;",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 58,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 85
@@ -55,8 +54,8 @@
   "globals": [
     {
       "addr": "005c0d9a",
-      "name": "DAT_005c0d9a",
-      "type": "undefined4",
+      "name": "s_l_s_005c0d9a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -156,14 +155,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005c0d9a",
-      "severity": "mild",
-      "text": "_sprintf(local_10c,&DAT_005c0d9a);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 15,

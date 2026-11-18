@@ -11,13 +11,13 @@
 ;   core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_00560ab0 at 00560aba
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ceb91c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555ee0 | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555ee0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxDelay_FUN_00555ee0
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555ee6
     SUB EAX,EDX                         ; 00555eed

@@ -11,7 +11,7 @@
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "warning_overlapping_globals",
+      "raw_address_constant",
       "wrong_global"
     ],
     "total_lines": 101
@@ -68,7 +68,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b7ff0",
@@ -96,9 +96,9 @@
     },
     {
       "addr": "005cf20f",
-      "name": "DAT_005cf20f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf20f",
+      "type": "double",
+      "value": "7"
     },
     {
       "addr": "0060a084",
@@ -108,14 +108,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -264,16 +264,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(ushort *)((int)this_ptr",
       "severity": "moderate",
       "text": "this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);",
@@ -281,11 +273,19 @@
     },
     {
       "description": "Scalar global g_GlobalFilters accessed via (&g_GlobalFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PlayerFilters (at 0x0060a0a4, +32 bytes).",
-      "line": 32,
+      "line": 31,
       "match": "g_GlobalFilters",
       "severity": "moderate",
-      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(fVar5)],0,0,iVar3);",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar6)],0,0,iVar4);",
       "type": "wrong_global"
+    },
+    {
+      "description": "Raw hex address 0x449e19 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 28,
+      "match": "0x449e19",
+      "severity": "moderate",
+      "text": "iVar4 = 0x449e19;",
+      "type": "raw_address_constant"
     }
   ]
 }

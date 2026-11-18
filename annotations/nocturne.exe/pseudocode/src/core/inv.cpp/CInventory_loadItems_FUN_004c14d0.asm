@@ -39,7 +39,7 @@ section .text
     ADD ESI,0x4                         ; 004c14ee
     INC EBX                             ; 004c14f1
     CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0 ; 004c14f2
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     MOV EAX,dword ptr [EDI + 0x8]       ; 004c14f7
     ADD ESP,0x8                         ; 004c14fa
     CMP EBX,EAX                         ; 004c14fd

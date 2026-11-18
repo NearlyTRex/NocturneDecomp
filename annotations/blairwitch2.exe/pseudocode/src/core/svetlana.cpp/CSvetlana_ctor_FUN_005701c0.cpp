@@ -9,19 +9,32 @@
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005701c0(CSvetlana *this_ptr)
 
 {
-  int iVar1;
+  CHero *pCVar1;
+  CCloth *pCVar2;
+  CCloth *pCVar3;
   
-  iVar1 = core_hero_cpp_FUN_004ce240(this_ptr);
-  iVar1 = core_necklace_cpp_FUN_005adda0(iVar1 + 0x25648);
-  iVar1 = core_necklace_cpp_FUN_005adda0(iVar1 + 0x3ab30);
-  *(CHero_full_vtable **)(iVar1 + -0x5fec8) = &g_CSvetlanaVTable;
-  *(uint *)(iVar1 + -0x3ab38) = 0;
-  *(uint *)(iVar1 + -0x3ab34) = 0;
+  pCVar1 = core_hero_cpp_CHero_ctor_FUN_004ce240(&this_ptr->base);
+  pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_005adda0((CCloth *)(pCVar1[1].base.base.actor_name + 8));
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_005adda0(pCVar2 + 1);
+  pCVar3[-2].vertices[0x132].rest_lengths[4] = (float)&g_CSvetlanaVTable;
+  pCVar3[-2].wind_velocity.y = 0.0;
+  pCVar3[-2].wind_velocity.z = 0.0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)(iVar1 + -0x5fec4),"svetlana.dfm");
-  *(uint *)(iVar1 + 0x3ab40) = 0x3f800000;
-  *(uint *)(iVar1 + 0x3ab3c) = 0;
-  *(uint *)(iVar1 + 0x3ab38) = *(uint *)(iVar1 + 0x3ab3c);
-  *(uint *)(iVar1 + 0x3ab34) = *(uint *)(iVar1 + 0x3ab38);
-  return (CSvetlana *)(iVar1 + -0x60178);
+            ((CDeformableModelInstance *)(pCVar3[-2].vertices[0x132].rest_lengths + 5),
+             "svetlana.dfm");
+  pCVar2 = pCVar3 + 1;
+  (pCVar2->model).model_filename[0x10] = '\0';
+  (pCVar2->model).model_filename[0x11] = '\0';
+  (pCVar2->model).model_filename[0x12] = -0x80;
+  (pCVar2->model).model_filename[0x13] = '?';
+  pCVar2 = pCVar3 + 1;
+  (pCVar2->model).model_filename[0xc] = '\0';
+  (pCVar2->model).model_filename[0xd] = '\0';
+  (pCVar2->model).model_filename[0xe] = '\0';
+  (pCVar2->model).model_filename[0xf] = '\0';
+  *(uint *)(pCVar3[1].model.model_filename + 8) =
+       *(uint *)(pCVar3[1].model.model_filename + 0xc);
+  *(uint *)(pCVar3[1].model.model_filename + 4) =
+       *(uint *)(pCVar3[1].model.model_filename + 8);
+  return (CSvetlana *)&pCVar3[-2].vertices[0x130].force.y;
 }

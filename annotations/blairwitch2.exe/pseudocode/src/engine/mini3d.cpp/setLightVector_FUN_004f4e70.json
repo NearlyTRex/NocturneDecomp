@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 67,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 3,
+    "pseudocode_lines": 26,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [],
   "function": {
@@ -38,20 +37,20 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09918",
-      "name": "DAT_01d09918",
-      "type": "undefined4",
+      "name": "g_PTR_01d09918",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "0264bc7c",
-      "name": "DAT_0264bc7c",
-      "type": "undefined4",
+      "name": "g_PTR_0264bc7c",
+      "type": "void*",
       "value": null
     }
   ],
@@ -133,27 +132,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
-      "text": "code *pcVar3;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((pcVar3 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_PTR_0264bc7c)(&uStack_14,intensity);",
       "type": "unresolved_funcptr"
     }
   ]

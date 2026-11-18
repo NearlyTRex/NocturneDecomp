@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_matrix_c_normalizeVector3DFixed_FUN_004e6140(int *param_1)
+; CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_004e6140(CVector3i *input_vector,CVector3i *output_vector)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input_vector
 ;
-; XREF[2]:
+; XREF[3]:
 ;   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280 at 004052aa
+;   engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400 at 0040542a
 ;   engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0 at 004051ca
 ;
 ; Called Functions:

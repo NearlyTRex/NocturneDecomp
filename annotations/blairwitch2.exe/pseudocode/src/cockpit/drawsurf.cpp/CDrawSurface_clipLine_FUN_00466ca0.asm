@@ -18,11 +18,11 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00466820 at 00466881
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -325,10 +325,10 @@ section .text
         ;   Label: LAB_00466f53
     MOV EAX,0x369                       ; 00466f58
     PUSH 0x5d12fc                       ; 00466f5d
-    MOV dword ptr [0x01d046a0],EBP      ; 00466f62 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00466f68 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00466f6d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBP      ; 00466f62 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00466f68 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00466f6d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00466f72
     MOV EAX,dword ptr [ESP + 0x18]      ; 00466f75
     ADD ESP,0x48                        ; 00466f79

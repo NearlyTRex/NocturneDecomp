@@ -14,8 +14,8 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a53b
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c03f
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429750
-;   core_charactr.cpp_FUN_0042d750 at 0042d8a2
-;   core_charactr.cpp_FUN_00432f10 at 004334d7
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 at 004334d7
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 at 0042d8a2
 ;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004486c4
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00449a50 at 00449c22
 ;   ... and 39 more
@@ -23,11 +23,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005f0f4b
 ;   TerminatedCString s_CDemonSet_ignore_ignore_005f0f60
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -61,10 +61,10 @@ section .text
     MOV EDI,0x5f0f4b                    ; 00559287 | = "..\\core\\setcolid.cpp"
     MOV EBP,0x473                       ; 0055928c
     PUSH 0x5f0f60                       ; 00559291 | = "CDemonSet::ignore - ignore list is full"
-    MOV dword ptr [0x01d1d400],EDI      ; 00559296 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0055929c | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005592a2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 00559296 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 0055929c | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005592a2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005592a7
     POP EDI                             ; 005592aa
     JMP 0x0055926c                      ; 005592ab

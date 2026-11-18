@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00458bc0(CDemnfolk *this_ptr)
 
@@ -23,7 +22,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00458bc0(CDemnfolk *this_ptr)
   
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&(this_ptr->base).base.model);
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,"COMBATMODEHARD");
+                    (g_CEventListPtr,"COMBATMODEHARD");
   if (iVar2 == 0) {
     this_ptr->difficulty_speed_scale = 0.75;
   }
@@ -60,13 +59,13 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00458bc0(CDemnfolk *this_ptr)
   this_ptr->bone_indices[10] = iVar2;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(this_ptr_00);
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
-                    (this_ptr_02,&DAT_005d7e0e,1);
+                    (this_ptr_02,"larm",1);
   this_ptr->part_indices[0] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
                     (this_ptr_02,"l4arm",1);
   this_ptr->part_indices[1] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
-                    (this_ptr_02,&DAT_005d7e19,1);
+                    (this_ptr_02,"rarm",1);
   this_ptr->part_indices[2] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
                     (this_ptr_02,"r4arm",0);
@@ -81,7 +80,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00458bc0(CDemnfolk *this_ptr)
                     (this_ptr_02,"torso",1);
   this_ptr->part_indices[5] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
-                    (this_ptr_02,&DAT_005d7e30,1);
+                    (this_ptr_02,"head",1);
   (this_ptr->base).base.model.part_data.visibility_flags[0x3b] = 0;
   this_ptr->part_indices[6] = iVar2;
   (this_ptr->base).base.carry_hands[0].bone_index = this_ptr->bone_indices[1];
@@ -95,7 +94,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00458bc0(CDemnfolk *this_ptr)
   this_ptr->rise_delay = fVar3;
   if ((-1 < iVar2) && ((this_ptr->base).base.collision_cylinder_top < 0.0)) {
     (this_ptr->base).base.collision_cylinder_top =
-         (this_ptr->base).base.model.bounding_box.max.y + (float)_DAT_005d7ef3;
+         (this_ptr->base).base.model.bounding_box.max.y + (float)-0.75;
   }
   pcVar4 = (this_ptr->base).base.model.model_name;
   this_ptr->bleedout_timer = 0.0;

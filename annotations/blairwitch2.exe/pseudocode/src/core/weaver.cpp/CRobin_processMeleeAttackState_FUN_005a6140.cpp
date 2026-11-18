@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin *this_ptr,float delta_time)
 
@@ -16,9 +15,9 @@ void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin 
   float fVar2;
   float fVar3;
   CDemonActor *pCVar4;
-  int iVar5;
+  SMotion *pSVar5;
   CDeformableModelInstance *this_ptr_00;
-  SStateMachine *pSVar6;
+  SStateMachine *this_ptr_01;
   
   pCVar4 = (*(this_ptr->base).base.base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr)
   ;
@@ -28,19 +27,19 @@ void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin 
             (this_ptr->base).base.base.base.base.location.position.x;
     fVar3 = (pCVar1->base).location.position.z -
             *(float *)((int)&(this_ptr->base).base.base.base.base.location.position + 8);
-    if (_DAT_005ffc9c < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
-      pSVar6 = &(this_ptr->base).base.state_machine;
-      core_muzzle_cpp_FUN_0059dcb0(pSVar6,0x3f800000);
-      core_muzzle_cpp_FUN_0059d8e0(pSVar6,"Chasing");
+    if (7.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
+      this_ptr_01 = &(this_ptr->base).base.state_machine;
+      core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_01,1.0);
+      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");
       return;
     }
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
               ((CCharacter *)this_ptr,&(pCVar1->base).location.position);
     this_ptr_00 = &(this_ptr->base).base.base.base.model;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
-    iVar5 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar5 + 0x24) == 5) {
-      core_motion_cpp_FUN_00503e60(&this_ptr_00->base);
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    if (pSVar5->state_index == 5) {
+      core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&this_ptr_00->base);
       return;
     }
   }

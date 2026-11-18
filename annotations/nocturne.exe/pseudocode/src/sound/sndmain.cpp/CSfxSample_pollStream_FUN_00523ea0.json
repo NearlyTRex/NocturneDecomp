@@ -2,22 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 500,
-    "complexity_score": 376,
+    "complexity_score": 282,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 226,
-    "suspect_count": 12,
+    "pseudocode_lines": 222,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "raw_address_constant",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 726
+    "total_lines": 722
   },
   "cross_references": [
     {
@@ -229,19 +225,19 @@
     },
     {
       "addr": "02db1118",
-      "name": "DAT_02db1118",
-      "type": "undefined4",
+      "name": "g_SfxStreamReadBuffer",
+      "type": "char[15360]",
       "value": null
     },
     {
       "addr": "02db111c",
-      "name": "DAT_02db111c",
+      "name": "g_SfxStreamReadBuffer+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02db111d",
-      "name": "DAT_02db111d",
+      "name": "g_SfxStreamReadBuffer+5",
       "type": "undefined4",
       "value": null
     },
@@ -253,14 +249,14 @@
     },
     {
       "addr": "02dc8318",
-      "name": "DAT_02dc8318",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02dc84bc",
-      "name": "DAT_02dc84bc",
-      "type": "undefined4",
+      "name": "g_SoundLockCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -465,64 +461,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_02db1118",
-      "severity": "mild",
-      "text": "output_buffer = (short *)&DAT_02db1118;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 180,
-      "match": "DAT_02db1118",
-      "severity": "mild",
-      "text": "puVar10 = (uint *)&DAT_02db1118;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 188,
-      "match": "(uint *)((int)puVar10",
-      "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 189,
-      "match": "(uint *)((int)puVar8",
-      "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 188,
-      "match": "(int)puVar10",
-      "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 189,
-      "match": "(int)puVar8",
-      "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Raw hex address 0x523f55 assigned to bare local `iVar14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 62,
+      "line": 58,
       "match": "0x523f55",
       "severity": "moderate",
       "text": "iVar14 = 0x523f55;",
@@ -530,7 +470,7 @@
     },
     {
       "description": "Raw hex address 0x523f78 assigned to bare local `uVar13`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar13` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 65,
+      "line": 61,
       "match": "0x523f78",
       "severity": "moderate",
       "text": "uVar13 = 0x523f78;",
@@ -538,18 +478,18 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 181,
+      "line": 177,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar9 = local_20 * iVar14 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "text": "for (uVar8 = local_20 * iVar14 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 186,
+      "line": 182,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar9 = local_20 * iVar14 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "text": "for (uVar8 = local_20 * iVar14 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -557,7 +497,7 @@
       "line": 350,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00524288: MOVSD.REP ES:EDI,ESI  ; DAT_02db1118 | DAT_02db111c",
+      "text": "// 00524288: MOVSD.REP ES:EDI,ESI  ; g_SfxStreamReadBuffer | g_SfxStreamReadBuffer+4",
       "type": "unrolled_memcpy"
     }
   ]

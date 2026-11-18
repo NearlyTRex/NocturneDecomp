@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_styldemo_cpp_CStylerDemon_setup_FUN_0059e130(CStylerDemon *this_ptr)
 
@@ -30,22 +29,22 @@ void __cdecl core_styldemo_cpp_CStylerDemon_setup_FUN_0059e130(CStylerDemon *thi
   }
   pCVar2 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(pCVar2);
-  core_charactr_cpp_FUN_0042f280(2);
-  core_charactr_cpp_FUN_0042f280(4);
-  core_charactr_cpp_FUN_0042f280(3);
+  core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(2);
+  core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(4);
+  core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(3);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(pCVar2);
-  _DAT_02d24cf4 =
+  g_INT_02d24cf4 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);
-  _DAT_02d24cf8 =
+  g_INT_02d24cf8 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_02d24d04 =
+  g_INT_02d24d04 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
-  _DAT_02d24cfc =
+  g_INT_02d24cfc =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
-  _DAT_02d24d00 =
+  g_INT_02d24d00 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
-  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_02d24cf8;
-  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_02d24cf4;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_02d24cf8;
+  (this_ptr->base).base.carry_hands[1].bone_index = g_INT_02d24cf4;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base);
   if (pSVar4->state_index != 6) {
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base);

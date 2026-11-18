@@ -68,7 +68,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_00462300(CDrip *this_ptr,float delt
           CStack_60.y = CStack_60.y + (this_ptr->base).location.position.y;
           CStack_60.z = fStack_14 + (this_ptr->base).location.position.z;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                    (g_CFireEffect_PTR_005b80f0,&CStack_60,0.5,(CVector3f *)0x0,0xffff);
+                    (g_CFireEffectPtr,&CStack_60,0.5,(CVector3f *)0x0,0xffff);
           fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.7853982,1.5707964);
           fStack_14 = fStack_1c;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,6.2831855);
@@ -81,10 +81,10 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_00462300(CDrip *this_ptr,float delt
           aCStack_3c[0].x = (float)(fVar6 * (float10)20.0f * (float10)fStack_18);
           aCStack_3c[0].z = (float)(fVar8 * (float10)20.0f * (float10)fStack_18);
           model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                                ((CKeyFramedModelInstance *)0x1b7b330);
+                                (&g_StalactiteRockModelInstance);
           iVar4 = iVar4 + 1;
           core_fire_cpp_CFireEffect_createRock_FUN_0048b320
-                    (g_CFireEffect_PTR_005b80f0,&position->position,aCStack_3c,model_ptr);
+                    (g_CFireEffectPtr,&position->position,aCStack_3c,model_ptr);
         } while (iVar4 < 10);
       }
       (this_ptr->base).location.position.y = (this_ptr->home_pos).y;

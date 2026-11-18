@@ -48,7 +48,8 @@ CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_
       CStack_3c.z = 0.101;
     }
   }
-  core_xform_cpp_FUN_005b5760(&CStack_78,&CStack_24,&CStack_3c);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+            (&CStack_78,&CStack_24,&CStack_3c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
             (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_a8);

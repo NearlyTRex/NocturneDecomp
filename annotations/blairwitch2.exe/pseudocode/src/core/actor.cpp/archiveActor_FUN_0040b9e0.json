@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 99,
+    "complexity_score": 16,
     "cross_reference_count": 41,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 66
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
   },
   "cross_references": [
     {
@@ -288,44 +286,44 @@
     {
       "addr": "005b8010",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8010"
+      "name": "crt_stdio.c_fprintf_FUN_005b8010"
     }
   ],
   "globals": [
     {
       "addr": "005cab4e",
-      "name": "DAT_005cab4e",
-      "type": "undefined4",
+      "name": "s_s_005cab4e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00609590",
-      "name": "DAT_00609590",
-      "type": "undefined1",
+      "name": "g_PropertyNamePrefix",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     },
     {
       "addr": "007bc034",
-      "name": "DAT_007bc034",
-      "type": "undefined4",
+      "name": "g_ActorDataFile",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "007bc038",
-      "name": "DAT_007bc038",
-      "type": "undefined4",
+      "name": "g_ActorReadingMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007bc03c",
-      "name": "DAT_007bc03c",
-      "type": "undefined4",
+      "name": "g_CurrentActorBeingProcessed",
+      "type": "CDemonActor*",
       "value": null
     },
     {
@@ -408,70 +406,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 == 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "(0x01D182F0,DAT_007bc034,DAT_007bc03c,property_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_007bc03c",
-      "severity": "mild",
-      "text": "(0x01D182F0,DAT_007bc034,DAT_007bc03c,property_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab4e,&DAT_00609590);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005cab4e",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab4e,&DAT_00609590);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00609590",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab4e,&DAT_00609590);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "(0x01D182F0,*actor_ptr,DAT_007bc034,DAT_007bc03c,property_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_007bc03c",
-      "severity": "mild",
-      "text": "(0x01D182F0,*actor_ptr,DAT_007bc034,DAT_007bc03c,property_name);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

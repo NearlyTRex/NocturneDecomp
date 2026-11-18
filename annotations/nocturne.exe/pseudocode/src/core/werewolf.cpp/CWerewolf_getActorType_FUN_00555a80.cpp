@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_werewolf_cpp_CWerewolf_getActorType_FUN_00555a80(CWerewolf *this_ptr)
 
 {
-  return &g_CWerewolfActorType_02de078c;
+  return &g_CWerewolfClassInfo;
 }

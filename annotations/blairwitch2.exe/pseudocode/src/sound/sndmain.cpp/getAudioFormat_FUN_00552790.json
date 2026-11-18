@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 49,
+    "complexity_score": 14,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [
@@ -62,21 +60,21 @@
   "globals": [
     {
       "addr": "0061bc98",
-      "name": "DAT_0061bc98",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioBitsPerSample",
+      "type": "int",
+      "value": "0x10"
     },
     {
       "addr": "0061bc9c",
-      "name": "DAT_0061bc9c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "0061bca0",
-      "name": "DAT_0061bca0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioSampleRate",
+      "type": "int",
+      "value": "0x5622"
     }
   ],
   "param_estimates": {
@@ -220,30 +218,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_0061bc98",
-      "severity": "mild",
-      "text": "*bits_per_sample = DAT_0061bc98;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "*channels = DAT_0061bc9c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0061bca0",
-      "severity": "mild",
-      "text": "*sample_rate = DAT_0061bca0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

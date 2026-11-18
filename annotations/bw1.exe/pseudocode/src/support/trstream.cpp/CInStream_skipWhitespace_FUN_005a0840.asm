@@ -10,7 +10,7 @@
 ;   support_trstream.cpp_CInStream_vscanf_FUN_0059f700 at 0059f8d2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
         ;   Label: LAB_005a0858
     INC AL                              ; 005a085b
     AND EAX,0xff                        ; 005a085d
-    TEST byte ptr [EAX + 0x626114],0x2  ; 005a0862 | DAT_00626114
+    TEST byte ptr [EAX + 0x626114],0x2  ; 005a0862 | g_CharacterClassificationTable
     JZ 0x005a088c                       ; 005a0869
         ;   XREF to: 005a088c (CONDITIONAL_JUMP)  ; LAB_005a088c
     PUSH EBX                            ; 005a086b

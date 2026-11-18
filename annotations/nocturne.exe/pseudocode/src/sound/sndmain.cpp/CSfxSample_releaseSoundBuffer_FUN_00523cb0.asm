@@ -12,7 +12,7 @@
 ;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 005227a4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     TEST ECX,ECX                        ; 00523cc6
     JZ 0x00523cd4                       ; 00523cc8
         ;   XREF to: 00523cd4 (CONDITIONAL_JUMP)  ; LAB_00523cd4
-    MOV ESI,dword ptr [0x02dc8318]      ; 00523cca | DAT_02dc8318
+    MOV ESI,dword ptr [0x02dc8318]      ; 00523cca | g_CSoundDevicePtr
     TEST ESI,ESI                        ; 00523cd0
     JNZ 0x00523cec                      ; 00523cd2
         ;   XREF to: 00523cec (CONDITIONAL_JUMP)  ; LAB_00523cec

@@ -11,8 +11,8 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a1068
-;   undefined4 DAT_005b7650
+;   float g_FLOAT_005a1068 = 2
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cc9450
 ;
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 004ef975 (CONDITIONAL_JUMP)  ; LAB_004ef975
     LEA EAX,[EBX + 0x1f570]             ; 004ef8db
     PUSH EAX                            ; 004ef8e1
-    MOV EDX,dword ptr [0x005b7650]      ; 004ef8e2 | DAT_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 004ef8e2 | g_CEventListPtr
     PUSH EDX                            ; 004ef8e8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004ef8e9
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -134,7 +134,7 @@ section .text
     JNZ 0x004ef8f5                      ; 004ef978
         ;   XREF to: 004ef8f5 (CONDITIONAL_JUMP)  ; LAB_004ef8f5
     FLD float ptr [EBP + 0x18]          ; 004ef97e
-    FDIV float ptr [0x005a1068]         ; 004ef981 | DAT_005a1068
+    FDIV float ptr [0x005a1068]         ; 004ef981 | g_FLOAT_005a1068
     FADD float ptr [EBX + 0x202a8]      ; 004ef987
     FST float ptr [EBX + 0x202a8]       ; 004ef98d
     FLD1                                ; 004ef993

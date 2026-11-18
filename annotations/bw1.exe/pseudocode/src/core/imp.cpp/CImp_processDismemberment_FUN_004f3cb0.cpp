@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004f3cb0(CImp *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -93,16 +91,16 @@ switchD_004f3ce6_default:
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_004352e0
                 ((CCharacter *)this_ptr,"limb?.wav");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(body_part);
-      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005e56a2;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     }
   }
   iVar1 = damage_info->hit_part_index;
   if (iVar1 == this_ptr->part_indices[10]) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e56b2;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
     return;
   }
   if ((iVar1 != this_ptr->part_indices[8]) && (iVar1 != this_ptr->part_indices[9])) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e56aa;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }
   damage_info->damage_amount = damage_info->damage_amount;

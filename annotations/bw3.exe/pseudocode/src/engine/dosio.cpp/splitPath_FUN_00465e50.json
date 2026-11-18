@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 21,
     "complexity_score": 5,
-    "cross_reference_count": 28,
+    "cross_reference_count": 29,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -22,13 +22,13 @@
     {
       "addr": "004a7cf0",
       "from_addr": "004a7d0b",
-      "name": "core_flashlit.cpp_FUN_004a7cf0",
+      "name": "core_flashlit.cpp_loadNotesBitmap_FUN_004a7cf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a7d70",
       "from_addr": "004a7e40",
-      "name": "core_flashlit.cpp_FUN_004a7d70",
+      "name": "core_flashlit.cpp_loadNotesBitmaps_FUN_004a7d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,7 +52,7 @@
     {
       "addr": "004b6f30",
       "from_addr": "004b7400",
-      "name": "core_game.cpp_FUN_004b6f30",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -64,25 +64,25 @@
     {
       "addr": "00532b80",
       "from_addr": "00532fae",
-      "name": "core_set.cpp_FUN_00532b80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00465eb0",
-      "from_addr": "00465ee2",
-      "name": "engine_dosio.cpp_FUN_00465eb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00466040",
-      "from_addr": "00466078",
-      "name": "engine_dosio.cpp_FUN_00466040",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00532b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00465f80",
       "from_addr": "00465fa6",
       "name": "engine_dosio.cpp_changeFileExtension_FUN_00465f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00465eb0",
+      "from_addr": "00465ee2",
+      "name": "engine_dosio.cpp_ensureTrailingSlash_FUN_00465eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00466040",
+      "from_addr": "00466078",
+      "name": "engine_dosio.cpp_resolveRelativePath_FUN_00466040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -94,7 +94,13 @@
     {
       "addr": "004afbf0",
       "from_addr": "004afd21",
-      "name": "engine_font.cpp_FUN_004afbf0",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004afbf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512fb0",
+      "from_addr": "00513109",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,15 +110,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00512fb0",
-      "from_addr": "00513109",
-      "name": "engine_pod.cpp_FUN_00512fb0",
+      "addr": "0056ad60",
+      "from_addr": "0056aeaa",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_0056ad60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056ad60",
-      "from_addr": "0056aeaa",
-      "name": "engine_texture.cpp_FUN_0056ad60",
+      "addr": "0047dd20",
+      "from_addr": "0047e05c",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -134,15 +140,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047dd20",
-      "from_addr": "0047e05c",
-      "name": "shape_edittool.cpp_FUN_0047dd20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00483020",
       "from_addr": "00483056",
-      "name": "shape_edittool.cpp_FUN_00483020",
+      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00483020",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -180,6 +180,12 @@
       "from_addr": "00556544",
       "name": "sound_sndmain.cpp_startSfx_FUN_00556240",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571340",
+      "from_addr": "005715ba",
+      "name": "support_trisock.cpp_httpRequestUpdate_FUN_00571340",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -203,7 +209,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 38,
+    "call_site_count": 39,
     "call_sites": [
       {
         "call_addr": "00482afc",
@@ -307,7 +313,7 @@
       {
         "call_addr": "004b7400",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6f30",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

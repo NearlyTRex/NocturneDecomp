@@ -14,9 +14,9 @@ int FUN_005c3628(void)
   HANDLE hConsoleHandle;
   DWORD DStack_c;
   
-  iVar2 = DAT_0061f270;
-  if (DAT_0061f270 == 0) {
-    if (DAT_0061f448 == (code *)0x0) {
+  iVar2 = g_ConsoleInitializationFlag;
+  if (g_ConsoleInitializationFlag == 0) {
+    if (g_SpecialConsoleInputHandler == (byte *)0x0) {
       (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2a8)(0);
       hConsoleHandle = (HANDLE)FUN_005c4dc0();
       GetConsoleMode(hConsoleHandle,&DStack_c);
@@ -26,12 +26,12 @@ int FUN_005c3628(void)
       (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(0);
     }
     else {
-      uVar1 = (*DAT_0061f414)(0);
-      iVar2 = (*DAT_0061f448)(uVar1);
+      uVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(0);
+      iVar2 = (*(code *)g_SpecialConsoleInputHandler)(uVar1);
     }
   }
   else {
-    DAT_0061f270 = 0;
+    g_ConsoleInitializationFlag = 0;
   }
   return iVar2;
 }

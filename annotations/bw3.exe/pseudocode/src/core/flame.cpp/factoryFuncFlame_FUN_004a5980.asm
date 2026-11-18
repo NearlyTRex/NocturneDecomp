@@ -15,7 +15,7 @@ section .text
     PUSH 0x2a4                          ; 004a5980
         ;   Label: core_flame.cpp_factoryFuncFlame_FUN_004a5980
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004a5985
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004a598a
     TEST EAX,EAX                        ; 004a598d
     JNZ 0x004a5992                      ; 004a598f

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 69,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 101
   },
@@ -54,26 +53,26 @@
     },
     {
       "addr": "02dc942c",
-      "name": "DAT_02dc942c",
-      "type": "undefined4",
+      "name": "g_INT_02dc942c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc9434",
-      "name": "DAT_02dc9434",
-      "type": "undefined4",
+      "name": "g_INT_02dc9434",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc9438",
-      "name": "DAT_02dc9438",
-      "type": "undefined4",
+      "name": "g_INT_02dc9438",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc943c",
-      "name": "DAT_02dc943c",
-      "type": "undefined4",
+      "name": "g_WaveOutNumBuffers",
+      "type": "int",
       "value": null
     }
   ],
@@ -168,28 +167,44 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(void **)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
+      "severity": "moderate",
+      "text": "memset(*(void **)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2),0,0x20);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint **)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
+      "severity": "moderate",
+      "text": "**(uint **)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 15,
-      "match": "*(void **)(iVar2 + 0x2dc93a8",
+      "match": "(uint *)((int)g_WaveOutBuffers",
       "severity": "moderate",
-      "text": "memset(*(void **)(iVar2 + 0x2dc93a8),0,0x20);",
-      "type": "raw_address_pointer_store"
+      "text": "*(uint *)((int)g_WaveOutBuffers + iVar2);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 16,
-      "match": "*(uint **)(iVar2 + 0x2dc93a8",
+      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
       "severity": "moderate",
-      "text": "**(uint **)(iVar2 + 0x2dc93a8) = *(uint *)(iVar2 + 0x2dc93c8);",
-      "type": "raw_address_pointer_store"
+      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) + 0xc) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) + 4) = g_INT_02dc9438;",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

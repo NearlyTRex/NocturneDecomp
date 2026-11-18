@@ -11,7 +11,7 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00563de8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc1d4
+;   float g_FLOAT_005fc1d4 = 10
 ;   undefined4 g_CDynamiteClassInfo.name_hash
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     CALL dword ptr [EAX + 0xec]         ; 0056ef3e
     MOV dword ptr [EBX + 0x25698],0x0   ; 0056ef44
     MOV dword ptr [EBX + 0x2d04],0x0    ; 0056ef4e
-    FLD float ptr [0x005fc1d4]          ; 0056ef58 | DAT_005fc1d4
+    FLD float ptr [0x005fc1d4]          ; 0056ef58 | g_FLOAT_005fc1d4
     MOV dword ptr [EBX + 0x2d08],0x0    ; 0056ef5e
     ADD ESP,0x4                         ; 0056ef68
     MOV EDI,dword ptr [EBX + 0x256a4]   ; 0056ef6b

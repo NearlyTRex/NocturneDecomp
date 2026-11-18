@@ -10,20 +10,24 @@ EDeathState __cdecl core_hand_cpp_CHand_getDeathState_FUN_005aa260(CHand *this_p
 
 {
   int iVar1;
-  SStateMachine *pSVar2;
+  SMotion *pSVar2;
+  SStateMachine *this_ptr_00;
   
-  pSVar2 = &(this_ptr->base).state_machine;
-  iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar2,"Death");
+  this_ptr_00 = &(this_ptr->base).state_machine;
+  iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Death");
   if (((iVar1 == 0) &&
-      (iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar2,"Animation"), iVar1 == 0)) &&
-     (iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar2,"Sleeping"), iVar1 == 0)) {
+      (iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Animation"),
+      iVar1 == 0)) &&
+     (iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Sleeping"),
+     iVar1 == 0)) {
     return DEATH_STATE_ALIVE;
   }
-  iVar1 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.base.model);
-  if (*(int *)(iVar1 + 0x24) == 0) {
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.base.model.base);
+  if (pSVar2->state_index == 0) {
     return DEATH_STATE_DEAD;
   }
-  if (*(int *)(iVar1 + 0x24) != 5) {
+  if (pSVar2->state_index != 5) {
     return DEATH_STATE_ALIVE;
   }
   return DEATH_STATE_DYING;

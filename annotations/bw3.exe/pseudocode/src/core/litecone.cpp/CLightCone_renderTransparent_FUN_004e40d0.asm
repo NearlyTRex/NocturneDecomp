@@ -7,12 +7,12 @@
 ; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0045f5a0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;
@@ -32,7 +32,7 @@ section .text
     ADD ESP,0x30                        ; 004e40e3
     POP EBX                             ; 004e40e6
     RET                                 ; 004e40e7
-    MOV ECX,dword ptr [0x005f2afc]      ; 004e40e8 | DAT_005f2afc
+    MOV ECX,dword ptr [0x005f2afc]      ; 004e40e8 | g_CDemonRenderer_PTR_005f2afc
         ;   Label: LAB_004e40e8
     PUSH ECX                            ; 004e40ee
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 004e40ef
@@ -59,8 +59,8 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 004e4126
     PUSH EAX                            ; 004e412a
     MOVSD.REP ES:EDI,ESI                ; 004e412b
-    CALL core_box.cpp_FUN_0041daf0      ; 004e412d
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 004e412d
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 004e4132
     PUSH EBX                            ; 004e4135
     MOV ESI,EAX                         ; 004e4136

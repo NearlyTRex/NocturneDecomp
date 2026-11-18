@@ -10,10 +10,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004ce580 at 004ce5ec
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce5ec
 ;
 ; Referenced Globals:
-;   undefined4 s_G_s_3_2f_ms_005e33ab+1
+;   TerminatedCString s_s_3_2f_ms_005e33ac
 ;   TerminatedCString s_gFilterFX_process_005e33d4
 ;   TerminatedCString s_gScript_process_005e33e9
 ;   TerminatedCString s_gSet_process_005e33fc
@@ -22,12 +22,12 @@
 ;   TerminatedCString s_gEventList_process_005e342e
 ;   TerminatedCString s_gSit_process_005e3444
 ;   TerminatedCString s_simulate_3_2f_ms_005e3454
-;   undefined4 DAT_005e346c
-;   undefined4 DAT_005e3474
-;   undefined4 DAT_005e347c
+;   double g_DOUBLE_005e346c = 0.0555555555555556
+;   double g_DOUBLE_005e3474 = 0.0000152587890625
+;   double g_DOUBLE_005e347c = 1000
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CFilterFX* g_CFilterFXPtr = 0152d230
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   ... and 25 more
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@
 ;   core_script.cpp_CScript_process_FUN_005437f0
 ;   core_set.cpp_CDemonSet_process_FUN_005542c0
 ;   core_set.cpp_CDemonSet_processActors_FUN_0054fc20
-;   core_setdir.cpp_FUN_00559f80
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 004d80c1 (CONDITIONAL_JUMP)  ; LAB_004d80c1
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d80b7
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d80bc | DAT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d80bc | g_ProfileStartTime
     MOV EAX,[0x0061135c]                ; 004d80c1 | g_CFilterFXPtr
         ;   Label: LAB_004d80c1
     PUSH EAX                            ; 004d80c6
@@ -100,21 +100,21 @@ section .text
         ;   XREF to: 004d8134 (CONDITIONAL_JUMP)  ; LAB_004d8134
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d80df
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d80e4 | DAT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d80e4 | g_ProfileStartTime
     SUB EAX,ECX                         ; 004d80ea
     MOV dword ptr [ESP + 0x8],EAX       ; 004d80ec
     FILD dword ptr [ESP + 0x8]          ; 004d80f0
-    FMUL double ptr [0x005e346c]        ; 004d80f4 | DAT_005e346c
+    FMUL double ptr [0x005e346c]        ; 004d80f4 | g_DOUBLE_005e346c
     MOV EAX,[0x0061d95c]                ; 004d80fa | g_CGamePtr
-    FMUL double ptr [0x005e3474]        ; 004d80ff | DAT_005e3474
+    FMUL double ptr [0x005e3474]        ; 004d80ff | g_DOUBLE_005e3474
     FLD float ptr [EAX + 0x294]         ; 004d8105 | g_CGameInstance.delta_time_float
     FXCH                                ; 004d810b
-    FMUL double ptr [0x005e347c]        ; 004d810d | DAT_005e347c
+    FMUL double ptr [0x005e347c]        ; 004d810d | g_DOUBLE_005e347c
     FDIVRP                              ; 004d8113
     SUB ESP,0x8                         ; 004d8115
     FSTP double ptr [ESP]               ; 004d8118
     PUSH 0x5e33d4                       ; 004d811b | = "gFilterFX->process()"
-    PUSH 0x5e33ac                       ; 004d8120 | s_G_s_3_2f_ms_005e33ab+1
+    PUSH 0x5e33ac                       ; 004d8120 | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x00611100]      ; 004d8125 | g_CConsolePtr
     PUSH EDI                            ; 004d812b | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004d812c
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 004d814c (CONDITIONAL_JUMP)  ; LAB_004d814c
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8142
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d8147 | DAT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d8147 | g_ProfileStartTime
     MOV EAX,[0x00622ad0]                ; 004d814c | g_CScriptPtr
         ;   Label: LAB_004d814c
     PUSH EAX                            ; 004d8151
@@ -141,21 +141,21 @@ section .text
         ;   XREF to: 004d81bf (CONDITIONAL_JUMP)  ; LAB_004d81bf
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d816a
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d816f | DAT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d816f | g_ProfileStartTime
     SUB EAX,ECX                         ; 004d8175
     MOV dword ptr [ESP + 0x8],EAX       ; 004d8177
     FILD dword ptr [ESP + 0x8]          ; 004d817b
-    FMUL double ptr [0x005e346c]        ; 004d817f | DAT_005e346c
+    FMUL double ptr [0x005e346c]        ; 004d817f | g_DOUBLE_005e346c
     MOV EAX,[0x0061d95c]                ; 004d8185 | g_CGamePtr
-    FMUL double ptr [0x005e3474]        ; 004d818a | DAT_005e3474
+    FMUL double ptr [0x005e3474]        ; 004d818a | g_DOUBLE_005e3474
     FLD float ptr [EAX + 0x294]         ; 004d8190 | g_CGameInstance.delta_time_float
     FXCH                                ; 004d8196
-    FMUL double ptr [0x005e347c]        ; 004d8198 | DAT_005e347c
+    FMUL double ptr [0x005e347c]        ; 004d8198 | g_DOUBLE_005e347c
     FDIVRP                              ; 004d819e
     SUB ESP,0x8                         ; 004d81a0
     FSTP double ptr [ESP]               ; 004d81a3
     PUSH 0x5e33e9                       ; 004d81a6 | = "gScript->process()"
-    PUSH 0x5e33ac                       ; 004d81ab | s_G_s_3_2f_ms_005e33ab+1
+    PUSH 0x5e33ac                       ; 004d81ab | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x00611100]      ; 004d81b0 | g_CConsolePtr
     PUSH EDI                            ; 004d81b6 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004d81b7
@@ -178,7 +178,7 @@ section .text
         ;   XREF to: 004d81f3 (CONDITIONAL_JUMP)  ; LAB_004d81f3
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d81e9
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d81ee | DAT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d81ee | g_ProfileStartTime
     MOV EAX,[0x00622c18]                ; 004d81f3 | g_CDemonSetPtr
         ;   Label: LAB_004d81f3
     PUSH EAX                            ; 004d81f8 | g_CDemonSetInstance
@@ -192,21 +192,21 @@ section .text
         ;   XREF to: 004d8266 (CONDITIONAL_JUMP)  ; LAB_004d8266
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8211
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d8216 | DAT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d8216 | g_ProfileStartTime
     SUB EAX,ECX                         ; 004d821c
     MOV dword ptr [ESP + 0x8],EAX       ; 004d821e
     FILD dword ptr [ESP + 0x8]          ; 004d8222
-    FMUL double ptr [0x005e346c]        ; 004d8226 | DAT_005e346c
+    FMUL double ptr [0x005e346c]        ; 004d8226 | g_DOUBLE_005e346c
     MOV EAX,[0x0061d95c]                ; 004d822c | g_CGamePtr
-    FMUL double ptr [0x005e3474]        ; 004d8231 | DAT_005e3474
+    FMUL double ptr [0x005e3474]        ; 004d8231 | g_DOUBLE_005e3474
     FLD float ptr [EAX + 0x294]         ; 004d8237 | g_CGameInstance.delta_time_float
     FXCH                                ; 004d823d
-    FMUL double ptr [0x005e347c]        ; 004d823f | DAT_005e347c
+    FMUL double ptr [0x005e347c]        ; 004d823f | g_DOUBLE_005e347c
     FDIVRP                              ; 004d8245
     SUB ESP,0x8                         ; 004d8247
     FSTP double ptr [ESP]               ; 004d824a
     PUSH 0x5e33fc                       ; 004d824d | = "gSet->process()"
-    PUSH 0x5e33ac                       ; 004d8252 | s_G_s_3_2f_ms_005e33ab+1
+    PUSH 0x5e33ac                       ; 004d8252 | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x00611100]      ; 004d8257 | g_CConsolePtr
     PUSH EDI                            ; 004d825d | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004d825e
@@ -219,7 +219,7 @@ section .text
         ;   XREF to: 004d827e (CONDITIONAL_JUMP)  ; LAB_004d827e
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8274
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d8279 | DAT_01cd0c90
+    MOV [0x01cd0c90],EAX                ; 004d8279 | g_ProfileStartTime
     MOV EAX,[0x0061dca4]                ; 004d827e | g_CGorePtr
         ;   Label: LAB_004d827e
     PUSH EAX                            ; 004d8283
@@ -233,21 +233,21 @@ section .text
         ;   XREF to: 004d82f1 (CONDITIONAL_JUMP)  ; LAB_004d82f1
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d829c
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV ECX,dword ptr [0x01cd0c90]      ; 004d82a1 | DAT_01cd0c90
+    MOV ECX,dword ptr [0x01cd0c90]      ; 004d82a1 | g_ProfileStartTime
     SUB EAX,ECX                         ; 004d82a7
     MOV dword ptr [ESP + 0x8],EAX       ; 004d82a9
     FILD dword ptr [ESP + 0x8]          ; 004d82ad
-    FMUL double ptr [0x005e346c]        ; 004d82b1 | DAT_005e346c
+    FMUL double ptr [0x005e346c]        ; 004d82b1 | g_DOUBLE_005e346c
     MOV EAX,[0x0061d95c]                ; 004d82b7 | g_CGamePtr
-    FMUL double ptr [0x005e3474]        ; 004d82bc | DAT_005e3474
+    FMUL double ptr [0x005e3474]        ; 004d82bc | g_DOUBLE_005e3474
     FLD float ptr [EAX + 0x294]         ; 004d82c2 | g_CGameInstance.delta_time_float
     FXCH                                ; 004d82c8
-    FMUL double ptr [0x005e347c]        ; 004d82ca | DAT_005e347c
+    FMUL double ptr [0x005e347c]        ; 004d82ca | g_DOUBLE_005e347c
     FDIVRP                              ; 004d82d0
     SUB ESP,0x8                         ; 004d82d2
     FSTP double ptr [ESP]               ; 004d82d5
     PUSH 0x5e340c                       ; 004d82d8 | = "gGore->process()"
-    PUSH 0x5e33ac                       ; 004d82dd | s_G_s_3_2f_ms_005e33ab+1
+    PUSH 0x5e33ac                       ; 004d82dd | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x00611100]      ; 004d82e2 | g_CConsolePtr
     PUSH EDI                            ; 004d82e8 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004d82e9
@@ -266,8 +266,8 @@ section .text
         ;   XREF to: 004d831a (CONDITIONAL_JUMP)  ; LAB_004d831a
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8310
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d8315 | DAT_01cd0c90
-    MOV ECX,dword ptr [0x0061c010]      ; 004d831a | DAT_0061c010
+    MOV [0x01cd0c90],EAX                ; 004d8315 | g_ProfileStartTime
+    MOV ECX,dword ptr [0x0061c010]      ; 004d831a | g_CFireEffectPtr
         ;   Label: LAB_004d831a
     PUSH ECX                            ; 004d8320
     CALL core_fire.cpp_CFireEffect_process_FUN_004b4dd0 ; 004d8321
@@ -280,21 +280,21 @@ section .text
         ;   XREF to: 004d838d (CONDITIONAL_JUMP)  ; LAB_004d838d
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8339
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV EBP,dword ptr [0x01cd0c90]      ; 004d833e | DAT_01cd0c90
+    MOV EBP,dword ptr [0x01cd0c90]      ; 004d833e | g_ProfileStartTime
     SUB EAX,EBP                         ; 004d8344
     MOV dword ptr [ESP + 0x8],EAX       ; 004d8346
     FILD dword ptr [ESP + 0x8]          ; 004d834a
-    FMUL double ptr [0x005e346c]        ; 004d834e | DAT_005e346c
+    FMUL double ptr [0x005e346c]        ; 004d834e | g_DOUBLE_005e346c
     MOV EAX,[0x0061d95c]                ; 004d8354 | g_CGamePtr
-    FMUL double ptr [0x005e3474]        ; 004d8359 | DAT_005e3474
+    FMUL double ptr [0x005e3474]        ; 004d8359 | g_DOUBLE_005e3474
     FLD float ptr [EAX + 0x294]         ; 004d835f | g_CGameInstance.delta_time_float
     FXCH                                ; 004d8365
-    FMUL double ptr [0x005e347c]        ; 004d8367 | DAT_005e347c
+    FMUL double ptr [0x005e347c]        ; 004d8367 | g_DOUBLE_005e347c
     FDIVRP                              ; 004d836d
     SUB ESP,0x8                         ; 004d836f
     FSTP double ptr [ESP]               ; 004d8372
     PUSH 0x5e341d                       ; 004d8375 | = "gFire->process()"
-    PUSH 0x5e33ac                       ; 004d837a | s_G_s_3_2f_ms_005e33ab+1
+    PUSH 0x5e33ac                       ; 004d837a | = "%s : %3.2f ms\n"
     MOV EAX,[0x00611100]                ; 004d837f | g_CConsolePtr
     PUSH EAX                            ; 004d8384 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004d8385
@@ -307,8 +307,8 @@ section .text
         ;   XREF to: 004d83a5 (CONDITIONAL_JUMP)  ; LAB_004d83a5
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d839b
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d83a0 | DAT_01cd0c90
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004d83a5 | DAT_0061b4d0
+    MOV [0x01cd0c90],EAX                ; 004d83a0 | g_ProfileStartTime
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004d83a5 | g_CEventListPtr
         ;   Label: LAB_004d83a5
     PUSH ECX                            ; 004d83ab
     CALL core_event.cpp_CEventList_process_FUN_004a1a40 ; 004d83ac
@@ -321,33 +321,33 @@ section .text
         ;   XREF to: 004d8418 (CONDITIONAL_JUMP)  ; LAB_004d8418
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d83c4
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV EBP,dword ptr [0x01cd0c90]      ; 004d83c9 | DAT_01cd0c90
+    MOV EBP,dword ptr [0x01cd0c90]      ; 004d83c9 | g_ProfileStartTime
     SUB EAX,EBP                         ; 004d83cf
     MOV dword ptr [ESP + 0x8],EAX       ; 004d83d1
     FILD dword ptr [ESP + 0x8]          ; 004d83d5
-    FMUL double ptr [0x005e346c]        ; 004d83d9 | DAT_005e346c
+    FMUL double ptr [0x005e346c]        ; 004d83d9 | g_DOUBLE_005e346c
     MOV EAX,[0x0061d95c]                ; 004d83df | g_CGamePtr
-    FMUL double ptr [0x005e3474]        ; 004d83e4 | DAT_005e3474
+    FMUL double ptr [0x005e3474]        ; 004d83e4 | g_DOUBLE_005e3474
     FLD float ptr [EAX + 0x294]         ; 004d83ea | g_CGameInstance.delta_time_float
     FXCH                                ; 004d83f0
-    FMUL double ptr [0x005e347c]        ; 004d83f2 | DAT_005e347c
+    FMUL double ptr [0x005e347c]        ; 004d83f2 | g_DOUBLE_005e347c
     FDIVRP                              ; 004d83f8
     SUB ESP,0x8                         ; 004d83fa
     FSTP double ptr [ESP]               ; 004d83fd
     PUSH 0x5e342e                       ; 004d8400 | = "gEventList->process()"
-    PUSH 0x5e33ac                       ; 004d8405 | s_G_s_3_2f_ms_005e33ab+1
+    PUSH 0x5e33ac                       ; 004d8405 | = "%s : %3.2f ms\n"
     MOV EAX,[0x00611100]                ; 004d840a | g_CConsolePtr
     PUSH EAX                            ; 004d840f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004d8410
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004d8415
-    MOV EDX,dword ptr [0x00625bc0]      ; 004d8418 | DAT_00625bc0
+    MOV EDX,dword ptr [0x00625bc0]      ; 004d8418 | g_CTerrainPtr
         ;   Label: LAB_004d8418
     PUSH EDX                            ; 004d841e
     CALL core_terrain.cpp_CTerrain_process_FUN_0059f4f0 ; 004d841f
         ;   XREF to: 0059f4f0 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_process_FUN_0059f4f0(CTerrain * this_ptr)
     ADD ESP,0x4                         ; 004d8424
-    MOV ECX,dword ptr [0x0062604c]      ; 004d8427 | DAT_0062604c
+    MOV ECX,dword ptr [0x0062604c]      ; 004d8427 | g_CWeatherPtr
     PUSH ECX                            ; 004d842d
     CALL core_weather.cpp_CWeather_update_FUN_005ae190 ; 004d842e
         ;   XREF to: 005ae190 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_update_FUN_005ae190(CWeather * this_ptr)
@@ -374,8 +374,8 @@ section .text
         ;   XREF to: 004d847a (CONDITIONAL_JUMP)  ; LAB_004d847a
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8470
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x01cd0c90],EAX                ; 004d8475 | DAT_01cd0c90
-    MOV ECX,dword ptr [0x0061f650]      ; 004d847a | DAT_0061f650
+    MOV [0x01cd0c90],EAX                ; 004d8475 | g_ProfileStartTime
+    MOV ECX,dword ptr [0x0061f650]      ; 004d847a | g_CDemonMission_PTR_0061f650
         ;   Label: LAB_004d847a
     PUSH ECX                            ; 004d8480 | DAT_01d2c900
     CALL core_mission.cpp_CDemonMission_process_FUN_0051b8d0 ; 004d8481
@@ -388,21 +388,21 @@ section .text
         ;   XREF to: 004d84ed (CONDITIONAL_JUMP)  ; LAB_004d84ed
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d8499
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV EBP,dword ptr [0x01cd0c90]      ; 004d849e | DAT_01cd0c90
+    MOV EBP,dword ptr [0x01cd0c90]      ; 004d849e | g_ProfileStartTime
     SUB EAX,EBP                         ; 004d84a4
     MOV dword ptr [ESP + 0x8],EAX       ; 004d84a6
     FILD dword ptr [ESP + 0x8]          ; 004d84aa
-    FMUL double ptr [0x005e346c]        ; 004d84ae | DAT_005e346c
+    FMUL double ptr [0x005e346c]        ; 004d84ae | g_DOUBLE_005e346c
     MOV EAX,[0x0061d95c]                ; 004d84b4 | g_CGamePtr
-    FMUL double ptr [0x005e3474]        ; 004d84b9 | DAT_005e3474
+    FMUL double ptr [0x005e3474]        ; 004d84b9 | g_DOUBLE_005e3474
     FLD float ptr [EAX + 0x294]         ; 004d84bf | g_CGameInstance.delta_time_float
     FXCH                                ; 004d84c5
-    FMUL double ptr [0x005e347c]        ; 004d84c7 | DAT_005e347c
+    FMUL double ptr [0x005e347c]        ; 004d84c7 | g_DOUBLE_005e347c
     FDIVRP                              ; 004d84cd
     SUB ESP,0x8                         ; 004d84cf
     FSTP double ptr [ESP]               ; 004d84d2
     PUSH 0x5e3444                       ; 004d84d5 | = "gSit->process()"
-    PUSH 0x5e33ac                       ; 004d84da | s_G_s_3_2f_ms_005e33ab+1
+    PUSH 0x5e33ac                       ; 004d84da | = "%s : %3.2f ms\n"
     MOV EAX,[0x00611100]                ; 004d84df | g_CConsolePtr
     PUSH EAX                            ; 004d84e4 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004d84e5
@@ -435,12 +435,12 @@ section .text
     PUSH EDI                            ; 004d8535
     JMP 0x004d8096                      ; 004d8536
         ;   XREF to: 004d8096 (UNCONDITIONAL_JUMP)  ; LAB_004d8096
-    MOV EDX,dword ptr [0x006236b8]      ; 004d853b | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 004d853b | g_CSound_PTR_006236b8
         ;   Label: LAB_004d853b
     PUSH EDX                            ; 004d8541
     MOV dword ptr [EBX + 0xe0],EAX      ; 004d8542
-    CALL core_sound.cpp_FUN_0057cc00    ; 004d8548
-        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057cc00(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_init_FUN_0057cc00 ; 004d8548
+        ;   XREF to: 0057cc00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0057cc00(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d854d
     MOV EAX,[0x00622ad0]                ; 004d8550 | g_CScriptPtr
     PUSH 0x2                            ; 004d8555
@@ -448,8 +448,8 @@ section .text
     PUSH ECX                            ; 004d855a
     MOV EDI,dword ptr [0x00622c18]      ; 004d855b | g_CDemonSetPtr
     PUSH EDI                            ; 004d8561 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00559f80   ; 004d8562
-        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00559f80()
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 ; 004d8562
+        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 004d8567
     PUSH EBX                            ; 004d856a
     CALL core_game.cpp_CGame_saveClockTime_FUN_004cbf10 ; 004d856b
@@ -473,12 +473,12 @@ section .text
     SUB EAX,ESI                         ; 004d859c
     MOV dword ptr [ESP + 0x8],EAX       ; 004d859e
     FILD dword ptr [ESP + 0x8]          ; 004d85a2
-    FMUL double ptr [0x005e346c]        ; 004d85a6 | DAT_005e346c
+    FMUL double ptr [0x005e346c]        ; 004d85a6 | g_DOUBLE_005e346c
     MOV EAX,[0x0061d95c]                ; 004d85ac | g_CGamePtr
-    FMUL double ptr [0x005e3474]        ; 004d85b1 | DAT_005e3474
+    FMUL double ptr [0x005e3474]        ; 004d85b1 | g_DOUBLE_005e3474
     FLD float ptr [EAX + 0x294]         ; 004d85b7 | g_CGameInstance.delta_time_float
     FXCH                                ; 004d85bd
-    FMUL double ptr [0x005e347c]        ; 004d85bf | DAT_005e347c
+    FMUL double ptr [0x005e347c]        ; 004d85bf | g_DOUBLE_005e347c
     FDIVRP                              ; 004d85c5
     SUB ESP,0x8                         ; 004d85c7
     FSTP double ptr [ESP]               ; 004d85ca

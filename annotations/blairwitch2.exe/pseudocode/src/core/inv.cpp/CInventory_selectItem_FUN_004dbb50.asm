@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   direction
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004b76c0 at 004b7a5a
-;   core_game.cpp_FUN_004be8a0 at 004beb50
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0 at 004b7a5a
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 at 004beb50
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00527fb7
 ;
 ; Referenced Globals:

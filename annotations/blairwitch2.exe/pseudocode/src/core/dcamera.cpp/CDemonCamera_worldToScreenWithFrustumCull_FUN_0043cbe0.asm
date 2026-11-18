@@ -19,14 +19,14 @@
 ;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00440e90 at 00440ede
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00440000 at 00440256
 ;   core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_0043fce0 at 0043fdd0
-;   core_game.cpp_FUN_004bb240 at 004bb197
+;   core_game.cpp_CGame_beginFadeIn_FUN_004bb240 at 004bb197
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01468540
-;   undefined4 DAT_01468544
-;   undefined4 DAT_01468548
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CVector3i g_CameraOutOfBoundsCoord
+;   undefined4 g_CameraOutOfBoundsCoord.y
+;   undefined4 g_CameraOutOfBoundsCoord.z
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80
@@ -43,8 +43,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 0043cbe6
     MOV EBP,ESI                         ; 0043cbea
     MOV ESI,dword ptr [ESP + 0x34]      ; 0043cbec
-    MOV EDX,dword ptr [0x0060b280]      ; 0043cbf0 | DAT_0060b280
-    PUSH EDX                            ; 0043cbf6 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 0043cbf0 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 0043cbf6 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80 ; 0043cbf7
         ;   XREF to: 0046bc80 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(CDemonRenderer * this_ptr)
     MOV ECX,EAX                         ; 0043cbfc
@@ -85,9 +85,9 @@ section .text
     MOV EDI,ESP                         ; 0043cc71
         ;   Label: LAB_0043cc71
     MOV ESI,0x1468540                   ; 0043cc73
-    MOVSD ES:EDI,ESI                    ; 0043cc78 | DAT_01468540
-    MOVSD ES:EDI,ESI                    ; 0043cc79 | DAT_01468544
-    MOVSD ES:EDI,ESI                    ; 0043cc7a | DAT_01468548
+    MOVSD ES:EDI,ESI                    ; 0043cc78 | g_CameraOutOfBoundsCoord
+    MOVSD ES:EDI,ESI                    ; 0043cc79 | g_CameraOutOfBoundsCoord.y
+    MOVSD ES:EDI,ESI                    ; 0043cc7a | g_CameraOutOfBoundsCoord.z
     MOV ESI,ESP                         ; 0043cc7b
     MOV EDI,EBP                         ; 0043cc7d
     MOVSD ES:EDI,ESI                    ; 0043cc7f

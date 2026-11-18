@@ -17,18 +17,18 @@
 ;   core_bride.cpp_CBride_setup_FUN_00423940 at 00423976
 ;   core_carved.cpp_CCarved_setup_FUN_004287e0 at 00428835
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_00432cb0 at 00432cec
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 at 00432f61
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80 at 00434ac5
-;   core_charactr.cpp_CCharacter_setup_FUN_0042c510 at 0042c5ba
 ;   ... and 45 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f1d31
 ;   TerminatedCString s_Can_t_find_bone_s_in_ske_005f1d46
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
@@ -87,10 +87,10 @@ section .text
     MOV ESI,0x5f1d31                    ; 0056354a | = "..\\core\\skeleton.cpp"
     MOV EAX,0x182                       ; 0056354f
     PUSH 0x5f1d46                       ; 00563554 | = "Can't find bone %s in skeleton %s!"
-    MOV dword ptr [0x01d1d400],ESI      ; 00563559 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0056355f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00563564
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 00563559 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0056355f | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563564
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00563569
     MOV EAX,0xffffffff                  ; 0056356c
     POP EBP                             ; 00563571

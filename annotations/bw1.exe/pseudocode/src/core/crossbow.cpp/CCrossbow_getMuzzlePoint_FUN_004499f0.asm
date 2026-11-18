@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_crossbow_cpp_CCrossbow_getMuzzlePoint_FUN_004499f0(CCrossbow *this_ptr,CVector3f *out_point)
+; CVector3f * __stack_esi core_crossbow_cpp_CCrossbow_getMuzzlePoint_FUN_004499f0(CCrossbow *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900

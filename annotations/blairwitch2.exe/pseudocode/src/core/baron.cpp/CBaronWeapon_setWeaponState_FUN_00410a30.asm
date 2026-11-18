@@ -10,14 +10,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_baron_cpp_005cb5b1
 ;   TerminatedCString s_CBaronWeapon_setWeaponSt_005cb5c3
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410040
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_weapon.cpp_CWeapon_setWeaponState_FUN_0058a200
 ;
 ; *****************************************************************************
@@ -50,10 +50,10 @@ section .text
     MOV EBP,0x5cb5b1                    ; 00410a66 | = "..\\core\\baron.cpp"
     MOV EAX,0x320                       ; 00410a6b
     PUSH 0x5cb5c3                       ; 00410a70 | = "CBaronWeapon::setWeaponState - I'm dr..."
-    MOV dword ptr [0x01d046a0],EBP      ; 00410a75 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00410a7b | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00410a80
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBP      ; 00410a75 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00410a7b | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00410a80
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00410a85
     PUSH EBX                            ; 00410a88
         ;   Label: LAB_00410a88

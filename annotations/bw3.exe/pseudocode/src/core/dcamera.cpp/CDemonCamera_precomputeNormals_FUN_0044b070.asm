@@ -29,32 +29,32 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60 at 00534199
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f5d
-;   core_set.cpp_FUN_00533e60 at 00534199
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9d7e
-;   undefined4 DAT_005b9d86
-;   undefined4 DAT_005f17f0
-;   undefined4 DAT_005f17f4
-;   undefined4 DAT_005f1810
-;   undefined4 DAT_005f1814
-;   undefined4 DAT_00875494
-;   undefined4 DAT_00875498
-;   undefined4 DAT_0087549c
-;   undefined4 DAT_00957394
-;   undefined4 DAT_00957398
-;   undefined4 DAT_0095739c
-;   undefined4 DAT_00a39294
-;   undefined4 DAT_00a39298
-;   undefined4 DAT_00a3929c
+;   double g_PrecomputePackedNormalToFloat = 0.00390625
+;   double g_PrecomputeFixedPointToFloat = 0.00787401574803150
+;   int[8] g_CameraEdgeOffsetX
+;   undefined4 g_CameraEdgeOffsetX[1]
+;   int[8] g_CameraEdgeOffsetY
+;   undefined4 g_CameraEdgeOffsetY[1]
+;   undefined4 g_PrecomputedWorldPositions[321].x
+;   undefined4 g_PrecomputedWorldPositions[321].y
+;   undefined4 g_PrecomputedWorldPositions[321].z
+;   undefined4 g_TempWorldPositions[1][1].x
+;   undefined4 g_TempWorldPositions[1][1].y
+;   undefined4 g_TempWorldPositions[1][1].z
+;   undefined4 g_PrecomputedSurfaceNormals[1][1].x
+;   undefined4 g_PrecomputedSurfaceNormals[1][1].y
+;   undefined4 g_PrecomputedSurfaceNormals[1][1].z
 ;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00450820
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750
+;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
-;   core_dcamera.cpp_FUN_00449eb0
 ;
 ; *****************************************************************************
 
@@ -87,7 +87,7 @@ section .text
     IMUL EAX,dword ptr [EDX + 0x14c]    ; 0044b0b4
     MOV EDI,0x1                         ; 0044b0bb
     MOV dword ptr [ESP + 0x60],EDI      ; 0044b0c0
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c5faec] ; 0044b0c4 | DAT_01c5faec
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c5faec] ; 0044b0c4 | g_ScreenBufferArray
     MOV EDX,dword ptr [EDX + 0x150]     ; 0044b0cb
     MOV dword ptr [ESP + 0x64],EAX      ; 0044b0d1
     CMP EDX,EDI                         ; 0044b0d5
@@ -117,8 +117,8 @@ section .text
     PUSH EDX                            ; 0044b122
     LEA ESI,[ESP + 0x10]                ; 0044b123
     LEA EDI,[ESP + 0x34]                ; 0044b127
-    CALL core_dcamera.cpp_FUN_00449eb0  ; 0044b12b
-        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449eb0()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0 ; 0044b12b
+        ;   XREF to: 00449eb0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x10]                ; 0044b130
     ADD ESP,0xc                         ; 0044b134
     MOVSD ES:EDI,ESI                    ; 0044b137
@@ -150,9 +150,9 @@ section .text
     LEA ESI,[ESP + 0x34]                ; 0044b172
     LEA EDI,[EDI + 0x956488]            ; 0044b176
     MOV EAX,dword ptr [ESP + 0x64]      ; 0044b17c
-    MOVSD ES:EDI,ESI                    ; 0044b180 | DAT_00957394
-    MOVSD ES:EDI,ESI                    ; 0044b181 | DAT_00957398
-    MOVSD ES:EDI,ESI                    ; 0044b182 | DAT_0095739c
+    MOVSD ES:EDI,ESI                    ; 0044b180 | g_TempWorldPositions[1][1].x
+    MOVSD ES:EDI,ESI                    ; 0044b181 | g_TempWorldPositions[1][1].y
+    MOVSD ES:EDI,ESI                    ; 0044b182 | g_TempWorldPositions[1][1].z
     MOV EAX,dword ptr [EAX]             ; 0044b183
     SHR EAX,0x18                        ; 0044b185
     TEST EAX,EAX                        ; 0044b188
@@ -175,12 +175,12 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 0044b1ad
         ;   Label: LAB_0044b1ad
     LEA EDI,[EBX + 0x874588]            ; 0044b1b1
-    MOVSD ES:EDI,ESI                    ; 0044b1b7 | DAT_00875494
-    MOVSD ES:EDI,ESI                    ; 0044b1b8 | DAT_00875498
-    MOVSD ES:EDI,ESI                    ; 0044b1b9 | DAT_0087549c
+    MOVSD ES:EDI,ESI                    ; 0044b1b7 | g_PrecomputedWorldPositions[321].x
+    MOVSD ES:EDI,ESI                    ; 0044b1b8 | g_PrecomputedWorldPositions[321].y
+    MOVSD ES:EDI,ESI                    ; 0044b1b9 | g_PrecomputedWorldPositions[321].z
     MOV EDX,dword ptr [ESP + 0x5c]      ; 0044b1ba
     MOV EAX,dword ptr [ESP + 0x30]      ; 0044b1be
-    MOV dword ptr [EDX + 0xb52a48],EAX  ; 0044b1c2 | DAT_00b52f4c
+    MOV dword ptr [EDX + 0xb52a48],EAX  ; 0044b1c2 | g_PrecomputedDepthBuffer[321]
     MOV EAX,dword ptr [ESP + 0x64]      ; 0044b1c8
     MOV ESI,dword ptr [ESP + 0x64]      ; 0044b1cc
     MOV EAX,dword ptr [EAX]             ; 0044b1d0
@@ -195,7 +195,7 @@ section .text
     MOV DH,byte ptr [ESI]               ; 0044b1ef
     FILD word ptr [ESP + 0x74]          ; 0044b1f1
     MOVSX AX,DL                         ; 0044b1f5
-    FLD double ptr [0x005b9d86]         ; 0044b1f9 | DAT_005b9d86
+    FLD double ptr [0x005b9d86]         ; 0044b1f9 | g_PrecomputeFixedPointToFloat
     FXCH                                ; 0044b1ff
     FMUL ST1                            ; 0044b201
     MOV dword ptr [ESP + 0x74],EAX      ; 0044b203
@@ -215,10 +215,10 @@ section .text
     MOV dword ptr [ESP + 0x60],EDI      ; 0044b232
     ADD ESI,0x4                         ; 0044b236
     FXCH                                ; 0044b239
-    FSTP float ptr [EBX + 0xa3837c]     ; 0044b23b | DAT_00a39294
+    FSTP float ptr [EBX + 0xa3837c]     ; 0044b23b | g_PrecomputedSurfaceNormals[1][1].x
     MOV EDX,dword ptr [EBP + 0x14]      ; 0044b241
-    FSTP float ptr [EBX + 0xa38380]     ; 0044b244 | DAT_00a39298
-    FSTP float ptr [EBX + 0xa38384]     ; 0044b24a | DAT_00a3929c
+    FSTP float ptr [EBX + 0xa38380]     ; 0044b244 | g_PrecomputedSurfaceNormals[1][1].y
+    FSTP float ptr [EBX + 0xa38384]     ; 0044b24a | g_PrecomputedSurfaceNormals[1][1].z
     MOV ECX,dword ptr [EDX + 0x150]     ; 0044b250
     MOV dword ptr [ESP + 0x5c],ESI      ; 0044b256
     CMP EDI,ECX                         ; 0044b25a
@@ -243,7 +243,7 @@ section .text
         ;   Label: LAB_0044b298
     MOV dword ptr [ESP + 0x70],EAX      ; 0044b29b
     FILD dword ptr [ESP + 0x70]         ; 0044b29f
-    FMUL double ptr [0x005b9d7e]        ; 0044b2a3 | DAT_005b9d7e
+    FMUL double ptr [0x005b9d7e]        ; 0044b2a3 | g_PrecomputePackedNormalToFloat
     MOV EAX,dword ptr [EBP + 0x14]      ; 0044b2a9
     XOR ESI,ESI                         ; 0044b2ac
     MOV EBX,EAX                         ; 0044b2ae
@@ -253,10 +253,10 @@ section .text
         ;   XREF to: 0044f750 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0044b2bc
     MOV EAX,EBX                         ; 0044b2bf
-    MOV dword ptr [0x00b9e554],ESI      ; 0044b2c1 | DAT_00b9e554
-    MOV dword ptr [0x012a6558],ESI      ; 0044b2c7 | DAT_012a6558
+    MOV dword ptr [0x00b9e554],ESI      ; 0044b2c1 | g_LightBufferPoolIndex
+    MOV dword ptr [0x012a6558],ESI      ; 0044b2c7 | g_CoronaLightCache
     MOV EDX,dword ptr [EAX + 0x148]     ; 0044b2cd
-    MOV dword ptr [0x013405b4],ESI      ; 0044b2d3 | DAT_013405b4
+    MOV dword ptr [0x013405b4],ESI      ; 0044b2d3 | g_CameraEdgeCount
     CMP EDX,0x1e0                       ; 0044b2d9
     JL 0x0044b039                       ; 0044b2df
         ;   XREF to: 0044b039 (CONDITIONAL_JUMP)  ; LAB_0044b039
@@ -298,7 +298,7 @@ section .text
     MOV dword ptr [ESP + 0x40],ECX      ; 0044b35c
     JMP 0x0044b2f6                      ; 0044b360
         ;   XREF to: 0044b2f6 (UNCONDITIONAL_JUMP)  ; LAB_0044b2f6
-    CMP dword ptr [0x013405b4],0x2710   ; 0044b362 | DAT_013405b4
+    CMP dword ptr [0x013405b4],0x2710   ; 0044b362 | g_CameraEdgeCount
         ;   Label: LAB_0044b362
     JGE 0x0044b479                      ; 0044b36c
         ;   XREF to: 0044b479 (CONDITIONAL_JUMP)  ; LAB_0044b479
@@ -308,7 +308,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0044b37d
         ;   Label: LAB_0044b37d
     MOV EDX,dword ptr [ESP + 0x54]      ; 0044b381
-    MOV EAX,dword ptr [EAX + 0x1c60dac] ; 0044b385 | DAT_01c60dac
+    MOV EAX,dword ptr [EAX + 0x1c60dac] ; 0044b385 | g_ZBufferScanlineArray
     ADD EAX,EDX                         ; 0044b38b
     MOV EBX,dword ptr [EAX]             ; 0044b38d
     MOV ESI,0x7fffffff                  ; 0044b38f
@@ -318,7 +318,7 @@ section .text
     MOV EBX,ESI                         ; 0044b39c
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0044b39e
         ;   Label: LAB_0044b39e
-    MOV CL,byte ptr [0x013405b0]        ; 0044b3a2 | DAT_013405b0
+    MOV CL,byte ptr [0x013405b0]        ; 0044b3a2 | g_CameraDownscaleIterations
     SAR EAX,CL                          ; 0044b3a8
     IMUL EDX,EAX,0x500                  ; 0044b3aa
     MOV EAX,EDI                         ; 0044b3b0
@@ -336,14 +336,14 @@ section .text
     XOR EBX,EBX                         ; 0044b3d3
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0044b3d5
         ;   Label: LAB_0044b3d5
-    MOV CL,byte ptr [0x013405b0]        ; 0044b3d9 | DAT_013405b0
+    MOV CL,byte ptr [0x013405b0]        ; 0044b3d9 | g_CameraDownscaleIterations
     SAR EAX,CL                          ; 0044b3df
-    ADD EAX,dword ptr [EBX + 0x5f1810]  ; 0044b3e1 | DAT_005f1810 | DAT_005f1814
+    ADD EAX,dword ptr [EBX + 0x5f1810]  ; 0044b3e1 | g_CameraEdgeOffsetY | g_CameraEdgeOffsetY[1]
     IMUL EDX,EAX,0x500                  ; 0044b3e7
-    MOV CL,byte ptr [0x013405b0]        ; 0044b3ed | DAT_013405b0
+    MOV CL,byte ptr [0x013405b0]        ; 0044b3ed | g_CameraDownscaleIterations
     MOV EAX,EDI                         ; 0044b3f3
     SAR EAX,CL                          ; 0044b3f5
-    ADD EAX,dword ptr [EBX + 0x5f17f0]  ; 0044b3f7 | DAT_005f17f0 | DAT_005f17f4
+    ADD EAX,dword ptr [EBX + 0x5f17f0]  ; 0044b3f7 | g_CameraEdgeOffsetX | g_CameraEdgeOffsetX[1]
     MOV EAX,dword ptr [EDX + EAX*0x4 + 0xb52a48] ; 0044b3fd
     MOV EDX,dword ptr [ESP + 0x68]      ; 0044b404
     SUB EDX,EAX                         ; 0044b408
@@ -354,11 +354,11 @@ section .text
     CMP EAX,ESI                         ; 0044b411
     JGE 0x0044b43a                      ; 0044b413
         ;   XREF to: 0044b43a (CONDITIONAL_JUMP)  ; LAB_0044b43a
-    MOV EDX,dword ptr [EBX + 0x5f1810]  ; 0044b415 | DAT_005f1810
+    MOV EDX,dword ptr [EBX + 0x5f1810]  ; 0044b415 | g_CameraEdgeOffsetY
     MOV ESI,EAX                         ; 0044b41b
     IMUL EAX,EDX,0x140                  ; 0044b41d
-    MOV EDX,dword ptr [EBX + 0x5f17f0]  ; 0044b423 | DAT_005f17f0
-    MOV ECX,dword ptr [0x013405b4]      ; 0044b429 | DAT_013405b4
+    MOV EDX,dword ptr [EBX + 0x5f17f0]  ; 0044b423 | g_CameraEdgeOffsetX
+    MOV ECX,dword ptr [0x013405b4]      ; 0044b429 | g_CameraEdgeCount
     ADD EDX,EAX                         ; 0044b42f
     IMUL EAX,ECX,0xc                    ; 0044b431
     MOV dword ptr [EAX + 0x13405b8],EDX ; 0044b434
@@ -367,7 +367,7 @@ section .text
     CMP EBX,0x20                        ; 0044b43d
     JNZ 0x0044b3d5                      ; 0044b440
         ;   XREF to: 0044b3d5 (CONDITIONAL_JUMP)  ; LAB_0044b3d5
-    MOV EBX,dword ptr [0x013405b4]      ; 0044b442 | DAT_013405b4
+    MOV EBX,dword ptr [0x013405b4]      ; 0044b442 | g_CameraEdgeCount
     IMUL EAX,EBX,0xc                    ; 0044b448
     CMP dword ptr [EAX + 0x13405b8],0x0 ; 0044b44b
     JZ 0x0044b479                       ; 0044b452
@@ -376,7 +376,7 @@ section .text
     MOV dword ptr [EAX + 0x13405bc],EDI ; 0044b458
     MOV dword ptr [EAX + 0x13405c0],EDX ; 0044b45e
     LEA EAX,[EBX + 0x1]                 ; 0044b464
-    MOV [0x013405b4],EAX                ; 0044b467 | DAT_013405b4
+    MOV [0x013405b4],EAX                ; 0044b467 | g_CameraEdgeCount
     JMP 0x0044b479                      ; 0044b46c
         ;   XREF to: 0044b479 (UNCONDITIONAL_JUMP)  ; LAB_0044b479
     TEST byte ptr [ESP + 0x6c],0x1      ; 0044b46e

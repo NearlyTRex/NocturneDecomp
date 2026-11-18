@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float angle_radians,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -10,18 +12,18 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[9]:
-;   core_confedrt.cpp_FUN_005a0bd0 at 005a0d20
-;   core_doc.cpp_FUN_00450c60 at 004516f9
-;   core_doc.cpp_FUN_00455d10 at 00455de7
-;   core_doc.cpp_FUN_004562a0 at 00456301
+;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0d20
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0 at 00456301
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 004516f9
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00455de7
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afed3
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c74e
-;   core_scat.cpp_FUN_00520140 at 005201a9
+;   core_scat.cpp_CScat_blendAimBones_FUN_00520140 at 005201a9
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0 at 00568031
-;   core_weaver.cpp_FUN_005a61f0 at 005a63b7
+;   core_weaver.cpp_CRobin_processAI_FUN_005a61f0 at 005a63b7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eedb2
+;   float g_FLOAT_005eedb2 = 0.5
 ;
 ; *****************************************************************************
 
@@ -32,7 +34,7 @@ section .text
     SUB ESP,0x18                        ; 00594021
     MOV EDX,ESI                         ; 00594024
     FLD float ptr [ESP + 0x20]          ; 00594026
-    FMUL float ptr [0x005eedb2]         ; 0059402a | DAT_005eedb2
+    FMUL float ptr [0x005eedb2]         ; 0059402a | g_FLOAT_005eedb2
     FLD ST0                             ; 00594030
     FCOS                                ; 00594032
     FXCH                                ; 00594034

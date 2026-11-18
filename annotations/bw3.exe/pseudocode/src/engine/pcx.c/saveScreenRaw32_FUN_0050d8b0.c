@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_pcx_c_saveScreenRaw32_FUN_0050d8b0(char *filename)
 
 {
@@ -46,11 +44,11 @@ void __cdecl engine_pcx_c_saveScreenRaw32_FUN_0050d8b0(char *filename)
   pcVar6 = (char *)0x0;
 LAB_0050d8f3:
   if (pcVar6 == (char *)0x0) {
-    _DAT_01d71de0 = "..\\engine\\pcx.c";
-    _DAT_01d71de4 = 0x98;
-    core_main_c_FUN_004e4330("saveScreenRaw32 - No ext found");
+    g_CHAR_PTR_01d71de0 = "..\\engine\\pcx.c";
+    g_INT_01d71de4 = 0x98;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("saveScreenRaw32 - No ext found");
   }
-  pcVar4 = &DAT_005cba50;
+  pcVar4 = ".RAW";
   do {
     cVar1 = *pcVar4;
     *pcVar6 = cVar1;
@@ -60,32 +58,34 @@ LAB_0050d8f3:
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  file = _fopen(local_6c,&DAT_005cba55);
+  file = _fopen(local_6c,"wb");
   if (file == (_FILE *)0x0) {
-    _DAT_01d71de0 = "..\\engine\\pcx.c";
-    _DAT_01d71de4 = 0x9e;
-    core_main_c_FUN_004e4330("saveScreenRaw32 - Unable to open output");
+    g_CHAR_PTR_01d71de0 = "..\\engine\\pcx.c";
+    g_INT_01d71de4 = 0x9e;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("saveScreenRaw32 - Unable to open output");
   }
   local_14 = 0;
-  if (0 < DAT_005fba1c) {
+  if (0 < g_INT_005fba1c) {
     local_18 = 0;
     do {
       iVar5 = 0;
-      puVar2 = *(uint **)(&DAT_01c5faec + local_18);
-      if (0 < DAT_005fba18) {
+      puVar2 = *(uint **)((int)g_ScreenBufferArray + local_18);
+      if (0 < g_INT_005fba18) {
         do {
-          uVar3 = (*puVar2 >> (DAT_01c6af80 & 0x1f)) * _DAT_01c6af84;
-          local_1c = (*puVar2 >> (DAT_01c6af8c & 0x1f)) * _DAT_01c6af90 & 0xff;
-          _fputc(_DAT_01c6af78 * (*puVar2 >> (DAT_01c6af74 & 0x1f)) & 0xff,file);
+          uVar3 = (*puVar2 >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) * g_INT_01c6af84;
+          local_1c = (*puVar2 >> (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) * g_INT_01c6af90 & 0xff
+          ;
+          _fputc(g_INT_01c6af78 * (*puVar2 >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) & 0xff
+                     ,file);
           _fputc(uVar3 & 0xff,file);
           puVar2 = puVar2 + 1;
           iVar5 = iVar5 + 1;
           _fputc(local_1c,file);
-        } while (iVar5 < DAT_005fba18);
+        } while (iVar5 < g_INT_005fba18);
       }
       local_18 = local_18 + 4;
       local_14 = local_14 + 1;
-    } while (local_14 < DAT_005fba1c);
+    } while (local_14 < g_INT_005fba1c);
   }
   _fclose(file);
   return;

@@ -19,8 +19,7 @@ void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(CStr
     }
     this_ptr_00 = (CAmmoBox *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            ((this_ptr->base).object_to_pick_up,
-                             g_CAmmoBoxActorType_007641f8.name_hash);
+                            ((this_ptr->base).object_to_pick_up,g_CAmmoBoxClassInfo.name_hash);
     if (this_ptr_00 != (CAmmoBox *)0x0) {
       core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040f1a0(this_ptr_00,&(this_ptr->base).inventory)
       ;

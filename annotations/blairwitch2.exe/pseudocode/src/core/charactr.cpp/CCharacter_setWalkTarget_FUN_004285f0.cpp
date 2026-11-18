@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
 
 {
@@ -25,7 +23,7 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter 
     if (((this_ptr->walk_state != WALK_STATE_IDLE) &&
         (this_ptr->walk_to_target != (CDemonActor *)0x0)) &&
        ((this_ptr->model).model_name[0] != '\0')) {
-      state_name = "?STAND" + 1;
+      state_name = "STAND";
       pCVar6 = target;
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
                               (&(this_ptr->model).base);
@@ -47,9 +45,9 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter 
       fVar1 = (this_ptr->base).location.position.x - (target->location).position.x;
       fVar3 = (this_ptr->base).location.position.y - (target->location).position.y;
       fVar2 = (this_ptr->base).location.position.z - (target->location).position.z;
-      local_18 = SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) * (float)_DAT_005cced6;
-      if (_DAT_005ccede <= local_18) {
-        if (_DAT_005ccee2 < local_18) {
+      local_18 = SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) * (float)0.5;
+      if (5.0f <= local_18) {
+        if (60.0f < local_18) {
           local_18 = 60.0;
         }
       }
@@ -59,7 +57,7 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter 
       pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (&this_ptr->base,g_CBasicEnemyClassInfo.name_hash);
       if (pCVar6 != (CDemonActor *)0x0) {
-        local_18 = local_18 * _DAT_005ccee6;
+        local_18 = local_18 * 2.0f;
       }
       pCVar5 = (this_ptr->base).vtable._uc;
     }

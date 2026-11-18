@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   radius
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e8e83
-;   undefined4 DAT_01d22528
-;   undefined4 DAT_01d22574
-;   undefined4 DAT_01d2257c
+;   float g_FLOAT_005e8e83 = 1.333000
+;   float g_FLOAT_01d22528
+;   float g_FLOAT_01d22574
+;   void* g_PTR_01d2257c
 ;
 ; *****************************************************************************
 
@@ -21,9 +21,9 @@ section .text
         ;   Label: engine_mini3d.cpp_isSphereVisible_FUN_00513940
     MOV EAX,dword ptr [ESP + 0x20]      ; 00513943
     FLD float ptr [ESP + 0x24]          ; 00513947
-    FMUL float ptr [0x005e8e83]         ; 0051394b | DAT_005e8e83
+    FMUL float ptr [0x005e8e83]         ; 0051394b | g_FLOAT_005e8e83
     FLD float ptr [EAX]                 ; 00513951
-    MOV EDX,dword ptr [0x01d2257c]      ; 00513953 | DAT_01d2257c
+    MOV EDX,dword ptr [0x01d2257c]      ; 00513953 | g_PTR_01d2257c
     FLD float ptr [EAX + 0x4]           ; 00513959
     FXCH                                ; 0051395c
     FSUB float ptr [EDX + 0x24]         ; 0051395e
@@ -42,7 +42,7 @@ section .text
     FST float ptr [ESP + 0xc]           ; 00513982
     FMUL float ptr [EDX + 0x20]         ; 00513986
     FXCH ST2                            ; 00513989
-    FMUL float ptr [0x01d22528]         ; 0051398b | DAT_01d22528
+    FMUL float ptr [0x01d22528]         ; 0051398b | g_FLOAT_01d22528
     FXCH ST2                            ; 00513991
     FADDP                               ; 00513993
     FXCH                                ; 00513995
@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 00513a43 (CONDITIONAL_JUMP)  ; LAB_00513a43
     FLD float ptr [ESP + 0x18]          ; 005139b0
     FSUB float ptr [ESP + 0x24]         ; 005139b4
-    FCOMP float ptr [0x01d22574]        ; 005139b8 | DAT_01d22574
+    FCOMP float ptr [0x01d22574]        ; 005139b8 | g_FLOAT_01d22574
     FNSTSW AX                           ; 005139be
     SAHF                                ; 005139c0
     JA 0x00513a43                       ; 005139c1

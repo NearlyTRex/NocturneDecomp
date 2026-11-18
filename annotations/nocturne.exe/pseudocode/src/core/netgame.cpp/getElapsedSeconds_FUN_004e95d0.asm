@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0058ba12 = 0.0000152587890625
 ;   double DOUBLE_0058ba1a = 30
-;   undefined4 DAT_01cea3f8
+;   uint g_CurrentGameTime
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
     SUB ESP,0x8                         ; 004e95d3
     AND ESP,0xfffffff8                  ; 004e95d6
     MOV EDX,dword ptr [EBP + 0x8]       ; 004e95d9
-    MOV EAX,[0x01cea3f8]                ; 004e95dc | DAT_01cea3f8
+    MOV EAX,[0x01cea3f8]                ; 004e95dc | g_CurrentGameTime
     SUB EAX,EDX                         ; 004e95e1
     MOV dword ptr [ESP + 0x4],EAX       ; 004e95e3
     FILD dword ptr [ESP + 0x4]          ; 004e95e7

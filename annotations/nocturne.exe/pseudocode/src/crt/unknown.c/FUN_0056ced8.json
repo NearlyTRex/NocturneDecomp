@@ -2,18 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 298,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 23,
+    "suspect_count": 26,
     "suspect_types": [
+      "displaced_global_access",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
+      "suspicious_cast",
       "unnamed_param"
     ],
     "total_lines": 153
@@ -59,21 +60,21 @@
     },
     {
       "addr": "005a4a78",
-      "name": "DAT_005a4a78",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DaysInMonth_Normal",
+      "type": "short",
+      "value": "0x0"
     },
     {
       "addr": "005a4a90",
-      "name": "DAT_005a4a90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SHORT_005a4a90",
+      "type": "short",
+      "value": "0x16d"
     },
     {
       "addr": "005a4a92",
-      "name": "DAT_005a4a92",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DaysInMonth_Leap",
+      "type": "short",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -285,16 +286,8 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_005a4a78 + *(int *)(param_1 + 0x10) * 2);",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005a4a78",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_005a4a78 + *(int *)(param_1 + 0x10) * 2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -309,32 +302,16 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_005a4a92 + *(int *)(param_1 + 0x10) * 2);",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005a4a92",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_005a4a92 + *(int *)(param_1 + 0x10) * 2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_005a4a90 + *(int *)(param_1 + 0x10) * 2);",
+      "text": "iVar2 = *(int *)(&g_SHORT_005a4a90 + *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005a4a90",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_005a4a90 + *(int *)(param_1 + 0x10) * 2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -409,6 +386,30 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_005a4a7a (at 0x005a4a7a, +2 bytes).",
+      "line": 14,
+      "match": "g_DaysInMonth_Normal",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_StreambufVTable (at 0x005a4ab0, +30 bytes).",
+      "line": 19,
+      "match": "g_DaysInMonth_Leap",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_SHORT_005a4a90 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DaysInMonth_Leap (at 0x005a4a92, +2 bytes).",
+      "line": 20,
+      "match": "g_SHORT_005a4a90",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(&g_SHORT_005a4a90 + *(int *)(param_1 + 0x10));",
+      "type": "suspicious_cast"
+    },
+    {
       "description": "Pointer value `&g_fstreambaseTypeInfo_005a4a60.class_name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 15,
       "match": "(int)&g_fstreambaseTypeInfo_005a4a60.class_name",
@@ -434,6 +435,45 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*2 + 0x5a4a90] lands in g_SHORT_005a4a90 but intended target is g_DaysInMonth_Leap at 0x5a4a92 (displaced by 2 bytes)",
+      "displaced_from": "g_SHORT_005a4a90",
+      "displacement": "0x5a4a90",
+      "instruction_address": "",
+      "intended_global": "g_DaysInMonth_Leap",
+      "line": 23,
+      "match": "0x5a4a90",
+      "scale": 2,
+      "severity": "moderate",
+      "text": "// 0056cf0f: MOV EAX,dword ptr [EAX*0x2 + 0x5a4a90]  ; g_SHORT_005a4a90",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*2 + 0x5a4a78] lands in g_DaysInMonth_Normal but intended target is g_INT_005a4a7a at 0x5a4a7a (displaced by 2 bytes)",
+      "displaced_from": "g_DaysInMonth_Normal",
+      "displacement": "0x5a4a78",
+      "instruction_address": "",
+      "intended_global": "g_INT_005a4a7a",
+      "line": 28,
+      "match": "0x5a4a78",
+      "scale": 2,
+      "severity": "moderate",
+      "text": "// 0056cf1b: MOV ESI,dword ptr [EAX*0x2 + 0x5a4a78]  ; g_DaysInMonth_Normal",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*2 + 0x5a4a76] lands in g_fstreambaseTypeInfo_005a4a60 but intended target is g_DaysInMonth_Normal at 0x5a4a78 (displaced by 2 bytes)",
+      "displaced_from": "g_fstreambaseTypeInfo_005a4a60",
+      "displacement": "0x5a4a76",
+      "instruction_address": "",
+      "intended_global": "g_DaysInMonth_Normal",
+      "line": 29,
+      "match": "0x5a4a76",
+      "scale": 2,
+      "severity": "moderate",
+      "text": "// 0056cf22: MOV EAX,dword ptr [EAX*0x2 + 0x5a4a76]  ; g_fstreambaseTypeInfo_005a4a60.class_name+2",
+      "type": "displaced_global_access"
     }
   ]
 }

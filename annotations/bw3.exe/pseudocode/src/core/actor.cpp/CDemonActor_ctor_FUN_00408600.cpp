@@ -25,7 +25,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00408600(CDemonActor *
   pCVar2[-10].orientation.vec.y = pCVar2[-10].orientation.vec.z;
   pCVar2[-10].orientation.vec.x = pCVar2[-10].orientation.vec.y;
   pCVar2[-10].dirty_flags = 0;
-  pcVar3 = &DAT_005b53cd;
+  pcVar3 = "none";
   pCVar2[-9].position.z = 0.0;
   pCVar2[-9].position.y = pCVar2[-9].position.z;
   pCVar2[-9].position.x = pCVar2[-9].position.y;
@@ -57,7 +57,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00408600(CDemonActor *
   pCVar2[-1].position.y = 0.0;
   pCVar2[-2].orientation.vec.x = 0.0;
   pCVar2[-2].orientation.vec.y = 0.0;
-  pcVar3 = &DAT_005b53d2;
+  pcVar3 = "str";
   pCVar2[-8].dirty_flags = 100;
   pcVar4 = (char *)((int)&pCVar2[-1].orientation + 4);
   pCVar2[-7].position.x = (float)&DAT_0078a123;

@@ -23,8 +23,8 @@
 ;   core_dcube.cpp_triangleCylinderCollision_FUN_00445620 at 004457df
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ce7e6
-;   undefined4 DAT_005ce7ee
+;   double g_IntersectionConstantTwo2 = 2
+;   double g_IntersectionConstantFour2 = 4
 ;
 ; *****************************************************************************
 
@@ -65,7 +65,7 @@ section .text
     FLD float ptr [EDX + 0x8]           ; 00445502
     FMUL ST0                            ; 00445505
     FLD double ptr [ESP + 0x40]         ; 00445507
-    FMUL double ptr [0x005ce7ee]        ; 0044550b | DAT_005ce7ee
+    FMUL double ptr [0x005ce7ee]        ; 0044550b | g_IntersectionConstantFour2
     FLD float ptr [EDX]                 ; 00445511
     FMUL ST0                            ; 00445513
     FLD float ptr [EDX]                 ; 00445515
@@ -76,7 +76,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 00445521
     FMUL ST0                            ; 00445524
     FXCH ST3                            ; 00445526
-    FMUL double ptr [0x005ce7e6]        ; 00445528 | DAT_005ce7e6
+    FMUL double ptr [0x005ce7e6]        ; 00445528 | g_IntersectionConstantTwo2
     FXCH ST3                            ; 0044552e
     FSUBP ST2,ST0                       ; 00445530
     FMULP                               ; 00445532
@@ -98,7 +98,7 @@ section .text
     FSQRT                               ; 0044555f
     FSUBP                               ; 00445561
     FLD double ptr [ESP + 0x40]         ; 00445563
-    FMUL double ptr [0x005ce7e6]        ; 00445567 | DAT_005ce7e6
+    FMUL double ptr [0x005ce7e6]        ; 00445567 | g_IntersectionConstantTwo2
     FDIVP                               ; 0044556d
     FLDZ                                ; 0044556f
     XOR ECX,ECX                         ; 00445571
@@ -135,7 +135,7 @@ section .text
     FSQRT                               ; 004455ba
     FSUB double ptr [ESP + 0x38]        ; 004455bc
     FLD double ptr [ESP + 0x40]         ; 004455c0
-    FMUL double ptr [0x005ce7e6]        ; 004455c4 | DAT_005ce7e6
+    FMUL double ptr [0x005ce7e6]        ; 004455c4 | g_IntersectionConstantTwo2
     FDIVP                               ; 004455ca
     FLDZ                                ; 004455cc
     FXCH                                ; 004455ce

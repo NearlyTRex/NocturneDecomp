@@ -6,75 +6,79 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00558eb0(CDemonSet *this_ptr)
 
 {
   int iVar1;
-  int iVar2;
-  CDemonSet *pCVar3;
-  int iVar4;
-  int *piVar5;
+  SRaytraceState *pSVar2;
+  int iVar3;
+  CDemonSet *pCVar4;
+  int iVar5;
+  SRaytraceState *pSVar6;
   
-  if (5 < _DAT_020af5c8) {
-    _DAT_01d1d400 = "..\\core\\setcolid.cpp";
-    _DAT_01d1d404 = 0x406;
-    core_main_c_FUN_005030e0("CDemonSet::pushRaytraceState - stack full");
+  if (5 < g_RaytraceStateStackDepth) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\setcolid.cpp";
+    g_INT_01d1d404 = 0x406;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::pushRaytraceState - stack full");
   }
-  iVar2 = _DAT_020af5c8 * 0xa0;
-  piVar5 = (int *)(iVar2 + 0x20af5cc);
-  *piVar5 = (this_ptr->ray_query).ray_type;
-  *(int *)(iVar2 + 0x20af5d0) = (this_ptr->ray_query).laser_type;
-  *(int *)(iVar2 + 0x20af5d4) = (this_ptr->ray_query).laser_color.r;
-  *(int *)(iVar2 + 0x20af5d8) = (this_ptr->ray_query).laser_color.g;
-  iVar4 = 0;
-  *(int *)(iVar2 + 0x20af5dc) = (this_ptr->ray_query).laser_color.b;
-  _DAT_020af5c8 = _DAT_020af5c8 + 1;
+  iVar3 = g_RaytraceStateStackDepth;
+  pSVar6 = g_RaytraceStateStack + g_RaytraceStateStackDepth;
+  (pSVar6->ray_query).ray_type = (this_ptr->ray_query).ray_type;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].ray_query.laser_type =
+       (this_ptr->ray_query).laser_type;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].ray_query.laser_color.r =
+       (this_ptr->ray_query).laser_color.r;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].ray_query.laser_color.g =
+       (this_ptr->ray_query).laser_color.g;
+  iVar5 = 0;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].ray_query.laser_color.b =
+       (this_ptr->ray_query).laser_color.b;
   iVar1 = this_ptr->ignore_list_count;
-  *(int *)(iVar2 + 0x20af5e0) = iVar1;
-  pCVar3 = this_ptr;
+  pSVar2 = g_RaytraceStateStack + g_RaytraceStateStackDepth;
+  g_RaytraceStateStackDepth = g_RaytraceStateStackDepth + 1;
+  pSVar2->ignore_list_count = iVar1;
+  pCVar4 = this_ptr;
   if (0 < iVar1) {
     do {
-      piVar5[7] = (int)pCVar3->ignore_list[0];
-      iVar4 = iVar4 + 1;
-      pCVar3 = (CDemonSet *)pCVar3->cameras;
-      piVar5 = piVar5 + 1;
-    } while (iVar4 < this_ptr->ignore_list_count);
+      pSVar6->ignore_list[0] = pCVar4->ignore_list[0];
+      iVar5 = iVar5 + 1;
+      pCVar4 = (CDemonSet *)pCVar4->cameras;
+      pSVar6 = (SRaytraceState *)&(pSVar6->ray_query).laser_type;
+    } while (iVar5 < this_ptr->ignore_list_count);
   }
-  *(int *)(iVar2 + 0x20af5e4) = this_ptr->collision_flag;
-  if ((CVector3f *)(iVar2 + 0x20af610) != &this_ptr->ray_origin) {
-    *(float *)(iVar2 + 0x20af610) = (this_ptr->ray_origin).x;
-    *(float *)(iVar2 + 0x20af614) = (this_ptr->ray_origin).y;
-    *(float *)(iVar2 + 0x20af618) = (this_ptr->ray_origin).z;
+  g_RaytraceStateStack[iVar3].collision_flag = this_ptr->collision_flag;
+  if (&g_RaytraceStateStack[iVar3].saved_ray_origin != &this_ptr->ray_origin) {
+    g_RaytraceStateStack[iVar3].saved_ray_origin.x = (this_ptr->ray_origin).x;
+    g_RaytraceStateStack[iVar3].saved_ray_origin.y = (this_ptr->ray_origin).y;
+    g_RaytraceStateStack[iVar3].saved_ray_origin.z = (this_ptr->ray_origin).z;
   }
-  if ((CVector3f *)(iVar2 + 0x20af61c) != &this_ptr->ray_target) {
-    *(float *)(iVar2 + 0x20af61c) = (this_ptr->ray_target).x;
-    *(float *)(iVar2 + 0x20af620) = (this_ptr->ray_target).y;
-    *(float *)(iVar2 + 0x20af624) = (this_ptr->ray_target).z;
+  if (&g_RaytraceStateStack[iVar3].saved_ray_target != &this_ptr->ray_target) {
+    g_RaytraceStateStack[iVar3].saved_ray_target.x = (this_ptr->ray_target).x;
+    g_RaytraceStateStack[iVar3].saved_ray_target.y = (this_ptr->ray_target).y;
+    g_RaytraceStateStack[iVar3].saved_ray_target.z = (this_ptr->ray_target).z;
   }
-  *(float *)(iVar2 + 0x20af628) = this_ptr->raycast_distance;
-  *(float *)(iVar2 + 0x20af62c) = this_ptr->voxel_distance;
-  if ((CVector3f *)(iVar2 + 0x20af630) != &this_ptr->voxel_hit_point) {
-    *(float *)(iVar2 + 0x20af630) = (this_ptr->voxel_hit_point).x;
-    *(float *)(iVar2 + 0x20af634) = (this_ptr->voxel_hit_point).y;
-    *(float *)(iVar2 + 0x20af638) = (this_ptr->voxel_hit_point).z;
+  g_RaytraceStateStack[iVar3].raycast_distance = this_ptr->raycast_distance;
+  g_RaytraceStateStack[iVar3].voxel_distance = this_ptr->voxel_distance;
+  if (&g_RaytraceStateStack[iVar3].voxel_hit_point != &this_ptr->voxel_hit_point) {
+    g_RaytraceStateStack[iVar3].voxel_hit_point.x = (this_ptr->voxel_hit_point).x;
+    g_RaytraceStateStack[iVar3].voxel_hit_point.y = (this_ptr->voxel_hit_point).y;
+    g_RaytraceStateStack[iVar3].voxel_hit_point.z = (this_ptr->voxel_hit_point).z;
   }
-  *(int *)(iVar2 + 0x20af63c) = this_ptr->voxel_surface_type;
-  if ((CVector3f *)(iVar2 + 0x20af644) != &this_ptr->collision_normal) {
-    *(float *)(iVar2 + 0x20af644) = (this_ptr->collision_normal).x;
-    *(float *)(iVar2 + 0x20af648) = (this_ptr->collision_normal).y;
-    *(float *)(iVar2 + 0x20af64c) = (this_ptr->collision_normal).z;
+  g_RaytraceStateStack[iVar3].voxel_surface_type = this_ptr->voxel_surface_type;
+  if (&g_RaytraceStateStack[iVar3].saved_collision_normal != &this_ptr->collision_normal) {
+    g_RaytraceStateStack[iVar3].saved_collision_normal.x = (this_ptr->collision_normal).x;
+    g_RaytraceStateStack[iVar3].saved_collision_normal.y = (this_ptr->collision_normal).y;
+    g_RaytraceStateStack[iVar3].saved_collision_normal.z = (this_ptr->collision_normal).z;
   }
-  *(int *)(iVar2 + 0x20af650) = this_ptr->ground_type;
-  if ((CVector3f *)(iVar2 + 0x20af654) != &this_ptr->collision_impact_position) {
-    *(float *)(iVar2 + 0x20af654) = (this_ptr->collision_impact_position).x;
-    *(float *)(iVar2 + 0x20af658) = (this_ptr->collision_impact_position).y;
-    *(float *)(iVar2 + 0x20af65c) = (this_ptr->collision_impact_position).z;
+  g_RaytraceStateStack[iVar3].saved_ground_type = this_ptr->ground_type;
+  if (&g_RaytraceStateStack[iVar3].saved_collision_point != &this_ptr->collision_impact_position) {
+    g_RaytraceStateStack[iVar3].saved_collision_point.x = (this_ptr->collision_impact_position).x;
+    g_RaytraceStateStack[iVar3].saved_collision_point.y = (this_ptr->collision_impact_position).y;
+    g_RaytraceStateStack[iVar3].saved_collision_point.z = (this_ptr->collision_impact_position).z;
   }
-  *(CDemonActor **)(iVar2 + 0x20af660) = this_ptr->collision_actor;
-  *(int *)(iVar2 + 0x20af664) = this_ptr->collision_part_index;
-  *(int *)(iVar2 + 0x20af668) = this_ptr->collision_bone_index;
-  *(int *)(iVar2 + 0x20af640) = this_ptr->skip_exact_collisions;
+  g_RaytraceStateStack[iVar3].saved_collision_actor = this_ptr->collision_actor;
+  g_RaytraceStateStack[iVar3].saved_collision_part_index = this_ptr->collision_part_index;
+  g_RaytraceStateStack[iVar3].saved_collision_bone_index = this_ptr->collision_bone_index;
+  g_RaytraceStateStack[iVar3].saved_skip_exact_collision = this_ptr->skip_exact_collisions;
   return;
 }

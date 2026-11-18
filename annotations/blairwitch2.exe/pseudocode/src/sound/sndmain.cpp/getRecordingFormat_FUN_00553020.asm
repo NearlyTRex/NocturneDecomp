@@ -10,10 +10,10 @@
 ; int *            Stack[0x10]:4   out_signed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061bcd0
-;   undefined4 DAT_0061bcd4
-;   undefined4 DAT_0061bcd8
-;   undefined4 DAT_02649870
+;   int g_RecordingBitsPerSample = 0x8
+;   int g_RecordingChannelCount = 0x1
+;   int g_RecordingSampleRate = 0x2b11
+;   int g_RecordingSamplesSigned
 ;
 ; *****************************************************************************
 
@@ -32,13 +32,13 @@ section .text
     TEST EBX,EBX                        ; 00553035
     JZ 0x00553040                       ; 00553037
         ;   XREF to: 00553040 (CONDITIONAL_JUMP)  ; LAB_00553040
-    MOV EAX,[0x0061bcd4]                ; 00553039 | DAT_0061bcd4
+    MOV EAX,[0x0061bcd4]                ; 00553039 | g_RecordingChannelCount
     MOV dword ptr [EBX],EAX             ; 0055303e
     TEST ECX,ECX                        ; 00553040
         ;   Label: LAB_00553040
     JZ 0x0055304b                       ; 00553042
         ;   XREF to: 0055304b (CONDITIONAL_JUMP)  ; LAB_0055304b
-    MOV EAX,[0x0061bcd8]                ; 00553044 | DAT_0061bcd8
+    MOV EAX,[0x0061bcd8]                ; 00553044 | g_RecordingSampleRate
     MOV dword ptr [ECX],EAX             ; 00553049
     TEST EDX,EDX                        ; 0055304b
         ;   Label: LAB_0055304b
@@ -46,12 +46,12 @@ section .text
         ;   XREF to: 0055305a (CONDITIONAL_JUMP)  ; LAB_0055305a
     POP EBX                             ; 0055304f
     RET                                 ; 00553050
-    MOV EAX,[0x0061bcd0]                ; 00553051 | DAT_0061bcd0
+    MOV EAX,[0x0061bcd0]                ; 00553051 | g_RecordingBitsPerSample
         ;   Label: LAB_00553051
     MOV dword ptr [EBX],EAX             ; 00553056
     JMP 0x00553031                      ; 00553058
         ;   XREF to: 00553031 (UNCONDITIONAL_JUMP)  ; LAB_00553031
-    MOV EAX,[0x02649870]                ; 0055305a | DAT_02649870
+    MOV EAX,[0x02649870]                ; 0055305a | g_RecordingSamplesSigned
         ;   Label: LAB_0055305a
     MOV dword ptr [EDX],EAX             ; 0055305f
     POP EBX                             ; 00553061

@@ -23,39 +23,46 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(CWeapon *this_pt
   byte in_stack_fffffef4 [76];
   uint uVar10;
   CDemonActor *actor_ptr;
+  CVector3f *input_local_point;
   int recursion_depth;
   SLaserInfo SStack_ac;
   CVector3f CStack_58;
-  float afStack_4c [3];
+  CVector3f CStack_4c;
   CVector3f CStack_40;
   float fStack_34;
-  float afStack_30 [5];
-  float fStack_1c;
-  float afStack_18 [4];
+  float afStack_30 [2];
+  CVector3f CStack_28;
+  CVector3f CStack_1c;
+  float fStack_10;
+  uint uStack_c;
   
   bVar5 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar1 != 0) {
     return;
   }
   (*(((this_ptr->base).vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
+  input_local_point = &CStack_4c;
   CStack_58.z = fStack_34;
-  afStack_4c[(uint)bVar5 * -2] = afStack_30[(uint)bVar5 * -2];
-  afStack_4c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+  *(float *)((int)&CStack_4c + (uint)bVar5 * -8) = afStack_30[(uint)bVar5 * -2];
+  *(float *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =
        afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  core_actor_cpp_FUN_00408b40();
-  CStack_58.x = afStack_18[2];
-  afStack_4c[(uint)bVar5 * -2 + -2] = afStack_18[(uint)bVar5 * -2 + 3];
-  afStack_4c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -1] =
-       *(float *)(&stack0xfffffff8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-  afStack_30[4] = this_ptr->bolt_velocity;
-  afStack_30[2] = 0.0;
-  afStack_30[3] = 0.0;
-  core_actor_cpp_FUN_00408ac0();
-  CStack_40.x = fStack_1c;
-  *(float *)((int)&CStack_40 + (uint)bVar5 * -8 + 4) = afStack_18[(uint)bVar5 * -2];
-  *(float *)((int)&CStack_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       afStack_18[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+            (&this_ptr->base,input_local_point,(CVector3f *)&fStack_10);
+  CStack_58.x = fStack_10;
+  *(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + 4) = (&uStack_c)[(uint)bVar5 * -2];
+  *(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       *(uint *)(&stack0xfffffff8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+  CStack_28.z = this_ptr->bolt_velocity;
+  CStack_28.x = 0.0;
+  CStack_28.y = 0.0;
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(&this_ptr->base,&CStack_28,&CStack_1c);
+  CStack_40.x = CStack_1c.x;
+  *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + 4) =
+       *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4);
+  *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,&this_ptr->base);
   if (this_ptr->carried_by_actor != (CDemonActor *)0x0) {
@@ -106,7 +113,7 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(CWeapon *this_pt
   laser_info.reflectivity = (float)in_stack_fffffef4._72_4_;
   laser_info.transparency = (float)actor_ptr;
   core_fire_cpp_CFireEffect_traceLaser_FUN_004b6420
-            (0x01C57074,&CStack_58,&CStack_40,laser_info,recursion_depth);
+            (g_CFireEffectPtr,&CStack_58,&CStack_40,laser_info,recursion_depth);
   core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   return;
 }

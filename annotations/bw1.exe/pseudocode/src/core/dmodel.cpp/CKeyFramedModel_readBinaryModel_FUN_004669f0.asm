@@ -23,13 +23,13 @@
 ;   TerminatedCString s_Error_reading_keyframed_005d9335
 ;   TerminatedCString s_core_dmodel_cpp_005d9358
 ;   TerminatedCString s_KFM_file_is_invalid_vers_005d936b
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
+;   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00467650
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00468340
-;   core_dmodel.cpp_FUN_00467650
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;
@@ -67,10 +67,10 @@ section .text
     MOV EAX,0x5d9358                    ; 00466a22 | = "..\\core\\dmodel.cpp"
     MOV EDX,0xed                        ; 00466a27
     PUSH 0x5d936b                       ; 00466a2c | = "KFM file is invalid version %d"
-    MOV [0x01d1d400],EAX                ; 00466a31 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00466a36 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00466a3c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 00466a31 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00466a36 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00466a3c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00466a41
     XOR EDI,EDI                         ; 00466a44
         ;   Label: LAB_00466a44
@@ -94,10 +94,10 @@ section .text
         ;   Label: LAB_00466a69
     MOV ECX,0xe7                        ; 00466a6e
     PUSH 0x5d9335                       ; 00466a73 | = "Error reading keyframed model file"
-    MOV dword ptr [0x01d1d400],EDX      ; 00466a78 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00466a7e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00466a84
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00466a78 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00466a7e | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00466a84
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00466a89
     JMP 0x00466a16                      ; 00466a8c
         ;   XREF to: 00466a16 (UNCONDITIONAL_JUMP)  ; LAB_00466a16
@@ -119,8 +119,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 00466aa9
     PUSH EBP                            ; 00466aad
     PUSH EBX                            ; 00466aae
-    CALL core_dmodel.cpp_FUN_00467650   ; 00466aaf
-        ;   XREF to: 00467650 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00467650()
+    CALL core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00467650 ; 00466aaf
+        ;   XREF to: 00467650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00467650(CKeyFramedModel * this_ptr, int vertex_count, int poly_count, int texture_count, ...)
     MOV EDI,dword ptr [EBX + 0x104]     ; 00466ab4
     IMUL EDI,dword ptr [EBX + 0x100]    ; 00466aba
     ADD ESP,0x18                        ; 00466ac1

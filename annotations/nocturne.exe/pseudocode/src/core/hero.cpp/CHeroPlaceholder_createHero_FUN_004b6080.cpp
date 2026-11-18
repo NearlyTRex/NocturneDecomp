@@ -51,7 +51,7 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlac
     core_main_c_displayErrorAndQuit_FUN_004c8440("CHeroPlaceholder::createHero - invalid hero type.");
     goto LAB_004b60b9;
   }
-  class_name_hash = g_CHeroActorType_01cae0ec.name_hash;
+  class_name_hash = g_CHeroClassInfo.name_hash;
   actor_ptr = core_actor_cpp_createActorByName_FUN_0040d540(class_name);
   actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash);
 LAB_004b60b9:

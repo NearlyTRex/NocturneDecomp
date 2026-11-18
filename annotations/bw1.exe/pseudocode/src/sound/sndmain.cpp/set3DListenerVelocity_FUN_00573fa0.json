@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 53,
+    "complexity_score": 82,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 26
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -25,7 +25,7 @@
     {
       "addr": "0057cc00",
       "from_addr": "0057cc35",
-      "name": "core_sound.cpp_FUN_0057cc00",
+      "name": "core_sound.cpp_CSound_init_FUN_0057cc00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,14 +62,14 @@
   "globals": [
     {
       "addr": "02c7fc88",
-      "name": "DAT_02c7fc88",
-      "type": "undefined4",
+      "name": "g_INT_02c7fc88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c807f4",
-      "name": "DAT_02c807f4",
-      "type": "undefined4",
+      "name": "g_BYTE_02c807f4",
+      "type": "byte",
       "value": null
     }
   ],
@@ -79,7 +79,7 @@
       {
         "call_addr": "0057cc35",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057cc00",
+        "caller": "core_sound.cpp_CSound_init_FUN_0057cc00",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,28 +194,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Pointer value `&g_CVector3d_02c7fc28.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 9,
+      "match": "(int)&g_CVector3d_02c7fc28.x",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.x + g_INT_02c7fc88 * 4) = velocity_x;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_02c807f4",
-      "severity": "mild",
-      "text": "DAT_02c807f4 = DAT_02c807f4 | 4;",
-      "type": "undefined_data"
+      "description": "Pointer value `&g_CVector3d_02c7fc28.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 10,
+      "match": "(int)&g_CVector3d_02c7fc28.y",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.y + iVar1 * 4) = velocity_y;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_02c807f4",
-      "severity": "mild",
-      "text": "DAT_02c807f4 = DAT_02c807f4 | 4;",
-      "type": "undefined_data"
+      "description": "Pointer value `&g_CVector3d_02c7fc28.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)&g_CVector3d_02c7fc28.z",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.z + iVar1 * 4) = velocity_z;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 9,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.x + g_INT_02c7fc88 * 4) = velocity_x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 10,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.y + iVar1 * 4) = velocity_y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 11,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.z + iVar1 * 4) = velocity_z;",
+      "type": "pointer_cast"
     }
   ]
 }

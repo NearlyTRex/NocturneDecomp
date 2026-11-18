@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_005750a0(int enabled)
 
 {
-  _DAT_006141c4 = enabled;
+  g_TextureFilteringEnabled = enabled;
   return;
 }

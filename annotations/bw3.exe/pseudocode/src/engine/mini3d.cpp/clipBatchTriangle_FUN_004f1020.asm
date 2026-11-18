@@ -12,21 +12,21 @@
 ;   engine_mini3d.cpp_drawTransformedList_FUN_004f12b0 at 004f137e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d76c5c
-;   undefined4 DAT_01d76c60
-;   undefined4 DAT_01d76c64
-;   undefined4 DAT_01d76c68
-;   undefined4 DAT_01d76f68
-;   undefined4 DAT_01d76f6c
-;   undefined4 DAT_01d76f70
-;   undefined4 DAT_01d76f74
-;   undefined4 DAT_01d76f78
-;   undefined4 DAT_01d7777c
-;   undefined4 DAT_01d77780
-;   undefined4 DAT_01d777bc
-;   undefined4 DAT_01d777c0
-;   undefined4 DAT_01d777fc
-;   undefined4 DAT_01d77800
+;   float g_FLOAT_01d76c5c
+;   float g_FLOAT_01d76c60
+;   float g_FLOAT_01d76c64
+;   float g_FLOAT_01d76c68
+;   int g_INT_01d76f68
+;   int g_INT_01d76f6c
+;   int g_INT_01d76f70
+;   int g_INT_01d76f74
+;   int g_INT_01d76f78
+;   float g_FLOAT_01d7777c
+;   float g_FLOAT_01d77780
+;   float g_FLOAT_01d777bc
+;   float g_FLOAT_01d777c0
+;   float g_FLOAT_01d777fc
+;   float g_FLOAT_01d77800
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -63,25 +63,25 @@ section .text
         ;   XREF to: 004f10a8 (CONDITIONAL_JUMP)  ; LAB_004f10a8
     MOV EDI,0x3                         ; 004f1048
     MOV ECX,0x10                        ; 004f104d
-    MOV dword ptr [0x01d76f68],EDI      ; 004f1052 | DAT_01d76f68
+    MOV dword ptr [0x01d76f68],EDI      ; 004f1052 | g_INT_01d76f68
     MOV EDI,0x1d7777c                   ; 004f1058
-    MOVSD.REP ES:EDI,ESI                ; 004f105d | DAT_01d7777c | DAT_01d77780
+    MOVSD.REP ES:EDI,ESI                ; 004f105d | g_FLOAT_01d7777c | g_FLOAT_01d77780
     XOR EBP,EBP                         ; 004f105f
     MOV ECX,0x10                        ; 004f1061
     MOV EDI,0x1d777bc                   ; 004f1066
     MOV ESI,EBX                         ; 004f106b
-    MOV dword ptr [0x01d76f6c],EBP      ; 004f106d | DAT_01d76f6c
-    MOVSD.REP ES:EDI,ESI                ; 004f1073 | DAT_01d777bc | DAT_01d777c0
-    MOV dword ptr [0x01d76f70],EBP      ; 004f1075 | DAT_01d76f70
+    MOV dword ptr [0x01d76f6c],EBP      ; 004f106d | g_INT_01d76f6c
+    MOVSD.REP ES:EDI,ESI                ; 004f1073 | g_FLOAT_01d777bc | g_FLOAT_01d777c0
+    MOV dword ptr [0x01d76f70],EBP      ; 004f1075 | g_INT_01d76f70
     MOV ECX,0x10                        ; 004f107b
     MOV EDI,0x1d777fc                   ; 004f1080
     MOV ESI,EDX                         ; 004f1085
-    MOV dword ptr [0x01d76f74],EBP      ; 004f1087 | DAT_01d76f74
-    MOV dword ptr [0x01d76f78],EBP      ; 004f108d | DAT_01d76f78
-    MOVSD.REP ES:EDI,ESI                ; 004f1093 | DAT_01d777fc | DAT_01d77800
+    MOV dword ptr [0x01d76f74],EBP      ; 004f1087 | g_INT_01d76f74
+    MOV dword ptr [0x01d76f78],EBP      ; 004f108d | g_INT_01d76f78
+    MOVSD.REP ES:EDI,ESI                ; 004f1093 | g_FLOAT_01d777fc | g_FLOAT_01d77800
     CALL engine_mini3d.cpp_clipAgainstPlane0_FUN_004f0850 ; 004f1095
         ;   XREF to: 004f0850 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_clipAgainstPlane0_FUN_004f0850()
-    CMP dword ptr [0x01d76f6c],0x3      ; 004f109a | DAT_01d76f6c
+    CMP dword ptr [0x01d76f6c],0x3      ; 004f109a | g_INT_01d76f6c
     JGE 0x004f10b8                      ; 004f10a1
         ;   XREF to: 004f10b8 (CONDITIONAL_JUMP)  ; LAB_004f10b8
     POP EBP                             ; 004f10a3
@@ -105,44 +105,44 @@ section .text
     CALL engine_mini3d.cpp_clipAgainstPlane1_FUN_004f0980 ; 004f10b8
         ;   XREF to: 004f0980 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_clipAgainstPlane1_FUN_004f0980()
         ;   Label: LAB_004f10b8
-    CMP dword ptr [0x01d76f70],0x3      ; 004f10bd | DAT_01d76f70
+    CMP dword ptr [0x01d76f70],0x3      ; 004f10bd | g_INT_01d76f70
     JL 0x004f10a3                       ; 004f10c4
         ;   XREF to: 004f10a3 (CONDITIONAL_JUMP)  ; LAB_004f10a3
     CALL engine_mini3d.cpp_clipAgainstPlane2_FUN_004f0ab0 ; 004f10c6
         ;   XREF to: 004f0ab0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_clipAgainstPlane2_FUN_004f0ab0()
-    CMP dword ptr [0x01d76f74],0x3      ; 004f10cb | DAT_01d76f74
+    CMP dword ptr [0x01d76f74],0x3      ; 004f10cb | g_INT_01d76f74
     JL 0x004f10a3                       ; 004f10d2
         ;   XREF to: 004f10a3 (CONDITIONAL_JUMP)  ; LAB_004f10a3
     CALL engine_mini3d.cpp_clipAgainstPlane3_FUN_004f0be0 ; 004f10d4
         ;   XREF to: 004f0be0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_clipAgainstPlane3_FUN_004f0be0()
-    CMP dword ptr [0x01d76f78],0x3      ; 004f10d9 | DAT_01d76f78
+    CMP dword ptr [0x01d76f78],0x3      ; 004f10d9 | g_INT_01d76f78
     JL 0x004f10a3                       ; 004f10e0
         ;   XREF to: 004f10a3 (CONDITIONAL_JUMP)  ; LAB_004f10a3
     CALL engine_mini3d.cpp_clampClippedPolygon_FUN_004f0d00 ; 004f10e2
         ;   XREF to: 004f0d00 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_clampClippedPolygon_FUN_004f0d00()
-    MOV EBX,dword ptr [0x01d76f78]      ; 004f10e7 | DAT_01d76f78
+    MOV EBX,dword ptr [0x01d76f78]      ; 004f10e7 | g_INT_01d76f78
     XOR EDX,EDX                         ; 004f10ed
     TEST EBX,EBX                        ; 004f10ef
     JLE 0x004f114f                      ; 004f10f1
         ;   XREF to: 004f114f (CONDITIONAL_JUMP)  ; LAB_004f114f
-    FLD float ptr [0x01d76c68]          ; 004f10f3 | DAT_01d76c68
+    FLD float ptr [0x01d76c68]          ; 004f10f3 | g_FLOAT_01d76c68
     MOV EAX,0x1d78f7c                   ; 004f10f9
-    FLD float ptr [0x01d76c64]          ; 004f10fe | DAT_01d76c64
-    FLD float ptr [0x01d76c5c]          ; 004f1104 | DAT_01d76c5c
+    FLD float ptr [0x01d76c64]          ; 004f10fe | g_FLOAT_01d76c64
+    FLD float ptr [0x01d76c5c]          ; 004f1104 | g_FLOAT_01d76c5c
     FLD float ptr [EAX + 0x8]           ; 004f110a | DAT_01d78f84 | DAT_01d78fc4
         ;   Label: LAB_004f110a
     FLD1                                ; 004f110d
     FDIVRP                              ; 004f110f
-    FLD float ptr [EAX]                 ; 004f1111 | DAT_01d78f7c | DAT_01d78fbc
+    FLD float ptr [EAX]                 ; 004f1111 | g_FLOAT_01d78f7c | DAT_01d78fbc
     FMUL ST2                            ; 004f1113
     FLD float ptr [EAX + 0x4]           ; 004f1115 | DAT_01d78f80 | DAT_01d78fc0
-    FMUL float ptr [0x01d76c60]         ; 004f1118 | DAT_01d76c60
+    FMUL float ptr [0x01d76c60]         ; 004f1118 | g_FLOAT_01d76c60
     FXCH ST2                            ; 004f111e
     FSTP float ptr [EAX + 0xc]          ; 004f1120 | DAT_01d78f88 | DAT_01d78fc8
     FMUL float ptr [EAX + 0xc]          ; 004f1123 | DAT_01d78f88 | DAT_01d78fc8
     FXCH                                ; 004f1126
     FMUL float ptr [EAX + 0xc]          ; 004f1128 | DAT_01d78f88 | DAT_01d78fc8
-    MOV ESI,dword ptr [0x01d76f78]      ; 004f112b | DAT_01d76f78
+    MOV ESI,dword ptr [0x01d76f78]      ; 004f112b | g_INT_01d76f78
     ADD EAX,0x40                        ; 004f1131
     INC EDX                             ; 004f1134
     FLD ST4                             ; 004f1135
@@ -164,7 +164,7 @@ section .text
     XOR EBX,EBX                         ; 004f1159
     ADD ESI,0x40                        ; 004f115b
     ADD EDI,0x80                        ; 004f115e
-    MOV EAX,[0x01d76f78]                ; 004f1164 | DAT_01d76f78
+    MOV EAX,[0x01d76f78]                ; 004f1164 | g_INT_01d76f78
         ;   Label: LAB_004f1164
     SUB EAX,0x2                         ; 004f1169
     CMP EBX,EAX                         ; 004f116c
@@ -172,7 +172,7 @@ section .text
         ;   XREF to: 004f10a3 (CONDITIONAL_JUMP)  ; LAB_004f10a3
     PUSH EDI                            ; 004f1174
     PUSH ESI                            ; 004f1175 | DAT_01d78fbc
-    PUSH 0x1d78f7c                      ; 004f1176 | DAT_01d78f7c
+    PUSH 0x1d78f7c                      ; 004f1176 | g_FLOAT_01d78f7c
     INC EBX                             ; 004f117b
     ADD EDI,0x40                        ; 004f117c
     CALL engine_mini3d.cpp_addBatchTriangle_FUN_004f0dc0 ; 004f117f

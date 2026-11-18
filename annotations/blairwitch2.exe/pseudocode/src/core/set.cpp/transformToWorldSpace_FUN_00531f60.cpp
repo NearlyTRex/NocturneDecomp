@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_00531f60(CVector3i *input,CVector3i *output)
 
 {
@@ -20,24 +18,24 @@ CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_00531f60(CVector3
   int iVar7;
   int iVar8;
   
-  lVar1 = (longlong)_DAT_01d04fb8 * (longlong)input->x;
-  lVar2 = (longlong)_DAT_01d04fc4 * (longlong)input->y;
-  lVar3 = (longlong)_DAT_01d04fd0 * (longlong)input->z;
-  lVar4 = (longlong)_DAT_01d04fbc * (longlong)input->x;
-  lVar5 = (longlong)_DAT_01d04fc8 * (longlong)input->y;
-  lVar6 = (longlong)_DAT_01d04fd4 * (longlong)input->z;
-  iVar7 = _DAT_01c38b7c +
+  lVar1 = (longlong)g_INT_01d04fb8 * (longlong)input->x;
+  lVar2 = (longlong)g_INT_01d04fc4 * (longlong)input->y;
+  lVar3 = (longlong)g_INT_01d04fd0 * (longlong)input->z;
+  lVar4 = (longlong)g_INT_01d04fbc * (longlong)input->x;
+  lVar5 = (longlong)g_INT_01d04fc8 * (longlong)input->y;
+  lVar6 = (longlong)g_INT_01d04fd4 * (longlong)input->z;
+  iVar7 = g_CameraOriginY +
           ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
-  lVar4 = (longlong)_DAT_01d04fc0 * (longlong)input->x;
-  lVar5 = (longlong)_DAT_01d04fcc * (longlong)input->y;
-  lVar6 = (longlong)_DAT_01d04fd8 * (longlong)input->z;
-  iVar8 = _DAT_01c38b80 +
+  lVar4 = (longlong)g_INT_01d04fc0 * (longlong)input->x;
+  lVar5 = (longlong)g_INT_01d04fcc * (longlong)input->y;
+  lVar6 = (longlong)g_INT_01d04fd8 * (longlong)input->z;
+  iVar8 = g_CameraOriginZ +
           ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
           ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
-  output->x = _DAT_01c38b78 +
+  output->x = g_CameraOriginX +
               ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
               ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
               ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);

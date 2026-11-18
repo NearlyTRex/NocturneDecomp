@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 279,
-    "complexity_score": 179,
+    "complexity_score": 164,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 89,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "bitcast_double_pair",
       "raw_address_constant",
-      "sub84_truncation",
-      "warning_overlapping_globals"
+      "sub84_truncation"
     ],
     "total_lines": 368
   },
@@ -154,44 +153,44 @@
     },
     {
       "addr": "01bcd070",
-      "name": "DAT_01bcd070",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01bcd070",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01bcd07c",
-      "name": "DAT_01bcd07c",
-      "type": "undefined4",
+      "name": "g_INT_01bcd07c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcd9bc",
-      "name": "DAT_01bcd9bc",
-      "type": "undefined4",
+      "name": "g_INT_01bcd9bc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddec",
-      "name": "DAT_01bcddec",
-      "type": "undefined4",
+      "name": "g_WindowStatusTextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddf8",
-      "name": "DAT_01bcddf8",
-      "type": "undefined4",
+      "name": "g_ProgressBarBackgroundColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddfc",
-      "name": "DAT_01bcddfc",
-      "type": "undefined4",
+      "name": "g_ProgressBarFillColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcde00",
-      "name": "DAT_01bcde00",
-      "type": "undefined4",
+      "name": "g_ProgressBarBorderColor",
+      "type": "int",
       "value": null
     },
     {
@@ -345,6 +344,24 @@
     "pcode_op_count": 1539
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047dc40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4704
+    },
+    "bw1.exe": {
+      "addr": "004962b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4704
+    },
+    "bw3.exe": {
+      "addr": "0047ee50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4704
+    },
     "nocedit.exe": {
       "addr": "004a0530",
       "by": "name",
@@ -464,16 +481,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 77,
+      "line": 76,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar8)) + 0.5);",
@@ -481,7 +490,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 77,
+      "line": 76,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar8)) + 0.5);",
@@ -492,12 +501,12 @@
       "line": 82,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(int)ROUND(dVar6) % 0x3c,iVar1 / 0x3c,iVar1 % 0x3c,uVar7,uVar8,SUB84(__BITCAST_UINT64(dVar5),0),",
+      "text": "uVar7,uVar8,SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20));",
       "type": "sub84_truncation"
     },
     {
       "description": "Raw hex address 0x4717ca assigned to bare local `uVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 37,
+      "line": 35,
       "match": "0x4717ca",
       "severity": "moderate",
       "text": "uVar8 = 0x4717ca;",
@@ -505,7 +514,7 @@
     },
     {
       "description": "Raw hex address 0x471966 assigned to bare local `uVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 69,
+      "line": 68,
       "match": "0x471966",
       "severity": "moderate",
       "text": "uVar8 = 0x471966;",
@@ -513,7 +522,7 @@
     },
     {
       "description": "Raw hex address 0x4719a2 assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 75,
+      "line": 74,
       "match": "0x4719a2",
       "severity": "moderate",
       "text": "uVar7 = 0x4719a2;",

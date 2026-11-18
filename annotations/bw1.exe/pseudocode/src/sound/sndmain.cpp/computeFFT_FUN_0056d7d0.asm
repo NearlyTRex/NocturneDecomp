@@ -10,8 +10,8 @@
 ; float *          Stack[0x10]:4   output_imag
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2a78
-;   undefined4 DAT_005f2a80
+;   double g_DOUBLE_005f2a78 = 2
+;   float g_FLOAT_005f2a80 = 3.141593
 ;
 ; *****************************************************************************
 
@@ -103,11 +103,11 @@ section .text
     MOV dword ptr [ESP + 0x98],EAX      ; 0056d8b8
     MOV dword ptr [ESP + 0x94],EAX      ; 0056d8bf
     FILD dword ptr [ESP + 0x98]         ; 0056d8c6
-    FDIVR float ptr [0x005f2a80]        ; 0056d8cd | DAT_005f2a80
+    FDIVR float ptr [0x005f2a80]        ; 0056d8cd | g_FLOAT_005f2a80
     FLD ST0                             ; 0056d8d3
     FSINCOS                             ; 0056d8d5
     FXCH ST2                            ; 0056d8d7
-    FLD double ptr [0x005f2a78]         ; 0056d8d9 | DAT_005f2a78
+    FLD double ptr [0x005f2a78]         ; 0056d8d9 | g_DOUBLE_005f2a78
     FXCH                                ; 0056d8df
     FMUL ST1                            ; 0056d8e1
     FLD ST0                             ; 0056d8e3

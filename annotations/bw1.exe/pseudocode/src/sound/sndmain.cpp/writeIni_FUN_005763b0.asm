@@ -16,23 +16,23 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DeviceName_005f453b
-;   undefined4 DAT_005f4546
+;   TerminatedCString s_Bits_005f4546
 ;   TerminatedCString s_Channels_005f454b
-;   undefined4 DAT_005f4554
+;   TerminatedCString s_Hz_005f4554
 ;   TerminatedCString s_AccelEnabled_005f4557
 ;   TerminatedCString s_MaxSwLatency_005f4564
-;   undefined4 DAT_005f4571
+;   TerminatedCString s_Mute_005f4571
 ;   TerminatedCString s_SfxChannel_dEnabled_005f4576
 ;   TerminatedCString s_SfxChannel_dVol_005f458a
-;   undefined4 DAT_006232e4
-;   undefined4 DAT_006232fc
-;   undefined4 DAT_00623430
-;   undefined4 DAT_00623434
+;   int g_MaxSoundChannels = 0x20
+;   int g_CurrentSoundDevice = -0x1
+;   char[256] g_DefaultDeviceName
+;   undefined4 g_DefaultDeviceName+4
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   engine_ini.cpp_FUN_004f4d70
-;   engine_ini.cpp_FUN_004f4e20
+;   engine_ini.cpp_CIniFile_setFloatValue_FUN_004f4e20
+;   engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70
 ;   sound_sndmain.cpp_getAudioFormat_FUN_005751c0
 ;   sound_sndmain.cpp_getMaxSwLatency_FUN_00576030
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0
@@ -55,15 +55,15 @@ section .text
     MOV EBP,dword ptr [ESP + 0x2a0]     ; 005763ba
     MOV ECX,0x40                        ; 005763c1
     LEA EDI,[ESP + 0x118]               ; 005763c6
-    MOV ESI,0x623430                    ; 005763cd | DAT_00623430
-    MOV EDX,dword ptr [0x006232fc]      ; 005763d2 | DAT_006232fc
-    MOVSD.REP ES:EDI,ESI                ; 005763d8 | DAT_00623430 | DAT_00623434
+    MOV ESI,0x623430                    ; 005763cd | g_DefaultDeviceName
+    MOV EDX,dword ptr [0x006232fc]      ; 005763d2 | g_CurrentSoundDevice
+    MOVSD.REP ES:EDI,ESI                ; 005763d8 | g_DefaultDeviceName | g_DefaultDeviceName+4
     TEST EDX,EDX                        ; 005763da
     JL 0x0057641c                       ; 005763dc
         ;   XREF to: 0057641c (CONDITIONAL_JUMP)  ; LAB_0057641c
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_005752c0 ; 005763de
         ;   XREF to: 005752c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_005752c0()
-    MOV ECX,dword ptr [0x006232fc]      ; 005763e3 | DAT_006232fc
+    MOV ECX,dword ptr [0x006232fc]      ; 005763e3 | g_CurrentSoundDevice
     CMP EAX,ECX                         ; 005763e9
     JLE 0x0057641c                      ; 005763eb
         ;   XREF to: 0057641c (CONDITIONAL_JUMP)  ; LAB_0057641c
@@ -110,32 +110,32 @@ section .text
     ADD ESP,0xc                         ; 00576453
     MOV ESI,dword ptr [ESP + 0x284]     ; 00576456
     PUSH ESI                            ; 0057645d
-    PUSH 0x5f4546                       ; 0057645e | DAT_005f4546
+    PUSH 0x5f4546                       ; 0057645e | = "Bits"
     PUSH EBP                            ; 00576463
-    CALL engine_ini.cpp_FUN_004f4d70    ; 00576464
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 00576464
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00576469
     MOV EDI,dword ptr [ESP + 0x27c]     ; 0057646c
     PUSH EDI                            ; 00576473
     PUSH 0x5f454b                       ; 00576474 | = "Channels"
     PUSH EBP                            ; 00576479
-    CALL engine_ini.cpp_FUN_004f4d70    ; 0057647a
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 0057647a
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 0057647f
     MOV EAX,dword ptr [ESP + 0x280]     ; 00576482
     PUSH EAX                            ; 00576489
-    PUSH 0x5f4554                       ; 0057648a | DAT_005f4554
+    PUSH 0x5f4554                       ; 0057648a | = "Hz"
     PUSH EBP                            ; 0057648f
-    CALL engine_ini.cpp_FUN_004f4d70    ; 00576490
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 00576490
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00576495
     CALL sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00575570 ; 00576498
         ;   XREF to: 00575570 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00575570()
     PUSH EAX                            ; 0057649d
     PUSH 0x5f4557                       ; 0057649e | = "AccelEnabled"
     PUSH EBP                            ; 005764a3
-    CALL engine_ini.cpp_FUN_004f4d70    ; 005764a4
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 005764a4
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 005764a9
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00576030 ; 005764ac
         ;   XREF to: 00576030 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00576030()
@@ -145,18 +145,18 @@ section .text
     FSTP float ptr [ESP]                ; 005764c2
     PUSH 0x5f4564                       ; 005764c5 | = "MaxSwLatency"
     PUSH EBP                            ; 005764ca
-    CALL engine_ini.cpp_FUN_004f4e20    ; 005764cb
-        ;   XREF to: 004f4e20 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4e20()
+    CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004f4e20 ; 005764cb
+        ;   XREF to: 004f4e20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004f4e20(CIniFile * this_ptr, char * key, float value)
     ADD ESP,0xc                         ; 005764d0
     CALL sound_sndmain.cpp_isSoundMuted_FUN_005735f0 ; 005764d3
         ;   XREF to: 005735f0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_005735f0()
     PUSH EAX                            ; 005764d8
-    PUSH 0x5f4571                       ; 005764d9 | DAT_005f4571
+    PUSH 0x5f4571                       ; 005764d9 | = "Mute"
     PUSH EBP                            ; 005764de
     XOR EBX,EBX                         ; 005764df
-    CALL engine_ini.cpp_FUN_004f4d70    ; 005764e1
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
-    MOV EDX,dword ptr [0x006232e4]      ; 005764e6 | DAT_006232e4
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 005764e1
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
+    MOV EDX,dword ptr [0x006232e4]      ; 005764e6 | g_MaxSoundChannels
     ADD ESP,0xc                         ; 005764ec
     TEST EDX,EDX                        ; 005764ef
     JLE 0x00576580                      ; 005764f1
@@ -177,8 +177,8 @@ section .text
     LEA EAX,[ESP + 0x21c]               ; 00576517
     PUSH EAX                            ; 0057651e
     PUSH EBP                            ; 0057651f
-    CALL engine_ini.cpp_FUN_004f4d70    ; 00576520
-        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
+    CALL engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70 ; 00576520
+        ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 00576525
     PUSH EBX                            ; 00576528
     PUSH 0x5f458a                       ; 00576529 | = "SfxChannel%dVol"
@@ -199,9 +199,9 @@ section .text
     PUSH EAX                            ; 00576562
     PUSH EBP                            ; 00576563
     INC EBX                             ; 00576564
-    CALL engine_ini.cpp_FUN_004f4e20    ; 00576565
-        ;   XREF to: 004f4e20 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4e20()
-    MOV ECX,dword ptr [0x006232e4]      ; 0057656a | DAT_006232e4
+    CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004f4e20 ; 00576565
+        ;   XREF to: 004f4e20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004f4e20(CIniFile * this_ptr, char * key, float value)
+    MOV ECX,dword ptr [0x006232e4]      ; 0057656a | g_MaxSoundChannels
     ADD ESP,0xc                         ; 00576570
     CMP EBX,ECX                         ; 00576573
     JL 0x005764f7                       ; 00576575

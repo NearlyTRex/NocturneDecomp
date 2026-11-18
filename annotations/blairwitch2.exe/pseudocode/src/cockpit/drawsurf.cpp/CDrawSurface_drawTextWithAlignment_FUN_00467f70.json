@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 117,
+    "complexity_score": 101,
     "cross_reference_count": 8,
     "function_call_count": 15,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 102,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 409
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 101,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 408
   },
   "cross_references": [
     {
@@ -78,6 +76,11 @@
   },
   "function_calls": [
     {
+      "addr": "00402830",
+      "is_variadic": false,
+      "name": "engine_2d.c_disableTextWrap_FUN_00402830"
+    },
+    {
       "addr": "00402600",
       "is_variadic": false,
       "name": "engine_2d.c_drawTextCenteredAtColor_FUN_00402600"
@@ -98,29 +101,24 @@
       "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402540"
     },
     {
-      "addr": "00402800",
-      "is_variadic": false,
-      "name": "engine_2d.c_FUN_00402800"
-    },
-    {
-      "addr": "00402810",
-      "is_variadic": false,
-      "name": "engine_2d.c_FUN_00402810"
-    },
-    {
-      "addr": "00402830",
-      "is_variadic": false,
-      "name": "engine_2d.c_FUN_00402830"
-    },
-    {
       "addr": "00402840",
       "is_variadic": false,
-      "name": "engine_2d.c_FUN_00402840"
+      "name": "engine_2d.c_getTextColor_FUN_00402840"
+    },
+    {
+      "addr": "00402800",
+      "is_variadic": false,
+      "name": "engine_2d.c_getTextWrapEnabled_FUN_00402800"
     },
     {
       "addr": "00402850",
       "is_variadic": false,
-      "name": "engine_2d.c_FUN_00402850"
+      "name": "engine_2d.c_setTextColor_FUN_00402850"
+    },
+    {
+      "addr": "00402810",
+      "is_variadic": false,
+      "name": "engine_2d.c_setTextWrapEnabled_FUN_00402810"
     },
     {
       "addr": "004a92a0",
@@ -168,44 +166,44 @@
     },
     {
       "addr": "01ba5c28",
-      "name": "DAT_01ba5c28",
-      "type": "undefined4",
+      "name": "g_CurrentDrawColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ba5c2c",
-      "name": "DAT_01ba5c2c",
-      "type": "undefined4",
+      "name": "g_PaletteColorIndex",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ba5c30",
-      "name": "DAT_01ba5c30",
-      "type": "undefined4",
+      "name": "g_CurrentFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c35e48",
-      "name": "DAT_01c35e48",
-      "type": "undefined4",
+      "name": "g_INT_01c35e48",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e4c",
-      "name": "DAT_01c35e4c",
-      "type": "undefined4",
+      "name": "g_INT_01c35e4c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e50",
-      "name": "DAT_01c35e50",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e54",
-      "name": "DAT_01c35e54",
-      "type": "undefined4",
+      "name": "g_INT_01c35e54",
+      "type": "int",
       "value": null
     }
   ],
@@ -480,14 +478,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

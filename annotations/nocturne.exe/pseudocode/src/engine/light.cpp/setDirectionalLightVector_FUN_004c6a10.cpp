@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004c6a10(int dir_x,int dir_y,int dir_z)
 
 {
-  _DAT_01c039dc = dir_x;
-  _DAT_01cc3668 = dir_y;
-  _DAT_01c039e0 = dir_y;
-  _DAT_01cc366c = dir_z;
-  _DAT_01c039e4 = dir_z;
-  _DAT_01cc3664 = dir_x;
+  g_LightDirectionX = dir_x;
+  g_LightDirectionY2 = dir_y;
+  g_LightDirectionY = dir_y;
+  g_LightDirectionZ2 = dir_z;
+  g_LightDirectionZ = dir_z;
+  g_LightDirectionX2 = dir_x;
   return;
 }

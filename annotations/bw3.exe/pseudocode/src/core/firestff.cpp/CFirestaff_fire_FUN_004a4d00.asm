@@ -7,11 +7,11 @@
 ; CFirestaff *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_wp_nomana_wav_005c0b24+1
+;   TerminatedCString s_wp_nomana_wav_005c0b25
 ;   TerminatedCString s_wp_firestaff_wav_005c0b33
-;   undefined4 DAT_005c0b45
-;   undefined4 DAT_005fc5a0
-;   undefined4 DAT_006045f8
+;   float g_FLOAT_005c0b45 = -4
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createRing_FUN_004a3f70
@@ -36,7 +36,7 @@ section .text
     PUSH EBX                            ; 004a4d18
     MOV dword ptr [ESP + 0x4],EAX       ; 004a4d19
     MOV EAX,dword ptr [EDX + 0x8]       ; 004a4d1d
-    FADD float ptr [0x005c0b45]         ; 004a4d20 | DAT_005c0b45
+    FADD float ptr [0x005c0b45]         ; 004a4d20 | g_FLOAT_005c0b45
     MOV dword ptr [ESP + 0xc],EAX       ; 004a4d26
     FSTP float ptr [ESP + 0x8]          ; 004a4d2a
     MOVSD ES:EDI,ESI                    ; 004a4d2e
@@ -53,16 +53,16 @@ section .text
     PUSH 0x0                            ; 004a4d44
     LEA EAX,[ESP + 0x14]                ; 004a4d46
     PUSH EAX                            ; 004a4d4a
-    MOV ESI,dword ptr [0x005fc5a0]      ; 004a4d4b | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 004a4d4b | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 004a4d51
     CALL core_fire.cpp_CFireEffect_createRing_FUN_004a3f70 ; 004a4d52
-        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4)
+        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, CVector3f * position, int ring_type, CCharacter * owner)
     ADD ESP,0x10                        ; 004a4d57
     LEA EAX,[ESP + 0xc]                 ; 004a4d5a
     PUSH EAX                            ; 004a4d5e
     PUSH 0x5c0b33                       ; 004a4d5f | = "wp_firestaff.wav"
     PUSH EBX                            ; 004a4d64
-    MOV EDI,dword ptr [0x006045f8]      ; 004a4d65 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 004a4d65 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 004a4d6b
     MOV dword ptr [EBX + 0x300],0x3f800000 ; 004a4d6c
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004a4d76
@@ -77,9 +77,9 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004a4d8a
         ;   Label: LAB_004a4d8a
     PUSH EAX                            ; 004a4d8e
-    PUSH 0x5c0b25                       ; 004a4d8f | s_wp_nomana_wav_005c0b24+1
+    PUSH 0x5c0b25                       ; 004a4d8f | = "wp_nomana.wav"
     PUSH EBX                            ; 004a4d94
-    MOV EDX,dword ptr [0x006045f8]      ; 004a4d95 | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 004a4d95 | g_CSound_PTR_006045f8
     PUSH EDX                            ; 004a4d9b
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 004a4d9c
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

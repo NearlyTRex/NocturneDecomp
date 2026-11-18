@@ -10,24 +10,22 @@
 // =============================================================================
 
 // undefined1* constants
-static undefined1* DAT_004AC20C = (undefined1*)0x004AC263; // LAB_004ac263
-static undefined1* DAT_004AC210 = (undefined1*)0x004AC2E3; // LAB_004ac2e3
-static undefined1* DAT_004AC214 = (undefined1*)0x004AC303; // LAB_004ac303
-static undefined1* DAT_004AC218 = (undefined1*)0x004AC323; // LAB_004ac323
-static undefined1* DAT_004AC21C = (undefined1*)0x004AC346; // LAB_004ac346
-static undefined1* DAT_004AC220 = (undefined1*)0x004AC35F; // LAB_004ac35f
-static undefined1* DAT_004AC224 = (undefined1*)0x004AC378; // LAB_004ac378
-static undefined1* DAT_004AC228 = (undefined1*)0x004AC3B6; // LAB_004ac3b6
-static undefined1* DAT_004AC22C = (undefined1*)0x004AC3F4; // LAB_004ac3f4
-static undefined1* DAT_004AC498 = (undefined1*)0x004AC534; // LAB_004ac534
-static undefined1* DAT_004AC49C = (undefined1*)0x004AC8F1; // LAB_004ac8f1
-static undefined1* DAT_004AC4A0 = (undefined1*)0x004AC90C; // LAB_004ac90c
-static undefined1* DAT_004AC4A4 = (undefined1*)0x004AC927; // LAB_004ac927
-static undefined1* DAT_004AC4A8 = (undefined1*)0x004AC88D; // LAB_004ac88d
-static undefined1* DAT_004AC4AC = (undefined1*)0x004AC942; // LAB_004ac942
-static undefined1* DAT_004AC4B0 = (undefined1*)0x004AC95D; // LAB_004ac95d
-static undefined1* DAT_004AC4B4 = (undefined1*)0x004AC88D; // LAB_004ac88d
-static undefined1* DAT_004AC4B8 = (undefined1*)0x004AC98B; // LAB_004ac98b
+static undefined1* DAT_004AC210 = (undefined1*)0x004AC2E3; // caseD_1
+static undefined1* DAT_004AC214 = (undefined1*)0x004AC303; // caseD_2
+static undefined1* DAT_004AC218 = (undefined1*)0x004AC323; // caseD_3
+static undefined1* DAT_004AC21C = (undefined1*)0x004AC346; // caseD_4
+static undefined1* DAT_004AC220 = (undefined1*)0x004AC35F; // caseD_5
+static undefined1* DAT_004AC224 = (undefined1*)0x004AC378; // caseD_6
+static undefined1* DAT_004AC228 = (undefined1*)0x004AC3B6; // caseD_7
+static undefined1* DAT_004AC22C = (undefined1*)0x004AC3F4; // caseD_8
+static undefined1* DAT_004AC49C = (undefined1*)0x004AC8F1; // caseD_1
+static undefined1* DAT_004AC4A0 = (undefined1*)0x004AC90C; // caseD_2
+static undefined1* DAT_004AC4A4 = (undefined1*)0x004AC927; // caseD_3
+static undefined1* DAT_004AC4A8 = (undefined1*)0x004AC88D; // caseD_4
+static undefined1* DAT_004AC4AC = (undefined1*)0x004AC942; // caseD_5
+static undefined1* DAT_004AC4B0 = (undefined1*)0x004AC95D; // caseD_6
+static undefined1* DAT_004AC4B4 = (undefined1*)0x004AC88D; // caseD_4
+static undefined1* DAT_004AC4B8 = (undefined1*)0x004AC98B; // caseD_8
 static undefined1* DAT_004AD630 = (undefined1*)0x004AE934; // caseD_0
 static undefined1* DAT_004AD634 = (undefined1*)0x004AE916; // caseD_2
 static undefined1* DAT_004AD638 = (undefined1*)0x004AE916; // caseD_2

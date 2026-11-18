@@ -51,7 +51,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_0053f310(C
       if (((pCVar10 != (CDemonActor *)0x0) &&
           (local_18 = (CInventory *)
                       core_actor_cpp_castToClassHash_FUN_0040d890
-                                (pCVar10,g_CWeaponActorType_02ddf970.name_hash),
+                                (pCVar10,g_CWeaponClassInfo.name_hash),
           local_18 == (CInventory *)0x0)) &&
          (pCVar10 = (this_ptr->base).base.carry_hands[1].carry_actor,
          uVar3 = (*((pCVar10->vtable)._ub)->getAllowedMeleeAttackTypes)(pCVar10), (uVar3 & 3) != 0))
@@ -155,7 +155,7 @@ switchD_0053f7b3_caseD_3:
                 if ((uint)fVar8 < 7) goto joined_r0x0053f88b;
                 if (((7 < (uint)fVar8) && (fVar8 != 1.12104e-44)) ||
                    ((pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                         (&local_14->base,g_CMeleeActorType_01cc56a4.name_hash),
+                                         (&local_14->base,g_CMeleeClassInfo.name_hash),
                     pCVar10 != (CDemonActor *)0x0 && (pCVar10[4].orient_matrix.m[0].y != 0.0))))
                 goto LAB_0053f41f;
                 iVar12 = 0;
@@ -171,9 +171,9 @@ joined_r0x0053f88b:
               else {
                 if (((7 < (uint)fVar8) && (fVar8 != 1.12104e-44)) ||
                    ((pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                         ((CDemonActor *)pCVar1,g_CMeleeActorType_01cc56a4.name_hash
-                                         ), pCVar10 != (CDemonActor *)0x0 &&
-                    (pCVar10[4].orient_matrix.m[0].y != 0.0)))) goto LAB_0053f41f;
+                                         ((CDemonActor *)pCVar1,g_CMeleeClassInfo.name_hash),
+                    pCVar10 != (CDemonActor *)0x0 && (pCVar10[4].orient_matrix.m[0].y != 0.0))))
+                goto LAB_0053f41f;
                 iVar12 = 0;
               }
             }
@@ -195,7 +195,7 @@ joined_r0x0053f88b:
     case 6:
       local_1c = (CDynamite *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (&this_ptr->weapon->base,g_CDynamiteActorType_01bca088.name_hash);
+                           (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);
       if (((local_1c != (CDynamite *)0x0) &&
           (iVar6 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_0046ed80(local_1c), iVar6 == 0)) &&
          ((float)(int)(0xb / (longlong)local_34->frame_count) <=
@@ -210,7 +210,7 @@ joined_r0x0053f88b:
         core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(this_ptr,&CStack_50);
         local_30 = (CCharacter *)
                    core_actor_cpp_castToClassHash_FUN_0040d890
-                             (&this_ptr->weapon->base,g_CDynamiteActorType_01bca088.name_hash);
+                             (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);
         local_20 = local_30;
         if (local_30 != (CCharacter *)0x0) {
           pCVar9 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
@@ -271,7 +271,7 @@ joined_r0x0053f88b:
           }
           else if (((uint)fVar8 < 8) || (fVar8 == 1.12104e-44)) {
             pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                ((CDemonActor *)pCVar1,g_CMeleeActorType_01cc56a4.name_hash);
+                                ((CDemonActor *)pCVar1,g_CMeleeClassInfo.name_hash);
             if ((pCVar10 == (CDemonActor *)0x0) || (pCVar10[4].orient_matrix.m[0].y == 0.0)) {
               iVar6 = 0;
             }
@@ -307,7 +307,7 @@ LAB_0053f520:
             }
             else if (((uint)fVar8 < 8) || (fVar8 == 1.12104e-44)) {
               pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                  (&local_14->base,g_CMeleeActorType_01cc56a4.name_hash);
+                                  (&local_14->base,g_CMeleeClassInfo.name_hash);
               if ((pCVar10 == (CDemonActor *)0x0) || (pCVar10[4].orient_matrix.m[0].y == 0.0))
               goto LAB_0053f520;
               iVar6 = 3;

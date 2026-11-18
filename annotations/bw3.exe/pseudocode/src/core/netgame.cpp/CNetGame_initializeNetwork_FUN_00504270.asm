@@ -7,13 +7,13 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_00503f00 at 00503f77
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0 at 00504012
-;   core_netgame.cpp_FUN_00503f00 at 00503f77
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
-;   undefined4 DAT_01da6474
-;   undefined4 DAT_01da6478
+;   int g_LastPingTime
+;   uint g_UINT_01da6478
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00504c10
@@ -87,7 +87,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00504c10 ; 005042fd
         ;   XREF to: 00504c10 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00504c10(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 00504302
-    MOV dword ptr [0x01da6478],EBP      ; 00504305 | DAT_01da6478
+    MOV dword ptr [0x01da6478],EBP      ; 00504305 | g_UINT_01da6478
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0050430b
         ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 00504310
@@ -95,7 +95,7 @@ section .text
     SAR EDX,0x1f                        ; 00504317
     IDIV EBX                            ; 0050431a
     PUSH 0x5ca651                       ; 0050431c
-    MOV [0x01da6474],EAX                ; 00504321 | DAT_01da6474
+    MOV [0x01da6474],EAX                ; 00504321 | g_LastPingTime
     MOV EAX,[0x005fb140]                ; 00504326 | g_CEditorToolsPtr
     PUSH EAX                            ; 0050432b
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0 ; 0050432c

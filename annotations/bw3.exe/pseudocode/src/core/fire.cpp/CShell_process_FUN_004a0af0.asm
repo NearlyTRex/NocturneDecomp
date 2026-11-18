@@ -11,7 +11,7 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
-;   core_particle.cpp_FUN_00509f30
+;   core_particle.cpp_CParticle_process_FUN_00509f30
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
         ;   Label: LAB_004a0b09
     PUSH ESI                            ; 004a0b0a
     PUSH EBX                            ; 004a0b0b
-    CALL core_particle.cpp_FUN_00509f30 ; 004a0b0c
-        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00509f30()
+    CALL core_particle.cpp_CParticle_process_FUN_00509f30 ; 004a0b0c
+        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00509f30(CParticle * this_ptr)
     MOV EAX,[0x005fe9dc]                ; 004a0b11 | g_CGamePtr
     ADD ESP,0x4                         ; 004a0b16
     MOV EAX,dword ptr [EAX + 0x314]     ; 004a0b19 | g_CGameInstance.delta_time_float

@@ -48,7 +48,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005497f0(CTurret *this_ptr,floa
       (this_ptr->base).base.orient.vec.z = (this_ptr->home_orient).vec.z;
     }
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->activate_event);
+                      (g_CEventListPtr,this_ptr->activate_event);
     if (iVar5 == 0) {
       this_ptr->timer = 0.0;
       break;
@@ -70,7 +70,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005497f0(CTurret *this_ptr,floa
     break;
   case TURRET_STATE_ACTIVE:
     (this_ptr->base).muzzle_flash_color.r = 0xff;
-    pCVar4 = 0x01C03A10;
+    pCVar4 = g_CEventListPtr;
     (this_ptr->base).muzzle_flash_color.g = 0;
     (this_ptr->base).muzzle_flash_color.b = 0;
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -86,7 +86,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005497f0(CTurret *this_ptr,floa
     break;
   case TURRET_STATE_PATROL:
     (this_ptr->base).muzzle_flash_color.r = 0;
-    pCVar4 = 0x01C03A10;
+    pCVar4 = g_CEventListPtr;
     (this_ptr->base).muzzle_flash_color.g = 0xff;
     (this_ptr->base).muzzle_flash_color.b = 0;
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30

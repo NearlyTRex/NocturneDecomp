@@ -10,11 +10,11 @@
 ;   core_game.cpp_staticInit_FUN_004b28b0 at 004b28d9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cb7b50
+;   char[256] g_CurrentSaveFile
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_004b6e10
-;   core_game.cpp_FUN_004bb500
+;   core_game.cpp_CGame_setAlphaFade_FUN_004bb500
 ;
 ; *****************************************************************************
 
@@ -95,10 +95,10 @@ section .text
     PUSH 0x0                            ; 004b2fc9
     XOR AH,AH                           ; 004b2fcb
     PUSH EBX                            ; 004b2fcd
-    MOV byte ptr [0x01cb7b50],AH        ; 004b2fce | DAT_01cb7b50
+    MOV byte ptr [0x01cb7b50],AH        ; 004b2fce | g_CurrentSaveFile
     MOV byte ptr [EBX + 0x9ec],AH       ; 004b2fd4
-    CALL core_game.cpp_FUN_004bb500     ; 004b2fda
-        ;   XREF to: 004bb500 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bb500()
+    CALL core_game.cpp_CGame_setAlphaFade_FUN_004bb500 ; 004b2fda
+        ;   XREF to: 004bb500 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setAlphaFade_FUN_004bb500(CGame * this_ptr, float start_alpha, float end_alpha, float duration, ...)
     ADD ESP,0x20                        ; 004b2fdf
     MOV EAX,EBX                         ; 004b2fe2
     MOV dword ptr [EBX + 0xb14],0x0     ; 004b2fe4

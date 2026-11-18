@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDjien * __cdecl core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   CEnemy *pCVar3;
   void *pvVar4;
   CDjien *pCVar5;
@@ -23,7 +21,7 @@ CDjien * __cdecl core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
                      (pCVar3[1].base.base.create_event + 0x1c,0x18,&g_SDjienBoxTypeInfo);
   *(CDjien_full_vtable **)((int)pvVar4 + -0xc1a8) = &g_CDjienVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            ((CDeformableModelInstance *)((int)pvVar4 + -0xc1a4),(char *)0x5d8ac7);
+            ((CDeformableModelInstance *)((int)pvVar4 + -0xc1a4),"djien.dfm");
   *(uint *)((int)pvVar4 + -0x9310) = 0x40800000;
   *(uint *)((int)pvVar4 + -0x930c) = 0x41000000;
   *(uint *)((int)pvVar4 + -0x34) = 0;
@@ -32,13 +30,13 @@ CDjien * __cdecl core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
   *(uint *)((int)pvVar4 + 0x6cc) = 0;
   *(uint *)((int)pvVar4 + 0x6c4) = 1;
   *(uint *)((int)pvVar4 + -0xc) = 0;
-  uVar1 = _DAT_005fea20;
+  fVar1 = 50.0f;
   *(uint *)((int)pvVar4 + -8) = 0;
-  uVar2 = _DAT_005fea24;
+  fVar2 = 100.0f;
   *(uint *)((int)pvVar4 + -0x2c) = 0;
   *(uint *)((int)pvVar4 + -0x28) = 6;
-  *(uint *)((int)pvVar4 + -0x9308) = uVar1;
-  *(uint *)((int)pvVar4 + -0x9304) = uVar2;
+  *(float *)((int)pvVar4 + -0x9308) = fVar1;
+  *(float *)((int)pvVar4 + -0x9304) = fVar2;
   pCVar5 = (CDjien *)((int)pvVar4 + -0xc2fc);
   do {
     pCVar6 = (CDjien *)((pCVar5->base).base.base.actor_name + 4);

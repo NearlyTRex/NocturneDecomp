@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00458630(CDraculaBride *this_ptr)
 
 {
-  return &g_CDraculaBrideActorType_01b4d224;
+  return &g_CDraculaBrideClassInfo;
 }

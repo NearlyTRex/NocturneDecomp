@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_reset_FUN_0059ae40(CAudioRecPuzzle *this_ptr)
 
 {
@@ -29,7 +27,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_reset_FUN_0059ae40(CAudioRecPuzzl
   this_ptr->mouse_button = 0;
   this_ptr->previous_mouse_button = 0;
   this_ptr->click_handled = 0;
-  _DAT_026677e4 = 0xffffffff;
+  g_INT_026677e4 = -1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             (&this_ptr->reel_model,"audioreel.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70

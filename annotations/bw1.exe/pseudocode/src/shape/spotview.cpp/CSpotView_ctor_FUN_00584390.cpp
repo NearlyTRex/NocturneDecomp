@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_00584390(CSpotView *this_ptr)
 
 {
@@ -16,10 +14,10 @@ CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_00584390(CSpotView *th
   float fVar3;
   float fVar4;
   
-  fVar4 = _DAT_02c83554;
-  fVar3 = _DAT_02c83550;
-  fVar2 = _DAT_00625900;
-  fVar1 = _DAT_006258fc;
+  fVar4 = g_FLOAT_02c83554;
+  fVar3 = g_FLOAT_02c83550;
+  fVar2 = 1.0f;
+  fVar1 = 12.0f;
   (this_ptr->loat_at).z = 0.0;
   (this_ptr->loat_at).y = (this_ptr->loat_at).z;
   (this_ptr->loat_at).x = (this_ptr->loat_at).y;

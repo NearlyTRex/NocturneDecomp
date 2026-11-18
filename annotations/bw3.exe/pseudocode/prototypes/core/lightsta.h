@@ -23,7 +23,7 @@ CLightStaff * __cdecl CLightStaff::ctor(CLightStaff *this_ptr);
 
 // Original: core_lightsta.cpp_CLightStaff_fire_FUN_004e1070
 // Address: 004e1070
-undefined4 __cdecl CLightStaff::fire(CLightStaff *this_ptr);
+int __cdecl CLightStaff::fire(CLightStaff *this_ptr);
 
 // Original: core_lightsta.cpp_CLightStaff_process_FUN_004e2050
 // Address: 004e2050

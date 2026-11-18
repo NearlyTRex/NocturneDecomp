@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 93,
+    "complexity_score": 112,
     "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 9,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "displaced_global_access",
+      "wrong_global"
     ],
-    "total_lines": 46
+    "total_lines": 45
   },
   "cross_references": [
     {
@@ -79,26 +79,26 @@
   "globals": [
     {
       "addr": "02c7fbf8",
-      "name": "DAT_02c7fbf8",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fbf8",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc08",
-      "name": "DAT_02c7fc08",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fc08",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc18",
-      "name": "DAT_02c7fc18",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fc18",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc88",
-      "name": "DAT_02c7fc88",
-      "type": "undefined4",
+      "name": "g_INT_02c7fc88",
+      "type": "int",
       "value": null
     }
   ],
@@ -296,60 +296,91 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Scalar global g_DOUBLE_02c7fc18 accessed via (&g_DOUBLE_02c7fc18)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc20 (at 0x02c7fc20, +8 bytes).",
+      "line": 5,
+      "match": "g_DOUBLE_02c7fc18",
+      "severity": "moderate",
+      "text": "if ((pos_z - (&g_DOUBLE_02c7fc18)[g_INT_02c7fc88]) *",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_DOUBLE_02c7fc18 accessed via (&g_DOUBLE_02c7fc18)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc20 (at 0x02c7fc20, +8 bytes).",
+      "line": 6,
+      "match": "g_DOUBLE_02c7fc18",
+      "severity": "moderate",
+      "text": "(pos_z - (&g_DOUBLE_02c7fc18)[g_INT_02c7fc88]) +",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_DOUBLE_02c7fc08 accessed via (&g_DOUBLE_02c7fc08)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc10 (at 0x02c7fc10, +8 bytes).",
       "line": 7,
-      "match": "DAT_02c7fc18",
-      "severity": "mild",
-      "text": "if ((pos_z - *(double *)(&DAT_02c7fc18 + _DAT_02c7fc88 * 8)) *",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02c7fc08",
+      "severity": "moderate",
+      "text": "(pos_y - (&g_DOUBLE_02c7fc08)[g_INT_02c7fc88]) *",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_DOUBLE_02c7fc08 accessed via (&g_DOUBLE_02c7fc08)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc10 (at 0x02c7fc10, +8 bytes).",
       "line": 8,
-      "match": "DAT_02c7fc18",
-      "severity": "mild",
-      "text": "(pos_z - *(double *)(&DAT_02c7fc18 + _DAT_02c7fc88 * 8)) +",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02c7fc08",
+      "severity": "moderate",
+      "text": "(pos_y - (&g_DOUBLE_02c7fc08)[g_INT_02c7fc88]) +",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_DOUBLE_02c7fbf8 accessed via (&g_DOUBLE_02c7fbf8)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc00 (at 0x02c7fc00, +8 bytes).",
       "line": 9,
-      "match": "DAT_02c7fc08",
-      "severity": "mild",
-      "text": "(pos_y - *(double *)(&DAT_02c7fc08 + _DAT_02c7fc88 * 8)) *",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02c7fbf8",
+      "severity": "moderate",
+      "text": "(pos_x - (&g_DOUBLE_02c7fbf8)[g_INT_02c7fc88]) *",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_DOUBLE_02c7fbf8 accessed via (&g_DOUBLE_02c7fbf8)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc00 (at 0x02c7fc00, +8 bytes).",
       "line": 10,
-      "match": "DAT_02c7fc08",
-      "severity": "mild",
-      "text": "(pos_y - *(double *)(&DAT_02c7fc08 + _DAT_02c7fc88 * 8)) +",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02c7fbf8",
+      "severity": "moderate",
+      "text": "(pos_x - (&g_DOUBLE_02c7fbf8)[g_INT_02c7fc88]) <= (double)radius * (double)radius) {",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fbf8] lands in g_DOUBLE_02c7fbf8 but intended target is g_DOUBLE_02c7fc00 at 0x2c7fc00 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fbf8",
+      "displacement": "0x2c7fbf8",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc00",
+      "line": 9,
+      "match": "0x2c7fbf8",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 0057401f: FSUB double ptr [EAX*0x8 + 0x2c7fbf8]  ; g_DOUBLE_02c7fbf8",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc08] lands in g_DOUBLE_02c7fc08 but intended target is g_DOUBLE_02c7fc10 at 0x2c7fc10 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc08",
+      "displacement": "0x2c7fc08",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc10",
       "line": 11,
-      "match": "DAT_02c7fbf8",
-      "severity": "mild",
-      "text": "(pos_x - *(double *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8)) *",
-      "type": "undefined_data"
+      "match": "0x2c7fc08",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00574028: FSUB double ptr [EAX*0x8 + 0x2c7fc08]  ; g_DOUBLE_02c7fc08",
+      "type": "displaced_global_access"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_02c7fbf8",
-      "severity": "mild",
-      "text": "(pos_x - *(double *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8)) <= (double)radius * (double)radius) {",
-      "type": "undefined_data"
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc18] lands in g_DOUBLE_02c7fc18 but intended target is g_DOUBLE_02c7fc20 at 0x2c7fc20 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc18",
+      "displacement": "0x2c7fc18",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc20",
+      "line": 19,
+      "match": "0x2c7fc18",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00574047: FSUB double ptr [EAX*0x8 + 0x2c7fc18]  ; g_DOUBLE_02c7fc18",
+      "type": "displaced_global_access"
     }
   ]
 }

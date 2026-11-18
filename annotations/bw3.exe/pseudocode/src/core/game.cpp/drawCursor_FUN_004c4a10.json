@@ -1,0 +1,154 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "004b6f30",
+      "from_addr": "004b79a2",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c4a10",
+    "address_range": [
+      [
+        "004c4a10",
+        "004c4a55"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_drawCursor_FUN_004c4a10",
+    "signature": "void __cdecl core_game_cpp_drawCursor_FUN_004c4a10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d6f0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c5fadc",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5fae0",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d22b48",
+      "name": "g_INT_01d22b48",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d22bec",
+      "name": "g_INT_ARRAY_01d22bec",
+      "type": "int[16]",
+      "value": null
+    },
+    {
+      "addr": "01d22c0c",
+      "name": "g_INT_ARRAY_01d22bec[8]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b79a2",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.05,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 1,
+      "COPY": 14,
+      "INT_ADD": 8,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 13,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 9,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 121
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004dc1a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

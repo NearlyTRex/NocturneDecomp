@@ -15,7 +15,7 @@ void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004d41a0(CHero *t
   if (item_actor == (CDemonActor *)0x0) {
     return;
   }
-  core_inv_cpp_FUN_004da880(&this_ptr->inventory,item_actor,1);
+  core_inv_cpp_CInventory_addItem_FUN_004da880(&this_ptr->inventory,item_actor,1);
   (this_ptr->base).carry_hands[hand_index].carry_actor = (CDemonActor *)0x0;
   return;
 }

@@ -10,11 +10,11 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0 at 004266ff
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00426030 at 0042618f
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0 at 0042d133
-;   core_colonel.cpp_FUN_00444b50 at 00445052
-;   core_game.cpp_FUN_004d9260 at 004da161
+;   core_colonel.cpp_CColonel_processAI_FUN_00444b50 at 00445052
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004da161
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004de100 at 004de2a0
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0 at 004e9e11
-;   core_icepick.cpp_FUN_004f1b50 at 004f21bc
+;   core_icepick.cpp_CIcePick_processAI_FUN_004f1b50 at 004f21bc
 ;   core_scat.cpp_CScat_updateAI_FUN_005415c0 at 005417fb
 ;   core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0 at 00593f2c
 ;   ... and 1 more

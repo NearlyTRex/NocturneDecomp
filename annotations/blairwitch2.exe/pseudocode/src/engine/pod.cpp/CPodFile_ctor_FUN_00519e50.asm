@@ -7,9 +7,9 @@
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0051b6e0 at 0051b709
+;   engine_pod.cpp_CPod_mount_FUN_0051b110 at 0051b12e
 ;   engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0 at 0051b8da
-;   engine_pod.cpp_FUN_0051b110 at 0051b12e
-;   engine_pod.cpp_FUN_0051b6e0 at 0051b709
 ;
 ; *****************************************************************************
 

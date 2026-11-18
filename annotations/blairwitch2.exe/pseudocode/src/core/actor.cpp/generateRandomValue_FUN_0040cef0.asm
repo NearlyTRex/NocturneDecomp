@@ -10,18 +10,18 @@
 ;   core_actor.cpp_randomChance_FUN_0040d060 at 0040d071
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007bc368
+;   uint g_RandomSeedValue
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x007bc368]      ; 0040cef0 | DAT_007bc368
+    MOV EDX,dword ptr [0x007bc368]      ; 0040cef0 | g_RandomSeedValue
         ;   Label: core_actor.cpp_generateRandomValue_FUN_0040cef0
     IMUL EDX,EDX,0x2ff0bd               ; 0040cef6
     INC EDX                             ; 0040cefc
     AND EDX,0xffffff                    ; 0040cefd
-    MOV dword ptr [0x007bc368],EDX      ; 0040cf03 | DAT_007bc368
+    MOV dword ptr [0x007bc368],EDX      ; 0040cf03 | g_RandomSeedValue
     MOV EAX,EDX                         ; 0040cf09
     RET                                 ; 0040cf0b
 

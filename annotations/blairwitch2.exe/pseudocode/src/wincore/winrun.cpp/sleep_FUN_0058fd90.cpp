@@ -6,21 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_sleep_FUN_0058fd90(double seconds)
 
 {
-  float10 fVar1;
-  double dVar2;
+  double dVar1;
   
   if (seconds <= 0.0) {
     Sleep(0);
     return;
   }
-  dVar2 = ceil(seconds * _DAT_005eeaa2);
-  fVar1 = (float10)dVar2;
-  round();
-  Sleep((DWORD)(longlong)ROUND(fVar1));
+  dVar1 = ceil(seconds * 1000);
+  dVar1 = round(dVar1);
+  Sleep((DWORD)(longlong)ROUND(dVar1));
   return;
 }

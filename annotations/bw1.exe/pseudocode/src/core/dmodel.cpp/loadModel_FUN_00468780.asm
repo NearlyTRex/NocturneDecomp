@@ -18,14 +18,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d97a7
 ;   TerminatedCString s_Can_t_load_s_because_key_005d97ba
-;   undefined4 DAT_01b2efdc
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_KeyframeModelCount
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00467bc0
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
@@ -39,7 +39,7 @@ section .text
     PUSH EBP                            ; 00468783
     MOV EBP,ESP                         ; 00468784
     MOV EDI,dword ptr [EBP + 0x14]      ; 00468786
-    MOV EDX,dword ptr [0x01b2efdc]      ; 00468789 | DAT_01b2efdc
+    MOV EDX,dword ptr [0x01b2efdc]      ; 00468789 | g_KeyframeModelCount
     XOR ESI,ESI                         ; 0046878f
     TEST EDX,EDX                        ; 00468791
     JLE 0x004687b9                      ; 00468793
@@ -54,13 +54,13 @@ section .text
     TEST EAX,EAX                        ; 004687a4
     JZ 0x0046881b                       ; 004687a6
         ;   XREF to: 0046881b (CONDITIONAL_JUMP)  ; LAB_0046881b
-    MOV ECX,dword ptr [0x01b2efdc]      ; 004687a8 | DAT_01b2efdc
+    MOV ECX,dword ptr [0x01b2efdc]      ; 004687a8 | g_KeyframeModelCount
     INC ESI                             ; 004687ae
     ADD EBX,0x398                       ; 004687af
     CMP ESI,ECX                         ; 004687b5
     JL 0x0046879a                       ; 004687b7
         ;   XREF to: 0046879a (CONDITIONAL_JUMP)  ; LAB_0046879a
-    CMP dword ptr [0x01b2efdc],0x100    ; 004687b9 | DAT_01b2efdc
+    CMP dword ptr [0x01b2efdc],0x100    ; 004687b9 | g_KeyframeModelCount
         ;   Label: LAB_004687b9
     JL 0x004687ed                       ; 004687c3
         ;   XREF to: 004687ed (CONDITIONAL_JUMP)  ; LAB_004687ed
@@ -69,19 +69,19 @@ section .text
     MOV ESI,0x5d97a7                    ; 004687cb | = "..\\core\\dmodel.cpp"
     MOV EAX,0x4cd                       ; 004687d0
     PUSH 0x5d97ba                       ; 004687d5 | = "Can't load %s because keyFrame model ..."
-    MOV dword ptr [0x01d1d400],ESI      ; 004687da | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 004687e0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004687e5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 004687da | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 004687e0 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004687e5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 004687ea
-    MOV EDX,dword ptr [0x01b2efdc]      ; 004687ed | DAT_01b2efdc
+    MOV EDX,dword ptr [0x01b2efdc]      ; 004687ed | g_KeyframeModelCount
         ;   Label: LAB_004687ed
     IMUL EBX,EDX,0x398                  ; 004687f3
     PUSH EDI                            ; 004687f9
     ADD EBX,0x1b2efe0                   ; 004687fa
     LEA ECX,[EDX + 0x1]                 ; 00468800
     PUSH EBX                            ; 00468803
-    MOV dword ptr [0x01b2efdc],ECX      ; 00468804 | DAT_01b2efdc
+    MOV dword ptr [0x01b2efdc],ECX      ; 00468804 | g_KeyframeModelCount
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0 ; 0046880a
         ;   XREF to: 004668a0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0046880f

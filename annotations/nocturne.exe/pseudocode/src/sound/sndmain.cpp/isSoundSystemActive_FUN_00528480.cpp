@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl sound_sndmain_cpp_isSoundSystemActive_FUN_00528480(void)
 
 {
-  return (uint)(_DAT_02dc8318 != 0);
+  return (uint)(g_CSoundDevicePtr != (CSoundDevice *)0x0);
 }

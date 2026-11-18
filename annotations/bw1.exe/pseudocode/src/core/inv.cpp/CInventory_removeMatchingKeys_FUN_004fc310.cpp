@@ -27,7 +27,7 @@ void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_004fc310(CInventory 
           return;
         }
       }
-      core_inv_cpp_FUN_004f8d00(this_ptr,pCVar2->items[0],1);
+      core_inv_cpp_CInventory_removeItem_FUN_004f8d00(this_ptr,pCVar2->items[0],1);
     } while (iVar3 < this_ptr->item_count);
   }
   return;

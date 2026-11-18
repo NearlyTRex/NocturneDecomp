@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_ptr,int screen_height)
 
 {
@@ -22,12 +20,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_
   this_ptr->scale_factor = 1;
   this_ptr->screen_width = (screen_height * 4) / 3;
   this_ptr->display_width = this_ptr->screen_width;
-  _DAT_012b0660 = 0;
+  g_CameraDownscaleIterations.dword = 0;
   iVar1 = this_ptr->display_width;
   this_ptr->display_height = (int)this_ptr->max_distance;
   while (0x140 < iVar1) {
     this_ptr->display_width = this_ptr->display_width / 2;
-    _DAT_012b0660 = _DAT_012b0660 + 1;
+    g_CameraDownscaleIterations.dword = g_CameraDownscaleIterations.dword + 1;
     this_ptr->display_height = this_ptr->display_height / 2;
     iVar1 = this_ptr->display_width;
     this_ptr->scale_factor = this_ptr->scale_factor * 2;

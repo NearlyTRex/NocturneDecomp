@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
+#include "types/structs/SInventoryItemInfo.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CB0000
@@ -15,4 +16,10 @@ extern CAlphaBitmap g_InvBackgroundBitmap;
 extern CAlphaBitmap g_InvBackground2Bitmap;
 extern CAlphaBitmap g_WeapBackgroundBitmap;
 extern CAlphaBitmap g_WeapBackground2Bitmap;
+
+// SInventoryItemInfo[100]
+extern SInventoryItemInfo g_ItemDefinitionArray[100];
+
+// int
+extern int g_ItemDefinitionCount;
 

@@ -12,14 +12,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592dc6
 ;   TerminatedCString s_SfxSlot_autoCalcDelayRem_00592ddb
-;   undefined4 DAT_005a2150
-;   undefined4 DAT_005bea80
+;   double g_DOUBLE_005a2150 = 1116.40000000000
+;   double g_Cached3DDistanceFactor = 1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc78e0
-;   undefined4 DAT_02dc78e8
-;   undefined4 DAT_02dc78f0
-;   undefined4 DAT_02dc84bc
+;   double g_DOUBLE_02dc78e0
+;   double g_DOUBLE_02dc78e8
+;   double g_DOUBLE_02dc78f0
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -32,7 +32,7 @@ section .text
         ;   Label: sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0
     SUB ESP,0x18                        ; 005247a1
     MOV EBX,dword ptr [ESP + 0x20]      ; 005247a4
-    CMP dword ptr [0x02dc84bc],0x0      ; 005247a8 | DAT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 005247a8 | g_SoundLockCount
     JLE 0x005247ca                      ; 005247af
         ;   XREF to: 005247ca (CONDITIONAL_JUMP)  ; LAB_005247ca
     TEST byte ptr [EBX + 0x5c],0x1      ; 005247b1
@@ -59,20 +59,20 @@ section .text
         ;   XREF to: 005247b1 (UNCONDITIONAL_JUMP)  ; LAB_005247b1
     FLD double ptr [EBX + 0x4]          ; 005247f1
         ;   Label: LAB_005247f1
-    FSUB double ptr [0x02dc78e0]        ; 005247f4 | DAT_02dc78e0
+    FSUB double ptr [0x02dc78e0]        ; 005247f4 | g_DOUBLE_02dc78e0
     FMUL ST0                            ; 005247fa
     FLD double ptr [EBX + 0xc]          ; 005247fc
-    FSUB double ptr [0x02dc78e8]        ; 005247ff | DAT_02dc78e8
+    FSUB double ptr [0x02dc78e8]        ; 005247ff | g_DOUBLE_02dc78e8
     FMUL ST0                            ; 00524805
     FLD double ptr [EBX + 0x14]         ; 00524807
     FXCH                                ; 0052480a
     FADDP ST2,ST0                       ; 0052480c
-    FSUB double ptr [0x02dc78f0]        ; 0052480e | DAT_02dc78f0
+    FSUB double ptr [0x02dc78f0]        ; 0052480e | g_DOUBLE_02dc78f0
     FMUL ST0                            ; 00524814
     FADDP                               ; 00524816
     FSQRT                               ; 00524818
-    FMUL double ptr [0x005bea80]        ; 0052481a | DAT_005bea80
-    FDIV double ptr [0x005a2150]        ; 00524820 | DAT_005a2150
+    FMUL double ptr [0x005bea80]        ; 0052481a | g_Cached3DDistanceFactor
+    FDIV double ptr [0x005a2150]        ; 00524820 | g_DOUBLE_005a2150
     FSTP double ptr [EBX + 0x4c]        ; 00524826
     ADD ESP,0x18                        ; 00524829
     POP EBX                             ; 0052482c

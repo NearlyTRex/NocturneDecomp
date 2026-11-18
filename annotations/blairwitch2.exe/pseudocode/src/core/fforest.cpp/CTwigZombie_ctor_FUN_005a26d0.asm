@@ -10,15 +10,15 @@
 ;   core_fforest.cpp_factoryFuncTwigZombie_FUN_005a26a0 at 005a26b3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ff16c
-;   undefined4 DAT_005ff170
+;   float g_FLOAT_005ff16c = 15
+;   float g_FLOAT_005ff170 = 3
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
 ;   core_fforest.cpp_CTwigZombie_processStates_FUN_005a28a0
-;   core_muzzle.cpp_FUN_0059d7f0
-;   core_muzzle.cpp_FUN_0059d990
-;   core_muzzle.cpp_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990
+;   core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -46,9 +46,9 @@ section .text
     MOV dword ptr [EBX + 0x11384],0x0   ; 005a2711
     LEA EDI,[EBX + 0x113d4]             ; 005a271b
     MOV dword ptr [EBX + 0x11388],0x1   ; 005a2721
-    FLD float ptr [0x005ff16c]          ; 005a272b | DAT_005ff16c
+    FLD float ptr [0x005ff16c]          ; 005a272b | g_FLOAT_005ff16c
     MOV dword ptr [EBX + 0x1138c],0x6   ; 005a2731
-    FLD float ptr [0x005ff170]          ; 005a273b | DAT_005ff170
+    FLD float ptr [0x005ff170]          ; 005a273b | g_FLOAT_005ff170
     MOV dword ptr [EBX + 0x11398],0x4479c000 ; 005a2741
     MOV ESI,0x5eff8a                    ; 005a274b
     MOV dword ptr [EBX + 0x11418],0x1   ; 005a2750
@@ -82,17 +82,17 @@ section .text
     PUSH 0x5eff9b                       ; 005a2797
     LEA ESI,[EBX + 0x10af8]             ; 005a279c
     PUSH ESI                            ; 005a27a2
-    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a27a3
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a27a3
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005a27a8
     PUSH 0x5effa9                       ; 005a27ab
     PUSH ESI                            ; 005a27b0
-    CALL core_muzzle.cpp_FUN_0059d990   ; 005a27b1
-        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d990()
+    CALL core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990 ; 005a27b1
+        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a27b6
     PUSH ESI                            ; 005a27b9
-    CALL core_muzzle.cpp_FUN_0059dc80   ; 005a27ba
-        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dc80()
+    CALL core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80 ; 005a27ba
+        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80(SStateMachine * this_ptr)
     ADD ESP,0x4                         ; 005a27bf
     LEA EDI,[EBX + 0x11444]             ; 005a27c2
     MOV ESI,0x5effaf                    ; 005a27c8

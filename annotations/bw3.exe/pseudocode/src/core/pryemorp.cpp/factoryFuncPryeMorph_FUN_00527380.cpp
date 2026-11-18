@@ -11,7 +11,7 @@ CPryeMorph * __cdecl core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void)
 {
   CPryeMorph *pCVar1;
   
-  pCVar1 = (CPryeMorph *)operator_new(0x21448);
+  pCVar1 = operator_new(0x21448);
   if (pCVar1 == (CPryeMorph *)0x0) {
     return (CPryeMorph *)0x0;
   }

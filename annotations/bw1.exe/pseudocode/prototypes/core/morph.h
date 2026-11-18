@@ -99,11 +99,11 @@ void __cdecl CMorph::setupModelFromKeyframed(CMorph *this_ptr,int model_index,CK
 
 // Original: core_morph.cpp_CMorph_addTriPartToModel_FUN_00523140
 // Address: 00523140
-void __cdecl CMorph::addTriPartToModel(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8);
+void __cdecl CMorph::addTriPartToModel(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,SMRGLTextureModel *texture_list,int *texture_index_list);
 
 // Original: core_morph.cpp_CMorph_addQuadPartToModel_FUN_00523190
 // Address: 00523190
-void __cdecl CMorph::addQuadPartToModel(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8);
+void __cdecl CMorph::addQuadPartToModel(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,SMRGLTextureModel *texture_list,int *texture_index_list);
 
 // Original: core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_00523210
 // Address: 00523210
@@ -125,18 +125,18 @@ void __cdecl CMorph::getReady(CMorph *this_ptr);
 // Address: 005237e0
 void __cdecl CMorph::render(CMorph *this_ptr,float morph_t);
 
-// Original: core_morph.cpp_FUN_00523880
+// Original: core_morph.cpp_CMorphModel_arrdtor2_FUN_00523880
 // Address: 00523880
-CMorphModel * __cdecl FUN_00523880(CMorphModel *this_ptr,uint flags);
+CMorphModel * __cdecl CMorphModel::arrdtor2(CMorphModel *this_ptr,uint flags);
 
-// Original: core_morph.cpp_FUN_005238c0
+// Original: core_morph.cpp_CMotionList_ctor_FUN_005238c0
 // Address: 005238c0
-undefined4 * FUN_005238c0(undefined4 *param_1);
+CMotionList * __cdecl CMotionList::ctor(CMotionList *this_ptr);
 
-// Original: core_morph.cpp_FUN_005238f0
+// Original: core_morph.cpp_CMotionList_dtor_FUN_005238f0
 // Address: 005238f0
-undefined4 FUN_005238f0(undefined4 param_1);
+CMotionList * __cdecl CMotionList::dtor(CMotionList *this_ptr);
 
-// Original: core_morph.cpp_FUN_00523910
+// Original: core_morph.cpp_CMotionList_free_FUN_00523910
 // Address: 00523910
-void FUN_00523910(undefined4 *param_1);
+void __cdecl CMotionList::free(CMotionList *this_ptr);

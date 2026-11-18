@@ -20,14 +20,14 @@
 ;   core_svetlana.cpp_CSvetlana_dtor_FUN_00571a30 at 00571a66
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f8274
+;   void*[92] g_ARRAY_PTR_005f8274
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_armour.cpp_FUN_0040f2b0
+;   core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0
 ;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
 ;   core_inv.cpp_CInventory_dtor_FUN_004da840
-;   core_muzzle.cpp_FUN_0059df70
+;   core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70
 ;   core_path.cpp_CPathMap_dtor_FUN_00511d10
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;
@@ -38,7 +38,7 @@ section .text
     PUSH EBX                            ; 004ce3d0
         ;   Label: core_hero.cpp_CHero_dtor_FUN_004ce3d0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004ce3d1
-    MOV dword ptr [EDX + 0x2b0],0x5f8274 ; 004ce3d5 | DAT_005f8274
+    MOV dword ptr [EDX + 0x2b0],0x5f8274 ; 004ce3d5 | g_ARRAY_PTR_005f8274
     XOR EAX,EAX                         ; 004ce3df
     CMP EDX,dword ptr [EAX + 0x1cedee4] ; 004ce3e1
         ;   Label: LAB_004ce3e1
@@ -76,14 +76,14 @@ section .text
     PUSH 0x0                            ; 004ce436
     SUB EAX,0xd07c                      ; 004ce438
     PUSH EAX                            ; 004ce43d
-    CALL core_armour.cpp_FUN_0040f2b0   ; 004ce43e
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0 ; 004ce43e
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ce443
     PUSH 0x0                            ; 004ce446
     SUB EAX,0x9c8                       ; 004ce448
     PUSH EAX                            ; 004ce44d
-    CALL core_muzzle.cpp_FUN_0059df70   ; 004ce44e
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70 ; 004ce44e
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; SFollowFormation * core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70(SFollowFormation * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ce453
     PUSH 0x0                            ; 004ce456
     SUB EAX,0x34c                       ; 004ce458

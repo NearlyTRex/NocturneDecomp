@@ -1,0 +1,139 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 20,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004b98f0",
+    "address_range": [
+      [
+        "004b98f0",
+        "004b9953"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_dampControlAxis_FUN_004b98f0",
+    "signature": "void __cdecl core_game_cpp_dampControlAxis_FUN_004b98f0(float *axis_value,float damp_time,float damp_rate)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.82051282051282,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_OR": 5,
+      "CBRANCH": 3,
+      "COPY": 131,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 10,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 12,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 1,
+      "INT_ZEXT": 12,
+      "LOAD": 14,
+      "POPCOUNT": 4,
+      "RETURN": 3,
+      "STORE": 5
+    },
+    "pcode_op_count": 305
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b7650",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004d0e70",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dc370",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049edc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "axis_value",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "damp_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "damp_rate",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

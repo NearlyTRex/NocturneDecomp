@@ -9,15 +9,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005f068b
-;   undefined4 DAT_005ffc9c
+;   float g_FLOAT_005ffc9c = 7
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
-;   core_motion.cpp_FUN_00503e60
-;   core_muzzle.cpp_FUN_0059d8e0
-;   core_muzzle.cpp_FUN_0059dcb0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -45,7 +45,7 @@ section .text
     FADDP                               ; 005a6174
     FSQRT                               ; 005a6176
     ADD EDX,0x20                        ; 005a6178
-    FCOMP float ptr [0x005ffc9c]        ; 005a617b | DAT_005ffc9c
+    FCOMP float ptr [0x005ffc9c]        ; 005a617b | g_FLOAT_005ffc9c
     FNSTSW AX                           ; 005a6181
     SAHF                                ; 005a6183
     JA 0x005a61b9                       ; 005a6184
@@ -63,8 +63,8 @@ section .text
         ;   XREF to: 00503620 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_00503620(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 005a61a0
     PUSH EBX                            ; 005a61a3
-    CALL core_motion.cpp_FUN_005035c0   ; 005a61a4
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a61a4
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a61a9
     ADD ESP,0x4                         ; 005a61ac
     CMP EAX,0x5                         ; 005a61af
@@ -78,21 +78,21 @@ section .text
         ;   Label: LAB_005a61b9
     PUSH 0x3f800000                     ; 005a61bf
     PUSH EBX                            ; 005a61c4
-    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a61c5
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005a61c5
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(SStateMachine * this_ptr, float delay)
     ADD ESP,0x8                         ; 005a61ca
     PUSH 0x5f068b                       ; 005a61cd | = "Chasing"
     PUSH EBX                            ; 005a61d2
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a61d3
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005a61d3
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a61d8
     ADD ESP,0x8                         ; 005a61db
     POP EBX                             ; 005a61de
     RET                                 ; 005a61df
     PUSH EBX                            ; 005a61e0
         ;   Label: LAB_005a61e0
-    CALL core_motion.cpp_FUN_00503e60   ; 005a61e1
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005a61e1
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005a61e6
     ADD ESP,0x8                         ; 005a61e9
     POP EBX                             ; 005a61ec

@@ -7,7 +7,7 @@
 ; CDog *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0e7e
+;   TerminatedCString s_Food_005f0e7e
 ;   TerminatedCString s_EatTime_005f0e83
 ;   int g_CDogClassVersion = 0x2
 ;
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 005ac6eb (CONDITIONAL_JUMP)  ; LAB_005ac6eb
     POP EBX                             ; 005ac6e9
     RET                                 ; 005ac6ea
-    PUSH 0x5f0e7e                       ; 005ac6eb | DAT_005f0e7e
+    PUSH 0x5f0e7e                       ; 005ac6eb | = "Food"
         ;   Label: LAB_005ac6eb
     LEA EAX,[EBX + 0x1185c]             ; 005ac6f0
     PUSH EAX                            ; 005ac6f6

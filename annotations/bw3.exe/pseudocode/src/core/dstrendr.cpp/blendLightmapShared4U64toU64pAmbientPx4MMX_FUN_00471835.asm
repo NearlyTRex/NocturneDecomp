@@ -11,10 +11,10 @@
 ; int              Stack[0x14]:4   pixel_count
 ;
 ; Referenced Globals:
-;   undefined8 DAT_005f8b78
-;   undefined8 DAT_005f8b80
-;   undefined4 DAT_005fa8d8
-;   undefined4 DAT_01c6e2bc
+;   qword g_AmbientLightMMX1 = 0x4000400040004
+;   qword g_AmbientLightMMX2 = 0xc000c000c000c
+;   undefined4 g_LightmapData[1020]
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00471844
     MOV EBP,dword ptr [EBP + 0x14]      ; 00471847
     PXOR MM7,MM7                        ; 0047184a
-    MOVD MM5,dword ptr [0x01c6e2bc]     ; 0047184d | DAT_01c6e2bc
+    MOVD MM5,dword ptr [0x01c6e2bc]     ; 0047184d | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00471854
     PSLLW MM5,0x6                       ; 00471857
     MOVZX EDX,byte ptr [EBX]            ; 0047185b
@@ -52,14 +52,14 @@ section .text
     PMULLW MM1,MM2                      ; 0047188c
     MOVQ MM2,MM3                        ; 0047188f
     MOVQ MM4,MM5                        ; 00471892
-    PXOR MM2,qword ptr [0x005fa8d8]     ; 00471895 | DAT_005fa8d8
+    PXOR MM2,qword ptr [0x005fa8d8]     ; 00471895 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 0047189c
     PMULHW MM1,MM2                      ; 0047189f
     PMULHW MM4,MM3                      ; 004718a2
     PADDW MM0,MM4                       ; 004718a5
     PADDW MM1,MM4                       ; 004718a8
-    PADDW MM0,qword ptr [0x005f8b78]    ; 004718ab | DAT_005f8b78
-    PADDW MM1,qword ptr [0x005f8b80]    ; 004718b2 | DAT_005f8b80
+    PADDW MM0,qword ptr [0x005f8b78]    ; 004718ab | g_AmbientLightMMX1
+    PADDW MM1,qword ptr [0x005f8b80]    ; 004718b2 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 004718b9
     PSRLW MM1,0x4                       ; 004718bd
     PACKUSWB MM0,MM1                    ; 004718c1
@@ -82,14 +82,14 @@ section .text
     PMULLW MM1,MM2                      ; 004718fe
     MOVQ MM2,MM3                        ; 00471901
     MOVQ MM4,MM5                        ; 00471904
-    PXOR MM2,qword ptr [0x005fa8d8]     ; 00471907 | DAT_005fa8d8
+    PXOR MM2,qword ptr [0x005fa8d8]     ; 00471907 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 0047190e
     PMULHW MM1,MM2                      ; 00471911
     PMULHW MM4,MM3                      ; 00471914
     PADDW MM0,MM4                       ; 00471917
     PADDW MM1,MM4                       ; 0047191a
-    PADDW MM0,qword ptr [0x005f8b78]    ; 0047191d | DAT_005f8b78
-    PADDW MM1,qword ptr [0x005f8b80]    ; 00471924 | DAT_005f8b80
+    PADDW MM0,qword ptr [0x005f8b78]    ; 0047191d | g_AmbientLightMMX1
+    PADDW MM1,qword ptr [0x005f8b80]    ; 00471924 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 0047192b
     PSRLW MM1,0x4                       ; 0047192f
     PACKUSWB MM0,MM1                    ; 00471933

@@ -13,7 +13,8 @@ float __cdecl core_prye_cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0(CPrye *this
   CDemonActor *pCVar2;
   
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840
-                     ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);
+                     ((this_ptr->base).base.carry_hands[0].carry_actor,
+                      g_CDemonActorType_007e1a18.name_hash);
   if ((pCVar2 != (CDemonActor *)0x0) &&
      ((fVar1 = pCVar2[5].orient.vec.x, fVar1 == 2.8026e-45 || (fVar1 == 4.2039e-45)))) {
     return -1.0471976;

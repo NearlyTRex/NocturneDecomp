@@ -7,7 +7,7 @@
 ; CHino *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_Head_005d9beb+1
+;   TerminatedCString s_Bip01_Head_005d9bec
 ;   TerminatedCString s_Bip01_R_Hand_005d9bf7
 ;   TerminatedCString s_hino_stand_fly_wav_005d9c04
 ;   TerminatedCString s_hino_walk_fly_wav_005d9c17
@@ -21,7 +21,7 @@
 ;   TerminatedCString s_hino_big_attack_wav_005d9caa
 ;   TerminatedCString s_hino_appear_wav_005d9cbe
 ;   TerminatedCString s_hino_disappear_wav_005d9cce
-;   undefined4 DAT_02d24c4c
+;   int g_INT_02d24c4c
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 0054eac0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0059b7bd
     PUSH 0x1                            ; 0059b7c0
-    PUSH 0x5d9bec                       ; 0059b7c2 | s_Bip01_Head_005d9beb+1
+    PUSH 0x5d9bec                       ; 0059b7c2 | = "Bip01 Head"
     PUSH EAX                            ; 0059b7c7
     MOV EDI,EAX                         ; 0059b7c8
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 0059b7ca
@@ -73,7 +73,7 @@ section .text
     PUSH 0x1                            ; 0059b7d2
     PUSH 0x5d9bf7                       ; 0059b7d4 | = "Bip01 R Hand"
     PUSH EDI                            ; 0059b7d9
-    MOV [0x02d24c4c],EAX                ; 0059b7da | DAT_02d24c4c
+    MOV [0x02d24c4c],EAX                ; 0059b7da | g_INT_02d24c4c
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 0059b7df
         ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0059b7e4

@@ -1,0 +1,1009 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1750,
+    "complexity_score": 979,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 554,
+    "suspect_count": 41,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 2304
+  },
+  "cross_references": [
+    {
+      "addr": "004a8df0",
+      "from_addr": "004a9084",
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004a8df0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9870",
+    "address_range": [
+      [
+        "004a9870",
+        "004aaefa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004a9870(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a7ab0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_clipCharacter_FUN_004a7ab0"
+    },
+    {
+      "addr": "004a9710",
+      "is_variadic": false,
+      "name": "engine_font.cpp_drawAlphaBlendedPixels_FUN_004a9710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141c0",
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "006141d8",
+      "name": "g_CurrentAlphaValue",
+      "type": "int",
+      "value": "0xff"
+    },
+    {
+      "addr": "0061c8d0",
+      "name": "g_RedMask16",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "0061c8d8",
+      "name": "g_GreenMask16",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "0061c8e0",
+      "name": "g_BlueMask16",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "01c2a38c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01c35814",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c35818",
+      "name": "g_RedScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c3581c",
+      "name": "g_RedDitherShift",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c35820",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c35824",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35828",
+      "name": "g_GreenDitherShift",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c3582c",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c35830",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35834",
+      "name": "g_BlueDitherShift",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c35e48",
+      "name": "g_INT_01c35e48",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35e4c",
+      "name": "g_INT_01c35e4c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35e50",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35e54",
+      "name": "g_INT_01c35e54",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb0240",
+      "name": "DAT_01cb0240",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb0242",
+      "name": "g_USHORT_01cb0242",
+      "type": "ushort",
+      "value": null
+    },
+    {
+      "addr": "01cb0244",
+      "name": "g_ShadowColor32",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb0254",
+      "name": "g_INT_01cb0254",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a9084",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawText_FUN_004a8df0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.013852242744063,
+    "instruction_count": 1516,
+    "opcode_distribution": {
+      "BOOL_AND": 51,
+      "BOOL_NEGATE": 590,
+      "BOOL_OR": 25,
+      "BOOL_XOR": 4,
+      "BRANCH": 15,
+      "CALL": 6,
+      "CBRANCH": 119,
+      "COPY": 1277,
+      "INT_ADD": 774,
+      "INT_AND": 2341,
+      "INT_CARRY": 123,
+      "INT_DIV": 12,
+      "INT_EQUAL": 1229,
+      "INT_LEFT": 134,
+      "INT_LESS": 139,
+      "INT_MULT": 59,
+      "INT_NOTEQUAL": 308,
+      "INT_OR": 537,
+      "INT_REM": 12,
+      "INT_RIGHT": 72,
+      "INT_SBORROW": 140,
+      "INT_SCARRY": 190,
+      "INT_SEXT": 84,
+      "INT_SLESS": 694,
+      "INT_SRIGHT": 16,
+      "INT_SUB": 287,
+      "INT_XOR": 80,
+      "INT_ZEXT": 40,
+      "LOAD": 466,
+      "POPCOUNT": 536,
+      "RETURN": 8,
+      "STORE": 185,
+      "SUBPIECE": 80
+    },
+    "pcode_op_count": 10633
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c2810",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b1460",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5393
+    },
+    "nocedit.exe": {
+      "addr": "004ce7a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9725
+    },
+    "nocturne.exe": {
+      "addr": "004916c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9725
+    }
+  },
+  "stack_frame": {
+    "frame_size": 244,
+    "local_size": 220,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "character_code",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 106,
+      "match": "DAT_01cb0240",
+      "severity": "mild",
+      "text": "*puVar8 = DAT_01cb0240;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 234,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 253,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 302,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 321,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 368,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 385,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 435,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 452,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4),local_d4,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 466,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 483,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13)),local_d4,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 496,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 513,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4),local_d4,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 527,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 544,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13)),local_d4,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 84,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 103,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 122,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 141,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 164,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 183,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 234,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 253,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 302,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 321,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 368,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 385,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 435,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 452,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4),local_d4,",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 466,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 483,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13)),local_d4,",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 496,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 513,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4),local_d4,",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 527,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 544,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13)),local_d4,",
+      "type": "pointer_truncation"
+    }
+  ]
+}

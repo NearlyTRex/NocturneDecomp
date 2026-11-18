@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_quaternionFromAxisAngle_FUN_00594060(float param_1,float *param_2)
+; CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_00594060(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
+; CVector3f *      Stack[0x8]:4   axis_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -13,7 +16,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40 at 00547052
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eedb6
+;   float g_FLOAT_005eedb6 = 0.5
 ;
 ; *****************************************************************************
 
@@ -25,7 +28,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00594064
     MOV EDX,ESI                         ; 00594068
     FLD float ptr [ESP + 0x24]          ; 0059406a
-    FMUL float ptr [0x005eedb6]         ; 0059406e | DAT_005eedb6
+    FMUL float ptr [0x005eedb6]         ; 0059406e | g_FLOAT_005eedb6
     FLD ST0                             ; 00594074
     FSIN                                ; 00594076
     FXCH                                ; 00594078

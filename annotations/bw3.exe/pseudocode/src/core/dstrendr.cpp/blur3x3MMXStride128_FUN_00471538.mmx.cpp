@@ -15,18 +15,18 @@ __asm {
         movq MM0,qword ptr [ESI + -0x80]
         movq MM2,qword ptr [ESI]
         movq MM3,qword ptr [ESI + 0x80]
-        punpcklbw MM0,dword ptr [DAT_005f8b28]
-        punpcklbw MM2,dword ptr [DAT_005f8b28]
-        punpcklbw MM3,dword ptr [DAT_005f8b28]
+        punpcklbw MM0,dword ptr [g_FilterBlendConstant]
+        punpcklbw MM2,dword ptr [g_FilterBlendConstant]
+        punpcklbw MM3,dword ptr [g_FilterBlendConstant]
         paddusw MM0,MM2
         paddusw MM2,MM3
         paddusw MM0,MM2
         movq MM1,qword ptr [ESI + 0xffffff78]
         movq MM2,qword ptr [ESI + -0x8]
         movq MM3,qword ptr [ESI + 0x78]
-        punpckhbw MM1,qword ptr [DAT_005f8b28]
-        punpckhbw MM2,qword ptr [DAT_005f8b28]
-        punpckhbw MM3,qword ptr [DAT_005f8b28]
+        punpckhbw MM1,qword ptr [g_FilterBlendConstant]
+        punpckhbw MM2,qword ptr [g_FilterBlendConstant]
+        punpckhbw MM3,qword ptr [g_FilterBlendConstant]
         paddusw MM1,MM2
         paddusw MM2,MM3
         paddusw MM1,MM2
@@ -42,9 +42,9 @@ __asm {
         movq MM1,qword ptr [ESI + -0x80]
         movq MM2,qword ptr [ESI]
         movq MM3,qword ptr [ESI + 0x80]
-        punpckhbw MM1,qword ptr [DAT_005f8b28]
-        punpckhbw MM2,qword ptr [DAT_005f8b28]
-        punpckhbw MM3,qword ptr [DAT_005f8b28]
+        punpckhbw MM1,qword ptr [g_FilterBlendConstant]
+        punpckhbw MM2,qword ptr [g_FilterBlendConstant]
+        punpckhbw MM3,qword ptr [g_FilterBlendConstant]
         paddusw MM1,MM2
         paddusw MM2,MM3
         paddusw MM1,MM2
@@ -63,9 +63,9 @@ __asm {
         movq MM0,qword ptr [ESI + -0x78]
         movq MM2,qword ptr [ESI + 0x8]
         movq MM3,qword ptr [ESI + 0x88]
-        punpcklbw MM0,dword ptr [DAT_005f8b28]
-        punpcklbw MM2,dword ptr [DAT_005f8b28]
-        punpcklbw MM3,dword ptr [DAT_005f8b28]
+        punpcklbw MM0,dword ptr [g_FilterBlendConstant]
+        punpcklbw MM2,dword ptr [g_FilterBlendConstant]
+        punpcklbw MM3,dword ptr [g_FilterBlendConstant]
         paddusw MM0,MM2
         paddusw MM2,MM3
         paddusw MM0,MM2

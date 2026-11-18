@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap *this_ptr,int param_2,int param_3)
+; void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap *this_ptr,int width,int height)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
 ;
 ; XREF[2]:
 ;   core_fldnotes.cpp_SNotesMap_load_FUN_004a38e0 at 004a3987
@@ -19,11 +19,11 @@
 ;   TerminatedCString s_CAlphaBitmap_allocate_Ou_005cafbb
 ;   TerminatedCString s_engine_alphabit_cpp_005cafe2
 ;   TerminatedCString s_CAlphaBitmap_allocate_Ou_005caff9
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
 ;
@@ -69,10 +69,10 @@ section .text
     MOV EDX,0x5cafa4                    ; 0040d4a8 | = "..\\engine\\alphabit.cpp"
     MOV ECX,0xb3                        ; 0040d4ad
     PUSH 0x5cafbb                       ; 0040d4b2 | = "CAlphaBitmap::allocate - Out of memory"
-    MOV dword ptr [0x01d046a0],EDX      ; 0040d4b7 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0040d4bd | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040d4c3
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 0040d4b7 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0040d4bd | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d4c3
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040d4c8
     PUSH 0x400                          ; 0040d4cb
         ;   Label: LAB_0040d4cb
@@ -92,10 +92,10 @@ section .text
         ;   Label: LAB_0040d4e4
     MOV EBP,0xb0                        ; 0040d4e9
     PUSH 0x5caf7d                       ; 0040d4ee | = "CAlphaBitmap::allocate - Out of memory"
-    MOV dword ptr [0x01d046a0],ECX      ; 0040d4f3 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0040d4f9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040d4ff
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0040d4f3 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0040d4f9 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d4ff
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040d504
     JMP 0x0040d493                      ; 0040d507
         ;   XREF to: 0040d493 (UNCONDITIONAL_JUMP)  ; LAB_0040d493
@@ -103,10 +103,10 @@ section .text
         ;   Label: LAB_0040d509
     MOV EBP,0xb6                        ; 0040d50e
     PUSH 0x5caff9                       ; 0040d513 | = "CAlphaBitmap::allocate - Out of memory"
-    MOV dword ptr [0x01d046a0],EDI      ; 0040d518 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0040d51e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040d524
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 0040d518 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0040d51e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d524
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040d529
     POP EBP                             ; 0040d52c
     POP EDI                             ; 0040d52d

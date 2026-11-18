@@ -11,7 +11,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360
@@ -22,7 +22,7 @@
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0045fab0
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_00537270
-;   core_xform.cpp_FUN_00583940
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;   crt_math.c_round_FUN_005a3120
@@ -151,8 +151,8 @@ section .text
     PUSH EBX                            ; 00420562
     LEA ESI,[ESP + 0xe0]                ; 00420563
     LEA EDI,[ESP + 0xc8]                ; 0042056a
-    CALL core_actor.cpp_FUN_00408b80    ; 00420571
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00420571
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xe0]                ; 00420576
     LEA EAX,[ESP + 0xc8]                ; 0042057d
     ADD ESP,0x8                         ; 00420584
@@ -175,16 +175,16 @@ section .text
     PUSH 0x2cfd900                      ; 004205b8
     LEA EAX,[ESP + 0x8]                 ; 004205bd
     PUSH EAX                            ; 004205c1
-    CALL core_xform.cpp_FUN_00583940    ; 004205c2
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 004205c2
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004205c7
     LEA EAX,[EBX + 0x30]                ; 004205ca
     PUSH EAX                            ; 004205cd
     PUSH 0x2cfd900                      ; 004205ce
     LEA EAX,[ESP + 0x38]                ; 004205d3
     PUSH EAX                            ; 004205d7
-    CALL core_xform.cpp_FUN_00583940    ; 004205d8
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 004205d8
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004205dd
     LEA EAX,[ESP + 0x30]                ; 004205e0
     PUSH EAX                            ; 004205e4
@@ -203,7 +203,7 @@ section .text
     LEA ESI,[ESP + 0xe8]                ; 00420610
     LEA EDI,[ESP + 0xd0]                ; 00420617
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 0042061e
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00583b10(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0xe8]                ; 00420623
     ADD ESP,0x4                         ; 0042062a
     MOVSD ES:EDI,ESI                    ; 0042062d
@@ -283,7 +283,7 @@ section .text
     FLD float ptr [ESP + 0x10c]         ; 0042075c
     ADD ESP,0x8                         ; 00420763
     CALL crt_math.c_round_FUN_005a3120  ; 00420766
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x104]       ; 0042076b
     MOV EAX,dword ptr [ESP + 0x104]     ; 00420772
     MOV EDX,EAX                         ; 00420779

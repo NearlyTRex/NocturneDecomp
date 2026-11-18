@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   engine_font.cpp_CBitFont_ctor_FUN_004a7b70 at 004a7b76
-;   engine_font.cpp_FUN_004a8850 at 004a8891
+;   engine_font.cpp_CBitFont_free_FUN_004a8850 at 004a8891
 ;
 ; *****************************************************************************
 

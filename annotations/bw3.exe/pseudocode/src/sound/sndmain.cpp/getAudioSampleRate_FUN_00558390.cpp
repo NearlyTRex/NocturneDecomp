@@ -9,6 +9,6 @@
 int __cdecl sound_sndmain_cpp_getAudioSampleRate_FUN_00558390(void)
 
 {
-  sound_sndmain_cpp_getAudioFormat_FUN_00558330((int *)0x0,(int *)0x0,&DAT_00604230);
-  return DAT_00604230;
+  sound_sndmain_cpp_getAudioFormat_FUN_00558330((int *)0x0,(int *)0x0,&g_AudioSampleRate);
+  return g_AudioSampleRate;
 }

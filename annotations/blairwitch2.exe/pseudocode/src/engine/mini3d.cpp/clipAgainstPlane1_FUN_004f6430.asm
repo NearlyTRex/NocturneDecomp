@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   void* PTR_caseD_1_004f6418 = 004f64de
 ;   void* PTR_caseD_3_004f6420 = 004f64bc
-;   undefined4 DAT_01d09b88
-;   undefined4 DAT_01d09b8c
+;   int g_INT_01d09b88
+;   int g_INT_01d09b8c
 ;   undefined4 DAT_01d09b98
 ;   undefined4 DAT_01d09b9c
 ;   undefined4 DAT_01d09ba0
@@ -36,9 +36,9 @@ section .text
     PUSH EDI                            ; 004f6432
     PUSH EBP                            ; 004f6433
     SUB ESP,0x8                         ; 004f6434
-    MOV EBX,dword ptr [0x01d09b8c]      ; 004f6437 | DAT_01d09b8c
+    MOV EBX,dword ptr [0x01d09b8c]      ; 004f6437 | g_INT_01d09b8c
     XOR EDX,EDX                         ; 004f643d
-    MOV ECX,dword ptr [0x01d09b88]      ; 004f643f | DAT_01d09b88
+    MOV ECX,dword ptr [0x01d09b88]      ; 004f643f | g_INT_01d09b88
     MOV dword ptr [ESP],EDX             ; 004f6445
     TEST ECX,ECX                        ; 004f6448
     JLE 0x004f64d0                      ; 004f644a
@@ -46,7 +46,7 @@ section .text
     MOV EBP,0x1d09b98                   ; 004f6450
     MOV ECX,dword ptr [ESP]             ; 004f6455
         ;   Label: LAB_004f6455
-    MOV EAX,[0x01d09b88]                ; 004f6458 | DAT_01d09b88
+    MOV EAX,[0x01d09b88]                ; 004f6458 | g_INT_01d09b88
     INC ECX                             ; 004f645d
     CMP ECX,EAX                         ; 004f645e
     JNZ 0x004f6464                      ; 004f6460
@@ -93,14 +93,14 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 004f64ba | DAT_01d09b98 | DAT_01d09b9c
     MOV ESI,dword ptr [ESP]             ; 004f64bc
         ;   Label: caseD_3
-    MOV EDI,dword ptr [0x01d09b88]      ; 004f64bf | DAT_01d09b88
+    MOV EDI,dword ptr [0x01d09b88]      ; 004f64bf | g_INT_01d09b88
     INC ESI                             ; 004f64c5
     ADD EBP,0x40                        ; 004f64c6
     MOV dword ptr [ESP],ESI             ; 004f64c9
     CMP ESI,EDI                         ; 004f64cc
     JL 0x004f6455                       ; 004f64ce
         ;   XREF to: 004f6455 (CONDITIONAL_JUMP)  ; LAB_004f6455
-    MOV dword ptr [0x01d09b8c],EBX      ; 004f64d0 | DAT_01d09b8c
+    MOV dword ptr [0x01d09b8c],EBX      ; 004f64d0 | g_INT_01d09b8c
         ;   Label: LAB_004f64d0
     ADD ESP,0x8                         ; 004f64d6
     POP EBP                             ; 004f64d9
@@ -116,10 +116,10 @@ section .text
     PUSH EDX                            ; 004f64ea | DAT_01d09b98
     MOV ESI,dword ptr [ESP + 0xc]       ; 004f64eb
     PUSH ESI                            ; 004f64ef
-    MOV dword ptr [0x01d09b8c],EBX      ; 004f64f0 | DAT_01d09b8c
+    MOV dword ptr [0x01d09b8c],EBX      ; 004f64f0 | g_INT_01d09b8c
     CALL engine_mini3d.cpp_intersectClipPlane1_FUN_004f6090 ; 004f64f6
         ;   XREF to: 004f6090 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_intersectClipPlane1_FUN_004f6090(float * from, float * to, float * out)
-    MOV EBX,dword ptr [0x01d09b8c]      ; 004f64fb | DAT_01d09b8c
+    MOV EBX,dword ptr [0x01d09b8c]      ; 004f64fb | g_INT_01d09b8c
     ADD ESP,0xc                         ; 004f6501
     INC EBX                             ; 004f6504
     JMP 0x004f64bc                      ; 004f6505
@@ -139,10 +139,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 004f6528
     PUSH ECX                            ; 004f652c
     PUSH EDX                            ; 004f652d | DAT_01d09b98
-    MOV dword ptr [0x01d09b8c],EBX      ; 004f652e | DAT_01d09b8c
+    MOV dword ptr [0x01d09b8c],EBX      ; 004f652e | g_INT_01d09b8c
     CALL engine_mini3d.cpp_intersectClipPlane1_FUN_004f6090 ; 004f6534
         ;   XREF to: 004f6090 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_intersectClipPlane1_FUN_004f6090(float * from, float * to, float * out)
-    MOV EBX,dword ptr [0x01d09b8c]      ; 004f6539 | DAT_01d09b8c
+    MOV EBX,dword ptr [0x01d09b8c]      ; 004f6539 | g_INT_01d09b8c
     ADD ESP,0xc                         ; 004f653f
     INC EBX                             ; 004f6542
     JMP 0x004f64bc                      ; 004f6543

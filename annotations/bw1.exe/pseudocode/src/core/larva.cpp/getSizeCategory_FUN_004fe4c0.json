@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 61,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 43
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
   },
   "cross_references": [],
   "function": {
@@ -33,15 +30,15 @@
   "globals": [
     {
       "addr": "005e6c9b",
-      "name": "DAT_005e6c9b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e6c9b",
+      "type": "double",
+      "value": "0.300000000000000"
     },
     {
       "addr": "005e6ca3",
-      "name": "DAT_005e6ca3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e6ca3",
+      "type": "double",
+      "value": "0.700000000000000"
     }
   ],
   "param_estimates": {
@@ -136,38 +133,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_005e6c8e",
-      "severity": "mild",
-      "text": "return &DAT_005e6c8e;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005e6c92",
-      "severity": "mild",
-      "text": "return &DAT_005e6c92;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005e6c96",
-      "severity": "mild",
-      "text": "return &DAT_005e6c96;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

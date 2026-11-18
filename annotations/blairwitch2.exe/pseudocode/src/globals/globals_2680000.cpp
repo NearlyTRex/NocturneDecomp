@@ -4,6 +4,61 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2680000
 // =============================================================================
 
+// CVector3i
+CVector3i g_TempProjectedCoord = {};
+
+// FileListNode*
+FileListNode* g_AllocatedListHead = {};
+FileListNode* g_FreeListHeadPointer = {};
+
+// WCHAR*
+WCHAR* g_CommandLineW = {};
+
+// byte
+byte g_SignalHandlingActive = {};
+
+// char*
+char* g_CommandLineA = {};
+
+// char**
+char** g_EnvironStringArea = {};
+char** g_EnvironmentBlock = {};
+
+// char[16]
+char g_CHAR_ARRAY_026807a0[16] = {};
+
+// char[1]
+char g_CHAR_ARRAY_02680800[1] = {};
+
+// char[256]
+char g_LeadByteTable[256] = {};
+
+// char[260]
+char g_ExeFileNameBuffer_A[260] = {};
+char g_DllFileNameBuffer_A[260] = {};
+
+// int
+int g_MorphReverseWinding = {};
+int g_INT_02680150 = {};
+int g_EmergencyExitFlag = {};
+int g_EnvironInitialized = {};
+int g_MultibyteLocaleActive = {};
+int g_INT_02681070 = {};
+int g_INT_02681074 = {};
+int g_BufferedCharacter = {};
+int g_BufferedVirtualKey = {};
+int g_BufferedRepeatCount = {};
+
+// void*
+void* g_CurrentThreadTlsBlock = {};
+void* g_PTR_02681078 = {};
+void* g_PTR_026810a0 = {};
+void* g_PTR_026810b0 = {};
+
+// wchar_t[260]
+wchar_t g_ExeFileNameBuffer_W[260] = {};
+wchar_t g_DllFileNameBuffer_W[260] = {};
+
 // word
 word DAT_026820D6 = 0;
 word DAT_0268285E = 0;

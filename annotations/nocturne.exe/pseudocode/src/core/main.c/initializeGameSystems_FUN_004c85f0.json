@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 1236,
+    "complexity_score": 1221,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 88,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 506,
-    "suspect_count": 69,
+    "suspect_count": 68,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_ref",
-      "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -644,8 +643,8 @@
     },
     {
       "addr": "005c18c8",
-      "name": "DAT_005c18c8",
-      "type": "undefined4",
+      "name": "g_FILE_005c18c8",
+      "type": "_FILE",
       "value": null
     },
     {
@@ -656,31 +655,31 @@
     },
     {
       "addr": "014b8a58",
-      "name": "g_CDemonFilter_ARRAY_014b8a58",
+      "name": "g_PlayerFilterPool",
       "type": "CDemonFilter[8]",
       "value": null
     },
     {
       "addr": "014b8a5c",
-      "name": "g_CDemonFilter_ARRAY_014b8a58[0].count",
+      "name": "g_PlayerFilterPool[0].count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "014b8aa4",
-      "name": "g_CDemonFilter_ARRAY_014b8a58[1].size",
+      "name": "g_PlayerFilterPool[1].size",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "014b8aa8",
-      "name": "g_CDemonFilter_ARRAY_014b8a58[1].count",
+      "name": "g_PlayerFilterPool[1].count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "014b9900",
-      "name": "g_CBitFont_PTR_014b9900",
+      "name": "g_ThemeFont",
       "type": "CBitFont*",
       "value": null
     },
@@ -722,8 +721,8 @@
     },
     {
       "addr": "01cae37c",
-      "name": "DAT_01cae37c",
-      "type": "undefined4",
+      "name": "g_FirstTimeFlag",
+      "type": "int",
       "value": null
     },
     {
@@ -758,14 +757,14 @@
     },
     {
       "addr": "02de20a8",
-      "name": "DAT_02de20a8",
-      "type": "undefined4",
+      "name": "g_TotalPhysicalMemory",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02de20ac",
-      "name": "DAT_02de20ac",
-      "type": "undefined4",
+      "name": "g_AvailableSwapSpace",
+      "type": "int",
       "value": null
     }
   ],
@@ -955,14 +954,6 @@
       "severity": "moderate",
       "text": "pcVar5 = &stack0xfffff8d8;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_005c18c8",
-      "severity": "mild",
-      "text": "_freopen(\"stderr.txt\",\"wt\",(_FILE *)&DAT_005c18c8);",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

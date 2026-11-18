@@ -135,7 +135,7 @@ void __cdecl CRock::render(CRock *this_ptr);
 
 // Original: core_fire.cpp_CLeaf_init_FUN_00496750
 // Address: 00496750
-void __cdecl CLeaf::init(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void __cdecl CLeaf::init(CLeaf *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model,float drag);
 
 // Original: core_fire.cpp_loadLeafAssets_FUN_00496780
 // Address: 00496780
@@ -151,7 +151,7 @@ void __cdecl CLeaf::render(CLeaf *this_ptr);
 
 // Original: core_fire.cpp_CLeaf_onCollision_FUN_00496990
 // Address: 00496990
-undefined4 __cdecl CLeaf::onCollision(CLeaf *this_ptr);
+int __cdecl CLeaf::onCollision(CLeaf *this_ptr,CVector3f *collision_normal);
 
 // Original: core_fire.cpp_CMuzzleFlash_init_FUN_004969a0
 // Address: 004969a0
@@ -423,7 +423,7 @@ void __cdecl CFireEffect::createMuzzleFlash(CFireEffect *this_ptr,CVector3f *pos
 
 // Original: core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170
 // Address: 0049d170
-void __cdecl CFireEffect::createMuzzleEffect(CFireEffect *this_ptr,CVector3f *param_2,undefined4 param_3);
+void __cdecl CFireEffect::createMuzzleEffect(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 
 // Original: core_fire.cpp_CFireEffect_loadAssets_FUN_0049d1c0
 // Address: 0049d1c0
@@ -443,7 +443,7 @@ void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVer
 
 // Original: core_fire.cpp_CFireEffect_createBulletTrail_FUN_0049d4b0
 // Address: 0049d4b0
-void __cdecl CFireEffect::createBulletTrail(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
+void __cdecl CFireEffect::createBulletTrail(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 
 // Original: core_fire.cpp_CFireEffect_createFireball_FUN_0049d500
 // Address: 0049d500
@@ -455,11 +455,11 @@ void __cdecl CFireEffect::createRock(CFireEffect *this_ptr,CVector3f *position,C
 
 // Original: core_fire.cpp_CFireEffect_createLeaf_FUN_0049d600
 // Address: 0049d600
-void __cdecl CFireEffect::createLeaf(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
+void __cdecl CFireEffect::createLeaf(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag);
 
 // Original: core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0
 // Address: 0049d6a0
-void __cdecl CFireEffect::createFirefly(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9);
+void __cdecl CFireEffect::createFirefly(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size);
 
 // Original: core_fire.cpp_CFireEffect_createLaserSegment_FUN_0049d770
 // Address: 0049d770

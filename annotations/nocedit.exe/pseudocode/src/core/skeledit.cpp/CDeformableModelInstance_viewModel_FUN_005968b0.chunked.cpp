@@ -398,7 +398,7 @@ static int CDeformableModelInstance_viewModel_check_local_4c_3(CDeformableModelI
       local_3a4.vertices[1].vertex_index = 1;
       local_3a4.vertices[2].vertex_index = 2;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,&SMRGLTextureBasic_006819e4);
+                (g_CDemonRendererPtr2,&g_ViewModelTexture);
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0xff,0,0xff);
       engine_drender_cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40
                 (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_3a4);
@@ -1024,7 +1024,7 @@ LAB_0059722b:
       core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
                 (this_ptr,(SPose *)&stack0xffffcc64);
       core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
-                (this_ptr,&SPose_036644d8);
+                (this_ptr,&g_ViewModelSavedPose);
       engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x8000);
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
@@ -1319,7 +1319,7 @@ LAB_005975b4:
       }
       else {
         core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
-                  (this_ptr,&SPose_036644d8);
+                  (this_ptr,&g_ViewModelSavedPose);
         local_88 = 1;
       }
     }

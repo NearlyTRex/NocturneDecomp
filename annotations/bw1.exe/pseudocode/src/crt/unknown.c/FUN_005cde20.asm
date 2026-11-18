@@ -8,13 +8,13 @@
 ;   crt_unknown.c_FUN_005cc99c at 005cc99e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c9f6d0
-;   undefined4 DAT_02c9f6d4
+;   char** g_EnvironStringArea
+;   char** g_EnvironmentBlock
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_memory.c_realloc_FUN_005c10d0
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -24,19 +24,19 @@ section .text
         ;   Label: crt_unknown.c_FUN_005cde20
     PUSH ESI                            ; 005cde21
     PUSH EDI                            ; 005cde22
-    MOV EDX,dword ptr [0x02c9f6d4]      ; 005cde23 | DAT_02c9f6d4
+    MOV EDX,dword ptr [0x02c9f6d4]      ; 005cde23 | g_EnvironmentBlock
     TEST EDX,EDX                        ; 005cde29
     JZ 0x005cdeb5                       ; 005cde2b
         ;   XREF to: 005cdeb5 (CONDITIONAL_JUMP)  ; LAB_005cdeb5
     MOV EBX,EDX                         ; 005cde31
     JMP 0x005cde66                      ; 005cde33
         ;   XREF to: 005cde66 (UNCONDITIONAL_JUMP)  ; LAB_005cde66
-    MOV ESI,dword ptr [0x02c9f6d0]      ; 005cde35 | DAT_02c9f6d0
+    MOV ESI,dword ptr [0x02c9f6d0]      ; 005cde35 | g_EnvironStringArea
         ;   Label: LAB_005cde35
     TEST ESI,ESI                        ; 005cde3b
     JZ 0x005cde63                       ; 005cde3d
         ;   XREF to: 005cde63 (CONDITIONAL_JUMP)  ; LAB_005cde63
-    MOV EDI,dword ptr [0x02c9f6d4]      ; 005cde3f | DAT_02c9f6d4
+    MOV EDI,dword ptr [0x02c9f6d4]      ; 005cde3f | g_EnvironmentBlock
     MOV ECX,EBX                         ; 005cde45
     SUB ECX,EDI                         ; 005cde47
     MOV EDX,ESI                         ; 005cde49
@@ -45,8 +45,8 @@ section .text
     JZ 0x005cde5d                       ; 005cde52
         ;   XREF to: 005cde5d (CONDITIONAL_JUMP)  ; LAB_005cde5d
     PUSH EAX                            ; 005cde54
-    CALL crt_unknown.c_FUN_005c09f0     ; 005cde55
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 005cde55
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 005cde5a
     MOV dword ptr [EBX],0x0             ; 005cde5d
         ;   Label: LAB_005cde5d
@@ -57,7 +57,7 @@ section .text
     TEST EAX,EAX                        ; 005cde68
     JNZ 0x005cde35                      ; 005cde6a
         ;   XREF to: 005cde35 (CONDITIONAL_JUMP)  ; LAB_005cde35
-    CMP dword ptr [0x02c9f6d0],0x0      ; 005cde6c | DAT_02c9f6d0
+    CMP dword ptr [0x02c9f6d0],0x0      ; 005cde6c | g_EnvironStringArea
     JNZ 0x005cde81                      ; 005cde73
         ;   XREF to: 005cde81 (CONDITIONAL_JUMP)  ; LAB_005cde81
     PUSH 0x5                            ; 005cde75
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 005cde92 (UNCONDITIONAL_JUMP)  ; LAB_005cde92
     PUSH 0x5                            ; 005cde81
         ;   Label: LAB_005cde81
-    MOV ECX,dword ptr [0x02c9f6d4]      ; 005cde83 | DAT_02c9f6d4
+    MOV ECX,dword ptr [0x02c9f6d4]      ; 005cde83 | g_EnvironmentBlock
     PUSH ECX                            ; 005cde89
     CALL crt_memory.c_realloc_FUN_005c10d0 ; 005cde8a
         ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
@@ -82,11 +82,11 @@ section .text
     POP ESI                             ; 005cde9c
     POP EBX                             ; 005cde9d
     RET                                 ; 005cde9e
-    MOV [0x02c9f6d4],EAX                ; 005cde9f | DAT_02c9f6d4
+    MOV [0x02c9f6d4],EAX                ; 005cde9f | g_EnvironmentBlock
         ;   Label: LAB_005cde9f
     MOV dword ptr [EAX],0x0             ; 005cdea4
     ADD EAX,0x4                         ; 005cdeaa
-    MOV [0x02c9f6d0],EAX                ; 005cdead | DAT_02c9f6d0
+    MOV [0x02c9f6d0],EAX                ; 005cdead | g_EnvironStringArea
     MOV byte ptr [EAX],0x0              ; 005cdeb2
     XOR EAX,EAX                         ; 005cdeb5
         ;   Label: LAB_005cdeb5

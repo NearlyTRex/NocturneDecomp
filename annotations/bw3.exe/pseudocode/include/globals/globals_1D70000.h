@@ -6,8 +6,11 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CLevelLoader.h"
+#include "types/classes/CMatrix3x3i.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CMoon.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D70000
@@ -42,9 +45,271 @@ extern CDemonActorType g_CLightStaffClassInfo;
 extern CDemonActorType g_CLightConeClassInfo;
 extern CDemonActorType g_CMeleeClassInfo;
 
+// CLevelLoader
+extern CLevelLoader g_CLevelLoaderInstance;
+
+// CMatrix3x3i
+extern CMatrix3x3i g_TransformMatrixCopy;
+
 // CMini3D
 extern CMini3D g_CMini3DInstance;
 
 // CMoon
 extern CMoon g_CMoonInstance;
+
+// CVector3i
+extern CVector3i g_CachedViewPosition;
+extern CVector3i g_NormalizedViewVector;
+
+// char*
+extern char* g_CHAR_PTR_01d71de0;
+extern char* g_CHAR_PTR_01d74000;
+extern char* g_CHAR_PTR_01d74028;
+extern char* g_CHAR_PTR_01d74068;
+extern char* g_CHAR_PTR_01d74a28;
+extern char* g_CHAR_PTR_01d75450;
+extern char* g_CHAR_PTR_01d75878;
+
+// char*[4]
+extern char* g_MenuTextPointers[4];
+
+// char[10][256]
+extern char g_StringBuffers[10][256];
+
+// char[2304]
+extern char g_CHAR_ARRAY_01d74128[2304];
+
+// char[256]
+extern char g_CHAR_ARRAY_01d73800[256];
+extern char g_CHAR_ARRAY_01d73900[256];
+extern char g_CHAR_ARRAY_01d73a00[256];
+extern char g_CHAR_ARRAY_01d73c00[256];
+extern char g_CHAR_ARRAY_01d75478[256];
+extern char g_CHAR_ARRAY_01d75578[256];
+extern char g_CHAR_ARRAY_01d75678[256];
+extern char g_CHAR_ARRAY_01d75778[256];
+
+// char[30][40]
+extern char g_CustomKeyNames[30][40];
+
+// char[4352]
+extern char g_CHAR_ARRAY_01d70ce0[4352];
+
+// char[4][256]
+extern char g_MainMenuTextBuffers[4][256];
+
+// float
+extern float g_FLOAT_01d76c40;
+extern float g_FLOAT_01d76c4c;
+extern float g_FLOAT_01d76c50;
+extern float g_FLOAT_01d76c54;
+extern float g_FLOAT_01d76c58;
+extern float g_FLOAT_01d76c5c;
+extern float g_FLOAT_01d76c60;
+extern float g_FLOAT_01d76c64;
+extern float g_FLOAT_01d76c68;
+extern float g_FLOAT_01d76c6c;
+extern float g_FLOAT_01d76c70;
+extern float g_FLOAT_01d76c74;
+extern float g_FLOAT_01d76c78;
+extern float g_FLOAT_01d76c7c;
+extern float g_FLOAT_01d76c80;
+extern float g_FLOAT_01d76c84;
+extern float g_FLOAT_01d76c88;
+extern float g_FLOAT_01d76c8c;
+extern float g_FLOAT_01d76c90;
+extern float g_FLOAT_01d76c94;
+extern float g_FLOAT_01d76c98;
+extern float g_FLOAT_01d76ca8;
+extern float g_FLOAT_01d76cac;
+extern float g_FLOAT_01d76cb0;
+extern float g_FLOAT_01d76cb4;
+extern float g_FLOAT_01d76cb8;
+extern float g_FLOAT_01d76cbc;
+extern float g_FLOAT_01d76cc4;
+extern float g_FLOAT_01d76cc8;
+extern float g_FLOAT_01d76cd4;
+extern float g_FLOAT_01d76ce4;
+extern float g_FLOAT_01d76ce8;
+extern float g_FLOAT_01d76cec;
+extern float g_FLOAT_01d76cf0;
+extern float g_FLOAT_01d76cf4;
+extern float g_FLOAT_01d76d04;
+extern float g_FLOAT_01d76d08;
+extern float g_FLOAT_01d76d0c;
+extern float g_FLOAT_01d76d10;
+extern float g_FLOAT_01d76d14;
+extern float g_FLOAT_01d76d18;
+extern float g_FLOAT_01d76d1c;
+extern float g_FLOAT_01d76d20;
+extern float g_FLOAT_01d76d24;
+extern float g_FLOAT_01d7777c;
+extern float g_FLOAT_01d77780;
+extern float g_FLOAT_01d77784;
+extern float g_FLOAT_01d777bc;
+extern float g_FLOAT_01d777c0;
+extern float g_FLOAT_01d777c4;
+extern float g_FLOAT_01d777fc;
+extern float g_FLOAT_01d77800;
+extern float g_FLOAT_01d77804;
+extern float g_FLOAT_01d78f7c;
+extern float g_FLOAT_01d7a69c;
+extern float g_FLOAT_01d7a6a0;
+extern float g_FLOAT_01d7a6a4;
+extern float g_FLOAT_01d7a6a8;
+extern float g_FLOAT_01d7a6b4;
+extern float g_FLOAT_01d7a6b8;
+extern float g_FLOAT_01d7a6bc;
+extern float g_FLOAT_01d7a6c0;
+extern float g_FLOAT_01d7f4f8;
+extern float g_FLOAT_01d7f4fc;
+extern float g_FLOAT_01d7f500;
+extern float g_FLOAT_01d7f508;
+extern float g_FLOAT_01d7f50c;
+extern float g_FLOAT_01d7f510;
+extern float g_FLOAT_01d7f518;
+extern float g_FLOAT_01d7f51c;
+extern float g_FLOAT_01d7f520;
+extern float g_FLOAT_01d7f528;
+extern float g_FLOAT_01d7f52c;
+extern float g_FLOAT_01d7f530;
+extern float g_FLOAT_01d7f538;
+extern float g_FLOAT_01d7f53c;
+extern float g_FLOAT_01d7f540;
+extern float g_FLOAT_01d7f544;
+extern float g_FLOAT_01d7f54c;
+extern float g_FLOAT_01d7f550;
+extern float g_FLOAT_01d7f554;
+extern float g_FLOAT_01d7f55c;
+extern float g_FLOAT_01d7f560;
+extern float g_FLOAT_01d7f564;
+extern float g_FLOAT_01d7f56c;
+extern float g_FLOAT_01d7f570;
+extern float g_FLOAT_01d7f574;
+
+// float*
+extern float* g_FLOAT_PTR_01d76f60;
+extern float* g_FLOAT_PTR_01d76f64;
+extern float* g_FLOAT_PTR_01d7f4f4;
+
+// int
+extern int g_INT_01d70a20;
+extern int g_InventoryScreenHeight;
+extern int g_InventoryLightAngle;
+extern int g_LightDirectionX2;
+extern int g_LightDirectionY2;
+extern int g_LightDirectionZ2;
+extern int g_INT_01d71de4;
+extern int g_INT_01d71de8;
+extern int g_INT_01d72644;
+extern int g_INT_01d72648;
+extern int g_INT_01d7264c;
+extern int g_INT_01d72650;
+extern int g_INT_01d72654;
+extern int g_INT_01d72658;
+extern int g_INT_01d7265c;
+extern int g_INT_01d72660;
+extern int g_INT_01d72664;
+extern int g_PixelAspectCorrection;
+extern int g_MatrixStackIndex;
+extern int g_ViewportStackIndex;
+extern int g_INT_01d737d4;
+extern int g_INT_01d737d8;
+extern int g_AudioVisualizationCounter;
+extern int g_INT_01d737e4;
+extern int g_INT_01d74020;
+extern int g_INT_01d74024;
+extern int g_INT_01d740a8;
+extern int g_INT_01d740e8;
+extern int g_CustomKeyCount;
+extern int g_StringBufferIndex;
+extern int g_INT_01d76c34;
+extern int g_INT_01d76c38;
+extern int g_INT_01d76c3c;
+extern int g_INT_01d76c44;
+extern int g_INT_01d76c48;
+extern int g_INT_01d76c9c;
+extern int g_INT_01d76ca0;
+extern int g_INT_01d76ca4;
+extern int g_INT_01d76cc0;
+extern int g_INT_01d76ccc;
+extern int g_INT_01d76cd0;
+extern int g_INT_01d76cf8;
+extern int g_INT_01d76f5c;
+extern int g_INT_01d76f68;
+extern int g_INT_01d76f6c;
+extern int g_INT_01d76f70;
+extern int g_INT_01d76f74;
+extern int g_INT_01d76f78;
+extern int g_INT_01d7977c;
+extern int g_INT_01d79780;
+extern int g_INT_01d79784;
+extern int g_INT_01d7a694;
+extern int g_INT_01d7a698;
+extern int g_INT_01d7a6c4;
+extern int g_INT_01d7a6c8;
+extern int g_INT_01d7a6cc;
+extern int g_INT_01d7f504;
+extern int g_INT_01d7f514;
+extern int g_INT_01d7f524;
+extern int g_INT_01d7f534;
+
+// int*[31]
+extern int* g_CustomKeyPointers[31];
+
+// int[10]
+extern int g_MatrixStack_M00[10];
+extern int g_MatrixStack_M01[10];
+extern int g_MatrixStack_M02[10];
+extern int g_MatrixStack_M10[10];
+extern int g_MatrixStack_M11[10];
+extern int g_MatrixStack_M12[10];
+extern int g_MatrixStack_M20[10];
+extern int g_MatrixStack_M21[10];
+extern int g_MatrixStack_M22[10];
+extern int g_MatrixStack_RelX[10];
+extern int g_MatrixStack_RelY[10];
+extern int g_MatrixStack_RelZ[10];
+extern int g_MatrixStack_Unk1[10];
+extern int g_MatrixStack_Unk2[10];
+extern int g_MatrixStack_Unk3[10];
+extern int g_ViewportStack_CenterX[10];
+extern int g_ViewportStack_CenterY[10];
+extern int g_ViewportStack_RightFixed[10];
+extern int g_ViewportStack_BottomFixed[10];
+extern int g_ViewportStack_ProjectionScale[10];
+extern int g_ViewportStack_CameraX[10];
+extern int g_ViewportStack_CameraY[10];
+extern int g_ViewportStack_CameraZ[10];
+extern int g_ViewportStack_RotationPitch[10];
+extern int g_ViewportStack_RotationYaw[10];
+extern int g_ViewportStack_RotationRoll[10];
+extern int g_ViewportStack_ExtraState1[10];
+extern int g_ViewportStack_ExtraState2[10];
+extern int g_ViewportStack_ExtraState3[10];
+extern int g_ViewportStack_ClipLeft[10];
+extern int g_ViewportStack_ClipRight[10];
+extern int g_ViewportStack_ClipTop[10];
+extern int g_ViewportStack_ClipBottom[10];
+
+// int[256]
+extern int g_INT_ARRAY_01d71e3c[256];
+
+// int[257]
+extern int g_INT_ARRAY_01d72240[257];
+
+// short[2]
+extern short g_SHORT_ARRAY_01d7a6d0[2];
+
+// uint
+extern uint g_SavedRotationX;
+extern uint g_SavedRotationY;
+extern uint g_SavedRotationZ;
+
+// void*
+extern void* g_PTR_01d70a78;
+extern void* g_PTR_01d76cfc;
+extern void* g_PTR_01d76d00;
+extern void* g_PTR_01d7a6ac;
+extern void* g_PTR_01d7a6b0;
 

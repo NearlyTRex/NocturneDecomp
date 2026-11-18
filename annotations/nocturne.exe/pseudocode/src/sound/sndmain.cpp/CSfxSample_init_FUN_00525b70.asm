@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   float FLOAT_005a216c = 20
 ;   float FLOAT_005a2170 = 10000
-;   undefined4 DAT_005bea88
-;   float g_FLOAT_02dbd370
+;   double g_Cached3DDistanceFactorInverse = 1
+;   float g_SoundReferenceVolumeDistance
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -34,10 +34,10 @@ section .text
     PUSH EBX                            ; 00525b7c
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00525b7d
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
-    FLD double ptr [0x005bea88]         ; 00525b82 | DAT_005bea88
+    FLD double ptr [0x005bea88]         ; 00525b82 | g_Cached3DDistanceFactorInverse
     FLD float ptr [0x005a216c]          ; 00525b88 | FLOAT_005a216c
     FMUL ST1                            ; 00525b8e
-    FLD float ptr [0x02dbd370]          ; 00525b90 | g_FLOAT_02dbd370
+    FLD float ptr [0x02dbd370]          ; 00525b90 | g_SoundReferenceVolumeDistance
     FMUL ST2                            ; 00525b96
     FLD float ptr [0x005a2170]          ; 00525b98 | FLOAT_005a2170
     FMULP ST3                           ; 00525b9e

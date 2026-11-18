@@ -80,6 +80,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004300e0",
+      "from_addr": "00430102",
+      "name": "core_charactr.cpp_CCharacter_dismember_FUN_004300e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0042c0d0",
       "from_addr": "0042c0fe",
       "name": "core_charactr.cpp_CCharacter_kill_FUN_0042c0d0",
@@ -88,19 +94,13 @@
     {
       "addr": "0042cd70",
       "from_addr": "0042d05f",
-      "name": "core_charactr.cpp_FUN_0042cd70",
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042e8c0",
       "from_addr": "0042ecbf",
-      "name": "core_charactr.cpp_FUN_0042e8c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004300e0",
-      "from_addr": "00430102",
-      "name": "core_charactr.cpp_FUN_004300e0",
+      "name": "core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -142,7 +142,7 @@
     {
       "addr": "0048c2e0",
       "from_addr": "0048d41c",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -268,7 +268,7 @@
     {
       "addr": "005438d0",
       "from_addr": "005439d9",
-      "name": "core_shadow.cpp_FUN_005438d0",
+      "name": "core_shadow.cpp_CShadow_process_FUN_005438d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -292,7 +292,7 @@
     {
       "addr": "0055f6b0",
       "from_addr": "0055f7ea",
-      "name": "core_sound.cpp_FUN_0055f6b0",
+      "name": "core_sound.cpp_processTrainSounds_FUN_0055f6b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -334,7 +334,7 @@
     {
       "addr": "0057bda0",
       "from_addr": "0057bde2",
-      "name": "core_weather.cpp_FUN_0057bda0",
+      "name": "core_weather.cpp_CWeather_update_FUN_0057bda0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -398,7 +398,7 @@
       {
         "call_addr": "0048d41c",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -409,7 +409,7 @@
       {
         "call_addr": "0048d451",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -420,7 +420,7 @@
       {
         "call_addr": "0048eeec",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

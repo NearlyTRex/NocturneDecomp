@@ -30,7 +30,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
     return;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,&SMRGLTextureBasic_0066e784);
+            (g_CDemonRendererPtr2,&g_BurnCharTexture);
   this_ptr_00 = &this_ptr->model;
   if (this_ptr->is_fully_burned != 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150

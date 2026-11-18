@@ -11,6 +11,6 @@ int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004c2060(CBitFont *this
 {
   int iVar1;
   
-  iVar1 = engine_font_cpp_FUN_004c1dd0(this_ptr,text,x,y,color_mode,color_value);
+  iVar1 = engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(this_ptr,text,x,y,color_mode,color_value);
   return iVar1;
 }

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_batman_cpp_CBatman_getActorType_FUN_004133d0(CBatman *this_ptr)
 
 {
-  return &g_CBatmanActorType_00764638;
+  return &g_CBatmanClassInfo;
 }

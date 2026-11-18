@@ -11,7 +11,7 @@ CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_004de800(void)
 {
   CKeyActor *pCVar1;
   
-  pCVar1 = (CKeyActor *)operator_new(0x31c);
+  pCVar1 = operator_new(0x31c);
   if (pCVar1 == (CKeyActor *)0x0) {
     return (CKeyActor *)0x0;
   }

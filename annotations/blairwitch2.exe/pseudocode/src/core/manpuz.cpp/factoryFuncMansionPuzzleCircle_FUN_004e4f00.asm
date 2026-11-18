@@ -15,7 +15,7 @@ section .text
     PUSH 0x1670                         ; 004e4f00
         ;   Label: core_manpuz.cpp_factoryFuncMansionPuzzleCircle_FUN_004e4f00
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004e4f05
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004e4f0a
     TEST EAX,EAX                        ; 004e4f0d
     JNZ 0x004e4f12                      ; 004e4f0f

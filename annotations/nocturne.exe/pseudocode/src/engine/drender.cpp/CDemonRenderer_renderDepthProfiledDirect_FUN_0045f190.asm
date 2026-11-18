@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   int INT_005ae708 = 0x1
-;   undefined4 DAT_01b4d764
+;   int g_INT_01b4d764
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -39,7 +39,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 0045f197
     XOR EDX,EDX                         ; 0045f19b
     MOV ECX,dword ptr [EBX + 0xc]       ; 0045f19d
-    MOV dword ptr [0x01b4d764],EDX      ; 0045f1a0 | DAT_01b4d764
+    MOV dword ptr [0x01b4d764],EDX      ; 0045f1a0 | g_INT_01b4d764
     TEST ECX,ECX                        ; 0045f1a6
     JNZ 0x0045f228                      ; 0045f1a8
         ;   XREF to: 0045f228 (CONDITIONAL_JUMP)  ; LAB_0045f228
@@ -84,7 +84,7 @@ section .text
     ADD ESP,0x8                         ; 0045f20b
     MOV EBX,dword ptr [0x005ae708]      ; 0045f20e | INT_005ae708
         ;   Label: LAB_0045f20e
-    MOV EAX,[0x01b4d764]                ; 0045f214 | DAT_01b4d764
+    MOV EAX,[0x01b4d764]                ; 0045f214 | g_INT_01b4d764
     CMP EAX,EBX                         ; 0045f219
     SETGE AL                            ; 0045f21b
     AND EAX,0xff                        ; 0045f21e

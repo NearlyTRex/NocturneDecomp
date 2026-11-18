@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; Called Functions:
-;   core_prye.cpp_FUN_0051f490
+;   core_prye.cpp_CPrye_computeWeaponAttachXForm_FUN_0051f490
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH ESI                            ; 005247d2
     LEA ESI,[ESP + 0xc]                 ; 005247d3
     MOV EDI,EBX                         ; 005247d7
-    CALL core_prye.cpp_FUN_0051f490     ; 005247d9
-        ;   XREF to: 0051f490 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051f490()
+    CALL core_prye.cpp_CPrye_computeWeaponAttachXForm_FUN_0051f490 ; 005247d9
+        ;   XREF to: 0051f490 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_prye.cpp_CPrye_computeWeaponAttachXForm_FUN_0051f490(CPrye * this_ptr, CDemonActor * carried_actor, int hand_index, CMatrix3x4f * output_matrix)
     MOV ECX,0xc                         ; 005247de
     LEA ESI,[ESP + 0xc]                 ; 005247e3
     ADD ESP,0xc                         ; 005247e7

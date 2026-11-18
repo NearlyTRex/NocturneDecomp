@@ -12,7 +12,7 @@
 ;   TerminatedCString s_motion_state_005965c0
 ;   TerminatedCString s_partStatus_005965cd
 ;   TerminatedCString s_graveActor_005965d8
-;   int INT_005c10b0 = 0x2
+;   int g_CTentacleClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -39,7 +39,7 @@ section .text
     PUSH ESI                            ; 0054448a
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 0054448b
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005c10b0]      ; 00544490 | INT_005c10b0
+    MOV EDX,dword ptr [0x005c10b0]      ; 00544490 | g_CTentacleClassVersion
     ADD ESP,0x8                         ; 00544496
     CMP EDX,0x2                         ; 00544499
     JL 0x005444d7                       ; 0054449c

@@ -14,9 +14,9 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0049c430 at 0049c685
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d55b2
-;   undefined4 DAT_005d55ba
-;   undefined4 DAT_00614d30
+;   double g_DOUBLE_005d55b2 = 0.200000000000000
+;   float g_FLOAT_005d55ba = -0.2000000
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
@@ -50,14 +50,14 @@ section .text
     FADD float ptr [EAX]                ; 00499962
     FSTP float ptr [EAX]                ; 00499964
     FLD float ptr [EBX + 0x18]          ; 00499966
-    FCOMP double ptr [0x005d55b2]       ; 00499969 | DAT_005d55b2
+    FCOMP double ptr [0x005d55b2]       ; 00499969 | g_DOUBLE_005d55b2
     FNSTSW AX                           ; 0049996f
     SAHF                                ; 00499971
     JBE 0x004999c0                      ; 00499972
         ;   XREF to: 004999c0 (CONDITIONAL_JUMP)  ; LAB_004999c0
     FLD float ptr [EBX + 0x18]          ; 00499974
     MOV ESI,0x3f800000                  ; 00499977
-    FADD float ptr [0x005d55ba]         ; 0049997c | DAT_005d55ba
+    FADD float ptr [0x005d55ba]         ; 0049997c | g_FLOAT_005d55ba
     XOR ECX,ECX                         ; 00499982
     FSTP float ptr [EBX + 0x18]         ; 00499984
     MOV dword ptr [ESP],ECX             ; 00499987
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 004999a3
     PUSH 0x3f800000                     ; 004999a4
     PUSH EBX                            ; 004999a9
-    MOV EBP,dword ptr [0x00614d30]      ; 004999aa | DAT_00614d30
+    MOV EBP,dword ptr [0x00614d30]      ; 004999aa | g_CFireEffectPtr
     PUSH EBP                            ; 004999b0
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230 ; 004999b1
         ;   XREF to: 0049d230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

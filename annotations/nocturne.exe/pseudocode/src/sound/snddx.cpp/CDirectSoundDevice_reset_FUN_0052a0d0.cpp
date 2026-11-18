@@ -6,25 +6,23 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(CDirectSoundDevice *this_ptr)
 
 {
   int *piVar1;
+  IDirectSoundBuffer *this_ptr_00;
   uint uVar2;
   char *pcVar3;
   int iVar4;
   int iVar5;
-  int *piVar6;
   char acStack_4c4 [400];
   char acStack_334 [400];
   char acStack_1a4 [400];
   int local_14;
   
   local_14 = 1;
-  if (_DAT_02dc921c != (int *)0x0) {
-    uVar2 = (**(code **)(*_DAT_02dc921c + 0x48))(_DAT_02dc921c);
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    uVar2 = (*g_DirectSoundSecondaryBuffer->vtable->Stop)(g_DirectSoundSecondaryBuffer);
     if (uVar2 != 0) {
       pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
       _sprintf(acStack_1a4,"DirectSux: Unable to %s.  (%s)","Stop secondary sound buffer",
@@ -33,8 +31,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(CDirectSoundDe
       local_14 = 0;
     }
   }
-  if (_DAT_02dc9218 != (int *)0x0) {
-    uVar2 = (**(code **)(*_DAT_02dc9218 + 0x48))(_DAT_02dc9218);
+  if (g_DirectSoundPrimaryBuffer != (IDirectSoundBuffer *)0x0) {
+    uVar2 = (*g_DirectSoundPrimaryBuffer->vtable->Stop)(g_DirectSoundPrimaryBuffer);
     if (uVar2 != 0) {
       pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
       _sprintf(acStack_334,"DirectSux: Unable to %s.  (%s)","Stop primary sound buffer",
@@ -46,20 +44,18 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(CDirectSoundDe
   iVar5 = 0;
   iVar4 = 0;
   do {
-    piVar1 = *(int **)(iVar5 + 0x2dc92a8);
+    piVar1 = *(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar5);
     if (piVar1 == (int *)0x0) {
 LAB_0052a120:
-      piVar6 = (int *)(iVar4 * 4 + 0x2dc9324);
-      piVar1 = (int *)*piVar6;
+      piVar1 = (int *)g_INT_ARRAY_02dc9324[iVar4];
       if (piVar1 != (int *)0x0) {
         (**(code **)(*piVar1 + 8))(piVar1);
-        *piVar6 = 0;
+        g_INT_ARRAY_02dc9324[iVar4] = 0;
       }
-      piVar6 = (int *)(iVar4 * 4 + 0x2dc92a8);
-      piVar1 = (int *)*piVar6;
-      if (piVar1 != (int *)0x0) {
-        (**(code **)(*piVar1 + 8))(piVar1);
-        *piVar6 = 0;
+      this_ptr_00 = g_DirectSoundHardwareSfxBuffers[iVar4];
+      if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
+        (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
+        g_DirectSoundHardwareSfxBuffers[iVar4] = (IDirectSoundBuffer *)0x0;
       }
     }
     else {

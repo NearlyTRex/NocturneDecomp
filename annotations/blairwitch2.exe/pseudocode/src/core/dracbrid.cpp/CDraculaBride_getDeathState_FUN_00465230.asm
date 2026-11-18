@@ -11,7 +11,7 @@
 ;   undefined1* switchdataD_00465204 = 0046523f
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     ADD EAX,0x2b4                       ; 0046524b
         ;   Label: LAB_0046524b
     PUSH EAX                            ; 00465250
-    CALL core_motion.cpp_FUN_005035c0   ; 00465251
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00465251
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00465256
     SUB EAX,0x7                         ; 00465259
     ADD ESP,0x4                         ; 0046525c

@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 69,
+    "complexity_score": 83,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "displaced_global_access",
+      "pointer_cast",
+      "pointer_truncation",
+      "wrong_global"
     ],
-    "total_lines": 72
+    "total_lines": 71
   },
   "cross_references": [
     {
@@ -100,8 +101,8 @@
     },
     {
       "addr": "01fba2d8",
-      "name": "DAT_01fba2d8",
-      "type": "undefined4",
+      "name": "g_INT_01fba2d8",
+      "type": "int",
       "value": null
     }
   ],
@@ -184,28 +185,41 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 13,
-      "match": "*(CDemonLight **)(iVar1 + 0x1fba2dc",
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "if (light == *(CDemonLight **)(iVar1 + 0x1fba2dc)) {",
-      "type": "raw_address_pointer_store"
+      "text": "if (light == *(CDemonLight **)((int)g_DynamicLights + iVar1)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_01fba2d8",
-      "severity": "mild",
-      "text": "*(CDemonLight **)(&DAT_01fba2d8 + _DAT_01fba2d8 * 4) = light;",
-      "type": "undefined_data"
+      "description": "Scalar global g_INT_01fba2d8 accessed via (&g_INT_01fba2d8)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DynamicLights (at 0x01fba2dc, +4 bytes).",
+      "line": 23,
+      "match": "g_INT_01fba2d8",
+      "severity": "moderate",
+      "text": "(&g_INT_01fba2d8)[g_INT_01fba2d8] = (int)light;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)g_DynamicLights",
+      "severity": "moderate",
+      "text": "if (light == *(CDemonLight **)((int)g_DynamicLights + iVar1)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x1fba2d8] lands in g_INT_01fba2d8 but intended target is g_DynamicLights at 0x1fba2dc (displaced by 4 bytes)",
+      "displaced_from": "g_INT_01fba2d8",
+      "displacement": "0x1fba2d8",
+      "instruction_address": "",
+      "intended_global": "g_DynamicLights",
+      "line": 30,
+      "match": "0x1fba2d8",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 0050a9b3: MOV dword ptr [ESI*0x4 + 0x1fba2d8],EBX  ; g_INT_01fba2d8",
+      "type": "displaced_global_access"
     }
   ]
 }

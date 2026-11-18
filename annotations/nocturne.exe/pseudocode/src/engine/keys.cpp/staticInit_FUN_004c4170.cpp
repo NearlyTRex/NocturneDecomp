@@ -9,6 +9,6 @@
 void __cdecl engine_keys_cpp_staticInit_FUN_004c4170(void)
 
 {
-  g_CKeys_01cc30e4.vtable = &g_CKeysVTable;
+  g_CKeysInstance.vtable = &g_CKeysVTable;
   return;
 }

@@ -11,7 +11,7 @@ CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_004ffe80(void)
 {
   CLightGun *pCVar1;
   
-  pCVar1 = (CLightGun *)operator_new(0x598);
+  pCVar1 = operator_new(0x598);
   if (pCVar1 == (CLightGun *)0x0) {
     return (CLightGun *)0x0;
   }

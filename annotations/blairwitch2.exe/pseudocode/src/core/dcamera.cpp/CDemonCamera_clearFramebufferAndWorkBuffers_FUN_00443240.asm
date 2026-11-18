@@ -8,13 +8,13 @@
 ; int              Stack[0x8]:4   clear_color
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b90d0 at 004ba6fd
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004ba6fd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01326d20
-;   undefined4 DAT_01326d21
-;   undefined4 DAT_01326e60
-;   undefined4 DAT_01339a60
+;   SFogImagePlane g_CameraPlaneWorkBuffer
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[0][1]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][0]
+;   undefined4 g_CameraImageDecompressBuffer+0x140
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     IMUL EAX,ECX,0x140                  ; 00443295
     INC EAX                             ; 0044329b
         ;   Label: LAB_0044329b
-    MOV byte ptr [EAX + 0x133991f],BL   ; 0044329c | DAT_01339a60
-    MOV byte ptr [EAX + 0x1326d1f],BL   ; 004432a2 | DAT_01326d20 | DAT_01326d21 | DAT_01326e60
+    MOV byte ptr [EAX + 0x133991f],BL   ; 0044329c | g_CameraImageDecompressBuffer+0x140
+    MOV byte ptr [EAX + 0x1326d1f],BL   ; 004432a2 | g_CameraPlaneWorkBuffer | g_CameraPlaneWorkBuffer.pixels[0][1] | g_CameraPlaneWorkBuffer.pixels[1][0]
     CMP EAX,EDX                         ; 004432a8
     JNZ 0x0044329b                      ; 004432aa
         ;   XREF to: 0044329b (CONDITIONAL_JUMP)  ; LAB_0044329b

@@ -7,11 +7,11 @@
 ; CDemonPod *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e2992
+;   TerminatedCString s_rt_005e2992
 ;   TerminatedCString s_pod_ini_005e2995
 ;   TerminatedCString s_pod_005e299d
-;   undefined4 DAT_005e29a3
-;   undefined4 DAT_005e29a7
+;   TerminatedCString s_d_005e29a3
+;   TerminatedCString s_s_005e29a7
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005b89c0
@@ -32,7 +32,7 @@ section .text
     PUSH EDI                            ; 0051c001
     SUB ESP,0x168                       ; 0051c002
     MOV EBX,dword ptr [ESP + 0x174]     ; 0051c008
-    PUSH 0x5e2992                       ; 0051c00f | DAT_005e2992
+    PUSH 0x5e2992                       ; 0051c00f | = "rt"
     PUSH 0x5e2995                       ; 0051c014 | = "pod.ini"
     CALL crt_stdio.c_fopen_FUN_005b910c ; 0051c019
         ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
@@ -91,7 +91,7 @@ section .text
         ;   Label: LAB_0051c093
     LEA EDX,[ESP + 0x168]               ; 0051c094
     PUSH EDX                            ; 0051c09b
-    PUSH 0x5e29a3                       ; 0051c09c | DAT_005e29a3
+    PUSH 0x5e29a3                       ; 0051c09c | = "%d\n"
     PUSH EAX                            ; 0051c0a1
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0051c0a2
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -104,7 +104,7 @@ section .text
     LEA EAX,[ESP + 0x118]               ; 0051c0b7
         ;   Label: LAB_0051c0b7
     PUSH EAX                            ; 0051c0be
-    PUSH 0x5e29a7                       ; 0051c0bf | DAT_005e29a7
+    PUSH 0x5e29a7                       ; 0051c0bf | = "%s\n"
     PUSH EDI                            ; 0051c0c4
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0051c0c5
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -123,7 +123,7 @@ section .text
     PUSH EDI                            ; 0051c0f0
         ;   Label: LAB_0051c0f0
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 0051c0f1
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0051c0f6
     POP ESI                             ; 0051c0f9
     ADD ESP,0x168                       ; 0051c0fa

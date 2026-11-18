@@ -8,14 +8,14 @@
 ; STextView *      Stack[0x8]:4   view
 ;
 ; XREF[5]:
-;   core_flashlit.cpp_FUN_004a8270 at 004a82c2
-;   core_flashlit.cpp_FUN_004a82f0 at 004a834f
+;   core_flashlit.cpp_layoutSections_FUN_004a8270 at 004a82c2
+;   core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004a82f0 at 004a834f
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004abe9b
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aa9eb
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90 at 004abc2c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1126
+;   TerminatedCString s_pg_005c1126
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950
@@ -56,7 +56,7 @@ section .text
     CMP EBX,ECX                         ; 004a9dd1
     JL 0x004a9db3                       ; 004a9dd3
         ;   XREF to: 004a9db3 (CONDITIONAL_JUMP)  ; LAB_004a9db3
-    PUSH 0x5c1126                       ; 004a9dd5 | DAT_005c1126
+    PUSH 0x5c1126                       ; 004a9dd5 | = "<pg>"
         ;   Label: LAB_004a9dd5
     PUSH EBP                            ; 004a9dda
     CALL core_fldnotes.cpp_STextView_addText_FUN_004a8ed0 ; 004a9ddb

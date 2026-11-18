@@ -1,0 +1,380 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 393,
+    "complexity_score": 254,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 18,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 149,
+    "suspect_count": 8,
+    "suspect_types": [
+      "signed_shift_global_idiom",
+      "stack_ref",
+      "unknown_field",
+      "unresolved_funcptr",
+      "warning_max_restarts"
+    ],
+    "total_lines": 542
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00577f90",
+    "address_range": [
+      [
+        "00577f90",
+        "005784a4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_00577f90",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_00577f90(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500"
+    },
+    {
+      "addr": "00576030",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_00576030"
+    },
+    {
+      "addr": "00575560",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00575560"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005773f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4d29",
+      "name": "s_Create_temp_secondary_bu_005f4d29",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4d60",
+      "name": "s_Set_Primary_buffer_forma_005f4d60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4d7a",
+      "name": "s_Get_Primary_buffer_forma_005f4d7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4d94",
+      "name": "s_Create_the_secondary_buf_005f4d94",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006235a0",
+      "name": "g_IID_IKsPropertySet",
+      "type": "GUID",
+      "value": "IKsPropertySet 31efac30-515c-11d0-a9aa-00aa0061be93"
+    },
+    {
+      "addr": "006235b0",
+      "name": "g_DSPROPSETID_VoiceManager",
+      "type": "GUID",
+      "value": "62a69bae-df9d-11d1-99a6-00c04fc99d46"
+    },
+    {
+      "addr": "00627870",
+      "name": "g_IID_IDirectSound3DBuffer",
+      "type": "GUID",
+      "value": "IDirectSound3DBuffer 279afa86-4981-11ce-a521-0020af0be560"
+    },
+    {
+      "addr": "02c81d94",
+      "name": "g_DirectSound",
+      "type": "IDirectSound*",
+      "value": null
+    },
+    {
+      "addr": "02c81d98",
+      "name": "g_DirectSoundPrimaryBuffer",
+      "type": "IDirectSoundBuffer*",
+      "value": null
+    },
+    {
+      "addr": "02c81d9c",
+      "name": "g_DirectSoundSecondaryBuffer",
+      "type": "IDirectSoundBuffer*",
+      "value": null
+    },
+    {
+      "addr": "02c81da4",
+      "name": "g_DirectSoundPropertySet",
+      "type": "IKsPropertySet*",
+      "value": null
+    },
+    {
+      "addr": "02c81da8",
+      "name": "g_StreamBitsPerSample",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c81dac",
+      "name": "g_StreamSampleRate",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c81db0",
+      "name": "g_StreamChannelCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c81db4",
+      "name": "g_StreamSamplesPerBlock",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c81db8",
+      "name": "g_StreamBlockSizeBytes",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c81dbc",
+      "name": "g_StreamBlockCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.416666666666667,
+    "instruction_count": 336,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 37,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "BRANCH": 6,
+      "CALL": 19,
+      "CALLIND": 14,
+      "CBRANCH": 15,
+      "COPY": 356,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 113,
+      "INT_AND": 194,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 121,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 26,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 20,
+      "INT_SEXT": 15,
+      "INT_SLESS": 61,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 120,
+      "INT_XOR": 14,
+      "INT_ZEXT": 2,
+      "LOAD": 62,
+      "POPCOUNT": 57,
+      "RETURN": 3,
+      "ROUND": 1,
+      "STORE": 136,
+      "SUBPIECE": 10,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 1484
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00555560",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055b100",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ae830",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8763
+    },
+    "nocturne.exe": {
+      "addr": "0052a450",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8763
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_sample",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "channels",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sample_rate",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "out_samples_per_block",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler iteration limit exceeded",
+      "line": 2,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._4_2_",
+      "severity": "mild",
+      "text": "auStack_4c._4_2_ = 1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 78,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 84,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piStack_1c + 8))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 133,
+      "match": "&stack0xfffff92c",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffff92c,\"DirectSux: Unable to %s.  (%s)\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 134,
+      "match": "&stack0xfffff92c",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_logSoundError_FUN_005773f0(&stack0xfffff92c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 114,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 115,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamChannelCount;",
+      "type": "signed_shift_global_idiom"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 12,
+        "vtable_addr": "00605b9c"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

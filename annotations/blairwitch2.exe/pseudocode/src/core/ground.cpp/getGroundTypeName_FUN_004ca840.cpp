@@ -1,6 +1,6 @@
 // Name: core_ground.cpp_getGroundTypeName_FUN_004ca840
 // Address: 004ca840
-// Address Range: [[004ca840, 004ca850] [004ca89f, 004ca8a4]]
+// Address Range: [[004ca840, 004ca8a4]]
 // Convention: __cdecl
 // Signature: char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004ca840(EGroundType type)
 

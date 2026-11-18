@@ -31,8 +31,8 @@
 ;   TerminatedCString s_Mute_00593a57
 ;   TerminatedCString s_SfxChannel_dEnabled_00593a5c
 ;   TerminatedCString s_SfxChannel_dVol_00593a70
-;   undefined4 DAT_005bea60
-;   undefined4 DAT_005bea74
+;   int g_MaxSoundChannels = 0x20
+;   int g_CurrentSoundDevice = -0x1
 ;   undefined4 DAT_005beaa0
 ;   undefined4 DAT_005beaa4
 ;
@@ -79,7 +79,7 @@ section .text
         ;   XREF to: 004bd910 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004bd910(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size)
     MOV EDX,0xffffffff                  ; 00528a2e
     ADD ESP,0x10                        ; 00528a33
-    MOV dword ptr [0x005bea74],EDX      ; 00528a36 | DAT_005bea74
+    MOV dword ptr [0x005bea74],EDX      ; 00528a36 | g_CurrentSoundDevice
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 ; 00528a3c
         ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
         ;   Label: LAB_00528a3c
@@ -196,7 +196,7 @@ section .text
     XOR EBX,EBX                         ; 00528b93
     CALL sound_sndmain.cpp_setSoundMuted_FUN_00526cb0 ; 00528b95
         ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundMuted_FUN_00526cb0(int enable)
-    MOV EDX,dword ptr [0x005bea60]      ; 00528b9a | DAT_005bea60
+    MOV EDX,dword ptr [0x005bea60]      ; 00528b9a | g_MaxSoundChannels
     ADD ESP,0x4                         ; 00528ba0
     TEST EDX,EDX                        ; 00528ba3
     JLE 0x00528c70                      ; 00528ba5
@@ -254,7 +254,7 @@ section .text
     PUSH EBX                            ; 00528c4f
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_005272e0 ; 00528c50
         ;   XREF to: 005272e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_005272e0(int channel_index, float volume)
-    MOV ESI,dword ptr [0x005bea60]      ; 00528c55 | DAT_005bea60
+    MOV ESI,dword ptr [0x005bea60]      ; 00528c55 | g_MaxSoundChannels
     INC EBX                             ; 00528c5b
     ADD ESP,0x8                         ; 00528c5c
     CMP EBX,ESI                         ; 00528c5f

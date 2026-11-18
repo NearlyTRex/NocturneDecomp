@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01cb9e74
+;   int g_INT_01cb9e74
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 004b7065
     PUSH dword ptr [ESP + 0x1c]         ; 004b7069
     PUSH EDX                            ; 004b706d
-    MOV EDX,dword ptr [0x01cb9e74]      ; 004b706e | DAT_01cb9e74
+    MOV EDX,dword ptr [0x01cb9e74]      ; 004b706e | g_INT_01cb9e74
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b7074
     SUB EAX,EDX                         ; 004b707b
     SHL EAX,0x2                         ; 004b707d
@@ -46,10 +46,10 @@ section .text
     PUSH EAX                            ; 004b708f
     CALL core_fire.cpp_CLightningBolt_activateDirectional_FUN_004b34d0 ; 004b7090
         ;   XREF to: 004b34d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_activateDirectional_FUN_004b34d0(CLightningBolt * this_ptr, CVector3f * start_position, CVector3f * end_position, float end_width, ...)
-    MOV EBX,dword ptr [0x01cb9e74]      ; 004b7095 | DAT_01cb9e74
+    MOV EBX,dword ptr [0x01cb9e74]      ; 004b7095 | g_INT_01cb9e74
     INC EBX                             ; 004b709b
     ADD ESP,0x14                        ; 004b709c
-    MOV dword ptr [0x01cb9e74],EBX      ; 004b709f | DAT_01cb9e74
+    MOV dword ptr [0x01cb9e74],EBX      ; 004b709f | g_INT_01cb9e74
     CMP EBX,0xa                         ; 004b70a5
     JGE 0x004b70b3                      ; 004b70a8
         ;   XREF to: 004b70b3 (CONDITIONAL_JUMP)  ; LAB_004b70b3
@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 004b70b3
         ;   Label: LAB_004b70b3
     XOR EDI,EDI                         ; 004b70b4
-    MOV dword ptr [0x01cb9e74],EDI      ; 004b70b6 | DAT_01cb9e74
+    MOV dword ptr [0x01cb9e74],EDI      ; 004b70b6 | g_INT_01cb9e74
     POP EDI                             ; 004b70bc
     CMP dword ptr [ESP + 0x14],0x0      ; 004b70bd
     JNZ 0x004b70c6                      ; 004b70c2

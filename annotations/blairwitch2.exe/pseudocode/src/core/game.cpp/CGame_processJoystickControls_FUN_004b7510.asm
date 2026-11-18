@@ -11,8 +11,8 @@
 ;   core_game.cpp_CGame_playerControls_FUN_004b7050 at 004b70de
 ;
 ; Called Functions:
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0
 ;   core_game.cpp_CGame_resetKeyState_FUN_004b7140
-;   core_game.cpp_FUN_004b76c0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH ECX                            ; 004b7522
     MOV EBX,dword ptr [ESP + 0xc]       ; 004b7523
     PUSH EBX                            ; 004b7527
-    CALL core_game.cpp_FUN_004b76c0     ; 004b7528
-        ;   XREF to: 004b76c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004b76c0(CGame * this_ptr, SPlayerInput * player_control)
+    CALL core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0 ; 004b7528
+        ;   XREF to: 004b76c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0(CGame * this_ptr, SPlayerInput * player_control)
     ADD ESP,0x8                         ; 004b752d
     POP EBX                             ; 004b7530
     LEA EAX,[EAX]                       ; 004b7531

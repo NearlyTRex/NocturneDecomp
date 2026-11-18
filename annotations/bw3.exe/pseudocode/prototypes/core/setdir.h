@@ -9,13 +9,13 @@
 // Address: 0053f0d0
 void __cdecl staticInit(void);
 
-// Original: core_setdir.cpp_FUN_0053f5d0
-// Address: 0053f5d0
-float FUN_0053f5d0(void);
+// Original: core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0
+// Address: 0053f0f0
+float __cdecl calculateActorVisibility(CDemonActor *actor,CVector3i *bounding_box_vertices,SMRGLHeaderPrimitive *primitives,int thumb_index,C3DSCamera *camera,float radius);
 
-// Original: core_setdir.cpp_FUN_0053f940
+// Original: core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
 // Address: 0053f940
-undefined4 FUN_0053f940(CDemonSet *param_1,CDemonActor *param_2,int param_3);
+int __cdecl CDemonSet::evaluateVirtualDirector(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 
 // Original: core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00540ba0
 // Address: 00540ba0
@@ -29,29 +29,29 @@ void __cdecl CDemonSet::clearCameraSwitchCooldown(CDemonSet *this_ptr);
 // Address: 00540be0
 void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 
-// Original: core_setdir.cpp_FUN_00540c40
+// Original: core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40
 // Address: 00540c40
-void FUN_00540c40(SIZE_T *param_1,char *param_2);
+void __cdecl CDemonSet::writeThumbs(CDemonSet *this_ptr,char *filename);
 
-// Original: core_setdir.cpp_FUN_00540cf0
+// Original: core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0
 // Address: 00540cf0
-void FUN_00540cf0(CDemonSet *param_1);
+void __cdecl CDemonSet::saveThumbsNoFile(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_setPixelGrayscale_FUN_00540e80
 // Address: 00540e80
 void __cdecl setPixelGrayscale(int x,int y,int grayscale_value);
 
-// Original: core_setdir.cpp_FUN_00540eb0
+// Original: core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0
 // Address: 00540eb0
-void FUN_00540eb0(int *param_1);
+void __cdecl CDemonSet::renderVirtualDirectors(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005412b0
 // Address: 005412b0
 void __cdecl CDemonSet::skipDeprecatedVirtualDirectorData(CDemonSet *this_ptr,_FILE *file_handle);
 
-// Original: core_setdir.cpp_FUN_00541350
+// Original: core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00541350
 // Address: 00541350
-undefined4 FUN_00541350(int param_1,int param_2,float *param_3);
+int __cdecl CDemonSet::isPointInVdirBox(CDemonSet *this_ptr,int box_index,CVector3f *point);
 
 // Original: core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00541410
 // Address: 00541410
@@ -69,10 +69,10 @@ int __cdecl CDemonSet::buildVdirBoxGroups(CDemonSet *this_ptr);
 // Address: 005419e0
 int __cdecl CDemonSet::findVdirBoxRoot(CDemonSet *this_ptr,int box_index);
 
-// Original: core_setdir.cpp_FUN_00541a20
+// Original: core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00541a20
 // Address: 00541a20
-int FUN_00541a20(CDemonSet *param_1,undefined4 param_2);
+int __cdecl CDemonSet::findVdirBoxAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
-// Original: core_setdir.cpp_FUN_00541a60
+// Original: core_setdir.cpp_CDemonSet_freeThumbs_FUN_00541a60
 // Address: 00541a60
-void __cdecl FUN_00541a60(CDemonSet *this_ptr);
+void __cdecl CDemonSet::freeThumbs(CDemonSet *this_ptr);

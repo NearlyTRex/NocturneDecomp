@@ -91,7 +91,7 @@ import json
 import os
 import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(THIS_DIR))
@@ -502,9 +502,9 @@ def build_plan_ledger(entries, program, only=None, basis=None, min_conf=None):
     return plan, skipped
 
 
-def report(plan, skipped, src_dupes, dst_dupes, show):
+def report(plan, skipped, src_dupes, dst_dupes, show, src="nocedit.exe", dst="nocturne.exe"):
     print("=" * 78)
-    print("SIGNATURE TRANSFER PLAN  (nocedit.exe -> nocturne.exe)")
+    print(f"SIGNATURE TRANSFER PLAN  ({src} -> {dst})")
     print("=" * 78)
     print(f"  to apply                    : {len(plan)}")
     corr = sum(1 for p in plan if p["corroborated"])
@@ -691,8 +691,9 @@ def diff_live(item, func, resolve):
         # A function left with a custom-storage flag and no storage raises here
         # and would abort the annotation export too. Refuse; repair separately.
         return None, f"getReturnType() raised ({exc}) -- broken storage"
-    if not ret_dt.isEquivalent(cur_ret):
-        diffs.append(("ret", str(cur_ret.getDisplayName()), item["ret"]))
+    if cur_ret is None or not ret_dt.isEquivalent(cur_ret):
+        shown = "<none>" if cur_ret is None else str(cur_ret.getDisplayName())
+        diffs.append(("ret", shown, item["ret"]))
 
     # Auto-params (a convention's implicit `this`) are not formal parameters and
     # are not what updateFunction(..., FORMAL_PARAMS) writes, so comparing them
@@ -755,6 +756,13 @@ def write_item(program, item, func):
                             params,
                             func.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,
                             True, src)
+        # updateFunction returning is not proof the result reads back: storage
+        # can land half-assigned and only fail for the next reader, which is
+        # the export. Read it back now, so the item is reported FAILED instead.
+        func.getReturnType()
+        for p in func.getParameters():
+            p.getDataType()
+            p.getVariableStorage()
     if "varargs" in fields:
         func.setVarArgs(bool(item["varargs"]))
     if "name" in fields:
@@ -770,75 +778,80 @@ def run_ghidra(plan, args):
     from ghidra.util.task import ConsoleTaskMonitor
 
     project = pyghidra.open_project(args.project_dir, args.project_name)
-    counts, failures = Counter(), []
     try:
         with pyghidra.program_context(project, "/" + args.dst) as program:
-            resolve = make_resolver(program)
-            fm = program.getFunctionManager()
-            af = program.getAddressFactory().getDefaultAddressSpace()
-
-            for item in plan:
-                func = fm.getFunctionAt(af.getAddress(item["addr"]))
-                if func is None:
-                    item["action"], item["detail"] = "NO-FUNCTION", "no function at address"
-                    continue
-                action, detail = check_guards(item, func, args.ignore_drift)
-                if action:
-                    item["action"], item["detail"] = action, detail
-                    continue
-                if func.hasCustomVariableStorage() and not args.allow_custom_storage:
-                    item["action"] = "BLOCKED"
-                    item["detail"] = ("has hand-assigned custom storage; "
-                                      "DYNAMIC_STORAGE would discard it")
-                    continue
-                diffs, blocked = diff_live(item, func, resolve)
-                if blocked:
-                    item["action"], item["detail"] = "BLOCKED", blocked
-                    continue
-                item["_diffs"], item["_func"] = diffs, func
-                item["action"] = "APPLY" if diffs else "ALREADY"
-                item["detail"] = ""
-
-            for item in plan:
-                counts[item["action"]] += 1
-            report_live(plan, counts, args)
-
-            todo = [i for i in plan if i["action"] == "APPLY"]
-            if not args.apply:
-                print(f"\n(dry run -- re-run with --apply to write {len(todo)} change(s))")
-                return 0 if not failures else 1
-            if not todo:
-                print("\nNothing to apply.")
-                return 0
-
-            txid = program.startTransaction("apply sibling signatures")
-            applied = 0
-            try:
-                for item in todo:
-                    try:
-                        write_item(program, item, item["_func"])
-                        applied += 1
-                    except Exception as exc:
-                        item["action"] = "FAILED"
-                        failures.append((item["dst_name"], str(exc)))
-            finally:
-                program.endTransaction(txid, True)
-
-            # Headless mutations persist only through the DomainFile.
-            program.getDomainFile().save(ConsoleTaskMonitor())
-            print(f"\napplied {applied}, failed {len(failures)}")
-            for name, exc in failures:
-                print(f"  FAILED {name}: {exc}")
+            code = diff_and_apply(program, plan, args, ConsoleTaskMonitor)
     finally:
         project.close()
 
-    print("Re-export and re-run audit_transferred_signatures.py to confirm.")
     # os._exit skips interpreter shutdown, which is what stops the JVM from
     # hanging the process -- but it also skips flushing, so an unflushed report
-    # is lost entirely and the run looks like it produced nothing.
+    # is lost entirely and the run looks like it produced nothing. Every path,
+    # a dry run included, leaves this way.
     sys.stdout.flush()
     sys.stderr.flush()
-    os._exit(0 if not failures else 1)
+    os._exit(code)
+
+
+def diff_and_apply(program, plan, args, monitor_class):
+    """The live diff, and the write under --apply. Returns the exit code."""
+    resolve = make_resolver(program)
+    fm = program.getFunctionManager()
+    af = program.getAddressFactory().getDefaultAddressSpace()
+
+    for item in plan:
+        func = fm.getFunctionAt(af.getAddress(item["addr"]))
+        if func is None:
+            item["action"], item["detail"] = "NO-FUNCTION", "no function at address"
+            continue
+        action, detail = check_guards(item, func, args.ignore_drift)
+        if action:
+            item["action"], item["detail"] = action, detail
+            continue
+        if func.hasCustomVariableStorage() and not args.allow_custom_storage:
+            item["action"] = "BLOCKED"
+            item["detail"] = ("has hand-assigned custom storage; "
+                              "DYNAMIC_STORAGE would discard it")
+            continue
+        diffs, blocked = diff_live(item, func, resolve)
+        if blocked:
+            item["action"], item["detail"] = "BLOCKED", blocked
+            continue
+        item["_diffs"], item["_func"] = diffs, func
+        item["action"] = "APPLY" if diffs else "ALREADY"
+        item["detail"] = ""
+
+    counts = Counter(item["action"] for item in plan)
+    report_live(plan, counts, args)
+
+    todo = [i for i in plan if i["action"] == "APPLY"]
+    if not args.apply:
+        print(f"\n(dry run -- re-run with --apply to write {len(todo)} change(s))")
+        return 0
+    if not todo:
+        print("\nNothing to apply.")
+        return 0
+
+    txid = program.startTransaction("apply sibling signatures")
+    applied, failures = 0, []
+    try:
+        for item in todo:
+            try:
+                write_item(program, item, item["_func"])
+                applied += 1
+            except Exception as exc:
+                item["action"] = "FAILED"
+                failures.append((item["dst_name"], str(exc)))
+    finally:
+        program.endTransaction(txid, True)
+
+    # Headless mutations persist only through the DomainFile.
+    program.getDomainFile().save(monitor_class())
+    print(f"\napplied {applied}, failed {len(failures)}")
+    for name, exc in failures:
+        print(f"  FAILED {name}: {exc}")
+    print("Re-export and re-run audit_transferred_signatures.py to confirm.")
+    return 0 if not failures else 1
 
 
 def report_live(plan, counts, args):
@@ -877,7 +890,20 @@ def report_live(plan, counts, args):
             print(f"    ... and {len(todo) - args.show} more (raise --show)")
 
 
-def main():
+def ledger_program(entries):
+    """The one program a ledger's entries are for, or exit naming the choices.
+
+    Defaulting to nocturne.exe instead skipped every entry of a ledger written
+    for another build, and reported it only as `other_program`.
+    """
+    programs = sorted({e.get("program") for e in entries if isinstance(e, dict) and e.get("program")})
+    if len(programs) == 1:
+        return programs[0]
+    sys.exit("ERROR: the ledger names %s; pass --to <program>"
+             % (", ".join(programs) if programs else "no program"))
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--source", choices=("namecore", "ledger"), default="namecore",
@@ -885,7 +911,9 @@ def main():
                          "ledger: hand-verified entries that may overwrite.")
     ap.add_argument("--ledger", default=LEDGER_PATH)
     ap.add_argument("--from", dest="src", default="nocedit.exe")
-    ap.add_argument("--to", dest="dst", default="nocturne.exe")
+    ap.add_argument("--to", dest="dst", default=None,
+                    help="target program. Default: nocturne.exe; for a ledger, "
+                         "the one program its entries name")
     ap.add_argument("--project-dir", default=os.path.join(REPO, "projects"))
     ap.add_argument("--project-name", default="NocturneEdit")
     ap.add_argument("--show", type=int, default=15)
@@ -913,15 +941,17 @@ def main():
                          "reset every register-pinned/FPU source's target back "
                          "to unsignatured so transfer_custom_storage.py can do "
                          "it properly")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     if args.revert_custom_storage:
+        args.dst = args.dst or "nocturne.exe"
         return revert(args)
 
     if args.source == "ledger":
         entries = load_ledger(args.ledger)
         if args.lint:
             return lint_ledger(entries, args.ledger)
+        args.dst = args.dst or ledger_program(entries)
         plan, skipped = build_plan_ledger(entries, args.dst, args.only,
                                           args.basis, args.min_confidence)
         print(f"ledger {args.ledger}: {len(plan)} entr(ies) for {args.dst}"
@@ -931,8 +961,9 @@ def main():
     else:
         if args.lint:
             sys.exit("ERROR: --lint applies to --source ledger")
+        args.dst = args.dst or "nocturne.exe"
         plan, skipped, src_dupes, dst_dupes = build_plan_namecore(args.src, args.dst)
-        report(plan, skipped, src_dupes, dst_dupes, args.show)
+        report(plan, skipped, src_dupes, dst_dupes, args.show, args.src, args.dst)
 
     if args.out:
         with open(args.out, "w") as fh:

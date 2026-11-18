@@ -7,7 +7,7 @@
 ; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[28]:
-;   cockpit_ckptutil.c_FUN_0042f330 at 0042f39b
+;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_0042f330 at 0042f39b
 ;   core_actor.cpp_archiveBox_FUN_0040bee0 at 0040befb
 ;   core_actor.cpp_archiveClothList_FUN_0040bfd0 at 0040bff0
 ;   core_actor.cpp_archiveDescription_FUN_0040b400 at 0040b41b

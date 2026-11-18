@@ -37,9 +37,9 @@ char __cdecl getValue(void);
 // Address: 00580830
 void __cdecl enqueueInput(int input_value);
 
-// Original: wincore_winrun.cpp_FUN_00580870
+// Original: wincore_winrun.cpp_setValue_FUN_00580870
 // Address: 00580870
-void FUN_00580870(undefined4 param_1);
+void __cdecl setValue(int val);
 
 // Original: wincore_winrun.cpp_plotClippedPixel_FUN_00580890
 // Address: 00580890
@@ -57,21 +57,21 @@ void __cdecl clearMouseClicks(void);
 // Address: 005809d0
 void __cdecl setCursorPosition(int x,int y);
 
-// Original: wincore_winrun.cpp_FUN_00580a50
+// Original: wincore_winrun.cpp_mainWindowProc_FUN_00580a50
 // Address: 00580a50
-LRESULT __stdcall FUN_00580a50(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
+LRESULT __stdcall mainWindowProc(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 
-// Original: wincore_winrun.cpp_FUN_00580f70
+// Original: wincore_winrun.cpp_processWindowMessages_FUN_00580f70
 // Address: 00580f70
-void __cdecl FUN_00580f70(void);
+void __cdecl processWindowMessages(void);
 
-// Original: wincore_winrun.cpp_FUN_00581010
+// Original: wincore_winrun.cpp_createMainWindow_FUN_00581010
 // Address: 00581010
-void FUN_00581010(void);
+void __cdecl createMainWindow(void);
 
-// Original: wincore_winrun.cpp_FUN_00581060
+// Original: wincore_winrun.cpp_destroyMainWindow_FUN_00581060
 // Address: 00581060
-void FUN_00581060(void);
+void __cdecl destroyMainWindow(void);
 
 // Original: wincore_winrun.cpp_winMain_FUN_00581080
 // Address: 00581080
@@ -81,9 +81,9 @@ int __stdcall winMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLin
 // Address: 00581300
 void __cdecl displayMessageBoxAndQuit(char *message);
 
-// Original: wincore_winrun.cpp_FUN_00581360
+// Original: wincore_winrun.cpp_getKeyName_FUN_00581360
 // Address: 00581360
-char * __cdecl FUN_00581360(EInputCodeType keycode);
+char * __cdecl getKeyName(EInputCodeType keycode);
 
 // Original: wincore_winrun.cpp_createMutex_FUN_00581920
 // Address: 00581920
@@ -109,9 +109,9 @@ HANDLE __cdecl createThread(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_par
 // Address: 005819e0
 int __cdecl setThreadPriority(HANDLE hThread,int priority_level);
 
-// Original: wincore_winrun.cpp_FUN_00581a20
+// Original: wincore_winrun.cpp_closeThread_FUN_00581a20
 // Address: 00581a20
-void FUN_00581a20(HANDLE param_1);
+void __cdecl closeThread(HANDLE thread_handle);
 
 // Original: wincore_winrun.cpp_sleep_FUN_00581a40
 // Address: 00581a40
@@ -129,9 +129,9 @@ void __cdecl getRegistryStringValue(char *key_path,char *value_name,char *output
 // Address: 00581bf0
 void __cdecl setRegistryStringValue(char *key_path,char *value_name,char *value_data);
 
-// Original: wincore_winrun.cpp_FUN_00581c70
+// Original: wincore_winrun.cpp_outputDebugString_FUN_00581c70
 // Address: 00581c70
-void FUN_00581c70(LPCSTR param_1);
+void __cdecl outputDebugString(LPCSTR message);
 
 // Original: wincore_winrun.cpp_initJoystick_FUN_00581c80
 // Address: 00581c80
@@ -145,58 +145,58 @@ void __cdecl doNothing2(void);
 // Address: 00581d10
 void __cdecl getJoystickState(void);
 
-// Original: wincore_winrun.cpp_FUN_00581e70
+// Original: wincore_winrun.cpp_normalizeControllerAxis_FUN_00581e70
 // Address: 00581e70
-float FUN_00581e70(int param_1,int *param_2,float param_3,float param_4);
+float __cdecl normalizeControllerAxis(int raw_value,int *axis_calibration,float out_min,float out_max);
 
-// Original: wincore_winrun.cpp_FUN_00581f50
+// Original: wincore_winrun.cpp_pollController_FUN_00581f50
 // Address: 00581f50
-void FUN_00581f50(int param_1);
+void __cdecl pollController(int controller_index);
 
-// Original: wincore_winrun.cpp_FUN_00582370
+// Original: wincore_winrun.cpp_pollAllControllers_FUN_00582370
 // Address: 00582370
-void FUN_00582370(void);
+void __cdecl pollAllControllers(void);
 
-// Original: wincore_winrun.cpp_FUN_005823a0
+// Original: wincore_winrun.cpp_initController_FUN_005823a0
 // Address: 005823a0
-void FUN_005823a0(int param_1,int param_2,UINT_PTR param_3);
+void __cdecl initController(int controller_index,int controller_type,uint pc_port);
 
-// Original: wincore_winrun.cpp_FUN_005824b0
+// Original: wincore_winrun.cpp_clearController_FUN_005824b0
 // Address: 005824b0
-void FUN_005824b0(int param_1);
+void __cdecl clearController(int controller_index);
 
-// Original: wincore_winrun.cpp_FUN_005824d0
+// Original: wincore_winrun.cpp_resetInputIdleTimers_FUN_005824d0
 // Address: 005824d0
-void FUN_005824d0(void);
+void __cdecl resetInputIdleTimers(void);
 
-// Original: wincore_winrun.cpp_FUN_00582500
+// Original: wincore_winrun.cpp_updateInputIdleTimers_FUN_00582500
 // Address: 00582500
-void FUN_00582500(float param_1);
+void __cdecl updateInputIdleTimers(float delta_time);
 
-// Original: wincore_winrun.cpp_FUN_00582580
+// Original: wincore_winrun.cpp_getInputIdleTime_FUN_00582580
 // Address: 00582580
-float FUN_00582580(void);
+float __cdecl getInputIdleTime(void);
 
-// Original: wincore_winrun.cpp_FUN_005825e0
+// Original: wincore_winrun.cpp_resetControllerCalibration_FUN_005825e0
 // Address: 005825e0
-void FUN_005825e0(int param_1);
+void __cdecl resetControllerCalibration(int controller_index);
 
-// Original: wincore_winrun.cpp_FUN_00582630
+// Original: wincore_winrun.cpp_pollControllerWrapper_FUN_00582630
 // Address: 00582630
-void FUN_00582630(undefined4 param_1);
+void __cdecl pollControllerWrapper(int controller_index);
 
-// Original: wincore_winrun.cpp_FUN_00582640
+// Original: wincore_winrun.cpp_calibrateControllerCenter_FUN_00582640
 // Address: 00582640
-undefined4 FUN_00582640(undefined4 param_1);
+void __cdecl calibrateControllerCenter(int controller_index);
 
-// Original: wincore_winrun.cpp_FUN_00582680
+// Original: wincore_winrun.cpp_saveControllerSettings_FUN_00582680
 // Address: 00582680
-void FUN_00582680(undefined4 param_1);
+void __cdecl saveControllerSettings(CIniFile *ini);
 
-// Original: wincore_winrun.cpp_FUN_00582830
+// Original: wincore_winrun.cpp_loadControllerSettings_FUN_00582830
 // Address: 00582830
-void FUN_00582830(void);
+void __cdecl loadControllerSettings(CIniFile *ini);
 
-// Original: wincore_winrun.cpp_FUN_00582aa0
-// Address: 00582aa0
-void FUN_00582aa0(void);
+// Original: wincore_winrun.cpp_positionMovieWindow_FUN_005829b0
+// Address: 005829b0
+void __cdecl positionMovieWindow(HWND parent_window);

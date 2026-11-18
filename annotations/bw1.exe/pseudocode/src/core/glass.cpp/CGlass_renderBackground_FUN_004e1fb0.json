@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 146,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
+    "pseudocode_lines": 79,
     "suspect_count": 5,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "stack_param",
+      "stack_ref",
+      "unrolled_memcpy"
     ],
-    "total_lines": 230
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -44,7 +44,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "004e1db0",
@@ -70,15 +70,15 @@
   "globals": [
     {
       "addr": "00601450",
-      "name": "DAT_00601450",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00601450",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "00622c18",
@@ -88,8 +88,8 @@
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -194,32 +194,32 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_ffffffc8",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffc8;",
+      "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);",
-      "type": "undefined_data"
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)&stack0xffffffc4;",
+      "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "this_ptr_00 = DAT_00612560;",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_ffffffc8",
+      "severity": "moderate",
+      "text": "core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(this_ptr_01,in_stack_ffffffc8);",
+      "type": "stack_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 33,
+      "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -227,7 +227,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 72,
+      "line": 74,
       "match": "pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);",

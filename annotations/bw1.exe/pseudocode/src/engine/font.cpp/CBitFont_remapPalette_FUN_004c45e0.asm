@@ -24,18 +24,18 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_005e0aa1
 ;   TerminatedCString s_CBitFont_remapPalette_In_005e0ab4
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c4e9d4
-;   undefined4 DAT_01c4e9d8
-;   undefined4 DAT_01c4e9e0
-;   undefined4 DAT_01c4e9e4
-;   undefined4 DAT_01c4e9ec
-;   undefined4 DAT_01c4e9f0
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_0061b4a0 = 0x8
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -66,7 +66,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 004c461c
     MOV EBP,dword ptr [ESP + 0x18]      ; 004c4620
     MOV dword ptr [ESP + 0x10],EAX      ; 004c4624
-    MOV EAX,[0x0061b4a0]                ; 004c4628 | DAT_0061b4a0
+    MOV EAX,[0x0061b4a0]                ; 004c4628 | g_INT_0061b4a0
         ;   Label: LAB_004c4628
     MOVZX EDI,byte ptr [EBP + 0x1b5]    ; 004c462d
     XOR EBX,EBX                         ; 004c4634
@@ -114,32 +114,32 @@ section .text
     POP ESI                             ; 004c46bc
     POP EBX                             ; 004c46bd
     RET                                 ; 004c46be
-    MOV ECX,dword ptr [0x01c4e9d8]      ; 004c46bf | DAT_01c4e9d8
+    MOV ECX,dword ptr [0x01c4e9d8]      ; 004c46bf | g_RedScaleFactor
         ;   Label: LAB_004c46bf
     MOV EAX,ESI                         ; 004c46c5
     XOR EDX,EDX                         ; 004c46c7
     DIV ECX                             ; 004c46c9
     MOV dword ptr [ESP],ESI             ; 004c46cb
-    MOV ESI,dword ptr [0x01c4e9e4]      ; 004c46ce | DAT_01c4e9e4
+    MOV ESI,dword ptr [0x01c4e9e4]      ; 004c46ce | g_GreenScaleFactor
     MOV dword ptr [ESP],EAX             ; 004c46d4
     XOR EDX,EDX                         ; 004c46d7
     MOV EAX,EDI                         ; 004c46d9
     DIV ESI                             ; 004c46db
     MOV dword ptr [ESP + 0x4],EDI       ; 004c46dd
-    MOV EDI,dword ptr [0x01c4e9f0]      ; 004c46e1 | DAT_01c4e9f0
+    MOV EDI,dword ptr [0x01c4e9f0]      ; 004c46e1 | g_BlueScaleFactor
     MOV dword ptr [ESP + 0x4],EAX       ; 004c46e7
     XOR EDX,EDX                         ; 004c46eb
     MOV EAX,EBX                         ; 004c46ed
     DIV EDI                             ; 004c46ef
     MOV dword ptr [ESP + 0x8],EBX       ; 004c46f1
-    MOV CL,byte ptr [0x01c4e9d4]        ; 004c46f5 | DAT_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 004c46f5 | g_RedBitPosition
     MOV dword ptr [ESP + 0x8],EAX       ; 004c46fb
     MOV EAX,dword ptr [ESP]             ; 004c46ff
     MOV EBX,dword ptr [ESP + 0x4]       ; 004c4702
     SHL EAX,CL                          ; 004c4706
-    MOV CL,byte ptr [0x01c4e9e0]        ; 004c4708 | DAT_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 004c4708 | g_GreenBitPosition
     SHL EBX,CL                          ; 004c470e
-    MOV CL,byte ptr [0x01c4e9ec]        ; 004c4710 | DAT_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 004c4710 | g_BlueBitPosition
     OR EBX,EAX                          ; 004c4716
     MOV EAX,dword ptr [ESP + 0x8]       ; 004c4718
     SHL EAX,CL                          ; 004c471c
@@ -153,11 +153,11 @@ section .text
         ;   Label: LAB_004c4734
     JNZ 0x004c4765                      ; 004c4736
         ;   XREF to: 004c4765 (CONDITIONAL_JUMP)  ; LAB_004c4765
-    MOV CL,byte ptr [0x01c4e9d4]        ; 004c4738 | DAT_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 004c4738 | g_RedBitPosition
     SHL ESI,CL                          ; 004c473e
-    MOV CL,byte ptr [0x01c4e9e0]        ; 004c4740 | DAT_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 004c4740 | g_GreenBitPosition
     SHL EDI,CL                          ; 004c4746
-    MOV CL,byte ptr [0x01c4e9ec]        ; 004c4748 | DAT_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 004c4748 | g_BlueBitPosition
     SHL EBX,CL                          ; 004c474e
     OR ESI,EDI                          ; 004c4750
     MOV ECX,EBX                         ; 004c4752
@@ -186,10 +186,10 @@ section .text
         ;   Label: LAB_004c478b
     MOV EDX,0x8e4                       ; 004c4790
     PUSH 0x5e0ab4                       ; 004c4795 | = "CBitFont::remapPalette - Invalid bits..."
-    MOV [0x01d1d400],EAX                ; 004c479a | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 004c479f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004c47a5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 004c479a | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 004c479f | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c47a5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004c47aa
     JMP 0x004c4655                      ; 004c47ad
         ;   XREF to: 004c4655 (UNCONDITIONAL_JUMP)  ; LAB_004c4655

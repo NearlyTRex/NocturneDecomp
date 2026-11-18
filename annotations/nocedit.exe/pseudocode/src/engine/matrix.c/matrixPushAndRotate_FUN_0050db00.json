@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "keep.c",
+  "compile_source": "c",
   "complexity": {
     "assembly_lines": 518,
-    "complexity_score": 241,
+    "complexity_score": 266,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 37,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 241,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_inlined_function"
+    ],
     "total_lines": 759
   },
   "cross_references": [],
@@ -331,26 +333,6 @@
     },
     "pcode_op_count": 4404
   },
-  "resolved_suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 3,
-      "match": "WARNING: Inlined function:",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    }
-  ],
   "siblings": {
     "nocturne.exe": {
       "addr": "004cdfa0",
@@ -389,5 +371,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 3,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    }
+  ]
 }

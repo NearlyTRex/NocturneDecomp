@@ -1,0 +1,137 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 38,
+    "complexity_score": 32,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00532630",
+    "address_range": [
+      [
+        "00532630",
+        "005326a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_updateHighlightedActors_FUN_00532630",
+    "signature": "void __cdecl core_set_cpp_updateHighlightedActors_FUN_00532630(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005d010f",
+      "name": "g_DOUBLE_005d010f",
+      "type": "double",
+      "value": "2.25"
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "01d5ba14",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0207bab8",
+      "name": "g_INT_0207bab8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0207babc",
+      "name": "g_INT_0207babc",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0207bac0",
+      "name": "g_FLOAT_0207bac0",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8125,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CALLOTHER": 1,
+      "CBRANCH": 3,
+      "COPY": 51,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_ADD": 1,
+      "INT_ADD": 11,
+      "INT_AND": 24,
+      "INT_EQUAL": 11,
+      "INT_LEFT": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 4,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 154
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0052bc60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7547
+    },
+    "bw1.exe": {
+      "addr": "0054cf40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7547
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `pCVar1->hero_action_target` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)pCVar1->hero_action_target",
+      "severity": "moderate",
+      "text": "g_INT_0207bab8 = (int)pCVar1->hero_action_target;",
+      "type": "pointer_truncation"
+    }
+  ]
+}

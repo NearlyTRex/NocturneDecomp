@@ -1,0 +1,599 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 581,
+    "complexity_score": 555,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 27,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 250,
+    "suspect_count": 29,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array"
+    ],
+    "total_lines": 831
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e3f40",
+    "address_range": [
+      [
+        "004e3f40",
+        "004e472c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gore.cpp_CBloodParticle_render_FUN_004e3f40",
+    "signature": "void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004e3f40(CBloodParticle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00552a70",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_computeLighting_FUN_00552a70"
+    },
+    {
+      "addr": "00483800",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00483800"
+    },
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    },
+    {
+      "addr": "004837b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0"
+    },
+    {
+      "addr": "00483050",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050"
+    },
+    {
+      "addr": "00483de0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0"
+    },
+    {
+      "addr": "004839a0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_pop_FUN_004839a0"
+    },
+    {
+      "addr": "00580173",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_00580173"
+    },
+    {
+      "addr": "0058043c",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformPoint_FUN_0058043c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e401d",
+      "name": "g_DOUBLE_005e401d",
+      "type": "double",
+      "value": "0.700000000000000"
+    },
+    {
+      "addr": "005e4025",
+      "name": "g_DOUBLE_005e4025",
+      "type": "double",
+      "value": "-0.100000000000000"
+    },
+    {
+      "addr": "005e402d",
+      "name": "g_DOUBLE_005e402d",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "006016a8",
+      "name": "g_FLOAT_006016a8",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "00612560",
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
+    },
+    {
+      "addr": "0061dcb4",
+      "name": "g_BloodParticleTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "0062902c",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629030",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629034",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].r",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629038",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062903c",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062905c",
+      "name": "g_SRenderVertex_ARRAY_00629014[1].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629060",
+      "name": "g_SRenderVertex_ARRAY_00629014[1].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629064",
+      "name": "g_SRenderVertex_ARRAY_00629014[1].r",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629068",
+      "name": "g_SRenderVertex_ARRAY_00629014[1].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062906c",
+      "name": "g_SRenderVertex_ARRAY_00629014[1].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062908c",
+      "name": "g_SRenderVertex_ARRAY_00629014[2].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629090",
+      "name": "g_SRenderVertex_ARRAY_00629014[2].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006290bc",
+      "name": "g_SRenderVertex_ARRAY_00629014[3].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006290c0",
+      "name": "g_SRenderVertex_ARRAY_00629014[3].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007c6120",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "01c51cac",
+      "name": "g_PerspectiveReciprocal",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0e68",
+      "name": "g_ParticleCameraRotation",
+      "type": "CVector3i",
+      "value": null
+    },
+    {
+      "addr": "01cd0e74",
+      "name": "g_BloodParticleViewDirection",
+      "type": "CVector3i",
+      "value": null
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.031657355679702,
+    "instruction_count": 537,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 48,
+      "BOOL_OR": 1,
+      "BRANCH": 4,
+      "CALL": 22,
+      "CALLIND": 2,
+      "CBRANCH": 7,
+      "COPY": 1352,
+      "FLOAT2FLOAT": 111,
+      "FLOAT_MULT": 43,
+      "FLOAT_SUB": 6,
+      "INT_ADD": 272,
+      "INT_AND": 251,
+      "INT_CARRY": 36,
+      "INT_EQUAL": 152,
+      "INT_LEFT": 10,
+      "INT_LESS": 8,
+      "INT_MULT": 30,
+      "INT_NOTEQUAL": 31,
+      "INT_OR": 50,
+      "INT_RIGHT": 12,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 37,
+      "INT_SEXT": 18,
+      "INT_SLESS": 87,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 131,
+      "INT_XOR": 21,
+      "INT_ZEXT": 24,
+      "LOAD": 123,
+      "POPCOUNT": 71,
+      "RETURN": 1,
+      "ROUND": 33,
+      "STORE": 190,
+      "SUBPIECE": 12,
+      "TRUNC": 33
+    },
+    "pcode_op_count": 3239
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004c7580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9824
+    },
+    "bw3.exe": {
+      "addr": "004ccbe0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.966
+    },
+    "nocedit.exe": {
+      "addr": "004ebac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3692
+    },
+    "nocturne.exe": {
+      "addr": "004ae190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3776
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodParticle *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004e3f4c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_10cc",
+      "severity": "moderate",
+      "text": "float afStackY_10cc [1000];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)this_ptr + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(float *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "pfVar6 = (float *)((int)this_ptr + (uint)bVar7 * -8 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 128,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].r",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].r + iVar3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 129,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].r",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].r + iVar3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 132,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].g",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].g + iVar3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 133,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].g",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].g + iVar3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 136,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].b",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].b + iVar3) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 149,
+      "match": "(int)&CStack_cc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_cc + (uint)bVar7 * -8 + 4) = *puVar5;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_cc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 150,
+      "match": "(int)&CStack_cc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_cc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 229,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].r",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].r + iVar3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 230,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].r",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].r + iVar3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 233,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].g",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].g + iVar3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 234,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].g",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].g + iVar3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 238,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].b",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].b + iVar3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SRenderVertex_ARRAY_00629014[0].b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 239,
+      "match": "(int)&g_SRenderVertex_ARRAY_00629014[0].b",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].b + iVar3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 128,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].r + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 129,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].r + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 132,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].g + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 133,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].g + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 136,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].b + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 149,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_cc + (uint)bVar7 * -8 + 4) = *puVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 150,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_cc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 229,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].r + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 230,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].r + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 233,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].g + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 234,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].g + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 238,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(longlong)*(int *)((int)&g_SRenderVertex_ARRAY_00629014[0].b + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 239,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_SRenderVertex_ARRAY_00629014[0].b + iVar3) =",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 8,
+        "vtable_addr": "006016d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

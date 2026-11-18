@@ -25,16 +25,16 @@ CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005a7620(CVehicle *this_pt
   pCVar5 = core_course_cpp_CCourse_ctor_FUN_00447d10((CCourse *)((int)pvVar4 + 0x6e4));
   pCVar5[-0x13c].frames = (CCourseFrame *)&g_CVehicleVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)&pCVar5[-0x13c].loop,(char *)0x5f8f84);
+            ((CKeyFramedModelInstance *)&pCVar5[-0x13c].loop,"32ford.kfm");
   pCVar5[-0x94].loop = 4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)&pCVar5[-0x92].loop,(char *)0x5f8f8f);
+            ((CKeyFramedModelInstance *)&pCVar5[-0x92].loop,"32ltire.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)&pCVar5[-0x49].frames,(char *)0x5f8f9b);
+            ((CKeyFramedModelInstance *)&pCVar5[-0x49].frames,"32ltire.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)(pCVar5 + -0x6d),(char *)0x5f8fa7);
+            ((CKeyFramedModelInstance *)(pCVar5 + -0x6d),"32rtire.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)&pCVar5[-0x25].loop,(char *)0x5f8fb3);
+            ((CKeyFramedModelInstance *)&pCVar5[-0x25].loop,"32rtire.kfm");
   pCVar5[-0x93].len = -0x3fe00000;
   pCVar5[-0x93].frames = (CCourseFrame *)0xc0200000;
   pCVar5[-0x93].loop = 0x40a00000;

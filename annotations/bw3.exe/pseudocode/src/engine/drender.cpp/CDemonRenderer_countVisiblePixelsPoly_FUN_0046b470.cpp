@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -17,7 +15,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b47
   SMRGLPrimitivePoly *pSVar4;
   uint local_14;
   
-  _DAT_01bdd810 = 0;
+  g_RenderPixelCounter = 0;
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403920(&(poly->base).surface_normal), iVar3 != 0)) {
     iVar3 = 0;
@@ -27,7 +25,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b47
       pSVar4 = poly;
       do {
         iVar1 = pSVar4->vertices[0].vertex_index;
-        *(int *)(&DAT_01bdd818 + iVar2) = iVar1;
+        *(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;
         iVar2 = iVar2 + 4;
         pSVar4 = (SMRGLPrimitivePoly *)&(pSVar4->base).surface_normal.B;
         iVar3 = iVar3 + 1;
@@ -36,18 +34,18 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b47
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
       if (this_ptr->shadow_pass_active == 0) {
-        _DAT_01c6e2b4 = 0xc0;
-        _DAT_01c6e2b8 = 6;
-        _DAT_01c6b5cc = core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_0046ffa5;
+        g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = 6;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_0046ffa5;
       }
       else {
-        _DAT_01d71de0 = "..\\engine\\drender.cpp";
-        _DAT_01d71de4 = 0x29d;
-        core_main_c_FUN_004e4330("Can't use demonZFacetCount in shadow mode!");
+        g_CHAR_PTR_01d71de0 = "..\\engine\\drender.cpp";
+        g_INT_01d71de4 = 0x29d;
+        core_main_c_displayErrorAndQuit_FUN_004e4330("Can't use demonZFacetCount in shadow mode!");
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
-                (this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);
-      iVar3 = _DAT_01bdd810;
+                (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
+      iVar3 = g_RenderPixelCounter;
     }
     else {
       iVar3 = 0;

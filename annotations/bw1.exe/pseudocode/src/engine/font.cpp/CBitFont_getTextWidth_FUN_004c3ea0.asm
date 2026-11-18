@@ -9,13 +9,13 @@
 ;
 ; XREF[32]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00481060 at 00481070
-;   core_flashlit.cpp_FUN_004b9e30 at 004b9ebf
+;   core_flashlit.cpp_updateTooltip_FUN_004b9e30 at 004b9ebf
 ;   core_fldnotes.cpp_SPageResourceText_ctor_FUN_004ba850 at 004ba8a5
 ;   core_fldnotes.cpp_STextView_appendWord_FUN_004bbb90 at 004bbbd9
 ;   core_fldnotes.cpp_STextView_wordFits_FUN_004bbb30 at 004bbb40
 ;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0 at 004cc792
-;   core_inv.cpp_FUN_004f7690 at 004f83f1
-;   core_inv.cpp_FUN_004fae10 at 004fafd3
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f83f1
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 at 004fafd3
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fef05
 ;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503845
 ;   ... and 22 more

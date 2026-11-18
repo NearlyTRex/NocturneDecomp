@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004a88e0 at 004a8c6d
+;   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004a88e0 at 004a8c6d
 ;
 ; *****************************************************************************
 

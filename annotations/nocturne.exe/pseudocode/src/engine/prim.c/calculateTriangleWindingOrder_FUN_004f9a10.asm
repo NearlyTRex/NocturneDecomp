@@ -28,7 +28,7 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006b0280
+;   int g_CullingMode
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004f9a19
     MOV EAX,dword ptr [EBP + 0x18]      ; 004f9a1c
     MOV ECX,dword ptr [EBP + 0x1c]      ; 004f9a1f
-    CMP dword ptr [0x006b0280],0x1      ; 004f9a22 | DAT_006b0280
+    CMP dword ptr [0x006b0280],0x1      ; 004f9a22 | g_CullingMode
     JNZ 0x004f9a93                      ; 004f9a29
         ;   XREF to: 004f9a93 (CONDITIONAL_JUMP)  ; LAB_004f9a93
     MOV EDI,dword ptr [EBX + 0x10]      ; 004f9a2b

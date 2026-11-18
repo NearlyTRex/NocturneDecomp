@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 14,
+    "complexity_score": 29,
     "cross_reference_count": 56,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 14,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
     "total_lines": 36
   },
   "cross_references": [
@@ -94,7 +96,7 @@
     {
       "addr": "0043a130",
       "from_addr": "0043a1bc",
-      "name": "core_crate.cpp_FUN_0043a130",
+      "name": "core_crate.cpp_CCrate_renderOpaque_FUN_0043a130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -236,21 +238,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e7820",
-      "from_addr": "004e7848",
-      "name": "core_manpuz.cpp_CMirrorHack_renderOpaque_FUN_004e7820",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004e6340",
       "from_addr": "004e638c",
-      "name": "core_manpuz.cpp_FUN_004e6340",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e6820",
       "from_addr": "004e68a1",
-      "name": "core_manpuz.cpp_FUN_004e6820",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7820",
+      "from_addr": "004e7848",
+      "name": "core_manpuz.cpp_CMirrorHack_renderOpaque_FUN_004e7820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -588,5 +590,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex address 0x44fcd5 assigned to bare local `render_flags_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `render_flags_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 10,
+      "match": "0x44fcd5",
+      "severity": "moderate",
+      "text": "render_flags_00 = 0x44fcd5;",
+      "type": "raw_address_constant"
+    }
+  ]
 }

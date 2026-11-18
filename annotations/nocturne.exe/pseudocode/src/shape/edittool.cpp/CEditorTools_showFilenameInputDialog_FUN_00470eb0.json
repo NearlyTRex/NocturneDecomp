@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 469,
+    "complexity_score": 455,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 204,
-    "suspect_count": 23,
+    "pseudocode_lines": 205,
+    "suspect_count": 22,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 642
+    "total_lines": 643
   },
   "cross_references": [
     {
@@ -210,7 +209,7 @@
     },
     {
       "addr": "005b7630",
-      "name": "INT_005b7630",
+      "name": "g_InputKeyMask",
       "type": "int",
       "value": "0x7f"
     },
@@ -228,32 +227,32 @@
     },
     {
       "addr": "01bcd070",
-      "name": "DAT_01bcd070",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01bcd070",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01bcd9b8",
-      "name": "DAT_01bcd9b8",
-      "type": "undefined4",
+      "name": "g_EditorFontMaxCharWidth",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcd9bc",
-      "name": "DAT_01bcd9bc",
-      "type": "undefined4",
+      "name": "g_INT_01bcd9bc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddf0",
-      "name": "DAT_01bcddf0",
-      "type": "undefined4",
+      "name": "g_DialogTextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddf4",
-      "name": "DAT_01bcddf4",
-      "type": "undefined4",
+      "name": "g_ActiveItemTextColor",
+      "type": "int",
       "value": null
     },
     {
@@ -270,7 +269,7 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     },
@@ -499,14 +498,6 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 131,
       "match": "(CInputString *)((int)pCVar6",
@@ -588,7 +579,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -596,7 +587,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -644,7 +635,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 61,
+      "line": 60,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -676,7 +667,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

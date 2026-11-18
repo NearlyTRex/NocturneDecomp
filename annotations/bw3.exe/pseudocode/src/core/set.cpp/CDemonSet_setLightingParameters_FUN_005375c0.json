@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 152,
+    "complexity_score": 97,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 8,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -69,31 +68,31 @@
     {
       "addr": "005365c0",
       "from_addr": "00536831",
-      "name": "core_set.cpp_FUN_005365c0",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00536990",
       "from_addr": "00536bf4",
-      "name": "core_set.cpp_FUN_00536990",
+      "name": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00536c90",
       "from_addr": "00536dd6",
-      "name": "core_set.cpp_FUN_00536c90",
+      "name": "core_set.cpp_CDemonSet_renderOpaqueActors_FUN_00536c90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00536f90",
       "from_addr": "005370d9",
-      "name": "core_set.cpp_FUN_00536f90",
+      "name": "core_set.cpp_CDemonSet_renderTransparentActors_FUN_00536f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057c890",
       "from_addr": "0057c977",
-      "name": "core_weather.cpp_FUN_0057c890",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_0057c890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -113,14 +112,14 @@
   "globals": [
     {
       "addr": "0207ffa8",
-      "name": "DAT_0207ffa8",
-      "type": "undefined4",
+      "name": "g_LightingSystemDirty",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0207ffac",
-      "name": "DAT_0207ffac",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207ffac",
+      "type": "float",
       "value": null
     },
     {
@@ -131,14 +130,14 @@
     },
     {
       "addr": "0207ffb4",
-      "name": "DAT_0207ffb4",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207ffb4",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0207ffb8",
-      "name": "DAT_0207ffb8",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207ffb8",
+      "type": "float",
       "value": null
     },
     {
@@ -149,14 +148,14 @@
     },
     {
       "addr": "0207ffc0",
-      "name": "DAT_0207ffc0",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207ffc0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0207ffc4",
-      "name": "DAT_0207ffc4",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207ffc4",
+      "type": "float",
       "value": null
     },
     {
@@ -167,14 +166,14 @@
     },
     {
       "addr": "0207ffcc",
-      "name": "DAT_0207ffcc",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207ffcc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0207ffd0",
-      "name": "DAT_0207ffd0",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207ffd0",
+      "type": "float",
       "value": null
     },
     {
@@ -185,61 +184,61 @@
     },
     {
       "addr": "0207ffd8",
-      "name": "DAT_0207ffd8",
-      "type": "undefined4",
+      "name": "g_FLOAT_0207ffd8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0207ffdc",
-      "name": "DAT_0207ffdc",
-      "type": "undefined4",
+      "name": "g_LightingRotationMatrix",
+      "type": "CMatrix3x3f",
       "value": null
     },
     {
       "addr": "0207ffe0",
-      "name": "DAT_0207ffe0",
+      "name": "g_LightingRotationMatrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0207ffe4",
-      "name": "DAT_0207ffe4",
+      "name": "g_LightingRotationMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0207ffe8",
-      "name": "DAT_0207ffe8",
+      "name": "g_LightingRotationMatrix.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0207ffec",
-      "name": "DAT_0207ffec",
+      "name": "g_LightingRotationMatrix.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0207fff0",
-      "name": "DAT_0207fff0",
+      "name": "g_LightingRotationMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0207fff4",
-      "name": "DAT_0207fff4",
+      "name": "g_LightingRotationMatrix.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0207fff8",
-      "name": "DAT_0207fff8",
+      "name": "g_LightingRotationMatrix.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0207fffc",
-      "name": "DAT_0207fffc",
+      "name": "g_LightingRotationMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -294,7 +293,7 @@
       {
         "call_addr": "00536831",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005365c0",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,7 +304,7 @@
       {
         "call_addr": "00536bf4",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00536990",
+        "caller": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -316,7 +315,7 @@
       {
         "call_addr": "00536dd6",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00536c90",
+        "caller": "core_set.cpp_CDemonSet_renderOpaqueActors_FUN_00536c90",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -327,7 +326,7 @@
       {
         "call_addr": "005370d9",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00536f90",
+        "caller": "core_set.cpp_CDemonSet_renderTransparentActors_FUN_00536f90",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,7 +337,7 @@
       {
         "call_addr": "0057c977",
         "call_type": "direct",
-        "caller": "core_weather.cpp_FUN_0057c890",
+        "caller": "core_weather.cpp_CWeather_renderParticles_FUN_0057c890",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -476,46 +475,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0207ffac",
-      "severity": "mild",
-      "text": "if (position != (CVector3f *)&DAT_0207ffac) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0207ffb8",
-      "severity": "mild",
-      "text": "if (orientation != (UOrientationVector *)&DAT_0207ffb8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0207ffc4",
-      "severity": "mild",
-      "text": "if (aabb_min != (CVector3f *)&DAT_0207ffc4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_0207ffd0",
-      "severity": "mild",
-      "text": "if (aabb_max != (CVector3f *)&DAT_0207ffd0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_0207ffdc",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)&DAT_0207ffdc;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(CMatrix3x3f *)((int)rotation_matrix",
@@ -528,7 +487,7 @@
       "line": 52,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0053765b: MOVSD.REP ES:EDI,ESI  ; DAT_0207ffdc | DAT_0207ffe0",
+      "text": "// 0053765b: MOVSD.REP ES:EDI,ESI  ; g_LightingRotationMatrix | g_LightingRotationMatrix.m[0].y",
       "type": "unrolled_memcpy"
     }
   ]

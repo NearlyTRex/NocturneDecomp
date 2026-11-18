@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(CDemonMission *this_ptr)
 
 {
@@ -18,9 +16,9 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(CDemo
   for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor) {
     if (this_ptr->current_set_index == (pCVar1->location).area_id) {
       if (1999 < g_CDemonSetPtr->actor_count) {
-        _DAT_01d71de0 = "..\\core\\mission.cpp";
-        _DAT_01d71de4 = 0x394;
-        core_main_c_FUN_004e4330("CDemonMission::buildSetActorList - Too many actors in current set!");
+        g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
+        g_INT_01d71de4 = 0x394;
+        core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::buildSetActorList - Too many actors in current set!");
       }
       pCVar2 = g_CDemonSetPtr;
       g_CDemonSetPtr->actors[g_CDemonSetPtr->actor_count] = pCVar1;
@@ -28,6 +26,6 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(CDemo
     }
   }
   core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0(g_CDemonSetPtr);
-  core_set_cpp_FUN_0053b460(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0053b460(g_CDemonSetPtr);
   return;
 }

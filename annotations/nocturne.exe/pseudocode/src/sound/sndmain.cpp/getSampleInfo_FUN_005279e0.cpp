@@ -59,8 +59,8 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005279e0(CSfxSample *out_sample)
     if (iVar4 != 0) {
       iVar4 = _stricmp(&local_114,"mp3");
       if (iVar4 == 0) {
-        if ((DAT_02dbd348 & 1) == 0) {
-          DAT_02dbd348 = DAT_02dbd348 | 1;
+        if ((g_BYTE_02dbd348 & 1) == 0) {
+          g_BYTE_02dbd348 = g_BYTE_02dbd348 | 1;
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(&g_CMP3DecoderInstanceOther);
           _atexit(&g_CMP3DecoderDestructorNode2);
         }

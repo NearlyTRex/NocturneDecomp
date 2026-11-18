@@ -11,12 +11,12 @@
 ; int              Stack[0x14]:4   height
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
+;   int g_INT_005fba20 = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00434e80
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 00435b57
     MOV ESI,dword ptr [ESP + 0x3c]      ; 00435b5b
     MOV EDI,dword ptr [ESP + 0x40]      ; 00435b5f
-    MOV EDX,dword ptr [0x01c5faec]      ; 00435b63 | DAT_01c5faec
-    MOV EBP,dword ptr [0x01c5faf0]      ; 00435b69 | DAT_01c5faf0
+    MOV EDX,dword ptr [0x01c5faec]      ; 00435b63 | g_ScreenBufferArray
+    MOV EBP,dword ptr [0x01c5faf0]      ; 00435b69 | g_ScreenBufferArray[1]
     SUB EBP,EDX                         ; 00435b6f
     MOV dword ptr [ESP + 0x8],EBP       ; 00435b71
     TEST EBX,EBX                        ; 00435b75
@@ -47,12 +47,12 @@ section .text
     POP ESI                             ; 00435b85
     POP EBX                             ; 00435b86
     RET                                 ; 00435b87
-    CALL cockpit_ckptutil.c_FUN_00434e80 ; 00435b88
-        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_00434e80()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80 ; 00435b88
+        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
         ;   Label: LAB_00435b88
     MOV dword ptr [ESP + 0xc],EAX       ; 00435b8d
     MOV EAX,dword ptr [ESP + 0x38]      ; 00435b91
-    MOV ECX,dword ptr [0x005fba20]      ; 00435b95 | DAT_005fba20
+    MOV ECX,dword ptr [0x005fba20]      ; 00435b95 | g_INT_005fba20
     SHL EAX,0x2                         ; 00435b9b
     CMP ECX,0x8                         ; 00435b9e
     JNZ 0x00435be0                      ; 00435ba1

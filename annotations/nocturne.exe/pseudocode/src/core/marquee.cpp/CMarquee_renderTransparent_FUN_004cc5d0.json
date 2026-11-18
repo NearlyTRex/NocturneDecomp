@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 241,
-    "complexity_score": 212,
+    "complexity_score": 197,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 112,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_truncation",
-      "undefined_data",
       "unknown_field",
       "unrolled_memcpy"
     ],
@@ -76,8 +75,8 @@
     },
     {
       "addr": "005badbc",
-      "name": "DAT_005badbc",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_005badbc",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
@@ -88,8 +87,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -346,14 +345,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005badbc",
-      "severity": "mild",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);",
-      "type": "undefined_data"
-    },
     {
       "description": "Unknown/mangled field access",
       "line": 75,

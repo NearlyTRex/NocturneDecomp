@@ -41,17 +41,17 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004d8720(CDemonMission
     } while (iVar5 < this_ptr->num_sets);
   }
   _fprintf(file_handle,"// actorTypeList\n");
-  _fprintf(file_handle,"%d\n",DAT_00763e94);
+  _fprintf(file_handle,"%d\n",g_NumActorClassTypes);
   core_actor_cpp_syncActorTypeIDs_FUN_0040d8c0();
   iVar5 = 0;
-  if (0 < DAT_00763e94) {
+  if (0 < g_NumActorClassTypes) {
     iVar8 = 0;
     do {
-      piVar1 = (int *)((int)&DAT_00763e98 + iVar8);
+      piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);
       iVar8 = iVar8 + 4;
       iVar5 = iVar5 + 1;
       _fprintf(file_handle,"%s %d\n",*piVar1,*(uint *)(*piVar1 + 0x34));
-    } while (iVar5 < DAT_00763e94);
+    } while (iVar5 < g_NumActorClassTypes);
   }
   _fprintf(file_handle,"// actor count\n");
   iVar5 = core_mission_cpp_CDemonMission_countActors_FUN_004d8d80(this_ptr);
@@ -59,8 +59,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004d8720(CDemonMission
   iVar5 = 0;
   _fprintf(file_handle,"// inventory actor count\n");
   for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
-    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,g_CHeroActorType_01cae0ec.name_hash)
-    ;
+    pCVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,g_CHeroClassInfo.name_hash);
     if (pCVar3 != (CDemonActor *)0x0) {
       iVar5 = iVar5 + (int)pCVar3[0x17e].orient_matrix.m[1].x;
     }
@@ -82,8 +81,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004d8720(CDemonMission
     this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
   }
   for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
-    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,g_CHeroActorType_01cae0ec.name_hash)
-    ;
+    pCVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,g_CHeroClassInfo.name_hash);
     if (pCVar3 != (CDemonActor *)0x0) {
       this_ptr_00 = &pCVar3[0x17e].orient_matrix.m[0].y;
       pfVar6 = this_ptr_00;

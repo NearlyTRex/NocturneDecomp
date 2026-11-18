@@ -9,13 +9,13 @@
 // Address: 00408270
 void __cdecl staticInit(void);
 
-// Original: core_actor.cpp_FUN_00408290
+// Original: core_actor.cpp_rayCylinderIntersect_FUN_00408290
 // Address: 00408290
-float FUN_00408290(int param_1,float *param_2,float *param_3,float *param_4);
+float __cdecl rayCylinderIntersect(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
-// Original: core_actor.cpp_FUN_00408730
+// Original: core_actor.cpp_deleteActor_FUN_00408730
 // Address: 00408730
-void FUN_00408730(int param_1);
+void __cdecl deleteActor(CDemonActor *actor_ptr);
 
 // Original: core_actor.cpp_initTransformCache_FUN_00408750
 // Address: 00408750
@@ -33,9 +33,9 @@ CDemonActor * __cdecl CDemonActor::dtor(CDemonActor *this_ptr,uint flags);
 // Address: 00408980
 void __cdecl CDemonActor::process(CDemonActor *this_ptr,float delta_time);
 
-// Original: core_actor.cpp_FUN_004089b0
+// Original: core_actor.cpp_CDemonActor_renderTransparent_FUN_004089b0
 // Address: 004089b0
-undefined4 FUN_004089b0(void);
+int __cdecl CDemonActor::renderTransparent(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_renderBackground_FUN_004089c0
 // Address: 004089c0
@@ -53,17 +53,17 @@ void __cdecl CDemonActor::restoreRenderState(CDemonActor *this_ptr);
 // Address: 00408a20
 CDemonActorType * __cdecl CDemonActor::getActorType(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00408a50
+// Original: core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 // Address: 00408a50
-void FUN_00408a50(int param_1);
+char * __cdecl CDemonActor::getActorClassName(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_setup_FUN_00408a80
 // Address: 00408a80
 void __cdecl CDemonActor::setup(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00408ac0
+// Original: core_actor.cpp_CDemonActor_markResourcesInUse_FUN_00408ac0
 // Address: 00408ac0
-void FUN_00408ac0(void);
+void __cdecl CDemonActor::markResourcesInUse(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
 // Address: 00408ae0
@@ -71,7 +71,7 @@ void __cdecl CDemonActor::updateOrientationMatrix(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408b40
 // Address: 00408b40
-CBoundingBox3D * __cdecl CDemonActor::getBoundingBox(CDemonActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CDemonActor::getBoundingBox(CDemonActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_actor.cpp_CDemonActor_getCollisionType_FUN_00408b80
 // Address: 00408b80
@@ -89,29 +89,29 @@ void __cdecl CDemonActor::customIntersectCylinderXZ(CDemonActor *this_ptr,SInter
 // Address: 00408bf0
 int __cdecl CDemonActor::customGetFloorHeight(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
-// Original: core_actor.cpp_FUN_00408c20
+// Original: core_actor.cpp_CDemonActor_getGroundType_FUN_00408c20
 // Address: 00408c20
-undefined4 FUN_00408c20(void);
+EGroundType __cdecl CDemonActor::getGroundType(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30
 // Address: 00408c30
 float __cdecl CDemonActor::cylinderGroundCheck(CDemonActor *this_ptr,float radius,CVector3f *out_normal);
 
-// Original: core_actor.cpp_FUN_00408cf0
+// Original: core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 // Address: 00408cf0
-void FUN_00408cf0(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi CDemonActor::transformVector(CDemonActor *this_ptr,CVector3f *input,CVector3f *output);
 
-// Original: core_actor.cpp_FUN_00408d30
+// Original: core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30
 // Address: 00408d30
-void FUN_00408d30(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi CDemonActor::inverseTransformVector(CDemonActor *this_ptr,CVector3f *input_vector,CVector3f *output_vector);
 
-// Original: core_actor.cpp_FUN_00408d70
+// Original: core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 // Address: 00408d70
-void FUN_00408d70(int param_1,undefined4 param_2);
+CVector3f * __stack2_esi CDemonActor::localToWorldPoint(CDemonActor *this_ptr,CVector3f *input_local_point,CVector3f *output_world_point);
 
-// Original: core_actor.cpp_FUN_00408de0
+// Original: core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 // Address: 00408de0
-void FUN_00408de0(int param_1,float *param_2);
+CVector3f * __stack2_esi CDemonActor::worldToLocalPoint(CDemonActor *this_ptr,CVector3f *input_world_point,CVector3f *output_local_point);
 
 // Original: core_actor.cpp_CDemonActor_playSound_FUN_00408e50
 // Address: 00408e50
@@ -129,9 +129,9 @@ uint __cdecl CDemonActor::playSoundWithDelay(CDemonActor *this_ptr,char *sound_n
 // Address: 00408ec0
 uint __cdecl CDemonActor::playAmbientSoundWithDelay(CDemonActor *this_ptr,char *sound_name,float delay);
 
-// Original: core_actor.cpp_FUN_00408ef0
+// Original: core_actor.cpp_CDemonActor_pickup_FUN_00408ef0
 // Address: 00408ef0
-void FUN_00408ef0(void);
+void __cdecl CDemonActor::pickup(CDemonActor *this_ptr,CDemonActor *carrier);
 
 // Original: core_actor.cpp_CDemonActor_testCylinderCollision_FUN_00408f00
 // Address: 00408f00
@@ -141,13 +141,13 @@ int __cdecl CDemonActor::testCylinderCollision(CDemonActor *this_ptr,SCollisionR
 // Address: 00408f90
 int __cdecl CDemonActor::testLineIntersection(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 
-// Original: core_actor.cpp_FUN_004090f0
+// Original: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0
 // Address: 004090f0
-undefined4 * FUN_004090f0(int param_1,int param_2,uint param_3);
+CBoundingBox3D * __stack3_esi CDemonActor::getWorldBoundingBox(CDemonActor *this_ptr,SCollisionInfo *collision_info,int bounding_box_type,CBoundingBox3D *output_bbox);
 
-// Original: core_actor.cpp_FUN_004093a0
+// Original: core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0
 // Address: 004093a0
-float FUN_004093a0(int param_1,CBoundingBox3D *param_2,float *param_3,undefined4 *param_4,int param_5,uint param_6,CBoundingBox3D *param_7);
+float __cdecl CDemonActor::rayIntersect(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 
 // Original: core_actor.cpp_CDemonActor_onLaserHit_FUN_00409830
 // Address: 00409830
@@ -377,21 +377,21 @@ uint __cdecl CDemonActor::processFootstepAtOffset(CDemonActor *this_ptr,CVector3
 // Address: 0040cb60
 uint __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 
-// Original: core_actor.cpp_FUN_0040ce40
+// Original: core_actor.cpp_CDemonActor_startParticleSystem_FUN_0040ce40
 // Address: 0040ce40
-void FUN_0040ce40(int param_1,int param_2,int param_3);
+void __cdecl CDemonActor::startParticleSystem(CDemonActor *this_ptr,int index,int reset_fade);
 
-// Original: core_actor.cpp_FUN_0040ce70
+// Original: core_actor.cpp_CDemonActor_stopParticleSystem_FUN_0040ce70
 // Address: 0040ce70
-void FUN_0040ce70(int param_1,int param_2,int param_3);
+void __cdecl CDemonActor::stopParticleSystem(CDemonActor *this_ptr,int index,int fade_out);
 
-// Original: core_actor.cpp_FUN_0040cea0
+// Original: core_actor.cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0
 // Address: 0040cea0
-void FUN_0040cea0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl CDemonActor::setParticleSystemFade(CDemonActor *this_ptr,int index,float fade_start,float fade_end,float fade_duration);
 
-// Original: core_actor.cpp_FUN_0040ced0
+// Original: core_actor.cpp_CDemonActor_doNothing_FUN_0040ced0
 // Address: 0040ced0
-void FUN_0040ced0(void);
+void __cdecl CDemonActor::doNothing(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_setRandomSeed_FUN_0040cee0
 // Address: 0040cee0
@@ -437,21 +437,21 @@ void __cdecl crc32ProcessVector(uint *crc_state,CVector3f *vector);
 // Address: 0040d2e0
 void __cdecl crc32ProcessString(uint *crc_state,char *string);
 
-// Original: core_actor.cpp_FUN_0040d320
+// Original: core_actor.cpp_sqrtFloatRef_FUN_0040d320
 // Address: 0040d320
-float FUN_0040d320(float *param_1);
+float __cdecl sqrtFloatRef(float *value);
 
 // Original: core_actor.cpp_CVector3f_ctor_FUN_0040d340
 // Address: 0040d340
 CVector3f * __cdecl CVector3f::ctor(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040d350
+// Original: core_actor.cpp_copyVector_FUN_0040d350
 // Address: 0040d350
-void FUN_0040d350(undefined4 *param_1,undefined4 *param_2);
+void __cdecl copyVector(CVector3f *dst_ptr,CVector3f *src_ptr);
 
-// Original: core_actor.cpp_FUN_0040d370
+// Original: core_actor.cpp_CVector3f_length_FUN_0040d370
 // Address: 0040d370
-float FUN_0040d370(float *param_1);
+float __cdecl CVector3f::length(CVector3f *this_ptr);
 
 // Original: core_actor.cpp_CVector3f_toFixed8_FUN_0040d3c0
 // Address: 0040d3c0
@@ -461,6 +461,6 @@ void __cdecl CVector3f::toFixed8(CVector3f *this_ptr,CVector3i *other);
 // Address: 0040d3f0
 CVector3f * __cdecl CVector3f::dtor(CVector3f *this_ptr,uint flags);
 
-// Original: core_actor.cpp_FUN_0040d400
+// Original: core_actor.cpp_CVector3f_arrdtor10_FUN_0040d400
 // Address: 0040d400
-void FUN_0040d400(void *param_1);
+CVector3f * __cdecl CVector3f::arrdtor10(CVector3f *this_ptr,uint flags);

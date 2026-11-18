@@ -10,7 +10,7 @@ void __cdecl core_emitter_cpp_staticInit_FUN_0049ede0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CEmitterClassInfo,";CEmitter" + 1,
+            (&g_CEmitterClassInfo,"CEmitter",
              core_emitter_cpp_factoryFuncEmitter_FUN_0049ee10,&g_CEmitterClassVersion,0xe,
              &g_CDemonActorClassInfo);
   return;

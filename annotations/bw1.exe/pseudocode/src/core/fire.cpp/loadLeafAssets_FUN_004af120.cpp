@@ -13,7 +13,7 @@ void __cdecl core_fire_cpp_loadLeafAssets_FUN_004af120(void)
   int iVar1;
   char local_6c [100];
   
-  this_ptr = (CKeyFramedModelInstance *)0x1c576a8;
+  this_ptr = &g_CKeyFramedModelInstance_01c576a8;
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 1;

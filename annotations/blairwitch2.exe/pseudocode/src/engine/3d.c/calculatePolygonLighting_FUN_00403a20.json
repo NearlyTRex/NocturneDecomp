@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 23,
-    "cross_reference_count": 20,
+    "complexity_score": 7,
+    "cross_reference_count": 21,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 23
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
   },
   "cross_references": [
     {
@@ -112,6 +110,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004055d0",
+      "from_addr": "0040564f",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_004055d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00405190",
       "from_addr": "004051e3",
       "name": "engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00405190",
@@ -158,13 +162,13 @@
   "globals": [
     {
       "addr": "01c35e64",
-      "name": "DAT_01c35e64",
-      "type": "undefined4",
+      "name": "g_CurrentLightingValue",
+      "type": "int",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 20,
+    "call_site_count": 21,
     "call_sites": [
       {
         "call_addr": "00403d2b",
@@ -345,14 +349,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

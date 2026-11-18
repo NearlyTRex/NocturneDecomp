@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 140,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 7,
-    "suspect_types": [
-      "extra_output",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 212
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -51,9 +48,9 @@
   "globals": [
     {
       "addr": "005e6a03",
-      "name": "DAT_005e6a03",
-      "type": "undefined4",
-      "value": null
+      "name": "g_NormalTo16BitScale1",
+      "type": "double",
+      "value": "65535"
     }
   ],
   "param_estimates": {
@@ -253,62 +250,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "int extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_EDX + 8) = (int)ROUND(fVar12);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar13);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 59,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_EDX + 0x10) = (int)ROUND(fVar14);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 62,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(fVar11);",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

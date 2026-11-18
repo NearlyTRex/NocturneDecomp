@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDemonActor *actor_ptr)
 
 {
@@ -57,7 +55,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c600
                            (actor_ptr,g_CBoxActorClassInfo.name_hash);
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-                  (0x01C51D80,pCVar3[4].create_event + 0x28);
+                  (g_CEventListPtr,pCVar3[4].create_event + 0x28);
         return 0;
       }
     }
@@ -66,11 +64,12 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
                  core_actor_cpp_castToClassHash_FUN_0040c600
                            (actor_ptr,g_CHealthItemClassInfo.name_hash);
       if (local_14 == (CHealthItem *)0x0) {
-        _DAT_01d1d400 = "..\\core\\inv.cpp";
-        _DAT_01d1d404 = 0x726;
-        core_main_c_FUN_005030e0("CInventory::select - Catch 22");
+        g_CHAR_PTR_01d1d400 = "..\\core\\inv.cpp";
+        g_INT_01d1d404 = 0x726;
+        core_main_c_displayErrorAndQuit_FUN_005030e0("CInventory::select - Catch 22");
       }
-      if ((float)_DAT_005e67f0 < *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x2538)) {
+      if ((float)98 < (g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->base).hit_points)
+      {
         return 1;
       }
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("You have used : ");
@@ -105,7 +104,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
         pcVar8[1] = cVar1;
         pcVar8 = pcVar8 + 2;
       } while (cVar1 != '\0');
-      pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005e67ce);
+      pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090(".");
       iVar2 = -1;
       pcVar4 = local_114;
       do {
@@ -128,9 +127,9 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
       } while (cVar1 != '\0');
       core_game_cpp_CGame_displayMessage_FUN_004cc190(g_CGamePtr,local_114,5.0);
       iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004ea530
-                        (local_14,*(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4));
+                        (local_14,&g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->base);
       if (iVar2 < 1) {
-        core_inv_cpp_FUN_004f8d00(this_ptr,actor_ptr,1);
+        core_inv_cpp_CInventory_removeItem_FUN_004f8d00(this_ptr,actor_ptr,1);
         return 1;
       }
     }
@@ -138,9 +137,9 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
   else {
     pCVar3 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,g_CAmmoClassInfo.name_hash);
     if (pCVar3 == (CDemonActor *)0x0) {
-      _DAT_01d1d400 = "..\\core\\inv.cpp";
-      _DAT_01d1d404 = 0x720;
-      core_main_c_FUN_005030e0("CInventory::select - Catch 22");
+      g_CHAR_PTR_01d1d400 = "..\\core\\inv.cpp";
+      g_INT_01d1d404 = 0x720;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CInventory::select - Catch 22");
     }
     core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
               (this_ptr,pCVar3[2].validation_magic);

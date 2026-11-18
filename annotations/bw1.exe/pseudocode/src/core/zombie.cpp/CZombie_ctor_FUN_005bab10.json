@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 82,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 2,
+    "pseudocode_lines": 51,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 140
+    "total_lines": 139
   },
   "cross_references": [
     {
@@ -65,15 +64,15 @@
   "globals": [
     {
       "addr": "006083ac",
-      "name": "DAT_006083ac",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006083ac",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "006083b0",
-      "name": "DAT_006083b0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_006083b0",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "00622c18",
@@ -172,16 +171,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 29,
+      "line": 27,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

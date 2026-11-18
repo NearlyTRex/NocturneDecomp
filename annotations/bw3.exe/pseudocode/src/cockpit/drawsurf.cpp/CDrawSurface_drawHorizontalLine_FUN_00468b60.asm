@@ -15,16 +15,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005bc2b5
 ;   TerminatedCString s_Invalid_bitsPerPixel_005bc2cd
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01bdd7bc
-;   undefined4 DAT_01bdd7c8
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_INT_005fba20 = 0x8
+;   int g_CurrentDrawColor
+;   int g_UseRGBConversion
+;   void*[1200] g_ScreenBufferArray
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00468090
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_memset_FUN_005a28f0
 ;
 ; *****************************************************************************
@@ -66,10 +66,10 @@ section .text
         ;   Label: LAB_00468ba0
     JG 0x00468bf0                       ; 00468ba2
         ;   XREF to: 00468bf0 (CONDITIONAL_JUMP)  ; LAB_00468bf0
-    CMP dword ptr [0x01bdd7c8],0x0      ; 00468ba4 | DAT_01bdd7c8
+    CMP dword ptr [0x01bdd7c8],0x0      ; 00468ba4 | g_UseRGBConversion
     JNZ 0x00468bf5                      ; 00468bab
         ;   XREF to: 00468bf5 (CONDITIONAL_JUMP)  ; LAB_00468bf5
-    MOV EDX,dword ptr [0x005fba20]      ; 00468bad | DAT_005fba20
+    MOV EDX,dword ptr [0x005fba20]      ; 00468bad | g_INT_005fba20
     SHL EBX,0x2                         ; 00468bb3
     CMP EDX,0x10                        ; 00468bb6
     JNC 0x00468c4d                      ; 00468bb9
@@ -80,8 +80,8 @@ section .text
     SUB ECX,EAX                         ; 00468bc8
     INC ECX                             ; 00468bca
     PUSH ECX                            ; 00468bcb
-    MOV ECX,dword ptr [0x01bdd7bc]      ; 00468bcc | DAT_01bdd7bc
-    MOV EDX,dword ptr [EBX + 0x1c5faec] ; 00468bd2 | DAT_01c5faec
+    MOV ECX,dword ptr [0x01bdd7bc]      ; 00468bcc | g_CurrentDrawColor
+    MOV EDX,dword ptr [EBX + 0x1c5faec] ; 00468bd2 | g_ScreenBufferArray
     PUSH ECX                            ; 00468bd8
     ADD EDX,EAX                         ; 00468bd9
     PUSH EDX                            ; 00468bdb
@@ -110,11 +110,11 @@ section .text
     RET                                 ; 00468c04
     LEA EDX,[EAX + EAX*0x1]             ; 00468c05
         ;   Label: LAB_00468c05
-    MOV EBX,dword ptr [EBX + 0x1c5faec] ; 00468c08 | DAT_01c5faec
+    MOV EBX,dword ptr [EBX + 0x1c5faec] ; 00468c08 | g_ScreenBufferArray
     ADD EDX,EBX                         ; 00468c0e
     ADD EDX,0x2                         ; 00468c10
         ;   Label: LAB_00468c10
-    MOV BX,word ptr [0x01bdd7bc]        ; 00468c13 | DAT_01bdd7bc
+    MOV BX,word ptr [0x01bdd7bc]        ; 00468c13 | g_CurrentDrawColor
     INC EAX                             ; 00468c1a
     MOV word ptr [EDX + -0x2],BX        ; 00468c1b
     CMP EAX,ECX                         ; 00468c1f
@@ -127,11 +127,11 @@ section .text
     RET                                 ; 00468c27
     LEA EDX,[EAX*0x4 + 0x0]             ; 00468c28
         ;   Label: LAB_00468c28
-    MOV EBX,dword ptr [EBX + 0x1c5faec] ; 00468c2f | DAT_01c5faec
+    MOV EBX,dword ptr [EBX + 0x1c5faec] ; 00468c2f | g_ScreenBufferArray
     ADD EDX,EBX                         ; 00468c35
     ADD EDX,0x4                         ; 00468c37
         ;   Label: LAB_00468c37
-    MOV EBX,dword ptr [0x01bdd7bc]      ; 00468c3a | DAT_01bdd7bc
+    MOV EBX,dword ptr [0x01bdd7bc]      ; 00468c3a | g_CurrentDrawColor
     INC EAX                             ; 00468c40
     MOV dword ptr [EDX + -0x4],EBX      ; 00468c41
     CMP EAX,ECX                         ; 00468c44
@@ -152,10 +152,10 @@ section .text
         ;   Label: LAB_00468c54
     MOV EAX,0x3a6                       ; 00468c59
     PUSH 0x5bc2cd                       ; 00468c5e | = "Invalid bitsPerPixel!"
-    MOV dword ptr [0x01d71de0],EBP      ; 00468c63 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00468c69 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00468c6e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBP      ; 00468c63 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00468c69 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00468c6e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00468c73
     POP EBP                             ; 00468c76
     POP EDI                             ; 00468c77

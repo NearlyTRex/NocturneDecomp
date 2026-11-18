@@ -785,7 +785,7 @@ section .text
     LEA EDI,[EBP + 0xfffffc56]          ; 00592c8b
     MOV EAX,dword ptr [EAX + 0x64]      ; 00592c91
     MOV dword ptr [EDX + 0x30],0x1      ; 00592c94
-    MOV ESI,0x665968                    ; 00592c9b | CMatrix3x4f_00665968
+    MOV ESI,0x665968                    ; 00592c9b | g_IdentityMatrix3x4
     MOV dword ptr [EDX + 0x3c],0x0      ; 00592ca0
     XOR ECX,ECX                         ; 00592ca7
     MOV dword ptr [EDX + 0x40],0x0      ; 00592ca9
@@ -833,7 +833,7 @@ section .text
     MOV dword ptr [EBP + 0xffffff4a],EDX ; 00592d43
     MOV dword ptr [EBP + -0x1e],EAX     ; 00592d49
     MOV EAX,dword ptr [EBP + 0x4e]      ; 00592d4c
-    MOVSD.REP ES:EDI,ESI                ; 00592d4f | CMatrix3x4f_00665968 | CMatrix3x4f_00665968.m[0].x
+    MOVSD.REP ES:EDI,ESI                ; 00592d4f | g_IdentityMatrix3x4 | g_IdentityMatrix3x4.m[0].x
     MOV dword ptr [EBP + 0xffffff4e],EDX ; 00592d51
     MOV EDI,dword ptr [EAX + EBP*0x1 + 0xffffd96a] ; 00592d57
     MOV dword ptr [EBP + -0x22],EAX     ; 00592d5e

@@ -1,0 +1,304 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 191,
+    "complexity_score": 105,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 261
+  },
+  "cross_references": [
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be7d7",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053b7f0",
+    "address_range": [
+      [
+        "0053b7f0",
+        "0053b99e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_loadStateInfo_FUN_0053b7f0",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0053b7f0(CDemonSet *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    },
+    {
+      "addr": "0047cee0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d091b",
+      "name": "s_anon_005d091b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0923",
+      "name": "s_d_005d0923",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0927",
+      "name": "s_core_set_cpp_005d0927",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0937",
+      "name": "s_Set_saveState_info_is_in_005d0937",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0960",
+      "name": "s_anon_005d0960",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0968",
+      "name": "s_d_005d0968",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d096c",
+      "name": "s_The_set_has_changed_sinc_005d096c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d09d2",
+      "name": "s_d_005d09d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d09d6",
+      "name": "s_anon_005d09d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d09de",
+      "name": "s_f_005d09de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d09e2",
+      "name": "s_anon_005d09e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d09ea",
+      "name": "s_d_005d09ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fb140",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004be7d7",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.615384615384615,
+    "instruction_count": 143,
+    "opcode_distribution": {
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 18,
+      "COPY": 101,
+      "INT_ADD": 48,
+      "INT_AND": 87,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 86,
+      "INT_LESS": 16,
+      "INT_NOTEQUAL": 15,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 42,
+      "INT_SUB": 58,
+      "INT_XOR": 3,
+      "LOAD": 29,
+      "POPCOUNT": 42,
+      "RETURN": 1,
+      "STORE": 45
+    },
+    "pcode_op_count": 660
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00534a90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5963
+    },
+    "bw1.exe": {
+      "addr": "00555e30",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00571230",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5963
+    },
+    "nocturne.exe": {
+      "addr": "0050e920",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5963
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 35,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 67,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

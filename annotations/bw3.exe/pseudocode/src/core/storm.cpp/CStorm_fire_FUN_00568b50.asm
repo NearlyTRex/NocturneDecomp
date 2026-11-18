@@ -8,11 +8,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wp_nomana_wav_005d5cd9
-;   undefined4 DAT_005fc5a0
-;   undefined4 DAT_006045f8
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_fire_FUN_0057b880
@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_00568ba3
     PUSH 0x5d5cd9                       ; 00568ba4 | = "wp_nomana.wav"
     PUSH EBX                            ; 00568ba9
-    MOV EDX,dword ptr [0x006045f8]      ; 00568baa | DAT_006045f8
+    MOV EDX,dword ptr [0x006045f8]      ; 00568baa | g_CSound_PTR_006045f8
     PUSH EDX                            ; 00568bb0
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 00568bb1
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -75,8 +75,8 @@ section .text
     PUSH EDX                            ; 00568bd2
     LEA ESI,[ESP + 0x10]                ; 00568bd3
     LEA EDI,[ESP + 0x1c]                ; 00568bd7
-    CALL core_actor.cpp_FUN_00408b00    ; 00568bdb
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00568bdb
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x10]                ; 00568be0
     ADD ESP,0x8                         ; 00568be4
     LEA EAX,[ESP + 0x14]                ; 00568be7
@@ -88,7 +88,7 @@ section .text
     ADD EAX,0x30                        ; 00568bf5
     PUSH EAX                            ; 00568bf8
     PUSH EBP                            ; 00568bf9
-    MOV ECX,dword ptr [0x005fc5a0]      ; 00568bfa | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 00568bfa | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 00568c00
     CALL core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00 ; 00568c01
         ;   XREF to: 004a3a00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00(CFireEffect * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * velocity)

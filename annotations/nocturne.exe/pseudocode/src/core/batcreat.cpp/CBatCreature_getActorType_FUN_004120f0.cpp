@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_batcreat_cpp_CBatCreature_getActorType_FUN_004120f0(CBatCreature *this_ptr)
 
 {
-  return &g_CBatCreatureActorType_007645cc;
+  return &g_CBatCreatureClassInfo;
 }

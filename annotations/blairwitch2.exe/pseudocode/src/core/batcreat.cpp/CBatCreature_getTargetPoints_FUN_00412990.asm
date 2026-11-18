@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007bc74c
+;   int[12] g_BatCreatureIndices
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
@@ -24,7 +24,7 @@ section .text
     PUSH EBP                            ; 00412993
     SUB ESP,0x18                        ; 00412994
     MOV EBX,dword ptr [ESP + 0x30]      ; 00412997
-    MOV EDX,dword ptr [0x007bc74c]      ; 0041299b | DAT_007bc74c
+    MOV EDX,dword ptr [0x007bc74c]      ; 0041299b | g_BatCreatureIndices
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004129a1
     PUSH EDX                            ; 004129a5
     ADD EAX,0x2b4                       ; 004129a6

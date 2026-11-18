@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_construc_cpp_CConstruct_explode_FUN_00438060(CConstruct *this_ptr)
 
@@ -21,9 +20,10 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00438060(CConstruct *this_
   CVector3f *pCVar6;
   uint *puVar7;
   uint *puVar8;
-  byte bVar9;
+  uint *puVar9;
+  byte bVar10;
   float afStackY_1820 [1520];
-  float local_44;
+  CQuaternion4f local_44;
   CVector3f local_34;
   UOrientationVector *local_28;
   CVector3f *local_24;
@@ -32,7 +32,7 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00438060(CConstruct *this_
   CConstruct *local_18;
   float local_14;
   
-  bVar9 = 0;
+  bVar10 = 0;
   core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00((CCharacter *)this_ptr);
   this_ptr->blown_up = 1;
   this_ptr->recombine_interpolation = 0.0;
@@ -41,9 +41,9 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00438060(CConstruct *this_
   iVar5 = local_20->num_parts;
   this_ptr->box_count = iVar5;
   if (0x18 < iVar5) {
-    _DAT_01d046a0 = "..\\core\\construc.cpp";
-    _DAT_01d046a4 = 0x294;
-    core_main_c_FUN_004e4500("CConstruct::explode - Not enough containers");
+    g_CHAR_PTR_01d046a0 = "..\\core\\construc.cpp";
+    g_INT_01d046a4 = 0x294;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CConstruct::explode - Not enough containers");
   }
   iVar5 = 0;
   if (0 < local_20->num_parts) {
@@ -86,19 +86,17 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_00438060(CConstruct *this_
         pCVar6->y = (body_part->base).orient.vec.y;
         pCVar6->z = (body_part->base).orient.vec.z;
       }
-      core_xform_cpp_FUN_00594380(&(body_part->base).orient);
+      core_xform_cpp_eulerToQuaternion_FUN_00594380(&(body_part->base).orient.vec,&local_44);
       pCVar3 = local_18;
       pSVar4 = local_18->boxes;
       local_18 = (CConstruct *)((local_18->base).base.base.orient_matrix.m + 1);
-      puVar7 = (uint *)((int)pCVar3 + (uint)bVar9 * -8 + 0x10c44);
-      (pSVar4->start_orient).w = local_44;
-      puVar8 = puVar7 + (uint)bVar9 * -2 + 1;
-      *puVar7 = *(uint *)(&stack0xffffffc0 + (uint)bVar9 * -8);
-      *puVar8 = *(uint *)(&stack0xffffffc4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-      puVar8[(uint)bVar9 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffc4 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +
-            ((uint)bVar9 * -2 + 1) * 4);
+      puVar8 = (uint *)((int)pCVar3 + (uint)bVar10 * -8 + 0x10c44);
+      (pSVar4->start_orient).w = local_44.w;
+      puVar9 = puVar8 + (uint)bVar10 * -2 + 1;
+      puVar7 = (uint *)((int)&local_44 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *puVar8 = *(uint *)((int)&local_44 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar7;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar7[(uint)bVar10 * -2 + 1];
       iVar5 = iVar5 + 1;
       pCVar6 = pCVar6 + 6;
     } while (iVar5 < local_20->num_parts);

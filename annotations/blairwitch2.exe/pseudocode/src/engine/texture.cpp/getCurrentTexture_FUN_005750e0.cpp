@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_005750e0(void)
 
 {
@@ -15,20 +13,20 @@ SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_005750e0(vo
   char *pcVar2;
   char *pcVar3;
   
-  _DAT_026534f4 = 0xd;
-  _DAT_026534f8 = _DAT_02652eac;
-  pcVar3 = &DAT_026534fc;
-  pcVar2 = (char *)(_DAT_02652eb0 + _DAT_02652eac * 0x60 + 8);
+  g_SMRGLTextureModel_026534f4.base.type = 0xd;
+  g_SMRGLTextureModel_026534f4.base.count = g_INT_02652eac;
+  pcVar3 = g_SMRGLTextureModel_026534f4.texture_name;
+  pcVar2 = g_TextureCacheInstance->entries[g_INT_02652eac].texture_name;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
     if (cVar1 == '\0') {
-      return (SMRGLTextureBasic *)&DAT_026534f4;
+      return (SMRGLTextureBasic *)&g_SMRGLTextureModel_026534f4;
     }
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  return (SMRGLTextureBasic *)&DAT_026534f4;
+  return (SMRGLTextureBasic *)&g_SMRGLTextureModel_026534f4;
 }

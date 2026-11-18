@@ -7,3 +7,6 @@
 // CSpark[256]
 CSpark g_SparkPool[256] = {};
 
+// int
+int g_SparkAllocIndex = {};
+

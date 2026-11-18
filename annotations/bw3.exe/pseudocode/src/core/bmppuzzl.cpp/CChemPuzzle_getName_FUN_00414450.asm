@@ -7,13 +7,13 @@
 ; CChemPuzzle *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b67fc
+;   TerminatedCString s_Chem_005b67fc
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x5b67fc                    ; 00414450 | DAT_005b67fc
+    MOV EAX,0x5b67fc                    ; 00414450 | = "Chem"
         ;   Label: core_bmppuzzl.cpp_CChemPuzzle_getName_FUN_00414450
     RET                                 ; 00414455
 

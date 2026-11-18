@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_00591120(CStranger *this_ptr)
 
 {
@@ -15,18 +13,17 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_00591120(CStrang
   int iVar2;
   float fVar3;
   float fVar4;
-  uint uVar5;
   
   if (((((this_ptr->base).player_input.action_state.fire != 0) &&
        ((this_ptr->base).action_pending == 0)) &&
       (iVar2 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_00591410(this_ptr), iVar2 == 0)) &&
      (this_ptr->guns_drawn == 0)) {
     pCVar1 = &(this_ptr->base).base.model;
-    fVar3 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0);
-    fVar4 = (float)core_motion_cpp_FUN_00524a40(pCVar1,1);
-    if ((float)_DAT_005f70b1 < fVar4 + fVar3) {
-      uVar5 = core_hero_cpp_FUN_004eb3e0(this_ptr,0);
-      switch(uVar5) {
+    fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40(&pCVar1->base,0);
+    fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40(&pCVar1->base,1);
+    if ((float)0.99990000000000001 < fVar4 + fVar3) {
+      iVar2 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(&this_ptr->base,0);
+      switch(iVar2) {
       case 0:
         if ((this_ptr->base).door_to_open != (CDoor *)0x0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
@@ -36,7 +33,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_00591120(CStrang
       case 1:
         if ((this_ptr->base).door_to_open != (CDoor *)0x0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
-                    (g_CEditorToolsPtr,"?eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s" + 1);
+                    (g_CEditorToolsPtr,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s");
           (this_ptr->base).player_input.action_state.fire = 0;
           return;
         }
@@ -82,7 +79,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_00591120(CStrang
         (this_ptr->base).player_input.action_state.fire = 0;
         return;
       }
-      iVar2 = core_hero_cpp_FUN_004eb890(this_ptr);
+      iVar2 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(&this_ptr->base);
       pCVar1 = &(this_ptr->base).base.model;
       if (iVar2 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x11,1);
@@ -90,8 +87,8 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_00591120(CStrang
       }
       if (((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) &&
          (fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
-                            ((CCharacter *)this_ptr,0), (float)_DAT_005f70b9 < fVar3)) {
-        iVar2 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
+                            ((CCharacter *)this_ptr,0), (float)0.98999999999999999 < fVar3)) {
+        iVar2 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(&this_ptr->base);
         if (iVar2 != 0) {
           (this_ptr->base).player_input.action_state.fire = 0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x2c,1);

@@ -30,12 +30,12 @@
 ;   double DOUBLE_0059052a = 1000
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CGore* g_CGorePtr = 01c78c7c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_014b9920
-;   undefined4 DAT_01b4d738
+;   CDemonLight* g_CurrentShadowLight
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.shadow_flag
 ;   undefined4 g_CGameInstance.profile_mode
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 00509843 (CONDITIONAL_JUMP)  ; LAB_00509843
     XOR EBX,EBX                         ; 00509787
         ;   Label: LAB_00509787
-    MOV EBP,dword ptr [0x01fba2d8]      ; 00509789 | DAT_01fba2d8
+    MOV EBP,dword ptr [0x01fba2d8]      ; 00509789 | g_INT_01fba2d8
     MOV dword ptr [ESP + 0x18],EBX      ; 0050978f
     MOV dword ptr [0x01fba938],EBX      ; 00509793 | g_CDemonRaytraceInstance
     TEST EBP,EBP                        ; 00509799
@@ -94,7 +94,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 005097bd
         ;   Label: LAB_005097bd
     MOV EDX,dword ptr [ESP + 0x18]      ; 005097c1
-    MOV ECX,dword ptr [0x01fba2d8]      ; 005097c5 | DAT_01fba2d8
+    MOV ECX,dword ptr [0x01fba2d8]      ; 005097c5 | g_INT_01fba2d8
     ADD EAX,0x4                         ; 005097cb
     INC EDX                             ; 005097ce
     MOV dword ptr [ESP + 0x10],EAX      ; 005097cf
@@ -104,7 +104,7 @@ section .text
         ;   XREF to: 005097a1 (CONDITIONAL_JUMP)  ; LAB_005097a1
     XOR EBX,EBX                         ; 005097db
         ;   Label: LAB_005097db
-    MOV EDI,dword ptr [0x01fb9b54]      ; 005097dd | DAT_01fb9b54
+    MOV EDI,dword ptr [0x01fb9b54]      ; 005097dd | g_INT_01fb9b54
     MOV dword ptr [ESP + 0x1c],EBX      ; 005097e3
     TEST EDI,EDI                        ; 005097e7
     JLE 0x00509829                      ; 005097e9
@@ -112,7 +112,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EBX      ; 005097eb
     MOV EAX,dword ptr [ESP + 0x14]      ; 005097ef
         ;   Label: LAB_005097ef
-    MOV EAX,dword ptr [EAX + 0x1fb9b58] ; 005097f3 | DAT_01fb9b58
+    MOV EAX,dword ptr [EAX + 0x1fb9b58] ; 005097f3 | g_CDemonLight_PTR_ARRAY_01fb9b58
     MOV EDX,dword ptr [EAX + 0x1cb4]    ; 005097f9
     MOV dword ptr [ESP + 0x20],EAX      ; 005097ff
     TEST EDX,EDX                        ; 00509803
@@ -121,7 +121,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0050980b
         ;   Label: LAB_0050980b
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0050980f
-    MOV EBX,dword ptr [0x01fb9b54]      ; 00509813 | DAT_01fb9b54
+    MOV EBX,dword ptr [0x01fb9b54]      ; 00509813 | g_INT_01fb9b54
     ADD EDX,0x4                         ; 00509819
     INC ECX                             ; 0050981c
     MOV dword ptr [ESP + 0x14],EDX      ; 0050981d
@@ -224,7 +224,7 @@ section .text
     PUSH 0x1                            ; 00509916
         ;   Label: LAB_00509916
     MOV EAX,[0x005ae704]                ; 00509918 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 0050991d | DAT_01b4d738
+    PUSH EAX                            ; 0050991d | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050991e
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 00509923
@@ -242,7 +242,7 @@ section .text
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 00509943
         ;   XREF to: 004afe00 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004afe00(CGore * this_ptr)
     ADD ESP,0x4                         ; 00509948
-    MOV EDI,dword ptr [0x005b80f0]      ; 0050994b | g_CFireEffect_PTR_005b80f0
+    MOV EDI,dword ptr [0x005b80f0]      ; 0050994b | g_CFireEffectPtr
     PUSH EDI                            ; 00509951
     CALL core_fire.cpp_CFireEffect_render_FUN_0048a650 ; 00509952
         ;   XREF to: 0048a650 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0048a650(CFireEffect * this_ptr)
@@ -273,7 +273,7 @@ section .text
     XOR EBP,EBP                         ; 00509992
     MOV EAX,dword ptr [ESP + 0x20]      ; 00509994
     MOV EBX,dword ptr [ESI + 0x15f2fc]  ; 00509998
-    MOV [0x014b9920],EAX                ; 0050999e | DAT_014b9920
+    MOV [0x014b9920],EAX                ; 0050999e | g_CurrentShadowLight
     TEST EBX,EBX                        ; 005099a3
     JLE 0x005099e5                      ; 005099a5
         ;   XREF to: 005099e5 (CONDITIONAL_JUMP)  ; LAB_005099e5
@@ -291,7 +291,7 @@ section .text
     PUSH 0x1                            ; 005099c7
         ;   Label: LAB_005099c7
     MOV EAX,[0x005ae704]                ; 005099c9 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 005099ce | DAT_01b4d738
+    PUSH EAX                            ; 005099ce | g_CDemonRenderer_01b4d738
     ADD EDI,0x4                         ; 005099cf
     INC EBP                             ; 005099d2
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 005099d3
@@ -307,7 +307,7 @@ section .text
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 005099ec
         ;   XREF to: 004afe00 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004afe00(CGore * this_ptr)
     ADD ESP,0x4                         ; 005099f1
-    MOV EBX,dword ptr [0x005b80f0]      ; 005099f4 | g_CFireEffect_PTR_005b80f0
+    MOV EBX,dword ptr [0x005b80f0]      ; 005099f4 | g_CFireEffectPtr
     PUSH EBX                            ; 005099fa
     CALL core_fire.cpp_CFireEffect_render_FUN_0048a650 ; 005099fb
         ;   XREF to: 0048a650 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0048a650(CFireEffect * this_ptr)
@@ -316,7 +316,7 @@ section .text
     PUSH EDI                            ; 00509a05
     MOV EBP,dword ptr [ESP + 0x24]      ; 00509a06
     PUSH EBP                            ; 00509a0a
-    MOV dword ptr [0x014b9920],EDI      ; 00509a0b | DAT_014b9920
+    MOV dword ptr [0x014b9920],EDI      ; 00509a0b | g_CurrentShadowLight
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_0044e720 ; 00509a11
         ;   XREF to: 0044e720 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_0044e720(CDemonLight * this_ptr, int restore_viewport_state)
     ADD ESP,0x8                         ; 00509a16

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 315,
+    "complexity_score": 300,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 75,
-    "suspect_count": 21,
+    "suspect_count": 20,
     "suspect_types": [
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
     "total_lines": 193
@@ -47,21 +46,21 @@
   "globals": [
     {
       "addr": "005e1a12",
-      "name": "DAT_005e1a12",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a12",
+      "type": "double",
+      "value": "0.03125"
     },
     {
       "addr": "005e1a1a",
-      "name": "DAT_005e1a1a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a1a",
+      "type": "double",
+      "value": "6.28318530700000"
     },
     {
       "addr": "005e1a22",
-      "name": "DAT_005e1a22",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e1a22",
+      "type": "float",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -158,16 +157,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 11,
       "match": "afStackY_101c",
       "severity": "moderate",
       "text": "float afStackY_101c [997];",
@@ -175,7 +166,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_ffffff7c",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff7c;",
@@ -183,7 +174,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 37,
       "match": "in_stack_ffffff7c",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff7c);",
@@ -191,7 +182,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 38,
       "match": "&stack0xffffff84",
       "severity": "moderate",
       "text": "puVar2 = (uint *)&stack0xffffff84;",
@@ -199,7 +190,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 40,
+      "line": 39,
       "match": "&stack0xffffff94",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffff94;",
@@ -207,7 +198,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
+      "line": 45,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
       "text": "if (&stack0xffffffb4 != &stack0xffffff9c) {",
@@ -215,7 +206,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
+      "line": 45,
       "match": "&stack0xffffff9c",
       "severity": "moderate",
       "text": "if (&stack0xffffffb4 != &stack0xffffff9c) {",
@@ -223,7 +214,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 51,
+      "line": 50,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "if (&stack0xffffffc0 != &stack0xffffffa8) {",
@@ -231,7 +222,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 51,
+      "line": 50,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "if (&stack0xffffffc0 != &stack0xffffffa8) {",
@@ -311,7 +302,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 41,
+      "line": 40,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -321,7 +312,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 8,
         "vtable_addr": "005fab04"
       }

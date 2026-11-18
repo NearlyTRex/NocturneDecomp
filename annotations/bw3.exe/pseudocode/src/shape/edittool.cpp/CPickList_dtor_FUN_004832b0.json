@@ -22,21 +22,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e94f0",
-      "from_addr": "004e9d58",
-      "name": "core_menu.cpp_FUN_004e94f0",
+      "addr": "004eae80",
+      "from_addr": "004ebe0c",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004eae80",
-      "from_addr": "004ebe0c",
-      "name": "core_menu.cpp_FUN_004eae80",
+      "addr": "004e94f0",
+      "from_addr": "004e9d58",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f7a20",
       "from_addr": "004f7b88",
-      "name": "core_mission.cpp_FUN_004f7a20",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,19 +48,19 @@
     {
       "addr": "00513d20",
       "from_addr": "00513f56",
-      "name": "engine_pod.cpp_FUN_00513d20",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047dd20",
+      "from_addr": "0047e00e",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047db70",
       "from_addr": "0047dcc2",
       "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047dd20",
-      "from_addr": "0047e00e",
-      "name": "shape_edittool.cpp_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -83,14 +83,14 @@
       "name": "crt_memory.c___vec_delete_FUN_005a308f"
     },
     {
-      "addr": "005a30b6",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30b6"
-    },
-    {
       "addr": "005a30c4",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30c4"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005a30c4"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_free_FUN_005a30b6"
     },
     {
       "addr": "00486050",
@@ -117,8 +117,8 @@
     {
       "addr": "005df044",
       "name": "g_CPickListVTable",
-      "type": "undefined1*",
-      "value": "004832b0"
+      "type": "CPickList_full_vtable",
+      "value": null
     },
     {
       "addr": "005df0c0",
@@ -177,7 +177,7 @@
       {
         "call_addr": "004f7b88",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f7a20",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -188,7 +188,7 @@
       {
         "call_addr": "004f7baf",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f7a20",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +199,7 @@
       {
         "call_addr": "004f7bdc",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f7a20",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +210,7 @@
       {
         "call_addr": "004ebe0c",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eae80",
+        "caller": "core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +221,7 @@
       {
         "call_addr": "004ec1be",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eae80",
+        "caller": "core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +232,7 @@
       {
         "call_addr": "004ebeb9",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eae80",
+        "caller": "core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

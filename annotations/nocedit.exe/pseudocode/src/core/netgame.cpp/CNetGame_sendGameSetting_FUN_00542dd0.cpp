@@ -39,7 +39,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
   local_c8.header.type = PACKET_GAME_SETTINGS;
   local_c8.header.size = 0xb1;
   __arrinit(local_67,2,&g_SPlayerTypeInfo);
-  local_c8.value = INT_02f7c8c4;
+  local_c8.value = g_NetNextPlayerId;
   pcVar8 = local_bb;
   pcVar6 = this_ptr->mission_name;
   do {

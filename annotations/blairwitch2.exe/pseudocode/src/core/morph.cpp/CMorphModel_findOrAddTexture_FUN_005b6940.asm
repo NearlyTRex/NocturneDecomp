@@ -14,11 +14,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_005f172b
 ;   TerminatedCString s_CMorphModel_findOrAddTex_005f173d
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
@@ -61,10 +61,10 @@ section .text
     MOV EDI,0x5f172b                    ; 005b697b | = "..\\core\\morph.cpp"
     MOV EAX,0x1d0                       ; 005b6980
     PUSH 0x5f173d                       ; 005b6985 | = "CMorphModel::findOrAddTexture - too m..."
-    MOV dword ptr [0x01d046a0],EDI      ; 005b698a | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 005b6990 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b6995
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 005b698a | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 005b6990 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b6995
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b699a
     MOV ESI,dword ptr [EBX + 0x64]      ; 005b699d
         ;   Label: LAB_005b699d

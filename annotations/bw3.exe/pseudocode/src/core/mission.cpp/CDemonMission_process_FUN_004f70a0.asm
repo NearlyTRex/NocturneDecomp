@@ -14,23 +14,23 @@
 ; Referenced Globals:
 ;   CScript* g_CScriptPtr = 01ed73e0
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01d5ba14
-;   undefined4 DAT_01d88308
+;   int g_INT_01d5ba14
+;   char g_CHAR_01d88308
 ;   undefined4 g_CScriptInstance.focus_actor_changed
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
+;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80
+;   core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004f6ca0
-;   core_mission.cpp_FUN_004f6de0
-;   core_mission.cpp_FUN_004f6f80
 ;   core_set.cpp_CDemonSet_clearLights_FUN_00537520
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d2e0
+;   engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d300
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
-;   engine_alphabit.cpp_FUN_0040dbe0
-;   engine_special.cpp_FUN_00565820
+;   engine_special.cpp_lockFrame_FUN_00565820
 ;   engine_special.cpp_unlockFrame_FUN_00565870
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;
@@ -76,14 +76,14 @@ section .text
         ;   Label: LAB_004f70f0
     PUSH EDI                            ; 004f70fa
         ;   Label: LAB_004f70fa
-    CALL core_mission.cpp_FUN_004f6f80  ; 004f70fb
-        ;   XREF to: 004f6f80 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6f80()
+    CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80 ; 004f70fb
+        ;   XREF to: 004f6f80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80(CDemonMission * this_ptr)
     MOV ECX,dword ptr [EDI + 0x1450]    ; 004f7100
     ADD ESP,0x4                         ; 004f7106
     TEST ECX,ECX                        ; 004f7109
     JL 0x004f7177                       ; 004f710b
         ;   XREF to: 004f7177 (CONDITIONAL_JUMP)  ; LAB_004f7177
-    MOV EBX,dword ptr [0x01d5ba14]      ; 004f710d | DAT_01d5ba14
+    MOV EBX,dword ptr [0x01d5ba14]      ; 004f710d | g_INT_01d5ba14
     LEA ESI,[EDI + 0x1444]              ; 004f7113
     MOV EBX,dword ptr [EBX*0x4 + 0x1d5ba04] ; 004f7119
     MOV EAX,dword ptr [ESI]             ; 004f7120
@@ -126,7 +126,7 @@ section .text
     ADD ESP,0x4                         ; 004f7192
     PUSH 0x1e0                          ; 004f7195
     PUSH 0x280                          ; 004f719a
-    PUSH 0x1d88308                      ; 004f719f | DAT_01d88308
+    PUSH 0x1d88308                      ; 004f719f | g_CHAR_01d88308
     LEA EBX,[ESP + 0xc]                 ; 004f71a4
     PUSH EBX                            ; 004f71a8
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460 ; 004f71a9
@@ -135,11 +135,11 @@ section .text
     XOR EBX,EBX                         ; 004f71b1
     MOV ESI,ESP                         ; 004f71b3
         ;   Label: LAB_004f71b3
-    CALL engine_special.cpp_FUN_00565820 ; 004f71b5
-        ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00565820()
+    CALL engine_special.cpp_lockFrame_FUN_00565820 ; 004f71b5
+        ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00565820()
     PUSH ESI                            ; 004f71ba
-    CALL engine_alphabit.cpp_FUN_0040dbe0 ; 004f71bb
-        ;   XREF to: 0040dbe0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dbe0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0 ; 004f71bb
+        ;   XREF to: 0040dbe0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f71c0
     PUSH 0x0                            ; 004f71c3
     CALL engine_special.cpp_unlockFrame_FUN_00565870 ; 004f71c5
@@ -154,8 +154,8 @@ section .text
     MOV EBP,dword ptr [EDI + 0x1450]    ; 004f71d8
     PUSH EBP                            ; 004f71de
     PUSH EDI                            ; 004f71df
-    CALL core_mission.cpp_FUN_004f6de0  ; 004f71e0
-        ;   XREF to: 004f6de0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6de0()
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0 ; 004f71e0
+        ;   XREF to: 004f6de0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 004f71e5
     MOV EAX,[0x00603b28]                ; 004f71e8 | g_CDemonSetPtr
     PUSH EAX                            ; 004f71ed | g_CDemonSetInstance

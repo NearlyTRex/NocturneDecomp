@@ -1,6 +1,6 @@
 // Name: crt_unknown.c_FUN_005bc288
 // Address: 005bc288
-// Address Range: [[005bc288, 005bc31d] [005bc490, 005bc596]]
+// Address Range: [[005bc288, 005bc596]]
 // Convention: unknown
 // Signature: void crt_unknown_c_FUN_005bc288(uint *param_1,int *param_2,undefined1 *param_3)
 

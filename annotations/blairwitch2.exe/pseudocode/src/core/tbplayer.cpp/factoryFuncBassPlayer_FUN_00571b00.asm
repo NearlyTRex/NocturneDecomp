@@ -15,7 +15,7 @@ section .text
     PUSH 0x24350                        ; 00571b00
         ;   Label: core_tbplayer.cpp_factoryFuncBassPlayer_FUN_00571b00
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00571b05
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 00571b0a
     TEST EAX,EAX                        ; 00571b0d
     JNZ 0x00571b12                      ; 00571b0f

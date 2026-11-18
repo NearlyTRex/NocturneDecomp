@@ -15,7 +15,7 @@ section .text
     PUSH 0x34c                          ; 0040e590
         ;   Label: core_ammobox.cpp_factoryFuncAmmoBox_FUN_0040e590
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0040e595
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0040e59a
     TEST EAX,EAX                        ; 0040e59d
     JNZ 0x0040e5a2                      ; 0040e59f

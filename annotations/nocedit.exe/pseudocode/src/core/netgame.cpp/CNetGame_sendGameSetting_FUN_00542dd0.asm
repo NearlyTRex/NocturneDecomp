@@ -28,7 +28,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_CurrentGameTime
-;   int INT_02f7c8c4
+;   int g_NetNextPlayerId
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -96,7 +96,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xcc]      ; 00542e6c
     MOV EAX,dword ptr [EAX + 0x16c]     ; 00542e73
     MOV dword ptr [ESP + 0x9],EAX       ; 00542e79
-    MOV EAX,[0x02f7c8c4]                ; 00542e7d | INT_02f7c8c4
+    MOV EAX,[0x02f7c8c4]                ; 00542e7d | g_NetNextPlayerId
     MOV dword ptr [ESP + 0x5],EAX       ; 00542e82
     MOV EAX,dword ptr [ESP + 0xcc]      ; 00542e86
     LEA EDI,[ESP + 0xd]                 ; 00542e8d

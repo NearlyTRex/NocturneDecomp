@@ -26,21 +26,21 @@
 ;   sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_0052a7d0 at 0052a80f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eb4ce
-;   undefined4 DAT_005eb4d6
-;   undefined4 DAT_005eb4de
-;   undefined4 DAT_005eb4e6
-;   undefined4 DAT_005eb4ee
-;   undefined4 DAT_005eb4f6
-;   undefined4 DAT_005eb4fe
-;   undefined4 DAT_005eb506
-;   undefined4 DAT_006202e0
-;   undefined4 DAT_01d3eb78
-;   undefined4 DAT_01d3eb7c
-;   undefined4 DAT_01d3eb80
-;   undefined4 DAT_01d3eb84
-;   undefined4 DAT_01d3eb88
-;   undefined4 DAT_01d3eb90
+;   double g_DOUBLE_005eb4ce = 0.0872664630000000
+;   double g_DOUBLE_005eb4d6 = 0.261799388000000
+;   double g_DOUBLE_005eb4de = 0.130899693899575
+;   double g_DOUBLE_005eb4e6 = 0.0436332312998582
+;   double g_DOUBLE_005eb4ee = 0.5
+;   double g_DOUBLE_005eb4f6 = -18
+;   double g_DOUBLE_005eb4fe = -6
+;   double g_DOUBLE_005eb506 = 0.0000100000000000000
+;   int g_Mp3SynthesisTablesInitialized = 0x1
+;   undefined4 g_Mp3WindowTables[1][18]
+;   undefined4 g_Mp3WindowTables[1][18]+4
+;   undefined4 g_Mp3WindowTables[1][19]
+;   undefined4 g_Mp3WindowTables[1][19]+4
+;   undefined4 g_Mp3WindowTables[1][20]
+;   undefined4 g_Mp3WindowTables[1][21]
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -57,13 +57,13 @@ section .text
     PUSH EBP                            ; 0052a2c3
     MOV EBP,ESP                         ; 0052a2c4
     SUB ESP,0x8c                        ; 0052a2c6
-    CMP dword ptr [0x006202e0],0x1      ; 0052a2cc | DAT_006202e0
+    CMP dword ptr [0x006202e0],0x1      ; 0052a2cc | g_Mp3SynthesisTablesInitialized
     JNZ 0x0052a58f                      ; 0052a2d3
         ;   XREF to: 0052a58f (CONDITIONAL_JUMP)  ; LAB_0052a58f
     XOR EDX,EDX                         ; 0052a2d9
     XOR ECX,ECX                         ; 0052a2db
-    FLD double ptr [0x005eb4ce]         ; 0052a2dd | DAT_005eb4ce
-    FLD double ptr [0x005eb4ee]         ; 0052a2e3 | DAT_005eb4ee
+    FLD double ptr [0x005eb4ce]         ; 0052a2dd | g_DOUBLE_005eb4ce
+    FLD double ptr [0x005eb4ee]         ; 0052a2e3 | g_DOUBLE_005eb4ee
     MOV dword ptr [EBP + -0x4],EDX      ; 0052a2e9
         ;   Label: LAB_0052a2e9
     FILD dword ptr [EBP + -0x4]         ; 0052a2ec
@@ -80,8 +80,8 @@ section .text
     FSTP ST0                            ; 0052a306
     XOR EDX,EDX                         ; 0052a308
     XOR ECX,ECX                         ; 0052a30a
-    FLD double ptr [0x005eb4ce]         ; 0052a30c | DAT_005eb4ce
-    FLD double ptr [0x005eb4ee]         ; 0052a312 | DAT_005eb4ee
+    FLD double ptr [0x005eb4ce]         ; 0052a30c | g_DOUBLE_005eb4ce
+    FLD double ptr [0x005eb4ee]         ; 0052a312 | g_DOUBLE_005eb4ee
     MOV dword ptr [EBP + -0x4],EDX      ; 0052a318
         ;   Label: LAB_0052a318
     FILD dword ptr [EBP + -0x4]         ; 0052a31b
@@ -101,16 +101,16 @@ section .text
     ADD EAX,0x8                         ; 0052a341
         ;   Label: LAB_0052a341
     XOR ECX,ECX                         ; 0052a344
-    MOV dword ptr [EAX + 0x1d3eae4],EBX ; 0052a346 | DAT_01d3eb7c | DAT_01d3eb84
-    MOV dword ptr [EAX + 0x1d3eae0],ECX ; 0052a34c | DAT_01d3eb78 | DAT_01d3eb80
+    MOV dword ptr [EAX + 0x1d3eae4],EBX ; 0052a346 | g_Mp3WindowTables[1][18]+4 | g_Mp3WindowTables[1][19]+4
+    MOV dword ptr [EAX + 0x1d3eae0],ECX ; 0052a34c | g_Mp3WindowTables[1][18] | g_Mp3WindowTables[1][19]
     CMP EAX,0xc0                        ; 0052a352
     JNZ 0x0052a341                      ; 0052a357
         ;   XREF to: 0052a341 (CONDITIONAL_JUMP)  ; LAB_0052a341
     MOV EDX,0x18                        ; 0052a359
     MOV ECX,EAX                         ; 0052a35e
-    FLD double ptr [0x005eb4d6]         ; 0052a360 | DAT_005eb4d6
-    FLD double ptr [0x005eb4f6]         ; 0052a366 | DAT_005eb4f6
-    FLD double ptr [0x005eb4ee]         ; 0052a36c | DAT_005eb4ee
+    FLD double ptr [0x005eb4d6]         ; 0052a360 | g_DOUBLE_005eb4d6
+    FLD double ptr [0x005eb4f6]         ; 0052a366 | g_DOUBLE_005eb4f6
+    FLD double ptr [0x005eb4ee]         ; 0052a36c | g_DOUBLE_005eb4ee
     MOV dword ptr [EBP + -0x4],EDX      ; 0052a372
         ;   Label: LAB_0052a372
     FILD dword ptr [EBP + -0x4]         ; 0052a375
@@ -120,7 +120,7 @@ section .text
     FSIN                                ; 0052a37e
     ADD ECX,0x8                         ; 0052a380
     INC EDX                             ; 0052a383
-    FSTP double ptr [ECX + 0x1d3eae0]   ; 0052a384 | DAT_01d3eb88 | DAT_01d3eb90
+    FSTP double ptr [ECX + 0x1d3eae0]   ; 0052a384 | g_Mp3WindowTables[1][20] | g_Mp3WindowTables[1][21]
     CMP EDX,0x1e                        ; 0052a38a
     JL 0x0052a372                       ; 0052a38d
         ;   XREF to: 0052a372 (CONDITIONAL_JUMP)  ; LAB_0052a372
@@ -131,8 +131,8 @@ section .text
     ADD EAX,0x8                         ; 0052a39a
         ;   Label: LAB_0052a39a
     XOR ESI,ESI                         ; 0052a39d
-    MOV dword ptr [EAX + 0x1d3eae0],ESI ; 0052a39f | DAT_01d3ebd8 | DAT_01d3ebe0
-    MOV dword ptr [EAX + 0x1d3eae4],ESI ; 0052a3a5 | DAT_01d3ebdc | DAT_01d3ebe4
+    MOV dword ptr [EAX + 0x1d3eae0],ESI ; 0052a39f | g_Mp3WindowTables[1][30] | g_Mp3WindowTables[1][31]
+    MOV dword ptr [EAX + 0x1d3eae4],ESI ; 0052a3a5 | g_Mp3WindowTables[1][30]+4 | g_Mp3WindowTables[1][31]+4
     CMP EAX,0x120                       ; 0052a3ab
     JNZ 0x0052a39a                      ; 0052a3b0
         ;   XREF to: 0052a39a (CONDITIONAL_JUMP)  ; LAB_0052a39a
@@ -147,9 +147,9 @@ section .text
         ;   XREF to: 0052a3b4 (CONDITIONAL_JUMP)  ; LAB_0052a3b4
     MOV EDX,0x6                         ; 0052a3ca
     MOV ECX,EAX                         ; 0052a3cf
-    FLD double ptr [0x005eb4d6]         ; 0052a3d1 | DAT_005eb4d6
-    FLD double ptr [0x005eb4fe]         ; 0052a3d7 | DAT_005eb4fe
-    FLD double ptr [0x005eb4ee]         ; 0052a3dd | DAT_005eb4ee
+    FLD double ptr [0x005eb4d6]         ; 0052a3d1 | g_DOUBLE_005eb4d6
+    FLD double ptr [0x005eb4fe]         ; 0052a3d7 | g_DOUBLE_005eb4fe
+    FLD double ptr [0x005eb4ee]         ; 0052a3dd | g_DOUBLE_005eb4ee
     MOV dword ptr [EBP + -0x4],EDX      ; 0052a3e3
         ;   Label: LAB_0052a3e3
     FILD dword ptr [EBP + -0x4]         ; 0052a3e6
@@ -171,15 +171,15 @@ section .text
     ADD EAX,0x8                         ; 0052a410
         ;   Label: LAB_0052a410
     XOR EBX,EBX                         ; 0052a413
-    MOV dword ptr [EAX + 0x1d3ed24],ESI ; 0052a415 | DAT_01d3ed8c | DAT_01d3ed94
-    MOV dword ptr [EAX + 0x1d3ed20],EBX ; 0052a41b | DAT_01d3ed88 | DAT_01d3ed90
+    MOV dword ptr [EAX + 0x1d3ed24],ESI ; 0052a415 | g_Mp3WindowTables[3][12]+4 | g_Mp3WindowTables[3][13]+4
+    MOV dword ptr [EAX + 0x1d3ed20],EBX ; 0052a41b | g_Mp3WindowTables[3][12] | g_Mp3WindowTables[3][13]
     CMP EAX,0x90                        ; 0052a421
     JNZ 0x0052a410                      ; 0052a426
         ;   XREF to: 0052a410 (CONDITIONAL_JUMP)  ; LAB_0052a410
     MOV EDX,0x12                        ; 0052a428
     MOV ECX,EAX                         ; 0052a42d
-    FLD double ptr [0x005eb4ce]         ; 0052a42f | DAT_005eb4ce
-    FLD double ptr [0x005eb4ee]         ; 0052a435 | DAT_005eb4ee
+    FLD double ptr [0x005eb4ce]         ; 0052a42f | g_DOUBLE_005eb4ce
+    FLD double ptr [0x005eb4ee]         ; 0052a435 | g_DOUBLE_005eb4ee
     MOV dword ptr [EBP + -0x4],EDX      ; 0052a43b
         ;   Label: LAB_0052a43b
     FILD dword ptr [EBP + -0x4]         ; 0052a43e
@@ -188,7 +188,7 @@ section .text
     FSIN                                ; 0052a445
     ADD ECX,0x8                         ; 0052a447
     INC EDX                             ; 0052a44a
-    FSTP double ptr [ECX + 0x1d3ed20]   ; 0052a44b | DAT_01d3ed98 | DAT_01d3eda0
+    FSTP double ptr [ECX + 0x1d3ed20]   ; 0052a44b | g_Mp3WindowTables[3][14] | g_Mp3WindowTables[3][15]
     CMP EDX,0x24                        ; 0052a451
     JL 0x0052a43b                       ; 0052a454
         ;   XREF to: 0052a43b (CONDITIONAL_JUMP)  ; LAB_0052a43b
@@ -196,8 +196,8 @@ section .text
     FSTP ST0                            ; 0052a458
     XOR EDX,EDX                         ; 0052a45a
     XOR ECX,ECX                         ; 0052a45c
-    FLD double ptr [0x005eb4d6]         ; 0052a45e | DAT_005eb4d6
-    FLD double ptr [0x005eb4ee]         ; 0052a464 | DAT_005eb4ee
+    FLD double ptr [0x005eb4d6]         ; 0052a45e | g_DOUBLE_005eb4d6
+    FLD double ptr [0x005eb4ee]         ; 0052a464 | g_DOUBLE_005eb4ee
     MOV dword ptr [EBP + -0x4],EDX      ; 0052a46a
         ;   Label: LAB_0052a46a
     FILD dword ptr [EBP + -0x4]         ; 0052a46d
@@ -216,8 +216,8 @@ section .text
     ADD EAX,0x8                         ; 0052a48e
         ;   Label: LAB_0052a48e
     XOR EDI,EDI                         ; 0052a491
-    MOV dword ptr [EAX + 0x1d3ec00],EDI ; 0052a493 | DAT_01d3ec68 | DAT_01d3ec70
-    MOV dword ptr [EAX + 0x1d3ec04],EDI ; 0052a499 | DAT_01d3ec6c | DAT_01d3ec74
+    MOV dword ptr [EAX + 0x1d3ec00],EDI ; 0052a493 | g_Mp3WindowTables[2][12] | g_Mp3WindowTables[2][13]
+    MOV dword ptr [EAX + 0x1d3ec04],EDI ; 0052a499 | g_Mp3WindowTables[2][12]+4 | g_Mp3WindowTables[2][13]+4
     CMP EAX,0x120                       ; 0052a49f
     JNZ 0x0052a48e                      ; 0052a4a4
         ;   XREF to: 0052a48e (CONDITIONAL_JUMP)  ; LAB_0052a48e
@@ -233,7 +233,7 @@ section .text
     CMP EDX,ECX                         ; 0052a4c3
     JLE 0x0052a4f4                      ; 0052a4c5
         ;   XREF to: 0052a4f4 (CONDITIONAL_JUMP)  ; LAB_0052a4f4
-    FLD double ptr [0x005eb4de]         ; 0052a4c7 | DAT_005eb4de
+    FLD double ptr [0x005eb4de]         ; 0052a4c7 | g_DOUBLE_005eb4de
     LEA ESI,[EDI + 0x6]                 ; 0052a4cd
     MOV dword ptr [EBP + -0x4],ESI      ; 0052a4d0
         ;   Label: LAB_0052a4d0
@@ -273,7 +273,7 @@ section .text
     MOV ESI,dword ptr [EBP + -0x18]     ; 0052a52c
     MOV EDI,dword ptr [EBP + -0x1c]     ; 0052a52f
     ADD ECX,EAX                         ; 0052a532
-    FLD double ptr [0x005eb4e6]         ; 0052a534 | DAT_005eb4e6
+    FLD double ptr [0x005eb4e6]         ; 0052a534 | g_DOUBLE_005eb4e6
     MOV dword ptr [EBP + -0x4],0x90     ; 0052a53a
         ;   Label: LAB_0052a53a
     MOV EDX,ECX                         ; 0052a541
@@ -304,7 +304,7 @@ section .text
     JL 0x0052a51a                       ; 0052a585
         ;   XREF to: 0052a51a (CONDITIONAL_JUMP)  ; LAB_0052a51a
     XOR EDX,EDX                         ; 0052a587
-    MOV dword ptr [0x006202e0],EDX      ; 0052a589 | DAT_006202e0
+    MOV dword ptr [0x006202e0],EDX      ; 0052a589 | g_Mp3SynthesisTablesInitialized
     CMP dword ptr [EBP + 0x1c],0x2      ; 0052a58f
         ;   Label: LAB_0052a58f
     JZ 0x0052a670                       ; 0052a593
@@ -317,7 +317,7 @@ section .text
     ADD EAX,EDI                         ; 0052a5a8
     FLD float ptr [EAX]                 ; 0052a5aa
     FABS                                ; 0052a5ac
-    FCOMP double ptr [0x005eb506]       ; 0052a5ae | DAT_005eb506
+    FCOMP double ptr [0x005eb506]       ; 0052a5ae | g_DOUBLE_005eb506
     FNSTSW AX                           ; 0052a5b4
     SAHF                                ; 0052a5b6
     JBE 0x0052a5c6                      ; 0052a5b7

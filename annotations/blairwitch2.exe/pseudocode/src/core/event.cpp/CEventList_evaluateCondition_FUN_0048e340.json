@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 63,
-    "cross_reference_count": 56,
+    "complexity_score": 22,
+    "cross_reference_count": 57,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 67
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
   },
   "cross_references": [
     {
@@ -85,7 +82,7 @@
     {
       "addr": "00450c60",
       "from_addr": "00450c96",
-      "name": "core_doc.cpp_FUN_00450c60",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00450c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -125,15 +122,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00492570",
-      "from_addr": "0049258b",
-      "name": "core_event.cpp_CRuleList_findFirst_FUN_00492570",
+      "addr": "00489670",
+      "from_addr": "00489b65",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00489670",
-      "from_addr": "00489b65",
-      "name": "core_event.cpp_FUN_00489670",
+      "addr": "00492570",
+      "from_addr": "0049258b",
+      "name": "core_event.cpp_CRuleList_findFirst_FUN_00492570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -157,7 +154,7 @@
     {
       "addr": "004b90d0",
       "from_addr": "004b90fb",
-      "name": "core_game.cpp_FUN_004b90d0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -211,7 +208,7 @@
     {
       "addr": "004fc820",
       "from_addr": "004fc90a",
-      "name": "core_mission.cpp_FUN_004fc820",
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -323,6 +320,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0057e760",
+      "from_addr": "0057e7bd",
+      "name": "core_turret.cpp_CTurret_process_FUN_0057e760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00581910",
       "from_addr": "005825f5",
       "name": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
@@ -385,14 +388,14 @@
   "globals": [
     {
       "addr": "005d4390",
-      "name": "DAT_005d4390",
-      "type": "undefined4",
+      "name": "s_none_005d4390",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d4395",
-      "name": "DAT_005d4395",
-      "type": "undefined4",
+      "name": "s_s_005d4395",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -409,14 +412,14 @@
     },
     {
       "addr": "01c3dd0c",
-      "name": "DAT_01c3dd0c",
-      "type": "undefined4",
+      "name": "g_EventDryRun",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3dd10",
-      "name": "DAT_01c3dd10",
-      "type": "undefined4",
+      "name": "g_EventErrorMessageBuffer",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -426,7 +429,7 @@
       {
         "call_addr": "00489b65",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -437,7 +440,7 @@
       {
         "call_addr": "0048aa67",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -448,7 +451,7 @@
       {
         "call_addr": "0048c667",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -459,7 +462,7 @@
       {
         "call_addr": "0048d0e4",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -481,7 +484,7 @@
       {
         "call_addr": "004b90fb",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b90d0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -492,7 +495,7 @@
       {
         "call_addr": "004fc90a",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fc820",
+        "caller": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -614,30 +617,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005d4390",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(condition_expression,&DAT_005d4390);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005d4395",
-      "severity": "mild",
-      "text": "engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,&DAT_005d4395);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

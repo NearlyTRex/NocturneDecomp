@@ -14,7 +14,7 @@
 ;   core_setutil.cpp_C3DSLight_create_FUN_00542940 at 00542a7d
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_dlight.cpp_CDemonLight_dtor_FUN_0045c240_005de514 = 0045c240
+;   CCameraView_vtable g_CCameraView_vtable_005de514
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_ctor_FUN_00448be0
@@ -28,7 +28,7 @@ section .text
     PUSH EDX                            ; 0045c184
     CALL core_dcamera.cpp_CDemonCamera_ctor_FUN_00448be0 ; 0045c185
         ;   XREF to: 00448be0 (UNCONDITIONAL_CALL)  ; CDemonCamera * core_dcamera.cpp_CDemonCamera_ctor_FUN_00448be0(CDemonCamera * this_ptr)
-    MOV dword ptr [EAX + 0x3c],0x5de514 ; 0045c18a | PTR_core_dlight.cpp_CDemonLight_dtor_FUN_0045c240_005de514
+    MOV dword ptr [EAX + 0x3c],0x5de514 ; 0045c18a | g_CCameraView_vtable_005de514
     MOV dword ptr [EAX + 0x1cb4],0x1    ; 0045c191
     MOV dword ptr [EAX + 0x1cb8],0x1    ; 0045c19b
     MOV dword ptr [EAX + 0x2f94],0x0    ; 0045c1a5

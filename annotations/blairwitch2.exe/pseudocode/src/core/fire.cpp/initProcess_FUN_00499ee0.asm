@@ -11,13 +11,13 @@
 ;   TerminatedCString s_core_fire_cpp_005d5650
 ;   TerminatedCString s_CGunFlame_initProcess_to_005d5661
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01c3f5a8
-;   undefined4 DAT_01c3f5ac
-;   undefined4 DAT_01c3f674
-;   undefined4 DAT_01c3f678
+;   int g_GunFlameCandidateCount
+;   CCharacter*[50] g_GunFlameCandidates
+;   int g_FlameCanCount
+;   CFlameCan*[150] g_FlameCans
 ;   undefined4 g_CFlameCanClassInfo.name_hash
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 g_CDemonSetInstance.character_count
@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004ce100
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     XOR EDX,EDX                         ; 00499ee4
     XOR EDI,EDI                         ; 00499ee6
     XOR ESI,ESI                         ; 00499ee8
-    MOV dword ptr [0x01c3f5a8],EDX      ; 00499eea | DAT_01c3f5a8
+    MOV dword ptr [0x01c3f5a8],EDX      ; 00499eea | g_GunFlameCandidateCount
     MOV EBX,dword ptr [0x0061b5a8]      ; 00499ef0 | g_CDemonSetPtr
         ;   Label: LAB_00499ef0
     CMP EDI,dword ptr [EBX + 0x14f0a8]  ; 00499ef6 | g_CDemonSetInstance.character_count
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 00499f1e (CONDITIONAL_JUMP)  ; LAB_00499f1e
     XOR EBX,EBX                         ; 00499efe
     XOR ESI,ESI                         ; 00499f00
-    MOV dword ptr [0x01c3f674],EBX      ; 00499f02 | DAT_01c3f674
+    MOV dword ptr [0x01c3f674],EBX      ; 00499f02 | g_FlameCanCount
     MOV EAX,[0x0061b5a8]                ; 00499f08 | g_CDemonSetPtr
         ;   Label: LAB_00499f08
     CMP EBX,dword ptr [EAX + 0x14d164]  ; 00499f0d | g_CDemonSetInstance.actor_count
@@ -76,14 +76,14 @@ section .text
     TEST EAX,EAX                        ; 00499f4a
     JZ 0x00499f6c                       ; 00499f4c
         ;   XREF to: 00499f6c (CONDITIONAL_JUMP)  ; LAB_00499f6c
-    CMP dword ptr [0x01c3f5a8],0x32     ; 00499f4e | DAT_01c3f5a8
+    CMP dword ptr [0x01c3f5a8],0x32     ; 00499f4e | g_GunFlameCandidateCount
     JGE 0x00499f75                      ; 00499f55
         ;   XREF to: 00499f75 (CONDITIONAL_JUMP)  ; LAB_00499f75
-    MOV EAX,[0x01c3f5a8]                ; 00499f57 | DAT_01c3f5a8
+    MOV EAX,[0x01c3f5a8]                ; 00499f57 | g_GunFlameCandidateCount
         ;   Label: LAB_00499f57
     LEA ECX,[EAX + 0x1]                 ; 00499f5c
-    MOV dword ptr [EAX*0x4 + 0x1c3f5ac],EBX ; 00499f5f | DAT_01c3f5ac
-    MOV dword ptr [0x01c3f5a8],ECX      ; 00499f66 | DAT_01c3f5a8
+    MOV dword ptr [EAX*0x4 + 0x1c3f5ac],EBX ; 00499f5f | g_GunFlameCandidates
+    MOV dword ptr [0x01c3f5a8],ECX      ; 00499f66 | g_GunFlameCandidateCount
     INC EDI                             ; 00499f6c
         ;   Label: LAB_00499f6c
     ADD ESI,0x4                         ; 00499f6d
@@ -93,10 +93,10 @@ section .text
         ;   Label: LAB_00499f75
     MOV EDX,0xee3                       ; 00499f7a
     PUSH 0x5d5661                       ; 00499f7f | = "CGunFlame::initProcess - too many cha..."
-    MOV [0x01d046a0],EAX                ; 00499f84 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00499f89 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00499f8f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV [0x01d046a0],EAX                ; 00499f84 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 00499f89 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00499f8f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00499f94
     JMP 0x00499f57                      ; 00499f97
         ;   XREF to: 00499f57 (UNCONDITIONAL_JUMP)  ; LAB_00499f57
@@ -111,13 +111,13 @@ section .text
     TEST EAX,EAX                        ; 00499fb0
     JZ 0x00499fd2                       ; 00499fb2
         ;   XREF to: 00499fd2 (CONDITIONAL_JUMP)  ; LAB_00499fd2
-    MOV ECX,dword ptr [0x01c3f674]      ; 00499fb4 | DAT_01c3f674
+    MOV ECX,dword ptr [0x01c3f674]      ; 00499fb4 | g_FlameCanCount
     CMP ECX,0x96                        ; 00499fba
     JGE 0x00499fd2                      ; 00499fc0
         ;   XREF to: 00499fd2 (CONDITIONAL_JUMP)  ; LAB_00499fd2
     LEA EDI,[ECX + 0x1]                 ; 00499fc2
-    MOV dword ptr [ECX*0x4 + 0x1c3f678],EAX ; 00499fc5 | DAT_01c3f678
-    MOV dword ptr [0x01c3f674],EDI      ; 00499fcc | DAT_01c3f674
+    MOV dword ptr [ECX*0x4 + 0x1c3f678],EAX ; 00499fc5 | g_FlameCans
+    MOV dword ptr [0x01c3f674],EDI      ; 00499fcc | g_FlameCanCount
     INC EBX                             ; 00499fd2
         ;   Label: LAB_00499fd2
     ADD ESI,0x4                         ; 00499fd3

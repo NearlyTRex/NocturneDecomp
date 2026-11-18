@@ -18,20 +18,20 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0053e0f8 = 0053e230
-;   undefined4 DAT_0061b4c0
-;   undefined4 DAT_00622a84
-;   undefined4 DAT_00713a74
-;   undefined4 DAT_00713a7c
-;   undefined4 DAT_01c4eff8
-;   undefined4 DAT_01c4effc
-;   undefined4 DAT_01c4f000
-;   undefined4 DAT_01c4f004
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01c51d18
-;   undefined4 DAT_01e7d5b8
-;   undefined4 DAT_01e7d5bc
-;   undefined4 DAT_01e7dabc
+;   uint g_VertexProcessingEnabled = 0x1
+;   int g_MaxViewportScanline = 0x4b0
+;   int g_TexturesDisabled
+;   int g_CullingMode
+;   int g_INT_01c4eff8
+;   int g_INT_01c4effc
+;   int g_INT_01c4f000
+;   int g_INT_01c4f004
+;   int g_INT_01c50948
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
+;   int g_SoftwareEdgeCount
+;   SSoftwareEdge[16] g_SSoftwareEdge_ARRAY_01e7d5bc
+;   int g_SoftwareMinScanline
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@
 ;   engine_prim.c_prepareDepthBuffer_FUN_0053dbc0
 ;   engine_prim.c_replaceWWithDepth_FUN_0053dd20
 ;   engine_special.cpp_drawPolygon_FUN_00582340
-;   engine_special.cpp_FUN_00580127
+;   engine_special.cpp_renderScanline_FUN_00580127
 ;
 ; *****************************************************************************
 
@@ -54,7 +54,7 @@ section .text
     PUSH EDI                            ; 0053e122
     PUSH EBP                            ; 0053e123
     SUB ESP,0x14                        ; 0053e124
-    CMP dword ptr [0x0061b4c0],0x0      ; 0053e127 | DAT_0061b4c0
+    CMP dword ptr [0x0061b4c0],0x0      ; 0053e127 | g_VertexProcessingEnabled
     JZ 0x0053e197                       ; 0053e12e
         ;   XREF to: 0053e197 (CONDITIONAL_JUMP)  ; LAB_0053e197
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0053e130
@@ -74,20 +74,20 @@ section .text
     SAR EDX,0x1f                        ; 0053e152
     IDIV EBX                            ; 0053e155
     MOV dword ptr [ECX + 0xc],EAX       ; 0053e157
-    MOV EDX,dword ptr [0x01c4eff8]      ; 0053e15a | DAT_01c4eff8
+    MOV EDX,dword ptr [0x01c4eff8]      ; 0053e15a | g_INT_01c4eff8
     MOV EBX,dword ptr [ECX + 0x8]       ; 0053e160
     MOV EAX,dword ptr [ECX]             ; 0053e163
     IMUL EDX                            ; 0053e165
     IDIV EBX                            ; 0053e167
-    MOV EDX,dword ptr [0x01c4f000]      ; 0053e169 | DAT_01c4f000
+    MOV EDX,dword ptr [0x01c4f000]      ; 0053e169 | g_INT_01c4f000
     ADD EAX,EDX                         ; 0053e16f
     MOV EBX,dword ptr [ECX + 0x8]       ; 0053e171
     MOV dword ptr [ECX + 0x10],EAX      ; 0053e174
-    MOV EDX,dword ptr [0x01c4effc]      ; 0053e177 | DAT_01c4effc
+    MOV EDX,dword ptr [0x01c4effc]      ; 0053e177 | g_INT_01c4effc
     MOV EAX,dword ptr [ECX + 0x4]       ; 0053e17d
     IMUL EDX                            ; 0053e180
     IDIV EBX                            ; 0053e182
-    MOV EDX,dword ptr [0x01c4f004]      ; 0053e184 | DAT_01c4f004
+    MOV EDX,dword ptr [0x01c4f004]      ; 0053e184 | g_INT_01c4f004
     ADD EAX,EDX                         ; 0053e18a
     MOV dword ptr [ECX + 0x14],EAX      ; 0053e18c
     INC ESI                             ; 0053e18f
@@ -96,7 +96,7 @@ section .text
     CMP ESI,EDI                         ; 0053e193
     JL 0x0053e142                       ; 0053e195
         ;   XREF to: 0053e142 (CONDITIONAL_JUMP)  ; LAB_0053e142
-    CMP dword ptr [0x00713a7c],0x0      ; 0053e197 | DAT_00713a7c
+    CMP dword ptr [0x00713a7c],0x0      ; 0053e197 | g_CullingMode
         ;   Label: LAB_0053e197
     JZ 0x0053e1fc                       ; 0053e19e
         ;   XREF to: 0053e1fc (CONDITIONAL_JUMP)  ; LAB_0053e1fc
@@ -139,18 +139,18 @@ section .text
         ;   Label: LAB_0053e1f2
     JZ 0x0053e2bb                       ; 0053e1f6
         ;   XREF to: 0053e2bb (CONDITIONAL_JUMP)  ; LAB_0053e2bb
-    CMP dword ptr [0x01c50948],0x0      ; 0053e1fc | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 0053e1fc | g_INT_01c50948
         ;   Label: LAB_0053e1fc
     JZ 0x0053e212                       ; 0053e203
         ;   XREF to: 0053e212 (CONDITIONAL_JUMP)  ; LAB_0053e212
-    CMP dword ptr [0x00713a74],0x0      ; 0053e205 | DAT_00713a74
+    CMP dword ptr [0x00713a74],0x0      ; 0053e205 | g_TexturesDisabled
     JZ 0x0053e2e8                       ; 0053e20c
         ;   XREF to: 0053e2e8 (CONDITIONAL_JUMP)  ; LAB_0053e2e8
-    MOV EBX,dword ptr [0x01e7dac8]      ; 0053e212 | DAT_01e7dac8
+    MOV EBX,dword ptr [0x01e7dac8]      ; 0053e212 | g_RenderedTriangleCount
         ;   Label: LAB_0053e212
     INC EBX                             ; 0053e218
-    MOV EAX,[0x01c51d18]                ; 0053e219 | DAT_01c51d18
-    MOV dword ptr [0x01e7dac8],EBX      ; 0053e21e | DAT_01e7dac8
+    MOV EAX,[0x01c51d18]                ; 0053e219 | g_VertexPreprocessMode
+    MOV dword ptr [0x01e7dac8],EBX      ; 0053e21e | g_RenderedTriangleCount
     CMP EAX,0x6                         ; 0053e224
     JA 0x0053e230                       ; 0053e227
         ;   XREF to: 0053e230 (CONDITIONAL_JUMP)  ; caseD_4
@@ -160,10 +160,10 @@ section .text
         ;   Label: caseD_0
     XOR EDX,EDX                         ; 0053e235
     MOV ESI,dword ptr [ESP + 0x2c]      ; 0053e237
-    MOV dword ptr [0x01e7dac0],EDX      ; 0053e23b | DAT_01e7dac0
-    MOV dword ptr [0x01e7d5b8],EDX      ; 0053e241 | DAT_01e7d5b8
+    MOV dword ptr [0x01e7dac0],EDX      ; 0053e23b | g_SoftwareMaxScanline
+    MOV dword ptr [0x01e7d5b8],EDX      ; 0053e241 | g_SoftwareEdgeCount
     MOV dword ptr [ESP + 0x8],EDX       ; 0053e247
-    MOV [0x01e7dabc],EAX                ; 0053e24b | DAT_01e7dabc
+    MOV [0x01e7dabc],EAX                ; 0053e24b | g_SoftwareMinScanline
     TEST ESI,ESI                        ; 0053e250
     JLE 0x0053e2a0                      ; 0053e252
         ;   XREF to: 0053e2a0 (CONDITIONAL_JUMP)  ; LAB_0053e2a0
@@ -201,7 +201,7 @@ section .text
         ;   XREF to: 0053e254 (CONDITIONAL_JUMP)  ; LAB_0053e254
     PUSH 0x0                            ; 0053e2a0
         ;   Label: LAB_0053e2a0
-    MOV ESI,dword ptr [0x01e7dabc]      ; 0053e2a2 | DAT_01e7dabc
+    MOV ESI,dword ptr [0x01e7dabc]      ; 0053e2a2 | g_SoftwareMinScanline
     PUSH ESI                            ; 0053e2a8
     CALL engine_prim.c_findEdgeInBuffer_FUN_0053db80 ; 0053e2a9
         ;   XREF to: 0053db80 (UNCONDITIONAL_CALL)  ; SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_0053db80(int y_value, SSoftwareEdge * edge_ptr)
@@ -240,8 +240,8 @@ section .text
     RET                                 ; 0053e2e7
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0053e2e8
         ;   Label: LAB_0053e2e8
-    MOV EDI,dword ptr [0x01e7dac8]      ; 0053e2ec | DAT_01e7dac8
-    MOV EBP,dword ptr [0x01c51d14]      ; 0053e2f2 | DAT_01c51d14
+    MOV EDI,dword ptr [0x01e7dac8]      ; 0053e2ec | g_RenderedTriangleCount
+    MOV EBP,dword ptr [0x01c51d14]      ; 0053e2f2 | g_RenderStateFlags
     SUB EAX,0x2                         ; 0053e2f8
     PUSH EBP                            ; 0053e2fb
     ADD EDI,EAX                         ; 0053e2fc
@@ -249,7 +249,7 @@ section .text
     PUSH EAX                            ; 0053e302
     MOV EDX,dword ptr [ESP + 0x30]      ; 0053e303
     PUSH EDX                            ; 0053e307
-    MOV dword ptr [0x01e7dac8],EDI      ; 0053e308 | DAT_01e7dac8
+    MOV dword ptr [0x01e7dac8],EDI      ; 0053e308 | g_RenderedTriangleCount
     CALL engine_special.cpp_drawPolygon_FUN_00582340 ; 0053e30e
         ;   XREF to: 00582340 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_00582340(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 0053e313
@@ -319,21 +319,21 @@ section .text
     MOV EAX,ECX                         ; 0053e39d
     MOV ECX,ESI                         ; 0053e39f
     MOV ESI,EAX                         ; 0053e3a1
-    IMUL EBP,dword ptr [0x01e7d5b8],0x50 ; 0053e3a3 | DAT_01e7d5b8
+    IMUL EBP,dword ptr [0x01e7d5b8],0x50 ; 0053e3a3 | g_SoftwareEdgeCount
         ;   Label: LAB_0053e3a3
     ADD EBP,0x1e7d5bc                   ; 0053e3aa
-    MOV dword ptr [EBP],ECX             ; 0053e3b0 | DAT_01e7d5bc
-    MOV EDX,dword ptr [0x01e7dabc]      ; 0053e3b3 | DAT_01e7dabc
+    MOV dword ptr [EBP],ECX             ; 0053e3b0 | g_SSoftwareEdge_ARRAY_01e7d5bc
+    MOV EDX,dword ptr [0x01e7dabc]      ; 0053e3b3 | g_SoftwareMinScanline
     MOV dword ptr [EBP + 0x4],ESI       ; 0053e3b9
     CMP ECX,EDX                         ; 0053e3bc
     JGE 0x0053e3c6                      ; 0053e3be
         ;   XREF to: 0053e3c6 (CONDITIONAL_JUMP)  ; LAB_0053e3c6
-    MOV dword ptr [0x01e7dabc],ECX      ; 0053e3c0 | DAT_01e7dabc
-    CMP ESI,dword ptr [0x01e7dac0]      ; 0053e3c6 | DAT_01e7dac0
+    MOV dword ptr [0x01e7dabc],ECX      ; 0053e3c0 | g_SoftwareMinScanline
+    CMP ESI,dword ptr [0x01e7dac0]      ; 0053e3c6 | g_SoftwareMaxScanline
         ;   Label: LAB_0053e3c6
     JLE 0x0053e3d4                      ; 0053e3cc
         ;   XREF to: 0053e3d4 (CONDITIONAL_JUMP)  ; LAB_0053e3d4
-    MOV dword ptr [0x01e7dac0],ESI      ; 0053e3ce | DAT_01e7dac0
+    MOV dword ptr [0x01e7dac0],ESI      ; 0053e3ce | g_SoftwareMaxScanline
     MOV ESI,dword ptr [EBX + 0x14]      ; 0053e3d4
         ;   Label: LAB_0053e3d4
     MOV ECX,dword ptr [EDI + 0x14]      ; 0053e3d7
@@ -439,7 +439,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8]       ; 0053e4e5
     ADD EDX,EAX                         ; 0053e4e8
     MOV dword ptr [EBP + 0x28],EDX      ; 0053e4ea
-    INC dword ptr [0x01e7d5b8]          ; 0053e4ed | DAT_01e7d5b8
+    INC dword ptr [0x01e7d5b8]          ; 0053e4ed | g_SoftwareEdgeCount
     JMP 0x0053e28f                      ; 0053e4f3
         ;   XREF to: 0053e28f (UNCONDITIONAL_JUMP)  ; LAB_0053e28f
     MOV EAX,0xffffffff                  ; 0053e4f8
@@ -451,7 +451,7 @@ section .text
         ;   XREF to: 0053e3ea (UNCONDITIONAL_JUMP)  ; LAB_0053e3ea
     PUSH EAX                            ; 0053e508
         ;   Label: LAB_0053e508
-    MOV EDI,dword ptr [0x01e7dabc]      ; 0053e509 | DAT_01e7dabc
+    MOV EDI,dword ptr [0x01e7dabc]      ; 0053e509 | g_SoftwareMinScanline
     PUSH EDI                            ; 0053e50f
     CALL engine_prim.c_findEdgeInBuffer_FUN_0053db80 ; 0053e510
         ;   XREF to: 0053db80 (UNCONDITIONAL_CALL)  ; SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_0053db80(int y_value, SSoftwareEdge * edge_ptr)
@@ -460,8 +460,8 @@ section .text
     TEST EAX,EAX                        ; 0053e51c
     JZ 0x0053e2bb                       ; 0053e51e
         ;   XREF to: 0053e2bb (CONDITIONAL_JUMP)  ; LAB_0053e2bb
-    MOV EAX,[0x01e7dabc]                ; 0053e524 | DAT_01e7dabc
-    MOV EDX,dword ptr [0x00622a84]      ; 0053e529 | DAT_00622a84
+    MOV EAX,[0x01e7dabc]                ; 0053e524 | g_SoftwareMinScanline
+    MOV EDX,dword ptr [0x00622a84]      ; 0053e529 | g_MaxViewportScanline
     MOV dword ptr [ESP + 0xc],EAX       ; 0053e52f
     CMP EAX,EDX                         ; 0053e533
     JGE 0x0053e2bb                      ; 0053e535
@@ -491,8 +491,8 @@ section .text
         ;   Label: LAB_0053e571
     MOV EBX,dword ptr [ESP + 0xc]       ; 0053e575
     MOV ESI,EBP                         ; 0053e579
-    CALL engine_special.cpp_FUN_00580127 ; 0053e57b
-        ;   XREF to: 00580127 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00580127()
+    CALL engine_special.cpp_renderScanline_FUN_00580127 ; 0053e57b
+        ;   XREF to: 00580127 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_00580127(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [EBP + 0xc]       ; 0053e580
     ADD dword ptr [EBP + 0x8],EAX       ; 0053e583
     MOV ECX,dword ptr [EBP + 0x18]      ; 0053e586
@@ -538,7 +538,7 @@ section .text
     INC ESI                             ; 0053e5f8
     MOV EAX,dword ptr [EDX + 0x2c]      ; 0053e5f9
     MOV dword ptr [EDX + 0x10],EDI      ; 0053e5fc
-    MOV EDI,dword ptr [0x00622a84]      ; 0053e5ff | DAT_00622a84
+    MOV EDI,dword ptr [0x00622a84]      ; 0053e5ff | g_MaxViewportScanline
     ADD ECX,EAX                         ; 0053e605
     MOV EAX,dword ptr [EDX + 0x34]      ; 0053e607
     MOV dword ptr [EDX + 0x28],ECX      ; 0053e60a

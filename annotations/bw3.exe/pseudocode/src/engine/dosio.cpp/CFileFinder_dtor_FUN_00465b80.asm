@@ -8,12 +8,12 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
-;   core_podmain.cpp_FUN_005152e0 at 00515371
+;   core_podmain.cpp_CDemonPod_load_FUN_005152e0 at 00515371
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20 at 0047dfff
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70 at 00482c2a
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70 at 00482e29
-;   shape_edittool.cpp_FUN_0047dd20 at 0047dfff
-;   shape_edittool.cpp_FUN_00482ea0 at 00482f54
-;   shape_edittool.cpp_FUN_00483020 at 0048312f
+;   shape_edittool.cpp_CStrList_populateRecursive_FUN_00482ea0 at 00482f54
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00483020 at 0048312f
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00465ca0

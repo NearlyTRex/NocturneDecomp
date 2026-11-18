@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004d0110(CGround *this_ptr)
 
 {
@@ -37,81 +35,81 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004d0110(CGro
   
   local_30 = this_ptr->grid_height * this_ptr->vertical_scale;
   local_28 = local_30 * 0x100;
-  local_6c[0] = ((uint)((longlong)_DAT_01d72644 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72644 * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72650 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72650 * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d7265c * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d7265c * (longlong)local_28) >> 0x20) << 0x10);
-  local_6c[1] = ((uint)((longlong)_DAT_01d72648 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72648 * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72654 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72654 * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72660 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72660 * (longlong)local_28) >> 0x20) << 0x10);
-  local_6c[2] = ((uint)((longlong)_DAT_01d7264c * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d7264c * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72658 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72658 * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72664 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72664 * (longlong)local_28) >> 0x20) << 0x10);
+  local_6c[0] = ((uint)((longlong)g_INT_01d72644 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72644 * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72650 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72650 * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d7265c * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d7265c * (longlong)local_28) >> 0x20) << 0x10);
+  local_6c[1] = ((uint)((longlong)g_INT_01d72648 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72648 * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72654 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72654 * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72660 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72660 * (longlong)local_28) >> 0x20) << 0x10);
+  local_6c[2] = ((uint)((longlong)g_INT_01d7264c * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d7264c * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72658 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72658 * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72664 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72664 * (longlong)local_28) >> 0x20) << 0x10);
   iVar3 = local_30 * -0x100;
-  local_6c[3] = ((uint)((longlong)_DAT_01d72644 * (longlong)iVar3) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72644 * (longlong)iVar3) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72650 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72650 * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d7265c * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d7265c * (longlong)local_28) >> 0x20) << 0x10);
-  local_6c[4] = ((uint)((longlong)_DAT_01d72648 * (longlong)iVar3) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72648 * (longlong)iVar3) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72654 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72654 * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72660 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72660 * (longlong)local_28) >> 0x20) << 0x10);
+  local_6c[3] = ((uint)((longlong)g_INT_01d72644 * (longlong)iVar3) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72644 * (longlong)iVar3) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72650 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72650 * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d7265c * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d7265c * (longlong)local_28) >> 0x20) << 0x10);
+  local_6c[4] = ((uint)((longlong)g_INT_01d72648 * (longlong)iVar3) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72648 * (longlong)iVar3) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72654 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72654 * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72660 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72660 * (longlong)local_28) >> 0x20) << 0x10);
   local_2c = local_30 * -0x100;
-  local_6c[5] = ((uint)((longlong)_DAT_01d7264c * (longlong)iVar3) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d7264c * (longlong)iVar3) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72658 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72658 * (longlong)local_28) >> 0x20) << 0x10) +
-                ((uint)((longlong)_DAT_01d72664 * (longlong)local_28) >> 0x10 |
-                (int)((ulonglong)((longlong)_DAT_01d72664 * (longlong)local_28) >> 0x20) << 0x10);
-  local_54 = ((uint)((longlong)_DAT_01d72644 * (longlong)iVar3) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72644 * (longlong)iVar3) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72650 * (longlong)local_2c) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72650 * (longlong)local_2c) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d7265c * (longlong)local_28) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d7265c * (longlong)local_28) >> 0x20) << 0x10);
-  local_50 = ((uint)((longlong)_DAT_01d72648 * (longlong)iVar3) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72648 * (longlong)iVar3) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72654 * (longlong)local_2c) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72654 * (longlong)local_2c) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72660 * (longlong)local_28) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72660 * (longlong)local_28) >> 0x20) << 0x10);
+  local_6c[5] = ((uint)((longlong)g_INT_01d7264c * (longlong)iVar3) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d7264c * (longlong)iVar3) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72658 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72658 * (longlong)local_28) >> 0x20) << 0x10) +
+                ((uint)((longlong)g_INT_01d72664 * (longlong)local_28) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d72664 * (longlong)local_28) >> 0x20) << 0x10);
+  local_54 = ((uint)((longlong)g_INT_01d72644 * (longlong)iVar3) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72644 * (longlong)iVar3) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72650 * (longlong)local_2c) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72650 * (longlong)local_2c) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d7265c * (longlong)local_28) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d7265c * (longlong)local_28) >> 0x20) << 0x10);
+  local_50 = ((uint)((longlong)g_INT_01d72648 * (longlong)iVar3) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72648 * (longlong)iVar3) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72654 * (longlong)local_2c) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72654 * (longlong)local_2c) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72660 * (longlong)local_28) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72660 * (longlong)local_28) >> 0x20) << 0x10);
   local_30 = local_30 * 0x100;
-  local_4c = ((uint)((longlong)_DAT_01d7264c * (longlong)iVar3) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d7264c * (longlong)iVar3) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72658 * (longlong)local_2c) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72658 * (longlong)local_2c) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72664 * (longlong)local_28) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72664 * (longlong)local_28) >> 0x20) << 0x10);
-  local_48 = ((uint)((longlong)_DAT_01d72644 * (longlong)local_30) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72644 * (longlong)local_30) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72650 * (longlong)local_2c) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72650 * (longlong)local_2c) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d7265c * (longlong)local_28) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d7265c * (longlong)local_28) >> 0x20) << 0x10);
-  local_44 = ((uint)((longlong)_DAT_01d72648 * (longlong)local_30) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72648 * (longlong)local_30) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72654 * (longlong)local_2c) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72654 * (longlong)local_2c) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72660 * (longlong)local_28) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72660 * (longlong)local_28) >> 0x20) << 0x10);
-  local_40 = ((uint)((longlong)_DAT_01d7264c * (longlong)local_30) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d7264c * (longlong)local_30) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72658 * (longlong)local_2c) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72658 * (longlong)local_2c) >> 0x20) << 0x10) +
-             ((uint)((longlong)_DAT_01d72664 * (longlong)local_28) >> 0x10 |
-             (int)((ulonglong)((longlong)_DAT_01d72664 * (longlong)local_28) >> 0x20) << 0x10);
+  local_4c = ((uint)((longlong)g_INT_01d7264c * (longlong)iVar3) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d7264c * (longlong)iVar3) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72658 * (longlong)local_2c) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72658 * (longlong)local_2c) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72664 * (longlong)local_28) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72664 * (longlong)local_28) >> 0x20) << 0x10);
+  local_48 = ((uint)((longlong)g_INT_01d72644 * (longlong)local_30) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72644 * (longlong)local_30) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72650 * (longlong)local_2c) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72650 * (longlong)local_2c) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d7265c * (longlong)local_28) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d7265c * (longlong)local_28) >> 0x20) << 0x10);
+  local_44 = ((uint)((longlong)g_INT_01d72648 * (longlong)local_30) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72648 * (longlong)local_30) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72654 * (longlong)local_2c) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72654 * (longlong)local_2c) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72660 * (longlong)local_28) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72660 * (longlong)local_28) >> 0x20) << 0x10);
+  local_40 = ((uint)((longlong)g_INT_01d7264c * (longlong)local_30) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d7264c * (longlong)local_30) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72658 * (longlong)local_2c) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72658 * (longlong)local_2c) >> 0x20) << 0x10) +
+             ((uint)((longlong)g_INT_01d72664 * (longlong)local_28) >> 0x10 |
+             (int)((ulonglong)((longlong)g_INT_01d72664 * (longlong)local_28) >> 0x20) << 0x10);
   local_38 = 0;
   local_34 = 0;
   local_14 = 999;

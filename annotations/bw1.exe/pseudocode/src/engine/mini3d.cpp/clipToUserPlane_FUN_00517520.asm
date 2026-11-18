@@ -15,10 +15,10 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_0051750c = 0051760a
 ;   undefined1* PTR_caseD_3_00517514 = 005175ec
-;   undefined4 DAT_01d25f1c
-;   undefined4 DAT_01d25f20
-;   undefined4 DAT_01d25f24
-;   undefined4 DAT_01d25f28
+;   float g_FLOAT_01d25f1c
+;   float g_FLOAT_01d25f20
+;   float g_FLOAT_01d25f24
+;   float g_FLOAT_01d25f28
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_intersectUserClipPlane_FUN_005173e0
@@ -52,19 +52,19 @@ section .text
     XOR ECX,EAX                         ; 00517552
     IMUL ECX,ECX,0x24                   ; 00517554
         ;   Label: LAB_00517554
-    FLD float ptr [0x01d25f20]          ; 00517557 | DAT_01d25f20
+    FLD float ptr [0x01d25f20]          ; 00517557 | g_FLOAT_01d25f20
     FMUL float ptr [EBP + 0x4]          ; 0051755d
-    FLD float ptr [0x01d25f1c]          ; 00517560 | DAT_01d25f1c
+    FLD float ptr [0x01d25f1c]          ; 00517560 | g_FLOAT_01d25f1c
     FMUL float ptr [EBP]                ; 00517566
     FADDP                               ; 00517569
-    FLD float ptr [0x01d25f24]          ; 0051756b | DAT_01d25f24
+    FLD float ptr [0x01d25f24]          ; 0051756b | g_FLOAT_01d25f24
     FMUL float ptr [EBP + 0x8]          ; 00517571
     MOV EDI,dword ptr [ESP + 0x1c]      ; 00517574
     MOV EDX,EBP                         ; 00517578
     ADD EDI,ECX                         ; 0051757a
     FADDP                               ; 0051757c
     MOV dword ptr [ESP + 0x4],EDI       ; 0051757e
-    FADD float ptr [0x01d25f28]         ; 00517582 | DAT_01d25f28
+    FADD float ptr [0x01d25f28]         ; 00517582 | g_FLOAT_01d25f28
     XOR ECX,ECX                         ; 00517588
     FLDZ                                ; 0051758a
     FCOMPP                              ; 0051758c
@@ -75,15 +75,15 @@ section .text
     MOV ECX,0x1                         ; 00517593
     MOV EDI,dword ptr [ESP + 0x4]       ; 00517598
         ;   Label: LAB_00517598
-    FLD float ptr [0x01d25f20]          ; 0051759c | DAT_01d25f20
+    FLD float ptr [0x01d25f20]          ; 0051759c | g_FLOAT_01d25f20
     FMUL float ptr [EDI + 0x4]          ; 005175a2
-    FLD float ptr [0x01d25f1c]          ; 005175a5 | DAT_01d25f1c
+    FLD float ptr [0x01d25f1c]          ; 005175a5 | g_FLOAT_01d25f1c
     FMUL float ptr [EDI]                ; 005175ab
     FADDP                               ; 005175ad
-    FLD float ptr [0x01d25f24]          ; 005175af | DAT_01d25f24
+    FLD float ptr [0x01d25f24]          ; 005175af | g_FLOAT_01d25f24
     FMUL float ptr [EDI + 0x8]          ; 005175b5
     FADDP                               ; 005175b8
-    FADD float ptr [0x01d25f28]         ; 005175ba | DAT_01d25f28
+    FADD float ptr [0x01d25f28]         ; 005175ba | g_FLOAT_01d25f28
     FLDZ                                ; 005175c0
     FCOMPP                              ; 005175c2
     FNSTSW AX                           ; 005175c4

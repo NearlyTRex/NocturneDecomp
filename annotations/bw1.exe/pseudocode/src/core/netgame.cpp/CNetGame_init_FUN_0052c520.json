@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 63,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
     "total_lines": 103
   },
@@ -49,12 +48,12 @@
     {
       "addr": "005c25c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c25c0"
+      "name": "crt_stdio.c_remove_FUN_005c25c0"
     },
     {
       "addr": "0059eeb0",
       "is_variadic": false,
-      "name": "support_trisock.cpp_FUN_0059eeb0"
+      "name": "support_trisock.cpp_startupWinsock_FUN_0059eeb0"
     },
     {
       "addr": "005b2420",
@@ -107,26 +106,26 @@
     },
     {
       "addr": "01d51d9c",
-      "name": "DAT_01d51d9c",
-      "type": "undefined4",
+      "name": "g_LastPingTime",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d51da0",
-      "name": "DAT_01d51da0",
-      "type": "undefined4",
+      "name": "g_UINT_01d51da0",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01d51db4",
-      "name": "DAT_01d51db4",
-      "type": "undefined4",
+      "name": "g_ChatHistoryCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d6dfb8",
-      "name": "DAT_01d6dfb8",
-      "type": "undefined4",
+      "name": "g_ChatOutCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -230,16 +229,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 24,
+      "line": 23,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

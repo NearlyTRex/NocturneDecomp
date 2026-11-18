@@ -7,8 +7,8 @@
 ; CLantern *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ef7d1
-;   undefined4 DAT_005ef7d9
+;   float g_FLOAT_005ef7d1 = 0.3926991
+;   double g_DOUBLE_005ef7d9 = 0.200000000000000
 ;
 ; Called Functions:
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0044d060
@@ -30,10 +30,10 @@ section .text
     RET                                 ; 0059d055
     FLD float ptr [EDX + 0x6f0]         ; 0059d056
         ;   Label: LAB_0059d056
-    FMUL double ptr [0x005ef7d9]        ; 0059d05c | DAT_005ef7d9
+    FMUL double ptr [0x005ef7d9]        ; 0059d05c | g_DOUBLE_005ef7d9
     SUB ESP,0x4                         ; 0059d062
     FLD float ptr [EDX + 0x6e8]         ; 0059d065
-    FADD float ptr [0x005ef7d1]         ; 0059d06b | DAT_005ef7d1
+    FADD float ptr [0x005ef7d1]         ; 0059d06b | g_FLOAT_005ef7d1
     LEA EAX,[EDX + 0x6e4]               ; 0059d071
     FSTP float ptr [EDX + 0x6e8]        ; 0059d077
     FSTP float ptr [ESP]                ; 0059d07d

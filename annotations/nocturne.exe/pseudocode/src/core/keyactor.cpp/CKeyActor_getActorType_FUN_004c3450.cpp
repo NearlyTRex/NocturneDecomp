@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_keyactor_cpp_CKeyActor_getActorType_FUN_004c3450(CKeyActor *this_ptr)
 
 {
-  return &g_CKeyActorActorType_01cc30a8;
+  return &g_CKeyActorClassInfo;
 }

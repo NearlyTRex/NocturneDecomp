@@ -36,7 +36,7 @@ HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,
   local_28.nLength = 0xc;
   local_28.lpSecurityDescriptor = (LPVOID)0x0;
   local_28.bInheritHandle = (BOOL)((access_mode & 0x80) == 0);
-  if ((DAT_005c1d5c == (code *)0x0) ||
+  if ((g_PTR_005c1d5c == (byte *)0x0) ||
      (iVar2 = _stricmp(filename,"con"), iVar2 != 0)) {
     if ((access_mode & 0x20) == 0) {
       if ((access_mode & 0x40) == 0) {
@@ -52,7 +52,7 @@ LAB_0056ba9b:
       extra_args->value[0] = (char *)(puVar1 + 1);
       local_14 = *puVar1;
       extra_args->value[0] = (char *)0x0;
-      local_14 = local_14 & ~DAT_005c206c;
+      local_14 = local_14 & ~g_INT_005c206c;
       if (((local_14 & 0x100) != 0) && ((local_14 & 0x80) == 0)) {
         dwFlagsAndAttributes = 1;
       }
@@ -84,7 +84,7 @@ LAB_0056ba9b:
     handle_index = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)
                                      (pvVar4);
     uVar5 = 0;
-    if (0x00000014 <= handle_index) {
+    if (g_MaxHandleCount <= handle_index) {
       CloseHandle(pvVar4);
       setErrno(5);
       return (HANDLE)0xffffffff;
@@ -99,7 +99,7 @@ LAB_0056ba9b:
     handle_index = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)
                                      (uVar3);
     uVar5 = 0x2000;
-    (*DAT_005c1d5c)(0,handle_index,0xffffffff);
+    (*(code *)g_PTR_005c1d5c)(0,handle_index,0xffffffff);
   }
   if (uVar6 == 2) {
     uVar5 = uVar5 | 3;
@@ -114,7 +114,7 @@ LAB_0056ba9b:
     uVar5 = uVar5 | 0x80;
   }
   if ((access_mode & 0x300) == 0) {
-    if (0x00000100 != 0x200) goto LAB_0056bb8d;
+    if (g_INT_005c1aa0 != 0x200) goto LAB_0056bb8d;
   }
   else if ((access_mode & 0x200) == 0) goto LAB_0056bb8d;
   uVar5 = uVar5 | 0x40;

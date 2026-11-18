@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 153,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 26,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 138,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 136,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 534
+    "total_lines": 532
   },
   "cross_references": [
     {
@@ -219,31 +219,31 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01bd1d80",
-      "name": "DAT_01bd1d80",
-      "type": "undefined4",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c038f4",
-      "name": "DAT_01c038f4",
-      "type": "undefined4",
+      "name": "g_INT_01c038f4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc30a4",
-      "name": "DAT_01cc30a4",
-      "type": "undefined4",
+      "name": "g_InventoryLightAngle",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc56dc",
-      "name": "g_CMeleeActorType_01cc56a4.name_hash",
+      "name": "g_CMeleeClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -381,6 +381,12 @@
       "by": "name",
       "class": "logic-change",
       "ratio": 0.5495
+    },
+    "bw3.exe": {
+      "addr": "004dbe70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6132
     },
     "nocedit.exe": {
       "addr": "004fee00",
@@ -631,12 +637,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 44,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 45,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

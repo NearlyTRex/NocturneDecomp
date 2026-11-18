@@ -2,17 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 145,
+    "complexity_score": 171,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 12,
+    "pseudocode_lines": 21,
+    "suspect_count": 14,
     "suspect_types": [
+      "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 53
+    "total_lines": 54
   },
   "cross_references": [],
   "function": {
@@ -25,27 +26,27 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005b0da0",
-    "signature": "void crt_unknown_c_FUN_005b0da0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)"
+    "signature": "void crt_unknown_c_FUN_005b0da0(undefined4 *param_1,undefined4 *param_2,char *param_3)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "00607f14",
-      "name": "PTR_crt_unknown.c_FUN_005b1840_00607f14",
-      "type": "undefined1*",
+      "name": "g_PTR_00607f14",
+      "type": "void*",
       "value": "005b1840"
     },
     {
       "addr": "00607f18",
-      "name": "PTR_crt_unknown.c_FUN_005b1938_00607f18",
-      "type": "undefined1*",
+      "name": "g_PTR_00607f18",
+      "type": "void*",
       "value": "005b1938"
     },
     {
       "addr": "00607f1c",
-      "name": "PTR_crt_unknown.c_FUN_005b0d60_00607f1c",
-      "type": "undefined1*",
-      "value": "005b0d60"
+      "name": "g_CHAR_ARRAY_00607f1c",
+      "type": "char[145]",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -109,7 +110,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005b0da0(uint *param_1,uint *param_2,uint *param_3)",
+      "text": "void FUN_005b0da0(uint *param_1,uint *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -117,7 +118,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_005b0da0(uint *param_1,uint *param_2,uint *param_3)",
+      "text": "void FUN_005b0da0(uint *param_1,uint *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -125,15 +126,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_005b0da0(uint *param_1,uint *param_2,uint *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != (uint *)0x0) {",
+      "text": "void FUN_005b0da0(uint *param_1,uint *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -141,7 +134,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = (byte *)*param_1;",
+      "text": "if (param_1 != (uint *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -149,15 +142,15 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = PTR_crt_unknown_c_FUN_005b1840_00607f14;",
+      "text": "puVar1 = (byte *)*param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
+      "line": 10,
+      "match": "param_1",
       "severity": "mild",
-      "text": "if (param_2 != (uint *)0x0) {",
+      "text": "*param_1 = g_PTR_00607f14;",
       "type": "unnamed_param"
     },
     {
@@ -165,7 +158,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar1 = (byte *)*param_2;",
+      "text": "if (param_2 != (uint *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -173,15 +166,15 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = PTR_crt_unknown_c_FUN_005b1938_00607f18;",
+      "text": "puVar1 = (byte *)*param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
+      "line": 15,
+      "match": "param_2",
       "severity": "mild",
-      "text": "if (param_3 != (uint *)0x0) {",
+      "text": "*param_2 = g_PTR_00607f18;",
       "type": "unnamed_param"
     },
     {
@@ -189,7 +182,7 @@
       "line": 18,
       "match": "param_3",
       "severity": "mild",
-      "text": "puVar1 = (byte *)*param_3;",
+      "text": "if (param_3 != (char *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -197,8 +190,32 @@
       "line": 19,
       "match": "param_3",
       "severity": "mild",
-      "text": "*param_3 = PTR_crt_unknown_c_FUN_005b0d60_00607f1c;",
+      "text": "uVar2 = *(uint *)param_3;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 20,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "*(uint *)param_3 = g_CHAR_ARRAY_00607f1c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(uint *)param_3 = g_CHAR_ARRAY_00607f1c._0_4_;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 21,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_CHAR_ARRAY_00607f1c._0_4_ = uVar2;",
+      "type": "unknown_field"
     }
   ]
 }

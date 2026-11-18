@@ -9,12 +9,12 @@
 ; int              Stack[0xc]:4   y_pos
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c34b0e
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
+;   int g_INT_006141c0 = 0x8
+;   undefined4 g_ColorTable16[255]
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
+;   int g_ClipRight
+;   int g_INT_01c35e54
 ;
 ; *****************************************************************************
 
@@ -34,27 +34,27 @@ section .text
     SHL EAX,0x4                         ; 00401b9e
     ADD EAX,EDX                         ; 00401ba1
     ADD EAX,0x601440                    ; 00401ba3
-    MOV EDX,dword ptr [0x01c35e48]      ; 00401ba8 | DAT_01c35e48
+    MOV EDX,dword ptr [0x01c35e48]      ; 00401ba8 | g_INT_01c35e48
     MOVZX ESI,byte ptr [EAX]            ; 00401bae
     CMP EBP,EDX                         ; 00401bb1
     JL 0x00401c37                       ; 00401bb3
         ;   XREF to: 00401c37 (CONDITIONAL_JUMP)  ; LAB_00401c37
-    CMP EDI,dword ptr [0x01c35e4c]      ; 00401bb9 | DAT_01c35e4c
+    CMP EDI,dword ptr [0x01c35e4c]      ; 00401bb9 | g_INT_01c35e4c
     JL 0x00401c37                       ; 00401bbf
         ;   XREF to: 00401c37 (CONDITIONAL_JUMP)  ; LAB_00401c37
-    MOV EDX,dword ptr [0x01c35e50]      ; 00401bc5 | DAT_01c35e50
+    MOV EDX,dword ptr [0x01c35e50]      ; 00401bc5 | g_ClipRight
     INC EDX                             ; 00401bcb
     SUB EDX,ESI                         ; 00401bcc
     CMP EBP,EDX                         ; 00401bce
     JG 0x00401c37                       ; 00401bd0
         ;   XREF to: 00401c37 (CONDITIONAL_JUMP)  ; LAB_00401c37
-    MOV EDX,dword ptr [0x01c35e54]      ; 00401bd2 | DAT_01c35e54
+    MOV EDX,dword ptr [0x01c35e54]      ; 00401bd2 | g_INT_01c35e54
     SUB EDX,0xa                         ; 00401bd8
     CMP EDI,EDX                         ; 00401bdb
     JG 0x00401c37                       ; 00401bdd
         ;   XREF to: 00401c37 (CONDITIONAL_JUMP)  ; LAB_00401c37
     PUSH EBX                            ; 00401bdf
-    MOV EBX,dword ptr [0x006141c0]      ; 00401be0 | DAT_006141c0
+    MOV EBX,dword ptr [0x006141c0]      ; 00401be0 | g_INT_006141c0
     SHL EDI,0x2                         ; 00401be6
     INC EAX                             ; 00401be9
     LEA EDX,[EDI + 0x2c]                ; 00401bea
@@ -75,7 +75,7 @@ section .text
     TEST BL,BL                          ; 00401c08
     JZ 0x00401c16                       ; 00401c0a
         ;   XREF to: 00401c16 (CONDITIONAL_JUMP)  ; LAB_00401c16
-    MOV BX,word ptr [0x01c34b0e]        ; 00401c0c | DAT_01c34b0e
+    MOV BX,word ptr [0x01c34b0e]        ; 00401c0c | g_ColorTable16[255]
     MOV word ptr [EDX],BX               ; 00401c13
     INC EAX                             ; 00401c16
         ;   Label: LAB_00401c16

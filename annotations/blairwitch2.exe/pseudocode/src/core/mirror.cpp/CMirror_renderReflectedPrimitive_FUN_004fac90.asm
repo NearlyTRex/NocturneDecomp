@@ -11,8 +11,8 @@
 ;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610 at 0053462c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10
@@ -39,8 +39,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 004faca8
     ADD EAX,0xe8                        ; 004facac
     PUSH EAX                            ; 004facb1
-    MOV EBX,dword ptr [0x0060b280]      ; 004facb2 | DAT_0060b280
-    PUSH EBX                            ; 004facb8 | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 004facb2 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 004facb8 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0 ; 004facb9
         ;   XREF to: 004699a0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004facbe

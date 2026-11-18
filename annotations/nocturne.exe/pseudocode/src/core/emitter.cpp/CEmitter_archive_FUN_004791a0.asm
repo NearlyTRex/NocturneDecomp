@@ -68,7 +68,7 @@ section .text
     PUSH EAX                            ; 004791f6
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004791f7
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
-    MOV EDX,dword ptr [0x005b75dc]      ; 004791fc | INT_005b75dc
+    MOV EDX,dword ptr [0x005b75dc]      ; 004791fc | g_CEmitterClassVersion
     ADD ESP,0x8                         ; 00479202
     CMP EDX,0x2                         ; 00479205
     JGE 0x0047932e                      ; 00479208
@@ -94,7 +94,7 @@ section .text
     PUSH EAX                            ; 0047924a
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0047924b
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
-    MOV ESI,dword ptr [0x005b75dc]      ; 00479250 | INT_005b75dc
+    MOV ESI,dword ptr [0x005b75dc]      ; 00479250 | g_CEmitterClassVersion
     ADD ESP,0x8                         ; 00479256
     CMP ESI,0x3                         ; 00479259
     JL 0x00479272                       ; 0047925c
@@ -105,7 +105,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0047926a
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 0047926f
-    CMP dword ptr [0x005b75dc],0x3      ; 00479272 | INT_005b75dc
+    CMP dword ptr [0x005b75dc],0x3      ; 00479272 | g_CEmitterClassVersion
         ;   Label: LAB_00479272
     JL 0x004792a3                       ; 00479279
         ;   XREF to: 004792a3 (CONDITIONAL_JUMP)  ; LAB_004792a3
@@ -121,7 +121,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0047929b
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004792a0
-    CMP dword ptr [0x005b75dc],0x4      ; 004792a3 | INT_005b75dc
+    CMP dword ptr [0x005b75dc],0x4      ; 004792a3 | g_CEmitterClassVersion
         ;   Label: LAB_004792a3
     JL 0x004792d4                       ; 004792aa
         ;   XREF to: 004792d4 (CONDITIONAL_JUMP)  ; LAB_004792d4
@@ -137,7 +137,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004792cc
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004792d1
-    CMP dword ptr [0x005b75dc],0x5      ; 004792d4 | INT_005b75dc
+    CMP dword ptr [0x005b75dc],0x5      ; 004792d4 | g_CEmitterClassVersion
         ;   Label: LAB_004792d4
     JL 0x00479305                       ; 004792db
         ;   XREF to: 00479305 (CONDITIONAL_JUMP)  ; LAB_00479305
@@ -153,7 +153,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004792fd
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00479302
-    CMP dword ptr [0x005b75dc],0x6      ; 00479305 | INT_005b75dc
+    CMP dword ptr [0x005b75dc],0x6      ; 00479305 | g_CEmitterClassVersion
         ;   Label: LAB_00479305
     JL 0x00479322                       ; 0047930c
         ;   XREF to: 00479322 (CONDITIONAL_JUMP)  ; LAB_00479322
@@ -163,7 +163,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0047931a
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0047931f
-    CMP dword ptr [0x005b75dc],0x7      ; 00479322 | INT_005b75dc
+    CMP dword ptr [0x005b75dc],0x7      ; 00479322 | g_CEmitterClassVersion
         ;   Label: LAB_00479322
     JGE 0x00479347                      ; 00479329
         ;   XREF to: 00479347 (CONDITIONAL_JUMP)  ; LAB_00479347

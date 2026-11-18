@@ -15,20 +15,20 @@
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00417630 at 0041765c
 ;   core_carved.cpp_CCarved_setup_FUN_00425ab0 at 00425ad9
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0 at 0043210c
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 00432381
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0 at 00433ff5
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60 at 00433d88
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b18a
-;   core_charactr.cpp_FUN_00432330 at 00432381
-;   core_charactr.cpp_FUN_00433c60 at 00433d88
 ;   ... and 33 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1831
 ;   TerminatedCString s_Can_t_find_bone_s_in_ske_005d1846
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
 ; *****************************************************************************
@@ -87,10 +87,10 @@ section .text
     MOV ESI,0x5d1831                    ; 005480ea | = "..\\core\\skeleton.cpp"
     MOV EAX,0x179                       ; 005480ef
     PUSH 0x5d1846                       ; 005480f4 | = "Can't find bone %s in skeleton %s!"
-    MOV dword ptr [0x01d71de0],ESI      ; 005480f9 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 005480ff | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00548104
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ESI      ; 005480f9 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 005480ff | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00548104
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00548109
     MOV EAX,0xffffffff                  ; 0054810c
     POP EBP                             ; 00548111

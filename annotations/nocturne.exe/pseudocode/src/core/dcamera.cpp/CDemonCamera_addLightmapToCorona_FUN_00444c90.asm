@@ -21,7 +21,7 @@
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 00509b56
 ;
 ; Referenced Globals:
-;   undefined4 DAT_014b7194
+;   char* g_CoronaLightingTextureData
 ;
 ; *****************************************************************************
 
@@ -113,7 +113,7 @@ section .text
     MOV dword ptr [EBP + -0x18],EAX     ; 00444d76
     MOV EAX,dword ptr [EBP + 0x18]      ; 00444d79
     MOV EAX,dword ptr [EAX + 0x1c54]    ; 00444d7c
-    MOV [0x014b7194],EAX                ; 00444d82 | DAT_014b7194
+    MOV [0x014b7194],EAX                ; 00444d82 | g_CoronaLightingTextureData
     MOV ECX,dword ptr [EBP + 0xffffffec] ; 00444d87
     MOV EBX,dword ptr [EBP + 0xffffffdc] ; 00444d8d
     MOV EAX,dword ptr [EBX]             ; 00444d93
@@ -154,7 +154,7 @@ section .text
     CMP EAX,dword ptr [EBX]             ; 00444df5
     JC 0x00444e06                       ; 00444df7
         ;   XREF to: 00444e06 (CONDITIONAL_JUMP)  ; LAB_00444e06
-    MOV EBP,dword ptr [0x014b7194]      ; 00444df9 | DAT_014b7194
+    MOV EBP,dword ptr [0x014b7194]      ; 00444df9 | g_CoronaLightingTextureData
     ADD EBP,dword ptr [EDX]             ; 00444dff
     MOV AL,byte ptr [EBP]               ; 00444e01
     ADD byte ptr [EDI],AL               ; 00444e04

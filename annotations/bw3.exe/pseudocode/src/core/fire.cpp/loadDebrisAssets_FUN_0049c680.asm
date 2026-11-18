@@ -13,7 +13,7 @@
 ;   TerminatedCString s_debris03_kfm_005c0662
 ;   TerminatedCString s_debris04_kfm_005c066f
 ;   TerminatedCString s_debris05_kfm_005c067c
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
@@ -71,7 +71,7 @@ section .text
         ;   XREF to: 00462580 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0049c718
     PUSH 0x0                            ; 0049c71b
-    MOV EDX,dword ptr [0x005fc5a0]      ; 0049c71d | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 0049c71d | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 0049c723
     CALL core_fire.cpp_CFireEffect_preloadExplosionStyle_FUN_004a42f0 ; 0049c724
         ;   XREF to: 004a42f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadExplosionStyle_FUN_004a42f0(CFireEffect * this_ptr, int explosion_type)

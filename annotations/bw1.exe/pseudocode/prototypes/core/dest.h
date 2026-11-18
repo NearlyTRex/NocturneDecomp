@@ -29,9 +29,9 @@ void __cdecl CActorDestination::setup(CActorDestination *this_ptr);
 // Address: 0045d2a0
 void __cdecl CActorDestination::process(CActorDestination *this_ptr,float delta_time);
 
-// Original: core_dest.cpp_FUN_0045d4b0
+// Original: core_dest.cpp_CActorDestination_getCollisionType_FUN_0045d4b0
 // Address: 0045d4b0
-undefined4 FUN_0045d4b0(void);
+ECollisionType __cdecl CActorDestination::getCollisionType(CActorDestination *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_dest.cpp_CActorDestination_getBoundingBox_FUN_0045d4c0
 // Address: 0045d4c0

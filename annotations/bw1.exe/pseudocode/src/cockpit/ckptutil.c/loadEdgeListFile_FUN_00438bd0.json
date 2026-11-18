@@ -1,0 +1,262 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 212,
+    "complexity_score": 175,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 10,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 282
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00438bd0",
+    "address_range": [
+      [
+        "00438bd0",
+        "00438dfb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0",
+    "signature": "void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_00438bd0(char *filename,SEdgeList *edge_lists,int expected_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    },
+    {
+      "addr": "005c08d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
+    },
+    {
+      "addr": "005c0d10",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005c0d10"
+    },
+    {
+      "addr": "005c0b10",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005c0b10"
+    },
+    {
+      "addr": "005c09f0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_debugFree_FUN_005c09f0"
+    },
+    {
+      "addr": "005c1280",
+      "is_variadic": false,
+      "name": "crt_unknown.c_printf_FUN_005c1280"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00479180",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00479180"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d1d400",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "g_INT_01d1d404",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.783625730994152,
+    "instruction_count": 171,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 19,
+      "CBRANCH": 10,
+      "COPY": 126,
+      "INT_ADD": 53,
+      "INT_AND": 75,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 70,
+      "INT_LESS": 6,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 35,
+      "INT_SUB": 69,
+      "INT_XOR": 1,
+      "LOAD": 23,
+      "POPCOUNT": 35,
+      "RETURN": 1,
+      "STORE": 65
+    },
+    "pcode_op_count": 647
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0042dec0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004367e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004331f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9828
+    },
+    "nocturne.exe": {
+      "addr": "0042eb90",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "edge_lists",
+        "offset": 8,
+        "size": 4,
+        "type": "SEdgeList *"
+      },
+      {
+        "is_param": true,
+        "name": "expected_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 16,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xffffff98,\"Unable to open edge list file (%s).\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xffffff98,\"Unable to read number of edge lists (%s).\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 26,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xffffff98,\"Invalid number of edge lists in file (%s).\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xffffff98,\"Unable to read number of edges (%s).\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 43,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xffffff98,\"Unable to read edge list (%s).\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 63,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xffffff98);",
+      "type": "stack_ref"
+    }
+  ]
+}

@@ -35,7 +35,7 @@ int __cdecl CStairs::renderOpaque(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_getBoundingBox_FUN_005849f0
 // Address: 005849f0
-CBoundingBox3D * __cdecl CStairs::getBoundingBox(CStairs *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CStairs::getBoundingBox(CStairs *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_stairs.cpp_CStairs_archive_FUN_00584a60
 // Address: 00584a60

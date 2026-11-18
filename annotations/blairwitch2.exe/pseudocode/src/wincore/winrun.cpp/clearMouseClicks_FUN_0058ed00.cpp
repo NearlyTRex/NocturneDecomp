@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_0058ed00(void)
 
 {
-  _DAT_01c2a384 = 0;
+  g_MouseButtonFlags.dword = 0;
   return;
 }

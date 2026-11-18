@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00518f60(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
 
 {
@@ -47,9 +45,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00518f60(CDef
       do {
         local_1c = iVar5 * 0x30;
         core_xform_cpp_getTranslation_FUN_0055bc00(matrix_in,&local_28);
-        local_4c.x = (int)ROUND(local_28.x * _DAT_005a1ea8);
-        local_4c.y = (int)ROUND(local_28.y * _DAT_005a1ea8);
-        local_4c.z = (int)ROUND(local_28.z * _DAT_005a1ea8);
+        local_4c.x = (int)ROUND(local_28.x * 256.0f);
+        local_4c.y = (int)ROUND(local_28.y * 256.0f);
+        local_4c.z = (int)ROUND(local_28.z * 256.0f);
         output = (SProjectedVertex *)
                  ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
                         transformed_x + local_1c);

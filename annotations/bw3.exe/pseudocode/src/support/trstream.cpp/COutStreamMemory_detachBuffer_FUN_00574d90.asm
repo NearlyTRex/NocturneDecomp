@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_00574d90(COutStreamMemory *this_ptr,int *param_2)
+; int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_00574d90(COutStreamMemory *this_ptr,int *out_length)
 ;
 ; Parameters:
 ; COutStreamMemory * Stack[0x4]:4   this_ptr
-; int *            Stack[0x8]:4   param_2
+; int *            Stack[0x8]:4   out_length
 ;
 ; *****************************************************************************
 

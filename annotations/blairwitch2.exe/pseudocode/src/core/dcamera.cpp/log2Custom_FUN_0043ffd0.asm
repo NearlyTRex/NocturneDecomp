@@ -7,7 +7,7 @@
 ; double           Stack[0x4]:8   val
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ce5b6
+;   double g_DOUBLE_005ce5b6 = 3.32192809489000
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     FLDLG2                              ; 0043ffd7
     FXCH                                ; 0043ffd9
     FYL2X                               ; 0043ffdb
-    FMUL double ptr [0x005ce5b6]        ; 0043ffdd | DAT_005ce5b6
+    FMUL double ptr [0x005ce5b6]        ; 0043ffdd | g_DOUBLE_005ce5b6
     FSTP double ptr [ESP]               ; 0043ffe3
     MOV EAX,dword ptr [ESP]             ; 0043ffe6
     MOV EDX,dword ptr [ESP + 0x4]       ; 0043ffe9

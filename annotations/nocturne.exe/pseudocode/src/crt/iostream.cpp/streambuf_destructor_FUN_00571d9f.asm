@@ -11,7 +11,7 @@
 ;   crt_strstream.cpp_strstreambuf_dtor_FUN_005701cf at 00570208
 ;
 ; Referenced Globals:
-;   undefined1* g_StreambufVTable = 0056ff82
+;   streambuf_vtable g_StreambufVTable
 ;
 ; Called Functions:
 ;   crt_unknown.c_freeBuffer_FUN_00571ef0

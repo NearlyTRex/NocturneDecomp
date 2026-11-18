@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(CNetGame *this_ptr)
 
 {
@@ -51,6 +49,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(CNetGame *th
     piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
   core_netgame_cpp_CNetGame_send_FUN_004eb350(this_ptr,this_ptr->server_player_index,&local_48);
-  _DAT_01cea408 = _DAT_01cea3f8;
+  g_NetLastSimFrameAckTime = g_CurrentGameTime;
   return;
 }

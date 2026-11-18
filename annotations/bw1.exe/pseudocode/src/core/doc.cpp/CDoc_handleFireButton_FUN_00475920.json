@@ -1,0 +1,206 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 275,
+    "complexity_score": 191,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 146,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 421
+  },
+  "cross_references": [
+    {
+      "addr": "00469550",
+      "from_addr": "0046a49d",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00475920",
+    "address_range": [
+      [
+        "00475920",
+        "00475c08"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_doc.cpp_CDoc_handleFireButton_FUN_00475920",
+    "signature": "void __cdecl core_doc_cpp_CDoc_handleFireButton_FUN_00475920(CDoc *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "00434590",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590"
+    },
+    {
+      "addr": "0046f610",
+      "is_variadic": false,
+      "name": "core_doc.cpp_CDoc_updateWeaponPosition_FUN_0046f610"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004758f4",
+      "name": "switchdataD_004758f4",
+      "type": "void*",
+      "value": "00475a12"
+    },
+    {
+      "addr": "005da5c4",
+      "name": "g_DOUBLE_005da5c4",
+      "type": "double",
+      "value": "0.990000000000000"
+    },
+    {
+      "addr": "02c99770",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0046a49d",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.944723618090452,
+    "instruction_count": 199,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 6,
+      "BRANCH": 12,
+      "BRANCHIND": 1,
+      "CALL": 3,
+      "CALLIND": 3,
+      "CBRANCH": 32,
+      "COPY": 243,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "INT2FLOAT": 2,
+      "INT_ADD": 86,
+      "INT_AND": 125,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 96,
+      "INT_LEFT": 12,
+      "INT_LESS": 17,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 15,
+      "INT_SBORROW": 17,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 48,
+      "INT_SUB": 36,
+      "INT_XOR": 3,
+      "INT_ZEXT": 12,
+      "LOAD": 57,
+      "POPCOUNT": 48,
+      "RETURN": 4,
+      "STORE": 31
+    },
+    "pcode_op_count": 984
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0045d2c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2803
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoc *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "CDemonActor *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 134,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr->weapon,pCVar3,unaff_EDI), iVar6 != 0)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 137,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr->weapon,unaff_EBX);",
+      "type": "unaffected_reg"
+    }
+  ]
+}

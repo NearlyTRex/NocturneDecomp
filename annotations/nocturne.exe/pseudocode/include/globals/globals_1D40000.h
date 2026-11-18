@@ -13,8 +13,8 @@
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CNPCActorType_01d46820;
-extern CDemonActorType g_CPassengerActorType_01d4685c;
+extern CDemonActorType g_CNPCClassInfo;
+extern CDemonActorType g_CPassengerClassInfo;
 
 // CMouse
 extern CMouse g_CMouseInstance;

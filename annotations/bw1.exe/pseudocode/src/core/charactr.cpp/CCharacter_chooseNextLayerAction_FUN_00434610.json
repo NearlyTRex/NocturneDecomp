@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 71,
+    "complexity_score": 55,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 192
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 55,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 191
   },
   "cross_references": [
     {
       "addr": "00474400",
       "from_addr": "00474798",
-      "name": "core_doc.cpp_FUN_00474400",
+      "name": "core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -51,7 +49,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     }
   ],
   "globals": [
@@ -69,26 +67,26 @@
     },
     {
       "addr": "005d5ee7",
-      "name": "DAT_005d5ee7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d5ee7",
+      "type": "double",
+      "value": "0.0000100000000000000"
     },
     {
       "addr": "005d5eef",
-      "name": "DAT_005d5eef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d5eef",
+      "type": "double",
+      "value": "0.999990000000000"
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -98,7 +96,7 @@
       {
         "call_addr": "00474798",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00474400",
+        "caller": "core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -275,14 +273,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -14,33 +14,27 @@
   },
   "cross_references": [
     {
-      "addr": "00438ef0",
-      "from_addr": "00438f19",
-      "name": "cockpit_ckptutil.c_FUN_00438ef0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004350a0",
       "from_addr": "004350bf",
       "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bda10",
-      "from_addr": "004bdce7",
-      "name": "core_game.cpp_FUN_004bda10",
+      "addr": "00438ef0",
+      "from_addr": "00438f19",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bdfb0",
       "from_addr": "004be23b",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00401590",
-      "from_addr": "00401596",
-      "name": "engine_2d.c_FUN_00401590",
+      "addr": "004bda10",
+      "from_addr": "004bdce7",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bda10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,27 +50,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00401590",
+      "from_addr": "00401596",
+      "name": "engine_2d.c_loadPaletteFile_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004af920",
       "from_addr": "004afa9d",
       "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004af920",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004afbf0",
-      "from_addr": "004afd52",
-      "name": "engine_font.cpp_FUN_004afbf0",
+      "addr": "004b01d0",
+      "from_addr": "004b01f0",
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004b01d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b01d0",
-      "from_addr": "004b01f0",
-      "name": "engine_font.cpp_FUN_004b01d0",
+      "addr": "004afbf0",
+      "from_addr": "004afd52",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004afbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00512fb0",
       "from_addr": "00512fe5",
-      "name": "engine_pod.cpp_FUN_00512fb0",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -88,7 +88,7 @@
     {
       "addr": "0056ad60",
       "from_addr": "0056ae43",
-      "name": "engine_texture.cpp_FUN_0056ad60",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_0056ad60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -139,8 +139,8 @@
     {
       "addr": "005e5a84",
       "name": "g_CInStreamFileVTable",
-      "type": "undefined1*",
-      "value": "00573a40"
+      "type": "TerminatedCString",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -149,7 +149,7 @@
       {
         "call_addr": "004be23b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -171,7 +171,7 @@
       {
         "call_addr": "00401596",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401590",
+        "caller": "engine_2d.c_loadPaletteFile_FUN_00401590",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,7 +204,7 @@
       {
         "call_addr": "00438f19",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_00438ef0",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,7 +215,7 @@
       {
         "call_addr": "004bdce7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bda10",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004bda10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

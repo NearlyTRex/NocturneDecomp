@@ -602,14 +602,14 @@ LAB_004f50f1:
       }
       pCVar4 = &(this_ptr->base).base.model;
       fVar14 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                         (&pCVar4->base,INT_02db8888,
+                         (&pCVar4->base,g_HostageGunUpMotionIndex,
                           this_ptr->gun_raise_progress * (float)0.65000000000000002 +
                           (float)0.34999999999999998);
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                (pCVar4,INT_02db8888,fVar14,this_ptr->gun_blend_weight,this_ptr->bone_indices[0],
+                (pCVar4,g_HostageGunUpMotionIndex,fVar14,this_ptr->gun_blend_weight,this_ptr->bone_indices[0],
                  core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                (pCVar4,INT_02db8888,fVar14,this_ptr->gun_blend_weight,this_ptr->bone_indices[1],
+                (pCVar4,g_HostageGunUpMotionIndex,fVar14,this_ptr->gun_blend_weight,this_ptr->bone_indices[1],
                  core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       if (((1.0 <= this_ptr->gun_blend_weight) && (0.0 < this_ptr->gun_raise_progress)) &&
          (fVar14 = delta_time / 0.75 + this_ptr->gun_raise_progress,

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 55,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 89
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -64,27 +62,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00432f10",
+      "from_addr": "00432f61",
+      "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00434a80",
       "from_addr": "00434ac5",
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_00434a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00434790",
+      "from_addr": "004348ae",
+      "name": "core_charactr.cpp_CCharacter_processSmoking_FUN_00434790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0042c510",
       "from_addr": "0042c5ba",
       "name": "core_charactr.cpp_CCharacter_setup_FUN_0042c510",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00432f10",
-      "from_addr": "00432f61",
-      "name": "core_charactr.cpp_FUN_00432f10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00434790",
-      "from_addr": "004348ae",
-      "name": "core_charactr.cpp_FUN_00434790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -246,13 +244,13 @@
     {
       "addr": "00550da0",
       "from_addr": "00550dda",
-      "name": "core_set.cpp_FUN_00550da0",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00551170",
       "from_addr": "005511d3",
-      "name": "core_set.cpp_FUN_00551170",
+      "name": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -362,7 +360,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c04e0",
@@ -385,14 +383,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -435,7 +433,7 @@
       {
         "call_addr": "00550dda",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550da0",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -446,7 +444,7 @@
       {
         "call_addr": "005511d3",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00551170",
+        "caller": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -468,7 +466,7 @@
       {
         "call_addr": "004348ae",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00434790",
+        "caller": "core_charactr.cpp_CCharacter_processSmoking_FUN_00434790",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -479,7 +477,7 @@
       {
         "call_addr": "004349ee",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00434790",
+        "caller": "core_charactr.cpp_CCharacter_processSmoking_FUN_00434790",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -599,14 +597,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

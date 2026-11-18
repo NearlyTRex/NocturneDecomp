@@ -27,11 +27,11 @@ void __cdecl CYow::setup(CYow *this_ptr);
 
 // Original: core_yow.cpp_CYow_process_FUN_005b8440
 // Address: 005b8440
-void __cdecl CYow::process(CYow *this_ptr,float param_2);
+void __cdecl CYow::process(CYow *this_ptr,float delta_time);
 
-// Original: core_yow.cpp_FUN_005b8eb0
+// Original: core_yow.cpp_CYow_processDismemberment_FUN_005b8eb0
 // Address: 005b8eb0
-void FUN_005b8eb0(CCharacter *param_1,int *param_2);
+void __cdecl CYow::processDismemberment(CYow *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_yow.cpp_CYow_archive_FUN_005b9110
 // Address: 005b9110
@@ -39,11 +39,11 @@ void __cdecl CYow::archive(CYow *this_ptr);
 
 // Original: core_yow.cpp_CYow_processDamage_FUN_005b9170
 // Address: 005b9170
-void __cdecl CYow::processDamage(CYow *this_ptr,SDamageInfo *param_2);
+void __cdecl CYow::processDamage(CYow *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_yow.cpp_CYow_getTargetPoints_FUN_005b9290
 // Address: 005b9290
-int __cdecl CYow::getTargetPoints(CYow *this_ptr,float *param_2);
+int __cdecl CYow::getTargetPoints(CYow *this_ptr,float *out_points_array);
 
 // Original: core_yow.cpp_CYow_dtor_FUN_005b95a0
 // Address: 005b95a0

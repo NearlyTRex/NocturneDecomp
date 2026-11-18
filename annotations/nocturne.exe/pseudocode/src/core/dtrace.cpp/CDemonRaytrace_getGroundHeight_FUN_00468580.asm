@@ -36,15 +36,15 @@
 ; Referenced Globals:
 ;   float FLOAT_0057e1e2 = 2
 ;   float FLOAT_0057e1e6 = -10
-;   undefined4 DAT_014b89e8
-;   undefined4 DAT_014b89ec
-;   undefined4 DAT_014b89f0
-;   undefined4 DAT_014b89f4
-;   undefined4 DAT_014b89f8
-;   undefined4 DAT_014b89fc
-;   undefined4 DAT_014b8a00
-;   undefined4 DAT_014b8a04
-;   undefined4 DAT_014b8a08
+;   float g_FLOAT_014b89e8
+;   int g_INT_014b89ec
+;   float g_FLOAT_014b89f0
+;   float g_FLOAT_014b89f4
+;   int g_INT_014b89f8
+;   float g_FLOAT_014b89fc
+;   float g_FLOAT_014b8a00
+;   int g_INT_014b8a04
+;   float g_FLOAT_014b8a08
 ;   UVector3 g_ZeroVector
 ;   undefined4 g_ZeroVector+4
 ;   undefined4 g_ZeroVector+8
@@ -229,31 +229,31 @@ section .text
     FLD float ptr [0x02dd1184]          ; 00468743 | g_ZeroVector
     FLD float ptr [0x02dd118c]          ; 00468749 | g_ZeroVector+8
     MOV EAX,[0x02dd1188]                ; 0046874f | g_ZeroVector+4
-    MOV [0x014b8a04],EAX                ; 00468754 | DAT_014b8a04
-    FSTP float ptr [0x014b8a08]         ; 00468759 | DAT_014b8a08
-    FSTP float ptr [0x014b8a00]         ; 0046875f | DAT_014b8a00
+    MOV [0x014b8a04],EAX                ; 00468754 | g_INT_014b8a04
+    FSTP float ptr [0x014b8a08]         ; 00468759 | g_FLOAT_014b8a08
+    FSTP float ptr [0x014b8a00]         ; 0046875f | g_FLOAT_014b8a00
     MOV EAX,0x14b89f4                   ; 00468765
         ;   Label: LAB_00468765
     CMP EAX,0x14b8a00                   ; 0046876a
     JZ 0x00468793                       ; 0046876f
         ;   XREF to: 00468793 (CONDITIONAL_JUMP)  ; LAB_00468793
-    FLD float ptr [0x014b8a00]          ; 00468771 | DAT_014b8a00
-    FLD float ptr [0x014b8a08]          ; 00468777 | DAT_014b8a08
-    MOV EAX,[0x014b8a04]                ; 0046877d | DAT_014b8a04
-    MOV [0x014b89f8],EAX                ; 00468782 | DAT_014b89f8
-    FSTP float ptr [0x014b89fc]         ; 00468787 | DAT_014b89fc
-    FSTP float ptr [0x014b89f4]         ; 0046878d | DAT_014b89f4
+    FLD float ptr [0x014b8a00]          ; 00468771 | g_FLOAT_014b8a00
+    FLD float ptr [0x014b8a08]          ; 00468777 | g_FLOAT_014b8a08
+    MOV EAX,[0x014b8a04]                ; 0046877d | g_INT_014b8a04
+    MOV [0x014b89f8],EAX                ; 00468782 | g_INT_014b89f8
+    FSTP float ptr [0x014b89fc]         ; 00468787 | g_FLOAT_014b89fc
+    FSTP float ptr [0x014b89f4]         ; 0046878d | g_FLOAT_014b89f4
     MOV EAX,0x14b89e8                   ; 00468793
         ;   Label: LAB_00468793
     CMP EAX,0x14b89f4                   ; 00468798
     JZ 0x004687c1                       ; 0046879d
         ;   XREF to: 004687c1 (CONDITIONAL_JUMP)  ; LAB_004687c1
-    FLD float ptr [0x014b89f4]          ; 0046879f | DAT_014b89f4
-    FLD float ptr [0x014b89fc]          ; 004687a5 | DAT_014b89fc
-    MOV EAX,[0x014b89f8]                ; 004687ab | DAT_014b89f8
-    MOV [0x014b89ec],EAX                ; 004687b0 | DAT_014b89ec
-    FSTP float ptr [0x014b89f0]         ; 004687b5 | DAT_014b89f0
-    FSTP float ptr [0x014b89e8]         ; 004687bb | DAT_014b89e8
+    FLD float ptr [0x014b89f4]          ; 0046879f | g_FLOAT_014b89f4
+    FLD float ptr [0x014b89fc]          ; 004687a5 | g_FLOAT_014b89fc
+    MOV EAX,[0x014b89f8]                ; 004687ab | g_INT_014b89f8
+    MOV [0x014b89ec],EAX                ; 004687b0 | g_INT_014b89ec
+    FSTP float ptr [0x014b89f0]         ; 004687b5 | g_FLOAT_014b89f0
+    FSTP float ptr [0x014b89e8]         ; 004687bb | g_FLOAT_014b89e8
     MOV EAX,dword ptr [ESP + 0x14]      ; 004687c1
         ;   Label: LAB_004687c1
     MOV dword ptr [ESP + 0x38],EAX      ; 004687c5

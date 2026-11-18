@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005b1960(void)
 
 {
-  (*_DAT_00607997)();
+  (*(code *)g_PTR_00607997)();
   return;
 }

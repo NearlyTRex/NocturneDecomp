@@ -13,6 +13,8 @@ import pytest
 from fake_pyghidra import FakePyghidra
 from ghidra_fake import Address, StructureDataType
 from ghidra_program import Program
+import ghidra_fake
+import ghidra_program as gp
 from pe_helpers import SECTION_EXECUTE, build_sectioned_pe
 from repo_paths import SCRIPTS_DIR
 from sibling_images import function, install_programs, write_bucket
@@ -160,11 +162,151 @@ def test_applying_renames_types_and_checks_the_live_names():
     assert program.transactions == [["Rename by address", True]]
 
 
+def test_a_dynamic_dat_name_counts_as_no_label():
+    program = program_for()
+    symbols = program.getSymbolTable()
+    dynamic = gp.Symbol("DAT_00402030", Address(0x402030), source = "DEFAULT", dynamic = True)
+    dynamic.table = symbols
+    symbols.symbols.append(dynamic)
+    kinds = rows_for(labels = [{"addr": "00402030", "name": "g_Instance", "current": None}])
+    assert rba.apply_to_program(program, kinds) == {"labels": 1, "thunks": 0}
+    assert symbols.getPrimarySymbol(Address(0x402030)).getName() == "g_Instance"
+    assert dynamic.getName() == "DAT_00402030"
+
+
+def test_a_dynamic_name_the_export_listed_is_covered_by_a_label():
+    # Ghidra's name for defined data (BYTE_ARRAY_<addr>) is dynamic, and the export lists it
+    program = program_for()
+    symbols = program.getSymbolTable()
+    dynamic = gp.Symbol("BYTE_ARRAY_00402030", Address(0x402030), source = "DEFAULT", dynamic = True)
+    dynamic.table = symbols
+    symbols.symbols.append(dynamic)
+    kinds = rows_for(labels = [{"addr": "00402030", "name": "g_CheatStr", "current": "BYTE_ARRAY_00402030"}])
+    assert rba.apply_to_program(program, kinds) == {"labels": 1, "thunks": 0}
+    assert symbols.getPrimarySymbol(Address(0x402030)).getName() == "g_CheatStr"
+
+
 def test_a_failed_apply_rolls_back():
     program = program_for()
     with pytest.raises(ValueError):
         rba.apply_to_program(program, rows_for(labels = [{"addr": "zz", "name": "g", "current": None}]))
     assert program.transactions == [["Rename by address", False]]
+
+
+INT = ghidra_fake.DataType("int", 4)
+IN_PLACE = {"conv": "__cdecl", "ret": "int", "params": [{"name": "n", "type": "int"}]}
+WITH_RECEIVER = {"conv": "__cdecl", "ret": "int", "params": [{"name": "this_ptr", "type": "CThing *"}]}
+
+
+class Proto(gp.Function):
+    """A function whose prototype write Ghidra can refuse, or accept and leave unreadable."""
+
+    def __init__(self, name, entry, reject = False, breaks = False):
+        super().__init__(name, Address(entry))
+        self.reject, self.breaks, self.broken = reject, breaks, False
+
+    def getProgram(self):
+        return None
+
+    def getSignature(self):
+        if self.broken:
+            raise RuntimeError("storage half-assigned")
+        return self.name
+
+    def updateFunction(self, convention, ret, params, update_type, force, source):
+        if not params:  # make_readable stripping the prototype
+            self.broken = False
+            return
+        if self.reject:
+            raise ghidra_fake.IllegalArgumentException("no storage")
+        super().updateFunction(convention, ret, params, update_type, force, source)
+        self.broken = self.breaks
+
+
+def test_a_prototype_goes_on_first_and_a_name_waits_for_it():
+    program = program_for()
+    program.getDataTypeManager().add(INT)
+    fm = program.getFunctionManager()
+    funcs = {a: Proto(f"FUN_{a:08x}", a, **kw) for a, kw in [
+        (0x401400, {}), (0x401500, {}), (0x401600, {}), (0x401700, {"reject": True}), (0x401800, {"breaks": True})]}
+    fm.functions.update({f.entry: f for f in funcs.values()})
+    same = funcs[0x401500]
+    same.parameters, same.return_type = [ghidra_fake.Variable("n", INT)], INT
+    unknown = {"ret": "int", "params": [{"name": "p", "type": "CMissing *"}]}
+    rows = [{"addr": f"{a:08x}", "current": f"FUN_{a:08x}", "name": f"core_a.cpp_C_f_FUN_{a:08x}",
+             "status": "rename", "sig": sig}
+            for a, sig in [(0x401400, WITH_RECEIVER), (0x401600, unknown), (0x401700, WITH_RECEIVER),
+                           (0x401800, WITH_RECEIVER)]]
+    rows.insert(1, {"addr": "00401500", "current": "FUN_00401500", "name": "FUN_00401500",
+                    "status": "retype", "sig": IN_PLACE})
+    done = rba.apply_to_program(program, {"labels": [], "functions": rows})
+    assert done == {"prototypes": 1, "functions": 1, "prototype already matches": 1,
+                    "prototype unbuildable": 1, "prototype rejected": 2, "thunks": 0}
+    applied = funcs[0x401400]
+    assert applied.getName() == "core_a.cpp_C_f_FUN_00401400"
+    assert applied.prototype[0] == "__cdecl" and applied.prototype[2][0].getDataType().getName() == "CThing *"
+    assert [f.getName() for a, f in sorted(funcs.items())][1:] == [
+        "FUN_00401500", "FUN_00401600", "FUN_00401700", "FUN_00401800"]
+    assert [r["status"] for r in rows] == ["rename", "retype", "prototype unbuildable",
+                                           "prototype rejected", "prototype rejected"]
+    assert not funcs[0x401800].broken
+
+
+def test_a_prototype_whose_types_match_but_whose_names_do_not_is_rewritten():
+    program = program_for()
+    program.getDataTypeManager().add(INT)
+    func = Proto("FUN_00401400", 0x401400)
+    func.parameters, func.return_type = [ghidra_fake.Variable("orient_x", INT)], INT
+    assert rba.apply_prototype(program, func, IN_PLACE, {}) == "prototypes"
+    assert func.prototype[2][0].getName() == "n"
+    func.parameters = [ghidra_fake.Variable("n", INT)]
+    unnamed = {"conv": "__cdecl", "ret": "int", "params": [{"type": "int"}]}
+    assert rba.apply_prototype(program, func, unnamed, {}) == "prototype already matches"
+
+
+def test_varargs_count_towards_a_match_and_are_set_only_when_the_row_says(capsys):
+    program = program_for()
+    program.getDataTypeManager().add(INT)
+    func = Proto("FUN_00401400", 0x401400)
+    func.parameters, func.return_type = [ghidra_fake.Variable("n", INT)], INT
+    func.varargs = False
+    variadic = dict(IN_PLACE, varargs = True)
+    assert rba.apply_prototype(program, func, variadic, {}) == "prototypes"
+    assert func.hasVarArgs()
+    func.parameters = [ghidra_fake.Variable("n", INT)]
+    assert rba.apply_prototype(program, func, variadic, {}) == "prototype already matches"
+    # Left out, the function's own setting stands
+    assert rba.apply_prototype(program, func, IN_PLACE, {}) == "prototype already matches"
+    assert func.hasVarArgs()
+    print(rba.sig_text(variadic))
+    assert capsys.readouterr().out == "int __cdecl(int n, ...)\n"
+
+
+def test_a_name_in_place_with_a_prototype_is_a_retype_and_the_report_shows_it(capsys):
+    names = {"labels": {}, "functions": {"00401500": "FUN_00401500", "00401600": "FUN_00401600"}}
+    manifest = {"p.exe": {"functions": [{"addr": "00401500", "name": "FUN_00401500", "sig": IN_PLACE},
+                                        {"addr": "00401600", "name": "f_FUN_00401600", "sig": WITH_RECEIVER}]}}
+    planned = rba.plan(manifest, names_of = lambda _program: names)
+    assert [r["status"] for r in planned["p.exe"]["functions"]] == ["retype", "rename"]
+    rba.print_report(planned)
+    out = capsys.readouterr().out
+    assert "p.exe functions: 1 to rename, 1 to retype, 0 of 2 skipped" in out
+    assert "00401500  FUN_00401500 -> FUN_00401500\n        int __cdecl(int n)\n" in out
+    assert "        int __cdecl(CThing * this_ptr)\n" in out
+
+
+def test_a_renamed_label_reaches_the_keeps_as_a_whole_word(tmp_path):
+    keep = tmp_path / "core" / "a.cpp" / "f_FUN_00401000.keep.cpp"
+    keep.parent.mkdir(parents = True)
+    keep.write_text("g_Old.x = g_OldRight + g_Old;\n")
+    kinds = {"functions": [], "labels": [
+        {"current": "g_Old", "name": "g_New", "status": "rename"},
+        {"current": None, "name": "g_Fresh", "status": "rename"},
+        {"current": "g_Same", "name": "g_Same", "status": "same"}]}
+    assert rba.label_renames(kinds) == [("g_Old", "g_New")]
+    assert rba.sync_keeps(str(tmp_path), [], write = True, labels = rba.label_renames(kinds)) == [
+        (str(keep), None, True)]
+    assert keep.read_text() == "g_New.x = g_OldRight + g_New;\n"
 
 
 def run_main(monkeypatch, *argv):

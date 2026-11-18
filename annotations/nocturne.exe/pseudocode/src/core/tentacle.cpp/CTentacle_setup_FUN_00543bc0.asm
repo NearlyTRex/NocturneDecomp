@@ -11,10 +11,10 @@
 ;   TerminatedCString s_bipp05_00596526
 ;   TerminatedCString s_bipp06_0059652d
 ;   TerminatedCString s_bipp09_00596534
-;   undefined4 DAT_02dca1d0
-;   undefined4 DAT_02dca1d4
-;   undefined4 DAT_02dca1d8
-;   undefined4 DAT_02dca1dc
+;   int g_INT_02dca1d0
+;   int g_INT_02dca1d4
+;   int g_INT_02dca1d8
+;   int g_INT_02dca1dc
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0
@@ -53,25 +53,25 @@ section .text
     PUSH 0x1                            ; 00543bfc
     PUSH 0x596526                       ; 00543bfe | = "bipp05"
     PUSH EBX                            ; 00543c03
-    MOV [0x02dca1d0],EAX                ; 00543c04 | DAT_02dca1d0
+    MOV [0x02dca1d0],EAX                ; 00543c04 | g_INT_02dca1d0
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 00543c09
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00543c0e
     PUSH 0x1                            ; 00543c11
     PUSH 0x59652d                       ; 00543c13 | = "bipp06"
     PUSH EBX                            ; 00543c18
-    MOV [0x02dca1d4],EAX                ; 00543c19 | DAT_02dca1d4
+    MOV [0x02dca1d4],EAX                ; 00543c19 | g_INT_02dca1d4
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 00543c1e
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00543c23
     PUSH 0x1                            ; 00543c26
     PUSH 0x596534                       ; 00543c28 | = "bipp09"
     PUSH EBX                            ; 00543c2d
-    MOV [0x02dca1d8],EAX                ; 00543c2e | DAT_02dca1d8
+    MOV [0x02dca1d8],EAX                ; 00543c2e | g_INT_02dca1d8
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 00543c33
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00543c38
-    MOV [0x02dca1dc],EAX                ; 00543c3b | DAT_02dca1dc
+    MOV [0x02dca1dc],EAX                ; 00543c3b | g_INT_02dca1dc
     POP EBX                             ; 00543c40
     RET                                 ; 00543c41
 

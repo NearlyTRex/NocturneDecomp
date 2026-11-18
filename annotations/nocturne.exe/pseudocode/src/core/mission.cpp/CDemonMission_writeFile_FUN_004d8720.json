@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 175,
+    "complexity_score": 128,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 6,
+    "pseudocode_lines": 98,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
-    "total_lines": 429
+    "total_lines": 427
   },
   "cross_references": [
     {
@@ -246,25 +245,25 @@
     },
     {
       "addr": "00763e94",
-      "name": "DAT_00763e94",
-      "type": "undefined4",
+      "name": "g_NumActorClassTypes",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00763e98",
-      "name": "DAT_00763e98",
-      "type": "undefined4",
+      "name": "g_ActorClassRegistrations",
+      "type": "CDemonActorType*[200]",
       "value": null
     },
     {
       "addr": "00763e9c",
-      "name": "DAT_00763e9c",
+      "name": "g_ActorClassRegistrations[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cae124",
-      "name": "g_CHeroActorType_01cae0ec.name_hash",
+      "name": "g_CHeroClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -400,52 +399,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00763e94",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,\"%d\\n\",DAT_00763e94);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_00763e94",
-      "severity": "mild",
-      "text": "if (0 < DAT_00763e94) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 43,
-      "match": "DAT_00763e98",
-      "severity": "mild",
-      "text": "piVar1 = (int *)((int)&DAT_00763e98 + iVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_00763e94",
-      "severity": "mild",
-      "text": "} while (iVar5 < DAT_00763e94);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&DAT_00763e98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
-      "match": "(int)&DAT_00763e98",
+      "match": "(int *)((int)g_ActorClassRegistrations",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&DAT_00763e98 + iVar8);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&DAT_00763e98 + iVar8);",
+      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ActorClassRegistrations` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)g_ActorClassRegistrations",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);",
+      "type": "pointer_truncation"
     }
   ]
 }

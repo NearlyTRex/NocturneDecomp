@@ -9,13 +9,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hagattack0_wav_005f0cae
-;   undefined4 DAT_00600a74
-;   undefined4 DAT_00600a78
-;   undefined4 DAT_0061c068
+;   float g_FLOAT_00600a74 = 25
+;   float g_FLOAT_00600a78 = 15
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
-;   core_basicene.cpp_FUN_0059f740
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -40,10 +40,10 @@ section .text
     MOV ESI,dword ptr [EBX + 0x11854]   ; 005ab95e
     PUSH 0x40000000                     ; 005ab964
     PUSH ESI                            ; 005ab969
-    PUSH dword ptr [0x00600a74]         ; 005ab96a | DAT_00600a74
+    PUSH dword ptr [0x00600a74]         ; 005ab96a | g_FLOAT_00600a74
     PUSH EBX                            ; 005ab970
-    CALL core_basicene.cpp_FUN_0059f740 ; 005ab971
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005ab971
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005ab976
     POP ESI                             ; 005ab979
     POP EBX                             ; 005ab97a
@@ -52,10 +52,10 @@ section .text
         ;   Label: LAB_005ab97c
     PUSH 0x40000000                     ; 005ab982
     PUSH ECX                            ; 005ab987
-    PUSH dword ptr [0x00600a78]         ; 005ab988 | DAT_00600a78
+    PUSH dword ptr [0x00600a78]         ; 005ab988 | g_FLOAT_00600a78
     PUSH EBX                            ; 005ab98e
-    CALL core_basicene.cpp_FUN_0059f740 ; 005ab98f
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005ab98f
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005ab994
     POP EBX                             ; 005ab997
     RET                                 ; 005ab998
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 005ab9ac
     PUSH 0x5f0cae                       ; 005ab9ad | = "hagattack0?.wav"
     PUSH EBX                            ; 005ab9b2
-    MOV EDX,dword ptr [0x0061c068]      ; 005ab9b3 | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 005ab9b3 | g_CSound_PTR_0061c068
     PUSH EDX                            ; 005ab9b9
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005ab9ba
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

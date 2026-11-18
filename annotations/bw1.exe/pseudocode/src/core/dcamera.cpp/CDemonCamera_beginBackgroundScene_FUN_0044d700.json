@@ -2,33 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 293,
+    "complexity_score": 183,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 20,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 201
   },
   "cross_references": [
     {
-      "addr": "0054f0d0",
-      "from_addr": "0054f746",
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0",
+      "addr": "00550580",
+      "from_addr": "005509d9",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00550580",
-      "from_addr": "005509d9",
-      "name": "core_set.cpp_FUN_00550580",
+      "addr": "0054f0d0",
+      "from_addr": "0054f746",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +46,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "004851a0",
@@ -91,146 +89,146 @@
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "0061b4a0",
-      "name": "DAT_0061b4a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01482658",
-      "name": "DAT_01482658",
-      "type": "undefined4",
+      "name": "g_BackgroundSceneDepth",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0148265c",
-      "name": "DAT_0148265c",
-      "type": "undefined4",
+      "name": "g_BackgroundSavedBitsPerPixel",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01482660",
-      "name": "DAT_01482660",
-      "type": "undefined4",
+      "name": "g_BackgroundSavedUseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01482664",
-      "name": "DAT_01482664",
-      "type": "undefined4",
+      "name": "g_BackgroundSavedScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01482668",
-      "name": "DAT_01482668",
+      "name": "g_BackgroundSavedScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01483924",
-      "name": "DAT_01483924",
-      "type": "undefined4",
+      "name": "g_BackgroundSavedRedBitPosition",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01483928",
-      "name": "DAT_01483928",
-      "type": "undefined4",
+      "name": "g_BackgroundSavedGreenBitPosition",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0148392c",
-      "name": "DAT_0148392c",
-      "type": "undefined4",
+      "name": "g_BackgroundSavedBlueBitPosition",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c4354c",
-      "name": "DAT_01c4354c",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "DAT_01c43550",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c4e9d4",
-      "name": "DAT_01c4e9d4",
-      "type": "undefined4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9e0",
-      "name": "DAT_01c4e9e0",
-      "type": "undefined4",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4e9ec",
-      "name": "DAT_01c4e9ec",
-      "type": "undefined4",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c4eff8",
-      "name": "DAT_01c4eff8",
-      "type": "undefined4",
+      "name": "g_INT_01c4eff8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4effc",
-      "name": "DAT_01c4effc",
-      "type": "undefined4",
+      "name": "g_INT_01c4effc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f000",
-      "name": "DAT_01c4f000",
-      "type": "undefined4",
+      "name": "g_INT_01c4f000",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f004",
-      "name": "DAT_01c4f004",
-      "type": "undefined4",
+      "name": "g_INT_01c4f004",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -262,7 +260,7 @@
       {
         "call_addr": "005509d9",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550580",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -356,152 +354,72 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "_DAT_0148265c = DAT_0061b4a0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)&DAT_01c4354c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_01482664",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)&DAT_01482664;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "for (uVar1 = DAT_0061b49c & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)puVar4",
+      "line": 32,
+      "match": "(byte **)((int)ppuVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "text": "ppuVar4 = (byte **)((int)ppuVar4 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(uint *)((int)puVar5",
+      "line": 33,
+      "match": "(byte **)((int)ppuVar5",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "text": "ppuVar5 = (byte **)((int)ppuVar5 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "DAT_0061b4a0 = 0x20;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "*(void **)(&DAT_01c4354c + iVar3) =",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(void **)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(void *)((int)this_ptr",
       "severity": "moderate",
       "text": "(void *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * iVar2 * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,0,0,this_ptr->framebuffer_width + -1,this_ptr->framebuffer_height + -1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "this_ptr_00 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&(this_ptr->base).position.f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(this_ptr->base).focal_length);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&(this_ptr->base).rotation_matrix);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
-      "match": "(int)puVar4",
+      "description": "Pointer value `ppuVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)ppuVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "text": "ppuVar4 = (byte **)((int)ppuVar4 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
-      "match": "(int)puVar5",
+      "description": "Pointer value `ppuVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)ppuVar5",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "text": "ppuVar5 = (byte **)((int)ppuVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 27,
+      "line": 25,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar1 = DAT_0061b49c & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {",
+      "text": "for (uVar1 = g_INT_0061b49c & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -512,7 +430,7 @@
       "line": 29,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0044d75d: MOVSD.REP ES:EDI,ESI  ; DAT_01c4354c | DAT_01482664 | DAT_01c43550",
+      "text": "// 0044d75d: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_BackgroundSavedScreenBufferArray | g_ScreenBufferArray[1]",
       "type": "unrolled_memcpy"
     }
   ]

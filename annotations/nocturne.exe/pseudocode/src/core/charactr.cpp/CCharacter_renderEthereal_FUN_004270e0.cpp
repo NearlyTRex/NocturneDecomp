@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_004270e0(CCharacter *this_ptr)
 
 {
@@ -24,15 +22,14 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_004270e0(CCharacter
             (g_CDemonRenderer_PTR_005ae704,0xc000);
   if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
     dVar4 = round
-                      ((double)((float)DAT_007658dc + g_CGamePtr->delta_time_float * 8388608.0f)
-                      );
-    DAT_007658dc = (int)ROUND(dVar4);
+                      ((double)((float)g_EtherealUVScroll +
+                               g_CGamePtr->delta_time_float * 8388608.0f));
+    g_EtherealUVScroll = (int)ROUND(dVar4);
   }
   iVar2 = rand();
-  _DAT_007658e0 = iVar2 % 6;
+  g_EtherealBoltFrame = iVar2 % 6;
   g_CDemonRenderer_PTR_005ae704->skip_uv_extraction = 1;
-  engine_texture_cpp_ensureTextureLoaded_FUN_00545920
-            ((SMRGLTextureBasic *)(&DAT_005ad140 + (iVar2 % 6) * 0x18));
+  engine_texture_cpp_ensureTextureLoaded_FUN_00545920(g_EtherealBoltTextures + iVar2 % 6);
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90
             (this_ptr_00,(SPose *)&stack0xffffe550);
@@ -44,7 +41,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_004270e0(CCharacter
   iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0051a700(this_ptr_01,bounding_box);
   core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0(this_ptr_00,iVar2);
   core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080
-            (this_ptr_00,DAT_007658dc,0);
+            (this_ptr_00,g_EtherealUVScroll,0);
   iVar2 = 0;
   do {
     pCVar1 = g_CDemonRenderer_PTR_005ae704;

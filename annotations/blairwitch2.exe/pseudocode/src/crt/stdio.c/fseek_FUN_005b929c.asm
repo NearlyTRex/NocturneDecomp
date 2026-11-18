@@ -10,15 +10,15 @@
 ;
 ; XREF[18]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30 at 0051711c
-;   cockpit_pkbmpset.cpp_FUN_00517a60 at 00517b1a
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00517a60 at 00517b1a
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930 at 0043f150
-;   core_game.cpp_FUN_004bbf70 at 004bc182
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc182
 ;   crt_unknown.c_FUN_005b8f9c at 005b9096
-;   engine_dosio.cpp_FUN_00460c70 at 00460d19
+;   engine_dosio.cpp_getFile_FUN_00460c70 at 00460d19
+;   engine_pod.cpp_CPodFile_computeFileCRC_FUN_0051af80 at 0051b018
+;   engine_pod.cpp_CPodFile_getAuditRecord_FUN_0051ad50 at 0051adf6
+;   engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0051ae70 at 0051af0f
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 0051a30e
-;   engine_pod.cpp_FUN_00519dc0 at 00519dfb
-;   engine_pod.cpp_FUN_0051aa80 at 0051aafd
-;   engine_pod.cpp_FUN_0051ad50 at 0051adf6
 ;   ... and 8 more
 ;
 ; Referenced Globals:

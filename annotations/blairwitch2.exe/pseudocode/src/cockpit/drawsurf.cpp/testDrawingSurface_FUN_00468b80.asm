@@ -7,11 +7,12 @@
 ; CBitFont *       Stack[0x4]:4   test_font
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b278
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
+;   TerminatedCString s_A_A_0060b278
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
 ;
 ; Called Functions:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_004665c0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_00466710
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomRight_FUN_00466740
@@ -26,7 +27,6 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_004686b0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00468680
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00468440
-;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_00468410
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -38,11 +38,11 @@ section .text
     PUSH EBP                            ; 00468b81
     SUB ESP,0xbc                        ; 00468b82
     MOV ESI,dword ptr [ESP + 0xc8]      ; 00468b88
-    MOV EDX,dword ptr [0x006141b8]      ; 00468b8f | DAT_006141b8
+    MOV EDX,dword ptr [0x006141b8]      ; 00468b8f | g_INT_006141b8
     CMP EDX,0x280                       ; 00468b95
     JL 0x00468bab                       ; 00468b9b
         ;   XREF to: 00468bab (CONDITIONAL_JUMP)  ; LAB_00468bab
-    MOV ECX,dword ptr [0x006141bc]      ; 00468b9d | DAT_006141bc
+    MOV ECX,dword ptr [0x006141bc]      ; 00468b9d | g_INT_006141bc
     CMP ECX,0x1e0                       ; 00468ba3
     JGE 0x00468bb4                      ; 00468ba9
         ;   XREF to: 00468bb4 (CONDITIONAL_JUMP)  ; LAB_00468bb4
@@ -382,21 +382,21 @@ section .text
     PUSH EAX                            ; 00468f24
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00466820 ; 00468f25
         ;   XREF to: 00466820 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00466820(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-    MOV EAX,[0x0060b278]                ; 00468f2a | DAT_0060b278
+    MOV EAX,[0x0060b278]                ; 00468f2a | = "A+A"
     ADD ESP,0x14                        ; 00468f2f
     MOV dword ptr [ESP + 0xa8],EAX      ; 00468f32
-    MOV EAX,[0x006141b8]                ; 00468f39 | DAT_006141b8
+    MOV EAX,[0x006141b8]                ; 00468f39 | g_INT_006141b8
     MOV EDX,EAX                         ; 00468f3e
     SAR EDX,0x1f                        ; 00468f40
     SUB EAX,EDX                         ; 00468f43
     SAR EAX,0x1                         ; 00468f45
     MOV EBP,EAX                         ; 00468f47
-    MOV EAX,[0x006141bc]                ; 00468f49 | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 00468f49 | g_INT_006141bc
     MOV EDX,EAX                         ; 00468f4e
     SAR EDX,0x1f                        ; 00468f50
     SUB EAX,EDX                         ; 00468f53
     SAR EAX,0x1                         ; 00468f55
-    MOV EDX,dword ptr [0x006141bc]      ; 00468f57 | DAT_006141bc
+    MOV EDX,dword ptr [0x006141bc]      ; 00468f57 | g_INT_006141bc
     ADD EAX,0x66                        ; 00468f5d
     DEC EDX                             ; 00468f60
     SUB EDX,EAX                         ; 00468f61
@@ -617,18 +617,18 @@ section .text
     PUSH EAX                            ; 0046922b
     CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_00466360 ; 0046922c
         ;   XREF to: 00466360 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_00466360(CDrawSurface * this_ptr, int x, int y)
-    MOV EAX,[0x006141b8]                ; 00469231 | DAT_006141b8
+    MOV EAX,[0x006141b8]                ; 00469231 | g_INT_006141b8
     MOV EDX,EAX                         ; 00469236
     SAR EDX,0x1f                        ; 00469238
     SUB EAX,EDX                         ; 0046923b
     SAR EAX,0x1                         ; 0046923d
     LEA ECX,[EAX + 0xffffff36]          ; 0046923f
-    MOV EAX,[0x006141bc]                ; 00469245 | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 00469245 | g_INT_006141bc
     MOV EDX,EAX                         ; 0046924a
     SAR EDX,0x1f                        ; 0046924c
     SUB EAX,EDX                         ; 0046924f
     SAR EAX,0x1                         ; 00469251
-    MOV EDX,dword ptr [0x006141bc]      ; 00469253 | DAT_006141bc
+    MOV EDX,dword ptr [0x006141bc]      ; 00469253 | g_INT_006141bc
     ADD EAX,0x66                        ; 00469259
     DEC EDX                             ; 0046925c
     ADD ESP,0xc                         ; 0046925d
@@ -846,8 +846,8 @@ section .text
     ADD ESP,0x4                         ; 004694c6
     LEA EAX,[ESP + 0x48]                ; 004694c9
     PUSH EAX                            ; 004694cd
-    CALL cockpit_drawsurf.cpp_FUN_004677e0 ; 004694ce
-        ;   XREF to: 004677e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_004677e0(CDrawSurface * this_ptr)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0 ; 004694ce
+        ;   XREF to: 004677e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0(CDrawSurface * this_ptr)
     ADD ESP,0x4                         ; 004694d3
     POP EBX                             ; 004694d6
     POP EDI                             ; 004694d7

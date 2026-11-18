@@ -7,19 +7,19 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f98a0
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_00618170
+;   float g_FLOAT_005f98a0 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0
-;   core_manpuz.cpp_FUN_004e6340
-;   core_manpuz.cpp_FUN_004e6820
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 004e5703
     PUSH EAX                            ; 004e5707
     MOVSD.REP ES:EDI,ESI                ; 004e5708
-    CALL core_box.cpp_FUN_0041a840      ; 004e570a
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 004e570a
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 004e570f
     MOV ESI,EAX                         ; 004e5712
     TEST EAX,EAX                        ; 004e5714
@@ -68,30 +68,30 @@ section .text
         ;   Label: LAB_004e572a
     LEA EBX,[ESP + 0x34]                ; 004e572b
     MOV EAX,0x265370c                   ; 004e572f
-    MOV EDX,dword ptr [0x0060b280]      ; 004e5734 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 004e5734 | g_CDemonRenderer_PTR_0060b280
     FLD float ptr [EAX]                 ; 004e573a
-    FMUL float ptr [0x005f98a0]         ; 004e573c | DAT_005f98a0
+    FMUL float ptr [0x005f98a0]         ; 004e573c | g_FLOAT_005f98a0
     FISTP dword ptr [EBX]               ; 004e5742
     FLD float ptr [EAX + 0x4]           ; 004e5744
-    FMUL float ptr [0x005f98a0]         ; 004e5747 | DAT_005f98a0
+    FMUL float ptr [0x005f98a0]         ; 004e5747 | g_FLOAT_005f98a0
     FISTP dword ptr [EBX + 0x4]         ; 004e574d
     FLD float ptr [EAX + 0x8]           ; 004e5750
-    FMUL float ptr [0x005f98a0]         ; 004e5753 | DAT_005f98a0
+    FMUL float ptr [0x005f98a0]         ; 004e5753 | g_FLOAT_005f98a0
     FISTP dword ptr [EBX + 0x8]         ; 004e5759
     LEA EAX,[ESP + 0x34]                ; 004e575c
     PUSH EAX                            ; 004e5760
     MOV EAX,dword ptr [EDX]             ; 004e5761
     ADD EAX,0xbb80                      ; 004e5763
     PUSH EAX                            ; 004e5768
-    CALL engine_special.cpp_FUN_0055d723 ; 004e5769
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 004e5769
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004e576e
     XOR EBX,EBX                         ; 004e5771
     PUSH EBX                            ; 004e5773
         ;   Label: LAB_004e5773
     PUSH EBP                            ; 004e5774
-    CALL core_manpuz.cpp_FUN_004e6340   ; 004e5775
-        ;   XREF to: 004e6340 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004e6340()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340 ; 004e5775
+        ;   XREF to: 004e6340 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004e577a
     PUSH EBX                            ; 004e577d
     PUSH EBP                            ; 004e577e
@@ -102,7 +102,7 @@ section .text
     CMP EBX,0xc                         ; 004e5788
     JL 0x004e5773                       ; 004e578b
         ;   XREF to: 004e5773 (CONDITIONAL_JUMP)  ; LAB_004e5773
-    MOV EAX,[0x00618170]                ; 004e578d | DAT_00618170
+    MOV EAX,[0x00618170]                ; 004e578d | g_CDemonMission_PTR_00618170
     CMP dword ptr [EAX + 0x1008],0x0    ; 004e5792
     JNZ 0x004e57c5                      ; 004e5799
         ;   XREF to: 004e57c5 (CONDITIONAL_JUMP)  ; LAB_004e57c5
@@ -113,8 +113,8 @@ section .text
     PUSH EBX                            ; 004e57a2
         ;   Label: LAB_004e57a2
     PUSH EBP                            ; 004e57a3
-    CALL core_manpuz.cpp_FUN_004e6820   ; 004e57a4
-        ;   XREF to: 004e6820 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_FUN_004e6820(CMansionPuzzleCircle * this_ptr, int reflector_index)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820 ; 004e57a4
+        ;   XREF to: 004e6820 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC EBX                             ; 004e57a9
     ADD ESP,0x8                         ; 004e57aa
     CMP EBX,0x2                         ; 004e57ad
@@ -131,7 +131,7 @@ section .text
     POP EDI                             ; 004e57c2
     POP ESI                             ; 004e57c3
     RET                                 ; 004e57c4
-    MOV ECX,dword ptr [0x0060b280]      ; 004e57c5 | DAT_0060b280
+    MOV ECX,dword ptr [0x0060b280]      ; 004e57c5 | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_004e57c5
     PUSH ECX                            ; 004e57cb
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 004e57cc

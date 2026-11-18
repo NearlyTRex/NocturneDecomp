@@ -10,10 +10,10 @@
 ; CVector3f *      Stack[0x10]:4   wind_influence
 ; int              Stack[0x14]:4   alpha_value
 ;
-; XREF[12]:
+; XREF[13]:
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f765
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412ff4
-;   core_charactr.cpp_FUN_00434790 at 00434a73
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790 at 00434a73
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00446395
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047bb9e
 ;   core_drip.cpp_CDrip_process_FUN_00485610 at 004858be
@@ -21,10 +21,10 @@
 ;   core_fire.cpp_CCrater_process_FUN_004b22d0 at 004b2351
 ;   core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004b5620 at 004b5638
 ;   core_fire.cpp_CFireball_process_FUN_004ae300 at 004ae3ef
-;   ... and 2 more
+;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c58a9c
+;   int g_SmokeParticleAllocIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CSmokeParticle_init_FUN_004abeb0
@@ -37,7 +37,7 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
     PUSH EDI                            ; 004b5b31
     PUSH EBP                            ; 004b5b32
-    MOV EDX,dword ptr [0x01c58a9c]      ; 004b5b33 | DAT_01c58a9c
+    MOV EDX,dword ptr [0x01c58a9c]      ; 004b5b33 | g_SmokeParticleAllocIndex
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b5b39
     SUB EAX,EDX                         ; 004b5b40
     SHL EAX,0x2                         ; 004b5b42
@@ -45,13 +45,13 @@ section .text
     SHL EAX,0x2                         ; 004b5b47
     INC EDX                             ; 004b5b4a
     ADD EAX,0x1c58aa0                   ; 004b5b4b
-    MOV dword ptr [0x01c58a9c],EDX      ; 004b5b50 | DAT_01c58a9c
+    MOV dword ptr [0x01c58a9c],EDX      ; 004b5b50 | g_SmokeParticleAllocIndex
     CMP EDX,0x800                       ; 004b5b56
     JL 0x004b5b68                       ; 004b5b5c
         ;   XREF to: 004b5b68 (CONDITIONAL_JUMP)  ; LAB_004b5b68
     PUSH EBX                            ; 004b5b5e
     XOR EBX,EBX                         ; 004b5b5f
-    MOV dword ptr [0x01c58a9c],EBX      ; 004b5b61 | DAT_01c58a9c
+    MOV dword ptr [0x01c58a9c],EBX      ; 004b5b61 | g_SmokeParticleAllocIndex
     POP EBX                             ; 004b5b67
     MOV ESI,dword ptr [ESP + 0x20]      ; 004b5b68
         ;   Label: LAB_004b5b68

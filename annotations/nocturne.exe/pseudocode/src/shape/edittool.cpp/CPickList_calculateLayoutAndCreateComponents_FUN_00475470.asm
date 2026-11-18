@@ -21,8 +21,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bcd9bc
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_INT_01bcd9bc
 ;   int g_LastClickItemIndex
 ;   int g_ClipLeft
 ;   int g_ClipTop
@@ -53,7 +53,7 @@ section .text
     PUSH EBP                            ; 00475473
     SUB ESP,0x134                       ; 00475474
     PUSH 0x28                           ; 0047547a
-    MOV EAX,[0x01bcd9bc]                ; 0047547c | DAT_01bcd9bc
+    MOV EAX,[0x01bcd9bc]                ; 0047547c | g_INT_01bcd9bc
     MOV EDX,dword ptr [ESP + 0x14c]     ; 00475481
     INC EAX                             ; 00475488
     PUSH 0x0                            ; 00475489
@@ -103,7 +103,7 @@ section .text
     MOV ESI,EAX                         ; 0047550c
     MOV EAX,ESP                         ; 0047550e
     PUSH EAX                            ; 00475510
-    MOV EAX,[0x01bcd070]                ; 00475511 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 00475511 | g_CBitFont_PTR_01bcd070
     PUSH EAX                            ; 00475516
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00475517
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -212,7 +212,7 @@ section .text
     ADD EAX,EAX                         ; 0047564a
     ADD EBP,EAX                         ; 0047564c
     MOV dword ptr [EDX + 0x128],EBP     ; 0047564e
-    MOV EDX,dword ptr [0x01bcd9bc]      ; 00475654 | DAT_01bcd9bc
+    MOV EDX,dword ptr [0x01bcd9bc]      ; 00475654 | g_INT_01bcd9bc
     MOV EAX,[0x005b7620]                ; 0047565a | g_WindowHeight
     SHL EDX,0x2                         ; 0047565f
     SUB EAX,EDX                         ; 00475662

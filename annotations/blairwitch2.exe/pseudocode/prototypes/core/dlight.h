@@ -85,13 +85,13 @@ void __cdecl CDemonLight::clearCircularShadowMapEdges(CDemonLight *this_ptr);
 // Address: 0044ac60
 void __cdecl CDemonLight::renderCoronaGeometry(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_0044b020
+// Original: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044b020
 // Address: 0044b020
-void __cdecl FUN_0044b020(CDemonLight *this_ptr);
+void __cdecl CDemonLight::renderLightBloomQuad(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_0044b050
+// Original: core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044b050
 // Address: 0044b050
-void FUN_0044b050(void);
+void __cdecl CDemonLight::renderLightGlowSprites(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_allocateFilter_FUN_0044b5b0
 // Address: 0044b5b0
@@ -109,9 +109,9 @@ void __cdecl captureLightTextures(void);
 // Address: 0044b960
 void __cdecl CDemonLight::renderVolumetricLightShaft(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_0044c160
+// Original: core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0044c160
 // Address: 0044c160
-void FUN_0044c160(void);
+void __cdecl CDemonLight::renderRadialVolumetricScattering(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044c830
 // Address: 0044c830

@@ -9,22 +9,22 @@
 ; float            Stack[0xc]:4   radius
 ; SDamageInfo *    Stack[0x10]:4   damage_info
 ;
-; XREF[21]:
+; XREF[22]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411a4a
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 004134e2
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c2ef
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 004241c0
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004468c4
 ;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004488b7
-;   core_djien.cpp_FUN_004609c0 at 00460c41
+;   core_djien.cpp_CDjien_doStumpAttack_FUN_004609c0 at 00460c41
 ;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 00476c44
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047c01f
 ;   core_drone.cpp_CDrone_process_FUN_00485d70 at 00486155
-;   ... and 11 more
+;   ... and 12 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dcb42
-;   undefined4 DAT_005dcb4a
+;   double g_DOUBLE_005dcb42 = 1.20000000000000
+;   double g_DOUBLE_005dcb4a = 0.25
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
@@ -77,11 +77,11 @@ section .text
     JNC 0x004a078c                      ; 004a07c0
         ;   XREF to: 004a078c (CONDITIONAL_JUMP)  ; LAB_004a078c
     FLD double ptr [ESP]                ; 004a07c2
-    FMUL double ptr [0x005dcb42]        ; 004a07c5 | DAT_005dcb42
-    FMUL double ptr [0x005dcb4a]        ; 004a07cb | DAT_005dcb4a
+    FMUL double ptr [0x005dcb42]        ; 004a07c5 | g_DOUBLE_005dcb42
+    FMUL double ptr [0x005dcb4a]        ; 004a07cb | g_DOUBLE_005dcb4a
     PUSH 0x0                            ; 004a07d1
     CALL crt_math.c_round_FUN_005c03a0  ; 004a07d3
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 004a07d8
     MOV EBX,dword ptr [ESP + 0x18]      ; 004a07dc
     PUSH EBX                            ; 004a07e0

@@ -6,25 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90(CDemonRenderer *this_ptr,CVector3f *point_ptr)
 
 {
-  int y;
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
+  double dVar1;
+  double dVar2;
   int z;
   
-  fVar1 = (float10)_DAT_005bc4f3;
-  fVar2 = (float10)point_ptr->z * fVar1;
-  fVar3 = (float10)point_ptr->y * fVar1;
-  fVar1 = (float10)point_ptr->x * fVar1;
-  round();
-  round();
-  z = (int)ROUND(fVar2);
-  round(z,z,(int)ROUND(fVar3));
-  engine_matrix_c_setCameraOrigin_FUN_004e6a40((int)ROUND(fVar1),y,z);
+  dVar1 = (double)point_ptr->y * 256;
+  dVar2 = (double)point_ptr->x * 256;
+  round((double)point_ptr->z * 256);
+  dVar1 = round(dVar1);
+  z = 0x46cbd0;
+  dVar2 = round(dVar2);
+  engine_matrix_c_setCameraOrigin_FUN_004e6a40((int)ROUND(dVar2),(int)ROUND(dVar1),z);
   return;
 }

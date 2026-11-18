@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 289,
-    "complexity_score": 112,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 97,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 386
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 96,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 385
   },
   "cross_references": [
     {
@@ -60,14 +58,14 @@
   "globals": [
     {
       "addr": "01bcde24",
-      "name": "DAT_01bcde24",
-      "type": "undefined4",
+      "name": "g_ActiveControl",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01bcde28",
-      "name": "DAT_01bcde28",
-      "type": "undefined4",
+      "name": "g_ScrollAction",
+      "type": "int",
       "value": null
     }
   ],
@@ -119,6 +117,24 @@
     "pcode_op_count": 909
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00484440",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1842
+    },
+    "bw1.exe": {
+      "addr": "0049caa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1842
+    },
+    "bw3.exe": {
+      "addr": "00485640",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1842
+    },
     "nocedit.exe": {
       "addr": "004a5c10",
       "by": "name",
@@ -170,14 +186,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

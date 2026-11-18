@@ -6,30 +6,28 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_matrixPush_FUN_004ed790(void)
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  float *pfVar2;
+  float *pfVar3;
   byte bVar4;
   
   bVar4 = 0;
-  _DAT_01d76d00 = _DAT_01d76d00 + 1;
-  if (9 < _DAT_01d76d00) {
-    _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
-    _DAT_01d71de4 = 0x4b7;
-    core_main_c_FUN_004e4330("Matrix unbalance");
+  g_PTR_01d76d00 = g_PTR_01d76d00 + 1;
+  if (9 < (int)g_PTR_01d76d00) {
+    g_CHAR_PTR_01d71de0 = "..\\engine\\mini3d.cpp";
+    g_INT_01d71de4 = 0x4b7;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Matrix unbalance");
   }
-  puVar2 = _DAT_01d76cfc;
-  puVar3 = (uint *)(&DAT_01d76d04 + _DAT_01d76d00 * 0x3c);
-  _DAT_01d76cfc = (uint *)(&DAT_01d76d04 + _DAT_01d76d00 * 0x3c);
+  pfVar2 = (float *)g_PTR_01d76cfc;
+  pfVar3 = &g_FLOAT_01d76d04 + (int)g_PTR_01d76d00 * 0xf;
+  g_PTR_01d76cfc = (byte *)(&g_FLOAT_01d76d04 + (int)g_PTR_01d76d00 * 0xf);
   for (iVar1 = 0xf; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *pfVar3 = *pfVar2;
+    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
   }
   return;
 }

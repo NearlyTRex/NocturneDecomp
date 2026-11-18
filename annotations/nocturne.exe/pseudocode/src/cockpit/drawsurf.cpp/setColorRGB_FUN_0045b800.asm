@@ -25,9 +25,9 @@
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d8cd
 ;   TerminatedCString s_Invalid_bitsPerPixel_in_0057d8e5
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_01b4d710
-;   undefined4 DAT_01b4d714
-;   undefined4 DAT_01b4d71c
+;   int g_INT_01b4d710
+;   int g_PaletteColorIndex
+;   int g_UseRGBConversion
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
 ;   _BIT_INTEGER32 g_GreenBitPosition
@@ -69,9 +69,9 @@ section .text
     XOR ECX,ECX                         ; 0045b83d
     MOV CL,byte ptr [EDI + 0x1bf7720]   ; 0045b83f
     XOR EDX,EDX                         ; 0045b845
-    MOV dword ptr [0x01b4d714],ECX      ; 0045b847 | DAT_01b4d714
+    MOV dword ptr [0x01b4d714],ECX      ; 0045b847 | g_PaletteColorIndex
     MOV ECX,dword ptr [0x005b7624]      ; 0045b84d | g_BitsPerPixel
-    MOV dword ptr [0x01b4d71c],EDX      ; 0045b853 | DAT_01b4d71c
+    MOV dword ptr [0x01b4d71c],EDX      ; 0045b853 | g_UseRGBConversion
     CMP ECX,0x10                        ; 0045b859
     JNC 0x0045b92b                      ; 0045b85c
         ;   XREF to: 0045b92b (CONDITIONAL_JUMP)  ; LAB_0045b92b
@@ -80,7 +80,7 @@ section .text
         ;   XREF to: 0045b936 (CONDITIONAL_JUMP)  ; LAB_0045b936
     XOR EAX,EAX                         ; 0045b86b
     MOV AL,byte ptr [EDI + 0x1bf7720]   ; 0045b86d
-    MOV [0x01b4d710],EAX                ; 0045b873 | DAT_01b4d710
+    MOV [0x01b4d710],EAX                ; 0045b873 | g_INT_01b4d710
     ADD ESP,0x8                         ; 0045b878
     POP EBP                             ; 0045b87b
     POP EDI                             ; 0045b87c
@@ -112,7 +112,7 @@ section .text
     SHL EAX,CL                          ; 0045b8cb
     OR EAX,EDI                          ; 0045b8cd
     AND EAX,0xffff                      ; 0045b8cf
-    MOV [0x01b4d710],EAX                ; 0045b8d4 | DAT_01b4d710
+    MOV [0x01b4d710],EAX                ; 0045b8d4 | g_INT_01b4d710
     ADD ESP,0x8                         ; 0045b8d9
     POP EBP                             ; 0045b8dc
     POP EDI                             ; 0045b8dd
@@ -132,7 +132,7 @@ section .text
     OR EAX,ESI                          ; 0045b8fd
     MOV ECX,EBX                         ; 0045b8ff
     OR ECX,EAX                          ; 0045b901
-    MOV dword ptr [0x01b4d710],ECX      ; 0045b903 | DAT_01b4d710
+    MOV dword ptr [0x01b4d710],ECX      ; 0045b903 | g_INT_01b4d710
     ADD ESP,0x8                         ; 0045b909
     POP EBP                             ; 0045b90c
     POP EDI                             ; 0045b90d
@@ -145,7 +145,7 @@ section .text
     SHL ECX,0x10                        ; 0045b916
     OR ECX,ESI                          ; 0045b919
     OR ECX,EBX                          ; 0045b91b
-    MOV dword ptr [0x01b4d710],ECX      ; 0045b91d | DAT_01b4d710
+    MOV dword ptr [0x01b4d710],ECX      ; 0045b91d | g_INT_01b4d710
     ADD ESP,0x8                         ; 0045b923
     POP EBP                             ; 0045b926
     POP EDI                             ; 0045b927

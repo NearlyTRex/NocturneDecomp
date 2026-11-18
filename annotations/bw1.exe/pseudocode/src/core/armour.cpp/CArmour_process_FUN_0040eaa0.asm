@@ -9,14 +9,14 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_armour_wav_005d32d9
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00430d90
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
-;   core_charactr.cpp_FUN_00435320
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -68,8 +68,8 @@ section .text
     FSTP float ptr [ESI + 0x2524]       ; 0040eb0f
     FSTP float ptr [ESP]                ; 0040eb15
     PUSH ESI                            ; 0040eb18
-    CALL core_charactr.cpp_FUN_00435320 ; 0040eb19
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 0040eb19
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0040eb1e
     PUSH EBX                            ; 0040eb21
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770 ; 0040eb22
@@ -102,7 +102,7 @@ section .text
     ADD ESP,0x8                         ; 0040eb6a
     LEA EAX,[ESI + 0xc268]              ; 0040eb6d
     PUSH EAX                            ; 0040eb73
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0040eb74 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0040eb74 | g_CEventListPtr
     PUSH EDX                            ; 0040eb7a
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0040eb7b
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

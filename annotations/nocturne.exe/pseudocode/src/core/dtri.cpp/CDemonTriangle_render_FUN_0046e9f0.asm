@@ -21,12 +21,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e4ae
+;   double g_NormalVectorScaleFactor = -65536
 ;   double DOUBLE_0057e4b6 = 65536
 ;   double DOUBLE_0057e4be = 256
-;   undefined4 DAT_0059c8e0
-;   void* PTR_DAT_005ae700 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   float g_VertexCoordinateScaleFactor = 256
+;   void* PTR_g_CDemonRenderer_01b4d738_005ae700 = 01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -45,38 +45,38 @@ section .text
     MOV ESI,dword ptr [ESP + 0x7c]      ; 0046e9f6
     LEA EBX,[ESP + 0x48]                ; 0046e9fa
     MOV EAX,ESI                         ; 0046e9fe
-    MOV EDX,dword ptr [0x005ae700]      ; 0046ea00 | PTR_DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0046ea00 | PTR_g_CDemonRenderer_01b4d738_005ae700
     FLD float ptr [EAX]                 ; 0046ea06
-    FMUL float ptr [0x0059c8e0]         ; 0046ea08 | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea08 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0046ea0e
     FLD float ptr [EAX + 0x4]           ; 0046ea10
-    FMUL float ptr [0x0059c8e0]         ; 0046ea13 | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea13 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0046ea19
     FLD float ptr [EAX + 0x8]           ; 0046ea1c
-    FMUL float ptr [0x0059c8e0]         ; 0046ea1f | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea1f | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0046ea25
     LEA EAX,[ESP + 0x48]                ; 0046ea28
     PUSH EAX                            ; 0046ea2c
-    MOV EAX,dword ptr [EDX]             ; 0046ea2d | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 0046ea2d | g_CDemonRenderer_01b4d738
     PUSH EAX                            ; 0046ea2f
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0046ea30
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     LEA EBX,[ESP + 0x68]                ; 0046ea35
     ADD ESP,0x8                         ; 0046ea39
     LEA EAX,[ESI + 0xc]                 ; 0046ea3c
-    MOV EDX,dword ptr [0x005ae700]      ; 0046ea3f | PTR_DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0046ea3f | PTR_g_CDemonRenderer_01b4d738_005ae700
     FLD float ptr [EAX]                 ; 0046ea45
-    FMUL float ptr [0x0059c8e0]         ; 0046ea47 | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea47 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0046ea4d
     FLD float ptr [EAX + 0x4]           ; 0046ea4f
-    FMUL float ptr [0x0059c8e0]         ; 0046ea52 | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea52 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0046ea58
     FLD float ptr [EAX + 0x8]           ; 0046ea5b
-    FMUL float ptr [0x0059c8e0]         ; 0046ea5e | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea5e | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0046ea64
     LEA EAX,[ESP + 0x60]                ; 0046ea67
     PUSH EAX                            ; 0046ea6b
-    MOV EAX,dword ptr [EDX]             ; 0046ea6c | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 0046ea6c | g_CDemonRenderer_01b4d738
     ADD EAX,0x30                        ; 0046ea6e
     PUSH EAX                            ; 0046ea71
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0046ea72
@@ -84,19 +84,19 @@ section .text
     LEA EBX,[ESP + 0x5c]                ; 0046ea77
     ADD ESP,0x8                         ; 0046ea7b
     LEA EAX,[ESI + 0x18]                ; 0046ea7e
-    MOV EDX,dword ptr [0x005ae700]      ; 0046ea81 | PTR_DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0046ea81 | PTR_g_CDemonRenderer_01b4d738_005ae700
     FLD float ptr [EAX]                 ; 0046ea87
-    FMUL float ptr [0x0059c8e0]         ; 0046ea89 | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea89 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0046ea8f
     FLD float ptr [EAX + 0x4]           ; 0046ea91
-    FMUL float ptr [0x0059c8e0]         ; 0046ea94 | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046ea94 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0046ea9a
     FLD float ptr [EAX + 0x8]           ; 0046ea9d
-    FMUL float ptr [0x0059c8e0]         ; 0046eaa0 | DAT_0059c8e0
+    FMUL float ptr [0x0059c8e0]         ; 0046eaa0 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0046eaa6
     LEA EAX,[ESP + 0x54]                ; 0046eaa9
     PUSH EAX                            ; 0046eaad
-    MOV EAX,dword ptr [EDX]             ; 0046eaae | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 0046eaae | g_CDemonRenderer_01b4d738
     ADD EAX,0x60                        ; 0046eab0
     PUSH EAX                            ; 0046eab3
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0046eab4
@@ -104,7 +104,7 @@ section .text
     MOV EDX,0x3                         ; 0046eab9
     ADD ESP,0x8                         ; 0046eabe
     MOV dword ptr [ESP + 0x4],EDX       ; 0046eac1
-    FLD double ptr [0x0057e4ae]         ; 0046eac5 | DAT_0057e4ae
+    FLD double ptr [0x0057e4ae]         ; 0046eac5 | g_NormalVectorScaleFactor
     FLD float ptr [ESI + 0x24]          ; 0046eacb
     FMUL ST1                            ; 0046eace
     CALL crt_math.c_round_FUN_00563a30  ; 0046ead0
@@ -125,9 +125,9 @@ section .text
     MOV EAX,ESP                         ; 0046eb02
     MOV EBX,0x1                         ; 0046eb04
     PUSH EAX                            ; 0046eb09
-    MOV EDI,dword ptr [0x005ae700]      ; 0046eb0a | PTR_DAT_005ae700
+    MOV EDI,dword ptr [0x005ae700]      ; 0046eb0a | PTR_g_CDemonRenderer_01b4d738_005ae700
     XOR ECX,ECX                         ; 0046eb10
-    PUSH EDI                            ; 0046eb12 | DAT_01b4d738
+    PUSH EDI                            ; 0046eb12 | g_CDemonRenderer_01b4d738
     MOV ESI,0x2                         ; 0046eb13
     MOV dword ptr [ESP + 0x20],ECX      ; 0046eb18
     MOV dword ptr [ESP + 0x2c],EBX      ; 0046eb1c

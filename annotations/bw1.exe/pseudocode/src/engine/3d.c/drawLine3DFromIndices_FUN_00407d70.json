@@ -2,21 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 225,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 16,
+    "pseudocode_lines": 41,
+    "suspect_count": 10,
     "suspect_types": [
+      "shadow_pointer_walk",
       "stack_param",
       "stack_ref",
-      "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 77
+    "total_lines": 78
   },
   "cross_references": [],
   "function": {
@@ -27,9 +26,9 @@
         "00407de2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_3d.c_drawLine3DFromIndices_FUN_00407d70",
-    "signature": "void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2)"
+    "signature": "void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int vertex_index1,int vertex_index2)"
   },
   "function_calls": [
     {
@@ -41,13 +40,13 @@
   "globals": [
     {
       "addr": "00629014",
-      "name": "DAT_00629014",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_00629014",
+      "type": "SRenderVertex[20000]",
       "value": null
     },
     {
       "addr": "00629018",
-      "name": "DAT_00629018",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     }
@@ -56,9 +55,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -119,10 +118,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 108,
+    "frame_size": 116,
     "local_size": 108,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -138,6 +137,20 @@
         "offset": -56,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_index1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_index2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -174,24 +187,8 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_ffffff38",
       "severity": "moderate",
       "text": "SRenderVertex in_stack_ffffff38;",
@@ -199,63 +196,31 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_ffffff68",
       "severity": "moderate",
       "text": "SRenderVertex in_stack_ffffff68;",
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_00629014 + param_1 * 0xc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00629014",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_00629014 + param_1 * 0xc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_00629014 + param_2 * 0xc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_00629014",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_00629014 + param_2 * 0xc;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 28,
+      "line": 29,
       "match": "&stack0xffffff68",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xffffff68;",
+      "text": "piVar4 = (int *)&stack0xffffff68;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 36,
       "match": "&stack0xffffff38",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xffffff38;",
+      "text": "piVar4 = (int *)&stack0xffffff38;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 42,
       "match": "in_stack_ffffff38",
       "severity": "moderate",
       "text": "engine_3d_c_clipAndDrawLine3D_FUN_00407df0(in_stack_ffffff38,in_stack_ffffff68);",
@@ -263,7 +228,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 42,
       "match": "in_stack_ffffff68",
       "severity": "moderate",
       "text": "engine_3d_c_clipAndDrawLine3D_FUN_00407df0(in_stack_ffffff38,in_stack_ffffff68);",
@@ -271,7 +236,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 15,
+      "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -279,27 +244,27 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 22,
+      "line": 37,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 29,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_y;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 36,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_y;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

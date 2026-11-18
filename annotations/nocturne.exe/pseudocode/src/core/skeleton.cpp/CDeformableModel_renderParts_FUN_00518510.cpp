@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(CDeformableModel *this_ptr,int lod_index,int *part_visibility_flags,int *texture_set_indices,int render_flags,int skip_texture_capture)
 
 {
@@ -89,38 +87,38 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(CDeform
               pSVar6 = pSVar4 + *puVar8;
               pSVar1 = pSVar4 + puVar8[1];
               pSVar4 = pSVar4 + puVar8[2];
-              local_24 = (pSVar6->projected_vertex).transformed_x * _DAT_01cc5118 +
-                         (pSVar6->projected_vertex).transformed_y * _DAT_01cc5124 +
-                         (pSVar6->projected_vertex).transformed_z * _DAT_01cc5130;
-              local_20 = (pSVar6->projected_vertex).transformed_x * _DAT_01cc511c +
-                         (pSVar6->projected_vertex).transformed_y * _DAT_01cc5128 +
-                         (pSVar6->projected_vertex).transformed_z * _DAT_01cc5134;
-              local_1c = (pSVar6->projected_vertex).transformed_z * _DAT_01cc5138 +
-                         (pSVar6->projected_vertex).transformed_x * _DAT_01cc5120 +
-                         (pSVar6->projected_vertex).transformed_y * _DAT_01cc512c;
-              local_18 = (pSVar1->projected_vertex).transformed_z * _DAT_01cc5130 +
-                         (pSVar1->projected_vertex).transformed_x * _DAT_01cc5118 +
-                         _DAT_01cc5124 * (pSVar1->projected_vertex).transformed_y;
-              local_14 = (pSVar1->projected_vertex).transformed_y * _DAT_01cc5128 +
-                         (pSVar1->projected_vertex).transformed_x * _DAT_01cc511c +
-                         (pSVar1->projected_vertex).transformed_z * _DAT_01cc5134;
+              local_24 = (pSVar6->projected_vertex).transformed_x * g_INT_01cc5118 +
+                         (pSVar6->projected_vertex).transformed_y * g_INT_01cc5124 +
+                         (pSVar6->projected_vertex).transformed_z * g_INT_01cc5130;
+              local_20 = (pSVar6->projected_vertex).transformed_x * g_INT_01cc511c +
+                         (pSVar6->projected_vertex).transformed_y * g_INT_01cc5128 +
+                         (pSVar6->projected_vertex).transformed_z * g_INT_01cc5134;
+              local_1c = (pSVar6->projected_vertex).transformed_z * g_INT_01cc5138 +
+                         (pSVar6->projected_vertex).transformed_x * g_INT_01cc5120 +
+                         (pSVar6->projected_vertex).transformed_y * g_INT_01cc512c;
+              local_18 = (pSVar1->projected_vertex).transformed_z * g_INT_01cc5130 +
+                         (pSVar1->projected_vertex).transformed_x * g_INT_01cc5118 +
+                         g_INT_01cc5124 * (pSVar1->projected_vertex).transformed_y;
+              local_14 = (pSVar1->projected_vertex).transformed_y * g_INT_01cc5128 +
+                         (pSVar1->projected_vertex).transformed_x * g_INT_01cc511c +
+                         (pSVar1->projected_vertex).transformed_z * g_INT_01cc5134;
               local_6c = (SInputFace *)(float)local_1c;
               local_48 = (float)local_18;
               local_44 = local_48 - (float)local_24;
               local_54 = (float)local_14;
               local_4c = local_54 - (float)local_20;
-              local_50 = (float)((pSVar1->projected_vertex).transformed_z * _DAT_01cc5138 +
-                                (pSVar1->projected_vertex).transformed_x * _DAT_01cc5120 +
-                                (pSVar1->projected_vertex).transformed_y * _DAT_01cc512c);
-              local_70 = (float)((pSVar4->projected_vertex).transformed_z * _DAT_01cc5130 +
-                                (pSVar4->projected_vertex).transformed_x * _DAT_01cc5118 +
-                                (pSVar4->projected_vertex).transformed_y * _DAT_01cc5124);
-              local_68 = (float)((pSVar4->projected_vertex).transformed_y * _DAT_01cc5128 +
-                                 (pSVar4->projected_vertex).transformed_x * _DAT_01cc511c +
-                                (pSVar4->projected_vertex).transformed_z * _DAT_01cc5134);
-              local_64 = (float)((pSVar4->projected_vertex).transformed_y * _DAT_01cc512c +
-                                 (pSVar4->projected_vertex).transformed_x * _DAT_01cc5120 +
-                                (pSVar4->projected_vertex).transformed_z * _DAT_01cc5138);
+              local_50 = (float)((pSVar1->projected_vertex).transformed_z * g_INT_01cc5138 +
+                                (pSVar1->projected_vertex).transformed_x * g_INT_01cc5120 +
+                                (pSVar1->projected_vertex).transformed_y * g_INT_01cc512c);
+              local_70 = (float)((pSVar4->projected_vertex).transformed_z * g_INT_01cc5130 +
+                                (pSVar4->projected_vertex).transformed_x * g_INT_01cc5118 +
+                                (pSVar4->projected_vertex).transformed_y * g_INT_01cc5124);
+              local_68 = (float)((pSVar4->projected_vertex).transformed_y * g_INT_01cc5128 +
+                                 (pSVar4->projected_vertex).transformed_x * g_INT_01cc511c +
+                                (pSVar4->projected_vertex).transformed_z * g_INT_01cc5134);
+              local_64 = (float)((pSVar4->projected_vertex).transformed_y * g_INT_01cc512c +
+                                 (pSVar4->projected_vertex).transformed_x * g_INT_01cc5120 +
+                                (pSVar4->projected_vertex).transformed_z * g_INT_01cc5138);
               local_12c.vertices[6].texture_v = (int)(local_64 - local_50);
               local_28 = local_4c * (float)local_12c.vertices[6].texture_v -
                          (local_68 - local_54) * (local_50 - (float)local_6c);

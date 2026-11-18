@@ -200,7 +200,7 @@ LAB_005d7a1a:
   iVar6 = shape_superopt_cpp_COptimize_optimize_FUN_005d7290(&local_9c);
   if (iVar6 == 0) {
     shape_design_c_optimizePolygonMesh_FUN_004658e0(1.0,0,-1);
-    INT_03f6bbe4 = INT_03f6bbe4 + 1;
+    g_CubeReduceFileIndex = g_CubeReduceFileIndex + 1;
   }
   else {
     shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(&local_9c);

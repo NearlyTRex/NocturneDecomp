@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   delay
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006236b8
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940
@@ -27,7 +27,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 00408c6d
     PUSH ECX                            ; 00408c71
     PUSH EDX                            ; 00408c72
-    MOV EBX,dword ptr [0x006236b8]      ; 00408c73 | DAT_006236b8
+    MOV EBX,dword ptr [0x006236b8]      ; 00408c73 | g_CSound_PTR_006236b8
     PUSH EBX                            ; 00408c79
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940 ; 00408c7a
         ;   XREF to: 0057d940 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)

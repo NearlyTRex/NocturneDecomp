@@ -11,16 +11,16 @@
 ; int              Stack[0x14]:4   y2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ba5c2c
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
+;   int g_PaletteColorIndex
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
+;   int g_ClipRight
+;   int g_INT_01c35e54
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_drawLineAA_FUN_0042e930
-;   cockpit_ckptutil.c_FUN_0042f300
-;   cockpit_ckptutil.c_FUN_0042f320
+;   cockpit_ckptutil.c_isLineClippingDisabled_FUN_0042f300
+;   cockpit_ckptutil.c_setLineClippingDisabled_FUN_0042f320
 ;
 ; *****************************************************************************
 
@@ -33,27 +33,27 @@ section .text
     PUSH EBP                            ; 00467293
     SUB ESP,0x8                         ; 00467294
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00467297
-    MOV EDI,dword ptr [0x01c35e48]      ; 0046729b | DAT_01c35e48
-    MOV EBP,dword ptr [0x01c35e50]      ; 004672a1 | DAT_01c35e50
-    MOV EAX,[0x01c35e4c]                ; 004672a7 | DAT_01c35e4c
+    MOV EDI,dword ptr [0x01c35e48]      ; 0046729b | g_INT_01c35e48
+    MOV EBP,dword ptr [0x01c35e50]      ; 004672a1 | g_ClipRight
+    MOV EAX,[0x01c35e4c]                ; 004672a7 | g_INT_01c35e4c
     MOV ESI,dword ptr [EBX + 0x10]      ; 004672ac
     MOV dword ptr [ESP],EAX             ; 004672af
-    MOV EAX,[0x01c35e54]                ; 004672b2 | DAT_01c35e54
-    MOV dword ptr [0x01c35e48],ESI      ; 004672b7 | DAT_01c35e48
+    MOV EAX,[0x01c35e54]                ; 004672b2 | g_INT_01c35e54
+    MOV dword ptr [0x01c35e48],ESI      ; 004672b7 | g_INT_01c35e48
     MOV dword ptr [ESP + 0x4],EAX       ; 004672bd
     MOV EAX,dword ptr [EBX + 0x18]      ; 004672c1
     MOV ESI,dword ptr [EBX + 0x14]      ; 004672c4
-    MOV [0x01c35e50],EAX                ; 004672c7 | DAT_01c35e50
+    MOV [0x01c35e50],EAX                ; 004672c7 | g_ClipRight
     MOV EAX,dword ptr [EBX + 0x1c]      ; 004672cc
-    MOV dword ptr [0x01c35e4c],ESI      ; 004672cf | DAT_01c35e4c
-    MOV [0x01c35e54],EAX                ; 004672d5 | DAT_01c35e54
-    CALL cockpit_ckptutil.c_FUN_0042f300 ; 004672da
-        ;   XREF to: 0042f300 (UNCONDITIONAL_CALL)  ; int cockpit_ckptutil.c_FUN_0042f300()
+    MOV dword ptr [0x01c35e4c],ESI      ; 004672cf | g_INT_01c35e4c
+    MOV [0x01c35e54],EAX                ; 004672d5 | g_INT_01c35e54
+    CALL cockpit_ckptutil.c_isLineClippingDisabled_FUN_0042f300 ; 004672da
+        ;   XREF to: 0042f300 (UNCONDITIONAL_CALL)  ; int cockpit_ckptutil.c_isLineClippingDisabled_FUN_0042f300()
     PUSH 0x1                            ; 004672df
     MOV ESI,EAX                         ; 004672e1
-    CALL cockpit_ckptutil.c_FUN_0042f320 ; 004672e3
-        ;   XREF to: 0042f320 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042f320()
-    MOV EDX,dword ptr [0x01ba5c2c]      ; 004672e8 | DAT_01ba5c2c
+    CALL cockpit_ckptutil.c_setLineClippingDisabled_FUN_0042f320 ; 004672e3
+        ;   XREF to: 0042f320 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_setLineClippingDisabled_FUN_0042f320(int disabled)
+    MOV EDX,dword ptr [0x01ba5c2c]      ; 004672e8 | g_PaletteColorIndex
     ADD ESP,0x4                         ; 004672ee
     MOV ECX,dword ptr [EBX + 0xc]       ; 004672f1
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004672f4
@@ -74,15 +74,15 @@ section .text
         ;   XREF to: 0042e930 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_drawLineAA_FUN_0042e930(int x0, int y0, int x1, int y1, ...)
     ADD ESP,0x14                        ; 00467319
     PUSH ESI                            ; 0046731c
-    CALL cockpit_ckptutil.c_FUN_0042f320 ; 0046731d
-        ;   XREF to: 0042f320 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042f320()
+    CALL cockpit_ckptutil.c_setLineClippingDisabled_FUN_0042f320 ; 0046731d
+        ;   XREF to: 0042f320 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_setLineClippingDisabled_FUN_0042f320(int disabled)
     ADD ESP,0x4                         ; 00467322
     MOV EAX,dword ptr [ESP]             ; 00467325
-    MOV dword ptr [0x01c35e48],EDI      ; 00467328 | DAT_01c35e48
-    MOV [0x01c35e4c],EAX                ; 0046732e | DAT_01c35e4c
+    MOV dword ptr [0x01c35e48],EDI      ; 00467328 | g_INT_01c35e48
+    MOV [0x01c35e4c],EAX                ; 0046732e | g_INT_01c35e4c
     MOV EAX,dword ptr [ESP + 0x4]       ; 00467333
-    MOV dword ptr [0x01c35e50],EBP      ; 00467337 | DAT_01c35e50
-    MOV [0x01c35e54],EAX                ; 0046733d | DAT_01c35e54
+    MOV dword ptr [0x01c35e50],EBP      ; 00467337 | g_ClipRight
+    MOV [0x01c35e54],EAX                ; 0046733d | g_INT_01c35e54
     ADD ESP,0x8                         ; 00467342
     POP EBP                             ; 00467345
     POP EDI                             ; 00467346

@@ -8,7 +8,7 @@
 ; char * *         Stack[0x8]:4   filename2_ptr
 ;
 ; XREF[1]:
-;   engine_pod.cpp_FUN_0053b250 at 0053b6cd
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250 at 0053b6cd
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0

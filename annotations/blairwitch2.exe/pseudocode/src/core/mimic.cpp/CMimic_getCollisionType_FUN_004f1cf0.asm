@@ -8,11 +8,11 @@
 ; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dd9f9
-;   undefined4 DAT_005dda01
+;   double g_DOUBLE_005dd9f9 = 1.30000000000000
+;   float g_FLOAT_005dda01 = 0.5
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     LEA EAX,[EDX + 0x2b4]               ; 004f1d19
         ;   Label: LAB_004f1d19
     PUSH EAX                            ; 004f1d1f
-    CALL core_motion.cpp_FUN_005035c0   ; 004f1d20
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004f1d20
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004f1d25
     ADD ESP,0x4                         ; 004f1d28
     CMP EAX,0xc                         ; 004f1d2b
@@ -49,9 +49,9 @@ section .text
     MOV dword ptr [EAX + 0x14],0xbdcccccd ; 004f1d3c
     FLD ST1                             ; 004f1d43
     FXCH                                ; 004f1d45
-    FADD float ptr [0x005dda01]         ; 004f1d47 | DAT_005dda01
+    FADD float ptr [0x005dda01]         ; 004f1d47 | g_FLOAT_005dda01
     FXCH                                ; 004f1d4d
-    FMUL double ptr [0x005dd9f9]        ; 004f1d4f | DAT_005dd9f9
+    FMUL double ptr [0x005dd9f9]        ; 004f1d4f | g_DOUBLE_005dd9f9
     FXCH                                ; 004f1d55
     FSTP float ptr [EAX + 0x18]         ; 004f1d57
     FSTP ST1                            ; 004f1d5a

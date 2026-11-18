@@ -15,10 +15,10 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80 at 0053ac1b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007e3e88
-;   undefined4 DAT_007e3e8c
-;   undefined4 DAT_01c6e2b4
-;   undefined4 DAT_01c6e2b8
+;   int g_ClippedVertexCount
+;   SRenderVertex[16] g_SRenderVertex_ARRAY_007e3e8c
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0
@@ -74,11 +74,11 @@ section .text
     MOV EBP,dword ptr [EBX + 0x4]       ; 0046d379
     MOV EDI,0x6                         ; 0046d37c
     PUSH EBP                            ; 0046d381
-    MOV dword ptr [0x01c6e2b4],ESI      ; 0046d382 | DAT_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],EDI      ; 0046d388 | DAT_01c6e2b8
+    MOV dword ptr [0x01c6e2b4],ESI      ; 0046d382 | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],EDI      ; 0046d388 | g_VertexPreprocessMode
     CALL core_xform.cpp_transformAndClipGeometry_FUN_00587cd0 ; 0046d38e
         ;   XREF to: 00587cd0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_00587cd0(int vertex_count, int * vertex_indices)
-    MOV EAX,[0x007e3e88]                ; 0046d393 | DAT_007e3e88
+    MOV EAX,[0x007e3e88]                ; 0046d393 | g_ClippedVertexCount
     ADD ESP,0x8                         ; 0046d398
     CMP EAX,0x2                         ; 0046d39b
     JLE 0x0046d34c                      ; 0046d39e
@@ -86,7 +86,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0046d3a0
     PUSH EDX                            ; 0046d3a4
     PUSH EAX                            ; 0046d3a5
-    PUSH 0x7e3e8c                       ; 0046d3a6 | DAT_007e3e8c
+    PUSH 0x7e3e8c                       ; 0046d3a6 | g_SRenderVertex_ARRAY_007e3e8c
     CALL core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0 ; 0046d3ab
         ;   XREF to: 005a23c0 (UNCONDITIONAL_CALL)  ; void core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 0046d3b0

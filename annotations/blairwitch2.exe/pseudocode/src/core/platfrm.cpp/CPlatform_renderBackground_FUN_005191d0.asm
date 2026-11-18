@@ -8,19 +8,19 @@
 ; int              Stack[0x8]:4   layer_flag
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fac30
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_006141f0
+;   float g_FLOAT_005fac30 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_007bda74
-;   undefined4 DAT_0150f450
-;   undefined4 DAT_01ba5c50
+;   CDemonCamera* g_CurrentSceneCamera
+;   int g_FlatShadingLightLevel
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CDemonSetInstance.per_pixel_lighting_enabled
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
@@ -34,8 +34,8 @@ section .text
     PUSH EBP                            ; 005191d1
     SUB ESP,0x3c                        ; 005191d2
     MOV EBP,dword ptr [ESP + 0x48]      ; 005191d5
-    MOV EDX,dword ptr [0x0060b280]      ; 005191d9 | DAT_0060b280
-    PUSH EDX                            ; 005191df | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 005191d9 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 005191df | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 005191e0
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005191e5
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[EBP + 0x514]               ; 00519224
         ;   Label: LAB_00519224
     PUSH EAX                            ; 0051922a
-    MOV ECX,dword ptr [0x006141f0]      ; 0051922b | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 0051922b | g_CEventListPtr
     PUSH ECX                            ; 00519231
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00519232
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -80,7 +80,7 @@ section .text
         ;   XREF to: 0051921e (CONDITIONAL_JUMP)  ; LAB_0051921e
     LEA EAX,[EBP + 0x4b0]               ; 0051923e
     PUSH EAX                            ; 00519244
-    MOV EBX,dword ptr [0x006141f0]      ; 00519245 | DAT_006141f0
+    MOV EBX,dword ptr [0x006141f0]      ; 00519245 | g_CEventListPtr
     PUSH EBX                            ; 0051924b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0051924c
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -91,8 +91,8 @@ section .text
     PUSH EDI                            ; 00519258
         ;   Label: LAB_00519258
     PUSH ESI                            ; 00519259
-    MOV ESI,dword ptr [0x0060b280]      ; 0051925a | DAT_0060b280
-    PUSH ESI                            ; 00519260 | DAT_01ba5c50
+    MOV ESI,dword ptr [0x0060b280]      ; 0051925a | g_CDemonRenderer_PTR_0060b280
+    PUSH ESI                            ; 00519260 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00519261
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00519266
@@ -120,8 +120,8 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005192ad
     PUSH EAX                            ; 005192b1
     MOVSD.REP ES:EDI,ESI                ; 005192b2
-    CALL core_box.cpp_FUN_0041a840      ; 005192b4
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 005192b4
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 005192b9
     TEST EAX,EAX                        ; 005192bc
     JZ 0x0051935d                       ; 005192be
@@ -129,8 +129,8 @@ section .text
     CMP dword ptr [EBP + 0x670],0x0     ; 005192c4
     JZ 0x0051937d                       ; 005192cb
         ;   XREF to: 0051937d (CONDITIONAL_JUMP)  ; LAB_0051937d
-    MOV EDX,dword ptr [0x0060b280]      ; 005192d1 | DAT_0060b280
-    PUSH EDX                            ; 005192d7 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 005192d1 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 005192d7 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 005192d8
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005192dd
@@ -142,24 +142,24 @@ section .text
     MOV dword ptr [EAX + 0x15ac88],0x1  ; 005192f1 | g_CDemonSetInstance.per_pixel_lighting_enabled
     LEA EAX,[EBP + 0x20]                ; 005192fb
     FLD float ptr [EAX]                 ; 005192fe
-    FMUL float ptr [0x005fac30]         ; 00519300 | DAT_005fac30
+    FMUL float ptr [0x005fac30]         ; 00519300 | g_FLOAT_005fac30
     FISTP dword ptr [EBX]               ; 00519306
     FLD float ptr [EAX + 0x4]           ; 00519308
-    FMUL float ptr [0x005fac30]         ; 0051930b | DAT_005fac30
+    FMUL float ptr [0x005fac30]         ; 0051930b | g_FLOAT_005fac30
     FISTP dword ptr [EBX + 0x4]         ; 00519311
     FLD float ptr [EAX + 0x8]           ; 00519314
-    FMUL float ptr [0x005fac30]         ; 00519317 | DAT_005fac30
+    FMUL float ptr [0x005fac30]         ; 00519317 | g_FLOAT_005fac30
     FISTP dword ptr [EBX + 0x8]         ; 0051931d
     PUSH 0x0                            ; 00519320
     LEA EBX,[ESP + 0x3c]                ; 00519322
-    MOV EAX,[0x007bda74]                ; 00519326 | DAT_007bda74
+    MOV EAX,[0x007bda74]                ; 00519326 | g_CurrentSceneCamera
     PUSH EBX                            ; 0051932b
     MOV ESI,dword ptr [EAX + 0x3c]      ; 0051932c
     PUSH EAX                            ; 0051932f
     CALL dword ptr [ESI + 0x8]          ; 00519330
     ADD ESP,0xc                         ; 00519333
     PUSH -0x1                           ; 00519336
-    MOV [0x0150f450],EAX                ; 00519338 | DAT_0150f450
+    MOV [0x0150f450],EAX                ; 00519338 | g_FlatShadingLightLevel
     LEA EAX,[EBP + 0x2b4]               ; 0051933d
     PUSH 0x0                            ; 00519343
     PUSH EAX                            ; 00519345

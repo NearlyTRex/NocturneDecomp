@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMooCow * __cdecl core_moocow_cpp_CMooCow_ctor_FUN_00521300(CMooCow *this_ptr)
 
 {
@@ -20,9 +18,9 @@ CMooCow * __cdecl core_moocow_cpp_CMooCow_ctor_FUN_00521300(CMooCow *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar3->base).model,"moocow.dfm");
   (pCVar3->base).collision_cylinder_height = 1.75;
-  fVar1 = _DAT_006040a8;
+  fVar1 = 50.0f;
   (pCVar3->base).collision_cylinder_radius = 3.5;
-  fVar2 = _DAT_006040ac;
+  fVar2 = 100.0f;
   pCVar3->sfx_handle = 0;
   (pCVar3->base).turn_rate = 0.7853982;
   (pCVar3->base).ai_detection_range_min = fVar1;

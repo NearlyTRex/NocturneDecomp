@@ -47,7 +47,7 @@ int __cdecl CPendulum::renderOpaque(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_getBoundingBox_FUN_00537210
 // Address: 00537210
-CBoundingBox3D * __cdecl CPendulum::getBoundingBox(CPendulum *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CPendulum::getBoundingBox(CPendulum *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_pendulum.cpp_CPendulum_archive_FUN_00537250
 // Address: 00537250

@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 36
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
       "addr": "004a1d00",
       "from_addr": "004a4a59",
-      "name": "core_event.cpp_FUN_004a1d00",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -30,19 +28,19 @@
     {
       "addr": "0050ba70",
       "from_addr": "0050bb92",
-      "name": "core_menu.cpp_FUN_0050ba70",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057cc00",
+      "from_addr": "0057cc92",
+      "name": "core_sound.cpp_CSound_init_FUN_0057cc00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057ce10",
       "from_addr": "0057d05d",
       "name": "core_sound.cpp_CSound_process_FUN_0057ce10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0057cc00",
-      "from_addr": "0057cc92",
-      "name": "core_sound.cpp_FUN_0057cc00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,7 +84,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     }
   ],
   "globals": [
@@ -104,14 +102,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -121,7 +119,7 @@
       {
         "call_addr": "004a4a59",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_004a1d00",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +174,7 @@
       {
         "call_addr": "0057cc92",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057cc00",
+        "caller": "core_sound.cpp_CSound_init_FUN_0057cc00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -198,7 +196,7 @@
       {
         "call_addr": "0050bb92",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050ba70",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -209,7 +207,7 @@
       {
         "call_addr": "0050bc8d",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050ba70",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,7 +218,7 @@
       {
         "call_addr": "0050bd91",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050ba70",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -302,14 +300,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

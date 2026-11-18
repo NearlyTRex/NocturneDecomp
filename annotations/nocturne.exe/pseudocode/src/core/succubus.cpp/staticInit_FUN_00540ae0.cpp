@@ -10,8 +10,7 @@ void __cdecl core_succubus_cpp_staticInit_FUN_00540ae0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CSuccubusActorType_02dca01c,"CSuccubus",
-             core_succubus_cpp_factoryFuncSuccubus_FUN_00540b10,&INT_005c1008,1,
-             &g_CEnemyActorType_01bcdebc);
+            (&g_CSuccubusClassInfo,"CSuccubus",
+             core_succubus_cpp_factoryFuncSuccubus_FUN_00540b10,&INT_005c1008,1,&g_CEnemyClassInfo);
   return;
 }

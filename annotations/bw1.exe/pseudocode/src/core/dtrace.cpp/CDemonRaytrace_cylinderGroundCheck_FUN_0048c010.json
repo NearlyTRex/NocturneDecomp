@@ -2,25 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 187,
+    "complexity_score": 377,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 112,
-    "suspect_count": 6,
+    "pseudocode_lines": 122,
+    "suspect_count": 24,
     "suspect_types": [
-      "extra_output",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "raw_address_constant",
+      "suspect_float",
+      "unaffected_reg"
     ],
-    "total_lines": 329
+    "total_lines": 339
   },
   "cross_references": [
     {
       "addr": "005562c0",
       "from_addr": "00556578",
-      "name": "core_setcolid.cpp_FUN_005562c0",
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,7 +40,7 @@
     {
       "addr": "004584a0",
       "is_variadic": false,
-      "name": "core_dcube.cpp_FUN_004584a0"
+      "name": "core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004584a0"
     },
     {
       "addr": "0048afe0",
@@ -56,15 +56,15 @@
   "globals": [
     {
       "addr": "005db95c",
-      "name": "DAT_005db95c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005db95c",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005db960",
-      "name": "DAT_005db960",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005db960",
+      "type": "float",
+      "value": "-10"
     }
   ],
   "param_estimates": {
@@ -73,7 +73,7 @@
       {
         "call_addr": "00556578",
         "call_type": "direct",
-        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "caller": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,52 +338,196 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_ECX",
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
+      "text": "float *unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EDX",
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "float extraout_EDX;",
-      "type": "extra_output"
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "float unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
       "line": 61,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "local_40.x = extraout_EDX;",
-      "type": "extra_output"
+      "match": "6.681331e-39",
+      "severity": "mild",
+      "text": "fStack_6c = 6.681331e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Likely misinterpreted integer as float",
+      "line": 68,
+      "match": "6.681384e-39",
+      "severity": "mild",
+      "text": "CStack_7c.z = 6.681384e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
       "line": 70,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "if (extraout_ECX <= iVar3) {",
-      "type": "extra_output"
+      "match": "6.681394e-39",
+      "severity": "mild",
+      "text": "CStack_7c.y = 6.681394e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 95,
-      "match": "field-by-field struct copy",
+      "description": "Likely misinterpreted integer as float",
+      "line": 72,
+      "match": "6.681404e-39",
+      "severity": "mild",
+      "text": "CStack_7c.x = 6.681404e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "normal_out->x = local_64.x;",
-      "type": "unrolled_memcpy"
+      "text": "(this_ptr_00,&local_64,unaff_EDI,&local_58,&CStack_7c,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 103,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if ((unaff_EBX != (float *)0x0) && (&CStack_7c != (CVector3f *)unaff_EBX)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 103,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if ((unaff_EBX != (float *)0x0) && (&CStack_7c != (CVector3f *)unaff_EBX)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 104,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*unaff_EBX = CStack_7c.x;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 105,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[1] = CStack_7c.y;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 106,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2] = CStack_7c.z;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 108,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if (unaff_ESI != (float *)0x0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 109,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = local_4c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 116,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if (unaff_ESI != (float *)0x0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 117,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = 1.4013e-45;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 117,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "*unaff_ESI = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 119,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if (unaff_EBX != (float *)0x0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 120,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[1] = 1.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 121,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2] = 0.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 122,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*unaff_EBX = 0.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Raw hex address 0x48c0ce assigned to bare local `uStack_68`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_68` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 59,
+      "match": "0x48c0ce",
+      "severity": "moderate",
+      "text": "uStack_68 = 0x48c0ce;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x48c0f4 assigned to bare local `uStack_70`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_70` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 64,
+      "match": "0x48c0f4",
+      "severity": "moderate",
+      "text": "uStack_70 = 0x48c0f4;",
+      "type": "raw_address_constant"
     }
   ]
 }

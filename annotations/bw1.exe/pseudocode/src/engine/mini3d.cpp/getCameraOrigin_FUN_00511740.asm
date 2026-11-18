@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d22510
-;   undefined4 DAT_01d22514
-;   undefined4 DAT_01d22518
+;   float g_FLOAT_01d22510
+;   float g_FLOAT_01d22514
+;   float g_FLOAT_01d22518
 ;
 ; *****************************************************************************
 
@@ -17,11 +17,11 @@ section .text
         ;   Label: engine_mini3d.cpp_getCameraOrigin_FUN_00511740
     SUB ESP,0x18                        ; 00511741
     MOV EAX,ESI                         ; 00511744
-    MOV EDX,dword ptr [0x01d22510]      ; 00511746 | DAT_01d22510
+    MOV EDX,dword ptr [0x01d22510]      ; 00511746 | g_FLOAT_01d22510
     MOV dword ptr [ESP + 0x14],EDX      ; 0051174c
-    MOV EDX,dword ptr [0x01d22514]      ; 00511750 | DAT_01d22514
+    MOV EDX,dword ptr [0x01d22514]      ; 00511750 | g_FLOAT_01d22514
     MOV dword ptr [ESP + 0xc],EDX       ; 00511756
-    MOV EDX,dword ptr [0x01d22518]      ; 0051175a | DAT_01d22518
+    MOV EDX,dword ptr [0x01d22518]      ; 0051175a | g_FLOAT_01d22518
     MOV dword ptr [ESP + 0x10],EDX      ; 00511760
     MOV EDX,dword ptr [ESP + 0x14]      ; 00511764
     MOV dword ptr [ESP],EDX             ; 00511768

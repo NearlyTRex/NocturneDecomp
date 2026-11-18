@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hino_cpp_CHino_getTargetPoints_FUN_0059d410(CHino *this_ptr,CVector3f *out_points_array)
 
 {
@@ -22,7 +20,7 @@ int __cdecl core_hino_cpp_CHino_getTargetPoints_FUN_0059d410(CHino *this_ptr,CVe
   
   bVar1 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
-            (&(this_ptr->base).base.model,_DAT_02d24c4c,&CStack_1c);
+            (&(this_ptr->base).base.model,g_INT_02d24c4c,&CStack_1c);
   CStack_28.x = CStack_1c.x;
   *(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_1c + (uint)bVar1 * -8 + 4);
@@ -34,7 +32,7 @@ int __cdecl core_hino_cpp_CHino_getTargetPoints_FUN_0059d410(CHino *this_ptr,CVe
     out_points_array->z = CStack_28.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
-            (&(this_ptr->base).base.model,_DAT_02d24c70,&CStack_4c);
+            (&(this_ptr->base).base.model,g_INT_02d24c70,&CStack_4c);
   CStack_40.x = CStack_4c.x;
   *(uint *)((int)&CStack_40 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_4c + (uint)bVar1 * -8 + 4);
@@ -46,7 +44,7 @@ int __cdecl core_hino_cpp_CHino_getTargetPoints_FUN_0059d410(CHino *this_ptr,CVe
     out_points_array[1].z = CStack_40.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
-            (&(this_ptr->base).base.model,_DAT_02d24c78,&CStack_34);
+            (&(this_ptr->base).base.model,g_INT_02d24c78,&CStack_34);
   CStack_58.x = CStack_34.x;
   *(uint *)((int)&CStack_58 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_34 + (uint)bVar1 * -8 + 4);

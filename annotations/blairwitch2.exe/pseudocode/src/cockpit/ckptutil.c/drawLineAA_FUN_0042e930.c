@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042e930(int x0,int y0,int x1,int y1,int color)
 
 {
@@ -29,11 +27,11 @@ void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042e930(int x0,int y0,int x1,int
     x1 = x0;
     y1 = iVar5;
   }
-  if ((_DAT_00609b30 != 0) ||
-     (((((_DAT_01c35e48 <= (int)x || (_DAT_01c35e48 <= x1)) &&
-        (((int)x <= _DAT_01c35e50 || (x1 <= _DAT_01c35e50)))) &&
-       ((_DAT_01c35e4c <= y0 || (_DAT_01c35e4c <= y1)))) &&
-      ((y0 <= _DAT_01c35e54 || (y1 <= _DAT_01c35e54)))))) {
+  if ((g_LineClippingDisabled != 0) ||
+     (((((g_INT_01c35e48 <= (int)x || (g_INT_01c35e48 <= x1)) &&
+        (((int)x <= g_ClipRight || (x1 <= g_ClipRight)))) &&
+       ((g_INT_01c35e4c <= y0 || (g_INT_01c35e4c <= y1)))) &&
+      ((y0 <= g_INT_01c35e54 || (y1 <= g_INT_01c35e54)))))) {
     cockpit_ckptutil_c_putPixel_FUN_0042f260((int)x,y0,color);
     blend_factor = (float)(x1 - (int)x);
     if ((int)blend_factor < 0) {

@@ -10,9 +10,9 @@
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00557f60 at 00557fa3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00604240
-;   undefined4 DAT_00604244
-;   undefined4 DAT_02cf3280
+;   float g_FLOAT_00604240 = 1
+;   float g_FLOAT_00604244 = 1
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; *****************************************************************************
 
@@ -22,9 +22,9 @@ section .text
         ;   Label: sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00557140
     FDIV float ptr [ESP + 0x4]          ; 00557142
     MOV EAX,dword ptr [ESP + 0x4]       ; 00557146
-    MOV EDX,dword ptr [0x02cf3280]      ; 0055714a | DAT_02cf3280
-    MOV [0x00604240],EAX                ; 00557150 | DAT_00604240
-    FSTP float ptr [0x00604244]         ; 00557155 | DAT_00604244
+    MOV EDX,dword ptr [0x02cf3280]      ; 0055714a | g_CSoundDevicePtr
+    MOV [0x00604240],EAX                ; 00557150 | g_FLOAT_00604240
+    FSTP float ptr [0x00604244]         ; 00557155 | g_FLOAT_00604244
     TEST EDX,EDX                        ; 0055715b
     JNZ 0x00557160                      ; 0055715d
         ;   XREF to: 00557160 (CONDITIONAL_JUMP)  ; LAB_00557160

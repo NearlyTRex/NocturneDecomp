@@ -4,13 +4,16 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonCamera.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x850000
 // =============================================================================
 
+// CDemonCamera*
+extern CDemonCamera* g_SkipClearBuffersSceneCamera;
+
 // undefined4
-extern undefined4 DAT_00857cd4;
 extern undefined4 DAT_00858be4;
 extern undefined4 DAT_00858be8;
 extern undefined4 DAT_00858bec;

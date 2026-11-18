@@ -27,7 +27,7 @@ void __cdecl CMoon::free(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_update_FUN_00521dd0
 // Address: 00521dd0
-void __cdecl CMoon::update(CMoon *this_ptr,float param_2);
+void __cdecl CMoon::update(CMoon *this_ptr,float delta_time);
 
 // Original: core_moon.cpp_CMoon_render_FUN_00521e40
 // Address: 00521e40

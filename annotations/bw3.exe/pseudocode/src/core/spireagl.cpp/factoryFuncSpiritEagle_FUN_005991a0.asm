@@ -15,7 +15,7 @@ section .text
     PUSH 0x214ac                        ; 005991a0
         ;   Label: core_spireagl.cpp_factoryFuncSpiritEagle_FUN_005991a0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 005991a5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 005991aa
     TEST EAX,EAX                        ; 005991ad
     JNZ 0x005991b2                      ; 005991af

@@ -36,7 +36,7 @@ float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_00498de0(CG
   
   this_ptr_00 = (CCharacter *)
                 core_actor_cpp_castToClassHash_FUN_0040d890
-                          (target_actor,g_CEnemyActorType_01bcdebc.name_hash);
+                          (target_actor,g_CEnemyClassInfo.name_hash);
   __arrinit(local_f8,10,&g_CVectorTypeInfo_005993b0);
   iVar3 = (*((target_actor->vtable)._ub)->getTargetPoints)(target_actor,local_f8);
   if ((iVar3 != 0) &&

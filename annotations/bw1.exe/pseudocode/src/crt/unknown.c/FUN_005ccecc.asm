@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005ccecc(int param_1)
+; void crt_unknown_c_FUN_005ccecc(undefined *param_1)
 ;
 ;
 ; XREF[1]:
@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626628 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_0062662c = 005c50d4
-;   undefined4 DAT_02c9ffa0
+;   void* g_PTR_02c9ffa0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;   crt_unknown.c_FUN_005c50d4
 ;
 ; *****************************************************************************
@@ -26,7 +26,7 @@ section .text
     PUSH EDI                            ; 005ccece
     MOV EDI,dword ptr [ESP + 0x10]      ; 005ccecf
     CALL dword ptr [0x00626628]         ; 005cced3 | PTR_crt_unknown.c_FUN_005c50d4_00626628
-    MOV EBX,dword ptr [0x02c9ffa0]      ; 005cced9 | DAT_02c9ffa0
+    MOV EBX,dword ptr [0x02c9ffa0]      ; 005cced9 | g_PTR_02c9ffa0
     MOV ESI,0x2c9ffa0                   ; 005ccedf
     TEST EBX,EBX                        ; 005ccee4
     JZ 0x005ccf16                       ; 005ccee6
@@ -40,15 +40,15 @@ section .text
         ;   XREF to: 005cceff (CONDITIONAL_JUMP)  ; LAB_005cceff
     MOV EDI,dword ptr [EBX + 0x8]       ; 005ccef3
     PUSH EDI                            ; 005ccef6
-    CALL crt_unknown.c_FUN_005c09f0     ; 005ccef7
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 005ccef7
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 005ccefc
     MOV EDI,dword ptr [EBX]             ; 005cceff
         ;   Label: LAB_005cceff
     PUSH EBX                            ; 005ccf01
-    MOV dword ptr [ESI],EDI             ; 005ccf02 | DAT_02c9ffa0
-    CALL crt_unknown.c_FUN_005c09f0     ; 005ccf04
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    MOV dword ptr [ESI],EDI             ; 005ccf02 | g_PTR_02c9ffa0
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 005ccf04
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 005ccf09
     JMP 0x005ccf16                      ; 005ccf0c
         ;   XREF to: 005ccf16 (UNCONDITIONAL_JUMP)  ; LAB_005ccf16

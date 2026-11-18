@@ -12,7 +12,7 @@ int __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_0057ddd0(COu
   _FILE *p_Var1;
   
   (**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);
-  p_Var1 = engine_dosio_cpp_FUN_00460c70(directory,filename,mode);
+  p_Var1 = engine_dosio_cpp_getFile_FUN_00460c70(directory,filename,mode);
   this_ptr->file = p_Var1;
   if (p_Var1 != (_FILE *)0x0) {
     return 1;

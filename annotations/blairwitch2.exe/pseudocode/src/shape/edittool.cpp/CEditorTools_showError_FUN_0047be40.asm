@@ -15,16 +15,16 @@
 ;   core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310 at 004a53c1
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a43f6
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490 at 004a5588
-;   core_game.cpp_FUN_004b90d0 at 004b9e8e
-;   core_game.cpp_FUN_004bb9b0 at 004bbe12
-;   core_game.cpp_FUN_004bbf70 at 004bc46e
-;   core_game.cpp_FUN_004bcbf0 at 004bd01f
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc46e
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b9e8e
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbe12
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0 at 004bd01f
 ;   core_game.cpp_hostNetworkGame_FUN_004bd2f0 at 004bd37e
 ;   ... and 19 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Error_005d1fc9
-;   undefined4 DAT_01c263a4
+;   int g_ErrorTextColor
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005b7768
@@ -47,7 +47,7 @@ section .text
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 0047be58
         ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047be5d
-    MOV EBX,dword ptr [0x01c263a4]      ; 0047be60 | DAT_01c263a4
+    MOV EBX,dword ptr [0x01c263a4]      ; 0047be60 | g_ErrorTextColor
     PUSH EBX                            ; 0047be66
     PUSH 0x1c22df0                      ; 0047be67
     XOR ECX,ECX                         ; 0047be6c

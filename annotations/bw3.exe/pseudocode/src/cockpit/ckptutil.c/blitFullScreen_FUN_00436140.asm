@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_blitFullScreen_FUN_00436140(void)
+; void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_00436140(void *sprite_data,void *span_data)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; void *           Stack[0x8]:4   span_data
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba1c
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba1c = 0xc8
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_blitDualModeSprite_FUN_00435cb0
@@ -18,9 +21,9 @@ section .text
     PUSH EBX                            ; 00436140
         ;   Label: cockpit_ckptutil.c_blitFullScreen_FUN_00436140
     PUSH ESI                            ; 00436141
-    MOV EDX,dword ptr [0x005fba1c]      ; 00436142 | DAT_005fba1c
+    MOV EDX,dword ptr [0x005fba1c]      ; 00436142 | g_INT_005fba1c
     PUSH EDX                            ; 00436148
-    MOV ECX,dword ptr [0x005fba18]      ; 00436149 | DAT_005fba18
+    MOV ECX,dword ptr [0x005fba18]      ; 00436149 | g_INT_005fba18
     PUSH ECX                            ; 0043614f
     PUSH 0x0                            ; 00436150
     PUSH 0x0                            ; 00436152

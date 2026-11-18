@@ -11,8 +11,8 @@
 ; int              Stack[0x14]:4   load_flags
 ;
 ; XREF[2]:
-;   core_dfont.cpp_FUN_0045e000 at 0045e03e
-;   engine_font.cpp_FUN_004c1580 at 004c1824
+;   core_dfont.cpp_initFonts_FUN_0045e000 at 0045e03e
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004c1580 at 004c1824
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004c1540

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 92,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 3,
+    "pseudocode_lines": 51,
+    "suspect_count": 2,
     "suspect_types": [
-      "bit_int_float_compare",
-      "warning_overlapping_globals"
+      "bit_int_float_compare"
     ],
-    "total_lines": 191
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -56,39 +55,39 @@
   "globals": [
     {
       "addr": "005df4f4",
-      "name": "DAT_005df4f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005df4f4",
+      "type": "float",
+      "value": "0.9700000"
     },
     {
       "addr": "005df4fc",
-      "name": "DAT_005df4fc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df4fc",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "005df504",
-      "name": "DAT_005df504",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df504",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005df50c",
-      "name": "DAT_005df50c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005df50c",
+      "type": "float",
+      "value": "-20"
     },
     {
       "addr": "005fffb4",
-      "name": "DAT_005fffb4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fffb4",
+      "type": "float",
+      "value": "15"
     },
     {
       "addr": "0061c010",
-      "name": "DAT_0061c010",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "01c57074"
     },
     {
       "addr": "0061d95c",
@@ -285,16 +284,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x419fffff is the IEEE 754 bit pattern of 20f. Rewrite in a .keep as a plain float compare against 20f.",
-      "line": 45,
+      "line": 43,
       "match": "0x419fffff < (int)this_ptr->anim_frame)",
       "severity": "moderate",
       "text": "if (0x419fffff < (int)this_ptr->anim_frame) {",
@@ -302,7 +293,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x419fffff is the IEEE 754 bit pattern of 20f. Rewrite in a .keep as a plain float compare against 20f.",
-      "line": 48,
+      "line": 46,
       "match": "0x419fffff < (int)this_ptr->anim_frame)",
       "severity": "moderate",
       "text": "} while (0x419fffff < (int)this_ptr->anim_frame);",

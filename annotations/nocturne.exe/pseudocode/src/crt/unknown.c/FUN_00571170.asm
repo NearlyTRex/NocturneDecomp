@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* PTR_TlsGetValue_005755c8 = 0017609c
 ;   TerminatedCString s_Thread_has_no_thread_spe_00599174
-;   undefined4 DAT_005c1ab8
+;   int g_INT_005c1ab8 = -0x1
 ;
 ; Called Functions:
 ;   crt_startup.c_HandleRuntimeError_FUN_0056ddc0
@@ -31,7 +31,7 @@ section .text
     TEST EAX,EAX                        ; 0057117c
     JZ 0x00571190                       ; 0057117e
         ;   XREF to: 00571190 (CONDITIONAL_JUMP)  ; LAB_00571190
-    MOV EDX,dword ptr [0x005c1ab8]      ; 00571180 | DAT_005c1ab8
+    MOV EDX,dword ptr [0x005c1ab8]      ; 00571180 | g_INT_005c1ab8
     PUSH EDX                            ; 00571186
     CALL dword ptr CS:[0x5755c8]        ; 00571187 | PTR_TlsGetValue_005755c8
     MOV EBX,EAX                         ; 0057118e

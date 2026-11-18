@@ -10,31 +10,31 @@
 ; XREF[3]:
 ;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c400
 ;   core_dmodel.cpp_loadModel_FUN_00462420 at 004624aa
-;   core_set.cpp_FUN_00532b80 at 005336f0
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 005336f0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bb5c4
+;   TerminatedCString s_rb_005bb5c4
 ;   TerminatedCString s_models_005bb5c7
 ;   TerminatedCString s_core_dmodel_cpp_005bb5ce
 ;   TerminatedCString s_Can_t_open_keyframed_mod_005bb5e1
-;   undefined4 DAT_005bb5ff
+;   TerminatedCString s_rt_005bb5ff
 ;   TerminatedCString s_models_005bb602
 ;   TerminatedCString s_core_dmodel_cpp_005bb609
 ;   TerminatedCString s_Can_t_open_keyframed_mod_005bb61c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00461530
 ;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10
 ;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004606a0
 ;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00460890
-;   core_dmodel.cpp_FUN_00460e10
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_ungetc_FUN_005a3480
-;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;
 ; *****************************************************************************
 
@@ -47,15 +47,15 @@ section .text
     PUSH EBP                            ; 00460553
     MOV EBX,dword ptr [ESP + 0x14]      ; 00460554
     PUSH EBX                            ; 00460558
-    CALL core_dmodel.cpp_FUN_00460e10   ; 00460559
-        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00460e10()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10 ; 00460559
+        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0046055e
-    PUSH 0x5bb5c4                       ; 00460561 | DAT_005bb5c4
+    PUSH 0x5bb5c4                       ; 00460561 | = "rb"
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00460566
     PUSH EDX                            ; 0046056a
     PUSH 0x5bb5c7                       ; 0046056b | = "models"
-    CALL engine_dosio.cpp_FUN_004659c0  ; 00460570
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 00460570
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00460575
     MOV EBP,EAX                         ; 00460578
     TEST EAX,EAX                        ; 0046057a
@@ -95,14 +95,14 @@ section .text
         ;   XREF to: 0046068b (CONDITIONAL_JUMP)  ; LAB_0046068b
     PUSH EBP                            ; 004605c0
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004605c1
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004605c6
-    PUSH 0x5bb5ff                       ; 004605c9 | DAT_005bb5ff
+    PUSH 0x5bb5ff                       ; 004605c9 | = "rt"
     MOV EBP,dword ptr [ESP + 0x1c]      ; 004605ce
     PUSH EBP                            ; 004605d2
     PUSH 0x5bb602                       ; 004605d3 | = "models"
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004605d8
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004605d8
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004605dd
     MOV EBP,EAX                         ; 004605e0
     TEST EAX,EAX                        ; 004605e2
@@ -113,10 +113,10 @@ section .text
     MOV EAX,0x5bb609                    ; 004605eb | = "..\\core\\dmodel.cpp"
     MOV EDX,0xc5                        ; 004605f0
     PUSH 0x5bb61c                       ; 004605f5 | = "Can't open keyframed model %s"
-    MOV [0x01d71de0],EAX                ; 004605fa | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004605ff | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00460605
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 004605fa | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 004605ff | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00460605
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0046060a
     PUSH EBP                            ; 0046060d
         ;   Label: LAB_0046060d
@@ -127,7 +127,7 @@ section .text
         ;   Label: LAB_00460614
     PUSH EBP                            ; 00460617
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00460618
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 0046061d
     PUSH EBX                            ; 00460620
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0 ; 00460621
@@ -164,10 +164,10 @@ section .text
     MOV ECX,0x5bb5ce                    ; 00460663 | = "..\\core\\dmodel.cpp"
     MOV ESI,0xb8                        ; 00460668
     PUSH 0x5bb5e1                       ; 0046066d | = "Can't open keyframed model %s"
-    MOV dword ptr [0x01d71de0],ECX      ; 00460672 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00460678 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0046067e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00460672 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00460678 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0046067e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00460683
     JMP 0x00460582                      ; 00460686
         ;   XREF to: 00460582 (UNCONDITIONAL_JUMP)  ; LAB_00460582

@@ -23,8 +23,8 @@
 ;   void* PTR_s_darkPoint_005c442c+1_005fecb0 = 005c442d
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CGhoulClassInfo.name_hash
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_0050c680
 ;   core_path.cpp_getPathMap_FUN_0050ced0
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_00486a40
@@ -150,10 +150,10 @@ section .text
     MOV ESI,0x5c4174                    ; 004c6d8e | = "..\\core\\ghoul.cpp"
     MOV EAX,0x12d                       ; 004c6d93
     PUSH 0x5c4186                       ; 004c6d98 | = "CGhoul::findDarkWayPoint - Can't get ..."
-    MOV dword ptr [0x01d71de0],ESI      ; 004c6d9d | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004c6da3 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004c6da8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ESI      ; 004c6d9d | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004c6da3 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004c6da8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004c6dad
     XOR EDX,EDX                         ; 004c6db0
         ;   Label: LAB_004c6db0

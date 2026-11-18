@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 335,
-    "complexity_score": 216,
+    "complexity_score": 231,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 476
@@ -90,9 +89,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b9354",
@@ -114,25 +113,25 @@
     },
     {
       "addr": "01bcdef4",
-      "name": "g_CEnemyActorType_01bcdebc.name_hash",
+      "name": "g_CEnemyClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bcdef8",
-      "name": "DAT_01bcdef8",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_01bcdef8",
+      "type": "int[2000]",
       "value": null
     },
     {
       "addr": "01bcdefc",
-      "name": "DAT_01bcdefc",
+      "name": "g_INT_ARRAY_01bcdef8[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bcfe34",
-      "name": "DAT_01bcfe34",
+      "name": "g_INT_ARRAY_01bcdef8[1999]",
       "type": "undefined4",
       "value": null
     },
@@ -395,20 +394,36 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 69,
-      "match": "DAT_01bcdef8",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01bcdef8 + local_20) = iVar10;",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_INT_ARRAY_01bcdef8",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_01bcdef8 + local_20) = iVar10;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_01bcdef8",
-      "severity": "mild",
-      "text": "local_1c = *(CCharacter **)(&DAT_01bcdef8 + iVar10 * 4);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(float *)((int)g_FLOAT_ARRAY_01bcfe38",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_FLOAT_ARRAY_01bcfe38 + local_20) = fStack_30;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(float *)((int)g_FLOAT_ARRAY_01bcfe38",
+      "severity": "moderate",
+      "text": "if (*(float *)((int)g_FLOAT_ARRAY_01bcfe38 + iVar8) < local_18) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(float *)((int)g_FLOAT_ARRAY_01bcfe38",
+      "severity": "moderate",
+      "text": "local_18 = *(float *)((int)g_FLOAT_ARRAY_01bcfe38 + iVar8);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

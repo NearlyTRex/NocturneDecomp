@@ -8,21 +8,21 @@
 ;
 ; XREF[26]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 00410705
+;   core_game.cpp_CGame_displayActStats_FUN_004bdc20 at 004bdef0
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be364
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b3395
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be592
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b3c6c
-;   core_game.cpp_FUN_004bdc20 at 004bdef0
-;   core_inv.cpp_FUN_004dd9b0 at 004de2ee
-;   core_menu.cpp_FUN_004eb0e0 at 004eb17c
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0 at 004de2ee
+;   core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0 at 004eb17c
 ;   core_script.cpp_CScript_renderSubtitles_FUN_005218a0 at 00521a49
 ;   engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004062b0 at 00406310
 ;   ... and 16 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006093c0
-;   undefined4 DAT_006141d8
-;   undefined4 DAT_0070ca80
+;   int g_CurrentRenderColor = 0xffffff
+;   int g_CurrentAlphaValue = 0xff
+;   int g_CurrentInvertedColor
 ;
 ; *****************************************************************************
 
@@ -48,9 +48,9 @@ section .text
     OR ECX,EAX                          ; 00406dc6
     MOV EAX,ECX                         ; 00406dc8
     XOR EAX,0xffffff                    ; 00406dca
-    MOV dword ptr [0x006093c0],ECX      ; 00406dcf | DAT_006093c0
-    MOV [0x0070ca80],EAX                ; 00406dd5 | DAT_0070ca80
-    MOV dword ptr [0x006141d8],EDX      ; 00406dda | DAT_006141d8
+    MOV dword ptr [0x006093c0],ECX      ; 00406dcf | g_CurrentRenderColor
+    MOV [0x0070ca80],EAX                ; 00406dd5 | g_CurrentInvertedColor
+    MOV dword ptr [0x006141d8],EDX      ; 00406dda | g_CurrentAlphaValue
     RET                                 ; 00406de0
     XOR EDX,EDX                         ; 00406de1
         ;   Label: LAB_00406de1

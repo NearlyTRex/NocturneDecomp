@@ -10,15 +10,15 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f9e8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01b2d374
-;   undefined4 DAT_01b2d378
-;   undefined4 DAT_01b2d37c
-;   undefined4 DAT_01b2d37d
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01c43550
-;   undefined4 DAT_01c43551
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   int g_BackgroundSceneNestingCount
+;   void*[1200] g_SavedScreenBufferArray
+;   undefined4 g_SavedScreenBufferArray[1]
+;   undefined4 g_SavedScreenBufferArray[1]+1
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   undefined4 g_ScreenBufferArray[1]+1
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40
@@ -27,10 +27,10 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01b2d374]      ; 00462cd0 | DAT_01b2d374
+    MOV EDX,dword ptr [0x01b2d374]      ; 00462cd0 | g_BackgroundSceneNestingCount
         ;   Label: core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00462cd0
     DEC EDX                             ; 00462cd6
-    MOV dword ptr [0x01b2d374],EDX      ; 00462cd7 | DAT_01b2d374
+    MOV dword ptr [0x01b2d374],EDX      ; 00462cd7 | g_BackgroundSceneNestingCount
     JZ 0x00462ce0                       ; 00462cdd
         ;   XREF to: 00462ce0 (CONDITIONAL_JUMP)  ; LAB_00462ce0
     RET                                 ; 00462cdf
@@ -43,17 +43,17 @@ section .text
     MOV ECX,dword ptr [ECX + 0x1cc4]    ; 00462cec
     MOV EDI,0x1c4354c                   ; 00462cf2
     SHL ECX,0x2                         ; 00462cf7
-    PUSH EDI                            ; 00462cfa | DAT_01c4354c
+    PUSH EDI                            ; 00462cfa | g_ScreenBufferArray
     MOV EAX,ECX                         ; 00462cfb
     SHR ECX,0x2                         ; 00462cfd
-    MOVSD.REP ES:EDI,ESI                ; 00462d00 | DAT_01b2d378 | DAT_01c4354c | DAT_01b2d37c
+    MOVSD.REP ES:EDI,ESI                ; 00462d00 | g_SavedScreenBufferArray | g_ScreenBufferArray | g_SavedScreenBufferArray[1]
     MOV CL,AL                           ; 00462d02
     AND CL,0x3                          ; 00462d04
-    MOVSB.REP ES:EDI,ESI                ; 00462d07 | DAT_01b2d37c | DAT_01c43550 | DAT_01b2d37d
+    MOVSB.REP ES:EDI,ESI                ; 00462d07 | g_SavedScreenBufferArray[1] | g_ScreenBufferArray[1] | g_SavedScreenBufferArray[1]+1
     POP EDI                             ; 00462d09
     PUSH EDX                            ; 00462d0a
-    MOV EBX,dword ptr [0x00612560]      ; 00462d0b | DAT_00612560
-    PUSH EBX                            ; 00462d11 | DAT_01bc120c
+    MOV EBX,dword ptr [0x00612560]      ; 00462d0b | g_CDemonRenderer_PTR_00612560
+    PUSH EBX                            ; 00462d11 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40 ; 00462d12
         ;   XREF to: 00483e40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 00462d17

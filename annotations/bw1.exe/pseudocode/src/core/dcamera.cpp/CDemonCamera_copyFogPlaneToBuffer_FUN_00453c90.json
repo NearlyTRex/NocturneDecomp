@@ -6,11 +6,13 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data"
+      "flattened_array_index",
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 144
   },
@@ -38,43 +40,43 @@
   "globals": [
     {
       "addr": "01342221",
-      "name": "DAT_01342221",
+      "name": "g_SFogImagePlane_01342220.pixels[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01342222",
-      "name": "DAT_01342222",
+      "name": "g_SFogImagePlane_01342220.pixels[0][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01342360",
-      "name": "DAT_01342360",
+      "name": "g_SFogImagePlane_01342220.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01342361",
-      "name": "DAT_01342361",
+      "name": "g_SFogImagePlane_01342220.pixels[1][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01342362",
-      "name": "DAT_01342362",
+      "name": "g_SFogImagePlane_01342220.pixels[1][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013424a1",
-      "name": "DAT_013424a1",
+      "name": "g_SFogImagePlane_01342220.pixels[2][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01354f60",
-      "name": "DAT_01354f60",
+      "name": "g_CameraImageDecompressBuffer+0x140",
       "type": "undefined4",
       "value": null
     }
@@ -182,36 +184,27 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01342221",
-      "severity": "mild",
-      "text": "*(byte *)(iVar3 + 0x1354e21) = (&DAT_01342221)[iVar1];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01342220",
-      "severity": "mild",
-      "text": "*(byte *)(iVar5 + 0x1354e20) = (&DAT_01342220)[iVar4 * 0x140];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01342220",
-      "severity": "mild",
-      "text": "*(byte *)(iVar4 + 0x1354e21) = (&DAT_01342220)[iVar5];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `&g_SFogImagePlane_01342220` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 40,
-      "match": "DAT_01342220",
-      "severity": "mild",
-      "text": "(&DAT_01342220)[iVar3 + iVar5];",
-      "type": "undefined_data"
+      "match": "(int)&g_SFogImagePlane_01342220",
+      "severity": "moderate",
+      "text": "*(char *)((int)&g_SFogImagePlane_01342220 + iVar3 + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char *)((int)&g_SFogImagePlane_01342220 + iVar3 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "'g_SFogImagePlane_01342220.pixels[0][iVar5]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar5 is multiplied by 0x12c00 and stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 37,
+      "severity": "major",
+      "text": "g_CameraImageDecompressBuffer[iVar4 + 1] = g_SFogImagePlane_01342220.pixels[0][iVar5];",
+      "type": "flattened_array_index"
     }
   ]
 }

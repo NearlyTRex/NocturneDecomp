@@ -9,6 +9,6 @@
 void __cdecl cockpit_drawsurf_cpp_setDashLength_FUN_0045d0f0(int length)
 
 {
-  DAT_005ae6f4 = length;
+  g_DashLength = length;
   return;
 }

@@ -11,7 +11,8 @@ import pytest
 # Local imports
 from repo_paths import SCRIPTS_DIR
 from ghidra_program import Program
-from ghidra_fake import BuiltInDataType, EnumDataType, StructureDataType
+from ghidra_fake import (Address, BuiltInDataType, EnumDataType, FunctionDefinitionDataType, PointerDataType,
+                         StructureDataType)
 import apply_type_spec
 
 INT = BuiltInDataType("int", 4)
@@ -193,8 +194,168 @@ def test_apply_skips_a_field_it_cannot_retype():
     assert changes == []
     assert problems == [
         "field CWeapon+0x4: int fire_mode, want EFireMode fire_mode (EFireMode is 1 bytes, the field 4)",
-        "field CDoor+0x0: int door_side, want EDoorSide door_side (0 enums named EDoorSide)",
+        "field CDoor+0x0: int door_side, want EDoorSide door_side (no type EDoorSide)",
         "field CDoor+0x6: no field starts there"]
+
+
+FLOAT = BuiltInDataType("float", 4)
+VOID = BuiltInDataType("void", 0)
+
+
+def device():
+    return StructureDataType("CSoundDevice", [(INT, "vtable")])
+
+
+def funcdef(name, ret, *arguments):
+    return FunctionDefinitionDataType(name, ret, arguments)
+
+
+REVERB = {"ret": "void", "params": [["CSoundDevice *", "this_ptr"], ["float", "volume"]]}
+
+
+def test_a_section_is_the_shared_part_with_the_programs_own_over_it():
+    spec = {"a": {"*": {"x": 1, "y": 1}, "p.exe": {"y": 2}}, "b": {"*": [1], "p.exe": [2]}, "c": {"q.exe": [3]}}
+    assert apply_type_spec.section(spec, "a", "p.exe") == {"x": 1, "y": 2}
+    assert apply_type_spec.section(spec, "b", "p.exe") == [1, 2]
+    assert apply_type_spec.section(spec, "c", "q.exe") == [3]
+    assert apply_type_spec.section(spec, "missing", "p.exe") == {}
+
+
+def test_a_type_is_renamed_once_its_new_name_is_free():
+    entry = StructureDataType("SSoundModeEntry")
+    pointer = PointerDataType(StructureDataType("SOld"))
+    dtm = program_with(entry, StructureDataType("SOld"), StructureDataType("SNew"), pointer).getDataTypeManager()
+    renames = {"SSoundModeEntry": "SReverbPreset", "SOld": "SNew", "SGone": "SAny"}
+    assert apply_type_spec.check_renames(dtm, renames, False) == ([
+        "type SSoundModeEntry: still there, want it named SReverbPreset",
+        "type SOld: still there, want it named SNew (SNew is taken)"], [])
+    problems, changes = apply_type_spec.check_renames(dtm, renames, True)
+    assert changes == ["type SSoundModeEntry renamed SReverbPreset"] and entry.getName() == "SReverbPreset"
+    assert problems == ["type SOld: still there, want it named SNew (SNew is taken)"]
+    assert apply_type_spec.check_absent(dtm, ["SOld", "SSoundModeEntry"]) == ["type SOld: still there, want it gone"]
+
+
+def test_a_function_definition_is_checked_for_its_types_and_names(capsys):
+    right = funcdef("CSoundDevice_setReverb", VOID, (PointerDataType(device()), "this_ptr"), (FLOAT, "volume"))
+    wrong = funcdef("CSoundDevice_poll", INT, (PointerDataType(device()), "this_ptr"), (INT, "count"))
+    dtm = program_with(device(), FLOAT, VOID, INT, right, wrong, funcdef("CTwice", VOID), funcdef("CTwice", VOID)).getDataTypeManager()
+    want = {"CSoundDevice_setReverb": REVERB, "CSoundDevice_poll": {"ret": "int", "params": [["CSoundDevice *", "this_ptr"]]},
+            "CSoundDevice_new": REVERB, "CTwice": REVERB}
+    problems, changes = apply_type_spec.check_funcdefs(dtm, want, False, {})
+    assert "ok  funcdef CSoundDevice_setReverb" in capsys.readouterr().out
+    assert (problems, changes) == ([
+        "funcdef CSoundDevice_poll: int (CSoundDevice * this_ptr, int count), want int (CSoundDevice * this_ptr)",
+        "funcdef CSoundDevice_new: missing", "funcdef CTwice: 2 of them"], [])
+
+
+def test_apply_sets_or_creates_a_function_definition():
+    wrong = funcdef("CSoundDevice_poll", INT, (INT, "count"))
+    program = program_with(device(), FLOAT, VOID, INT, wrong)
+    dtm = program.getDataTypeManager()
+    want = {"CSoundDevice_poll": {"ret": "int", "params": [["CSoundDevice *", "this_ptr"]]},
+            "CSoundDevice_setReverb": dict(REVERB, category = "/Nocturne/Funcdef"),
+            "CSoundDevice_bad": {"ret": "void", "params": [["CMissing *", "p"]]}}
+    problems, changes = apply_type_spec.check_funcdefs(dtm, want, True, {})
+    assert changes == ["funcdef CSoundDevice_poll is int (CSoundDevice * this_ptr)",
+                       "funcdef CSoundDevice_setReverb is void (CSoundDevice * this_ptr, float volume)"]
+    assert problems == ["funcdef CSoundDevice_bad: missing (no type CMissing *)"]
+    assert [(a.getName(), a.getDataType().getName()) for a in wrong.getArguments()] == [("this_ptr", "CSoundDevice *")]
+    created = apply_type_spec.find_named(dtm, "CSoundDevice_setReverb", FunctionDefinitionDataType)[0]
+    assert created.getCategoryPath().getPath() == "/Nocturne/Funcdef" and created.getReturnType() is VOID
+    assert apply_type_spec.check_funcdefs(dtm, want, True, {}) == (problems, [])
+
+
+SETTINGS = {"size": "0xc", "fields": [["0x0", "float", "volume"], ["0x4", "float", "decay_time"],
+                                      ["0x8", "float", "damping"]]}
+
+
+def test_a_struct_is_checked_for_its_whole_layout(capsys):
+    right = StructureDataType("SReverbSettings", [(FLOAT, "volume"), (FLOAT, "decay_time"), (FLOAT, "damping")])
+    vector = StructureDataType("SVector", [(FLOAT, "x"), (FLOAT, "y")], length = 0x10)
+    dtm = program_with(FLOAT, right, vector, StructureDataType("STwice"), StructureDataType("STwice")).getDataTypeManager()
+    want = {"SReverbSettings": SETTINGS, "SVector": SETTINGS, "SMissing": SETTINGS, "STwice": SETTINGS}
+    problems, _ = apply_type_spec.check_structs(dtm, want, False, {})
+    assert "ok  struct SReverbSettings" in capsys.readouterr().out
+    assert problems == [
+        "struct SVector: size 0x10, want 0xc; 0x0 float x, want float volume; 0x4 float y, want float decay_time; "
+        "0x8 nothing, want float damping",
+        "struct SMissing: missing", "struct STwice: 2 of them"]
+
+
+def test_apply_rebuilds_or_creates_a_struct_keeping_comments():
+    table = StructureDataType("CSoundDeviceFull_vtable", [(INT, "close"), (INT, "poll")])
+    table.getComponentAt(0).comment = "slot 0"
+    table.getComponentAt(4).comment = "dropped with its name"
+    program = program_with(FLOAT, INT, table)
+    dtm = program.getDataTypeManager()
+    want = {"CSoundDeviceFull_vtable": {"size": "0xc", "fields": [["0x0", "int", "close"], ["0x8", "int", "reset"]]},
+            "SReverbSettings": dict(SETTINGS, category = "/Nocturne/Struct/Game"),
+            "SBad": {"size": "0x4", "fields": [["0x0", "CMissing", "x"]]}}
+    problems, changes = apply_type_spec.check_structs(dtm, want, True, {})
+    assert changes == ["struct CSoundDeviceFull_vtable laid out (2 fields, 0xc bytes)",
+                       "struct SReverbSettings laid out (3 fields, 0xc bytes)"]
+    assert problems == ["struct SBad: missing (no type CMissing)"]
+    assert [(c.getOffset(), c.getFieldName(), c.getComment()) for c in table.getDefinedComponents()] == [
+        (0, "close", "slot 0"), (8, "reset", None)]
+    assert table.getLength() == 0xc
+    created = apply_type_spec.find_named(dtm, "SReverbSettings", StructureDataType)[0]
+    assert created.getCategoryPath().getPath() == "/Nocturne/Struct/Game"
+    assert apply_type_spec.layout(created) == [(0, "float", "volume"), (4, "float", "decay_time"), (8, "float", "damping")]
+    assert apply_type_spec.check_structs(dtm, want, False, {})[0] == ["struct SBad: missing"]
+    assert apply_type_spec.check_structs(dtm, {"SReverbSettings": SETTINGS}, True, {}) == ([], [])
+
+
+def test_a_global_is_checked_for_its_type_and_apply_puts_it_there(capsys):
+    settings = StructureDataType("SReverbSettings", [(FLOAT, "volume"), (FLOAT, "decay_time"), (FLOAT, "damping")])
+    program = program_with(FLOAT, settings)
+    program.getListing().add_data(0x1000, settings)
+    program.getListing().add_data(0x2000, FLOAT)
+    rows = [["00001000", "SReverbSettings"], ["00002000", "SReverbSettings"], ["00003000", "SReverbSettings[2]"],
+            ["00004000", "SMissing"]]
+    problems, _ = apply_type_spec.check_globals(program, rows, False, {})
+    assert "ok  global 00001000 SReverbSettings" in capsys.readouterr().out
+    assert problems == ["global 00002000: float, want SReverbSettings", "global 00003000: None, want SReverbSettings[2]",
+                        "global 00004000: None, want SMissing"]
+    problems, changes = apply_type_spec.check_globals(program, rows, True, {})
+    assert changes == ["global 00002000 is SReverbSettings", "global 00003000 is SReverbSettings[2]"]
+    assert problems == ["global 00004000: None, want SMissing (no type SMissing)"]
+    assert program.getListing().getDefinedDataAt(Address(0x3000)).getDataType().getNumElements() == 2
+
+
+def test_a_field_takes_any_type_of_its_size():
+    table = StructureDataType("CSoundDeviceFull_vtable", [(INT, "poll")])
+    poll = funcdef("CSoundDevice_pollPlayback", INT)
+    dtm = program_with(INT, poll, table).getDataTypeManager()
+    fields = [["CSoundDeviceFull_vtable", "0x0", "CSoundDevice_pollPlayback *", "poll"]]
+    assert apply_type_spec.check_fields(dtm, fields, True)[1] == [
+        "field CSoundDeviceFull_vtable+0x0 is CSoundDevice_pollPlayback * poll"]
+    assert table.getComponentAt(0).getDataType().getDataType() is poll
+    assert apply_type_spec.check_fields(dtm, fields, False) == ([], [])
+
+
+def test_apply_runs_every_section_then_checks_them_all(capsys):
+    entry = StructureDataType("SSoundModeEntry", [(INT, "name"), (StructureDataType("CVector3f", length = 12), "orient")])
+    program = program_with(FLOAT, VOID, INT, device(), entry, funcdef("CSoundDevice_setSfxPos", INT))
+    spec = {"type_renames": {"*": {"SSoundModeEntry": "SReverbPreset"}},
+            "absent": {"p.exe": ["SSoundModeEntry"]},
+            "funcdefs": {"*": {"CSoundDevice_setReverb": REVERB}},
+            "structs": {"p.exe": {"SReverbSettings": SETTINGS,
+                                  "SReverbPreset": {"size": "0x10", "fields": [["0x0", "int", "name"],
+                                                                               ["0x4", "SReverbSettings", "reverb"]]}}},
+            "globals": {"p.exe": [["00001000", "SReverbPreset[2]"]]}}
+    assert apply_type_spec.run(program, spec, "p.exe", True) == []
+    out = capsys.readouterr().out
+    assert "fixed  type SSoundModeEntry renamed SReverbPreset" in out and "saved 5 change(s) to p.exe" in out
+    assert apply_type_spec.layout(entry) == [(0, "int", "name"), (4, "SReverbSettings", "reverb")]
+    spec["absent"]["p.exe"].append("CSoundDevice_setSfxPos")
+    assert apply_type_spec.run(program, spec, "p.exe", False) == ["type CSoundDevice_setSfxPos: still there, want it gone"]
+
+
+def test_a_failed_apply_rolls_the_transaction_back():
+    program = program_with(INT)
+    with pytest.raises(ValueError):
+        apply_type_spec.run(program, {"globals": {"p.exe": [["zz", "int"]]}}, "p.exe", True)
+    assert program.transactions == [["apply_type_spec", False]]
 
 
 SPEC = {

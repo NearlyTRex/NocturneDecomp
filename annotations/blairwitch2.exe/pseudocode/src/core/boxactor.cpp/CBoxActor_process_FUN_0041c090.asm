@@ -14,22 +14,22 @@
 ;   core_necklace.cpp_CNecklace_process_FUN_005adad0 at 005adaec
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cc519
-;   undefined4 DAT_005cc51d
-;   undefined4 DAT_005cc521
-;   undefined4 DAT_005cc529
+;   float g_FLOAT_005cc519 = 0.1047198
+;   float g_FLOAT_005cc51d = 0.5
+;   double g_DOUBLE_005cc521 = 3
+;   float g_FLOAT_005cc529 = 0.2000000
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
-;   core_actor.cpp_FUN_00408cf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_box.cpp_CBox_process_FUN_005b2290
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
-;   core_setcolid.cpp_FUN_00537f30
+;   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00537f30
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70
 ;   crt_math.c_floor_FUN_005b84d0
 ;   crt_math.c_round_FUN_005b7ff0
@@ -68,7 +68,7 @@ section .text
     FLD double ptr [ESP + 0x12c]        ; 0041c0e2
     ADD ESP,0x8                         ; 0041c0e9
     CALL crt_math.c_round_FUN_005b7ff0  ; 0041c0ec
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x130]       ; 0041c0f1
     MOV EAX,dword ptr [ESP + 0x130]     ; 0041c0f8
     MOV dword ptr [ESP + 0x134],EAX     ; 0041c0ff
@@ -116,7 +116,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041c1b5
     MOVSD ES:EDI,ESI                    ; 0041c1b6
     MOVSD ES:EDI,ESI                    ; 0041c1b7
-    FLD float ptr [0x005cc519]          ; 0041c1b8 | DAT_005cc519
+    FLD float ptr [0x005cc519]          ; 0041c1b8 | g_FLOAT_005cc519
     FLD float ptr [ESP + 0xb8]          ; 0041c1be
     FMUL ST1                            ; 0041c1c5
     FLD float ptr [ESP + 0xbc]          ; 0041c1c7
@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 0041c29f (CONDITIONAL_JUMP)  ; LAB_0041c29f
     MOV ECX,dword ptr [EBX + 0x458]     ; 0041c285
     PUSH ECX                            ; 0041c28b
-    MOV ESI,dword ptr [0x0061c068]      ; 0041c28c | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 0041c28c | g_CSound_PTR_0061c068
     PUSH ESI                            ; 0041c292
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70 ; 0041c293
         ;   XREF to: 0055af70 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70(CSound * this_ptr, uint sfx_handle)
@@ -293,7 +293,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041c3d6
     MOVSD ES:EDI,ESI                    ; 0041c3d7
     MOVSD ES:EDI,ESI                    ; 0041c3d8
-    FLD float ptr [0x005cc51d]          ; 0041c3d9 | DAT_005cc51d
+    FLD float ptr [0x005cc51d]          ; 0041c3d9 | g_FLOAT_005cc51d
     FLD float ptr [ESP + 0xf4]          ; 0041c3df
     FMUL ST1                            ; 0041c3e6
     FLD float ptr [ESP + 0xf8]          ; 0041c3e8
@@ -333,8 +333,8 @@ section .text
     PUSH EBX                            ; 0041c472
     LEA ESI,[ESP + 0xf0]                ; 0041c473
     LEA EDI,[ESP + 0xb4]                ; 0041c47a
-    CALL core_actor.cpp_FUN_00408cf0    ; 0041c481
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 0041c481
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xf0]                ; 0041c486
     ADD ESP,0x8                         ; 0041c48d
     LEA EAX,[EBX + 0x4f0]               ; 0041c490
@@ -378,7 +378,7 @@ section .text
     FADDP                               ; 0041c51c
     FSQRT                               ; 0041c51e
     FST float ptr [ESP]                 ; 0041c520
-    FCOMP double ptr [0x005cc521]       ; 0041c523 | DAT_005cc521
+    FCOMP double ptr [0x005cc521]       ; 0041c523 | g_DOUBLE_005cc521
     FNSTSW AX                           ; 0041c529
     SAHF                                ; 0041c52b
     JBE 0x0041c2b7                      ; 0041c52c
@@ -392,7 +392,7 @@ section .text
     FLD float ptr [ESP]                 ; 0041c543
     FMUL float ptr [EBX + 0x4ec]        ; 0041c546
     PUSH EAX                            ; 0041c54c
-    FMUL float ptr [0x005cc529]         ; 0041c54d | DAT_005cc529
+    FMUL float ptr [0x005cc529]         ; 0041c54d | g_FLOAT_005cc529
     PUSH ESI                            ; 0041c553
     LEA EAX,[ESP + 0x9c]                ; 0041c554
     MOV dword ptr [ESP + 0x40],EBX      ; 0041c55b
@@ -401,8 +401,8 @@ section .text
     MOV dword ptr [ESP + 0x48],EBX      ; 0041c565
     PUSH EAX                            ; 0041c569
     FSTP float ptr [ESP + 0x18]         ; 0041c56a
-    CALL core_setcolid.cpp_FUN_00537f30 ; 0041c56e
-        ;   XREF to: 00537f30 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00537f30()
+    CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00537f30 ; 0041c56e
+        ;   XREF to: 00537f30 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00537f30(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041c573
     MOV ESP,EBP                         ; 0041c576
     POP EBP                             ; 0041c578

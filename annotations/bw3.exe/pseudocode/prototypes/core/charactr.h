@@ -29,9 +29,9 @@ void __cdecl CCharacter::setup(CCharacter *this_ptr);
 // Address: 0042b400
 void __cdecl CCharacter::markResourcesInUse(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042b430
+// Original: core_charactr.cpp_CCharacter_releaseResources_FUN_0042b430
 // Address: 0042b430
-void FUN_0042b430(int param_1);
+void __cdecl CCharacter::releaseResources(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_archive_FUN_0042b450
 // Address: 0042b450
@@ -45,9 +45,9 @@ void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3
 // Address: 0042b920
 float __cdecl clampFloat(float value,float limit);
 
-// Original: core_charactr.cpp_FUN_0042b970
+// Original: core_charactr.cpp_clampNormalizedAngle_FUN_0042b970
 // Address: 0042b970
-float FUN_0042b970(float param_1,float param_2);
+float __cdecl clampNormalizedAngle(float angle,float limit);
 
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 // Address: 0042b9e0
@@ -61,13 +61,13 @@ void __cdecl CCharacter::kill(CCharacter *this_ptr,int damage_type,CVector3f *da
 // Address: 0042c180
 void __cdecl CCharacter::applyDamage(CCharacter *this_ptr,int damage_type,float damage_amount);
 
-// Original: core_charactr.cpp_FUN_0042c1e0
+// Original: core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 // Address: 0042c1e0
-void FUN_0042c1e0(int param_1,float param_2);
+void __cdecl CCharacter::applyGravity(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_0042c230
+// Original: core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 // Address: 0042c230
-void __cdecl FUN_0042c230(CCharacter *this_ptr,CVector3f *velocity);
+void __cdecl CCharacter::moveAndCollide(CCharacter *this_ptr,CVector3f *velocity);
 
 // Original: core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 // Address: 0042ccf0
@@ -77,33 +77,33 @@ int __cdecl CCharacter::isOnGround(CCharacter *this_ptr);
 // Address: 0042cd30
 void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042cd70
+// Original: core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70
 // Address: 0042cd70
-undefined4 FUN_0042cd70(CCharacter *param_1,float param_2);
+int __cdecl CCharacter::processCharacter(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_0042d390
+// Original: core_charactr.cpp_applyFacePartToHead_FUN_0042d390
 // Address: 0042d390
-void FUN_0042d390(int *param_1,int param_2,int param_3);
+void __cdecl applyFacePartToHead(CDeformableModel *model,int head_part_index,int face_part_index);
 
-// Original: core_charactr.cpp_FUN_0042d500
+// Original: core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500
 // Address: 0042d500
-void FUN_0042d500(CDemonActor *param_1);
+void __cdecl CCharacter::updateFacialAnimation(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042d860
+// Original: core_charactr.cpp_CCharacter_setEyeFrame_FUN_0042d860
 // Address: 0042d860
-void FUN_0042d860(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CCharacter::setEyeFrame(CCharacter *this_ptr,int eye_side,int frame,float hold_time);
 
-// Original: core_charactr.cpp_FUN_0042d8a0
+// Original: core_charactr.cpp_CCharacter_setMouthFrame_FUN_0042d8a0
 // Address: 0042d8a0
-void FUN_0042d8a0(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CCharacter::setMouthFrame(CCharacter *this_ptr,int frame,float hold_time);
 
-// Original: core_charactr.cpp_FUN_0042d8e0
+// Original: core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
 // Address: 0042d8e0
-void FUN_0042d8e0(CCharacter *param_1);
+void __cdecl CCharacter::renderCharacter(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042d9f0
+// Original: core_charactr.cpp_CCharacter_renderCollision_FUN_0042d9f0
 // Address: 0042d9f0
-void __cdecl FUN_0042d9f0(CCharacter *this_ptr);
+void __cdecl CCharacter::renderCollision(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220
 // Address: 0042e220
@@ -125,21 +125,21 @@ void __cdecl CCharacter::renderAttachedModels(CCharacter *this_ptr);
 // Address: 0042e4b0
 void __cdecl CCharacter::spawnFireOnBone(CCharacter *this_ptr,CSkeleton *skeleton,int target_bone_index);
 
-// Original: core_charactr.cpp_FUN_0042e8c0
+// Original: core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0
 // Address: 0042e8c0
-void FUN_0042e8c0(CCharacter *param_1,float param_2);
+void __cdecl CCharacter::processFire(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_0042f010
+// Original: core_charactr.cpp_CCharacter_renderBurn_FUN_0042f010
 // Address: 0042f010
-void FUN_0042f010(int param_1);
+void __cdecl CCharacter::renderBurn(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042f280
+// Original: core_charactr.cpp_preloadEtherealTextures_FUN_0042f280
 // Address: 0042f280
-void FUN_0042f280(int param_1);
+void __cdecl preloadEtherealTextures(int ethereal_type);
 
-// Original: core_charactr.cpp_FUN_0042f310
+// Original: core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
 // Address: 0042f310
-void __cdecl FUN_0042f310(CCharacter *this_ptr);
+void __cdecl CCharacter::renderEthereal(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510
 // Address: 0042f510
@@ -153,17 +153,17 @@ void __cdecl CCharacter::renderFlames(CCharacter *this_ptr);
 // Address: 0042f770
 void __cdecl CCharacter::addDamageDecal(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042fbd0
+// Original: core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 // Address: 0042fbd0
-void FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7);
+void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero,float on_fire_time);
 
-// Original: core_charactr.cpp_FUN_0042fc90
+// Original: core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90
 // Address: 0042fc90
-void FUN_0042fc90(int param_1);
+void __cdecl CCharacter::processDamageDecals(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042fdc0
+// Original: core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042fdc0
 // Address: 0042fdc0
-void FUN_0042fdc0(int param_1,int param_2,int param_3,float param_4);
+void __cdecl CCharacter::spawnGoreAtBone(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 
 // Original: core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90
 // Address: 0042fe90
@@ -171,19 +171,19 @@ void __cdecl CCharacter::spawnBloodAtBone(CCharacter *this_ptr,int part_index,in
 
 // Original: core_charactr.cpp_CCharacter_getBoundingBox_FUN_0042ff40
 // Address: 0042ff40
-CBoundingBox3D * __cdecl CCharacter::getBoundingBox(CCharacter *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CCharacter::getBoundingBox(CCharacter *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_charactr.cpp_FUN_0042ff70
+// Original: core_charactr.cpp_CCharacter_shatter_FUN_0042ff70
 // Address: 0042ff70
-void FUN_0042ff70(CDemonActor *param_1);
+void __cdecl CCharacter::shatter(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042ffe0
+// Original: core_charactr.cpp_CCharacter_explode_FUN_0042ffe0
 // Address: 0042ffe0
-void FUN_0042ffe0(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CCharacter::explode(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
 
-// Original: core_charactr.cpp_FUN_004300e0
+// Original: core_charactr.cpp_CCharacter_dismember_FUN_004300e0
 // Address: 004300e0
-void FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoundingBox3D *param_3,int param_4);
+void __cdecl CCharacter::dismember(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background);
 
 // Original: core_charactr.cpp_CCharacter_getCollisionType_FUN_00430430
 // Address: 00430430
@@ -201,17 +201,17 @@ void __cdecl CCharacter::detachBodyPart(CCharacter *this_ptr,int part_index,CVec
 // Address: 00430590
 void __cdecl CCharacter::dismemberPartInternal(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
 
-// Original: core_charactr.cpp_FUN_004307b0
+// Original: core_charactr.cpp_CCharacter_returnZero_FUN_004307b0
 // Address: 004307b0
-undefined4 FUN_004307b0(void);
+int __cdecl CCharacter::returnZero(CCharacter *this_ptr,CDemonActor *grabber);
 
 // Original: core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004307c0
 // Address: 004307c0
 void __cdecl CCharacter::releaseFromGrab(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_004307f0
+// Original: core_charactr.cpp_CCharacter_doNothing_FUN_004307f0
 // Address: 004307f0
-void FUN_004307f0(void);
+void __cdecl CCharacter::doNothing(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_getGrabber_FUN_00430800
 // Address: 00430800
@@ -241,9 +241,9 @@ void __cdecl CCharacter::processDamage(CCharacter *this_ptr,SDamageInfo *damage_
 // Address: 00431000
 EDeathState __cdecl CCharacter::getDeathState(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_004310e0
+// Original: core_charactr.cpp_CCharacter_followActor_FUN_004310e0
 // Address: 004310e0
-void FUN_004310e0(CCharacter *param_1,int param_2,float param_3,float param_4,int *param_5);
+void __cdecl CCharacter::followActor(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state);
 
 // Original: core_charactr.cpp_CCharacter_setWalkTarget_FUN_00431470
 // Address: 00431470
@@ -283,11 +283,11 @@ int __cdecl CCharacter::hasDoorTarget(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 // Address: 004319d0
-void __cdecl CCharacter::pickupObjectNow(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5);
+void __cdecl CCharacter::pickupObjectNow(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time,CMatrix3x4f *carry_offset);
 
 // Original: core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0
 // Address: 00431ab0
-void __cdecl CCharacter::computePickup(CCharacter *this_ptr,int param_2,float param_3,int *param_4);
+void __cdecl CCharacter::computePickup(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset);
 
 // Original: core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00431c40
 // Address: 00431c40
@@ -317,17 +317,17 @@ int __cdecl CCharacter::initGesture(CCharacter *this_ptr,char *motion_name);
 // Address: 004320d0
 void __cdecl CCharacter::applyGesture(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00432220
+// Original: core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220
 // Address: 00432220
-void FUN_00432220(int param_1,float param_2);
+void __cdecl CCharacter::advanceGesture(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004322a0
 // Address: 004322a0
 void __cdecl CCharacter::computeBoundingBox(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00432330
+// Original: core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
 // Address: 00432330
-void FUN_00432330(CCharacter *param_1,float param_2,int param_3);
+void __cdecl CCharacter::findSomethingToLookAt(CCharacter *this_ptr,float delta_time,int disable_search);
 
 // Original: core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000
 // Address: 00433000
@@ -345,9 +345,9 @@ void __cdecl CCharacter::calculateChecksum(CCharacter *this_ptr,uint *out_crc);
 // Address: 004331a0
 int __cdecl CCharacter::canLookAt(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00433220
+// Original: core_charactr.cpp_CCharacter_setOrientation_FUN_00433220
 // Address: 00433220
-void FUN_00433220(CDemonActor *param_1,float *param_2);
+void __cdecl CCharacter::setOrientation(CCharacter *this_ptr,UOrientationVector *orientation);
 
 // Original: core_charactr.cpp_CCharacter_spawnFlies_FUN_00433320
 // Address: 00433320
@@ -357,9 +357,9 @@ void __cdecl CCharacter::spawnFlies(CCharacter *this_ptr,int fly_count,float spa
 // Address: 00433350
 void __cdecl CCharacter::applyGestureLookAt(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_004333e0
+// Original: core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0
 // Address: 004333e0
-undefined4 FUN_004333e0(CCharacter *param_1,float param_2,char *param_3);
+int __cdecl CCharacter::updateWanderToWaypoint(CCharacter *this_ptr,float delta_time,char *pattern);
 
 // Original: core_charactr.cpp_CCharacter_advanceLayerAction_FUN_00433580
 // Address: 00433580
@@ -381,46 +381,46 @@ float __cdecl CCharacter::getLayerActionBlendWeight(CCharacter *this_ptr,int sta
 // Address: 00433ae0
 void __cdecl CCharacter::chooseNextLayerAction(CCharacter *this_ptr,int layer_action_index);
 
-// Original: core_charactr.cpp_FUN_00433c60
+// Original: core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 // Address: 00433c60
-void FUN_00433c60(CCharacter *param_1,float param_2);
+void __cdecl CCharacter::processSmoking(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 // Address: 00433fb0
 int __cdecl CCharacter::processMotion(CCharacter *this_ptr,int bone_index);
 
-// Original: core_charactr.cpp_FUN_00434190
+// Original: core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190
 // Address: 00434190
-undefined4 FUN_00434190(CCharacter *param_1,float param_2);
+int __cdecl CCharacter::moveOutOfHeroWay(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_00434810
 // Address: 00434810
 void __cdecl CCharacter::playSoundWithCooldown(CCharacter *this_ptr,char *sound_name);
 
-// Original: core_charactr.cpp_FUN_00434850
+// Original: core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 // Address: 00434850
-void FUN_00434850(int param_1,float param_2);
+void __cdecl CCharacter::updateTurnSpeed(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_004348b0
+// Original: core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0
 // Address: 004348b0
-int FUN_004348b0(int param_1,char *param_2);
+CWayPoint * __cdecl CCharacter::pickRandomNamedWaypoint(CCharacter *this_ptr,char *name_pattern);
 
-// Original: core_charactr.cpp_FUN_004349d0
+// Original: core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004349d0
 // Address: 004349d0
-void FUN_004349d0(int param_1,undefined4 param_2);
+CWayPoint * __cdecl CCharacter::findNearestReachableWaypoint(CCharacter *this_ptr,CWayPoint *target_waypoint);
 
 // Original: core_charactr.cpp_setActorXPos_FUN_00434a30
 // Address: 00434a30
 void __cdecl setActorXPos(CDemonActor *actor,float x);
 
-// Original: core_charactr.cpp_FUN_00434b00
+// Original: core_charactr.cpp_getGameDeltaTime_FUN_00434b00
 // Address: 00434b00
-undefined4 FUN_00434b00(int param_1);
+float __cdecl getGameDeltaTime(CGame *game_ptr);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_00434b10
 // Address: 00434b10
 SFire * __cdecl SFire::ctor(SFire *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00434b30
+// Original: core_charactr.cpp_expandIndexedTo16Bit_FUN_00434b30
 // Address: 00434b30
-undefined4 FUN_00434b30(void);
+void __cdecl expandIndexedTo16Bit(void *output_buffer,void *indexed_input_buffer,int pixel_count);

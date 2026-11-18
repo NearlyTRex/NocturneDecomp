@@ -14,7 +14,7 @@ CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSk
   pCVar1 = core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CSkeletonIndianVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(pCVar1->base).base.model,(char *)0x5b718e);
+            (&(pCVar1->base).base.model,"boneguy.dfm");
   (pCVar1->base).base.hit_points = 30.0;
   (pCVar1->base).attack_damage = 12.0;
   (pCVar1->base).pain_threshold = 8.0;

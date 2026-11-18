@@ -7,7 +7,7 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b82e0 at 004b8d4a
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b8d4a
 ;   core_script.cpp_CScript_skipCinematic_FUN_00529b30 at 00529b4d
 ;
 ; Called Functions:

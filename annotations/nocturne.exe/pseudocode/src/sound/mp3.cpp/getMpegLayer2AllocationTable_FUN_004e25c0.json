@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 26,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 54
   },
   "cross_references": [],
@@ -67,8 +65,8 @@
     },
     {
       "addr": "01cd8b28",
-      "name": "DAT_01cd8b28",
-      "type": "undefined4",
+      "name": "g_CurrentMp3Filename",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -112,6 +110,24 @@
     "pcode_op_count": 273
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00504600",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005257d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fd0e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
     "nocedit.exe": {
       "addr": "0052ea10",
       "by": "name",
@@ -142,14 +158,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "(\"js_bound bad layer/modext (%d/%d)  File: %s\",layer,mode_extension,&DAT_01cd8b28);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

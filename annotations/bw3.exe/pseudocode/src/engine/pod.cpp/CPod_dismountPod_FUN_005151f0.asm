@@ -14,12 +14,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_005cc9cc
 ;   TerminatedCString s_CPod_dismountPod_invalid_005cc9de
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a30c4
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
 ;   engine_pod.cpp_CPodFile_dtor_FUN_00512f70
 ;
 ; *****************************************************************************
@@ -43,10 +43,10 @@ section .text
     MOV ECX,0x5cc9cc                    ; 00515204 | = "..\\engine\\pod.cpp"
     MOV EDI,0x6be                       ; 00515209
     PUSH 0x5cc9de                       ; 0051520e | = "CPod::dismountPod - invalid index"
-    MOV dword ptr [0x01d71de0],ECX      ; 00515213 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00515219 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0051521f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00515213 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 00515219 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0051521f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00515224
     POP EDI                             ; 00515227
     MOV EAX,dword ptr [EBX + ESI*0x4 + 0x4] ; 00515228
@@ -60,8 +60,8 @@ section .text
         ;   XREF to: 00512f70 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_00512f70(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00515238
     PUSH EAX                            ; 0051523b
-    CALL crt_unknown.c_FUN_005a30c4     ; 0051523c
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 0051523c
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 00515241
     MOV EBP,dword ptr [EBX]             ; 00515244
         ;   Label: LAB_00515244

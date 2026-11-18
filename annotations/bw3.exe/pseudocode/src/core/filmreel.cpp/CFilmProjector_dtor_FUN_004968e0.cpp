@@ -9,19 +9,18 @@
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004968e0(CFilmProjector *this_ptr,uint flags)
 
 {
-  CFilmProjector *pCVar1;
-  void *ptr;
+  CFilmProjector *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CFilmProjectorTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CFilmProjectorTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CFilmProjector *)core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1)
-  ;
+  ptr = (CFilmProjector *)core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

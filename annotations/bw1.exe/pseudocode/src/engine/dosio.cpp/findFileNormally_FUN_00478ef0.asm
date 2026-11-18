@@ -15,11 +15,11 @@
 ; XREF[4]:
 ;   core_main.c_initializeGameSystems_FUN_005032a0 at 0050332e
 ;   engine_dosio.cpp_findFile_FUN_00478e90 at 00478ed1
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250 at 0053b2b0
 ;   engine_pod.cpp_CPod_dismount_FUN_0053c800 at 0053c837
-;   engine_pod.cpp_FUN_0053b250 at 0053b2b0
 ;
 ; Called Functions:
-;   crt_io.c_FUN_005c1da8
+;   crt_io.c_getFileStat_FUN_005c1da8
 ;   engine_dosio.cpp_getFullPath_FUN_00479720
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     PUSH EAX                            ; 00478f2a
     LEA EAX,[ESP + 0x4]                 ; 00478f2b
     PUSH EAX                            ; 00478f2f
-    CALL crt_io.c_FUN_005c1da8          ; 00478f30
-        ;   XREF to: 005c1da8 (UNCONDITIONAL_CALL)  ; int crt_io.c_FUN_005c1da8(char * filename, WatcomStat * file_info)
+    CALL crt_io.c_getFileStat_FUN_005c1da8 ; 00478f30
+        ;   XREF to: 005c1da8 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_005c1da8(char * filename, WatcomStat * file_info)
     ADD ESP,0x8                         ; 00478f35
     TEST EAX,EAX                        ; 00478f38
     JNZ 0x00478f07                      ; 00478f3a

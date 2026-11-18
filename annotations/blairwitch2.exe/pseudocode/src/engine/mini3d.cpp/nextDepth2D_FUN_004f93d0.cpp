@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl engine_mini3d_cpp_nextDepth2D_FUN_004f93d0(void)
 
 {
-  _DAT_01d0d2d4 = _DAT_01d0d2d4 + _DAT_005de000;
-  if (_DAT_01d098dc <= _DAT_01d0d2d4) {
-    return _DAT_01d0d2d4;
+  g_FLOAT_01d0d2d4 = g_FLOAT_01d0d2d4 + -0.01f;
+  if (g_FLOAT_01d098dc <= g_FLOAT_01d0d2d4) {
+    return g_FLOAT_01d0d2d4;
   }
-  _DAT_01d0d2d4 = _DAT_01d098dc;
-  return _DAT_01d098dc;
+  g_FLOAT_01d0d2d4 = g_FLOAT_01d098dc;
+  return g_FLOAT_01d098dc;
 }

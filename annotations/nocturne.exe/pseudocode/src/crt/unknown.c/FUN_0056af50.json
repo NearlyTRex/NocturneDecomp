@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 84,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 14,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
-      "undefined_data",
       "undefined_type"
     ],
     "total_lines": 36
@@ -52,9 +51,9 @@
   "globals": [
     {
       "addr": "005c1cf8",
-      "name": "DAT_005c1cf8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ConsoleInitializationFlag",
+      "type": "int",
+      "value": "0x0"
     }
   ],
   "pcode_summary": {
@@ -125,14 +124,6 @@
       "severity": "moderate",
       "text": "undefined3 extraout_var;",
       "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005c1cf8",
-      "severity": "mild",
-      "text": "iVar1 = DAT_005c1cf8;",
-      "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

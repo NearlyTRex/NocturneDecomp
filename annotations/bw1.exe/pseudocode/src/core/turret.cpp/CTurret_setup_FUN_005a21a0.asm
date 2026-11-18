@@ -7,8 +7,8 @@
 ; CTurret *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f89e0
-;   undefined4 DAT_006074b8
+;   double g_DOUBLE_005f89e0 = 0.200000000000000
+;   float g_FLOAT_006074b8 = 0.00390625
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_004672b0
@@ -61,7 +61,7 @@ section .text
     JGE 0x005a2250                      ; 005a2201
         ;   XREF to: 005a2250 (CONDITIONAL_JUMP)  ; LAB_005a2250
     FILD dword ptr [EDX + 0x4]          ; 005a2203
-    FMUL double ptr [0x005f89e0]        ; 005a2206 | DAT_005f89e0
+    FMUL double ptr [0x005f89e0]        ; 005a2206 | g_DOUBLE_005f89e0
     FILD dword ptr [EDX + 0x8]          ; 005a220c
     FADDP                               ; 005a220f
     FST float ptr [ESP + 0x4]           ; 005a2211
@@ -78,13 +78,13 @@ section .text
     MOV EAX,EDX                         ; 005a2223
         ;   Label: LAB_005a2223
     FILD dword ptr [EAX]                ; 005a2225
-    FMUL float ptr [0x006074b8]         ; 005a2227 | DAT_006074b8
+    FMUL float ptr [0x006074b8]         ; 005a2227 | g_FLOAT_006074b8
     FSTP float ptr [EBX]                ; 005a222d
     FILD dword ptr [EAX + 0x4]          ; 005a222f
-    FMUL float ptr [0x006074b8]         ; 005a2232 | DAT_006074b8
+    FMUL float ptr [0x006074b8]         ; 005a2232 | g_FLOAT_006074b8
     FSTP float ptr [EBX + 0x4]          ; 005a2238
     FILD dword ptr [EAX + 0x8]          ; 005a223b
-    FMUL float ptr [0x006074b8]         ; 005a223e | DAT_006074b8
+    FMUL float ptr [0x006074b8]         ; 005a223e | g_FLOAT_006074b8
     FSTP float ptr [EBX + 0x8]          ; 005a2244
     MOV EAX,dword ptr [ESP + 0x4]       ; 005a2247
     MOV dword ptr [ESP],EAX             ; 005a224b

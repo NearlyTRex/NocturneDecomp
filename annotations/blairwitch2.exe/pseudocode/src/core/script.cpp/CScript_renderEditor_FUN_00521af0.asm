@@ -18,10 +18,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b5b07
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5b07
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e2eb7
+;   TerminatedCString s_d_005e2eb7
 ;   TerminatedCString s_No_script_loaded_005e2eba
 ;
 ; Called Functions:
@@ -34,8 +34,8 @@
 ;   cockpit_drawsurf.cpp_setColor_FUN_00465ea0
 ;   cockpit_drawsurf.cpp_setCurrentFont_FUN_00466350
 ;   crt_unknown.c_sprintf_FUN_005b7790
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00481240
-;   shape_edittool.cpp_FUN_004858f0
 ;
 ; *****************************************************************************
 
@@ -121,8 +121,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x90]      ; 00521bd3
         ;   Label: LAB_00521bd3
     PUSH EDI                            ; 00521bda
-    CALL shape_edittool.cpp_FUN_004858f0 ; 00521bdb
-        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_004858f0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0 ; 00521bdb
+        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004858f0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00521be0
     CMP EBX,EAX                         ; 00521be3
     JGE 0x00521c77                      ; 00521be5
@@ -141,7 +141,7 @@ section .text
     ADD ESP,0x4                         ; 00521c0d
     LEA EDI,[EBX + 0x1]                 ; 00521c10
     PUSH EDI                            ; 00521c13
-    PUSH 0x5e2eb7                       ; 00521c14 | DAT_005e2eb7
+    PUSH 0x5e2eb7                       ; 00521c14 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 00521c19
     PUSH EAX                            ; 00521c1d
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00521c1e

@@ -7,7 +7,7 @@
 ; CZombieCemetery * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_0058cc90 at 0058cca3
+;   core_zombie.cpp_factoryFuncZombieCemetery_FUN_0058cc90 at 0058cca3
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0

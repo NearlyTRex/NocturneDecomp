@@ -15,7 +15,7 @@ void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004b4d50(CHero *this_ptr)
   char *state_name;
   int iVar2;
   
-  if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&
+  if (((char *)(this_ptr->base).base.validation_magic == g_CHAR_ARRAY_0077d250 + 0xced3) &&
      ((this_ptr->base).model.model_ptr != (CDeformableModel *)0x0)) {
     iVar2 = 0;
     state_name = "GETGRABBED";

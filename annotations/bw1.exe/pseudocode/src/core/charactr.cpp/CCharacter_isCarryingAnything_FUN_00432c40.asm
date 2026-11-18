@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_CHero_canDoHeroAction_FUN_004ec950 at 004ec9a8
-;   core_hero.cpp_FUN_004eb890 at 004eb8a3
+;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890 at 004eb8a3
 ;
 ; *****************************************************************************
 

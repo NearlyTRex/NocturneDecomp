@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593653
 ;   TerminatedCString s_setNumberOfSfxChannels_t_00593668
-;   undefined4 DAT_005bea60
+;   int g_MaxSoundChannels = 0x20
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -28,7 +28,7 @@ section .text
     JG 0x005273e1                       ; 005273d5
         ;   XREF to: 005273e1 (CONDITIONAL_JUMP)  ; LAB_005273e1
     MOV EAX,dword ptr [ESP + 0x4]       ; 005273d7
-    MOV [0x005bea60],EAX                ; 005273db | DAT_005bea60
+    MOV [0x005bea60],EAX                ; 005273db | g_MaxSoundChannels
     RET                                 ; 005273e0
     PUSH EBX                            ; 005273e1
         ;   Label: LAB_005273e1
@@ -42,6 +42,6 @@ section .text
     ADD ESP,0x4                         ; 00527402
     POP EBX                             ; 00527405
     MOV EAX,dword ptr [ESP + 0x4]       ; 00527406
-    MOV [0x005bea60],EAX                ; 0052740a | DAT_005bea60
+    MOV [0x005bea60],EAX                ; 0052740a | g_MaxSoundChannels
     RET                                 ; 0052740f
 

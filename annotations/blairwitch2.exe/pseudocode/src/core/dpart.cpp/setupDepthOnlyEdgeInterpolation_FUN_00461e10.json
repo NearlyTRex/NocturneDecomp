@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 87,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
-    "suspect_count": 2,
+    "pseudocode_lines": 56,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 162
+    "total_lines": 161
   },
   "cross_references": [],
   "function": {
@@ -32,26 +31,26 @@
   "globals": [
     {
       "addr": "01ba51c8",
-      "name": "DAT_01ba51c8",
-      "type": "undefined4",
+      "name": "g_INT_01ba51c8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ba56cc",
-      "name": "DAT_01ba56cc",
-      "type": "undefined4",
+      "name": "g_INT_01ba56cc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ba56d0",
-      "name": "DAT_01ba56d0",
-      "type": "undefined4",
+      "name": "g_INT_01ba56d0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ba5714",
-      "name": "DAT_01ba5714",
-      "type": "undefined4",
+      "name": "g_RasterizerDepthBias",
+      "type": "int",
       "value": null
     }
   ],
@@ -152,16 +151,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 25,
       "match": "DAT_01ba51cc",
       "severity": "mild",
       "text": "*(int *)(&DAT_01ba51cc + iVar4) = iVar3;",

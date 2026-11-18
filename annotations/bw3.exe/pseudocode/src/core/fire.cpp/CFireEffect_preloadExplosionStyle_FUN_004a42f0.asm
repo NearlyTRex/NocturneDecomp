@@ -12,12 +12,12 @@
 ;   core_fire.cpp_loadDebrisAssets_FUN_0049c680 at 0049c724
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fcb14
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   SMRGLTextureBasic g_SMRGLTextureBasic_005fcb14
 ;   undefined4 DAT_005fcb2c
 ;   undefined4 DAT_005fd084
 ;   undefined4 DAT_005fd09c
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -32,7 +32,7 @@ section .text
     PUSH EDI                            ; 004a42f2
     PUSH EBP                            ; 004a42f3
     MOV EDI,dword ptr [ESP + 0x18]      ; 004a42f4
-    MOV EBX,0x5fcb14                    ; 004a42f8 | DAT_005fcb14
+    MOV EBX,0x5fcb14                    ; 004a42f8 | g_SMRGLTextureBasic_005fcb14
     MOV ESI,0x5fd084                    ; 004a42fd | DAT_005fd084
     LEA EBP,[EBX + 0x570]               ; 004a4302 | DAT_005fd084
     TEST EDI,EDI                        ; 004a4308
@@ -42,10 +42,10 @@ section .text
     CMP EDI,0x2                         ; 004a430c
     JNZ 0x004a4330                      ; 004a430f
         ;   XREF to: 004a4330 (CONDITIONAL_JUMP)  ; LAB_004a4330
-    PUSH EBX                            ; 004a4311 | DAT_005fcb14 | DAT_005fcb2c
+    PUSH EBX                            ; 004a4311 | g_SMRGLTextureBasic_005fcb14 | DAT_005fcb2c
         ;   Label: LAB_004a4311
-    MOV ECX,dword ptr [0x005f2afc]      ; 004a4312 | DAT_005f2afc
-    PUSH ECX                            ; 004a4318 | DAT_01bdd7e4
+    MOV ECX,dword ptr [0x005f2afc]      ; 004a4312 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ECX                            ; 004a4318 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004a4319
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
         ;   Label: LAB_004a4319
@@ -66,8 +66,8 @@ section .text
     JNZ 0x004a4321                      ; 004a4333
         ;   XREF to: 004a4321 (CONDITIONAL_JUMP)  ; LAB_004a4321
     PUSH ESI                            ; 004a4335 | DAT_005fd09c
-    MOV EDX,dword ptr [0x005f2afc]      ; 004a4336 | DAT_005f2afc
-    PUSH EDX                            ; 004a433c | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004a4336 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004a433c | g_CDemonRenderer_01bdd7e4
     JMP 0x004a4319                      ; 004a433d
         ;   XREF to: 004a4319 (UNCONDITIONAL_JUMP)  ; LAB_004a4319
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_0051f680(char *filename)
 
 {
@@ -17,7 +15,7 @@ CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_0051f680(char *filename)
   char *str1;
   
   iVar2 = 0;
-  if (0 < _DAT_02737ef4) {
+  if (0 < g_INT_02737ef4) {
     str1 = g_SkeletonPool[0].loaded_filename;
     do {
       iVar1 = _stricmp(str1,filename);
@@ -26,15 +24,15 @@ CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_0051f680(char *filename)
       }
       iVar2 = iVar2 + 1;
       str1 = str1 + 0x2937c;
-    } while (iVar2 < _DAT_02737ef4);
+    } while (iVar2 < g_INT_02737ef4);
   }
-  if (0x27 < _DAT_02737ef4) {
+  if (0x27 < g_INT_02737ef4) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 4243;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Can't load %s because skeleton manager is full.  (Size is %d)",filename,0x28);
   }
-  this_ptr = g_SkeletonPool + _DAT_02737ef4;
-  _DAT_02737ef4 = _DAT_02737ef4 + 1;
+  this_ptr = g_SkeletonPool + g_INT_02737ef4;
+  g_INT_02737ef4 = g_INT_02737ef4 + 1;
   core_skeleton_cpp_CSkeleton_load_FUN_00517560(this_ptr,filename);
   return this_ptr;
 }

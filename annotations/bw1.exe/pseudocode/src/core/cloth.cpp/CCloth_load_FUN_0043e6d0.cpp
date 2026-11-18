@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_cloth_cpp_CCloth_load_FUN_0043e6d0(CCloth *this_ptr,char *filename)
 
 {
@@ -37,37 +35,37 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_0043e6d0(CCloth *this_ptr,char *filen
   CVector3f *local_18;
   float *local_14;
   
-  local_30 = engine_dosio_cpp_FUN_00479180("models",filename,&DAT_005d673e);
+  local_30 = engine_dosio_cpp_getFile_FUN_00479180("models",filename,"rt");
   if (local_30 == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\core\\cloth.cpp";
-    _DAT_01d1d404 = 0x9b;
-    core_main_c_FUN_005030e0("CCloth::load - Unable to open file %s",filename);
+    g_CHAR_PTR_01d1d400 = "..\\core\\cloth.cpp";
+    g_INT_01d1d404 = 0x9b;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CCloth::load - Unable to open file %s");
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(p_Var8,&DAT_005d6780);
+  _fscanf(p_Var8,"%d\n");
   if (3 < this_ptr->version_num) {
-    _DAT_01d1d400 = "..\\core\\cloth.cpp";
-    _DAT_01d1d404 = 0xa2;
-    core_main_c_FUN_005030e0("%s is version %d, this .EXE is old and can only handle up to version %d",filename,this_ptr->version_num,3);
+    g_CHAR_PTR_01d1d400 = "..\\core\\cloth.cpp";
+    g_INT_01d1d404 = 0xa2;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("%s is version %d, this .EXE is old and can only handle up to version %d");
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(p_Var8,&DAT_005d67de);
+  _fscanf(p_Var8,"%s\n");
   core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(&this_ptr->model,acStack_238);
   core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00467bc0(&this_ptr->model);
   _fgets(local_138,0xff,p_Var8);
   local_38 = &this_ptr->floor_friction;
   if (this_ptr->version_num < 3) {
     _fscanf(local_30,"%f,%f,%f,%f,%f,%f\n");
-    fVar6 = _DAT_005fd900;
-    fVar5 = _DAT_005fd8fc;
-    fVar4 = _DAT_005fd8f8;
-    fVar3 = _DAT_005fd8f4;
-    fVar2 = _DAT_005fd8f0;
-    fVar1 = _DAT_005fd8ec;
-    this_ptr->weight = _DAT_005fd8e8;
-    fVar7 = _DAT_005fd904;
+    fVar6 = 0.05f;
+    fVar5 = 0.5f;
+    fVar4 = 0.5f;
+    fVar3 = 0.005f;
+    fVar2 = 0.9f;
+    fVar1 = 32.0f;
+    this_ptr->weight = 0.125f;
+    fVar7 = 0.15f;
     this_ptr->gravity = fVar1;
     this_ptr->dampen = fVar2;
     this_ptr->spring = fVar3;
@@ -81,30 +79,30 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_0043e6d0(CCloth *this_ptr,char *filen
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(p_Var8,&DAT_005d680e);
+  _fscanf(p_Var8,"%f\n");
   if (this_ptr->version_num < 2) {
     this_ptr->double_sided = 0;
   }
   else {
     _fgets(local_138,0xff,p_Var8);
-    _fscanf(p_Var8,&DAT_005d6812);
+    _fscanf(p_Var8,"%d\n");
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(p_Var8,&DAT_005d6816);
+  _fscanf(p_Var8,"%d\n");
   core_cloth_cpp_CCloth_allocMemory_FUN_0043e640(this_ptr);
   iVar11 = 0;
   _fgets(local_138,0xff,p_Var8);
   if (0 < this_ptr->locked_vertex_count) {
     do {
       iVar11 = iVar11 + 1;
-      _fscanf(local_30,&DAT_005d681a);
+      _fscanf(local_30,"%d\n");
     } while (iVar11 < this_ptr->locked_vertex_count);
   }
-  core_cloth_cpp_FUN_0043ec40(this_ptr);
+  core_cloth_cpp_CCloth_initializeConnections_FUN_0043ec40(this_ptr);
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(p_Var8,&DAT_005d681e);
+  _fscanf(p_Var8,"%d\n");
   iVar11 = 0;
   if (0 < this_ptr->collide_bone_count) {
     local_34 = this_ptr->collide_bones;
@@ -135,9 +133,9 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_0043e6d0(CCloth *this_ptr,char *filen
     do {
       piVar9 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar12);
       iVar13 = iVar13 + 1;
-      pCVar10->x = (float)*piVar9 * _DAT_005fd8d8;
-      pCVar10->y = (float)piVar9[1] * _DAT_005fd8d8;
-      pCVar10->z = (float)piVar9[2] * _DAT_005fd8d8;
+      pCVar10->x = (float)*piVar9 * 0.00390625f;
+      pCVar10->y = (float)piVar9[1] * 0.00390625f;
+      pCVar10->z = (float)piVar9[2] * 0.00390625f;
       pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);
       iVar11 = (this_ptr->model).vertex_count;
       iVar12 = iVar12 + 0xc;

@@ -11,10 +11,10 @@
 ;   core_script.cpp_getActor_FUN_005433c0 at 005433e4
 ;
 ; Referenced Globals:
-;   undefined4 s_Actor_variable_name_must_005edf16+1
+;   TerminatedCString s_Actor_variable_name_must_005edf17
 ;   TerminatedCString s_Actor_variable_name_s_is_005edf3f
 ;   TerminatedCString s_Actor_variable_name_s_is_005edf64
-;   undefined4 DAT_00626114
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -48,7 +48,7 @@ section .text
     XOR ECX,ECX                         ; 00543127
     INC BL                              ; 00543129
     MOV CL,BL                           ; 0054312b
-    TEST byte ptr [ECX + 0x626114],0xe0 ; 0054312d | DAT_00626114
+    TEST byte ptr [ECX + 0x626114],0xe0 ; 0054312d | g_CharacterClassificationTable
     JZ 0x00543167                       ; 00543134
         ;   XREF to: 00543167 (CONDITIONAL_JUMP)  ; LAB_00543167
     INC EDX                             ; 00543136
@@ -56,7 +56,7 @@ section .text
     INC EAX                             ; 00543137
     JMP 0x00543125                      ; 00543138
         ;   XREF to: 00543125 (UNCONDITIONAL_JUMP)  ; LAB_00543125
-    PUSH 0x5edf17                       ; 0054313a | s_Actor_variable_name_must_005edf16+1
+    PUSH 0x5edf17                       ; 0054313a | = "Actor variable name must begin with '@'"
         ;   Label: LAB_0054313a
     PUSH 0x1e810b0                      ; 0054313f
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00543144

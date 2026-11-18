@@ -15,7 +15,7 @@ section .text
     PUSH 0xc340                         ; 0051c7a0
         ;   Label: core_mobster.cpp_factoryFuncMobster_FUN_0051c7a0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0051c7a5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0051c7aa
     TEST EAX,EAX                        ; 0051c7ad
     JNZ 0x0051c7b2                      ; 0051c7af

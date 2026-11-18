@@ -8,11 +8,11 @@
 ; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_0056fef0 at 0056ffeb
-;   support_trisock.cpp_FUN_00571340 at 00571c10
+;   support_trisock.cpp_httpConnectToUrl_FUN_0056fef0 at 0056ffeb
+;   support_trisock.cpp_httpRequestUpdate_FUN_00571340 at 00571c10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d68d7
+;   TerminatedCString s_d_005d68d7
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -35,7 +35,7 @@ section .text
     MOV SI,word ptr [ESI + 0x4]         ; 0056f834
     AND ESI,0xffff                      ; 0056f838
     PUSH ESI                            ; 0056f83e
-    PUSH 0x5d68d7                       ; 0056f83f | DAT_005d68d7
+    PUSH 0x5d68d7                       ; 0056f83f | = ":%d"
     XOR DL,DL                           ; 0056f844
     MOV ESI,EBX                         ; 0056f846
     MOV AL,byte ptr [ESI]               ; 0056f848

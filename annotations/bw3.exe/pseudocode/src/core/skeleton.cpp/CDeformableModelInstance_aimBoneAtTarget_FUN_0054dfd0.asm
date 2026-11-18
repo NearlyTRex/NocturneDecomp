@@ -12,7 +12,7 @@
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   blend_callback
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d202c
+;   double g_DOUBLE_005d202c = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0054d8f0
@@ -34,7 +34,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0xd4]      ; 0054dfd8
     MOV EBX,dword ptr [ESP + 0xd8]      ; 0054dfdf
     FLD float ptr [ESP + 0xdc]          ; 0054dfe6
-    FCOMP double ptr [0x005d202c]       ; 0054dfed | DAT_005d202c
+    FCOMP double ptr [0x005d202c]       ; 0054dfed | g_DOUBLE_005d202c
     FNSTSW AX                           ; 0054dff3
     SAHF                                ; 0054dff5
     JA 0x0054e001                       ; 0054dff6
@@ -86,7 +86,7 @@ section .text
     LEA ESI,[ESP + 0xa4]                ; 0054e08a
     LEA EDI,[ESP + 0x8c]                ; 0054e091
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 0054e098
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0xa4]                ; 0054e09d
     ADD ESP,0x4                         ; 0054e0a4
     MOVSD ES:EDI,ESI                    ; 0054e0a7
@@ -96,7 +96,7 @@ section .text
     LEA ESI,[ESP + 0x5c]                ; 0054e0b1
     LEA EDI,[ESP + 0x1c]                ; 0054e0b5
     CALL core_xform.cpp_quaternionFromAngleX_FUN_00585cd0 ; 0054e0b9
-        ;   XREF to: 00585cd0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_00585cd0()
+        ;   XREF to: 00585cd0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_00585cd0(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x5c]                ; 0054e0be
     ADD ESP,0x4                         ; 0054e0c2
     MOVSD ES:EDI,ESI                    ; 0054e0c5
@@ -109,7 +109,7 @@ section .text
     LEA ESI,[ESP + 0x70]                ; 0054e0d5
     LEA EDI,[ESP + 0x80]                ; 0054e0d9
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00585d10 ; 0054e0e0
-        ;   XREF to: 00585d10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_00585d10()
+        ;   XREF to: 00585d10 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_00585d10(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x70]                ; 0054e0e5
     ADD ESP,0x4                         ; 0054e0e9
     MOVSD ES:EDI,ESI                    ; 0054e0ec
@@ -123,7 +123,7 @@ section .text
     LEA ESI,[ESP + 0x44]                ; 0054e0fd
     LEA EDI,[ESP + 0x14]                ; 0054e101
     CALL core_xform.cpp_multiplyQuaternion_FUN_00585990 ; 0054e105
-        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00585990()
+        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00585990(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x44]                ; 0054e10a
     ADD ESP,0x8                         ; 0054e10e
     MOVSD ES:EDI,ESI                    ; 0054e111
@@ -135,7 +135,7 @@ section .text
     LEA ESI,[ESP + 0x30]                ; 0054e11a
     LEA EDI,[ESP + 0x50]                ; 0054e11e
     CALL core_xform.cpp_multiplyQuaternion_FUN_00585990 ; 0054e122
-        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00585990()
+        ;   XREF to: 00585990 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00585990(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     ADD ESP,0x8                         ; 0054e127
     LEA ESI,[ESP + 0x28]                ; 0054e12a
     MOV EBX,dword ptr [ESP + 0xf0]      ; 0054e12e

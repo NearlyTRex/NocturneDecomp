@@ -14,17 +14,17 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0 at 004472f1
 ;
 ; Referenced Globals:
-;   undefined8 DAT_005b4798
-;   undefined8 DAT_005b47a0
-;   undefined4 DAT_005b5d00
-;   undefined4 DAT_005b64f8
+;   _MMX_INTEGER g_AmbientLightMMX1
+;   _MMX_INTEGER g_AmbientLightMMX2
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
 ;   _MMX_INTEGER g_TotalDitherShift
 ;   _MMX_INTEGER g_GreenBlueDitherShift
 ;   _MMX_INTEGER g_BlueBitShift
-;   undefined4 DAT_00b0e1fc
+;   uint[256] g_UINT_ARRAY_00b0e1fc
 ;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
@@ -129,21 +129,21 @@ section .text
     MOVZX EDX,byte ptr [EBX]            ; 0046708d
         ;   Label: LAB_0046708d
     MOVQ MM0,qword ptr [ESI]            ; 00467090
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb0e1fc] ; 00467093 | DAT_00b0e1fc
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb0e1fc] ; 00467093 | g_UINT_ARRAY_00b0e1fc
     MOVZX EAX,byte ptr [EBP]            ; 0046709b
     PUNPCKLBW MM0,MM7                   ; 0046709f
     SHR EDX,0x1                         ; 004670a2
     PUNPCKLBW MM2,MM7                   ; 004670a4
     ADD EAX,EDX                         ; 004670a7
     PMULLW MM0,MM2                      ; 004670a9
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 004670ac | DAT_005b5d00
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 004670ac | g_LightmapData
     MOVQ MM2,MM3                        ; 004670b4
     MOVQ MM4,MM5                        ; 004670b7
-    PXOR MM2,qword ptr [0x005b64f8]     ; 004670ba | DAT_005b64f8
+    PXOR MM2,qword ptr [0x005b64f8]     ; 004670ba | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 004670c1
     PMULHW MM4,MM3                      ; 004670c4
     PADDW MM0,MM4                       ; 004670c7
-    PADDW MM0,qword ptr [0x005b4798]    ; 004670ca | DAT_005b4798
+    PADDW MM0,qword ptr [0x005b4798]    ; 004670ca | g_AmbientLightMMX1
     PSRLW MM0,0x4                       ; 004670d1
     PACKUSWB MM0,MM7                    ; 004670d5
     MOVQ MM2,MM0                        ; 004670d8
@@ -162,21 +162,21 @@ section .text
     INC EBP                             ; 00467115
     MOVZX EDX,byte ptr [EBX]            ; 00467116
     MOVQ MM0,qword ptr [ESI]            ; 00467119
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb0e1fc] ; 0046711c | DAT_00b0e1fc
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb0e1fc] ; 0046711c | g_UINT_ARRAY_00b0e1fc
     MOVZX EAX,byte ptr [EBP]            ; 00467124
     PUNPCKLBW MM0,MM7                   ; 00467128
     SHR EDX,0x1                         ; 0046712b
     PUNPCKLBW MM2,MM7                   ; 0046712d
     ADD EAX,EDX                         ; 00467130
     PMULLW MM0,MM2                      ; 00467132
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 00467135 | DAT_005b5d00
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 00467135 | g_LightmapData
     MOVQ MM2,MM3                        ; 0046713d
     MOVQ MM4,MM5                        ; 00467140
-    PXOR MM2,qword ptr [0x005b64f8]     ; 00467143 | DAT_005b64f8
+    PXOR MM2,qword ptr [0x005b64f8]     ; 00467143 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 0046714a
     PMULHW MM4,MM3                      ; 0046714d
     PADDW MM0,MM4                       ; 00467150
-    PADDW MM0,qword ptr [0x005b47a0]    ; 00467153 | DAT_005b47a0
+    PADDW MM0,qword ptr [0x005b47a0]    ; 00467153 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 0046715a
     PACKUSWB MM0,MM7                    ; 0046715e
     MOVQ MM2,MM0                        ; 00467161

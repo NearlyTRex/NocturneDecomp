@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2)
+; CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int max_particles)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   max_particles
 ;
 ; XREF[1]:
-;   core_bwgrndma.cpp_FUN_005a7eb0 at 005a7eba
+;   core_bwgrndma.cpp_staticInit_FUN_005a7eb0 at 005a7eba
 ;
 ; Called Functions:
-;   core_bwspart.cpp_FUN_005a84c0
+;   core_bwspart.cpp_initSimpleParticle_FUN_005a84c0
 ;   crt_memory.c_malloc_FUN_005b8580
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     ADD EAX,ESI                         ; 005a7fdb
     PUSH EAX                            ; 005a7fdd
     INC EBX                             ; 005a7fde
-    CALL core_bwspart.cpp_FUN_005a84c0  ; 005a7fdf
-        ;   XREF to: 005a84c0 (UNCONDITIONAL_CALL)  ; undefined core_bwspart.cpp_FUN_005a84c0()
+    CALL core_bwspart.cpp_initSimpleParticle_FUN_005a84c0 ; 005a7fdf
+        ;   XREF to: 005a84c0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_initSimpleParticle_FUN_005a84c0(void * particle)
     ADD ESI,0x60                        ; 005a7fe4
     MOV ECX,dword ptr [EDI + 0x18]      ; 005a7fe7
     ADD ESP,0x4                         ; 005a7fea

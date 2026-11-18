@@ -11,13 +11,13 @@
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750 at 0044fa98
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0135ead1
-;   undefined4 DAT_0135ead2
-;   undefined4 DAT_0135ec10
-;   undefined4 DAT_0135ec11
-;   undefined4 DAT_0135ec12
-;   undefined4 DAT_0135ed51
-;   undefined4 DAT_01371810
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[0][1]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[0][2]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][0]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][1]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][2]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[2][1]
+;   undefined4 g_CameraImageDecompressBuffer+0x140
 ;
 ; *****************************************************************************
 
@@ -55,7 +55,7 @@ section .text
     JGE 0x0044fe31                      ; 0044fe1e
         ;   XREF to: 0044fe31 (CONDITIONAL_JUMP)  ; LAB_0044fe31
     INC EAX                             ; 0044fe20
-    MOV BL,byte ptr [ECX + 0x135ead0]   ; 0044fe21 | DAT_0135ec11 | DAT_0135ec12 | DAT_0135ed51
+    MOV BL,byte ptr [ECX + 0x135ead0]   ; 0044fe21 | g_CameraPlaneWorkBuffer.pixels[1][1] | g_CameraPlaneWorkBuffer.pixels[1][2] | g_CameraPlaneWorkBuffer.pixels[2][1]
     INC ECX                             ; 0044fe27
     INC EDX                             ; 0044fe28
     MOV byte ptr [EAX + 0x13716cf],BL   ; 0044fe29
@@ -81,8 +81,8 @@ section .text
     SUB EDX,ECX                         ; 0044fe5b
     IMUL EBX,EAX,0x140                  ; 0044fe5d
         ;   Label: LAB_0044fe5d
-    MOV CL,byte ptr [EBX + 0x135ead0]   ; 0044fe63 | DAT_0135ec10
-    MOV byte ptr [EDX + 0x13716d0],CL   ; 0044fe69 | DAT_01371810
+    MOV CL,byte ptr [EBX + 0x135ead0]   ; 0044fe63 | g_CameraPlaneWorkBuffer.pixels[1][0]
+    MOV byte ptr [EDX + 0x13716d0],CL   ; 0044fe69 | g_CameraImageDecompressBuffer+0x140
     MOV ECX,dword ptr [ESI + 0x150]     ; 0044fe6f
     MOV BL,byte ptr [ECX + EBX*0x1 + 0x135eacf] ; 0044fe75
     MOV byte ptr [ECX + EDX*0x1 + 0x13716cf],BL ; 0044fe7c
@@ -111,7 +111,7 @@ section .text
     CMP EAX,ECX                         ; 0044fecc
     JGE 0x0044fd34                      ; 0044fece
         ;   XREF to: 0044fd34 (CONDITIONAL_JUMP)  ; LAB_0044fd34
-    MOV BL,byte ptr [EAX + 0x135ead0]   ; 0044fed4 | DAT_0135ead1 | DAT_0135ead2
+    MOV BL,byte ptr [EAX + 0x135ead0]   ; 0044fed4 | g_CameraPlaneWorkBuffer.pixels[0][1] | g_CameraPlaneWorkBuffer.pixels[0][2]
     MOV byte ptr [EDX + 0x13716d0],BL   ; 0044feda
     MOV ECX,dword ptr [ESI + 0x154]     ; 0044fee0
     DEC ECX                             ; 0044fee6
@@ -119,7 +119,7 @@ section .text
     LEA EBX,[ECX + EAX*0x1]             ; 0044feed
     INC EAX                             ; 0044fef0
     ADD ECX,EDI                         ; 0044fef1
-    MOV BL,byte ptr [EBX + 0x135ead0]   ; 0044fef3 | DAT_0135ead1 | DAT_0135ead2
+    MOV BL,byte ptr [EBX + 0x135ead0]   ; 0044fef3 | g_CameraPlaneWorkBuffer.pixels[0][1] | g_CameraPlaneWorkBuffer.pixels[0][2]
     INC EDX                             ; 0044fef9
     MOV byte ptr [ECX + EAX*0x1 + 0x13716cf],BL ; 0044fefa
     JMP 0x0044fec4                      ; 0044ff01

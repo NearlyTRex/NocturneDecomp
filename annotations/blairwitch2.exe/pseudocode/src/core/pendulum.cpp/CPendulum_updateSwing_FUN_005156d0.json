@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 558,
-    "complexity_score": 317,
+    "complexity_score": 335,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 172,
-    "suspect_count": 12,
+    "pseudocode_lines": 175,
+    "suspect_count": 13,
     "suspect_types": [
       "inline_exp_idiom",
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 730
+    "total_lines": 733
   },
   "cross_references": [
     {
@@ -41,14 +42,14 @@
   },
   "function_calls": [
     {
+      "addr": "00408d70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70"
+    },
+    {
       "addr": "00408ae0",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0"
-    },
-    {
-      "addr": "00408d70",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408d70"
     },
     {
       "addr": "0055ae80",
@@ -64,69 +65,69 @@
   "globals": [
     {
       "addr": "005e1a3e",
-      "name": "DAT_005e1a3e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e1a3e",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005e1a42",
-      "name": "DAT_005e1a42",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a42",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005e1a4a",
-      "name": "DAT_005e1a4a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a4a",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "005e1a52",
-      "name": "DAT_005e1a52",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a52",
+      "type": "double",
+      "value": "-1"
     },
     {
       "addr": "005e1a5a",
-      "name": "DAT_005e1a5a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a5a",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "005e1a62",
-      "name": "DAT_005e1a62",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a62",
+      "type": "double",
+      "value": "-0.5"
     },
     {
       "addr": "005e1a6a",
-      "name": "DAT_005e1a6a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a6a",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005e1a72",
-      "name": "DAT_005e1a72",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e1a72",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "005e1a7a",
-      "name": "DAT_005e1a7a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a7a",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "005e1a82",
-      "name": "DAT_005e1a82",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e1a82",
+      "type": "double",
+      "value": "0.75"
     },
     {
       "addr": "0061c068",
-      "name": "DAT_0061c068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
     }
   ],
   "param_estimates": {
@@ -269,16 +270,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 12,
       "match": "afStackY_1028",
       "severity": "moderate",
       "text": "float afStackY_1028 [1002];",
@@ -289,23 +282,7 @@
       "line": 52,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
-      "text": "(&stack0xffffffc4)[(uint)bVar1 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar1 * -2 + 3];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "(&stack0xffffffc4)[(uint)bVar1 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar1 * -2 + 3];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "(&stack0xffffffc4)[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =",
+      "text": "(&stack0xffffffc4)[(uint)bVar1 * 0xfffffffe] =",
       "type": "stack_ref"
     },
     {
@@ -313,20 +290,52 @@
       "line": 54,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
-      "text": "(&stack0xffffffc4)[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4];",
+      "text": "(&stack0xffffffc4)[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 55,
+      "line": 56,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "if (&this_ptr->swing_tip_world != (CVector3f *)&stack0xffffffc0) {",
       "type": "stack_ref"
     },
     {
+      "description": "Pointer value `&CStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)&CStack_34",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&CStack_34 + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 55,
+      "match": "(int)&CStack_34",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&CStack_34 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 53,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&CStack_34 + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 55,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&CStack_34 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar5 - (fVar5 / fVar2) * fVar2` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
-      "line": 46,
+      "line": 45,
       "match": "fVar4 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);",
       "severity": "major",
       "text": "fVar4 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);",
@@ -334,7 +343,7 @@
     },
     {
       "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
-      "line": 47,
+      "line": 46,
       "match": "fVar2 = (float10)fscale(fVar4 + fVar2,fVar5);",
       "severity": "moderate",
       "text": "fVar2 = (float10)fscale(fVar4 + fVar2,fVar5);",
@@ -342,7 +351,7 @@
     },
     {
       "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar5 - (fVar5 / fVar2) * fVar2` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
-      "line": 63,
+      "line": 64,
       "match": "fVar3 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);",
       "severity": "major",
       "text": "fVar3 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);",
@@ -350,7 +359,7 @@
     },
     {
       "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
-      "line": 64,
+      "line": 65,
       "match": "fVar2 = (float10)fscale(fVar3 + fVar2,fVar5);",
       "severity": "moderate",
       "text": "fVar2 = (float10)fscale(fVar3 + fVar2,fVar5);",

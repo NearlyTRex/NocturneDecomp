@@ -15,7 +15,7 @@ section .text
     PUSH 0x608                          ; 004e0f40
         ;   Label: core_lightsta.cpp_factoryFuncLightStaff_FUN_004e0f40
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004e0f45
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004e0f4a
     TEST EAX,EAX                        ; 004e0f4d
     JNZ 0x004e0f52                      ; 004e0f4f

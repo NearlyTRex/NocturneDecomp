@@ -15,8 +15,8 @@ void __cdecl engine_pcx_c_writePCXScanline_FUN_0050d620(int row_index,_FILE *pcx
   uint character;
   
   iVar2 = 0;
-  pbVar1 = *(byte **)(&DAT_01c5faec + row_index * 4);
-  if (0 < DAT_005fba18) {
+  pbVar1 = g_ScreenBufferArray[row_index];
+  if (0 < g_INT_005fba18) {
     do {
       if (0xbf < *pbVar1) {
         if (((pcx_file->_flag & 0x400) == 0) && (1 < pcx_file->_bufsize - pcx_file->_cnt)) {
@@ -54,7 +54,7 @@ LAB_0050d66a:
       }
       iVar2 = iVar2 + 1;
       pbVar1 = pbVar1 + 1;
-    } while (iVar2 < DAT_005fba18);
+    } while (iVar2 < g_INT_005fba18);
   }
   return;
 }

@@ -6,25 +6,23 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_queuePop_FUN_004efcd0(int *out_x,int *out_cost,int *out_z)
 
 {
   int iVar1;
   
-  if (_DAT_01e4008c == _DAT_01e40090) {
+  if (g_PathfindingQueueHead == g_PathfindingQueueTail) {
     g_CurrentFilename = "..\\core\\path.cpp";
     g_CurrentLineNumber = 223;
     core_main_c_displayErrorAndQuit_FUN_004c8440("queuePop - empty queue?!");
   }
-  *out_x = *(int *)(&DAT_01e3162c + _DAT_01e4008c * 0xc);
-  *out_cost = *(int *)(&DAT_01e31630 + _DAT_01e4008c * 0xc);
-  iVar1 = _DAT_01e4008c + 1;
-  *out_z = *(int *)(&DAT_01e31634 + _DAT_01e4008c * 0xc);
+  *out_x = g_PathfindingQueue[g_PathfindingQueueHead].x;
+  *out_cost = g_PathfindingQueue[g_PathfindingQueueHead].cost;
+  iVar1 = g_PathfindingQueueHead + 1;
+  *out_z = g_PathfindingQueue[g_PathfindingQueueHead].z;
   if (4999 < iVar1) {
     iVar1 = 0;
   }
-  _DAT_01e4008c = iVar1;
+  g_PathfindingQueueHead = iVar1;
   return;
 }

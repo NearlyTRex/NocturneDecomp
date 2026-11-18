@@ -18,7 +18,7 @@
 ;   TerminatedCString s_clothList_005988ec
 ;   TerminatedCString s_isMinerZombie_005988f6
 ;   TerminatedCString s_alwaysChaseFast_00598904
-;   int INT_005c166c = 0xb
+;   int g_CZombieClassVersion = 0xb
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -54,7 +54,7 @@ section .text
     PUSH EAX                            ; 00561ace
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 00561acf
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005c166c]      ; 00561ad4 | INT_005c166c
+    MOV EDX,dword ptr [0x005c166c]      ; 00561ad4 | g_CZombieClassVersion
     ADD ESP,0x8                         ; 00561ada
     CMP EDX,0x2                         ; 00561add
     JL 0x00561b0f                       ; 00561ae0
@@ -75,7 +75,7 @@ section .text
     CALL core_actor.cpp_archiveMotionState_FUN_0040cb00 ; 00561b07
         ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040cb00(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 00561b0c
-    CMP dword ptr [0x005c166c],0x3      ; 00561b0f | INT_005c166c
+    CMP dword ptr [0x005c166c],0x3      ; 00561b0f | g_CZombieClassVersion
         ;   Label: LAB_00561b0f
     JL 0x00561b4b                       ; 00561b16
         ;   XREF to: 00561b4b (CONDITIONAL_JUMP)  ; LAB_00561b4b
@@ -84,7 +84,7 @@ section .text
     PUSH EAX                            ; 00561b23
     CALL core_actor.cpp_archivePartStatus_FUN_0040cbf0 ; 00561b24
         ;   XREF to: 0040cbf0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040cbf0(CDeformableModelInstance * model_ptr, char * property_name)
-    MOV EDI,dword ptr [0x005c166c]      ; 00561b29 | INT_005c166c
+    MOV EDI,dword ptr [0x005c166c]      ; 00561b29 | g_CZombieClassVersion
     ADD ESP,0x8                         ; 00561b2f
     CMP EDI,0x7                         ; 00561b32
     JGE 0x00561b4b                      ; 00561b35
@@ -95,7 +95,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 00561b43
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00561b48
-    CMP dword ptr [0x005c166c],0x4      ; 00561b4b | INT_005c166c
+    CMP dword ptr [0x005c166c],0x4      ; 00561b4b | g_CZombieClassVersion
         ;   Label: LAB_00561b4b
     JL 0x00561b68                       ; 00561b52
         ;   XREF to: 00561b68 (CONDITIONAL_JUMP)  ; LAB_00561b68
@@ -105,7 +105,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 00561b60
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 00561b65
-    CMP dword ptr [0x005c166c],0x5      ; 00561b68 | INT_005c166c
+    CMP dword ptr [0x005c166c],0x5      ; 00561b68 | g_CZombieClassVersion
         ;   Label: LAB_00561b68
     JL 0x00561b85                       ; 00561b6f
         ;   XREF to: 00561b85 (CONDITIONAL_JUMP)  ; LAB_00561b85
@@ -115,7 +115,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 00561b7d
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00561b82
-    MOV EDX,dword ptr [0x005c166c]      ; 00561b85 | INT_005c166c
+    MOV EDX,dword ptr [0x005c166c]      ; 00561b85 | g_CZombieClassVersion
         ;   Label: LAB_00561b85
     CMP EDX,0x6                         ; 00561b8b
     JL 0x00561ba9                       ; 00561b8e
@@ -129,7 +129,7 @@ section .text
     CALL core_actor.cpp_archiveClothList_FUN_0040cf70 ; 00561ba1
         ;   XREF to: 0040cf70 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveClothList_FUN_0040cf70(CClothList * cloth_list, char * property_name)
     ADD ESP,0x8                         ; 00561ba6
-    CMP dword ptr [0x005c166c],0x8      ; 00561ba9 | INT_005c166c
+    CMP dword ptr [0x005c166c],0x8      ; 00561ba9 | g_CZombieClassVersion
         ;   Label: LAB_00561ba9
     JL 0x00561bc6                       ; 00561bb0
         ;   XREF to: 00561bc6 (CONDITIONAL_JUMP)  ; LAB_00561bc6
@@ -139,7 +139,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00561bbe
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 00561bc3
-    CMP dword ptr [0x005c166c],0xa      ; 00561bc6 | INT_005c166c
+    CMP dword ptr [0x005c166c],0xa      ; 00561bc6 | g_CZombieClassVersion
         ;   Label: LAB_00561bc6
     JGE 0x00561bd2                      ; 00561bcd
         ;   XREF to: 00561bd2 (CONDITIONAL_JUMP)  ; LAB_00561bd2

@@ -6,26 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_staticInit_FUN_004c6070(void)
 
 {
-  _DAT_01cc90c8 = _DAT_00600d70 * _DAT_00600d74;
-  _DAT_01cc90cc = _DAT_00600d78 * _DAT_00600d7c;
-  _DAT_01cc90d0 = _DAT_00600d80 * _DAT_00600d84;
-  _DAT_01cc90d4 = 0x3f028f5c;
-  _DAT_01cc90d8 = 0xbca3d70a;
-  _DAT_01cc90dc = 0x3db851ec;
-  _DAT_01cc90e0 = 0x3e4ccccd;
-  _DAT_01cc90e4 = 0xbea147ae;
-  _DAT_01cc90e8 = 0;
-  _DAT_01cc90ec = 0x3fc90fdb;
-  _DAT_01cc90f0 = 0;
-  _DAT_01cc9100 = 0;
-  _DAT_01cc90f4 = 0x3eb33333;
-  _DAT_01cc90f8 = 0x40133333;
-  _DAT_01cc90fc = 0x408ccccd;
+  g_FLOAT_01cc90c8 = 0.1414286f * 30.0f;
+  g_FLOAT_01cc90cc = 0.4074074f * 30.0f;
+  g_FLOAT_01cc90d0 = 0.1052632f * 20.0f;
+  g_GabriellaWeaponEuler.i.x = 0x3f028f5c;
+  g_GabriellaWeaponEuler.i.y = -0x435c28f6;
+  g_GabriellaWeaponEuler.i.z = 0x3db851ec;
+  g_GabriellaWeaponAttachEuler.i.x = 0x3e4ccccd;
+  g_GabriellaWeaponAttachEuler.i.y = -0x415eb852;
+  g_GabriellaWeaponAttachEuler.f.z = 0.0;
+  g_GabriellaWeaponAttachOffset.i.x = 0x3fc90fdb;
+  g_GabriellaWeaponAttachOffset.f.y = 0.0;
+  g_FLOAT_01cc9100 = 0.0;
+  g_GabriellaWeaponAttachOffset.i.z = 0x3eb33333;
+  g_FLOAT_01cc90f8 = 2.3;
+  g_FLOAT_01cc90fc = 4.4;
   core_actor_cpp_registerActorClass_FUN_0040c160
             (&g_CGabriellaClassInfo,"CGabriella",
              core_gabriela_cpp_factoryFuncGabriella_FUN_004c6240,&g_CGabriellaClassVersion,3,

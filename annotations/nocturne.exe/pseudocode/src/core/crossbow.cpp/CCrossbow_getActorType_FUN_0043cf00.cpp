@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_crossbow_cpp_CCrossbow_getActorType_FUN_0043cf00(CCrossbow *this_ptr)
 
 {
-  return &g_CCrossbowActorType_0077bd7c;
+  return &g_CCrossbowClassInfo;
 }

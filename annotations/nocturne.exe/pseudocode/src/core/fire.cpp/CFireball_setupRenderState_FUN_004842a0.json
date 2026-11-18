@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 222,
+    "complexity_score": 223,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
-    "suspect_count": 13,
+    "pseudocode_lines": 58,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 124
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -67,103 +65,103 @@
     },
     {
       "addr": "007f7370",
-      "name": "DAT_007f7370",
-      "type": "undefined4",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
       "value": null
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c08d08",
-      "name": "DAT_01c08d08",
-      "type": "undefined4",
+      "name": "g_BillboardCameraRight",
+      "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01c08d0c",
-      "name": "DAT_01c08d0c",
+      "name": "g_BillboardCameraRight.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d10",
-      "name": "DAT_01c08d10",
+      "name": "g_BillboardCameraRight.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d14",
-      "name": "DAT_01c08d14",
-      "type": "undefined4",
+      "name": "g_BillboardCameraUp",
+      "type": "CVector3i",
       "value": null
     },
     {
       "addr": "01c08d18",
-      "name": "DAT_01c08d18",
+      "name": "g_BillboardCameraUp.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d1c",
-      "name": "DAT_01c08d1c",
+      "name": "g_BillboardCameraUp.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d24",
-      "name": "DAT_01c08d24",
+      "name": "g_BillboardPrimitive.base.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d28",
-      "name": "DAT_01c08d28",
+      "name": "g_BillboardPrimitive.base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d2c",
-      "name": "DAT_01c08d2c",
+      "name": "g_BillboardPrimitive.base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d30",
-      "name": "DAT_01c08d30",
+      "name": "g_BillboardPrimitive.base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d34",
-      "name": "DAT_01c08d34",
+      "name": "g_BillboardPrimitive.base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d38",
-      "name": "DAT_01c08d38",
+      "name": "g_BillboardPrimitive.vertices[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d3c",
-      "name": "DAT_01c08d3c",
+      "name": "g_BillboardPrimitive.vertices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d40",
-      "name": "DAT_01c08d40",
+      "name": "g_BillboardPrimitive.vertices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c08d44",
-      "name": "DAT_01c08d44",
+      "name": "g_BillboardPrimitive.vertices[3]",
       "type": "undefined4",
       "value": null
     }
@@ -316,14 +314,6 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 14,
       "match": "afStackY_1000",
@@ -332,24 +322,24 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01c08d0c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c08d0c + (uint)bVar4 * -8) =",
-      "type": "undefined_data"
+      "description": "Direct stack address reference",
+      "line": 39,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)&stack0xffffffc0;",
+      "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01c08d10",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c08d10 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(CMatrix3x3f *)((int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x3f *)((int)pCVar2 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 45,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffffc0;",
@@ -357,26 +347,26 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffffc0",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)&stack0xffffffc0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 46,
       "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xffffff98;",
+      "text": "puVar5 = (uint *)&stack0xffffff98;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&g_BillboardCameraRight` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&g_BillboardCameraRight",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 34,
       "match": "(int)&local_18",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -384,7 +374,15 @@
       "line": 36,
       "match": "(int)&local_18",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x3f *)((int)pCVar2 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -405,10 +403,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 34,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -416,7 +422,7 @@
       "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     }
   ]

@@ -7,13 +7,13 @@
 ; CCrossbow *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonActorType g_CCrossbowActorType_0077bd7c
+;   CDemonActorType g_CCrossbowClassInfo
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x77bd7c                    ; 0043cf00 | g_CCrossbowActorType_0077bd7c
+    MOV EAX,0x77bd7c                    ; 0043cf00 | g_CCrossbowClassInfo
         ;   Label: core_crossbow.cpp_CCrossbow_getActorType_FUN_0043cf00
     RET                                 ; 0043cf05
 

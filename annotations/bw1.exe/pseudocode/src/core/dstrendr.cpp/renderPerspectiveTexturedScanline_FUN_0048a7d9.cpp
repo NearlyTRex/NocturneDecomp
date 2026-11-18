@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_0048a7d9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
@@ -30,30 +28,31 @@ void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_0048a
   uVar1 = uVar1 >> 0x10;
   iVar2 = (uVar4 >> 0x10) - uVar1;
   if (iVar2 != 0 && uVar1 <= uVar4 >> 0x10) {
-    DAT_00614540 = *(int *)(&DAT_01c4354c + scanline_y * 4) + uVar1 * 4;
-    DAT_00614544 = iVar2 * 4;
+    g_PerspectiveScanlineColorPtr = g_ScreenBufferArray[scanline_y] + uVar1 * 4;
+    g_PerspectiveScanlinePixelCount = iVar2 * 4;
     uVar3 = (pSVar5->base).u_current;
-    _DAT_00614534 =
+    g_SoftwareDeltaTextureU =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).u_current - uVar3) *
-               (longlong)*(int *)(&DAT_01c4f034 + DAT_00614544)) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar4 = (pSVar5->base).v_current;
-    _DAT_00614538 =
+    g_SoftwareDeltaTextureV =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).v_current - uVar4) *
-               (longlong)*(int *)(&DAT_01c4f034 + DAT_00614544)) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar1 = 0;
-    DAT_00614518 = uVar3;
-    DAT_0061451c = uVar4;
+    g_PerspectiveNextU = uVar3;
+    g_PerspectiveNextV = uVar4;
     while( true ) {
-      *(uint *)(DAT_00614540 + uVar1) =
+      *(uint *)(g_PerspectiveScanlineColorPtr + uVar1) =
            *(uint *)
-            (((uVar3 >> _DAT_00623eb8 & (uint)_DAT_00623ef8) +
-             (uVar4 >> _DAT_00623ed8 & (uint)_DAT_00623f18)) * 4 + _DAT_01c50930);
+            (g_CurrentTextureData +
+            ((uVar3 >> g_TextureShift1 & (uint)g_TextureMask1) +
+            (uVar4 >> g_TextureShift2 & (uint)g_TextureMask2)) * 4);
       uVar1 = uVar1 + 4;
-      if (DAT_00614544 <= uVar1) break;
-      uVar3 = uVar3 + _DAT_00614534;
-      uVar4 = uVar4 + _DAT_00614538;
+      if ((uint)g_PerspectiveScanlinePixelCount <= uVar1) break;
+      uVar3 = uVar3 + g_SoftwareDeltaTextureU;
+      uVar4 = uVar4 + g_SoftwareDeltaTextureV;
     }
   }
   return;

@@ -26,12 +26,12 @@ CGore g_CGoreInstance = {};
 CPickList g_CPickList = {};
 
 // CVector3f
-CVector3f CVector3f_02d832a8 = {};
-CVector3f CVector3f_02d832b4 = {};
+CVector3f g_GhoulOffsetMinusX = {};
+CVector3f g_GhoulOffsetPlusX = {};
 
 // CVector3i
 CVector3i g_ParticleCameraRotation = {};
-CVector3i CVector3i_02d8339c = {};
+CVector3i g_BloodParticleViewDirection = {};
 
 // SMRGLPrimitiveQuadIndex
 SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive = {};
@@ -53,7 +53,7 @@ float g_OverlayDisplayTimer = {};
 float g_IrisFadeRadius = {};
 
 // int
-int INT_02d82568 = {};
+int g_ScreenshotIndex = {};
 int g_InputResetFlag = {};
 int g_StoredCameraValue = {};
 int g_ModalDialogActive = {};

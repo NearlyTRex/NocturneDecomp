@@ -24,8 +24,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_007658e4
-;   undefined4 DAT_01b4d738
+;   CKeyFramedModelInstance g_StakeModelInstance
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
@@ -109,18 +109,18 @@ section .text
     LEA EAX,[ESP + 0x64]                ; 0042665b
     PUSH EAX                            ; 0042665f
     MOV ESI,dword ptr [0x005ae704]      ; 00426660 | g_CDemonRenderer_PTR_005ae704
-    PUSH ESI                            ; 00426666 | DAT_01b4d738
+    PUSH ESI                            ; 00426666 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00426667
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 0042666c
     PUSH -0x1                           ; 0042666f
     PUSH 0x0                            ; 00426671
-    PUSH 0x7658e4                       ; 00426673 | DAT_007658e4
+    PUSH 0x7658e4                       ; 00426673 | g_StakeModelInstance
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 00426678
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0042667d
     MOV EDI,dword ptr [0x005ae704]      ; 00426680 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDI                            ; 00426686 | DAT_01b4d738
+    PUSH EDI                            ; 00426686 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00426687
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0042668c

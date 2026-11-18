@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 286,
+    "complexity_score": 270,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 176,
-    "suspect_count": 9,
+    "pseudocode_lines": 175,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 537
+    "total_lines": 536
   },
   "cross_references": [],
   "function": {
@@ -143,8 +142,8 @@
     },
     {
       "addr": "01bd1d84",
-      "name": "DAT_01bd1d84",
-      "type": "undefined4",
+      "name": "g_AnimationTimerValue",
+      "type": "int",
       "value": null
     },
     {
@@ -340,16 +339,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Raw hex address 0x4c3e61 assigned to bare local `uVar35`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar35` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 100,
+      "line": 98,
       "match": "0x4c3e61",
       "severity": "moderate",
       "text": "uVar35 = 0x4c3e61;",
@@ -357,7 +348,7 @@
     },
     {
       "description": "Raw hex address 0x4c3e6c assigned to bare local `uVar34`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar34` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 105,
+      "line": 103,
       "match": "0x4c3e6c",
       "severity": "moderate",
       "text": "uVar34 = 0x4c3e6c;",
@@ -365,7 +356,7 @@
     },
     {
       "description": "Raw hex address 0x4c3e73 assigned to bare local `uVar33`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar33` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 107,
+      "line": 105,
       "match": "0x4c3e73",
       "severity": "moderate",
       "text": "uVar33 = 0x4c3e73;",
@@ -373,7 +364,7 @@
     },
     {
       "description": "Raw hex address 0x4c3e7a assigned to bare local `uVar32`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar32` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 109,
+      "line": 107,
       "match": "0x4c3e7a",
       "severity": "moderate",
       "text": "uVar32 = 0x4c3e7a;",
@@ -381,7 +372,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 175,
+      "line": 173,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +",
@@ -389,7 +380,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar27` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar27->owner`). Replace `pSVar27->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 137,
+      "line": 135,
       "match": "pSVar27 = (T *)&pSVar27->FIELD",
       "severity": "moderate",
       "text": "pSVar27 = (SMRGLKeyframe *)&pSVar27->vertex_header;",
@@ -397,7 +388,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar25` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar25->owner`). Replace `pSVar25->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 138,
+      "line": 136,
       "match": "pSVar25 = (T *)&pSVar25->FIELD",
       "severity": "moderate",
       "text": "pSVar25 = (SMRGLKeyframe *)&pSVar25->vertex_header;",
@@ -405,7 +396,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar26` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar26->owner`). Replace `pSVar26->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 140,
+      "line": 138,
       "match": "pSVar26 = (T *)&pSVar26->FIELD",
       "severity": "moderate",
       "text": "pSVar26 = (SMRGLKeyframe *)&pSVar26->vertex_header;",

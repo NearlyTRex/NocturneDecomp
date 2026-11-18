@@ -61,6 +61,6 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int
   this_ptr->vertex_buffer_ptr[3].b = iVar4;
   this_ptr->vertex_buffer_ptr[3].a = iVar1;
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
-            (this_ptr,(SMRGLPrimitivePoly *)&SMRGLPrimitiveQuad_030d4fd0);
+            (this_ptr,(SMRGLPrimitivePoly *)&g_PathMapQuad);
   return;
 }

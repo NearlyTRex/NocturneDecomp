@@ -1,0 +1,148 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 23,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 85
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004b9850",
+    "address_range": [
+      [
+        "004b9850",
+        "004b98e4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_rampControlAxis_FUN_004b9850",
+    "signature": "void __cdecl core_game_cpp_rampControlAxis_FUN_004b9850(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.423076923076923,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 6,
+      "CBRANCH": 6,
+      "COPY": 135,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 8,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 20,
+      "INT_AND": 32,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LEFT": 16,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 3,
+      "INT_ZEXT": 16,
+      "LOAD": 24,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 5
+    },
+    "pcode_op_count": 386
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d0dd0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dc2d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049ed20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "negative_key",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "positive_key",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "axis_value",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "ramp_time",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "max_value",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

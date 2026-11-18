@@ -25,9 +25,9 @@ CBoxActor * __cdecl CBoxActor::ctor(CBoxActor *this_ptr);
 // Address: 00421de0
 void __cdecl CBoxActor::setup(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00421e80
+// Original: core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_00421e80
 // Address: 00421e80
-void FUN_00421e80(int param_1);
+void __cdecl CBoxActor::setupPhysicsBox(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_process_FUN_00422000
 // Address: 00422000
@@ -43,7 +43,7 @@ int __cdecl CBoxActor::renderTransparent(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00422700
 // Address: 00422700
-CBoundingBox3D * __cdecl CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_boxactor.cpp_CBoxActor_archive_FUN_00422760
 // Address: 00422760
@@ -85,9 +85,9 @@ EGroundType __cdecl CBoxActor::getGroundType(CBoxActor *this_ptr);
 // Address: 00422cf0
 void __cdecl CBoxActor::onPickup(CBoxActor *this_ptr,CDemonActor *owner);
 
-// Original: core_boxactor.cpp_FUN_00422d10
+// Original: core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422d10
 // Address: 00422d10
-void FUN_00422d10(int param_1);
+void __cdecl CBoxActor::constrainToExtents(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422e00
 // Address: 00422e00
@@ -121,9 +121,9 @@ void __cdecl CLightActor::process(CLightActor *this_ptr,float delta_time);
 // Address: 004231e0
 void __cdecl CLightActor::archive(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_004232c0
+// Original: core_boxactor.cpp_CLightActor_setupLightModel_FUN_004232c0
 // Address: 004232c0
-void __cdecl FUN_004232c0(CLightActor *this_ptr);
+void __cdecl CLightActor::setupLightModel(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_dtor_FUN_00423720
 // Address: 00423720

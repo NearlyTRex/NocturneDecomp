@@ -81,7 +81,7 @@
 ;   double DOUBLE_0058782c = 0.523598775583333
 ;   float FLOAT_0059fa6c = 20
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -469,7 +469,7 @@ section .text
     PUSH EAX                            ; 004c4d7c
     LEA EAX,[EBP + 0x16]                ; 004c4d7d
     PUSH EAX                            ; 004c4d80
-    MOV EDX,dword ptr [0x005b80f0]      ; 004c4d81 | g_CFireEffect_PTR_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 004c4d81 | g_CFireEffectPtr
     PUSH EDX                            ; 004c4d87
     CALL core_fire.cpp_CFireEffect_createFireball_FUN_0048b270 ; 004c4d88
         ;   XREF to: 0048b270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int lighting_active, ...)

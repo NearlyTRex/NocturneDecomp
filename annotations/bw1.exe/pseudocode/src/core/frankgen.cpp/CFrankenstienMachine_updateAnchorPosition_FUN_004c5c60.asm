@@ -26,20 +26,20 @@
 ; Referenced Globals:
 ;   void* switchdataD_004c5c30 = 004c5c81
 ;   TerminatedCString s_core_frankgen_cpp_005e0d4a
-;   undefined4 DAT_005e0d5f
-;   undefined4 DAT_00600c08
-;   undefined4 DAT_00600c20
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   TerminatedCString s_WTF_005e0d5f
+;   float g_FLOAT_00600c08 = 0.00390625
+;   float g_FLOAT_00600c20 = 2300
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
-;   core_actor.cpp_FUN_00408b40
 ;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_004672b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004c5f10
 ;   core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004c5e80
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;
 ; *****************************************************************************
@@ -59,7 +59,7 @@ section .text
         ;   XREF to: 004c5dca (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x4c5c30]  ; 004c5c7a | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    PUSH dword ptr [0x00600c20]         ; 004c5c81 | DAT_00600c20
+    PUSH dword ptr [0x00600c20]         ; 004c5c81 | g_FLOAT_00600c20
         ;   Label: caseD_0
     PUSH 0x0                            ; 004c5c87
     PUSH EBP                            ; 004c5c89
@@ -75,7 +75,7 @@ section .text
     FLD float ptr [EBP + 0x180]         ; 004c5c98
     ADD ESP,0x4                         ; 004c5c9e
     CALL crt_math.c_round_FUN_005c03a0  ; 004c5ca1
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x30]        ; 004c5ca6
     MOV EBX,dword ptr [ESP + 0x30]      ; 004c5caa
     MOV EDX,dword ptr [EBP + 0x488]     ; 004c5cae
@@ -100,21 +100,21 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c5ce8
     MOVSD ES:EDI,ESI                    ; 004c5ce9
     FILD dword ptr [EAX]                ; 004c5cea
-    FMUL float ptr [0x00600c08]         ; 004c5cec | DAT_00600c08
+    FMUL float ptr [0x00600c08]         ; 004c5cec | g_FLOAT_00600c08
     FSTP float ptr [EBX]                ; 004c5cf2
     FILD dword ptr [EAX + 0x4]          ; 004c5cf4
-    FMUL float ptr [0x00600c08]         ; 004c5cf7 | DAT_00600c08
+    FMUL float ptr [0x00600c08]         ; 004c5cf7 | g_FLOAT_00600c08
     FSTP float ptr [EBX + 0x4]          ; 004c5cfd
     FILD dword ptr [EAX + 0x8]          ; 004c5d00
-    FMUL float ptr [0x00600c08]         ; 004c5d03 | DAT_00600c08
+    FMUL float ptr [0x00600c08]         ; 004c5d03 | g_FLOAT_00600c08
     FSTP float ptr [EBX + 0x8]          ; 004c5d09
     LEA EAX,[ESP + 0x18]                ; 004c5d0c
     PUSH EAX                            ; 004c5d10
     PUSH EBP                            ; 004c5d11
     LEA ESI,[ESP + 0x8]                 ; 004c5d12
     LEA EDI,[ESP + 0x2c]                ; 004c5d16
-    CALL core_actor.cpp_FUN_00408b40    ; 004c5d1a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004c5d1a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x8]                 ; 004c5d1f
     LEA EAX,[ESP + 0x2c]                ; 004c5d23
     ADD ESP,0x8                         ; 004c5d27
@@ -185,11 +185,11 @@ section .text
     MOV EDX,0x5e0d4a                    ; 004c5dca | = "..\\core\\frankgen.cpp"
         ;   Label: default
     MOV ECX,0x1bb                       ; 004c5dcf
-    PUSH 0x5e0d5f                       ; 004c5dd4 | DAT_005e0d5f
-    MOV dword ptr [0x01d1d400],EDX      ; 004c5dd9 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004c5ddf | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004c5de5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    PUSH 0x5e0d5f                       ; 004c5dd4 | = "WTF!"
+    MOV dword ptr [0x01d1d400],EDX      ; 004c5dd9 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004c5ddf | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c5de5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004c5dea
     JMP 0x004c5c92                      ; 004c5ded
         ;   XREF to: 004c5c92 (UNCONDITIONAL_JUMP)  ; LAB_004c5c92

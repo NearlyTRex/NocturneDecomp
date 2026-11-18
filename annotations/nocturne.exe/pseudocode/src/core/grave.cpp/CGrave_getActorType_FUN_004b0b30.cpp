@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_grave_cpp_CGrave_getActorType_FUN_004b0b30(CGrave *this_ptr)
 
 {
-  return &g_CGraveActorType_01cadf44;
+  return &g_CGraveClassInfo;
 }

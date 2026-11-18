@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 113,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 7,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 118
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -39,56 +36,56 @@
     {
       "addr": "005632a3",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005632a3"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_005632a3"
     }
   ],
   "globals": [
     {
       "addr": "005fba40",
-      "name": "DAT_005fba40",
-      "type": "undefined4",
-      "value": null
+      "name": "g_VertexProcessingEnabled",
+      "type": "uint",
+      "value": "0x1"
     },
     {
       "addr": "0060b014",
-      "name": "DAT_0060b014",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_0060b014",
+      "type": "SRenderVertex[20000]",
       "value": null
     },
     {
       "addr": "0060b027",
-      "name": "DAT_0060b024+3",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.screen_x+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b040",
-      "name": "DAT_0060b040",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007303e0",
-      "name": "DAT_007303e0",
-      "type": "undefined4",
+      "name": "g_ProcessedVertexOffset",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "007303e4",
-      "name": "DAT_007303e4",
-      "type": "undefined4",
+      "name": "g_ProcessedVertexBackupOffset",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "00730414",
-      "name": "DAT_00730414",
-      "type": "undefined4",
+      "name": "g_CurrentVertexData",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c6e24c",
-      "name": "DAT_01c6e24c",
-      "type": "undefined4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "int",
       "value": null
     }
   ],
@@ -186,64 +183,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005fba40",
-      "severity": "mild",
-      "text": "DAT_005fba40 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0060b014",
-      "severity": "mild",
-      "text": "output = (SProjectedVertex *)(&DAT_0060b014 + ((mrgl->base).count + DAT_007303e0) * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_007303e0",
-      "severity": "mild",
-      "text": "output = (SProjectedVertex *)(&DAT_0060b014 + ((mrgl->base).count + DAT_007303e0) * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_007303e0",
-      "severity": "mild",
-      "text": "if (DAT_007303e0 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_007303e0",
-      "severity": "mild",
-      "text": "_DAT_007303e4 = DAT_007303e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005fba40",
-      "severity": "mild",
-      "text": "DAT_005fba40 = 0;",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

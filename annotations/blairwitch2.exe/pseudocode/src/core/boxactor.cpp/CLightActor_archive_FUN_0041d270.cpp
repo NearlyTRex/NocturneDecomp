@@ -18,7 +18,7 @@ void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_0041d270(CLightActor *thi
     core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->blight_pos,"bLightPos");
     core_actor_cpp_archiveOrientation_FUN_0040b550
               (&(this_ptr->light_orient).orient,"lightOrient");
-    if (DAT_007bc038 == 1) {
+    if (g_ActorReadingMode == 1) {
       core_actor_cpp_archiveFloat_FUN_0040b8e0(&fStack_c,"lightFov");
       (this_ptr->light).base.base.focal_length = fStack_c;
     }

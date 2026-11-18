@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dynamite_cpp_CDynamite_process_FUN_004926d0(CDynamite *this_ptr,float delta_time)
 
 {
@@ -42,7 +40,7 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_004926d0(CDynamite *this_pt
   if (0.0 <= this_ptr_01->fuse_timer) {
     fVar1 = this_ptr_01->fuse_timer - delta_time;
     this_ptr_01->fuse_timer = fVar1;
-    this_ptr_00 = 0x02C82A60;
+    this_ptr_00 = g_CSound_PTR_006236b8;
     dVar6 = (double)fVar1;
     if (dVar6 < 0.0) {
       this_ptr_01->fuse_timer = 0.0;
@@ -51,7 +49,7 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_004926d0(CDynamite *this_pt
     }
     else {
       iVar2 = core_actor_cpp_randomChance_FUN_0040cd00
-                        ((delta_time * (float)_DAT_005dbc5c * fVar1) / _DAT_005ff6bc);
+                        ((delta_time * (float)5 * fVar1) / 3.5f);
       if (iVar2 != 0) {
         (*((this_ptr_01->base).base.vtable._ub)->getBoundingBox)
                   ((CDemonActor *)this_ptr_01,SUB84(__BITCAST_UINT64(dVar6),0));
@@ -68,10 +66,10 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_004926d0(CDynamite *this_pt
         afStack_28[(uint)bVar5 * -2 + -1] = afStack_18[(uint)bVar5 * -2 + 1];
         afStack_28[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
              *(float *)(&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-        fStack_48 = CStack_34.y * _DAT_005dbc64;
-        afStack_44[0] = CStack_34.z * _DAT_005dbc64;
-        afStack_44[1] = afStack_28[0] * _DAT_005dbc64;
-        afStack_44[2] = CStack_34.y * _DAT_005dbc64;
+        fStack_48 = CStack_34.y * 0.5f;
+        afStack_44[0] = CStack_34.z * 0.5f;
+        afStack_44[1] = afStack_28[0] * 0.5f;
+        afStack_44[2] = CStack_34.y * 0.5f;
         afStack_18[(uint)bVar5 * -2 + -8] = afStack_44[(uint)bVar5 * -2];
         *(float *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
              afStack_28[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -6];
@@ -85,7 +83,8 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_004926d0(CDynamite *this_pt
           puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
         }
         CStack_34.z = fStack_5c;
-        core_actor_cpp_FUN_00408b40(this_ptr_01,&CStack_34);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+                  ((CDemonActor *)this_ptr_01,&CStack_34,(CVector3f *)&stack0xfffffffc);
         afStack_18[(uint)bVar5 * -2] = *(float *)(&stack0x00000000 + (uint)bVar5 * -8);
         afStack_18[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
              (float)(&this_ptr)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
@@ -94,7 +93,7 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_004926d0(CDynamite *this_pt
           CStack_34.z = afStack_18[1];
         }
         core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                  (0x01C57074,&CStack_34,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
+                  (g_CFireEffectPtr,&CStack_34,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
         return;
       }
     }

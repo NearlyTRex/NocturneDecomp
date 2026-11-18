@@ -11,8 +11,8 @@
 ;   core_darkwolf.cpp_factoryFuncDarkwolf_FUN_00598750 at 00598763
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e79f8
-;   undefined4 DAT_005e79fc
+;   float g_FLOAT_005e79f8 = 50
+;   float g_FLOAT_005e79fc = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -42,9 +42,9 @@ section .text
     MOV dword ptr [EBX + 0x154],0x5e7a04 ; 005987ae
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 005987b8
         ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x005e79f8]          ; 005987bd | DAT_005e79f8
+    FLD float ptr [0x005e79f8]          ; 005987bd | g_FLOAT_005e79f8
     MOV dword ptr [EBX + 0x326c],0x3f400000 ; 005987c3
-    FLD float ptr [0x005e79fc]          ; 005987cd | DAT_005e79fc
+    FLD float ptr [0x005e79fc]          ; 005987cd | g_FLOAT_005e79fc
     MOV dword ptr [EBX + 0x3270],0x3fc00000 ; 005987d3
     ADD ESP,0x8                         ; 005987dd
     MOV dword ptr [EBX + 0xd05c],0x0    ; 005987e0

@@ -11,22 +11,21 @@ CChemPuzzle * __cdecl core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00413240(CChemPuzzl
 {
   SButtonStruct *pSVar1;
   CAlphaBitmap *pCVar2;
-  CChemPuzzle *pCVar3;
-  void *ptr;
+  CChemPuzzle *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CChemPuzzleTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CChemPuzzleTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable = &g_CChemPuzzleVTable;
+  (this_ptr->base).vtable = g_CChemPuzzleVTable;
   pSVar1 = core_bmppuzzl_cpp_SButtonStruct_arrdtor50Chem_FUN_004144a0(this_ptr->buttons,0);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d300((CAlphaBitmap *)&pSVar1[-3].x,0);
-  pCVar3 = (CChemPuzzle *)
-           core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00411980((CPuzzle *)&pCVar2[-1].height,1);
+  ptr = (CChemPuzzle *)core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00411980((CPuzzle *)&pCVar2[-1].height,1);
   if ((flags & 2) == 0) {
-    return pCVar3;
+    return ptr;
   }
-  FUN_005a30c4(pCVar3);
-  return pCVar3;
+  debugFreeChecked(ptr);
+  return ptr;
 }

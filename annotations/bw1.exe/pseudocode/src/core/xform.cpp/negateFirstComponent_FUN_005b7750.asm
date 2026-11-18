@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_negateFirstComponent_FUN_005b7750(float *param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_005b7750(CQuaternion4f *vector_in,CQuaternion4f *vector_out)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   vector_in
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -10,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
-;   core_doc.cpp_FUN_0046f200 at 0046f48c
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200 at 0046f48c
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 at 0056877b
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_00568860 at 00568c5e
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620 at 00567b5d

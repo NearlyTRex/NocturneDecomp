@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   frame_index
 ;
 ; XREF[3]:
+;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0 at 00461942
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_00460fa0 at 00460fbc
-;   core_dmodel.cpp_FUN_004618a0 at 00461942
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0 at 004f9e1a
 ;
 ; *****************************************************************************

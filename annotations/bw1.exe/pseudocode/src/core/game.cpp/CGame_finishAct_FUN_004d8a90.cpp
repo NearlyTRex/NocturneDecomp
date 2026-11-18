@@ -6,36 +6,32 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_finishAct_FUN_004d8a90(CGame *this_ptr)
 
 {
-  char cVar1;
+  float fVar1;
+  char cVar2;
   CBitFont *this_ptr_00;
-  char *pcVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
-  uint uVar6;
+  char *pcVar3;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
+  uint uVar7;
   int y;
-  char *pcVar7;
-  byte bVar8;
-  float10 fVar9;
-  float10 fVar10;
+  char *pcVar8;
+  byte bVar9;
+  double dVar10;
   char *pcVar11;
-  char local_53c [1024];
-  char local_13c [256];
-  CAlphaBitmap local_3c;
+  char acStack_14c [256];
+  byte auStack_4c [36];
+  int iStack_28;
   int local_20;
   int local_1c;
-  int local_18;
   int local_14;
   int local_10;
   int local_c;
-  int local_8;
   
-  bVar8 = 0;
+  bVar9 = 0;
   if (this_ptr->act_completion_state == 2) {
     engine_2d_c_clearInputAndWait_FUN_004032b0();
     core_game_cpp_CGame_rollCredits_FUN_004d8e50(this_ptr);
@@ -43,186 +39,186 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004d8a90(CGame *this_ptr)
   }
   this_ptr->total_game_time = this_ptr->total_play_time + this_ptr->total_game_time;
   this_ptr->total_kill_count = this_ptr->total_kill_count + this_ptr->damageable_enemy_count;
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0(&local_3c);
-  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&local_3c,"stats",0x280,0x1e0);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0((CAlphaBitmap *)(auStack_4c + 0x10));
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
+            ((CAlphaBitmap *)(auStack_4c + 0x10),"stats",0x280,0x1e0);
   engine_special_cpp_clearScreen_FUN_0057dc40();
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&local_3c,0,0,0xffff);
-  fVar9 = (float10)this_ptr->total_game_time;
-  fVar10 = fVar9 * (float10)_DAT_005e355c;
-  round();
-  local_1c = (int)ROUND(fVar10);
-  fVar9 = fVar9 - (float10)local_1c * (float10)_DAT_005e3564;
-  fVar10 = fVar9 * (float10)_DAT_005e356c;
-  local_8 = local_1c;
-  round();
-  local_20 = (int)ROUND(fVar10);
-  fVar9 = fVar9 - (float10)local_20 * (float10)_DAT_005e3574;
-  this_ptr->total_game_time = (float)fVar9;
-  local_8 = local_20;
-  round();
-  local_14 = (int)ROUND(fVar9);
-  fVar10 = (float10)this_ptr->total_game_time - (float10)local_14;
-  this_ptr->total_game_time = (float)fVar10;
-  fVar10 = fVar10 * (float10)_DAT_005e357c;
-  pcVar11 = "Mission time";
-  local_8 = local_14;
-  round();
-  local_18 = (int)ROUND(fVar10);
-  pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090(pcVar11);
-  pcVar11 = local_53c;
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0
+            ((CAlphaBitmap *)(auStack_4c + 0x10),0,0,0xffff);
+  fVar1 = this_ptr->total_game_time;
+  dVar10 = round((double)(fVar1 * (float)0.00027777777777777799));
+  local_20 = (int)ROUND(dVar10);
+  fVar1 = fVar1 - (float)local_20 * (float)3600;
+  local_c = local_20;
+  dVar10 = round((double)(fVar1 * (float)0.016666666666666701));
+  iStack_28 = (int)ROUND(dVar10);
+  fVar1 = fVar1 - (float)iStack_28 * (float)60;
+  this_ptr->total_game_time = fVar1;
+  local_10 = iStack_28;
+  dVar10 = round((double)fVar1);
+  local_20 = (int)ROUND(dVar10);
+  fVar1 = this_ptr->total_game_time - (float)local_20;
+  this_ptr->total_game_time = fVar1;
+  pcVar11 = (char *)0x4d8bcc;
+  local_14 = local_20;
+  dVar10 = round((double)(fVar1 * (float)100));
+  iStack_28 = (int)ROUND(dVar10);
+  pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090(pcVar11);
+  pcVar11 = &stack0xfffffab4;
   do {
-    cVar1 = *pcVar2;
-    *pcVar11 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar2[1];
-    pcVar2 = pcVar2 + 2;
-    pcVar11[1] = cVar1;
+    cVar2 = *pcVar3;
+    *pcVar11 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar11[1] = cVar2;
     pcVar11 = pcVar11 + 2;
-  } while (cVar1 != '\0');
-  pcVar2 = &DAT_005e3527;
-  iVar3 = -1;
-  pcVar11 = local_53c;
+  } while (cVar2 != '\0');
+  pcVar3 = "\n\n";
+  iVar4 = -1;
+  pcVar11 = &stack0xfffffab4;
   do {
-    pcVar7 = pcVar11;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar7 = pcVar11 + (uint)bVar8 * -2 + 1;
-    cVar1 = *pcVar11;
-    pcVar11 = pcVar7;
-  } while (cVar1 != '\0');
-  pcVar7 = pcVar7 + -1;
+    pcVar8 = pcVar11;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    pcVar8 = pcVar11 + (uint)bVar9 * -2 + 1;
+    cVar2 = *pcVar11;
+    pcVar11 = pcVar8;
+  } while (cVar2 != '\0');
+  pcVar8 = pcVar8 + -1;
   do {
-    cVar1 = *pcVar2;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar2[1];
-    pcVar2 = pcVar2 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
-  uVar6 = 0;
-  _sprintf(local_13c,"%2d:%2d:%2d.%2d\n\n");
+    cVar2 = *pcVar3;
+    *pcVar8 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar8[1] = cVar2;
+    pcVar8 = pcVar8 + 2;
+  } while (cVar2 != '\0');
+  uVar7 = 0;
+  _sprintf(acStack_14c,"%2d:%2d:%2d.%2d\n\n");
   do {
-    uVar4 = 0xffffffff;
-    pcVar11 = local_13c;
+    uVar5 = 0xffffffff;
+    pcVar11 = acStack_14c;
     do {
-      if (uVar4 == 0) break;
-      uVar4 = uVar4 - 1;
-      cVar1 = *pcVar11;
-      pcVar11 = pcVar11 + (uint)bVar8 * -2 + 1;
-    } while (cVar1 != '\0');
-    if (~uVar4 - 1 <= uVar6) break;
-    if (local_13c[uVar6] == ' ') {
-      local_13c[uVar6] = '0';
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      cVar2 = *pcVar11;
+      pcVar11 = pcVar11 + (uint)bVar9 * -2 + 1;
+    } while (cVar2 != '\0');
+    if (~uVar5 - 1 <= uVar7) break;
+    if (acStack_14c[uVar7] == ' ') {
+      acStack_14c[uVar7] = '0';
     }
-    uVar6 = uVar6 + 1;
+    uVar7 = uVar7 + 1;
   } while( true );
-  pcVar11 = local_13c;
-  iVar3 = -1;
-  pcVar2 = local_53c;
+  pcVar11 = acStack_14c;
+  iVar4 = -1;
+  pcVar3 = &stack0xfffffab4;
   do {
-    pcVar7 = pcVar2;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar7 = pcVar2 + (uint)bVar8 * -2 + 1;
-    cVar1 = *pcVar2;
-    pcVar2 = pcVar7;
-  } while (cVar1 != '\0');
-  pcVar7 = pcVar7 + -1;
+    pcVar8 = pcVar3;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    pcVar8 = pcVar3 + (uint)bVar9 * -2 + 1;
+    cVar2 = *pcVar3;
+    pcVar3 = pcVar8;
+  } while (cVar2 != '\0');
+  pcVar8 = pcVar8 + -1;
   do {
-    cVar1 = *pcVar11;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar11[1];
+    cVar2 = *pcVar11;
+    *pcVar8 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar11[1];
     pcVar11 = pcVar11 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
-  pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Total body count");
-  iVar3 = -1;
-  pcVar11 = local_53c;
+    pcVar8[1] = cVar2;
+    pcVar8 = pcVar8 + 2;
+  } while (cVar2 != '\0');
+  pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Total body count");
+  iVar4 = -1;
+  pcVar11 = &stack0xfffffab4;
   do {
-    pcVar7 = pcVar11;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar7 = pcVar11 + (uint)bVar8 * -2 + 1;
-    cVar1 = *pcVar11;
-    pcVar11 = pcVar7;
-  } while (cVar1 != '\0');
-  pcVar7 = pcVar7 + -1;
+    pcVar8 = pcVar11;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    pcVar8 = pcVar11 + (uint)bVar9 * -2 + 1;
+    cVar2 = *pcVar11;
+    pcVar11 = pcVar8;
+  } while (cVar2 != '\0');
+  pcVar8 = pcVar8 + -1;
   do {
-    cVar1 = *pcVar2;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar2[1];
-    pcVar2 = pcVar2 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
-  pcVar2 = &DAT_005e354d;
-  iVar3 = -1;
-  pcVar11 = local_53c;
+    cVar2 = *pcVar3;
+    *pcVar8 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar8[1] = cVar2;
+    pcVar8 = pcVar8 + 2;
+  } while (cVar2 != '\0');
+  pcVar3 = "\n\n";
+  iVar4 = -1;
+  pcVar11 = &stack0xfffffab4;
   do {
-    pcVar7 = pcVar11;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar7 = pcVar11 + (uint)bVar8 * -2 + 1;
-    cVar1 = *pcVar11;
-    pcVar11 = pcVar7;
-  } while (cVar1 != '\0');
-  pcVar7 = pcVar7 + -1;
+    pcVar8 = pcVar11;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    pcVar8 = pcVar11 + (uint)bVar9 * -2 + 1;
+    cVar2 = *pcVar11;
+    pcVar11 = pcVar8;
+  } while (cVar2 != '\0');
+  pcVar8 = pcVar8 + -1;
   do {
-    cVar1 = *pcVar2;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar2[1];
-    pcVar2 = pcVar2 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
-  _sprintf(local_13c,&DAT_005e3550);
-  this_ptr_00 = _DAT_0152d244;
-  pcVar11 = local_13c;
-  iVar3 = -1;
-  pcVar2 = local_53c;
+    cVar2 = *pcVar3;
+    *pcVar8 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar8[1] = cVar2;
+    pcVar8 = pcVar8 + 2;
+  } while (cVar2 != '\0');
+  _sprintf(acStack_14c,"%d\n\n");
+  this_ptr_00 = g_ThemeFont;
+  pcVar11 = acStack_14c;
+  iVar4 = -1;
+  pcVar3 = &stack0xfffffab4;
   do {
-    pcVar7 = pcVar2;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar7 = pcVar2 + (uint)bVar8 * -2 + 1;
-    cVar1 = *pcVar2;
-    pcVar2 = pcVar7;
-  } while (cVar1 != '\0');
-  pcVar7 = pcVar7 + -1;
+    pcVar8 = pcVar3;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    pcVar8 = pcVar3 + (uint)bVar9 * -2 + 1;
+    cVar2 = *pcVar3;
+    pcVar3 = pcVar8;
+  } while (cVar2 != '\0');
+  pcVar8 = pcVar8 + -1;
   do {
-    cVar1 = *pcVar11;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar11[1];
+    cVar2 = *pcVar11;
+    *pcVar8 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar11[1];
     pcVar11 = pcVar11 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
+    pcVar8[1] = cVar2;
+    pcVar8 = pcVar8 + 2;
+  } while (cVar2 != '\0');
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
-  iVar3 = engine_font_cpp_FUN_004c4260(this_ptr_00,local_53c,0x1ccafb0,0x14,0x100,0xc0);
-  iVar5 = 0;
-  local_c = iVar3;
-  local_10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
+  iVar4 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
+                    (this_ptr_00,&stack0xfffffab4,g_ActStatsTextBuffer2,0x14,0x100,0xc0);
+  iVar6 = 0;
+  local_1c = iVar4;
+  local_20 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
   y = 0xf0;
-  if (0 < iVar3) {
-    pcVar11 = (char *)0x1ccafb0;
+  if (0 < iVar4) {
+    pcVar11 = g_ActStatsTextBuffer2;
     do {
-      iVar5 = iVar5 + 1;
+      iVar6 = iVar6 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350
                 (this_ptr_00,0x1c0,0x27f,y,0xf8,0,pcVar11);
       pcVar11 = pcVar11 + 0x100;
-      y = y + local_10;
-    } while (iVar5 < local_c);
+      y = y + local_20;
+    } while (iVar6 < local_1c);
   }
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   wincore_winrun_cpp_getNextKeypress_FUN_005b2510();
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(&local_3c,0);
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)auStack_4c,0);
   return;
 }

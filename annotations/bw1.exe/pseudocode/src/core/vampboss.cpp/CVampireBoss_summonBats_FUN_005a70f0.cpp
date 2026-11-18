@@ -15,7 +15,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_summonBats_FUN_005a70f0(CVampireBoss
   
   iVar2 = 0;
   (*((this_ptr->base).base.base.vtable._ub)->playSound)
-            ((CDemonActor *)this_ptr,"?voicusummon.wav" + 1);
+            ((CDemonActor *)this_ptr,"voicusummon.wav");
   for (iVar1 = 0; iVar1 < g_CDemonSetPtr->actor_count; iVar1 = iVar1 + 1) {
     this_ptr_00 = (CTVBat *)
                   core_actor_cpp_castToClassHash_FUN_0040c600

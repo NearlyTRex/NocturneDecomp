@@ -39,7 +39,7 @@ void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width
 
 // Original: engine_font.cpp_CBitFont_loadFromFile_FUN_00490210
 // Address: 00490210
-void __cdecl CBitFont::loadFromFile(CBitFont *this_ptr,char *param_2);
+void __cdecl CBitFont::loadFromFile(CBitFont *this_ptr,char *font_path);
 
 // Original: engine_font.cpp_CBitFont_free_FUN_00490420
 // Address: 00490420

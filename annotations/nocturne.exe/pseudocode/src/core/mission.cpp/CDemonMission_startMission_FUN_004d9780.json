@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 83,
+    "complexity_score": 52,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 3,
+    "pseudocode_lines": 37,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 151
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -133,9 +131,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b9354",
@@ -145,7 +143,7 @@
     },
     {
       "addr": "005baca0",
-      "name": "g_CLevelLoader_PTR_005baca0",
+      "name": "g_CLevelLoaderPtr",
       "type": "CLevelLoader*",
       "value": "01cc3160"
     },
@@ -175,8 +173,8 @@
     },
     {
       "addr": "01cae0d4",
-      "name": "DAT_01cae0d4",
-      "type": "undefined4",
+      "name": "g_HeroCount",
+      "type": "int",
       "value": null
     },
     {
@@ -291,6 +289,24 @@
     "pcode_op_count": 373
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004fce00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7093
+    },
+    "bw1.exe": {
+      "addr": "0051bdc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7093
+    },
+    "bw3.exe": {
+      "addr": "004f7590",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7052
+    },
     "nocedit.exe": {
       "addr": "00524760",
       "by": "name",
@@ -316,24 +332,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x1c03a10 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 19,
-      "match": "0x1c03a10",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01C03A10;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 20,
+      "line": 18,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_teleport).position.z = 0.0;",

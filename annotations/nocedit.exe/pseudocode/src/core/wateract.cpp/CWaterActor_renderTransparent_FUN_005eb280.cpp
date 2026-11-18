@@ -32,7 +32,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
       iVar3 = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,SMRGLTextureBasic_ARRAY_006846f0 + this_ptr->texture_frame);
+                (g_CDemonRendererPtr2,g_WaterActorTextures + this_ptr->texture_frame);
       if (0 < this_ptr->vertex_count) {
         pCVar4 = g_WaterActorTransformedVertices;
         pSVar5 = this_ptr->vertices;

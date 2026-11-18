@@ -17,11 +17,11 @@
 ;   TerminatedCString s_sound_mp3_cpp_0058b52a
 ;   TerminatedCString s_js_bound_bad_layer_modex_0058b53b
 ;   undefined4 s_CMotionController_005bb246+0xa
-;   undefined4 DAT_005bbc48
-;   undefined4 DAT_005bbc88
+;   double[2][4] g_MpegSampleRateTable
+;   int[2][3][15] g_MpegBitrateTable
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cd8b28
+;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -63,7 +63,7 @@ section .text
     CMP EDI,0x3                         ; 004e2675
     JLE 0x004e27c4                      ; 004e2678
         ;   XREF to: 004e27c4 (CONDITIONAL_JUMP)  ; LAB_004e27c4
-    PUSH 0x1cd8b28                      ; 004e267e | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e267e | g_CurrentMp3Filename
         ;   Label: LAB_004e267e
     PUSH ESI                            ; 004e2683
     PUSH EDI                            ; 004e2684
@@ -110,7 +110,7 @@ section .text
     SUB EAX,EDX                         ; 004e26fd
     MOV EDX,dword ptr [ESP]             ; 004e26ff
     ADD EAX,EBP                         ; 004e2702
-    MOV EDX,dword ptr [EAX + EDX*0x4 + 0x5bbc88] ; 004e2704 | DAT_005bbc88
+    MOV EDX,dword ptr [EAX + EDX*0x4 + 0x5bbc88] ; 004e2704 | g_MpegBitrateTable
     MOV EBP,dword ptr [EBX + 0x10]      ; 004e270b
     MOV EAX,EDX                         ; 004e270e
     SAR EDX,0x1f                        ; 004e2710
@@ -120,7 +120,7 @@ section .text
     MOV ECX,EDI                         ; 004e271a
     SHL ECX,0x5                         ; 004e271c
     MOV dword ptr [ESP + 0x8],EBX       ; 004e271f
-    FLD double ptr [ECX + EAX*0x8 + 0x5bbc48] ; 004e2723 | DAT_005bbc48
+    FLD double ptr [ECX + EAX*0x8 + 0x5bbc48] ; 004e2723 | g_MpegSampleRateTable
     CALL crt_math.c_round_FUN_00563a30  ; 004e272a
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004e272f
@@ -140,7 +140,7 @@ section .text
     CMP EAX,dword ptr [EDX + 0xc]       ; 004e274e
     JZ 0x004e277a                       ; 004e2751
         ;   XREF to: 004e277a (CONDITIONAL_JUMP)  ; LAB_004e277a
-    PUSH 0x1cd8b28                      ; 004e2753 | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e2753 | g_CurrentMp3Filename
     MOV EAX,0x58b4e0                    ; 004e2758 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1a1                       ; 004e275d
     PUSH 0x58b4f1                       ; 004e2762 | = "MPEG Layer 2 - pick_table - can't loa..."

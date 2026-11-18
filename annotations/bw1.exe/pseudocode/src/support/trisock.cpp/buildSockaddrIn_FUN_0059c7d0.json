@@ -2,33 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 137,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 9,
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
-      "concat_reconstruction",
-      "param_count_too_few",
-      "stack_alignment_array",
-      "unaffected_reg",
-      "unnamed_param"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
-    "total_lines": 60
+    "total_lines": 61
   },
   "cross_references": [
+    {
+      "addr": "0059c9d0",
+      "from_addr": "0059c9de",
+      "name": "support_trisock.cpp_CSocket_connectSocket_FUN_0059c9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0059cbc0",
       "from_addr": "0059cbfe",
       "name": "support_trisock.cpp_CSocket_sendSocketData_FUN_0059cbc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059c9d0",
-      "from_addr": "0059c9de",
-      "name": "support_trisock.cpp_FUN_0059c9d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,9 +37,9 @@
         "0059c826"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "support_trisock.cpp_buildSockaddrIn_FUN_0059c7d0",
-    "signature": "void support_trisock_cpp_buildSockaddrIn_FUN_0059c7d0(SNetworkAddr *param_1)"
+    "signature": "SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_0059c7d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)"
   },
   "function_calls": [
     {
@@ -73,7 +70,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -81,22 +78,22 @@
       {
         "call_addr": "0059c9de",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0059c9d0",
+        "caller": "support_trisock.cpp_CSocket_connectSocket_FUN_0059c9d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.764705882352941,
@@ -150,10 +147,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -162,26 +159,17 @@
         "offset": -24,
         "size": 2,
         "type": "undefined2"
+      },
+      {
+        "is_param": true,
+        "name": "net_addr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNetworkAddr *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void support_trisock_cpp_buildSockaddrIn_FUN_0059c7d0(SNetworkAddr *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 9,
@@ -191,55 +179,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = htons(param_1->port);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "support_trisock_cpp_getIPAddress_FUN_0059c700(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)dest_buffer",
       "severity": "moderate",
-      "text": "puVar2 = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = local_18;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 15,
-      "match": "CONCAT22",
-      "severity": "moderate",
-      "text": "local_18 = CONCAT22(uVar1,2);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "text": "puVar2 = (uint *)((int)dest_buffer + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

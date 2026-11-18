@@ -8,14 +8,14 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[3]:
-;   core_box.cpp_FUN_00420990 at 00420b30
+;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990 at 00420b30
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004551a0 at 00455246
 ;   core_dlight.cpp_CDemonLight_testVisibility_FUN_004665c0 at 0046661e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01bc1224
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   undefined4 g_CDemonRenderer_01bc120c.advanced_culling_enabled
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_00519be0
@@ -27,8 +27,8 @@ section .text
 
     MOV ECX,dword ptr [ESP + 0x8]       ; 005558c0
         ;   Label: core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_005558c0
-    MOV EAX,[0x00612560]                ; 005558c4 | DAT_00612560
-    MOV EDX,dword ptr [EAX + 0x18]      ; 005558c9 | DAT_01bc1224
+    MOV EAX,[0x00612560]                ; 005558c4 | g_CDemonRenderer_PTR_00612560
+    MOV EDX,dword ptr [EAX + 0x18]      ; 005558c9 | g_CDemonRenderer_01bc120c.advanced_culling_enabled
     TEST EDX,EDX                        ; 005558cc
     JZ 0x005558e5                       ; 005558ce
         ;   XREF to: 005558e5 (CONDITIONAL_JUMP)  ; LAB_005558e5
@@ -42,7 +42,7 @@ section .text
     RET                                 ; 005558e4
     PUSH ECX                            ; 005558e5
         ;   Label: LAB_005558e5
-    PUSH EAX                            ; 005558e6 | DAT_01bc120c
+    PUSH EAX                            ; 005558e6 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0 ; 005558e7
         ;   XREF to: 00481eb0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005558ec

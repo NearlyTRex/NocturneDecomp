@@ -8,9 +8,9 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_00b0daf8
-;   undefined4 DAT_00b0dafc
-;   undefined4 DAT_00b0dafd
+;   SRGBColorPalette g_CameraImagePaletteData
+;   undefined4 g_CameraImagePaletteData.colors[1].g
+;   undefined4 g_CameraImagePaletteData.colors[1].b
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   _BIT_INTEGER32 g_GreenBitPosition
 ;   _BIT_INTEGER32 g_BlueBitPosition
@@ -27,11 +27,11 @@ section .text
     MOV EBP,dword ptr [0x005b7624]      ; 00443104 | g_BitsPerPixel
     XOR EDX,EDX                         ; 0044310a
     XOR EAX,EAX                         ; 0044310c
-    MOVZX ESI,byte ptr [EAX + 0xb0daf9] ; 0044310e | DAT_00b0dafc
+    MOVZX ESI,byte ptr [EAX + 0xb0daf9] ; 0044310e | g_CameraImagePaletteData.colors[1].g
         ;   Label: LAB_0044310e
     XOR EBX,EBX                         ; 00443115
-    MOVZX EDI,byte ptr [EAX + 0xb0daf8] ; 00443117 | DAT_00b0daf8
-    MOV BL,byte ptr [EAX + 0xb0dafa]    ; 0044311e | DAT_00b0dafd
+    MOVZX EDI,byte ptr [EAX + 0xb0daf8] ; 00443117 | g_CameraImagePaletteData
+    MOV BL,byte ptr [EAX + 0xb0dafa]    ; 0044311e | g_CameraImagePaletteData.colors[1].b
     CMP EBP,0x20                        ; 00443124
     JNZ 0x00443166                      ; 00443127
         ;   XREF to: 00443166 (CONDITIONAL_JUMP)  ; LAB_00443166

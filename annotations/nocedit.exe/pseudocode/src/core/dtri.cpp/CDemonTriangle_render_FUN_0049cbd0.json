@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "keep.cpp",
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 39,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 39,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_inlined_function"
+    ],
     "total_lines": 145
   },
   "cross_references": [],
@@ -121,33 +123,22 @@
     },
     "pcode_op_count": 558
   },
-  "resolved_suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    }
-  ],
   "siblings": {
     "blairwitch2.exe": {
       "addr": "00479e10",
-      "by": "body",
+      "by": "name",
       "class": "identical",
       "ratio": 1.0
     },
     "bw1.exe": {
       "addr": "00492300",
-      "by": "body",
+      "by": "name",
       "class": "identical",
       "ratio": 1.0
     },
     "bw3.exe": {
       "addr": "0047aea0",
-      "by": "body",
+      "by": "name",
       "class": "identical",
       "ratio": 1.0
     },
@@ -202,5 +193,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    }
+  ]
 }

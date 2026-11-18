@@ -18,11 +18,11 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[2]:
-;   core_setdir.cpp_FUN_00538d10 at 005396fc
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 at 005396fc
 ;   core_setdir.cpp_testCameraVisibility_FUN_00538be0 at 00538c5d
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_004495a0
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH EAX                            ; 0053ae69
     LEA ESI,[ESP + 0x20]                ; 0053ae6a
     LEA EDI,[ESP + 0x14]                ; 0053ae6e
-    CALL core_dirmat.cpp_FUN_004495a0   ; 0053ae72
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 0053ae72
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x20]                ; 0053ae77
     ADD ESP,0x8                         ; 0053ae7b
     MOVSD ES:EDI,ESI                    ; 0053ae7e

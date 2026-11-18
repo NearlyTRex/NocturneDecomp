@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004bb2ac = 004bb304
-;   undefined4 DAT_01cae2bc
-;   undefined4 DAT_01cae2c0
+;   undefined4 g_IcePickIndices[13]
+;   undefined4 g_IcePickIndices[14]
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40
@@ -72,7 +72,7 @@ section .text
     POP ESI                             ; 004bb330
     POP EBX                             ; 004bb331
     RET                                 ; 004bb332
-    MOV EDI,dword ptr [0x01cae2bc]      ; 004bb333 | DAT_01cae2bc
+    MOV EDI,dword ptr [0x01cae2bc]      ; 004bb333 | g_IcePickIndices[13]
         ;   Label: caseD_65
     PUSH EDI                            ; 004bb339
     PUSH EBX                            ; 004bb33a
@@ -81,7 +81,7 @@ section .text
     ADD ESP,0x8                         ; 004bb340
     JMP 0x004bb320                      ; 004bb343
         ;   XREF to: 004bb320 (UNCONDITIONAL_JUMP)  ; LAB_004bb320
-    MOV ECX,dword ptr [0x01cae2c0]      ; 004bb345 | DAT_01cae2c0
+    MOV ECX,dword ptr [0x01cae2c0]      ; 004bb345 | g_IcePickIndices[14]
         ;   Label: caseD_66
     PUSH ECX                            ; 004bb34b
     PUSH EBX                            ; 004bb34c

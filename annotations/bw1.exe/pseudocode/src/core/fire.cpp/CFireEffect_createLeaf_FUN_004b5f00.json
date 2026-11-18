@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 139,
+    "complexity_score": 18,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 11,
-    "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 84
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -39,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag)"
   },
   "function_calls": [
     {
@@ -61,8 +58,8 @@
   "globals": [
     {
       "addr": "01cadb64",
-      "name": "DAT_01cadb64",
-      "type": "undefined4",
+      "name": "g_INT_01cadb64",
+      "type": "int",
       "value": null
     }
   ],
@@ -164,122 +161,33 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "velocity",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "model_ptr",
         "offset": 16,
         "size": 4,
         "type": "CKeyFramedModel *"
       },
       {
         "is_param": true,
-        "name": "param_5",
+        "name": "drag",
         "offset": 20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (param_4 == (CKeyFramedModel *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_fire_cpp_CLeaf_init_FUN_004af0f0(this_ptr_00,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_fire_cpp_CLeaf_init_FUN_004af0f0(this_ptr_00,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "core_fire_cpp_CLeaf_init_FUN_004af0f0(this_ptr_00,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "core_fire_cpp_CLeaf_init_FUN_004af0f0(this_ptr_00,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

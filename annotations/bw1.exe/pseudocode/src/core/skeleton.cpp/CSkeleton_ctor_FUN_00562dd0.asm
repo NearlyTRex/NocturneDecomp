@@ -7,8 +7,8 @@
 ; CSkeleton *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_morph.cpp_FUN_005238c0
-;   crt_unknown.c_FUN_005c3187
+;   core_morph.cpp_CMotionList_ctor_FUN_005238c0
+;   crt_unknown.c___CHK_FUN_005c3187
 ;
 ; *****************************************************************************
 
@@ -16,12 +16,12 @@ section .text
 
     PUSH 0x8                            ; 00562dd0
         ;   Label: core_skeleton.cpp_CSkeleton_ctor_FUN_00562dd0
-    CALL crt_unknown.c_FUN_005c3187     ; 00562dd5
-        ;   XREF to: 005c3187 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3187()
+    CALL crt_unknown.c___CHK_FUN_005c3187 ; 00562dd5
+        ;   XREF to: 005c3187 (UNCONDITIONAL_CALL)  ; void crt_unknown.c___CHK_FUN_005c3187(int stack_size)
     MOV EDX,dword ptr [ESP + 0x4]       ; 00562dda
     PUSH EDX                            ; 00562dde
-    CALL core_morph.cpp_FUN_005238c0    ; 00562ddf
-        ;   XREF to: 005238c0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_005238c0()
+    CALL core_morph.cpp_CMotionList_ctor_FUN_005238c0 ; 00562ddf
+        ;   XREF to: 005238c0 (UNCONDITIONAL_CALL)  ; CMotionList * core_morph.cpp_CMotionList_ctor_FUN_005238c0(CMotionList * this_ptr)
     MOV dword ptr [EAX + 0x1de78],0x0   ; 00562de4
     MOV dword ptr [EAX + 0x1ec8c],0x0   ; 00562dee
     MOV dword ptr [EAX + 0x1ec90],0x0   ; 00562df8

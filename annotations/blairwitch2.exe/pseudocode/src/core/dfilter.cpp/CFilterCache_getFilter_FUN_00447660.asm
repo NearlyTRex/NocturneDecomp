@@ -18,14 +18,14 @@
 ;   TerminatedCString s_CFilterCache_getFilter_T_005ceabc
 ;   TerminatedCString s_core_dfilter_cpp_005ceae7
 ;   TerminatedCString s_CFilterCache_getFilter_O_005ceafb
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_ctor_FUN_004477f0
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_00447ad0
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004478d0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_FUN_005b8be2
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;
@@ -93,7 +93,7 @@ section .text
         ;   Label: LAB_004476d4
     PUSH 0x4c                           ; 004476d5
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004476d7
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004476dc
     TEST EAX,EAX                        ; 004476df
     JZ 0x004476ec                       ; 004476e1
@@ -111,10 +111,10 @@ section .text
     MOV ESI,0x5ceae7                    ; 004476f9 | = "..\\core\\dfilter.cpp"
     MOV EDI,0x59                        ; 004476fe
     PUSH 0x5ceafb                       ; 00447703 | = "CFilterCache::getFilter - Out of memory"
-    MOV dword ptr [0x01d046a0],ESI      ; 00447708 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0044770e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00447714
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 00447708 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0044770e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447714
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00447719
     LEA ESI,[EBX*0x4 + 0x0]             ; 0044771c
         ;   Label: LAB_0044771c
@@ -155,10 +155,10 @@ section .text
         ;   Label: LAB_00447772
     MOV EAX,0x55                        ; 00447777
     PUSH 0x5ceabc                       ; 0044777c | = "CFilterCache::getFilter - Too many fi..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00447781 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00447787 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044778c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 00447781 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00447787 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044778c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00447791
     JMP 0x0044769f                      ; 00447794
         ;   XREF to: 0044769f (UNCONDITIONAL_JUMP)  ; LAB_0044769f

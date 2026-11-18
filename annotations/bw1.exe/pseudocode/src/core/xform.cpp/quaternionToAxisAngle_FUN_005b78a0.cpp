@@ -6,24 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_005b78a0(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out)
 
 {
   float fVar1;
-  CQuaternion4f *extraout_ECX;
-  CVector3f *extraout_EDX;
-  float10 fVar2;
+  double dVar2;
   
   if (angle_out != (float *)0x0) {
-    if (_DAT_005fa16c < quat_in->w) {
+    if (-1.0f < quat_in->w) {
       if ((int)quat_in->w < 0x3f800000) {
-        fVar2 = (float10)quat_in->w;
-        acos();
-        *angle_out = (float)(fVar2 * (float10)_DAT_005fa170);
-        quat_in = extraout_ECX;
-        axis_out = extraout_EDX;
+        dVar2 = acos((double)quat_in->w);
+        *angle_out = (float)((float10)dVar2 * (float10)2);
       }
       else {
         *angle_out = 0.0;

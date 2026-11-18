@@ -15,7 +15,7 @@ int FUN_005a8688(int param_1)
   iVar2 = 0;
   while( true ) {
     uVar1 = FUN_005a82a0(param_1);
-    if (((&DAT_006074b8)[(byte)((char)uVar1 + 1)] & 2) == 0) break;
+    if ((g_CharacterClassificationTable[(byte)((char)uVar1 + 1)] & 2) == 0) break;
     iVar2 = iVar2 + 1;
   }
   if ((*(byte *)(param_1 + 0x10) & 2) == 0) {

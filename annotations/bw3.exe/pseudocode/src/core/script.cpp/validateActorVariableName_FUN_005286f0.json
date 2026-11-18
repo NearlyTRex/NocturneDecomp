@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 95,
+    "complexity_score": 50,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 117
@@ -69,14 +68,14 @@
     },
     {
       "addr": "006074b8",
-      "name": "DAT_006074b8",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
       "addr": "01ed6810",
-      "name": "DAT_01ed6810",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01ed6810",
+      "type": "char[2048]",
       "value": null
     }
   ],
@@ -196,38 +195,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "((&DAT_006074b8)[(byte)(*variable_name + 1)] & 0xe0) != 0 || (*variable_name == '_')))",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01ed6810",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01ed6810,\"Actor variable name \\\"%s\\\" is not valid\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01ed6810",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01ed6810,\"Actor variable name \\\"%s\\\" is too long\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01ed6810",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01ed6810,\"Actor variable name must begin with '@'\");",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 13,

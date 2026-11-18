@@ -15,7 +15,7 @@ section .text
     PUSH 0x1e634                        ; 0041ef20
         ;   Label: core_bugs.cpp_factoryFuncBugs_FUN_0041ef20
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0041ef25
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0041ef2a
     TEST EAX,EAX                        ; 0041ef2d
     JNZ 0x0041ef32                      ; 0041ef2f

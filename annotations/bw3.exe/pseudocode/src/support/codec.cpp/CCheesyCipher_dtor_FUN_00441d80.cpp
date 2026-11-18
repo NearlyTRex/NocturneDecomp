@@ -9,18 +9,18 @@
 CCheesyCipher * __cdecl support_codec_cpp_CCheesyCipher_dtor_FUN_00441d80(CCheesyCipher *this_ptr,uint flags)
 
 {
-  CCheesyCipher *pCVar1;
-  void *ptr;
+  CCheesyCipher *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CCheesyCipherTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CCheesyCipherTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CCheesyCipher *)support_codec_cpp_CCodec_dtor_FUN_00440810(&this_ptr->base,1);
+  ptr = (CCheesyCipher *)support_codec_cpp_CCodec_dtor_FUN_00440810(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

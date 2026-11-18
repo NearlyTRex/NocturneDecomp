@@ -15,7 +15,7 @@ section .text
     PUSH 0x11120                        ; 00417f20
         ;   Label: core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417f20
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00417f25
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 00417f2a
     TEST EAX,EAX                        ; 00417f2d
     JNZ 0x00417f32                      ; 00417f2f

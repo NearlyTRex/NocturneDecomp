@@ -15,8 +15,8 @@
 ;   core_unionzom.cpp_CUnionZombie_getTargetPoints_FUN_005a46e0 at 005a46fe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2d9d
-;   undefined4 DAT_005d2da1
+;   float g_FLOAT_005d2d9d = 0.5
+;   double g_DOUBLE_005d2da1 = 0.300000000000000
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 00488050
     FLD float ptr [ESP + 0x28]          ; 00488052
     FSUB float ptr [ESP + 0x1c]         ; 00488056
-    FMUL double ptr [0x005d2da1]        ; 0048805a | DAT_005d2da1
+    FMUL double ptr [0x005d2da1]        ; 0048805a | g_DOUBLE_005d2da1
     FLD float ptr [ESP + 0x18]          ; 00488060
     FLD float ptr [ESP + 0x1c]          ; 00488064
     FLD float ptr [ESP + 0x20]          ; 00488068
@@ -63,7 +63,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00488096
     MOVSD ES:EDI,ESI                    ; 00488097
     MOVSD ES:EDI,ESI                    ; 00488098
-    FLD float ptr [0x005d2d9d]          ; 00488099 | DAT_005d2d9d
+    FLD float ptr [0x005d2d9d]          ; 00488099 | g_FLOAT_005d2d9d
     FLD float ptr [ESP + 0x54]          ; 0048809f
     FMUL ST1                            ; 004880a3
     FLD float ptr [ESP + 0x58]          ; 004880a5

@@ -7,13 +7,13 @@ struct CZombiePriest;
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/funcdefs/CZombiePriest_vfunc83.h"
+#include "types/funcdefs/CZombiePriest_reset.h"
 
 // Structure: CZombiePriest_vtable
 // Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct CZombiePriest_vtable {
-    CZombiePriest_vfunc83* vfunc83; // 0x0
+    CZombiePriest_reset* reset; // 0x0
 } CZombiePriest_vtable;
 #pragma pack(pop)
 

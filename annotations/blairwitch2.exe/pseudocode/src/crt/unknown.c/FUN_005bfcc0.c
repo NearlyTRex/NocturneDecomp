@@ -17,21 +17,21 @@ uint FUN_005bfcc0(uint param_1,char *param_2)
   char *pcVar5;
   
   uVar4 = 0;
-  if (DAT_0061f289 < 0x8000) {
+  if ((ushort)g_WindowsPlatformVersion < 0x8000) {
     uVar1 = 0x20;
   }
   else {
     uVar1 = 0x40;
   }
   if ((param_1 & uVar1) != 0) {
-    iVar2 = _stricmp(param_2,&DAT_005f1a10);
+    iVar2 = _stricmp(param_2,"con");
     pcVar5 = param_2;
     if (iVar2 == 0) {
       pcVar5 = "conin$";
     }
     hFile = CreateFileA(pcVar5,0,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
     if (hFile == (HANDLE)0xffffffff) {
-      if ((0x7fff < DAT_0061f289) || (DVar3 = GetLastError(), DVar3 == 5)) {
+      if ((0x7fff < (ushort)g_WindowsPlatformVersion) || (DVar3 = GetLastError(), DVar3 == 5)) {
         uVar4 = 0x2000;
       }
     }
@@ -61,7 +61,7 @@ uint FUN_005bfcc0(uint param_1,char *param_2)
       pcVar5 = (char *)0x0;
 LAB_005bfda1:
       if ((pcVar5 != (char *)0x0) &&
-         (iVar2 = _strcmp(pcVar5 + 1,&DAT_005f1a1c), iVar2 == 0)) {
+         (iVar2 = _strcmp(pcVar5 + 1,"EXE"), iVar2 == 0)) {
         uVar1 = uVar4 | 0x8049;
       }
     }

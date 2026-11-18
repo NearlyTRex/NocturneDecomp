@@ -34,8 +34,8 @@ void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CVehicle *this_ptr)
       float_ptr_00 = float_ptr_00 + 0x6d;
     } while (iVar1 < this_ptr->tire_count);
   }
-  if (INT_005c11a0 < 2) {
-    if (INT_005c11a0 < 3) {
+  if (g_CVehicleClassVersion < 2) {
+    if (g_CVehicleClassVersion < 3) {
       return;
     }
   }
@@ -43,7 +43,7 @@ void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CVehicle *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->cur_time,"curTime");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->total_time,"totalTime");
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->course_name,"courseName");
-    if (INT_005c11a0 < 3) {
+    if (g_CVehicleClassVersion < 3) {
       return;
     }
   }

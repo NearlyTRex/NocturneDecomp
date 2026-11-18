@@ -18,7 +18,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_setup_FUN_00414f60(CBodyPart *this_ptr)
     texture = this_ptr->textures;
     do {
       iVar1 = iVar1 + 1;
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+                (g_CDemonRenderer_PTR_005f2afc,texture);
       texture = texture + 1;
     } while (iVar1 < this_ptr->texture_count);
   }

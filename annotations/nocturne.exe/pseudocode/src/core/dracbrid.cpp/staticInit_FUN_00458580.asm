@@ -6,15 +6,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDraculaBride_0057d49e
-;   CVector3f CVector3f_01b4d200
-;   undefined4 CVector3f_01b4d200.y
-;   undefined4 CVector3f_01b4d200.z
-;   CVector3f CVector3f_01b4d20c
-;   undefined4 CVector3f_01b4d20c.y
-;   undefined4 CVector3f_01b4d20c.z
-;   CVector3f CVector3f_01b4d218
-;   undefined4 CVector3f_01b4d218.y
-;   undefined4 CVector3f_01b4d218.z
+;   CVector3f g_DraculaBrideOffsetUp
+;   undefined4 g_DraculaBrideOffsetUp.y
+;   undefined4 g_DraculaBrideOffsetUp.z
+;   CVector3f g_DraculaBrideOffsetMinusX
+;   undefined4 g_DraculaBrideOffsetMinusX.y
+;   undefined4 g_DraculaBrideOffsetMinusX.z
+;   CVector3f g_DraculaBrideOffsetPlusX
+;   undefined4 g_DraculaBrideOffsetPlusX.y
+;   undefined4 g_DraculaBrideOffsetPlusX.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040d3f0
@@ -33,19 +33,19 @@ section .text
     XOR EDX,EDX                         ; 00458590
     PUSH 0x9                            ; 00458592
     MOV EAX,0x3f19999a                  ; 00458594
-    MOV dword ptr [0x01b4d200],EDX      ; 00458599 | CVector3f_01b4d200
+    MOV dword ptr [0x01b4d200],EDX      ; 00458599 | g_DraculaBrideOffsetUp
     PUSH 0x5ae6c8                       ; 0045859f
-    MOV dword ptr [0x01b4d204],ECX      ; 004585a4 | CVector3f_01b4d200.y
-    MOV dword ptr [0x01b4d208],EDX      ; 004585aa | CVector3f_01b4d200.z
+    MOV dword ptr [0x01b4d204],ECX      ; 004585a4 | g_DraculaBrideOffsetUp.y
+    MOV dword ptr [0x01b4d208],EDX      ; 004585aa | g_DraculaBrideOffsetUp.z
     PUSH 0x458610                       ; 004585b0
-    MOV dword ptr [0x01b4d20c],ESI      ; 004585b5 | CVector3f_01b4d20c
-    MOV dword ptr [0x01b4d210],EDX      ; 004585bb | CVector3f_01b4d20c.y
+    MOV dword ptr [0x01b4d20c],ESI      ; 004585b5 | g_DraculaBrideOffsetMinusX
+    MOV dword ptr [0x01b4d210],EDX      ; 004585bb | g_DraculaBrideOffsetMinusX.y
     PUSH 0x57d49e                       ; 004585c1 | = "CDraculaBride"
-    MOV dword ptr [0x01b4d214],EDX      ; 004585c6 | CVector3f_01b4d20c.z
-    MOV [0x01b4d218],EAX                ; 004585cc | CVector3f_01b4d218
+    MOV dword ptr [0x01b4d214],EDX      ; 004585c6 | g_DraculaBrideOffsetMinusX.z
+    MOV [0x01b4d218],EAX                ; 004585cc | g_DraculaBrideOffsetPlusX
     PUSH 0x1b4d224                      ; 004585d1
-    MOV dword ptr [0x01b4d21c],EDX      ; 004585d6 | CVector3f_01b4d218.y
-    MOV dword ptr [0x01b4d220],EDX      ; 004585dc | CVector3f_01b4d218.z
+    MOV dword ptr [0x01b4d21c],EDX      ; 004585d6 | g_DraculaBrideOffsetPlusX.y
+    MOV dword ptr [0x01b4d220],EDX      ; 004585dc | g_DraculaBrideOffsetPlusX.z
     CALL core_actor.cpp_registerActorClass_FUN_0040d3f0 ; 004585e2
         ;   XREF to: 0040d3f0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040d3f0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
     ADD ESP,0x18                        ; 004585e7

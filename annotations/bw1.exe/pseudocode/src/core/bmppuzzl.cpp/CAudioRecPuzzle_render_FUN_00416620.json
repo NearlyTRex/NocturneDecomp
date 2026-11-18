@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 158,
+    "complexity_score": 143,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 180
   },
@@ -50,9 +49,9 @@
   "globals": [
     {
       "addr": "005d3f42",
-      "name": "DAT_005d3f42",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d3f42",
+      "type": "double",
+      "value": "0.300000000000000"
     },
     {
       "addr": "0061d95c",
@@ -62,14 +61,14 @@
     },
     {
       "addr": "01c4353c",
-      "name": "DAT_01c4353c",
-      "type": "undefined4",
+      "name": "g_MouseX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c43540",
-      "name": "DAT_01c43540",
-      "type": "undefined4",
+      "name": "g_MouseY",
+      "type": "int",
       "value": null
     }
   ],
@@ -152,16 +151,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);",
@@ -169,7 +160,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
+      "line": 32,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);",
@@ -177,7 +168,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);",
@@ -185,7 +176,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 34,
+      "line": 33,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);",
@@ -193,7 +184,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x17d,0x10,this_ptr->reel_angle,0);",
@@ -201,7 +192,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
+      "line": 34,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x17d,0x10,this_ptr->reel_angle,0);",
@@ -209,7 +200,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 35,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);",
@@ -217,7 +208,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
+      "line": 35,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);",
@@ -225,7 +216,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 19,
+      "line": 17,
       "match": "pCVar2 = (T *)&pCVar2->FIELD",
       "severity": "moderate",
       "text": "pCVar2 = (CAudioRecPuzzle *)&pCVar2->click_handled;",

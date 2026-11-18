@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 30,
+    "complexity_score": 14,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 50
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
   },
   "cross_references": [
     {
       "addr": "004caeb0",
       "from_addr": "004cafd0",
-      "name": "core_glass.cpp_FUN_004caeb0",
+      "name": "core_glass.cpp_CGlass_createShatterParticles_FUN_004caeb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,8 +48,8 @@
   "globals": [
     {
       "addr": "01cbc0ec",
-      "name": "DAT_01cbc0ec",
-      "type": "undefined4",
+      "name": "g_INT_01cbc0ec",
+      "type": "int",
       "value": null
     }
   ],
@@ -61,7 +59,7 @@
       {
         "call_addr": "004cafd0",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004caeb0",
+        "caller": "core_glass.cpp_CGlass_createShatterParticles_FUN_004caeb0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -72,7 +70,7 @@
       {
         "call_addr": "004cb06a",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004caeb0",
+        "caller": "core_glass.cpp_CGlass_createShatterParticles_FUN_004caeb0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,14 +212,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

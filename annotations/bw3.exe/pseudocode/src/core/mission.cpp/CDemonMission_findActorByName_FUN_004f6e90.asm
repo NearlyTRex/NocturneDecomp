@@ -7,15 +7,16 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   name
 ;
-; XREF[8]:
+; XREF[9]:
 ;   core_event.cpp_resolveActorByName_FUN_0048b950 at 0048ba25
-;   core_game.cpp_FUN_004bdfb0 at 004be60f
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be60f
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7ac0
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004f7490 at 004f74f4
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_004f6770 at 004f686f
-;   core_mission.cpp_FUN_004f7a20 at 004f7ac0
 ;   core_script.cpp_getActor_FUN_005289b0 at 00528ad9
 ;   core_script.cpp_readActorReference_FUN_00530a10 at 00530a76
 ;   core_spawner.cpp_CSpawner_process_FUN_00563970 at 00563a0a
+;   core_trigger.cpp_CTrigger_process_FUN_0056e230 at 0056e374
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260

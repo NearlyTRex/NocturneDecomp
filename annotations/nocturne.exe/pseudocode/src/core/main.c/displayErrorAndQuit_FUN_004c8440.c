@@ -12,11 +12,11 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format,...)
   char *pcVar1;
   char *pcVar2;
   
-  if (DAT_01cc4808 != 0) {
+  if (g_INT_01cc4808 != 0) {
     notifyAbnormalTermination();
   }
-  DAT_01cc4808 = 1;
-  _vsprintf(&DAT_01cc3700,format,(va_list_t)&stack0xfffffff4);
+  g_INT_01cc4808 = 1;
+  _vsprintf(g_CHAR_ARRAY_01cc3700,format,(va_list_t)&stack0xfffffff4);
   pcVar2 = g_CurrentFilename;
   do {
     pcVar1 = pcVar2;
@@ -34,7 +34,7 @@ LAB_004c84a6:
         engine_2d_c_cleanupGraphicsSystem_FUN_004012a0();
         wincore_winrun_cpp_endPeriod_FUN_00558a20();
                     /* WARNING: Subroutine does not return */
-        wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_00559500(&DAT_01cc3700);
+        wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_00559500(g_CHAR_ARRAY_01cc3700);
       }
       do {
         pcVar2 = g_CurrentFilename;

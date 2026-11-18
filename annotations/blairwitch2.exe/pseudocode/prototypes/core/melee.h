@@ -69,6 +69,6 @@ void __cdecl CMelee::setWeaponState(CMelee *this_ptr,int weapon_state);
 // Address: 004ead30
 CMelee * __cdecl CMelee::dtor(CMelee *this_ptr,uint flags);
 
-// Original: core_melee.cpp_FUN_004eada0
+// Original: core_melee.cpp_dumpHeap_FUN_004eada0
 // Address: 004eada0
-void FUN_004eada0(COutStream *param_1);
+void __cdecl dumpHeap(void *stream);

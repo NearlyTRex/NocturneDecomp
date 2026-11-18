@@ -23,7 +23,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char* g_CurrentDebugFilename = 0067d200
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   int INT_00680648 = -0x1
+;   int g_LastImportActorTypeChoice = -0x1
 ;   int g_ConfirmNewActorNames = 0x1
 ;   int g_NumActorClassTypes
 ;   CDemonActorType*[200] g_ActorClassRegistrations
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0053ba44
     PUSH 0x0                            ; 0053ba47
-    MOV EBX,dword ptr [0x00680648]      ; 0053ba49 | INT_00680648
+    MOV EBX,dword ptr [0x00680648]      ; 0053ba49 | g_LastImportActorTypeChoice
     PUSH EBX                            ; 0053ba4f
     PUSH 0x63c6d0                       ; 0053ba50 | = "Choose type of actor to create"
     LEA EAX,[ESP + 0xc]                 ; 0053ba55
@@ -109,7 +109,7 @@ section .text
     JL 0x0053bc0f                       ; 0053ba64
         ;   XREF to: 0053bc0f (CONDITIONAL_JUMP)  ; LAB_0053bc0f
     PUSH EAX                            ; 0053ba6a
-    MOV [0x00680648],EAX                ; 0053ba6b | INT_00680648
+    MOV [0x00680648],EAX                ; 0053ba6b | g_LastImportActorTypeChoice
     LEA EAX,[ESP + 0x4]                 ; 0053ba70
     PUSH EAX                            ; 0053ba74
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 0053ba75

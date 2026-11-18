@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_stairs_cpp_CStairs_getActorType_FUN_005347a0(CStairs *this_ptr)
 
 {
-  return &g_CStairsActorType_02dc9ea8;
+  return &g_CStairsClassInfo;
 }

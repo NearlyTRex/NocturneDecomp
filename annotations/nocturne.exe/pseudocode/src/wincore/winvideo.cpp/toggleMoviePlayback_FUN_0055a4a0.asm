@@ -12,8 +12,8 @@
 ;   TerminatedCString s_play_mov_fullscreen_noti_005981f1
 ;   TerminatedCString s_play_mov_window_notify_0059820c
 ;   TerminatedCString s_pause_mov_00598223
-;   undefined4 DAT_02de3120
-;   undefined4 DAT_02de312c
+;   DWORD g_MovieHandle
+;   int g_FullscreenMovie
 ;
 ; Called Functions:
 ;   mciSendStringA
@@ -26,18 +26,18 @@ section .text
         ;   Label: wincore_winvideo.cpp_toggleMoviePlayback_FUN_0055a4a0
     PUSH EDI                            ; 0055a4a1
     MOV EDX,dword ptr [ESP + 0xc]       ; 0055a4a2
-    CMP dword ptr [0x02de3120],0x0      ; 0055a4a6 | DAT_02de3120
+    CMP dword ptr [0x02de3120],0x0      ; 0055a4a6 | g_MovieHandle
     SETZ AL                             ; 0055a4ad
     AND EAX,0xff                        ; 0055a4b0
     MOV EBX,dword ptr [ESP + 0x10]      ; 0055a4b5
-    MOV [0x02de3120],EAX                ; 0055a4b9 | DAT_02de3120
+    MOV [0x02de3120],EAX                ; 0055a4b9 | g_MovieHandle
     TEST EBX,EBX                        ; 0055a4be
     JZ 0x0055a4e4                       ; 0055a4c0
         ;   XREF to: 0055a4e4 (CONDITIONAL_JUMP)  ; LAB_0055a4e4
     TEST EAX,EAX                        ; 0055a4c2
     JZ 0x0055a4ea                       ; 0055a4c4
         ;   XREF to: 0055a4ea (CONDITIONAL_JUMP)  ; LAB_0055a4ea
-    MOV EDI,dword ptr [0x02de312c]      ; 0055a4c6 | DAT_02de312c
+    MOV EDI,dword ptr [0x02de312c]      ; 0055a4c6 | g_FullscreenMovie
     TEST EDI,EDI                        ; 0055a4cc
     JZ 0x0055a4f7                       ; 0055a4ce
         ;   XREF to: 0055a4f7 (CONDITIONAL_JUMP)  ; LAB_0055a4f7
@@ -50,7 +50,7 @@ section .text
     POP EDI                             ; 0055a4e1
     POP EBX                             ; 0055a4e2
     RET                                 ; 0055a4e3
-    MOV dword ptr [0x02de3120],EBX      ; 0055a4e4 | DAT_02de3120
+    MOV dword ptr [0x02de3120],EBX      ; 0055a4e4 | g_MovieHandle
         ;   Label: LAB_0055a4e4
     PUSH 0x0                            ; 0055a4ea
         ;   Label: LAB_0055a4ea

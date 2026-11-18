@@ -14,7 +14,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHer
   char *pcVar3;
   char *pcVar4;
   
-  pcVar3 = &DAT_005da037;
+  pcVar3 = "CDoc";
   pCVar2 = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   (pCVar2->base).vtable._ub = &g_CHeroPlaceholderVTable;
   (pCVar2->base).is_transparent = 1;

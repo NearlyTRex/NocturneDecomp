@@ -9,6 +9,10 @@
 // GLOBAL VARIABLES - Range 0x5C0000
 // =============================================================================
 
+// char
+extern char g_CHAR_005cc972;
+extern char g_CHAR_005cfe17;
+
 // dword
 extern dword DWORD_005c8000;
 extern dword DAT_005C8004;
@@ -27,9 +31,6 @@ extern dword DAT_005C807C;
 extern dword DAT_005C8080;
 extern dword DAT_005C8090;
 extern dword DAT_005C8094;
-
-// undefined1
-extern undefined1 DAT_005ca432;
 
 // undefined1*
 extern undefined1* switchdataD_005c5088;

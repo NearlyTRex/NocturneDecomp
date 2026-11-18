@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00541b70(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
@@ -21,7 +19,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00541b70(C3DSCamera *this_ptr,
     _fgets(local_110,0xff,file_handle);
   }
   _fgets(local_110,0xff,file_handle);
-  sscanf(local_110,&DAT_005d0d2a);
+  sscanf(local_110,"%s\n");
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
@@ -33,7 +31,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00541b70(C3DSCamera *this_ptr,
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
-  _fscanf(file_handle,&DAT_005d0d42);
+  _fscanf(file_handle,"%f\n");
   _fgets(local_110,0xff,file_handle);
   _fscanf(file_handle,"%f,%f,%f\n");
   _fscanf(file_handle,"%f,%f,%f\n");
@@ -56,7 +54,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00541b70(C3DSCamera *this_ptr,
     (this_ptr->fog).temperature = (pCVar1->scene_fog).temperature;
   }
   else {
-    _fscanf(file_handle,&DAT_005d0d64);
+    _fscanf(file_handle,"%d\n");
     if (this_ptr->use_global_fog == 0) {
       core_dcamera_cpp_loadCameraFog_FUN_00450c00
                 (&this_ptr->fog,file_handle,g_CDemonSetPtr->set_file_version);
@@ -69,15 +67,15 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00541b70(C3DSCamera *this_ptr,
   }
   if (0x16 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005d0d7c);
+    _fscanf(file_handle,"%d\n");
   }
   if (g_CDemonSetPtr->set_file_version == 0x1b) {
     _fgets(local_110,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005d0d80);
+    _fscanf(file_handle,"%d\n");
     if (this_ptr->is_panning != 0) {
-      _DAT_01d71de0 = "..\\core\\setutil.cpp";
-      _DAT_01d71de4 = 0xd5;
-      core_main_c_FUN_004e4330("Panning cameras not supported, bucko!");
+      g_CHAR_PTR_01d71de0 = "..\\core\\setutil.cpp";
+      g_INT_01d71de4 = 0xd5;
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Panning cameras not supported, bucko!");
       return;
     }
   }

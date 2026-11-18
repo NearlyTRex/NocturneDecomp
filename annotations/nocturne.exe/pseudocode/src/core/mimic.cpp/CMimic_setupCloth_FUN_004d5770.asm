@@ -15,7 +15,7 @@
 ;   TerminatedCString s_s_attacking_hero_00589487
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_CGabriellaActorType_01c713e8.name_hash
+;   undefined4 g_CGabriellaClassInfo.name_hash
 ;   int g_LocalHeroIndex
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     CALL core_cloth.cpp_CCloth_setup_FUN_004359e0 ; 004d5796
         ;   XREF to: 004359e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_004359e0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 004d579b
-    MOV EDX,dword ptr [0x01c71420]      ; 004d579e | g_CGabriellaActorType_01c713e8.name_hash
+    MOV EDX,dword ptr [0x01c71420]      ; 004d579e | g_CGabriellaClassInfo.name_hash
     MOV EAX,[0x01cae0e8]                ; 004d57a4 | g_LocalHeroIndex
     PUSH EDX                            ; 004d57a9
     MOV ECX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d57aa

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00466ca0(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom)
 
 {
@@ -136,9 +134,9 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00466ca0(CDrawSurface
     iStack_20 = iStack_20 + 1;
   } while (iStack_20 < 100);
   if (iStack_20 == 100) {
-    _DAT_01d046a0 = "..\\cockpit\\drawsurf.cpp";
-    _DAT_01d046a4 = 0x369;
-    core_main_c_FUN_004e4500("2d line clipping exceeded max iterations");
+    g_CHAR_PTR_01d046a0 = "..\\cockpit\\drawsurf.cpp";
+    g_INT_01d046a4 = 0x369;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("2d line clipping exceeded max iterations");
     return iStack_40;
   }
   return iStack_40;

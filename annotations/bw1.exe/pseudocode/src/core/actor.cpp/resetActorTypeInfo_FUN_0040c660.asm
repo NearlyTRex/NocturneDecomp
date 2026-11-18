@@ -8,9 +8,9 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0 at 0051a660
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c3044
-;   undefined4 DAT_007c3048
-;   undefined4 DAT_007c304c
+;   int g_NumActorClassTypes
+;   CDemonActorType*[200] g_ActorClassRegistrations
+;   undefined4 g_ActorClassRegistrations[1]
 ;
 ; *****************************************************************************
 
@@ -18,13 +18,13 @@ section .text
 
     PUSH EBX                            ; 0040c660
         ;   Label: core_actor.cpp_resetActorTypeInfo_FUN_0040c660
-    MOV EBX,dword ptr [0x007c3044]      ; 0040c661 | DAT_007c3044
+    MOV EBX,dword ptr [0x007c3044]      ; 0040c661 | g_NumActorClassTypes
     XOR EDX,EDX                         ; 0040c667
     TEST EBX,EBX                        ; 0040c669
     JLE 0x0040c690                      ; 0040c66b
         ;   XREF to: 0040c690 (CONDITIONAL_JUMP)  ; LAB_0040c690
     XOR EAX,EAX                         ; 0040c66d
-    MOV ECX,dword ptr [EAX + 0x7c3048]  ; 0040c66f | DAT_007c3048 | DAT_007c304c
+    MOV ECX,dword ptr [EAX + 0x7c3048]  ; 0040c66f | g_ActorClassRegistrations | g_ActorClassRegistrations[1]
         ;   Label: LAB_0040c66f
     MOV ECX,dword ptr [ECX + 0x30]      ; 0040c675
     ADD EAX,0x4                         ; 0040c678
@@ -35,7 +35,7 @@ section .text
         ;   XREF to: 0040c66f (CONDITIONAL_JUMP)  ; LAB_0040c66f
     LEA EAX,[EAX]                       ; 0040c686
     LEA EDX,[EDX]                       ; 0040c68c
-    MOV dword ptr [0x007c3044],EBX      ; 0040c690 | DAT_007c3044
+    MOV dword ptr [0x007c3044],EBX      ; 0040c690 | g_NumActorClassTypes
         ;   Label: LAB_0040c690
     POP EBX                             ; 0040c696
     RET                                 ; 0040c697

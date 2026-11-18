@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 26,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055f650",
+    "address_range": [
+      [
+        "0055f650",
+        "0055f68d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_selectTextureFromPalette_FUN_0055f650",
+    "signature": "int __cdecl engine_special_cpp_selectTextureFromPalette_FUN_0055f650(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006141c8",
+      "name": "g_CurrentTextureDimension",
+      "type": "int",
+      "value": "0x100"
+    },
+    {
+      "addr": "01c37770",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
+      "value": null
+    },
+    {
+      "addr": "01c37774",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "uchar*",
+      "value": null
+    },
+    {
+      "addr": "01c37788",
+      "name": "g_INT_01c37788",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0264bbe0",
+      "name": "g_PTR_0264bbe0",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6923076923076925,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 28,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 96
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005820a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00565970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b7340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00532400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "tex",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "palette_data",
+        "offset": 8,
+        "size": 4,
+        "type": "SRGBColorPalette *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (*(code *)g_PTR_0264bbe0)",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

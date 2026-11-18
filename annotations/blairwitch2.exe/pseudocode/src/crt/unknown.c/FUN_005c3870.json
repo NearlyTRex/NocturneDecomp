@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 138,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -80,15 +79,15 @@
     },
     {
       "addr": "0061f480",
-      "name": "DAT_0061f480",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
     },
     {
       "addr": "0061f4d8",
-      "name": "DAT_0061f4d8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -192,7 +191,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((-1 < (int)param_1) && (param_1 <= 0x00000014)) {",
+      "text": "if ((-1 < (int)param_1) && (param_1 <= g_MaxHandleCount)) {",
       "type": "unnamed_param"
     },
     {
@@ -200,7 +199,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((-1 < (int)param_1) && (param_1 <= 0x00000014)) {",
+      "text": "if ((-1 < (int)param_1) && (param_1 <= g_MaxHandleCount)) {",
       "type": "unnamed_param"
     },
     {
@@ -224,16 +223,8 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "BVar1 = FlushFileBuffers(*(HANDLE *)(DAT_0061f4d8 + param_1 * 4));",
+      "text": "BVar1 = FlushFileBuffers(g_IOControlBlock->standard_handles[param_1]);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0061f4d8",
-      "severity": "mild",
-      "text": "BVar1 = FlushFileBuffers(*(HANDLE *)(DAT_0061f4d8 + param_1 * 4));",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

@@ -14,10 +14,10 @@
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060 at 00430113
-;   core_doc.cpp_FUN_0046e630 at 0046e64a
-;   core_gabriela.cpp_FUN_004caff0 at 004cb00e
+;   core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630 at 0046e64a
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0 at 004cb00e
 ;   core_moloch.cpp_CMoloch_process_FUN_005204e0 at 00520b1d
-;   core_stranger.cpp_FUN_00589f10 at 00589f2a
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00589f10 at 00589f2a
 ;   core_thehand.cpp_CTheHand_process_FUN_00599150 at 00599535
 ;
 ; Called Functions:

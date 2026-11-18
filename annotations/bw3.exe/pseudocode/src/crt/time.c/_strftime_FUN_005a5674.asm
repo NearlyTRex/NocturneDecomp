@@ -16,29 +16,29 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20 at 0047e149
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820 at 0048292d
-;   shape_edittool.cpp_FUN_0047dd20 at 0047e149
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_a_b_d_H_M_S_Y_005da78c
 ;   TerminatedCString s_m_d_y_005da7a4
-;   undefined1 DAT_005da7b0
+;   int g_INT_005da7b0 = 0xa
 ;   TerminatedCString s_I_M_S_p_005da7b4
-;   undefined1 DAT_005da7c0
-;   undefined1 DAT_005da7c4
-;   undefined1 DAT_005da7c8
+;   int g_INT_005da7c0 = 0x4d41
+;   int g_INT_005da7c4 = 0x4d50
+;   int g_INT_005da7c8 = 0x9
 ;   TerminatedCString s_a_b_d_Y_005da7cc
 ;   TerminatedCString s_H_M_S_005da7dc
-;   undefined4 DAT_006075dc
-;   undefined1* PTR_s_Sunday_006075f8 = 005da6dc
-;   undefined4 DAT_00607614
-;   undefined1* PTR_s_January_00607644 = 005da720
-;   void* PTR_DAT_00607d34 = 00607c30
+;   char[7][4] g_WeekdayNamesShort
+;   char*[7] g_WeekdayNamesLong
+;   char[12][4] g_MonthNamesShort
+;   char*[12] g_MonthNamesLong
+;   void* PTR_s_EST_00607d34 = 00607c30
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a5640
 ;   crt_unknown.c_FUN_005ac558
-;   crt_unknown.c_FUN_005acc88
+;   crt_unknown.c_IntegerToString_FUN_005acc88
 ;
 ; *****************************************************************************
 
@@ -230,25 +230,25 @@ section .text
         ;   XREF to: 005a5a54 (UNCONDITIONAL_JUMP)  ; LAB_005a5a54
     MOV EAX,dword ptr [EBX + 0x18]      ; 005a5821
         ;   Label: LAB_005a5821
-    MOV ESI,0x6075dc                    ; 005a5824 | DAT_006075dc
+    MOV ESI,0x6075dc                    ; 005a5824 | g_WeekdayNamesShort
     SHL EAX,0x2                         ; 005a5829
     ADD ESI,EAX                         ; 005a582c
     JMP 0x005a5a60                      ; 005a582e
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
     MOV ESI,dword ptr [EBX + 0x18]      ; 005a5833
         ;   Label: LAB_005a5833
-    MOV ESI,dword ptr [ESI*0x4 + 0x6075f8] ; 005a5836 | PTR_s_Sunday_006075f8
+    MOV ESI,dword ptr [ESI*0x4 + 0x6075f8] ; 005a5836 | g_WeekdayNamesLong
     JMP 0x005a5a60                      ; 005a583d
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
     MOV ESI,dword ptr [EBX + 0x10]      ; 005a5842
         ;   Label: LAB_005a5842
     SHL ESI,0x2                         ; 005a5845
-    ADD ESI,0x607614                    ; 005a5848 | DAT_00607614
+    ADD ESI,0x607614                    ; 005a5848 | g_MonthNamesShort
     JMP 0x005a5a60                      ; 005a584e
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
     MOV ESI,dword ptr [EBX + 0x10]      ; 005a5853
         ;   Label: LAB_005a5853
-    MOV ESI,dword ptr [ESI*0x4 + 0x607644] ; 005a5856 | PTR_s_January_00607644
+    MOV ESI,dword ptr [ESI*0x4 + 0x607644] ; 005a5856 | g_MonthNamesLong
     JMP 0x005a5a60                      ; 005a585d
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
     MOV EDI,dword ptr [EBX + 0xc]       ; 005a5862
@@ -303,8 +303,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1c]      ; 005a58cd
     ADD EAX,0x65                        ; 005a58d0
     PUSH EAX                            ; 005a58d3
-    CALL crt_unknown.c_FUN_005acc88     ; 005a58d4
-        ;   XREF to: 005acc88 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005acc88()
+    CALL crt_unknown.c_IntegerToString_FUN_005acc88 ; 005a58d4
+        ;   XREF to: 005acc88 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_IntegerToString_FUN_005acc88(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005a58d9
     DEC byte ptr [ESP]                  ; 005a58dc
     JMP 0x005a5a60                      ; 005a58df
@@ -330,7 +330,7 @@ section .text
     ADD ESP,0x8                         ; 005a5909
     JMP 0x005a5a60                      ; 005a590c
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
-    MOV ESI,0x5da7b0                    ; 005a5911 | DAT_005da7b0
+    MOV ESI,0x5da7b0                    ; 005a5911 | g_INT_005da7b0
         ;   Label: LAB_005a5911
     JMP 0x005a5a60                      ; 005a5916
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
@@ -343,10 +343,10 @@ section .text
         ;   Label: LAB_005a592c
     JGE 0x005a593c                      ; 005a5930
         ;   XREF to: 005a593c (CONDITIONAL_JUMP)  ; LAB_005a593c
-    MOV ESI,0x5da7c0                    ; 005a5932 | DAT_005da7c0
+    MOV ESI,0x5da7c0                    ; 005a5932 | g_INT_005da7c0
     JMP 0x005a5a60                      ; 005a5937
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
-    MOV ESI,0x5da7c4                    ; 005a593c | DAT_005da7c4
+    MOV ESI,0x5da7c4                    ; 005a593c | g_INT_005da7c4
         ;   Label: LAB_005a593c
     JMP 0x005a5a60                      ; 005a5941
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
@@ -360,7 +360,7 @@ section .text
     ADD ESP,0x8                         ; 005a5953
     JMP 0x005a5a60                      ; 005a5956
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
-    MOV ESI,0x5da7c8                    ; 005a595b | DAT_005da7c8
+    MOV ESI,0x5da7c8                    ; 005a595b | g_INT_005da7c8
         ;   Label: LAB_005a595b
     JMP 0x005a5a60                      ; 005a5960
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
@@ -447,8 +447,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14]      ; 005a5a30
     ADD EAX,0x76c                       ; 005a5a33
     PUSH EAX                            ; 005a5a38
-    CALL crt_unknown.c_FUN_005acc88     ; 005a5a39
-        ;   XREF to: 005acc88 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005acc88()
+    CALL crt_unknown.c_IntegerToString_FUN_005acc88 ; 005a5a39
+        ;   XREF to: 005acc88 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_IntegerToString_FUN_005acc88(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005a5a3e
     JMP 0x005a5a60                      ; 005a5a41
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
@@ -456,7 +456,7 @@ section .text
         ;   XREF to: 005ac558 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ac558()
         ;   Label: LAB_005a5a43
     MOV ESI,dword ptr [EBX + 0x20]      ; 005a5a48
-    MOV ESI,dword ptr [ESI*0x4 + 0x607d34] ; 005a5a4b | PTR_DAT_00607d34
+    MOV ESI,dword ptr [ESI*0x4 + 0x607d34] ; 005a5a4b | PTR_s_EST_00607d34
     JMP 0x005a5a60                      ; 005a5a52
         ;   XREF to: 005a5a60 (UNCONDITIONAL_JUMP)  ; LAB_005a5a60
     MOV AL,byte ptr [EBP]               ; 005a5a54
@@ -473,7 +473,7 @@ section .text
     SUB ECX,ECX                         ; 005a5a68
     DEC ECX                             ; 005a5a6a
     XOR EAX,EAX                         ; 005a5a6b
-    SCASB.REPNE ES:EDI                  ; 005a5a6d | DAT_005da7c8 | DAT_005da7c0 | DAT_005da7c4
+    SCASB.REPNE ES:EDI                  ; 005a5a6d | g_INT_005da7c8 | g_INT_005da7c0 | g_INT_005da7c4
     NOT ECX                             ; 005a5a6f
     DEC ECX                             ; 005a5a71
     POP ES                              ; 005a5a72

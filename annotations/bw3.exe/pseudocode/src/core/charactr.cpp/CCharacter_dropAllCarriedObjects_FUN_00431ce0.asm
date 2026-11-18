@@ -13,7 +13,7 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430fe7
 ;   core_construc.cpp_CConstruct_explode_FUN_00444110 at 0044411c
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00442d5b
-;   core_game.cpp_FUN_004c07b0 at 004c16c5
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c16c5
 ;   core_npc.cpp_CNPC_processDamage_FUN_005099e0 at 00509a89
 ;   core_spireagl.cpp_CSpiritEagle_processDamage_FUN_00599d60 at 00599df3
 ;

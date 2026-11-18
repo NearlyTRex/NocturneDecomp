@@ -10,8 +10,8 @@
 ;   core_hino.cpp_factoryFuncHino_FUN_0059b640 at 0059b653
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e81b0
-;   undefined4 DAT_005e81b4
+;   float g_FLOAT_005e81b0 = 50
+;   float g_FLOAT_005e81b4 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -44,9 +44,9 @@ section .text
     MOV dword ptr [EBX + 0xd064],0x0    ; 0059b6c2
     MOV dword ptr [EBX + 0xd068],0x0    ; 0059b6cc
     MOV dword ptr [EBX + 0xd05c],0x10000 ; 0059b6d6
-    FLD float ptr [0x005e81b0]          ; 0059b6e0 | DAT_005e81b0
+    FLD float ptr [0x005e81b0]          ; 0059b6e0 | g_FLOAT_005e81b0
     MOV dword ptr [EBX + 0xd06c],0x0    ; 0059b6e6
-    FLD float ptr [0x005e81b4]          ; 0059b6f0 | DAT_005e81b4
+    FLD float ptr [0x005e81b4]          ; 0059b6f0 | g_FLOAT_005e81b4
     MOV dword ptr [EBX + 0xd070],0x0    ; 0059b6f6
     ADD ESP,0x8                         ; 0059b700
     MOV dword ptr [EBX + 0xd074],0x0    ; 0059b703

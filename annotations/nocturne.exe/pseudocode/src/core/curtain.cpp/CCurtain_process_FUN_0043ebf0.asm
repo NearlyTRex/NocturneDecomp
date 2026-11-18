@@ -21,15 +21,15 @@
 ;   double DOUBLE_0057b526 = 0.03125
 ;   double DOUBLE_0057b52e = 5.08118523482294E-315
 ;   double DOUBLE_0057b536 = 0.100000000000000
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_0077bdb8
-;   CVector3f[100] g_CVector3f_ARRAY_0077bdbc
-;   undefined4 g_CVector3f_ARRAY_0077bdbc[0].y
-;   undefined4 g_CVector3f_ARRAY_0077bdbc[0].z
-;   SCollisionInfo[100] g_SCollisionInfo_ARRAY_0077c26c
-;   undefined4 g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_top_y
-;   undefined4 g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_radius
+;   int g_INT_0077bdb8
+;   CVector3f[100] g_CurtainCollisionPositions
+;   undefined4 g_CurtainCollisionPositions[0].y
+;   undefined4 g_CurtainCollisionPositions[0].z
+;   SCollisionInfo[100] g_CurtainCollisionInfos
+;   undefined4 g_CurtainCollisionInfos[0].cylinder_top_y
+;   undefined4 g_CurtainCollisionInfos[0].cylinder_radius
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 0043f061 (CONDITIONAL_JUMP)  ; LAB_0043f061
     LEA EAX,[EDI + 0x18c]               ; 0043ec30
     PUSH EAX                            ; 0043ec36
-    MOV ESI,dword ptr [0x005b7650]      ; 0043ec37 | DAT_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 0043ec37 | g_CEventListPtr
     PUSH ESI                            ; 0043ec3d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0043ec3e
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -186,33 +186,33 @@ section .text
         ;   Label: LAB_0043ed77
     MOV dword ptr [ESP + 0xc0],EDX      ; 0043ed79
     MOV dword ptr [ESP + 0xb8],EDX      ; 0043ed80
-    MOV dword ptr [0x0077bdb8],EDX      ; 0043ed87 | DAT_0077bdb8
+    MOV dword ptr [0x0077bdb8],EDX      ; 0043ed87 | g_INT_0077bdb8
     MOV EDX,dword ptr [0x005be368]      ; 0043ed8d | g_CDemonSetPtr
         ;   Label: LAB_0043ed8d
     MOV EAX,dword ptr [ESP + 0xc0]      ; 0043ed93
     CMP EAX,dword ptr [EDX + 0x14ecb0]  ; 0043ed9a | g_CDemonSetInstance.character_count
     JGE 0x0043ee81                      ; 0043eda0
         ;   XREF to: 0043ee81 (CONDITIONAL_JUMP)  ; LAB_0043ee81
-    MOV EAX,[0x0077bdb8]                ; 0043eda6 | DAT_0077bdb8
+    MOV EAX,[0x0077bdb8]                ; 0043eda6 | g_INT_0077bdb8
     IMUL ESI,EAX,0x28                   ; 0043edab
     ADD EDX,dword ptr [ESP + 0xb8]      ; 0043edae
     MOV EBX,dword ptr [EDX + 0x14ecb4]  ; 0043edb5 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     IMUL EDX,EAX,0xc                    ; 0043edbb
-    ADD EDX,0x77bdbc                    ; 0043edbe | g_CVector3f_ARRAY_0077bdbc
+    ADD EDX,0x77bdbc                    ; 0043edbe | g_CurtainCollisionPositions
     LEA EAX,[EBX + 0x20]                ; 0043edc4
-    ADD ESI,0x77c26c                    ; 0043edc7 | g_SCollisionInfo_ARRAY_0077c26c
+    ADD ESI,0x77c26c                    ; 0043edc7 | g_CurtainCollisionInfos
     CMP EDX,EAX                         ; 0043edcd
     JZ 0x0043ede1                       ; 0043edcf
         ;   XREF to: 0043ede1 (CONDITIONAL_JUMP)  ; LAB_0043ede1
     MOV ECX,dword ptr [EAX]             ; 0043edd1
-    MOV dword ptr [EDX],ECX             ; 0043edd3 | g_CVector3f_ARRAY_0077bdbc
+    MOV dword ptr [EDX],ECX             ; 0043edd3 | g_CurtainCollisionPositions
     MOV ECX,dword ptr [EAX + 0x4]       ; 0043edd5
-    MOV dword ptr [EDX + 0x4],ECX       ; 0043edd8 | g_CVector3f_ARRAY_0077bdbc[0].y
+    MOV dword ptr [EDX + 0x4],ECX       ; 0043edd8 | g_CurtainCollisionPositions[0].y
     MOV ECX,dword ptr [EAX + 0x8]       ; 0043eddb
-    MOV dword ptr [EDX + 0x8],ECX       ; 0043edde | g_CVector3f_ARRAY_0077bdbc[0].z
-    PUSH ESI                            ; 0043ede1 | g_SCollisionInfo_ARRAY_0077c26c
+    MOV dword ptr [EDX + 0x8],ECX       ; 0043edde | g_CurtainCollisionPositions[0].z
+    PUSH ESI                            ; 0043ede1 | g_CurtainCollisionInfos
         ;   Label: LAB_0043ede1
-    MOV dword ptr [ESI],0x0             ; 0043ede2 | g_SCollisionInfo_ARRAY_0077c26c
+    MOV dword ptr [ESI],0x0             ; 0043ede2 | g_CurtainCollisionInfos
     PUSH EBX                            ; 0043ede8
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0043ede9
     CALL dword ptr [EAX + 0x34]         ; 0043edef
@@ -237,44 +237,44 @@ section .text
     JA 0x0043edfa                       ; 0043ee29
         ;   XREF to: 0043edfa (CONDITIONAL_JUMP)  ; LAB_0043edfa
     FLD float ptr [EBX + 0x24]          ; 0043ee2b
-    FADD float ptr [ESI + 0x18]         ; 0043ee2e | g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_top_y
+    FADD float ptr [ESI + 0x18]         ; 0043ee2e | g_CurtainCollisionInfos[0].cylinder_top_y
     FCOMP float ptr [ESP + 0x38]        ; 0043ee31
     FNSTSW AX                           ; 0043ee35
     SAHF                                ; 0043ee37
     JC 0x0043edfa                       ; 0043ee38
         ;   XREF to: 0043edfa (CONDITIONAL_JUMP)  ; LAB_0043edfa
     FLD float ptr [EBX + 0x20]          ; 0043ee3a
-    FADD float ptr [ESI + 0x1c]         ; 0043ee3d | g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_radius
+    FADD float ptr [ESI + 0x1c]         ; 0043ee3d | g_CurtainCollisionInfos[0].cylinder_radius
     FCOMP float ptr [ESP + 0x34]        ; 0043ee40
     FNSTSW AX                           ; 0043ee44
     SAHF                                ; 0043ee46
     JC 0x0043edfa                       ; 0043ee47
         ;   XREF to: 0043edfa (CONDITIONAL_JUMP)  ; LAB_0043edfa
     FLD float ptr [EBX + 0x20]          ; 0043ee49
-    FSUB float ptr [ESI + 0x1c]         ; 0043ee4c | g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_radius
+    FSUB float ptr [ESI + 0x1c]         ; 0043ee4c | g_CurtainCollisionInfos[0].cylinder_radius
     FCOMP float ptr [ESP + 0x64]        ; 0043ee4f
     FNSTSW AX                           ; 0043ee53
     SAHF                                ; 0043ee55
     JA 0x0043edfa                       ; 0043ee56
         ;   XREF to: 0043edfa (CONDITIONAL_JUMP)  ; LAB_0043edfa
     FLD float ptr [EBX + 0x28]          ; 0043ee58
-    FADD float ptr [ESI + 0x1c]         ; 0043ee5b | g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_radius
+    FADD float ptr [ESI + 0x1c]         ; 0043ee5b | g_CurtainCollisionInfos[0].cylinder_radius
     FCOMP float ptr [ESP + 0x3c]        ; 0043ee5e
     FNSTSW AX                           ; 0043ee62
     SAHF                                ; 0043ee64
     JC 0x0043edfa                       ; 0043ee65
         ;   XREF to: 0043edfa (CONDITIONAL_JUMP)  ; LAB_0043edfa
     FLD float ptr [EBX + 0x28]          ; 0043ee67
-    FSUB float ptr [ESI + 0x1c]         ; 0043ee6a | g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_radius
+    FSUB float ptr [ESI + 0x1c]         ; 0043ee6a | g_CurtainCollisionInfos[0].cylinder_radius
     FCOMP float ptr [ESP + 0x6c]        ; 0043ee6d
     FNSTSW AX                           ; 0043ee71
     SAHF                                ; 0043ee73
     JA 0x0043edfa                       ; 0043ee74
         ;   XREF to: 0043edfa (CONDITIONAL_JUMP)  ; LAB_0043edfa
-    INC dword ptr [0x0077bdb8]          ; 0043ee76 | DAT_0077bdb8
+    INC dword ptr [0x0077bdb8]          ; 0043ee76 | g_INT_0077bdb8
     JMP 0x0043edfa                      ; 0043ee7c
         ;   XREF to: 0043edfa (UNCONDITIONAL_JUMP)  ; LAB_0043edfa
-    MOV EAX,[0x0077bdb8]                ; 0043ee81 | DAT_0077bdb8
+    MOV EAX,[0x0077bdb8]                ; 0043ee81 | g_INT_0077bdb8
         ;   Label: LAB_0043ee81
     MOV dword ptr [EDI + 0x65b2c],0x1   ; 0043ee86
     TEST EAX,EAX                        ; 0043ee90

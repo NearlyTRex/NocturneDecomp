@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   intensity
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_01d2257c
-;   undefined4 DAT_02c8344c
+;   int g_INT_01c50948
+;   void* g_PTR_01d2257c
+;   void* g_PTR_02c8344c
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_updateTransform_FUN_005124f0
@@ -35,19 +35,19 @@ section .text
     FADDP                               ; 00513bdd
     FSQRT                               ; 00513bdf
     FDIVR float ptr [ESP + 0x1c]        ; 00513be1
-    MOV EDX,dword ptr [0x02c8344c]      ; 00513be5 | DAT_02c8344c
+    MOV EDX,dword ptr [0x02c8344c]      ; 00513be5 | g_PTR_02c8344c
     FSTP float ptr [ESP + 0xc]          ; 00513beb
     TEST EDX,EDX                        ; 00513bef
     JZ 0x00513bfc                       ; 00513bf1
         ;   XREF to: 00513bfc (CONDITIONAL_JUMP)  ; LAB_00513bfc
-    CMP dword ptr [0x01c50948],0x0      ; 00513bf3 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 00513bf3 | g_INT_01c50948
     JNZ 0x00513c1f                      ; 00513bfa
         ;   XREF to: 00513c1f (CONDITIONAL_JUMP)  ; LAB_00513c1f
     FLD float ptr [ESP + 0xc]           ; 00513bfc
         ;   Label: LAB_00513bfc
     FLD float ptr [EBX]                 ; 00513c00
     FMUL ST1                            ; 00513c02
-    MOV EAX,[0x01d2257c]                ; 00513c04 | DAT_01d2257c
+    MOV EAX,[0x01d2257c]                ; 00513c04 | g_PTR_01d2257c
     FSTP float ptr [EAX + 0x30]         ; 00513c09
     FLD float ptr [EBX + 0x4]           ; 00513c0c
     FMUL ST1                            ; 00513c0f
@@ -70,7 +70,7 @@ section .text
     PUSH dword ptr [ESP + 0x1c]         ; 00513c38
     PUSH EAX                            ; 00513c3c
     FSTP float ptr [ESP + 0x10]         ; 00513c3d
-    CALL dword ptr [0x02c8344c]         ; 00513c41 | DAT_02c8344c
+    CALL dword ptr [0x02c8344c]         ; 00513c41 | g_PTR_02c8344c
     ADD ESP,0x8                         ; 00513c47
     JMP 0x00513bfc                      ; 00513c4a
         ;   XREF to: 00513bfc (UNCONDITIONAL_JUMP)  ; LAB_00513bfc

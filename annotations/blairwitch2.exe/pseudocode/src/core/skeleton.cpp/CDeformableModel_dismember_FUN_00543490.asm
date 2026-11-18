@@ -41,13 +41,13 @@
 ;   TerminatedCString s_CDeformableModel_dismemb_005e7126
 ;   TerminatedCString s_core_skeleton_cpp_005e7152
 ;   TerminatedCString s_CDeformableModel_dismemb_005e7167
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_004177e0
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
 ; *****************************************************************************
@@ -123,10 +123,10 @@ section .text
     MOV EAX,0x5e70cb                    ; 00543552 | = "..\\core\\skeleton.cpp"
     MOV EDX,0x661                       ; 00543557
     PUSH 0x5e70e0                       ; 0054355c | = "CDeformableModel::dismember - too man..."
-    MOV [0x01d046a0],EAX                ; 00543561 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00543566 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054356c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV [0x01d046a0],EAX                ; 00543561 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 00543566 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054356c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00543571
     MOV ESI,dword ptr [ESP + 0x5c]      ; 00543574
         ;   Label: LAB_00543574
@@ -231,10 +231,10 @@ section .text
         ;   Label: LAB_00543696
     MOV ESI,0x64c                       ; 0054369b
     PUSH 0x5e7091                       ; 005436a0 | = "CDeformableModel::dismember - can't d..."
-    MOV dword ptr [0x01d046a0],EBX      ; 005436a5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 005436ab | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005436b1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBX      ; 005436a5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 005436ab | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005436b1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005436b6
     JMP 0x005434ba                      ; 005436b9
         ;   XREF to: 005434ba (UNCONDITIONAL_JUMP)  ; LAB_005434ba
@@ -308,10 +308,10 @@ section .text
     MOV EDX,0x5e7111                    ; 00543774 | = "..\\core\\skeleton.cpp"
     MOV ECX,0x697                       ; 00543779
     PUSH 0x5e7126                       ; 0054377e | = "CDeformableModel::dismember - Hell fr..."
-    MOV dword ptr [0x01d046a0],EDX      ; 00543783 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00543789 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054378f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00543783 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00543789 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054378f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00543794
     MOV EAX,dword ptr [ESP + 0x28]      ; 00543797
         ;   Label: LAB_00543797
@@ -516,10 +516,10 @@ section .text
         ;   Label: LAB_00543a10
     MOV EDI,0x6ce                       ; 00543a15
     PUSH 0x5e7167                       ; 00543a1a | = "CDeformableModel::dismember - Hell fr..."
-    MOV dword ptr [0x01d046a0],ESI      ; 00543a1f | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00543a25 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00543a2b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 00543a1f | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00543a25 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00543a2b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00543a30
     ADD ESP,0x44                        ; 00543a33
     POP EBP                             ; 00543a36

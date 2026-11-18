@@ -34,35 +34,35 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00565ff0 at 005660d6
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 005660d6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_005eb895
 ;   TerminatedCString s_CStranger_makeDrawDecisi_005eb8aa
-;   undefined4 DAT_005eb8e5
-;   undefined4 DAT_005eb8ed
-;   undefined4 DAT_005eb8f5
-;   undefined4 DAT_005eb8fd
-;   undefined4 DAT_005eb905
-;   undefined4 DAT_005eb90d
-;   undefined4 DAT_005eb911
-;   undefined4 DAT_005fc200
-;   undefined4 DAT_005fc204
-;   undefined4 DAT_005fc208
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0264be3c
+;   double g_DOUBLE_005eb8e5 = 0.25
+;   double g_DOUBLE_005eb8ed = 4
+;   double g_DOUBLE_005eb8f5 = -0.75
+;   double g_DOUBLE_005eb8fd = 0.000100000000000000
+;   double g_DOUBLE_005eb905 = 0.5
+;   float g_FLOAT_005eb90d = 0.3490658
+;   float g_FLOAT_005eb911 = 0.6000000
+;   float g_FLOAT_005fc200 = -1.047198
+;   float g_FLOAT_005fc204 = 1.221730
+;   float g_FLOAT_005fc208 = 2.700000
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   undefined4 g_StrangerIndices[3]
 ;   ... and 6 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0
+;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
-;   core_motion.cpp_FUN_005035c0
-;   core_motion.cpp_FUN_005038a0
-;   core_motion.cpp_FUN_00503e60
-;   core_motion.cpp_FUN_00503f50
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -95,10 +95,10 @@ section .text
         ;   Label: LAB_005678a1
     MOV EDI,0xa78                       ; 005678a6
     PUSH 0x5eb8aa                       ; 005678ab | = "CStranger::makeDrawDecision - draw mo..."
-    MOV dword ptr [0x01d046a0],ESI      ; 005678b0 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 005678b6 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005678bc
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 005678b0 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 005678b6 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005678bc
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005678c1
     MOV dword ptr [ESP + 0x10],0x3f800000 ; 005678c4
         ;   Label: LAB_005678c4
@@ -130,14 +130,14 @@ section .text
         ;   Label: LAB_0056791c
     LEA ESI,[EBX + 0x2b4]               ; 0056791e
     PUSH ESI                            ; 00567924
-    CALL core_motion.cpp_FUN_005038a0   ; 00567925
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 00567925
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xe0],EAX      ; 0056792a
     ADD ESP,0x8                         ; 00567931
     PUSH 0x29                           ; 00567934
     PUSH ESI                            ; 00567936
-    CALL core_motion.cpp_FUN_005038a0   ; 00567937
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 00567937
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xf8],EAX      ; 0056793c
     FLD float ptr [ESP + 0xf8]          ; 00567943
     ADD ESP,0x8                         ; 0056794a
@@ -145,8 +145,8 @@ section .text
     FADD float ptr [ESP + 0xdc]         ; 0056794f
     PUSH ESI                            ; 00567956
     FSTP float ptr [ESP + 0xe0]         ; 00567957
-    CALL core_motion.cpp_FUN_005038a0   ; 0056795e
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 0056795e
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xf8],EAX      ; 00567963
     FLD float ptr [ESP + 0xf8]          ; 0056796a
     ADD ESP,0x8                         ; 00567971
@@ -154,8 +154,8 @@ section .text
     FADD float ptr [ESP + 0xdc]         ; 00567976
     PUSH ESI                            ; 0056797d
     FSTP float ptr [ESP + 0xe0]         ; 0056797e
-    CALL core_motion.cpp_FUN_005038a0   ; 00567985
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 00567985
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xf8],EAX      ; 0056798a
     FLD float ptr [ESP + 0xf8]          ; 00567991
     ADD ESP,0x8                         ; 00567998
@@ -183,8 +183,8 @@ section .text
         ;   XREF to: 00567a5a (CONDITIONAL_JUMP)  ; LAB_00567a5a
     LEA ESI,[EBX + 0x2b4]               ; 005679d6
     PUSH ESI                            ; 005679dc
-    CALL core_motion.cpp_FUN_00503e60   ; 005679dd
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005679dd
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0xf4],EAX      ; 005679e2
     FLD float ptr [ESP + 0xf4]          ; 005679e9
     ADD ESP,0x4                         ; 005679f0
@@ -192,8 +192,8 @@ section .text
     PUSH ESI                            ; 005679f8
     FSTP float ptr [ESP + 0x18]         ; 005679f9
     MOV dword ptr [ESP + 0xf0],EAX      ; 005679fd
-    CALL core_motion.cpp_FUN_005035c0   ; 00567a04
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00567a04
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00567a09
     ADD ESP,0x4                         ; 00567a0c
     CMP EAX,0x17                        ; 00567a0f
@@ -201,8 +201,8 @@ section .text
         ;   XREF to: 00567ea3 (CONDITIONAL_JUMP)  ; LAB_00567ea3
     FLD float ptr [ESP + 0x14]          ; 00567a18
         ;   Label: LAB_00567a18
-    FADD double ptr [0x005eb8f5]        ; 00567a1c | DAT_005eb8f5
-    FMUL double ptr [0x005eb8ed]        ; 00567a22 | DAT_005eb8ed
+    FADD double ptr [0x005eb8f5]        ; 00567a1c | g_DOUBLE_005eb8f5
+    FMUL double ptr [0x005eb8ed]        ; 00567a22 | g_DOUBLE_005eb8ed
         ;   Label: LAB_00567a22
     FSTP float ptr [ESP + 0xec]         ; 00567a28
     CMP dword ptr [ESP + 0xec],0x3f800000 ; 00567a2f
@@ -217,7 +217,7 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 00567a5a
         ;   Label: LAB_00567a5a
     FST double ptr [ESP]                ; 00567a5e
-    FCOMP double ptr [0x005eb8fd]       ; 00567a61 | DAT_005eb8fd
+    FCOMP double ptr [0x005eb8fd]       ; 00567a61 | g_DOUBLE_005eb8fd
     FNSTSW AX                           ; 00567a67
     SAHF                                ; 00567a69
     JBE 0x00567e9c                      ; 00567a6a
@@ -254,8 +254,8 @@ section .text
     PUSH EAX                            ; 00567ac0
     PUSH ESI                            ; 00567ac1
     MOV dword ptr [ESP + 0xf4],EAX      ; 00567ac2
-    CALL core_motion.cpp_FUN_00503f50   ; 00567ac9
-        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503f50()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50 ; 00567ac9
+        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0xfc],EAX      ; 00567ace
     FLD float ptr [ESP + 0xfc]          ; 00567ad5
     ADD ESP,0xc                         ; 00567adc
@@ -298,15 +298,15 @@ section .text
     FSTP float ptr [ESP]                ; 00567b51
     PUSH EDI                            ; 00567b54
     PUSH ESI                            ; 00567b55
-    CALL core_motion.cpp_FUN_00503f50   ; 00567b56
-        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00503f50()
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50 ; 00567b56
+        ;   XREF to: 00503f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0xfc],EAX      ; 00567b5b
     FLD float ptr [ESP + 0xfc]          ; 00567b62
     ADD ESP,0xc                         ; 00567b69
     FSTP float ptr [ESP + 0xe4]         ; 00567b6c
     PUSH 0x544cc0                       ; 00567b73
         ;   Label: LAB_00567b73
-    MOV ECX,dword ptr [0x0264be74]      ; 00567b78 | DAT_0264be74
+    MOV ECX,dword ptr [0x0264be74]      ; 00567b78 | g_StrangerIndices[17]
     PUSH ECX                            ; 00567b7e
     PUSH dword ptr [ESP + 0x18]         ; 00567b7f
     MOV ESI,dword ptr [ESP + 0xf4]      ; 00567b83
@@ -321,21 +321,21 @@ section .text
     TEST EDI,EDI                        ; 00567ba7
     JNZ 0x00567c41                      ; 00567ba9
         ;   XREF to: 00567c41 (CONDITIONAL_JUMP)  ; LAB_00567c41
-    MOV EAX,[0x0264be48]                ; 00567baf | DAT_0264be48
+    MOV EAX,[0x0264be48]                ; 00567baf | g_StrangerIndices[6]
     LEA ESI,[EBX + 0x964]               ; 00567bb4
     SHL EAX,0x4                         ; 00567bba
     ADD EAX,ESI                         ; 00567bbd
     PUSH dword ptr [EBX + 0x2d08]       ; 00567bbf
     PUSH EAX                            ; 00567bc5
-    MOV EAX,[0x0264be68]                ; 00567bc6 | DAT_0264be68
+    MOV EAX,[0x0264be68]                ; 00567bc6 | g_StrangerIndices[14]
     SHL EAX,0x4                         ; 00567bcb
     ADD EAX,ESI                         ; 00567bce
     PUSH EAX                            ; 00567bd0
     MOV dword ptr [ESP + 0xe4],ESI      ; 00567bd1
     LEA ESI,[ESP + 0x54]                ; 00567bd8
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 00567bdc
-        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00593df0()
-    MOV EAX,[0x0264be68]                ; 00567be1 | DAT_0264be68
+        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
+    MOV EAX,[0x0264be68]                ; 00567be1 | g_StrangerIndices[14]
     SHL EAX,0x4                         ; 00567be6
     LEA ESI,[ESP + 0x54]                ; 00567be9
     LEA EDI,[EBX + EAX*0x1 + 0x964]     ; 00567bed
@@ -344,20 +344,20 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00567bf8
     MOVSD ES:EDI,ESI                    ; 00567bf9
     MOVSD ES:EDI,ESI                    ; 00567bfa
-    MOV EAX,[0x0264be44]                ; 00567bfb | DAT_0264be44
+    MOV EAX,[0x0264be44]                ; 00567bfb | g_StrangerIndices[5]
     MOV ESI,dword ptr [ESP + 0xd8]      ; 00567c00
     SHL EAX,0x4                         ; 00567c07
     ADD EAX,ESI                         ; 00567c0a
     PUSH dword ptr [EBX + 0x2d08]       ; 00567c0c
     PUSH EAX                            ; 00567c12
-    MOV EAX,[0x0264be64]                ; 00567c13 | DAT_0264be64
+    MOV EAX,[0x0264be64]                ; 00567c13 | g_StrangerIndices[13]
     SHL EAX,0x4                         ; 00567c18
     ADD EAX,ESI                         ; 00567c1b
     PUSH EAX                            ; 00567c1d
     LEA ESI,[ESP + 0x24]                ; 00567c1e
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 00567c22
-        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00593df0()
-    MOV EAX,[0x0264be64]                ; 00567c27 | DAT_0264be64
+        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
+    MOV EAX,[0x0264be64]                ; 00567c27 | g_StrangerIndices[13]
     SHL EAX,0x4                         ; 00567c2c
     LEA ESI,[ESP + 0x24]                ; 00567c2f
     LEA EDI,[EBX + EAX*0x1 + 0x964]     ; 00567c33
@@ -372,7 +372,7 @@ section .text
         ;   XREF to: 00567db4 (CONDITIONAL_JUMP)  ; LAB_00567db4
     FLD float ptr [EBX + 0x2565c]       ; 00567c4e
     FADD float ptr [EBX + 0x2567c]      ; 00567c54
-    FMUL double ptr [0x005eb905]        ; 00567c5a | DAT_005eb905
+    FMUL double ptr [0x005eb905]        ; 00567c5a | g_DOUBLE_005eb905
     MOV ECX,0x3e860a92                  ; 00567c60
     XOR EDX,EDX                         ; 00567c65
     MOV ESI,0x3f19999a                  ; 00567c67
@@ -386,13 +386,13 @@ section .text
     SAHF                                ; 00567c88
     JBE 0x00567cab                      ; 00567c89
         ;   XREF to: 00567cab (CONDITIONAL_JUMP)  ; LAB_00567cab
-    FLD float ptr [0x005eb90d]          ; 00567c8b | DAT_005eb90d
+    FLD float ptr [0x005eb90d]          ; 00567c8b | g_FLOAT_005eb90d
     FLD float ptr [ESP + 0xc]           ; 00567c91
     FADD ST0,ST1                        ; 00567c95
-    FLD float ptr [0x005fc200]          ; 00567c97 | DAT_005fc200
+    FLD float ptr [0x005fc200]          ; 00567c97 | g_FLOAT_005fc200
     FADDP ST2,ST0                       ; 00567c9d
     FDIVRP                              ; 00567c9f
-    FMUL float ptr [0x005eb911]         ; 00567ca1 | DAT_005eb911
+    FMUL float ptr [0x005eb911]         ; 00567ca1 | g_FLOAT_005eb911
     FSTP float ptr [ESP + 0x8]          ; 00567ca7
     FLD float ptr [ESP + 0xc]           ; 00567cab
         ;   Label: LAB_00567cab
@@ -405,7 +405,7 @@ section .text
     FLD float ptr [ESP + 0xe0]          ; 00567cb8
     FLD float ptr [ESP + 0xc]           ; 00567cbf
     FSUB ST0,ST1                        ; 00567cc3
-    FLD float ptr [0x005fc204]          ; 00567cc5 | DAT_005fc204
+    FLD float ptr [0x005fc204]          ; 00567cc5 | g_FLOAT_005fc204
     FSUBRP ST2,ST0                      ; 00567ccb
     FDIVRP                              ; 00567ccd
     FMUL float ptr [ESP + 0xdc]         ; 00567ccf
@@ -430,13 +430,13 @@ section .text
     JNC 0x00567d58                      ; 00567d0a
         ;   XREF to: 00567d58 (CONDITIONAL_JUMP)  ; LAB_00567d58
     PUSH 0x5625c0                       ; 00567d0c
-    MOV EDI,dword ptr [0x0264be74]      ; 00567d11 | DAT_0264be74
+    MOV EDI,dword ptr [0x0264be74]      ; 00567d11 | g_StrangerIndices[17]
     PUSH EDI                            ; 00567d17
     PUSH dword ptr [ESP + 0x10]         ; 00567d18
     LEA ESI,[ESP + 0x84]                ; 00567d1c
     PUSH dword ptr [ESP + 0x18]         ; 00567d23
     CALL core_xform.cpp_quaternionFromAngleX_FUN_00593fa0 ; 00567d27
-        ;   XREF to: 00593fa0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_00593fa0()
+        ;   XREF to: 00593fa0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_00593fa0(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00567d2c
     LEA EAX,[ESP + 0xa4]                ; 00567d2f
     LEA EDI,[ESP + 0xa4]                ; 00567d36
@@ -461,8 +461,8 @@ section .text
     PUSH EBX                            ; 00567d65
     CALL core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0 ; 00567d66
         ;   XREF to: 00567fd0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0(CStranger * this_ptr, int arm_side)
-    MOV EAX,[0x0264be68]                ; 00567d6b | DAT_0264be68
-    MOV ESI,dword ptr [0x0264be48]      ; 00567d70 | DAT_0264be48
+    MOV EAX,[0x0264be68]                ; 00567d6b | g_StrangerIndices[14]
+    MOV ESI,dword ptr [0x0264be48]      ; 00567d70 | g_StrangerIndices[6]
     SHL EAX,0x4                         ; 00567d76
     SHL ESI,0x4                         ; 00567d79
     LEA EDI,[EBX + EAX*0x1 + 0x964]     ; 00567d7c
@@ -471,8 +471,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00567d8b
     MOVSD ES:EDI,ESI                    ; 00567d8c
     MOVSD ES:EDI,ESI                    ; 00567d8d
-    MOV ESI,dword ptr [0x0264be64]      ; 00567d8e | DAT_0264be64
-    MOV EAX,[0x0264be44]                ; 00567d94 | DAT_0264be44
+    MOV ESI,dword ptr [0x0264be64]      ; 00567d8e | g_StrangerIndices[13]
+    MOV EAX,[0x0264be44]                ; 00567d94 | g_StrangerIndices[5]
     SHL ESI,0x4                         ; 00567d99
     SHL EAX,0x4                         ; 00567d9c
     LEA EDI,[ESI + EBX*0x1 + 0x964]     ; 00567d9f
@@ -502,10 +502,10 @@ section .text
     PUSH dword ptr [EBX + 0x2565c]      ; 00567deb
     FSTP float ptr [ESP + 0xd4]         ; 00567df1
     CALL core_xform.cpp_quaternionFromAngleX_FUN_00593fa0 ; 00567df8
-        ;   XREF to: 00593fa0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_00593fa0()
+        ;   XREF to: 00593fa0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_00593fa0(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00567dfd
     PUSH 0x5625c0                       ; 00567e00
-    MOV EDX,dword ptr [0x0264be74]      ; 00567e05 | DAT_0264be74
+    MOV EDX,dword ptr [0x0264be74]      ; 00567e05 | g_StrangerIndices[17]
     PUSH EDX                            ; 00567e0b
     LEA EAX,[ESP + 0x30]                ; 00567e0c
     PUSH dword ptr [ESP + 0xd8]         ; 00567e10
@@ -526,7 +526,7 @@ section .text
     PUSH dword ptr [EBX + 0x25660]      ; 00567e44
     LEA EDI,[ESP + 0xbc]                ; 00567e4a
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00593fe0 ; 00567e51
-        ;   XREF to: 00593fe0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_00593fe0()
+        ;   XREF to: 00593fe0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_00593fe0(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xac]                ; 00567e56
     ADD ESP,0x4                         ; 00567e5d
     MOVSD ES:EDI,ESI                    ; 00567e60
@@ -534,7 +534,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00567e62
     MOVSD ES:EDI,ESI                    ; 00567e63
     PUSH 0x5625c0                       ; 00567e64
-    MOV ESI,dword ptr [0x0264be74]      ; 00567e69 | DAT_0264be74
+    MOV ESI,dword ptr [0x0264be74]      ; 00567e69 | g_StrangerIndices[17]
     PUSH ESI                            ; 00567e6f
     LEA EAX,[ESP + 0xc0]                ; 00567e70
     PUSH dword ptr [ESP + 0xd8]         ; 00567e77
@@ -563,7 +563,7 @@ section .text
         ;   XREF to: 00567ec0 (CONDITIONAL_JUMP)  ; LAB_00567ec0
     FLD float ptr [ESP + 0x14]          ; 00567eb1
         ;   Label: LAB_00567eb1
-    FSUBR double ptr [0x005eb8e5]       ; 00567eb5 | DAT_005eb8e5
+    FSUBR double ptr [0x005eb8e5]       ; 00567eb5 | g_DOUBLE_005eb8e5
     JMP 0x00567a22                      ; 00567ebb
         ;   XREF to: 00567a22 (UNCONDITIONAL_JUMP)  ; LAB_00567a22
     CMP EAX,0x1a                        ; 00567ec0
@@ -610,17 +610,17 @@ section .text
     RET                                 ; 00567f26
     FLD float ptr [EBX + 0x2571c]       ; 00567f27
         ;   Label: LAB_00567f27
-    FDIV float ptr [0x005fc208]         ; 00567f2d | DAT_005fc208
+    FDIV float ptr [0x005fc208]         ; 00567f2d | g_FLOAT_005fc208
     FLD1                                ; 00567f33
     FPATAN                              ; 00567f35
     LEA ESI,[ESP + 0x38]                ; 00567f37
     FSTP float ptr [ESP + 0xd4]         ; 00567f3b
     PUSH dword ptr [ESP + 0xd4]         ; 00567f42
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00593fe0 ; 00567f49
-        ;   XREF to: 00593fe0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_00593fe0()
+        ;   XREF to: 00593fe0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_00593fe0(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00567f4e
     PUSH 0x544cc0                       ; 00567f51
-    MOV EDX,dword ptr [0x0264be40]      ; 00567f56 | DAT_0264be40
+    MOV EDX,dword ptr [0x0264be40]      ; 00567f56 | g_StrangerIndices[4]
     PUSH EDX                            ; 00567f5c
     LEA EAX,[ESP + 0x70]                ; 00567f5d
     PUSH 0x3f800000                     ; 00567f61
@@ -642,10 +642,10 @@ section .text
     FCHS                                ; 00567f90
     FSTP float ptr [ESP]                ; 00567f92
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00593fe0 ; 00567f95
-        ;   XREF to: 00593fe0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_00593fe0()
+        ;   XREF to: 00593fe0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_00593fe0(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00567f9a
     PUSH 0x544cc0                       ; 00567f9d
-    MOV ECX,dword ptr [0x0264be3c]      ; 00567fa2 | DAT_0264be3c
+    MOV ECX,dword ptr [0x0264be3c]      ; 00567fa2 | g_StrangerIndices[3]
     PUSH ECX                            ; 00567fa8
     LEA EAX,[ESP + 0x70]                ; 00567fa9
     PUSH 0x3f800000                     ; 00567fad

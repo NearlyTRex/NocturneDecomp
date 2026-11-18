@@ -7,12 +7,12 @@
 ; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bda04
-;   undefined4 DAT_005bda0c
-;   undefined4 DAT_005bda14
-;   undefined4 DAT_005bda1c
-;   undefined4 DAT_005bda24
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005bda04 = 5
+;   double g_DOUBLE_005bda0c = -1.30899693895833
+;   double g_DOUBLE_005bda14 = 32
+;   double g_DOUBLE_005bda1c = 1.30899693895833
+;   float g_FLOAT_005bda24 = 2
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -69,7 +69,7 @@ section .text
     FLD float ptr [ESP + 0x38]          ; 00487ced
         ;   Label: LAB_00487ced
     PUSH 0x41000000                     ; 00487cf1
-    FADD float ptr [0x005bda04]         ; 00487cf6 | DAT_005bda04
+    FADD float ptr [0x005bda04]         ; 00487cf6 | g_FLOAT_005bda04
     PUSH 0xc1000000                     ; 00487cfc
     FSTP float ptr [ESP + 0x40]         ; 00487d01
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00487d05
@@ -83,11 +83,11 @@ section .text
     FSTP float ptr [ESP + 0x3c]         ; 00487d29
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00487d2d
         ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
-    FLD double ptr [0x005bda0c]         ; 00487d32 | DAT_005bda0c
+    FLD double ptr [0x005bda0c]         ; 00487d32 | g_DOUBLE_005bda0c
     FLD ST0                             ; 00487d38
     MOV dword ptr [ESP + 0x80],EAX      ; 00487d3a
     FSIN                                ; 00487d41
-    FLD double ptr [0x005bda1c]         ; 00487d43 | DAT_005bda1c
+    FLD double ptr [0x005bda1c]         ; 00487d43 | g_DOUBLE_005bda1c
     FPTAN                               ; 00487d49
     FSTP ST0                            ; 00487d4b
     FLD float ptr [ESP + 0x80]          ; 00487d4d
@@ -96,7 +96,7 @@ section .text
     FST float ptr [ESP + 0x3c]          ; 00487d5b
     FLD float ptr [ESP + 0x34]          ; 00487d5f
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 00487d63
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     FLD float ptr [ESP + 0x3c]          ; 00487d68
     FMUL ST0                            ; 00487d6c
     FLD float ptr [ESP + 0x34]          ; 00487d6e
@@ -115,9 +115,9 @@ section .text
     FMUL double ptr [ESP + 0x4c]        ; 00487d8c
     FSUB float ptr [ESP + 0x38]         ; 00487d90
     FLD ST2                             ; 00487d94
-    FMUL float ptr [0x005bda24]         ; 00487d96 | DAT_005bda24
+    FMUL float ptr [0x005bda24]         ; 00487d96 | g_FLOAT_005bda24
     FLD double ptr [ESP + 0x4c]         ; 00487d9c
-    FMUL double ptr [0x005bda14]        ; 00487da0 | DAT_005bda14
+    FMUL double ptr [0x005bda14]        ; 00487da0 | g_DOUBLE_005bda14
     FXCH                                ; 00487da6
     FMUL ST4                            ; 00487da8
     FXCH                                ; 00487daa
@@ -185,7 +185,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00487e57
     ADD EAX,0x20                        ; 00487e5a
     PUSH EAX                            ; 00487e5d
-    MOV EDX,dword ptr [0x005fc5a0]      ; 00487e5e | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 00487e5e | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 00487e64
     CALL core_fire.cpp_CFireEffect_createFireball_FUN_004a2830 ; 00487e65
         ;   XREF to: 004a2830 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFireball_FUN_004a2830(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int lighting_active, ...)

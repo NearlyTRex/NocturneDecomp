@@ -11,9 +11,9 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8258
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0203a414
-;   undefined4 DAT_0203a418
-;   undefined4 DAT_0203a41c
+;   int g_MasterLightCount
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a418
+;   undefined4 g_CDemonLight_PTR_ARRAY_0203a418[1]
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
 
     PUSH ESI                            ; 0053b660
         ;   Label: core_set.cpp_CDemonSet_loadMasterLightStates_FUN_0053b660
-    MOV ESI,dword ptr [0x0203a414]      ; 0053b661 | DAT_0203a414
+    MOV ESI,dword ptr [0x0203a414]      ; 0053b661 | g_MasterLightCount
     MOV EDX,dword ptr [ESP + 0xc]       ; 0053b667
     MOV ECX,dword ptr [EDX]             ; 0053b66b
     CMP ESI,ECX                         ; 0053b66d
@@ -32,7 +32,7 @@ section .text
     JLE 0x0053b691                      ; 0053b675
         ;   XREF to: 0053b691 (CONDITIONAL_JUMP)  ; LAB_0053b691
     PUSH EBX                            ; 0053b677
-    MOV EBX,dword ptr [EAX*0x4 + 0x203a418] ; 0053b678 | DAT_0203a418 | DAT_0203a41c
+    MOV EBX,dword ptr [EAX*0x4 + 0x203a418] ; 0053b678 | g_CDemonLight_PTR_ARRAY_0203a418 | g_CDemonLight_PTR_ARRAY_0203a418[1]
         ;   Label: LAB_0053b678
     MOV ECX,dword ptr [EDX + 0x4]       ; 0053b67f
     ADD EDX,0x4                         ; 0053b682
@@ -42,7 +42,7 @@ section .text
     JL 0x0053b678                       ; 0053b68e
         ;   XREF to: 0053b678 (CONDITIONAL_JUMP)  ; LAB_0053b678
     POP EBX                             ; 0053b690
-    MOV dword ptr [0x0203a414],ESI      ; 0053b691 | DAT_0203a414
+    MOV dword ptr [0x0203a414],ESI      ; 0053b691 | g_MasterLightCount
         ;   Label: LAB_0053b691
     POP ESI                             ; 0053b697
     RET                                 ; 0053b698

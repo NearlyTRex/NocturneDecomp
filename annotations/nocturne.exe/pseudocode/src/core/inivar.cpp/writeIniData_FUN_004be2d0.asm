@@ -135,7 +135,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 004be3e8
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004bda80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004be3ed
-    MOV EBX,dword ptr [0x01cae37c]      ; 004be3f0 | DAT_01cae37c
+    MOV EBX,dword ptr [0x01cae37c]      ; 004be3f0 | g_FirstTimeFlag
     PUSH EBX                            ; 004be3f6
     PUSH 0x586a77                       ; 004be3f7 | = "firstTimeFlag"
     LEA EAX,[ESP + 0x8]                 ; 004be3fc
@@ -176,7 +176,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 004be462
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004bda80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004be467
-    MOV EDI,dword ptr [0x01cc64a4]      ; 004be46a | DAT_01cc64a4
+    MOV EDI,dword ptr [0x01cc64a4]      ; 004be46a | g_CurrentGraphicsBoard
     PUSH EDI                            ; 004be470
     PUSH 0x586ace                       ; 004be471 | = "currentBoard"
     LEA EAX,[ESP + 0x8]                 ; 004be476

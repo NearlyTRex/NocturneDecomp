@@ -79,7 +79,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005911b4
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 005911b9
-    PUSH 0x5eecb3                       ; 005911bc | DAT_005eecb3
+    PUSH 0x5eecb3                       ; 005911bc | = "rb"
     LEA EAX,[ESP + 0x188]               ; 005911c1
     PUSH EAX                            ; 005911c8
     CALL crt_stdio.c_fopen_FUN_005b910c ; 005911c9
@@ -97,15 +97,15 @@ section .text
     PUSH EBX                            ; 005911df
     PUSH EAX                            ; 005911e0
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 005911e1
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005911e6
     LEA ESI,[ESP + 0x190]               ; 005911e9
     CALL engine_special.cpp_clearScreen_FUN_0055b1f0 ; 005911f0
         ;   XREF to: 0055b1f0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0055b1f0()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 005911f5
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
-    MOV EDI,dword ptr [0x02665a50]      ; 005911fa | DAT_02665a50
-    MOV EBX,dword ptr [0x02664628]      ; 00591200 | DAT_02664628
+    MOV EDI,dword ptr [0x02665a50]      ; 005911fa | g_MoviePlaying
+    MOV EBX,dword ptr [0x02664628]      ; 00591200 | g_MainWindowHandle
     TEST EDI,EDI                        ; 00591206
     JZ 0x00591213                       ; 00591208
         ;   XREF to: 00591213 (CONDITIONAL_JUMP)  ; LAB_00591213
@@ -134,7 +134,7 @@ section .text
     PUSH 0x0                            ; 00591241
     MOV EAX,0x1                         ; 00591243
     PUSH 0x104                          ; 00591248
-    MOV [0x02665a50],EAX                ; 0059124d | DAT_02665a50
+    MOV [0x02665a50],EAX                ; 0059124d | g_MoviePlaying
     LEA EAX,[ESP + 0x14]                ; 00591252
     PUSH EAX                            ; 00591256
     PUSH 0x5eec43                       ; 00591257 | = "status mov window handle"
@@ -147,12 +147,12 @@ section .text
     CALL crt_stdlib.c_atoi_FUN_005bad20 ; 00591270
         ;   XREF to: 005bad20 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_005bad20(char * string_ptr)
     ADD ESP,0x4                         ; 00591275
-    MOV [0x02665a48],EAX                ; 00591278 | DAT_02665a48
-    CMP dword ptr [0x02665a58],0x0      ; 0059127d | DAT_02665a58
+    MOV [0x02665a48],EAX                ; 00591278 | g_MovieWindowHandle
+    CMP dword ptr [0x02665a58],0x0      ; 0059127d | g_FullscreenMovie
         ;   Label: LAB_0059127d
     JNZ 0x00591427                      ; 00591284
         ;   XREF to: 00591427 (CONDITIONAL_JUMP)  ; LAB_00591427
-    CMP dword ptr [0x02665a50],0x0      ; 0059128a | DAT_02665a50
+    CMP dword ptr [0x02665a50],0x0      ; 0059128a | g_MoviePlaying
     JZ 0x00591427                       ; 00591291
         ;   XREF to: 00591427 (CONDITIONAL_JUMP)  ; LAB_00591427
     LEA EAX,[ESP + 0x1f0]               ; 00591297
@@ -307,20 +307,20 @@ section .text
     SUB ECX,EAX                         ; 00591415
     PUSH ECX                            ; 00591417
     PUSH EBX                            ; 00591418
-    MOV EDI,dword ptr [0x02665a48]      ; 00591419 | DAT_02665a48
+    MOV EDI,dword ptr [0x02665a48]      ; 00591419 | g_MovieWindowHandle
     PUSH EDI                            ; 0059141f
     CALL dword ptr CS:[0x5c84d0]        ; 00591420 | PTR_MoveWindow_005c84d0
-    MOV ECX,dword ptr [0x02665a4c]      ; 00591427 | DAT_02665a4c
+    MOV ECX,dword ptr [0x02665a4c]      ; 00591427 | g_MovieHandle
         ;   Label: LAB_00591427
-    MOV EAX,[0x02664628]                ; 0059142d | DAT_02664628
+    MOV EAX,[0x02664628]                ; 0059142d | g_MainWindowHandle
     TEST ECX,ECX                        ; 00591432
     SETZ DL                             ; 00591434
     AND EDX,0xff                        ; 00591437
-    MOV dword ptr [0x02665a4c],EDX      ; 0059143d | DAT_02665a4c
+    MOV dword ptr [0x02665a4c],EDX      ; 0059143d | g_MovieHandle
     TEST EDX,EDX                        ; 00591443
     JZ 0x005914dc                       ; 00591445
         ;   XREF to: 005914dc (CONDITIONAL_JUMP)  ; LAB_005914dc
-    MOV ESI,dword ptr [0x02665a58]      ; 0059144b | DAT_02665a58
+    MOV ESI,dword ptr [0x02665a58]      ; 0059144b | g_FullscreenMovie
     TEST ESI,ESI                        ; 00591451
     JZ 0x005914ec                       ; 00591453
         ;   XREF to: 005914ec (CONDITIONAL_JUMP)  ; LAB_005914ec
@@ -339,7 +339,7 @@ section .text
     CALL wincore_winrun.cpp_processWindowMessages_FUN_0058f270 ; 0059147f
         ;   XREF to: 0058f270 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_0058f270()
         ;   Label: LAB_0059147f
-    CMP ESI,dword ptr [0x02665a4c]      ; 00591484 | DAT_02665a4c
+    CMP ESI,dword ptr [0x02665a4c]      ; 00591484 | g_MovieHandle
     JZ 0x005914f9                       ; 0059148a
         ;   XREF to: 005914f9 (CONDITIONAL_JUMP)  ; LAB_005914f9
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_0058eb40 ; 0059148c
@@ -347,7 +347,7 @@ section .text
     TEST EAX,EAX                        ; 00591491
     JNZ 0x005914f9                      ; 00591493
         ;   XREF to: 005914f9 (CONDITIONAL_JUMP)  ; LAB_005914f9
-    CMP ESI,dword ptr [0x02665a50]      ; 00591495 | DAT_02665a50
+    CMP ESI,dword ptr [0x02665a50]      ; 00591495 | g_MoviePlaying
     JZ 0x005914f9                       ; 0059149b
         ;   XREF to: 005914f9 (CONDITIONAL_JUMP)  ; LAB_005914f9
     PUSH 0x14                           ; 0059149d
@@ -367,7 +367,7 @@ section .text
     PUSH EBX                            ; 005914c7
     XOR EBP,EBP                         ; 005914c8
     CALL dword ptr CS:[0x5c84cc]        ; 005914ca | PTR_MessageBoxA_005c84cc
-    MOV dword ptr [0x02665a50],EBP      ; 005914d1 | DAT_02665a50
+    MOV dword ptr [0x02665a50],EBP      ; 005914d1 | g_MoviePlaying
     JMP 0x00591427                      ; 005914d7
         ;   XREF to: 00591427 (UNCONDITIONAL_JUMP)  ; LAB_00591427
     PUSH 0x0                            ; 005914dc
@@ -388,7 +388,7 @@ section .text
         ;   Label: LAB_005914f9
     PUSH EBX                            ; 005914fb
     CALL dword ptr CS:[0x5c863c]        ; 005914fc | PTR_SetThreadPriority_005c863c
-    MOV EAX,[0x02664628]                ; 00591503 | DAT_02664628
+    MOV EAX,[0x02664628]                ; 00591503 | g_MainWindowHandle
     PUSH EAX                            ; 00591508
     CALL wincore_winvideo.cpp_closeMovie_FUN_00590e40 ; 00591509
         ;   XREF to: 00590e40 (UNCONDITIONAL_CALL)  ; void wincore_winvideo.cpp_closeMovie_FUN_00590e40(HWND window_handle)

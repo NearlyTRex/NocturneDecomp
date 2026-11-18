@@ -89,35 +89,35 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[35]:
+; XREF[36]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411e3f
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 004137b2
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c640
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0 at 0041cc94
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423f90
+;   core_carved.cpp_CCarved_processPickup_FUN_0042a930 at 0042ad8a
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429bcc
-;   core_carved.cpp_FUN_0042a930 at 0042ad8a
+;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0 at 00431fec
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 at 00434ce2
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240 at 00432377
-;   core_charactr.cpp_FUN_00431cc0 at 00431fec
-;   core_charactr.cpp_FUN_00433f10 at 0043406f
-;   ... and 25 more
+;   ... and 26 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CCharacter_walkToPoint_g_005d589d
-;   undefined4 DAT_005d58cf
-;   undefined4 DAT_005d58d7
-;   undefined4 DAT_005d58df
-;   undefined4 DAT_005d58e7
-;   undefined4 DAT_005d58ef
-;   undefined4 DAT_005d58f7
-;   undefined4 DAT_005d58ff
+;   double g_DOUBLE_005d58cf = 0.0100000000000000
+;   double g_DOUBLE_005d58d7 = 5
+;   double g_DOUBLE_005d58df = 0.318309886192889
+;   double g_DOUBLE_005d58e7 = 2
+;   double g_DOUBLE_005d58ef = 1.5
+;   double g_DOUBLE_005d58f7 = 0.5
+;   double g_DOUBLE_005d58ff = 4
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
-;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 ;   core_path.cpp_getPathMap_FUN_005351f0
@@ -154,7 +154,7 @@ section .text
     PUSH EDX                            ; 0042cd3a
     FSTP float ptr [ESP + 0x10]         ; 0042cd3b
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0042cd3f
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0042cd44
     LEA ESI,[ESP + 0x108]               ; 0042cd47
     MOV ECX,dword ptr [EBP + 0x18]      ; 0042cd4e
@@ -167,8 +167,8 @@ section .text
     PUSH EBX                            ; 0042cd60
     LEA EDI,[ESP + 0xc8]                ; 0042cd61
     MOV dword ptr [ESP + 0x10],EAX      ; 0042cd68
-    CALL core_actor.cpp_FUN_00408bb0    ; 0042cd6c
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0042cd6c
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x5c]                ; 0042cd71
     ADD ESP,0x8                         ; 0042cd75
     MOVSD ES:EDI,ESI                    ; 0042cd78
@@ -185,7 +185,7 @@ section .text
     PUSH EAX                            ; 0042cd9c
     FSTP float ptr [ESP + 0x14]         ; 0042cd9d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0042cda1
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 0042cda6
     FLD float ptr [ESP + 0x10]          ; 0042cda9
     FSUB float ptr [ESP + 0xc]          ; 0042cdad
@@ -218,7 +218,7 @@ section .text
         ;   XREF to: 0042d0e5 (CONDITIONAL_JUMP)  ; LAB_0042d0e5
     FLD float ptr [EBP + 0x24]          ; 0042cdf7
         ;   Label: LAB_0042cdf7
-    FADD double ptr [0x005d58cf]        ; 0042cdfa | DAT_005d58cf
+    FADD double ptr [0x005d58cf]        ; 0042cdfa | g_DOUBLE_005d58cf
     FLD float ptr [ESP + 0x4]           ; 0042ce00
     FCOMPP                              ; 0042ce04
     FNSTSW AX                           ; 0042ce06
@@ -226,7 +226,7 @@ section .text
     JNC 0x0042ce3d                      ; 0042ce09
         ;   XREF to: 0042ce3d (CONDITIONAL_JUMP)  ; LAB_0042ce3d
     FLD float ptr [EBP + 0x28]          ; 0042ce0b
-    FADD double ptr [0x005d58cf]        ; 0042ce0e | DAT_005d58cf
+    FADD double ptr [0x005d58cf]        ; 0042ce0e | g_DOUBLE_005d58cf
     FLD float ptr [ESP]                 ; 0042ce14
     FCOMPP                              ; 0042ce17
     FNSTSW AX                           ; 0042ce19
@@ -235,7 +235,7 @@ section .text
         ;   XREF to: 0042ce3d (CONDITIONAL_JUMP)  ; LAB_0042ce3d
     FLD float ptr [ESP + 0xc4]          ; 0042ce1e
     FABS                                ; 0042ce25
-    FCOMP double ptr [0x005d58d7]       ; 0042ce27 | DAT_005d58d7
+    FCOMP double ptr [0x005d58d7]       ; 0042ce27 | g_DOUBLE_005d58d7
     FNSTSW AX                           ; 0042ce2d
     SAHF                                ; 0042ce2f
     JNC 0x0042ce3d                      ; 0042ce30
@@ -250,11 +250,11 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 0042ce54
     MOV dword ptr [EAX],EDX             ; 0042ce57
     FABS                                ; 0042ce59
-    FMUL double ptr [0x005d58df]        ; 0042ce5b | DAT_005d58df
-    FMUL double ptr [0x005d58e7]        ; 0042ce61 | DAT_005d58e7
+    FMUL double ptr [0x005d58df]        ; 0042ce5b | g_DOUBLE_005d58df
+    FMUL double ptr [0x005d58e7]        ; 0042ce61 | g_DOUBLE_005d58e7
     FLD float ptr [ESP + 0xc]           ; 0042ce67
-    FMUL double ptr [0x005d58ef]        ; 0042ce6b | DAT_005d58ef
-    FADD double ptr [0x005d58f7]        ; 0042ce71 | DAT_005d58f7
+    FMUL double ptr [0x005d58ef]        ; 0042ce6b | g_DOUBLE_005d58ef
+    FADD double ptr [0x005d58f7]        ; 0042ce71 | g_DOUBLE_005d58f7
     FADDP                               ; 0042ce77
     MOV EDX,dword ptr [EBX + 0x27a8]    ; 0042ce79
     FSTP float ptr [ESP + 0x12c]        ; 0042ce7f
@@ -263,7 +263,7 @@ section .text
         ;   XREF to: 0042d119 (CONDITIONAL_JUMP)  ; LAB_0042d119
     FLD float ptr [ESP + 0x14]          ; 0042ce8e
         ;   Label: LAB_0042ce8e
-    FMUL double ptr [0x005d58ff]        ; 0042ce92 | DAT_005d58ff
+    FMUL double ptr [0x005d58ff]        ; 0042ce92 | g_DOUBLE_005d58ff
     FADD float ptr [ESP + 0xc]          ; 0042ce98
     FLD float ptr [ESP + 0x10]          ; 0042ce9c
     FCOMPP                              ; 0042cea0
@@ -359,7 +359,7 @@ section .text
     LEA ESI,[ESP + 0xb8]                ; 0042cfe9
     LEA EDI,[ESP + 0x70]                ; 0042cff0
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0042cff4
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0xb8]                ; 0042cff9
     ADD ESP,0x4                         ; 0042d000
     MOVSD ES:EDI,ESI                    ; 0042d003
@@ -626,8 +626,8 @@ section .text
     PUSH EBX                            ; 0042d33c
     LEA ESI,[ESP + 0xe0]                ; 0042d33d
     LEA EDI,[ESP + 0x8c]                ; 0042d344
-    CALL core_actor.cpp_FUN_00408b40    ; 0042d34b
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0042d34b
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xe0]                ; 0042d350
     ADD ESP,0x8                         ; 0042d357
     MOVSD ES:EDI,ESI                    ; 0042d35a
@@ -638,8 +638,8 @@ section .text
     PUSH EBX                            ; 0042d361
     LEA ESI,[ESP + 0x11c]               ; 0042d362
     LEA EDI,[ESP + 0x50]                ; 0042d369
-    CALL core_actor.cpp_FUN_00408ac0    ; 0042d36d
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 0042d36d
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0042d372
     LEA ESI,[ESP + 0x114]               ; 0042d375
     MOV EAX,dword ptr [EBP + 0x18]      ; 0042d37c
@@ -689,7 +689,7 @@ section .text
     LEA ESI,[ESP + 0x94]                ; 0042d41c
     LEA EDI,[ESP + 0xf4]                ; 0042d423
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0042d42a
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x94]                ; 0042d42f
     ADD ESP,0x4                         ; 0042d436
     MOVSD ES:EDI,ESI                    ; 0042d439

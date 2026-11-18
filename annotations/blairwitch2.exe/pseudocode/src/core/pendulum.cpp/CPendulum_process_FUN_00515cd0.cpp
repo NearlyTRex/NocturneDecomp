@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_pendulum_cpp_CPendulum_process_FUN_00515cd0(CPendulum *this_ptr,float delta_time)
 
 {
@@ -21,14 +19,14 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_00515cd0(CPendulum *this_pt
   
   if (this_ptr->moving == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (0x01C38BC0,this_ptr->start_event);
+                      (g_CEventListPtr,this_ptr->start_event);
     if (iVar1 == 0) {
       return;
     }
     this_ptr->moving = 1;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (0x01C38BC0,this_ptr->stop_event);
+                    (g_CEventListPtr,this_ptr->stop_event);
   if ((iVar1 != 0) && (this_ptr->decay != 1.0)) {
     this_ptr->decay_timer = 0.0;
     this_ptr->decay = 1.0;
@@ -36,10 +34,10 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_00515cd0(CPendulum *this_pt
   core_pendulum_cpp_CPendulum_updateSwing_FUN_005156d0(this_ptr,delta_time);
   fVar6 = (float10)1;
   fVar4 = (float10)1.4426950408889634 *
-          (float10)this_ptr->decay * (float10)_DAT_005e1a8a * (float10)this_ptr->decay_timer;
+          (float10)this_ptr->decay * (float10)-1 * (float10)this_ptr->decay_timer;
   fVar5 = (float10)f2xm1(fVar4 - (fVar4 / fVar6) * fVar6);
   fVar6 = (float10)fscale(fVar5 + fVar6,fVar4);
-  if (fVar6 <= (float10)_DAT_005e1a92) {
+  if (fVar6 <= (float10)0.10000000000000001) {
     this_ptr->is_stopped = 1;
     return;
   }

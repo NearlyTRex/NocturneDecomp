@@ -30,5 +30,5 @@ extern int g_KFMShowEditorScreenshotCounter;
 extern int g_NumSearchHandlers;
 
 // uint
-extern uint UINT_02c14cd8;
+extern uint g_DoorLockedSoundHandle;
 

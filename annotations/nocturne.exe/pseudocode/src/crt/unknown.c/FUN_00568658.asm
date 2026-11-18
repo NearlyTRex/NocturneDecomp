@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_0056de90 at 0056de9a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de4e24
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -19,17 +19,17 @@ section .text
 
     PUSH EBX                            ; 00568658
         ;   Label: crt_unknown.c_FUN_00568658
-    CMP dword ptr [0x02de4e24],0x0      ; 00568659 | DAT_02de4e24
+    CMP dword ptr [0x02de4e24],0x0      ; 00568659 | g_FreeListHeadPointer
     JZ 0x0056867c                       ; 00568660
         ;   XREF to: 0056867c (CONDITIONAL_JUMP)  ; LAB_0056867c
-    MOV EAX,[0x02de4e24]                ; 00568662 | DAT_02de4e24
+    MOV EAX,[0x02de4e24]                ; 00568662 | g_FreeListHeadPointer
         ;   Label: LAB_00568662
     PUSH EAX                            ; 00568667
     MOV EBX,dword ptr [EAX]             ; 00568668
     CALL crt_memory.c_free_FUN_005638d0 ; 0056866a
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 0056866f
-    MOV dword ptr [0x02de4e24],EBX      ; 00568672 | DAT_02de4e24
+    MOV dword ptr [0x02de4e24],EBX      ; 00568672 | g_FreeListHeadPointer
     TEST EBX,EBX                        ; 00568678
     JNZ 0x00568662                      ; 0056867a
         ;   XREF to: 00568662 (CONDITIONAL_JUMP)  ; LAB_00568662

@@ -9,7 +9,7 @@
 void __cdecl atexitRegisterNode(WatcomStaticDestructorNode *node_ptr)
 
 {
-  node_ptr->next = DAT_005c1f50;
-  DAT_005c1f50 = node_ptr;
+  node_ptr->next = g_AtexitListHead;
+  g_AtexitListHead = node_ptr;
   return;
 }

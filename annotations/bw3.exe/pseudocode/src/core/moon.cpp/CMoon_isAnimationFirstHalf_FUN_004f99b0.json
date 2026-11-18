@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 23,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 20
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
   },
   "cross_references": [
     {
       "addr": "004e7860",
       "from_addr": "004e7927",
-      "name": "core_menu.cpp_FUN_004e7860",
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -38,14 +36,14 @@
   "globals": [
     {
       "addr": "005c927d",
-      "name": "DAT_005c927d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c927d",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "01d88644",
-      "name": "DAT_01d88644",
-      "type": "undefined4",
+      "name": "g_MoonAnimationTimer",
+      "type": "float",
       "value": null
     }
   ],
@@ -55,7 +53,7 @@
       {
         "call_addr": "004e7927",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e7860",
+        "caller": "core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,14 +130,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

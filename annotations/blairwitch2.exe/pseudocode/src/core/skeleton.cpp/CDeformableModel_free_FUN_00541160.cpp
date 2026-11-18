@@ -16,13 +16,13 @@ void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_00541160(CDeformableMod
   pCVar1 = this_ptr;
   if (0 < this_ptr->num_lods) {
     do {
-      FUN_005b7fce(pCVar1->vertex_data_ptr[0]);
+      free(pCVar1->vertex_data_ptr[0]);
       pCVar1->vertex_data_ptr[0] = (SVert *)0x0;
-      FUN_005b7fce(pCVar1->tri_data_ptr[0]);
+      free(pCVar1->tri_data_ptr[0]);
       pCVar1->tri_data_ptr[0] = (SInputFace *)0x0;
-      FUN_005b7fce(pCVar1->index_data_ptr[0]);
+      free(pCVar1->index_data_ptr[0]);
       pCVar1->index_data_ptr[0] = (int *)0x0;
-      FUN_005b7fce(pCVar1->cap_index_ptr[0]);
+      free(pCVar1->cap_index_ptr[0]);
       pCVar1->cap_index_ptr[0] = (int *)0x0;
       pCVar1->vertex_count[0] = 0;
       pCVar1->tri_count[0] = 0;

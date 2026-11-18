@@ -15,7 +15,7 @@ section .text
     PUSH 0x598                          ; 005015e0
         ;   Label: core_lightpis.cpp_factoryFuncLightPis_FUN_005015e0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005015e5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005015ea
     TEST EAX,EAX                        ; 005015ed
     JNZ 0x005015f2                      ; 005015ef

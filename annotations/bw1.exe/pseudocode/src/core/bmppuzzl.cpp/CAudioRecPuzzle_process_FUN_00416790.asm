@@ -14,14 +14,14 @@
 ;   TerminatedCString s_rec_on_switch_wav_005d3f84
 ;   TerminatedCString s_rec_forward_switch_wav_005d3f96
 ;   TerminatedCString s_AudioPuzzleSuccess_005d3fad
-;   undefined4 DAT_005d3fc2
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_0061f2a4
-;   undefined4 DAT_007c397c
-;   undefined4 DAT_01c4353c
-;   undefined4 DAT_01c43540
-;   undefined4 DAT_01c43544
-;   undefined4 DAT_01d1bca0
+;   double g_DOUBLE_005d3fc2 = 10
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
+;   int g_INT_007c397c
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
+;   void* g_PTR_01d1bca0
 ;
 ; Called Functions:
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0
@@ -42,7 +42,7 @@ section .text
     SUB ESP,0x10                        ; 00416794
     MOV EBX,dword ptr [ESP + 0x24]      ; 00416797
     PUSH 0x5d3f4a                       ; 0041679b | = "AudioRecPuzzleActive"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 004167a0 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 004167a0 | g_CEventListPtr
     PUSH EDX                            ; 004167a6
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004167a7
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -57,21 +57,21 @@ section .text
         ;   XREF to: 004168c9 (CONDITIONAL_JUMP)  ; LAB_004168c9
     PUSH 0x5d3f75                       ; 004167c5 | = "ExitFromPuzzle"
         ;   Label: LAB_004167c5
-    MOV EBP,dword ptr [0x0061b4d0]      ; 004167ca | DAT_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 004167ca | g_CEventListPtr
     PUSH EBP                            ; 004167d0
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004167d1
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004167d6
-    MOV EAX,[0x0061f2a4]                ; 004167d9 | DAT_0061f2a4
+    MOV EAX,[0x0061f2a4]                ; 004167d9 | g_CKeys_PTR_0061f2a4
     PUSH 0x200                          ; 004167de
-    MOV EDX,dword ptr [EAX]             ; 004167e3 | DAT_01d1bca0
-    PUSH EAX                            ; 004167e5 | DAT_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 004167e3 | g_PTR_01d1bca0
+    PUSH EAX                            ; 004167e5 | g_PTR_01d1bca0
     CALL dword ptr [EDX + 0x4]          ; 004167e6
     ADD ESP,0x8                         ; 004167e9
     XOR EAX,EAX                         ; 004167ec
     PUSH EAX                            ; 004167ee
     PUSH EBX                            ; 004167ef
-    MOV [0x01c43544],EAX                ; 004167f0 | DAT_01c43544
+    MOV [0x01c43544],EAX                ; 004167f0 | g_MouseButtonFlags
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 004167f5
         ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004167fa
@@ -95,19 +95,19 @@ section .text
     CMP EBP,0x2                         ; 0041682c
     JNZ 0x0041694e                      ; 0041682f
         ;   XREF to: 0041694e (CONDITIONAL_JUMP)  ; LAB_0041694e
-    CMP dword ptr [0x007c397c],-0x1     ; 00416835 | DAT_007c397c
+    CMP dword ptr [0x007c397c],-0x1     ; 00416835 | g_INT_007c397c
     JNZ 0x00416848                      ; 0041683c
         ;   XREF to: 00416848 (CONDITIONAL_JUMP)  ; LAB_00416848
-    MOV EAX,[0x01c4353c]                ; 0041683e | DAT_01c4353c
-    MOV [0x007c397c],EAX                ; 00416843 | DAT_007c397c
-    MOV EAX,[0x01c4353c]                ; 00416848 | DAT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 0041683e | g_MouseX
+    MOV [0x007c397c],EAX                ; 00416843 | g_INT_007c397c
+    MOV EAX,[0x01c4353c]                ; 00416848 | g_MouseX
         ;   Label: LAB_00416848
-    MOV ESI,dword ptr [0x007c397c]      ; 0041684d | DAT_007c397c
+    MOV ESI,dword ptr [0x007c397c]      ; 0041684d | g_INT_007c397c
     SUB EAX,ESI                         ; 00416853
     MOV dword ptr [ESP + 0xc],EAX       ; 00416855
     FILD dword ptr [ESP + 0xc]          ; 00416859
     FABS                                ; 0041685d
-    FCOMP double ptr [0x005d3fc2]       ; 0041685f | DAT_005d3fc2
+    FCOMP double ptr [0x005d3fc2]       ; 0041685f | g_DOUBLE_005d3fc2
     FNSTSW AX                           ; 00416865
     SAHF                                ; 00416867
     JBE 0x00416890                      ; 00416868
@@ -159,10 +159,10 @@ section .text
         ;   XREF to: 004167c5 (CONDITIONAL_JUMP)  ; LAB_004167c5
     JMP 0x004167fd                      ; 004168d6
         ;   XREF to: 004167fd (UNCONDITIONAL_JUMP)  ; LAB_004167fd
-    MOV EBP,dword ptr [0x01c43540]      ; 004168db | DAT_01c43540
+    MOV EBP,dword ptr [0x01c43540]      ; 004168db | g_MouseY
         ;   Label: LAB_004168db
     PUSH EBP                            ; 004168e1
-    MOV EDX,dword ptr [0x01c4353c]      ; 004168e2 | DAT_01c4353c
+    MOV EDX,dword ptr [0x01c4353c]      ; 004168e2 | g_MouseX
     PUSH EDX                            ; 004168e8
     MOV EAX,dword ptr [EBX]             ; 004168e9
     PUSH EBX                            ; 004168eb
@@ -191,7 +191,7 @@ section .text
     MOV dword ptr [EBX + 0x4c],EDI      ; 0041692c
     JMP 0x00416890                      ; 0041692f
         ;   XREF to: 00416890 (UNCONDITIONAL_JUMP)  ; LAB_00416890
-    MOV dword ptr [0x007c397c],0xffffffff ; 00416934 | DAT_007c397c
+    MOV dword ptr [0x007c397c],0xffffffff ; 00416934 | g_INT_007c397c
         ;   Label: LAB_00416934
     ADD ESP,0x10                        ; 0041693e
         ;   Label: LAB_0041693e
@@ -295,7 +295,7 @@ section .text
     MOV ESI,0xffffffff                  ; 00416a17
         ;   Label: LAB_00416a17
     MOV dword ptr [EBX + 0x20],0xffffffff ; 00416a1c
-    MOV dword ptr [0x007c397c],ESI      ; 00416a23 | DAT_007c397c
+    MOV dword ptr [0x007c397c],ESI      ; 00416a23 | g_INT_007c397c
     JMP 0x004169ec                      ; 00416a29
         ;   XREF to: 004169ec (UNCONDITIONAL_JUMP)  ; LAB_004169ec
     MOV EDX,dword ptr [EDI + 0x74]      ; 00416a2b
@@ -518,7 +518,7 @@ section .text
     JNZ 0x0041693e                      ; 00416c64
         ;   XREF to: 0041693e (CONDITIONAL_JUMP)  ; LAB_0041693e
     PUSH 0x5d3fad                       ; 00416c6a | = "AudioPuzzleSuccess"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00416c6f | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00416c6f | g_CEventListPtr
     PUSH ECX                            ; 00416c75
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00416c76
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)

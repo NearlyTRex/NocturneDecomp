@@ -8,11 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eb00c
-;   undefined4 DAT_006141f0
+;   double g_DOUBLE_005eb00c = 0.0000100000000000000
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408cf0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0
@@ -38,7 +38,7 @@ section .text
     LEA EAX,[EBX + 0x44c]               ; 0056077e
         ;   Label: LAB_0056077e
     PUSH EAX                            ; 00560784
-    MOV EBP,dword ptr [0x006141f0]      ; 00560785 | DAT_006141f0
+    MOV EBP,dword ptr [0x006141f0]      ; 00560785 | g_CEventListPtr
     PUSH EBP                            ; 0056078b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0056078c
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -50,7 +50,7 @@ section .text
     LEA EAX,[EBX + 0x4b0]               ; 005607a2
         ;   Label: LAB_005607a2
     PUSH EAX                            ; 005607a8
-    MOV EAX,[0x006141f0]                ; 005607a9 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 005607a9 | g_CEventListPtr
     PUSH EAX                            ; 005607ae
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 005607af
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -104,8 +104,8 @@ section .text
     PUSH EBX                            ; 0056085c
     LEA ESI,[ESP + 0x2c]                ; 0056085d
     LEA EDI,[ESP + 0x8]                 ; 00560861
-    CALL core_actor.cpp_FUN_00408cf0    ; 00560865
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 00560865
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x2c]                ; 0056086a
     ADD ESP,0x8                         ; 0056086e
     LEA EAX,[EBX + 0x43c]               ; 00560871
@@ -150,7 +150,7 @@ section .text
     FSUB float ptr [EDX + 0x8]          ; 005608de
     FMUL ST0                            ; 005608e1
     FADDP                               ; 005608e3
-    FCOMP double ptr [0x005eb00c]       ; 005608e5 | DAT_005eb00c
+    FCOMP double ptr [0x005eb00c]       ; 005608e5 | g_DOUBLE_005eb00c
     FNSTSW AX                           ; 005608eb
     SAHF                                ; 005608ed
     JA 0x00560a7d                       ; 005608ee
@@ -165,7 +165,7 @@ section .text
     LEA EAX,[EBX + 0x514]               ; 005608fc
         ;   Label: LAB_005608fc
     PUSH EAX                            ; 00560902
-    MOV ESI,dword ptr [0x006141f0]      ; 00560903 | DAT_006141f0
+    MOV ESI,dword ptr [0x006141f0]      ; 00560903 | g_CEventListPtr
     PUSH ESI                            ; 00560909
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0056090a
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -177,7 +177,7 @@ section .text
     LEA EAX,[EBX + 0x578]               ; 00560920
         ;   Label: LAB_00560920
     PUSH EAX                            ; 00560926
-    MOV EDI,dword ptr [0x006141f0]      ; 00560927 | DAT_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 00560927 | g_CEventListPtr
     PUSH EDI                            ; 0056092d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0056092e
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

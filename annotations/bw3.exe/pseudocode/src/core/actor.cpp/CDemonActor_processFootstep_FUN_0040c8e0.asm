@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   volume
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b5e85
+;   float g_FLOAT_005b5e85 = 10000
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.ground_type
@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
-;   core_setcolid.cpp_FUN_0053bc80
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
 ;
 ; *****************************************************************************
 
@@ -55,7 +55,7 @@ section .text
     FSUB float ptr [ESP + 0x14]         ; 0040c919
     FMUL ST0                            ; 0040c91d
     FADDP                               ; 0040c91f
-    FCOMP float ptr [0x005b5e85]        ; 0040c921 | DAT_005b5e85
+    FCOMP float ptr [0x005b5e85]        ; 0040c921 | g_FLOAT_005b5e85
     FNSTSW AX                           ; 0040c927
     SAHF                                ; 0040c929
     JBE 0x0040c936                      ; 0040c92a
@@ -78,8 +78,8 @@ section .text
     PUSH EBX                            ; 0040c948
     MOV ECX,dword ptr [0x00603b28]      ; 0040c949 | g_CDemonSetPtr
     PUSH ECX                            ; 0040c94f | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0040c950
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0040c950
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     ADD ESP,0xc                         ; 0040c955
     MOV ESI,dword ptr [0x00603b28]      ; 0040c958 | g_CDemonSetPtr
     PUSH ESI                            ; 0040c95e | g_CDemonSetInstance

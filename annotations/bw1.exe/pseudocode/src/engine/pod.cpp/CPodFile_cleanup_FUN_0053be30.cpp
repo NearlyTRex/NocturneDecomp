@@ -11,13 +11,13 @@ void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(CPodFile *this_ptr)
 {
   this_ptr->file_count = 0;
   if (this_ptr->directory_entries != (CPodDirectoryEntry *)0x0) {
-    FUN_005c09f0(this_ptr->directory_entries);
+    debugFree(this_ptr->directory_entries);
     this_ptr->directory_entries = (CPodDirectoryEntry *)0x0;
   }
   this_ptr->dependency_count = 0;
   this_ptr->audit_count = 0;
   if (this_ptr->file_data_buffer != (char *)0x0) {
-    FUN_005c09f0(this_ptr->file_data_buffer);
+    debugFree(this_ptr->file_data_buffer);
     this_ptr->file_data_buffer = (char *)0x0;
   }
   this_ptr->pod_format_version = 0;

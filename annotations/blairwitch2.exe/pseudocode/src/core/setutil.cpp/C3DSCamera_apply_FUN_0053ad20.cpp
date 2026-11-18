@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0053ad20(C3DSCamera *this_ptr,CDemonCamera *camera)
 
 {
@@ -22,9 +20,9 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0053ad20(C3DSCamera *this_ptr
   
   bVar8 = 0;
   if (this_ptr->is_panning != 0) {
-    _DAT_01d046a0 = "..\\core\\setutil.cpp";
-    _DAT_01d046a4 = 0xf7;
-    core_main_c_FUN_004e4500("C3DSCamera::apply - shouldn't ever do this on panning camera '%s'!",this_ptr);
+    g_CHAR_PTR_01d046a0 = "..\\core\\setutil.cpp";
+    g_INT_01d046a4 = 0xf7;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("C3DSCamera::apply - shouldn't ever do this on panning camera '%s'!");
   }
   pUVar1 = &(camera->base).position;
   if ((CVector3f *)pUVar1 != &this_ptr->position) {
@@ -56,7 +54,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0053ad20(C3DSCamera *this_ptr
     engine_console_cpp_CConsole_printf_FUN_00436710
               (g_CConsolePtr,"Ambient set low by script\n");
   }
-  if (this_ptr->ambient_value <= (float)_DAT_005e6219) {
+  if (this_ptr->ambient_value <= (float)0.25) {
     return;
   }
   engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"Ambient set ridiculously high\n")

@@ -6,19 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *this_ptr,_FILE *file)
 
 {
-  char cVar1;
-  SNotesEntry *pSVar2;
+  SNotesMap *pSVar1;
+  int iVar2;
   int iVar3;
-  SNotesMap *pSVar4;
-  int iVar5;
-  char *pcVar6;
-  int iVar7;
-  int iVar8;
+  int iVar4;
   int local_3c;
   int local_38;
   SNotesMap *local_34;
@@ -28,22 +22,22 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
   SNotesMap *local_18;
   int local_14;
   
-  FUN_005a3140(file,"//-- BEGIN FIELD NOTES ------------------------------\n");
-  FUN_005a3140(file,"// field notes file version\n");
-  FUN_005a3140(file,&DAT_005c1a1a,2);
-  FUN_005a3140(file,"// filename\n");
-  iVar7 = 0;
-  FUN_005a3140(file,"\"%s\"\n",this_ptr);
+  _fprintf(file,"//-- BEGIN FIELD NOTES ------------------------------\n");
+  _fprintf(file,"// field notes file version\n");
+  _fprintf(file,"%d\n");
+  _fprintf(file,"// filename\n");
+  iVar3 = 0;
+  _fprintf(file,"\"%s\"\n");
   local_3c = 0;
-  if (0 < _DAT_01d0d210) {
+  if (0 < g_INT_01d0d210) {
     local_2c = 0;
     do {
-      iVar5 = 0;
-      iVar8 = local_2c;
+      iVar2 = 0;
+      iVar4 = local_2c;
       if (0 < *(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + local_2c + -4)) {
         do {
           switch(*(uint *)
-                  (*(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + iVar8) + 0x140)) {
+                  (*(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + iVar4) + 0x140)) {
           case 0:
           case 2:
           case 5:
@@ -52,32 +46,32 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
           case 3:
           case 4:
           case 6:
-            iVar7 = iVar7 + 1;
+            iVar3 = iVar3 + 1;
             break;
           default:
-            _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-            _DAT_01d71de4 = 0xc38;
-            core_main_c_FUN_004e4330("Invalid entry item type");
+            g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+            g_INT_01d71de4 = 0xc38;
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid entry item type");
           }
-          iVar5 = iVar5 + 1;
-          iVar8 = iVar8 + 4;
-        } while (iVar5 < *(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + local_2c + -4));
+          iVar2 = iVar2 + 1;
+          iVar4 = iVar4 + 4;
+        } while (iVar2 < *(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + local_2c + -4));
       }
       local_2c = local_2c + 0x2e4;
       local_3c = local_3c + 1;
-    } while (local_3c < _DAT_01d0d210);
+    } while (local_3c < g_INT_01d0d210);
   }
-  FUN_005a3140(file,"// entry count, list(\"name\", type)\n");
-  FUN_005a3140(file,&DAT_005c1a82,iVar7);
+  _fprintf(file,"// entry count, list(\"name\", type)\n");
+  _fprintf(file,"%d\n");
   local_30 = 0;
-  if (0 < _DAT_01d0d210) {
+  if (0 < g_INT_01d0d210) {
     do {
-      iVar8 = local_30 * 0x2e4;
-      iVar5 = 0;
+      iVar4 = local_30 * 0x2e4;
+      iVar2 = 0;
       if (0 < SNotesSection_ARRAY_01d0d214[local_30].entry_count) {
         do {
           switch(*(uint *)
-                  (*(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + iVar8) + 0x140)) {
+                  (*(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + iVar4) + 0x140)) {
           case 0:
           case 2:
           case 5:
@@ -86,115 +80,108 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
           case 3:
           case 4:
           case 6:
-            iVar3 = *(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + iVar8);
-            iVar7 = iVar7 + -1;
-            FUN_005a3140(file,"\"%s\", %d\n",iVar3,*(uint *)(iVar3 + 0x140));
+            iVar3 = iVar3 + -1;
+            _fprintf(file,"\"%s\", %d\n");
             break;
           default:
-            _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-            _DAT_01d71de4 = 0xc50;
-            core_main_c_FUN_004e4330("Invalid entry item type");
+            g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+            g_INT_01d71de4 = 0xc50;
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid entry item type");
           }
-          iVar5 = iVar5 + 1;
-          iVar8 = iVar8 + 4;
-        } while (iVar5 < SNotesSection_ARRAY_01d0d214[local_30].entry_count);
+          iVar2 = iVar2 + 1;
+          iVar4 = iVar4 + 4;
+        } while (iVar2 < SNotesSection_ARRAY_01d0d214[local_30].entry_count);
       }
       local_30 = local_30 + 1;
-    } while (local_30 < _DAT_01d0d210);
+    } while (local_30 < g_INT_01d0d210);
   }
-  if (iVar7 != 0) {
-    _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-    _DAT_01d71de4 = 0xc54;
-    core_main_c_FUN_004e4330("Hell froze");
+  if (iVar3 != 0) {
+    g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+    g_INT_01d71de4 = 0xc54;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
   }
-  iVar7 = 0;
+  iVar3 = 0;
   local_28 = 0;
-  if (0 < _DAT_01d0e36c) {
+  if (0 < g_INT_01d0e36c) {
     do {
-      if (*(int *)(*(int *)(SNotesMap_ARRAY_01d0e370[0].image_name + iVar7 + -4) + 0x140) == 6) {
+      if (*(int *)(*(int *)(SNotesMap_ARRAY_01d0e370[0].image_name + iVar3 + -4) + 0x140) == 6) {
         local_28 = local_28 + 1;
       }
-      iVar7 = iVar7 + 0x126c;
-    } while (iVar7 < _DAT_01d0e36c * 0x126c);
+      iVar3 = iVar3 + 0x126c;
+    } while (iVar3 < g_INT_01d0e36c * 0x126c);
   }
-  FUN_005a3140(file,"// map coverage count\n");
-  FUN_005a3140(file,&DAT_005c1af4,local_28);
+  _fprintf(file,"// map coverage count\n");
+  _fprintf(file,"%d\n");
   local_38 = 0;
-  if (0 < _DAT_01d0e36c) {
+  if (0 < g_INT_01d0e36c) {
     local_34 = SNotesMap_ARRAY_01d0e370;
     do {
-      pSVar2 = local_34->entry;
-      if (pSVar2->kind == 6) {
+      if (local_34->entry->kind == 6) {
         if (local_28 < 1) {
-          _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-          _DAT_01d71de4 = 0xc67;
-          core_main_c_FUN_004e4330("Hell froze");
+          g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+          g_INT_01d71de4 = 0xc67;
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
         }
         local_28 = local_28 + -1;
-        FUN_005a3140(file,"// map entry name, xSize, ySize\n");
-        FUN_005a3140
-                  (file,"%s, %d, %d\n",pSVar2,(local_34->reveal_mask).width,
-                   (local_34->reveal_mask).height);
-        FUN_005a3140(file,"\t// map coverage data\n");
+        _fprintf(file,"// map entry name, xSize, ySize\n");
+        _fprintf(file,"%s, %d, %d\n");
+        _fprintf(file,"\t// map coverage data\n");
         local_14 = 0;
         if (0 < (local_34->reveal_mask).height) {
           do {
-            FUN_005a3140(file,&DAT_005c1b5c);
-            pcVar6 = (local_34->reveal_mask).opa + local_14 * (local_34->reveal_mask).width;
-            iVar7 = 0;
+            _fprintf(file,"\t\t");
+            iVar3 = 0;
             if (0 < (local_34->reveal_mask).width) {
               do {
-                cVar1 = *pcVar6;
-                pcVar6 = pcVar6 + 1;
-                iVar7 = iVar7 + 1;
-                FUN_005a3140(file,&DAT_005c1b5f,cVar1);
-              } while (iVar7 < (local_34->reveal_mask).width);
+                iVar3 = iVar3 + 1;
+                _fprintf(file,"%02X");
+              } while (iVar3 < (local_34->reveal_mask).width);
             }
-            FUN_005a3140(file,&DAT_005c1b64);
+            _fprintf(file,"\n");
             local_14 = local_14 + 1;
           } while (local_14 < (local_34->reveal_mask).height);
         }
-        iVar7 = 0;
-        iVar8 = 0;
-        pSVar4 = local_34;
+        iVar3 = 0;
+        iVar4 = 0;
+        pSVar1 = local_34;
         if (0 < local_34->annotation_count) {
           do {
-            if (pSVar4->annotations[0].visible != 0) {
-              iVar8 = iVar8 + 1;
+            if (pSVar1->annotations[0].visible != 0) {
+              iVar4 = iVar4 + 1;
             }
-            iVar7 = iVar7 + 1;
-            pSVar4 = (SNotesMap *)(pSVar4->sets[0].level_name + 0x34);
-          } while (iVar7 < local_34->annotation_count);
+            iVar3 = iVar3 + 1;
+            pSVar1 = (SNotesMap *)(pSVar1->sets[0].level_name + 0x34);
+          } while (iVar3 < local_34->annotation_count);
         }
-        FUN_005a3140(file,"\t// map annotation count, list\n");
-        iVar7 = 0;
-        FUN_005a3140(file,&DAT_005c1b86,iVar8);
+        _fprintf(file,"\t// map annotation count, list\n");
+        iVar3 = 0;
+        _fprintf(file,"\t%d\n");
         if (0 < local_34->annotation_count) {
           local_18 = local_34;
           do {
             if (local_18->annotations[0].visible != 0) {
-              iVar8 = iVar8 + -1;
-              FUN_005a3140(file,"\t\t%s\n",local_34->annotations + iVar7);
+              iVar4 = iVar4 + -1;
+              _fprintf(file,"\t\t%s\n");
             }
-            iVar7 = iVar7 + 1;
+            iVar3 = iVar3 + 1;
             local_18 = (SNotesMap *)(local_18->sets[0].level_name + 0x34);
-          } while (iVar7 < local_34->annotation_count);
+          } while (iVar3 < local_34->annotation_count);
         }
-        if (iVar8 != 0) {
-          _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-          _DAT_01d71de4 = 0xc85;
-          core_main_c_FUN_004e4330("Hell froze.");
+        if (iVar4 != 0) {
+          g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+          g_INT_01d71de4 = 0xc85;
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze.");
         }
       }
       local_34 = local_34 + 1;
       local_38 = local_38 + 1;
-    } while (local_38 < _DAT_01d0e36c);
+    } while (local_38 < g_INT_01d0e36c);
   }
   if (local_28 != 0) {
-    _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
-    _DAT_01d71de4 = 0xc89;
-    core_main_c_FUN_004e4330("Hell froze");
+    g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
+    g_INT_01d71de4 = 0xc89;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
   }
-  FUN_005a3140(file,"//-- END FIELD NOTES --------------------------------\n");
+  _fprintf(file,"//-- END FIELD NOTES --------------------------------\n");
   return;
 }

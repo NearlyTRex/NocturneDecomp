@@ -1098,7 +1098,7 @@ section .text
     SAHF                                ; 00556746
     JA 0x0055672c                       ; 00556747
         ;   XREF to: 0055672c (CONDITIONAL_JUMP)  ; LAB_0055672c
-    MOV EAX,[0x02dd1044]                ; 00556749 | g_CTrapActorType_02dd100c.name_hash
+    MOV EAX,[0x02dd1044]                ; 00556749 | g_CTrapClassInfo.name_hash
         ;   Label: LAB_00556749
     PUSH EAX                            ; 0055674e
     MOV EDX,dword ptr [EBX + 0xbd50]    ; 0055674f
@@ -1227,7 +1227,7 @@ section .text
     ADD ESP,0xc                         ; 00556894
     JMP 0x00555e90                      ; 00556897
         ;   XREF to: 00555e90 (UNCONDITIONAL_JUMP)  ; LAB_00555e90
-    MOV ESI,dword ptr [0x02dd1044]      ; 0055689c | g_CTrapActorType_02dd100c.name_hash
+    MOV ESI,dword ptr [0x02dd1044]      ; 0055689c | g_CTrapClassInfo.name_hash
         ;   Label: LAB_0055689c
     PUSH ESI                            ; 005568a2
     MOV EDI,dword ptr [EBX + 0xbd50]    ; 005568a3
@@ -1570,7 +1570,7 @@ section .text
     ADD ESP,0xc                         ; 00556c9f
     JMP 0x00556b12                      ; 00556ca2
         ;   XREF to: 00556b12 (UNCONDITIONAL_JUMP)  ; LAB_00556b12
-    MOV EDI,dword ptr [0x02dd1044]      ; 00556ca7 | g_CTrapActorType_02dd100c.name_hash
+    MOV EDI,dword ptr [0x02dd1044]      ; 00556ca7 | g_CTrapClassInfo.name_hash
         ;   Label: LAB_00556ca7
     PUSH EDI                            ; 00556cad
     MOV EAX,dword ptr [EBX + 0xbd50]    ; 00556cae
@@ -1695,7 +1695,7 @@ section .text
     CMP EDI,dword ptr [EAX + 0x150bf4]  ; 00556e01 | g_CDemonSetInstance.enemy_count
     JGE 0x00556b12                      ; 00556e07
         ;   XREF to: 00556b12 (CONDITIONAL_JUMP)  ; LAB_00556b12
-    MOV ECX,dword ptr [0x02de07c4]      ; 00556e0d | g_CWerewolfActorType_02de078c.name_hash
+    MOV ECX,dword ptr [0x02de07c4]      ; 00556e0d | g_CWerewolfClassInfo.name_hash
     PUSH ECX                            ; 00556e13
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x150bf8] ; 00556e14
     PUSH EDX                            ; 00556e1b

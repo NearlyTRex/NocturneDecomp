@@ -15,8 +15,8 @@
 ;   support_codec.cpp_CCodec_processToBuffer_FUN_00439000 at 0043902c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a46b8
-;   undefined4 DAT_005a46c0
+;   WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a46b8
+;   WatcomThunkedDestructor g_WatcomThunkedDestructor_005a46c0
 ;   void* PTR_crt_strstream.cpp_ostrstream_dtor_FUN_00564e98_005a46cc = 00564e98
 ;   void* PTR_crt_unknown.c_FUN_00564e3d_005a46d4 = 00564e3d
 ;   void* PTR_crt_unknown.c_FUN_00564e53_005a46dc = 00564e53
@@ -85,11 +85,11 @@ section .text
     MOV EAX,EDX                         ; 00564e10
     POP EBX                             ; 00564e12
     RET                                 ; 00564e13
-    MOV dword ptr [EDX],0x5a46b8        ; 00564e14 | DAT_005a46b8
+    MOV dword ptr [EDX],0x5a46b8        ; 00564e14 | g_WatcomVirtualBaseDescriptor_005a46b8
         ;   Label: LAB_00564e14
     ADD EDX,0x54                        ; 00564e1a
     PUSH EDX                            ; 00564e1d
-    MOV dword ptr [EDX + -0xc],0x5a46c0 ; 00564e1e | DAT_005a46c0
+    MOV dword ptr [EDX + -0xc],0x5a46c0 ; 00564e1e | g_WatcomThunkedDestructor_005a46c0
     CALL crt_iostream.cpp_ios_ctor_FUN_0056b503 ; 00564e25
         ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_ctor_FUN_0056b503(ios * this_ptr)
     ADD ESP,0x4                         ; 00564e2a

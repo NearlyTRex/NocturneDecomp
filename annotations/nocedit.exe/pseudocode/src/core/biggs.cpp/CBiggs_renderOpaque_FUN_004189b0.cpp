@@ -43,7 +43,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
                 (this_ptr_00,1,model_ptr,iVar2,part_index);
       core_morph_cpp_CMorph_render_FUN_0052bae0(this_ptr_00,this_ptr->morph_timer / 4.0f);
     }
-    if (INT_02f43978 != 0) {
+    if (g_RenderMotionDebug != 0) {
       iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar3 == 0) {
         core_motion_cpp_CMotionController_render_FUN_0052e700

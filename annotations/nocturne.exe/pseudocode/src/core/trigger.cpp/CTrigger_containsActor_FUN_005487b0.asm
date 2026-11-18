@@ -19,7 +19,7 @@
 ;   TerminatedCString s_Hell_froze_00596b85
 ;   float FLOAT_00596b93 = 0.5
 ;   double DOUBLE_00596b97 = 0.25
-;   undefined4 g_CCharacterActorType_00765a60.name_hash
+;   undefined4 g_CCharacterClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -178,7 +178,7 @@ section .text
     POP ESI                             ; 00548937
     POP EBX                             ; 00548938
     RET                                 ; 00548939
-    MOV ECX,dword ptr [0x00765a98]      ; 0054893a | g_CCharacterActorType_00765a60.name_hash
+    MOV ECX,dword ptr [0x00765a98]      ; 0054893a | g_CCharacterClassInfo.name_hash
         ;   Label: LAB_0054893a
     PUSH ECX                            ; 00548940
     PUSH ESI                            ; 00548941

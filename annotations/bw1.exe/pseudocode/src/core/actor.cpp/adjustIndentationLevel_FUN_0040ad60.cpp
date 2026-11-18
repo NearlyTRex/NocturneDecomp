@@ -15,7 +15,7 @@ int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(int indent_delta)
   char *pcVar4;
   
   uVar3 = 0xffffffff;
-  pcVar4 = &DAT_006106c0;
+  pcVar4 = g_PropertyNamePrefix;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
@@ -26,7 +26,7 @@ int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(int indent_delta)
   if (iVar2 < 0) {
     iVar2 = 0;
   }
-  (&DAT_006106c0)[iVar2] = 0;
+  g_PropertyNamePrefix[iVar2] = '\0';
   for (; 0 < iVar2; iVar2 = iVar2 + -1) {
     (&DAT_006106bf)[iVar2] = 9;
   }

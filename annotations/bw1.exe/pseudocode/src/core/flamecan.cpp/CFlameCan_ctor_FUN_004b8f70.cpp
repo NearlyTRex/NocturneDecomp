@@ -21,7 +21,7 @@ CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_004b8f70(CFlameCan *thi
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_flame_cpp_CFlame_ctor_FUN_004b7a30
                      ((CFlame *)(pCVar3[1].part_visibility_flags + 0x1b));
-  pcVar5 = (char *)0x5df78e;
+  pcVar5 = "none";
   *(CDemonActor_vtable **)(pCVar4[-1].base.create_event + 0x40) = &g_CFlameCanVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
             ((CKeyFramedModelInstance *)(pCVar4[-1].base.create_event + 0x44),

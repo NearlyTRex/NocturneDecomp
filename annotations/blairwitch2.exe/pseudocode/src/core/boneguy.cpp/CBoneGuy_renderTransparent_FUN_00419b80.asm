@@ -7,15 +7,15 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
@@ -57,23 +57,23 @@ section .text
     LEA ESI,[ESP + 0x24]                ; 00419bc5
     PUSH EAX                            ; 00419bc9
     MOVSD.REP ES:EDI,ESI                ; 00419bca
-    CALL core_box.cpp_FUN_0041a840      ; 00419bcc
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 00419bcc
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 00419bd1
     MOV ESI,EAX                         ; 00419bd4
     TEST EAX,EAX                        ; 00419bd6
     JZ 0x00419c35                       ; 00419bd8
         ;   XREF to: 00419c35 (CONDITIONAL_JUMP)  ; LAB_00419c35
     PUSH 0x0                            ; 00419bda
-    MOV ECX,dword ptr [0x0060b280]      ; 00419bdc | DAT_0060b280
-    PUSH ECX                            ; 00419be2 | DAT_01ba5c50
+    MOV ECX,dword ptr [0x0060b280]      ; 00419bdc | g_CDemonRenderer_PTR_0060b280
+    PUSH ECX                            ; 00419be2 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046c540 ; 00419be3
         ;   XREF to: 0046c540 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046c540(CDemonRenderer * this_ptr, int enable_advanced_mode)
     ADD ESP,0x8                         ; 00419be8
     PUSH 0xffff                         ; 00419beb
-    MOV EDI,dword ptr [0x0060b280]      ; 00419bf0 | DAT_0060b280
+    MOV EDI,dword ptr [0x0060b280]      ; 00419bf0 | g_CDemonRenderer_PTR_0060b280
     MOV EAX,[0x0061b5a8]                ; 00419bf6 | g_CDemonSetPtr
-    PUSH EDI                            ; 00419bfb | DAT_01ba5c50
+    PUSH EDI                            ; 00419bfb | g_CDemonRenderer_01ba5c50
     MOV dword ptr [EAX + 0x15ac98],0x1  ; 00419bfc | g_CDemonSetInstance.disable_directional_lighting
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0 ; 00419c06
         ;   XREF to: 0046b8e0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(CDemonRenderer * this_ptr, int render_alpha)
@@ -82,9 +82,9 @@ section .text
     CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0 ; 00419c0f
         ;   XREF to: 00424bd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00419c14
-    MOV EBP,dword ptr [0x0060b280]      ; 00419c17 | DAT_0060b280
+    MOV EBP,dword ptr [0x0060b280]      ; 00419c17 | g_CDemonRenderer_PTR_0060b280
     MOV EAX,[0x0061b5a8]                ; 00419c1d | g_CDemonSetPtr
-    PUSH EBP                            ; 00419c22 | DAT_01ba5c50
+    PUSH EBP                            ; 00419c22 | g_CDemonRenderer_01ba5c50
     MOV dword ptr [EAX + 0x15ac98],0x0  ; 00419c23 | g_CDemonSetInstance.disable_directional_lighting
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900 ; 00419c2d
         ;   XREF to: 0046c900 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900(CDemonRenderer * this_ptr)

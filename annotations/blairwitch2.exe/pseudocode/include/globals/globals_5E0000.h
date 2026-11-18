@@ -9,13 +9,14 @@
 // GLOBAL VARIABLES - Range 0x5E0000
 // =============================================================================
 
-// undefined1
-extern undefined1 DAT_005e3182;
-extern undefined1 DAT_005e320b;
-extern undefined1 DAT_005e321a;
-extern undefined1 DAT_005e322a;
-extern undefined1 DAT_005e346e;
-extern undefined1 DAT_005e3bd3;
-extern undefined1 DAT_005e3c0e;
-extern undefined1 DAT_005e4b71;
+// char
+extern char g_CHAR_005e09d4;
+extern char g_CHAR_005e129d;
+extern char g_CHAR_005e12a1;
+extern char g_CHAR_005e2403;
+extern char g_CHAR_005e3182;
+extern char g_CHAR_005e320b;
+extern char g_CHAR_005e321a;
+extern char g_CHAR_005e322a;
+extern char g_CHAR_005e346e;
 

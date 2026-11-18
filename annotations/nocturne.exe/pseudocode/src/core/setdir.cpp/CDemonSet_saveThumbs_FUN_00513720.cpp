@@ -34,13 +34,14 @@ void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00513720(CDemonSet *this_p
     local_18 = g_ThumbZBufferTable[0];
     do {
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-                ((CDemonRenderer *)PTR_DAT_005ae700,local_14);
+                ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,local_14);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-                ((CDemonRenderer *)PTR_DAT_005ae700,local_20[iVar4].projection_scale);
+                ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,
+                 local_20[iVar4].projection_scale);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-                ((CDemonRenderer *)PTR_DAT_005ae700,local_1c);
+                ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,local_1c);
       engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
-                ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3i *)0x26635f8);
+                ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,&g_CVector3i_026635f8);
       engine_special_cpp_clearZBufferNative_FUN_0052eed4();
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(this_ptr,9999.9,0);
       iVar3 = 0;

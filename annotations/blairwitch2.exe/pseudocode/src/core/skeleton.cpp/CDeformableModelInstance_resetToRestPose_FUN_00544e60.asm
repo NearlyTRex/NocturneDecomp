@@ -7,7 +7,7 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_cloth.cpp_FUN_005ae680 at 005aeabf
+;   core_cloth.cpp_CCloth_setup_FUN_005ae680 at 005aeabf
 ;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f0749
 ;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 0051160a
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_005431b0 at 00543247

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004d4ad0(CHeroPlaceholder *this_ptr)
 
 {
-  return (CDemonActorType *)0x1d5ba74;
+  return &g_CHeroPlaceholderClassInfo;
 }

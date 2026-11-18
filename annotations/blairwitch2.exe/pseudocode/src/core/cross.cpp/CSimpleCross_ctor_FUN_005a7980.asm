@@ -7,7 +7,7 @@
 ; CSimpleCross *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_cross.cpp_FUN_005a7950 at 005a7963
+;   core_cross.cpp_factoryFuncSimpleCross_FUN_005a7950 at 005a7963
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70

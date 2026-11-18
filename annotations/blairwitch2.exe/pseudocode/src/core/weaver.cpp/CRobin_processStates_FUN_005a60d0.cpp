@@ -14,12 +14,13 @@ void __cdecl core_weaver_cpp_CRobin_processStates_FUN_005a60d0(CRobin *this_ptr,
   int iVar1;
   
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).base.state_machine,"MeleeAttack");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650
+              (&(this_ptr->base).base.state_machine,"MeleeAttack");
     return;
   }
   core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0((CBasicEnemy *)this_ptr,delta_time,mode);
   if ((mode == 1) &&
-     (iVar1 = core_muzzle_cpp_FUN_0059daa0
+     (iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
                         (&(this_ptr->base).base.state_machine,"MeleeAttack"), iVar1 != 0))
   {
     (*(this_ptr->base).base.base.base.base.vtable._ub[1].getInteractionInfo)

@@ -7,8 +7,8 @@
 ; STextView *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_flashlit.cpp_FUN_004ba630 at 004ba655
-;   core_flashlit.cpp_FUN_004ba6b0 at 004ba6e2
+;   core_flashlit.cpp_layoutSections_FUN_004ba630 at 004ba655
+;   core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004ba6b0 at 004ba6e2
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 at 004be157
 ;   core_fldnotes.cpp_CFieldNotes_dtor_FUN_004bcb70 at 004bcb8a
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bcd50
@@ -16,11 +16,11 @@
 ;   core_fldnotes.cpp_STextView_dtor_FUN_004bb1a0 at 004bb1a6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0152d254
+;   CBitFont* g_CBitFont_PTR_0152d254
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_STextPage_clear_FUN_004bb080
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x3c]      ; 004bb1f6
         ;   Label: LAB_004bb1f6
     PUSH EAX                            ; 004bb1f9
-    CALL crt_unknown.c_FUN_005c09f0     ; 004bb1fa
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 004bb1fa
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 004bb1ff
     MOV dword ptr [EBX + 0x3c],0x0      ; 004bb202
     POP EDI                             ; 004bb209
@@ -81,7 +81,7 @@ section .text
     MOV dword ptr [EBX + 0x14],EAX      ; 004bb244
     MOV EAX,dword ptr [EBX + 0x20]      ; 004bb247
     MOV dword ptr [EBX + 0x18],EAX      ; 004bb24a
-    MOV EAX,[0x0152d254]                ; 004bb24d | DAT_0152d254
+    MOV EAX,[0x0152d254]                ; 004bb24d | g_CBitFont_PTR_0152d254
     MOV dword ptr [EBX + 0x2c],EAX      ; 004bb252
     MOV EAX,dword ptr [EBX + 0x1c]      ; 004bb255
     MOV dword ptr [EBX + 0x40],EAX      ; 004bb258

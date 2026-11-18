@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 110,
     "complexity_score": 47,
-    "cross_reference_count": 8,
+    "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -16,7 +16,7 @@
     {
       "addr": "004348b0",
       "from_addr": "0043493f",
-      "name": "core_charactr.cpp_FUN_004348b0",
+      "name": "core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,6 +50,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0056e230",
+      "from_addr": "0056e7e0",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005148b0",
       "from_addr": "00514958",
       "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_005148b0",
@@ -58,7 +64,7 @@
     {
       "addr": "00482ea0",
       "from_addr": "00482fbd",
-      "name": "shape_edittool.cpp_FUN_00482ea0",
+      "name": "shape_edittool.cpp_CStrList_populateRecursive_FUN_00482ea0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -83,7 +89,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "00514958",
@@ -121,7 +127,7 @@
       {
         "call_addr": "0043493f",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_004348b0",
+        "caller": "core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,6 +139,17 @@
         "call_addr": "004c6d3f",
         "call_type": "direct",
         "caller": "core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c6c80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056e7e0",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +171,7 @@
       {
         "call_addr": "00482fbd",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00482ea0",
+        "caller": "shape_edittool.cpp_CStrList_populateRecursive_FUN_00482ea0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

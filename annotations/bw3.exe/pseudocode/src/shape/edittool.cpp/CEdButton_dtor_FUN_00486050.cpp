@@ -9,6 +9,6 @@
 CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_00486050(CEdButton *this_ptr,uint flags)
 
 {
-  shape_edittool_cpp_FUN_00486070(this_ptr);
+  shape_edittool_cpp_CEdButton_clearActiveButtonIfMatch_FUN_00486070(this_ptr);
   return this_ptr;
 }

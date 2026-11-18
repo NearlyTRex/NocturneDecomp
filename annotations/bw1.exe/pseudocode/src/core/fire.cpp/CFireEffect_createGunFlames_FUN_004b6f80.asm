@@ -16,8 +16,8 @@
 ;   core_flamegun.cpp_CFlameThrower_fire_FUN_004b9660 at 004b96ca
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cb5820
-;   undefined4 DAT_01cb5824
+;   int g_INT_01cb5820
+;   CGunFlame[500] g_CGunFlame_ARRAY_01cb5824
 ;
 ; Called Functions:
 ;   core_fire.cpp_CGunFlame_activate_FUN_004b2b50
@@ -31,7 +31,7 @@ section .text
     PUSH ESI                            ; 004b6f81
     PUSH EDI                            ; 004b6f82
     PUSH EBP                            ; 004b6f83
-    MOV ESI,dword ptr [0x01cb5820]      ; 004b6f84 | DAT_01cb5820
+    MOV ESI,dword ptr [0x01cb5820]      ; 004b6f84 | g_INT_01cb5820
     MOV EBP,dword ptr [ESP + 0x18]      ; 004b6f8a
     MOV EBX,dword ptr [ESP + 0x20]      ; 004b6f8e
     MOV EDI,dword ptr [ESP + 0x24]      ; 004b6f92
@@ -45,11 +45,11 @@ section .text
     PUSH EDX                            ; 004b6fa2
     PUSH EBP                            ; 004b6fa3
     ADD EAX,0x1cb5824                   ; 004b6fa4
-    PUSH EAX                            ; 004b6fa9 | DAT_01cb5824
-    MOV dword ptr [0x01cb5820],ESI      ; 004b6faa | DAT_01cb5820
+    PUSH EAX                            ; 004b6fa9 | g_CGunFlame_ARRAY_01cb5824
+    MOV dword ptr [0x01cb5820],ESI      ; 004b6faa | g_INT_01cb5820
     CALL core_fire.cpp_CGunFlame_activate_FUN_004b2b50 ; 004b6fb0
         ;   XREF to: 004b2b50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_activate_FUN_004b2b50(CGunFlame * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_type)
-    MOV ESI,dword ptr [0x01cb5820]      ; 004b6fb5 | DAT_01cb5820
+    MOV ESI,dword ptr [0x01cb5820]      ; 004b6fb5 | g_INT_01cb5820
     INC ESI                             ; 004b6fbb
     ADD ESP,0x10                        ; 004b6fbc
     CMP ESI,0x1f4                       ; 004b6fbf
@@ -61,7 +61,7 @@ section .text
     TEST EBX,EBX                        ; 004b6fca
     JG 0x004b6f9a                       ; 004b6fcc
         ;   XREF to: 004b6f9a (CONDITIONAL_JUMP)  ; LAB_004b6f9a
-    MOV dword ptr [0x01cb5820],ESI      ; 004b6fce | DAT_01cb5820
+    MOV dword ptr [0x01cb5820],ESI      ; 004b6fce | g_INT_01cb5820
         ;   Label: LAB_004b6fce
     POP EBP                             ; 004b6fd4
     POP EDI                             ; 004b6fd5

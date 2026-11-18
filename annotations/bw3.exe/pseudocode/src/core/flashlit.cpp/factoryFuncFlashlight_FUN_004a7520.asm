@@ -15,7 +15,7 @@ section .text
     PUSH 0x594                          ; 004a7520
         ;   Label: core_flashlit.cpp_factoryFuncFlashlight_FUN_004a7520
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004a7525
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004a752a
     TEST EAX,EAX                        ; 004a752d
     JNZ 0x004a7532                      ; 004a752f

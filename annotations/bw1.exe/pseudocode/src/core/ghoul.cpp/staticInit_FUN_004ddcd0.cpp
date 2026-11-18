@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_ghoul_cpp_staticInit_FUN_004ddcd0(void)
 
 {
-  _DAT_01cd0d44 = 0xbf19999a;
-  _DAT_01cd0d48 = 0;
-  _DAT_01cd0d4c = 0;
-  _DAT_01cd0d50 = 0x3f19999a;
-  _DAT_01cd0d54 = 0;
-  _DAT_01cd0d58 = 0;
+  g_GhoulOffsetMinusX.x = -0.6;
+  g_GhoulOffsetMinusX.y = 0.0;
+  g_GhoulOffsetMinusX.z = 0.0;
+  g_GhoulOffsetPlusX.x = 0.6;
+  g_GhoulOffsetPlusX.y = 0.0;
+  g_GhoulOffsetPlusX.z = 0.0;
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CGhoulClassInfo,(char *)0x5e3a41,core_ghoul_cpp_factoryFuncGhoul_FUN_004ddd30,
+            (&g_CGhoulClassInfo,"CGhoul",core_ghoul_cpp_factoryFuncGhoul_FUN_004ddd30,
              &g_CGhoulClassVersion,7,&g_CEnemyClassInfo);
   return;
 }

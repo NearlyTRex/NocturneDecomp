@@ -21,8 +21,8 @@
 ;   void* PTR_GlobalUnlock_005d05ec = 001d100a
 ;   undefined1 DAT_005dc269
 ;   undefined1 DAT_005dc26a
-;   undefined4 DAT_01c3eb58
-;   undefined4 DAT_02c9be68
+;   char* g_ClipboardBackupText
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   CloseClipboard
@@ -55,7 +55,7 @@ section .text
     SCASB.REPNE ES:EDI                  ; 004982ac | DAT_005dc269 | DAT_005dc26a
     NOT ECX                             ; 004982ae
     DEC ECX                             ; 004982b0
-    MOV ESI,dword ptr [0x02c9be68]      ; 004982b1 | DAT_02c9be68
+    MOV ESI,dword ptr [0x02c9be68]      ; 004982b1 | g_MainWindowHandle
     PUSH ESI                            ; 004982b7
     LEA EBX,[ECX + 0x1]                 ; 004982b8
     CALL dword ptr CS:[0x5d04e4]        ; 004982bb | PTR_OpenClipboard_005d04e4
@@ -94,12 +94,12 @@ section .text
         ;   Label: LAB_0049830f
     PUSH EBX                            ; 00498316
         ;   Label: LAB_00498316
-    MOV EDI,dword ptr [0x01c3eb58]      ; 00498317 | DAT_01c3eb58
+    MOV EDI,dword ptr [0x01c3eb58]      ; 00498317 | g_ClipboardBackupText
     PUSH EDI                            ; 0049831d
     CALL crt_memory.c_realloc_FUN_005c10d0 ; 0049831e
         ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00498323
-    MOV [0x01c3eb58],EAX                ; 00498326 | DAT_01c3eb58
+    MOV [0x01c3eb58],EAX                ; 00498326 | g_ClipboardBackupText
     TEST EAX,EAX                        ; 0049832b
     JNZ 0x0049833e                      ; 0049832d
         ;   XREF to: 0049833e (CONDITIONAL_JUMP)  ; LAB_0049833e

@@ -6,14 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_004036a0(void)
 
 {
   int iVar1;
   
   iVar1 = engine_2d_c_mapFrameBuffer_FUN_00403480
-                    (_DAT_01c50930,DAT_0061b4a8,DAT_0061b4a8,8,DAT_0061b4a8);
+                    (g_CurrentTextureData,g_CurrentTextureDimension,g_CurrentTextureDimension,8,
+                     g_CurrentTextureDimension);
   return iVar1;
 }

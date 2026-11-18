@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 121,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 11,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 43
@@ -173,14 +172,6 @@
       "severity": "mild",
       "text": "if (((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0x10) & 3) != 0) ||",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "(((&DAT_006074b8)[(byte)(cVar1 + 1)] & 2) == 0)) break;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

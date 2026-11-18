@@ -6,14 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_process_FUN_00562f30(CStranger *this_ptr,float delta_time)
 
 {
   float delta_time_00;
   bool bVar1;
   int iVar2;
+  SMotion *pSVar3;
   
   iVar2 = core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0
                     ((CCharacter *)this_ptr,delta_time);
@@ -21,9 +20,10 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_00562f30(CStranger *this_pt
     return;
   }
   delta_time_00 = g_CGamePtr->delta_time_float;
-  iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.model.base);
   bVar1 = false;
-  switch(*(uint *)(iVar2 + 0x24)) {
+  switch(pSVar3->state_index) {
   case 7:
   case 8:
   case 9:
@@ -46,7 +46,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_00562f30(CStranger *this_pt
     bVar1 = true;
   }
   if ((this_ptr->action_pending == 7) || (bVar1)) {
-    delta_time = delta_time * (float)_DAT_005eb49d;
+    delta_time = delta_time * (float)0.25;
     core_stranger_cpp_CStranger_processFrame_FUN_00563060(this_ptr,delta_time);
     core_stranger_cpp_CStranger_processFrame_FUN_00563060(this_ptr,delta_time);
     core_stranger_cpp_CStranger_processFrame_FUN_00563060(this_ptr,delta_time);

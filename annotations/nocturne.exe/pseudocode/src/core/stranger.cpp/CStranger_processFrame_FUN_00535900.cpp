@@ -121,7 +121,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
   CMotionController *pCStack_14;
   
   local_24 = (float)core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                              (0x01C03A10,"DebugActionPending");
+                              (g_CEventListPtr,"DebugActionPending");
   pCVar8 = (this_ptr->base).base.carry_hands[1].carry_actor;
   if ((pCVar8 != (CDemonActor *)0x0) && ((this_ptr->carry_object_bbox).max.x < -999999.0f)) {
     pCVar16 = (*((pCVar8->vtable)._ub)->getBoundingBox)
@@ -791,9 +791,8 @@ switchD_005371ce_caseD_6:
   if ((pSVar19->state_index == 0x1b) &&
      (pCStack_70 = (CAmmoBox *)
                    core_actor_cpp_castToClassHash_FUN_0040d890
-                             ((this_ptr->base).object_to_pick_up,
-                              g_CAmmoBoxActorType_007641f8.name_hash), pCStack_70 != (CAmmoBox *)0x0
-     )) {
+                             ((this_ptr->base).object_to_pick_up,g_CAmmoBoxClassInfo.name_hash),
+     pCStack_70 != (CAmmoBox *)0x0)) {
     fVar18 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60(pCStack_68);
     core_ammobox_cpp_CAmmoBox_openBox_FUN_0040f130(pCStack_70,fVar18);
   }
@@ -1110,9 +1109,8 @@ LAB_00536144:
     if ((1.0 < fVar18) &&
        (pCVar21 = (CBoxActor *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (&((this_ptr->base).pushed_object)->base,
-                             g_CBoxActorActorType_00764800.name_hash), pCVar21 != (CBoxActor *)0x0))
-    {
+                            (&((this_ptr->base).pushed_object)->base,g_CBoxActorClassInfo.name_hash)
+       , pCVar21 != (CBoxActor *)0x0)) {
       core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00538440(this_ptr,&CStack_17c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,(CVector3f *)auStack_110,&CStack_17c);

@@ -29,9 +29,9 @@ void __cdecl CSteuben::setup(CSteuben *this_ptr);
 // Address: 005a5c20
 void __cdecl CSteuben::processStates(CSteuben *this_ptr,float delta_time,int mode);
 
-// Original: core_villain.cpp_FUN_005a5c40
+// Original: core_villain.cpp_CSteuben_processAI_FUN_005a5c40
 // Address: 005a5c40
-void FUN_005a5c40(int param_1,float param_2);
+void __cdecl CSteuben::processAI(CSteuben *this_ptr,float delta_time);
 
 // Original: core_villain.cpp_CSteuben_processDeathState_FUN_005a5d10
 // Address: 005a5d10

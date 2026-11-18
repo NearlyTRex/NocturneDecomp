@@ -11,13 +11,13 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059424f = 0.304800000000000
-;   undefined4 DAT_02dc9220
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02dc9220]      ; 0052ab30 | DAT_02dc9220
+    MOV EDX,dword ptr [0x02dc9220]      ; 0052ab30 | g_DirectSound3DListener
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_0052ab30
     TEST EDX,EDX                        ; 0052ab36
     JNZ 0x0052ab3b                      ; 0052ab38

@@ -7,7 +7,7 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
-;   core_cloth.cpp_FUN_005ae680 at 005af096
+;   core_cloth.cpp_CCloth_setup_FUN_005ae680 at 005af096
 ;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f076d
 ;   core_moloch.cpp_CMoloch_process_FUN_00501530 at 00501aff
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_005b6510 at 005b6517

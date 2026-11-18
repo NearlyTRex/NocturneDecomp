@@ -60,11 +60,11 @@
 ;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 00522242
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c09cc
-;   undefined4 DAT_005c09d0
-;   undefined4 DAT_005c09d8
-;   undefined4 DAT_005c09e0
-;   undefined4 DAT_005df8fc
+;   float g_FLOAT_005c09cc = 0.05000000
+;   double g_DOUBLE_005c09d0 = 0.0500000000000000
+;   double g_DOUBLE_005c09d8 = 0.5
+;   float g_FLOAT_005c09e0 = -32
+;   float g_FLOAT_005df8fc = 0.02000000
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createLaserSegment_FUN_004a2aa0
@@ -85,9 +85,9 @@ section .text
     MOV EDX,dword ptr [EBP + 0x1c]      ; 004a2b82
     MOV dword ptr [ESP + 0x4],EAX       ; 004a2b85
     FLD float ptr [ESP + 0x4]           ; 004a2b89
-    FMUL float ptr [0x005c09cc]         ; 004a2b8d | DAT_005c09cc
+    FMUL float ptr [0x005c09cc]         ; 004a2b8d | g_FLOAT_005c09cc
     FST float ptr [ESP]                 ; 004a2b93
-    FCOMP double ptr [0x005c09d0]       ; 004a2b96 | DAT_005c09d0
+    FCOMP double ptr [0x005c09d0]       ; 004a2b96 | g_DOUBLE_005c09d0
     FNSTSW AX                           ; 004a2b9c
     SAHF                                ; 004a2b9e
     JC 0x004a2d75                       ; 004a2b9f
@@ -121,7 +121,7 @@ section .text
     FMUL float ptr [ESP + 0x8]          ; 004a2bdf
     FLD float ptr [ESP + 0x8]           ; 004a2be3
     FLD ST0                             ; 004a2be7
-    FMUL double ptr [0x005c09d8]        ; 004a2be9 | DAT_005c09d8
+    FMUL double ptr [0x005c09d8]        ; 004a2be9 | g_DOUBLE_005c09d8
     FLD float ptr [ESP + 0x5c]          ; 004a2bef
     FMUL float ptr [ESP + 0x8]          ; 004a2bf3
     FXCH                                ; 004a2bf7
@@ -132,7 +132,7 @@ section .text
     FXCH                                ; 004a2c06
     FMUL float ptr [ESP + 0xa4]         ; 004a2c08
     FLD float ptr [ESP + 0xa4]          ; 004a2c0f
-    FMUL float ptr [0x005c09e0]         ; 004a2c16 | DAT_005c09e0
+    FMUL float ptr [0x005c09e0]         ; 004a2c16 | g_FLOAT_005c09e0
     FLD float ptr [ESP + 0x78]          ; 004a2c1c
     FLD float ptr [ESP + 0x7c]          ; 004a2c20
     FXCH ST3                            ; 004a2c24
@@ -215,7 +215,7 @@ section .text
     FXCH                                ; 004a2d0d
     FMUL ST1                            ; 004a2d0f
     FXCH                                ; 004a2d11
-    FMUL float ptr [0x005c09e0]         ; 004a2d13 | DAT_005c09e0
+    FMUL float ptr [0x005c09e0]         ; 004a2d13 | g_FLOAT_005c09e0
     FLD float ptr [ESP + 0x54]          ; 004a2d19
     FLD float ptr [ESP + 0x58]          ; 004a2d1d
     LEA EDI,[ESP + 0x84]                ; 004a2d21
@@ -257,7 +257,7 @@ section .text
         ;   XREF to: 004a2d07 (UNCONDITIONAL_JUMP)  ; LAB_004a2d07
     MOV EBX,dword ptr [EBP + 0x38]      ; 004a2da1
         ;   Label: LAB_004a2da1
-    PUSH dword ptr [0x005df8fc]         ; 004a2da4 | DAT_005df8fc
+    PUSH dword ptr [0x005df8fc]         ; 004a2da4 | g_FLOAT_005df8fc
     PUSH EBX                            ; 004a2daa
     MOV ESI,dword ptr [EBP + 0x34]      ; 004a2dab
     PUSH ESI                            ; 004a2dae

@@ -7,10 +7,10 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00598b54
-;   undefined4 DAT_00598b5c
-;   undefined4 DAT_00598b64
-;   undefined4 DAT_00598b6c
+;   double g_DOUBLE_00598b54 = 3.40282346600000E+38
+;   double g_DOUBLE_00598b5c = 1.17549435100000E-38
+;   double g_DOUBLE_00598b64 = -3.40282346600000E+38
+;   double g_DOUBLE_00598b6c = -1.17549435100000E-38
 ;
 ; *****************************************************************************
 
@@ -46,26 +46,26 @@ section .text
     JNC 0x0056a20f                      ; 0056a1f1
         ;   XREF to: 0056a20f (CONDITIONAL_JUMP)  ; LAB_0056a20f
     FLD double ptr [ESP]                ; 0056a1f3
-    FCOMP double ptr [0x00598b54]       ; 0056a1f6 | DAT_00598b54
+    FCOMP double ptr [0x00598b54]       ; 0056a1f6 | g_DOUBLE_00598b54
     FNSTSW AX                           ; 0056a1fc
     SAHF                                ; 0056a1fe
     JA 0x0056a20f                       ; 0056a1ff
         ;   XREF to: 0056a20f (CONDITIONAL_JUMP)  ; LAB_0056a20f
     FLD double ptr [ESP]                ; 0056a201
-    FCOMP double ptr [0x00598b5c]       ; 0056a204 | DAT_00598b5c
+    FCOMP double ptr [0x00598b5c]       ; 0056a204 | g_DOUBLE_00598b5c
     FNSTSW AX                           ; 0056a20a
     SAHF                                ; 0056a20c
     JNC 0x0056a1de                      ; 0056a20d
         ;   XREF to: 0056a1de (CONDITIONAL_JUMP)  ; LAB_0056a1de
     FLD double ptr [ESP]                ; 0056a20f
         ;   Label: LAB_0056a20f
-    FCOMP double ptr [0x00598b64]       ; 0056a212 | DAT_00598b64
+    FCOMP double ptr [0x00598b64]       ; 0056a212 | g_DOUBLE_00598b64
     FNSTSW AX                           ; 0056a218
     SAHF                                ; 0056a21a
     JC 0x0056a22b                       ; 0056a21b
         ;   XREF to: 0056a22b (CONDITIONAL_JUMP)  ; LAB_0056a22b
     FLD double ptr [ESP]                ; 0056a21d
-    FCOMP double ptr [0x00598b6c]       ; 0056a220 | DAT_00598b6c
+    FCOMP double ptr [0x00598b6c]       ; 0056a220 | g_DOUBLE_00598b6c
     FNSTSW AX                           ; 0056a226
     SAHF                                ; 0056a228
     JBE 0x0056a1de                      ; 0056a229

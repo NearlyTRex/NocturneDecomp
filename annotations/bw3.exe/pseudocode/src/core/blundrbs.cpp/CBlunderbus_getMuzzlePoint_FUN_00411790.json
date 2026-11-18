@@ -2,24 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 211,
+    "complexity_score": 159,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 14,
+    "pseudocode_lines": 29,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "self_copy_guard",
       "stack_alignment_array",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 80
+    "total_lines": 78
   },
   "cross_references": [],
   "function": {
@@ -44,15 +40,15 @@
   "globals": [
     {
       "addr": "005b654a",
-      "name": "DAT_005b654a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005b654a",
+      "type": "float",
+      "value": "-0.1000000"
     },
     {
       "addr": "005b654e",
-      "name": "DAT_005b654e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005b654e",
+      "type": "float",
+      "value": "-0.2000000"
     }
   ],
   "param_estimates": {
@@ -118,16 +114,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 7,
+      "line": 5,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CVector3f *unaff_ESI;",
@@ -135,55 +123,15 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 8,
       "match": "afStackY_1014",
       "severity": "moderate",
       "text": "float afStackY_1014 [1017];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffffd4",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_ffffffd4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffffd4",
-      "severity": "moderate",
-      "text": "core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(&this_ptr->base,in_stack_ffffffd4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffffd4",
-      "severity": "moderate",
-      "text": "pCStack_14 = in_stack_ffffffd4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "afStack_10[(uint)bVar2 * -2] = *(float *)(&stack0xffffffd8 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "*(float *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 27,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)unaff_ESI + (uint)bVar2 * -8 + 4);",
@@ -191,7 +139,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 27,
       "match": "(float *)((int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)unaff_ESI + (uint)bVar2 * -8 + 4);",
@@ -199,35 +147,59 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 28,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI->x = (float)pCStack_20;",
+      "text": "unaff_ESI->x = fStack_20;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 31,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&CStack_2c",
+      "severity": "moderate",
+      "text": "afStack_1c[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_2c + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)&CStack_2c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
+      "line": 27,
       "match": "(int)unaff_ESI",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)unaff_ESI + (uint)bVar2 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&pCStack_20 != &pCStack_14)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 23,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (&pCStack_20 != &pCStack_14) {",
-      "type": "self_copy_guard"
+      "text": "afStack_1c[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_2c + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

@@ -25,9 +25,9 @@ CGargoyle * __cdecl CGargoyle::ctor(CGargoyle *this_ptr);
 // Address: 004c4ee0
 void __cdecl CGargoyle::setup(CGargoyle *this_ptr);
 
-// Original: core_gargoyle.cpp_FUN_004c51a0
+// Original: core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004c51a0
 // Address: 004c51a0
-undefined4 FUN_004c51a0(int param_1);
+int __cdecl CGargoyle::shouldMove(CGargoyle *this_ptr);
 
 // Original: core_gargoyle.cpp_CGargoyle_process_FUN_004c5350
 // Address: 004c5350

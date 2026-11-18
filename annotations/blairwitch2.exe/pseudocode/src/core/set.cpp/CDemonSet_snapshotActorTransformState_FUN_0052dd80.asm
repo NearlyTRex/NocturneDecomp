@@ -9,7 +9,7 @@
 ;
 ; XREF[4]:
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 00486f03
-;   core_glass.cpp_FUN_004c6d40 at 004c7156
+;   core_glass.cpp_CGlass_shatter_FUN_004c6d40 at 004c7156
 ;   core_grave.cpp_CGrave_startAnimation_FUN_004ca3e0 at 004ca42e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052df58
 ;

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 40,
+    "complexity_score": 24,
     "cross_reference_count": 12,
     "function_call_count": 2,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 89
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -34,15 +32,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004ecca0",
+      "from_addr": "004eccb5",
+      "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004ecca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004eafd0",
       "from_addr": "004eaff1",
       "name": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ecca0",
-      "from_addr": "004eccb5",
-      "name": "core_hero.cpp_FUN_004ecca0",
+      "addr": "004f7690",
+      "from_addr": "004f7fda",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -55,12 +59,6 @@
       "addr": "004f97a0",
       "from_addr": "004f9a4f",
       "name": "core_inv.cpp_CInventory_load_FUN_004f97a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f7690",
-      "from_addr": "004f7fda",
-      "name": "core_inv.cpp_FUN_004f7690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -109,7 +107,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     }
   ],
   "globals": [
@@ -151,14 +149,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -201,7 +199,7 @@
       {
         "call_addr": "004f7fda",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -212,7 +210,7 @@
       {
         "call_addr": "004f8523",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -223,7 +221,7 @@
       {
         "call_addr": "004f8826",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -234,7 +232,7 @@
       {
         "call_addr": "004f8ac8",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,7 +243,7 @@
       {
         "call_addr": "004eccb5",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ecca0",
+        "caller": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004ecca0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -350,14 +348,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

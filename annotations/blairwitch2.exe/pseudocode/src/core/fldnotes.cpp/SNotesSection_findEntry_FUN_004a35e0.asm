@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   name
 ;
 ; XREF[8]:
-;   core_flashlit.cpp_FUN_004a14f0 at 004a150a
+;   core_flashlit.cpp_findNotesEntry_FUN_004a14f0 at 004a150a
 ;   core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0 at 004a55d1
 ;   core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310 at 004a5331
 ;   core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004a5430 at 004a544d

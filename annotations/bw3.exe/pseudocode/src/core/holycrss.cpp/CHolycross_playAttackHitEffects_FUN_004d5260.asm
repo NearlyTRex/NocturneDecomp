@@ -10,7 +10,7 @@
 ; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; Referenced Globals:
-;   undefined4 s_IMPCT_KICK1_WAV_005c51dd+2
+;   TerminatedCString s_IMPCT_KICK1_WAV_005c51df
 ;   TerminatedCString s_IMPCT_ROCK_X_WAV_005c51ef
 ;   CGore* g_CGorePtr = 01d22e44
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -48,7 +48,7 @@ section .text
     RET                                 ; 004d528b
     PUSH EDI                            ; 004d528c
         ;   Label: LAB_004d528c
-    PUSH 0x5c51df                       ; 004d528d | s_IMPCT_KICK1_WAV_005c51dd+2
+    PUSH 0x5c51df                       ; 004d528d | = "IMPCT-KICK1.WAV"
     MOV EAX,dword ptr [EBX + 0x154]     ; 004d5292
     PUSH EBX                            ; 004d5298
     CALL dword ptr [EAX + 0x2c]         ; 004d5299

@@ -10,5 +10,5 @@ HANDLE __watcallRegister GetConsoleInputHandle(void)
 
 {
   InitializeConsoleHandles();
-  return DAT_005c20d0;
+  return g_ConsoleInputHandle;
 }

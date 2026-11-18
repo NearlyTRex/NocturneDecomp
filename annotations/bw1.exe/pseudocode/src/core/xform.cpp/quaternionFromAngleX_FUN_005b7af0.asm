@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(float param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(float angle_radians,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -11,11 +13,11 @@
 ;
 ; XREF[13]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30 at 00433b6e
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200 at 0046f3a3
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046ef9d
-;   core_doc.cpp_FUN_0046caa0 at 0046ce93
-;   core_doc.cpp_FUN_0046f200 at 0046f3a3
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046ce93
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8b55
-;   core_icepick.cpp_FUN_004f1670 at 004f173d
+;   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f1670 at 004f173d
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0 at 0051e1bf
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 0054239a
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00569440 at 00569529
@@ -23,7 +25,7 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa17c
+;   float g_FLOAT_005fa17c = 0.5
 ;
 ; *****************************************************************************
 
@@ -34,7 +36,7 @@ section .text
     SUB ESP,0x18                        ; 005b7af1
     MOV EDX,ESI                         ; 005b7af4
     FLD float ptr [ESP + 0x20]          ; 005b7af6
-    FMUL float ptr [0x005fa17c]         ; 005b7afa | DAT_005fa17c
+    FMUL float ptr [0x005fa17c]         ; 005b7afa | g_FLOAT_005fa17c
     FLD ST0                             ; 005b7b00
     FCOS                                ; 005b7b02
     FXCH                                ; 005b7b04

@@ -42,7 +42,7 @@ void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(CInvent
       }
       this_ptr_01 = (CWeapon *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
-                              (this_ptr->items[iVar2],g_CWeaponActorType_02ddf970.name_hash);
+                              (this_ptr->items[iVar2],g_CWeaponClassInfo.name_hash);
       if (this_ptr_01 != (CWeapon *)0x0) {
         str2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0
                          (&this_ptr->selected_weapon->base);

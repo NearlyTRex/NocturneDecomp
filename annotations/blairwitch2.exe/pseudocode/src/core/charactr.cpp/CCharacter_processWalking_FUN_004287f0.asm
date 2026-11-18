@@ -24,19 +24,19 @@
 ;   ... and 25 more
 ;
 ; Referenced Globals:
-;   undefined4 s_s_can_t_figure_out_next_005ccee9+1
+;   TerminatedCString s_s_can_t_figure_out_next_005cceea
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_0265370c
+;   CVector3f g_ZeroVector
 ;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
+;   core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_0042b420
+;   core_charactr.cpp_CCharacter_followActor_FUN_00428260
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
-;   core_charactr.cpp_FUN_00428260
-;   core_charactr.cpp_FUN_0042b420
 ;   core_door.cpp_CDoor_getOpenStandPos_FUN_00460350
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
@@ -111,7 +111,7 @@ section .text
     PUSH ESI                            ; 00428897
     LEA ESI,[ESP + 0x30]                ; 00428898
     CALL core_door.cpp_CDoor_getOpenStandPos_FUN_00460350 ; 0042889c
-        ;   XREF to: 00460350 (UNCONDITIONAL_CALL)  ; float * core_door.cpp_CDoor_getOpenStandPos_FUN_00460350(CDoor * this_ptr, float * param_2, undefined4 param_3)
+        ;   XREF to: 00460350 (UNCONDITIONAL_CALL)  ; CVector3f * core_door.cpp_CDoor_getOpenStandPos_FUN_00460350(CDoor * this_ptr, CVector3f * direction, CVector3f * actor_pos, CVector3f * out_pos)
     ADD ESP,0xc                         ; 004288a1
     LEA EDI,[ESP + 0x3c]                ; 004288a4
     PUSH 0x0                            ; 004288a8
@@ -120,7 +120,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004288b0
     MOVSD ES:EDI,ESI                    ; 004288b1
     MOVSD ES:EDI,ESI                    ; 004288b2
-    PUSH 0x265370c                      ; 004288b3 | DAT_0265370c
+    PUSH 0x265370c                      ; 004288b3 | g_ZeroVector
     MOV EAX,dword ptr [EBX + 0x27b0]    ; 004288b8
     PUSH EAX                            ; 004288be
     MOV ESI,dword ptr [EAX + 0x2b0]     ; 004288bf
@@ -144,8 +144,8 @@ section .text
     PUSH EBX                            ; 004288f7
     LEA ESI,[ESP + 0x38]                ; 004288f8
     LEA EDI,[ESP + 0x8]                 ; 004288fc
-    CALL core_actor.cpp_FUN_00408de0    ; 00428900
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00428900
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x38]                ; 00428905
     ADD ESP,0x8                         ; 00428909
     MOV EAX,ESP                         ; 0042890c
@@ -156,7 +156,7 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 00428912
     LEA EDI,[ESP + 0x10]                ; 00428916
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0042891a
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x1c]                ; 0042891f
     ADD ESP,0x4                         ; 00428923
     MOVSD ES:EDI,ESI                    ; 00428926
@@ -261,8 +261,8 @@ section .text
     PUSH dword ptr [EBX + 0x2778]       ; 00428a3b
     PUSH ESI                            ; 00428a41
     PUSH EBX                            ; 00428a42
-    CALL core_charactr.cpp_FUN_00428260 ; 00428a43
-        ;   XREF to: 00428260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428260()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00428260 ; 00428a43
+        ;   XREF to: 00428260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00428260(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     ADD ESP,0x14                        ; 00428a48
     MOV EAX,0x1                         ; 00428a4b
     ADD ESP,0x5c                        ; 00428a50
@@ -283,8 +283,8 @@ section .text
         ;   XREF to: 00428a2e (CONDITIONAL_JUMP)  ; LAB_00428a2e
     PUSH EAX                            ; 00428a6c
     PUSH EBX                            ; 00428a6d
-    CALL core_charactr.cpp_FUN_0042b420 ; 00428a6e
-        ;   XREF to: 0042b420 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b420()
+    CALL core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_0042b420 ; 00428a6e
+        ;   XREF to: 0042b420 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_0042b420(CCharacter * this_ptr, CWayPoint * target_waypoint)
     ADD ESP,0x8                         ; 00428a73
     MOV ESI,EAX                         ; 00428a76
     TEST EAX,EAX                        ; 00428a78
@@ -293,7 +293,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2774]    ; 00428a7c
     PUSH EAX                            ; 00428a82
     PUSH EBX                            ; 00428a83
-    PUSH 0x5cceea                       ; 00428a84 | s_s_can_t_figure_out_next_005ccee9+1
+    PUSH 0x5cceea                       ; 00428a84 | = "%s can't figure out next waypoint try..."
     MOV EDX,dword ptr [0x00609ed0]      ; 00428a89 | g_CConsolePtr
     PUSH EDX                            ; 00428a8f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 00428a90

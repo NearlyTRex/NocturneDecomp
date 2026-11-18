@@ -16,7 +16,7 @@
 ;   TerminatedCString s_core_cloth_cpp_0057ae99
 ;   TerminatedCString s_CCloth_saveJoinedLight_M_0057aeab
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -59,13 +59,13 @@ section .text
         ;   Label: LAB_00437d04
     IMUL ECX,ECX,0x30                   ; 00437d0a
     MOV EDX,dword ptr [0x005ae704]      ; 00437d0d | g_CDemonRenderer_PTR_005ae704
-    MOV EDI,dword ptr [EDX]             ; 00437d13 | DAT_01b4d738
+    MOV EDI,dword ptr [EDX]             ; 00437d13 | g_CDemonRenderer_01b4d738
     MOV EDI,dword ptr [ECX + EDI*0x1 + 0x20] ; 00437d15
     MOV dword ptr [EAX + 0x3a64c],EDI   ; 00437d19
-    MOV EDI,dword ptr [EDX]             ; 00437d1f | DAT_01b4d738
+    MOV EDI,dword ptr [EDX]             ; 00437d1f | g_CDemonRenderer_01b4d738
     MOV EDI,dword ptr [ECX + EDI*0x1 + 0x24] ; 00437d21
     MOV dword ptr [EAX + 0x3a7dc],EDI   ; 00437d25
-    MOV EDX,dword ptr [EDX]             ; 00437d2b | DAT_01b4d738
+    MOV EDX,dword ptr [EDX]             ; 00437d2b | g_CDemonRenderer_01b4d738
     ADD EAX,0x4                         ; 00437d2d
     MOV EDX,dword ptr [ECX + EDX*0x1 + 0x28] ; 00437d30
     MOV dword ptr [EAX + 0x3a968],EDX   ; 00437d34

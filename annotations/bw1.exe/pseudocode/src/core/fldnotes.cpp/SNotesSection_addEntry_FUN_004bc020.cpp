@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020(SNotesSection *this_ptr,char *name,int kind)
 
 {
@@ -21,20 +19,20 @@ SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020(SNot
   
   bVar6 = 0;
   if (99 < this_ptr->entry_count) {
-    _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
-    _DAT_01d1d404 = 0x72b;
-    core_main_c_FUN_005030e0("Too many field note entries in section %s, adding entry %s",this_ptr,name);
+    g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
+    g_INT_01d1d404 = 0x72b;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many field note entries in section %s, adding entry %s");
   }
-  pSVar2 = (SNotesEntry *)operator_new(0x15c);
+  pSVar2 = operator_new(0x15c);
   pSVar3 = (SNotesEntry *)0x0;
   if (pSVar2 != (SNotesEntry *)0x0) {
     core_fldnotes_cpp_SNotesEntry_ctor_FUN_004bbcb0(pSVar2);
     pSVar3 = extraout_EAX;
   }
   if (pSVar3 == (SNotesEntry *)0x0) {
-    _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
-    _DAT_01d1d404 = 0x731;
-    core_main_c_FUN_005030e0("Out of memory!");
+    g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
+    g_INT_01d1d404 = 0x731;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory!");
   }
   uVar4 = 0xffffffff;
   pcVar5 = name;
@@ -46,9 +44,9 @@ SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020(SNot
   } while (cVar1 != '\0');
   pSVar2 = pSVar3;
   if (0x3f < ~uVar4 - 1) {
-    _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
-    _DAT_01d1d404 = 0x736;
-    core_main_c_FUN_005030e0("Entry name '%s' is too long",name);
+    g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
+    g_INT_01d1d404 = 0x736;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Entry name '%s' is too long");
   }
   do {
     cVar1 = *name;

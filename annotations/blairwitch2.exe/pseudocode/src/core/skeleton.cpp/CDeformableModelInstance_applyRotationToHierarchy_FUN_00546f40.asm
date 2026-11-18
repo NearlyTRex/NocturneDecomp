@@ -22,18 +22,18 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[9]:
+;   core_doc.cpp_CDoc_extractTurnPose_FUN_00455170 at 00455234
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455a50
-;   core_doc.cpp_FUN_00453d80 at 00453fe2
-;   core_doc.cpp_FUN_00455170 at 00455234
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 00453fe2
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004b0143
-;   core_icepick.cpp_FUN_004d5470 at 004d556e
+;   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004d5470 at 004d556e
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004fef30 at 004ff234
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430 at 005674f4
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00567880 at 00567d50
-;   core_stranger.cpp_FUN_00565ff0 at 00566246
-;   core_stranger.cpp_FUN_00567430 at 005674f4
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 00566246
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7337
+;   double g_DOUBLE_005e7337 = 0.0000100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -131,7 +131,7 @@ section .text
     FMUL float ptr [ESP + 0xc0]         ; 00547021
     FST float ptr [ESP]                 ; 00547028
     FABS                                ; 0054702b
-    FCOMP double ptr [0x005e7337]       ; 0054702d | DAT_005e7337
+    FCOMP double ptr [0x005e7337]       ; 0054702d | g_DOUBLE_005e7337
     FNSTSW AX                           ; 00547033
     SAHF                                ; 00547035
     JBE 0x00546fbe                      ; 00547036
@@ -142,7 +142,7 @@ section .text
     PUSH dword ptr [ESP + 0x4]          ; 00547047
     LEA EDI,[ESP + 0x8c]                ; 0054704b
     CALL core_xform.cpp_quaternionFromAxisAngle_FUN_00594060 ; 00547052
-        ;   XREF to: 00594060 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAxisAngle_FUN_00594060()
+        ;   XREF to: 00594060 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAxisAngle_FUN_00594060(float angle_radians, CVector3f * axis_ptr, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xac]                ; 00547057
     ADD ESP,0x8                         ; 0054705e
     LEA EAX,[ESP + 0x84]                ; 00547061
@@ -155,7 +155,7 @@ section .text
     PUSH ESI                            ; 00547074
     LEA ESI,[ESP + 0x6c]                ; 00547075
     CALL core_xform.cpp_multiplyQuaternion_FUN_00593c60 ; 00547079
-        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00593c60()
+        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00593c60(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     ADD ESP,0x8                         ; 0054707e
     MOV EDI,dword ptr [ESP + 0xc8]      ; 00547081
     LEA ESI,[ESP + 0x64]                ; 00547088
@@ -176,7 +176,7 @@ section .text
     LEA EDI,[ESP + 0x9c]                ; 005470b4
     FSTP float ptr [ESP]                ; 005470bb
     CALL core_xform.cpp_quaternionFromAxisAngle_FUN_00594060 ; 005470be
-        ;   XREF to: 00594060 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAxisAngle_FUN_00594060()
+        ;   XREF to: 00594060 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAxisAngle_FUN_00594060(float angle_radians, CVector3f * axis_ptr, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x7c]                ; 005470c3
     ADD ESP,0x8                         ; 005470c7
     LEA EAX,[ESP + 0x94]                ; 005470ca

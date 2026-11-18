@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_mobster_die_wav_005d8ccf+1
+;   TerminatedCString s_mobster_die_wav_005d8cd0
 ;   TerminatedCString s_mobster_hit_wav_005d8ce2
 ;   undefined4 g_CTommyGunClassInfo.name_hash
 ;
@@ -18,7 +18,7 @@
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_zombiepriest.cpp_FUN_0058f630
+;   core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
@@ -40,8 +40,8 @@ section .text
     ADD ESP,0x4                         ; 0058f9a8
     PUSH EDI                            ; 0058f9ab
     PUSH EBX                            ; 0058f9ac
-    CALL core_zombiepriest.cpp_FUN_0058f630 ; 0058f9ad
-        ;   XREF to: 0058f630 (UNCONDITIONAL_CALL)  ; undefined core_zombiepriest.cpp_FUN_0058f630()
+    CALL core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630 ; 0058f9ad
+        ;   XREF to: 0058f630 (UNCONDITIONAL_CALL)  ; void core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630(CZombiePriest * this_ptr, SDamageInfo * damage_info)
     MOV EAX,dword ptr [EBX + 0xd0e4]    ; 0058f9b2
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x2298] ; 0058f9b8
     ADD ESP,0x8                         ; 0058f9bf
@@ -143,7 +143,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00556be0 ; 0058fab2
         ;   XREF to: 00556be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00556be0(uint sfx_handle)
     ADD ESP,0x4                         ; 0058fab7
-    PUSH 0x5d8cd0                       ; 0058faba | s_mobster_die_wav_005d8ccf+1
+    PUSH 0x5d8cd0                       ; 0058faba | = "mobster-die-?.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0058fabf
     PUSH EBX                            ; 0058fac5
     CALL dword ptr [EAX + 0x2c]         ; 0058fac6

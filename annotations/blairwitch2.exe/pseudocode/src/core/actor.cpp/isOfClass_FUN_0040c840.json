@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 18,
     "complexity_score": 11,
-    "cross_reference_count": 60,
+    "cross_reference_count": 61,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -110,15 +110,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004599a0",
-      "from_addr": "00459c23",
-      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_004599a0",
+      "addr": "00450c60",
+      "from_addr": "004530af",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00450c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00450c60",
-      "from_addr": "004530af",
-      "name": "core_doc.cpp_FUN_00450c60",
+      "addr": "004599a0",
+      "from_addr": "00459c23",
+      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_004599a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -130,7 +130,7 @@
     {
       "addr": "00488ab0",
       "from_addr": "00488af0",
-      "name": "core_enemy.cpp_FUN_00488ab0",
+      "name": "core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_00488ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -158,15 +158,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b8e10",
-      "from_addr": "004b8e2e",
-      "name": "core_game.cpp_FUN_004b8e10",
+      "addr": "004b90d0",
+      "from_addr": "004babb0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b90d0",
-      "from_addr": "004babb0",
-      "name": "core_game.cpp_FUN_004b90d0",
+      "addr": "004b8e10",
+      "from_addr": "004b8e2e",
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004b8e10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -188,15 +188,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004cfc80",
-      "from_addr": "004cfca9",
-      "name": "core_hero.cpp_FUN_004cfc80",
+      "addr": "004cfd60",
+      "from_addr": "004cfe23",
+      "name": "core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004cfd60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004cfd60",
-      "from_addr": "004cfe23",
-      "name": "core_hero.cpp_FUN_004cfd60",
+      "addr": "004cfc80",
+      "from_addr": "004cfca9",
+      "name": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004cfc80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -206,9 +206,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004dadb0",
+      "from_addr": "004daf71",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004db880",
       "from_addr": "004db89c",
       "name": "core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd0a0",
+      "from_addr": "004dd0ef",
+      "name": "core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd9b0",
+      "from_addr": "004deaa5",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -227,24 +245,6 @@
       "addr": "004dc8c0",
       "from_addr": "004dc8d5",
       "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dadb0",
-      "from_addr": "004daf71",
-      "name": "core_inv.cpp_FUN_004dadb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dd0a0",
-      "from_addr": "004dd0ef",
-      "name": "core_inv.cpp_FUN_004dd0a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dd9b0",
-      "from_addr": "004deaa5",
-      "name": "core_inv.cpp_FUN_004dd9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -268,7 +268,7 @@
     {
       "addr": "004e2ae0",
       "from_addr": "004e2aeb",
-      "name": "core_lightgun.cpp_FUN_004e2ae0",
+      "name": "core_lightgun.cpp_CLightGun_isVampireType_FUN_004e2ae0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -286,7 +286,7 @@
     {
       "addr": "004fd280",
       "from_addr": "004fd2ab",
-      "name": "core_mission.cpp_FUN_004fd280",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -338,9 +338,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005779d0",
+      "from_addr": "00577f67",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_005779d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0057f0b0",
       "from_addr": "0057f27e",
-      "name": "core_turret.cpp_FUN_0057f0b0",
+      "name": "core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -422,7 +428,7 @@
       {
         "call_addr": "004babb0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b90d0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -433,7 +439,7 @@
       {
         "call_addr": "004b8e2e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b8e10",
+        "caller": "core_game.cpp_giveHeroWeapon_FUN_004b8e10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -444,7 +450,7 @@
       {
         "call_addr": "004b8ef7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b8e10",
+        "caller": "core_game.cpp_giveHeroWeapon_FUN_004b8e10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -455,7 +461,7 @@
       {
         "call_addr": "004daf71",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dadb0",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -466,7 +472,7 @@
       {
         "call_addr": "004daf86",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dadb0",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -477,7 +483,7 @@
       {
         "call_addr": "004db112",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dadb0",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -488,7 +494,7 @@
       {
         "call_addr": "004db1c4",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dadb0",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -499,7 +505,7 @@
       {
         "call_addr": "004db1d9",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dadb0",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

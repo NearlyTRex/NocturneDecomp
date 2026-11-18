@@ -10,10 +10,10 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_TlsSetValue_005c8658 = 001c9238
-;   undefined4 DAT_0061f2a0
+;   int g_INT_0061f2a0 = -0x1
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;   crt_unknown.c_FUN_005c293c
 ;   crt_unknown.c_FUN_005c4b60
 ;   TlsSetValue
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 005c29d8
         ;   Label: crt_unknown.c_FUN_005c29d8
     PUSH ESI                            ; 005c29d9
-    CMP dword ptr [0x0061f2a0],-0x1     ; 005c29da | DAT_0061f2a0
+    CMP dword ptr [0x0061f2a0],-0x1     ; 005c29da | g_INT_0061f2a0
     JNZ 0x005c29e8                      ; 005c29e1
         ;   XREF to: 005c29e8 (CONDITIONAL_JUMP)  ; LAB_005c29e8
     XOR EAX,EAX                         ; 005c29e3
@@ -52,8 +52,8 @@ section .text
     JNZ 0x005c2a1d                      ; 005c2a0d
         ;   XREF to: 005c2a1d (CONDITIONAL_JUMP)  ; LAB_005c2a1d
     PUSH EBX                            ; 005c2a0f
-    CALL crt_unknown.c_FUN_005b86a0     ; 005c2a10
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 005c2a10
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 005c2a15
     XOR EAX,EAX                         ; 005c2a18
     POP ESI                             ; 005c2a1a
@@ -61,7 +61,7 @@ section .text
     RET                                 ; 005c2a1c
     PUSH EBX                            ; 005c2a1d
         ;   Label: LAB_005c2a1d
-    MOV ESI,dword ptr [0x0061f2a0]      ; 005c2a1e | DAT_0061f2a0
+    MOV ESI,dword ptr [0x0061f2a0]      ; 005c2a1e | g_INT_0061f2a0
     PUSH ESI                            ; 005c2a24
     CALL dword ptr CS:[0x5c8658]        ; 005c2a25 | PTR_TlsSetValue_005c8658
     MOV EAX,0x1                         ; 005c2a2c

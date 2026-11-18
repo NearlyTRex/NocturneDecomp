@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 430,
-    "complexity_score": 310,
+    "complexity_score": 245,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 160,
-    "suspect_count": 13,
+    "suspect_count": 7,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "pointer_truncation",
+      "raw_address_constant",
+      "unrolled_strlen"
     ],
     "total_lines": 590
   },
@@ -21,7 +20,7 @@
     {
       "addr": "004b6f30",
       "from_addr": "004b73c2",
-      "name": "core_game.cpp_FUN_004b6f30",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,6 +69,11 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406bf0"
     },
     {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004b0a20"
+    },
+    {
       "addr": "004b0fa0",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0"
@@ -90,52 +94,47 @@
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
     },
     {
-      "addr": "004b0a20",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0a20"
-    },
-    {
       "addr": "004b2e40",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b2e40"
+      "name": "engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40"
     }
   ],
   "globals": [
     {
       "addr": "005c2218",
-      "name": "s_d_s_005c2217+1",
-      "type": "undefined4",
+      "name": "s_d_s_005c2218",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c2220",
-      "name": "DAT_005c2220",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c2220",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "005c2228",
-      "name": "DAT_005c2228",
-      "type": "undefined4",
-      "value": null
+      "name": "g_StatusThresholdHigh",
+      "type": "double",
+      "value": "0.600000000000000"
     },
     {
       "addr": "005c2230",
-      "name": "DAT_005c2230",
-      "type": "undefined4",
-      "value": null
+      "name": "g_StatusThresholdLow",
+      "type": "double",
+      "value": "0.350000000000000"
     },
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "006039e0",
@@ -145,44 +144,44 @@
     },
     {
       "addr": "01549aa0",
-      "name": "DAT_01549aa0",
-      "type": "undefined4",
+      "name": "g_MediumFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549aa4",
-      "name": "DAT_01549aa4",
-      "type": "undefined4",
+      "name": "g_TinyFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549aa8",
-      "name": "DAT_01549aa8",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01549aa8",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01549ab4",
-      "name": "DAT_01549ab4",
-      "type": "undefined4",
+      "name": "g_SmallEditorFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d229f0",
-      "name": "DAT_01d229f0",
-      "type": "undefined4",
+      "name": "g_ChapterDisplayName",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01d22af0",
-      "name": "DAT_01d22af0",
-      "type": "undefined4",
+      "name": "g_ChapterDisplayYear",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22af4",
-      "name": "DAT_01d22af4",
-      "type": "undefined4",
+      "name": "g_OverlayDisplayTimer",
+      "type": "float",
       "value": null
     },
     {
@@ -204,7 +203,7 @@
       {
         "call_addr": "004b73c2",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6f30",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -496,104 +495,56 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "local_60 = DAT_005fba18;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "local_5c = DAT_005fba1c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "local_64 = DAT_005fba1c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005fba1c - iVar6 * iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "local_4c = DAT_005fba18 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x1e0) && (pCVar8 = _DAT_01549aa4, DAT_005fba1c < 0x180)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x1e0) && (pCVar8 = _DAT_01549aa4, DAT_005fba1c < 0x180)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "iVar4 = DAT_005fba1c - iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (0x280 < DAT_005fba18) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (800 < DAT_005fba18) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_1c->owner`). Replace `local_1c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 157,
-      "match": "local_1c = (T *)&local_1c->FIELD",
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 120,
+      "match": "(int)local_44",
       "severity": "moderate",
-      "text": "local_1c = (CGame *)&local_1c->game_pixy;",
-      "type": "shadow_pointer_walk"
+      "text": "if ((int)local_44 < iVar4) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 129,
+      "match": "(int)local_44",
+      "severity": "moderate",
+      "text": "local_58 = ((int)local_44 * 3) / 2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 133,
+      "match": "(int)local_44",
+      "severity": "moderate",
+      "text": "local_34 = iVar6 - (int)local_44;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 154,
+      "match": "(int)local_40",
+      "severity": "moderate",
+      "text": "(local_44,(char *)local_1c,(int)local_40,(int)local_38,0xf8,0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 154,
+      "match": "(int)local_38",
+      "severity": "moderate",
+      "text": "(local_44,(char *)local_1c,(int)local_40,(int)local_38,0xf8,0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x4b4853 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 57,
+      "match": "0x4b4853",
+      "severity": "moderate",
+      "text": "iVar6 = 0x4b4853;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 44,
+      "line": 42,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

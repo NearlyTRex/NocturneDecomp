@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags,int *texture_set_indices)
 
 {
   ushort *puVar1;
-  CVector3f *pCVar2;
+  ushort uVar2;
   ushort *puVar3;
   int iVar4;
-  float *pfVar5;
+  CVector3f *pCVar5;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -25,9 +23,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
   STriangleVertices local_d8;
   CVector3i local_b4;
   float local_a8;
-  float local_a4 [4];
-  float local_94;
-  float local_90;
+  float local_a4 [2];
+  CVector3f local_9c;
+  CVector3f local_90;
   CVector3i local_84;
   float local_78;
   float local_74 [2];
@@ -58,42 +56,42 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
   bVar9 = 0;
   local_1c = 0xffff;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(&local_100,orientation_vector);
-  if ((DAT_026b82a0 & 1) == 0) {
-    DAT_026b82a0 = DAT_026b82a0 | 1;
-    __arrinit(&DAT_026af600,3000,&g_CVectorTypeInfo);
+  if ((g_ShatterVertexArrayInitialized & 1) == 0) {
+    g_ShatterVertexArrayInitialized = g_ShatterVertexArrayInitialized | 1;
+    __arrinit(g_ShatterVertexArray,3000,&g_CVectorTypeInfo);
   }
   if (3000 < this_ptr->vertex_count[lod_index]) {
-    _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-    _DAT_01d1d404 = 0x767;
-    core_main_c_FUN_005030e0("CDeformableModel::shatter - too many vertices!");
+    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+    g_INT_01d1d404 = 0x767;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDeformableModel::shatter - too many vertices!");
   }
   local_48 = 0;
-  pfVar5 = (float *)&DAT_026af600;
+  pCVar5 = g_ShatterVertexArray;
   local_64 = (int)this_ptr->lod_info + lod_index * 4 + -4;
   local_4c = skinned_vertices;
   if (0 < *(int *)(local_64 + 0x2c)) {
     do {
-      *pfVar5 = (float)local_4c->x * _DAT_00605890;
-      pfVar5[1] = (float)local_4c->y * _DAT_00605890;
-      pfVar5[2] = (float)local_4c->z * _DAT_00605890;
-      core_dirmat_cpp_FUN_0045f690(&local_100,pfVar5);
-      local_a8 = local_90;
-      local_a4[(uint)bVar9 * -2] = local_a4[(uint)bVar9 * -2 + 6];
+      pCVar5->x = (float)local_4c->x * 0.00390625f;
+      pCVar5->y = (float)local_4c->y * 0.00390625f;
+      pCVar5->z = (float)local_4c->z * 0.00390625f;
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690(&local_100,pCVar5,&local_90);
+      local_a8 = local_90.x;
+      local_a4[(uint)bVar9 * -2] = *(float *)((int)&local_90 + (uint)bVar9 * -8 + 4);
       local_a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-           local_a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
+           *(float *)((int)&local_90 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
       local_78 = center_position->x + local_a8;
       local_74[0] = center_position->y + local_a4[0];
       local_74[1] = center_position->z + local_a4[1];
-      local_a4[2] = local_78;
-      local_a4[(uint)bVar9 * -2 + 3] = local_74[(uint)bVar9 * -2];
-      local_a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+      local_9c.x = local_78;
+      *(float *)((int)&local_9c + (uint)bVar9 * -8 + 4) = local_74[(uint)bVar9 * -2];
+      *(float *)((int)&local_9c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
            local_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-      if (pfVar5 != local_a4 + 2) {
-        *pfVar5 = local_a4[2];
-        pfVar5[1] = local_a4[3];
-        pfVar5[2] = local_94;
+      if (pCVar5 != &local_9c) {
+        pCVar5->x = local_9c.x;
+        pCVar5->y = local_9c.y;
+        pCVar5->z = local_9c.z;
       }
-      pfVar5 = pfVar5 + 3;
+      pCVar5 = pCVar5 + 1;
       local_4c = local_4c + 1;
       local_48 = local_48 + 1;
     } while (local_48 < *(int *)(local_64 + 0x2c));
@@ -117,17 +115,16 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
         local_20 = local_40 * 4;
         do {
           puVar3 = (ushort *)(*(int *)(local_38 + 0x7c) + iVar7);
-          pCVar2 = local_d8.vertices;
+          pCVar5 = local_d8.vertices;
           iVar8 = 0;
           do {
-            iVar4 = (uint)*puVar3 * 0xc;
-            if (pCVar2 != (CVector3f *)(&DAT_026af600 + iVar4)) {
-              ((CVector3f *)&pCVar2->x)->x =
-                   ((STriangleVertices *)(&DAT_026af600 + iVar4))->vertices[0].x;
-              pCVar2->y = *(float *)(&DAT_026af604 + iVar4);
-              pCVar2->z = *(float *)(&DAT_026af608 + iVar4);
+            uVar2 = *puVar3;
+            if (pCVar5 != g_ShatterVertexArray + uVar2) {
+              pCVar5->x = g_ShatterVertexArray[uVar2].x;
+              pCVar5->y = g_ShatterVertexArray[uVar2].y;
+              pCVar5->z = g_ShatterVertexArray[uVar2].z;
             }
-            pCVar2 = pCVar2 + 1;
+            pCVar5 = pCVar5 + 1;
             *(uint *)((int)&local_b4.x + iVar8) = (uint)puVar3[3];
             iVar4 = iVar8 + 4;
             puVar1 = puVar3 + 6;
@@ -136,7 +133,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
             iVar8 = iVar4;
           } while (iVar4 != 0xc);
           core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-                    (0x01C57074,&local_d8,&local_b4,&local_84,
+                    (g_CFireEffectPtr,&local_d8,&local_b4,&local_84,
                      (SMRGLTextureBasic *)
                      (local_2c->textures + *(int *)(iVar6 + *(int *)(local_30 + 0x90))),local_1c);
           iVar6 = iVar6 + 4;
@@ -170,18 +167,17 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
           if ((*(byte *)(part_visibility_flags +
                         *(int *)(*(int *)(local_18 + 0xa4) + (iVar7 - *(int *)(local_18 + 0x54)) * 4
                                 )) & 1) == 0) {
-            pCVar2 = local_d8.vertices;
+            pCVar5 = local_d8.vertices;
             iVar6 = 0;
             do {
-              iVar4 = (uint)*puVar3 * 0xc;
-              if (pCVar2 != (CVector3f *)(&DAT_026af600 + iVar4)) {
-                ((CVector3f *)&pCVar2->x)->x =
-                     ((STriangleVertices *)(&DAT_026af600 + iVar4))->vertices[0].x;
-                pCVar2->y = *(float *)(&DAT_026af604 + iVar4);
-                pCVar2->z = *(float *)(&DAT_026af608 + iVar4);
+              uVar2 = *puVar3;
+              if (pCVar5 != g_ShatterVertexArray + uVar2) {
+                pCVar5->x = g_ShatterVertexArray[uVar2].x;
+                pCVar5->y = g_ShatterVertexArray[uVar2].y;
+                pCVar5->z = g_ShatterVertexArray[uVar2].z;
               }
               *(uint *)((int)&local_b4.x + iVar6) = (uint)puVar3[3] << 8;
-              pCVar2 = pCVar2 + 1;
+              pCVar5 = pCVar5 + 1;
               puVar1 = puVar3 + 6;
               iVar4 = iVar6 + 4;
               puVar3 = puVar3 + 1;
@@ -189,7 +185,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
               iVar6 = iVar4;
             } while (iVar4 != 0xc);
             core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-                      (0x01C57074,&local_d8,&local_b4,&local_84,
+                      (g_CFireEffectPtr,&local_d8,&local_b4,&local_84,
                        (SMRGLTextureBasic *)
                        (local_28->textures + *(int *)(*(int *)(local_34 + 0x90) + local_14)),
                        local_1c);

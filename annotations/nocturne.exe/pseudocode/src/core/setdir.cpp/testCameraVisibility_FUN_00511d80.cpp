@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius)
 
 {
@@ -134,10 +132,10 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
       do {
         if ((*(byte *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
                              screen_x + iVar6 + 3) & 0x80) != 0) {
-          dVar5 = _DAT_00590bcd;
+          dVar5 = 0.0625;
           if (0 < *(int *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex
                                  ).transformed_z + iVar6)) {
-            dVar5 = _DAT_00590bc5;
+            dVar5 = 0.5;
           }
           local_d8 = local_d8 * (float)dVar5;
         }
@@ -146,14 +144,14 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
       local_28 = 0;
       local_3c = 0;
       local_1c = 0x180;
-      if (0 < _DAT_026639ec) {
+      if (0 < g_VDNearbyActorCount) {
         local_48 = 100.0f * 100.0f;
         local_30 = 0;
-        local_2c = g_CBoundingBox3D_ARRAY_02665930;
+        local_2c = g_VDNearbyActorBoundingBoxes;
         local_4c = g_ThumbZBufferTable + camera_index;
         local_34 = &camera->position;
         do {
-          local_20 = *(CDemonActor **)(&DAT_026639f0 + local_30);
+          local_20 = *(CDemonActor **)((int)g_VDNearbyActorPointers + local_30);
           fVar2 = (local_20->location).position.x - local_34->x;
           fVar4 = (local_20->location).position.y - local_34->y;
           fVar3 = (local_20->location).position.z - local_34->z;
@@ -166,9 +164,9 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
             iVar6 = 0x180;
             do {
               core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(local_58,&local_88,uVar15);
-              local_7c[0].x = (int)ROUND(local_88.x * _DAT_005a1a70);
-              local_7c[0].y = (int)ROUND(local_88.y * _DAT_005a1a70);
-              local_7c[0].z = (int)ROUND(local_88.z * _DAT_005a1a70);
+              local_7c[0].x = (int)ROUND(local_88.x * 256.0f);
+              local_7c[0].y = (int)ROUND(local_88.y * 256.0f);
+              local_7c[0].z = (int)ROUND(local_88.z * 256.0f);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         ((SProjectedVertex *)
                          ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex)
@@ -250,7 +248,7 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
           local_30 = local_30 + 4;
           local_2c = local_2c + 1;
           local_28 = local_28 + 1;
-        } while (local_28 < _DAT_026639ec);
+        } while (local_28 < g_VDNearbyActorCount);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
                 (g_CDemonRenderer_PTR_005ae704,0);

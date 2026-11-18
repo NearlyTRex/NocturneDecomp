@@ -27,9 +27,9 @@ extern CDemonActorType g_CDraculaBrideClassInfo;
 extern CDemonRenderer g_CDemonRendererInstance;
 
 // CVector3f
-extern CVector3f CVector3f_02c6d040;
-extern CVector3f CVector3f_02c6d04c;
-extern CVector3f CVector3f_02c6d058;
+extern CVector3f g_DraculaBrideOffsetUp;
+extern CVector3f g_DraculaBrideOffsetMinusX;
+extern CVector3f g_DraculaBrideOffsetPlusX;
 
 // SEdgeTableEntry[40]
 extern SEdgeTableEntry g_GlobalEdgeTable[40];
@@ -38,7 +38,7 @@ extern SEdgeTableEntry g_GlobalEdgeTable[40];
 extern SFace g_CapturedFaces[5000];
 
 // SFreaky[6]
-extern SFreaky SFreaky_ARRAY_02c6d0c0[6];
+extern SFreaky g_FreakySounds[6];
 
 // SSoftwareEdge[16]
 extern SSoftwareEdge g_EdgeInterpolationArray[16];

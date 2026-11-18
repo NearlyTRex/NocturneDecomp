@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_0051c7d0(CMobster *this_ptr)
 
 {
@@ -23,9 +21,9 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_0051c7d0(CMobster *this_pt
   (pCVar4->base).base.base.vtable._ub = &g_CMobsterVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar4->base).base.model,"mobster1.dfm");
-  fVar2 = _DAT_00603d60;
+  fVar2 = 50.0f;
   (pCVar4->base).base.collision_cylinder_height = 0.6;
-  fVar3 = _DAT_00603d64;
+  fVar3 = 100.0f;
   (pCVar4->base).base.collision_cylinder_radius = 0.9;
   (pCVar4->base).base.ai_detection_range_min = fVar2;
   (pCVar4->base).base.ai_detection_range_max = fVar3;

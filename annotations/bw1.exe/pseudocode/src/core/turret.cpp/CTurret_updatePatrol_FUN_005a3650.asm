@@ -11,15 +11,16 @@
 ; undefined        Stack[-0x80]:1  local_80
 ; undefined        Stack[-0x68]:1  local_68
 ;
-; XREF[1]:
-;   core_turret.cpp_FUN_005a2d00 at 005a333f
+; XREF[2]:
+;   core_turret.cpp_CTurret_process_FUN_005a23b0 at 005a2663
+;   core_turret.cpp_CTurret_updateTargeting_FUN_005a2d00 at 005a333f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f8b78
-;   undefined4 DAT_005f8b80
+;   double g_DOUBLE_005f8b78 = 0.333333333333333
+;   float g_FLOAT_005f8b80 = 25
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_turret.cpp_CTurret_aimAtTarget_FUN_005a3350
 ;
@@ -67,7 +68,7 @@ section .text
     JZ 0x005a367c                       ; 005a369d
         ;   XREF to: 005a367c (CONDITIONAL_JUMP)  ; LAB_005a367c
     FLD float ptr [ESP + 0x88]          ; 005a369f
-    FMUL double ptr [0x005f8b78]        ; 005a36a6 | DAT_005f8b78
+    FMUL double ptr [0x005f8b78]        ; 005a36a6 | g_DOUBLE_005f8b78
     SUB ESP,0x4                         ; 005a36ac
     LEA EBX,[EBP + 0x84c]               ; 005a36af
     FSTP float ptr [ESP]                ; 005a36b5
@@ -137,8 +138,8 @@ section .text
     FADDP                               ; 005a3784
     LEA ESI,[ESP + 0x44]                ; 005a3786
     FSTP float ptr [EBP + 0x854]        ; 005a378a
-    CALL core_actor.cpp_FUN_00408b40    ; 005a3790
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005a3790
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x44]                ; 005a3795
     ADD ESP,0x8                         ; 005a3799
     LEA EAX,[ESP + 0x30]                ; 005a379c
@@ -162,7 +163,7 @@ section .text
     FSUB float ptr [ESP + 0x50]         ; 005a37c3
     FMUL ST0                            ; 005a37c7
     FADDP                               ; 005a37c9
-    FCOMP float ptr [0x005f8b80]        ; 005a37cb | DAT_005f8b80
+    FCOMP float ptr [0x005f8b80]        ; 005a37cb | g_FLOAT_005f8b80
     FNSTSW AX                           ; 005a37d1
     SAHF                                ; 005a37d3
     JA 0x005a367c                       ; 005a37d4

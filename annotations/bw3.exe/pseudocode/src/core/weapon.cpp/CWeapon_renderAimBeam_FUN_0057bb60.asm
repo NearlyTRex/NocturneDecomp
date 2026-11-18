@@ -13,18 +13,18 @@
 ;   core_rifle.cpp_CRifle_renderAimBeam_FUN_00528650 at 00528655
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fc5a0
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.show_crosshair
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_004a2de0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
@@ -61,9 +61,9 @@ section .text
     POP ESI                             ; 0057bb9a
     POP EBX                             ; 0057bb9b
     LEA EAX,[EAX]                       ; 0057bb9c
-    MOV ESI,dword ptr [0x005f2afc]      ; 0057bba1 | DAT_005f2afc
+    MOV ESI,dword ptr [0x005f2afc]      ; 0057bba1 | g_CDemonRenderer_PTR_005f2afc
         ;   Label: LAB_0057bba1
-    PUSH ESI                            ; 0057bba7 | DAT_01bdd7e4
+    PUSH ESI                            ; 0057bba7 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0057bba8
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0057bbad
@@ -86,8 +86,8 @@ section .text
     PUSH EBX                            ; 0057bbdf
     LEA ESI,[ESP + 0x6c]                ; 0057bbe0
     LEA EDI,[ESP + 0x84]                ; 0057bbe4
-    CALL core_actor.cpp_FUN_00408b80    ; 0057bbeb
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0057bbeb
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x6c]                ; 0057bbf0
     ADD ESP,0x8                         ; 0057bbf4
     MOVSD ES:EDI,ESI                    ; 0057bbf7
@@ -103,8 +103,8 @@ section .text
     PUSH EBX                            ; 0057bc1c
     MOV dword ptr [ESP + 0x94],EDI      ; 0057bc1d
     LEA EDI,[ESP + 0x9c]                ; 0057bc24
-    CALL core_actor.cpp_FUN_00408b00    ; 0057bc2b
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 0057bc2b
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0057bc30
     MOV EAX,[0x00603b28]                ; 0057bc33 | g_CDemonSetPtr
     LEA ESI,[ESP + 0x70]                ; 0057bc38
@@ -166,7 +166,7 @@ section .text
     LEA EAX,[ESP + 0xd8]                ; 0057bce3
     MOVSD.REP ES:EDI,ESI                ; 0057bcea
     PUSH EAX                            ; 0057bcec
-    MOV EDI,dword ptr [0x005fc5a0]      ; 0057bced | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 0057bced | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 0057bcf3
     CALL core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20 ; 0057bcf4
         ;   XREF to: 004a2e20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo laser_info, ...)

@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_WriteFile_005c8678 = 001c92cc
-;   undefined4 DAT_0061f4d8
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bd0d0
@@ -43,7 +43,7 @@ section .text
     PUSH EAX                            ; 005c1bfc
     PUSH EDX                            ; 005c1bfd
     MOV EDX,dword ptr [ESP + 0x18]      ; 005c1bfe
-    MOV EAX,[0x0061f4d8]                ; 005c1c02 | DAT_0061f4d8
+    MOV EAX,[0x0061f4d8]                ; 005c1c02 | g_IOControlBlock
     PUSH EDX                            ; 005c1c07
     MOV EBX,dword ptr [EAX + 0x8]       ; 005c1c08
     PUSH EBX                            ; 005c1c0b

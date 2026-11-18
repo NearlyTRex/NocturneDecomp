@@ -12,14 +12,14 @@
 ;   float FLOAT_0059dccc = 30
 ;   float FLOAT_0059dcd0 = 0.1052632
 ;   float FLOAT_0059dcd4 = 20
-;   undefined4 DAT_01c71358
-;   undefined4 DAT_01c7135c
-;   undefined4 DAT_01c71360
-;   CVector3f CVector3f_01c71364
-;   undefined4 CVector3f_01c71364.y
-;   undefined4 CVector3f_01c71364.z
-;   CVector3f CVector3f_01c71370
-;   undefined4 CVector3f_01c71370.y
+;   float g_FLOAT_01c71358
+;   float g_FLOAT_01c7135c
+;   float g_FLOAT_01c71360
+;   CVector3f g_GabriellaWeaponEuler
+;   undefined4 g_GabriellaWeaponEuler.y
+;   undefined4 g_GabriellaWeaponEuler.z
+;   CVector3f g_GabriellaWeaponAttachEuler
+;   undefined4 g_GabriellaWeaponAttachEuler.y
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -49,26 +49,26 @@ section .text
     MOV EAX,0x3fc90fdb                  ; 004954e6
     XOR EBP,EBP                         ; 004954eb
     PUSH 0x3                            ; 004954ed
-    MOV dword ptr [0x01c71364],EDX      ; 004954ef | CVector3f_01c71364
-    MOV dword ptr [0x01c71368],ECX      ; 004954f5 | CVector3f_01c71364.y
-    MOV dword ptr [0x01c7136c],EBX      ; 004954fb | CVector3f_01c71364.z
-    MOV dword ptr [0x01c71370],ESI      ; 00495501 | CVector3f_01c71370
-    MOV dword ptr [0x01c71374],EDI      ; 00495507 | CVector3f_01c71370.y
-    MOV dword ptr [0x01c71378],EBP      ; 0049550d | CVector3f_01c71370.z
-    MOV [0x01c7137c],EAX                ; 00495513 | CVector3f_01c7137c
-    MOV dword ptr [0x01c71380],EBP      ; 00495518 | CVector3f_01c7137c.y
+    MOV dword ptr [0x01c71364],EDX      ; 004954ef | g_GabriellaWeaponEuler
+    MOV dword ptr [0x01c71368],ECX      ; 004954f5 | g_GabriellaWeaponEuler.y
+    MOV dword ptr [0x01c7136c],EBX      ; 004954fb | g_GabriellaWeaponEuler.z
+    MOV dword ptr [0x01c71370],ESI      ; 00495501 | g_GabriellaWeaponAttachEuler
+    MOV dword ptr [0x01c71374],EDI      ; 00495507 | g_GabriellaWeaponAttachEuler.y
+    MOV dword ptr [0x01c71378],EBP      ; 0049550d | g_GabriellaWeaponAttachEuler.z
+    MOV [0x01c7137c],EAX                ; 00495513 | g_GabriellaWeaponAttachOffset
+    MOV dword ptr [0x01c71380],EBP      ; 00495518 | g_GabriellaWeaponAttachOffset.y
     MOV dword ptr [0x01c71390],EBP      ; 0049551e | CVector3f_01c71388.z
     FXCH ST2                            ; 00495524
-    FSTP float ptr [0x01c71358]         ; 00495526 | DAT_01c71358
-    FSTP float ptr [0x01c7135c]         ; 0049552c | DAT_01c7135c
+    FSTP float ptr [0x01c71358]         ; 00495526 | g_FLOAT_01c71358
+    FSTP float ptr [0x01c7135c]         ; 0049552c | g_FLOAT_01c7135c
     PUSH 0x5b92a8                       ; 00495532
-    FSTP float ptr [0x01c71360]         ; 00495537 | DAT_01c71360
+    FSTP float ptr [0x01c71360]         ; 00495537 | g_FLOAT_01c71360
     PUSH 0x495670                       ; 0049553d
     MOV ECX,0x3eb33333                  ; 00495542
     MOV EBX,0x40133333                  ; 00495547
     PUSH 0x581e02                       ; 0049554c | = "CGabriella"
     MOV ESI,0x408ccccd                  ; 00495551
-    MOV dword ptr [0x01c71384],ECX      ; 00495556 | CVector3f_01c7137c.z
+    MOV dword ptr [0x01c71384],ECX      ; 00495556 | g_GabriellaWeaponAttachOffset.z
     PUSH 0x1c713e8                      ; 0049555c
     MOV dword ptr [0x01c71388],EBX      ; 00495561 | CVector3f_01c71388
     MOV dword ptr [0x01c7138c],ESI      ; 00495567 | CVector3f_01c71388.y

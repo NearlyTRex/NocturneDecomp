@@ -13,18 +13,18 @@ void __cdecl core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_00415c80(void)
   int iVar2;
   int iVar3;
   
-  if (DAT_007c3978 != (CPuzzle *)0x0) {
-    core_bmppuzzl_cpp_activatePuzzle_FUN_00415be0(DAT_007c3978,0);
+  if (g_CPuzzle_PTR_007c3978 != (CPuzzle *)0x0) {
+    core_bmppuzzl_cpp_activatePuzzle_FUN_00415be0(g_CPuzzle_PTR_007c3978,0);
   }
   iVar2 = 0;
-  if (0 < DAT_007c394c) {
+  if (0 < g_INT_ARRAY_007c394c[0]) {
     iVar3 = 0;
     do {
       puVar1 = (uint *)((int)&DAT_007c3950 + iVar3);
       iVar3 = iVar3 + 4;
       iVar2 = iVar2 + 1;
       (**(code **)(*(int *)*puVar1 + 0x10))((int *)*puVar1);
-    } while (iVar2 < DAT_007c394c);
+    } while (iVar2 < g_INT_ARRAY_007c394c[0]);
   }
   return;
 }

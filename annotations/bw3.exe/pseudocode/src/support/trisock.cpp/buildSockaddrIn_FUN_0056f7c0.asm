@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_trisock_cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr *param_1)
+; SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   net_addr
 ; Local Variables:
 ; undefined2       Stack[-0x18]:2  local_18
 ;
 ; XREF[2]:
+;   support_trisock.cpp_CSocket_connectSocket_FUN_0056f9c0 at 0056f9ce
 ;   support_trisock.cpp_CSocket_sendSocketData_FUN_0056fbb0 at 0056fbee
-;   support_trisock.cpp_FUN_0056f9c0 at 0056f9ce
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0

@@ -10,7 +10,7 @@
 ;   core_turret.cpp_factoryFuncTurret_FUN_0057e3c0 at 0057e3d3
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
 ;   core_weapon.cpp_CWeapon_ctor_FUN_005899d0
@@ -86,8 +86,8 @@ section .text
     PUSH EBX                            ; 0057e4e7
     LEA ESI,[ESP + 0x8]                 ; 0057e4e8
     MOV dword ptr [ESP + 0x24],EDX      ; 0057e4ec
-    CALL core_actor.cpp_FUN_00408d70    ; 0057e4f0
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0057e4f0
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x8]                 ; 0057e4f5
     LEA EAX,[ESP + 0x14]                ; 0057e4f9
     ADD ESP,0x8                         ; 0057e4fd

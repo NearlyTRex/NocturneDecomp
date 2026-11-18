@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(uint *param_1)
+; CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f *in_direction_vector,CVector3f *out_euler_angles)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   in_direction_vector
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -10,16 +12,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[56]:
+;   core_baal.cpp_CBaal_chooseAttack_FUN_00597700 at 0059776c
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 0059706a
-;   core_baal.cpp_FUN_00597700 at 0059776c
-;   core_bugs.cpp_FUN_00422a00 at 00422c43
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00 at 00422c43
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 0042743b
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042f9a0
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 004302fc
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 00432894
+;   core_charactr.cpp_CCharacter_followActor_FUN_004310e0 at 00431268
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190 at 0043429a
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 004317ef
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0 at 0042ba2f
-;   core_charactr.cpp_FUN_004300e0 at 004302fc
-;   core_charactr.cpp_FUN_004310e0 at 00431268
-;   core_charactr.cpp_FUN_00432330 at 00432894
 ;   ... and 46 more
 ;
 ; Called Functions:
@@ -73,7 +75,7 @@ section .text
         ;   Label: LAB_005762aa
     FLD float ptr [EDX]                 ; 005762ad
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 005762af
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     FLD float ptr [EDX + 0x8]           ; 005762b4
     FMUL ST0                            ; 005762b7
     FLD float ptr [EDX]                 ; 005762b9
@@ -82,7 +84,7 @@ section .text
     FSQRT                               ; 005762bf
     FLD float ptr [EDX + 0x4]           ; 005762c1
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 005762c4
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     FXCH                                ; 005762c9
     FSTP float ptr [ESP + 0x4]          ; 005762cb
     FCHS                                ; 005762cf

@@ -11,7 +11,7 @@ CGoggles * __cdecl core_goggles_cpp_factoryFuncGoggles_FUN_004cc690(void)
 {
   CGoggles *pCVar1;
   
-  pCVar1 = (CGoggles *)operator_new(0x2d8);
+  pCVar1 = operator_new(0x2d8);
   if (pCVar1 == (CGoggles *)0x0) {
     return (CGoggles *)0x0;
   }

@@ -45,17 +45,17 @@ extern float FLOAT_02f7c540;
 extern float FLOAT_02f7c630;
 
 // int
-extern int INT_02f797e0;
+extern int g_RandomizeSpeedsChoice;
 extern int g_DisableMouseHitOnBarrier;
-extern int INT_02f7c528;
+extern int g_MsnEditHoveredProperty;
 extern int g_SelectedMotionPropertyIndex;
 extern int g_MotionPropertyEditState;
-extern int INT_02f7c538;
-extern int INT_02f7c53c;
+extern int g_MsnEditMouseOverPanel;
+extern int g_MsnEditViewMode;
 extern int INT_02f7c634;
 extern int g_LastPingTime;
 extern int g_RemoteSyncStage;
-extern int INT_02f7c8c4;
+extern int g_NetNextPlayerId;
 extern int g_ChatHistoryCount;
 
 // uchar
@@ -63,5 +63,5 @@ extern uchar g_MsnEditPropertyScrollBarInitGuard;
 
 // uint
 extern uint g_CurrentGameTime;
-extern uint UINT_02f7c8c8;
+extern uint g_NetLastSimFrameAckTime;
 

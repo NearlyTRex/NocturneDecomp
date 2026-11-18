@@ -8,18 +8,18 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0054d3c0 at 0054dd8d
+;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054dd8d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f1115
+;   TerminatedCString s_d_005f1115
 ;   TerminatedCString s_core_setutil_cpp_005f1119
 ;   TerminatedCString s_Out_of_memory_for_pvsLis_005f112d
-;   undefined4 DAT_005f114c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   TerminatedCString s_d_005f114c
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;
@@ -35,7 +35,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 0055c547
     LEA EAX,[EDI + 0x194]               ; 0055c54b
     PUSH EAX                            ; 0055c551
-    PUSH 0x5f1115                       ; 0055c552 | DAT_005f1115
+    PUSH 0x5f1115                       ; 0055c552 | = "%d\n"
     PUSH EBP                            ; 0055c557
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0055c558
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0055c59c
     ADD EAX,EBX                         ; 0055c5a2
     PUSH EAX                            ; 0055c5a4
-    PUSH 0x5f114c                       ; 0055c5a5 | DAT_005f114c
+    PUSH 0x5f114c                       ; 0055c5a5 | = "\t%d\n"
     PUSH EBP                            ; 0055c5aa
     INC ESI                             ; 0055c5ab
     ADD EBX,0x4                         ; 0055c5ac
@@ -90,10 +90,10 @@ section .text
     MOV ESI,0x5f1119                    ; 0055c5c7 | = "..\\core\\setutil.cpp"
     MOV EAX,0xe4                        ; 0055c5cc
     PUSH 0x5f112d                       ; 0055c5d1 | = "Out of memory for pvsList - %d"
-    MOV dword ptr [0x01d1d400],ESI      ; 0055c5d6 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0055c5dc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055c5e1
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 0055c5d6 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0055c5dc | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055c5e1
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0055c5e6
     JMP 0x0055c58d                      ; 0055c5e9
         ;   XREF to: 0055c58d (UNCONDITIONAL_JUMP)  ; LAB_0055c58d

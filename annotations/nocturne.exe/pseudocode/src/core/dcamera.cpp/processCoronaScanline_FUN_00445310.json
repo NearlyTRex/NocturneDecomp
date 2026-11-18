@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 298,
-    "complexity_score": 152,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 82,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 380
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 84,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 382
   },
   "cross_references": [],
   "function": {
@@ -26,44 +23,44 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_processCoronaScanline_FUN_00445310",
-    "signature": "void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCorona *corona)"
+    "signature": "void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCoronaLightEntry *corona)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "012b0660",
-      "name": "DAT_012b0660",
-      "type": "undefined4",
+      "name": "g_CameraDownscaleIterations",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "014b8458",
-      "name": "DAT_014b8458",
-      "type": "undefined4",
+      "name": "g_CurrentGlobe",
+      "type": "CDemonGlobe*",
       "value": null
     },
     {
       "addr": "014b845c",
-      "name": "DAT_014b845c",
-      "type": "undefined4",
+      "name": "g_CoronaVisibilityEnabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b8460",
-      "name": "DAT_014b8460",
-      "type": "undefined4",
+      "name": "g_CoronaTargetX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b8464",
-      "name": "DAT_014b8464",
-      "type": "undefined4",
+      "name": "g_CoronaTargetY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b8468",
-      "name": "DAT_014b8468",
-      "type": "undefined4",
+      "name": "g_CoronaTargetDepth",
+      "type": "int",
       "value": null
     },
     {
@@ -123,19 +120,19 @@
   "siblings": {
     "blairwitch2.exe": {
       "addr": "00440a50",
-      "by": "body",
+      "by": "name",
       "class": "identical",
       "ratio": 1.0
     },
     "bw1.exe": {
       "addr": "00452110",
-      "by": "body",
+      "by": "name",
       "class": "identical",
       "ratio": 1.0
     },
     "bw3.exe": {
       "addr": "0044e250",
-      "by": "body",
+      "by": "name",
       "class": "identical",
       "ratio": 1.0
     },
@@ -256,58 +253,9 @@
         "name": "corona",
         "offset": 16,
         "size": 4,
-        "type": "SCorona *"
+        "type": "SCoronaLightEntry *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "puVar13 = g_ZBufferScanlineArray[row << (DAT_012b0660 & 0x1f)] +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "(x_start << (DAT_012b0660 & 0x1f));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "bVar1 = DAT_012b0660;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "DAT_012b0660 = bVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "bVar1 = DAT_012b0660;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

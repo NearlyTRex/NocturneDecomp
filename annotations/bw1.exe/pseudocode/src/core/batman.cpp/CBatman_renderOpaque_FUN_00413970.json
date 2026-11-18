@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 181,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
-    "suspect_count": 9,
+    "pseudocode_lines": 86,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "bitcast_double_pair",
+      "stack_param",
+      "unrolled_memcpy"
     ],
-    "total_lines": 276
+    "total_lines": 286
   },
   "cross_references": [],
   "function": {
@@ -44,7 +44,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "0042e960",
@@ -54,7 +54,7 @@
     {
       "addr": "005254b0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005254b0"
+      "name": "core_motion.cpp_CMotionController_render_FUN_005254b0"
     },
     {
       "addr": "00569810",
@@ -95,32 +95,32 @@
   "globals": [
     {
       "addr": "005d3ad9",
-      "name": "DAT_005d3ad9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d3ad9",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005fc178",
-      "name": "DAT_005fc178",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fc178",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01d39d34",
-      "name": "DAT_01d39d34",
-      "type": "undefined4",
+      "name": "g_RenderMotionDebug",
+      "type": "int",
       "value": null
     }
   ],
@@ -228,72 +228,32 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_ffffffb4",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffb4;",
+      "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(DAT_00612560);",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_ffffffb4",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_3c,in_stack_ffffffb4);",
+      "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(((iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,fStack_48);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),",
-      "type": "undefined_data"
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 84,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dStack_48 = __BITCAST_DOUBLE(CONCAT44(uStack_44,this_ptr));",
+      "type": "bitcast_double_pair"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 31,
+      "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

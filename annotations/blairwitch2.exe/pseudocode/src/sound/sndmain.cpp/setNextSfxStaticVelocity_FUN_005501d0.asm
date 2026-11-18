@@ -9,13 +9,13 @@
 ; float            Stack[0xc]:4   vel_z
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264161c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0264161c]      ; 005501d0 | DAT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 005501d0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_005501d0
     LEA EAX,[EDX*0x4 + 0x0]             ; 005501d6
     SUB EAX,EDX                         ; 005501dd

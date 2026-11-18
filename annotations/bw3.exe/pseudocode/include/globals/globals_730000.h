@@ -4,25 +4,47 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/structs/SRenderBufferEntry.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x730000
 // =============================================================================
 
-// undefined4
-extern undefined4 DAT_007303dc;
-extern undefined4 DAT_007303e0;
-extern undefined4 DAT_007303e8;
-extern undefined4 DAT_007303ec;
-extern undefined4 DAT_007303f0;
-extern undefined4 DAT_007303f4;
-extern undefined4 DAT_007303f8;
-extern undefined4 DAT_007303fc;
-extern undefined4 DAT_00730408;
-extern undefined4 DAT_0073040c;
-extern undefined4 DAT_00730410;
-extern undefined4 DAT_00730418;
-extern undefined4 DAT_0073041c;
-extern undefined4 DAT_00730478;
-extern undefined4 DAT_0073047c;
+// SRenderBufferEntry[256]
+extern SRenderBufferEntry g_RenderBufferPool[256];
+
+// int
+extern int g_StoredWindowWidth;
+extern int g_StoredWindowHeight;
+extern int g_StoredClipLeft;
+extern int g_StoredClipTop;
+extern int g_StoredClipRight;
+extern int g_StoredClipBottom;
+extern int g_StoredBitsPerPixel;
+extern int g_ScreenBufferStride;
+extern int g_CurrentPolygonColor;
+extern int g_PlaneTestCount;
+extern int g_BypassClipping;
+extern int g_INT_007303f0;
+extern int g_TexturesDisabled;
+extern int g_INT_007303f8;
+extern int g_CullingMode;
+extern int g_CurrentInvertedColor;
+extern int g_RenderResult;
+extern int g_StoredX;
+extern int g_StoredY;
+extern int g_StoredZ;
+extern int g_RenderBufferEnabled;
+extern int g_RenderBufferCount;
+
+// int[24]
+extern int g_ProcessedVertexIndices[24];
+
+// uint
+extern uint g_ProcessedVertexOffset;
+extern uint g_ProcessedVertexBackupOffset;
+
+// void*
+extern void* g_StoredMappedFrameBuffer;
+extern void* g_CurrentVertexData;
 

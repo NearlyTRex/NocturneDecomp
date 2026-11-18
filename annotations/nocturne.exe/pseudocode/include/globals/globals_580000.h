@@ -10,50 +10,50 @@
 // =============================================================================
 
 // byte[50]
-extern byte BYTE_ARRAY_00582e3d[50];
-extern byte BYTE_ARRAY_00583552[50];
-extern byte BYTE_ARRAY_00583706[50];
-extern byte BYTE_ARRAY_00583738[50];
+extern byte g_CheatStr_AutoAim[50];
+extern byte g_CheatStr_TimeFactor[50];
+extern byte g_CheatStr_ResetEffects[50];
+extern byte g_CheatStr_SingleStep[50];
 extern byte BYTE_ARRAY_00583a2e[50];
 
 // byte[51]
-extern byte BYTE_ARRAY_00582cc2[51];
-extern byte BYTE_ARRAY_00582e8c[51];
-extern byte BYTE_ARRAY_0058343f[51];
+extern byte g_CheatStr_EventDebug[51];
+extern byte g_CheatStr_MovieRecording[51];
+extern byte g_CheatStr_RaiseEvent[51];
 extern byte BYTE_ARRAY_0058348d[51];
-extern byte BYTE_ARRAY_005835a2[51];
-extern byte BYTE_ARRAY_005835e1[51];
-extern byte BYTE_ARRAY_005836c7[51];
+extern byte g_CheatStr_NoD3D[51];
+extern byte g_CheatStr_ToggleRenderMode[51];
+extern byte g_CheatStr_ClearFramebuffer[51];
 
 // byte[52]
-extern byte BYTE_ARRAY_00582c4d[52];
-extern byte BYTE_ARRAY_00582d20[52];
-extern byte BYTE_ARRAY_00582d81[52];
-extern byte BYTE_ARRAY_00582dea[52];
+extern byte g_CheatStr_ShowFPS[52];
+extern byte g_CheatStr_ScriptDebug[52];
+extern byte g_CheatStr_MemoryDebug[52];
+extern byte g_CheatStr_ManualAim[52];
 extern byte BYTE_ARRAY_005832e7[52];
-extern byte BYTE_ARRAY_005838e3[52];
-extern byte BYTE_ARRAY_005839aa[52];
-extern byte BYTE_ARRAY_005839f5[52];
+extern byte g_CheatStr_GeometryDebug[52];
+extern byte g_CheatStr_OldHat[52];
+extern byte g_CheatStr_SilverAmmo[52];
 
 // byte[53]
-extern byte BYTE_ARRAY_00582c8d[53];
+extern byte g_CheatStr_ProfileMode[53];
 extern byte BYTE_ARRAY_005831c0[53];
-extern byte BYTE_ARRAY_0058385e[53];
+extern byte g_CheatStr_BigHat[53];
 extern byte BYTE_ARRAY_00583964[53];
 extern byte BYTE_ARRAY_00583a65[53];
 
 // byte[54]
 extern byte BYTE_ARRAY_0058283a[54];
-extern byte BYTE_ARRAY_00582bde[54];
+extern byte g_CheatStr_DebugMode[54];
 extern byte BYTE_ARRAY_00582ef6[54];
-extern byte BYTE_ARRAY_00583111[54];
+extern byte g_CheatStr_FlameThrower[54];
 extern byte BYTE_ARRAY_00583281[54];
 extern byte BYTE_ARRAY_00583620[54];
 extern byte BYTE_ARRAY_005837f2[54];
 extern byte BYTE_ARRAY_00583828[54];
 
 // byte[55]
-extern byte BYTE_ARRAY_00582ebf[55];
+extern byte g_CheatStr_CollisionDebug[55];
 extern byte BYTE_ARRAY_0058331b[55];
 extern byte BYTE_ARRAY_005833de[55];
 extern byte BYTE_ARRAY_005834cc[55];
@@ -72,7 +72,7 @@ extern byte BYTE_ARRAY_00583066[58];
 
 // byte[59]
 extern byte BYTE_ARRAY_0058321f[59];
-extern byte BYTE_ARRAY_00583a9f[59];
+extern byte g_CheatStr_SoundDebug[59];
 
 // byte[60]
 extern byte BYTE_ARRAY_005830c0[60];
@@ -82,14 +82,19 @@ extern byte BYTE_ARRAY_00582f76[65];
 
 // char
 extern char CHAR_1_0058153c;
+extern char g_CHAR_00581999;
+extern char g_CHAR_0058199f;
+extern char g_CHAR_00581ae0;
 extern char CHAR_00h_00583c06;
 extern char CHAR_00h_00583dcc;
+extern char g_CHAR_00586e60;
 extern char g_CHAR_00587ed1;
 extern char CHAR_00h_0058869e;
 extern char CHAR_00h_005886ab;
 extern char CHAR_00h_0058c059;
 extern char CHAR_00h_0058c922;
 extern char CHAR_00h_0058c926;
+extern char g_CHAR_0058d9a8;
 extern char CHAR_00h_0058e552;
 extern char CHAR_00h_0058e5db;
 extern char CHAR_00h_0058e5ea;

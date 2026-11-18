@@ -24,9 +24,9 @@
 ;   TerminatedCString s_d_00577c81
 ;   TerminatedCString s_s_d_00577c84
 ;   TerminatedCString s_Integer_value_005acc78
-;   undefined1 DAT_005acc90
-;   undefined4 DAT_00763e84
-;   undefined4 DAT_00763e88
+;   char[104] g_PropertyNamePrefix
+;   _FILE* g_ActorDataFile
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDescription_FUN_0040c3a0
@@ -43,12 +43,12 @@ section .text
     PUSH EDI                            ; 0040c901
     PUSH EBP                            ; 0040c902
     MOV EAX,dword ptr [ESP + 0x10]      ; 0040c903
-    CMP dword ptr [0x00763e88],0x1      ; 0040c907 | DAT_00763e88
+    CMP dword ptr [0x00763e88],0x1      ; 0040c907 | g_ActorReadingMode
     JNZ 0x0040c954                      ; 0040c90e
         ;   XREF to: 0040c954 (CONDITIONAL_JUMP)  ; LAB_0040c954
     PUSH EAX                            ; 0040c910
     PUSH 0x577c81                       ; 0040c911 | = "%d"
-    MOV ESI,dword ptr [0x00763e84]      ; 0040c916 | DAT_00763e84
+    MOV ESI,dword ptr [0x00763e84]      ; 0040c916 | g_ActorDataFile
     PUSH ESI                            ; 0040c91c
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c91d
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
@@ -80,9 +80,9 @@ section .text
         ;   Label: LAB_0040c954
     MOV ECX,dword ptr [EAX]             ; 0040c955
     PUSH ECX                            ; 0040c957
-    PUSH 0x5acc90                       ; 0040c958 | DAT_005acc90
+    PUSH 0x5acc90                       ; 0040c958 | g_PropertyNamePrefix
     PUSH 0x577c84                       ; 0040c95d | = "%s%d"
-    MOV EBX,dword ptr [0x00763e84]      ; 0040c962 | DAT_00763e84
+    MOV EBX,dword ptr [0x00763e84]      ; 0040c962 | g_ActorDataFile
     PUSH EBX                            ; 0040c968
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c969
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)

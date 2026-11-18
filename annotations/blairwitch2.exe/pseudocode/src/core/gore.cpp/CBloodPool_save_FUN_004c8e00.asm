@@ -20,7 +20,7 @@
 ;   TerminatedCString s_d_f_d_d_d_005d9520
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b8010
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     FSTP double ptr [ESP]               ; 004c8e24
     PUSH 0x5d950f                       ; 004c8e27 | = "%f,%f,%f\n"
     PUSH ESI                            ; 004c8e2c
-    CALL crt_unknown.c_FUN_005b8010     ; 004c8e2d
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004c8e2d
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x20                        ; 004c8e32
     MOV EDX,dword ptr [EBX + 0x10]      ; 004c8e35
     PUSH EDX                            ; 004c8e38
@@ -53,8 +53,8 @@ section .text
     PUSH ECX                            ; 004c8e3b
     PUSH 0x5d9519                       ; 004c8e3c | = "%d,%d\n"
     PUSH ESI                            ; 004c8e41
-    CALL crt_unknown.c_FUN_005b8010     ; 004c8e42
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004c8e42
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004c8e47
     MOV EDI,dword ptr [EBX + 0x24]      ; 004c8e4a
     PUSH EDI                            ; 004c8e4d
@@ -69,8 +69,8 @@ section .text
     PUSH EDX                            ; 004c8e62
     PUSH 0x5d9520                       ; 004c8e63 | = "%d,%f,%d,%d,%d\n"
     PUSH ESI                            ; 004c8e68
-    CALL crt_unknown.c_FUN_005b8010     ; 004c8e69
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004c8e69
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x20                        ; 004c8e6e
     POP EBP                             ; 004c8e71
     POP EDI                             ; 004c8e72

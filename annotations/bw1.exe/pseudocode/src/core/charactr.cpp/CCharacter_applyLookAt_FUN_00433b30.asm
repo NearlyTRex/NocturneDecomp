@@ -21,11 +21,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005d5d9b
 ;   TerminatedCString s_CCharacter_applyLookAt_n_005d5db0
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_00568cf0
 ;   core_xform.cpp_multiplyQuaternion_FUN_005b77b0
 ;   core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
@@ -57,7 +57,7 @@ section .text
     LEA ESI,[ESP + 0x6c]                ; 00433b66
     LEA EDI,[ESP + 0x3c]                ; 00433b6a
     CALL core_xform.cpp_quaternionFromAngleX_FUN_005b7af0 ; 00433b6e
-        ;   XREF to: 005b7af0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_005b7af0()
+        ;   XREF to: 005b7af0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_005b7af0(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x6c]                ; 00433b73
     ADD ESP,0x4                         ; 00433b77
     MOVSD ES:EDI,ESI                    ; 00433b7a
@@ -70,7 +70,7 @@ section .text
     LEA ESI,[ESP + 0x10]                ; 00433b89
     LEA EDI,[ESP + 0x30]                ; 00433b8d
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005b7b30 ; 00433b91
-        ;   XREF to: 005b7b30 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_005b7b30()
+        ;   XREF to: 005b7b30 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_005b7b30(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x10]                ; 00433b96
     ADD ESP,0x4                         ; 00433b9a
     MOVSD ES:EDI,ESI                    ; 00433b9d
@@ -82,7 +82,7 @@ section .text
     LEA ESI,[ESP + 0x60]                ; 00433ba6
     LEA EDI,[ESP + 0x20]                ; 00433baa
     CALL core_xform.cpp_multiplyQuaternion_FUN_005b77b0 ; 00433bae
-        ;   XREF to: 005b77b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_005b77b0()
+        ;   XREF to: 005b77b0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005b77b0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x60]                ; 00433bb3
     ADD ESP,0x8                         ; 00433bb7
     MOVSD ES:EDI,ESI                    ; 00433bba
@@ -102,7 +102,7 @@ section .text
     LEA ESI,[ESP + 0x88]                ; 00433bde
     LEA EDI,[ESP + 0x58]                ; 00433be5
     CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 00433be9
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005b7940(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x88]                ; 00433bee
     ADD ESP,0xc                         ; 00433bf5
     MOVSD ES:EDI,ESI                    ; 00433bf8
@@ -127,10 +127,10 @@ section .text
     MOV ECX,0x5d5d9b                    ; 00433c1b | = "..\\core\\charactr.cpp"
     MOV ESI,0x1036                      ; 00433c20
     PUSH 0x5d5db0                       ; 00433c25 | = "CCharacter::applyLookAt - never set l..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00433c2a | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00433c30 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00433c36
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00433c2a | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00433c30 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00433c36
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00433c3b
     JMP 0x00433b60                      ; 00433c3e
         ;   XREF to: 00433b60 (UNCONDITIONAL_JUMP)  ; LAB_00433b60

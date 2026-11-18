@@ -12,7 +12,7 @@ void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_0042cde0(void *output_b
   byte *pbVar1;
   byte bVar2;
   
-  if ((uint)INT_005b7638 < 6) {
+  if ((uint)g_CPUFamily < 6) {
     if (((uint)output_buffer & 2) != 0) {
       *(ushort *)output_buffer = g_Hardware16BitPalette[*(byte *)indexed_input_buffer];
       output_buffer = (void *)((int)output_buffer + 2);

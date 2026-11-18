@@ -11,11 +11,11 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   core_prye.cpp_FUN_0051c1c0 at 0051d92a
-;   core_prye.cpp_FUN_00521880 at 00521be7
+;   core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880 at 00521be7
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051d92a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cca97
+;   double g_DOUBLE_005cca97 = 0.00390625
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CCryptVesselClassInfo.name_hash
 ;
@@ -119,7 +119,7 @@ section .text
     SUB ESI,EBP                         ; 00517f2a
     MOV dword ptr [ESP + 0xc],ESI       ; 00517f2c
     FILD dword ptr [ESP + 0xc]          ; 00517f30
-    FMUL double ptr [0x005cca97]        ; 00517f34 | DAT_005cca97
+    FMUL double ptr [0x005cca97]        ; 00517f34 | g_DOUBLE_005cca97
     FSTP float ptr [ESP + 0x4]          ; 00517f3a
     POP EDI                             ; 00517f3e
     MOV EAX,dword ptr [ESP]             ; 00517f3f

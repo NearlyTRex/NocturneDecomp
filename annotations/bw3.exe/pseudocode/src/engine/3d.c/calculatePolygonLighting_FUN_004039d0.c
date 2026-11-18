@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_calculatePolygonLighting_FUN_004039d0(SMRGLHeaderPrimitive *prim)
 
 {
-  _DAT_01c6b5c4 =
+  g_INT_01c6b5c4 =
        engine_light_cpp_calculateLighting_FUN_004e0e00
                  ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i);
   return;

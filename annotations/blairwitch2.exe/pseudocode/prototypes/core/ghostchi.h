@@ -41,9 +41,9 @@ void __cdecl CGhostChild::processMeleeAttackState(CGhostChild *this_ptr,float de
 // Address: 005a9770
 void __cdecl CGhostChild::processSleepState(CGhostChild *this_ptr,float delta_time);
 
-// Original: core_ghostchi.cpp_FUN_005a9890
+// Original: core_ghostchi.cpp_CGhostChild_processAI_FUN_005a9890
 // Address: 005a9890
-void FUN_005a9890(int param_1,float param_2);
+void __cdecl CGhostChild::processAI(CGhostChild *this_ptr,float delta_time);
 
 // Original: core_ghostchi.cpp_CGhostChild_processDeathState_FUN_005a9980
 // Address: 005a9980

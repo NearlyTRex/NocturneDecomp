@@ -6,23 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void)
 
 {
-  if (_DAT_02d0bcec != (int *)0x0) {
-    (**(code **)(*_DAT_02d0bcec + 8))(_DAT_02d0bcec);
-    _DAT_02d0bcec = (int *)0x0;
+  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+    (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+    g_DirectDrawUnknown = (IUnknown *)0x0;
   }
-  if (_DAT_02d0bce8 != (int *)0x0) {
-    (**(code **)(*_DAT_02d0bce8 + 8))(_DAT_02d0bce8);
-    _DAT_02d0bce8 = (int *)0x0;
+  if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+    (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+    g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02d0bce4 == (int *)0x0) {
+  if (g_DirectDrawSurface == (IDirectDrawSurface *)0x0) {
     return;
   }
-  (**(code **)(*_DAT_02d0bce4 + 8))(_DAT_02d0bce4);
-  _DAT_02d0bce4 = (int *)0x0;
+  (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+  g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
   return;
 }

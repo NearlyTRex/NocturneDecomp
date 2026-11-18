@@ -19,9 +19,9 @@
 ;   TerminatedCString s_priest_dfm_005cb531
 ;   TerminatedCString s_Bip01_L_Hand_005cb53c
 ;   TerminatedCString s_Bip01_R_Hand_005cb549
-;   undefined4 DAT_005cb558
-;   undefined4 DAT_005cb560
-;   undefined4 DAT_01dd6a3c
+;   double g_DOUBLE_005cb558 = 0.0100000000000000
+;   double g_DOUBLE_005cb560 = 65536
+;   int g_INT_01dd6a3c
 ;   undefined4 DAT_01dd6a40
 ;
 ; Called Functions:
@@ -72,10 +72,10 @@ section .text
     PUSH 0x0                            ; 00509077
     PUSH 0x5cb549                       ; 00509079 | = "Bip01 R Hand"
     PUSH ESI                            ; 0050907e
-    MOV [0x01dd6a3c],EAX                ; 0050907f | DAT_01dd6a3c
+    MOV [0x01dd6a3c],EAX                ; 0050907f | g_INT_01dd6a3c
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 00509084
         ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
-    MOV ESI,dword ptr [0x01dd6a3c]      ; 00509089 | DAT_01dd6a3c
+    MOV ESI,dword ptr [0x01dd6a3c]      ; 00509089 | g_INT_01dd6a3c
     ADD ESP,0xc                         ; 0050908f
     MOV dword ptr [EBX + 0x2620],EAX    ; 00509092
     MOV [0x01dd6a40],EAX                ; 00509098 | DAT_01dd6a40
@@ -87,10 +87,10 @@ section .text
     MOV dword ptr [EBX + 0xfc],0x1      ; 005090ad
     FILD dword ptr [EBX + 0x206bc]      ; 005090b7
         ;   Label: LAB_005090b7
-    FMUL double ptr [0x005cb558]        ; 005090bd | DAT_005cb558
-    FMUL double ptr [0x005cb560]        ; 005090c3 | DAT_005cb560
+    FMUL double ptr [0x005cb558]        ; 005090bd | g_DOUBLE_005cb558
+    FMUL double ptr [0x005cb560]        ; 005090c3 | g_DOUBLE_005cb560
     CALL crt_math.c_round_FUN_005a3120  ; 005090c9
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EBP + -0x4]        ; 005090ce
     MOV ECX,dword ptr [EBP + -0x4]      ; 005090d1
     CMP ECX,0x10000                     ; 005090d4

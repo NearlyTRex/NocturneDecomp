@@ -102,7 +102,7 @@ void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004baf50
     iVar4 = iVar4 + 1;
     this_ptr = (SPageResourceTwanaEntry *)(this_ptr->selected_character_0 + 8);
     if (2 < iVar4) {
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,acStack_114);
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,acStack_114);
       return;
     }
   } while( true );

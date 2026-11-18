@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 91,
+    "complexity_score": 75,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "pseudocode_lines": 45,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 157
+    "total_lines": 156
   },
   "cross_references": [
     {
       "addr": "00458320",
       "from_addr": "0045835c",
-      "name": "core_doc.cpp_FUN_00458320",
+      "name": "core_doc.cpp_CDoc_processPickupComplete_FUN_00458320",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -32,7 +31,7 @@
     {
       "addr": "0056a160",
       "from_addr": "0056a19c",
-      "name": "core_stranger.cpp_FUN_0056a160",
+      "name": "core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,24 +54,24 @@
       "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0"
     },
     {
+      "addr": "0040e440",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440"
+    },
+    {
       "addr": "0040e240",
       "is_variadic": false,
       "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240"
     },
     {
-      "addr": "0040e440",
-      "is_variadic": false,
-      "name": "core_ammo.cpp_FUN_0040e440"
-    },
-    {
       "addr": "004dadb0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dadb0"
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004dadb0"
     },
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8be2",
@@ -119,14 +118,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -136,7 +135,7 @@
       {
         "call_addr": "0045835c",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00458320",
+        "caller": "core_doc.cpp_CDoc_processPickupComplete_FUN_00458320",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +157,7 @@
       {
         "call_addr": "0056a19c",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_0056a160",
+        "caller": "core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -249,16 +248,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 38,
+      "line": 36,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -266,7 +257,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 45,
+      "line": 43,
       "match": "pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);",

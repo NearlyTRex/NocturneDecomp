@@ -28,18 +28,18 @@
 ;   core_actor.cpp_archiveBox_FUN_0040bee0 at 0040bf19
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f1340
+;   TerminatedCString s_d_005f1340
 ;   TerminatedCString s_f_f_f_005f1345
 ;   TerminatedCString s_f_f_f_005f1350
 ;   TerminatedCString s_f_f_f_005f135b
-;   undefined4 DAT_005f1366
+;   TerminatedCString s_f_005f1366
 ;   TerminatedCString s_f_f_f_005f136b
 ;   TerminatedCString s_f_f_f_005f1376
-;   undefined4 DAT_005f1381
+;   TerminatedCString s_d_005f1381
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupCorners_FUN_005b1c80
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;
@@ -63,7 +63,7 @@ section .text
     ADD ESP,0xc                         ; 005b4327
     LEA EAX,[ESP + 0x13c]               ; 005b432a
     PUSH EAX                            ; 005b4331
-    PUSH 0x5f1340                       ; 005b4332 | DAT_005f1340
+    PUSH 0x5f1340                       ; 005b4332 | = " %d\n"
     PUSH ESI                            ; 005b4337
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005b4338
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -110,7 +110,7 @@ section .text
     ADD ESP,0x14                        ; 005b43c2
     LEA EAX,[ESP + 0x140]               ; 005b43c5
     PUSH EAX                            ; 005b43cc
-    PUSH 0x5f1366                       ; 005b43cd | DAT_005f1366
+    PUSH 0x5f1366                       ; 005b43cd | = " %f\n"
     PUSH ESI                            ; 005b43d2
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005b43d3
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -150,7 +150,7 @@ section .text
     ADD ESP,0x14                        ; 005b4434
     LEA EAX,[EBX + 0x254]               ; 005b4437
     PUSH EAX                            ; 005b443d
-    PUSH 0x5f1381                       ; 005b443e | DAT_005f1381
+    PUSH 0x5f1381                       ; 005b443e | = " %d\n"
     PUSH ESI                            ; 005b4443
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005b4444
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -161,8 +161,8 @@ section .text
     PUSH EAX                            ; 005b4457
     ADD EBX,0x40                        ; 005b4458
     LEA EDI,[ESP + 0x12c]               ; 005b445b
-    CALL core_dirmat.cpp_FUN_00449530   ; 005b4462
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 005b4462
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x108]               ; 005b4467
     ADD ESP,0x8                         ; 005b446e
     LEA EAX,[ESP + 0x124]               ; 005b4471

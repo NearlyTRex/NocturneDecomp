@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 48,
+    "complexity_score": 13,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 57
   },
   "cross_references": [
     {
       "addr": "00532b80",
       "from_addr": "005336d2",
-      "name": "core_set.cpp_FUN_00532b80",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00532b80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,14 +34,14 @@
   },
   "function_calls": [
     {
-      "addr": "00540c40",
-      "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_00540c40"
-    },
-    {
       "addr": "00540cf0",
       "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_00540cf0"
+      "name": "core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0"
+    },
+    {
+      "addr": "00540c40",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40"
     },
     {
       "addr": "005a3a90",
@@ -58,20 +56,20 @@
     {
       "addr": "004659c0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004659c0"
+      "name": "engine_dosio.cpp_getFile_FUN_004659c0"
     }
   ],
   "globals": [
     {
       "addr": "005d0cbe",
-      "name": "DAT_005d0cbe",
-      "type": "undefined4",
+      "name": "s_rb_005d0cbe",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d0cc1",
-      "name": "DAT_005d0cc1",
-      "type": "undefined4",
+      "name": "s_data_005d0cc1",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -81,7 +79,7 @@
       {
         "call_addr": "005336d2",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00532b80",
+        "caller": "core_set.cpp_CDemonSet_load_FUN_00532b80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,6 +117,12 @@
     "pcode_op_count": 144
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00539860",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9565
+    },
     "bw1.exe": {
       "addr": "0055b220",
       "by": "name",
@@ -161,30 +165,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005d0cc1",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc1,filename,&DAT_005d0cbe);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005d0cbe",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc1,filename,&DAT_005d0cbe);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0212551c",
-      "severity": "mild",
-      "text": "_fread(&DAT_0212551c,0x3000,this_ptr->camera_count,file);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

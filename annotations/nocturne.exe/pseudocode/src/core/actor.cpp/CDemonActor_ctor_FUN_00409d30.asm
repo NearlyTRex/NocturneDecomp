@@ -29,7 +29,7 @@
 ;   undefined4 s_r_00577582+2
 ;   undefined4 s__00577582+3
 ;   CDemonActor_vtable g_CDemonActorVTable
-;   undefined4 DAT_0078a123
+;   undefined4 g_CHAR_ARRAY_0077d250+0xced3
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -115,7 +115,7 @@ section .text
     MOV ESI,0x577582                    ; 00409e61 | = "str"
     MOV dword ptr [EBX + 0x64],0x64     ; 00409e66
     LEA EDI,[EBX + 0x11c]               ; 00409e6d
-    MOV dword ptr [EBX + 0x68],0x78a123 ; 00409e73 | DAT_0078a123
+    MOV dword ptr [EBX + 0x68],0x78a123 ; 00409e73 | g_CHAR_ARRAY_0077d250+0xced3
     PUSH EDI                            ; 00409e7a
     MOV AL,byte ptr [ESI]               ; 00409e7b | = "str" | s_r_00577582+2
         ;   Label: LAB_00409e7b

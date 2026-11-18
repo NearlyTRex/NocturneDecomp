@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 77,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
-    "suspect_count": 3,
+    "pseudocode_lines": 44,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 132
+    "total_lines": 139
   },
   "cross_references": [
     {
@@ -39,7 +38,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00563000",
@@ -67,20 +66,20 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c5fc1c",
-      "name": "DAT_02c5fc1c",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_02c5fc1c",
+      "type": "char[188]",
       "value": null
     }
   ],
@@ -180,28 +179,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Unknown/mangled field access",
+      "line": 27,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_02c5fc1c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02c5fc1c + iVar3 * 4) = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_02c5fc1c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02c5fc1c + iVar1) = 1;",
-      "type": "undefined_data"
+      "text": "iVar3 = g_CHAR_ARRAY_02c5fc1c._0_4_;",
+      "type": "unknown_field"
     }
   ]
 }

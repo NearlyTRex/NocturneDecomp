@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00578e76
+;   float g_FLOAT_00578e76 = 0.5
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     FLD float ptr [ECX + 0x8]           ; 00418064
     FADD float ptr [EAX + 0x8]          ; 00418067
     FXCH                                ; 0041806a
-    FLD float ptr [0x00578e76]          ; 0041806c | DAT_00578e76
+    FLD float ptr [0x00578e76]          ; 0041806c | g_FLOAT_00578e76
     FXCH                                ; 00418072
     FMUL ST1                            ; 00418074
     FXCH ST2                            ; 00418076

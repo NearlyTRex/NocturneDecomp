@@ -9,12 +9,12 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005114dc = 00511541
-;   undefined4 DAT_005cc28b
-;   undefined4 DAT_005cc293
-;   undefined4 DAT_005cc29b
-;   undefined4 DAT_005fba60
+;   double g_DOUBLE_005cc28b = -20
+;   double g_DOUBLE_005cc293 = 10
+;   double g_DOUBLE_005cc29b = 0.0500000000000000
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -23,15 +23,15 @@
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
-;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
-;   core_box.cpp_FUN_0041ee30
+;   core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041ee30
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00511340
 ;   core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_005127f0
 ;   core_platfrm.cpp_CPlatform_startMovement_FUN_00512020
-;   core_platfrm.cpp_FUN_00512be0
+;   core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_00512be0
 ;   core_set.cpp_CDemonSet_findCameraByName_FUN_00535360
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00540bc0
@@ -72,7 +72,7 @@ section .text
         ;   Label: caseD_0
     ADD EAX,0x3b8                       ; 00511544
     PUSH EAX                            ; 00511549
-    MOV EAX,[0x005fba60]                ; 0051154a | DAT_005fba60
+    MOV EAX,[0x005fba60]                ; 0051154a | g_CEventListPtr
     PUSH EAX                            ; 0051154f
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00511550
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -203,7 +203,7 @@ section .text
         ;   XREF to: 00511aa1 (CONDITIONAL_JUMP)  ; LAB_00511aa1
     MOV EDX,dword ptr [EAX + 0x4bc]     ; 005116c0
     PUSH EDX                            ; 005116c6
-    MOV ECX,dword ptr [0x006045f8]      ; 005116c7 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 005116c7 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 005116cd
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 005116ce
         ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
@@ -223,8 +223,8 @@ section .text
     MOV dword ptr [ESP + 0x37c],EAX     ; 005116f2
     LEA EAX,[ESP + 0x144]               ; 005116f9
     PUSH EAX                            ; 00511700
-    CALL core_xform.cpp_FUN_00583800    ; 00511701
-        ;   XREF to: 00583800 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00583800(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800 ; 00511701
+        ;   XREF to: 00583800 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00511706
     MOV EDI,dword ptr [EBP + 0x14]      ; 00511709
     PUSH EDI                            ; 0051170c
@@ -235,8 +235,8 @@ section .text
     PUSH ESI                            ; 00511716
     LEA EAX,[ESP + 0x114]               ; 00511717
     PUSH EAX                            ; 0051171e
-    CALL core_xform.cpp_FUN_00583940    ; 0051171f
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0051171f
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00511724
     MOV EAX,dword ptr [EDI + 0x154]     ; 00511727
     PUSH EDI                            ; 0051172d
@@ -283,7 +283,7 @@ section .text
         ;   Label: caseD_1
     ADD EAX,0x354                       ; 005117da
     PUSH EAX                            ; 005117df
-    MOV ESI,dword ptr [0x005fba60]      ; 005117e0 | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 005117e0 | g_CEventListPtr
     PUSH ESI                            ; 005117e6
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005117e7
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -312,7 +312,7 @@ section .text
         ;   Label: caseD_2
     ADD EAX,0x3b8                       ; 0051182b
     PUSH EAX                            ; 00511830
-    MOV EDI,dword ptr [0x005fba60]      ; 00511831 | DAT_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 00511831 | g_CEventListPtr
     PUSH EDI                            ; 00511837
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00511838
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -337,7 +337,7 @@ section .text
         ;   Label: LAB_0051186a
     ADD EAX,0x354                       ; 0051186d
     PUSH EAX                            ; 00511872
-    MOV EAX,[0x005fba60]                ; 00511873 | DAT_005fba60
+    MOV EAX,[0x005fba60]                ; 00511873 | g_CEventListPtr
     PUSH EAX                            ; 00511878
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 00511879
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -362,7 +362,7 @@ section .text
         ;   Label: caseD_3
     ADD EAX,0x41c                       ; 005118af
     PUSH EAX                            ; 005118b4
-    MOV EDI,dword ptr [0x005fba60]      ; 005118b5 | DAT_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 005118b5 | g_CEventListPtr
     PUSH EDI                            ; 005118bb
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005118bc
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -430,7 +430,7 @@ section .text
         ;   Label: caseD_4
     ADD EAX,0x41c                       ; 00511995
     PUSH EAX                            ; 0051199a
-    MOV EDI,dword ptr [0x005fba60]      ; 0051199b | DAT_005fba60
+    MOV EDI,dword ptr [0x005fba60]      ; 0051199b | g_CEventListPtr
     PUSH EDI                            ; 005119a1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005119a2
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -517,7 +517,7 @@ section .text
         ;   Label: LAB_00511aa1
     MOV ESI,dword ptr [EAX + 0x4bc]     ; 00511aa4
     PUSH ESI                            ; 00511aaa
-    MOV EDI,dword ptr [0x006045f8]      ; 00511aab | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 00511aab | g_CSound_PTR_006045f8
     PUSH EDI                            ; 00511ab1
     CALL core_sound.cpp_CSound_killSound_FUN_00560b00 ; 00511ab2
         ;   XREF to: 00560b00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_00560b00(CSound * this_ptr, uint sfx_handle)
@@ -550,8 +550,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 00511b0d
     PUSH EDI                            ; 00511b10
     LEA ESI,[ESP + 0x31c]               ; 00511b11
-    CALL core_actor.cpp_FUN_00408bf0    ; 00511b18
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 00511b18
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA EDI,[ESP + 0x2ec]               ; 00511b1d
     LEA ESI,[ESP + 0x31c]               ; 00511b24
     ADD ESP,0x8                         ; 00511b2b
@@ -565,7 +565,7 @@ section .text
     JA 0x00511e2c                       ; 00511b42
         ;   XREF to: 00511e2c (CONDITIONAL_JUMP)  ; LAB_00511e2c
     FLD float ptr [ESP + 0x2a0]         ; 00511b48
-    FADD double ptr [0x005cc28b]        ; 00511b4f | DAT_005cc28b
+    FADD double ptr [0x005cc28b]        ; 00511b4f | g_DOUBLE_005cc28b
     FLD float ptr [ESP + 0x2e8]         ; 00511b55
     FCOMPP                              ; 00511b5c
     FNSTSW AX                           ; 00511b5e
@@ -578,8 +578,8 @@ section .text
     PUSH EAX                            ; 00511b76
     LEA ESI,[ESP + 0x2f8]               ; 00511b77
     LEA EDI,[ESP + 0x304]               ; 00511b7e
-    CALL core_box.cpp_FUN_0041ee30      ; 00511b85
-        ;   XREF to: 0041ee30 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041ee30()
+    CALL core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041ee30 ; 00511b85
+        ;   XREF to: 0041ee30 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041ee30(CBoundingBox3D * this_ptr, CVector3f * in_point, CVector3f * out_point)
     ADD ESP,0x8                         ; 00511b8a
     LEA ESI,[ESP + 0x2f0]               ; 00511b8d
     FLD float ptr [ESP + 0x2e4]         ; 00511b94
@@ -606,14 +606,14 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00511bf0
     FLD float ptr [ESP + 0x35c]         ; 00511bf1
     FABS                                ; 00511bf8
-    FCOMP double ptr [0x005cc293]       ; 00511bfa | DAT_005cc293
+    FCOMP double ptr [0x005cc293]       ; 00511bfa | g_DOUBLE_005cc293
     FNSTSW AX                           ; 00511c00
     SAHF                                ; 00511c02
     JA 0x00511e2c                       ; 00511c03
         ;   XREF to: 00511e2c (CONDITIONAL_JUMP)  ; LAB_00511e2c
     FLD float ptr [ESP + 0x364]         ; 00511c09
     FABS                                ; 00511c10
-    FCOMP double ptr [0x005cc293]       ; 00511c12 | DAT_005cc293
+    FCOMP double ptr [0x005cc293]       ; 00511c12 | g_DOUBLE_005cc293
     FNSTSW AX                           ; 00511c18
     SAHF                                ; 00511c1a
     JA 0x00511e2c                       ; 00511c1b
@@ -677,7 +677,7 @@ section .text
     JNC 0x00511e2c                      ; 00511ceb
         ;   XREF to: 00511e2c (CONDITIONAL_JUMP)  ; LAB_00511e2c
     FLD float ptr [ESP + 0x278]         ; 00511cf1
-    FADD double ptr [0x005cc29b]        ; 00511cf8 | DAT_005cc29b
+    FADD double ptr [0x005cc29b]        ; 00511cf8 | g_DOUBLE_005cc29b
     FDIV double ptr [ESP]               ; 00511cfe
     FLD float ptr [ESP + 0x35c]         ; 00511d01
     FXCH                                ; 00511d08
@@ -717,8 +717,8 @@ section .text
     PUSH ECX                            ; 00511dad
     LEA ESI,[ESP + 0x370]               ; 00511dae
     LEA EDI,[ESP + 0x328]               ; 00511db5
-    CALL core_actor.cpp_FUN_00408b80    ; 00511dbc
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00511dbc
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x370]               ; 00511dc1
     ADD ESP,0x8                         ; 00511dc8
     MOVSD ES:EDI,ESI                    ; 00511dcb
@@ -776,8 +776,8 @@ section .text
     MOV dword ptr [ESP + 0x3a0],EAX     ; 00511e59
     LEA EAX,[ESP + 0x1a4]               ; 00511e60
     PUSH EAX                            ; 00511e67
-    CALL core_xform.cpp_FUN_00583940    ; 00511e68
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 00511e68
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00511e6d
     LEA EAX,[ESP + 0x13c]               ; 00511e70
     PUSH EAX                            ; 00511e77
@@ -819,7 +819,7 @@ section .text
     LEA ESI,[ESP + 0x2dc]               ; 00511f1b
     LEA EDI,[ESP + 0x354]               ; 00511f22
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 00511f29
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00583b10(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x2dc]               ; 00511f2e
     ADD ESP,0x4                         ; 00511f35
     LEA EDX,[EBX + 0xe0]                ; 00511f38
@@ -874,8 +874,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00512002
         ;   Label: LAB_00512002
     PUSH EAX                            ; 00512005
-    CALL core_platfrm.cpp_FUN_00512be0  ; 00512006
-        ;   XREF to: 00512be0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_00512be0(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_00512be0 ; 00512006
+        ;   XREF to: 00512be0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_00512be0(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 0051200b
     MOV ESP,EBP                         ; 0051200e
         ;   Label: LAB_0051200e

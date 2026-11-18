@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0c0(CBoneGuy *this_ptr)
 
@@ -21,9 +20,10 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0c0(CBoneGuy *this_ptr)
   CVector3f *pCVar6;
   uint *puVar7;
   uint *puVar8;
-  byte bVar9;
+  uint *puVar9;
+  byte bVar10;
   float afStackY_1824 [1520];
-  float local_48;
+  CQuaternion4f local_48;
   CVector3f local_38;
   UOrientationVector *local_2c;
   CVector3f *local_28;
@@ -33,7 +33,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0c0(CBoneGuy *this_ptr)
   int local_18;
   float local_14;
   
-  bVar9 = 0;
+  bVar10 = 0;
   core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00((CCharacter *)this_ptr);
   this_ptr->blown_up = 1;
   this_ptr->recombine_interpolation = 0.0;
@@ -42,9 +42,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0c0(CBoneGuy *this_ptr)
   iVar2 = local_24->num_parts;
   this_ptr->box_count = iVar2;
   if (0x14 < iVar2) {
-    _DAT_01d046a0 = "..\\core\\boneguy.cpp";
-    _DAT_01d046a4 = 0x444;
-    core_main_c_FUN_004e4500("CBoneGuy::explode - Not enough containers");
+    g_CHAR_PTR_01d046a0 = "..\\core\\boneguy.cpp";
+    g_INT_01d046a4 = 0x444;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CBoneGuy::explode - Not enough containers");
   }
   local_18 = 0;
   if (0 < local_24->num_parts) {
@@ -82,18 +82,16 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0c0(CBoneGuy *this_ptr)
         pCVar6->z = (body_part->base).orient.vec.z;
       }
       pCVar6 = pCVar6 + 6;
-      core_xform_cpp_FUN_00594380(&(body_part->base).orient);
+      core_xform_cpp_eulerToQuaternion_FUN_00594380(&(body_part->base).orient.vec,&local_48);
       pCVar4 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
       local_18 = local_18 + 1;
-      puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0x10ba4);
-      local_1c->boxes[0].start_orient.w = local_48;
-      puVar8 = puVar7 + (uint)bVar9 * -2 + 1;
-      *puVar7 = *(uint *)(&stack0xffffffbc + (uint)bVar9 * -8);
-      *puVar8 = *(uint *)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-      puVar8[(uint)bVar9 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +
-            ((uint)bVar9 * -2 + 1) * 4);
+      puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 0x10ba4);
+      local_1c->boxes[0].start_orient.w = local_48.w;
+      puVar9 = puVar8 + (uint)bVar10 * -2 + 1;
+      puVar7 = (uint *)((int)&local_48 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar7;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar7[(uint)bVar10 * -2 + 1];
       local_1c = pCVar4;
     } while (local_18 < local_24->num_parts);
   }

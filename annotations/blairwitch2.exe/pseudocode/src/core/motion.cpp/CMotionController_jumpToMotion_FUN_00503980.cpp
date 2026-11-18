@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980(CMotionController *this_ptr,int target_motion_index,float target_frame_number)
 
 {
   int iVar1;
   
-  if (target_frame_number == _DAT_005dfcfc) {
+  if (target_frame_number == -1.0f) {
     iVar1 = (*this_ptr->vtable->findPatchToFrame)
                       (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
                        target_motion_index);

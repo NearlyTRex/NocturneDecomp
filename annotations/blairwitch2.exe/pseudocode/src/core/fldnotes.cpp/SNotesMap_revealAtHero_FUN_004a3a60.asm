@@ -16,9 +16,9 @@
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60 at 004a5f75
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5df8
-;   undefined4 DAT_005d5e00
-;   undefined4 DAT_01cedef4
+;   double g_DOUBLE_005d5df8 = 20
+;   double g_DOUBLE_005d5e00 = 0.5
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesMap_revealCircle_FUN_004a3bb0
@@ -35,7 +35,7 @@ section .text
     PUSH EBP                            ; 004a3a61
     SUB ESP,0x14                        ; 004a3a62
     MOV EBX,dword ptr [ESP + 0x20]      ; 004a3a65
-    MOV EAX,[0x01cedef4]                ; 004a3a69 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004a3a69 | g_INT_01cedef4
     SHL EAX,0x2                         ; 004a3a6e
     CMP dword ptr [EAX + 0x1cedee4],0x0 ; 004a3a71
     JZ 0x004a3a89                       ; 004a3a78
@@ -71,7 +71,7 @@ section .text
     SHL EAX,0x4                         ; 004a3ab2
     ADD EAX,EDX                         ; 004a3ab5
     FLD float ptr [EBX + EAX*0x8 + 0x124] ; 004a3ab7
-    FMUL double ptr [0x005d5df8]        ; 004a3abe | DAT_005d5df8
+    FMUL double ptr [0x005d5df8]        ; 004a3abe | g_DOUBLE_005d5df8
     SUB ESP,0x8                         ; 004a3ac4
     FSTP double ptr [ESP]               ; 004a3ac7
     CALL crt_math.c_floor_FUN_005b84d0  ; 004a3aca
@@ -79,10 +79,10 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004a3acf
     MOV dword ptr [ESP + 0xc],EDX       ; 004a3ad3
     FLD double ptr [ESP + 0x8]          ; 004a3ad7
-    FADD double ptr [0x005d5e00]        ; 004a3adb | DAT_005d5e00
+    FADD double ptr [0x005d5e00]        ; 004a3adb | g_DOUBLE_005d5e00
     ADD ESP,0x8                         ; 004a3ae1
     CALL crt_math.c_round_FUN_005b7ff0  ; 004a3ae4
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004a3ae9
     CMP dword ptr [ESP + 0x10],0x1      ; 004a3aed
     JGE 0x004a3afc                      ; 004a3af2

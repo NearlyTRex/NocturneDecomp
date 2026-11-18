@@ -37,8 +37,8 @@
 ;   void* PTR_SelectObject_005b3424 = 001b3874
 ;   void* PTR_SetBkColor_005b3428 = 001b3884
 ;   void* PTR_SetBkMode_005b342c = 001b3892
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba20
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba20 = 0x8
 ;
 ; Called Functions:
 ;   CreateBrushIndirect
@@ -86,7 +86,7 @@ section .text
     MOVZX EBP,DL                        ; 00580153
     MOV ECX,dword ptr [EBX + 0x6b6c]    ; 00580156
     OR EAX,EBP                          ; 0058015c
-    CMP ECX,dword ptr [0x005fba20]      ; 0058015e | DAT_005fba20
+    CMP ECX,dword ptr [0x005fba20]      ; 0058015e | g_INT_005fba20
     SETNZ DL                            ; 00580164
     MOVZX EBP,DL                        ; 00580167
     OR EAX,EBP                          ; 0058016a
@@ -100,7 +100,7 @@ section .text
     POP ESI                             ; 00580178
     POP EBX                             ; 00580179
     RET                                 ; 0058017a
-    MOV EDI,dword ptr [0x005fba18]      ; 0058017b | DAT_005fba18
+    MOV EDI,dword ptr [0x005fba18]      ; 0058017b | g_INT_005fba18
         ;   Label: LAB_0058017b
     JMP 0x00580127                      ; 00580181
         ;   XREF to: 00580127 (UNCONDITIONAL_JUMP)  ; LAB_00580127
@@ -134,7 +134,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EDI       ; 005801d1
     MOV dword ptr [ESP + 0x8],ESI       ; 005801d5
     NEG ECX                             ; 005801d9
-    MOV AX,[0x005fba20]                 ; 005801db | DAT_005fba20
+    MOV AX,[0x005fba20]                 ; 005801db | g_INT_005fba20
     XOR EBP,EBP                         ; 005801e1
     MOV dword ptr [ESP + 0x8],ECX       ; 005801e3
     PUSH EBP                            ; 005801e7
@@ -202,7 +202,7 @@ section .text
     MOV dword ptr [EBX + 0x6a54],EAX    ; 005802ca
     MOV dword ptr [EBX + 0x6b64],EDI    ; 005802d0
     MOV dword ptr [EBX + 0x6b68],ESI    ; 005802d6
-    MOV EAX,[0x005fba20]                ; 005802dc | DAT_005fba20
+    MOV EAX,[0x005fba20]                ; 005802dc | g_INT_005fba20
     MOV EDX,dword ptr [EBX + 0x6a48]    ; 005802e1
     MOV dword ptr [EBX + 0x6b6c],EAX    ; 005802e7
     TEST EDX,EDX                        ; 005802ed

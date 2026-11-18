@@ -10,7 +10,7 @@ void __cdecl core_weapon_cpp_staticInit_FUN_00553d60(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CWeaponActorType_02ddf970,"CWeapon",(CDemonActor_FactoryFunc *)0x0,
-             &INT_005c1590,7,&g_CDemonActorActorType_00763e48);
+            (&g_CWeaponClassInfo,"CWeapon",(CDemonActor_FactoryFunc *)0x0,
+             &g_CWeaponClassVersion,7,&g_CDemonActorClassInfo);
   return;
 }

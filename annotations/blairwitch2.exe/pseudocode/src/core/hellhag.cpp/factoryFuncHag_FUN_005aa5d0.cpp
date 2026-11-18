@@ -11,7 +11,7 @@ CHag * __cdecl core_hellhag_cpp_factoryFuncHag_FUN_005aa5d0(void)
 {
   CHag *pCVar1;
   
-  pCVar1 = (CHag *)operator_new(0x11860);
+  pCVar1 = operator_new(0x11860);
   if (pCVar1 == (CHag *)0x0) {
     return (CHag *)0x0;
   }

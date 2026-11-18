@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(CCharacter *this_ptr)
 
 {
@@ -26,12 +24,11 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(CCharacter *this_pt
   int iVar9;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
-  this_ptr->closest_distance_threshold = _DAT_005dd234;
+  this_ptr->closest_distance_threshold = 9999.0f;
   this_ptr->damage_decal_count = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)&DAT_007e2b34,"stake_b.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580
-            ((CKeyFramedModelInstance *)&DAT_007e2b34);
+            (&g_StakeModelInstance,"stake_b.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(&g_StakeModelInstance);
   pCVar4 = this_ptr;
   do {
     this_ptr_00 = pCVar4->carry_hands[0].carry_actor;
@@ -41,10 +38,9 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(CCharacter *this_pt
         (*((this_ptr_00->vtable)._ub)->pickup)(this_ptr_00,&this_ptr->base);
       }
       else if (pCVar6 != this_ptr) {
-        _DAT_01d71de0 = "..\\core\\charactr.cpp";
-        _DAT_01d71de4 = 0x145;
-        core_main_c_FUN_004e4330
-                  ("%s is carrying %s, but %s thinks it is being carried by %s",this_ptr,this_ptr_00,this_ptr_00,pCVar6);
+        g_CHAR_PTR_01d71de0 = "..\\core\\charactr.cpp";
+        g_INT_01d71de4 = 0x145;
+        core_main_c_displayErrorAndQuit_FUN_004e4330("%s is carrying %s, but %s thinks it is being carried by %s");
       }
     }
     pCVar4 = (CCharacter *)(pCVar4->base).create_event;

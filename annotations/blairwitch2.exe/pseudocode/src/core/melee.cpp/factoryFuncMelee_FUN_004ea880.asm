@@ -15,7 +15,7 @@ section .text
     PUSH 0x828                          ; 004ea880
         ;   Label: core_melee.cpp_factoryFuncMelee_FUN_004ea880
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004ea885
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004ea88a
     TEST EAX,EAX                        ; 004ea88d
     JNZ 0x004ea892                      ; 004ea88f

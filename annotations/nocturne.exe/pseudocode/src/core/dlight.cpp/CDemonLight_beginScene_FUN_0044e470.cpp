@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *this_ptr,int skip_clear_buffers)
 
 {
@@ -65,9 +63,9 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
   if (skip_clear_buffers == 0) {
-    _DAT_01b4d1fc = skip_clear_buffers;
+    g_RasterizerDepthBias = skip_clear_buffers;
     return;
   }
-  _DAT_01b4d1fc = 0x8000;
+  g_RasterizerDepthBias = 0x8000;
   return;
 }

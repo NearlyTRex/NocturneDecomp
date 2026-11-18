@@ -7,15 +7,19 @@
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CLevelLoader.h"
+#include "types/classes/CMatrix3x3i.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CMoon.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D00000
 // =============================================================================
 
 // CAlphaBitmap
-extern CAlphaBitmap CAlphaBitmap_01d02e08;
+extern CAlphaBitmap g_BatteryIconBitmap;
 extern CAlphaBitmap CAlphaBitmap_01d02e1c;
 extern CAlphaBitmap CAlphaBitmap_01d02e30;
 extern CAlphaBitmap CAlphaBitmap_01d02e44;
@@ -47,6 +51,7 @@ extern CDemonActorType g_CLeverClassInfo;
 extern CDemonActorType g_CLightGunClassInfo;
 extern CDemonActorType g_CLightConeClassInfo;
 extern CDemonActorType g_CMansionPuzzleCircleClassInfo;
+extern CDemonActorType g_CMirrorHackClassInfo;
 extern CDemonActorType g_CMarqueeClassInfo;
 extern CDemonActorType g_CMeleeClassInfo;
 extern CDemonActorType g_CMimicClassInfo;
@@ -55,9 +60,246 @@ extern CDemonActorType g_CMineCarClassInfo;
 // CKeyFramedModel
 extern CKeyFramedModel g_LoadingMoonModel;
 
+// CLevelLoader
+extern CLevelLoader g_CLevelLoaderInstance;
+
+// CMatrix3x3i
+extern CMatrix3x3i g_TransformMatrixCopy;
+
 // CMini3D
 extern CMini3D g_CMini3DInstance;
 
 // CMoon
 extern CMoon g_CMoonInstance;
+
+// CVector3i
+extern CVector3i g_CachedViewPosition;
+extern CVector3i g_NormalizedViewVector;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_01d02ee4;
+
+// char*
+extern char* g_CHAR_PTR_01d046a0;
+extern char* g_CHAR_PTR_01d06a50;
+extern char* g_CHAR_PTR_01d06a7c;
+extern char* g_CHAR_PTR_01d06abc;
+extern char* g_CHAR_PTR_01d07480;
+extern char* g_CHAR_PTR_01d07ea8;
+extern char* g_CHAR_PTR_01d082d0;
+
+// char*[4]
+extern char* g_MenuTextPointers[4];
+
+// char[10][256]
+extern char g_StringBuffers[10][256];
+
+// char[2304]
+extern char g_CHAR_ARRAY_01d06b80[2304];
+
+// char[256]
+extern char g_CHAR_ARRAY_01d06150[256];
+extern char g_CHAR_ARRAY_01d06250[256];
+extern char g_CHAR_ARRAY_01d06350[256];
+extern char g_CHAR_ARRAY_01d06450[256];
+extern char g_CHAR_ARRAY_01d06650[256];
+extern char g_CHAR_ARRAY_01d07ed0[256];
+extern char g_CHAR_ARRAY_01d07fd0[256];
+extern char g_CHAR_ARRAY_01d080d0[256];
+extern char g_CHAR_ARRAY_01d081d0[256];
+
+// char[30][40]
+extern char g_CustomKeyNames[30][40];
+
+// char[4352]
+extern char g_CHAR_ARRAY_01d035a0[4352];
+
+// char[4][256]
+extern char g_MainMenuTextBuffers[4][256];
+
+// float
+extern float g_FLOAT_01d09860;
+extern float g_FLOAT_01d0986c;
+extern float g_FLOAT_01d09870;
+extern float g_FLOAT_01d09874;
+extern float g_FLOAT_01d09878;
+extern float g_FLOAT_01d0987c;
+extern float g_FLOAT_01d09880;
+extern float g_FLOAT_01d09884;
+extern float g_FLOAT_01d09888;
+extern float g_FLOAT_01d0988c;
+extern float g_FLOAT_01d09890;
+extern float g_FLOAT_01d09894;
+extern float g_FLOAT_01d09898;
+extern float g_FLOAT_01d0989c;
+extern float g_FLOAT_01d098a0;
+extern float g_FLOAT_01d098a4;
+extern float g_FLOAT_01d098a8;
+extern float g_FLOAT_01d098ac;
+extern float g_FLOAT_01d098b0;
+extern float g_FLOAT_01d098b4;
+extern float g_FLOAT_01d098b8;
+extern float g_FLOAT_01d098c8;
+extern float g_FLOAT_01d098cc;
+extern float g_FLOAT_01d098d0;
+extern float g_FLOAT_01d098d4;
+extern float g_FLOAT_01d098d8;
+extern float g_FLOAT_01d098dc;
+extern float g_FLOAT_01d098e4;
+extern float g_FLOAT_01d098f0;
+extern float g_FLOAT_01d09900;
+extern float g_FLOAT_01d09904;
+extern float g_FLOAT_01d09908;
+extern float g_FLOAT_01d0990c;
+extern float g_FLOAT_01d09910;
+extern float g_FLOAT_01d09920;
+extern float g_FLOAT_01d09924;
+extern float g_FLOAT_01d09928;
+extern float g_FLOAT_01d0992c;
+extern float g_FLOAT_01d09930;
+extern float g_FLOAT_01d09934;
+extern float g_FLOAT_01d09938;
+extern float g_FLOAT_01d0993c;
+extern float g_FLOAT_01d09940;
+extern float g_FLOAT_01d0a398;
+extern float g_FLOAT_01d0a39c;
+extern float g_FLOAT_01d0a3a0;
+extern float g_FLOAT_01d0a3d8;
+extern float g_FLOAT_01d0a3dc;
+extern float g_FLOAT_01d0a3e0;
+extern float g_FLOAT_01d0a418;
+extern float g_FLOAT_01d0a41c;
+extern float g_FLOAT_01d0a420;
+extern float g_FLOAT_01d0bb98;
+extern float g_FLOAT_01d0d2bc;
+extern float g_FLOAT_01d0d2c0;
+extern float g_FLOAT_01d0d2c4;
+extern float g_FLOAT_01d0d2c8;
+extern float g_FLOAT_01d0d2d4;
+extern float g_FLOAT_01d0d2d8;
+extern float g_FLOAT_01d0d2dc;
+extern float g_FLOAT_01d0d2e0;
+
+// float*
+extern float* g_FLOAT_PTR_01d09b7c;
+extern float* g_FLOAT_PTR_01d09b80;
+
+// int
+extern int g_InventoryScreenHeight;
+extern int g_InventoryLightAngle;
+extern int g_LightDirectionX2;
+extern int g_LightDirectionY2;
+extern int g_LightDirectionZ2;
+extern int g_INT_01d046a4;
+extern int g_INT_01d046a8;
+extern int g_INT_01d04fb8;
+extern int g_INT_01d04fbc;
+extern int g_INT_01d04fc0;
+extern int g_INT_01d04fc4;
+extern int g_INT_01d04fc8;
+extern int g_INT_01d04fcc;
+extern int g_INT_01d04fd0;
+extern int g_INT_01d04fd4;
+extern int g_INT_01d04fd8;
+extern int g_PixelAspectCorrection;
+extern int g_MatrixStackIndex;
+extern int g_ViewportStackIndex;
+extern int g_INT_01d0612c;
+extern int g_INT_01d06134;
+extern int g_INT_01d06138;
+extern int g_INT_01d06a74;
+extern int g_INT_01d06a78;
+extern int g_INT_01d06afc;
+extern int g_INT_01d06b3c;
+extern int g_CustomKeyCount;
+extern int g_StringBufferIndex;
+extern int g_INT_01d09854;
+extern int g_INT_01d09858;
+extern int g_INT_01d0985c;
+extern int g_INT_01d09864;
+extern int g_INT_01d09868;
+extern int g_INT_01d098bc;
+extern int g_INT_01d098c0;
+extern int g_INT_01d098c4;
+extern int g_INT_01d098e0;
+extern int g_INT_01d098e8;
+extern int g_INT_01d098ec;
+extern int g_INT_01d09914;
+extern int g_INT_01d09b78;
+extern int g_INT_01d09b84;
+extern int g_INT_01d09b88;
+extern int g_INT_01d09b8c;
+extern int g_INT_01d09b90;
+extern int g_INT_01d09b94;
+extern int g_INT_01d0c398;
+extern int g_INT_01d0c39c;
+extern int g_INT_01d0c3a0;
+extern int g_INT_01d0d2b4;
+extern int g_INT_01d0d2b8;
+extern int g_INT_01d0d2e4;
+extern int g_INT_01d0d2e8;
+extern int g_INT_01d0d2ec;
+extern int g_INT_01d0d2f0;
+
+// int*[31]
+extern int* g_CustomKeyPointers[31];
+
+// int[10]
+extern int g_MatrixStack_M00[10];
+extern int g_MatrixStack_M01[10];
+extern int g_MatrixStack_M02[10];
+extern int g_MatrixStack_M10[10];
+extern int g_MatrixStack_M11[10];
+extern int g_MatrixStack_M12[10];
+extern int g_MatrixStack_M20[10];
+extern int g_MatrixStack_M21[10];
+extern int g_MatrixStack_M22[10];
+extern int g_MatrixStack_RelX[10];
+extern int g_MatrixStack_RelY[10];
+extern int g_MatrixStack_RelZ[10];
+extern int g_MatrixStack_Unk1[10];
+extern int g_MatrixStack_Unk2[10];
+extern int g_MatrixStack_Unk3[10];
+extern int g_ViewportStack_CenterX[10];
+extern int g_ViewportStack_CenterY[10];
+extern int g_ViewportStack_RightFixed[10];
+extern int g_ViewportStack_BottomFixed[10];
+extern int g_ViewportStack_ProjectionScale[10];
+extern int g_ViewportStack_CameraX[10];
+extern int g_ViewportStack_CameraY[10];
+extern int g_ViewportStack_CameraZ[10];
+extern int g_ViewportStack_RotationPitch[10];
+extern int g_ViewportStack_RotationYaw[10];
+extern int g_ViewportStack_RotationRoll[10];
+extern int g_ViewportStack_ExtraState1[10];
+extern int g_ViewportStack_ExtraState2[10];
+extern int g_ViewportStack_ExtraState3[10];
+extern int g_ViewportStack_ClipLeft[10];
+extern int g_ViewportStack_ClipRight[10];
+extern int g_ViewportStack_ClipTop[10];
+extern int g_ViewportStack_ClipBottom[10];
+
+// int[20]
+extern int g_MimicIndices[20];
+
+// int[256]
+extern int g_INT_ARRAY_01d047b0[256];
+
+// int[257]
+extern int g_INT_ARRAY_01d04bb4[257];
+
+// short[1]
+extern short g_SHORT_ARRAY_01d0d2f6[1];
+
+// uint
+extern uint g_SavedRotationX;
+extern uint g_SavedRotationY;
+extern uint g_SavedRotationZ;
+
+// void*
+extern void* g_PTR_01d02f84;
+extern void* g_PTR_01d09918;
+extern void* g_PTR_01d0991c;
+extern void* g_PTR_01d0d2cc;
+extern void* g_PTR_01d0d2d0;
 

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 25,
-    "cross_reference_count": 63,
+    "complexity_score": 17,
+    "cross_reference_count": 64,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 35
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -94,21 +92,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00464190",
-      "from_addr": "004645fe",
-      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00463820",
       "from_addr": "0046385c",
-      "name": "core_dlight.cpp_FUN_00463820",
+      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00463820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00464990",
       "from_addr": "004649bd",
-      "name": "core_dlight.cpp_FUN_00464990",
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00464990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464190",
+      "from_addr": "004645fe",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -286,6 +284,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004e3f40",
+      "from_addr": "004e3fa8",
+      "name": "core_gore.cpp_CBloodParticle_render_FUN_004e3f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004e5180",
       "from_addr": "004e51cf",
       "name": "core_gore.cpp_CBloodPool_render_FUN_004e5180",
@@ -295,12 +299,6 @@
       "addr": "004e49a0",
       "from_addr": "004e49fa",
       "name": "core_gore.cpp_CBloodSplat_render_FUN_004e49a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e3f40",
-      "from_addr": "004e3fa8",
-      "name": "core_gore.cpp_FUN_004e3f40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -336,7 +334,13 @@
     {
       "addr": "00559f80",
       "from_addr": "0055a9c6",
-      "name": "core_setdir.cpp_FUN_00559f80",
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559730",
+      "from_addr": "00559829",
+      "name": "core_setdir.cpp_calculateActorVisibility_FUN_00559730",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -421,9 +425,9 @@
   "globals": [
     {
       "addr": "005db37c",
-      "name": "DAT_005db37c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WorldToCameraScale",
+      "type": "double",
+      "value": "256"
     }
   ],
   "param_estimates": {
@@ -642,14 +646,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

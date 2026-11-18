@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 44,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 1,
+    "pseudocode_lines": 31,
+    "suspect_count": 3,
     "suspect_types": [
+      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 81
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -41,12 +42,12 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
     },
     {
       "addr": "0042d8e0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042d8e0"
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0"
     }
   ],
   "globals": [],
@@ -105,8 +106,24 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 21,
+      "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

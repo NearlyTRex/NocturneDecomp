@@ -20,7 +20,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
       pSVar1 = poly;
       iVar2 = 0;
       do {
-        *(int *)(&DAT_01b4d76c + iVar2) = pSVar1->vertices[0].vertex_index;
+        *(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1->vertices[0].vertex_index;
         iVar3 = iVar3 + 1;
         pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;
         iVar2 = iVar2 + 4;
@@ -37,7 +37,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
       g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00463a79;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
-              (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);
+              (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
   }
   return;
 }

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_hiram_cpp_CHiram_getActorType_FUN_004b6600(CHiram *this_ptr)
 
 {
-  return &g_CHiramActorType_01cae164;
+  return &g_CHiramClassInfo;
 }

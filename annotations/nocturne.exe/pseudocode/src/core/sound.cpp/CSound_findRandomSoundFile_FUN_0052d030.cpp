@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030(CSound *this_ptr,char *out_result,char *wildcard_pattern)
 
 {
@@ -17,15 +15,15 @@ void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030(CSound *this
   char *pcVar4;
   int iVar5;
   
-  _DAT_02dc9620 = 0;
+  g_SoundMatchCount = 0;
   *out_result = '\0';
-  for (iVar2 = 0; iVar2 < g_CStrList_02dc9610.item_count; iVar2 = iVar2 + 1) {
+  for (iVar2 = 0; iVar2 < g_SoundFileList.item_count; iVar2 = iVar2 + 1) {
     iVar5 = 0;
-    pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,iVar2);
+    pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_SoundFileList,iVar2);
     iVar5 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(wildcard_pattern,pcVar3,iVar5);
     if (iVar5 != 0) {
-      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,iVar2);
-      pcVar4 = (char *)(_DAT_02dc9620 * 0x28 + 0x2dc9628);
+      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_SoundFileList,iVar2);
+      pcVar4 = g_SoundMatchedFilenames[g_SoundMatchCount];
       do {
         cVar1 = *pcVar3;
         *pcVar4 = cVar1;
@@ -35,15 +33,15 @@ void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030(CSound *this
         pcVar4[1] = cVar1;
         pcVar4 = pcVar4 + 2;
       } while (cVar1 != '\0');
-      _DAT_02dc9620 = _DAT_02dc9620 + 1;
-      if (0x27 < _DAT_02dc9620) break;
+      g_SoundMatchCount = g_SoundMatchCount + 1;
+      if (0x27 < g_SoundMatchCount) break;
     }
   }
-  if (_DAT_02dc9620 < 1) {
+  if (g_SoundMatchCount < 1) {
     return;
   }
   iVar2 = rand();
-  pcVar3 = (char *)((iVar2 % _DAT_02dc9620) * 0x28 + 0x2dc9628);
+  pcVar3 = g_SoundMatchedFilenames[iVar2 % g_SoundMatchCount];
   do {
     cVar1 = *pcVar3;
     *out_result = cVar1;

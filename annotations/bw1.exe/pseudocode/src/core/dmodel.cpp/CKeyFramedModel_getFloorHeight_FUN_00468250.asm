@@ -12,18 +12,18 @@
 ; CVector3f *      Stack[0x18]:4   transform_vector
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_005562c0 at 00556f2b
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 at 00556f2b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d96d7
 ;   TerminatedCString s_Tried_to_call_CKeyFramed_005d96ea
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
-;   core_dtri.cpp_FUN_00490a40
-;   core_main.c_FUN_005030e0
+;   core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -54,10 +54,10 @@ section .text
     MOV EBX,0x5d96d7                    ; 0046827f | = "..\\core\\dmodel.cpp"
     MOV EAX,0x43e                       ; 00468284
     PUSH 0x5d96ea                       ; 00468289 | = "Tried to call CKeyFramedModel::getFlo..."
-    MOV dword ptr [0x01d1d400],EBX      ; 0046828e | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00468294 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00468299
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 0046828e | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00468294 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00468299
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0046829e
     LEA EBX,[EDI + 0x364]               ; 004682a1
         ;   Label: LAB_004682a1
@@ -95,8 +95,8 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 004682ed
     PUSH EDX                            ; 004682f1
     PUSH ESI                            ; 004682f2
-    CALL core_dtri.cpp_FUN_00490a40     ; 004682f3
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 004682f3
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 004682f8
     TEST EAX,EAX                        ; 004682fb
     JZ 0x00468304                       ; 004682fd

@@ -10,7 +10,7 @@ void __cdecl core_baal_cpp_staticInit_FUN_00596600(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            (&g_CBaalClassInfo,(char *)0x5d9489,core_baal_cpp_factoryFuncBaal_FUN_00596630,
+            (&g_CBaalClassInfo,"CBaal",core_baal_cpp_factoryFuncBaal_FUN_00596630,
              &g_CBaalClassVersion,1,&g_CEnemyClassInfo);
   return;
 }

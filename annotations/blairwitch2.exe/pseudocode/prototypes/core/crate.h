@@ -45,13 +45,13 @@ CDemonActor * __cdecl CCrate::getCarrier(CCrate *this_ptr);
 // Address: 00439f00
 void __cdecl CCrate::process(CCrate *this_ptr,float delta_time);
 
-// Original: core_crate.cpp_FUN_0043a130
+// Original: core_crate.cpp_CCrate_renderOpaque_FUN_0043a130
 // Address: 0043a130
-int FUN_0043a130(int param_1);
+int __cdecl CCrate::renderOpaque(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_0043a1b0
+// Original: core_crate.cpp_CCrate_renderBackground_FUN_0043a1b0
 // Address: 0043a1b0
-void FUN_0043a1b0(void);
+void __cdecl CCrate::renderBackground(CCrate *this_ptr,int layer_flag);
 
 // Original: core_crate.cpp_CCrate_archive_FUN_0043a1d0
 // Address: 0043a1d0
@@ -61,17 +61,17 @@ void __cdecl CCrate::archive(CCrate *this_ptr);
 // Address: 0043a220
 ECollisionType __cdecl CCrate::getCollisionType(CCrate *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_crate.cpp_FUN_0043a240
+// Original: core_crate.cpp_CCrate_getBoundingBox_FUN_0043a240
 // Address: 0043a240
-void FUN_0043a240(int param_1);
+CBoundingBox3D * __stack_esi CCrate::getBoundingBox(CCrate *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_crate.cpp_CCrate_getTargetPoints_FUN_0043a280
 // Address: 0043a280
 int __cdecl CCrate::getTargetPoints(CCrate *this_ptr,CVector3f *out_points_array);
 
-// Original: core_crate.cpp_FUN_0043a350
+// Original: core_crate.cpp_CCrate_explode_FUN_0043a350
 // Address: 0043a350
-void __cdecl FUN_0043a350(CCrate *this_ptr);
+void __cdecl CCrate::explode(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_dtor_FUN_0043a410
 // Address: 0043a410

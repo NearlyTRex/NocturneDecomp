@@ -19,7 +19,7 @@
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d2bc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bea94
+;   int g_MaximumSoundMemoryBudget = 0x400000
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].streaming_buffer_size
@@ -98,7 +98,7 @@ section .text
     JZ 0x00527d17                       ; 00527d02
         ;   XREF to: 00527d17 (CONDITIONAL_JUMP)  ; LAB_00527d17
     MOV EBX,dword ptr [ESP + 0x8]       ; 00527d04
-    MOV EAX,[0x005bea94]                ; 00527d08 | DAT_005bea94
+    MOV EAX,[0x005bea94]                ; 00527d08 | g_MaximumSoundMemoryBudget
     ADD EBP,EBX                         ; 00527d0d
     SUB EAX,EBP                         ; 00527d0f
     MOV dword ptr [ECX],EAX             ; 00527d11

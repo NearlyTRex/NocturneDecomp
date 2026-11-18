@@ -17,7 +17,7 @@ void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043fbc0(CClothList *this_ptr,C
   if (0 < this_ptr->count) {
     do {
       iVar2 = iVar2 + 1;
-      core_cloth_cpp_FUN_0043cb00(pCVar1->cloths[0],position,euler,model_ptr);
+      core_cloth_cpp_CCloth_setup_FUN_0043cb00(pCVar1->cloths[0],position,euler,model_ptr);
       pCVar1 = (CClothList *)pCVar1->filenames;
     } while (iVar2 < this_ptr->count);
   }

@@ -10,8 +10,8 @@
 ;   core_styldemo.cpp_factoryFuncStylerDemon_FUN_0059e040 at 0059e053
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e84e0
-;   undefined4 DAT_005e84e4
+;   float g_FLOAT_005e84e0 = 50
+;   float g_FLOAT_005e84e4 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -47,9 +47,9 @@ section .text
     MOV dword ptr [EBX + 0xdc90],0x0    ; 0059e0cb
     MOV dword ptr [EBX + 0xdc94],0x0    ; 0059e0d5
     MOV dword ptr [EBX + 0xdc9c],0x0    ; 0059e0df
-    FLD float ptr [0x005e84e0]          ; 0059e0e9 | DAT_005e84e0
+    FLD float ptr [0x005e84e0]          ; 0059e0e9 | g_FLOAT_005e84e0
     MOV dword ptr [EBX + 0xd060],0x0    ; 0059e0ef
-    FLD float ptr [0x005e84e4]          ; 0059e0f9 | DAT_005e84e4
+    FLD float ptr [0x005e84e4]          ; 0059e0f9 | g_FLOAT_005e84e4
     MOV dword ptr [EBX + 0xd05c],0x0    ; 0059e0ff
     ADD ESP,0x8                         ; 0059e109
     MOV dword ptr [EBX + 0xdca0],0x0    ; 0059e10c

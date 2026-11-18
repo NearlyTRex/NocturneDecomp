@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[3]:
-;   core_main.c_FUN_004e4c70 at 004e4cb9
+;   core_main.c_finalizeGameSystems_FUN_004e4c70 at 004e4cb9
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004f76f0 at 004f76fa
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_005502d0 at 005502d7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02802f5c
+;   char[256] g_CHAR_ARRAY_02802f5c
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_00548370
@@ -36,7 +36,7 @@ section .text
         ;   XREF to: 005501ad (CONDITIONAL_JUMP)  ; LAB_005501ad
     PUSH 0x100                          ; 005501c0
     PUSH 0x0                            ; 005501c5
-    PUSH 0x2802f5c                      ; 005501c7 | DAT_02802f5c
+    PUSH 0x2802f5c                      ; 005501c7 | g_CHAR_ARRAY_02802f5c
     CALL crt_memory.c_memset_FUN_005a28f0 ; 005501cc
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005501d1

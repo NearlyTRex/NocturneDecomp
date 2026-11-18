@@ -8,17 +8,17 @@
 ; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_00489670 at 00489f60
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 00489f60
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005e6384
 ;   TerminatedCString s_C3DSLight_advanceFilter_005e6398
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_0044b600
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -68,10 +68,10 @@ section .text
         ;   Label: LAB_0053baf5
     MOV ESI,0x387                       ; 0053bafa
     PUSH 0x5e6398                       ; 0053baff | = "C3DSLight::advanceFilter - NULL CDemo..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0053bb04 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0053bb0a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0053bb10
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0053bb04 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0053bb0a | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053bb10
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0053bb15
     JMP 0x0053ba9e                      ; 0053bb18
         ;   XREF to: 0053ba9e (UNCONDITIONAL_JUMP)  ; LAB_0053ba9e

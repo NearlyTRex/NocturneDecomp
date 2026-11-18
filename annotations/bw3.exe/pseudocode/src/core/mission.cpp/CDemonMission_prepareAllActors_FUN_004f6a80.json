@@ -14,21 +14,21 @@
   },
   "cross_references": [
     {
-      "addr": "004f6de0",
-      "from_addr": "004f6e5d",
-      "name": "core_mission.cpp_FUN_004f6de0",
+      "addr": "004f7230",
+      "from_addr": "004f727e",
+      "name": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004f7230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f7230",
-      "from_addr": "004f727e",
-      "name": "core_mission.cpp_FUN_004f7230",
+      "addr": "004f6de0",
+      "from_addr": "004f6e5d",
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f7590",
       "from_addr": "004f75d9",
-      "name": "core_mission.cpp_FUN_004f7590",
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004f7590",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +48,7 @@
     {
       "addr": "004e0000",
       "is_variadic": false,
-      "name": "core_level.cpp_FUN_004e0000"
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004e0000"
     },
     {
       "addr": "005503c0",
@@ -93,9 +93,9 @@
     },
     {
       "addr": "006002ac",
-      "name": "DAT_006002ac",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CLevelLoaderPtr",
+      "type": "CLevelLoader*",
+      "value": "01d70ab8"
     }
   ],
   "param_estimates": {
@@ -104,7 +104,7 @@
       {
         "call_addr": "004f6e5d",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f6de0",
+        "caller": "core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +115,7 @@
       {
         "call_addr": "004f75d9",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f7590",
+        "caller": "core_mission.cpp_CDemonMission_startMission_FUN_004f7590",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -126,7 +126,7 @@
       {
         "call_addr": "004f727e",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f7230",
+        "caller": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004f7230",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

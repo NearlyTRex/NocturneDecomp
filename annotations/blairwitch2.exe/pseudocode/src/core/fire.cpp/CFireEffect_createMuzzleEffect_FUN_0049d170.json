@@ -2,31 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 88,
+    "complexity_score": 13,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [
     {
       "addr": "005a14e0",
       "from_addr": "005a1705",
-      "name": "core_confedrt.cpp_FUN_005a14e0",
+      "name": "core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a5460",
       "from_addr": "005a5685",
-      "name": "core_union.cpp_FUN_005a5460",
+      "name": "core_union.cpp_CUnion_fireShotgun_FUN_005a5460",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,undefined4 param_3)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)"
   },
   "function_calls": [
     {
@@ -52,8 +48,8 @@
   "globals": [
     {
       "addr": "01c8672c",
-      "name": "DAT_01c8672c",
-      "type": "undefined4",
+      "name": "g_INT_01c8672c",
+      "type": "int",
       "value": null
     }
   ],
@@ -63,7 +59,7 @@
       {
         "call_addr": "005a1705",
         "call_type": "direct",
-        "caller": "core_confedrt.cpp_FUN_005a14e0",
+        "caller": "core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +70,7 @@
       {
         "call_addr": "005a5685",
         "call_type": "direct",
-        "caller": "core_union.cpp_FUN_005a5460",
+        "caller": "core_union.cpp_CUnion_fireShotgun_FUN_005a5460",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -134,68 +130,19 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "rotation_matrix",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "CMatrix3x3f *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect *this_ptr,CVector3f *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((CMuzzleEffect *)(&DAT_01c86730 + iVar1),param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((CMuzzleEffect *)(&DAT_01c86730 + iVar1),param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c86730",
-      "severity": "mild",
-      "text": "((CMuzzleEffect *)(&DAT_01c86730 + iVar1),param_2,param_3);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

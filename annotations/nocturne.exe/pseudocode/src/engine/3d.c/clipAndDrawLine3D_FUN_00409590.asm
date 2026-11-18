@@ -12,12 +12,12 @@
 ;   engine_3d.c_drawLineStrip3D_FUN_00405900 at 00405986
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006af5bc
-;   undefined4 DAT_006af5c4
-;   undefined4 DAT_006af5c8
-;   undefined4 DAT_006af5ec
-;   undefined4 DAT_006af5f4
-;   undefined4 DAT_006af5f8
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_z
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.screen_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.screen_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_z
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.screen_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.screen_y
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine3D_FUN_00401710
@@ -281,20 +281,20 @@ section .text
     CALL engine_prim.c_prepareDepthBuffer_FUN_004f9870 ; 004097f1
         ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_004f9870(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004097f6
-    MOV ECX,dword ptr [0x006af5ec]      ; 004097f9 | DAT_006af5ec
-    MOV EAX,[0x006af5f8]                ; 004097ff | DAT_006af5f8
+    MOV ECX,dword ptr [0x006af5ec]      ; 004097f9 | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_z
+    MOV EAX,[0x006af5f8]                ; 004097ff | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.screen_y
     PUSH ECX                            ; 00409804
     SAR EAX,0x10                        ; 00409805
     PUSH EAX                            ; 00409808
-    MOV EAX,[0x006af5f4]                ; 00409809 | DAT_006af5f4
+    MOV EAX,[0x006af5f4]                ; 00409809 | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.screen_x
     SAR EAX,0x10                        ; 0040980e
     PUSH EAX                            ; 00409811
-    MOV EBX,dword ptr [0x006af5bc]      ; 00409812 | DAT_006af5bc
-    MOV EAX,[0x006af5c8]                ; 00409818 | DAT_006af5c8
+    MOV EBX,dword ptr [0x006af5bc]      ; 00409812 | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_z
+    MOV EAX,[0x006af5c8]                ; 00409818 | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.screen_y
     PUSH EBX                            ; 0040981d
     SAR EAX,0x10                        ; 0040981e
     PUSH EAX                            ; 00409821
-    MOV EAX,[0x006af5c4]                ; 00409822 | DAT_006af5c4
+    MOV EAX,[0x006af5c4]                ; 00409822 | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.screen_x
     SAR EAX,0x10                        ; 00409827
     PUSH EAX                            ; 0040982a
     CALL engine_2d.c_drawLine3D_FUN_00401710 ; 0040982b

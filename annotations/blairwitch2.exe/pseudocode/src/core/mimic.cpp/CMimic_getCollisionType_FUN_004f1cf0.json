@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 54,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 68
+    "total_lines": 69
   },
   "cross_references": [],
   "function": {
@@ -32,21 +31,21 @@
     {
       "addr": "005035c0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
     }
   ],
   "globals": [
     {
       "addr": "005dd9f9",
-      "name": "DAT_005dd9f9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dd9f9",
+      "type": "double",
+      "value": "1.30000000000000"
     },
     {
       "addr": "005dda01",
-      "name": "DAT_005dda01",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005dda01",
+      "type": "float",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -138,20 +137,12 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 68,
         "vtable_addr": "005f9e94"
       }

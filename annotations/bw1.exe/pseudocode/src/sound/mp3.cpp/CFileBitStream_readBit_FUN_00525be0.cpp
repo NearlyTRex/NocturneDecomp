@@ -50,7 +50,7 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_00525be0(CFileBitStream *t
   }
   iVar4 = this_ptr->bits_available + -1;
   bVar1 = this_ptr->buffer[this_ptr->current_byte_index];
-  uVar2 = *(uint *)(&DAT_00620690 + iVar4 * 4);
+  uVar2 = g_MpegBitMaskTableSingleBit[iVar4];
   this_ptr->bits_available = iVar4;
   return (uVar2 & bVar1) >> ((byte)iVar4 & 0x1f);
 }

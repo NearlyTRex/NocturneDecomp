@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   str
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_getCounterValue_FUN_00494d00
@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_0048b934
     MOV ECX,dword ptr [ESP + 0xc]       ; 0048b935
     PUSH ECX                            ; 0048b939
-    MOV EBX,dword ptr [0x005fba60]      ; 0048b93a | DAT_005fba60
+    MOV EBX,dword ptr [0x005fba60]      ; 0048b93a | g_CEventListPtr
     PUSH EBX                            ; 0048b940
     CALL core_event.cpp_CEventList_getCounterValue_FUN_00494d00 ; 0048b941
         ;   XREF to: 00494d00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_getCounterValue_FUN_00494d00(CEventList * this_ptr, char * str)

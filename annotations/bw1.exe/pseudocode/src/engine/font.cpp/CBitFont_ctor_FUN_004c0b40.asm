@@ -7,7 +7,7 @@
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dfont.cpp_FUN_0045e000 at 0045e0c4
+;   core_dfont.cpp_initFonts_FUN_0045e000 at 0045e0c4
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_reset_FUN_004c0b80

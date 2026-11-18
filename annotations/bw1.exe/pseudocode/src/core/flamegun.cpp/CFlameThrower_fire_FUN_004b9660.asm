@@ -7,11 +7,11 @@
 ; CFlameThrower *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006005c0
-;   undefined4 DAT_0061c010
+;   float g_FLOAT_006005c0 = 4
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004b6f80
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b969d
     PUSH EBX                            ; 004b969e
     LEA ESI,[ESP + 0x10]                ; 004b969f
-    CALL core_actor.cpp_FUN_00408b40    ; 004b96a3
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004b96a3
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004b96a8
     PUSH 0x1                            ; 004b96ab
     PUSH 0x3                            ; 004b96ad
@@ -56,7 +56,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 004b96b3
     LEA EDI,[ESP + 0x20]                ; 004b96b7
     PUSH EAX                            ; 004b96bb
-    MOV ECX,dword ptr [0x0061c010]      ; 004b96bc | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 004b96bc | g_CFireEffectPtr
     LEA ESI,[ESP + 0x18]                ; 004b96c2
     PUSH ECX                            ; 004b96c6
     MOVSD ES:EDI,ESI                    ; 004b96c7
@@ -69,7 +69,7 @@ section .text
     TEST ESI,ESI                        ; 004b96d8
     JNZ 0x004b96f2                      ; 004b96da
         ;   XREF to: 004b96f2 (CONDITIONAL_JUMP)  ; LAB_004b96f2
-    FLD float ptr [0x006005c0]          ; 004b96dc | DAT_006005c0
+    FLD float ptr [0x006005c0]          ; 004b96dc | g_FLOAT_006005c0
     FLD1                                ; 004b96e2
     FDIVRP                              ; 004b96e4
     DEC dword ptr [EBX + 0x568]         ; 004b96e6

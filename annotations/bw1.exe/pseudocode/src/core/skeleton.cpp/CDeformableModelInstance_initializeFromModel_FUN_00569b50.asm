@@ -22,7 +22,7 @@
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00566a20 at 00566add
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_00524970
+;   core_motion.cpp_CMotionController_setMotionList_FUN_00524970
 ;   core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_00563c90
 ;   core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_00567450
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00569cc0
@@ -51,8 +51,8 @@ section .text
     PUSH ECX                            ; 00569b73
     MOV EBX,EAX                         ; 00569b74
     MOV EBP,EAX                         ; 00569b76
-    CALL core_motion.cpp_FUN_00524970   ; 00569b78
-        ;   XREF to: 00524970 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524970()
+    CALL core_motion.cpp_CMotionController_setMotionList_FUN_00524970 ; 00569b78
+        ;   XREF to: 00524970 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setMotionList_FUN_00524970(CMotionController * this_ptr, CMotionList * motion_list)
     ADD ESP,0x8                         ; 00569b7d
     MOV EAX,dword ptr [EBX + 0x1de78]   ; 00569b80
     MOV dword ptr [ESP + 0x18],EAX      ; 00569b86

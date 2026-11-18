@@ -8,8 +8,8 @@
 ; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d713e
-;   undefined4 DAT_005d7146
+;   double g_DOUBLE_005d713e = 0.5
+;   double g_DOUBLE_005d7146 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
     SUB ESP,0x18                        ; 00447af1
     MOV EDX,dword ptr [ESP + 0x20]      ; 00447af4
     MOV EAX,ESI                         ; 00447af8
-    FLD double ptr [0x005d713e]         ; 00447afa | DAT_005d713e
+    FLD double ptr [0x005d713e]         ; 00447afa | g_DOUBLE_005d713e
     FLD float ptr [EDX + 0x728]         ; 00447b00
     FMUL ST1                            ; 00447b06
     FLD float ptr [EDX + 0x730]         ; 00447b08
@@ -36,7 +36,7 @@ section .text
     MOV EDI,ESI                         ; 00447b2f
     MOV ESI,ESP                         ; 00447b31
     MOV dword ptr [ESP + 0x4],ECX       ; 00447b33
-    FADD double ptr [0x005d7146]        ; 00447b37 | DAT_005d7146
+    FADD double ptr [0x005d7146]        ; 00447b37 | g_DOUBLE_005d7146
     FXCH ST3                            ; 00447b3d
     FSTP float ptr [ESP + 0xc]          ; 00447b3f
     FXCH ST2                            ; 00447b43

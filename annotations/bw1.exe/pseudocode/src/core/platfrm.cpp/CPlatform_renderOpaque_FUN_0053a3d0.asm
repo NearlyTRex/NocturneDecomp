@@ -7,14 +7,14 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_box.cpp_CBoundingBox3D_render_FUN_00421670
-;   core_box.cpp_FUN_004207b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;
@@ -29,8 +29,8 @@ section .text
     PUSH EBP                            ; 0053a3d3
     SUB ESP,0x60                        ; 0053a3d4
     MOV EBX,dword ptr [ESP + 0x74]      ; 0053a3d7
-    MOV EDX,dword ptr [0x00612560]      ; 0053a3db | DAT_00612560
-    PUSH EDX                            ; 0053a3e1 | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 0053a3db | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 0053a3e1 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0053a3e2
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0053a3e7
@@ -58,8 +58,8 @@ section .text
     CMP dword ptr [EBX + 0x724],0x0     ; 0053a421
     JZ 0x0053a441                       ; 0053a428
         ;   XREF to: 0053a441 (CONDITIONAL_JUMP)  ; LAB_0053a441
-    MOV ESI,dword ptr [0x00612560]      ; 0053a42a | DAT_00612560
-    PUSH ESI                            ; 0053a430 | DAT_01bc120c
+    MOV ESI,dword ptr [0x00612560]      ; 0053a42a | g_CDemonRenderer_PTR_00612560
+    PUSH ESI                            ; 0053a430 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0053a431
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0053a436
@@ -83,8 +83,8 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 0053a46a
     PUSH EAX                            ; 0053a46e
     MOVSD.REP ES:EDI,ESI                ; 0053a46f
-    CALL core_box.cpp_FUN_004207b0      ; 0053a471
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 0053a471
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0053a476
     MOV EBP,EAX                         ; 0053a479
     TEST EAX,EAX                        ; 0053a47b
@@ -93,8 +93,8 @@ section .text
     CMP dword ptr [EBX + 0x50c],0x0     ; 0053a47f
     JZ 0x0053a4f7                       ; 0053a486
         ;   XREF to: 0053a4f7 (CONDITIONAL_JUMP)  ; LAB_0053a4f7
-    MOV EAX,[0x00612560]                ; 0053a488 | DAT_00612560
-    PUSH EAX                            ; 0053a48d | DAT_01bc120c
+    MOV EAX,[0x00612560]                ; 0053a488 | g_CDemonRenderer_PTR_00612560
+    PUSH EAX                            ; 0053a48d | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0053a48e
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0053a493
@@ -132,9 +132,9 @@ section .text
         ;   Label: LAB_0053a4da
     JMP 0x0053a4d2                      ; 0053a4dc
         ;   XREF to: 0053a4d2 (UNCONDITIONAL_JUMP)  ; LAB_0053a4d2
-    MOV EDI,dword ptr [0x00612560]      ; 0053a4de | DAT_00612560
+    MOV EDI,dword ptr [0x00612560]      ; 0053a4de | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_0053a4de
-    PUSH EDI                            ; 0053a4e4 | DAT_01bc120c
+    PUSH EDI                            ; 0053a4e4 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0053a4e5
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0053a4ea

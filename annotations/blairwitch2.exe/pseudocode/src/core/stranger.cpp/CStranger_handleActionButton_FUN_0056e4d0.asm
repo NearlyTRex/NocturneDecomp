@@ -14,25 +14,25 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0056e4b0 = 0056e559
-;   undefined4 s_eDoorMoveNone_returned_b_005ebdac+1
+;   TerminatedCString s_eDoorMoveNone_returned_b_005ebdad
 ;   TerminatedCString s_eDoorMoveNone_returned_b_005ebdea
 ;   TerminatedCString s_CBodyPart_005ebe27
 ;   TerminatedCString s_CBodyPart_005ebe32
-;   undefined4 DAT_005ebe3d
-;   undefined4 DAT_005ebe45
+;   double g_DOUBLE_005ebe3d = 0.999900000000000
+;   double g_DOUBLE_005ebe45 = 0.990000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004cf890
+;   core_hero.cpp_CHero_tryInteract_FUN_004cec50
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030
+;   core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0
+;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004cf4e0
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
-;   core_hero.cpp_FUN_004cec50
-;   core_hero.cpp_FUN_004cf030
-;   core_hero.cpp_FUN_004cf2b0
-;   core_hero.cpp_FUN_004cf4e0
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005038a0
 ;   core_stranger.cpp_CStranger_tryClimbLadder_FUN_0056a240
 ;   core_stranger.cpp_CStranger_tryDescendLadder_FUN_0056a780
 ;   core_stranger.cpp_CStranger_tryPickupObject_FUN_00569620
@@ -76,27 +76,27 @@ section .text
     PUSH EAX                            ; 0056e509
     LEA ESI,[EBX + 0x2b4]               ; 0056e50a
     PUSH ESI                            ; 0056e510
-    CALL core_motion.cpp_FUN_005038a0   ; 0056e511
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 0056e511
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 0056e516
     ADD ESP,0x8                         ; 0056e51a
     PUSH 0x1                            ; 0056e51d
     PUSH ESI                            ; 0056e51f
-    CALL core_motion.cpp_FUN_005038a0   ; 0056e520
-        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005038a0()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0 ; 0056e520
+        ;   XREF to: 005038a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 0056e525
     FLD float ptr [ESP + 0xc]           ; 0056e529
     ADD ESP,0x8                         ; 0056e52d
     FADD float ptr [ESP]                ; 0056e530
-    FCOMP double ptr [0x005ebe3d]       ; 0056e533 | DAT_005ebe3d
+    FCOMP double ptr [0x005ebe3d]       ; 0056e533 | g_DOUBLE_005ebe3d
     FNSTSW AX                           ; 0056e539
     SAHF                                ; 0056e53b
     JBE 0x0056e578                      ; 0056e53c
         ;   XREF to: 0056e578 (CONDITIONAL_JUMP)  ; LAB_0056e578
     PUSH 0x0                            ; 0056e53e
     PUSH EBX                            ; 0056e540
-    CALL core_hero.cpp_FUN_004cf030     ; 0056e541
-        ;   XREF to: 004cf030 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf030()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030 ; 0056e541
+        ;   XREF to: 004cf030 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 0056e546
     CMP EAX,0x5                         ; 0056e549
     JA 0x0056e658                       ; 0056e54c
@@ -142,7 +142,7 @@ section .text
     RET                                 ; 0056e5b4
     PUSH EDI                            ; 0056e5b5
         ;   Label: LAB_0056e5b5
-    PUSH 0x5ebdad                       ; 0056e5b6 | s_eDoorMoveNone_returned_b_005ebdac+1
+    PUSH 0x5ebdad                       ; 0056e5b6 | = "eDoorMoveNone returned by checkDoorOp..."
     MOV EAX,[0x006138e0]                ; 0056e5bb | g_CEditorToolsPtr
     PUSH EAX                            ; 0056e5c0
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 0056e5c1
@@ -225,8 +225,8 @@ section .text
     RET                                 ; 0056e694
     PUSH EBX                            ; 0056e695
         ;   Label: LAB_0056e695
-    CALL core_hero.cpp_FUN_004cec50     ; 0056e696
-        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cec50()
+    CALL core_hero.cpp_CHero_tryInteract_FUN_004cec50 ; 0056e696
+        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryInteract_FUN_004cec50(CHero * this_ptr)
     ADD ESP,0x4                         ; 0056e69b
     TEST EAX,EAX                        ; 0056e69e
     JNZ 0x0056e4ec                      ; 0056e6a0
@@ -246,8 +246,8 @@ section .text
     RET                                 ; 0056e6c3
     PUSH EBX                            ; 0056e6c4
         ;   Label: LAB_0056e6c4
-    CALL core_hero.cpp_FUN_004cf4e0     ; 0056e6c5
-        ;   XREF to: 004cf4e0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf4e0()
+    CALL core_hero.cpp_CHero_tryPushNearbyBox_FUN_004cf4e0 ; 0056e6c5
+        ;   XREF to: 004cf4e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPushNearbyBox_FUN_004cf4e0(CHero * this_ptr)
     ADD ESP,0x4                         ; 0056e6ca
     LEA ESI,[EBX + 0x2b4]               ; 0056e6cd
     TEST EAX,EAX                        ; 0056e6d3
@@ -284,14 +284,14 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0056e70d
     FLD float ptr [ESP + 0xc]           ; 0056e711
     ADD ESP,0x8                         ; 0056e715
-    FCOMP double ptr [0x005ebe45]       ; 0056e718 | DAT_005ebe45
+    FCOMP double ptr [0x005ebe45]       ; 0056e718 | g_DOUBLE_005ebe45
     FNSTSW AX                           ; 0056e71e
     SAHF                                ; 0056e720
     JBE 0x0056e6e1                      ; 0056e721
         ;   XREF to: 0056e6e1 (CONDITIONAL_JUMP)  ; LAB_0056e6e1
     PUSH EBX                            ; 0056e723
-    CALL core_hero.cpp_FUN_004cf2b0     ; 0056e724
-        ;   XREF to: 004cf2b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004cf2b0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0 ; 0056e724
+        ;   XREF to: 004cf2b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 0056e729
     TEST EAX,EAX                        ; 0056e72c
     JNZ 0x0056e74a                      ; 0056e72e

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004ba5ee) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,float delta_time)
 
@@ -163,7 +162,7 @@ LAB_004ba3fc:
                   pCVar11 = (CCharacter *)
                             core_actor_cpp_castToClassHash_FUN_0040d890
                                       ((this_ptr->base).base.carry_hands[1].carry_actor,
-                                       g_CWeaponActorType_02ddf970.name_hash);
+                                       g_CWeaponClassInfo.name_hash);
                   if (pCVar11 != (CCharacter *)0x0) {
                     (*(((pCVar11->base).vtable._uc)->_uc).isGrabbable)(pCVar11,in_stack_ffffff68);
                   }
@@ -291,8 +290,8 @@ LAB_004ba215:
 LAB_004ba228:
   core_inv_cpp_CInventory_updateInventory_FUN_004c1850(&(this_ptr->base).inventory);
   pCVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     ((this_ptr->base).base.carry_hands[1].carry_actor,
-                      g_CWeaponActorType_02ddf970.name_hash);
+                     ((this_ptr->base).base.carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash)
+  ;
   if (pCVar9 != (CDemonActor *)0x0) {
     (*((pCVar9->vtable)._ub)->process)(pCVar9,delta_time);
     pCVar9[4].location.position.x = 1.4013e-43;
@@ -304,7 +303,7 @@ LAB_004ba228:
   if (EVar10 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar16 = this_ptr->head_look_blend_weight;
-    iVar6 = _DAT_01cae288;
+    iVar6 = g_IcePickIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_0055d610
               (&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff78);
     auStack_78._0_4_ = in_stack_ffffff78;

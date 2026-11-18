@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(CGame *this_ptr,SPlayerInput *player_control)
 
 {
@@ -22,10 +20,10 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(CGame *this_p
   if (this_ptr->screen_clear_condition == 0) {
     x = g_WindowWidth / 2;
     y = g_WindowHeight / 2;
-    iVar1 = _DAT_01bd1d8c - x;
-    iVar2 = _DAT_01bd1d90 - y;
+    iVar1 = g_MouseX - x;
+    iVar2 = g_MouseY - y;
     wincore_winrun_cpp_setCursorPosition_FUN_00558d60(x,y);
-    if (g_CDemonSetPtr->selected_camera_index == _DAT_01c7841c) {
+    if (g_CDemonSetPtr->selected_camera_index == g_StoredCameraValue) {
       local_3c = (float)this_ptr->x_mouse_sensitivity * (float)1.52587890625e-05 *
                  (float)0.75 * ((float)iVar1 / (float)x);
       local_40 = (float)this_ptr->y_mouse_sensitivity * (float)1.52587890625e-05 *
@@ -45,7 +43,7 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(CGame *this_p
       if (this_ptr->invert_mouse_y_axis != 0) {
         local_40 = -local_40;
       }
-      if ((&DAT_01c02598)[this_ptr->key_strafe] == '\0') {
+      if (g_KeyboardState[this_ptr->key_strafe] == '\0') {
         if (ABS(player_control->turn_speed) < ABS(local_3c)) {
           player_control->turn_speed = local_3c;
         }

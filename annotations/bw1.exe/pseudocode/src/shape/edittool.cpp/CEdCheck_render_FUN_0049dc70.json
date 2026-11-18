@@ -1,0 +1,251 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 142,
+    "complexity_score": 131,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_truncation",
+      "unaffected_reg"
+    ],
+    "total_lines": 193
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0049dc70",
+    "address_range": [
+      [
+        "0049dc70",
+        "0049dd9f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdCheck_render_FUN_0049dc70",
+    "signature": "void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_0049dc70(CEdCheck *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402ca0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clipLineGlobal_FUN_00402ca0"
+    },
+    {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0"
+    },
+    {
+      "addr": "004c3f50",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50"
+    },
+    {
+      "addr": "00517d50",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_00517d50"
+    },
+    {
+      "addr": "0049dc20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_0049dc20"
+    },
+    {
+      "addr": "0049dbe0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0"
+    },
+    {
+      "addr": "0049dc50",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_0049dc50"
+    },
+    {
+      "addr": "0049c500",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_0049c500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c3eb50",
+      "name": "g_CBitFont_PTR_01c3eb50",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01c3f544",
+      "name": "g_INT_01c3f544",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f8",
+      "name": "g_UCHAR_ARRAY_01c4e9f8",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f9",
+      "name": "g_UCHAR_ARRAY_01c4e9f8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9fa",
+      "name": "g_UCHAR_ARRAY_01c4e9f8+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f020",
+      "name": "g_INT_01c4f020",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.743801652892562,
+    "instruction_count": 121,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 22,
+      "BRANCH": 2,
+      "CALL": 10,
+      "CBRANCH": 3,
+      "COPY": 88,
+      "INT_ADD": 43,
+      "INT_AND": 132,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 88,
+      "INT_LEFT": 4,
+      "INT_LESS": 8,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 20,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 46,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 54,
+      "INT_XOR": 5,
+      "LOAD": 21,
+      "POPCOUNT": 42,
+      "RETURN": 1,
+      "STORE": 43
+    },
+    "pcode_op_count": 695
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00485610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00486810",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a6c00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7967
+    },
+    "nocturne.exe": {
+      "addr": "00477390",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7967
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdCheck *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(left,iVar1,iVar2,unaff_EBX,this_ptr->border_style_flag);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(left + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,left + 1,unaff_EBX + -2);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `text_string` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)text_string",
+      "severity": "moderate",
+      "text": "(g_CBitFont_PTR_01c3eb50,text,iVar4 + iVar2,iVar3,color_mode,(int)text_string);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

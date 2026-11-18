@@ -11,21 +11,21 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[23]:
-;   cockpit_pkbmpset.cpp_FUN_005177e0 at 0051780e
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0 at 0051780e
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930 at 0043eb4c
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004478d0 at 0044790b
-;   core_event.cpp_FUN_00489670 at 0048a8c0
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048a8c0
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4225
-;   core_game.cpp_FUN_004bcbf0 at 004bcc37
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0 at 004bcc37
 ;   core_script.cpp_CScript_dbLoad_FUN_00529c10 at 00529c33
+;   core_script.cpp_CScript_loadScript_FUN_00521cf0 at 00521d17
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00523f39
-;   core_script.cpp_FUN_00521cf0 at 00521d17
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7d8c
 ;   ... and 13 more
 ;
 ; Called Functions:
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910
 ;   engine_dosio.cpp_findFile_FUN_00460980
-;   engine_dosio.cpp_FUN_00460910
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH ECX                            ; 00460ab5
     LEA EAX,[ESP + 0x8]                 ; 00460ab6
     PUSH EAX                            ; 00460aba
-    CALL engine_dosio.cpp_FUN_00460910  ; 00460abb
-        ;   XREF to: 00460910 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00460910()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910 ; 00460abb
+        ;   XREF to: 00460910 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 00460ac0
     MOV EAX,ESP                         ; 00460ac3
     PUSH EAX                            ; 00460ac5

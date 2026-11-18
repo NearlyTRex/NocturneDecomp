@@ -7,7 +7,7 @@
 ; CBaalSkel *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_FUN_00419a90 at 00419aa3
+;   core_boneguy.cpp_factoryFuncBaalSkel_FUN_00419a90 at 00419aa3
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400

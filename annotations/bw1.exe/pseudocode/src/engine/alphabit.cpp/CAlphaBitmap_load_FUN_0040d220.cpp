@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap *this_ptr,char *filename,int width,int height)
 
 {
@@ -22,29 +20,30 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap *th
   
   engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d0e0(this_ptr,width,height);
   _sprintf(local_114,"%s.raw");
-  local_14 = engine_dosio_cpp_FUN_00479180(&DAT_005d2fa5,local_114,&DAT_005d2fa2);
+  local_14 = engine_dosio_cpp_getFile_FUN_00479180("art",local_114,"rb");
   if (local_14 == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\alphabit.cpp";
-    _DAT_01d1d404 = 0xe1;
-    core_main_c_FUN_005030e0("CAlphaBitmap::load - Can't open %s",local_114);
+    g_CHAR_PTR_01d1d400 = "..\\engine\\alphabit.cpp";
+    g_INT_01d1d404 = 0xe1;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CAlphaBitmap::load - Can't open %s");
   }
   _fread(this_ptr->raw,width,height,local_14);
   _fclose(local_14);
   _sprintf(local_114,"%s.act");
-  local_14 = engine_dosio_cpp_FUN_00479180(&DAT_005d2fed,local_114,&DAT_005d2fea);
+  local_14 = engine_dosio_cpp_getFile_FUN_00479180("art",local_114,"rb");
   if (local_14 == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\alphabit.cpp";
-    _DAT_01d1d404 = 0xe7;
-    core_main_c_FUN_005030e0("CAlphaBitmap::load - Can't open %s",local_114);
+    g_CHAR_PTR_01d1d400 = "..\\engine\\alphabit.cpp";
+    g_INT_01d1d404 = 0xe7;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CAlphaBitmap::load - Can't open %s");
   }
   iVar4 = 0;
   do {
     iVar1 = _fgetc(local_14);
     iVar2 = _fgetc(local_14);
     uVar3 = _fgetc(local_14);
-    if (DAT_0061b4a0 == 0x20) {
-      uVar5 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);
-      uVar3 = uVar3 << (DAT_01c4e9ec & 0x1f);
+    if (g_INT_0061b4a0 == 0x20) {
+      uVar5 = iVar1 << (g_RedBitPosition.bytes[0] & 0x1f) |
+              iVar2 << (g_GreenBitPosition.bytes[0] & 0x1f);
+      uVar3 = uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f);
     }
     else {
       uVar5 = iVar1 << 0x10 | iVar2 << 8;
@@ -55,7 +54,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap *th
   } while (iVar1 != 0x400);
   _fclose(local_14);
   _sprintf(local_114,"%s.opa");
-  file = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);
+  file = engine_dosio_cpp_getFile_FUN_00479180("art",local_114,"rb");
   if (file == (_FILE *)0x0) {
     iVar1 = width * height;
     iVar4 = 0;

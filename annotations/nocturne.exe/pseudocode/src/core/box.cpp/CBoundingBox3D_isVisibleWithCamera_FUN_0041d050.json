@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 187,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 157,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 507
   },
@@ -70,13 +69,13 @@
   "globals": [
     {
       "addr": "0059aa80",
-      "name": "DAT_0059aa80",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BoundingBoxWorldToIntegerScale",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ae700",
-      "name": "PTR_DAT_005ae700",
+      "name": "PTR_g_CDemonRenderer_01b4d738_005ae700",
       "type": "void*",
       "value": "01b4d738"
     },
@@ -94,8 +93,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -160,6 +159,24 @@
     "pcode_op_count": 1311
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041aa20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.466
+    },
+    "bw1.exe": {
+      "addr": "00420990",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.466
+    },
+    "bw3.exe": {
+      "addr": "0041dcd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.466
+    },
     "nocedit.exe": {
       "addr": "00420680",
       "by": "name",
@@ -339,16 +356,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 38,
+      "line": 37,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "if ((*(byte *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",

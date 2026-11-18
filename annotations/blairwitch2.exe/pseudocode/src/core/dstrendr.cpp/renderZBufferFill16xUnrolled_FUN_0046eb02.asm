@@ -8,11 +8,11 @@
 ;   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_004697a0 at 00469881
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2b64c
-;   undefined4 DAT_01c35214
-;   undefined4 DAT_01c35e60
-;   undefined4 DAT_01c35e70
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
+;   uint[256] g_Hardware32BitPalette
+;   int g_INT_01c35e60
+;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     SHR EAX,0x10                        ; 0046eb12
         ;   Label: LAB_0046eb12
     SHR ECX,0x10                        ; 0046eb15
-    MOV EBP,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0046eb18 | DAT_01c2b64c
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046eb1f | DAT_01c2a38c
+    MOV EBP,dword ptr [EBX*0x4 + 0x1c2b64c] ; 0046eb18 | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046eb1f | g_ScreenBufferArray
     SUB ECX,EAX                         ; 0046eb26
     JLE 0x0046ec54                      ; 0046eb28
         ;   XREF to: 0046ec54 (CONDITIONAL_JUMP)  ; LAB_0046ec54
@@ -43,14 +43,14 @@ section .text
     INC ECX                             ; 0046eb35
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046eb36
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046eb39
-    IMUL dword ptr [ECX*0x4 + 0x1c35e70] ; 0046eb3c | DAT_01c35e70
+    IMUL dword ptr [ECX*0x4 + 0x1c35e70] ; 0046eb3c | g_ReciprocalLookupTable
     MOV EDI,EBX                         ; 0046eb43
     MOV EBX,EBP                         ; 0046eb45
     DEC ECX                             ; 0046eb47
     MOV ESI,dword ptr [ESI + 0x28]      ; 0046eb48
     XOR EAX,EAX                         ; 0046eb4b
-    MOV AL,[0x01c35e60]                 ; 0046eb4d | DAT_01c35e60
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c35214] ; 0046eb52 | DAT_01c35214
+    MOV AL,[0x01c35e60]                 ; 0046eb4d | g_INT_01c35e60
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c35214] ; 0046eb52 | g_Hardware32BitPalette
     SUB ECX,0x4                         ; 0046eb59
         ;   Label: LAB_0046eb59
     JL 0x0046ec2e                       ; 0046eb5c

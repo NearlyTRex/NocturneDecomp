@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -61,7 +61,7 @@ section .text
     JZ 0x00455ddf                       ; 00455d9d
         ;   XREF to: 00455ddf (CONDITIONAL_JUMP)  ; LAB_00455ddf
     MOV EDI,dword ptr [0x005ae704]      ; 00455d9f | g_CDemonRenderer_PTR_005ae704
-    PUSH EDI                            ; 00455da5 | DAT_01b4d738
+    PUSH EDI                            ; 00455da5 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00455da6
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00455dab

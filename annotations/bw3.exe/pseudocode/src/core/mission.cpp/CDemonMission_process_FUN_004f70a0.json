@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 112,
+    "complexity_score": 114,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 54,
     "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
+      "unrolled_memcpy",
       "unrolled_memset",
-      "warning_overlapping_globals"
+      "warning_type_propagation"
     ],
-    "total_lines": 191
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -39,19 +39,19 @@
   },
   "function_calls": [
     {
-      "addr": "004f6ca0",
+      "addr": "004f6f80",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_004f6ca0"
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80"
     },
     {
       "addr": "004f6de0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6de0"
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0"
     },
     {
-      "addr": "004f6f80",
+      "addr": "004f6ca0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6f80"
+      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_004f6ca0"
     },
     {
       "addr": "00537520",
@@ -69,6 +69,11 @@
       "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d2e0"
     },
     {
+      "addr": "0040dbe0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0"
+    },
+    {
       "addr": "0040d300",
       "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d300"
@@ -84,14 +89,9 @@
       "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460"
     },
     {
-      "addr": "0040dbe0",
-      "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_0040dbe0"
-    },
-    {
       "addr": "00565820",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00565820"
+      "name": "engine_special.cpp_lockFrame_FUN_00565820"
     },
     {
       "addr": "00565870",
@@ -119,14 +119,14 @@
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d88308",
-      "name": "DAT_01d88308",
-      "type": "undefined4",
+      "name": "g_CHAR_01d88308",
+      "type": "char",
       "value": null
     },
     {
@@ -260,35 +260,35 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01d88308",
-      "severity": "mild",
-      "text": "engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(&local_24,&DAT_01d88308,0x280,0x1e0);",
-      "type": "undefined_data"
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 28,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar1->base).base.location.position.x = (this_ptr->pending_teleport).position.x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 51,
+      "line": 53,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_teleport).position.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 19,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
       "severity": "moderate",
-      "text": "pCVar1 = (CDemonMission *)&pCVar1->num_sets;",
+      "text": "pCVar2 = (CDemonMission *)&pCVar2->num_sets;",
       "type": "shadow_pointer_walk"
     }
   ]

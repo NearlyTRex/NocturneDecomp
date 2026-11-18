@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   position
 ; EBloodType       Stack[0xc]:4   blood_type
 ;
-; XREF[21]:
+; XREF[22]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411990
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413340
 ;   core_bird.cpp_CBird_process_FUN_00415340 at 00415435
@@ -19,7 +19,7 @@
 ;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 00476ce4
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047c2d9
 ;   core_drone.cpp_CDrone_process_FUN_00485d70 at 00486246
-;   ... and 11 more
+;   ... and 12 more
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodPool_init_FUN_004e5570

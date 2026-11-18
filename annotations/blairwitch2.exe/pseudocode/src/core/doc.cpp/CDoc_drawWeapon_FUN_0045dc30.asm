@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_doc_cpp_CDoc_drawWeapon_FUN_0045dc30(CDoc *this_ptr,int param_2)
+; void __cdecl core_doc_cpp_CDoc_drawWeapon_FUN_0045dc30(CDoc *this_ptr,int guns_drawn)
 ;
 ; Parameters:
 ; CDoc *           Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   guns_drawn
 ;
 ; *****************************************************************************
 

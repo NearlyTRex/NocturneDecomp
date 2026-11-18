@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
+;   crt_memory.c___vec_new_FUN_005ba29a at 005ba2aa
 ;   crt_unknown.c_FUN_005ba274 at 005ba291
-;   crt_unknown.c_FUN_005ba29a at 005ba2aa
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005b7f5f

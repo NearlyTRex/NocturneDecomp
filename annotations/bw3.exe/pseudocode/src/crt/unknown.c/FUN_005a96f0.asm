@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * crt_unknown_c_FUN_005a96f0(int *param_1)
+; Heap ** crt_unknown_c_FUN_005a96f0(Heap *param_1)
 ;
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_005a9768 at 005a97e0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006075c4
+;   Heap* g_MainHeap = 00000000
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 005a96f0
         ;   Label: crt_unknown.c_FUN_005a96f0
     MOV EDX,dword ptr [ESP + 0x8]       ; 005a96f1
-    MOV EAX,[0x006075c4]                ; 005a96f5 | DAT_006075c4
+    MOV EAX,[0x006075c4]                ; 005a96f5 | g_MainHeap
     XOR EBX,EBX                         ; 005a96fa
     TEST EAX,EAX                        ; 005a96fc
     JZ 0x005a970d                       ; 005a96fe
@@ -40,7 +40,7 @@ section .text
     MOV dword ptr [EBX + 0x8],EDX       ; 005a9717
     JMP 0x005a9722                      ; 005a971a
         ;   XREF to: 005a9722 (UNCONDITIONAL_JUMP)  ; LAB_005a9722
-    MOV dword ptr [0x006075c4],EDX      ; 005a971c | DAT_006075c4
+    MOV dword ptr [0x006075c4],EDX      ; 005a971c | g_MainHeap
         ;   Label: LAB_005a971c
     TEST EAX,EAX                        ; 005a9722
         ;   Label: LAB_005a9722

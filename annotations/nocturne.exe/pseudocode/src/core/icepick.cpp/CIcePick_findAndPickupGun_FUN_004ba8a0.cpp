@@ -35,7 +35,7 @@ int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(CIcePick *th
     pCVar3 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
     if (pCVar3 == (CDemonActor *)0x0) {
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (this_ptr_00,g_CTommyGunActorType_02dd0fd0.name_hash);
+                         (this_ptr_00,g_CTommyGunClassInfo.name_hash);
       if (pCVar3 != (CDemonActor *)0x0) {
         fVar1 = (this_ptr_00->location).position.x - local_34.x;
         fVar2 = (this_ptr_00->location).position.z - local_34.z;

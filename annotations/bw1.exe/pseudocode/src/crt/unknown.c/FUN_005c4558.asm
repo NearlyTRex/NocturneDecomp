@@ -9,6 +9,7 @@
 ;   crt_unknown.c_FUN_005ccccc at 005ccd2d
 ;
 ; Called Functions:
+;   crt_unknown.c_FUN_005c44f0
 ;   crt_unknown.c_FUN_005c4867
 ;   crt_unknown.c_FUN_005ca7dc
 ;
@@ -60,10 +61,161 @@ section .text
     ADD ESP,0x4                         ; 005c45da
     CMP EAX,0x4                         ; 005c45dd
     JA 0x005c4760                       ; 005c45e0
-        ;   XREF to: 005c4760 (CONDITIONAL_JUMP)  ; LAB_005c4760
-    JMP dword ptr CS:[EAX*0x4 + 0x5c4544] ; 005c45e6
+        ;   XREF to: 005c4760 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr CS:[EAX*0x4 + 0x5c4544] ; 005c45e6 | caseD_4 | caseD_1 | caseD_2
+        ;   Label: switchD
+    XOR ECX,ECX                         ; 005c45ee
+        ;   Label: caseD_0
+    MOV dword ptr [ESI + 0x14],0x0      ; 005c45f0
+    MOV dword ptr [EBP + -0x20],ECX     ; 005c45f7
+    JMP 0x005c4760                      ; 005c45fa
+        ;   XREF to: 005c4760 (UNCONDITIONAL_JUMP)  ; default
+    MOV EAX,dword ptr [EBP + 0x10]      ; 005c45ff
+        ;   Label: caseD_2
+    MOV byte ptr [EAX],0x6e             ; 005c4602
+    MOV byte ptr [EAX + 0x1],0x61       ; 005c4605
+    MOV byte ptr [EAX + 0x2],0x6e       ; 005c4609
+    MOV byte ptr [EAX + 0x3],0x0        ; 005c460d
+        ;   Label: LAB_005c460d
+    MOV dword ptr [ESI + 0x1c],0x3      ; 005c4611
+    JMP 0x005c49ec                      ; 005c4618
+        ;   XREF to: 005c49ec (UNCONDITIONAL_JUMP)  ; LAB_005c49ec
+    MOV EAX,dword ptr [EBP + 0x10]      ; 005c461d
+        ;   Label: caseD_3
+    MOV byte ptr [EAX],0x69             ; 005c4620
+    MOV byte ptr [EAX + 0x1],0x6e       ; 005c4623
+    MOV byte ptr [EAX + 0x2],0x66       ; 005c4627
+    JMP 0x005c460d                      ; 005c462b
+        ;   XREF to: 005c460d (UNCONDITIONAL_JUMP)  ; LAB_005c460d
+    XOR EAX,EAX                         ; 005c462d
+        ;   Label: caseD_1
+    MOV AX,word ptr [EBP + -0x40]       ; 005c462f
+    SUB EAX,0x3ffe                      ; 005c4633
+    MOV dword ptr [EBP + -0x20],EAX     ; 005c4638
+    IMUL EDX,EAX,0x7597                 ; 005c463b
+    MOV EBX,0x186a0                     ; 005c4641
+    MOV EAX,EDX                         ; 005c4646
+    SAR EDX,0x1f                        ; 005c4648
+    IDIV EBX                            ; 005c464b
+    MOV dword ptr [EBP + -0x20],EAX     ; 005c464d
+    LEA ECX,[EAX + -0x4]                ; 005c4650
+    MOV dword ptr [EBP + -0x20],ECX     ; 005c4653
+    TEST ECX,ECX                        ; 005c4656
+    JZ 0x005c4760                       ; 005c4658
+        ;   XREF to: 005c4760 (CONDITIONAL_JUMP)  ; default
+    JGE 0x005c4681                      ; 005c465e
+        ;   XREF to: 005c4681 (CONDITIONAL_JUMP)  ; LAB_005c4681
+    MOV EAX,ECX                         ; 005c4660
+    NEG EAX                             ; 005c4662
+    ADD EAX,0x3                         ; 005c4664
+    AND AL,0xfc                         ; 005c4667
+    MOV EBX,EAX                         ; 005c4669
+    NEG EBX                             ; 005c466b
+    MOV dword ptr [EBP + -0x20],EAX     ; 005c466d
+    MOV EAX,EBX                         ; 005c4670
+    NEG EAX                             ; 005c4672
+    PUSH EAX                            ; 005c4674
+    LEA EAX,[EBP + -0x48]               ; 005c4675
+    PUSH EAX                            ; 005c4678
+    MOV dword ptr [EBP + -0x20],EBX     ; 005c4679
+    JMP 0x005c4758                      ; 005c467c
+        ;   XREF to: 005c4758 (UNCONDITIONAL_JUMP)  ; LAB_005c4758
+    MOV EDX,dword ptr [EBP + -0x40]     ; 005c4681
+        ;   Label: LAB_005c4681
+    CMP DX,0x4019                       ; 005c4684
+    JC 0x005c4696                       ; 005c4689
+        ;   XREF to: 005c4696 (CONDITIONAL_JUMP)  ; LAB_005c4696
+    JNZ 0x005c46a0                      ; 005c468b
+        ;   XREF to: 005c46a0 (CONDITIONAL_JUMP)  ; LAB_005c46a0
+    CMP dword ptr [EBP + -0x44],0xbebc2000 ; 005c468d
+    JNC 0x005c46a0                      ; 005c4694
+        ;   XREF to: 005c46a0 (CONDITIONAL_JUMP)  ; LAB_005c46a0
+    XOR EDX,EDX                         ; 005c4696
+        ;   Label: LAB_005c4696
+    MOV dword ptr [EBP + -0x20],EDX     ; 005c4698
+    JMP 0x005c4760                      ; 005c469b
+        ;   XREF to: 005c4760 (UNCONDITIONAL_JUMP)  ; default
+    MOV ECX,dword ptr [EBP + -0x40]     ; 005c46a0
+        ;   Label: LAB_005c46a0
+    CMP CX,0x4034                       ; 005c46a3
+    JC 0x005c46ce                       ; 005c46a8
+        ;   XREF to: 005c46ce (CONDITIONAL_JUMP)  ; LAB_005c46ce
+    JNZ 0x005c474a                      ; 005c46aa
+        ;   XREF to: 005c474a (CONDITIONAL_JUMP)  ; LAB_005c474a
+    MOV ECX,dword ptr [EBP + -0x44]     ; 005c46b0
+    CMP ECX,0x8e1bc9bf                  ; 005c46b3
+    JC 0x005c46ce                       ; 005c46b9
+        ;   XREF to: 005c46ce (CONDITIONAL_JUMP)  ; LAB_005c46ce
+    JNZ 0x005c474a                      ; 005c46bb
+        ;   XREF to: 005c474a (CONDITIONAL_JUMP)  ; LAB_005c474a
+    CMP dword ptr [EBP + -0x48],0x4000000 ; 005c46c1
+    JNC 0x005c474a                      ; 005c46c8
+        ;   XREF to: 005c474a (CONDITIONAL_JUMP)  ; LAB_005c474a
+    MOV EDX,0x4019                      ; 005c46ce
+        ;   Label: LAB_005c46ce
+    MOV EBX,0xbebc2000                  ; 005c46d3
+    LEA EAX,[EBP + -0x48]               ; 005c46d8
+    XOR ECX,ECX                         ; 005c46db
+    MOV word ptr [EBP + -0x34],DX       ; 005c46dd
+    MOV dword ptr [EBP + -0x38],EBX     ; 005c46e1
+    LEA EBX,[EBP + -0x30]               ; 005c46e4
+    LEA EDX,[EBP + -0x3c]               ; 005c46e7
+    MOV dword ptr [EBP + -0x3c],ECX     ; 005c46ea
+    FLD extended double ptr [EAX]       ; 005c46ed
+    FLD extended double ptr [EDX]       ; 005c46ef
+    FDIVP                               ; 005c46f1
+    FSTP extended double ptr [EBX]      ; 005c46f3
+    LEA EAX,[EBP + -0x30]               ; 005c46f5
+    LEA EBX,[EBP + -0x3c]               ; 005c46f8
+    FLD extended double ptr [EAX]       ; 005c46fb
+    PUSH EAX                            ; 005c46fd
+    PUSH EAX                            ; 005c46fe
+    FSTCW word ptr [ESP]                ; 005c46ff
+    POP EAX                             ; 005c4703
+    PUSH EAX                            ; 005c4704
+    OR AH,0xc                           ; 005c4705
+    PUSH EAX                            ; 005c4708
+    FLDCW word ptr [ESP]                ; 005c4709
+    POP EAX                             ; 005c470c
+    FISTP dword ptr [ESP + 0x4]         ; 005c470d
+    FLDCW word ptr [ESP]                ; 005c4711
+    POP EAX                             ; 005c4714
+    POP EAX                             ; 005c4715
+    LEA EDX,[EBP + -0x30]               ; 005c4716
+    MOV EDI,EAX                         ; 005c4719
+    PUSH EAX                            ; 005c471b
+    FILD dword ptr [ESP]                ; 005c471c
+    POP EAX                             ; 005c471f
+    FSTP extended double ptr [EDX]      ; 005c4720
+    LEA EDX,[EBP + -0x3c]               ; 005c4722
+    LEA EAX,[EBP + -0x30]               ; 005c4725
+    FLD extended double ptr [EAX]       ; 005c4728
+    FLD extended double ptr [EDX]       ; 005c472a
+    FMULP                               ; 005c472c
+    FSTP extended double ptr [EBX]      ; 005c472e
+    LEA EBX,[EBP + -0x48]               ; 005c4730
+    LEA EDX,[EBP + -0x3c]               ; 005c4733
+    LEA EAX,[EBP + -0x48]               ; 005c4736
+    FLD extended double ptr [EAX]       ; 005c4739
+    FLD extended double ptr [EDX]       ; 005c473b
+    FSUBP                               ; 005c473d
+    FSTP extended double ptr [EBX]      ; 005c473f
+    MOV dword ptr [EBP + -0x20],0x8     ; 005c4741
+    JMP 0x005c4760                      ; 005c4748
+        ;   XREF to: 005c4760 (UNCONDITIONAL_JUMP)  ; default
+    AND byte ptr [EBP + -0x20],0xfc     ; 005c474a
+        ;   Label: LAB_005c474a
+    MOV EAX,dword ptr [EBP + -0x20]     ; 005c474e
+    NEG EAX                             ; 005c4751
+    PUSH EAX                            ; 005c4753
+    LEA EAX,[EBP + -0x48]               ; 005c4754
+    PUSH EAX                            ; 005c4757
+    CALL crt_unknown.c_FUN_005c44f0     ; 005c4758
+        ;   XREF to: 005c44f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c44f0()
+        ;   Label: LAB_005c4758
+    ADD ESP,0x8                         ; 005c475d
     TEST byte ptr [ESI + 0x8],0x2       ; 005c4760
-        ;   Label: LAB_005c4760
+        ;   Label: default
     JZ 0x005c4782                       ; 005c4764
         ;   XREF to: 005c4782 (CONDITIONAL_JUMP)  ; LAB_005c4782
     MOV EDX,dword ptr [EBP + -0x20]     ; 005c4766

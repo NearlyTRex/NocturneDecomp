@@ -37,9 +37,9 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a3d7
 ;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 004113bf
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 0042684d
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 00430227
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430ec1
 ;   core_charactr.cpp_CCharacter_testDamageLine_FUN_00430a30 at 00430c1d
-;   core_charactr.cpp_FUN_004300e0 at 00430227
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455b5b
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048822d
 ;   core_enemy.cpp_CEnemy_testAttackLine_FUN_00489490 at 00489514
@@ -156,7 +156,7 @@ section .text
         ;   Label: LAB_004cea92
     FLD float ptr [ESP + 0x40]          ; 004cea96
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 004cea9a
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     FLD float ptr [ESP + 0x48]          ; 004cea9f
     FMUL ST0                            ; 004ceaa3
     FLD float ptr [ESP + 0x40]          ; 004ceaa5
@@ -165,7 +165,7 @@ section .text
     FSQRT                               ; 004ceaad
     FLD float ptr [ESP + 0x44]          ; 004ceaaf
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 004ceab3
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     XOR EDI,EDI                         ; 004ceab8
     XOR EBX,EBX                         ; 004ceaba
     MOV dword ptr [ESP + 0x54],EDI      ; 004ceabc

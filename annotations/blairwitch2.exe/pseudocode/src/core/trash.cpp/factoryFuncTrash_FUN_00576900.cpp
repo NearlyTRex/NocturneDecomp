@@ -11,7 +11,7 @@ CTrash * __cdecl core_trash_cpp_factoryFuncTrash_FUN_00576900(void)
 {
   CTrash *pCVar1;
   
-  pCVar1 = (CTrash *)operator_new(0x484);
+  pCVar1 = operator_new(0x484);
   if (pCVar1 == (CTrash *)0x0) {
     return (CTrash *)0x0;
   }

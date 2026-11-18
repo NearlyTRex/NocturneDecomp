@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0052c330(int sequence_number)
 
 {
@@ -16,26 +14,27 @@ SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0052c330(int sequence_num
   SSimFrame *dest;
   
   iVar2 = 0;
-  if (0 < _DAT_01d715a8) {
+  if (0 < g_SimFrameCount) {
     iVar1 = 0;
     do {
-      if (sequence_number == *(int *)(iVar1 + 0x1d715ac)) {
+      if (sequence_number ==
+          *(int *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar1 + -0xc)) {
         if (-1 < iVar2) {
-          return (SSimFrame *)(iVar1 + 0x1d715ac);
+          return (SSimFrame *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar1 + -0xc);
         }
         break;
       }
       iVar1 = iVar1 + 0x6c;
       iVar2 = iVar2 + 1;
-    } while (iVar1 < _DAT_01d715a8 * 0x6c);
+    } while (iVar1 < g_SimFrameCount * 0x6c);
   }
-  if (0x1ff < _DAT_01d715a8) {
-    _DAT_01d1d400 = "..\\core\\netgame.cpp";
-    _DAT_01d1d404 = 299;
-    core_main_c_FUN_005030e0("allocSimFrame - sim history list full");
+  if (0x1ff < g_SimFrameCount) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
+    g_INT_01d1d404 = 299;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("allocSimFrame - sim history list full");
   }
-  dest = (SSimFrame *)(_DAT_01d715a8 * 0x6c + 0x1d715ac);
-  _DAT_01d715a8 = _DAT_01d715a8 + 1;
+  dest = g_SSimFrame_ARRAY_01d715ac + g_SimFrameCount;
+  g_SimFrameCount = g_SimFrameCount + 1;
   memset(dest,0,0x6c);
   dest->sequence_number = sequence_number;
   return dest;

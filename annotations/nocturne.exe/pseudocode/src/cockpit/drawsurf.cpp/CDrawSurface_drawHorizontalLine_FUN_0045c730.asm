@@ -17,8 +17,8 @@
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d9bf
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057d9d7
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_01b4d710
-;   undefined4 DAT_01b4d71c
+;   int g_INT_01b4d710
+;   int g_UseRGBConversion
 ;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -67,7 +67,7 @@ section .text
         ;   Label: LAB_0045c770
     JG 0x0045c7c0                       ; 0045c772
         ;   XREF to: 0045c7c0 (CONDITIONAL_JUMP)  ; LAB_0045c7c0
-    CMP dword ptr [0x01b4d71c],0x0      ; 0045c774 | DAT_01b4d71c
+    CMP dword ptr [0x01b4d71c],0x0      ; 0045c774 | g_UseRGBConversion
     JNZ 0x0045c7c5                      ; 0045c77b
         ;   XREF to: 0045c7c5 (CONDITIONAL_JUMP)  ; LAB_0045c7c5
     MOV EDX,dword ptr [0x005b7624]      ; 0045c77d | g_BitsPerPixel
@@ -81,7 +81,7 @@ section .text
     SUB ECX,EAX                         ; 0045c798
     INC ECX                             ; 0045c79a
     PUSH ECX                            ; 0045c79b
-    MOV ECX,dword ptr [0x01b4d710]      ; 0045c79c | DAT_01b4d710
+    MOV ECX,dword ptr [0x01b4d710]      ; 0045c79c | g_INT_01b4d710
     MOV EDX,dword ptr [EBX + 0x1bd2fa0] ; 0045c7a2 | g_ScreenBufferArray
     PUSH ECX                            ; 0045c7a8
     ADD EDX,EAX                         ; 0045c7a9
@@ -115,7 +115,7 @@ section .text
     ADD EDX,EBX                         ; 0045c7de
     ADD EDX,0x2                         ; 0045c7e0
         ;   Label: LAB_0045c7e0
-    MOV BX,word ptr [0x01b4d710]        ; 0045c7e3 | DAT_01b4d710
+    MOV BX,word ptr [0x01b4d710]        ; 0045c7e3 | g_INT_01b4d710
     INC EAX                             ; 0045c7ea
     MOV word ptr [EDX + -0x2],BX        ; 0045c7eb
     CMP EAX,ECX                         ; 0045c7ef
@@ -132,7 +132,7 @@ section .text
     ADD EDX,EBX                         ; 0045c805
     ADD EDX,0x4                         ; 0045c807
         ;   Label: LAB_0045c807
-    MOV EBX,dword ptr [0x01b4d710]      ; 0045c80a | DAT_01b4d710
+    MOV EBX,dword ptr [0x01b4d710]      ; 0045c80a | g_INT_01b4d710
     INC EAX                             ; 0045c810
     MOV dword ptr [EDX + -0x4],EBX      ; 0045c811
     CMP EAX,ECX                         ; 0045c814

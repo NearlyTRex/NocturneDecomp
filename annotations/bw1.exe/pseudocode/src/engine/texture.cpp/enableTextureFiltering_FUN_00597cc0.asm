@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   enabled
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a4
+;   int g_TextureFilteringEnabled = 0x1
 ;
 ; *****************************************************************************
 
@@ -15,6 +15,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00597cc0
         ;   Label: engine_texture.cpp_enableTextureFiltering_FUN_00597cc0
-    MOV [0x0061b4a4],EAX                ; 00597cc4 | DAT_0061b4a4
+    MOV [0x0061b4a4],EAX                ; 00597cc4 | g_TextureFilteringEnabled
     RET                                 ; 00597cc9
 

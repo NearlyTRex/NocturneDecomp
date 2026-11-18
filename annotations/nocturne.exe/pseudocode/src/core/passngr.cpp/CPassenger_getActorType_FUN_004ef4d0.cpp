@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_passngr_cpp_CPassenger_getActorType_FUN_004ef4d0(CPassenger *this_ptr)
 
 {
-  return &g_CPassengerActorType_01d4685c;
+  return &g_CPassengerClassInfo;
 }

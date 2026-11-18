@@ -16,7 +16,7 @@ void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_00434c1a(void *output_buf
   do {
     bVar1 = *(byte *)input_buffer;
     input_buffer = (void *)((int)input_buffer + 1);
-    *(uint *)output_buffer = *(uint *)(&DAT_01c6a974 + (uint)bVar1 * 4);
+    *(uint *)output_buffer = g_Hardware32BitPalette[bVar1];
     output_buffer = (void *)((int)output_buffer + 4);
     iVar3 = pixel_count + -1;
     bVar2 = 0 < pixel_count;

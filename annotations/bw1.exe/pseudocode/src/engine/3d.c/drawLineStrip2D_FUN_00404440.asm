@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(SLineStrip *line_strip)
 ;
+; Parameters:
+; SLineStrip *     Stack[0x4]:4   line_strip
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00629014
-;   undefined4 DAT_00629018
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_00629014
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].projected_vertex.transformed_y
 ;
 ; Called Functions:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0
@@ -49,13 +51,13 @@ section .text
         ;   Label: LAB_00404478
     MOV ECX,0xc                         ; 0040447b
     LEA EDI,[ESP + 0x30]                ; 00404480
-    LEA ESI,[ESI + 0x629014]            ; 00404484 | DAT_00629014
-    MOVSD.REP ES:EDI,ESI                ; 0040448a | DAT_00629014 | DAT_00629018
+    LEA ESI,[ESI + 0x629014]            ; 00404484 | g_SRenderVertex_ARRAY_00629014
+    MOVSD.REP ES:EDI,ESI                ; 0040448a | g_SRenderVertex_ARRAY_00629014 | g_SRenderVertex_ARRAY_00629014[0].projected_vertex.transformed_y
     IMUL ESI,dword ptr [EBX + 0x4],0x30 ; 0040448c
     MOV EDI,ESP                         ; 00404490
     MOV ECX,0xc                         ; 00404492
-    LEA ESI,[ESI + 0x629014]            ; 00404497 | DAT_00629014
-    MOVSD.REP ES:EDI,ESI                ; 0040449d | DAT_00629014 | DAT_00629018
+    LEA ESI,[ESI + 0x629014]            ; 00404497 | g_SRenderVertex_ARRAY_00629014
+    MOVSD.REP ES:EDI,ESI                ; 0040449d | g_SRenderVertex_ARRAY_00629014 | g_SRenderVertex_ARRAY_00629014[0].projected_vertex.transformed_y
     MOV ECX,0xc                         ; 0040449f
     SUB ESP,0x30                        ; 004044a4
     LEA ESI,[ESP + 0x30]                ; 004044a7

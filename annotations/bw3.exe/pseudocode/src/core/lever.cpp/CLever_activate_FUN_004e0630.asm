@@ -9,10 +9,10 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d3460 at 004d34c8
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004d3460 at 004d34c8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c691a
+;   double g_DOUBLE_005c691a = 0.5
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x10]      ; 004e063b
     FLD float ptr [EDX + 0x2dc]         ; 004e063e
     MOV dword ptr [EDX + 0x418],0x1     ; 004e0644
-    FCOMP double ptr [0x005c691a]       ; 004e064e | DAT_005c691a
+    FCOMP double ptr [0x005c691a]       ; 004e064e | g_DOUBLE_005c691a
     FNSTSW AX                           ; 004e0654
     SAHF                                ; 004e0656
     JNC 0x004e0676                      ; 004e0657

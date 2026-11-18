@@ -11,7 +11,7 @@ void __cdecl support_trstream_cpp_COutStreamMemory_close_FUN_00574d10(COutStream
 {
   if (this_ptr->buffer != (char *)0x0) {
     if (this_ptr->growable != 0) {
-      FUN_005a3770(this_ptr->buffer);
+      debugFree(this_ptr->buffer);
     }
     this_ptr->buffer = (char *)0x0;
   }

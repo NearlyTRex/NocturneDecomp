@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_s_005872ae
-;   undefined1 DAT_005acc90
+;   char[104] g_PropertyNamePrefix
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c1161
     PUSH EAX                            ; 004c1164
-    PUSH 0x5acc90                       ; 004c1165 | DAT_005acc90
+    PUSH 0x5acc90                       ; 004c1165 | g_PropertyNamePrefix
     PUSH 0x5872ae                       ; 004c116a | = "%s%s \"%s\"\n"
     PUSH EBP                            ; 004c116f
     ADD EBX,0x4                         ; 004c1170

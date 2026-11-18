@@ -9,11 +9,11 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   core_prye.cpp_FUN_00518cd0 at 00519ade
-;   core_prye.cpp_FUN_0051c1c0 at 0051ddf7
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00519ade
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051ddf7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007e1a50
+;   undefined4 g_CDemonActorType_007e1a18.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 0051c0a0
         ;   Label: core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0
     SUB ESP,0x4                         ; 0051c0a1
-    MOV EDX,dword ptr [0x007e1a50]      ; 0051c0a4 | DAT_007e1a50
+    MOV EDX,dword ptr [0x007e1a50]      ; 0051c0a4 | g_CDemonActorType_007e1a18.name_hash
     MOV EAX,dword ptr [ESP + 0xc]       ; 0051c0aa
     PUSH EDX                            ; 0051c0ae
     MOV ECX,dword ptr [EAX + 0x25b0]    ; 0051c0af

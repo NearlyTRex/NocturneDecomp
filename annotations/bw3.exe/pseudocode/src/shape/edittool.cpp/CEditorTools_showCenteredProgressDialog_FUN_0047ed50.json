@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 58,
+    "complexity_score": 55,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 30,
     "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 121
+    "total_lines": 123
   },
   "cross_references": [
     {
       "addr": "00473670",
       "from_addr": "00473687",
-      "name": "core_dtrace.cpp_FUN_00473670",
+      "name": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00473670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -31,7 +30,7 @@
     {
       "addr": "00513d20",
       "from_addr": "00513e75",
-      "name": "engine_pod.cpp_FUN_00513d20",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +50,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "004b30f0",
@@ -71,7 +70,7 @@
     {
       "addr": "0047ee50",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047ee50"
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50"
     },
     {
       "addr": "005806a0",
@@ -94,44 +93,44 @@
     },
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "01c5b0e0",
-      "name": "DAT_01c5b0e0",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01c5b0e0",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c5b104",
-      "name": "DAT_01c5b104",
-      "type": "undefined4",
+      "name": "g_WindowStackCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5bae0",
-      "name": "DAT_01c5bae0",
-      "type": "undefined4",
+      "name": "g_EditorFontMaxCharWidth",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5bae4",
-      "name": "DAT_01c5bae4",
-      "type": "undefined4",
+      "name": "g_INT_01c5bae4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -163,7 +162,7 @@
       {
         "call_addr": "00513e75",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_00513d20",
+        "caller": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -174,7 +173,7 @@
       {
         "call_addr": "00473687",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00473670",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00473670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -271,20 +270,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1ec) = iVar2;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "iVar1 = DAT_005fba18 / 2;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1f0) = 0xffffffff;",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,16 +1,15 @@
 // Name: core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408b40
 // Address: 00408b40
 // Address Range: [[00408b40, 00408b7d]]
-// Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408b40(CDemonActor *this_ptr,CBoundingBox3D *out_box)
+// Convention: __stack_esi
+// Signature: CBoundingBox3D * __stack_esi core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408b40(CDemonActor *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408b40(CDemonActor *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __stack_esi core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408b40(CDemonActor *this_ptr,CBoundingBox3D *out_box)
 
 {
   int iVar1;
-  CBoundingBox3D *unaff_ESI;
   float *pfVar2;
   CBoundingBox3D *pCVar3;
   float afStack_1c [6];
@@ -22,11 +21,11 @@ CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408b40(
   afStack_1c[2] = -4.0;
   afStack_1c[0] = -4.0;
   pfVar2 = afStack_1c;
-  pCVar3 = unaff_ESI;
+  pCVar3 = out_box;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     (pCVar3->min).x = *pfVar2;
     pfVar2 = pfVar2 + 1;
     pCVar3 = (CBoundingBox3D *)&(pCVar3->min).y;
   }
-  return unaff_ESI;
+  return out_box;
 }

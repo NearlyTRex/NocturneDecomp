@@ -13,14 +13,14 @@
 ;   core_dmodel.cpp_freeAllModels_FUN_004624d0
 ;   core_skeleton.cpp_freeAllModels_FUN_005501a0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_005502d0
-;   engine_texture.cpp_FUN_0056ac20
+;   engine_texture.cpp_clearTextureCache_FUN_0056ac20
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL engine_texture.cpp_FUN_0056ac20 ; 004f76f0
-        ;   XREF to: 0056ac20 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056ac20()
+    CALL engine_texture.cpp_clearTextureCache_FUN_0056ac20 ; 004f76f0
+        ;   XREF to: 0056ac20 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_0056ac20()
         ;   Label: core_mission.cpp_CDemonMission_freeAllAssets_FUN_004f76f0
     CALL core_dmodel.cpp_freeAllModels_FUN_004624d0 ; 004f76f5
         ;   XREF to: 004624d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_freeAllModels_FUN_004624d0()

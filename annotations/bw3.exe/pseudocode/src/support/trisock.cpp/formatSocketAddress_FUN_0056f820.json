@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 32,
+    "complexity_score": 17,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 60
   },
   "cross_references": [
     {
       "addr": "0056fef0",
       "from_addr": "0056ffeb",
-      "name": "support_trisock.cpp_FUN_0056fef0",
+      "name": "support_trisock.cpp_httpConnectToUrl_FUN_0056fef0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00571340",
       "from_addr": "00571c10",
-      "name": "support_trisock.cpp_FUN_00571340",
+      "name": "support_trisock.cpp_httpRequestUpdate_FUN_00571340",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,8 +53,8 @@
   "globals": [
     {
       "addr": "005d68d7",
-      "name": "DAT_005d68d7",
-      "type": "undefined4",
+      "name": "s_d_005d68d7",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -66,7 +64,7 @@
       {
         "call_addr": "00571c10",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_00571340",
+        "caller": "support_trisock.cpp_httpRequestUpdate_FUN_00571340",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -77,7 +75,7 @@
       {
         "call_addr": "0056ffeb",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0056fef0",
+        "caller": "support_trisock.cpp_httpConnectToUrl_FUN_0056fef0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,14 +164,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_005d68d7",
-      "severity": "mild",
-      "text": "_sprintf(buffer,&DAT_005d68d7);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

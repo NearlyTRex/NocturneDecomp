@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005938c0(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in)
 
 {
@@ -21,7 +19,7 @@ CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005938c0(CMatri
   float fVar8;
   float fVar9;
   
-  fVar7 = _DAT_005eed92 /
+  fVar7 = 2.0f /
           (quat_in->z * quat_in->z +
           quat_in->y * quat_in->y + quat_in->w * quat_in->w + quat_in->x * quat_in->x);
   fVar8 = quat_in->x * fVar7;

@@ -1,0 +1,138 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 125,
+    "complexity_score": 47,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 172
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004fad60",
+    "address_range": [
+      [
+        "004fad60",
+        "004faee9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_CMirror_renderMirrorQuad_FUN_004fad60",
+    "signature": "int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004fad60(CMirror *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004699a0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0"
+    },
+    {
+      "addr": "0046b880",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880"
+    },
+    {
+      "addr": "0055d9ec",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformPoint_FUN_0055d9ec"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fa1b0",
+      "name": "g_MirrorProjectionScale",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0060b280",
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.136752136752137,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "CALL": 7,
+      "COPY": 294,
+      "FLOAT2FLOAT": 24,
+      "FLOAT_MULT": 12,
+      "INT_ADD": 53,
+      "INT_AND": 24,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 24,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 12,
+      "INT_SUB": 25,
+      "INT_XOR": 1,
+      "LOAD": 21,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "ROUND": 12,
+      "STORE": 45,
+      "TRUNC": 12
+    },
+    "pcode_op_count": 601
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00519cb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f5480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00522670",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d77f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirror *"
+      }
+    ]
+  },
+  "suspects": []
+}

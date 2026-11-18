@@ -2,16 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 96,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "register_param",
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 49
@@ -45,37 +45,37 @@
     },
     {
       "addr": "005c1f6c",
-      "name": "DAT_005c1f6c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UserExceptionFilter",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "005c1f70",
-      "name": "DAT_005c1f70",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ExceptionCleanup",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "005c20e0",
-      "name": "DAT_005c20e0",
+      "name": "g_GlobalSignalHandlers[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c20e4",
-      "name": "DAT_005c20e4",
+      "name": "g_GlobalSignalHandlers[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c20e8",
-      "name": "DAT_005c20e8",
+      "name": "g_GlobalSignalHandlers[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c20ec",
-      "name": "DAT_005c20ec",
+      "name": "g_GlobalSignalHandlers[5]",
       "type": "undefined4",
       "value": null
     }
@@ -161,28 +161,12 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 16,
-      "match": "DAT_005c20d8",
-      "severity": "mild",
-      "text": "*(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)(&DAT_005c20d8 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005c1f6c",
-      "severity": "mild",
-      "text": "DAT_005c1f6c = FUN_005715ac;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c1f70",
-      "severity": "mild",
-      "text": "DAT_005c1f70 = processSignal;",
-      "type": "undefined_data"
+      "match": "(uint *)((int)g_GlobalSignalHandlers",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)((int)g_GlobalSignalHandlers + iVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",

@@ -15,7 +15,7 @@ section .text
     PUSH 0xd07c                         ; 00597dc0
         ;   Label: core_hecaitmx.cpp_factoryFuncHecaitomix_FUN_00597dc0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00597dc5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 00597dca
     TEST EAX,EAX                        ; 00597dcd
     JNZ 0x00597dd2                      ; 00597dcf

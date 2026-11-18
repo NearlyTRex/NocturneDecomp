@@ -25,7 +25,7 @@
 ;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0 at 005379f4
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b870
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     PUSH EDX                            ; 0045afac
     LEA ESI,[ESP + 0x14]                ; 0045afad
     LEA EDI,[ESP + 0x8]                 ; 0045afb1
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0045afb5
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0045afb5
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x14]                ; 0045afba
     ADD ESP,0x8                         ; 0045afbe
     MOVSD ES:EDI,ESI                    ; 0045afc1

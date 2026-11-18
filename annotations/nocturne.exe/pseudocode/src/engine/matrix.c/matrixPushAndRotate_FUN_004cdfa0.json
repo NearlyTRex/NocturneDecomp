@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 518,
-    "complexity_score": 221,
+    "complexity_score": 239,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 22,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 206,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 724
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 239,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 757
   },
   "cross_references": [],
   "function": {
@@ -69,15 +67,15 @@
     },
     {
       "addr": "005882b3",
-      "name": "DAT_005882b3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005882b3",
+      "type": "double",
+      "value": "0.318309886192889"
     },
     {
       "addr": "005882bb",
-      "name": "DAT_005882bb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005882bb",
+      "type": "double",
+      "value": "32768"
     },
     {
       "addr": "01c039b8",
@@ -99,20 +97,20 @@
     },
     {
       "addr": "01c039dc",
-      "name": "DAT_01c039dc",
-      "type": "undefined4",
+      "name": "g_LightDirectionX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e0",
-      "name": "DAT_01c039e0",
-      "type": "undefined4",
+      "name": "g_LightDirectionY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e4",
-      "name": "DAT_01c039e4",
-      "type": "undefined4",
+      "name": "g_LightDirectionZ",
+      "type": "int",
       "value": null
     },
     {
@@ -183,8 +181,8 @@
     },
     {
       "addr": "01cc5174",
-      "name": "DAT_01cc5174",
-      "type": "undefined4",
+      "name": "g_MatrixStackIndex",
+      "type": "int",
       "value": null
     }
   ],
@@ -373,14 +371,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

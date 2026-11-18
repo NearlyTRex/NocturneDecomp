@@ -1,0 +1,256 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 131,
+    "complexity_score": 121,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 172
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042d5c0",
+    "address_range": [
+      [
+        "0042d5c0",
+        "0042d6fa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_0042d5c0",
+    "signature": "void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042d5c0(void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param,int src_y_offset,int src_stride)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c410",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141b8",
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "006141c0",
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "01c2a38c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01c2a390",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.601694915254237,
+    "instruction_count": 118,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 2,
+      "CALL": 1,
+      "CALLIND": 2,
+      "CBRANCH": 6,
+      "COPY": 92,
+      "INT_ADD": 67,
+      "INT_AND": 114,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 81,
+      "INT_LEFT": 2,
+      "INT_LESS": 13,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 13,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 20,
+      "INT_SEXT": 3,
+      "INT_SLESS": 41,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 29,
+      "INT_XOR": 1,
+      "LOAD": 40,
+      "POPCOUNT": 39,
+      "RETURN": 3,
+      "STORE": 20,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 661
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004382d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00435ee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004328d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0042e290",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sprite_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "start_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dest_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_x",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "max_height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "unused_param",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "src_y_offset",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "src_stride",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void *)((int)sprite_data",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)sprite_data + start_x + g_INT_006141b8 / 2 + dest_y * src_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(void *)((int)src_buffer",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(void *)((int)src_buffer",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)g_ScreenBufferArray[1]",
+      "severity": "moderate",
+      "text": "iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)g_ScreenBufferArray[0]",
+      "severity": "moderate",
+      "text": "iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)src_buffer",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)src_buffer",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

@@ -32,11 +32,11 @@
 ;   TerminatedCString s_faded_remix_mp3_005846c5
 ;   float FLOAT_005846d6 = 32
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   CBitFont* g_CBitFont_PTR_014b9900
-;   CKeys g_CKeys_01cc30e4
+;   CBitFont* g_ThemeFont
+;   CKeys g_CKeysInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01d16810
+;   int g_UseOSFonts
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890
@@ -150,7 +150,7 @@ section .text
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
         ;   Label: LAB_004a6f8f
     PUSH 0x58                           ; 004a6f94
-    MOV EDI,dword ptr [0x014b9900]      ; 004a6f96 | g_CBitFont_PTR_014b9900
+    MOV EDI,dword ptr [0x014b9900]      ; 004a6f96 | g_ThemeFont
     PUSH EDI                            ; 004a6f9c
     MOV dword ptr [EDI + 0x3190],0x0    ; 004a6f9d
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004a6fa7
@@ -272,8 +272,8 @@ section .text
         ;   Label: LAB_004a7103
     PUSH 0x1                            ; 004a7108
     MOV EAX,[0x005bac64]                ; 004a710a | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004a710f | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004a7110 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004a710f | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004a7110 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004a7112
     ADD ESP,0x8                         ; 004a7114
     TEST EAX,EAX                        ; 004a7117
@@ -375,7 +375,7 @@ section .text
         ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     JMP 0x004a6f8f                      ; 004a7226
         ;   XREF to: 004a6f8f (UNCONDITIONAL_JUMP)  ; LAB_004a6f8f
-    CMP dword ptr [0x01d16810],0x0      ; 004a722b | DAT_01d16810
+    CMP dword ptr [0x01d16810],0x0      ; 004a722b | g_UseOSFonts
         ;   Label: LAB_004a722b
     JZ 0x004a723e                       ; 004a7232
         ;   XREF to: 004a723e (CONDITIONAL_JUMP)  ; LAB_004a723e

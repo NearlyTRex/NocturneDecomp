@@ -2,22 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 490,
+    "complexity_score": 342,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 280,
-    "suspect_count": 18,
+    "pseudocode_lines": 282,
+    "suspect_count": 5,
     "suspect_types": [
-      "raw_address_pointer_store",
       "shadow_pointer_walk",
-      "undefined_data",
-      "unresolved_funcptr",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 1115
+    "total_lines": 1117
   },
   "cross_references": [
     {
@@ -65,7 +61,7 @@
     {
       "addr": "004fce00",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fce00"
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004fce00"
     },
     {
       "addr": "0050b8d0",
@@ -148,6 +144,11 @@
       "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
     },
     {
+      "addr": "0047be90",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90"
+    },
+    {
       "addr": "0047bda0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0"
@@ -156,11 +157,6 @@
       "addr": "0047dae0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047dae0"
-    },
-    {
-      "addr": "0047be90",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047be90"
     },
     {
       "addr": "00578cb0",
@@ -181,27 +177,27 @@
   "globals": [
     {
       "addr": "005e0b9d",
-      "name": "DAT_005e0b9d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e0b9d",
+      "type": "float",
+      "value": "1000"
     },
     {
       "addr": "005e0ba5",
-      "name": "DAT_005e0ba5",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e0ba5",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005e0bad",
-      "name": "DAT_005e0bad",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e0bad",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "005e0bb5",
-      "name": "DAT_005e0bb5",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e0bb5",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "006138e0",
@@ -211,27 +207,27 @@
     },
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "00617dd4",
-      "name": "DAT_00617dd4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d02f84"
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     },
     {
       "addr": "0061b120",
@@ -241,56 +237,56 @@
     },
     {
       "addr": "0061b124",
-      "name": "DAT_0061b124",
-      "type": "undefined4",
-      "value": null
+      "name": "g_NetLobbyStateChanged",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "0061e990",
-      "name": "DAT_0061e990",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ForceMessagePump",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "01c35e60",
-      "name": "DAT_01c35e60",
-      "type": "undefined4",
+      "name": "g_INT_01c35e60",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d34e34",
-      "name": "DAT_01d34e34",
-      "type": "undefined4",
+      "name": "g_LastPingTime",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d34e38",
-      "name": "DAT_01d34e38",
-      "type": "undefined4",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01d34e44",
-      "name": "DAT_01d34e44",
-      "type": "undefined4",
+      "name": "g_NetNextPlayerId",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d34e48",
-      "name": "DAT_01d34e48",
-      "type": "undefined4",
+      "name": "g_NetLastSimFrameAckTime",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01d34e4c",
-      "name": "DAT_01d34e4c",
-      "type": "undefined4",
+      "name": "g_ChatHistoryCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02653630",
-      "name": "DAT_02653630",
-      "type": "undefined4",
+      "name": "g_AnyAddressIP",
+      "type": "uchar[4]",
       "value": null
     }
   ],
@@ -433,112 +429,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_0061e990",
-      "severity": "mild",
-      "text": "uStack_30 = DAT_0061e990;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0061e990",
-      "severity": "mild",
-      "text": "DAT_0061e990 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "engine_2d_c_drawHLine_FUN_00402f30(0,0x31,DAT_006141b8 + -1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "iVar7 = (_DAT_01d34e4c - (DAT_006141bc - iVar4) / 0xb) + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 237,
-      "match": "DAT_0061b124",
-      "severity": "mild",
-      "text": "if ((this_ptr->connection_type == CONNECTION_CLIENT) && (DAT_0061b124 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 251,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 251,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 253,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 253,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 264,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1f);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 264,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1f);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 281,
-      "match": "DAT_0061e990",
-      "severity": "mild",
-      "text": "DAT_0061e990 = uStack_30;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -546,7 +438,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -554,7 +446,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 111,
+      "line": 109,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -562,7 +454,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar5->vertices[0].a`). Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 152,
+      "line": 150,
       "match": "pCVar5 = (T *)&pCVar5->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.light;",
@@ -570,7 +462,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar5->vertices[0].a`). Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 181,
+      "line": 179,
       "match": "pCVar5 = (T *)&pCVar5->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.light;",

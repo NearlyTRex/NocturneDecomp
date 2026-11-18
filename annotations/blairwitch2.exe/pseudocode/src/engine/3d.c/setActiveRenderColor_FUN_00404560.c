@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_setActiveRenderColor_FUN_00404560(void)
 
 {
-  if (-1 < DAT_0070ca5c) {
-    _DAT_01c35e60 = *(uint *)(&DAT_006094d0 + DAT_0070ca5c * 4);
+  if (-1 < g_CurrentPolygonColor) {
+    g_INT_01c35e60 = g_ColorLookupTable[g_CurrentPolygonColor];
     return;
   }
-  _DAT_01c35e60 = -DAT_0070ca5c;
+  g_INT_01c35e60 = -g_CurrentPolygonColor;
   return;
 }

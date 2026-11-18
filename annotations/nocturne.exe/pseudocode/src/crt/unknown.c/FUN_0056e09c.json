@@ -2,21 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 355,
+    "complexity_score": 258,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 29,
+    "pseudocode_lines": 38,
+    "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 134
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -60,15 +59,15 @@
     },
     {
       "addr": "005c1f54",
-      "name": "DAT_005c1f54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     },
     {
       "addr": "005c1f58",
-      "name": "DAT_005c1f58",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1f58",
+      "type": "int",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -171,7 +170,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 8,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((int)param_2 < 0) {",
@@ -179,7 +178,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 11,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af0)();",
@@ -187,7 +186,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 0) {",
@@ -195,7 +194,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "else if (param_2 < 2) {",
@@ -203,7 +202,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 != 2) goto LAB_0056e0ea;",
@@ -211,7 +210,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "SetStdHandle(nStdHandle,param_1);",
@@ -219,159 +218,87 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((int)param_2 < g_INT_005c1f58) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = param_2 * 4;",
+      "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
+      "line": 25,
+      "match": "param_1",
       "severity": "mild",
-      "text": "if ((int)param_2 < DAT_005c1f58) {",
+      "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005c1f58",
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
       "severity": "mild",
-      "text": "if ((int)param_2 < DAT_005c1f58) {",
-      "type": "undefined_data"
+      "text": "g_IOControlBlock = realloc(g_IOControlBlock,param_2 * 4 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (g_INT_005c1f58 < (int)param_2) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(HANDLE *)(iVar1 + (int)DAT_005c1f54",
-      "severity": "moderate",
-      "text": "*(HANDLE *)(iVar1 + (int)DAT_005c1f54) = param_1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(HANDLE *)(iVar1 + (int)DAT_005c1f54) = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "*(HANDLE *)(iVar1 + (int)DAT_005c1f54) = param_1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "DAT_005c1f54 = realloc(DAT_005c1f54,iVar1 + 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "DAT_005c1f54 = realloc(DAT_005c1f54,iVar1 + 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (DAT_005c1f58 < (int)param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005c1f58",
-      "severity": "mild",
-      "text": "if (DAT_005c1f58 < (int)param_2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 32,
-      "match": "DAT_005c1f58",
-      "severity": "mild",
-      "text": "iVar2 = DAT_005c1f58 * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)DAT_005c1f54",
+      "match": "(uint *)((int)g_IOControlBlock",
       "severity": "moderate",
-      "text": "*(uint *)((int)DAT_005c1f54 + iVar2) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "*(uint *)((int)DAT_005c1f54 + iVar2) = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "DAT_005c1f58 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005c1f58",
-      "severity": "mild",
-      "text": "DAT_005c1f58 = param_2 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(HANDLE *)(param_2 * 4 + (int)DAT_005c1f54",
-      "severity": "moderate",
-      "text": "*(HANDLE *)(param_2 * 4 + (int)DAT_005c1f54) = param_1;",
+      "text": "*(uint *)((int)g_IOControlBlock->standard_handles + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(HANDLE *)(param_2 * 4 + (int)DAT_005c1f54) = param_1;",
+      "text": "} while (iVar1 < (int)(param_2 * 4));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "g_INT_005c1f58 = param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(HANDLE *)(param_2 * 4 + (int)DAT_005c1f54) = param_1;",
+      "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "*(HANDLE *)(param_2 * 4 + (int)DAT_005c1f54) = param_1;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4)();",

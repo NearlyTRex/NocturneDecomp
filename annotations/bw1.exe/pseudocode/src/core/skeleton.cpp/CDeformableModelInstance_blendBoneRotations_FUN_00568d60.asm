@@ -16,7 +16,7 @@
 ; XREF[12]:
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f6b8
 ;   core_colonel.cpp_CColonel_process_FUN_00444550 at 00444866
-;   core_doc.cpp_FUN_0046caa0 at 0046d457
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046d457
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8ad7
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e9551
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f11c6
@@ -27,7 +27,7 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2521
+;   double g_DOUBLE_005f2521 = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 00568d63
     SUB ESP,0x1c                        ; 00568d64
     FLD float ptr [ESP + 0x38]          ; 00568d67
-    FCOMP double ptr [0x005f2521]       ; 00568d6b | DAT_005f2521
+    FCOMP double ptr [0x005f2521]       ; 00568d6b | g_DOUBLE_005f2521
     FNSTSW AX                           ; 00568d71
     SAHF                                ; 00568d73
     JA 0x00568d7e                       ; 00568d74
@@ -117,7 +117,7 @@ section .text
     PUSH EBP                            ; 00568e0d
     LEA ESI,[ESP + 0xc]                 ; 00568e0e
     CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 00568e12
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005b7940(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     ADD ESP,0xc                         ; 00568e17
     MOV EDI,dword ptr [ESP + 0x14]      ; 00568e1a
     MOV ESI,ESP                         ; 00568e1e

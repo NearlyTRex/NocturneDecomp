@@ -9,15 +9,15 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005f0119
-;   undefined4 DAT_005ff350
+;   float g_FLOAT_005ff350 = 5
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
-;   core_muzzle.cpp_FUN_0059d8e0
-;   core_muzzle.cpp_FUN_0059dcb0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -56,12 +56,12 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 005a32c1
     PUSH ESI                            ; 005a32c7
     FSTP float ptr [ESP + 0x4]          ; 005a32c8
-    CALL core_motion.cpp_FUN_005035c0   ; 005a32cc
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a32cc
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005a32d1
     MOV EDI,dword ptr [EAX + 0x24]      ; 005a32d4
     FLD float ptr [ESP]                 ; 005a32d7
-    FCOMP float ptr [0x005ff350]        ; 005a32da | DAT_005ff350
+    FCOMP float ptr [0x005ff350]        ; 005a32da | g_FLOAT_005ff350
     FNSTSW AX                           ; 005a32e0
     SAHF                                ; 005a32e2
     JA 0x005a3323                       ; 005a32e3
@@ -97,16 +97,16 @@ section .text
     PUSH 0x3f000000                     ; 005a3323
         ;   Label: LAB_005a3323
     ADD EBX,0x10af8                     ; 005a3328
-    FLD float ptr [0x005ff350]          ; 005a332e | DAT_005ff350
+    FLD float ptr [0x005ff350]          ; 005a332e | g_FLOAT_005ff350
     PUSH EBX                            ; 005a3334
     FSTP float ptr [EBX + 0x89c]        ; 005a3335
-    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a333b
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005a333b
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(SStateMachine * this_ptr, float delay)
     ADD ESP,0x8                         ; 005a3340
     PUSH 0x5f0119                       ; 005a3343 | = "Chasing"
     PUSH EBX                            ; 005a3348
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a3349
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005a3349
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a334e
     CMP EDI,0xa                         ; 005a3351
     JNZ 0x005a329e                      ; 005a3354

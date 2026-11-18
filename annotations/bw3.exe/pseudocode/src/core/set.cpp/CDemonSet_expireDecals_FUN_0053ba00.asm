@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   expire_flag
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGore* g_CGorePtr = 01d22e44
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0053ba18
     PUSH EBX                            ; 0053ba1c
     PUSH 0x0                            ; 0053ba1d
-    MOV ESI,dword ptr [0x005fc5a0]      ; 0053ba1f | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 0053ba1f | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 0053ba25
     CALL core_fire.cpp_CFireEffect_renderDecals_FUN_004a1e90 ; 0053ba26
         ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_renderDecals_FUN_004a1e90(CFireEffect * this_ptr, int render_mode, int render_completeness)

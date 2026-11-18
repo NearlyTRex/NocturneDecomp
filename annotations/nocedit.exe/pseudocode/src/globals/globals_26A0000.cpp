@@ -8,7 +8,7 @@
 CKeyFramedModel g_CKeyFramedModelPool[256] = {};
 
 // CVector3f
-CVector3f CVector3f_026a72d8 = {};
+CVector3f g_CoronaGeometryOrigin = {};
 
 // int
 int g_BackgroundSceneNestingCount = {};

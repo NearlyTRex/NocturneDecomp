@@ -1,0 +1,299 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 282,
+    "complexity_score": 135,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 120,
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 402
+  },
+  "cross_references": [
+    {
+      "addr": "0042d8e0",
+      "from_addr": "0042d8f1",
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042d500",
+    "address_range": [
+      [
+        "0042d500",
+        "0042d85f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_0042d500(CCharacter *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "0042d390",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_applyFacePartToHead_FUN_0042d390"
+    },
+    {
+      "addr": "0054a310",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310"
+    },
+    {
+      "addr": "0054ea40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40"
+    },
+    {
+      "addr": "005a35cc",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005a35cc"
+    },
+    {
+      "addr": "0046d540",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b8276",
+      "name": "s_head_005b8276",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b827b",
+      "name": "s_m1_005b827b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b827e",
+      "name": "s_m2_005b827e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8281",
+      "name": "s_m3_005b8281",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8284",
+      "name": "s_m4_005b8284",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8287",
+      "name": "s_e1_left_005b8287",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b828f",
+      "name": "s_e2_left_005b828f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8297",
+      "name": "s_e3_left_005b8297",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b829f",
+      "name": "s_e4_left_005b829f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b82a7",
+      "name": "s_e1_right_005b82a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b82b0",
+      "name": "s_e2_right_005b82b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b82b9",
+      "name": "s_e3_right_005b82b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b82c2",
+      "name": "s_e4_right_005b82c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b82ce",
+      "name": "g_FLOAT_005b82ce",
+      "type": "float",
+      "value": "0.00001525879"
+    },
+    {
+      "addr": "005f2afc",
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
+    },
+    {
+      "addr": "006039e0",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01ed73e0"
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "01c5fad0",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01ed73e4",
+      "name": "g_CScriptInstance.who_is_speaking",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0042d8f1",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.043668122270742,
+    "instruction_count": 229,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 3,
+      "BRANCH": 3,
+      "CALL": 20,
+      "CBRANCH": 15,
+      "COPY": 276,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 4,
+      "INT_ADD": 101,
+      "INT_AND": 123,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 86,
+      "INT_LEFT": 16,
+      "INT_LESS": 12,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 25,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 25,
+      "INT_SLESS": 46,
+      "INT_SUB": 90,
+      "INT_XOR": 3,
+      "INT_ZEXT": 12,
+      "LOAD": 40,
+      "POPCOUNT": 42,
+      "RETURN": 3,
+      "STORE": 109
+    },
+    "pcode_op_count": 1155
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004247f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0042e580",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 77,
+      "match": "pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar4 = (CCharacter *)((pCVar4->base).actor_name + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

@@ -42,21 +42,21 @@
 ;
 ; XREF[3]:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0 at 00487dbb
-;   core_hero.cpp_FUN_004ce240 at 004ce246
+;   core_hero.cpp_CHero_ctor_FUN_004ce240 at 004ce246
 ;   core_npc.cpp_CNPC_ctor_FUN_00510460 at 00510469
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   WatcomTypeInfo g_CFlameTypeInfo
-;   undefined4 DAT_005f4088
+;   float g_FLOAT_005f4088 = 6
 ;   CCharacter_full_vtable g_CCharacterVTable
 ;   WatcomTypeInfo g_SFireTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408790
 ;   core_cloth.cpp_CClothList_ctor_FUN_005b1440
-;   core_muzzle.cpp_FUN_0059ded0
-;   core_muzzle.cpp_FUN_0059df80
+;   core_muzzle.cpp_SFollowFormation_ctor_FUN_0059ded0
+;   core_muzzle.cpp_SFollowFormation_setLeader_FUN_0059df80
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00544cd0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
@@ -101,8 +101,8 @@ section .text
     ADD ESP,0xc                         ; 0042239d
     ADD EAX,0xd0                        ; 004223a0
     PUSH EAX                            ; 004223a5
-    CALL core_muzzle.cpp_FUN_0059ded0   ; 004223a6
-        ;   XREF to: 0059ded0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059ded0()
+    CALL core_muzzle.cpp_SFollowFormation_ctor_FUN_0059ded0 ; 004223a6
+        ;   XREF to: 0059ded0 (UNCONDITIONAL_CALL)  ; SFollowFormation * core_muzzle.cpp_SFollowFormation_ctor_FUN_0059ded0(SFollowFormation * this_ptr)
     ADD ESP,0x4                         ; 004223ab
     PUSH 0x5f41e0                       ; 004223ae | g_SFireTypeInfo
     PUSH 0x32                           ; 004223b3
@@ -258,7 +258,7 @@ section .text
     MOV dword ptr [EBX + 0x25a4],0x40490fdb ; 0042272e
     MOV dword ptr [EBX + 0x109c0],0x0   ; 00422738
     MOV dword ptr [EBX + 0x109c4],0x0   ; 00422742
-    FLD float ptr [0x005f4088]          ; 0042274c | DAT_005f4088
+    FLD float ptr [0x005f4088]          ; 0042274c | g_FLOAT_005f4088
     MOV dword ptr [EBX + 0x109c8],0x0   ; 00422752
     MOV ESI,0x3e75c28f                  ; 0042275c
     MOV dword ptr [EBX + 0x109d4],0x0   ; 00422761
@@ -268,8 +268,8 @@ section .text
     MOV dword ptr [EBX + 0x109d8],0xfffffffe ; 0042277c
     PUSH EAX                            ; 00422786
     FSTP float ptr [EBX + 0x109d0]      ; 00422787
-    CALL core_muzzle.cpp_FUN_0059df80   ; 0042278d
-        ;   XREF to: 0059df80 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_FUN_0059df80()
+    CALL core_muzzle.cpp_SFollowFormation_setLeader_FUN_0059df80 ; 0042278d
+        ;   XREF to: 0059df80 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SFollowFormation_setLeader_FUN_0059df80(SFollowFormation * this_ptr, CCharacter * leader)
     MOV EDX,0xbdc6a7f0                  ; 00422792
     MOV ECX,0x3ea7ef9e                  ; 00422797
     ADD ESP,0x8                         ; 0042279c

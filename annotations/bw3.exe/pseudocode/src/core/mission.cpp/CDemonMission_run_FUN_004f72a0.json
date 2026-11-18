@@ -2,31 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 117,
+    "complexity_score": 53,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 5,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 221
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 222
   },
   "cross_references": [
     {
       "addr": "004bdfb0",
       "from_addr": "004be82b",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004be8d0",
       "from_addr": "004beaf1",
-      "name": "core_game.cpp_FUN_004be8d0",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004be8d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,12 +68,17 @@
     {
       "addr": "004dfc50",
       "is_variadic": false,
-      "name": "core_level.cpp_FUN_004dfc50"
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004dfc50"
     },
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "004f6f80",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80"
     },
     {
       "addr": "004f5b80",
@@ -95,6 +96,11 @@
       "name": "core_mission.cpp_CDemonMission_load_FUN_004f5bc0"
     },
     {
+      "addr": "004f6de0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0"
+    },
+    {
       "addr": "004f6ca0",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_removeActor_FUN_004f6ca0"
@@ -105,19 +111,9 @@
       "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0"
     },
     {
-      "addr": "004f6de0",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6de0"
-    },
-    {
-      "addr": "004f6f80",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6f80"
-    },
-    {
       "addr": "004f7590",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f7590"
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004f7590"
     },
     {
       "addr": "005a5fd0",
@@ -170,9 +166,9 @@
     },
     {
       "addr": "006002ac",
-      "name": "DAT_006002ac",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CLevelLoaderPtr",
+      "type": "CLevelLoader*",
+      "value": "01d70ab8"
     },
     {
       "addr": "00603b28",
@@ -194,32 +190,32 @@
     },
     {
       "addr": "01d5ba00",
-      "name": "DAT_01d5ba00",
-      "type": "undefined4",
+      "name": "g_HeroCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d882a0",
-      "name": "DAT_01d882a0",
-      "type": "undefined4",
+      "name": "g_CHAR_01d882a0",
+      "type": "char",
       "value": null
     }
   ],
@@ -229,7 +225,7 @@
       {
         "call_addr": "004beaf1",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004be8d0",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004be8d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,7 +236,7 @@
       {
         "call_addr": "004be82b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -337,46 +333,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01d882a0",
-      "severity": "mild",
-      "text": "DAT_01d882a0 = '\\0';",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 27,
-      "match": "*(CHero **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CHero **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01d882a0",
-      "severity": "mild",
-      "text": "if ((iVar1 == 0) || (DAT_01d882a0 == '\\0')) break;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_01d882a0",
-      "severity": "mild",
-      "text": "core_mission_cpp_CDemonMission_load_FUN_004f5bc0(this_ptr,&DAT_01d882a0,0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

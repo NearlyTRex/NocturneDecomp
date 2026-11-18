@@ -9,11 +9,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_45_dry_wav_2_0_005f7ee7
 ;   TerminatedCString s_bullet_kfm_005f7ef9
-;   undefined4 DAT_005f7f04
-;   undefined4 DAT_005f7f08
-;   undefined4 DAT_005f7f10
-;   undefined4 DAT_005f7f18
-;   undefined4 DAT_0061c010
+;   float g_FLOAT_005f7f04 = 0.1000000
+;   double g_DOUBLE_005f7f08 = 2.5
+;   float g_FLOAT_005f7f10 = -0.125
+;   double g_DOUBLE_005f7f18 = 10
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CCrateClassInfo.name_hash
@@ -26,14 +26,14 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_00408ac0
-;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
-;   core_crate.cpp_FUN_00449600
+;   core_crate.cpp_CCrate_explode_FUN_00449600
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dmodel.cpp_loadModel_FUN_00468780
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70
@@ -75,7 +75,7 @@ section .text
     LEA ESI,[ESP + 0xfc]                ; 0059845a
     LEA EDI,[ESP + 0x168]               ; 00598461
     PUSH EBX                            ; 00598468
-    FADD float ptr [0x005f7f04]         ; 00598469 | DAT_005f7f04
+    FADD float ptr [0x005f7f04]         ; 00598469 | g_FLOAT_005f7f04
     MOV EAX,dword ptr [EBX + 0x154]     ; 0059846f
     FSTP float ptr [EBX + 0x300]        ; 00598475
     CALL dword ptr [EAX + 0xe0]         ; 0059847b
@@ -88,8 +88,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00598495
     PUSH EBX                            ; 00598496
     LEA ESI,[ESP + 0x110]               ; 00598497
-    CALL core_actor.cpp_FUN_00408b40    ; 0059849e
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0059849e
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 005984a3
     LEA EDI,[ESP + 0x114]               ; 005984a6
     LEA ESI,[ESP + 0x108]               ; 005984ad
@@ -113,8 +113,8 @@ section .text
     PUSH EBX                            ; 005984ed
     MOV dword ptr [ESP + 0xb0],ECX      ; 005984ee
     MOV dword ptr [ESP + 0xb4],ECX      ; 005984f5
-    CALL core_actor.cpp_FUN_00408ac0    ; 005984fc
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 005984fc
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00598501
     LEA ESI,[ESP + 0xe4]                ; 00598504
     FLD float ptr [ESP + 0x114]         ; 0059850b
@@ -140,7 +140,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00598566
     MOVSD ES:EDI,ESI                    ; 00598567
     FLD float ptr [EBX + 0x2e8]         ; 00598568
-    FDIVR double ptr [0x005f7f08]       ; 0059856e | DAT_005f7f08
+    FDIVR double ptr [0x005f7f08]       ; 0059856e | g_DOUBLE_005f7f08
     FLD float ptr [ESP + 0x180]         ; 00598574
     FXCH                                ; 0059857b
     FSTP float ptr [ESP + 0x1a4]        ; 0059857d
@@ -208,8 +208,8 @@ section .text
     PUSH EAX                            ; 0059867e
     MOV EDX,dword ptr [0x00622c18]      ; 0059867f | g_CDemonSetPtr
     PUSH EDX                            ; 00598685 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557300 ; 00598686
-        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557300()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 ; 00598686
+        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00557300(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x1c8],EAX     ; 0059868b
     FLD float ptr [ESP + 0x1c8]         ; 00598692
     ADD ESP,0xc                         ; 00598699
@@ -240,9 +240,9 @@ section .text
     PUSH EAX                            ; 005986e0
     FLD float ptr [ESP + 0xa4]          ; 005986e1
     LEA EAX,[ESP + 0xa0]                ; 005986e8
-    MOV EDI,dword ptr [0x0061c010]      ; 005986ef | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 005986ef | g_CFireEffectPtr
     PUSH EAX                            ; 005986f5
-    FADD float ptr [0x005f7f10]         ; 005986f6 | DAT_005f7f10
+    FADD float ptr [0x005f7f10]         ; 005986f6 | g_FLOAT_005f7f10
     PUSH EDI                            ; 005986fc
     FSTP float ptr [ESP + 0xac]         ; 005986fd
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004b5a70 ; 00598704
@@ -285,8 +285,8 @@ section .text
     PUSH EAX                            ; 005987a8
     LEA ESI,[ESP + 0x1a0]               ; 005987a9
     LEA EDI,[ESP + 0x14c]               ; 005987b0
-    CALL core_dirmat.cpp_FUN_0045f690   ; 005987b7
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 005987b7
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 005987bc
     LEA EAX,[ESP + 0x144]               ; 005987bf
     LEA ESI,[ESP + 0x198]               ; 005987c6
@@ -297,8 +297,8 @@ section .text
     PUSH EBX                            ; 005987d1
     LEA ESI,[ESP + 0x164]               ; 005987d2
     LEA EDI,[ESP + 0x194]               ; 005987d9
-    CALL core_actor.cpp_FUN_00408ac0    ; 005987e0
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 005987e0
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x164]               ; 005987e5
     ADD ESP,0x8                         ; 005987ec
     MOVSD ES:EDI,ESI                    ; 005987ef
@@ -327,7 +327,7 @@ section .text
     PUSH EAX                            ; 00598847
     ADD EBX,0x20                        ; 00598848
     PUSH EBX                            ; 0059884b
-    MOV EDI,dword ptr [0x0061c010]      ; 0059884c | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 0059884c | g_CFireEffectPtr
     PUSH EDI                            ; 00598852
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004b7270 ; 00598853
         ;   XREF to: 004b7270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004b7270(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
@@ -541,7 +541,7 @@ section .text
     FMUL ST0                            ; 00598adb
     FADDP                               ; 00598add
     FSQRT                               ; 00598adf
-    FDIVR double ptr [0x005f7f18]       ; 00598ae1 | DAT_005f7f18
+    FDIVR double ptr [0x005f7f18]       ; 00598ae1 | g_DOUBLE_005f7f18
     FLD float ptr [ESP + 0x138]         ; 00598ae7
     FXCH                                ; 00598aee
     FSTP float ptr [ESP + 0x1b4]        ; 00598af0
@@ -578,8 +578,8 @@ section .text
     PUSH EAX                            ; 00598b78
     LEA ESI,[ESP + 0x128]               ; 00598b79
     LEA EDI,[ESP + 0x74]                ; 00598b80
-    CALL core_actor.cpp_FUN_00408bb0    ; 00598b84
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 00598b84
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x128]               ; 00598b89
     ADD ESP,0x8                         ; 00598b90
     MOVSD ES:EDI,ESI                    ; 00598b93
@@ -642,8 +642,8 @@ section .text
     ADD EAX,0x14d138                    ; 00598c4f
     PUSH EAX                            ; 00598c54 | g_CDemonSetInstance.collision_impact_position.x
     PUSH EDI                            ; 00598c55
-    CALL core_glass.cpp_FUN_004e34b0    ; 00598c56
-        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004e34b0()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004e34b0 ; 00598c56
+        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004e34b0(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 00598c5b
     JMP 0x00598cc5                      ; 00598c5e
         ;   XREF to: 00598cc5 (UNCONDITIONAL_JUMP)  ; LAB_00598cc5
@@ -684,8 +684,8 @@ section .text
         ;   XREF to: 00598cc5 (UNCONDITIONAL_JUMP)  ; LAB_00598cc5
     PUSH ESI                            ; 00598cbc
         ;   Label: LAB_00598cbc
-    CALL core_crate.cpp_FUN_00449600    ; 00598cbd
-        ;   XREF to: 00449600 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_FUN_00449600(CCrate * this_ptr)
+    CALL core_crate.cpp_CCrate_explode_FUN_00449600 ; 00598cbd
+        ;   XREF to: 00449600 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_CCrate_explode_FUN_00449600(CCrate * this_ptr)
     ADD ESP,0x4                         ; 00598cc2
     MOV ECX,dword ptr [ESP + 0x1b0]     ; 00598cc5
         ;   Label: LAB_00598cc5
@@ -706,7 +706,7 @@ section .text
     PUSH ESI                            ; 00598cfb | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 00598cfc
     PUSH EAX                            ; 00598d01 | g_CDemonSetInstance.collision_impact_position.x
-    MOV ECX,dword ptr [0x0061c010]      ; 00598d02 | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 00598d02 | g_CFireEffectPtr
     PUSH ECX                            ; 00598d08
     CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0 ; 00598d09
         ;   XREF to: 004b56a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)

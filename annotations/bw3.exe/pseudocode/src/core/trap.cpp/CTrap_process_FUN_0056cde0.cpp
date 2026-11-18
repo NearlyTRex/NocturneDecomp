@@ -29,8 +29,7 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_0056cde0(CTrap *this_ptr,float delt
   float fStack_28;
   float fStack_24;
   float fStack_20;
-  float fStack_1c;
-  uint auStack_18 [2];
+  CVector3f CStack_1c;
   int iVar8;
   float fVar9;
   
@@ -68,11 +67,13 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_0056cde0(CTrap *this_ptr,float delt
              (this_ptr->base).location.position.y + fStack_24) &&
            ((this_ptr->base).location.position.y + fStack_30 <=
             (pCVar3->base).base.base.location.position.y + fStack_5c)) {
-          core_actor_cpp_FUN_00408bf0(this_ptr,&(pCVar3->base).base.base.location);
-          fVar1 = fStack_1c;
-          *(uint *)(&stack0xfffffff4 + (uint)bVar7 * -8) = auStack_18[(uint)bVar7 * -2];
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+                    (&this_ptr->base,&(pCVar3->base).base.base.location.position,&CStack_1c);
+          fVar1 = CStack_1c.x;
+          *(uint *)(&stack0xfffffff4 + (uint)bVar7 * -8) =
+               *(uint *)((int)&CStack_1c + (uint)bVar7 * -8 + 4);
           *(uint *)(&stack0xfffffff8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-               auStack_18[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+               *(uint *)((int)&CStack_1c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
           if ((((fStack_34 <= fVar1 + fStack_58) && (fVar1 - fStack_58 <= fStack_28)) &&
               (fStack_2c <= fVar9 + fStack_58)) && (fVar9 - fStack_58 <= fStack_20)) {
             this_ptr->wolf_in_trap = pCVar3;

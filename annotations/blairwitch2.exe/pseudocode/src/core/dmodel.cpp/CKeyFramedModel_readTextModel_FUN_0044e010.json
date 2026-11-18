@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 459,
+    "complexity_score": 409,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 129,
-    "suspect_count": 31,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
     "total_lines": 711
@@ -39,19 +37,19 @@
   },
   "function_calls": [
     {
+      "addr": "0044ea80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_0044ea80"
+    },
+    {
       "addr": "0044f760",
       "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760"
     },
     {
-      "addr": "0044ea80",
-      "is_variadic": false,
-      "name": "core_dmodel.cpp_FUN_0044ea80"
-    },
-    {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8df8",
@@ -72,8 +70,8 @@
   "globals": [
     {
       "addr": "005cf66d",
-      "name": "DAT_005cf66d",
-      "type": "undefined4",
+      "name": "s_d_005cf66d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -108,26 +106,26 @@
     },
     {
       "addr": "005cf709",
-      "name": "DAT_005cf709",
-      "type": "undefined4",
+      "name": "s_d_005cf709",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cf70d",
-      "name": "DAT_005cf70d",
-      "type": "undefined4",
+      "name": "s_d_005cf70d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cf711",
-      "name": "DAT_005cf711",
-      "type": "undefined4",
+      "name": "s_d_005cf711",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cf715",
-      "name": "DAT_005cf715",
-      "type": "undefined4",
+      "name": "s_d_005cf715",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -150,8 +148,8 @@
     },
     {
       "addr": "005cf734",
-      "name": "DAT_005cf734",
-      "type": "undefined4",
+      "name": "s_anon_005cf734",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -168,8 +166,8 @@
     },
     {
       "addr": "005cf76a",
-      "name": "DAT_005cf76a",
-      "type": "undefined4",
+      "name": "s_d_005cf76a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -198,14 +196,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -611,30 +609,6 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 27,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005cf66d",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf66d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005cf709",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf709);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(int *)((int)pSVar1",
@@ -649,14 +623,6 @@
       "severity": "moderate",
       "text": "} while (iVar3 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_005cf734",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf734);",
-      "type": "undefined_data"
     }
   ]
 }

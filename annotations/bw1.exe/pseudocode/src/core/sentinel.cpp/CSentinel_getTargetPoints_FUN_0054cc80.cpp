@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0054cc80(CSentinel *this_ptr,CVector3f *out_points_array)
 
 {
@@ -28,7 +26,7 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0054cc80(CSentinel *
   bVar1 = 0;
   iStack_14 = 5;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_01e820fc,&CStack_44);
+            (&(this_ptr->base).base.model,g_SentinelIndices[0],&CStack_44);
   CStack_50.x = CStack_44.x;
   *(uint *)((int)&CStack_50 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_44 + (uint)bVar1 * -8 + 4);
@@ -40,7 +38,7 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0054cc80(CSentinel *
     out_points_array->z = CStack_50.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_01e82110,&CStack_8c);
+            (&(this_ptr->base).base.model,g_SentinelIndices[5],&CStack_8c);
   CStack_80.x = CStack_8c.x;
   *(uint *)((int)&CStack_80 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_8c + (uint)bVar1 * -8 + 4);
@@ -52,7 +50,7 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0054cc80(CSentinel *
     out_points_array[1].z = CStack_80.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_01e82114,&CStack_20);
+            (&(this_ptr->base).base.model,g_SentinelIndices[6],&CStack_20);
   CStack_74.x = CStack_20.x;
   *(uint *)((int)&CStack_74 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_20 + (uint)bVar1 * -8 + 4);
@@ -64,7 +62,7 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0054cc80(CSentinel *
     out_points_array[2].z = CStack_74.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_01e82120,&CStack_5c);
+            (&(this_ptr->base).base.model,g_SentinelIndices[9],&CStack_5c);
   CStack_38.x = CStack_5c.x;
   *(uint *)((int)&CStack_38 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_5c + (uint)bVar1 * -8 + 4);
@@ -76,7 +74,7 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0054cc80(CSentinel *
     out_points_array[3].z = CStack_38.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_01e82128,&CStack_2c);
+            (&(this_ptr->base).base.model,g_SentinelIndices[0xb],&CStack_2c);
   CStack_68.x = CStack_2c.x;
   *(uint *)((int)&CStack_68 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_2c + (uint)bVar1 * -8 + 4);

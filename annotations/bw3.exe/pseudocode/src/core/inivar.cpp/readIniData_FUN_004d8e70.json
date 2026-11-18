@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 607,
-    "complexity_score": 158,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 96,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 88,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 695
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 138,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 745
   },
   "cross_references": [
     {
@@ -39,12 +36,12 @@
     {
       "addr": "004b8e60",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b8e60"
+      "name": "core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60"
     },
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a4bd0",
@@ -52,9 +49,19 @@
       "name": "crt_io.c__chmod_FUN_005a4bd0"
     },
     {
+      "addr": "004d8a20",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_ctor_FUN_004d8a20"
+    },
+    {
       "addr": "004d8a50",
       "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_dtor_FUN_004d8a50"
+    },
+    {
+      "addr": "004d8c30",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004d8c30"
     },
     {
       "addr": "004d8b20",
@@ -65,16 +72,6 @@
       "addr": "004d8ae0",
       "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004d8ae0"
-    },
-    {
-      "addr": "004d8a20",
-      "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004d8a20"
-    },
-    {
-      "addr": "004d8c30",
-      "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004d8c30"
     },
     {
       "addr": "00559220",
@@ -499,8 +496,8 @@
     },
     {
       "addr": "00606730",
-      "name": "DAT_00606730",
-      "type": "undefined1",
+      "name": "g_RendererDllPath",
+      "type": "char[256]",
       "value": null
     },
     {
@@ -625,38 +622,38 @@
     },
     {
       "addr": "01d5bc7c",
-      "name": "DAT_01d5bc7c",
-      "type": "undefined4",
+      "name": "g_INT_01d5bc7c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d74020",
-      "name": "DAT_01d74020",
-      "type": "undefined4",
+      "name": "g_INT_01d74020",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf5fcc",
-      "name": "DAT_02cf5fcc",
-      "type": "undefined4",
+      "name": "g_INT_02cf5fcc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf5fd8",
-      "name": "DAT_02cf5fd8",
-      "type": "undefined4",
+      "name": "g_INT_02cf5fd8",
+      "type": "int",
       "value": null
     }
   ],
@@ -749,54 +746,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_02cf5fcc",
-      "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8c30(&local_210,\"useDirect3D\",&DAT_02cf5fcc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_02cf5fd8",
-      "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8c30(&local_210,\"useAGPFlag\",&DAT_02cf5fd8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_00606730",
-      "severity": "mild",
-      "text": "(&local_210,\"rendererDLLPath\",&DAT_00606730,0xfa);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01d5bc7c",
-      "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8c30(&local_210,\"firstTimeFlag\",&DAT_01d5bc7c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01d74020",
-      "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8c30(&local_210,\"currentBoard\",&DAT_01d74020);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

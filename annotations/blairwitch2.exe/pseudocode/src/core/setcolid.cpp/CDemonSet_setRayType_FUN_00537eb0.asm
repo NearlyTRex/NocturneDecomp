@@ -9,25 +9,25 @@
 ;
 ; XREF[17]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a83c
-;   core_confedrt.cpp_FUN_005a14e0 at 005a17f5
+;   core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0 at 005a17f5
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043a963
+;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0 at 0045a879
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459a37
-;   core_doc.cpp_FUN_00459ff0 at 0045a879
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00485b40 at 00485dfb
+;   core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00 at 004af153
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0 at 004b1488
-;   core_gabriela.cpp_FUN_004aeb00 at 004af153
-;   core_game.cpp_FUN_004be8a0 at 004bee30
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 at 004bee30
 ;   core_gun.cpp_CGun_fire_FUN_004cbdc0 at 004cbfa9
 ;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005e5f18
 ;   TerminatedCString s_CDemonSet_setRayType_use_005e5f2d
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -46,10 +46,10 @@ section .text
     MOV ECX,0x5e5f18                    ; 00537ec5 | = "..\\core\\setcolid.cpp"
     MOV EBX,0x49a                       ; 00537eca
     PUSH 0x5e5f2d                       ; 00537ecf | = "CDemonSet::setRayType - use setRayTyp..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00537ed4 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00537eda | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00537ee0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00537ed4 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00537eda | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00537ee0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00537ee5
     POP EBX                             ; 00537ee8
     RET                                 ; 00537ee9

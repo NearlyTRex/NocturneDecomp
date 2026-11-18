@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005c9428(void)
 
 {
@@ -16,36 +14,36 @@ void FUN_005c9428(void)
   char *pcVar3;
   _TIME_ZONE_INFORMATION local_b4;
   
-  pcVar3 = getenv(&DAT_005fac00);
+  pcVar3 = getenv("TZ");
   if (pcVar3 != (char *)0x0) {
     FUN_005c969c();
     return;
   }
-  if (((DAT_006269a4 & 1) == 0) || ((DAT_006269a4 & 2) == 0)) {
-    DAT_006269a4 = DAT_006269a4 | 2;
+  if (((g_TimezoneInitFlags & 1) == 0) || ((g_TimezoneInitFlags & 2) == 0)) {
+    g_TimezoneInitFlags = g_TimezoneInitFlags | 2;
     DVar1 = GetTimeZoneInformation(&local_b4);
     if (DVar1 != 0) {
       if (DVar1 < 2) {
-        _DAT_0062699c = 0;
+        g_DaylightSavingActive = 0;
       }
       else {
         if (DVar1 != 2) {
           return;
         }
-        _DAT_0062699c = 1;
-        DAT_006269a0 = local_b4.DaylightBias * -0x3c;
+        g_DaylightSavingActive = 1;
+        g_DaylightSavingOffset = local_b4.DaylightBias * -0x3c;
       }
-      DAT_00626998 = (local_b4.StandardBias + local_b4.Bias) * 0x3c;
-      iVar2 = FUN_005cc610(&DAT_0062688c,local_b4.StandardName,0x80);
+      g_TimezoneOffset = (local_b4.StandardBias + local_b4.Bias) * 0x3c;
+      iVar2 = FUN_005cc610("EST",local_b4.StandardName,0x80);
       if (iVar2 == -1) {
-        DAT_0062688c = 0;
+        "EST"[0] = '\0';
       }
       else {
         DAT_0062690c = 0;
       }
-      iVar2 = FUN_005cc610(&DAT_0062690d,local_b4.DaylightName,0x80);
+      iVar2 = FUN_005cc610("EDT",local_b4.DaylightName,0x80);
       if (iVar2 == -1) {
-        DAT_0062690d = 0;
+        "EDT"[0] = '\0';
       }
       else {
         DAT_0062698d = 0;

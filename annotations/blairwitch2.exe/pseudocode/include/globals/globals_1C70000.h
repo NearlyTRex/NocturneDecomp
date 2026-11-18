@@ -13,3 +13,6 @@
 // CSpark[256]
 extern CSpark g_SparkPool[256];
 
+// int
+extern int g_SparkAllocIndex;
+

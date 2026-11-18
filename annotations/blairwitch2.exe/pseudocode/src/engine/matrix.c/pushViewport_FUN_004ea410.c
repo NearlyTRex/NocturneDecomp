@@ -6,36 +6,34 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_pushViewport_FUN_004ea410(int x,int y,int width,int height)
 
 {
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d0533c) = _DAT_01c38b78;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d05364) = _DAT_01c38b7c;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d0538c) = _DAT_01c38b80;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d053b4) = _DAT_01c38b84;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d053dc) = _DAT_01c38b88;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d05404) = _DAT_01c38b8c;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d0542c) = _DAT_01c38b90;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d05454) = _DAT_01c38b94;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d0547c) = _DAT_01c38b98;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d05274) = _DAT_01c35e38;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d0529c) = _DAT_01c35e3c;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d052c4) = _DAT_01c35e40;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d052ec) = _DAT_01c35e44;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d05314) = DAT_006141e4;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d054a4) = _DAT_01c35e48;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d054cc) = _DAT_01c35e50;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d054f4) = _DAT_01c35e4c;
-  *(uint *)(_DAT_01d05270 * 4 + 0x1d0551c) = _DAT_01c35e54;
-  _DAT_01d05270 = _DAT_01d05270 + 1;
-  if (9 < _DAT_01d05270) {
-    _DAT_01d046a0 = "..\\engine\\matrix.c";
-    _DAT_01d046a4 = 0x540;
-    core_main_c_FUN_004e4500("Too many 3D windows");
+  g_ViewportStack_CameraX[g_ViewportStackIndex] = g_CameraOriginX;
+  g_ViewportStack_CameraY[g_ViewportStackIndex] = g_CameraOriginY;
+  g_ViewportStack_CameraZ[g_ViewportStackIndex] = g_CameraOriginZ;
+  g_ViewportStack_RotationPitch[g_ViewportStackIndex] = g_CameraRotationPitch;
+  g_ViewportStack_RotationYaw[g_ViewportStackIndex] = g_CameraRotationYaw;
+  g_ViewportStack_RotationRoll[g_ViewportStackIndex] = g_CameraRotationRoll;
+  g_ViewportStack_ExtraState1[g_ViewportStackIndex] = g_LightDirectionX;
+  g_ViewportStack_ExtraState2[g_ViewportStackIndex] = g_LightDirectionY;
+  g_ViewportStack_ExtraState3[g_ViewportStackIndex] = g_LightDirectionZ;
+  g_ViewportStack_CenterX[g_ViewportStackIndex] = g_INT_01c35e38;
+  g_ViewportStack_CenterY[g_ViewportStackIndex] = g_INT_01c35e3c;
+  g_ViewportStack_RightFixed[g_ViewportStackIndex] = g_INT_01c35e40;
+  g_ViewportStack_BottomFixed[g_ViewportStackIndex] = g_INT_01c35e44;
+  g_ViewportStack_ProjectionScale[g_ViewportStackIndex] = g_ProjectionScale;
+  g_ViewportStack_ClipLeft[g_ViewportStackIndex] = g_INT_01c35e48;
+  g_ViewportStack_ClipRight[g_ViewportStackIndex] = g_ClipRight;
+  g_ViewportStack_ClipTop[g_ViewportStackIndex] = g_INT_01c35e4c;
+  g_ViewportStack_ClipBottom[g_ViewportStackIndex] = g_INT_01c35e54;
+  g_ViewportStackIndex = g_ViewportStackIndex + 1;
+  if (9 < g_ViewportStackIndex) {
+    g_CHAR_PTR_01d046a0 = "..\\engine\\matrix.c";
+    g_INT_01d046a4 = 0x540;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Too many 3D windows");
   }
   engine_2d_c_setupViewportAndClipping_FUN_00401810(x,y,x + width,y + height);
-  DAT_006141e4 = 0x10000;
+  g_ProjectionScale = 0x10000;
   return;
 }

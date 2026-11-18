@@ -15,15 +15,15 @@
 ;   TerminatedCString s_core_setutil_cpp_005f12cd
 ;   TerminatedCString s_C3DSLight_create_Out_of_005f12e1
 ;   CFilterCache* g_CFilterCachePtr = 0152c72c
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0045d7c0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_00462470
 ;   core_dlight.cpp_CDemonLight_init_FUN_00462590
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
@@ -39,7 +39,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 0055cf87
     PUSH 0x2fac                         ; 0055cf8b
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0055cf90
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0055cf95
     TEST EAX,EAX                        ; 0055cf98
     JNZ 0x0055d0ae                      ; 0055cf9a
@@ -52,10 +52,10 @@ section .text
     MOV EBX,0x5f12cd                    ; 0055cfa7 | = "..\\core\\setutil.cpp"
     MOV ESI,0x2f9                       ; 0055cfac
     PUSH 0x5f12e1                       ; 0055cfb1 | = "C3DSLight::create - Out of memory!"
-    MOV dword ptr [0x01d1d400],EBX      ; 0055cfb6 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0055cfbc | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055cfc2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 0055cfb6 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0055cfbc | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055cfc2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055cfc7
     MOV EDI,dword ptr [ESP]             ; 0055cfca
         ;   Label: LAB_0055cfca

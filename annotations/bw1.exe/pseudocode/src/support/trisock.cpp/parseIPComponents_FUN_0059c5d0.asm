@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   dotted_decimal_string
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_0059f1a0 at 0059f1b3
+;   support_trisock.cpp_lookupHostByName_FUN_0059f1a0 at 0059f1b3
 ;   support_trisock.cpp_parseIPAddress_FUN_0059c4d0 at 0059c4db
 ;
 ; Called Functions:

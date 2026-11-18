@@ -20,8 +20,8 @@ _FILE * __cdecl _freopen(char *filename,char *mode,_FILE *stream)
   if (parsed_mode_flags != 0) {
     iVar1 = stream->_handle;
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(iVar1);
-    if (DAT_005c1d58 != (code *)0x0) {
-      (*DAT_005c1d58)(iVar1);
+    if (g_SpecialDeviceCleanupFunc != (byte *)0x0) {
+      (*(code *)g_SpecialDeviceCleanupFunc)(iVar1);
     }
     file_struct = (_FILE *)FUN_005656a4(stream);
     p_Var2 = (_FILE *)0x0;

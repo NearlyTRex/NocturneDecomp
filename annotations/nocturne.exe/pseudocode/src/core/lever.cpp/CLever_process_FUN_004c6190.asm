@@ -11,9 +11,9 @@
 ;   double DOUBLE_00587925 = 6
 ;   double DOUBLE_0058792d = 0.100000000000000
 ;   double DOUBLE_00587935 = 0.900000000000000
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CLeverActorType_01cc3628.name_hash
+;   undefined4 g_CLeverClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 004c6225 (CONDITIONAL_JUMP)  ; LAB_004c6225
     LEA EAX,[EBX + 0x2d8]               ; 004c620f
     PUSH EAX                            ; 004c6215
-    MOV EBP,dword ptr [0x005b7650]      ; 004c6216 | DAT_005b7650
+    MOV EBP,dword ptr [0x005b7650]      ; 004c6216 | g_CEventListPtr
     PUSH EBP                            ; 004c621c
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c621d
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
@@ -87,7 +87,7 @@ section .text
     CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 004c623c | g_CDemonSetInstance.actor_count
     JGE 0x004c6314                      ; 004c6242
         ;   XREF to: 004c6314 (CONDITIONAL_JUMP)  ; LAB_004c6314
-    MOV EBP,dword ptr [0x01cc3660]      ; 004c6248 | g_CLeverActorType_01cc3628.name_hash
+    MOV EBP,dword ptr [0x01cc3660]      ; 004c6248 | g_CLeverClassInfo.name_hash
     PUSH EBP                            ; 004c624e
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004c624f | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EDX                            ; 004c6256
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 004c6225 (CONDITIONAL_JUMP)  ; LAB_004c6225
     LEA EAX,[EBX + 0x33c]               ; 004c62c7
     PUSH EAX                            ; 004c62cd
-    MOV ESI,dword ptr [0x005b7650]      ; 004c62ce | DAT_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 004c62ce | g_CEventListPtr
     PUSH ESI                            ; 004c62d4
     JMP 0x004c621d                      ; 004c62d5
         ;   XREF to: 004c621d (UNCONDITIONAL_JUMP)  ; LAB_004c621d
@@ -168,7 +168,7 @@ section .text
         ;   XREF to: 004c634d (CONDITIONAL_JUMP)  ; LAB_004c634d
     LEA EAX,[EBX + 0x33c]               ; 004c6337
     PUSH EAX                            ; 004c633d
-    MOV EDI,dword ptr [0x005b7650]      ; 004c633e | DAT_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 004c633e | g_CEventListPtr
     PUSH EDI                            ; 004c6344
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c6345
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
@@ -193,7 +193,7 @@ section .text
     ADD EBX,0x2d8                       ; 004c636f
         ;   Label: LAB_004c636f
     PUSH EBX                            ; 004c6375
-    MOV EBP,dword ptr [0x005b7650]      ; 004c6376 | DAT_005b7650
+    MOV EBP,dword ptr [0x005b7650]      ; 004c6376 | g_CEventListPtr
     PUSH EBP                            ; 004c637c
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c637d
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

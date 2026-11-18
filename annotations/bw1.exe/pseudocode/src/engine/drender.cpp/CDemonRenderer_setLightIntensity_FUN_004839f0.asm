@@ -13,7 +13,7 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0 at 0054e3ef
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db3b4
+;   double g_LightIntensityScale = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -26,9 +26,9 @@ section .text
     SUB ESP,0x4                         ; 004839f0
         ;   Label: engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_004839f0
     FLD float ptr [ESP + 0xc]           ; 004839f3
-    FMUL double ptr [0x005db3b4]        ; 004839f7 | DAT_005db3b4
+    FMUL double ptr [0x005db3b4]        ; 004839f7 | g_LightIntensityScale
     CALL crt_math.c_round_FUN_005c03a0  ; 004839fd
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 00483a02
     MOV EDX,dword ptr [ESP]             ; 00483a05
     PUSH EDX                            ; 00483a08

@@ -9,20 +9,20 @@
 ; int              Stack[0xc]:4   hotkey_code
 ;
 ; XREF[3]:
-;   shape_edittool.cpp_FUN_0049c290 at 0049c2d9
-;   shape_edittool.cpp_FUN_0049c310 at 0049c360
-;   shape_edittool.cpp_FUN_0049c470 at 0049c4dd
+;   shape_edittool.cpp_CPickList_insert_FUN_0049c290 at 0049c2d9
+;   shape_edittool.cpp_CPickList_remove_FUN_0049c310 at 0049c360
+;   shape_edittool.cpp_CPickList_swap_FUN_0049c470 at 0049c4dd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc76f
 ;   TerminatedCString s_CPickList_setItemHotKey_005dc785
 ;   TerminatedCString s_shape_edittool_cpp_005dc7ae
 ;   TerminatedCString s_Out_of_memory_005dc7c4
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;
 ; *****************************************************************************
@@ -46,10 +46,10 @@ section .text
         ;   Label: LAB_0049c174
     MOV EDI,0x1196                      ; 0049c179
     PUSH 0x5dc785                       ; 0049c17e | = "CPickList::setItemHotKey - invalid index"
-    MOV dword ptr [0x01d1d400],ECX      ; 0049c183 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0049c189 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049c18f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0049c183 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0049c189 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049c18f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049c194
     CMP ESI,dword ptr [EBX + 0x1b4]     ; 0049c197
         ;   Label: LAB_0049c197
@@ -86,10 +86,10 @@ section .text
         ;   Label: LAB_0049c1f0
     MOV EBP,0x119e                      ; 0049c1f5
     PUSH 0x5dc7c4                       ; 0049c1fa | = "Out of memory"
-    MOV dword ptr [0x01d1d400],EDI      ; 0049c1ff | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0049c205 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049c20b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 0049c1ff | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 0049c205 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049c20b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049c210
     JMP 0x0049c1cd                      ; 0049c213
         ;   XREF to: 0049c1cd (UNCONDITIONAL_JUMP)  ; LAB_0049c1cd

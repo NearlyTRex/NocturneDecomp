@@ -20,15 +20,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bda10",
-      "from_addr": "004bde33",
-      "name": "core_game.cpp_FUN_004bda10",
+      "addr": "004bdfb0",
+      "from_addr": "004be3b5",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bdfb0",
-      "from_addr": "004be3b5",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "addr": "004bda10",
+      "from_addr": "004bde33",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bda10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,7 +40,7 @@
     {
       "addr": "00440a70",
       "from_addr": "00440b06",
-      "name": "support_codec.cpp_FUN_00440a70",
+      "name": "support_codec.cpp_CCodec_processFiles_FUN_00440a70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,14 +63,14 @@
       "name": "crt_memory.c___vec_delete_FUN_005a308f"
     },
     {
-      "addr": "005a30b6",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30b6"
-    },
-    {
       "addr": "005a30c4",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30c4"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005a30c4"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_free_FUN_005a30b6"
     },
     {
       "addr": "005744a0",
@@ -93,8 +93,8 @@
     {
       "addr": "005e5b24",
       "name": "g_COutStreamFileVTable",
-      "type": "undefined1*",
-      "value": "00574850"
+      "type": "TerminatedCString",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -103,7 +103,7 @@
       {
         "call_addr": "004be3b5",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +114,7 @@
       {
         "call_addr": "004be4e3",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,7 +125,7 @@
       {
         "call_addr": "004be52f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,7 +147,7 @@
       {
         "call_addr": "004bde33",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bda10",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004bda10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +158,7 @@
       {
         "call_addr": "004bdf41",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bda10",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004bda10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +169,7 @@
       {
         "call_addr": "004bdf80",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bda10",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004bda10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,7 +191,7 @@
       {
         "call_addr": "00440b06",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00440a70",
+        "caller": "support_codec.cpp_CCodec_processFiles_FUN_00440a70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -202,7 +202,7 @@
       {
         "call_addr": "00440b34",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00440a70",
+        "caller": "support_codec.cpp_CCodec_processFiles_FUN_00440a70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

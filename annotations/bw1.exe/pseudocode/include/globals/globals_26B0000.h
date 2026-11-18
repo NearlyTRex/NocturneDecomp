@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDeformableModel.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x26B0000
@@ -12,4 +13,15 @@
 
 // CDeformableModel[64]
 extern CDeformableModel g_DeformableModelPool[64];
+
+// CVector3f
+extern CVector3f g_DeformableModelRayHitNormal;
+
+// int
+extern int g_INT_026b82a4;
+extern int g_INT_026b82b4;
+extern int g_INT_026b82b8;
+
+// uchar
+extern uchar g_ShatterVertexArrayInitialized;
 

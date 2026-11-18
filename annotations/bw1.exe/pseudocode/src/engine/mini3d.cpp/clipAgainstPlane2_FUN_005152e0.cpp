@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_clipAgainstPlane2_FUN_005152e0(void)
 
 {
@@ -24,12 +22,12 @@ void __cdecl engine_mini3d_cpp_clipAgainstPlane2_FUN_005152e0(void)
   
   bVar8 = 0;
   local_18 = 0;
-  if (0 < (int)_DAT_01d227f0) {
+  if (0 < g_INT_01d227f0) {
     from = (float *)&DAT_01d237fc;
     do {
       uVar2 = local_18 + 1;
-      if (uVar2 == _DAT_01d227f0) {
-        uVar2 = uVar2 ^ _DAT_01d227f0;
+      if (uVar2 == g_INT_01d227f0) {
+        uVar2 = uVar2 ^ g_INT_01d227f0;
       }
       iVar3 = uVar2 * 0x40;
       bVar1 = from[2] <= from[1];
@@ -38,8 +36,8 @@ void __cdecl engine_mini3d_cpp_clipAgainstPlane2_FUN_005152e0(void)
       }
       switch(bVar1) {
       case 0:
-        iVar4 = _DAT_01d227f4 * 0x40;
-        _DAT_01d227f4 = _DAT_01d227f4 + 1;
+        iVar4 = g_INT_01d227f4 * 0x40;
+        g_INT_01d227f4 = g_INT_01d227f4 + 1;
         pfVar6 = from;
         pfVar7 = (float *)(&DAT_01d23ffc + iVar4);
         for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -51,12 +49,12 @@ void __cdecl engine_mini3d_cpp_clipAgainstPlane2_FUN_005152e0(void)
       case 1:
         engine_mini3d_cpp_intersectClipPlane2_FUN_00514ed0
                   ((float *)(&DAT_01d237fc + iVar3),from,
-                   (float *)(&DAT_01d23ffc + _DAT_01d227f4 * 0x40));
-        _DAT_01d227f4 = _DAT_01d227f4 + 1;
+                   (float *)(&DAT_01d23ffc + g_INT_01d227f4 * 0x40));
+        g_INT_01d227f4 = g_INT_01d227f4 + 1;
         break;
       case 2:
-        iVar5 = _DAT_01d227f4 * 0x40;
-        _DAT_01d227f4 = _DAT_01d227f4 + 1;
+        iVar5 = g_INT_01d227f4 * 0x40;
+        g_INT_01d227f4 = g_INT_01d227f4 + 1;
         pfVar6 = from;
         pfVar7 = (float *)(&DAT_01d23ffc + iVar5);
         for (iVar4 = 0x10; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -66,12 +64,12 @@ void __cdecl engine_mini3d_cpp_clipAgainstPlane2_FUN_005152e0(void)
         }
         engine_mini3d_cpp_intersectClipPlane2_FUN_00514ed0
                   (from,(float *)(&DAT_01d237fc + iVar3),
-                   (float *)(&DAT_01d23ffc + _DAT_01d227f4 * 0x40));
-        _DAT_01d227f4 = _DAT_01d227f4 + 1;
+                   (float *)(&DAT_01d23ffc + g_INT_01d227f4 * 0x40));
+        g_INT_01d227f4 = g_INT_01d227f4 + 1;
       }
       local_18 = local_18 + 1;
       from = from + 0x10;
-    } while (local_18 < (int)_DAT_01d227f0);
+    } while (local_18 < g_INT_01d227f0);
   }
   return;
 }

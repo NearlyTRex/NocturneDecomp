@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 004b61c2 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x4b6050]  ; 004b6093 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV ESI,dword ptr [0x01cae124]      ; 004b609a | g_CHeroActorType_01cae0ec.name_hash
+    MOV ESI,dword ptr [0x01cae124]      ; 004b609a | g_CHeroClassInfo.name_hash
         ;   Label: caseD_0
     PUSH ESI                            ; 004b60a0
     PUSH 0x5858f3                       ; 004b60a1 | = "CGabriella"
@@ -116,49 +116,49 @@ section .text
     POP ESI                             ; 004b6138
     POP EBX                             ; 004b6139
     RET                                 ; 004b613a
-    MOV EBX,dword ptr [0x01cae124]      ; 004b613b | g_CHeroActorType_01cae0ec.name_hash
+    MOV EBX,dword ptr [0x01cae124]      ; 004b613b | g_CHeroClassInfo.name_hash
         ;   Label: caseD_1
     PUSH EBX                            ; 004b6141
     PUSH 0x5858fe                       ; 004b6142 | = "CSvetlana"
     JMP 0x004b60a6                      ; 004b6147
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV ECX,dword ptr [0x01cae124]      ; 004b614c | g_CHeroActorType_01cae0ec.name_hash
+    MOV ECX,dword ptr [0x01cae124]      ; 004b614c | g_CHeroClassInfo.name_hash
         ;   Label: caseD_2
     PUSH ECX                            ; 004b6152
     PUSH 0x585908                       ; 004b6153 | = "CStranger"
     JMP 0x004b60a6                      ; 004b6158
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EDX,dword ptr [0x01cae124]      ; 004b615d | g_CHeroActorType_01cae0ec.name_hash
+    MOV EDX,dword ptr [0x01cae124]      ; 004b615d | g_CHeroClassInfo.name_hash
         ;   Label: caseD_3
     PUSH EDX                            ; 004b6163
     PUSH 0x585912                       ; 004b6164 | = "CScat"
     JMP 0x004b60a6                      ; 004b6169
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EAX,[0x01cae124]                ; 004b616e | g_CHeroActorType_01cae0ec.name_hash
+    MOV EAX,[0x01cae124]                ; 004b616e | g_CHeroClassInfo.name_hash
         ;   Label: caseD_4
     PUSH EAX                            ; 004b6173
     PUSH 0x585918                       ; 004b6174 | = "CBaron"
     JMP 0x004b60a6                      ; 004b6179
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EBP,dword ptr [0x01cae124]      ; 004b617e | g_CHeroActorType_01cae0ec.name_hash
+    MOV EBP,dword ptr [0x01cae124]      ; 004b617e | g_CHeroClassInfo.name_hash
         ;   Label: caseD_5
     PUSH EBP                            ; 004b6184
     PUSH 0x58591f                       ; 004b6185 | = "CIcePick"
     JMP 0x004b60a6                      ; 004b618a
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EDI,dword ptr [0x01cae124]      ; 004b618f | g_CHeroActorType_01cae0ec.name_hash
+    MOV EDI,dword ptr [0x01cae124]      ; 004b618f | g_CHeroClassInfo.name_hash
         ;   Label: caseD_6
     PUSH EDI                            ; 004b6195
     PUSH 0x585928                       ; 004b6196 | = "CHaystack"
     JMP 0x004b60a6                      ; 004b619b
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV ESI,dword ptr [0x01cae124]      ; 004b61a0 | g_CHeroActorType_01cae0ec.name_hash
+    MOV ESI,dword ptr [0x01cae124]      ; 004b61a0 | g_CHeroClassInfo.name_hash
         ;   Label: caseD_7
     PUSH ESI                            ; 004b61a6
     PUSH 0x585932                       ; 004b61a7 | = "CColonel"
     JMP 0x004b60a6                      ; 004b61ac
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EBX,dword ptr [0x01cae124]      ; 004b61b1 | g_CHeroActorType_01cae0ec.name_hash
+    MOV EBX,dword ptr [0x01cae124]      ; 004b61b1 | g_CHeroClassInfo.name_hash
         ;   Label: caseD_8
     PUSH EBX                            ; 004b61b7
     PUSH 0x58593b                       ; 004b61b8 | = "CMoloch"

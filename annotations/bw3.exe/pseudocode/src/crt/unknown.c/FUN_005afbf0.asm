@@ -11,11 +11,11 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079cc = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d0 = 005a7f44
-;   undefined4 DAT_02d261f0
+;   void* g_PTR_02d261f0
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_005a4b20
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   crt_unknown.c_FUN_005a7f44
 ;   crt_unknown.c_FUN_005b0d90
 ;
@@ -33,7 +33,7 @@ section .text
     MOV ESI,0x1                         ; 005afbff
     PUSH ESI                            ; 005afc04
     CALL crt_memory.c_calloc_FUN_005a4b20 ; 005afc05
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005a4b20(uint count, uint size)
     MOV EBX,EAX                         ; 005afc0a
     ADD ESP,0x8                         ; 005afc0c
     TEST EAX,EAX                        ; 005afc0f
@@ -47,8 +47,8 @@ section .text
     JZ 0x005afc2d                       ; 005afc1e
         ;   XREF to: 005afc2d (CONDITIONAL_JUMP)  ; LAB_005afc2d
     PUSH EBX                            ; 005afc20
-    CALL crt_unknown.c_FUN_005a3770     ; 005afc21
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005afc21
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     XOR ESI,ESI                         ; 005afc26
     ADD ESP,0x4                         ; 005afc28
     JMP 0x005afc50                      ; 005afc2b
@@ -60,8 +60,8 @@ section .text
     XOR EAX,EAX                         ; 005afc37
     MOV AL,byte ptr [EDI + 0x52]        ; 005afc39
     MOV dword ptr [EBX + 0xc],EAX       ; 005afc3c
-    MOV EAX,[0x02d261f0]                ; 005afc3f | DAT_02d261f0
-    MOV dword ptr [0x02d261f0],EBX      ; 005afc44 | DAT_02d261f0
+    MOV EAX,[0x02d261f0]                ; 005afc3f | g_PTR_02d261f0
+    MOV dword ptr [0x02d261f0],EBX      ; 005afc44 | g_PTR_02d261f0
     MOV dword ptr [EBX],EAX             ; 005afc4a
     JMP 0x005afc50                      ; 005afc4c
         ;   XREF to: 005afc50 (UNCONDITIONAL_JUMP)  ; LAB_005afc50

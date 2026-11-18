@@ -1,0 +1,189 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 308,
+    "complexity_score": 108,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 108,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 416
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005619f0",
+    "address_range": [
+      [
+        "005619f0",
+        "00561ccc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "shape_spotview.cpp_CSpotView_handleInput_FUN_005619f0",
+    "signature": "void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005619f0(CSpotView *this_ptr,uint control_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00561cd0",
+      "is_variadic": false,
+      "name": "shape_spotview.cpp_CSpotView_clampValues_FUN_00561cd0"
+    },
+    {
+      "addr": "005619a0",
+      "is_variadic": false,
+      "name": "shape_spotview.cpp_CSpotView_reset_FUN_005619a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eb0f0",
+      "name": "g_FLOAT_005eb0f0",
+      "type": "float",
+      "value": "3.141593"
+    },
+    {
+      "addr": "005eb0f8",
+      "name": "g_DOUBLE_005eb0f8",
+      "type": "double",
+      "value": "1.10000000000000"
+    },
+    {
+      "addr": "005eb100",
+      "name": "g_DOUBLE_005eb100",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "00617dd4",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d02f84"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.634615384615385,
+    "instruction_count": 260,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 17,
+      "CBRANCH": 24,
+      "COPY": 622,
+      "FLOAT2FLOAT": 59,
+      "FLOAT_ADD": 6,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 2,
+      "INT_ADD": 96,
+      "INT_AND": 121,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 88,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 44,
+      "INT_SUB": 61,
+      "INT_ZEXT": 8,
+      "LOAD": 84,
+      "POPCOUNT": 44,
+      "RETURN": 2,
+      "STORE": 86
+    },
+    "pcode_op_count": 1465
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00584440",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00567d10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b9670",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005342b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpotView *"
+      },
+      {
+        "is_param": true,
+        "name": "control_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005619f7",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

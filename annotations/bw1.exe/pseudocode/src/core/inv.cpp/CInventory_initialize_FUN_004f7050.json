@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 54,
+    "complexity_score": 40,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "preinc_loop_idiom",
-      "warning_overlapping_globals"
+      "preinc_loop_idiom"
     ],
-    "total_lines": 73
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -79,21 +78,21 @@
     },
     {
       "addr": "005e6064",
-      "name": "DAT_005e6064",
-      "type": "undefined4",
-      "value": null
+      "name": "g_InventoryRandNormalizationFactor",
+      "type": "float",
+      "value": "0.00003051851"
     },
     {
       "addr": "005e6068",
-      "name": "DAT_005e6068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e6068",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005e6070",
-      "name": "DAT_005e6070",
-      "type": "undefined4",
-      "value": null
+      "name": "g_InventoryRandTwoFactor",
+      "type": "double",
+      "value": "2"
     }
   ],
   "param_estimates": {
@@ -229,16 +228,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar2 = pCVar2;` self-assign, two-var `tmp = &pCVar2->field; pCVar2 = tmp;` ping-pong, or a bare `pCVar2 = pCVar2 + N;` advance followed by a `*pCVar2 =` store \u2014 plus a constant-index store on `pCVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 14,
+      "line": 12,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",

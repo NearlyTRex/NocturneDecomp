@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 46,
+    "complexity_score": 15,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 16,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 43
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -56,14 +53,14 @@
   "globals": [
     {
       "addr": "02cf3c68",
-      "name": "DAT_02cf3c68",
-      "type": "undefined4",
+      "name": "g_RecordingDeviceInterface",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02cf3c6c",
-      "name": "DAT_02cf3c6c",
-      "type": "undefined4",
+      "name": "isRecordingStarted",
+      "type": "int",
       "value": null
     }
   ],
@@ -150,22 +147,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02cf3c68 + 8))(_DAT_02cf3c68);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

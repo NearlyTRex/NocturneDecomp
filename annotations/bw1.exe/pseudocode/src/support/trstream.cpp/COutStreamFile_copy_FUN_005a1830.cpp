@@ -14,6 +14,6 @@ COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_copy_FUN_005a1830(C
   
   pCVar1 = (COutStreamFile *)
            support_trstream_cpp_COutStream_dtor_FUN_005a14b0(&this_ptr->base,unaff_retaddr);
-  (pCVar1->base).vtable = &g_COutStreamFileVTable;
+  (pCVar1->base).vtable = g_COutStreamFileVTable;
   return pCVar1;
 }

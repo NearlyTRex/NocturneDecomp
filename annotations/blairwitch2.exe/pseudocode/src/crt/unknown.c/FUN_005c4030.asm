@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_005c4030(undefined4 *param_1)
+; time_t crt_unknown_c_FUN_005c4030(time_t *param_1)
 ;
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_005c00d0 at 005c013c
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c43e0
+;   crt_unknown.c__mktime_FUN_005c43e0
 ;   crt_unknown.c_FUN_005c5880
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     MOV EAX,ESP                         ; 005c404d
         ;   Label: LAB_005c404d
     PUSH EAX                            ; 005c404f
-    CALL crt_unknown.c_FUN_005c43e0     ; 005c4050
-        ;   XREF to: 005c43e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c43e0()
+    CALL crt_unknown.c__mktime_FUN_005c43e0 ; 005c4050
+        ;   XREF to: 005c43e0 (UNCONDITIONAL_CALL)  ; time_t crt_unknown.c__mktime_FUN_005c43e0(_tm * timeptr)
     ADD ESP,0x4                         ; 005c4055
     MOV EDX,EAX                         ; 005c4058
     TEST EBX,EBX                        ; 005c405a

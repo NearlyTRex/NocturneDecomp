@@ -13,9 +13,21 @@ void __cdecl staticInit(void);
 // Address: 004515b0
 void __cdecl clipEdgeToPlane(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
+// Original: core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00451750
+// Address: 00451750
+void __cdecl clipPolygonAgainstMaxY(float max_y_plane);
+
+// Original: core_dcube.cpp_clipPolygonAgainstMinY_FUN_004518b0
+// Address: 004518b0
+void __cdecl clipPolygonAgainstMinY(float min_y_plane);
+
 // Original: core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00451a20
 // Address: 00451a20
 void __cdecl clipPolygonAgainstMaxX(float max_x_plane);
+
+// Original: core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00451ce0
+// Address: 00451ce0
+void __cdecl clipPolygonAgainstMinZ(float min_z_plane);
 
 // Original: core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00451e50
 // Address: 00451e50
@@ -27,11 +39,11 @@ void __cdecl CDemonCubeTriangle::readFromFile(CDemonCubeTriangle *this_ptr,_FILE
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00452030
 // Address: 00452030
-void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,_FILE *param_2,int param_3);
+void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 
-// Original: core_dcube.cpp_FUN_00452240
+// Original: core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00452240
 // Address: 00452240
-float FUN_00452240(undefined4 *param_1,float *param_2,float *param_3);
+float __cdecl CDemonCubeTriangle::rayTriangleIntersection(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 
 // Original: core_dcube.cpp_intersectXZCylinder_FUN_00452490
 // Address: 00452490
@@ -53,9 +65,9 @@ uint __cdecl intersectVerticalCylinderSegment(CVector3f *segment_start,CVector3f
 // Address: 00452e20
 uint __cdecl triangleCylinderCollision(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height);
 
-// Original: core_dcube.cpp_FUN_00453230
+// Original: core_dcube.cpp_clipTriangleToAABB_FUN_00453230
 // Address: 00453230
-undefined4 FUN_00453230(void);
+uint __cdecl clipTriangleToAABB(CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max);
 
 // Original: core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00453c40
 // Address: 00453c40
@@ -77,9 +89,9 @@ void __cdecl CDemonCube::allocVoxelMemory(CDemonCube *this_ptr);
 // Address: 00453d90
 void __cdecl CDemonCube::allocGeometryMemory(CDemonCube *this_ptr);
 
-// Original: core_dcube.cpp_FUN_00453ec0
+// Original: core_dcube.cpp_CDemonCube_freeMemory_FUN_00453ec0
 // Address: 00453ec0
-void FUN_00453ec0(int *param_1);
+void __cdecl CDemonCube::freeMemory(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CDemonCube_load_FUN_00453fa0
 // Address: 00453fa0
@@ -89,17 +101,17 @@ void __cdecl CDemonCube::load(CDemonCube *this_ptr,_FILE *file_handle);
 // Address: 004540c0
 void __cdecl CDemonCube::rotateVertices(CDemonCube *this_ptr,uint rendering_mode);
 
-// Original: core_dcube.cpp_FUN_00454360
+// Original: core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00454360
 // Address: 00454360
-float FUN_00454360(int param_1,undefined4 param_2,undefined4 param_3,float *param_4,uint *param_5);
+float __cdecl CDemonCube::rayIntersectTriangles(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 
 // Original: core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00454520
 // Address: 00454520
 void __cdecl CDemonCube::testCylinderCollision(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 
-// Original: core_dcube.cpp_FUN_004545f0
+// Original: core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004545f0
 // Address: 004545f0
-int __cdecl FUN_004545f0(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
+int __cdecl CDemonCube::testCylinderGroundCollision(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 
 // Original: core_dcube.cpp_CVector3f_arrdtor16_FUN_004de7b0
 // Address: 004de7b0

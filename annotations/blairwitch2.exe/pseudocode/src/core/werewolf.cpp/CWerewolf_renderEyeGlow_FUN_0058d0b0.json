@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 367,
-    "complexity_score": 323,
+    "complexity_score": 252,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 188,
-    "suspect_count": 12,
+    "pseudocode_lines": 192,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_alignment_array",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "raw_address_constant",
+      "stack_alignment_array"
     ],
-    "total_lines": 555
+    "total_lines": 559
   },
   "cross_references": [
     {
@@ -55,44 +54,44 @@
     {
       "addr": "0055d723",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055d723"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0055d723"
     }
   ],
   "globals": [
     {
       "addr": "005fe0b0",
-      "name": "DAT_005fe0b0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fe0b0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005fe0dc",
-      "name": "DAT_005fe0dc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fe0dc",
+      "type": "float",
+      "value": "0.2000000"
     },
     {
       "addr": "005fe0e0",
-      "name": "DAT_005fe0e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fe0e0",
+      "type": "float",
+      "value": "0.2000000"
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "0061e944",
-      "name": "DAT_0061e944",
-      "type": "undefined4",
+      "name": "g_WerewolfEyeGlowTexture",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -736,100 +735,44 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
+      "line": 7,
       "match": "afStackY_1104",
       "severity": "moderate",
       "text": "float afStackY_1104 [1006];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_110);",
-      "type": "undefined_data"
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4298840 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 172,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_2c);",
-      "type": "undefined_data"
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4298840 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 173,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_ec);",
-      "type": "undefined_data"
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4298840 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 174,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 151,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_98);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 152,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "this_ptr_00 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 153,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "DAT_0060b280->vertex_buffer_ptr->r = 0xffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 187,
-      "match": "DAT_0061e944",
-      "severity": "mild",
-      "text": "(this_ptr_00,(SMRGLTextureBasic *)&DAT_0061e944);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 188,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 189,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930(DAT_0060b280,&SStack_144);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 190,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
-      "type": "undefined_data"
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4298840 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 175,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;",
+      "type": "raw_address_constant"
     }
   ]
 }

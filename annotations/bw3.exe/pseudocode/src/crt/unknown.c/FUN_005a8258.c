@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005a8258(void)
 
 {
-  if (_DAT_02d252b4 != 0) {
-    FUN_005a3770(_DAT_02d252b4);
-    _DAT_02d252b4 = 0;
+  if (g_CommandLineA != (char *)0x0) {
+    debugFree(g_CommandLineA);
+    g_CommandLineA = (char *)0x0;
   }
-  if (_DAT_02d252b8 != 0) {
-    FUN_005a3770(_DAT_02d252b8);
-    _DAT_02d252b8 = 0;
+  if (g_CommandLineW != (WCHAR *)0x0) {
+    debugFree(g_CommandLineW);
+    g_CommandLineW = (WCHAR *)0x0;
   }
   return;
 }

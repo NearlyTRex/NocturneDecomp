@@ -16,11 +16,11 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f91
   
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0050f230(this_ptr);
   cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_0050f2a0(this_ptr,(char *)width);
-  bitmap_data = cockpit_ckptutil_c_FUN_00438ef0
+  bitmap_data = cockpit_ckptutil_c_readBitmapFile_FUN_00438ef0
                           (this_ptr->filename,(void *)0x0,in_stack_0000001c * width);
   cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0050fa90
             (this_ptr,bitmap_data,width,in_stack_0000001c,in_stack_00000020,width);
-  FUN_005a3770();
+  debugFree(bitmap_data);
   if (in_stack_0000003c == 0) {
     return;
   }

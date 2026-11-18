@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 51,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 46
   },
   "cross_references": [
@@ -55,9 +53,9 @@
     },
     {
       "addr": "00604514",
-      "name": "DAT_00604514",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WaveOutDeviceID",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
@@ -156,30 +154,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_02cf5678",
-      "severity": "mild",
-      "text": "iVar1 = sound_sndwav_cpp_CWavOutDevice_close_FUN_0055d870((CWavOutDevice *)&DAT_02cf5678);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00604514",
-      "severity": "mild",
-      "text": "DAT_00604514 = device_id;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_02cf5678",
-      "severity": "mild",
-      "text": "return (CWavOutDevice *)&DAT_02cf5678;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

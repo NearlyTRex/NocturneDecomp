@@ -36,7 +36,7 @@
 ;   double DOUBLE_0058be42 = 30
 ;   double DOUBLE_0058be4a = 0.100000000000000
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   CKeys g_CKeys_01cc30e4
+;   CKeys g_CKeysInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   ... and 3 more
@@ -82,10 +82,10 @@ section .text
     MOV EBX,0x12                        ; 004ea3a8
     SAR EDX,0x1f                        ; 004ea3ad
     IDIV EBX                            ; 004ea3b0
-    MOV ECX,dword ptr [0x01cea3f4]      ; 004ea3b2 | DAT_01cea3f4
+    MOV ECX,dword ptr [0x01cea3f4]      ; 004ea3b2 | g_LastPingTime
     MOV EDX,EAX                         ; 004ea3b8
     SUB EAX,ECX                         ; 004ea3ba
-    MOV dword ptr [0x01cea3f4],EDX      ; 004ea3bc | DAT_01cea3f4
+    MOV dword ptr [0x01cea3f4],EDX      ; 004ea3bc | g_LastPingTime
     TEST EAX,EAX                        ; 004ea3c2
     JL 0x004ea617                       ; 004ea3c4
         ;   XREF to: 004ea617 (CONDITIONAL_JUMP)  ; LAB_004ea617
@@ -93,7 +93,7 @@ section .text
     JLE 0x004ea3d6                      ; 004ea3cf
         ;   XREF to: 004ea3d6 (CONDITIONAL_JUMP)  ; LAB_004ea3d6
     MOV EAX,0x20000                     ; 004ea3d1
-    MOV EBX,dword ptr [0x01cea3f8]      ; 004ea3d6 | DAT_01cea3f8
+    MOV EBX,dword ptr [0x01cea3f8]      ; 004ea3d6 | g_CurrentGameTime
         ;   Label: LAB_004ea3d6
     ADD EBX,EAX                         ; 004ea3dc
     MOV EAX,dword ptr [ESI + 0x114]     ; 004ea3de
@@ -104,7 +104,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 004ea3ee
     MOV dword ptr [ESI + EAX*0x1 + 0x5c],EDX ; 004ea3f1
     MOV EDI,dword ptr [ESI]             ; 004ea3f5
-    MOV dword ptr [0x01cea3f8],EBX      ; 004ea3f7 | DAT_01cea3f8
+    MOV dword ptr [0x01cea3f8],EBX      ; 004ea3f7 | g_CurrentGameTime
     CMP EDI,0x1                         ; 004ea3fd
     JNZ 0x004ea62c                      ; 004ea400
         ;   XREF to: 004ea62c (CONDITIONAL_JUMP)  ; LAB_004ea62c
@@ -197,7 +197,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 ; 004ea502
         ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004ea507
-    MOV EAX,[0x01cea3f8]                ; 004ea50a | DAT_01cea3f8
+    MOV EAX,[0x01cea3f8]                ; 004ea50a | g_CurrentGameTime
     MOV EDI,dword ptr [ESP + 0x174]     ; 004ea50f
     SUB EAX,EDI                         ; 004ea516
     MOV dword ptr [ESP + 0x184],EAX     ; 004ea518
@@ -226,7 +226,7 @@ section .text
     SAHF                                ; 004ea55b
     JBE 0x004ea5bd                      ; 004ea55c
         ;   XREF to: 004ea5bd (CONDITIONAL_JUMP)  ; LAB_004ea5bd
-    MOV EAX,[0x01cea3f8]                ; 004ea55e | DAT_01cea3f8
+    MOV EAX,[0x01cea3f8]                ; 004ea55e | g_CurrentGameTime
     MOV dword ptr [ESP + 0x174],EAX     ; 004ea563
     MOV AH,0x8                          ; 004ea56a
     MOV ECX,0x9                         ; 004ea56c
@@ -262,8 +262,8 @@ section .text
     PUSH 0x1                            ; 004ea5bd
         ;   Label: LAB_004ea5bd
     MOV EAX,[0x005bac64]                ; 004ea5bf | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004ea5c4 | g_CKeys_01cc30e4
-    MOV EBX,dword ptr [EAX]             ; 004ea5c5 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004ea5c4 | g_CKeysInstance
+    MOV EBX,dword ptr [EAX]             ; 004ea5c5 | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 004ea5c7
     ADD ESP,0x8                         ; 004ea5ca
     TEST EAX,EAX                        ; 004ea5cd
@@ -320,7 +320,7 @@ section .text
     XOR EDI,EDI                         ; 004ea63a
     MOV EDX,dword ptr [EBP + 0x18]      ; 004ea63c
         ;   Label: LAB_004ea63c
-    CMP EDX,dword ptr [0x01cea400]      ; 004ea63f | DAT_01cea400
+    CMP EDX,dword ptr [0x01cea400]      ; 004ea63f | g_RemoteSyncStage
     JLE 0x004ea6cf                      ; 004ea645
         ;   XREF to: 004ea6cf (CONDITIONAL_JUMP)  ; LAB_004ea6cf
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004ea64b
@@ -348,8 +348,8 @@ section .text
     ADD ESP,0x4                         ; 004ea687
     MOV EAX,[0x005bac64]                ; 004ea68a | g_CKeys_PTR_005bac64
     PUSH 0x1                            ; 004ea68f
-    MOV EBX,dword ptr [EAX]             ; 004ea691 | g_CKeys_01cc30e4
-    PUSH EAX                            ; 004ea693 | g_CKeys_01cc30e4
+    MOV EBX,dword ptr [EAX]             ; 004ea691 | g_CKeysInstance
+    PUSH EAX                            ; 004ea693 | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 004ea694
     ADD ESP,0x8                         ; 004ea697
     TEST EAX,EAX                        ; 004ea69a

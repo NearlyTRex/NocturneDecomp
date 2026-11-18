@@ -11,7 +11,7 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054eea9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f1309
+;   double g_AspectScaleConstant = 65536
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
@@ -51,10 +51,10 @@ section .text
     MOV EAX,dword ptr [EBX + 0x11c]     ; 0055d119
     MOV dword ptr [EBP + 0x38],EAX      ; 0055d11f
     FLD float ptr [EBX + 0x120]         ; 0055d122
-    FMUL double ptr [0x005f1309]        ; 0055d128 | DAT_005f1309
+    FMUL double ptr [0x005f1309]        ; 0055d128 | g_AspectScaleConstant
     ADD ESP,0x8                         ; 0055d12e
     CALL crt_math.c_round_FUN_005c03a0  ; 0055d131
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EBP + 0x2fa4]      ; 0055d136
     PUSH dword ptr [EBX + 0x124]        ; 0055d13c
     PUSH EBP                            ; 0055d142

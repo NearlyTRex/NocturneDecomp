@@ -11,7 +11,7 @@ CExorcism * __cdecl core_exorcism_cpp_factoryFuncExorcism_FUN_0048a2e0(void)
 {
   CExorcism *pCVar1;
   
-  pCVar1 = (CExorcism *)operator_new(0x62c);
+  pCVar1 = operator_new(0x62c);
   if (pCVar1 == (CExorcism *)0x0) {
     return (CExorcism *)0x0;
   }

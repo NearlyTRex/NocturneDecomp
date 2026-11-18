@@ -1,0 +1,377 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 248,
+    "complexity_score": 243,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 113,
+    "suspect_count": 12,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 361
+  },
+  "cross_references": [
+    {
+      "addr": "004c1dd0",
+      "from_addr": "004c1e37",
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c47f0",
+    "address_range": [
+      [
+        "004c47f0",
+        "004c4b30"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004c47f0",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004c47f0(CBitFont *this_ptr,char *text,int x,int y,int color_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "004c2750",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_flushAccelBatch_FUN_004c2750"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e0ae2",
+      "name": "g_FLOAT_005e0ae2",
+      "type": "float",
+      "value": "255"
+    },
+    {
+      "addr": "005e0ae6",
+      "name": "g_FLOAT_005e0ae6",
+      "type": "float",
+      "value": "-0.5"
+    },
+    {
+      "addr": "01c4e9f8",
+      "name": "g_UCHAR_ARRAY_01c4e9f8",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f9",
+      "name": "g_UCHAR_ARRAY_01c4e9f8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9fa",
+      "name": "g_UCHAR_ARRAY_01c4e9f8+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc8cd8",
+      "name": "g_ShadowColorRed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc8cdc",
+      "name": "g_ShadowColorGreen",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc8ce0",
+      "name": "g_ShadowColorBlue",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d224c0",
+      "name": "g_FLOAT_01d224c0",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c1e37",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.936073059360731,
+    "instruction_count": 219,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 49,
+      "BRANCH": 7,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 474,
+      "FLOAT2FLOAT": 25,
+      "FLOAT_ADD": 7,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 7,
+      "INT_ADD": 153,
+      "INT_AND": 203,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 112,
+      "INT_LEFT": 16,
+      "INT_LESS": 9,
+      "INT_MULT": 13,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 49,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 25,
+      "INT_SLESS": 67,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 25,
+      "INT_XOR": 9,
+      "INT_ZEXT": 3,
+      "LOAD": 88,
+      "POPCOUNT": 51,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 61,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 1519
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ab840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b33d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(float *)(this_ptr_00->accel_vertex_count * 0x20 + (int)this_ptr_00",
+      "severity": "moderate",
+      "text": "pfVar9 = (float *)(this_ptr_00->accel_vertex_count * 0x20 + (int)this_ptr_00->accel_vertices);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(short *)(this_ptr_00->accel_index_count * 2 + (int)this_ptr_00",
+      "severity": "moderate",
+      "text": "psVar10 = (short *)(this_ptr_00->accel_index_count * 2 + (int)this_ptr_00->accel_indices);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)&this_ptr->bitmap_count",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&this_ptr->bitmap_count",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)&this_ptr->bitmap_count",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `this_ptr_00->accel_vertices` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)this_ptr_00->accel_vertices",
+      "severity": "moderate",
+      "text": "pfVar9 = (float *)(this_ptr_00->accel_vertex_count * 0x20 + (int)this_ptr_00->accel_vertices);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `this_ptr_00->accel_indices` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 99,
+      "match": "(int)this_ptr_00->accel_indices",
+      "severity": "moderate",
+      "text": "psVar10 = (short *)(this_ptr_00->accel_index_count * 2 + (int)this_ptr_00->accel_indices);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)&this_ptr->bitmap_count",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 44,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 49,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 112,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 94,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 6,
+    "pseudocode_lines": 27,
+    "suspect_count": 4,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 68
+    "total_lines": 71
   },
   "cross_references": [
     {
@@ -39,43 +39,43 @@
   "globals": [
     {
       "addr": "0060422c",
-      "name": "DAT_0060422c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "02cf3340",
-      "name": "DAT_02cf3340",
-      "type": "undefined4",
+      "name": "g_VirtualSpeakerXPositions",
+      "type": "double[8]",
       "value": null
     },
     {
       "addr": "02cf3348",
-      "name": "DAT_02cf3348",
+      "name": "g_VirtualSpeakerXPositions[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf3380",
-      "name": "DAT_02cf3380",
-      "type": "undefined4",
+      "name": "g_VirtualSpeakerYPositions",
+      "type": "double[8]",
       "value": null
     },
     {
       "addr": "02cf3388",
-      "name": "DAT_02cf3388",
+      "name": "g_VirtualSpeakerYPositions[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf33c0",
-      "name": "DAT_02cf33c0",
-      "type": "undefined4",
+      "name": "g_VirtualSpeakerZPositions",
+      "type": "double[8]",
       "value": null
     },
     {
       "addr": "02cf33c8",
-      "name": "DAT_02cf33c8",
+      "name": "g_VirtualSpeakerZPositions[1]",
       "type": "undefined4",
       "value": null
     }
@@ -175,48 +175,32 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0060422c",
-      "severity": "mild",
-      "text": "if (0 < DAT_0060422c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_02cf3340",
-      "severity": "mild",
-      "text": "fVar4 = (float10)(this_ptr->options).position.x - (float10)*(double *)(&DAT_02cf3340 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 18,
-      "match": "DAT_02cf3380",
-      "severity": "mild",
-      "text": "fVar5 = (float10)(this_ptr->options).position.y - (float10)*(double *)(&DAT_02cf3380 + iVar2);",
-      "type": "undefined_data"
+      "match": "(double *)((int)g_VirtualSpeakerXPositions",
+      "severity": "moderate",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerXPositions + iVar2);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_02cf33c0",
-      "severity": "mild",
-      "text": "fVar6 = (float10)(this_ptr->options).position.z - (float10)*(double *)(&DAT_02cf33c0 + iVar2);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(double *)((int)g_VirtualSpeakerYPositions",
+      "severity": "moderate",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerYPositions + iVar2);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0060422c",
-      "severity": "mild",
-      "text": "} while (iVar3 < DAT_0060422c);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(double *)((int)g_VirtualSpeakerZPositions",
+      "severity": "moderate",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 23,
+      "line": 26,
       "match": "pCVar1 = (T *)&(pCVar1->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar1 = (CSfxSlot *)&(pCVar1->options).position;",

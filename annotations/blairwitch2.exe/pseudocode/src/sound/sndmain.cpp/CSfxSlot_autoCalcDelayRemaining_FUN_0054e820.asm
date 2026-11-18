@@ -12,18 +12,18 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e85a6
 ;   TerminatedCString s_SfxSlot_autoCalcDelayRem_005e85bb
-;   undefined4 DAT_005fbc18
-;   undefined4 DAT_0061bcb4
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_02648428
-;   undefined4 DAT_02648438
-;   undefined4 DAT_02648448
-;   undefined4 DAT_026484b8
-;   undefined4 DAT_0264901c
+;   float g_FLOAT_005fbc18 = 1116.400
+;   float g_FLOAT_0061bcb4 = 1
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   double g_DOUBLE_02648428
+;   double g_DOUBLE_02648438
+;   double g_DOUBLE_02648448
+;   int g_INT_026484b8
+;   int g_SoundLockCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -33,7 +33,7 @@ section .text
         ;   Label: sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_0054e820
     SUB ESP,0x18                        ; 0054e821
     MOV EBX,dword ptr [ESP + 0x20]      ; 0054e824
-    CMP dword ptr [0x0264901c],0x0      ; 0054e828 | DAT_0264901c
+    CMP dword ptr [0x0264901c],0x0      ; 0054e828 | g_SoundLockCount
     JLE 0x0054e843                      ; 0054e82f
         ;   XREF to: 0054e843 (CONDITIONAL_JUMP)  ; LAB_0054e843
     TEST byte ptr [EBX + 0x4c],0x1      ; 0054e831
@@ -49,32 +49,32 @@ section .text
     MOV ECX,0x5e85a6                    ; 0054e844 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xab6                       ; 0054e849
     PUSH 0x5e85bb                       ; 0054e84e | = "SfxSlot::autoCalcDelayRemaining - mus..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0054e853 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0054e859 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054e85f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0054e853 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0054e859 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e85f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054e864
     POP ESI                             ; 0054e867
     JMP 0x0054e831                      ; 0054e868
         ;   XREF to: 0054e831 (UNCONDITIONAL_JUMP)  ; LAB_0054e831
-    MOV EAX,[0x026484b8]                ; 0054e86a | DAT_026484b8
+    MOV EAX,[0x026484b8]                ; 0054e86a | g_INT_026484b8
         ;   Label: LAB_0054e86a
     FLD double ptr [EBX + 0x4]          ; 0054e86f
-    FSUB double ptr [EAX*0x8 + 0x2648428] ; 0054e872 | DAT_02648428
+    FSUB double ptr [EAX*0x8 + 0x2648428] ; 0054e872 | g_DOUBLE_02648428
     FMUL ST0                            ; 0054e879
     FLD double ptr [EBX + 0xc]          ; 0054e87b
-    FSUB double ptr [EAX*0x8 + 0x2648438] ; 0054e87e | DAT_02648438
+    FSUB double ptr [EAX*0x8 + 0x2648438] ; 0054e87e | g_DOUBLE_02648438
     FMUL ST0                            ; 0054e885
     FLD double ptr [EBX + 0x14]         ; 0054e887
     FXCH                                ; 0054e88a
     FADDP ST2,ST0                       ; 0054e88c
-    FSUB double ptr [EAX*0x8 + 0x2648448] ; 0054e88e | DAT_02648448
+    FSUB double ptr [EAX*0x8 + 0x2648448] ; 0054e88e | g_DOUBLE_02648448
     FMUL ST0                            ; 0054e895
     FADDP                               ; 0054e897
     FSQRT                               ; 0054e899
-    FMUL float ptr [0x0061bcb4]         ; 0054e89b | DAT_0061bcb4
+    FMUL float ptr [0x0061bcb4]         ; 0054e89b | g_FLOAT_0061bcb4
     FLD1                                ; 0054e8a1
-    FDIV float ptr [0x005fbc18]         ; 0054e8a3 | DAT_005fbc18
+    FDIV float ptr [0x005fbc18]         ; 0054e8a3 | g_FLOAT_005fbc18
     FMULP                               ; 0054e8a9
     FSTP float ptr [EBX + 0x40]         ; 0054e8ab
     ADD ESP,0x18                        ; 0054e8ae

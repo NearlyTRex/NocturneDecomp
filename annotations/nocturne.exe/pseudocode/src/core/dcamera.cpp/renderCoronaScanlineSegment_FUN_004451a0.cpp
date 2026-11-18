@@ -6,44 +6,46 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_004451a0(int row_index,int column_start,int column_end)
 
 {
-  uint *puVar1;
-  int iVar2;
-  uint *puVar3;
-  uint uVar4;
-  int *piVar5;
-  char *pcVar6;
+  int iVar1;
+  uint *puVar2;
+  uint uVar3;
+  CVector3i *pCVar4;
+  char *pcVar5;
+  int *piVar6;
   uint uVar7;
   uint uVar8;
   
-  piVar5 = (int *)(row_index * 0xf00 + 0x7f7378 + column_start * 0xc);
-  pcVar6 = (char *)(column_start + row_index * 0x140 + 0xa9d078);
-  puVar1 = (uint *)(row_index * 0x500 + 0x146ba10 + column_start * 4);
-  puVar3 = g_ZBufferScanlineArray[row_index << (DAT_012b0660 & 0x1f)] +
-           (column_start << (DAT_012b0660 & 0x1f));
+  pCVar4 = g_PrecomputedWorldPositions + row_index * 0x140 + column_start;
+  pcVar5 = g_CoronaBlurOutputBuffer[row_index] + column_start;
+  piVar6 = g_CoronaDepthBuffer[row_index] + column_start;
+  puVar2 = g_ZBufferScanlineArray[row_index << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
+           (column_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
   for (; column_start < column_end; column_start = column_start + 1) {
-    if ((((*puVar3 < *puVar1) &&
-         (uVar7 = *piVar5 - *_DAT_014b8458,
-         (int)((uVar7 ^ (int)uVar7 >> 0x1f) - ((int)uVar7 >> 0x1f)) < _DAT_014b8458[3])) &&
-        (uVar4 = piVar5[1] - _DAT_014b8458[1],
-        (int)((uVar4 ^ (int)uVar4 >> 0x1f) - ((int)uVar4 >> 0x1f)) < _DAT_014b8458[3])) &&
-       (uVar8 = piVar5[2] - _DAT_014b8458[2],
-       (int)((uVar8 ^ (int)uVar8 >> 0x1f) - ((int)uVar8 >> 0x1f)) < _DAT_014b8458[3])) {
-      iVar2 = uVar8 * uVar8 + uVar4 * uVar4 + uVar7 * uVar7;
-      if (iVar2 < _DAT_014b8458[4]) {
-        *pcVar6 = *pcVar6 + (char)((ulonglong)
-                                   ((longlong)(_DAT_014b8458[4] - iVar2 >> 0x10) *
-                                   (longlong)_DAT_014b8458[5]) >> 0x10);
+    if ((((*puVar2 < (uint)*piVar6) &&
+         (uVar7 = pCVar4->x - (g_CurrentGlobe->position_scaled).x,
+         (int)((uVar7 ^ (int)uVar7 >> 0x1f) - ((int)uVar7 >> 0x1f)) <
+         g_CurrentGlobe->linear_radius_scaled)) &&
+        (uVar3 = pCVar4->y - (g_CurrentGlobe->position_scaled).y,
+        (int)((uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f)) <
+        g_CurrentGlobe->linear_radius_scaled)) &&
+       (uVar8 = pCVar4->z - (g_CurrentGlobe->position_scaled).z,
+       (int)((uVar8 ^ (int)uVar8 >> 0x1f) - ((int)uVar8 >> 0x1f)) <
+       g_CurrentGlobe->linear_radius_scaled)) {
+      iVar1 = uVar8 * uVar8 + uVar3 * uVar3 + uVar7 * uVar7;
+      if (iVar1 < g_CurrentGlobe->quadratic_radius_scaled) {
+        *pcVar5 = *pcVar5 + (char)((ulonglong)
+                                   ((longlong)
+                                    (g_CurrentGlobe->quadratic_radius_scaled - iVar1 >> 0x10) *
+                                   (longlong)g_CurrentGlobe->falloff_value) >> 0x10);
       }
     }
-    piVar5 = piVar5 + 3;
-    pcVar6 = pcVar6 + 1;
-    puVar1 = puVar1 + 1;
-    puVar3 = puVar3 + (1 << (DAT_012b0660 & 0x1f));
+    pCVar4 = pCVar4 + 1;
+    pcVar5 = pcVar5 + 1;
+    piVar6 = piVar6 + 1;
+    puVar2 = puVar2 + (1 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
   }
   return;
 }

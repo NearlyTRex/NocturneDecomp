@@ -11,11 +11,11 @@
 ;   core_game.cpp_joinNetworkGame_FUN_004d7e90 at 004d7ed6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   support_trisock.cpp_parseIPComponents_FUN_0059c5d0
 ;
 ; *****************************************************************************
@@ -45,10 +45,10 @@ section .text
     MOV ECX,0x5f82a4                    ; 0059c4f2
     MOV ESI,0x57                        ; 0059c4f7
     PUSH 0x5f82bb                       ; 0059c4fc
-    MOV dword ptr [0x01d1d400],ECX      ; 0059c501 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0059c507 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0059c50d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0059c501 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0059c507 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0059c50d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0059c512
     POP ESI                             ; 0059c515
     POP EDI                             ; 0059c516

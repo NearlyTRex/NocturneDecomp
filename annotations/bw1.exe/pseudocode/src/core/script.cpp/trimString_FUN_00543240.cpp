@@ -26,13 +26,13 @@ void __cdecl core_script_cpp_trimString_FUN_00543240(char *str)
   if (0 < (int)n) {
     pcVar2 = str + n;
     do {
-      if (((&DAT_00626114)[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
+      if ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
       n = n - 1;
       pcVar2 = pcVar2 + -1;
     } while (0 < (int)n);
   }
   str[n] = '\0';
-  while (((&DAT_00626114)[(byte)(*str + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*str + 1)] & 2) != 0) {
     memmove(str,str + 1,n);
     n = n - 1;
   }

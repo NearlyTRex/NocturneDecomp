@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 543,
-    "complexity_score": 387,
+    "complexity_score": 371,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 232,
-    "suspect_count": 12,
+    "pseudocode_lines": 231,
+    "suspect_count": 11,
     "suspect_types": [
       "format_string_mismatch",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcat",
       "unrolled_strchr",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 775
+    "total_lines": 774
   },
   "cross_references": [
     {
@@ -282,13 +281,13 @@
     },
     {
       "addr": "005bef20",
-      "name": "DAT_005bef20",
-      "type": "undefined4",
+      "name": "g_SoundResultBufferTemplate",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "005bef24",
-      "name": "DAT_005bef24",
+      "name": "g_SoundResultBufferTemplate+4",
       "type": "undefined4",
       "value": null
     },
@@ -702,20 +701,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_005bef20",
-      "severity": "mild",
-      "text": "puVar7 = &DAT_005bef20;",
-      "type": "undefined_data"
-    },
-    {
       "actual_args": 0,
       "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 50,
+      "line_number": 49,
       "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -726,7 +717,7 @@
       "expected_args": 1,
       "format_string": "Can't find wav: %s\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_0043ac60",
-      "line_number": 175,
+      "line_number": 174,
       "match": "engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,\"Can't find wav: %s\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -737,7 +728,7 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 189,
+      "line_number": 188,
       "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -748,7 +739,7 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 202,
+      "line_number": 201,
       "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -759,14 +750,14 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 212,
+      "line_number": 211,
       "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 93,
+      "line": 92,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -774,7 +765,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 105,
+      "line": 104,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -782,7 +773,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 84,
+      "line": 83,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -790,7 +781,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 84,
+      "line": 83,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -798,7 +789,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 70,
+      "line": 69,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -806,7 +797,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '!' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '!') in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

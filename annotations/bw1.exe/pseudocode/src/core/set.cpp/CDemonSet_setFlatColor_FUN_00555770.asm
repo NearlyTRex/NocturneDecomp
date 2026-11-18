@@ -12,12 +12,12 @@
 ; XREF[13]:
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004feb45
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00505060 at 00505104
-;   core_menu.cpp_FUN_0050b470 at 0050b4db
-;   core_menu.cpp_FUN_0050ba70 at 0050bae0
-;   core_menu.cpp_FUN_0050c990 at 0050ca03
 ;   core_menu.cpp_calibrateGamepad_FUN_0050a2b0 at 0050a3d2
+;   core_menu.cpp_configureCustomKeys_FUN_0050b470 at 0050b4db
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050ab6a
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050bae0
 ;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cd9d
+;   core_menu.cpp_showOptionsScreen_FUN_0050c990 at 0050ca03
 ;   core_moon.cpp_CMoon_render_FUN_00521e40 at 00521f6f
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 at 0054efb1
 ;   ... and 3 more

@@ -2,47 +2,45 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 36
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
       "addr": "0048c2e0",
       "from_addr": "0048f22d",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c4a60",
       "from_addr": "004c4af6",
-      "name": "core_game.cpp_FUN_004c4a60",
+      "name": "core_game.cpp_CGame_playMusic_FUN_004c4a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e94f0",
       "from_addr": "004e9698",
-      "name": "core_menu.cpp_FUN_004e94f0",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055fd30",
+      "from_addr": "0055fdc2",
+      "name": "core_sound.cpp_CSound_init_FUN_0055fd30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055ff40",
       "from_addr": "0056018d",
       "name": "core_sound.cpp_CSound_process_FUN_0055ff40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055fd30",
-      "from_addr": "0055fdc2",
-      "name": "core_sound.cpp_FUN_0055fd30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,7 +84,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     }
   ],
   "globals": [
@@ -104,14 +102,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -121,7 +119,7 @@
       {
         "call_addr": "0048f22d",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,7 +130,7 @@
       {
         "call_addr": "004c4af6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c4a60",
+        "caller": "core_game.cpp_CGame_playMusic_FUN_004c4a60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +163,7 @@
       {
         "call_addr": "0055fdc2",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055fd30",
+        "caller": "core_sound.cpp_CSound_init_FUN_0055fd30",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -198,7 +196,7 @@
       {
         "call_addr": "004e9698",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -209,7 +207,7 @@
       {
         "call_addr": "004e978b",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,7 +218,7 @@
       {
         "call_addr": "004e988f",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -302,14 +300,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

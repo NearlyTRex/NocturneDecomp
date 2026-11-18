@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_0051ff60(CScat *this_ptr)
 
 {
@@ -32,16 +30,16 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_0051ff60(CScat *this_ptr)
     local_28 = (1.0 - (this_ptr->base).base.layer_action_t) * local_28;
   }
   pCVar1 = &(this_ptr->base).base.model;
-  fVar2 = (float)core_motion_cpp_FUN_005038a0(pCVar1,4);
-  fVar3 = (float)core_motion_cpp_FUN_005038a0(pCVar1,5);
-  fVar4 = (float)core_motion_cpp_FUN_005038a0(pCVar1,0xc);
-  fVar5 = (float)core_motion_cpp_FUN_005038a0(pCVar1,0xd);
-  fVar6 = (float)core_motion_cpp_FUN_005038a0(pCVar1,0xe);
+  fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,4);
+  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,5);
+  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,0xc);
+  fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,0xd);
+  fVar6 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&pCVar1->base,0xe);
   local_28 = (1.0 - (fVar6 + fVar5 + fVar4 + fVar3 + fVar2)) * local_28;
   if (local_28 < 0.0) {
     local_28 = 0.0;
   }
-  if ((float)_DAT_005e2bb3 < local_28) {
+  if ((float)0.0001 < local_28) {
     if (1.0 < local_28) {
       local_28 = 1.0;
     }
@@ -52,12 +50,13 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_0051ff60(CScat *this_ptr)
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(pCVar1);
     iVar7 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
                       (&this_ptr_00->motion_list,motion_name,iVar7);
-    fVar2 = (float)core_motion_cpp_FUN_00503f50(pCVar1,iVar7,(this_ptr->base).base.layer_action_t);
+    fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00503f50
+                      (&pCVar1->base,iVar7,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
-              (pCVar1,iVar7,fVar2,local_28,_DAT_01e620a8,
+              (pCVar1,iVar7,fVar2,local_28,g_ScatIndices[0x10],
                core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
     if ((this_ptr->base).base.layer_action_index == 1) {
-      core_scat_cpp_FUN_00520140(this_ptr,1);
+      core_scat_cpp_CScat_blendAimBones_FUN_00520140(this_ptr,1);
       return;
     }
   }

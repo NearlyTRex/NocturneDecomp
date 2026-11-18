@@ -11,7 +11,7 @@ CZombiePriest * __cdecl core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4
 {
   CZombiePriest *pCVar1;
   
-  pCVar1 = (CZombiePriest *)operator_new(0xd114);
+  pCVar1 = operator_new(0xd114);
   if (pCVar1 == (CZombiePriest *)0x0) {
     return (CZombiePriest *)0x0;
   }

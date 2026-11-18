@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_004fac10(CMorph *this_ptr)
 
@@ -70,9 +69,9 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_004fac10(CMorph *this_ptr)
   
   bVar14 = 0;
   if ((this_ptr->models[0].num_points < 3) || (this_ptr->models[1].num_points < 3)) {
-    _DAT_01d71de0 = "..\\core\\morph.cpp";
-    _DAT_01d71de4 = 799;
-    core_main_c_FUN_004e4330("CMorph::getReady - can't do this unless we have setup both models!");
+    g_CHAR_PTR_01d71de0 = "..\\core\\morph.cpp";
+    g_INT_01d71de4 = 799;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CMorph::getReady - can't do this unless we have setup both models!");
   }
   __arrinit(&local_118,2,&g_CBoundingBox3DTypeInfo);
   local_40 = this_ptr;

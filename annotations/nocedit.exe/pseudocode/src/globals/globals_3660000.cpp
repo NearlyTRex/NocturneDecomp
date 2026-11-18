@@ -8,7 +8,7 @@
 CKeyFramedModel g_SkeleditViewModel = {};
 
 // SPose
-SPose SPose_036644d8 = {};
+SPose g_ViewModelSavedPose = {};
 
 // char[20480]
 char g_SkeleditClipboardBuffer[20480] = {};

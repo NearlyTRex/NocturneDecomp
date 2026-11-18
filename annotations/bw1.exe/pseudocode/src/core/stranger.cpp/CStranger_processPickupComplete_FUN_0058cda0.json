@@ -16,7 +16,7 @@
     {
       "addr": "005881d0",
       "from_addr": "0058884a",
-      "name": "core_stranger.cpp_FUN_005881d0",
+      "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,15 +45,15 @@
     },
     {
       "addr": "00494340",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00494340"
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340"
     }
   ],
   "globals": [
     {
       "addr": "005f6cf1",
-      "name": "s_actionPending_d_stranger_005f6cf0+1",
-      "type": "undefined4",
+      "name": "s_actionPending_d_stranger_005f6cf1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -75,7 +75,7 @@
       {
         "call_addr": "0058884a",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_005881d0",
+        "caller": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,6 +116,12 @@
     "pcode_op_count": 139
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0056a160",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
     "nocedit.exe": {
       "addr": "005c1f00",
       "by": "name",

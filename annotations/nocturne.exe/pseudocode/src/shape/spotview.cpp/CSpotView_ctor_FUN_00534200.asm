@@ -10,10 +10,10 @@
 ;   shape_spotview.cpp_staticInit_FUN_005341f0 at 005341f5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0fa8
-;   undefined4 DAT_005c0fac
-;   undefined4 DAT_02dc9ea0
-;   undefined4 DAT_02dc9ea4
+;   float g_FLOAT_005c0fa8 = 12
+;   float g_FLOAT_005c0fac = 1
+;   float g_FLOAT_02dc9ea0
+;   float g_FLOAT_02dc9ea4
 ;
 ; Called Functions:
 ;   shape_spotview.cpp_CSpotView_reset_FUN_00534260
@@ -25,11 +25,11 @@ section .text
     PUSH EBX                            ; 00534200
         ;   Label: shape_spotview.cpp_CSpotView_ctor_FUN_00534200
     MOV EBX,dword ptr [ESP + 0x8]       ; 00534201
-    FLD float ptr [0x005c0fa8]          ; 00534205 | DAT_005c0fa8
-    FLD float ptr [0x005c0fac]          ; 0053420b | DAT_005c0fac
-    FLD float ptr [0x02dc9ea0]          ; 00534211 | DAT_02dc9ea0
+    FLD float ptr [0x005c0fa8]          ; 00534205 | g_FLOAT_005c0fa8
+    FLD float ptr [0x005c0fac]          ; 0053420b | g_FLOAT_005c0fac
+    FLD float ptr [0x02dc9ea0]          ; 00534211 | g_FLOAT_02dc9ea0
     LEA EAX,[EBX + 0x18]                ; 00534217
-    FLD float ptr [0x02dc9ea4]          ; 0053421a | DAT_02dc9ea4
+    FLD float ptr [0x02dc9ea4]          ; 0053421a | g_FLOAT_02dc9ea4
     MOV dword ptr [EAX + 0x8],0x0       ; 00534220
     PUSH 0x1f                           ; 00534227
     MOV EDX,dword ptr [EAX + 0x8]       ; 00534229

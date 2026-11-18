@@ -30,7 +30,8 @@ def test_the_markdown_is_flattened_into_the_tsv(paths, capsys):
     assert "WARN: line 2: addr 10002000 != name suffix _FUN_10002001 -- skipped" in out
     assert "Parsed 1 entries" in out and "H=1  M=0  L=0" in out
     assert f"Wrote 1 rows -> {tsv}" in out
-    assert crt_catalog.load_tsv(tsv)[0]["name"] == "crt_string.c_strlen_FUN_10001000"
+    with open(tsv, encoding = "utf-8") as handle:
+        assert handle.read().splitlines()[1].split("\t")[2] == "crt_string.c_strlen_FUN_10001000"
 
 
 @pytest.mark.parametrize("existing, code, message", [

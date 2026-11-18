@@ -11,17 +11,9 @@ int __cdecl core_gore_cpp_CBloodSplat_save_FUN_004c8750(CBloodSplat *this_ptr,_F
 {
   int iVar1;
   
-  FUN_005b8010
-            (file_handle,"%f,%f,%f\n",(double)(this_ptr->position).x,
-             (double)(this_ptr->position).y,(double)(this_ptr->position).z);
-  FUN_005b8010();
-  FUN_005b8010
-            (file_handle,"%f,%f,%f\n",(double)(this_ptr->rotation).x,
-             (double)(this_ptr->rotation).z,(double)(this_ptr->rotation).y);
-  iVar1 = FUN_005b8010
-                    (file_handle,"%d,%d,%d,%d,%d,%d,%d\n",this_ptr->texture_variant,
-                     (this_ptr->position_fixed).x,(this_ptr->position_fixed).y,
-                     (this_ptr->position_fixed).z,(this_ptr->normal_fixed).x,
-                     (this_ptr->normal_fixed).y,(this_ptr->normal_fixed).z);
+  _fprintf(file_handle,"%f,%f,%f\n");
+  _fprintf(file_handle,"%d,%d,%d\n");
+  _fprintf(file_handle,"%f,%f,%f\n");
+  iVar1 = _fprintf(file_handle,"%d,%d,%d,%d,%d,%d,%d\n");
   return iVar1;
 }

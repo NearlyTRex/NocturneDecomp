@@ -10,12 +10,12 @@
 ; XREF[5]:
 ;   core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004bb890 at 004bb8a4
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60 at 004dbc6e
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 at 004db9ff
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0 at 004deffa
 ;   core_inv.cpp_CInventory_updateInventory_FUN_004dccd0 at 004dcd1a
-;   core_inv.cpp_FUN_004db9d0 at 004db9ff
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
     PUSH ESI                            ; 004dd270
         ;   Label: core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270
     MOV EAX,dword ptr [ESP + 0x8]       ; 004dd271
-    MOV EDX,dword ptr [0x01cedef4]      ; 004dd275 | DAT_01cedef4
+    MOV EDX,dword ptr [0x01cedef4]      ; 004dd275 | g_INT_01cedef4
     MOV ECX,dword ptr [EAX + 0x4]       ; 004dd27b
     CMP ECX,dword ptr [EDX*0x4 + 0x1cedee4] ; 004dd27e
     JNZ 0x004dd2a3                      ; 004dd285

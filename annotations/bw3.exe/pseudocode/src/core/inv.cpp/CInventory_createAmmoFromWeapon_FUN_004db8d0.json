@@ -1,0 +1,168 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 66,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 112
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004db8d0",
+    "address_range": [
+      [
+        "004db8d0",
+        "004db980"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0",
+    "signature": "void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db8d0(CInventory *this_ptr,CWeapon *weapon)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040de60",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040de60"
+    },
+    {
+      "addr": "004da880",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3cb2",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 61,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 50,
+      "INT_ADD": 26,
+      "INT_AND": 26,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 24,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 12,
+      "INT_SUB": 20,
+      "LOAD": 18,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 21
+    },
+    "pcode_op_count": 244
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004db760",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9385
+    },
+    "bw1.exe": {
+      "addr": "004f8b70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9457
+    },
+    "nocedit.exe": {
+      "addr": "004fe900",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9313
+    },
+    "nocturne.exe": {
+      "addr": "004c0640",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9457
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "weapon",
+        "offset": 8,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 28,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 35,
+      "match": "pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

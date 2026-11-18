@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_006b0270
-;   undefined4 DAT_006b0288
+;   int g_BypassClipping
+;   int g_RenderResult
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -46,7 +46,7 @@ section .text
     MOV dword ptr [0x01c039a0],EDI      ; 004070a4 | g_RenderStateFlags
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004070aa
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
-    MOV EAX,[0x006b0270]                ; 004070af | DAT_006b0270
+    MOV EAX,[0x006b0270]                ; 004070af | g_BypassClipping
     ADD ESP,0x4                         ; 004070b4
     MOV dword ptr [0x01c039a4],EBP      ; 004070b7 | g_VertexPreprocessMode
     TEST EAX,EAX                        ; 004070bd
@@ -58,7 +58,7 @@ section .text
     CALL engine_fpoly.c_rasterizePolygonHardware_FUN_00494260 ; 004070c6
         ;   XREF to: 00494260 (UNCONDITIONAL_CALL)  ; void engine_fpoly.c_rasterizePolygonHardware_FUN_00494260(SRenderVertex * * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004070cb
-    MOV EAX,0x6b0288                    ; 004070ce | DAT_006b0288
+    MOV EAX,0x6b0288                    ; 004070ce | g_RenderResult
     POP EBP                             ; 004070d3
     POP EDI                             ; 004070d4
     POP ESI                             ; 004070d5
@@ -86,7 +86,7 @@ section .text
     CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 0040710a
         ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_00432cd0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 0040710f
-    MOV EAX,0x6b0288                    ; 00407112 | DAT_006b0288
+    MOV EAX,0x6b0288                    ; 00407112 | g_RenderResult
     POP EBP                             ; 00407117
     POP EDI                             ; 00407118
     POP ESI                             ; 00407119

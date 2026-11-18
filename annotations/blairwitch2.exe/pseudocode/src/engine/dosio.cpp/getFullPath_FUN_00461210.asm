@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   engine_dosio.cpp_findFileNormally_FUN_004609e0 at 00460a07
-;   shape_edittool.cpp_FUN_00481e20 at 00481fa0
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00481e20 at 00481fa0
 ;
 ; Called Functions:
 ;   crt_stdlib.c__fullpath_FUN_005ba120

@@ -1,0 +1,152 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 100,
+    "complexity_score": 46,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 131
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0047da40",
+    "address_range": [
+      [
+        "0047da40",
+        "0047db62"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0047da40",
+    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0047da40(CEditorTools *this_ptr,char *format,...)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a2898",
+      "is_variadic": false,
+      "name": "crt_stdio.c_vsprintf_FUN_005a2898"
+    },
+    {
+      "addr": "00482070",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_00482070"
+    },
+    {
+      "addr": "00481f20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_00481f20"
+    },
+    {
+      "addr": "00481f40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_00481f40"
+    },
+    {
+      "addr": "0047d230",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9012345679012346,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 58,
+      "INT_ADD": 32,
+      "INT_AND": 35,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 34,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 17,
+      "INT_SUB": 36,
+      "INT_XOR": 2,
+      "LOAD": 5,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 35
+    },
+    "pcode_op_count": 316
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047c880",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.95
+    },
+    "bw1.exe": {
+      "addr": "00494ea0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0049f180",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.95
+    },
+    "nocturne.exe": {
+      "addr": "004703f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 10,
+      "match": "&stack0x0000000c",
+      "severity": "moderate",
+      "text": "puStack_8 = &stack0x0000000c;",
+      "type": "stack_ref"
+    }
+  ]
+}

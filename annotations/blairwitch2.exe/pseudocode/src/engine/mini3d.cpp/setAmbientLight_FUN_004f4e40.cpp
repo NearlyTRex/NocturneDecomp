@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setAmbientLight_FUN_004f4e40(float ambient)
 
 {
-  _DAT_01d098f0 = ambient;
-  if ((_DAT_0264bc80 != (code *)0x0) && (_DAT_01c37788 != 0)) {
-    (*_DAT_0264bc80)(ambient);
+  g_FLOAT_01d098f0 = ambient;
+  if ((g_PTR_0264bc80 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+    (*(code *)g_PTR_0264bc80)(ambient);
     return;
   }
   return;

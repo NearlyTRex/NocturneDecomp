@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_drone_cpp_CDrone_getActorType_FUN_00462930(CDrone *this_ptr)
 
 {
-  return &g_CDroneActorType_01b7b4ac;
+  return &g_CDroneClassInfo;
 }

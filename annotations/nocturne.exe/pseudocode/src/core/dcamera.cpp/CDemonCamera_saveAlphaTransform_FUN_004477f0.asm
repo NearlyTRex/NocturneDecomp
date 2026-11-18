@@ -20,12 +20,12 @@
 ;   undefined4 g_TransformMatrix.m[2].x
 ;   undefined4 g_TransformMatrix.m[2].y
 ;   undefined4 g_TransformMatrix.m[2].z
-;   undefined4 DAT_01cc5118
-;   undefined4 DAT_01cc511c
-;   undefined4 DAT_01cc5120
-;   undefined4 DAT_01cc5124
-;   undefined4 DAT_01cc5128
-;   undefined4 DAT_01cc512c
+;   int g_INT_01cc5118
+;   int g_INT_01cc511c
+;   int g_INT_01cc5120
+;   int g_INT_01cc5124
+;   int g_INT_01cc5128
+;   int g_INT_01cc512c
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -74,23 +74,23 @@ section .text
     MOV dword ptr [EAX + 0x132c],EDX    ; 00447880
     MOV EDX,dword ptr [0x01c03a08]      ; 00447886 | g_TransformMatrix.m[2].z
     MOV dword ptr [EAX + 0x134c],EDX    ; 0044788c
-    MOV EDX,dword ptr [0x01cc5118]      ; 00447892 | DAT_01cc5118
+    MOV EDX,dword ptr [0x01cc5118]      ; 00447892 | g_INT_01cc5118
     MOV dword ptr [EAX + 0x136c],EDX    ; 00447898
-    MOV EDX,dword ptr [0x01cc511c]      ; 0044789e | DAT_01cc511c
+    MOV EDX,dword ptr [0x01cc511c]      ; 0044789e | g_INT_01cc511c
     MOV dword ptr [EAX + 0x138c],EDX    ; 004478a4
-    MOV EDX,dword ptr [0x01cc5120]      ; 004478aa | DAT_01cc5120
+    MOV EDX,dword ptr [0x01cc5120]      ; 004478aa | g_INT_01cc5120
     MOV dword ptr [EAX + 0x13ac],EDX    ; 004478b0
-    MOV EDX,dword ptr [0x01cc5124]      ; 004478b6 | DAT_01cc5124
+    MOV EDX,dword ptr [0x01cc5124]      ; 004478b6 | g_INT_01cc5124
     MOV dword ptr [EAX + 0x13cc],EDX    ; 004478bc
-    MOV EDX,dword ptr [0x01cc5128]      ; 004478c2 | DAT_01cc5128
+    MOV EDX,dword ptr [0x01cc5128]      ; 004478c2 | g_INT_01cc5128
     MOV dword ptr [EAX + 0x13ec],EDX    ; 004478c8
-    MOV EDX,dword ptr [0x01cc512c]      ; 004478ce | DAT_01cc512c
+    MOV EDX,dword ptr [0x01cc512c]      ; 004478ce | g_INT_01cc512c
     MOV dword ptr [EAX + 0x140c],EDX    ; 004478d4
-    MOV EDX,dword ptr [0x01cc5130]      ; 004478da | DAT_01cc5130
+    MOV EDX,dword ptr [0x01cc5130]      ; 004478da | g_INT_01cc5130
     MOV dword ptr [EAX + 0x142c],EDX    ; 004478e0
-    MOV EDX,dword ptr [0x01cc5134]      ; 004478e6 | DAT_01cc5134
+    MOV EDX,dword ptr [0x01cc5134]      ; 004478e6 | g_INT_01cc5134
     MOV dword ptr [EAX + 0x144c],EDX    ; 004478ec
-    MOV EDX,dword ptr [0x01cc5138]      ; 004478f2 | DAT_01cc5138
+    MOV EDX,dword ptr [0x01cc5138]      ; 004478f2 | g_INT_01cc5138
     MOV dword ptr [EAX + 0x146c],EDX    ; 004478f8
     ADD ESP,0xc                         ; 004478fe
     POP EDI                             ; 00447901

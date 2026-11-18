@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 96,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
-    "suspect_count": 2,
+    "pseudocode_lines": 65,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 184
+    "total_lines": 183
   },
   "cross_references": [
     {
@@ -51,68 +50,68 @@
     },
     {
       "addr": "01c51cb0",
-      "name": "DAT_01c51cb0",
-      "type": "undefined4",
+      "name": "g_JoyXPos",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cb4",
-      "name": "DAT_01c51cb4",
-      "type": "undefined4",
+      "name": "g_JoyYPos",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cb8",
-      "name": "DAT_01c51cb8",
-      "type": "undefined4",
+      "name": "g_JoyRPos",
+      "type": "DWORD",
       "value": null
     },
     {
       "addr": "01c51cbc",
-      "name": "DAT_01c51cbc",
-      "type": "undefined4",
+      "name": "g_JoyZPos",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cc0",
-      "name": "DAT_01c51cc0",
-      "type": "undefined4",
+      "name": "g_JoyButtons",
+      "type": "DWORD",
       "value": null
     },
     {
       "addr": "01c51cc4",
-      "name": "DAT_01c51cc4",
-      "type": "undefined4",
+      "name": "g_JoystickPresent",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cc8",
-      "name": "DAT_01c51cc8",
-      "type": "undefined4",
+      "name": "g_JoyWantUAxis",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51ccc",
-      "name": "DAT_01c51ccc",
-      "type": "undefined4",
+      "name": "g_JoyWantRAxis",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cd4",
-      "name": "DAT_01c51cd4",
-      "type": "undefined4",
+      "name": "g_JoystickHasPOV",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cd8",
-      "name": "DAT_01c51cd8",
-      "type": "undefined4",
+      "name": "g_JoyPOVDirection",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c9cf0c",
-      "name": "DAT_02c9cf0c",
-      "type": "undefined4",
+      "name": "g_joyGetPosEx",
+      "type": "void*",
       "value": null
     }
   ],
@@ -244,19 +243,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 33,
       "match": "code *",
       "severity": "moderate",
-      "text": "if (_DAT_02c9cf0c == (code *)0x0) {",
+      "text": "(*(code *)g_joyGetPosEx)(0,&local_50);",
       "type": "unresolved_funcptr"
     }
   ]

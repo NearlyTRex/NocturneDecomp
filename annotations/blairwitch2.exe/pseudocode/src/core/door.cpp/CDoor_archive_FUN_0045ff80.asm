@@ -7,7 +7,7 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005d0a1f+1
+;   TerminatedCString s_modelName_005d0a20
 ;   TerminatedCString s_doorType_005d0a2a
 ;   TerminatedCString s_doorSide_005d0a33
 ;   TerminatedCString s_doorState_005d0a3c
@@ -45,7 +45,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 0045ff87
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0045ff8c
-    PUSH 0x5d0a20                       ; 0045ff8f | s_modelName_005d0a1f+1
+    PUSH 0x5d0a20                       ; 0045ff8f | = "modelName"
     LEA EDI,[EBX + 0x2b4]               ; 0045ff94
     PUSH EDI                            ; 0045ff9a
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 0045ff9b
@@ -283,16 +283,16 @@ section .text
         ;   XREF to: 0046014f (UNCONDITIONAL_JUMP)  ; LAB_0046014f
     PUSH ESI                            ; 00460270
         ;   Label: LAB_00460270
-    MOV ESI,0x5d0b16                    ; 00460271 | DAT_005d0b16
+    MOV ESI,0x5d0b16                    ; 00460271 | = "true"
     LEA EDI,[EBX + 0x5d8]               ; 00460276
     PUSH EDI                            ; 0046027c
-    MOV AL,byte ptr [ESI]               ; 0046027d | DAT_005d0b16 | DAT_005d0b18
+    MOV AL,byte ptr [ESI]               ; 0046027d | = "true" | s_ue_005d0b16+2
         ;   Label: LAB_0046027d
     MOV byte ptr [EDI],AL               ; 0046027f
     CMP AL,0x0                          ; 00460281
     JZ 0x00460295                       ; 00460283
         ;   XREF to: 00460295 (CONDITIONAL_JUMP)  ; LAB_00460295
-    MOV AL,byte ptr [ESI + 0x1]         ; 00460285 | DAT_005d0b17 | DAT_005d0b19
+    MOV AL,byte ptr [ESI + 0x1]         ; 00460285 | s_rue_005d0b16+1 | s_e_005d0b16+3
     ADD ESI,0x2                         ; 00460288
     MOV byte ptr [EDI + 0x1],AL         ; 0046028b
     ADD EDI,0x2                         ; 0046028e

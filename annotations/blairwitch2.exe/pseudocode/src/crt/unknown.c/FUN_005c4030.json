@@ -33,13 +33,13 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005c4030",
-    "signature": "undefined4 crt_unknown_c_FUN_005c4030(undefined4 *param_1)"
+    "signature": "time_t crt_unknown_c_FUN_005c4030(time_t *param_1)"
   },
   "function_calls": [
     {
       "addr": "005c43e0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c43e0"
+      "name": "crt_unknown.c__mktime_FUN_005c43e0"
     },
     {
       "addr": "005c5880",
@@ -133,7 +133,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_005c4030(uint *param_1)",
+      "text": "time_t FUN_005c4030(time_t *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -141,7 +141,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 != (uint *)0x0) {",
+      "text": "if (param_1 != (time_t *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -149,7 +149,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = uVar2;",
+      "text": "*param_1 = tVar2;",
       "type": "unnamed_param"
     },
     {

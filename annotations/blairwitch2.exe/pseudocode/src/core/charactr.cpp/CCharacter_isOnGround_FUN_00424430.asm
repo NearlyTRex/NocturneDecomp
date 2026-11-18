@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[20]:
-;   core_basicene.cpp_FUN_0059f0e0 at 0059f121
+;   core_basicene.cpp_CBasicEnemy_processMovement_FUN_0059f0e0 at 0059f121
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411b34
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413062
 ;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 00414f40

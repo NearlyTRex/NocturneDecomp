@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out)
 
 {
@@ -93,14 +91,14 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemon
     normal_out->z = 0.0;
     normal_out->x = 0.0;
   }
-  _DAT_014b8a04 = g_ZeroVector.f.y;
-  _DAT_014b8a08 = g_ZeroVector.f.z;
-  _DAT_014b8a00 = g_ZeroVector.f.x;
-  _DAT_014b89f8 = g_ZeroVector.f.y;
-  _DAT_014b89fc = g_ZeroVector.f.z;
-  _DAT_014b89f4 = g_ZeroVector.f.x;
-  _DAT_014b89ec = g_ZeroVector.f.y;
-  _DAT_014b89f0 = g_ZeroVector.f.z;
-  _DAT_014b89e8 = g_ZeroVector.f.x;
+  g_INT_014b8a04 = g_ZeroVector.i.y;
+  g_FLOAT_014b8a08 = g_ZeroVector.f.z;
+  g_FLOAT_014b8a00 = g_ZeroVector.f.x;
+  g_INT_014b89f8 = g_ZeroVector.i.y;
+  g_FLOAT_014b89fc = g_ZeroVector.f.z;
+  g_FLOAT_014b89f4 = g_ZeroVector.f.x;
+  g_INT_014b89ec = g_ZeroVector.i.y;
+  g_FLOAT_014b89f0 = g_ZeroVector.f.z;
+  g_FLOAT_014b89e8 = g_ZeroVector.f.x;
   return local_5c;
 }

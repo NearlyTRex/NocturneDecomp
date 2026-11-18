@@ -11,7 +11,7 @@ CStylerDemon * __cdecl core_styldemo_cpp_factoryFuncStylerDemon_FUN_0059e040(voi
 {
   CStylerDemon *pCVar1;
   
-  pCVar1 = (CStylerDemon *)operator_new(0xdd18);
+  pCVar1 = operator_new(0xdd18);
   if (pCVar1 == (CStylerDemon *)0x0) {
     return (CStylerDemon *)0x0;
   }

@@ -29,11 +29,11 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_005036b0
 ;   core_motion.cpp_CMotionList_findStateIndex_FUN_00502fa0
-;   core_motion.cpp_FUN_005035c0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2c]      ; 004cea83
     ADD EBX,0x2b4                       ; 004cea87
     PUSH EBX                            ; 004cea8d
-    CALL core_motion.cpp_FUN_005035c0   ; 004cea8e
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004cea8e
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004cea93
     PUSH EAX                            ; 004cea96
     PUSH 0x5d9bb4                       ; 004cea97 | = "  current motion is %s\n"
@@ -117,8 +117,8 @@ section .text
     PUSH EAX                            ; 004ceafb
     LEA ESI,[ESP + 0x8]                 ; 004ceafc
     LEA EDI,[ESP + 0x14]                ; 004ceb00
-    CALL core_actor.cpp_FUN_00408de0    ; 004ceb04
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 004ceb04
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x8]                 ; 004ceb09
     ADD ESP,0x8                         ; 004ceb0d
     MOVSD ES:EDI,ESI                    ; 004ceb10

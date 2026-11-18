@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 DAT_01bd1d80
-;   CKeys g_CKeys_01cc30e4
+;   int g_GlobalDeltaTimeInt
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
@@ -43,24 +43,24 @@ section .text
     MOV ESI,0x12                        ; 004c8e38
     SAR EDX,0x1f                        ; 004c8e3d
     IDIV ESI                            ; 004c8e40
-    MOV [0x01bd1d80],EAX                ; 004c8e42 | DAT_01bd1d80
+    MOV [0x01bd1d80],EAX                ; 004c8e42 | g_GlobalDeltaTimeInt
     TEST EAX,EAX                        ; 004c8e47
     JL 0x004c8e84                       ; 004c8e49
         ;   XREF to: 004c8e84 (CONDITIONAL_JUMP)  ; LAB_004c8e84
-    MOV EDI,dword ptr [0x01bd1d80]      ; 004c8e4b | DAT_01bd1d80
+    MOV EDI,dword ptr [0x01bd1d80]      ; 004c8e4b | g_GlobalDeltaTimeInt
         ;   Label: LAB_004c8e4b
     MOV ESI,ECX                         ; 004c8e51
     CMP EDI,0x4000                      ; 004c8e53
     JLE 0x004c8e61                      ; 004c8e59
         ;   XREF to: 004c8e61 (CONDITIONAL_JUMP)  ; LAB_004c8e61
-    MOV dword ptr [0x01bd1d80],EBP      ; 004c8e5b | DAT_01bd1d80
-    MOV EAX,[0x01bd1d80]                ; 004c8e61 | DAT_01bd1d80
+    MOV dword ptr [0x01bd1d80],EBP      ; 004c8e5b | g_GlobalDeltaTimeInt
+    MOV EAX,[0x01bd1d80]                ; 004c8e61 | g_GlobalDeltaTimeInt
         ;   Label: LAB_004c8e61
     PUSH 0x2a                           ; 004c8e66
     SUB EBX,EAX                         ; 004c8e68
     MOV EAX,[0x005bac64]                ; 004c8e6a | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004c8e6f | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004c8e70 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004c8e6f | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004c8e70 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004c8e72
     ADD ESP,0x8                         ; 004c8e74
     TEST EAX,EAX                        ; 004c8e77
@@ -77,14 +77,14 @@ section .text
     RET                                 ; 004c8e83
     XOR ESI,ESI                         ; 004c8e84
         ;   Label: LAB_004c8e84
-    MOV dword ptr [0x01bd1d80],ESI      ; 004c8e86 | DAT_01bd1d80
+    MOV dword ptr [0x01bd1d80],ESI      ; 004c8e86 | g_GlobalDeltaTimeInt
     JMP 0x004c8e4b                      ; 004c8e8c
         ;   XREF to: 004c8e4b (UNCONDITIONAL_JUMP)  ; LAB_004c8e4b
     PUSH 0x1                            ; 004c8e8e
         ;   Label: LAB_004c8e8e
     MOV EAX,[0x005bac64]                ; 004c8e90 | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004c8e95 | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004c8e96 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004c8e95 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004c8e96 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004c8e98
     ADD ESP,0x8                         ; 004c8e9a
     TEST EAX,EAX                        ; 004c8e9d

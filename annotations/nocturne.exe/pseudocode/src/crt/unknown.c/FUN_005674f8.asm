@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de4e34
-;   undefined4 DAT_02de4e38
+;   char* g_CommandLineA
+;   WCHAR* g_CommandLineW
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -18,7 +18,7 @@ section .text
     PUSH ESI                            ; 005674f8
         ;   Label: crt_unknown.c_FUN_005674f8
     PUSH EBP                            ; 005674f9
-    MOV EDX,dword ptr [0x02de4e34]      ; 005674fa | DAT_02de4e34
+    MOV EDX,dword ptr [0x02de4e34]      ; 005674fa | g_CommandLineA
     TEST EDX,EDX                        ; 00567500
     JZ 0x00567515                       ; 00567502
         ;   XREF to: 00567515 (CONDITIONAL_JUMP)  ; LAB_00567515
@@ -27,8 +27,8 @@ section .text
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR ECX,ECX                         ; 0056750a
     ADD ESP,0x4                         ; 0056750c
-    MOV dword ptr [0x02de4e34],ECX      ; 0056750f | DAT_02de4e34
-    MOV ESI,dword ptr [0x02de4e38]      ; 00567515 | DAT_02de4e38
+    MOV dword ptr [0x02de4e34],ECX      ; 0056750f | g_CommandLineA
+    MOV ESI,dword ptr [0x02de4e38]      ; 00567515 | g_CommandLineW
         ;   Label: LAB_00567515
     TEST ESI,ESI                        ; 0056751b
     JZ 0x00567530                       ; 0056751d
@@ -38,7 +38,7 @@ section .text
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EBP,EBP                         ; 00567525
     ADD ESP,0x4                         ; 00567527
-    MOV dword ptr [0x02de4e38],EBP      ; 0056752a | DAT_02de4e38
+    MOV dword ptr [0x02de4e38],EBP      ; 0056752a | g_CommandLineW
     POP EBP                             ; 00567530
         ;   Label: LAB_00567530
     POP ESI                             ; 00567531

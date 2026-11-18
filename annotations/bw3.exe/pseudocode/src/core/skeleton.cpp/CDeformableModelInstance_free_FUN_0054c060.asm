@@ -11,7 +11,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80 at 0054bf94
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a30b6
+;   crt_unknown.c_free_FUN_005a30b6
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     RET                                 ; 0054c070
     PUSH EDX                            ; 0054c071
         ;   Label: LAB_0054c071
-    CALL crt_unknown.c_FUN_005a30b6     ; 0054c072
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 0054c072
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 0054c077
     MOV dword ptr [EBX + 0x2324],0x0    ; 0054c07a
     POP EBX                             ; 0054c084

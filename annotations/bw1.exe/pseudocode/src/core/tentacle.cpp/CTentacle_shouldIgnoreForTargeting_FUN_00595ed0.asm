@@ -7,7 +7,7 @@
 ; CTentacle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f77b6
+;   TerminatedCString s_wait_005f77b6
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c5a0
@@ -22,7 +22,7 @@ section .text
         ;   Label: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_00595ed0
     MOV EBP,ESP                         ; 00595ed1
     MOV EAX,dword ptr [EBP + 0x8]       ; 00595ed3
-    PUSH 0x5f77b6                       ; 00595ed6 | DAT_005f77b6
+    PUSH 0x5f77b6                       ; 00595ed6 | = "wait"
     ADD EAX,0x158                       ; 00595edb
     PUSH EAX                            ; 00595ee0
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770 ; 00595ee1

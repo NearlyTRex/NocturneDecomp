@@ -8,21 +8,21 @@
 ; int *            Stack[0x8]:4   out_type_id
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_0048c2e0 at 0048e98a
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048e98a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_generic_005bdef9
 ;   TerminatedCString s_drown_005bdf01
-;   undefined4 DAT_005bdf07
+;   TerminatedCString s_fall_005bdf07
 ;   TerminatedCString s_explode_005bdf0c
 ;   TerminatedCString s_fallApart_005bdf14
 ;   TerminatedCString s_shatter_005bdf1e
 ;   TerminatedCString s_electrocute_005bdf26
-;   undefined4 DAT_005bdf32
+;   TerminatedCString s_gas_005bdf32
 ;   TerminatedCString s_Chopped_005bdf36
 ;   TerminatedCString s_Crushed_005bdf3e
 ;   TerminatedCString s_Impale_005bdf46
-;   undefined4 DAT_005bdf4d
+;   TerminatedCString s_Fire_005bdf4d
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260
@@ -63,7 +63,7 @@ section .text
     POP ESI                             ; 0048bd73
     POP EBX                             ; 0048bd74
     RET                                 ; 0048bd75
-    PUSH 0x5bdf07                       ; 0048bd76 | DAT_005bdf07
+    PUSH 0x5bdf07                       ; 0048bd76 | = "fall"
         ;   Label: LAB_0048bd76
     PUSH EBX                            ; 0048bd7b
     CALL crt_string.c__stricmp_FUN_005a3260 ; 0048bd7c
@@ -133,7 +133,7 @@ section .text
     POP ESI                             ; 0048be13
     POP EBX                             ; 0048be14
     RET                                 ; 0048be15
-    PUSH 0x5bdf32                       ; 0048be16 | DAT_005bdf32
+    PUSH 0x5bdf32                       ; 0048be16 | = "gas"
         ;   Label: LAB_0048be16
     PUSH EBX                            ; 0048be1b
     CALL crt_string.c__stricmp_FUN_005a3260 ; 0048be1c
@@ -189,7 +189,7 @@ section .text
     POP ESI                             ; 0048be93
     POP EBX                             ; 0048be94
     RET                                 ; 0048be95
-    PUSH 0x5bdf4d                       ; 0048be96 | DAT_005bdf4d
+    PUSH 0x5bdf4d                       ; 0048be96 | = "Fire"
         ;   Label: LAB_0048be96
     PUSH EBX                            ; 0048be9b
     CALL crt_string.c__stricmp_FUN_005a3260 ; 0048be9c

@@ -28,8 +28,8 @@ double g_Mp3AntiAliasCA[8] = {};
 float g_MpegSynthesisDctTable[64][32] = {};
 
 // int
-int INT_02f43974 = {};
-int INT_02f43978 = {};
+int g_MorphReverseWinding = {};
+int g_RenderMotionDebug = {};
 int g_HuffmanTablesInitialized = {};
 int g_MpegRequantTablesInitialized = {};
 

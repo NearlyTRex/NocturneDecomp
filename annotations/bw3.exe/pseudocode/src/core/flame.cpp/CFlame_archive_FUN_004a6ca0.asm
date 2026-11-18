@@ -7,7 +7,7 @@
 ; CFlame *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_flameSize_005c0c0b+1
+;   TerminatedCString s_flameSize_005c0c0c
 ;   TerminatedCString s_whichFlame_005c0c16
 ;   TerminatedCString s_globeScalar_005c0c21
 ;   TerminatedCString s_onEvent_005c0c2d
@@ -37,7 +37,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 004a6ca6
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004a6cab
-    PUSH 0x5c0c0c                       ; 004a6cae | s_flameSize_005c0c0b+1
+    PUSH 0x5c0c0c                       ; 004a6cae | = "flameSize"
     LEA EAX,[EBX + 0x158]               ; 004a6cb3
     PUSH EAX                            ; 004a6cb9
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 004a6cba

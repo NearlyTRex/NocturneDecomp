@@ -12,18 +12,18 @@ uint FUN_005ab9b0(void)
   uint uVar1;
   int iVar2;
   
-  if (DAT_00607be0 < 0x00000014) {
+  if ((uint)g_INT_00607be0 < g_MaxHandleCount) {
     uVar1 = 0;
   }
   else {
-    if (0 < (int)DAT_00607be0) {
+    if (0 < g_INT_00607be0) {
       iVar2 = 0;
       do {
-        if (*(int *)(DAT_00607bdc + iVar2) == 0) {
+        if (*(int *)((int)g_IOControlBlock->standard_handles + iVar2) == 0) {
           return 0;
         }
         iVar2 = iVar2 + 4;
-      } while (iVar2 < (int)(DAT_00607be0 * 4));
+      } while (iVar2 < g_INT_00607be0 * 4);
     }
     uVar1 = 1;
   }

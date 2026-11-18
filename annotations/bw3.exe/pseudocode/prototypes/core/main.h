@@ -9,13 +9,13 @@
 // Address: 004e42c0
 void __cdecl staticInit(void);
 
-// Original: core_main.c_FUN_004e4330
+// Original: core_main.c_displayErrorAndQuit_FUN_004e4330
 // Address: 004e4330
-void FUN_004e4330(char *param_1);
+void __cdecl displayErrorAndQuit(char *format);
 
-// Original: core_main.c_FUN_004e4400
+// Original: core_main.c_showDeveloperToolsMenu_FUN_004e4400
 // Address: 004e4400
-void FUN_004e4400(void);
+void __cdecl showDeveloperToolsMenu(void);
 
 // Original: core_main.c_enterMainGameMenu_FUN_004e44d0
 // Address: 004e44d0
@@ -25,14 +25,14 @@ int __cdecl enterMainGameMenu(void);
 // Address: 004e44e0
 void __cdecl initializeGameSystems(int argc,char **argv);
 
-// Original: core_main.c_FUN_004e4c70
+// Original: core_main.c_finalizeGameSystems_FUN_004e4c70
 // Address: 004e4c70
-void FUN_004e4c70(void);
+void __cdecl finalizeGameSystems(void);
 
-// Original: core_main.c_FUN_004e4d00
+// Original: core_main.c_initializeTrigTables_FUN_004e4d00
 // Address: 004e4d00
-undefined8 FUN_004e4d00(void);
+void __cdecl initializeTrigTables(void);
 
-// Original: core_main.c_FUN_004e4d80
+// Original: core_main.c_freeTrigTables_FUN_004e4d80
 // Address: 004e4d80
-void FUN_004e4d80(void);
+void __cdecl freeTrigTables(void);

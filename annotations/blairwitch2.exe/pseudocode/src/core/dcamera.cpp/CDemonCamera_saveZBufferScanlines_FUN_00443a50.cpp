@@ -21,7 +21,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00443a50(CDe
       iVar2 = iVar2 + 1;
       _memcpy
                 ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
-                 *(void **)(&DAT_01c2b64c + iVar3),this_ptr->framebuffer_width << 2);
+                 *(void **)((int)g_ZBufferScanlineArray + iVar3),this_ptr->framebuffer_width << 2);
       iVar3 = iVar3 + 4;
     } while (iVar2 < this_ptr->framebuffer_height);
   }

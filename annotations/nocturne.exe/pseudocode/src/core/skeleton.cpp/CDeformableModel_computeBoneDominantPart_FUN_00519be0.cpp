@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519be0(CDeformableModel *this_ptr,int bone_index)
 
 {
@@ -94,9 +92,9 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519
                 }
               }
               pCVar3 = local_24->skinned_vertices_buffer + *puVar6;
-              local_60 = (float)pCVar3->x * _DAT_005a1eb0;
-              local_5c = (float)pCVar3->y * _DAT_005a1eb0;
-              local_58 = (float)pCVar3->z * _DAT_005a1eb0;
+              local_60 = (float)pCVar3->x * 0.00390625f;
+              local_5c = (float)pCVar3->y * 0.00390625f;
+              local_58 = (float)pCVar3->z * 0.00390625f;
               puVar6 = puVar6 + 1;
               local_1c = local_1c + 1;
               local_18 = (local_58 - local_6c.z) * (local_58 - local_6c.z) +

@@ -21,7 +21,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00404730(SMR
       iVar1 = (mrgl->base).count + iVar2;
       iVar2 = iVar2 + 1;
       engine_light_cpp_calculateAndStoreVertexLight_FUN_004c6d90
-                (iVar1 + DAT_006b0264,vertex_position);
+                (iVar1 + g_ProcessedVertexOffset,vertex_position);
     } while (iVar2 < mrgl->child_count);
   }
   return mrgl + mrgl->child_count + 1;

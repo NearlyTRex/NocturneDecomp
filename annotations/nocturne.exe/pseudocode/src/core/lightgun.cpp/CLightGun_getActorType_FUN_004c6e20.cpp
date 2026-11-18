@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_lightgun_cpp_CLightGun_getActorType_FUN_004c6e20(CLightGun *this_ptr)
 
 {
-  return &g_CLightGunActorType_01cc3688;
+  return &g_CLightGunClassInfo;
 }

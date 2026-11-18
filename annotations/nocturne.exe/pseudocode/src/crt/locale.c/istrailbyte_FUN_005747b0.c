@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __watcallStack istrailbyte(uchar byte_value)
 
 {
   undefined3 in_stack_00000005;
   
-  if (_DAT_02de5c30 != 0) {
-    if (DAT_005c2144 == 0x3a4) {
-      return (uint)((&DAT_005c2201)[byte_value] & 8);
+  if (g_MultibyteLocaleActive != 0) {
+    if (g_CodePage == 0x3a4) {
+      return (uint)(g_ShiftJIS_TrailByteTable[byte_value] & 8);
     }
     if (_byte_value != 0) {
       return 1;

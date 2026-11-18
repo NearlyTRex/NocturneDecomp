@@ -14,18 +14,18 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0 at 004540e8
 ;
 ; Referenced Globals:
-;   undefined8 DAT_00618618
-;   undefined8 DAT_00618620
-;   undefined4 DAT_00619b60
-;   undefined4 DAT_0061a358
-;   undefined4 DAT_00623f38
-;   undefined4 DAT_00623f58
-;   undefined4 DAT_00623f78
-;   undefined4 DAT_00623f80
-;   undefined4 DAT_00623fa0
-;   undefined4 DAT_00623fc0
-;   undefined4 DAT_00b8189c
-;   undefined4 DAT_01c51d1c
+;   _MMX_INTEGER g_LightmapBlendBias3
+;   _MMX_INTEGER g_LightmapBlendBias4
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
+;   qword g_RedMask32 = 0xf80000
+;   qword g_GreenMask32 = 0xfc00
+;   qword g_BlueMask32 = 0xf8
+;   qword g_TotalDitherShift = 0x8
+;   qword g_GreenBlueDitherShift = 0x5
+;   qword g_BlueBitShift = 0x3
+;   uint[256] g_LightmapTexturePalette
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00489b4f
     MOV EBP,dword ptr [EBP + 0x14]      ; 00489b52
     PXOR MM7,MM7                        ; 00489b55
-    MOVD MM5,dword ptr [0x01c51d1c]     ; 00489b58 | DAT_01c51d1c
+    MOVD MM5,dword ptr [0x01c51d1c]     ; 00489b58 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00489b5f
     PSLLW MM5,0x6                       ; 00489b62
     MOV EAX,dword ptr [ESI]             ; 00489b66
@@ -145,14 +145,14 @@ section .text
     MOVQ MM0,qword ptr [ESI]            ; 00489d8c
     SHR EDX,0x1                         ; 00489d8f
     MOVZX EAX,byte ptr [EBX + 0x141]    ; 00489d91
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb8189c] ; 00489d98 | DAT_00b8189c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb8189c] ; 00489d98 | g_LightmapTexturePalette
     MOVZX EDX,byte ptr [EBX + 0x1]      ; 00489da0
     MOVQ MM1,MM0                        ; 00489da4
     ADD EDX,EAX                         ; 00489da7
     MOVZX EAX,byte ptr [EBP]            ; 00489da9
     SHR EDX,0x1                         ; 00489dad
     PUNPCKLBW MM0,MM7                   ; 00489daf
-    MOVD MM6,dword ptr [EDX*0x4 + 0xb8189c] ; 00489db2 | DAT_00b8189c
+    MOVD MM6,dword ptr [EDX*0x4 + 0xb8189c] ; 00489db2 | g_LightmapTexturePalette
     PSRLQ MM1,0x20                      ; 00489dba
     SHR EDX,0x1                         ; 00489dbe
     PUNPCKLBW MM6,MM7                   ; 00489dc0
@@ -162,40 +162,40 @@ section .text
     PUNPCKLBW MM1,MM7                   ; 00489dcb
     PMULLW MM0,MM2                      ; 00489dce
     PSRLW MM6,0x1                       ; 00489dd1
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x619b60] ; 00489dd5 | DAT_00619b60
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x619b60] ; 00489dd5 | g_LightmapData
     PMULLW MM1,MM6                      ; 00489ddd
     MOVQ MM2,MM3                        ; 00489de0
     MOVQ MM4,MM5                        ; 00489de3
-    PXOR MM2,qword ptr [0x0061a358]     ; 00489de6 | DAT_0061a358
+    PXOR MM2,qword ptr [0x0061a358]     ; 00489de6 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 00489ded
     PMULHW MM1,MM2                      ; 00489df0
     PMULHW MM4,MM3                      ; 00489df3
     PADDW MM0,MM4                       ; 00489df6
     PADDW MM1,MM4                       ; 00489df9
-    PADDW MM0,qword ptr [0x00618618]    ; 00489dfc | DAT_00618618
-    PADDW MM1,qword ptr [0x00618620]    ; 00489e03 | DAT_00618620
+    PADDW MM0,qword ptr [0x00618618]    ; 00489dfc | g_LightmapBlendBias3
+    PADDW MM1,qword ptr [0x00618620]    ; 00489e03 | g_LightmapBlendBias4
     PSRLW MM0,0x4                       ; 00489e0a
     PSRLW MM1,0x4                       ; 00489e0e
     PACKUSWB MM0,MM7                    ; 00489e12
     PACKUSWB MM1,MM7                    ; 00489e15
     MOVQ MM2,MM0                        ; 00489e18
     MOVQ MM3,MM0                        ; 00489e1b
-    PAND MM0,qword ptr [0x00623f78]     ; 00489e1e | DAT_00623f78
-    PAND MM2,qword ptr [0x00623f58]     ; 00489e25 | DAT_00623f58
-    PAND MM3,qword ptr [0x00623f38]     ; 00489e2c | DAT_00623f38
-    PSRLQ MM0,qword ptr [0x00623fc0]    ; 00489e33 | DAT_00623fc0
-    PSRLQ MM2,qword ptr [0x00623fa0]    ; 00489e3a | DAT_00623fa0
-    PSRLQ MM3,qword ptr [0x00623f80]    ; 00489e41 | DAT_00623f80
+    PAND MM0,qword ptr [0x00623f78]     ; 00489e1e | g_BlueMask32
+    PAND MM2,qword ptr [0x00623f58]     ; 00489e25 | g_GreenMask32
+    PAND MM3,qword ptr [0x00623f38]     ; 00489e2c | g_RedMask32
+    PSRLQ MM0,qword ptr [0x00623fc0]    ; 00489e33 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x00623fa0]    ; 00489e3a | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x00623f80]    ; 00489e41 | g_TotalDitherShift
     POR MM0,MM2                         ; 00489e48
     POR MM0,MM3                         ; 00489e4b
     MOVQ MM2,MM1                        ; 00489e4e
     MOVQ MM3,MM1                        ; 00489e51
-    PAND MM1,qword ptr [0x00623f78]     ; 00489e54 | DAT_00623f78
-    PAND MM2,qword ptr [0x00623f58]     ; 00489e5b | DAT_00623f58
-    PAND MM3,qword ptr [0x00623f38]     ; 00489e62 | DAT_00623f38
-    PSRLQ MM1,qword ptr [0x00623fc0]    ; 00489e69 | DAT_00623fc0
-    PSRLQ MM2,qword ptr [0x00623fa0]    ; 00489e70 | DAT_00623fa0
-    PSRLQ MM3,qword ptr [0x00623f80]    ; 00489e77 | DAT_00623f80
+    PAND MM1,qword ptr [0x00623f78]     ; 00489e54 | g_BlueMask32
+    PAND MM2,qword ptr [0x00623f58]     ; 00489e5b | g_GreenMask32
+    PAND MM3,qword ptr [0x00623f38]     ; 00489e62 | g_RedMask32
+    PSRLQ MM1,qword ptr [0x00623fc0]    ; 00489e69 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x00623fa0]    ; 00489e70 | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x00623f80]    ; 00489e77 | g_TotalDitherShift
     POR MM1,MM2                         ; 00489e7e
     POR MM1,MM3                         ; 00489e81
     PSLLQ MM1,0x10                      ; 00489e84

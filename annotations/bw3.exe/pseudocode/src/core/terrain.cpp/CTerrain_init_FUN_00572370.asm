@@ -7,12 +7,12 @@
 ; CTerrain *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00532b80 at 00532fe7
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00532fe7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_junk_jnk_005d6e04
 ;   CGround* g_CGroundPtr = 01d5b8a8
-;   undefined4 DAT_02cfd8bc
+;   undefined4 g_CTerrainInstance.initialized
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_init_FUN_004cfbd0
@@ -38,7 +38,7 @@ section .text
     CALL core_ground.cpp_CGround_load_FUN_004cfcd0 ; 0057239b
         ;   XREF to: 004cfcd0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_load_FUN_004cfcd0(CGround * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005723a0
-    MOV dword ptr [0x02cfd8bc],EBX      ; 005723a3 | DAT_02cfd8bc
+    MOV dword ptr [0x02cfd8bc],EBX      ; 005723a3 | g_CTerrainInstance.initialized
     POP EBX                             ; 005723a9
     RET                                 ; 005723aa
 

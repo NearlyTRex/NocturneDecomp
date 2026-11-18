@@ -18,14 +18,14 @@ void __cdecl core_chain_cpp_CChain_archive_FUN_0042cbc0(CChain *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->dampen,"dampen");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->friction,"friction");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->gravity,"gravity");
-  if (1 < g_INT_005ad250) {
+  if (1 < g_CChainClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->texture_name,"textureName");
   }
-  if (2 < g_INT_005ad250) {
+  if (2 < g_CChainClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->pull_wav_name,"pullWavName");
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_wav_name,"moveWavName");
   }
-  if (g_INT_005ad250 < 4) {
+  if (g_CChainClassVersion < 4) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900

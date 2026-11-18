@@ -12,7 +12,7 @@
 ;   core_filmreel.cpp_CFilmProjector_archive_FUN_00492ff0 at 00492ff6
 ;
 ; Referenced Globals:
-;   undefined4 s_whoGoesHere_005cea69+1
+;   TerminatedCString s_whoGoesHere_005cea6a
 ;   TerminatedCString s_whatEvent_005cea76
 ;   TerminatedCString s_destActor_005cea80
 ;   TerminatedCString s_destClass_005cea8a
@@ -75,7 +75,7 @@ section .text
     ADD ESP,0x100                       ; 004474cb
     POP EBX                             ; 004474d1
     RET                                 ; 004474d2
-    PUSH 0x5cea6a                       ; 004474d3 | s_whoGoesHere_005cea69+1
+    PUSH 0x5cea6a                       ; 004474d3 | = "whoGoesHere"
         ;   Label: LAB_004474d3
     LEA EAX,[ESP + 0x4]                 ; 004474d8
     PUSH EAX                            ; 004474dc

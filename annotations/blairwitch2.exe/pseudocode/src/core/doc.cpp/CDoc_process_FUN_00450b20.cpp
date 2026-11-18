@@ -6,26 +6,26 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_time)
 
 {
   float delta_time_00;
   bool bVar1;
   int iVar2;
-  float fVar3;
+  SMotion *pSVar3;
+  float delta_time_01;
   
   iVar2 = core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_0042b5e0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0((CCharacter *)this_ptr,delta_time);
   delta_time_00 = g_CGamePtr->delta_time_float;
-  iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.model.base);
   bVar1 = false;
-  switch(*(uint *)(iVar2 + 0x24)) {
+  switch(pSVar3->state_index) {
   case 7:
   case 8:
   case 9:
@@ -47,13 +47,13 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   case 0x1b:
     bVar1 = true;
   }
-  if ((this_ptr->action_pending == 7) || (fVar3 = delta_time, bVar1)) {
-    fVar3 = delta_time * (float)_DAT_005cfe37;
-    core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
-    core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
-    core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
+  if ((this_ptr->action_pending == 7) || (delta_time_01 = delta_time, bVar1)) {
+    delta_time_01 = delta_time * (float)0.25;
+    core_doc_cpp_CDoc_processFrame_FUN_00450c60(this_ptr,delta_time_01);
+    core_doc_cpp_CDoc_processFrame_FUN_00450c60(this_ptr,delta_time_01);
+    core_doc_cpp_CDoc_processFrame_FUN_00450c60(this_ptr,delta_time_01);
   }
-  core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
+  core_doc_cpp_CDoc_processFrame_FUN_00450c60(this_ptr,delta_time_01);
   core_game_cpp_CGame_slamDT_FUN_004bd460(g_CGamePtr,delta_time_00);
   core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180
             ((this_ptr->base).base.base.particle_systems,delta_time);

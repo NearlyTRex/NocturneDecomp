@@ -47,7 +47,7 @@ int __cdecl CFlies::renderOpaque(CFlies *this_ptr);
 
 // Original: core_flies.cpp_CFlies_getBoundingBox_FUN_004c04b0
 // Address: 004c04b0
-CBoundingBox3D * __cdecl CFlies::getBoundingBox(CFlies *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CFlies::getBoundingBox(CFlies *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_flies.cpp_CFlies_getCollisionType_FUN_004c0520
 // Address: 004c0520
@@ -57,9 +57,9 @@ ECollisionType __cdecl CFlies::getCollisionType(CFlies *this_ptr,SCollisionInfo 
 // Address: 004c0530
 void __cdecl CFlies::initFly(CFlies *this_ptr,int fly_index);
 
-// Original: core_flies.cpp_FUN_004c0630
+// Original: core_flies.cpp_CFlies_generateRandomPoint_FUN_004c0630
 // Address: 004c0630
-float * FUN_004c0630(int param_1,float *param_2);
+CVector3f * __stack2_esi CFlies::generateRandomPoint(CFlies *this_ptr,CVector3f *reference_point,CVector3f *out_point);
 
 // Original: core_flies.cpp_findFliesByFollowActor_FUN_004c0970
 // Address: 004c0970

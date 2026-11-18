@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418940(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,EBloodType blood_type)
 
 {
@@ -23,15 +21,15 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418940(CVector3f *pos
   float10 fVar8;
   float10 fVar9;
   
-  this_ptr = (CBodyPart *)operator_new(0xf34);
+  this_ptr = operator_new(0xf34);
   this_ptr_00 = (CBodyPart *)0x0;
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00418b40(this_ptr);
   }
   if (this_ptr_00 == (CBodyPart *)0x0) {
-    _DAT_01d1d400 = "..\\core\\bodypart.cpp";
-    _DAT_01d1d404 = 0x32;
-    core_main_c_FUN_005030e0("Can't create body part!");
+    g_CHAR_PTR_01d1d400 = "..\\core\\bodypart.cpp";
+    g_INT_01d1d404 = 0x32;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Can't create body part!");
   }
   (this_ptr_00->base).location.position.x = position->x;
   (this_ptr_00->base).location.position.y = position->y;
@@ -44,7 +42,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418940(CVector3f *pos
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(&this_ptr_00->base);
   if (scale_source == (CDemonActor *)0x0) {
-    iVar2 = 0x01D2C900->current_set_index;
+    iVar2 = g_CDemonMission_PTR_0061f650->current_set_index;
   }
   else {
     iVar2 = (scale_source->location).area_id;
@@ -57,7 +55,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418940(CVector3f *pos
     fVar6 = (float10)fcos((float10)fVar3);
     fVar7 = (float10)fsin((float10)fVar4);
     fVar8 = (float10)fsin((float10)fVar3);
-    fVar9 = (float10)_DAT_005d42b1;
+    fVar9 = (float10)10.0f;
     (this_ptr_00->initial_velocity).y = (float)(fVar8 * fVar9);
     (this_ptr_00->initial_velocity).x = (float)(fVar5 * fVar9 * fVar6);
     (this_ptr_00->initial_velocity).z = (float)(fVar7 * fVar9 * fVar6);
@@ -67,8 +65,10 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418940(CVector3f *pos
     (this_ptr_00->initial_velocity).y = initial_velocity->y;
     (this_ptr_00->initial_velocity).z = initial_velocity->z;
   }
-  core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60(0x01D2C900,&this_ptr_00->base);
-  core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(0x01D2C900,&this_ptr_00->base);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60
+            (g_CDemonMission_PTR_0061f650,&this_ptr_00->base);
+  core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
+            (g_CDemonMission_PTR_0061f650,&this_ptr_00->base);
   if (scale_source != (CDemonActor *)0x0) {
     (this_ptr_00->base).scale.x = (scale_source->scale).x;
     (this_ptr_00->base).scale.y = (scale_source->scale).y;

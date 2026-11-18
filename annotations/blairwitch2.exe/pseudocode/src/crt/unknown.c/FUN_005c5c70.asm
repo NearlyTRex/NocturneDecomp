@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005c5810 at 005c5849
 ;
 ; Referenced Globals:
-;   undefined4 DAT_026807f0
+;   int g_MultibyteLocaleActive
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     CMP BL,byte ptr [EDX]               ; 005c5c7b
     JNZ 0x005c5cbe                      ; 005c5c7d
         ;   XREF to: 005c5cbe (CONDITIONAL_JUMP)  ; LAB_005c5cbe
-    CMP dword ptr [0x026807f0],0x0      ; 005c5c7f | DAT_026807f0
+    CMP dword ptr [0x026807f0],0x0      ; 005c5c7f | g_MultibyteLocaleActive
     JZ 0x005c5ca7                       ; 005c5c86
         ;   XREF to: 005c5ca7 (CONDITIONAL_JUMP)  ; LAB_005c5ca7
     XOR EBX,EBX                         ; 005c5c88

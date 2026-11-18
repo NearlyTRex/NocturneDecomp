@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_vessel_cpp_CCryptVessel_getActorType_FUN_0054f910(CCryptVessel *this_ptr)
 
 {
-  return &g_CCryptVesselActorType_02dd11cc;
+  return &g_CCryptVesselClassInfo;
 }

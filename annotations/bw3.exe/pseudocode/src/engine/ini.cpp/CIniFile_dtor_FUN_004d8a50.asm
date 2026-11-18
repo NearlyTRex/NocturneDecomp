@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004be8d0 at 004beb2c
+;   core_game.cpp_CGame_showChapterSelect_FUN_004be8d0 at 004beb2c
 ;   core_inivar.cpp_readIniData_FUN_004d8e70 at 004d9583
 ;   core_inivar.cpp_writeIniData_FUN_004d95c0 at 004d9c6f
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052ccea
@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005a308f
-;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a30c4
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
+;   crt_unknown.c_free_FUN_005a30b6
 ;
 ; *****************************************************************************
 
@@ -47,16 +47,16 @@ section .text
         ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004d8a7a
     PUSH EAX                            ; 004d8a7d
-    CALL crt_unknown.c_FUN_005a30b6     ; 004d8a7e
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 004d8a7e
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 004d8a83
     MOV EAX,EBX                         ; 004d8a86
     POP EBX                             ; 004d8a88
     RET                                 ; 004d8a89
     PUSH EBX                            ; 004d8a8a
         ;   Label: LAB_004d8a8a
-    CALL crt_unknown.c_FUN_005a30c4     ; 004d8a8b
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 004d8a8b
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 004d8a90
     MOV EAX,EBX                         ; 004d8a93
     POP EBX                             ; 004d8a95

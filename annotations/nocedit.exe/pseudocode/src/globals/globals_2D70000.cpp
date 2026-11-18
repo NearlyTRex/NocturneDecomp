@@ -38,9 +38,9 @@ CTrail g_TrailPool[100] = {};
 SHardwareEdge g_HardwareEdgeTable[16] = {};
 
 // UVector3
-UVector3 UNION_UVector3_02d7b814 = {};
-UVector3 UNION_UVector3_02d7b820 = {};
-UVector3 UNION_UVector3_02d7b82c = {};
+UVector3 g_GabriellaWeaponEuler = {};
+UVector3 g_GabriellaWeaponAttachEuler = {};
+UVector3 g_GabriellaWeaponAttachOffset = {};
 
 // char[1024]
 char g_TempTextBuffer[1024] = {};
@@ -78,7 +78,7 @@ int g_PopcornAllocIndex = {};
 int g_RainDropAllocIndex = {};
 int g_FastSqrtMagic = {};
 int g_FastInvSqrtMagic = {};
-int INT_02d7a7c0 = {};
+int g_FliesInitialized = {};
 int g_ShadowColor32 = {};
 int g_ShadowColorRed = {};
 int g_ShadowColorGreen = {};

@@ -17,7 +17,7 @@
 ;   core_course.cpp_CCourse_ctor_FUN_00438a50
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-;   core_xform.cpp_FUN_00594380
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
         ;   Label: LAB_00518187
     PUSH EAX                            ; 0051818a
     LEA ESI,[ESP + 0xc]                 ; 0051818b
-    CALL core_xform.cpp_FUN_00594380    ; 0051818f
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 0051818f
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xc]                 ; 00518194
     LEA EDI,[EBX + 0x4a0]               ; 00518198
     ADD ESP,0x4                         ; 0051819e

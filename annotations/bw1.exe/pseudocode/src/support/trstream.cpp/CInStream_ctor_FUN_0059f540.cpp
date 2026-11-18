@@ -9,6 +9,6 @@
 CInStream * __cdecl support_trstream_cpp_CInStream_ctor_FUN_0059f540(CInStream *this_ptr)
 
 {
-  this_ptr->vtable = &PTR_support_trstream_cpp_CInStream_dtor_FUN_0059f550_00607354;
+  this_ptr->vtable = g_ARRAY_PTR_00607354;
   return this_ptr;
 }

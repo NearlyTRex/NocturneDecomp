@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004f99b0(CMoon *this_ptr)
 
 {
-  if ((float)_DAT_005c927d <= _DAT_01d88644) {
+  if ((float)30 <= g_MoonAnimationTimer) {
     return 0;
   }
   return 1;

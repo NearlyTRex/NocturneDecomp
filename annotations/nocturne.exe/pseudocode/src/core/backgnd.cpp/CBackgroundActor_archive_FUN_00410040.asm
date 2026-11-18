@@ -10,7 +10,7 @@
 ;   TerminatedCString s_modelName_005784d5
 ;   TerminatedCString s_collideWithMe_005784df
 ;   TerminatedCString s_groundType_005784ed
-;   int g_INT_005acf20 = 0x2
+;   int g_CBackgroundActorClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
@@ -39,7 +39,7 @@ section .text
     PUSH EAX                            ; 0041006d
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0041006e
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005acf20]      ; 00410073 | g_INT_005acf20
+    MOV EDX,dword ptr [0x005acf20]      ; 00410073 | g_CBackgroundActorClassVersion
     ADD ESP,0x8                         ; 00410079
     CMP EDX,0x2                         ; 0041007c
     JGE 0x00410083                      ; 0041007f

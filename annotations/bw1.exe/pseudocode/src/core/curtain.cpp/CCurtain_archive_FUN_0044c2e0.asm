@@ -7,7 +7,7 @@
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_curtainSize_005d7451+1
+;   TerminatedCString s_curtainSize_005d7452
 ;   TerminatedCString s_curtainTexture_005d745e
 ;   TerminatedCString s_opacity_005d746d
 ;   TerminatedCString s_cinched_005d7475
@@ -43,7 +43,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 0044c2e9
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0044c2ee
-    PUSH 0x5d7452                       ; 0044c2f1 | s_curtainSize_005d7451+1
+    PUSH 0x5d7452                       ; 0044c2f1 | = "curtainSize"
     LEA EAX,[EBX + 0x158]               ; 0044c2f6
     PUSH EAX                            ; 0044c2fc
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 0044c2fd

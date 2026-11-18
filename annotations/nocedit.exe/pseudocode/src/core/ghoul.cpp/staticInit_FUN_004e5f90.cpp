@@ -9,12 +9,12 @@
 void __cdecl core_ghoul_cpp_staticInit_FUN_004e5f90(void)
 
 {
-  CVector3f_02d832a8.x = -0.6;
-  CVector3f_02d832a8.y = 0.0;
-  CVector3f_02d832a8.z = 0.0;
-  CVector3f_02d832b4.x = 0.6;
-  CVector3f_02d832b4.y = 0.0;
-  CVector3f_02d832b4.z = 0.0;
+  g_GhoulOffsetMinusX.x = -0.6;
+  g_GhoulOffsetMinusX.y = 0.0;
+  g_GhoulOffsetMinusX.z = 0.0;
+  g_GhoulOffsetPlusX.x = 0.6;
+  g_GhoulOffsetPlusX.y = 0.0;
+  g_GhoulOffsetPlusX.z = 0.0;
   core_actor_cpp_registerActorClass_FUN_0040c2e0
             (&g_CGhoulClassInfo,"CGhoul",core_ghoul_cpp_factoryFuncGhoul_FUN_004e5ff0,
              &g_CGhoulClassVersion,7,&g_CEnemyClassInfo);

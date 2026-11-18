@@ -10,12 +10,12 @@
 ;   core_gabriela.cpp_factoryFuncGabriella_FUN_004ad290 at 004ad2a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f736c
+;   float g_FLOAT_005f736c = 10
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_ctor_FUN_005adda0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-;   core_hero.cpp_FUN_004ce240
-;   core_necklace.cpp_FUN_005adda0
+;   core_hero.cpp_CHero_ctor_FUN_004ce240
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -28,13 +28,13 @@ section .text
     MOV EBP,ESP                         ; 004ad2c2
     MOV EBX,dword ptr [EBP + 0xc]       ; 004ad2c4
     PUSH EBX                            ; 004ad2c7
-    CALL core_hero.cpp_FUN_004ce240     ; 004ad2c8
-        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce240()
+    CALL core_hero.cpp_CHero_ctor_FUN_004ce240 ; 004ad2c8
+        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ce240(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ad2cd
     ADD EAX,0x25680                     ; 004ad2d0
     PUSH EAX                            ; 004ad2d5
-    CALL core_necklace.cpp_FUN_005adda0 ; 004ad2d6
-        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005adda0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_005adda0 ; 004ad2d6
+        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_005adda0(CCloth * this_ptr)
     LEA EBX,[EAX + 0xfffda980]          ; 004ad2db
     MOV dword ptr [EBX + 0x2b0],0x5f7384 ; 004ad2e1
     MOV dword ptr [EBX + 0x25640],0x0   ; 004ad2eb
@@ -48,7 +48,7 @@ section .text
     MOV dword ptr [EBX + 0x25670],0x0   ; 004ad33b
     MOV dword ptr [EBX + 0x25668],0x0   ; 004ad345
     MOV dword ptr [EBX + 0x2567c],0x0   ; 004ad34f
-    FLD float ptr [0x005f736c]          ; 004ad359 | DAT_005f736c
+    FLD float ptr [0x005f736c]          ; 004ad359 | g_FLOAT_005f736c
     MOV dword ptr [EBX + 0x25658],0x0   ; 004ad35f
     ADD ESP,0x4                         ; 004ad369
     FSTP float ptr [EBX + 0x601b0]      ; 004ad36c

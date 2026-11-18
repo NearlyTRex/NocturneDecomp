@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 76,
+    "complexity_score": 61,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 156
   },
@@ -84,26 +83,26 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d09b7c",
-      "name": "DAT_01d09b7c",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d09b7c",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "0264bca0",
-      "name": "DAT_0264bca0",
-      "type": "undefined4",
+      "name": "g_APIDLL_lockFrameX",
+      "type": "void*",
       "value": null
     }
   ],
@@ -262,19 +261,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 30,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bca0 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_APIDLL_lockFrameX)",
       "type": "unresolved_funcptr"
     }
   ]

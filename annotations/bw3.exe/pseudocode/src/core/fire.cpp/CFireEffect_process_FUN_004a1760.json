@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 392,
-    "complexity_score": 437,
+    "complexity_score": 225,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 47,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 187,
-    "suspect_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 185,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 579
+    "total_lines": 577
   },
   "cross_references": [
     {
@@ -116,26 +116,26 @@
   "globals": [
     {
       "addr": "01c74ea0",
-      "name": "DAT_01c74ea0",
-      "type": "undefined4",
+      "name": "g_SmokeParticlePool",
+      "type": "CSmokeParticle[2048]",
       "value": null
     },
     {
       "addr": "01c74ecc",
-      "name": "DAT_01c74ecc",
+      "name": "g_SmokeParticlePool[1].active",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c8aea0",
-      "name": "DAT_01c8aea0",
-      "type": "undefined4",
+      "name": "g_INT_01c8aea0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c8eea8",
-      "name": "DAT_01c8eea8",
-      "type": "undefined4",
+      "name": "g_INT_01c8eea8",
+      "type": "int",
       "value": null
     },
     {
@@ -200,13 +200,13 @@
     },
     {
       "addr": "01cbb9bc",
-      "name": "DAT_01cbb9bc",
-      "type": "undefined4",
+      "name": "g_MuzzleFlashPool",
+      "type": "CMuzzleFlash[20]",
       "value": null
     },
     {
       "addr": "01cbba18",
-      "name": "DAT_01cbba18",
+      "name": "g_MuzzleFlashPool[1].frames_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -236,13 +236,13 @@
     },
     {
       "addr": "01cefd34",
-      "name": "DAT_01cefd34",
+      "name": "g_BulletTrailPool[0].frames_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cefd58",
-      "name": "DAT_01cefd58",
+      "name": "g_BulletTrailPool[1].frames_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -320,19 +320,19 @@
     },
     {
       "addr": "01cf5088",
-      "name": "DAT_01cf5088",
-      "type": "undefined4",
+      "name": "g_LaserBeamActiveCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cfb8c8",
-      "name": "DAT_01cfb8c8",
+      "name": "g_CGunFlame_ARRAY_01cfb8bc[0].lifetime",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cfb8f4",
-      "name": "DAT_01cfb8f4",
+      "name": "g_CGunFlame_ARRAY_01cfb8bc[1].lifetime",
       "type": "undefined4",
       "value": null
     },
@@ -516,196 +516,28 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(CLightningBolt *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CLightningBolt *)((int)pCVar3 + 0x1e4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01c74ea0",
-      "severity": "mild",
-      "text": "this_ptr_00 = (CSmokeParticle *)&DAT_01c74ea0;",
-      "type": "undefined_data"
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 180,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CLightningBolt *)((int)pCVar3 + 0x1e4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01c8aea0",
-      "severity": "mild",
-      "text": "} while (this_ptr_00 != (CSmokeParticle *)&DAT_01c8aea0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_01cba2b4",
-      "severity": "mild",
-      "text": "} while (this_ptr_01 != (CSpark *)&DAT_01cba2b4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_01cbb9b8",
-      "severity": "mild",
-      "text": "} while (pCVar2 != (CFirefly *)&DAT_01cbb9b8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_01cbb9bc",
-      "severity": "mild",
-      "text": "this_ptr_02 = (CMuzzleFlash *)&DAT_01cbb9bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01cbc0ec",
-      "severity": "mild",
-      "text": "} while (this_ptr_02 != (CMuzzleFlash *)&DAT_01cbc0ec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_01cefd10",
-      "severity": "mild",
-      "text": "} while (this_ptr_04 != (CGlassParticle *)&DAT_01cefd10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_01cefe7c",
-      "severity": "mild",
-      "text": "} while (this_ptr_05 != (CBulletTrail *)&DAT_01cefe7c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_01cf2780",
-      "severity": "mild",
-      "text": "} while (this_ptr_06 != (CFireball *)&DAT_01cf2780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
-      "match": "DAT_01cf3b84",
-      "severity": "mild",
-      "text": "} while (this_ptr_07 != (CRock *)&DAT_01cf3b84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_01cf5088",
-      "severity": "mild",
-      "text": "} while (this_ptr_08 != (CLeaf *)&DAT_01cf5088);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_01cbb9b8",
-      "severity": "mild",
-      "text": "} while (pCVar2 != (CFirefly *)&DAT_01cbb9b8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_01c8aea8",
-      "severity": "mild",
-      "text": "this_ptr_09 = (CBulletHole *)&DAT_01c8aea8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_01cf61d0",
-      "severity": "mild",
-      "text": "} while (this_ptr_10 != (CExplosion *)&DAT_01cf61d0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 133,
-      "match": "DAT_01cfaff4",
-      "severity": "mild",
-      "text": "} while (this_ptr_11 != (CToss *)&DAT_01cfaff4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 138,
-      "match": "DAT_01cfb8b8",
-      "severity": "mild",
-      "text": "} while (this_ptr_12 != (CCrater *)&DAT_01cfb8b8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 150,
-      "match": "DAT_01d00eac",
-      "severity": "mild",
-      "text": "} while (this_ptr_13 != (CGunFlame *)&DAT_01d00eac);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_01d01ab0",
-      "severity": "mild",
-      "text": "} while (this_ptr_14 != (CLightningBolt *)&DAT_01d01ab0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 160,
-      "match": "DAT_01d028c4",
-      "severity": "mild",
-      "text": "} while (this_ptr_15 != (CTrail *)&DAT_01d028c4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_01d03b88",
-      "severity": "mild",
-      "text": "} while (this_ptr_16 != (CShell *)&DAT_01d03b88);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 172,
-      "match": "DAT_01d07b8c",
-      "severity": "mild",
-      "text": "} while (&this_ptr_17->base != (CParticle *)&DAT_01d07b8c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 179,
-      "match": "DAT_01d0bb90",
-      "severity": "mild",
-      "text": "} while (&this_ptr_18->base != (CParticle *)&DAT_01d0bb90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 184,
-      "match": "DAT_01d0ce7c",
-      "severity": "mild",
-      "text": "} while (this_ptr_19 != (CRing *)&DAT_01d0ce7c);",
-      "type": "undefined_data"
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 180,
+      "match": "(CLightningBolt *)((int)pCVar3 + 0x1e4)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CLightningBolt *)((int)pCVar3 + 0x1e4);",
+      "type": "pointer_cast"
     }
   ]
 }

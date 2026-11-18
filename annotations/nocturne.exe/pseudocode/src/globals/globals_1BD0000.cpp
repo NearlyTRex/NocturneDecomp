@@ -4,6 +4,15 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x1BD0000
 // =============================================================================
 
+// _BIT_INTEGER32
+_BIT_INTEGER32 g_MouseButtonFlags = {};
+
+// int
+int g_GlobalDeltaTimeInt = {};
+int g_AnimationTimerValue = {};
+int g_MouseX = {};
+int g_MouseY = {};
+
 // uchar[18][256]
 uchar g_FogTable[18][256] = {};
 

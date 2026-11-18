@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004ab5b0(CFilmProjector *this_ptr)
 
 {
-  return (CDemonActorType *)0x1c57038;
+  return &g_CFilmProjectorClassInfo;
 }

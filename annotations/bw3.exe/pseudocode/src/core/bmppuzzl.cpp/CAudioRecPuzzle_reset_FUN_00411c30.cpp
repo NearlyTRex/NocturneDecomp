@@ -29,7 +29,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_reset_FUN_00411c30(CAudioRecPuzzl
   this_ptr->mouse_button = 0;
   this_ptr->previous_mouse_button = 0;
   this_ptr->click_handled = 0;
-  DAT_007dffb8 = 0xffffffff;
+  g_INT_007dffb8 = -1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             (&this_ptr->reel_model,"audioreel.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0

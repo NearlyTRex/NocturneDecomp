@@ -10,60 +10,61 @@ void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60(CInvent
 
 {
   CWeapon *this_ptr_00;
-  CWeapon *pCVar1;
+  CWeapon *this_ptr_01;
   char *str2;
   char *str1;
+  int iVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
-  CInventory *pCVar5;
+  CInventory *pCVar4;
   
   core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270(this_ptr,1);
   if (this_ptr->selected_weapons[this_ptr->current_group] != (CWeapon *)0x0) {
-    iVar3 = 0;
-    pCVar5 = this_ptr;
+    iVar2 = 0;
+    pCVar4 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
-        if (this_ptr->selected_weapons[this_ptr->current_group] == (CWeapon *)pCVar5->items[0])
+        if (this_ptr->selected_weapons[this_ptr->current_group] == (CWeapon *)pCVar4->items[0])
         break;
-        iVar3 = iVar3 + 1;
-        pCVar5 = (CInventory *)&pCVar5->owner;
-      } while (iVar3 < this_ptr->item_count);
+        iVar2 = iVar2 + 1;
+        pCVar4 = (CInventory *)&pCVar4->owner;
+      } while (iVar2 < this_ptr->item_count);
     }
-    iVar4 = 0;
+    iVar3 = 0;
     do {
-      iVar3 = iVar3 + direction;
-      if (iVar3 < this_ptr->item_count) {
-        if (iVar3 < 0) {
-          iVar3 = this_ptr->item_count + -1;
+      iVar2 = iVar2 + direction;
+      if (iVar2 < this_ptr->item_count) {
+        if (iVar2 < 0) {
+          iVar2 = this_ptr->item_count + -1;
         }
       }
       else {
-        iVar3 = 0;
+        iVar2 = 0;
       }
-      pCVar1 = (CWeapon *)
-               core_actor_cpp_castToClassHash_FUN_0040c8f0
-                         (this_ptr->items[iVar3],g_CWeaponClassInfo.name_hash);
-      if (pCVar1 != (CWeapon *)0x0) {
-        str2 = (char *)core_actor_cpp_FUN_00408a50
-                                 (this_ptr->selected_weapons[this_ptr->current_group]);
-        str1 = (char *)core_actor_cpp_FUN_00408a50(pCVar1);
-        iVar2 = _strcmp(str1,str2);
-        if (iVar2 == 0) {
+      this_ptr_01 = (CWeapon *)
+                    core_actor_cpp_castToClassHash_FUN_0040c8f0
+                              (this_ptr->items[iVar2],g_CWeaponClassInfo.name_hash);
+      if (this_ptr_01 != (CWeapon *)0x0) {
+        str2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50
+                         (&this_ptr->selected_weapons[this_ptr->current_group]->base);
+        str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50((CDemonActor *)this_ptr_01)
+        ;
+        iVar1 = _strcmp(str1,str2);
+        if (iVar1 == 0) {
           this_ptr_00 = this_ptr->selected_weapons[this_ptr->current_group];
-          if (pCVar1 == this_ptr_00) {
+          if (this_ptr_01 == this_ptr_00) {
             return;
           }
           if (this_ptr_00 != (CWeapon *)0x0) {
             (*((this_ptr_00->base).vtable._ub)->process)(&this_ptr_00->base,0.1);
           }
-          this_ptr->selected_weapons[this_ptr->current_group] = pCVar1;
+          this_ptr->selected_weapons[this_ptr->current_group] = this_ptr_01;
           core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020(this_ptr,999);
           return;
         }
       }
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < 100);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < 100);
   }
   return;
 }

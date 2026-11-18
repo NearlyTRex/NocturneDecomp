@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057b96b
+;   double g_Log2CustomMultiplier = 3.32192809489000
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
     FLDLG2                              ; 004448f7
     FXCH                                ; 004448f9
     FYL2X                               ; 004448fb
-    FMUL double ptr [0x0057b96b]        ; 004448fd | DAT_0057b96b
+    FMUL double ptr [0x0057b96b]        ; 004448fd | g_Log2CustomMultiplier
     FSTP double ptr [ESP]               ; 00444903
     MOV EAX,dword ptr [ESP]             ; 00444906
     MOV EDX,dword ptr [ESP + 0x4]       ; 00444909

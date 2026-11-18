@@ -7,15 +7,15 @@
 ; char *           Stack[0x4]:4   text
 ;
 ; XREF[6]:
+;   cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00481000 at 0048102b
 ;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00481060 at 0048107a
-;   cockpit_drawsurf.cpp_FUN_00481000 at 0048102b
 ;   engine_2d.c_drawTextCenteredAtColor_FUN_00402600 at 0040260b
 ;   engine_2d.c_drawTextCenteredColor_FUN_004026d0 at 004026e6
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540 at 0040254b
 ;   engine_2d.c_wrapTextToWidth_FUN_00401d90 at 00401dea
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00608570
+;   SFontGlyph[224] g_FontTable
 ;
 ; *****************************************************************************
 
@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 004018d7 (CONDITIONAL_JUMP)  ; LAB_004018d7
     SUB EAX,0x20                        ; 004018e2
     IMUL EAX,EAX,0x91                   ; 004018e5
-    MOV AL,byte ptr [EAX + 0x608570]    ; 004018eb | DAT_00608570
+    MOV AL,byte ptr [EAX + 0x608570]    ; 004018eb | g_FontTable
     AND EAX,0xff                        ; 004018f1
     INC EAX                             ; 004018f6
     ADD ESI,EAX                         ; 004018f7

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeather *this_ptr,float flash_timer,int play_sound)
 
 {
@@ -21,17 +19,14 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
   float local_88;
   float local_84 [2];
   CVector3f local_7c;
-  float local_70;
-  float afStack_6c [4];
-  float local_5c;
-  float local_58;
+  CVector3f local_70;
+  float local_64;
+  float local_60 [2];
+  CVector3f local_58;
   float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
-  float local_3c;
+  float local_48 [4];
   float local_38;
-  float local_34;
+  CVector3f local_34;
   float local_28;
   float local_24;
   float local_20;
@@ -45,26 +40,26 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
   this_ptr->lightning_active = 1;
   this_ptr->flash_timer = flash_timer;
   this_ptr->sub_flash_interval = local_18;
-  core_dtrace_cpp_FUN_00476d20(&g_CDemonRaytraceInstance);
-  afStack_6c[2] = local_34;
-  afStack_6c[(uint)bVar2 * -2 + 3] = afStack_6c[(uint)bVar2 * -2 + 0xf];
-  afStack_6c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
-       afStack_6c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x10];
-  core_dtrace_cpp_FUN_00476d40(&g_CDemonRaytraceInstance);
-  local_88 = local_70;
-  local_84[(uint)bVar2 * -2] = afStack_6c[(uint)bVar2 * -2];
+  core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00476d20(&g_CDemonRaytraceInstance,&local_34);
+  local_64 = local_34.x;
+  local_60[(uint)bVar2 * -2] = *(float *)((int)&local_34 + (uint)bVar2 * -8 + 4);
+  local_60[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+       *(float *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00476d40(&g_CDemonRaytraceInstance,&local_70);
+  local_88 = local_70.x;
+  local_84[(uint)bVar2 * -2] = *(float *)((int)&local_70 + (uint)bVar2 * -8 + 4);
   local_84[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-       afStack_6c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  local_24 = (local_88 - afStack_6c[2]) * (float)_DAT_005ee5b2;
+       *(float *)((int)&local_70 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  local_24 = (local_88 - local_64) * (float)0.5;
   local_1c = 0.0;
   if (0.0 < local_24) {
     local_1c = local_24;
   }
-  local_28 = local_84[0] - afStack_6c[3];
+  local_28 = local_84[0] - local_60[0];
   if (local_1c < local_28) {
     local_1c = local_28;
   }
-  local_20 = (local_84[1] - local_5c) * (float)_DAT_005ee5b2;
+  local_20 = (local_84[1] - local_60[1]) * (float)0.5;
   if (local_1c < local_20) {
     local_1c = local_20;
   }
@@ -72,18 +67,18 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
   local_7c.z = local_1c;
   local_7c.x = 0.0;
   local_7c.y = 0.0;
-  core_dirmat_cpp_FUN_00449530(&local_bc,&local_7c);
-  local_40 = local_58;
-  afStack_6c[(uint)bVar2 * -2 + 0xc] = afStack_6c[(uint)bVar2 * -2 + 6];
-  afStack_6c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0xd] =
-       afStack_6c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7];
-  local_4c = local_40 + (this_ptr->direction).x;
-  local_48 = local_3c + (this_ptr->direction).y;
-  local_44 = local_38 + (this_ptr->direction).z;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530(&local_bc,&local_7c,&local_58);
+  local_48[2] = local_58.x;
+  local_48[(uint)bVar2 * -2 + 3] = *(float *)((int)&local_58 + (uint)bVar2 * -8 + 4);
+  local_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
+       *(float *)((int)&local_58 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  local_4c = local_48[2] + (this_ptr->direction).x;
+  local_48[0] = local_48[3] + (this_ptr->direction).y;
+  local_48[1] = local_38 + (this_ptr->direction).z;
   local_94.x = local_4c;
-  *(float *)((int)&local_94 + (uint)bVar2 * -8 + 4) = afStack_6c[(uint)bVar2 * -2 + 9];
+  *(float *)((int)&local_94 + (uint)bVar2 * -8 + 4) = local_48[(uint)bVar2 * -2];
   *(float *)((int)&local_94 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       afStack_6c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 10];
+       local_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   if (&local_7c != &local_94) {
     local_7c.x = local_94.x;
     local_7c.y = local_94.y;
@@ -91,16 +86,16 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
   }
   if (play_sound != 0) {
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0049e6e0
-              (0x01C3DEB4,&local_7c,local_1c,0,0.0);
+              (g_CFireEffectPtr,&local_7c,local_1c,0,0.0);
   }
-  this_ptr_00 = 0x01C38BC0;
+  this_ptr_00 = g_CEventListPtr;
   local_18 = (float)g_CDemonCameraInstance.corona_blend_factor;
-  local_c0 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_005ee5ba;
+  local_c0 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05;
   this_ptr->base_ambient = local_c0;
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (this_ptr_00,"BnoLightningFlash" + 1);
+                    (this_ptr_00,"noLightningFlash");
   if (iVar1 == 0) {
-    local_c0 = local_c0 + _DAT_005ee5c2;
+    local_c0 = local_c0 + 0.65f;
     if (1.0 < local_c0) {
       local_c0 = 1.0;
     }
@@ -113,6 +108,6 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0058aa30(CWeath
     return;
   }
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-            (0x0264B290,(CDemonActor *)this_ptr,"light?.wav",&local_7c);
+            (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"light?.wav",&local_7c);
   return;
 }

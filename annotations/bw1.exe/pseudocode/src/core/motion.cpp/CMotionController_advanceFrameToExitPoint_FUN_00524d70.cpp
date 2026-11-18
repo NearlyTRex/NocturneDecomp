@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition)
 
@@ -34,15 +33,16 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d
   if (0 < pSVar5->signal_count) {
     do {
       iVar1 = pSVar4->signals[0].frame_number;
-      if ((current_frame <= (float)iVar1) && ((float)iVar1 <= local_24 + (float)_DAT_005eaf7b)) {
+      if ((current_frame <= (float)iVar1) && ((float)iVar1 <= local_24 + (float)0.001))
+      {
         local_1c = pSVar4->signals[0].value;
-        local_24 = (float)iVar1 + (float)_DAT_005eaf7b;
+        local_24 = (float)iVar1 + (float)0.001;
       }
       iVar6 = iVar6 + 1;
       pSVar4 = (SMotion *)(pSVar4->motion_name + 8);
     } while (iVar6 < pSVar5->signal_count);
   }
-  if ((double)local_24 < (double)pSVar5->exit_forward_from_frame + _DAT_005eaf73) {
+  if ((double)local_24 < (double)pSVar5->exit_forward_from_frame + -0.0001) {
     fVar3 = 1.0 / (float)pSVar5->frame_step;
     (*this_ptr->vtable->accumulateScaledRootMotion)
               (this_ptr,(float)pSVar5->frame_start + current_frame * fVar3,

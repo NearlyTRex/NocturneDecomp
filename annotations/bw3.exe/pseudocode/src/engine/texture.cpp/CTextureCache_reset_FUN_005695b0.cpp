@@ -9,6 +9,6 @@
 void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005695b0(CTextureCache *this_ptr)
 
 {
-  engine_texture_cpp_FUN_005695c0(this_ptr);
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_005695c0(this_ptr);
   return;
 }

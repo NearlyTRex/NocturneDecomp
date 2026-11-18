@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042c780(char *base_filename,uchar *output_buffer)
 
 {
@@ -59,7 +57,7 @@ LAB_0042c7df:
     pcVar6 = (char *)0x0;
   }
 LAB_0042c803:
-  pcVar4 = (char *)0x5cd400;
+  pcVar4 = ".ACT";
   do {
     cVar1 = *pcVar4;
     *pcVar6 = cVar1;
@@ -70,9 +68,9 @@ LAB_0042c803:
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
-                    (&CStack_34,(char *)0x5cd405,acStack_d4);
+                    (&CStack_34,"art",acStack_d4);
   if (iVar2 == 0) {
-    puVar5 = (uchar *)0x1c35b38;
+    puVar5 = g_DefaultPalette;
     for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(uint *)output_buffer = *(uint *)puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -8 + 4;
@@ -88,9 +86,9 @@ LAB_0042c803:
     iVar2 = support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(&CStack_34,output_buffer,0x300);
     if (iVar2 != 0x300) {
       _sprintf(acStack_84,"Error reading %s.");
-      _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
-      _DAT_01d046a4 = 0x147;
-      core_main_c_FUN_004e4500(acStack_84);
+      g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
+      g_INT_01d046a4 = 0x147;
+      core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_84);
     }
     support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_34);
   }

@@ -13,10 +13,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c5014
-;   undefined4 DAT_005c5024
-;   undefined4 DAT_005c5028
-;   undefined4 DAT_006b0280
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
+;   int g_CullingMode
 ;
 ; *****************************************************************************
 
@@ -33,7 +33,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x18]      ; 004f9bcc
     LEA EAX,[EDX*0x4 + 0x0]             ; 004f9bcf
     SUB EAX,EDX                         ; 004f9bd6
-    MOV ECX,0x5c5014                    ; 004f9bd8 | DAT_005c5014
+    MOV ECX,0x5c5014                    ; 004f9bd8 | g_SRenderVertex_ARRAY_005c5014
     SHL EAX,0x4                         ; 004f9bdd
     MOV EDX,dword ptr [EBX + 0x24]      ; 004f9be0
     ADD ECX,EAX                         ; 004f9be3
@@ -43,27 +43,27 @@ section .text
     LEA EDX,[EBX*0x4 + 0x0]             ; 004f9bf1
     SHL EAX,0x4                         ; 004f9bf8
     SUB EDX,EBX                         ; 004f9bfb
-    ADD EAX,0x5c5014                    ; 004f9bfd | DAT_005c5014
+    ADD EAX,0x5c5014                    ; 004f9bfd | g_SRenderVertex_ARRAY_005c5014
     SHL EDX,0x4                         ; 004f9c02
-    MOV EBX,dword ptr [0x006b0280]      ; 004f9c05 | DAT_006b0280
-    ADD EDX,0x5c5014                    ; 004f9c0b | DAT_005c5014
+    MOV EBX,dword ptr [0x006b0280]      ; 004f9c05 | g_CullingMode
+    ADD EDX,0x5c5014                    ; 004f9c0b | g_SRenderVertex_ARRAY_005c5014
     CMP EBX,0x1                         ; 004f9c11
     JNZ 0x004f9c7e                      ; 004f9c14
         ;   XREF to: 004f9c7e (CONDITIONAL_JUMP)  ; LAB_004f9c7e
-    MOV EDI,dword ptr [ECX + 0x10]      ; 004f9c16 | DAT_005c5024
-    MOV EBX,dword ptr [EAX + 0x10]      ; 004f9c19 | DAT_005c5024
+    MOV EDI,dword ptr [ECX + 0x10]      ; 004f9c16 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
+    MOV EBX,dword ptr [EAX + 0x10]      ; 004f9c19 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
     SUB EBX,EDI                         ; 004f9c1c
     MOV dword ptr [EBP + -0x14],EBX     ; 004f9c1e
-    MOV EBX,dword ptr [EAX + 0x14]      ; 004f9c21 | DAT_005c5028
-    MOV ESI,dword ptr [ECX + 0x14]      ; 004f9c24 | DAT_005c5028
+    MOV EBX,dword ptr [EAX + 0x14]      ; 004f9c21 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
+    MOV ESI,dword ptr [ECX + 0x14]      ; 004f9c24 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
     SUB EBX,ESI                         ; 004f9c27
     MOV dword ptr [EBP + -0x10],EBX     ; 004f9c29
-    MOV ECX,dword ptr [EDX + 0x10]      ; 004f9c2c | DAT_005c5024
-    MOV EDI,dword ptr [EAX + 0x10]      ; 004f9c2f | DAT_005c5024
+    MOV ECX,dword ptr [EDX + 0x10]      ; 004f9c2c | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
+    MOV EDI,dword ptr [EAX + 0x10]      ; 004f9c2f | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
     SUB ECX,EDI                         ; 004f9c32
     MOV dword ptr [EBP + -0xc],ECX      ; 004f9c34
-    MOV EDX,dword ptr [EDX + 0x14]      ; 004f9c37 | DAT_005c5028
-    MOV ECX,dword ptr [EAX + 0x14]      ; 004f9c3a | DAT_005c5028
+    MOV EDX,dword ptr [EDX + 0x14]      ; 004f9c37 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
+    MOV ECX,dword ptr [EAX + 0x14]      ; 004f9c3a | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
     SUB EDX,ECX                         ; 004f9c3d
     MOV dword ptr [EBP + -0x8],EDX      ; 004f9c3f
     MOV EAX,dword ptr [EBP + 0xffffffec] ; 004f9c42
@@ -88,21 +88,21 @@ section .text
     POP ESI                             ; 004f9c7b
     POP EBX                             ; 004f9c7c
     RET                                 ; 004f9c7d
-    MOV ESI,dword ptr [ECX + 0x10]      ; 004f9c7e | DAT_005c5024
+    MOV ESI,dword ptr [ECX + 0x10]      ; 004f9c7e | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
         ;   Label: LAB_004f9c7e
-    MOV EBX,dword ptr [EAX + 0x10]      ; 004f9c81 | DAT_005c5024
+    MOV EBX,dword ptr [EAX + 0x10]      ; 004f9c81 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
     SUB EBX,ESI                         ; 004f9c84
     MOV dword ptr [EBP + -0xc],EBX      ; 004f9c86
-    MOV EBX,dword ptr [EAX + 0x14]      ; 004f9c89 | DAT_005c5028
-    MOV EDI,dword ptr [ECX + 0x14]      ; 004f9c8c | DAT_005c5028
+    MOV EBX,dword ptr [EAX + 0x14]      ; 004f9c89 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
+    MOV EDI,dword ptr [ECX + 0x14]      ; 004f9c8c | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
     SUB EBX,EDI                         ; 004f9c8f
     MOV dword ptr [EBP + -0x8],EBX      ; 004f9c91
-    MOV ECX,dword ptr [EDX + 0x10]      ; 004f9c94 | DAT_005c5024
-    MOV EBX,dword ptr [EAX + 0x10]      ; 004f9c97 | DAT_005c5024
+    MOV ECX,dword ptr [EDX + 0x10]      ; 004f9c94 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
+    MOV EBX,dword ptr [EAX + 0x10]      ; 004f9c97 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
     SUB ECX,EBX                         ; 004f9c9a
     MOV dword ptr [EBP + -0x14],ECX     ; 004f9c9c
-    MOV EDX,dword ptr [EDX + 0x14]      ; 004f9c9f | DAT_005c5028
-    MOV ESI,dword ptr [EAX + 0x14]      ; 004f9ca2 | DAT_005c5028
+    MOV EDX,dword ptr [EDX + 0x14]      ; 004f9c9f | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
+    MOV ESI,dword ptr [EAX + 0x14]      ; 004f9ca2 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
     SUB EDX,ESI                         ; 004f9ca5
     MOV dword ptr [EBP + -0x10],EDX     ; 004f9ca7
     JMP 0x004f9c42                      ; 004f9caa

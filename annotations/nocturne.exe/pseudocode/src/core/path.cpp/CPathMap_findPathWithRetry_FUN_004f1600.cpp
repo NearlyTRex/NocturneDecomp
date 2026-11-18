@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 
 {
@@ -21,14 +19,14 @@ int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap *this
       (this_ptr->cached_world_position).y = dest_position->y;
       (this_ptr->cached_world_position).z = dest_position->z;
     }
-    _DAT_01e312f4 = 1;
+    g_PathfindingMaxClimbHeight = 1;
     do {
       iVar1 = core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20
                         (this_ptr,dest_position,&this_ptr->path_heading,direction_hint);
       this_ptr->last_pathfinding_result = iVar1;
       if (iVar1 == 1) break;
-      _DAT_01e312f4 = _DAT_01e312f4 + 1;
-    } while (_DAT_01e312f4 < 4);
+      g_PathfindingMaxClimbHeight = g_PathfindingMaxClimbHeight + 1;
+    } while (g_PathfindingMaxClimbHeight < 4);
   }
   if (&this_ptr->path_heading != out_euler_angles) {
     out_euler_angles->x = (this_ptr->path_heading).x;

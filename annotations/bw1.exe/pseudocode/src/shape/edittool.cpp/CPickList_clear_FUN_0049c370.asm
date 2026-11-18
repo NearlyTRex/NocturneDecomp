@@ -8,13 +8,13 @@
 ;
 ; XREF[5]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf8f9
-;   core_game.cpp_FUN_004d7250 at 004d760b
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d760b
 ;   core_script.cpp_CScript_clear_FUN_00543740 at 0054376d
-;   core_script.cpp_FUN_00544100 at 0054412c
+;   core_script.cpp_CScript_validateSyntax_FUN_00544100 at 0054412c
 ;   shape_edittool.cpp_CPickList_dtor_FUN_0049a710 at 0049a724
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;   shape_edittool.cpp_CStrList_clear_FUN_00499470
 ;
 ; *****************************************************************************
@@ -46,16 +46,16 @@ section .text
     RET                                 ; 0049c3a9
     PUSH EDX                            ; 0049c3aa
         ;   Label: LAB_0049c3aa
-    CALL crt_unknown.c_FUN_005c09f0     ; 0049c3ab
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0049c3ab
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0049c3b0
     MOV dword ptr [EBX + 0x1b0],0x0     ; 0049c3b3
     JMP 0x0049c380                      ; 0049c3bd
         ;   XREF to: 0049c380 (UNCONDITIONAL_JUMP)  ; LAB_0049c380
     PUSH ESI                            ; 0049c3bf
         ;   Label: LAB_0049c3bf
-    CALL crt_unknown.c_FUN_005c09f0     ; 0049c3c0
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0049c3c0
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0049c3c5
     MOV dword ptr [EBX + 0x1b8],0x0     ; 0049c3c8
     JMP 0x0049c394                      ; 0049c3d2

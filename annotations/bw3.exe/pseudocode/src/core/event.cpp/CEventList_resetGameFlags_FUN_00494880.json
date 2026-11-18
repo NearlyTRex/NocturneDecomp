@@ -1,0 +1,196 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 15,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
+  },
+  "cross_references": [
+    {
+      "addr": "0048bfb0",
+      "from_addr": "0048bfbf",
+      "name": "core_event.cpp_CEventList_ctor_FUN_0048bfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be12d",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be8d0",
+      "from_addr": "004bea46",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004be8d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00494880",
+    "address_range": [
+      [
+        "00494880",
+        "004948d2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_resetGameFlags_FUN_00494880",
+    "signature": "void __cdecl core_event_cpp_CEventList_resetGameFlags_FUN_00494880(CEventList *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004948e0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bfe6c",
+      "name": "s_puzzleModeHard_005bfe6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bfe7b",
+      "name": "s_combatModeHard_005bfe7b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "01d213f8",
+      "name": "g_CGameInstance.puzzle_difficulty_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213fc",
+      "name": "g_CGameInstance.combat_difficulty_mode",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004bea46",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004be8d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004be12d",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048bfbf",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_ctor_FUN_0048bfb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6923076923076925,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 19,
+      "INT_ADD": 10,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 11,
+      "LOAD": 7,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 96
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004910b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004a9a00",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004b0460",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2069
+    },
+    "nocturne.exe": {
+      "addr": "00480410",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2069
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -6,15 +6,15 @@
 ;
 ; Referenced Globals:
 ;   int INT_005c1654 = 0x8
-;   undefined4 DAT_01bd1d8c
-;   undefined4 DAT_01bd1d90
+;   int g_MouseX
+;   int g_MouseY
 ;   uchar[32768] g_ColorCubeLookup
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
 ;   int g_ClipBottom
 ;   int g_ActiveRenderColor
-;   undefined4 DAT_02de0858
+;   int g_INT_02de0858
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401530
@@ -29,17 +29,17 @@ section .text
     PUSH EDI                            ; 00558c42
     PUSH EBP                            ; 00558c43
     MOV EAX,[0x005c1654]                ; 00558c44 | INT_005c1654
-    MOV EDX,dword ptr [0x02de0858]      ; 00558c49 | DAT_02de0858
+    MOV EDX,dword ptr [0x02de0858]      ; 00558c49 | g_INT_02de0858
     ADD EDX,EAX                         ; 00558c4f
-    MOV ESI,dword ptr [0x01bd1d8c]      ; 00558c51 | DAT_01bd1d8c
-    MOV dword ptr [0x02de0858],EDX      ; 00558c57 | DAT_02de0858
+    MOV ESI,dword ptr [0x01bd1d8c]      ; 00558c51 | g_MouseX
+    MOV dword ptr [0x02de0858],EDX      ; 00558c57 | g_INT_02de0858
     CMP EDX,0xff                        ; 00558c5d
     JG 0x00558ccd                       ; 00558c63
         ;   XREF to: 00558ccd (CONDITIONAL_JUMP)  ; LAB_00558ccd
     TEST EDX,EDX                        ; 00558c65
     JL 0x00558ce4                       ; 00558c67
         ;   XREF to: 00558ce4 (CONDITIONAL_JUMP)  ; LAB_00558ce4
-    MOV EAX,[0x02de0858]                ; 00558c6d | DAT_02de0858
+    MOV EAX,[0x02de0858]                ; 00558c6d | g_INT_02de0858
         ;   Label: LAB_00558c6d
     MOV EDX,EAX                         ; 00558c72
     SAR EDX,0x1f                        ; 00558c74
@@ -51,7 +51,7 @@ section .text
     AND EAX,0xff                        ; 00558c88
     MOV EBX,0xfffffffb                  ; 00558c8d
     MOV [0x01c00c70],EAX                ; 00558c92 | g_ActiveRenderColor
-    MOV EAX,[0x01bd1d90]                ; 00558c97 | DAT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 00558c97 | g_MouseY
         ;   Label: LAB_00558c97
     MOV ECX,dword ptr [0x01c00c58]      ; 00558c9c | g_ClipLeft
     ADD EAX,EBX                         ; 00558ca2
@@ -67,7 +67,7 @@ section .text
     ADD ESI,0x6                         ; 00558cb1
     MOV ECX,dword ptr [0x01c00c58]      ; 00558cb4 | g_ClipLeft
         ;   Label: LAB_00558cb4
-    MOV EAX,[0x01bd1d90]                ; 00558cba | DAT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 00558cba | g_MouseY
     CMP EBX,ECX                         ; 00558cbf
     JG 0x00558d20                       ; 00558cc1
         ;   XREF to: 00558d20 (CONDITIONAL_JUMP)  ; LAB_00558d20
@@ -85,14 +85,14 @@ section .text
         ;   Label: LAB_00558ccd
     MOV EAX,0xff                        ; 00558cd2
     MOV dword ptr [0x005c1654],EDX      ; 00558cd7 | INT_005c1654
-    MOV [0x02de0858],EAX                ; 00558cdd | DAT_02de0858
+    MOV [0x02de0858],EAX                ; 00558cdd | g_INT_02de0858
     JMP 0x00558c6d                      ; 00558ce2
         ;   XREF to: 00558c6d (UNCONDITIONAL_JUMP)  ; LAB_00558c6d
     MOV EBP,0x8                         ; 00558ce4
         ;   Label: LAB_00558ce4
     XOR EDI,EDI                         ; 00558ce9
     MOV dword ptr [0x005c1654],EBP      ; 00558ceb | INT_005c1654
-    MOV dword ptr [0x02de0858],EDI      ; 00558cf1 | DAT_02de0858
+    MOV dword ptr [0x02de0858],EDI      ; 00558cf1 | g_INT_02de0858
     JMP 0x00558c6d                      ; 00558cf7
         ;   XREF to: 00558c6d (UNCONDITIONAL_JUMP)  ; LAB_00558c6d
     CMP EAX,dword ptr [0x01c00c5c]      ; 00558cfc | g_ClipTop

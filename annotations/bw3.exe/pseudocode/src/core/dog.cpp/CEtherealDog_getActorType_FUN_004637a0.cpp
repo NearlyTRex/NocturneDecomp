@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_dog_cpp_CEtherealDog_getActorType_FUN_004637a0(CEtherealDog *this_ptr)
 
 {
-  return (CDemonActorType *)0x1b85100;
+  return &g_CDemonActorType_01b85100;
 }

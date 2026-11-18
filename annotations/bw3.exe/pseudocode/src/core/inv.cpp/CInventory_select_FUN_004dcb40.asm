@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d3c90 at 004d3d8e
+;   core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90 at 004d3d8e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CAmmo_005c653e
@@ -23,10 +23,10 @@
 ;   TerminatedCString s_core_inv_cpp_005c6586
 ;   TerminatedCString s_CInventory_select_Catch_005c6596
 ;   TerminatedCString s_You_have_used_005c65b4
-;   undefined4 DAT_005c65c5
+;   TerminatedCString s_anon_005c65c5
 ;   TerminatedCString s_CBoxActor_005c65c7
-;   undefined4 DAT_005c65d7
-;   undefined4 DAT_005fba60
+;   double g_DOUBLE_005c65d7 = 98
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CAmmoClassInfo.name_hash
 ;   undefined4 g_CBoxActorClassInfo.name_hash
@@ -37,12 +37,12 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
-;   core_health.cpp_FUN_004d20c0
+;   core_health.cpp_CHealthItem_useItem_FUN_004d20c0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004dbaa0
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40
-;   core_inv.cpp_FUN_004dd2d0
+;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9e40
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;
 ; *****************************************************************************
@@ -78,17 +78,17 @@ section .text
     MOV EAX,0x5c6544                    ; 004dcb80 | = "..\\core\\inv.cpp"
     MOV EDX,0x7bc                       ; 004dcb85
     PUSH 0x5c6554                       ; 004dcb8a | = "CInventory::select - Catch 22"
-    MOV [0x01d71de0],EAX                ; 004dcb8f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004dcb94 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004dcb9a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 004dcb8f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 004dcb94 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004dcb9a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004dcb9f
     MOV ECX,dword ptr [EBX + 0x318]     ; 004dcba2
         ;   Label: LAB_004dcba2
     PUSH ECX                            ; 004dcba8
     PUSH EBP                            ; 004dcba9
-    CALL core_inv.cpp_FUN_004dd2d0      ; 004dcbaa
-        ;   XREF to: 004dd2d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd2d0()
+    CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0 ; 004dcbaa
+        ;   XREF to: 004dd2d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004dcbaf
     XOR EAX,EAX                         ; 004dcbb2
         ;   Label: LAB_004dcbb2
@@ -128,16 +128,16 @@ section .text
     MOV EDI,0x5c6586                    ; 004dcc06 | = "..\\core\\inv.cpp"
     MOV EAX,0x7c2                       ; 004dcc0b
     PUSH 0x5c6596                       ; 004dcc10 | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01d71de0],EDI      ; 004dcc15 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004dcc1b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004dcc20
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 004dcc15 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004dcc1b | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004dcc20
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004dcc25
-    MOV EAX,[0x01d5ba14]                ; 004dcc28 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004dcc28 | g_INT_01d5ba14
         ;   Label: LAB_004dcc28
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004dcc2d
     FLD float ptr [EAX + 0x2538]        ; 004dcc34
-    FCOMP double ptr [0x005c65d7]       ; 004dcc3a | DAT_005c65d7
+    FCOMP double ptr [0x005c65d7]       ; 004dcc3a | g_DOUBLE_005c65d7
     FNSTSW AX                           ; 004dcc40
     SAHF                                ; 004dcc42
     JBE 0x004dcc70                      ; 004dcc43
@@ -214,7 +214,7 @@ section .text
         ;   XREF to: 004dccb1 (CONDITIONAL_JUMP)  ; LAB_004dccb1
     POP EDI                             ; 004dccc9
         ;   Label: LAB_004dccc9
-    PUSH 0x5c65c5                       ; 004dccca | DAT_005c65c5
+    PUSH 0x5c65c5                       ; 004dccca | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004dcccf
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004dccd4
@@ -248,14 +248,14 @@ section .text
     PUSH EDX                            ; 004dcd0b | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_004b46b0 ; 004dcd0c
         ;   XREF to: 004b46b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_004b46b0(CGame * this_ptr, char * message, float duration)
-    MOV EAX,[0x01d5ba14]                ; 004dcd11 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004dcd11 | g_INT_01d5ba14
     ADD ESP,0xc                         ; 004dcd16
     MOV ECX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004dcd19
     PUSH ECX                            ; 004dcd20
     MOV ESI,dword ptr [ESP + 0x104]     ; 004dcd21
     PUSH ESI                            ; 004dcd28
-    CALL core_health.cpp_FUN_004d20c0   ; 004dcd29
-        ;   XREF to: 004d20c0 (UNCONDITIONAL_CALL)  ; undefined core_health.cpp_FUN_004d20c0()
+    CALL core_health.cpp_CHealthItem_useItem_FUN_004d20c0 ; 004dcd29
+        ;   XREF to: 004d20c0 (UNCONDITIONAL_CALL)  ; int core_health.cpp_CHealthItem_useItem_FUN_004d20c0(CHealthItem * this_ptr, CCharacter * user)
     ADD ESP,0x8                         ; 004dcd2e
     TEST EAX,EAX                        ; 004dcd31
     JG 0x004dcbb2                       ; 004dcd33
@@ -290,7 +290,7 @@ section .text
     ADD ESP,0x8                         ; 004dcd78
     ADD EAX,0x600                       ; 004dcd7b
     PUSH EAX                            ; 004dcd80
-    MOV ECX,dword ptr [0x005fba60]      ; 004dcd81 | DAT_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 004dcd81 | g_CEventListPtr
     PUSH ECX                            ; 004dcd87
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 004dcd88
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

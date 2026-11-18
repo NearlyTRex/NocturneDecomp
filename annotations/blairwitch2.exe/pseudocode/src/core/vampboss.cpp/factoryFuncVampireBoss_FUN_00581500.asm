@@ -15,7 +15,7 @@ section .text
     PUSH 0xc3b9c                        ; 00581500
         ;   Label: core_vampboss.cpp_factoryFuncVampireBoss_FUN_00581500
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00581505
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0058150a
     TEST EAX,EAX                        ; 0058150d
     JNZ 0x00581512                      ; 0058150f

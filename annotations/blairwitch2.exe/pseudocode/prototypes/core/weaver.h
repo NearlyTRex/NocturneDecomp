@@ -37,9 +37,9 @@ void __cdecl CRobin::processStates(CRobin *this_ptr,float delta_time,int mode);
 // Address: 005a6140
 void __cdecl CRobin::processMeleeAttackState(CRobin *this_ptr,float delta_time);
 
-// Original: core_weaver.cpp_FUN_005a61f0
+// Original: core_weaver.cpp_CRobin_processAI_FUN_005a61f0
 // Address: 005a61f0
-void FUN_005a61f0(int param_1,float param_2);
+void __cdecl CRobin::processAI(CRobin *this_ptr,float delta_time);
 
 // Original: core_weaver.cpp_CRobin_processDeathState_FUN_005a6720
 // Address: 005a6720

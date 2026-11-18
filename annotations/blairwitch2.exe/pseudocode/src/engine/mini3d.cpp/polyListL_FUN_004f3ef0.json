@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 279,
+    "complexity_score": 266,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 20,
+    "pseudocode_lines": 61,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 227
+    "total_lines": 229
   },
   "cross_references": [],
   "function": {
@@ -34,7 +33,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "004f38c0",
@@ -85,68 +84,68 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09854",
-      "name": "DAT_01d09854",
-      "type": "undefined4",
+      "name": "g_INT_01d09854",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09914",
-      "name": "DAT_01d09914",
-      "type": "undefined4",
+      "name": "g_INT_01d09914",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09b7c",
-      "name": "DAT_01d09b7c",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d09b7c",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "01d0d2b4",
-      "name": "DAT_01d0d2b4",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0d2b8",
-      "name": "DAT_01d0d2b8",
-      "type": "undefined4",
+      "name": "g_INT_01d0d2b8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e61b58",
-      "name": "DAT_01e61b58",
-      "type": "undefined4",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bc90",
-      "name": "DAT_0264bc90",
-      "type": "undefined4",
+      "name": "g_APIDLL_unlockTexture",
+      "type": "void*",
       "value": null
     }
   ],
@@ -243,16 +242,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "ushort *in_stack_00000014;",
@@ -260,7 +251,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "int in_stack_00000018;",
@@ -268,7 +259,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_0000001c",
       "severity": "moderate",
       "text": "int in_stack_0000001c;",
@@ -276,7 +267,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "in_stack_00000014 = engine_mini3d_cpp_mirrorFaces_FUN_004f34d0(indices,triangle_count);",
@@ -284,26 +275,26 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 19,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bc90 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_APIDLL_unlockTexture)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "(*_DAT_0264bc90)(vertices,triangle_count,in_stack_00000014,in_stack_00000018,_DAT_01c38b54);",
+      "text": "(vertices,triangle_count,in_stack_00000014,in_stack_00000018,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "(*_DAT_0264bc90)(vertices,triangle_count,in_stack_00000014,in_stack_00000018,_DAT_01c38b54);",
+      "text": "(vertices,triangle_count,in_stack_00000014,in_stack_00000018,",
       "type": "stack_param"
     },
     {
@@ -375,7 +366,7 @@
       "line": 53,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "(_DAT_01d09b7c,triangle_count,in_stack_00000014,in_stack_00000018,clip_flags);",
+      "text": "(g_FLOAT_PTR_01d09b7c,triangle_count,in_stack_00000014,in_stack_00000018,clip_flags)",
       "type": "stack_param"
     },
     {
@@ -383,23 +374,23 @@
       "line": 53,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "(_DAT_01d09b7c,triangle_count,in_stack_00000014,in_stack_00000018,clip_flags);",
+      "text": "(g_FLOAT_PTR_01d09b7c,triangle_count,in_stack_00000014,in_stack_00000018,clip_flags)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 58,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "(_DAT_01d09b7c,triangle_count,in_stack_00000014,in_stack_00000018);",
+      "text": "(g_FLOAT_PTR_01d09b7c,triangle_count,in_stack_00000014,in_stack_00000018);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 58,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "(_DAT_01d09b7c,triangle_count,in_stack_00000014,in_stack_00000018);",
+      "text": "(g_FLOAT_PTR_01d09b7c,triangle_count,in_stack_00000014,in_stack_00000018);",
       "type": "stack_param"
     }
   ]

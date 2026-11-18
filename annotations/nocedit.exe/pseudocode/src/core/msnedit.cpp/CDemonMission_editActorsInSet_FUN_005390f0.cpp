@@ -130,7 +130,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Setting initial camera view.");
   if (reset_cameras != 0) {
-    INT_02f7c53c = 0;
+    g_MsnEditViewMode = 0;
     this_ptr->current_camera_index = 0;
     INT_02f7c634 = 0;
     g_CEdCheckInstance.checked_state = 1;
@@ -193,7 +193,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         pcVar13 = pcVar13 + ((uint)bVar14 * -2 + 1) * 4;
         pcVar12 = pcVar12;
       }
-      switch(INT_02f7c53c) {
+      switch(g_MsnEditViewMode) {
       case 0:
         if ((g_CEdCheckInstance.checked_state != 0) && (g_MouseButtonFlags.dword == 0)) {
           core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
@@ -340,7 +340,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         engine_special_cpp_clearScreen_FUN_005b3e70();
       }
       pCVar1 = g_CDemonSetPtr;
-      if (INT_02f7c53c == 0) {
+      if (g_MsnEditViewMode == 0) {
         if (this_ptr->full_light_in_editor == 0) {
           g_CDemonCameraInstance.corona_blend_factor = local_5c;
           g_CDemonSetPtr->lighting_quality_mode = 0;
@@ -396,7 +396,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
       }
       local_14 = iVar14;
       core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
-      if ((INT_02f7c538 == 0) && (g_ActiveControl == (void *)0x0)) {
+      if ((g_MsnEditMouseOverPanel == 0) && (g_ActiveControl == (void *)0x0)) {
         pCVar11 = core_msnedit_cpp_CDemonMission_raycastPickActor_FUN_0053c340
                             (this_ptr,g_MouseX,g_MouseY);
         this_ptr->hovered_actor = pCVar11;
@@ -437,7 +437,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
       }
       if (0.0 < FLOAT_02f7c540) {
         engine_2d_c_drawText_FUN_00401fd0(local_2b0,0,0);
-        if (INT_02f7c53c == 0) {
+        if (g_MsnEditViewMode == 0) {
           if (g_CEdCheckInstance.checked_state == 0) {
             pcVar15 = "Virtual Director DISABLED";
           }
@@ -453,32 +453,32 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
       }
       if (this_ptr->show_3d_viewport != 0) {
         iVar14 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                           (" StaticCam ",3,0xf3,1,(uint)(INT_02f7c53c == 0));
+                           (" StaticCam ",3,0xf3,1,(uint)(g_MsnEditViewMode == 0));
         if (iVar14 != 0) {
           local_64 = 1;
           local_14 = 0;
         }
         iVar14 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                           (" CustomCam ",0x49,0xf3,1,(uint)(INT_02f7c53c == 1));
+                           (" CustomCam ",0x49,0xf3,1,(uint)(g_MsnEditViewMode == 1));
         if (iVar14 != 0) {
           local_14 = 1;
         }
         iVar14 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                           (" SlewCam ",0x8f,0xf3,1,(uint)(INT_02f7c53c == 2));
+                           (" SlewCam ",0x8f,0xf3,1,(uint)(g_MsnEditViewMode == 2));
         if (iVar14 != 0) {
           local_14 = 2;
         }
         iVar14 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                           (" 1stPersonCam ",199,0xf3,1,(uint)(INT_02f7c53c == 3));
+                           (" 1stPersonCam ",199,0xf3,1,(uint)(g_MsnEditViewMode == 3));
         if (iVar14 != 0) {
           local_14 = 3;
         }
         iVar14 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                           (" SpotCam ",0x122,0xf3,1,(uint)(INT_02f7c53c == 4));
+                           (" SpotCam ",0x122,0xf3,1,(uint)(g_MsnEditViewMode == 4));
         if (iVar14 != 0) {
           local_14 = 4;
         }
-        if (INT_02f7c53c == 0) {
+        if (g_MsnEditViewMode == 0) {
           g_CEdCheckInstance.text_color_mode = 0xff;
           shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60
                     (&g_CEdCheckInstance,g_WindowWidth + -0x8c,0xf3,"Virtual Director");
@@ -507,7 +507,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
                            (g_CEditorToolsPtr,"Exit editor?"), iVar14 != 0))
     goto LAB_00539e00;
     if (INT_02f7c634 == 0) {
-      if (INT_02f7c53c == 4) {
+      if (g_MsnEditViewMode == 4) {
         local_3c = g_CGamePtr->delta_time_float;
         local_2c = local_3c;
         iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
@@ -598,7 +598,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           local_18 = 0.5;
         }
       }
-      if (INT_02f7c53c == 2) {
+      if (g_MsnEditViewMode == 2) {
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_170);
       }
       else {
@@ -836,13 +836,13 @@ LAB_0053a88c:
       if (iVar14 != 0) {
         iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar14 == 0) {
-          local_14 = INT_02f7c53c + 1;
+          local_14 = g_MsnEditViewMode + 1;
           if (4 < local_14) {
             local_14 = 0;
           }
         }
         else {
-          local_14 = INT_02f7c53c + -1;
+          local_14 = g_MsnEditViewMode + -1;
           if (local_14 < 0) {
             local_14 = 4;
           }
@@ -892,7 +892,7 @@ LAB_0053a88c:
       core_script_cpp_CScript_checkSyntax_FUN_00566080(g_CScriptPtr);
     }
     if (-1 < local_14) {
-      INT_02f7c53c = local_14;
+      g_MsnEditViewMode = local_14;
       switch(local_14) {
       case 0:
         if (local_64 != 0) {
@@ -924,10 +924,10 @@ LAB_0053a88c:
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(pCVar7,local_38);
       FLOAT_02f7c540 = 5.0f;
     }
-    iVar14 = INT_02f7c528;
+    iVar14 = g_MsnEditHoveredProperty;
     if (((((g_MouseButtonFlags.dword & 1) == 0) && ((local_30.dword & 1) != 0)) &&
-        (INT_02f7c538 == 0)) && (g_ActiveControl == (void *)0x0)) {
-      if ((this_ptr->selected_actor == (CDemonActor *)0x0) || (INT_02f7c528 < 0)) {
+        (g_MsnEditMouseOverPanel == 0)) && (g_ActiveControl == (void *)0x0)) {
+      if ((this_ptr->selected_actor == (CDemonActor *)0x0) || (g_MsnEditHoveredProperty < 0)) {
         if (this_ptr->hovered_actor != (CDemonActor *)0x0) {
           iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
           if (iVar14 == 0) {
@@ -954,7 +954,7 @@ LAB_0053aea7:
         }
       }
       else {
-        this_ptr_01 = g_MsnEditPropertyList.properties + INT_02f7c528;
+        this_ptr_01 = g_MsnEditPropertyList.properties + g_MsnEditHoveredProperty;
         iVar15 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar15 == 0) {
           iVar15 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);

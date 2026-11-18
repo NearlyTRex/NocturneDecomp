@@ -17,7 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00495e70(CEd
     local_38[0] = '\0';
   }
   else {
-    _sprintf(local_38,&DAT_005dbf28);
+    _sprintf(local_38,"%g");
   }
   while( true ) {
     while( true ) {
@@ -26,7 +26,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00495e70(CEd
       if (iVar1 == 0) {
         return 0;
       }
-      iVar1 = sscanf(local_38,&DAT_005dbf2b);
+      iVar1 = sscanf(local_38,"%f");
       if (iVar1 == 1) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
                 (this_ptr,"Please enter a valid number.");

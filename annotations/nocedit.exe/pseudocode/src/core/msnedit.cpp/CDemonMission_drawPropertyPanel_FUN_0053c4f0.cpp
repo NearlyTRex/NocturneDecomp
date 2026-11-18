@@ -17,8 +17,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0(CDemo
   
   core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(&g_MsnEditPropertyList);
   this_ptr_00 = this_ptr->selected_actor;
-  INT_02f7c528 = -1;
-  INT_02f7c538 = 0;
+  g_MsnEditHoveredProperty = -1;
+  g_MsnEditMouseOverPanel = 0;
   if (this_ptr_00 == (CDemonActor *)0x0) {
     return;
   }
@@ -46,10 +46,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0(CDemo
               (&g_MsnEditPropertyList,0x141,-g_MsnEditPropertyScrollBar.scroll_position,iVar2);
     if ((((g_ActiveControl == (void *)0x0) && (0x140 < g_MouseX)) && (g_MouseX <= iVar2)) &&
        ((-1 < g_MouseY && (g_MouseY < 0xf0)))) {
-      INT_02f7c528 = core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0
-                               (&g_MsnEditPropertyList,g_MouseX,g_MouseY);
+      g_MsnEditHoveredProperty =
+           core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0
+                     (&g_MsnEditPropertyList,g_MouseX,g_MouseY);
     }
-    core_actor_cpp_CActorPropertyList_render_FUN_0040e850(&g_MsnEditPropertyList,INT_02f7c528);
+    core_actor_cpp_CActorPropertyList_render_FUN_0040e850
+              (&g_MsnEditPropertyList,g_MsnEditHoveredProperty);
     engine_matrix_c_popViewport_FUN_0050e480();
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&g_MsnEditPropertyScrollBar);
     iVar2 = iStack_10 + -1;

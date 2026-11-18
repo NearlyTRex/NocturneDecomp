@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_006236b8
-;   undefined4 DAT_01cd0c68
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
+;   undefined4 g_CHero_PTR_ARRAY_01cd0c60[2]
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_displayMessage_FUN_004cc190
@@ -81,7 +81,7 @@ section .text
         ;   Label: LAB_004d26ef
     XOR AH,AH                           ; 004d26f3
     PUSH EBX                            ; 004d26f5
-    MOV byte ptr [0x01cd0c68],AH        ; 004d26f6 | DAT_01cd0c68
+    MOV byte ptr [0x01cd0c68],AH        ; 004d26f6 | g_CHero_PTR_ARRAY_01cd0c60[2]
     CALL core_game.cpp_giveHeroWeapon_FUN_004d2540 ; 004d26fc
         ;   XREF to: 004d2540 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004d2540(char * class_name)
     ADD ESP,0x4                         ; 004d2701
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0xc                         ; 004d271a
     PUSH 0x5e1b23                       ; 004d271d
     PUSH 0x0                            ; 004d2722
-    MOV EBP,dword ptr [0x006236b8]      ; 004d2724 | DAT_006236b8
+    MOV EBP,dword ptr [0x006236b8]      ; 004d2724 | g_CSound_PTR_006236b8
     PUSH EBP                            ; 004d272a
     CALL core_sound.cpp_CSound_playSound_FUN_0057d880 ; 004d272b
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)

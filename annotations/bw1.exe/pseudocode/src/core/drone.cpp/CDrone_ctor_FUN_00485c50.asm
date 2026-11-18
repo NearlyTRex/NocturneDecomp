@@ -10,8 +10,8 @@
 ;   core_drone.cpp_factoryFuncDrone_FUN_00485c20 at 00485c33
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ff48c
-;   undefined4 DAT_005ff490
+;   float g_FLOAT_005ff48c = 50
+;   float g_FLOAT_005ff490 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
@@ -36,9 +36,9 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00485c72
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2fec],0x3f400000 ; 00485c77
-    FLD float ptr [0x005ff48c]          ; 00485c81 | DAT_005ff48c
+    FLD float ptr [0x005ff48c]          ; 00485c81 | g_FLOAT_005ff48c
     MOV dword ptr [EBX + 0x2ff0],0x3fc00000 ; 00485c87
-    FLD float ptr [0x005ff490]          ; 00485c91 | DAT_005ff490
+    FLD float ptr [0x005ff490]          ; 00485c91 | g_FLOAT_005ff490
     MOV dword ptr [EBX + 0x27a0],0x1    ; 00485c97
     ADD ESP,0x8                         ; 00485ca1
     MOV dword ptr [EBX + 0x2538],0x42960000 ; 00485ca4

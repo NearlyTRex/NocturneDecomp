@@ -17,13 +17,13 @@ CBox * __cdecl CBox::dtor(CBox *this_ptr,uint flags);
 // Address: 0041ae00
 void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
 
-// Original: core_box.cpp_FUN_0041b030
+// Original: core_box.cpp_CBox_setupN_FUN_0041b030
 // Address: 0041b030
-void FUN_0041b030(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
+void __cdecl CBox::setupN(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume);
 
-// Original: core_box.cpp_FUN_0041b1d0
+// Original: core_box.cpp_CBox_updateTransform_FUN_0041b1d0
 // Address: 0041b1d0
-void __cdecl FUN_0041b1d0(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
+void __cdecl CBox::updateTransform(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 
 // Original: core_box.cpp_CBox_process_FUN_0041b410
 // Address: 0041b410
@@ -53,37 +53,37 @@ SScrape * __cdecl SScrape::ctor(SScrape *this_ptr);
 // Address: 0041d840
 void __cdecl CBoundingBox3D::expand(CBoundingBox3D *this_ptr,CVector3f *point);
 
-// Original: core_box.cpp_FUN_0041d8b0
+// Original: core_box.cpp_CBoundingBox3D_getCorner_FUN_0041d8b0
 // Address: 0041d8b0
-void FUN_0041d8b0(undefined4 *param_1,uint param_2);
+CVector3f * __stack2_esi CBoundingBox3D::getCorner(CBoundingBox3D *this_ptr,uint corner_index,CVector3f *out_point);
 
 // Original: core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041d920
 // Address: 0041d920
 int __cdecl CBoundingBox3D::isVisibleWithShadow(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041daf0
+// Original: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 // Address: 0041daf0
-undefined4 FUN_0041daf0(CBoundingBox3D *param_1,int param_2);
+int __cdecl CBoundingBox3D::isVisible(CBoundingBox3D *this_ptr,int skip_shadow_test);
 
-// Original: core_box.cpp_FUN_0041dcd0
+// Original: core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0
 // Address: 0041dcd0
-undefined4 FUN_0041dcd0(float *param_1);
+int __cdecl CBoundingBox3D::isVisibleWithCamera(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041e100
+// Original: core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041e100
 // Address: 0041e100
-float __cdecl FUN_0041e100(CBoundingBox3D *this_ptr);
+float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041e220
+// Original: core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041e220
 // Address: 0041e220
-float FUN_0041e220(float *param_1,float *param_2,float *param_3,float *param_4);
+float __cdecl CBoundingBox3D::doesRayIntersect(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_box.cpp_CBoundingBox3D_reset_FUN_0041e8b0
 // Address: 0041e8b0
 void __cdecl CBoundingBox3D::reset(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041e910
+// Original: core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041e910
 // Address: 0041e910
-int __cdecl FUN_0041e910(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
+int __cdecl CBoundingBox3D::doesBoxIntersect(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 
 // Original: core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_0041e960
 // Address: 0041e960
@@ -93,13 +93,13 @@ float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 // Address: 0041e9b0
 void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041ee30
+// Original: core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041ee30
 // Address: 0041ee30
-void FUN_0041ee30(float *param_1,float *param_2);
+CVector3f * __stack2_esi CBoundingBox3D::clampPoint(CBoundingBox3D *this_ptr,CVector3f *in_point,CVector3f *out_point);
 
-// Original: core_box.cpp_FUN_0041eed0
+// Original: core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041eed0
 // Address: 0041eed0
-bool FUN_0041eed0(undefined4 param_1,float *param_2,float param_3);
+int __cdecl CBoundingBox3D::doesSphereIntersect(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);
 
 // Original: core_box.cpp_CBoundingBox3D_ctor_FUN_004fb160
 // Address: 004fb160

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 43,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 105
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 104
   },
   "cross_references": [
     {
@@ -44,21 +42,21 @@
   "globals": [
     {
       "addr": "005c0778",
-      "name": "DAT_005c0778",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c0778",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "005c0780",
-      "name": "DAT_005c0780",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c0780",
+      "type": "float",
+      "value": "-0.2000000"
     },
     {
       "addr": "005fc5a0",
-      "name": "DAT_005fc5a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005fc5a0",
+      "type": "CFireEffect*",
+      "value": "01c73654"
     },
     {
       "addr": "005fe9dc",
@@ -195,14 +193,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

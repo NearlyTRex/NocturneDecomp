@@ -32,14 +32,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_00534ea0 at 00535158
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 at 00535158
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1b63
-;   undefined4 DAT_005d1b67
+;   float g_FLOAT_005d1b63 = 2
+;   float g_FLOAT_005d1b67 = -10
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_00446df0
+;   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
 ;   crt_math.c_round_FUN_005b7ff0
 ;
@@ -63,7 +63,7 @@ section .text
     FLD float ptr [ESP + 0x1c]          ; 00473b38
     LEA EDI,[ESP + 0xc]                 ; 00473b3c
     MOV ESI,EAX                         ; 00473b40
-    FADD float ptr [0x005d1b63]         ; 00473b42 | DAT_005d1b63
+    FADD float ptr [0x005d1b63]         ; 00473b42 | g_FLOAT_005d1b63
     MOVSD ES:EDI,ESI                    ; 00473b48
     MOVSD ES:EDI,ESI                    ; 00473b49
     MOVSD ES:EDI,ESI                    ; 00473b4a
@@ -79,7 +79,7 @@ section .text
     FDIV float ptr [EBP + 0x28]         ; 00473b68
     FLD float ptr [ESP + 0x20]          ; 00473b6b
     FLD float ptr [ESP + 0x10]          ; 00473b6f
-    FADD float ptr [0x005d1b67]         ; 00473b73 | DAT_005d1b67
+    FADD float ptr [0x005d1b67]         ; 00473b73 | g_FLOAT_005d1b67
     FXCH                                ; 00473b79
     FSUB float ptr [EBP + 0x18]         ; 00473b7b
     FST float ptr [ESP + 0x2c]          ; 00473b7e
@@ -112,10 +112,10 @@ section .text
     XOR EDI,EDI                         ; 00473bd5
     FXCH ST4                            ; 00473bd7
     CALL crt_math.c_round_FUN_005b7ff0  ; 00473bd9
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST3                            ; 00473bde
     CALL crt_math.c_round_FUN_005b7ff0  ; 00473be0
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST3                            ; 00473be5
     FISTP dword ptr [ESP + 0x4c]        ; 00473be7
     FXCH ST2                            ; 00473beb
@@ -125,16 +125,16 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3c]      ; 00473bf9
     FXCH ST3                            ; 00473bfd
     CALL crt_math.c_round_FUN_005b7ff0  ; 00473bff
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 00473c04
     CALL crt_math.c_round_FUN_005b7ff0  ; 00473c06
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST3                            ; 00473c0b
     CALL crt_math.c_round_FUN_005b7ff0  ; 00473c0d
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 00473c12
     CALL crt_math.c_round_FUN_005b7ff0  ; 00473c14
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 00473c19
     FISTP dword ptr [ESP + 0x40]        ; 00473c1b
     FXCH ST2                            ; 00473c1f
@@ -178,8 +178,8 @@ section .text
     PUSH dword ptr [ESP + 0x7c]         ; 00473c74
     PUSH EDX                            ; 00473c78
     PUSH EAX                            ; 00473c79
-    CALL core_dcube.cpp_FUN_00446df0    ; 00473c7a
-        ;   XREF to: 00446df0 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_FUN_00446df0(CDemonCube * this_ptr, CVector3f * cylinder_position, float cylinder_radius, CVector3f * output_height, ...)
+    CALL core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0 ; 00473c7a
+        ;   XREF to: 00446df0 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0(CDemonCube * this_ptr, CVector3f * cylinder_position, float cylinder_radius, CVector3f * output_height, ...)
     ADD ESP,0x18                        ; 00473c7f
     TEST EAX,EAX                        ; 00473c82
     JZ 0x00473c8b                       ; 00473c84

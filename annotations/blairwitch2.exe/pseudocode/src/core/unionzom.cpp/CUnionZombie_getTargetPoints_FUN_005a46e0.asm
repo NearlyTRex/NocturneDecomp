@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f03e2
+;   double g_DOUBLE_005f03e2 = 0.5
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_getTargetPoints_FUN_00488020
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005a46e0
         ;   Label: core_unionzom.cpp_CUnionZombie_getTargetPoints_FUN_005a46e0
     FLD float ptr [EDX + 0x113c4]       ; 005a46e4
-    FCOMP double ptr [0x005f03e2]       ; 005a46ea | DAT_005f03e2
+    FCOMP double ptr [0x005f03e2]       ; 005a46ea | g_DOUBLE_005f03e2
     FNSTSW AX                           ; 005a46f0
     SAHF                                ; 005a46f2
     JNC 0x005a46f8                      ; 005a46f3

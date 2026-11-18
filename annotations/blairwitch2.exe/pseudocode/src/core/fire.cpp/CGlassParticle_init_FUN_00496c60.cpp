@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_fire_cpp_CGlassParticle_init_FUN_00496c60(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 
@@ -73,9 +72,9 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_00496c60(CGlassParticle *this
   local_a0 = local_f4 + triangle_vertices->vertices[2].x;
   local_9c = local_f0 + triangle_vertices->vertices[2].y;
   local_98 = local_ec + triangle_vertices->vertices[2].z;
-  local_88.x = local_a0 * _DAT_005d5452;
-  local_88.y = local_9c * _DAT_005d5452;
-  local_88.z = local_98 * _DAT_005d5452;
+  local_88.x = local_a0 * 0.3333333f;
+  local_88.y = local_9c * 0.3333333f;
+  local_88.z = local_98 * 0.3333333f;
   if (&local_c4 != (CVector3f *)(local_90 + 2)) {
     local_c4.x = local_88.x;
     local_c4.y = local_88.y;
@@ -154,7 +153,7 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_00496c60(CGlassParticle *this
   local_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        *(float *)((int)&stack0xffffff20 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   local_1c = SQRT(local_90[1] * local_90[1] + local_94 * local_94 + local_90[0] * local_90[0]) *
-             (float)_DAT_005d545a;
+             (float)10;
   local_30 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.7853982,1.5707964);
   local_18 = local_30;
   local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);

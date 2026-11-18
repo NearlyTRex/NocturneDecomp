@@ -11,7 +11,7 @@
 ;   core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409df0
 ;   core_actor.cpp_crc32ProcessInt_FUN_0040d2a0
 ;   core_actor.cpp_crc32ProcessString_FUN_0040d2e0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
         ;   XREF to: 0040d2e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessString_FUN_0040d2e0(uint * crc_state, char * string)
     ADD ESP,0x8                         ; 00429cb1
     PUSH ESI                            ; 00429cb4
-    CALL core_motion.cpp_FUN_005035c0   ; 00429cb5
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00429cb5
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00429cba
     PUSH EAX                            ; 00429cbd
     PUSH EBX                            ; 00429cbe

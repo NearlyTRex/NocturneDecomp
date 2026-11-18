@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_005b6a50(CMorphModel *this_ptr,float blend_factor,SMorphPoint *ref_points)
 
 {
@@ -44,16 +42,16 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_005b6a50(CMorphModel *t
   
   bVar4 = 0;
   if (2000 < this_ptr->num_points) {
-    _DAT_01d046a0 = "..\\core\\morph.cpp";
-    _DAT_01d046a4 = 0x1f8;
-    core_main_c_FUN_004e4500("CMorphModel::rotatePoints - too many points!");
+    g_CHAR_PTR_01d046a0 = "..\\core\\morph.cpp";
+    g_INT_01d046a4 = 0x1f8;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMorphModel::rotatePoints - too many points!");
   }
   local_28 = 0;
   local_18 = 0xff;
   local_24 = 0;
   local_1c = 1.0 - blend_factor;
   if (0 < this_ptr->num_points) {
-    input = (CVector3i *)&DAT_0267a38c;
+    input = g_MorphVertexBuffer;
     local_20 = 0;
     local_14 = 0;
     do {
@@ -83,15 +81,15 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_005b6a50(CMorphModel *t
            *(uint *)((int)&stack0xffffffb8 + (uint)bVar4 * -8);
       *(uint *)((int)&stack0xffffffb0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
            *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      input->x = (int)ROUND(local_58 * _DAT_006013a0);
-      input->y = (int)ROUND(local_54 * _DAT_006013a0);
-      input->z = (int)ROUND(local_50 * _DAT_006013a0);
-      engine_special_cpp_FUN_0055d723
+      input->x = (int)ROUND(local_58 * 256.0f);
+      input->y = (int)ROUND(local_54 * 256.0f);
+      input->z = (int)ROUND(local_50 * 256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 ((SProjectedVertex *)
-                 ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + local_14
-                 ),input);
-      uVar2 = *(uint *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x +
-                       local_14);
+                 ((int)&(g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + local_14),input);
+      uVar2 = *(uint *)((int)&(g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex).
+                              screen_x + local_14);
       if ((uVar2 & 0x80000000) == 0) {
         local_18 = 0;
       }
@@ -111,7 +109,8 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_005b6a50(CMorphModel *t
   core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00531ca0(g_CDemonSetPtr,this_ptr->num_points);
   core_set_cpp_CDemonSet_lightVerticies_FUN_00532190
             (g_CDemonSetPtr,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
-             (CVector3i *)&DAT_0267a38c,3,(CVector3i *)0x0);
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,local_28);
+             g_MorphVertexBuffer,3,(CVector3i *)0x0);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
+            (g_CDemonRenderer_PTR_0060b280,local_28);
   return;
 }

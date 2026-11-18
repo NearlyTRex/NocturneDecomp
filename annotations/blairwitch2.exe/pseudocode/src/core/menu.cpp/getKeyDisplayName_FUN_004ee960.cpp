@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
 
 {
@@ -80,9 +78,9 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_c
   if (pcVar3 == (char *)0x0) {
     pcVar3 = wincore_winrun_cpp_getKeyName_FUN_0058f630(key_code);
   }
-  pcVar2 = (char *)(_DAT_01d08d80 * 0x100 + 0x1d08d88);
+  pcVar2 = g_StringBuffers[g_StringBufferIndex];
   pcVar4 = pcVar2;
-  _DAT_01d08d80 = (_DAT_01d08d80 + 1) % 10;
+  g_StringBufferIndex = (g_StringBufferIndex + 1) % 10;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

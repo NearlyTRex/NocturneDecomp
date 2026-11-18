@@ -12,8 +12,8 @@
 ;   TerminatedCString s_Sleeping_005f0a90
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
-;   core_muzzle.cpp_FUN_0059daa0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
+;   core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -25,16 +25,16 @@ section .text
     PUSH 0x5f0a80                       ; 005aa265 | = "Death"
     ADD EBX,0x10af8                     ; 005aa26a
     PUSH EBX                            ; 005aa270
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005aa271
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005aa271
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aa276
     TEST EAX,EAX                        ; 005aa279
     JNZ 0x005aa28f                      ; 005aa27b
         ;   XREF to: 005aa28f (CONDITIONAL_JUMP)  ; LAB_005aa28f
     PUSH 0x5f0a86                       ; 005aa27d | = "Animation"
     PUSH EBX                            ; 005aa282
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005aa283
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005aa283
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aa288
     TEST EAX,EAX                        ; 005aa28b
     JZ 0x005aa2b4                       ; 005aa28d
@@ -43,8 +43,8 @@ section .text
         ;   Label: LAB_005aa28f
     ADD EAX,0x2b4                       ; 005aa293
     PUSH EAX                            ; 005aa298
-    CALL core_motion.cpp_FUN_005035c0   ; 005aa299
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005aa299
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005aa29e
     ADD ESP,0x4                         ; 005aa2a1
     TEST EAX,EAX                        ; 005aa2a4
@@ -59,8 +59,8 @@ section .text
     PUSH 0x5f0a90                       ; 005aa2b4 | = "Sleeping"
         ;   Label: LAB_005aa2b4
     PUSH EBX                            ; 005aa2b9
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005aa2ba
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005aa2ba
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aa2bf
     TEST EAX,EAX                        ; 005aa2c2
     JNZ 0x005aa28f                      ; 005aa2c4

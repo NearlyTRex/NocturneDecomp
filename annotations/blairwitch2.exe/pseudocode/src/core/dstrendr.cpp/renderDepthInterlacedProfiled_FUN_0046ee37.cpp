@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046ee37(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
@@ -17,7 +15,7 @@ void __edi_esi_ebx core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046ee37(
   int iVar4;
   int iVar5;
   int iVar6;
-  int *piVar7;
+  uint *puVar7;
   SSoftwareEdge *pSVar8;
   uint uVar9;
   
@@ -37,20 +35,21 @@ void __edi_esi_ebx core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046ee37(
   uVar2 = uVar2 >> 0x10;
   iVar4 = (uVar3 >> 0x10) - uVar2;
   if (iVar4 != 0 && uVar2 <= uVar3 >> 0x10) {
-    piVar7 = (int *)(*(int *)(&DAT_01c2b64c + scanline_y * 4) + uVar2 * 4);
+    puVar7 = g_ZBufferScanlineArray[scanline_y] + uVar2;
     uVar9 = (pSVar8->base).depth_current;
     iVar5 = iVar4;
     do {
-      if ((*piVar7 <= (int)(uVar9 >> 8)) &&
-         (_DAT_01ba5c7c = _DAT_01ba5c7c + 1, DAT_0060b284 <= _DAT_01ba5c7c)) {
-        _DAT_01ba5c80 = 1;
+      if (((int)*puVar7 <= (int)(uVar9 >> 8)) &&
+         (g_RenderPixelCounter = g_RenderPixelCounter + 1,
+         (uint)g_RenderPixelBudget <= (uint)g_RenderPixelCounter)) {
+        g_RenderAbortFlag = 1;
         return;
       }
       uVar9 = uVar9 + (int)((ulonglong)
                             ((longlong)
                              ((left_edge->base).depth_current - (pSVar8->base).depth_current) *
-                            (longlong)*(int *)(&DAT_01c35e70 + (iVar4 + 1) * 4)) >> 0x20) * 2;
-      piVar7 = piVar7 + 2;
+                            (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20) * 2;
+      puVar7 = puVar7 + 2;
       iVar6 = iVar5 + -2;
       bVar1 = 1 < iVar5;
       iVar5 = iVar6;

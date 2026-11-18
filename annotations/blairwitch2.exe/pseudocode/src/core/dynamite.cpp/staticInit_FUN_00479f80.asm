@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c225dc
-;   undefined4 DAT_01c225e0
-;   undefined4 DAT_01c225e4
+;   CVector3f g_CVector3f_01c225dc
+;   undefined4 g_CVector3f_01c225dc.y
+;   undefined4 g_CVector3f_01c225dc.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c450
@@ -28,8 +28,8 @@ section .text
     MOV ECX,0xc2000000                  ; 00479fa0
     XOR EDX,EDX                         ; 00479fa5
     ADD ESP,0x18                        ; 00479fa7
-    MOV dword ptr [0x01c225dc],EDX      ; 00479faa | DAT_01c225dc
-    MOV dword ptr [0x01c225e0],ECX      ; 00479fb0 | DAT_01c225e0
-    MOV dword ptr [0x01c225e4],EDX      ; 00479fb6 | DAT_01c225e4
+    MOV dword ptr [0x01c225dc],EDX      ; 00479faa | g_CVector3f_01c225dc
+    MOV dword ptr [0x01c225e0],ECX      ; 00479fb0 | g_CVector3f_01c225dc.y
+    MOV dword ptr [0x01c225e4],EDX      ; 00479fb6 | g_CVector3f_01c225dc.z
     RET                                 ; 00479fbc
 

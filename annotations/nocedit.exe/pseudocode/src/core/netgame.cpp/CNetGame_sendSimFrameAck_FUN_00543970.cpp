@@ -53,6 +53,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
        this_ptr->players[iVar1].player_input.look_up_down_speed;
   core_netgame_cpp_CNetGame_send_FUN_005411c0
             (this_ptr,this_ptr->server_player_index,&local_48.header);
-  UINT_02f7c8c8 = g_CurrentGameTime;
+  g_NetLastSimFrameAckTime = g_CurrentGameTime;
   return;
 }

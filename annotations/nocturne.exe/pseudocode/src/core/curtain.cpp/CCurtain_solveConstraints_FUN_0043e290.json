@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 498,
+    "complexity_score": 473,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 193,
-    "suspect_count": 28,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_memset"
     ],
     "total_lines": 844
@@ -55,49 +54,49 @@
     },
     {
       "addr": "0077bdb8",
-      "name": "DAT_0077bdb8",
-      "type": "undefined4",
+      "name": "g_INT_0077bdb8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0077bdbc",
-      "name": "g_CVector3f_ARRAY_0077bdbc",
+      "name": "g_CurtainCollisionPositions",
       "type": "CVector3f[100]",
       "value": null
     },
     {
       "addr": "0077bdc0",
-      "name": "g_CVector3f_ARRAY_0077bdbc[0].y",
+      "name": "g_CurtainCollisionPositions[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077bdc4",
-      "name": "g_CVector3f_ARRAY_0077bdbc[0].z",
+      "name": "g_CurtainCollisionPositions[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077c26c",
-      "name": "g_SCollisionInfo_ARRAY_0077c26c",
+      "name": "g_CurtainCollisionInfos",
       "type": "SCollisionInfo[100]",
       "value": null
     },
     {
       "addr": "0077c284",
-      "name": "g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_top_y",
+      "name": "g_CurtainCollisionInfos[0].cylinder_top_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077c288",
-      "name": "g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_radius",
+      "name": "g_CurtainCollisionInfos[0].cylinder_radius",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077c2b0",
-      "name": "g_SCollisionInfo_ARRAY_0077c26c[1].cylinder_radius",
+      "name": "g_CurtainCollisionInfos[1].cylinder_radius",
       "type": "undefined4",
       "value": null
     }
@@ -813,115 +812,99 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "if (0 < DAT_0077bdb8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 143,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "} while (local_18 < DAT_0077bdb8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 47,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].y",
+      "match": "(int)&g_CurtainCollisionPositions[0].y",
       "severity": "moderate",
-      "text": "(fVar7 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) +",
+      "text": "(fVar7 = *(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11) +",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 50,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].y",
+      "match": "(int)&g_CurtainCollisionPositions[0].y",
       "severity": "moderate",
-      "text": "((vertex->world_position).y <= *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11))",
+      "text": "((vertex->world_position).y <= *(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11)",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 52,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].x",
+      "match": "(int)&g_CurtainCollisionPositions[0].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11),",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].x + iVar11),",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 54,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].z",
+      "match": "(int)&g_CurtainCollisionPositions[0].z",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11),",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].z + iVar11),",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 57,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].y",
+      "match": "(int)&g_CurtainCollisionPositions[0].y",
       "severity": "moderate",
-      "text": "if ((*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) <=",
+      "text": "if ((*(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11) <=",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 59,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].y",
+      "match": "(int)&g_CurtainCollisionPositions[0].y",
       "severity": "moderate",
-      "text": "(fVar7 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) +",
+      "text": "(fVar7 = *(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11) +",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 63,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].x",
+      "match": "(int)&g_CurtainCollisionPositions[0].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11);",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].x + iVar11);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 65,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].z",
+      "match": "(int)&g_CurtainCollisionPositions[0].z",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11);",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].z + iVar11);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 69,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].y",
+      "match": "(int)&g_CurtainCollisionPositions[0].y",
       "severity": "moderate",
-      "text": "if (*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) <",
+      "text": "if (*(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11) <",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 80,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].x",
+      "match": "(int)&g_CurtainCollisionPositions[0].x",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11);",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].x + iVar11);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 83,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].z",
+      "match": "(int)&g_CurtainCollisionPositions[0].z",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11);",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].z + iVar11);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CurtainCollisionPositions[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 101,
-      "match": "(int)&g_CVector3f_ARRAY_0077bdbc[0].y",
+      "match": "(int)&g_CurtainCollisionPositions[0].y",
       "severity": "moderate",
-      "text": "fVar9 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11);",
+      "text": "fVar9 = *(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11);",
       "type": "pointer_truncation"
     },
     {
@@ -937,7 +920,7 @@
       "line": 47,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(fVar7 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) +",
+      "text": "(fVar7 = *(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11) +",
       "type": "pointer_cast"
     },
     {
@@ -945,7 +928,7 @@
       "line": 50,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((vertex->world_position).y <= *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11))",
+      "text": "((vertex->world_position).y <= *(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11)",
       "type": "pointer_cast"
     },
     {
@@ -953,7 +936,7 @@
       "line": 52,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11),",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].x + iVar11),",
       "type": "pointer_cast"
     },
     {
@@ -961,7 +944,7 @@
       "line": 54,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11),",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].z + iVar11),",
       "type": "pointer_cast"
     },
     {
@@ -969,7 +952,7 @@
       "line": 57,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if ((*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) <=",
+      "text": "if ((*(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11) <=",
       "type": "pointer_cast"
     },
     {
@@ -977,7 +960,7 @@
       "line": 59,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(fVar7 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) +",
+      "text": "(fVar7 = *(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11) +",
       "type": "pointer_cast"
     },
     {
@@ -985,7 +968,7 @@
       "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11);",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].x + iVar11);",
       "type": "pointer_cast"
     },
     {
@@ -993,7 +976,7 @@
       "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11);",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].z + iVar11);",
       "type": "pointer_cast"
     },
     {
@@ -1001,7 +984,7 @@
       "line": 69,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) <",
+      "text": "if (*(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11) <",
       "type": "pointer_cast"
     },
     {
@@ -1009,7 +992,7 @@
       "line": 80,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11);",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].x + iVar11);",
       "type": "pointer_cast"
     },
     {
@@ -1017,7 +1000,7 @@
       "line": 83,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11);",
+      "text": "*(float *)((int)&g_CurtainCollisionPositions[0].z + iVar11);",
       "type": "pointer_cast"
     },
     {
@@ -1025,7 +1008,7 @@
       "line": 101,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "fVar9 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11);",
+      "text": "fVar9 = *(float *)((int)&g_CurtainCollisionPositions[0].y + iVar11);",
       "type": "pointer_cast"
     },
     {

@@ -10,9 +10,9 @@
 ;   core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00449920 at 0044997d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d73aa
-;   undefined4 DAT_005d73b2
-;   undefined4 DAT_005d73ba
+;   double g_DOUBLE_005d73aa = 0.666000000000000
+;   double g_DOUBLE_005d73b2 = 1.50150150150150
+;   double g_DOUBLE_005d73ba = 11
 ;
 ; *****************************************************************************
 
@@ -22,9 +22,9 @@ section .text
         ;   Label: core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0044a0c0
     MOV EAX,dword ptr [ESP + 0x8]       ; 0044a0c3
     FLD float ptr [EAX + 0x300]         ; 0044a0c7
-    FSUBR double ptr [0x005d73aa]       ; 0044a0cd | DAT_005d73aa
-    FMUL double ptr [0x005d73b2]        ; 0044a0d3 | DAT_005d73b2
-    FMUL double ptr [0x005d73ba]        ; 0044a0d9 | DAT_005d73ba
+    FSUBR double ptr [0x005d73aa]       ; 0044a0cd | g_DOUBLE_005d73aa
+    FMUL double ptr [0x005d73b2]        ; 0044a0d3 | g_DOUBLE_005d73b2
+    FMUL double ptr [0x005d73ba]        ; 0044a0d9 | g_DOUBLE_005d73ba
     FSTP float ptr [ESP]                ; 0044a0df
     MOV EAX,dword ptr [ESP]             ; 0044a0e2
     ADD ESP,0x4                         ; 0044a0e5

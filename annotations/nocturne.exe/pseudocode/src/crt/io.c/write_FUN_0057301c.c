@@ -20,12 +20,12 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
   HANDLE local_18;
   uint local_14;
   
-  if ((fd < 0) || (0x00000014 < (uint)fd)) {
+  if ((fd < 0) || (g_MaxHandleCount < (uint)fd)) {
     setErrno(4);
     count = 0xffffffff;
   }
   else {
-    local_18 = *(HANDLE *)(DAT_005c1f54 + fd * 4);
+    local_18 = g_IOControlBlock->standard_handles[fd];
     uVar1 = FUN_0056f220(fd);
     local_14 = uVar1;
     if (uVar1 == 0) {
@@ -63,7 +63,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
               (&stack0xffffffdc)[nNumberOfBytesToWrite] = 0xd;
               nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
               if (DVar2 == nNumberOfBytesToWrite) {
-                if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {
+                if ((g_SpecialDeviceWriteFuncPtr == (byte *)0x0) ||
+                   (iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(fd), iVar3 == 0)) {
                   BVar4 = WriteFile(local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,
                                     (LPOVERLAPPED)0x0);
                   if (BVar4 == 0) {
@@ -73,7 +74,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
                   }
                 }
                 else {
-                  nNumberOfBytesToWrite = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,DVar2);
+                  nNumberOfBytesToWrite =
+                       (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xffffffdc,DVar2);
                 }
                 if (DVar2 != nNumberOfBytesToWrite) {
                   setErrno(0xc);
@@ -88,7 +90,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
             local_20 = local_20 + 1;
             nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
             if (DVar2 == nNumberOfBytesToWrite) {
-              if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {
+              if ((g_SpecialDeviceWriteFuncPtr == (byte *)0x0) ||
+                 (iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(fd), iVar3 == 0)) {
                 BVar4 = WriteFile(local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,
                                   (LPOVERLAPPED)0x0);
                 if (BVar4 == 0) {
@@ -98,7 +101,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
                 }
               }
               else {
-                nNumberOfBytesToWrite = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,DVar2);
+                nNumberOfBytesToWrite =
+                     (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xffffffdc,DVar2);
               }
               if (DVar2 != nNumberOfBytesToWrite) {
                 setErrno(0xc);
@@ -111,7 +115,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
           } while (local_20 < count);
         }
         if (nNumberOfBytesToWrite != 0) {
-          if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {
+          if ((g_SpecialDeviceWriteFuncPtr == (byte *)0x0) ||
+             (iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(fd), iVar3 == 0)) {
             BVar4 = WriteFile(local_18,&stack0xffffffdc,nNumberOfBytesToWrite,&local_20,
                               (LPOVERLAPPED)0x0);
             if (BVar4 == 0) {
@@ -121,7 +126,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
             }
           }
           else {
-            local_20 = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,nNumberOfBytesToWrite);
+            local_20 = (*(code *)g_SpecialDeviceWriteFuncPtr)
+                                 (iVar3,&stack0xffffffdc,nNumberOfBytesToWrite);
           }
           if (local_20 != nNumberOfBytesToWrite) {
             setErrno(0xc);
@@ -131,7 +137,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
         }
       }
       else {
-        if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {
+        if ((g_SpecialDeviceWriteFuncPtr == (byte *)0x0) ||
+           (iVar3 = (*(code *)g_IsSpecialDeviceFuncPtr)(fd), iVar3 == 0)) {
           BVar4 = WriteFile(local_18,buffer,count,&local_1c,(LPOVERLAPPED)0x0);
           if (BVar4 == 0) {
             (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
@@ -140,7 +147,7 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
           }
         }
         else {
-          local_1c = (*DAT_005c1d80)(iVar3,buffer,count);
+          local_1c = (*(code *)g_SpecialDeviceWriteFuncPtr)(iVar3,buffer,count);
         }
         if (local_1c != count) {
           setErrno(0xc);

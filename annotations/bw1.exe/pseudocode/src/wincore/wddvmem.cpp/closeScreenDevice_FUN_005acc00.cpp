@@ -6,46 +6,45 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_005acc00(void)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  HRESULT HVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+  int iVar7;
   
-  if (_DAT_02c9931c == 0) {
-    if (_DAT_01c50948 != 0) {
-      _DAT_02c99314 = 1;
+  if (g_INT_02c9931c == 0) {
+    if (g_INT_01c50948 != 0) {
+      g_FlipPending = 1;
       return;
     }
-    if (0 < DAT_0061b49c) {
-      iVar4 = DAT_0061b4a0 >> 0x1f;
-      iVar2 = DAT_0061b4a0 + iVar4 * -8;
-      iVar5 = 0;
-      iVar6 = DAT_0061b498 * 4;
-      iVar3 = 0;
-      iVar1 = 0;
+    if (0 < g_INT_0061b49c) {
+      iVar5 = g_INT_0061b4a0 >> 0x1f;
+      iVar1 = g_INT_0061b4a0 + iVar5 * -8;
+      iVar6 = 0;
+      iVar7 = g_INT_0061b498 * 4;
+      iVar4 = 0;
+      iVar2 = 0;
       do {
-        *(int *)(&DAT_01c4354c + iVar1) =
-             DAT_00629010 + DAT_0061b498 * iVar3 * ((int)(iVar2 - (uint)(iVar4 << 2 < 0)) >> 3);
-        iVar3 = iVar3 + 1;
-        *(int *)(&DAT_01c4480c + iVar1) = DAT_0071362c + iVar5;
-        iVar5 = iVar5 + iVar6;
-        iVar1 = iVar1 + 4;
-      } while (iVar3 < DAT_0061b49c);
+        *(byte **)((int)g_ScreenBufferArray + iVar2) =
+             g_PTR_00629010 + g_INT_0061b498 * iVar4 * ((int)(iVar1 - (uint)(iVar5 << 2 < 0)) >> 3);
+        iVar4 = iVar4 + 1;
+        *(byte **)((int)g_ZBufferScanlineArray + iVar2) = g_SoftwareZBuffer + iVar6;
+        iVar6 = iVar6 + iVar7;
+        iVar2 = iVar2 + 4;
+      } while (iVar4 < g_INT_0061b49c);
     }
-    iVar2 = (**(code **)(*_DAT_02c99308 + 0x80))(_DAT_02c99308,0);
-    if (iVar2 != 0) {
-      _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
-      _DAT_01d1d404 = 0x28f;
-      core_main_c_FUN_005030e0("closeScreenDevice - Unable to unlock");
+    HVar3 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
+    if (HVar3 != 0) {
+      g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
+      g_INT_01d1d404 = 0x28f;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("closeScreenDevice - Unable to unlock");
     }
-    _DAT_02c99314 = 1;
+    g_FlipPending = 1;
   }
   return;
 }

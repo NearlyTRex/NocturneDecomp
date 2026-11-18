@@ -126,10 +126,10 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
       if (this_ptr->new_attack == 0) {
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0
                   (g_CFireEffectPtr,&local_30,&this_ptr->left_hand_pos,2.0,0.5,0.5,
-                   &SMRGLTextureBasic_0066e460);
+                   &g_BaronBlueGlowTexture);
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0
                   (g_CFireEffectPtr,&local_54,&this_ptr->right_hand_pos,2.0,0.5,0.5,
-                   &SMRGLTextureBasic_0066e460);
+                   &g_BaronBlueGlowTexture);
       }
       if (&this_ptr->left_hand_pos != &local_30) {
         this_ptr->left_hand_pos = local_30;

@@ -11,12 +11,12 @@ CParticleBox * __cdecl core_hpbox_cpp_CParticleBox_dtor_FUN_005ac7f0(CParticleBo
 {
   CSimpleParticleSystem *pCVar1;
   CBox *pCVar2;
-  CParticleBox *pCVar3;
-  void *ptr;
+  CParticleBox *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CParticleBoxTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CParticleBoxTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = (this_ptr->base).base.particle_systems + 3;
@@ -33,12 +33,12 @@ CParticleBox * __cdecl core_hpbox_cpp_CParticleBox_dtor_FUN_005ac7f0(CParticleBo
   core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(pCVar1,0);
   core_bwspart_cpp_CSimpleParticleSystem_release_FUN_005a8220(pCVar1);
   pCVar2 = core_box_cpp_CBox_dtor_FUN_005b1c70(&(this_ptr->base).physics_box,0);
-  pCVar3 = (CParticleBox *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930
-                     ((CDemonActor *)&pCVar2[-3].scrape_points[6].raytrace_normal.y,1);
+  ptr = (CParticleBox *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                  ((CDemonActor *)&pCVar2[-3].scrape_points[6].raytrace_normal.y,1);
   if ((flags & 2) == 0) {
-    return pCVar3;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar3);
-  return pCVar3;
+  debugFreeChecked(ptr);
+  return ptr;
 }

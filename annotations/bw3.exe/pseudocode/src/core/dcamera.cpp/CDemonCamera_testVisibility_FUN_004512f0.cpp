@@ -12,7 +12,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004512f0(CDemonCame
   int iVar1;
   CVector3i *pCVar2;
   int iVar3;
-  SProjectedVertex *output;
+  SRenderVertex *output;
   SMRGLHeaderPrimitive SStack_38;
   int iStack_20;
   uint uStack_1c;
@@ -20,22 +20,22 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004512f0(CDemonCame
   uint uStack_14;
   
   engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046e880
-            (DAT_005f2afc,(SCameraViewportState *)0x15484dc);
-  output = (SProjectedVertex *)&DAT_0060b014;
+            (g_CDemonRenderer_PTR_005f2afc,&g_SavedCameraState);
+  output = g_SRenderVertex_ARRAY_0060b014;
   pCVar2 = corners + 8;
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0046e720
-            (DAT_005f2afc,(SCameraViewportState *)0x14a01f0);
+            (g_CDemonRenderer_PTR_005f2afc,&g_BackgroundSavedCameraState);
   do {
-    engine_special_cpp_FUN_0056356c(output,corners);
+    engine_special_cpp_transformPoint_FUN_0056356c(&output->projected_vertex,corners);
     corners = corners + 1;
-    output = output + 2;
+    output = output + 1;
   } while (corners != pCVar2);
   SStack_38.surface_normal.D.i = (uint)corners ^ (uint)pCVar2;
   SStack_38.base.count = 4;
   SStack_38.surface_normal.C.i = 0;
   SStack_38.surface_normal.B.i = 0;
   SStack_38.surface_normal.A.i = 0;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(g_CDemonRenderer_PTR_005f2afc,1);
   iVar3 = 0;
   iStack_20 = 0;
   uStack_1c = 4;
@@ -83,8 +83,8 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004512f0(CDemonCame
   }
   iVar3 = 1;
 LAB_004513a7:
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(g_CDemonRenderer_PTR_005f2afc,0);
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0046e720
-            (DAT_005f2afc,(SCameraViewportState *)0x15484dc);
+            (g_CDemonRenderer_PTR_005f2afc,&g_SavedCameraState);
   return iVar3;
 }

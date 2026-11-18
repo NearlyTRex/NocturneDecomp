@@ -11,15 +11,15 @@
 ; int              Stack[0x14]:4   y_offset2
 ;
 ; XREF[1]:
-;   core_dfont.cpp_FUN_00459f50 at 0045a739
+;   core_dfont.cpp_initFonts_FUN_00459f50 at 0045a739
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFontA_005b340c = 001b3814
-;   undefined1* PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0057fe10_005e6534 = 0057fe10
+;   CFont_vtable g_CFont_vtable_005e6534
 ;
 ; Called Functions:
-;   core_npc.cpp_FUN_00509b90
 ;   CreateFontA
+;   engine_palette.cpp_CFont_ctor_FUN_00509b90
 ;
 ; *****************************************************************************
 
@@ -29,14 +29,14 @@ section .text
         ;   Label: engine_winfont.cpp_CWinFont_ctor_FUN_0057fd50
     MOV EDX,dword ptr [ESP + 0x8]       ; 0057fd51
     PUSH EDX                            ; 0057fd55
-    CALL core_npc.cpp_FUN_00509b90      ; 0057fd56
-        ;   XREF to: 00509b90 (UNCONDITIONAL_CALL)  ; CFont * core_npc.cpp_FUN_00509b90(CFont * this_ptr)
+    CALL engine_palette.cpp_CFont_ctor_FUN_00509b90 ; 0057fd56
+        ;   XREF to: 00509b90 (UNCONDITIONAL_CALL)  ; CFont * engine_palette.cpp_CFont_ctor_FUN_00509b90(CFont * this_ptr)
     ADD ESP,0x4                         ; 0057fd5b
     MOV ECX,dword ptr [ESP + 0xc]       ; 0057fd5e
     PUSH ECX                            ; 0057fd62
     PUSH 0x0                            ; 0057fd63
     PUSH 0x0                            ; 0057fd65
-    MOV dword ptr [EAX + 0x6a44],0x5e6534 ; 0057fd67 | PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0057fe10_005e6534
+    MOV dword ptr [EAX + 0x6a44],0x5e6534 ; 0057fd67 | g_CFont_vtable_005e6534
     PUSH 0x0                            ; 0057fd71
     MOV dword ptr [EAX + 0x6a48],0x0    ; 0057fd73
     PUSH 0x0                            ; 0057fd7d

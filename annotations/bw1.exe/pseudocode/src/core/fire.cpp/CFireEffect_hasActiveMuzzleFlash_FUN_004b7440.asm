@@ -7,17 +7,17 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00550da0 at 0055103e
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 0055103e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c9f1bc
-;   undefined4 DAT_01c9f218
+;   CMuzzleFlash[20] g_MuzzleFlashPool
+;   undefined4 g_MuzzleFlashPool[1].frames_remaining
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x01c9f1bc]      ; 004b7440 | DAT_01c9f1bc
+    MOV EDX,dword ptr [0x01c9f1bc]      ; 004b7440 | g_MuzzleFlashPool
         ;   Label: core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004b7440
     XOR EAX,EAX                         ; 004b7446
     CMP EDX,0x1                         ; 004b7448
@@ -28,7 +28,7 @@ section .text
     CMP EAX,0x730                       ; 004b7450
     JGE 0x004b4360                      ; 004b7455
         ;   XREF to: 004b4360 (CONDITIONAL_JUMP)
-    CMP dword ptr [EAX + 0x1c9f1bc],0x1 ; 004b745b | DAT_01c9f218
+    CMP dword ptr [EAX + 0x1c9f1bc],0x1 ; 004b745b | g_MuzzleFlashPool[1].frames_remaining
     JNZ 0x004b744d                      ; 004b7462
         ;   XREF to: 004b744d (CONDITIONAL_JUMP)  ; LAB_004b744d
     MOV EAX,0x1                         ; 004b7464

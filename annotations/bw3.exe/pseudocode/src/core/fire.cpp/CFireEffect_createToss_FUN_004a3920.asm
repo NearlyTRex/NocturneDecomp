@@ -15,7 +15,7 @@
 ;   core_dynamite.cpp_CDynamite_fire_FUN_0047b130 at 0047b168
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0a40
+;   double g_DOUBLE_005c0a40 = 0.000100000000000000
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_allocateToss_FUN_004a3a30
@@ -31,7 +31,7 @@ section .text
     PUSH EDI                            ; 004a3922
     PUSH EBP                            ; 004a3923
     FLD float ptr [ESP + 0x24]          ; 004a3924
-    FCOMP double ptr [0x005c0a40]       ; 004a3928 | DAT_005c0a40
+    FCOMP double ptr [0x005c0a40]       ; 004a3928 | g_DOUBLE_005c0a40
     FNSTSW AX                           ; 004a392e
     SAHF                                ; 004a3930
     JNC 0x004a393b                      ; 004a3931

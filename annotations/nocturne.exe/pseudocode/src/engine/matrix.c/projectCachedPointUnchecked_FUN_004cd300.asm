@@ -12,12 +12,12 @@
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 at 00461332
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c5014
-;   undefined4 DAT_005c5018
-;   undefined4 DAT_005c501c
-;   undefined4 DAT_005c5020
-;   undefined4 DAT_005c5024
-;   undefined4 DAT_005c5028
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.inv_z
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;   undefined4 g_Projection.center_x_fixed
@@ -37,26 +37,26 @@ section .text
     MOV EAX,0x7fffffff                  ; 004cd310
     SHL ECX,0x4                         ; 004cd315
     MOV EDX,EAX                         ; 004cd318
-    MOV EBX,dword ptr [ECX + 0x5c501c]  ; 004cd31a | DAT_005c501c
+    MOV EBX,dword ptr [ECX + 0x5c501c]  ; 004cd31a | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z
     SAR EDX,0x1f                        ; 004cd320
     IDIV EBX                            ; 004cd323
-    MOV dword ptr [ECX + 0x5c5020],EAX  ; 004cd325 | DAT_005c5020
+    MOV dword ptr [ECX + 0x5c5020],EAX  ; 004cd325 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.inv_z
     MOV EDX,dword ptr [0x01c00c48]      ; 004cd32b | g_Projection
-    MOV EBX,dword ptr [ECX + 0x5c501c]  ; 004cd331 | DAT_005c501c
-    MOV EAX,dword ptr [ECX + 0x5c5014]  ; 004cd337 | DAT_005c5014
+    MOV EBX,dword ptr [ECX + 0x5c501c]  ; 004cd331 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z
+    MOV EAX,dword ptr [ECX + 0x5c5014]  ; 004cd337 | g_SRenderVertex_ARRAY_005c5014
     IMUL EDX                            ; 004cd33d
     IDIV EBX                            ; 004cd33f
     MOV ESI,dword ptr [0x01c00c50]      ; 004cd341 | g_Projection.center_x_fixed
     ADD EAX,ESI                         ; 004cd347
-    MOV dword ptr [ECX + 0x5c5024],EAX  ; 004cd349 | DAT_005c5024
+    MOV dword ptr [ECX + 0x5c5024],EAX  ; 004cd349 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x
     MOV EDX,dword ptr [0x01c00c4c]      ; 004cd34f | g_Projection.neg_half_height_fixed
-    MOV EBX,dword ptr [ECX + 0x5c501c]  ; 004cd355 | DAT_005c501c
-    MOV EAX,dword ptr [ECX + 0x5c5018]  ; 004cd35b | DAT_005c5018
+    MOV EBX,dword ptr [ECX + 0x5c501c]  ; 004cd355 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z
+    MOV EAX,dword ptr [ECX + 0x5c5018]  ; 004cd35b | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
     IMUL EDX                            ; 004cd361
     IDIV EBX                            ; 004cd363
     MOV EDI,dword ptr [0x01c00c54]      ; 004cd365 | g_Projection.center_y_fixed
     ADD EAX,EDI                         ; 004cd36b
-    MOV dword ptr [ECX + 0x5c5028],EAX  ; 004cd36d | DAT_005c5028
+    MOV dword ptr [ECX + 0x5c5028],EAX  ; 004cd36d | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_y
     POP EDI                             ; 004cd373
     POP ESI                             ; 004cd374
     POP EBX                             ; 004cd375

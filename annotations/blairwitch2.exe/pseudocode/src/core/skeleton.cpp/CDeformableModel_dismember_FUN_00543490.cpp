@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index,CVector3i *skinned_vertices,int texture_set_index)
 
 {
@@ -37,9 +35,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformab
   bVar14 = 0;
   if (body_part_ptr != (CBodyPart *)0x0) {
     if (this_ptr->lod_info[lod_index].shadow_only_flag != 0) {
-      _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-      _DAT_01d046a4 = 0x64c;
-      core_main_c_FUN_004e4500("CDeformableModel::dismember - can't dismember shadow LOD.");
+      g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+      g_INT_01d046a4 = 0x64c;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModel::dismember - can't dismember shadow LOD.");
     }
     iVar8 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_30 = *(int *)(iVar8 + 0x54);
@@ -56,39 +54,31 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformab
     iVar8 = local_2c + this_ptr->parts[part_index].tri_counts[lod_index];
     iVar7 = local_30 + this_ptr->parts[part_index].cap_tri_counts[lod_index];
     if (4000 < this_ptr->vertex_count[lod_index]) {
-      _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-      _DAT_01d046a4 = 0x661;
-      core_main_c_FUN_004e4500("CDeformableModel::dismember - too many vertices!");
+      g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+      g_INT_01d046a4 = 0x661;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModel::dismember - too many vertices!");
     }
-    memset((void *)0x20b1a54,0,this_ptr->vertex_count[lod_index] << 2);
+    memset(g_VertexRemapTable,0,this_ptr->vertex_count[lod_index] << 2);
     if (local_2c < iVar8) {
       iVar3 = local_2c * 0x12;
       do {
         pSVar2 = this_ptr->tri_data_ptr[lod_index];
-        *(uint *)
-         ((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x20b1a54)
-             = 1;
-        *(uint *)
-         ((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x20b1a54)
-             = 1;
+        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1;
+        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1;
         puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);
         iVar3 = iVar3 + 0x12;
-        *(uint *)((uint)*puVar5 * 4 + 0x20b1a54) = 1;
+        g_VertexRemapTable[*puVar5] = 1;
       } while (iVar3 < iVar8 * 0x12);
     }
     if (local_30 < iVar7) {
       iVar3 = local_30 * 0x12;
       do {
         pSVar2 = this_ptr->tri_data_ptr[lod_index];
-        *(uint *)
-         ((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x20b1a54)
-             = 1;
-        *(uint *)
-         ((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x20b1a54)
-             = 1;
+        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1;
+        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1;
         puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);
         iVar3 = iVar3 + 0x12;
-        *(uint *)((uint)*puVar5 * 4 + 0x20b1a54) = 1;
+        g_VertexRemapTable[*puVar5] = 1;
       } while (iVar3 < iVar7 * 0x12);
     }
     local_14 = body_part_ptr->tri_count;
@@ -96,7 +86,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformab
     iVar9 = 0;
     iVar6 = iVar3;
     for (iVar4 = 0; iVar4 < this_ptr->vertex_count[lod_index]; iVar4 = iVar4 + 1) {
-      if (*(int *)(iVar9 + 0x20b1a54) != 0) {
+      if (*(int *)((int)g_VertexRemapTable + iVar9) != 0) {
         iVar6 = iVar6 + 1;
       }
       iVar9 = iVar9 + 4;
@@ -110,11 +100,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformab
     iVar6 = iVar3 * 0xc;
     if (0 < this_ptr->vertex_count[lod_index]) {
       do {
-        if (*(int *)(iVar4 + 0x20b1a54) == 0) {
-          *(uint *)(iVar4 + 0x20b1a54) = 0xffffffff;
+        if (*(int *)((int)g_VertexRemapTable + iVar4) == 0) {
+          *(uint *)((int)g_VertexRemapTable + iVar4) = 0xffffffff;
         }
         else {
-          *(int *)(iVar4 + 0x20b1a54) = iVar3;
+          *(int *)((int)g_VertexRemapTable + iVar4) = iVar3;
           piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);
           iVar3 = iVar3 + 1;
           iVar6 = iVar6 + 0xc;
@@ -130,9 +120,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformab
       } while (local_18 < this_ptr->vertex_count[lod_index]);
     }
     if (iVar3 != body_part_ptr->vertex_count) {
-      _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-      _DAT_01d046a4 = 0x697;
-      core_main_c_FUN_004e4500("CDeformableModel::dismember - Hell froze 1!");
+      g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+      g_INT_01d046a4 = 0x697;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModel::dismember - Hell froze 1!");
     }
     if (local_2c < iVar8) {
       local_20 = local_2c * 0x12;
@@ -148,7 +138,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformab
         *(uint *)(iVar6 + 4) = 3;
         puVar10 = puVar5 + 3;
         do {
-          *(uint *)(iVar6 + 0x18) = *(uint *)((uint)*puVar5 * 4 + 0x20b1a54);
+          *(int *)(iVar6 + 0x18) = g_VertexRemapTable[*puVar5];
           *(uint *)(iVar6 + 0x1c) = (uint)puVar5[3] << 8;
           puVar1 = puVar5 + 6;
           puVar5 = puVar5 + 1;
@@ -182,7 +172,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformab
         *(uint *)(iVar3 + 4) = 3;
         puVar10 = puVar5 + 3;
         do {
-          *(uint *)(iVar3 + 0x18) = *(uint *)((uint)*puVar5 * 4 + 0x20b1a54);
+          *(int *)(iVar3 + 0x18) = g_VertexRemapTable[*puVar5];
           *(uint *)(iVar3 + 0x1c) = (uint)puVar5[3] << 8;
           puVar1 = puVar5 + 6;
           puVar5 = puVar5 + 1;
@@ -203,9 +193,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490(CDeformab
       } while (local_30 < iVar7 * 4);
     }
     if (local_14 != body_part_ptr->tri_count) {
-      _DAT_01d046a0 = "..\\core\\skeleton.cpp";
-      _DAT_01d046a4 = 0x6ce;
-      core_main_c_FUN_004e4500("CDeformableModel::dismember - Hell froze 2!");
+      g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
+      g_INT_01d046a4 = 0x6ce;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModel::dismember - Hell froze 2!");
       return;
     }
   }

@@ -7,11 +7,11 @@
 ; CRock *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c05a0
-;   undefined4 DAT_01c5fad0
+;   double g_DOUBLE_005c05a0 = 32767.7000000000
+;   int g_GlobalDeltaTimeInt
 ;
 ; Called Functions:
-;   core_particle.cpp_FUN_00509f30
+;   core_particle.cpp_CParticle_process_FUN_00509f30
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -26,8 +26,8 @@ section .text
     AND ESP,0xfffffff8                  ; 0049a017
     MOV EBX,dword ptr [EBP + 0xc]       ; 0049a01a
     PUSH EBX                            ; 0049a01d
-    CALL core_particle.cpp_FUN_00509f30 ; 0049a01e
-        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00509f30()
+    CALL core_particle.cpp_CParticle_process_FUN_00509f30 ; 0049a01e
+        ;   XREF to: 00509f30 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00509f30(CParticle * this_ptr)
     LEA EAX,[EBX + 0xc]                 ; 0049a023
     FLD float ptr [EAX + 0x4]           ; 0049a026
     FMUL ST0                            ; 0049a029
@@ -39,22 +39,22 @@ section .text
     FADDP                               ; 0049a036
     ADD ESP,0x4                         ; 0049a038
     FSQRT                               ; 0049a03b
-    MOV EAX,[0x01c5fad0]                ; 0049a03d | DAT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 0049a03d | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 0049a042
     SAR EDX,0x1f                        ; 0049a044
     SHL EDX,0x2                         ; 0049a047
     SBB EAX,EDX                         ; 0049a04a
     SAR EAX,0x2                         ; 0049a04c
-    FMUL double ptr [0x005c05a0]        ; 0049a04f | DAT_005c05a0
+    FMUL double ptr [0x005c05a0]        ; 0049a04f | g_DOUBLE_005c05a0
     CALL crt_math.c_round_FUN_005a3120  ; 0049a055
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 0049a05a
     MOV EDX,dword ptr [ESP]             ; 0049a05d
     IMUL EDX                            ; 0049a060
     SHRD EAX,EDX,0x10                   ; 0049a062
     MOV EDX,dword ptr [EBX + 0x40]      ; 0049a066
     ADD EDX,EAX                         ; 0049a069
-    MOV EAX,[0x01c5fad0]                ; 0049a06b | DAT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 0049a06b | g_GlobalDeltaTimeInt
     MOV dword ptr [EBX + 0x40],EDX      ; 0049a070
     MOV EDX,EAX                         ; 0049a073
     SAR EDX,0x1f                        ; 0049a075

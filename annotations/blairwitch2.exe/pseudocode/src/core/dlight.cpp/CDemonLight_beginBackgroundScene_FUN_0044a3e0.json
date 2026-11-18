@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 203,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 13,
+    "pseudocode_lines": 47,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 132
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -42,7 +40,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "0046b940",
@@ -77,68 +75,68 @@
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "01b11db4",
-      "name": "DAT_01b11db4",
-      "type": "undefined4",
+      "name": "g_BackgroundSceneNestingCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b11db8",
-      "name": "DAT_01b11db8",
-      "type": "undefined4",
+      "name": "g_SavedScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01b11dbc",
-      "name": "DAT_01b11dbc",
+      "name": "g_SavedScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b11dbd",
-      "name": "DAT_01b11dbd",
+      "name": "g_SavedScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c2a38c",
-      "name": "DAT_01c2a38c",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c2a390",
-      "name": "DAT_01c2a390",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c2a391",
-      "name": "DAT_01c2a391",
+      "name": "g_ScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -242,88 +240,64 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)&DAT_01c2a38c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_01b11db8",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)&DAT_01b11db8;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(uint *)((int)puVar4",
+      "line": 29,
+      "match": "(byte **)((int)ppuVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "text": "ppuVar4 = (byte **)((int)ppuVar4 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(uint *)((int)puVar5",
+      "line": 30,
+      "match": "(byte **)((int)ppuVar5",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "text": "ppuVar5 = (byte **)((int)ppuVar5 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "*(void **)(&DAT_01c2a38c + iVar3) =",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(void **)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(void *)((int)this_ptr",
       "severity": "moderate",
       "text": "(void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)puVar4",
+      "description": "Pointer value `ppuVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)ppuVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "text": "ppuVar4 = (byte **)((int)ppuVar4 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
-      "match": "(int)puVar5",
+      "description": "Pointer value `ppuVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)ppuVar5",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "text": "ppuVar5 = (byte **)((int)ppuVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 24,
+      "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {",
@@ -331,7 +305,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 29,
+      "line": 27,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -342,7 +316,7 @@
       "line": 24,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0044a424: MOVSD.REP ES:EDI,ESI  ; DAT_01c2a38c | DAT_01b11db8 | DAT_01c2a390",
+      "text": "// 0044a424: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_SavedScreenBufferArray | g_ScreenBufferArray[1]",
       "type": "unrolled_memcpy"
     }
   ]

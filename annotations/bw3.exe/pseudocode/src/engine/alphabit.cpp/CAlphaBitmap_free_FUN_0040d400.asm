@@ -9,18 +9,18 @@
 ; XREF[17]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00411d70 at 00412272
 ;   core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004133c0 at 0041356d
-;   core_flashlit.cpp_FUN_004a7c30 at 004a7c3c
-;   core_flashlit.cpp_FUN_004a7d70 at 004a7d84
+;   core_flashlit.cpp_freeNotesBitmaps_FUN_004a7c30 at 004a7c3c
+;   core_flashlit.cpp_loadNotesBitmaps_FUN_004a7d70 at 004a7d84
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0 at 004ab82c
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac1fb
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0 at 004ac70a
 ;   core_fldnotes.cpp_SNotesMap_reset_FUN_004a9eb0 at 004a9ec9
 ;   core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a8710 at 004a8727
-;   core_game.cpp_FUN_004c48b0 at 004c48bf
+;   core_game.cpp_freeCursorBitmaps_FUN_004c49f0 at 004c49fe
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     JZ 0x0040d424                       ; 0040d412
         ;   XREF to: 0040d424 (CONDITIONAL_JUMP)  ; LAB_0040d424
     PUSH ESI                            ; 0040d414
-    CALL crt_unknown.c_FUN_005a3770     ; 0040d415
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 0040d415
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 0040d41a
     MOV dword ptr [EBX + 0x4],0x0       ; 0040d41d
     MOV EBP,dword ptr [EBX + 0x8]       ; 0040d424
@@ -56,16 +56,16 @@ section .text
     RET                                 ; 0040d42e
     PUSH EDX                            ; 0040d42f
         ;   Label: LAB_0040d42f
-    CALL crt_unknown.c_FUN_005a3770     ; 0040d430
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 0040d430
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 0040d435
     MOV dword ptr [EBX],0x0             ; 0040d438
     JMP 0x0040d40d                      ; 0040d43e
         ;   XREF to: 0040d40d (UNCONDITIONAL_JUMP)  ; LAB_0040d40d
     PUSH EBP                            ; 0040d440
         ;   Label: LAB_0040d440
-    CALL crt_unknown.c_FUN_005a3770     ; 0040d441
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 0040d441
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 0040d446
     MOV dword ptr [EBX + 0x8],0x0       ; 0040d449
     POP EBP                             ; 0040d450

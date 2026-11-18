@@ -22,14 +22,14 @@
 ;   TerminatedCString s_darkPoint_00584ead
 ;   void* PTR_s_darkPoint_00584ead_005b9654 = 00584ead
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CGhoulActorType_01c78bd8.name_hash
+;   undefined4 g_CGhoulClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 g_CDemonSetInstance.enemy_count
-;   undefined4 g_CWayPointActorType_02ddf514.name_hash
+;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -91,7 +91,7 @@ section .text
     JGE 0x004a906d                      ; 004a90bb
         ;   XREF to: 004a906d (CONDITIONAL_JUMP)  ; LAB_004a906d
     MOV EDX,dword ptr [ESP + 0x14]      ; 004a90bd
-    MOV EDI,dword ptr [0x02ddf54c]      ; 004a90c1 | g_CWayPointActorType_02ddf514.name_hash
+    MOV EDI,dword ptr [0x02ddf54c]      ; 004a90c1 | g_CWayPointClassInfo.name_hash
     ADD EAX,EDX                         ; 004a90c7
     PUSH EDI                            ; 004a90c9
     MOV ECX,dword ptr [EAX + 0x14cd70]  ; 004a90ca | g_CDemonSetInstance.actors[0]
@@ -181,7 +181,7 @@ section .text
     ADD EBX,0x4                         ; 004a91a8
     JMP 0x004a9118                      ; 004a91ab
         ;   XREF to: 004a9118 (UNCONDITIONAL_JUMP)  ; LAB_004a9118
-    MOV ECX,dword ptr [0x01c78c10]      ; 004a91b0 | g_CGhoulActorType_01c78bd8.name_hash
+    MOV ECX,dword ptr [0x01c78c10]      ; 004a91b0 | g_CGhoulClassInfo.name_hash
         ;   Label: LAB_004a91b0
     PUSH ECX                            ; 004a91b6
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x150bf8] ; 004a91b7

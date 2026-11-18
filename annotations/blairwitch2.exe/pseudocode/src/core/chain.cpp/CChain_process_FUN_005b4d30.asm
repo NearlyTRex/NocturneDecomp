@@ -8,15 +8,15 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f1434
-;   undefined4 DAT_005f1438
-;   undefined4 DAT_005f1440
-;   undefined4 DAT_005f1448
-;   undefined4 DAT_0061c068
+;   float g_FLOAT_005f1434 = -9900
+;   double g_DOUBLE_005f1438 = 0.03125
+;   double g_DOUBLE_005f1440 = 0.900000000000000
+;   double g_DOUBLE_005f1448 = 0.100000000000000
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0
-;   core_chain.cpp_FUN_005b4860
+;   core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -35,7 +35,7 @@ section .text
     AND ESP,0xfffffff8                  ; 005b4d3c
     MOV EBX,dword ptr [EBP + 0x14]      ; 005b4d3f
     FLD float ptr [EBX + 0x56c]         ; 005b4d42
-    FCOMP float ptr [0x005f1434]        ; 005b4d48 | DAT_005f1434
+    FCOMP float ptr [0x005f1434]        ; 005b4d48 | g_FLOAT_005f1434
     FNSTSW AX                           ; 005b4d4e
     SAHF                                ; 005b4d50
     JC 0x005b4de3                       ; 005b4d51
@@ -116,8 +116,8 @@ section .text
     PUSH EBX                            ; 005b4e40
     LEA ESI,[ESP + 0xd8]                ; 005b4e41
     LEA EDI,[ESP + 0x48]                ; 005b4e48
-    CALL core_chain.cpp_FUN_005b4860    ; 005b4e4c
-        ;   XREF to: 005b4860 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_FUN_005b4860()
+    CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860 ; 005b4e4c
+        ;   XREF to: 005b4860 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860(CChain * this_ptr, CVector3f * out_point)
     LEA ESI,[ESP + 0xd8]                ; 005b4e51
     ADD ESP,0x4                         ; 005b4e58
     MOVSD ES:EDI,ESI                    ; 005b4e5b
@@ -201,8 +201,8 @@ section .text
         ;   Label: LAB_005b4fa1
     LEA ESI,[ESP + 0x54]                ; 005b4fa2
     LEA EDI,[ESP + 0xa8]                ; 005b4fa6
-    CALL core_chain.cpp_FUN_005b4860    ; 005b4fad
-        ;   XREF to: 005b4860 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_FUN_005b4860()
+    CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860 ; 005b4fad
+        ;   XREF to: 005b4860 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860(CChain * this_ptr, CVector3f * out_point)
     LEA ESI,[ESP + 0x54]                ; 005b4fb2
     ADD ESP,0x4                         ; 005b4fb6
     MOVSD ES:EDI,ESI                    ; 005b4fb9
@@ -310,7 +310,7 @@ section .text
     FMUL float ptr [EAX + 0x8]          ; 005b5123
     FSTP float ptr [EAX + 0x8]          ; 005b5126
     FLD float ptr [EBX + 0x55c]         ; 005b5129
-    FMUL double ptr [0x005f1438]        ; 005b512f | DAT_005f1438
+    FMUL double ptr [0x005f1438]        ; 005b512f | g_DOUBLE_005f1438
     FLDZ                                ; 005b5135
     FLD1                                ; 005b5137
     XOR ECX,ECX                         ; 005b5139
@@ -450,8 +450,8 @@ section .text
         ;   Label: LAB_005b52fe
     LEA ESI,[ESP + 0x84]                ; 005b52ff
     LEA EDI,[ESP + 0xc0]                ; 005b5306
-    CALL core_chain.cpp_FUN_005b4860    ; 005b530d
-        ;   XREF to: 005b4860 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_FUN_005b4860()
+    CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860 ; 005b530d
+        ;   XREF to: 005b4860 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860(CChain * this_ptr, CVector3f * out_point)
     LEA ESI,[ESP + 0x84]                ; 005b5312
     ADD ESP,0x4                         ; 005b5319
     MOVSD ES:EDI,ESI                    ; 005b531c
@@ -541,7 +541,7 @@ section .text
     JZ 0x005b5580                       ; 005b5422
         ;   XREF to: 005b5580 (CONDITIONAL_JUMP)  ; LAB_005b5580
     FLD float ptr [EBX + 0x15c]         ; 005b5428
-    FMUL double ptr [0x005f1440]        ; 005b542e | DAT_005f1440
+    FMUL double ptr [0x005f1440]        ; 005b542e | g_DOUBLE_005f1440
     FLD float ptr [ESP + 0x4]           ; 005b5434
     FCOMPP                              ; 005b5438
     FNSTSW AX                           ; 005b543a
@@ -594,7 +594,7 @@ section .text
         ;   XREF to: 005b5450 (UNCONDITIONAL_JUMP)  ; LAB_005b5450
     FLD float ptr [EBX + 0x15c]         ; 005b54bd
         ;   Label: LAB_005b54bd
-    FMUL double ptr [0x005f1440]        ; 005b54c3 | DAT_005f1440
+    FMUL double ptr [0x005f1440]        ; 005b54c3 | g_DOUBLE_005f1440
     FLD float ptr [ESP]                 ; 005b54c9
     FCOMPP                              ; 005b54cc
     FNSTSW AX                           ; 005b54ce
@@ -637,7 +637,7 @@ section .text
     FADDP                               ; 005b5561
     FSQRT                               ; 005b5563
     FLD float ptr [EBP + 0x18]          ; 005b5565
-    FMUL double ptr [0x005f1448]        ; 005b5568 | DAT_005f1448
+    FMUL double ptr [0x005f1448]        ; 005b5568 | g_DOUBLE_005f1448
     FCOMPP                              ; 005b556e
     FNSTSW AX                           ; 005b5570
     SAHF                                ; 005b5572
@@ -697,7 +697,7 @@ section .text
     LEA EAX,[EBX + 0x1b4]               ; 005b5605
     PUSH EAX                            ; 005b560b
     PUSH EBX                            ; 005b560c
-    MOV EDI,dword ptr [0x0061c068]      ; 005b560d | DAT_0061c068
+    MOV EDI,dword ptr [0x0061c068]      ; 005b560d | g_CSound_PTR_0061c068
     PUSH EDI                            ; 005b5613
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80 ; 005b5614
         ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)
@@ -733,7 +733,7 @@ section .text
     LEA EAX,[EBX + 0x21c]               ; 005b5666
     PUSH EAX                            ; 005b566c
     PUSH EBX                            ; 005b566d
-    MOV EDI,dword ptr [0x0061c068]      ; 005b566e | DAT_0061c068
+    MOV EDI,dword ptr [0x0061c068]      ; 005b566e | g_CSound_PTR_0061c068
     PUSH EDI                            ; 005b5674
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80 ; 005b5675
         ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)

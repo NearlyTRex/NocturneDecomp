@@ -17,16 +17,16 @@
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004adce1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f734c
+;   float g_FLOAT_005f734c = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01cb067c
-;   undefined4 DAT_01cb0680
-;   undefined4 DAT_01cb06b8
-;   undefined4 DAT_01cb06bc
+;   undefined4 g_GabriellaIndices[1]
+;   undefined4 g_GabriellaIndices[2]
+;   undefined4 g_GabriellaIndices[16]
+;   undefined4 g_GabriellaIndices[17]
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_gabriela.cpp_FUN_004b20d0
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0
 ;   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00537e90
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
@@ -47,7 +47,7 @@ section .text
     FLD float ptr [EBX + 0x2565c]       ; 004b1e18
     FLD float ptr [EBX + 0x25660]       ; 004b1e1e
     FXCH ST2                            ; 004b1e24
-    FDIV float ptr [0x005f734c]         ; 004b1e26 | DAT_005f734c
+    FDIV float ptr [0x005f734c]         ; 004b1e26 | g_FLOAT_005f734c
     FXCH                                ; 004b1e2c
     FSUB ST0,ST1                        ; 004b1e2e
     FXCH ST2                            ; 004b1e30
@@ -152,16 +152,16 @@ section .text
     LEA EAX,[ESP + 0x90]                ; 004b1f61
         ;   Label: LAB_004b1f61
     PUSH EAX                            ; 004b1f68
-    MOV EAX,[0x01cb067c]                ; 004b1f69 | DAT_01cb067c
+    MOV EAX,[0x01cb067c]                ; 004b1f69 | g_GabriellaIndices[1]
     PUSH EAX                            ; 004b1f6e
-    MOV EDX,dword ptr [0x01cb06b8]      ; 004b1f6f | DAT_01cb06b8
+    MOV EDX,dword ptr [0x01cb06b8]      ; 004b1f6f | g_GabriellaIndices[16]
     PUSH EDX                            ; 004b1f75
     LEA EAX,[EBX + 0x2565c]             ; 004b1f76
     PUSH EAX                            ; 004b1f7c
     PUSH dword ptr [ESP + 0xc8]         ; 004b1f7d
     PUSH EBX                            ; 004b1f84
-    CALL core_gabriela.cpp_FUN_004b20d0 ; 004b1f85
-        ;   XREF to: 004b20d0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004b20d0()
+    CALL core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 ; 004b1f85
+        ;   XREF to: 004b20d0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0(CGabriella * this_ptr, float delta_time, float * clavicle_blend, int probe_bone_index, ...)
     MOV ECX,dword ptr [EBX + 0x2698]    ; 004b1f8a
     ADD ESP,0x18                        ; 004b1f90
     TEST ECX,ECX                        ; 004b1f93
@@ -201,16 +201,16 @@ section .text
     LEA EAX,[ESP + 0x90]                ; 004b2003
         ;   Label: LAB_004b2003
     PUSH EAX                            ; 004b200a
-    MOV EDI,dword ptr [0x01cb0680]      ; 004b200b | DAT_01cb0680
+    MOV EDI,dword ptr [0x01cb0680]      ; 004b200b | g_GabriellaIndices[2]
     PUSH EDI                            ; 004b2011
-    MOV EBP,dword ptr [0x01cb06bc]      ; 004b2012 | DAT_01cb06bc
+    MOV EBP,dword ptr [0x01cb06bc]      ; 004b2012 | g_GabriellaIndices[17]
     PUSH EBP                            ; 004b2018
     LEA EAX,[EBX + 0x25660]             ; 004b2019
     PUSH EAX                            ; 004b201f
     PUSH dword ptr [ESP + 0xc8]         ; 004b2020
     PUSH EBX                            ; 004b2027
-    CALL core_gabriela.cpp_FUN_004b20d0 ; 004b2028
-        ;   XREF to: 004b20d0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_004b20d0()
+    CALL core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 ; 004b2028
+        ;   XREF to: 004b20d0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0(CGabriella * this_ptr, float delta_time, float * clavicle_blend, int probe_bone_index, ...)
     ADD ESP,0x18                        ; 004b202d
     MOV EAX,[0x0061b5a8]                ; 004b2030 | g_CDemonSetPtr
     PUSH EAX                            ; 004b2035 | g_CDemonSetInstance
@@ -237,7 +237,7 @@ section .text
         ;   XREF to: 004b2003 (UNCONDITIONAL_JUMP)  ; LAB_004b2003
     PUSH 0x544cc0                       ; 004b2075
         ;   Label: LAB_004b2075
-    MOV ECX,dword ptr [0x01cb067c]      ; 004b207a | DAT_01cb067c
+    MOV ECX,dword ptr [0x01cb067c]      ; 004b207a | g_GabriellaIndices[1]
     PUSH ECX                            ; 004b2080
     PUSH dword ptr [EBX + 0x2565c]      ; 004b2081
     PUSH 0x0                            ; 004b2087
@@ -248,7 +248,7 @@ section .text
         ;   XREF to: 00545a60 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 004b2096
     PUSH 0x544cc0                       ; 004b2099
-    MOV EDI,dword ptr [0x01cb0680]      ; 004b209e | DAT_01cb0680
+    MOV EDI,dword ptr [0x01cb0680]      ; 004b209e | g_GabriellaIndices[2]
     PUSH EDI                            ; 004b20a4
     PUSH dword ptr [EBX + 0x25660]      ; 004b20a5
     PUSH 0x0                            ; 004b20ab

@@ -10,7 +10,7 @@ char * __cdecl core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(CSound *this_
 
 {
   if ((-1 < sound_mode_index) && (sound_mode_index < 0x1b)) {
-    return g_SoundModeTable[sound_mode_index].name;
+    return g_ReverbPresetTable[sound_mode_index].name;
   }
   return "????";
 }

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 644,
-    "complexity_score": 439,
+    "complexity_score": 437,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 31,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 229,
+    "pseudocode_lines": 227,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 873
+    "total_lines": 871
   },
   "cross_references": [],
   "function": {
@@ -266,7 +266,7 @@
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -284,7 +284,7 @@
     },
     {
       "addr": "01c78c78",
-      "name": "g_CGlassActorType_01c78c40.name_hash",
+      "name": "g_CGlassClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -326,7 +326,7 @@
     },
     {
       "addr": "02dd10bc",
-      "name": "g_CTriggerActorType_02dd1084.name_hash",
+      "name": "g_CTriggerClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -525,7 +525,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 122,
+      "line": 120,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar9),0),",
@@ -533,7 +533,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 151,
       "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_20);",
@@ -541,7 +541,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 187,
+      "line": 185,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;",
@@ -549,7 +549,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 191,
+      "line": 189,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_60.x = (float)auStack_8c._8_4_ * 0.5f;",
@@ -557,7 +557,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 216,
+      "line": 214,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_fc._4_4_ = 0.1;",
@@ -565,7 +565,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 222,
+      "line": 220,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_c8._0_4_ = this_ptr;",
@@ -573,7 +573,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 221,
       "match": "(code **)((int)pCVar3",
       "severity": "moderate",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -581,7 +581,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 223,
+      "line": 221,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -589,7 +589,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 223,
+      "line": 221,
       "match": "code *",
       "severity": "moderate",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",

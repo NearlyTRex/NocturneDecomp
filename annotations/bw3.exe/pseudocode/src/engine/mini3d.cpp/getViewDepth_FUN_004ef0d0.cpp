@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl engine_mini3d_cpp_getViewDepth_FUN_004ef0d0(CVector3f *point)
 
 {
-  return (point->z - *(float *)(_DAT_01d76cfc + 0x2c)) * *(float *)(_DAT_01d76cfc + 0x20) +
-         (point->x - *(float *)(_DAT_01d76cfc + 0x24)) * *(float *)(_DAT_01d76cfc + 8) +
-         (point->y - *(float *)(_DAT_01d76cfc + 0x28)) * *(float *)(_DAT_01d76cfc + 0x14);
+  return (point->z - *(float *)(g_PTR_01d76cfc + 0x2c)) * *(float *)(g_PTR_01d76cfc + 0x20) +
+         (point->x - *(float *)(g_PTR_01d76cfc + 0x24)) * *(float *)(g_PTR_01d76cfc + 8) +
+         (point->y - *(float *)(g_PTR_01d76cfc + 0x28)) * *(float *)(g_PTR_01d76cfc + 0x14);
 }

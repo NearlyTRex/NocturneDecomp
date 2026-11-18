@@ -71,7 +71,7 @@ ECollisionType __cdecl CCryptVessel::getCollisionType(CCryptVessel *this_ptr,SCo
 
 // Original: core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_005a98c0
 // Address: 005a98c0
-CBoundingBox3D * __cdecl CCryptVessel::getBoundingBox(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CCryptVessel::getBoundingBox(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_vessel.cpp_CCryptVessel_dtor_FUN_005a9900
 // Address: 005a9900

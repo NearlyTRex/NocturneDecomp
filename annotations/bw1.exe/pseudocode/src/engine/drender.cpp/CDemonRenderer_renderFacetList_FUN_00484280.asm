@@ -24,21 +24,21 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db3f4
 ;   TerminatedCString s_CDemonRenderer_demonGZFa_005db40a
-;   undefined4 DAT_00612568
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_00713a7c
-;   undefined4 DAT_01c4f02c
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01c51d18
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   SMRGLPrimitiveQuad*[2000] g_VisibleFacePointers
+;   int g_INT_0061b4a0 = 0x8
+;   int g_CullingMode
+;   void* g_ScanlineRenderFunc
+;   int g_INT_01c50948
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_0047a480
-;   core_dpart.cpp_FUN_0047ab00
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210
+;   engine_drender.cpp_renderTriangleSimple_FUN_0047ab00
+;   engine_drender.cpp_renderTriangleTextured_FUN_0047a480
 ;   engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0053de20
 ;   engine_special.cpp_drawPolyList_FUN_005823a0
 ;
@@ -90,16 +90,16 @@ section .text
         ;   Label: LAB_004842c8
     JNZ 0x0048429a                      ; 004842cc
         ;   XREF to: 0048429a (CONDITIONAL_JUMP)  ; LAB_0048429a
-    CMP dword ptr [0x00713a7c],0x0      ; 004842ce | DAT_00713a7c
+    CMP dword ptr [0x00713a7c],0x0      ; 004842ce | g_CullingMode
     JZ 0x0048429a                       ; 004842d5
         ;   XREF to: 0048429a (CONDITIONAL_JUMP)  ; LAB_0048429a
     CMP dword ptr [ESI + 0x4],0x0       ; 004842d7
     JZ 0x0048433b                       ; 004842db
         ;   XREF to: 0048433b (CONDITIONAL_JUMP)  ; LAB_0048433b
     MOV ESI,0x486e26                    ; 004842dd
-    MOV dword ptr [0x01c51d14],EDX      ; 004842e2 | DAT_01c51d14
-    MOV dword ptr [0x01c51d18],EDX      ; 004842e8 | DAT_01c51d18
-    MOV dword ptr [0x01c4f02c],ESI      ; 004842ee | DAT_01c4f02c
+    MOV dword ptr [0x01c51d14],EDX      ; 004842e2 | g_RenderStateFlags
+    MOV dword ptr [0x01c51d18],EDX      ; 004842e8 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c4f02c],ESI      ; 004842ee | g_ScanlineRenderFunc
     TEST EDI,EDI                        ; 004842f4
     JLE 0x004842c0                      ; 004842f6
         ;   XREF to: 004842c0 (CONDITIONAL_JUMP)  ; LAB_004842c0
@@ -125,25 +125,25 @@ section .text
     PUSH EAX                            ; 00484329
     DEC EDI                             ; 0048432a
     ADD EBX,ESI                         ; 0048432b
-    CALL core_dpart.cpp_FUN_0047ab00    ; 0048432d
-        ;   XREF to: 0047ab00 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_0047ab00(CVector3i * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_0047ab00 ; 0048432d
+        ;   XREF to: 0047ab00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_0047ab00(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 00484332
     TEST EDI,EDI                        ; 00484335
     JLE 0x004842c0                      ; 00484337
         ;   XREF to: 004842c0 (CONDITIONAL_JUMP)  ; LAB_004842c0
     JMP 0x004842fc                      ; 00484339
         ;   XREF to: 004842fc (UNCONDITIONAL_JUMP)  ; LAB_004842fc
-    CMP dword ptr [0x0061b4a0],0x20     ; 0048433b | DAT_0061b4a0
+    CMP dword ptr [0x0061b4a0],0x20     ; 0048433b | g_INT_0061b4a0
         ;   Label: LAB_0048433b
     JNZ 0x00484440                      ; 00484342
         ;   XREF to: 00484440 (CONDITIONAL_JUMP)  ; LAB_00484440
-    MOV dword ptr [0x01c4f02c],0x57de01 ; 00484348 | DAT_01c4f02c
+    MOV dword ptr [0x01c4f02c],0x57de01 ; 00484348 | g_ScanlineRenderFunc
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00484352
         ;   Label: LAB_00484352
-    MOV [0x01c51d14],EAX                ; 00484356 | DAT_01c51d14
+    MOV [0x01c51d14],EAX                ; 00484356 | g_RenderStateFlags
     MOV EAX,0x6                         ; 0048435b
-    MOV EDX,dword ptr [0x01c50948]      ; 00484360 | DAT_01c50948
-    MOV [0x01c51d18],EAX                ; 00484366 | DAT_01c51d18
+    MOV EDX,dword ptr [0x01c50948]      ; 00484360 | g_INT_01c50948
+    MOV [0x01c51d18],EAX                ; 00484366 | g_VertexPreprocessMode
     TEST EDX,EDX                        ; 0048436b
     JNZ 0x0048444f                      ; 0048436d
         ;   XREF to: 0048444f (CONDITIONAL_JUMP)  ; LAB_0048444f
@@ -214,15 +214,15 @@ section .text
     PUSH ECX                            ; 00484426
     LEA EAX,[ESP + 0x4]                 ; 00484427
     PUSH EAX                            ; 0048442b
-    CALL core_dpart.cpp_FUN_0047a480    ; 0048442c
-        ;   XREF to: 0047a480 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_0047a480(int * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_0047a480 ; 0048442c
+        ;   XREF to: 0047a480 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_0047a480(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 00484431
     MOV EBP,dword ptr [ESP + 0x38]      ; 00484434
     DEC EDI                             ; 00484438
     ADD EBX,EBP                         ; 00484439
     JMP 0x00484373                      ; 0048443b
         ;   XREF to: 00484373 (UNCONDITIONAL_JUMP)  ; LAB_00484373
-    MOV dword ptr [0x01c4f02c],0x57e5e3 ; 00484440 | DAT_01c4f02c
+    MOV dword ptr [0x01c4f02c],0x57e5e3 ; 00484440 | g_ScanlineRenderFunc
         ;   Label: LAB_00484440
     JMP 0x00484352                      ; 0048444a
         ;   XREF to: 00484352 (UNCONDITIONAL_JUMP)  ; LAB_00484352
@@ -244,7 +244,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 0048446a
     INC EBP                             ; 0048446e
     LEA EDX,[EAX + 0x4]                 ; 0048446f
-    MOV dword ptr [EAX + 0x612568],EBX  ; 00484472 | DAT_00612568
+    MOV dword ptr [EAX + 0x612568],EBX  ; 00484472 | g_VisibleFacePointers
     MOV dword ptr [ESP + 0x10],EDX      ; 00484478
     CMP EBP,0x7d0                       ; 0048447c
     JL 0x004844a7                       ; 00484482
@@ -253,10 +253,10 @@ section .text
     MOV ECX,0x5db3f4                    ; 00484485 | = "..\\engine\\drender.cpp"
     MOV EAX,0x9b6                       ; 0048448a
     PUSH 0x5db40a                       ; 0048448f | = "CDemonRenderer::demonGZFacetList - To..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00484494 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0048449a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0048449f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00484494 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0048449a | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048449f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004844a4
     MOV EDX,dword ptr [ESP + 0x14]      ; 004844a7
         ;   Label: LAB_004844a7
@@ -271,10 +271,10 @@ section .text
         ;   Label: LAB_004844ba
     JLE 0x004842c0                      ; 004844bc
         ;   XREF to: 004842c0 (CONDITIONAL_JUMP)  ; LAB_004842c0
-    MOV EBX,dword ptr [0x01c51d14]      ; 004844c2 | DAT_01c51d14
+    MOV EBX,dword ptr [0x01c51d14]      ; 004844c2 | g_RenderStateFlags
     PUSH EBX                            ; 004844c8
     PUSH EBP                            ; 004844c9
-    PUSH 0x612568                       ; 004844ca | DAT_00612568
+    PUSH 0x612568                       ; 004844ca | g_VisibleFacePointers
     MOV EDI,dword ptr [ESI]             ; 004844cf
     PUSH EDI                            ; 004844d1
     CALL engine_special.cpp_drawPolyList_FUN_005823a0 ; 004844d2

@@ -7,7 +7,7 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005da81b+1
+;   TerminatedCString s_modelName_005da81c
 ;   TerminatedCString s_doorType_005da826
 ;   TerminatedCString s_doorSide_005da82f
 ;   TerminatedCString s_doorState_005da838
@@ -45,7 +45,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 00478497
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0047849c
-    PUSH 0x5da81c                       ; 0047849f | s_modelName_005da81b+1
+    PUSH 0x5da81c                       ; 0047849f | = "modelName"
     LEA EDI,[EBX + 0x158]               ; 004784a4
     PUSH EDI                            ; 004784aa
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 004784ab
@@ -283,16 +283,16 @@ section .text
         ;   XREF to: 0047865f (UNCONDITIONAL_JUMP)  ; LAB_0047865f
     PUSH ESI                            ; 00478780
         ;   Label: LAB_00478780
-    MOV ESI,0x5da912                    ; 00478781 | DAT_005da912
+    MOV ESI,0x5da912                    ; 00478781 | = "true"
     LEA EDI,[EBX + 0x47c]               ; 00478786
     PUSH EDI                            ; 0047878c
-    MOV AL,byte ptr [ESI]               ; 0047878d | DAT_005da912 | DAT_005da914
+    MOV AL,byte ptr [ESI]               ; 0047878d | = "true" | s_ue_005da912+2
         ;   Label: LAB_0047878d
     MOV byte ptr [EDI],AL               ; 0047878f
     CMP AL,0x0                          ; 00478791
     JZ 0x004787a5                       ; 00478793
         ;   XREF to: 004787a5 (CONDITIONAL_JUMP)  ; LAB_004787a5
-    MOV AL,byte ptr [ESI + 0x1]         ; 00478795 | DAT_005da913 | DAT_005da915
+    MOV AL,byte ptr [ESI + 0x1]         ; 00478795 | s_rue_005da912+1 | s_e_005da912+3
     ADD ESI,0x2                         ; 00478798
     MOV byte ptr [EDI + 0x1],AL         ; 0047879b
     ADD EDI,0x2                         ; 0047879e

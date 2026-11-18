@@ -17,7 +17,7 @@
 ;   float FLOAT_00590bc1 = -10
 ;   CWater* g_CWaterPtr = 02dd1210
 ;   undefined4 g_CWaterInstance.water_level_y
-;   undefined4 g_CWaterActorActorType_02ddd598.name_hash
+;   undefined4 g_CWaterActorClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -52,7 +52,7 @@ section .text
     JLE 0x00511baf                      ; 00511b82
         ;   XREF to: 00511baf (CONDITIONAL_JUMP)  ; LAB_00511baf
     MOV EDI,EBP                         ; 00511b84
-    MOV EAX,[0x02ddd5d0]                ; 00511b86 | g_CWaterActorActorType_02ddd598.name_hash
+    MOV EAX,[0x02ddd5d0]                ; 00511b86 | g_CWaterActorClassInfo.name_hash
         ;   Label: LAB_00511b86
     PUSH EAX                            ; 00511b8b
     MOV EDX,dword ptr [EDI + 0x14cd70]  ; 00511b8c

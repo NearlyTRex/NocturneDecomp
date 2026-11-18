@@ -13,7 +13,7 @@
 ;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044c060 at 0044c122
 ;
 ; Called Functions:
-;   engine_texture.cpp_FUN_0056ac80
+;   engine_texture.cpp_loadAndUpdateTexture_FUN_0056ac80
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EDX                            ; 0046e694
     MOV ECX,dword ptr [ESP + 0xc]       ; 0046e695
     PUSH ECX                            ; 0046e699
-    CALL engine_texture.cpp_FUN_0056ac80 ; 0046e69a
-        ;   XREF to: 0056ac80 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_0056ac80(SMRGLTextureBasic * texture, SRGBColorPalette * palette)
+    CALL engine_texture.cpp_loadAndUpdateTexture_FUN_0056ac80 ; 0046e69a
+        ;   XREF to: 0056ac80 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_loadAndUpdateTexture_FUN_0056ac80(SMRGLTextureBasic * texture, SRGBColorPalette * palette)
     ADD ESP,0x8                         ; 0046e69f
     RET                                 ; 0046e6a2
 

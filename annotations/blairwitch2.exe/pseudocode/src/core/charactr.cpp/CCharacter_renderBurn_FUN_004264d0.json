@@ -2,23 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 330,
+    "complexity_score": 184,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 19,
+    "pseudocode_lines": 104,
+    "suspect_count": 6,
     "suspect_types": [
-      "displaced_global_access",
-      "extra_output",
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
-    "total_lines": 337
+    "total_lines": 336
   },
   "cross_references": [
     {
@@ -71,44 +68,44 @@
   "globals": [
     {
       "addr": "005ccd9e",
-      "name": "DAT_005ccd9e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ccd9e",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "005f4080",
-      "name": "DAT_005f4080",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f4080",
+      "type": "float",
+      "value": "3"
     },
     {
       "addr": "00609acc",
-      "name": "DAT_00609acc",
-      "type": "undefined4",
+      "name": "g_BurnCharTexture",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "007bdc9c",
-      "name": "DAT_007bdc9c",
-      "type": "undefined4",
+      "name": "g_BoneBurnIntensity",
+      "type": "float[100]",
       "value": null
     },
     {
       "addr": "007bdca0",
-      "name": "DAT_007bdca0",
+      "name": "g_BoneBurnIntensity[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -181,6 +178,12 @@
       "by": "name",
       "class": "operand-change",
       "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0042f010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9948
     },
     "nocedit.exe": {
       "addr": "0042ad00",
@@ -279,161 +282,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_ECX",
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)g_BoneBurnIntensity",
       "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
+      "text": "*(uint *)((int)g_BoneBurnIntensity + iVar8) = 0;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "int extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609acc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_00609acc",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609acc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_007bdc9c",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_007bdc9c + iVar9) = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_007bdc9c",
-      "severity": "mild",
-      "text": "(&DAT_007bdc9c)[iVar9] =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_007bdc9c",
-      "severity": "mild",
-      "text": "(float)(&DAT_007bdc9c)[iVar9] + (pCVar10->fires[0].size * fVar2) / fVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_007bdc9c",
-      "severity": "mild",
-      "text": "if ((float)_DAT_005ccd9e <= (float)(&DAT_007bdc9c)[iVar6]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_007bdc9c",
-      "severity": "mild",
-      "text": "fVar14 = (float10)*(float *)(puVar8 + 4) * (float10)(float)(&DAT_007bdc9c)[puVar11[1]];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Likely misinterpreted integer as float",
       "line": 93,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "puVar8 = (uchar *)(extraout_ECX + 4);",
-      "type": "extra_output"
+      "match": "6.097878e-39",
+      "severity": "mild",
+      "text": "local_30 = (float)local_18 + 6.097878e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 96,
-      "match": "extraout_EDX",
+      "description": "Pointer value `&pCVar4->vertex_buffer_ptr->a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 101,
+      "match": "(int)&pCVar4->vertex_buffer_ptr->a",
       "severity": "moderate",
-      "text": "iVar9 = extraout_EDX + 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 104,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "*(int *)(*piVar7 + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar14);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Pointer value `&DAT_007bdc9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
-      "match": "(int)&DAT_007bdc9c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_007bdc9c + iVar9) = 0;",
+      "text": "*(int *)((int)&pCVar4->vertex_buffer_ptr->a + local_18) = (int)ROUND(dVar13);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 46,
+      "line": 101,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_007bdc9c + iVar9) = 0;",
+      "text": "*(int *)((int)&pCVar4->vertex_buffer_ptr->a + local_18) = (int)ROUND(dVar13);",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 61,
-      "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 57,
+      "match": "pCVar9 = (T *)((pCVar9->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);",
+      "text": "pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 76,
-      "match": "pCVar13 = (T *)pCVar13->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 72,
+      "match": "pCVar12 = (T *)pCVar12->ARRAY",
       "severity": "moderate",
-      "text": "pCVar13 = (CDeformableModel *)pCVar13->lod_info;",
+      "text": "pCVar12 = (CDeformableModel *)pCVar12->lod_info;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Compiler displaced index base: [reg*4 + 0x7bdc9c] lands in DAT_007bdc9c but intended target is DAT_007bdca0 at 0x7bdca0 (displaced by 4 bytes)",
-      "displaced_from": "DAT_007bdc9c",
-      "displacement": "0x7bdc9c",
-      "instruction_address": "",
-      "intended_global": "DAT_007bdca0",
-      "line": 78,
-      "match": "0x7bdc9c",
-      "scale": 4,
-      "severity": "moderate",
-      "text": "// 0042659b: FLD float ptr [EAX*0x4 + 0x7bdc9c]  ; DAT_007bdc9c",
-      "type": "displaced_global_access"
     }
   ]
 }

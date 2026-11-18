@@ -10,17 +10,17 @@
 ;   engine_3d.c_queueSortedPolygon_FUN_00405ab0 at 00405af6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c501c
-;   undefined4 DAT_006b0264
-;   undefined4 DAT_006b0268
-;   undefined4 DAT_006b02e8
-;   undefined4 DAT_006b02ec
-;   undefined4 DAT_006b02f0
-;   undefined4 DAT_006b02f4
-;   undefined4 DAT_006b02f8
-;   undefined4 DAT_01c039dc
-;   undefined4 DAT_01c039e0
-;   undefined4 DAT_01c039e4
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z
+;   uint g_ProcessedVertexOffset
+;   uint g_ProcessedVertexBackupOffset
+;   undefined4 g_ProcessedVertexIndices[19]
+;   undefined4 g_ProcessedVertexIndices[20]
+;   undefined4 g_ProcessedVertexIndices[21]
+;   undefined4 g_ProcessedVertexIndices[22]
+;   undefined4 g_ProcessedVertexIndices[23]
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     PUSH ESI                            ; 004059c1
     PUSH EDI                            ; 004059c2
     PUSH EBP                            ; 004059c3
-    MOV EDI,dword ptr [0x006b0264]      ; 004059c4 | DAT_006b0264
+    MOV EDI,dword ptr [0x006b0264]      ; 004059c4 | g_ProcessedVertexOffset
     MOV ESI,dword ptr [ESP + 0x14]      ; 004059ca
     MOV EDX,dword ptr [ESI + 0x18]      ; 004059ce
     ADD EDX,EDI                         ; 004059d1
@@ -40,7 +40,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x4]       ; 004059dc
     SHL EAX,0x4                         ; 004059df
     MOV EDX,0x1                         ; 004059e2
-    MOV EBX,dword ptr [EAX + 0x5c501c]  ; 004059e7 | DAT_005c501c
+    MOV EBX,dword ptr [EAX + 0x5c501c]  ; 004059e7 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z
     CMP ECX,EDX                         ; 004059ed
     JLE 0x00405a13                      ; 004059ef
         ;   XREF to: 00405a13 (CONDITIONAL_JUMP)  ; LAB_00405a13
@@ -49,7 +49,7 @@ section .text
         ;   Label: LAB_004059f4
     ADD EAX,EDI                         ; 004059f7
     IMUL EAX,EAX,0x30                   ; 004059f9
-    MOV EBP,dword ptr [EAX + 0x5c501c]  ; 004059fc | DAT_005c501c
+    MOV EBP,dword ptr [EAX + 0x5c501c]  ; 004059fc | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z
     CMP EBX,EBP                         ; 00405a02
     JLE 0x00405a08                      ; 00405a04
         ;   XREF to: 00405a08 (CONDITIONAL_JUMP)  ; LAB_00405a08
@@ -61,18 +61,18 @@ section .text
     CMP EDX,EBP                         ; 00405a0f
     JL 0x004059f4                       ; 00405a11
         ;   XREF to: 004059f4 (CONDITIONAL_JUMP)  ; LAB_004059f4
-    MOV EAX,[0x006b0268]                ; 00405a13 | DAT_006b0268
+    MOV EAX,[0x006b0268]                ; 00405a13 | g_ProcessedVertexBackupOffset
         ;   Label: LAB_00405a13
     SHL EAX,0x5                         ; 00405a18
-    MOV dword ptr [EAX + 0x6b02e8],EBX  ; 00405a1b | DAT_006b02e8
-    MOV EDX,dword ptr [0x01c039dc]      ; 00405a21 | DAT_01c039dc
-    MOV dword ptr [EAX + 0x6b02ec],EDI  ; 00405a27 | DAT_006b02ec
-    MOV dword ptr [EAX + 0x6b02f0],EDX  ; 00405a2d | DAT_006b02f0
-    MOV EDX,dword ptr [0x01c039e0]      ; 00405a33 | DAT_01c039e0
-    MOV dword ptr [EAX + 0x6b02f4],EDX  ; 00405a39 | DAT_006b02f4
-    MOV EDX,dword ptr [0x01c039e4]      ; 00405a3f | DAT_01c039e4
-    MOV dword ptr [EAX + 0x6b02f8],EDX  ; 00405a45 | DAT_006b02f8
-    MOV dword ptr [0x006b0264],EDI      ; 00405a4b | DAT_006b0264
+    MOV dword ptr [EAX + 0x6b02e8],EBX  ; 00405a1b | g_ProcessedVertexIndices[19]
+    MOV EDX,dword ptr [0x01c039dc]      ; 00405a21 | g_LightDirectionX
+    MOV dword ptr [EAX + 0x6b02ec],EDI  ; 00405a27 | g_ProcessedVertexIndices[20]
+    MOV dword ptr [EAX + 0x6b02f0],EDX  ; 00405a2d | g_ProcessedVertexIndices[21]
+    MOV EDX,dword ptr [0x01c039e0]      ; 00405a33 | g_LightDirectionY
+    MOV dword ptr [EAX + 0x6b02f4],EDX  ; 00405a39 | g_ProcessedVertexIndices[22]
+    MOV EDX,dword ptr [0x01c039e4]      ; 00405a3f | g_LightDirectionZ
+    MOV dword ptr [EAX + 0x6b02f8],EDX  ; 00405a45 | g_ProcessedVertexIndices[23]
+    MOV dword ptr [0x006b0264],EDI      ; 00405a4b | g_ProcessedVertexOffset
     POP EBP                             ; 00405a51
     POP EDI                             ; 00405a52
     POP ESI                             ; 00405a53

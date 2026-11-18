@@ -7,16 +7,17 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
-; XREF[4]:
+; XREF[5]:
 ;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00519ba0 at 00519bc9
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_00519c20 at 00519c9c
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_00555360 at 005553c6
-;   core_setdir.cpp_FUN_00559f80 at 0055b013
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055b013
+;   core_setdir.cpp_calculateActorVisibility_FUN_00559730 at 00559e61
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4f02c
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01c51d18
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -41,9 +42,9 @@ section .text
         ;   XREF to: 00481bd7 (CONDITIONAL_JUMP)  ; LAB_00481bd7
     XOR ECX,ECX                         ; 00481b97
     MOV EDX,0x486e26                    ; 00481b99
-    MOV dword ptr [0x01c51d14],ECX      ; 00481b9e | DAT_01c51d14
-    MOV dword ptr [0x01c51d18],ECX      ; 00481ba4 | DAT_01c51d18
-    MOV dword ptr [0x01c4f02c],EDX      ; 00481baa | DAT_01c4f02c
+    MOV dword ptr [0x01c51d14],ECX      ; 00481b9e | g_RenderStateFlags
+    MOV dword ptr [0x01c51d18],ECX      ; 00481ba4 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c4f02c],EDX      ; 00481baa | g_ScanlineRenderFunc
     LEA EAX,[ESI + 0x18]                ; 00481bb0
         ;   Label: LAB_00481bb0
     PUSH EAX                            ; 00481bb3
@@ -74,9 +75,9 @@ section .text
     MOV EBP,0xc0                        ; 00481bd8
     MOV EAX,0x6                         ; 00481bdd
     MOV EDI,0x487148                    ; 00481be2
-    MOV dword ptr [0x01c51d14],EBP      ; 00481be7 | DAT_01c51d14
-    MOV [0x01c51d18],EAX                ; 00481bed | DAT_01c51d18
-    MOV dword ptr [0x01c4f02c],EDI      ; 00481bf2 | DAT_01c4f02c
+    MOV dword ptr [0x01c51d14],EBP      ; 00481be7 | g_RenderStateFlags
+    MOV [0x01c51d18],EAX                ; 00481bed | g_VertexPreprocessMode
+    MOV dword ptr [0x01c4f02c],EDI      ; 00481bf2 | g_ScanlineRenderFunc
     POP EDI                             ; 00481bf8
     JMP 0x00481bb0                      ; 00481bf9
         ;   XREF to: 00481bb0 (UNCONDITIONAL_JUMP)  ; LAB_00481bb0

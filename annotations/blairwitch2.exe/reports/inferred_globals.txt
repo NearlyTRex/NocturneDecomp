@@ -1,0 +1,390 @@
+INFERRED GLOBALS: blairwitch2.exe (reference nocedit.exe)
+================================================================================
+
+evidence: access 26359, argument 12377, based 2089, dest 240, end 74, indexed 807, pointer 3949, sibling 25779, table 1520, taken 12482
+candidates: 182 (high 85, medium 1, low 96)
+  arrays: 49, strings: 1, pointers: 14
+already defined (skipped): 29413
+auto-created strings a candidate replaces: 4 (applied only with --replace-strings)
+auto-labelled globals a reference object replaces: 58 (applied only with --replace-auto)
+conflicts (not placed): 83
+references outside every block: 0 addresses
+
+BY TYPE
+--------------------------------------------------------------------------------
+  int                                          78
+  _MMX_INTEGER                                 12
+  float                                        11
+  byte                                          6
+  SMRGLPrimitiveQuadIndex                       4
+  HGLOBAL                                       4
+  DWORD                                         3
+  char[256]                                     3
+  float[32]                                     2
+  char[4]                                       2
+  char[320]                                     2
+  char[40]                                      2
+  LPWAVEHDR                                     2
+  APIDLL_unknown*                               2
+  FileListNode*                                 2
+  wchar_t                                       2
+  string                                        1
+  SFontGlyph                                    1
+  SMRGLLightPrimitive                           1
+  SLightGlowTable                               1
+  float[4]                                      1
+  double[4]                                     1
+  int[3][15]                                    1
+  int[16]                                       1
+  SMpegLayer3BandIndex                          1
+  int[3][4]                                     1
+  SHuffmanTableSource                           1
+  SAudioFormatDescriptor                        1
+  SIOControlBlock*                              1
+  short                                         1
+  SIGNAL_HANDLER_TYPE                           1
+  SRenderBufferEntry                            1
+  SRenderBufferEntry*                           1
+  float[12]                                     1
+  CVector3i[320]                                1
+  CVector3f[320]                                1
+  char[307200]                                  1
+  SCoronaLightCache                             1
+  SCameraEdge                                   1
+  SFogImagePlane                                1
+
+CANDIDATES
+--------------------------------------------------------------------------------
+005dcc8d-005dcc97 string                       medium s_tridx7_dll_005dcc8d                        taken:1  'tridx7.dll'
+005f5140-005f5143 float                        low    g_FLOAT_005f5140                             access:1
+005f5144-005f5147 float                        low    g_FLOAT_005f5144                             access:1
+005f5328-005f532b float                        low    g_FLOAT_005f5328                             access:1
+005f78c4-005f78c7 float                        low    g_FLOAT_005f78c4                             access:1
+005fc1e0-005fc1e3 float                        low    g_FLOAT_005fc1e0                             access:1
+005fc1e8-005fc1eb float                        low    g_FLOAT_005fc1e8                             access:1
+005fedb8-005fedbb float                        low    g_FLOAT_005fedb8                             access:1
+005ff35c-005ff35f float                        low    g_FLOAT_005ff35c                             access:1
+005ff360-005ff363 float                        low    g_FLOAT_005ff360                             access:1
+005ff8f8-005ff8fb float                        low    g_FLOAT_005ff8f8                             access:1
+006006b8-006006bb float                        low    g_FLOAT_006006b8                             access:1
+00601440-0060931f SFontGlyph[224]              high   g_SFontGlyph_ARRAY_00601440                  based:3,sibling:6,taken:4  reference: g_FontTable (type SFontGlyph only in the reference)
+0060a3e4-0060afb3 SMRGLLightPrimitive[84]      high   g_SMRGLLightPrimitive_ARRAY_0060a3e4         based:2,sibling:18  reference: g_CoronaFacePrimitives (type SMRGLLightPrimitive only in the reference)
+0060afc8-0060b1a7 SLightGlowTable              high   g_SLightGlowTable_0060afc8                   argument:2,sibling:4,taken:2  reference: g_LightGlow (type SLightGlowTable only in the reference)
+006112c8-006112cf _MMX_INTEGER                 high   g_MMX_INTEGER_006112c8                       access:36,sibling:36  reference: g_FilterBlendConstant (type _MMX_INTEGER only in the reference)
+00611328-0061132f _MMX_INTEGER                 high   g_MMX_INTEGER_00611328                       access:1,sibling:1  reference: g_LightmapBlendBias5 (type _MMX_INTEGER only in the reference)
+00611330-00611337 _MMX_INTEGER                 high   g_MMX_INTEGER_00611330                       access:1,sibling:1  reference: g_LightmapBlendBias6 (type _MMX_INTEGER only in the reference)
+00611338-0061133f _MMX_INTEGER                 high   g_MMX_INTEGER_00611338                       access:1,sibling:1  reference: g_LightmapBlendBias3 (type _MMX_INTEGER only in the reference)
+00611340-00611347 _MMX_INTEGER                 high   g_MMX_INTEGER_00611340                       access:1,sibling:1  reference: g_LightmapBlendBias4 (type _MMX_INTEGER only in the reference)
+006141dc-006141df int                          low    g_INT_006141dc                               access:1,taken:1
+00614234-00614237 int                          low    g_INT_00614234                               access:1
+00614238-0061423b int                          low    g_INT_00614238                               access:1
+0061427c-0061427f int                          low    g_INT_0061427c                               access:1
+00614280-00614283 int                          low    g_INT_00614280                               access:1
+00616030-00616033 int                          low    g_INT_00616030                               access:1
+00616034-00616037 int                          low    g_INT_00616034                               access:1
+00616038-0061603b int                          low    g_INT_00616038                               access:1
+0061603c-0061603f int                          low    g_INT_0061603c                               access:1
+006166ac-006166af int                          low    g_INT_006166ac                               access:1
+00617948-00617967 float[4][2]                  high   g_FLOAT_ARRAY_ARRAY_00617948                 based:2,sibling:4  reference: g_FootstepCornerMultipliers
+006185e0-00618ddf float[32][16]                high   g_FLOAT_ARRAY_ARRAY_006185e0                 indexed:1,sibling:2  reference: g_MpegSynthesisWindow
+00618e88-00618ec7 double[4][2]                 high   g_DOUBLE_ARRAY_ARRAY_00618e88                based:5,sibling:4  reference: g_MpegSampleRateTable
+00618ec8-0061902f int[3][15][2]                high   g_INT_ARRAY_ARRAY_ARRAY_00618ec8             based:3,sibling:3  reference: g_MpegBitrateTable
+006192b8-00619337 int[16][2]                   high   g_INT_ARRAY_ARRAY_006192b8                   based:2,indexed:2,sibling:5  reference: g_Layer3ScalefacLengths
+00619338-006196af SMpegLayer3BandIndex[6]      high   g_SMpegLayer3BandIndex_ARRAY_00619338        based:6,sibling:50  reference: g_Layer3BandIndex (type SMpegLayer3BandIndex only in the reference)
+006196b0-006197cf int[3][4][6]                 high   g_INT_ARRAY_ARRAY_ARRAY_006196b0             based:1,sibling:1  reference: g_Layer3ScalefactorBandCounts
+0061ade0-0061b10f SHuffmanTableSource[34]      high   g_SHuffmanTableSource_ARRAY_0061ade0         based:1,sibling:6  reference: g_HuffmanTableSources (type SHuffmanTableSource only in the reference)
+0061bf8c-0061c04b SAudioFormatDescriptor[12]   high   g_SAudioFormatDescriptor_ARRAY_0061bf8c      based:2,sibling:11  reference: g_WaveInFormatTable (type SAudioFormatDescriptor only in the reference)
+0061c808-0061c80f _MMX_INTEGER                 high   g_MMX_INTEGER_0061c808                       access:8,sibling:2  reference: g_VertexGreenStart (type _MMX_INTEGER only in the reference)
+0061c810-0061c817 _MMX_INTEGER                 high   g_MMX_INTEGER_0061c810                       access:8,sibling:2  reference: g_VertexBlueStart (type _MMX_INTEGER only in the reference)
+0061c828-0061c82f _MMX_INTEGER                 high   g_MMX_INTEGER_0061c828                       access:8,sibling:2  reference: g_VertexGreenDelta (type _MMX_INTEGER only in the reference)
+0061c830-0061c837 _MMX_INTEGER                 high   g_MMX_INTEGER_0061c830                       access:8,sibling:2  reference: g_VertexBlueDelta (type _MMX_INTEGER only in the reference)
+0061c8d0-0061c8d7 _MMX_INTEGER                 high   g_MMX_INTEGER_0061c8d0                       access:14,sibling:4  reference: g_RedMask16 (type _MMX_INTEGER only in the reference)
+0061c8d8-0061c8df _MMX_INTEGER                 high   g_MMX_INTEGER_0061c8d8                       access:14,sibling:4  reference: g_GreenMask16 (type _MMX_INTEGER only in the reference)
+0061c8e0-0061c8e7 _MMX_INTEGER                 high   g_MMX_INTEGER_0061c8e0                       access:14,sibling:4  reference: g_BlueMask16 (type _MMX_INTEGER only in the reference)
+0061eeb8-0061eed3 char[4][7]                   high   g_CHAR_ARRAY_ARRAY_0061eeb8                  sibling:1,taken:1  reference: g_WeekdayNamesShort
+0061eef0-0061ef1f char[4][12]                  high   g_CHAR_ARRAY_ARRAY_0061eef0                  sibling:1,taken:1  reference: g_MonthNamesShort
+0061ef60-0061ef63 int                          low    g_INT_0061ef60                               access:1
+0061f27c-0061f27c byte                         low    g_BYTE_0061f27c                              access:1
+0061f4d8-0061f4db SIOControlBlock*             high   g_SIOControlBlock_PTR_0061f4d8               access:24,argument:2,pointer:11,sibling:8  reference: g_IOControlBlock
+0061f5ac-0061f5ac byte                         low    g_BYTE_0061f5ac                              access:1
+0061f62d-0061f62d byte                         low    g_BYTE_0061f62d                              access:1
+0061f6bc-0061f6bd short                        low    g_SHORT_0061f6bc                             access:1
+0061f764-0061f7cb SIGNAL_HANDLER_TYPE[26]      high   g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764         based:2,indexed:1,sibling:4  reference: g_GlobalSignalHandlers
+0070cb00-0071e2ff SRenderBufferEntry[256]      high   g_SRenderBufferEntry_ARRAY_0070cb00          sibling:3,taken:3  reference: g_RenderBufferPool (type SRenderBufferEntry only in the reference)
+007b7960-007ba06f SRenderBufferEntry*[2500]    high   g_SRenderBufferEntry_PTR_ARRAY_007b7960      based:2,sibling:3,taken:1  reference: g_RenderBufferSortArray
+007bcd08-007bcf47 float[12][12]                high   g_FLOAT_ARRAY_ARRAY_007bcd08                 based:1,sibling:1,taken:1  reference: g_BugsGroundHeightGridTemp
+007c2550-007c2553 int                          low    g_INT_007c2550                               access:1
+007c2558-007c255b int                          low    g_INT_007c2558                               access:1
+007c255c-007c255f int                          low    g_INT_007c255c                               access:1
+007c2564-007c2567 int                          low    g_INT_007c2564                               access:1
+007c2570-007c2573 int                          low    g_INT_007c2570                               access:1
+007c2574-007c2577 int                          low    g_INT_007c2574                               access:1
+007c257c-007c257f int                          low    g_INT_007c257c                               access:1
+0091e6d4-00a005d3 CVector3i[320][241]          high   g_CVector3i_ARRAY_ARRAY_0091e6d4             sibling:6,taken:2  reference: g_TempWorldPositions
+00a005d4-00ae24d3 CVector3f[320][241]          high   g_CVector3f_ARRAY_ARRAY_00a005d4             sibling:4,taken:5  reference: g_PrecomputedSurfaceNormals
+00af5218-00b07f57 char[320][241]               high   g_CHAR_ARRAY_ARRAY_00af5218                  dest:1,sibling:8,taken:8  reference: g_CoronaBlurOutputBuffer
+00b07f58-00b1ac97 char[320][241]               high   g_CHAR_ARRAY_ARRAY_00b07f58                  based:3,dest:1,sibling:9,taken:6  reference: g_CoronaBlurWorkBuffer
+00b667a8-0126e7a7 char[307200][24]             high   g_CHAR_ARRAY_ARRAY_00b667a8                  sibling:4,taken:4  reference: g_LightBufferPool
+0126e7a8-013083cb SCoronaLightCache            high   g_SCoronaLightCache_0126e7a8                 access:6,sibling:9  reference: g_CoronaLightCache (type SCoronaLightCache only in the reference)
+01308808-01325cc7 SCameraEdge[10000]           high   g_SCameraEdge_ARRAY_01308808                 based:4,sibling:10  reference: g_CameraEdgeDetectionResults (type SCameraEdge only in the reference)
+01326d20-0133991f SFogImagePlane               high   g_SFogImagePlane_01326d20                    argument:2,based:7,dest:1,sibling:22,taken:10  reference: g_CameraPlaneWorkBuffer (type SFogImagePlane only in the reference)
+014c3cd0-0150eccf int[320][240]                high   g_INT_ARRAY_ARRAY_014c3cd0                   dest:1,sibling:6,taken:7  reference: g_CoronaDepthBuffer
+01510854-01510857 int                          low    g_INT_01510854                               access:1
+01510860-01510863 int                          low    g_INT_01510860                               access:1
+0151086c-0151086f int                          low    g_INT_0151086c                               access:1
+01510cec-01510cef int                          low    g_INT_01510cec                               access:1
+01510cf8-01510cfb int                          low    g_INT_01510cf8                               access:1
+01510d04-01510d07 int                          low    g_INT_01510d04                               access:1
+01b4d27c-01b4d27f int                          low    g_INT_01b4d27c                               access:1
+01b4d280-01b4d283 int                          low    g_INT_01b4d280                               access:1
+01b4d284-01b4d287 int                          low    g_INT_01b4d284                               access:1
+01b4d294-01b4d297 int                          low    g_INT_01b4d294                               access:1
+01b4d2a0-01b4d2a3 int                          low    g_INT_01b4d2a0                               access:1
+01b4d2a4-01b4d2a7 int                          low    g_INT_01b4d2a4                               access:1
+01ba5718-01ba571b int                          low    g_INT_01ba5718                               access:1
+01ba571c-01ba571f int                          low    g_INT_01ba571c                               access:1
+01ba5720-01ba5723 int                          low    g_INT_01ba5720                               access:1
+01ba5724-01ba5727 int                          low    g_INT_01ba5724                               access:1
+01ba5728-01ba572b int                          low    g_INT_01ba5728                               access:1
+01ba572c-01ba572f int                          low    g_INT_01ba572c                               access:1
+01ba5730-01ba5733 int                          low    g_INT_01ba5730                               access:1
+01ba5734-01ba5737 int                          low    g_INT_01ba5734                               access:1
+01ba5738-01ba573b int                          low    g_INT_01ba5738                               access:1
+01c21e8c-01c21e8f int                          low    g_INT_01c21e8c                               access:1
+01c21e98-01c21e9b int                          low    g_INT_01c21e98                               access:1
+01c21ea4-01c21ea7 int                          low    g_INT_01c21ea4                               access:1
+01c22324-01c22327 int                          low    g_INT_01c22324                               access:1
+01c22330-01c22333 int                          low    g_INT_01c22330                               access:1
+01c2233c-01c2233f int                          low    g_INT_01c2233c                               access:1
+01c255a0-01c25f27 SWindow[5]                   high   g_SWindow_ARRAY_01c255a0                     dest:1,sibling:2,taken:6  reference: g_WindowStack (type SWindow only in the reference)
+01c38af8-01c38afb DWORD                        high   g_DWORD_01c38af8                             access:1,sibling:1  reference: g_JoyRPos
+01c38b00-01c38b03 DWORD                        high   g_DWORD_01c38b00                             access:14,sibling:13  reference: g_JoyButtons
+01c3ded0-01c3def7 SMRGLPrimitiveQuadIndex      high   g_SMRGLPrimitiveQuadIndex_01c3ded0           argument:8,sibling:41,taken:8  reference: g_BillboardPrimitive (type SMRGLPrimitiveQuadIndex only in the reference)
+01cab788-01cab788 byte                         low    g_BYTE_01cab788                              access:1,taken:6
+01caf634-01cafe33 float[8][64]                 high   g_FLOAT_ARRAY_ARRAY_01caf634                 argument:1,sibling:1,taken:2  reference: g_SplineBasisTable
+01cb0240-01cb0240 byte                         low    g_BYTE_01cb0240                              access:1
+01cb0710-01cb110f char[256][10]                high   g_CHAR_ARRAY_ARRAY_01cb0710                  argument:3,sibling:2,taken:2  reference: g_WrappedTextBuffer
+01cb8288-01cb82af SMRGLPrimitiveQuadIndex      high   g_SMRGLPrimitiveQuadIndex_01cb8288           argument:4,sibling:35,taken:4  reference: g_GoreQuadPrimitive (type SMRGLPrimitiveQuadIndex only in the reference)
+01cb82c8-01cb82ef SMRGLPrimitiveQuadIndex      high   g_SMRGLPrimitiveQuadIndex_01cb82c8           argument:1,sibling:10,taken:1  reference: g_FootstepPrimitive (type SMRGLPrimitiveQuadIndex only in the reference)
+01d082e0-01d086df char[256][4]                 high   g_CHAR_ARRAY_ARRAY_01d082e0                  sibling:5,taken:2  reference: g_MainMenuTextBuffers
+01d08790-01d08c3f char[40][30]                 high   g_CHAR_ARRAY_ARRAY_01d08790                  sibling:1,taken:29  reference: g_CustomKeyNames
+01d08d88-01d09787 char[256][10]                high   g_CHAR_ARRAY_ARRAY_01d08d88                  sibling:1,taken:1  reference: g_StringBuffers
+01d167b8-01d167bb int                          low    g_INT_01d167b8                               access:1
+01d167c8-01d167cb int                          low    g_INT_01d167c8                               access:1
+01d167d8-01d167db int                          low    g_INT_01d167d8                               access:1
+01d167e8-01d167eb int                          low    g_INT_01d167e8                               access:1
+01d167ec-01d167ef int                          low    g_INT_01d167ec                               access:1
+01d167f0-01d167f3 int                          low    g_INT_01d167f0                               access:1,based:1
+01d182c8-01d182ef SMRGLPrimitiveQuadIndex      high   g_SMRGLPrimitiveQuadIndex_01d182c8           argument:1,sibling:10,taken:1  reference: g_MirrorTempPrimitive (type SMRGLPrimitiveQuadIndex only in the reference)
+01d1cdd0-01d1edcf float[32][64]                high   g_FLOAT_ARRAY_ARRAY_01d1cdd0                 sibling:2,taken:2  reference: g_MpegSynthesisDctTable
+01d21a58-01d21ed7 double[36][4]                high   g_DOUBLE_ARRAY_ARRAY_01d21a58                sibling:20,taken:1  reference: g_Mp3WindowTables
+01d21ed8-01d22117 double[6][12]                high   g_DOUBLE_ARRAY_ARRAY_01d21ed8                based:3,sibling:19  reference: g_Mp3DctMatrix
+01d22118-01d23557 double[18][36]               high   g_DOUBLE_ARRAY_ARRAY_01d22118                sibling:1,taken:1  reference: g_Mp3PolyCoefficients
+01d51054-01d5463b SChatOutMessage[50]          high   g_SChatOutMessage_ARRAY_01d51054             sibling:11,taken:10  reference: g_ChatOutMessages (type SChatOutMessage only in the reference)
+01d65400-01d65403 int                          low    g_INT_01d65400                               access:1
+01e5020c-01e5ec6b CPathQueueNode[5000]         high   g_CPathQueueNode_ARRAY_01e5020c              access:1,based:5,indexed:2,sibling:18  reference: g_PathfindingQueue (type CPathQueueNode only in the reference)
+01e5ec78-01e613eb char[100][101]               high   g_CHAR_ARRAY_ARRAY_01e5ec78                  based:9,dest:1,sibling:9,taken:1  reference: g_PathfindingVisited
+01e620f8-01e648f7 char[1024][10]               high   g_CHAR_ARRAY_ARRAY_01e620f8                  argument:3,sibling:2,taken:2  reference: g_ScriptSubtitleLines
+0200a398-0200a39b int                          low    g_INT_0200a398                               access:1,taken:1
+0200a39c-0200a39f int                          low    g_INT_0200a39c                               access:1
+0200a3a0-0200a3a3 int                          low    g_INT_0200a3a0                               access:1
+0200e894-0200e897 int                          low    g_INT_0200e894                               access:1
+0200e8a0-0200e8a3 int                          low    g_INT_0200e8a0                               access:1
+0200e8ac-0200e8af int                          low    g_INT_0200e8ac                               access:1
+0200e8b8-0200e8bb int                          low    g_INT_0200e8b8                               access:1
+020b190c-020b190f int                          low    g_INT_020b190c                               access:1
+020b1910-020b1913 int                          low    g_INT_020b1910                               access:1
+020b1914-020b1917 int                          low    g_INT_020b1914                               access:1
+020b1918-020b191b int                          low    g_INT_020b1918                               access:1
+020b191c-020b191f int                          low    g_INT_020b191c                               access:1
+020b1920-020b1923 int                          low    g_INT_020b1920                               access:1
+02649874-0264a153 SDirectSoundDeviceInfo[8]    high   g_SDirectSoundDeviceInfo_ARRAY_02649874      based:2,sibling:7,taken:3  reference: g_DirectSoundDevices (type SDirectSoundDeviceInfo only in the reference)
+0264a5d0-0264a5d3 IDirectSound3DListener*      high   g_IDirectSound3DListener_PTR_0264a5d0        access:10,pointer:1,sibling:4,taken:1  reference: g_DirectSound3DListener
+0264a5d4-0264a5d7 IKsPropertySet*              high   g_IKsPropertySet_PTR_0264a5d4                access:8,pointer:3,sibling:9,taken:1  reference: g_DirectSoundPropertySet
+0264b074-0264b093 HGLOBAL[8]                   high   g_HGLOBAL_ARRAY_0264b074                     based:4,sibling:5  reference: g_WaveOutHeaderHandles
+0264b094-0264b0b3 LPWAVEHDR[8]                 high   g_LPWAVEHDR_ARRAY_0264b094                   based:11,sibling:11  reference: g_WaveOutHeaders
+0264b0b4-0264b0d3 HGLOBAL[8]                   high   g_HGLOBAL_ARRAY_0264b0b4                     based:3,sibling:3  reference: g_WaveOutBufferHandles
+0264b0d4-0264b0f3 LPVOID[8]                    high   g_LPVOID_ARRAY_0264b0d4                      based:6,sibling:6  reference: g_WaveOutBuffers
+0264b10c-0264b15b HGLOBAL[20]                  high   g_HGLOBAL_ARRAY_0264b10c                     based:4,sibling:6  reference: g_WaveInHeaderHandles
+0264b15c-0264b1ab LPWAVEHDR[20]                high   g_LPWAVEHDR_ARRAY_0264b15c                   based:9,sibling:9  reference: g_WaveInHeaders
+0264b1ac-0264b1fb HGLOBAL[20]                  high   g_HGLOBAL_ARRAY_0264b1ac                     based:3,sibling:3  reference: g_WaveInBufferHandles
+0264b468-0264baa7 char[40][40]                 high   g_CHAR_ARRAY_ARRAY_0264b468                  sibling:1,taken:3  reference: g_SoundMatchedFilenames
+0264bc30-0264bc33 APIDLL_drawPolygon2*         high   g_APIDLL_drawPolygon2_PTR_0264bc30           access:2,sibling:1  reference: g_APIDLL_drawPolygon2
+0264bc34-0264bc37 APIDLL_drawPolyList*         high   g_APIDLL_drawPolyList_PTR_0264bc34           access:2,sibling:1  reference: g_APIDLL_drawPolyList
+0264bc64-0264bc67 APIDLL_setColorTable16*      high   g_APIDLL_setColorTable16_PTR_0264bc64        access:2,sibling:1  reference: g_APIDLL_setColorTable16
+0264bc6c-0264bc6f APIDLL_releaseDisplayContext high   g_APIDLL_releaseDisplayContext_PTR_0264bc6c  access:2,sibling:1  reference: g_APIDLL_releaseDisplayContext
+0264bca4-0264bca7 APIDLL_unlockFrameX*         high   g_APIDLL_unlockFrameX_PTR_0264bca4           access:2,sibling:1  reference: g_APIDLL_unlockFrameX
+0264bca8-0264bcab APIDLL_toggleX*              high   g_APIDLL_toggleX_PTR_0264bca8                access:2,sibling:1  reference: g_APIDLL_toggleX
+0264bcac-0264bcaf APIDLL_unknown*              high   g_APIDLL_unknown_PTR_0264bcac                access:2,sibling:1  reference: g_APIDLL_setViewport
+0264bcc0-0264bcc3 APIDLL_unknown*              high   g_APIDLL_unknown_PTR_0264bcc0                access:2,sibling:1  reference: g_APIDLL_polyList
+0264bed0-0264bed3 int                          low    g_INT_0264bed0                               access:1
+0264bed4-0264bed7 int                          low    g_INT_0264bed4                               access:1
+0264bed8-0264bedb int                          low    g_INT_0264bed8                               access:1
+0264bedc-0264bedf int                          low    g_INT_0264bedc                               access:1
+0264bee8-0264beeb int                          low    g_INT_0264bee8                               access:1
+0264beec-0264beef int                          low    g_INT_0264beec                               access:1
+0264bef4-0264bef7 int                          low    g_INT_0264bef4                               access:1
+02652ea8-02652eab int                          low    g_INT_02652ea8                               access:1
+02662d60-02662d63 DWORD                        high   g_DWORD_02662d60                             access:1,sibling:2,taken:1  reference: g_PreviousCounterLow
+0266462c-0266462f int                          low    g_INT_0266462c                               access:1
+026656c0-026656c3 HMODULE                      high   g_HMODULE_026656c0                           access:1,based:1,sibling:1  reference: g_WinmmDll
+02680160-02680163 FileListNode*                high   g_FileListNode_PTR_02680160                  access:10,pointer:5,sibling:4,taken:1  reference: g_AllocatedListHead
+02680164-02680167 FileListNode*                high   g_FileListNode_PTR_02680164                  access:8,argument:1,pointer:3,sibling:4,taken:1  reference: g_FreeListHeadPointer
+02680284-0268048b wchar_t[260]                 high   g_WCHAR_T_ARRAY_02680284                     sibling:2,taken:2  reference: g_ExeFileNameBuffer_W
+02680590-02680797 wchar_t[260]                 high   g_WCHAR_T_ARRAY_02680590                     sibling:2,taken:2  reference: g_DllFileNameBuffer_W
+026807b4-026807b4 byte                         low    g_BYTE_026807b4                              access:1
+026807c8-026807cb int                          low    g_INT_026807c8                               access:1
+026807cc-026807cf int                          low    g_INT_026807cc                               access:1
+02681040-02681043 int                          low    g_INT_02681040                               access:1,taken:3
+02681044-02681047 int                          low    g_INT_02681044                               access:1
+
+DEFINITIONS TO REPLACE
+--------------------------------------------------------------------------------
+  005dcc90  TerminatedCString, 8 bytes
+  0060afc8  SMRGLTextureBasic, 24 bytes  g_SMRGLTextureBasic_0060afc8
+  0060afe0  SMRGLTextureBasic, 24 bytes  g_SMRGLTextureBasic_0060afe0
+  0060aff8  SMRGLTextureBasic, 24 bytes  g_SMRGLTextureBasic_0060aff8
+  0060b090  TerminatedCString, 12 bytes
+  0060b150  TerminatedCString, 12 bytes
+  0060b180  TerminatedCString, 12 bytes
+  006112c8  int, 4 bytes  g_INT_006112c8
+  00617948  float, 8 bytes  g_FLOAT_ARRAY_00617948
+  006185e0  float, 64 bytes  g_FLOAT_ARRAY_006185e0
+  00618660  float, 1920 bytes  g_FLOAT_ARRAY_00618660
+  00618e88  double, 16 bytes  g_DOUBLE_ARRAY_00618e88
+  006192b8  int, 8 bytes  g_INT_ARRAY_006192b8
+  006192f8  int, 64 bytes  g_INT_ARRAY_006192f8
+  0061933c  int, 4 bytes  g_INT_ARRAY_0061933c
+  0061c808  int, 4 bytes  g_INT_0061c808
+  0061c810  int, 4 bytes  g_INT_0061c810
+  0061c828  int, 4 bytes  g_INT_0061c828
+  0061c830  int, 4 bytes  g_INT_0061c830
+  0061c8d0  int, 4 bytes  g_INT_0061c8d0
+  0061c8d8  int, 4 bytes  g_INT_0061c8d8
+  0061c8e0  int, 4 bytes  g_INT_0061c8e0
+  0061eeb8  char, 7 bytes  g_CHAR_ARRAY_0061eeb8
+  0061eef0  char, 12 bytes  g_CHAR_ARRAY_0061eef0
+  007bcd08  float, 48 bytes  g_FLOAT_ARRAY_007bcd08
+  0091e6d4  CVector3i, 2892 bytes  g_CVector3i_ARRAY_0091e6d4
+  00a005d4  CVector3f, 2892 bytes  g_CVector3f_ARRAY_00a005d4
+  00af5218  char, 241 bytes  g_CHAR_ARRAY_00af5218
+  00b07f58  char, 241 bytes  g_CHAR_ARRAY_00b07f58
+  00b667a8  char, 24 bytes  g_CHAR_ARRAY_00b667a8
+  0126e7a8  int, 4 bytes  g_INT_0126e7a8
+  01326d20  char, 76797 bytes  g_CHAR_ARRAY_01326d20
+  014c3cd0  int, 960 bytes  g_INT_ARRAY_014c3cd0
+  01c255a0  char, 492 bytes  g_CHAR_ARRAY_01c255a0
+  01c38b00  byte, 1 bytes  g_BYTE_01c38b00
+  01c38b01  byte, 1 bytes  g_BYTE_01c38b01
+  01c3ded0  SMRGLHeaderPrimitive, 24 bytes  g_SMRGLHeaderPrimitive_01c3ded0
+  01c3dee8  int, 4 bytes  g_INT_01c3dee8
+  01c3deec  int, 4 bytes  g_INT_01c3deec
+  01c3def0  int, 4 bytes  g_INT_01c3def0
+  01c3def4  int, 4 bytes  g_INT_01c3def4
+  01caf634  float, 256 bytes  g_FLOAT_ARRAY_01caf634
+  01cb0710  char, 10 bytes  g_CHAR_ARRAY_01cb0710
+  01cb8288  SMRGLHeaderPrimitive, 24 bytes  g_SMRGLHeaderPrimitive_01cb8288
+  01cb82a0  int, 4 bytes  g_INT_01cb82a0
+  01cb82a4  int, 4 bytes  g_INT_01cb82a4
+  01cb82a8  int, 4 bytes  g_INT_01cb82a8
+  01cb82ac  int, 4 bytes  g_INT_01cb82ac
+  01cb82c8  SMRGLHeaderPrimitive, 24 bytes  g_SMRGLHeaderPrimitive_01cb82c8
+  01d082e0  char, 4 bytes  g_CHAR_ARRAY_01d082e0
+  01d08790  char, 30 bytes  g_CHAR_ARRAY_01d08790
+  01d08d88  char, 10 bytes  g_CHAR_ARRAY_01d08d88
+  01d182c8  SMRGLHeaderPrimitive, 24 bytes  g_SMRGLHeaderPrimitive_01d182c8
+  01d1cdd0  float, 256 bytes  g_FLOAT_ARRAY_01d1cdd0
+  01d21a58  double, 32 bytes  g_DOUBLE_ARRAY_01d21a58
+  01d21ed8  double, 96 bytes  g_DOUBLE_ARRAY_01d21ed8
+  01d22118  double, 288 bytes  g_DOUBLE_ARRAY_01d22118
+  01e5020c  int, 4 bytes  g_INT_ARRAY_01e5020c
+  01e5ec78  char, 101 bytes  g_CHAR_ARRAY_01e5ec78
+  01e620f8  char, 10 bytes  g_CHAR_ARRAY_01e620f8
+  0264998c  int, 3128 bytes  g_INT_ARRAY_0264998c
+  0264b468  char, 40 bytes  g_CHAR_ARRAY_0264b468
+
+CONFLICTS (NOT PLACED)
+--------------------------------------------------------------------------------
+  005d7eff char[54]                     low    another reference object maps inside it
+  005d82bb char[55]                     low    another reference object maps inside it
+  005d8357 char[53]                     low    another reference object maps inside it
+  005e182d CDemonRaytrace               low    this build's accesses do not fit the reference layout
+  005e36b1 char[2048]                   low    another reference object maps inside it
+  005ec895 uchar[768]                   low    another reference object maps inside it
+  006013ec double                       low    another reference object maps inside it
+  00618138 CDemonActorType              low    another reference object maps inside it
+  006182b0 char[20]                     low    another reference object maps inside it
+  0061bcb0 double                       low    this build's accesses do not fit the reference layout
+  0061d180 SAlphaEntry[256]             high   reference: g_AlphaTable (type SAlphaEntry only in the reference); blocked by existing qword at 0061d180
+  0061e6ac SMRGLPrimitiveQuad           low    another reference object maps inside it
+  00621f80 SRenderVertex[20000]         low    another reference object maps inside it
+  00621fac SRenderVertex[20000]         low    another reference object maps inside it
+  00621fb4 SRenderVertex[20000]         low    another reference object maps inside it
+  00621fc0 SRenderVertex[20000]         low    another reference object maps inside it
+  00621fd8 SRenderVertex[20000]         low    another reference object maps inside it
+  00621fdc SRenderVertex[20000]         low    another reference object maps inside it
+  00621fe8 SRenderVertex[20000]         low    another reference object maps inside it
+  00621fec SRenderVertex[20000]         low    another reference object maps inside it
+  00622014 SRenderVertex[20000]         low    another reference object maps inside it
+  00622018 SRenderVertex[20000]         low    another reference object maps inside it
+  00622040 SRenderVertex[20000]         low    another reference object maps inside it
+  00622044 SRenderVertex[20000]         low    another reference object maps inside it
+  00622074 SRenderVertex[20000]         low    another reference object maps inside it
+  007bc7e8 CDemonActorType              low    one reference operand, inside the object
+  007bc930 int[11]                      low    one reference operand, inside the object
+  007bc938 int[11]                      low    one reference operand, inside the object
+  0083c7d4 CVector3i[15499]             high   reference: g_PrecomputedWorldPositions; blocked by crosses a block boundary
+  01510828 CVector3f                    low    another reference object maps inside it
+  01510834 CVector3f                    low    another reference object maps inside it
+  01b1388c int[102]                     low    another reference object maps inside it
+  01ba573c CDemonActorType              low    one reference operand, inside the object
+  01c2646c CDemonActorType              low    one reference operand, inside the object
+  01c35838 uchar[768]                   low    another reference object maps inside it
+  01c950d8 CExplosion[10]               low    another reference object maps inside it
+  01cab684 CDemonActorType              low    one reference operand, inside the object
+  01caf5f0 CDemonActorType              low    one reference operand, inside the object
+  01cb05e4 CDemonActorType              low    one reference operand, inside the object
+  01cb80f4 int                          low    another reference object maps inside it
+  01cb8248 CDemonActorType              low    another reference object maps inside it
+  01cedee4 CHero*[4]                    low    another reference object maps inside it
+  01cedef3 char[20]                     low    another reference object maps inside it
+  01d046d4 CEdScrollBar                 low    another reference object maps inside it
+  01d046e8 CEdScrollBar                 low    another reference object maps inside it
+  01d1c630 char[8100]                   low    another reference object maps inside it
+  01d21398 double[200]                  low    one reference operand, inside the object
+  01d6325c char*[500]                   low    another reference object maps inside it
+  01d63a2c char*[500]                   low    another reference object maps inside it
+  01d641f8 char[128][500]               low    another reference object maps inside it
+  02054dfc CVector3f[20000]             low    another reference object maps inside it
+  0208f778 SDisplayListSortEntry[2000]  low    another reference object maps inside it
+  020935f4 UVector3                     low    one reference operand, inside the object
+  020935f8 UVector3                     low    another reference object maps inside it
+  02093600 CVector3f                    low    one reference operand, inside the object
+  02628620 int[12]                      low    one reference operand, inside the object
+  02628624 int[12]                      low    one reference operand, inside the object
+  0264842c CVector3d                    low    this build's accesses do not fit the reference layout
+  02648434 CVector3d                    low    this build's accesses do not fit the reference layout
+  0264843c CVector3d                    low    this build's accesses do not fit the reference layout
+  026484a4 CVector3d                    low    one reference operand, inside the object
+  026485c0 SSoundDeviceInfo[8]          low    another reference object maps inside it
+  02648e70 CVector3d                    low    another reference object maps inside it
+  02648e78 CVector3d                    low    another reference object maps inside it
+  02649000 SReverbSettings              low    another reference object maps inside it
+  02649008 double                       low    this build's accesses do not fit the reference layout
+  0264a5fc IDirectSoundBufferMetadata[2 low    another reference object maps inside it
+  0264a608 IDirectSoundBuffer*[25]      low    one reference operand, inside the object
+  0264ac30 IDirectSoundBuffer*[31]      low    one reference operand, inside the object
+  0264bd08 CDemonActorType              low    one reference operand, inside the object
+  026535f0 CDemonActorType              low    another reference object maps inside it
+  02653718 CDemonActorType              low    one reference operand, inside the object
+  02653754 CDemonActorType              low    one reference operand, inside the object
+  0265fb28 CDemonActorType              low    one reference operand, inside the object
+  006013f2 struct2                      low    array of 2-byte structs; element type unknown
+  0060140c struct2                      low    array of 2-byte structs; element type unknown
+  0061f764 struct8                      low    array of 8-byte structs; element type unknown
+  0208f778 struct8                      low    array of 8-byte structs; element type unknown
+  0264a5fc struct8                      low    array of 8-byte structs; element type unknown
+  005ce07a double                       medium blocked by existing TerminatedCString at 005ce07e
+  005d925f double                       medium blocked by existing TerminatedCString at 005d9266
+  005e949e double                       medium blocked by existing TerminatedCString at 005e94a4
+  005ecd4e double                       medium blocked by existing TerminatedCString at 005ecd55

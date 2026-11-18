@@ -24,18 +24,18 @@
 ;   TerminatedCString s_anon_005cab25
 ;   TerminatedCString s_s_s_005cab2b
 ;   TerminatedCString s_String_00609558
-;   undefined1 DAT_00609590
-;   undefined4 DAT_0061ed94
-;   undefined4 DAT_007bc034
-;   undefined4 DAT_007bc038
+;   char[104] g_PropertyNamePrefix
+;   uchar[257] g_CharacterClassificationTable
+;   _FILE* g_ActorDataFile
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDescription_FUN_0040b400
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b380
 ;   crt_stdio.c_fgetc_FUN_005b8180
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   crt_stdio.c_ungetc_FUN_005b8350
-;   crt_unknown.c_FUN_005b8010
 ;
 ; *****************************************************************************
 
@@ -48,10 +48,10 @@ section .text
     PUSH EBP                            ; 0040b733
     MOV ESI,dword ptr [ESP + 0x14]      ; 0040b734
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040b738
-    CMP dword ptr [0x007bc038],0x1      ; 0040b73c | DAT_007bc038
+    CMP dword ptr [0x007bc038],0x1      ; 0040b73c | g_ActorReadingMode
     JNZ 0x0040b817                      ; 0040b743
         ;   XREF to: 0040b817 (CONDITIONAL_JUMP)  ; LAB_0040b817
-    MOV EDI,dword ptr [0x007bc034]      ; 0040b749 | DAT_007bc034
+    MOV EDI,dword ptr [0x007bc034]      ; 0040b749 | g_ActorDataFile
         ;   Label: LAB_0040b749
     PUSH EDI                            ; 0040b74f
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040b750
@@ -60,7 +60,7 @@ section .text
     ADD ESP,0x4                         ; 0040b757
     INC DL                              ; 0040b75a
     AND EDX,0xff                        ; 0040b75c
-    TEST byte ptr [EDX + 0x61ed94],0x2  ; 0040b762 | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0x2  ; 0040b762 | g_CharacterClassificationTable
     JNZ 0x0040b749                      ; 0040b769
         ;   XREF to: 0040b749 (CONDITIONAL_JUMP)  ; LAB_0040b749
     CMP EAX,0x22                        ; 0040b76b
@@ -71,7 +71,7 @@ section .text
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040b380 ; 0040b776
         ;   XREF to: 0040b380 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040b380(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040b77b
-    MOV EBP,dword ptr [0x007bc034]      ; 0040b77e | DAT_007bc034
+    MOV EBP,dword ptr [0x007bc034]      ; 0040b77e | g_ActorDataFile
         ;   Label: LAB_0040b77e
     PUSH EBP                            ; 0040b784
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040b785
@@ -80,7 +80,7 @@ section .text
     CMP EAX,0x22                        ; 0040b78d
     JZ 0x0040b7f1                       ; 0040b790
         ;   XREF to: 0040b7f1 (CONDITIONAL_JUMP)  ; LAB_0040b7f1
-    MOV EDX,dword ptr [0x007bc034]      ; 0040b792 | DAT_007bc034
+    MOV EDX,dword ptr [0x007bc034]      ; 0040b792 | g_ActorDataFile
     PUSH EDX                            ; 0040b798
     PUSH EAX                            ; 0040b799
     CALL crt_stdio.c_ungetc_FUN_005b8350 ; 0040b79a
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x8                         ; 0040b79f
     PUSH ESI                            ; 0040b7a2
     PUSH 0x5cab25                       ; 0040b7a3 | = "%[^\"]"
-    MOV ECX,dword ptr [0x007bc034]      ; 0040b7a8 | DAT_007bc034
+    MOV ECX,dword ptr [0x007bc034]      ; 0040b7a8 | g_ActorDataFile
     PUSH ECX                            ; 0040b7ae
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040b7af
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -101,7 +101,7 @@ section .text
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040b380 ; 0040b7c2
         ;   XREF to: 0040b380 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040b380(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040b7c7
-    MOV ESI,dword ptr [0x007bc034]      ; 0040b7ca | DAT_007bc034
+    MOV ESI,dword ptr [0x007bc034]      ; 0040b7ca | g_ActorDataFile
         ;   Label: LAB_0040b7ca
     PUSH ESI                            ; 0040b7d0
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040b7d1
@@ -143,12 +143,12 @@ section .text
     RET                                 ; 0040b816
     PUSH ESI                            ; 0040b817
         ;   Label: LAB_0040b817
-    PUSH 0x609590                       ; 0040b818 | DAT_00609590
+    PUSH 0x609590                       ; 0040b818 | g_PropertyNamePrefix
     PUSH 0x5cab2b                       ; 0040b81d | = "%s\"%s\""
-    MOV ECX,dword ptr [0x007bc034]      ; 0040b822 | DAT_007bc034
+    MOV ECX,dword ptr [0x007bc034]      ; 0040b822 | g_ActorDataFile
     PUSH ECX                            ; 0040b828
-    CALL crt_unknown.c_FUN_005b8010     ; 0040b829
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0040b829
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040b82e
     PUSH EBX                            ; 0040b831
     PUSH 0x609558                       ; 0040b832 | = "String"

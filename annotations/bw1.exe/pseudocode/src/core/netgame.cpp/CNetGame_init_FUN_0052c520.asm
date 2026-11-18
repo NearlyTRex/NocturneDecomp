@@ -17,16 +17,16 @@
 ;   undefined4 s_yComputer_005eb690+1
 ;   undefined4 s_Computer_005eb690+2
 ;   undefined4 s_omputer_005eb690+3
-;   undefined4 DAT_01d51d9c
-;   undefined4 DAT_01d51da0
-;   undefined4 DAT_01d51db4
-;   undefined4 DAT_01d6dfb8
+;   int g_LastPingTime
+;   uint g_UINT_01d51da0
+;   int g_ChatHistoryCount
+;   int g_ChatOutCount
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0
 ;   crt_env.c_getenv_FUN_005c3050
-;   crt_unknown.c_FUN_005c25c0
-;   support_trisock.cpp_FUN_0059eeb0
+;   crt_stdio.c_remove_FUN_005c25c0
+;   support_trisock.cpp_startupWinsock_FUN_0059eeb0
 ;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
 ; *****************************************************************************
@@ -37,20 +37,20 @@ section .text
         ;   Label: core_netgame.cpp_CNetGame_init_FUN_0052c520
     PUSH EDI                            ; 0052c521
     PUSH 0x5eb66f                       ; 0052c522 | = "netlog.txt"
-    CALL crt_unknown.c_FUN_005c25c0     ; 0052c527
-        ;   XREF to: 005c25c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005c25c0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005c25c0 ; 0052c527
+        ;   XREF to: 005c25c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005c25c0(char * filename)
     MOV EDX,0x1                         ; 0052c52c
     ADD ESP,0x4                         ; 0052c531
-    MOV dword ptr [0x01d51da0],EDX      ; 0052c534 | DAT_01d51da0
+    MOV dword ptr [0x01d51da0],EDX      ; 0052c534 | g_UINT_01d51da0
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052c53a
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EDX,EAX                         ; 0052c53f
     MOV ESI,0x12                        ; 0052c541
     SAR EDX,0x1f                        ; 0052c546
     IDIV ESI                            ; 0052c549
-    MOV [0x01d51d9c],EAX                ; 0052c54b | DAT_01d51d9c
-    CALL support_trisock.cpp_FUN_0059eeb0 ; 0052c550
-        ;   XREF to: 0059eeb0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_0059eeb0()
+    MOV [0x01d51d9c],EAX                ; 0052c54b | g_LastPingTime
+    CALL support_trisock.cpp_startupWinsock_FUN_0059eeb0 ; 0052c550
+        ;   XREF to: 0059eeb0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_startupWinsock_FUN_0059eeb0()
     PUSH 0x5eb67a                       ; 0052c555 | = "USERNAME"
     CALL crt_env.c_getenv_FUN_005c3050  ; 0052c55a
         ;   XREF to: 005c3050 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_005c3050(char * name)
@@ -87,8 +87,8 @@ section .text
     PUSH ECX                            ; 0052c594
     MOV ESI,dword ptr [ESP + 0x10]      ; 0052c595
     PUSH ESI                            ; 0052c599
-    MOV dword ptr [0x01d51db4],ECX      ; 0052c59a | DAT_01d51db4
-    MOV dword ptr [0x01d6dfb8],ECX      ; 0052c5a0 | DAT_01d6dfb8
+    MOV dword ptr [0x01d51db4],ECX      ; 0052c59a | g_ChatHistoryCount
+    MOV dword ptr [0x01d6dfb8],ECX      ; 0052c5a0 | g_ChatOutCount
     CALL core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0 ; 0052c5a6
         ;   XREF to: 0052cab0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 0052c5ab

@@ -82,7 +82,7 @@ int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0(CDemo
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(CDemonSet *this_ptr,int camera_index,float hold_time);
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00513610(CDemonSet *this_ptr,char *filename);
-void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet *this_ptr,char *param_2);
+void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet *this_ptr,char *filename);
 void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00513720(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0(CDemonSet *this_ptr,_FILE *file_handle);

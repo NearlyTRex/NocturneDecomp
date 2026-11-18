@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_0054dac0(CVampireBoss *this_ptr)
 
 {
@@ -65,7 +63,7 @@ LAB_0054db50:
     core_morph_cpp_CMorph_render_FUN_004e0820(this_ptr_00,this_ptr->morph_t);
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0((CCharacter *)this_ptr);
-  if (_DAT_01cd4318 != 0) {
+  if (g_RenderMotionDebug != 0) {
     iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                       (g_CDemonRenderer_PTR_005ae704);
     if (iVar2 == 0) {

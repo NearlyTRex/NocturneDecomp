@@ -7,7 +7,7 @@
 ; CGargoyle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005e3993+1
+;   TerminatedCString s_speed_005e3994
 ;   TerminatedCString s_modelName_005e399a
 ;   TerminatedCString s_motion_state_005e39a4
 ;   TerminatedCString s_stoneRed_005e39b1
@@ -36,7 +36,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004a0520 ; 004dd2d7
         ;   XREF to: 004a0520 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004a0520(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004dd2dc
-    PUSH 0x5e3994                       ; 004dd2df | s_speed_005e3993+1
+    PUSH 0x5e3994                       ; 004dd2df | = "speed"
     LEA ESI,[EBX + 0xc1d0]              ; 004dd2e4
     PUSH ESI                            ; 004dd2ea
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004dd2eb

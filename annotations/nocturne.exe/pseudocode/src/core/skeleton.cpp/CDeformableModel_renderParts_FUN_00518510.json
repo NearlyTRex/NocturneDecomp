@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 330,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 245,
-    "suspect_count": 7,
+    "pseudocode_lines": 244,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 902
+    "total_lines": 901
   },
   "cross_references": [
     {
@@ -106,62 +105,62 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01cc5118",
-      "name": "DAT_01cc5118",
-      "type": "undefined4",
+      "name": "g_INT_01cc5118",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc511c",
-      "name": "DAT_01cc511c",
-      "type": "undefined4",
+      "name": "g_INT_01cc511c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5120",
-      "name": "DAT_01cc5120",
-      "type": "undefined4",
+      "name": "g_INT_01cc5120",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5124",
-      "name": "DAT_01cc5124",
-      "type": "undefined4",
+      "name": "g_INT_01cc5124",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5128",
-      "name": "DAT_01cc5128",
-      "type": "undefined4",
+      "name": "g_INT_01cc5128",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc512c",
-      "name": "DAT_01cc512c",
-      "type": "undefined4",
+      "name": "g_INT_01cc512c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5130",
-      "name": "DAT_01cc5130",
-      "type": "undefined4",
+      "name": "g_INT_01cc5130",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5134",
-      "name": "DAT_01cc5134",
-      "type": "undefined4",
+      "name": "g_INT_01cc5134",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5138",
-      "name": "DAT_01cc5138",
-      "type": "undefined4",
+      "name": "g_INT_01cc5138",
+      "type": "int",
       "value": null
     },
     {
@@ -712,16 +711,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 184,
       "match": "(SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2",
       "severity": "moderate",
       "text": "(SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2));",
@@ -729,7 +720,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 223,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
       "text": "(fVar2 = *(float *)((int)this_ptr->index_data_ptr[lod_index] + (int)local_4c),",
@@ -737,7 +728,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 227,
       "match": "(SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2",
       "severity": "moderate",
       "text": "(SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2));",
@@ -745,7 +736,7 @@
     },
     {
       "description": "Raw hex address 0x518c50 assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 140,
+      "line": 138,
       "match": "0x518c50",
       "severity": "moderate",
       "text": "iVar7 = 0x518c50;",
@@ -753,7 +744,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 219,
+      "line": 217,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
@@ -761,7 +752,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 174,
+      "line": 172,
       "match": "(int *)(local_ac + 0x90)",
       "severity": "moderate",
       "text": "fVar2 = *(float *)(*(int *)(local_ac + 0x90) + local_40 * 4);",

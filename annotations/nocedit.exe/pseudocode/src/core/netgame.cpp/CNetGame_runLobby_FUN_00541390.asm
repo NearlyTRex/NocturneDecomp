@@ -128,7 +128,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00541451
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00541456
-    MOV ESI,dword ptr [0x02f7c8c4]      ; 00541459 | INT_02f7c8c4
+    MOV ESI,dword ptr [0x02f7c8c4]      ; 00541459 | g_NetNextPlayerId
     PUSH ESI                            ; 0054145f
     PUSH 0x63d9b9                       ; 00541460 | = "MyGameSettigsId: %d"
     LEA EAX,[ESP + 0x10]                ; 00541465
@@ -516,7 +516,7 @@ section .text
     IMUL EAX,dword ptr [EAX + 0x114],0x78 ; 00541881
     MOV EDX,dword ptr [EBP + 0x14]      ; 00541888
     ADD EDX,EAX                         ; 0054188b
-    MOV EAX,[0x02f7c8c4]                ; 0054188d | INT_02f7c8c4
+    MOV EAX,[0x02f7c8c4]                ; 0054188d | g_NetNextPlayerId
     MOV dword ptr [EDX + 0x54],EAX      ; 00541892
     MOV EDX,dword ptr [EBP + 0x14]      ; 00541895
     XOR ESI,ESI                         ; 00541898
@@ -530,7 +530,7 @@ section .text
         ;   Label: LAB_005418a9
     JZ 0x00541b28                       ; 005418ad
         ;   XREF to: 00541b28 (CONDITIONAL_JUMP)  ; LAB_00541b28
-    MOV EDX,dword ptr [0x02f7c8c4]      ; 005418b3 | INT_02f7c8c4
+    MOV EDX,dword ptr [0x02f7c8c4]      ; 005418b3 | g_NetNextPlayerId
         ;   Label: LAB_005418b3
     CMP EDX,dword ptr [EBX + 0x54]      ; 005418b9
     JZ 0x00541920                       ; 005418bc
@@ -666,7 +666,7 @@ section .text
     CMP dword ptr [EAX],0x2             ; 00541a0d
     JNZ 0x00541a8d                      ; 00541a10
         ;   XREF to: 00541a8d (CONDITIONAL_JUMP)  ; LAB_00541a8d
-    CMP dword ptr [0x00680a04],0x0      ; 00541a16 | INT_00680a04
+    CMP dword ptr [0x00680a04],0x0      ; 00541a16 | g_NetLobbyStateChanged
     JZ 0x00541a8d                       ; 00541a1d
         ;   XREF to: 00541a8d (CONDITIONAL_JUMP)  ; LAB_00541a8d
     IMUL EAX,dword ptr [EAX + 0x114],0x78 ; 00541a1f
@@ -853,7 +853,7 @@ section .text
     ADD EDI,EAX                         ; 00541bfc
     MOV dword ptr [0x02f7c8b8],EDI      ; 00541bfe | g_CurrentGameTime
     LEA EAX,[EDI + 0xffe20000]          ; 00541c04
-    MOV [0x02f7c8c8],EAX                ; 00541c0a | UINT_02f7c8c8
+    MOV [0x02f7c8c8],EAX                ; 00541c0a | g_NetLastSimFrameAckTime
     MOV EAX,0x1                         ; 00541c0f
     MOV ESP,EBP                         ; 00541c14
     POP EBP                             ; 00541c16

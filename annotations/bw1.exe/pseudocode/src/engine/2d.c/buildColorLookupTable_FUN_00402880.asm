@@ -10,15 +10,15 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029ec
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d208c
+;   double g_LuminanceScaleFactor = 0.577350270000000
 ;   undefined4 DAT_00713638
-;   undefined4 DAT_01c45ad0
-;   undefined4 DAT_01c4e9f8
-;   undefined4 DAT_01c4e9f9
-;   undefined4 DAT_01c4e9fa
+;   uchar[32768] g_ColorCubeLookup
+;   uchar[768] g_UCHAR_ARRAY_01c4e9f8
+;   undefined4 g_UCHAR_ARRAY_01c4e9f8+1
+;   undefined4 g_UCHAR_ARRAY_01c4e9f8+2
 ;
 ; Called Functions:
-;   engine_2d.c_FUN_00401450
+;   engine_2d.c_findBestPaletteMatch_FUN_00401450
 ;
 ; *****************************************************************************
 
@@ -32,21 +32,21 @@ section .text
     SUB ESP,0x10                        ; 00402884
     XOR EBX,EBX                         ; 00402887
     XOR ESI,ESI                         ; 00402889
-    FLD double ptr [0x005d208c]         ; 0040288b | DAT_005d208c
+    FLD double ptr [0x005d208c]         ; 0040288b | g_LuminanceScaleFactor
     XOR EAX,EAX                         ; 00402891
         ;   Label: LAB_00402891
-    MOV AL,byte ptr [EBX + 0x1c4e9f8]   ; 00402893 | DAT_01c4e9f8
+    MOV AL,byte ptr [EBX + 0x1c4e9f8]   ; 00402893 | g_UCHAR_ARRAY_01c4e9f8
     MOV dword ptr [ESP + 0xc],EAX       ; 00402899
     XOR EAX,EAX                         ; 0040289d
     FILD word ptr [ESP + 0xc]           ; 0040289f
-    MOV AL,byte ptr [EBX + 0x1c4e9f9]   ; 004028a3 | DAT_01c4e9f9
+    MOV AL,byte ptr [EBX + 0x1c4e9f9]   ; 004028a3 | g_UCHAR_ARRAY_01c4e9f8+1
     FLD ST0                             ; 004028a9
     MOV dword ptr [ESP + 0xc],EAX       ; 004028ab
     FMULP                               ; 004028af
     FILD word ptr [ESP + 0xc]           ; 004028b1
     XOR EAX,EAX                         ; 004028b5
     FLD ST0                             ; 004028b7
-    MOV AL,byte ptr [EBX + 0x1c4e9fa]   ; 004028b9 | DAT_01c4e9fa
+    MOV AL,byte ptr [EBX + 0x1c4e9fa]   ; 004028b9 | g_UCHAR_ARRAY_01c4e9f8+2
     FMULP                               ; 004028bf
     MOV dword ptr [ESP + 0xc],EAX       ; 004028c1
     FADDP                               ; 004028c5
@@ -76,10 +76,10 @@ section .text
     PUSH EBP                            ; 004028fd
     INC ESI                             ; 004028fe
     ADD EBX,0x8                         ; 004028ff
-    CALL engine_2d.c_FUN_00401450       ; 00402902
-        ;   XREF to: 00401450 (UNCONDITIONAL_CALL)  ; int engine_2d.c_FUN_00401450(int red, int green, int blue, int start_index, ...)
+    CALL engine_2d.c_findBestPaletteMatch_FUN_00401450 ; 00402902
+        ;   XREF to: 00401450 (UNCONDITIONAL_CALL)  ; int engine_2d.c_findBestPaletteMatch_FUN_00401450(int red, int green, int blue, int start_index, ...)
     ADD ESP,0x14                        ; 00402907
-    MOV byte ptr [ESI + -0x1],AL        ; 0040290a | DAT_01c45ad0
+    MOV byte ptr [ESI + -0x1],AL        ; 0040290a | g_ColorCubeLookup
     CMP EBX,0x100                       ; 0040290d
     JL 0x004028f4                       ; 00402913
         ;   XREF to: 004028f4 (CONDITIONAL_JUMP)  ; LAB_004028f4
@@ -92,7 +92,7 @@ section .text
     JL 0x004028f0                       ; 00402929
         ;   XREF to: 004028f0 (CONDITIONAL_JUMP)  ; LAB_004028f0
     XOR AH,AH                           ; 0040292b
-    MOV byte ptr [0x01c45ad0],AH        ; 0040292d | DAT_01c45ad0
+    MOV byte ptr [0x01c45ad0],AH        ; 0040292d | g_ColorCubeLookup
     ADD ESP,0x10                        ; 00402933
     POP EBP                             ; 00402936
     POP EDI                             ; 00402937

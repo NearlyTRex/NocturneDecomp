@@ -10,13 +10,13 @@
 ;   core_mimic.cpp_factoryFuncMimic_FUN_004f02e0 at 004f02f3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f9e7c
-;   undefined4 DAT_005f9e80
+;   float g_FLOAT_005f9e7c = 50
+;   float g_FLOAT_005f9e80 = 100
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_ctor_FUN_005adda0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
 ;   core_morph.cpp_CMorph_ctor_FUN_005b6e60
-;   core_necklace.cpp_FUN_005adda0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     ADD ESP,0x4                         ; 004f031c
     ADD EAX,0x10bc0                     ; 004f031f
     PUSH EAX                            ; 004f0324
-    CALL core_necklace.cpp_FUN_005adda0 ; 004f0325
-        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005adda0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_005adda0 ; 004f0325
+        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_005adda0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 004f032a
     ADD EAX,0x3ab60                     ; 004f032d
     PUSH EAX                            ; 004f0332
@@ -44,9 +44,9 @@ section .text
     MOV dword ptr [EDX + 0x3430],0x3f000000 ; 004f0348
     MOV ESI,0x5dd748                    ; 004f0352
     MOV dword ptr [EDX + 0x3434],0x3f800000 ; 004f0357
-    FLD float ptr [0x005f9e7c]          ; 004f0361 | DAT_005f9e7c
+    FLD float ptr [0x005f9e7c]          ; 004f0361 | g_FLOAT_005f9e7c
     MOV byte ptr [EDX + 0x10af8],0x0    ; 004f0367
-    FLD float ptr [0x005f9e80]          ; 004f036e | DAT_005f9e80
+    FLD float ptr [0x005f9e80]          ; 004f036e | g_FLOAT_005f9e80
     MOV byte ptr [EDX + 0x10b5c],0x0    ; 004f0374
     ADD ESP,0x4                         ; 004f037b
     FXCH                                ; 004f037e

@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   value
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_004a1d00 at 004a55b9
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a55b9
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_005558f0

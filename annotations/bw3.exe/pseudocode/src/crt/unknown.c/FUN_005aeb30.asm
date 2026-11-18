@@ -13,8 +13,8 @@
 ;   void* PTR_GetFileType_005b35a8 = 001b3ee4
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a8 = 005a7f44
-;   undefined4 DAT_00607b18
-;   undefined4 DAT_00607bdc
+;   void* g_IsSpecialDeviceFuncPtr = 00000000
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7f44
@@ -29,13 +29,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005aeb31
     PUSH EBX                            ; 005aeb35
     CALL dword ptr [0x006079a4]         ; 005aeb36 | PTR_crt_unknown.c_FUN_005a7f44_006079a4
-    MOV EDX,dword ptr [0x00607b18]      ; 005aeb3c | DAT_00607b18
+    MOV EDX,dword ptr [0x00607b18]      ; 005aeb3c | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 005aeb42
     TEST EDX,EDX                        ; 005aeb45
     JZ 0x005aeb68                       ; 005aeb47
         ;   XREF to: 005aeb68 (CONDITIONAL_JUMP)  ; LAB_005aeb68
     PUSH EBX                            ; 005aeb49
-    CALL dword ptr [0x00607b18]         ; 005aeb4a | DAT_00607b18
+    CALL dword ptr [0x00607b18]         ; 005aeb4a | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 005aeb50
     TEST EAX,EAX                        ; 005aeb53
     JZ 0x005aeb68                       ; 005aeb55
@@ -46,7 +46,7 @@ section .text
     ADD ESP,0x4                         ; 005aeb63
     POP EBX                             ; 005aeb66
     RET                                 ; 005aeb67
-    MOV EAX,[0x00607bdc]                ; 005aeb68 | DAT_00607bdc
+    MOV EAX,[0x00607bdc]                ; 005aeb68 | g_IOControlBlock
         ;   Label: LAB_005aeb68
     MOV EAX,dword ptr [EAX + EBX*0x4]   ; 005aeb6d
     PUSH EAX                            ; 005aeb70

@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 37,
+    "complexity_score": 12,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 43
   },
   "cross_references": [
     {
       "addr": "004d6420",
       "from_addr": "004d65c8",
-      "name": "core_game.cpp_FUN_004d6420",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004d6420",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,7 +41,7 @@
     {
       "addr": "005c03c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
     }
   ],
   "globals": [
@@ -55,8 +53,8 @@
     },
     {
       "addr": "005df684",
-      "name": "DAT_005df684",
-      "type": "undefined4",
+      "name": "s_s_1_005df684",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -66,7 +64,7 @@
       {
         "call_addr": "004d65c8",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6420",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004d6420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,22 +152,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005df684",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005df684);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01cb5820",
-      "severity": "mild",
-      "text": "} while (this_ptr_00 != (CCrater *)&DAT_01cb5820);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

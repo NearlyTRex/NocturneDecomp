@@ -10,7 +10,7 @@
 ;   core_lightsta.cpp_factoryFuncLightStaff_FUN_004e0f40 at 004e0f53
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e24ec
+;   float g_FLOAT_005e24ec = 8
 ;
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [EBX + 0x57c],0x0     ; 004e1000
     MOV dword ptr [EBX + 0x578],0x2     ; 004e100a
     MOV dword ptr [EBX + 0x5bc],0x3dcccccd ; 004e1014
-    FLD float ptr [0x005e24ec]          ; 004e101e | DAT_005e24ec
+    FLD float ptr [0x005e24ec]          ; 004e101e | g_FLOAT_005e24ec
     MOV dword ptr [EBX + 0x5c0],0x0     ; 004e1024
     ADD ESP,0x8                         ; 004e102e
     MOV dword ptr [EBX + 0x5c4],0x0     ; 004e1031

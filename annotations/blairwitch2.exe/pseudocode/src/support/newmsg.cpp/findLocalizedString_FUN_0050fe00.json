@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 45,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 20,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 89
   },
   "cross_references": [
@@ -160,22 +158,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 13,
-      "match": "*(char **)(iVar1 * 4 + 0x1d6325c",
-      "severity": "moderate",
-      "text": "iVar2 = _strcmp(key,*(char **)(iVar1 * 4 + 0x1d6325c));",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
-      "match": "*(char **)(iVar1 * 4 + 0x1d63a2c",
-      "severity": "moderate",
-      "text": "return *(char **)(iVar1 * 4 + 0x1d63a2c);",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 354,
-    "complexity_score": 230,
+    "complexity_score": 244,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 160,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 159,
+    "suspect_count": 7,
     "suspect_types": [
-      "undefined_data",
+      "raw_address_constant",
       "unknown_field",
-      "unknown_type",
-      "warning_overlapping_globals"
+      "unknown_type"
     ],
-    "total_lines": 514
+    "total_lines": 513
   },
   "cross_references": [
     {
@@ -136,14 +135,14 @@
     },
     {
       "addr": "0059c030",
-      "name": "DAT_0059c030",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059c030",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ae458",
-      "name": "DAT_005ae458",
-      "type": "undefined4",
+      "name": "g_LightGlow",
+      "type": "SLightGlowTable",
       "value": null
     },
     {
@@ -154,8 +153,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -587,32 +586,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/unresolved type",
-      "line": 16,
+      "line": 14,
       "match": "unkbyte10",
       "severity": "mild",
       "text": "unkbyte10 Var10;",
       "type": "unknown_type"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005ae458",
-      "severity": "mild",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ae458);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 67,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar6 = (float10)iVar5 * (float10)5.1392085562440189e-315._0_4_ * (float10)3.1415926535000001 *",
@@ -620,11 +603,43 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 71,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar11 = (float10)iVar5 * (float10)5.1392085562440189e-315._0_4_ * (float10)3.1415926535000001 *",
       "type": "unknown_field"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 126,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar3->vertex_buffer_ptr->u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 127,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar3->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 133,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar3->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 144,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar3->vertex_buffer_ptr[3].u = 0xf80000;",
+      "type": "raw_address_constant"
     }
   ]
 }

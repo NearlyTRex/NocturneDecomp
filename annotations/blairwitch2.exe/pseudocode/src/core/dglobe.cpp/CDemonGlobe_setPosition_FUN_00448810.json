@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 121,
+    "complexity_score": 33,
     "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 8,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 61
+    "total_lines": 53
   },
   "cross_references": [
     {
@@ -50,7 +48,7 @@
     {
       "addr": "004a0590",
       "from_addr": "004a05cb",
-      "name": "core_flame.cpp_FUN_004a0590",
+      "name": "core_flame.cpp_CFlame_updateGlobe_FUN_004a0590",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,7 +60,7 @@
     {
       "addr": "005ad940",
       "from_addr": "005ad99a",
-      "name": "core_mine.cpp_FUN_005ad940",
+      "name": "core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -106,9 +104,9 @@
   "globals": [
     {
       "addr": "005ceffa",
-      "name": "DAT_005ceffa",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ceffa",
+      "type": "double",
+      "value": "256"
     }
   ],
   "param_estimates": {
@@ -172,7 +170,7 @@
       {
         "call_addr": "004a05cb",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_004a0590",
+        "caller": "core_flame.cpp_CFlame_updateGlobe_FUN_004a0590",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -309,64 +307,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "int extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "int extraout_ECX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "*extraout_ECX = (int)ROUND(fVar3);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_ECX_00 + 4) = (int)ROUND(fVar3);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_ECX_01",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_ECX_01 + 8) = (int)ROUND(fVar2);",
-      "type": "extra_output"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 15,
+      "line": 9,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->position).x = position->x;",

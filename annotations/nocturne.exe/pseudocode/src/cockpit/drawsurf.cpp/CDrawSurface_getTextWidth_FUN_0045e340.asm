@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   text
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b4d718
+;   CBitFont* g_CurrentFont
 ;
 ; Called Functions:
 ;   engine_2d.c_getStringWidth_FUN_00401ed0
@@ -20,7 +20,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 0045e340
         ;   Label: cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_0045e340
-    MOV EDX,dword ptr [0x01b4d718]      ; 0045e344 | DAT_01b4d718
+    MOV EDX,dword ptr [0x01b4d718]      ; 0045e344 | g_CurrentFont
     TEST EDX,EDX                        ; 0045e34a
     JZ 0x0045e359                       ; 0045e34c
         ;   XREF to: 0045e359 (CONDITIONAL_JUMP)  ; LAB_0045e359

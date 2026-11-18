@@ -10,7 +10,7 @@ void __cdecl core_glass_cpp_CGlass_archive_FUN_004cad80(CGlass *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
-  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->glass_size,"?glassSize" + 1);
+  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->glass_size,"glassSize");
   core_actor_cpp_archiveString_FUN_0040b680
             ((this_ptr->glass_texture).texture_name,"glassTexture");
   if (1 < g_CGlassClassVersion) {

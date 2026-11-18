@@ -13,8 +13,8 @@
 ;   undefined4 g_BloodParticles[0].base.lifetime_remaining
 ;   undefined4 g_BloodParticles[1].base.lifetime_remaining
 ;   undefined4 g_BloodParticles[1].base.vtable
-;   undefined4 DAT_01d276b8
-;   undefined4 DAT_01d4a940
+;   int g_BloodSplatCount
+;   int g_BloodPoolCount
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodPool_processAge_FUN_004cdfc0
@@ -47,7 +47,7 @@ section .text
     CMP EBX,ESI                         ; 004ce807
     JNZ 0x004ce7f4                      ; 004ce809
         ;   XREF to: 004ce7f4 (CONDITIONAL_JUMP)  ; LAB_004ce7f4
-    MOV EDX,dword ptr [0x01d276b8]      ; 004ce80b | DAT_01d276b8
+    MOV EDX,dword ptr [0x01d276b8]      ; 004ce80b | g_BloodSplatCount
     XOR EBX,ESI                         ; 004ce811
     TEST EDX,EDX                        ; 004ce813
     JLE 0x004ce840                      ; 004ce815
@@ -58,7 +58,7 @@ section .text
     CALL core_gore.cpp_CBloodSplat_processAge_FUN_004cdb20 ; 004ce81d
         ;   XREF to: 004cdb20 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_processAge_FUN_004cdb20(CBloodSplat * this_ptr)
     INC EBX                             ; 004ce822
-    MOV ECX,dword ptr [0x01d276b8]      ; 004ce823 | DAT_01d276b8
+    MOV ECX,dword ptr [0x01d276b8]      ; 004ce823 | g_BloodSplatCount
     ADD ESP,0x4                         ; 004ce829
     ADD ESI,0x48                        ; 004ce82c
     CMP EBX,ECX                         ; 004ce82f
@@ -72,7 +72,7 @@ section .text
     CALL core_gore.cpp_CBloodPool_setupRenderState_FUN_004cdc90 ; 004ce845
         ;   XREF to: 004cdc90 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodPool_setupRenderState_FUN_004cdc90(CBloodPool * this_ptr)
     XOR ESI,ESI                         ; 004ce84a
-    MOV EBX,dword ptr [0x01d4a940]      ; 004ce84c | DAT_01d4a940
+    MOV EBX,dword ptr [0x01d4a940]      ; 004ce84c | g_BloodPoolCount
     ADD ESP,0x4                         ; 004ce852
     TEST EBX,EBX                        ; 004ce855
     JLE 0x004ce880                      ; 004ce857
@@ -83,7 +83,7 @@ section .text
     CALL core_gore.cpp_CBloodPool_processAge_FUN_004cdfc0 ; 004ce85f
         ;   XREF to: 004cdfc0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_processAge_FUN_004cdfc0(CBloodPool * this_ptr)
     INC ESI                             ; 004ce864
-    MOV EDI,dword ptr [0x01d4a940]      ; 004ce865 | DAT_01d4a940
+    MOV EDI,dword ptr [0x01d4a940]      ; 004ce865 | g_BloodPoolCount
     ADD ESP,0x4                         ; 004ce86b
     ADD EBX,0x2c                        ; 004ce86e
     CMP ESI,EDI                         ; 004ce871

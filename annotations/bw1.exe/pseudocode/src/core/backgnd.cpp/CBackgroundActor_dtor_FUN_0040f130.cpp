@@ -9,18 +9,18 @@
 CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_dtor_FUN_0040f130(CBackgroundActor *this_ptr,uint flags)
 
 {
-  CBackgroundActor *pCVar1;
-  void *ptr;
+  CBackgroundActor *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CBackgroundActorTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CBackgroundActorTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CBackgroundActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
+  ptr = (CBackgroundActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005c0344(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

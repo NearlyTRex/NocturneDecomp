@@ -1,0 +1,268 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 193,
+    "complexity_score": 65,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 12,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 258
+  },
+  "cross_references": [
+    {
+      "addr": "004fae10",
+      "from_addr": "004fb0d8",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8dc0",
+      "from_addr": "004f8e5c",
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fa540",
+    "address_range": [
+      [
+        "004fa540",
+        "004fa6b8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540",
+    "signature": "int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004fa540(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c550",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c550"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e6818",
+      "name": "s_CGun_005e6818",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e681d",
+      "name": "s_CShotgun_005e681d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6826",
+      "name": "s_CCrossbow_005e6826",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6830",
+      "name": "s_CTommyGun_005e6830",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e683a",
+      "name": "s_CElephantGun_005e683a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6847",
+      "name": "s_CRifle_005e6847",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e684e",
+      "name": "s_CFlameThrower_005e684e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e685c",
+      "name": "s_CLightGun_005e685c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6866",
+      "name": "s_CLightpis_005e6866",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6870",
+      "name": "s_CMelee_005e6870",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6877",
+      "name": "s_CDynamite_005e6877",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6881",
+      "name": "s_CFlashlight_005e6881",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004f8e5c",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004fb0d8",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004fb102",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004fc0be",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004fc0d7",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.090277777777778,
+    "instruction_count": 144,
+    "opcode_distribution": {
+      "CALL": 12,
+      "CBRANCH": 18,
+      "COPY": 130,
+      "INT_ADD": 56,
+      "INT_AND": 75,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 62,
+      "INT_LESS": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 31,
+      "INT_SUB": 43,
+      "INT_XOR": 1,
+      "LOAD": 44,
+      "POPCOUNT": 31,
+      "RETURN": 14,
+      "STORE": 38
+    },
+    "pcode_op_count": 589
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dd0a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9231
+    },
+    "bw3.exe": {
+      "addr": "004dd310",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0519
+    },
+    "nocedit.exe": {
+      "addr": "004ffe70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8837
+    },
+    "nocturne.exe": {
+      "addr": "004c1bf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8837
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "weapon_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "weapon_category",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

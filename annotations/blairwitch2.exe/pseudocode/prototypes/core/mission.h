@@ -9,9 +9,9 @@
 // Address: 004fb350
 void __cdecl staticInit(void);
 
-// Original: core_mission.cpp_FUN_004fb380
+// Original: core_mission.cpp_CDemonMission_reset_FUN_004fb380
 // Address: 004fb380
-void FUN_004fb380(int param_1);
+void __cdecl CDemonMission::reset(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_clearMission_FUN_004fb440
 // Address: 004fb440
@@ -25,9 +25,9 @@ void __cdecl CDemonMission::clearMissionData(CDemonMission *this_ptr);
 // Address: 004fb490
 void __cdecl CDemonMission::load(CDemonMission *this_ptr,char *mission_filename,int load_flags);
 
-// Original: core_mission.cpp_FUN_004fb530
+// Original: core_mission.cpp_CDemonMission_save_FUN_004fb530
 // Address: 004fb530
-void FUN_004fb530(CDemonMission *param_1,char *param_2);
+void __cdecl CDemonMission::save(CDemonMission *this_ptr,char *filename);
 
 // Original: core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590
 // Address: 004fb590
@@ -37,9 +37,9 @@ void __cdecl CDemonMission::readMissionFile(CDemonMission *this_ptr,_FILE *file_
 // Address: 004fbc00
 CDemonActor * __cdecl CDemonMission::getNextLoadedInventoryActor(CDemonMission *this_ptr,char *actor_name);
 
-// Original: core_mission.cpp_FUN_004fbc90
+// Original: core_mission.cpp_CDemonMission_loadScript_FUN_004fbc90
 // Address: 004fbc90
-void FUN_004fbc90(int param_1);
+int __cdecl CDemonMission::loadScript(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0
 // Address: 004fbce0
@@ -79,7 +79,7 @@ void __cdecl CDemonMission::removeActor(CDemonMission *this_ptr,CDemonActor *act
 
 // Original: core_mission.cpp_CDemonMission_changeSetName_FUN_004fc5a0
 // Address: 004fc5a0
-void __cdecl CDemonMission::changeSetName(CDemonMission *this_ptr,int param_2,char *param_3);
+void __cdecl CDemonMission::changeSetName(CDemonMission *this_ptr,int set_index,char *set_name);
 
 // Original: core_mission.cpp_CDemonMission_removeAllActors_FUN_004fc640
 // Address: 004fc640
@@ -99,11 +99,11 @@ void __cdecl CDemonMission::setTeleportTarget(CDemonMission *this_ptr,CLocation 
 
 // Original: core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
 // Address: 004fc7b0
-void __cdecl CDemonMission::markActorToDelete(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
+void __cdecl CDemonMission::markActorToDelete(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 
-// Original: core_mission.cpp_FUN_004fc820
+// Original: core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820
 // Address: 004fc820
-void FUN_004fc820(int *param_1);
+void __cdecl CDemonMission::buildActiveSetActorList(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_process_FUN_004fc940
 // Address: 004fc940
@@ -129,9 +129,9 @@ void __cdecl CDemonMission::generateUniqueActorName(CDemonMission *this_ptr,char
 // Address: 004fcda0
 void __cdecl CDemonMission::generateActorName(CDemonMission *this_ptr,CDemonActor *actor);
 
-// Original: core_mission.cpp_FUN_004fce00
+// Original: core_mission.cpp_CDemonMission_startMission_FUN_004fce00
 // Address: 004fce00
-int __cdecl FUN_004fce00(CDemonMission *this_ptr);
+int __cdecl CDemonMission::startMission(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50
 // Address: 004fcf50
@@ -145,13 +145,13 @@ int __cdecl CDemonMission::createOneHero(CDemonMission *this_ptr,int index,int h
 // Address: 004fd0e0
 int __cdecl CDemonMission::createHeros(CDemonMission *this_ptr,CCharacter *existing_hero);
 
-// Original: core_mission.cpp_FUN_004fd280
+// Original: core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280
 // Address: 004fd280
-void __cdecl FUN_004fd280(CDemonMission *this_ptr);
+void __cdecl CDemonMission::ensureHeroPlaceholder(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004fd450
+// Original: core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_004fd450
 // Address: 004fd450
-undefined4 FUN_004fd450(void);
+int __cdecl CDemonMission::countDamageableEnemies(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_setVersionControlDirectory_FUN_004fd460
 // Address: 004fd460

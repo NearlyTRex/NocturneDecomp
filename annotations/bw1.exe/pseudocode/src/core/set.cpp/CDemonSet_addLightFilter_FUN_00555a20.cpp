@@ -25,7 +25,7 @@ void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00555a20(CDemonSet *this_
       if (pCVar1->light_type == 0) {
         iVar2 = _stricmp(pCVar1->name,light_name);
         if (iVar2 == 0) {
-          *out_master_light = *(CDemonLight **)(&DAT_01fe4cb8 + iVar5 * 4);
+          *out_master_light = g_CDemonLight_PTR_ARRAY_01fe4cb8[iVar5];
           return;
         }
         iVar5 = iVar5 + 1;

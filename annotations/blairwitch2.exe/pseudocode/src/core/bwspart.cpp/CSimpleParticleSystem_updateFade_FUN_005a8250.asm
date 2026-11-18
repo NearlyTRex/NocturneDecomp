@@ -7,7 +7,7 @@
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_bwspart.cpp_FUN_005a86a0 at 005a89c0
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a89c0
 ;
 ; *****************************************************************************
 

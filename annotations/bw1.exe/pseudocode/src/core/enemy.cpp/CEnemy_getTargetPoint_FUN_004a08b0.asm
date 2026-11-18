@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dcb62
-;   undefined4 DAT_005dcb6a
+;   float g_FLOAT_005dcb62 = 0.5
+;   double g_DOUBLE_005dcb6a = 0.166666666666667
 ;
 ; *****************************************************************************
 
@@ -35,7 +35,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 004a08de
     FLD float ptr [ESP + 0x28]          ; 004a08e0
     FSUB float ptr [ESP + 0x1c]         ; 004a08e4
-    FMUL double ptr [0x005dcb6a]        ; 004a08e8 | DAT_005dcb6a
+    FMUL double ptr [0x005dcb6a]        ; 004a08e8 | g_DOUBLE_005dcb6a
     FLD float ptr [ESP + 0x18]          ; 004a08ee
     FLD float ptr [ESP + 0x1c]          ; 004a08f2
     FLD float ptr [ESP + 0x20]          ; 004a08f6
@@ -55,7 +55,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004a0924
     MOVSD ES:EDI,ESI                    ; 004a0925
     MOVSD ES:EDI,ESI                    ; 004a0926
-    FLD float ptr [0x005dcb62]          ; 004a0927 | DAT_005dcb62
+    FLD float ptr [0x005dcb62]          ; 004a0927 | g_FLOAT_005dcb62
     FLD float ptr [ESP + 0x48]          ; 004a092d
     FMUL ST1                            ; 004a0931
     FLD float ptr [ESP + 0x4c]          ; 004a0933

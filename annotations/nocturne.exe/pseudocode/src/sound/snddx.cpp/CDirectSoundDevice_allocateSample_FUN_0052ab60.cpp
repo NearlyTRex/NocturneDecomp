@@ -6,74 +6,62 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count)
 
 {
-  int *piVar1;
+  IDirectSoundBuffer *pIVar1;
   int iVar2;
-  int iVar3;
   uint error_code;
-  char *pcVar4;
-  int iVar5;
-  int *piStack_1d8;
-  uint local_38;
-  uint local_34;
-  int local_30;
-  ushort *local_28;
-  ushort local_24;
-  short local_22;
-  int local_20;
-  int local_1c;
-  ushort local_18;
-  ushort local_16;
+  char *pcVar3;
+  int iVar4;
+  char acStack_1c8 [400];
+  DSBUFFERDESC local_38;
+  tWAVEFORMATEX local_24;
   
-  if (_DAT_02dc9214 != (int *)0x0) {
-    iVar5 = 1;
+  if (g_DirectSound != (IDirectSound *)0x0) {
+    iVar4 = 1;
     iVar2 = 4;
-    iVar3 = _DAT_02dc9248;
-    while (iVar3 != 0) {
-      iVar5 = iVar5 + 1;
+    pIVar1 = g_DirectSoundSampleBuffers[1];
+    while (pIVar1 != (IDirectSoundBuffer *)0x0) {
+      iVar4 = iVar4 + 1;
       if (99 < iVar2 + 4) break;
-      iVar3 = *(int *)(&DAT_02dc9248 + iVar2);
+      pIVar1 = *(IDirectSoundBuffer **)((int)g_DirectSoundSampleBuffers + iVar2 + 4);
       iVar2 = iVar2 + 4;
     }
-    if (iVar5 < 0x19) {
-      piStack_1d8 = (int *)0x52abc3;
+    if (iVar4 < 0x19) {
       memset(&local_24,0,0x12);
-      local_24 = 1;
-      local_22 = (short)channel_count;
-      local_20 = sample_rate;
-      iVar3 = (int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -
+      local_24.wFormatTag = 1;
+      local_24.nChannels = (WORD)channel_count;
+      local_24.nSamplesPerSec = sample_rate;
+      iVar2 = (int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -
                    (uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3;
-      local_18 = local_22 * (short)iVar3;
-      local_1c = sample_rate * (uint)local_18;
-      local_16 = (ushort)bits_per_sample;
-      piStack_1d8 = (int *)0x52ac45;
+      local_24.nBlockAlign = local_24.nChannels * (short)iVar2;
+      local_24.nAvgBytesPerSec = sample_rate * (uint)local_24.nBlockAlign;
+      local_24.wBitsPerSample = (WORD)bits_per_sample;
       memset(&local_38,0,0x14);
-      local_28 = &local_24;
-      local_30 = channel_count * iVar3 * sample_count;
-      local_38 = 0x14;
-      local_34 = 0xb0;
-      piStack_1d8 = _DAT_02dc9214;
-      error_code = (**(code **)(*_DAT_02dc9214 + 0xc))();
+      local_38.lpwfxFormat = &local_24;
+      local_38.dwBufferBytes = channel_count * iVar2 * sample_count;
+      local_38.dwSize = 0x14;
+      local_38.dwFlags = 0xb0;
+      error_code = (*g_DirectSound->vtable->CreateSoundBuffer)
+                             (g_DirectSound,&local_38,g_DirectSoundSampleBuffers + iVar4,
+                              (LPUNKNOWN)0x0);
       if (error_code == 0) {
-        if (*(int *)(&DAT_02dc9244 + iVar5 * 4) != 0) {
-          return iVar5;
+        if (g_DirectSoundSampleBuffers[iVar4] != (IDirectSoundBuffer *)0x0) {
+          return iVar4;
         }
       }
       else {
-        pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
-        _sprintf((char *)&piStack_1d8,"DirectSux: Unable to %s.  (%s)",
-                   "Create secondary buffer",pcVar4);
-        sound_sndmain_cpp_logSoundError_FUN_00529980((char *)&piStack_1d8);
+        pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
+        _sprintf(acStack_1c8,"DirectSux: Unable to %s.  (%s)","Create secondary buffer"
+                   ,pcVar3);
+        sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_1c8);
       }
       sound_sndmain_cpp_logSoundError_FUN_00529980("DirectSoundDevice::allocateSample - access failed\n");
-      piVar1 = *(int **)(&DAT_02dc9244 + iVar5 * 4);
-      if (piVar1 != (int *)0x0) {
-        (**(code **)(*piVar1 + 8))(piVar1);
-        *(int *)(&DAT_02dc9244 + iVar5 * 4) = 0;
+      pIVar1 = g_DirectSoundSampleBuffers[iVar4];
+      if (pIVar1 != (IDirectSoundBuffer *)0x0) {
+        (*pIVar1->vtable->Release)((IUnknown *)pIVar1);
+        g_DirectSoundSampleBuffers[iVar4] = (IDirectSoundBuffer *)0x0;
         return 0;
       }
     }

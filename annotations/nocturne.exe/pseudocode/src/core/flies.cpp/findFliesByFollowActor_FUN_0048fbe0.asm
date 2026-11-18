@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CFliesActorType_01c70718.name_hash
+;   undefined4 g_CFliesClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -46,7 +46,7 @@ section .text
     ADD ESI,0x4                         ; 0048fc01
     JMP 0x0048fbec                      ; 0048fc04
         ;   XREF to: 0048fbec (UNCONDITIONAL_JUMP)  ; LAB_0048fbec
-    MOV ECX,dword ptr [0x01c70750]      ; 0048fc06 | g_CFliesActorType_01c70718.name_hash
+    MOV ECX,dword ptr [0x01c70750]      ; 0048fc06 | g_CFliesClassInfo.name_hash
         ;   Label: LAB_0048fc06
     PUSH ECX                            ; 0048fc0c
     MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0048fc0d | g_CDemonSetInstance.actors[0]

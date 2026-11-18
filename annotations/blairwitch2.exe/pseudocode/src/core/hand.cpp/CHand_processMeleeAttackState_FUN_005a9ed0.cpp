@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hand_cpp_CHand_processMeleeAttackState_FUN_005a9ed0(CHand *this_ptr,float delta_time)
 
@@ -16,8 +15,9 @@ void __cdecl core_hand_cpp_CHand_processMeleeAttackState_FUN_005a9ed0(CHand *thi
   CCharacter *pCVar1;
   float fVar2;
   CDemonActor *pCVar3;
-  float fVar4;
-  int iVar5;
+  SMotion *pSVar4;
+  float fVar5;
+  int iVar6;
   
   pCVar3 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
   if (pCVar3 == (CDemonActor *)0x0) {
@@ -27,35 +27,36 @@ void __cdecl core_hand_cpp_CHand_processMeleeAttackState_FUN_005a9ed0(CHand *thi
             ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
   pCVar1 = (this_ptr->base).base.victim;
   if ((pCVar1 != (CCharacter *)0x0) &&
-     (fVar4 = (this_ptr->base).base.base.base.location.position.x -
+     (fVar5 = (this_ptr->base).base.base.base.location.position.x -
               (pCVar1->base).location.position.x,
      fVar2 = (this_ptr->base).base.base.base.location.position.z -
-             (pCVar1->base).location.position.z, _DAT_0060088c < SQRT(fVar2 * fVar2 + fVar4 * fVar4)
-     )) {
-    core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Sleeping");
+             (pCVar1->base).location.position.z,
+     5.0f < SQRT(fVar2 * fVar2 + fVar5 * fVar5))) {
+    core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
+              (&(this_ptr->base).state_machine,"Sleeping");
     return;
   }
   if (this_ptr->attack_variant == 0) {
-    iVar5 = 3;
+    iVar6 = 3;
   }
   else {
     if (this_ptr->attack_variant != 1) goto LAB_005a9f63;
-    iVar5 = 4;
+    iVar6 = 4;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            (&(this_ptr->base).base.base.model.base,iVar5,1);
+            (&(this_ptr->base).base.base.model.base,iVar6,1);
 LAB_005a9f63:
   this_ptr_00 = &(this_ptr->base).base.base.model;
-  iVar5 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-  iVar5 = *(int *)(iVar5 + 0x24);
-  fVar4 = core_motion_cpp_FUN_00503e60(&this_ptr_00->base);
-  if ((iVar5 != 3) && (iVar5 != 4)) {
+  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+  iVar6 = pSVar4->state_index;
+  fVar5 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&this_ptr_00->base);
+  if ((iVar6 != 3) && (iVar6 != 4)) {
     return;
   }
-  if (fVar4 <= (float)_DAT_005f0a53) {
+  if (fVar5 <= (float)0.90000000000000002) {
     return;
   }
-  iVar5 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
-  this_ptr->attack_variant = iVar5;
+  iVar6 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
+  this_ptr->attack_variant = iVar6;
   return;
 }

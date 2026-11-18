@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_004314f0(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
@@ -39,7 +38,8 @@ int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_004314f0(CCharac
     iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).canBeAttracted)
                       (this_ptr,(CDemonActor *)&stack0xffffff90);
     if (iVar2 != 0) {
-      core_actor_cpp_FUN_00408b40(actor,target_local_point);
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+                (actor,target_local_point,(CVector3f *)auStack_40);
       afStack_54[2] = (float)auStack_40._0_4_;
       afStack_54[(uint)bVar3 * -2 + 3] = *(float *)(auStack_40 + (uint)bVar3 * -8 + 4);
       afStack_54[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
@@ -52,7 +52,7 @@ int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_004314f0(CCharac
       afStack_38[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 6] =
            afStack_38[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 3];
       fStack_1c = SQRT(fStack_20 * fStack_20 + fStack_28 * fStack_28);
-      fStack_18 = g_CGamePtr->delta_time_float * (float)_DAT_005d5a67;
+      fStack_18 = g_CGamePtr->delta_time_float * (float)5;
       fStack_24 = 0.0;
       if (fStack_18 < fStack_1c) {
         fStack_14 = fStack_18 / fStack_1c;

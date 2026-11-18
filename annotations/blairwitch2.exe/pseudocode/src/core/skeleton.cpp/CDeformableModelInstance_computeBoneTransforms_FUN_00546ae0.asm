@@ -22,9 +22,9 @@
 ; XREF[16]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90 at 00429eae
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 004267fc
-;   core_cloth.cpp_FUN_005ae680 at 005aeac8
-;   core_doc.cpp_FUN_00450c60 at 00451600
-;   core_doc.cpp_FUN_00455d10 at 0045605a
+;   core_cloth.cpp_CCloth_setup_FUN_005ae680 at 005aeac8
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451600
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 0045605a
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 at 004f172f
 ;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f0752
 ;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 0051161e
@@ -34,8 +34,8 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     PUSH EAX                            ; 00546b96
     LEA ESI,[ESP + 0x14]                ; 00546b97
     LEA EDI,[ESP + 0x8]                 ; 00546b9b
-    CALL core_xform.cpp_FUN_00591530    ; 00546b9f
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00546b9f
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x14]                ; 00546ba4
     ADD ESP,0x8                         ; 00546ba8
     MOVSD ES:EDI,ESI                    ; 00546bab

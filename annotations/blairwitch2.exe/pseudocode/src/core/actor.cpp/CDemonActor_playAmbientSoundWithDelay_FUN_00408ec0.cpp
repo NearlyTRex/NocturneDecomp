@@ -12,6 +12,7 @@ uint __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0(C
   uint uVar1;
   
   uVar1 = core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_0055af30
-                    (0x0264B290,this_ptr,sound_name,&(this_ptr->location).position,delay);
+                    (g_CSound_PTR_0061c068,this_ptr,sound_name,&(this_ptr->location).position,delay)
+  ;
   return uVar1;
 }

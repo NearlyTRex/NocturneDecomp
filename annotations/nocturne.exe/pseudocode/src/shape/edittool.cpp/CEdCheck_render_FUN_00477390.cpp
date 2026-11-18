@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_00477390(CEdCheck *this_ptr)
 
 {
@@ -29,14 +27,14 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_00477390(CEdCheck *this_ptr)
   iVar2 = iVar2 + left;
   local_14 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_00477340(this_ptr);
   local_14 = iVar1 + local_14;
-  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(_DAT_01bcd070,this_ptr->checkbox_text)
-  ;
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
+                    (g_CBitFont_PTR_01bcd070,this_ptr->checkbox_text);
   color_value = -1;
   iVar5 = this_ptr->text_color_mode;
   iVar3 = ((this_ptr->y_position + this_ptr->right_boundary) - iVar3) / 2;
   iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_00477370(this_ptr);
   engine_font_cpp_CBitFont_drawText_FUN_00490980
-            (_DAT_01bcd070,this_ptr->checkbox_text,iVar4 + iVar2,iVar3,iVar5,color_value);
+            (g_CBitFont_PTR_01bcd070,this_ptr->checkbox_text,iVar4 + iVar2,iVar3,iVar5,color_value);
   shape_edittool_cpp_draw3DBorder_FUN_00476260
             (left,iVar1,iVar2,local_14,this_ptr->border_style_flag);
   if (this_ptr->border_style_flag == 0) {

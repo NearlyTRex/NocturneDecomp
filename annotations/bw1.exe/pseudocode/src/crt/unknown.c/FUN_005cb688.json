@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 106,
+    "complexity_score": 71,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
-      "register_param",
-      "undefined_data"
+      "register_param"
     ],
     "total_lines": 79
   },
@@ -81,19 +80,19 @@
     },
     {
       "addr": "0062716c",
-      "name": "DAT_0062716c",
-      "type": "undefined1",
+      "name": "g_ExitHandlerTableEnd",
+      "type": "RuntimeHandlerEntry",
       "value": null
     },
     {
       "addr": "0062716d",
-      "name": "DAT_0062716d",
-      "type": "undefined1",
+      "name": "g_ExitHandlerTableEnd.priority",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0062716e",
-      "name": "DAT_0062716e",
+      "name": "g_ExitHandlerTableEnd.func",
       "type": "undefined4",
       "value": null
     }
@@ -191,36 +190,12 @@
       "type": "register_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0062716c",
-      "severity": "mild",
-      "text": "pRVar3 = (RuntimeHandlerEntry *)&DAT_0062716c;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Inferred register parameter",
       "line": 14,
       "match": "in_AL",
       "severity": "mild",
       "text": "bVar2 = in_AL;",
       "type": "register_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0062716c",
-      "severity": "mild",
-      "text": "} while (pRVar1 < (RuntimeHandlerEntry *)&DAT_0062716c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0062716c",
-      "severity": "mild",
-      "text": "if (pRVar3 == (RuntimeHandlerEntry *)&DAT_0062716c) break;",
-      "type": "undefined_data"
     },
     {
       "description": "Inferred register parameter",

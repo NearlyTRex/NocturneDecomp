@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00481620(CSt
   int iVar3;
   uint uVar4;
   int iVar5;
-  uint *puVar6;
+  char *pcVar6;
   byte bVar7;
   char *format;
   char local_b04 [512];
@@ -38,20 +38,20 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00481620(CSt
   if (-1 < iVar5) {
     do {
       index = (local_14 + iVar5) / 2;
-      puVar6 = &DAT_00613c08;
-      pcVar2 = local_904;
+      pcVar2 = g_Field1ParseBuffer;
+      pcVar6 = local_904;
       for (iVar3 = 0x80; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(uint *)pcVar2 = *puVar6;
-        puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+        *(uint *)pcVar6 = *(uint *)pcVar2;
         pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
+        pcVar6 = pcVar6 + ((uint)bVar7 * -2 + 1) * 4;
       }
       format = "%[^\t]\t%[^\t]";
-      puVar6 = &DAT_00613e08;
-      pcVar2 = local_b04;
+      pcVar2 = g_Field2ParseBuffer;
+      pcVar6 = local_b04;
       for (iVar3 = 0x80; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(uint *)pcVar2 = *puVar6;
-        puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
-        pcVar2 = (char *)((int)pcVar2 + ((uint)bVar7 * -2 + 1) * 4);
+        *(uint *)pcVar6 = *(uint *)pcVar2;
+        pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
+        pcVar6 = (char *)((int)pcVar6 + ((uint)bVar7 * -2 + 1) * 4);
       }
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(this_ptr,index);
       sscanf(pcVar2,format);
@@ -70,12 +70,12 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00481620(CSt
   }
   time_ptr = _localtime(&file_timestamp);
   _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
-  puVar6 = &DAT_00614008;
-  pcVar2 = local_704;
+  pcVar2 = g_FilePathBuffer;
+  pcVar6 = local_704;
   for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(uint *)pcVar2 = *puVar6;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *(uint *)pcVar6 = *(uint *)pcVar2;
     pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
+    pcVar6 = pcVar6 + ((uint)bVar7 * -2 + 1) * 4;
   }
   if (file_path != (char *)0x0) {
     engine_dosio_cpp_splitPath_FUN_00461070(file_path,(char *)0x0,(char *)0x0,local_1fc,local_4fc);

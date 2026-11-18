@@ -7,7 +7,7 @@
 ; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_emitterType_005dc9a6+1
+;   TerminatedCString s_emitterType_005dc9a7
 ;   TerminatedCString s_emitterSize_005dc9b3
 ;   TerminatedCString s_eventOn_005dc9bf
 ;   TerminatedCString s_eventOff_005dc9c7
@@ -45,7 +45,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 0049fff7
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0049fffc
-    PUSH 0x5dc9a7                       ; 0049ffff | s_emitterType_005dc9a6+1
+    PUSH 0x5dc9a7                       ; 0049ffff | = "emitterType"
     LEA EAX,[EBX + 0x158]               ; 004a0004
     PUSH EAX                            ; 004a000a
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 004a000b

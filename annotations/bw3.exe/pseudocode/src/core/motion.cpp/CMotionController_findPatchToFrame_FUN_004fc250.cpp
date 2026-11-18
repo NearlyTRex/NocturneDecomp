@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_004fc250(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
 
 {
-  _DAT_01d71de0 = "..\\core\\motion.cpp";
-  _DAT_01d71de4 = 0x313;
-  core_main_c_FUN_004e4330("CMotionController::findPatchToFrame should never be called for this base class!");
+  g_CHAR_PTR_01d71de0 = "..\\core\\motion.cpp";
+  g_INT_01d71de4 = 0x313;
+  core_main_c_displayErrorAndQuit_FUN_004e4330("CMotionController::findPatchToFrame should never be called for this base class!");
   return 0;
 }

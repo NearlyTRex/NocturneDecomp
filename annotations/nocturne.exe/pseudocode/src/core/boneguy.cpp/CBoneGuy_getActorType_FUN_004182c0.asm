@@ -7,13 +7,13 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonActorType g_CBoneGuyActorType_007647c0
+;   CDemonActorType g_CBoneGuyClassInfo
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x7647c0                    ; 004182c0 | g_CBoneGuyActorType_007647c0
+    MOV EAX,0x7647c0                    ; 004182c0 | g_CBoneGuyClassInfo
         ;   Label: core_boneguy.cpp_CBoneGuy_getActorType_FUN_004182c0
     RET                                 ; 004182c5
 

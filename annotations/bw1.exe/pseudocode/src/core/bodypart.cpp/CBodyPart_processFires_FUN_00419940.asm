@@ -22,13 +22,13 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 004197c3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d44b1
-;   undefined4 DAT_005d44b9
-;   undefined4 DAT_005d44c1
-;   undefined4 DAT_005d44c9
+;   double g_BodyPartFlameBaseScale = 1.5
+;   double g_BodyPartFlameMaxScale = 3
+;   double g_BodyPartFireFadeMultiplier = 0.200000000000000
+;   double g_BodyPartFireFadeThreshold = 5
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_flame.cpp_CFlame_process_FUN_004b7b90
 ;
 ; *****************************************************************************
@@ -75,8 +75,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004199b1
     PUSH EDI                            ; 004199b4
     LEA ESI,[ESP + 0x14]                ; 004199b5
-    CALL core_actor.cpp_FUN_00408b40    ; 004199b9
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004199b9
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA EDI,[ESP + 0x20]                ; 004199be
     LEA ESI,[ESP + 0x14]                ; 004199c2
     ADD ESP,0x8                         ; 004199c6
@@ -94,20 +94,20 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004199ec
     FLD float ptr [EAX + 0xccc]         ; 004199ef
     FST double ptr [ESP]                ; 004199f5
-    FCOMP double ptr [0x005d44c9]       ; 004199f8 | DAT_005d44c9
+    FCOMP double ptr [0x005d44c9]       ; 004199f8 | g_BodyPartFireFadeThreshold
     FNSTSW AX                           ; 004199fe
     SAHF                                ; 00419a00
     JNC 0x00419a10                      ; 00419a01
         ;   XREF to: 00419a10 (CONDITIONAL_JUMP)  ; LAB_00419a10
     FLD double ptr [ESP]                ; 00419a03
-    FMUL double ptr [0x005d44c1]        ; 00419a06 | DAT_005d44c1
+    FMUL double ptr [0x005d44c1]        ; 00419a06 | g_BodyPartFireFadeMultiplier
     FSTP float ptr [ESP + 0x8]          ; 00419a0c
     FLD float ptr [ESP + 0x8]           ; 00419a10
         ;   Label: LAB_00419a10
     FLD ST0                             ; 00419a14
-    FMUL double ptr [0x005d44b1]        ; 00419a16 | DAT_005d44b1
+    FMUL double ptr [0x005d44b1]        ; 00419a16 | g_BodyPartFlameBaseScale
     FXCH                                ; 00419a1c
-    FMUL double ptr [0x005d44b9]        ; 00419a1e | DAT_005d44b9
+    FMUL double ptr [0x005d44b9]        ; 00419a1e | g_BodyPartFlameMaxScale
     ADD EBX,0xc                         ; 00419a24
     FXCH                                ; 00419a27
     FSTP float ptr [ESP + 0x2c]         ; 00419a29

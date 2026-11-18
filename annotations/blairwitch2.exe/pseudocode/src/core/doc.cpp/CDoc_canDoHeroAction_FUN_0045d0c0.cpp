@@ -6,38 +6,41 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int action_type)
 
 {
-  CDeformableModelInstance *pCVar1;
+  CDeformableModelInstance *this_ptr_00;
+  float fVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
-  float fVar6;
-  int iVar7;
+  int iVar6;
+  float fVar7;
   float fVar8;
-  float fVar9;
   
   if ((this_ptr->action_pending == 0) && (this_ptr->guns_drawn == 0)) {
-    pCVar1 = &(this_ptr->base).base.model;
-    fVar2 = (float)core_motion_cpp_FUN_005038a0(pCVar1,0);
-    fVar3 = (float)core_motion_cpp_FUN_005038a0(pCVar1,1);
-    fVar4 = (float)core_motion_cpp_FUN_005038a0(pCVar1,3);
-    fVar5 = (float)core_motion_cpp_FUN_005038a0(pCVar1,4);
-    fVar6 = (float)core_motion_cpp_FUN_005038a0(pCVar1,5);
-    fVar8 = (float)_DAT_005d07cf;
+    this_ptr_00 = &(this_ptr->base).base.model;
+    fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&this_ptr_00->base,0)
+    ;
+    fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&this_ptr_00->base,1)
+    ;
+    fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&this_ptr_00->base,3)
+    ;
+    fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&this_ptr_00->base,4)
+    ;
+    fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0(&this_ptr_00->base,5)
+    ;
+    fVar7 = (float)0.999;
     switch(action_type) {
     case 4:
-      fVar9 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
+      fVar8 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                         ((CCharacter *)this_ptr,0);
-      if (fVar9 < (float)_DAT_005d07d7) {
+      if (fVar8 < (float)0.98999999999999999) {
         return 0;
       }
     case 3:
-      if (fVar6 + fVar5 + fVar4 + fVar3 + fVar2 <= fVar8) {
+      if (fVar5 + fVar4 + fVar3 + fVar2 + fVar1 <= fVar7) {
         return 0;
       }
       break;
@@ -47,14 +50,14 @@ int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int ac
     case 9:
     case 10:
     case 0xb:
-      fVar8 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
+      fVar7 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                         ((CCharacter *)this_ptr,0);
-      if (fVar8 < (float)_DAT_005d07d7) {
+      if (fVar7 < (float)0.98999999999999999) {
         return 0;
       }
     }
-    iVar7 = core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(&this_ptr->base,action_type);
-    return iVar7;
+    iVar6 = core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(&this_ptr->base,action_type);
+    return iVar6;
   }
   return 0;
 }

@@ -15,13 +15,13 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f979
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0b5a
+;   TerminatedCString s_son_005f0b5a
 ;   TerminatedCString s_soff_005f0b5f
-;   undefined4 DAT_005f0b65
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_01fe4cb8
-;   undefined4 DAT_01fe4e38
-;   undefined4 DAT_01fe4e3c
+;   TerminatedCString s_moon_005f0b65
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_01fe4cb8
+;   int g_SpotLightCount
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_01fe4e3c
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
@@ -70,17 +70,17 @@ section .text
     RET                                 ; 00554314
     MOV EBX,dword ptr [ESP + 0x104]     ; 00554315
         ;   Label: LAB_00554315
-    MOV EBX,dword ptr [EBX + 0x1fe4cb8] ; 0055431c | DAT_01fe4cb8
+    MOV EBX,dword ptr [EBX + 0x1fe4cb8] ; 0055431c | g_CDemonLight_PTR_ARRAY_01fe4cb8
     TEST EBX,EBX                        ; 00554322
     JZ 0x0055430a                       ; 00554324
         ;   XREF to: 0055430a (CONDITIONAL_JUMP)  ; LAB_0055430a
-    MOV ECX,dword ptr [0x01fe4e38]      ; 00554326 | DAT_01fe4e38
+    MOV ECX,dword ptr [0x01fe4e38]      ; 00554326 | g_SpotLightCount
     MOV dword ptr [ESP + 0x100],EAX     ; 0055432c
     TEST ECX,ECX                        ; 00554333
     JLE 0x00554355                      ; 00554335
         ;   XREF to: 00554355 (CONDITIONAL_JUMP)  ; LAB_00554355
     LEA EDX,[ECX*0x4 + 0x0]             ; 00554337
-    CMP EBX,dword ptr [EAX + 0x1fe4e3c] ; 0055433e | DAT_01fe4e3c
+    CMP EBX,dword ptr [EAX + 0x1fe4e3c] ; 0055433e | g_CDemonLight_PTR_ARRAY_01fe4e3c
         ;   Label: LAB_0055433e
     JNZ 0x00554411                      ; 00554344
         ;   XREF to: 00554411 (CONDITIONAL_JUMP)  ; LAB_00554411
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0xc                         ; 00554364
     LEA EAX,[ESI + 0x4]                 ; 00554367
     PUSH EAX                            ; 0055436a
-    PUSH 0x5f0b5a                       ; 0055436b | DAT_005f0b5a
+    PUSH 0x5f0b5a                       ; 0055436b | = "%son"
     LEA EAX,[ESP + 0x8]                 ; 00554370
     PUSH EAX                            ; 00554374
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00554375
@@ -103,7 +103,7 @@ section .text
     ADD ESP,0xc                         ; 0055437a
     MOV EAX,ESP                         ; 0055437d
     PUSH EAX                            ; 0055437f
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00554380 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00554380 | g_CEventListPtr
     PUSH ECX                            ; 00554386
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00554387
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -123,7 +123,7 @@ section .text
     ADD ESP,0xc                         ; 005543b0
     MOV EAX,ESP                         ; 005543b3
     PUSH EAX                            ; 005543b5
-    MOV EAX,[0x0061b4d0]                ; 005543b6 | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 005543b6 | g_CEventListPtr
     PUSH EAX                            ; 005543bb
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005543bc
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -134,7 +134,7 @@ section .text
     MOV dword ptr [EBX + 0x1cb4],0x0    ; 005543c8
     PUSH 0x4                            ; 005543d2
         ;   Label: LAB_005543d2
-    PUSH 0x5f0b65                       ; 005543d4 | DAT_005f0b65
+    PUSH 0x5f0b65                       ; 005543d4 | = "moon"
     ADD ESI,0x4                         ; 005543d9
     PUSH ESI                            ; 005543dc
     CALL crt_string.c__strnicmp_FUN_005c1210 ; 005543dd

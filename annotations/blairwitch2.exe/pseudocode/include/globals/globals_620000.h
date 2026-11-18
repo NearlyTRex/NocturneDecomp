@@ -4,41 +4,27 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x620000
 // =============================================================================
 
-// undefined4
-extern undefined4 DAT_00622010;
-extern undefined4 DAT_00622014;
-extern undefined4 DAT_00622018;
-extern undefined4 DAT_0062201c;
-extern undefined4 DAT_00622024;
-extern undefined4 DAT_0062202c;
-extern undefined4 DAT_00622034;
-extern undefined4 DAT_00622038;
-extern undefined4 DAT_0062203c;
-extern undefined4 DAT_00622040;
-extern undefined4 DAT_00622044;
-extern undefined4 DAT_00622048;
-extern undefined4 DAT_0062204c;
-extern undefined4 DAT_00622054;
-extern undefined4 DAT_00622064;
-extern undefined4 DAT_00622068;
-extern undefined4 DAT_0062206c;
-extern undefined4 DAT_00622070;
-extern undefined4 DAT_00622084;
-extern undefined4 DAT_00622090;
-extern undefined4 DAT_00622094;
-extern undefined4 DAT_00622098;
-extern undefined4 DAT_0062209c;
-extern undefined4 DAT_006220b4;
-extern undefined4 DAT_006220c4;
-extern undefined4 DAT_006220c8;
-extern undefined4 DAT_006220cc;
-extern undefined4 DAT_006220e4;
-extern undefined4 DAT_00622114;
-extern undefined4 DAT_00622144;
-extern undefined4 DAT_00622174;
+// GUID
+extern GUID g_IID_IDirectSound3DListener;
+extern GUID g_IID_IDirectSound3DBuffer;
+
+// SRenderVertex[20000]
+extern SRenderVertex g_SRenderVertex_ARRAY_00622014[20000];
+
+// byte[16]
+extern byte g_IEEE754ExponentClassTable[16];
+
+// void*
+extern void* g_PTR_006216dc;
+extern void* g_PTR_00622010;
+
+// void*[8]
+extern void* g_ARRAY_PTR_006217ec[8];
 

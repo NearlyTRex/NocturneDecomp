@@ -4,7 +4,19 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/ddraw.h"
+#include "system/stdio.h"
+#include "system/unknwn.h"
+#include "system/windef.h"
+#include "system/winnt.h"
+#include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/classes/CWeather.h"
+#include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2C90000
@@ -17,4 +29,184 @@ extern CDemonActorType g_CWeaponClassInfo;
 extern CDemonActorType g_CWerewolfClassInfo;
 extern CDemonActorType g_CYowClassInfo;
 extern CDemonActorType g_CZombieClassInfo;
+
+// CDemonGlobe
+extern CDemonGlobe g_WeaponCoronaGlobe;
+
+// CVector3f
+extern CVector3f g_WerewolfEyeGlowOffsetLeft;
+extern CVector3f g_WerewolfEyeGlowOffsetRight;
+
+// CVector3f[200]
+extern CVector3f g_WeatherParticlePositions[200];
+
+// CVector3i
+extern CVector3i g_TempProjectedCoord;
+
+// CVector3i[1000]
+extern CVector3i g_WaterActorTransformedVertices[1000];
+
+// CWeather
+extern CWeather g_CWeatherInstance;
+
+// DWORD
+extern DWORD g_PreviousCounterLow;
+
+// FileListNode*
+extern FileListNode* g_AllocatedListHead;
+extern FileListNode* g_FreeListHeadPointer;
+
+// HMODULE
+extern HMODULE g_WinmmDll;
+
+// HWND
+extern HWND g_MainWindowHandle;
+
+// IDirectDraw*
+extern IDirectDraw* g_DirectDrawObject;
+
+// IDirectDrawSurface*
+extern IDirectDrawSurface* g_DirectDrawSurface;
+extern IDirectDrawSurface* g_SoftwareRenderSurface;
+
+// IUnknown*
+extern IUnknown* g_DirectDrawUnknown;
+
+// PALETTEENTRY[256]
+extern PALETTEENTRY g_DDPaletteBuffer[256];
+
+// SRenderVertex[32]
+extern SRenderVertex g_ClipVertexBufferStage2[32];
+extern SRenderVertex g_ClipVertexBufferStage1[32];
+extern SRenderVertex g_ClipVertexBufferStage3[32];
+extern SRenderVertex g_ClipVertexBufferStage4[32];
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_02c9eb38[16];
+
+// WCHAR*
+extern WCHAR* g_CommandLineW;
+
+// _struct_19
+extern _struct_19 g_PerformanceCounter;
+extern _struct_19 g_PerformanceFrequency;
+
+// byte
+extern byte g_BYTE_02c9a624;
+extern byte g_SignalHandlingActive;
+
+// char*
+extern char* g_CHAR_PTR_02c9cb0c;
+extern char* g_CommandLineA;
+
+// char**
+extern char** g_EnvironStringArea;
+extern char** g_EnvironmentBlock;
+
+// char[16]
+extern char g_CHAR_ARRAY_02c9f690[16];
+
+// char[1]
+extern char g_CHAR_ARRAY_02c9f6f0[1];
+
+// char[200]
+extern char g_WeatherParticleHitGround[200];
+extern char g_KeyNameBuffer[200];
+
+// char[256]
+extern char g_LeadByteTable[256];
+
+// char[260]
+extern char g_ExeFileNameBuffer_A[260];
+extern char g_DllFileNameBuffer_A[260];
+
+// char[4]
+extern char g_CHAR_ARRAY_02c97384[4];
+
+// char[6000]
+extern char g_CHAR_ARRAY_02c9a630[6000];
+
+// double
+extern double g_TimerCalibration;
+
+// float
+extern float g_WaterAnimationPhase;
+extern float g_FLOAT_02c9c7e0;
+extern float g_FLOAT_02c9c7e4;
+
+// float[200]
+extern float g_WeatherParticleGroundHeights[200];
+
+// int
+extern int g_WaterAnimationBlend;
+extern int g_INT_02c9300c;
+extern int g_INT_02c93010;
+extern int g_FlipPending;
+extern int g_GraphicsResetFlag;
+extern int g_INT_02c9931c;
+extern int g_INT_02c99320;
+extern int g_INT_02c99324;
+extern int g_INT_02c99328;
+extern int g_INT_02c9932c;
+extern int g_INT_02c99330;
+extern int g_INT_02c99334;
+extern int g_PreviousCounterHigh;
+extern int g_AccumulatedGameTime;
+extern int g_InputReadIndex;
+extern int g_InputWriteIndex;
+extern int g_InputCountOld;
+extern int g_CrosshairBrightness;
+extern int g_INT_02c9be6c;
+extern int g_InputDisabled;
+extern int g_INT_02c9be74;
+extern int g_TotalPhysicalMemory;
+extern int g_AvailableSwapSpace;
+extern int g_INT_02c9c7e8;
+extern int g_INT_02c9cb08;
+extern int g_INT_02c9d294;
+extern int g_MovieWindowHandle;
+extern int g_MovieHandle;
+extern int g_MoviePlaying;
+extern int g_FullscreenMovie;
+extern int g_ClipVertexCountStage1;
+extern int g_ClipVertexCountStage2;
+extern int g_ClipVertexCountStage3;
+extern int g_ClipVertexCountStage4;
+extern int g_RasterizerEdgeCount;
+extern int g_RasterizerMinY;
+extern int g_RasterizerMaxY;
+extern int g_INT_02c9f040;
+extern int g_EmergencyExitFlag;
+extern int g_EnvironInitialized;
+extern int g_MultibyteLocaleActive;
+extern int g_INT_02c9ff60;
+extern int g_INT_02c9ff64;
+extern int g_BufferedCharacter;
+extern int g_BufferedVirtualKey;
+extern int g_BufferedRepeatCount;
+
+// int[1]
+extern int g_UseMultimediaTimer[1];
+extern int g_INT_ARRAY_02c9d1c4[1];
+
+// int[20]
+extern int g_InputBuffer[20];
+
+// int[600]
+extern int g_INT_ARRAY_02c9be80[600];
+
+// uint
+extern uint g_UINT_02c9a540;
+
+// void*
+extern void* g_PTR_02c99310;
+extern void* g_joyGetPosEx;
+extern void* g_CurrentThreadTlsBlock;
+extern void* g_PTR_02c9ff68;
+extern void* g_PTR_02c9ff90;
+extern void* g_PTR_02c9ffa0;
+
+// wchar_t[260]
+extern wchar_t g_ExeFileNameBuffer_W[260];
+extern wchar_t g_DllFileNameBuffer_W[260];
 

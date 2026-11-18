@@ -13,9 +13,9 @@ void __cdecl core_glass_cpp_CGlass_process_FUN_004e19c0(CGlass *this_ptr,float d
   
   if (this_ptr->shattered == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,this_ptr->break_event);
+                      (g_CEventListPtr,this_ptr->break_event);
     if (iVar1 != 0) {
-      core_glass_cpp_FUN_004e34b0(this_ptr,&(this_ptr->base).location);
+      core_glass_cpp_CGlass_shatter_FUN_004e34b0(this_ptr,&(this_ptr->base).location.position);
       return;
     }
   }

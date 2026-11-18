@@ -7,18 +7,18 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9352
-;   undefined4 DAT_005d935a
-;   undefined4 DAT_005d9362
-;   undefined4 DAT_005d936a
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005d9352 = 0.5
+;   double g_DOUBLE_005d935a = 0.5
+;   double g_DOUBLE_005d9362 = 16515072
+;   double g_DOUBLE_005d936a = 131072
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
-;   core_dirmat.cpp_FUN_00449530
-;   core_main.c_FUN_004e4500
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mirror.cpp_CMirror_setupCorners_FUN_004f98d0
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_string.c__strcmp_FUN_005b8c30
@@ -44,7 +44,7 @@ section .text
     ADD ESP,0x4                         ; 004c49f8
     LEA EAX,[EBX + 0x2c0]               ; 004c49fb
     PUSH EAX                            ; 004c4a01
-    MOV EDX,dword ptr [0x0060b280]      ; 004c4a02 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 004c4a02 | g_CDemonRenderer_PTR_0060b280
     PUSH EDX                            ; 004c4a08
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 004c4a09
         ;   XREF to: 0046ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -55,9 +55,9 @@ section .text
         ;   XREF to: 004c4bc1 (CONDITIONAL_JUMP)  ; LAB_004c4bc1
     FLD float ptr [EBX + 0x2b4]         ; 004c4a1f
         ;   Label: LAB_004c4a1f
-    FMUL double ptr [0x005d935a]        ; 004c4a25 | DAT_005d935a
+    FMUL double ptr [0x005d935a]        ; 004c4a25 | g_DOUBLE_005d935a
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c4a2b
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x124]       ; 004c4a30
     MOV EAX,dword ptr [ESP + 0x124]     ; 004c4a37
     INC EAX                             ; 004c4a3e
@@ -68,9 +68,9 @@ section .text
     MOV dword ptr [EBX + 0xc88],0x4     ; 004c4a4a
     FLD float ptr [EBX + 0x2b8]         ; 004c4a54
         ;   Label: LAB_004c4a54
-    FMUL double ptr [0x005d935a]        ; 004c4a5a | DAT_005d935a
+    FMUL double ptr [0x005d935a]        ; 004c4a5a | g_DOUBLE_005d935a
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c4a60
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x124]       ; 004c4a65
     MOV EAX,dword ptr [ESP + 0x124]     ; 004c4a6c
     INC EAX                             ; 004c4a73
@@ -102,10 +102,10 @@ section .text
     MOV EDX,0x5d9296                    ; 004c4ad2
     MOV ECX,0x86                        ; 004c4ad7
     PUSH 0x5d92a8                       ; 004c4adc
-    MOV dword ptr [0x01d046a0],EDX      ; 004c4ae1 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004c4ae7 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004c4aed
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 004c4ae1 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004c4ae7 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004c4aed
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004c4af2
     FILD dword ptr [EBX + 0xc88]        ; 004c4af5
         ;   Label: LAB_004c4af5
@@ -133,7 +133,7 @@ section .text
     IMUL EDX,EDI,0xc                    ; 004c4b60
     FLD float ptr [EBX + 0x2b4]         ; 004c4b63
     FCHS                                ; 004c4b69
-    FMUL double ptr [0x005d935a]        ; 004c4b6b | DAT_005d935a
+    FMUL double ptr [0x005d935a]        ; 004c4b6b | g_DOUBLE_005d935a
     MOV EAX,dword ptr [ESP + 0x10c]     ; 004c4b71
     XOR ESI,ESI                         ; 004c4b78
     FSTP float ptr [ESP + 0xa8]         ; 004c4b7a
@@ -160,7 +160,7 @@ section .text
     MOV dword ptr [ESP + 0xf4],ESI      ; 004c4bca
     MOV dword ptr [ESP + 0xf0],ESI      ; 004c4bd1
     FLD float ptr [EBX + 0x2b4]         ; 004c4bd8
-    FMUL float ptr [0x005d9352]         ; 004c4bde | DAT_005d9352
+    FMUL float ptr [0x005d9352]         ; 004c4bde | g_FLOAT_005d9352
     LEA EAX,[ESP + 0xf0]                ; 004c4be4
     LEA EDI,[ESP + 0x54]                ; 004c4beb
     PUSH EAX                            ; 004c4bef
@@ -168,8 +168,8 @@ section .text
     LEA ESI,[ESP + 0x100]               ; 004c4bf3
     PUSH EAX                            ; 004c4bfa
     FSTP float ptr [ESP + 0xf8]         ; 004c4bfb
-    CALL core_dirmat.cpp_FUN_00449530   ; 004c4c02
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 004c4c02
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x104]               ; 004c4c07
     ADD ESP,0x8                         ; 004c4c0e
     LEA EAX,[EBX + 0x20]                ; 004c4c11
@@ -212,8 +212,8 @@ section .text
     PUSH EAX                            ; 004c4c7f
     LEA ESI,[ESP + 0x80]                ; 004c4c80
     LEA EDI,[ESP + 0xd4]                ; 004c4c87
-    CALL core_dirmat.cpp_FUN_00449530   ; 004c4c8e
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 004c4c8e
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x80]                ; 004c4c93
     ADD ESP,0x8                         ; 004c4c9a
     LEA EAX,[EBX + 0x20]                ; 004c4c9d
@@ -257,8 +257,8 @@ section .text
     PUSH EAX                            ; 004c4d40
     LEA ESI,[ESP + 0x8]                 ; 004c4d41
     LEA EDI,[ESP + 0x8c]                ; 004c4d45
-    CALL core_dirmat.cpp_FUN_00449530   ; 004c4d4c
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 004c4d4c
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x8]                 ; 004c4d51
     ADD ESP,0x8                         ; 004c4d55
     LEA EAX,[EBX + 0x20]                ; 004c4d58
@@ -303,8 +303,8 @@ section .text
     PUSH EAX                            ; 004c4de4
     LEA EDI,[ESP + 0x20]                ; 004c4de5
     MOV byte ptr [ESP + 0xfb],DL        ; 004c4de9
-    CALL core_dirmat.cpp_FUN_00449530   ; 004c4df0
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 004c4df0
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x14]                ; 004c4df5
     ADD ESP,0x8                         ; 004c4df9
     LEA EAX,[EBX + 0x20]                ; 004c4dfc
@@ -377,14 +377,14 @@ section .text
     FILD dword ptr [EBX + 0xc88]        ; 004c4eda
     FILD dword ptr [ESP + 0x124]        ; 004c4ee0
     FDIVRP                              ; 004c4ee7
-    FLD double ptr [0x005d9362]         ; 004c4ee9 | DAT_005d9362
+    FLD double ptr [0x005d9362]         ; 004c4ee9 | g_DOUBLE_005d9362
     FXCH                                ; 004c4eef
     FMUL ST1                            ; 004c4ef1
-    FLD double ptr [0x005d936a]         ; 004c4ef3 | DAT_005d936a
+    FLD double ptr [0x005d936a]         ; 004c4ef3 | g_DOUBLE_005d936a
     FXCH                                ; 004c4ef9
     FADD ST0,ST1                        ; 004c4efb
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c4efd
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x124]       ; 004c4f02
     MOV EAX,dword ptr [ESP + 0x124]     ; 004c4f09
     MOV dword ptr [ECX + 0x740],EAX     ; 004c4f10
@@ -398,7 +398,7 @@ section .text
     ADD ECX,0x4                         ; 004c4f3b
     FADDP                               ; 004c4f3e
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c4f40
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x124]       ; 004c4f45
     MOV EAX,dword ptr [ESP + 0x124]     ; 004c4f4c
     ADD EDX,0xc                         ; 004c4f53

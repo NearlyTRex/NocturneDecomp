@@ -10,21 +10,21 @@
 ;   core_gore.cpp_CGore_renderDecals_FUN_004e5cd0 at 004e5cfa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_0062902c
-;   undefined4 DAT_00629030
-;   undefined4 DAT_0062905c
-;   undefined4 DAT_00629060
-;   undefined4 DAT_0062908c
-;   undefined4 DAT_00629090
-;   undefined4 DAT_006290bc
-;   undefined4 DAT_006290c0
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01cd0e44
-;   undefined4 DAT_01cd0e58
-;   undefined4 DAT_01cd0e5c
-;   undefined4 DAT_01cd0e60
-;   undefined4 DAT_01cd0e64
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].v
+;   undefined4 g_SRenderVertex_ARRAY_00629014[1].u
+;   undefined4 g_SRenderVertex_ARRAY_00629014[1].v
+;   undefined4 g_SRenderVertex_ARRAY_00629014[2].u
+;   undefined4 g_SRenderVertex_ARRAY_00629014[2].v
+;   undefined4 g_SRenderVertex_ARRAY_00629014[3].u
+;   undefined4 g_SRenderVertex_ARRAY_00629014[3].v
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   undefined4 g_GoreQuadPrimitive.base.base.count
+;   undefined4 g_GoreQuadPrimitive.vertices[0]
+;   undefined4 g_GoreQuadPrimitive.vertices[1]
+;   undefined4 g_GoreQuadPrimitive.vertices[2]
+;   undefined4 g_GoreQuadPrimitive.vertices[3]
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
@@ -46,21 +46,21 @@ section .text
     MOV EAX,0xf80000                    ; 004e492d
     PUSH 0xffff                         ; 004e4932
     XOR ECX,ECX                         ; 004e4937
-    MOV dword ptr [0x01cd0e44],EDX      ; 004e4939 | DAT_01cd0e44
-    MOV dword ptr [0x01cd0e58],ECX      ; 004e493f | DAT_01cd0e58
-    MOV dword ptr [0x01cd0e5c],EBX      ; 004e4945 | DAT_01cd0e5c
-    MOV dword ptr [0x01cd0e60],ESI      ; 004e494b | DAT_01cd0e60
-    MOV dword ptr [0x01cd0e64],EDI      ; 004e4951 | DAT_01cd0e64
-    MOV dword ptr [0x0062902c],EBP      ; 004e4957 | DAT_0062902c
-    MOV [0x00629030],EAX                ; 004e495d | DAT_00629030
-    MOV [0x0062905c],EAX                ; 004e4962 | DAT_0062905c
-    MOV [0x00629060],EAX                ; 004e4967 | DAT_00629060
-    MOV [0x0062908c],EAX                ; 004e496c | DAT_0062908c
-    MOV EAX,[0x00612560]                ; 004e4971 | DAT_00612560
-    MOV dword ptr [0x00629090],EBP      ; 004e4976 | DAT_00629090
-    PUSH EAX                            ; 004e497c | DAT_01bc120c
-    MOV dword ptr [0x006290bc],EBP      ; 004e497d | DAT_006290bc
-    MOV dword ptr [0x006290c0],EBP      ; 004e4983 | DAT_006290c0
+    MOV dword ptr [0x01cd0e44],EDX      ; 004e4939 | g_GoreQuadPrimitive.base.base.count
+    MOV dword ptr [0x01cd0e58],ECX      ; 004e493f | g_GoreQuadPrimitive.vertices[0]
+    MOV dword ptr [0x01cd0e5c],EBX      ; 004e4945 | g_GoreQuadPrimitive.vertices[1]
+    MOV dword ptr [0x01cd0e60],ESI      ; 004e494b | g_GoreQuadPrimitive.vertices[2]
+    MOV dword ptr [0x01cd0e64],EDI      ; 004e4951 | g_GoreQuadPrimitive.vertices[3]
+    MOV dword ptr [0x0062902c],EBP      ; 004e4957 | g_SRenderVertex_ARRAY_00629014[0].u
+    MOV [0x00629030],EAX                ; 004e495d | g_SRenderVertex_ARRAY_00629014[0].v
+    MOV [0x0062905c],EAX                ; 004e4962 | g_SRenderVertex_ARRAY_00629014[1].u
+    MOV [0x00629060],EAX                ; 004e4967 | g_SRenderVertex_ARRAY_00629014[1].v
+    MOV [0x0062908c],EAX                ; 004e496c | g_SRenderVertex_ARRAY_00629014[2].u
+    MOV EAX,[0x00612560]                ; 004e4971 | g_CDemonRenderer_PTR_00612560
+    MOV dword ptr [0x00629090],EBP      ; 004e4976 | g_SRenderVertex_ARRAY_00629014[2].v
+    PUSH EAX                            ; 004e497c | g_CDemonRenderer_01bc120c
+    MOV dword ptr [0x006290bc],EBP      ; 004e497d | g_SRenderVertex_ARRAY_00629014[3].u
+    MOV dword ptr [0x006290c0],EBP      ; 004e4983 | g_SRenderVertex_ARRAY_00629014[3].v
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0 ; 004e4989
         ;   XREF to: 00483de0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004e498e

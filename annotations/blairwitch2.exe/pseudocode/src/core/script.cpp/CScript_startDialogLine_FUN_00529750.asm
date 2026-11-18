@@ -19,14 +19,14 @@
 ;   core_script.cpp_CScript_step_FUN_00522350 at 005247dc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4d9b
-;   undefined4 DAT_005e4da3
-;   undefined4 DAT_005e4dab
-;   undefined4 DAT_0061c068
+;   TerminatedCString s_f_005e4d9b
+;   double g_DOUBLE_005e4da3 = 0.0300000000000000
+;   double g_DOUBLE_005e4dab = 0.400000000000000
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;   CDemonActorType g_CCharacterClassInfo
 ;   undefined4 g_CCharacterClassInfo.name_hash
-;   undefined4 DAT_01e650f8
-;   undefined4 DAT_01e6590c
+;   int g_ScriptEventsEnabled
+;   int g_ActorLookedUpByVariable
 ;
 ; Called Functions:
 ;   core_script.cpp_getActor_FUN_00521290
@@ -75,7 +75,7 @@ section .text
     TEST EAX,EAX                        ; 00529799
     JNZ 0x00529862                      ; 0052979b
         ;   XREF to: 00529862 (CONDITIONAL_JUMP)  ; LAB_00529862
-    CMP dword ptr [0x01e6590c],0x0      ; 005297a1 | DAT_01e6590c
+    CMP dword ptr [0x01e6590c],0x0      ; 005297a1 | g_ActorLookedUpByVariable
     JZ 0x0052984f                       ; 005297a8
         ;   XREF to: 0052984f (CONDITIONAL_JUMP)  ; LAB_0052984f
     MOV dword ptr [ESP + 0xc],EAX       ; 005297ae
@@ -89,7 +89,7 @@ section .text
     MOV EAX,ESP                         ; 005297bd
         ;   Label: LAB_005297bd
     PUSH EAX                            ; 005297bf
-    PUSH 0x5e4d9b                       ; 005297c0 | DAT_005e4d9b
+    PUSH 0x5e4d9b                       ; 005297c0 | = "%f"
     MOV ECX,dword ptr [EBP + 0x1c]      ; 005297c5
     PUSH ECX                            ; 005297c8
     CALL crt_stdio.c_sscanf_FUN_005ba8cc ; 005297c9
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 0052977e (CONDITIONAL_JUMP)  ; LAB_0052977e
     MOV EDI,dword ptr [EBP + 0x1c]      ; 005297d6
     PUSH EDI                            ; 005297d9
-    MOV EAX,[0x0061c068]                ; 005297da | DAT_0061c068
+    MOV EAX,[0x0061c068]                ; 005297da | g_CSound_PTR_0061c068
     PUSH EAX                            ; 005297df
     CALL core_sound.cpp_CSound_getSoundDuration_FUN_0055af90 ; 005297e0
         ;   XREF to: 0055af90 (UNCONDITIONAL_CALL)  ; float core_sound.cpp_CSound_getSoundDuration_FUN_0055af90(CSound * this_ptr, char * sound_name)
@@ -114,7 +114,7 @@ section .text
     SAHF                                ; 005297f9
     JA 0x00529816                       ; 005297fa
         ;   XREF to: 00529816 (CONDITIONAL_JUMP)  ; LAB_00529816
-    CMP dword ptr [0x01e650f8],0x0      ; 005297fc | DAT_01e650f8
+    CMP dword ptr [0x01e650f8],0x0      ; 005297fc | g_ScriptEventsEnabled
         ;   Label: LAB_005297fc
     JNZ 0x0052977e                      ; 00529803
         ;   XREF to: 0052977e (CONDITIONAL_JUMP)  ; LAB_0052977e
@@ -138,8 +138,8 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 00529832
     MOV dword ptr [ESP + 0x8],EDI       ; 00529836
     FILD qword ptr [ESP + 0x4]          ; 0052983a
-    FMUL double ptr [0x005e4da3]        ; 0052983e | DAT_005e4da3
-    FADD double ptr [0x005e4dab]        ; 00529844 | DAT_005e4dab
+    FMUL double ptr [0x005e4da3]        ; 0052983e | g_DOUBLE_005e4da3
+    FADD double ptr [0x005e4dab]        ; 00529844 | g_DOUBLE_005e4dab
     FSTP float ptr [ESP]                ; 0052984a
     JMP 0x005297fc                      ; 0052984d
         ;   XREF to: 005297fc (UNCONDITIONAL_JUMP)  ; LAB_005297fc
@@ -158,7 +158,7 @@ section .text
     TEST EDX,EDX                        ; 00529868
     JZ 0x005298ec                       ; 0052986a
         ;   XREF to: 005298ec (CONDITIONAL_JUMP)  ; LAB_005298ec
-    CMP dword ptr [0x01e650f8],0x0      ; 00529870 | DAT_01e650f8
+    CMP dword ptr [0x01e650f8],0x0      ; 00529870 | g_ScriptEventsEnabled
         ;   Label: LAB_00529870
     JNZ 0x005298da                      ; 00529877
         ;   XREF to: 005298da (CONDITIONAL_JUMP)  ; LAB_005298da
@@ -199,7 +199,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x1c]      ; 005298be
     PUSH ECX                            ; 005298c1
     PUSH EBX                            ; 005298c2
-    MOV ESI,dword ptr [0x0061c068]      ; 005298c3 | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 005298c3 | g_CSound_PTR_0061c068
     PUSH ESI                            ; 005298c9
     CALL core_sound.cpp_CSound_playSound_FUN_0055ae30 ; 005298ca
         ;   XREF to: 0055ae30 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0055ae30(CSound * this_ptr, void * user_data, char * sound_name)

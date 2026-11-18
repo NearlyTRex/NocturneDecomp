@@ -18,7 +18,7 @@ void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00438550(CConveyor *this_ptr)
   uint *puVar7;
   byte bVar8;
   float afStackY_17f8 [1526];
-  float fStack_1c;
+  CQuaternion4f CStack_1c;
   
   bVar8 = 0;
   pCVar2 = &(this_ptr->base).end_pos;
@@ -34,16 +34,14 @@ void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00438550(CConveyor *this_ptr)
     (this_ptr->base).start_pos.y = (this_ptr->base).end_pos.y;
     (this_ptr->base).start_pos.z = (this_ptr->base).end_pos.z;
   }
-  core_xform_cpp_FUN_00594380(&(this_ptr->base).base.orient);
-  puVar4 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x4a4);
-  (this_ptr->base).end_orient.w = fStack_1c;
-  puVar5 = puVar4 + (uint)bVar8 * -2 + 1;
-  *puVar4 = *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8);
-  *puVar5 = *(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-  puVar5[(uint)bVar8 * -2 + 1] =
-       *(uint *)
-        ((int)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) + ((uint)bVar8 * -2 + 1) * 4)
-  ;
+  core_xform_cpp_eulerToQuaternion_FUN_00594380(&(this_ptr->base).base.orient.vec,&CStack_1c);
+  puVar5 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x4a4);
+  (this_ptr->base).end_orient.w = CStack_1c.w;
+  puVar6 = puVar5 + (uint)bVar8 * -2 + 1;
+  puVar4 = (uint *)((int)&CStack_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+  *puVar5 = *(uint *)((int)&CStack_1c + (uint)bVar8 * -8 + 4);
+  *puVar6 = *puVar4;
+  puVar6[(uint)bVar8 * -2 + 1] = puVar4[(uint)bVar8 * -2 + 1];
   puVar6 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x494);
   puVar4 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x4a4);
   (this_ptr->base).orig_orient.w = (this_ptr->base).end_orient.w;

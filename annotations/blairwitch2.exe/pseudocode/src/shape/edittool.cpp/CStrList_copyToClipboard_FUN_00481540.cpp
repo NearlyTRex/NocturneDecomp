@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00481540(CStrList *this_ptr)
 
 {
@@ -37,11 +35,11 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00481540(CStrList *
       iVar4 = iVar4 + ~uVar3;
     } while (iVar5 < this_ptr->item_count);
   }
-  pcVar2 = (char *)operator_new_array(iVar4 + 1);
+  pcVar2 = operator_new_array(iVar4 + 1);
   if (pcVar2 == (char *)0x0) {
-    _DAT_01d046a0 = "..\\shape\\edittool.cpp";
-    _DAT_01d046a4 = 0xcd1;
-    core_main_c_FUN_004e4500("CStrList::copyToClipboard - out of memory for %d items, %d bytes",this_ptr->item_count,iVar4 + 1);
+    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
+    g_INT_01d046a4 = 0xcd1;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CStrList::copyToClipboard - out of memory for %d items, %d bytes");
   }
   iVar4 = 0;
   buffer = pcVar2;
@@ -49,13 +47,13 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00481540(CStrList *
     do {
       shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(this_ptr,iVar4);
       iVar4 = iVar4 + 1;
-      iVar5 = _sprintf(buffer,&DAT_005d2824);
+      iVar5 = _sprintf(buffer,"%s\n");
       buffer = buffer + iVar5;
     } while (iVar4 < this_ptr->item_count);
   }
   this_ptr_00 = g_CEditorToolsPtr;
   *buffer = '\0';
   shape_edittool_cpp_CEditorTools_setClipboardText_FUN_0047fc30(this_ptr_00,pcVar2);
-  FUN_005b7fce(pcVar2);
+  free(pcVar2);
   return;
 }

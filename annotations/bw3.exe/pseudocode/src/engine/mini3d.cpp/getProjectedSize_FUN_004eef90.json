@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 49,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 2,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "bit_int_float_compare",
-      "warning_overlapping_globals"
+      "bit_int_float_compare"
     ],
-    "total_lines": 70
+    "total_lines": 69
   },
   "cross_references": [],
   "function": {
@@ -32,32 +31,32 @@
   "globals": [
     {
       "addr": "005c8181",
-      "name": "DAT_005c8181",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c8181",
+      "type": "float",
+      "value": "240"
     },
     {
       "addr": "01d76c50",
-      "name": "DAT_01d76c50",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d76c50",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d76c58",
-      "name": "DAT_01d76c58",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d76c58",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d76ca8",
-      "name": "DAT_01d76ca8",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d76ca8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d76cfc",
-      "name": "DAT_01d76cfc",
-      "type": "undefined4",
+      "name": "g_PTR_01d76cfc",
+      "type": "void*",
       "value": null
     }
   ],
@@ -138,16 +137,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 19,
+      "line": 17,
       "match": "(int)fVar1 < 0x3f800000",
       "severity": "moderate",
       "text": "if ((int)fVar1 < 0x3f800000) {",

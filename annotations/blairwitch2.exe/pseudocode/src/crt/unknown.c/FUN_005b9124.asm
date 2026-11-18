@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_005b9124(int param_1)
+; _FILE * crt_unknown_c_FUN_005b9124(_FILE *param_1)
 ;
 ;
 ; XREF[1]:
@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2b8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2bc = 005bce04
-;   undefined4 DAT_02680160
-;   undefined4 DAT_02680164
+;   FileListNode* g_AllocatedListHead
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005be180
@@ -26,7 +26,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005b9124
     MOV EBX,dword ptr [ESP + 0x8]       ; 005b9125
     CALL dword ptr [0x0061f2b8]         ; 005b9129 | PTR_crt_unknown.c_FUN_005bce04_0061f2b8
-    MOV EAX,[0x02680160]                ; 005b912f | DAT_02680160
+    MOV EAX,[0x02680160]                ; 005b912f | g_AllocatedListHead
     TEST EAX,EAX                        ; 005b9134
     JZ 0x005b9160                       ; 005b9136
         ;   XREF to: 005b9160 (CONDITIONAL_JUMP)  ; LAB_005b9160
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 005b9138 (CONDITIONAL_JUMP)  ; LAB_005b9138
     MOV EDX,0x2680164                   ; 005b9160
         ;   Label: LAB_005b9160
-    MOV EAX,dword ptr [EDX]             ; 005b9165 | DAT_02680164
+    MOV EAX,dword ptr [EDX]             ; 005b9165 | g_FreeListHeadPointer
         ;   Label: LAB_005b9165
     TEST EAX,EAX                        ; 005b9167
     JZ 0x005b918f                       ; 005b9169
@@ -64,9 +64,9 @@ section .text
     JNZ 0x005b918b                      ; 005b916e
         ;   XREF to: 005b918b (CONDITIONAL_JUMP)  ; LAB_005b918b
     MOV ECX,dword ptr [EAX]             ; 005b9170
-    MOV dword ptr [EDX],ECX             ; 005b9172 | DAT_02680164
-    MOV EDX,dword ptr [0x02680160]      ; 005b9174 | DAT_02680160
-    MOV [0x02680160],EAX                ; 005b917a | DAT_02680160
+    MOV dword ptr [EDX],ECX             ; 005b9172 | g_FreeListHeadPointer
+    MOV EDX,dword ptr [0x02680160]      ; 005b9174 | g_AllocatedListHead
+    MOV [0x02680160],EAX                ; 005b917a | g_AllocatedListHead
     MOV dword ptr [EAX],EDX             ; 005b917f
     CALL dword ptr [0x0061f2bc]         ; 005b9181 | PTR_crt_unknown.c_FUN_005bce04_0061f2bc
     MOV EAX,EBX                         ; 005b9187

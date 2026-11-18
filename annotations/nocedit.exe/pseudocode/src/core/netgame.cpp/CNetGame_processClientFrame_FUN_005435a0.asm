@@ -21,7 +21,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   uint g_CurrentGameTime
-;   uint UINT_02f7c8c8
+;   uint g_NetLastSimFrameAckTime
 ;   int g_SimFrameCount
 ;   SSimFrame[512] g_SimFrameHistory
 ;   undefined4 g_SimFrameHistory[1].sequence_number
@@ -205,7 +205,7 @@ section .text
     CMP EBX,0x2                         ; 00543765
     JNZ 0x00543720                      ; 00543768
         ;   XREF to: 00543720 (CONDITIONAL_JUMP)  ; LAB_00543720
-    MOV EAX,[0x02f7c8c8]                ; 0054376a | UINT_02f7c8c8
+    MOV EAX,[0x02f7c8c8]                ; 0054376a | g_NetLastSimFrameAckTime
     MOV EDX,dword ptr [0x02f7c8b8]      ; 0054376f | g_CurrentGameTime
     SUB EDX,EAX                         ; 00543775
     MOV dword ptr [ESP + 0xc],EDX       ; 00543777

@@ -9,21 +9,21 @@
 void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_004596c0(CFilterCache *this_ptr)
 
 {
-  CDemonFilter *pCVar1;
-  int iVar2;
-  CFilterCache *pCVar3;
+  CDemonFilter *ptr;
+  int iVar1;
+  CFilterCache *pCVar2;
   
-  iVar2 = 0;
-  pCVar3 = this_ptr;
+  iVar1 = 0;
+  pCVar2 = this_ptr;
   if (0 < this_ptr->filter_count) {
     do {
-      if (pCVar3->filters[0] != (CDemonFilter *)0x0) {
-        pCVar1 = core_dfilter_cpp_CDemonFilter_dtor_FUN_004598f0(pCVar3->filters[0],0);
-        FUN_005a30c4(pCVar1);
+      if (pCVar2->filters[0] != (CDemonFilter *)0x0) {
+        ptr = core_dfilter_cpp_CDemonFilter_dtor_FUN_004598f0(pCVar2->filters[0],0);
+        debugFreeChecked(ptr);
       }
-      iVar2 = iVar2 + 1;
-      pCVar3 = (CFilterCache *)pCVar3->filter_names;
-    } while (iVar2 < this_ptr->filter_count);
+      iVar1 = iVar1 + 1;
+      pCVar2 = (CFilterCache *)pCVar2->filter_names;
+    } while (iVar1 < this_ptr->filter_count);
   }
   this_ptr->filter_count = 0;
   return;

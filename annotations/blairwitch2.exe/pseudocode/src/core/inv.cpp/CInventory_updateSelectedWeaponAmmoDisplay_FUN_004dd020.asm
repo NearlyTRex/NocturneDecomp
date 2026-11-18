@@ -10,10 +10,10 @@
 ; XREF[3]:
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60 at 004dbd63
 ;   core_inv.cpp_CInventory_load_FUN_004dc4b0 at 004dc713
-;   core_inv.cpp_FUN_004db9d0 at 004dbb3c
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0 at 004dbb3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x468]     ; 004dd070
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x610] ; 004dd076
     PUSH ECX                            ; 004dd07d
-    CALL core_actor.cpp_FUN_00408a50    ; 004dd07e
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004dd07e
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004dd083
     PUSH EAX                            ; 004dd086
     MOV ESI,dword ptr [EBX + 0x464]     ; 004dd087

@@ -7,9 +7,9 @@
 ; CVector3f *      Stack[0x4]:4   origin
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d098b0
-;   undefined4 DAT_01d098b4
-;   undefined4 DAT_01d098b8
+;   float g_FLOAT_01d098b0
+;   float g_FLOAT_01d098b4
+;   float g_FLOAT_01d098b8
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     FLD float ptr [EAX]                 ; 004f2434
     FLD float ptr [EAX + 0x8]           ; 004f2436
     MOV EDX,dword ptr [EAX + 0x4]       ; 004f2439
-    MOV dword ptr [0x01d098b4],EDX      ; 004f243c | DAT_01d098b4
-    FSTP float ptr [0x01d098b8]         ; 004f2442 | DAT_01d098b8
-    FSTP float ptr [0x01d098b0]         ; 004f2448 | DAT_01d098b0
+    MOV dword ptr [0x01d098b4],EDX      ; 004f243c | g_FLOAT_01d098b4
+    FSTP float ptr [0x01d098b8]         ; 004f2442 | g_FLOAT_01d098b8
+    FSTP float ptr [0x01d098b0]         ; 004f2448 | g_FLOAT_01d098b0
     RET                                 ; 004f244e
 

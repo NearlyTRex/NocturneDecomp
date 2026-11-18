@@ -25,7 +25,7 @@
 ;   double DOUBLE_00585843 = 5
 ;   double DOUBLE_0058584b = 4
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CDoorActorType_01af4e9c.name_hash
+;   undefined4 g_CDoorClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -74,7 +74,7 @@ section .text
         ;   XREF to: 004b5132 (UNCONDITIONAL_JUMP)  ; LAB_004b5132
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004b5156
         ;   Label: LAB_004b5156
-    MOV EBX,dword ptr [0x01af4ed4]      ; 004b515a | g_CDoorActorType_01af4e9c.name_hash
+    MOV EBX,dword ptr [0x01af4ed4]      ; 004b515a | g_CDoorClassInfo.name_hash
     ADD EAX,EDX                         ; 004b5160
     PUSH EBX                            ; 004b5162
     MOV ECX,dword ptr [EAX + 0x14cd70]  ; 004b5163 | g_CDemonSetInstance.actors[0]

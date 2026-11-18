@@ -9,7 +9,7 @@
 void __cdecl core_mirror_cpp_staticInit_FUN_004f9430(void)
 
 {
-  __arrinit(&DAT_01d17fc4,0x20,&g_CVectorTypeInfo);
-  __arrinit(&DAT_01d18148,0x20,&g_CVectorTypeInfo);
+  __arrinit(g_MirrorInputVertices,0x20,&g_CVectorTypeInfo);
+  __arrinit(g_MirrorOutputVertices,0x20,&g_CVectorTypeInfo);
   return;
 }

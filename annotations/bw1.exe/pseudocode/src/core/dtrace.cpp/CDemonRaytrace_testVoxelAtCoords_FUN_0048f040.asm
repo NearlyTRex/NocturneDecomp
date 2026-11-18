@@ -8,10 +8,10 @@
 ; CVector3i *      Stack[0x8]:4   voxel_coords
 ;
 ; XREF[1]:
-;   core_particle.cpp_FUN_00532250 at 00532399
+;   core_particle.cpp_CParticle_process_FUN_00532250 at 00532399
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ab68
+;   uchar[8] g_VoxelYBitMasks
 ;
 ; *****************************************************************************
 
@@ -100,7 +100,7 @@ section .text
     MOV CL,byte ptr [ECX + EAX*0x1]     ; 0048f0f7
     XOR EAX,EDX                         ; 0048f0fa
     AND ECX,0xff                        ; 0048f0fc
-    MOV AL,byte ptr [ESI + 0x61ab68]    ; 0048f102 | DAT_0061ab68
+    MOV AL,byte ptr [ESI + 0x61ab68]    ; 0048f102 | g_VoxelYBitMasks
     TEST ECX,EAX                        ; 0048f108
     SETNZ AL                            ; 0048f10a
     AND EAX,0xff                        ; 0048f10d

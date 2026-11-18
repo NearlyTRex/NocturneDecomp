@@ -7,12 +7,12 @@
 ; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[9]:
-;   core_menu.cpp_FUN_004e94f0 at 004e96d5
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e96d5
 ;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005607d5
+;   core_sound.cpp_CSound_init_FUN_0055fd30 at 0055fddf
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 005601ab
-;   core_sound.cpp_FUN_0055fd30 at 0055fddf
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcd0 at 0055fcef
-;   sound_snddx.cpp_FUN_0055c0f0 at 0055c5e8
+;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0 at 0055c5e8
 ;   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00554250 at 0055426c
 ;   sound_sndmain.cpp_readIni_FUN_00559220 at 005594b5
 ;   sound_sndmain.cpp_writeIni_FUN_00559520 at 005596af
@@ -20,11 +20,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d389d
 ;   TerminatedCString s_getSfxChannelVol_invalid_005d38b2
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -48,10 +48,10 @@ section .text
     MOV EDX,0x5d389d                    ; 00556d3a | = "..\\sound\\sndmain.cpp"
     MOV ECX,0x112b                      ; 00556d3f
     PUSH 0x5d38b2                       ; 00556d44 | = "getSfxChannelVol - invalid channel in..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00556d49 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00556d4f | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00556d55
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 00556d49 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00556d4f | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00556d55
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00556d5a
     MOV EBX,dword ptr [EBX*0x4 + 0x2cf28c0] ; 00556d5d
     MOV EAX,EBX                         ; 00556d64

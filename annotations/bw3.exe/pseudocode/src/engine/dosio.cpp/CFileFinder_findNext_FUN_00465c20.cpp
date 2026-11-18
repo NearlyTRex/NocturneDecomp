@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_00465c20(CFileFinder *this_ptr)
 
 {
@@ -15,9 +13,9 @@ int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_00465c20(CFileFinder *this
   _WIN32_FIND_DATAA _Stack_148;
   
   if (this_ptr->has_results == 0) {
-    _DAT_01d71de0 = "..\\engine\\dosio.c";
-    _DAT_01d71de4 = 0x28e;
-    core_main_c_FUN_004e4330("CFileFinder::open - search not opened!");
+    g_CHAR_PTR_01d71de0 = "..\\engine\\dosio.c";
+    g_INT_01d71de4 = 0x28e;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CFileFinder::open - search not opened!");
   }
   BVar1 = FindNextFileA(this_ptr->search_handle,&_Stack_148);
   if (BVar1 != 0) {

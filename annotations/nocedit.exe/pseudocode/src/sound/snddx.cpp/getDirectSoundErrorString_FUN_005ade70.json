@@ -31,6 +31,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005af750",
+      "from_addr": "005afb82",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_005af750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005afd60",
       "from_addr": "005afe31",
       "name": "sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60",
@@ -76,12 +82,6 @@
       "addr": "005ae830",
       "from_addr": "005aec6f",
       "name": "sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005af750",
-      "from_addr": "005afb82",
-      "name": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -250,7 +250,7 @@
       {
         "call_addr": "005afb82",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_005af750",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -294,7 +294,7 @@
       {
         "call_addr": "005afb47",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_005af750",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,7 +338,7 @@
       {
         "call_addr": "005afa8d",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_005af750",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -387,6 +387,24 @@
     "pcode_op_count": 258
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00554ad0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9302
+    },
+    "bw1.exe": {
+      "addr": "00577500",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9302
+    },
+    "bw3.exe": {
+      "addr": "0055a670",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9302
+    },
     "nocturne.exe": {
       "addr": "00529a90",
       "by": "name",

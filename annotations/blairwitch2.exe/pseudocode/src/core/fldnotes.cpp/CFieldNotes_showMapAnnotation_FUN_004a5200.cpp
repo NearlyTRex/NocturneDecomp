@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004a5233) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_fldnotes_cpp_CFieldNotes_showMapAnnotation_FUN_004a5200(CFieldNotes *this_ptr,char *entry_name,char *annotation_name,char *error_text)
 
@@ -17,14 +16,14 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_showMapAnnotation_FUN_004a5200(CFieldN
   SNotesSection *this_ptr_00;
   
   iVar2 = 0;
-  if (0 < _DAT_01cab9f0) {
+  if (0 < g_INT_01cab9f0) {
     this_ptr_00 = SNotesSection_ARRAY_01cab9f4;
     do {
       pSVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(this_ptr_00,entry_name);
       if (pSVar1 != (SNotesEntry *)0x0) goto LAB_004a5238;
       iVar2 = iVar2 + 1;
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar2 < _DAT_01cab9f0);
+    } while (iVar2 < g_INT_01cab9f0);
   }
   pSVar1 = (SNotesEntry *)0x0;
 LAB_004a5238:

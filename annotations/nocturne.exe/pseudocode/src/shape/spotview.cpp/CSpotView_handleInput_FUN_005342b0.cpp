@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005342b0(CSpotView *this_ptr,uint control_flags)
 
 {
@@ -30,10 +28,10 @@ void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005342b0(CSpotView *th
   else {
     local_20 = 0.05;
   }
-  fVar3 = (float)_DAT_00595122;
+  fVar3 = (float)1.1000000000000001;
   fVar1 = g_CGamePtr->delta_time_float * local_20;
-  fStack_1c = this_ptr->distance * (float)_DAT_0059512a;
-  fVar2 = fVar1 * (float)_DAT_0059511a;
+  fStack_1c = this_ptr->distance * (float)1.5;
+  fVar2 = fVar1 * (float)3.1415926535000001;
   if (fStack_1c < 1.0) {
     fStack_1c = 1.0;
   }

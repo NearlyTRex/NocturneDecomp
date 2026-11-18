@@ -20,7 +20,7 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004835d0(CStake *this_ptr)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,orientation,(CVector3f *)0x0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     (&g_CKeyFramedModelInstance_01c08d48);
+                     (&g_FireEffectFlamingStakeModel);
   local_24.min.x = (pCVar1->bounds).min.x;
   local_24.min.y = (pCVar1->bounds).min.y;
   local_24.min.z = (pCVar1->bounds).min.z;
@@ -33,7 +33,7 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004835d0(CStake *this_ptr)
               (g_CDemonSetPtr,&(this_ptr->physics_box).position,(UOrientationVector *)orientation,
                &local_24.min,&local_24.max,&(this_ptr->physics_box).rotation_matrix);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-              (&g_CKeyFramedModelInstance_01c08d48,0.0,-1);
+              (&g_FireEffectFlamingStakeModel,0.0,-1);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;

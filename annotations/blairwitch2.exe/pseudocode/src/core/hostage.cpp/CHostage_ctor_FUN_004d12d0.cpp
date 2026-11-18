@@ -17,10 +17,10 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004d12d0(CHostage *this_pt
   pCVar2 = (CHostage *)core_npc_cpp_CNPC_ctor_FUN_00510460(&this_ptr->base);
   (pCVar2->base).base.base.vtable._ub = &g_CHostageVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(pCVar2->base).base.model,(char *)0x5da107);
+            (&(pCVar2->base).base.model,"hickdad.dfm");
   pCVar2->follow_state = 0;
   pCVar2->hostage_state = 0;
-  pcVar3 = (char *)0x5da113;
+  pcVar3 = "true";
   pCVar2->goal_way_point = (CDemonActor *)0x0;
   pCVar2->sit_down_way_point = (CDemonActor *)0x0;
   pcVar4 = pCVar2->rescue_condition;

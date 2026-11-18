@@ -10,7 +10,7 @@
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0 at 00407ab2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0070ca60
+;   uint g_ProcessedVertexOffset
 ;
 ; Called Functions:
 ;   engine_light.cpp_calculateAndStoreVertexLight_FUN_004e2980
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 00403a80 (CONDITIONAL_JUMP)  ; LAB_00403a80
     MOV EAX,dword ptr [EDI + 0x4]       ; 00403a54
         ;   Label: LAB_00403a54
-    MOV ECX,dword ptr [0x0070ca60]      ; 00403a57 | DAT_0070ca60
+    MOV ECX,dword ptr [0x0070ca60]      ; 00403a57 | g_ProcessedVertexOffset
     ADD EAX,EBX                         ; 00403a5d
     PUSH ESI                            ; 00403a5f
     ADD EAX,ECX                         ; 00403a60

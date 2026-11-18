@@ -1,20 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char crt_unknown_c_FUN_005c4f48(void)
+; byte crt_unknown_c_FUN_005c4f48(void)
 ;
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_005c4ff8 at 005c5073
 ;
 ; Referenced Globals:
-;   undefined1 DAT_0061f7cc
+;   byte g_ConsoleHandlerRegistered = 0x0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP byte ptr [0x0061f7cc],0x0       ; 005c4f48 | DAT_0061f7cc
+    CMP byte ptr [0x0061f7cc],0x0       ; 005c4f48 | g_ConsoleHandlerRegistered
         ;   Label: crt_unknown.c_FUN_005c4f48
     JNZ 0x005c4f6a                      ; 005c4f4f
         ;   XREF to: 005c4f6a (CONDITIONAL_JUMP)  ; LAB_005c4f6a
@@ -24,9 +24,9 @@ section .text
     TEST EAX,EAX                        ; 005c4f5f
     JZ 0x005c4f6a                       ; 005c4f61
         ;   XREF to: 005c4f6a (CONDITIONAL_JUMP)  ; LAB_005c4f6a
-    MOV byte ptr [0x0061f7cc],0x1       ; 005c4f63 | DAT_0061f7cc
+    MOV byte ptr [0x0061f7cc],0x1       ; 005c4f63 | g_ConsoleHandlerRegistered
     XOR EAX,EAX                         ; 005c4f6a
         ;   Label: LAB_005c4f6a
-    MOV AL,[0x0061f7cc]                 ; 005c4f6c | DAT_0061f7cc
+    MOV AL,[0x0061f7cc]                 ; 005c4f6c | g_ConsoleHandlerRegistered
     RET                                 ; 005c4f71
 

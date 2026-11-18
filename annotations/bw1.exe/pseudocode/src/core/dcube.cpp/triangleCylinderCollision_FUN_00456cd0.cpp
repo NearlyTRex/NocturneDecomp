@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456cd0(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height)
 
 {
@@ -21,16 +19,14 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456cd0(CDemonCubeTri
   uint uVar8;
   float fVar9;
   CVector3f local_7c;
-  float local_70;
-  float local_6c;
-  float local_68;
+  CVector3f local_70;
   CVector3f local_64;
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
   CVector3f local_34 [3];
   
-  if ((triangle->triangle).normal.y <= (float)_DAT_005d7abf) {
+  if ((triangle->triangle).normal.y <= (float)-0.34000000000000002) {
     fVar1 = (triangle->triangle).vertices[0]->x - cylinder_center->x;
     fVar9 = (triangle->triangle).vertices[0]->y;
     fVar2 = (triangle->triangle).vertices[0]->z - cylinder_center->z;
@@ -110,26 +106,28 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456cd0(CDemonCubeTri
         fVar1 = (triangle->triangle).normal.z;
         uVar8 = uVar6 | uVar7 | uVar8;
         fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);
-        if ((DAT_0152bd38 & 1) == 0) {
-          DAT_0152bd38 = DAT_0152bd38 | 1;
-          _DAT_0152bd2c = 0;
-          _DAT_0152bd34 = 0;
-          _DAT_0152bd30 = -100.0;
+        if ((g_UCHAR_0152bd38 & 1) == 0) {
+          g_UCHAR_0152bd38 = g_UCHAR_0152bd38 | 1;
+          g_CVector3f_0152bd2c.x = 0.0;
+          g_CVector3f_0152bd2c.z = 0.0;
+          g_CVector3f_0152bd2c.y = -100.0;
         }
-        if (_DAT_005d7ac7 <= (double)fVar9) {
+        if (0.01 <= (double)fVar9) {
           fVar9 = cylinder_radius / fVar9;
-          local_70 = (triangle->triangle).normal.x * fVar9 + cylinder_center->x;
-          local_68 = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
-          local_6c = cylinder_center->y;
-          fVar9 = (float)core_dcube_cpp_FUN_004560f0(triangle,&local_70,&DAT_0152bd2c);
+          local_70.x = (triangle->triangle).normal.x * fVar9 + cylinder_center->x;
+          local_70.z = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
+          local_70.y = cylinder_center->y;
+          fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_004560f0
+                            (triangle,&local_70,&g_CVector3f_0152bd2c);
           if ((0.0 <= fVar9) &&
-             (local_6c = fVar9 * _DAT_0152bd30 + local_6c, *out_height < local_6c)) {
-            *out_height = local_6c;
+             (local_70.y = fVar9 * g_CVector3f_0152bd2c.y + local_70.y, *out_height < local_70.y)) {
+            *out_height = local_70.y;
             return 1;
           }
         }
         else if (uVar8 == 0) {
-          fVar9 = (float)core_dcube_cpp_FUN_004560f0(triangle,cylinder_center,&DAT_0152bd2c);
+          fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_004560f0
+                            (triangle,cylinder_center,&g_CVector3f_0152bd2c);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_40.y;

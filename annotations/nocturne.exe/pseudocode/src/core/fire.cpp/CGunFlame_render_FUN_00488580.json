@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 249,
+    "complexity_score": 278,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 174,
-    "suspect_count": 6,
+    "pseudocode_lines": 173,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
+      "raw_address_constant",
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 578
+    "total_lines": 577
   },
   "cross_references": [
     {
@@ -194,8 +194,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -607,16 +607,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(SMRGLTextureBasic *)((int)fStack_2c",
-      "severity": "moderate",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)((int)fStack_2c * 0x18 + 0x1c09c28))",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 92,
+      "line": 91,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_78 = local_d0 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;",
@@ -624,7 +616,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 93,
+      "line": 92,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_7c = -fStack_d4 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;",
@@ -632,7 +624,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 124,
+      "line": 123,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar5 = fVar2 * 5.4940833406217561e-315._0_4_;",
@@ -640,11 +632,43 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 168,
+      "line": 167,
       "match": "5.60519e-45",
       "severity": "mild",
       "text": "fStack_d4 = 5.60519e-45;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+5052920 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 129,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+5052920 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 131,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+5052920 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 134,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "pSVar1[2].v = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+5052920 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 141,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[3].v = 0xfe0000;",
+      "type": "raw_address_constant"
     }
   ]
 }

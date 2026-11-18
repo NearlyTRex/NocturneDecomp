@@ -35,7 +35,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   int INT_0067d390 = -0x1
+;   int g_LodPreviewLabelVertex = -0x1
 ;   CSpotView* g_CSpotViewPtr = 03f6b9e0
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   ... and 10 more
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 0051e990 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodMesh * this_ptr, int use_palette_coloring)
     ADD ESP,0x8                         ; 0051d5f4
         ;   Label: LAB_0051d5f4
-    CMP dword ptr [0x02f3123c],0x0      ; 0051d5f7 | INT_02f3123c
+    CMP dword ptr [0x02f3123c],0x0      ; 0051d5f7 | g_LodPreviewShowEdges
     JZ 0x0051d60b                       ; 0051d5fe
         ;   XREF to: 0051d60b (CONDITIONAL_JUMP)  ; LAB_0051d60b
     PUSH 0x1                            ; 0051d600
@@ -143,7 +143,7 @@ section .text
     CALL shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 ; 0051d603
         ;   XREF to: 0051e830 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh * this_ptr, int backface_culling_enabled)
     ADD ESP,0x8                         ; 0051d608
-    CMP dword ptr [0x02f31234],0x0      ; 0051d60b | INT_02f31234
+    CMP dword ptr [0x02f31234],0x0      ; 0051d60b | g_LodPreviewShowVertexLabels
         ;   Label: LAB_0051d60b
     JZ 0x0051d61d                       ; 0051d612
         ;   XREF to: 0051d61d (CONDITIONAL_JUMP)  ; LAB_0051d61d
@@ -151,7 +151,7 @@ section .text
     CALL shape_meshlod.cpp_CLodMesh_drawVertexLabels_FUN_0051ed30 ; 0051d615
         ;   XREF to: 0051ed30 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_drawVertexLabels_FUN_0051ed30(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051d61a
-    MOV ECX,dword ptr [0x0067d390]      ; 0051d61d | INT_0067d390
+    MOV ECX,dword ptr [0x0067d390]      ; 0051d61d | g_LodPreviewLabelVertex
         ;   Label: LAB_0051d61d
     TEST ECX,ECX                        ; 0051d623
     JL 0x0051d631                       ; 0051d625
@@ -179,7 +179,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 ; 0051d65e
         ;   XREF to: 004a28a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools * this_ptr, CVector3f * world_point, int line_length)
     ADD ESP,0xc                         ; 0051d663
-    CMP dword ptr [0x02f31238],0x0      ; 0051d666 | INT_02f31238
+    CMP dword ptr [0x02f31238],0x0      ; 0051d666 | g_LodPreviewShowNextLod
         ;   Label: LAB_0051d666
     JZ 0x0051d6a6                       ; 0051d66d
         ;   XREF to: 0051d6a6 (CONDITIONAL_JUMP)  ; LAB_0051d6a6
@@ -385,10 +385,10 @@ section .text
     TEST EAX,EAX                        ; 0051d881
     JZ 0x0051d899                       ; 0051d883
         ;   XREF to: 0051d899 (CONDITIONAL_JUMP)  ; LAB_0051d899
-    CMP dword ptr [0x02f31234],0x0      ; 0051d885 | INT_02f31234
+    CMP dword ptr [0x02f31234],0x0      ; 0051d885 | g_LodPreviewShowVertexLabels
     SETZ AL                             ; 0051d88c
     AND EAX,0xff                        ; 0051d88f
-    MOV [0x02f31234],EAX                ; 0051d894 | INT_02f31234
+    MOV [0x02f31234],EAX                ; 0051d894 | g_LodPreviewShowVertexLabels
     PUSH 0x18                           ; 0051d899
         ;   Label: LAB_0051d899
     MOV EAX,[0x0067cf44]                ; 0051d89b | g_CKeysPtr
@@ -399,10 +399,10 @@ section .text
     TEST EAX,EAX                        ; 0051d8a9
     JZ 0x0051d8c1                       ; 0051d8ab
         ;   XREF to: 0051d8c1 (CONDITIONAL_JUMP)  ; LAB_0051d8c1
-    CMP dword ptr [0x02f31238],0x0      ; 0051d8ad | INT_02f31238
+    CMP dword ptr [0x02f31238],0x0      ; 0051d8ad | g_LodPreviewShowNextLod
     SETZ AL                             ; 0051d8b4
     AND EAX,0xff                        ; 0051d8b7
-    MOV [0x02f31238],EAX                ; 0051d8bc | INT_02f31238
+    MOV [0x02f31238],EAX                ; 0051d8bc | g_LodPreviewShowNextLod
     PUSH 0x12                           ; 0051d8c1
         ;   Label: LAB_0051d8c1
     MOV EAX,[0x0067cf44]                ; 0051d8c3 | g_CKeysPtr
@@ -413,10 +413,10 @@ section .text
     TEST EAX,EAX                        ; 0051d8d1
     JZ 0x0051d8e9                       ; 0051d8d3
         ;   XREF to: 0051d8e9 (CONDITIONAL_JUMP)  ; LAB_0051d8e9
-    CMP dword ptr [0x02f3123c],0x0      ; 0051d8d5 | INT_02f3123c
+    CMP dword ptr [0x02f3123c],0x0      ; 0051d8d5 | g_LodPreviewShowEdges
     SETZ AL                             ; 0051d8dc
     AND EAX,0xff                        ; 0051d8df
-    MOV [0x02f3123c],EAX                ; 0051d8e4 | INT_02f3123c
+    MOV [0x02f3123c],EAX                ; 0051d8e4 | g_LodPreviewShowEdges
     PUSH 0x39                           ; 0051d8e9
         ;   Label: LAB_0051d8e9
     MOV EAX,[0x0067cf44]                ; 0051d8eb | g_CKeysPtr
@@ -441,7 +441,7 @@ section .text
         ;   Label: LAB_0051d915
     MOV ECX,0xffffffff                  ; 0051d91a
     XOR AH,AH                           ; 0051d91f
-    MOV dword ptr [0x0067d390],ECX      ; 0051d921 | INT_0067d390
+    MOV dword ptr [0x0067d390],ECX      ; 0051d921 | g_LodPreviewLabelVertex
     MOV byte ptr [0x02f31258],AH        ; 0051d927 | g_LodMeshProgressBuffer
     MOV EAX,dword ptr [ESP + 0xa4]      ; 0051d92d
     ADD ESP,0xac                        ; 0051d934

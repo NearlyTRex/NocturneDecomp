@@ -2,22 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 474,
+    "complexity_score": 443,
     "cross_reference_count": 45,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 40,
+    "pseudocode_lines": 43,
+    "suspect_count": 38,
     "suspect_types": [
       "carry_arith_idiom",
       "concat_reconstruction",
-      "undefined_data",
       "unknown_type",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 152
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -307,27 +305,27 @@
   "globals": [
     {
       "addr": "006216c0",
-      "name": "DAT_006216c0",
-      "type": "undefined4",
+      "name": "g_IEEE754ExponentClassTable",
+      "type": "byte[16]",
       "value": null
     },
     {
       "addr": "006216d0",
-      "name": "DAT_006216d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IEEE754NormalScaleFactor",
+      "type": "float",
+      "value": "0.9375"
     },
     {
       "addr": "006216d4",
-      "name": "DAT_006216d4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IEEE754SubnormalScaleFactor",
+      "type": "float",
+      "value": "1.0625"
     },
     {
       "addr": "006216d8",
-      "name": "DAT_006216d8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IEEE754RenormScaleFactor",
+      "type": "float",
+      "value": "9.223372E+18"
     }
   ],
   "param_estimates": {
@@ -517,16 +515,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint FUN_005bf3dc(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
@@ -534,7 +524,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint FUN_005bf3dc(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
@@ -542,7 +532,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "uint FUN_005bf3dc(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
@@ -550,7 +540,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "uint FUN_005bf3dc(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
@@ -558,7 +548,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "uint FUN_005bf3dc(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
@@ -566,7 +556,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_6",
       "severity": "mild",
       "text": "uint FUN_005bf3dc(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
@@ -574,7 +564,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar1 = (float10)CONCAT28(param_3,CONCAT44(param_2,param_1));",
@@ -582,7 +572,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = (float10)CONCAT28(param_3,CONCAT44(param_2,param_1));",
@@ -590,7 +580,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = (float10)CONCAT28(param_3,CONCAT44(param_2,param_1));",
@@ -598,7 +588,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "while (!CARRY4(param_2,param_2)) {",
@@ -606,7 +596,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "while (!CARRY4(param_2,param_2)) {",
@@ -614,7 +604,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 12,
+      "line": 10,
       "match": "CARRY4(param_2,param_2)",
       "severity": "moderate",
       "text": "while (!CARRY4(param_2,param_2)) {",
@@ -622,7 +612,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 == 0 && param_2 == 0) {",
@@ -630,7 +620,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_1 == 0 && param_2 == 0) {",
@@ -638,7 +628,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((param_3 & 0x7fff) != 0) {",
@@ -646,7 +636,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_3",
       "severity": "mild",
       "text": "return param_3 & 0x7fff;",
@@ -654,7 +644,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_6",
       "severity": "mild",
       "text": "uVar2 = param_6 & 0x7fff;",
@@ -662,7 +652,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_5",
       "severity": "mild",
       "text": "if (CARRY4(param_5,param_5)) {",
@@ -670,7 +660,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_5",
       "severity": "mild",
       "text": "if (CARRY4(param_5,param_5)) {",
@@ -678,7 +668,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "CARRY4(param_5,param_5)",
       "severity": "moderate",
       "text": "if (CARRY4(param_5,param_5)) {",
@@ -686,7 +676,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_5",
       "severity": "mild",
       "text": "return param_5 * 2;",
@@ -694,7 +684,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_5",
       "severity": "mild",
       "text": "else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {",
@@ -702,7 +692,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_5",
       "severity": "mild",
       "text": "else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {",
@@ -710,7 +700,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_5",
       "severity": "mild",
       "text": "else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {",
@@ -718,7 +708,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 25,
+      "line": 23,
       "match": "CARRY4(param_5,param_5)",
       "severity": "moderate",
       "text": "else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {",
@@ -726,7 +716,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = SUB104(fVar3,0);",
@@ -734,7 +724,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = (ushort)((unkuint10)fVar3 >> 0x40);",
@@ -742,7 +732,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 30,
+      "line": 28,
       "match": "unkuint10",
       "severity": "mild",
       "text": "param_3 = (ushort)((unkuint10)fVar3 >> 0x40);",
@@ -750,7 +740,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = (uint)((unkuint10)fVar3 >> 0x20);",
@@ -758,7 +748,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 31,
+      "line": 29,
       "match": "unkuint10",
       "severity": "mild",
       "text": "param_2 = (uint)((unkuint10)fVar3 >> 0x20);",
@@ -766,7 +756,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar2 = param_2 * 2 ^ 0xe000000;",
@@ -774,39 +764,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar2 = (param_2 & 0x7fffffff) >> 0x1b;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (((param_3 & 0x7fff) != 0) && ((param_3 & 0x7fff) != 0x7fff)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (((param_3 & 0x7fff) != 0) && ((param_3 & 0x7fff) != 0x7fff)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 38,
-      "match": "DAT_006216c0",
-      "severity": "mild",
-      "text": "if ((&DAT_006216c0)[uVar2] != '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (((param_3 & 0x7fff) != 0) && ((param_3 & 0x7fff) != 0x7fff)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (((param_3 & 0x7fff) != 0) && ((param_3 & 0x7fff) != 0x7fff)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
       "match": "param_6",
       "severity": "mild",
       "text": "if ((param_6 & 0x7fff) != 1) {",
@@ -814,7 +796,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_6",
       "severity": "mild",
       "text": "return param_6 & 0x7fff;",
@@ -822,7 +804,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_3",
       "severity": "mild",
       "text": "return param_3 & 0x7fff;",
@@ -830,7 +812,7 @@
     },
     {
       "description": "Ghidra CONCAT28 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 11,
+      "line": 9,
       "match": "CONCAT28",
       "severity": "moderate",
       "text": "fVar1 = (float10)CONCAT28(param_3,CONCAT44(param_2,param_1));",

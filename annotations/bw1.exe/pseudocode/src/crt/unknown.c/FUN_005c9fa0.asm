@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_006262e0
-;   undefined4 DAT_00626315
-;   undefined4 DAT_02c9f050
-;   undefined4 DAT_02c9f054
+;   undefined4 g_FILE_00626308._flag+1
+;   FileListNode* g_AllocatedListHead
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005c08d0
@@ -22,12 +22,12 @@ section .text
     PUSH EBX                            ; 005c9fa0
         ;   Label: crt_unknown.c_FUN_005c9fa0
     PUSH ESI                            ; 005c9fa1
-    MOV AH,byte ptr [0x00626315]        ; 005c9fa2 | DAT_00626315
+    MOV AH,byte ptr [0x00626315]        ; 005c9fa2 | g_FILE_00626308._flag+1
     AND AH,0xf8                         ; 005c9fa8
     MOV DL,AH                           ; 005c9fab
-    MOV byte ptr [0x00626315],AH        ; 005c9fad | DAT_00626315
+    MOV byte ptr [0x00626315],AH        ; 005c9fad | g_FILE_00626308._flag+1
     OR DL,0x4                           ; 005c9fb3
-    MOV byte ptr [0x00626315],DL        ; 005c9fb6 | DAT_00626315
+    MOV byte ptr [0x00626315],DL        ; 005c9fb6 | g_FILE_00626308._flag+1
     MOV EDX,dword ptr [0x006262e0]      ; 005c9fbc | DAT_006262e0
     MOV EBX,0x6262d4                    ; 005c9fc2
     TEST EDX,EDX                        ; 005c9fc7
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 005c9ffc (UNCONDITIONAL_JUMP)  ; LAB_005c9ffc
     MOV ESI,EAX                         ; 005c9ffa
         ;   Label: LAB_005c9ffa
-    MOV EAX,[0x02c9f050]                ; 005c9ffc | DAT_02c9f050
+    MOV EAX,[0x02c9f050]                ; 005c9ffc | g_AllocatedListHead
         ;   Label: LAB_005c9ffc
     MOV dword ptr [ESI + 0x4],EBX       ; 005ca001
     MOV dword ptr [ESI],EAX             ; 005ca004
@@ -68,7 +68,7 @@ section .text
     MOV byte ptr [EAX + 0x14],0x0       ; 005ca013
     MOV EAX,dword ptr [EBX + 0x8]       ; 005ca017
     MOV dword ptr [EAX + 0xc],0x0       ; 005ca01a
-    MOV dword ptr [0x02c9f050],ESI      ; 005ca021 | DAT_02c9f050
+    MOV dword ptr [0x02c9f050],ESI      ; 005ca021 | g_AllocatedListHead
     MOV ECX,dword ptr [EBX + 0x26]      ; 005ca027
     ADD EBX,0x1a                        ; 005ca02a
     TEST ECX,ECX                        ; 005ca02d
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 005c9fcb (CONDITIONAL_JUMP)  ; LAB_005c9fcb
     XOR ESI,ESI                         ; 005ca031
         ;   Label: LAB_005ca031
-    MOV dword ptr [0x02c9f054],ESI      ; 005ca033 | DAT_02c9f054
+    MOV dword ptr [0x02c9f054],ESI      ; 005ca033 | g_FreeListHeadPointer
     POP ESI                             ; 005ca039
     POP EBX                             ; 005ca03a
     RET                                 ; 005ca03b

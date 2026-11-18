@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_boneguy_cpp_CBoneGuy_getActorType_FUN_004182c0(CBoneGuy *this_ptr)
 
 {
-  return &g_CBoneGuyActorType_007647c0;
+  return &g_CBoneGuyClassInfo;
 }

@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dskybox_cpp_staticInit_FUN_004633d0(void)
 
 {
-  core_dskybox_cpp_initializeSkyboxTexture_FUN_00463400((SMRGLSkyTexture *)&DAT_01b7b4e8);
-  _DAT_01b7b728 = 0;
-  _DAT_01b7b72c = 0;
-  _DAT_01b7b730 = 0;
+  core_dskybox_cpp_initializeSkyboxTexture_FUN_00463400(g_SkyDomeTextureData);
+  g_SkyDomeCenter.x = 0.0;
+  g_SkyDomeCenter.y = 0.0;
+  g_SkyDomeCenter.z = 0.0;
   return;
 }

@@ -7,7 +7,7 @@
 ; CBatCreature *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005cb905+1
+;   TerminatedCString s_speed_005cb906
 ;   TerminatedCString s_modelName_005cb90c
 ;   TerminatedCString s_motion_state_005cb916
 ;
@@ -29,7 +29,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00487ec0 ; 004124a7
         ;   XREF to: 00487ec0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00487ec0(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004124ac
-    PUSH 0x5cb906                       ; 004124af | s_speed_005cb905+1
+    PUSH 0x5cb906                       ; 004124af | = "speed"
     LEA EBX,[ESI + 0x10a60]             ; 004124b4
     PUSH EBX                            ; 004124ba
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004124bb

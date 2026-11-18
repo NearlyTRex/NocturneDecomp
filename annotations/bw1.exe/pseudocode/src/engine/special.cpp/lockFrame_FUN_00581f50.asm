@@ -1,0 +1,57 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl engine_special_cpp_lockFrame_FUN_00581f50(void)
+;
+;
+; XREF[9]:
+;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00451e20 at 00451e2e
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce8eb
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0 at 004d7994
+;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051b9e5
+;   engine_mini3d.cpp_lockFrame_FUN_00511160 at 00511160
+;   engine_special.cpp_presentToExternalRenderer_FUN_00582990 at 00582a04
+;   engine_special.cpp_setResolutionAndColorTable_FUN_005821c0 at 00582262
+;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_00494030 at 00494080
+;   shape_edittool.cpp_restoreScreen_FUN_00494110 at 00494150
+;
+; Referenced Globals:
+;   int g_INT_0061b4a0 = 0x8
+;   int g_INT_01c50948
+;   void* g_APIDLL_lockFrame
+;   int g_INT_02c834c4
+;   int g_INT_02c834cc
+;   int g_INT_02c834d0
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [0x01c50948]      ; 00581f50 | g_INT_01c50948
+        ;   Label: engine_special.cpp_lockFrame_FUN_00581f50
+    TEST EDX,EDX                        ; 00581f56
+    JNZ 0x00581f63                      ; 00581f58
+        ;   XREF to: 00581f63 (CONDITIONAL_JUMP)  ; LAB_00581f63
+    MOV dword ptr [0x02c834d0],EDX      ; 00581f5a | g_INT_02c834d0
+    XOR EAX,EAX                         ; 00581f60
+        ;   Label: LAB_00581f60
+    RET                                 ; 00581f62
+        ;   Label: LAB_00581f62
+    CALL dword ptr [0x02c833a8]         ; 00581f63 | g_APIDLL_lockFrame
+        ;   Label: LAB_00581f63
+    TEST EAX,EAX                        ; 00581f69
+    JZ 0x00581f62                       ; 00581f6b
+        ;   XREF to: 00581f62 (CONDITIONAL_JUMP)  ; LAB_00581f62
+    PUSH EBX                            ; 00581f6d
+    MOV ECX,0x1                         ; 00581f6e
+    MOV EAX,[0x0061b4a0]                ; 00581f73 | g_INT_0061b4a0
+    XOR EBX,EBX                         ; 00581f78
+    MOV [0x02c834cc],EAX                ; 00581f7a | g_INT_02c834cc
+    MOV dword ptr [0x02c834d0],ECX      ; 00581f7f | g_INT_02c834d0
+    MOV EAX,[0x02c834c4]                ; 00581f85 | g_INT_02c834c4
+    MOV dword ptr [0x01c50948],EBX      ; 00581f8a | g_INT_01c50948
+    MOV [0x0061b4a0],EAX                ; 00581f90 | g_INT_0061b4a0
+    MOV EAX,ECX                         ; 00581f95
+    POP EBX                             ; 00581f97
+    RET                                 ; 00581f98
+

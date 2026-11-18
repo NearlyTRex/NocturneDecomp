@@ -8,17 +8,17 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0 at 00495420
-;   core_game.cpp_FUN_004c4a60 at 004c4b3f
+;   core_game.cpp_CGame_playMusic_FUN_004c4a60 at 004c4b3f
 ;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005608d1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ceb91c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555f20 | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555f20 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555f26
     SUB EAX,EDX                         ; 00555f2d

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0152d23c
+;   CBitFont* g_MediumFont
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_remapPalette_FUN_004c45e0
@@ -14,7 +14,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x0152d23c]      ; 0045e960 | DAT_0152d23c
+    MOV EDX,dword ptr [0x0152d23c]      ; 0045e960 | g_MediumFont
         ;   Label: core_dfont.cpp_remapFonts_FUN_0045e960
     PUSH EDX                            ; 0045e966
     CALL engine_font.cpp_CBitFont_remapPalette_FUN_004c45e0 ; 0045e967

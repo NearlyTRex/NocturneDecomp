@@ -12,12 +12,12 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004e57f0 at 004e5817
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f98c0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005f98c0 = 2
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560
 ;
 ; *****************************************************************************
@@ -51,7 +51,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 004e68f6
         ;   Label: LAB_004e68f6
     FMUL float ptr [ESP + 0x18]         ; 004e68f9
-    FDIV float ptr [0x005f98c0]         ; 004e68fd | DAT_005f98c0
+    FDIV float ptr [0x005f98c0]         ; 004e68fd | g_FLOAT_005f98c0
     FADD float ptr [EBX + 0x4]          ; 004e6903
     FST float ptr [EBX + 0x4]           ; 004e6906
     FLDZ                                ; 004e6909
@@ -91,10 +91,10 @@ section .text
     MOV EBP,0x5dc535                    ; 004e6954
     MOV EAX,0x45d                       ; 004e6959
     PUSH 0x5dc548                       ; 004e695e
-    MOV dword ptr [0x01d046a0],EBP      ; 004e6963 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004e6969 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004e696e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBP      ; 004e6963 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004e6969 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e696e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e6973
     MOV EAX,ESI                         ; 004e6976
         ;   Label: LAB_004e6976

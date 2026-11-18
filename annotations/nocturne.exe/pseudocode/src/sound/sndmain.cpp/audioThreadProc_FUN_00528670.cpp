@@ -6,21 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_00528670(LPVOID lpThreadParam)
 
 {
-  _DAT_02dc84b0 = 1;
+  g_AudioThreadRunning = 1;
   while( true ) {
-    if (_DAT_02dc84b4 != 0) {
-      _DAT_02dc84b0 = 0;
+    if (g_AudioThreadShutdownFlag != 0) {
+      g_AudioThreadRunning = 0;
       return 0;
     }
     sound_sndmain_cpp_processAudio_FUN_005288f0();
-    if (_DAT_02dc84b4 != 0) break;
-    wincore_winrun_cpp_sleep_FUN_00559cc0(__BITCAST_DOUBLE(CONCAT44(_DAT_02dc84ac,_DAT_02dc84a8)));
+    if (g_AudioThreadShutdownFlag != 0) break;
+    wincore_winrun_cpp_sleep_FUN_00559cc0
+              (__BITCAST_DOUBLE(CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_)));
   }
-  _DAT_02dc84b0 = 0;
+  g_AudioThreadRunning = 0;
   return 0;
 }

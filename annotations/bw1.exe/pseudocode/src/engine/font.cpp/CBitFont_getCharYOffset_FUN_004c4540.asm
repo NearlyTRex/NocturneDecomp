@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   char_code
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0049d580 at 0049d5ed
+;   shape_edittool.cpp_CEdButton_paint_FUN_0049d580 at 0049d5ed
 ;
 ; *****************************************************************************
 

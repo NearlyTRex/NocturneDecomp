@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   engine_winfont.cpp_CWinFont_createTextBackground_FUN_00580110
-;   engine_winfont.cpp_FUN_0057fed0
+;   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_0057fed0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x6a48]    ; 0057feb5
     PUSH EAX                            ; 0057febb
     PUSH EBX                            ; 0057febc
-    CALL engine_winfont.cpp_FUN_0057fed0 ; 0057febd
-        ;   XREF to: 0057fed0 (UNCONDITIONAL_CALL)  ; undefined engine_winfont.cpp_FUN_0057fed0()
+    CALL engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_0057fed0 ; 0057febd
+        ;   XREF to: 0057fed0 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFont * this_ptr, HDC device_context, char * text_string, int x, ...)
     ADD ESP,0x1c                        ; 0057fec2
     XOR EAX,EAX                         ; 0057fec5
     POP ESI                             ; 0057fec7

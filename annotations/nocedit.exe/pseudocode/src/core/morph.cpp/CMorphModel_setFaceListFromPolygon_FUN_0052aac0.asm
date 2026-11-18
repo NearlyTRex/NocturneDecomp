@@ -27,7 +27,7 @@
 ;   TerminatedCString s_CMorphModel_setFaceList__0063a2f5
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int INT_02f43974
+;   int g_MorphReverseWinding
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -116,7 +116,7 @@ section .text
     IMUL EAX,ESI,0x3c                   ; 0052ab9a
     MOV ESI,dword ptr [EBX + 0x60]      ; 0052ab9d
         ;   Label: LAB_0052ab9d
-    MOV EDI,dword ptr [0x02f43974]      ; 0052aba0 | INT_02f43974
+    MOV EDI,dword ptr [0x02f43974]      ; 0052aba0 | g_MorphReverseWinding
     MOV dword ptr [ESI + EAX*0x1 + 0x4],0x3 ; 0052aba6
     TEST EDI,EDI                        ; 0052abae
     JZ 0x0052ac6f                       ; 0052abb0

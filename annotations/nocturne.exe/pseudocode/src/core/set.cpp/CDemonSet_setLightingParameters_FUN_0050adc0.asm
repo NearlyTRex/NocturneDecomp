@@ -25,21 +25,21 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fff548
-;   undefined4 DAT_01fff54c
+;   int g_LightingSystemDirty
+;   float g_FLOAT_01fff54c
 ;   undefined4 DAT_01fff550
-;   undefined4 DAT_01fff554
-;   undefined4 DAT_01fff558
+;   float g_FLOAT_01fff554
+;   float g_FLOAT_01fff558
 ;   undefined4 DAT_01fff55c
-;   undefined4 DAT_01fff560
-;   undefined4 DAT_01fff564
+;   float g_FLOAT_01fff560
+;   float g_FLOAT_01fff564
 ;   undefined4 DAT_01fff568
-;   undefined4 DAT_01fff56c
-;   undefined4 DAT_01fff570
+;   float g_FLOAT_01fff56c
+;   float g_FLOAT_01fff570
 ;   undefined4 DAT_01fff574
-;   undefined4 DAT_01fff578
-;   undefined4 DAT_01fff57c
-;   undefined4 DAT_01fff580
+;   float g_FLOAT_01fff578
+;   CMatrix3x3f g_LightingRotationMatrix
+;   undefined4 g_LightingRotationMatrix.m[0].y
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     FLD float ptr [ECX + 0x8]           ; 0050adf4
     MOV EAX,dword ptr [ECX + 0x4]       ; 0050adf7
     MOV [0x01fff55c],EAX                ; 0050adfa | DAT_01fff55c
-    FSTP float ptr [0x01fff560]         ; 0050adff | DAT_01fff560
-    FSTP float ptr [0x01fff558]         ; 0050ae05 | DAT_01fff558
+    FSTP float ptr [0x01fff560]         ; 0050adff | g_FLOAT_01fff560
+    FSTP float ptr [0x01fff558]         ; 0050ae05 | g_FLOAT_01fff558
     CMP EDX,0x1fff564                   ; 0050ae0b
         ;   Label: LAB_0050ae0b
     JZ 0x0050ae2c                       ; 0050ae11
@@ -79,8 +79,8 @@ section .text
     FLD float ptr [EDX + 0x8]           ; 0050ae15
     MOV EAX,dword ptr [EDX + 0x4]       ; 0050ae18
     MOV [0x01fff568],EAX                ; 0050ae1b | DAT_01fff568
-    FSTP float ptr [0x01fff56c]         ; 0050ae20 | DAT_01fff56c
-    FSTP float ptr [0x01fff564]         ; 0050ae26 | DAT_01fff564
+    FSTP float ptr [0x01fff56c]         ; 0050ae20 | g_FLOAT_01fff56c
+    FSTP float ptr [0x01fff564]         ; 0050ae26 | g_FLOAT_01fff564
     CMP EBX,0x1fff570                   ; 0050ae2c
         ;   Label: LAB_0050ae2c
     JZ 0x0050ae4d                       ; 0050ae32
@@ -89,18 +89,18 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 0050ae36
     MOV EAX,dword ptr [EBX + 0x4]       ; 0050ae39
     MOV [0x01fff574],EAX                ; 0050ae3c | DAT_01fff574
-    FSTP float ptr [0x01fff578]         ; 0050ae41 | DAT_01fff578
-    FSTP float ptr [0x01fff570]         ; 0050ae47 | DAT_01fff570
+    FSTP float ptr [0x01fff578]         ; 0050ae41 | g_FLOAT_01fff578
+    FSTP float ptr [0x01fff570]         ; 0050ae47 | g_FLOAT_01fff570
     TEST ESI,ESI                        ; 0050ae4d
         ;   Label: LAB_0050ae4d
     JZ 0x0050ae92                       ; 0050ae4f
         ;   XREF to: 0050ae92 (CONDITIONAL_JUMP)  ; LAB_0050ae92
     MOV ECX,0xa                         ; 0050ae51
     MOV EDI,0x1fff57c                   ; 0050ae56
-    MOVSD.REP ES:EDI,ESI                ; 0050ae5b | DAT_01fff57c | DAT_01fff580
+    MOVSD.REP ES:EDI,ESI                ; 0050ae5b | g_LightingRotationMatrix | g_LightingRotationMatrix.m[0].y
     MOV EDX,0x2                         ; 0050ae5d
     POP EDI                             ; 0050ae62
-    MOV dword ptr [0x01fff548],EDX      ; 0050ae63 | DAT_01fff548
+    MOV dword ptr [0x01fff548],EDX      ; 0050ae63 | g_LightingSystemDirty
         ;   Label: LAB_0050ae63
     POP ESI                             ; 0050ae69
     POP EBX                             ; 0050ae6a
@@ -114,24 +114,24 @@ section .text
     FLD float ptr [EAX + 0x8]           ; 0050ae75
     MOV EDI,dword ptr [EAX + 0x4]       ; 0050ae78
     MOV dword ptr [0x01fff550],EDI      ; 0050ae7b | DAT_01fff550
-    FSTP float ptr [0x01fff554]         ; 0050ae81 | DAT_01fff554
-    FSTP float ptr [0x01fff54c]         ; 0050ae87 | DAT_01fff54c
+    FSTP float ptr [0x01fff554]         ; 0050ae81 | g_FLOAT_01fff554
+    FSTP float ptr [0x01fff54c]         ; 0050ae87 | g_FLOAT_01fff54c
     JMP 0x0050adea                      ; 0050ae8d
         ;   XREF to: 0050adea (UNCONDITIONAL_JUMP)  ; LAB_0050adea
     MOV EDX,0x3f800000                  ; 0050ae92
         ;   Label: LAB_0050ae92
-    MOV dword ptr [0x01fff580],ESI      ; 0050ae97 | DAT_01fff580
-    MOV dword ptr [0x01fff584],ESI      ; 0050ae9d | DAT_01fff584
-    MOV dword ptr [0x01fff588],ESI      ; 0050aea3 | DAT_01fff588
-    MOV dword ptr [0x01fff590],ESI      ; 0050aea9 | DAT_01fff590
-    MOV dword ptr [0x01fff594],ESI      ; 0050aeaf | DAT_01fff594
-    MOV dword ptr [0x01fff598],ESI      ; 0050aeb5 | DAT_01fff598
-    MOV dword ptr [0x01fff58c],EDX      ; 0050aebb | DAT_01fff58c
-    MOV dword ptr [0x01fff59c],EDX      ; 0050aec1 | DAT_01fff59c
-    MOV dword ptr [0x01fff57c],EDX      ; 0050aec7 | DAT_01fff57c
+    MOV dword ptr [0x01fff580],ESI      ; 0050ae97 | g_LightingRotationMatrix.m[0].y
+    MOV dword ptr [0x01fff584],ESI      ; 0050ae9d | g_LightingRotationMatrix.m[0].z
+    MOV dword ptr [0x01fff588],ESI      ; 0050aea3 | g_LightingRotationMatrix.m[1].x
+    MOV dword ptr [0x01fff590],ESI      ; 0050aea9 | g_LightingRotationMatrix.m[1].z
+    MOV dword ptr [0x01fff594],ESI      ; 0050aeaf | g_LightingRotationMatrix.m[2].x
+    MOV dword ptr [0x01fff598],ESI      ; 0050aeb5 | g_LightingRotationMatrix.m[2].y
+    MOV dword ptr [0x01fff58c],EDX      ; 0050aebb | g_LightingRotationMatrix.m[1].y
+    MOV dword ptr [0x01fff59c],EDX      ; 0050aec1 | g_LightingRotationMatrix.m[2].z
+    MOV dword ptr [0x01fff57c],EDX      ; 0050aec7 | g_LightingRotationMatrix
     MOV EDX,0x2                         ; 0050aecd
     POP EDI                             ; 0050aed2
-    MOV dword ptr [0x01fff548],EDX      ; 0050aed3 | DAT_01fff548
+    MOV dword ptr [0x01fff548],EDX      ; 0050aed3 | g_LightingSystemDirty
     POP ESI                             ; 0050aed9
     POP EBX                             ; 0050aeda
     RET                                 ; 0050aedb

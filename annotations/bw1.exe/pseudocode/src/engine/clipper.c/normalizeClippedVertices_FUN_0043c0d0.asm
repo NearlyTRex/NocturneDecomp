@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c7554
+;   int g_INT_007c7554
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     PUSH ESI                            ; 0043c0d1
     PUSH EDI                            ; 0043c0d2
     PUSH EBP                            ; 0043c0d3
-    MOV ESI,dword ptr [0x007c7554]      ; 0043c0d4 | DAT_007c7554
+    MOV ESI,dword ptr [0x007c7554]      ; 0043c0d4 | g_INT_007c7554
     XOR ECX,ECX                         ; 0043c0da
     TEST ESI,ESI                        ; 0043c0dc
     JLE 0x0043c0fd                      ; 0043c0de
@@ -38,7 +38,7 @@ section .text
     CMP ECX,ESI                         ; 0043c0f9
     JL 0x0043c0e5                       ; 0043c0fb
         ;   XREF to: 0043c0e5 (CONDITIONAL_JUMP)  ; LAB_0043c0e5
-    MOV dword ptr [0x007c7554],ESI      ; 0043c0fd | DAT_007c7554
+    MOV dword ptr [0x007c7554],ESI      ; 0043c0fd | g_INT_007c7554
         ;   Label: LAB_0043c0fd
     POP EBP                             ; 0043c103
     POP EDI                             ; 0043c104

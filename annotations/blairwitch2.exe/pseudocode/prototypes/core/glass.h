@@ -47,7 +47,7 @@ void __cdecl CGlass::renderBackground(CGlass *this_ptr,int layer_flag);
 
 // Original: core_glass.cpp_CGlass_getBoundingBox_FUN_004c5a00
 // Address: 004c5a00
-CBoundingBox3D * __cdecl CGlass::getBoundingBox(CGlass *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CGlass::getBoundingBox(CGlass *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_glass.cpp_CGlass_archive_FUN_004c5a80
 // Address: 004c5a80
@@ -57,13 +57,13 @@ void __cdecl CGlass::archive(CGlass *this_ptr);
 // Address: 004c5b80
 ECollisionType __cdecl CGlass::getCollisionType(CGlass *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_glass.cpp_FUN_004c5bb0
+// Original: core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0
 // Address: 004c5bb0
-void FUN_004c5bb0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
+void __cdecl CGlass::createShatterParticles(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level);
 
-// Original: core_glass.cpp_FUN_004c6d40
+// Original: core_glass.cpp_CGlass_shatter_FUN_004c6d40
 // Address: 004c6d40
-void FUN_004c6d40(CDemonActor *param_1);
+void __cdecl CGlass::shatter(CGlass *this_ptr,CVector3f *location);
 
 // Original: core_glass.cpp_CGlass_onLaserHit_FUN_004c7180
 // Address: 004c7180

@@ -13,9 +13,9 @@
 ;   core_gore.cpp_CGore_createWallBloodSplat_FUN_004ce980 at 004ce9a8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e0e18
-;   undefined4 DAT_005e0e1c
-;   undefined4 DAT_01d5ba14
+;   float g_FLOAT_005e0e18 = 256
+;   float g_FLOAT_005e0e1c = 65536
+;   int g_INT_01d5ba14
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
@@ -53,14 +53,14 @@ section .text
     FSQRT                               ; 004cd54a
     FLD float ptr [EDI + 0x4]           ; 004cd54c
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 004cd54f
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     MOV dword ptr [ESI + 0x24],0x0      ; 004cd554
     FCHS                                ; 004cd55b
     FSTP float ptr [ESI + 0x1c]         ; 004cd55d
     FLD float ptr [EDI + 0x8]           ; 004cd560
     FLD float ptr [EDI]                 ; 004cd563
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 004cd565
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     PUSH 0x3                            ; 004cd56a
     LEA EBX,[ESI + 0x30]                ; 004cd56c
     PUSH 0x0                            ; 004cd56f
@@ -72,28 +72,28 @@ section .text
     MOV EAX,EBP                         ; 004cd57f
     MOV dword ptr [ESI + 0x28],0x0      ; 004cd581
     FLD float ptr [EAX]                 ; 004cd588
-    FMUL float ptr [0x005e0e18]         ; 004cd58a | DAT_005e0e18
+    FMUL float ptr [0x005e0e18]         ; 004cd58a | g_FLOAT_005e0e18
     FISTP dword ptr [EBX]               ; 004cd590
     FLD float ptr [EAX + 0x4]           ; 004cd592
-    FMUL float ptr [0x005e0e18]         ; 004cd595 | DAT_005e0e18
+    FMUL float ptr [0x005e0e18]         ; 004cd595 | g_FLOAT_005e0e18
     FISTP dword ptr [EBX + 0x4]         ; 004cd59b
     FLD float ptr [EAX + 0x8]           ; 004cd59e
-    FMUL float ptr [0x005e0e18]         ; 004cd5a1 | DAT_005e0e18
+    FMUL float ptr [0x005e0e18]         ; 004cd5a1 | g_FLOAT_005e0e18
     FISTP dword ptr [EBX + 0x8]         ; 004cd5a7
     LEA EBX,[ESI + 0x3c]                ; 004cd5aa
     MOV EAX,EDI                         ; 004cd5ad
     FLD float ptr [EAX]                 ; 004cd5af
-    FMUL float ptr [0x005e0e1c]         ; 004cd5b1 | DAT_005e0e1c
+    FMUL float ptr [0x005e0e1c]         ; 004cd5b1 | g_FLOAT_005e0e1c
     FISTP dword ptr [EBX]               ; 004cd5b7
     FLD float ptr [EAX + 0x4]           ; 004cd5b9
-    FMUL float ptr [0x005e0e1c]         ; 004cd5bc | DAT_005e0e1c
+    FMUL float ptr [0x005e0e1c]         ; 004cd5bc | g_FLOAT_005e0e1c
     FISTP dword ptr [EBX + 0x4]         ; 004cd5c2
     FLD float ptr [EAX + 0x8]           ; 004cd5c5
-    FMUL float ptr [0x005e0e1c]         ; 004cd5c8 | DAT_005e0e1c
+    FMUL float ptr [0x005e0e1c]         ; 004cd5c8 | g_FLOAT_005e0e1c
     FISTP dword ptr [EBX + 0x8]         ; 004cd5ce
     MOV EAX,dword ptr [ESP + 0x20]      ; 004cd5d1
     MOV dword ptr [ESI + 0x18],EAX      ; 004cd5d5
-    MOV EAX,[0x01d5ba14]                ; 004cd5d8 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004cd5d8 | g_INT_01d5ba14
     MOV dword ptr [ESI],0x0             ; 004cd5dd
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004cd5e3
     MOV EAX,dword ptr [EAX + 0x2c]      ; 004cd5ea

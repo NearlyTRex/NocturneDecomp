@@ -17,16 +17,16 @@
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f82b
 ;   core_bugs.cpp_CBugs_process_FUN_00421300 at 0042144f
 ;   core_carved.cpp_CCarved_ctor_FUN_00425960 at 00425a63
-;   core_charactr.cpp_FUN_00432330 at 004324dc
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 004324dc
 ;   ... and 45 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bf4c5
-;   undefined4 DAT_005bf4ca
+;   TerminatedCString s_none_005bf4c5
+;   TerminatedCString s_s_005bf4ca
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01c734ac
-;   undefined4 DAT_01c734b0
+;   int g_EventDryRun
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateExpression_FUN_00491b80
@@ -51,7 +51,7 @@ section .text
     POP EBX                             ; 00491ab0
         ;   Label: LAB_00491ab0
     RET                                 ; 00491ab1
-    PUSH 0x5bf4c5                       ; 00491ab2 | DAT_005bf4c5
+    PUSH 0x5bf4c5                       ; 00491ab2 | = "none"
         ;   Label: LAB_00491ab2
     PUSH EBX                            ; 00491ab7
     CALL crt_string.c__stricmp_FUN_005a3260 ; 00491ab8
@@ -64,15 +64,15 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 00491ac5
     XOR EDX,EDX                         ; 00491ac9
     PUSH ECX                            ; 00491acb
-    MOV dword ptr [0x01c734ac],EDX      ; 00491acc | DAT_01c734ac
+    MOV dword ptr [0x01c734ac],EDX      ; 00491acc | g_EventDryRun
     CALL core_event.cpp_CEventList_evaluateExpression_FUN_00491b80 ; 00491ad2
         ;   XREF to: 00491b80 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateExpression_FUN_00491b80(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 00491ad7
     TEST EAX,EAX                        ; 00491ada
     JGE 0x00491ab0                      ; 00491adc
         ;   XREF to: 00491ab0 (CONDITIONAL_JUMP)  ; LAB_00491ab0
-    PUSH 0x1c734b0                      ; 00491ade | DAT_01c734b0
-    PUSH 0x5bf4ca                       ; 00491ae3 | DAT_005bf4ca
+    PUSH 0x1c734b0                      ; 00491ade | g_EventErrorMessageBuffer
+    PUSH 0x5bf4ca                       ; 00491ae3 | = "%s\n"
     MOV EBX,dword ptr [0x005f1690]      ; 00491ae8 | g_CConsolePtr
     PUSH EBX                            ; 00491aee | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00491aef

@@ -59,7 +59,7 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440(U
           iVar2 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005ab590();
           if ((iVar2 != 0) && (g_DirectSoundDevices[device_id].has_hardware_mixing != 0)) {
             (*g_DirectSoundPrimaryBuffer->vtable->QueryInterface)
-                      ((IUnknown *)g_DirectSoundPrimaryBuffer,&GUID_00686d58,
+                      ((IUnknown *)g_DirectSoundPrimaryBuffer,&g_IID_IDirectSound3DListener,
                        &g_DirectSound3DListener);
           }
           return &g_CDirectSoundDeviceInstance;

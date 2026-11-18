@@ -90,7 +90,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00554460
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00554465
-    MOV EDX,dword ptr [0x01cae124]      ; 00554468 | g_CHeroActorType_01cae0ec.name_hash
+    MOV EDX,dword ptr [0x01cae124]      ; 00554468 | g_CHeroClassInfo.name_hash
     MOV EAX,0x3f800000                  ; 0055446e
     PUSH EDX                            ; 00554473
     MOV dword ptr [0x01c74740],ESI      ; 00554474 | g_CDemonLightInstance.base.fixed_point_scale
@@ -147,8 +147,8 @@ section .text
     PUSH 0x40400000                     ; 0055450d
     MOV AH,0x20                         ; 00554512
     PUSH 0x2ddf9ac                      ; 00554514
-    MOV dword ptr [0x02ddf9e8],EBX      ; 00554519 | DAT_02ddf9e8
-    MOV byte ptr [0x02ddf9c8],AH        ; 0055451f | DAT_02ddf9c8
+    MOV dword ptr [0x02ddf9e8],EBX      ; 00554519 | g_CDemonGlobe_02ddf9ac.intensity_multiplier
+    MOV byte ptr [0x02ddf9c8],AH        ; 0055451f | g_CDemonGlobe_02ddf9ac.intensity
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0 ; 00554525
         ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 0055452a
@@ -156,7 +156,7 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 00554532 | g_CDemonSetPtr
     XOR ESI,ESI                         ; 00554538
     PUSH EDI                            ; 0055453a | g_CDemonSetInstance
-    MOV dword ptr [0x02ddf9cc],ESI      ; 0055453b | DAT_02ddf9cc
+    MOV dword ptr [0x02ddf9cc],ESI      ; 0055453b | g_CDemonGlobe_02ddf9ac.corona_mode
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 00554541
         ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 00554546

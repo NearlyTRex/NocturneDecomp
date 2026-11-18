@@ -10,13 +10,13 @@
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30 at 005710b2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006232ec
-;   undefined4 DAT_02c80710
-;   undefined4 DAT_02c80718
-;   undefined4 DAT_02c80750
-;   undefined4 DAT_02c80758
-;   undefined4 DAT_02c80790
-;   undefined4 DAT_02c80798
+;   int g_AudioChannelCount = 0x2
+;   double[8] g_DOUBLE_ARRAY_02c80710
+;   undefined4 g_DOUBLE_ARRAY_02c80710[1]
+;   double[8] g_DOUBLE_ARRAY_02c80750
+;   undefined4 g_DOUBLE_ARRAY_02c80750[1]
+;   double[8] g_DOUBLE_ARRAY_02c80790
+;   undefined4 g_DOUBLE_ARRAY_02c80790[1]
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     PUSH ESI                            ; 00570bd1
     PUSH EDI                            ; 00570bd2
     SUB ESP,0x18                        ; 00570bd3
-    MOV EDI,dword ptr [0x006232ec]      ; 00570bd6 | DAT_006232ec
+    MOV EDI,dword ptr [0x006232ec]      ; 00570bd6 | g_AudioChannelCount
     MOV ESI,dword ptr [ESP + 0x28]      ; 00570bdc
     XOR EBX,EBX                         ; 00570be0
     TEST EDI,EDI                        ; 00570be2
@@ -37,15 +37,15 @@ section .text
     XOR EDX,EDX                         ; 00570be8
     FLD double ptr [ESI + 0x4]          ; 00570bea
         ;   Label: LAB_00570bea
-    FSUB double ptr [EDX + 0x2c80710]   ; 00570bed | DAT_02c80710 | DAT_02c80718
+    FSUB double ptr [EDX + 0x2c80710]   ; 00570bed | g_DOUBLE_ARRAY_02c80710 | g_DOUBLE_ARRAY_02c80710[1]
     FMUL ST0                            ; 00570bf3
     FLD double ptr [ESI + 0xc]          ; 00570bf5
-    FSUB double ptr [EDX + 0x2c80750]   ; 00570bf8 | DAT_02c80750 | DAT_02c80758
+    FSUB double ptr [EDX + 0x2c80750]   ; 00570bf8 | g_DOUBLE_ARRAY_02c80750 | g_DOUBLE_ARRAY_02c80750[1]
     FMUL ST0                            ; 00570bfe
     FLD double ptr [ESI + 0x14]         ; 00570c00
     FXCH                                ; 00570c03
     FADDP ST2,ST0                       ; 00570c05
-    FSUB double ptr [EDX + 0x2c80790]   ; 00570c07 | DAT_02c80790 | DAT_02c80798
+    FSUB double ptr [EDX + 0x2c80790]   ; 00570c07 | g_DOUBLE_ARRAY_02c80790 | g_DOUBLE_ARRAY_02c80790[1]
     FMUL ST0                            ; 00570c0d
     FADDP                               ; 00570c0f
     FSQRT                               ; 00570c11
@@ -59,7 +59,7 @@ section .text
     LEA EAX,[EAX]                       ; 00570c21
     LEA EDX,[EDX]                       ; 00570c27
     LEA EAX,[EAX]                       ; 00570c2d
-    MOV dword ptr [0x006232ec],EDI      ; 00570c30 | DAT_006232ec
+    MOV dword ptr [0x006232ec],EDI      ; 00570c30 | g_AudioChannelCount
         ;   Label: LAB_00570c30
     ADD ESP,0x18                        ; 00570c36
     POP EDI                             ; 00570c39

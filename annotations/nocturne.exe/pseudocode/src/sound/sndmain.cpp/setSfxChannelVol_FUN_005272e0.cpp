@@ -6,34 +6,32 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(int channel_index,float volume)
 
 {
-  int *piVar1;
+  CSoundDevice *pCVar1;
   uint uVar2;
-  CSfxSlot *pCVar3;
+  CSfxSlot *slot;
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 3890;
     core_main_c_displayErrorAndQuit_FUN_004c8440("setSfxChannelVol - invalid channel index: %d",channel_index);
   }
-  piVar1 = _DAT_02dc8318;
-  *(float *)(channel_index * 4 + 0x2dc7958) = volume;
-  if (piVar1 != (int *)0x0) {
+  pCVar1 = g_CSoundDevicePtr;
+  g_SfxChannelVolumes[channel_index] = volume;
+  if (pCVar1 != (CSoundDevice *)0x0) {
     uVar2 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();
     if (uVar2 != 0) {
-      pCVar3 = g_CSfxSlot_ARRAY_02dbd374;
+      slot = g_CSfxSlot_ARRAY_02dbd374;
       sound_sndmain_cpp_lockSound_FUN_00528800();
       do {
-        if (((pCVar3->playback_state != 0) && (pCVar3->hardware_buffer_handle != 0)) &&
-           (channel_index == (pCVar3->options).channel_index)) {
-          (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,pCVar3,8);
+        if (((slot->playback_state != 0) && (slot->hardware_buffer_handle != 0)) &&
+           (channel_index == (slot->options).channel_index)) {
+          (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,slot,8);
         }
-        pCVar3 = pCVar3 + 1;
-      } while (pCVar3 != (CSfxSlot *)&DAT_02dc1b74);
+        slot = slot + 1;
+      } while (slot != g_CSfxSlot_ARRAY_02dbd374 + sizeof(g_CSfxSlot_ARRAY_02dbd374) / sizeof(g_CSfxSlot_ARRAY_02dbd374[0]));
       sound_sndmain_cpp_unlockSound_FUN_00528890();
       return;
     }

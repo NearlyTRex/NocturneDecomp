@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 91,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 37,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 225
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 58,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 222
   },
   "cross_references": [],
   "function": {
@@ -156,115 +153,115 @@
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cee0b4",
-      "name": "DAT_01cee0b4",
-      "type": "undefined4",
+      "name": "g_IcePickIndices",
+      "type": "int[18]",
       "value": null
     },
     {
       "addr": "01cee0b8",
-      "name": "DAT_01cee0b8",
+      "name": "g_IcePickIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0bc",
-      "name": "DAT_01cee0bc",
+      "name": "g_IcePickIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0c0",
-      "name": "DAT_01cee0c0",
+      "name": "g_IcePickIndices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0c4",
-      "name": "DAT_01cee0c4",
+      "name": "g_IcePickIndices[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0c8",
-      "name": "DAT_01cee0c8",
+      "name": "g_IcePickIndices[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0cc",
-      "name": "DAT_01cee0cc",
+      "name": "g_IcePickIndices[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0d0",
-      "name": "DAT_01cee0d0",
+      "name": "g_IcePickIndices[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0d4",
-      "name": "DAT_01cee0d4",
+      "name": "g_IcePickIndices[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0d8",
-      "name": "DAT_01cee0d8",
+      "name": "g_IcePickIndices[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0dc",
-      "name": "DAT_01cee0dc",
+      "name": "g_IcePickIndices[10]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0e0",
-      "name": "DAT_01cee0e0",
+      "name": "g_IcePickIndices[11]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0e4",
-      "name": "DAT_01cee0e4",
+      "name": "g_IcePickIndices[12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0e8",
-      "name": "DAT_01cee0e8",
+      "name": "g_IcePickIndices[13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0ec",
-      "name": "DAT_01cee0ec",
+      "name": "g_IcePickIndices[14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0f0",
-      "name": "DAT_01cee0f0",
+      "name": "g_IcePickIndices[15]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0f4",
-      "name": "DAT_01cee0f4",
+      "name": "g_IcePickIndices[16]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cee0f8",
-      "name": "DAT_01cee0f8",
+      "name": "g_IcePickIndices[17]",
       "type": "undefined4",
       "value": null
     }
@@ -339,28 +336,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 57,
-      "match": "*(CIcePick **)(iVar2 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "pCVar1 = *(CIcePick **)(iVar2 * 4 + 0x1cedee4);",
-      "type": "raw_address_pointer_store"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 8,
         "vtable_addr": "005f8ba4"
       }

@@ -10,13 +10,13 @@
 ;   core_doc.cpp_factoryFuncDoc_FUN_004500a0 at 004500b3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f5134
+;   float g_FLOAT_005f5134 = 10
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_0041bd30
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
-;   core_hero.cpp_FUN_004ce240
+;   core_hero.cpp_CHero_ctor_FUN_004ce240
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
 ;
@@ -32,8 +32,8 @@ section .text
     SUB ESP,0x24                        ; 004500d4
     MOV EBX,dword ptr [ESP + 0x38]      ; 004500d7
     PUSH EBX                            ; 004500db
-    CALL core_hero.cpp_FUN_004ce240     ; 004500dc
-        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce240()
+    CALL core_hero.cpp_CHero_ctor_FUN_004ce240 ; 004500dc
+        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ce240(CHero * this_ptr)
     ADD ESP,0x4                         ; 004500e1
     ADD EAX,0x259b4                     ; 004500e4
     PUSH EAX                            ; 004500e9
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [EBX + 0x2569c],0x0   ; 004501bd
     MOV dword ptr [EBX + 0x256a8],0x0   ; 004501c7
     MOV dword ptr [EBX + 0x256ac],0x0   ; 004501d1
-    FLD float ptr [0x005f5134]          ; 004501db | DAT_005f5134
+    FLD float ptr [0x005f5134]          ; 004501db | g_FLOAT_005f5134
     MOV dword ptr [EBX + 0x25718],0xf149f2ca ; 004501e1
     ADD ESP,0x4                         ; 004501eb
     FSTP float ptr [EBX + 0x25650]      ; 004501ee

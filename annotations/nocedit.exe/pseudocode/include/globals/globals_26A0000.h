@@ -16,7 +16,7 @@
 extern CKeyFramedModel g_CKeyFramedModelPool[256];
 
 // CVector3f
-extern CVector3f CVector3f_026a72d8;
+extern CVector3f g_CoronaGeometryOrigin;
 
 // int
 extern int g_BackgroundSceneNestingCount;

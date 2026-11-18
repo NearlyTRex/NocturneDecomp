@@ -13,13 +13,13 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f450
 ;   core_fire.cpp_CFireball_process_FUN_004ae300 at 004ae369
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_004af340 at 004af354
-;   core_flame.cpp_FUN_004b8e40 at 004b8e7b
+;   core_flame.cpp_CFlame_updateGlobe_FUN_004b8e40 at 004b8e7b
 ;   core_keyactor.cpp_CKeyActor_process_FUN_004fc590 at 004fc5ba
 ;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055ea72
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_005adb20 at 005adcfd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d88f3
+;   double g_DOUBLE_005d88f3 = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -35,21 +35,21 @@ section .text
     CMP EDX,EAX                         ; 0045e97b
     JNZ 0x0045e9a9                      ; 0045e97d
         ;   XREF to: 0045e9a9 (CONDITIONAL_JUMP)  ; LAB_0045e9a9
-    FLD double ptr [0x005d88f3]         ; 0045e97f | DAT_005d88f3
+    FLD double ptr [0x005d88f3]         ; 0045e97f | g_DOUBLE_005d88f3
         ;   Label: LAB_0045e97f
     FLD float ptr [EAX]                 ; 0045e985
     FMUL ST1                            ; 0045e987
     CALL crt_math.c_round_FUN_005c03a0  ; 0045e989
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ECX]               ; 0045e98e
     FLD float ptr [EAX + 0x4]           ; 0045e990
     FMUL ST1                            ; 0045e993
     CALL crt_math.c_round_FUN_005c03a0  ; 0045e995
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ECX + 0x4]         ; 0045e99a
     FMUL float ptr [EAX + 0x8]          ; 0045e99d
     CALL crt_math.c_round_FUN_005c03a0  ; 0045e9a0
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ECX + 0x8]         ; 0045e9a5
     RET                                 ; 0045e9a8
     PUSH EBX                            ; 0045e9a9

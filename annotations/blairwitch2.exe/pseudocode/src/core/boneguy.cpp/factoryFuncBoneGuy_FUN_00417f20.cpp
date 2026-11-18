@@ -11,7 +11,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417f20(void)
 {
   CBoneGuy *pCVar1;
   
-  pCVar1 = (CBoneGuy *)operator_new(0x11120);
+  pCVar1 = operator_new(0x11120);
   if (pCVar1 == (CBoneGuy *)0x0) {
     return (CBoneGuy *)0x0;
   }

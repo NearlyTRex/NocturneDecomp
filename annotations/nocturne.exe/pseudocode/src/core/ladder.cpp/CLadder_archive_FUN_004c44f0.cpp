@@ -14,7 +14,7 @@ void __cdecl core_ladder_cpp_CLadder_archive_FUN_004c44f0(CLadder *this_ptr)
   core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->ladder_size,"ladderSize");
   core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->master_actor,"masterActor");
   core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004c46b0(this_ptr);
-  if (INT_005bac68 < 2) {
+  if (g_CLadderClassVersion < 2) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->ground_type,"groundType");

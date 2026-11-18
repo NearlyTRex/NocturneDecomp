@@ -31,7 +31,7 @@ void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004b8600(CHostage *this
   else if (0.0 < damage_info->damage_amount) {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,4,1);
-      pCVar2 = DAT_00763e44;
+      pCVar2 = g_CurrentProcessingActor;
       this_ptr->grabber_flee_timer = 3.0;
       this_ptr->grabber = pCVar2;
     }

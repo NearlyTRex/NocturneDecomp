@@ -49,9 +49,9 @@ int __cdecl CHotDemon::getTargetPoints(CHotDemon *this_ptr,CVector3f *out_points
 // Address: 004d62c0
 ECollisionType __cdecl CHotDemon::getCollisionType(CHotDemon *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_hotdemon.cpp_FUN_004d62e0
+// Original: core_hotdemon.cpp_factoryFuncAngelForest_FUN_004d62e0
 // Address: 004d62e0
-void FUN_004d62e0(void);
+CAngelForest * __cdecl factoryFuncAngelForest(void);
 
 // Original: core_hotdemon.cpp_CAngelForest_getActorType_FUN_004d6300
 // Address: 004d6300
@@ -61,9 +61,9 @@ CDemonActorType * __cdecl CAngelForest::getActorType(CAngelForest *this_ptr);
 // Address: 004d6310
 CAngelForest * __cdecl CAngelForest::ctor(CAngelForest *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004d6360
+// Original: core_hotdemon.cpp_factoryFuncAngelSpirit_FUN_004d6360
 // Address: 004d6360
-void FUN_004d6360(void);
+CAngelSpirit * __cdecl factoryFuncAngelSpirit(void);
 
 // Original: core_hotdemon.cpp_CAngelSpirit_getActorType_FUN_004d6380
 // Address: 004d6380
@@ -73,9 +73,9 @@ CDemonActorType * __cdecl CAngelSpirit::getActorType(CAngelSpirit *this_ptr);
 // Address: 004d6390
 CAngelSpirit * __cdecl CAngelSpirit::ctor(CAngelSpirit *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004d63e0
+// Original: core_hotdemon.cpp_factoryFuncAngelDemon_FUN_004d63e0
 // Address: 004d63e0
-void FUN_004d63e0(void);
+CAngelDemon * __cdecl factoryFuncAngelDemon(void);
 
 // Original: core_hotdemon.cpp_CAngelDemon_getActorType_FUN_004d6400
 // Address: 004d6400

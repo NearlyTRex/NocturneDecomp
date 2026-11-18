@@ -12,9 +12,9 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ccdba8
-;   undefined4 DAT_01ccdbcc
-;   undefined4 DAT_01ccdbd4
+;   int[12] g_MobsterIndices
+;   undefined4 g_MobsterIndices[9]
+;   undefined4 g_MobsterIndices[11]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
@@ -31,7 +31,7 @@ section .text
     SUB ESP,0x24                        ; 004dc824
     MOV ESI,dword ptr [ESP + 0x38]      ; 004dc827
     MOV EDI,dword ptr [ESP + 0x3c]      ; 004dc82b
-    MOV EDX,dword ptr [0x01ccdba8]      ; 004dc82f | DAT_01ccdba8
+    MOV EDX,dword ptr [0x01ccdba8]      ; 004dc82f | g_MobsterIndices
     PUSH EDX                            ; 004dc835
     LEA EAX,[ESP + 0x1c]                ; 004dc836
     PUSH EAX                            ; 004dc83a
@@ -49,7 +49,7 @@ section .text
     CMP dword ptr [ESI + EAX*0x4 + 0x2290],0x0 ; 004dc859
     JZ 0x004dc8a3                       ; 004dc861
         ;   XREF to: 004dc8a3 (CONDITIONAL_JUMP)  ; LAB_004dc8a3
-    MOV EBP,dword ptr [0x01ccdbcc]      ; 004dc863 | DAT_01ccdbcc
+    MOV EBP,dword ptr [0x01ccdbcc]      ; 004dc863 | g_MobsterIndices[9]
     PUSH EBP                            ; 004dc869
     LEA EAX,[ESP + 0x10]                ; 004dc86a
     PUSH EAX                            ; 004dc86e
@@ -95,7 +95,7 @@ section .text
     MOV dword ptr [EDI + 0x8],EDX       ; 004dc8ca
     JMP 0x004dc853                      ; 004dc8cd
         ;   XREF to: 004dc853 (UNCONDITIONAL_JUMP)  ; LAB_004dc853
-    MOV ECX,dword ptr [0x01ccdbd4]      ; 004dc8cf | DAT_01ccdbd4
+    MOV ECX,dword ptr [0x01ccdbd4]      ; 004dc8cf | g_MobsterIndices[11]
         ;   Label: LAB_004dc8cf
     PUSH ECX                            ; 004dc8d5
     LEA EAX,[ESP + 0x4]                 ; 004dc8d6

@@ -2,21 +2,26 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 157,
-    "cross_reference_count": 1,
+    "complexity_score": 142,
+    "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "carry_arith_idiom",
-      "concat_reconstruction",
-      "undefined_data"
+      "concat_reconstruction"
     ],
     "total_lines": 169
   },
   "cross_references": [
+    {
+      "addr": "0043bed0",
+      "from_addr": "0043c03f",
+      "name": "engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0043c190",
       "from_addr": "0043cb2b",
@@ -40,13 +45,13 @@
   "globals": [
     {
       "addr": "00610d44",
-      "name": "DAT_00610d44",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FarPlaneDistance",
+      "type": "int",
+      "value": "0x7fffffff"
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "0043cb2b",
@@ -63,6 +68,17 @@
         "call_addr": "0043cb99",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043c03f",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,14 +188,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00610d44",
-      "severity": "mild",
-      "text": "uVar2 = DAT_00610d44 - (v1->projected_vertex).transformed_z;",
-      "type": "undefined_data"
-    },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 26,

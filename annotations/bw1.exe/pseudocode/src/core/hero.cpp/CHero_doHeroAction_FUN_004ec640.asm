@@ -21,7 +21,7 @@
 ;   TerminatedCString s_CHero_doHeroAction_type_005e4b40
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CDoorClassInfo.name_hash
@@ -32,9 +32,9 @@
 ;   core_door.cpp_CDoor_onOpened_FUN_004774d0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_004aaf30
+;   core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
-;   core_hero.cpp_FUN_004eb5b0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;
@@ -56,8 +56,8 @@ section .text
         ;   Label: switchD
     PUSH EBX                            ; 004ec65a
         ;   Label: caseD_0
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec65b
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec65b
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec660
     POP EBP                             ; 004ec663
     POP EDI                             ; 004ec664
@@ -79,8 +79,8 @@ section .text
         ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec68c
     PUSH EBX                            ; 004ec68f
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec690
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec690
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec695
     POP EBP                             ; 004ec698
     POP EDI                             ; 004ec699
@@ -95,8 +95,8 @@ section .text
         ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec6ae
     PUSH EBX                            ; 004ec6b1
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec6b2
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec6b2
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec6b7
     POP EBP                             ; 004ec6ba
     POP EDI                             ; 004ec6bb
@@ -115,8 +115,8 @@ section .text
     CALL dword ptr [ECX + 0x68]         ; 004ec6d6
     ADD ESP,0xc                         ; 004ec6d9
     PUSH EBX                            ; 004ec6dc
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec6dd
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec6dd
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec6e2
     POP EBP                             ; 004ec6e5
     POP EDI                             ; 004ec6e6
@@ -153,11 +153,11 @@ section .text
     PUSH EBX                            ; 004ec73a
     MOV dword ptr [EBX + 0x1ff80],ESI   ; 004ec73b
     CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0 ; 004ec741
-        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero * this_ptr)
+        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec746
     PUSH EBX                            ; 004ec749
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec74a
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec74a
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec74f
     POP EBP                             ; 004ec752
     POP EDI                             ; 004ec753
@@ -172,8 +172,8 @@ section .text
         ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec767
     PUSH EBX                            ; 004ec76a
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec76b
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec76b
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec770
     POP EBP                             ; 004ec773
     POP EDI                             ; 004ec774
@@ -208,8 +208,8 @@ section .text
         ;   XREF to: 004774d0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_onOpened_FUN_004774d0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004ec7b9
     PUSH EBX                            ; 004ec7bc
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec7bd
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec7bd
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec7c2
     POP EBP                             ; 004ec7c5
     POP EDI                             ; 004ec7c6
@@ -224,8 +224,8 @@ section .text
         ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec7db
     PUSH EBX                            ; 004ec7de
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec7df
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec7df
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec7e4
     POP EBP                             ; 004ec7e7
     POP EDI                             ; 004ec7e8
@@ -239,8 +239,8 @@ section .text
         ;   XREF to: 004eb5e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec7f8
     PUSH EBX                            ; 004ec7fb
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec7fc
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec7fc
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec801
     POP EBP                             ; 004ec804
     POP EDI                             ; 004ec805
@@ -261,8 +261,8 @@ section .text
         ;   XREF to: 004ec65a (CONDITIONAL_JUMP)  ; caseD_b
     MOV dword ptr [EBX + 0xc1e4],0x0    ; 004ec828
     PUSH EBX                            ; 004ec832
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec833
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec833
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec838
     POP EBP                             ; 004ec83b
     POP EDI                             ; 004ec83c
@@ -278,8 +278,8 @@ section .text
         ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec852
     PUSH EBX                            ; 004ec855
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec856
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec856
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec85b
     POP EBP                             ; 004ec85e
     POP EDI                             ; 004ec85f
@@ -304,8 +304,8 @@ section .text
         ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec88d
     PUSH EBX                            ; 004ec890
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec891
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec891
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec896
     POP EBP                             ; 004ec899
     POP EDI                             ; 004ec89a
@@ -315,14 +315,14 @@ section .text
     ADD EAX,0x2698                      ; 004ec89e
         ;   Label: LAB_004ec89e
     PUSH EAX                            ; 004ec8a3
-    MOV EBP,dword ptr [0x0061b4d0]      ; 004ec8a4 | DAT_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 004ec8a4 | g_CEventListPtr
     PUSH EBP                            ; 004ec8aa
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004ec8ab
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004ec8b0
     PUSH EBX                            ; 004ec8b3
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec8b4
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec8b4
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec8b9
     POP EBP                             ; 004ec8bc
     POP EDI                             ; 004ec8bd
@@ -345,8 +345,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1ff64]   ; 004ec8e4
     MOV dword ptr [EBX + 0x1ff88],EAX   ; 004ec8ea
     PUSH EBX                            ; 004ec8f0
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec8f1
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec8f1
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec8f6
     POP EBP                             ; 004ec8f9
     POP EDI                             ; 004ec8fa
@@ -361,8 +361,8 @@ section .text
         ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec90f
     PUSH EBX                            ; 004ec912
-    CALL core_hero.cpp_FUN_004eb5b0     ; 004ec913
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 004ec913
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ec918
     POP EBP                             ; 004ec91b
     POP EDI                             ; 004ec91c

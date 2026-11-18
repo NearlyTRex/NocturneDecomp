@@ -29,9 +29,9 @@ void __cdecl CBaal::setup(CBaal *this_ptr);
 // Address: 005968a0
 void __cdecl CBaal::process(CBaal *this_ptr,float delta_time);
 
-// Original: core_baal.cpp_FUN_00597700
+// Original: core_baal.cpp_CBaal_chooseAttack_FUN_00597700
 // Address: 00597700
-void FUN_00597700(int param_1);
+void __cdecl CBaal::chooseAttack(CBaal *this_ptr);
 
 // Original: core_baal.cpp_CBaal_getCarryObjToBodyXForm_FUN_00597810
 // Address: 00597810
@@ -49,9 +49,9 @@ int __cdecl CBaal::renderTransparent(CBaal *this_ptr);
 // Address: 00597af0
 void __cdecl CBaal::processDamage(CBaal *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_baal.cpp_FUN_00597be0
+// Original: core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0
 // Address: 00597be0
-void FUN_00597be0(int param_1,int param_2);
+void __cdecl CBaal::chooseRandomMotion(CBaal *this_ptr,int allow_stand);
 
 // Original: core_baal.cpp_CBaal_archive_FUN_00597c70
 // Address: 00597c70

@@ -15,7 +15,7 @@ section .text
     PUSH 0x2d8                          ; 004c6610
         ;   Label: core_gasmask.cpp_factoryFuncGasMask_FUN_004c6610
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004c6615
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004c661a
     TEST EAX,EAX                        ; 004c661d
     JNZ 0x004c6622                      ; 004c661f

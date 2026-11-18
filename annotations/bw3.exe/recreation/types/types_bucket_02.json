@@ -512,6 +512,43 @@
     "size":53480
   },
   {
+    "kind":"funcdef",
+    "name":"CSoundDevice_applySfxChanges",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      },
+      {
+        "name":"update_flags",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CSpike",
     "parent":"CDemonActor",
@@ -732,6 +769,11 @@
   },
   {
     "kind":"struct",
+    "name":"SDirectSoundDeviceInfo",
+    "size":284
+  },
+  {
+    "kind":"struct",
     "name":"SDisplayListSortEntry",
     "size":8
   },
@@ -742,8 +784,18 @@
   },
   {
     "kind":"struct",
+    "name":"SFogImagePlane",
+    "size":76800
+  },
+  {
+    "kind":"struct",
     "name":"SGameSettingsPlayer",
     "size":40
+  },
+  {
+    "kind":"struct",
+    "name":"SLightGlowSprite",
+    "size":48
   },
   {
     "kind":"struct",
@@ -781,6 +833,11 @@
     "kind":"struct",
     "name":"SRenderVertex",
     "size":48
+  },
+  {
+    "kind":"struct",
+    "name":"SReverbSettings",
+    "size":12
   },
   {
     "kind":"struct",

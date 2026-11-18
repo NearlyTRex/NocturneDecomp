@@ -34,12 +34,12 @@
 ;   core_vampboss.cpp_CVampireBoss_summonFireEmitters_FUN_005835a0 at 005835f3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2bae
-;   undefined4 DAT_005d2bb6
-;   undefined4 DAT_005d2bbe
-;   undefined4 DAT_005d2bc6
-;   undefined4 DAT_005d2bce
-;   undefined4 DAT_00614d30
+;   float g_FLOAT_005d2bae = 5
+;   double g_DOUBLE_005d2bb6 = -1.30899693895833
+;   double g_DOUBLE_005d2bbe = 32
+;   double g_DOUBLE_005d2bc6 = 1.30899693895833
+;   float g_FLOAT_005d2bce = 2
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -96,7 +96,7 @@ section .text
     FLD float ptr [ESP + 0x38]          ; 00486aed
         ;   Label: LAB_00486aed
     PUSH 0x41000000                     ; 00486af1
-    FADD float ptr [0x005d2bae]         ; 00486af6 | DAT_005d2bae
+    FADD float ptr [0x005d2bae]         ; 00486af6 | g_FLOAT_005d2bae
     PUSH 0xc1000000                     ; 00486afc
     FSTP float ptr [ESP + 0x40]         ; 00486b01
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00486b05
@@ -110,11 +110,11 @@ section .text
     FSTP float ptr [ESP + 0x3c]         ; 00486b29
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00486b2d
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
-    FLD double ptr [0x005d2bb6]         ; 00486b32 | DAT_005d2bb6
+    FLD double ptr [0x005d2bb6]         ; 00486b32 | g_DOUBLE_005d2bb6
     FLD ST0                             ; 00486b38
     MOV dword ptr [ESP + 0x80],EAX      ; 00486b3a
     FSIN                                ; 00486b41
-    FLD double ptr [0x005d2bc6]         ; 00486b43 | DAT_005d2bc6
+    FLD double ptr [0x005d2bc6]         ; 00486b43 | g_DOUBLE_005d2bc6
     FPTAN                               ; 00486b49
     FSTP ST0                            ; 00486b4b
     FLD float ptr [ESP + 0x80]          ; 00486b4d
@@ -123,7 +123,7 @@ section .text
     FST float ptr [ESP + 0x3c]          ; 00486b5b
     FLD float ptr [ESP + 0x34]          ; 00486b5f
     CALL crt_math.c_atan2_FUN_005b9989  ; 00486b63
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     FLD float ptr [ESP + 0x3c]          ; 00486b68
     FMUL ST0                            ; 00486b6c
     FLD float ptr [ESP + 0x34]          ; 00486b6e
@@ -142,9 +142,9 @@ section .text
     FMUL double ptr [ESP + 0x4c]        ; 00486b8c
     FSUB float ptr [ESP + 0x38]         ; 00486b90
     FLD ST2                             ; 00486b94
-    FMUL float ptr [0x005d2bce]         ; 00486b96 | DAT_005d2bce
+    FMUL float ptr [0x005d2bce]         ; 00486b96 | g_FLOAT_005d2bce
     FLD double ptr [ESP + 0x4c]         ; 00486b9c
-    FMUL double ptr [0x005d2bbe]        ; 00486ba0 | DAT_005d2bbe
+    FMUL double ptr [0x005d2bbe]        ; 00486ba0 | g_DOUBLE_005d2bbe
     FXCH                                ; 00486ba6
     FMUL ST4                            ; 00486ba8
     FXCH                                ; 00486baa
@@ -212,7 +212,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00486c57
     ADD EAX,0x20                        ; 00486c5a
     PUSH EAX                            ; 00486c5d
-    MOV EDX,dword ptr [0x00614d30]      ; 00486c5e | DAT_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 00486c5e | g_CFireEffectPtr
     PUSH EDX                            ; 00486c64
     CALL core_fire.cpp_CFireEffect_createFireball_FUN_0049d500 ; 00486c65
         ;   XREF to: 0049d500 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFireball_FUN_0049d500(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int lighting_active, ...)

@@ -2,35 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 25,
+    "complexity_score": 24,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 30
+    "total_lines": 29
   },
   "cross_references": [
-    {
-      "addr": "0059a0b0",
-      "from_addr": "0059a3a0",
-      "name": "core_zombie.cpp_FUN_0059a0b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "004f7280",
       "from_addr": "004f7706",
       "name": "engine_mini3d.cpp_rasterizeTriangle_FUN_004f7280",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051da80",
-      "from_addr": "0051dd6a",
-      "name": "engine_prim.c_FUN_0051da80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,9 +28,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0051da80",
+      "from_addr": "0051dd6a",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_0051da80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0055fd60",
       "from_addr": "0055fdfd",
       "name": "engine_special.cpp_drawFullScreenQuad_FUN_0055fd60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a0b0",
+      "from_addr": "0059a3a0",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,14 +62,14 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bbf4",
-      "name": "DAT_0264bbf4",
-      "type": "undefined4",
+      "name": "g_PTR_0264bbf4",
+      "type": "void*",
       "value": null
     }
   ],
@@ -101,7 +101,7 @@
       {
         "call_addr": "0051dd6a",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0051da80",
+        "caller": "engine_prim.c_renderScanlinePolygon_FUN_0051da80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -112,7 +112,7 @@
       {
         "call_addr": "0059a3a0",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0059a0b0",
+        "caller": "engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,12 +221,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (*(code *)g_PTR_0264bbf4)(vertices,vertex_count,render_flags);",
+      "type": "unresolved_funcptr"
     }
   ]
 }

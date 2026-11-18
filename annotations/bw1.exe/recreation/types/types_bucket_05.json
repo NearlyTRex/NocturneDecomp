@@ -245,6 +245,16 @@
   },
   {
     "kind":"class",
+    "name":"CPathQueueNode",
+    "size":12
+  },
+  {
+    "kind":"class",
+    "name":"CPodAuditRecord",
+    "size":312
+  },
+  {
+    "kind":"class",
     "name":"CScript",
     "rtti_file":"core/script.cpp",
     "size":1148
@@ -269,35 +279,11 @@
         }
       },
       {
-        "name":"bits_per_sample",
+        "name":"sample_info",
         "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      },
-      {
-        "name":"channel_count",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      },
-      {
-        "name":"sample_rate",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      },
-      {
-        "name":"sample_count",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
+          "kind":"class",
+          "name":"CSampleInfo",
+          "ptr":1
         }
       }
     ],
@@ -452,6 +438,43 @@
     "ret":{
       "kind":"builtin",
       "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"OptimizedMemcpyFunc",
+    "params":[
+      {
+        "name":"dest_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"byte_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "size":-1,

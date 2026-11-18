@@ -51,20 +51,21 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *this_p
             (0,iVar2,screen_height + -1,this_ptr->max_char_height * 3 + iVar2 + 8,1);
   iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,"one",10,iVar2,6,-1);
   iVar5 = engine_font_cpp_CBitFont_drawText_FUN_00490980
-                    (this_ptr,&DAT_00581999,iVar3 + 10,iVar2,6,-1);
+                    (this_ptr,&g_CHAR_00581999,iVar3 + 10,iVar2,6,-1);
   iVar5 = iVar3 + 10 + iVar5;
   iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,"two",iVar5,iVar2,6,-1);
   iVar5 = iVar5 + iVar3;
-  iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_0058199f,iVar5,iVar2,6,-1);
+  iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&g_CHAR_0058199f,iVar5,iVar2,6,-1)
+  ;
   iVar5 = iVar5 + iVar3;
   iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,"three",iVar5,iVar2,6,-1)
   ;
   iVar5 = iVar5 + iVar3;
-  iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_005819a7,iVar5,iVar2,6,-1);
+  iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,"\t",iVar5,iVar2,6,-1);
   iVar5 = iVar5 + iVar3;
   iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,"four",iVar5,iVar2,6,-1);
   iVar5 = iVar5 + iVar3;
-  iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_005819ae,iVar5,iVar2,6,-1);
+  iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,"  ",iVar5,iVar2,6,-1);
   engine_font_cpp_CBitFont_drawText_FUN_00490980
             (this_ptr,"(01234)+5-6/7*8=9.0  8<>+-=*8",iVar5 + iVar3,iVar2,6,-1);
   iVar2 = iVar2 + local_14;

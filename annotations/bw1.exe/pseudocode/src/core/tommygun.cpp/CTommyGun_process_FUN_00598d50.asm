@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f7f44
-;   undefined4 DAT_005f7f48
+;   float g_FLOAT_005f7f44 = 6
+;   float g_FLOAT_005f7f48 = 0.1666667
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -128,7 +128,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 00598e5d
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
     FLD float ptr [ESP + 0x10]          ; 00598e62
-    FMUL float ptr [0x005f7f44]         ; 00598e66 | DAT_005f7f44
+    FMUL float ptr [0x005f7f44]         ; 00598e66 | g_FLOAT_005f7f44
     FST float ptr [ESP + 0x10]          ; 00598e6c
     FSTP double ptr [ESP + 0x1c8]       ; 00598e70
     MOV EDI,dword ptr [ESP + 0x1cc]     ; 00598e77
@@ -162,9 +162,9 @@ section .text
     MOV dword ptr [ESP + 0x1d8],EAX     ; 00598edf
     FILD dword ptr [ESP + 0x1d8]        ; 00598ee6
     FMUL float ptr [ESP + 0x10]         ; 00598eed
-    FMUL float ptr [0x005f7f48]         ; 00598ef1 | DAT_005f7f48
+    FMUL float ptr [0x005f7f48]         ; 00598ef1 | g_FLOAT_005f7f48
     CALL crt_math.c_round_FUN_005c03a0  ; 00598ef7
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00598efc
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 00598f00
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()

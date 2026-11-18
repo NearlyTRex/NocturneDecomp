@@ -9,5 +9,5 @@
 int __cdecl engine_keys_cpp_CKeys_getKeyState_FUN_004fd220(CKeys *this_ptr,EInputCodeType key_code)
 
 {
-  return (uint)(byte)(&DAT_01c50950)[key_code];
+  return (uint)(byte)g_KeyboardState[key_code];
 }

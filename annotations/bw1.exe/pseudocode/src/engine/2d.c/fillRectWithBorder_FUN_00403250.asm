@@ -15,13 +15,13 @@
 ;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0 at 004cc598
 ;   core_game.cpp_drawHealthBar_FUN_004cc210 at 004cc25c
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0 at 0050a72a
-;   shape_edittool.cpp_FUN_00492c20 at 00492d30
-;   shape_edittool.cpp_FUN_004962b0 at 004967dd
-;   shape_edittool.cpp_FUN_00496ee0 at 004975d9
-;   shape_edittool.cpp_FUN_0049caa0 at 0049cd16
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_0049caa0 at 0049cd16
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 at 004975d9
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0 at 004967dd
+;   shape_edittool.cpp_editorFillRectWithBorder_FUN_00492c20 at 00492d30
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4f020
+;   int g_INT_01c4f020
 ;
 ; Called Functions:
 ;   engine_2d.c_drawRect_FUN_00403170
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 004031c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_004031c0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 00403271
     MOV EAX,dword ptr [ESP + 0x24]      ; 00403274
-    MOV EBX,dword ptr [0x01c4f020]      ; 00403278 | DAT_01c4f020
-    MOV [0x01c4f020],EAX                ; 0040327e | DAT_01c4f020
+    MOV EBX,dword ptr [0x01c4f020]      ; 00403278 | g_INT_01c4f020
+    MOV [0x01c4f020],EAX                ; 0040327e | g_INT_01c4f020
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00403283
     INC EAX                             ; 00403287
     PUSH EAX                            ; 00403288
@@ -64,7 +64,7 @@ section .text
     CALL engine_2d.c_drawRect_FUN_00403170 ; 00403297
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawRect_FUN_00403170(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0040329c
-    MOV dword ptr [0x01c4f020],EBX      ; 0040329f | DAT_01c4f020
+    MOV dword ptr [0x01c4f020],EBX      ; 0040329f | g_INT_01c4f020
     POP EDI                             ; 004032a5
     POP ESI                             ; 004032a6
     POP EBX                             ; 004032a7

@@ -14,11 +14,11 @@
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00574e00 at 00574e3b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c7fbf8
-;   undefined4 DAT_02c7fc08
-;   undefined4 DAT_02c7fc18
-;   undefined4 DAT_02c7fc88
-;   undefined4 DAT_02c807f4
+;   double g_DOUBLE_02c7fbf8
+;   double g_DOUBLE_02c7fc08
+;   double g_DOUBLE_02c7fc18
+;   int g_INT_02c7fc88
+;   byte g_BYTE_02c807f4
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
@@ -31,20 +31,20 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 00573ec0
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
         ;   Label: sound_sndmain.cpp_set3DListenerPos_FUN_00573ec0
-    MOV EAX,[0x02c7fc88]                ; 00573ec5 | DAT_02c7fc88
+    MOV EAX,[0x02c7fc88]                ; 00573ec5 | g_INT_02c7fc88
     MOV EDX,dword ptr [ESP + 0x4]       ; 00573eca
-    MOV dword ptr [EAX*0x8 + 0x2c7fbf8],EDX ; 00573ece | DAT_02c7fbf8
+    MOV dword ptr [EAX*0x8 + 0x2c7fbf8],EDX ; 00573ece | g_DOUBLE_02c7fbf8
     MOV EDX,dword ptr [ESP + 0x8]       ; 00573ed5
     MOV dword ptr [EAX*0x8 + 0x2c7fbfc],EDX ; 00573ed9
     MOV EDX,dword ptr [ESP + 0xc]       ; 00573ee0
-    MOV dword ptr [EAX*0x8 + 0x2c7fc08],EDX ; 00573ee4 | DAT_02c7fc08
+    MOV dword ptr [EAX*0x8 + 0x2c7fc08],EDX ; 00573ee4 | g_DOUBLE_02c7fc08
     MOV EDX,dword ptr [ESP + 0x10]      ; 00573eeb
     MOV dword ptr [EAX*0x8 + 0x2c7fc0c],EDX ; 00573eef
     MOV EDX,dword ptr [ESP + 0x14]      ; 00573ef6
-    MOV dword ptr [EAX*0x8 + 0x2c7fc18],EDX ; 00573efa | DAT_02c7fc18
+    MOV dword ptr [EAX*0x8 + 0x2c7fc18],EDX ; 00573efa | g_DOUBLE_02c7fc18
     MOV EDX,dword ptr [ESP + 0x18]      ; 00573f01
     MOV dword ptr [EAX*0x8 + 0x2c7fc1c],EDX ; 00573f05
-    OR byte ptr [0x02c807f4],0x2        ; 00573f0c | DAT_02c807f4
+    OR byte ptr [0x02c807f4],0x2        ; 00573f0c | g_BYTE_02c807f4
     JMP 0x00573e70                      ; 00573f13
         ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)
 

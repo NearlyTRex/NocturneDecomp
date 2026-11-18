@@ -15,12 +15,12 @@ int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_0047dd10(CEventList
   char *pcVar4;
   int local_8;
   
-  DAT_01c08b60 = 0;
+  g_EventErrorMessageBuffer[0] = '\0';
   local_8 = 0;
   iVar2 = core_event_cpp_CEventList_evaluateLogicalExpr_FUN_00480220(this_ptr,expression,&local_8);
   if ((-1 < iVar2) && (expression[local_8] != '\0')) {
     pcVar3 = "Syntax error";
-    pcVar4 = &DAT_01c08b60;
+    pcVar4 = g_EventErrorMessageBuffer;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;

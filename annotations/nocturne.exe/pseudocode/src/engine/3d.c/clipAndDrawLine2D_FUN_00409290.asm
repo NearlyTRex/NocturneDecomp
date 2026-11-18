@@ -18,14 +18,14 @@
 ;   shape_edittool.cpp_draw3DInterpolatedLine_FUN_00473080 at 00473180
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006af5b4
-;   undefined4 DAT_006af5b8
-;   undefined4 DAT_006af5c4
-;   undefined4 DAT_006af5c8
-;   undefined4 DAT_006af5e4
-;   undefined4 DAT_006af5e8
-;   undefined4 DAT_006af5f4
-;   undefined4 DAT_006af5f8
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.screen_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.screen_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.screen_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.screen_y
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004015a0
@@ -265,30 +265,30 @@ section .text
     MOV ECX,0xc                         ; 004094a0
         ;   Label: LAB_004094a0
     LEA ESI,[ESP + 0x44]                ; 004094a5
-    MOV EDI,0x6af5b4                    ; 004094a9 | DAT_006af5b4
-    MOVSD.REP ES:EDI,ESI                ; 004094ae | DAT_006af5b4 | DAT_006af5b8
+    MOV EDI,0x6af5b4                    ; 004094a9 | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_x
+    MOVSD.REP ES:EDI,ESI                ; 004094ae | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.transformed_y
     MOV ECX,0xc                         ; 004094b0
     LEA ESI,[ESP + 0x74]                ; 004094b5
-    MOV EDI,0x6af5e4                    ; 004094b9 | DAT_006af5e4
+    MOV EDI,0x6af5e4                    ; 004094b9 | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_x
     PUSH 0x4e1e                         ; 004094be
-    MOVSD.REP ES:EDI,ESI                ; 004094c3 | DAT_006af5e4 | DAT_006af5e8
+    MOVSD.REP ES:EDI,ESI                ; 004094c3 | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_y
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300 ; 004094c5
         ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300(int cache_index)
     ADD ESP,0x4                         ; 004094ca
     PUSH 0x4e1f                         ; 004094cd
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300 ; 004094d2
         ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300(int cache_index)
-    MOV EAX,[0x006af5f8]                ; 004094d7 | DAT_006af5f8
+    MOV EAX,[0x006af5f8]                ; 004094d7 | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.screen_y
     ADD ESP,0x4                         ; 004094dc
     SAR EAX,0x10                        ; 004094df
     PUSH EAX                            ; 004094e2
-    MOV EAX,[0x006af5f4]                ; 004094e3 | DAT_006af5f4
+    MOV EAX,[0x006af5f4]                ; 004094e3 | g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.screen_x
     SAR EAX,0x10                        ; 004094e8
     PUSH EAX                            ; 004094eb
-    MOV EAX,[0x006af5c8]                ; 004094ec | DAT_006af5c8
+    MOV EAX,[0x006af5c8]                ; 004094ec | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.screen_y
     SAR EAX,0x10                        ; 004094f1
     PUSH EAX                            ; 004094f4
-    MOV EAX,[0x006af5c4]                ; 004094f5 | DAT_006af5c4
+    MOV EAX,[0x006af5c4]                ; 004094f5 | g_SRenderVertex_ARRAY_005c5014[19998].projected_vertex.screen_x
     SAR EAX,0x10                        ; 004094fa
     PUSH EAX                            ; 004094fd
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 004094fe

@@ -10,8 +10,8 @@
 ;   core_imp.cpp_factoryFuncImp_FUN_004f27c0 at 004f27d3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006027e0
-;   undefined4 DAT_006027e4
+;   float g_FLOAT_006027e0 = 50
+;   float g_FLOAT_006027e4 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
@@ -35,9 +35,9 @@ section .text
     MOV dword ptr [EAX + -0x4],0x6027f4 ; 004f280b
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004f2812
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x006027e0]          ; 004f2817 | DAT_006027e0
+    FLD float ptr [0x006027e0]          ; 004f2817 | g_FLOAT_006027e0
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 004f281d
-    FLD float ptr [0x006027e4]          ; 004f2827 | DAT_006027e4
+    FLD float ptr [0x006027e4]          ; 004f2827 | g_FLOAT_006027e4
     MOV dword ptr [EBX + 0x2ff0],0x3f000000 ; 004f282d
     ADD ESP,0x8                         ; 004f2837
     MOV dword ptr [EBX + 0x27c0],0x0    ; 004f283a

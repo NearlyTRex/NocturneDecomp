@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 348,
+    "complexity_score": 333,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 103,
-    "suspect_count": 23,
+    "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 288
@@ -52,15 +51,15 @@
   "globals": [
     {
       "addr": "00607884",
-      "name": "DAT_00607884",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00607884",
+      "type": "int",
+      "value": "0x100"
     },
     {
       "addr": "00607b14",
-      "name": "DAT_00607b14",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00607b14",
+      "type": "int",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -195,14 +194,6 @@
       "severity": "mild",
       "text": "if (param_2 != (byte *)0x0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00607b14",
-      "severity": "mild",
-      "text": "if (DAT_00607b14 == 1) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

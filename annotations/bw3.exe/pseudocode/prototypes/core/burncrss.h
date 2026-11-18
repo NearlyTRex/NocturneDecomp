@@ -49,6 +49,6 @@ void __cdecl CBurncross::setup(CBurncross *this_ptr);
 // Address: 00425420
 CBurncross * __cdecl CBurncross::dtor(CBurncross *this_ptr,uint flags);
 
-// Original: core_burncrss.cpp_FUN_00425490
+// Original: core_burncrss.cpp_CFlame_arrdtor8_FUN_00425490
 // Address: 00425490
-void FUN_00425490(void *param_1);
+CFlame * __cdecl CFlame::arrdtor8(CFlame *this_ptr,uint flags);

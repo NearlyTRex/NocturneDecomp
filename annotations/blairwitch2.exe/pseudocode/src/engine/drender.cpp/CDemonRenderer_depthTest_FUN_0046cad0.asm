@@ -8,7 +8,7 @@
 ; SRenderVertex *  Stack[0x8]:4   vertex_ptr
 ;
 ; XREF[8]:
-;   core_bwspart.cpp_FUN_005a86a0 at 005a871d
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a871d
 ;   core_fire.cpp_CFirefly_render_FUN_00495150 at 004951b9
 ;   core_fire.cpp_CPopcorn_render_FUN_0049b9d0 at 0049ba26
 ;   core_fire.cpp_CRainDrop_render_FUN_0049bd40 at 0049bd96
@@ -18,8 +18,8 @@
 ;   core_weather.cpp_CWeather_renderParticles_FUN_0058ad40 at 0058aef6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2b64c
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; Called Functions:
 ;   engine_prim.c_replaceWWithDepth_FUN_0051c720
@@ -51,7 +51,7 @@ section .text
     TEST ESI,ESI                        ; 0046caff
     JNZ 0x0046cb23                      ; 0046cb01
         ;   XREF to: 0046cb23 (CONDITIONAL_JUMP)  ; LAB_0046cb23
-    MOV EDX,dword ptr [EDX + 0x1c2b64c] ; 0046cb03 | DAT_01c2b64c
+    MOV EDX,dword ptr [EDX + 0x1c2b64c] ; 0046cb03 | g_ZBufferScanlineArray
     MOV EAX,dword ptr [EDX + EAX*0x1]   ; 0046cb09
     CMP EAX,dword ptr [EBX + 0x8]       ; 0046cb0c
     JLE 0x0046cb36                      ; 0046cb0f
@@ -69,7 +69,7 @@ section .text
     ADD ESP,0x8                         ; 0046cb1e
     JMP 0x0046cae6                      ; 0046cb21
         ;   XREF to: 0046cae6 (UNCONDITIONAL_JUMP)  ; LAB_0046cae6
-    MOV EDX,dword ptr [EDX + 0x1c2a38c] ; 0046cb23 | DAT_01c2a38c
+    MOV EDX,dword ptr [EDX + 0x1c2a38c] ; 0046cb23 | g_ScreenBufferArray
         ;   Label: LAB_0046cb23
     MOV EAX,dword ptr [EDX + EAX*0x1]   ; 0046cb29
     CMP EAX,dword ptr [EBX + 0x8]       ; 0046cb2c

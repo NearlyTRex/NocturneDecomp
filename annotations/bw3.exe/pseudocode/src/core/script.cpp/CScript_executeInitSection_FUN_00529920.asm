@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_004f7590 at 004f7681
+;   core_mission.cpp_CDemonMission_startMission_FUN_004f7590 at 004f7681
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_initSection_005cdf26
@@ -22,14 +22,14 @@
 ;   TerminatedCString s_core_script_cpp_005cdfe3
 ;   TerminatedCString s_Infinite_loop_detected_i_005cdff6
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01ed6808
-;   undefined4 DAT_01ed7014
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01ed6808
+;   int g_ScriptInputFlag
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004ba490
-;   core_main.c_FUN_004e4330
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_script.cpp_CScript_findLabelIndex_FUN_005303b0
 ;   core_script.cpp_CScript_step_FUN_00529a70
 ;
@@ -45,7 +45,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 00529926
     XOR EDX,EDX                         ; 0052992a
     MOV ECX,dword ptr [EBX + 0x2c]      ; 0052992c
-    MOV dword ptr [0x01ed6808],EDX      ; 0052992f | DAT_01ed6808
+    MOV dword ptr [0x01ed6808],EDX      ; 0052992f | g_INT_01ed6808
     CMP ECX,0x1                         ; 00529935
     JL 0x00529940                       ; 00529938
         ;   XREF to: 00529940 (CONDITIONAL_JUMP)  ; LAB_00529940
@@ -82,7 +82,7 @@ section .text
         ;   Label: LAB_00529970
     XOR EDX,EDX                         ; 00529973
     MOV dword ptr [ESP + 0x8],EAX       ; 00529975
-    MOV dword ptr [0x01ed7014],EDX      ; 00529979 | DAT_01ed7014
+    MOV dword ptr [0x01ed7014],EDX      ; 00529979 | g_ScriptInputFlag
     MOV dword ptr [EBX + 0x44],ESI      ; 0052997f
     XOR ESI,ESI                         ; 00529982
     LEA EAX,[ESP + 0x4]                 ; 00529984
@@ -102,16 +102,16 @@ section .text
         ;   Label: LAB_005299a2
     JNZ 0x00529a39                      ; 005299a5
         ;   XREF to: 00529a39 (CONDITIONAL_JUMP)  ; LAB_00529a39
-    CMP dword ptr [0x01ed7014],0x0      ; 005299ab | DAT_01ed7014
+    CMP dword ptr [0x01ed7014],0x0      ; 005299ab | g_ScriptInputFlag
     JZ 0x005299cb                       ; 005299b2
         ;   XREF to: 005299cb (CONDITIONAL_JUMP)  ; LAB_005299cb
     MOV ECX,dword ptr [0x005fe9dc]      ; 005299b4 | g_CGamePtr
     PUSH ECX                            ; 005299ba
     XOR ESI,ESI                         ; 005299bb
-    CALL core_game.cpp_FUN_004ba490     ; 005299bd
-        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004ba490()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490 ; 005299bd
+        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(CGame * this_ptr)
     ADD ESP,0x4                         ; 005299c2
-    MOV dword ptr [0x01ed7014],ESI      ; 005299c5 | DAT_01ed7014
+    MOV dword ptr [0x01ed7014],ESI      ; 005299c5 | g_ScriptInputFlag
     MOV EAX,dword ptr [ESP + 0x8]       ; 005299cb
         ;   Label: LAB_005299cb
     MOV dword ptr [EBX + 0x44],EAX      ; 005299cf
@@ -125,27 +125,27 @@ section .text
         ;   Label: LAB_005299da
     MOV EAX,0x42b                       ; 005299df
     PUSH 0x5cdf54                       ; 005299e4 | = "Script has \"initSection\" label, but..."
-    MOV dword ptr [0x01d71de0],EDI      ; 005299e9 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 005299ef | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005299f4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 005299e9 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 005299ef | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005299f4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005299f9
     JMP 0x00529970                      ; 005299fc
         ;   XREF to: 00529970 (UNCONDITIONAL_JUMP)  ; LAB_00529970
     MOV EAX,0x5cdf93                    ; 00529a01 | = "..\\core\\script.cpp"
         ;   Label: LAB_00529a01
     MOV EDX,0x447                       ; 00529a06
-    MOV [0x01d71de0],EAX                ; 00529a0b | DAT_01d71de0
+    MOV [0x01d71de0],EAX                ; 00529a0b | g_CHAR_PTR_01d71de0
     MOV EAX,dword ptr [EBX + 0x30]      ; 00529a10
-    MOV dword ptr [0x01d71de4],EDX      ; 00529a13 | DAT_01d71de4
+    MOV dword ptr [0x01d71de4],EDX      ; 00529a13 | g_INT_01d71de4
     PUSH 0x1ed6810                      ; 00529a19
     MOV ECX,dword ptr [EAX + EDI*0x8 + 0x4] ; 00529a1e
     PUSH ECX                            ; 00529a22
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00529a23
     PUSH EDX                            ; 00529a26
     PUSH 0x5cdfa6                       ; 00529a27 | = "Error processing script.\nLine: %d\nT..."
-    CALL core_main.c_FUN_004e4330       ; 00529a2c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00529a2c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 00529a31
     JMP 0x005299a2                      ; 00529a34
         ;   XREF to: 005299a2 (UNCONDITIONAL_JUMP)  ; LAB_005299a2
@@ -157,10 +157,10 @@ section .text
     MOV EDI,0x5cdfe3                    ; 00529a46 | = "..\\core\\script.cpp"
     MOV EAX,0x459                       ; 00529a4b
     PUSH 0x5cdff6                       ; 00529a50 | = "Infinite loop detected in initSection.\n"
-    MOV dword ptr [0x01d71de0],EDI      ; 00529a55 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00529a5b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00529a60
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 00529a55 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00529a5b | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00529a60
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00529a65
     JMP 0x00529984                      ; 00529a68
         ;   XREF to: 00529984 (UNCONDITIONAL_JUMP)  ; LAB_00529984

@@ -2,17 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 146,
+    "complexity_score": 196,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 9,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
       "unrolled_memcpy"
     ],
     "total_lines": 94
@@ -71,7 +73,7 @@
     {
       "addr": "00438cf0",
       "is_variadic": false,
-      "name": "core_course.cpp_FUN_00438cf0"
+      "name": "core_course.cpp_CCourse_interpolate_FUN_00438cf0"
     },
     {
       "addr": "00591de0",
@@ -350,19 +352,51 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(CMatrix3x4f *)((int)pCVar2",
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffff6c",
       "severity": "moderate",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "CVector3f *in_stack_ffffff6c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xffffff6c",
+      "severity": "moderate",
+      "text": "core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(&local_34,(CMatrix3x4f *)&stack0xffffff6c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffff6c",
+      "severity": "moderate",
+      "text": "pfVar2 = (float *)&stack0xffffff6c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
-      "match": "(int)pCVar2",
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffffff6c",
       "severity": "moderate",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&local_64,in_stack_ffffff6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {

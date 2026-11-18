@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 37,
+    "complexity_score": 12,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 33
   },
   "cross_references": [
@@ -56,9 +54,9 @@
     },
     {
       "addr": "005bea60",
-      "name": "DAT_005bea60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxSoundChannels",
+      "type": "int",
+      "value": "0x20"
     },
     {
       "addr": "01cc4800",
@@ -161,22 +159,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_005bea60",
-      "severity": "mild",
-      "text": "DAT_005bea60 = channel_count;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005bea60",
-      "severity": "mild",
-      "text": "DAT_005bea60 = channel_count;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

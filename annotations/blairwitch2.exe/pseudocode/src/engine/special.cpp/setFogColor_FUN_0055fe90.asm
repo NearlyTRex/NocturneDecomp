@@ -14,11 +14,11 @@
 ;   engine_2d.c_setSolidColor_FUN_004033f0 at 00403468
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_0264bc1c
-;   undefined4 DAT_0264bce4
-;   undefined4 DAT_0264bce8
-;   undefined4 DAT_0264bcec
+;   int g_INT_01c37788
+;   void* g_PTR_0264bc1c
+;   int g_FogColorRed
+;   int g_FogColorGreen
+;   int g_FogColorBlue
 ;
 ; *****************************************************************************
 
@@ -29,10 +29,10 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0055fe91
     MOV EDX,dword ptr [ESP + 0xc]       ; 0055fe95
     MOV ECX,dword ptr [ESP + 0x10]      ; 0055fe99
-    MOV EBX,dword ptr [0x01c37788]      ; 0055fe9d | DAT_01c37788
-    MOV dword ptr [0x0264bce8],EDX      ; 0055fea3 | DAT_0264bce8
-    MOV dword ptr [0x0264bcec],ECX      ; 0055fea9 | DAT_0264bcec
-    MOV [0x0264bce4],EAX                ; 0055feaf | DAT_0264bce4
+    MOV EBX,dword ptr [0x01c37788]      ; 0055fe9d | g_INT_01c37788
+    MOV dword ptr [0x0264bce8],EDX      ; 0055fea3 | g_FogColorGreen
+    MOV dword ptr [0x0264bcec],ECX      ; 0055fea9 | g_FogColorBlue
+    MOV [0x0264bce4],EAX                ; 0055feaf | g_FogColorRed
     TEST EBX,EBX                        ; 0055feb4
     JNZ 0x0055febc                      ; 0055feb6
         ;   XREF to: 0055febc (CONDITIONAL_JUMP)  ; LAB_0055febc
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_0055febc
     PUSH EDX                            ; 0055febd
     PUSH EAX                            ; 0055febe
-    CALL dword ptr [0x0264bc1c]         ; 0055febf | DAT_0264bc1c
+    CALL dword ptr [0x0264bc1c]         ; 0055febf | g_PTR_0264bc1c
     ADD ESP,0xc                         ; 0055fec5
     POP EBX                             ; 0055fec8
     RET                                 ; 0055fec9

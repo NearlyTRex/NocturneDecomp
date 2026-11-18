@@ -47,7 +47,7 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0052bd20(CDemonSet *this_ptr
   *(uint *)((int)pvVar4 + -0x798) = 0;
   *(uint *)((int)pvVar4 + -0x794) = 0;
   *(uint *)((int)pvVar4 + -0x78c) = 0;
-  pcVar5 = (char *)0x5e5456;
+  pcVar5 = "none";
   *(uint *)((int)pvVar4 + -0x788) = 0;
   pcVar6 = (char *)((int)pvVar4 + -0x780);
   *(uint *)((int)pvVar4 + -0x784) = 0;
@@ -72,7 +72,7 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0052bd20(CDemonSet *this_ptr
   *(uint *)((int)pvVar4 + -4) = 0;
   *(uint *)((int)pvVar4 + -0x58c) = 0x10000;
   *(uint *)((int)pvVar4 + -0x588) = 0x10000;
-  pcVar5 = (char *)0x5e545b;
+  pcVar5 = "none";
   *(uint *)((int)pvVar4 + -0x584) = 0x10000;
   *(uint *)((int)pvVar4 + 0x6244) = 0;
   pcVar6 = (char *)((int)pvVar4 + -0x5c4);

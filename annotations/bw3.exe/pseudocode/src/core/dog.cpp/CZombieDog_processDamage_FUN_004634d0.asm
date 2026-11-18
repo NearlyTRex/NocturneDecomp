@@ -9,12 +9,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dog2_wav_005bbc8f
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
-;   core_enemy.cpp_FUN_0048a1b0
+;   core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 00463557 (CONDITIONAL_JUMP)  ; LAB_00463557
     PUSH dword ptr [EDI + 0x4]          ; 004634f9
     PUSH EBX                            ; 004634fc
-    CALL core_enemy.cpp_FUN_0048a1b0    ; 004634fd
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0 ; 004634fd
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0(CEnemy * this_ptr, float damage)
     ADD ESP,0x8                         ; 00463502
     TEST EAX,EAX                        ; 00463505
     JZ 0x0046352b                       ; 00463507
@@ -65,7 +65,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0xd05c]    ; 0046352b
         ;   Label: LAB_0046352b
     PUSH EDX                            ; 00463531
-    MOV ECX,dword ptr [0x006045f8]      ; 00463532 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 00463532 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 00463538
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 00463539
         ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)

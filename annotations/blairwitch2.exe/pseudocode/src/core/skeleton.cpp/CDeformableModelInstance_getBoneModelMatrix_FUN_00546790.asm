@@ -29,7 +29,7 @@
 ;
 ; XREF[6]:
 ;   core_bride.cpp_CBride_getTargetPoint_FUN_0041ede0 at 0041ee01
-;   core_gabriela.cpp_FUN_004b20d0 at 004b21db
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 at 004b21db
 ;   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c3da0 at 004c3dc1
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 at 004f1136
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 at 00546a58
@@ -37,9 +37,9 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0
 ;   core_xform.cpp_setRotationScaleIdentity_FUN_00591930
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
     PUSH EAX                            ; 0054681b
     LEA ESI,[ESP + 0xa4]                ; 0054681c
     LEA EDI,[ESP + 0x98]                ; 00546823
-    CALL core_xform.cpp_FUN_00591530    ; 0054682a
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0054682a
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0xa4]                ; 0054682f
     ADD ESP,0x8                         ; 00546836
     MOVSD ES:EDI,ESI                    ; 00546839

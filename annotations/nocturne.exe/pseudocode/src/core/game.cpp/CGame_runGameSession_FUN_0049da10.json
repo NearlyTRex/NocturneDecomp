@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 412,
+    "complexity_score": 382,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 70,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 352,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
     "total_lines": 1372
   },
@@ -532,7 +530,7 @@
     },
     {
       "addr": "005b80f0",
-      "name": "g_CFireEffect_PTR_005b80f0",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c08d04"
     },
@@ -550,7 +548,7 @@
     },
     {
       "addr": "005baca0",
-      "name": "g_CLevelLoader_PTR_005baca0",
+      "name": "g_CLevelLoaderPtr",
       "type": "CLevelLoader*",
       "value": "01cc3160"
     },
@@ -592,20 +590,20 @@
     },
     {
       "addr": "014b9900",
-      "name": "g_CBitFont_PTR_014b9900",
+      "name": "g_ThemeFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "014b9904",
-      "name": "g_CBitFont_PTR_014b9904",
+      "name": "g_SmallEditorFont",
       "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01bcd070",
-      "name": "DAT_01bcd070",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01bcd070",
+      "type": "CBitFont*",
       "value": null
     },
     {
@@ -646,8 +644,8 @@
     },
     {
       "addr": "01c78420",
-      "name": "DAT_01c78420",
-      "type": "undefined4",
+      "name": "g_ModalDialogActive",
+      "type": "int",
       "value": null
     },
     {
@@ -658,14 +656,14 @@
     },
     {
       "addr": "01c78698",
-      "name": "DAT_01c78698",
-      "type": "undefined4",
+      "name": "g_HasSavedLightState",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c7869c",
-      "name": "DAT_01c7869c",
-      "type": "undefined4",
+      "name": "g_MasterLightStateSaveBuffer",
+      "type": "int[201]",
       "value": null
     },
     {
@@ -676,7 +674,7 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     },
@@ -730,20 +728,20 @@
     },
     {
       "addr": "02de20a4",
-      "name": "DAT_02de20a4",
-      "type": "undefined4",
+      "name": "g_FocusRegained",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02de20a8",
-      "name": "DAT_02de20a8",
-      "type": "undefined4",
+      "name": "g_TotalPhysicalMemory",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02de20ac",
-      "name": "DAT_02de20ac",
-      "type": "undefined4",
+      "name": "g_AvailableSwapSpace",
+      "type": "int",
       "value": null
     }
   ],
@@ -901,24 +899,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_01c7869c",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(g_CDemonSetPtr,(int *)&DAT_01c7869c);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 82,
+      "line": 80,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -926,7 +908,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 89,
+      "line": 87,
       "match": "pCVar7 = (T *)((pCVar7->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar7 = (CDemonLight *)((pCVar7->base).camera_name + 2);",

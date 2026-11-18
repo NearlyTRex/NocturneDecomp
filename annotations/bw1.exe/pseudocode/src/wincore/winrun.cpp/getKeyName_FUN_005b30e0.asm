@@ -12,18 +12,18 @@
 ; Referenced Globals:
 ;   void* PTR_GetKeyNameTextA_005d04c4 = 001d0b06
 ;   TerminatedCString s_Esc_005f9c90
-;   undefined4 DAT_005f9c94
-;   undefined4 DAT_005f9c96
-;   undefined4 DAT_005f9c98
-;   undefined4 DAT_005f9c9a
-;   undefined4 DAT_005f9c9c
-;   undefined4 DAT_005f9c9e
-;   undefined4 DAT_005f9ca0
-;   undefined4 DAT_005f9ca2
-;   undefined4 DAT_005f9ca4
-;   undefined4 DAT_005f9ca6
-;   undefined4 DAT_005f9ca8
-;   undefined4 DAT_005f9caa
+;   TerminatedCString s_s_1_005f9c94
+;   TerminatedCString s_s_2_005f9c96
+;   TerminatedCString s_s_3_005f9c98
+;   TerminatedCString s_s_4_005f9c9a
+;   TerminatedCString s_s_5_005f9c9c
+;   TerminatedCString s_s_6_005f9c9e
+;   TerminatedCString s_s_7_005f9ca0
+;   TerminatedCString s_s_8_005f9ca2
+;   TerminatedCString s_s_9_005f9ca4
+;   TerminatedCString s_s_0_005f9ca6
+;   TerminatedCString s_anon_005f9ca8
+;   TerminatedCString s_anon_005f9caa
 ;   TerminatedCString s_BackSpace_005f9cac
 ;   ... and 88 more
 ;
@@ -79,75 +79,75 @@ section .text
     MOV EAX,0x2c9bda0                   ; 005b314e
     POP EBX                             ; 005b3153
     RET                                 ; 005b3154
-    MOV EAX,0x5f9c94                    ; 005b3155 | DAT_005f9c94
+    MOV EAX,0x5f9c94                    ; 005b3155 | = "1"
         ;   Label: LAB_005b3155
     POP EBX                             ; 005b315a
     RET                                 ; 005b315b
-    MOV EAX,0x5f9c96                    ; 005b315c | DAT_005f9c96
+    MOV EAX,0x5f9c96                    ; 005b315c | = "2"
         ;   Label: LAB_005b315c
     POP EBX                             ; 005b3161
     RET                                 ; 005b3162
-    MOV EAX,0x5f9c98                    ; 005b3163 | DAT_005f9c98
+    MOV EAX,0x5f9c98                    ; 005b3163 | = "3"
         ;   Label: LAB_005b3163
     POP EBX                             ; 005b3168
     RET                                 ; 005b3169
-    MOV EAX,0x5f9c9c                    ; 005b316a | DAT_005f9c9c
+    MOV EAX,0x5f9c9c                    ; 005b316a | = "5"
         ;   Label: LAB_005b316a
     POP EBX                             ; 005b316f
     RET                                 ; 005b3170
-    MOV EAX,0x5f9c9e                    ; 005b3171 | DAT_005f9c9e
+    MOV EAX,0x5f9c9e                    ; 005b3171 | = "6"
         ;   Label: LAB_005b3171
     POP EBX                             ; 005b3176
     RET                                 ; 005b3177
-    MOV EAX,0x5f9ca2                    ; 005b3178 | DAT_005f9ca2
+    MOV EAX,0x5f9ca2                    ; 005b3178 | = "8"
         ;   Label: LAB_005b3178
     POP EBX                             ; 005b317d
     RET                                 ; 005b317e
-    MOV EAX,0x5f9ca4                    ; 005b317f | DAT_005f9ca4
+    MOV EAX,0x5f9ca4                    ; 005b317f | = "9"
         ;   Label: LAB_005b317f
     POP EBX                             ; 005b3184
     RET                                 ; 005b3185
-    MOV EAX,0x5f9ca8                    ; 005b3186 | DAT_005f9ca8
+    MOV EAX,0x5f9ca8                    ; 005b3186 | = "-"
         ;   Label: LAB_005b3186
     POP EBX                             ; 005b318b
     RET                                 ; 005b318c
-    MOV EAX,0x5f9caa                    ; 005b318d | DAT_005f9caa
+    MOV EAX,0x5f9caa                    ; 005b318d | = "="
         ;   Label: LAB_005b318d
     POP EBX                             ; 005b3192
     RET                                 ; 005b3193
-    MOV EAX,0x5f9cb6                    ; 005b3194 | DAT_005f9cb6
+    MOV EAX,0x5f9cb6                    ; 005b3194 | = "Tab"
         ;   Label: LAB_005b3194
     POP EBX                             ; 005b3199
     RET                                 ; 005b319a
-    MOV EAX,0x5f9cba                    ; 005b319b | DAT_005f9cba
+    MOV EAX,0x5f9cba                    ; 005b319b | = "Q"
         ;   Label: LAB_005b319b
     POP EBX                             ; 005b31a0
     RET                                 ; 005b31a1
-    MOV EAX,0x5f9cbe                    ; 005b31a2 | DAT_005f9cbe
+    MOV EAX,0x5f9cbe                    ; 005b31a2 | = "E"
         ;   Label: LAB_005b31a2
     POP EBX                             ; 005b31a7
     RET                                 ; 005b31a8
-    MOV EAX,0x5f9cc0                    ; 005b31a9 | DAT_005f9cc0
+    MOV EAX,0x5f9cc0                    ; 005b31a9 | = "R"
         ;   Label: LAB_005b31a9
     POP EBX                             ; 005b31ae
     RET                                 ; 005b31af
-    MOV EAX,0x5f9cc4                    ; 005b31b0 | DAT_005f9cc4
+    MOV EAX,0x5f9cc4                    ; 005b31b0 | = "Y"
         ;   Label: LAB_005b31b0
     POP EBX                             ; 005b31b5
     RET                                 ; 005b31b6
-    MOV EAX,0x5f9cc6                    ; 005b31b7 | DAT_005f9cc6
+    MOV EAX,0x5f9cc6                    ; 005b31b7 | = "U"
         ;   Label: LAB_005b31b7
     POP EBX                             ; 005b31bc
     RET                                 ; 005b31bd
-    MOV EAX,0x5f9cc8                    ; 005b31be | DAT_005f9cc8
+    MOV EAX,0x5f9cc8                    ; 005b31be | = "I"
         ;   Label: LAB_005b31be
     POP EBX                             ; 005b31c3
     RET                                 ; 005b31c4
-    MOV EAX,0x5f9ccc                    ; 005b31c5 | DAT_005f9ccc
+    MOV EAX,0x5f9ccc                    ; 005b31c5 | = "P"
         ;   Label: LAB_005b31c5
     POP EBX                             ; 005b31ca
     RET                                 ; 005b31cb
-    MOV EAX,0x5f9cce                    ; 005b31cc | DAT_005f9cce
+    MOV EAX,0x5f9cce                    ; 005b31cc | = "["
         ;   Label: LAB_005b31cc
     POP EBX                             ; 005b31d1
     RET                                 ; 005b31d2
@@ -159,35 +159,35 @@ section .text
         ;   Label: LAB_005b31da
     POP EBX                             ; 005b31df
     RET                                 ; 005b31e0
-    MOV EAX,0x5f9ce3                    ; 005b31e1 | DAT_005f9ce3
+    MOV EAX,0x5f9ce3                    ; 005b31e1 | = "S"
         ;   Label: LAB_005b31e1
     POP EBX                             ; 005b31e6
     RET                                 ; 005b31e7
-    MOV EAX,0x5f9ce5                    ; 005b31e8 | DAT_005f9ce5
+    MOV EAX,0x5f9ce5                    ; 005b31e8 | = "D"
         ;   Label: LAB_005b31e8
     POP EBX                             ; 005b31ed
     RET                                 ; 005b31ee
-    MOV EAX,0x5f9ce9                    ; 005b31ef | DAT_005f9ce9
+    MOV EAX,0x5f9ce9                    ; 005b31ef | = "G"
         ;   Label: LAB_005b31ef
     POP EBX                             ; 005b31f4
     RET                                 ; 005b31f5
-    MOV EAX,0x5f9ceb                    ; 005b31f6 | DAT_005f9ceb
+    MOV EAX,0x5f9ceb                    ; 005b31f6 | = "H"
         ;   Label: LAB_005b31f6
     POP EBX                             ; 005b31fb
     RET                                 ; 005b31fc
-    MOV EAX,0x5f9ced                    ; 005b31fd | DAT_005f9ced
+    MOV EAX,0x5f9ced                    ; 005b31fd | = "J"
         ;   Label: LAB_005b31fd
     POP EBX                             ; 005b3202
     RET                                 ; 005b3203
-    MOV EAX,0x5f9cf1                    ; 005b3204 | DAT_005f9cf1
+    MOV EAX,0x5f9cf1                    ; 005b3204 | = "L"
         ;   Label: LAB_005b3204
     POP EBX                             ; 005b3209
     RET                                 ; 005b320a
-    MOV EAX,0x5f9cf3                    ; 005b320b | DAT_005f9cf3
+    MOV EAX,0x5f9cf3                    ; 005b320b | = ";"
         ;   Label: LAB_005b320b
     POP EBX                             ; 005b3210
     RET                                 ; 005b3211
-    MOV EAX,0x5f9cf7                    ; 005b3212 | DAT_005f9cf7
+    MOV EAX,0x5f9cf7                    ; 005b3212 | = "`"
         ;   Label: LAB_005b3212
     POP EBX                             ; 005b3217
     RET                                 ; 005b3218
@@ -195,35 +195,35 @@ section .text
         ;   Label: LAB_005b3219
     POP EBX                             ; 005b321e
     RET                                 ; 005b321f
-    MOV EAX,0x5f9d03                    ; 005b3220 | DAT_005f9d03
+    MOV EAX,0x5f9d03                    ; 005b3220 | = "Z"
         ;   Label: LAB_005b3220
     POP EBX                             ; 005b3225
     RET                                 ; 005b3226
-    MOV EAX,0x5f9d05                    ; 005b3227 | DAT_005f9d05
+    MOV EAX,0x5f9d05                    ; 005b3227 | = "X"
         ;   Label: LAB_005b3227
     POP EBX                             ; 005b322c
     RET                                 ; 005b322d
-    MOV EAX,0x5f9d07                    ; 005b322e | DAT_005f9d07
+    MOV EAX,0x5f9d07                    ; 005b322e | = "C"
         ;   Label: LAB_005b322e
     POP EBX                             ; 005b3233
     RET                                 ; 005b3234
-    MOV EAX,0x5f9d0b                    ; 005b3235 | DAT_005f9d0b
+    MOV EAX,0x5f9d0b                    ; 005b3235 | = "B"
         ;   Label: LAB_005b3235
     POP EBX                             ; 005b323a
     RET                                 ; 005b323b
-    MOV EAX,0x5f9d0d                    ; 005b323c | DAT_005f9d0d
+    MOV EAX,0x5f9d0d                    ; 005b323c | = "N"
         ;   Label: LAB_005b323c
     POP EBX                             ; 005b3241
     RET                                 ; 005b3242
-    MOV EAX,0x5f9d0f                    ; 005b3243 | DAT_005f9d0f
+    MOV EAX,0x5f9d0f                    ; 005b3243 | = "M"
         ;   Label: LAB_005b3243
     POP EBX                             ; 005b3248
     RET                                 ; 005b3249
-    MOV EAX,0x5f9d13                    ; 005b324a | DAT_005f9d13
+    MOV EAX,0x5f9d13                    ; 005b324a | = "."
         ;   Label: LAB_005b324a
     POP EBX                             ; 005b324f
     RET                                 ; 005b3250
-    MOV EAX,0x5f9d15                    ; 005b3251 | DAT_005f9d15
+    MOV EAX,0x5f9d15                    ; 005b3251 | = "/"
         ;   Label: LAB_005b3251
     POP EBX                             ; 005b3256
     RET                                 ; 005b3257
@@ -239,31 +239,31 @@ section .text
         ;   Label: LAB_005b3266
     POP EBX                             ; 005b326b
     RET                                 ; 005b326c
-    MOV EAX,0x5f9d41                    ; 005b326d | DAT_005f9d41
+    MOV EAX,0x5f9d41                    ; 005b326d | = "F1"
         ;   Label: LAB_005b326d
     POP EBX                             ; 005b3272
     RET                                 ; 005b3273
-    MOV EAX,0x5f9d47                    ; 005b3274 | DAT_005f9d47
+    MOV EAX,0x5f9d47                    ; 005b3274 | = "F3"
         ;   Label: LAB_005b3274
     POP EBX                             ; 005b3279
     RET                                 ; 005b327a
-    MOV EAX,0x5f9d4a                    ; 005b327b | DAT_005f9d4a
+    MOV EAX,0x5f9d4a                    ; 005b327b | = "F4"
         ;   Label: LAB_005b327b
     POP EBX                             ; 005b3280
     RET                                 ; 005b3281
-    MOV EAX,0x5f9d50                    ; 005b3282 | DAT_005f9d50
+    MOV EAX,0x5f9d50                    ; 005b3282 | = "F6"
         ;   Label: LAB_005b3282
     POP EBX                             ; 005b3287
     RET                                 ; 005b3288
-    MOV EAX,0x5f9d53                    ; 005b3289 | DAT_005f9d53
+    MOV EAX,0x5f9d53                    ; 005b3289 | = "F7"
         ;   Label: LAB_005b3289
     POP EBX                             ; 005b328e
     RET                                 ; 005b328f
-    MOV EAX,0x5f9d59                    ; 005b3290 | DAT_005f9d59
+    MOV EAX,0x5f9d59                    ; 005b3290 | = "F9"
         ;   Label: LAB_005b3290
     POP EBX                             ; 005b3295
     RET                                 ; 005b3296
-    MOV EAX,0x5f9d5c                    ; 005b3297 | DAT_005f9d5c
+    MOV EAX,0x5f9d5c                    ; 005b3297 | = "F10"
         ;   Label: LAB_005b3297
     POP EBX                             ; 005b329c
     RET                                 ; 005b329d
@@ -335,15 +335,15 @@ section .text
         ;   Label: LAB_005b330e
     POP EBX                             ; 005b3313
     RET                                 ; 005b3314
-    MOV EAX,0x5f9e10                    ; 005b3315 | DAT_005f9e10
+    MOV EAX,0x5f9e10                    ; 005b3315 | = "Home"
         ;   Label: LAB_005b3315
     POP EBX                             ; 005b331a
     RET                                 ; 005b331b
-    MOV EAX,0x5f9e18                    ; 005b331c | DAT_005f9e18
+    MOV EAX,0x5f9e18                    ; 005b331c | = "PgUp"
         ;   Label: LAB_005b331c
     POP EBX                             ; 005b3321
     RET                                 ; 005b3322
-    MOV EAX,0x5f9e1d                    ; 005b3323 | DAT_005f9e1d
+    MOV EAX,0x5f9e1d                    ; 005b3323 | = "Left"
         ;   Label: LAB_005b3323
     POP EBX                             ; 005b3328
     RET                                 ; 005b3329
@@ -351,19 +351,19 @@ section .text
         ;   Label: LAB_005b332a
     POP EBX                             ; 005b332f
     RET                                 ; 005b3330
-    MOV EAX,0x5f9e28                    ; 005b3331 | DAT_005f9e28
+    MOV EAX,0x5f9e28                    ; 005b3331 | = "End"
         ;   Label: LAB_005b3331
     POP EBX                             ; 005b3336
     RET                                 ; 005b3337
-    MOV EAX,0x5f9e2c                    ; 005b3338 | DAT_005f9e2c
+    MOV EAX,0x5f9e2c                    ; 005b3338 | = "Down"
         ;   Label: LAB_005b3338
     POP EBX                             ; 005b333d
     RET                                 ; 005b333e
-    MOV EAX,0x5f9e36                    ; 005b333f | DAT_005f9e36
+    MOV EAX,0x5f9e36                    ; 005b333f | = "Ins"
         ;   Label: LAB_005b333f
     POP EBX                             ; 005b3344
     RET                                 ; 005b3345
-    MOV EAX,0x5f9e3a                    ; 005b3346 | DAT_005f9e3a
+    MOV EAX,0x5f9e3a                    ; 005b3346 | = "Del"
         ;   Label: LAB_005b3346
     POP EBX                             ; 005b334b
     RET                                 ; 005b334c
@@ -428,7 +428,7 @@ section .text
         ;   XREF to: 005b3427 (CONDITIONAL_JUMP)  ; LAB_005b3427
     JBE 0x005b3315                      ; 005b33df
         ;   XREF to: 005b3315 (CONDITIONAL_JUMP)  ; LAB_005b3315
-    MOV EAX,0x5f9e15                    ; 005b33e5 | DAT_005f9e15
+    MOV EAX,0x5f9e15                    ; 005b33e5 | = "Up"
     POP EBX                             ; 005b33ea
     RET                                 ; 005b33eb
     JBE 0x005b3331                      ; 005b33ec
@@ -440,7 +440,7 @@ section .text
     CMP EBX,0x150                       ; 005b33fa
     JBE 0x005b3338                      ; 005b3400
         ;   XREF to: 005b3338 (CONDITIONAL_JUMP)  ; LAB_005b3338
-    MOV EAX,0x5f9e31                    ; 005b3406 | DAT_005f9e31
+    MOV EAX,0x5f9e31                    ; 005b3406 | = "PgDn"
     POP EBX                             ; 005b340b
     RET                                 ; 005b340c
     JBE 0x005b333f                      ; 005b340d
@@ -537,7 +537,7 @@ section .text
     CMP EBX,0x41                        ; 005b34f2
     JBE 0x005b3289                      ; 005b34f5
         ;   XREF to: 005b3289 (CONDITIONAL_JUMP)  ; LAB_005b3289
-    MOV EAX,0x5f9d56                    ; 005b34fb | DAT_005f9d56
+    MOV EAX,0x5f9d56                    ; 005b34fb | = "F8"
     POP EBX                             ; 005b3500
     RET                                 ; 005b3501
     JBE 0x005b329e                      ; 005b3502
@@ -581,7 +581,7 @@ section .text
     CMP EBX,0x3b                        ; 005b355a
     JBE 0x005b326d                      ; 005b355d
         ;   XREF to: 005b326d (CONDITIONAL_JUMP)  ; LAB_005b326d
-    MOV EAX,0x5f9d44                    ; 005b3563 | DAT_005f9d44
+    MOV EAX,0x5f9d44                    ; 005b3563 | = "F2"
     POP EBX                             ; 005b3568
     RET                                 ; 005b3569
     JBE 0x005b3274                      ; 005b356a
@@ -590,7 +590,7 @@ section .text
     CMP EBX,0x3e                        ; 005b3570
     JBE 0x005b327b                      ; 005b3573
         ;   XREF to: 005b327b (CONDITIONAL_JUMP)  ; LAB_005b327b
-    MOV EAX,0x5f9d4d                    ; 005b3579 | DAT_005f9d4d
+    MOV EAX,0x5f9d4d                    ; 005b3579 | = "F5"
     POP EBX                             ; 005b357e
     RET                                 ; 005b357f
     JBE 0x005b3258                      ; 005b3580
@@ -617,7 +617,7 @@ section .text
     CMP EBX,0x1a                        ; 005b35b3
     JBE 0x005b31cc                      ; 005b35b6
         ;   XREF to: 005b31cc (CONDITIONAL_JUMP)  ; LAB_005b31cc
-    MOV EAX,0x5f9cd0                    ; 005b35bc | DAT_005f9cd0
+    MOV EAX,0x5f9cd0                    ; 005b35bc | = "]"
     POP EBX                             ; 005b35c1
     RET                                 ; 005b35c2
     JBE 0x005b3204                      ; 005b35c3
@@ -632,7 +632,7 @@ section .text
     CMP EBX,0x27                        ; 005b35d3
     JBE 0x005b320b                      ; 005b35d6
         ;   XREF to: 005b320b (CONDITIONAL_JUMP)  ; LAB_005b320b
-    MOV EAX,0x5f9cf5                    ; 005b35dc | DAT_005f9cf5
+    MOV EAX,0x5f9cf5                    ; 005b35dc | = "'"
     POP EBX                             ; 005b35e1
     RET                                 ; 005b35e2
     JBE 0x005b3227                      ; 005b35e3
@@ -644,7 +644,7 @@ section .text
     CMP EBX,0x2e                        ; 005b35ee
     JBE 0x005b322e                      ; 005b35f1
         ;   XREF to: 005b322e (CONDITIONAL_JUMP)  ; LAB_005b322e
-    MOV EAX,0x5f9d09                    ; 005b35f7 | DAT_005f9d09
+    MOV EAX,0x5f9d09                    ; 005b35f7 | = "V"
     POP EBX                             ; 005b35fc
     RET                                 ; 005b35fd
     JBE 0x005b3235                      ; 005b35fe
@@ -655,7 +655,7 @@ section .text
         ;   XREF to: 005b323c (CONDITIONAL_JUMP)  ; LAB_005b323c
     JBE 0x005b3243                      ; 005b360d
         ;   XREF to: 005b3243 (CONDITIONAL_JUMP)  ; LAB_005b3243
-    MOV EAX,0x5f9d11                    ; 005b3613 | DAT_005f9d11
+    MOV EAX,0x5f9d11                    ; 005b3613 | = ","
     POP EBX                             ; 005b3618
     RET                                 ; 005b3619
     JBE 0x005b3212                      ; 005b361a
@@ -679,7 +679,7 @@ section .text
     CMP EBX,0x20                        ; 005b3644
     JBE 0x005b31e8                      ; 005b3647
         ;   XREF to: 005b31e8 (CONDITIONAL_JUMP)  ; LAB_005b31e8
-    MOV EAX,0x5f9ce7                    ; 005b364d | DAT_005f9ce7
+    MOV EAX,0x5f9ce7                    ; 005b364d | = "F"
     POP EBX                             ; 005b3652
     RET                                 ; 005b3653
     JBE 0x005b31ef                      ; 005b3654
@@ -690,7 +690,7 @@ section .text
         ;   XREF to: 005b31f6 (CONDITIONAL_JUMP)  ; LAB_005b31f6
     JBE 0x005b31fd                      ; 005b3663
         ;   XREF to: 005b31fd (CONDITIONAL_JUMP)  ; LAB_005b31fd
-    MOV EAX,0x5f9cef                    ; 005b3669 | DAT_005f9cef
+    MOV EAX,0x5f9cef                    ; 005b3669 | = "K"
     POP EBX                             ; 005b366e
     RET                                 ; 005b366f
     JBE 0x005b31d3                      ; 005b3670
@@ -699,7 +699,7 @@ section .text
     CMP EBX,0x1d                        ; 005b3676
     JBE 0x005b31da                      ; 005b3679
         ;   XREF to: 005b31da (CONDITIONAL_JUMP)  ; LAB_005b31da
-    MOV EAX,0x5f9ce1                    ; 005b367f | DAT_005f9ce1
+    MOV EAX,0x5f9ce1                    ; 005b367f | = "A"
     POP EBX                             ; 005b3684
     RET                                 ; 005b3685
     JBE 0x005b3186                      ; 005b3686
@@ -726,7 +726,7 @@ section .text
     CMP EBX,0x13                        ; 005b36b1
     JBE 0x005b31a9                      ; 005b36b4
         ;   XREF to: 005b31a9 (CONDITIONAL_JUMP)  ; LAB_005b31a9
-    MOV EAX,0x5f9cc2                    ; 005b36ba | DAT_005f9cc2
+    MOV EAX,0x5f9cc2                    ; 005b36ba | = "T"
     POP EBX                             ; 005b36bf
     RET                                 ; 005b36c0
     JBE 0x005b31b0                      ; 005b36c1
@@ -737,7 +737,7 @@ section .text
         ;   XREF to: 005b31b7 (CONDITIONAL_JUMP)  ; LAB_005b31b7
     JBE 0x005b31be                      ; 005b36d0
         ;   XREF to: 005b31be (CONDITIONAL_JUMP)  ; LAB_005b31be
-    MOV EAX,0x5f9cca                    ; 005b36d6 | DAT_005f9cca
+    MOV EAX,0x5f9cca                    ; 005b36d6 | = "O"
     POP EBX                             ; 005b36db
     RET                                 ; 005b36dc
     JBE 0x005b3194                      ; 005b36dd
@@ -746,7 +746,7 @@ section .text
     CMP EBX,0x10                        ; 005b36e3
     JBE 0x005b319b                      ; 005b36e6
         ;   XREF to: 005b319b (CONDITIONAL_JUMP)  ; LAB_005b319b
-    MOV EAX,0x5f9cbc                    ; 005b36ec | DAT_005f9cbc
+    MOV EAX,0x5f9cbc                    ; 005b36ec | = "W"
     POP EBX                             ; 005b36f1
     RET                                 ; 005b36f2
     JBE 0x005b316a                      ; 005b36f3
@@ -758,7 +758,7 @@ section .text
     CMP EBX,0x7                         ; 005b36fe
     JBE 0x005b3171                      ; 005b3701
         ;   XREF to: 005b3171 (CONDITIONAL_JUMP)  ; LAB_005b3171
-    MOV EAX,0x5f9ca0                    ; 005b3707 | DAT_005f9ca0
+    MOV EAX,0x5f9ca0                    ; 005b3707 | = "7"
     POP EBX                             ; 005b370c
     RET                                 ; 005b370d
     JBE 0x005b3178                      ; 005b370e
@@ -767,7 +767,7 @@ section .text
     CMP EBX,0xa                         ; 005b3714
     JBE 0x005b317f                      ; 005b3717
         ;   XREF to: 005b317f (CONDITIONAL_JUMP)  ; LAB_005b317f
-    MOV EAX,0x5f9ca6                    ; 005b371d | DAT_005f9ca6
+    MOV EAX,0x5f9ca6                    ; 005b371d | = "0"
     POP EBX                             ; 005b3722
     RET                                 ; 005b3723
     JBE 0x005b315c                      ; 005b3724
@@ -776,7 +776,7 @@ section .text
     CMP EBX,0x4                         ; 005b372a
     JBE 0x005b3163                      ; 005b372d
         ;   XREF to: 005b3163 (CONDITIONAL_JUMP)  ; LAB_005b3163
-    MOV EAX,0x5f9c9a                    ; 005b3733 | DAT_005f9c9a
+    MOV EAX,0x5f9c9a                    ; 005b3733 | = "4"
     POP EBX                             ; 005b3738
     RET                                 ; 005b3739
 

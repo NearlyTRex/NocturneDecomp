@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 0045a45b
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 0045a45c
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004796c0(CEnemy * this_ptr)
-    MOV EDX,dword ptr [0x005ae6c8]      ; 0045a461 | g_INT_005ae6c8
+    MOV EDX,dword ptr [0x005ae6c8]      ; 0045a461 | g_CDraculaBrideClassVersion
     ADD ESP,0x4                         ; 0045a467
     CMP EDX,0x2                         ; 0045a46a
     JL 0x0045a631                       ; 0045a46d
@@ -62,7 +62,7 @@ section .text
     PUSH EAX                            ; 0045a47e
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 0045a47f
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
-    MOV ECX,dword ptr [0x005ae6c8]      ; 0045a484 | g_INT_005ae6c8
+    MOV ECX,dword ptr [0x005ae6c8]      ; 0045a484 | g_CDraculaBrideClassVersion
     ADD ESP,0x8                         ; 0045a48a
     CMP ECX,0x2                         ; 0045a48d
     JL 0x0045a4ab                       ; 0045a490
@@ -76,7 +76,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0045a4a3
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0045a4a8
-    CMP dword ptr [0x005ae6c8],0x3      ; 0045a4ab | g_INT_005ae6c8
+    CMP dword ptr [0x005ae6c8],0x3      ; 0045a4ab | g_CDraculaBrideClassVersion
         ;   Label: LAB_0045a4ab
     JL 0x0045a511                       ; 0045a4b2
         ;   XREF to: 0045a511 (CONDITIONAL_JUMP)  ; LAB_0045a511
@@ -85,7 +85,7 @@ section .text
     PUSH EAX                            ; 0045a4bf
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0045a4c0
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
-    MOV EBP,dword ptr [0x005ae6c8]      ; 0045a4c5 | g_INT_005ae6c8
+    MOV EBP,dword ptr [0x005ae6c8]      ; 0045a4c5 | g_CDraculaBrideClassVersion
     ADD ESP,0x8                         ; 0045a4cb
     CMP EBP,0x4                         ; 0045a4ce
     JGE 0x0045a511                      ; 0045a4d1
@@ -95,7 +95,7 @@ section .text
     PUSH EAX                            ; 0045a4dc
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0045a4dd
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
-    MOV EAX,[0x00763e88]                ; 0045a4e2 | DAT_00763e88
+    MOV EAX,[0x00763e88]                ; 0045a4e2 | g_ActorReadingMode
     ADD ESP,0x8                         ; 0045a4e7
     CMP EAX,0x1                         ; 0045a4ea
     JNZ 0x0045a511                      ; 0045a4ed
@@ -112,7 +112,7 @@ section .text
     CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960 ; 0045a509
         ;   XREF to: 004e1960 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960(CMotionController * this_ptr, char * motion_name, float frame_number)
     ADD ESP,0xc                         ; 0045a50e
-    CMP dword ptr [0x005ae6c8],0x4      ; 0045a511 | g_INT_005ae6c8
+    CMP dword ptr [0x005ae6c8],0x4      ; 0045a511 | g_CDraculaBrideClassVersion
         ;   Label: LAB_0045a511
     JL 0x0045a52e                       ; 0045a518
         ;   XREF to: 0045a52e (CONDITIONAL_JUMP)  ; LAB_0045a52e
@@ -122,7 +122,7 @@ section .text
     CALL core_actor.cpp_archiveMotionState_FUN_0040cb00 ; 0045a526
         ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040cb00(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 0045a52b
-    CMP dword ptr [0x005ae6c8],0x4      ; 0045a52e | g_INT_005ae6c8
+    CMP dword ptr [0x005ae6c8],0x4      ; 0045a52e | g_CDraculaBrideClassVersion
         ;   Label: LAB_0045a52e
     JNZ 0x0045a580                      ; 0045a535
         ;   XREF to: 0045a580 (CONDITIONAL_JUMP)  ; LAB_0045a580
@@ -152,7 +152,7 @@ section .text
         ;   XREF to: 0045a55d (CONDITIONAL_JUMP)  ; LAB_0045a55d
     LEA EAX,[EAX]                       ; 0045a576
     LEA EDX,[EDX]                       ; 0045a57c
-    CMP dword ptr [0x005ae6c8],0x7      ; 0045a580 | g_INT_005ae6c8
+    CMP dword ptr [0x005ae6c8],0x7      ; 0045a580 | g_CDraculaBrideClassVersion
         ;   Label: LAB_0045a580
     JL 0x0045a59d                       ; 0045a587
         ;   XREF to: 0045a59d (CONDITIONAL_JUMP)  ; LAB_0045a59d
@@ -162,7 +162,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0045a595
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 0045a59a
-    CMP dword ptr [0x005ae6c8],0x8      ; 0045a59d | g_INT_005ae6c8
+    CMP dword ptr [0x005ae6c8],0x8      ; 0045a59d | g_CDraculaBrideClassVersion
         ;   Label: LAB_0045a59d
     JL 0x0045a620                       ; 0045a5a4
         ;   XREF to: 0045a620 (CONDITIONAL_JUMP)  ; LAB_0045a620
@@ -204,7 +204,7 @@ section .text
         ;   XREF to: 0045a5f8 (CONDITIONAL_JUMP)  ; LAB_0045a5f8
     LEA EAX,[EAX]                       ; 0045a614
     LEA EDX,[EDX]                       ; 0045a61a
-    CMP dword ptr [0x005ae6c8],0x9      ; 0045a620 | g_INT_005ae6c8
+    CMP dword ptr [0x005ae6c8],0x9      ; 0045a620 | g_CDraculaBrideClassVersion
         ;   Label: LAB_0045a620
     JGE 0x0045a656                      ; 0045a627
         ;   XREF to: 0045a656 (CONDITIONAL_JUMP)  ; LAB_0045a656

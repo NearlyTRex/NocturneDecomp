@@ -77,9 +77,9 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041af70
-;   core_dirmat.cpp_FUN_00449530
-;   core_dirmat.cpp_FUN_004495a0
+;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
 ; *****************************************************************************
@@ -178,8 +178,8 @@ section .text
     PUSH ESI                            ; 0053a2a1
     LEA ESI,[EBP + 0x22]                ; 0053a2a2
     LEA EDI,[EBP + -0x3e]               ; 0053a2a5
-    CALL core_dirmat.cpp_FUN_00449530   ; 0053a2a8
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 0053a2a8
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[EBP + 0x22]                ; 0053a2ad
     MOVSD ES:EDI,ESI                    ; 0053a2b0
     MOVSD ES:EDI,ESI                    ; 0053a2b1
@@ -242,8 +242,8 @@ section .text
     PUSH EDI                            ; 0053a33f
     LEA ESI,[EBP + -0x2]                ; 0053a340
     LEA EDI,[EBP + -0xe]                ; 0053a343
-    CALL core_dirmat.cpp_FUN_004495a0   ; 0053a346
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 0053a346
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[EBP + -0x2]                ; 0053a34b
     MOVSD ES:EDI,ESI                    ; 0053a34e
     MOVSD ES:EDI,ESI                    ; 0053a34f
@@ -350,8 +350,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053a44b
     MOVSD ES:EDI,ESI                    ; 0053a44c
     MOVSD ES:EDI,ESI                    ; 0053a44d
-    CALL core_box.cpp_FUN_0041af70      ; 0053a44e
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 0053a44e
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     FLDZ                                ; 0053a453
     MOV dword ptr [EBP + 0x76],EAX      ; 0053a455
     ADD ESP,0x10                        ; 0053a458
@@ -398,8 +398,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053a4c3
     MOVSD ES:EDI,ESI                    ; 0053a4c4
     MOVSD ES:EDI,ESI                    ; 0053a4c5
-    CALL core_box.cpp_FUN_0041af70      ; 0053a4c6
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 0053a4c6
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     FLDZ                                ; 0053a4cb
     MOV dword ptr [EBP + 0x76],EAX      ; 0053a4cd
     ADD ESP,0x10                        ; 0053a4d0
@@ -444,8 +444,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053a53f
     MOVSD ES:EDI,ESI                    ; 0053a540
     MOVSD ES:EDI,ESI                    ; 0053a541
-    CALL core_box.cpp_FUN_0041af70      ; 0053a542
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 0053a542
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     FLDZ                                ; 0053a547
     MOV dword ptr [EBP + 0x76],EAX      ; 0053a549
     ADD ESP,0x10                        ; 0053a54c

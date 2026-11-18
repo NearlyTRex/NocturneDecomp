@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 66,
+    "complexity_score": 25,
     "cross_reference_count": 41,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 3,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 102
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -290,14 +287,14 @@
   "globals": [
     {
       "addr": "01d16814",
-      "name": "DAT_01d16814",
-      "type": "undefined4",
+      "name": "g_LocalizationLoaded",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d16818",
-      "name": "DAT_01d16818",
-      "type": "undefined4",
+      "name": "g_LocalizedStringCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -492,30 +489,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 20,
-      "match": "*(char **)(iVar1 * 4 + 0x1d1681c",
-      "severity": "moderate",
-      "text": "iVar2 = _strcmp(key,*(char **)(iVar1 * 4 + 0x1d1681c));",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 26,
-      "match": "*(char **)(iVar1 * 4 + 0x1d16fec",
-      "severity": "moderate",
-      "text": "return *(char **)(iVar1 * 4 + 0x1d16fec);",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

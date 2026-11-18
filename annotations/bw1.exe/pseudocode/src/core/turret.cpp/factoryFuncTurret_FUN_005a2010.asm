@@ -15,7 +15,7 @@ section .text
     PUSH 0x8bc                          ; 005a2010
         ;   Label: core_turret.cpp_factoryFuncTurret_FUN_005a2010
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005a2015
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005a201a
     TEST EAX,EAX                        ; 005a201d
     JNZ 0x005a2022                      ; 005a201f

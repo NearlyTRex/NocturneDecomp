@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[11]:
-;   core_game.cpp_FUN_004b5190 at 004b5f25
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5f25
 ;   core_game.cpp_captureDebugMovieFrame_FUN_004b2a50 at 004b2cbe
 ;   crt_stdio.c_fwrite_FUN_005b9690 at 005b984e
 ;   crt_unknown.c_FUN_005bccf0 at 005bccfe

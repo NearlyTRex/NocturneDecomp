@@ -45,7 +45,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonRaytrace g_CDemonRaytraceInstance
-;   undefined4 g_CSpikeActorType_02dc9e28.name_hash
+;   undefined4 g_CSpikeClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -242,7 +242,7 @@ section .text
     ADD ESP,0x14                        ; 0050ef37
     JMP 0x0050ecdd                      ; 0050ef3a
         ;   XREF to: 0050ecdd (UNCONDITIONAL_JUMP)  ; LAB_0050ecdd
-    MOV EAX,[0x02dc9e60]                ; 0050ef3f | g_CSpikeActorType_02dc9e28.name_hash
+    MOV EAX,[0x02dc9e60]                ; 0050ef3f | g_CSpikeClassInfo.name_hash
         ;   Label: LAB_0050ef3f
     PUSH EAX                            ; 0050ef44
     PUSH EDI                            ; 0050ef45

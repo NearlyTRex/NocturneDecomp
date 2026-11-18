@@ -33,9 +33,9 @@ void __cdecl CMooCow::process(CMooCow *this_ptr,float delta_time);
 // Address: 004f9010
 void __cdecl CMooCow::archive(CMooCow *this_ptr);
 
-// Original: core_moocow.cpp_FUN_004f9050
+// Original: core_moocow.cpp_CMooCow_processDismemberment_FUN_004f9050
 // Address: 004f9050
-void FUN_004f9050(CCharacter *param_1,float *param_2);
+void __cdecl CMooCow::processDismemberment(CMooCow *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_moocow.cpp_CMooCow_processDamage_FUN_004f91d0
 // Address: 004f91d0

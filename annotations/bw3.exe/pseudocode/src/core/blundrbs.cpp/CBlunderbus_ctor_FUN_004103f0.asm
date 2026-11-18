@@ -10,7 +10,7 @@
 ;   core_blundrbs.cpp_factoryFuncBlunderbus_FUN_004103c0 at 004103d3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dbcdc
+;   float g_FLOAT_005dbcdc = 8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
@@ -42,7 +42,7 @@ section .text
     MOV dword ptr [EBX + 0x2e8],0x41700000 ; 00410449
     MOV dword ptr [EBX + 0x58c],0x5     ; 00410453
     MOV dword ptr [EBX + 0x574],0x0     ; 0041045d
-    FLD float ptr [0x005dbcdc]          ; 00410467 | DAT_005dbcdc
+    FLD float ptr [0x005dbcdc]          ; 00410467 | g_FLOAT_005dbcdc
     MOV dword ptr [EBX + 0x56c],0xb     ; 0041046d
     ADD ESP,0x8                         ; 00410477
     MOV dword ptr [EBX + 0x578],0x2     ; 0041047a

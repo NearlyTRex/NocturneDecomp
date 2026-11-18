@@ -13,23 +13,23 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_00557800(CWerewolf *this_pt
   core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
             (&(this_ptr->base).base.model,"modelName");
-  if (INT_005c1614 < 3) {
+  if (g_CWerewolfClassVersion < 3) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   core_actor_cpp_archiveMotionState_FUN_0040cb00
             (&(this_ptr->base).base.model.base,"motion state");
-  if (1 < INT_005c1614) {
+  if (1 < g_CWerewolfClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->light_up_eyes,"lightUpEyes");
   }
-  if (3 < INT_005c1614) {
+  if (3 < g_CWerewolfClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->chain_anchor,"chainAnchor");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->chain_length,"chainLength");
   }
-  if (4 < INT_005c1614) {
+  if (4 < g_CWerewolfClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->type,"type");
   }
-  if (INT_005c1614 < 6) {
+  if (g_CWerewolfClassVersion < 6) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->phase,"phase");

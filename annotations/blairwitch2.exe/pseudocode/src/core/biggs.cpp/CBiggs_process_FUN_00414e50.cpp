@@ -53,8 +53,8 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00414e50(CBiggs *this_ptr,float d
     core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar5);
   }
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time);
-  core_motion_cpp_FUN_005035c0(this_ptr_00);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0((CCharacter *)this_ptr,delta_time);
+  core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_004287f0
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) goto LAB_00414f21;
@@ -89,7 +89,7 @@ LAB_00414f21:
   }
   iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_00424430((CCharacter *)this_ptr);
   if (iVar5 != 0) {
-    core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     fStack_50 = (this_ptr->base).base.velocity.x * delta_time;
     fStack_4c = (this_ptr->base).base.velocity.y * delta_time;
     fStack_48 = (this_ptr->base).base.velocity.z * delta_time;
@@ -122,22 +122,22 @@ LAB_00414f21:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar2->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,&CStack_2c);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)this_ptr,&CStack_2c);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00424470((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90((CCharacter *)this_ptr,delta_time);
   iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (0x01C38BC0,this_ptr->morph_event);
+                    (g_CEventListPtr,this_ptr->morph_event);
   if (iVar5 != 0) {
     this_ptr->morph_timer = 0.0;
     this_ptr->morphing = 1;
   }
   if ((this_ptr->morphing != 0) &&
      (fVar4 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar4,
-     0x40800000 < fVar4)) {
-    this_ptr->morph_timer = 0x40800000;
+     4.0f < fVar4)) {
+    this_ptr->morph_timer = 4.0f;
     return;
   }
   return;

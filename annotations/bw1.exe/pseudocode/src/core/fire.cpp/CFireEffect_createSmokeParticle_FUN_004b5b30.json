@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 44,
-    "cross_reference_count": 12,
+    "complexity_score": 14,
+    "cross_reference_count": 13,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 50
   },
   "cross_references": [
@@ -31,7 +28,7 @@
     {
       "addr": "00434790",
       "from_addr": "00434a73",
-      "name": "core_charactr.cpp_FUN_00434790",
+      "name": "core_charactr.cpp_CCharacter_processSmoking_FUN_00434790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -87,6 +84,12 @@
       "from_addr": "004b7ca1",
       "name": "core_flame.cpp_CFlame_process_FUN_004b7b90",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5470",
+      "from_addr": "004c56ab",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -111,13 +114,13 @@
   "globals": [
     {
       "addr": "01c58a9c",
-      "name": "DAT_01c58a9c",
-      "type": "undefined4",
+      "name": "g_SmokeParticleAllocIndex",
+      "type": "int",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 14,
+    "call_site_count": 15,
     "call_sites": [
       {
         "call_addr": "004b2351",
@@ -188,7 +191,7 @@
       {
         "call_addr": "00434a73",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00434790",
+        "caller": "core_charactr.cpp_CCharacter_processSmoking_FUN_00434790",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -335,22 +338,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c58aa0",
-      "severity": "mild",
-      "text": "((CSmokeParticle *)(&DAT_01c58aa0 + iVar1),position,drag_factor,wind_influence,",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

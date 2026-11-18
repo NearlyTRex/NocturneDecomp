@@ -60,15 +60,15 @@
     {
       "addr": "004c1dd0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c1dd0"
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0"
     }
   ],
   "globals": [
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "0061d308",
@@ -84,14 +84,14 @@
     },
     {
       "addr": "0152d250",
-      "name": "DAT_0152d250",
-      "type": "undefined4",
+      "name": "g_MicroFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01d06ab4",
-      "name": "DAT_01d06ab4",
-      "type": "undefined4",
+      "name": "g_INT_01d06ab4",
+      "type": "int",
       "value": null
     }
   ],
@@ -239,7 +239,7 @@
       "line": 47,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "in_stack_00000010 + pSVar2->annotations[0].y,1,0xffffffff);",
+      "text": "in_stack_00000010 + pSVar2->annotations[0].y,1,-1);",
       "type": "stack_param"
     },
     {

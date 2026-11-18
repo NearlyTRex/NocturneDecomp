@@ -5,37 +5,43 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBodyPart.h"
-#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CCloth.h"
 #include "types/classes/CClothList.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDoor.h"
+#include "types/classes/CGame.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWayPoint.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
+#include "types/funcdefs/ColorConversionFunc.h"
+#include "types/funcdefs/OptimizedMemcpyFunc.h"
 #include "types/structs/SClothVertex.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SEdge.h"
+#include "types/structs/SEdgeList.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x430000
 // =============================================================================
 
-void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoundingBox3D *param_3,int param_4);
+void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_004300e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background);
 ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_00430430(CCharacter *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_charactr_cpp_CCharacter_onLaserHit_FUN_004304e0(CCharacter *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_00430520(CCharacter *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
-undefined4 core_charactr_cpp_FUN_004307b0(void);
+int __cdecl core_charactr_cpp_CCharacter_returnZero_FUN_004307b0(CCharacter *this_ptr,CDemonActor *grabber);
 void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004307c0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_004307f0(void);
+void __cdecl core_charactr_cpp_CCharacter_doNothing_FUN_004307f0(CCharacter *this_ptr);
 CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_00430800(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_drop_FUN_00430810(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00430870(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
@@ -43,7 +49,7 @@ int __cdecl core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_004309a
 int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_00430a30(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit);
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(CCharacter *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00431000(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_3,float param_4,int *param_5);
+void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_004310e0(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state );
 void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00431470(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_004315c0(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00431610(CCharacter *this_ptr,float timeout);
@@ -53,8 +59,8 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00431660(CCharacter 
 void __cdecl core_charactr_cpp_CCharacter_setDoorTarget_FUN_00431970(CCharacter *this_ptr,CDoor *door_target);
 void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00431980(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_hasDoorTarget_FUN_004319b0(CCharacter *this_ptr);
-void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5);
-void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00431ab0(CCharacter *this_ptr,int param_2,float param_3,int *param_4);
+void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time,CMatrix3x4f *carry_offset);
+void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00431ab0(CCharacter *this_ptr,int hand_index,float blend_time,CMatrix3x4f *carry_offset);
 void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00431c40(CCharacter *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00431d10(CCharacter *this_ptr,float delta_time);
@@ -62,78 +68,81 @@ CMatrix3x4f * __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_F
 int __cdecl core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00432060(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_00432090(CCharacter *this_ptr,char *motion_name);
 void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004320d0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00432220(int param_1,float param_2);
+void __cdecl core_charactr_cpp_CCharacter_advanceGesture_FUN_00432220(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004322a0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00432330(CCharacter *param_1,float param_2,int param_3);
+void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330(CCharacter *this_ptr,float delta_time,int disable_search);
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433000(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00433120(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130(CCharacter *this_ptr,uint *out_crc);
 int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_004331a0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00433220(CDemonActor *param_1,float *param_2);
+void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_00433220(CCharacter *this_ptr,UOrientationVector *orientation);
 void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_00433320(CCharacter *this_ptr,int fly_count,float spawn_radius);
 void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(CCharacter *this_ptr,float delta_time);
-undefined4 core_charactr_cpp_FUN_004333e0(CCharacter *param_1,float param_2,char *param_3);
+int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_004333e0(CCharacter *this_ptr,float delta_time,char *pattern);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_00433580(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
 void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00433880(CCharacter *this_ptr);
 float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(CCharacter *this_ptr,int state_index);
 void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_00433ae0(CCharacter *this_ptr,int layer_action_index);
-void core_charactr_cpp_FUN_00433c60(CCharacter *param_1,float param_2);
+void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter *this_ptr,float delta_time);
 int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(CCharacter *this_ptr,int bone_index);
-undefined4 core_charactr_cpp_FUN_00434190(CCharacter *param_1,float param_2);
+int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434190(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_00434810(CCharacter *this_ptr,char *sound_name);
-void core_charactr_cpp_FUN_00434850(int param_1,float param_2);
-int core_charactr_cpp_FUN_004348b0(int param_1,char *param_2);
-void core_charactr_cpp_FUN_004349d0(int param_1,undefined4 param_2);
+void __cdecl core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter *this_ptr,float delta_time);
+CWayPoint * __cdecl core_charactr_cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0(CCharacter *this_ptr,char *name_pattern);
+CWayPoint * __cdecl core_charactr_cpp_CCharacter_findNearestReachableWaypoint_FUN_004349d0(CCharacter *this_ptr,CWayPoint *target_waypoint);
 void __cdecl core_charactr_cpp_setActorXPos_FUN_00434a30(CDemonActor *actor,float x);
-undefined4 core_charactr_cpp_FUN_00434b00(int param_1);
+float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_00434b00(CGame *game_ptr);
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_00434b10(SFire *this_ptr);
-undefined4 core_charactr_cpp_FUN_00434b30(void);
+void __cdecl core_charactr_cpp_expandIndexedTo16Bit_FUN_00434b30(void *output_buffer,void *indexed_input_buffer,int pixel_count);
 void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_00434c1a(void *output_buffer,void *input_buffer,int pixel_count);
 void __cdecl cockpit_ckptutil_c_optimizedMemcpy_FUN_00434c48(void *dest_buffer,void *src_buffer,int byte_count);
 void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00434d42(void *dest_buffer,void *src_buffer,int byte_count);
 void __cdecl cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_00434e50(void *output_buffer,void *input_buffer,int pixel_count);
-code * cockpit_ckptutil_c_FUN_00434e80(void);
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80(void);
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_00434e90(void);
+OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00434ea0(void);
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_get16BitConversionFunction_FUN_00434ec0(void);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_00434f90(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00435010(char *filename,uchar *output_palette);
 void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_004350a0(char *base_filename,uchar *output_buffer);
-void cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(void);
+void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00435210(SRGBColorPalette *rgb_palette_data);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00435310(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height);
-void cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00435550(void);
-int cockpit_ckptutil_c_blitRectangleClipped_FUN_004357a0(void);
-void cockpit_ckptutil_c_blitUnifiedSprite_FUN_00435910(void);
+void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00435550(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height);
+void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_004357a0(void *sprite_data,int dest_x,int dest_y,int width,int height);
+void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_00435910(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
 void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00435b50(void *sprite_data,int dest_x,int dest_y,int width,int height);
 void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_00435cb0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
-void cockpit_ckptutil_c_FUN_00435e90(void);
-void cockpit_ckptutil_c_FUN_00435f20(void);
-void cockpit_ckptutil_c_FUN_00436050(void);
-void cockpit_ckptutil_c_blitFullScreen_FUN_00436140(void);
+void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00435e70(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset);
+void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_00435ee0(void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param,int src_y_offset,int src_stride);
+void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_00436020(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y);
+void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_00436140(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00436170(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_00436310(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
 void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_004363a0(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
-void cockpit_ckptutil_c_FUN_00436400(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
+void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_00436400(void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output,int num_height_rows,int transparency_color);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00436620(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00436750(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
-void cockpit_ckptutil_c_FUN_004367e0(char *param_1,int *param_2,int param_3);
-void cockpit_ckptutil_c_FUN_00436a50(char *param_1,int param_2,int param_3);
+void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004367e0(char *filename,SEdgeList *edge_lists,int expected_count);
+void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00436a50(char *filename,SEdgeList *edge_lists,int edge_list_count);
 void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00436bb0(SEdge *edges,int count,int x_offset,int y_offset);
-void cockpit_ckptutil_c_FUN_00436ca0(void);
+void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_00436ca0(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height);
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_00436f80(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode);
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00437250(int x0,int y0,int x1,int y1,int color);
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00437510(int x,int y,float alpha,int color);
 void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004378b0(int x,int y,float blend_factor,int palette_index);
 void __cdecl cockpit_ckptutil_c_putPixel_FUN_00437b80(int x,int y,int color);
-undefined4 cockpit_ckptutil_c_isLineBlendingDisabled_FUN_00437c10(void);
-undefined4 cockpit_ckptutil_c_setLineBlendingDisabled_FUN_00437c20(void);
-void cockpit_ckptutil_c_setLineClippingDisabled_FUN_00437c30(void);
-void cockpit_ckptutil_c_FUN_00437c40(undefined4 param_1);
-void * cockpit_ckptutil_c_rotateBitmap_FUN_00437c50(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
-void cockpit_ckptutil_c_FUN_00437e10(undefined4 *param_1,int param_2,uint param_3,uint param_4);
+int __cdecl cockpit_ckptutil_c_isLineBlendingDisabled_FUN_00437c10(void);
+int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_00437c20(void);
+void __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_00437c30(int disabled);
+void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00437c40(int disabled);
+char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00437c50(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index);
+void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_00437e10(uchar *source_data,int width,int height,int bytes_per_pixel);
 void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00437fd0(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
-void * cockpit_ckptutil_c_traceConnectedEdges_FUN_00438070(void);
+SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00438070(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal);
 void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_00438b30(SEdge *edge_array,int edge_count,int flip_width);
-void cockpit_ckptutil_c_FUN_00438ca0(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6);
-void * __cdecl cockpit_ckptutil_c_FUN_00438ef0(char *filename,void *buffer,int size);
+void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00438ca0(void *bitmap_buffer,char *filename,void *span_output,int width,int height,int transparent_color_index);
+void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00438ef0(char *filename,void *buffer,int size);
 void __cdecl engine_clipper_c_setFarPlaneDistance_FUN_00439090(int distance);
 int __cdecl engine_clipper_c_getFarPlaneDistance_FUN_004390b0(void);
 void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
@@ -142,8 +151,9 @@ void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(SRenderVerte
 void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_004393c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexFarClip_FUN_004394c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_004395e0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
-int engine_clipper_c_clipPolygonLeftPlane_FUN_00439720(void);
-int engine_clipper_c_clipPolygonBottomPlane_FUN_004399a0(void);
+int __cdecl engine_clipper_c_clipPolygonLeftPlane_FUN_00439720(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
+int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_004399a0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
+void __cdecl engine_clipper_c_clipPolygonFarPlane_FUN_00439ae0(void);
 void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00439ce0(void);
 int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00439da0(int vertex_count,int *vertex_indices);
 void __cdecl engine_clipper_c_clipAndRasterize_FUN_0043a840(int vertex_count,int *vertex_indices);
@@ -151,27 +161,27 @@ void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_0043a8c0(SR
 void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_0043a9f0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_0043ab20(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_0043ac50(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
-void engine_clipper_c_FUN_0043ad90(void);
-void engine_clipper_c_FUN_0043aed0(void);
-void engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_0043b150(void);
+void __cdecl engine_clipper_c_clipPolygonRightPlaneGlobal_FUN_0043ad90(void);
+void __cdecl engine_clipper_c_clipPolygonLeftPlaneGlobal_FUN_0043aed0(void);
+void __cdecl engine_clipper_c_clipPolygonTopPlaneGlobal_FUN_0043b010(void);
+void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_0043b150(void);
 void __cdecl engine_clipper_c_perspectiveDivideVertices_FUN_0043b280(void);
-undefined4 engine_clipper_c_FUN_0043b3c0(void);
-undefined4 engine_clipper_c_FUN_0043b4e0(void);
+int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_0043b330(int vertex_count,int *vertex_indices);
 void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_0043bac0(int vertex_count,int *vertex_indices);
 CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_0043c220(CCloth *this_ptr);
-void core_cloth_cpp_FUN_0043c280(CCloth *param_1);
+CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_0043c280(CCloth *this_ptr,uint flags);
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_0043c2a0(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_free_FUN_0043c300(CCloth *this_ptr);
 int __cdecl core_cloth_cpp_CCloth_load_FUN_0043c330(CCloth *this_ptr,char *filename);
-void __cdecl core_cloth_cpp_FUN_0043c8a0(CCloth *this_ptr);
-void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4);
+void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_0043c8a0(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_setup_FUN_0043cb00(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043d680(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043d830(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043d9b0(CCloth *this_ptr,SClothVertex *vertex);
 void __cdecl core_cloth_cpp_CCloth_process_FUN_0043e270(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
-void core_cloth_cpp_FUN_0043f110(void);
-void core_cloth_cpp_FUN_0043f160(int param_1,int param_2,int param_3);
+void __cdecl core_cloth_cpp_CCloth_renderCollisionBones_FUN_0043f110(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_0043f160(CCloth *this_ptr,int bone_index,int show_labels);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043f370(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_0043f460(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_0043f8c0(CClothList *this_ptr);
@@ -179,11 +189,11 @@ CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_0043f900(CClothList *thi
 void __cdecl core_cloth_cpp_CClothList_load_FUN_0043f920(CClothList *this_ptr);
 void __cdecl core_cloth_cpp_CClothList_reset_FUN_0043f9d0(CClothList *this_ptr);
 void __cdecl core_cloth_cpp_CClothList_add_FUN_0043fa40(CClothList *this_ptr,char *filename);
-void core_cloth_cpp_FUN_0043fac0(void);
+void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043fac0(CClothList *this_ptr,int index);
 void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043fbc0(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_process_FUN_0043fc00(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_0043fc50(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
-void core_cloth_cpp_FUN_0043fd10(void);
+void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_0043fd10(CClothList *this_ptr,CVector3f *wind_velocity);
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043fd60(CCloth *this_ptr,char *bone_name,int vertex_index);
 float __cdecl core_cloth_cpp_fastInvSqrt_FUN_0043ff90(float dist_sq);
 float __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043ffe0(CVector3f *v);

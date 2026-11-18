@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004869b0(CEmitter *this_ptr)
 
 {
@@ -26,7 +24,7 @@ void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004869b0(CEmitter *this_ptr)
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->model);
   }
   if (this_ptr->dest_actor == (CDemonActor *)0x0) {
-    this_ptr->dest_actor = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);
+    this_ptr->dest_actor = (CDemonActor *)g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4];
   }
   this_ptr->sfx_handle = 0;
   this_ptr->was_on_screen = 0;

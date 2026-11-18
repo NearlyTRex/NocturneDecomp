@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005ca450_006269d4 = 005ca450
-;   undefined4 DAT_02c9f060
+;   int g_EmergencyExitFlag
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005ca450
@@ -23,7 +23,7 @@ section .text
 
     CALL dword ptr [0x006269d4]         ; 005ca454 | PTR_crt_unknown.c_FUN_005ca450_006269d4
         ;   Label: crt_unknown.c_FUN_005ca454
-    CMP byte ptr [0x02c9f060],0x0       ; 005ca45a | DAT_02c9f060
+    CMP byte ptr [0x02c9f060],0x0       ; 005ca45a | g_EmergencyExitFlag
     JNZ 0x005ca472                      ; 005ca461
         ;   XREF to: 005ca472 (CONDITIONAL_JUMP)  ; LAB_005ca472
     MOV EDX,0xff                        ; 005ca463

@@ -7,14 +7,14 @@
 ; CWerewolf *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005ee761+1
+;   TerminatedCString s_speed_005ee762
 ;   TerminatedCString s_modelName_005ee768
 ;   TerminatedCString s_guardDistance_005ee772
 ;   TerminatedCString s_motion_state_005ee780
 ;   TerminatedCString s_lightUpEyes_005ee78d
 ;   TerminatedCString s_chainAnchor_005ee799
 ;   TerminatedCString s_chainLength_005ee7a5
-;   undefined4 DAT_005ee7b1
+;   TerminatedCString s_type_005ee7b1
 ;   TerminatedCString s_phase_005ee7b6
 ;   TerminatedCString s_phaseTimer_005ee7bc
 ;   TerminatedCString s_alpha1_005ee7c7
@@ -40,7 +40,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00487ec0 ; 0058d7e6
         ;   XREF to: 00487ec0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00487ec0(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0058d7eb
-    PUSH 0x5ee762                       ; 0058d7ee | s_speed_005ee761+1
+    PUSH 0x5ee762                       ; 0058d7ee | = "speed"
     LEA EAX,[EBX + 0x10a60]             ; 0058d7f3
     PUSH EAX                            ; 0058d7f9
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0058d7fa
@@ -93,7 +93,7 @@ section .text
         ;   Label: LAB_0058d889
     JL 0x0058d8a6                       ; 0058d890
         ;   XREF to: 0058d8a6 (CONDITIONAL_JUMP)  ; LAB_0058d8a6
-    PUSH 0x5ee7b1                       ; 0058d892 | DAT_005ee7b1
+    PUSH 0x5ee7b1                       ; 0058d892 | = "type"
     LEA EAX,[EBX + 0x10af8]             ; 0058d897
     PUSH EAX                            ; 0058d89d
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 0058d89e

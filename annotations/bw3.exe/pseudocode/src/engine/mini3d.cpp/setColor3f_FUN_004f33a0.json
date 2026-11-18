@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 36,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 68
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
   },
   "cross_references": [],
   "function": {
@@ -37,38 +35,38 @@
   "globals": [
     {
       "addr": "005c832d",
-      "name": "DAT_005c832d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c832d",
+      "type": "float",
+      "value": "255"
     },
     {
       "addr": "01d76c40",
-      "name": "DAT_01d76c40",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d76c40",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d7a6b8",
-      "name": "DAT_01d7a6b8",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d7a6b8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d7a6bc",
-      "name": "DAT_01d7a6bc",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d7a6bc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d7a6c0",
-      "name": "DAT_01d7a6c0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d7a6c0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d7a6c4",
-      "name": "DAT_01d7a6c4",
-      "type": "undefined4",
+      "name": "g_INT_01d7a6c4",
+      "type": "int",
       "value": null
     }
   ],
@@ -156,14 +154,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

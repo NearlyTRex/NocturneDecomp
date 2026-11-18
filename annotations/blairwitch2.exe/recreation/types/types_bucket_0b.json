@@ -472,7 +472,7 @@
   {
     "kind":"class",
     "name":"CSoundDeviceFull_vtable",
-    "size":84,
+    "size":88,
     "vtable_slots":[
       {
         "name":"close",
@@ -499,64 +499,68 @@
         "offset":20
       },
       {
-        "name":"set3DListenerPos",
+        "name":"commitDeferredSettings",
         "offset":24
       },
       {
-        "name":"set3DListenerOrient",
+        "name":"set3DListenerPos",
         "offset":28
       },
       {
-        "name":"set3DListenerVelocity",
+        "name":"set3DListenerOrient",
         "offset":32
       },
       {
-        "name":"set3DListenerDistanceFactor",
+        "name":"set3DListenerVelocity",
         "offset":36
       },
       {
-        "name":"commitDeferredSettings",
+        "name":"set3DListenerDistanceFactor",
         "offset":40
       },
       {
-        "name":"allocateSample",
+        "name":"setReverb",
         "offset":44
       },
       {
-        "name":"freeSample",
+        "name":"allocateSample",
         "offset":48
       },
       {
-        "name":"lockSample",
+        "name":"freeSample",
         "offset":52
       },
       {
-        "name":"unlockSample",
+        "name":"lockSample",
         "offset":56
       },
       {
-        "name":"allocateSfx",
+        "name":"unlockSample",
         "offset":60
       },
       {
-        "name":"setSfxPos",
+        "name":"allocateSfx",
         "offset":64
       },
       {
-        "name":"getSfxPlaybackPos",
+        "name":"applySfxChanges",
         "offset":68
       },
       {
-        "name":"startSfx",
+        "name":"getSfxPlaybackPos",
         "offset":72
       },
       {
-        "name":"killSfx",
+        "name":"startSfx",
         "offset":76
       },
       {
-        "name":"isSfxPlaying",
+        "name":"killSfx",
         "offset":80
+      },
+      {
+        "name":"isSfxPlaying",
+        "offset":84
       }
     ]
   },
@@ -577,6 +581,51 @@
         "type":{
           "kind":"builtin",
           "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_setReverb",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"decay_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damping",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }
@@ -700,6 +749,11 @@
   },
   {
     "kind":"struct",
+    "name":"SMRGLHeaderBasicCountOnly",
+    "size":4
+  },
+  {
+    "kind":"struct",
     "name":"SMRGLPoint",
     "size":16
   },
@@ -726,6 +780,21 @@
   {
     "kind":"struct",
     "name":"SProjectionParams",
+    "size":16
+  },
+  {
+    "kind":"struct",
+    "name":"SQuadVertices",
+    "size":48
+  },
+  {
+    "kind":"struct",
+    "name":"SRenderBufferEntry",
+    "size":280
+  },
+  {
+    "kind":"struct",
+    "name":"SWindowRect",
     "size":16
   }
 ]

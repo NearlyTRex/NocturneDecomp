@@ -6,44 +6,45 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ceef0(CGore *this_ptr,CVector3f *position,int *out_blood_type)
 
 {
-  int iVar1;
-  int iVar2;
+  CBloodPool *pCVar1;
+  CBloodSplat *pCVar2;
+  int iVar3;
   
-  iVar2 = 0;
-  if (0 < _DAT_01d4a940) {
-    iVar1 = 0x1d4a944;
+  iVar3 = 0;
+  if (0 < g_BloodPoolCount) {
+    pCVar1 = g_CBloodPool_ARRAY_01d4a944;
     do {
-      if ((((*(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c) == *(int *)(iVar1 + 0x14)) &&
-           (ABS(position->y - *(float *)(iVar1 + 8)) <= (float)_DAT_005c4781)) &&
-          (ABS(position->x - *(float *)(iVar1 + 4)) <= (float)_DAT_005c4789)) &&
-         (ABS(position->z - *(float *)(iVar1 + 0xc)) <= (float)_DAT_005c4789)) {
-        *out_blood_type = *(int *)(iVar1 + 0x10);
+      if (((((g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.location.area_id ==
+             pCVar1->area_id) &&
+           (ABS(position->y - (pCVar1->position).y) <= (float)0.5)) &&
+          (ABS(position->x - (pCVar1->position).x) <= (float)1.333)) &&
+         (ABS(position->z - (pCVar1->position).z) <= (float)1.333)) {
+        *out_blood_type = pCVar1->blood_type;
         return 1;
       }
-      iVar2 = iVar2 + 1;
-      iVar1 = iVar1 + 0x2c;
-    } while (iVar2 < _DAT_01d4a940);
+      iVar3 = iVar3 + 1;
+      pCVar1 = pCVar1 + 1;
+    } while (iVar3 < g_BloodPoolCount);
   }
-  iVar2 = 0;
-  if (0 < _DAT_01d276b8) {
-    iVar1 = 0x1d276bc;
+  iVar3 = 0;
+  if (0 < g_BloodSplatCount) {
+    pCVar2 = g_CBloodSplat_ARRAY_01d276bc;
     do {
-      if (((*(int *)(iVar1 + 0x14) == 0) &&
-          (*(int *)(iVar1 + 0x10) == *(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c))) &&
-         ((ABS(position->y - *(float *)(iVar1 + 8)) <= (float)_DAT_005c4781 &&
-          ((ABS(position->x - *(float *)(iVar1 + 4)) <= (float)_DAT_005c4781 &&
-           (ABS(position->z - *(float *)(iVar1 + 0xc)) <= (float)_DAT_005c4781)))))) {
-        *out_blood_type = *(int *)(iVar1 + 0x18);
+      if (((pCVar2->is_wall_splat == 0) &&
+          (pCVar2->area_id ==
+           (g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.location.area_id)) &&
+         ((ABS(position->y - (pCVar2->position).y) <= (float)0.5 &&
+          ((ABS(position->x - (pCVar2->position).x) <= (float)0.5 &&
+           (ABS(position->z - (pCVar2->position).z) <= (float)0.5)))))) {
+        *out_blood_type = pCVar2->blood_type;
         return 1;
       }
-      iVar2 = iVar2 + 1;
-      iVar1 = iVar1 + 0x48;
-    } while (iVar2 < _DAT_01d276b8);
+      iVar3 = iVar3 + 1;
+      pCVar2 = pCVar2 + 1;
+    } while (iVar3 < g_BloodSplatCount);
   }
   return 0;
 }

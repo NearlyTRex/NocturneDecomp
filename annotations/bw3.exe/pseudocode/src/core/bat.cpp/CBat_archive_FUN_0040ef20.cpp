@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bat_cpp_CBat_archive_FUN_0040ef20(CBat *this_ptr)
 
 {
@@ -16,7 +14,7 @@ void __cdecl core_bat_cpp_CBat_archive_FUN_0040ef20(CBat *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->param,"param");
   if (g_CBatClassVersion < 3) {
     core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->speed,"speed");
-    this_ptr->course_speed = this_ptr->speed * (float)_DAT_005b62a6;
+    this_ptr->course_speed = this_ptr->speed * (float)30;
   }
   else {
     core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->speed,"flapSpeedMult");

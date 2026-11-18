@@ -13,12 +13,12 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005e886c
 ;   TerminatedCString s_SfxSlot_pollHwHandle_no_005e8881
 ;   TerminatedCString s_Killing_looped_sfx_s_whi_005e88a4
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_02648e80
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00550010
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
@@ -34,7 +34,7 @@ section .text
     CMP dword ptr [EBX + 0x60],0x0      ; 0054f8a6
     JZ 0x0054f921                       ; 0054f8aa
         ;   XREF to: 0054f921 (CONDITIONAL_JUMP)  ; LAB_0054f921
-    CMP dword ptr [0x02648e80],0x0      ; 0054f8b0 | DAT_02648e80
+    CMP dword ptr [0x02648e80],0x0      ; 0054f8b0 | g_CSoundDevicePtr
     JZ 0x0054f918                       ; 0054f8b7
         ;   XREF to: 0054f918 (CONDITIONAL_JUMP)  ; LAB_0054f918
     CMP dword ptr [EBX + 0x68],0x0      ; 0054f8b9
@@ -44,15 +44,15 @@ section .text
     MOV EDI,0x5e886c                    ; 0054f8c0 | = "..\\sound\\sndmain.cpp"
     MOV EBP,0xcf9                       ; 0054f8c5
     PUSH 0x5e8881                       ; 0054f8ca | = "SfxSlot::pollHwHandle - no sample?"
-    MOV dword ptr [0x01d046a0],EDI      ; 0054f8cf | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0054f8d5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054f8db
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 0054f8cf | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0054f8d5 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054f8db
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054f8e0
     POP EDI                             ; 0054f8e3
     PUSH EBX                            ; 0054f8e4
         ;   Label: LAB_0054f8e4
-    MOV EAX,[0x02648e80]                ; 0054f8e5 | DAT_02648e80
+    MOV EAX,[0x02648e80]                ; 0054f8e5 | g_CSoundDevicePtr
     PUSH EAX                            ; 0054f8ea
     MOV EDX,dword ptr [EAX]             ; 0054f8eb
     CALL dword ptr [EDX + 0x54]         ; 0054f8ed

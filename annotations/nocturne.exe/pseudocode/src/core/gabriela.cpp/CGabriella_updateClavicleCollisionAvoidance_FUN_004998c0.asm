@@ -19,10 +19,10 @@
 ; Referenced Globals:
 ;   float FLOAT_0059dcbc = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01c7139c
-;   undefined4 DAT_01c713a0
-;   undefined4 DAT_01c713d8
-;   undefined4 DAT_01c713dc
+;   undefined4 g_GabriellaIndices[1]
+;   undefined4 g_GabriellaIndices[2]
+;   undefined4 g_GabriellaIndices[16]
+;   undefined4 g_GabriellaIndices[17]
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -138,9 +138,9 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 004999d6
         ;   Label: LAB_004999d6
     PUSH EAX                            ; 004999da
-    MOV EAX,[0x01c7139c]                ; 004999db | DAT_01c7139c
+    MOV EAX,[0x01c7139c]                ; 004999db | g_GabriellaIndices[1]
     PUSH EAX                            ; 004999e0
-    MOV EDX,dword ptr [0x01c713d8]      ; 004999e1 | DAT_01c713d8
+    MOV EDX,dword ptr [0x01c713d8]      ; 004999e1 | g_GabriellaIndices[16]
     PUSH EDX                            ; 004999e7
     LEA EAX,[EBX + 0x1fa58]             ; 004999e8
     PUSH EAX                            ; 004999ee
@@ -174,9 +174,9 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 00499a44
         ;   Label: LAB_00499a44
     PUSH EAX                            ; 00499a48
-    MOV EDI,dword ptr [0x01c713a0]      ; 00499a49 | DAT_01c713a0
+    MOV EDI,dword ptr [0x01c713a0]      ; 00499a49 | g_GabriellaIndices[2]
     PUSH EDI                            ; 00499a4f
-    MOV EBP,dword ptr [0x01c713dc]      ; 00499a50 | DAT_01c713dc
+    MOV EBP,dword ptr [0x01c713dc]      ; 00499a50 | g_GabriellaIndices[17]
     PUSH EBP                            ; 00499a56
     LEA EAX,[EBX + 0x1fa5c]             ; 00499a57
     PUSH EAX                            ; 00499a5d
@@ -210,7 +210,7 @@ section .text
         ;   XREF to: 00499a44 (UNCONDITIONAL_JUMP)  ; LAB_00499a44
     PUSH 0x51b650                       ; 00499aaa
         ;   Label: LAB_00499aaa
-    MOV ECX,dword ptr [0x01c7139c]      ; 00499aaf | DAT_01c7139c
+    MOV ECX,dword ptr [0x01c7139c]      ; 00499aaf | g_GabriellaIndices[1]
     PUSH ECX                            ; 00499ab5
     PUSH dword ptr [EBX + 0x1fa58]      ; 00499ab6
     PUSH 0x0                            ; 00499abc
@@ -221,7 +221,7 @@ section .text
         ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 00499acb
     PUSH 0x51b650                       ; 00499ace
-    MOV EDI,dword ptr [0x01c713a0]      ; 00499ad3 | DAT_01c713a0
+    MOV EDI,dword ptr [0x01c713a0]      ; 00499ad3 | g_GabriellaIndices[2]
     PUSH EDI                            ; 00499ad9
     PUSH dword ptr [EBX + 0x1fa5c]      ; 00499ada
     PUSH 0x0                            ; 00499ae0

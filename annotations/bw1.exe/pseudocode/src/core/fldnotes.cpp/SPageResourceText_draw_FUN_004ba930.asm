@@ -7,17 +7,17 @@
 ; SPageResourceText * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0152d254
-;   undefined4 DAT_01c4f020
+;   CBitFont* g_CBitFont_PTR_0152d254
+;   int g_INT_01c4f020
 ;   undefined4 CAlphaBitmap_01cc7cc0.width
 ;   undefined4 CAlphaBitmap_01cc7cc0.height
 ;
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0
-;   engine_alphabit.cpp_FUN_0040d660
+;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
-;   engine_font.cpp_FUN_004c1dd0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EAX                            ; 004ba946
     MOV EBX,dword ptr [ESI + 0x11c]     ; 004ba947
     PUSH EBX                            ; 004ba94d
-    CALL engine_font.cpp_FUN_004c1dd0   ; 004ba94e
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 004ba94e
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EDI,dword ptr [ESI + 0x18]      ; 004ba953
     ADD ESP,0x18                        ; 004ba956
     TEST EDI,EDI                        ; 004ba959
@@ -58,7 +58,7 @@ section .text
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 004ba96b
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     MOV EDI,dword ptr [ESI + 0x4]       ; 004ba970
-    MOV EDX,dword ptr [0x0152d254]      ; 004ba973 | DAT_0152d254
+    MOV EDX,dword ptr [0x0152d254]      ; 004ba973 | g_CBitFont_PTR_0152d254
     ADD EDI,EAX                         ; 004ba979
     MOV EAX,dword ptr [ESI + 0x11c]     ; 004ba97b
     ADD ESP,0x8                         ; 004ba981
@@ -99,8 +99,8 @@ section .text
     PUSH EDI                            ; 004ba9d2
     PUSH ESI                            ; 004ba9d3
     PUSH 0x1cc7cc0                      ; 004ba9d4
-    CALL engine_alphabit.cpp_FUN_0040d660 ; 004ba9d9
-        ;   XREF to: 0040d660 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d660()
+    CALL engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660 ; 004ba9d9
+        ;   XREF to: 0040d660 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660(CAlphaBitmap * this_ptr, int dest_x, int dest_y, int left_x, ...)
     ADD ESP,0x20                        ; 004ba9de
     POP EBP                             ; 004ba9e1
     POP EDI                             ; 004ba9e2
@@ -116,7 +116,7 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 004ba9f0
     XOR ECX,ECX                         ; 004ba9f2
     PUSH EAX                            ; 004ba9f4
-    MOV dword ptr [0x01c4f020],ECX      ; 004ba9f5 | DAT_01c4f020
+    MOV dword ptr [0x01c4f020],ECX      ; 004ba9f5 | g_INT_01c4f020
     CALL engine_2d.c_drawHLine_FUN_00402f30 ; 004ba9fb
         ;   XREF to: 00402f30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402f30(int x1, int y, int x2)
     ADD ESP,0xc                         ; 004baa00

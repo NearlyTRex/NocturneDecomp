@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 114,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 84,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 339
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 83,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 338
   },
   "cross_references": [
     {
@@ -39,7 +36,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00525fe0",
@@ -67,19 +64,19 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d40dec",
-      "name": "DAT_01d40dec",
+      "name": "g_HuffmanTables[0].table_size",
       "type": "undefined4",
       "value": null
     }
@@ -232,22 +229,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_01d404c8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"Illegal Huffman code in data.  File: %s\",&DAT_01d404c8);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

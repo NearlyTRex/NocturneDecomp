@@ -17,13 +17,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_image_box_32_32_005d5cc2
 ;   TerminatedCString s_image_check_32_32_005d5cd4
-;   undefined4 DAT_005d5ce8
+;   TerminatedCString s_ul_005d5ce8
 ;   TerminatedCString s_cont_005d5ced
 ;   TerminatedCString s_ul_br_005d5cf5
 ;   TerminatedCString s_ERROR_item_won_t_fit_br_005d5cff
-;   undefined4 DAT_005d5d19
-;   undefined4 DAT_005d5d1e
-;   undefined4 DAT_01cab7e8
+;   TerminatedCString s_br_005d5d19
+;   TerminatedCString s_br_005d5d1e
+;   int g_INT_01cab7e8
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070
@@ -44,7 +44,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 004a32e7
     MOV ESI,dword ptr [ESP + 0x20]      ; 004a32eb
     MOV EAX,dword ptr [EBX + 0x10]      ; 004a32ef
-    MOV EDX,dword ptr [0x01cab7e8]      ; 004a32f2 | DAT_01cab7e8
+    MOV EDX,dword ptr [0x01cab7e8]      ; 004a32f2 | g_INT_01cab7e8
     MOV dword ptr [ESI + 0x144],EAX     ; 004a32f8
     TEST EDX,EDX                        ; 004a32fe
     JZ 0x004a33b7                       ; 004a3300
@@ -190,7 +190,7 @@ section .text
     POP ESI                             ; 004a343e
     POP EBX                             ; 004a343f
     RET                                 ; 004a3440
-    PUSH 0x5d5ce8                       ; 004a3441 | DAT_005d5ce8
+    PUSH 0x5d5ce8                       ; 004a3441 | = "<ul>"
         ;   Label: LAB_004a3441
     PUSH EBX                            ; 004a3446
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a3447
@@ -269,7 +269,7 @@ section .text
     INC dword ptr [ESP]                 ; 004a34d1
     JMP 0x004a3356                      ; 004a34d4
         ;   XREF to: 004a3356 (UNCONDITIONAL_JUMP)  ; LAB_004a3356
-    PUSH 0x5d5d19                       ; 004a34d9 | DAT_005d5d19
+    PUSH 0x5d5d19                       ; 004a34d9 | = "<br>"
         ;   Label: LAB_004a34d9
     PUSH EBX                            ; 004a34de
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a34df
@@ -285,7 +285,7 @@ section .text
     POP ESI                             ; 004a34f2
     POP EBX                             ; 004a34f3
     RET                                 ; 004a34f4
-    PUSH 0x5d5d1e                       ; 004a34f5 | DAT_005d5d1e
+    PUSH 0x5d5d1e                       ; 004a34f5 | = "<br>"
         ;   Label: LAB_004a34f5
     PUSH EBX                            ; 004a34fa
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a34fb

@@ -4,7 +4,12 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
+#include "system/windef.h"
+#include "system/winnt.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEventList.h"
+#include "types/structs/SRGBColorPalette.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C60000
@@ -12,4 +17,123 @@
 
 // CDemonActorType
 extern CDemonActorType g_CExorcismClassInfo;
+
+// CEventList
+extern CEventList g_CEventList_01c6e360;
+
+// DWORD
+extern DWORD g_JoyRPos;
+extern DWORD g_JoyButtons;
+
+// SRGBColorPalette*
+extern SRGBColorPalette* g_CurrentPalette;
+
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af74;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af7c;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af80;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af88;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c;
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af94;
+extern _BIT_INTEGER32 g_RenderStateFlags;
+
+// char[4952]
+extern char g_KeyboardState[4952];
+
+// int
+extern int g_INT_01c6af78;
+extern int g_INT_01c6af84;
+extern int g_INT_01c6af90;
+extern int g_INT_01c6b598;
+extern int g_INT_01c6b59c;
+extern int g_INT_01c6b5a0;
+extern int g_INT_01c6b5a4;
+extern int g_INT_01c6b5a8;
+extern int g_INT_01c6b5ac;
+extern int g_INT_01c6b5b0;
+extern int g_INT_01c6b5b4;
+extern int g_ViewportWidth;
+extern int g_ViewportHeight;
+extern int g_INT_01c6b5c0;
+extern int g_INT_01c6b5c4;
+extern int g_AdvancedClippingEnabled;
+extern int g_INT_01c6cee0;
+extern int g_INT_01c6cee4;
+extern int g_INT_01c6cee8;
+extern int g_INT_01c6ceec;
+extern int g_PerspectiveReciprocal;
+extern int g_JoyXPos;
+extern int g_JoyYPos;
+extern int g_JoyZPos;
+extern int g_JoystickPresent;
+extern int g_JoyWantUAxis;
+extern int g_JoyWantRAxis;
+extern int g_JoystickHasPOV;
+extern int g_JoyPOVDirection;
+extern int g_MMXSupported;
+extern int g_CPUModel;
+extern int g_CalibratedCPUSpeed;
+extern int g_INT_01c6e2ac;
+extern int g_INT_01c6e2b0;
+extern int g_VertexPreprocessMode;
+extern int g_SolidRedComponent;
+extern int g_SolidGreenComponent;
+extern int g_SolidBlueComponent;
+extern int g_RelativeX;
+extern int g_RelativeY;
+extern int g_RelativeZ;
+extern int g_CameraOriginX;
+extern int g_CameraOriginY;
+extern int g_CameraOriginZ;
+extern int g_CameraRotationPitch;
+extern int g_CameraRotationYaw;
+extern int g_CameraRotationRoll;
+extern int g_LightDirectionX;
+extern int g_LightDirectionY;
+extern int g_LightDirectionZ;
+extern int g_INT_01c6e2fc;
+extern int g_INT_01c6e300;
+extern int g_INT_01c6e304;
+extern int g_INT_01c6e308;
+extern int g_INT_01c6e30c;
+extern int g_INT_01c6e310;
+extern int g_INT_01c6e314;
+extern int g_INT_01c6e318;
+extern int g_INT_01c6e31c;
+
+// uchar*
+extern uchar* g_CurrentTextureData;
+extern uchar* g_CurrentTextureOpacityData;
+
+// uchar[32768]
+extern uchar g_ColorCubeLookup[32768];
+
+// uchar[768]
+extern uchar g_UCHAR_ARRAY_01c6af98[768];
+extern uchar g_DefaultPalette[768];
+
+// uint
+extern uint g_UINT_01c6e35c;
+
+// uint*[GAME_SCREEN_MAX_HEIGHT]
+extern uint* g_ZBufferScanlineArray[GAME_SCREEN_MAX_HEIGHT];
+
+// uint[256]
+extern uint g_Hardware32BitPalette[256];
+
+// uint[448]
+extern uint g_ColorTable32[448];
+
+// uint[GAME_RECIPROCAL_TABLE_SIZE]
+extern uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE];
+
+// ulong
+extern ulong g_SolidColorMode;
+
+// ushort[256]
+extern ushort g_ColorTable16[256];
+extern ushort g_Hardware16BitPalette[256];
+
+// void*
+extern void* g_ScanlineRenderFunc;
 

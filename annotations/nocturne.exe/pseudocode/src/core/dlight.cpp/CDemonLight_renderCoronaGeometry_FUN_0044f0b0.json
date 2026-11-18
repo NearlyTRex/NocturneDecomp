@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 243,
+    "complexity_score": 227,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 138,
-    "suspect_count": 8,
+    "pseudocode_lines": 137,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unknown_field",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 434
+    "total_lines": 433
   },
   "cross_references": [
     {
@@ -134,9 +133,9 @@
     },
     {
       "addr": "0059c030",
-      "name": "DAT_0059c030",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059c030",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ae704",
@@ -146,26 +145,26 @@
     },
     {
       "addr": "01abb4b8",
-      "name": "CVector3f_01abb4b8",
+      "name": "g_CoronaGeometryOrigin",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "01abb4bc",
-      "name": "CVector3f_01abb4b8.y",
+      "name": "g_CoronaGeometryOrigin.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01abb4c0",
-      "name": "CVector3f_01abb4b8.z",
+      "name": "g_CoronaGeometryOrigin.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -484,16 +483,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 42,
+      "line": 40,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_a8._0_4_ =",
@@ -501,7 +492,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 52,
+      "line": 50,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_40 = (float)(fVar7 * (float10)(float)local_a8._0_4_);",
@@ -509,7 +500,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 53,
+      "line": 51,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_3c = (float)(fVar6 * (float10)(float)local_a8._0_4_);",
@@ -517,7 +508,7 @@
     },
     {
       "description": "Pointer value `&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r",
       "severity": "moderate",
       "text": "*(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r + iVar4) = 0;",
@@ -525,7 +516,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 84,
+      "line": 82,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_34[0].x = pCVar2->x;",
@@ -533,7 +524,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r + iVar4) = 0;",
@@ -541,7 +532,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 60,
+      "line": 58,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",

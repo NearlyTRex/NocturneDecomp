@@ -19,12 +19,12 @@
 ;   TerminatedCString s_CNetGame_removePlayer_in_005ebf93
 ;   TerminatedCString s_core_netgame_cpp_005ebfc1
 ;   TerminatedCString s_CNetGame_removePlayer_tr_005ebfd5
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01d6dfb8
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_ChatOutCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c_memmove_FUN_005c25d0
 ;
 ; *****************************************************************************
@@ -49,10 +49,10 @@ section .text
         ;   Label: LAB_0052f8a8
     MOV ESI,0x862                       ; 0052f8ad
     PUSH 0x5ebf93                       ; 0052f8b2 | = "CNetGame::removePlayer - invalid play..."
-    MOV dword ptr [0x01d1d400],EBX      ; 0052f8b7 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0052f8bd | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052f8c3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 0052f8b7 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0052f8bd | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052f8c3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052f8c8
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0052f8cb
         ;   Label: LAB_0052f8cb
@@ -63,10 +63,10 @@ section .text
     MOV EBP,0x5ebfc1                    ; 0052f8db | = "..\\core\\netgame.cpp"
     MOV EAX,0x869                       ; 0052f8e0
     PUSH 0x5ebfd5                       ; 0052f8e5 | = "CNetGame::removePlayer - tried to rem..."
-    MOV dword ptr [0x01d1d400],EBP      ; 0052f8ea | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0052f8f0 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052f8f5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBP      ; 0052f8ea | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0052f8f0 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052f8f5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052f8fa
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0052f8fd
         ;   Label: LAB_0052f8fd
@@ -115,7 +115,7 @@ section .text
     CALL crt_string.c_memmove_FUN_005c25d0 ; 0052f97b
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
     XOR ESI,ESI                         ; 0052f980
-    MOV EDI,dword ptr [0x01d6dfb8]      ; 0052f982 | DAT_01d6dfb8
+    MOV EDI,dword ptr [0x01d6dfb8]      ; 0052f982 | g_ChatOutCount
     ADD ESP,0xc                         ; 0052f988
     TEST EDI,EDI                        ; 0052f98b
     JLE 0x0052fa30                      ; 0052f98d
@@ -160,7 +160,7 @@ section .text
     ADD ESP,0xc                         ; 0052fa03
     ADD EDI,0x114                       ; 0052fa06
     MOV EDX,dword ptr [ESP + 0x4]       ; 0052fa0c
-    MOV ECX,dword ptr [0x01d6dfb8]      ; 0052fa10 | DAT_01d6dfb8
+    MOV ECX,dword ptr [0x01d6dfb8]      ; 0052fa10 | g_ChatOutCount
     ADD EDX,0x114                       ; 0052fa16
     ADD EBP,0x114                       ; 0052fa1c
     MOV dword ptr [ESP + 0x4],EDX       ; 0052fa22

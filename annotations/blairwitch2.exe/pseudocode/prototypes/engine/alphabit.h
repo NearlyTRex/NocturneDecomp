@@ -15,7 +15,7 @@ CAlphaBitmap * __cdecl CAlphaBitmap::dtor(CAlphaBitmap *this_ptr,uint flags);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d460
 // Address: 0040d460
-void __cdecl CAlphaBitmap::allocate(CAlphaBitmap *this_ptr,int param_2,int param_3);
+void __cdecl CAlphaBitmap::allocate(CAlphaBitmap *this_ptr,int width,int height);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
 // Address: 0040d540
@@ -37,14 +37,14 @@ void __cdecl CAlphaBitmap::render(CAlphaBitmap *this_ptr,int dest_x,int dest_y,i
 // Address: 0040dbd0
 void __cdecl CAlphaBitmap::scale(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY);
 
-// Original: engine_alphabit.cpp_FUN_0040dca0
+// Original: engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040dca0
 // Address: 0040dca0
-void FUN_0040dca0(int param_1);
+void __cdecl CAlphaBitmap::initPalette(CAlphaBitmap *this_ptr);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_copyRawToOpa_FUN_0040dcf0
 // Address: 0040dcf0
 void __cdecl CAlphaBitmap::copyRawToOpa(CAlphaBitmap *this_ptr);
 
-// Original: engine_alphabit.cpp_FUN_0040dd20
+// Original: engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20
 // Address: 0040dd20
-void FUN_0040dd20(int param_1,int param_2);
+void __cdecl CAlphaBitmap::fillOpa(CAlphaBitmap *this_ptr,int value);

@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 74,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 150
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 149
   },
   "cross_references": [
     {
       "addr": "005784b0",
       "from_addr": "005784d5",
-      "name": "sound_snddx.cpp_FUN_005784b0",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,7 +36,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "0056f1e0",
@@ -82,50 +79,50 @@
     },
     {
       "addr": "005f4614",
-      "name": "DAT_005f4614",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f4614",
+      "type": "float",
+      "value": "8.477105E-7"
     },
     {
       "addr": "005f4618",
-      "name": "DAT_005f4618",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f4618",
+      "type": "float",
+      "value": "0.25"
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c74708",
-      "name": "DAT_02c74708",
+      "name": "g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c7fc8c",
-      "name": "DAT_02c7fc8c",
-      "type": "undefined4",
+      "name": "g_INT_02c7fc8c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c807ec",
-      "name": "DAT_02c807ec",
-      "type": "undefined4",
+      "name": "g_SoundLockCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c807f0",
-      "name": "DAT_02c807f0",
-      "type": "undefined4",
+      "name": "g_SoundStartTime",
+      "type": "int",
       "value": null
     }
   ],
@@ -135,7 +132,7 @@
       {
         "call_addr": "005784d5",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_005784b0",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -236,22 +233,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_02c78cec",
-      "severity": "mild",
-      "text": "} while (this_ptr != (CSfxSlot *)&DAT_02c78cec);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

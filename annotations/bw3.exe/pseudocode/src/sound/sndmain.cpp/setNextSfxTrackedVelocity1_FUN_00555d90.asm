@@ -8,16 +8,16 @@
 ;
 ; XREF[2]:
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 005604ec
-;   core_sound.cpp_FUN_0055f6b0 at 0055faf2
+;   core_sound.cpp_processTrainSounds_FUN_0055f6b0 at 0055faf2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ceb91c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555d90 | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555d90 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00555d90
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555d96
     SUB EAX,EDX                         ; 00555d9d

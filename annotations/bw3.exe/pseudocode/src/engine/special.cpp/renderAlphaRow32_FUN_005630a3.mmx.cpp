@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_005630a3(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 {
 __asm {
@@ -21,10 +19,10 @@ __asm {
         shr EBP,0x8
     LAB_005630bc:
         movzx EAX,byte ptr [ESI]
-        movd MM0,dword ptr [DAT_01c6a974 + EAX*0x4]
+        movd MM0,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         movzx EAX,byte ptr [EBX]
         imul EAX,EBP
-        cmp dword ptr [DAT_01c6e2ac],0x1
+        cmp dword ptr [g_INT_01c6e2ac],0x1
         jz LAB_005630e4
         cmp EAX,0xfde8
         jge LAB_0056312e
@@ -33,12 +31,12 @@ __asm {
     LAB_005630e4:
         shr EAX,0x8
         punpcklbw MM0,MM7
-        movq MM1,qword ptr [DAT_00605710 + EAX*0x8]
+        movq MM1,qword ptr [g_QWORD_ARRAY_00605710 + EAX*0x8]
         movq MM2,MM1
-        pxor MM2,qword ptr [DAT_00605f08]
+        pxor MM2,qword ptr [0x00605f08]
         movd MM3,dword ptr [EDI]
         punpcklbw MM3,MM7
-        cmp dword ptr [DAT_01c6e2ac],0x1
+        cmp dword ptr [g_INT_01c6e2ac],0x1
         jz LAB_0056311d
         pmullw MM0,MM1
         pmullw MM3,MM2

@@ -6,29 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9f10(CDemonActor *actor_ptr)
 
 {
   CKeyFramedModelInstance *pCVar1;
   int iVar2;
-  char *str2;
+  SInventoryItemInfo *str2;
   int iVar3;
   
-  str2 = (char *)0x1cf0208;
+  str2 = g_ItemDefinitionArray;
   iVar3 = 0;
   pCVar1 = core_inv_cpp_getItemModel_FUN_004d9db0(actor_ptr);
-  if (0 < _DAT_01cf0200) {
+  if (0 < g_ItemDefinitionCount) {
     do {
-      iVar2 = _stricmp(pCVar1->model_name,str2);
+      iVar2 = _stricmp(pCVar1->model_name,str2->model_name);
       if (iVar2 == 0) {
-        return str2 + 0x100;
+        return str2->display_name;
       }
       iVar3 = iVar3 + 1;
-      str2 = str2 + 0x300;
-    } while (iVar3 < _DAT_01cf0200);
+      str2 = str2 + 1;
+    } while (iVar3 < g_ItemDefinitionCount);
   }
-  _sprintf((char *)0x1cee1b0,"Add to dict: %s");
-  return (char *)0x1cee1b0;
+  _sprintf(g_CHAR_ARRAY_01cee1b0,"Add to dict: %s");
+  return g_CHAR_ARRAY_01cee1b0;
 }

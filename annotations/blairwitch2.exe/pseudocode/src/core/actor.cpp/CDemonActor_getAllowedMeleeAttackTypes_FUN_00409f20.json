@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 382,
+    "complexity_score": 367,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 29,
+    "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,8 +16,7 @@
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 182
   },
@@ -46,15 +45,15 @@
   "globals": [
     {
       "addr": "005ca66e",
-      "name": "DAT_005ca66e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ca66e",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005ca676",
-      "name": "DAT_005ca676",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ca676",
+      "type": "double",
+      "value": "6"
     }
   ],
   "param_estimates": {
@@ -177,16 +176,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "float unaff_EBP;",
@@ -194,7 +185,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "float unaff_EDI;",
@@ -202,7 +193,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 12,
       "match": "afStackY_1008",
       "severity": "moderate",
       "text": "float afStackY_1008 [999];",
@@ -210,7 +201,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_ffffff98",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff98;",
@@ -218,7 +209,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 26,
       "match": "in_stack_ffffff98",
       "severity": "moderate",
       "text": "(*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,in_stack_ffffff98);",
@@ -226,7 +217,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 27,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffffc8;",
@@ -234,7 +225,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 30,
+      "line": 28,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "puVar4 = (uint *)&stack0xffffffa8;",
@@ -242,7 +233,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 40,
+      "line": 38,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar5 * -8) =",
@@ -250,7 +241,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 41,
+      "line": 39,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar5 * -8);",
@@ -258,7 +249,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 40,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
@@ -266,7 +257,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 41,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
@@ -274,55 +265,55 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 43,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "if ((((fStack_14 < 1.0) && (unaff_EBP < 1.0)) && ((float)_DAT_005ca66e < unaff_EDI)) &&",
+      "text": "if ((((fStack_14 < 1.0) && (unaff_EBP < 1.0)) && ((float)2 < unaff_EDI)) &&",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 43,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "if ((((fStack_14 < 1.0) && (unaff_EBP < 1.0)) && ((float)_DAT_005ca66e < unaff_EDI)) &&",
+      "text": "if ((((fStack_14 < 1.0) && (unaff_EBP < 1.0)) && ((float)2 < unaff_EDI)) &&",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 44,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(((unaff_EDI < (float)_DAT_005ca676 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))) {",
+      "text": "(((unaff_EDI < (float)6 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI))",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 44,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(((unaff_EDI < (float)_DAT_005ca676 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))) {",
+      "text": "(((unaff_EDI < (float)6 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI))",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 44,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(((unaff_EDI < (float)_DAT_005ca676 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))) {",
+      "text": "(((unaff_EDI < (float)6 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI))",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 44,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(((unaff_EDI < (float)_DAT_005ca676 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))) {",
+      "text": "(((unaff_EDI < (float)6 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI))",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 48,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "if (((fStack_14 < 1.0) && (unaff_EBP < 1.0)) &&",
@@ -330,7 +321,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 49,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "((1.0 < unaff_EDI &&",
@@ -338,39 +329,39 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(((unaff_EDI < (float)_DAT_005ca66e && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))))",
+      "text": "(((unaff_EDI < (float)2 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(((unaff_EDI < (float)_DAT_005ca66e && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))))",
+      "text": "(((unaff_EDI < (float)2 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(((unaff_EDI < (float)_DAT_005ca66e && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))))",
+      "text": "(((unaff_EDI < (float)2 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(((unaff_EDI < (float)_DAT_005ca66e && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))))",
+      "text": "(((unaff_EDI < (float)2 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)",
       "type": "unaffected_reg"
     },
     {
       "description": "Pointer value `&stack0xffffffe4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "(int)&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar5 * -8);",
@@ -378,7 +369,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffe8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&stack0xffffffe8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
@@ -386,7 +377,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 31,
+      "line": 29,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -394,7 +385,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar5 * -8);",
@@ -402,7 +393,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
@@ -412,27 +403,27 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 124,
         "vtable_addr": "005f7204"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 124,
         "vtable_addr": "005fab04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 124,
         "vtable_addr": "005fbe04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 124,
         "vtable_addr": "005fec04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 124,
         "vtable_addr": "005ff904"
       }

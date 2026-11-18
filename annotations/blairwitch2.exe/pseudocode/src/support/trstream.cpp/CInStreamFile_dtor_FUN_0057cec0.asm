@@ -8,26 +8,26 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[17]:
-;   cockpit_ckptutil.c_FUN_0042c520 at 0042c5c2
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780 at 0042c8b1
-;   core_game.cpp_FUN_004bb9b0 at 004bbdbc
-;   core_game.cpp_FUN_004bbf70 at 004bc364
-;   engine_2d.c_FUN_00401590 at 004015e2
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042c520 at 0042c5c2
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc364
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbdbc
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010d1
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a7f
+;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015e2
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7f60
-;   engine_font.cpp_FUN_004a7fd0 at 004a830c
-;   engine_font.cpp_FUN_004a85a0 at 004a8619
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0 at 004a8619
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0 at 004a830c
 ;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CInStreamFileTypeInfo
-;   undefined1* g_CInStreamFileVTable = 0057cec0
+;   void*[13] g_CInStreamFileVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;   support_trstream.cpp_CInStream_dtor_FUN_0057b9d0
 ;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
 ;
@@ -66,16 +66,16 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0057cf00
     PUSH EAX                            ; 0057cf03
-    CALL crt_unknown.c_FUN_005b7fce     ; 0057cf04
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 0057cf04
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 0057cf09
     MOV EAX,EBX                         ; 0057cf0c
     POP EBX                             ; 0057cf0e
     RET                                 ; 0057cf0f
     PUSH EAX                            ; 0057cf10
         ;   Label: LAB_0057cf10
-    CALL crt_unknown.c_FUN_005b7fdc     ; 0057cf11
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 0057cf11
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 0057cf16
     MOV EAX,EBX                         ; 0057cf19
     POP EBX                             ; 0057cf1b

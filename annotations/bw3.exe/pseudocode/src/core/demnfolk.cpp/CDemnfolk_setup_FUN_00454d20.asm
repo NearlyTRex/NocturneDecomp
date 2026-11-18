@@ -18,9 +18,9 @@
 ;   TerminatedCString s_Bip01_R_Hand_005ba44f
 ;   TerminatedCString s_Bip01_Spine_005ba45c
 ;   TerminatedCString s_Bip01_Spine2_005ba468
-;   undefined4 DAT_005ba475
+;   TerminatedCString s_larm_005ba475
 ;   TerminatedCString s_l4arm_005ba47a
-;   undefined4 DAT_005ba480
+;   TerminatedCString s_rarm_005ba480
 ;   TerminatedCString s_r4arm_005ba485
 ;   ... and 4 more
 ;
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 0054ea40 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00454e3c
     PUSH 0x1                            ; 00454e3f
-    PUSH 0x5ba475                       ; 00454e41 | DAT_005ba475
+    PUSH 0x5ba475                       ; 00454e41 | = "larm"
     PUSH EAX                            ; 00454e46
     MOV ESI,EAX                         ; 00454e47
     MOV EDI,EAX                         ; 00454e49
@@ -150,7 +150,7 @@ section .text
         ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 00454e66
     PUSH 0x1                            ; 00454e69
-    PUSH 0x5ba480                       ; 00454e6b | DAT_005ba480
+    PUSH 0x5ba480                       ; 00454e6b | = "rarm"
     PUSH ESI                            ; 00454e70
     MOV dword ptr [EBX + 0xd118],EAX    ; 00454e71
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 00454e77
@@ -183,7 +183,7 @@ section .text
         ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 00454ecc
     PUSH 0x1                            ; 00454ecf
-    PUSH 0x5ba497                       ; 00454ed1 | DAT_005ba497
+    PUSH 0x5ba497                       ; 00454ed1 | = "head"
     PUSH EDI                            ; 00454ed6
     MOV dword ptr [EBX + 0xd128],EAX    ; 00454ed7
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 00454edd
@@ -239,7 +239,7 @@ section .text
     RET                                 ; 00454fa8
     FLD float ptr [EBX + 0x2490]        ; 00454fa9
         ;   Label: LAB_00454fa9
-    FADD double ptr [0x005ba4a2]        ; 00454faf | DAT_005ba4a2
+    FADD double ptr [0x005ba4a2]        ; 00454faf | g_DOUBLE_005ba4a2
     FSTP float ptr [EBX + 0x3280]       ; 00454fb5
     JMP 0x00454f7a                      ; 00454fbb
         ;   XREF to: 00454f7a (UNCONDITIONAL_JUMP)  ; LAB_00454f7a

@@ -7,7 +7,7 @@
 ; CAngelForest *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hotdemon.cpp_FUN_004d62e0 at 004d62f3
+;   core_hotdemon.cpp_factoryFuncAngelForest_FUN_004d62e0 at 004d62f3
 ;
 ; Called Functions:
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004d5430

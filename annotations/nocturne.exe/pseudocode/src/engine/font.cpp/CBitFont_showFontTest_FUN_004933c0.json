@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 170,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 6,
+    "pseudocode_lines": 101,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 475
+    "total_lines": 476
   },
   "cross_references": [],
   "function": {
@@ -55,9 +54,9 @@
     },
     {
       "addr": "00581999",
-      "name": "DAT_00581999",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_00581999",
+      "type": "char",
+      "value": "\b"
     },
     {
       "addr": "0058199b",
@@ -67,9 +66,9 @@
     },
     {
       "addr": "0058199f",
-      "name": "DAT_0058199f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_0058199f",
+      "type": "char",
+      "value": "\f"
     },
     {
       "addr": "005819a1",
@@ -79,8 +78,8 @@
     },
     {
       "addr": "005819a7",
-      "name": "DAT_005819a7",
-      "type": "undefined4",
+      "name": "s_anon_005819a7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -91,8 +90,8 @@
     },
     {
       "addr": "005819ae",
-      "name": "DAT_005819ae",
-      "type": "undefined4",
+      "name": "s_anon_005819ae",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -259,40 +258,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_00581999",
-      "severity": "mild",
-      "text": "(this_ptr,&DAT_00581999,iVar3 + 10,iVar2,6,-1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_0058199f",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_0058199f,iVar5,iVar2,6,-1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005819a7",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_005819a7,iVar5,iVar2,6,-1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005819ae",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_005819ae,iVar5,iVar2,6,-1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 78,
+      "line": 79,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {",

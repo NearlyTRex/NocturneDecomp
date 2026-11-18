@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   light_direction
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d15c3
+;   double g_LightDirectionalScale = 65536
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -22,7 +22,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046b540
     SUB ESP,0x8                         ; 0046b541
     MOV EAX,dword ptr [ESP + 0x14]      ; 0046b544
-    FLD double ptr [0x005d15c3]         ; 0046b548 | DAT_005d15c3
+    FLD double ptr [0x005d15c3]         ; 0046b548 | g_LightDirectionalScale
     FLD float ptr [EAX + 0x8]           ; 0046b54e
     FMUL ST1                            ; 0046b551
     FLD float ptr [EAX + 0x4]           ; 0046b553
@@ -31,10 +31,10 @@ section .text
     FMULP ST3                           ; 0046b55a
     FXCH                                ; 0046b55c
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b55e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0046b563
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b565
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0046b56a
     FISTP dword ptr [ESP]               ; 0046b56c
     FISTP dword ptr [ESP + 0x4]         ; 0046b56f
@@ -42,7 +42,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 0046b576
     PUSH EDX                            ; 0046b57a
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b57b
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH ECX                            ; 0046b580
     FISTP dword ptr [ESP + 0xc]         ; 0046b581
     MOV EBX,dword ptr [ESP + 0xc]       ; 0046b585

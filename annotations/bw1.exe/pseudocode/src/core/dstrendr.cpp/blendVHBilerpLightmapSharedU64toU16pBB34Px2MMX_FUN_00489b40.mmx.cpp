@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00489b40(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
 __asm {
@@ -17,7 +15,7 @@ __asm {
         mov EBX,dword ptr [EBP + 0x10]
         mov EBP,dword ptr [EBP + 0x14]
         pxor MM7,MM7
-        movd MM5,dword ptr [DAT_01c51d1c]
+        movd MM5,dword ptr [g_SolidColorMode]
         punpcklbw MM5,MM7
         psllw MM5,0x6
         mov EAX,dword ptr [ESI]
@@ -118,14 +116,14 @@ __asm {
         movq MM0,qword ptr [ESI]
         shr EDX,0x1
         movzx EAX,byte ptr [EBX + 0x141]
-        movd MM2,dword ptr [DAT_00b8189c + EDX*0x4]
+        movd MM2,dword ptr [g_LightmapTexturePalette + EDX*0x4]
         movzx EDX,byte ptr [EBX + 0x1]
         movq MM1,MM0
         add EDX,EAX
         movzx EAX,byte ptr [EBP]
         shr EDX,0x1
         punpcklbw MM0,MM7
-        movd MM6,dword ptr [DAT_00b8189c + EDX*0x4]
+        movd MM6,dword ptr [g_LightmapTexturePalette + EDX*0x4]
         psrlq MM1,0x20
         shr EDX,0x1
         punpcklbw MM6,MM7
@@ -135,40 +133,40 @@ __asm {
         punpcklbw MM1,MM7
         pmullw MM0,MM2
         psrlw MM6,0x1
-        movq MM3,qword ptr [DAT_00619b60 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         pmullw MM1,MM6
         movq MM2,MM3
         movq MM4,MM5
-        pxor MM2,qword ptr [DAT_0061a358]
+        pxor MM2,qword ptr [0x0061a358]
         pmulhw MM0,MM2
         pmulhw MM1,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [DAT_00618618]
-        paddw MM1,qword ptr [DAT_00618620]
+        paddw MM0,qword ptr [g_LightmapBlendBias3]
+        paddw MM1,qword ptr [g_LightmapBlendBias4]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM7
         packuswb MM1,MM7
         movq MM2,MM0
         movq MM3,MM0
-        pand MM0,qword ptr [DAT_00623f78]
-        pand MM2,qword ptr [DAT_00623f58]
-        pand MM3,qword ptr [DAT_00623f38]
-        psrlq MM0,qword ptr [DAT_00623fc0]
-        psrlq MM2,qword ptr [DAT_00623fa0]
-        psrlq MM3,qword ptr [DAT_00623f80]
+        pand MM0,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM3,qword ptr [g_RedMask32]
+        psrlq MM0,qword ptr [g_BlueBitShift]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM3,qword ptr [g_TotalDitherShift]
         por MM0,MM2
         por MM0,MM3
         movq MM2,MM1
         movq MM3,MM1
-        pand MM1,qword ptr [DAT_00623f78]
-        pand MM2,qword ptr [DAT_00623f58]
-        pand MM3,qword ptr [DAT_00623f38]
-        psrlq MM1,qword ptr [DAT_00623fc0]
-        psrlq MM2,qword ptr [DAT_00623fa0]
-        psrlq MM3,qword ptr [DAT_00623f80]
+        pand MM1,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM3,qword ptr [g_RedMask32]
+        psrlq MM1,qword ptr [g_BlueBitShift]
+        psrlq MM2,qword ptr [g_GreenBlueDitherShift]
+        psrlq MM3,qword ptr [g_TotalDitherShift]
         por MM1,MM2
         por MM1,MM3
         psllq MM1,0x10

@@ -9,6 +9,6 @@
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_0056aa90(SMRGLTextureBasic *texture_info)
 
 {
-  engine_texture_cpp_FUN_0056aa10(texture_info);
+  engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10(texture_info);
   return (SMRGLHeaderExtended *)(texture_info + 3);
 }

@@ -23,7 +23,7 @@
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
 ;
@@ -56,8 +56,8 @@ section .text
     PUSH EBP                            ; 004ea099
     LEA ESI,[ESP + 0x44]                ; 004ea09a
     LEA EDI,[ESP + 0x68]                ; 004ea09e
-    CALL core_actor.cpp_FUN_00408b40    ; 004ea0a2
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004ea0a2
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x44]                ; 004ea0a7
     ADD ESP,0x8                         ; 004ea0ab
     MOVSD ES:EDI,ESI                    ; 004ea0ae

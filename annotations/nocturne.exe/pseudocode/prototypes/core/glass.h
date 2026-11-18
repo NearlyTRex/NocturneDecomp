@@ -59,7 +59,7 @@ ECollisionType __cdecl CGlass::getCollisionType(CGlass *this_ptr,SCollisionInfo 
 
 // Original: core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0
 // Address: 004accf0
-void __cdecl CGlass::createShatterParticles(CGlass *this_ptr,float *param_2,int *param_3,int *param_4,int param_5);
+void __cdecl CGlass::createShatterParticles(CGlass *this_ptr,float *quad_vertices,int *quad_uv_u,int *quad_uv_v,int subdivision_level);
 
 // Original: core_glass.cpp_CGlass_shatter_FUN_004ada20
 // Address: 004ada20

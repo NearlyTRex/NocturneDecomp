@@ -1,0 +1,64 @@
+// Name: wincore_winrun.cpp_saveControllerSettings_FUN_005b44a0
+// Address: 005b44a0
+// Address Range: [[005b44a0, 005b4645]]
+// Convention: __cdecl
+// Signature: void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_005b44a0(CIniFile *ini)
+
+#include "nocturne.h"
+
+void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_005b44a0(CIniFile *ini)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  char acStack_120 [256];
+  int iStack_20;
+  int iStack_1c;
+  int iStack_18;
+  int iStack_14;
+  
+  iVar3 = 0;
+  iStack_18 = 0;
+  iStack_20 = 0;
+  iStack_1c = 0;
+  do {
+    _sprintf(acStack_120,"Controller_%d_type");
+    engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(ini,acStack_120,*(int *)(iStack_18 + 0x2c9cf14))
+    ;
+    if (*(int *)(iStack_18 + 0x2c9cf14) != 0) {
+      _sprintf(acStack_120,"Controller_%d_pc_stick");
+      engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70
+                (ini,acStack_120,*(int *)((int)g_INT_ARRAY_02c9d1c4 + iStack_1c));
+      iVar1 = 0;
+      iStack_14 = iStack_18;
+      iVar2 = iStack_20;
+      do {
+        while ((*(int *)(iStack_14 + 0x2c9cf14) == 0 || (*(int *)(iStack_14 + 0x2c9cf14) == 4))) {
+          iVar1 = iVar1 + 1;
+          iVar2 = iVar2 + 0xc;
+          if (3 < iVar1) goto LAB_005b4507;
+        }
+        _sprintf(acStack_120,"Controller_%d_axis_%d_min");
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(ini,acStack_120,*(int *)(iVar2 + 0x2c9d1d4))
+        ;
+        _sprintf(acStack_120,"Controller_%d_axis_%d_max");
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(ini,acStack_120,*(int *)(iVar2 + 0x2c9d1d8))
+        ;
+        _sprintf(acStack_120,"Controller_%d_axis_%d_center");
+        engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(ini,acStack_120,*(int *)(iVar2 + 0x2c9d1dc))
+        ;
+        iVar1 = iVar1 + 1;
+        iVar2 = iVar2 + 0xc;
+      } while (iVar1 < 4);
+    }
+LAB_005b4507:
+    iVar3 = iVar3 + 1;
+    iStack_20 = iStack_20 + 0x30;
+    iStack_1c = iStack_1c + 4;
+    iStack_18 = iStack_18 + 0xac;
+    if (3 < iVar3) {
+      return;
+    }
+  } while( true );
+}

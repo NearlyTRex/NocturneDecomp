@@ -17,8 +17,8 @@
 ;   crt_unknown.c_localtime_r_FUN_00566590 at 005665af
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4a78
-;   undefined4 DAT_005a4a92
+;   short g_DaysInMonth_Normal = 0x0
+;   short g_DaysInMonth_Leap = 0x0
 ;
 ; Called Functions:
 ;   crt_time.c_is_leap_year_FUN_0056cea0
@@ -123,17 +123,17 @@ section .text
     MOV dword ptr [EDI + 0x14],ESI      ; 0056d410
         ;   Label: LAB_0056d410
     ADD ESI,0x76c                       ; 0056d413
-    MOV EDX,0x5a4a78                    ; 0056d419 | DAT_005a4a78
+    MOV EDX,0x5a4a78                    ; 0056d419 | g_DaysInMonth_Normal
     PUSH ESI                            ; 0056d41e
     MOV dword ptr [EDI + 0x1c],EBX      ; 0056d41f
-    MOV dword ptr [ESP + 0x4],EDX       ; 0056d422 | DAT_005a4a78
+    MOV dword ptr [ESP + 0x4],EDX       ; 0056d422 | g_DaysInMonth_Normal
     CALL crt_time.c_is_leap_year_FUN_0056cea0 ; 0056d426
         ;   XREF to: 0056cea0 (UNCONDITIONAL_CALL)  ; int crt_time.c_is_leap_year_FUN_0056cea0(int year)
     ADD ESP,0x4                         ; 0056d42b
     TEST EAX,EAX                        ; 0056d42e
     JZ 0x0056d439                       ; 0056d430
         ;   XREF to: 0056d439 (CONDITIONAL_JUMP)  ; LAB_0056d439
-    MOV dword ptr [ESP],0x5a4a92        ; 0056d432 | DAT_005a4a92
+    MOV dword ptr [ESP],0x5a4a92        ; 0056d432 | g_DaysInMonth_Leap
     MOV ESI,0x1f                        ; 0056d439
         ;   Label: LAB_0056d439
     MOV EAX,EBX                         ; 0056d43e
@@ -142,7 +142,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 0056d444
     LEA ESI,[EAX*0x2 + 0x0]             ; 0056d447
     ADD ESI,EDX                         ; 0056d44e
-    MOV ESI,dword ptr [ESI]             ; 0056d450 | DAT_005a4a92 | DAT_005a4a78
+    MOV ESI,dword ptr [ESI]             ; 0056d450 | g_DaysInMonth_Leap | g_DaysInMonth_Normal
     SAR ESI,0x10                        ; 0056d452
     CMP EBX,ESI                         ; 0056d455
     JC 0x0056d45a                       ; 0056d457
@@ -153,7 +153,7 @@ section .text
     MOV dword ptr [EDI + 0x10],EAX      ; 0056d45d
     ADD EAX,EAX                         ; 0056d460
     ADD EAX,ECX                         ; 0056d462
-    MOVSX EAX,word ptr [EAX]            ; 0056d464 | DAT_005a4a92 | DAT_005a4a78
+    MOVSX EAX,word ptr [EAX]            ; 0056d464 | g_DaysInMonth_Leap | g_DaysInMonth_Normal
     SUB EBX,EAX                         ; 0056d467
     XOR EDX,EDX                         ; 0056d469
     INC EBX                             ; 0056d46b

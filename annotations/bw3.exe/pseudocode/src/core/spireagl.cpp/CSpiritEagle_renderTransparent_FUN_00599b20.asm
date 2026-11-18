@@ -7,8 +7,8 @@
 ; CSpiritEagle *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
@@ -34,21 +34,21 @@ section .text
         ;   XREF to: 004087f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00599b2e
     PUSH 0xffff                         ; 00599b31
-    MOV EDX,dword ptr [0x005f2afc]      ; 00599b36 | DAT_005f2afc
-    PUSH EDX                            ; 00599b3c | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 00599b36 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 00599b3c | g_CDemonRenderer_01bdd7e4
     MOV dword ptr [EBX + 0x27bc],0x1    ; 00599b3d
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0 ; 00599b47
         ;   XREF to: 0046d4c0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00599b4c
     PUSH 0x1                            ; 00599b4f
-    MOV ECX,dword ptr [0x005f2afc]      ; 00599b51 | DAT_005f2afc
-    PUSH ECX                            ; 00599b57 | DAT_01bdd7e4
+    MOV ECX,dword ptr [0x005f2afc]      ; 00599b51 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ECX                            ; 00599b57 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0 ; 00599b58
         ;   XREF to: 0046d4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 00599b5d
     PUSH 0x1                            ; 00599b60
-    MOV ESI,dword ptr [0x005f2afc]      ; 00599b62 | DAT_005f2afc
-    PUSH ESI                            ; 00599b68 | DAT_01bdd7e4
+    MOV ESI,dword ptr [0x005f2afc]      ; 00599b62 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ESI                            ; 00599b68 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120 ; 00599b69
         ;   XREF to: 0046e120 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(CDemonRenderer * this_ptr, int enable_advanced_mode)
     ADD ESP,0x8                         ; 00599b6e
@@ -61,14 +61,14 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 ; 00599b83
         ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 00599b88
-    MOV EDI,dword ptr [0x005f2afc]      ; 00599b8b | DAT_005f2afc
-    PUSH EDI                            ; 00599b91 | DAT_01bdd7e4
+    MOV EDI,dword ptr [0x005f2afc]      ; 00599b8b | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDI                            ; 00599b91 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0 ; 00599b92
         ;   XREF to: 0046e4e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00599b97
     PUSH 0x0                            ; 00599b9a
-    MOV EBP,dword ptr [0x005f2afc]      ; 00599b9c | DAT_005f2afc
-    PUSH EBP                            ; 00599ba2 | DAT_01bdd7e4
+    MOV EBP,dword ptr [0x005f2afc]      ; 00599b9c | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBP                            ; 00599ba2 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0 ; 00599ba3
         ;   XREF to: 0046d4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 00599ba8

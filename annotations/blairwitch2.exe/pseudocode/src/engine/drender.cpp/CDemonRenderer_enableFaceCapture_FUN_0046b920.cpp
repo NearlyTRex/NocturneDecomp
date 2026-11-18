@@ -9,7 +9,7 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(CDemonRenderer *this_ptr,int enabled)
 
 {
-  DAT_006141e0 = enabled;
+  g_VertexProcessingEnabled = enabled;
   this_ptr->face_capture_enabled = enabled;
   return;
 }

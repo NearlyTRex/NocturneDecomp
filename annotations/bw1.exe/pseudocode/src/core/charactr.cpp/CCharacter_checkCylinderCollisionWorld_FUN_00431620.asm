@@ -10,7 +10,7 @@
 ; SDamageInfo *    Stack[0x10]:4   damage_info
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EBX                            ; 00431641
     LEA ESI,[ESP + 0x8]                 ; 00431642
     LEA EDI,[ESP + 0x14]                ; 00431646
-    CALL core_actor.cpp_FUN_00408bb0    ; 0043164a
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 0043164a
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x8]                 ; 0043164f
     ADD ESP,0x8                         ; 00431653
     LEA EAX,[ESP + 0xc]                 ; 00431656

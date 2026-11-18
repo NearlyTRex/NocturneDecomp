@@ -8,6 +8,7 @@
 #include "types/classes/CBoneGuy_full_vtable.h"
 #include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CCodec_vtable.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
@@ -34,6 +35,9 @@ extern CCharacter_full_vtable g_CHighPriestOfGardathVTable;
 extern CCodec_vtable g_CCodecVTable;
 extern CCodec_vtable g_CLZWCompressVTable;
 extern CCodec_vtable g_CLZWDecompressVTable;
+
+// CDemonActor*
+extern CDemonActor* g_ActorNameSentinel;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;
@@ -218,6 +222,7 @@ extern WatcomTypeInfo g_SClothVertexTypeInfo_0059b3a0;
 extern WatcomTypeInfo g_SClothBoneTypeInfo_0059b3c0;
 extern WatcomTypeInfo g_CCodecTypeInfo_0059b470;
 extern WatcomTypeInfo g_ostrstreamTypeInfo_0059b490;
+extern WatcomTypeInfo g_WatcomTypeInfo_0059b4b0;
 extern WatcomTypeInfo g_ifstreamTypeInfo_0059b4d0;
 extern WatcomTypeInfo g_ofstreamTypeInfo_0059b4f0;
 extern WatcomTypeInfo g_CLZWDecompressTypeInfo_0059b510;
@@ -313,6 +318,6 @@ extern WatcomTypeInfo g_CLeverTypeInfo_0059fd20;
 extern WatcomTypeInfo g_CLightGunTypeInfo_0059fe90;
 extern WatcomTypeInfo g_CLightConeTypeInfo_0059ffb0;
 
-// undefined1
-extern undefined1 DAT_005992ac;
+// void*[2]
+extern void* g_ARRAY_PTR_0059b6f8[2];
 

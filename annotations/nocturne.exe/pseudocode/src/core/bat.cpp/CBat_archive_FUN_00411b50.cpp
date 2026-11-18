@@ -12,7 +12,7 @@ void __cdecl core_bat_cpp_CBat_archive_FUN_00411b50(CBat *this_ptr)
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->course_filename,"courseFilename");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->param,"param");
-  if (g_INT_005acf94 < 3) {
+  if (g_CBatClassVersion < 3) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->speed,"speed");
     this_ptr->course_speed = this_ptr->speed * (float)30;
   }
@@ -20,11 +20,11 @@ void __cdecl core_bat_cpp_CBat_archive_FUN_00411b50(CBat *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->speed,"flapSpeedMult");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->course_speed,"courseSpeed");
   }
-  if (1 < g_INT_005acf94) {
+  if (1 < g_CBatClassVersion) {
     core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(&this_ptr->model,"modelName")
     ;
   }
-  if (g_INT_005acf94 < 4) {
+  if (g_CBatClassVersion < 4) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->periodic_sound,(char *)0x0);

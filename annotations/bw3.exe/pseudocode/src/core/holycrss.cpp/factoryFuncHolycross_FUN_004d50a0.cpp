@@ -11,7 +11,7 @@ CHolycross * __cdecl core_holycrss_cpp_factoryFuncHolycross_FUN_004d50a0(void)
 {
   CHolycross *pCVar1;
   
-  pCVar1 = (CHolycross *)operator_new(0x594);
+  pCVar1 = operator_new(0x594);
   if (pCVar1 == (CHolycross *)0x0) {
     return (CHolycross *)0x0;
   }

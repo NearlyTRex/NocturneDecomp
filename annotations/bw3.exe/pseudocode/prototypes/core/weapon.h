@@ -25,9 +25,9 @@ void __cdecl CWeapon::setup(CWeapon *this_ptr);
 // Address: 0057af80
 int __cdecl CWeapon::renderOpaque(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057b030
+// Original: core_weapon.cpp_CWeapon_setRenderAlpha_FUN_0057b030
 // Address: 0057b030
-void FUN_0057b030(int param_1,undefined4 param_2);
+void __cdecl CWeapon::setRenderAlpha(CWeapon *this_ptr,int alpha);
 
 // Original: core_weapon.cpp_CWeapon_renderTransparent_FUN_0057b040
 // Address: 0057b040
@@ -35,7 +35,7 @@ int __cdecl CWeapon::renderTransparent(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_getBoundingBox_FUN_0057b120
 // Address: 0057b120
-CBoundingBox3D * __cdecl CWeapon::getBoundingBox(CWeapon *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CWeapon::getBoundingBox(CWeapon *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_weapon.cpp_CWeapon_process_FUN_0057b160
 // Address: 0057b160
@@ -79,7 +79,7 @@ void __cdecl CWeapon::onPickup(CWeapon *this_ptr,CDemonActor *owner);
 
 // Original: core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_0057b820
 // Address: 0057b820
-CVector3f * __cdecl CWeapon::getMuzzlePoint(CWeapon *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi CWeapon::getMuzzlePoint(CWeapon *this_ptr,CVector3f *out_point);
 
 // Original: core_weapon.cpp_CWeapon_fire_FUN_0057b880
 // Address: 0057b880
@@ -93,9 +93,9 @@ int __cdecl CWeapon::isReadyToFire(CWeapon *this_ptr);
 // Address: 0057ba00
 float __cdecl CWeapon::getDamage(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057ba10
+// Original: core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_0057ba10
 // Address: 0057ba10
-void FUN_0057ba10(int param_1);
+void __cdecl CWeapon::setupPhysicsBox(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60
 // Address: 0057bb60

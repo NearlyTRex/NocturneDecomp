@@ -36,7 +36,7 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(CWeapon *this_ptr)
   pCVar3[-1].scrape_points[7].raytrace_normal.x = 0.0;
   pCVar3[-1].scrape_points[7].raytrace_normal.y = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)&pCVar3[-1].extents.y,(char *)0x5d7813);
+            ((CKeyFramedModelInstance *)&pCVar3[-1].extents.y,"gat.kfm");
   pCVar3[1].rotation_matrix.m[0].z = 0.0;
   pCVar3[1].rotation_matrix.m[1].x = 0.0;
   pCVar3[1].orientation.y = 0.0;

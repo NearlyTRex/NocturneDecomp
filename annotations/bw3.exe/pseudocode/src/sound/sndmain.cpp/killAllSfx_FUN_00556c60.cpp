@@ -11,12 +11,12 @@ void __cdecl sound_sndmain_cpp_killAllSfx_FUN_00556c60(void)
 {
   CSfxSlot *this_ptr;
   
-  this_ptr = (CSfxSlot *)0x2ce721c;
+  this_ptr = g_CSfxSlot_ARRAY_02ce721c;
   sound_sndmain_cpp_lockSound_FUN_00558e90();
   do {
     sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270(this_ptr);
     this_ptr = this_ptr + 1;
-  } while (this_ptr != (CSfxSlot *)&DAT_02ceb91c);
+  } while (this_ptr != g_CSfxSlot_ARRAY_02ce721c + sizeof(g_CSfxSlot_ARRAY_02ce721c) / sizeof(g_CSfxSlot_ARRAY_02ce721c[0]));
   sound_sndmain_cpp_unlockSound_FUN_00556fd0();
   return;
 }

@@ -1,17 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_xform_cpp_angleFromSinCos_FUN_005b5860(float param_1,float param_2)
+; float __cdecl core_xform_cpp_angleFromSinCos_FUN_005b5860(float sin_value,float cos_value)
 ;
+; Parameters:
+; float            Stack[0x4]:4   sin_value
+; float            Stack[0x8]:4   cos_value
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa0b0
-;   undefined4 DAT_005fa0b4
-;   undefined4 DAT_005fa0b8
-;   undefined4 DAT_005fa0bc
-;   undefined4 DAT_005fa0c0
-;   undefined4 DAT_005fa0c4
-;   undefined4 DAT_005fa0c8
+;   float g_FLOAT_005fa0b0 = 0.7070000
+;   float g_FLOAT_005fa0b4 = -0.7070000
+;   float g_FLOAT_005fa0b8 = -1
+;   float g_FLOAT_005fa0bc = 3.141593
+;   float g_FLOAT_005fa0c0 = -3.141593
+;   float g_FLOAT_005fa0c4 = 6.283185
+;   float g_FLOAT_005fa0c8 = -6.283185
 ;
 ; Called Functions:
 ;   crt_math.c_acos_FUN_005c1d04
@@ -24,20 +27,20 @@ section .text
     SUB ESP,0x4                         ; 005b5860
         ;   Label: core_xform.cpp_angleFromSinCos_FUN_005b5860
     FLD float ptr [ESP + 0x8]           ; 005b5863
-    FCOMP float ptr [0x005fa0b0]        ; 005b5867 | DAT_005fa0b0
+    FCOMP float ptr [0x005fa0b0]        ; 005b5867 | g_FLOAT_005fa0b0
     FNSTSW AX                           ; 005b586d
     SAHF                                ; 005b586f
     JNC 0x005b58d5                      ; 005b5870
         ;   XREF to: 005b58d5 (CONDITIONAL_JUMP)  ; LAB_005b58d5
     FLD float ptr [ESP + 0x8]           ; 005b5872
-    FCOMP float ptr [0x005fa0b4]        ; 005b5876 | DAT_005fa0b4
+    FCOMP float ptr [0x005fa0b4]        ; 005b5876 | g_FLOAT_005fa0b4
     FNSTSW AX                           ; 005b587c
     SAHF                                ; 005b587e
     JBE 0x005b58d5                      ; 005b587f
         ;   XREF to: 005b58d5 (CONDITIONAL_JUMP)  ; LAB_005b58d5
     FLD float ptr [ESP + 0x8]           ; 005b5881
     CALL crt_math.c_asin_FUN_005c1cd6   ; 005b5885
-        ;   XREF to: 005c1cd6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_asin_FUN_005c1cd6()
+        ;   XREF to: 005c1cd6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_asin_FUN_005c1cd6(float10 sine_value)
     FLDZ                                ; 005b588a
     FXCH                                ; 005b588c
     FSTP float ptr [ESP]                ; 005b588e
@@ -46,22 +49,22 @@ section .text
     SAHF                                ; 005b5897
     JBE 0x005b58a6                      ; 005b5898
         ;   XREF to: 005b58a6 (CONDITIONAL_JUMP)  ; LAB_005b58a6
-    FLD float ptr [0x005fa0bc]          ; 005b589a | DAT_005fa0bc
+    FLD float ptr [0x005fa0bc]          ; 005b589a | g_FLOAT_005fa0bc
     FSUB float ptr [ESP]                ; 005b58a0
     FSTP float ptr [ESP]                ; 005b58a3
     FLD float ptr [ESP]                 ; 005b58a6
         ;   Label: LAB_005b58a6
-    FCOMP float ptr [0x005fa0c0]        ; 005b58a9 | DAT_005fa0c0
+    FCOMP float ptr [0x005fa0c0]        ; 005b58a9 | g_FLOAT_005fa0c0
     FNSTSW AX                           ; 005b58af
     SAHF                                ; 005b58b1
     JNC 0x005b58c0                      ; 005b58b2
         ;   XREF to: 005b58c0 (CONDITIONAL_JUMP)  ; LAB_005b58c0
     FLD float ptr [ESP]                 ; 005b58b4
-    FADD float ptr [0x005fa0c4]         ; 005b58b7 | DAT_005fa0c4
+    FADD float ptr [0x005fa0c4]         ; 005b58b7 | g_FLOAT_005fa0c4
     FSTP float ptr [ESP]                ; 005b58bd
     FLD float ptr [ESP]                 ; 005b58c0
         ;   Label: LAB_005b58c0
-    FCOMP float ptr [0x005fa0bc]        ; 005b58c3 | DAT_005fa0bc
+    FCOMP float ptr [0x005fa0bc]        ; 005b58c3 | g_FLOAT_005fa0bc
     FNSTSW AX                           ; 005b58c9
     SAHF                                ; 005b58cb
     JA 0x005b591c                       ; 005b58cc
@@ -71,7 +74,7 @@ section .text
     RET                                 ; 005b58d4
     FLD float ptr [ESP + 0xc]           ; 005b58d5
         ;   Label: LAB_005b58d5
-    FCOMP float ptr [0x005fa0b8]        ; 005b58d9 | DAT_005fa0b8
+    FCOMP float ptr [0x005fa0b8]        ; 005b58d9 | g_FLOAT_005fa0b8
     FNSTSW AX                           ; 005b58df
     SAHF                                ; 005b58e1
     JA 0x005b58fd                       ; 005b58e2
@@ -98,13 +101,13 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 005b590e
         ;   Label: LAB_005b590e
     CALL crt_math.c_acos_FUN_005c1d04   ; 005b5912
-        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005c1d04()
+        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005c1d04(double x)
     FSTP float ptr [ESP]                ; 005b5917
     JMP 0x005b58eb                      ; 005b591a
         ;   XREF to: 005b58eb (UNCONDITIONAL_JUMP)  ; LAB_005b58eb
     FLD float ptr [ESP]                 ; 005b591c
         ;   Label: LAB_005b591c
-    FADD float ptr [0x005fa0c8]         ; 005b591f | DAT_005fa0c8
+    FADD float ptr [0x005fa0c8]         ; 005b591f | g_FLOAT_005fa0c8
     FSTP float ptr [ESP]                ; 005b5925
     MOV EAX,dword ptr [ESP]             ; 005b5928
     ADD ESP,0x4                         ; 005b592b

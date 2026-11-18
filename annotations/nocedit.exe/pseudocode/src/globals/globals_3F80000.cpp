@@ -22,13 +22,13 @@ CTerrain g_CTerrainInstance = {};
 CTextureCache* g_TextureCacheInstance = {};
 
 // CVector3f[100]
-CVector3f CVector3f_ARRAY_03f8f638[100] = {};
+CVector3f g_WaterActorCollisionPositions[100] = {};
 
 // CWater
 CWater g_CWaterInstance = {};
 
 // SCollisionInfo[100]
-SCollisionInfo SCollisionInfo_ARRAY_03f8fae8[100] = {};
+SCollisionInfo g_WaterActorCollisionInfos[100] = {};
 
 // SMRGLTextureModel
 SMRGLTextureModel g_CurrentTexture = {};
@@ -52,7 +52,7 @@ int g_CurrentTextureIndex = {};
 int g_WaterAnimationTimer = {};
 int g_WaterCurrentFrame = {};
 int g_VisibleWaterTileCount = {};
-int INT_03f8f62c = {};
+int g_WaterAnimationBlend = {};
 
 // int[4096]
 int g_VisibleWaterTilesX[4096] = {};

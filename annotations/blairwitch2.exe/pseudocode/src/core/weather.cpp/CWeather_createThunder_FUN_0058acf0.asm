@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_thndr_wav_005ee5c6
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -36,7 +36,7 @@ section .text
     ADD ESP,0x8                         ; 0058ad0f
     PUSH 0x5ee5c6                       ; 0058ad12 | = "thndr?.wav"
     PUSH EBX                            ; 0058ad17
-    MOV EDX,dword ptr [0x0061c068]      ; 0058ad18 | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 0058ad18 | g_CSound_PTR_0061c068
     PUSH EDX                            ; 0058ad1e
     FSTP float ptr [EBX + 0x20]         ; 0058ad1f
     CALL core_sound.cpp_CSound_playSound_FUN_0055ae30 ; 0058ad22

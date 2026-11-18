@@ -22,7 +22,13 @@
     {
       "addr": "00410030",
       "from_addr": "0041004b",
-      "name": "core_bird.cpp_FUN_00410030",
+      "name": "core_bird.cpp_setRandomMotionVariant_FUN_00410030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432220",
+      "from_addr": "00432243",
+      "name": "core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,12 +62,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00432220",
-      "from_addr": "00432243",
-      "name": "core_charactr.cpp_FUN_00432220",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00598800",
       "from_addr": "005988fc",
       "name": "core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800",
@@ -70,7 +70,7 @@
     {
       "addr": "0048c2e0",
       "from_addr": "0049047c",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -100,7 +100,7 @@
     {
       "addr": "004fcdc0",
       "from_addr": "004fcee7",
-      "name": "core_motion.cpp_FUN_004fcdc0",
+      "name": "core_motion.cpp_CMotionController_render_FUN_004fcdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -130,7 +130,7 @@
     {
       "addr": "00524940",
       "from_addr": "00524a3a",
-      "name": "core_prye.cpp_FUN_00524940",
+      "name": "core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -178,7 +178,7 @@
     {
       "addr": "00599c80",
       "from_addr": "00599c9b",
-      "name": "core_spireagl.cpp_FUN_00599c80",
+      "name": "core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -232,7 +232,7 @@
     {
       "addr": "0058cc20",
       "from_addr": "0058cc33",
-      "name": "core_zombie.cpp_FUN_0058cc20",
+      "name": "core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -256,7 +256,7 @@
       {
         "call_addr": "0049047c",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -267,7 +267,7 @@
       {
         "call_addr": "00490cc3",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -311,7 +311,7 @@
       {
         "call_addr": "00524a3a",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_00524940",
+        "caller": "core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -322,7 +322,7 @@
       {
         "call_addr": "0058cc33",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0058cc20",
+        "caller": "core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -355,7 +355,7 @@
       {
         "call_addr": "00432243",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00432220",
+        "caller": "core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

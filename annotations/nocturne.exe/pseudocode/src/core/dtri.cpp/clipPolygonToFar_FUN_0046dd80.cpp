@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_0046dd80(float z_far)
 
 {
@@ -17,49 +15,49 @@ void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_0046dd80(float z_far)
   int iVar3;
   
   iVar3 = 0;
-  if (0 < (int)_DAT_01bc9d40) {
-    point1_ptr = g_CVector3f_ARRAY_01bc9d44;
+  if (0 < g_ClipBuffer5VertexCount) {
+    point1_ptr = g_ClipBuffer5Vertices;
     do {
       uVar2 = iVar3 + 1;
-      if (uVar2 == _DAT_01bc9d40) {
-        uVar2 = uVar2 ^ _DAT_01bc9d40;
+      if (uVar2 == g_ClipBuffer5VertexCount) {
+        uVar2 = uVar2 ^ g_ClipBuffer5VertexCount;
       }
       bVar1 = z_far < point1_ptr->z;
-      if (z_far < g_CVector3f_ARRAY_01bc9d44[uVar2].z) {
+      if (z_far < g_ClipBuffer5Vertices[uVar2].z) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
-        if (g_CVector3f_ARRAY_01bc9e08 + _DAT_01bc9e04 != point1_ptr) {
-          g_CVector3f_ARRAY_01bc9e08[_DAT_01bc9e04].x = point1_ptr->x;
-          g_CVector3f_ARRAY_01bc9e08[_DAT_01bc9e04].y = point1_ptr->y;
-          g_CVector3f_ARRAY_01bc9e08[_DAT_01bc9e04].z = point1_ptr->z;
+        if (g_ClipOutputVertices + g_ClipOutputVertexCount != point1_ptr) {
+          g_ClipOutputVertices[g_ClipOutputVertexCount].x = point1_ptr->x;
+          g_ClipOutputVertices[g_ClipOutputVertexCount].y = point1_ptr->y;
+          g_ClipOutputVertices[g_ClipOutputVertexCount].z = point1_ptr->z;
         }
         break;
       case 1:
         core_dtri_cpp_clipLineToPlane_FUN_0046d4e0
-                  (g_CVector3f_ARRAY_01bc9d44 + uVar2,point1_ptr,
-                   g_CVector3f_ARRAY_01bc9e08 + _DAT_01bc9e04,0.0,0.0,-1.0,(double)z_far);
+                  (g_ClipBuffer5Vertices + uVar2,point1_ptr,
+                   g_ClipOutputVertices + g_ClipOutputVertexCount,0.0,0.0,-1.0,(double)z_far);
         break;
       case 2:
-        if (g_CVector3f_ARRAY_01bc9e08 + _DAT_01bc9e04 != point1_ptr) {
-          g_CVector3f_ARRAY_01bc9e08[_DAT_01bc9e04].x = point1_ptr->x;
-          g_CVector3f_ARRAY_01bc9e08[_DAT_01bc9e04].y = point1_ptr->y;
-          g_CVector3f_ARRAY_01bc9e08[_DAT_01bc9e04].z = point1_ptr->z;
+        if (g_ClipOutputVertices + g_ClipOutputVertexCount != point1_ptr) {
+          g_ClipOutputVertices[g_ClipOutputVertexCount].x = point1_ptr->x;
+          g_ClipOutputVertices[g_ClipOutputVertexCount].y = point1_ptr->y;
+          g_ClipOutputVertices[g_ClipOutputVertexCount].z = point1_ptr->z;
         }
-        _DAT_01bc9e04 = _DAT_01bc9e04 + 1;
+        g_ClipOutputVertexCount = g_ClipOutputVertexCount + 1;
         core_dtri_cpp_clipLineToPlane_FUN_0046d4e0
-                  (point1_ptr,g_CVector3f_ARRAY_01bc9d44 + uVar2,
-                   g_CVector3f_ARRAY_01bc9e08 + _DAT_01bc9e04,0.0,0.0,-1.0,(double)z_far);
+                  (point1_ptr,g_ClipBuffer5Vertices + uVar2,
+                   g_ClipOutputVertices + g_ClipOutputVertexCount,0.0,0.0,-1.0,(double)z_far);
         break;
       default:
         goto switchD_0046ddf4_caseD_3;
       }
-      _DAT_01bc9e04 = _DAT_01bc9e04 + 1;
+      g_ClipOutputVertexCount = g_ClipOutputVertexCount + 1;
 switchD_0046ddf4_caseD_3:
       iVar3 = iVar3 + 1;
       point1_ptr = point1_ptr + 1;
-    } while (iVar3 < (int)_DAT_01bc9d40);
+    } while (iVar3 < g_ClipBuffer5VertexCount);
   }
   return;
 }

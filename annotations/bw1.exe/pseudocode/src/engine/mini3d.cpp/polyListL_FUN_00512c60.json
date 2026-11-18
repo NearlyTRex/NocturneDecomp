@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 184,
+    "complexity_score": 169,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 207
   },
@@ -34,7 +33,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00512670",
@@ -80,62 +79,62 @@
   "globals": [
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d14",
-      "name": "DAT_01c51d14",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d224b4",
-      "name": "DAT_01d224b4",
-      "type": "undefined4",
+      "name": "g_INT_01d224b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d227e0",
-      "name": "DAT_01d227e0",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d227e0",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "01d25f14",
-      "name": "DAT_01d25f14",
-      "type": "undefined4",
+      "name": "g_INT_01d25f14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d25f18",
-      "name": "DAT_01d25f18",
-      "type": "undefined4",
+      "name": "g_INT_01d25f18",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e7dac8",
-      "name": "DAT_01e7dac8",
-      "type": "undefined4",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83460",
-      "name": "DAT_02c83460",
-      "type": "undefined4",
+      "name": "g_PTR_02c83460",
+      "type": "void*",
       "value": null
     }
   ],
@@ -232,16 +231,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "int in_stack_00000014;",
@@ -249,15 +240,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
+      "line": 14,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_02c83460 != (code *)0x0) && (_DAT_01c50948 != 0)) {",
+      "text": "(*(code *)g_PTR_02c83460)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "out[7] = ((CVector3f *)((int)vertices + 0x18))->y;",
@@ -265,7 +256,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "out[8] = ((CVector3f *)((int)vertices + 0x18))->z;",
@@ -273,7 +264,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "out[9] = ((CVector3f *)((int)vertices + 0xc))->x;",
@@ -281,7 +272,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "out[10] = ((CVector3f *)((int)vertices + 0xc))->y;",
@@ -289,7 +280,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "out[0xb] = ((CVector3f *)((int)vertices + 0xc))->z;",
@@ -297,7 +288,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(CVector3f *)((int)vertices",
       "severity": "moderate",
       "text": "out[0xc] = ((CVector3f *)((int)vertices + 0x18))->x;",
@@ -305,7 +296,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(float *)((int)vertices",
       "severity": "moderate",
       "text": "vertices = (float *)((int)vertices + 0x24);",
@@ -313,7 +304,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "} while (iVar1 < in_stack_00000014);",

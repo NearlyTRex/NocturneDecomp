@@ -14,11 +14,11 @@
 ;   support_trisock.cpp_staticInit_FUN_0056f460 at 0056f479
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   support_trisock.cpp_buildIPAddress_FUN_0056f630
 ;
 ; *****************************************************************************
@@ -62,10 +62,10 @@ section .text
     MOV EBP,0x5d684c                    ; 0056f54c
     MOV EAX,0x62                        ; 0056f551
     PUSH 0x5d6863                       ; 0056f556
-    MOV dword ptr [0x01d71de0],EBP      ; 0056f55b | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 0056f561 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0056f566
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBP      ; 0056f55b | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 0056f561 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0056f566
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x14                        ; 0056f56b
     MOV EAX,EBX                         ; 0056f56e
     POP EBP                             ; 0056f570

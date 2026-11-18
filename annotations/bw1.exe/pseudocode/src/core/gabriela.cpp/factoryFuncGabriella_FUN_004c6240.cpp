@@ -11,7 +11,7 @@ CGabriella * __cdecl core_gabriela_cpp_factoryFuncGabriella_FUN_004c6240(void)
 {
   CGabriella *pCVar1;
   
-  pCVar1 = (CGabriella *)operator_new(0x5ab20);
+  pCVar1 = operator_new(0x5ab20);
   if (pCVar1 == (CGabriella *)0x0) {
     return (CGabriella *)0x0;
   }

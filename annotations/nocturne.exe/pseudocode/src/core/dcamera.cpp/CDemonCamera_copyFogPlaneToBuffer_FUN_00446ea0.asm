@@ -11,13 +11,13 @@
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810 at 00446b5f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_012ceb79
-;   undefined4 DAT_012ceb7a
-;   undefined4 DAT_012cecb8
-;   undefined4 DAT_012cecb9
-;   undefined4 DAT_012cecba
-;   undefined4 DAT_012cedf9
-;   undefined4 DAT_012e18b8
+;   undefined4 g_SFogImagePlane_012ceb78.pixels[0][1]
+;   undefined4 g_SFogImagePlane_012ceb78.pixels[0][2]
+;   undefined4 g_SFogImagePlane_012ceb78.pixels[1][0]
+;   undefined4 g_SFogImagePlane_012ceb78.pixels[1][1]
+;   undefined4 g_SFogImagePlane_012ceb78.pixels[1][2]
+;   undefined4 g_SFogImagePlane_012ceb78.pixels[2][1]
+;   undefined4 g_CameraImageDecompressBuffer[0].pixels[1][0]
 ;
 ; *****************************************************************************
 
@@ -55,7 +55,7 @@ section .text
     JGE 0x00446f01                      ; 00446eee
         ;   XREF to: 00446f01 (CONDITIONAL_JUMP)  ; LAB_00446f01
     INC EAX                             ; 00446ef0
-    MOV BL,byte ptr [ECX + 0x12ceb78]   ; 00446ef1 | DAT_012cecb9 | DAT_012cecba | DAT_012cedf9
+    MOV BL,byte ptr [ECX + 0x12ceb78]   ; 00446ef1 | g_SFogImagePlane_012ceb78.pixels[1][1] | g_SFogImagePlane_012ceb78.pixels[1][2] | g_SFogImagePlane_012ceb78.pixels[2][1]
     INC ECX                             ; 00446ef7
     INC EDX                             ; 00446ef8
     MOV byte ptr [EAX + 0x12e1777],BL   ; 00446ef9
@@ -81,8 +81,8 @@ section .text
     SUB EDX,ECX                         ; 00446f2b
     IMUL EBX,EAX,0x140                  ; 00446f2d
         ;   Label: LAB_00446f2d
-    MOV CL,byte ptr [EBX + 0x12ceb78]   ; 00446f33 | DAT_012cecb8
-    MOV byte ptr [EDX + 0x12e1778],CL   ; 00446f39 | DAT_012e18b8
+    MOV CL,byte ptr [EBX + 0x12ceb78]   ; 00446f33 | g_SFogImagePlane_012ceb78.pixels[1][0]
+    MOV byte ptr [EDX + 0x12e1778],CL   ; 00446f39 | g_CameraImageDecompressBuffer[0].pixels[1][0]
     MOV ECX,dword ptr [ESI + 0x150]     ; 00446f3f
     MOV BL,byte ptr [ECX + EBX*0x1 + 0x12ceb77] ; 00446f45
     MOV byte ptr [ECX + EDX*0x1 + 0x12e1777],BL ; 00446f4c
@@ -111,7 +111,7 @@ section .text
     CMP EAX,ECX                         ; 00446f9c
     JGE 0x00446719                      ; 00446f9e
         ;   XREF to: 00446719 (CONDITIONAL_JUMP)  ; LAB_00446719
-    MOV BL,byte ptr [EAX + 0x12ceb78]   ; 00446fa4 | DAT_012ceb79 | DAT_012ceb7a
+    MOV BL,byte ptr [EAX + 0x12ceb78]   ; 00446fa4 | g_SFogImagePlane_012ceb78.pixels[0][1] | g_SFogImagePlane_012ceb78.pixels[0][2]
     MOV byte ptr [EDX + 0x12e1778],BL   ; 00446faa
     MOV ECX,dword ptr [ESI + 0x154]     ; 00446fb0
     DEC ECX                             ; 00446fb6
@@ -119,7 +119,7 @@ section .text
     LEA EBX,[ECX + EAX*0x1]             ; 00446fbd
     INC EAX                             ; 00446fc0
     ADD ECX,EDI                         ; 00446fc1
-    MOV BL,byte ptr [EBX + 0x12ceb78]   ; 00446fc3 | DAT_012ceb79 | DAT_012ceb7a
+    MOV BL,byte ptr [EBX + 0x12ceb78]   ; 00446fc3 | g_SFogImagePlane_012ceb78.pixels[0][1] | g_SFogImagePlane_012ceb78.pixels[0][2]
     INC EDX                             ; 00446fc9
     MOV byte ptr [ECX + EAX*0x1 + 0x12e1777],BL ; 00446fca
     JMP 0x00446f94                      ; 00446fd1

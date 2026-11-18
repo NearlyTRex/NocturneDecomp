@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_isWithinListenerRadius_FUN_00574010(double pos_x,double pos_y,double pos_z,float radius)
 
 {
-  if ((pos_z - *(double *)(&DAT_02c7fc18 + _DAT_02c7fc88 * 8)) *
-      (pos_z - *(double *)(&DAT_02c7fc18 + _DAT_02c7fc88 * 8)) +
-      (pos_y - *(double *)(&DAT_02c7fc08 + _DAT_02c7fc88 * 8)) *
-      (pos_y - *(double *)(&DAT_02c7fc08 + _DAT_02c7fc88 * 8)) +
-      (pos_x - *(double *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8)) *
-      (pos_x - *(double *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8)) <= (double)radius * (double)radius) {
+  if ((pos_z - (&g_DOUBLE_02c7fc18)[g_INT_02c7fc88]) *
+      (pos_z - (&g_DOUBLE_02c7fc18)[g_INT_02c7fc88]) +
+      (pos_y - (&g_DOUBLE_02c7fc08)[g_INT_02c7fc88]) *
+      (pos_y - (&g_DOUBLE_02c7fc08)[g_INT_02c7fc88]) +
+      (pos_x - (&g_DOUBLE_02c7fbf8)[g_INT_02c7fc88]) *
+      (pos_x - (&g_DOUBLE_02c7fbf8)[g_INT_02c7fc88]) <= (double)radius * (double)radius) {
     return 1;
   }
   return 0;

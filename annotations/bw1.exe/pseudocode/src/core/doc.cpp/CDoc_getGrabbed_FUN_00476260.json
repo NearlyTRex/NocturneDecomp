@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 63,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 48,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 187
   },
   "cross_references": [],
@@ -35,14 +33,14 @@
       "name": "core_hero.cpp_CHero_getGrabbed_FUN_004eadf0"
     },
     {
+      "addr": "00525020",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020"
+    },
+    {
       "addr": "00524770",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
-    },
-    {
-      "addr": "00525020",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00525020"
     },
     {
       "addr": "00445430",
@@ -65,15 +63,15 @@
     },
     {
       "addr": "005da64c",
-      "name": "DAT_005da64c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005da64c",
+      "type": "double",
+      "value": "0.300000000000000"
     },
     {
       "addr": "005da654",
-      "name": "DAT_005da654",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005da654",
+      "type": "double",
+      "value": "0.700000000000000"
     },
     {
       "addr": "00611100",
@@ -187,16 +185,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

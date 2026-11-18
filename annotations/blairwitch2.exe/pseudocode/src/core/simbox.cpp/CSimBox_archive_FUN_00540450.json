@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 38,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 84
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -62,8 +60,8 @@
   "globals": [
     {
       "addr": "005e68b9",
-      "name": "s_modelName_005e68b8+1",
-      "type": "undefined4",
+      "name": "s_modelName_005e68b9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -92,8 +90,8 @@
     },
     {
       "addr": "005e68f2",
-      "name": "DAT_005e68f2",
-      "type": "undefined4",
+      "name": "s_type_005e68f2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -177,20 +175,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005e68f2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->type,&DAT_005e68f2);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "005fb864"
       }

@@ -13,7 +13,7 @@ CInStreamMemory * __cdecl support_trstream_cpp_CInStreamMemory_ctorOpen_FUN_0057
   
   this_ptr_00 = (CInStreamMemory *)support_trstream_cpp_CInStream_ctor_FUN_0057b9c0(&this_ptr->base)
   ;
-  (this_ptr_00->base).vtable = &g_CInStreamMemoryVTable;
+  (this_ptr_00->base).vtable = g_CInStreamMemoryVTable;
   this_ptr_00->data = (char *)0x0;
   this_ptr_00->size = 0;
   this_ptr_00->position = 0;

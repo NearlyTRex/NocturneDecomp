@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;   undefined4 g_CUnionClassInfo.name_hash
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     TEST EAX,EAX                        ; 005a5a08
     JNZ 0x005a5a1d                      ; 005a5a0a
         ;   XREF to: 005a5a1d (CONDITIONAL_JUMP)  ; LAB_005a5a1d
-    MOV EAX,[0x01cedef4]                ; 005a5a0c | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005a5a0c | g_INT_01cedef4
     MOV EDX,dword ptr [EBX + 0x38]      ; 005a5a11
     CMP EDX,dword ptr [EAX*0x4 + 0x1cedee4] ; 005a5a14
     JNZ 0x005a5a1f                      ; 005a5a1b

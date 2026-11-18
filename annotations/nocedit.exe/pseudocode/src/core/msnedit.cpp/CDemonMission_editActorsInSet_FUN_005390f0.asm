@@ -197,7 +197,7 @@ section .text
         ;   XREF to: 00539205 (CONDITIONAL_JUMP)  ; LAB_00539205
     XOR EAX,EAX                         ; 005391eb
     MOV EDX,0x1                         ; 005391ed
-    MOV [0x02f7c53c],EAX                ; 005391f2 | INT_02f7c53c
+    MOV [0x02f7c53c],EAX                ; 005391f2 | g_MsnEditViewMode
     MOV dword ptr [EBX + 0x10],EAX      ; 005391f7
     MOV [0x02f7c634],EAX                ; 005391fa | INT_02f7c634
     MOV dword ptr [0x02f7c548],EDX      ; 005391ff | g_CEdCheckInstance.checked_state
@@ -316,7 +316,7 @@ section .text
     MOV ECX,0x32                        ; 0053937b
     LEA EDI,[EBP + 0xfffffdde]          ; 00539380
     MOV ESI,0x680830                    ; 00539386 | g_MsnEditCameraStatusBuffer
-    MOV EAX,[0x02f7c53c]                ; 0053938b | INT_02f7c53c
+    MOV EAX,[0x02f7c53c]                ; 0053938b | g_MsnEditViewMode
     MOVSD.REP ES:EDI,ESI                ; 00539390 | g_MsnEditCameraStatusBuffer | g_MsnEditCameraStatusBuffer+4
     CMP EAX,0x4                         ; 00539392
     JA 0x0053a292                       ; 00539395
@@ -403,7 +403,7 @@ section .text
         ;   XREF to: 005394ab (CONDITIONAL_JUMP)  ; LAB_005394ab
     CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005394a6
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
-    MOV ECX,dword ptr [0x02f7c53c]      ; 005394ab | INT_02f7c53c
+    MOV ECX,dword ptr [0x02f7c53c]      ; 005394ab | g_MsnEditViewMode
         ;   Label: LAB_005394ab
     TEST ECX,ECX                        ; 005394b1
     JNZ 0x0053a2d8                      ; 005394b3
@@ -513,7 +513,7 @@ section .text
     PUSH 0x32758e4                      ; 00539607 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 ; 0053960c
         ;   XREF to: 0044c430 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430(CDemonCamera * this_ptr, int skip_clear_buffers)
-    MOV ECX,dword ptr [0x02f7c538]      ; 00539611 | INT_02f7c538
+    MOV ECX,dword ptr [0x02f7c538]      ; 00539611 | g_MsnEditMouseOverPanel
     ADD ESP,0x8                         ; 00539617
     TEST ECX,ECX                        ; 0053961a
     JZ 0x0053a3b9                       ; 0053961c
@@ -639,7 +639,7 @@ section .text
     PUSH EAX                            ; 0053976a
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0053976b
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
-    MOV EDI,dword ptr [0x02f7c53c]      ; 00539770 | INT_02f7c53c
+    MOV EDI,dword ptr [0x02f7c53c]      ; 00539770 | g_MsnEditViewMode
     ADD ESP,0xc                         ; 00539776
     TEST EDI,EDI                        ; 00539779
     JNZ 0x0053979a                      ; 0053977b
@@ -673,7 +673,7 @@ section .text
     JZ 0x0053991f                       ; 005397cc
         ;   XREF to: 0053991f (CONDITIONAL_JUMP)  ; LAB_0053991f
     MOV EBX,0x3                         ; 005397d2
-    MOV EDI,dword ptr [0x02f7c53c]      ; 005397d7 | INT_02f7c53c
+    MOV EDI,dword ptr [0x02f7c53c]      ; 005397d7 | g_MsnEditViewMode
     MOV ESI,0xf3                        ; 005397dd
     TEST EDI,EDI                        ; 005397e2
     SETZ AL                             ; 005397e4
@@ -693,7 +693,7 @@ section .text
     XOR EAX,EAX                         ; 00539807
     MOV dword ptr [EBP + 0x2a],EDX      ; 00539809
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053980c
-    MOV ECX,dword ptr [0x02f7c53c]      ; 0053980f | INT_02f7c53c
+    MOV ECX,dword ptr [0x02f7c53c]      ; 0053980f | g_MsnEditViewMode
         ;   Label: LAB_0053980f
     ADD EBX,0x46                        ; 00539815
     CMP ECX,0x1                         ; 00539818
@@ -711,7 +711,7 @@ section .text
     JZ 0x00539840                       ; 00539837
         ;   XREF to: 00539840 (CONDITIONAL_JUMP)  ; LAB_00539840
     MOV dword ptr [EBP + 0x7a],0x1      ; 00539839
-    MOV EDX,dword ptr [0x02f7c53c]      ; 00539840 | INT_02f7c53c
+    MOV EDX,dword ptr [0x02f7c53c]      ; 00539840 | g_MsnEditViewMode
         ;   Label: LAB_00539840
     ADD EBX,0x46                        ; 00539846
     CMP EDX,0x2                         ; 00539849
@@ -729,7 +729,7 @@ section .text
     JZ 0x00539871                       ; 00539868
         ;   XREF to: 00539871 (CONDITIONAL_JUMP)  ; LAB_00539871
     MOV dword ptr [EBP + 0x7a],0x2      ; 0053986a
-    MOV EDI,dword ptr [0x02f7c53c]      ; 00539871 | INT_02f7c53c
+    MOV EDI,dword ptr [0x02f7c53c]      ; 00539871 | g_MsnEditViewMode
         ;   Label: LAB_00539871
     ADD EBX,0x38                        ; 00539877
     CMP EDI,0x3                         ; 0053987a
@@ -747,7 +747,7 @@ section .text
     JZ 0x005398a2                       ; 00539899
         ;   XREF to: 005398a2 (CONDITIONAL_JUMP)  ; LAB_005398a2
     MOV dword ptr [EBP + 0x7a],0x3      ; 0053989b
-    MOV EDX,dword ptr [0x02f7c53c]      ; 005398a2 | INT_02f7c53c
+    MOV EDX,dword ptr [0x02f7c53c]      ; 005398a2 | g_MsnEditViewMode
         ;   Label: LAB_005398a2
     ADD EBX,0x5b                        ; 005398a8
     CMP EDX,0x4                         ; 005398ab
@@ -765,7 +765,7 @@ section .text
     JZ 0x005398d3                       ; 005398ca
         ;   XREF to: 005398d3 (CONDITIONAL_JUMP)  ; LAB_005398d3
     MOV dword ptr [EBP + 0x7a],0x4      ; 005398cc
-    CMP dword ptr [0x02f7c53c],0x0      ; 005398d3 | INT_02f7c53c
+    CMP dword ptr [0x02f7c53c],0x0      ; 005398d3 | g_MsnEditViewMode
         ;   Label: LAB_005398d3
     JNZ 0x0053991f                      ; 005398da
         ;   XREF to: 0053991f (CONDITIONAL_JUMP)  ; LAB_0053991f
@@ -875,7 +875,7 @@ section .text
         ;   Label: LAB_005399fb
     JNZ 0x0053a4cf                      ; 00539a02
         ;   XREF to: 0053a4cf (CONDITIONAL_JUMP)  ; LAB_0053a4cf
-    CMP dword ptr [0x02f7c53c],0x4      ; 00539a08 | INT_02f7c53c
+    CMP dword ptr [0x02f7c53c],0x4      ; 00539a08 | g_MsnEditViewMode
     JNZ 0x00539c7c                      ; 00539a0f
         ;   XREF to: 00539c7c (CONDITIONAL_JUMP)  ; LAB_00539c7c
     MOV EAX,[0x0067b654]                ; 00539a15 | g_CGamePtr
@@ -1138,7 +1138,7 @@ section .text
     JNC 0x00539c7c                      ; 00539c73
         ;   XREF to: 00539c7c (CONDITIONAL_JUMP)  ; LAB_00539c7c
     MOV dword ptr [EBP + 0x76],0x3f000000 ; 00539c75
-    CMP dword ptr [0x02f7c53c],0x2      ; 00539c7c | INT_02f7c53c
+    CMP dword ptr [0x02f7c53c],0x2      ; 00539c7c | g_MsnEditViewMode
         ;   Label: LAB_00539c7c
     JNZ 0x0053a44b                      ; 00539c83
         ;   XREF to: 0053a44b (CONDITIONAL_JUMP)  ; LAB_0053a44b
@@ -2237,7 +2237,7 @@ section .text
     TEST EAX,EAX                        ; 0053a8c0
     JZ 0x0053acb1                       ; 0053a8c2
         ;   XREF to: 0053acb1 (CONDITIONAL_JUMP)  ; LAB_0053acb1
-    MOV EAX,[0x02f7c53c]                ; 0053a8c8 | INT_02f7c53c
+    MOV EAX,[0x02f7c53c]                ; 0053a8c8 | g_MsnEditViewMode
     DEC EAX                             ; 0053a8cd
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053a8ce
     TEST EAX,EAX                        ; 0053a8d1
@@ -2390,7 +2390,7 @@ section .text
     TEST EAX,EAX                        ; 0053aa44
     JL 0x0053aa9b                       ; 0053aa46
         ;   XREF to: 0053aa9b (CONDITIONAL_JUMP)  ; LAB_0053aa9b
-    MOV [0x02f7c53c],EAX                ; 0053aa48 | INT_02f7c53c
+    MOV [0x02f7c53c],EAX                ; 0053aa48 | g_MsnEditViewMode
     CMP EAX,0x4                         ; 0053aa4d
     JA 0x0053acda                       ; 0053aa50
         ;   XREF to: 0053acda (CONDITIONAL_JUMP)  ; default
@@ -2601,7 +2601,7 @@ section .text
         ;   Label: LAB_0053aca5
     JMP 0x0053a8d9                      ; 0053acac
         ;   XREF to: 0053a8d9 (UNCONDITIONAL_JUMP)  ; LAB_0053a8d9
-    MOV EAX,[0x02f7c53c]                ; 0053acb1 | INT_02f7c53c
+    MOV EAX,[0x02f7c53c]                ; 0053acb1 | g_MsnEditViewMode
         ;   Label: LAB_0053acb1
     INC EAX                             ; 0053acb6
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053acb7
@@ -2633,7 +2633,7 @@ section .text
         ;   Label: LAB_0053ad02
     JZ 0x0053aadb                       ; 0053ad06
         ;   XREF to: 0053aadb (CONDITIONAL_JUMP)  ; LAB_0053aadb
-    CMP dword ptr [0x02f7c538],0x0      ; 0053ad0c | INT_02f7c538
+    CMP dword ptr [0x02f7c538],0x0      ; 0053ad0c | g_MsnEditMouseOverPanel
     JNZ 0x0053aadb                      ; 0053ad13
         ;   XREF to: 0053aadb (CONDITIONAL_JUMP)  ; LAB_0053aadb
     CMP dword ptr [0x02cf2b00],0x0      ; 0053ad19 | g_ActiveControl
@@ -2643,7 +2643,7 @@ section .text
     CMP dword ptr [EAX + 0x28],0x0      ; 0053ad2c
     JZ 0x0053ae63                       ; 0053ad30
         ;   XREF to: 0053ae63 (CONDITIONAL_JUMP)  ; LAB_0053ae63
-    MOV EAX,[0x02f7c528]                ; 0053ad36 | INT_02f7c528
+    MOV EAX,[0x02f7c528]                ; 0053ad36 | g_MsnEditHoveredProperty
     TEST EAX,EAX                        ; 0053ad3b
     JL 0x0053ae63                       ; 0053ad3d
         ;   XREF to: 0053ae63 (CONDITIONAL_JUMP)  ; LAB_0053ae63

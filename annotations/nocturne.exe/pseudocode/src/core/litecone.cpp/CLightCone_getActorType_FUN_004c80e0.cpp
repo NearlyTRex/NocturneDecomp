@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_litecone_cpp_CLightCone_getActorType_FUN_004c80e0(CLightCone *this_ptr)
 
 {
-  return &g_CLightConeActorType_01cc36c4;
+  return &g_CLightConeClassInfo;
 }

@@ -11,7 +11,7 @@
 ; XREF[13]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_00516270 at 0051627c
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_00517f60 at 00517f6f
-;   core_hpatrol.cpp_FUN_0059c9c0 at 0059ca02
+;   core_hpatrol.cpp_findNextPatrolPoint_FUN_0059c9c0 at 0059ca02
 ;   core_netgame.cpp_CNetGame_processChatOut_FUN_0050d9f0 at 0050daef
 ;   crt_unknown.c_FUN_005bfdd4 at 005c00bb
 ;   crt_unknown.c_FUN_005c3f24 at 005c3f5a

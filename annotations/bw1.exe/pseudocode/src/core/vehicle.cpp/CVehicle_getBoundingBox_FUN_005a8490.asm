@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005a8490(CVehicle *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005a8490(CVehicle *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900

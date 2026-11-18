@@ -24,11 +24,11 @@
 ;   TerminatedCString s_CMorphModel_addPart_too_005f14e1
 ;   TerminatedCString s_core_morph_cpp_005f1508
 ;   TerminatedCString s_CMorphModel_setup_out_of_005f151a
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_005b6400
 ;   core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_005b65a0
 ;   crt_memory.c_realloc_FUN_005b8ce0
@@ -125,10 +125,10 @@ section .text
         ;   Label: LAB_005b615d
     MOV EBX,0x90                        ; 005b6162
     PUSH 0x5f151a                       ; 005b6167 | = "CMorphModel::setup - out of memory!"
-    MOV dword ptr [0x01d046a0],ECX      ; 005b616c | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 005b6172 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b6178
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 005b616c | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 005b6172 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b6178
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b617d
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005b6180
         ;   Label: LAB_005b6180
@@ -159,10 +159,10 @@ section .text
         ;   Label: LAB_005b61a6
     MOV EBX,0x77                        ; 005b61ab
     PUSH 0x5f14e1                       ; 005b61b0 | = "CMorphModel::addPart - too many parts!"
-    MOV dword ptr [0x01d046a0],ECX      ; 005b61b5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 005b61bb | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b61c1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 005b61b5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 005b61bb | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b61c1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b61c6
     JMP 0x005b60a5                      ; 005b61c9
         ;   XREF to: 005b60a5 (UNCONDITIONAL_JUMP)  ; LAB_005b60a5

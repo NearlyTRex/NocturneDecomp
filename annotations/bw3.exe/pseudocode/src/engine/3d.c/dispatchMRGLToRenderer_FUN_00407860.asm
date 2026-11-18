@@ -7,25 +7,25 @@
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba40
-;   undefined4 DAT_007dd9f0
-;   undefined4 DAT_01c6cee8
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   uint g_VertexProcessingEnabled = 0x1
+;   int g_RenderFaceCount
+;   int g_INT_01c6cee8
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_3d.c_FUN_00407720
+;   engine_3d.c_dispatchMRGLBlockChain_FUN_00407720
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
 ;   engine_3d.c_processVertexLighting_FUN_004039f0
 ;   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0
 ;   engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407100
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560
 ;   engine_3d.c_transformAndBufferVertices_FUN_00403840
-;   engine_model.c_FUN_004f8730
+;   engine_model.c_getMRGLSize_FUN_004f8730
 ;   engine_special.cpp_drawPolyList_FUN_00565c70
-;   engine_texture.cpp_FUN_0056aa10
+;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x114]     ; 0040786a
     XOR EDX,EDX                         ; 00407871
     MOV AH,byte ptr [EDI]               ; 00407873
-    MOV dword ptr [0x007dd9f0],EDX      ; 00407875 | DAT_007dd9f0
+    MOV dword ptr [0x007dd9f0],EDX      ; 00407875 | g_RenderFaceCount
     TEST AH,AH                          ; 0040787b
     JZ 0x004078c0                       ; 0040787d
         ;   XREF to: 004078c0 (CONDITIONAL_JUMP)  ; LAB_004078c0
@@ -58,27 +58,27 @@ section .text
     PUSH EDI                            ; 0040789c
     CALL engine_3d.c_transformAndBufferVertices_FUN_00403840 ; 0040789d
         ;   XREF to: 00403840 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended * mrgl)
-    MOV ESI,dword ptr [0x005fba40]      ; 004078a2 | DAT_005fba40
+    MOV ESI,dword ptr [0x005fba40]      ; 004078a2 | g_VertexProcessingEnabled
     ADD ESP,0x4                         ; 004078a8
     TEST ESI,ESI                        ; 004078ab
     JNZ 0x0040790d                      ; 004078ad
         ;   XREF to: 0040790d (CONDITIONAL_JUMP)  ; LAB_0040790d
     PUSH EDI                            ; 004078af
         ;   Label: LAB_004078af
-    CALL engine_model.c_FUN_004f8730    ; 004078b0
-        ;   XREF to: 004f8730 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_004f8730(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_004f8730 ; 004078b0
+        ;   XREF to: 004f8730 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004f8730(SMRGLHeaderExtended * header)
     ADD EDI,EAX                         ; 004078b5
     MOV DL,byte ptr [EDI]               ; 004078b7
     ADD ESP,0x4                         ; 004078b9
     TEST DL,DL                          ; 004078bc
     JNZ 0x0040787f                      ; 004078be
         ;   XREF to: 0040787f (CONDITIONAL_JUMP)  ; LAB_0040787f
-    MOV ECX,dword ptr [0x007dd9f0]      ; 004078c0 | DAT_007dd9f0
+    MOV ECX,dword ptr [0x007dd9f0]      ; 004078c0 | g_RenderFaceCount
         ;   Label: LAB_004078c0
     TEST ECX,ECX                        ; 004078c6
     JZ 0x004078f8                       ; 004078c8
         ;   XREF to: 004078f8 (CONDITIONAL_JUMP)  ; LAB_004078f8
-    MOV EBX,dword ptr [0x01c6cee8]      ; 004078ca | DAT_01c6cee8
+    MOV EBX,dword ptr [0x01c6cee8]      ; 004078ca | g_INT_01c6cee8
     TEST EBX,EBX                        ; 004078d0
     JZ 0x00407a7f                       ; 004078d2
         ;   XREF to: 00407a7f (CONDITIONAL_JUMP)  ; LAB_00407a7f
@@ -91,8 +91,8 @@ section .text
     ADD ESP,0x10                        ; 004078ed
     XOR EDX,EDX                         ; 004078f0
         ;   Label: LAB_004078f0
-    MOV dword ptr [0x007dd9f0],EDX      ; 004078f2 | DAT_007dd9f0
-    MOV dword ptr [0x005fba40],0x1      ; 004078f8 | DAT_005fba40
+    MOV dword ptr [0x007dd9f0],EDX      ; 004078f2 | g_RenderFaceCount
+    MOV dword ptr [0x005fba40],0x1      ; 004078f8 | g_VertexProcessingEnabled
         ;   Label: LAB_004078f8
     ADD ESP,0x100                       ; 00407902
     POP EBP                             ; 00407908
@@ -102,8 +102,8 @@ section .text
     RET                                 ; 0040790c
     PUSH EDI                            ; 0040790d
         ;   Label: LAB_0040790d
-    CALL engine_3d.c_FUN_00407720       ; 0040790e
-        ;   XREF to: 00407720 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407720()
+    CALL engine_3d.c_dispatchMRGLBlockChain_FUN_00407720 ; 0040790e
+        ;   XREF to: 00407720 (UNCONDITIONAL_CALL)  ; void engine_3d.c_dispatchMRGLBlockChain_FUN_00407720(SMRGLHeaderExtended * chain)
     ADD ESP,0x4                         ; 00407913
     ADD ESP,0x100                       ; 00407916
     POP EBP                             ; 0040791c
@@ -118,14 +118,14 @@ section .text
     ADD ESP,0x4                         ; 00407927
     JMP 0x004078af                      ; 0040792a
         ;   XREF to: 004078af (UNCONDITIONAL_JUMP)  ; LAB_004078af
-    MOV EBX,dword ptr [0x007dd9f0]      ; 0040792c | DAT_007dd9f0
+    MOV EBX,dword ptr [0x007dd9f0]      ; 0040792c | g_RenderFaceCount
         ;   Label: LAB_0040792c
     TEST EBX,EBX                        ; 00407932
     JZ 0x00407961                       ; 00407934
         ;   XREF to: 00407961 (CONDITIONAL_JUMP)  ; LAB_00407961
     JZ 0x00407961                       ; 00407936
         ;   XREF to: 00407961 (CONDITIONAL_JUMP)  ; LAB_00407961
-    CMP dword ptr [0x01c6cee8],0x0      ; 00407938 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 00407938 | g_INT_01c6cee8
     JZ 0x0040796f                       ; 0040793f
         ;   XREF to: 0040796f (CONDITIONAL_JUMP)  ; LAB_0040796f
     PUSH 0xcd                           ; 00407941
@@ -137,15 +137,15 @@ section .text
     ADD ESP,0x10                        ; 00407956
     XOR EDX,EDX                         ; 00407959
         ;   Label: LAB_00407959
-    MOV dword ptr [0x007dd9f0],EDX      ; 0040795b | DAT_007dd9f0
+    MOV dword ptr [0x007dd9f0],EDX      ; 0040795b | g_RenderFaceCount
     PUSH EDI                            ; 00407961
         ;   Label: LAB_00407961
-    CALL engine_texture.cpp_FUN_0056aa10 ; 00407962
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 00407962
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 00407967
     JMP 0x004078af                      ; 0040796a
         ;   XREF to: 004078af (UNCONDITIONAL_JUMP)  ; LAB_004078af
-    MOV EAX,[0x007dd9f0]                ; 0040796f | DAT_007dd9f0
+    MOV EAX,[0x007dd9f0]                ; 0040796f | g_RenderFaceCount
         ;   Label: LAB_0040796f
     XOR EBX,EBX                         ; 00407974
     TEST EAX,EAX                        ; 00407976
@@ -158,8 +158,8 @@ section .text
     ADD ESI,0x4                         ; 00407983
     INC EBX                             ; 00407986
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0 ; 00407987
-        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0()
-    MOV EAX,[0x007dd9f0]                ; 0040798c | DAT_007dd9f0
+        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(SMRGLHeaderPrimitive * prim)
+    MOV EAX,[0x007dd9f0]                ; 0040798c | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407991
     CMP EBX,EAX                         ; 00407994
     JL 0x0040797c                       ; 00407996
@@ -176,22 +176,22 @@ section .text
     TEST EAX,EAX                        ; 004079a8
     JZ 0x004078af                       ; 004079aa
         ;   XREF to: 004078af (CONDITIONAL_JUMP)  ; LAB_004078af
-    CMP dword ptr [0x007dd9f0],0x7d0    ; 004079b0 | DAT_007dd9f0
+    CMP dword ptr [0x007dd9f0],0x7d0    ; 004079b0 | g_RenderFaceCount
     JL 0x004079de                       ; 004079ba
         ;   XREF to: 004079de (CONDITIONAL_JUMP)  ; LAB_004079de
     MOV EAX,0x5b536c                    ; 004079bc
     MOV EDX,0xccc                       ; 004079c1
     PUSH 0x5b537b                       ; 004079c6
-    MOV [0x01d71de0],EAX                ; 004079cb | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004079d0 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004079d6
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 004079cb | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 004079d0 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004079d6
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004079db
-    MOV EAX,[0x007dd9f0]                ; 004079de | DAT_007dd9f0
+    MOV EAX,[0x007dd9f0]                ; 004079de | g_RenderFaceCount
         ;   Label: LAB_004079de
     LEA ECX,[EAX + 0x1]                 ; 004079e3
     MOV dword ptr [EAX*0x4 + 0x7dd9f4],EBX ; 004079e6
-    MOV dword ptr [0x007dd9f0],ECX      ; 004079ed | DAT_007dd9f0
+    MOV dword ptr [0x007dd9f0],ECX      ; 004079ed | g_RenderFaceCount
     JMP 0x004078af                      ; 004079f3
         ;   XREF to: 004078af (UNCONDITIONAL_JUMP)  ; LAB_004078af
     PUSH EDI                            ; 004079f8
@@ -247,10 +247,10 @@ section .text
     MOV EAX,ESP                         ; 00407a5e
     MOV ECX,0x5b53b2                    ; 00407a60
     PUSH EAX                            ; 00407a65
-    MOV dword ptr [0x01d71de4],EBX      ; 00407a66 | DAT_01d71de4
-    MOV dword ptr [0x01d71de0],ECX      ; 00407a6c | DAT_01d71de0
-    CALL core_main.c_FUN_004e4330       ; 00407a72
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de4],EBX      ; 00407a66 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00407a6c | g_CHAR_PTR_01d71de0
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00407a72
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00407a77
     JMP 0x004078af                      ; 00407a7a
         ;   XREF to: 004078af (UNCONDITIONAL_JUMP)  ; LAB_004078af
@@ -265,8 +265,8 @@ section .text
     ADD EBX,0x4                         ; 00407a90
     INC EDI                             ; 00407a93
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0 ; 00407a94
-        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0()
-    MOV EAX,[0x007dd9f0]                ; 00407a99 | DAT_007dd9f0
+        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(SMRGLHeaderPrimitive * prim)
+    MOV EAX,[0x007dd9f0]                ; 00407a99 | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407a9e
     CMP EDI,EAX                         ; 00407aa1
     JL 0x00407a89                       ; 00407aa3

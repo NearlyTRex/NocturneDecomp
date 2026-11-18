@@ -7,13 +7,13 @@
 ; CAmmoBullet *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007dfda0
+;   CDemonActorType g_CDemonActorType_007dfda0
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x7dfda0                    ; 0040e3c0 | DAT_007dfda0
+    MOV EAX,0x7dfda0                    ; 0040e3c0 | g_CDemonActorType_007dfda0
         ;   Label: core_ammo.cpp_CAmmoBullet_getActorType_FUN_0040e3c0
     RET                                 ; 0040e3c5
 

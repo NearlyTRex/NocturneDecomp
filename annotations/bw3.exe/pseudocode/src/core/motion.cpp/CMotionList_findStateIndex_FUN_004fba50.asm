@@ -10,10 +10,10 @@
 ;
 ; XREF[16]:
 ;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a10c3
-;   core_bird.cpp_FUN_00410030 at 00410075
+;   core_bird.cpp_setRandomMotionVariant_FUN_00410030 at 00410075
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0 at 004331ee
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00431470 at 004314b9
-;   core_event.cpp_FUN_0048c2e0 at 00490485
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 00490485
 ;   core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0 at 004d2acf
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004d2af0 at 004d2b67
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20 at 004d2c66
@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005c9b9a
 ;   TerminatedCString s_Can_t_find_state_s_in_mo_005c9bad
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
 ; *****************************************************************************
@@ -85,10 +85,10 @@ section .text
     MOV ESI,0x5c9b9a                    ; 004fba98 | = "..\\core\\motion.cpp"
     MOV EDI,0x152                       ; 004fba9d
     PUSH 0x5c9bad                       ; 004fbaa2 | = "Can't find state \"%s\" in motion list"
-    MOV dword ptr [0x01d71de0],ESI      ; 004fbaa7 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004fbaad | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fbab3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ESI      ; 004fbaa7 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 004fbaad | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fbab3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004fbab8
     MOV EAX,0xffffffff                  ; 004fbabb
     POP EBP                             ; 004fbac0

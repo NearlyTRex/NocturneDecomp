@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057dc45 = 18
 ;   double DOUBLE_0057dc4d = 65536
-;   undefined4 DAT_005b7648
+;   int g_ProjectionScale = 0x10000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -38,6 +38,6 @@ section .text
     FMUL double ptr [0x0057dc4d]        ; 00460c0a | DOUBLE_0057dc4d
     CALL crt_math.c_round_FUN_00563a30  ; 00460c10
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x005b7648]        ; 00460c15 | DAT_005b7648
+    FISTP dword ptr [0x005b7648]        ; 00460c15 | g_ProjectionScale
     RET                                 ; 00460c1b
 

@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005a7da4(void)
 
 {
-  if (DAT_006075c1 != '\0') {
-    _DAT_00607dd8 = FUN_005a7d90;
-    _DAT_00607ddc = FUN_005a7d9c;
+  if (g_BYTE_006075c1 != 0) {
+    g_ARRAY_PTR_00607dd8[0] = FUN_005a7d90;
+    g_ARRAY_PTR_00607dd8[1] = FUN_005a7d9c;
   }
   FUN_005ad760();
   return;

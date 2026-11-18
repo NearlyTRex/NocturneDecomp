@@ -36,7 +36,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDem
     this_ptr_00->vertex_buffer_ptr[corner_index].v = 0x80 << 16;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (this_ptr_00,&SMRGLTextureBasic_0066e158);
+            (this_ptr_00,&g_BoundingBoxTexture);
   SStack_74.base.base.count = 4;
   SStack_74.base.surface_normal.D.i = 0;
   SStack_74.base.surface_normal.C.i = 0;

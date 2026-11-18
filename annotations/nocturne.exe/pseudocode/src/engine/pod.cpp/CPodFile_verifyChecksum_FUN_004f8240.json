@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 236,
+    "complexity_score": 180,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
-    "suspect_count": 11,
+    "pseudocode_lines": 110,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
-    "total_lines": 414
+    "total_lines": 413
   },
   "cross_references": [
     {
@@ -121,9 +120,9 @@
   "globals": [
     {
       "addr": "0058d9a8",
-      "name": "DAT_0058d9a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_0058d9a8",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "0058d9a9",
@@ -187,13 +186,13 @@
     },
     {
       "addr": "01e428d0",
-      "name": "DAT_01e428d0",
-      "type": "undefined4",
+      "name": "g_FileIOBuffer",
+      "type": "char[65536]",
       "value": null
     },
     {
       "addr": "01e428d1",
-      "name": "DAT_01e428d1",
+      "name": "g_FileIOBuffer+1",
       "type": "undefined4",
       "value": null
     }
@@ -253,6 +252,24 @@
     "pcode_op_count": 1115
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051aa80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5482
+    },
+    "bw1.exe": {
+      "addr": "0053bfc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5482
+    },
+    "bw3.exe": {
+      "addr": "00513d20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5482
+    },
     "nocedit.exe": {
       "addr": "00550230",
       "by": "name",
@@ -341,48 +358,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_0058d9a8",
-      "severity": "mild",
-      "text": "iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,filename);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_01e428d0",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_01e428d0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_01e428d0",
-      "severity": "mild",
-      "text": "_fread(&DAT_01e428d0,0x10000,1,p_Var3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 98,
-      "match": "DAT_01e428d0",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_01e428d0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_01e428d0",
-      "severity": "mild",
-      "text": "_fread(&DAT_01e428d0,size,1,p_Var3);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&pCVar2->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 36,
       "match": "(int)&pCVar2->offset",
       "severity": "moderate",
       "text": "local_14 = *(int *)((int)&pCVar2->offset + iVar4) - pCVar2->offset;",
@@ -390,7 +367,7 @@
     },
     {
       "description": "Pointer value `&pCVar2->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 42,
       "match": "(int)&pCVar2->checksum",
       "severity": "moderate",
       "text": "if (uVar6 != *(uint *)((int)&pCVar2->checksum + iVar4)) {",
@@ -398,7 +375,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "(int)&this_ptr->directory_entries->name",
       "severity": "moderate",
       "text": "(&local_198.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
@@ -406,7 +383,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 37,
+      "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_14 = *(int *)((int)&pCVar2->offset + iVar4) - pCVar2->offset;",
@@ -414,7 +391,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 42,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (uVar6 != *(uint *)((int)&pCVar2->checksum + iVar4)) {",
@@ -422,7 +399,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(&local_198.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",

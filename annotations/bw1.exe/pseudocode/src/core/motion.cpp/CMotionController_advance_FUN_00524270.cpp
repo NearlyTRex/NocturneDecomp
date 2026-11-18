@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_motion_cpp_CMotionController_advance_FUN_00524270(CMotionController *this_ptr,float *delta_time)
 
 {
@@ -33,7 +31,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_00524270(CMotionContro
   local_28 = &this_ptr->current_motion_index;
   local_18 = 0;
   do {
-    if (*delta_time <= (float)_DAT_005eae83) break;
+    if (*delta_time <= (float)1.0000000000000001e-05) break;
     iVar2 = core_motion_cpp_CMotionController_findAndStartTransition_FUN_00524620(this_ptr);
     if (iVar2 != 0) goto LAB_005242d2;
     local_b0 = *delta_time;
@@ -59,14 +57,14 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_00524270(CMotionContro
         core_motion_cpp_CMotionController_startTransition_FUN_00524880(this_ptr,&local_44);
         break;
       default:
-        _DAT_01d1d400 = "..\\core\\motion.cpp";
-        _DAT_01d1d404 = 0x1f6;
-        core_main_c_FUN_005030e0("Invalid transition command returned by CMotionControler::advanceComplex: %d",local_44.cmd);
+        g_CHAR_PTR_01d1d400 = "..\\core\\motion.cpp";
+        g_INT_01d1d404 = 0x1f6;
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid transition command returned by CMotionControler::advanceComplex: %d");
       }
       goto LAB_00524411;
     }
     if (this_ptr->tween_direction == 0) {
-      local_ac = (float)_DAT_005eae8b - this_ptr->tween_progress;
+      local_ac = (float)0.5 - this_ptr->tween_progress;
     }
     else {
       local_ac = this_ptr->tween_progress;
@@ -85,25 +83,25 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_00524270(CMotionContro
     case MOTION_CMD_TWEEN:
       break;
     case MOTION_CMD_TWEEN_ADVANCE:
-      core_motion_cpp_FUN_00524f40
+      core_motion_cpp_CMotionController_advanceTween_FUN_00524f40
                 (this_ptr,this_ptr->tween_target_motion,this_ptr->tween_target_frame,&local_b0);
       local_14 = 1;
       break;
     case MOTION_CMD_TWEEN_ADVANCE_BOTH:
-      core_motion_cpp_FUN_00524f40
+      core_motion_cpp_CMotionController_advanceTween_FUN_00524f40
                 (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,&local_b0);
       goto LAB_0052438a;
     case MOTION_CMD_TWEEN_BIDIR:
-      core_motion_cpp_FUN_00524f40
+      core_motion_cpp_CMotionController_advanceTween_FUN_00524f40
                 (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,&local_b0);
-      core_motion_cpp_FUN_00524f40
+      core_motion_cpp_CMotionController_advanceTween_FUN_00524f40
                 (this_ptr,this_ptr->tween_target_motion,this_ptr->tween_target_frame,&local_b0);
       local_14 = 1;
       goto LAB_0052438a;
     default:
-      _DAT_01d1d400 = "..\\core\\motion.cpp";
-      _DAT_01d1d404 = 0x1bd;
-      core_main_c_FUN_005030e0("CMotionController::advance: Tweening active but invalid tweenType: %d",this_ptr->tween_type);
+      g_CHAR_PTR_01d1d400 = "..\\core\\motion.cpp";
+      g_INT_01d1d404 = 0x1bd;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CMotionController::advance: Tweening active but invalid tweenType: %d");
     }
 switchD_00524379_caseD_3:
     if (local_1c != 0) {
@@ -120,7 +118,7 @@ LAB_0052438a:
     if (this_ptr->tween_direction == 0) {
       fVar1 = local_b0 * this_ptr->tween_speed + this_ptr->tween_progress;
       this_ptr->tween_progress = fVar1;
-      if (((float)_DAT_005eae93 < fVar1) &&
+      if (((float)0.49990000000000001 < fVar1) &&
          (core_motion_cpp_CMotionController_reverseTransition_FUN_00524710(this_ptr),
          this_ptr->tween_set_new_state != 0)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(this_ptr);
@@ -130,7 +128,7 @@ LAB_0052438a:
     else {
       fVar1 = this_ptr->tween_progress - local_b0 * this_ptr->tween_speed;
       this_ptr->tween_progress = fVar1;
-      if (fVar1 < (float)_DAT_005eae9b) {
+      if (fVar1 < (float)0.0001) {
         core_motion_cpp_CMotionController_clearTweenState_FUN_00524b70(this_ptr);
       }
     }
@@ -142,7 +140,7 @@ LAB_00524411:
     }
     if (iVar2 != 0) {
       _sprintf(local_a8,"signal%d");
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,local_a8);
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,local_a8);
       return iVar2;
     }
 LAB_005242d2:

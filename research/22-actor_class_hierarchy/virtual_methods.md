@@ -7,7 +7,7 @@ Methods and signatures are nocedit.exe's. Each build's column is the slot index 
 
 | method | signature | nocedit | nocturne | bw1 | blairwitch2 | bw3 | params |
 |---|---|---|---|---|---|---|---|
-| `setup` | `void setup()` | 0 | 0M | 0M | 2M | 0M | nocturne a96; bw1 a95; blairwitch2 a58 u36; bw3 a56 u1 |
+| `setup` | `void setup()` | 0 | 0M | 0M | 2M | 0M | nocturne a96; bw1 a95; blairwitch2 a59 u35; bw3 a56 u1 |
 | `process` | `void process(float delta_time)` | 1 | 1M | 3H | 5H | 3M | nocturne a99; bw1 a94 u5; blairwitch2 a57 u41; bw3 a53 u5 |
 | `renderOpaque` | `int renderOpaque()` | 2 | 2M | 4H | 6H | 4M | nocturne a65 u3; bw1 a65 u4; blairwitch2 a28 u40; bw3 a38 u3 |
 | `renderTransparent` | `int renderTransparent()` | 3 | 3M | 5H | 7H | 5M | nocturne a24 u3; bw1 a23 u5; blairwitch2 a10 u18; bw3 a18 u3 |
@@ -31,7 +31,7 @@ Methods and signatures are nocedit.exe's. Each build's column is the slot index 
 | `canLookAt` | `int canLookAt()` | 21 | 21M | 23M | 25M | 23M | nocturne u3; bw1 u3; blairwitch2 u3; bw3 u2 |
 | `evaluateTriggerCondition` | `float evaluateTriggerCondition(CDemonActor* querying_actor, CVector3f* query_position)` | 22 | 22M | 24M | 26M | 24M | nocturne u2; bw1 u2; blairwitch2 u2; bw3 u2 |
 | `processActionButton` | `int processActionButton()` | 23 | 23M | 25M | 27M | 25M | nocturne u2; bw1 u2; blairwitch2 u2; bw3 u2 |
-| `setPositionAndOrientation` | `void setPositionAndOrientation(CVector3f* new_position, CVector3f* new_orientation)` | 24 | 24M | 26M | 28M | 26M | nocturne a4; bw1 a4; blairwitch2 a3 u1; bw3 a3 |
+| `setPositionAndOrientation` | `void setPositionAndOrientation(CVector3f* new_position, CVector3f* new_orientation)` | 24 | 24M | 26M | 28M | 26M | nocturne a4; bw1 a4; blairwitch2 a4; bw3 a3 |
 | `onPickup` | `void onPickup(CDemonActor* owner)` | 25 | 25M | 27M | 29M | 27M | nocturne a5; bw1 a5; blairwitch2 a1 u4; bw3 a5 |
 | `shouldIgnoreForTargeting` | `int shouldIgnoreForTargeting()` | 26 | 26M | 28M | 30M | 28M | nocturne a3; bw1 a3; blairwitch2 a1 u2; bw3 a2 |
 | `getAllowedMeleeAttackTypes` | `int getAllowedMeleeAttackTypes()` | 27 | 27M | 29M | 31M | 29M | nocturne a4; bw1 a4; blairwitch2 a1 u3; bw3 a4 |
@@ -43,14 +43,14 @@ Methods and signatures are nocedit.exe's. Each build's column is the slot index 
 | `onDropped` | `void onDropped(CVector3f* drop_position)` | 33 | 33M | 35M | 37M | 35M | nocturne u9; bw1 u9; blairwitch2 u9; bw3 u9 |
 | `drop` | `void drop(CDemonActor* carrier, CVector3f* drop_position)` | 34 | 34M | 36M | 38M | 36M | nocturne a2 u1; bw1 a2 u1; blairwitch2 a2 u1; bw3 a1 u1 |
 | `getCarrier` | `CDemonActor* getCarrier()` | 35 | 35M | 37M | 39M | 37M | nocturne u9; bw1 u9; blairwitch2 u9; bw3 u9 |
-| `getInteractionInfo` | `void getInteractionInfo(SInteractionInfo* out_info)` | 36 | 36M | 38M | 40M | 38M | nocturne u3; bw1 u3; blairwitch2 u3; bw3 u1 |
+| `getInteractionInfo` | `void getInteractionInfo(SInteractionInfo* out_info)` | 36 | 36M | 38M | 40M | 38M | nocturne a3; bw1 a3; blairwitch2 a1 u2; bw3 u1 |
 | `startInteraction` | `int startInteraction(CDemonActor* user)` | 37 | 37M | 39M | 41M | 39M | nocturne u3; bw1 u3; blairwitch2 u3; bw3 u1 |
 | `updateInteraction` | `int updateInteraction(UOrientationVector* user_orientation, SPlayerInput* player_control)` | 38 | 38M | 40M | 42M | 40M | nocturne u3; bw1 u3; blairwitch2 u3; bw3 u1 |
 | `stopInteraction` | `void stopInteraction(CDemonActor* user)` | 39 | 39M | 41M | 43M | 41M | nocturne u3; bw1 u3; blairwitch2 u3; bw3 u1 |
 | `spawnFlies` | `void spawnFlies(int fly_count, float spawn_radius)` | 40 | 40M | 42M | 44M | 42M | nocturne a2; bw1 a2; blairwitch2 a1 u1; bw3 a2 |
 | `testCylinderCollision` | `int testCylinderCollision(SCollisionReturnInfo* collision_info, float tolerance)` | 41 | 41M | 43M | 45M | 43M | nocturne a2; bw1 a2; blairwitch2 a1 u1; bw3 a1 |
 | `testLineIntersection` | `int testLineIntersection(CVector3f* line_start, CVector3f* line_end, CVector3f* out_intersection_point)` | 42 | 42M | 44M | 46M | 44M | nocturne a2; bw1 a2; blairwitch2 a1 u1; bw3 a1 |
-| `onLaserHit` | `void onLaserHit(SLaserInfo* laser_info)` | 43 | 43M | 45M | 47M | 45M | nocturne u6; bw1 u7; blairwitch2 u7; bw3 u5 |
+| `onLaserHit` | `void onLaserHit(SLaserInfo* laser_info)` | 43 | 43M | 45M | 47M | 45M | nocturne a6; bw1 a6 u1; blairwitch2 a1 u6; bw3 a4 u1 |
 | `customRayIntersect` | `float customRayIntersect(CVector3f* ray_origin, CVector3f* ray_direction, CVector3f* out_normal)` | 44 | 44M | 46M | 48M | 46M | nocturne u4; bw1 u4; blairwitch2 u4; bw3 u3 |
 | `customIntersectCylinderXZ` | `void customIntersectCylinderXZ(SIntersectXZCylinder* cylinder)` | 45 | 45M | 47M | 49M | 47M | nocturne u3; bw1 u3; blairwitch2 u3; bw3 u2 |
 | `customGetFloorHeight` | `int customGetFloorHeight(CVector3f* position, float search_radius, float* out_floor_height)` | 46 | 46M | 48M | 50M | 48M | nocturne u3; bw1 u3; blairwitch2 u3; bw3 u2 |
@@ -92,7 +92,7 @@ Methods and signatures are nocedit.exe's. Each build's column is the slot index 
 | `clearDoorTarget` | `void clearDoorTarget()` | 77 | 70M | 72M | 74M | 72M | nocturne u1; bw1 u1; blairwitch2 u1; bw3 u1 |
 | `hasDoorTarget` | `int hasDoorTarget()` | 78 | 71M | 73M | 75M | 73M | nocturne u1; bw1 u1; blairwitch2 u1; bw3 u1 |
 | `dropCarriedObject` | `void dropCarriedObject(int hand_index, CVector3f* drop_direction)` | 79 | 72M | 74M | 76M | 74M | nocturne a2; bw1 a2; blairwitch2 a2; bw3 a1 |
-| `getCarryObjToBodyXForm` | `CMatrix3x4f* getCarryObjToBodyXForm(int hand_index, CMatrix3x4f* out_matrix)` | 80 | 73M | 75M | 77M | 75M | nocturne u12; bw1 u12; blairwitch2 u12; bw3 u4 |
+| `getCarryObjToBodyXForm` | `CMatrix3x4f* getCarryObjToBodyXForm(int hand_index, CMatrix3x4f* out_matrix)` | 80 | 73M | 75M | 77M | 75M | nocturne u12; bw1 u12; blairwitch2 a12; bw3 u4 |
 | `setWalkTarget` | `void setWalkTarget(CDemonActor* target, float min_distance, float max_distance)` | 81 | 74M | 76M | 78M | 76M | nocturne a2; bw1 a2; blairwitch2 a2; bw3 a2 |
 | `setWalkTargetImmediate` | `void setWalkTargetImmediate(CDemonActor* target)` | 82 | 75M | 77M | 79M | 77M | nocturne u1; bw1 u1; blairwitch2 u1; bw3 u1 |
 | `setWalkTimeout` | `void setWalkTimeout(float timeout)` | 83 | 76M | 78M | 80M | 78M | nocturne u1; bw1 u1; blairwitch2 u1; bw3 u1 |
@@ -126,7 +126,7 @@ Methods and signatures are nocedit.exe's. Each build's column is the slot index 
 | `createDefaultWeapon` | `void createDefaultWeapon()` | 85 | 78M | 80M | 83M | — | nocturne a2; bw1 a2; blairwitch2 a2 |
 | `drawWeapon` | `undefined1 drawWeapon()` | 86 | 79M | 81M | 84M | — | nocturne u10; bw1 u9; blairwitch2 u9 |
 | `isWeaponDrawn` | `undefined1 isWeaponDrawn()` | 87 | 80M | 82M | 85M | — | nocturne u10; bw1 u9; blairwitch2 u9 |
-| `reset` | `void reset()` | 88 | 81M | 83M | 86M | — | nocturne u2; bw1 u2; blairwitch2 u2 |
+| `reset` | `void reset()` | 88 | 81M | 83M | 86M | — | nocturne a1 u1; bw1 a2; blairwitch2 a2 |
 
 ## CBoneGuy
 
@@ -153,15 +153,15 @@ Slots a build added to a class's table; nothing in nocedit.exe names them. A nam
 | build | slot | name | function | unit | tables showing it first |
 |---|---:|---|---|---|---|
 | bw1 | 1 | `markResourcesInUse` | `00408890` | core_actor.cpp | CDemonActor |
-| bw1 | 2 | — | `00408890` | core_actor.cpp | CDemonActor |
+| bw1 | 2 | `releaseResources` | `00408890` | core_actor.cpp | CDemonActor |
 | bw1 | 84 | `toggleGoggles` | `004ec9e0` | core_hero.cpp | CBaron, CColonel, CGabriella, CHaystack, CIcePick, CMoloch, CScat, CStranger, CSvetlana |
 | bw1 | 85 | `canReachPickup` | `004eade0` | core_hero.cpp | CBaron, CColonel, CGabriella, CHaystack, CIcePick, CMoloch, CScat, CStranger, CSvetlana |
 | bw1 | 86 | `doHeroAction` | `004ec640` | core_hero.cpp | CBaron, CColonel, CGabriella, CHaystack, CIcePick, CMoloch, CScat, CStranger, CSvetlana |
 | bw1 | 87 | `canDoHeroAction` | `004ec950` | core_hero.cpp | CBaron, CColonel, CGabriella, CHaystack, CIcePick, CMoloch, CScat, CStranger, CSvetlana |
 | blairwitch2 | 0 | — | `0040ced0` | core_actor.cpp | CDemonActor |
 | blairwitch2 | 1 | — | `0040ced0` | core_actor.cpp | CDemonActor |
-| blairwitch2 | 3 | — | `00408ac0` | core_actor.cpp | CDemonActor |
-| blairwitch2 | 4 | — | `00408ac0` | core_actor.cpp | CDemonActor |
+| blairwitch2 | 3 | `markResourcesInUse` | `00408ac0` | core_actor.cpp | CDemonActor |
+| blairwitch2 | 4 | `releaseResources` | `00408ac0` | core_actor.cpp | CDemonActor |
 | blairwitch2 | 82 | `setCharacterModel` | `0042b440` | core_charactr.cpp | CCharacter |
 | blairwitch2 | 87 | — | `004d0750` | core_hero.cpp | CBaron, CColonel, CGabriella, CHaystack, CIcePick, CMoloch, CScat, CStranger, CSvetlana |
 | blairwitch2 | 88 | `canReachPickup` | `004cea40` | core_hero.cpp | CBaron, CColonel, CGabriella, CHaystack, CIcePick, CMoloch, CScat, CStranger, CSvetlana |
@@ -169,7 +169,7 @@ Slots a build added to a class's table; nothing in nocedit.exe names them. A nam
 | blairwitch2 | 90 | `canDoHeroAction` | `004d06c0` | core_hero.cpp | CBaron, CColonel, CGabriella, CHaystack, CIcePick, CMoloch, CScat, CStranger, CSvetlana |
 | blairwitch2 | 91 | `setInventoryIndex` | `004ce3b0` | core_hero.cpp | CBaron, CColonel, CGabriella, CHaystack, CIcePick, CMoloch, CScat, CStranger, CSvetlana |
 | bw3 | 1 | `markResourcesInUse` | `004088d0` | core_actor.cpp | CDemonActor |
-| bw3 | 2 | — | `004088d0` | core_actor.cpp | CDemonActor |
+| bw3 | 2 | `releaseResources` | `004088d0` | core_actor.cpp | CDemonActor |
 | bw3 | 62 | — | `0057b030` | core_weapon.cpp | CWeapon |
 
 ## Named added slots
@@ -183,6 +183,7 @@ From `added_slot_names.json`, the baseline for naming further added slots: each 
 | bw1 | CDemnfolk | 84 | `void playDeathSound()` | Plays "demn_&lt;name&gt;_die.wav". |
 | bw1 | CDemnfolk | 85 | `void playFeedingSound()` | Plays "ghoul-dig-?.wav" or "ghoul-eat-?.wav". |
 | bw1 | CDemonActor | 1 | `void markResourcesInUse()` | CCharacter's override marks its model (+0x24a8) and skeleton in use in their pools; the mission's actor setup clears the marks, calls this slot on every actor, purges what is unmarked, then calls setup. |
+| bw1 | CDemonActor | 2 | `void releaseResources()` | Best guess, no caller in any build. The slot after markResourcesInUse; CCharacter's override saves the current motion's name and drops its motion-list pointer into the model pool, which setMotionList later re-finds by that name. |
 | bw1 | CDjien | 82 | `void damageSack(SDamageInfo* damage)` | Adds the hit's damage to the sack slot 83 maps it to; past the threshold spawns a body part and fires the "DjienSackBlown" event. |
 | bw1 | CDjien | 83 | `int getSackIndex(int part_id)` | Returns 0..5 for the six sack part ids at +0xc2b0..+0xc2c4, -1 for any other. |
 | bw1 | CHero | 84 | `void toggleGoggles()` | Called when CGame+0x54 (nocedit key_infrared) is pressed; CDoc's override flips its CGoggles item. |
@@ -201,6 +202,8 @@ From `added_slot_names.json`, the baseline for naming further added slots: each 
 | blairwitch2 | CCharacter | 82 | `void setCharacterModel(char* model_name, char* cloth_name)` | Dispatched by the script command "setCharacterModel(actor, model, cloth)". |
 | blairwitch2 | CConfederateZombie | 96 | `void processRangeAttackState(float delta_time)` | The class's processStates maps "RangeAttack" to this slot. |
 | blairwitch2 | CConfederateZombie | 97 | `void processMeleeAttackState(float delta_time)` | The class's processStates maps "MeleeAttack" to this slot. |
+| blairwitch2 | CDemonActor | 3 | `void markResourcesInUse()` | As bw1 slot 1: prepareAllActors calls +0xc on every actor between clearing and purging the in-use marks; CCharacter's override marks its model in use. |
+| blairwitch2 | CDemonActor | 4 | `void releaseResources()` | As bw1 slot 2 (best guess, no caller). |
 | blairwitch2 | CDog | 96 | `void processMeleeAttackState(float delta_time)` | The class's processStates maps "MeleeAttack" to this slot. |
 | blairwitch2 | CDog | 97 | `void processChaseFoodState(float delta_time)` | The class's processStates maps "ChaseFood" to this slot. |
 | blairwitch2 | CDog | 98 | `void processLeapAttackState(float delta_time)` | The class's processStates maps "LeapAttack" to this slot. |
@@ -221,6 +224,7 @@ From `added_slot_names.json`, the baseline for naming further added slots: each 
 | blairwitch2 | CUnionZombie | 96 | `void processVanishAttackState(float delta_time)` | The class's processStates maps "VanishAttack" to this slot. |
 | blairwitch2 | CUnionZombie | 97 | `void processMeleeAttackState(float delta_time)` | The class's processStates maps "MeleeAttack" to this slot. |
 | bw3 | CDemonActor | 1 | `void markResourcesInUse()` | Same as bw1: CCharacter's override marks its model and skeleton in use. |
+| bw3 | CDemonActor | 2 | `void releaseResources()` | As bw1 slot 2 (best guess, no caller). |
 | bw3 | CHero | 80 | `void createDefaultWeapon()` | nocedit CHero slot 85, the first of CHero's four methods; CPrye's override fills the inventory with its starting weapons. |
 | bw3 | CHero | 81 | `void drawWeapon(int drawn)` | nocedit CHero slot 86; same body as nocedit CStranger_drawWeapon. |
 | bw3 | CHero | 82 | `int isWeaponDrawn()` | nocedit CHero slot 87; returns the field drawWeapon sets (+0x20bcc). |
@@ -229,3 +233,4 @@ From `added_slot_names.json`, the baseline for naming further added slots: each 
 | bw3 | CHero | 85 | `int canReachPickup(CDemonActor* item, int pickup_type, float* best_distance)` | Called by the pickup search, as bw1 slot 85. |
 | bw3 | CHero | 86 | `void doHeroAction()` | Body strings "CHero::doHeroAction - type=..." and "CPrye::doHeroAction - type=...". |
 | bw3 | CHero | 87 | `int canDoHeroAction(int action_type)` | The action selector asks it for each action type, as bw1 slot 87. |
+| bw3 | CZombiePriest | 83 | `void reset()` | zombiepriest.cpp is a copy of nocedit's mobster.cpp; CZombiePriest's one slot past CEnemy's is where CMobster (nocedit slot 88), CBoneGuy and CSmiley add reset. |

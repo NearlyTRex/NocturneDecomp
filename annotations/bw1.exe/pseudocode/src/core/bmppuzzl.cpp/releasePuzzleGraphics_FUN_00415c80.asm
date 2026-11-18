@@ -8,10 +8,10 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf7e8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c394c
+;   int[1] g_INT_ARRAY_007c394c
 ;   undefined4 DAT_007c3950
 ;   undefined4 DAT_007c3954
-;   undefined4 DAT_007c3978
+;   CPuzzle* g_CPuzzle_PTR_007c3978
 ;
 ; Called Functions:
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0
@@ -23,11 +23,11 @@ section .text
     PUSH EBX                            ; 00415c80
         ;   Label: core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80
     PUSH ESI                            ; 00415c81
-    MOV EDX,dword ptr [0x007c3978]      ; 00415c82 | DAT_007c3978
+    MOV EDX,dword ptr [0x007c3978]      ; 00415c82 | g_CPuzzle_PTR_007c3978
     TEST EDX,EDX                        ; 00415c88
     JNZ 0x00415cbc                      ; 00415c8a
         ;   XREF to: 00415cbc (CONDITIONAL_JUMP)  ; LAB_00415cbc
-    MOV ESI,dword ptr [0x007c394c]      ; 00415c8c | DAT_007c394c
+    MOV ESI,dword ptr [0x007c394c]      ; 00415c8c | g_INT_ARRAY_007c394c
         ;   Label: LAB_00415c8c
     XOR EBX,EBX                         ; 00415c92
     TEST ESI,ESI                        ; 00415c94
@@ -42,7 +42,7 @@ section .text
     ADD ESI,0x4                         ; 00415ca4
     INC EBX                             ; 00415ca7
     CALL dword ptr [EDX + 0x10]         ; 00415ca8
-    MOV EDI,dword ptr [0x007c394c]      ; 00415cab | DAT_007c394c
+    MOV EDI,dword ptr [0x007c394c]      ; 00415cab | g_INT_ARRAY_007c394c
     ADD ESP,0x4                         ; 00415cb1
     CMP EBX,EDI                         ; 00415cb4
     JL 0x00415c9b                       ; 00415cb6

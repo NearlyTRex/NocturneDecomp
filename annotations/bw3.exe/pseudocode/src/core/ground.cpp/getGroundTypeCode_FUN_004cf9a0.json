@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 190,
+    "complexity_score": 50,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 16,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
-    "suspect_count": 15,
+    "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
@@ -50,86 +50,86 @@
     },
     {
       "addr": "005c486c",
-      "name": "DAT_005c486c",
-      "type": "undefined4",
+      "name": "s_no_005c486c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c486f",
-      "name": "DAT_005c486f",
-      "type": "undefined4",
+      "name": "s_ct_005c486f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4872",
-      "name": "DAT_005c4872",
-      "type": "undefined4",
+      "name": "s_dt_005c4872",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4875",
-      "name": "DAT_005c4875",
-      "type": "undefined4",
+      "name": "s_dt_005c4875",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4878",
-      "name": "DAT_005c4878",
-      "type": "undefined4",
+      "name": "s_mt_005c4878",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c487b",
-      "name": "DAT_005c487b",
-      "type": "undefined4",
+      "name": "s_wt_005c487b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c487e",
-      "name": "DAT_005c487e",
-      "type": "undefined4",
+      "name": "s_wd_005c487e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4881",
-      "name": "DAT_005c4881",
-      "type": "undefined4",
+      "name": "s_mb_005c4881",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4884",
-      "name": "DAT_005c4884",
-      "type": "undefined4",
+      "name": "s_md_005c4884",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4887",
-      "name": "DAT_005c4887",
-      "type": "undefined4",
+      "name": "s_cp_005c4887",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c488a",
-      "name": "DAT_005c488a",
-      "type": "undefined4",
+      "name": "s_bd_005c488a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c488d",
-      "name": "DAT_005c488d",
-      "type": "undefined4",
+      "name": "s_gl_005c488d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4890",
-      "name": "DAT_005c4890",
-      "type": "undefined4",
+      "name": "s_gr_005c4890",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4893",
-      "name": "DAT_005c4893",
-      "type": "undefined4",
+      "name": "s_dt_005c4893",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -228,6 +228,12 @@
     "pcode_op_count": 88
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ca7c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4286
+    },
     "bw1.exe": {
       "addr": "004e7010",
       "by": "name",
@@ -264,118 +270,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005c486c",
-      "severity": "mild",
-      "text": "return &DAT_005c486c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005c486f",
-      "severity": "mild",
-      "text": "return &DAT_005c486f;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005c4872",
-      "severity": "mild",
-      "text": "return &DAT_005c4872;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005c4875",
-      "severity": "mild",
-      "text": "return &DAT_005c4875;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005c4878",
-      "severity": "mild",
-      "text": "return &DAT_005c4878;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005c487b",
-      "severity": "mild",
-      "text": "return &DAT_005c487b;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005c487e",
-      "severity": "mild",
-      "text": "return &DAT_005c487e;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005c4881",
-      "severity": "mild",
-      "text": "return &DAT_005c4881;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005c4884",
-      "severity": "mild",
-      "text": "return &DAT_005c4884;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005c4887",
-      "severity": "mild",
-      "text": "return &DAT_005c4887;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005c488a",
-      "severity": "mild",
-      "text": "return &DAT_005c488a;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005c488d",
-      "severity": "mild",
-      "text": "return &DAT_005c488d;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005c4890",
-      "severity": "mild",
-      "text": "return &DAT_005c4890;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005c4893",
-      "severity": "mild",
-      "text": "return &DAT_005c4893;",
-      "type": "undefined_data"
-    },
     {
       "description": "Undefined global data reference",
       "line": 35,

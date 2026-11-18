@@ -16,13 +16,13 @@
 ;   core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_0058d020 at 0058d04d
 ;
 ; Referenced Globals:
-;   undefined4 s_STAND_005ccebd+1
+;   TerminatedCString s_STAND_005ccebe
 ;   TerminatedCString s_STAND_005ccec4
 ;   TerminatedCString s_CCharacter_005cceca
-;   undefined4 DAT_005cced6
-;   undefined4 DAT_005ccede
-;   undefined4 DAT_005ccee2
-;   undefined4 DAT_005ccee6
+;   double g_DOUBLE_005cced6 = 0.5
+;   float g_FLOAT_005ccede = 5
+;   float g_FLOAT_005ccee2 = 60
+;   float g_FLOAT_005ccee6 = 2
 ;   undefined4 g_CBasicEnemyClassInfo.name_hash
 ;
 ; Called Functions:
@@ -58,7 +58,7 @@ section .text
     JZ 0x00428655                       ; 00428627
         ;   XREF to: 00428655 (CONDITIONAL_JUMP)  ; LAB_00428655
     PUSH EDI                            ; 00428629
-    PUSH 0x5ccebe                       ; 0042862a | s_STAND_005ccebd+1
+    PUSH 0x5ccebe                       ; 0042862a | = "STAND"
     PUSH ESI                            ; 0042862f
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_00503860 ; 00428630
         ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00503860(CMotionController * this_ptr)
@@ -119,9 +119,9 @@ section .text
     FMUL ST0                            ; 004286cf
     FADDP                               ; 004286d1
     FSQRT                               ; 004286d3
-    FMUL double ptr [0x005cced6]        ; 004286d5 | DAT_005cced6
+    FMUL double ptr [0x005cced6]        ; 004286d5 | g_DOUBLE_005cced6
     FST float ptr [ESP + 0x4]           ; 004286db
-    FCOMP float ptr [0x005ccede]        ; 004286df | DAT_005ccede
+    FCOMP float ptr [0x005ccede]        ; 004286df | g_FLOAT_005ccede
     FNSTSW AX                           ; 004286e5
     SAHF                                ; 004286e7
     JNC 0x00428735                      ; 004286e8
@@ -138,7 +138,7 @@ section .text
     JZ 0x00428714                       ; 00428704
         ;   XREF to: 00428714 (CONDITIONAL_JUMP)  ; LAB_00428714
     FLD float ptr [ESP + 0x4]           ; 00428706
-    FMUL float ptr [0x005ccee6]         ; 0042870a | DAT_005ccee6
+    FMUL float ptr [0x005ccee6]         ; 0042870a | g_FLOAT_005ccee6
     FSTP float ptr [ESP + 0x4]          ; 00428710
     PUSH dword ptr [ESP + 0x4]          ; 00428714
         ;   Label: LAB_00428714
@@ -154,7 +154,7 @@ section .text
         ;   XREF to: 0042866b (UNCONDITIONAL_JUMP)  ; LAB_0042866b
     FLD float ptr [ESP + 0x4]           ; 00428735
         ;   Label: LAB_00428735
-    FCOMP float ptr [0x005ccee2]        ; 00428739 | DAT_005ccee2
+    FCOMP float ptr [0x005ccee2]        ; 00428739 | g_FLOAT_005ccee2
     FNSTSW AX                           ; 0042873f
     SAHF                                ; 00428741
     JBE 0x004286f2                      ; 00428742

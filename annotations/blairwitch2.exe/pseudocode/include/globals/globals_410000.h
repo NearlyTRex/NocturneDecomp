@@ -16,6 +16,7 @@ extern undefined1* switchdataD_004124e8;
 extern undefined1* switchdataD_00412ef8;
 extern undefined1* switchdataD_00412f08;
 extern undefined1* switchdataD_00413f1c;
+extern undefined1* switchdataD_004180f8;
 extern undefined1* switchdataD_004186a0;
 extern undefined1* switchdataD_0041e888;
 extern undefined1* switchdataD_0041f374;

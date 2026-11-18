@@ -70,7 +70,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   int g_CurrentTextureDimension = 0x100
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -246,7 +246,7 @@ section .text
         ;   Label: LAB_004adc61
     PUSH EAX                            ; 004adc67
     MOV EDX,dword ptr [0x005ae704]      ; 004adc68 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 004adc6e | DAT_01b4d738
+    PUSH EDX                            ; 004adc6e | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004adc6f
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV ECX,dword ptr [0x005b762c]      ; 004adc74 | g_CurrentTextureDimension
@@ -274,7 +274,7 @@ section .text
     PUSH EAX                            ; 004adcc0
     PUSH EBX                            ; 004adcc1
     CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0 ; 004adcc2
-        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * param_2, int * param_3, int * param_4, ...)
+        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004accf0(CGlass * this_ptr, float * quad_vertices, int * quad_uv_u, int * quad_uv_v, ...)
     ADD ESP,0x14                        ; 004adcc7
     PUSH 0x585053                       ; 004adcca | = "glass-1.wav@2.0"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004adccf

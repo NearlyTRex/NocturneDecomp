@@ -16,10 +16,11 @@ int __cdecl core_npc_cpp_CNPC_renderOpaque_FUN_00509560(CNPC *this_ptr)
       iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220(&this_ptr->base);
       return iVar1;
     }
-    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+                      (g_CDemonRenderer_PTR_005f2afc);
     if (iVar1 != 0) {
       iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                        (0x01C6E360,"heroCanSee");
+                        (g_CEventListPtr,"heroCanSee");
       if (iVar1 == 0) {
         return 0;
       }

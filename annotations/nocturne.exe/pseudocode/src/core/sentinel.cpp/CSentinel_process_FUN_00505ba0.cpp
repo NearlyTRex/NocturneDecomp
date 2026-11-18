@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CSentinel *this_ptr,float delta_time)
 
@@ -345,7 +344,7 @@ LAB_005062ff:
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                           (&local_b0,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           _DAT_01e57220);
+                           g_INT_01e57220);
       pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                           ((CDemonActor *)this_ptr,&local_a4,pCVar10);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar10,fVar12,pSVar13);
@@ -358,7 +357,7 @@ LAB_005062ff:
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                           (&local_50,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           _DAT_01e57218);
+                           g_INT_01e57218);
       pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                           ((CDemonActor *)this_ptr,&local_8c,pCVar10);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar10,fVar12,pSVar13);

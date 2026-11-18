@@ -10,8 +10,8 @@ void FUN_005abb64(int param_1)
 
 {
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079d4)();
-  if ((0 < param_1) && (param_1 < DAT_00607be0)) {
-    *(uint *)(DAT_00607bdc + param_1 * 4) = 0;
+  if ((0 < param_1) && (param_1 < g_INT_00607be0)) {
+    g_IOControlBlock->standard_handles[param_1] = (HANDLE)0x0;
   }
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079d8)();
   return;

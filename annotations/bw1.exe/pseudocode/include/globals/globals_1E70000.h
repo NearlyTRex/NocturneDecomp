@@ -6,6 +6,8 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1E70000
@@ -19,4 +21,36 @@ extern CDemonActorType g_CScatClassInfo;
 
 // CDemonPod
 extern CDemonPod g_CDemonPodInstance;
+
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_PathMapQuad;
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7d5bc[16];
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7dad0[16];
+
+// char[101][100]
+extern char g_PathfindingVisited[101][100];
+
+// char[10][1024]
+extern char g_ScriptSubtitleLines[10][1024];
+
+// int
+extern int g_PathfindingQueueHead;
+extern int g_PathfindingQueueTail;
+extern int g_PathfindingNodesExpanded;
+extern int g_SoftwareEdgeCount;
+extern int g_SoftwareMinScanline;
+extern int g_SoftwareMaxScanline;
+extern int g_RenderedTriangleCount;
+extern int g_ActiveEdgeCount;
+extern int g_MinScanline;
+extern int g_MaxScanline;
+extern int g_PreviousLetterboxMode;
+
+// int[18]
+extern int g_ScatIndices[18];
+
+// uchar
+extern uchar g_PathfindingVisitedMinus1;
 

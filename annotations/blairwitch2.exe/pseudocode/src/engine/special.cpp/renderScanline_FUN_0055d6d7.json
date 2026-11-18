@@ -1,0 +1,159 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2,
+    "complexity_score": 52,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 7,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_indirect_jump",
+      "warning_jumptable"
+    ],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "004625f0",
+      "from_addr": "004628e6",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00461f70",
+      "from_addr": "00462224",
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004abdd0",
+      "from_addr": "004ac0cf",
+      "name": "engine_fpoly.c_rasterizePolygonHardware_FUN_004abdd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051e130",
+      "from_addr": "0051e534",
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051d050",
+      "from_addr": "0051d2c6",
+      "name": "engine_prim.c_renderIndexedPolygonSoftware_FUN_0051d050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051cb20",
+      "from_addr": "0051cf7b",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051da80",
+      "from_addr": "0051e043",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_0051da80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a0b0",
+      "from_addr": "0059a54a",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055d6d7",
+    "address_range": [
+      [
+        "0055d6d7",
+        "0055d6dc"
+      ]
+    ],
+    "convention": "__edi_esi_ebx",
+    "is_ebp_frame": true,
+    "name": "engine_special.cpp_renderScanline_FUN_0055d6d7",
+    "signature": "void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_0055d6d7(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c35e6c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "BRANCHIND": 1
+    },
+    "pcode_op_count": 1
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00580127",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00563257",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b5710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00530710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Jump table recovery failed",
+      "line": 5,
+      "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
+      "text": "/* WARNING: Could not recover jumptable at 0x0055d6d7. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 6,
+      "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_ScanlineRenderFunc)();",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode)
 
 {
@@ -17,10 +15,10 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *t
   uint uVar4;
   int iVar5;
   char (*pacVar6) [80];
-  uint *puVar7;
+  SRenderVertex *pSVar7;
   int iVar8;
   char *pcVar9;
-  uint *puVar10;
+  SRenderVertex *pSVar10;
   int iVar11;
   int iVar12;
   byte bVar13;
@@ -38,7 +36,7 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *t
   int local_14;
   
   bVar13 = 0;
-  pcVar9 = &DAT_005b9258;
+  pcVar9 = g_FontTextureInfo.texture_name;
   pacVar6 = this_ptr->bitmap_files + this_ptr->char_bitmap_index[character_code];
   do {
     cVar1 = (*pacVar6)[0];
@@ -49,18 +47,18 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *t
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  engine_texture_cpp_ensureTextureLoaded_FUN_00545920((SMRGLTextureBasic *)&DAT_005b9250);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00545920(&g_FontTextureInfo);
   local_18 = 0x4e1c;
   local_14 = 0x4e1d;
   local_1c = 19999;
-  uVar4 = _DAT_01c70f6c;
-  uVar2 = _DAT_01c70f64;
-  uVar3 = _DAT_01c70f68;
+  uVar4 = g_ShadowColorBlue;
+  uVar2 = g_ShadowColorRed;
+  uVar3 = g_ShadowColorGreen;
   if (color_mode != -2) {
     if (color_mode < 0) {
-      _DAT_006af578 = 0xffff;
-      _DAT_006af57c = 0xffff;
-      _DAT_006af574 = 0xffff;
+      g_SRenderVertex_ARRAY_005c5014[0x4e1c].g = 0xffff;
+      g_SRenderVertex_ARRAY_005c5014[0x4e1c].b = 0xffff;
+      g_SRenderVertex_ARRAY_005c5014[0x4e1c].r = 0xffff;
       goto LAB_004912b7;
     }
     iVar5 = color_mode * 3;
@@ -68,32 +66,32 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *t
     uVar2 = (uint)g_SourcePaletteData[iVar5];
     uVar3 = (uint)g_SourcePaletteData[iVar5 + 1];
   }
-  _DAT_006af578 = uVar3 << 8;
-  _DAT_006af574 = uVar2 << 8;
-  _DAT_006af57c = uVar4 << 8;
+  g_SRenderVertex_ARRAY_005c5014[0x4e1c].g = uVar3 << 8;
+  g_SRenderVertex_ARRAY_005c5014[0x4e1c].r = uVar2 << 8;
+  g_SRenderVertex_ARRAY_005c5014[0x4e1c].b = uVar4 << 8;
 LAB_004912b7:
-  DAT_006af55c = 0x10000;
-  DAT_006af560 = 0x10000;
-  puVar7 = &DAT_006af554;
-  puVar10 = &DAT_006af584;
+  g_SRenderVertex_ARRAY_005c5014[0x4e1c].projected_vertex.transformed_z = 0x10000;
+  g_SRenderVertex_ARRAY_005c5014[0x4e1c].projected_vertex.inv_z = 0x10000;
+  pSVar7 = g_SRenderVertex_ARRAY_005c5014 + 0x4e1c;
+  pSVar10 = g_SRenderVertex_ARRAY_005c5014 + 0x4e1d;
   for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar10 = *puVar7;
-    puVar7 = puVar7 + (uint)bVar13 * -2 + 1;
-    puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
+    (pSVar10->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
+    pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar13 * -2 + 1) * 4);
+    pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);
   }
-  puVar7 = &DAT_006af554;
-  puVar10 = &DAT_006af5b4;
+  pSVar7 = g_SRenderVertex_ARRAY_005c5014 + 0x4e1c;
+  pSVar10 = g_SRenderVertex_ARRAY_005c5014 + 0x4e1e;
   for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar10 = *puVar7;
-    puVar7 = puVar7 + (uint)bVar13 * -2 + 1;
-    puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
+    (pSVar10->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
+    pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar13 * -2 + 1) * 4);
+    pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);
   }
-  puVar7 = &DAT_006af554;
-  puVar10 = &DAT_006af5e4;
+  pSVar7 = g_SRenderVertex_ARRAY_005c5014 + 0x4e1c;
+  pSVar10 = g_SRenderVertex_ARRAY_005c5014 + 19999;
   for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar10 = *puVar7;
-    puVar7 = puVar7 + (uint)bVar13 * -2 + 1;
-    puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
+    (pSVar10->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
+    pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar13 * -2 + 1) * 4);
+    pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);
   }
   local_20 = x * 0x10000 + -0x1000;
   iVar5 = (right_x + 1) * 0x10000;
@@ -105,50 +103,46 @@ LAB_004912b7:
     iVar12 = iVar11 + 0x9000;
     iVar8 = iVar5 + 0x9000;
   }
-  DAT_006af554 = (uint)
-                 ((longlong)
-                  ((((longlong)(local_20 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10)
-                   << 0x20 |
-                  (longlong)(local_20 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
-                 (longlong)g_Projection.half_width_fixed);
-  DAT_006af558 = (uint)
-                 ((longlong)
-                  ((((longlong)(local_24 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10)
-                   << 0x20 |
-                  (longlong)(local_24 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
-                 (longlong)g_Projection.neg_half_height_fixed);
-  DAT_006af584 = (uint)
-                 ((longlong)
-                  ((((longlong)(iVar8 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) <<
-                   0x20 | (longlong)(iVar8 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
-                 (longlong)g_Projection.half_width_fixed);
-  DAT_006af588 = (uint)
-                 ((longlong)
-                  ((((longlong)(local_24 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10)
-                   << 0x20 |
-                  (longlong)(local_24 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
-                 (longlong)g_Projection.neg_half_height_fixed);
-  DAT_006af5b4 = (uint)
-                 ((longlong)
-                  ((((longlong)(iVar8 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) <<
-                   0x20 | (longlong)(iVar8 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
-                 (longlong)g_Projection.half_width_fixed);
-  DAT_006af5b8 = (uint)
-                 ((longlong)
-                  ((((longlong)(iVar12 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) <<
-                   0x20 | (longlong)(iVar12 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU)
-                 / (longlong)g_Projection.neg_half_height_fixed);
-  DAT_006af5e4 = (uint)
-                 ((longlong)
-                  ((((longlong)(local_20 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10)
-                   << 0x20 |
-                  (longlong)(local_20 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
-                 (longlong)g_Projection.half_width_fixed);
-  DAT_006af5e8 = (uint)
-                 ((longlong)
-                  ((((longlong)(iVar12 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) <<
-                   0x20 | (longlong)(iVar12 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU)
-                 / (longlong)g_Projection.neg_half_height_fixed);
+  g_SRenderVertex_ARRAY_005c5014[0x4e1c].projected_vertex.transformed_x =
+       (int)((longlong)
+             ((((longlong)(local_20 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) <<
+              0x20 | (longlong)(local_20 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.half_width_fixed);
+  g_SRenderVertex_ARRAY_005c5014[0x4e1c].projected_vertex.transformed_y =
+       (int)((longlong)
+             ((((longlong)(local_24 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) <<
+              0x20 | (longlong)(local_24 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.neg_half_height_fixed);
+  g_SRenderVertex_ARRAY_005c5014[0x4e1d].projected_vertex.transformed_x =
+       (int)((longlong)
+             ((((longlong)(iVar8 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar8 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.half_width_fixed);
+  g_SRenderVertex_ARRAY_005c5014[0x4e1d].projected_vertex.transformed_y =
+       (int)((longlong)
+             ((((longlong)(local_24 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) <<
+              0x20 | (longlong)(local_24 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.neg_half_height_fixed);
+  g_SRenderVertex_ARRAY_005c5014[0x4e1e].projected_vertex.transformed_x =
+       (int)((longlong)
+             ((((longlong)(iVar8 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar8 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.half_width_fixed);
+  g_SRenderVertex_ARRAY_005c5014[0x4e1e].projected_vertex.transformed_y =
+       (int)((longlong)
+             ((((longlong)(iVar12 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar12 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.neg_half_height_fixed);
+  g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_x =
+       (int)((longlong)
+             ((((longlong)(local_20 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) <<
+              0x20 | (longlong)(local_20 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.half_width_fixed);
+  g_SRenderVertex_ARRAY_005c5014[19999].projected_vertex.transformed_y =
+       (int)((longlong)
+             ((((longlong)(iVar12 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar12 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.neg_half_height_fixed);
   engine_matrix_c_projectCachedPoint_FUN_004cd240(0x4e1c);
   engine_matrix_c_projectCachedPoint_FUN_004cd240(local_14);
   engine_matrix_c_projectCachedPoint_FUN_004cd240(0x4e1e);
@@ -158,23 +152,23 @@ LAB_004912b7:
            (int)this_ptr->bitmap_data[this_ptr->char_bitmap_index[character_code]];
   iVar5 = (iVar11 % local_2c) * 0x10000 + -0x1000;
   iVar11 = (iVar11 / local_2c) * 0x10000 + -0x1000;
-  DAT_006af5cc = (iVar5 + iVar8) - local_20;
+  g_SRenderVertex_ARRAY_005c5014[0x4e1e].u = (iVar5 + iVar8) - local_20;
   iVar8 = (iVar11 + iVar12) - local_24;
   if (g_UseExternalRenderer == 0) {
     iVar8 = iVar8 + 0x8000;
-    DAT_006af5cc = DAT_006af5cc + 0x8000;
+    g_SRenderVertex_ARRAY_005c5014[0x4e1e].u = g_SRenderVertex_ARRAY_005c5014[0x4e1e].u + 0x8000;
   }
-  (&DAT_005c502c)[local_18 * 0xc] = iVar5;
-  *(int *)(&DAT_005c5030 + local_18 * 0x30) = iVar11;
+  g_SRenderVertex_ARRAY_005c5014[local_18].u = iVar5;
+  g_SRenderVertex_ARRAY_005c5014[local_18].v = iVar11;
   local_28 = local_14;
-  (&DAT_005c502c)[local_14 * 0xc] = DAT_006af5cc;
-  *(int *)(&DAT_005c5030 + local_14 * 0x30) = iVar11;
+  g_SRenderVertex_ARRAY_005c5014[local_14].u = g_SRenderVertex_ARRAY_005c5014[0x4e1e].u;
+  g_SRenderVertex_ARRAY_005c5014[local_14].v = iVar11;
   local_34 = 0x4e1e;
   local_54.surface_normal.D.i = 0;
-  DAT_006af5d0 = iVar8;
-  (&DAT_005c502c)[local_1c * 0xc] = iVar5;
+  g_SRenderVertex_ARRAY_005c5014[0x4e1e].v = iVar8;
+  g_SRenderVertex_ARRAY_005c5014[local_1c].u = iVar5;
   local_54.base.count = 4;
-  *(int *)(&DAT_005c5030 + local_1c * 0x30) = iVar8;
+  g_SRenderVertex_ARRAY_005c5014[local_1c].v = iVar8;
   local_54.surface_normal.C.i = 0;
   local_3c = local_18;
   local_54.surface_normal.B.i = 0;

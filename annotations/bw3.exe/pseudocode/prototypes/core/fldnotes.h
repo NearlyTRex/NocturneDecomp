@@ -15,7 +15,7 @@ int __cdecl SPageResource::dtor(SPageResource *this_ptr);
 
 // Original: core_fldnotes.cpp_SPageResource_setLink_FUN_004a83d0
 // Address: 004a83d0
-void __cdecl SPageResource::setLink(SPageResource *this_ptr,char *param_2);
+void __cdecl SPageResource::setLink(SPageResource *this_ptr,char *link);
 
 // Original: core_fldnotes.cpp_SPageResource_onMouse_FUN_004a8470
 // Address: 004a8470

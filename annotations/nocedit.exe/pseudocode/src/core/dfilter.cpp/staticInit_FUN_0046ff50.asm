@@ -10,7 +10,7 @@
 ;   WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef6c
 ;   WatcomStaticDestructorNode g_CFilterCacheDestructorNode
 ;   WatcomStaticDestructorNode g_CFilterFXDestructorNode
-;   CDemonFilter[8] CDemonFilter_ARRAY_020a4878
+;   CDemonFilter[8] g_PlayerFilterPool
 ;   CDemonFilter[4] CDemonFilter_ARRAY_020a4ad8
 ;   CFilterCache g_CFilterCacheInstance
 ;   CFilterFX g_CFilterFXInstance
@@ -28,7 +28,7 @@ section .text
     PUSH 0x65b390                       ; 0046ff50 | g_CDemonFilterTypeInfo
         ;   Label: core_dfilter.cpp_staticInit_FUN_0046ff50
     PUSH 0x8                            ; 0046ff55
-    PUSH 0x20a4878                      ; 0046ff57 | CDemonFilter_ARRAY_020a4878
+    PUSH 0x20a4878                      ; 0046ff57 | g_PlayerFilterPool
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 0046ff5c
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0046ff61

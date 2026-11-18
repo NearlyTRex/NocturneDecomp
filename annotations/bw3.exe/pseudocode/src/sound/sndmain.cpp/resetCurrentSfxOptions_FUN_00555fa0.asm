@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ceb91c
+;   int g_SfxLastSlot
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxOptions_reset_FUN_00555bf0
@@ -14,7 +14,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02ceb91c]      ; 00555fa0 | DAT_02ceb91c
+    MOV EDX,dword ptr [0x02ceb91c]      ; 00555fa0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_resetCurrentSfxOptions_FUN_00555fa0
     LEA EAX,[EDX*0x4 + 0x0]             ; 00555fa6
     SUB EAX,EDX                         ; 00555fad

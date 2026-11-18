@@ -47,12 +47,12 @@
 ;   TerminatedCString s_d_d_n_005ea748
 ;   TerminatedCString s_core_sound_cpp_005ea752
 ;   TerminatedCString s_Invalid_sfx_string_s_005ea764
-;   undefined4 DAT_005ea77b
-;   undefined4 DAT_005ea77d
-;   undefined1 DAT_005ea77f
-;   undefined1 DAT_005ea780
-;   undefined1 DAT_005ea781
-;   undefined1 DAT_005ea782
+;   TerminatedCString s_anon_005ea77b
+;   TerminatedCString s_anon_005ea77d
+;   TerminatedCString s_wav_005ea77f
+;   undefined4 s_wav_005ea77f+1
+;   undefined4 s_wav_005ea77f+2
+;   undefined4 s_wav_005ea77f+3
 ;   TerminatedCString s_Can_t_find_wav_s_005ea784
 ;   TerminatedCString s_f_n_005ea798
 ;   TerminatedCString s_core_sound_cpp_005ea79e
@@ -62,8 +62,8 @@
 ;   ... and 13 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
-;   core_set.cpp_FUN_00533190
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00533190
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0
 ;   crt_stdio.c_sscanf_FUN_005ba8cc
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -115,7 +115,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0055950b
     INC AL                              ; 0055950d
     AND EAX,0xff                        ; 0055950f
-    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00559514 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],0x2  ; 00559514 | g_CharacterClassificationTable
     JZ 0x00559718                       ; 0055951b
         ;   XREF to: 00559718 (CONDITIONAL_JUMP)  ; LAB_00559718
     MOV DL,0x2e                         ; 00559521
@@ -145,7 +145,7 @@ section .text
         ;   Label: LAB_00559542
     JNZ 0x00559571                      ; 00559544
         ;   XREF to: 00559571 (CONDITIONAL_JUMP)  ; LAB_00559571
-    MOV ESI,0x5ea77f                    ; 00559546 | DAT_005ea77f
+    MOV ESI,0x5ea77f                    ; 00559546 | = ".wav"
     LEA EDI,[ESP + 0x8]                 ; 0055954b
     PUSH EDI                            ; 0055954f
     SUB ECX,ECX                         ; 00559550
@@ -153,13 +153,13 @@ section .text
     MOV AL,0x0                          ; 00559553
     SCASB.REPNE ES:EDI                  ; 00559555
     DEC EDI                             ; 00559557
-    MOV AL,byte ptr [ESI]               ; 00559558 | DAT_005ea77f | DAT_005ea781
+    MOV AL,byte ptr [ESI]               ; 00559558 | = ".wav" | s_wav_005ea77f+2
         ;   Label: LAB_00559558
     MOV byte ptr [EDI],AL               ; 0055955a
     CMP AL,0x0                          ; 0055955c
     JZ 0x00559570                       ; 0055955e
         ;   XREF to: 00559570 (CONDITIONAL_JUMP)  ; LAB_00559570
-    MOV AL,byte ptr [ESI + 0x1]         ; 00559560 | DAT_005ea780 | DAT_005ea782
+    MOV AL,byte ptr [ESI + 0x1]         ; 00559560 | s_wav_005ea77f+1 | s_wav_005ea77f+3
     ADD ESI,0x2                         ; 00559563
     MOV byte ptr [EDI + 0x1],AL         ; 00559566
     ADD EDI,0x2                         ; 00559569
@@ -171,8 +171,8 @@ section .text
     MOV ECX,0x19                        ; 00559571
         ;   Label: LAB_00559571
     LEA EDI,[ESP + 0xd0]                ; 00559576
-    MOV ESI,0x61c220                    ; 0055957d | DAT_0061c220
-    MOVSD.REP ES:EDI,ESI                ; 00559582 | DAT_0061c220 | DAT_0061c224
+    MOV ESI,0x61c220                    ; 0055957d | g_SoundResultBufferTemplate
+    MOVSD.REP ES:EDI,ESI                ; 00559582 | g_SoundResultBufferTemplate | g_SoundResultBufferTemplate+4
     MOV DL,0x21                         ; 00559584
     LEA ESI,[ESP + 0x8]                 ; 00559586
     MOV AL,byte ptr [ESI]               ; 0055958a
@@ -213,8 +213,8 @@ section .text
     PUSH EAX                            ; 005595da
     MOV ESI,dword ptr [0x0061b5a8]      ; 005595db | g_CDemonSetPtr
     PUSH ESI                            ; 005595e1 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00533190      ; 005595e2
-        ;   XREF to: 00533190 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00533190()
+    CALL core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00533190 ; 005595e2
+        ;   XREF to: 00533190 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00533190(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 005595e7
     MOV dword ptr [ESP + 0x150],EAX     ; 005595ea
     MOV dword ptr [ESP + 0x15c],EAX     ; 005595f1
@@ -265,7 +265,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0055967d
     INC AL                              ; 0055967f
     AND EAX,0xff                        ; 00559681
-    TEST byte ptr [EAX + 0x61ed94],BL   ; 00559686 | DAT_0061ed94
+    TEST byte ptr [EAX + 0x61ed94],BL   ; 00559686 | g_CharacterClassificationTable
     JZ 0x00559920                       ; 0055968c
         ;   XREF to: 00559920 (CONDITIONAL_JUMP)  ; LAB_00559920
     INC dword ptr [ESP + 0x164]         ; 00559692
@@ -364,12 +364,12 @@ section .text
     MOV ECX,0x5ea752                    ; 00559783 | = "..\\core\\sound.cpp"
     MOV EBX,0x137                       ; 00559788
     PUSH 0x5ea764                       ; 0055978d | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00559792 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00559798 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0055979e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00559792 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00559798 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0055979e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005597a3
-    PUSH 0x5ea77b                       ; 005597a6 | DAT_005ea77b
+    PUSH 0x5ea77b                       ; 005597a6 | = "?"
         ;   Label: LAB_005597a6
     PUSH ESI                            ; 005597ab
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005597ac
@@ -379,7 +379,7 @@ section .text
     CMP dword ptr [ESP + 0x14c],0x9     ; 005597b6
     JLE 0x005597d0                      ; 005597be
         ;   XREF to: 005597d0 (CONDITIONAL_JUMP)  ; LAB_005597d0
-    PUSH 0x5ea77d                       ; 005597c0 | DAT_005ea77d
+    PUSH 0x5ea77d                       ; 005597c0 | = "?"
     PUSH ESI                            ; 005597c5
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005597c6
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
@@ -467,7 +467,7 @@ section .text
     PUSH EAX                            ; 005598b0
     LEA EAX,[ESP + 0xd4]                ; 005598b1
     PUSH EAX                            ; 005598b8
-    MOV EAX,[0x0061c068]                ; 005598b9 | DAT_0061c068
+    MOV EAX,[0x0061c068]                ; 005598b9 | g_CSound_PTR_0061c068
     PUSH EAX                            ; 005598be
     MOV byte ptr [EDX],0x0              ; 005598bf
     CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0 ; 005598c2
@@ -483,7 +483,7 @@ section .text
     PUSH EAX                            ; 005598e1
     LEA EAX,[ESP + 0xd4]                ; 005598e2
     PUSH EAX                            ; 005598e9
-    MOV ECX,dword ptr [0x0061c068]      ; 005598ea | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 005598ea | g_CSound_PTR_0061c068
     PUSH ECX                            ; 005598f0
     CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0 ; 005598f1
         ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0(CSound * this_ptr, char * out_result, char * wildcard_pattern)
@@ -532,10 +532,10 @@ section .text
     MOV EDX,0x5ea79e                    ; 00559968 | = "..\\core\\sound.cpp"
     MOV ECX,0x1a4                       ; 0055996d
     PUSH 0x5ea7b0                       ; 00559972 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00559977 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0055997d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00559983
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00559977 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0055997d | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00559983
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00559988
     MOV EAX,dword ptr [ESP + 0x154]     ; 0055998b
     ADD dword ptr [ESP + 0x164],EAX     ; 00559992
@@ -577,10 +577,10 @@ section .text
     MOV EDI,0x5ea7cd                    ; 005599fc | = "..\\core\\sound.cpp"
     MOV EAX,0x1aa                       ; 00559a01
     PUSH 0x5ea7df                       ; 00559a06 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d046a0],EDI      ; 00559a0b | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00559a11 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00559a16
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 00559a0b | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00559a11 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00559a16
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00559a1b
     MOV EAX,dword ptr [ESP + 0x158]     ; 00559a1e
     ADD dword ptr [ESP + 0x164],EAX     ; 00559a25
@@ -604,10 +604,10 @@ section .text
     MOV ECX,0x5ea7f6                    ; 00559a55 | = "..\\core\\sound.cpp"
     MOV EDI,0x1ad                       ; 00559a5a
     PUSH 0x5ea808                       ; 00559a5f | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00559a64 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00559a6a | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00559a70
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00559a64 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00559a6a | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00559a70
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00559a75
     JMP 0x00559699                      ; 00559a78
         ;   XREF to: 00559699 (UNCONDITIONAL_JUMP)  ; LAB_00559699

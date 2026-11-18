@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_dynamite_cpp_CDynamite_getActorType_FUN_0046ebc0(CDynamite *this_ptr)
 
 {
-  return &g_CDynamiteActorType_01bca088;
+  return &g_CDynamiteClassInfo;
 }

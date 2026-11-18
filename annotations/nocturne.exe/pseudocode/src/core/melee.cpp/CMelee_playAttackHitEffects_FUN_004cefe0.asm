@@ -10,7 +10,7 @@
 ; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; Referenced Globals:
-;   undefined4 g_CCharacterActorType_00765a60.name_hash
+;   undefined4 g_CCharacterClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -37,7 +37,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0 ; 004ceff8
         ;   XREF to: 0040bce0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0(CDemonActor * this_ptr, int attack_flags, SDamageInfo * damage_info, CDemonActor * victim)
     ADD ESP,0x10                        ; 004ceffd
-    MOV EDI,dword ptr [0x00765a98]      ; 004cf000 | g_CCharacterActorType_00765a60.name_hash
+    MOV EDI,dword ptr [0x00765a98]      ; 004cf000 | g_CCharacterClassInfo.name_hash
     PUSH EDI                            ; 004cf006
     PUSH ESI                            ; 004cf007
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004cf008

@@ -24,11 +24,11 @@
 ;   core_mobster.cpp_CMobster_process_FUN_0051ce40 at 0051ded9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e9db2
-;   undefined4 DAT_005e9db6
+;   float g_FLOAT_005e9db2 = 1.570796
+;   float g_FLOAT_005e9db6 = -1.570796
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;
 ; *****************************************************************************
 
@@ -61,7 +61,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc28c]    ; 0051cc6f
         ;   Label: LAB_0051cc6f
     FLD float ptr [EAX + 0x34]          ; 0051cc75
-    FADD float ptr [0x005e9db6]         ; 0051cc78 | DAT_005e9db6
+    FADD float ptr [0x005e9db6]         ; 0051cc78 | g_FLOAT_005e9db6
     FSTP float ptr [EBX + 0x34]         ; 0051cc7e
         ;   Label: LAB_0051cc7e
     LEA EAX,[ESP + 0x18]                ; 0051cc81
@@ -70,8 +70,8 @@ section .text
     PUSH ECX                            ; 0051cc8c
     LEA ESI,[ESP + 0x38]                ; 0051cc8d
     LEA EDI,[ESP + 0x8]                 ; 0051cc91
-    CALL core_actor.cpp_FUN_00408b40    ; 0051cc95
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0051cc95
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x38]                ; 0051cc9a
     ADD ESP,0x8                         ; 0051cc9e
     MOVSD ES:EDI,ESI                    ; 0051cca1
@@ -107,7 +107,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc28c]    ; 0051ccf7
         ;   Label: LAB_0051ccf7
     FLD float ptr [EAX + 0x34]          ; 0051ccfd
-    FADD float ptr [0x005e9db2]         ; 0051cd00 | DAT_005e9db2
+    FADD float ptr [0x005e9db2]         ; 0051cd00 | g_FLOAT_005e9db2
     JMP 0x0051cc7e                      ; 0051cd06
         ;   XREF to: 0051cc7e (UNCONDITIONAL_JUMP)  ; LAB_0051cc7e
 

@@ -24,11 +24,11 @@
 ;   core_mobster.cpp_CMobster_process_FUN_004fde80 at 004fe908
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ded6d
-;   undefined4 DAT_005ded71
+;   float g_FLOAT_005ded6d = 1.570796
+;   float g_FLOAT_005ded71 = -1.570796
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;
 ; *****************************************************************************
@@ -61,7 +61,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10b1c]   ; 004fdd97
         ;   Label: LAB_004fdd97
     FLD float ptr [EAX + 0x34]          ; 004fdd9d
-    FADD float ptr [0x005ded71]         ; 004fdda0 | DAT_005ded71
+    FADD float ptr [0x005ded71]         ; 004fdda0 | g_FLOAT_005ded71
     FSTP float ptr [EBX + 0x34]         ; 004fdda6
         ;   Label: LAB_004fdda6
     LEA EAX,[ESP + 0x18]                ; 004fdda9
@@ -70,8 +70,8 @@ section .text
     PUSH ECX                            ; 004fddb4
     LEA ESI,[ESP + 0x38]                ; 004fddb5
     LEA EDI,[ESP + 0x14]                ; 004fddb9
-    CALL core_actor.cpp_FUN_00408d70    ; 004fddbd
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004fddbd
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x38]                ; 004fddc2
     ADD ESP,0x8                         ; 004fddc6
     MOVSD ES:EDI,ESI                    ; 004fddc9
@@ -115,7 +115,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10b1c]   ; 004fde3a
         ;   Label: LAB_004fde3a
     FLD float ptr [EAX + 0x34]          ; 004fde40
-    FADD float ptr [0x005ded6d]         ; 004fde43 | DAT_005ded6d
+    FADD float ptr [0x005ded6d]         ; 004fde43 | g_FLOAT_005ded6d
     JMP 0x004fdda6                      ; 004fde49
         ;   XREF to: 004fdda6 (UNCONDITIONAL_JUMP)  ; LAB_004fdda6
 

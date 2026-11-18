@@ -8,7 +8,7 @@
 ; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f650
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   undefined4 DAT_01d2d908
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     SUB ESP,0x1c                        ; 004e6d52
     MOV ECX,dword ptr [ESP + 0x28]      ; 004e6d55
     MOV EBX,ESI                         ; 004e6d59
-    MOV EDX,dword ptr [0x0061f650]      ; 004e6d5b | DAT_0061f650
+    MOV EDX,dword ptr [0x0061f650]      ; 004e6d5b | g_CDemonMission_PTR_0061f650
     MOV ESI,dword ptr [EDX + 0x1008]    ; 004e6d61 | DAT_01d2d908
     LEA EAX,[ECX + 0x158]               ; 004e6d67
     TEST ESI,ESI                        ; 004e6d6d
@@ -75,7 +75,7 @@ section .text
     FLD float ptr [ECX + 0x2d4]         ; 004e6dcf
         ;   Label: LAB_004e6dcf
     CALL crt_math.c_round_FUN_005c03a0  ; 004e6dd5
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH EAX                            ; 004e6dda
     FISTP dword ptr [ESP + 0x1c]        ; 004e6ddb
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900 ; 004e6ddf

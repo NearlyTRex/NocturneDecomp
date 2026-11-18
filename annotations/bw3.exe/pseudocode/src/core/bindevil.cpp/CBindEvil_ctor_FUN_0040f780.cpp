@@ -14,7 +14,7 @@ CBindEvil * __cdecl core_bindevil_cpp_CBindEvil_ctor_FUN_0040f780(CBindEvil *thi
   pCVar1 = (CBindEvil *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   (pCVar1->base).base.vtable._ub = &g_CBindEvilVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            (&(pCVar1->base).model,(char *)0x5b6321);
+            (&(pCVar1->base).model,"bindbox.kfm");
   (pCVar1->base).is_spread_weapon = 0;
   (pCVar1->base).fire_mode = FIRE_MODE_AUTOMATIC;
   (pCVar1->base).weapon_type = WEAPON_TYPE_DYNAMITE;

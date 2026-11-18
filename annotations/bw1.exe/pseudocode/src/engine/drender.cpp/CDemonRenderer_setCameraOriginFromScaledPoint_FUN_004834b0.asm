@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[14]:
+; XREF[15]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0 at 004170c9
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700 at 0044d85e
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0 at 0044d097
@@ -19,12 +19,12 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fea3b
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_005188a0 at 005188b0
 ;   core_moon.cpp_CMoon_render_FUN_00521e40 at 00521ee2
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 005510ce
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590 at 0055559f
-;   core_set.cpp_FUN_00550da0 at 005510ce
-;   ... and 4 more
+;   ... and 5 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db35c
+;   double g_CameraScaleFactor = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -38,7 +38,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
     SUB ESP,0x8                         ; 004834b1
     MOV EAX,dword ptr [ESP + 0x14]      ; 004834b4
-    FLD double ptr [0x005db35c]         ; 004834b8 | DAT_005db35c
+    FLD double ptr [0x005db35c]         ; 004834b8 | g_CameraScaleFactor
     FLD float ptr [EAX + 0x8]           ; 004834be
     FMUL ST1                            ; 004834c1
     FLD float ptr [EAX + 0x4]           ; 004834c3
@@ -47,10 +47,10 @@ section .text
     FMULP ST3                           ; 004834ca
     FXCH                                ; 004834cc
     CALL crt_math.c_round_FUN_005c03a0  ; 004834ce
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 004834d3
     CALL crt_math.c_round_FUN_005c03a0  ; 004834d5
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 004834da
     FISTP dword ptr [ESP]               ; 004834dc
     FISTP dword ptr [ESP + 0x4]         ; 004834df
@@ -58,7 +58,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 004834e6
     PUSH EDX                            ; 004834ea
     CALL crt_math.c_round_FUN_005c03a0  ; 004834eb
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     PUSH ECX                            ; 004834f0
     FISTP dword ptr [ESP + 0xc]         ; 004834f1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004834f5

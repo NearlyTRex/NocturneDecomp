@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CFirefly.h"
 #include "types/classes/CGlassParticle.h"
+#include "types/classes/CMuzzleFlash.h"
 #include "types/classes/CSpark.h"
 
 // =============================================================================
@@ -18,6 +19,15 @@ extern CFirefly CFirefly_ARRAY_01c9dab8[64];
 // CGlassParticle[256]
 extern CGlassParticle g_GlassParticlePool[256];
 
+// CMuzzleFlash[20]
+extern CMuzzleFlash g_MuzzleFlashPool[20];
+
 // CSpark[256]
 extern CSpark g_SparkPool[256];
+
+// int
+extern int g_INT_01c986b0;
+extern int g_INT_01c9dab4;
+extern int g_MuzzleFlashAllocIndex;
+extern int g_GlassParticleAllocIndex;
 

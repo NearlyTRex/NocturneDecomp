@@ -7,58 +7,61 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_0058d670(CWerewolf *this_ptr)
 
 {
   int iVar1;
+  CVector3f *unaff_ESI;
   CMatrix3x4f *pCVar2;
-  uint *puVar3;
+  CMatrix3x4f *pCVar3;
   byte bVar4;
   float afStackY_1020 [1001];
   CVector3f *translation;
-  uint auStack_68 [12];
+  CMatrix3x4f CStack_68;
   CVector3f CStack_38;
   CVector3f CStack_2c;
   float fStack_20;
-  float afStack_1c [5];
+  float afStack_1c [2];
+  CVector3f CStack_14;
   
   bVar4 = 0;
   if (((this_ptr->base).base.was_rendered_opaque == 0) || ((this_ptr->base).pool_me != 0)) {
     return 0;
   }
   if (1.0 < this_ptr->eye_glow_phase) {
-    this_ptr->eye_glow_phase = this_ptr->eye_glow_phase + _DAT_005ee756;
+    this_ptr->eye_glow_phase = this_ptr->eye_glow_phase + -1.0f;
   }
-  if (this_ptr->eye_glow_phase <= (float)_DAT_005ee75a) {
+  if (this_ptr->eye_glow_phase <= (float)0.80000000000000004) {
     if ((this_ptr->base).base.was_rendered_opaque != 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
       pCVar2 = (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                this_ptr->bone_indices[4];
-      puVar3 = auStack_68;
+      pCVar3 = &CStack_68;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar3 = pCVar2->m[0].w;
+        pCVar3->m[0].w = pCVar2->m[0].w;
         pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-        puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
       }
-      core_xform_cpp_matrixToEulerAngles_FUN_00591de0(auStack_68);
+      core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&CStack_68,unaff_ESI);
       CStack_2c.x = fStack_20;
       *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + 4) = afStack_1c[(uint)bVar4 * -2];
       *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
            afStack_1c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-      core_xform_cpp_FUN_00592720(auStack_68);
+      core_xform_cpp_getTranslation_FUN_00592720(&CStack_68,&CStack_14);
       translation = &CStack_38;
-      CStack_38.x = afStack_1c[2];
-      *(float *)((int)&CStack_38 + (uint)bVar4 * -8 + 4) = afStack_1c[(uint)bVar4 * -2 + 3];
-      *(float *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-           afStack_1c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+      CStack_38.x = CStack_14.x;
+      *(uint *)((int)&CStack_38 + (uint)bVar4 * -8 + 4) =
+           *(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + 4);
+      *(uint *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+           *(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-                (DAT_0060b280,(CVector3f *)&DAT_0265370c,translation);
+                (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector,translation);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-                (DAT_0060b280,&CStack_2c,(CVector3f *)0x0);
-      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_0058d0b0(this_ptr,(CVector3f *)&DAT_02662d04);
-      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_0058d0b0(this_ptr,(CVector3f *)&DAT_02662d10);
+                (g_CDemonRenderer_PTR_0060b280,&CStack_2c,(CVector3f *)0x0);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_0058d0b0(this_ptr,&g_WerewolfEyeGlowOffsetLeft);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_0058d0b0(this_ptr,&g_WerewolfEyeGlowOffsetRight)
+      ;
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);

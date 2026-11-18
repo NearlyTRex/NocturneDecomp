@@ -7,7 +7,7 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   engine_pod.cpp_FUN_00512fb0 at 005138bb
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0 at 005138bb
 ;   sound_sndmain.cpp_getSampleInfo_FUN_00557570 at 0055767a
 ;   sound_sndmain.cpp_loadStreamingSoundFile_FUN_00552350 at 005525ec
 ;

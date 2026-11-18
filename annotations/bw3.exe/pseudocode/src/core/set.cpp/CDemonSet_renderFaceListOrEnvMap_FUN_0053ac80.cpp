@@ -13,13 +13,15 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0053ac80(CDemonSe
   
   if (g_CGamePtr->suppress_set_geometry == 0) {
     if (g_CGamePtr->render_mode != 0) {
-      iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+      iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+                        (g_CDemonRenderer_PTR_005f2afc);
       if (iVar1 == 0) {
         core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_0053a6c0(this_ptr,faces,count,0xffff);
         return;
       }
     }
-    engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(DAT_005f2afc,faces,count,flags);
+    engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0
+              (g_CDemonRenderer_PTR_005f2afc,faces,count,flags);
   }
   return;
 }

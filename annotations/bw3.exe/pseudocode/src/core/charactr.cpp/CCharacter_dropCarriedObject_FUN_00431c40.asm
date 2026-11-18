@@ -20,7 +20,7 @@
 ;   core_prye.cpp_CPrye_dropCarriedObject_FUN_00526ff0 at 0052701e
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH EDX                            ; 00431c6f
     LEA ESI,[ESP + 0xc]                 ; 00431c70
     LEA EDI,[ESP + 0x18]                ; 00431c74
-    CALL core_actor.cpp_FUN_00408b00    ; 00431c78
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00431c78
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xc]                 ; 00431c7d
     LEA EAX,[ESP + 0x18]                ; 00431c81
     ADD ESP,0x8                         ; 00431c85

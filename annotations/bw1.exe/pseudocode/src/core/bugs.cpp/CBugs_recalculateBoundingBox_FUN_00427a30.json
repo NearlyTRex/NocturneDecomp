@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 100,
+    "complexity_score": 84,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "pseudocode_lines": 44,
+    "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 137
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -64,15 +63,15 @@
   "globals": [
     {
       "addr": "005d5170",
-      "name": "DAT_005d5170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d5170",
+      "type": "float",
+      "value": "-0.3333333"
     },
     {
       "addr": "005d5174",
-      "name": "DAT_005d5174",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d5174",
+      "type": "float",
+      "value": "0.3333333"
     }
   ],
   "param_estimates": {
@@ -201,16 +200,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 18,
+      "line": 16,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->bounds).min.x = pCVar7->x;",
@@ -218,7 +209,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 24,
+      "line": 22,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar1->x = pCVar7->x;",
@@ -226,7 +217,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar7) + offsetof(subfield)` equals the real array stride. Replace `pCVar7->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 34,
+      "line": 32,
       "match": "pCVar7 = (T *)&pCVar7[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar7 = (CVector3f *)&pCVar7[5].y;",

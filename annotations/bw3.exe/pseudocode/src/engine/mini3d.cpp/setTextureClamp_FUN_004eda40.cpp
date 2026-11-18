@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setTextureClamp_FUN_004eda40(int clamp_u,int clamp_v)
 
 {
-  if ((_DAT_02cf60f4 != (code *)0x0) && (_DAT_01c6cee8 != 0)) {
-    (*_DAT_02cf60f4)(clamp_u,clamp_v);
+  if ((g_PTR_02cf60f4 != (byte *)0x0) && (g_INT_01c6cee8 != 0)) {
+    (*(code *)g_PTR_02cf60f4)(clamp_u,clamp_v);
     return;
   }
   return;

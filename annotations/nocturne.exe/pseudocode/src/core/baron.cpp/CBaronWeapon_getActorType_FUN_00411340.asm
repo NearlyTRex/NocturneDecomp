@@ -7,13 +7,13 @@
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonActorType g_CBaronWeaponActorType_007644e8
+;   CDemonActorType g_CBaronWeaponClassInfo
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x7644e8                    ; 00411340 | g_CBaronWeaponActorType_007644e8
+    MOV EAX,0x7644e8                    ; 00411340 | g_CBaronWeaponClassInfo
         ;   Label: core_baron.cpp_CBaronWeapon_getActorType_FUN_00411340
     RET                                 ; 00411345
 

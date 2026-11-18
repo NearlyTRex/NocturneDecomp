@@ -21,7 +21,7 @@
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ee2fd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4f07
+;   double g_DOUBLE_005e4f07 = 1.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
@@ -49,7 +49,7 @@ section .text
     JNC 0x004eefa5                      ; 004eeeac
         ;   XREF to: 004eefa5 (CONDITIONAL_JUMP)  ; LAB_004eefa5
     FLD float ptr [EBX + 0x2fe0]        ; 004eeeb2
-    FCOMP double ptr [0x005e4f07]       ; 004eeeb8 | DAT_005e4f07
+    FCOMP double ptr [0x005e4f07]       ; 004eeeb8 | g_DOUBLE_005e4f07
     FNSTSW AX                           ; 004eeebe
     SAHF                                ; 004eeec0
     JA 0x004eefa5                       ; 004eeec1
@@ -82,7 +82,7 @@ section .text
     LEA ESI,[ESP + 0x30]                ; 004eef09
     LEA EDI,[ESP + 0xc]                 ; 004eef0d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 004eef11
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x30]                ; 004eef16
     ADD ESP,0x4                         ; 004eef1a
     MOVSD ES:EDI,ESI                    ; 004eef1d

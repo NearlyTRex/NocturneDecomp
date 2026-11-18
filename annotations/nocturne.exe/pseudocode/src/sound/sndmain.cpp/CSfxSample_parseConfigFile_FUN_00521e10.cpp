@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSample *this_ptr)
 
 {
@@ -45,9 +43,9 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSampl
   int local_18;
   
   bVar11 = 0;
-  fVar4 = (float)_DAT_005bea88;
+  fVar4 = (float)g_Cached3DDistanceFactorInverse;
   fVar1 = 20.0f * fVar4;
-  fVar5 = g_FLOAT_02dbd370 * fVar4;
+  fVar5 = g_SoundReferenceVolumeDistance * fVar4;
   fVar4 = 10000.0f * fVar4;
   this_ptr->loops = 0;
   (this_ptr->sample_info).reference_distance = fVar1;

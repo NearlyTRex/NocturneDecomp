@@ -12,6 +12,6 @@ SSimFrame g_SimFrameHistory[512] = {};
 
 // int
 int g_ChatOutCount = {};
-int INT_02f9c0bc = {};
+int g_ChatOutSequence = {};
 int g_SimFrameCount = {};
 

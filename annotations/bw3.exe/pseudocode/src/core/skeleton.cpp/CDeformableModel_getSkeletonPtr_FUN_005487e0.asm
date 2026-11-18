@@ -7,7 +7,7 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_cloth.cpp_FUN_0043cb00 at 0043ce32
+;   core_cloth.cpp_CCloth_setup_FUN_0043cb00 at 0043ce32
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0054fa00 at 0054fa1a
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0 at 0054eace
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0054bb60 at 0054bb6c
@@ -19,11 +19,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1aaa
 ;   TerminatedCString s_Tried_to_do_something_wi_005d1abf
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -42,10 +42,10 @@ section .text
     MOV ECX,0x5d1aaa                    ; 005487f9 | = "..\\core\\skeleton.cpp"
     MOV EBX,0x2f6                       ; 005487fe
     PUSH 0x5d1abf                       ; 00548803 | = "Tried to do something with the skelet..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00548808 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0054880e | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00548814
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00548808 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 0054880e | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00548814
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00548819
     POP EBX                             ; 0054881c
     MOV EAX,dword ptr [ESP + 0x4]       ; 0054881d

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __stdcall wincore_winrun_cpp_winMain_FUN_00581080(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
 {
@@ -67,15 +65,15 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_00581080(HINSTANCE hInstance,HINSTA
   pcVar12 = &DAT_02d22718;
   if (DAT_02d22718 != '\0') {
     pbVar1 = (byte *)pcVar12;
-    iVar9 = _DAT_02d22818 << 2;
+    iVar9 = g_INT_02d22818 << 2;
     do {
       do {
         pbVar6 = pbVar1;
         pbVar1 = pbVar6 + 1;
       } while (0x20 < *pbVar6);
       *pbVar6 = 0;
-      _DAT_02d22818 = _DAT_02d22818 + 1;
-      *(char **)(iVar9 + 0x2d2281c) = pcVar12;
+      g_INT_02d22818 = g_INT_02d22818 + 1;
+      *(char **)((int)&g_CHAR_PTR_02d2281c + iVar9) = pcVar12;
       bVar3 = *pbVar1;
       pcVar12 = (char *)pbVar1;
       while (bVar3 == 0x20) {
@@ -107,7 +105,7 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_00581080(HINSTANCE hInstance,HINSTA
 LAB_005811d8:
   SetCurrentDirectoryA(&DAT_02d22518);
   local_58.style = 3;
-  local_58.lpfnWndProc = wincore_winrun_cpp_FUN_00580a50;
+  local_58.lpfnWndProc = wincore_winrun_cpp_mainWindowProc_FUN_00580a50;
   local_58.hInstance = hInstance;
   local_58.cbClsExtra = 0;
   local_58.cbWndExtra = 0;
@@ -117,20 +115,20 @@ LAB_005811d8:
   local_58.lpszClassName = PTR_s_Blair_Witch_3_00607280;
   local_58.lpszMenuName = (LPCSTR)0x0;
   RegisterClassA(&local_58);
-  _DAT_02d21b7c = hInstance;
-  wincore_winrun_cpp_FUN_00581010();
-  ShowWindow(_DAT_02d21b78,nCmdShow);
-  UpdateWindow(_DAT_02d21b78);
+  g_INT_02d21b7c = (int)hInstance;
+  wincore_winrun_cpp_createMainWindow_FUN_00581010();
+  ShowWindow(g_MainWindowHandle,nCmdShow);
+  UpdateWindow(g_MainWindowHandle);
   hThread = GetCurrentProcess();
   SetThreadPriority(hThread,2);
   memset(&local_30,0,0x20);
   local_30.dwLength = 0x20;
   GlobalMemoryStatus(&local_30);
-  _DAT_02d21b88 = local_30.dwTotalPhys;
-  _DAT_02d21b8c = local_30.dwAvailPageFile;
-  core_main_c_initializeGameSystems_FUN_004e44e0(_DAT_02d22818,(char **)0x2d2281c);
+  g_TotalPhysicalMemory = local_30.dwTotalPhys;
+  g_AvailableSwapSpace = local_30.dwAvailPageFile;
+  core_main_c_initializeGameSystems_FUN_004e44e0(g_INT_02d22818,&g_CHAR_PTR_02d2281c);
   core_main_c_enterMainGameMenu_FUN_004e44d0();
-  core_main_c_FUN_004e4c70();
+  core_main_c_finalizeGameSystems_FUN_004e4c70();
                     /* WARNING: Subroutine does not return */
   ExitProcess(0);
 }

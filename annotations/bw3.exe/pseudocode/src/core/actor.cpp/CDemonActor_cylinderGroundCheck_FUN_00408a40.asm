@@ -22,8 +22,8 @@
 ;   core_setcolid.cpp_CDemonSet_enableCollision_FUN_0053ec80
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_0053ea20
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
 ;   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_0053e870
-;   core_setcolid.cpp_FUN_0053bc80
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH EAX                            ; 00408a84
     MOV EBP,dword ptr [0x00603b28]      ; 00408a85 | g_CDemonSetPtr
     PUSH EBP                            ; 00408a8b | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 00408a8c
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 00408a8c
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x10],EAX      ; 00408a91
     FLD float ptr [ESP + 0x10]          ; 00408a95
     ADD ESP,0xc                         ; 00408a99

@@ -5,13 +5,13 @@
 // Function prototypes for engine/matrix.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_matrix.c_FUN_00507350
+// Original: engine_matrix.c_interpolatedSin_FUN_00507350
 // Address: 00507350
-int __cdecl FUN_00507350(int angle);
+int __cdecl interpolatedSin(int angle);
 
-// Original: engine_matrix.c_FUN_00507390
+// Original: engine_matrix.c_interpolatedCos_FUN_00507390
 // Address: 00507390
-int FUN_00507390(uint param_1);
+int __cdecl interpolatedCos(int angle);
 
 // Original: engine_matrix.c_invertTransformMatrix_FUN_005073d0
 // Address: 005073d0
@@ -23,7 +23,7 @@ void __cdecl buildRotationMatrix(int pitch,int yaw,int roll);
 
 // Original: engine_matrix.c_transformWorldToView_FUN_005079d0
 // Address: 005079d0
-void transformWorldToView(void);
+CVector3i * __stack_esi transformWorldToView(CVector3i *input_coords,CVector3i *output_coords);
 
 // Original: engine_matrix.c_calculateTransformedZ_FUN_00507aa0
 // Address: 00507aa0
@@ -67,11 +67,11 @@ int __cdecl integerSquareRoot(int value);
 
 // Original: engine_matrix.c_normalizeVector3DFixed_FUN_00508700
 // Address: 00508700
-void normalizeVector3DFixed(int *param_1);
+CVector3i * __stack_esi normalizeVector3DFixed(CVector3i *input_vector,CVector3i *output_vector);
 
 // Original: engine_matrix.c_normalizeVector3DFloat_FUN_00508780
 // Address: 00508780
-int * normalizeVector3DFloat(int *param_1);
+CVector3i * __stack_esi normalizeVector3DFloat(CVector3i *input_vector,CVector3i *output_vector);
 
 // Original: engine_matrix.c_vectorLength3DToInt_FUN_00508860
 // Address: 00508860
@@ -97,9 +97,13 @@ void __cdecl pushViewport(int x,int y,int width,int height);
 // Address: 00509210
 void __cdecl popViewport(void);
 
-// Original: engine_matrix.c_FUN_005093d0
+// Original: engine_matrix.c_projectToScreen_FUN_00509340
+// Address: 00509340
+int __cdecl projectToScreen(int input_value);
+
+// Original: engine_matrix.c_pushMatrixRelativeOffset_FUN_005093d0
 // Address: 005093d0
-void FUN_005093d0(void);
+void __cdecl pushMatrixRelativeOffset(int offset_x,int offset_y,int offset_z);
 
 // Original: engine_matrix.c_popMatrixRelativeOffset_FUN_00509480
 // Address: 00509480

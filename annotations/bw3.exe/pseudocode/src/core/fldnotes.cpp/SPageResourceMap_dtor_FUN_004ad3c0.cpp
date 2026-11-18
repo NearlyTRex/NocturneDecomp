@@ -9,18 +9,18 @@
 SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004ad3c0(SPageResourceMap *this_ptr,uint flags)
 
 {
-  SPageResourceMap *pSVar1;
-  void *ptr;
+  SPageResourceMap *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_PageResource_MapTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_PageResource_MapTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pSVar1 = (SPageResourceMap *)core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0(&this_ptr->base);
+  ptr = (SPageResourceMap *)core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0(&this_ptr->base);
   if ((flags & 2) == 0) {
-    return pSVar1;
+    return ptr;
   }
-  FUN_005a30c4(pSVar1);
-  return pSVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

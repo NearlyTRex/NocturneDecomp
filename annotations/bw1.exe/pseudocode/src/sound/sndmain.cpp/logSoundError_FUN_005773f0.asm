@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[42]:
-;   sound_snddx.cpp_FUN_00577880 at 0057798a
-;   sound_snddx.cpp_FUN_00577b60 at 00577c57
-;   sound_snddx.cpp_FUN_00577cd0 at 00577d5e
-;   sound_snddx.cpp_FUN_00577f90 at 00578385
-;   sound_snddx.cpp_FUN_005784b0 at 0057855c
-;   sound_snddx.cpp_FUN_00578590 at 0057862c
-;   sound_snddx.cpp_FUN_00578710 at 005789bb
-;   sound_snddx.cpp_FUN_00578a80 at 00578bbd
-;   sound_snddx.cpp_FUN_00578be0 at 00578c77
-;   sound_snddx.cpp_FUN_00578cc0 at 00578ecf
+;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_00578710 at 005789bb
+;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00578cc0 at 00578ecf
+;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80 at 005791d8
+;   sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0057a230 at 0057a277
+;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005799b0 at 00579aaa
+;   sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_00578590 at 0057862c
+;   sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_00579900 at 00579991
+;   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_00579f30 at 00579f45
+;   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_00578a80 at 00578bbd
+;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0 at 0057855c
 ;   ... and 32 more
 ;
 ; Referenced Globals:
@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
-;   wincore_winrun.cpp_FUN_005b3a90
+;   wincore_winrun.cpp_outputDebugString_FUN_005b3a90
 ;
 ; *****************************************************************************
 
@@ -50,17 +50,17 @@ section .text
     XOR ECX,ECX                         ; 00577421
     PUSH 0x5f46b9                       ; 00577423 | = "SOUND: "
     MOV dword ptr [ESP + 0x404],ECX     ; 00577428
-    CALL wincore_winrun.cpp_FUN_005b3a90 ; 0057742f
-        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b3a90()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_005b3a90 ; 0057742f
+        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_005b3a90(LPCSTR message)
     ADD ESP,0x4                         ; 00577434
     MOV EAX,ESP                         ; 00577437
     PUSH EAX                            ; 00577439
-    CALL wincore_winrun.cpp_FUN_005b3a90 ; 0057743a
-        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b3a90()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_005b3a90 ; 0057743a
+        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_005b3a90(LPCSTR message)
     ADD ESP,0x4                         ; 0057743f
     PUSH 0x5f46c1                       ; 00577442 | DAT_005f46c1
-    CALL wincore_winrun.cpp_FUN_005b3a90 ; 00577447
-        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b3a90()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_005b3a90 ; 00577447
+        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_005b3a90(LPCSTR message)
     ADD ESP,0x4                         ; 0057744c
     ADD ESP,0x404                       ; 0057744f
     RET                                 ; 00577455

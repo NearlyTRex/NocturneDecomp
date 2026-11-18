@@ -10,8 +10,8 @@
 ;   core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_00417ab0 at 00417ac1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ca66e
-;   undefined4 DAT_005ca676
+;   double g_DOUBLE_005ca66e = 2
+;   double g_DOUBLE_005ca676 = 6
 ;
 ; *****************************************************************************
 
@@ -72,13 +72,13 @@ section .text
         ;   XREF to: 00409fe6 (CONDITIONAL_JUMP)  ; LAB_00409fe6
     FLD float ptr [ESP + 0x54]          ; 00409fa5
     FST double ptr [ESP + 0x8]          ; 00409fa9
-    FCOMP double ptr [0x005ca66e]       ; 00409fad | DAT_005ca66e
+    FCOMP double ptr [0x005ca66e]       ; 00409fad | g_DOUBLE_005ca66e
     FNSTSW AX                           ; 00409fb3
     SAHF                                ; 00409fb5
     JBE 0x00409fe6                      ; 00409fb6
         ;   XREF to: 00409fe6 (CONDITIONAL_JUMP)  ; LAB_00409fe6
     FLD double ptr [ESP + 0x8]          ; 00409fb8
-    FCOMP double ptr [0x005ca676]       ; 00409fbc | DAT_005ca676
+    FCOMP double ptr [0x005ca676]       ; 00409fbc | g_DOUBLE_005ca676
     FNSTSW AX                           ; 00409fc2
     SAHF                                ; 00409fc4
     JNC 0x00409fe6                      ; 00409fc5
@@ -121,7 +121,7 @@ section .text
     JNC 0x0040a03e                      ; 0040a011
         ;   XREF to: 0040a03e (CONDITIONAL_JUMP)  ; LAB_0040a03e
     FLD double ptr [ESP]                ; 0040a013
-    FCOMP double ptr [0x005ca66e]       ; 0040a016 | DAT_005ca66e
+    FCOMP double ptr [0x005ca66e]       ; 0040a016 | g_DOUBLE_005ca66e
     FNSTSW AX                           ; 0040a01c
     SAHF                                ; 0040a01e
     JNC 0x0040a03e                      ; 0040a01f

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_movscrn_raw_005d8639
-;   undefined4 DAT_005d8649
+;   double g_MovieFrameRateMultiplier = 30
 ;   CFilterCache* g_CFilterCachePtr = 0152c72c
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.delta_time_float
@@ -47,7 +47,7 @@ section .text
     PUSH ESI                            ; 0045df69
     MOV ESI,dword ptr [0x0061d95c]      ; 0045df6a | g_CGamePtr
     FLD float ptr [ESI + 0x294]         ; 0045df70 | g_CGameInstance.delta_time_float
-    FMUL double ptr [0x005d8649]        ; 0045df76 | DAT_005d8649
+    FMUL double ptr [0x005d8649]        ; 0045df76 | g_MovieFrameRateMultiplier
     LEA EAX,[EBX + 0x8]                 ; 0045df7c
     FADD float ptr [EAX]                ; 0045df7f
     FSTP float ptr [EAX]                ; 0045df81
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_0045df94
     MOV ECX,0x2000                      ; 0045df97
     CALL crt_math.c_round_FUN_005c03a0  ; 0045df9c
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     MOV EDI,dword ptr [EDI + 0x48]      ; 0045dfa1
     FISTP dword ptr [ESP + 0xc]         ; 0045dfa4
     MOV EAX,dword ptr [ESP + 0xc]       ; 0045dfa8

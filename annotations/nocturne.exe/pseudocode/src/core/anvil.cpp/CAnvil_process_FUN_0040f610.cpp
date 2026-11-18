@@ -18,7 +18,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_0040f610(CAnvil *this_ptr,float d
   SDamageInfo local_48;
   
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,this_ptr->drop_condition);
+                    (g_CEventListPtr,this_ptr->drop_condition);
   iVar3 = g_LocalHeroIndex;
   if (iVar4 != 0) {
     this_ptr->triggered = 1;

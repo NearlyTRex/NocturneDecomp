@@ -1,15 +1,25 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(void)
+; SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a460(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)
 ;
+; Parameters:
+; SEdgeList *      Stack[0x4]:4   edge_lists
+; SEdgeList *      Stack[0x8]:4   scanline_data
+; SEdge *          Stack[0xc]:4   existing_edges
+; int *            Stack[0x10]:4   max_x
+; int              Stack[0x14]:4   max_y
+; int              Stack[0x18]:4   gap_tolerance_x
+; int              Stack[0x1c]:4   gap_tolerance_y
+; int              Stack[0x20]:4   gap_tolerance_connected
+; int              Stack[0x24]:4   gap_tolerance_horizontal
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
@@ -86,13 +96,13 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x5d6503                    ; 0043a570
     ADD ESP,0x10                        ; 0043a575
-    MOV [0x01d1d400],EAX                ; 0043a578 | DAT_01d1d400
+    MOV [0x01d1d400],EAX                ; 0043a578 | g_CHAR_PTR_01d1d400
     MOV EAX,ESP                         ; 0043a57d
     MOV EDX,0x87d                       ; 0043a57f
     PUSH EAX                            ; 0043a584
-    MOV dword ptr [0x01d1d404],EDX      ; 0043a585 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043a58b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d404],EDX      ; 0043a585 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043a58b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043a590
     TEST ESI,ESI                        ; 0043a593
         ;   Label: LAB_0043a593
@@ -455,13 +465,13 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x5d6548                    ; 0043ab24
     ADD ESP,0x10                        ; 0043ab29
-    MOV [0x01d1d400],EAX                ; 0043ab2c | DAT_01d1d400
+    MOV [0x01d1d400],EAX                ; 0043ab2c | g_CHAR_PTR_01d1d400
     MOV EAX,ESP                         ; 0043ab31
     MOV EDX,0x8b7                       ; 0043ab33
     PUSH EAX                            ; 0043ab38
-    MOV dword ptr [0x01d1d404],EDX      ; 0043ab39 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043ab3f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d404],EDX      ; 0043ab39 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043ab3f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043ab44
     CMP EDI,dword ptr [ESP + 0x1ac]     ; 0043ab47
         ;   Label: LAB_0043ab47
@@ -684,10 +694,10 @@ section .text
     MOV EAX,ESP                         ; 0043aeba
     MOV ECX,0x8f6                       ; 0043aebc
     PUSH EAX                            ; 0043aec1
-    MOV dword ptr [0x01d1d400],EDX      ; 0043aec2 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0043aec8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043aece
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0043aec2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0043aec8 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043aece
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043aed3
     MOV EDI,dword ptr [ESP + 0x204]     ; 0043aed6
         ;   Label: LAB_0043aed6

@@ -25,39 +25,39 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_setup_FUN_0058d5e0(CZombiePries
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
-  _DAT_02d24970 =
+  g_INT_02d24970 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
   _DAT_02d2497c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L ForeArm",1);
   _DAT_02d24980 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_02d24984 =
+  g_INT_02d24984 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_02d24988 =
+  g_INT_02d24988 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R UpperArm",1);
   _DAT_02d2498c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Foot",1);
   _DAT_02d24990 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Foot",1);
-  _DAT_02d24974 =
+  g_INT_02d24974 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_02d24978 =
+  g_INT_02d24978 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);
-  _DAT_02d24994 =
+  g_INT_02d24994 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
-  _DAT_02d24998 =
+  g_INT_02d24998 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine1",1);
-  _DAT_02d2499c =
+  g_INT_02d2499c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
-  _DAT_02d24970 =
+  g_INT_02d24970 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
-  _DAT_02d24984 =
+  g_INT_02d24984 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_02d24988 =
+  g_INT_02d24988 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_02d24994 =
+  g_INT_02d24994 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine",1);
-  _DAT_02d2499c =
+  g_INT_02d2499c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
@@ -93,9 +93,9 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_setup_FUN_0058d5e0(CZombiePries
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"head01",1);
   this_ptr->part_indices[10] = iVar1;
-  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_02d24974;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_02d24974;
   (this_ptr->base).base.carry_hands[0].secondary_bone_index = this_ptr->part_indices[1];
-  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_02d24978;
+  (this_ptr->base).base.carry_hands[1].bone_index = g_INT_02d24978;
   (this_ptr->base).base.carry_hands[1].secondary_bone_index = this_ptr->part_indices[3];
   core_enemy_cpp_CEnemy_setup_FUN_00489110(&this_ptr->base);
   this_ptr->firing_blend = 0.0;

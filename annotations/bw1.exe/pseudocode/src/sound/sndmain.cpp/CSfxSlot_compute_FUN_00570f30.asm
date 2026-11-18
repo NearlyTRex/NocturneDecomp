@@ -43,11 +43,11 @@
 ;   TerminatedCString s_vol_5_2f_005f38ec
 ;   TerminatedCString s_channelVol_d_5_2f_005f38fb
 ;   TerminatedCString s_effFreq_5_2f_005f3915
-;   undefined4 DAT_00605af4
+;   float g_FLOAT_00605af4 = -1
 ;   ... and 15 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0
 ;   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00570e90
@@ -71,7 +71,7 @@ section .text
     SUB ESP,0x3c                        ; 00570f36
     AND ESP,0xfffffff8                  ; 00570f39
     MOV EBX,dword ptr [EBP + 0x14]      ; 00570f3c
-    CMP dword ptr [0x02c807ec],0x0      ; 00570f3f | DAT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00570f3f | g_SoundLockCount
     JLE 0x005711c9                      ; 00570f46
         ;   XREF to: 005711c9 (CONDITIONAL_JUMP)  ; LAB_005711c9
     MOV EDI,dword ptr [EBX + 0x68]      ; 00570f4c
@@ -150,9 +150,9 @@ section .text
     PUSH EAX                            ; 00571009
     CALL sound_sndmain.cpp_getNearestListener_FUN_00574080 ; 0057100a
         ;   XREF to: 00574080 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getNearestListener_FUN_00574080(double pos_x, double pos_y, double pos_z)
-    MOV EDX,dword ptr [0x02c7fc8c]      ; 0057100f | DAT_02c7fc8c
+    MOV EDX,dword ptr [0x02c7fc8c]      ; 0057100f | g_INT_02c7fc8c
     ADD ESP,0x18                        ; 00571015
-    MOV [0x02c7fc88],EAX                ; 00571018 | DAT_02c7fc88
+    MOV [0x02c7fc88],EAX                ; 00571018 | g_INT_02c7fc88
     TEST EDX,EDX                        ; 0057101d
     JZ 0x00571026                       ; 0057101f
         ;   XREF to: 00571026 (CONDITIONAL_JUMP)  ; LAB_00571026
@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 0056f1e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0()
     FLD float ptr [EBX + 0x40]          ; 00571026
         ;   Label: LAB_00571026
-    FCOMP float ptr [0x00605af4]        ; 00571029 | DAT_00605af4
+    FCOMP float ptr [0x00605af4]        ; 00571029 | g_FLOAT_00605af4
     FNSTSW AX                           ; 0057102f
     SAHF                                ; 00571031
     JZ 0x0057123e                       ; 00571032
@@ -238,7 +238,7 @@ section .text
     CMP ESI,0x1                         ; 005710fa
     JNZ 0x00571160                      ; 005710fd
         ;   XREF to: 00571160 (CONDITIONAL_JUMP)  ; LAB_00571160
-    MOV EDI,dword ptr [0x006232ec]      ; 005710ff | DAT_006232ec
+    MOV EDI,dword ptr [0x006232ec]      ; 005710ff | g_AudioChannelCount
     XOR ESI,ESI                         ; 00571105
     TEST EDI,EDI                        ; 00571107
     JLE 0x00571160                      ; 00571109
@@ -263,7 +263,7 @@ section .text
     INC ESI                             ; 00571142
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00571143
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
-    MOV EAX,[0x006232ec]                ; 00571148 | DAT_006232ec
+    MOV EAX,[0x006232ec]                ; 00571148 | g_AudioChannelCount
     ADD ESP,0x14                        ; 0057114d
     CMP ESI,EAX                         ; 00571150
     JL 0x0057110d                       ; 00571152
@@ -272,7 +272,7 @@ section .text
     LEA EDX,[EDX]                       ; 0057115a
     FLD1                                ; 00571160
         ;   Label: LAB_00571160
-    FDIV float ptr [0x00605b00]         ; 00571162 | DAT_00605b00
+    FDIV float ptr [0x00605b00]         ; 00571162 | g_FLOAT_00605b00
     FLD float ptr [EBX + 0x6c]          ; 00571168
     FXCH                                ; 0057116b
     FSTP float ptr [ESP + 0x34]         ; 0057116d
@@ -285,12 +285,12 @@ section .text
     MOV dword ptr [EBX + 0x6c],EAX      ; 0057117e
     FLD float ptr [EBX + 0x6c]          ; 00571181
         ;   Label: LAB_00571181
-    FCOMP float ptr [0x00605b00]        ; 00571184 | DAT_00605b00
+    FCOMP float ptr [0x00605b00]        ; 00571184 | g_FLOAT_00605b00
     FNSTSW AX                           ; 0057118a
     SAHF                                ; 0057118c
     JBE 0x00571197                      ; 0057118d
         ;   XREF to: 00571197 (CONDITIONAL_JUMP)  ; LAB_00571197
-    MOV EAX,[0x00605b00]                ; 0057118f | DAT_00605b00
+    MOV EAX,[0x00605b00]                ; 0057118f | g_FLOAT_00605b00
     MOV dword ptr [EBX + 0x6c],EAX      ; 00571194
     CMP dword ptr [EBX + 0x108],0x1     ; 00571197
         ;   Label: LAB_00571197
@@ -317,10 +317,10 @@ section .text
         ;   Label: LAB_005711c9
     MOV ESI,0xade                       ; 005711ce
     PUSH 0x5f37fc                       ; 005711d3 | = "SfxSlot::compute - must be locked!"
-    MOV dword ptr [0x01d1d400],ECX      ; 005711d8 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005711de | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005711e4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 005711d8 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 005711de | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005711e4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005711e9
     JMP 0x00570f4c                      ; 005711ec
         ;   XREF to: 00570f4c (UNCONDITIONAL_JUMP)  ; LAB_00570f4c
@@ -380,12 +380,12 @@ section .text
         ;   XREF to: 00571038 (UNCONDITIONAL_JUMP)  ; LAB_00571038
     FLD double ptr [EBX + 0x4]          ; 00571269
         ;   Label: LAB_00571269
-    MOV EAX,[0x02c7fc88]                ; 0057126c | DAT_02c7fc88
+    MOV EAX,[0x02c7fc88]                ; 0057126c | g_INT_02c7fc88
     FLD double ptr [EBX + 0xc]          ; 00571271
     FXCH                                ; 00571274
-    FSUB double ptr [EAX*0x8 + 0x2c7fbf8] ; 00571276 | DAT_02c7fbf8
+    FSUB double ptr [EAX*0x8 + 0x2c7fbf8] ; 00571276 | g_DOUBLE_02c7fbf8
     FXCH                                ; 0057127d
-    FSUB double ptr [EAX*0x8 + 0x2c7fc08] ; 0057127f | DAT_02c7fc08
+    FSUB double ptr [EAX*0x8 + 0x2c7fc08] ; 0057127f | g_DOUBLE_02c7fc08
     FXCH                                ; 00571286
     FST double ptr [ESP]                ; 00571288
     FMUL double ptr [ESP]               ; 0057128b
@@ -393,7 +393,7 @@ section .text
     FST double ptr [ESP + 0x8]          ; 00571290
     FMUL double ptr [ESP + 0x8]         ; 00571294
     FLD double ptr [EBX + 0x14]         ; 00571298
-    FSUB double ptr [EAX*0x8 + 0x2c7fc18] ; 0057129b | DAT_02c7fc18
+    FSUB double ptr [EAX*0x8 + 0x2c7fc18] ; 0057129b | g_DOUBLE_02c7fc18
     FXCH                                ; 005712a2
     FADDP ST2,ST0                       ; 005712a4
     FST double ptr [ESP + 0x10]         ; 005712a6
@@ -414,7 +414,7 @@ section .text
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 005712d7
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005712dc
-    MOV EAX,[0x02c7fc88]                ; 005712df | DAT_02c7fc88
+    MOV EAX,[0x02c7fc88]                ; 005712df | g_INT_02c7fc88
         ;   Label: LAB_005712df
     FLDZ                                ; 005712e4
     FLD float ptr [EAX*0x4 + 0x2c7fc28] ; 005712e6
@@ -448,8 +448,8 @@ section .text
     FSTP float ptr [ESP + 0x30]         ; 00571346
         ;   Label: LAB_00571346
     FLD float ptr [ESP + 0x30]          ; 0057134a
-    FMUL float ptr [0x00623304]         ; 0057134e | DAT_00623304
-    FLD float ptr [0x00605af8]          ; 00571354 | DAT_00605af8
+    FMUL float ptr [0x00623304]         ; 0057134e | g_FLOAT_00623304
+    FLD float ptr [0x00605af8]          ; 00571354 | g_FLOAT_00605af8
     FXCH                                ; 0057135a
     FADD ST0,ST1                        ; 0057135c
     FDIVRP                              ; 0057135e
@@ -469,7 +469,7 @@ section .text
     ADD ESP,0x10                        ; 0057138a
     FLD1                                ; 0057138d
         ;   Label: LAB_0057138d
-    FDIV float ptr [0x00605afc]         ; 0057138f | DAT_00605afc
+    FDIV float ptr [0x00605afc]         ; 0057138f | g_FLOAT_00605afc
     FLD float ptr [ESP + 0x28]          ; 00571395
     FXCH                                ; 00571399
     FSTP float ptr [ESP + 0x2c]         ; 0057139b
@@ -482,12 +482,12 @@ section .text
     MOV dword ptr [ESP + 0x28],EAX      ; 005713ac
     FLD float ptr [ESP + 0x28]          ; 005713b0
         ;   Label: LAB_005713b0
-    FCOMP float ptr [0x00605afc]        ; 005713b4 | DAT_00605afc
+    FCOMP float ptr [0x00605afc]        ; 005713b4 | g_FLOAT_00605afc
     FNSTSW AX                           ; 005713ba
     SAHF                                ; 005713bc
     JBE 0x005713c8                      ; 005713bd
         ;   XREF to: 005713c8 (CONDITIONAL_JUMP)  ; LAB_005713c8
-    MOV EAX,[0x00605afc]                ; 005713bf | DAT_00605afc
+    MOV EAX,[0x00605afc]                ; 005713bf | g_FLOAT_00605afc
     MOV dword ptr [ESP + 0x28],EAX      ; 005713c4
     CMP dword ptr [EBX + 0x108],0x1     ; 005713c8
         ;   Label: LAB_005713c8

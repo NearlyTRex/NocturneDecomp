@@ -1,18 +1,25 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_blitUnifiedSprite_FUN_00435910(void)
+; void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_00435910(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; void *           Stack[0x8]:4   span_data
+; int              Stack[0xc]:4   dest_x
+; int              Stack[0x10]:4   dest_y
+; int              Stack[0x14]:4   width
+; int              Stack[0x18]:4   height
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5b0
+;   int g_INT_005fba20 = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5b0
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00434e80
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80
 ;
 ; *****************************************************************************
 
@@ -26,10 +33,10 @@ section .text
     SUB ESP,0x2c                        ; 00435914
     MOV EDX,dword ptr [ESP + 0x48]      ; 00435917
     MOV EBP,dword ptr [ESP + 0x40]      ; 0043591b
-    MOV EBX,dword ptr [0x01c6b5b0]      ; 0043591f | DAT_01c6b5b0
-    MOV EAX,[0x01c5faf0]                ; 00435925 | DAT_01c5faf0
-    MOV EDI,dword ptr [0x01c5faec]      ; 0043592a | DAT_01c5faec
-    MOV ESI,dword ptr [0x01c6b5a8]      ; 00435930 | DAT_01c6b5a8
+    MOV EBX,dword ptr [0x01c6b5b0]      ; 0043591f | g_INT_01c6b5b0
+    MOV EAX,[0x01c5faf0]                ; 00435925 | g_ScreenBufferArray[1]
+    MOV EDI,dword ptr [0x01c5faec]      ; 0043592a | g_ScreenBufferArray
+    MOV ESI,dword ptr [0x01c6b5a8]      ; 00435930 | g_INT_01c6b5a8
     SUB EBX,EDX                         ; 00435936
     SUB EAX,EDI                         ; 00435938
     SUB ESI,EDX                         ; 0043593a
@@ -44,15 +51,15 @@ section .text
     POP ESI                             ; 00435949
     POP EBX                             ; 0043594a
     RET                                 ; 0043594b
-    CALL cockpit_ckptutil.c_FUN_00434e80 ; 0043594c
-        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_00434e80()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80 ; 0043594c
+        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
         ;   Label: LAB_0043594c
     MOV EDX,dword ptr [ESP + 0x54]      ; 00435951
     MOV EBP,dword ptr [ESP + 0x4c]      ; 00435955
     MOV EDI,EDX                         ; 00435959
     MOV dword ptr [ESP + 0x28],EAX      ; 0043595b
     SHL EDI,0x5                         ; 0043595f
-    MOV EAX,[0x005fba20]                ; 00435962 | DAT_005fba20
+    MOV EAX,[0x005fba20]                ; 00435962 | g_INT_005fba20
     ADD EDI,EDX                         ; 00435967
     SHL EBP,0x2                         ; 00435969
     SHL EDI,0x2                         ; 0043596c

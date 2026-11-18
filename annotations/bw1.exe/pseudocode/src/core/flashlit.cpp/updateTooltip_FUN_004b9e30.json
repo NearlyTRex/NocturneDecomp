@@ -1,0 +1,273 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 119,
+    "complexity_score": 66,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strcpy"
+    ],
+    "total_lines": 170
+  },
+  "cross_references": [
+    {
+      "addr": "004be0f0",
+      "from_addr": "004be2bc",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b9e30",
+    "address_range": [
+      [
+        "004b9e30",
+        "004b9f66"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flashlit.cpp_updateTooltip_FUN_004b9e30",
+    "signature": "void __cdecl core_flashlit_cpp_updateTooltip_FUN_004b9e30(char *text)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c0f80",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005c0f80"
+    },
+    {
+      "addr": "004c3f50",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50"
+    },
+    {
+      "addr": "004c3ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b498",
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "0061b49c",
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0061d310",
+      "name": "g_INT_0061d310",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "0152d240",
+      "name": "g_TinyFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01c43530",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4353c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c43540",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f1c",
+      "name": "g_INT_01cc7f1c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f20",
+      "name": "g_INT_01cc7f20",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f24",
+      "name": "g_INT_01cc7f24",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f28",
+      "name": "g_INT_01cc7f28",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f2c",
+      "name": "g_INT_01cc7f2c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f30",
+      "name": "g_INT_01cc7f30",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f38",
+      "name": "g_CHAR_01cc7f38",
+      "type": "char",
+      "value": null
+    },
+    {
+      "addr": "01cc7f39",
+      "name": "DAT_01cc7f39",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7f3a",
+      "name": "DAT_01cc7f3a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7f3b",
+      "name": "DAT_01cc7f3b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc8000",
+      "name": "g_INT_01cc8000",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004be2bc",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004be8e6",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.782178217821782,
+    "instruction_count": 101,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 2,
+      "CALL": 3,
+      "CBRANCH": 7,
+      "COPY": 80,
+      "INT_ADD": 30,
+      "INT_AND": 85,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 62,
+      "INT_LESS": 14,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 8,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 30,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 30,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 30,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 483
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a1570",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a7a70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 22,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

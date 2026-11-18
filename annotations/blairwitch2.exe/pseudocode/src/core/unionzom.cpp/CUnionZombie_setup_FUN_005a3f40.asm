@@ -49,17 +49,17 @@ section .text
     PUSH ESI                            ; 005a3f8c
     MOV dword ptr [EBX + 0x11854],EAX   ; 005a3f8d
     CALL core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030 ; 005a3f93
-        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, undefined4 param_2)
+        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, int max_particles)
     ADD ESP,0x8                         ; 005a3f98
     PUSH EBX                            ; 005a3f9b
     PUSH ESI                            ; 005a3f9c
     CALL core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050 ; 005a3f9d
-        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, undefined4 param_2)
+        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, CDemonActor * owner)
     ADD ESP,0x8                         ; 005a3fa2
     PUSH 0x0                            ; 005a3fa5
     PUSH ESI                            ; 005a3fa7
     CALL core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0 ; 005a3fa8
-        ;   XREF to: 005a80d0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a80d0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem * this_ptr, int fade_in)
     ADD ESP,0x8                         ; 005a3fad
     POP ESI                             ; 005a3fb0
     POP EBX                             ; 005a3fb1

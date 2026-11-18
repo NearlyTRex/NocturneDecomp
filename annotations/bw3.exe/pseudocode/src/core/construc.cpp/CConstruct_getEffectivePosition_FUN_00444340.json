@@ -1,0 +1,144 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 48,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_type_propagation"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00444340",
+    "address_range": [
+      [
+        "00444340",
+        "004443c6"
+      ]
+    ],
+    "convention": "__stack_esi",
+    "name": "core_construc.cpp_CConstruct_getEffectivePosition_FUN_00444340",
+    "signature": "CVector3f * __stack_esi core_construc_cpp_CConstruct_getEffectivePosition_FUN_00444340(CConstruct *this_ptr,CVector3f *out_position)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.125,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "CBRANCH": 3,
+      "COPY": 79,
+      "INT_ADD": 55,
+      "INT_AND": 17,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_MULT": 32,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 34,
+      "INT_ZEXT": 30,
+      "LOAD": 26,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 343
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004474d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConstruct *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00444368",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00444398",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CConstruct",
+        "offset": 332,
+        "vtable_addr": "005dd704"
+      },
+      {
+        "class_name": "CConstruct",
+        "offset": 332,
+        "vtable_addr": "005dd864"
+      },
+      {
+        "class_name": "CConstruct",
+        "offset": 332,
+        "vtable_addr": "005dd9c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
+}

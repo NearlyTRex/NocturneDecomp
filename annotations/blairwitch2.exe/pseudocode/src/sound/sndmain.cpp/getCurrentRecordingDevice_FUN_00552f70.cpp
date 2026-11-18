@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_getCurrentRecordingDevice_FUN_00552f70(void)
 
 {
-  return DAT_0061bccc;
+  return g_INT_0061bccc;
 }

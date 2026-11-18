@@ -9,15 +9,15 @@
 ; float            Stack[0xc]:4   strength
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005efb55
+;   TerminatedCString s_Burn_005efb55
 ;   TerminatedCString s_BurnComplete_005efb5a
-;   undefined4 DAT_005efb67
+;   TerminatedCString s_Burn_005efb67
 ;
 ; Called Functions:
-;   core_muzzle.cpp_FUN_0059d7f0
-;   core_muzzle.cpp_FUN_0059d8e0
-;   core_muzzle.cpp_FUN_0059daa0
-;   core_muzzle.cpp_FUN_0059db70
+;   core_muzzle.cpp_SStateMachine_getStateName_FUN_0059db70
+;   core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0
 ;
 ; *****************************************************************************
 
@@ -42,22 +42,22 @@ section .text
     POP ESI                             ; 005a028f
     POP EBX                             ; 005a0290
     RET                                 ; 005a0291
-    PUSH 0x5efb55                       ; 005a0292 | DAT_005efb55
+    PUSH 0x5efb55                       ; 005a0292 | = "Burn"
         ;   Label: LAB_005a0292
     LEA ESI,[EBX + 0x10af8]             ; 005a0297
     PUSH ESI                            ; 005a029d
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a029e
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a029e
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a02a3
     TEST EAX,EAX                        ; 005a02a6
     JZ 0x005a0343                       ; 005a02a8
         ;   XREF to: 005a0343 (CONDITIONAL_JUMP)  ; LAB_005a0343
-    PUSH 0x5efb67                       ; 005a02ae | DAT_005efb67
+    PUSH 0x5efb67                       ; 005a02ae | = "Burn"
         ;   Label: LAB_005a02ae
     LEA EAX,[EBX + 0x10af8]             ; 005a02b3
     PUSH EAX                            ; 005a02b9
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a02ba
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005a02ba
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a02bf
     MOV EAX,dword ptr [EBP + 0x1c]      ; 005a02c2
     LEA EDX,[EBX + 0x11434]             ; 005a02c5
@@ -113,14 +113,14 @@ section .text
     RET                                 ; 005a0342
     PUSH ESI                            ; 005a0343
         ;   Label: LAB_005a0343
-    CALL core_muzzle.cpp_FUN_0059db70   ; 005a0344
-        ;   XREF to: 0059db70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059db70()
+    CALL core_muzzle.cpp_SStateMachine_getStateName_FUN_0059db70 ; 005a0344
+        ;   XREF to: 0059db70 (UNCONDITIONAL_CALL)  ; char * core_muzzle.cpp_SStateMachine_getStateName_FUN_0059db70(SStateMachine * this_ptr)
     ADD ESP,0x4                         ; 005a0349
     PUSH EAX                            ; 005a034c
     PUSH 0x5efb5a                       ; 005a034d | = "BurnComplete"
     PUSH ESI                            ; 005a0352
-    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a0353
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a0353
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005a0358
     JMP 0x005a02ae                      ; 005a035b
         ;   XREF to: 005a02ae (UNCONDITIONAL_JUMP)  ; LAB_005a02ae

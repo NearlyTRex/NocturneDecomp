@@ -1,43 +1,34 @@
 // Name: engine_2d.c_draw320x200SizeDot_FUN_00402ae0
 // Address: 00402ae0
 // Address Range: [[00402ae0, 00402c5d]]
-// Convention: unknown
-// Signature: void engine_2d_c_draw320x200SizeDot_FUN_00402ae0(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_draw320x200SizeDot_FUN_00402ae0(int x_3d,int y_3d,int z_depth)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void engine_2d_c_draw320x200SizeDot_FUN_00402ae0(void)
+void __cdecl engine_2d_c_draw320x200SizeDot_FUN_00402ae0(int x_3d,int y_3d,int z_depth)
 
 {
   int iVar1;
   int iVar2;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   
-  if ((((0 < in_stack_0000000c) && (in_stack_00000004 <= in_stack_0000000c)) &&
-      (-in_stack_0000000c <= in_stack_00000004)) &&
-     ((in_stack_00000008 <= in_stack_0000000c && (-in_stack_0000000c <= in_stack_00000008)))) {
-    if (DAT_0061b49c < 400) {
-      if (DAT_0061b49c != 200) {
+  if ((((0 < z_depth) && (x_3d <= z_depth)) && (-z_depth <= x_3d)) &&
+     ((y_3d <= z_depth && (-z_depth <= y_3d)))) {
+    if ((uint)g_INT_0061b49c < 400) {
+      if (g_INT_0061b49c != 200) {
 LAB_00402c36:
-        _DAT_01d1d400 = "..\\engine\\2d.c";
-        _DAT_01d1d404 = 0x7da;
-        core_main_c_FUN_005030e0("draw320x200SizeDot: unknown graphics option");
+        g_CHAR_PTR_01d1d400 = "..\\engine\\2d.c";
+        g_INT_01d1d404 = 0x7da;
+        core_main_c_displayErrorAndQuit_FUN_005030e0("draw320x200SizeDot: unknown graphics option");
         return;
       }
-      engine_2d_c_project3DPointToScreen_FUN_00401780
-                (in_stack_00000004,in_stack_00000008,in_stack_0000000c);
+      engine_2d_c_project3DPointToScreen_FUN_00401780(x_3d,y_3d,z_depth);
     }
-    else if (DAT_0061b49c < 0x191) {
-      iVar2 = (int)(((longlong)in_stack_00000004 * (longlong)_DAT_01c4eff8) /
-                   (longlong)in_stack_0000000c) + _DAT_01c4f000 >> 0x10;
-      iVar1 = _DAT_01c4f004 +
-              (int)(((longlong)in_stack_00000008 * (longlong)_DAT_01c4effc) /
-                   (longlong)in_stack_0000000c) >> 0x10;
+    else if ((uint)g_INT_0061b49c < 0x191) {
+      iVar2 = (int)(((longlong)x_3d * (longlong)g_INT_01c4eff8) / (longlong)z_depth) +
+              g_INT_01c4f000 >> 0x10;
+      iVar1 = g_INT_01c4f004 +
+              (int)(((longlong)y_3d * (longlong)g_INT_01c4effc) / (longlong)z_depth) >> 0x10;
       if (((-1 < iVar2) && (iVar2 < 0x140)) && ((-1 < iVar1 && (iVar1 < 399)))) {
         engine_2d_c_plotPixel_FUN_00401130(iVar2,iVar1);
         engine_2d_c_plotPixel_FUN_00401130(iVar2,iVar1 + 1);
@@ -45,11 +36,11 @@ LAB_00402c36:
       }
     }
     else {
-      if (DAT_0061b49c != 0x1e0) goto LAB_00402c36;
-      iVar2 = (int)(((longlong)in_stack_00000004 * (longlong)_DAT_01c4eff8) /
-                   (longlong)in_stack_0000000c) + _DAT_01c4f000 >> 0x10;
-      iVar1 = (int)(((longlong)in_stack_00000008 * (longlong)_DAT_01c4effc) /
-                   (longlong)in_stack_0000000c) + _DAT_01c4f004 >> 0x10;
+      if (g_INT_0061b49c != 0x1e0) goto LAB_00402c36;
+      iVar2 = (int)(((longlong)x_3d * (longlong)g_INT_01c4eff8) / (longlong)z_depth) +
+              g_INT_01c4f000 >> 0x10;
+      iVar1 = (int)(((longlong)y_3d * (longlong)g_INT_01c4effc) / (longlong)z_depth) +
+              g_INT_01c4f004 >> 0x10;
       if ((((-1 < iVar2) && (iVar2 < 0x27f)) && (-1 < iVar1)) && (iVar1 < 0x1df)) {
         engine_2d_c_plotPixel_FUN_00401130(iVar2,iVar1);
         engine_2d_c_plotPixel_FUN_00401130(iVar2 + 1,iVar1);

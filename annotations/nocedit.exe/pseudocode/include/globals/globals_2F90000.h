@@ -19,6 +19,6 @@ extern SSimFrame g_SimFrameHistory[512];
 
 // int
 extern int g_ChatOutCount;
-extern int INT_02f9c0bc;
+extern int g_ChatOutSequence;
 extern int g_SimFrameCount;
 

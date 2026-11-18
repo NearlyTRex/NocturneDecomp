@@ -7,13 +7,13 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_mission.cpp_FUN_0051ba60 at 0051baa5
+;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_0051ba60 at 0051baa5
 ;   core_script.cpp_CScript_dtor_FUN_00543710 at 00543716
-;   core_script.cpp_FUN_00543e00 at 00543e12
+;   core_script.cpp_CScript_loadScript_FUN_00543e00 at 00543e12
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_freeParsedLines_FUN_00543790
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;   shape_edittool.cpp_CPickList_clear_FUN_0049c370
 ;   shape_edittool.cpp_CStrList_clear_FUN_00499470
 ;
@@ -47,8 +47,8 @@ section .text
     RET                                 ; 00543776
     PUSH EDX                            ; 00543777
         ;   Label: LAB_00543777
-    CALL crt_unknown.c_FUN_005c09f0     ; 00543778
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 00543778
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0054377d
     MOV dword ptr [EBX + 0x24],0x0      ; 00543780
     JMP 0x00543761                      ; 00543787

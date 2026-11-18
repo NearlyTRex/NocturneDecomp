@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue)
 
 {
@@ -49,8 +47,8 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70(CFireEffect 
   float local_14;
   
   local_b4 = total_time;
-  local_b8 = total_time * _DAT_005c09cc;
-  if (local_b8 < (float)_DAT_005c09d0) {
+  local_b8 = total_time * 0.05f;
+  if (local_b8 < (float)0.050000000000000003) {
     local_b8 = 0.05;
   }
   local_40.x = start_position->x;
@@ -67,9 +65,9 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70(CFireEffect 
     local_7c = local_64 * local_b0;
     local_78 = local_60 * local_b0;
     local_74 = local_5c * local_b0;
-    local_14 = local_b0 * (float)_DAT_005c09d8 * local_b0;
+    local_14 = local_b0 * (float)0.5 * local_b0;
     local_4c = local_14 * 0.0;
-    local_48 = local_14 * _DAT_005c09e0;
+    local_48 = local_14 * -32.0f;
     local_b4 = local_b4 - local_b0;
     local_88 = local_40.x + local_7c;
     local_84 = local_40.y + local_78;
@@ -84,7 +82,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70(CFireEffect 
       local_40.z = local_ac.z;
     }
     local_a0 = local_b0 * 0.0;
-    local_9c = local_b0 * _DAT_005c09e0;
+    local_9c = local_b0 * -32.0f;
     local_64 = local_64 + local_a0;
     local_60 = local_60 + local_9c;
     local_5c = local_5c + local_a0;
@@ -108,6 +106,6 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70(CFireEffect 
   local_20 = local_4c;
   core_fire_cpp_CFireEffect_createLaserSegment_FUN_004a2aa0
             (this_ptr,&local_40,&local_ac,0.0,reticle_intensity,reflection_normal,red,green,blue,
-             0x3CA3D70A);
+             0.02f);
   return;
 }

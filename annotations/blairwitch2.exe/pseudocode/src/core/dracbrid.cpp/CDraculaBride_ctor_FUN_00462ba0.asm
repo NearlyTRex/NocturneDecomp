@@ -10,8 +10,8 @@
 ;   core_dracbrid.cpp_factoryFuncDraculaBride_FUN_00462b70 at 00462b83
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f5644
-;   undefined4 DAT_005f5648
+;   float g_FLOAT_005f5644 = 50
+;   float g_FLOAT_005f5648 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
@@ -41,9 +41,9 @@ section .text
     MOV dword ptr [EBX + 0x3434],0x3f800000 ; 00462bd4
     MOV byte ptr [EBX + 0x10b1c],0x0    ; 00462bde
     MOV dword ptr [EBX + 0x25a8],0x43070000 ; 00462be5
-    FLD float ptr [0x005f5644]          ; 00462bef | DAT_005f5644
+    FLD float ptr [0x005f5644]          ; 00462bef | g_FLOAT_005f5644
     MOV dword ptr [EBX + 0x10b84],0x0   ; 00462bf5
-    FLD float ptr [0x005f5648]          ; 00462bff | DAT_005f5648
+    FLD float ptr [0x005f5648]          ; 00462bff | g_FLOAT_005f5648
     MOV dword ptr [EBX + 0x10b88],0x0   ; 00462c05
     LEA EAX,[EBX + 0x10b94]             ; 00462c0f
     FXCH                                ; 00462c15

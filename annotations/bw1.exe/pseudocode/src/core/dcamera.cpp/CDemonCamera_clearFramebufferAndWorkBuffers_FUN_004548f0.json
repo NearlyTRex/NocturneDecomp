@@ -10,8 +10,8 @@
     "pseudocode_lines": 35,
     "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "flattened_array_index",
+      "pointer_cast"
     ],
     "total_lines": 92
   },
@@ -39,13 +39,13 @@
   "globals": [
     {
       "addr": "01342360",
-      "name": "DAT_01342360",
+      "name": "g_SFogImagePlane_01342220.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01354f60",
-      "name": "DAT_01354f60",
+      "name": "g_CameraImageDecompressBuffer+0x140",
       "type": "undefined4",
       "value": null
     }
@@ -159,12 +159,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "'g_SFogImagePlane_01342220.pixels[0][iVar3]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar3 is multiplied by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
       "line": 31,
-      "match": "DAT_01342220",
-      "severity": "mild",
-      "text": "(&DAT_01342220)[iVar3] = 0;",
-      "type": "undefined_data"
+      "severity": "major",
+      "text": "g_SFogImagePlane_01342220.pixels[0][iVar3] = '\\0';",
+      "type": "flattened_array_index"
     }
   ]
 }

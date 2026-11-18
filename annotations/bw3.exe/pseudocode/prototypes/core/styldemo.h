@@ -49,9 +49,9 @@ void __cdecl CStylerDemon::archive(CStylerDemon *this_ptr);
 // Address: 005a0330
 void __cdecl CStylerDemon::processDamage(CStylerDemon *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_styldemo.cpp_FUN_005a0480
+// Original: core_styldemo.cpp_CStylerDemon_tryAttack_FUN_005a0480
 // Address: 005a0480
-undefined4 FUN_005a0480(int param_1,int param_2);
+int __cdecl CStylerDemon::tryAttack(CStylerDemon *this_ptr,int distance);
 
 // Original: core_styldemo.cpp_CStylerDemon_getTargetPoints_FUN_005a06c0
 // Address: 005a06c0

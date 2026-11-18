@@ -11,18 +11,18 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790 at 004167f5
 ;   core_bmppuzzl.cpp_CChemPuzzle_process_FUN_00418220 at 004185a9
 ;   core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80 at 00415cbf
-;   core_event.cpp_FUN_004a1d00 at 004a23c3
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a23c3
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfae8
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_007c3978
-;   undefined4 DAT_007c3980
-;   undefined4 DAT_01c43544
+;   CPuzzle* g_CPuzzle_PTR_007c3978
+;   int g_INT_007c3980
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   CGame g_CGameInstance
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004d19d0
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
 ;
 ; *****************************************************************************
 
@@ -35,9 +35,9 @@ section .text
     TEST ECX,ECX                        ; 00415be9
     JZ 0x00415c18                       ; 00415beb
         ;   XREF to: 00415c18 (CONDITIONAL_JUMP)  ; LAB_00415c18
-    MOV EAX,[0x01c43544]                ; 00415bed | DAT_01c43544
-    MOV dword ptr [0x007c3978],EDX      ; 00415bf2 | DAT_007c3978
-    MOV [0x007c3980],EAX                ; 00415bf8 | DAT_007c3980
+    MOV EAX,[0x01c43544]                ; 00415bed | g_MouseButtonFlags
+    MOV dword ptr [0x007c3978],EDX      ; 00415bf2 | g_CPuzzle_PTR_007c3978
+    MOV [0x007c3980],EAX                ; 00415bf8 | g_INT_007c3980
     PUSH ECX                            ; 00415bfd
         ;   Label: LAB_00415bfd
     MOV EAX,dword ptr [EDX]             ; 00415bfe
@@ -46,12 +46,12 @@ section .text
     ADD ESP,0x8                         ; 00415c04
     MOV ESI,dword ptr [0x0061d95c]      ; 00415c07 | g_CGamePtr
     PUSH ESI                            ; 00415c0d | g_CGameInstance
-    CALL core_game.cpp_FUN_004d19d0     ; 00415c0e
-        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d19d0()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 ; 00415c0e
+        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame * this_ptr)
     ADD ESP,0x4                         ; 00415c13
     POP ESI                             ; 00415c16
     RET                                 ; 00415c17
-    MOV dword ptr [0x007c3978],ECX      ; 00415c18 | DAT_007c3978
+    MOV dword ptr [0x007c3978],ECX      ; 00415c18 | g_CPuzzle_PTR_007c3978
         ;   Label: LAB_00415c18
     JMP 0x00415bfd                      ; 00415c1e
         ;   XREF to: 00415bfd (UNCONDITIONAL_JUMP)  ; LAB_00415bfd

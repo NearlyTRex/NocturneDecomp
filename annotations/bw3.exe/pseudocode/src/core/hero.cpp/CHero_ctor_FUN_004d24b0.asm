@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042ac20
-;   core_hero.cpp_FUN_004d2cd0
+;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004d2cd0
 ;   core_inv.cpp_CInventory_ctor_FUN_004da360
 ;   core_path.cpp_CPathMap_ctor_FUN_0050acc0
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -67,8 +67,8 @@ section .text
     MOV dword ptr [EBX + 0x20b58],0x0   ; 004d25ad
     PUSH EBX                            ; 004d25b7
     MOV dword ptr [EBX + 0x20b5c],0x0   ; 004d25b8
-    CALL core_hero.cpp_FUN_004d2cd0     ; 004d25c2
-        ;   XREF to: 004d2cd0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d2cd0()
+    CALL core_hero.cpp_CHero_createDefaultWeapon_FUN_004d2cd0 ; 004d25c2
+        ;   XREF to: 004d2cd0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_createDefaultWeapon_FUN_004d2cd0(CHero * this_ptr)
     MOV dword ptr [EBX + 0x20bc8],0x2   ; 004d25c7
     MOV dword ptr [EBX + 0x27c0],0x0    ; 004d25d1
     MOV dword ptr [EBX + 0x2540],0x1    ; 004d25db

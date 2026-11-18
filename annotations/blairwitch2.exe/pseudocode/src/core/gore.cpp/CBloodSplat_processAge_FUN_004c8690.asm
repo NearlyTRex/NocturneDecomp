@@ -10,7 +10,7 @@
 ;   core_gore.cpp_CGore_process_FUN_004c9670 at 004c96ad
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d946a
+;   double g_DOUBLE_005d946a = 2
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
@@ -26,7 +26,7 @@ section .text
     FADD float ptr [EAX]                ; 004c86a3
     FSTP float ptr [EAX]                ; 004c86a5
     FLD float ptr [ECX + 0x24]          ; 004c86a7
-    FCOMP double ptr [0x005d946a]       ; 004c86aa | DAT_005d946a
+    FCOMP double ptr [0x005d946a]       ; 004c86aa | g_DOUBLE_005d946a
     FNSTSW AX                           ; 004c86b0
     SAHF                                ; 004c86b2
     JA 0x004c86b6                       ; 004c86b3

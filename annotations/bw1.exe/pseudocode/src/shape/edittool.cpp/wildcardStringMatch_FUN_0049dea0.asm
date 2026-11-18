@@ -8,15 +8,16 @@
 ; char *           Stack[0x8]:4   target_string
 ; int              Stack[0xc]:4   case_sensitive
 ;
-; XREF[8]:
-;   core_charactr.cpp_FUN_00435380 at 0043540f
+; XREF[9]:
+;   core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380 at 0043540f
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004de100 at 004de1bf
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00549242
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00 at 0057be46
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0057b6e0 at 0057b712
 ;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0059bdf0 at 0059be25
+;   core_trigger.cpp_CTrigger_process_FUN_0059b240 at 0059b7ee
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_0053cb50 at 0053cbf8
-;   shape_edittool.cpp_FUN_0049a300 at 0049a41d
+;   shape_edittool.cpp_CStrList_populateRecursive_FUN_0049a300 at 0049a41d
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005c0820

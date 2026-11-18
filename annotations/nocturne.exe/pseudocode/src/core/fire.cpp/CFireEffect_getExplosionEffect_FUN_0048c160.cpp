@@ -20,7 +20,7 @@ int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(CFireEffec
   CVector3f local_3c [2];
   float local_24 [5];
   
-  pCVar5 = g_CExplosion_ARRAY_01c5d708;
+  pCVar5 = g_ExplosionPool;
   iVar4 = 0;
   do {
     if ((float)0.5 < pCVar5->lifetime) {

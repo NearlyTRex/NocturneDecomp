@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005c502c
-;   undefined4 DAT_005c5030
-;   undefined4 DAT_006b029c
-;   undefined4 DAT_006b02a0
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
+;   int[24] g_ProcessedVertexIndices
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -68,17 +68,17 @@ section .text
     JGE 0x0040530c                      ; 004052ae
         ;   XREF to: 0040530c (CONDITIONAL_JUMP)  ; LAB_0040530c
     MOV ESI,dword ptr [EAX]             ; 004052b0
-    MOV dword ptr [ECX + 0x6b029c],ESI  ; 004052b2 | DAT_006b029c | DAT_006b02a0
+    MOV dword ptr [ECX + 0x6b029c],ESI  ; 004052b2 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     IMUL EDI,ESI,0x30                   ; 004052b8
     MOV ESI,dword ptr [EAX + 0x4]       ; 004052bb
-    MOV dword ptr [EDI + 0x5c502c],ESI  ; 004052be | DAT_005c502c
+    MOV dword ptr [EDI + 0x5c502c],ESI  ; 004052be | g_SRenderVertex_ARRAY_005c5014[0].u
     IMUL EDI,dword ptr [EAX],0x30       ; 004052c4
     ADD EAX,0xc                         ; 004052c7
     ADD ECX,0x4                         ; 004052ca
     INC EBX                             ; 004052cd
     MOV ESI,dword ptr [EAX + -0x4]      ; 004052ce
     ADD EDX,0x3                         ; 004052d1
-    MOV dword ptr [EDI + 0x5c5030],ESI  ; 004052d4 | DAT_005c5030
+    MOV dword ptr [EDI + 0x5c5030],ESI  ; 004052d4 | g_SRenderVertex_ARRAY_005c5014[0].v
     JMP 0x004052a6                      ; 004052da
         ;   XREF to: 004052a6 (UNCONDITIONAL_JUMP)  ; LAB_004052a6
     MOV dword ptr [0x01c00c7c],0x530322 ; 004052dc | g_ScanlineRenderFunc
@@ -96,7 +96,7 @@ section .text
         ;   Label: LAB_004052fd
     JMP 0x0040527d                      ; 00405307
         ;   XREF to: 0040527d (UNCONDITIONAL_JUMP)  ; LAB_0040527d
-    PUSH 0x6b029c                       ; 0040530c | DAT_006b029c
+    PUSH 0x6b029c                       ; 0040530c | g_ProcessedVertexIndices
         ;   Label: LAB_0040530c
     PUSH EBX                            ; 00405311
     CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 00405312

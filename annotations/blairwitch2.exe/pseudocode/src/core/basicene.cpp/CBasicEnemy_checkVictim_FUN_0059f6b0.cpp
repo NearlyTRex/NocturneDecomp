@@ -12,13 +12,15 @@ int __cdecl core_basicene_cpp_CBasicEnemy_checkVictim_FUN_0059f6b0(CBasicEnemy *
   CCharacter *this_ptr_00;
   int iVar1;
   EDeathState EVar2;
-  uint uVar3;
+  char *state_name;
   
-  iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"Death");
+  iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                    (&this_ptr->state_machine,"Death");
   if (iVar1 != 0) {
     return 1;
   }
-  iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"Animation");
+  iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                    (&this_ptr->state_machine,"Animation");
   if (iVar1 == 0) {
     this_ptr_00 = (this_ptr->base).victim;
     if ((this_ptr_00 == (CCharacter *)0x0) ||
@@ -31,8 +33,9 @@ int __cdecl core_basicene_cpp_CBasicEnemy_checkVictim_FUN_0059f6b0(CBasicEnemy *
     else {
       (this_ptr->base).victim = (CCharacter *)0x0;
     }
-    uVar3 = core_muzzle_cpp_FUN_0059db90(&this_ptr->state_machine);
-    core_muzzle_cpp_FUN_0059d8e0(&this_ptr->state_machine,uVar3);
+    state_name = core_muzzle_cpp_SStateMachine_getInitialStateName_FUN_0059db90
+                           (&this_ptr->state_machine);
+    core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(&this_ptr->state_machine,state_name);
     return 0;
   }
   return 1;

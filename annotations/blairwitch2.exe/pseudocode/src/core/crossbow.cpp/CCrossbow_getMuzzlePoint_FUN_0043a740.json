@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 213,
+    "complexity_score": 179,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 15,
+    "pseudocode_lines": 34,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 64
+    "total_lines": 65
   },
   "cross_references": [],
   "function": {
@@ -28,9 +27,9 @@
         "0043a790"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_crossbow.cpp_CCrossbow_getMuzzlePoint_FUN_0043a740",
-    "signature": "void __cdecl core_crossbow_cpp_CCrossbow_getMuzzlePoint_FUN_0043a740(CCrossbow *this_ptr)"
+    "signature": "CVector3f * __stack_esi core_crossbow_cpp_CCrossbow_getMuzzlePoint_FUN_0043a740(CCrossbow *this_ptr,CVector3f *out_point)"
   },
   "function_calls": [
     {
@@ -44,9 +43,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
+    "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 1,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -114,14 +113,6 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 11,
       "match": "afStackY_ffc",
@@ -142,47 +133,31 @@
       "line": 25,
       "match": "(CBoundingBox3D *)((int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
+      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 31,
-      "match": "unaff_ESI",
+      "match": "(uint *)((int)out_point",
       "severity": "moderate",
-      "text": "*unaff_ESI = 0;",
-      "type": "unaffected_reg"
+      "text": "puVar5 = (uint *)((int)out_point + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 32,
+      "line": 33,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8);",
+      "text": "*puVar5 = *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 34,
+      "line": 35,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -190,23 +165,23 @@
       "line": 25,
       "match": "(int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
+      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 33,
       "match": "(int)&stack0xfffffff0",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8);",
+      "text": "*puVar5 = *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xfffffff4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "(int)&stack0xfffffff4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -219,25 +194,25 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 32,
+      "line": 33,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8);",
+      "text": "*puVar5 = *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 232,
         "vtable_addr": "005f4c94"
       }

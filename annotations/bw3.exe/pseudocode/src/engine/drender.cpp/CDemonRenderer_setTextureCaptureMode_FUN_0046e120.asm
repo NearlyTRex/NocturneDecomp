@@ -13,7 +13,7 @@
 ;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90 at 00418ff3
 ;   core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480 at 00598516
 ;   core_hino.cpp_CHino_renderTransparent_FUN_0059d120 at 0059d2aa
-;   core_inv.cpp_FUN_004dbe70 at 004dc363
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70 at 004dc363
 ;   core_kedward.cpp_CKedward_renderTransparent_FUN_00591680 at 0059179c
 ;   core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710 at 0059387c
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004fa6d0 at 004fa6e4
@@ -21,8 +21,8 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bdd858
-;   undefined4 DAT_01bdd85c
+;   int g_CaptureFaceCount
+;   int g_CaptureTextureCount
 ;
 ; *****************************************************************************
 
@@ -42,9 +42,9 @@ section .text
     SETNZ AL                            ; 0046e139
     MOV EDI,0xffffffff                  ; 0046e13c
     AND EAX,0xff                        ; 0046e141
-    MOV dword ptr [0x01bdd858],ECX      ; 0046e146 | DAT_01bdd858
+    MOV dword ptr [0x01bdd858],ECX      ; 0046e146 | g_CaptureFaceCount
     INC EAX                             ; 0046e14c
-    MOV dword ptr [0x01bdd85c],EDI      ; 0046e14d | DAT_01bdd85c
+    MOV dword ptr [0x01bdd85c],EDI      ; 0046e14d | g_CaptureTextureCount
     MOV dword ptr [EDX + 0x1c],EAX      ; 0046e153
     POP EDI                             ; 0046e156
     RET                                 ; 0046e157

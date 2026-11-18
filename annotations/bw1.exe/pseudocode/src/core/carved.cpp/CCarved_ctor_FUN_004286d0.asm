@@ -10,8 +10,8 @@
 ;   core_carved.cpp_factoryFuncCarved_FUN_004286a0 at 004286b3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fd470
-;   undefined4 DAT_005fd474
+;   float g_FLOAT_005fd470 = 50
+;   float g_FLOAT_005fd474 = 100
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -39,11 +39,11 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004286f5
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2fec],0x3f000000 ; 004286fa
-    FLD float ptr [0x005fd470]          ; 00428704 | DAT_005fd470
+    FLD float ptr [0x005fd470]          ; 00428704 | g_FLOAT_005fd470
     MOV dword ptr [EBX + 0x2ff0],0x3f800000 ; 0042870a
     ADD ESP,0x8                         ; 00428714
     MOV dword ptr [EBX + 0xc278],0x0    ; 00428717
-    FLD float ptr [0x005fd474]          ; 00428721 | DAT_005fd474
+    FLD float ptr [0x005fd474]          ; 00428721 | g_FLOAT_005fd474
     MOV dword ptr [EBX + 0xc274],0x0    ; 00428727
     PUSH 0x3f800000                     ; 00428731
     FXCH                                ; 00428736

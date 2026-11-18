@@ -6,18 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(int cache_index)
 
 {
-  *(int *)(&DAT_0060b020 + cache_index * 0x30) =
-       (int)(0x7fffffff / (longlong)(int)(&DAT_0060b01c)[cache_index * 0xc]);
-  (&DAT_0060b024)[cache_index * 0xc] =
-       (int)(((longlong)(int)(&DAT_0060b014)[cache_index * 0xc] * (longlong)_DAT_01c6b598) /
-            (longlong)(int)(&DAT_0060b01c)[cache_index * 0xc]) + _DAT_01c6b5a0;
-  *(int *)(&DAT_0060b028 + cache_index * 0x30) =
-       (int)(((longlong)(int)(&DAT_0060b018)[cache_index * 0xc] * (longlong)_DAT_01c6b59c) /
-            (longlong)(int)(&DAT_0060b01c)[cache_index * 0xc]) + _DAT_01c6b5a4;
+  g_SRenderVertex_ARRAY_0060b014[cache_index].projected_vertex.inv_z =
+       (int)(0x7fffffff /
+            (longlong)g_SRenderVertex_ARRAY_0060b014[cache_index].projected_vertex.transformed_z);
+  g_SRenderVertex_ARRAY_0060b014[cache_index].projected_vertex.screen_x =
+       (int)(((longlong)g_SRenderVertex_ARRAY_0060b014[cache_index].projected_vertex.transformed_x *
+             (longlong)g_INT_01c6b598) /
+            (longlong)g_SRenderVertex_ARRAY_0060b014[cache_index].projected_vertex.transformed_z) +
+       g_INT_01c6b5a0;
+  g_SRenderVertex_ARRAY_0060b014[cache_index].projected_vertex.screen_y =
+       (int)(((longlong)g_SRenderVertex_ARRAY_0060b014[cache_index].projected_vertex.transformed_y *
+             (longlong)g_INT_01c6b59c) /
+            (longlong)g_SRenderVertex_ARRAY_0060b014[cache_index].projected_vertex.transformed_z) +
+       g_INT_01c6b5a4;
   return;
 }

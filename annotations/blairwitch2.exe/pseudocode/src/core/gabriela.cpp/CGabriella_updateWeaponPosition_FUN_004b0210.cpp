@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGabriella *this_ptr,float delta_time)
 
 {
@@ -21,13 +19,15 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
   CMatrix3x4f *pCVar8;
   CMatrix3x4f *pCVar9;
   byte bVar10;
-  float afStackY_1068 [799];
+  float afStackY_1068 [21];
+  CInventory *apCStackY_1014 [778];
   CVector3f *in_stack_fffffc20;
   float in_stack_fffffc24;
   CQuaternion4f *matrix_b;
+  CVector3f *in_stack_fffffc30;
   CMatrix3x4f local_3b0;
   CMatrix3x4f local_380;
-  float local_350 [12];
+  CMatrix3x4f local_350;
   CMatrix3x4f local_320;
   CMatrix3x4f local_2f0;
   CMatrix3x4f local_2c0;
@@ -42,39 +42,39 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
   CMatrix3x4f local_110;
   CMatrix3x4f local_e0;
   CMatrix3x4f local_b0;
-  uint local_80;
-  float afStack_7c [5];
+  CVector3f local_80;
+  CVector3f local_74;
   float local_68;
-  uint local_5c;
-  float local_50;
+  float afStack_64 [5];
+  CVector3f local_50;
   float local_44;
-  float local_40;
-  float local_3c;
-  uint local_38;
+  float local_40 [2];
+  CVector3f local_38;
   float local_2c;
   float local_28;
-  float local_24;
-  CInventory *local_18;
+  CInventory *local_24 [4];
   CInventory *local_14;
   
   bVar10 = 0;
   core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00428e30((CCharacter *)this_ptr,delta_time);
-  core_xform_cpp_FUN_00591c10
-            (&local_380,&(this_ptr->base).base.base.location,&(this_ptr->base).base.base.orient);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+            (&local_380,&(this_ptr->base).base.base.location.position,
+             &(this_ptr->base).base.base.orient.vec);
   local_14 = (this_ptr->base).inventories;
-  if (this_ptr->draw_blend < _DAT_005f7334) {
+  if (this_ptr->draw_blend < 0.64f) {
     (*(((((CCharacter *)local_14->selected_weapons[(this_ptr->base).inventories[0].current_group])->
         base).vtable._uc)->_uc).kill)
               ((CCharacter *)
                local_14->selected_weapons[(this_ptr->base).inventories[0].current_group],1,
                in_stack_fffffc20,in_stack_fffffc24);
-    core_xform_cpp_FUN_00591c10();
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+              (&local_200,&g_GabriellaWeaponAttachEuler.f,&g_GabriellaWeaponAttachOffset.f);
     pCVar8 = &local_380;
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
               (&local_200,
                (CMatrix3x4f *)
-               (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01cb06a0].m,
-               &local_230);
+               (this_ptr->base).base.model.bone_transform.bone_model_matrices
+               [g_GabriellaIndices[10]].m,&local_230);
     pCVar6 = &local_230;
     pCVar5 = &local_1d0;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -91,8 +91,10 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
               ((CCharacter *)
                local_14->selected_weapons[(this_ptr->base).inventories[0].current_group],2,
                in_stack_fffffc20,in_stack_fffffc24);
-    core_xform_cpp_FUN_00591c10();
-    matrix_b = (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01cb06bc].m;
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+              (&local_170,&g_GabriellaWeaponEuler.f,&g_ZeroVector);
+    matrix_b = (this_ptr->base).base.model.bone_transform.bone_model_matrices
+               [g_GabriellaIndices[0x11]].m;
     pCVar8 = &local_170;
     core_xform_cpp_buildRotationX_FUN_00593240(1.5707964,&local_140);
     pCVar6 = &local_2c0;
@@ -138,54 +140,56 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
       pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
     }
     iVar3 = core_actor_cpp_isOfClass_FUN_0040c840
-                      (&local_14->selected_weapons[pCVar1->current_group]->base,
-                       "?CCrossbow" + 1);
+                      (&local_14->selected_weapons[pCVar1->current_group]->base,"CCrossbow"
+                      );
     if (iVar3 != 0) {
-      core_xform_cpp_FUN_00592720();
-      local_38 = afStack_7c[2];
-      afStack_7c[(uint)bVar10 * -2 + 0x12] = afStack_7c[(uint)bVar10 * -2 + 3];
-      afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13] =
-           afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-      core_xform_cpp_matrixToEulerAngles_FUN_00591de0();
-      local_80 = local_5c;
-      afStack_7c[(uint)bVar10 * -2] = afStack_7c[(uint)bVar10 * -2 + 9];
-      afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-           afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
-      afStack_7c[1] = (1.0 - this_ptr->aim_weight) * afStack_7c[1];
-      core_xform_cpp_FUN_00591c10();
+      core_xform_cpp_getTranslation_FUN_00592720(&local_320,&local_74);
+      local_38.x = local_74.x;
+      *(uint *)((int)&local_38 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_74 + (uint)bVar10 * -8 + 4);
+      *(uint *)((int)&local_38 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+           *(uint *)((int)&local_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&local_320,in_stack_fffffc30);
+      local_80.x = afStack_64[2];
+      *(float *)((int)&local_80 + (uint)bVar10 * -8 + 4) = afStack_64[(uint)bVar10 * -2 + 3];
+      *(float *)((int)&local_80 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4 + 8) =
+           afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+      local_80.z = (1.0 - this_ptr->aim_weight) * local_80.z;
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+                (&local_320,&local_38,&local_80);
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_320,&local_380,&local_110);
     pCVar8 = &local_110;
   }
-  pfVar7 = local_350;
+  pCVar6 = &local_350;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *pfVar7 = pCVar8->m[0].w;
+    pCVar6->m[0].w = pCVar8->m[0].w;
     pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
-    pfVar7 = pfVar7 + (uint)bVar10 * -2 + 1;
+    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
   }
-  core_xform_cpp_FUN_00592720();
+  core_xform_cpp_getTranslation_FUN_00592720(&local_350,&local_50);
   pCVar1 = (this_ptr->base).inventories;
-  local_2c = local_50;
-  afStack_7c[(uint)bVar10 * -2 + 0x15] = afStack_7c[(uint)bVar10 * -2 + 0xc];
-  afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x16] =
-       afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
+  local_2c = local_50.x;
+  local_24[(uint)bVar10 * -2 + -1] = *(CInventory **)((int)&local_50 + (uint)bVar10 * -8 + 4);
+  local_24[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
+       *(CInventory **)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
   pCVar2 = pCVar1->selected_weapons[(this_ptr->base).inventories[0].current_group];
   (pCVar2->base).location.position.x = local_2c;
   (pCVar2->base).location.position.y = local_28;
-  (pCVar2->base).location.position.z = local_24;
-  local_18 = pCVar1;
-  core_xform_cpp_matrixToEulerAngles_FUN_00591de0();
-  pCVar1 = local_18;
+  (pCVar2->base).location.position.z = (float)local_24[0];
+  local_24[3] = pCVar1;
+  core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&local_350,in_stack_fffffc30);
+  pCVar1 = local_24[3];
   local_44 = local_68;
-  afStack_7c[(uint)bVar10 * -2 + 0xf] = afStack_7c[(uint)bVar10 * -2 + 6];
-  afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
-       afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
-  pCVar2 = local_18->selected_weapons[pCVar1->current_group];
+  local_40[(uint)bVar10 * -2] = afStack_64[(uint)bVar10 * -2];
+  local_40[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+       afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+  pCVar2 = local_24[3]->selected_weapons[pCVar1->current_group];
   pUVar4 = &(pCVar2->base).orient;
-  if (pUVar4 != (UOrientationVector *)(afStack_7c + 0xe)) {
+  if (pUVar4 != (UOrientationVector *)&local_44) {
     (pUVar4->vec).x = local_44;
-    (pCVar2->base).orient.vec.y = local_40;
-    (pCVar2->base).orient.vec.z = local_3c;
+    (pCVar2->base).orient.vec.y = local_40[0];
+    (pCVar2->base).orient.vec.z = local_40[1];
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
             (&(this_ptr->base).inventories[0].selected_weapons

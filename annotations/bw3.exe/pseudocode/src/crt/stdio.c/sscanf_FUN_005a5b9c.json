@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 17,
     "complexity_score": 38,
-    "cross_reference_count": 25,
+    "cross_reference_count": 26,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -25,7 +25,7 @@
     {
       "addr": "0048c2e0",
       "from_addr": "0048c599",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -89,21 +89,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d8c30",
-      "from_addr": "004d8c7e",
-      "name": "engine_ini.cpp_FUN_004d8c30",
+      "addr": "004d8d90",
+      "from_addr": "004d8de5",
+      "name": "engine_ini.cpp_CIniFile_getDouble_FUN_004d8d90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d8cd0",
       "from_addr": "004d8d23",
-      "name": "engine_ini.cpp_FUN_004d8cd0",
+      "name": "engine_ini.cpp_CIniFile_getFloat_FUN_004d8cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d8d90",
-      "from_addr": "004d8de5",
-      "name": "engine_ini.cpp_FUN_004d8d90",
+      "addr": "004d8c30",
+      "from_addr": "004d8c7e",
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004d8c30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -151,19 +151,25 @@
     {
       "addr": "005704a0",
       "from_addr": "00570547",
-      "name": "support_trisock.cpp_FUN_005704a0",
+      "name": "support_trisock.cpp_httpReceiveResponse_FUN_005704a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005709c0",
-      "from_addr": "00570a7c",
-      "name": "support_trisock.cpp_FUN_005709c0",
+      "addr": "00571340",
+      "from_addr": "0057191d",
+      "name": "support_trisock.cpp_httpRequestUpdate_FUN_00571340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056f5c0",
       "from_addr": "0056f5e2",
       "name": "support_trisock.cpp_parseIPComponents_FUN_0056f5c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005709c0",
+      "from_addr": "00570a7c",
+      "name": "support_trisock.cpp_parseUrl_FUN_005709c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -204,7 +210,7 @@
       {
         "call_addr": "0048c599",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,7 +221,7 @@
       {
         "call_addr": "0048c8af",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -226,7 +232,7 @@
       {
         "call_addr": "0048ca43",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -237,7 +243,7 @@
       {
         "call_addr": "0048ccf8",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 12,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -248,7 +254,7 @@
       {
         "call_addr": "0048cf6b",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,7 +265,7 @@
       {
         "call_addr": "0048d0e7",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -270,7 +276,7 @@
       {
         "call_addr": "0048d120",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -281,7 +287,7 @@
       {
         "call_addr": "0048d183",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -292,7 +298,7 @@
       {
         "call_addr": "0048d2e1",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

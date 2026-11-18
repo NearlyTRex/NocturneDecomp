@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626630 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626634 = 005c50d4
-;   undefined4 DAT_00626838
-;   undefined4 DAT_0062683c
+;   SIOControlBlock* g_IOControlBlock = 00000000
+;   int g_INT_0062683c = 0x0
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_005c10d0
@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 005c8c4d
     PUSH EDI                            ; 005c8c4e
     PUSH EBP                            ; 005c8c4f
-    MOV ESI,dword ptr [0x00626838]      ; 005c8c50 | DAT_00626838
+    MOV ESI,dword ptr [0x00626838]      ; 005c8c50 | g_IOControlBlock
     MOV EDI,dword ptr [ESP + 0x18]      ; 005c8c56
     TEST EDI,EDI                        ; 005c8c5a
     JL 0x005c8d16                       ; 005c8c5c
@@ -62,10 +62,10 @@ section .text
     PUSH -0xc                           ; 005c8c91
     CALL dword ptr CS:[0x5d064c]        ; 005c8c93
         ;   Label: LAB_005c8c93
-    MOV EBP,dword ptr [0x0062683c]      ; 005c8c9a | DAT_0062683c
+    MOV EBP,dword ptr [0x0062683c]      ; 005c8c9a | g_INT_0062683c
         ;   Label: LAB_005c8c9a
     LEA EBX,[EDI*0x4 + 0x0]             ; 005c8ca0
-    MOV ESI,dword ptr [0x00626838]      ; 005c8ca7 | DAT_00626838
+    MOV ESI,dword ptr [0x00626838]      ; 005c8ca7 | g_IOControlBlock
     CMP EDI,EBP                         ; 005c8cad
     JGE 0x005c8cbb                      ; 005c8caf
         ;   XREF to: 005c8cbb (CONDITIONAL_JUMP)  ; LAB_005c8cbb
@@ -80,7 +80,7 @@ section .text
     PUSH ESI                            ; 005c8cbf
     CALL crt_memory.c_realloc_FUN_005c10d0 ; 005c8cc0
         ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
-    MOV EDX,dword ptr [0x0062683c]      ; 005c8cc5 | DAT_0062683c
+    MOV EDX,dword ptr [0x0062683c]      ; 005c8cc5 | g_INT_0062683c
     ADD ESP,0x8                         ; 005c8ccb
     MOV ESI,EAX                         ; 005c8cce
     CMP EDX,EDI                         ; 005c8cd0
@@ -101,13 +101,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 005c8cf5
     INC EDI                             ; 005c8cf9
     ADD EAX,ESI                         ; 005c8cfa
-    MOV dword ptr [0x00626838],ESI      ; 005c8cfc | DAT_00626838
-    MOV dword ptr [0x0062683c],EDI      ; 005c8d02 | DAT_0062683c
+    MOV dword ptr [0x00626838],ESI      ; 005c8cfc | g_IOControlBlock
+    MOV dword ptr [0x0062683c],EDI      ; 005c8d02 | g_INT_0062683c
     MOV dword ptr [EAX],EDX             ; 005c8d08
     CALL dword ptr [0x00626634]         ; 005c8d0a | PTR_crt_unknown.c_FUN_005c50d4_00626634
         ;   Label: LAB_005c8d0a
-    MOV ESI,dword ptr [0x00626838]      ; 005c8d10 | DAT_00626838
-    MOV ESI,dword ptr [0x00626838]      ; 005c8d16 | DAT_00626838
+    MOV ESI,dword ptr [0x00626838]      ; 005c8d10 | g_IOControlBlock
+    MOV ESI,dword ptr [0x00626838]      ; 005c8d16 | g_IOControlBlock
         ;   Label: LAB_005c8d16
     POP EBP                             ; 005c8d1c
     POP EDI                             ; 005c8d1d

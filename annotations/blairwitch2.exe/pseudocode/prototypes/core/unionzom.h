@@ -45,9 +45,9 @@ void __cdecl CUnionZombie::processVanishAttackState(CUnionZombie *this_ptr,float
 // Address: 005a4220
 void __cdecl CUnionZombie::processMeleeAttackState(CUnionZombie *this_ptr,float delta_time);
 
-// Original: core_unionzom.cpp_FUN_005a4330
+// Original: core_unionzom.cpp_CUnionZombie_processAI_FUN_005a4330
 // Address: 005a4330
-void FUN_005a4330(int param_1,float param_2);
+void __cdecl CUnionZombie::processAI(CUnionZombie *this_ptr,float delta_time);
 
 // Original: core_unionzom.cpp_CUnionZombie_getDeathState_FUN_005a4580
 // Address: 005a4580

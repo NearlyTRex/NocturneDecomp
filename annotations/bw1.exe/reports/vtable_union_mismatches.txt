@@ -11,18 +11,18 @@ from the wrong vtable struct, producing misleading pseudocode.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total mismatches found: 56
+  Total mismatches found: 59
 
   By union member used:
-    _uc (CCharacter_vtable): 44
+    _uc (CCharacter_vtable): 47
     _ue (CEnemy_vtable): 2
     _uh (CHero_vtable): 10
 
   By source file:
     core/demnfolk.cpp                        9
-    core/lightgun.cpp                        6
-    core/lightpis.cpp                        6
-    core/turret.cpp                          6
+    core/lightgun.cpp                        7
+    core/lightpis.cpp                        7
+    core/turret.cpp                          7
     core/crossbow.cpp                        4
     core/elephant.cpp                        4
     core/shotgun.cpp                         4
@@ -38,9 +38,9 @@ SUMMARY
 
   By object type:
     CDemnfolk                 9  (CDemnfolk -> CEnemy -> CCharacter -> CDemonActor)
-    CLightGun                 6  (CLightGun -> CWeapon -> CDemonActor)
-    CLightPis                 6  (CLightPis -> CWeapon -> CDemonActor)
-    CTurret                   6  (CTurret -> CWeapon -> CDemonActor)
+    CLightGun                 7  (CLightGun -> CWeapon -> CDemonActor)
+    CLightPis                 7  (CLightPis -> CWeapon -> CDemonActor)
+    CTurret                   7  (CTurret -> CWeapon -> CDemonActor)
     CCrossbow                 4  (CCrossbow -> CWeapon -> CDemonActor)
     CElephantGun              4  (CElephantGun -> CWeapon -> CDemonActor)
     CShotgun                  4  (CShotgun -> CWeapon -> CDemonActor)
@@ -69,29 +69,32 @@ DETAILED FINDINGS
     CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  isWeaponDrawn -> ?
     CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  isWeaponDrawn -> ?
 
-  core/lightgun.cpp (6)
+  core/lightgun.cpp (7)
     CLightGun_fire_FUN_00500310                         this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightGun_fire_FUN_00500310                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
     CLightGun_fire_FUN_00500310                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
     CLightGun_fire_FUN_00500310                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
     CLightGun_renderAimBeam_FUN_00500f90                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightGun_renderAimBeam_FUN_00500f90                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightGun_updateBeamLight_FUN_00500090              this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
-  core/lightpis.cpp (6)
+  core/lightpis.cpp (7)
     CLightPis_fire_FUN_00501a70                         this_ptr on CLightPis        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightPis_fire_FUN_00501a70                         this_ptr on CLightPis        used _uc, need _uw  getGrabbed -> getDamage
     CLightPis_fire_FUN_00501a70                         this_ptr on CLightPis        used _uc, need _uw  getGrabbed -> getDamage
     CLightPis_fire_FUN_00501a70                         this_ptr on CLightPis        used _uc, need _uw  getGrabbed -> getDamage
     CLightPis_renderAimBeam_FUN_005026f0                this_ptr on CLightPis        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightPis_renderAimBeam_FUN_005026f0                this_ptr on CLightPis        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightPis_updateBeamLight_FUN_005017f0              this_ptr on CLightPis        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
-  core/turret.cpp (6)
+  core/turret.cpp (7)
     CTurret_fire_FUN_005a3870                           this_ptr on CTurret          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CTurret_fire_FUN_005a3870                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
     CTurret_fire_FUN_005a3870                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
     CTurret_process_FUN_005a23b0                        this_ptr on CTurret          used _uc, need _uw  releaseFromGrab -> renderAimBeam
     CTurret_updateInteraction_FUN_005a35c0              this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
     CTurret_updatePatrol_FUN_005a3650                   this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
+    CTurret_updateTargeting_FUN_005a2d00                this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
 
   core/crossbow.cpp (4)
     CCrossbow_fire_FUN_00449a50                         this_ptr on CCrossbow        used _uc, need _uw  isInvulnerable -> getMuzzlePoint

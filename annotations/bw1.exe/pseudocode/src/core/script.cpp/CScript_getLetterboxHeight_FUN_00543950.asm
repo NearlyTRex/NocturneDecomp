@@ -10,14 +10,14 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004d98e9
 ;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0 at 004cc35b
-;   core_game.cpp_FUN_004d9260 at 004d98e9
 ;   core_script.cpp_CScript_renderSubtitles_FUN_005439b0 at 00543a33
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
-;   undefined4 DAT_01e818b0
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
+;   float g_ScriptTimeScale
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -29,7 +29,7 @@ section .text
     PUSH EBX                            ; 00543950
         ;   Label: core_script.cpp_CScript_getLetterboxHeight_FUN_00543950
     SUB ESP,0x8                         ; 00543951
-    MOV EDX,dword ptr [0x0061b498]      ; 00543954 | DAT_0061b498
+    MOV EDX,dword ptr [0x0061b498]      ; 00543954 | g_INT_0061b498
     LEA EAX,[EDX*0x4 + 0x0]             ; 0054395a
     SUB EAX,EDX                         ; 00543961
     SHL EAX,0x3                         ; 00543963
@@ -39,7 +39,7 @@ section .text
     MOV EAX,EDX                         ; 00543970
     SAR EDX,0x1f                        ; 00543972
     IDIV EBX                            ; 00543975
-    MOV ECX,dword ptr [0x0061b49c]      ; 00543977 | DAT_0061b49c
+    MOV ECX,dword ptr [0x0061b49c]      ; 00543977 | g_INT_0061b49c
     MOV EDX,ECX                         ; 0054397d
     SUB EDX,EAX                         ; 0054397f
     MOV EAX,EDX                         ; 00543981
@@ -48,9 +48,9 @@ section .text
     SAR EAX,0x1                         ; 00543988
     MOV dword ptr [ESP + 0x4],EAX       ; 0054398a
     FILD dword ptr [ESP + 0x4]          ; 0054398e
-    FMUL float ptr [0x01e818b0]         ; 00543992 | DAT_01e818b0
+    FMUL float ptr [0x01e818b0]         ; 00543992 | g_ScriptTimeScale
     CALL crt_math.c_round_FUN_005c03a0  ; 00543998
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 0054399d
     MOV EAX,dword ptr [ESP]             ; 005439a0
     ADD ESP,0x8                         ; 005439a3

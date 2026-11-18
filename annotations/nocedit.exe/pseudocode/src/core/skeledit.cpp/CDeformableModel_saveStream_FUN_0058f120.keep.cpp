@@ -33,7 +33,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
   pCVar16 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
   iVar13 = pCVar16->bone_count;
   _fprintf(file_handle,"// version\n");
-  _fprintf(file_handle,"%d\n",INT_00681864);
+  _fprintf(file_handle,"%d\n",g_MaxDeformableModelVersion);
   _fprintf(file_handle,"// lodCount,textureSetCount,textureCount,boneCount,partCount\n");
   _fprintf(file_handle,"%d,%d,%d,%d,%d\n",this_ptr->num_lods,this_ptr->num_texture_sets,this_ptr->num_textures,iVar13,this_ptr->num_parts);
   _fprintf(file_handle,"// Lod list: VertexCount,triCount,capTriCount,pixelHeight,shadowOnlyFlag\n");

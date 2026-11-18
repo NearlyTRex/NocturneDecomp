@@ -11,25 +11,25 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054ede3
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 00550fd3
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170 at 005513a4
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 00550461
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f9f3
-;   core_set.cpp_FUN_00550da0 at 00550fd3
-;   core_set.cpp_FUN_00551170 at 005513a4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005d903d
 ;   TerminatedCString s_CDemonLight_endScene_Sce_005d9050
-;   undefined4 DAT_005d907c
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01c43550
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   double g_ShadowDepthToDistanceScale = 0.00390625
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40
 ;   engine_drender.cpp_popViewport_FUN_00483c40
 ;
@@ -79,17 +79,17 @@ section .text
     MOV dword ptr [ESP],EBX             ; 00462b28
         ;   Label: LAB_00462b28
     FILD dword ptr [ESP]                ; 00462b2b
-    FMUL double ptr [0x005d907c]        ; 00462b2e | DAT_005d907c
+    FMUL double ptr [0x005d907c]        ; 00462b2e | g_ShadowDepthToDistanceScale
     FSTP float ptr [ESI + 0x140]        ; 00462b34
     PUSH 0x0                            ; 00462b3a
         ;   Label: LAB_00462b3a
-    MOV EDX,dword ptr [0x00612560]      ; 00462b3c | DAT_00612560
-    PUSH EDX                            ; 00462b42 | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 00462b3c | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 00462b42 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40 ; 00462b43
         ;   XREF to: 00483e40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 00462b48
-    MOV ECX,dword ptr [0x00612560]      ; 00462b4b | DAT_00612560
-    PUSH ECX                            ; 00462b51 | DAT_01bc120c
+    MOV ECX,dword ptr [0x00612560]      ; 00462b4b | g_CDemonRenderer_PTR_00612560
+    PUSH ECX                            ; 00462b51 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_popViewport_FUN_00483c40 ; 00462b52
         ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_00483c40()
     ADD ESP,0x4                         ; 00462b57
@@ -101,7 +101,7 @@ section .text
     MOV EDX,ESI                         ; 00462b66
     MOV ECX,dword ptr [EDX + 0x1cd4]    ; 00462b68
         ;   Label: LAB_00462b68
-    MOV dword ptr [EAX*0x4 + 0x1c4354c],ECX ; 00462b6e | DAT_01c4354c | DAT_01c43550
+    MOV dword ptr [EAX*0x4 + 0x1c4354c],ECX ; 00462b6e | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 00462b75
     MOV EDI,dword ptr [ESI + 0x1cc4]    ; 00462b76
     ADD EDX,0x4                         ; 00462b7c
@@ -127,10 +127,10 @@ section .text
         ;   Label: LAB_00462baa
     MOV EBX,0x164                       ; 00462baf
     PUSH 0x5d9050                       ; 00462bb4 | = "CDemonLight::endScene - Scene not open"
-    MOV dword ptr [0x01d1d400],ECX      ; 00462bb9 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00462bbf | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00462bc5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00462bb9 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00462bbf | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00462bc5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00462bca
     JMP 0x00462aec                      ; 00462bcd
         ;   XREF to: 00462aec (UNCONDITIONAL_JUMP)  ; LAB_00462aec

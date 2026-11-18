@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_haystack_cpp_CHaystack_getActorType_FUN_004b3090(CHaystack *this_ptr)
 
 {
-  return &g_CHaystackActorType_01cae05c;
+  return &g_CHaystackClassInfo;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
 
 {
@@ -130,11 +128,11 @@ LAB_0040a899:
       if (1.0 < local_a0) {
         return 2.0;
       }
-      out_hit->part_index = _DAT_0268ced8;
-      out_hit->lod_index = _DAT_0268cee8;
-      triangle_index = _DAT_0268ceec;
-      iVar2 = _DAT_0268cee8;
-      out_hit->triangle_index = _DAT_0268ceec;
+      out_hit->part_index = g_DeformableModelRayHitPartIndex;
+      out_hit->lod_index = g_DeformableModelRayHitLodIndex;
+      triangle_index = g_DeformableModelRayHitTriangleIndex;
+      iVar2 = g_DeformableModelRayHitLodIndex;
+      out_hit->triangle_index = g_DeformableModelRayHitTriangleIndex;
       local_14 = local_a0;
       this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
                               (collision_info->deformable_model);
@@ -142,9 +140,9 @@ LAB_0040a899:
                         (this_ptr_02,iVar2,triangle_index);
       out_hit->bone_index = iVar2;
       if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {
-        local_30.x = _DAT_0268cedc;
-        local_30.y = _DAT_0268cee0;
-        local_30.z = _DAT_0268cee4;
+        local_30.x = g_DeformableModelRayHitNormal.x;
+        local_30.y = g_DeformableModelRayHitNormal.y;
+        local_30.z = g_DeformableModelRayHitNormal.z;
       }
     }
   }

@@ -23,7 +23,7 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_0053ffb0(CSimBox *this_ptr)
   pCVar4[-1].linear_velocity_local.z = (float)&g_CSimBoxVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)&pCVar4[-1].linear_velocity_temp,"question.kfm");
-  pcVar5 = (char *)0x5e688e;
+  pcVar5 = "none";
   pfVar6 = &pCVar4[-1].scrape_points[5].raytrace_intersection;
   do {
     cVar1 = *pcVar5;

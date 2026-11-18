@@ -15,7 +15,7 @@ section .text
     PUSH 0x11850                        ; 005a8f50
         ;   Label: core_belling.cpp_factoryFuncBelling_FUN_005a8f50
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005a8f55
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005a8f5a
     TEST EAX,EAX                        ; 005a8f5d
     JNZ 0x005a8f62                      ; 005a8f5f

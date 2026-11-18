@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   format
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004a85a0 at 004a8659
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0 at 004a8659
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStream_vscanf_FUN_0057bb80

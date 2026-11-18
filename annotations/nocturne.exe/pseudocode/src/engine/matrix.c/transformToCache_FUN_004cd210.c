@@ -10,6 +10,6 @@ void __cdecl engine_matrix_c_transformToCache_FUN_004cd210(int cacheIndex,CVecto
 
 {
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            ((SProjectedVertex *)(&DAT_005c5014 + cacheIndex * 0xc),inputPoint);
+            (&g_SRenderVertex_ARRAY_005c5014[cacheIndex].projected_vertex,inputPoint);
   return;
 }

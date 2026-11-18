@@ -1,25 +1,25 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9)
+; void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004b5fa0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
-; int              Stack[0x14]:4   param_5
-; int              Stack[0x18]:4   param_6
-; int              Stack[0x1c]:4   param_7
-; float            Stack[0x20]:4   param_8
-; float            Stack[0x24]:4   param_9
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
+; int              Stack[0x10]:4   fade_rate
+; int              Stack[0x14]:4   intensity
+; int              Stack[0x18]:4   texture_index
+; int              Stack[0x1c]:4   time_scale
+; float            Stack[0x20]:4   jitter
+; float            Stack[0x24]:4   size
 ;
 ; XREF[2]:
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004463d4
 ;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f5fb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c9dab4
+;   int g_INT_01c9dab4
 ;   undefined4 CFirefly_ARRAY_01c9dab8[0].base.vtable
 ;
 ; Called Functions:
@@ -33,23 +33,23 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createFirefly_FUN_004b5fa0
     PUSH EDI                            ; 004b5fa1
     PUSH EBP                            ; 004b5fa2
-    MOV EBX,dword ptr [0x01c9dab4]      ; 004b5fa3 | DAT_01c9dab4
+    MOV EBX,dword ptr [0x01c9dab4]      ; 004b5fa3 | g_INT_01c9dab4
     LEA EAX,[EBX*0x4 + 0x0]             ; 004b5fa9
     SUB EAX,EBX                         ; 004b5fb0
-    MOV EDX,dword ptr [0x01c9dab4]      ; 004b5fb2 | DAT_01c9dab4
+    MOV EDX,dword ptr [0x01c9dab4]      ; 004b5fb2 | g_INT_01c9dab4
     SHL EAX,0x3                         ; 004b5fb8
     INC EDX                             ; 004b5fbb
     SUB EAX,EBX                         ; 004b5fbc
     MOV EBX,0x1c9dab8                   ; 004b5fbe
     SHL EAX,0x2                         ; 004b5fc3
-    MOV dword ptr [0x01c9dab4],EDX      ; 004b5fc6 | DAT_01c9dab4
+    MOV dword ptr [0x01c9dab4],EDX      ; 004b5fc6 | g_INT_01c9dab4
     ADD EBX,EAX                         ; 004b5fcc
     CMP EDX,0x40                        ; 004b5fce
     JL 0x004b5fdd                       ; 004b5fd1
         ;   XREF to: 004b5fdd (CONDITIONAL_JUMP)  ; LAB_004b5fdd
     PUSH ESI                            ; 004b5fd3
     XOR ESI,ESI                         ; 004b5fd4
-    MOV dword ptr [0x01c9dab4],ESI      ; 004b5fd6 | DAT_01c9dab4
+    MOV dword ptr [0x01c9dab4],ESI      ; 004b5fd6 | g_INT_01c9dab4
     POP ESI                             ; 004b5fdc
     MOV EDI,dword ptr [ESP + 0x18]      ; 004b5fdd
         ;   Label: LAB_004b5fdd

@@ -17,7 +17,7 @@ void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130(SPose *bone
   float fStack_48;
   float fStack_44;
   float fStack_40;
-  float fStack_3c;
+  CVector3f CStack_3c;
   CSkeleton *pCStack_30;
   CVector3f *pCStack_2c;
   CSkeleton *pCStack_28;
@@ -75,12 +75,13 @@ void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130(SPose *bone
              (bone_data->pose_data).root_position.z;
       }
       else {
-        core_xform_cpp_FUN_005b5080((int)&pCStack_2c->x + iStack_20,pCStack_18 + iVar1);
-        fStack_48 = fStack_3c;
+        core_xform_cpp_transformVector3x4_FUN_005b5080
+                  ((CVector3f *)((int)&pCStack_2c->x + iStack_20),pCStack_18 + iVar1,&CStack_3c);
+        fStack_48 = CStack_3c.x;
         *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8) =
-             *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8);
+             *(uint *)((int)&CStack_3c + (uint)bVar4 * -8 + 4);
         *(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-             *(uint *)(&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+             *(uint *)((int)&CStack_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
         pSVar3->bone_model_matrices[0].m[0].z = fStack_48;
         pSVar3->bone_model_matrices[0].m[1].z = fStack_44;
         pSVar3->bone_model_matrices[0].m[2].z = fStack_40;

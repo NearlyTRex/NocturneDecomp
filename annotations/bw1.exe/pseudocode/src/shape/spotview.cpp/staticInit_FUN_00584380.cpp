@@ -9,6 +9,6 @@
 void __cdecl shape_spotview_cpp_staticInit_FUN_00584380(void)
 
 {
-  shape_spotview_cpp_CSpotView_ctor_FUN_00584390((CSpotView *)0x2c83514);
+  shape_spotview_cpp_CSpotView_ctor_FUN_00584390(&g_CSpotView_02c83514);
   return;
 }

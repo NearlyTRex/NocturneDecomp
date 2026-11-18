@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_pure_virtual_function_ca_005f1964
-;   undefined2 DAT_0061f648
+;   short g_PureVirtualCallFlag = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bb007
@@ -15,7 +15,7 @@
 
 section .text
 
-    CMP word ptr [0x0061f648],0x0       ; 005bab17 | DAT_0061f648
+    CMP word ptr [0x0061f648],0x0       ; 005bab17 | g_PureVirtualCallFlag
         ;   Label: crt_unknown.c_FUN_005bab17
     JZ 0x005bab22                       ; 005bab1f
         ;   XREF to: 005bab22 (CONDITIONAL_JUMP)  ; LAB_005bab22
@@ -25,7 +25,7 @@ section .text
     PUSH 0x1                            ; 005bab23
     MOV EBX,0x1                         ; 005bab25
     PUSH 0x5f1964                       ; 005bab2a | = "pure virtual function called!"
-    MOV word ptr [0x0061f648],BX        ; 005bab2f | DAT_0061f648
+    MOV word ptr [0x0061f648],BX        ; 005bab2f | g_PureVirtualCallFlag
     CALL crt_unknown.c_FUN_005bb007     ; 005bab36
         ;   XREF to: 005bb007 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bb007()
     ADD ESP,0x8                         ; 005bab3b

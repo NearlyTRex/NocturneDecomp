@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mobster_cpp_CMobster_processDismemberment_FUN_0051ec80(CMobster *this_ptr,SDamageInfo *damage_info)
 
@@ -52,8 +51,8 @@ switchD_0051ecb9_default:
      (iVar1 != this_ptr->part_indices[10])) goto LAB_0051ef1a;
   if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
     fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
-    if ((float)_DAT_005e9f1a <= fVar2) {
-      if (_DAT_005e9f22 <= (double)fVar2) goto LAB_0051ed13;
+    if ((float)0.33300000000000002 <= fVar2) {
+      if (0.66600000000000004 <= (double)fVar2) goto LAB_0051ed13;
       iVar1 = this_ptr->part_indices[2];
     }
     else {
@@ -114,7 +113,7 @@ LAB_0051ed13:
     if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
       damage_info->damage_amount = 9999.0;
     }
-    damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005e9f2a;
+    damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     if ((damage_info->hit_part_index == this_ptr->part_indices[2]) ||
        (damage_info->hit_part_index == this_ptr->part_indices[3])) {
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
@@ -131,11 +130,11 @@ LAB_0051ed13:
 LAB_0051ef1a:
   iVar1 = damage_info->hit_part_index;
   if (iVar1 == this_ptr->part_indices[10]) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e9f3a;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
     return;
   }
   if ((iVar1 != this_ptr->part_indices[8]) && (iVar1 != this_ptr->part_indices[9])) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e9f32;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }
   damage_info->damage_amount = damage_info->damage_amount;

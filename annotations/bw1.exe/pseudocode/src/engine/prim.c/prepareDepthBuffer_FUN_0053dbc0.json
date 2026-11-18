@@ -2,35 +2,27 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 56,
+    "complexity_score": 40,
     "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 104
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
   },
   "cross_references": [
-    {
-      "addr": "0047ab00",
-      "from_addr": "0047ac1a",
-      "name": "core_dpart.cpp_FUN_0047ab00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005bf120",
-      "from_addr": "005bf430",
-      "name": "core_zombie.cpp_FUN_005bf120",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00407df0",
       "from_addr": "00408051",
       "name": "engine_3d.c_clipAndDrawLine3D_FUN_00407df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ab00",
+      "from_addr": "0047ac1a",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_0047ab00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,6 +48,12 @@
       "from_addr": "005bf8cb",
       "name": "engine_zraster.c_rasterizePolygonCustom_FUN_005bf640",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bf120",
+      "from_addr": "005bf430",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_005bf120",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -74,8 +72,8 @@
   "globals": [
     {
       "addr": "01c51d10",
-      "name": "DAT_01c51d10",
-      "type": "undefined4",
+      "name": "g_ProcessorType",
+      "type": "int",
       "value": null
     }
   ],
@@ -85,7 +83,7 @@
       {
         "call_addr": "0047ac1a",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_0047ab00",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_0047ab00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,7 +94,7 @@
       {
         "call_addr": "005bf430",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_005bf120",
+        "caller": "engine_zraster.c_rasterizeTriangle_FUN_005bf120",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -244,14 +242,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

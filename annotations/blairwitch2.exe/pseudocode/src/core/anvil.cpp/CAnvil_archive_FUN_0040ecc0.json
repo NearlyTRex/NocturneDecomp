@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 50
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -57,8 +55,8 @@
   "globals": [
     {
       "addr": "005cb324",
-      "name": "s_modelName_005cb323+1",
-      "type": "undefined4",
+      "name": "s_modelName_005cb324",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -81,8 +79,8 @@
     },
     {
       "addr": "005cb351",
-      "name": "DAT_005cb351",
-      "type": "undefined4",
+      "name": "s_yvel_005cb351",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -151,20 +149,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005cb351",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->yvel,&DAT_005cb351);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "005f2554"
       }

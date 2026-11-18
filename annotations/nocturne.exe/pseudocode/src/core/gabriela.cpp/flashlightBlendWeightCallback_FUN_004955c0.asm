@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00581e22 = 0.700000000000000
-;   undefined4 DAT_01c71394
+;   float g_FLOAT_01c71394
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004955c6
     MOV EAX,dword ptr [EBP + 0x14]      ; 004955c9
     FLD float ptr [EBP + 0x10]          ; 004955cc
-    FMUL float ptr [0x01c71394]         ; 004955cf | DAT_01c71394
+    FMUL float ptr [0x01c71394]         ; 004955cf | g_FLOAT_01c71394
     FSTP float ptr [ESP]                ; 004955d5
     TEST EAX,EAX                        ; 004955d8
     JLE 0x004955f0                      ; 004955da

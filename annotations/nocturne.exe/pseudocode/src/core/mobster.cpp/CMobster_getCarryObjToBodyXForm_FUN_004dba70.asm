@@ -35,7 +35,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 g_CElephantGunActorType_01bcde44.name_hash
+;   undefined4 g_CElephantGunClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -125,7 +125,7 @@ section .text
     POP EDI                             ; 004dbb8e
     POP EBX                             ; 004dbb8f
     RET                                 ; 004dbb90
-    MOV EBP,dword ptr [0x01bcde7c]      ; 004dbb91 | g_CElephantGunActorType_01bcde44.name_hash
+    MOV EBP,dword ptr [0x01bcde7c]      ; 004dbb91 | g_CElephantGunClassInfo.name_hash
         ;   Label: LAB_004dbb91
     PUSH EBP                            ; 004dbb97
     PUSH EDX                            ; 004dbb98

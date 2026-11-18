@@ -160,8 +160,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (((this_ptr->developer_mode_enabled != 0) ||
           (pcVar7 = getenv("SPOOKHOUSE"), pcVar7 != (char *)0x0)) &&
          (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4), iVar5 != 0)) {
-        INT_02d82568 = INT_02d82568 + 1;
-        _sprintf(g_ScreenshotFilename,"demon%d.pcx",INT_02d82568);
+        g_ScreenshotIndex = g_ScreenshotIndex + 1;
+        _sprintf(g_ScreenshotFilename,"demon%d.pcx",g_ScreenshotIndex);
         engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_ScreenshotFilename);
       }
 #if !NOCTURNE_AUTHENTIC_NETPLAY

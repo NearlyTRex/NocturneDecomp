@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel *this_ptr,char *filename)
 
 {
@@ -17,14 +15,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel *
   CKeyFramedModel *pCVar3;
   char *pcVar4;
   
-  core_dmodel_cpp_FUN_00467160(this_ptr);
-  file = engine_dosio_cpp_FUN_00479180("models",filename,&DAT_005d92ac);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr);
+  file = engine_dosio_cpp_getFile_FUN_00479180("models",filename,"rb");
   pcVar4 = filename;
   pCVar3 = this_ptr;
   if (file == (_FILE *)0x0) {
-    _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-    _DAT_01d1d404 = 0xb8;
-    core_main_c_FUN_005030e0("Can't open keyframed model %s",filename);
+    g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+    g_INT_01d1d404 = 0xb8;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open keyframed model %s");
   }
   do {
     cVar1 = *pcVar4;
@@ -39,11 +37,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel *
   _ungetc(iVar2,file);
   if (iVar2 == 0x2f) {
     _fclose(file);
-    file = engine_dosio_cpp_FUN_00479180("models",filename,&DAT_005d92e7);
+    file = engine_dosio_cpp_getFile_FUN_00479180("models",filename,"rt");
     if (file == (_FILE *)0x0) {
-      _DAT_01d1d400 = "..\\core\\dmodel.cpp";
-      _DAT_01d1d404 = 0xc5;
-      core_main_c_FUN_005030e0("Can't open keyframed model %s",filename);
+      g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
+      g_INT_01d1d404 = 0xc5;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open keyframed model %s");
     }
     core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00466be0(this_ptr,file);
   }

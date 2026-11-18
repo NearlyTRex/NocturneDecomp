@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 57,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 86
   },
@@ -18,7 +18,7 @@
     {
       "addr": "005a7eb0",
       "from_addr": "005a7eba",
-      "name": "core_bwgrndma.cpp_FUN_005a7eb0",
+      "name": "core_bwgrndma.cpp_staticInit_FUN_005a7eb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -32,13 +32,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_bwspart.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50",
-    "signature": "int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2)"
+    "signature": "CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int max_particles)"
   },
   "function_calls": [
     {
       "addr": "005a84c0",
       "is_variadic": false,
-      "name": "core_bwspart.cpp_FUN_005a84c0"
+      "name": "core_bwspart.cpp_initSimpleParticle_FUN_005a84c0"
     },
     {
       "addr": "005b8580",
@@ -53,7 +53,7 @@
       {
         "call_addr": "005a7eba",
         "call_type": "direct",
-        "caller": "core_bwgrndma.cpp_FUN_005a7eb0",
+        "caller": "core_bwgrndma.cpp_staticInit_FUN_005a7eb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,29 +114,21 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "max_particles",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->max_particles = param_2;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "core_bwspart_cpp_initSimpleParticle_FUN_005a84c0((void *)((int)this_ptr->particles + iVar3));",
+      "type": "pointer_cast"
     }
   ]
 }

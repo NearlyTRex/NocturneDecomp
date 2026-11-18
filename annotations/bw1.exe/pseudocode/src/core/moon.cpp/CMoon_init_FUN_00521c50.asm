@@ -7,8 +7,8 @@
 ; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_menu.cpp_FUN_0050c990 at 0050cb86
 ;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cd40
+;   core_menu.cpp_showOptionsScreen_FUN_0050c990 at 0050cb86
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_taylor_head_kfm_005ea40b

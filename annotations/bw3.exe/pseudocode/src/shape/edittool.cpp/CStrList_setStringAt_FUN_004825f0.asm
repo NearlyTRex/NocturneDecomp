@@ -14,16 +14,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bd582
 ;   TerminatedCString s_CStrList_set_invalid_ind_005bd598
-;   undefined1 DAT_005bd5b6
+;   char g_CHAR_005bd5b6 = \x00
 ;   TerminatedCString s_shape_edittool_cpp_005bd5b7
 ;   undefined4 s_shape_edittool_cpp_005bd5b7+1
 ;   undefined4 s_shape_edittool_cpp_005bd5b7+2
 ;   TerminatedCString s_CStrList_set_out_of_memo_005bd5cd
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_realloc_FUN_005a3e50
 ;
 ; *****************************************************************************
@@ -48,23 +48,23 @@ section .text
         ;   Label: LAB_00482609
     MOV EDI,0xd0f                       ; 0048260e
     PUSH 0x5bd598                       ; 00482613 | = "CStrList::set - invalid index"
-    MOV dword ptr [0x01d71de0],EBX      ; 00482618 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0048261e | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00482624
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBX      ; 00482618 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 0048261e | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00482624
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00482629
     TEST ESI,ESI                        ; 0048262c
         ;   Label: LAB_0048262c
     JNZ 0x00482635                      ; 0048262e
         ;   XREF to: 00482635 (CONDITIONAL_JUMP)  ; LAB_00482635
-    MOV ESI,0x5bd5b6                    ; 00482630 | DAT_005bd5b6
+    MOV ESI,0x5bd5b6                    ; 00482630 | g_CHAR_005bd5b6
     MOV EDI,ESI                         ; 00482635
         ;   Label: LAB_00482635
     MOV EBX,dword ptr [ESP + 0x18]      ; 00482637
     SUB ECX,ECX                         ; 0048263b
     DEC ECX                             ; 0048263d
     XOR EAX,EAX                         ; 0048263e
-    SCASB.REPNE ES:EDI                  ; 00482640 | DAT_005bd5b6 | = "..\\shape\\edittool.cpp"
+    SCASB.REPNE ES:EDI                  ; 00482640 | g_CHAR_005bd5b6 | = "..\\shape\\edittool.cpp"
     NOT ECX                             ; 00482642
     DEC ECX                             ; 00482644
     INC ECX                             ; 00482645
@@ -87,7 +87,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8]       ; 0048266a
     MOV EDI,dword ptr [EAX + ECX*0x4]   ; 0048266d
     PUSH EDI                            ; 00482670
-    MOV AL,byte ptr [ESI]               ; 00482671 | DAT_005bd5b6 | s_shape_edittool_cpp_005bd5b7+1
+    MOV AL,byte ptr [ESI]               ; 00482671 | g_CHAR_005bd5b6 | s_shape_edittool_cpp_005bd5b7+1
         ;   Label: LAB_00482671
     MOV byte ptr [EDI],AL               ; 00482673
     CMP AL,0x0                          ; 00482675
@@ -111,10 +111,10 @@ section .text
         ;   Label: LAB_0048268f
     MOV EDI,0xd18                       ; 00482694
     PUSH 0x5bd5cd                       ; 00482699 | = "CStrList::set - out of memory!"
-    MOV dword ptr [0x01d71de0],EBX      ; 0048269e | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004826a4 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004826aa
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBX      ; 0048269e | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 004826a4 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004826aa
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004826af
     JMP 0x00482666                      ; 004826b2
         ;   XREF to: 00482666 (UNCONDITIONAL_JUMP)  ; LAB_00482666

@@ -16,18 +16,18 @@
 ; XREF[14]:
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fb38
 ;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435b46
-;   core_doc.cpp_FUN_00453d80 at 004540ca
-;   core_doc.cpp_FUN_00455d10 at 00456051
-;   core_doc.cpp_FUN_004562a0 at 0045661d
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0 at 0045661d
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00456051
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 004540ca
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afb37
 ;   core_haystack.cpp_CHaystack_process_FUN_004cc990 at 004ccc91
 ;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d4fc6
+;   core_scat.cpp_CScat_blendAimBones_FUN_00520140 at 005203aa
 ;   core_scat.cpp_CScat_process_FUN_0051ecc0 at 0051f10b
-;   core_scat.cpp_FUN_00520140 at 005203aa
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e7327
+;   double g_DOUBLE_005e7327 = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 005466c3
     SUB ESP,0x1c                        ; 005466c4
     FLD float ptr [ESP + 0x38]          ; 005466c7
-    FCOMP double ptr [0x005e7327]       ; 005466cb | DAT_005e7327
+    FCOMP double ptr [0x005e7327]       ; 005466cb | g_DOUBLE_005e7327
     FNSTSW AX                           ; 005466d1
     SAHF                                ; 005466d3
     JA 0x005466de                       ; 005466d4
@@ -117,7 +117,7 @@ section .text
     PUSH EBP                            ; 0054676d
     LEA ESI,[ESP + 0xc]                 ; 0054676e
     CALL core_xform.cpp_slerpQuaternion_FUN_00593df0 ; 00546772
-        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00593df0()
+        ;   XREF to: 00593df0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     ADD ESP,0xc                         ; 00546777
     MOV EDI,dword ptr [ESP + 0x14]      ; 0054677a
     MOV ESI,ESP                         ; 0054677e

@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Can_t_load_s_because_ske_00591e43
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02737ef4
+;   int g_INT_02737ef4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -31,7 +31,7 @@ section .text
     PUSH EDI                            ; 0051f682
     PUSH EBP                            ; 0051f683
     MOV EDI,dword ptr [ESP + 0x14]      ; 0051f684
-    MOV EDX,dword ptr [0x02737ef4]      ; 0051f688 | DAT_02737ef4
+    MOV EDX,dword ptr [0x02737ef4]      ; 0051f688 | g_INT_02737ef4
     XOR EBX,EBX                         ; 0051f68e
     TEST EDX,EDX                        ; 0051f690
     JLE 0x0051f6cb                      ; 0051f692
@@ -50,13 +50,13 @@ section .text
     TEST EAX,EAX                        ; 0051f6b6
     JZ 0x0051f725                       ; 0051f6b8
         ;   XREF to: 0051f725 (CONDITIONAL_JUMP)  ; LAB_0051f725
-    MOV ECX,dword ptr [0x02737ef4]      ; 0051f6ba | DAT_02737ef4
+    MOV ECX,dword ptr [0x02737ef4]      ; 0051f6ba | g_INT_02737ef4
     INC EBX                             ; 0051f6c0
     ADD ESI,0x2937c                     ; 0051f6c1
     CMP EBX,ECX                         ; 0051f6c7
     JL 0x0051f69f                       ; 0051f6c9
         ;   XREF to: 0051f69f (CONDITIONAL_JUMP)  ; LAB_0051f69f
-    CMP dword ptr [0x02737ef4],0x28     ; 0051f6cb | DAT_02737ef4
+    CMP dword ptr [0x02737ef4],0x28     ; 0051f6cb | g_INT_02737ef4
         ;   Label: LAB_0051f6cb
     JL 0x0051f6fa                       ; 0051f6d2
         ;   XREF to: 0051f6fa (CONDITIONAL_JUMP)  ; LAB_0051f6fa
@@ -70,14 +70,14 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051f6f2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 0051f6f7
-    MOV EAX,[0x02737ef4]                ; 0051f6fa | DAT_02737ef4
+    MOV EAX,[0x02737ef4]                ; 0051f6fa | g_INT_02737ef4
         ;   Label: LAB_0051f6fa
     IMUL EBX,EAX,0x2937c                ; 0051f6ff
     PUSH EDI                            ; 0051f705
     ADD EBX,0x2737ef8                   ; 0051f706
     LEA EDX,[EAX + 0x1]                 ; 0051f70c
     PUSH EBX                            ; 0051f70f
-    MOV dword ptr [0x02737ef4],EDX      ; 0051f710 | DAT_02737ef4
+    MOV dword ptr [0x02737ef4],EDX      ; 0051f710 | g_INT_02737ef4
     CALL core_skeleton.cpp_CSkeleton_load_FUN_00517560 ; 0051f716
         ;   XREF to: 00517560 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_load_FUN_00517560(CSkeleton * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0051f71b

@@ -13,8 +13,8 @@ CGun * __cdecl core_gun_cpp_CGun_ctor_FUN_004d0f60(CGun *this_ptr)
   
   pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   (pCVar1->base).vtable._ub = &g_CGunVTable._ub;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(&pCVar1->model,(char *)0x5c49cc)
-  ;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
+            (&pCVar1->model,"gat.kfm");
   pCVar1->is_spread_weapon = 0;
   pCVar1->fire_mode = FIRE_MODE_SINGLE;
   pCVar1->can_penetrate = 1;

@@ -10,17 +10,17 @@
 ; undefined        Stack[-0x8c]:1  local_8c
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004c07b0 at 004c479f
-;   core_hero.cpp_FUN_004d4900 at 004d497c
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c479f
+;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d497c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4d01
+;   float g_FLOAT_005c4d01 = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;
 ; *****************************************************************************
 
@@ -64,7 +64,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d2d59
     MOVSD ES:EDI,ESI                    ; 004d2d5a
     MOVSD ES:EDI,ESI                    ; 004d2d5b
-    FLD float ptr [0x005c4d01]          ; 004d2d5c | DAT_005c4d01
+    FLD float ptr [0x005c4d01]          ; 004d2d5c | g_FLOAT_005c4d01
     FLD float ptr [ESP + 0x40]          ; 004d2d62
     FMUL ST1                            ; 004d2d66
     FLD float ptr [ESP + 0x44]          ; 004d2d68
@@ -91,8 +91,8 @@ section .text
     PUSH EBX                            ; 004d2da9
     LEA ESI,[ESP + 0x78]                ; 004d2daa
     LEA EDI,[ESP + 0x84]                ; 004d2dae
-    CALL core_actor.cpp_FUN_00408b80    ; 004d2db5
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004d2db5
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x78]                ; 004d2dba
     ADD ESP,0x8                         ; 004d2dbe
     MOVSD ES:EDI,ESI                    ; 004d2dc1

@@ -2,22 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 234,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 124,
-    "suspect_count": 8,
+    "pseudocode_lines": 123,
+    "suspect_count": 2,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
       "unknown_field",
-      "unresolved_funcptr",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 405
+    "total_lines": 404
   },
   "cross_references": [
     {
@@ -90,21 +86,21 @@
   "globals": [
     {
       "addr": "005eb790",
-      "name": "DAT_005eb790",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005eb790",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005eb798",
-      "name": "DAT_005eb798",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005eb798",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "005eb7a0",
-      "name": "DAT_005eb7a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005eb7a0",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "0061abc0",
@@ -120,32 +116,32 @@
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "006260e8",
-      "name": "DAT_006260e8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ForceMessagePump",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "01d51da0",
-      "name": "DAT_01d51da0",
-      "type": "undefined4",
+      "name": "g_UINT_01d51da0",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01d51da4",
-      "name": "DAT_01d51da4",
-      "type": "undefined4",
+      "name": "g_ConnectionStatus",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c8ae4c",
-      "name": "DAT_02c8ae4c",
-      "type": "undefined4",
+      "name": "g_AnyAddressIP",
+      "type": "uchar[4]",
       "value": null
     }
   ],
@@ -279,64 +275,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_006260e8",
-      "severity": "mild",
-      "text": "uStack_18 = DAT_006260e8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_006260e8",
-      "severity": "mild",
-      "text": "DAT_006260e8 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 73,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_33._0_4_ = this_ptr->players[this_ptr->local_player_index].aim_mode;",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_006260e8",
-      "severity": "mild",
-      "text": "DAT_006260e8 = uStack_18;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 118,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 118,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 78,
+      "line": 76,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

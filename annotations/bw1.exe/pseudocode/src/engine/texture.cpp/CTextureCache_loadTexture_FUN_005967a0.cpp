@@ -12,231 +12,239 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005967a0(CTextureCa
 
 {
   char cVar1;
-  int iVar2;
-  uchar *puVar3;
-  uint uVar4;
-  int extraout_ECX;
-  int extraout_EDX;
-  STextureCacheEntry *pSVar5;
-  char *pcVar6;
-  char *pcVar7;
-  char *pcVar8;
-  char *pcVar9;
-  byte bVar10;
-  float10 fVar11;
-  float10 fVar12;
-  float10 fVar13;
-  float10 fVar14;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  ulong size;
+  int iVar5;
+  uchar *puVar6;
+  uint uVar7;
+  int iVar8;
+  STextureCacheEntry *pSVar9;
+  char *pcVar10;
+  char *pcVar11;
+  char *pcVar12;
+  char *pcVar13;
+  byte bVar14;
+  double dVar15;
   char local_1dc [128];
   char local_15c [128];
   char local_dc [128];
   CInStreamFile local_5c;
   int local_30;
-  int local_20;
+  int iStack_24;
   int local_1c;
   int local_18;
   uint local_14;
   
-  bVar10 = 0;
+  bVar14 = 0;
   support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_5c);
-  uVar4 = 0xffffffff;
-  pcVar8 = texture_name;
+  uVar7 = 0xffffffff;
+  pcVar12 = texture_name;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar1 = *pcVar8;
-    pcVar8 = pcVar8 + (uint)bVar10 * -2 + 1;
+    if (uVar7 == 0) break;
+    uVar7 = uVar7 - 1;
+    cVar1 = *pcVar12;
+    pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
   } while (cVar1 != '\0');
-  if (0x3f < ~uVar4 - 1) {
-    _DAT_01d1d400 = "..\\engine\\texture.cpp";
-    _DAT_01d1d404 = 0xfb;
-    core_main_c_FUN_005030e0("Texture name is too big : %s",texture_name);
+  if (0x3f < ~uVar7 - 1) {
+    g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+    g_INT_01d1d404 = 0xfb;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Texture name is too big : %s");
   }
-  memset((void *)0x2c8a688,0,0x214);
-  memset((void *)0x2c8a89c,0,0x214);
-  memset((void *)0x2c8aab0,0,0x214);
-  engine_dosio_cpp_FUN_00478e20(0x2c8a688,&DAT_005f7965,texture_name);
-  iVar2 = engine_dosio_cpp_findFile_FUN_00478e90((SFoundFileInfo *)0x2c8a688);
-  if (iVar2 == 0) {
-    _DAT_01d1d400 = "..\\engine\\texture.cpp";
-    _DAT_01d1d404 = 0x107;
-    core_main_c_FUN_005030e0("CTextureCache::load - Can't get file info on %s",texture_name);
+  memset(g_CHAR_ARRAY_02c8a688,0,0x214);
+  memset(g_CHAR_ARRAY_02c8a89c,0,0x214);
+  memset(g_CHAR_ARRAY_02c8aab0,0,0x214);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00478e20
+            (g_CHAR_ARRAY_02c8a688,"art",texture_name);
+  iVar5 = engine_dosio_cpp_findFile_FUN_00478e90((SFoundFileInfo *)g_CHAR_ARRAY_02c8a688);
+  if (iVar5 == 0) {
+    g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+    g_INT_01d1d404 = 0x107;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureCache::load - Can't get file info on %s");
   }
-  uVar4 = _DAT_02c8a88c;
+  size = g_ULONG_02c8a88c;
   local_1c = engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(this_ptr);
-  pSVar5 = this_ptr->entries + local_1c;
-  pcVar8 = pSVar5->texture_name;
-  pcVar6 = texture_name;
+  pSVar9 = this_ptr->entries + local_1c;
+  pcVar12 = pSVar9->texture_name;
+  pcVar10 = texture_name;
   do {
-    cVar1 = *pcVar6;
-    *pcVar8 = cVar1;
-    pcVar7 = texture_name;
-    pcVar9 = local_1dc;
+    cVar1 = *pcVar10;
+    *pcVar12 = cVar1;
+    pcVar11 = texture_name;
+    pcVar13 = local_1dc;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar8[1] = cVar1;
-    pcVar8 = pcVar8 + 2;
-    pcVar9 = local_1dc;
+    cVar1 = pcVar10[1];
+    pcVar10 = pcVar10 + 2;
+    pcVar12[1] = cVar1;
+    pcVar12 = pcVar12 + 2;
+    pcVar13 = local_1dc;
   } while (cVar1 != '\0');
   do {
-    cVar1 = *pcVar7;
-    *pcVar9 = cVar1;
+    cVar1 = *pcVar11;
+    *pcVar13 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar7[1];
-    pcVar9[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-    pcVar9 = pcVar9 + 2;
+    cVar1 = pcVar11[1];
+    pcVar13[1] = cVar1;
+    pcVar11 = pcVar11 + 2;
+    pcVar13 = pcVar13 + 2;
   } while (cVar1 != '\0');
-  engine_dosio_cpp_changeFileExtension_FUN_004796b0(local_1dc,&DAT_005f79af);
-  engine_dosio_cpp_FUN_00478e20(0x2c8a89c,&DAT_005f79b4,local_1dc);
-  local_30 = engine_dosio_cpp_findFile_FUN_00478e90((SFoundFileInfo *)0x2c8a89c);
-  pcVar8 = local_15c;
-  pcVar6 = texture_name;
+  engine_dosio_cpp_changeFileExtension_FUN_004796b0(local_1dc,".act");
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00478e20
+            (g_CHAR_ARRAY_02c8a89c,"art",local_1dc);
+  local_30 = engine_dosio_cpp_findFile_FUN_00478e90((SFoundFileInfo *)g_CHAR_ARRAY_02c8a89c);
+  pcVar12 = local_15c;
+  pcVar10 = texture_name;
   do {
-    cVar1 = *pcVar6;
-    *pcVar8 = cVar1;
+    cVar1 = *pcVar10;
+    *pcVar12 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar8[1] = cVar1;
-    pcVar8 = pcVar8 + 2;
+    cVar1 = pcVar10[1];
+    pcVar10 = pcVar10 + 2;
+    pcVar12[1] = cVar1;
+    pcVar12 = pcVar12 + 2;
   } while (cVar1 != '\0');
-  engine_dosio_cpp_changeFileExtension_FUN_004796b0(local_15c,&DAT_005f79b8);
-  engine_dosio_cpp_FUN_00478e20(0x2c8aab0,&DAT_005f79bd,local_15c);
-  iVar2 = engine_dosio_cpp_findFile_FUN_00478e90((SFoundFileInfo *)0x2c8aab0);
+  engine_dosio_cpp_changeFileExtension_FUN_004796b0(local_15c,".opa");
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00478e20
+            (g_CHAR_ARRAY_02c8aab0,"art",local_15c);
+  iVar5 = engine_dosio_cpp_findFile_FUN_00478e90((SFoundFileInfo *)g_CHAR_ARRAY_02c8aab0);
   if (local_30 == 0) {
-    if (uVar4 < 0x10000) {
-      if (uVar4 < 0x1000) {
+    if (size < 0x10000) {
+      if (size < 0x1000) {
 LAB_00596e18:
         _sprintf(local_dc,"CTextureCache::load - Bad texture length : %s,%d");
-        _DAT_01d1d400 = "..\\engine\\texture.cpp";
-        _DAT_01d1d404 = 0x194;
-        core_main_c_FUN_005030e0(local_dc);
+        g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+        g_INT_01d1d404 = 0x194;
+        core_main_c_displayErrorAndQuit_FUN_005030e0(local_dc);
       }
-      else if (uVar4 < 0x1001) {
+      else if (size < 0x1001) {
         local_18 = 0x20;
       }
       else {
-        if (uVar4 != 0x4000) goto LAB_00596e18;
+        if (size != 0x4000) goto LAB_00596e18;
         local_18 = 0x40;
       }
     }
-    else if (uVar4 < 0x10001) {
+    else if (size < 0x10001) {
       local_18 = 0x80;
     }
-    else if (uVar4 < 0x100000) {
-      if (uVar4 != 0x40000) goto LAB_00596e18;
+    else if (size < 0x100000) {
+      if (size != 0x40000) goto LAB_00596e18;
       local_18 = 0x100;
     }
-    else if (uVar4 < 0x100001) {
+    else if (size < 0x100001) {
       local_18 = 0x200;
     }
     else {
-      if (uVar4 != 0x400000) goto LAB_00596e18;
+      if (size != 0x400000) goto LAB_00596e18;
       local_18 = 0x400;
     }
-    pSVar5->dimension = local_18;
-    puVar3 = (uchar *)malloc(uVar4);
-    pSVar5->true_color_data = puVar3;
-    if (puVar3 == (uchar *)0x0) {
-      _DAT_01d1d400 = "..\\engine\\texture.cpp";
-      _DAT_01d1d404 = 0x19e;
-      core_main_c_FUN_005030e0("CTextureCache::load - Out of memory");
+    pSVar9->dimension = local_18;
+    puVar6 = (uchar *)malloc(size);
+    pSVar9->true_color_data = puVar6;
+    if (puVar6 == (uchar *)0x0) {
+      g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+      g_INT_01d1d404 = 0x19e;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureCache::load - Out of memory");
     }
     support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
-              (&local_5c,&DAT_005f7b43,texture_name,1);
-    support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_5c,pSVar5->true_color_data,uVar4);
+              (&local_5c,"art",texture_name,1);
+    support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_5c,pSVar9->true_color_data,size);
     support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_5c);
     goto LAB_00596c09;
   }
-  puVar3 = (uchar *)malloc(0x300);
-  pSVar5->palette_data = puVar3;
-  if (puVar3 == (uchar *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\texture.cpp";
-    _DAT_01d1d404 = 0x131;
-    core_main_c_FUN_005030e0("CTextureCache::load - Out of memory");
+  puVar6 = (uchar *)malloc(0x300);
+  pSVar9->palette_data = puVar6;
+  if (puVar6 == (uchar *)0x0) {
+    g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+    g_INT_01d1d404 = 0x131;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureCache::load - Out of memory");
   }
-  if (uVar4 < 0x4000) {
-    if (uVar4 < 0x400) {
+  if (size < 0x4000) {
+    if (size < 0x400) {
 LAB_005969d1:
       _sprintf(local_dc,"CTextureCache::load - Bad texture length : %s,%d");
-      _DAT_01d1d400 = "..\\engine\\texture.cpp";
-      _DAT_01d1d404 = 0x14a;
-      core_main_c_FUN_005030e0(local_dc);
+      g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+      g_INT_01d1d404 = 0x14a;
+      core_main_c_displayErrorAndQuit_FUN_005030e0(local_dc);
     }
-    else if (uVar4 < 0x401) {
+    else if (size < 0x401) {
       local_18 = 0x20;
     }
     else {
-      if (uVar4 != 0x1000) goto LAB_005969d1;
+      if (size != 0x1000) goto LAB_005969d1;
       local_18 = 0x40;
     }
   }
-  else if (uVar4 < 0x4001) {
+  else if (size < 0x4001) {
     local_18 = 0x80;
   }
-  else if (uVar4 < 0x40000) {
-    if (uVar4 != 0x10000) goto LAB_005969d1;
+  else if (size < 0x40000) {
+    if (size != 0x10000) goto LAB_005969d1;
     local_18 = 0x100;
   }
-  else if (uVar4 < 0x40001) {
+  else if (size < 0x40001) {
     local_18 = 0x200;
   }
   else {
-    if (uVar4 != 0x100000) goto LAB_005969d1;
+    if (size != 0x100000) goto LAB_005969d1;
     local_18 = 0x400;
   }
-  pSVar5->dimension = local_18;
-  puVar3 = (uchar *)malloc(uVar4);
-  pSVar5->texture_data = puVar3;
-  if (puVar3 == (uchar *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\texture.cpp";
-    _DAT_01d1d404 = 0x154;
-    core_main_c_FUN_005030e0("CTextureCache::load - Out of memory");
+  pSVar9->dimension = local_18;
+  puVar6 = (uchar *)malloc(size);
+  pSVar9->texture_data = puVar6;
+  if (puVar6 == (uchar *)0x0) {
+    g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+    g_INT_01d1d404 = 0x154;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureCache::load - Out of memory");
   }
-  if (iVar2 != 0) {
-    puVar3 = (uchar *)malloc(uVar4);
-    pSVar5->opacity_data = puVar3;
-    if (puVar3 == (uchar *)0x0) {
-      _DAT_01d1d400 = "..\\engine\\texture.cpp";
-      _DAT_01d1d404 = 0x15a;
-      core_main_c_FUN_005030e0("CTextureCache::load - Out of memory");
+  if (iVar5 != 0) {
+    puVar6 = (uchar *)malloc(size);
+    pSVar9->opacity_data = puVar6;
+    if (puVar6 == (uchar *)0x0) {
+      g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+      g_INT_01d1d404 = 0x15a;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureCache::load - Out of memory");
     }
   }
   support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
-            (&local_5c,&DAT_005f7ab6,local_1dc,1);
-  support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_5c,pSVar5->palette_data,0x300);
+            (&local_5c,"art",local_1dc,1);
+  support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_5c,pSVar9->palette_data,0x300);
   support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_5c);
-  if (iVar2 != 0) {
+  if (iVar5 != 0) {
     support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
-              (&local_5c,&DAT_005f7aba,local_15c,1);
+              (&local_5c,"art",local_15c,1);
     support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-              (&local_5c,pSVar5->opacity_data,local_18 * local_18);
+              (&local_5c,pSVar9->opacity_data,local_18 * local_18);
     support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_5c);
   }
   support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
-            (&local_5c,&DAT_005f7abe,texture_name,1);
+            (&local_5c,"art",texture_name,1);
   support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-            (&local_5c,pSVar5->texture_data,local_18 * local_18);
+            (&local_5c,pSVar9->texture_data,local_18 * local_18);
   support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_5c);
+  fVar4 = 0.11f;
+  fVar3 = 0.59f;
+  fVar2 = 0.3f;
   if (_DAT_02c8a678 != 0) {
-    iVar2 = 0;
-    fVar11 = (float10)_DAT_005f7b52;
-    fVar12 = (float10)_DAT_005f7b4e;
-    fVar13 = (float10)_DAT_005f7b4a;
+    iVar5 = 0;
     do {
-      puVar3 = pSVar5->palette_data;
-      local_14 = (uint)puVar3[iVar2 + 2];
-      fVar14 = (float10)puVar3[iVar2 + 2] * fVar11 +
-               (float10)puVar3[iVar2 + 1] * fVar12 + (float10)puVar3[iVar2] * fVar13;
-      round();
-      local_20 = (int)ROUND(fVar14);
-      *(uchar *)(extraout_ECX + extraout_EDX) = (uchar)local_20;
-      pSVar5->palette_data[extraout_EDX + 1] = (uchar)local_20;
-      iVar2 = extraout_EDX + 3;
-      pSVar5->palette_data[extraout_EDX + 2] = (uchar)local_20;
-    } while (iVar2 != 0x300);
+      puVar6 = pSVar9->palette_data;
+      local_14 = (uint)puVar6[iVar5 + 2];
+      local_1dc[0] = -0x27;
+      local_1dc[1] = 'k';
+      local_1dc[2] = 'Y';
+      local_1dc[3] = '\0';
+      dVar15 = round
+                         ((double)((float)puVar6[iVar5 + 2] * fVar4 +
+                                  (float)puVar6[iVar5 + 1] * fVar3 + (float)puVar6[iVar5] * fVar2));
+      iStack_24 = (int)ROUND(dVar15);
+      puVar6[iVar5] = (uchar)iStack_24;
+      pSVar9->palette_data[iVar5 + 1] = (uchar)iStack_24;
+      iVar8 = iVar5 + 3;
+      pSVar9->palette_data[iVar5 + 2] = (uchar)iStack_24;
+      iVar5 = iVar8;
+    } while (iVar8 != 0x300);
   }
 LAB_00596c09:
   support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_5c,0);

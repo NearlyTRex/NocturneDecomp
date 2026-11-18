@@ -55,7 +55,8 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
     CStack_48.z = 0.092;
     aCStack_a8[0].x = -0.287;
     aCStack_a8[0].z = 1.209;
-    core_xform_cpp_FUN_005b5760(&CStack_228,&CStack_48,aCStack_a8);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+              (&CStack_228,&CStack_48,aCStack_a8);
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (&CStack_228,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
@@ -83,7 +84,8 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
       CStack_b4.y = CStack_60.y;
       CStack_b4.z = CStack_60.z;
     }
-    core_xform_cpp_FUN_005b5760(aCStack_2b8,&CStack_c0,&CStack_b4);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+              (aCStack_2b8,&CStack_c0,&CStack_b4);
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (aCStack_2b8,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
@@ -111,7 +113,8 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
       CStack_90.y = CStack_84.y;
       CStack_90.z = CStack_84.z;
     }
-    core_xform_cpp_FUN_005b5760(&CStack_168,&CStack_54,&CStack_90);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+              (&CStack_168,&CStack_54,&CStack_90);
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (&CStack_168,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +

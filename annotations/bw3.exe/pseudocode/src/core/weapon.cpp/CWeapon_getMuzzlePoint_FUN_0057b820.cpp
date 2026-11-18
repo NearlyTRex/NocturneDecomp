@@ -1,17 +1,16 @@
 // Name: core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_0057b820
 // Address: 0057b820
 // Address Range: [[0057b820, 0057b870]]
-// Convention: __cdecl
-// Signature: CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon *this_ptr,CVector3f *out_point)
+// Convention: __stack_esi
+// Signature: CVector3f * __stack_esi core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon *this_ptr,CVector3f *out_point)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon *this_ptr,CVector3f *out_point)
+CVector3f * __stack_esi core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon *this_ptr,CVector3f *out_point)
 
 {
   CKeyFramedModel *pCVar1;
   int iVar2;
-  CVector3f *unaff_ESI;
   CBoundingBox3D *pCVar3;
   float *pfVar4;
   uint *puVar5;
@@ -35,10 +34,10 @@ CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon 
   local_10 = local_1c;
   local_14 = 0;
   local_c = local_18;
-  puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);
-  unaff_ESI->x = 0.0;
+  puVar5 = (uint *)((int)out_point + (uint)bVar6 * -8 + 4);
+  out_point->x = 0.0;
   *puVar5 = *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8);
   puVar5[(uint)bVar6 * -2 + 1] =
        *(uint *)((int)&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  return unaff_ESI;
+  return out_point;
 }

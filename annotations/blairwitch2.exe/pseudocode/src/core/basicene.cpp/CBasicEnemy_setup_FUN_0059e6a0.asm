@@ -21,14 +21,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_005ef8aa
 ;   TerminatedCString s_Bip01_Spine1_005ef8b5
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 DAT_01d192f8
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_005a01d0
+;   core_basicene.cpp_CBasicEnemy_initFlinch_FUN_005a01d0
 ;   core_cloth.cpp_CClothList_process_FUN_005b1780
 ;   core_enemy.cpp_CEnemy_setup_FUN_00487eb0
-;   core_muzzle.cpp_FUN_0059da70
+;   core_muzzle.cpp_SStateMachine_applyNextState_FUN_0059da70
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
@@ -82,15 +82,15 @@ section .text
         ;   Label: LAB_0059e71e
     JZ 0x0059e735                       ; 0059e725
         ;   XREF to: 0059e735 (CONDITIONAL_JUMP)  ; LAB_0059e735
-    MOV EAX,[0x00618170]                ; 0059e727 | DAT_00618170
+    MOV EAX,[0x00618170]                ; 0059e727 | g_CDemonMission_PTR_00618170
     CMP dword ptr [EAX + 0x1008],0x0    ; 0059e72c | DAT_01d192f8
     JZ 0x0059e78b                       ; 0059e733
         ;   XREF to: 0059e78b (CONDITIONAL_JUMP)  ; LAB_0059e78b
     LEA EAX,[EBX + 0x10af8]             ; 0059e735
         ;   Label: LAB_0059e735
     PUSH EAX                            ; 0059e73b
-    CALL core_muzzle.cpp_FUN_0059da70   ; 0059e73c
-        ;   XREF to: 0059da70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059da70()
+    CALL core_muzzle.cpp_SStateMachine_applyNextState_FUN_0059da70 ; 0059e73c
+        ;   XREF to: 0059da70 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_applyNextState_FUN_0059da70(SStateMachine * this_ptr)
     ADD ESP,0x4                         ; 0059e741
     LEA EAX,[EBX + 0x2b4]               ; 0059e744
     PUSH EAX                            ; 0059e74a
@@ -122,8 +122,8 @@ section .text
         ;   Label: LAB_0059e78b
     PUSH EAX                            ; 0059e791
     PUSH EBX                            ; 0059e792
-    CALL core_basicene.cpp_FUN_005a01d0 ; 0059e793
-        ;   XREF to: 005a01d0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a01d0()
+    CALL core_basicene.cpp_CBasicEnemy_initFlinch_FUN_005a01d0 ; 0059e793
+        ;   XREF to: 005a01d0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_initFlinch_FUN_005a01d0(CBasicEnemy * this_ptr, int * flinch_info)
     ADD ESP,0x8                         ; 0059e798
     JMP 0x0059e735                      ; 0059e79b
         ;   XREF to: 0059e735 (UNCONDITIONAL_JUMP)  ; LAB_0059e735

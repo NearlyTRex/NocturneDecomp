@@ -4,12 +4,181 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
+#include "system/windef.h"
+#include "system/winnt.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEventList.h"
+#include "types/classes/CFireEffect.h"
+#include "types/classes/CFlameCan.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CSmokeParticle.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SRGBColorPalette.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C30000
 // =============================================================================
 
+// CCharacter*[50]
+extern CCharacter* g_GunFlameCandidates[50];
+
 // CDemonActorType
 extern CDemonActorType g_CFilmReelClassInfo;
+extern CDemonActorType g_CFilmProjectorClassInfo;
+
+// CEventList
+extern CEventList g_CEventList_01c38bc0;
+
+// CFireEffect
+extern CFireEffect g_CFireEffect_01c3deb4;
+
+// CFlameCan*[150]
+extern CFlameCan* g_FlameCans[150];
+
+// CKeyFramedModelInstance
+extern CKeyFramedModelInstance g_FireEffectFlamingStakeModel;
+extern CKeyFramedModelInstance g_FireEffectFireballModel;
+extern CKeyFramedModelInstance g_FireEffectFireballSmallModel;
+extern CKeyFramedModelInstance g_FireEffectFireballGreenModel;
+extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c3e4e8;
+extern CKeyFramedModelInstance g_FireEffectGunFlashModel;
+
+// CKeyFramedModelInstance[5]
+extern CKeyFramedModelInstance g_CFireEffectDebrisModels[5];
+
+// CSmokeParticle[2048]
+extern CSmokeParticle g_SmokeParticlePool[2048];
+
+// CVector3i
+extern CVector3i g_BillboardCameraRight;
+extern CVector3i g_BillboardCameraUp;
+
+// DWORD
+extern DWORD g_JoyRPos;
+extern DWORD g_JoyButtons;
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_BillboardPrimitive;
+
+// SMRGLTextureBasic[20]
+extern SMRGLTextureBasic g_GunFlameTextures[20];
+
+// SRGBColorPalette*
+extern SRGBColorPalette* g_CurrentPalette;
+
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_RedBitPosition;
+extern _BIT_INTEGER32 g_RedDitherShift;
+extern _BIT_INTEGER32 g_GreenBitPosition;
+extern _BIT_INTEGER32 g_GreenDitherShift;
+extern _BIT_INTEGER32 g_BlueBitPosition;
+extern _BIT_INTEGER32 g_BlueDitherShift;
+extern _BIT_INTEGER32 g_RenderStateFlags;
+
+// char[256]
+extern char g_EventErrorMessageBuffer[256];
+
+// char[4952]
+extern char g_KeyboardState[4952];
+
+// int
+extern int g_RedScaleFactor;
+extern int g_GreenScaleFactor;
+extern int g_BlueScaleFactor;
+extern int g_INT_01c35e38;
+extern int g_INT_01c35e3c;
+extern int g_INT_01c35e40;
+extern int g_INT_01c35e44;
+extern int g_INT_01c35e48;
+extern int g_INT_01c35e4c;
+extern int g_ClipRight;
+extern int g_INT_01c35e54;
+extern int g_ViewportWidth;
+extern int g_ViewportHeight;
+extern int g_INT_01c35e60;
+extern int g_CurrentLightingValue;
+extern int g_AdvancedClippingEnabled;
+extern int g_INT_01c37780;
+extern int g_INT_01c37784;
+extern int g_INT_01c37788;
+extern int g_INT_01c3778c;
+extern int g_PerspectiveReciprocal;
+extern int g_JoyXPos;
+extern int g_JoyYPos;
+extern int g_JoyZPos;
+extern int g_JoystickPresent;
+extern int g_JoyWantUAxis;
+extern int g_JoyWantRAxis;
+extern int g_JoystickHasPOV;
+extern int g_JoyPOVDirection;
+extern int g_MMXSupported;
+extern int g_CPUModel;
+extern int g_CalibratedCPUSpeed;
+extern int g_BlendMode;
+extern int g_ProcessorType;
+extern int g_VertexPreprocessMode;
+extern int g_SolidRedComponent;
+extern int g_SolidGreenComponent;
+extern int g_SolidBlueComponent;
+extern int g_RelativeX;
+extern int g_RelativeY;
+extern int g_RelativeZ;
+extern int g_CameraOriginX;
+extern int g_CameraOriginY;
+extern int g_CameraOriginZ;
+extern int g_CameraRotationPitch;
+extern int g_CameraRotationYaw;
+extern int g_CameraRotationRoll;
+extern int g_LightDirectionX;
+extern int g_LightDirectionY;
+extern int g_LightDirectionZ;
+extern int g_INT_01c38b9c;
+extern int g_INT_01c38ba0;
+extern int g_INT_01c38ba4;
+extern int g_INT_01c38ba8;
+extern int g_INT_01c38bac;
+extern int g_INT_01c38bb0;
+extern int g_INT_01c38bb4;
+extern int g_INT_01c38bb8;
+extern int g_INT_01c38bbc;
+extern int g_EventDryRun;
+extern int g_TextureAnimCounter2;
+extern int g_TextureAnimCounter1;
+extern int g_GunFlameCandidateCount;
+extern int g_FlameCanCount;
+extern int g_SmokeParticleAllocIndex;
+
+// uchar*
+extern uchar* g_CurrentTextureData;
+extern uchar* g_CurrentTextureOpacityData;
+
+// uchar[768]
+extern uchar g_UCHAR_ARRAY_01c35838[768];
+extern uchar g_DefaultPalette[768];
+
+// uint[256]
+extern uint g_Hardware32BitPalette[256];
+
+// uint[3]
+extern uint g_ShellBounceSoundHandles[3];
+
+// uint[448]
+extern uint g_ColorTable32[448];
+
+// uint[GAME_RECIPROCAL_TABLE_SIZE]
+extern uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE];
+
+// ulong
+extern ulong g_SolidColorMode;
+
+// ushort[256]
+extern ushort g_ColorTable16[256];
+extern ushort g_Hardware16BitPalette[256];
+
+// void*
+extern void* g_ScanlineRenderFunc;
 

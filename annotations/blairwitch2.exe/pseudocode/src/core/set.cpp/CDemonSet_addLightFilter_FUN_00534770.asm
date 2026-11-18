@@ -13,11 +13,11 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0 at 00490236
-;   core_event.cpp_FUN_00489670 at 00489f09
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 00489f09
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00523efb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fc8d04
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_01fc8d04
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 005347a4 (UNCONDITIONAL_JUMP)  ; LAB_005347a4
     MOV EBX,dword ptr [ESP + 0x24]      ; 005347ea
         ;   Label: LAB_005347ea
-    MOV EAX,dword ptr [EDI*0x4 + 0x1fc8d04] ; 005347ee | DAT_01fc8d04
+    MOV EAX,dword ptr [EDI*0x4 + 0x1fc8d04] ; 005347ee | g_CDemonLight_PTR_ARRAY_01fc8d04
     MOV dword ptr [EBX],EAX             ; 005347f5
     ADD ESP,0x4                         ; 005347f7
     POP EBP                             ; 005347fa

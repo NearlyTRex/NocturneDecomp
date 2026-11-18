@@ -6,34 +6,32 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00589560(void)
 {
 __asm {
         mov EBP,ESP
         sub ESP,0x7c
-        cmp dword ptr [DAT_0061e98c],0x0
+        cmp dword ptr [g_WindowActive],0x0
         jz LAB_00589632
-        mov ECX,dword ptr [DAT_01c37788]
+        mov ECX,dword ptr [g_INT_01c37788]
         test ECX,ECX
         jnz LAB_00589646
-        mov EBX,dword ptr [DAT_02661af4]
+        mov EBX,dword ptr [g_FlipPending]
         test EBX,EBX
         jnz LAB_0058960e
-        cmp dword ptr [DAT_02661afc],0x0
+        cmp dword ptr [g_Display24BitFallback],0x0
         jz LAB_00589664
-        mov ESI,dword ptr [DAT_00622010]
-        mov dword ptr [DAT_02661afc],ECX
+        mov ESI,dword ptr [g_PTR_00622010]
+        mov dword ptr [g_Display24BitFallback],ECX
         call wincore_wddvmem_cpp_openScreenDevice_FUN_005890c0
-        mov EAX,[DAT_006141bc]
+        mov EAX,[g_INT_006141bc]
         xor EDI,EDI
         test EAX,EAX
         jle LAB_005895fe
         xor ECX,ECX
     LAB_005895bd:
-        mov EBX,dword ptr [DAT_006141b8]
-        mov EAX,dword ptr [DAT_01c2a38c + ECX]
+        mov EBX,dword ptr [g_INT_006141b8]
+        mov EAX,dword ptr [g_ScreenBufferArray + ECX]
         xor EDX,EDX
         test EBX,EBX
         jle LAB_005895f0
@@ -46,12 +44,12 @@ __asm {
         mov BL,byte ptr [ESI + -0x2]
         inc EDX
         mov byte ptr [EAX + 0x2],BL
-        mov EBX,dword ptr [DAT_006141b8]
+        mov EBX,dword ptr [g_INT_006141b8]
         add EAX,0x3
         cmp EDX,EBX
         jl LAB_005895cf
     LAB_005895f0:
-        mov EBX,dword ptr [DAT_006141bc]
+        mov EBX,dword ptr [g_INT_006141bc]
         inc EDI
         add ECX,0x4
         cmp EDI,EBX
@@ -59,9 +57,9 @@ __asm {
     LAB_005895fe:
         mov ESI,0x1
         call wincore_wddvmem_cpp_closeScreenDevice_FUN_00589170
-        mov dword ptr [DAT_02661afc],ESI
+        mov dword ptr [g_Display24BitFallback],ESI
     LAB_0058960e:
-        mov ESI,dword ptr [DAT_02661ae4]
+        mov ESI,dword ptr [g_DirectDrawSurface]
         test ESI,ESI
         jz LAB_00589632
         push 0x1
@@ -76,7 +74,7 @@ __asm {
         call wincore_wddvmem_cpp_videoRestore_FUN_005897e0
     LAB_00589632:
         xor EDI,EDI
-        mov dword ptr [DAT_02661af4],EDI
+        mov dword ptr [g_FlipPending],EDI
         call wincore_winrun_cpp_processWindowMessages_FUN_0058f270
         mov ESP,EBP
         pop EBP
@@ -89,7 +87,7 @@ __asm {
         call engine_special_cpp_presentToExternalRenderer_FUN_0055ff40
         add ESP,0x4
         xor EDI,EDI
-        mov dword ptr [DAT_02661af4],EDI
+        mov dword ptr [g_FlipPending],EDI
         call wincore_winrun_cpp_processWindowMessages_FUN_0058f270
         mov ESP,EBP
         pop EBP
@@ -98,15 +96,15 @@ __asm {
         pop EBX
         ret
     LAB_00589664:
-        mov EAX,[DAT_00622010]
+        mov EAX,[g_PTR_00622010]
         mov dword ptr [EBP + -0x10],EAX
-        mov EAX,[DAT_006141c0]
+        mov EAX,[g_INT_006141c0]
         mov EDX,EAX
         sar EDX,0x1f
         shl EDX,0x3
         sbb EAX,EDX
         sar EAX,0x3
-        mov EDX,dword ptr [DAT_006141b8]
+        mov EDX,dword ptr [g_INT_006141b8]
         imul EDX,EAX
         push 0x6c
         push ECX
@@ -120,7 +118,7 @@ __asm {
         lea ECX,[EBP + -0x7c]
         mov EDI,0x6c
         push ECX
-        mov EAX,[DAT_02661ae4]
+        mov EAX,[g_DirectDrawSurface]
         mov dword ptr [EBP + -0x7c],EDI
         push EBX
         mov EDX,dword ptr [EAX]
@@ -133,12 +131,12 @@ __asm {
         jnz LAB_00589632
         cmp dword ptr [EBP + -0x8],0x0
         jz LAB_00589632
-        mov ECX,dword ptr [DAT_006141bc]
+        mov ECX,dword ptr [g_INT_006141bc]
         mov dword ptr [EBP + -0x4],EBX
         test ECX,ECX
         jle LAB_00589742
     LAB_005896db:
-        cmp dword ptr [DAT_01c38b40],0x0
+        cmp dword ptr [g_MMXSupported],0x0
         jz LAB_00589790
         mov ECX,dword ptr [EBP + 0xfffffff4]
         mov ESI,dword ptr [EBP + 0xfffffff0]
@@ -164,13 +162,13 @@ __asm {
         add dword ptr [EBP + -0x8],EAX
         mov EBX,dword ptr [EBP + -0x4]
         inc EBX
-        mov ESI,dword ptr [DAT_006141bc]
+        mov ESI,dword ptr [g_INT_006141bc]
         mov dword ptr [EBP + -0x4],EBX
         cmp EBX,ESI
         jl LAB_005896db
     LAB_00589742:
         push 0x0
-        mov EAX,[DAT_02661ae4]
+        mov EAX,[g_DirectDrawSurface]
         push EAX
         mov EDX,dword ptr [EAX]
         call dword ptr [EDX + 0x80]
@@ -179,12 +177,12 @@ __asm {
         mov EDI,0x5ee43c
         mov EAX,0x356
         push 0x5ee453
-        mov dword ptr [DAT_01d046a0],EDI
-        mov [DAT_01d046a4],EAX
-        call core_main_c_FUN_004e4500
+        mov dword ptr [g_CHAR_PTR_01d046a0],EDI
+        mov [g_INT_01d046a4],EAX
+        call core_main_c_displayErrorAndQuit_FUN_004e4500
         add ESP,0x4
         xor EDI,EDI
-        mov dword ptr [DAT_02661af4],EDI
+        mov dword ptr [g_FlipPending],EDI
         call wincore_winrun_cpp_processWindowMessages_FUN_0058f270
         mov ESP,EBP
         pop EBP

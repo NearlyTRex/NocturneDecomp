@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_mini3d_cpp_init_FUN_00511030(void)
 
 {
-  _DAT_01d2ad74 = engine_mini3d_cpp_allocVertexBuffer_FUN_00514c90(1000);
+  g_FLOAT_PTR_01d2ad74 = engine_mini3d_cpp_allocVertexBuffer_FUN_00514c90(1000);
   return 0;
 }

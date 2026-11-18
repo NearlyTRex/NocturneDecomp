@@ -11,13 +11,13 @@
 ;   sound_sndmain.cpp_setAudioChannelCount_FUN_005281f0 at 005281f0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bea6c
+;   int g_AudioSampleRate = 0x5622
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x005bea6c]                ; 005281b0 | DAT_005bea6c
+    MOV EAX,[0x005bea6c]                ; 005281b0 | g_AudioSampleRate
         ;   Label: sound_sndmain.cpp_getAudioSampleRate_FUN_005281b0
     RET                                 ; 005281b5
 

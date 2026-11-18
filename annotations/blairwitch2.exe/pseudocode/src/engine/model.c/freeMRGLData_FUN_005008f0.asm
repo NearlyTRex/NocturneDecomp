@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_model_c_freeMRGLData_FUN_005008f0(SMRGLHeaderExtended *param_1)
+; void __cdecl engine_model_c_freeMRGLData_FUN_005008f0(SMRGLHeaderExtended *mrgl_data)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ;
 ; XREF[1]:
-;   engine_model.c_FUN_00500970 at 00500db4
+;   engine_model.c_getMRGLBounds_FUN_00500970 at 00500db4
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;   engine_boss.c_modelStructNotSupported3_FUN_0041a4e0
 ;
 ; *****************************************************************************
@@ -44,7 +46,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00500917
     PUSH EBX                            ; 0050091a
     CALL engine_model.c_freeMRGLData_FUN_005008f0 ; 0050091b
-        ;   XREF to: 005008f0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_freeMRGLData_FUN_005008f0()
+        ;   XREF to: 005008f0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005008f0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 00500920
     MOV ESI,dword ptr [EBP + 0x8]       ; 00500923
     XOR EBX,EBX                         ; 00500926
@@ -58,7 +60,7 @@ section .text
     ADD ESI,0x4                         ; 00500935
     INC EBX                             ; 00500938
     CALL engine_model.c_freeMRGLData_FUN_005008f0 ; 00500939
-        ;   XREF to: 005008f0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_freeMRGLData_FUN_005008f0()
+        ;   XREF to: 005008f0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005008f0(SMRGLHeaderExtended * mrgl_data)
     MOV EDX,dword ptr [EDI + 0x8]       ; 0050093e
     ADD ESP,0x4                         ; 00500941
     CMP EBX,EDX                         ; 00500944
@@ -68,8 +70,8 @@ section .text
     MOV EDX,EDX                         ; 0050094e
     PUSH EBP                            ; 00500950
         ;   Label: LAB_00500950
-    CALL crt_unknown.c_FUN_005b86a0     ; 00500951
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 00500951
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 00500956
     POP EBX                             ; 00500959
     POP ESI                             ; 0050095a
@@ -78,8 +80,8 @@ section .text
     RET                                 ; 0050095d
     PUSH EBP                            ; 0050095e
         ;   Label: LAB_0050095e
-    CALL crt_unknown.c_FUN_005b86a0     ; 0050095f
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 0050095f
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 00500964
     POP EBP                             ; 00500967
     POP EDI                             ; 00500968

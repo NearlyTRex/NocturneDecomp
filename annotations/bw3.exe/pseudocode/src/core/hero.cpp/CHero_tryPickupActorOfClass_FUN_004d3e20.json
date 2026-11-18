@@ -1,0 +1,308 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 208,
+    "complexity_score": 119,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 89,
+    "suspect_count": 2,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "pointer_cast"
+    ],
+    "total_lines": 297
+  },
+  "cross_references": [
+    {
+      "addr": "004d4900",
+      "from_addr": "004d494d",
+      "name": "core_hero.cpp_CHero_findHeroAction_FUN_004d4900",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d3e20",
+    "address_range": [
+      [
+        "004d3e20",
+        "004d408a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20",
+    "signature": "bool __cdecl core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004d3e20(CHero *this_ptr,char *class_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c790"
+    },
+    {
+      "addr": "004b46b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004b46b0"
+    },
+    {
+      "addr": "004da880",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4e25",
+      "name": "s_Already_have_max_bullets_005c4e25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4e3f",
+      "name": "s_Already_have_max_mana_005c4e3f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4e56",
+      "name": "s_Already_have_max_health_005c4e56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4e75",
+      "name": "g_DOUBLE_005c4e75",
+      "type": "double",
+      "value": "10"
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "007dfd24",
+      "name": "g_CAmmoClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2130c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01d5b9b4",
+      "name": "g_CHealthItemClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a2c",
+      "name": "g_CDemonSetInstance.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a30",
+      "name": "g_CDemonSetInstance.actors[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004d494d",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_findHeroAction_FUN_004d4900",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d4a6f",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_findHeroAction_FUN_004d4900",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d4a8f",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_findHeroAction_FUN_004d4900",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.993827160493828,
+    "instruction_count": 162,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 6,
+      "BRANCH": 5,
+      "CALL": 6,
+      "CALLIND": 4,
+      "CBRANCH": 22,
+      "COPY": 178,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ABS": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 64,
+      "INT_AND": 97,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 74,
+      "INT_LEFT": 12,
+      "INT_LESS": 13,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 36,
+      "INT_SUB": 51,
+      "INT_XOR": 1,
+      "INT_ZEXT": 12,
+      "LOAD": 39,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 50
+    },
+    "pcode_op_count": 809
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cfd60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6196
+    },
+    "bw1.exe": {
+      "addr": "004ec090",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6196
+    }
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      },
+      {
+        "is_param": true,
+        "name": "class_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004d3e2c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(CHero **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CHero **)((int)g_CDemonSetPtr->actors + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
+      "line": 45,
+      "match": "(int)local_28 < 0x40400000",
+      "severity": "moderate",
+      "text": "if ((iVar2 == 5) && ((int)local_28 < 0x40400000)) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

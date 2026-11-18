@@ -14,7 +14,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50 at 0045cad4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ad280
+;   int g_LineClippingDisabled = 0x1
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -44,7 +44,7 @@ section .text
     CMP EBX,ECX                         ; 0042f61d
     JG 0x0042f6c7                       ; 0042f61f
         ;   XREF to: 0042f6c7 (CONDITIONAL_JUMP)  ; LAB_0042f6c7
-    CMP dword ptr [0x005ad280],0x0      ; 0042f625 | DAT_005ad280
+    CMP dword ptr [0x005ad280],0x0      ; 0042f625 | g_LineClippingDisabled
         ;   Label: LAB_0042f625
     JNZ 0x0042f67a                      ; 0042f62c
         ;   XREF to: 0042f67a (CONDITIONAL_JUMP)  ; LAB_0042f67a

@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stalrock_kfm_0062222c
-;   CKeyFramedModelInstance CKeyFramedModelInstance_02c9b170
+;   CKeyFramedModelInstance g_StalactiteRockModelInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -45,12 +45,12 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 0048e12f
     ADD ESP,0x8                         ; 0048e133
     PUSH 0x62222c                       ; 0048e136 | = "stalrock.kfm"
-    PUSH 0x2c9b170                      ; 0048e13b | CKeyFramedModelInstance_02c9b170
+    PUSH 0x2c9b170                      ; 0048e13b | g_StalactiteRockModelInstance
     FSTP float ptr [EBX + 0x2dc]        ; 0048e140
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0048e146
         ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0048e14b
-    PUSH 0x2c9b170                      ; 0048e14e | CKeyFramedModelInstance_02c9b170
+    PUSH 0x2c9b170                      ; 0048e14e | g_StalactiteRockModelInstance
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 0048e153
         ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0048e158

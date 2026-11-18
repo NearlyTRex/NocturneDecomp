@@ -43,7 +43,7 @@ int __cdecl CHealthItem::renderTransparent(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_getBoundingBox_FUN_004cdea0
 // Address: 004cdea0
-CBoundingBox3D * __cdecl CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_health.cpp_CHealthItem_archive_FUN_004cdee0
 // Address: 004cdee0

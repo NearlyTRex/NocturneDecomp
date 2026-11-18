@@ -1,25 +1,24 @@
 // Name: core_xform.cpp_negateFirstComponent_FUN_00585930
 // Address: 00585930
 // Address Range: [[00585930, 00585964]]
-// Convention: unknown
-// Signature: void core_xform_cpp_negateFirstComponent_FUN_00585930(float *param_1)
+// Convention: __stack_esi
+// Signature: CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_00585930(CQuaternion4f *vector_in,CQuaternion4f *vector_out)
 
 #include "nocturne.h"
 
-void core_xform_cpp_negateFirstComponent_FUN_00585930(float *param_1)
+CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_00585930(CQuaternion4f *vector_in,CQuaternion4f *vector_out)
 
 {
   float fVar1;
   float fVar2;
   float fVar3;
-  float *unaff_ESI;
   
-  fVar1 = param_1[1];
-  fVar2 = param_1[2];
-  fVar3 = param_1[3];
-  *unaff_ESI = -*param_1;
-  unaff_ESI[1] = fVar1;
-  unaff_ESI[2] = fVar2;
-  unaff_ESI[3] = fVar3;
-  return;
+  fVar1 = vector_in->x;
+  fVar2 = vector_in->y;
+  fVar3 = vector_in->z;
+  vector_out->w = -vector_in->w;
+  vector_out->x = fVar1;
+  vector_out->y = fVar2;
+  vector_out->z = fVar3;
+  return vector_out;
 }

@@ -49,6 +49,6 @@ void __cdecl CFirestaff::setup(CFirestaff *this_ptr);
 // Address: 004a58c0
 CFirestaff * __cdecl CFirestaff::dtor(CFirestaff *this_ptr,uint flags);
 
-// Original: core_firestff.cpp_FUN_004a5930
+// Original: core_firestff.cpp_CFlame_arrdtor12_FUN_004a5930
 // Address: 004a5930
-void FUN_004a5930(void *param_1);
+void __cdecl CFlame::arrdtor12(CFlame *this_ptr);

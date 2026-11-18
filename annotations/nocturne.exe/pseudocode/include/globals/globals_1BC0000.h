@@ -4,41 +4,121 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonTriangle.h"
 #include "types/classes/CEditorTools.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1BC0000
 // =============================================================================
 
+// CBitFont*
+extern CBitFont* g_CBitFont_PTR_01bcd070;
+
 // CDemonActorType
-extern CDemonActorType g_CDynamiteActorType_01bca088;
-extern CDemonActorType g_CElephantGunActorType_01bcde44;
-extern CDemonActorType g_CEmitterActorType_01bcde80;
-extern CDemonActorType g_CEnemyActorType_01bcdebc;
+extern CDemonActorType g_CDynamiteClassInfo;
+extern CDemonActorType g_CElephantGunClassInfo;
+extern CDemonActorType g_CEmitterClassInfo;
+extern CDemonActorType g_CEnemyClassInfo;
 
 // CDemonTriangle[8]
-extern CDemonTriangle g_CDemonTriangle_ARRAY_01bc9ec8[8];
+extern CDemonTriangle g_ClippedTriangleBuffer[8];
 
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
 
 // CVector3f
+extern CVector3f g_FloorRayDirection;
 extern CVector3f g_CVector3f_01bca0c4;
 
 // CVector3f[16]
-extern CVector3f g_CVector3f_ARRAY_01bc9970[16];
-extern CVector3f g_CVector3f_ARRAY_01bc9a34[16];
-extern CVector3f g_CVector3f_ARRAY_01bc9af8[16];
-extern CVector3f g_CVector3f_ARRAY_01bc9bbc[16];
-extern CVector3f g_CVector3f_ARRAY_01bc9c80[16];
-extern CVector3f g_CVector3f_ARRAY_01bc9d44[16];
-extern CVector3f g_CVector3f_ARRAY_01bc9e08[16];
+extern CVector3f g_ClipInputVertices[16];
+extern CVector3f g_ClipBuffer1Vertices[16];
+extern CVector3f g_ClipBuffer2Vertices[16];
+extern CVector3f g_ClipBuffer3Vertices[16];
+extern CVector3f g_ClipBuffer4Vertices[16];
+extern CVector3f g_ClipBuffer5Vertices[16];
+extern CVector3f g_ClipOutputVertices[16];
+
+// CVector3i
+extern CVector3i g_DebugCubeBasePoint;
+
+// byte
+extern byte g_FloorCacheValid;
+
+// char
+extern char g_CHAR_01bcc0d0;
+
+// char*
+extern char* g_ClipboardBackupText;
+
+// char[1024]
+extern char g_CHAR_ARRAY_01bca0d0[1024];
+extern char g_CHAR_ARRAY_01bca4d0[1024];
+extern char g_CHAR_ARRAY_01bca8d0[1024];
+extern char g_StatusMessageBuffer[1024];
+extern char g_CHAR_ARRAY_01bcb0d0[1024];
+extern char g_CHAR_ARRAY_01bcb4d0[1024];
+extern char g_CHAR_ARRAY_01bcb8d0[1024];
+extern char g_CHAR_ARRAY_01bcbcd0[1024];
+extern char g_TempStringBuffer[1024];
+
+// char[460]
+extern char g_CHAR_ARRAY_01bcd080[460];
+
+// float[2002]
+extern float g_FLOAT_ARRAY_01bcfe38[2002];
 
 // int
+extern int g_INT_01bc994c;
+extern int g_ClipInputVertexCount;
+extern int g_ClipBuffer1VertexCount;
+extern int g_ClipBuffer2VertexCount;
+extern int g_ClipBuffer3VertexCount;
+extern int g_ClipBuffer4VertexCount;
+extern int g_ClipBuffer5VertexCount;
+extern int g_ClipOutputVertexCount;
+extern int g_INT_01bcd07c;
+extern int g_EditorFontMaxCharWidth;
+extern int g_INT_01bcd9bc;
 extern int g_MouseCursorType;
+extern int g_INT_01bcddc8;
+extern int g_INT_01bcddcc;
+extern int g_INT_01bcddd0;
+extern int g_INT_01bcddd4;
+extern int g_INT_01bcddd8;
+extern int g_SelectionColor;
+extern int g_TextColor;
+extern int g_CursorColor;
+extern int g_StatusTextColor;
+extern int g_WindowStatusTextColor;
+extern int g_DialogTextColor;
+extern int g_ActiveItemTextColor;
+extern int g_ProgressBarBackgroundColor;
+extern int g_ProgressBarFillColor;
+extern int g_ProgressBarBorderColor;
+extern int g_AxisLabelTextColor;
+extern int g_INT_01bcde08;
+extern int g_INT_01bcde0c;
+extern int g_INT_01bcde10;
+extern int g_INT_01bcde14;
+extern int g_INT_01bcde18;
 extern int g_LastClickTimestamp;
 extern int g_LastClickItemIndex;
+extern int g_ScrollAction;
+extern int g_ScrollTimer;
+extern int g_ScrollDelay;
+extern int g_DragStartMouseX;
+extern int g_DragStartMouseY;
+extern int g_DragStartScrollPos;
+extern int g_DragStartThumbPos;
+
+// int[2000]
+extern int g_INT_ARRAY_01bcdef8[2000];
+
+// void*
+extern void* g_ActiveControl;
 

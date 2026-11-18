@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004b1060(CGabriella *this_ptr)
 
 {
@@ -29,7 +27,7 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004b1060(CGabriella *t
                   [(this_ptr->base).inventories[0].current_group];
     if (((this_ptr_00 != (CWeapon *)0x0) &&
         ((*((this_ptr_00->base).vtable._ub)->renderOpaque)(&this_ptr_00->base),
-        (float)_DAT_005d713b < this_ptr->draw_blend)) &&
+        (float)0.90000000000000002 < this_ptr->draw_blend)) &&
        ((pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                             (&(this_ptr->base).inventories[0].selected_weapons
                               [(this_ptr->base).inventories[0].current_group]->base,

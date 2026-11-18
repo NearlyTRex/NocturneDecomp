@@ -11,5 +11,21 @@
 // =============================================================================
 
 // SFogGrid
-extern SFogGrid g_SFogGrid_0140d784;
+extern SFogGrid g_CameraFogGrid;
+
+// int
+extern int g_ImageProcessingState1;
+extern int g_ImageProcessingState2;
+extern int g_ImageBytesPerPixel;
+extern int g_ScanlineSpanCount;
+extern int g_BackgroundSceneDepth;
+extern int g_BackgroundSavedBitsPerPixel;
+extern int g_BackgroundSavedUseExternalRenderer;
+
+// int[256]
+extern int g_INT_ARRAY_0140e7a8[256];
+extern int g_ScanlineSpanRight[256];
+
+// void*[1200]
+extern void* g_ARRAY_PTR_0140efb4[1200];
 

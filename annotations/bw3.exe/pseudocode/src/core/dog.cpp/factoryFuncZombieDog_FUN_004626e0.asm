@@ -15,7 +15,7 @@ section .text
     PUSH 0xd064                         ; 004626e0
         ;   Label: core_dog.cpp_factoryFuncZombieDog_FUN_004626e0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004626e5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004626ea
     TEST EAX,EAX                        ; 004626ed
     JNZ 0x004626f2                      ; 004626ef

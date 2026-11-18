@@ -1762,6 +1762,19 @@
       "basis": "update compares this with local_28[0x14] and clears it when the sound ends"
      }
     ]
+   },
+   {
+    "name": "SActorRayHit",
+    "size": 28,
+    "base": null,
+    "basis": "nocedit's layout and size. CDemonActor_rayIntersect (bw1 00409170) writes out_hit (its fourth argument) as words 0-6, the offsets and counts of nocedit's normal.x/y/z, part_index, lod_index, triangle_index and bone_index. Its caller FUN_005578b0 (nocedit CDemonSet_raycastAgainstActors) passes a buffer 0x28 above its SCollisionInfo and 0x1c below the next local, as nocedit's frame has them (-0xcc, -0xa4, -0x88).",
+    "fields": [
+     {"offset": "0x0", "name": "normal", "type": "CVector3f", "len": 12},
+     {"offset": "0xc", "name": "part_index", "type": "int", "len": 4},
+     {"offset": "0x10", "name": "lod_index", "type": "int", "len": 4},
+     {"offset": "0x14", "name": "triangle_index", "type": "int", "len": 4},
+     {"offset": "0x18", "name": "bone_index", "type": "int", "len": 4}
+    ]
    }
   ]
  },
@@ -3902,6 +3915,19 @@
       "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
      }
     ]
+   },
+   {
+    "name": "SActorRayHit",
+    "size": 28,
+    "base": null,
+    "basis": "nocedit's layout and size. CDemonActor_rayIntersect (004093a0) writes out_hit as words 0-6 at nocedit's field offsets; its caller FUN_00536490 (nocedit CDemonSet_raycastAgainstActors) places the buffer 0x28 above its SCollisionInfo and 0x1c below the next local, as bw1 and nocedit do.",
+    "fields": [
+     {"offset": "0x0", "name": "normal", "type": "CVector3f", "len": 12},
+     {"offset": "0xc", "name": "part_index", "type": "int", "len": 4},
+     {"offset": "0x10", "name": "lod_index", "type": "int", "len": 4},
+     {"offset": "0x14", "name": "triangle_index", "type": "int", "len": 4},
+     {"offset": "0x18", "name": "bone_index", "type": "int", "len": 4}
+    ]
    }
   ]
  },
@@ -5653,6 +5679,19 @@
       "len": 64,
       "basis": "LEA [EBP+0x1c] to CDemonGlobe_setPosition; [+0x3c]=0x8000"
      }
+    ]
+   },
+   {
+    "name": "SActorRayHit",
+    "size": 28,
+    "base": null,
+    "basis": "nocedit's layout and size. CDemonActor_rayIntersect (004091b0) writes out_hit as words 0-6 at nocedit's field offsets; its caller FUN_0053d270 (nocedit CDemonSet_raycastAgainstActors) places the buffer 0x28 above its SCollisionInfo and 0x1c below the next local, as bw1 and nocedit do.",
+    "fields": [
+     {"offset": "0x0", "name": "normal", "type": "CVector3f", "len": 12},
+     {"offset": "0xc", "name": "part_index", "type": "int", "len": 4},
+     {"offset": "0x10", "name": "lod_index", "type": "int", "len": 4},
+     {"offset": "0x14", "name": "triangle_index", "type": "int", "len": 4},
+     {"offset": "0x18", "name": "bone_index", "type": "int", "len": 4}
     ]
    }
   ]

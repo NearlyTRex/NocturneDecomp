@@ -6,52 +6,53 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00475000(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode)
 
 {
-  longlong lVar1;
-  double dVar2;
+  int iVar1;
+  longlong lVar2;
   double dVar3;
-  double dVar4;
-  int extraout_ECX;
-  int extraout_EDX;
-  int iVar5;
+  float fVar4;
+  double dVar5;
   int iVar6;
   int iVar7;
-  int iVar8;
-  byte bVar9;
-  bool bVar10;
-  float10 fVar11;
-  float10 fVar12;
-  float10 fVar13;
-  ulonglong uVar14;
-  int aiStackY_1144 [992];
-  int local_198;
-  int local_194;
+  float fVar8;
+  int iVar9;
+  int iVar10;
+  float fVar11;
+  byte bVar12;
+  bool bVar13;
+  double dVar14;
+  double dVar15;
+  double dVar16;
+  double dVar17;
+  int aiStackY_1144 [985];
+  uint uStack_1c8;
+  uint uStack_1c4;
+  double dStack_1c0;
+  int local_1a8 [6];
   int local_190;
   int local_18c;
   int local_188;
   int local_184;
   int local_180;
   int local_17c;
-  int local_178;
-  int local_174;
-  int local_170;
-  int local_16c;
-  uint local_168;
-  uint local_164;
-  uint local_160;
+  uint local_178;
+  uint local_174;
+  uint local_170;
   CVector3i local_15c;
   float local_150;
   float local_14c;
-  float local_148;
+  int local_148;
   int local_144;
   int local_140;
   int local_13c;
   int local_138;
-  int local_134 [8];
+  int local_134 [4];
+  int iStack_124;
+  int iStack_120;
+  int iStack_11c;
+  int iStack_118;
   int local_114;
   int local_110;
   int local_10c;
@@ -106,196 +107,198 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00475000(CDem
   int local_48;
   int local_44;
   int local_40;
-  int local_3c;
-  int local_38;
-  int local_34;
   int local_30;
   int local_2c;
   int local_28;
   int local_24;
   int local_20;
-  int local_1c;
-  int local_18;
   
-  bVar9 = 0;
-  if ((_DAT_01bd3c60 != 0) && (render_mode != 0)) {
+  bVar12 = 0;
+  if ((g_PVSReadyFlag != 0) && (render_mode != 0)) {
     core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_00476280(this_ptr);
     return;
   }
-  _DAT_01bd3c4c = 0;
-  _DAT_01bd3c50 = 0;
-  _DAT_01bd3c54 = 0;
-  _DAT_01bd3c58 = 0;
-  _DAT_01bd3c5c = 0;
-  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0(0x01BA5C50,&local_15c);
+  g_CubesTestedCount = 0;
+  g_CubesWithVoxelsCount = 0;
+  g_CubesVisibleCount = 0;
+  g_CubesRenderedCount = 0;
+  g_PVSDrawnCubeCount = 0;
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0
+            (g_CDemonRenderer_PTR_0060b27c,&local_15c);
   local_138 = local_15c.x;
-  local_134[(uint)bVar9 * -2] = *(int *)((int)&local_15c + (uint)bVar9 * -8 + 4);
-  local_134[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-       *(int *)((int)&local_15c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-  fVar11 = (float10)_DAT_005d1bc3;
-  local_150 = (float)((float10)local_138 * fVar11);
-  fVar12 = ((float10)local_138 * fVar11 - (float10)(this_ptr->bbox_min).x) /
-           (float10)(this_ptr->cell_size).x;
+  local_134[(uint)bVar12 * -2] = *(int *)((int)&local_15c + (uint)bVar12 * -8 + 4);
+  local_134[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+       *(int *)((int)&local_15c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  fVar4 = (float)0.00390625;
+  local_150 = (float)local_138 * fVar4;
   local_20 = local_134[0];
-  fVar13 = (float10)local_134[0] * fVar11;
-  local_14c = (float)fVar13;
-  round();
-  local_138 = (int)ROUND(fVar12);
-  fVar13 = (fVar13 - (float10)(this_ptr->bbox_min).y) / (float10)(this_ptr->cell_size).y;
-  local_20 = local_134[1];
-  fVar11 = (float10)local_134[1] * fVar11;
-  local_148 = (float)fVar11;
-  round();
-  local_134[0] = (int)ROUND(fVar13);
-  fVar13 = (fVar11 - (float10)(this_ptr->bbox_min).z) / (float10)(this_ptr->cell_size).z;
-  fVar11 = (float10)fov_or_radius * (float10)_DAT_005d1bcb;
-  round();
-  local_144 = (int)ROUND(fVar11);
-  local_140 = local_144;
-  local_13c = local_144;
-  uVar14 = round();
-  local_134[1] = (int)ROUND(fVar13);
-  lVar1 = (longlong)(int)uVar14 * (longlong)(int)((ulonglong)uVar14 >> 0x20);
-  local_198 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fc4 * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc4 * (longlong)local_144) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd0 * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd0 * (longlong)local_144) >> 0x20) << 0x10
-              );
-  local_194 = ((uint)((longlong)_DAT_01d04fbc * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fbc * (longlong)local_144) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fc8 * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc8 * (longlong)local_144) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd4 * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd4 * (longlong)local_144) >> 0x20) << 0x10
-              );
-  local_190 = ((uint)((longlong)_DAT_01d04fc0 * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc0 * (longlong)local_144) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fcc * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fcc * (longlong)local_144) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd8 * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd8 * (longlong)local_144) >> 0x20) << 0x10
-              );
-  iVar8 = -local_144;
-  local_18c = ((uint)((longlong)_DAT_01d04fb8 * (longlong)iVar8) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fb8 * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fc4 * (longlong)local_140) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc4 * (longlong)local_140) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd0 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd0 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  local_188 = ((uint)((longlong)_DAT_01d04fbc * (longlong)iVar8) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fbc * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fc8 * (longlong)local_140) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc8 * (longlong)local_140) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd4 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd4 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  lVar1 = (longlong)local_140;
-  local_140 = -local_140;
-  local_184 = ((uint)((longlong)_DAT_01d04fc0 * (longlong)iVar8) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc0 * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)(_DAT_01d04fcc * lVar1) >> 0x10 |
-              (int)((ulonglong)(_DAT_01d04fcc * lVar1) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd8 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd8 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  local_180 = ((uint)((longlong)_DAT_01d04fb8 * (longlong)iVar8) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fb8 * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fc4 * (longlong)local_140) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc4 * (longlong)local_140) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd0 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd0 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  local_17c = ((uint)((longlong)_DAT_01d04fbc * (longlong)iVar8) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fbc * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fc8 * (longlong)local_140) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc8 * (longlong)local_140) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd4 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd4 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  local_178 = ((uint)((longlong)_DAT_01d04fc0 * (longlong)iVar8) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc0 * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fcc * (longlong)local_140) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fcc * (longlong)local_140) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd8 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd8 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  local_174 = ((uint)((longlong)_DAT_01d04fb8 * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fb8 * (longlong)local_144) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fc4 * (longlong)local_140) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc4 * (longlong)local_140) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd0 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd0 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  local_170 = ((uint)((longlong)_DAT_01d04fbc * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fbc * (longlong)local_144) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fc8 * (longlong)local_140) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc8 * (longlong)local_140) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd4 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd4 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  local_16c = ((uint)((longlong)_DAT_01d04fc0 * (longlong)local_144) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fc0 * (longlong)local_144) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01d04fcc * (longlong)local_140) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01d04fcc * (longlong)local_140) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01d04fd8 * (longlong)local_13c) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01d04fd8 * (longlong)local_13c) >> 0x20) << 0x10
-              );
-  local_168 = 0;
-  local_164 = 0;
-  local_160 = 0;
-  dVar2 = (double)(this_ptr->cell_size).x * _DAT_005d1bd3;
-  dVar3 = (double)(this_ptr->cell_size).y * _DAT_005d1bd3;
-  dVar4 = (double)(this_ptr->cell_size).z * _DAT_005d1bd3;
-  iVar8 = -999;
-  local_108 = 999;
-  local_104 = 999;
-  local_100 = 999;
-  iVar5 = 0;
+  fVar11 = (float)local_134[0];
+  local_14c = fVar11 * fVar4;
+  dVar14 = round
+                     ((double)((local_150 - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));
+  local_13c = (int)ROUND(dVar14);
+  local_24 = local_134[0];
+  local_14c = (float)local_134[0] * fVar4;
+  dVar14 = round
+                     ((double)((fVar11 * fVar4 - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y))
+  ;
+  local_13c = (int)ROUND(dVar14);
+  fVar11 = (this_ptr->bbox_min).z;
+  fVar8 = (this_ptr->cell_size).z;
+  dVar14 = round((double)(fov_or_radius * 256.0f));
+  iVar6 = g_INT_01d04fb8;
+  iVar9 = (int)ROUND(dVar14);
+  local_150 = (float)iVar9;
+  local_14c = (float)iVar9;
+  local_148 = iVar9;
+  dVar14 = round((double)(((float)local_134[0] * fVar4 - fVar11) / fVar8));
+  local_140 = (int)ROUND(dVar14);
+  local_1a8[0] = ((uint)((longlong)iVar6 * (longlong)iVar9) >> 0x10 |
+                 (int)((ulonglong)((longlong)iVar6 * (longlong)iVar9) >> 0x20) << 0x10) +
+                 ((uint)((longlong)g_INT_01d04fc4 * (longlong)local_15c.z) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fc4 * (longlong)local_15c.z) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01d04fd0 * (longlong)local_15c.z) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01d04fd0 * (longlong)local_15c.z) >> 0x20
+                              ) << 0x10);
+  local_1a8[1] = ((uint)((longlong)g_INT_01d04fbc * (longlong)local_15c.z) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fbc * (longlong)local_15c.z) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01d04fc8 * (longlong)local_15c.z) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01d04fc8 * (longlong)local_15c.z) >> 0x20
+                              ) << 0x10) +
+                 ((uint)((longlong)g_INT_01d04fd4 * (longlong)local_15c.z) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fd4 * (longlong)local_15c.z) >> 0x20) <<
+                 0x10);
+  local_1a8[2] = ((uint)((longlong)g_INT_01d04fc0 * (longlong)local_15c.z) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fc0 * (longlong)local_15c.z) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01d04fcc * (longlong)local_15c.z) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01d04fcc * (longlong)local_15c.z) >> 0x20
+                              ) << 0x10) +
+                 ((uint)((longlong)g_INT_01d04fd8 * (longlong)local_15c.z) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fd8 * (longlong)local_15c.z) >> 0x20) <<
+                 0x10);
+  iVar9 = -local_15c.z;
+  local_1a8[3] = ((uint)((longlong)g_INT_01d04fb8 * (longlong)iVar9) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fb8 * (longlong)iVar9) >> 0x20) << 0x10) +
+                 ((uint)((longlong)g_INT_01d04fc4 * (longlong)(int)local_150) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fc4 * (longlong)(int)local_150) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01d04fd0 * (longlong)(int)local_14c) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01d04fd0 * (longlong)(int)local_14c) >>
+                              0x20) << 0x10);
+  local_1a8[4] = ((uint)((longlong)g_INT_01d04fbc * (longlong)iVar9) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fbc * (longlong)iVar9) >> 0x20) << 0x10) +
+                 ((uint)((longlong)g_INT_01d04fc8 * (longlong)(int)local_150) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fc8 * (longlong)(int)local_150) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01d04fd4 * (longlong)(int)local_14c) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01d04fd4 * (longlong)(int)local_14c) >>
+                              0x20) << 0x10);
+  lVar2 = (longlong)(int)local_150;
+  local_150 = (float)-(int)local_150;
+  local_1a8[5] = ((uint)((longlong)g_INT_01d04fc0 * (longlong)iVar9) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fc0 * (longlong)iVar9) >> 0x20) << 0x10) +
+                 ((uint)(g_INT_01d04fcc * lVar2) >> 0x10 |
+                 (int)((ulonglong)(g_INT_01d04fcc * lVar2) >> 0x20) << 0x10) +
+                 ((uint)((longlong)g_INT_01d04fd8 * (longlong)(int)local_14c) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01d04fd8 * (longlong)(int)local_14c) >> 0x20) <<
+                 0x10);
+  local_190 = ((uint)((longlong)g_INT_01d04fb8 * (longlong)iVar9) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fb8 * (longlong)iVar9) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_INT_01d04fc4 * (longlong)(int)local_150) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fc4 * (longlong)(int)local_150) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_INT_01d04fd0 * (longlong)(int)local_14c) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_INT_01d04fd0 * (longlong)(int)local_14c) >> 0x20
+                           ) << 0x10);
+  local_18c = ((uint)((longlong)g_INT_01d04fbc * (longlong)iVar9) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fbc * (longlong)iVar9) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_INT_01d04fc8 * (longlong)(int)local_150) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fc8 * (longlong)(int)local_150) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_INT_01d04fd4 * (longlong)(int)local_14c) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_INT_01d04fd4 * (longlong)(int)local_14c) >> 0x20
+                           ) << 0x10);
+  local_188 = ((uint)((longlong)g_INT_01d04fc0 * (longlong)iVar9) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fc0 * (longlong)iVar9) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_INT_01d04fcc * (longlong)(int)local_150) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fcc * (longlong)(int)local_150) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_INT_01d04fd8 * (longlong)(int)local_14c) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_INT_01d04fd8 * (longlong)(int)local_14c) >> 0x20
+                           ) << 0x10);
+  local_184 = ((uint)((longlong)g_INT_01d04fb8 * (longlong)local_15c.z) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fb8 * (longlong)local_15c.z) >> 0x20) << 0x10)
+              + ((uint)((longlong)g_INT_01d04fc4 * (longlong)(int)local_150) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d04fc4 * (longlong)(int)local_150) >> 0x20) <<
+                0x10) + ((uint)((longlong)g_INT_01d04fd0 * (longlong)(int)local_14c) >> 0x10 |
+                        (int)((ulonglong)((longlong)g_INT_01d04fd0 * (longlong)(int)local_14c) >>
+                             0x20) << 0x10);
+  local_180 = ((uint)((longlong)g_INT_01d04fbc * (longlong)local_15c.z) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fbc * (longlong)local_15c.z) >> 0x20) << 0x10)
+              + ((uint)((longlong)g_INT_01d04fc8 * (longlong)(int)local_150) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d04fc8 * (longlong)(int)local_150) >> 0x20) <<
+                0x10) + ((uint)((longlong)g_INT_01d04fd4 * (longlong)(int)local_14c) >> 0x10 |
+                        (int)((ulonglong)((longlong)g_INT_01d04fd4 * (longlong)(int)local_14c) >>
+                             0x20) << 0x10);
+  local_17c = ((uint)((longlong)g_INT_01d04fc0 * (longlong)local_15c.z) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01d04fc0 * (longlong)local_15c.z) >> 0x20) << 0x10)
+              + ((uint)((longlong)g_INT_01d04fcc * (longlong)(int)local_150) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01d04fcc * (longlong)(int)local_150) >> 0x20) <<
+                0x10) + ((uint)((longlong)g_INT_01d04fd8 * (longlong)(int)local_14c) >> 0x10 |
+                        (int)((ulonglong)((longlong)g_INT_01d04fd8 * (longlong)(int)local_14c) >>
+                             0x20) << 0x10);
+  local_178 = 0;
+  local_174 = 0;
+  local_170 = 0;
+  dVar14 = (double)(this_ptr->cell_size).x * 256;
+  dVar5 = (double)(this_ptr->cell_size).y * 256;
+  dStack_1c0 = (double)(this_ptr->cell_size).z * 256;
+  iVar6 = -999;
+  iVar10 = -999;
+  iStack_118 = 999;
+  local_114 = 999;
+  local_110 = 999;
+  iVar7 = 0;
+  iVar9 = -999;
   do {
-    local_20 = local_138;
-    local_1c = local_134[0];
-    local_18 = local_134[1];
-    fVar11 = (float10)local_138 + (float10)*(int *)((int)&stack0xfffffe68 + iVar5) / (float10)dVar2;
-    fVar13 = (float10)local_134[0] +
-             (float10)*(int *)((int)&stack0xfffffe6c + iVar5) / (float10)dVar3;
-    fVar12 = (float10)local_134[1] +
-             (float10)*(int *)((int)&stack0xfffffe70 + iVar5) / (float10)dVar4;
-    round();
-    round();
-    round();
-    local_114 = (int)ROUND(fVar11);
-    local_110 = (int)ROUND(fVar13);
-    local_10c = (int)ROUND(fVar12);
-    if (local_114 < local_108) {
-      local_108 = local_114;
+    iVar1 = *(int *)((int)local_1a8 + iVar7 + 4);
+    dVar17 = (double)*(int *)((int)local_1a8 + iVar7 + 8) / dStack_1c0;
+    local_30 = local_148;
+    local_2c = local_144;
+    local_28 = local_140;
+    dVar16 = (double)local_144;
+    dVar3 = (double)local_140;
+    uStack_1c4 = 0x47545e;
+    dVar15 = round
+                       ((double)local_148 + (double)*(int *)((int)local_1a8 + iVar7) / dVar14);
+    uStack_1c8 = 0x475465;
+    dVar16 = round(dVar16 + (double)iVar1 / dVar5);
+    dStack_1c0 = __BITCAST_DOUBLE(CONCAT44(dStack_1c0._4_4_,0x47546c));
+    dVar17 = round(dVar3 + dVar17);
+    local_134[1] = (int)ROUND(dVar15);
+    local_134[2] = (int)ROUND(dVar16);
+    local_134[3] = (int)ROUND(dVar17);
+    if (local_134[1] < iStack_124) {
+      iStack_124 = local_134[1];
     }
-    if (local_110 < local_104) {
-      local_104 = local_110;
+    if (local_134[2] < iStack_120) {
+      iStack_120 = local_134[2];
     }
-    if (local_10c < local_100) {
-      local_100 = local_10c;
+    if (local_134[3] < iStack_11c) {
+      iStack_11c = local_134[3];
     }
-    iVar6 = extraout_EDX;
-    if (extraout_EDX < local_114) {
-      iVar6 = local_114;
+    if (iVar6 < local_134[1]) {
+      iVar6 = local_134[1];
     }
-    iVar7 = extraout_ECX;
-    if (extraout_ECX < local_110) {
-      iVar7 = local_110;
+    if (iVar9 < local_134[2]) {
+      iVar9 = local_134[2];
     }
-    if (iVar8 < local_10c) {
-      iVar8 = local_10c;
+    if (iVar10 < local_134[3]) {
+      iVar10 = local_134[3];
     }
-    iVar5 = iVar5 + 0xc;
-  } while (iVar5 != 0x3c);
-  (this_ptr->grid_bounds_min).x = local_108;
+    iVar7 = iVar7 + 0xc;
+  } while (iVar7 != 0x3c);
+  (this_ptr->grid_bounds_min).x = iStack_124;
   (this_ptr->grid_bounds_max).x = iVar6 + 1;
-  (this_ptr->grid_bounds_max).y = iVar7 + 1;
-  (this_ptr->grid_bounds_max).z = iVar8 + 1;
-  (this_ptr->grid_bounds_min).y = local_104;
-  (this_ptr->grid_bounds_min).z = local_100;
+  (this_ptr->grid_bounds_max).y = iVar9 + 1;
+  (this_ptr->grid_bounds_max).z = iVar10 + 1;
+  (this_ptr->grid_bounds_min).y = iStack_120;
+  (this_ptr->grid_bounds_min).z = iStack_11c;
   if ((this_ptr->grid_bounds_min).x < 0) {
     (this_ptr->grid_bounds_min).x = 0;
   }
@@ -305,416 +308,417 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00475000(CDem
   if ((this_ptr->grid_bounds_min).z < 0) {
     (this_ptr->grid_bounds_min).z = 0;
   }
-  iVar8 = (this_ptr->grid_coord).x;
-  if (iVar8 <= (this_ptr->grid_bounds_max).x) {
-    (this_ptr->grid_bounds_max).x = iVar8 + -1;
+  iVar9 = (this_ptr->grid_coord).x;
+  if (iVar9 <= (this_ptr->grid_bounds_max).x) {
+    (this_ptr->grid_bounds_max).x = iVar9 + -1;
   }
-  iVar8 = (this_ptr->grid_coord).y;
-  if (iVar8 <= (this_ptr->grid_bounds_max).y) {
-    (this_ptr->grid_bounds_max).y = iVar8 + -1;
+  iVar9 = (this_ptr->grid_coord).y;
+  if (iVar9 <= (this_ptr->grid_bounds_max).y) {
+    (this_ptr->grid_bounds_max).y = iVar9 + -1;
   }
-  iVar8 = (this_ptr->grid_coord).z;
-  if (iVar8 <= (this_ptr->grid_bounds_max).z) {
-    (this_ptr->grid_bounds_max).z = iVar8 + -1;
+  iVar9 = (this_ptr->grid_coord).z;
+  if (iVar9 <= (this_ptr->grid_bounds_max).z) {
+    (this_ptr->grid_bounds_max).z = iVar9 + -1;
   }
-  _DAT_01e61b58 = 0;
+  g_RenderedTriangleCount = 0;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280
-            (0x01BA5C50,(CVector3i *)0x1c21e68);
-  engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0(0x01BA5C50,0xff,0xff,0xff);
+            (g_CDemonRenderer_PTR_0060b27c,&g_DebugCubeBasePoint);
+  engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0
+            (g_CDemonRenderer_PTR_0060b27c,0xff,0xff,0xff);
   if ((4 < this_ptr->rendering_mode) || (this_ptr->rendering_mode < 0)) {
     this_ptr->rendering_mode = 1;
   }
-  local_fc = (_DAT_01d04fd0 ^ (int)_DAT_01d04fd0 >> 0x1f) - ((int)_DAT_01d04fd0 >> 0x1f);
-  iVar8 = (_DAT_01d04fd4 ^ (int)_DAT_01d04fd4 >> 0x1f) - ((int)_DAT_01d04fd4 >> 0x1f);
-  iVar5 = (_DAT_01d04fd8 ^ (int)_DAT_01d04fd8 >> 0x1f) - ((int)_DAT_01d04fd8 >> 0x1f);
-  if ((local_fc < iVar8) || (local_fc < iVar5)) {
-    if ((iVar8 < local_fc) || (iVar8 < iVar5)) {
-      if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
-        local_98 = local_134[0] + -1;
-        local_94 = local_138 + -1;
-        local_68 = 0;
-        iVar8 = local_134[1];
+  iStack_118 = (g_INT_01d04fd0 ^ g_INT_01d04fd0 >> 0x1f) - (g_INT_01d04fd0 >> 0x1f);
+  iVar9 = (g_INT_01d04fd4 ^ g_INT_01d04fd4 >> 0x1f) - (g_INT_01d04fd4 >> 0x1f);
+  iVar6 = (g_INT_01d04fd8 ^ g_INT_01d04fd8 >> 0x1f) - (g_INT_01d04fd8 >> 0x1f);
+  if ((iStack_118 < iVar9) || (iStack_118 < iVar6)) {
+    if ((iVar9 < iStack_118) || (iVar9 < iVar6)) {
+      if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
+        local_b4 = (int)local_150 + -1;
+        local_b0 = local_15c.z + -1;
+        local_84 = 0;
+        fVar11 = local_14c;
         do {
-          local_34 = local_138;
-          if (local_138 <= (this_ptr->grid_bounds_max).x) {
-            local_b8 = local_68;
-            local_b4 = local_68;
+          local_50 = local_15c.z;
+          if (local_15c.z <= (this_ptr->grid_bounds_max).x) {
+            local_d4 = local_84;
+            local_d0 = local_84;
             do {
-              iVar5 = local_134[0];
-              if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
+              fVar8 = local_150;
+              if ((int)local_150 <= (this_ptr->grid_bounds_max).y) {
                 do {
-                  iVar6 = iVar5 + 1;
+                  iVar9 = (int)fVar8 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_34,iVar5,iVar8,local_b8);
-                  iVar5 = iVar6;
-                } while (iVar6 <= (this_ptr->grid_bounds_max).y);
+                            (this_ptr,local_50,(int)fVar8,(int)fVar11,local_d4);
+                  fVar8 = (float)iVar9;
+                } while (iVar9 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar5 = local_98;
-              if ((this_ptr->grid_bounds_min).y <= local_98) {
+              iVar9 = local_b4;
+              if ((this_ptr->grid_bounds_min).y <= local_b4) {
                 do {
-                  iVar6 = iVar5 + -1;
+                  iVar6 = iVar9 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_34,iVar5,iVar8,local_b4);
-                  iVar5 = iVar6;
+                            (this_ptr,local_50,iVar9,(int)fVar11,local_d0);
+                  iVar9 = iVar6;
                 } while ((this_ptr->grid_bounds_min).y <= iVar6);
               }
-              local_34 = local_34 + 1;
-            } while (local_34 <= (this_ptr->grid_bounds_max).x);
+              local_50 = local_50 + 1;
+            } while (local_50 <= (this_ptr->grid_bounds_max).x);
           }
-          local_38 = local_94;
-          if ((this_ptr->grid_bounds_min).x <= local_94) {
-            local_b0 = local_68;
-            local_ac = local_68;
+          local_54 = local_b0;
+          if ((this_ptr->grid_bounds_min).x <= local_b0) {
+            local_cc = local_84;
+            local_c8 = local_84;
             do {
-              iVar5 = local_134[0];
-              if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
+              fVar8 = local_150;
+              if ((int)local_150 <= (this_ptr->grid_bounds_max).y) {
                 do {
-                  iVar6 = iVar5 + 1;
+                  iVar9 = (int)fVar8 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_38,iVar5,iVar8,local_b0);
-                  iVar5 = iVar6;
-                } while (iVar6 <= (this_ptr->grid_bounds_max).y);
+                            (this_ptr,local_54,(int)fVar8,(int)fVar11,local_cc);
+                  fVar8 = (float)iVar9;
+                } while (iVar9 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar5 = local_98;
-              if ((this_ptr->grid_bounds_min).y <= local_98) {
+              iVar9 = local_b4;
+              if ((this_ptr->grid_bounds_min).y <= local_b4) {
                 do {
-                  iVar6 = iVar5 + -1;
+                  iVar6 = iVar9 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_38,iVar5,iVar8,local_ac);
-                  iVar5 = iVar6;
+                            (this_ptr,local_54,iVar9,(int)fVar11,local_c8);
+                  iVar9 = iVar6;
                 } while ((this_ptr->grid_bounds_min).y <= iVar6);
               }
-              local_38 = local_38 + -1;
-            } while ((this_ptr->grid_bounds_min).x <= local_38);
+              local_54 = local_54 + -1;
+            } while ((this_ptr->grid_bounds_min).x <= local_54);
           }
-          iVar8 = iVar8 + 1;
-          local_68 = local_68 + 1;
-        } while (iVar8 <= (this_ptr->grid_bounds_max).z);
+          fVar11 = (float)((int)fVar11 + 1);
+          local_84 = local_84 + 1;
+        } while ((int)fVar11 <= (this_ptr->grid_bounds_max).z);
       }
-      iVar8 = local_134[1] + -1;
-      if ((this_ptr->grid_bounds_min).z <= iVar8) {
-        local_90 = local_134[0] + -1;
-        local_8c = local_138 + -1;
-        local_64 = local_134[1] - iVar8;
+      iVar9 = (int)local_14c + -1;
+      if ((this_ptr->grid_bounds_min).z <= iVar9) {
+        local_ac = (int)local_150 + -1;
+        local_a8 = local_15c.z + -1;
+        local_80 = (int)local_14c - iVar9;
         do {
-          local_3c = local_138;
-          if (local_138 <= (this_ptr->grid_bounds_max).x) {
-            local_a8 = local_64;
-            local_a4 = local_a8;
+          local_58 = local_15c.z;
+          if (local_15c.z <= (this_ptr->grid_bounds_max).x) {
+            local_c4 = local_80;
+            local_c0 = local_c4;
             do {
-              iVar5 = local_134[0];
-              if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
+              fVar11 = local_150;
+              if ((int)local_150 <= (this_ptr->grid_bounds_max).y) {
                 do {
-                  iVar6 = iVar5 + 1;
+                  iVar6 = (int)fVar11 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_3c,iVar5,iVar8,local_a8);
-                  iVar5 = iVar6;
+                            (this_ptr,local_58,(int)fVar11,iVar9,local_c4);
+                  fVar11 = (float)iVar6;
                 } while (iVar6 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar5 = (this_ptr->grid_bounds_min).y;
-              iVar6 = local_90 - iVar5;
-              bVar10 = SBORROW4(local_90,iVar5);
-              iVar5 = local_90;
-              while (bVar10 == iVar6 < 0) {
-                iVar7 = iVar5 + -1;
+              iVar6 = (this_ptr->grid_bounds_min).y;
+              iVar10 = local_ac - iVar6;
+              bVar13 = SBORROW4(local_ac,iVar6);
+              iVar6 = local_ac;
+              while (bVar13 == iVar10 < 0) {
+                iVar7 = iVar6 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,local_3c,iVar5,iVar8,local_a4);
-                iVar5 = (this_ptr->grid_bounds_min).y;
-                iVar6 = iVar7 - iVar5;
-                bVar10 = SBORROW4(iVar7,iVar5);
-                iVar5 = iVar7;
+                          (this_ptr,local_58,iVar6,iVar9,local_c0);
+                iVar6 = (this_ptr->grid_bounds_min).y;
+                iVar10 = iVar7 - iVar6;
+                bVar13 = SBORROW4(iVar7,iVar6);
+                iVar6 = iVar7;
               }
-              local_3c = local_3c + 1;
-            } while (local_3c <= (this_ptr->grid_bounds_max).x);
+              local_58 = local_58 + 1;
+            } while (local_58 <= (this_ptr->grid_bounds_max).x);
           }
-          local_40 = local_8c;
-          if ((this_ptr->grid_bounds_min).x <= local_8c) {
-            local_a0 = local_64;
-            local_9c = local_64;
+          local_5c = local_a8;
+          if ((this_ptr->grid_bounds_min).x <= local_a8) {
+            local_bc = local_80;
+            local_b8 = local_80;
             do {
-              iVar5 = local_134[0];
-              if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
+              fVar11 = local_150;
+              if ((int)local_150 <= (this_ptr->grid_bounds_max).y) {
                 do {
-                  iVar6 = iVar5 + 1;
+                  iVar6 = (int)fVar11 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_40,iVar5,iVar8,local_a0);
-                  iVar5 = iVar6;
+                            (this_ptr,local_5c,(int)fVar11,iVar9,local_bc);
+                  fVar11 = (float)iVar6;
                 } while (iVar6 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar5 = local_90;
-              if ((this_ptr->grid_bounds_min).y <= local_90) {
+              iVar6 = local_ac;
+              if ((this_ptr->grid_bounds_min).y <= local_ac) {
                 do {
-                  iVar6 = iVar5 + -1;
+                  iVar10 = iVar6 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_40,iVar5,iVar8,local_9c);
-                  iVar5 = iVar6;
-                } while ((this_ptr->grid_bounds_min).y <= iVar6);
+                            (this_ptr,local_5c,iVar6,iVar9,local_b8);
+                  iVar6 = iVar10;
+                } while ((this_ptr->grid_bounds_min).y <= iVar10);
               }
-              local_40 = local_40 + -1;
-            } while ((this_ptr->grid_bounds_min).x <= local_40);
+              local_5c = local_5c + -1;
+            } while ((this_ptr->grid_bounds_min).x <= local_5c);
           }
-          iVar8 = iVar8 + -1;
-          local_64 = local_64 + 1;
-        } while ((this_ptr->grid_bounds_min).z <= iVar8);
+          iVar9 = iVar9 + -1;
+          local_80 = local_80 + 1;
+        } while ((this_ptr->grid_bounds_min).z <= iVar9);
       }
     }
     else {
-      if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
-        local_88 = local_134[1] + -1;
-        local_84 = local_138 + -1;
-        local_60 = 0;
-        iVar8 = local_134[0];
+      if ((int)local_150 <= (this_ptr->grid_bounds_max).y) {
+        local_a4 = (int)local_14c + -1;
+        local_a0 = local_15c.z + -1;
+        local_7c = 0;
+        fVar11 = local_150;
         do {
-          local_44 = local_138;
-          if (local_138 <= (this_ptr->grid_bounds_max).x) {
-            local_d8 = local_60;
-            local_d4 = local_60;
+          local_60 = local_15c.z;
+          if (local_15c.z <= (this_ptr->grid_bounds_max).x) {
+            local_f4 = local_7c;
+            local_f0 = local_7c;
             do {
-              iVar5 = local_134[1];
-              if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+              fVar8 = local_14c;
+              if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
                 do {
-                  iVar6 = iVar5 + 1;
+                  iVar9 = (int)fVar8 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_44,iVar8,iVar5,local_d8);
-                  iVar5 = iVar6;
-                } while (iVar6 <= (this_ptr->grid_bounds_max).z);
+                            (this_ptr,local_60,(int)fVar11,(int)fVar8,local_f4);
+                  fVar8 = (float)iVar9;
+                } while (iVar9 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar5 = local_88;
-              if ((this_ptr->grid_bounds_min).z <= local_88) {
+              iVar9 = local_a4;
+              if ((this_ptr->grid_bounds_min).z <= local_a4) {
                 do {
-                  iVar6 = iVar5 + -1;
+                  iVar6 = iVar9 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_44,iVar8,iVar5,local_d4);
-                  iVar5 = iVar6;
+                            (this_ptr,local_60,(int)fVar11,iVar9,local_f0);
+                  iVar9 = iVar6;
                 } while ((this_ptr->grid_bounds_min).z <= iVar6);
               }
-              local_44 = local_44 + 1;
-            } while (local_44 <= (this_ptr->grid_bounds_max).x);
+              local_60 = local_60 + 1;
+            } while (local_60 <= (this_ptr->grid_bounds_max).x);
           }
-          local_48 = local_84;
-          if ((this_ptr->grid_bounds_min).x <= local_84) {
-            local_d0 = local_60;
-            local_cc = local_60;
+          local_64 = local_a0;
+          if ((this_ptr->grid_bounds_min).x <= local_a0) {
+            local_ec = local_7c;
+            local_e8 = local_7c;
             do {
-              iVar5 = local_134[1];
-              if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+              fVar8 = local_14c;
+              if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
                 do {
-                  iVar6 = iVar5 + 1;
+                  iVar9 = (int)fVar8 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_48,iVar8,iVar5,local_d0);
-                  iVar5 = iVar6;
-                } while (iVar6 <= (this_ptr->grid_bounds_max).z);
+                            (this_ptr,local_64,(int)fVar11,(int)fVar8,local_ec);
+                  fVar8 = (float)iVar9;
+                } while (iVar9 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar5 = local_88;
-              if ((this_ptr->grid_bounds_min).z <= local_88) {
+              iVar9 = local_a4;
+              if ((this_ptr->grid_bounds_min).z <= local_a4) {
                 do {
-                  iVar6 = iVar5 + -1;
+                  iVar6 = iVar9 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_48,iVar8,iVar5,local_cc);
-                  iVar5 = iVar6;
+                            (this_ptr,local_64,(int)fVar11,iVar9,local_e8);
+                  iVar9 = iVar6;
                 } while ((this_ptr->grid_bounds_min).z <= iVar6);
               }
-              local_48 = local_48 + -1;
-            } while ((this_ptr->grid_bounds_min).x <= local_48);
+              local_64 = local_64 + -1;
+            } while ((this_ptr->grid_bounds_min).x <= local_64);
           }
-          iVar8 = iVar8 + 1;
-          local_60 = local_60 + 1;
-        } while (iVar8 <= (this_ptr->grid_bounds_max).y);
+          fVar11 = (float)((int)fVar11 + 1);
+          local_7c = local_7c + 1;
+        } while ((int)fVar11 <= (this_ptr->grid_bounds_max).y);
       }
-      iVar8 = local_134[0] + -1;
-      if ((this_ptr->grid_bounds_min).y <= iVar8) {
-        local_80 = local_134[1] + -1;
-        local_7c = local_138 + -1;
-        local_5c = local_134[0] - iVar8;
+      iVar9 = (int)local_150 + -1;
+      if ((this_ptr->grid_bounds_min).y <= iVar9) {
+        local_9c = (int)local_14c + -1;
+        local_98 = local_15c.z + -1;
+        local_78 = (int)local_150 - iVar9;
         do {
-          local_4c = local_138;
-          if (local_138 <= (this_ptr->grid_bounds_max).x) {
-            local_c8 = local_5c;
-            local_c4 = local_c8;
+          local_68 = local_15c.z;
+          if (local_15c.z <= (this_ptr->grid_bounds_max).x) {
+            local_e4 = local_78;
+            local_e0 = local_e4;
             do {
-              iVar5 = local_134[1];
-              if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+              fVar11 = local_14c;
+              if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
                 do {
-                  iVar6 = iVar5 + 1;
+                  iVar6 = (int)fVar11 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_4c,iVar8,iVar5,local_c8);
-                  iVar5 = iVar6;
+                            (this_ptr,local_68,iVar9,(int)fVar11,local_e4);
+                  fVar11 = (float)iVar6;
                 } while (iVar6 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar5 = (this_ptr->grid_bounds_min).z;
-              iVar6 = local_80 - iVar5;
-              bVar10 = SBORROW4(local_80,iVar5);
-              iVar5 = local_80;
-              while (bVar10 == iVar6 < 0) {
-                iVar7 = iVar5 + -1;
+              iVar6 = (this_ptr->grid_bounds_min).z;
+              iVar10 = local_9c - iVar6;
+              bVar13 = SBORROW4(local_9c,iVar6);
+              iVar6 = local_9c;
+              while (bVar13 == iVar10 < 0) {
+                iVar7 = iVar6 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,local_4c,iVar8,iVar5,local_c4);
-                iVar5 = (this_ptr->grid_bounds_min).z;
-                iVar6 = iVar7 - iVar5;
-                bVar10 = SBORROW4(iVar7,iVar5);
-                iVar5 = iVar7;
+                          (this_ptr,local_68,iVar9,iVar6,local_e0);
+                iVar6 = (this_ptr->grid_bounds_min).z;
+                iVar10 = iVar7 - iVar6;
+                bVar13 = SBORROW4(iVar7,iVar6);
+                iVar6 = iVar7;
               }
-              local_4c = local_4c + 1;
-            } while (local_4c <= (this_ptr->grid_bounds_max).x);
+              local_68 = local_68 + 1;
+            } while (local_68 <= (this_ptr->grid_bounds_max).x);
           }
-          local_50 = local_7c;
-          if ((this_ptr->grid_bounds_min).x <= local_7c) {
-            local_c0 = local_5c;
-            local_bc = local_5c;
+          local_6c = local_98;
+          if ((this_ptr->grid_bounds_min).x <= local_98) {
+            local_dc = local_78;
+            local_d8 = local_78;
             do {
-              iVar5 = local_134[1];
-              if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+              fVar11 = local_14c;
+              if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
                 do {
-                  iVar6 = iVar5 + 1;
+                  iVar6 = (int)fVar11 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_50,iVar8,iVar5,local_c0);
-                  iVar5 = iVar6;
+                            (this_ptr,local_6c,iVar9,(int)fVar11,local_dc);
+                  fVar11 = (float)iVar6;
                 } while (iVar6 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar5 = local_80;
-              if ((this_ptr->grid_bounds_min).z <= local_80) {
+              iVar6 = local_9c;
+              if ((this_ptr->grid_bounds_min).z <= local_9c) {
                 do {
-                  iVar6 = iVar5 + -1;
+                  iVar10 = iVar6 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                            (this_ptr,local_50,iVar8,iVar5,local_bc);
-                  iVar5 = iVar6;
-                } while ((this_ptr->grid_bounds_min).z <= iVar6);
+                            (this_ptr,local_6c,iVar9,iVar6,local_d8);
+                  iVar6 = iVar10;
+                } while ((this_ptr->grid_bounds_min).z <= iVar10);
               }
-              local_50 = local_50 + -1;
-            } while ((this_ptr->grid_bounds_min).x <= local_50);
+              local_6c = local_6c + -1;
+            } while ((this_ptr->grid_bounds_min).x <= local_6c);
           }
-          iVar8 = iVar8 + -1;
-          local_5c = local_5c + 1;
-        } while ((this_ptr->grid_bounds_min).y <= iVar8);
+          iVar9 = iVar9 + -1;
+          local_78 = local_78 + 1;
+        } while ((this_ptr->grid_bounds_min).y <= iVar9);
       }
     }
   }
   else {
-    if (local_138 <= (this_ptr->grid_bounds_max).x) {
-      local_78 = local_134[1] + -1;
-      local_74 = local_134[0] + -1;
-      local_58 = 0;
-      iVar8 = local_138;
+    if (local_15c.z <= (this_ptr->grid_bounds_max).x) {
+      local_94 = (int)local_14c + -1;
+      local_90 = (int)local_150 + -1;
+      local_74 = 0;
+      iVar9 = local_15c.z;
       do {
-        local_24 = local_134[0];
-        if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
-          local_f8 = local_58;
-          local_f4 = local_58;
+        local_40 = (int)local_150;
+        if ((int)local_150 <= (this_ptr->grid_bounds_max).y) {
+          local_114 = local_74;
+          local_110 = local_74;
           do {
-            iVar5 = local_134[1];
-            if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+            fVar11 = local_14c;
+            if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
               do {
-                iVar6 = iVar5 + 1;
+                iVar6 = (int)fVar11 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,iVar8,local_24,iVar5,local_f8);
-                iVar5 = iVar6;
+                          (this_ptr,iVar9,local_40,(int)fVar11,local_114);
+                fVar11 = (float)iVar6;
               } while (iVar6 <= (this_ptr->grid_bounds_max).z);
             }
-            iVar5 = local_78;
-            if ((this_ptr->grid_bounds_min).z <= local_78) {
+            iVar6 = local_94;
+            if ((this_ptr->grid_bounds_min).z <= local_94) {
               do {
-                iVar6 = iVar5 + -1;
+                iVar10 = iVar6 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,iVar8,local_24,iVar5,local_f4);
-                iVar5 = iVar6;
-              } while ((this_ptr->grid_bounds_min).z <= iVar6);
+                          (this_ptr,iVar9,local_40,iVar6,local_110);
+                iVar6 = iVar10;
+              } while ((this_ptr->grid_bounds_min).z <= iVar10);
             }
-            local_24 = local_24 + 1;
-          } while (local_24 <= (this_ptr->grid_bounds_max).y);
+            local_40 = local_40 + 1;
+          } while (local_40 <= (this_ptr->grid_bounds_max).y);
         }
-        local_28 = local_74;
-        if ((this_ptr->grid_bounds_min).y <= local_74) {
-          local_f0 = local_58;
-          local_ec = local_58;
+        local_44 = local_90;
+        if ((this_ptr->grid_bounds_min).y <= local_90) {
+          local_10c = local_74;
+          local_108 = local_74;
           do {
-            iVar5 = local_134[1];
-            if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+            fVar11 = local_14c;
+            if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
               do {
-                iVar6 = iVar5 + 1;
+                iVar6 = (int)fVar11 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,iVar8,local_28,iVar5,local_f0);
-                iVar5 = iVar6;
+                          (this_ptr,iVar9,local_44,(int)fVar11,local_10c);
+                fVar11 = (float)iVar6;
               } while (iVar6 <= (this_ptr->grid_bounds_max).z);
             }
-            iVar5 = local_78;
-            if ((this_ptr->grid_bounds_min).z <= local_78) {
+            iVar6 = local_94;
+            if ((this_ptr->grid_bounds_min).z <= local_94) {
               do {
-                iVar6 = iVar5 + -1;
+                iVar10 = iVar6 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,iVar8,local_28,iVar5,local_ec);
-                iVar5 = iVar6;
-              } while ((this_ptr->grid_bounds_min).z <= iVar6);
+                          (this_ptr,iVar9,local_44,iVar6,local_108);
+                iVar6 = iVar10;
+              } while ((this_ptr->grid_bounds_min).z <= iVar10);
             }
-            local_28 = local_28 + -1;
-          } while ((this_ptr->grid_bounds_min).y <= local_28);
+            local_44 = local_44 + -1;
+          } while ((this_ptr->grid_bounds_min).y <= local_44);
         }
-        iVar8 = iVar8 + 1;
-        local_58 = local_58 + 1;
-      } while (iVar8 <= (this_ptr->grid_bounds_max).x);
+        iVar9 = iVar9 + 1;
+        local_74 = local_74 + 1;
+      } while (iVar9 <= (this_ptr->grid_bounds_max).x);
     }
-    iVar8 = local_138 + -1;
-    if ((this_ptr->grid_bounds_min).x <= iVar8) {
-      local_70 = local_134[1] + -1;
-      local_6c = local_134[0] + -1;
-      local_54 = local_138 - iVar8;
+    iVar9 = local_15c.z + -1;
+    if ((this_ptr->grid_bounds_min).x <= iVar9) {
+      local_8c = (int)local_14c + -1;
+      local_88 = (int)local_150 + -1;
+      local_70 = local_15c.z - iVar9;
       do {
-        local_2c = local_134[0];
-        if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
-          local_e8 = local_54;
-          local_e4 = local_54;
+        local_48 = (int)local_150;
+        if ((int)local_150 <= (this_ptr->grid_bounds_max).y) {
+          local_104 = local_70;
+          local_100 = local_70;
           do {
-            iVar5 = local_134[1];
-            if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+            fVar11 = local_14c;
+            if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
               do {
-                iVar6 = iVar5 + 1;
+                iVar6 = (int)fVar11 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,iVar8,local_2c,iVar5,local_e8);
-                iVar5 = iVar6;
+                          (this_ptr,iVar9,local_48,(int)fVar11,local_104);
+                fVar11 = (float)iVar6;
               } while (iVar6 <= (this_ptr->grid_bounds_max).z);
             }
-            iVar5 = local_70;
-            if ((this_ptr->grid_bounds_min).z <= local_70) {
+            iVar6 = local_8c;
+            if ((this_ptr->grid_bounds_min).z <= local_8c) {
               do {
-                iVar6 = iVar5 + -1;
+                iVar10 = iVar6 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,iVar8,local_2c,iVar5,local_e4);
-                iVar5 = iVar6;
-              } while ((this_ptr->grid_bounds_min).z <= iVar6);
+                          (this_ptr,iVar9,local_48,iVar6,local_100);
+                iVar6 = iVar10;
+              } while ((this_ptr->grid_bounds_min).z <= iVar10);
             }
-            local_2c = local_2c + 1;
-          } while (local_2c <= (this_ptr->grid_bounds_max).y);
+            local_48 = local_48 + 1;
+          } while (local_48 <= (this_ptr->grid_bounds_max).y);
         }
-        local_30 = local_6c;
-        if ((this_ptr->grid_bounds_min).y <= local_6c) {
-          local_e0 = local_54;
-          local_dc = local_54;
+        local_4c = local_88;
+        if ((this_ptr->grid_bounds_min).y <= local_88) {
+          local_fc = local_70;
+          local_f8 = local_70;
           do {
-            iVar5 = local_134[1];
-            if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+            fVar11 = local_14c;
+            if ((int)local_14c <= (this_ptr->grid_bounds_max).z) {
               do {
-                iVar6 = iVar5 + 1;
+                iVar6 = (int)fVar11 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,iVar8,local_30,iVar5,local_e0);
-                iVar5 = iVar6;
+                          (this_ptr,iVar9,local_4c,(int)fVar11,local_fc);
+                fVar11 = (float)iVar6;
               } while (iVar6 <= (this_ptr->grid_bounds_max).z);
             }
-            iVar5 = local_70;
-            if ((this_ptr->grid_bounds_min).z <= local_70) {
+            iVar6 = local_8c;
+            if ((this_ptr->grid_bounds_min).z <= local_8c) {
               do {
-                iVar6 = iVar5 + -1;
+                iVar10 = iVar6 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
-                          (this_ptr,iVar8,local_30,iVar5,local_dc);
-                iVar5 = iVar6;
-              } while ((this_ptr->grid_bounds_min).z <= iVar6);
+                          (this_ptr,iVar9,local_4c,iVar6,local_f8);
+                iVar6 = iVar10;
+              } while ((this_ptr->grid_bounds_min).z <= iVar10);
             }
-            local_30 = local_30 + -1;
-          } while ((this_ptr->grid_bounds_min).y <= local_30);
+            local_4c = local_4c + -1;
+          } while ((this_ptr->grid_bounds_min).y <= local_4c);
         }
-        iVar8 = iVar8 + -1;
-        local_54 = local_54 + 1;
-      } while ((this_ptr->grid_bounds_min).x <= iVar8);
+        iVar9 = iVar9 + -1;
+        local_70 = local_70 + 1;
+      } while ((this_ptr->grid_bounds_min).x <= iVar9);
     }
   }
-  _DAT_01bd3c60 = 1;
+  g_PVSReadyFlag = 1;
   return;
 }

@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 32,
     "complexity_score": 15,
-    "cross_reference_count": 8,
+    "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -22,7 +22,13 @@
     {
       "addr": "004bdfb0",
       "from_addr": "004be60f",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7a20",
+      "from_addr": "004f7ac0",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,12 +41,6 @@
       "addr": "004f6770",
       "from_addr": "004f686f",
       "name": "core_mission.cpp_CDemonMission_loadActor_FUN_004f6770",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f7a20",
-      "from_addr": "004f7ac0",
-      "name": "core_mission.cpp_FUN_004f7a20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,6 +59,12 @@
       "addr": "00563970",
       "from_addr": "00563a0a",
       "name": "core_spawner.cpp_CSpawner_process_FUN_00563970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e230",
+      "from_addr": "0056e374",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -83,12 +89,12 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "004be60f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -121,7 +127,7 @@
       {
         "call_addr": "004f7ac0",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f7a20",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,6 +150,17 @@
         "call_addr": "00530a76",
         "call_type": "direct",
         "caller": "core_script.cpp_readActorReference_FUN_00530a10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056e374",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -39,10 +39,10 @@
 ;   undefined4 g_TransformMatrix.m[2].x
 ;   undefined4 g_TransformMatrix.m[2].y
 ;   undefined4 g_TransformMatrix.m[2].z
-;   undefined4 DAT_01cc5118
-;   undefined4 DAT_01cc511c
-;   undefined4 DAT_01cc5120
-;   undefined4 DAT_01cc5124
+;   int g_INT_01cc5118
+;   int g_INT_01cc511c
+;   int g_INT_01cc5120
+;   int g_INT_01cc5124
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -120,46 +120,46 @@ section .text
     MOV EAX,[0x01c039e8]                ; 004ccbe1 | g_TransformMatrix
     FLD float ptr [ESP + 0x50]          ; 004ccbe6
     FMUL ST6                            ; 004ccbea
-    MOV [0x01cc5140],EAX                ; 004ccbec | DAT_01cc5140
+    MOV [0x01cc5140],EAX                ; 004ccbec | g_TransformMatrixCopy
     FSUBP ST3,ST0                       ; 004ccbf1
     MOV EAX,[0x01c039ec]                ; 004ccbf3 | g_TransformMatrix.m[0].y
     FLD float ptr [ESP + 0x44]          ; 004ccbf8
     FMUL float ptr [ESP + 0x40]         ; 004ccbfc
-    MOV [0x01cc5144],EAX                ; 004ccc00 | DAT_01cc5144
+    MOV [0x01cc5144],EAX                ; 004ccc00 | g_TransformMatrixCopy.m[0].y
     MOV EAX,[0x01c039f0]                ; 004ccc05 | g_TransformMatrix.m[0].z
     FSTP float ptr [ESP + 0x18]         ; 004ccc0a
     FLD float ptr [ESP + 0x3c]          ; 004ccc0e
     FMUL float ptr [ESP + 0x38]         ; 004ccc12
-    MOV [0x01cc5148],EAX                ; 004ccc16 | DAT_01cc5148
+    MOV [0x01cc5148],EAX                ; 004ccc16 | g_TransformMatrixCopy.m[0].z
     FSUBR float ptr [ESP + 0x18]        ; 004ccc1b
     MOV EAX,[0x01c039f4]                ; 004ccc1f | g_TransformMatrix.m[1].x
     FSTP float ptr [ESP + 0x30]         ; 004ccc24
     FLD float ptr [ESP + 0x4c]          ; 004ccc28
     FMUL float ptr [ESP + 0x30]         ; 004ccc2c
-    MOV [0x01cc514c],EAX                ; 004ccc30 | DAT_01cc514c
+    MOV [0x01cc514c],EAX                ; 004ccc30 | g_TransformMatrixCopy.m[1].x
     FXCH ST2                            ; 004ccc35
     FSUBP ST4,ST0                       ; 004ccc37
     MOV EAX,[0x01c039f8]                ; 004ccc39 | g_TransformMatrix.m[1].y
     FSUBP ST4,ST0                       ; 004ccc3e
-    MOV [0x01cc5150],EAX                ; 004ccc40 | DAT_01cc5150
+    MOV [0x01cc5150],EAX                ; 004ccc40 | g_TransformMatrixCopy.m[1].y
     MOV EAX,[0x01c039fc]                ; 004ccc45 | g_TransformMatrix.m[1].z
     FXCH ST2                            ; 004ccc4a
     FCHS                                ; 004ccc4c
-    MOV [0x01cc5154],EAX                ; 004ccc4e | DAT_01cc5154
+    MOV [0x01cc5154],EAX                ; 004ccc4e | g_TransformMatrixCopy.m[1].z
     MOV EAX,[0x01c03a00]                ; 004ccc53 | g_TransformMatrix.m[2].x
     FXCH ST3                            ; 004ccc58
     FSTP float ptr [ESP + 0x28]         ; 004ccc5a
-    MOV [0x01cc5158],EAX                ; 004ccc5e | DAT_01cc5158
+    MOV [0x01cc5158],EAX                ; 004ccc5e | g_TransformMatrixCopy.m[2].x
     MOV EAX,[0x01c03a04]                ; 004ccc63 | g_TransformMatrix.m[2].y
     FXCH ST2                            ; 004ccc68
     FSTP float ptr [ESP + 0x24]         ; 004ccc6a
-    MOV [0x01cc515c],EAX                ; 004ccc6e | DAT_01cc515c
+    MOV [0x01cc515c],EAX                ; 004ccc6e | g_TransformMatrixCopy.m[2].y
     FXCH ST2                            ; 004ccc73
     FCHS                                ; 004ccc75
     FSTP float ptr [ESP + 0x20]         ; 004ccc77
     MOV EAX,[0x01c03a08]                ; 004ccc7b | g_TransformMatrix.m[2].z
     FADDP                               ; 004ccc80
-    MOV [0x01cc5160],EAX                ; 004ccc82 | DAT_01cc5160
+    MOV [0x01cc5160],EAX                ; 004ccc82 | g_TransformMatrixCopy.m[2].z
     FSTP float ptr [ESP]                ; 004ccc87
     FLD float ptr [ESP]                 ; 004ccc8a
     FDIVR double ptr [0x005881e3]       ; 004ccc8d | DOUBLE_005881e3
@@ -217,13 +217,13 @@ section .text
     FXCH ST6                            ; 004ccd29
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd2b
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x01cc5118]        ; 004ccd30 | DAT_01cc5118
+    FISTP dword ptr [0x01cc5118]        ; 004ccd30 | g_INT_01cc5118
     FLD float ptr [ESP + 0x8]           ; 004ccd36
     FMUL float ptr [ESP]                ; 004ccd3a
     FXCH ST3                            ; 004ccd3d
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd3f
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x01cc511c]        ; 004ccd44 | DAT_01cc511c
+    FISTP dword ptr [0x01cc511c]        ; 004ccd44 | g_INT_01cc511c
     FLD float ptr [ESP + 0x10]          ; 004ccd4a
     FMUL float ptr [ESP]                ; 004ccd4e
     FXCH ST2                            ; 004ccd51
@@ -248,17 +248,17 @@ section .text
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd7d
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST4                            ; 004ccd82
-    FISTP dword ptr [0x01cc5120]        ; 004ccd84 | DAT_01cc5120
+    FISTP dword ptr [0x01cc5120]        ; 004ccd84 | g_INT_01cc5120
     FXCH ST4                            ; 004ccd8a
-    FISTP dword ptr [0x01cc5124]        ; 004ccd8c | DAT_01cc5124
+    FISTP dword ptr [0x01cc5124]        ; 004ccd8c | g_INT_01cc5124
     FXCH ST3                            ; 004ccd92
-    FISTP dword ptr [0x01cc5128]        ; 004ccd94 | DAT_01cc5128
+    FISTP dword ptr [0x01cc5128]        ; 004ccd94 | g_INT_01cc5128
     FXCH ST3                            ; 004ccd9a
-    FISTP dword ptr [0x01cc512c]        ; 004ccd9c | DAT_01cc512c
+    FISTP dword ptr [0x01cc512c]        ; 004ccd9c | g_INT_01cc512c
     FXCH ST2                            ; 004ccda2
-    FISTP dword ptr [0x01cc5130]        ; 004ccda4 | DAT_01cc5130
-    FISTP dword ptr [0x01cc5134]        ; 004ccdaa | DAT_01cc5134
-    FISTP dword ptr [0x01cc5138]        ; 004ccdb0 | DAT_01cc5138
+    FISTP dword ptr [0x01cc5130]        ; 004ccda4 | g_INT_01cc5130
+    FISTP dword ptr [0x01cc5134]        ; 004ccdaa | g_INT_01cc5134
+    FISTP dword ptr [0x01cc5138]        ; 004ccdb0 | g_INT_01cc5138
     MOV ESP,EBP                         ; 004ccdb6
     POP EBP                             ; 004ccdb8
     RET                                 ; 004ccdb9

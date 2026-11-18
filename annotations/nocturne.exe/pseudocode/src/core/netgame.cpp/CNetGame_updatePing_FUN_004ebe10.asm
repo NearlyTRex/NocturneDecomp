@@ -31,8 +31,8 @@
 ;   double DOUBLE_0058c29a = 5
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cea3f4
-;   undefined4 DAT_01cea3f8
+;   int g_LastPingTime
+;   uint g_CurrentGameTime
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -75,10 +75,10 @@ section .text
     MOV ECX,0x12                        ; 004ebe55
     SAR EDX,0x1f                        ; 004ebe5a
     IDIV ECX                            ; 004ebe5d
-    MOV ECX,dword ptr [0x01cea3f4]      ; 004ebe5f | DAT_01cea3f4
+    MOV ECX,dword ptr [0x01cea3f4]      ; 004ebe5f | g_LastPingTime
     MOV EDX,EAX                         ; 004ebe65
     SUB EAX,ECX                         ; 004ebe67
-    MOV dword ptr [0x01cea3f4],EDX      ; 004ebe69 | DAT_01cea3f4
+    MOV dword ptr [0x01cea3f4],EDX      ; 004ebe69 | g_LastPingTime
     TEST EAX,EAX                        ; 004ebe6f
     JL 0x004ebfaa                       ; 004ebe71
         ;   XREF to: 004ebfaa (CONDITIONAL_JUMP)  ; LAB_004ebfaa
@@ -86,7 +86,7 @@ section .text
     JLE 0x004ebe83                      ; 004ebe7c
         ;   XREF to: 004ebe83 (CONDITIONAL_JUMP)  ; LAB_004ebe83
     MOV EAX,0x20000                     ; 004ebe7e
-    MOV EDI,dword ptr [0x01cea3f8]      ; 004ebe83 | DAT_01cea3f8
+    MOV EDI,dword ptr [0x01cea3f8]      ; 004ebe83 | g_CurrentGameTime
         ;   Label: LAB_004ebe83
     ADD EDI,EAX                         ; 004ebe89
     LEA EAX,[EBX*0x8 + 0x0]             ; 004ebe8b
@@ -96,7 +96,7 @@ section .text
     LEA EDX,[ESI + 0x20]                ; 004ebe99
     ADD EDX,EAX                         ; 004ebe9c
     MOV EAX,dword ptr [ESI + 0x114]     ; 004ebe9e
-    MOV dword ptr [0x01cea3f8],EDI      ; 004ebea4 | DAT_01cea3f8
+    MOV dword ptr [0x01cea3f8],EDI      ; 004ebea4 | g_CurrentGameTime
     CMP EBX,EAX                         ; 004ebeaa
     JZ 0x004ebfb1                       ; 004ebeac
         ;   XREF to: 004ebfb1 (CONDITIONAL_JUMP)  ; LAB_004ebfb1
@@ -130,7 +130,7 @@ section .text
     SAHF                                ; 004ebefd
     JC 0x004ebfa3                       ; 004ebefe
         ;   XREF to: 004ebfa3 (CONDITIONAL_JUMP)  ; LAB_004ebfa3
-    MOV ECX,dword ptr [0x01cea3f8]      ; 004ebf04 | DAT_01cea3f8
+    MOV ECX,dword ptr [0x01cea3f8]      ; 004ebf04 | g_CurrentGameTime
     MOV EAX,dword ptr [EDX + 0x30]      ; 004ebf0a
     SUB ECX,EAX                         ; 004ebf0d
     MOV dword ptr [ESP + 0x18],ECX      ; 004ebf0f
@@ -180,7 +180,7 @@ section .text
         ;   Label: LAB_004ebf79
     MOV EDI,0x9                         ; 004ebf7b
     MOV byte ptr [ESP + 0x10],AH        ; 004ebf80
-    MOV EAX,[0x01cea3f8]                ; 004ebf84 | DAT_01cea3f8
+    MOV EAX,[0x01cea3f8]                ; 004ebf84 | g_CurrentGameTime
     MOV dword ptr [ESP + 0xc],EDI       ; 004ebf89
     MOV dword ptr [ESP + 0x11],EAX      ; 004ebf8d
     MOV dword ptr [EDX + 0x2c],EAX      ; 004ebf91

@@ -63,7 +63,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
           engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
         }
       }
-      if ((INT_02f43978 != 0) &&
+      if ((g_RenderMotionDebug != 0) &&
          (iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar4 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_0052e700

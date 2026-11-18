@@ -729,7 +729,7 @@ section .text
     PUSH EAX                            ; 005bed48
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 005bed49
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-    MOV AH,byte ptr [0x03f6baac]        ; 005bed4e | BYTE_03f6baac
+    MOV AH,byte ptr [0x03f6baac]        ; 005bed4e | g_StrangerBoundsCenterInit
     ADD ESP,0x8                         ; 005bed54
     TEST AH,0x1                         ; 005bed57
     JZ 0x005befc3                       ; 005bed5a
@@ -771,16 +771,16 @@ section .text
     FXCH                                ; 005bedd3
     FSTP float ptr [ESP + 0x1ddc]       ; 005bedd5
     FSTP float ptr [ESP + 0x1de0]       ; 005beddc
-    CMP EAX,0x3f6ba9c                   ; 005bede3 | CVector3f_03f6ba9c
+    CMP EAX,0x3f6ba9c                   ; 005bede3 | g_StrangerBoundsCenter
     JZ 0x005bee0e                       ; 005bede8
         ;   XREF to: 005bee0e (CONDITIONAL_JUMP)  ; LAB_005bee0e
     MOV EAX,dword ptr [ESP + 0x1dd8]    ; 005bedea
-    MOV [0x03f6ba9c],EAX                ; 005bedf1 | CVector3f_03f6ba9c
+    MOV [0x03f6ba9c],EAX                ; 005bedf1 | g_StrangerBoundsCenter
     MOV EAX,dword ptr [ESP + 0x1ddc]    ; 005bedf6
-    MOV [0x03f6baa0],EAX                ; 005bedfd | CVector3f_03f6ba9c.y
+    MOV [0x03f6baa0],EAX                ; 005bedfd | g_StrangerBoundsCenter.y
     MOV EAX,dword ptr [ESP + 0x1de0]    ; 005bee02
-    MOV [0x03f6baa4],EAX                ; 005bee09 | CVector3f_03f6ba9c.z
-    PUSH 0x3f6ba9c                      ; 005bee0e | CVector3f_03f6ba9c
+    MOV [0x03f6baa4],EAX                ; 005bee09 | g_StrangerBoundsCenter.z
+    PUSH 0x3f6ba9c                      ; 005bee0e | g_StrangerBoundsCenter
         ;   Label: LAB_005bee0e
     LEA EAX,[ESP + 0x1ef0]              ; 005bee13
     PUSH EAX                            ; 005bee1a
@@ -893,7 +893,7 @@ section .text
     MOV DL,AH                           ; 005befc3
         ;   Label: LAB_005befc3
     OR DL,0x1                           ; 005befc5
-    MOV byte ptr [0x03f6baac],DL        ; 005befc8 | BYTE_03f6baac
+    MOV byte ptr [0x03f6baac],DL        ; 005befc8 | g_StrangerBoundsCenterInit
     JMP 0x005bed60                      ; 005befce
         ;   XREF to: 005bed60 (UNCONDITIONAL_JUMP)  ; LAB_005bed60
     FLD double ptr [ESP + 0x10]         ; 005befd3

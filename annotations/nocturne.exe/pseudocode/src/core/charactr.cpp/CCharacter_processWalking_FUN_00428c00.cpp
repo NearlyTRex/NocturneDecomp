@@ -58,7 +58,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00428c00(CCharacter 
         (start_waypoint =
               (CWayPoint *)
               core_actor_cpp_castToClassHash_FUN_0040d890
-                        ((CDemonActor *)actor_ptr,g_CWayPointActorType_02ddf514.name_hash),
+                        ((CDemonActor *)actor_ptr,g_CWayPointClassInfo.name_hash),
         start_waypoint != (CWayPoint *)0x0)) &&
        (actor_ptr = core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680
                               ((CWayPoint *)this_ptr_00,start_waypoint),

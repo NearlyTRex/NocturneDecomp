@@ -387,13 +387,13 @@ section .text
     ADD EAX,EBP                         ; 004356ec
     INC EDI                             ; 004356ee
     FILD dword ptr [EAX]                ; 004356ef
-    FMUL float ptr [0x0059b368]         ; 004356f1 | DAT_0059b368
+    FMUL float ptr [0x0059b368]         ; 004356f1 | g_FLOAT_0059b368
     FSTP float ptr [EBX]                ; 004356f7
     FILD dword ptr [EAX + 0x4]          ; 004356f9
-    FMUL float ptr [0x0059b368]         ; 004356fc | DAT_0059b368
+    FMUL float ptr [0x0059b368]         ; 004356fc | g_FLOAT_0059b368
     FSTP float ptr [EBX + 0x4]          ; 00435702
     FILD dword ptr [EAX + 0x8]          ; 00435705
-    FMUL float ptr [0x0059b368]         ; 00435708 | DAT_0059b368
+    FMUL float ptr [0x0059b368]         ; 00435708 | g_FLOAT_0059b368
     FSTP float ptr [EBX + 0x8]          ; 0043570e
     ADD EDX,0x11c                       ; 00435711
     MOV EAX,dword ptr [ESI + 0x104]     ; 00435717

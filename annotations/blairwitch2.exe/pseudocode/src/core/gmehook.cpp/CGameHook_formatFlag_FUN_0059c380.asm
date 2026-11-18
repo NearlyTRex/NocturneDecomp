@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gmehook_cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook *this_ptr,undefined4 param_2,int param_3,char *param_4)
+; void __cdecl core_gmehook_cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook *this_ptr,char *label,int value,char *buffer)
 ;
 ; Parameters:
 ; CGameHook *      Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; char *           Stack[0x10]:4   param_4
+; char *           Stack[0x8]:4   label
+; int              Stack[0xc]:4   value
+; char *           Stack[0x10]:4   buffer
 ;
 ; XREF[1]:
 ;   core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0 at 0059c43e

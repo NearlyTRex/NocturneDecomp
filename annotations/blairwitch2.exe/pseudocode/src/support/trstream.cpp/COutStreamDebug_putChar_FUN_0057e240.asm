@@ -8,7 +8,7 @@
 ; char             Stack[0x8]:1   ch
 ;
 ; Called Functions:
-;   wincore_winrun.cpp_FUN_0058ffc0
+;   wincore_winrun.cpp_outputDebugString_FUN_0058ffc0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     MOV byte ptr [ESP + 0x1],AH         ; 0057e24c
     MOV EAX,ESP                         ; 0057e250
     PUSH EAX                            ; 0057e252
-    CALL wincore_winrun.cpp_FUN_0058ffc0 ; 0057e253
-        ;   XREF to: 0058ffc0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058ffc0()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_0058ffc0 ; 0057e253
+        ;   XREF to: 0058ffc0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_0058ffc0(LPCSTR message)
     ADD ESP,0x4                         ; 0057e258
     XOR EAX,EAX                         ; 0057e25b
     ADD ESP,0x4                         ; 0057e25d

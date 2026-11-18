@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_doc.cpp_CDoc_processDamage_FUN_0045b190 at 0045b1d2
-;   core_doc.cpp_FUN_00450c60 at 0045237d
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 0045237d
 ;   core_stranger.cpp_CStranger_processDamage_FUN_0056d060 at 0056d0a2
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 005647b6
 ;

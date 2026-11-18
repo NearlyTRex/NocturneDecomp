@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox *this_ptr,CInventory *inventory)
 
 {
@@ -17,7 +15,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox *thi
   char *pcVar3;
   
   if (this_ptr->item != (CDemonActor *)0x0) {
-    core_inv_cpp_FUN_004dadb0(inventory,this_ptr->item,1,0);
+    core_inv_cpp_CInventory_addItem_FUN_004dadb0(inventory,this_ptr->item,1,0);
     this_ptr->item = (CDemonActor *)0x0;
     this_ptr->ammo_count = 0;
     return;
@@ -25,18 +23,18 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox *thi
   if (this_ptr->ammo_count == 0) {
     return;
   }
-  pCVar2 = (CAmmo *)operator_new(0x47c);
+  pCVar2 = operator_new(0x47c);
   this_ptr_00 = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_0040ddb0(pCVar2);
   }
   if (this_ptr_00 == (CAmmo *)0x0) {
-    _DAT_01d046a0 = "..\\core\\ammobox.cpp";
-    _DAT_01d046a4 = 0xa2;
-    core_main_c_FUN_004e4500("Out of memory");
+    g_CHAR_PTR_01d046a0 = "..\\core\\ammobox.cpp";
+    g_INT_01d046a4 = 0xa2;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
   }
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr_00,this_ptr->weapon_class_name);
-  core_ammo_cpp_FUN_0040e440(this_ptr_00,this_ptr->ammo_count);
+  core_ammo_cpp_CAmmo_setAmmoCount_FUN_0040e440(this_ptr_00,this_ptr->ammo_count);
   this_ptr_00->ammo_type = this_ptr->ammo_type;
   (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr_00,this_ptr->weapon_class_name);
@@ -51,7 +49,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox *thi
     (pCVar2->base).actor_name[1] = cVar1;
     pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004dadb0(inventory,this_ptr_00,1,0);
+  core_inv_cpp_CInventory_addItem_FUN_004dadb0(inventory,&this_ptr_00->base,1,0);
   this_ptr->ammo_count = 0;
   return;
 }

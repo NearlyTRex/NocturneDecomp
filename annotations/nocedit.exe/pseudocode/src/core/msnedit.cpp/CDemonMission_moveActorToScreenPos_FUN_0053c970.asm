@@ -16,7 +16,7 @@
 ;   core_msnedit.cpp_CDemonMission_moveActorToViewportCenter_FUN_0053c930 at 0053c961
 ;
 ; Referenced Globals:
-;   int INT_02f7c53c
+;   int g_MsnEditViewMode
 ;   CDemonCamera g_CDemonCameraInstance
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
     CMP dword ptr [ESP + 0x1c],0x0      ; 0053c981
     JZ 0x0053c9ac                       ; 0053c986
         ;   XREF to: 0053c9ac (CONDITIONAL_JUMP)  ; LAB_0053c9ac
-    MOV ECX,dword ptr [0x02f7c53c]      ; 0053c988 | INT_02f7c53c
+    MOV ECX,dword ptr [0x02f7c53c]      ; 0053c988 | g_MsnEditViewMode
     CMP ECX,0x3                         ; 0053c98e
     JZ 0x0053c9ac                       ; 0053c991
         ;   XREF to: 0053c9ac (CONDITIONAL_JUMP)  ; LAB_0053c9ac

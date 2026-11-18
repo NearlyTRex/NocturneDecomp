@@ -16,7 +16,7 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0050a280 at 0050a6a1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00619030
+;   double[64] g_MpegScalefactorTable
 ;
 ; *****************************************************************************
 
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_00505ef4
     MOV EBX,dword ptr [EDX]             ; 00505ef6
     FLD ST0                             ; 00505ef8
-    FMUL double ptr [EBX*0x8 + 0x619030] ; 00505efa | DAT_00619030
+    FMUL double ptr [EBX*0x8 + 0x619030] ; 00505efa | g_MpegScalefactorTable
     FLD float ptr [EAX + 0x80]          ; 00505f01
     FXCH                                ; 00505f07
     FSTP ST2                            ; 00505f09
@@ -62,7 +62,7 @@ section .text
     FSTP float ptr [EAX]                ; 00505f0d
     MOV EBX,dword ptr [EDX]             ; 00505f0f
     FLD ST0                             ; 00505f11
-    FMUL double ptr [EBX*0x8 + 0x619030] ; 00505f13 | DAT_00619030
+    FMUL double ptr [EBX*0x8 + 0x619030] ; 00505f13 | g_MpegScalefactorTable
     FLD float ptr [EAX + 0x100]         ; 00505f1a
     FXCH                                ; 00505f20
     FSTP ST2                            ; 00505f22
@@ -70,7 +70,7 @@ section .text
     FSTP float ptr [EAX + 0x80]         ; 00505f26
     MOV EBX,dword ptr [EDX]             ; 00505f2c
     FLD ST0                             ; 00505f2e
-    FMUL double ptr [EBX*0x8 + 0x619030] ; 00505f30 | DAT_00619030
+    FMUL double ptr [EBX*0x8 + 0x619030] ; 00505f30 | g_MpegScalefactorTable
     ADD EDX,0x180                       ; 00505f37
     ADD EAX,0x180                       ; 00505f3d
     INC ECX                             ; 00505f42

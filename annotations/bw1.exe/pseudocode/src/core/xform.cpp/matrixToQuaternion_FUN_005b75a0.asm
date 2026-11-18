@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_matrixToQuaternion_FUN_005b75a0(float *param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_matrixToQuaternion_FUN_005b75a0(CMatrix3x3f *matrix_in,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; CMatrix3x3f *    Stack[0x4]:4   matrix_in
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -15,7 +17,7 @@
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005b72c0 at 005b7338
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa168
+;   float g_FLOAT_005fa168 = 0.5
 ;
 ; *****************************************************************************
 
@@ -56,7 +58,7 @@ section .text
     FLD1                                ; 005b75eb
     FADDP                               ; 005b75ed
     FSQRT                               ; 005b75ef
-    FLD float ptr [0x005fa168]          ; 005b75f1 | DAT_005fa168
+    FLD float ptr [0x005fa168]          ; 005b75f1 | g_FLOAT_005fa168
     FLD ST0                             ; 005b75f7
     FDIV ST0,ST2                        ; 005b75f9
     FLD ST2                             ; 005b75fb
@@ -95,7 +97,7 @@ section .text
         ;   Label: LAB_005b7641
     FADD float ptr [ESP + 0x24]         ; 005b7643
     FSQRT                               ; 005b7647
-    FLD float ptr [0x005fa168]          ; 005b7649 | DAT_005fa168
+    FLD float ptr [0x005fa168]          ; 005b7649 | g_FLOAT_005fa168
     FLD ST0                             ; 005b764f
     FDIV ST0,ST2                        ; 005b7651
     FLD ST2                             ; 005b7653
@@ -125,7 +127,7 @@ section .text
     FLD1                                ; 005b768b
     FADDP                               ; 005b768d
     FSQRT                               ; 005b768f
-    FLD float ptr [0x005fa168]          ; 005b7691 | DAT_005fa168
+    FLD float ptr [0x005fa168]          ; 005b7691 | g_FLOAT_005fa168
     FLD ST0                             ; 005b7697
     FDIV ST0,ST2                        ; 005b7699
     FLD ST2                             ; 005b769b
@@ -172,7 +174,7 @@ section .text
     FLD1                                ; 005b76f4
     FADDP                               ; 005b76f6
     FSQRT                               ; 005b76f8
-    FLD float ptr [0x005fa168]          ; 005b76fa | DAT_005fa168
+    FLD float ptr [0x005fa168]          ; 005b76fa | g_FLOAT_005fa168
     FLD ST0                             ; 005b7700
     FDIV ST0,ST2                        ; 005b7702
     FLD ST2                             ; 005b7704

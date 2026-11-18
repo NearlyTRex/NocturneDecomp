@@ -8,7 +8,7 @@
 ; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5a5f
+;   double g_DOUBLE_005d5a5f = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680
@@ -35,7 +35,7 @@ section .text
     FLD float ptr [EBX + 0x44]          ; 00431182
         ;   Label: LAB_00431182
     MOV dword ptr [EBX + 0x50],0x0      ; 00431185
-    FMUL double ptr [0x005d5a5f]        ; 0043118c | DAT_005d5a5f
+    FMUL double ptr [0x005d5a5f]        ; 0043118c | g_DOUBLE_005d5a5f
     MOV dword ptr [EBX + 0x48],0x3f666666 ; 00431192
     FSTP float ptr [EBX + 0x4c]         ; 00431199
     POP EBX                             ; 0043119c

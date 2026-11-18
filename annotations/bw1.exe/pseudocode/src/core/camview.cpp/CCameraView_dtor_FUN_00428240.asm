@@ -11,13 +11,13 @@
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0044cb00 at 0044cb1f
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_camview.cpp_CCameraView_dtor_FUN_00428240_005fd414 = 00428240
+;   CCameraView_vtable g_CCameraView_vtable_005fd414
 ;   WatcomTypeInfo g_CCameraViewTypeInfo
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005c030f
-;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
+;   crt_unknown.c_free_FUN_005c0336
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     TEST AL,0x4                         ; 00428249
     JNZ 0x00428261                      ; 0042824b
         ;   XREF to: 00428261 (CONDITIONAL_JUMP)  ; LAB_00428261
-    MOV dword ptr [EBX + 0x3c],0x5fd414 ; 0042824d | PTR_core_camview.cpp_CCameraView_dtor_FUN_00428240_005fd414
+    MOV dword ptr [EBX + 0x3c],0x5fd414 ; 0042824d | g_CCameraView_vtable_005fd414
     TEST AL,0x2                         ; 00428254
     JNZ 0x0042827c                      ; 00428256
         ;   XREF to: 0042827c (CONDITIONAL_JUMP)  ; LAB_0042827c
@@ -47,16 +47,16 @@ section .text
         ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0042826c
     PUSH EAX                            ; 0042826f
-    CALL crt_unknown.c_FUN_005c0336     ; 00428270
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 00428270
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 00428275
     MOV EAX,EBX                         ; 00428278
     POP EBX                             ; 0042827a
     RET                                 ; 0042827b
     PUSH EBX                            ; 0042827c
         ;   Label: LAB_0042827c
-    CALL crt_unknown.c_FUN_005c0344     ; 0042827d
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0042827d
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 00428282
     MOV EAX,EBX                         ; 00428285
     POP EBX                             ; 00428287

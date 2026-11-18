@@ -11,14 +11,14 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_0059b5a0 at 0059b718
 ;   core_bmppuzzl.cpp_CExamplePuzzle_onMouse_FUN_0059adf0 at 0059ae29
 ;   core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_0059ac10 at 0059ac4f
-;   core_event.cpp_FUN_00489670 at 00489cbf
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 00489cbf
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b65fb
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 DAT_01c2a384
-;   undefined4 DAT_026677e0
-;   undefined4 DAT_026677e8
+;   _BIT_INTEGER32 g_MouseButtonFlags
+;   int g_INT_026677e0
+;   int g_INT_026677e8
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
@@ -34,9 +34,9 @@ section .text
     TEST ECX,ECX                        ; 0059ab79
     JZ 0x0059aba8                       ; 0059ab7b
         ;   XREF to: 0059aba8 (CONDITIONAL_JUMP)  ; LAB_0059aba8
-    MOV EAX,[0x01c2a384]                ; 0059ab7d | DAT_01c2a384
-    MOV dword ptr [0x026677e0],EDX      ; 0059ab82 | DAT_026677e0
-    MOV [0x026677e8],EAX                ; 0059ab88 | DAT_026677e8
+    MOV EAX,[0x01c2a384]                ; 0059ab7d | g_MouseButtonFlags
+    MOV dword ptr [0x026677e0],EDX      ; 0059ab82 | g_INT_026677e0
+    MOV [0x026677e8],EAX                ; 0059ab88 | g_INT_026677e8
     PUSH ECX                            ; 0059ab8d
         ;   Label: LAB_0059ab8d
     MOV EAX,dword ptr [EDX]             ; 0059ab8e
@@ -50,7 +50,7 @@ section .text
     ADD ESP,0x4                         ; 0059aba3
     POP ESI                             ; 0059aba6
     RET                                 ; 0059aba7
-    MOV dword ptr [0x026677e0],ECX      ; 0059aba8 | DAT_026677e0
+    MOV dword ptr [0x026677e0],ECX      ; 0059aba8 | g_INT_026677e0
         ;   Label: LAB_0059aba8
     JMP 0x0059ab8d                      ; 0059abae
         ;   XREF to: 0059ab8d (UNCONDITIONAL_JUMP)  ; LAB_0059ab8d

@@ -21,12 +21,12 @@
 ;   TerminatedCString s_CMorphModel_animate_inva_005ea6da
 ;   TerminatedCString s_core_morph_cpp_005ea704
 ;   TerminatedCString s_CMorphModel_animate_inva_005ea716
-;   undefined4 DAT_00604268
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   float g_FLOAT_00604268 = 0.00390625
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -51,10 +51,10 @@ section .text
         ;   Label: LAB_0052255c
     MOV EAX,0x112                       ; 00522561
     PUSH 0x5ea6da                       ; 00522566 | = "CMorphModel::animate - invalid part i..."
-    MOV dword ptr [0x01d1d400],ESI      ; 0052256b | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00522571 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00522576
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 0052256b | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00522571 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00522576
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052257b
     MOV ECX,EBX                         ; 0052257e
         ;   Label: LAB_0052257e
@@ -72,10 +72,10 @@ section .text
     MOV EAX,0x5ea704                    ; 0052259b | = "..\\core\\morph.cpp"
     MOV EDX,0x119                       ; 005225a0
     PUSH 0x5ea716                       ; 005225a5 | = "CMorphModel::animate - invalid vertex..."
-    MOV [0x01d1d400],EAX                ; 005225aa | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 005225af | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005225b5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 005225aa | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 005225af | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005225b5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005225ba
     XOR ECX,ECX                         ; 005225bd
         ;   Label: LAB_005225bd
@@ -95,13 +95,13 @@ section .text
     ADD EBX,0x4                         ; 005225d9
     ADD EDX,0xc                         ; 005225dc
     FILD dword ptr [EAX]                ; 005225df
-    FMUL float ptr [0x00604268]         ; 005225e1 | DAT_00604268
+    FMUL float ptr [0x00604268]         ; 005225e1 | g_FLOAT_00604268
     FSTP float ptr [EBX]                ; 005225e7
     FILD dword ptr [EAX + 0x4]          ; 005225e9
-    FMUL float ptr [0x00604268]         ; 005225ec | DAT_00604268
+    FMUL float ptr [0x00604268]         ; 005225ec | g_FLOAT_00604268
     FSTP float ptr [EBX + 0x4]          ; 005225f2
     FILD dword ptr [EAX + 0x8]          ; 005225f5
-    FMUL float ptr [0x00604268]         ; 005225f8 | DAT_00604268
+    FMUL float ptr [0x00604268]         ; 005225f8 | g_FLOAT_00604268
     FSTP float ptr [EBX + 0x8]          ; 005225fe
     ADD ESI,0x10                        ; 00522601
     CMP ECX,EBP                         ; 00522604

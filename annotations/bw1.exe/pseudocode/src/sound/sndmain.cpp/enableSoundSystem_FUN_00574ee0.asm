@@ -7,24 +7,24 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8f2f
 ;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d78b
-;   core_sound.cpp_FUN_0057cc00 at 0057cc63
+;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057cc63
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006232e8
-;   undefined4 DAT_006232ec
-;   undefined4 DAT_006232f0
-;   undefined4 DAT_00623304
-;   undefined4 DAT_02c7fbf8
-;   undefined4 DAT_02c7fc08
-;   undefined4 DAT_02c7fc18
-;   undefined4 DAT_02c7fc88
-;   undefined4 DAT_02c80650
-;   undefined4 DAT_02c80654
-;   undefined4 DAT_02c80660
-;   undefined4 DAT_02c80664
-;   undefined4 DAT_02c80668
-;   undefined4 DAT_02c8066c
-;   undefined4 DAT_02c807d0
+;   int g_AudioBitsPerSample = 0x10
+;   int g_AudioChannelCount = 0x2
+;   int g_AudioSampleRate = 0x5622
+;   float g_FLOAT_00623304 = 1
+;   double g_DOUBLE_02c7fbf8
+;   double g_DOUBLE_02c7fc08
+;   double g_DOUBLE_02c7fc18
+;   int g_INT_02c7fc88
+;   CSoundDevice* g_CSoundDevicePtr
+;   int g_SoundBusyFlag
+;   int g_MixBufferReadIndex
+;   int g_MixBufferWriteIndex
+;   int g_MixBufferSize
+;   int g_NumMixBuffers
+;   SReverbSettings g_CachedReverb
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -85,11 +85,11 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 00574f18
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
         ;   Label: LAB_00574f18
-    MOV EDX,dword ptr [0x006232f0]      ; 00574f1d | DAT_006232f0
+    MOV EDX,dword ptr [0x006232f0]      ; 00574f1d | g_AudioSampleRate
     PUSH EDX                            ; 00574f23
-    MOV ECX,dword ptr [0x006232ec]      ; 00574f24 | DAT_006232ec
+    MOV ECX,dword ptr [0x006232ec]      ; 00574f24 | g_AudioChannelCount
     PUSH ECX                            ; 00574f2a
-    MOV EBX,dword ptr [0x006232e8]      ; 00574f2b | DAT_006232e8
+    MOV EBX,dword ptr [0x006232e8]      ; 00574f2b | g_AudioBitsPerSample
     PUSH EBX                            ; 00574f31
     CALL sound_sndmain.cpp_setSoundOutputMode_FUN_00575120 ; 00574f32
         ;   XREF to: 00575120 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundOutputMode_FUN_00575120(int bits_per_sample, int channels, int sample_rate)
@@ -97,18 +97,18 @@ section .text
     TEST EAX,EAX                        ; 00574f3a
     JZ 0x005750c7                       ; 00574f3c
         ;   XREF to: 005750c7 (CONDITIONAL_JUMP)  ; LAB_005750c7
-    CMP dword ptr [0x02c8066c],0x0      ; 00574f42 | DAT_02c8066c
+    CMP dword ptr [0x02c8066c],0x0      ; 00574f42 | g_NumMixBuffers
     JLE 0x00574f90                      ; 00574f49
         ;   XREF to: 00574f90 (CONDITIONAL_JUMP)  ; LAB_00574f90
-    MOV EDI,dword ptr [0x006232ec]      ; 00574f4b | DAT_006232ec
+    MOV EDI,dword ptr [0x006232ec]      ; 00574f4b | g_AudioChannelCount
     XOR ESI,ESI                         ; 00574f51
     TEST EDI,EDI                        ; 00574f53
     JLE 0x00574f90                      ; 00574f55
         ;   XREF to: 00574f90 (CONDITIONAL_JUMP)  ; LAB_00574f90
     XOR EBX,EBX                         ; 00574f57
-    MOV EAX,[0x02c80668]                ; 00574f59 | DAT_02c80668
+    MOV EAX,[0x02c80668]                ; 00574f59 | g_MixBufferSize
         ;   Label: LAB_00574f59
-    IMUL EAX,dword ptr [0x02c8066c]     ; 00574f5e | DAT_02c8066c
+    IMUL EAX,dword ptr [0x02c8066c]     ; 00574f5e | g_NumMixBuffers
     SHL EAX,0x2                         ; 00574f65
     PUSH EAX                            ; 00574f68
     PUSH 0x0                            ; 00574f69
@@ -118,35 +118,35 @@ section .text
     INC ESI                             ; 00574f75
     CALL crt_memory.c_memset_FUN_005bfb70 ; 00574f76
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
-    MOV EDX,dword ptr [0x006232ec]      ; 00574f7b | DAT_006232ec
+    MOV EDX,dword ptr [0x006232ec]      ; 00574f7b | g_AudioChannelCount
     ADD ESP,0xc                         ; 00574f81
     CMP ESI,EDX                         ; 00574f84
     JL 0x00574f59                       ; 00574f86
         ;   XREF to: 00574f59 (CONDITIONAL_JUMP)  ; LAB_00574f59
     LEA EAX,[EAX]                       ; 00574f88
     MOV EDX,EDX                         ; 00574f8e
-    MOV EAX,[0x02c7fc88]                ; 00574f90 | DAT_02c7fc88
+    MOV EAX,[0x02c7fc88]                ; 00574f90 | g_INT_02c7fc88
         ;   Label: LAB_00574f90
     MOV EDI,dword ptr [EAX*0x8 + 0x2c7fc1c] ; 00574f95
     PUSH EDI                            ; 00574f9c
-    MOV EBP,dword ptr [EAX*0x8 + 0x2c7fc18] ; 00574f9d | DAT_02c7fc18
+    MOV EBP,dword ptr [EAX*0x8 + 0x2c7fc18] ; 00574f9d | g_DOUBLE_02c7fc18
     XOR ECX,ECX                         ; 00574fa4
     PUSH EBP                            ; 00574fa6
     MOV EDX,dword ptr [EAX*0x8 + 0x2c7fc0c] ; 00574fa7
-    MOV dword ptr [0x02c80660],ECX      ; 00574fae | DAT_02c80660
+    MOV dword ptr [0x02c80660],ECX      ; 00574fae | g_MixBufferReadIndex
     PUSH EDX                            ; 00574fb4
-    MOV dword ptr [0x02c80664],ECX      ; 00574fb5 | DAT_02c80664
-    MOV ECX,dword ptr [EAX*0x8 + 0x2c7fc08] ; 00574fbb | DAT_02c7fc08
+    MOV dword ptr [0x02c80664],ECX      ; 00574fb5 | g_MixBufferWriteIndex
+    MOV ECX,dword ptr [EAX*0x8 + 0x2c7fc08] ; 00574fbb | g_DOUBLE_02c7fc08
     PUSH ECX                            ; 00574fc2
     MOV EDI,dword ptr [EAX*0x8 + 0x2c7fbfc] ; 00574fc3
     PUSH EDI                            ; 00574fca
-    MOV EBP,dword ptr [EAX*0x8 + 0x2c7fbf8] ; 00574fcb | DAT_02c7fbf8
-    MOV EBX,dword ptr [0x02c80650]      ; 00574fd2 | DAT_02c80650
+    MOV EBP,dword ptr [EAX*0x8 + 0x2c7fbf8] ; 00574fcb | g_DOUBLE_02c7fbf8
+    MOV EBX,dword ptr [0x02c80650]      ; 00574fd2 | g_CSoundDevicePtr
     PUSH EBP                            ; 00574fd8
     MOV ESI,dword ptr [EBX]             ; 00574fd9
     PUSH EBX                            ; 00574fdb
     CALL dword ptr [ESI + 0x1c]         ; 00574fdc
-    MOV EAX,[0x02c7fc88]                ; 00574fdf | DAT_02c7fc88
+    MOV EAX,[0x02c7fc88]                ; 00574fdf | g_INT_02c7fc88
     ADD ESP,0x1c                        ; 00574fe4
     PUSH dword ptr [EAX*0x4 + 0x2c7fc80] ; 00574fe7
     PUSH dword ptr [EAX*0x4 + 0x2c7fc78] ; 00574fee
@@ -155,40 +155,40 @@ section .text
     PUSH dword ptr [EAX*0x4 + 0x2c7fc60] ; 00575003
     PUSH dword ptr [EAX*0x4 + 0x2c7fc58] ; 0057500a
     PUSH dword ptr [EAX*0x4 + 0x2c7fc50] ; 00575011
-    MOV EBX,dword ptr [0x02c80650]      ; 00575018 | DAT_02c80650
+    MOV EBX,dword ptr [0x02c80650]      ; 00575018 | g_CSoundDevicePtr
     PUSH dword ptr [EAX*0x4 + 0x2c7fc48] ; 0057501e
     MOV ESI,dword ptr [EBX]             ; 00575025
     PUSH dword ptr [EAX*0x4 + 0x2c7fc40] ; 00575027
     PUSH EBX                            ; 0057502e
     CALL dword ptr [ESI + 0x20]         ; 0057502f
-    MOV EAX,[0x02c7fc88]                ; 00575032 | DAT_02c7fc88
+    MOV EAX,[0x02c7fc88]                ; 00575032 | g_INT_02c7fc88
     ADD ESP,0x28                        ; 00575037
     PUSH dword ptr [EAX*0x4 + 0x2c7fc38] ; 0057503a
-    MOV EBX,dword ptr [0x02c80650]      ; 00575041 | DAT_02c80650
+    MOV EBX,dword ptr [0x02c80650]      ; 00575041 | g_CSoundDevicePtr
     PUSH dword ptr [EAX*0x4 + 0x2c7fc30] ; 00575047
     MOV ESI,dword ptr [EBX]             ; 0057504e
     PUSH dword ptr [EAX*0x4 + 0x2c7fc28] ; 00575050
     PUSH EBX                            ; 00575057
     CALL dword ptr [ESI + 0x24]         ; 00575058
     ADD ESP,0x10                        ; 0057505b
-    MOV EAX,[0x02c80650]                ; 0057505e | DAT_02c80650
-    PUSH dword ptr [0x00623304]         ; 00575063 | DAT_00623304
+    MOV EAX,[0x02c80650]                ; 0057505e | g_CSoundDevicePtr
+    PUSH dword ptr [0x00623304]         ; 00575063 | g_FLOAT_00623304
     MOV EBX,dword ptr [EAX]             ; 00575069
     PUSH EAX                            ; 0057506b
     CALL dword ptr [EBX + 0x28]         ; 0057506c
     ADD ESP,0x8                         ; 0057506f
-    PUSH dword ptr [0x02c807d8]         ; 00575072 | DAT_02c807d8
-    MOV EAX,[0x02c80650]                ; 00575078 | DAT_02c80650
-    PUSH dword ptr [0x02c807d4]         ; 0057507d | DAT_02c807d4
+    PUSH dword ptr [0x02c807d8]         ; 00575072 | g_CachedReverb.damping
+    MOV EAX,[0x02c80650]                ; 00575078 | g_CSoundDevicePtr
+    PUSH dword ptr [0x02c807d4]         ; 0057507d | g_CachedReverb.decay_time
     MOV EBX,dword ptr [EAX]             ; 00575083
-    PUSH dword ptr [0x02c807d0]         ; 00575085 | DAT_02c807d0
+    PUSH dword ptr [0x02c807d0]         ; 00575085 | g_CachedReverb
     PUSH EAX                            ; 0057508b
     CALL dword ptr [EBX + 0x2c]         ; 0057508c
     ADD ESP,0x10                        ; 0057508f
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 00575092
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
-    MOV [0x02c807f0],EAX                ; 00575097 | DAT_02c807f0
-    MOV EAX,[0x02c80650]                ; 0057509c | DAT_02c80650
+    MOV [0x02c807f0],EAX                ; 00575097 | g_SoundStartTime
+    MOV EAX,[0x02c80650]                ; 0057509c | g_CSoundDevicePtr
     PUSH EAX                            ; 005750a1
     MOV EBX,dword ptr [EAX]             ; 005750a2
     CALL dword ptr [EBX + 0x4]          ; 005750a4
@@ -196,7 +196,7 @@ section .text
     TEST EAX,EAX                        ; 005750aa
     JZ 0x005750c7                       ; 005750ac
         ;   XREF to: 005750c7 (CONDITIONAL_JUMP)  ; LAB_005750c7
-    MOV dword ptr [0x02c80654],0x1      ; 005750ae | DAT_02c80654
+    MOV dword ptr [0x02c80654],0x1      ; 005750ae | g_SoundBusyFlag
     CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 005750b8
         ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV EAX,0x1                         ; 005750bd

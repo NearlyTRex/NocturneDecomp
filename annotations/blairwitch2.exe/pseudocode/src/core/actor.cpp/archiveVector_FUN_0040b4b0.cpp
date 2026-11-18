@@ -11,17 +11,15 @@ void __cdecl core_actor_cpp_archiveVector_FUN_0040b4b0(CVector3f *vector_ptr,cha
 {
   int iVar1;
   
-  if (DAT_007bc038 == 1) {
-    iVar1 = _fscanf(DAT_007bc034,"%f,%f,%f");
+  if (g_ActorReadingMode == 1) {
+    iVar1 = _fscanf(g_ActorDataFile,"%f,%f,%f");
     if (iVar1 != 3) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b380
                 ("3D vector",property_name);
     }
   }
   else {
-    FUN_005b8010
-              (DAT_007bc034,"%s%g,%g,%g",&DAT_00609590,(double)vector_ptr->x,
-               (double)vector_ptr->y,(double)vector_ptr->z);
+    _fprintf(g_ActorDataFile,"%s%g,%g,%g");
   }
   core_actor_cpp_archiveDescription_FUN_0040b400("3D vector",property_name);
   return;

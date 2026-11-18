@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 double __crtmath floor(double input_value)
 
 {
@@ -16,7 +14,7 @@ double __crtmath floor(double input_value)
   
   dVar1 = modf(input_value,local_18);
   if (dVar1 < 0.0) {
-    local_18[0] = local_18[0] + _DAT_005f184c;
+    local_18[0] = local_18[0] + -1;
   }
   return local_18[0];
 }

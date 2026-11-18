@@ -9,20 +9,22 @@
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004b2840(CGabriella *this_ptr,uint flags)
 
 {
-  int iVar1;
-  CGabriella *pCVar2;
-  void *ptr;
+  CCloth *pCVar1;
+  CGabriella *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CGabriellaTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CGabriellaTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  iVar1 = core_necklace_cpp_FUN_005ade00(&this_ptr->coat_cloth,0);
-  pCVar2 = (CGabriella *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)(iVar1 + -0x25680),1);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_005ade00(&this_ptr->coat_cloth,0);
+  ptr = (CGabriella *)
+        core_hero_cpp_CHero_dtor_FUN_004ce3d0
+                  ((CHero *)&pCVar1[-1].vertices[0x12f].bone_positions[0].z,1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar2);
-  return pCVar2;
+  debugFreeChecked(ptr);
+  return ptr;
 }

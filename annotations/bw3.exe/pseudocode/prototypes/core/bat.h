@@ -39,7 +39,7 @@ int __cdecl CBat::renderOpaque(CBat *this_ptr);
 
 // Original: core_bat.cpp_CBat_getBoundingBox_FUN_0040f290
 // Address: 0040f290
-CBoundingBox3D * __cdecl CBat::getBoundingBox(CBat *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBat::getBoundingBox(CBat *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bat.cpp_CBat_updateCoursePosition_FUN_0040f2f0
 // Address: 0040f2f0

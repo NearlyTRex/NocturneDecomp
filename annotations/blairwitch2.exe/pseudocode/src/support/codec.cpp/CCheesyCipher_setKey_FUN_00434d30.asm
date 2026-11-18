@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_00434d30(CCheesyCipher *this_ptr,uint param_2)
+; void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_00434d30(CCheesyCipher *this_ptr,uint key)
 ;
 ; Parameters:
 ; CCheesyCipher *  Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   param_2
+; uint             Stack[0x8]:4   key
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CCheesyCipher_ctor_FUN_00434ce0 at 00434d0b

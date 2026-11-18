@@ -11,11 +11,11 @@
 ;   sound_sndmain.cpp_audioThreadProc_FUN_00553180 at 00553197
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e926a
-;   undefined4 DAT_02648e80
-;   undefined4 DAT_0264900c
-;   undefined4 DAT_02649018
-;   undefined4 DAT_0264901c
+;   float g_FLOAT_005e926a = 3
+;   CSoundDevice* g_CSoundDevicePtr
+;   float g_FLOAT_0264900c
+;   HANDLE g_SoundMutex
+;   int g_SoundLockCount
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_pollAllStreams_FUN_00554610
@@ -26,17 +26,17 @@
 
 section .text
 
-    CMP dword ptr [0x02648e80],0x0      ; 00553580 | DAT_02648e80
+    CMP dword ptr [0x02648e80],0x0      ; 00553580 | g_CSoundDevicePtr
         ;   Label: sound_sndmain.cpp_processAudio_FUN_00553580
     JNZ 0x0055358a                      ; 00553587
         ;   XREF to: 0055358a (CONDITIONAL_JUMP)  ; LAB_0055358a
     RET                                 ; 00553589
         ;   Label: LAB_00553589
-    FLD float ptr [0x0264900c]          ; 0055358a | DAT_0264900c
+    FLD float ptr [0x0264900c]          ; 0055358a | g_FLOAT_0264900c
         ;   Label: LAB_0055358a
-    FMUL float ptr [0x005e926a]         ; 00553590 | DAT_005e926a
+    FMUL float ptr [0x005e926a]         ; 00553590 | g_FLOAT_005e926a
     SUB ESP,0x8                         ; 00553596
-    MOV ECX,dword ptr [0x02649018]      ; 00553599 | DAT_02649018
+    MOV ECX,dword ptr [0x02649018]      ; 00553599 | g_SoundMutex
     FSTP double ptr [ESP]               ; 0055359f
     PUSH ECX                            ; 005535a2
     CALL wincore_winrun.cpp_waitForMutexTimeout_FUN_0058fcc0 ; 005535a3
@@ -48,23 +48,23 @@ section .text
     PUSH EDI                            ; 005535af
     PUSH ESI                            ; 005535b0
     PUSH EBX                            ; 005535b1
-    MOV EAX,[0x02648e80]                ; 005535b2 | DAT_02648e80
-    MOV EBX,dword ptr [0x0264901c]      ; 005535b7 | DAT_0264901c
+    MOV EAX,[0x02648e80]                ; 005535b2 | g_CSoundDevicePtr
+    MOV EBX,dword ptr [0x0264901c]      ; 005535b7 | g_SoundLockCount
     PUSH EAX                            ; 005535bd
     INC EBX                             ; 005535be
     MOV EDX,dword ptr [EAX]             ; 005535bf
-    MOV dword ptr [0x0264901c],EBX      ; 005535c1 | DAT_0264901c
+    MOV dword ptr [0x0264901c],EBX      ; 005535c1 | g_SoundLockCount
     CALL dword ptr [EDX + 0x10]         ; 005535c7
     ADD ESP,0x4                         ; 005535ca
     PUSH 0x0                            ; 005535cd
     CALL sound_sndmain.cpp_pollAllStreams_FUN_00554610 ; 005535cf
         ;   XREF to: 00554610 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAllStreams_FUN_00554610(int paused_mode)
-    MOV EDI,dword ptr [0x0264901c]      ; 005535d4 | DAT_0264901c
+    MOV EDI,dword ptr [0x0264901c]      ; 005535d4 | g_SoundLockCount
     ADD ESP,0x4                         ; 005535da
-    MOV ESI,dword ptr [0x02649018]      ; 005535dd | DAT_02649018
+    MOV ESI,dword ptr [0x02649018]      ; 005535dd | g_SoundMutex
     DEC EDI                             ; 005535e3
     PUSH ESI                            ; 005535e4
-    MOV dword ptr [0x0264901c],EDI      ; 005535e5 | DAT_0264901c
+    MOV dword ptr [0x0264901c],EDI      ; 005535e5 | g_SoundLockCount
     CALL wincore_winrun.cpp_releaseMutex_FUN_0058fd00 ; 005535eb
         ;   XREF to: 0058fd00 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_releaseMutex_FUN_0058fd00(HANDLE mutex_handle)
     ADD ESP,0x4                         ; 005535f0

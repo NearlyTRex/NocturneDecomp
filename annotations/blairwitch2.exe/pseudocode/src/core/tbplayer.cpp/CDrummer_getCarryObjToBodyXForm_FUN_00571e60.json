@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 201,
+    "complexity_score": 190,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 75,
     "suspect_count": 9,
     "suspect_types": [
       "dropped_self_copy",
@@ -16,7 +16,7 @@
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 209
+    "total_lines": 198
   },
   "cross_references": [],
   "function": {
@@ -35,7 +35,7 @@
     {
       "addr": "00591c10",
       "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00591c10"
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10"
     },
     {
       "addr": "005916b0",
@@ -138,7 +138,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 75,
       "match": "(CMatrix3x4f *)((int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -146,7 +146,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 76,
       "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -154,7 +154,7 @@
     },
     {
       "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 86,
+      "line": 75,
       "match": "(int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -162,7 +162,7 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
+      "line": 76,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -170,26 +170,26 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 84,
+      "line": 73,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Inverted (always-false) self-copy guard: `if (&uStack_54 == &uStack_3c)` compares two distinct stack-local addresses, so it never fires \u2014 dead code from a decompiler-inverted `if (&uStack_54 != &uStack_3c) { uStack_54 = uStack_3c; }` copy guard. Cross-check the asm: if the `uStack_54 = uStack_3c;` copy was dropped, restore it in a .keep (else uStack_54 is uninitialized); if the copy folded into stores that survive after the merge, drop the dead guard line.",
-      "line": 55,
+      "description": "Inverted (always-false) self-copy guard: `if (&CStack_54 == &CStack_3c)` compares two distinct stack-local addresses, so it never fires \u2014 dead code from a decompiler-inverted `if (&CStack_54 != &CStack_3c) { CStack_54 = CStack_3c; }` copy guard. Cross-check the asm: if the `CStack_54 = CStack_3c;` copy was dropped, restore it in a .keep (else CStack_54 is uninitialized); if the copy folded into stores that survive after the merge, drop the dead guard line.",
+      "line": 43,
       "match": "if (&NAME_A == &NAME_B) goto LABEL;",
       "severity": "moderate",
-      "text": "if (&uStack_54 == &uStack_3c) goto LAB_00571f40;",
+      "text": "if (&CStack_54 == &CStack_3c) goto LAB_00571f40;",
       "type": "dropped_self_copy"
     },
     {
-      "description": "Inverted (always-false) self-copy guard: `if (&uStack_54 == &uStack_30)` compares two distinct stack-local addresses, so it never fires \u2014 dead code from a decompiler-inverted `if (&uStack_54 != &uStack_30) { uStack_54 = uStack_30; }` copy guard. Cross-check the asm: if the `uStack_54 = uStack_30;` copy was dropped, restore it in a .keep (else uStack_54 is uninitialized); if the copy folded into stores that survive after the merge, drop the dead guard line.",
-      "line": 72,
+      "description": "Inverted (always-false) self-copy guard: `if (&CStack_54 == &CStack_30)` compares two distinct stack-local addresses, so it never fires \u2014 dead code from a decompiler-inverted `if (&CStack_54 != &CStack_30) { CStack_54 = CStack_30; }` copy guard. Cross-check the asm: if the `CStack_54 = CStack_30;` copy was dropped, restore it in a .keep (else CStack_54 is uninitialized); if the copy folded into stores that survive after the merge, drop the dead guard line.",
+      "line": 60,
       "match": "if (&NAME_A == &NAME_B) goto LABEL;",
       "severity": "moderate",
-      "text": "if (&uStack_54 == &uStack_30) goto LAB_00571f40;",
+      "text": "if (&CStack_54 == &CStack_30) goto LAB_00571f40;",
       "type": "dropped_self_copy"
     },
     {
@@ -204,7 +204,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 308,
         "vtable_addr": "005fc894"
       }

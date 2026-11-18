@@ -9,18 +9,18 @@
 ; int              Stack[0xc]:4   end_index
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00483cb0 at 00483cd1
+;   shape_edittool.cpp_CPickList_remove_FUN_00483cb0 at 00483cd1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d26bf
 ;   TerminatedCString s_CStrList_remove_invalid_005d26d5
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c_memmove_FUN_005ba1f0
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -44,10 +44,10 @@ section .text
         ;   Label: LAB_004810ec
     MOV EDI,0xbfb                       ; 004810f1
     PUSH 0x5d26d5                       ; 004810f6 | = "CStrList::remove - invalid range"
-    MOV dword ptr [0x01d046a0],EBX      ; 004810fb | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00481101 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00481107
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBX      ; 004810fb | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00481101 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00481107
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0048110c
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0048110f
         ;   Label: LAB_0048110f
@@ -64,8 +64,8 @@ section .text
     JZ 0x00481139                       ; 0048112e
         ;   XREF to: 00481139 (CONDITIONAL_JUMP)  ; LAB_00481139
     PUSH EDX                            ; 00481130
-    CALL crt_unknown.c_FUN_005b86a0     ; 00481131
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 00481131
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 00481136
     ADD EBX,0x4                         ; 00481139
         ;   Label: LAB_00481139

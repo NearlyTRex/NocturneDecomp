@@ -11,17 +11,17 @@
 ;
 ; XREF[8]:
 ;   core_elephant.cpp_CElephantGun_process_FUN_0049e090 at 0049e168
-;   core_lightgun.cpp_FUN_00500090 at 00500148
-;   core_lightpis.cpp_FUN_005017f0 at 005018a8
-;   core_set.cpp_FUN_00550da0 at 00550ec3
-;   core_set.cpp_FUN_00551170 at 005512b6
+;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090 at 00500148
+;   core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0 at 005018a8
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 00550ec3
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170 at 005512b6
 ;   core_setutil.cpp_C3DSLight_apply_FUN_0055d0e0 at 0055d146
 ;   core_shotgun.cpp_CShotgun_process_FUN_00561650 at 00561728
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_005adb20 at 005adcd1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d929c
-;   undefined4 DAT_005d92a4
+;   double g_VolumetricFilterScaleLowRes = 7
+;   double g_VolumetricFilterScaleHighRes = 3
 ;   CDemonFilter* g_GlobalFilters = 0152c39c
 ;   CDemonFilter* g_PlayerFilters = 0152c39c
 ;
@@ -44,10 +44,10 @@ section .text
     PUSH EBX                            ; 00465dbd
     FLD float ptr [EAX + 0x2fa8]        ; 00465dbe
     PUSH 0x0                            ; 00465dc4
-    FMUL double ptr [0x005d92a4]        ; 00465dc6 | DAT_005d92a4
+    FMUL double ptr [0x005d92a4]        ; 00465dc6 | g_VolumetricFilterScaleHighRes
     PUSH 0x0                            ; 00465dcc
     CALL crt_math.c_round_FUN_005c03a0  ; 00465dce
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 00465dd3
     MOV EDX,dword ptr [ESP + 0xc]       ; 00465dd7
     PUSH 0x0                            ; 00465ddb
@@ -63,10 +63,10 @@ section .text
     FLD float ptr [EAX + 0x2fa8]        ; 00465df3
         ;   Label: LAB_00465df3
     PUSH 0x0                            ; 00465df9
-    FMUL double ptr [0x005d929c]        ; 00465dfb | DAT_005d929c
+    FMUL double ptr [0x005d929c]        ; 00465dfb | g_VolumetricFilterScaleLowRes
     PUSH 0x0                            ; 00465e01
     CALL crt_math.c_round_FUN_005c03a0  ; 00465e03
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00465e08
     MOV EDX,dword ptr [ESP + 0x8]       ; 00465e0c
     PUSH 0x0                            ; 00465e10

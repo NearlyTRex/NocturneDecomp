@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0045c9d4 = 0045ca7e
-;   undefined4 DAT_005d82ab
-;   undefined4 DAT_005d82b3
-;   undefined4 DAT_005d82bb
+;   double g_DOUBLE_005d82ab = 0.5
+;   double g_DOUBLE_005d82b3 = 0.700000000000000
+;   double g_DOUBLE_005d82bb = 0.300000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -97,15 +97,15 @@ section .text
     MOV dword ptr [ESP + 0x38],EAX      ; 0045cad8
     IMUL EDX,dword ptr [ESP + 0x8c],0xc ; 0045cadc
         ;   Label: LAB_0045cadc
-    FLD double ptr [0x005d82ab]         ; 0045cae4 | DAT_005d82ab
+    FLD double ptr [0x005d82ab]         ; 0045cae4 | g_DOUBLE_005d82ab
     FLD float ptr [ESP + 0x30]          ; 0045caea
     FMUL ST1                            ; 0045caee
     FLD float ptr [ESP + 0x34]          ; 0045caf0
-    FMUL double ptr [0x005d82b3]        ; 0045caf4 | DAT_005d82b3
+    FMUL double ptr [0x005d82b3]        ; 0045caf4 | g_DOUBLE_005d82b3
     FLD float ptr [ESP + 0x24]          ; 0045cafa
     FMULP ST3                           ; 0045cafe
     FLD float ptr [ESP + 0x28]          ; 0045cb00
-    FMUL double ptr [0x005d82bb]        ; 0045cb04 | DAT_005d82bb
+    FMUL double ptr [0x005d82bb]        ; 0045cb04 | g_DOUBLE_005d82bb
     MOV EAX,dword ptr [EBP + 0x18]      ; 0045cb0a
     FADDP                               ; 0045cb0d
     FXCH ST2                            ; 0045cb0f
@@ -182,15 +182,15 @@ section .text
     MOV dword ptr [ESP + 0x38],EAX      ; 0045cbd7
     IMUL EDX,dword ptr [ESP + 0x8c],0xc ; 0045cbdb
         ;   Label: LAB_0045cbdb
-    FLD double ptr [0x005d82ab]         ; 0045cbe3 | DAT_005d82ab
+    FLD double ptr [0x005d82ab]         ; 0045cbe3 | g_DOUBLE_005d82ab
     FLD float ptr [ESP + 0x30]          ; 0045cbe9
     FMUL ST1                            ; 0045cbed
     FLD float ptr [ESP + 0x34]          ; 0045cbef
-    FMUL double ptr [0x005d82b3]        ; 0045cbf3 | DAT_005d82b3
+    FMUL double ptr [0x005d82b3]        ; 0045cbf3 | g_DOUBLE_005d82b3
     FLD float ptr [ESP + 0x24]          ; 0045cbf9
     FMULP ST3                           ; 0045cbfd
     FLD float ptr [ESP + 0x28]          ; 0045cbff
-    FMUL double ptr [0x005d82bb]        ; 0045cc03 | DAT_005d82bb
+    FMUL double ptr [0x005d82bb]        ; 0045cc03 | g_DOUBLE_005d82bb
     MOV ESI,dword ptr [EBP + 0x18]      ; 0045cc09
     LEA EAX,[ESP + 0x30]                ; 0045cc0c
     FADDP                               ; 0045cc10

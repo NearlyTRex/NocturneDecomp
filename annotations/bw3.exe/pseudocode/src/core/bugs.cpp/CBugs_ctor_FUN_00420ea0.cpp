@@ -32,15 +32,16 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
   *(int *)(this_ptr_00[-0x44].model_name + 0x70) = iVar4;
   memset(this_ptr_00[-0x44].model_name + 0x74,0,0x6400);
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(this_ptr_00,(char *)0x5b7705);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
+            (this_ptr_00,"disbug.kfm");
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             ((CDeformableModelInstance *)(this_ptr_00[-0xcf].part_visibility_flags + 0xf),
-             (char *)0x5b7710);
+             "guul.dfm");
   this_ptr_00[2].model_name[0x4c] = '\0';
   this_ptr_00[2].model_name[0x4d] = '\0';
   this_ptr_00[2].model_name[0x4e] = '\0';
   this_ptr_00[2].model_name[0x4f] = '\0';
-  pcVar5 = (char *)0x5b7719;
+  pcVar5 = "true";
   this_ptr_00[2].model_name[0x50] = '\0';
   this_ptr_00[2].model_name[0x51] = '\0';
   this_ptr_00[2].model_name[0x52] = '\0';
@@ -60,7 +61,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
     *(char *)((int)piVar7 + 1) = cVar1;
     piVar7 = (int *)((int)piVar7 + 2);
   } while (cVar1 != '\0');
-  pcVar6 = (char *)0x5b771e;
+  pcVar6 = "true";
   pcVar5 = this_ptr_00[0x5c].model_name + 0x38;
   this_ptr_00[0x5c].part_visibility_flags[0x10] = 0;
   do {

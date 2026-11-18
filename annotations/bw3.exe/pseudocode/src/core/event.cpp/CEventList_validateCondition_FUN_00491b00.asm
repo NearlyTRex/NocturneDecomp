@@ -8,13 +8,13 @@
 ; char *           Stack[0x8]:4   expression
 ;
 ; XREF[3]:
-;   core_event.cpp_FUN_0048c2e0 at 0048c81a
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048c81a
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c5b1
 ;   core_script.cpp_parseConditionExpr_FUN_00528970 at 005289a0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c734ac
-;   undefined4 DAT_01c734b0
+;   int g_EventDryRun
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateExpression_FUN_00491b80
@@ -39,15 +39,15 @@ section .text
     MOV EDX,0x1                         ; 00491b13
     PUSH ECX                            ; 00491b18
     XOR EBX,EBX                         ; 00491b19
-    MOV dword ptr [0x01c734ac],EDX      ; 00491b1b | DAT_01c734ac
+    MOV dword ptr [0x01c734ac],EDX      ; 00491b1b | g_EventDryRun
     CALL core_event.cpp_CEventList_evaluateExpression_FUN_00491b80 ; 00491b21
         ;   XREF to: 00491b80 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateExpression_FUN_00491b80(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 00491b26
-    MOV dword ptr [0x01c734ac],EBX      ; 00491b29 | DAT_01c734ac
+    MOV dword ptr [0x01c734ac],EBX      ; 00491b29 | g_EventDryRun
     TEST EAX,EAX                        ; 00491b2f
     JGE 0x00491b0a                      ; 00491b31
         ;   XREF to: 00491b0a (CONDITIONAL_JUMP)  ; LAB_00491b0a
-    MOV EAX,0x1c734b0                   ; 00491b33 | DAT_01c734b0
+    MOV EAX,0x1c734b0                   ; 00491b33 | g_EventErrorMessageBuffer
     POP EBX                             ; 00491b38
     RET                                 ; 00491b39
 

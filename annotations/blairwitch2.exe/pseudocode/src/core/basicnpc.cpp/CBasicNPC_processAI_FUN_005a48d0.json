@@ -1,0 +1,120 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a48d0",
+    "address_range": [
+      [
+        "005a48d0",
+        "005a48ef"
+      ],
+      [
+        "005a48f1",
+        "005a4915"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_basicnpc.cpp_CBasicNPC_processAI_FUN_005a48d0",
+    "signature": "void __cdecl core_basicnpc_cpp_CBasicNPC_processAI_FUN_005a48d0(CBasicNPC *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059daa0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f040a",
+      "name": "s_Death_005f040a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0410",
+      "name": "s_Animation_005f0410",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.32,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 23,
+      "INT_ADD": 12,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 10,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 108
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBasicNPC *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 340,
+        "vtable_addr": "005ff724"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

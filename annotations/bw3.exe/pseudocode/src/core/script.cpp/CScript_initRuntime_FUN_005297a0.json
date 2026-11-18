@@ -2,40 +2,37 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 279,
+    "complexity_score": 213,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 109,
-    "suspect_count": 14,
+    "pseudocode_lines": 108,
+    "suspect_count": 9,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 253
+    "total_lines": 252
   },
   "cross_references": [
     {
       "addr": "004f7590",
       "from_addr": "004f7672",
-      "name": "core_mission.cpp_FUN_004f7590",
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004f7590",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00529410",
       "from_addr": "00529546",
-      "name": "core_script.cpp_FUN_00529410",
+      "name": "core_script.cpp_CScript_loadScript_FUN_00529410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00529710",
       "from_addr": "0052972f",
-      "name": "core_script.cpp_FUN_00529710",
+      "name": "core_script.cpp_CScript_validateSyntax_FUN_00529710",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -71,26 +68,26 @@
   "globals": [
     {
       "addr": "005cdf02",
-      "name": "DAT_005cdf02",
-      "type": "undefined1",
+      "name": "s_wav_005cdf02",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cdf03",
-      "name": "DAT_005cdf03",
-      "type": "undefined1",
+      "name": "s_wav_005cdf02+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cdf04",
-      "name": "DAT_005cdf04",
-      "type": "undefined1",
+      "name": "s_wav_005cdf02+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cdf05",
-      "name": "DAT_005cdf05",
-      "type": "undefined1",
+      "name": "s_wav_005cdf02+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -101,26 +98,26 @@
     },
     {
       "addr": "005cdf11",
-      "name": "DAT_005cdf11",
-      "type": "undefined1",
+      "name": "s_s_0_85_005cdf11",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cdf12",
-      "name": "DAT_005cdf12",
-      "type": "undefined1",
+      "name": "s_s_0_85_005cdf11+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cdf13",
-      "name": "DAT_005cdf13",
-      "type": "undefined1",
+      "name": "s_s_0_85_005cdf11+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cdf14",
-      "name": "DAT_005cdf14",
-      "type": "undefined1",
+      "name": "s_s_0_85_005cdf11+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -131,26 +128,26 @@
     },
     {
       "addr": "005cdf20",
-      "name": "DAT_005cdf20",
-      "type": "undefined1",
+      "name": "s_s_0_85_005cdf20",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cdf21",
-      "name": "DAT_005cdf21",
-      "type": "undefined1",
+      "name": "s_s_0_85_005cdf20+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cdf22",
-      "name": "DAT_005cdf22",
-      "type": "undefined1",
+      "name": "s_s_0_85_005cdf20+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005cdf23",
-      "name": "DAT_005cdf23",
-      "type": "undefined1",
+      "name": "s_s_0_85_005cdf20+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -167,9 +164,9 @@
     },
     {
       "addr": "006045f8",
-      "name": "DAT_006045f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006045f8",
+      "type": "CSound*",
+      "value": "02cf5680"
     },
     {
       "addr": "01d21558",
@@ -191,20 +188,20 @@
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed7010",
-      "name": "DAT_01ed7010",
-      "type": "undefined4",
+      "name": "g_ScriptTimeScale",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01ed7018",
-      "name": "DAT_01ed7018",
-      "type": "undefined4",
+      "name": "g_ScriptLoopWarningShown",
+      "type": "int",
       "value": null
     }
   ],
@@ -214,7 +211,7 @@
       {
         "call_addr": "004f7672",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f7590",
+        "caller": "core_mission.cpp_CDemonMission_startMission_FUN_004f7590",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +222,7 @@
       {
         "call_addr": "00529546",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00529410",
+        "caller": "core_script.cpp_CScript_loadScript_FUN_00529410",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -236,7 +233,7 @@
       {
         "call_addr": "0052972f",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00529710",
+        "caller": "core_script.cpp_CScript_validateSyntax_FUN_00529710",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -368,48 +365,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 25,
-      "match": "*(CDemonActor **)(iVar4 * 4 + 0x1d5ba04",
-      "severity": "moderate",
-      "text": "pCVar2 = *(CDemonActor **)(iVar4 * 4 + 0x1d5ba04);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005cdf02",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005cdf02;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_005cdf11",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005cdf11;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_005cdf20",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005cdf20;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -417,7 +374,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 76,
+      "line": 74,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -425,7 +382,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 100,
+      "line": 98,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -433,7 +390,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 44,
+      "line": 42,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -441,7 +398,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 67,
+      "line": 65,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -449,7 +406,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 91,
+      "line": 89,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -457,7 +414,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 44,
+      "line": 42,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -465,7 +422,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 67,
+      "line": 65,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -473,7 +430,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 91,
+      "line": 89,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

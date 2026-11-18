@@ -15,7 +15,7 @@ section .text
     PUSH 0x11868                        ; 005a9200
         ;   Label: core_ghostchi.cpp_factoryFuncGhostChild_FUN_005a9200
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005a9205
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005a920a
     TEST EAX,EAX                        ; 005a920d
     JNZ 0x005a9212                      ; 005a920f

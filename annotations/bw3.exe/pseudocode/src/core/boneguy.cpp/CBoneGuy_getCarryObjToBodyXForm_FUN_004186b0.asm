@@ -8,15 +8,15 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6f7a
-;   undefined4 DAT_005b6f82
-;   undefined4 DAT_02cfd900
+;   float g_FLOAT_005b6f7a = 0.5
+;   double g_DOUBLE_005b6f82 = 0.400000000000000
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d220
-;   core_xform.cpp_FUN_00583260
-;   core_xform.cpp_FUN_00583940
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -43,14 +43,14 @@ section .text
     LEA EAX,[EBP + 0x16]                ; 004186ec
     PUSH EAX                            ; 004186ef
     MOV ECX,0xbf456042                  ; 004186f0
-    PUSH 0x2cfd900                      ; 004186f5 | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 004186f5 | g_ZeroVector
     LEA EAX,[EBP + 0xffffff62]          ; 004186fa
     MOV EDI,0x40224dd3                  ; 00418700
     PUSH EAX                            ; 00418705
     MOV dword ptr [EBP + 0x16],ECX      ; 00418706
     MOV dword ptr [EBP + 0x1e],EDI      ; 00418709
-    CALL core_xform.cpp_FUN_00583940    ; 0041870c
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0041870c
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00418711
     MOV EAX,dword ptr [ESI + 0x154]     ; 00418714
     PUSH ESI                            ; 0041871a
@@ -89,7 +89,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041876e
     CALL core_actor.cpp_CVector3f_ctor_FUN_0040d220 ; 0041876f
         ;   XREF to: 0040d220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040d220(CVector3f * this_ptr)
-    FLD float ptr [0x005b6f7a]          ; 00418774 | DAT_005b6f7a
+    FLD float ptr [0x005b6f7a]          ; 00418774 | g_FLOAT_005b6f7a
     FLD float ptr [EBP + 0x46]          ; 0041877a
     FMUL ST1                            ; 0041877d
     FLD float ptr [EBP + 0x4a]          ; 0041877f
@@ -110,7 +110,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004187a8
     MOVSD ES:EDI,ESI                    ; 004187a9
     MOVSD ES:EDI,ESI                    ; 004187aa
-    FADD double ptr [0x005b6f82]        ; 004187ab | DAT_005b6f82
+    FADD double ptr [0x005b6f82]        ; 004187ab | g_DOUBLE_005b6f82
     LEA EDI,[EBP + -0x1a]               ; 004187b1
     LEA ESI,[EBP + -0xe]                ; 004187b4
     FSTP float ptr [EBP + -0x6]         ; 004187b7
@@ -145,8 +145,8 @@ section .text
     PUSH EAX                            ; 0041880c
     LEA ESI,[EBP + 0xa]                 ; 0041880d
     MOV dword ptr [EBP + 0x5e],EDX      ; 00418810
-    CALL core_xform.cpp_FUN_00583260    ; 00418813
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00418813
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0xa]                 ; 00418818
     LEA EAX,[EBP + 0x2e]                ; 0041881b
     LEA EDX,[EBP + -0x32]               ; 0041881e
@@ -189,8 +189,8 @@ section .text
     PUSH EAX                            ; 0041888e
     LEA ESI,[EBP + -0x3e]               ; 0041888f
     LEA EDI,[EBP + 0x3a]                ; 00418892
-    CALL core_xform.cpp_FUN_00583260    ; 00418895
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00418895
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     FLD float ptr [EBP + -0x32]         ; 0041889a
     FLD float ptr [EBP + -0x2e]         ; 0041889d
     FLD float ptr [EBP + -0x2a]         ; 004188a0

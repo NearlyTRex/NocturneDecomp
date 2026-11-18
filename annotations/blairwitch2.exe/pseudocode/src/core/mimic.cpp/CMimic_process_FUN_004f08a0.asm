@@ -10,23 +10,23 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_005dd8db
 ;   TerminatedCString s_CMimic_setup_can_t_use_m_005dd8ed
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CNetGame* g_CNetGamePtr = 01d34cb0
-;   undefined4 DAT_01cedef4
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_01cedef4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   CNetGame g_CNetGameInstance
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_004f17a0
 ;   core_mimic.cpp_CMimic_updatePose_FUN_004f0a50
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 004f08ab | g_CNetGameInstance
     JNZ 0x004f0936                      ; 004f08ae
         ;   XREF to: 004f0936 (CONDITIONAL_JUMP)  ; LAB_004f0936
-    MOV EAX,[0x01cedef4]                ; 004f08b4 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004f08b4 | g_INT_01cedef4
         ;   Label: LAB_004f08b4
     MOV EDX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004f08b9
     MOV EDX,dword ptr [EDX + 0x108]     ; 004f08c0
@@ -89,10 +89,10 @@ section .text
     MOV ECX,0x5dd8db                    ; 004f0937 | = "..\\core\\mimic.cpp"
     MOV ESI,0x130                       ; 004f093c
     PUSH 0x5dd8ed                       ; 004f0941 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004f0946 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004f094c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004f0952
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 004f0946 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004f094c | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f0952
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004f0957
     POP ESI                             ; 004f095a
     JMP 0x004f08b4                      ; 004f095b
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_004f0970
     LEA EAX,[EBX + 0x10b5c]             ; 004f0972
     PUSH EAX                            ; 004f0978
-    MOV EAX,[0x006141f0]                ; 004f0979 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 004f0979 | g_CEventListPtr
     PUSH EAX                            ; 004f097e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004f097f
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -123,7 +123,7 @@ section .text
     LEA EAX,[EBX + 0x10af8]             ; 004f0995
         ;   Label: LAB_004f0995
     PUSH EAX                            ; 004f099b
-    MOV EDX,dword ptr [0x006141f0]      ; 004f099c | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 004f099c | g_CEventListPtr
     PUSH EDX                            ; 004f09a2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004f09a3
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -139,12 +139,12 @@ section .text
     CMP ECX,0x1                         ; 004f09c2
     JNZ 0x004f092a                      ; 004f09c5
         ;   XREF to: 004f092a (CONDITIONAL_JUMP)  ; LAB_004f092a
-    MOV EAX,[0x01cedef4]                ; 004f09cb | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004f09cb | g_INT_01cedef4
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004f09d0
     ADD EAX,0x2b4                       ; 004f09d7
     PUSH EAX                            ; 004f09dc
-    CALL core_motion.cpp_FUN_005035c0   ; 004f09dd
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004f09dd
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004f09e2
     ADD ESP,0x4                         ; 004f09e5
     CMP EAX,0x3                         ; 004f09e8

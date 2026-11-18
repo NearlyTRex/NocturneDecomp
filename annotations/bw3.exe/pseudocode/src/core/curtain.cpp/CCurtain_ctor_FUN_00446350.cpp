@@ -39,7 +39,7 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_00446350(CCurtain *this_pt
   *(uint *)((int)pvVar3 + -0x88) = 1;
   *(uint *)((int)pvVar3 + -0x7c) = 0;
   *(uint *)((int)pvVar3 + -0x80) = 0;
-  pcVar4 = (char *)0x5b9a3d;
+  pcVar4 = "none";
   *(uint *)((int)pvVar3 + -0x84) = 0;
   pcVar5 = (char *)((int)pvVar3 + -0x74);
   *(uint *)((int)pvVar3 + -0x78) = 0;

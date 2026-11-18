@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_VirtualAlloc_005b3674 = 001b42a4
-;   undefined4 DAT_0060793c
-;   undefined4 DAT_00607e10
+;   int g_INT_0060793c = 0x0
+;   int g_INT_00607e10 = 0x1
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a3780
@@ -26,7 +26,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005a9768
     PUSH ESI                            ; 005a9769
     PUSH EDI                            ; 005a976a
-    CMP dword ptr [0x00607e10],0x0      ; 005a976b | DAT_00607e10
+    CMP dword ptr [0x00607e10],0x0      ; 005a976b | g_INT_00607e10
     JNZ 0x005a977a                      ; 005a9772
         ;   XREF to: 005a977a (CONDITIONAL_JUMP)  ; LAB_005a977a
     XOR EAX,EAX                         ; 005a9774
@@ -34,7 +34,7 @@ section .text
     POP ESI                             ; 005a9777
     POP EBX                             ; 005a9778
     RET                                 ; 005a9779
-    CMP dword ptr [0x0060793c],-0x2     ; 005a977a | DAT_0060793c
+    CMP dword ptr [0x0060793c],-0x2     ; 005a977a | g_INT_0060793c
         ;   Label: LAB_005a977a
     JNZ 0x005a9789                      ; 005a9781
         ;   XREF to: 005a9789 (CONDITIONAL_JUMP)  ; LAB_005a9789

@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_audioreel_kfm_005b65c7
 ;   TerminatedCString s_audioreelshadow_kfm_005b65d5
-;   undefined4 DAT_007dffb8
+;   int g_INT_007dffb8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
@@ -45,7 +45,7 @@ section .text
     MOV dword ptr [EBX + 0x28],0x0      ; 00411cdb
     PUSH EAX                            ; 00411ce2
     MOV dword ptr [EBX + 0x2c],0x0      ; 00411ce3
-    MOV dword ptr [0x007dffb8],EDX      ; 00411cea | DAT_007dffb8
+    MOV dword ptr [0x007dffb8],EDX      ; 00411cea | g_INT_007dffb8
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0 ; 00411cf0
         ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00411cf5

@@ -1,0 +1,211 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 148,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 48,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "stack_alignment_array"
+    ],
+    "total_lines": 135
+  },
+  "cross_references": [
+    {
+      "addr": "00577ee0",
+      "from_addr": "005781b1",
+      "name": "core_wateract.cpp_CWaterActor_setup_FUN_00577ee0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00578490",
+    "address_range": [
+      [
+        "00578490",
+        "0057856c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_00578490",
+    "signature": "void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_00578490(CWaterActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045b800",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005781b1",
+        "call_type": "direct",
+        "caller": "core_wateract.cpp_CWaterActor_setup_FUN_00577ee0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.038961038961039,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 142,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 3,
+      "INT_ADD": 58,
+      "INT_AND": 42,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 31,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 17,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "INT_ZEXT": 12,
+      "LOAD": 30,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 465
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005870a0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005aacd0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005eafa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6716
+    },
+    "nocturne.exe": {
+      "addr": "00551920",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6716
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWaterActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "afStackY_1034",
+      "severity": "moderate",
+      "text": "float afStackY_1034 [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 47,
+      "match": "(CVector3f *)((int)(pCVar1 + 2) +",
+      "severity": "moderate",
+      "text": "pCVar1 = (CVector3f *)((int)(pCVar1 + 2) + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&CStack_4c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)&CStack_4c",
+      "severity": "moderate",
+      "text": "afStack_3c[(uint)bVar3 * -2 + 6] = *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_4c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&CStack_4c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pCVar1 + 2)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)(pCVar1 + 2)",
+      "severity": "moderate",
+      "text": "pCVar1 = (CVector3f *)((int)(pCVar1 + 2) + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 31,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "afStack_3c[(uint)bVar3 * -2 + 6] = *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via element-arithmetic `(int)(pCVar1 + N) + M`, where `N*sizeof(*pCVar1) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar1->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 47,
+      "match": "pCVar1 = (T *)((int)(pCVar1 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar1 = (CVector3f *)((int)(pCVar1 + 2) + 8);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

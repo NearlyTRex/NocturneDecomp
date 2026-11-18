@@ -17,7 +17,7 @@
 ;   double DOUBLE_00585078 = 0.5
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   int g_CurrentTextureDimension = 0x100
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   uchar* g_CurrentTextureData
 ;
 ; Called Functions:
@@ -70,7 +70,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 004adde2 | g_CDemonRenderer_PTR_005ae704
     FSTP float ptr [ESP + 0x8]          ; 004adde8
     FSUBRP                              ; 004addec
-    PUSH EBX                            ; 004addee | DAT_01b4d738
+    PUSH EBX                            ; 004addee | g_CDemonRenderer_01b4d738
     FSTP float ptr [ESP + 0x10]         ; 004addef
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004addf3
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

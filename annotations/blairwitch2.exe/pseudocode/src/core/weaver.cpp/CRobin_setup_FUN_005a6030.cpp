@@ -26,9 +26,9 @@ void __cdecl core_weaver_cpp_CRobin_setup_FUN_005a6030(CRobin *this_ptr)
   this_ptr->hand_bone = iVar2;
   (this_ptr->base).base.base.base.carry_hands[0].bone_index = iVar2;
   core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(pCVar1,0x100);
-  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,(CDemonActor *)this_ptr);
   pCVar1 = (this_ptr->base).base.base.base.base.particle_systems + 1;
   core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(pCVar1,0x100);
-  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,(CDemonActor *)this_ptr);
   return;
 }

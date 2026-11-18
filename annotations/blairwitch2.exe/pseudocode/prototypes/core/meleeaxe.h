@@ -25,6 +25,6 @@ CMeleeAxe * __cdecl CMeleeAxe::ctor(CMeleeAxe *this_ptr);
 // Address: 0059d300
 CMeleeAxe * __cdecl CMeleeAxe::dtor(CMeleeAxe *this_ptr,uint flags);
 
-// Original: core_meleeaxe.cpp_FUN_0059d350
+// Original: core_meleeaxe.cpp_staticInit_FUN_0059d350
 // Address: 0059d350
-void FUN_0059d350(void);
+void __cdecl staticInit(void);

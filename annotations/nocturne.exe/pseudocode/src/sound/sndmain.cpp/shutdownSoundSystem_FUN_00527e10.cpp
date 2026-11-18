@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_shutdownSoundSystem_FUN_00527e10(void)
 
 {
-  if (0 < _DAT_02dbd34c) {
+  if (0 < g_ShutdownInProgress) {
     return;
   }
-  _DAT_02dbd34c = _DAT_02dbd34c + 1;
+  g_ShutdownInProgress = g_ShutdownInProgress + 1;
   sound_sndmain_cpp_resetSoundDevice_FUN_00528080();
   sound_sndmain_cpp_freeAllSamples_FUN_00527c30();
-  _DAT_02dbd34c = _DAT_02dbd34c + -1;
+  g_ShutdownInProgress = g_ShutdownInProgress + -1;
   return;
 }

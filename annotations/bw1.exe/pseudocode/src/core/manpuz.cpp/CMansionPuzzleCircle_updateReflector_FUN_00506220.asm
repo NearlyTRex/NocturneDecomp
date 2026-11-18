@@ -12,7 +12,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400 at 0050443d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060344c
+;   float g_FLOAT_0060344c = 2
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     JZ 0x0050627d                       ; 00506259
         ;   XREF to: 0050627d (CONDITIONAL_JUMP)  ; LAB_0050627d
     FLD float ptr [ESP + 0xc]           ; 0050625b
-    FDIV float ptr [0x0060344c]         ; 0050625f | DAT_0060344c
+    FDIV float ptr [0x0060344c]         ; 0050625f | g_FLOAT_0060344c
     FSUBR float ptr [EDX + 0x18]        ; 00506265
     FST float ptr [EDX + 0x18]          ; 00506268
     FLDZ                                ; 0050626b
@@ -52,7 +52,7 @@ section .text
     RET                                 ; 0050627c
     FLD float ptr [ESP + 0xc]           ; 0050627d
         ;   Label: LAB_0050627d
-    FDIV float ptr [0x0060344c]         ; 00506281 | DAT_0060344c
+    FDIV float ptr [0x0060344c]         ; 00506281 | g_FLOAT_0060344c
     FADD float ptr [EDX + 0x18]         ; 00506287
     FST float ptr [EDX + 0x18]          ; 0050628a
     FLD1                                ; 0050628d

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00473080(CVector3f *start_point,CVector3f *end_point)
 
 {
   SRenderVertex vertex2;
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  SRenderVertex *pSVar2;
+  int *piVar3;
   byte bVar4;
   SRenderVertex in_stack_ffffff74;
   byte in_stack_ffffffa4 [20];
@@ -31,9 +29,9 @@ void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00473080(CVector3f *s
   float fStack_10;
   
   bVar4 = 0;
-  local_24._0_4_ = (uint)ROUND(start_point->x * _DAT_0059ca4c);
-  local_24._4_4_ = (uint)ROUND(start_point->y * _DAT_0059ca4c);
-  local_24._8_4_ = (uint)ROUND(start_point->z * _DAT_0059ca4c);
+  local_24._0_4_ = (uint)ROUND(start_point->x * 256.0f);
+  local_24._4_4_ = (uint)ROUND(start_point->y * 256.0f);
+  local_24._8_4_ = (uint)ROUND(start_point->z * 256.0f);
   uVar6 = 0;
   uVar5 = 0x4730c2;
   engine_matrix_c_transformToCache_FUN_004cd210(0,(CVector3i *)local_24);
@@ -42,27 +40,27 @@ void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00473080(CVector3f *s
   fVar9 = start_point->x * 0.000878906456455297._4_4_;
   fVar10 = start_point->y * 0.000878906456455297._4_4_;
   fStack_10 = fVar9 + end_point->x * 0.000878906456455297._0_4_;
-  local_24._8_4_ = (uint)ROUND(fStack_10 * _DAT_0059ca4c);
-  iStack_18 = (int)ROUND((fVar10 + (float)local_24._0_4_) * _DAT_0059ca4c);
+  local_24._8_4_ = (uint)ROUND(fStack_10 * 256.0f);
+  iStack_18 = (int)ROUND((fVar10 + (float)local_24._0_4_) * 256.0f);
   iStack_14 = (int)ROUND((0.000878906456455297._4_4_ * start_point->z + (float)local_24._4_4_) *
-                         _DAT_0059ca4c);
+                         256.0f);
   inputPoint = (CVector3i *)(local_24 + 8);
   uVar8 = 1;
   uVar7 = 0x47315b;
   engine_matrix_c_transformToCache_FUN_004cd210(1,inputPoint);
-  puVar2 = &DAT_005c5044;
-  puVar3 = (uint *)&stack0xffffffa4;
+  pSVar2 = g_SRenderVertex_ARRAY_005c5014 + 1;
+  piVar3 = (int *)&stack0xffffffa4;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *piVar3 = (pSVar2->projected_vertex).transformed_x;
+    pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
-  puVar2 = &DAT_005c5014;
-  puVar3 = (uint *)&stack0xffffff74;
+  pSVar2 = g_SRenderVertex_ARRAY_005c5014;
+  piVar3 = (int *)&stack0xffffff74;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *piVar3 = (pSVar2->projected_vertex).transformed_x;
+    pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
   vertex2.projected_vertex.screen_y = uVar5;
   vertex2.projected_vertex.transformed_x = in_stack_ffffffa4._0_4_;

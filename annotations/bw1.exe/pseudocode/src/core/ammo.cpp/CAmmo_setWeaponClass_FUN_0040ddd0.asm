@@ -11,13 +11,13 @@
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210 at 0040e2a0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d4159
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600 at 004d2657
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f8443
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70 at 004f8bea
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0 at 004fa535
-;   core_inv.cpp_FUN_004f7690 at 004f8443
-;   core_inv.cpp_FUN_004f8b70 at 004f8bea
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0040dda4 = 0040de12
-;   undefined4 DAT_005d307c
+;   TerminatedCString s_CGun_005d307c
 ;   TerminatedCString s_gatbullet_kfm_005d3081
 ;   TerminatedCString s_holybullet_kfm_005d308f
 ;   TerminatedCString s_woodbullet_kfm_005d309e
@@ -52,7 +52,7 @@ section .text
     CMP EDI,EBP                         ; 0040dde1
     JNZ 0x0040df3e                      ; 0040dde3
         ;   XREF to: 0040df3e (CONDITIONAL_JUMP)  ; LAB_0040df3e
-    PUSH 0x5d307c                       ; 0040dde9 | DAT_005d307c
+    PUSH 0x5d307c                       ; 0040dde9 | = "CGun"
         ;   Label: LAB_0040dde9
     PUSH EBP                            ; 0040ddee
     CALL crt_string.c__strcmp_FUN_005c0f80 ; 0040ddef

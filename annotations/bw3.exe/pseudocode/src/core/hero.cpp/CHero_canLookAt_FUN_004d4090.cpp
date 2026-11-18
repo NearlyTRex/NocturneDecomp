@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004d4090(CHero *this_ptr)
 
 {
@@ -26,9 +24,9 @@ int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004d4090(CHero *this_ptr)
           (((this_ptr->player_input).action_state.draw != 0 ||
            (((this_ptr->player_input).action_state.jump != 0 ||
             ((this_ptr->player_input).action_state.quick_turn != 0)))))) ||
-         ((float)_DAT_005c4e7d < ABS((this_ptr->player_input).strafe_speed))))) ||
-       ((((float)_DAT_005c4e7d < ABS((this_ptr->player_input).turn_speed) ||
-         ((float)_DAT_005c4e7d < ABS((this_ptr->player_input).look_up_down_speed))) ||
+         ((float)0.10000000000000001 < ABS((this_ptr->player_input).strafe_speed))))) ||
+       ((((float)0.10000000000000001 < ABS((this_ptr->player_input).turn_speed) ||
+         ((float)0.10000000000000001 < ABS((this_ptr->player_input).look_up_down_speed))) ||
         ((this_ptr->base).is_on_ground == 0)))) {
       return 1;
     }

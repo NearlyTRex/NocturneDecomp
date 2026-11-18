@@ -16,9 +16,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01410280
-;   undefined4 DAT_01410284
-;   undefined4 DAT_01410288
+;   CVector3i g_CameraOutOfBoundsCoord
+;   undefined4 g_CameraOutOfBoundsCoord.y
+;   undefined4 g_CameraOutOfBoundsCoord.z
 ;
 ; *****************************************************************************
 
@@ -65,10 +65,10 @@ section .text
     LEA EDI,[ESP + 0xc]                 ; 00441948
         ;   Label: LAB_00441948
     MOV ESI,0x1410280                   ; 0044194c
-    MOVSD ES:EDI,ESI                    ; 00441951 | DAT_01410280
+    MOVSD ES:EDI,ESI                    ; 00441951 | g_CameraOutOfBoundsCoord
         ;   Label: LAB_00441951
-    MOVSD ES:EDI,ESI                    ; 00441952 | DAT_01410284
-    MOVSD ES:EDI,ESI                    ; 00441953 | DAT_01410288
+    MOVSD ES:EDI,ESI                    ; 00441952 | g_CameraOutOfBoundsCoord.y
+    MOVSD ES:EDI,ESI                    ; 00441953 | g_CameraOutOfBoundsCoord.z
     LEA ESI,[ESP + 0xc]                 ; 00441954
     MOV EDI,EBX                         ; 00441958
     MOVSD ES:EDI,ESI                    ; 0044195a

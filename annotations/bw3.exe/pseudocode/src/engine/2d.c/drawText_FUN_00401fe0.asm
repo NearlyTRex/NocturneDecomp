@@ -10,21 +10,21 @@
 ;
 ; XREF[18]:
 ;   core_event.cpp_CEventList_render_FUN_00491bf0 at 00491c40
-;   core_game.cpp_FUN_004b6f30 at 004b7456
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7456
 ;   core_game.cpp_captureDebugMovieFrame_FUN_004b3e50 at 004b412d
-;   core_main.c_FUN_004e4400 at 004e4417
+;   core_main.c_showDeveloperToolsMenu_FUN_004e4400 at 004e4417
 ;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0 at 004e7e8f
-;   core_motion.cpp_FUN_004fcdc0 at 004fcea6
+;   core_motion.cpp_CMotionController_render_FUN_004fcdc0 at 004fcea6
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00505ae3
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_00504890 at 0050495a
-;   core_path.cpp_FUN_0050c580 at 0050c627
-;   core_set.cpp_CDemonSet_renderLightDebugView_FUN_005373e0 at 005374bc
+;   core_path.cpp_CPathMap_previewPathfinding_FUN_0050c580 at 0050c627
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00533b4e
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f076c
-;   undefined4 DAT_01c6b5b0
-;   undefined4 DAT_01c6b5b4
+;   int g_TextWrapEnabled = 0x1
+;   int g_INT_01c6b5b0
+;   int g_INT_01c6b5b4
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextMultiline_FUN_00401d00
@@ -41,13 +41,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00401fe3
     MOV ECX,dword ptr [ESP + 0x14]      ; 00401fe7
     MOV EDX,dword ptr [ESP + 0x18]      ; 00401feb
-    CMP dword ptr [0x005f076c],0x0      ; 00401fef | DAT_005f076c
+    CMP dword ptr [0x005f076c],0x0      ; 00401fef | g_TextWrapEnabled
     JZ 0x00402017                       ; 00401ff6
         ;   XREF to: 00402017 (CONDITIONAL_JUMP)  ; LAB_00402017
     PUSH EBX                            ; 00401ff8
-    MOV EBP,dword ptr [0x01c6b5b4]      ; 00401ff9 | DAT_01c6b5b4
+    MOV EBP,dword ptr [0x01c6b5b4]      ; 00401ff9 | g_INT_01c6b5b4
     PUSH EBP                            ; 00401fff
-    MOV EBX,dword ptr [0x01c6b5b0]      ; 00402000 | DAT_01c6b5b0
+    MOV EBX,dword ptr [0x01c6b5b0]      ; 00402000 | g_INT_01c6b5b0
     PUSH EBX                            ; 00402006
     PUSH EDX                            ; 00402007
     PUSH ECX                            ; 00402008
@@ -60,10 +60,10 @@ section .text
     POP EDI                             ; 00402014
     POP ESI                             ; 00402015
     RET                                 ; 00402016
-    MOV ESI,dword ptr [0x01c6b5b4]      ; 00402017 | DAT_01c6b5b4
+    MOV ESI,dword ptr [0x01c6b5b4]      ; 00402017 | g_INT_01c6b5b4
         ;   Label: LAB_00402017
     PUSH ESI                            ; 0040201d
-    MOV EDI,dword ptr [0x01c6b5b0]      ; 0040201e | DAT_01c6b5b0
+    MOV EDI,dword ptr [0x01c6b5b0]      ; 0040201e | g_INT_01c6b5b0
     PUSH EDI                            ; 00402024
     PUSH EDX                            ; 00402025
     PUSH ECX                            ; 00402026

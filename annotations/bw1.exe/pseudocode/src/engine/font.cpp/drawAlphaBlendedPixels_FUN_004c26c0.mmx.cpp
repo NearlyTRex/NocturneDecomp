@@ -15,7 +15,7 @@ __asm {
         mov EDX,dword ptr [EBP + 0x1c]
         mov ECX,dword ptr [EBP + 0x20]
         pxor MM7,MM7
-        movd MM4,dword ptr [DAT_006104f0]
+        movd MM4,dword ptr [g_CurrentRenderColor]
         punpcklbw MM4,MM7
         mov EAX,0xffffffff
         movd MM6,EAX

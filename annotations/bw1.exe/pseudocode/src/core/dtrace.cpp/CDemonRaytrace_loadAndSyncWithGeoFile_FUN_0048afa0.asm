@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0054d3c0 at 0054de47
+;   core_set.cpp_CDemonSet_load_FUN_0054d3c0 at 0054de47
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db944
-;   undefined4 DAT_005db947
+;   TerminatedCString s_rb_005db944
+;   TerminatedCString s_data_005db947
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0
 ;   crt_stdio.c_fclose_FUN_005c0d10
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;
 ; *****************************************************************************
 
@@ -25,12 +25,12 @@ section .text
 
     PUSH EBX                            ; 0048afa0
         ;   Label: core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_0048afa0
-    PUSH 0x5db944                       ; 0048afa1 | DAT_005db944
+    PUSH 0x5db944                       ; 0048afa1 | = "rb"
     MOV EDX,dword ptr [ESP + 0x10]      ; 0048afa6
     PUSH EDX                            ; 0048afaa
-    PUSH 0x5db947                       ; 0048afab | DAT_005db947
-    CALL engine_dosio.cpp_FUN_00479180  ; 0048afb0
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    PUSH 0x5db947                       ; 0048afab | = "data"
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 0048afb0
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 0048afb5
     ADD ESP,0xc                         ; 0048afb7
     TEST EAX,EAX                        ; 0048afba
@@ -43,11 +43,11 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 0048afc1
     PUSH ECX                            ; 0048afc5
     CALL core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0 ; 0048afc6
-        ;   XREF to: 0048adc0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace * this_ptr, _FILE * param_2)
+        ;   XREF to: 0048adc0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0048afcb
     PUSH EBX                            ; 0048afce
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0048afcf
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     MOV EAX,0x1                         ; 0048afd4
     ADD ESP,0x4                         ; 0048afd9
     POP EBX                             ; 0048afdc

@@ -8,7 +8,7 @@
 ; CVector3d *      Stack[0x8]:4   velocity_source_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
@@ -49,7 +49,7 @@ section .text
     TEST ECX,ECX                        ; 0052709b
     JZ 0x005270b7                       ; 0052709d
         ;   XREF to: 005270b7 (CONDITIONAL_JUMP)  ; LAB_005270b7
-    MOV EDI,dword ptr [0x02dc8318]      ; 0052709f | DAT_02dc8318
+    MOV EDI,dword ptr [0x02dc8318]      ; 0052709f | g_CSoundDevicePtr
     TEST EDI,EDI                        ; 005270a5
     JZ 0x005270b7                       ; 005270a7
         ;   XREF to: 005270b7 (CONDITIONAL_JUMP)  ; LAB_005270b7

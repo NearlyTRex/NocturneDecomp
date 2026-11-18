@@ -9,14 +9,14 @@
 int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_00503470(CMotionController *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   SMotionTransition *pSVar2;
   int iVar3;
   SMotionTransition *transition;
   
-  iVar1 = core_motion_cpp_FUN_005035c0(this_ptr);
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
   iVar3 = this_ptr->state_index;
-  if ((iVar3 < 0) || (iVar3 == *(int *)(iVar1 + 0x24))) {
+  if ((iVar3 < 0) || (iVar3 == pSVar1->state_index)) {
     this_ptr->in_transition = (SMotionTransition *)0x0;
     return 0;
   }
@@ -24,15 +24,15 @@ int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_0050347
      (iVar3 != this_ptr->in_transition->desired_state)) {
     iVar3 = 0;
     transition = (SMotionTransition *)0x0;
-    if (0 < *(int *)(iVar1 + 0x68)) {
-      pSVar2 = *(SMotionTransition **)(iVar1 + 0x6c);
+    if (0 < pSVar1->transition_count) {
+      pSVar2 = pSVar1->transitions;
       do {
         transition = pSVar2;
         if (this_ptr->state_index == pSVar2->desired_state) break;
         iVar3 = iVar3 + 1;
         pSVar2 = pSVar2 + 1;
         transition = (SMotionTransition *)0x0;
-      } while (iVar3 < *(int *)(iVar1 + 0x68));
+      } while (iVar3 < pSVar1->transition_count);
     }
     if ((transition != (SMotionTransition *)0x0) && (transition != this_ptr->in_transition)) {
       this_ptr->in_transition = (SMotionTransition *)0x0;
@@ -42,8 +42,8 @@ int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_0050347
         core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980
                   (this_ptr,transition->to_motion_number,transition->to_frame_number);
         if (transition->set_new_state_as_desired != 0) {
-          iVar3 = core_motion_cpp_FUN_005035c0(this_ptr);
-          this_ptr->state_index = *(int *)(iVar3 + 0x24);
+          pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
+          this_ptr->state_index = pSVar1->state_index;
         }
         return 1;
       case MOTION_CMD_WAIT_EXIT:

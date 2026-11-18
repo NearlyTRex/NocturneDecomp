@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 128,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 9,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 125
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -49,37 +47,37 @@
   "globals": [
     {
       "addr": "005c5014",
-      "name": "DAT_005c5014",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_005c5014",
+      "type": "SRenderVertex[20000]",
       "value": null
     },
     {
       "addr": "005c501c",
-      "name": "DAT_005c501c",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5034",
-      "name": "DAT_005c5034",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5038",
-      "name": "DAT_005c5038",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c503c",
-      "name": "DAT_005c503c",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5040",
-      "name": "DAT_005c5040",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].a",
       "type": "undefined4",
       "value": null
     }
@@ -219,78 +217,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005c5014",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(&DAT_005c5014 + iVar1 * 0xc),&local_1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005c5034",
-      "severity": "mild",
-      "text": "(&DAT_005c5034)[iVar1 * 0xc] = 0x3fff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005c5038",
-      "severity": "mild",
-      "text": "(&DAT_005c5038)[iVar1 * 0xc] = 0x3fff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c503c",
-      "severity": "mild",
-      "text": "(&DAT_005c503c)[iVar1 * 0xc] = 0x3fff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005c501c",
-      "severity": "mild",
-      "text": "if ((int)(&DAT_005c501c)[iVar1 * 0xc] < 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005c5040",
-      "severity": "mild",
-      "text": "(&DAT_005c5040)[iVar1 * 0xc] = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005c501c",
-      "severity": "mild",
-      "text": "iVar2 = (int)((&DAT_005c501c)[iVar1 * 0xc] << 8) /",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005c5040",
-      "severity": "mild",
-      "text": "(&DAT_005c5040)[iVar1 * 0xc] = iVar2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005c5040",
-      "severity": "mild",
-      "text": "(&DAT_005c5040)[iVar1 * 0xc] = 0xffff;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

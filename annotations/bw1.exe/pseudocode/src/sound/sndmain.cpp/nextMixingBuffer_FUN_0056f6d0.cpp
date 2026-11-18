@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_0056f6d0(void)
 
 {
@@ -32,54 +30,56 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_0056f6d0(void)
   float fStack_14;
   
   bVar7 = 0;
-  if (_DAT_02c807ec < 1) {
-    _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-    _DAT_01d1d404 = 0x593;
-    core_main_c_FUN_005030e0();
+  if (g_SoundLockCount < 1) {
+    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+    g_INT_01d1d404 = 0x593;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::kill - must be locked!");
   }
-  if (0 < _DAT_02c80660) {
-    _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
-    _DAT_01d1d404 = 0x597;
-    core_main_c_FUN_005030e0();
+  if (0 < g_MixBufferReadIndex) {
+    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
+    g_INT_01d1d404 = 0x597;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("nextMixingBuffer - shouldn't have any data pending!");
   }
   iVar5 = 0;
-  count = _DAT_02c80668 * 4;
-  if (0 < DAT_006232ec) {
+  count = g_MixBufferSize * 4;
+  if (0 < g_AudioChannelCount) {
     iVar2 = 0;
     do {
       memmove
-                (*(void **)(iVar2 + 0x2c80698),
-                 (void *)(_DAT_02c80668 * 4 + (int)*(void **)(iVar2 + 0x2c80698)),
-                 (_DAT_02c8066c + -1) * count);
-      piVar1 = (int *)(iVar2 + 0x2c80698);
+                (*(void **)((int)g_ChannelPrimaryBuffers + iVar2),
+                 (void *)(g_MixBufferSize * 4 +
+                         (int)*(void **)((int)g_ChannelPrimaryBuffers + iVar2)),
+                 (g_NumMixBuffers + -1) * count);
+      piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar2);
       iVar2 = iVar2 + 4;
       iVar5 = iVar5 + 1;
       in_stack_ffffffb0 = 0x56f776;
       memset
-                ((void *)(*piVar1 + (_DAT_02c8066c + -1) * _DAT_02c80668 * 4),0,count);
-    } while (iVar5 < DAT_006232ec);
+                ((void *)(*piVar1 + (g_NumMixBuffers + -1) * g_MixBufferSize * 4),0,count);
+    } while (iVar5 < g_AudioChannelCount);
   }
-  iStack_20 = _DAT_02c80668;
-  iStack_1c = DAT_006232ec;
-  iStack_18 = DAT_006232f0;
-  if (0 < DAT_006232ec) {
+  iStack_20 = g_MixBufferSize;
+  iStack_1c = g_AudioChannelCount;
+  iStack_18 = g_AudioSampleRate;
+  if (0 < g_AudioChannelCount) {
     iVar5 = 0;
     do {
       iVar2 = iVar5 + 4;
-      *(uint *)((int)auStack_40 + iVar5) = *(uint *)(iVar5 + 0x2c80698);
+      *(uint *)((int)auStack_40 + iVar5) =
+           *(uint *)((int)g_ChannelPrimaryBuffers + iVar5);
       iVar5 = iVar2;
-    } while (iVar2 < DAT_006232ec * 4);
+    } while (iVar2 < g_AudioChannelCount * 4);
   }
-  fStack_14 = (float)_DAT_02c80668 / (float)DAT_006232f0;
-  pCVar3 = (CSfxSlot *)0x2c745ec;
+  fStack_14 = (float)g_MixBufferSize / (float)g_AudioSampleRate;
+  pCVar3 = g_CSfxSlot_ARRAY_02c745ec;
   do {
     uVar8 = 0x56f7f7;
     pCVar9 = pCVar3;
     fVar10 = fStack_14;
     sound_sndmain_cpp_CSfxSlot_compute_FUN_00570f30(pCVar3,fStack_14);
     pCVar3 = pCVar3 + 1;
-  } while (pCVar3 != (CSfxSlot *)&DAT_02c78cec);
-  pCVar3 = (CSfxSlot *)0x2c745ec;
+  } while (pCVar3 != g_CSfxSlot_ARRAY_02c745ec + sizeof(g_CSfxSlot_ARRAY_02c745ec) / sizeof(g_CSfxSlot_ARRAY_02c745ec[0]));
+  pCVar3 = g_CSfxSlot_ARRAY_02c745ec;
   do {
     puVar4 = auStack_40;
     puVar6 = (uint *)&stack0xffffff94;
@@ -101,9 +101,9 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_0056f6d0(void)
     mix_buffer.output_sample_rate = (int)fVar10;
     sound_sndmain_cpp_CSfxSlot_mix_FUN_00571420(pCVar3,mix_buffer);
     pCVar3 = pCVar3 + 1;
-  } while (pCVar3 != (CSfxSlot *)&DAT_02c78cec);
-  _DAT_02c80660 = _DAT_02c80668;
-  _DAT_02c80664 = 0;
-  _DAT_02c80708 = _DAT_02c80708 + 1;
+  } while (pCVar3 != g_CSfxSlot_ARRAY_02c745ec + sizeof(g_CSfxSlot_ARRAY_02c745ec) / sizeof(g_CSfxSlot_ARRAY_02c745ec[0]));
+  g_MixBufferReadIndex = g_MixBufferSize;
+  g_MixBufferWriteIndex = 0;
+  g_MixBufferCount = g_MixBufferCount + 1;
   return;
 }

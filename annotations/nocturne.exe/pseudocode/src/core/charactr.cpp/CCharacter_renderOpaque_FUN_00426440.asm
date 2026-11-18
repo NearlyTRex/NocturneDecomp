@@ -23,8 +23,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01cd4318
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -45,7 +45,7 @@ section .text
     SUB ESP,0x18                        ; 00426442
     MOV EBX,dword ptr [ESP + 0x24]      ; 00426445
     MOV EDX,dword ptr [0x005ae704]      ; 00426449 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0042644f | DAT_01b4d738
+    PUSH EDX                            ; 0042644f | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00426450
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00426455
@@ -81,13 +81,13 @@ section .text
     MOV dword ptr [EBX + 0x2618],0x1    ; 0042649c
     CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 ; 004264a6
         ;   XREF to: 00425c20 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacter * this_ptr)
-    MOV EDI,dword ptr [0x01cd4318]      ; 004264ab | DAT_01cd4318
+    MOV EDI,dword ptr [0x01cd4318]      ; 004264ab | g_RenderMotionDebug
     ADD ESP,0x4                         ; 004264b1
     TEST EDI,EDI                        ; 004264b4
     JZ 0x004264e8                       ; 004264b6
         ;   XREF to: 004264e8 (CONDITIONAL_JUMP)  ; LAB_004264e8
     MOV EBP,dword ptr [0x005ae704]      ; 004264b8 | g_CDemonRenderer_PTR_005ae704
-    PUSH EBP                            ; 004264be | DAT_01b4d738
+    PUSH EBP                            ; 004264be | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004264bf
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004264c4

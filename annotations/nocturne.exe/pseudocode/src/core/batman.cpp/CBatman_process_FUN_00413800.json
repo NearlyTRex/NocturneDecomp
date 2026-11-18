@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1015,
-    "complexity_score": 593,
+    "complexity_score": 577,
     "cross_reference_count": 0,
     "function_call_count": 32,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 448,
-    "suspect_count": 12,
+    "pseudocode_lines": 447,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 1463
+    "total_lines": 1462
   },
   "cross_references": [],
   "function": {
@@ -287,13 +286,13 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b80f0",
-      "name": "g_CFireEffect_PTR_005b80f0",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c08d04"
     },
@@ -311,13 +310,13 @@
     },
     {
       "addr": "00764610",
-      "name": "DAT_00764610",
-      "type": "undefined4",
+      "name": "g_INT_00764610",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00764670",
-      "name": "g_CBatmanActorType_00764638.name_hash",
+      "name": "g_CBatmanClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -907,16 +906,8 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 244,
-      "match": "DAT_00764610",
-      "severity": "mild",
-      "text": "DAT_00764610);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 321,
+      "line": 320,
       "match": "(CBatman **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CBatman **)((int)g_CDemonSetPtr->characters + local_1c);",
@@ -924,7 +915,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 129,
+      "line": 128,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->new_pos).x = (pCVar14->position).x;",
@@ -932,7 +923,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 337,
+      "line": 336,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar14->position).x = (this_ptr->new_pos).x;",
@@ -940,7 +931,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 351,
+      "line": 350,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar1->vec).x = pCVar11->x;",
@@ -956,7 +947,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 178,
+      "line": 177,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -964,7 +955,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 411,
+      "line": 410,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -972,7 +963,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 435,
+      "line": 434,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -980,7 +971,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 438,
+      "line": 437,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

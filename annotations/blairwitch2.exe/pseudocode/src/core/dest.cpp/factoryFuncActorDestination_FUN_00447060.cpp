@@ -11,7 +11,7 @@ CActorDestination * __cdecl core_dest_cpp_factoryFuncActorDestination_FUN_004470
 {
   CActorDestination *pCVar1;
   
-  pCVar1 = (CActorDestination *)operator_new(0x350);
+  pCVar1 = operator_new(0x350);
   if (pCVar1 == (CActorDestination *)0x0) {
     return (CActorDestination *)0x0;
   }

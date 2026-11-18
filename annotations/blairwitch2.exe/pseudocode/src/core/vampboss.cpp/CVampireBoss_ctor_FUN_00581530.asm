@@ -10,9 +10,9 @@
 ;   core_vampboss.cpp_factoryFuncVampireBoss_FUN_00581500 at 00581513
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_ctor_FUN_005adda0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
 ;   core_morph.cpp_CMorph_ctor_FUN_005b6e60
-;   core_necklace.cpp_FUN_005adda0
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00544cd0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
@@ -34,18 +34,18 @@ section .text
     ADD ESP,0x4                         ; 00581549
     ADD EAX,0x22b4                      ; 0058154c
     PUSH EAX                            ; 00581551
-    CALL core_necklace.cpp_FUN_005adda0 ; 00581552
-        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005adda0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_005adda0 ; 00581552
+        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_005adda0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 00581557
     ADD EAX,0x3ab30                     ; 0058155a
     PUSH EAX                            ; 0058155f
-    CALL core_necklace.cpp_FUN_005adda0 ; 00581560
-        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005adda0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_005adda0 ; 00581560
+        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_005adda0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 00581565
     ADD EAX,0x3ab30                     ; 00581568
     PUSH EAX                            ; 0058156d
-    CALL core_necklace.cpp_FUN_005adda0 ; 0058156e
-        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005adda0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_005adda0 ; 0058156e
+        ;   XREF to: 005adda0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_005adda0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 00581573
     ADD EAX,0x3ab34                     ; 00581576
     PUSH EAX                            ; 0058157b

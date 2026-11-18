@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
 
 {
@@ -17,9 +15,9 @@ void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0(CCharacter
   char *pcVar4;
   
   if (0x20 < this_ptr->layer_action_count) {
-    _DAT_01d71de0 = "..\\core\\charactr.cpp";
-    _DAT_01d71de4 = 0x12bf;
-    core_main_c_FUN_004e4330("CCharacter::addLayerAction - too many");
+    g_CHAR_PTR_01d71de0 = "..\\core\\charactr.cpp";
+    g_INT_01d71de4 = 0x12bf;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CCharacter::addLayerAction - too many");
   }
   iVar2 = this_ptr->layer_action_count;
   this_ptr->layer_action_count = this_ptr->layer_action_count + 1;

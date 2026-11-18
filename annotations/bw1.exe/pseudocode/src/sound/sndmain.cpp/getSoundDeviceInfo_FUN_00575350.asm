@@ -8,7 +8,7 @@
 ; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[4]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c40d
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c40d
 ;   sound_sndmain.cpp_findBestSoundDevice_FUN_005753b0 at 005753d2
 ;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576172
 ;   sound_sndmain.cpp_writeIni_FUN_005763b0 at 005763f1
@@ -16,11 +16,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f4200
 ;   TerminatedCString s_getSoundDeviceInfo_inval_005f4215
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_getSoundDeviceCount_FUN_005752c0
 ;
 ; *****************************************************************************
@@ -57,10 +57,10 @@ section .text
         ;   Label: LAB_00575388
     MOV ECX,0x1510                      ; 0057538d
     PUSH 0x5f4215                       ; 00575392 | = "getSoundDeviceInfo - invalid index"
-    MOV dword ptr [0x01d1d400],EDX      ; 00575397 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0057539d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005753a3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00575397 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0057539d | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005753a3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005753a8
     JMP 0x00575364                      ; 005753ab
         ;   XREF to: 00575364 (UNCONDITIONAL_JUMP)  ; LAB_00575364

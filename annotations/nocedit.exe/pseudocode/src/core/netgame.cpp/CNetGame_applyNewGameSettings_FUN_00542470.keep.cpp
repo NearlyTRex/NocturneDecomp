@@ -78,10 +78,10 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
         local_44[local_44[3]] = iVar6;
         str2 = localPkt.players[iVar6].name;
         if (local_44[3] == this_ptr->local_player_index) {
-          INT_00680a04 = local_44[3] ^ this_ptr->local_player_index;
+          g_NetLobbyStateChanged = local_44[3] ^ this_ptr->local_player_index;
           iVar3 = _strcmp(this_ptr->players[local_44[3]].name,str2);
           if (iVar3 != 0) {
-            INT_00680a04 = 1;
+            g_NetLobbyStateChanged = 1;
           }
 #if !NOCTURNE_AUTHENTIC_NETPLAY
           nocturne_net_hero_note_host_view(localPkt.players[iVar6].hero_number);
@@ -90,13 +90,13 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
 #if !NOCTURNE_AUTHENTIC_NETPLAY
             if (this_ptr->players[local_44[3]].hero_number !=
                 localPkt.players[iVar6].hero_number) {
-              INT_00680a04 = 1;
+              g_NetLobbyStateChanged = 1;
             }
 #endif
-            if (INT_00680a04 == 0) goto LAB_005429ed;
+            if (g_NetLobbyStateChanged == 0) goto LAB_005429ed;
           }
           else {
-            INT_00680a04 = 1;
+            g_NetLobbyStateChanged = 1;
           }
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(this_ptr);
         }

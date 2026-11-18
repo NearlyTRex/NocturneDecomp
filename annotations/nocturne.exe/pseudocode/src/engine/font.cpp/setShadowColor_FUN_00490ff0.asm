@@ -22,12 +22,12 @@
 ;   int g_GreenScaleFactor
 ;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
-;   undefined4 DAT_01c70f5c
-;   undefined4 DAT_01c70f5e
-;   undefined4 DAT_01c70f60
-;   undefined4 DAT_01c70f64
-;   undefined4 DAT_01c70f68
-;   undefined4 DAT_01c70f6c
+;   uchar g_ShadowColor8
+;   ushort g_ShadowColor16
+;   int g_ShadowColor32
+;   int g_ShadowColorRed
+;   int g_ShadowColorGreen
+;   int g_ShadowColorBlue
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -71,12 +71,12 @@ section .text
     SHL EDX,CL                          ; 00491042
     MOV ECX,EDX                         ; 00491044
     OR ECX,EAX                          ; 00491046
-    MOV dword ptr [0x01c70f60],ECX      ; 00491048 | DAT_01c70f60
+    MOV dword ptr [0x01c70f60],ECX      ; 00491048 | g_ShadowColor32
         ;   Label: LAB_00491048
-    MOV dword ptr [0x01c70f68],EBX      ; 0049104e | DAT_01c70f68
+    MOV dword ptr [0x01c70f68],EBX      ; 0049104e | g_ShadowColorGreen
         ;   Label: LAB_0049104e
-    MOV dword ptr [0x01c70f6c],EDI      ; 00491054 | DAT_01c70f6c
-    MOV dword ptr [0x01c70f64],ESI      ; 0049105a | DAT_01c70f64
+    MOV dword ptr [0x01c70f6c],EDI      ; 00491054 | g_ShadowColorBlue
+    MOV dword ptr [0x01c70f64],ESI      ; 0049105a | g_ShadowColorRed
     ADD ESP,0xc                         ; 00491060
     POP EBP                             ; 00491063
     POP EDI                             ; 00491064
@@ -94,7 +94,7 @@ section .text
     MOV ECX,EDI                         ; 0049107a
     SAR ECX,0x3                         ; 0049107c
     MOV AL,byte ptr [ECX + EAX*0x1 + 0x1bf7720] ; 0049107f
-    MOV [0x01c70f5c],AL                 ; 00491086 | DAT_01c70f5c
+    MOV [0x01c70f5c],AL                 ; 00491086 | g_ShadowColor8
     JMP 0x0049104e                      ; 0049108b
         ;   XREF to: 0049104e (UNCONDITIONAL_JUMP)  ; LAB_0049104e
     MOV EBP,dword ptr [0x01c00628]      ; 0049108d | g_RedScaleFactor
@@ -127,7 +127,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004910e6
     SHL EDX,CL                          ; 004910ea
     OR EAX,EDX                          ; 004910ec
-    MOV [0x01c70f5e],AX                 ; 004910ee | DAT_01c70f5e
+    MOV [0x01c70f5e],AX                 ; 004910ee | g_ShadowColor16
     JMP 0x0049104e                      ; 004910f4
         ;   XREF to: 0049104e (UNCONDITIONAL_JUMP)  ; LAB_0049104e
     MOV EAX,EBX                         ; 004910f9

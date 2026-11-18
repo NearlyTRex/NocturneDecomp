@@ -11,8 +11,8 @@ CEdScrollBar g_ThumbnailScrollBar = {};
 int g_SavedWindowWidth = {};
 int g_SavedWindowHeight = {};
 int g_VDIsActorAreaInvalid = {};
-int INT_03365cb8 = {};
-int INT_03365cbc = {};
+int g_S3DAppendWarningShown = {};
+int g_LastRoomReverbChoice = {};
 
 // int[250]
 int g_VDCameraSortIndices[250] = {};

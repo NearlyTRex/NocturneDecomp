@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 443,
-    "complexity_score": 475,
+    "complexity_score": 377,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 225,
-    "suspect_count": 21,
+    "pseudocode_lines": 222,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "preinc_loop_idiom",
-      "raw_address_constant",
-      "raw_address_pointer_store",
       "shadow_pointer_walk",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 668
+    "total_lines": 665
   },
   "cross_references": [],
   "function": {
@@ -61,38 +58,38 @@
     },
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "00600284",
-      "name": "DAT_00600284",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d70a78"
     },
     {
       "addr": "01c5fadc",
-      "name": "DAT_01c5fadc",
-      "type": "undefined4",
+      "name": "g_MouseX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5fae0",
-      "name": "DAT_01c5fae0",
-      "type": "undefined4",
+      "name": "g_MouseY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c5fae4",
-      "name": "DAT_01c5fae4",
-      "type": "undefined4",
+      "name": "g_MouseButtonFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d70a78",
-      "name": "DAT_01d70a78",
-      "type": "undefined4",
+      "name": "g_PTR_01d70a78",
+      "type": "void*",
       "value": null
     }
   ],
@@ -171,64 +168,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 31,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 41,
       "match": "(code **)((int)pvVar5",
       "severity": "moderate",
-      "text": "iVar15 = (**(code **)((int)pvVar5 + 0x2c))(this_ptr,uVar7,uVar8);",
+      "text": "iVar13 = (**(code **)((int)pvVar5 + 0x2c))(this_ptr,iVar13,iVar12);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
+      "line": 41,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar15 = (**(code **)((int)pvVar5 + 0x2c))(this_ptr,uVar7,uVar8);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 54,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200);",
+      "text": "iVar13 = (**(code **)((int)pvVar5 + 0x2c))(this_ptr,iVar13,iVar12);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 57,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 8))(this_ptr);",
@@ -236,103 +193,79 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 61,
+      "line": 57,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 8))(this_ptr);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 62,
-      "match": "*(code **)(*0x01D70A78",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 62,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 184,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(iVar14 = (**(code **)((int)(this_ptr->base).vtable + 0x30))(this_ptr,iVar15), iVar14 != 0))",
+      "text": "(iVar12 = (**(code **)((int)(this_ptr->base).vtable + 0x30))(this_ptr,iVar13), iVar12 != 0))",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 188,
+      "line": 184,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar14 = (**(code **)((int)(this_ptr->base).vtable + 0x30))(this_ptr,iVar15), iVar14 != 0))",
+      "text": "(iVar12 = (**(code **)((int)(this_ptr->base).vtable + 0x30))(this_ptr,iVar13), iVar12 != 0))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Pointer value `pvVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 41,
       "match": "(int)pvVar5",
       "severity": "moderate",
-      "text": "iVar15 = (**(code **)((int)pvVar5 + 0x2c))(this_ptr,uVar7,uVar8);",
+      "text": "iVar13 = (**(code **)((int)pvVar5 + 0x2c))(this_ptr,iVar13,iVar12);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1c6e360 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 26,
-      "match": "0x1c6e360",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 79,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
       "severity": "moderate",
-      "text": "this_ptr_00 = 0x01C6E360;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 83,
-      "match": "pCVar11 = (T *)&pCVar11->FIELD",
-      "severity": "moderate",
-      "text": "pCVar11 = (CChemPuzzle *)&pCVar11->background;",
+      "text": "pCVar9 = (CChemPuzzle *)&pCVar9->background;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 155,
-      "match": "pCVar11 = (T *)&pCVar11->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 151,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
       "severity": "moderate",
-      "text": "pCVar11 = (CChemPuzzle *)&pCVar11->background;",
+      "text": "pCVar9 = (CChemPuzzle *)&pCVar9->background;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 172,
-      "match": "pCVar11 = (T *)&pCVar11->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 168,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
       "severity": "moderate",
-      "text": "pCVar11 = (CChemPuzzle *)&pCVar11->background;",
+      "text": "pCVar9 = (CChemPuzzle *)&pCVar9->background;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 192,
-      "match": "pCVar11 = (T *)&pCVar11->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 188,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
       "severity": "moderate",
-      "text": "pCVar11 = (CChemPuzzle *)&pCVar11->previous_mouse_button;",
+      "text": "pCVar9 = (CChemPuzzle *)&pCVar9->previous_mouse_button;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar11` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar11 = pCVar11;` self-assign, two-var `tmp = &pCVar11->field; pCVar11 = tmp;` ping-pong, or a bare `pCVar11 = pCVar11 + N;` advance followed by a `*pCVar11 =` store \u2014 plus a constant-index store on `pCVar11`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 99,
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar9` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar9 = pCVar9;` self-assign, two-var `tmp = &pCVar9->field; pCVar9 = tmp;` ping-pong, or a bare `pCVar9 = pCVar9 + N;` advance followed by a `*pCVar9 =` store \u2014 plus a constant-index store on `pCVar9`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 95,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",
       "type": "preinc_loop_idiom"
     },
     {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar11` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar11 = pCVar11;` self-assign, two-var `tmp = &pCVar11->field; pCVar11 = tmp;` ping-pong, or a bare `pCVar11 = pCVar11 + N;` advance followed by a `*pCVar11 =` store \u2014 plus a constant-index store on `pCVar11`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 195,
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar9` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar9 = pCVar9;` self-assign, two-var `tmp = &pCVar9->field; pCVar9 = tmp;` ping-pong, or a bare `pCVar9 = pCVar9 + N;` advance followed by a `*pCVar9 =` store \u2014 plus a constant-index store on `pCVar9`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 191,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",

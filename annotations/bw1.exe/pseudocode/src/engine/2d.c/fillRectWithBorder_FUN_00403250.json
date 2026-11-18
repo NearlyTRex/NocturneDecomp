@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 49
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 48
   },
   "cross_references": [
     {
@@ -34,27 +32,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00492c20",
-      "from_addr": "00492d30",
-      "name": "shape_edittool.cpp_FUN_00492c20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004962b0",
-      "from_addr": "004967dd",
-      "name": "shape_edittool.cpp_FUN_004962b0",
+      "addr": "0049caa0",
+      "from_addr": "0049cd16",
+      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_0049caa0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00496ee0",
       "from_addr": "004975d9",
-      "name": "shape_edittool.cpp_FUN_00496ee0",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049caa0",
-      "from_addr": "0049cd16",
-      "name": "shape_edittool.cpp_FUN_0049caa0",
+      "addr": "004962b0",
+      "from_addr": "004967dd",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00492c20",
+      "from_addr": "00492d30",
+      "name": "shape_edittool.cpp_editorFillRectWithBorder_FUN_00492c20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -85,8 +83,8 @@
   "globals": [
     {
       "addr": "01c4f020",
-      "name": "DAT_01c4f020",
-      "type": "undefined4",
+      "name": "g_INT_01c4f020",
+      "type": "int",
       "value": null
     }
   ],
@@ -96,7 +94,7 @@
       {
         "call_addr": "004975d9",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00496ee0",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +105,7 @@
       {
         "call_addr": "0049cd16",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049caa0",
+        "caller": "shape_edittool.cpp_CEdScrollBar_render_FUN_0049caa0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -129,7 +127,7 @@
       {
         "call_addr": "004967dd",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004962b0",
+        "caller": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -162,7 +160,7 @@
       {
         "call_addr": "00492d30",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00492c20",
+        "caller": "shape_edittool.cpp_editorFillRectWithBorder_FUN_00492c20",
         "estimated_params": 6,
         "instructions_analyzed": 8,
         "method": "push_count",
@@ -274,14 +272,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

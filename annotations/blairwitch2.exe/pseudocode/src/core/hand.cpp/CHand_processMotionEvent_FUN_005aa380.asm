@@ -9,15 +9,15 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005aa368 = 005aa39e
-;   undefined4 s_phandriseup01_wav_005f0aa2+1
+;   TerminatedCString s_phandriseup01_wav_005f0aa3
 ;   TerminatedCString s_phandslap0_wav_005f0ab5
 ;   TerminatedCString s_phandslap0_wav_005f0ac5
-;   undefined4 DAT_00600890
-;   undefined4 DAT_00600894
-;   undefined4 DAT_0061c068
+;   float g_FLOAT_00600890 = 10
+;   float g_FLOAT_00600894 = 15
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059f740
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -42,10 +42,10 @@ section .text
     MOV EDI,dword ptr [EBX + 0x11850]   ; 005aa39f
     PUSH 0x40000000                     ; 005aa3a5
     PUSH EDI                            ; 005aa3aa
-    PUSH dword ptr [0x00600890]         ; 005aa3ab | DAT_00600890
+    PUSH dword ptr [0x00600890]         ; 005aa3ab | g_FLOAT_00600890
     PUSH EBX                            ; 005aa3b1
-    CALL core_basicene.cpp_FUN_0059f740 ; 005aa3b2
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005aa3b2
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     MOV ESI,EAX                         ; 005aa3b7
     ADD ESP,0x10                        ; 005aa3b9
     POP EDI                             ; 005aa3bc
@@ -61,10 +61,10 @@ section .text
         ;   Label: caseD_2135
     PUSH 0x40000000                     ; 005aa3cb
     PUSH ESI                            ; 005aa3d0
-    PUSH dword ptr [0x00600894]         ; 005aa3d1 | DAT_00600894
+    PUSH dword ptr [0x00600894]         ; 005aa3d1 | g_FLOAT_00600894
     PUSH EBX                            ; 005aa3d7
-    CALL core_basicene.cpp_FUN_0059f740 ; 005aa3d8
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005aa3d8
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     MOV ESI,EAX                         ; 005aa3dd
     ADD ESP,0x10                        ; 005aa3df
     TEST ESI,ESI                        ; 005aa3e2
@@ -77,9 +77,9 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 005aa3ea
         ;   Label: caseD_2136
     PUSH EAX                            ; 005aa3ed
-    PUSH 0x5f0aa3                       ; 005aa3ee | s_phandriseup01_wav_005f0aa2+1
+    PUSH 0x5f0aa3                       ; 005aa3ee | = "phandriseup01.wav"
     PUSH EBX                            ; 005aa3f3
-    MOV ECX,dword ptr [0x0061c068]      ; 005aa3f4 | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 005aa3f4 | g_CSound_PTR_0061c068
     PUSH ECX                            ; 005aa3fa
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005aa3fb
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -96,7 +96,7 @@ section .text
     PUSH EAX                            ; 005aa40e
     PUSH 0x5f0ab5                       ; 005aa40f | = "phandslap0?.wav"
     PUSH EBX                            ; 005aa414
-    MOV EDX,dword ptr [0x0061c068]      ; 005aa415 | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 005aa415 | g_CSound_PTR_0061c068
     PUSH EDX                            ; 005aa41b
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005aa41c
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -113,7 +113,7 @@ section .text
     PUSH EAX                            ; 005aa42f
     PUSH 0x5f0ac5                       ; 005aa430 | = "phandslap0?.wav"
     PUSH EBX                            ; 005aa435
-    MOV EBP,dword ptr [0x0061c068]      ; 005aa436 | DAT_0061c068
+    MOV EBP,dword ptr [0x0061c068]      ; 005aa436 | g_CSound_PTR_0061c068
     PUSH EBP                            ; 005aa43c
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005aa43d
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

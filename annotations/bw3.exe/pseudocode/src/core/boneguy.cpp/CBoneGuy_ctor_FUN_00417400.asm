@@ -14,9 +14,9 @@
 ;   core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417050 at 00417063
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6d92
-;   undefined4 DAT_005dc13c
-;   undefined4 DAT_005dc140
+;   float g_FLOAT_005b6d92 = 256
+;   float g_FLOAT_005dc13c = 50
+;   float g_FLOAT_005dc140 = 100
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -62,9 +62,9 @@ section .text
     MOV dword ptr [EBX + 0xfc],0x1      ; 00417462
     LEA EDI,[EBX + 0xd07c]              ; 0041746c
     MOV dword ptr [EBX + 0xd0e4],0x0    ; 00417472
-    FLD float ptr [0x005dc13c]          ; 0041747c | DAT_005dc13c
+    FLD float ptr [0x005dc13c]          ; 0041747c | g_FLOAT_005dc13c
     MOV dword ptr [EBX + 0x27a0],0x3    ; 00417482
-    FLD float ptr [0x005dc140]          ; 0041748c | DAT_005dc140
+    FLD float ptr [0x005dc140]          ; 0041748c | g_FLOAT_005dc140
     MOV dword ptr [EBX + 0xd0e0],0x41200000 ; 00417492
     ADD ESP,0x8                         ; 0041749c
     FXCH                                ; 0041749f
@@ -136,13 +136,13 @@ section .text
     PUSH EAX                            ; 0041759c
     FSTP float ptr [ESP + 0x18]         ; 0041759d
     CALL core_boneguy.cpp_hsvToRgb_FUN_00417240 ; 004175a1
-        ;   XREF to: 00417240 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_hsvToRgb_FUN_00417240()
+        ;   XREF to: 00417240 (UNCONDITIONAL_CALL)  ; CColor3f * core_boneguy.cpp_hsvToRgb_FUN_00417240(CColor3f * in_hsv, CColor3f * out_rgb)
     LEA ESI,[ESP + 0x1c]                ; 004175a6
     ADD ESP,0x4                         ; 004175aa
     MOVSD ES:EDI,ESI                    ; 004175ad
     MOVSD ES:EDI,ESI                    ; 004175ae
     MOVSD ES:EDI,ESI                    ; 004175af
-    FLD float ptr [0x005b6d92]          ; 004175b0 | DAT_005b6d92
+    FLD float ptr [0x005b6d92]          ; 004175b0 | g_FLOAT_005b6d92
     FLD float ptr [ESP]                 ; 004175b6
     FMUL ST1                            ; 004175b9
     FLD float ptr [ESP + 0x4]           ; 004175bb
@@ -153,13 +153,13 @@ section .text
     MOV dword ptr [EBX + 0x3264],0x0    ; 004175c9
     FXCH                                ; 004175d3
     CALL crt_math.c_round_FUN_005a3120  ; 004175d5
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 004175da
     CALL crt_math.c_round_FUN_005a3120  ; 004175dc
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST2                            ; 004175e1
     CALL crt_math.c_round_FUN_005a3120  ; 004175e3
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 004175e8
     FISTP dword ptr [EBX + 0x108]       ; 004175ea
     FXCH                                ; 004175f0

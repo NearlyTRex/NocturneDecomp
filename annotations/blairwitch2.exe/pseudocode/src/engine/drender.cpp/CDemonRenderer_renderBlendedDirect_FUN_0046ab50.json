@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 85,
+    "complexity_score": 54,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 3,
+    "pseudocode_lines": 39,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 128
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -62,25 +60,25 @@
     {
       "addr": "004c7580",
       "from_addr": "004c7912",
-      "name": "core_gore.cpp_FUN_004c7580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c8010",
-      "from_addr": "004c837b",
-      "name": "core_gore.cpp_FUN_004c8010",
+      "name": "core_gore.cpp_CBloodParticle_render_FUN_004c7580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c88a0",
       "from_addr": "004c8ba6",
-      "name": "core_gore.cpp_FUN_004c88a0",
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004c88a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c8010",
+      "from_addr": "004c837b",
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004c8010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c9000",
       "from_addr": "004c916a",
-      "name": "core_gore.cpp_FUN_004c9000",
+      "name": "core_gore.cpp_CFootstep_render_FUN_004c9000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -123,26 +121,26 @@
   "globals": [
     {
       "addr": "006141c0",
-      "name": "DAT_006141c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c35e6c",
-      "name": "DAT_01c35e6c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c38b58",
-      "name": "DAT_01c38b58",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -185,7 +183,7 @@
       {
         "call_addr": "004c837b",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004c8010",
+        "caller": "core_gore.cpp_CBloodSplat_render_FUN_004c8010",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -196,7 +194,7 @@
       {
         "call_addr": "004c8ba6",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004c88a0",
+        "caller": "core_gore.cpp_CBloodPool_render_FUN_004c88a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -207,7 +205,7 @@
       {
         "call_addr": "004c916a",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004c9000",
+        "caller": "core_gore.cpp_CFootstep_render_FUN_004c9000",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -348,24 +346,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 20,
+      "line": 18,
       "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->base).count;",

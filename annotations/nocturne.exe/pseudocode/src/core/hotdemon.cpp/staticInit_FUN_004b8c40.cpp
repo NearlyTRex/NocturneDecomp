@@ -10,8 +10,8 @@ void __cdecl core_hotdemon_cpp_staticInit_FUN_004b8c40(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CHotDemonActorType_01cae210,"CHotDemon",
-             core_hotdemon_cpp_factoryFuncHotDemon_FUN_004b8c70,&g_INT_005ba994,1,
-             &g_CEnemyActorType_01bcdebc);
+            (&g_CHotDemonClassInfo,"CHotDemon",
+             core_hotdemon_cpp_factoryFuncHotDemon_FUN_004b8c70,&g_CHotDemonClassVersion,1,
+             &g_CEnemyClassInfo);
   return;
 }

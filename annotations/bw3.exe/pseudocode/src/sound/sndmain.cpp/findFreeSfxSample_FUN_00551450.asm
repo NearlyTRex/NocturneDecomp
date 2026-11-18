@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cebc20
+;   int g_LastSampleAccessIndex
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     PUSH ESI                            ; 00551451
     PUSH EDI                            ; 00551452
     PUSH EBP                            ; 00551453
-    MOV EDX,dword ptr [0x02cebc20]      ; 00551454 | DAT_02cebc20
+    MOV EDX,dword ptr [0x02cebc20]      ; 00551454 | g_LastSampleAccessIndex
     XOR ECX,ECX                         ; 0055145a
     XOR EBX,EBX                         ; 0055145c
     INC EDX                             ; 0055145e
@@ -37,7 +37,7 @@ section .text
     JL 0x0055145e                       ; 0055147a
         ;   XREF to: 0055145e (CONDITIONAL_JUMP)  ; LAB_0055145e
     XOR EAX,EAX                         ; 0055147c
-    MOV dword ptr [0x02cebc20],EDX      ; 0055147e | DAT_02cebc20
+    MOV dword ptr [0x02cebc20],EDX      ; 0055147e | g_LastSampleAccessIndex
     POP EBP                             ; 00551484
     POP EDI                             ; 00551485
     POP ESI                             ; 00551486
@@ -56,7 +56,7 @@ section .text
     JNZ 0x00551476                      ; 005514a3
         ;   XREF to: 00551476 (CONDITIONAL_JUMP)  ; LAB_00551476
     ADD EAX,0x2cebc24                   ; 005514a5
-    MOV dword ptr [0x02cebc20],EDX      ; 005514aa | DAT_02cebc20
+    MOV dword ptr [0x02cebc20],EDX      ; 005514aa | g_LastSampleAccessIndex
     POP EBP                             ; 005514b0
     POP EDI                             ; 005514b1
     POP ESI                             ; 005514b2

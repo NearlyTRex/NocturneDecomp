@@ -24,13 +24,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005eb167
 ;   TerminatedCString s_Cannot_read_or_write_mor_005eb178
-;   undefined4 DAT_006206b0
-;   undefined4 DAT_006206d0
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   uint[18] g_MpegBitMaskTableMultiBit
+;   undefined4 g_MpegBitMaskTableMultiBit[8]
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;
 ; *****************************************************************************
@@ -73,7 +73,7 @@ section .text
     MOV BL,byte ptr [EDX]               ; 00525d11
     MOV EDX,dword ptr [EDI + 0x14]      ; 00525d13
     SUB EBP,EAX                         ; 00525d16
-    MOV ESI,dword ptr [EDX*0x4 + 0x6206b0] ; 00525d18 | DAT_006206b0 | DAT_006206d0
+    MOV ESI,dword ptr [EDX*0x4 + 0x6206b0] ; 00525d18 | g_MpegBitMaskTableMultiBit | g_MpegBitMaskTableMultiBit[8]
     SUB EDX,EAX                         ; 00525d1f
     AND EBX,ESI                         ; 00525d21
     MOV CL,DL                           ; 00525d23
@@ -103,10 +103,10 @@ section .text
     MOV ECX,0x5eb167                    ; 00525d50 | = "..\\sound\\mp3.cpp"
     MOV ESI,0x2ab                       ; 00525d55
     PUSH 0x5eb178                       ; 00525d5a | = "Cannot read or write more than %d bit..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00525d5f | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00525d65 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00525d6b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00525d5f | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00525d65 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00525d6b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00525d70
     JMP 0x00525ceb                      ; 00525d73
         ;   XREF to: 00525ceb (UNCONDITIONAL_JUMP)  ; LAB_00525ceb

@@ -35,7 +35,7 @@ int __cdecl CWavOutDevice::setMode(CWavOutDevice *this_ptr,int bits_per_sample,i
 
 // Original: sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10
 // Address: 005b0c10
-int __cdecl CWavOutDevice::poll(CWavOutDevice *this_ptr,short *output_buffer,int num_samples);
+int __cdecl CWavOutDevice::poll(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90
 // Address: 005b0c90
@@ -101,9 +101,9 @@ void __cdecl CWavOutDevice::set3DListenerVelocity(CWavOutDevice *this_ptr,double
 // Address: 005b1690
 void __cdecl CWavOutDevice::set3DListenerDistanceFactor(CWavOutDevice *this_ptr,double distance_in_feet);
 
-// Original: sound_sndwav.cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0
+// Original: sound_sndwav.cpp_CWavOutDevice_setReverb_FUN_005b16a0
 // Address: 005b16a0
-void __cdecl CWavOutDevice::commitDeferredSettings(CWavOutDevice *this_ptr);
+void __cdecl CWavOutDevice::setReverb(CWavOutDevice *this_ptr,float volume,float decay_time,float damping);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_allocateSample_FUN_005b16b0
 // Address: 005b16b0
@@ -119,15 +119,15 @@ void * __cdecl CWavOutDevice::lockSample(CWavOutDevice *this_ptr,int buffer_id,i
 
 // Original: sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_005b16e0
 // Address: 005b16e0
-void __cdecl CWavOutDevice::unlockSample(CWavOutDevice *this_ptr,int buffer_id);
+void __cdecl CWavOutDevice::unlockSample(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_allocateSfx_FUN_005b16f0
 // Address: 005b16f0
 int __cdecl CWavOutDevice::allocateSfx(CWavOutDevice *this_ptr,int sample_buffer_id);
 
-// Original: sound_sndwav.cpp_CWavOutDevice_setSfxPos_FUN_005b1700
+// Original: sound_sndwav.cpp_CWavOutDevice_applySfxChanges_FUN_005b1700
 // Address: 005b1700
-int __cdecl CWavOutDevice::setSfxPos(CWavOutDevice *this_ptr,CSfxSlot *slot,int update_flags);
+int __cdecl CWavOutDevice::applySfxChanges(CWavOutDevice *this_ptr,CSfxSlot *slot,int update_flags);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_getSfxPlaybackPos_FUN_005b1710
 // Address: 005b1710

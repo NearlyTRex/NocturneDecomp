@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 68,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 43,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 212
   },
   "cross_references": [],
@@ -25,7 +23,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_00490210",
-    "signature": "void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *param_2)"
+    "signature": "void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *font_path)"
   },
   "function_calls": [
     {
@@ -144,6 +142,24 @@
     "pcode_op_count": 552
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a85a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6049
+    },
+    "bw1.exe": {
+      "addr": "004c1580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7262
+    },
+    "bw3.exe": {
+      "addr": "004b01d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7262
+    },
     "nocedit.exe": {
       "addr": "004cd2c0",
       "by": "name",
@@ -237,29 +253,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "font_path",
         "offset": 8,
         "size": 4,
         "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "stream = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_2,\"rt\");",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

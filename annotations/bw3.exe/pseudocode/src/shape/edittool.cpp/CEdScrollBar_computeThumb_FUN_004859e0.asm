@@ -8,16 +8,16 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00485b00 at 00485b12
-;   shape_edittool.cpp_FUN_00485640 at 0048564d
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00485640 at 0048564d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bd914
 ;   TerminatedCString s_CEdScrollBar_computeThum_005bd92a
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -126,10 +126,10 @@ section .text
         ;   Label: LAB_00485aaa
     MOV EAX,0x12ce                      ; 00485aaf
     PUSH 0x5bd92a                       ; 00485ab4 | = "CEdScrollBar::computeThumb - invalid ..."
-    MOV dword ptr [0x01d71de0],EBP      ; 00485ab9 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00485abf | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00485ac4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBP      ; 00485ab9 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00485abf | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00485ac4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00485ac9
     JMP 0x00485a0e                      ; 00485acc
         ;   XREF to: 00485a0e (UNCONDITIONAL_JUMP)  ; LAB_00485a0e

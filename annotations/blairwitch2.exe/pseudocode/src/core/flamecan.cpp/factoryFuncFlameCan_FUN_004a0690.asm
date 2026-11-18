@@ -15,7 +15,7 @@ section .text
     PUSH 0x8a0                          ; 004a0690
         ;   Label: core_flamecan.cpp_factoryFuncFlameCan_FUN_004a0690
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004a0695
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004a069a
     TEST EAX,EAX                        ; 004a069d
     JNZ 0x004a06a2                      ; 004a069f

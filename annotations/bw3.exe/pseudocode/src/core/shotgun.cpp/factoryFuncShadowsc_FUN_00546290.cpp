@@ -11,7 +11,7 @@ CShadowsc * __cdecl core_shotgun_cpp_factoryFuncShadowsc_FUN_00546290(void)
 {
   CShadowsc *pCVar1;
   
-  pCVar1 = (CShadowsc *)operator_new(0xd06c);
+  pCVar1 = operator_new(0xd06c);
   if (pCVar1 == (CShadowsc *)0x0) {
     return (CShadowsc *)0x0;
   }

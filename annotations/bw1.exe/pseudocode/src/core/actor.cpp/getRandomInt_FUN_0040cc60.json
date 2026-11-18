@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 40,
+    "complexity_score": 22,
     "cross_reference_count": 65,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 93
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -48,7 +46,7 @@
     {
       "addr": "00415830",
       "from_addr": "0041588b",
-      "name": "core_bird.cpp_FUN_00415830",
+      "name": "core_bird.cpp_setRandomMotionVariant_FUN_00415830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,27 +110,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0042a930",
+      "from_addr": "0042b226",
+      "name": "core_carved.cpp_CCarved_processPickup_FUN_0042a930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00428ae0",
       "from_addr": "00429cb8",
       "name": "core_carved.cpp_CCarved_process_FUN_00428ae0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0042a930",
-      "from_addr": "0042b226",
-      "name": "core_carved.cpp_FUN_0042a930",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042be20",
       "from_addr": "0042beb3",
-      "name": "core_carved.cpp_FUN_0042be20",
+      "name": "core_carved.cpp_CCarved_resetChaseState_FUN_0042be20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00435380",
       "from_addr": "004353d0",
-      "name": "core_charactr.cpp_FUN_00435380",
+      "name": "core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -160,21 +158,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0045b560",
+      "from_addr": "0045be61",
+      "name": "core_demnfolk.cpp_CDemnfolk_processPickup_FUN_0045b560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00459100",
       "from_addr": "0045a083",
       "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045b560",
-      "from_addr": "0045be61",
-      "name": "core_demnfolk.cpp_FUN_0045b560",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0045d060",
       "from_addr": "0045d07c",
-      "name": "core_demnfolk.cpp_FUN_0045d060",
+      "name": "core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_0045d060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -274,15 +272,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f64f0",
-      "from_addr": "004f6533",
-      "name": "core_inv.cpp_FUN_004f64f0",
+      "addr": "004fae10",
+      "from_addr": "004fb7ba",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fae10",
-      "from_addr": "004fb7ba",
-      "name": "core_inv.cpp_FUN_004fae10",
+      "addr": "004f64f0",
+      "from_addr": "004f6533",
+      "name": "core_inv.cpp_renderSps_FUN_004f64f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -294,7 +292,7 @@
     {
       "addr": "0051e5d0",
       "from_addr": "0051ea6d",
-      "name": "core_mobster.cpp_FUN_0051e5d0",
+      "name": "core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -383,7 +381,7 @@
     },
     {
       "addr": "005b8440",
-      "from_addr": "005b85f9",
+      "from_addr": "005b89cc",
       "name": "core_yow.cpp_CYow_process_FUN_005b8440",
       "type": "UNCONDITIONAL_CALL"
     },
@@ -439,21 +437,21 @@
   "globals": [
     {
       "addr": "005d2ea1",
-      "name": "DAT_005d2ea1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d2ea1",
+      "type": "double",
+      "value": "0.999990000000000"
     },
     {
       "addr": "005d2ea9",
-      "name": "DAT_005d2ea9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RandIntScale",
+      "type": "float",
+      "value": "0.00003051851"
     },
     {
       "addr": "005d2ead",
-      "name": "DAT_005d2ead",
-      "type": "undefined4",
-      "value": null
+      "name": "g_GenRandIntScale",
+      "type": "float",
+      "value": "5.960465E-8"
     },
     {
       "addr": "0061d95c",
@@ -485,7 +483,7 @@
       {
         "call_addr": "004fb7ba",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004fae10",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -518,7 +516,7 @@
       {
         "call_addr": "004353d0",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00435380",
+        "caller": "core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -562,7 +560,7 @@
       {
         "call_addr": "0042beb3",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_0042be20",
+        "caller": "core_carved.cpp_CCarved_resetChaseState_FUN_0042be20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -573,7 +571,7 @@
       {
         "call_addr": "0042bec5",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_0042be20",
+        "caller": "core_carved.cpp_CCarved_resetChaseState_FUN_0042be20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -712,14 +710,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

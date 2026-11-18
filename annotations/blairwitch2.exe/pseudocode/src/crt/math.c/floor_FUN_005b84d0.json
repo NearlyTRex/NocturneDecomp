@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 28,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 44
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -48,7 +46,19 @@
     {
       "addr": "00438cf0",
       "from_addr": "00438ee8",
-      "name": "core_course.cpp_FUN_00438cf0",
+      "name": "core_course.cpp_CCourse_interpolate_FUN_00438cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473390",
+      "from_addr": "00473414",
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00472c60",
+      "from_addr": "00472cb9",
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,18 +71,6 @@
       "addr": "00476a50",
       "from_addr": "00476a6d",
       "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00472c60",
-      "from_addr": "00472cb9",
-      "name": "core_dtrace.cpp_FUN_00472c60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00473390",
-      "from_addr": "00473414",
-      "name": "core_dtrace.cpp_FUN_00473390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -124,15 +122,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00554f80",
-      "from_addr": "00554fcc",
-      "name": "sound_snddx.cpp_FUN_00554f80",
+      "addr": "00556550",
+      "from_addr": "005567fa",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00556550",
-      "from_addr": "005567fa",
-      "name": "sound_snddx.cpp_FUN_00556550",
+      "addr": "00554f80",
+      "from_addr": "00554fcc",
+      "name": "sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_00554f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -207,9 +205,9 @@
   "globals": [
     {
       "addr": "005f184c",
-      "name": "DAT_005f184c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MathDomainAdjustment",
+      "type": "double",
+      "value": "-1"
     }
   ],
   "param_estimates": {
@@ -306,7 +304,7 @@
       {
         "call_addr": "00472cb9",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00472c60",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -317,7 +315,7 @@
       {
         "call_addr": "00472ce5",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00472c60",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00472c60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -429,14 +427,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

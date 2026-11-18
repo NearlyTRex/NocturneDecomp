@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_00462a10(CDemonLight *this_ptr,CRect *source_rect)
 
 {
@@ -15,9 +13,9 @@ void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_00462a10(CDemonLight *t
   int iVar2;
   
   if (this_ptr->master_zbuffer == (void *)0x0) {
-    _DAT_01d1d400 = "..\\core\\dlight.cpp";
-    _DAT_01d1d404 = 0x147;
-    core_main_c_FUN_005030e0("CDemonLight::blitZBuffer - No master Z buffer");
+    g_CHAR_PTR_01d1d400 = "..\\core\\dlight.cpp";
+    g_INT_01d1d404 = 0x147;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonLight::blitZBuffer - No master Z buffer");
   }
   if (((((this_ptr->base).viewport_rect.x_min < source_rect->x_max) &&
        ((this_ptr->base).viewport_rect.x_max < source_rect->y_max)) &&

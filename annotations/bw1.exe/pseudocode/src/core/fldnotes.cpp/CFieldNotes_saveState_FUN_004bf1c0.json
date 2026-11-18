@@ -2,26 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 359,
+    "complexity_score": 247,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 189,
-    "suspect_count": 15,
+    "pseudocode_lines": 177,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 618
+    "total_lines": 606
   },
   "cross_references": [
     {
       "addr": "004d6420",
       "from_addr": "004d66a0",
-      "name": "core_game.cpp_FUN_004d6420",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004d6420",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -41,12 +39,12 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c03c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
     }
   ],
   "globals": [
@@ -76,8 +74,8 @@
     },
     {
       "addr": "005e052b",
-      "name": "DAT_005e052b",
-      "type": "undefined4",
+      "name": "s_d_005e052b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -112,8 +110,8 @@
     },
     {
       "addr": "005e0593",
-      "name": "DAT_005e0593",
-      "type": "undefined4",
+      "name": "s_d_005e0593",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -154,8 +152,8 @@
     },
     {
       "addr": "005e0605",
-      "name": "DAT_005e0605",
-      "type": "undefined4",
+      "name": "s_d_005e0605",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -190,20 +188,20 @@
     },
     {
       "addr": "005e066d",
-      "name": "DAT_005e066d",
-      "type": "undefined4",
+      "name": "s_anon_005e066d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e0670",
-      "name": "DAT_005e0670",
-      "type": "undefined4",
+      "name": "s_s_02X_005e0670",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e0675",
-      "name": "DAT_005e0675",
-      "type": "undefined4",
+      "name": "s_anon_005e0675",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -214,8 +212,8 @@
     },
     {
       "addr": "005e0697",
-      "name": "DAT_005e0697",
-      "type": "undefined4",
+      "name": "s_d_005e0697",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -256,14 +254,14 @@
     },
     {
       "addr": "01cc4470",
-      "name": "DAT_01cc4470",
-      "type": "undefined4",
+      "name": "g_INT_01cc4470",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc55cc",
-      "name": "DAT_01cc55cc",
-      "type": "undefined4",
+      "name": "g_INT_01cc55cc",
+      "type": "int",
       "value": null
     },
     {
@@ -316,14 +314,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -333,7 +331,7 @@
       {
         "call_addr": "004d66a0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6420",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004d6420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -496,24 +494,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005e052b",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file,&DAT_005e052b,2);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 30,
       "match": "(int *)((int)SNotesSection_ARRAY_01cc4474",
       "severity": "moderate",
       "text": "if (0 < *(int *)((int)SNotesSection_ARRAY_01cc4474[0].entries + local_2c + -4)) {",
@@ -521,95 +503,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 33,
       "match": "(int *)((int)SNotesSection_ARRAY_01cc4474",
       "severity": "moderate",
-      "text": "(*(int *)((int)SNotesSection_ARRAY_01cc4474[0].entries + iVar8) + 0x140)) {",
+      "text": "(*(int *)((int)SNotesSection_ARRAY_01cc4474[0].entries + iVar4) + 0x140)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 51,
       "match": "(int *)((int)SNotesSection_ARRAY_01cc4474",
       "severity": "moderate",
-      "text": "} while (iVar5 < *(int *)((int)SNotesSection_ARRAY_01cc4474[0].entries + local_2c + -4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_005e0593",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file,&DAT_005e0593,iVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(int *)((int)SNotesSection_ARRAY_01cc4474",
-      "severity": "moderate",
-      "text": "(*(int *)((int)SNotesSection_ARRAY_01cc4474[0].entries + iVar8) + 0x140)) {",
+      "text": "} while (iVar2 < *(int *)((int)SNotesSection_ARRAY_01cc4474[0].entries + local_2c + -4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 67,
       "match": "(int *)((int)SNotesSection_ARRAY_01cc4474",
       "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)SNotesSection_ARRAY_01cc4474[0].entries + iVar8);",
+      "text": "(*(int *)((int)SNotesSection_ARRAY_01cc4474[0].entries + iVar4) + 0x140)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_005e0605",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file,&DAT_005e0605,local_28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_005e066d",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file,&DAT_005e066d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 143,
-      "match": "DAT_005e0670",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file,&DAT_005e0670,cVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 146,
-      "match": "DAT_005e0675",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file,&DAT_005e0675);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 164,
-      "match": "DAT_005e0697",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file,&DAT_005e0697,iVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 159,
-      "match": "pSVar4 = (T *)(pSVar4->FIELD[N].SUBFIELD + CONST)",
+      "match": "pSVar1 = (T *)(pSVar1->FIELD[N].SUBFIELD + CONST)",
       "severity": "moderate",
-      "text": "pSVar4 = (SNotesMap *)(pSVar4->sets[0].level_name + 0x34);",
+      "text": "pSVar1 = (SNotesMap *)(pSVar1->sets[0].level_name + 0x34);",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 173,
+      "line": 160,
       "match": "local_18 = (T *)(local_18->FIELD[N].SUBFIELD + CONST)",
       "severity": "moderate",
       "text": "local_18 = (SNotesMap *)(local_18->sets[0].level_name + 0x34);",

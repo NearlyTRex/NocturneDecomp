@@ -1782,12 +1782,12 @@ CDemonActor_vtable g_CWayPointVTable = {
 };
 
 // CDemonFilter*[4]
-CDemonFilter* g_PlayerFilters[4] = {(CDemonFilter*)&CDemonFilter_ARRAY_020a4878, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[1].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[2].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[3].size};
+CDemonFilter* g_PlayerFilters[4] = {(CDemonFilter*)&g_PlayerFilterPool, (CDemonFilter*)&g_PlayerFilterPool[1].size, (CDemonFilter*)&g_PlayerFilterPool[2].size, (CDemonFilter*)&g_PlayerFilterPool[3].size};
 
 // CDemonFilter*[8]
 CDemonFilter* g_GlobalFilters[8] = {
-    (CDemonFilter*)&CDemonFilter_ARRAY_020a4878, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[1].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[2].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[3].size,
-    (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[4].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[5].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[6].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[7].size
+    (CDemonFilter*)&g_PlayerFilterPool, (CDemonFilter*)&g_PlayerFilterPool[1].size, (CDemonFilter*)&g_PlayerFilterPool[2].size, (CDemonFilter*)&g_PlayerFilterPool[3].size,
+    (CDemonFilter*)&g_PlayerFilterPool[4].size, (CDemonFilter*)&g_PlayerFilterPool[5].size, (CDemonFilter*)&g_PlayerFilterPool[6].size, (CDemonFilter*)&g_PlayerFilterPool[7].size
 };
 
 // CDemonPod_vtable
@@ -3282,7 +3282,7 @@ CKeys_vtable g_CKeysVTable = {
 };
 
 // CMatrix3x4f
-CMatrix3x4f CMatrix3x4f_00665968 = {
+CMatrix3x4f g_IdentityMatrix3x4 = {
     .m = {{
         .w = 1.0f,
         .x = 0.0f,
@@ -3548,7 +3548,7 @@ CPoly_vtable g_CPolyVTable = {
 };
 
 // CQuaternion4f
-CQuaternion4f CQuaternion4f_00665998 = {
+CQuaternion4f g_IdentityQuaternion = {
     .w = 1.0f,
     .x = 0.0f,
     .y = 0.0f,
@@ -3669,19 +3669,19 @@ CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable = {
     .start = (CSoundDevice_start *)sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340,
     .reset = (CSoundDevice_reset *)sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005ae4b0,
     .setMode = (CSoundDevice_setMode *)sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830,
-    .poll = (CSoundDevice_poll *)sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50,
+    .poll = (CSoundDevice_pollPlayback *)sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50,
     .hasHardware3D = (CSoundDevice_hasHardware3D *)sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20,
     .set3DListenerPos = (CSoundDevice_set3DListenerPos *)sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30,
     .set3DListenerOrient = (CSoundDevice_set3DListenerOrient *)sound_snddx_cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70,
     .set3DListenerVelocity = (CSoundDevice_set3DListenerVelocity *)sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0,
     .set3DListenerDistanceFactor = (CSoundDevice_set3DListenerDistanceFactor *)sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005aef10,
-    .commitDeferredSettings = (CSoundDevice_commitDeferredSettings *)sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340,
+    .setReverb = (CSoundDevice_setReverb *)sound_snddx_cpp_CDirectSoundDevice_setReverb_FUN_005b0340,
     .allocateSample = (CSoundDevice_allocateSample *)sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40,
     .freeSample = (CSoundDevice_freeSample *)sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_005af190,
     .lockSample = (CSoundDevice_lockSample *)sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220,
     .unlockSample = (CSoundDevice_unlockSample *)sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_005af320,
     .allocateSfx = (CSoundDevice_allocateSfx *)sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410,
-    .setSfxPos = (CSoundDevice_setSfxPos *)sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750,
+    .applySfxChanges = (CSoundDevice_applySfxChanges *)sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_005af750,
     .getSfxPlaybackPos = (CSoundDevice_getSfxPlaybackPos *)sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60,
     .startSfx = (CSoundDevice_startSfx *)sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80,
     .killSfx = (CSoundDevice_killSfx *)sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_005b0030,
@@ -3692,19 +3692,19 @@ CSoundDeviceFull_vtable g_CWavOutDeviceVTable = {
     .start = (CSoundDevice_start *)sound_sndwav_cpp_CWavOutDevice_start_FUN_005b08f0,
     .reset = (CSoundDevice_reset *)sound_sndwav_cpp_CWavOutDevice_reset_FUN_005b09c0,
     .setMode = (CSoundDevice_setMode *)sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30,
-    .poll = (CSoundDevice_poll *)sound_sndwav_cpp_CWavOutDevice_poll_FUN_005b0c10,
+    .poll = (CSoundDevice_pollPlayback *)sound_sndwav_cpp_CWavOutDevice_poll_FUN_005b0c10,
     .hasHardware3D = (CSoundDevice_hasHardware3D *)sound_sndwav_cpp_CWavOutDevice_hasHardware3D_FUN_005b1650,
     .set3DListenerPos = (CSoundDevice_set3DListenerPos *)sound_sndwav_cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660,
     .set3DListenerOrient = (CSoundDevice_set3DListenerOrient *)sound_sndwav_cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670,
     .set3DListenerVelocity = (CSoundDevice_set3DListenerVelocity *)sound_sndwav_cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680,
     .set3DListenerDistanceFactor = (CSoundDevice_set3DListenerDistanceFactor *)sound_sndwav_cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690,
-    .commitDeferredSettings = (CSoundDevice_commitDeferredSettings *)sound_sndwav_cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0,
+    .setReverb = (CSoundDevice_setReverb *)sound_sndwav_cpp_CWavOutDevice_setReverb_FUN_005b16a0,
     .allocateSample = (CSoundDevice_allocateSample *)sound_sndwav_cpp_CWavOutDevice_allocateSample_FUN_005b16b0,
     .freeSample = (CSoundDevice_freeSample *)sound_sndwav_cpp_CWavOutDevice_freeSample_FUN_005b16c0,
     .lockSample = (CSoundDevice_lockSample *)sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_005b16d0,
     .unlockSample = (CSoundDevice_unlockSample *)sound_sndwav_cpp_CWavOutDevice_unlockSample_FUN_005b16e0,
     .allocateSfx = (CSoundDevice_allocateSfx *)sound_sndwav_cpp_CWavOutDevice_allocateSfx_FUN_005b16f0,
-    .setSfxPos = (CSoundDevice_setSfxPos *)sound_sndwav_cpp_CWavOutDevice_setSfxPos_FUN_005b1700,
+    .applySfxChanges = (CSoundDevice_applySfxChanges *)sound_sndwav_cpp_CWavOutDevice_applySfxChanges_FUN_005b1700,
     .getSfxPlaybackPos = (CSoundDevice_getSfxPlaybackPos *)sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_005b1710,
     .startSfx = (CSoundDevice_startSfx *)sound_sndwav_cpp_CWavOutDevice_startSfx_FUN_005b1730,
     .killSfx = (CSoundDevice_killSfx *)sound_sndwav_cpp_CWavOutDevice_killSfx_FUN_005b1740,
@@ -6423,15 +6423,15 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
 };
 
 // SMRGLTextureBasic
-SMRGLTextureBasic SMRGLTextureBasic_0066e158 = {
+SMRGLTextureBasic g_BoundingBoxTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0066e460 = {
+SMRGLTextureBasic g_BaronBlueGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BLUEGLOW.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0066e784 = {
+SMRGLTextureBasic g_BurnCharTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "CHAR2.RAW"
 };
@@ -6445,7 +6445,7 @@ SMRGLTextureBasic g_CoronaHeadliteTexture = {
 };
 
 // SMRGLTextureBasic[6]
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6] = {
+SMRGLTextureBasic g_EtherealBoltTextures[6] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BOLT1.RAW"
@@ -6797,7 +6797,7 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_0066e5cc = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065b180,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CDemonFilter_ARRAY_008229ec
+    .object_instance = (void *)&g_LightActorFilters
 };
 WatcomStaticDestructorNode g_CDeformableModelInstanceDestructorNode = {
     .next = nullptr,
@@ -6821,7 +6821,7 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef5c = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065c830,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CDemonFilter_ARRAY_020a4878
+    .object_instance = (void *)&g_PlayerFilterPool
 };
 WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef6c = {
     .next = nullptr,

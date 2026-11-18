@@ -12,7 +12,7 @@
 ;   core_setutil.cpp_C3DSCamera_reset_FUN_0053a870 at 0053a876
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     RET                                 ; 0053a84a
     PUSH EDX                            ; 0053a84b
         ;   Label: LAB_0053a84b
-    CALL crt_unknown.c_FUN_005b86a0     ; 0053a84c
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 0053a84c
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 0053a851
     MOV dword ptr [EBX + 0x198],0x0     ; 0053a854
     MOV dword ptr [EBX + 0x194],0x0     ; 0053a85e

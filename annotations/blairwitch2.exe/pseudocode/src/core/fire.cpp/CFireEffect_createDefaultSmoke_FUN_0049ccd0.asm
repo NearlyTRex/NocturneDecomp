@@ -11,7 +11,7 @@
 ;   core_fire.cpp_CMuzzleFlash_process_FUN_00496a60 at 00496a86
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00614d30
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230
@@ -26,7 +26,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 0049ccd7
     PUSH 0x3f19999a                     ; 0049ccdb
     PUSH EDX                            ; 0049cce0
-    MOV ECX,dword ptr [0x00614d30]      ; 0049cce1 | DAT_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 0049cce1 | g_CFireEffectPtr
     PUSH ECX                            ; 0049cce7
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230 ; 0049cce8
         ;   XREF to: 0049d230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

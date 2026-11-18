@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 78,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 18,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 3,
-    "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 166
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 168
   },
   "cross_references": [
     {
@@ -40,110 +37,110 @@
   "globals": [
     {
       "addr": "005c4781",
-      "name": "DAT_005c4781",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c4781",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005c4789",
-      "name": "DAT_005c4789",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c4789",
+      "type": "double",
+      "value": "1.33300000000000"
     },
     {
       "addr": "01d276b8",
-      "name": "DAT_01d276b8",
-      "type": "undefined4",
+      "name": "g_BloodSplatCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d276d0",
-      "name": "DAT_01d276d0",
+      "name": "g_CBloodSplat_ARRAY_01d276bc[0].is_wall_splat",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d27708",
-      "name": "DAT_01d27708",
+      "name": "g_CBloodSplat_ARRAY_01d276bc[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2770c",
-      "name": "DAT_01d2770c",
+      "name": "g_CBloodSplat_ARRAY_01d276bc[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d27710",
-      "name": "DAT_01d27710",
+      "name": "g_CBloodSplat_ARRAY_01d276bc[1].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d27714",
-      "name": "DAT_01d27714",
+      "name": "g_CBloodSplat_ARRAY_01d276bc[1].area_id",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d27718",
-      "name": "DAT_01d27718",
+      "name": "g_CBloodSplat_ARRAY_01d276bc[1].is_wall_splat",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2771c",
-      "name": "DAT_01d2771c",
+      "name": "g_CBloodSplat_ARRAY_01d276bc[1].blood_type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d4a940",
-      "name": "DAT_01d4a940",
-      "type": "undefined4",
+      "name": "g_BloodPoolCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d4a958",
-      "name": "DAT_01d4a958",
+      "name": "g_CBloodPool_ARRAY_01d4a944[0].area_id",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d4a974",
-      "name": "DAT_01d4a974",
+      "name": "g_CBloodPool_ARRAY_01d4a944[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d4a978",
-      "name": "DAT_01d4a978",
+      "name": "g_CBloodPool_ARRAY_01d4a944[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d4a97c",
-      "name": "DAT_01d4a97c",
+      "name": "g_CBloodPool_ARRAY_01d4a944[1].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d4a980",
-      "name": "DAT_01d4a980",
+      "name": "g_CBloodPool_ARRAY_01d4a944[1].blood_type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d4a984",
-      "name": "DAT_01d4a984",
+      "name": "g_CBloodPool_ARRAY_01d4a944[1].area_id",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     }
   ],
@@ -278,30 +275,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x1d4a944 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 12,
-      "match": "0x1d4a944",
-      "severity": "moderate",
-      "text": "iVar1 = 0x1d4a944;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1d276bc assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 27,
-      "match": "0x1d276bc",
-      "severity": "moderate",
-      "text": "iVar1 = 0x1d276bc;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

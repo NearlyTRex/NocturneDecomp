@@ -7,8 +7,8 @@
 ; SPageResourceText * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01511cd0
-;   undefined4 DAT_01c35e60
+;   CBitFont* g_CBitFont_PTR_01511cd0
+;   int g_INT_01c35e60
 ;   undefined4 CAlphaBitmap_01caf22c.width
 ;   undefined4 CAlphaBitmap_01caf22c.height
 ;
@@ -16,8 +16,8 @@
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040dab0
+;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
-;   engine_font.cpp_FUN_004a8df0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EAX                            ; 004a2076
     MOV EBX,dword ptr [ESI + 0x11c]     ; 004a2077
     PUSH EBX                            ; 004a207d
-    CALL engine_font.cpp_FUN_004a8df0   ; 004a207e
-        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8df0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004a207e
+        ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EDI,dword ptr [ESI + 0x18]      ; 004a2083
     ADD ESP,0x18                        ; 004a2086
     TEST EDI,EDI                        ; 004a2089
@@ -58,7 +58,7 @@ section .text
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 004a209b
         ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     MOV EDI,dword ptr [ESI + 0x4]       ; 004a20a0
-    MOV EDX,dword ptr [0x01511cd0]      ; 004a20a3 | DAT_01511cd0
+    MOV EDX,dword ptr [0x01511cd0]      ; 004a20a3 | g_CBitFont_PTR_01511cd0
     ADD EDI,EAX                         ; 004a20a9
     MOV EAX,dword ptr [ESI + 0x11c]     ; 004a20ab
     ADD ESP,0x8                         ; 004a20b1
@@ -116,7 +116,7 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 004a2120
     XOR ECX,ECX                         ; 004a2122
     PUSH EAX                            ; 004a2124
-    MOV dword ptr [0x01c35e60],ECX      ; 004a2125 | DAT_01c35e60
+    MOV dword ptr [0x01c35e60],ECX      ; 004a2125 | g_INT_01c35e60
     CALL engine_2d.c_drawHLine_FUN_00402f30 ; 004a212b
         ;   XREF to: 00402f30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402f30(int x1, int y, int x2)
     ADD ESP,0xc                         ; 004a2130

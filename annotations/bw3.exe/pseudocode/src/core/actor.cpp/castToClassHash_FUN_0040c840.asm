@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   actor_ptr
 ; uint             Stack[0x8]:4   class_name_hash
 ;
-; XREF[120]:
+; XREF[121]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a40 at 00408ab2
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a2dc
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 005971b5
@@ -16,9 +16,9 @@
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423cd0 at 00423cfb
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424814
 ;   core_burncrss.cpp_CBurncross_renderOpaque_FUN_00425360 at 004253b6
-;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 00431927
-;   core_charactr.cpp_FUN_0042ff70 at 0042ffb4
-;   ... and 110 more
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 0043023a
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 00432621
+;   ... and 111 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClassHash_FUN_0040c810

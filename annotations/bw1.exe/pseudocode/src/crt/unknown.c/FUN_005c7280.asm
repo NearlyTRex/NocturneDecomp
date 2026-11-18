@@ -17,12 +17,12 @@
 ; Referenced Globals:
 ;   void* PTR_CloseHandle_005d051c = 001d0c5a
 ;   void* PTR_CreateFileA_005d0528 = 001d0c8c
-;   undefined4 DAT_005fabb4
-;   undefined4 DAT_006264e0
+;   TerminatedCString s_con_005fabb4
+;   int g_INT_006264e0 = 0x100
 ;   void* PTR_crt_unknown.c_FUN_005c50d8_00626608 = 005c50d8
-;   undefined4 DAT_0062677c
-;   undefined4 DAT_006267e0
-;   undefined4 DAT_00626a74
+;   void* g_PTR_0062677c = 00000000
+;   uint g_MaxHandleCount = 0x14
+;   int g_INT_00626a74 = 0x0
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -90,10 +90,10 @@ section .text
     SETZ AL                             ; 005c72f0
     AND EAX,0xff                        ; 005c72f3
     MOV dword ptr [ESP + 0x8],EAX       ; 005c72f8
-    CMP dword ptr [0x0062677c],0x0      ; 005c72fc | DAT_0062677c
+    CMP dword ptr [0x0062677c],0x0      ; 005c72fc | g_PTR_0062677c
     JZ 0x005c7344                       ; 005c7303
         ;   XREF to: 005c7344 (CONDITIONAL_JUMP)  ; LAB_005c7344
-    PUSH 0x5fabb4                       ; 005c7305 | DAT_005fabb4
+    PUSH 0x5fabb4                       ; 005c7305 | = "con"
     MOV EDX,dword ptr [ESP + 0x30]      ; 005c730a
     PUSH EDX                            ; 005c730e
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 005c730f
@@ -112,7 +112,7 @@ section .text
     PUSH 0x0                            ; 005c732d
     MOV EBX,0x2000                      ; 005c732f
     MOV EBP,EAX                         ; 005c7334
-    CALL dword ptr [0x0062677c]         ; 005c7336 | DAT_0062677c
+    CALL dword ptr [0x0062677c]         ; 005c7336 | g_PTR_0062677c
     ADD ESP,0xc                         ; 005c733c
     JMP 0x005c7466                      ; 005c733f
         ;   XREF to: 005c7466 (UNCONDITIONAL_JUMP)  ; LAB_005c7466
@@ -127,7 +127,7 @@ section .text
     MOV EAX,dword ptr [EBX + -0x4]      ; 005c7354
     MOV dword ptr [ESP + 0x14],EAX      ; 005c7357
     MOV dword ptr [EDI],0x0             ; 005c735b
-    MOV EAX,[0x00626a74]                ; 005c7361 | DAT_00626a74
+    MOV EAX,[0x00626a74]                ; 005c7361 | g_INT_00626a74
     MOV ECX,dword ptr [ESP + 0x14]      ; 005c7366
     NOT EAX                             ; 005c736a
     AND ECX,EAX                         ; 005c736c
@@ -216,7 +216,7 @@ section .text
         ;   Label: LAB_005c741d
     CALL dword ptr [0x00626608]         ; 005c741e | PTR_crt_unknown.c_FUN_005c50d8_00626608
     XOR EBX,EBX                         ; 005c7424
-    MOV EDX,dword ptr [0x006267e0]      ; 005c7426 | DAT_006267e0
+    MOV EDX,dword ptr [0x006267e0]      ; 005c7426 | g_MaxHandleCount
     ADD ESP,0x4                         ; 005c742c
     MOV EBP,EAX                         ; 005c742f
     CMP EAX,EDX                         ; 005c7431
@@ -280,7 +280,7 @@ section .text
         ;   XREF to: 005c74ad (CONDITIONAL_JUMP)  ; LAB_005c74ad
     JMP 0x005c74ab                      ; 005c749d
         ;   XREF to: 005c74ab (UNCONDITIONAL_JUMP)  ; LAB_005c74ab
-    CMP dword ptr [0x006264e0],0x200    ; 005c749f | DAT_006264e0
+    CMP dword ptr [0x006264e0],0x200    ; 005c749f | g_INT_006264e0
         ;   Label: LAB_005c749f
     JNZ 0x005c74ad                      ; 005c74a9
         ;   XREF to: 005c74ad (CONDITIONAL_JUMP)  ; LAB_005c74ad

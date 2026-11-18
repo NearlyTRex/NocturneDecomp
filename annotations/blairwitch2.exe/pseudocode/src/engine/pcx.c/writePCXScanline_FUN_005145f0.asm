@@ -11,8 +11,8 @@
 ;   engine_pcx.c_saveScreenshotGeneral_FUN_00514a30 at 00514b58
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_01c2a38c
+;   int g_INT_006141b8 = 0x140
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_005bab40
@@ -28,9 +28,9 @@ section .text
     PUSH EBP                            ; 005145f3
     MOV EBX,dword ptr [ESP + 0x18]      ; 005145f4
     MOV ESI,dword ptr [ESP + 0x14]      ; 005145f8
-    MOV EDX,dword ptr [0x006141b8]      ; 005145fc | DAT_006141b8
+    MOV EDX,dword ptr [0x006141b8]      ; 005145fc | g_INT_006141b8
     XOR EDI,EDI                         ; 00514602
-    MOV ESI,dword ptr [ESI*0x4 + 0x1c2a38c] ; 00514604 | DAT_01c2a38c
+    MOV ESI,dword ptr [ESI*0x4 + 0x1c2a38c] ; 00514604 | g_ScreenBufferArray
     TEST EDX,EDX                        ; 0051460b
     JLE 0x0051464e                      ; 0051460d
         ;   XREF to: 0051464e (CONDITIONAL_JUMP)  ; LAB_0051464e
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005bab40(int character, _FILE * file)
         ;   Label: LAB_0051463a
     ADD ESP,0x8                         ; 0051463f
-    MOV ECX,dword ptr [0x006141b8]      ; 00514642 | DAT_006141b8
+    MOV ECX,dword ptr [0x006141b8]      ; 00514642 | g_INT_006141b8
         ;   Label: LAB_00514642
     INC EDI                             ; 00514648
     INC ESI                             ; 00514649

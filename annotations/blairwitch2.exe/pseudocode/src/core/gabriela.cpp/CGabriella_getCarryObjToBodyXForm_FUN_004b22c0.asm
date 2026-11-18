@@ -10,22 +10,22 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_gabriela_cpp_005d71c3
 ;   TerminatedCString s_Don_t_know_how_to_carry_005d71d8
-;   undefined4 DAT_005d71fb
-;   undefined4 DAT_005d7203
-;   undefined4 DAT_005d720b
-;   undefined4 DAT_007bcc84
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005d71fb = 0.5
+;   double g_DOUBLE_005d7203 = 0.700000000000000
+;   double g_DOUBLE_005d720b = 0.300000000000000
+;   undefined4 g_CLightActorClassInfo.name_hash
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_buildRotationY_FUN_005932c0
-;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_00591c10
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;   core_xform.cpp_setIdentityMatrix3x4_FUN_005918a0
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;   core_xform.cpp_transformVector3x4InPlace_FUN_005915b0
 ;
 ; *****************************************************************************
@@ -52,7 +52,7 @@ section .text
     XOR ECX,ECX                         ; 004b22ee
     MOV dword ptr [ESP + 0x1d4],EAX     ; 004b22f0
     MOV dword ptr [ESP + 0x128],ECX     ; 004b22f7
-    MOV EAX,[0x007bcc84]                ; 004b22fe | DAT_007bcc84
+    MOV EAX,[0x007bcc84]                ; 004b22fe | g_CLightActorClassInfo.name_hash
     MOV dword ptr [ESP + 0x124],ECX     ; 004b2303
     PUSH EAX                            ; 004b230a
     MOV dword ptr [ESP + 0x124],ECX     ; 004b230b
@@ -106,8 +106,8 @@ section .text
     PUSH EAX                            ; 004b23cf
     LEA EAX,[ESP + 0x98]                ; 004b23d0
     PUSH EAX                            ; 004b23d7
-    CALL core_xform.cpp_FUN_00591c10    ; 004b23d8
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004b23d8
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004b23dd
     LEA EAX,[ESP + 0x90]                ; 004b23e0
     PUSH EAX                            ; 004b23e7
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 004b23ef
     LEA ESI,[ESP + 0x1ac]               ; 004b23f0
     LEA EDI,[ESP + 0x158]               ; 004b23f7
-    CALL core_xform.cpp_FUN_00591530    ; 004b23fe
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004b23fe
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x1ac]               ; 004b2403
     ADD ESP,0x8                         ; 004b240a
     MOV ECX,0xc                         ; 004b240d
@@ -194,7 +194,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b254b
     MOVSD ES:EDI,ESI                    ; 004b254c
     MOVSD ES:EDI,ESI                    ; 004b254d
-    FLD float ptr [0x005d71fb]          ; 004b254e | DAT_005d71fb
+    FLD float ptr [0x005d71fb]          ; 004b254e | g_FLOAT_005d71fb
     FLD float ptr [ESP + 0x180]         ; 004b2554
     FMUL ST1                            ; 004b255b
     FLD float ptr [ESP + 0x184]         ; 004b255d
@@ -273,7 +273,7 @@ section .text
     LEA ESI,[ESP + 0x130]               ; 004b2676
     LEA EDI,[ESP + 0x16c]               ; 004b267d
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 004b2684
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x130]               ; 004b2689
     ADD ESP,0x4                         ; 004b2690
     MOVSD ES:EDI,ESI                    ; 004b2693
@@ -292,9 +292,9 @@ section .text
     MOV dword ptr [ESP + 0x128],EAX     ; 004b26cb
     FLD float ptr [ESP + 0x110]         ; 004b26d2
         ;   Label: LAB_004b26d2
-    FMUL double ptr [0x005d7203]        ; 004b26d9 | DAT_005d7203
+    FMUL double ptr [0x005d7203]        ; 004b26d9 | g_DOUBLE_005d7203
     FLD float ptr [ESP + 0x11c]         ; 004b26df
-    FMUL double ptr [0x005d720b]        ; 004b26e6 | DAT_005d720b
+    FMUL double ptr [0x005d720b]        ; 004b26e6 | g_DOUBLE_005d720b
     FADDP                               ; 004b26ec
     FSTP float ptr [ESP + 0x140]        ; 004b26ee
     JMP 0x004b233f                      ; 004b26f5
@@ -334,10 +334,10 @@ section .text
     MOV EDI,0x5d71c3                    ; 004b2750 | = "..\\core\\gabriela.cpp"
     MOV EAX,0x944                       ; 004b2755
     PUSH 0x5d71d8                       ; 004b275a | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01d046a0],EDI      ; 004b275f | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004b2765 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004b276a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 004b275f | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004b2765 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b276a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004b276f
     JMP 0x004b233f                      ; 004b2772
         ;   XREF to: 004b233f (UNCONDITIONAL_JUMP)  ; LAB_004b233f

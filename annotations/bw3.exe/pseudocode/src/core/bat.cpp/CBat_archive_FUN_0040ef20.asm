@@ -15,7 +15,7 @@
 ;   TerminatedCString s_modelName_005b626c
 ;   TerminatedCString s_periodicSoundTimerMin_005b6276
 ;   TerminatedCString s_periodicSoundTimerMax_005b628c
-;   undefined4 DAT_005b62a6
+;   double g_DOUBLE_005b62a6 = 30
 ;   int g_CBatClassVersion = 0x4
 ;
 ; Called Functions:
@@ -85,7 +85,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0040efb7
         ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     FLD float ptr [EBX + 0x30c]         ; 0040efbc
-    FMUL double ptr [0x005b62a6]        ; 0040efc2 | DAT_005b62a6
+    FMUL double ptr [0x005b62a6]        ; 0040efc2 | g_DOUBLE_005b62a6
     ADD ESP,0x8                         ; 0040efc8
     FSTP float ptr [EBX + 0x308]        ; 0040efcb
     JMP 0x0040ef89                      ; 0040efd1

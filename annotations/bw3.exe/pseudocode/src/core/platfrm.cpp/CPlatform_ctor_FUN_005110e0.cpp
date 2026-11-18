@@ -56,7 +56,8 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this
     pCVar5[1].frames = pCVar5[2].frames;
     pCVar5[1].loop = pCVar5[2].loop;
   }
-  core_xform_cpp_FUN_005860b0(&pCVar5[-0x3e].loop);
+  core_xform_cpp_eulerToQuaternion_FUN_005860b0
+            ((CVector3f *)&pCVar5[-0x3e].loop,(CQuaternion4f *)&stack0xfffffff0);
   puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);
   pCVar5[4].frames = pCStack_10;
   puVar8 = puVar7 + (uint)bVar11 * -2 + 1;

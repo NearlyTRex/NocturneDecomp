@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_004f5570(float *arg1,float *arg2,float *arg3,float *arg4)
 
 {
@@ -25,28 +23,29 @@ void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_004f5570(float *arg1,float *
   float *pfStack_20;
   int iStack_1c;
   
-  iVar3 = _DAT_01d0c3a0;
-  if ((_DAT_01d0c3a0 != 0) &&
-     (((_DAT_0264bcd4 == 0 || (_DAT_01c37788 == 0)) || (_DAT_0264bcd8 != (code *)0x0)))) {
+  iVar3 = g_INT_01d0c3a0;
+  if ((g_INT_01d0c3a0 != 0) &&
+     (((g_APIDLL_setTextureClamp == (byte *)0x0 || (g_INT_01c37788 == 0)) ||
+      (g_APIDLL_setFog != (byte *)0x0)))) {
     if (arg1 == (float *)0x0) {
       iVar9 = 0;
-      if (0 < _DAT_01d0c3a0) {
+      if (0 < g_INT_01d0c3a0) {
         do {
           iVar10 = iVar9 + 1;
           *(byte *)(iVar9 + 0x1d0d280) = 1;
           iVar9 = iVar10;
         } while (iVar10 < iVar3);
       }
-      if ((_DAT_0264bcd8 != (code *)0x0) && (_DAT_01c37788 != 0)) {
-        (*_DAT_0264bcd8)(0x1d0d280);
+      if ((g_APIDLL_setFog != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+        (*(code *)g_APIDLL_setFog)(0x1d0d280);
       }
     }
     else {
       iStack_1c = 0;
-      if (0 < _DAT_01d0c3a0) {
+      if (0 < g_INT_01d0c3a0) {
         pfStack_20 = (float *)0x1d0c3a4;
         do {
-          iVar3 = _DAT_01d0c3a0;
+          iVar3 = g_INT_01d0c3a0;
           uVar11 = 0;
           bVar4 = 0xff;
           do {
@@ -100,8 +99,8 @@ void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_004f5570(float *arg1,float *
           pfStack_20 = pfStack_20 + 0x13;
         } while (iStack_1c < iVar3);
       }
-      if ((_DAT_0264bcd8 != (code *)0x0) && (_DAT_01c37788 != 0)) {
-        (*_DAT_0264bcd8)(0x1d0d280);
+      if ((g_APIDLL_setFog != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+        (*(code *)g_APIDLL_setFog)(0x1d0d280);
         return;
       }
     }

@@ -13,13 +13,13 @@
 ; int              Stack[0x1c]:4   height
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_00516690 at 00516735
+;   cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_00516690 at 00516735
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
+;   int g_ClipRight
+;   int g_INT_01c35e54
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00516410
@@ -45,39 +45,39 @@ section .text
     CMP dword ptr [ECX + 0x14],0x0      ; 005165b6
     JZ 0x00516671                       ; 005165ba
         ;   XREF to: 00516671 (CONDITIONAL_JUMP)  ; LAB_00516671
-    MOV EBP,dword ptr [0x01c35e48]      ; 005165c0 | DAT_01c35e48
+    MOV EBP,dword ptr [0x01c35e48]      ; 005165c0 | g_INT_01c35e48
     CMP EBX,EBP                         ; 005165c6
     JGE 0x005165d4                      ; 005165c8
         ;   XREF to: 005165d4 (CONDITIONAL_JUMP)  ; LAB_005165d4
     SUB EBP,EBX                         ; 005165ca
-    MOV EBX,dword ptr [0x01c35e48]      ; 005165cc | DAT_01c35e48
+    MOV EBX,dword ptr [0x01c35e48]      ; 005165cc | g_INT_01c35e48
     ADD EDX,EBP                         ; 005165d2
-    MOV EBP,dword ptr [0x01c35e4c]      ; 005165d4 | DAT_01c35e4c
+    MOV EBP,dword ptr [0x01c35e4c]      ; 005165d4 | g_INT_01c35e4c
         ;   Label: LAB_005165d4
     CMP ESI,EBP                         ; 005165da
     JGE 0x005165e8                      ; 005165dc
         ;   XREF to: 005165e8 (CONDITIONAL_JUMP)  ; LAB_005165e8
     SUB EBP,ESI                         ; 005165de
-    MOV ESI,dword ptr [0x01c35e4c]      ; 005165e0 | DAT_01c35e4c
+    MOV ESI,dword ptr [0x01c35e4c]      ; 005165e0 | g_INT_01c35e4c
     ADD EAX,EBP                         ; 005165e6
     MOV EBP,dword ptr [ESP + 0x28]      ; 005165e8
         ;   Label: LAB_005165e8
     ADD EBP,EBX                         ; 005165ec
     SUB EBP,EDX                         ; 005165ee
-    CMP EBP,dword ptr [0x01c35e50]      ; 005165f0 | DAT_01c35e50
+    CMP EBP,dword ptr [0x01c35e50]      ; 005165f0 | g_ClipRight
     JLE 0x00516606                      ; 005165f6
         ;   XREF to: 00516606 (CONDITIONAL_JUMP)  ; LAB_00516606
-    MOV EBP,dword ptr [0x01c35e50]      ; 005165f8 | DAT_01c35e50
+    MOV EBP,dword ptr [0x01c35e50]      ; 005165f8 | g_ClipRight
     SUB EBP,EBX                         ; 005165fe
     ADD EBP,EDX                         ; 00516600
     MOV dword ptr [ESP + 0x28],EBP      ; 00516602
     LEA EBP,[ESI + EDI*0x1]             ; 00516606
         ;   Label: LAB_00516606
     SUB EBP,EAX                         ; 00516609
-    CMP EBP,dword ptr [0x01c35e54]      ; 0051660b | DAT_01c35e54
+    CMP EBP,dword ptr [0x01c35e54]      ; 0051660b | g_INT_01c35e54
     JLE 0x0051661d                      ; 00516611
         ;   XREF to: 0051661d (CONDITIONAL_JUMP)  ; LAB_0051661d
-    MOV EDI,dword ptr [0x01c35e54]      ; 00516613 | DAT_01c35e54
+    MOV EDI,dword ptr [0x01c35e54]      ; 00516613 | g_INT_01c35e54
     SUB EDI,ESI                         ; 00516619
     ADD EDI,EAX                         ; 0051661b
     MOV EBP,dword ptr [ESP + 0x28]      ; 0051661d

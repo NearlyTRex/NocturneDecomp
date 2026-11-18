@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b4d298
+;   int g_INT_01b4d298
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
@@ -23,7 +23,7 @@ section .text
     PUSH EDI                            ; 0045de82
     SUB ESP,0x18                        ; 0045de83
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0045de86
-    MOV EDX,dword ptr [0x01b4d298]      ; 0045de8a | DAT_01b4d298
+    MOV EDX,dword ptr [0x01b4d298]      ; 0045de8a | g_INT_01b4d298
     MOV EAX,dword ptr [ESP + 0x28]      ; 0045de90
     PUSH EDX                            ; 0045de94
     ADD EAX,0x2b4                       ; 0045de95

@@ -7,7 +7,7 @@
 ; CConstructRed *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_construc.cpp_FUN_004445d0 at 004445e3
+;   core_construc.cpp_factoryFuncConstructRed_FUN_004445d0 at 004445e3
 ;
 ; Called Functions:
 ;   core_construc.cpp_CConstruct_ctor_FUN_00442420
@@ -31,7 +31,7 @@ section .text
     ADD ESP,0x4                         ; 00444646
     FLD float ptr [EAX + 0x2538]        ; 00444649
     CALL crt_math.c_round_FUN_005a3120  ; 0044464f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EAX + 0xd17c]      ; 00444654
     RET                                 ; 0044465a
 

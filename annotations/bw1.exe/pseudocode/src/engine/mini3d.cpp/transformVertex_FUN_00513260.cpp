@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_transformVertex_FUN_00513260(CVector3f *point,float *out)
 
 {
@@ -17,17 +15,19 @@ void __cdecl engine_mini3d_cpp_transformVertex_FUN_00513260(CVector3f *point,flo
   float fVar4;
   float fVar5;
   float fVar6;
-  float *pfVar7;
+  byte *puVar7;
   
-  pfVar7 = _DAT_01d2257c;
-  fVar4 = point->y - _DAT_01d2257c[10];
-  fVar5 = point->x - _DAT_01d2257c[9];
-  fVar6 = point->z - _DAT_01d2257c[0xb];
-  *out = fVar6 * _DAT_01d2257c[6] + fVar5 * *_DAT_01d2257c + fVar4 * _DAT_01d2257c[3];
-  out[1] = fVar6 * pfVar7[7] + fVar4 * pfVar7[4] + fVar5 * pfVar7[1];
-  fVar1 = pfVar7[2];
-  fVar2 = pfVar7[5];
-  fVar3 = pfVar7[8];
+  puVar7 = g_PTR_01d2257c;
+  fVar4 = point->y - *(float *)(g_PTR_01d2257c + 0x28);
+  fVar5 = point->x - *(float *)(g_PTR_01d2257c + 0x24);
+  fVar6 = point->z - *(float *)(g_PTR_01d2257c + 0x2c);
+  *out = fVar6 * *(float *)(g_PTR_01d2257c + 0x18) +
+         fVar5 * *(float *)g_PTR_01d2257c + fVar4 * *(float *)(g_PTR_01d2257c + 0xc);
+  out[1] = fVar6 * *(float *)(puVar7 + 0x1c) +
+           fVar4 * *(float *)(puVar7 + 0x10) + fVar5 * *(float *)(puVar7 + 4);
+  fVar1 = *(float *)(puVar7 + 8);
+  fVar2 = *(float *)(puVar7 + 0x14);
+  fVar3 = *(float *)(puVar7 + 0x20);
   out[4] = 0.0;
   out[2] = fVar6 * fVar3 + fVar4 * fVar2 + fVar5 * fVar1;
   if (out[2] < *out) {
@@ -46,11 +46,11 @@ void __cdecl engine_mini3d_cpp_transformVertex_FUN_00513260(CVector3f *point,flo
     if (out[4] != 0.0) {
       return;
     }
-    fVar1 = *out * _DAT_01d224dc;
-    fVar2 = out[1] * _DAT_01d224e0;
+    fVar1 = *out * g_FLOAT_01d224dc;
+    fVar2 = out[1] * g_FLOAT_01d224e0;
     out[3] = 1.0 / out[2];
-    fVar2 = _DAT_01d224e8 + fVar2 * out[3];
-    out[5] = _DAT_01d224e4 + fVar1 * out[3];
+    fVar2 = g_FLOAT_01d224e8 + fVar2 * out[3];
+    out[5] = g_FLOAT_01d224e4 + fVar1 * out[3];
     out[6] = fVar2;
     return;
   }

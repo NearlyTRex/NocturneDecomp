@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_00552aa0(int device_id)
 
 {
@@ -16,18 +14,18 @@ void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_00552aa0(int device_id)
   
   uVar1 = sound_sndmain_cpp_isSoundSystemActive_FUN_00552b10();
   if (uVar1 != 0) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0x156b;
-    core_main_c_FUN_004e4500("selectSoundDevice - device already open.");
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0x156b;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("selectSoundDevice - device already open.");
   }
   if (device_id < 0) {
-    device_id = DAT_0061bcac;
+    device_id = g_CurrentSoundDevice;
   }
   iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00552890();
   if ((device_id < iVar2) && (-1 < device_id)) {
-    DAT_0061bcac = device_id;
+    g_CurrentSoundDevice = device_id;
     return;
   }
-  DAT_0061bcac = sound_sndmain_cpp_findBestSoundDevice_FUN_00552980();
+  g_CurrentSoundDevice = sound_sndmain_cpp_findBestSoundDevice_FUN_00552980();
   return;
 }

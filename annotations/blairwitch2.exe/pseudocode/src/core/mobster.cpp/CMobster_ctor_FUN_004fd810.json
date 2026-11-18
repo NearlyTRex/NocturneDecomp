@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 96,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 3,
+    "pseudocode_lines": 50,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 124
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -62,45 +60,45 @@
   "globals": [
     {
       "addr": "005dec0d",
-      "name": "s_mobster1_dfm_005dec0c+1",
-      "type": "undefined4",
+      "name": "s_mobster1_dfm_005dec0d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005dec1a",
-      "name": "DAT_005dec1a",
-      "type": "undefined1",
+      "name": "s_none_005dec1a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005dec1b",
-      "name": "DAT_005dec1b",
-      "type": "undefined1",
+      "name": "s_one_005dec1a+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005dec1c",
-      "name": "DAT_005dec1c",
-      "type": "undefined1",
+      "name": "s_ne_005dec1a+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005dec1d",
-      "name": "DAT_005dec1d",
-      "type": "undefined1",
+      "name": "s_e_005dec1a+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005fa230",
-      "name": "DAT_005fa230",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa230",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005fa234",
-      "name": "DAT_005fa234",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa234",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "005fa244",
@@ -204,24 +202,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005dec1a",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_005dec1a;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 44,
+      "line": 42,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

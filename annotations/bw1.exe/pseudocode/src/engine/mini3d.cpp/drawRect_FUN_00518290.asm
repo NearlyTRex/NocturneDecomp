@@ -10,10 +10,10 @@
 ; int              Stack[0x10]:4   y2
 ;
 ; XREF[4]:
-;   shape_edittool.cpp_FUN_00492c20 at 00492c61
-;   shape_edittool.cpp_FUN_004962b0 at 00496467
-;   shape_edittool.cpp_FUN_00496ee0 at 0049702c
-;   shape_edittool.cpp_FUN_0049caa0 at 0049cb4c
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_0049caa0 at 0049cb4c
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 at 0049702c
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0 at 00496467
+;   shape_edittool.cpp_editorFillRectWithBorder_FUN_00492c20 at 00492c61
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_drawHLine_FUN_005182e0

@@ -7,10 +7,10 @@
 ; EInputCodeType   Stack[0x4]:4   key_code
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004b51e0 at 004b57b7
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0 at 004b57b7
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004b50f0 at 004b510a
-;   core_inv.cpp_FUN_004da880 at 004daac9
-;   core_menu.cpp_FUN_004eae80 at 004ebd4c
+;   core_inv.cpp_CInventory_addItem_FUN_004da880 at 004daac9
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eae80 at 004ebd4c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005c797c
@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
-;   wincore_winrun.cpp_FUN_00581360
+;   wincore_winrun.cpp_getKeyName_FUN_00581360
 ;
 ; *****************************************************************************
 
@@ -46,7 +46,7 @@ section .text
     MOV EDX,dword ptr [0x005fe9dc]      ; 004eaa67 | g_CGamePtr
     MOV EDX,dword ptr [EDX + 0xd4]      ; 004eaa6d | g_CGameInstance.game_control
     XOR ESI,ESI                         ; 004eaa73
-    MOV dword ptr [0x01d737d8],EDX      ; 004eaa75 | DAT_01d737d8
+    MOV dword ptr [0x01d737d8],EDX      ; 004eaa75 | g_INT_01d737d8
     CMP EBX,0x257                       ; 004eaa7b
     JZ 0x004eac8a                       ; 004eaa81
         ;   XREF to: 004eac8a (CONDITIONAL_JUMP)  ; LAB_004eac8a
@@ -225,18 +225,18 @@ section .text
         ;   Label: LAB_004eac3c
     JZ 0x004eac9e                       ; 004eac3e
         ;   XREF to: 004eac9e (CONDITIONAL_JUMP)  ; LAB_004eac9e
-    MOV EDX,dword ptr [0x01d76220]      ; 004eac40 | DAT_01d76220
+    MOV EDX,dword ptr [0x01d76220]      ; 004eac40 | g_StringBufferIndex
         ;   Label: LAB_004eac40
     INC EDX                             ; 004eac46
     MOV ECX,0xa                         ; 004eac47
     MOV EAX,EDX                         ; 004eac4c
     SAR EDX,0x1f                        ; 004eac4e
     IDIV ECX                            ; 004eac51
-    MOV EBX,dword ptr [0x01d76220]      ; 004eac53 | DAT_01d76220
+    MOV EBX,dword ptr [0x01d76220]      ; 004eac53 | g_StringBufferIndex
     SHL EBX,0x8                         ; 004eac59
     ADD EBX,0x1d76228                   ; 004eac5c
     MOV EDI,EBX                         ; 004eac62
-    MOV dword ptr [0x01d76220],EDX      ; 004eac64 | DAT_01d76220
+    MOV dword ptr [0x01d76220],EDX      ; 004eac64 | g_StringBufferIndex
     PUSH EDI                            ; 004eac6a
     MOV AL,byte ptr [ESI]               ; 004eac6b
         ;   Label: LAB_004eac6b
@@ -268,8 +268,8 @@ section .text
         ;   XREF to: 004eaa87 (UNCONDITIONAL_JUMP)  ; LAB_004eaa87
     PUSH EBX                            ; 004eac9e
         ;   Label: LAB_004eac9e
-    CALL wincore_winrun.cpp_FUN_00581360 ; 004eac9f
-        ;   XREF to: 00581360 (UNCONDITIONAL_CALL)  ; char * wincore_winrun.cpp_FUN_00581360(EInputCodeType keycode)
+    CALL wincore_winrun.cpp_getKeyName_FUN_00581360 ; 004eac9f
+        ;   XREF to: 00581360 (UNCONDITIONAL_CALL)  ; char * wincore_winrun.cpp_getKeyName_FUN_00581360(EInputCodeType keycode)
     MOV ESI,EAX                         ; 004eaca4
     ADD ESP,0x4                         ; 004eaca6
     JMP 0x004eac40                      ; 004eaca9

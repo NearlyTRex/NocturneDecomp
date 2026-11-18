@@ -9,7 +9,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
 ;   crt_math.c_round_FUN_005a3120
 ;
@@ -39,8 +39,8 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 0040df53
     PUSH EAX                            ; 0040df57
     MOVSD.REP ES:EDI,ESI                ; 0040df58
-    CALL core_box.cpp_FUN_0041daf0      ; 0040df5a
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 0040df5a
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0040df5f
     MOV ESI,EAX                         ; 0040df62
     TEST EAX,EAX                        ; 0040df64
@@ -59,7 +59,7 @@ section .text
     FLD float ptr [EBX + 0x31c]         ; 0040df7a
         ;   Label: LAB_0040df7a
     CALL crt_math.c_round_FUN_005a3120  ; 0040df80
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x30]        ; 0040df85
     MOV EAX,dword ptr [ESP + 0x30]      ; 0040df89
     MOV dword ptr [ESP + 0x30],EAX      ; 0040df8d

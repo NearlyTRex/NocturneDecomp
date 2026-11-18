@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 21,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 66
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
   },
   "cross_references": [
     {
@@ -38,128 +36,128 @@
   "globals": [
     {
       "addr": "01bcddc8",
-      "name": "DAT_01bcddc8",
-      "type": "undefined4",
+      "name": "g_INT_01bcddc8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddcc",
-      "name": "DAT_01bcddcc",
-      "type": "undefined4",
+      "name": "g_INT_01bcddcc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddd0",
-      "name": "DAT_01bcddd0",
-      "type": "undefined4",
+      "name": "g_INT_01bcddd0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddd4",
-      "name": "DAT_01bcddd4",
-      "type": "undefined4",
+      "name": "g_INT_01bcddd4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddd8",
-      "name": "DAT_01bcddd8",
-      "type": "undefined4",
+      "name": "g_INT_01bcddd8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcdddc",
-      "name": "DAT_01bcdddc",
-      "type": "undefined4",
+      "name": "g_SelectionColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcdde0",
-      "name": "DAT_01bcdde0",
-      "type": "undefined4",
+      "name": "g_TextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcdde4",
-      "name": "DAT_01bcdde4",
-      "type": "undefined4",
+      "name": "g_CursorColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcdde8",
-      "name": "DAT_01bcdde8",
-      "type": "undefined4",
+      "name": "g_StatusTextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddec",
-      "name": "DAT_01bcddec",
-      "type": "undefined4",
+      "name": "g_WindowStatusTextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddf0",
-      "name": "DAT_01bcddf0",
-      "type": "undefined4",
+      "name": "g_DialogTextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddf4",
-      "name": "DAT_01bcddf4",
-      "type": "undefined4",
+      "name": "g_ActiveItemTextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddf8",
-      "name": "DAT_01bcddf8",
-      "type": "undefined4",
+      "name": "g_ProgressBarBackgroundColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcddfc",
-      "name": "DAT_01bcddfc",
-      "type": "undefined4",
+      "name": "g_ProgressBarFillColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcde00",
-      "name": "DAT_01bcde00",
-      "type": "undefined4",
+      "name": "g_ProgressBarBorderColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcde04",
-      "name": "DAT_01bcde04",
-      "type": "undefined4",
+      "name": "g_AxisLabelTextColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcde08",
-      "name": "DAT_01bcde08",
-      "type": "undefined4",
+      "name": "g_INT_01bcde08",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcde0c",
-      "name": "DAT_01bcde0c",
-      "type": "undefined4",
+      "name": "g_INT_01bcde0c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcde10",
-      "name": "DAT_01bcde10",
-      "type": "undefined4",
+      "name": "g_INT_01bcde10",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcde14",
-      "name": "DAT_01bcde14",
-      "type": "undefined4",
+      "name": "g_INT_01bcde14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcde18",
-      "name": "DAT_01bcde18",
-      "type": "undefined4",
+      "name": "g_INT_01bcde18",
+      "type": "int",
       "value": null
     }
   ],
@@ -244,14 +242,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

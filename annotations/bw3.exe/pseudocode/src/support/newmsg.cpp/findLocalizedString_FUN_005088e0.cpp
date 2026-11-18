@@ -17,10 +17,10 @@ char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_005088e0(char *key,int
     return key;
   }
   iVar1 = (upper_bound + lower_bound) / 2;
-  iVar2 = _strcmp(key,*(char **)(iVar1 * 4 + 0x1dd489c));
+  iVar2 = _strcmp(key,g_CHAR_PTR_ARRAY_01dd489c[iVar1]);
   if (-1 < iVar2) {
     if (iVar2 < 1) {
-      return *(char **)(iVar1 * 4 + 0x1dd506c);
+      return g_CHAR_PTR_ARRAY_01dd506c[iVar1];
     }
     pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_005088e0(key,iVar1 + 1,upper_bound);
     return pcVar3;

@@ -12,10 +12,10 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005938e6 = 0.00200000000000000
-;   undefined4 DAT_02dc84a8
-;   undefined4 DAT_02dc84ac
-;   undefined4 DAT_02dc84b0
-;   undefined4 DAT_02dc84b4
+;   double g_AudioLatencySeconds
+;   undefined4 g_AudioLatencySeconds+4
+;   int g_AudioThreadRunning
+;   int g_AudioThreadShutdownFlag
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_killSoundThread_FUN_00528780
@@ -38,10 +38,10 @@ section .text
     JZ 0x00528734                       ; 005286de
         ;   XREF to: 00528734 (CONDITIONAL_JUMP)  ; LAB_00528734
     MOV EAX,dword ptr [EBP + 0xc]       ; 005286e0
-    MOV [0x02dc84a8],EAX                ; 005286e3 | DAT_02dc84a8
+    MOV [0x02dc84a8],EAX                ; 005286e3 | g_AudioLatencySeconds
     MOV EAX,dword ptr [EBP + 0x10]      ; 005286e8
     FLD double ptr [EBP + 0xc]          ; 005286eb
-    MOV [0x02dc84ac],EAX                ; 005286ee | DAT_02dc84ac
+    MOV [0x02dc84ac],EAX                ; 005286ee | g_AudioLatencySeconds+4
     FCOMP double ptr [0x005938e6]       ; 005286f3 | DOUBLE_005938e6
     FNSTSW AX                           ; 005286f9
     SAHF                                ; 005286fb
@@ -49,14 +49,14 @@ section .text
         ;   XREF to: 00528714 (CONDITIONAL_JUMP)  ; LAB_00528714
     MOV EDX,0xd2f1a9fc                  ; 005286fe
     MOV ECX,0x3f60624d                  ; 00528703
-    MOV dword ptr [0x02dc84a8],EDX      ; 00528708 | DAT_02dc84a8
-    MOV dword ptr [0x02dc84ac],ECX      ; 0052870e | DAT_02dc84ac
+    MOV dword ptr [0x02dc84a8],EDX      ; 00528708 | g_AudioLatencySeconds
+    MOV dword ptr [0x02dc84ac],ECX      ; 0052870e | g_AudioLatencySeconds+4
     XOR EBX,EBX                         ; 00528714
         ;   Label: LAB_00528714
     PUSH EBX                            ; 00528716
     PUSH 0x528670                       ; 00528717
-    MOV dword ptr [0x02dc84b0],EBX      ; 0052871c | DAT_02dc84b0
-    MOV dword ptr [0x02dc84b4],EBX      ; 00528722 | DAT_02dc84b4
+    MOV dword ptr [0x02dc84b0],EBX      ; 0052871c | g_AudioThreadRunning
+    MOV dword ptr [0x02dc84b4],EBX      ; 00528722 | g_AudioThreadShutdownFlag
     CALL wincore_winrun.cpp_createThread_FUN_00559c50 ; 00528728
         ;   XREF to: 00559c50 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createThread_FUN_00559c50(LPTHREAD_START_ROUTINE thread_func, LPVOID thread_param)
     ADD ESP,0x8                         ; 0052872d
@@ -77,7 +77,7 @@ section .text
     TEST EAX,EAX                        ; 00528744
     JZ 0x00528734                       ; 00528746
         ;   XREF to: 00528734 (CONDITIONAL_JUMP)  ; LAB_00528734
-    CMP dword ptr [0x02dc84b0],0x0      ; 00528748 | DAT_02dc84b0
+    CMP dword ptr [0x02dc84b0],0x0      ; 00528748 | g_AudioThreadRunning
     JNZ 0x00528772                      ; 0052874f
         ;   XREF to: 00528772 (CONDITIONAL_JUMP)  ; LAB_00528772
     PUSH 0x3f847ae1                     ; 00528751
@@ -90,10 +90,10 @@ section .text
     CMP EBX,0x64                        ; 00528764
     JGE 0x00528772                      ; 00528767
         ;   XREF to: 00528772 (CONDITIONAL_JUMP)  ; LAB_00528772
-    CMP dword ptr [0x02dc84b0],0x0      ; 00528769 | DAT_02dc84b0
+    CMP dword ptr [0x02dc84b0],0x0      ; 00528769 | g_AudioThreadRunning
     JZ 0x00528751                       ; 00528770
         ;   XREF to: 00528751 (CONDITIONAL_JUMP)  ; LAB_00528751
-    MOV EAX,[0x02dc84b0]                ; 00528772 | DAT_02dc84b0
+    MOV EAX,[0x02dc84b0]                ; 00528772 | g_AudioThreadRunning
         ;   Label: LAB_00528772
     MOV ESP,EBP                         ; 00528777
     POP EBP                             ; 00528779

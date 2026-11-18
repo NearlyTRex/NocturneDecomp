@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0057eaaa = 0.2000000
 ;   double DOUBLE_0057eaae = 0.0000305175853213768
-;   undefined4 DAT_0059ca4c
+;   float g_WorldToScreenScale2 = 256
 ;   int g_ActiveRenderColor
 ;
 ; Called Functions:
@@ -85,13 +85,13 @@ section .text
     ADD ESI,EAX                         ; 00473247
     MOV EAX,EBP                         ; 00473249
     FLD float ptr [EAX]                 ; 0047324b
-    FMUL float ptr [0x0059ca4c]         ; 0047324d | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 0047324d | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 00473253
     FLD float ptr [EAX + 0x4]           ; 00473255
-    FMUL float ptr [0x0059ca4c]         ; 00473258 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00473258 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 0047325e
     FLD float ptr [EAX + 0x8]           ; 00473261
-    FMUL float ptr [0x0059ca4c]         ; 00473264 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00473264 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 0047326a
     LEA EAX,[ESP + 0x84]                ; 0047326d
     PUSH EAX                            ; 00473274
@@ -131,13 +131,13 @@ section .text
     FSTP float ptr [ESP + 0xd0]         ; 0047331c
     FSTP float ptr [ESP + 0xd4]         ; 00473323
     FLD float ptr [EAX]                 ; 0047332a
-    FMUL float ptr [0x0059ca4c]         ; 0047332c | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 0047332c | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 00473332
     FLD float ptr [EAX + 0x4]           ; 00473334
-    FMUL float ptr [0x0059ca4c]         ; 00473337 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00473337 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 0047333d
     FLD float ptr [EAX + 0x8]           ; 00473340
-    FMUL float ptr [0x0059ca4c]         ; 00473343 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00473343 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 00473349
     LEA EAX,[ESP + 0x84]                ; 0047334c
     PUSH EAX                            ; 00473353
@@ -166,13 +166,13 @@ section .text
     ADD ESI,EAX                         ; 0047339c
     MOV EAX,EBP                         ; 0047339e
     FLD float ptr [EAX]                 ; 004733a0
-    FMUL float ptr [0x0059ca4c]         ; 004733a2 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004733a2 | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004733a8
     FLD float ptr [EAX + 0x4]           ; 004733aa
-    FMUL float ptr [0x0059ca4c]         ; 004733ad | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004733ad | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004733b3
     FLD float ptr [EAX + 0x8]           ; 004733b6
-    FMUL float ptr [0x0059ca4c]         ; 004733b9 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004733b9 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004733bf
     LEA EAX,[ESP + 0x60]                ; 004733c2
     PUSH EAX                            ; 004733c6
@@ -212,13 +212,13 @@ section .text
     LEA EBX,[ESP + 0x60]                ; 00473462
     LEA EAX,[ESP + 0xe4]                ; 00473466
     FLD float ptr [EAX]                 ; 0047346d
-    FMUL float ptr [0x0059ca4c]         ; 0047346f | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 0047346f | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 00473475
     FLD float ptr [EAX + 0x4]           ; 00473477
-    FMUL float ptr [0x0059ca4c]         ; 0047347a | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 0047347a | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 00473480
     FLD float ptr [EAX + 0x8]           ; 00473483
-    FMUL float ptr [0x0059ca4c]         ; 00473486 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00473486 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 0047348c
     LEA EAX,[ESP + 0x60]                ; 0047348f
     PUSH EAX                            ; 00473493
@@ -247,13 +247,13 @@ section .text
     ADD ESI,EAX                         ; 004734dd
     MOV EAX,EBP                         ; 004734df
     FLD float ptr [EAX]                 ; 004734e1
-    FMUL float ptr [0x0059ca4c]         ; 004734e3 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004734e3 | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004734e9
     FLD float ptr [EAX + 0x4]           ; 004734eb
-    FMUL float ptr [0x0059ca4c]         ; 004734ee | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004734ee | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004734f4
     FLD float ptr [EAX + 0x8]           ; 004734f7
-    FMUL float ptr [0x0059ca4c]         ; 004734fa | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004734fa | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 00473500
     LEA EAX,[ESP + 0xc0]                ; 00473503
     PUSH EAX                            ; 0047350a
@@ -293,13 +293,13 @@ section .text
     FSTP float ptr [ESP + 0xb8]         ; 00473593
     FSTP float ptr [ESP + 0xbc]         ; 0047359a
     FLD float ptr [EAX]                 ; 004735a1
-    FMUL float ptr [0x0059ca4c]         ; 004735a3 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004735a3 | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004735a9
     FLD float ptr [EAX + 0x4]           ; 004735ab
-    FMUL float ptr [0x0059ca4c]         ; 004735ae | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004735ae | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004735b4
     FLD float ptr [EAX + 0x8]           ; 004735b7
-    FMUL float ptr [0x0059ca4c]         ; 004735ba | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004735ba | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004735c0
     LEA EAX,[ESP + 0xc0]                ; 004735c3
     PUSH EAX                            ; 004735ca

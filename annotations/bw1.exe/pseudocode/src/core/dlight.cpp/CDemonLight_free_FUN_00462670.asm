@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_004627f0
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     JZ 0x004626a6                       ; 00462691
         ;   XREF to: 004626a6 (CONDITIONAL_JUMP)  ; LAB_004626a6
     PUSH ESI                            ; 00462693
-    CALL crt_unknown.c_FUN_005c09f0     ; 00462694
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 00462694
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 00462699
     MOV dword ptr [EBX + 0x2fa0],0x0    ; 0046269c
     MOV EBP,dword ptr [EBX + 0x1c6c]    ; 004626a6
@@ -52,8 +52,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x2f98]    ; 004626b4
         ;   Label: LAB_004626b4
     PUSH ECX                            ; 004626ba
-    CALL crt_unknown.c_FUN_005c09f0     ; 004626bb
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 004626bb
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     MOV dword ptr [EBX + 0x2f94],0x0    ; 004626c0
     ADD ESP,0x4                         ; 004626ca
     MOV dword ptr [EBX + 0x2f98],0x0    ; 004626cd
@@ -61,8 +61,8 @@ section .text
         ;   XREF to: 00462680 (UNCONDITIONAL_JUMP)  ; LAB_00462680
     PUSH EBP                            ; 004626d9
         ;   Label: LAB_004626d9
-    CALL crt_unknown.c_FUN_005c09f0     ; 004626da
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 004626da
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 004626df
     MOV dword ptr [EBX + 0x1c6c],0x0    ; 004626e2
     POP EBP                             ; 004626ec

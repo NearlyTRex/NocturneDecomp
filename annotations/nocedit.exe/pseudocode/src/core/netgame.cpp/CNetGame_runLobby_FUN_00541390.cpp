@@ -58,7 +58,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
       engine_special_cpp_clearScreen_FUN_005b3e70();
       _sprintf(local_130,"Mission: %s",mission_filename);
       engine_2d_c_drawText_FUN_00401fd0(local_130,0,0xb);
-      _sprintf(local_130,"MyGameSettigsId: %d",INT_02f7c8c4);
+      _sprintf(local_130,"MyGameSettigsId: %d",g_NetNextPlayerId);
       engine_2d_c_drawText_FUN_00401fd0(local_130,400,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Player",0,0x21);
       engine_2d_c_drawText_FUN_00401fd0("IP",100,0x21);
@@ -166,7 +166,7 @@ LAB_005415cb:
       }
       this_ptr->has_pending_sim_frame = 0;
       if (this_ptr->connection_type == CONNECTION_HOST) {
-        this_ptr->players[this_ptr->local_player_index].player_id = INT_02f7c8c4;
+        this_ptr->players[this_ptr->local_player_index].player_id = g_NetNextPlayerId;
         iVar6 = 0;
         bVar2 = true;
         pCVar5 = this_ptr;
@@ -175,7 +175,7 @@ LAB_005415cb:
             if (pCVar5->players[0].ready_flag == 0) {
               bVar2 = false;
             }
-            if (INT_02f7c8c4 != pCVar5->players[0].player_id) {
+            if (g_NetNextPlayerId != pCVar5->players[0].player_id) {
               local_138 = (float)(int)(g_CurrentGameTime - pCVar5->players[0].last_update_time) *
                           (float)1.52587890625e-05;
               if (local_138 < 0.0) {
@@ -240,14 +240,14 @@ LAB_005415cb:
               iVar6 = 0x20000;
             }
             g_CurrentGameTime = g_CurrentGameTime + iVar6;
-            UINT_02f7c8c8 = g_CurrentGameTime - 0x1e0000;
+            g_NetLastSimFrameAckTime = g_CurrentGameTime - 0x1e0000;
             return 1;
           }
         }
         this_ptr->network_mode = NET_MODE_LOBBY;
         goto LAB_005416d1;
       }
-      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (INT_00680a04 != 0)) {
+      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (g_NetLobbyStateChanged != 0)) {
         local_134 = (float)(int)(g_CurrentGameTime -
                                 this_ptr->players[this_ptr->local_player_index].state_change_time) *
                     (float)1.52587890625e-05;

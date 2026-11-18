@@ -6,24 +6,22 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_00595910(CVector3f *dimensions)
 
 {
-  if ((((((float)_DAT_005eee2a <= dimensions->x) || ((float)_DAT_005eee2a <= dimensions->y)) ||
-       ((float)_DAT_005eee2a <= dimensions->z)) ||
-      ((dimensions->x <= (float)_DAT_005eee32 || (dimensions->y <= (float)_DAT_005eee32)))) ||
-     (dimensions->z <= (float)_DAT_005eee32)) {
+  if ((((((float)2 <= dimensions->x) || ((float)2 <= dimensions->y))
+       || ((float)2 <= dimensions->z)) ||
+      ((dimensions->x <= (float)0.69999999999999996 || (dimensions->y <= (float)0.69999999999999996))))
+     || (dimensions->z <= (float)0.69999999999999996)) {
     if (((dimensions->x < 1.0) && (dimensions->y < 1.0)) &&
-       (((float)_DAT_005eee2a < dimensions->z &&
-        (((dimensions->z < (float)_DAT_005eee3a && (dimensions->x <= dimensions->z)) &&
+       (((float)2 < dimensions->z &&
+        (((dimensions->z < (float)6 && (dimensions->x <= dimensions->z)) &&
          (dimensions->y <= dimensions->z)))))) {
       return 1;
     }
     if ((((dimensions->x < 1.0) && (dimensions->y < 1.0)) &&
         ((1.0 < dimensions->z &&
-         ((dimensions->z < (float)_DAT_005eee2a && (dimensions->x < dimensions->z)))))) &&
+         ((dimensions->z < (float)2 && (dimensions->x < dimensions->z)))))) &&
        (dimensions->y < dimensions->z)) {
       return 3;
     }

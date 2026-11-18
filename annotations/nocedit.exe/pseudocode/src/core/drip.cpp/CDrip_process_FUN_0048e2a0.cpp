@@ -81,7 +81,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
           aCStack_3c[0].x = (float)(fVar6 * (float10)20.0f * (float10)(float)fVar7);
           aCStack_3c[0].z = (float)(fVar8 * (float10)20.0f * (float10)(float)fVar7);
           model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                (&CKeyFramedModelInstance_02c9b170);
+                                (&g_StalactiteRockModelInstance);
           iVar3 = iVar3 + 1;
           core_fire_cpp_CFireEffect_createRock_FUN_004c7e60
                     (g_CFireEffectPtr,&position_00->position,aCStack_3c,model_ptr);

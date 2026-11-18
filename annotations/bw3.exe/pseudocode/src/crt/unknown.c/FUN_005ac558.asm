@@ -17,15 +17,15 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_GetTimeZoneInformation_005b35d4 = 001b3fa8
-;   undefined4 DAT_005da8bc
-;   undefined4 DAT_00607c30
+;   TerminatedCString s_TZ_005da8bc
+;   TerminatedCString s_EST_00607c30
 ;   undefined4 DAT_00607cb0
-;   undefined1 DAT_00607cb1
+;   TerminatedCString s_EDT_00607cb1
 ;   undefined4 DAT_00607d31
-;   undefined4 DAT_00607d3c
-;   undefined4 DAT_00607d40
-;   undefined4 DAT_00607d44
-;   undefined1 DAT_00607d48
+;   int g_TimezoneOffset = 0x4650
+;   int g_DaylightSavingActive = 0x1
+;   int g_DaylightSavingOffset = 0xe10
+;   byte g_TimezoneInitFlags = 0x1
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_005a5ec0
@@ -41,19 +41,19 @@ section .text
         ;   Label: LAB_005ac45c
     PUSH ESI                            ; 005ac45d
     SUB ESP,0xac                        ; 005ac45e
-    MOV AH,byte ptr [0x00607d48]        ; 005ac464 | DAT_00607d48
+    MOV AH,byte ptr [0x00607d48]        ; 005ac464 | g_TimezoneInitFlags
     TEST AH,0x1                         ; 005ac46a
     JZ 0x005ac478                       ; 005ac46d
         ;   XREF to: 005ac478 (CONDITIONAL_JUMP)  ; LAB_005ac478
     TEST AH,0x2                         ; 005ac46f
     JNZ 0x005ac54d                      ; 005ac472
         ;   XREF to: 005ac54d (CONDITIONAL_JUMP)  ; LAB_005ac54d
-    MOV DH,byte ptr [0x00607d48]        ; 005ac478 | DAT_00607d48
+    MOV DH,byte ptr [0x00607d48]        ; 005ac478 | g_TimezoneInitFlags
         ;   Label: LAB_005ac478
     MOV EAX,ESP                         ; 005ac47e
     OR DH,0x2                           ; 005ac480
     PUSH EAX                            ; 005ac483
-    MOV byte ptr [0x00607d48],DH        ; 005ac484 | DAT_00607d48
+    MOV byte ptr [0x00607d48],DH        ; 005ac484 | g_TimezoneInitFlags
     CALL dword ptr CS:[0x5b35d4]        ; 005ac48a | PTR_GetTimeZoneInformation_005b35d4
     CMP EAX,0x1                         ; 005ac491
     JC 0x005ac54d                       ; 005ac494
@@ -63,21 +63,21 @@ section .text
     CMP EAX,0x2                         ; 005ac49c
     JNZ 0x005ac54d                      ; 005ac49f
         ;   XREF to: 005ac54d (CONDITIONAL_JUMP)  ; LAB_005ac54d
-    MOV dword ptr [0x00607d40],0x1      ; 005ac4a5 | DAT_00607d40
+    MOV dword ptr [0x00607d40],0x1      ; 005ac4a5 | g_DaylightSavingActive
     MOV EDX,dword ptr [ESP + 0xa8]      ; 005ac4af
     MOV EAX,EDX                         ; 005ac4b6
     SHL EAX,0x4                         ; 005ac4b8
     SUB EAX,EDX                         ; 005ac4bb
     SHL EAX,0x2                         ; 005ac4bd
     MOV EBX,EAX                         ; 005ac4c0
-    MOV [0x00607d44],EAX                ; 005ac4c2 | DAT_00607d44
+    MOV [0x00607d44],EAX                ; 005ac4c2 | g_DaylightSavingOffset
     NEG EBX                             ; 005ac4c7
-    MOV dword ptr [0x00607d44],EBX      ; 005ac4c9 | DAT_00607d44
+    MOV dword ptr [0x00607d44],EBX      ; 005ac4c9 | g_DaylightSavingOffset
     JMP 0x005ac4d9                      ; 005ac4cf
         ;   XREF to: 005ac4d9 (UNCONDITIONAL_JUMP)  ; LAB_005ac4d9
     XOR ECX,ECX                         ; 005ac4d1
         ;   Label: LAB_005ac4d1
-    MOV dword ptr [0x00607d40],ECX      ; 005ac4d3 | DAT_00607d40
+    MOV dword ptr [0x00607d40],ECX      ; 005ac4d3 | g_DaylightSavingActive
     MOV EDX,dword ptr [ESP + 0x54]      ; 005ac4d9
         ;   Label: LAB_005ac4d9
     MOV ESI,dword ptr [ESP]             ; 005ac4dd
@@ -87,10 +87,10 @@ section .text
     SUB EAX,EDX                         ; 005ac4e7
     SHL EAX,0x2                         ; 005ac4e9
     PUSH 0x80                           ; 005ac4ec
-    MOV [0x00607d3c],EAX                ; 005ac4f1 | DAT_00607d3c
+    MOV [0x00607d3c],EAX                ; 005ac4f1 | g_TimezoneOffset
     LEA EAX,[ESP + 0x8]                 ; 005ac4f6
     PUSH EAX                            ; 005ac4fa
-    PUSH 0x607c30                       ; 005ac4fb | DAT_00607c30
+    PUSH 0x607c30                       ; 005ac4fb | = "EST"
     CALL crt_unknown.c_FUN_005af1d0     ; 005ac500
         ;   XREF to: 005af1d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af1d0()
     ADD ESP,0xc                         ; 005ac505
@@ -98,7 +98,7 @@ section .text
     JNZ 0x005ac517                      ; 005ac50b
         ;   XREF to: 005ac517 (CONDITIONAL_JUMP)  ; LAB_005ac517
     XOR BH,BH                           ; 005ac50d
-    MOV byte ptr [0x00607c30],BH        ; 005ac50f | DAT_00607c30
+    MOV byte ptr [0x00607c30],BH        ; 005ac50f | = "EST"
     JMP 0x005ac51f                      ; 005ac515
         ;   XREF to: 005ac51f (UNCONDITIONAL_JUMP)  ; LAB_005ac51f
     XOR BL,BL                           ; 005ac517
@@ -108,7 +108,7 @@ section .text
         ;   Label: LAB_005ac51f
     LEA EAX,[ESP + 0x5c]                ; 005ac524
     PUSH EAX                            ; 005ac528
-    PUSH 0x607cb1                       ; 005ac529 | DAT_00607cb1
+    PUSH 0x607cb1                       ; 005ac529 | = "EDT"
     CALL crt_unknown.c_FUN_005af1d0     ; 005ac52e
         ;   XREF to: 005af1d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af1d0()
     ADD ESP,0xc                         ; 005ac533
@@ -116,7 +116,7 @@ section .text
     JNZ 0x005ac545                      ; 005ac539
         ;   XREF to: 005ac545 (CONDITIONAL_JUMP)  ; LAB_005ac545
     XOR CH,CH                           ; 005ac53b
-    MOV byte ptr [0x00607cb1],CH        ; 005ac53d | DAT_00607cb1
+    MOV byte ptr [0x00607cb1],CH        ; 005ac53d | = "EDT"
     JMP 0x005ac54d                      ; 005ac543
         ;   XREF to: 005ac54d (UNCONDITIONAL_JUMP)  ; LAB_005ac54d
     XOR CL,CL                           ; 005ac545
@@ -127,7 +127,7 @@ section .text
     POP ESI                             ; 005ac553
     POP EBX                             ; 005ac554
     RET                                 ; 005ac555
-    PUSH 0x5da8bc                       ; 005ac558 | DAT_005da8bc
+    PUSH 0x5da8bc                       ; 005ac558 | = "TZ"
         ;   Label: crt_unknown.c_FUN_005ac558
     CALL crt_env.c_getenv_FUN_005a5ec0  ; 005ac55d
         ;   XREF to: 005a5ec0 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_005a5ec0(char * name)

@@ -12,9 +12,9 @@
 ;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cca9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e61648
-;   undefined4 DAT_01e6164c
-;   undefined4 DAT_01e6169c
+;   int g_SoftwareEdgeCount
+;   SSoftwareEdge[16] g_SSoftwareEdge_ARRAY_01e6164c
+;   undefined4 g_SSoftwareEdge_ARRAY_01e6164c[1].base.y_min
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 0051c580
         ;   Label: engine_prim.c_findEdgeInBuffer_FUN_0051c580
     PUSH ESI                            ; 0051c581
-    MOV EBX,dword ptr [0x01e61648]      ; 0051c582 | DAT_01e61648
+    MOV EBX,dword ptr [0x01e61648]      ; 0051c582 | g_SoftwareEdgeCount
     MOV ECX,dword ptr [ESP + 0xc]       ; 0051c588
     MOV ESI,dword ptr [ESP + 0x10]      ; 0051c58c
     MOV EAX,0x1e6164c                   ; 0051c590
@@ -31,7 +31,7 @@ section .text
     TEST EBX,EBX                        ; 0051c597
     JLE 0x0051c5ab                      ; 0051c599
         ;   XREF to: 0051c5ab (CONDITIONAL_JUMP)  ; LAB_0051c5ab
-    CMP ECX,dword ptr [EAX]             ; 0051c59b | DAT_01e6164c | DAT_01e6169c
+    CMP ECX,dword ptr [EAX]             ; 0051c59b | g_SSoftwareEdge_ARRAY_01e6164c | g_SSoftwareEdge_ARRAY_01e6164c[1].base.y_min
         ;   Label: LAB_0051c59b
     JNZ 0x0051c5a3                      ; 0051c59d
         ;   XREF to: 0051c5a3 (CONDITIONAL_JUMP)  ; LAB_0051c5a3
@@ -40,13 +40,13 @@ section .text
         ;   XREF to: 0051c5ad (CONDITIONAL_JUMP)  ; LAB_0051c5ad
     INC EDX                             ; 0051c5a3
         ;   Label: LAB_0051c5a3
-    ADD EAX,0x50                        ; 0051c5a4 | DAT_01e6169c
+    ADD EAX,0x50                        ; 0051c5a4 | g_SSoftwareEdge_ARRAY_01e6164c[1].base.y_min
     CMP EDX,EBX                         ; 0051c5a7
     JL 0x0051c59b                       ; 0051c5a9
         ;   XREF to: 0051c59b (CONDITIONAL_JUMP)  ; LAB_0051c59b
     XOR EAX,EAX                         ; 0051c5ab
         ;   Label: LAB_0051c5ab
-    MOV dword ptr [0x01e61648],EBX      ; 0051c5ad | DAT_01e61648
+    MOV dword ptr [0x01e61648],EBX      ; 0051c5ad | g_SoftwareEdgeCount
         ;   Label: LAB_0051c5ad
     POP ESI                             ; 0051c5b3
     POP EBX                             ; 0051c5b4

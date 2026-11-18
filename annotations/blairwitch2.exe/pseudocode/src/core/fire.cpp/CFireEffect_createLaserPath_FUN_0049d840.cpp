@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue)
 
 {
@@ -53,8 +51,8 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840(CFireEffect 
   
   bVar6 = 0;
   local_b4 = total_time;
-  local_b0 = total_time * _DAT_005d57ce;
-  if (total_time * _DAT_005d57ce < (float)_DAT_005d57d2) {
+  local_b0 = total_time * 0.05f;
+  if (total_time * 0.05f < (float)0.050000000000000003) {
     local_b0 = 0.05;
   }
   local_88.x = start_position->x;
@@ -72,13 +70,13 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840(CFireEffect 
       local_b8 = local_b0;
     }
     fVar1 = local_74 * local_b8;
-    local_14 = local_b8 * (float)_DAT_005d57da * local_b8;
+    local_14 = local_b8 * (float)0.5 * local_b8;
     local_28 = local_14 * 0.0;
     local_40 = local_7c * local_b8;
     fVar2 = local_b4 - local_b8;
     local_3c = local_78 * local_b8;
     local_20 = local_28;
-    local_24 = local_14 * _DAT_005d57e2;
+    local_24 = local_14 * -32.0f;
     local_58 = local_28;
     local_6c[(uint)bVar6 * -2 + 6] = local_6c[(uint)bVar6 * -2 + 0x12];
     local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
@@ -107,7 +105,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840(CFireEffect 
     if (fVar1 <= 0.0) break;
     core_fire_cpp_CFireEffect_createLaserSegment_FUN_0049d770
               (this_ptr,&local_88,&local_a0,beam_width,0.0,reflection_normal,red,green,blue,
-               0x3CA3D70A);
+               0.02f);
     if (&local_88 != &local_a0) {
       local_88.x = local_a0.x;
       local_88.y = local_a0.y;
@@ -115,7 +113,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840(CFireEffect 
     }
     local_34 = local_b8 * 0.0;
     local_2c = local_34;
-    local_30 = local_b8 * _DAT_005d57e2;
+    local_30 = local_b8 * -32.0f;
     local_ac = local_34;
     *(float *)((int)&stack0xffffff58 + (uint)bVar6 * -8) = local_6c[(uint)bVar6 * -2 + 0xf];
     *(float *)((int)&stack0xffffff5c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
@@ -126,6 +124,6 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0049d840(CFireEffect 
   }
   core_fire_cpp_CFireEffect_createLaserSegment_FUN_0049d770
             (this_ptr,&local_88,&local_a0,beam_width,reticle_intensity,reflection_normal,red,green,
-             blue,0x3CA3D70A);
+             blue,0.02f);
   return;
 }

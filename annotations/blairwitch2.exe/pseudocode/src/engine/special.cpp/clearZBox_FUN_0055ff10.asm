@@ -13,14 +13,14 @@
 ;   engine_special.cpp_fillDepthRegion_FUN_0055b342 at 0055b35c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_0264bc28
+;   int g_INT_01c37788
+;   void* g_PTR_0264bc28
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c37788],0x0      ; 0055ff10 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 0055ff10 | g_INT_01c37788
         ;   Label: engine_special.cpp_clearZBox_FUN_0055ff10
     JNZ 0x0055ff1c                      ; 0055ff17
         ;   XREF to: 0055ff1c (CONDITIONAL_JUMP)  ; LAB_0055ff1c
@@ -38,7 +38,7 @@ section .text
     PUSH ESI                            ; 0055ff2d
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0055ff2e
     PUSH EDI                            ; 0055ff32
-    CALL dword ptr [0x0264bc28]         ; 0055ff33 | DAT_0264bc28
+    CALL dword ptr [0x0264bc28]         ; 0055ff33 | g_PTR_0264bc28
     ADD ESP,0x10                        ; 0055ff39
     POP EBX                             ; 0055ff3c
     POP ESI                             ; 0055ff3d

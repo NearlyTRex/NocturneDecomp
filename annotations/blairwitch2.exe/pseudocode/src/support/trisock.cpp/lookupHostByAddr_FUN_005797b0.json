@@ -1,0 +1,194 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 92,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 7,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [
+    {
+      "addr": "0057a480",
+      "from_addr": "0057a564",
+      "name": "support_trisock.cpp_dnsLookupThreadProc_FUN_0057a480",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005797b0",
+    "address_range": [
+      [
+        "005797b0",
+        "00579812"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_lookupHostByAddr_FUN_005797b0",
+    "signature": "int __cdecl support_trisock_cpp_lookupHostByAddr_FUN_005797b0(uint ip_address,void *host_info_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c74b4",
+      "is_variadic": false,
+      "name": "crt_wsock32.c_gethostbyaddr"
+    },
+    {
+      "addr": "00579550",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_copyHostent_FUN_00579550"
+    },
+    {
+      "addr": "00578dd0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_extractIPOctets_FUN_00578dd0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057a564",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_dnsLookupThreadProc_FUN_0057a480",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.515151515151515,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 25,
+      "INT_ADD": 18,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 14,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 116
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0059f230",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00572220",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ip_address",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "host_info_out",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "void *in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 10,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "((uchar *)&ip_address,(uint *)&stack0xfffffff0,(uint *)&stack0xfffffff4,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 10,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "((uchar *)&ip_address,(uint *)&stack0xfffffff0,(uint *)&stack0xfffffff4,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 11,
+      "match": "&stack0xfffffff8",
+      "severity": "moderate",
+      "text": "(uint *)&stack0xfffffff8,(uint *)&stack0xfffffffc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 11,
+      "match": "&stack0xfffffffc",
+      "severity": "moderate",
+      "text": "(uint *)&stack0xfffffff8,(uint *)&stack0xfffffffc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "host = gethostbyaddr(&stack0x00000000,4,2);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "iVar1 = support_trisock_cpp_copyHostent_FUN_00579550(host,in_stack_0000001c);",
+      "type": "stack_param"
+    }
+  ]
+}

@@ -22,12 +22,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f32d4
 ;   TerminatedCString s_SfxSample_freeMemory_fre_005f32e9
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c0344
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_0052ae80
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_00570130
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005700e0
@@ -48,10 +48,10 @@ section .text
     MOV ECX,0x5f32d4                    ; 0057002f | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x858                       ; 00570034
     PUSH 0x5f32e9                       ; 00570039 | = "SfxSample::freeMemory - freeing sampl..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0057003e | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00570044 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0057004a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0057003e | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00570044 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057004a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0057004f
     POP ESI                             ; 00570052
     PUSH EBX                            ; 00570053
@@ -93,8 +93,8 @@ section .text
         ;   XREF to: 0052ae80 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_0052ae80(CMP3Decoder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005700d0
     PUSH EAX                            ; 005700d3
-    CALL crt_unknown.c_FUN_005c0344     ; 005700d4
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 005700d4
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 005700d9
     JMP 0x00570078                      ; 005700dc
         ;   XREF to: 00570078 (UNCONDITIONAL_JUMP)  ; LAB_00570078

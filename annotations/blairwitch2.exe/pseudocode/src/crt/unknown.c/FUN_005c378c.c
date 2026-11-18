@@ -2,27 +2,25 @@
 // Address: 005c378c
 // Address Range: [[005c378c, 005c37ea]]
 // Convention: unknown
-// Signature: undefined4 crt_unknown_c_FUN_005c378c(LPVOID param_1)
+// Signature: undefined4 crt_unknown_c_FUN_005c378c(Heap *param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-uint FUN_005c378c(LPVOID param_1)
+uint FUN_005c378c(Heap *param_1)
 
 {
-  uint uVar1;
+  Heap *pHVar1;
   BOOL BVar2;
   
-  uVar1 = *(uint *)((int)param_1 + 8);
+  pHVar1 = param_1->next_heap_block;
   BVar2 = VirtualFree(param_1,0,0x8000);
   if (BVar2 != 0) {
-    if ((param_1 == (LPVOID)DAT_0061eea4) && (DAT_0061eea4 = uVar1, uVar1 == 0)) {
-      DAT_0061eea4 = DAT_0061eea0;
-      DAT_0061eea8 = 0;
+    if ((param_1 == g_SecondaryHeap) && (g_SecondaryHeap = pHVar1, pHVar1 == (Heap *)0x0)) {
+      g_SecondaryHeap = g_MainHeap;
+      g_INT_0061eea8 = 0;
     }
-    if (param_1 == _DAT_02680150) {
-      _DAT_02680150 = (LPVOID)((uint)param_1 ^ (uint)_DAT_02680150);
+    if (param_1 == (Heap *)g_INT_02680150) {
+      g_INT_02680150 = (uint)param_1 ^ g_INT_02680150;
     }
     return 0;
   }

@@ -11,9 +11,10 @@ void __cdecl core_fire_cpp_loadGunFlameAssets_FUN_0049e170(void)
 {
   SMRGLTextureBasic *texture;
   
-  texture = (SMRGLTextureBasic *)&DAT_005fd60c;
+  texture = g_FireEffectLightningBoltTextures;
   do {
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+              (g_CDemonRenderer_PTR_005f2afc,texture);
     texture = texture + 1;
   } while (texture != (SMRGLTextureBasic *)&DAT_005fd7ec);
   return;

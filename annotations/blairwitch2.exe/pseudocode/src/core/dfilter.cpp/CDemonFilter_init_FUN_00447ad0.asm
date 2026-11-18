@@ -17,8 +17,8 @@
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4cfc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ceca8
-;   undefined4 DAT_005cecb0
+;   double g_FilterIntensityScale1 = 256
+;   double g_FilterIntensityScale2 = 0.25
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00447860
@@ -97,10 +97,10 @@ section .text
     JNZ 0x00447bce                      ; 00447b65
         ;   XREF to: 00447bce (CONDITIONAL_JUMP)  ; LAB_00447bce
     FLD float ptr [ESP]                 ; 00447b67
-    FMUL double ptr [0x005ceca8]        ; 00447b6a | DAT_005ceca8
-    FMUL double ptr [0x005cecb0]        ; 00447b70 | DAT_005cecb0
+    FMUL double ptr [0x005ceca8]        ; 00447b6a | g_FilterIntensityScale1
+    FMUL double ptr [0x005cecb0]        ; 00447b70 | g_FilterIntensityScale2
     CALL crt_math.c_round_FUN_005b7ff0  ; 00447b76
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
         ;   Label: LAB_00447b76
     FISTP dword ptr [ESP + 0xc]         ; 00447b7b
     MOV AL,byte ptr [ESP + 0xc]         ; 00447b7f

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList *this_ptr,char *condition_expression)
 
 {
@@ -21,11 +19,12 @@ int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList 
     iVar2 = _stricmp(condition_expression,"none");
     iVar1 = 0;
     if (iVar2 != 0) {
-      _DAT_01c08b5c = 0;
+      g_EventDryRun = 0;
       iVar1 = core_event_cpp_CEventList_evaluateExpression_FUN_0047dd10
                         (this_ptr,condition_expression);
       if (iVar1 < 0) {
-        engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"%s\n",&DAT_01c08b60);
+        engine_console_cpp_CConsole_printf_FUN_0043ac60
+                  (g_CConsolePtr,"%s\n",g_EventErrorMessageBuffer);
         return 0;
       }
     }

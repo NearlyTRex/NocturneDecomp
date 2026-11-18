@@ -9,59 +9,62 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_00516410(CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right,int end_row)
 
 {
-  code *pcVar1;
-  uint uVar2;
+  int iVar1;
+  ColorConversionFunc *pCVar2;
   uint uVar3;
+  void *dest_buffer;
+  uint count;
   int iVar4;
   int iVar5;
   int *piVar6;
   ushort *puVar7;
   int iVar8;
   ushort *puVar9;
-  ushort *puVar10;
-  int iVar11;
+  ushort *src_buffer;
+  int iVar10;
   int iStack_24;
   int iStack_20;
   
   if ((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
-    iVar4 = (dest_x - clip_left) * DAT_006141c0;
+    iVar4 = (dest_x - clip_left) * g_INT_006141c0;
     iVar5 = iVar4 >> 0x1f;
-    iVar4 = (int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
-    pcVar1 = (code *)cockpit_ckptutil_c_FUN_0042c410(iVar4);
+    pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
     iStack_24 = dest_y << 2;
     iStack_20 = start_row << 2;
     do {
       piVar6 = (int *)((int)this_ptr->row_offsets + iStack_20);
       puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);
       puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);
-      iVar5 = iVar4 + *(int *)(&DAT_01c2a38c + iStack_24);
+      iVar1 = *(int *)((int)g_ScreenBufferArray + iStack_24);
       do {
         if (puVar7 <= puVar9) goto LAB_005164c8;
-        uVar2 = (uint)*puVar9;
-        puVar10 = puVar9 + 2;
-        if (clip_right < (int)uVar2) goto LAB_005164c8;
-        uVar3 = (uint)puVar9[1];
-        iVar11 = uVar2 + uVar3 + -1;
-        puVar9 = (ushort *)((int)puVar10 + (uVar3 + 3 & 0xfffffffc));
-      } while (iVar11 < clip_left);
-      if ((int)uVar2 < clip_left) {
-        puVar10 = (ushort *)((int)puVar10 + (clip_left - uVar2));
-        uVar3 = uVar3 - (clip_left - uVar2);
-        uVar2 = clip_left;
+        uVar3 = (uint)*puVar9;
+        src_buffer = puVar9 + 2;
+        if (clip_right < (int)uVar3) goto LAB_005164c8;
+        count = (uint)puVar9[1];
+        iVar10 = uVar3 + count + -1;
+        puVar9 = (ushort *)((int)src_buffer + (count + 3 & 0xfffffffc));
+      } while (iVar10 < clip_left);
+      if ((int)uVar3 < clip_left) {
+        src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar3));
+        count = count - (clip_left - uVar3);
+        uVar3 = clip_left;
       }
-      while (iVar8 = (int)(DAT_006141c0 * uVar2) >> 0x1f,
-            iVar8 = ((int)((DAT_006141c0 * uVar2 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3) +
-                    iVar5, iVar11 <= clip_right) {
-        (*pcVar1)(iVar8,puVar10,uVar3);
+      while (iVar8 = (int)(g_INT_006141c0 * uVar3) >> 0x1f,
+            dest_buffer = (void *)(((int)((g_INT_006141c0 * uVar3 + iVar8 * -8) -
+                                         (uint)(iVar8 << 2 < 0)) >> 3) +
+                                  ((int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3) +
+                                  iVar1), iVar10 <= clip_right) {
+        (*pCVar2)(dest_buffer,src_buffer,count);
         if (puVar7 <= puVar9) goto LAB_005164c8;
-        uVar2 = (uint)*puVar9;
-        puVar10 = puVar9 + 2;
-        if (clip_right < (int)uVar2) goto LAB_005164c8;
-        uVar3 = (uint)puVar9[1];
-        puVar9 = (ushort *)((uVar3 + 3 & 0xfffffffc) + (int)puVar10);
-        iVar11 = uVar2 + uVar3 + -1;
+        uVar3 = (uint)*puVar9;
+        src_buffer = puVar9 + 2;
+        if (clip_right < (int)uVar3) goto LAB_005164c8;
+        count = (uint)puVar9[1];
+        puVar9 = (ushort *)((count + 3 & 0xfffffffc) + (int)src_buffer);
+        iVar10 = uVar3 + count + -1;
       }
-      (*pcVar1)(iVar8,puVar10,uVar3 - (iVar11 - clip_right));
+      (*pCVar2)(dest_buffer,src_buffer,count - (iVar10 - clip_right));
 LAB_005164c8:
       iStack_24 = iStack_24 + 4;
       iStack_20 = iStack_20 + 4;

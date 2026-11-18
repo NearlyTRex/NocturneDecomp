@@ -10,10 +10,10 @@
 ;   core_game.cpp_staticInit_FUN_004cb7d0 at 004cb7f9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cd05c0
+;   char[256] g_CurrentSaveFile
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004d0400
+;   core_game.cpp_CGame_restoreDefaultControls_FUN_004d0400
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV dword ptr [EBX + 0x284],0x0     ; 004cbce8
     PUSH EBX                            ; 004cbcf2
     MOV dword ptr [EBX + 0xd0],0x1      ; 004cbcf3
-    CALL core_game.cpp_FUN_004d0400     ; 004cbcfd
-        ;   XREF to: 004d0400 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d0400()
+    CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004d0400 ; 004cbcfd
+        ;   XREF to: 004d0400 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004d0400(CGame * this_ptr)
     MOV byte ptr [EBX + 0xec],0x0       ; 004cbd02
     MOV dword ptr [EBX + 0x1ec],0x0     ; 004cbd09
     MOV dword ptr [EBX + 0x1f0],0x0     ; 004cbd13
@@ -91,7 +91,7 @@ section .text
     MOV dword ptr [EBX + 0x3b8],0x0     ; 004cbed5
     XOR AH,AH                           ; 004cbedf
     MOV dword ptr [EBX + 0x288],0x1     ; 004cbee1
-    MOV byte ptr [0x01cd05c0],AH        ; 004cbeeb | DAT_01cd05c0
+    MOV byte ptr [0x01cd05c0],AH        ; 004cbeeb | g_CurrentSaveFile
     MOV byte ptr [EBX + 0x9fc],AH       ; 004cbef1
     MOV EAX,EBX                         ; 004cbef7
     POP EBX                             ; 004cbef9

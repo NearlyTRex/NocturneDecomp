@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 107,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 6,
+    "pseudocode_lines": 26,
+    "suspect_count": 5,
     "suspect_types": [
       "shadow_pointer_walk",
       "unaffected_reg",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 62
+    "total_lines": 61
   },
   "cross_references": [],
   "function": {
@@ -34,15 +33,15 @@
   "globals": [
     {
       "addr": "005ecd92",
-      "name": "DAT_005ecd92",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ecd92",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005ecd9a",
-      "name": "DAT_005ecd9a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005ecd9a",
+      "type": "double",
+      "value": "0.100000000000000"
     }
   ],
   "param_estimates": {
@@ -151,16 +150,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CBoundingBox3D *unaff_ESI;",
@@ -168,7 +159,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 24,
+      "line": 22,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar4 = unaff_ESI;",
@@ -176,7 +167,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 28,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -184,7 +175,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 28,
+      "line": 26,
       "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar4 = (CBoundingBox3D *)&(pCVar4->min).y;",
@@ -202,17 +193,17 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 36,
         "vtable_addr": "005fd224"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 36,
         "vtable_addr": "005fde34"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 36,
         "vtable_addr": "005fe7b4"
       }

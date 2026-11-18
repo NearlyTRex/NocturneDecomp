@@ -2,30 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 48,
+    "complexity_score": 8,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 38
   },
   "cross_references": [
     {
-      "addr": "004cc2b0",
-      "from_addr": "004cc35b",
-      "name": "core_game.cpp_CGame_renderOverlay_FUN_004cc2b0",
+      "addr": "004d9260",
+      "from_addr": "004d98e9",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d9260",
-      "from_addr": "004d98e9",
-      "name": "core_game.cpp_FUN_004d9260",
+      "addr": "004cc2b0",
+      "from_addr": "004cc35b",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004cc2b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,20 +54,20 @@
   "globals": [
     {
       "addr": "0061b498",
-      "name": "DAT_0061b498",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01e818b0",
-      "name": "DAT_01e818b0",
-      "type": "undefined4",
+      "name": "g_ScriptTimeScale",
+      "type": "float",
       "value": null
     }
   ],
@@ -124,7 +121,7 @@
       {
         "call_addr": "004d98e9",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d9260",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -234,30 +231,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "fVar1 = (float10)((DAT_0061b49c - (DAT_0061b498 * 100) / 0xb9) / 2) * (float10)_DAT_01e818b0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "fVar1 = (float10)((DAT_0061b49c - (DAT_0061b498 * 100) / 0xb9) / 2) * (float10)_DAT_01e818b0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

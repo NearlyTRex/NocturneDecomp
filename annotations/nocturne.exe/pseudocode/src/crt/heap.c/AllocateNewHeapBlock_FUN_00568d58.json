@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 54,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 39,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 126
   },
   "cross_references": [
@@ -65,15 +63,15 @@
     },
     {
       "addr": "005c1cc8",
-      "name": "DAT_005c1cc8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1cc8",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005c1fe8",
-      "name": "DAT_005c1fe8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1fe8",
+      "type": "int",
+      "value": "0x1"
     }
   ],
   "param_estimates": {
@@ -167,14 +165,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005c1cc8",
-      "severity": "mild",
-      "text": "if (DAT_005c1cc8 == -2) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

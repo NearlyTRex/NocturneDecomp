@@ -12,21 +12,21 @@ int __cdecl sound_sndmain_cpp_getRecordingDeviceCount_FUN_005588a0(void)
   int iVar1;
   UINT device_id;
   
-  if (-1 < DAT_00604254) {
-    return DAT_00604254;
+  if (-1 < g_RecordingDeviceCount) {
+    return g_RecordingDeviceCount;
   }
   sound_sndmain_cpp_lockSound_FUN_00558e90();
   sound_sndmain_cpp_unlockSound_FUN_00556fd0();
-  DAT_00604254 = 0;
+  g_RecordingDeviceCount = 0;
   device_id = 0;
   do {
     iVar1 = sound_sndwav_cpp_enumerateWavInDevice_FUN_0055e590
-                      (device_id,(SRecordingDeviceInfo *)(DAT_00604254 * 0x108 + 0x2cf3428));
+                      (device_id,g_RecordingDevices + g_RecordingDeviceCount);
     if (iVar1 == 0) {
-      return DAT_00604238;
+      return g_SoundDeviceCount;
     }
-    DAT_00604254 = DAT_00604254 + 1;
+    g_RecordingDeviceCount = g_RecordingDeviceCount + 1;
     device_id = device_id + 1;
-  } while (DAT_00604254 < 8);
-  return DAT_00604238;
+  } while (g_RecordingDeviceCount < 8);
+  return g_SoundDeviceCount;
 }

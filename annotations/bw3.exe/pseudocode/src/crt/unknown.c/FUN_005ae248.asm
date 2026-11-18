@@ -11,9 +11,9 @@
 ;   void* switchdataD_005ae22c = 005ae292
 ;   void* PTR_ExitProcess_005b3540 = 001b3cfe
 ;   void* PTR_UnhandledExceptionFilter_005b3670 = 001b4288
-;   undefined4 DAT_00607df0
-;   undefined4 DAT_00607df4
-;   undefined4 DAT_02d261c4
+;   void* g_UserExceptionFilter = 00000000
+;   void* g_ExceptionCleanup = 00000000
+;   byte g_SignalHandlingActive
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005afe70
@@ -137,7 +137,7 @@ section .text
         ;   Label: LAB_005ae34e
     JZ 0x005ae392                       ; 005ae351
         ;   XREF to: 005ae392 (CONDITIONAL_JUMP)  ; default
-    MOV byte ptr [0x02d261c4],0x1       ; 005ae353 | DAT_02d261c4
+    MOV byte ptr [0x02d261c4],0x1       ; 005ae353 | g_SignalHandlingActive
         ;   Label: LAB_005ae353
     CALL crt_unknown.c_FUN_005afe70     ; 005ae35a
         ;   XREF to: 005afe70 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005afe70()
@@ -148,7 +148,7 @@ section .text
     CMP EAX,-0x1                        ; 005ae368
     JZ 0x005ae3eb                       ; 005ae36b
         ;   XREF to: 005ae3eb (CONDITIONAL_JUMP)  ; LAB_005ae3eb
-    CMP byte ptr [0x02d261c4],0x0       ; 005ae371 | DAT_02d261c4
+    CMP byte ptr [0x02d261c4],0x0       ; 005ae371 | g_SignalHandlingActive
     JZ 0x005ae3eb                       ; 005ae378
         ;   XREF to: 005ae3eb (CONDITIONAL_JUMP)  ; LAB_005ae3eb
     MOV BX,word ptr [EDI + 0x20]        ; 005ae37e
@@ -158,7 +158,7 @@ section .text
     MOV word ptr [EDI + 0x20],BX        ; 005ae389
     JMP 0x005ae40f                      ; 005ae38d
         ;   XREF to: 005ae40f (UNCONDITIONAL_JUMP)  ; LAB_005ae40f
-    CMP dword ptr [0x00607df4],0x0      ; 005ae392 | DAT_00607df4
+    CMP dword ptr [0x00607df4],0x0      ; 005ae392 | g_ExceptionCleanup
         ;   Label: default
     JZ 0x005ae3eb                       ; 005ae399
         ;   XREF to: 005ae3eb (CONDITIONAL_JUMP)  ; LAB_005ae3eb
@@ -167,7 +167,7 @@ section .text
         ;   Label: LAB_005ae3a0
     PUSH ECX                            ; 005ae3a2
     PUSH EBX                            ; 005ae3a3
-    CALL dword ptr [0x00607df0]         ; 005ae3a4 | DAT_00607df0
+    CALL dword ptr [0x00607df0]         ; 005ae3a4 | g_UserExceptionFilter
     ADD ESP,0x8                         ; 005ae3aa
     TEST EAX,EAX                        ; 005ae3ad
     JZ 0x005ae3e5                       ; 005ae3af
@@ -183,9 +183,9 @@ section .text
         ;   XREF to: 005ae3eb (CONDITIONAL_JUMP)  ; LAB_005ae3eb
     MOV DL,0x1                          ; 005ae3c0
     PUSH EBX                            ; 005ae3c2
-    MOV byte ptr [0x02d261c4],DL        ; 005ae3c3 | DAT_02d261c4
-    CALL dword ptr [0x00607df4]         ; 005ae3c9 | DAT_00607df4
-    MOV DH,byte ptr [0x02d261c4]        ; 005ae3cf | DAT_02d261c4
+    MOV byte ptr [0x02d261c4],DL        ; 005ae3c3 | g_SignalHandlingActive
+    CALL dword ptr [0x00607df4]         ; 005ae3c9 | g_ExceptionCleanup
+    MOV DH,byte ptr [0x02d261c4]        ; 005ae3cf | g_SignalHandlingActive
     ADD ESP,0x4                         ; 005ae3d5
     TEST DH,DH                          ; 005ae3d8
     JZ 0x005ae3e5                       ; 005ae3da

@@ -7,8 +7,15 @@
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CAudioRecPuzzle.h"
 #include "types/classes/CChemPuzzle.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7E0000
@@ -23,101 +30,90 @@ extern CAudioRecPuzzle g_CAudioRecPuzzleInstance;
 // CChemPuzzle
 extern CChemPuzzle g_CChemPuzzleInstance;
 
+// CDemonActor*
+extern CDemonActor* g_CDemonActor_PTR_007e2cf0;
+
 // CDemonActorType
 extern CDemonActorType g_CBodyPartClassInfo;
 extern CDemonActorType g_CBoneGuyClassInfo;
+extern CDemonActorType g_CDemonActorType_007e1688;
+extern CDemonActorType g_CDemonActorType_007e16c4;
+extern CDemonActorType g_CDemonActorType_007e1700;
+extern CDemonActorType g_CDemonActorType_007e173c;
 extern CDemonActorType g_CBoxActorClassInfo;
+extern CDemonActorType g_CDemonActorType_007e1a18;
 extern CDemonActorType g_CBugsClassInfo;
 extern CDemonActorType g_CBurncrossClassInfo;
 extern CDemonActorType g_CCarvedClassInfo;
 extern CDemonActorType g_CChainClassInfo;
 extern CDemonActorType g_CCharacterClassInfo;
 
+// CDemonCamera*
+extern CDemonCamera* g_CurrentSceneCamera;
+
 // CDemonFilter[8]
-extern CDemonFilter CDemonFilter_ARRAY_007e17b8[8];
+extern CDemonFilter g_LightActorFilters[8];
 
-// undefined1
-extern undefined1 DAT_007e1a58;
-extern undefined1 DAT_007e2ad8;
-extern undefined1 DAT_007e2ad9;
-extern undefined1 DAT_007e2ada;
-extern undefined1 DAT_007e2adb;
-extern undefined1 DAT_007e2b30;
-extern undefined1 DAT_007e4d68;
-extern undefined1 DAT_007e5368;
-extern undefined1 DAT_007e5398;
-extern undefined1 DAT_007e5f68;
+// CDemonGlobe
+extern CDemonGlobe g_CDemonGlobe_007e2af0;
 
-// undefined4
-extern undefined4 DAT_007e1620;
-extern undefined4 DAT_007e1624;
-extern undefined4 DAT_007e1628;
-extern undefined4 DAT_007e1634;
-extern undefined4 DAT_007e1638;
-extern undefined4 DAT_007e1644;
-extern undefined4 DAT_007e1648;
-extern undefined4 DAT_007e1774;
-extern undefined4 DAT_007e1a50;
-extern undefined4 DAT_007e1a54;
-extern undefined4 DAT_007e1c94;
-extern undefined4 DAT_007e1c98;
-extern undefined4 DAT_007e1c9c;
-extern undefined4 DAT_007e2a54;
-extern undefined4 DAT_007e2ae8;
-extern undefined4 DAT_007e2cf0;
-extern undefined4 DAT_007e2cf4;
-extern undefined4 DAT_007e2cf8;
-extern undefined4 DAT_007e3e88;
-extern undefined4 DAT_007e3e8c;
-extern undefined4 DAT_007e3e90;
-extern undefined4 DAT_007e3e94;
-extern undefined4 DAT_007e3e98;
-extern undefined4 DAT_007e3e9c;
-extern undefined4 DAT_007e3ebc;
-extern undefined4 DAT_007e3ec0;
-extern undefined4 DAT_007e3ec4;
-extern undefined4 DAT_007e448c;
-extern undefined4 DAT_007e4490;
-extern undefined4 DAT_007e4494;
-extern undefined4 DAT_007e4498;
-extern undefined4 DAT_007e450c;
-extern undefined4 DAT_007e4510;
-extern undefined4 DAT_007e4518;
-extern undefined4 DAT_007e454c;
-extern undefined4 DAT_007e4550;
-extern undefined4 DAT_007e4578;
-extern undefined4 DAT_007e4d50;
-extern undefined4 DAT_007e4d54;
-extern undefined4 DAT_007e4d58;
-extern undefined4 DAT_007e4d5c;
-extern undefined4 DAT_007e4d60;
-extern undefined4 DAT_007e4d64;
-extern undefined4 DAT_007e4d6c;
-extern undefined4 DAT_007e4d94;
-extern undefined4 DAT_007e4d9c;
-extern undefined4 DAT_007e5364;
-extern undefined4 DAT_007e536c;
-extern undefined4 DAT_007e5394;
-extern undefined4 DAT_007e539c;
-extern undefined4 DAT_007e5964;
-extern undefined4 DAT_007e5968;
-extern undefined4 DAT_007e596c;
-extern undefined4 DAT_007e5994;
-extern undefined4 DAT_007e5998;
-extern undefined4 DAT_007e599c;
-extern undefined4 DAT_007e5f64;
-extern undefined4 DAT_007e5f6c;
-extern undefined4 DAT_007e5f98;
-extern undefined4 DAT_007e5f9c;
-extern undefined4 DAT_007e6568;
-extern undefined4 DAT_007e657c;
-extern undefined4 DAT_007e6580;
-extern undefined4 DAT_007e6584;
-extern undefined4 DAT_007e6588;
-extern undefined4 DAT_007e658c;
-extern undefined4 DAT_007e6590;
-extern undefined4 DAT_007e65b0;
+// CKeyFramedModelInstance
+extern CKeyFramedModelInstance g_StakeModelInstance;
 
-// undefined8
-extern undefined8 DAT_007e4540;
+// SMRGLPrimitiveQuad[1000]
+extern SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000];
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_007e2ad0;
+
+// SRenderVertex*[16]
+extern SRenderVertex* g_ClipperCullingPointers[16];
+
+// SRenderVertex[12]
+extern SRenderVertex g_ClipperTempBuffer[12];
+
+// SRenderVertex[16]
+extern SRenderVertex g_SRenderVertex_ARRAY_007e3e8c[16];
+extern SRenderVertex g_SRenderVertex_ARRAY_007e4510[16];
+extern SRenderVertex g_ClipperOutputBuffer[16];
+extern SRenderVertex g_ClipperInputBuffer[16];
+extern SRenderVertex g_ClipperWorkingBuffer[16];
+extern SRenderVertex g_ClipperIntermediateBuffer[16];
+
+// byte
+extern byte g_BYTE_007e2b30;
+
+// float
+extern float g_FLOAT_007e2cb0;
+
+// float[100]
+extern float g_FLOAT_ARRAY_007e2cf4[100];
+
+// float[12][12]
+extern float g_BugsGroundHeightGridTemp[12][12];
+
+// int
+extern int g_INT_007e1620;
+extern int g_INT_007e1624;
+extern int g_INT_007e1628;
+extern int g_INT_007e1634;
+extern int g_INT_007e1638;
+extern int g_INT_007e1644;
+extern int g_INT_007e1648;
+extern int g_INT_007e1778;
+extern int g_INT_007e2ae8;
+extern int g_INT_007e3e84;
+extern int g_ClippedVertexCount;
+extern int g_INT_007e450c;
+extern int g_ClipperTempCount;
+extern int g_InputVertexCount;
+extern int g_OutputVertexCount;
+extern int g_TempVertexCount;
+extern int g_IntermediateVertexCount;
+
+// int[1]
+extern int g_INT_ARRAY_007e4488[1];
+
+// int[700]
+extern int g_BugsSortedVertexIndices[700];
 

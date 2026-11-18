@@ -12,19 +12,19 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[6]:
-;   core_doc.cpp_FUN_00459ff0 at 0045a8c2
-;   core_gabriela.cpp_FUN_004b20d0 at 004b225f
+;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0 at 0045a8c2
+;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 at 004b225f
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a71b
-;   core_sound.cpp_FUN_00559b50 at 00559c15
-;   core_stranger.cpp_FUN_0056bf00 at 0056c788
+;   core_sound.cpp_processTrainSounds_FUN_00559b50 at 00559c15
+;   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00 at 0056c788
 ;   core_zombie.cpp_CZombie_process_FUN_00595f30 at 00596211
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00473390
-;   core_setcolid.cpp_FUN_00536490
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00536490
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x18]      ; 00535e20
     PUSH ECX                            ; 00535e23
     PUSH 0x1fc9c68                      ; 00535e24 | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_00473390   ; 00535e29
-        ;   XREF to: 00473390 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_FUN_00473390(CDemonRaytrace * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390 ; 00535e29
+        ;   XREF to: 00473390 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390(CDemonRaytrace * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 00535e2e
     TEST EAX,EAX                        ; 00535e31
     JZ 0x00535e41                       ; 00535e33
@@ -66,8 +66,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 00535e4e
     PUSH 0xbf800000                     ; 00535e51
     PUSH EDI                            ; 00535e56
-    CALL core_setcolid.cpp_FUN_00536490 ; 00535e57
-        ;   XREF to: 00536490 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00536490()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00536490 ; 00535e57
+        ;   XREF to: 00536490 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00536490(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00535e5c
     FLD float ptr [ESP + 0x1c]          ; 00535e60
     ADD ESP,0x14                        ; 00535e64

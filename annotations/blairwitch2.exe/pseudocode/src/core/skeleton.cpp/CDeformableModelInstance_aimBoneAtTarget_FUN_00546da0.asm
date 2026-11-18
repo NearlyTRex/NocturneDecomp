@@ -12,7 +12,7 @@
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   blend_callback
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e732f
+;   double g_DOUBLE_005e732f = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0
@@ -34,7 +34,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0xd4]      ; 00546da8
     MOV EBX,dword ptr [ESP + 0xd8]      ; 00546daf
     FLD float ptr [ESP + 0xdc]          ; 00546db6
-    FCOMP double ptr [0x005e732f]       ; 00546dbd | DAT_005e732f
+    FCOMP double ptr [0x005e732f]       ; 00546dbd | g_DOUBLE_005e732f
     FNSTSW AX                           ; 00546dc3
     SAHF                                ; 00546dc5
     JA 0x00546dd1                       ; 00546dc6
@@ -86,7 +86,7 @@ section .text
     LEA ESI,[ESP + 0xa4]                ; 00546e5a
     LEA EDI,[ESP + 0x8c]                ; 00546e61
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00546e68
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0xa4]                ; 00546e6d
     ADD ESP,0x4                         ; 00546e74
     MOVSD ES:EDI,ESI                    ; 00546e77
@@ -96,7 +96,7 @@ section .text
     LEA ESI,[ESP + 0x5c]                ; 00546e81
     LEA EDI,[ESP + 0x1c]                ; 00546e85
     CALL core_xform.cpp_quaternionFromAngleX_FUN_00593fa0 ; 00546e89
-        ;   XREF to: 00593fa0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_00593fa0()
+        ;   XREF to: 00593fa0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleX_FUN_00593fa0(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x5c]                ; 00546e8e
     ADD ESP,0x4                         ; 00546e92
     MOVSD ES:EDI,ESI                    ; 00546e95
@@ -109,7 +109,7 @@ section .text
     LEA ESI,[ESP + 0x70]                ; 00546ea5
     LEA EDI,[ESP + 0x80]                ; 00546ea9
     CALL core_xform.cpp_quaternionFromAngleY_FUN_00593fe0 ; 00546eb0
-        ;   XREF to: 00593fe0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_00593fe0()
+        ;   XREF to: 00593fe0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_00593fe0(float angle_radians, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x70]                ; 00546eb5
     ADD ESP,0x4                         ; 00546eb9
     MOVSD ES:EDI,ESI                    ; 00546ebc
@@ -123,7 +123,7 @@ section .text
     LEA ESI,[ESP + 0x44]                ; 00546ecd
     LEA EDI,[ESP + 0x14]                ; 00546ed1
     CALL core_xform.cpp_multiplyQuaternion_FUN_00593c60 ; 00546ed5
-        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00593c60()
+        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00593c60(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x44]                ; 00546eda
     ADD ESP,0x8                         ; 00546ede
     MOVSD ES:EDI,ESI                    ; 00546ee1
@@ -135,7 +135,7 @@ section .text
     LEA ESI,[ESP + 0x30]                ; 00546eea
     LEA EDI,[ESP + 0x50]                ; 00546eee
     CALL core_xform.cpp_multiplyQuaternion_FUN_00593c60 ; 00546ef2
-        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_00593c60()
+        ;   XREF to: 00593c60 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_00593c60(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     ADD ESP,0x8                         ; 00546ef7
     LEA ESI,[ESP + 0x28]                ; 00546efa
     MOV EBX,dword ptr [ESP + 0xf0]      ; 00546efe

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 156,
+    "complexity_score": 141,
     "cross_reference_count": 44,
     "function_call_count": 11,
     "global_count": 14,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 141,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 492
   },
   "cross_references": [
@@ -90,7 +88,7 @@
     {
       "addr": "00453250",
       "from_addr": "004532a2",
-      "name": "core_doc.cpp_FUN_00453250",
+      "name": "core_doc.cpp_CDoc_processMotionEvents_FUN_00453250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -114,7 +112,7 @@
     {
       "addr": "004af410",
       "from_addr": "004af43b",
-      "name": "core_gabriela.cpp_FUN_004af410",
+      "name": "core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -234,7 +232,7 @@
     {
       "addr": "005656f0",
       "from_addr": "00565735",
-      "name": "core_stranger.cpp_FUN_005656f0",
+      "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005656f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -302,12 +300,22 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "00503a10",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503a10"
     },
     {
       "addr": "00503bd0",
       "is_variadic": false,
-      "name": "core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503bd0"
+      "name": "core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00503bd0"
+    },
+    {
+      "addr": "00503d80",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advanceTween_FUN_00503d80"
     },
     {
       "addr": "005039e0",
@@ -320,6 +328,11 @@
       "name": "core_motion.cpp_CMotionController_findAndStartTransition_FUN_00503470"
     },
     {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
+    },
+    {
       "addr": "00503560",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_reverseTransition_FUN_00503560"
@@ -328,21 +341,6 @@
       "addr": "005036e0",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_startTransition_FUN_005036e0"
-    },
-    {
-      "addr": "005035c0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
-    },
-    {
-      "addr": "00503a10",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503a10"
-    },
-    {
-      "addr": "00503d80",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503d80"
     },
     {
       "addr": "005b7790",
@@ -395,44 +393,44 @@
     },
     {
       "addr": "005dfc28",
-      "name": "DAT_005dfc28",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dfc28",
+      "type": "double",
+      "value": "0.0000100000000000000"
     },
     {
       "addr": "005dfc30",
-      "name": "DAT_005dfc30",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dfc30",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005dfc38",
-      "name": "DAT_005dfc38",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dfc38",
+      "type": "double",
+      "value": "0.499900000000000"
     },
     {
       "addr": "005dfc40",
-      "name": "DAT_005dfc40",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005dfc40",
+      "type": "double",
+      "value": "0.000100000000000000"
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -442,7 +440,7 @@
       {
         "call_addr": "004532a2",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00453250",
+        "caller": "core_doc.cpp_CDoc_processMotionEvents_FUN_00453250",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -453,7 +451,7 @@
       {
         "call_addr": "004af43b",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004af410",
+        "caller": "core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -519,7 +517,7 @@
       {
         "call_addr": "00565735",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_005656f0",
+        "caller": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005656f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -783,14 +781,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

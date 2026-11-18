@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_00528490(void)
 
 {
@@ -17,7 +15,7 @@ int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_00528490(void)
   uVar1 = sound_sndmain_cpp_isSoundSystemActive_FUN_00528480();
   iVar2 = 0;
   if (uVar1 != 0) {
-    iVar2 = _DAT_02dc831c;
+    iVar2 = g_SoundBusyFlag;
   }
   return iVar2;
 }

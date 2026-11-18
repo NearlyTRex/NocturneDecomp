@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 35,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 111
+  },
+  "cross_references": [
+    {
+      "addr": "004d6990",
+      "from_addr": "004d6cd9",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004d6990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00443790",
+    "address_range": [
+      [
+        "00443790",
+        "00443822"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDecompress_finalize_FUN_00443790",
+    "signature": "int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_00443790(CLZWDecompress *this_ptr,void *ostream)"
+  },
+  "function_calls": [
+    {
+      "addr": "00443110",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWDictionary_addNode_FUN_00443110"
+    },
+    {
+      "addr": "004433f0",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWDictionary_resumeCodeSequence_FUN_004433f0"
+    },
+    {
+      "addr": "00443370",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00443370"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d6cd9",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004d6990",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9322033898305087,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 54,
+      "INT_ADD": 26,
+      "INT_AND": 27,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 23,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 11,
+      "RETURN": 3,
+      "STORE": 21
+    },
+    "pcode_op_count": 232
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00434a70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004413f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043f590",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4103
+    },
+    "nocturne.exe": {
+      "addr": "00439af0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4103
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDecompress *"
+      },
+      {
+        "is_param": true,
+        "name": "ostream",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLZWDecompress",
+        "offset": 12,
+        "vtable_addr": "005fd9b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

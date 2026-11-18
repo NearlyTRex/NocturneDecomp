@@ -15,8 +15,8 @@
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00504c10 at 00504c4e
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 at 00504cdd
-;   support_trisock.cpp_FUN_00570350 at 005703c4
-;   support_trisock.cpp_FUN_00571d80 at 00571dd4
+;   support_trisock.cpp_httpReaderGetChar_FUN_00570350 at 005703c4
+;   support_trisock.cpp_httpRequestFillBuffer_FUN_00571d80 at 00571dd4
 ;
 ; Called Functions:
 ;   crt_wsock32.c_recv

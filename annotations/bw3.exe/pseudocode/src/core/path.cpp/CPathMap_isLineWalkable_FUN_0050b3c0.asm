@@ -27,7 +27,7 @@
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0 at 0050bee3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ec1514
+;   int g_PathfindingMaxClimbHeight
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
@@ -91,7 +91,7 @@ section .text
     CDQ                                 ; 0050b43f
     XOR EAX,EDX                         ; 0050b440
     SUB EAX,EDX                         ; 0050b442
-    CMP EAX,dword ptr [0x01ec1514]      ; 0050b444 | DAT_01ec1514
+    CMP EAX,dword ptr [0x01ec1514]      ; 0050b444 | g_PathfindingMaxClimbHeight
     JLE 0x0050b487                      ; 0050b44a
         ;   XREF to: 0050b487 (CONDITIONAL_JUMP)  ; LAB_0050b487
     XOR EAX,EAX                         ; 0050b44c
@@ -136,7 +136,7 @@ section .text
     CDQ                                 ; 0050b49c
     XOR EAX,EDX                         ; 0050b49d
     SUB EAX,EDX                         ; 0050b49f
-    CMP EAX,dword ptr [0x01ec1514]      ; 0050b4a1 | DAT_01ec1514
+    CMP EAX,dword ptr [0x01ec1514]      ; 0050b4a1 | g_PathfindingMaxClimbHeight
     JG 0x0050b44c                       ; 0050b4a7
         ;   XREF to: 0050b44c (CONDITIONAL_JUMP)  ; LAB_0050b44c
     PUSH EBX                            ; 0050b4a9
@@ -152,7 +152,7 @@ section .text
     CDQ                                 ; 0050b4bc
     XOR EAX,EDX                         ; 0050b4bd
     SUB EAX,EDX                         ; 0050b4bf
-    CMP EAX,dword ptr [0x01ec1514]      ; 0050b4c1 | DAT_01ec1514
+    CMP EAX,dword ptr [0x01ec1514]      ; 0050b4c1 | g_PathfindingMaxClimbHeight
     JG 0x0050b44c                       ; 0050b4c7
         ;   XREF to: 0050b44c (CONDITIONAL_JUMP)  ; LAB_0050b44c
     MOV EAX,dword ptr [ESP + 0x24]      ; 0050b4c9
@@ -211,7 +211,7 @@ section .text
     CDQ                                 ; 0050b54c
     XOR EAX,EDX                         ; 0050b54d
     SUB EAX,EDX                         ; 0050b54f
-    CMP EAX,dword ptr [0x01ec1514]      ; 0050b551 | DAT_01ec1514
+    CMP EAX,dword ptr [0x01ec1514]      ; 0050b551 | g_PathfindingMaxClimbHeight
     JLE 0x0050b563                      ; 0050b557
         ;   XREF to: 0050b563 (CONDITIONAL_JUMP)  ; LAB_0050b563
     XOR EAX,EAX                         ; 0050b559
@@ -234,7 +234,7 @@ section .text
     CDQ                                 ; 0050b574
     XOR EAX,EDX                         ; 0050b575
     SUB EAX,EDX                         ; 0050b577
-    CMP EAX,dword ptr [0x01ec1514]      ; 0050b579 | DAT_01ec1514
+    CMP EAX,dword ptr [0x01ec1514]      ; 0050b579 | g_PathfindingMaxClimbHeight
     JG 0x0050b44c                       ; 0050b57f
         ;   XREF to: 0050b44c (CONDITIONAL_JUMP)  ; LAB_0050b44c
     PUSH EBX                            ; 0050b585
@@ -250,7 +250,7 @@ section .text
     CDQ                                 ; 0050b598
     XOR EAX,EDX                         ; 0050b599
     SUB EAX,EDX                         ; 0050b59b
-    CMP EAX,dword ptr [0x01ec1514]      ; 0050b59d | DAT_01ec1514
+    CMP EAX,dword ptr [0x01ec1514]      ; 0050b59d | g_PathfindingMaxClimbHeight
     JG 0x0050b44c                       ; 0050b5a3
         ;   XREF to: 0050b44c (CONDITIONAL_JUMP)  ; LAB_0050b44c
     MOV EAX,dword ptr [ESP + 0x20]      ; 0050b5a9

@@ -266,7 +266,7 @@ section .text
     JGE 0x0054ef4a                      ; 0054ed9d
         ;   XREF to: 0054ef4a (CONDITIONAL_JUMP)  ; LAB_0054ef4a
     MOV ECX,dword ptr [ESP + 0xf0]      ; 0054eda3
-    MOV EAX,[0x01ccdc10]                ; 0054edaa | g_CMobsterActorType_01ccdbd8.name_hash
+    MOV EAX,[0x01ccdc10]                ; 0054edaa | g_CMobsterClassInfo.name_hash
     ADD ESI,ECX                         ; 0054edaf
     PUSH EAX                            ; 0054edb1
     MOV ESI,dword ptr [ESI + 0x14ecb4]  ; 0054edb2 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
@@ -648,7 +648,7 @@ section .text
     ADD ESP,0x8                         ; 0054f1ed
     JMP 0x0054ef54                      ; 0054f1f0
         ;   XREF to: 0054ef54 (UNCONDITIONAL_JUMP)  ; LAB_0054ef54
-    MOV EDX,dword ptr [0x01ccdc10]      ; 0054f1f5 | g_CMobsterActorType_01ccdbd8.name_hash
+    MOV EDX,dword ptr [0x01ccdc10]      ; 0054f1f5 | g_CMobsterClassInfo.name_hash
         ;   Label: LAB_0054f1f5
     PUSH EDX                            ; 0054f1fb
     MOV ECX,dword ptr [ESI + EAX*0x1 + 0x150bf8] ; 0054f1fc

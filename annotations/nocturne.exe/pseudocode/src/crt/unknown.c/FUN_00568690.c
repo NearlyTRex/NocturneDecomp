@@ -28,7 +28,7 @@ _FILE * FUN_00568690(void)
         file_handle_00 = file_handle_00 + 1;
         iVar2 = FUN_0056f170(acStack_124,2);
       } while (iVar2 == 0);
-      p_Var3 = _fopen(acStack_124,&DAT_00598b50);
+      p_Var3 = _fopen(acStack_124,"wb+");
       if (p_Var3 != (_FILE *)0x0) break;
       piVar4 = _errno();
       if ((*piVar4 == 0xb) || (piVar4 = _errno(), *piVar4 == 6)) {
@@ -36,16 +36,16 @@ _FILE * FUN_00568690(void)
       }
     }
     _fclose(p_Var3);
-    file_handle = (uint)DAT_005c1a9c;
+    file_handle = (uint)(byte)g_CHAR_ARRAY_005c1a9c[0];
     do {
       _tempnam(acStack_238,file_handle);
       iVar2 = _rename(acStack_124,acStack_238);
       if (iVar2 == 0) {
-        p_Var3 = _fopen(acStack_238,&DAT_00598b50);
+        p_Var3 = _fopen(acStack_238,"wb+");
         if (p_Var3 != (_FILE *)0x0) {
           *(byte *)((int)&p_Var3->_flag + 1) = *(byte *)((int)&p_Var3->_flag + 1) | 8;
-          DAT_005c1a9c = (byte)file_handle;
-          *(byte *)&p_Var3->_link->__get_ptr = DAT_005c1a9c;
+          g_CHAR_ARRAY_005c1a9c[0] = (char)file_handle;
+          *(char *)&p_Var3->_link->__get_ptr = g_CHAR_ARRAY_005c1a9c[0];
           setErrno(iVar1);
           return p_Var3;
         }

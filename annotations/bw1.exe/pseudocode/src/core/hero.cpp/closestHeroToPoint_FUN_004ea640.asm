@@ -10,18 +10,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00434c60 at 00434d1d
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60 at 00434d1d
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0 at 0049f0fb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_005e4614
 ;   TerminatedCString s_closestHeroToPoint_no_he_005e4625
-;   undefined4 DAT_01d06aa0
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_HeroCount
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x14                        ; 004ea644
     MOV EBX,dword ptr [ESP + 0x28]      ; 004ea647
     MOV EDX,0x7149f2ca                  ; 004ea64b
-    MOV ECX,dword ptr [0x01d06aa0]      ; 004ea650 | DAT_01d06aa0
+    MOV ECX,dword ptr [0x01d06aa0]      ; 004ea650 | g_HeroCount
     XOR ESI,ESI                         ; 004ea656
     MOV dword ptr [ESP + 0x8],EDX       ; 004ea658
     TEST ECX,ECX                        ; 004ea65c
@@ -94,10 +94,10 @@ section .text
         ;   Label: LAB_004ea6c2
     MOV EDI,0x38                        ; 004ea6c7
     PUSH 0x5e4625                       ; 004ea6cc | = "closestHeroToPoint - no heros!"
-    MOV dword ptr [0x01d1d400],EBX      ; 004ea6d1 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 004ea6d7 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004ea6dd
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 004ea6d1 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 004ea6d7 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004ea6dd
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004ea6e2
     MOV EAX,ESI                         ; 004ea6e5
     ADD ESP,0x14                        ; 004ea6e7

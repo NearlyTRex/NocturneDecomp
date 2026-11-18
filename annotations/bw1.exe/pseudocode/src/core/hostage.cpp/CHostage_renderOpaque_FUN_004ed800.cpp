@@ -13,7 +13,8 @@ int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004ed800(CHostage *this_p
   SMotion *pSVar2;
   
   if (this_ptr->no_shadows_when_saved != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+    iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                      (g_CDemonRenderer_PTR_00612560);
     if ((iVar1 != 0) && (this_ptr->hostage_state == 4)) {
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                          (&(this_ptr->base).base.model.base);

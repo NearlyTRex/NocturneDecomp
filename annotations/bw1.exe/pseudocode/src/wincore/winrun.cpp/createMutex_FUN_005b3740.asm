@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20 at 00575d2b
-;   support_trisock.cpp_FUN_0059eeb0 at 0059eee0
+;   support_trisock.cpp_startupWinsock_FUN_0059eeb0 at 0059eee0
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateMutexA_005d052c = 001d0c9a

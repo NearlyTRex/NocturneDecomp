@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 160,
+    "complexity_score": 144,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
-    "suspect_count": 5,
+    "pseudocode_lines": 94,
+    "suspect_count": 4,
     "suspect_types": [
       "suspect_float",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 301
+    "total_lines": 300
   },
   "cross_references": [
     {
@@ -75,56 +74,56 @@
     },
     {
       "addr": "014b89e8",
-      "name": "DAT_014b89e8",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b89e8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b89ec",
-      "name": "DAT_014b89ec",
-      "type": "undefined4",
+      "name": "g_INT_014b89ec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b89f0",
-      "name": "DAT_014b89f0",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b89f0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b89f4",
-      "name": "DAT_014b89f4",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b89f4",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b89f8",
-      "name": "DAT_014b89f8",
-      "type": "undefined4",
+      "name": "g_INT_014b89f8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b89fc",
-      "name": "DAT_014b89fc",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b89fc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b8a00",
-      "name": "DAT_014b8a00",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b8a00",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b8a04",
-      "name": "DAT_014b8a04",
-      "type": "undefined4",
+      "name": "g_INT_014b8a04",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b8a08",
-      "name": "DAT_014b8a08",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b8a08",
+      "type": "float",
       "value": null
     },
     {
@@ -218,6 +217,24 @@
     "pcode_op_count": 944
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004738d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8199
+    },
+    "bw1.exe": {
+      "addr": "0048bdc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8199
+    },
+    "bw3.exe": {
+      "addr": "00474940",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8199
+    },
     "nocedit.exe": {
       "addr": "004966f0",
       "by": "name",
@@ -414,16 +431,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 44,
+      "line": 42,
       "match": "6.476614e-39",
       "severity": "mild",
       "text": "CStack_6c.z = 6.476614e-39;",
@@ -431,7 +440,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 51,
+      "line": 49,
       "match": "6.476652e-39",
       "severity": "mild",
       "text": "CStack_6c.y = 6.476652e-39;",
@@ -439,7 +448,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 54,
+      "line": 52,
       "match": "6.476678e-39",
       "severity": "mild",
       "text": "CStack_6c.x = 6.476678e-39;",
@@ -447,7 +456,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 71,
+      "line": 69,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "normal_out->x = local_54.x;",

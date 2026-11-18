@@ -8,13 +8,13 @@
 ;   crt_unknown.c_FUN_005ce6dc at 005ce778
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c9f6d0
-;   undefined4 DAT_02c9f6d4
+;   char** g_EnvironStringArea
+;   char** g_EnvironmentBlock
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005c12b0
 ;   crt_string.c_memmove_FUN_005c25d0
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 005ce881
     PUSH EDI                            ; 005ce882
     PUSH EBP                            ; 005ce883
-    MOV EBP,dword ptr [0x02c9f6d4]      ; 005ce884 | DAT_02c9f6d4
+    MOV EBP,dword ptr [0x02c9f6d4]      ; 005ce884 | g_EnvironmentBlock
     JMP 0x005ce969                      ; 005ce88a
         ;   XREF to: 005ce969 (UNCONDITIONAL_JUMP)  ; LAB_005ce969
     MOV ESI,dword ptr [ESP + 0x14]      ; 005ce88f
@@ -53,7 +53,7 @@ section .text
     CMP byte ptr [EBX],0x3d             ; 005ce8c0
     JNZ 0x005ce959                      ; 005ce8c3
         ;   XREF to: 005ce959 (CONDITIONAL_JUMP)  ; LAB_005ce959
-    MOV EDX,dword ptr [0x02c9f6d4]      ; 005ce8c9 | DAT_02c9f6d4
+    MOV EDX,dword ptr [0x02c9f6d4]      ; 005ce8c9 | g_EnvironmentBlock
     MOV ESI,EBP                         ; 005ce8cf
     SUB ESI,EDX                         ; 005ce8d1
     MOV EBX,dword ptr [ESP + 0x18]      ; 005ce8d3
@@ -74,7 +74,7 @@ section .text
     TEST ECX,ECX                        ; 005ce8f6
     JNZ 0x005ce8eb                      ; 005ce8f8
         ;   XREF to: 005ce8eb (CONDITIONAL_JUMP)  ; LAB_005ce8eb
-    MOV EBP,dword ptr [0x02c9f6d0]      ; 005ce8fa | DAT_02c9f6d0
+    MOV EBP,dword ptr [0x02c9f6d0]      ; 005ce8fa | g_EnvironStringArea
         ;   Label: LAB_005ce8fa
     TEST EBP,EBP                        ; 005ce900
     JZ 0x005ce94a                       ; 005ce902
@@ -84,22 +84,22 @@ section .text
     JZ 0x005ce915                       ; 005ce90a
         ;   XREF to: 005ce915 (CONDITIONAL_JUMP)  ; LAB_005ce915
     PUSH EDI                            ; 005ce90c
-    CALL crt_unknown.c_FUN_005c09f0     ; 005ce90d
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 005ce90d
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 005ce912
-    MOV EAX,[0x02c9f6d4]                ; 005ce915 | DAT_02c9f6d4
+    MOV EAX,[0x02c9f6d4]                ; 005ce915 | g_EnvironmentBlock
         ;   Label: LAB_005ce915
     MOV EDI,EBX                         ; 005ce91a
     SUB EDI,EAX                         ; 005ce91c
     SAR EDI,0x2                         ; 005ce91e
     PUSH EDI                            ; 005ce921
-    MOV EDX,dword ptr [0x02c9f6d0]      ; 005ce922 | DAT_02c9f6d0
+    MOV EDX,dword ptr [0x02c9f6d0]      ; 005ce922 | g_EnvironStringArea
     PUSH EDX                            ; 005ce928
     PUSH EBX                            ; 005ce929
     CALL crt_string.c_memmove_FUN_005c25d0 ; 005ce92a
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 005ce92f
-    MOV dword ptr [0x02c9f6d0],EBX      ; 005ce932 | DAT_02c9f6d0
+    MOV dword ptr [0x02c9f6d0],EBX      ; 005ce932 | g_EnvironStringArea
     CMP ESI,EDI                         ; 005ce938
     JGE 0x005ce94a                      ; 005ce93a
         ;   XREF to: 005ce94a (CONDITIONAL_JUMP)  ; LAB_005ce94a
@@ -140,7 +140,7 @@ section .text
     TEST EBX,EBX                        ; 005ce96c
     JNZ 0x005ce88f                      ; 005ce96e
         ;   XREF to: 005ce88f (CONDITIONAL_JUMP)  ; LAB_005ce88f
-    MOV EAX,[0x02c9f6d4]                ; 005ce974 | DAT_02c9f6d4
+    MOV EAX,[0x02c9f6d4]                ; 005ce974 | g_EnvironmentBlock
     SUB EAX,EBP                         ; 005ce979
     SAR EAX,0x2                         ; 005ce97b
     POP EBP                             ; 005ce97e

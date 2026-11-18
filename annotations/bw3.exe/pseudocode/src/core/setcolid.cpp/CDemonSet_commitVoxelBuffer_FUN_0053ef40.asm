@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_removeAllActors_FUN_004f6d70 at 004f6dc0
-;   core_set.cpp_FUN_00532b80 at 00533b6e
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00533b6e
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

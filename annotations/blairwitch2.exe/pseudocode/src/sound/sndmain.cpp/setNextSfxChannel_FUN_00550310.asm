@@ -7,23 +7,23 @@
 ; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[7]:
-;   core_event.cpp_FUN_00489670 at 0048c22e
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048c22e
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be816
 ;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 005298b6
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50 at 0055ad47
+;   core_sound.cpp_CSound_init_FUN_0055a1d0 at 0055a2ad
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a765
-;   core_sound.cpp_FUN_00559b50 at 00559c5f
-;   core_sound.cpp_FUN_0055a1d0 at 0055a2ad
+;   core_sound.cpp_processTrainSounds_FUN_00559b50 at 00559c5f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e8bdf
 ;   TerminatedCString s_setNextSfxChannel_invali_005e8bf4
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0264161c
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_SfxLastSlot
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     CMP EBX,0x20                        ; 00550319
     JGE 0x00550338                      ; 0055031c
         ;   XREF to: 00550338 (CONDITIONAL_JUMP)  ; LAB_00550338
-    MOV EDX,dword ptr [0x0264161c]      ; 0055031e | DAT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 0055031e | g_SfxLastSlot
         ;   Label: LAB_0055031e
     LEA EAX,[EDX*0x4 + 0x0]             ; 00550324
     SUB EAX,EDX                         ; 0055032b
@@ -51,10 +51,10 @@ section .text
     MOV EDX,0x5e8bdf                    ; 00550339 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xe70                       ; 0055033e
     PUSH 0x5e8bf4                       ; 00550343 | = "setNextSfxChannel - invalid channel i..."
-    MOV dword ptr [0x01d046a0],EDX      ; 00550348 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0055034e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00550354
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00550348 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0055034e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00550354
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00550359
     JMP 0x0055031e                      ; 0055035c
         ;   XREF to: 0055031e (UNCONDITIONAL_JUMP)  ; LAB_0055031e

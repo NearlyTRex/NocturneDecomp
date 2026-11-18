@@ -7,9 +7,9 @@
 ; char *           Stack[0x4]:4   name
 ;
 ; XREF[8]:
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7adc
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540 at 004babc8
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b81c0
-;   core_game.cpp_FUN_004b6f30 at 004b7adc
 ;   core_netgame.cpp_CNetGame_init_FUN_00503e20 at 00503e5a
 ;   crt_unknown.c_FUN_005a9aec at 005a9b04
 ;   crt_unknown.c_FUN_005ac558 at 005ac55d
@@ -17,7 +17,7 @@
 ;   wincore_winrun.cpp_getComputerAndUserName_FUN_00581aa0 at 00581aff
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d25924
+;   char** g_EnvironmentBlock
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005acd10
@@ -32,7 +32,7 @@ section .text
     PUSH EDI                            ; 005a5ec2
     PUSH EBP                            ; 005a5ec3
     MOV EBP,dword ptr [ESP + 0x14]      ; 005a5ec4
-    MOV ESI,dword ptr [0x02d25924]      ; 005a5ec8 | DAT_02d25924
+    MOV ESI,dword ptr [0x02d25924]      ; 005a5ec8 | g_EnvironmentBlock
     TEST ESI,ESI                        ; 005a5ece
     JZ 0x005a5f14                       ; 005a5ed0
         ;   XREF to: 005a5f14 (CONDITIONAL_JUMP)  ; LAB_005a5f14

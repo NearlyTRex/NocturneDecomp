@@ -10,8 +10,8 @@
 ;   core_gargoyle.cpp_factoryFuncGargoyle_FUN_004dc240 at 004dc253
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00601000
-;   undefined4 DAT_00601004
+;   float g_FLOAT_00601000 = 50
+;   float g_FLOAT_00601004 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
@@ -49,9 +49,9 @@ section .text
     MOV dword ptr [EBX + 0xc29c],0x80   ; 004dc305
     MOV dword ptr [EBX + 0xc2a0],0x80   ; 004dc30f
     MOV dword ptr [EBX + 0xc2a4],0x0    ; 004dc319
-    FLD float ptr [0x00601000]          ; 004dc323 | DAT_00601000
+    FLD float ptr [0x00601000]          ; 004dc323 | g_FLOAT_00601000
     MOV dword ptr [EBX + 0xc2bc],0x0    ; 004dc329
-    FLD float ptr [0x00601004]          ; 004dc333 | DAT_00601004
+    FLD float ptr [0x00601004]          ; 004dc333 | g_FLOAT_00601004
     MOV dword ptr [EBX + 0xc2c0],0x0    ; 004dc339
     ADD ESP,0x8                         ; 004dc343
     MOV dword ptr [EBX + 0x27c0],0x0    ; 004dc346

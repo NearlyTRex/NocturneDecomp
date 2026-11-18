@@ -14,8 +14,8 @@
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00546dca
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005efe14
-;   undefined4 DAT_005efe17
+;   TerminatedCString s_if_005efe14
+;   TerminatedCString s_else_005efe17
 ;
 ; Called Functions:
 ;   crt_string.c__strnicmp_FUN_005c1210
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 0054adab (CONDITIONAL_JUMP)  ; LAB_0054adab
     PUSH 0x2                            ; 0054ad97
         ;   Label: LAB_0054ad97
-    PUSH 0x5efe14                       ; 0054ad99 | DAT_005efe14
+    PUSH 0x5efe14                       ; 0054ad99 | = "if"
     PUSH EDI                            ; 0054ad9e
     CALL crt_string.c__strnicmp_FUN_005c1210 ; 0054ad9f
         ;   XREF to: 005c1210 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005c1210(char * str1, char * str2, int count)
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 0054adca (CONDITIONAL_JUMP)  ; LAB_0054adca
     PUSH 0x4                            ; 0054adb6
         ;   Label: LAB_0054adb6
-    PUSH 0x5efe17                       ; 0054adb8 | DAT_005efe17
+    PUSH 0x5efe17                       ; 0054adb8 | = "else"
     PUSH EDI                            ; 0054adbd
     CALL crt_string.c__strnicmp_FUN_005c1210 ; 0054adbe
         ;   XREF to: 005c1210 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005c1210(char * str1, char * str2, int count)

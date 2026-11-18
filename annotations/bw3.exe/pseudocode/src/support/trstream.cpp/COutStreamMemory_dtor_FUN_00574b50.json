@@ -14,21 +14,21 @@
   },
   "cross_references": [
     {
-      "addr": "00441c80",
-      "from_addr": "00441d15",
-      "name": "support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00441c80",
+      "addr": "00440b60",
+      "from_addr": "00440bb8",
+      "name": "support_codec.cpp_CCodec_finalizeBuffer_FUN_00440b60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004408e0",
       "from_addr": "0044093a",
-      "name": "support_codec.cpp_FUN_004408e0",
+      "name": "support_codec.cpp_CCodec_processToBuffer_FUN_004408e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00440b60",
-      "from_addr": "00440bb8",
-      "name": "support_codec.cpp_FUN_00440b60",
+      "addr": "00441c80",
+      "from_addr": "00441d15",
+      "name": "support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00441c80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,14 +51,14 @@
       "name": "crt_memory.c___vec_delete_FUN_005a308f"
     },
     {
-      "addr": "005a30b6",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30b6"
-    },
-    {
       "addr": "005a30c4",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30c4"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005a30c4"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_free_FUN_005a30b6"
     },
     {
       "addr": "005744a0",
@@ -81,8 +81,8 @@
     {
       "addr": "005e5b54",
       "name": "g_COutStreamMemoryVTable",
-      "type": "undefined1*",
-      "value": "00574b50"
+      "type": "TerminatedCString",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -91,7 +91,7 @@
       {
         "call_addr": "0044093a",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_004408e0",
+        "caller": "support_codec.cpp_CCodec_processToBuffer_FUN_004408e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +102,7 @@
       {
         "call_addr": "00440bb8",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00440b60",
+        "caller": "support_codec.cpp_CCodec_finalizeBuffer_FUN_00440b60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -16,8 +16,8 @@
 ;   double DOUBLE_00583b0a = 256
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01c78b04
-;   undefined4 DAT_01c78b08
+;   int g_IrisFadeType
+;   float g_IrisFadeRadius
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     MOV EBP,ESP                         ; 004a3881
     SUB ESP,0xc                         ; 004a3883
     AND ESP,0xfffffff8                  ; 004a3886
-    MOV EDX,dword ptr [0x01c78b04]      ; 004a3889 | DAT_01c78b04
+    MOV EDX,dword ptr [0x01c78b04]      ; 004a3889 | g_IrisFadeType
     MOV ECX,dword ptr [EBP + 0x8]       ; 004a388f
     TEST EDX,EDX                        ; 004a3892
     JZ 0x004a38f0                       ; 004a3894
@@ -49,15 +49,15 @@ section .text
     FILD dword ptr [ECX + 0x260]        ; 004a38b4
     FMUL double ptr [0x00583b0a]        ; 004a38ba | DOUBLE_00583b0a
     FDIV float ptr [ESP]                ; 004a38c0
-    FLD float ptr [0x01c78b08]          ; 004a38c3 | DAT_01c78b08
+    FLD float ptr [0x01c78b08]          ; 004a38c3 | g_IrisFadeRadius
     FXCH                                ; 004a38c9
     FSUBR ST0,ST1                       ; 004a38cb
     FLDZ                                ; 004a38cd
     FXCH                                ; 004a38cf
     FSTP ST2                            ; 004a38d1
     FXCH                                ; 004a38d3
-    FSTP float ptr [0x01c78b08]         ; 004a38d5 | DAT_01c78b08
-    FCOMP float ptr [0x01c78b08]        ; 004a38db | DAT_01c78b08
+    FSTP float ptr [0x01c78b08]         ; 004a38d5 | g_IrisFadeRadius
+    FCOMP float ptr [0x01c78b08]        ; 004a38db | g_IrisFadeRadius
     FNSTSW AX                           ; 004a38e1
     SAHF                                ; 004a38e3
     JA 0x004a393f                       ; 004a38e4
@@ -67,7 +67,7 @@ section .text
     JNZ 0x004a38f0                      ; 004a38e9
         ;   XREF to: 004a38f0 (CONDITIONAL_JUMP)  ; LAB_004a38f0
     MOV EDX,0x2                         ; 004a38eb
-    MOV dword ptr [0x01c78b04],EDX      ; 004a38f0 | DAT_01c78b04
+    MOV dword ptr [0x01c78b04],EDX      ; 004a38f0 | g_IrisFadeType
         ;   Label: LAB_004a38f0
     MOV ESP,EBP                         ; 004a38f6
     POP EBP                             ; 004a38f8
@@ -80,15 +80,15 @@ section .text
         ;   Label: LAB_004a3901
     FMUL double ptr [0x00583b0a]        ; 004a3907 | DOUBLE_00583b0a
     FDIV float ptr [ESP]                ; 004a390d
-    FLD float ptr [0x01c78b08]          ; 004a3910 | DAT_01c78b08
+    FLD float ptr [0x01c78b08]          ; 004a3910 | g_IrisFadeRadius
     FXCH                                ; 004a3916
     FADD ST0,ST1                        ; 004a3918
     FILD dword ptr [0x005b761c]         ; 004a391a | g_WindowWidth
     FXCH                                ; 004a3920
     FSTP ST2                            ; 004a3922
     FXCH                                ; 004a3924
-    FSTP float ptr [0x01c78b08]         ; 004a3926 | DAT_01c78b08
-    FCOMP float ptr [0x01c78b08]        ; 004a392c | DAT_01c78b08
+    FSTP float ptr [0x01c78b08]         ; 004a3926 | g_IrisFadeRadius
+    FCOMP float ptr [0x01c78b08]        ; 004a392c | g_IrisFadeRadius
     FNSTSW AX                           ; 004a3932
     SAHF                                ; 004a3934
     JNC 0x004a38af                      ; 004a3935
@@ -98,9 +98,9 @@ section .text
         ;   XREF to: 004a38f0 (UNCONDITIONAL_JUMP)  ; LAB_004a38f0
     XOR EDX,EDX                         ; 004a393f
         ;   Label: LAB_004a393f
-    MOV dword ptr [0x01c78b08],EDX      ; 004a3941 | DAT_01c78b08
+    MOV dword ptr [0x01c78b08],EDX      ; 004a3941 | g_IrisFadeRadius
     MOV EDX,0x4                         ; 004a3947
-    MOV dword ptr [0x01c78b04],EDX      ; 004a394c | DAT_01c78b04
+    MOV dword ptr [0x01c78b04],EDX      ; 004a394c | g_IrisFadeType
     MOV ESP,EBP                         ; 004a3952
     POP EBP                             ; 004a3954
     RET                                 ; 004a3955

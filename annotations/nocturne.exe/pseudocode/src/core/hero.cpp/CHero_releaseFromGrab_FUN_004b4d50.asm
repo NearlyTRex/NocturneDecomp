@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_GETGRABBED_005857e5
 ;   TerminatedCString s_STAND_005857f0
-;   undefined4 DAT_0078a123
+;   undefined4 g_CHAR_ARRAY_0077d250+0xced3
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004280b0
@@ -29,7 +29,7 @@ section .text
     PUSH ESI                            ; 004b4d51
     SUB ESP,0x4                         ; 004b4d52
     MOV ESI,dword ptr [ESP + 0x10]      ; 004b4d55
-    CMP dword ptr [ESI + 0x68],0x78a123 ; 004b4d59 | DAT_0078a123
+    CMP dword ptr [ESI + 0x68],0x78a123 ; 004b4d59 | g_CHAR_ARRAY_0077d250+0xced3
     JNZ 0x004b4dbf                      ; 004b4d60
         ;   XREF to: 004b4dbf (CONDITIONAL_JUMP)  ; LAB_004b4dbf
     LEA EAX,[ESI + 0x150]               ; 004b4d62

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 308,
-    "complexity_score": 123,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 108,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 416
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 107,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 415
   },
   "cross_references": [],
   "function": {
@@ -43,21 +41,21 @@
   "globals": [
     {
       "addr": "0059511a",
-      "name": "DAT_0059511a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_0059511a",
+      "type": "double",
+      "value": "3.14159265350000"
     },
     {
       "addr": "00595122",
-      "name": "DAT_00595122",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_00595122",
+      "type": "double",
+      "value": "1.10000000000000"
     },
     {
       "addr": "0059512a",
-      "name": "DAT_0059512a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_0059512a",
+      "type": "double",
+      "value": "1.5"
     },
     {
       "addr": "005b9354",
@@ -79,7 +77,7 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     }
@@ -134,6 +132,24 @@
     "pcode_op_count": 1465
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005619f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00584440",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00567d10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
     "nocedit.exe": {
       "addr": "005b9670",
       "by": "name",
@@ -188,14 +204,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

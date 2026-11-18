@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   byte_count
 ;
 ; XREF[2]:
-;   sound_snddx.cpp_FUN_005799b0 at 00579a5d
+;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005799b0 at 00579a5d
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460 at 005705ba
 ;
 ; *****************************************************************************

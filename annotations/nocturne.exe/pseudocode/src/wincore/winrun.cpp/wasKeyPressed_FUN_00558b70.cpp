@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(void)
 
 {
-  return (uint)(_DAT_02de0848 != _DAT_02de084c);
+  return (uint)(g_InputReadIndex != g_InputWriteIndex);
 }

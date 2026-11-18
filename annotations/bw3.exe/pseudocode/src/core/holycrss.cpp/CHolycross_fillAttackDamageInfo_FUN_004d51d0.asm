@@ -10,7 +10,7 @@
 ; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c51db
+;   float g_FLOAT_005c51db = 3
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;
 ; Called Functions:
@@ -69,7 +69,7 @@ section .text
     RET                                 ; 004d5247
     FLD float ptr [EBX + 0x4]           ; 004d5248
         ;   Label: LAB_004d5248
-    FMUL float ptr [0x005c51db]         ; 004d524b | DAT_005c51db
+    FMUL float ptr [0x005c51db]         ; 004d524b | g_FLOAT_005c51db
     FSTP float ptr [EBX + 0x4]          ; 004d5251
     ADD ESP,0x4                         ; 004d5254
     POP EDI                             ; 004d5257

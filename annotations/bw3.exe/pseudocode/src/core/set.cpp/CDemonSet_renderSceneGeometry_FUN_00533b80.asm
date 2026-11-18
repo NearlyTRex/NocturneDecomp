@@ -14,22 +14,22 @@
 ;
 ; XREF[7]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 00534594
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60 at 0053417e
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 0053674c
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990 at 00536b08
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535bae
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f28
-;   core_set.cpp_FUN_00533e60 at 0053417e
-;   core_set.cpp_FUN_005365c0 at 0053674c
-;   core_set.cpp_FUN_00536990 at 00536b08
-;   core_setdir.cpp_FUN_00540cf0 at 00540dd9
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0 at 00540dd9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005f4a58
-;   undefined4 DAT_00603b2c
-;   undefined4 DAT_00603b38
-;   undefined4 DAT_00606aa0
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   SMRGLSkyTexture* g_SkyDomeTexturePtr = 01c0b558
+;   CVector3i g_GlobalLightDirection
+;   int g_RenderMirrorsFlag = 0x1
+;   CTerrain* g_CTerrainPtr = 02cfd8b8
 ;   CWater* g_CWaterPtr = 02cfd950
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_01c6cee8
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   int g_INT_01c6cee8
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;   CWater g_CWaterInstance
 ;
@@ -63,15 +63,15 @@ section .text
     SUB ESP,0xc                         ; 00533b84
     MOV EBX,dword ptr [ESP + 0x20]      ; 00533b87
     MOV ESI,dword ptr [ESP + 0x28]      ; 00533b8b
-    PUSH 0x603b2c                       ; 00533b8f | DAT_00603b2c
-    MOV EDX,dword ptr [0x005f2afc]      ; 00533b94 | DAT_005f2afc
-    PUSH EDX                            ; 00533b9a | DAT_01bdd7e4
+    PUSH 0x603b2c                       ; 00533b8f | g_GlobalLightDirection
+    MOV EDX,dword ptr [0x005f2afc]      ; 00533b94 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 00533b9a | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100 ; 00533b9b
         ;   XREF to: 0046d100 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100(CDemonRenderer * this_ptr, CVector3i * direction)
     ADD ESP,0x8                         ; 00533ba0
-    MOV ECX,dword ptr [0x005f2afc]      ; 00533ba3 | DAT_005f2afc
+    MOV ECX,dword ptr [0x005f2afc]      ; 00533ba3 | g_CDemonRenderer_PTR_005f2afc
     PUSH 0x3e800000                     ; 00533ba9
-    PUSH ECX                            ; 00533bae | DAT_01bdd7e4
+    PUSH ECX                            ; 00533bae | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046d0d0 ; 00533baf
         ;   XREF to: 0046d0d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046d0d0(CDemonRenderer * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00533bb4
@@ -113,23 +113,23 @@ section .text
     CALL core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_004771c0 ; 00533c23
         ;   XREF to: 004771c0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_004771c0(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array)
     ADD ESP,0xc                         ; 00533c28
-    MOV ECX,dword ptr [0x005f2afc]      ; 00533c2b | DAT_005f2afc
+    MOV ECX,dword ptr [0x005f2afc]      ; 00533c2b | g_CDemonRenderer_PTR_005f2afc
         ;   Label: LAB_00533c2b
-    PUSH ECX                            ; 00533c31 | DAT_01bdd7e4
+    PUSH ECX                            ; 00533c31 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 00533c32
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00533c37
     TEST EAX,EAX                        ; 00533c3a
     JNZ 0x00533dcd                      ; 00533c3c
         ;   XREF to: 00533dcd (CONDITIONAL_JUMP)  ; LAB_00533dcd
-    CMP dword ptr [0x01c6cee8],0x0      ; 00533c42 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 00533c42 | g_INT_01c6cee8
     JNZ 0x00533c54                      ; 00533c49
         ;   XREF to: 00533c54 (CONDITIONAL_JUMP)  ; LAB_00533c54
     PUSH EBX                            ; 00533c4b
     CALL core_set.cpp_CDemonSet_buildMirrorList_FUN_0053afa0 ; 00533c4c
         ;   XREF to: 0053afa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildMirrorList_FUN_0053afa0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00533c51
-    MOV EDX,dword ptr [0x01c6cee8]      ; 00533c54 | DAT_01c6cee8
+    MOV EDX,dword ptr [0x01c6cee8]      ; 00533c54 | g_INT_01c6cee8
         ;   Label: LAB_00533c54
     TEST EDX,EDX                        ; 00533c5a
     JNZ 0x00533ccb                      ; 00533c5c
@@ -139,9 +139,9 @@ section .text
         ;   XREF to: 00533c97 (CONDITIONAL_JUMP)  ; LAB_00533c97
     MOV EAX,ESP                         ; 00533c67
     PUSH EAX                            ; 00533c69
-    MOV EAX,[0x005f2afc]                ; 00533c6a | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 00533c6a | g_CDemonRenderer_PTR_005f2afc
     MOV dword ptr [ESP + 0x4],EDX       ; 00533c6f
-    PUSH EAX                            ; 00533c73 | DAT_01bdd7e4
+    PUSH EAX                            ; 00533c73 | g_CDemonRenderer_01bdd7e4
     MOV dword ptr [ESP + 0xc],EDX       ; 00533c74
     MOV dword ptr [ESP + 0x10],EDX      ; 00533c78
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90 ; 00533c7c
@@ -168,7 +168,7 @@ section .text
     JZ 0x00533ccb                       ; 00533cb8
         ;   XREF to: 00533ccb (CONDITIONAL_JUMP)  ; LAB_00533ccb
     PUSH 0x1                            ; 00533cba
-    MOV ESI,dword ptr [0x00606aa0]      ; 00533cbc | DAT_00606aa0
+    MOV ESI,dword ptr [0x00606aa0]      ; 00533cbc | g_CTerrainPtr
     PUSH ESI                            ; 00533cc2
     CALL core_terrain.cpp_CTerrain_render_FUN_005723d0 ; 00533cc3
         ;   XREF to: 005723d0 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_render_FUN_005723d0(CTerrain * this_ptr, int render_pass)
@@ -252,7 +252,7 @@ section .text
     PUSH ESI                            ; 00533d84
     LEA EAX,[EBX + 0x161644]            ; 00533d85
     PUSH EAX                            ; 00533d8b
-    MOV EDI,dword ptr [0x005f4a58]      ; 00533d8c | DAT_005f4a58
+    MOV EDI,dword ptr [0x005f4a58]      ; 00533d8c | g_SkyDomeTexturePtr
     PUSH EDI                            ; 00533d92
     CALL core_dskybox.cpp_renderSkyDome_FUN_0046f480 ; 00533d93
         ;   XREF to: 0046f480 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_0046f480(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
@@ -277,7 +277,7 @@ section .text
     ADD ESP,0x8                         ; 00533dc5
     JMP 0x00533cb1                      ; 00533dc8
         ;   XREF to: 00533cb1 (UNCONDITIONAL_JUMP)  ; LAB_00533cb1
-    CMP dword ptr [0x00603b38],0x0      ; 00533dcd | DAT_00603b38
+    CMP dword ptr [0x00603b38],0x0      ; 00533dcd | g_RenderMirrorsFlag
         ;   Label: LAB_00533dcd
     JZ 0x00533d3c                       ; 00533dd4
         ;   XREF to: 00533d3c (CONDITIONAL_JUMP)  ; LAB_00533d3c

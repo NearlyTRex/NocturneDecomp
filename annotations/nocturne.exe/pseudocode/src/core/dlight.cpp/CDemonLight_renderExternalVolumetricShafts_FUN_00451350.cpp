@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350(CDemonLight *this_ptr)
 
 {
@@ -88,9 +86,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
     local_98[(uint)bVar5 * -2] = *(int *)((int)&local_f0 + (uint)bVar5 * -8 + 4);
     local_98[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
          *(int *)((int)&local_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-    local_114 = (float)local_9c * _DAT_0059c038;
-    local_110 = (float)local_98[0] * _DAT_0059c038;
-    local_10c = (float)local_98[1] * _DAT_0059c038;
+    local_114 = (float)local_9c * 0.00390625f;
+    local_110 = (float)local_98[0] * 0.00390625f;
+    local_10c = (float)local_98[1] * 0.00390625f;
     local_e4 = local_114 - (this_ptr->base).position.x;
     local_e0 = local_110 - (this_ptr->base).position.y;
     local_dc = local_10c - (this_ptr->base).position.z;
@@ -188,9 +186,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               }
               local_fc = local_f4 * local_34;
               local_f8 = local_f4 * local_30;
-              local_12c.x = (int)ROUND(local_fc * _DAT_0059c030);
-              local_12c.y = (int)ROUND(local_f8 * _DAT_0059c030);
-              local_12c.z = (int)ROUND(local_f4 * _DAT_0059c030);
+              local_12c.x = (int)ROUND(local_fc * 256.0f);
+              local_12c.y = (int)ROUND(local_f8 * 256.0f);
+              local_12c.z = (int)ROUND(local_f4 * 256.0f);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,
                          &local_12c);
@@ -200,9 +198,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               }
               local_fc = local_f4 * local_3c;
               local_f8 = local_f4 * local_38;
-              local_a8.x = (int)ROUND(local_fc * _DAT_0059c030);
-              local_a8.y = (int)ROUND(local_f8 * _DAT_0059c030);
-              local_a8.z = (int)ROUND(local_f4 * _DAT_0059c030);
+              local_a8.x = (int)ROUND(local_fc * 256.0f);
+              local_a8.y = (int)ROUND(local_f8 * 256.0f);
+              local_a8.z = (int)ROUND(local_f4 * 256.0f);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,
                          &local_a8);
@@ -212,9 +210,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               }
               local_fc = local_f4 * local_3c;
               local_f8 = local_f4 * local_38;
-              local_d8.x = (int)ROUND(local_fc * _DAT_0059c030);
-              local_d8.y = (int)ROUND(local_f8 * _DAT_0059c030);
-              local_d8.z = (int)ROUND(local_f4 * _DAT_0059c030);
+              local_d8.x = (int)ROUND(local_fc * 256.0f);
+              local_d8.y = (int)ROUND(local_f8 * 256.0f);
+              local_d8.z = (int)ROUND(local_f4 * 256.0f);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,
                          &local_d8);
@@ -224,9 +222,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               }
               local_fc = local_f4 * local_34;
               local_f8 = local_f4 * local_30;
-              local_c0.x = (int)ROUND(local_fc * _DAT_0059c030);
-              local_c0.y = (int)ROUND(local_f8 * _DAT_0059c030);
-              local_c0.z = (int)ROUND(local_f4 * _DAT_0059c030);
+              local_c0.x = (int)ROUND(local_fc * 256.0f);
+              local_c0.y = (int)ROUND(local_f8 * 256.0f);
+              local_c0.z = (int)ROUND(local_f4 * 256.0f);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
                          &local_c0);

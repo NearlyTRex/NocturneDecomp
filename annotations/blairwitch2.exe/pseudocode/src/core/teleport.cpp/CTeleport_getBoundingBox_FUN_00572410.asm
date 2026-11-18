@@ -1,15 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_teleport_cpp_CTeleport_getBoundingBox_FUN_00572410(CTeleport *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_teleport_cpp_CTeleport_getBoundingBox_FUN_00572410(CTeleport *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ec44a
-;   undefined4 DAT_005ec452
+;   double g_DOUBLE_005ec44a = 0.5
+;   double g_DOUBLE_005ec452 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -20,7 +19,7 @@ section .text
     SUB ESP,0x18                        ; 00572411
     MOV EDX,dword ptr [ESP + 0x20]      ; 00572414
     MOV EAX,ESI                         ; 00572418
-    FLD double ptr [0x005ec44a]         ; 0057241a | DAT_005ec44a
+    FLD double ptr [0x005ec44a]         ; 0057241a | g_DOUBLE_005ec44a
     FLD float ptr [EDX + 0x2b4]         ; 00572420
     FMUL ST1                            ; 00572426
     FLD float ptr [EDX + 0x2bc]         ; 00572428
@@ -36,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 0057244f
     MOV ESI,ESP                         ; 00572451
     MOV dword ptr [ESP + 0x4],ECX       ; 00572453
-    FADD double ptr [0x005ec452]        ; 00572457 | DAT_005ec452
+    FADD double ptr [0x005ec452]        ; 00572457 | g_DOUBLE_005ec452
     FXCH ST3                            ; 0057245d
     FSTP float ptr [ESP + 0xc]          ; 0057245f
     FXCH ST2                            ; 00572463

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 166,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
-    "suspect_count": 8,
+    "pseudocode_lines": 72,
+    "suspect_count": 4,
     "suspect_types": [
-      "raw_address_constant",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "stack_param",
+      "stack_ref",
+      "unrolled_memcpy"
     ],
-    "total_lines": 221
+    "total_lines": 227
   },
   "cross_references": [],
   "function": {
@@ -44,7 +43,7 @@
     {
       "addr": "0041a840",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a840"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840"
     },
     {
       "addr": "004268b0",
@@ -59,17 +58,17 @@
     {
       "addr": "005035c0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
     },
     {
       "addr": "005042e0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005042e0"
+      "name": "core_motion.cpp_CMotionController_render_FUN_005042e0"
     },
     {
       "addr": "005306e0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_005306e0"
+      "name": "core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0"
     },
     {
       "addr": "00547170",
@@ -106,15 +105,15 @@
     },
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     },
     {
       "addr": "0061b5a8",
@@ -124,14 +123,14 @@
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01d1cdc8",
-      "name": "DAT_01d1cdc8",
-      "type": "undefined4",
+      "name": "g_RenderMotionDebug",
+      "type": "int",
       "value": null
     },
     {
@@ -185,6 +184,12 @@
       "by": "name",
       "class": "operand-change",
       "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00545710",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6237
     }
   },
   "stack_frame": {
@@ -205,74 +210,42 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "this_ptr_01 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046c540(DAT_0060b280,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900(DAT_0060b280);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,65000);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0x1c38bc0 assigned to bare local `this_ptr_02`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_02` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 21,
-      "match": "0x1c38bc0",
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_ffffffc4",
       "severity": "moderate",
-      "text": "this_ptr_02 = 0x01C38BC0;",
-      "type": "raw_address_constant"
+      "text": "int in_stack_ffffffc4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 41,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)&stack0xffffffc4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_ffffffc4",
+      "severity": "moderate",
+      "text": "iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_34,in_stack_ffffffc4);",
+      "type": "stack_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 41,
+      "line": 42,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 28,
         "vtable_addr": "005fb424"
       }

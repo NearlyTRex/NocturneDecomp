@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 189,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 15,
+    "pseudocode_lines": 18,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "pointer_truncation",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -41,8 +40,8 @@
   "globals": [
     {
       "addr": "026807f0",
-      "name": "DAT_026807f0",
-      "type": "undefined4",
+      "name": "g_MultibyteLocaleActive",
+      "type": "int",
       "value": null
     }
   ],
@@ -136,16 +135,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "byte * FUN_005c0e80(byte *param_1,byte *param_2)",
@@ -153,7 +144,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "byte * FUN_005c0e80(byte *param_1,byte *param_2)",
@@ -161,7 +152,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 7,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 < param_2) {",
@@ -169,7 +160,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 7,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_1 < param_2) {",
@@ -177,7 +168,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_2",
       "severity": "mild",
       "text": "pbVar1 = param_2 + -1;",
@@ -185,7 +176,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "return param_2 + -2;",
@@ -193,7 +184,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "while (pbVar1 = pbVar1 + -1, param_1 <= pbVar1) {",
@@ -201,7 +192,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + (-1 - ((int)param_2 - (int)pbVar1) % 2);",
@@ -209,7 +200,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + (-1 - ((int)param_2 - (int)pbVar1) % 2);",
@@ -217,7 +208,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + (-1 - ((int)param_2 - (int)pbVar1) % 2);",
@@ -225,7 +216,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = (byte *)0x0;",
@@ -233,7 +224,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "return param_2;",
@@ -241,7 +232,7 @@
     },
     {
       "description": "Pointer value `pbVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 17,
+      "line": 15,
       "match": "(int)pbVar1",
       "severity": "moderate",
       "text": "param_2 = param_2 + (-1 - ((int)param_2 - (int)pbVar1) % 2);",

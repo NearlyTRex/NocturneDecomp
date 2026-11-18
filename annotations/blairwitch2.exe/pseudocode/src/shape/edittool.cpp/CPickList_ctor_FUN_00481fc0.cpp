@@ -20,7 +20,7 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_00481fc0(CPickList *th
   pCVar3 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_00484310((CEdScrollBar *)&pCVar2[0x1b].vtable);
   pCVar4 = shape_edittool_cpp_CEdButton_ctor_FUN_00484e20((CEdButton *)&pCVar3[1].item_count);
   pCVar4 = shape_edittool_cpp_CEdButton_ctor_FUN_00484e20(pCVar4 + 1);
-  *(byte ***)(pCVar4[-4].button_text + 0xa8) = &g_CPickListVTable;
+  *(CPickList_full_vtable **)(pCVar4[-4].button_text + 0xa8) = &g_CPickListVTable;
   pCVar4[-0xffffffff00000002].button_text[0xc4] = '\0';
   pCVar4[-0xffffffff00000002].button_text[0xc5] = '\0';
   pCVar4[-0xffffffff00000002].button_text[0xc6] = '\0';
@@ -42,7 +42,7 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_00481fc0(CPickList *th
   pCVar4[-0xffffffff00000002].button_text[0x8d] = '\0';
   pCVar4[-0xffffffff00000002].button_text[0x8e] = '\0';
   pCVar4[-0xffffffff00000002].button_text[0x8f] = '\0';
-  pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d286c);
+  pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("OK");
   pcVar6 = pCVar4[-3].button_text + 0x14;
   do {
     cVar1 = *pcVar5;

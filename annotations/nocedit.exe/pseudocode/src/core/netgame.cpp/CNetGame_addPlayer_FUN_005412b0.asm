@@ -22,7 +22,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   uint g_CurrentGameTime
-;   int INT_02f7c8c4
+;   int g_NetNextPlayerId
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -94,7 +94,7 @@ section .text
     MOV dword ptr [EBX + 0x2c],EAX      ; 0054134d
     MOV EDX,EAX                         ; 00541350
     MOV dword ptr [EBX + 0x30],EAX      ; 00541352
-    MOV EAX,[0x02f7c8c4]                ; 00541355 | INT_02f7c8c4
+    MOV EAX,[0x02f7c8c4]                ; 00541355 | g_NetNextPlayerId
     MOV dword ptr [EBX + 0x38],EDX      ; 0054135a
     DEC EAX                             ; 0054135d
     MOV dword ptr [EBX + 0x34],EAX      ; 0054135e

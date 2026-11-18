@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 64,
+    "complexity_score": 49,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "raw_address_constant"
+      "pointer_cast"
     ],
     "total_lines": 114
   },
@@ -84,9 +83,9 @@
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "00622c18",
@@ -252,14 +251,6 @@
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Raw hex address 0x1d2c900 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 23,
-      "match": "0x1d2c900",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01D2C900;",
-      "type": "raw_address_constant"
     }
   ]
 }

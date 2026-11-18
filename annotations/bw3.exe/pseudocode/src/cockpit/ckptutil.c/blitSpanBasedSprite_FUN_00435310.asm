@@ -14,13 +14,13 @@
 ; int              Stack[0x20]:4   height
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba20 = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00434e80
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80
 ;
 ; *****************************************************************************
 
@@ -33,11 +33,11 @@ section .text
     PUSH EBP                            ; 00435313
     SUB ESP,0x34                        ; 00435314
     MOV EDI,dword ptr [ESP + 0x54]      ; 00435317
-    MOV EDX,dword ptr [0x01c5faec]      ; 0043531b | DAT_01c5faec
-    MOV EAX,[0x01c5faf0]                ; 00435321 | DAT_01c5faf0
+    MOV EDX,dword ptr [0x01c5faec]      ; 0043531b | g_ScreenBufferArray
+    MOV EAX,[0x01c5faf0]                ; 00435321 | g_ScreenBufferArray[1]
     SUB EAX,EDX                         ; 00435326
     MOV dword ptr [ESP + 0x10],EAX      ; 00435328
-    MOV EAX,[0x005fba18]                ; 0043532c | DAT_005fba18
+    MOV EAX,[0x005fba18]                ; 0043532c | g_INT_005fba18
     MOV EDX,EAX                         ; 00435331
     SAR EDX,0x1f                        ; 00435333
     SUB EAX,EDX                         ; 00435336
@@ -63,8 +63,8 @@ section .text
     LEA EDX,[ECX + EAX*0x1]             ; 0043535e
     MOV EBP,EDI                         ; 00435361
     MOV dword ptr [ESP + 0x48],EDX      ; 00435363
-    CALL cockpit_ckptutil.c_FUN_00434e80 ; 00435367
-        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_00434e80()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80 ; 00435367
+        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
     SHL EBP,0x5                         ; 0043536c
     MOV EDX,dword ptr [ESP + 0x64]      ; 0043536f
     MOV dword ptr [ESP + 0x30],EAX      ; 00435373
@@ -77,7 +77,7 @@ section .text
     SHL EAX,0x2                         ; 00435387
     ADD ECX,EDI                         ; 0043538a
     MOV dword ptr [ESP],EAX             ; 0043538c
-    MOV EAX,[0x005fba20]                ; 0043538f | DAT_005fba20
+    MOV EAX,[0x005fba20]                ; 0043538f | g_INT_005fba20
     SHL ECX,0x2                         ; 00435394
     CMP EAX,0x8                         ; 00435397
     JNZ 0x0043545b                      ; 0043539a

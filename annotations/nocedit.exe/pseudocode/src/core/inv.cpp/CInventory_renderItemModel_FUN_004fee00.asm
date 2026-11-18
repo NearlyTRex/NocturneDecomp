@@ -94,14 +94,14 @@ section .text
     SHL EDX,0x2                         ; 004fee58
     SBB EAX,EDX                         ; 004fee5b
     SAR EAX,0x2                         ; 004fee5d
-    MOV EDX,dword ptr [0x02dcd794]      ; 004fee60 | INT_02dcd794
+    MOV EDX,dword ptr [0x02dcd794]      ; 004fee60 | g_InventoryLightAngle
     ADD EDX,EAX                         ; 004fee66
     PUSH EDX                            ; 004fee68
-    MOV dword ptr [0x02dcd794],EDX      ; 004fee69 | INT_02dcd794
+    MOV dword ptr [0x02dcd794],EDX      ; 004fee69 | g_InventoryLightAngle
     CALL engine_matrix.c_interpolatedSin_FUN_0050c5c0 ; 004fee6f
         ;   XREF to: 0050c5c0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_0050c5c0(int angle)
     ADD ESP,0x4                         ; 004fee74
-    MOV EDI,dword ptr [0x02dcd794]      ; 004fee77 | INT_02dcd794
+    MOV EDI,dword ptr [0x02dcd794]      ; 004fee77 | g_InventoryLightAngle
     PUSH EDI                            ; 004fee7d
     MOV ESI,EAX                         ; 004fee7e
     CALL engine_matrix.c_interpolatedCos_FUN_0050c600 ; 004fee80

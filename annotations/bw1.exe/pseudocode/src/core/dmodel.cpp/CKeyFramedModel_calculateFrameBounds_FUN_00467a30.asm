@@ -17,7 +17,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0 at 00466971
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9644
+;   double g_DOUBLE_005d9644 = 0.00390625
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
@@ -54,7 +54,7 @@ section .text
     SHL EAX,0x2                         ; 00467a7f
     MOV EBX,dword ptr [EBP + 0x10c]     ; 00467a82
     ADD EBX,EAX                         ; 00467a88
-    FLD double ptr [0x005d9644]         ; 00467a8a | DAT_005d9644
+    FLD double ptr [0x005d9644]         ; 00467a8a | g_DOUBLE_005d9644
     FILD dword ptr [EBX]                ; 00467a90
     FMUL ST1                            ; 00467a92
     FSTP float ptr [ESP]                ; 00467a94
@@ -88,14 +88,14 @@ section .text
         ;   XREF to: 00467b1e (CONDITIONAL_JUMP)  ; LAB_00467b1e
     FILD dword ptr [EBX + 0xc]          ; 00467ade
         ;   Label: LAB_00467ade
-    FMUL double ptr [0x005d9644]        ; 00467ae1 | DAT_005d9644
+    FMUL double ptr [0x005d9644]        ; 00467ae1 | g_DOUBLE_005d9644
     FSTP float ptr [ESP]                ; 00467ae7
     FILD dword ptr [EBX + 0x10]         ; 00467aea
-    FMUL double ptr [0x005d9644]        ; 00467aed | DAT_005d9644
+    FMUL double ptr [0x005d9644]        ; 00467aed | g_DOUBLE_005d9644
     MOV EAX,ESP                         ; 00467af3
     FSTP float ptr [ESP + 0x4]          ; 00467af5
     FILD dword ptr [EBX + 0x14]         ; 00467af9
-    FMUL double ptr [0x005d9644]        ; 00467afc | DAT_005d9644
+    FMUL double ptr [0x005d9644]        ; 00467afc | g_DOUBLE_005d9644
     PUSH EAX                            ; 00467b02
     ADD EBX,0xc                         ; 00467b03
     INC ESI                             ; 00467b06

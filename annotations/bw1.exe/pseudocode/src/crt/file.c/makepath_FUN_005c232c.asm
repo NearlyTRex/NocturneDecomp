@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_mission.cpp_FUN_0051abf0 at 0051ac11
+;   core_mission.cpp_CDemonMission_loadScript_FUN_0051abf0 at 0051ac11
 ;   engine_dosio.cpp_makePath_FUN_004795b0 at 004795cc
 ;
 ; Called Functions:

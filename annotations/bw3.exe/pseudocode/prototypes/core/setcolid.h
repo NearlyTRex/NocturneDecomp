@@ -9,9 +9,9 @@
 // Address: 0053bb80
 void __cdecl staticInit(void);
 
-// Original: core_setcolid.cpp_FUN_0053bc80
+// Original: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
 // Address: 0053bc80
-float * FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7);
+float __cdecl CDemonSet::processCollisionTypes(CDemonSet *this_ptr,CVector3f *position,float radius);
 
 // Original: core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0
 // Address: 0053cad0
@@ -29,21 +29,21 @@ float __cdecl CDemonSet::getVoxelHeight(CDemonSet *this_ptr,CVector3f *world_pos
 // Address: 0053cca0
 int __cdecl CDemonSet::testVoxelRaycast(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 
-// Original: core_setcolid.cpp_FUN_0053ccc0
+// Original: core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0
 // Address: 0053ccc0
-undefined4 FUN_0053ccc0(int param_1,float *param_2,float *param_3);
+float __cdecl CDemonSet::raycast(CDemonSet *this_ptr,CVector3f *ray_origin,CVector3f *ray_target);
 
-// Original: core_setcolid.cpp_FUN_0053ce80
+// Original: core_setcolid.cpp_CDemonSet_refinedRaycast_FUN_0053ce80
 // Address: 0053ce80
-undefined4 FUN_0053ce80(int param_1);
+float __cdecl CDemonSet::refinedRaycast(CDemonSet *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_0053cff0
+// Original: core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0053cff0
 // Address: 0053cff0
-float FUN_0053cff0(undefined4 param_1,float *param_2,float *param_3);
+float __cdecl CDemonSet::iterativeRaycast(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction);
 
-// Original: core_setcolid.cpp_FUN_0053d270
+// Original: core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270
 // Address: 0053d270
-float FUN_0053d270(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,float *param_4,float param_5);
+float __cdecl CDemonSet::raycastAgainstActors(CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target,float max_t);
 
 // Original: core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_0053d770
 // Address: 0053d770
@@ -53,13 +53,13 @@ int __cdecl CDemonSet::isActorIgnored(CDemonSet *this_ptr,CDemonActor *actor);
 // Address: 0053d7d0
 int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info);
 
-// Original: core_setcolid.cpp_FUN_0053da90
+// Original: core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90
 // Address: 0053da90
-int __cdecl FUN_0053da90(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
+int __cdecl CDemonSet::testOBBCylinderCollision(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
 
-// Original: core_setcolid.cpp_FUN_0053de10
+// Original: core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10
 // Address: 0053de10
-float FUN_0053de10(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8);
+float __cdecl CDemonSet::testCylinderCollision(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 
 // Original: core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_0053e870
 // Address: 0053e870
@@ -97,9 +97,9 @@ void __cdecl CDemonSet::setRayType(CDemonSet *this_ptr,int ray_type);
 // Address: 0053ecd0
 void __cdecl CDemonSet::setRayTypeLaser(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b);
 
-// Original: core_setcolid.cpp_FUN_0053ed10
+// Original: core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10
 // Address: 0053ed10
-void FUN_0053ed10(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
+void __cdecl CDemonSet::notifyDamageListeners(CDemonSet *this_ptr,CVector3f *position,CVector3f *actor_position,SDamageInfo *damage_info);
 
 // Original: core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80
 // Address: 0053ed80

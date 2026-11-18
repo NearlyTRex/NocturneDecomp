@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_0058ed10(int x,int y)
 
 {
   SetCursorPos(x,y);
-  _DAT_01c2a37c = x;
-  _DAT_01c2a380 = y;
+  g_MouseX = x;
+  g_MouseY = y;
   return;
 }

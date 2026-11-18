@@ -22,16 +22,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005dbb70
 ;   TerminatedCString s_Parity_Check_999_005dbb83
-;   undefined4 DAT_0061ab68
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   uchar[8] g_VoxelYBitMasks
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_00457bc0
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0048ee90
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -130,10 +130,10 @@ section .text
     MOV EDX,0x5dbb70                    ; 0048fb02 | = "..\\core\\dtrace.cpp"
     MOV ECX,0xb55                       ; 0048fb07
     PUSH 0x5dbb83                       ; 0048fb0c | = "Parity Check 999"
-    MOV dword ptr [0x01d1d400],EDX      ; 0048fb11 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0048fb17 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0048fb1d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0048fb11 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0048fb17 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048fb1d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048fb22
     CMP dword ptr [EBX],0x0             ; 0048fb25
         ;   Label: LAB_0048fb25
@@ -149,7 +149,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 0048fb3b
     MOV ESI,dword ptr [EBX]             ; 0048fb3e
     SHL EAX,0x3                         ; 0048fb40
-    MOV DL,byte ptr [EDX + 0x61ab68]    ; 0048fb43 | DAT_0061ab68
+    MOV DL,byte ptr [EDX + 0x61ab68]    ; 0048fb43 | g_VoxelYBitMasks
     ADD EAX,EDI                         ; 0048fb49
     XOR DL,0xff                         ; 0048fb4b
     AND byte ptr [ESI + EAX*0x1],DL     ; 0048fb4e
@@ -158,7 +158,7 @@ section .text
     ADD ESI,EAX                         ; 0048fb56
     MOV AL,byte ptr [EDX + EAX*0x1]     ; 0048fb58
     MOV EDX,dword ptr [ESP]             ; 0048fb5b
-    AND AL,byte ptr [EDX + 0x61ab68]    ; 0048fb5e | DAT_0061ab68
+    AND AL,byte ptr [EDX + 0x61ab68]    ; 0048fb5e | g_VoxelYBitMasks
     OR byte ptr [ESI],AL                ; 0048fb64
     ADD ESP,0x30                        ; 0048fb66
     POP EBP                             ; 0048fb69

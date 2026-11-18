@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_0055c020
-;   core_setdir.cpp_FUN_0055b990
+;   core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_0055b990
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
         ;   Label: LAB_0055ba96
     PUSH EBX                            ; 0055ba97
     PUSH ESI                            ; 0055ba98
-    CALL core_setdir.cpp_FUN_0055b990   ; 0055ba99
-        ;   XREF to: 0055b990 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0055b990()
+    CALL core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_0055b990 ; 0055ba99
+        ;   XREF to: 0055b990 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_0055b990(CDemonSet * this_ptr, int box_index, CVector3f * point)
     ADD ESP,0xc                         ; 0055ba9e
     TEST EAX,EAX                        ; 0055baa1
     JZ 0x0055ba86                       ; 0055baa3

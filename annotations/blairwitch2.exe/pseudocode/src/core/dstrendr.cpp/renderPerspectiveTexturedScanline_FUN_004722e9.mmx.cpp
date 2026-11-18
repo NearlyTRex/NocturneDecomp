@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_004722e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 {
 __asm {
@@ -25,44 +23,44 @@ __asm {
         jle LAB_004723d0
         lea EBX,[EBX + EAX*0x4]
         shl ECX,0x2
-        mov dword ptr [DAT_0060d264],ECX
-        mov dword ptr [DAT_0060d260],EBX
+        mov dword ptr [g_PerspectiveScanlinePixelCount],ECX
+        mov dword ptr [g_PerspectiveScanlineColorPtr],EBX
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c35e74]
-        mov dword ptr [DAT_0060d238],EBX
-        mov dword ptr [DAT_0060d254],EDX
+        mov dword ptr [g_PerspectiveNextU],EBX
+        mov dword ptr [g_SoftwareDeltaTextureU],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c35e74]
-        mov dword ptr [DAT_0060d23c],EBX
-        mov dword ptr [DAT_0060d258],EDX
-        mov ECX,dword ptr [DAT_0060d238]
-        mov EDX,dword ptr [DAT_0060d23c]
+        mov dword ptr [g_PerspectiveNextV],EBX
+        mov dword ptr [g_SoftwareDeltaTextureV],EDX
+        mov ECX,dword ptr [g_PerspectiveNextU]
+        mov EDX,dword ptr [g_PerspectiveNextV]
         mov EDI,0x0
     LAB_00472365:
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [DAT_0061c868]
-        psrlq MM2,qword ptr [DAT_0061c888]
-        pand MM0,qword ptr [DAT_0061c8a8]
-        pand MM2,qword ptr [DAT_0061c8c8]
+        psrlq MM0,qword ptr [g_TextureShift1]
+        psrlq MM2,qword ptr [g_TextureShift2]
+        pand MM0,qword ptr [g_TextureMask1]
+        pand MM2,qword ptr [g_TextureMask2]
         paddd MM0,MM2
         movd EBX,MM0
         shl EBX,0x2
-        add EBX,dword ptr [DAT_01c37770]
+        add EBX,dword ptr [g_CurrentTextureData]
         movd MM0,dword ptr [EBX]
-        mov EBX,dword ptr [DAT_0060d260]
+        mov EBX,dword ptr [g_PerspectiveScanlineColorPtr]
         add EBX,EDI
         movd dword ptr [EBX],MM0
         add EDI,0x4
-        cmp EDI,dword ptr [DAT_0060d264]
+        cmp EDI,dword ptr [g_PerspectiveScanlinePixelCount]
         jnc LAB_004723d0
-        add ECX,dword ptr [DAT_0060d254]
+        add ECX,dword ptr [g_SoftwareDeltaTextureU]
         paddw MM5,MM6
-        add EDX,dword ptr [DAT_0060d258]
+        add EDX,dword ptr [g_SoftwareDeltaTextureV]
         movq MM0,MM5
         jmp LAB_00472365
     LAB_004723d0:

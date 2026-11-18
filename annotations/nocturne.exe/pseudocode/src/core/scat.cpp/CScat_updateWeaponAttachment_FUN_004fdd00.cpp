@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_004fdd00(CScat *this_ptr)
 
@@ -44,7 +43,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_004fdd00(CScat *this
               (&local_130,&local_28,&local_40);
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
               (&local_130,
-               (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01e533c0,
+               (this_ptr->base).base.model.bone_transform.bone_model_matrices + g_ScatIndices[0xe],
                &local_d0);
     pCVar3 = &local_d0;
     pCVar4 = &local_70;

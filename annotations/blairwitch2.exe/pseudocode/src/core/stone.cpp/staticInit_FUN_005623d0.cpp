@@ -10,7 +10,7 @@ void __cdecl core_stone_cpp_staticInit_FUN_005623d0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CTempleStoneClassInfo,"?CTempleStone" + 1,
+            (&g_CTempleStoneClassInfo,"CTempleStone",
              core_stone_cpp_factoryFuncTempleStone_FUN_00562400,&g_CTempleStoneClassVersion,1,
              &g_CBoxActorClassInfo);
   return;

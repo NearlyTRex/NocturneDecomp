@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_ghoul_cpp_CGhoul_getActorType_FUN_004a8c90(CGhoul *this_ptr)
 
 {
-  return &g_CGhoulActorType_01c78bd8;
+  return &g_CGhoulClassInfo;
 }

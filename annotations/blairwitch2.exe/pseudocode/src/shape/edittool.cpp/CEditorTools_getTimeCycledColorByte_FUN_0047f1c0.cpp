@@ -15,19 +15,19 @@ uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0
   uVar1 = uVar1 & 0x30000;
   if (uVar1 < 0x10000) {
     if (uVar1 == 0) {
-      return (uint)DAT_01c2c910;
+      return (uint)g_ColorCubeLookup[0];
     }
   }
   else {
     if (uVar1 < 0x10001) {
-      return (uint)DAT_01c3490f;
+      return (uint)g_ColorCubeLookup[0x7fff];
     }
     if (0x1ffff < uVar1) {
       if (uVar1 < 0x20001) {
-        return (uint)DAT_01c2ccf0;
+        return (uint)g_ColorCubeLookup[0x3e0];
       }
       if (uVar1 == 0x30000) {
-        return (uint)DAT_01c3452f;
+        return (uint)g_ColorCubeLookup[0x7c1f];
       }
     }
   }

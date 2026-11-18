@@ -36,12 +36,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1d56
 ;   TerminatedCString s_Out_of_memory_005d1d6b
-;   undefined4 DAT_005e4760
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   float g_FLOAT_005e4760 = 0.00390625
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0054bf00
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
@@ -80,7 +80,7 @@ section .text
     PUSH 0x23a4                         ; 0054a3fc
         ;   Label: LAB_0054a3fc
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0054a401
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0054a406
     TEST EAX,EAX                        ; 0054a409
     JZ 0x0054a416                       ; 0054a40b
@@ -97,10 +97,10 @@ section .text
     MOV EAX,0x5d1d56                    ; 0054a41e | = "..\\core\\skeleton.cpp"
     MOV EDX,0x600                       ; 0054a423
     PUSH 0x5d1d6b                       ; 0054a428 | = "Out of memory"
-    MOV [0x01d71de0],EAX                ; 0054a42d | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0054a432 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0054a438
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 0054a42d | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 0054a432 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054a438
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054a43d
     PUSH ESI                            ; 0054a440
         ;   Label: LAB_0054a440
@@ -231,13 +231,13 @@ section .text
     LEA EBX,[ESP + 0x1c]                ; 0054a59a
     ADD EAX,EDX                         ; 0054a59e
     FILD dword ptr [EAX]                ; 0054a5a0
-    FMUL float ptr [0x005e4760]         ; 0054a5a2 | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054a5a2 | g_FLOAT_005e4760
     FSTP float ptr [EBX]                ; 0054a5a8
     FILD dword ptr [EAX + 0x4]          ; 0054a5aa
-    FMUL float ptr [0x005e4760]         ; 0054a5ad | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054a5ad | g_FLOAT_005e4760
     FSTP float ptr [EBX + 0x4]          ; 0054a5b3
     FILD dword ptr [EAX + 0x8]          ; 0054a5b6
-    FMUL float ptr [0x005e4760]         ; 0054a5b9 | DAT_005e4760
+    FMUL float ptr [0x005e4760]         ; 0054a5b9 | g_FLOAT_005e4760
     FSTP float ptr [EBX + 0x8]          ; 0054a5bf
     FLD float ptr [ESP + 0x1c]          ; 0054a5c2
     FSUB float ptr [ESP + 0x4]          ; 0054a5c6

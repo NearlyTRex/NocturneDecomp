@@ -13,20 +13,20 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0 at 00548910
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fb998
-;   undefined4 DAT_0060b280
+;   float g_FLOAT_005fb998 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   undefined4 DAT_01c35e60
+;   int g_INT_01c35e60
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0
-;   core_xform.cpp_FUN_00592720
+;   core_xform.cpp_getTranslation_FUN_00592720
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407cc0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_pop_FUN_0046b4a0
-;   engine_special.cpp_FUN_0055d723
-;   shape_edittool.cpp_FUN_0047fd00
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH EBX                            ; 005424fe
     LEA EDI,[ESP + 0x28]                ; 005424ff
     MOV dword ptr [ESP + 0x58],EAX      ; 00542503
-    CALL core_xform.cpp_FUN_00592720    ; 00542507
-        ;   XREF to: 00592720 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00592720()
+    CALL core_xform.cpp_getTranslation_FUN_00592720 ; 00542507
+        ;   XREF to: 00592720 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_00592720(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     LEA ESI,[ESP + 0x40]                ; 0054250c
     ADD ESP,0x4                         ; 00542510
     LEA EBX,[ESP + 0x30]                ; 00542513
@@ -71,23 +71,23 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00542518
     MOVSD ES:EDI,ESI                    ; 00542519
     LEA EAX,[ESP + 0x24]                ; 0054251a
-    MOV ESI,dword ptr [0x0060b280]      ; 0054251e | DAT_0060b280
+    MOV ESI,dword ptr [0x0060b280]      ; 0054251e | g_CDemonRenderer_PTR_0060b280
     FLD float ptr [EAX]                 ; 00542524
-    FMUL float ptr [0x005fb998]         ; 00542526 | DAT_005fb998
+    FMUL float ptr [0x005fb998]         ; 00542526 | g_FLOAT_005fb998
     FISTP dword ptr [EBX]               ; 0054252c
     FLD float ptr [EAX + 0x4]           ; 0054252e
-    FMUL float ptr [0x005fb998]         ; 00542531 | DAT_005fb998
+    FMUL float ptr [0x005fb998]         ; 00542531 | g_FLOAT_005fb998
     FISTP dword ptr [EBX + 0x4]         ; 00542537
     FLD float ptr [EAX + 0x8]           ; 0054253a
-    FMUL float ptr [0x005fb998]         ; 0054253d | DAT_005fb998
+    FMUL float ptr [0x005fb998]         ; 0054253d | g_FLOAT_005fb998
     FISTP dword ptr [EBX + 0x8]         ; 00542543
     LEA EAX,[ESP + 0x30]                ; 00542546
     PUSH EAX                            ; 0054254a
     MOV EAX,dword ptr [ESI]             ; 0054254b
     ADD EAX,dword ptr [ESP + 0x58]      ; 0054254d
     PUSH EAX                            ; 00542551
-    CALL engine_special.cpp_FUN_0055d723 ; 00542552
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00542552
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00542557
     MOV EDI,dword ptr [ESP + 0x5c]      ; 0054255a
     MOV EAX,dword ptr [ESP + 0x60]      ; 0054255e
@@ -102,7 +102,7 @@ section .text
     MOV EDX,EDX                         ; 0054257e
     MOV EAX,dword ptr [ESP + 0x7c]      ; 00542580
         ;   Label: LAB_00542580
-    MOV [0x01c35e60],EAX                ; 00542584 | DAT_01c35e60
+    MOV [0x01c35e60],EAX                ; 00542584 | g_INT_01c35e60
     MOV EAX,dword ptr [ESP + 0x60]      ; 00542589
     MOV ECX,dword ptr [EAX + 0x1d1f8]   ; 0054258d
     XOR EBX,EBX                         ; 00542593
@@ -117,7 +117,7 @@ section .text
     JL 0x005425de                       ; 005425a7
         ;   XREF to: 005425de (CONDITIONAL_JUMP)  ; LAB_005425de
     IMUL ESI,EAX,0x30                   ; 005425a9
-    MOV EAX,[0x0060b280]                ; 005425ac | DAT_0060b280
+    MOV EAX,[0x0060b280]                ; 005425ac | g_CDemonRenderer_PTR_0060b280
     MOV ECX,0xc                         ; 005425b1
     SUB ESP,0x30                        ; 005425b6
     MOV EAX,dword ptr [EAX]             ; 005425b9
@@ -160,7 +160,7 @@ section .text
     LEA ESI,[ESP + 0x10]                ; 00542625
     LEA EDI,[ESP + 0x4c]                ; 00542629
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 0054262d
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x10]                ; 00542632
     ADD ESP,0x4                         ; 00542636
     MOVSD ES:EDI,ESI                    ; 00542639
@@ -168,15 +168,15 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0054263b
     PUSH EBP                            ; 0054263c
     LEA ESI,[ESP + 0x1c]                ; 0054263d
-    CALL core_xform.cpp_FUN_00592720    ; 00542641
-        ;   XREF to: 00592720 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00592720()
+    CALL core_xform.cpp_getTranslation_FUN_00592720 ; 00542641
+        ;   XREF to: 00592720 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_00592720(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x4                         ; 00542646
     MOV EAX,ESP                         ; 00542649
     PUSH EAX                            ; 0054264b
     LEA EAX,[ESP + 0x4c]                ; 0054264c
     LEA EDI,[ESP + 0x4]                 ; 00542650
     PUSH EAX                            ; 00542654
-    MOV ECX,dword ptr [0x0060b280]      ; 00542655 | DAT_0060b280
+    MOV ECX,dword ptr [0x0060b280]      ; 00542655 | g_CDemonRenderer_PTR_0060b280
     LEA ESI,[ESP + 0x20]                ; 0054265b
     PUSH ECX                            ; 0054265f
     MOVSD ES:EDI,ESI                    ; 00542660
@@ -189,10 +189,10 @@ section .text
     MOV ESI,dword ptr [0x006138e0]      ; 00542670 | g_CEditorToolsPtr
     PUSH 0x3f000000                     ; 00542676
     PUSH ESI                            ; 0054267b
-    CALL shape_edittool.cpp_FUN_0047fd00 ; 0054267c
-        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047fd00()
+    CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00 ; 0054267c
+        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00542681
-    MOV EDI,dword ptr [0x0060b280]      ; 00542684 | DAT_0060b280
+    MOV EDI,dword ptr [0x0060b280]      ; 00542684 | g_CDemonRenderer_PTR_0060b280
     PUSH EDI                            ; 0054268a
     CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 0054268b
         ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()

@@ -2,31 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 92,
+    "complexity_score": 26,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 97
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 96
   },
   "cross_references": [
     {
       "addr": "004ed260",
       "from_addr": "004ee120",
-      "name": "core_menu.cpp_FUN_004ed260",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004ed260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055a100",
       "from_addr": "0055a14f",
-      "name": "core_sound.cpp_FUN_0055a100",
+      "name": "core_sound.cpp_CSound_findAllSoundFiles_FUN_0055a100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,7 +72,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "0054ce00",
@@ -104,38 +100,38 @@
     },
     {
       "addr": "0061bc98",
-      "name": "DAT_0061bc98",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioBitsPerSample",
+      "type": "int",
+      "value": "0x10"
     },
     {
       "addr": "0061bc9c",
-      "name": "DAT_0061bc9c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "0061bca0",
-      "name": "DAT_0061bca0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioSampleRate",
+      "type": "int",
+      "value": "0x5622"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e80",
-      "name": "DAT_02648e80",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     }
   ],
@@ -167,7 +163,7 @@
       {
         "call_addr": "0055a14f",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a100",
+        "caller": "core_sound.cpp_CSound_findAllSoundFiles_FUN_0055a100",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -211,7 +207,7 @@
       {
         "call_addr": "004ee120",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ed260",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004ed260",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -310,46 +306,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_0061bc98",
-      "severity": "mild",
-      "text": "DAT_0061bc98 = bits_per_sample;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "DAT_0061bc9c = channels;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0061bca0",
-      "severity": "mild",
-      "text": "DAT_0061bca0 = sample_rate;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02648e80 + 0xc))",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

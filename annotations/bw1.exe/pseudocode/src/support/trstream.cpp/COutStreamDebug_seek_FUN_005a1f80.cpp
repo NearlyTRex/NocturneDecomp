@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80(COutStreamDebug *this_ptr,int offset,int origin)
 
 {
-  _DAT_01d1d400 = "..\\support\\trstream.cpp";
-  _DAT_01d1d404 = 0xab7;
-  core_main_c_FUN_005030e0("COutStreamDebug::seek - invalid operation");
+  g_CHAR_PTR_01d1d400 = "..\\support\\trstream.cpp";
+  g_INT_01d1d404 = 0xab7;
+  core_main_c_displayErrorAndQuit_FUN_005030e0("COutStreamDebug::seek - invalid operation");
   return 0;
 }

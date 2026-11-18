@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 76,
+    "complexity_score": 30,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 104
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
   },
   "cross_references": [
     {
@@ -145,8 +141,8 @@
     },
     {
       "addr": "02dc8318",
-      "name": "DAT_02dc8318",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     }
   ],
@@ -347,30 +343,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,pCVar3,8);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_02dc1b74",
-      "severity": "mild",
-      "text": "} while (pCVar3 != (CSfxSlot *)&DAT_02dc1b74);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

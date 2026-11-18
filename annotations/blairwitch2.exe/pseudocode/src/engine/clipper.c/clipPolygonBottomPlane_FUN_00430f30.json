@@ -1,20 +1,16 @@
 {
   "compile_source": "c",
   "complexity": {
-    "assembly_lines": 61,
-    "complexity_score": 332,
+    "assembly_lines": 123,
+    "complexity_score": 63,
     "cross_reference_count": 0,
-    "function_call_count": 0,
-    "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 25,
-    "suspect_types": [
-      "stack_param",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 128
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 63,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 186
   },
   "cross_references": [],
   "function": {
@@ -22,57 +18,87 @@
     "address_range": [
       [
         "00430f30",
-        "00430f86"
-      ],
-      [
-        "00430f8c",
-        "00430fb1"
+        "0043105d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_clipper.c_clipPolygonBottomPlane_FUN_00430f30",
-    "signature": "int engine_clipper_c_clipPolygonBottomPlane_FUN_00430f30(void)"
+    "signature": "int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_00430f30(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)"
   },
-  "function_calls": [],
-  "globals": [],
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "00430950",
+      "is_variadic": false,
+      "name": "engine_clipper.c_interpolateVertexBottomClip_FUN_00430950"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007bfcf8",
+      "name": "g_ClipperTempCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.653061224489796,
-    "instruction_count": 49,
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 98,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BOOL_OR": 2,
+      "BRANCH": 2,
       "BRANCHIND": 1,
-      "CBRANCH": 5,
-      "COPY": 44,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 73,
       "INT_2COMP": 2,
-      "INT_ADD": 23,
-      "INT_AND": 29,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 28,
-      "INT_LESS": 5,
-      "INT_MULT": 2,
-      "INT_NOTEQUAL": 6,
+      "INT_ADD": 43,
+      "INT_AND": 57,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 56,
+      "INT_LESS": 7,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 10,
       "INT_OR": 1,
-      "INT_SBORROW": 7,
-      "INT_SCARRY": 3,
-      "INT_SLESS": 14,
-      "INT_SUB": 9,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 6,
+      "INT_SLESS": 28,
+      "INT_SUB": 23,
       "INT_XOR": 2,
       "LOAD": 19,
-      "POPCOUNT": 14,
+      "POPCOUNT": 28,
       "RETURN": 1,
-      "STORE": 8
+      "STORE": 24,
+      "SUBPIECE": 4
     },
-    "pcode_op_count": 228
+    "pcode_op_count": 441
   },
   "siblings": {
     "bw1.exe": {
@@ -90,224 +116,45 @@
     "nocedit.exe": {
       "addr": "004362e0",
       "by": "name",
-      "class": "logic-change",
-      "ratio": 0.6667
+      "class": "identical",
+      "ratio": 1.0
     },
     "nocturne.exe": {
       "addr": "00431e10",
       "by": "name",
-      "class": "logic-change",
-      "ratio": 0.6667
+      "class": "identical",
+      "ratio": 1.0
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "input_vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
+      {
+        "is_param": true,
+        "name": "output_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uint *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if (0 < in_stack_0000000c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "puStack_14 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "v1 = (SRenderVertex *)in_stack_00000004[in_stack_0000000c + -1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "v1 = (SRenderVertex *)in_stack_00000004[in_stack_0000000c + -1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "iVar2 = DAT_007bfcf8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)(in_stack_00000008 + -4 + iVar3 * 4) = v1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "if (0xb < DAT_007bfcf8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "iVar2 = DAT_007bfcf8 * 0x30;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "DAT_007bfcf8 = DAT_007bfcf8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "DAT_007bfcf8 = DAT_007bfcf8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)(in_stack_00000008 + -4 + iVar3 * 4) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_007bfab8",
-      "severity": "mild",
-      "text": "(SRenderVertex *)(&DAT_007bfab8 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_007bfab8",
-      "severity": "mild",
-      "text": "(v2,v1,(SRenderVertex *)(&DAT_007bfab8 + iVar2));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)(in_stack_00000008 + -4 + (iVar3 + 1) * 4) = v1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "iVar2 = DAT_007bfcf8 * 0x30;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "DAT_007bfcf8 = DAT_007bfcf8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_007bfcf8",
-      "severity": "mild",
-      "text": "DAT_007bfcf8 = DAT_007bfcf8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)(in_stack_00000008 + -4 + iVar3 * 4) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_007bfab8",
-      "severity": "mild",
-      "text": "(SRenderVertex *)(&DAT_007bfab8 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_007bfab8",
-      "severity": "mild",
-      "text": "(v1,v2,(SRenderVertex *)(&DAT_007bfab8 + iVar2));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "} while (iStack_18 < in_stack_0000000c);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

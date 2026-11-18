@@ -14,12 +14,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048eebf
 ;   core_event.cpp_CEventList_getSfxHandle_FUN_00495110 at 00495116
 ;   core_event.cpp_CEventList_process_FUN_0048c020 at 0048c126
 ;   core_event.cpp_CEventList_render_FUN_00491bf0 at 00491e61
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0 at 0049544c
 ;   core_event.cpp_CEventList_setSfxHandle_FUN_00495150 at 0049515d
-;   core_event.cpp_FUN_0048c2e0 at 0048eebf
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005a54c0

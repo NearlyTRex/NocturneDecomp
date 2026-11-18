@@ -7,7 +7,7 @@
 ; CZombieDog *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005da717+1
+;   TerminatedCString s_speed_005da718
 ;   TerminatedCString s_modelName_005da71e
 ;   TerminatedCString s_guardDistance_005da728
 ;   TerminatedCString s_motion_state_005da736
@@ -30,7 +30,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004a0520 ; 00476ff6
         ;   XREF to: 004a0520 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004a0520(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00476ffb
-    PUSH 0x5da718                       ; 00476ffe | s_speed_005da717+1
+    PUSH 0x5da718                       ; 00476ffe | = "speed"
     LEA EAX,[EBX + 0xc1d0]              ; 00477003
     PUSH EAX                            ; 00477009
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0047700a

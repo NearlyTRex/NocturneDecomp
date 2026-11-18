@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 11,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "004b2d80",
+      "from_addr": "004b2fda",
+      "name": "core_game.cpp_CGame_ctor_FUN_004b2d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522350",
+      "from_addr": "00527baf",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bb500",
+    "address_range": [
+      [
+        "004bb500",
+        "004bb54a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_setAlphaFade_FUN_004bb500",
+    "signature": "void __cdecl core_game_cpp_CGame_setAlphaFade_FUN_004bb500(CGame *this_ptr,float start_alpha,float end_alpha,float duration,float red,float green,float blue,int texture_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00527baf",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "004b2fda",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_ctor_FUN_004b2d80",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "COPY": 15,
+      "INT_ADD": 16,
+      "LOAD": 9,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 48
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "start_alpha",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "end_alpha",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "duration",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 28,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "texture_index",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -23,7 +23,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_0049ee40(CEmitter *this_pt
   this_ptr_00[-0xffffffff00000001].model_name[0x19] = '\0';
   this_ptr_00[-0xffffffff00000001].model_name[0x1a] = -0x80;
   this_ptr_00[-0xffffffff00000001].model_name[0x1b] = '?';
-  pcVar3 = (char *)0x5dc930;
+  pcVar3 = "none";
   this_ptr_00[-0xffffffff00000001].model_name[0x1c] = '\0';
   this_ptr_00[-0xffffffff00000001].model_name[0x1d] = '\0';
   this_ptr_00[-0xffffffff00000001].model_name[0x1e] = -0x80;
@@ -46,7 +46,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_0049ee40(CEmitter *this_pt
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)0x5dc935;
+  pcVar3 = "none";
   pcVar4 = this_ptr_00[-1].model_name + 0x8c;
   do {
     cVar1 = *pcVar3;

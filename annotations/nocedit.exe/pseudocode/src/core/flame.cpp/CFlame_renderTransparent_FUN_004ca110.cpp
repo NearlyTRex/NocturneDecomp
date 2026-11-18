@@ -162,7 +162,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                     (g_CDemonRendererPtr2,
-                     SMRGLTextureBasic_ARRAY_0067b100 +
+                     g_FlameFrameTextures +
                      this_ptr->which_flame * 8 + (int)ROUND(ROUND(this_ptr->animation_time)) % 8);
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
           engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
@@ -253,8 +253,8 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       local_144.vertices[1] = 0;
       local_144.vertices[3] = 2;
       local_144.vertices[2] = 1;
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (this_ptr_00,&SMRGLTextureBasic_0067b0c8);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_00,&g_FlameGlowTexture)
+      ;
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
       engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
                 (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_144.base.base.count,0x163);

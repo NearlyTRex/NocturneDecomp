@@ -25,6 +25,10 @@ void __cdecl CPackedBitmap::reset(CPackedBitmap *this_ptr);
 // Address: 00516200
 void __cdecl CPackedBitmap::free(CPackedBitmap *this_ptr);
 
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_00516230
+// Address: 00516230
+void __cdecl CPackedBitmap::freePackedData(CPackedBitmap *this_ptr);
+
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_00516250
 // Address: 00516250
 int __cdecl CPackedBitmap::getTotalMemoryUsage(CPackedBitmap *this_ptr);
@@ -45,9 +49,13 @@ void __cdecl CPackedBitmap::renderClippedRegion(CPackedBitmap *this_ptr,int dest
 // Address: 00516590
 void __cdecl CPackedBitmap::renderWithGlobalClipping(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00516690
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_00516690
 // Address: 00516690
-void FUN_00516690(void);
+void __cdecl CPackedBitmap::renderIfIntersectsRect(CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right,int rect_bottom);
+
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_00516750
+// Address: 00516750
+void __cdecl CPackedBitmap::copyNoClip(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0
 // Address: 005168e0
@@ -65,10 +73,6 @@ void __cdecl CPackedBitmap::copyRawDataToCompressedRuns(CPackedBitmap *this_ptr,
 // Address: 00516a60
 void __cdecl CPackedBitmap::load(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00516c88
-// Address: 00516c88
-void FUN_00516c88(void);
-
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00516cb0
 // Address: 00516cb0
 void __cdecl CPackedBitmap::applyACTPalette(CPackedBitmap *this_ptr,char *act_filename);
@@ -85,9 +89,9 @@ void __cdecl CPackedBitmap::applyPalette(CPackedBitmap *this_ptr);
 // Address: 00516d70
 void __cdecl CPackedBitmap::loadByFileExtension(CPackedBitmap *this_ptr,int apply_palette_flag);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00516de0
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00516de0
 // Address: 00516de0
-void FUN_00516de0(CPackedBitmap *param_1,char *param_2);
+void __cdecl CPackedBitmap::saveToPBMFile(CPackedBitmap *this_ptr,char *filename);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_00516e60
 // Address: 00516e60
@@ -113,6 +117,6 @@ void __cdecl writePBGHeader(int total_entries,_FILE *file_header);
 // Address: 00517280
 CPackedBitmap * __cdecl parsePBGFile(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00517400
+// Original: cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400
 // Address: 00517400
-CPackedBitmap * FUN_00517400(CPackedBitmapSet *param_1,CPackedBitmap *param_2,undefined4 param_3,int param_4,int param_5,int param_6,char *param_7,int param_8);
+CPackedBitmap * __cdecl loadPBGFile(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);

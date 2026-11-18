@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 004d8180
 int __cdecl CIni::getProfileString(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
-// Original: engine_ini.cpp_FUN_004d8360
+// Original: engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004d8360
 // Address: 004d8360
-int FUN_004d8360(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
+int __cdecl CIni::findLineNumberOfVariable(CIni *this_ptr,char *section,char *key,char *filename,char *value);
 
 // Original: engine_ini.cpp_CIni_writeProfileString_FUN_004d8530
 // Address: 004d8530
@@ -33,9 +33,9 @@ int __cdecl getProfileInteger(char *section,char *key,int default_value,char *fi
 // Address: 004d88e0
 void __cdecl writeProfileString(char *section,char *key,char *value,char *filename);
 
-// Original: engine_ini.cpp_FUN_004d8910
+// Original: engine_ini.cpp_CIniFile_ctor_FUN_004d8910
 // Address: 004d8910
-CIniFile * __cdecl FUN_004d8910(CIniFile *this_ptr,char *filename,char *section);
+CIniFile * __cdecl CIniFile::ctor(CIniFile *this_ptr,char *filename,char *section);
 
 // Original: engine_ini.cpp_CIniFile_dtor_FUN_004d8940
 // Address: 004d8940
@@ -57,29 +57,29 @@ void __cdecl CIniFile::getString(CIniFile *this_ptr,char *key,char *output_buffe
 // Address: 004d8aa0
 void __cdecl CIniFile::setString(CIniFile *this_ptr,char *key,char *value);
 
-// Original: engine_ini.cpp_FUN_004d8b20
+// Original: engine_ini.cpp_CIniFile_getInteger_FUN_004d8b20
 // Address: 004d8b20
-void FUN_004d8b20(int param_1,undefined4 param_2);
+void __cdecl CIniFile::getInteger(CIniFile *this_ptr,char *key_name,int *value_ptr);
 
-// Original: engine_ini.cpp_FUN_004d8b80
+// Original: engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80
 // Address: 004d8b80
-void FUN_004d8b80(int param_1,undefined4 param_2);
+void __cdecl CIniFile::setInteger(CIniFile *this_ptr,char *key,int value);
 
-// Original: engine_ini.cpp_FUN_004d8bc0
+// Original: engine_ini.cpp_CIniFile_getFloat_FUN_004d8bc0
 // Address: 004d8bc0
-void FUN_004d8bc0(int param_1,undefined4 param_2);
+void __cdecl CIniFile::getFloat(CIniFile *this_ptr,char *key,float *output);
 
-// Original: engine_ini.cpp_FUN_004d8c30
+// Original: engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30
 // Address: 004d8c30
-void FUN_004d8c30(int param_1,undefined4 param_2);
+void __cdecl CIniFile::setFloatValue(CIniFile *this_ptr,char *key,float value);
 
-// Original: engine_ini.cpp_FUN_004d8c80
+// Original: engine_ini.cpp_CIniFile_getDouble_FUN_004d8c80
 // Address: 004d8c80
-void FUN_004d8c80(void);
+void __cdecl CIniFile::getDouble(CIniFile *this_ptr,char *key,double *output);
 
-// Original: engine_ini.cpp_FUN_004d8cf0
+// Original: engine_ini.cpp_CIniFile_setDoubleValue_FUN_004d8cf0
 // Address: 004d8cf0
-void FUN_004d8cf0(int param_1,undefined4 param_2);
+void __cdecl CIniFile::setDoubleValue(CIniFile *this_ptr,char *key,double value);
 
 // Original: engine_ini.cpp_CIni_ctor_FUN_004d8d40
 // Address: 004d8d40

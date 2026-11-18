@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007dd9f0
-;   undefined4 DAT_01c6cee8
+;   int g_RenderFaceCount
+;   int g_INT_01c6cee8
 ;
 ; Called Functions:
 ;   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0
@@ -18,12 +18,12 @@ section .text
 
     PUSH EBP                            ; 004077f0
         ;   Label: engine_3d.c_flushRenderQueue_FUN_004077f0
-    MOV EDX,dword ptr [0x007dd9f0]      ; 004077f1 | DAT_007dd9f0
+    MOV EDX,dword ptr [0x007dd9f0]      ; 004077f1 | g_RenderFaceCount
     TEST EDX,EDX                        ; 004077f7
     JZ 0x00407836                       ; 004077f9
         ;   XREF to: 00407836 (CONDITIONAL_JUMP)  ; LAB_00407836
     PUSH ESI                            ; 004077fb
-    CMP dword ptr [0x01c6cee8],0x0      ; 004077fc | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 004077fc | g_INT_01c6cee8
     JNZ 0x00407838                      ; 00407803
         ;   XREF to: 00407838 (CONDITIONAL_JUMP)  ; LAB_00407838
     XOR ESI,ESI                         ; 00407805
@@ -39,8 +39,8 @@ section .text
     ADD EBX,0x4                         ; 00407816
     INC ESI                             ; 00407819
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0 ; 0040781a
-        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0()
-    MOV EBP,dword ptr [0x007dd9f0]      ; 0040781f | DAT_007dd9f0
+        ;   XREF to: 004059a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0(SMRGLHeaderPrimitive * prim)
+    MOV EBP,dword ptr [0x007dd9f0]      ; 0040781f | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407825
     CMP ESI,EBP                         ; 00407828
     JL 0x0040780f                       ; 0040782a
@@ -49,7 +49,7 @@ section .text
     POP EDI                             ; 0040782d
     XOR EAX,EAX                         ; 0040782e
         ;   Label: LAB_0040782e
-    MOV [0x007dd9f0],EAX                ; 00407830 | DAT_007dd9f0
+    MOV [0x007dd9f0],EAX                ; 00407830 | g_RenderFaceCount
     POP ESI                             ; 00407835
     POP EBP                             ; 00407836
         ;   Label: LAB_00407836
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 00565c70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00565c70(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0040784d
     XOR EAX,EAX                         ; 00407850
-    MOV [0x007dd9f0],EAX                ; 00407852 | DAT_007dd9f0
+    MOV [0x007dd9f0],EAX                ; 00407852 | g_RenderFaceCount
     POP ESI                             ; 00407857
     POP EBP                             ; 00407858
     RET                                 ; 00407859

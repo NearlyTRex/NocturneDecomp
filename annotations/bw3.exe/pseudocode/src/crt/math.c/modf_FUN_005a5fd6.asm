@@ -26,7 +26,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 005a5fd7
     FLD ST0                             ; 005a5fdb
     CALL crt_math.c_round_FUN_005a3120  ; 005a5fdd
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FSUB ST1,ST0                        ; 005a5fe2
     MOV EAX,dword ptr [ESP + 0x10]      ; 005a5fe4
     FSTP double ptr [EAX]               ; 005a5fe8

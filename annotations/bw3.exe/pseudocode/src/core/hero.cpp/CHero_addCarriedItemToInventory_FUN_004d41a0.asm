@@ -8,11 +8,11 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; XREF[2]:
-;   core_prye.cpp_FUN_0051b550 at 0051b841
-;   core_prye.cpp_FUN_00524940 at 00524bd6
+;   core_prye.cpp_CPrye_processMotionEvents_FUN_0051b550 at 0051b841
+;   core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940 at 00524bd6
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004da880
+;   core_inv.cpp_CInventory_addItem_FUN_004da880
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EAX                            ; 004d41c4
     LEA EAX,[ECX + 0x206e8]             ; 004d41c5
     PUSH EAX                            ; 004d41cb
-    CALL core_inv.cpp_FUN_004da880      ; 004d41cc
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 004d41cc
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d41d1
     MOV dword ptr [EBX + 0x25b0],0x0    ; 004d41d4
     POP EBX                             ; 004d41de

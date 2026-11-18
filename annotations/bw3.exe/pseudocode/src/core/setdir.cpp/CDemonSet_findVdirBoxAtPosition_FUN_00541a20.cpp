@@ -1,0 +1,27 @@
+// Name: core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00541a20
+// Address: 00541a20
+// Address Range: [[00541a20, 00541a5f] [00541a61, 00541a6e]]
+// Convention: __cdecl
+// Signature: int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00541a20(CDemonSet *this_ptr,CVector3f *position)
+
+#include "nocturne.h"
+
+int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00541a20(CDemonSet *this_ptr,CVector3f *position)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar2 = 0;
+  if (0 < this_ptr->vdir_box_count) {
+    do {
+      iVar1 = core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00541350(this_ptr,iVar2,position);
+      if (iVar1 != 0) {
+        iVar2 = core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_005419e0(this_ptr,iVar2);
+        return iVar2;
+      }
+      iVar2 = iVar2 + 1;
+    } while (iVar2 < this_ptr->vdir_box_count);
+  }
+  return -1;
+}

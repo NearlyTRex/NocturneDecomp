@@ -9,16 +9,16 @@
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CCodec_processBuffer_FUN_004409f0 at 00440a4f
-;   support_codec.cpp_FUN_00440970 at 004409cf
+;   support_codec.cpp_CCodec_processFromBuffer_FUN_00440970 at 004409cf
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CInStreamMemoryTypeInfo
-;   undefined1* g_CInStreamMemoryVTable = 005741d0
+;   void*[12] g_CInStreamMemoryVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005a308f
-;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a30c4
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
+;   crt_unknown.c_free_FUN_005a30b6
 ;   support_trstream.cpp_CInStream_dtor_FUN_00572540
 ;   support_trstream.cpp_CInStreamMemory_close_FUN_005743f0
 ;
@@ -57,16 +57,16 @@ section .text
         ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00574210
     PUSH EAX                            ; 00574213
-    CALL crt_unknown.c_FUN_005a30b6     ; 00574214
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00574214
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00574219
     MOV EAX,EBX                         ; 0057421c
     POP EBX                             ; 0057421e
     RET                                 ; 0057421f
     PUSH EAX                            ; 00574220
         ;   Label: LAB_00574220
-    CALL crt_unknown.c_FUN_005a30c4     ; 00574221
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 00574221
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 00574226
     MOV EAX,EBX                         ; 00574229
     POP EBX                             ; 0057422b

@@ -8,23 +8,24 @@
 ; int              Stack[0x8]:4   vertex_count
 ; int              Stack[0xc]:4   render_flags
 ;
-; XREF[6]:
-;   core_dpart.cpp_FUN_0047a480 at 0047a501
-;   core_dpart.cpp_FUN_0047ab00 at 0047ab7d
+; XREF[7]:
+;   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0 at 0043d81e
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190 at 0043c2f0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60 at 0043dfa4
+;   engine_drender.cpp_renderTriangleSimple_FUN_0047ab00 at 0047ab7d
+;   engine_drender.cpp_renderTriangleTextured_FUN_0047a480 at 0047a501
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720 at 0053f7e0
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650 at 0053e726
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_02c833c8
+;   int g_INT_01c50948
+;   void* g_APIDLL_drawPolygon2
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c50948],0x0      ; 00582370 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 00582370 | g_INT_01c50948
         ;   Label: engine_special.cpp_drawPolygon2_FUN_00582370
     JNZ 0x0058237c                      ; 00582377
         ;   XREF to: 0058237c (CONDITIONAL_JUMP)  ; LAB_0058237c
@@ -39,7 +40,7 @@ section .text
     PUSH EBX                            ; 00582387
     MOV ESI,dword ptr [ESP + 0x14]      ; 00582388
     PUSH ESI                            ; 0058238c
-    CALL dword ptr [0x02c833c8]         ; 0058238d | DAT_02c833c8
+    CALL dword ptr [0x02c833c8]         ; 0058238d | g_APIDLL_drawPolygon2
     ADD ESP,0xc                         ; 00582393
     POP EBX                             ; 00582396
     POP ESI                             ; 00582397

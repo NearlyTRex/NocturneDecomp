@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGamePtr = 01c775ec
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.suppress_set_geometry
 ;   undefined4 g_CGameInstance.render_mode
@@ -40,7 +40,7 @@ section .text
     JZ 0x0050defc                       ; 0050dee7
         ;   XREF to: 0050defc (CONDITIONAL_JUMP)  ; LAB_0050defc
     MOV EBX,dword ptr [0x005ae704]      ; 0050dee9 | g_CDemonRenderer_PTR_005ae704
-    PUSH EBX                            ; 0050deef | DAT_01b4d738
+    PUSH EBX                            ; 0050deef | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0050def0
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050def5
@@ -55,7 +55,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 0050df06
     PUSH ECX                            ; 0050df0a
     MOV EBX,dword ptr [0x005ae704]      ; 0050df0b | g_CDemonRenderer_PTR_005ae704
-    PUSH EBX                            ; 0050df11 | DAT_01b4d738
+    PUSH EBX                            ; 0050df11 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720 ; 0050df12
         ;   XREF to: 00461720 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)
     ADD ESP,0x10                        ; 0050df17

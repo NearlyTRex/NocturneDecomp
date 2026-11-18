@@ -9,9 +9,9 @@
 // Address: 0043e5c0
 CCloth * __cdecl CCloth::ctor(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_0043e620
+// Original: core_cloth.cpp_CCloth_dtor_FUN_0043e620
 // Address: 0043e620
-void FUN_0043e620(CCloth *param_1);
+CCloth * __cdecl CCloth::dtor(CCloth *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_CCloth_allocMemory_FUN_0043e640
 // Address: 0043e640
@@ -25,13 +25,13 @@ void __cdecl CCloth::free(CCloth *this_ptr);
 // Address: 0043e6d0
 int __cdecl CCloth::load(CCloth *this_ptr,char *filename);
 
-// Original: core_cloth.cpp_FUN_0043ec40
+// Original: core_cloth.cpp_CCloth_initializeConnections_FUN_0043ec40
 // Address: 0043ec40
-void __cdecl FUN_0043ec40(CCloth *this_ptr);
+void __cdecl CCloth::initializeConnections(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_0043eea0
+// Original: core_cloth.cpp_CCloth_setup_FUN_0043eea0
 // Address: 0043eea0
-void __cdecl FUN_0043eea0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
+void __cdecl CCloth::setup(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043fa20
 // Address: 0043fa20
@@ -53,13 +53,13 @@ void __cdecl CCloth::process(CCloth *this_ptr,CVector3f *position,CVector3f *eul
 // Address: 00440640
 void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_004414b0
+// Original: core_cloth.cpp_CCloth_renderCollisionBones_FUN_004414b0
 // Address: 004414b0
-void FUN_004414b0(void);
+void __cdecl CCloth::renderCollisionBones(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_00441500
+// Original: core_cloth.cpp_CCloth_renderBone_FUN_00441500
 // Address: 00441500
-void FUN_00441500(int param_1,int param_2,int param_3);
+void __cdecl CCloth::renderBone(CCloth *this_ptr,int bone_index,int show_labels);
 
 // Original: core_cloth.cpp_CCloth_saveJoinedLight_FUN_00441710
 // Address: 00441710
@@ -89,9 +89,9 @@ void __cdecl CClothList::reset(CClothList *this_ptr);
 // Address: 00441de0
 void __cdecl CClothList::add(CClothList *this_ptr,char *filename);
 
-// Original: core_cloth.cpp_FUN_00441e60
+// Original: core_cloth.cpp_CClothList_remove_FUN_00441e60
 // Address: 00441e60
-void FUN_00441e60(void);
+void __cdecl CClothList::remove(CClothList *this_ptr,int index);
 
 // Original: core_cloth.cpp_CClothList_setup_FUN_00441f60
 // Address: 00441f60
@@ -113,9 +113,9 @@ void __cdecl CCloth::grabCloth(CCloth *this_ptr,char *bone_name,int vertex_index
 // Address: 004421a0
 void __cdecl CCloth::resetState(CCloth *this_ptr,int vertex_index);
 
-// Original: core_cloth.cpp_FUN_004421d0
+// Original: core_cloth.cpp_CCloth_applyRotation_FUN_004421d0
 // Address: 004421d0
-void FUN_004421d0(int param_1,float *param_2);
+void __cdecl CCloth::applyRotation(CCloth *this_ptr,CVector3f *euler);
 
 // Original: core_cloth.cpp_fastInvSqrt_FUN_00442330
 // Address: 00442330

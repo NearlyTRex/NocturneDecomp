@@ -6,69 +6,70 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter *this_ptr,float delta_time)
 
 {
   CCharacter_full_vtable *pCVar1;
   int iVar2;
   CPathMap *path_map;
-  CDemonActor *pCVar3;
-  CDemonActor *actor_ptr;
-  byte bVar4;
+  CWayPoint *target_waypoint;
+  CWayPoint *actor_ptr;
+  byte bVar3;
   float afStackY_1054 [1012];
   CVector3f *direction;
+  float fVar4;
   float fVar5;
-  float fVar6;
-  uint uStack_6c;
-  uint uStack_60;
-  float fStack_5c;
-  uint uStack_54;
-  float local_48;
-  uint uStack_3c;
+  CVector3f CStack_6c;
+  float fStack_60;
+  float afStack_5c [2];
+  CVector3f CStack_54;
+  CVector3f local_48;
+  CVector3f CStack_3c;
   CVector3f local_30;
   float fStack_1c;
   float fStack_18;
   
-  bVar4 = 0;
+  bVar3 = 0;
   if ((this_ptr->walk_to_target == (CDemonActor *)0x0) && (this_ptr->door_target == (CDoor *)0x0)) {
     iVar2 = 0;
   }
   else {
     if ((this_ptr->walk_timeout < 0.0) ||
-       (fVar5 = this_ptr->walk_timeout - delta_time, this_ptr->walk_timeout = fVar5, 0.0 < fVar5)) {
+       (fVar4 = this_ptr->walk_timeout - delta_time, this_ptr->walk_timeout = fVar4, 0.0 < fVar4)) {
       if (this_ptr->door_target == (CDoor *)0x0) {
-        actor_ptr = this_ptr->walk_to_target;
+        actor_ptr = (CWayPoint *)this_ptr->walk_to_target;
         if ((((0.0 <= this_ptr->walk_min_distance) && (this_ptr->is_spectral == 0)) &&
-            (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                                (actor_ptr,g_CWayPointClassInfo.name_hash),
-            pCVar3 != (CDemonActor *)0x0)) &&
-           (actor_ptr = (CDemonActor *)core_charactr_cpp_FUN_0042b420(this_ptr,pCVar3),
-           actor_ptr == (CDemonActor *)0x0)) {
+            (target_waypoint =
+                  (CWayPoint *)
+                  core_actor_cpp_castToClassHash_FUN_0040c8f0
+                            ((CDemonActor *)actor_ptr,g_CWayPointClassInfo.name_hash),
+            target_waypoint != (CWayPoint *)0x0)) &&
+           (actor_ptr = core_charactr_cpp_CCharacter_findNearestReachableWaypoint_FUN_0042b420
+                                  (this_ptr,target_waypoint), actor_ptr == (CWayPoint *)0x0)) {
           engine_console_cpp_CConsole_printf_FUN_00436710
-                    (g_CConsolePtr,"@%s can't figure out next waypoint trying to reach %s\n" + 1);
+                    (g_CConsolePtr,"%s can't figure out next waypoint trying to reach %s\n");
           return 1;
         }
-        core_charactr_cpp_FUN_00428260
-                  (this_ptr,actor_ptr,this_ptr->walk_min_distance,this_ptr->walk_max_distance,
-                   &this_ptr->walk_state);
+        core_charactr_cpp_CCharacter_followActor_FUN_00428260
+                  (this_ptr,(CDemonActor *)actor_ptr,this_ptr->walk_min_distance,
+                   this_ptr->walk_max_distance,(int *)&this_ptr->walk_state);
         return 1;
       }
       core_door_cpp_CDoor_getOpenStandPos_FUN_00460350
-                (this_ptr->door_target,&(this_ptr->look_offset).x,&(this_ptr->base).location);
-      fVar6 = 0.0;
+                (this_ptr->door_target,&this_ptr->look_offset,&(this_ptr->base).location.position,
+                 &local_48);
       fVar5 = 0.0;
-      local_30.x = local_48;
-      *(uint *)((int)&local_30 + (uint)bVar4 * -8 + 4) =
-           *(uint *)(&stack0xffffffbc + (uint)bVar4 * -8);
-      *(uint *)((int)&local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-           *(uint *)(&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      direction = (CVector3f *)&DAT_0265370c;
+      fVar4 = 0.0;
+      local_30.x = local_48.x;
+      *(uint *)((int)&local_30 + (uint)bVar3 * -8 + 4) =
+           *(uint *)((int)&local_48 + (uint)bVar3 * -8 + 4);
+      *(uint *)((int)&local_30 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+           *(uint *)((int)&local_48 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+      direction = &g_ZeroVector;
       path_map = (*((this_ptr->door_target->base).vtable._ub)->getPathMap)
                            (&this_ptr->door_target->base);
       iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
-                        (this_ptr,&local_30,path_map,direction,fVar5,fVar6);
+                        (this_ptr,&local_30,path_map,direction,fVar4,fVar5);
       if (iVar2 < 0) {
         this_ptr->walk_state = WALK_STATE_NO_PATH;
         return 1;
@@ -77,20 +78,20 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
         this_ptr->walk_state = WALK_STATE_WALKING;
         return 1;
       }
-      core_actor_cpp_FUN_00408de0(this_ptr,&this_ptr->door_target->open_position);
-      uStack_6c = uStack_3c;
-      *(uint *)((int)&stack0xffffff98 + (uint)bVar4 * 0xfffffffe * 4) =
-           *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8);
-      *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffff94);
-      uStack_60 = uStack_54;
-      *(uint *)((int)&stack0xffffffa4 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffb0 + (uint)bVar4 * -8);
-      *(uint *)(&stack0xffffffa8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-           *(uint *)(&stack0xffffffb4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      this_ptr->turn_angle_accumulator = fStack_5c;
-      if ((int)fStack_5c < 0x3f20d97c) {
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+                (&this_ptr->base,&this_ptr->door_target->open_position,&CStack_3c);
+      CStack_6c.x = CStack_3c.x;
+      *(uint *)((int)&CStack_6c + (uint)bVar3 * -8 + 4) =
+           *(uint *)((int)&CStack_3c + (uint)bVar3 * -8 + 4);
+      *(uint *)((int)&CStack_6c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+           *(uint *)((int)&CStack_3c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_6c,&CStack_54);
+      fStack_60 = CStack_54.x;
+      afStack_5c[(uint)bVar3 * -2] = *(float *)((int)&CStack_54 + (uint)bVar3 * -8 + 4);
+      afStack_5c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+           *(float *)((int)&CStack_54 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+      this_ptr->turn_angle_accumulator = afStack_5c[0];
+      if ((int)afStack_5c[0] < 0x3f20d97c) {
         pCVar1 = (this_ptr->base).vtable._uc;
         this_ptr->walk_state = WALK_STATE_IDLE;
         (*(pCVar1->_uc).clearDoorTarget)(this_ptr);
@@ -100,12 +101,12 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
       }
       fStack_18 = this_ptr->turn_angle_accumulator;
       fStack_1c = this_ptr->turn_speed;
-      fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_18);
-      fVar5 = -fStack_1c;
-      if ((fVar5 <= fVar6) && (fVar5 = fVar6, fStack_1c < fVar6)) {
-        fVar5 = fStack_1c;
+      fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_18);
+      fVar4 = -fStack_1c;
+      if ((fVar4 <= fVar5) && (fVar4 = fVar5, fStack_1c < fVar5)) {
+        fVar4 = fStack_1c;
       }
-      this_ptr->turn_angle_accumulator = fVar5;
+      this_ptr->turn_angle_accumulator = fVar4;
       return 1;
     }
     this_ptr->walk_state = WALK_STATE_IDLE;

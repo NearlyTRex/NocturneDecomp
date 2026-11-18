@@ -7,15 +7,15 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ad49c
+;   SMRGLTextureBasic g_CameraBackdropTexture
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_00b0daf8
-;   undefined4 DAT_00b0dafc
-;   undefined4 DAT_00b0dafd
-;   undefined4 DAT_0145b290
-;   undefined4 DAT_0145b294
-;   undefined4 DAT_0145b295
-;   undefined4 DAT_01b4d738
+;   SRGBColorPalette g_CameraImagePaletteData
+;   undefined4 g_CameraImagePaletteData.colors[1].g
+;   undefined4 g_CameraImagePaletteData.colors[1].b
+;   uint[16384] g_CameraTextureWorkBuffer
+;   undefined4 g_CameraTextureWorkBuffer[1]
+;   undefined4 g_CameraTextureWorkBuffer[1]+1
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   SRGBColorPalette* g_CurrentPalette
 ;   uchar* g_CurrentTextureData
 ;
@@ -54,7 +54,7 @@ section .text
     INC EBX                             ; 004431b0
     MOV AL,byte ptr [ESI + EAX*0x1 + 0x1410290] ; 004431b1
     ADD ECX,0x280                       ; 004431b8
-    MOV byte ptr [EBX + 0x145b28f],AL   ; 004431be | DAT_0145b290
+    MOV byte ptr [EBX + 0x145b28f],AL   ; 004431be | g_CameraTextureWorkBuffer
     CMP ECX,0x28000                     ; 004431c4
     JNZ 0x004431a1                      ; 004431ca
         ;   XREF to: 004431a1 (CONDITIONAL_JUMP)  ; LAB_004431a1
@@ -63,9 +63,9 @@ section .text
     CMP EBP,0x10000                     ; 004431d8
     JNZ 0x00443188                      ; 004431de
         ;   XREF to: 00443188 (CONDITIONAL_JUMP)  ; LAB_00443188
-    PUSH 0x5ad49c                       ; 004431e0 | DAT_005ad49c
+    PUSH 0x5ad49c                       ; 004431e0 | g_CameraBackdropTexture
     MOV EDX,dword ptr [0x005ae704]      ; 004431e5 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 004431eb | DAT_01b4d738
+    PUSH EDX                            ; 004431eb | g_CDemonRenderer_01b4d738
     MOV ESI,0x145b290                   ; 004431ec
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004431f1
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -75,10 +75,10 @@ section .text
     PUSH EDI                            ; 00443201
     MOV EAX,ECX                         ; 00443202
     SHR ECX,0x2                         ; 00443204
-    MOVSD.REP ES:EDI,ESI                ; 00443207 | DAT_0145b290 | DAT_0145b294
+    MOVSD.REP ES:EDI,ESI                ; 00443207 | g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]
     MOV CL,AL                           ; 00443209
     AND CL,0x3                          ; 0044320b
-    MOVSB.REP ES:EDI,ESI                ; 0044320e | DAT_0145b294 | DAT_0145b295
+    MOVSB.REP ES:EDI,ESI                ; 0044320e | g_CameraTextureWorkBuffer[1] | g_CameraTextureWorkBuffer[1]+1
     POP EDI                             ; 00443210
     MOV ECX,0x300                       ; 00443211
     MOV ESI,0xb0daf8                    ; 00443216
@@ -86,15 +86,15 @@ section .text
     PUSH EDI                            ; 00443221
     MOV EAX,ECX                         ; 00443222
     SHR ECX,0x2                         ; 00443224
-    MOVSD.REP ES:EDI,ESI                ; 00443227 | DAT_00b0daf8 | DAT_00b0dafc
+    MOVSD.REP ES:EDI,ESI                ; 00443227 | g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g
     MOV CL,AL                           ; 00443229
     AND CL,0x3                          ; 0044322b
-    MOVSB.REP ES:EDI,ESI                ; 0044322e | DAT_00b0dafc | DAT_00b0dafd
+    MOVSB.REP ES:EDI,ESI                ; 0044322e | g_CameraImagePaletteData.colors[1].g | g_CameraImagePaletteData.colors[1].b
     POP EDI                             ; 00443230
-    PUSH 0xb0daf8                       ; 00443231 | DAT_00b0daf8
-    PUSH 0x5ad49c                       ; 00443236 | DAT_005ad49c
+    PUSH 0xb0daf8                       ; 00443231 | g_CameraImagePaletteData
+    PUSH 0x5ad49c                       ; 00443236 | g_CameraBackdropTexture
     MOV ECX,dword ptr [0x005ae704]      ; 0044323b | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 00443241 | DAT_01b4d738
+    PUSH ECX                            ; 00443241 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00461f60 ; 00443242
         ;   XREF to: 00461f60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00461f60(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)
     ADD ESP,0xc                         ; 00443247

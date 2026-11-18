@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGamePtr = 01c775ec
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01b4d750
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   undefined4 g_CDemonRenderer_01b4d738.advanced_culling_enabled
 ;   int g_UseExternalRenderer
 ;   undefined4 g_CGameInstance.suppress_set_geometry
 ;
@@ -41,7 +41,7 @@ section .text
     JNZ 0x0050df99                      ; 0050df5d
         ;   XREF to: 0050df99 (CONDITIONAL_JUMP)  ; LAB_0050df99
     MOV EBX,dword ptr [0x005ae704]      ; 0050df5f | g_CDemonRenderer_PTR_005ae704
-    MOV EBX,dword ptr [EBX + 0x18]      ; 0050df65 | DAT_01b4d750
+    MOV EBX,dword ptr [EBX + 0x18]      ; 0050df65 | g_CDemonRenderer_01b4d738.advanced_culling_enabled
     TEST EBX,EBX                        ; 0050df68
     JZ 0x0050df9e                       ; 0050df6a
         ;   XREF to: 0050df9e (CONDITIONAL_JUMP)  ; LAB_0050df9e
@@ -82,7 +82,7 @@ section .text
     PUSH EBX                            ; 0050dfa6
         ;   Label: LAB_0050dfa6
     MOV ECX,dword ptr [0x005ae704]      ; 0050dfa7 | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 0050dfad | DAT_01b4d738
+    PUSH ECX                            ; 0050dfad | g_CDemonRenderer_01b4d738
     INC ESI                             ; 0050dfae
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 0050dfaf
         ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)

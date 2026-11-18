@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(void)
+; CVector3f * __stack2_esi core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e9a0(CVector3f *direction,float *offset_pair,CVector3f *out_angles)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   direction
+; float *          Stack[0x8]:4   offset_pair
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f6ed1
+;   double g_DOUBLE_005f6ed1 = 0.0100000000000000
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
@@ -29,7 +32,7 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 0058e9b3
     LEA EDI,[ESP + 0x38]                ; 0058e9b7
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0058e9bb
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x2c]                ; 0058e9c0
     ADD ESP,0x4                         ; 0058e9c4
     MOVSD ES:EDI,ESI                    ; 0058e9c7
@@ -48,7 +51,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 0058e9e2
     FST double ptr [ESP + 0x18]         ; 0058e9e6
     MOV dword ptr [ESP + 0x20],EBX      ; 0058e9ea
-    FCOMP double ptr [0x005f6ed1]       ; 0058e9ee | DAT_005f6ed1
+    FCOMP double ptr [0x005f6ed1]       ; 0058e9ee | g_DOUBLE_005f6ed1
     FNSTSW AX                           ; 0058e9f4
     SAHF                                ; 0058e9f6
     JBE 0x0058ea9e                      ; 0058e9f7
@@ -66,7 +69,7 @@ section .text
     MOV EBX,dword ptr [EBX + 0x4]       ; 0058ea18
     FLD double ptr [ESP]                ; 0058ea1b
     MOV dword ptr [ESP + 0x48],EBX      ; 0058ea1e
-    FCOMP double ptr [0x005f6ed1]       ; 0058ea22 | DAT_005f6ed1
+    FCOMP double ptr [0x005f6ed1]       ; 0058ea22 | g_DOUBLE_005f6ed1
     FNSTSW AX                           ; 0058ea28
     SAHF                                ; 0058ea2a
     JC 0x0058ea9e                       ; 0058ea2b
@@ -94,7 +97,7 @@ section .text
         ;   XREF to: 0058ea9e (CONDITIONAL_JUMP)  ; LAB_0058ea9e
     FLD double ptr [ESP + 0x8]          ; 0058ea5c
     CALL crt_math.c_acos_FUN_005c1d04   ; 0058ea60
-        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005c1d04()
+        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005c1d04(double x)
     FLDZ                                ; 0058ea65
     FXCH                                ; 0058ea67
     FSTP float ptr [ESP + 0x50]         ; 0058ea69
@@ -150,7 +153,7 @@ section .text
         ;   XREF to: 0058ea0e (CONDITIONAL_JUMP)  ; LAB_0058ea0e
     FLD double ptr [ESP + 0x10]         ; 0058eaeb
     CALL crt_math.c_acos_FUN_005c1d04   ; 0058eaef
-        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_005c1d04()
+        ;   XREF to: 005c1d04 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_005c1d04(double x)
     FLDZ                                ; 0058eaf4
     FXCH                                ; 0058eaf6
     FSTP float ptr [ESP + 0x44]         ; 0058eaf8

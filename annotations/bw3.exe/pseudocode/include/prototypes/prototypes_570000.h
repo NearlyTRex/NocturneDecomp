@@ -8,7 +8,6 @@
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CCryptVessel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -35,46 +34,48 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
+#include "types/enums/EWeatherType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SIpAddr.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SNetworkAddr.h"
 #include "types/structs/SWaterVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x570000
 // =============================================================================
 
-void support_trisock_cpp_FUN_00570320(undefined4 *param_1,undefined4 param_2);
-uint support_trisock_cpp_FUN_00570350(int *param_1,code *param_2,undefined4 param_3);
-undefined4 support_trisock_cpp_FUN_00570420(int *param_1,undefined1 *param_2,int param_3,undefined4 param_4,undefined4 param_5);
-undefined4 support_trisock_cpp_FUN_005704a0(undefined4 param_1,int *param_2,undefined4 param_3,code *param_4);
-void support_trisock_cpp_FUN_00570750(void);
-undefined4 support_trisock_cpp_FUN_00570840(CSocket *param_1);
-undefined4 support_trisock_cpp_FUN_005709c0(char *param_1,char *param_2,undefined2 *param_3,char *param_4,int param_5);
-undefined4 support_trisock_cpp_FUN_00570ae0(void);
-undefined1 * support_trisock_cpp_FUN_00570d30(int param_1);
-void support_trisock_cpp_FUN_00570db0(char *param_1,char *param_2);
-void support_trisock_cpp_FUN_00570df0(undefined1 *param_1,undefined4 param_2);
-undefined4 support_trisock_cpp_FUN_00570e20(int param_1,undefined4 *param_2);
-void support_trisock_cpp_FUN_00570e80(int param_1);
-void support_trisock_cpp_FUN_00570ea0(int param_1);
-void support_trisock_cpp_FUN_00570fb0(int param_1);
-void * support_trisock_cpp_FUN_00571030(int param_1);
-void support_trisock_cpp_FUN_00571260(void);
-undefined4 support_trisock_cpp_FUN_00571340(int param_1,char *param_2);
-void support_trisock_cpp_FUN_00571d10(int param_1);
-undefined4 support_trisock_cpp_FUN_00571d80(int param_1,int param_2);
-uint support_trisock_cpp_FUN_00571e50(int param_1,undefined4 param_2);
-void support_trisock_cpp_FUN_00571ea0(void);
-int __cdecl support_trisock_cpp_FUN_00571f10(void);
-bool support_trisock_cpp_FUN_00571fc0(undefined4 *param_1,char *param_2);
-undefined4 support_trisock_cpp_FUN_00572190(char *param_1,char *param_2);
-void support_trisock_cpp_FUN_00572220(uchar param_1,undefined1 param_2,undefined1 param_3,undefined1 param_4,undefined4 param_5,undefined4 param_6,uint param_7);
-undefined4 support_trisock_cpp_FUN_00572290(void *param_1);
+void __cdecl support_trisock_cpp_httpReaderInit_FUN_00570320(void *reader,CSocket *socket);
+int __cdecl support_trisock_cpp_httpReaderGetChar_FUN_00570350(void *reader,void *status_callback,char *status_text);
+int __cdecl support_trisock_cpp_httpReaderReadLine_FUN_00570420(void *reader,char *line_out,int line_size,void *status_callback,char *status_text);
+int __cdecl support_trisock_cpp_httpReceiveResponse_FUN_005704a0(CSocket *socket,void *out_stream,char *status_text,void *status_callback);
+int __cdecl support_trisock_cpp_httpGetDocument_FUN_00570750(CSocket *socket,char *path,char *host,int port,void *out_stream,void *status_callback );
+int __cdecl support_trisock_cpp_httpPostDocument_FUN_00570840(CSocket *socket,char *path,char *host,int port,void *in_stream,void *out_stream,void *status_callback);
+int __cdecl support_trisock_cpp_parseUrl_FUN_005709c0(char *url,char *host_out,ushort *port_out,char *path_out,int path_size);
+uint __cdecl support_trisock_cpp_dnsLookupThreadProc_FUN_00570ae0(void);
+void * __cdecl support_trisock_cpp_initDnsRequest_FUN_00570d30(void *request);
+void __cdecl support_trisock_cpp_dnsRequestLookupHost_FUN_00570db0(void *request,char *host_name);
+void __cdecl support_trisock_cpp_dnsRequestLookupAddr_FUN_00570df0(void *request,uint ip_address);
+int __cdecl support_trisock_cpp_dnsRequestGetResult_FUN_00570e20(void *request,void *host_info_out);
+void __cdecl support_trisock_cpp_dnsRequestCancel_FUN_00570e80(void *request);
+void __cdecl support_trisock_cpp_dnsRequestQueue_FUN_00570ea0(void *request);
+void __cdecl support_trisock_cpp_dnsRequestUnlink_FUN_00570fb0(void *request);
+void * __cdecl support_trisock_cpp_initHttpRequest_FUN_00571030(void *request);
+void __cdecl support_trisock_cpp_httpRequestStart_FUN_00571260(void *request,char *url);
+int __cdecl support_trisock_cpp_httpRequestUpdate_FUN_00571340(void *request,char *status_text);
+void __cdecl support_trisock_cpp_httpRequestReset_FUN_00571d10(void *request);
+int __cdecl support_trisock_cpp_httpRequestFillBuffer_FUN_00571d80(void *request,int non_blocking);
+int __cdecl support_trisock_cpp_httpRequestGetByte_FUN_00571e50(void *request,int non_blocking);
+int __cdecl support_trisock_cpp_startupWinsock_FUN_00571ea0(void);
+int __cdecl support_trisock_cpp_cleanupWinsock_FUN_00571f10(void);
+int __cdecl support_trisock_cpp_copyHostent_FUN_00571fc0(hostent *host,void *host_info_out);
+int __cdecl support_trisock_cpp_lookupHostByName_FUN_00572190(char *host_name,void *host_info_out);
+int __cdecl support_trisock_cpp_lookupHostByAddr_FUN_00572220(uint ip_address,void *host_info_out);
+int __cdecl support_trisock_cpp_getLocalHostInfo_FUN_00572290(void *host_info_out);
 SIpAddr * __cdecl support_trisock_cpp_IpAddr_ctor_FUN_005722f0(SIpAddr *this_ptr);
-int support_trisock_cpp_FUN_00572310(int param_1);
-void support_trisock_cpp_FUN_00572330(undefined4 *param_1,undefined4 *param_2);
+void * __cdecl support_trisock_cpp_initHostInfo_FUN_00572310(void *host_info);
+SNetworkAddr * __cdecl support_trisock_cpp_copyNetworkAddr_FUN_00572330(SNetworkAddr *dest,SNetworkAddr *src);
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_00572370(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_free_FUN_005723b0(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_render_FUN_005723d0(CTerrain *this_ptr,int render_pass);
@@ -82,7 +83,7 @@ void __cdecl core_terrain_cpp_CTerrain_process_FUN_005724e0(CTerrain *this_ptr);
 void __cdecl support_trstream_cpp_staticInit_FUN_00572510(void);
 CInStream * __cdecl support_trstream_cpp_CInStream_ctor_FUN_00572530(CInStream *this_ptr);
 CInStream * __cdecl support_trstream_cpp_CInStream_dtor_FUN_00572540(CInStream *this_ptr,uint flags);
-void support_trstream_cpp_FUN_00572550(void);
+CInStream * __cdecl support_trstream_cpp_CInStream_copy_FUN_00572550(CInStream *this_ptr);
 int __cdecl support_trstream_cpp_CInStream_ungetChar_FUN_00572570(CInStream *this_ptr,int ch);
 int __cdecl support_trstream_cpp_CInStream_tell_FUN_00572580(CInStream *this_ptr);
 int __cdecl support_trstream_cpp_CInStream_scanf_FUN_00572590(CInStream *this_ptr,char *format,...) __attribute__((format(scanf, 2, 3)));
@@ -97,7 +98,7 @@ CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(CIn
 int __cdecl support_trstream_cpp_CInStreamFile_getChar_FUN_00573aa0(CInStreamFile *this_ptr);
 int __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_00573af0(CInStreamFile *this_ptr,int ch);
 int __cdecl support_trstream_cpp_CInStreamFile_peekChar_FUN_00573b60(CInStreamFile *this_ptr);
-uint __cdecl support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(CInStreamFile *this_ptr,int param_2);
+uint __cdecl support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(CInStreamFile *this_ptr,int position);
 int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile *this_ptr,void *buffer,int count);
 int __cdecl support_trstream_cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_CInStreamFile_tell_FUN_00573d40(CInStreamFile *this_ptr);
@@ -118,14 +119,14 @@ uint __cdecl support_trstream_cpp_CInStreamMemory_getChar_FUN_00574230(CInStream
 int __cdecl support_trstream_cpp_CInStreamMemory_ungetChar_FUN_00574280(CInStreamMemory *this_ptr,int ch);
 uint __cdecl support_trstream_cpp_CInStreamMemory_peekChar_FUN_005742c0(CInStreamMemory *this_ptr);
 int __cdecl support_trstream_cpp_CInStreamMemory_read_FUN_005742f0(CInStreamMemory *this_ptr,void *buffer,int count);
-longlong __cdecl support_trstream_cpp_CInStreamMemory_seek_FUN_00574350(CInStreamMemory *this_ptr,int param_2,uint param_3);
+longlong __cdecl support_trstream_cpp_CInStreamMemory_seek_FUN_00574350(CInStreamMemory *this_ptr,int offset,uint origin);
 int __cdecl support_trstream_cpp_COutStream_seek_FUN_00574380(COutStream *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_CInStreamMemory_tell_FUN_005743a0(CInStreamMemory *this_ptr);
 int __cdecl support_trstream_cpp_COutStream_tell_FUN_005743b0(COutStream *this_ptr);
 int __cdecl support_trstream_cpp_CInStreamMemory_isEof_FUN_005743c0(CInStreamMemory *this_ptr);
 void __cdecl support_trstream_cpp_CInStreamMemory_close_FUN_005743f0(CInStreamMemory *this_ptr);
-void __cdecl support_trstream_cpp_CInStreamMemory_open_FUN_00574440(CInStreamMemory *this_ptr,int param_2,int param_3);
-void __cdecl support_trstream_cpp_CInStreamMemory_openOwned_FUN_00574470(CInStreamMemory *this_ptr,int param_2,int param_3);
+void __cdecl support_trstream_cpp_CInStreamMemory_open_FUN_00574440(CInStreamMemory *this_ptr,int data,int size);
+void __cdecl support_trstream_cpp_CInStreamMemory_openOwned_FUN_00574470(CInStreamMemory *this_ptr,int data,int size);
 COutStream * __cdecl support_trstream_cpp_COutStream_dtor_FUN_005744a0(COutStream *this_ptr,uint flags);
 int __cdecl support_trstream_cpp_COutStream_printf_FUN_005744b0(COutStream *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 int __cdecl support_trstream_cpp_COutStream_vprintf_FUN_005744e0(COutStream *this_ptr,char *format,va_list_t args);
@@ -133,15 +134,15 @@ COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(C
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005747e0(COutStreamFile *this_ptr,char *path,char *mode);
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_copy_FUN_00574820(COutStreamFile *this_ptr,COutStreamFile *other);
 COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(COutStreamFile *this_ptr,uint flags);
-uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_005748b0(COutStreamFile *this_ptr,byte param_2);
-int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *param_2,int param_3);
-bool __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_00574930(COutStreamFile *this_ptr,long param_2,int param_3);
+uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_005748b0(COutStreamFile *this_ptr,byte character);
+int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *data,int size);
+int __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_00574930(COutStreamFile *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_00574960(COutStreamFile *this_ptr);
 bool __cdecl support_trstream_cpp_COutStreamFile_isOpen_FUN_00574980(COutStreamFile *this_ptr);
 int __cdecl support_trstream_cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile *this_ptr);
 int __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile *this_ptr,char *path,char *mode);
 int __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_00574a10(COutStreamFile *this_ptr,char *directory,char *filename,char *mode);
-void __cdecl support_trstream_cpp_COutStreamFile_attach_FUN_00574a60(COutStreamFile *this_ptr,int param_2);
+void __cdecl support_trstream_cpp_COutStreamFile_attach_FUN_00574a60(COutStreamFile *this_ptr,int file);
 COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctor_FUN_00574a80(COutStreamMemory *this_ptr);
 COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_00574ac0(COutStreamMemory *this_ptr,char *buffer,int capacity);
 COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_copy_FUN_00574b20(COutStreamMemory *this_ptr,COutStreamMemory *other);
@@ -151,8 +152,8 @@ int __cdecl support_trstream_cpp_COutStreamMemory_write_FUN_00574c20(COutStreamM
 int __cdecl support_trstream_cpp_COutStreamMemory_seek_FUN_00574cb0(COutStreamMemory *this_ptr,int offset,int origin);
 int __cdecl support_trstream_cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory *this_ptr);
 void __cdecl support_trstream_cpp_COutStreamMemory_close_FUN_00574d10(COutStreamMemory *this_ptr);
-void __cdecl support_trstream_cpp_COutStreamMemory_open_FUN_00574d50(COutStreamMemory *this_ptr,int param_2,int param_3);
-int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_00574d90(COutStreamMemory *this_ptr,int *param_2);
+void __cdecl support_trstream_cpp_COutStreamMemory_open_FUN_00574d50(COutStreamMemory *this_ptr,int buffer,int capacity);
+int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_00574d90(COutStreamMemory *this_ptr,int *out_length);
 COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_ctor_FUN_00574e00(COutStreamDebug *this_ptr);
 COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_dtor_FUN_00574e20(COutStreamDebug *this_ptr,uint flags);
 int __cdecl support_trstream_cpp_COutStreamDebug_putChar_FUN_00574e80(COutStreamDebug *this_ptr,char ch);
@@ -167,14 +168,14 @@ void __cdecl core_tvbat_cpp_CTVBat_setup_FUN_005751c0(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_00575230(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_process_FUN_00575380(CTVBat *this_ptr,float delta_time);
 int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_00575fe0(CTVBat *this_ptr);
-CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_00576070(CTVBat *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_tvbat_cpp_CTVBat_getBoundingBox_FUN_00576070(CTVBat *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_tvbat_cpp_CTVBat_getCollisionType_FUN_005760d0(CTVBat *this_ptr,SCollisionInfo *collision_info);
-undefined4 core_tvbat_cpp_FUN_005760f0(void);
+int __cdecl core_tvbat_cpp_CTVBat_getTargetPoints_FUN_005760f0(CTVBat *this_ptr,CVector3f *out_points_array);
 EDeathState __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_00576100(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_00576130(CTVBat *this_ptr,SDamageInfo *damage_info);
 CTVBat * __cdecl core_tvbat_cpp_CTVBat_dtor_FUN_005761a0(CTVBat *this_ptr,uint flags);
-void core_tvbat_cpp_FUN_00576230(void);
-float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(uint *param_1);
+void __cdecl core_tvbat_cpp_staticInit_FUN_00576230(void);
+CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f *in_direction_vector,CVector3f *out_euler_angles);
 void __cdecl core_vessel_cpp_staticInit_FUN_005762f0(void);
 CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_00576320(void);
 CDemonActorType * __cdecl core_vessel_cpp_CCryptVessel_getActorType_FUN_00576340(CCryptVessel *this_ptr);
@@ -191,7 +192,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00576e10(CCryptVe
 void __cdecl core_vessel_cpp_CCryptVessel_renderBackground_FUN_00576f60(CCryptVessel *this_ptr,int layer_flag);
 void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_00576fe0(CCryptVessel *this_ptr);
 ECollisionType __cdecl core_vessel_cpp_CCryptVessel_getCollisionType_FUN_005770f0(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_00577110(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_00577110(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_00577150(CCryptVessel *this_ptr,uint flags);
 void __cdecl core_water_cpp_staticInit_FUN_005771c0(void);
 float __cdecl core_water_cpp_calculateWaveHeight_FUN_005771e0(int x,int y);
@@ -206,8 +207,8 @@ CWaterActor * __cdecl core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60(void)
 CDemonActorType * __cdecl core_wateract_cpp_CWaterActor_getActorType_FUN_00577d80(CWaterActor *this_ptr);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_00577d90(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00577ee0(CWaterActor *this_ptr);
-void core_wateract_cpp_FUN_00578490(int param_1);
-void core_wateract_cpp_FUN_00578570(int param_1);
+void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_00578490(CWaterActor *this_ptr);
+void __cdecl core_wateract_cpp_CWaterActor_updateLocalPositions_FUN_00578570(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00578670(CWaterActor *this_ptr,float delta_time);
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005787f0(CWaterActor *this_ptr);
 CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00578a70(CWaterActor *this_ptr,CBoundingBox3D *out_box);
@@ -216,30 +217,30 @@ ECollisionType __cdecl core_wateract_cpp_CWaterActor_getCollisionType_FUN_00578d
 EGroundType __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_00578d20(CWaterActor *this_ptr);
 float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_00578d30(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_00578fc0(CWaterActor *this_ptr,SLaserInfo *laser_info);
-void core_wateract_cpp_FUN_00578ff0(void);
+CLava * __cdecl core_wateract_cpp_factoryFuncLava_FUN_00578ff0(void);
 CDemonActorType * __cdecl core_wateract_cpp_CLava_getActorType_FUN_00579010(CLava *this_ptr);
 CLava * __cdecl core_wateract_cpp_CLava_ctor_FUN_00579020(CLava *this_ptr);
 CLava * __cdecl core_wateract_cpp_CLava_dtor_FUN_00579050(CLava *this_ptr,uint flags);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005790a0(CWaterActor *this_ptr,uint flags);
 SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_005790f0(SWaterVertex *this_ptr);
 void __cdecl core_waypoint_cpp_staticInit_FUN_00579100(void);
-bool core_waypoint_cpp_FUN_00579130(float *param_1,CLocation *param_2,int param_3,int param_4);
+int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_00579130(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds,int skip_path_check );
 CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_00579240(void);
 CDemonActorType * __cdecl core_waypoint_cpp_CWayPoint_getActorType_FUN_00579260(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_00579270(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_005792b0(CWayPoint *this_ptr);
 int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00579380(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_00579390(CWayPoint *this_ptr);
-int core_waypoint_cpp_FUN_00579430(undefined4 param_1,int param_2,undefined4 param_3);
+CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00579430(CWayPoint *this_ptr,CWayPoint *start_waypoint,int skip_path_check);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005795e0(CWayPoint *this_ptr,uint flags);
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_00579690(void);
-void wincore_wddvmem_cpp_FUN_005797d0(void);
-void wincore_wddvmem_cpp_FUN_005798a0(void);
-int __cdecl wincore_wddvmem_cpp_FUN_005798f0(int width,int height);
-void __cdecl wincore_wddvmem_cpp_FUN_00579a60(void);
-void wincore_wddvmem_cpp_FUN_00579b20(void);
-undefined4 wincore_wddvmem_cpp_FUN_00579bb0(int param_1,int param_2,int param_3);
+void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005797d0(void);
+void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_005798a0(void);
+int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005798f0(int width,int height);
+void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_00579a60(void);
+void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00579b20(void);
+int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int height,int bits_per_pixel);
 void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_0057a0e0(void);
 void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_0057a2f0(void);
 void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0(void);
@@ -247,7 +248,7 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_0057a4b0(void);
 void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_0057a5b0(void);
 void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_0057a770(void);
 void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0(void);
-void wincore_wddvmem_cpp_FUN_0057ab20(void);
+void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_0057ab20(void);
 void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_0057ab70(void);
 void __cdecl wincore_wddvmem_cpp_stubFunction_FUN_0057ac80(void);
 BOOL __cdecl wincore_wddvmem_cpp_freeLibrary_FUN_0057ad00(HMODULE hLibModule);
@@ -258,9 +259,9 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(CWeapon *this_ptr);
 CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(CWeapon *this_ptr,uint flags);
 void __cdecl core_weapon_cpp_CWeapon_setup_FUN_0057af40(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_0057af80(CWeapon *this_ptr);
-void core_weapon_cpp_FUN_0057b030(int param_1,undefined4 param_2);
+void __cdecl core_weapon_cpp_CWeapon_setRenderAlpha_FUN_0057b030(CWeapon *this_ptr,int alpha);
 int __cdecl core_weapon_cpp_CWeapon_renderTransparent_FUN_0057b040(CWeapon *this_ptr);
-CBoundingBox3D * __cdecl core_weapon_cpp_CWeapon_getBoundingBox_FUN_0057b120(CWeapon *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_weapon_cpp_CWeapon_getBoundingBox_FUN_0057b120(CWeapon *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_0057b160(CWeapon *this_ptr,float delta_time);
 void __cdecl core_weapon_cpp_CWeapon_archive_FUN_0057b2a0(CWeapon *this_ptr);
 ECollisionType __cdecl core_weapon_cpp_CWeapon_getCollisionType_FUN_0057b430(CWeapon *this_ptr,SCollisionInfo *collision_info);
@@ -271,23 +272,23 @@ CDemonActor * __cdecl core_weapon_cpp_CWeapon_getCarrier_FUN_0057b5b0(CWeapon *t
 void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_0057b5c0(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_0057b7f0(CWeapon *this_ptr,int weapon_state);
 void __cdecl core_weapon_cpp_CWeapon_onPickup_FUN_0057b800(CWeapon *this_ptr,CDemonActor *owner);
-CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon *this_ptr,CVector3f *out_point);
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_0057b880(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_0057b930(CWeapon *this_ptr);
 float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_0057ba00(CWeapon *this_ptr);
-void core_weapon_cpp_FUN_0057ba10(int param_1);
+void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_0057ba10(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_0057bb60(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_0057bba0(CWeapon *this_ptr);
 void __cdecl core_weather_cpp_staticInit_FUN_0057bd20(void);
-int core_weather_cpp_FUN_0057bd80(int param_1);
-void core_weather_cpp_FUN_0057bda0(CWeather *param_1);
-float core_weather_cpp_FUN_0057c2c0(void);
-void core_weather_cpp_FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_3);
+CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_0057bd80(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_update_FUN_0057bda0(CWeather *this_ptr);
+int __cdecl core_weather_cpp_getCurrentCameraAmbientValue_FUN_0057c2c0(void);
+void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0057c2e0(CWeather *this_ptr,float flash_timer,int play_sound);
 void __cdecl core_weather_cpp_CWeather_createThunder_FUN_0057c840(CWeather *this_ptr);
-void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr);
-void core_weather_cpp_FUN_0057d050(int *param_1,int param_2);
-void core_weather_cpp_FUN_0057d1a0(int *param_1,float *param_2,int *param_3);
-void core_weather_cpp_FUN_0057d420(undefined4 param_1,int param_2);
+void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0057c890(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(CWeather *this_ptr,EWeatherType type);
+void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
+void __cdecl core_weather_cpp_CWeather_preloadAssets_FUN_0057d420(CWeather *this_ptr,EWeatherType type);
 void __cdecl core_werewolf_cpp_staticInit_FUN_0057d4c0(void);
 CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_0057d520(void);
 CDemonActorType * __cdecl core_werewolf_cpp_CWerewolf_getActorType_FUN_0057d540(CWerewolf *this_ptr);
@@ -302,10 +303,10 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_0057f5b0(CWerewolf *this_pt
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_0057f6f0(CWerewolf *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_0057fa20(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_0057fa60(CWerewolf *this_ptr,CVector3f *out_points_array);
-void core_werewolf_cpp_FUN_0057fad0(CCharacter *param_1);
+void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_0057fad0(CWerewolf *this_ptr);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_0057fe10(CWinFont *this_ptr,uint flags);
 int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_0057fe80(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color);
-void engine_winfont_cpp_FUN_0057fed0(int param_1,undefined4 param_2,LPCSTR param_3,int param_4,int param_5,undefined4 param_6);
+void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0057fed0(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color);
 

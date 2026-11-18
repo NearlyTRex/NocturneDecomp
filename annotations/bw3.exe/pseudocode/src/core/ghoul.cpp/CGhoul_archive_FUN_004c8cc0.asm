@@ -7,7 +7,7 @@
 ; CGhoul *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005c433c+1
+;   TerminatedCString s_speed_005c433d
 ;   TerminatedCString s_modelName_005c4343
 ;   TerminatedCString s_guardDistance_005c434d
 ;   TerminatedCString s_livesLeft_005c435b
@@ -87,7 +87,7 @@ section .text
         ;   XREF to: 004c8d73 (CONDITIONAL_JUMP)  ; LAB_004c8d73
     POP EBX                             ; 004c8d58
     RET                                 ; 004c8d59
-    PUSH 0x5c433d                       ; 004c8d5a | s_speed_005c433c+1
+    PUSH 0x5c433d                       ; 004c8d5a | = "speed"
         ;   Label: LAB_004c8d5a
     LEA EAX,[EBX + 0xcdcc]              ; 004c8d5f
     PUSH EAX                            ; 004c8d65

@@ -13,13 +13,13 @@
 ;   core_pendulum.cpp_CPendulum_process_FUN_00537020 at 00537143
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ecc81
-;   undefined4 DAT_006047d8
+;   float g_FLOAT_005ecc81 = 0.5
+;   float g_FLOAT_006047d8 = 0.00390625
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f690
-;   core_dirmat.cpp_FUN_0045f700
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005593c0
@@ -118,7 +118,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00536379
     MOVSD ES:EDI,ESI                    ; 0053637a
     MOVSD ES:EDI,ESI                    ; 0053637b
-    FLD float ptr [0x005ecc81]          ; 0053637c | DAT_005ecc81
+    FLD float ptr [0x005ecc81]          ; 0053637c | g_FLOAT_005ecc81
     FLD float ptr [ESP + 0x16c]         ; 00536382
     FMUL ST1                            ; 00536389
     FLD float ptr [ESP + 0x170]         ; 0053638b
@@ -180,8 +180,8 @@ section .text
     PUSH EAX                            ; 00536471
     LEA ESI,[ESP + 0x15c]               ; 00536472
     LEA EDI,[ESP + 0xf0]                ; 00536479
-    CALL core_dirmat.cpp_FUN_0045f700   ; 00536480
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 00536480
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x15c]               ; 00536485
     ADD ESP,0x8                         ; 0053648c
     MOVSD ES:EDI,ESI                    ; 0053648f
@@ -272,13 +272,13 @@ section .text
         ;   Label: LAB_005365ce
     LEA EBX,[ESP + 0x184]               ; 005365d5
     FILD dword ptr [EAX]                ; 005365dc
-    FMUL float ptr [0x006047d8]         ; 005365de | DAT_006047d8
+    FMUL float ptr [0x006047d8]         ; 005365de | g_FLOAT_006047d8
     FSTP float ptr [EBX]                ; 005365e4
     FILD dword ptr [EAX + 0x4]          ; 005365e6
-    FMUL float ptr [0x006047d8]         ; 005365e9 | DAT_006047d8
+    FMUL float ptr [0x006047d8]         ; 005365e9 | g_FLOAT_006047d8
     FSTP float ptr [EBX + 0x4]          ; 005365ef
     FILD dword ptr [EAX + 0x8]          ; 005365f2
-    FMUL float ptr [0x006047d8]         ; 005365f5 | DAT_006047d8
+    FMUL float ptr [0x006047d8]         ; 005365f5 | g_FLOAT_006047d8
     FSTP float ptr [EBX + 0x8]          ; 005365fb
     LEA EAX,[ESP + 0x184]               ; 005365fe
     PUSH EAX                            ; 00536605
@@ -287,8 +287,8 @@ section .text
     PUSH EAX                            ; 00536614
     LEA EDI,[ESP + 0xfc]                ; 00536615
     LEA EBX,[ESP + 0xfc]                ; 0053661c
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00536623
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00536623
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x120]               ; 00536628
     ADD ESP,0x8                         ; 0053662f
     LEA EAX,[ESP + 0x184]               ; 00536632
@@ -434,7 +434,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00536830
     MOVSD ES:EDI,ESI                    ; 00536831
     MOVSD ES:EDI,ESI                    ; 00536832
-    FLD float ptr [0x005ecc81]          ; 00536833 | DAT_005ecc81
+    FLD float ptr [0x005ecc81]          ; 00536833 | g_FLOAT_005ecc81
     FLD float ptr [ESP + 0x148]         ; 00536839
     FMUL ST1                            ; 00536840
     FLD float ptr [ESP + 0x14c]         ; 00536842

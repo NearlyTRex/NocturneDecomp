@@ -11,6 +11,6 @@ CTextureCache * __cdecl engine_3d_c_initTextureCache_FUN_004037e0(void)
 {
   CTextureCache *pCVar1;
   
-  pCVar1 = (CTextureCache *)engine_texture_cpp_FUN_00574d50();
+  pCVar1 = engine_texture_cpp_initTextureCache_FUN_00574d50();
   return pCVar1;
 }

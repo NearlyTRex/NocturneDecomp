@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_xform_cpp_clipPolygonStage4_FUN_0055de20(void)
 
 {
@@ -16,99 +14,102 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_0055de20(void)
   byte bVar3;
   uint uVar4;
   int iVar5;
-  int iVar6;
   SRenderVertex *vertex_a;
+  SRenderVertex *pSVar6;
   SRenderVertex *pSVar7;
-  longlong *plVar8;
-  longlong *plVar9;
-  byte bVar10;
+  SRenderVertex *pSVar8;
+  byte bVar9;
   int local_14;
   
-  bVar10 = 0;
+  bVar9 = 0;
   local_14 = 0;
-  if (0 < (int)_DAT_02de313c) {
-    vertex_a = (SRenderVertex *)&DAT_02de4340;
+  if (0 < g_ClipVertexCountStage4) {
+    vertex_a = g_ClipVertexBufferStage4;
     do {
       uVar4 = local_14 + 1;
-      if (uVar4 == _DAT_02de313c) {
-        uVar4 = uVar4 ^ _DAT_02de313c;
+      if (uVar4 == g_ClipVertexCountStage4) {
+        uVar4 = uVar4 ^ g_ClipVertexCountStage4;
       }
-      iVar5 = uVar4 * 0x30;
       bVar3 = (vertex_a->projected_vertex).transformed_y <=
               -(vertex_a->projected_vertex).transformed_z;
-      if (*(int *)(&DAT_02de4344 + iVar5) <= -*(int *)(&DAT_02de4348 + iVar5)) {
+      if (g_ClipVertexBufferStage4[uVar4].projected_vertex.transformed_y <=
+          -g_ClipVertexBufferStage4[uVar4].projected_vertex.transformed_z) {
         bVar3 = bVar3 | 2;
       }
       switch(bVar3) {
       case 0:
-        plVar8 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
+        pSVar7 = g_ClippedVertexBuffer + g_ClippedVertexCount;
         iVar5 = 0x30;
-        pSVar7 = vertex_a;
-        plVar9 = plVar8;
-        if (((uint)plVar8 & 7) != 0) {
-          plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar10 * -8 + DAT_00766c70 * 0x30);
-          pSVar7 = (SRenderVertex *)((int)vertex_a + (uint)bVar10 * -8 + 4);
-          *(int *)plVar8 = (vertex_a->projected_vertex).transformed_x;
+        pSVar6 = vertex_a;
+        pSVar8 = pSVar7;
+        if (((uint)pSVar7 & 7) != 0) {
+          pSVar8 = (SRenderVertex *)(g_ClippedVertexCount * 0x30 + 0x766c78 + (uint)bVar9 * -8);
+          pSVar6 = (SRenderVertex *)((int)vertex_a + (uint)bVar9 * -8 + 4);
+          (pSVar7->projected_vertex).transformed_x = (vertex_a->projected_vertex).transformed_x;
           iVar5 = 0x2c;
         }
         while (7 < iVar5) {
-          lVar1._0_4_ = (pSVar7->projected_vertex).transformed_x;
-          lVar1._4_4_ = (pSVar7->projected_vertex).transformed_y;
-          pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
-          *plVar9 = (longlong)ROUND((float10)lVar1);
-          plVar9 = plVar9 + 1;
+          lVar1._0_4_ = (pSVar6->projected_vertex).transformed_x;
+          lVar1._4_4_ = (pSVar6->projected_vertex).transformed_y;
+          pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;
+          (pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);
+          (pSVar8->projected_vertex).transformed_y =
+               (int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);
+          pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
           iVar5 = iVar5 + -8;
         }
         if (iVar5 != 0 && -9 < iVar5 + -8) {
-          *(int *)plVar9 = (pSVar7->projected_vertex).transformed_x;
+          (pSVar8->projected_vertex).transformed_x = (pSVar6->projected_vertex).transformed_x;
           if (4 < iVar5) {
-            *(uint *)((int)plVar9 + (uint)bVar10 * -8 + 4) =
-                 *(uint *)((int)pSVar7 + (uint)bVar10 * -8 + 4);
+            *(uint *)((int)pSVar8 + (uint)bVar9 * -8 + 4) =
+                 *(uint *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
           }
         }
-        DAT_00766c70 = DAT_00766c70 + 1;
+        g_ClippedVertexCount = g_ClippedVertexCount + 1;
         break;
       case 1:
         core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0
-                  ((SRenderVertex *)(&DAT_02de4340 + iVar5),vertex_a,
-                   (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
-        DAT_00766c70 = DAT_00766c70 + 1;
+                  (g_ClipVertexBufferStage4 + uVar4,vertex_a,
+                   g_ClippedVertexBuffer + g_ClippedVertexCount);
+        g_ClippedVertexCount = g_ClippedVertexCount + 1;
         break;
       case 2:
-        plVar8 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
-        iVar6 = 0x30;
-        pSVar7 = vertex_a;
-        plVar9 = plVar8;
-        if (((uint)plVar8 & 7) != 0) {
-          plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar10 * -8 + DAT_00766c70 * 0x30);
-          pSVar7 = (SRenderVertex *)((int)vertex_a + (uint)bVar10 * -8 + 4);
-          *(int *)plVar8 = (vertex_a->projected_vertex).transformed_x;
-          iVar6 = 0x2c;
+        pSVar7 = g_ClippedVertexBuffer + g_ClippedVertexCount;
+        iVar5 = 0x30;
+        pSVar6 = vertex_a;
+        pSVar8 = pSVar7;
+        if (((uint)pSVar7 & 7) != 0) {
+          pSVar8 = (SRenderVertex *)(g_ClippedVertexCount * 0x30 + 0x766c78 + (uint)bVar9 * -8);
+          pSVar6 = (SRenderVertex *)((int)vertex_a + (uint)bVar9 * -8 + 4);
+          (pSVar7->projected_vertex).transformed_x = (vertex_a->projected_vertex).transformed_x;
+          iVar5 = 0x2c;
         }
-        while (7 < iVar6) {
-          lVar2._0_4_ = (pSVar7->projected_vertex).transformed_x;
-          lVar2._4_4_ = (pSVar7->projected_vertex).transformed_y;
-          pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
-          *plVar9 = (longlong)ROUND((float10)lVar2);
-          plVar9 = plVar9 + 1;
-          iVar6 = iVar6 + -8;
+        while (7 < iVar5) {
+          lVar2._0_4_ = (pSVar6->projected_vertex).transformed_x;
+          lVar2._4_4_ = (pSVar6->projected_vertex).transformed_y;
+          pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;
+          (pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);
+          (pSVar8->projected_vertex).transformed_y =
+               (int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);
+          pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
+          iVar5 = iVar5 + -8;
         }
-        if (iVar6 != 0 && -9 < iVar6 + -8) {
-          *(int *)plVar9 = (pSVar7->projected_vertex).transformed_x;
-          if (4 < iVar6) {
-            *(uint *)((int)plVar9 + (uint)bVar10 * -8 + 4) =
-                 *(uint *)((int)pSVar7 + (uint)bVar10 * -8 + 4);
+        if (iVar5 != 0 && -9 < iVar5 + -8) {
+          (pSVar8->projected_vertex).transformed_x = (pSVar6->projected_vertex).transformed_x;
+          if (4 < iVar5) {
+            *(uint *)((int)pSVar8 + (uint)bVar9 * -8 + 4) =
+                 *(uint *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
           }
         }
-        DAT_00766c70 = DAT_00766c70 + 1;
+        g_ClippedVertexCount = g_ClippedVertexCount + 1;
         core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0
-                  (vertex_a,(SRenderVertex *)(&DAT_02de4340 + iVar5),
-                   (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
-        DAT_00766c70 = DAT_00766c70 + 1;
+                  (vertex_a,g_ClipVertexBufferStage4 + uVar4,
+                   g_ClippedVertexBuffer + g_ClippedVertexCount);
+        g_ClippedVertexCount = g_ClippedVertexCount + 1;
       }
       local_14 = local_14 + 1;
       vertex_a = vertex_a + 1;
-    } while (local_14 < (int)_DAT_02de313c);
+    } while (local_14 < g_ClipVertexCountStage4);
   }
   return;
 }

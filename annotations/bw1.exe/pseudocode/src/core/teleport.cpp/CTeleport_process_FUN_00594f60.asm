@@ -8,11 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f650
-;   undefined4 DAT_01d06ab4
+;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_mission.cpp_CDemonMission_setTeleportTarget_FUN_0051b700
 ;
 ; *****************************************************************************
@@ -34,7 +34,7 @@ section .text
     POP ESI                             ; 00594f77
     POP EBX                             ; 00594f78
     RET                                 ; 00594f79
-    MOV ESI,dword ptr [0x01d06ab4]      ; 00594f7a | DAT_01d06ab4
+    MOV ESI,dword ptr [0x01d06ab4]      ; 00594f7a | g_INT_01d06ab4
         ;   Label: LAB_00594f7a
     MOV ESI,dword ptr [ESI*0x4 + 0x1d06aa4] ; 00594f80
     ADD ESI,0x20                        ; 00594f87
@@ -42,8 +42,8 @@ section .text
     PUSH EBX                            ; 00594f8b
     LEA ESI,[ESP + 0x44]                ; 00594f8c
     LEA EDI,[ESP + 0x38]                ; 00594f90
-    CALL core_actor.cpp_FUN_00408bb0    ; 00594f94
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 00594f94
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x44]                ; 00594f99
     ADD ESP,0x8                         ; 00594f9d
     MOVSD ES:EDI,ESI                    ; 00594fa0
@@ -97,7 +97,7 @@ section .text
     MOV EBX,dword ptr [EBX + 0x164]     ; 0059501c
     ADD EBX,0x20                        ; 00595022
     PUSH EBX                            ; 00595025
-    MOV ECX,dword ptr [0x0061f650]      ; 00595026 | DAT_0061f650
+    MOV ECX,dword ptr [0x0061f650]      ; 00595026 | g_CDemonMission_PTR_0061f650
     PUSH ECX                            ; 0059502c
     CALL core_mission.cpp_CDemonMission_setTeleportTarget_FUN_0051b700 ; 0059502d
         ;   XREF to: 0051b700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_setTeleportTarget_FUN_0051b700(CDemonMission * this_ptr, CLocation * teleport_target)

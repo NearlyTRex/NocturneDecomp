@@ -2,26 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 240,
+    "complexity_score": 178,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 170,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 163,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 599
+    "total_lines": 592
   },
   "cross_references": [
     {
       "addr": "0050ba70",
       "from_addr": "0050c246",
-      "name": "core_menu.cpp_FUN_0050ba70",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,26 +55,26 @@
   "globals": [
     {
       "addr": "005f45a0",
-      "name": "DAT_005f45a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f45a0",
+      "type": "double",
+      "value": "2"
     },
     {
       "addr": "005f45a8",
-      "name": "DAT_005f45a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f45a8",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "006232f0",
-      "name": "DAT_006232f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioSampleRate",
+      "type": "int",
+      "value": "0x5622"
     },
     {
       "addr": "02c80668",
-      "name": "DAT_02c80668",
-      "type": "undefined4",
+      "name": "g_MixBufferSize",
+      "type": "int",
       "value": null
     }
   ],
@@ -87,7 +84,7 @@
       {
         "call_addr": "0050c246",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050ba70",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -416,38 +413,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00576aea) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 55,
-      "match": "*(uint **)(iVar18 + 0x2c80698",
-      "severity": "moderate",
-      "text": "puVar22 = *(uint **)(iVar18 + 0x2c80698);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_006232f0",
-      "severity": "mild",
-      "text": "((double)((freq_start_hz * (float)iVar18) / (float)DAT_006232f0));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_006232f0",
-      "severity": "mild",
-      "text": "fVar24 = ((float10)freq_end_hz * (float10)iVar18) / (float10)DAT_006232f0;",
-      "type": "undefined_data"
     }
   ]
 }

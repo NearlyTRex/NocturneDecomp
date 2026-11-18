@@ -6,33 +6,32 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20(CKeyFramedModel *this_ptr,_FILE *file)
 
 {
   SIZE_T SVar1;
   int iVar2;
   int local_2c;
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
+  int local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
   int local_14;
   
   SVar1 = _fread(&local_2c,0x18,1,file);
   if (SVar1 != 1) goto LAB_0044de99;
   do {
     if ((local_2c < 3) || (4 < local_2c)) {
-      _DAT_01d046a0 = "..\\core\\dmodel.cpp";
-      _DAT_01d046a4 = 0xed;
-      core_main_c_FUN_004e4500("KFM file is invalid version %d",local_2c);
+      g_CHAR_PTR_01d046a0 = "..\\core\\dmodel.cpp";
+      g_INT_01d046a4 = 0xed;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("KFM file is invalid version %d");
     }
     local_14 = 0;
     if ((local_2c < 4) || (SVar1 = _fread(&local_14,4,1,file), SVar1 == 1))
     {
-      core_dmodel_cpp_FUN_0044ea80(this_ptr,local_28,local_24,local_20,local_1c,local_18);
+      core_dmodel_cpp_CKeyFramedModel_allocate_FUN_0044ea80
+                (this_ptr,local_28,local_24,local_20,local_1c,local_18);
       SVar1 = _fread(this_ptr->vertex_list,this_ptr->vertex_count * this_ptr->frame_count * 0xc,
                          1,file);
       if ((SVar1 == 1) &&
@@ -60,8 +59,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20(CKeyFr
       }
     }
 LAB_0044de99:
-    _DAT_01d046a0 = "..\\core\\dmodel.cpp";
-    _DAT_01d046a4 = 0xe7;
-    core_main_c_FUN_004e4500("Error reading keyframed model file");
+    g_CHAR_PTR_01d046a0 = "..\\core\\dmodel.cpp";
+    g_INT_01d046a4 = 0xe7;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Error reading keyframed model file");
   } while( true );
 }

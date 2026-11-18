@@ -11,7 +11,7 @@ CBodyPart * __cdecl core_bodypart_cpp_factoryFuncBodyPart_FUN_004156b0(void)
 {
   CBodyPart *pCVar1;
   
-  pCVar1 = (CBodyPart *)operator_new(0x1344);
+  pCVar1 = operator_new(0x1344);
   if (pCVar1 == (CBodyPart *)0x0) {
     return (CBodyPart *)0x0;
   }

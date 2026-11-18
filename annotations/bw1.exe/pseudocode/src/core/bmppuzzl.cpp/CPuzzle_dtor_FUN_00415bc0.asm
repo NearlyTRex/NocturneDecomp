@@ -12,7 +12,7 @@
 ;   core_bmppuzzl.cpp_CChemPuzzle_dtor_FUN_00417630 at 00417664
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00415bc0_005fc944 = 00415bc0
+;   void*[10] g_ARRAY_PTR_005fc944
 ;
 ; *****************************************************************************
 
@@ -20,6 +20,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00415bc0
         ;   Label: core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00415bc0
-    MOV dword ptr [EAX],0x5fc944        ; 00415bc4 | PTR_core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00415bc0_005fc944
+    MOV dword ptr [EAX],0x5fc944        ; 00415bc4 | g_ARRAY_PTR_005fc944
     LEA EAX,[EAX]                       ; 00415bca
 

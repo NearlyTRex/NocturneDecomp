@@ -6,12 +6,20 @@
 #include "system/basetypes.h"
 #include "system/watcom.h"
 #include "types/classes/CCharacter_full_vtable.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CFont_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
 #include "types/classes/CMobster_full_vtable.h"
+#include "types/classes/CParticle_vtable.h"
+#include "types/classes/CPod_vtable.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CSmiley_full_vtable.h"
+#include "types/classes/CSoundDeviceBasic_vtable.h"
+#include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
+#include "types/structs/SFontGlyph.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x600000
@@ -26,6 +34,9 @@ extern CCharacter_full_vtable g_CNPCVTable;
 extern CCharacter_full_vtable g_CPassengerVTable;
 extern CCharacter_full_vtable g_CBassPlayerVTable;
 extern CCharacter_full_vtable g_CDrummerVTable;
+
+// CDemonActor*
+extern CDemonActor* g_ScriptSentinelActor;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CFlameVTable;
@@ -81,6 +92,9 @@ extern CEnemy_full_vtable g_CWerewolfVTable;
 extern CEnemy_full_vtable g_CYowVTable;
 extern CEnemy_full_vtable g_CZombieVTable;
 
+// CFont_vtable
+extern CFont_vtable g_CFont_vtable_00608164;
+
 // CHero_full_vtable
 extern CHero_full_vtable g_CGabriellaVTable;
 extern CHero_full_vtable g_CHaystackVTable;
@@ -93,8 +107,30 @@ extern CHero_full_vtable g_CSvetlanaVTable;
 // CMobster_full_vtable
 extern CMobster_full_vtable g_CMobsterVTable;
 
+// CParticle_vtable
+extern CParticle_vtable g_CShellVTable;
+extern CParticle_vtable g_CGlassParticleVTable;
+extern CParticle_vtable g_CRockVTable;
+extern CParticle_vtable g_CFireballVTable;
+extern CParticle_vtable g_CSparkVTable;
+extern CParticle_vtable g_CBloodParticleVTable;
+extern CParticle_vtable g_CParticle_vtable_006045e0;
+
+// CPod_vtable
+extern CPod_vtable g_CPod_vtable_00604a34;
+
+// CQuaternion4f
+extern CQuaternion4f g_IdentityQuaternion;
+
 // CSmiley_full_vtable
 extern CSmiley_full_vtable g_CSmileyVTable;
+
+// CSoundDeviceBasic_vtable
+extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;
+
+// CSoundDeviceFull_vtable
+extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
+extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
 
 // CWeapon_full_vtable
 extern CWeapon_full_vtable g_CFlameThrowerVTable;
@@ -109,6 +145,14 @@ extern CWeapon_full_vtable g_CShovelVTable;
 extern CWeapon_full_vtable g_CTommyGunVTable;
 extern CWeapon_full_vtable g_CTurretVTable;
 extern CWeapon_full_vtable g_CWeaponVTable;
+
+// SFontGlyph[224]
+extern SFontGlyph g_FontTable[224];
+
+// TerminatedCString
+extern TerminatedCString g_CLeafVTable;
+extern TerminatedCString g_CFireflyVTable;
+extern TerminatedCString g_CInStreamFileVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_00600850;
@@ -350,24 +394,14 @@ extern WatcomTypeInfo g_CWinFontTypeInfo;
 extern WatcomTypeInfo g_CYowTypeInfo;
 extern WatcomTypeInfo g_CZombieTypeInfo;
 
-// undefined1*
-extern undefined1* g_CShellVTable;
-extern undefined1* g_CGlassParticleVTable;
-extern undefined1* g_CLeafVTable;
-extern undefined1* g_CRockVTable;
-extern undefined1* g_CFireballVTable;
-extern undefined1* g_CFireflyVTable;
-extern undefined1* g_CSparkVTable;
-extern undefined1* g_CBloodParticleVTable;
-extern undefined1* g_CDemonPodVTable;
-extern undefined1* g_CInStreamFileVTable;
-extern undefined1* g_CInStreamMemoryVTable;
-extern undefined1* g_COutStreamFileVTable;
-extern undefined1* g_COutStreamMemoryVTable;
-extern undefined1* g_COutStreamDebugVTable;
+// int
+extern int g_DefaultStreamBufferSize;
+extern int g_INT_0060852e;
 
-// undefined4
-extern undefined4 DAT_00608560;
+// short
+extern short g_DaysInMonth_Normal;
+extern short g_SHORT_00608544;
+extern short g_DaysInMonth_Leap;
 
 // void*
 extern void* g_SPageResourceVTable;
@@ -377,4 +411,30 @@ extern void* g_SPageResourceTwanaCharacterVTable;
 extern void* g_SPageResourceTwanaEntryVTable;
 extern void* g_SPageResourceMapVTable;
 extern void* g_CDeformableModelInstanceVTable;
+
+// void*[10]
+extern void* g_COutStreamFileVTable[10];
+
+// void*[12]
+extern void* g_CInStreamMemoryVTable[12];
+
+// void*[2]
+extern void* g_ARRAY_PTR_00600f94[2];
+
+// void*[3]
+extern void* g_ARRAY_PTR_00602bcc[3];
+
+// void*[5]
+extern void* g_ARRAY_PTR_006045b0[5];
+extern void* g_ARRAY_PTR_00607404[5];
+extern void* g_COutStreamDebugVTable[5];
+
+// void*[6]
+extern void* g_CDemonPodVTable[6];
+
+// void*[7]
+extern void* g_COutStreamMemoryVTable[7];
+
+// void*[9]
+extern void* g_ARRAY_PTR_00607354[9];
 

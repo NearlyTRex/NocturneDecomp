@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   char[241][320] g_CoronaBlurOutputBuffer
-;   int INT_00c199f8
+;   int g_CoronaBlurFillValue
 ;   int g_BackdropSaveActive
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
 ;   SFogImagePlane[16] g_CameraImageDecompressBuffer
@@ -43,10 +43,10 @@ section .text
     SBB EAX,EDX                         ; 00451150
     SAR EAX,0x2                         ; 00451152
     PUSH 0x12c00                        ; 00451155
-    MOV [0x00c199f8],EAX                ; 0045115a | INT_00c199f8
+    MOV [0x00c199f8],EAX                ; 0045115a | g_CoronaBlurFillValue
     XOR EDX,EDX                         ; 0045115f
     MOV ECX,0xba8c78                    ; 00451161 | g_CoronaBlurOutputBuffer
-    MOV DL,byte ptr [0x00c199f8]        ; 00451166 | INT_00c199f8
+    MOV DL,byte ptr [0x00c199f8]        ; 00451166 | g_CoronaBlurFillValue
     CALL crt_watcom.c__memset_FUN_004b19d0 ; 0045116c
         ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_004b19d0(void * dest, int fill_byte, uint size)
     CMP dword ptr [0x01519380],0x1      ; 00451171 | g_ImageBytesPerPixel

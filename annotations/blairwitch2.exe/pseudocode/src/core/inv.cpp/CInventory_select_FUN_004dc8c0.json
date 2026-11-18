@@ -2,31 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 503,
+    "complexity_score": 285,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 168,
-    "suspect_count": 29,
+    "pseudocode_lines": 175,
+    "suspect_count": 9,
     "suspect_types": [
       "derived_field_index_pun",
-      "raw_address_pointer_store",
-      "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 575
+    "total_lines": 582
   },
   "cross_references": [
     {
       "addr": "004cfc80",
       "from_addr": "004cfd22",
-      "name": "core_hero.cpp_FUN_004cfc80",
+      "name": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004cfc80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,7 +42,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
-    "signature": "undefined4 __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *param_2)"
+    "signature": "int __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *actor_ptr)"
   },
   "function_calls": [
     {
@@ -63,17 +58,17 @@
     {
       "addr": "0040e450",
       "is_variadic": false,
-      "name": "core_ammo.cpp_FUN_0040e450"
+      "name": "core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450"
     },
     {
       "addr": "0045d260",
       "is_variadic": false,
-      "name": "core_doc.cpp_FUN_0045d260"
+      "name": "core_doc.cpp_CDoc_startReload_FUN_0045d260"
     },
     {
       "addr": "00490f80",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_00490f80"
+      "name": "core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80"
     },
     {
       "addr": "004b31a0",
@@ -88,12 +83,12 @@
     {
       "addr": "004db8e0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004db8e0"
+      "name": "core_inv.cpp_CInventory_removeItem_FUN_004db8e0"
     },
     {
       "addr": "004db9d0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004db9d0"
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0"
     },
     {
       "addr": "004d9f10",
@@ -103,7 +98,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "0050fe80",
@@ -132,8 +127,8 @@
     },
     {
       "addr": "005db95d",
-      "name": "DAT_005db95d",
-      "type": "undefined4",
+      "name": "s_CGun_005db95d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -174,8 +169,8 @@
     },
     {
       "addr": "005db9ca",
-      "name": "DAT_005db9ca",
-      "type": "undefined4",
+      "name": "s_anon_005db9ca",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -192,15 +187,15 @@
     },
     {
       "addr": "005db9e2",
-      "name": "DAT_005db9e2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005db9e2",
+      "type": "double",
+      "value": "98"
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     },
     {
       "addr": "00616494",
@@ -246,20 +241,20 @@
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -269,7 +264,7 @@
       {
         "call_addr": "004cfd22",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004cfc80",
+        "caller": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004cfc80",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -280,7 +275,7 @@
       {
         "call_addr": "004cfd50",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004cfc80",
+        "caller": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004cfc80",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -438,7 +433,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "actor_ptr",
         "offset": 8,
         "size": 4,
         "type": "CDemonActor *"
@@ -447,168 +442,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CAmmo\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CWeapon\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_inv_cpp_FUN_004db9d0(this_ptr,param_2,5,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CHealthItem\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CGasMask\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CGasMaskClassInfo.name_hash);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CBoxActor\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar5 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CBoxActorClassInfo.name_hash)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2,g_CHealthItemClassInfo.name_hash);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar3 = core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_005db9ca",
-      "severity": "mild",
-      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005db9ca);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 116,
-      "match": "*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "(local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4));",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_inv_cpp_FUN_004db8e0(this_ptr,param_2,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_14 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CAmmoClassInfo.name_hash);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x154))(iVar2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 136,
-      "match": "DAT_005db95d",
-      "severity": "mild",
-      "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(pCVar5,&DAT_005db95d), iVar2 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 163,
-      "match": "*(CDemonActor **)(iVar2 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(iVar2 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 170,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_inv_cpp_FUN_004db8e0(this_ptr,param_2,1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 63,
+      "line": 65,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -616,7 +451,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 84,
+      "line": 86,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -624,7 +459,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 105,
+      "line": 107,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -632,7 +467,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 145,
+      "line": 149,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -640,7 +475,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 75,
+      "line": 77,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -648,7 +483,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 96,
+      "line": 98,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -656,7 +491,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 75,
+      "line": 77,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -664,17 +499,17 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 96,
+      "line": 98,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
     },
     {
-      "description": "'(char *)&pCVar5[2].particle_systems[2].max_particles' walks 2 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[2].max_particles) (0x1f4) + 0x0 = 0x75c, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar5)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 45,
+      "description": "'(char *)&pCVar6[2].particle_systems[2].max_particles' walks 2 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[2].max_particles) (0x1f4) + 0x0 = 0x75c, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar6)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 46,
       "severity": "moderate",
-      "text": "(0x01C38BC0,(char *)&pCVar5[2].particle_systems[2].max_particles,1);",
+      "text": "(g_CEventListPtr,(char *)&pCVar6[2].particle_systems[2].max_particles,1);",
       "type": "derived_field_index_pun"
     }
   ]

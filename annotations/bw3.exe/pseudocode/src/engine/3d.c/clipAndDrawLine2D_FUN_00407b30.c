@@ -139,8 +139,8 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407b30(SRenderVertex vertex1,SR
       engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(0x61a6);
       engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(24999);
       engine_2d_c_drawLine_FUN_004011a0
-                (DAT_0072ff44 >> 0x10,DAT_0072ff48 >> 0x10,DAT_0072ff74 >> 0x10,DAT_0072ff78 >> 0x10
-                );
+                (g_INT_0072ff44 >> 0x10,g_INT_0072ff48 >> 0x10,g_INT_0072ff74 >> 0x10,
+                 g_INT_0072ff78 >> 0x10);
       return;
     }
   }

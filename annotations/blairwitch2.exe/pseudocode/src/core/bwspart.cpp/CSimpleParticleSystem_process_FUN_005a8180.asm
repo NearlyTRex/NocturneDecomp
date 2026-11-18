@@ -1,20 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem *this_ptr,float param_2)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[12]:
-;   core_confedrt.cpp_FUN_005a0bd0 at 005a0c28
-;   core_confzomb.cpp_FUN_005a2240 at 005a2255
+;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0c28
+;   core_confzomb.cpp_CConfederateZombie_processAI_FUN_005a2240 at 005a2255
 ;   core_doc.cpp_CDoc_process_FUN_00450b20 at 00450bb4
 ;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd85a
-;   core_ghostchi.cpp_FUN_005a9890 at 005a98a1
+;   core_ghostchi.cpp_CGhostChild_processAI_FUN_005a9890 at 005a98a1
 ;   core_health.cpp_CHealthItem_process_FUN_004cdb60 at 004cdb82
-;   core_hellhag.cpp_FUN_005ab260 at 005ab2b5
+;   core_hellhag.cpp_CHag_processAI_FUN_005ab260 at 005ab2b5
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c6a5
 ;   core_hpbox.cpp_CParticleBox_process_FUN_005ac960 at 005ac988
 ;   core_mine.cpp_CSpiritMine_process_FUN_005ad530 at 005ad555
@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
-;   core_bwspart.cpp_FUN_005a85c0
+;   core_bwspart.cpp_processSimpleParticle_FUN_005a85c0
 ;
 ; *****************************************************************************
 
@@ -98,15 +98,15 @@ section .text
     PUSH 0x0                            ; 005a81e9
     PUSH EDI                            ; 005a81eb
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005a81ec
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005a81f1
     JMP 0x005a81a0                      ; 005a81f4
         ;   XREF to: 005a81a0 (UNCONDITIONAL_JUMP)  ; LAB_005a81a0
     PUSH dword ptr [ESP + 0x18]         ; 005a81f6
         ;   Label: LAB_005a81f6
     PUSH EAX                            ; 005a81fa
-    CALL core_bwspart.cpp_FUN_005a85c0  ; 005a81fb
-        ;   XREF to: 005a85c0 (UNCONDITIONAL_CALL)  ; undefined core_bwspart.cpp_FUN_005a85c0()
+    CALL core_bwspart.cpp_processSimpleParticle_FUN_005a85c0 ; 005a81fb
+        ;   XREF to: 005a85c0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_processSimpleParticle_FUN_005a85c0(void * particle, float delta_time)
     ADD ESP,0x8                         ; 005a8200
     INC ESI                             ; 005a8203
     MOV EAX,dword ptr [EDI + 0x18]      ; 005a8204

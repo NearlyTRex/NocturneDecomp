@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_marquee_cpp_CMarquee_getActorType_FUN_004cc0d0(CMarquee *this_ptr)
 
 {
-  return &g_CMarqueeActorType_01cc48d4;
+  return &g_CMarqueeClassInfo;
 }

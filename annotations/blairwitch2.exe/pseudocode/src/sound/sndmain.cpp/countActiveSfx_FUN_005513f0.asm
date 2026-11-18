@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b5933
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5933
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0263cf80
-;   undefined4 DAT_0263cf84
-;   undefined4 DAT_0263d09c
-;   undefined4 DAT_0263d0a0
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[0].sample
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[1].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[1].sample
 ;
 ; *****************************************************************************
 
@@ -21,11 +21,11 @@ section .text
         ;   Label: sound_sndmain.cpp_countActiveSfx_FUN_005513f0
     XOR EDX,EDX                         ; 005513f5
     LEA ECX,[EAX + 0x4700]              ; 005513f7
-    CMP dword ptr [EAX + 0x68],0x0      ; 005513fd | DAT_0263cf84 | DAT_0263d0a0
+    CMP dword ptr [EAX + 0x68],0x0      ; 005513fd | g_CSfxSlot_ARRAY_0263cf1c[0].sample | g_CSfxSlot_ARRAY_0263cf1c[1].sample
         ;   Label: LAB_005513fd
     JZ 0x0055140a                       ; 00551401
         ;   XREF to: 0055140a (CONDITIONAL_JUMP)  ; LAB_0055140a
-    CMP dword ptr [EAX + 0x64],0x0      ; 00551403 | DAT_0263cf80 | DAT_0263d09c
+    CMP dword ptr [EAX + 0x64],0x0      ; 00551403 | g_CSfxSlot_ARRAY_0263cf1c[0].playback_state | g_CSfxSlot_ARRAY_0263cf1c[1].playback_state
     JZ 0x0055140a                       ; 00551407
         ;   XREF to: 0055140a (CONDITIONAL_JUMP)  ; LAB_0055140a
     INC EDX                             ; 00551409

@@ -31,7 +31,7 @@ extern CDemonActorType g_CActorDestinationClassInfo;
 extern CDemonFilter CDemonFilter_ARRAY_020a4ad8[4];
 
 // CDemonFilter[8]
-extern CDemonFilter CDemonFilter_ARRAY_020a4878[8];
+extern CDemonFilter g_PlayerFilterPool[8];
 
 // CDemonLight*
 extern CDemonLight* g_CurrentShadowLight;

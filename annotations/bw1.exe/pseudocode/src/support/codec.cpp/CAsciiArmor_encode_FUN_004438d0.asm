@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CAsciiArmor_encode_FUN_004438d0(CAsciiArmor *this_ptr,undefined4 param_2,int *param_3)
+; int __cdecl support_codec_cpp_CAsciiArmor_encode_FUN_004438d0(CAsciiArmor *this_ptr,void *istream,void *ostream)
 ;
 ; Parameters:
 ; CAsciiArmor *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; int *            Stack[0xc]:4   param_3
+; void *           Stack[0x8]:4   istream
+; void *           Stack[0xc]:4   ostream
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0123456789ABCDEFGHJKLM_00610d70
 ;
 ; Called Functions:
-;   support_codec.cpp_writeBitsToStream_FUN_00442490
+;   support_codec.cpp_readBitsFromStream_FUN_00442490
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
         ;   Label: LAB_004438e2
     PUSH 0x6                            ; 004438e3
     PUSH ESI                            ; 004438e5
-    CALL support_codec.cpp_writeBitsToStream_FUN_00442490 ; 004438e6
-        ;   XREF to: 00442490 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_writeBitsToStream_FUN_00442490()
+    CALL support_codec.cpp_readBitsFromStream_FUN_00442490 ; 004438e6
+        ;   XREF to: 00442490 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_readBitsFromStream_FUN_00442490(SBitBuffer * bit_buffer, int bit_count, void * istream)
     ADD ESP,0xc                         ; 004438eb
     TEST EAX,EAX                        ; 004438ee
     JGE 0x004438fb                      ; 004438f0

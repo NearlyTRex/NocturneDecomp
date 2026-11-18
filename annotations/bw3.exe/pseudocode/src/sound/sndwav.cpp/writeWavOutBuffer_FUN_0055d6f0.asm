@@ -20,11 +20,11 @@
 ;   TerminatedCString s_waveOutUnprepareHeader_f_005d4f60
 ;   TerminatedCString s_waveOutPrepareHeader_fai_005d4f7f
 ;   TerminatedCString s_waveOutWrite_failed_005d4f9c
-;   undefined4 DAT_02cf546c
-;   undefined4 DAT_02cf54f0
-;   undefined4 DAT_02cf54f4
-;   undefined4 DAT_02cf54f8
-;   undefined4 DAT_02cf54fc
+;   int g_WaveOutHandle
+;   int g_WaveOutBitsPerSample
+;   int g_WaveOutChannels
+;   int g_WaveOutSampleRate
+;   int g_WaveOutBufferSize
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_0055a560
@@ -63,13 +63,13 @@ section .text
     PUSH 0x20                           ; 0055d71b
         ;   Label: LAB_0055d71b
     PUSH ECX                            ; 0055d71d
-    MOV ESI,dword ptr [0x02cf546c]      ; 0055d71e | DAT_02cf546c
+    MOV ESI,dword ptr [0x02cf546c]      ; 0055d71e | g_WaveOutHandle
     PUSH ESI                            ; 0055d724
     CALL dword ptr CS:[0x5b3490]        ; 0055d725 | PTR_waveOutUnprepareHeader_005b3490
     TEST EAX,EAX                        ; 0055d72c
     JNZ 0x0055d824                      ; 0055d72e
         ;   XREF to: 0055d824 (CONDITIONAL_JUMP)  ; LAB_0055d824
-    MOV EAX,[0x02cf54f0]                ; 0055d734 | DAT_02cf54f0
+    MOV EAX,[0x02cf54f0]                ; 0055d734 | g_WaveOutBitsPerSample
     MOV EDX,EAX                         ; 0055d739
     SAR EDX,0x1f                        ; 0055d73b
     SHL EDX,0x3                         ; 0055d73e
@@ -78,7 +78,7 @@ section .text
     MOV EBP,EAX                         ; 0055d746
     MOV ESI,EBP                         ; 0055d748
     IMUL EDX,EBP,0x0                    ; 0055d74a
-    MOV EBX,dword ptr [0x02cf54f4]      ; 0055d74d | DAT_02cf54f4
+    MOV EBX,dword ptr [0x02cf54f4]      ; 0055d74d | g_WaveOutChannels
     MOV dword ptr [ESP + 0x20],EDI      ; 0055d753
     SHL EBX,0x2                         ; 0055d757
     XOR EAX,EAX                         ; 0055d75a
@@ -96,29 +96,29 @@ section .text
         ;   XREF to: 0055d766 (CONDITIONAL_JUMP)  ; LAB_0055d766
     LEA EAX,[EAX]                       ; 0055d776
     LEA EDX,[EDX]                       ; 0055d77c
-    MOV EDI,dword ptr [0x02cf54f4]      ; 0055d780 | DAT_02cf54f4
+    MOV EDI,dword ptr [0x02cf54f4]      ; 0055d780 | g_WaveOutChannels
         ;   Label: LAB_0055d780
     IMUL EBP,EDI                        ; 0055d786
     PUSH EBP                            ; 0055d789
-    MOV EBP,dword ptr [0x02cf54fc]      ; 0055d78a | DAT_02cf54fc
+    MOV EBP,dword ptr [0x02cf54fc]      ; 0055d78a | g_WaveOutBufferSize
     PUSH EBP                            ; 0055d790
-    MOV EAX,[0x02cf54f8]                ; 0055d791 | DAT_02cf54f8
+    MOV EAX,[0x02cf54f8]                ; 0055d791 | g_WaveOutSampleRate
     PUSH EAX                            ; 0055d796
     PUSH EDI                            ; 0055d797
-    MOV ECX,dword ptr [0x02cf54f0]      ; 0055d798 | DAT_02cf54f0
+    MOV ECX,dword ptr [0x02cf54f0]      ; 0055d798 | g_WaveOutBitsPerSample
     PUSH ECX                            ; 0055d79e
     LEA EAX,[ESP + 0x14]                ; 0055d79f
     PUSH EAX                            ; 0055d7a3
     CALL sound_sndmain.cpp_pollAndMixSfx_FUN_00559d90 ; 0055d7a4
         ;   XREF to: 00559d90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAndMixSfx_FUN_00559d90(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, ...)
-    MOV EAX,[0x02cf54f0]                ; 0055d7a9 | DAT_02cf54f0
+    MOV EAX,[0x02cf54f0]                ; 0055d7a9 | g_WaveOutBitsPerSample
     MOV EDX,EAX                         ; 0055d7ae
     SAR EDX,0x1f                        ; 0055d7b0
     SHL EDX,0x3                         ; 0055d7b3
     SBB EAX,EDX                         ; 0055d7b6
     SAR EAX,0x3                         ; 0055d7b8
-    IMUL EAX,dword ptr [0x02cf54fc]     ; 0055d7bb | DAT_02cf54fc
-    IMUL EAX,dword ptr [0x02cf54f4]     ; 0055d7c2 | DAT_02cf54f4
+    IMUL EAX,dword ptr [0x02cf54fc]     ; 0055d7bb | g_WaveOutBufferSize
+    IMUL EAX,dword ptr [0x02cf54f4]     ; 0055d7c2 | g_WaveOutChannels
     ADD ESP,0x18                        ; 0055d7c9
     MOV EDX,dword ptr [ESP + 0x20]      ; 0055d7cc
     MOV EDX,dword ptr [EDX + 0x2cf5490] ; 0055d7d0
@@ -127,7 +127,7 @@ section .text
     PUSH 0x20                           ; 0055d7dd
     MOV EDI,dword ptr [EAX + 0x2cf5490] ; 0055d7df
     PUSH EDI                            ; 0055d7e5
-    MOV EBP,dword ptr [0x02cf546c]      ; 0055d7e6 | DAT_02cf546c
+    MOV EBP,dword ptr [0x02cf546c]      ; 0055d7e6 | g_WaveOutHandle
     PUSH EBP                            ; 0055d7ec
     CALL dword ptr CS:[0x5b3488]        ; 0055d7ed | PTR_waveOutPrepareHeader_005b3488
     TEST EAX,EAX                        ; 0055d7f4
@@ -137,7 +137,7 @@ section .text
     PUSH 0x20                           ; 0055d7fc
     MOV EDX,dword ptr [EAX + 0x2cf5490] ; 0055d7fe
     PUSH EDX                            ; 0055d804
-    MOV ECX,dword ptr [0x02cf546c]      ; 0055d805 | DAT_02cf546c
+    MOV ECX,dword ptr [0x02cf546c]      ; 0055d805 | g_WaveOutHandle
     PUSH ECX                            ; 0055d80b
     CALL dword ptr CS:[0x5b3494]        ; 0055d80c | PTR_waveOutWrite_005b3494
     TEST EAX,EAX                        ; 0055d813

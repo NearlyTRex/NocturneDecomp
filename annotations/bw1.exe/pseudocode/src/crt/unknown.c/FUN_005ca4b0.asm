@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_WideCharToMultiByte_005d0684 = 001d12e2
-;   undefined4 DAT_00626ad8
+;   uint g_CodePage = 0x1
 ;
 ; Called Functions:
 ;   WideCharToMultiByte
@@ -36,7 +36,7 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 005ca4c2
     PUSH EAX                            ; 005ca4c6
     PUSH 0x200                          ; 005ca4c7
-    MOV EDX,dword ptr [0x00626ad8]      ; 005ca4cc | DAT_00626ad8
+    MOV EDX,dword ptr [0x00626ad8]      ; 005ca4cc | g_CodePage
     PUSH EDX                            ; 005ca4d2
     CALL dword ptr CS:[0x5d0684]        ; 005ca4d3 | PTR_WideCharToMultiByte_005d0684
     TEST EAX,EAX                        ; 005ca4da

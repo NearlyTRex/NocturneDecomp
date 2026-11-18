@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 589,
-    "complexity_score": 407,
+    "complexity_score": 391,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 252,
-    "suspect_count": 12,
+    "pseudocode_lines": 251,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "unknown_field",
       "unknown_type",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 841
+    "total_lines": 840
   },
   "cross_references": [
     {
@@ -161,15 +160,15 @@
     },
     {
       "addr": "0059c030",
-      "name": "DAT_0059c030",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059c030",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "0059c038",
-      "name": "DAT_0059c038",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059c038",
+      "type": "float",
+      "value": "0.00390625"
     },
     {
       "addr": "005ae704",
@@ -191,8 +190,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -817,16 +816,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/unresolved type",
-      "line": 18,
+      "line": 16,
       "match": "unkbyte10",
       "severity": "mild",
       "text": "unkbyte10 Var10;",
@@ -834,7 +825,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
+      "line": 19,
       "match": "aiStackY_10d8",
       "severity": "moderate",
       "text": "int aiStackY_10d8 [985];",
@@ -842,7 +833,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 135,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar6 = (float10)local_48 * (float10)5.0977633259517284e-315._0_4_ * (float10)3.1415926535000001 *",
@@ -850,7 +841,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 140,
+      "line": 138,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar11 = (float10)(local_48 + 1) * (float10)5.0977633259517284e-315._0_4_ *",
@@ -858,7 +849,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 167,
+      "line": 165,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_20 = (float)local_24 * local_40 * local_6c * 5.1806537865363094e-315._0_4_;",
@@ -866,7 +857,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 169,
+      "line": 167,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1c = (float)local_14 * local_40 * local_6c * 5.1806537865363094e-315._0_4_;",
@@ -874,7 +865,7 @@
     },
     {
       "description": "Pointer value `&local_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 81,
+      "line": 79,
       "match": "(int)&local_f0",
       "severity": "moderate",
       "text": "local_98[(uint)bVar5 * -2] = *(int *)((int)&local_f0 + (uint)bVar5 * -8 + 4);",
@@ -882,7 +873,7 @@
     },
     {
       "description": "Pointer value `&local_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "(int)&local_f0",
       "severity": "moderate",
       "text": "*(int *)((int)&local_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
@@ -890,7 +881,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 109,
+      "line": 107,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_138.x = pCVar3->x;",
@@ -898,7 +889,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 81,
+      "line": 79,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_98[(uint)bVar5 * -2] = *(int *)((int)&local_f0 + (uint)bVar5 * -8 + 4);",
@@ -906,7 +897,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",

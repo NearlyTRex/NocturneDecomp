@@ -79,9 +79,9 @@
     },
     {
       "addr": "005c1f90",
-      "name": "DAT_005c1f90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
     }
   ],
   "param_estimates": {
@@ -175,7 +175,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((-1 < (int)param_1) && (param_1 <= 0x00000014)) {",
+      "text": "if ((-1 < (int)param_1) && (param_1 <= g_MaxHandleCount)) {",
       "type": "unnamed_param"
     },
     {
@@ -183,7 +183,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((-1 < (int)param_1) && (param_1 <= 0x00000014)) {",
+      "text": "if ((-1 < (int)param_1) && (param_1 <= g_MaxHandleCount)) {",
       "type": "unnamed_param"
     },
     {

@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ca13e8
+;   int g_INT_01ca13e8
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 0049e6e5
     PUSH dword ptr [ESP + 0x14]         ; 0049e6e9
     PUSH EDX                            ; 0049e6ed
-    MOV EDX,dword ptr [0x01ca13e8]      ; 0049e6ee | DAT_01ca13e8
+    MOV EDX,dword ptr [0x01ca13e8]      ; 0049e6ee | g_INT_01ca13e8
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049e6f4
     SUB EAX,EDX                         ; 0049e6fb
     SHL EAX,0x2                         ; 0049e6fd
@@ -44,10 +44,10 @@ section .text
     PUSH EAX                            ; 0049e70a
     CALL core_fire.cpp_CLightningBolt_activate_FUN_0049aaf0 ; 0049e70b
         ;   XREF to: 0049aaf0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_activate_FUN_0049aaf0(CLightningBolt * this_ptr, CVector3f * start_position, float start_width, float end_width)
-    MOV ECX,dword ptr [0x01ca13e8]      ; 0049e710 | DAT_01ca13e8
+    MOV ECX,dword ptr [0x01ca13e8]      ; 0049e710 | g_INT_01ca13e8
     INC ECX                             ; 0049e716
     ADD ESP,0x10                        ; 0049e717
-    MOV dword ptr [0x01ca13e8],ECX      ; 0049e71a | DAT_01ca13e8
+    MOV dword ptr [0x01ca13e8],ECX      ; 0049e71a | g_INT_01ca13e8
     CMP ECX,0xa                         ; 0049e720
     JGE 0x0049e72e                      ; 0049e723
         ;   XREF to: 0049e72e (CONDITIONAL_JUMP)  ; LAB_0049e72e
@@ -59,7 +59,7 @@ section .text
     PUSH ESI                            ; 0049e72e
         ;   Label: LAB_0049e72e
     XOR ESI,ESI                         ; 0049e72f
-    MOV dword ptr [0x01ca13e8],ESI      ; 0049e731 | DAT_01ca13e8
+    MOV dword ptr [0x01ca13e8],ESI      ; 0049e731 | g_INT_01ca13e8
     POP ESI                             ; 0049e737
     CMP dword ptr [ESP + 0x14],0x0      ; 0049e738
     JNZ 0x0049e741                      ; 0049e73d

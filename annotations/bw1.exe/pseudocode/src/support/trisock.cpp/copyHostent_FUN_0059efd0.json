@@ -1,0 +1,248 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 200,
+    "complexity_score": 183,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 73,
+    "suspect_count": 10,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_param"
+    ],
+    "total_lines": 273
+  },
+  "cross_references": [
+    {
+      "addr": "0059f230",
+      "from_addr": "0059f287",
+      "name": "support_trisock.cpp_lookupHostByAddr_FUN_0059f230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059f1a0",
+      "from_addr": "0059f214",
+      "name": "support_trisock.cpp_lookupHostByName_FUN_0059f1a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059efd0",
+    "address_range": [
+      [
+        "0059efd0",
+        "0059f19a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_copyHostent_FUN_0059efd0",
+    "signature": "int __cdecl support_trisock_cpp_copyHostent_FUN_0059efd0(hostent *host,void *host_info_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005c0f80",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005c0f80"
+    },
+    {
+      "addr": "005c20d0",
+      "is_variadic": false,
+      "name": "crt_string.c__strncpy_FUN_005c20d0"
+    },
+    {
+      "addr": "0059c640",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_buildIPAddress_FUN_0059c640"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0059f214",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_lookupHostByName_FUN_0059f1a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059f287",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_lookupHostByAddr_FUN_0059f230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.876623376623376,
+    "instruction_count": 154,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 6,
+      "CBRANCH": 17,
+      "COPY": 124,
+      "INT_ADD": 73,
+      "INT_AND": 109,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 101,
+      "INT_LESS": 12,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 9,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 50,
+      "INT_SUB": 40,
+      "INT_XOR": 8,
+      "LOAD": 42,
+      "POPCOUNT": 50,
+      "RETURN": 2,
+      "STORE": 40
+    },
+    "pcode_op_count": 751
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00579550",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00571fc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "host",
+        "offset": 4,
+        "size": 4,
+        "type": "hostent *"
+      },
+      {
+        "is_param": true,
+        "name": "host_info_out",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(char *)((int)host_info_out",
+      "severity": "moderate",
+      "text": "pcStack_8 = (char *)((int)host_info_out + 0x84);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(char **)((int)host",
+      "severity": "moderate",
+      "text": "pcVar4 = *(char **)((int)host->h_aliases + iStack_10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(char *)((int)host_info_out",
+      "severity": "moderate",
+      "text": "pcVar4 = (char *)((int)host_info_out + 0x84);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(int *)((int)host_info_out",
+      "severity": "moderate",
+      "text": "*(int *)((int)host_info_out + 0x80) = iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(byte **)((int)host",
+      "severity": "moderate",
+      "text": "pbVar1 = *(byte **)((int)host->h_addr_list + iStack_c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(uint8_t *)((int)host_info_out",
+      "severity": "moderate",
+      "text": "((uint8_t *)((int)host_info_out + 0x288),(uint)*pbVar1,(uint)pbVar1[1],",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "iVar2 = in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)host_info_out",
+      "severity": "moderate",
+      "text": "*(int *)((int)host_info_out + 0x284) = iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)host_info_out",
+      "severity": "moderate",
+      "text": "return (uint)(0 < *(int *)((int)host_info_out + 0x284));",
+      "type": "pointer_cast"
+    }
+  ]
+}

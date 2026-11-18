@@ -61,10 +61,10 @@ CBoundingBox3D * __cdecl CMarquee::getBoundingBox(CMarquee *this_ptr,CBoundingBo
 // Address: 004e85b0
 CMarquee * __cdecl CMarquee::dtor(CMarquee *this_ptr,uint flags);
 
-// Original: core_marquee.cpp_FUN_004e8620
+// Original: core_marquee.cpp_initializeTrigTables_FUN_004e8620
 // Address: 004e8620
-undefined8 FUN_004e8620(void);
+void __cdecl initializeTrigTables(void);
 
-// Original: core_marquee.cpp_FUN_004e86a0
+// Original: core_marquee.cpp_freeTrigTables_FUN_004e86a0
 // Address: 004e86a0
-void FUN_004e86a0(void);
+void __cdecl freeTrigTables(void);

@@ -19,18 +19,18 @@
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50 at 0056ffda
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.collision_render_enabled
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_00425aa0
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_004264d0
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730
-;   core_charactr.cpp_FUN_004247f0
-;   core_charactr.cpp_FUN_00424c80
+;   core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0
 ;   core_cloth.cpp_CClothList_render_FUN_005b17d0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
@@ -46,9 +46,9 @@ section .text
     CMP dword ptr [EBX + 0x10224],0x0   ; 00424bd6
     JZ 0x00424c35                       ; 00424bdd
         ;   XREF to: 00424c35 (CONDITIONAL_JUMP)  ; LAB_00424c35
-    MOV ECX,dword ptr [0x0060b280]      ; 00424bdf | DAT_0060b280
+    MOV ECX,dword ptr [0x0060b280]      ; 00424bdf | g_CDemonRenderer_PTR_0060b280
         ;   Label: LAB_00424bdf
-    PUSH ECX                            ; 00424be5 | DAT_01ba5c50
+    PUSH ECX                            ; 00424be5 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00424be6
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00424beb
@@ -89,8 +89,8 @@ section .text
     PUSH ESI                            ; 00424c35
         ;   Label: LAB_00424c35
     PUSH EBX                            ; 00424c36
-    CALL core_charactr.cpp_FUN_004247f0 ; 00424c37
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004247f0()
+    CALL core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0 ; 00424c37
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00424c3c
     PUSH 0x0                            ; 00424c3f
     PUSH 0x1                            ; 00424c41
@@ -112,8 +112,8 @@ section .text
         ;   XREF to: 00424bdf (UNCONDITIONAL_JUMP)  ; LAB_00424bdf
     PUSH EBX                            ; 00424c6c
         ;   Label: LAB_00424c6c
-    CALL core_charactr.cpp_FUN_00424c80 ; 00424c6d
-        ;   XREF to: 00424c80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00424c80(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80 ; 00424c6d
+        ;   XREF to: 00424c80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00424c72
     POP EDI                             ; 00424c75
     POP EBX                             ; 00424c76

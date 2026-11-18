@@ -11,7 +11,7 @@ CFlame * __cdecl core_flame_cpp_factoryFuncFlame_FUN_0049f150(void)
 {
   CFlame *pCVar1;
   
-  pCVar1 = (CFlame *)operator_new(0x400);
+  pCVar1 = operator_new(0x400);
   if (pCVar1 == (CFlame *)0x0) {
     return (CFlame *)0x0;
   }

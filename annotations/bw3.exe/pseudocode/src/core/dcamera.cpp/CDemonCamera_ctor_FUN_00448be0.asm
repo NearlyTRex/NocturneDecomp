@@ -11,7 +11,7 @@
 ;   core_set.cpp_staticInit_FUN_005325b0 at 005325cf
 ;
 ; Referenced Globals:
-;   undefined1* g_CDemonCameraVTable = 00448c40
+;   CCameraView_vtable g_CDemonCameraVTable
 ;
 ; Called Functions:
 ;   core_camview.cpp_CCameraView_ctor_FUN_004254b0

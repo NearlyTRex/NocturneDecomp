@@ -11,7 +11,7 @@ CSpike * __cdecl core_spike_cpp_factoryFuncSpike_FUN_00566830(void)
 {
   CSpike *pCVar1;
   
-  pCVar1 = (CSpike *)operator_new(0x560);
+  pCVar1 = operator_new(0x560);
   if (pCVar1 == (CSpike *)0x0) {
     return (CSpike *)0x0;
   }

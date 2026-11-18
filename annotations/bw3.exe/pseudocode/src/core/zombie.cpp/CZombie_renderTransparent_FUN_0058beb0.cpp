@@ -11,111 +11,117 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
 {
   int iVar1;
   CMatrix3x4f *pCVar2;
-  float *pfVar3;
+  CMatrix3x4f *pCVar3;
   byte bVar4;
   float afStackY_10dc [990];
   CVector3f *position;
-  CVector3f *rotation;
+  CVector3f *pCVar5;
   float fov;
   float falloff;
   CMatrix3x4f CStack_154;
-  float afStack_124 [12];
+  CMatrix3x4f CStack_124;
   CVector3f CStack_f4;
-  float fStack_e8;
-  float afStack_e4 [9];
-  float afStack_c0 [5];
-  uint uStack_ac;
-  uint uStack_a0;
-  uint uStack_9c;
-  uint uStack_98;
-  uint uStack_94;
-  float afStack_90 [5];
-  float afStack_7c [3];
+  CVector3f CStack_e8;
+  CVector3f CStack_dc;
+  CVector3f CStack_d0;
+  CVector3f CStack_c4;
+  CVector3f CStack_b8;
+  CVector3f CStack_ac;
+  CVector3f CStack_a0;
+  CVector3f CStack_94;
+  CVector3f CStack_88;
+  CVector3f CStack_7c;
   CVector3f CStack_70;
   float fStack_64;
-  float afStack_60 [5];
-  float fStack_4c;
-  float afStack_40 [3];
+  float afStack_60 [2];
+  CVector3f CStack_58;
+  CVector3f CStack_4c;
+  CVector3f CStack_40;
   float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
+  float afStack_30 [4];
   float fStack_20;
-  float fStack_1c;
+  CVector3f CStack_1c;
   
   bVar4 = 0;
   if (((this_ptr->base).base.was_rendered_opaque != 0) && (this_ptr->is_miner_zombie != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0
               (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&CStack_154);
     pCVar2 = &CStack_154;
-    pfVar3 = afStack_124;
+    pCVar3 = &CStack_124;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *pfVar3 = pCVar2->m[0].w;
+      pCVar3->m[0].w = pCVar2->m[0].w;
       pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-      pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
     }
-    afStack_e4[3] = 0.5;
-    afStack_e4[4] = 0.5;
-    afStack_e4[2] = 0.0;
-    core_xform_cpp_FUN_00583260(afStack_e4 + 2,afStack_124);
-    pfVar3 = afStack_c0 + 2;
-    afStack_c0[2] = afStack_e4[8];
-    afStack_c0[(uint)bVar4 * -2 + 3] = afStack_c0[(uint)bVar4 * -2];
-    afStack_c0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_c0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408b80(this_ptr,pfVar3);
-    pfVar3 = afStack_124;
-    uStack_a0 = 0;
-    uStack_9c = 0;
-    uStack_98 = 0;
-    CStack_f4.x = afStack_60[2];
-    *(float *)((int)&CStack_f4 + (uint)bVar4 * -8 + 4) = afStack_60[(uint)bVar4 * -2 + 3];
-    *(float *)((int)&CStack_f4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-    core_xform_cpp_FUN_00583260(afStack_c0 + 8,pfVar3);
-    pfVar3 = afStack_90 + 5;
-    afStack_7c[0] = (float)uStack_ac;
-    afStack_90[(uint)bVar4 * -2 + 6] = afStack_c0[(uint)bVar4 * -2 + 6];
-    afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
-         afStack_c0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_actor_cpp_FUN_00408b00(this_ptr,pfVar3);
-    pfVar3 = afStack_124;
-    afStack_e4[7] = 1.0;
-    afStack_e4[5] = 0.0;
-    afStack_e4[6] = 0.0;
-    fStack_34 = fStack_1c;
-    afStack_60[(uint)bVar4 * -2 + 0xc] = afStack_60[(uint)bVar4 * -2 + 0x12];
-    afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd] =
-         afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x13];
-    core_xform_cpp_FUN_00583260(afStack_e4 + 5,pfVar3);
-    pfVar3 = afStack_60 + 8;
-    afStack_40[0] = (float)uStack_94;
-    afStack_60[(uint)bVar4 * -2 + 9] = afStack_90[(uint)bVar4 * -2];
-    afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
-         afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408b00(this_ptr,pfVar3);
-    fStack_28 = afStack_90[2];
-    afStack_60[(uint)bVar4 * -2 + 0xf] = afStack_90[(uint)bVar4 * -2 + 3];
-    afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x10] =
-         afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-    fStack_64 = fStack_28 - fStack_34;
-    afStack_60[0] = fStack_24 - fStack_30;
-    afStack_60[1] = fStack_20 - fStack_2c;
-    fStack_e8 = fStack_28 - fStack_34;
-    afStack_e4[(uint)bVar4 * -2] = afStack_60[(uint)bVar4 * -2];
-    afStack_e4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+    CStack_dc.y = 0.5;
+    CStack_dc.z = 0.5;
+    CStack_dc.x = 0.0;
+    core_xform_cpp_transformVector3x4_FUN_00583260(&CStack_dc,&CStack_124,&CStack_c4);
+    pCVar5 = &CStack_b8;
+    CStack_b8.x = CStack_c4.x;
+    *(uint *)((int)&CStack_b8 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&CStack_c4 + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&CStack_b8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&CStack_c4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,pCVar5,&CStack_58);
+    pCVar2 = &CStack_124;
+    CStack_a0.x = 0.0;
+    CStack_a0.y = 0.0;
+    CStack_a0.z = 0.0;
+    CStack_f4.x = CStack_58.x;
+    *(uint *)((int)&CStack_f4 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&CStack_58 + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&CStack_f4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&CStack_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    core_xform_cpp_transformVector3x4_FUN_00583260(&CStack_a0,pCVar2,&CStack_ac);
+    pCVar5 = &CStack_7c;
+    CStack_7c.x = CStack_ac.x;
+    *(uint *)((int)&CStack_7c + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&CStack_ac + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&CStack_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&CStack_ac + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+              ((CDemonActor *)this_ptr,pCVar5,&CStack_1c);
+    pCVar2 = &CStack_124;
+    CStack_d0.z = 1.0;
+    CStack_d0.x = 0.0;
+    CStack_d0.y = 0.0;
+    fStack_34 = CStack_1c.x;
+    afStack_30[(uint)bVar4 * -2] = *(float *)((int)&CStack_1c + (uint)bVar4 * -8 + 4);
+    afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+         *(float *)((int)&CStack_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    core_xform_cpp_transformVector3x4_FUN_00583260(&CStack_d0,pCVar2,&CStack_94);
+    pCVar5 = &CStack_40;
+    CStack_40.x = CStack_94.x;
+    *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&CStack_94 + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&CStack_94 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+              ((CDemonActor *)this_ptr,pCVar5,&CStack_88);
+    afStack_30[2] = CStack_88.x;
+    afStack_30[(uint)bVar4 * -2 + 3] = *(float *)((int)&CStack_88 + (uint)bVar4 * -8 + 4);
+    afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+         *(float *)((int)&CStack_88 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    fStack_64 = afStack_30[2] - fStack_34;
+    afStack_60[0] = afStack_30[3] - afStack_30[0];
+    afStack_60[1] = fStack_20 - afStack_30[1];
+    CStack_e8.x = afStack_30[2] - fStack_34;
+    *(float *)((int)&CStack_e8 + (uint)bVar4 * -8 + 4) = afStack_60[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_e8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&fStack_e8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_e8,&CStack_4c);
     falloff = 6.0;
-    rotation = &CStack_70;
+    pCVar5 = &CStack_70;
     fov = 56.0;
     position = &CStack_f4;
-    CStack_70.x = fStack_4c;
-    *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + 4) = afStack_60[(uint)bVar4 * -2 + 6];
-    *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(position,rotation,fov,falloff);
+    CStack_70.x = CStack_4c.x;
+    *(uint *)((int)&CStack_70 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + 4);
+    *(uint *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(position,pCVar5,fov,falloff);
   }
   iVar1 = core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510((CCharacter *)this_ptr);
   return iVar1;

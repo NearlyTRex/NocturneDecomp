@@ -15,7 +15,7 @@ section .text
     PUSH 0x207f8                        ; 00532740
         ;   Label: core_passngr.cpp_factoryFuncPassenger_FUN_00532740
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00532745
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0053274a
     TEST EAX,EAX                        ; 0053274d
     JNZ 0x00532752                      ; 0053274f

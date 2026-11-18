@@ -30,15 +30,15 @@
 ;   TerminatedCString s_ric_s_wav_005d577f
 ;   TerminatedCString s_ric_s_wav_005d578c
 ;   TerminatedCString s_ric_s_wav_005d5799
-;   undefined4 DAT_005d57aa
-;   undefined4 DAT_005d57b2
-;   undefined4 DAT_005d57ba
-;   undefined4 DAT_00615890
-;   undefined2 DAT_00615894
-;   undefined4 DAT_0061c068
-;   undefined4 DAT_01c3f8dc
-;   undefined4 DAT_01c3f8e0
-;   undefined4 DAT_01c558e0
+;   double g_DOUBLE_005d57aa = 0.200000000000000
+;   double g_DOUBLE_005d57b2 = -0.200000000000000
+;   double g_DOUBLE_005d57ba = 0.0578000000000000
+;   char[60] g_DefaultRicochetSound
+;   undefined4 g_DefaultRicochetSound+4
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
+;   int g_SmokeParticleAllocIndex
+;   CSmokeParticle[2048] g_SmokeParticlePool
+;   int g_BulletHoleActiveCount
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -48,7 +48,7 @@
 ;   core_fire.cpp_CBulletHole_init_FUN_00493a40
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
 ;   core_fire.cpp_CSmokeParticle_init_FUN_00493510
-;   core_ground.cpp_FUN_004ca7c0
+;   core_ground.cpp_getGroundTypeCode_FUN_004ca7c0
 ;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;
@@ -68,13 +68,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0049cd5f
     FLD float ptr [EAX + 0x4]           ; 0049cd62
     FST double ptr [ESP]                ; 0049cd65
-    FCOMP double ptr [0x005d57aa]       ; 0049cd68 | DAT_005d57aa
+    FCOMP double ptr [0x005d57aa]       ; 0049cd68 | g_DOUBLE_005d57aa
     FNSTSW AX                           ; 0049cd6e
     SAHF                                ; 0049cd70
     JNC 0x0049ce50                      ; 0049cd71
         ;   XREF to: 0049ce50 (CONDITIONAL_JUMP)  ; LAB_0049ce50
     FLD double ptr [ESP]                ; 0049cd77
-    FCOMP double ptr [0x005d57b2]       ; 0049cd7a | DAT_005d57b2
+    FCOMP double ptr [0x005d57b2]       ; 0049cd7a | g_DOUBLE_005d57b2
     FNSTSW AX                           ; 0049cd80
     SAHF                                ; 0049cd82
     JBE 0x0049ce50                      ; 0049cd83
@@ -98,7 +98,7 @@ section .text
         ;   Label: LAB_0049cdb7
     JZ 0x0049cf0f                       ; 0049cdbc
         ;   XREF to: 0049cf0f (CONDITIONAL_JUMP)  ; LAB_0049cf0f
-    MOV ECX,dword ptr [0x01c558e0]      ; 0049cdc2 | DAT_01c558e0
+    MOV ECX,dword ptr [0x01c558e0]      ; 0049cdc2 | g_BulletHoleActiveCount
     XOR EDX,EDX                         ; 0049cdc8
     TEST ECX,ECX                        ; 0049cdca
     JLE 0x0049cf0f                      ; 0049cdcc
@@ -111,9 +111,9 @@ section .text
     LEA EDI,[ESP + 0x48]                ; 0049cdde
     LEA ESI,[ESP + 0x3c]                ; 0049cde2
     FXCH ST2                            ; 0049cde6
-    FSUB float ptr [EAX]                ; 0049cde8 | DAT_01c558e8
+    FSUB float ptr [EAX]                ; 0049cde8 | g_BulletHolePool
     FXCH                                ; 0049cdea
-    FSUB float ptr [EAX + 0x4]          ; 0049cdec | DAT_01c558ec
+    FSUB float ptr [EAX + 0x4]          ; 0049cdec | g_BulletHolePool[0].position.y
     FXCH ST2                            ; 0049cdef
     FSUB float ptr [EAX + 0x8]          ; 0049cdf1
     FXCH ST2                            ; 0049cdf4
@@ -144,7 +144,7 @@ section .text
     FLD float ptr [ESP + 0x5c]          ; 0049ce39
     FMUL ST0                            ; 0049ce3d
     FADDP                               ; 0049ce3f
-    FCOMP double ptr [0x005d57ba]       ; 0049ce41 | DAT_005d57ba
+    FCOMP double ptr [0x005d57ba]       ; 0049ce41 | g_DOUBLE_005d57ba
     FNSTSW AX                           ; 0049ce47
     SAHF                                ; 0049ce49
     JNC 0x0049cef5                      ; 0049ce4a
@@ -160,23 +160,23 @@ section .text
     JZ 0x0049cec0                       ; 0049ce65
         ;   XREF to: 0049cec0 (CONDITIONAL_JUMP)  ; caseD_9
     XOR ESI,ESI                         ; 0049ce67
-    MOV EDI,dword ptr [0x01c3f8dc]      ; 0049ce69 | DAT_01c3f8dc
+    MOV EDI,dword ptr [0x01c3f8dc]      ; 0049ce69 | g_SmokeParticleAllocIndex
         ;   Label: LAB_0049ce69
     IMUL EAX,EDI,0x2c                   ; 0049ce6f
     LEA EDX,[EDI + 0x1]                 ; 0049ce72
     ADD EAX,0x1c3f8e0                   ; 0049ce75
-    MOV dword ptr [0x01c3f8dc],EDX      ; 0049ce7a | DAT_01c3f8dc
+    MOV dword ptr [0x01c3f8dc],EDX      ; 0049ce7a | g_SmokeParticleAllocIndex
     CMP EDX,0x800                       ; 0049ce80
     JL 0x0049ce90                       ; 0049ce86
         ;   XREF to: 0049ce90 (CONDITIONAL_JUMP)  ; LAB_0049ce90
     XOR EDI,EDI                         ; 0049ce88
-    MOV dword ptr [0x01c3f8dc],EDI      ; 0049ce8a | DAT_01c3f8dc
+    MOV dword ptr [0x01c3f8dc],EDI      ; 0049ce8a | g_SmokeParticleAllocIndex
     PUSH 0xffff                         ; 0049ce90
         ;   Label: LAB_0049ce90
     PUSH 0x0                            ; 0049ce95
     PUSH 0x3e99999a                     ; 0049ce97
     PUSH EBX                            ; 0049ce9c
-    PUSH EAX                            ; 0049ce9d | DAT_01c3f8e0
+    PUSH EAX                            ; 0049ce9d | g_SmokeParticlePool
     INC ESI                             ; 0049ce9e
     CALL core_fire.cpp_CSmokeParticle_init_FUN_00493510 ; 0049ce9f
         ;   XREF to: 00493510 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_init_FUN_00493510(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -193,9 +193,9 @@ section .text
     MOV ECX,0xc                         ; 0049cec0
         ;   Label: caseD_0
     LEA EDI,[ESP + 0x8]                 ; 0049cec5
-    MOV ESI,0x615890                    ; 0049cec9 | DAT_00615890
-    MOVSD.REP ES:EDI,ESI                ; 0049cece | DAT_00615890 | DAT_00615894
-    MOVSW ES:EDI,ESI                    ; 0049ced0 | DAT_00615894
+    MOV ESI,0x615890                    ; 0049cec9 | g_DefaultRicochetSound
+    MOVSD.REP ES:EDI,ESI                ; 0049cece | g_DefaultRicochetSound | g_DefaultRicochetSound+4
+    MOVSW ES:EDI,ESI                    ; 0049ced0 | g_DefaultRicochetSound+4
     MOV ECX,dword ptr [EBP + 0x20]      ; 0049ced2
     CMP ECX,0x9                         ; 0049ced5
     JA 0x0049cee3                       ; 0049ced8
@@ -215,7 +215,7 @@ section .text
     RET                                 ; 0049cef4
     MOV ESI,dword ptr [ESP + 0x64]      ; 0049cef5
         ;   Label: LAB_0049cef5
-    MOV EDI,dword ptr [0x01c558e0]      ; 0049cef9 | DAT_01c558e0
+    MOV EDI,dword ptr [0x01c558e0]      ; 0049cef9 | g_BulletHoleActiveCount
     ADD ESI,0x3c                        ; 0049ceff
     INC EDX                             ; 0049cf02
     MOV dword ptr [ESP + 0x64],ESI      ; 0049cf03
@@ -268,8 +268,8 @@ section .text
     JZ 0x0049cee3                       ; 0049cf72
         ;   XREF to: 0049cee3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x2                            ; 0049cf78
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0049cf7a
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0049cf7a
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0049cf7f
     PUSH EAX                            ; 0049cf82
     PUSH 0x5d5772                       ; 0049cf83 | = "ric-%s!?.wav"
@@ -296,8 +296,8 @@ section .text
     JZ 0x0049cee3                       ; 0049cfb6
         ;   XREF to: 0049cee3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x5                            ; 0049cfbc
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0049cfbe
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0049cfbe
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0049cfc3
     PUSH EAX                            ; 0049cfc6
     PUSH 0x5d577f                       ; 0049cfc7 | = "ric-%s!?.wav"
@@ -324,8 +324,8 @@ section .text
     JZ 0x0049cee3                       ; 0049cffa
         ;   XREF to: 0049cee3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x7                            ; 0049d000
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0049d002
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0049d002
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0049d007
     PUSH EAX                            ; 0049d00a
     PUSH 0x5d578c                       ; 0049d00b | = "ric-%s!?.wav"
@@ -352,8 +352,8 @@ section .text
     JZ 0x0049cee3                       ; 0049d03a
         ;   XREF to: 0049cee3 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x3                            ; 0049d040
-    CALL core_ground.cpp_FUN_004ca7c0   ; 0049d042
-        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_FUN_004ca7c0()
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004ca7c0 ; 0049d042
+        ;   XREF to: 004ca7c0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004ca7c0(EGroundType type)
     ADD ESP,0x4                         ; 0049d047
     PUSH EAX                            ; 0049d04a
     PUSH 0x5d5799                       ; 0049d04b | = "ric-%s.wav"
@@ -377,7 +377,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0049d071
     PUSH EAX                            ; 0049d075
     PUSH 0x0                            ; 0049d076
-    MOV EBX,dword ptr [0x0061c068]      ; 0049d078 | DAT_0061c068
+    MOV EBX,dword ptr [0x0061c068]      ; 0049d078 | g_CSound_PTR_0061c068
     PUSH EBX                            ; 0049d07e
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0 ; 0049d07f
         ;   XREF to: 0055aef0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)

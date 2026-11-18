@@ -35,7 +35,7 @@
 ;   float FLOAT_00664a00 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   SMRGLTextureBasic SMRGLTextureBasic_0068434c
+;   SMRGLTextureBasic g_TriggerTexture
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
@@ -189,7 +189,7 @@ section .text
     MOV dword ptr [EAX + 0x2c],EDI      ; 005e0239
     MOV EAX,dword ptr [EDX]             ; 005e023c | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x18],0x800000 ; 005e023e | DAT_00800000
-    PUSH 0x68434c                       ; 005e0245 | SMRGLTextureBasic_0068434c
+    PUSH 0x68434c                       ; 005e0245 | g_TriggerTexture
     MOV EAX,dword ptr [EDX]             ; 005e024a | g_CDemonRendererInstance
     PUSH EDX                            ; 005e024c | g_CDemonRendererInstance
     LEA EBX,[ESP + 0x90]                ; 005e024d

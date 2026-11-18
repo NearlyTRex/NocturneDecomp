@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004b4e90(CHero *this_ptr)
 
 {
@@ -31,10 +29,10 @@ int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004b4e90(CHero *this_ptr)
   pCVar2 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,&local_64);
   fStack_34 = (pCVar2->min).x + (pCVar2->max).x;
   fStack_30 = (pCVar2->min).y + (pCVar2->max).y;
-  fStack_28 = fStack_34 * _DAT_00585827;
+  fStack_28 = fStack_34 * 0.5f;
   fStack_2c = (pCVar2->min).z + (pCVar2->max).z;
-  CStack_40.y = fStack_30 * _DAT_00585827;
-  fStack_20 = fStack_2c * _DAT_00585827;
+  CStack_40.y = fStack_30 * 0.5f;
+  fStack_20 = fStack_2c * 0.5f;
   CStack_40.x = 0.0;
   CStack_40.z = 1.5;
   iVar3 = 0;

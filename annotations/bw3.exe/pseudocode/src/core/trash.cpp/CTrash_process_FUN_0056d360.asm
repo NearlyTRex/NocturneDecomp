@@ -8,24 +8,24 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d65b7
-;   undefined4 DAT_005d65bb
-;   undefined4 DAT_005d65bf
-;   undefined4 DAT_005d65c3
-;   undefined4 DAT_005d65c7
-;   undefined4 DAT_005d65cf
+;   float g_FLOAT_005d65b7 = 0.05000000
+;   float g_FLOAT_005d65bb = 0.07000000
+;   float g_FLOAT_005d65bf = 0.5
+;   float g_FLOAT_005d65c3 = 0.8000000
+;   float g_FLOAT_005d65c7 = 0.1591549
+;   double g_DOUBLE_005d65cf = 0.900000000000000
 ;   undefined4 DAT_005d65d7
 ;   undefined4 s_s_333_CTrigger_005d65de+1
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
-;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004d2370
-;   core_setcolid.cpp_FUN_0053bc80
-;   core_setcolid.cpp_FUN_0053de10
-;   core_xform.cpp_FUN_00583940
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;
@@ -177,7 +177,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0056d592
     MOVSD ES:EDI,ESI                    ; 0056d593
     MOVSD ES:EDI,ESI                    ; 0056d594
-    FLD float ptr [0x005d65b7]          ; 0056d595 | DAT_005d65b7
+    FLD float ptr [0x005d65b7]          ; 0056d595 | g_FLOAT_005d65b7
     FLD float ptr [ESP + 0x130]         ; 0056d59b
     FMUL ST1                            ; 0056d5a2
     FLD float ptr [ESP + 0x134]         ; 0056d5a4
@@ -227,7 +227,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0056d650
     MOVSD ES:EDI,ESI                    ; 0056d651
     MOVSD ES:EDI,ESI                    ; 0056d652
-    FLD float ptr [0x005d65bb]          ; 0056d653 | DAT_005d65bb
+    FLD float ptr [0x005d65bb]          ; 0056d653 | g_FLOAT_005d65bb
     FLD float ptr [ESP + 0x214]         ; 0056d659
     FMUL ST1                            ; 0056d660
     FLD float ptr [ESP + 0x218]         ; 0056d662
@@ -320,14 +320,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x17c]     ; 0056d7d0
     FSTP float ptr [ESP + 0x19c]        ; 0056d7d7
     MOV dword ptr [ESP + 0x1a0],EDX     ; 0056d7de
-    CALL core_actor.cpp_FUN_00408b40    ; 0056d7e5
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40 ; 0056d7e5
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x240]               ; 0056d7ea
     ADD ESP,0x8                         ; 0056d7f1
     MOVSD ES:EDI,ESI                    ; 0056d7f4
     MOVSD ES:EDI,ESI                    ; 0056d7f5
     MOVSD ES:EDI,ESI                    ; 0056d7f6
-    FLD float ptr [0x005d65bf]          ; 0056d7f7 | DAT_005d65bf
+    FLD float ptr [0x005d65bf]          ; 0056d7f7 | g_FLOAT_005d65bf
     FLD float ptr [ESP + 0x10c]         ; 0056d7fd
     FMUL ST1                            ; 0056d804
     FLD float ptr [ESP + 0x110]         ; 0056d806
@@ -351,7 +351,7 @@ section .text
     FMUL ST2                            ; 0056d859
     FLD float ptr [ESP + 0x174]         ; 0056d85b
     FMULP ST3                           ; 0056d862
-    FLD float ptr [0x005d65c3]          ; 0056d864 | DAT_005d65c3
+    FLD float ptr [0x005d65c3]          ; 0056d864 | g_FLOAT_005d65c3
     FLD float ptr [EDX]                 ; 0056d86a
     FMUL ST1                            ; 0056d86c
     FLD float ptr [EDX + 0x4]           ; 0056d86e
@@ -410,7 +410,7 @@ section .text
     FMUL ST0                            ; 0056d91f
     FADDP                               ; 0056d921
     FSQRT                               ; 0056d923
-    FMUL float ptr [0x005d65c7]         ; 0056d925 | DAT_005d65c7
+    FMUL float ptr [0x005d65c7]         ; 0056d925 | g_FLOAT_005d65c7
     FST float ptr [ESP + 0x8]           ; 0056d92b
     FLD1                                ; 0056d92f
     FCOMPP                              ; 0056d931
@@ -475,8 +475,8 @@ section .text
     MOV ECX,dword ptr [0x00603b28]      ; 0056d9f8 | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 0056d9fe
     PUSH ECX                            ; 0056da01
-    CALL core_setcolid.cpp_FUN_0053de10 ; 0056da02
-        ;   XREF to: 0053de10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053de10()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10 ; 0056da02
+        ;   XREF to: 0053de10 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0x27c],EAX     ; 0056da07
     XOR EDI,EDI                         ; 0056da0e
     FLD float ptr [ESP + 0x27c]         ; 0056da10
@@ -525,14 +525,14 @@ section .text
     FSTP float ptr [ESI + 0x4]          ; 0056da9e
     FSTP float ptr [ESI + 0x8]          ; 0056daa1
     FLD float ptr [EBX + 0x310]         ; 0056daa4
-    FMUL double ptr [0x005d65cf]        ; 0056daaa | DAT_005d65cf
+    FMUL double ptr [0x005d65cf]        ; 0056daaa | g_DOUBLE_005d65cf
     SUB ESP,0x4                         ; 0056dab0
     FSTP float ptr [ESP]                ; 0056dab3
     PUSH ESI                            ; 0056dab6
     MOV EAX,[0x00603b28]                ; 0056dab7 | g_CDemonSetPtr
     PUSH EAX                            ; 0056dabc
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0056dabd
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0056dabd
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x268],EAX     ; 0056dac2
     FLD float ptr [ESP + 0x268]         ; 0056dac9
     ADD ESP,0xc                         ; 0056dad0
@@ -632,16 +632,16 @@ section .text
     MOV dword ptr [ESP + 0x250],EAX     ; 0056dc2a
     LEA EAX,[ESP + 0x18]                ; 0056dc31
     PUSH EAX                            ; 0056dc35
-    CALL core_xform.cpp_FUN_00583940    ; 0056dc36
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0056dc36
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0056dc3b
     LEA EAX,[ESP + 0xe8]                ; 0056dc3e
     PUSH EAX                            ; 0056dc45
     PUSH 0x2cfd900                      ; 0056dc46
     LEA EAX,[ESP + 0x78]                ; 0056dc4b
     PUSH EAX                            ; 0056dc4f
-    CALL core_xform.cpp_FUN_00583940    ; 0056dc50
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0056dc50
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0056dc55
     LEA EAX,[ESP + 0x10]                ; 0056dc58
     PUSH EAX                            ; 0056dc5c
@@ -660,7 +660,7 @@ section .text
     LEA ESI,[ESP + 0x20c]               ; 0056dc88
     LEA EDI,[ESP + 0x158]               ; 0056dc8f
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 0056dc96
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00583b10(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x20c]               ; 0056dc9b
     ADD ESP,0x4                         ; 0056dca2
     LEA EAX,[ESP + 0x154]               ; 0056dca5

@@ -7,13 +7,13 @@
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d3c0 at 0052d8ff
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 at 0052d8ff
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;
 ; *****************************************************************************
@@ -32,7 +32,7 @@ section .text
     PUSH EBX                            ; 0053c10c
         ;   Label: LAB_0053c10c
     FLD float ptr [EDX + 0x11d4]        ; 0053c10d
-    MOV EBX,dword ptr [0x0060b280]      ; 0053c113 | DAT_0060b280
+    MOV EBX,dword ptr [0x0060b280]      ; 0053c113 | g_CDemonRenderer_PTR_0060b280
     FCHS                                ; 0053c119
     ADD EDX,0x104                       ; 0053c11b
     FSTP float ptr [ESP + 0x4]          ; 0053c121
@@ -54,8 +54,8 @@ section .text
     PUSH 0x0                            ; 0053c159
     LEA EAX,[ESP + 0x8]                 ; 0053c15b
     PUSH EAX                            ; 0053c15f
-    CALL core_box.cpp_FUN_0041a840      ; 0053c160
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 0053c160
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0053c165
     POP EBX                             ; 0053c168
     ADD ESP,0x18                        ; 0053c169

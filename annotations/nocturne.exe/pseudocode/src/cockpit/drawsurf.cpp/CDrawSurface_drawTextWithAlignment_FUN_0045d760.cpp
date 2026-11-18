@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode)
 
 {
@@ -34,11 +32,11 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d76
   g_ClipRight = this_ptr->clip_right;
   g_ClipTop = this_ptr->clip_top;
   g_ClipBottom = this_ptr->clip_bottom;
-  if (_DAT_01b4d718 == (CBitFont *)0x0) {
+  if (g_CurrentFont == (CBitFont *)0x0) {
     iVar5 = engine_2d_c_getTextWrapEnabled_FUN_00402e20();
     color = engine_2d_c_getTextColor_FUN_00402e60();
     engine_2d_c_disableTextWrap_FUN_00402e50();
-    engine_2d_c_setTextColor_FUN_00402e70(_DAT_01b4d714);
+    engine_2d_c_setTextColor_FUN_00402e70(g_PaletteColorIndex);
     switch(alignment_mode) {
     case TEXT_ALIGN_RIGHT:
       engine_2d_c_drawTextRightAlignedColor_FUN_00402b60(text,left_x,y_00);
@@ -73,36 +71,36 @@ LAB_0045d977:
     return;
   }
   iVar5 = engine_font_cpp_getDefaultTextColor_FUN_00491140();
-  engine_font_cpp_setDefaultTextColor_FUN_00491150(_DAT_01b4d710);
+  engine_font_cpp_setDefaultTextColor_FUN_00491150(g_INT_01b4d710);
   switch(alignment_mode) {
   case TEXT_ALIGN_LEFT:
     goto LAB_0045d82a;
   case TEXT_ALIGN_RIGHT:
-    engine_font_cpp_CBitFont_drawTextRight_FUN_00490be0(_DAT_01b4d718,left_x,y_00,-3,-1,text);
+    engine_font_cpp_CBitFont_drawTextRight_FUN_00490be0(g_CurrentFont,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER:
-    engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0(_DAT_01b4d718,left_x,y_00,-3,-1,text);
+    engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0(g_CurrentFont,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_VCENTER:
-    y_00 = y_00 - _DAT_01b4d718->current_line_height / 2;
+    y_00 = y_00 - g_CurrentFont->current_line_height / 2;
     goto LAB_0045d82a;
   case TEXT_ALIGN_CENTER_BOTH:
     engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0
-              (_DAT_01b4d718,left_x,y_00 - _DAT_01b4d718->current_line_height / 2,-3,-1,text);
+              (g_CurrentFont,left_x,y_00 - g_CurrentFont->current_line_height / 2,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_BOUNDS:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
-              (_DAT_01b4d718,left_x,right_x,y_00,-3,-1,text);
+              (g_CurrentFont,left_x,right_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_IN_AREA:
-    y_00 = ((y_00 + iVar6 + 1) - _DAT_01b4d718->current_line_height) / 2;
+    y_00 = ((y_00 + iVar6 + 1) - g_CurrentFont->current_line_height) / 2;
 LAB_0045d82a:
-    engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0(_DAT_01b4d718,left_x,y_00,-3,-1,text);
+    engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0(g_CurrentFont,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_AREA:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
-              (_DAT_01b4d718,left_x,right_x,
-               ((y_00 + iVar6 + 1) - _DAT_01b4d718->current_line_height) / 2,-3,-1,text);
+              (g_CurrentFont,left_x,right_x,
+               ((y_00 + iVar6 + 1) - g_CurrentFont->current_line_height) / 2,-3,-1,text);
   }
   engine_font_cpp_setDefaultTextColor_FUN_00491150(iVar5);
   g_ClipLeft = iVar1;

@@ -11,7 +11,7 @@
 ;   support_codec.cpp_CInStreamPipe_open_FUN_00443f90 at 00443f97
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     RET                                 ; 00443f7c
     PUSH EBP                            ; 00443f7d
         ;   Label: LAB_00443f7d
-    CALL crt_unknown.c_FUN_005c09f0     ; 00443f7e
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 00443f7e
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 00443f83
     MOV dword ptr [EBX + 0x10],0x0      ; 00443f86
     JMP 0x00443f56                      ; 00443f8d

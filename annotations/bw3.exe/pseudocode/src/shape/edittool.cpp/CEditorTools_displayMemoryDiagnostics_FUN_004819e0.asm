@@ -16,20 +16,20 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b789e
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8030
-;   core_game.cpp_FUN_004b6f30 at 004b789e
-;   core_main.c_FUN_004e4400 at 004e449b
+;   core_main.c_showDeveloperToolsMenu_FUN_004e4400 at 004e449b
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004819c0 = 00481a1c
-;   undefined4 s_Blocks_d_Total_1fk_Max_1_005bd350+1
+;   TerminatedCString s_Blocks_d_Total_1fk_Max_1_005bd351
 ;   TerminatedCString s_Heap_is_empty_005bd374
 ;   undefined4 s_Heap_is_empty_005bd374+1
 ;   undefined4 s_Heap_is_empty_005bd374+2
 ;   undefined4 s_Heap_is_empty_005bd374+3
 ;   TerminatedCString s_Memory_corruption_detect_005bd383
 ;   undefined4 s_Memory_corruption_detect_005bd383+1
-;   undefined4 DAT_005bd3a5
+;   double g_BytesToKilobytesScale = 0.0009765625
 ;
 ; Called Functions:
 ;   crt_heap.c__heapwalk_FUN_005a5bd0
@@ -115,7 +115,7 @@ section .text
     FILD dword ptr [ESP + 0x10]         ; 00481a63
     SUB ESP,0x8                         ; 00481a67
     MOV dword ptr [ESP + 0x18],EDI      ; 00481a6a
-    FLD double ptr [0x005bd3a5]         ; 00481a6e | DAT_005bd3a5
+    FLD double ptr [0x005bd3a5]         ; 00481a6e | g_BytesToKilobytesScale
     FXCH                                ; 00481a74
     FMUL ST1                            ; 00481a76
     FILD dword ptr [ESP + 0x18]         ; 00481a78
@@ -124,7 +124,7 @@ section .text
     SUB ESP,0x8                         ; 00481a81
     FSTP double ptr [ESP]               ; 00481a84
     PUSH EBX                            ; 00481a87
-    PUSH 0x5bd351                       ; 00481a88 | s_Blocks_d_Total_1fk_Max_1_005bd350+1
+    PUSH 0x5bd351                       ; 00481a88 | = "Blocks: %d Total: %.1fk Max: %.1fk"
     MOV ECX,dword ptr [EBP + 0x18]      ; 00481a8d
     PUSH ECX                            ; 00481a90
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00481a91

@@ -80,14 +80,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005e033b
 ;   TerminatedCString s_Not_enough_main_data_to_005e034c
-;   undefined4 DAT_00618e88
-;   undefined4 DAT_00618ec8
-;   undefined4 DAT_00619030
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double[2][4] g_MpegSampleRateTable
+;   int[2][3][15] g_MpegBitrateTable
+;   double[64] g_MpegScalefactorTable
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   sound_mp3.cpp_antiAliasingButterfly_FUN_00508f10
 ;   sound_mp3.cpp_applyScalefactorsToSubbands_FUN_00505eb0
@@ -228,7 +228,7 @@ section .text
         ;   Label: LAB_0050a3fa
     MOV ESI,dword ptr [EBX]             ; 0050a3fc
     FLD ST0                             ; 0050a3fe
-    FMUL double ptr [ESI*0x8 + 0x619030] ; 0050a400 | DAT_00619030
+    FMUL double ptr [ESI*0x8 + 0x619030] ; 0050a400 | g_MpegScalefactorTable
     ADD EBX,0x180                       ; 0050a407
     ADD EDX,0x180                       ; 0050a40d
     INC ECX                             ; 0050a413
@@ -294,7 +294,7 @@ section .text
     ADD ECX,EAX                         ; 0050a4cd
     MOV EAX,dword ptr [ESP + 0x5fcc]    ; 0050a4cf
     MOV EDX,dword ptr [ESP + 0x5fd0]    ; 0050a4d6
-    FILD dword ptr [ECX + EAX*0x4 + 0x618ec8] ; 0050a4dd | DAT_00618ec8
+    FILD dword ptr [ECX + EAX*0x4 + 0x618ec8] ; 0050a4dd | g_MpegBitrateTable
     MOV EAX,dword ptr [ESP + 0x5fc0]    ; 0050a4e4
     SHL EDX,0x3                         ; 0050a4eb
     SHL EAX,0x5                         ; 0050a4ee
@@ -304,7 +304,7 @@ section .text
     MOV dword ptr [ESP + 0x6010],ECX    ; 0050a4f8
     MOV dword ptr [ESP + 0x600c],EDX    ; 0050a4ff
     FILD qword ptr [ESP + 0x600c]       ; 0050a506
-    FDIV double ptr [EAX + 0x618e88]    ; 0050a50d | DAT_00618e88
+    FDIV double ptr [EAX + 0x618e88]    ; 0050a50d | g_MpegSampleRateTable
     FMULP                               ; 0050a513
     MOV EAX,dword ptr [ESP + 0x4]       ; 0050a515
     MOV dword ptr [ESP + 0x6010],ECX    ; 0050a519
@@ -313,7 +313,7 @@ section .text
     FDIVP                               ; 0050a52e
     MOV ESI,dword ptr [ESP + 0x5fd4]    ; 0050a530
     CALL crt_math.c_round_FUN_005b7ff0  ; 0050a537
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x6048]      ; 0050a53c
     TEST ESI,ESI                        ; 0050a543
     JZ 0x0050a54e                       ; 0050a545
@@ -658,10 +658,10 @@ section .text
     MOV EDX,0x5e033b                    ; 0050a96f | = "..\\sound\\mp3.cpp"
     MOV ECX,0x1029                      ; 0050a974
     PUSH 0x5e034c                       ; 0050a979 | = "Not enough main data to decode frame %d."
-    MOV dword ptr [0x01d046a0],EDX      ; 0050a97e | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0050a984 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050a98a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 0050a97e | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0050a984 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050a98a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050a98f
     JMP 0x0050a935                      ; 0050a992
         ;   XREF to: 0050a935 (UNCONDITIONAL_JUMP)  ; LAB_0050a935

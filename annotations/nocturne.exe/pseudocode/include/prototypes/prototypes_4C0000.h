@@ -47,7 +47,7 @@
 // FUNCTION PROTOTYPES - Range 0x4C0000
 // =============================================================================
 
-void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int param_2);
+void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004c0640(CInventory *this_ptr,int weapon);
 CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004c0710(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004c0760(CInventory *this_ptr,char *class_name);
 void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);

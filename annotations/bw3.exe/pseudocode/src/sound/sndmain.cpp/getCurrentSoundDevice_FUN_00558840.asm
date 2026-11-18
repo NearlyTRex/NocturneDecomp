@@ -5,17 +5,17 @@
 ;
 ;
 ; XREF[2]:
-;   core_menu.cpp_FUN_004e94f0 at 004e9595
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9595
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00557f60 at 00557ff0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060423c
+;   int g_CurrentSoundDevice = -0x1
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x0060423c]                ; 00558840 | DAT_0060423c
+    MOV EAX,[0x0060423c]                ; 00558840 | g_CurrentSoundDevice
         ;   Label: sound_sndmain.cpp_getCurrentSoundDevice_FUN_00558840
     RET                                 ; 00558845
 

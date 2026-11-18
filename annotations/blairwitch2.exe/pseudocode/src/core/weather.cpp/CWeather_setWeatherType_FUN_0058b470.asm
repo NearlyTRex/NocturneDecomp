@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
-;   core_event.cpp_FUN_00489670 at 0048d744
-;   core_game.cpp_FUN_004b90d0 at 004ba9bd
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048d744
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004ba9bd
 ;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052db9e
 ;   core_weather.cpp_CWeather_ctor_FUN_0058a640 at 0058a648
 ;

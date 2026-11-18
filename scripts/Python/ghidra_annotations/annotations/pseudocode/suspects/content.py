@@ -6,7 +6,7 @@ import bisect
 import re
 from ._common import (
     SUSPECT_SEVERITY, _extract_balanced_parens, _find_format_string_index, _find_global_at,
-    _find_neighbor_after, _parse_call_arguments, count_format_specifiers
+    _find_neighbor_after, _parse_call_arguments, call_after, count_format_specifiers
 )
 from ._structtypes import (
     _SFO_ACCESS_RE, _SFO_DECL_RE, _SFO_DEREF_START_RE, _SFO_LOCAL_ASSIGN_RE,
@@ -291,14 +291,18 @@ def identify_suspect_lines(decompiled_code):
             if is_comment and not issue_type.startswith('warning_'):
                 continue
             for match in compiled_pattern.finditer(line):
-                suspects.append({
+                suspect = {
                     'line': line_num,
                     'type': issue_type,
                     'match': match.group(),
                     'text': line_stripped,
                     'description': description,
                     'severity': SUSPECT_SEVERITY.get(issue_type, 'mild'),
-                })
+                }
+                if issue_type == 'warning_noreturn':
+                    # is_safe_suspect clears it when the call is to a real exit function
+                    suspect['callee'] = call_after(lines, line_num - 1)
+                suspects.append(suspect)
     return suspects
 
 

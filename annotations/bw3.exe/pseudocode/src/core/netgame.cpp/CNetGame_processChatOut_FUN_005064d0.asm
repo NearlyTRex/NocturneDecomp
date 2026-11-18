@@ -12,15 +12,15 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00506312
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01da6474
-;   undefined4 DAT_01da6478
-;   undefined4 DAT_01dc2690
-;   undefined4 DAT_01dc5c7c
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_LastPingTime
+;   uint g_UINT_01da6478
+;   int g_ChatOutCount
+;   int g_ChatOutSequence
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_string.c__strncpy_FUN_005a4ee0
@@ -35,13 +35,13 @@ section .text
     PUSH ESI                            ; 005064d1
     PUSH EDI                            ; 005064d2
     PUSH EBP                            ; 005064d3
-    MOV EBP,dword ptr [0x01da6478]      ; 005064d4 | DAT_01da6478
+    MOV EBP,dword ptr [0x01da6478]      ; 005064d4 | g_UINT_01da6478
     MOV ESI,dword ptr [ESP + 0x14]      ; 005064da
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005064de
-    CMP dword ptr [0x01dc2690],0x32     ; 005064e2 | DAT_01dc2690
+    CMP dword ptr [0x01dc2690],0x32     ; 005064e2 | g_ChatOutCount
     JGE 0x00506606                      ; 005064e9
         ;   XREF to: 00506606 (CONDITIONAL_JUMP)  ; LAB_00506606
-    MOV EDX,dword ptr [0x01dc2690]      ; 005064ef | DAT_01dc2690
+    MOV EDX,dword ptr [0x01dc2690]      ; 005064ef | g_ChatOutCount
         ;   Label: LAB_005064ef
     MOV EAX,EDX                         ; 005064f5
     SHL EAX,0x4                         ; 005064f7
@@ -52,40 +52,40 @@ section .text
     SHL EAX,0x2                         ; 00506506
     ADD EDI,EAX                         ; 00506509
     LEA EAX,[EDX + 0x1]                 ; 0050650b
-    MOV [0x01dc2690],EAX                ; 0050650e | DAT_01dc2690
+    MOV [0x01dc2690],EAX                ; 0050650e | g_ChatOutCount
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00506513
         ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 00506518
     MOV ECX,0x12                        ; 0050651a
     SAR EDX,0x1f                        ; 0050651f
     IDIV ECX                            ; 00506522
-    MOV ECX,dword ptr [0x01da6474]      ; 00506524 | DAT_01da6474
+    MOV ECX,dword ptr [0x01da6474]      ; 00506524 | g_LastPingTime
     MOV EDX,EAX                         ; 0050652a
     SUB EAX,ECX                         ; 0050652c
-    MOV dword ptr [0x01da6474],EDX      ; 0050652e | DAT_01da6474
+    MOV dword ptr [0x01da6474],EDX      ; 0050652e | g_LastPingTime
     TEST EAX,EAX                        ; 00506534
     JL 0x0050662e                       ; 00506536
         ;   XREF to: 0050662e (CONDITIONAL_JUMP)  ; LAB_0050662e
-    MOV EBP,dword ptr [0x01da6478]      ; 0050653c | DAT_01da6478
+    MOV EBP,dword ptr [0x01da6478]      ; 0050653c | g_UINT_01da6478
     CMP EAX,0x20000                     ; 00506542
     JLE 0x0050654e                      ; 00506547
         ;   XREF to: 0050654e (CONDITIONAL_JUMP)  ; LAB_0050654e
     MOV EAX,0x20000                     ; 00506549
     ADD EBP,EAX                         ; 0050654e
         ;   Label: LAB_0050654e
-    MOV EAX,[0x01dc5c7c]                ; 00506550 | DAT_01dc5c7c
+    MOV EAX,[0x01dc5c7c]                ; 00506550 | g_ChatOutSequence
     PUSH 0x2                            ; 00506555
     INC EAX                             ; 00506557
     PUSH 0x1                            ; 00506558
-    MOV [0x01dc5c7c],EAX                ; 0050655a | DAT_01dc5c7c
+    MOV [0x01dc5c7c],EAX                ; 0050655a | g_ChatOutSequence
     MOV dword ptr [EDI + 0x4],EAX       ; 0050655f
     LEA EAX,[EDI + 0x8]                 ; 00506562
     PUSH EAX                            ; 00506565
-    MOV dword ptr [0x01da6478],EBP      ; 00506566 | DAT_01da6478
+    MOV dword ptr [0x01da6478],EBP      ; 00506566 | g_UINT_01da6478
     MOV dword ptr [EDI],EBP             ; 0050656c
     CALL crt_memory.c_memset_FUN_005a28f0 ; 0050656e
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
-    MOV EBP,dword ptr [0x01da6478]      ; 00506573 | DAT_01da6478
+    MOV EBP,dword ptr [0x01da6478]      ; 00506573 | g_UINT_01da6478
     ADD ESP,0xc                         ; 00506579
     TEST EBX,EBX                        ; 0050657c
     JL 0x0050663b                       ; 0050657e
@@ -103,7 +103,7 @@ section .text
     LEA EBX,[EDI + 0x14]                ; 005065a7
     MOV EAX,dword ptr [ESI + 0x124]     ; 005065aa
     PUSH EBX                            ; 005065b0
-    MOV dword ptr [0x01da6478],EBP      ; 005065b1 | DAT_01da6478
+    MOV dword ptr [0x01da6478],EBP      ; 005065b1 | g_UINT_01da6478
     MOV byte ptr [EDI + EAX*0x1 + 0x8],0x1 ; 005065b7
     CALL crt_memory.c_memset_FUN_005a28f0 ; 005065bc
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
@@ -129,7 +129,7 @@ section .text
     PUSH ESI                            ; 005065f2
     CALL core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00 ; 005065f3
         ;   XREF to: 00506a00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00(CNetGame * this_ptr, SNetworkAddr * sender_addr, int message_id, char * sender_name, ...)
-    MOV EBP,dword ptr [0x01da6478]      ; 005065f8 | DAT_01da6478
+    MOV EBP,dword ptr [0x01da6478]      ; 005065f8 | g_UINT_01da6478
     ADD ESP,0x14                        ; 005065fe
     POP EBP                             ; 00506601
     POP EDI                             ; 00506602
@@ -140,14 +140,14 @@ section .text
         ;   Label: LAB_00506606
     MOV EDI,0x76c                       ; 0050660b
     PUSH 0x5cac9d                       ; 00506610
-    MOV dword ptr [0x01d71de0],ECX      ; 00506615 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0050661b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00506621
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00506615 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 0050661b | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00506621
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00506626
     JMP 0x005064ef                      ; 00506629
         ;   XREF to: 005064ef (UNCONDITIONAL_JUMP)  ; LAB_005064ef
-    MOV EBP,dword ptr [0x01da6478]      ; 0050662e | DAT_01da6478
+    MOV EBP,dword ptr [0x01da6478]      ; 0050662e | g_UINT_01da6478
         ;   Label: LAB_0050662e
     XOR EAX,EAX                         ; 00506634
     JMP 0x0050654e                      ; 00506636

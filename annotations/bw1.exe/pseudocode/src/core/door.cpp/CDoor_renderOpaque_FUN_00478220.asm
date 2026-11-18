@@ -7,14 +7,14 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_box.cpp_CBoundingBox3D_render_FUN_00421670
-;   core_box.cpp_FUN_004207b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;
@@ -54,8 +54,8 @@ section .text
     LEA ESI,[ESP + 0x54]                ; 00478265
     PUSH EAX                            ; 00478269
     MOVSD.REP ES:EDI,ESI                ; 0047826a
-    CALL core_box.cpp_FUN_004207b0      ; 0047826c
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 0047826c
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 00478271
     MOV EBP,EAX                         ; 00478274
     TEST EAX,EAX                        ; 00478276
@@ -64,8 +64,8 @@ section .text
     CMP dword ptr [EBX + 0x9d4],0x0     ; 0047827a
     JZ 0x004782d6                       ; 00478281
         ;   XREF to: 004782d6 (CONDITIONAL_JUMP)  ; LAB_004782d6
-    MOV ESI,dword ptr [0x00612560]      ; 00478283 | DAT_00612560
-    PUSH ESI                            ; 00478289 | DAT_01bc120c
+    MOV ESI,dword ptr [0x00612560]      ; 00478283 | g_CDemonRenderer_PTR_00612560
+    PUSH ESI                            ; 00478289 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0047828a
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0047828f

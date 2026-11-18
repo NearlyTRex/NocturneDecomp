@@ -21,11 +21,11 @@
 ;   TerminatedCString s_Incomplete_markup_tag_be_005d5af2
 ;   TerminatedCString s_Markup_tag_beginning_wit_005d5b1c
 ;   TerminatedCString s_Unexpected_found_near_s_005d5b4f
-;   undefined4 DAT_0061ed94
-;   undefined4 DAT_01cab7f0
+;   uchar[257] g_CharacterClassificationTable
+;   char[512] g_CHAR_ARRAY_01cab7f0
 ;
 ; Called Functions:
-;   core_flashlit.cpp_FUN_004a1390
+;   core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004a1390
 ;   core_fldnotes.cpp_STextView_appendWord_FUN_004a3160
 ;   core_fldnotes.cpp_STextView_flushWord_FUN_004a2b30
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0
@@ -55,7 +55,7 @@ section .text
         ;   Label: LAB_004a28da
     INC AL                              ; 004a28dc
     AND EAX,0xff                        ; 004a28de
-    MOV DL,byte ptr [EAX + 0x61ed94]    ; 004a28e3 | DAT_0061ed94
+    MOV DL,byte ptr [EAX + 0x61ed94]    ; 004a28e3 | g_CharacterClassificationTable
     LEA ESI,[EBX + 0x1]                 ; 004a28e9
     TEST DL,0x2                         ; 004a28ec
     JZ 0x004a28f5                       ; 004a28ef
@@ -85,7 +85,7 @@ section .text
         ;   Label: LAB_004a2918
     INC DL                              ; 004a291a
     AND EDX,0xff                        ; 004a291c
-    TEST byte ptr [EDX + 0x61ed94],0x2  ; 004a2922 | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0x2  ; 004a2922 | g_CharacterClassificationTable
     JZ 0x004a2a96                       ; 004a2929
         ;   XREF to: 004a2a96 (CONDITIONAL_JUMP)  ; LAB_004a2a96
     XOR CH,CH                           ; 004a292f
@@ -155,8 +155,8 @@ section .text
     MOV byte ptr [ESP + EAX*0x1 + 0x200],DH ; 004a29b6
     LEA EAX,[ESP + 0x200]               ; 004a29bd
     PUSH EAX                            ; 004a29c4
-    CALL core_flashlit.cpp_FUN_004a1390 ; 004a29c5
-        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a1390()
+    CALL core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004a1390 ; 004a29c5
+        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; void core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004a1390(char * text)
     ADD ESP,0x4                         ; 004a29ca
     LEA EAX,[ESP + 0x200]               ; 004a29cd
     PUSH EAX                            ; 004a29d4
@@ -181,7 +181,7 @@ section .text
         ;   Label: LAB_004a29f9
     PUSH EDI                            ; 004a2a00
     PUSH 0x5d5af2                       ; 004a2a01 | = "Incomplete markup tag beginning with ..."
-    PUSH 0x1cab7f0                      ; 004a2a06 | DAT_01cab7f0
+    PUSH 0x1cab7f0                      ; 004a2a06 | g_CHAR_ARRAY_01cab7f0
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a2a0b
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004a2a10
@@ -196,7 +196,7 @@ section .text
         ;   Label: LAB_004a2a23
     PUSH ESI                            ; 004a2a2a
     PUSH 0x5d5b1c                       ; 004a2a2b | = "Markup tag beginning with '%s' - tag ..."
-    PUSH 0x1cab7f0                      ; 004a2a30 | DAT_01cab7f0
+    PUSH 0x1cab7f0                      ; 004a2a30 | g_CHAR_ARRAY_01cab7f0
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a2a35
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004a2a3a
@@ -219,7 +219,7 @@ section .text
         ;   Label: LAB_004a2a5d
     PUSH EBX                            ; 004a2a64
     PUSH 0x5d5b4f                       ; 004a2a65 | = "Unexpected '>' found near '%s'"
-    PUSH 0x1cab7f0                      ; 004a2a6a | DAT_01cab7f0
+    PUSH 0x1cab7f0                      ; 004a2a6a | g_CHAR_ARRAY_01cab7f0
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a2a6f
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004a2a74

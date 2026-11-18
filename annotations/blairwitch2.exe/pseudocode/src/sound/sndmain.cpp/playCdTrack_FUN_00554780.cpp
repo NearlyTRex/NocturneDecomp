@@ -12,77 +12,79 @@ int __cdecl sound_sndmain_cpp_playCdTrack_FUN_00554780(int track,float start_sec
 
 {
   MCIERROR MVar1;
-  float10 fVar2;
-  float10 fVar3;
-  uint *dest;
-  int value;
-  double input_value;
+  double dVar2;
+  double dVar3;
+  void *dest;
+  uint *value;
+  uint uVar4;
   ulong count;
   char *format;
   byte auStack_64 [4];
   MCIDEVICEID MStack_60;
-  uint uStack_5c;
-  byte auStack_50 [4];
+  char *pcStack_5c;
+  uint uStack_50;
   uint uStack_4c;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_3c;
-  double dStack_38;
-  double dStack_30;
-  int iStack_28;
-  int iStack_24;
+  uint uStack_48;
+  double dStack_40;
+  uint uStack_38;
+  uint uStack_34;
+  uint uStack_30;
+  uint uStack_2c;
+  byte bStack_28;
+  uint uStack_24;
   uint uStack_20;
-  uint uStack_1c;
-  uint uStack_18;
-  uint uStack_14;
+  int iStack_18;
   
-  if (_DAT_0263cf14 != 0) {
+  if (g_INT_0263cf14 != 0) {
 LAB_00554799:
-    fVar2 = (float10)start_seconds;
-    fVar3 = fVar2 * (float10)_DAT_005e9496;
-    round();
-    uStack_20 = (uint)ROUND(fVar3);
-    dStack_30 = (double)fVar2;
-    fVar2 = fVar2 - (float10)(int)uStack_20 * (float10)_DAT_005e949a;
-    uStack_14 = uStack_20;
-    input_value = dStack_30;
-    round();
-    iStack_24 = (int)ROUND(fVar2);
-    dStack_38 = floor(input_value);
-    fVar3 = ((float10)dStack_30 - (float10)dStack_38) * (float10)_DAT_005e949e;
-    count = 0xc;
-    uStack_1c = track + 1;
-    dest = &uStack_44;
-    value = 0;
-    uStack_18 = 0;
-    round();
-    iStack_28 = (int)ROUND(fVar3);
-    memset(dest,value,count);
-    uStack_40 = (uStack_20 & 0xffff) << 8 | track & 0xffU |
-                (uint)CONCAT21((ushort)iStack_28,(byte)iStack_24) << 0x10;
-    uStack_3c = uStack_1c & 0xff | (uStack_18 & 0xff) << 0x10;
-    uStack_44 = 0;
-    MVar1 = mciSendCommandA(_DAT_0263cf18,0x806,0xc,(DWORD_PTR)&uStack_44);
+    dVar2 = round((double)(start_seconds * 0.01666667f));
+    uStack_24 = (uint)ROUND(dVar2);
+    dVar2 = (double)start_seconds;
+    uStack_34._0_2_ = SUB82(__BITCAST_UINT64(dVar2),0);
+    uStack_34._2_2_ = (ushort)((ulonglong)dVar2 >> 0x10);
+    uStack_30 = (uint)((ulonglong)dVar2 >> 0x20);
+    uVar4 = 0x5547d7;
+    iStack_18 = uStack_24;
+    dVar3 = round
+                      ((double)(start_seconds - (float)(int)uStack_24 * 60.0f));
+    uStack_2c = (uint)ROUND(dVar3);
+    dStack_40 = floor(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar4)));
+    uVar4 = 0xc;
+    uStack_24 = track + 1;
+    value = &uStack_4c;
+    count = 0;
+    uStack_20 = 0;
+    dest = (void *)0x554813;
+    dVar2 = round
+                      ((__BITCAST_DOUBLE(CONCAT26(uStack_34._2_2_,CONCAT24((ushort)uStack_34,uStack_38)))
+                       - dStack_40) * _DAT_005e949e);
+    uStack_34 = (int)ROUND(dVar2);
+    memset(dest,(int)value,count);
+    uStack_4c = (uStack_2c & 0xffff) << 8 | track & 0xffU |
+                (uint)CONCAT21((ushort)uStack_34,(byte)uStack_30) << 0x10;
+    uStack_48 = (uint)bStack_28 | (uStack_24 & 0xff) << 0x10;
+    uStack_50 = 0;
+    MVar1 = mciSendCommandA(g_INT_0263cf18,0x806,0xc,(DWORD_PTR)&uStack_50);
     if (MVar1 != 0) {
-      MVar1 = mciSendCommandA(_DAT_0263cf18,0x806,5,(DWORD_PTR)&uStack_44);
+      MVar1 = mciSendCommandA(g_INT_0263cf18,0x806,5,(DWORD_PTR)&uStack_50);
       if (MVar1 != 0) {
-        sound_sndmain_cpp_logSoundError_FUN_005549c0("Error starting CD playback");
+        sound_sndmain_cpp_logSoundError_FUN_005549c0("Error starting CD playback",uVar4);
         return 0;
       }
     }
     return 1;
   }
   memset(auStack_64,0,0x14);
-  uStack_5c = 0x5e943e;
+  pcStack_5c = "cdaudio";
   MStack_60 = 0;
   MVar1 = mciSendCommandA(0,0x803,0x2102,(DWORD_PTR)auStack_64);
   if (MVar1 == 0) {
-    memset(auStack_50,0,0xc);
+    memset(&uStack_50,0,0xc);
     uStack_4c = 10;
-    MVar1 = mciSendCommandA(MStack_60,0x80d,0x400,(DWORD_PTR)auStack_50);
+    MVar1 = mciSendCommandA(MStack_60,0x80d,0x400,(DWORD_PTR)&uStack_50);
     if (MVar1 == 0) {
-      _DAT_0263cf18 = MStack_60;
-      _DAT_0263cf14 = 1;
+      g_INT_0263cf18 = MStack_60;
+      g_INT_0263cf14 = 1;
       goto LAB_00554799;
     }
     format = "Error setting CD time format";

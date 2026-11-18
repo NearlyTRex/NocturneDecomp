@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_00552b50(int enable)
 
 {
@@ -15,12 +13,12 @@ void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_00552b50(int enable)
   
   uVar1 = sound_sndmain_cpp_isSoundSystemActive_FUN_00552b10();
   if (uVar1 == 0) {
-    DAT_0061bcb0 = enable;
+    g_INT_0061bcb0 = enable;
     return;
   }
-  _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-  _DAT_01d046a4 = 0x1598;
-  core_main_c_FUN_004e4500("enableHwSoundMixing - Can't do this while the device is open.");
-  DAT_0061bcb0 = enable;
+  g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+  g_INT_01d046a4 = 0x1598;
+  core_main_c_displayErrorAndQuit_FUN_004e4500("enableHwSoundMixing - Can't do this while the device is open.");
+  g_INT_0061bcb0 = enable;
   return;
 }

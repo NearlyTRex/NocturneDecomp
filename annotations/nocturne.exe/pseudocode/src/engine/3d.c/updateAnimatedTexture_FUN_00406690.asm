@@ -11,7 +11,7 @@
 ; undefined1       Stack[-0x1f]:1  local_1f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bd1d80
+;   int g_GlobalDeltaTimeInt
 ;
 ; Called Functions:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
@@ -27,7 +27,7 @@ section .text
     PUSH EBP                            ; 00406693
     SUB ESP,0x18                        ; 00406694
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00406697
-    MOV EAX,[0x01bd1d80]                ; 0040669b | DAT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 0040669b | g_GlobalDeltaTimeInt
     MOV EDX,dword ptr [EBX + 0x14]      ; 004066a0
     ADD EDX,EAX                         ; 004066a3
     MOV ECX,dword ptr [EBX + 0x10]      ; 004066a5

@@ -51,7 +51,7 @@ SOCKADDR_IN * __cdecl convertSockAddr(SNetworkAddr *dest_addr,SOCKADDR *src_addr
 
 // Original: support_trisock.cpp_buildSockaddrIn_FUN_0059c7d0
 // Address: 0059c7d0
-void buildSockaddrIn(SNetworkAddr *param_1);
+SOCKADDR_IN * __stack_esi buildSockaddrIn(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer);
 
 // Original: support_trisock.cpp_formatSocketAddress_FUN_0059c830
 // Address: 0059c830
@@ -85,13 +85,13 @@ int __cdecl CSocket::isSocketValid(CSocket *this_ptr);
 // Address: 0059c980
 int __cdecl CSocket::bindSocket(CSocket *this_ptr,ushort port);
 
-// Original: support_trisock.cpp_FUN_0059c9d0
+// Original: support_trisock.cpp_CSocket_connectSocket_FUN_0059c9d0
 // Address: 0059c9d0
-undefined4 FUN_0059c9d0(SOCKET *param_1,undefined4 param_2);
+int __cdecl CSocket::connectSocket(CSocket *this_ptr,SNetworkAddr *dest_addr);
 
-// Original: support_trisock.cpp_FUN_0059ca30
+// Original: support_trisock.cpp_CSocket_pollSocketStatus_FUN_0059ca30
 // Address: 0059ca30
-byte FUN_0059ca30(CSocket *param_1);
+int __cdecl CSocket::pollSocketStatus(CSocket *this_ptr);
 
 // Original: support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20
 // Address: 0059cb20
@@ -113,130 +113,130 @@ int __cdecl CSocket::getSocketName(CSocket *this_ptr,SNetworkAddr *out_address);
 // Address: 0059cd70
 int __cdecl CSocket::setSocketBlocking(CSocket *this_ptr,int blocking_mode);
 
-// Original: support_trisock.cpp_FUN_0059cef0
+// Original: support_trisock.cpp_defaultHttpStatusCallback_FUN_0059cef0
 // Address: 0059cef0
-bool FUN_0059cef0(int param_1);
+int __cdecl defaultHttpStatusCallback(int is_error);
 
-// Original: support_trisock.cpp_FUN_0059cf00
+// Original: support_trisock.cpp_httpConnectToUrl_FUN_0059cf00
 // Address: 0059cf00
-undefined4 FUN_0059cf00(undefined4 param_1,undefined4 param_2,uint16_t *param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7);
+int __cdecl httpConnectToUrl(char *url,char *host_out,ushort *port_out,char *path_out,int path_size,CSocket *socket,void *status_callback);
 
-// Original: support_trisock.cpp_FUN_0059d330
+// Original: support_trisock.cpp_httpReaderInit_FUN_0059d330
 // Address: 0059d330
-void FUN_0059d330(undefined4 *param_1,undefined4 param_2);
+void __cdecl httpReaderInit(void *reader,CSocket *socket);
 
-// Original: support_trisock.cpp_FUN_0059d360
+// Original: support_trisock.cpp_httpReaderGetChar_FUN_0059d360
 // Address: 0059d360
-uint FUN_0059d360(int *param_1,code *param_2,undefined4 param_3);
+int __cdecl httpReaderGetChar(void *reader,void *status_callback,char *status_text);
 
-// Original: support_trisock.cpp_FUN_0059d430
+// Original: support_trisock.cpp_httpReaderReadLine_FUN_0059d430
 // Address: 0059d430
-undefined4 FUN_0059d430(int *param_1,undefined1 *param_2,int param_3,undefined4 param_4,undefined4 param_5);
+int __cdecl httpReaderReadLine(void *reader,char *line_out,int line_size,void *status_callback,char *status_text);
 
-// Original: support_trisock.cpp_FUN_0059d4b0
+// Original: support_trisock.cpp_httpReceiveResponse_FUN_0059d4b0
 // Address: 0059d4b0
-undefined4 FUN_0059d4b0(undefined4 param_1,int *param_2,undefined4 param_3,code *param_4);
+int __cdecl httpReceiveResponse(CSocket *socket,void *out_stream,char *status_text,void *status_callback);
 
-// Original: support_trisock.cpp_FUN_0059d760
+// Original: support_trisock.cpp_httpGetDocument_FUN_0059d760
 // Address: 0059d760
-void FUN_0059d760(void);
+int __cdecl httpGetDocument(CSocket *socket,char *path,char *host,int port,void *out_stream,void *status_callback);
 
-// Original: support_trisock.cpp_FUN_0059d850
+// Original: support_trisock.cpp_httpPostDocument_FUN_0059d850
 // Address: 0059d850
-undefined4 FUN_0059d850(CSocket *param_1);
+int __cdecl httpPostDocument(CSocket *socket,char *path,char *host,int port,void *in_stream,void *out_stream,void *status_callback);
 
-// Original: support_trisock.cpp_FUN_0059d9d0
+// Original: support_trisock.cpp_parseUrl_FUN_0059d9d0
 // Address: 0059d9d0
-undefined4 FUN_0059d9d0(char *param_1,char *param_2,undefined2 *param_3,char *param_4,int param_5);
+int __cdecl parseUrl(char *url,char *host_out,ushort *port_out,char *path_out,int path_size);
 
-// Original: support_trisock.cpp_FUN_0059daf0
+// Original: support_trisock.cpp_dnsLookupThreadProc_FUN_0059daf0
 // Address: 0059daf0
-undefined4 FUN_0059daf0(void);
+uint __cdecl dnsLookupThreadProc(void);
 
-// Original: support_trisock.cpp_FUN_0059dd40
+// Original: support_trisock.cpp_initDnsRequest_FUN_0059dd40
 // Address: 0059dd40
-undefined1 * FUN_0059dd40(int param_1);
+void * __cdecl initDnsRequest(void *request);
 
-// Original: support_trisock.cpp_FUN_0059ddc0
+// Original: support_trisock.cpp_dnsRequestLookupHost_FUN_0059ddc0
 // Address: 0059ddc0
-void FUN_0059ddc0(char *param_1,char *param_2);
+void __cdecl dnsRequestLookupHost(void *request,char *host_name);
 
-// Original: support_trisock.cpp_FUN_0059de00
+// Original: support_trisock.cpp_dnsRequestLookupAddr_FUN_0059de00
 // Address: 0059de00
-void FUN_0059de00(undefined1 *param_1,undefined4 param_2);
+void __cdecl dnsRequestLookupAddr(void *request,uint ip_address);
 
-// Original: support_trisock.cpp_FUN_0059de30
+// Original: support_trisock.cpp_dnsRequestGetResult_FUN_0059de30
 // Address: 0059de30
-undefined4 FUN_0059de30(int param_1,undefined4 *param_2);
+int __cdecl dnsRequestGetResult(void *request,void *host_info_out);
 
-// Original: support_trisock.cpp_FUN_0059de90
+// Original: support_trisock.cpp_dnsRequestCancel_FUN_0059de90
 // Address: 0059de90
-void FUN_0059de90(int param_1);
+void __cdecl dnsRequestCancel(void *request);
 
-// Original: support_trisock.cpp_FUN_0059deb0
+// Original: support_trisock.cpp_dnsRequestQueue_FUN_0059deb0
 // Address: 0059deb0
-void FUN_0059deb0(int param_1);
+void __cdecl dnsRequestQueue(void *request);
 
-// Original: support_trisock.cpp_FUN_0059dfc0
+// Original: support_trisock.cpp_dnsRequestUnlink_FUN_0059dfc0
 // Address: 0059dfc0
-void FUN_0059dfc0(int param_1);
+void __cdecl dnsRequestUnlink(void *request);
 
-// Original: support_trisock.cpp_FUN_0059e040
+// Original: support_trisock.cpp_initHttpRequest_FUN_0059e040
 // Address: 0059e040
-void * FUN_0059e040(int param_1);
+void * __cdecl initHttpRequest(void *request);
 
-// Original: support_trisock.cpp_FUN_0059e270
+// Original: support_trisock.cpp_httpRequestStart_FUN_0059e270
 // Address: 0059e270
-void FUN_0059e270(void);
+void __cdecl httpRequestStart(void *request,char *url);
 
-// Original: support_trisock.cpp_FUN_0059e350
+// Original: support_trisock.cpp_httpRequestUpdate_FUN_0059e350
 // Address: 0059e350
-undefined4 FUN_0059e350(int param_1,char *param_2);
+int __cdecl httpRequestUpdate(void *request,char *status_text);
 
-// Original: support_trisock.cpp_FUN_0059ed20
+// Original: support_trisock.cpp_httpRequestReset_FUN_0059ed20
 // Address: 0059ed20
-void FUN_0059ed20(int param_1);
+void __cdecl httpRequestReset(void *request);
 
-// Original: support_trisock.cpp_FUN_0059ed90
+// Original: support_trisock.cpp_httpRequestFillBuffer_FUN_0059ed90
 // Address: 0059ed90
-undefined4 FUN_0059ed90(int param_1,int param_2);
+int __cdecl httpRequestFillBuffer(void *request,int non_blocking);
 
-// Original: support_trisock.cpp_FUN_0059ee60
+// Original: support_trisock.cpp_httpRequestGetByte_FUN_0059ee60
 // Address: 0059ee60
-uint FUN_0059ee60(int param_1,undefined4 param_2);
+int __cdecl httpRequestGetByte(void *request,int non_blocking);
 
-// Original: support_trisock.cpp_FUN_0059eeb0
+// Original: support_trisock.cpp_startupWinsock_FUN_0059eeb0
 // Address: 0059eeb0
-void FUN_0059eeb0(void);
+int __cdecl startupWinsock(void);
 
-// Original: support_trisock.cpp_FUN_0059ef20
+// Original: support_trisock.cpp_cleanupWinsock_FUN_0059ef20
 // Address: 0059ef20
-int __cdecl FUN_0059ef20(void);
+int __cdecl cleanupWinsock(void);
 
-// Original: support_trisock.cpp_FUN_0059efd0
+// Original: support_trisock.cpp_copyHostent_FUN_0059efd0
 // Address: 0059efd0
-bool FUN_0059efd0(undefined4 *param_1,char *param_2);
+int __cdecl copyHostent(hostent *host,void *host_info_out);
 
-// Original: support_trisock.cpp_FUN_0059f1a0
+// Original: support_trisock.cpp_lookupHostByName_FUN_0059f1a0
 // Address: 0059f1a0
-undefined4 FUN_0059f1a0(char *param_1,char *param_2);
+int __cdecl lookupHostByName(char *host_name,void *host_info_out);
 
-// Original: support_trisock.cpp_FUN_0059f230
+// Original: support_trisock.cpp_lookupHostByAddr_FUN_0059f230
 // Address: 0059f230
-void FUN_0059f230(uchar param_1,undefined1 param_2,undefined1 param_3,undefined1 param_4,undefined4 param_5,undefined4 param_6,uint param_7);
+int __cdecl lookupHostByAddr(uint ip_address,void *host_info_out);
 
-// Original: support_trisock.cpp_FUN_0059f2a0
+// Original: support_trisock.cpp_getLocalHostInfo_FUN_0059f2a0
 // Address: 0059f2a0
-undefined4 FUN_0059f2a0(void *param_1);
+int __cdecl getLocalHostInfo(void *host_info_out);
 
 // Original: support_trisock.cpp_IpAddr_ctor_FUN_0059f300
 // Address: 0059f300
 SIpAddr * __cdecl IpAddr::ctor(SIpAddr *this_ptr);
 
-// Original: support_trisock.cpp_FUN_0059f320
+// Original: support_trisock.cpp_initHostInfo_FUN_0059f320
 // Address: 0059f320
-int FUN_0059f320(int param_1);
+void * __cdecl initHostInfo(void *host_info);
 
-// Original: support_trisock.cpp_FUN_0059f340
+// Original: support_trisock.cpp_copyNetworkAddr_FUN_0059f340
 // Address: 0059f340
-void FUN_0059f340(undefined4 *param_1,undefined4 *param_2);
+SNetworkAddr * __cdecl copyNetworkAddr(SNetworkAddr *dest,SNetworkAddr *src);

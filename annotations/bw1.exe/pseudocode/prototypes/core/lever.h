@@ -29,9 +29,9 @@ void __cdecl CLever::setup(CLever *this_ptr);
 // Address: 004ff190
 void __cdecl CLever::process(CLever *this_ptr,float delta_time);
 
-// Original: core_lever.cpp_FUN_004ff3f0
+// Original: core_lever.cpp_CLever_setState_FUN_004ff3f0
 // Address: 004ff3f0
-void FUN_004ff3f0(int param_1,float param_2,int param_3);
+void __cdecl CLever::setState(CLever *this_ptr,float new_state,int silent);
 
 // Original: core_lever.cpp_CLever_activate_FUN_004ff570
 // Address: 004ff570
@@ -43,11 +43,11 @@ int __cdecl CLever::renderOpaque(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_getBoundingBox_FUN_004ff670
 // Address: 004ff670
-CBoundingBox3D * __cdecl CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_lever.cpp_FUN_004ff6b0
+// Original: core_lever.cpp_CLever_getHandlePosition_FUN_004ff6b0
 // Address: 004ff6b0
-void FUN_004ff6b0(int param_1);
+CVector3f * __stack_esi CLever::getHandlePosition(CLever *this_ptr,CVector3f *out_position);
 
 // Original: core_lever.cpp_CLever_archive_FUN_004ff770
 // Address: 004ff770
@@ -57,9 +57,9 @@ void __cdecl CLever::archive(CLever *this_ptr);
 // Address: 004ff950
 ECollisionType __cdecl CLever::getCollisionType(CLever *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_lever.cpp_FUN_004ff970
+// Original: core_lever.cpp_CLever_isAccessibleFrom_FUN_004ff970
 // Address: 004ff970
-undefined4 FUN_004ff970(int param_1,undefined4 param_2);
+int __cdecl CLever::isAccessibleFrom(CLever *this_ptr,CVector3f *world_position);
 
 // Original: core_lever.cpp_CLever_dtor_FUN_004ff9f0
 // Address: 004ff9f0

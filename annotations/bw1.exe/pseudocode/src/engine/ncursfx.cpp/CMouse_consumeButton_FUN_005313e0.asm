@@ -9,13 +9,13 @@
 ; int              Stack[0xc]:4   use_skull_effect
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c43544
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV ECX,dword ptr [0x01c43544]      ; 005313e0 | DAT_01c43544
+    MOV ECX,dword ptr [0x01c43544]      ; 005313e0 | g_MouseButtonFlags
         ;   Label: engine_ncursfx.cpp_CMouse_consumeButton_FUN_005313e0
     MOV EDX,dword ptr [ESP + 0x4]       ; 005313e6
     MOV EAX,dword ptr [ESP + 0x8]       ; 005313ea
@@ -36,7 +36,7 @@ section .text
     MOV EAX,0x1                         ; 00531412
         ;   Label: LAB_00531412
     POP EBX                             ; 00531417
-    MOV dword ptr [0x01c43544],ECX      ; 00531418 | DAT_01c43544
+    MOV dword ptr [0x01c43544],ECX      ; 00531418 | g_MouseButtonFlags
     RET                                 ; 0053141e
     MOV dword ptr [EDX + 0x25c],0x1     ; 0053141f
         ;   Label: LAB_0053141f
@@ -44,6 +44,6 @@ section .text
         ;   XREF to: 00531412 (UNCONDITIONAL_JUMP)  ; LAB_00531412
     XOR EAX,EAX                         ; 0053142b
         ;   Label: LAB_0053142b
-    MOV dword ptr [0x01c43544],ECX      ; 0053142d | DAT_01c43544
+    MOV dword ptr [0x01c43544],ECX      ; 0053142d | g_MouseButtonFlags
     RET                                 ; 00531433
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402940(char *filename)
 
 {
@@ -43,29 +41,29 @@ void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402940(char *filename)
   pcVar4 = (char *)0x0;
 LAB_00402994:
   if (pcVar4 == (char *)0x0) {
-    _DAT_01d71de0 = "..\\engine\\2d.c";
-    _DAT_01d71de4 = 0x769;
-    core_main_c_FUN_004e4330("hose!");
+    g_CHAR_PTR_01d71de0 = "..\\engine\\2d.c";
+    g_INT_01d71de4 = 0x769;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("hose!");
   }
-  _sprintf(pcVar4,&DAT_005b50e1);
+  _sprintf(pcVar4,".map");
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
-                    (&local_3c,&DAT_005b50e6,local_8c,1);
+                    (&local_3c,"fog",local_8c,1);
   if (iVar2 == 0) {
     engine_2d_c_buildColorLookupTable_FUN_00402880();
     support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(&local_10);
     iVar2 = support_trstream_cpp_COutStreamFile_openInDirectory_FUN_00574a10
-                      (&local_10,&DAT_005b50ed,local_8c,&DAT_005b50ea);
+                      (&local_10,"fog",local_8c,"wb");
     if (iVar2 == 0) {
-      _DAT_01d71de0 = "..\\engine\\2d.c";
-      _DAT_01d71de4 = 0x770;
-      core_main_c_FUN_004e4330("Unable to write quick map!");
+      g_CHAR_PTR_01d71de0 = "..\\engine\\2d.c";
+      g_INT_01d71de4 = 0x770;
+      core_main_c_displayErrorAndQuit_FUN_004e4330("Unable to write quick map!");
     }
-    support_trstream_cpp_COutStreamFile_write_FUN_005748e0(&local_10,&DAT_01c62070,0x8000);
+    support_trstream_cpp_COutStreamFile_write_FUN_005748e0(&local_10,g_ColorCubeLookup,0x8000);
     support_trstream_cpp_COutStreamFile_close_FUN_005749a0(&local_10);
     support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_10,0);
   }
   else {
-    support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_3c,&DAT_01c62070,0x8000);
+    support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_3c,g_ColorCubeLookup,0x8000);
     support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
   }
   support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);

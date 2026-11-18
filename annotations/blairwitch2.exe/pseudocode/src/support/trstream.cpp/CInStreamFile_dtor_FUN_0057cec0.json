@@ -14,33 +14,27 @@
   },
   "cross_references": [
     {
-      "addr": "0042c520",
-      "from_addr": "0042c5c2",
-      "name": "cockpit_ckptutil.c_FUN_0042c520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042c780",
       "from_addr": "0042c8b1",
       "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bb9b0",
-      "from_addr": "004bbdbc",
-      "name": "core_game.cpp_FUN_004bb9b0",
+      "addr": "0042c520",
+      "from_addr": "0042c5c2",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bbf70",
       "from_addr": "004bc364",
-      "name": "core_game.cpp_FUN_004bbf70",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00401590",
-      "from_addr": "004015e2",
-      "name": "engine_2d.c_FUN_00401590",
+      "addr": "004bb9b0",
+      "from_addr": "004bbdbc",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bb9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,21 +50,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00401590",
+      "from_addr": "004015e2",
+      "name": "engine_2d.c_loadPaletteFile_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a7d00",
       "from_addr": "004a7f60",
       "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a7fd0",
-      "from_addr": "004a830c",
-      "name": "engine_font.cpp_FUN_004a7fd0",
+      "addr": "004a85a0",
+      "from_addr": "004a8619",
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a85a0",
-      "from_addr": "004a8619",
-      "name": "engine_font.cpp_FUN_004a85a0",
+      "addr": "004a7fd0",
+      "from_addr": "004a830c",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -82,7 +82,7 @@
     {
       "addr": "00575150",
       "from_addr": "005755d4",
-      "name": "engine_texture.cpp_FUN_00575150",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,7 +112,7 @@
     {
       "addr": "004340f0",
       "from_addr": "00434193",
-      "name": "support_codec.cpp_FUN_004340f0",
+      "name": "support_codec.cpp_CCodec_processFiles_FUN_004340f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -135,14 +135,14 @@
       "name": "crt_memory.c___vec_delete_FUN_005b7fa7"
     },
     {
-      "addr": "005b7fce",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7fce"
-    },
-    {
       "addr": "005b7fdc",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7fdc"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005b7fdc"
+    },
+    {
+      "addr": "005b7fce",
+      "is_variadic": false,
+      "name": "crt_unknown.c_free_FUN_005b7fce"
     },
     {
       "addr": "0057b9d0",
@@ -165,8 +165,8 @@
     {
       "addr": "005fd3e4",
       "name": "g_CInStreamFileVTable",
-      "type": "undefined1*",
-      "value": "0057cec0"
+      "type": "void*[13]",
+      "value": null
     }
   ],
   "pcode_summary": {

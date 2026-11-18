@@ -18,7 +18,7 @@ int __cdecl core_boxactor_cpp_CBoxActor_canPickup_FUN_004200a0(CBoxActor *this_p
     }
   }
   else {
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(picker,"?CHero" + 1);
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(picker,"CHero");
     if (iVar1 == 0) {
       return 0;
     }

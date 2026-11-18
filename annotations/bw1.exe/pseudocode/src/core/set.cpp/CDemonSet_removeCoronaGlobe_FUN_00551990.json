@@ -1,0 +1,214 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 108,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_stride_bytecount",
+      "pointer_truncation"
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [
+    {
+      "addr": "004301e0",
+      "from_addr": "00430371",
+      "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055fc60",
+      "from_addr": "0055fd9b",
+      "name": "core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00551990",
+    "address_range": [
+      [
+        "00551990",
+        "005519f8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00551990",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00551990(CDemonSet *this_ptr,CDemonGlobe *globe)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c25d0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005c25d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01fe55d0",
+      "name": "g_INT_01fe55d0",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00430371",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055fd9b",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.428571428571429,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 41,
+      "INT_ADD": 19,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 22,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 12,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 186
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005306e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00537320",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "globe",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonGlobe *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
+      "severity": "moderate",
+      "text": "if (globe == *(CDemonGlobe **)((int)g_CoronaGlobes + iVar2)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)g_CoronaGlobes",
+      "severity": "moderate",
+      "text": "((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)g_CoronaGlobes",
+      "severity": "moderate",
+      "text": "((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_CoronaGlobes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)g_CoronaGlobes",
+      "severity": "moderate",
+      "text": "if (globe == *(CDemonGlobe **)((int)g_CoronaGlobes + iVar2)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CoronaGlobes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)g_CoronaGlobes",
+      "severity": "moderate",
+      "text": "((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CoronaGlobes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)g_CoronaGlobes",
+      "severity": "moderate",
+      "text": "((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((g_INT_01fe55d0 - iVar3) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 16,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

@@ -30,8 +30,9 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_0040ef00(CArmour *this_ptr,floa
     }
     fVar1 = (this_ptr->base).speed;
     (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-    core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar1);
-    core_motion_cpp_FUN_005035c0(this_ptr_00);
+    core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+              ((CCharacter *)this_ptr,delta_time * fVar1);
+    core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
     iVar2 = core_charactr_cpp_CCharacter_processWalking_FUN_004287f0
                       ((CCharacter *)this_ptr,delta_time);
     if (iVar2 != 0) {
@@ -45,7 +46,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_0040ef00(CArmour *this_ptr,floa
               (&(this_ptr->base).base.model);
     core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90((CCharacter *)this_ptr,delta_time);
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (0x01C38BC0,this_ptr->fall_apart_event);
+                      (g_CEventListPtr,this_ptr->fall_apart_event);
     if (iVar2 != 0) {
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"armour.wav");

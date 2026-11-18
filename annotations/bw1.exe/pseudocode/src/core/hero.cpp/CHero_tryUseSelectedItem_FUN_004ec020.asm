@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_00469550 at 0046b461
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046b461
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 00587880
 ;
 ; Referenced Globals:

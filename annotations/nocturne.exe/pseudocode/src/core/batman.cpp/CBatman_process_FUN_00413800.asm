@@ -390,7 +390,7 @@ section .text
     LEA EAX,[EBP + 0xffffff3e]          ; 00413b2b
     PUSH 0x3f000000                     ; 00413b31
     PUSH EAX                            ; 00413b36
-    MOV EAX,[0x005b80f0]                ; 00413b37 | g_CFireEffect_PTR_005b80f0
+    MOV EAX,[0x005b80f0]                ; 00413b37 | g_CFireEffectPtr
     PUSH EAX                            ; 00413b3c
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00413b3d
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -557,7 +557,7 @@ section .text
     LEA EAX,[EBP + 0xffffff56]          ; 00413cec
     PUSH 0x3f000000                     ; 00413cf2
     PUSH EAX                            ; 00413cf7
-    MOV EDX,dword ptr [0x005b80f0]      ; 00413cf8 | g_CFireEffect_PTR_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 00413cf8 | g_CFireEffectPtr
     PUSH EDX                            ; 00413cfe
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00413cff
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -691,7 +691,7 @@ section .text
     LEA EAX,[EBX + 0xbd24]              ; 00413e78
         ;   Label: LAB_00413e78
     PUSH EAX                            ; 00413e7e
-    MOV ESI,dword ptr [0x005b7650]      ; 00413e7f | DAT_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 00413e7f | g_CEventListPtr
     PUSH ESI                            ; 00413e85
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00413e86
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -732,7 +732,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00413ee3
     ADD ESP,0x8                         ; 00413ee6
     LEA EAX,[EBP + 0xffffff02]          ; 00413ee9
-    MOV ESI,dword ptr [0x00764610]      ; 00413eef | DAT_00764610
+    MOV ESI,dword ptr [0x00764610]      ; 00413eef | g_INT_00764610
     PUSH EAX                            ; 00413ef5
     LEA EAX,[ESI*0x4 + 0x0]             ; 00413ef6
     MOV dword ptr [EBP + 0xffffff36],EBX ; 00413efd
@@ -877,7 +877,7 @@ section .text
     CMP ESI,dword ptr [EAX + 0x150bf4]  ; 0041406f | g_CDemonSetInstance.enemy_count
     JGE 0x004140a1                      ; 00414075
         ;   XREF to: 004140a1 (CONDITIONAL_JUMP)  ; LAB_004140a1
-    MOV EDX,dword ptr [0x00764670]      ; 00414077 | g_CBatmanActorType_00764638.name_hash
+    MOV EDX,dword ptr [0x00764670]      ; 00414077 | g_CBatmanClassInfo.name_hash
     PUSH EDX                            ; 0041407d
     MOV ECX,dword ptr [EDI + EAX*0x1 + 0x150bf8] ; 0041407e
     PUSH ECX                            ; 00414085

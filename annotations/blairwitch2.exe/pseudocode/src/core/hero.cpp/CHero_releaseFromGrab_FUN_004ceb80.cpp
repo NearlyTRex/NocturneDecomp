@@ -27,7 +27,8 @@ void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004ceb80(CHero *this_ptr)
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
     iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0(this_ptr_01,state_name,iVar2);
     if (-1 < iVar2) {
-      fVar1 = (float)core_motion_cpp_FUN_005038a0(this_ptr_00,iVar2);
+      fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
+                        (&this_ptr_00->base,iVar2);
       if (0.0 < fVar1) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_005036b0
                   (&this_ptr_00->base,"STAND",1);

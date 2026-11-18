@@ -5,7 +5,7 @@ Category `/Nocturne/Class/Game`.
 | build | size | state | RTTI size |
 |---|---:|---|---:|
 | nocedit | 316 | fields | 316 |
-| nocturne | 316 | fields | — |
+| nocturne | 316 | fields | 316 |
 | bw1 | 27520 | fields | 27520 |
 | blairwitch2 | 27520 | fields | 27520 |
 | bw3 | 27520 | fields | 27520 |

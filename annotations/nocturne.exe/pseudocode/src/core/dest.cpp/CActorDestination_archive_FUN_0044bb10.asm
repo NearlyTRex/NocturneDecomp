@@ -17,7 +17,7 @@
 ;   TerminatedCString s_destActor_0057be35
 ;   TerminatedCString s_destClass_0057be3f
 ;   TerminatedCString s_persistantEventFlag_0057be49
-;   int g_INT_005ad4bc = 0x4
+;   int g_CActorDestinationClassVersion = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -36,7 +36,7 @@ section .text
     PUSH EBX                            ; 0044bb1e
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 0044bb1f
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040d2d0(CDemonActor * this_ptr)
-    MOV EDX,dword ptr [0x005ad4bc]      ; 0044bb24 | g_INT_005ad4bc
+    MOV EDX,dword ptr [0x005ad4bc]      ; 0044bb24 | g_CActorDestinationClassVersion
     ADD ESP,0x4                         ; 0044bb2a
     CMP EDX,0x2                         ; 0044bb2d
     JL 0x0044bb93                       ; 0044bb30
@@ -47,7 +47,7 @@ section .text
     PUSH EAX                            ; 0044bb3d
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0044bb3e
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
-    MOV ECX,dword ptr [0x005ad4bc]      ; 0044bb43 | g_INT_005ad4bc
+    MOV ECX,dword ptr [0x005ad4bc]      ; 0044bb43 | g_CActorDestinationClassVersion
     ADD ESP,0x8                         ; 0044bb49
     CMP ECX,0x2                         ; 0044bb4c
     JL 0x0044bb65                       ; 0044bb4f
@@ -58,7 +58,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0044bb5d
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0044bb62
-    CMP dword ptr [0x005ad4bc],0x3      ; 0044bb65 | g_INT_005ad4bc
+    CMP dword ptr [0x005ad4bc],0x3      ; 0044bb65 | g_CActorDestinationClassVersion
         ;   Label: LAB_0044bb65
     JL 0x0044bb82                       ; 0044bb6c
         ;   XREF to: 0044bb82 (CONDITIONAL_JUMP)  ; LAB_0044bb82
@@ -68,7 +68,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0044bb7a
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0044bb7f
-    CMP dword ptr [0x005ad4bc],0x4      ; 0044bb82 | g_INT_005ad4bc
+    CMP dword ptr [0x005ad4bc],0x4      ; 0044bb82 | g_CActorDestinationClassVersion
         ;   Label: LAB_0044bb82
     JGE 0x0044bbb1                      ; 0044bb89
         ;   XREF to: 0044bbb1 (CONDITIONAL_JUMP)  ; LAB_0044bbb1

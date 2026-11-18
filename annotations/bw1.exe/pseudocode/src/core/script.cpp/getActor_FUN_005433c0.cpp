@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
 
 {
   char cVar1;
   int iVar2;
-  CDemonActor *actor_ptr;
+  CHero *actor_ptr;
   char *pcVar3;
   char *pcVar4;
   
-  _DAT_01e818bc = 0;
+  g_INT_01e818bc = 0;
   if ((actor_specifier == (char *)0x0) || (*actor_specifier == '\0')) {
     pcVar3 = "Must specify actor name";
-    pcVar4 = &DAT_01e810b0;
+    pcVar4 = g_CHAR_ARRAY_01e810b0;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;
@@ -39,42 +37,42 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *actor_specifie
     if (iVar2 == 0) {
       return (CDemonActor *)0x0;
     }
-    _DAT_01e818bc = 1;
-    actor_ptr = core_event_cpp_CEventList_getActorByVarName_FUN_004aa1d0
-                          (0x01C51D80,actor_specifier);
-    if (actor_ptr == (CDemonActor *)0x0) {
-      _sprintf(&DAT_01e810b0,"Actor variable %s not defined, or doesn't reference an existing actor");
+    g_INT_01e818bc = 1;
+    actor_ptr = (CHero *)core_event_cpp_CEventList_getActorByVarName_FUN_004aa1d0
+                                   (g_CEventListPtr,actor_specifier);
+    if (actor_ptr == (CHero *)0x0) {
+      _sprintf(g_CHAR_ARRAY_01e810b0,"Actor variable %s not defined, or doesn't reference an existing actor");
       return (CDemonActor *)0x0;
     }
   }
   else {
-    iVar2 = _stricmp(actor_specifier,&DAT_005ee033);
+    iVar2 = _stricmp(actor_specifier,"$");
     if (iVar2 == 0) {
       if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
-        _sprintf(&DAT_01e810b0,"Can't use '$' actor specifier in multi-player");
+        _sprintf(g_CHAR_ARRAY_01e810b0,"Can't use '$' actor specifier in multi-player");
         return (CDemonActor *)0x0;
       }
-      actor_ptr = *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
-      if (actor_ptr == (CDemonActor *)0x0) {
-        _DAT_01e818bc = 1;
-        _sprintf(&DAT_01e810b0,"Hero doesn't exist!!?!");
+      actor_ptr = g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4];
+      if (actor_ptr == (CHero *)0x0) {
+        g_INT_01e818bc = 1;
+        _sprintf(g_CHAR_ARRAY_01e810b0,"Hero doesn't exist!!?!");
         return (CDemonActor *)0x0;
       }
     }
     else {
-      actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0
-                            (0x01D2C900,actor_specifier);
-      if (actor_ptr == (CDemonActor *)0x0) {
-        _sprintf(&DAT_01e810b0,"Actor \"%s\" does not exist.");
+      actor_ptr = (CHero *)core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0
+                                     (g_CDemonMission_PTR_0061f650,actor_specifier);
+      if (actor_ptr == (CHero *)0x0) {
+        _sprintf(g_CHAR_ARRAY_01e810b0,"Actor \"%s\" does not exist.");
         return (CDemonActor *)0x0;
       }
     }
   }
-  iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c5d0(actor_ptr,expected_class_hash);
+  iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c5d0((CDemonActor *)actor_ptr,expected_class_hash);
   if (iVar2 == 0) {
-    core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(actor_ptr);
-    _sprintf(&DAT_01e810b0,"Actor \"%s\" is of type %s, this command requires an actor of type %s.");
+    core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830((CDemonActor *)actor_ptr);
+    _sprintf(g_CHAR_ARRAY_01e810b0,"Actor \"%s\" is of type %s, this command requires an actor of type %s.");
     return (CDemonActor *)0x0;
   }
-  return actor_ptr;
+  return (CDemonActor *)actor_ptr;
 }

@@ -9,9 +9,9 @@
 // Address: 00523980
 void __cdecl CMotionList::load(CMotionList *this_ptr,_FILE *file_handle);
 
-// Original: core_motion.cpp_FUN_00523db0
+// Original: core_motion.cpp_CMotionList_save_FUN_00523db0
 // Address: 00523db0
-void FUN_00523db0(int *param_1,undefined4 param_2);
+void __cdecl CMotionList::save(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 // Address: 005240c0
@@ -65,13 +65,13 @@ void __cdecl CMotionController::startTransition(CMotionController *this_ptr,SMot
 // Address: 00524940
 int __cdecl CMotionController::findPatchToFrame(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index);
 
-// Original: core_motion.cpp_FUN_00524970
+// Original: core_motion.cpp_CMotionController_setMotionList_FUN_00524970
 // Address: 00524970
-void FUN_00524970(undefined4 *param_1,undefined4 param_2);
+void __cdecl CMotionController::setMotionList(CMotionController *this_ptr,CMotionList *motion_list);
 
-// Original: core_motion.cpp_FUN_005249b0
+// Original: core_motion.cpp_CMotionController_detachMotionList_FUN_005249b0
 // Address: 005249b0
-void FUN_005249b0(CMotionController *param_1);
+void __cdecl CMotionController::detachMotionList(CMotionController *this_ptr);
 
 // Original: core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 // Address: 00524a00
@@ -81,9 +81,9 @@ CMotionList * __cdecl CMotionController::getMotionList(CMotionController *this_p
 // Address: 00524a10
 char * __cdecl CMotionController::getCurrentStateName(CMotionController *this_ptr);
 
-// Original: core_motion.cpp_FUN_00524a40
+// Original: core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 // Address: 00524a40
-float FUN_00524a40(int *param_1,int param_2);
+float __cdecl CMotionController::getStateBlendWeight(CMotionController *this_ptr,int desired_state_index);
 
 // Original: core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00524ae0
 // Address: 00524ae0
@@ -105,17 +105,17 @@ int __cdecl CMotionController::advanceFrameAndCheckSignals(CMotionController *th
 // Address: 00524d70
 int __cdecl CMotionController::advanceFrameToExitPoint(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 
-// Original: core_motion.cpp_FUN_00524f40
+// Original: core_motion.cpp_CMotionController_advanceTween_FUN_00524f40
 // Address: 00524f40
-void FUN_00524f40(int *param_1,int param_2,float param_3,float *param_4);
+void __cdecl CMotionController::advanceTween(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time);
 
-// Original: core_motion.cpp_FUN_00525020
+// Original: core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 // Address: 00525020
-float __cdecl FUN_00525020(CMotionController *this_ptr);
+float __cdecl CMotionController::frameToMarkerPosition(CMotionController *this_ptr);
 
-// Original: core_motion.cpp_FUN_00525110
+// Original: core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110
 // Address: 00525110
-float FUN_00525110(int *param_1,int param_2,float param_3);
+float __cdecl CMotionController::markerPositionToFrame(CMotionController *this_ptr,int motion_index,float marker_position);
 
 // Original: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240
 // Address: 00525240
@@ -129,6 +129,6 @@ void __cdecl CMotionController::load(CMotionController *this_ptr,_FILE *file_han
 // Address: 00525420
 void __cdecl CMotionController::save(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 
-// Original: core_motion.cpp_FUN_005254b0
+// Original: core_motion.cpp_CMotionController_render_FUN_005254b0
 // Address: 005254b0
-void __cdecl FUN_005254b0(CMotionController *this_ptr,CDemonActor *actor);
+void __cdecl CMotionController::render(CMotionController *this_ptr,CDemonActor *actor);

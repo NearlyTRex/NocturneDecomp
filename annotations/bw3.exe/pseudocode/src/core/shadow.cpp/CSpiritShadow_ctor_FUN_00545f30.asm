@@ -7,7 +7,7 @@
 ; CSpiritShadow *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_shadow.cpp_FUN_00545f00 at 00545f13
+;   core_shadow.cpp_factoryFuncSpiritShadow_FUN_00545f00 at 00545f13
 ;
 ; Called Functions:
 ;   core_shadow.cpp_CShadow_ctor_FUN_00543500

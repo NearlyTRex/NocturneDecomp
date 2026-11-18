@@ -21,7 +21,7 @@ byte * FUN_005b1090(char *param_1,uint *param_2,int param_3,int param_4)
   if (param_2 != (uint *)0x0) {
     *param_2 = param_1;
   }
-  while (((&DAT_006074b8)[(byte)(*pcVar4 + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2) != 0) {
     pcVar4 = pcVar4 + 1;
   }
   cVar1 = *pcVar4;
@@ -55,7 +55,7 @@ LAB_005b1134:
   pcVar5 = pcVar4;
   puVar7 = (byte *)0x0;
   while (iVar3 = FUN_005b1238(*pcVar5), iVar3 < param_3) {
-    if ((&PTR_crt_unknown_c_FUN_005b1938_00607f18)[param_3] < puVar7) {
+    if ((&g_PTR_00607f18)[param_3] < puVar7) {
       bVar2 = true;
     }
     puVar6 = (byte *)((int)puVar7 * param_3 + iVar3);

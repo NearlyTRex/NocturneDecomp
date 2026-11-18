@@ -44,7 +44,7 @@ section .text
     PUSH EBX                            ; 00443cf5
         ;   Label: LAB_00443cf5
     CALL support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020 ; 00443cf6
-        ;   XREF to: 00444020 (UNCONDITIONAL_CALL)  ; undefined4 support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020(CInStreamPipe * this_ptr)
+        ;   XREF to: 00444020 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020(CInStreamPipe * this_ptr)
     ADD ESP,0x4                         ; 00443cfb
     TEST EAX,EAX                        ; 00443cfe
     JGE 0x00443cd3                      ; 00443d00

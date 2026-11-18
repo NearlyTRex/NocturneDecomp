@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(SMRGLPoint *block)
 
 {
-  DAT_00730408 = (block->point).x;
-  DAT_0073040c = (block->point).y;
-  DAT_00730410 = (block->point).z;
-  _DAT_01c6e2cc = _DAT_01c6e2d8 - (block->point).x;
-  _DAT_01c6e2d0 = _DAT_01c6e2dc - (block->point).y;
-  _DAT_01c6e2d4 = _DAT_01c6e2e0 - (block->point).z;
+  g_StoredX = (block->point).x;
+  g_StoredY = (block->point).y;
+  g_StoredZ = (block->point).z;
+  g_RelativeX = g_CameraOriginX - (block->point).x;
+  g_RelativeY = g_CameraOriginY - (block->point).y;
+  g_RelativeZ = g_CameraOriginZ - (block->point).z;
   return (SMRGLHeaderExtended *)(block + 1);
 }

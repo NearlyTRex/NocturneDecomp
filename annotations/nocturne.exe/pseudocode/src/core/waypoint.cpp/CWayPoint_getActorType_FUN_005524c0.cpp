@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_waypoint_cpp_CWayPoint_getActorType_FUN_005524c0(CWayPoint *this_ptr)
 
 {
-  return &g_CWayPointActorType_02ddf514;
+  return &g_CWayPointClassInfo;
 }

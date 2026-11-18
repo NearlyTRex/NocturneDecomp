@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   size
 ;
 ; Called Functions:
-;   wincore_winrun.cpp_FUN_00581c70
+;   wincore_winrun.cpp_outputDebugString_FUN_00581c70
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH EDI                            ; 00574f02
     ADD EBX,0x100                       ; 00574f03
     MOV byte ptr [ESP + 0x10c],AH       ; 00574f09
-    CALL wincore_winrun.cpp_FUN_00581c70 ; 00574f10
-        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00581c70()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_00581c70 ; 00574f10
+        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_00581c70(LPCSTR message)
     ADD ESP,0x4                         ; 00574f15
     CMP EBP,0x100                       ; 00574f18
     JG 0x00574edb                       ; 00574f1e
@@ -73,8 +73,8 @@ section .text
     XOR DL,DL                           ; 00574f40
     PUSH EBX                            ; 00574f42
     MOV byte ptr [ESP + EBP*0x1 + 0xc],DL ; 00574f43
-    CALL wincore_winrun.cpp_FUN_00581c70 ; 00574f47
-        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00581c70()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_00581c70 ; 00574f47
+        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_00581c70(LPCSTR message)
     ADD ESP,0x4                         ; 00574f4c
     MOV EDI,dword ptr [ESP + 0x120]     ; 00574f4f
         ;   Label: LAB_00574f4f

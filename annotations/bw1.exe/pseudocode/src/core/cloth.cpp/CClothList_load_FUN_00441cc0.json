@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 69,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 2,
+    "pseudocode_lines": 37,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 114
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -48,19 +47,19 @@
       "name": "core_cloth.cpp_CCloth_ctor_FUN_0043e5c0"
     },
     {
+      "addr": "0043e620",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_0043e620"
+    },
+    {
       "addr": "0043e6d0",
       "is_variadic": false,
       "name": "core_cloth.cpp_CCloth_load_FUN_0043e6d0"
     },
     {
-      "addr": "0043e620",
-      "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043e620"
-    },
-    {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c0f32",
@@ -70,7 +69,7 @@
     {
       "addr": "005c0344",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c0344"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005c0344"
     }
   ],
   "globals": [
@@ -88,14 +87,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -203,19 +202,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 36,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
       "severity": "moderate",
-      "text": "pCVar4 = (CClothList *)pCVar4->filenames;",
+      "text": "pCVar3 = (CClothList *)pCVar3->filenames;",
       "type": "shadow_pointer_walk"
     }
   ]

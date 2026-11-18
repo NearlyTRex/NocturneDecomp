@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 212,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 13,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 267
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 68,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 268
   },
   "cross_references": [
     {
@@ -65,7 +61,7 @@
     {
       "addr": "0055a670",
       "is_variadic": false,
-      "name": "sound_snddx.cpp_FUN_0055a670"
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670"
     },
     {
       "addr": "005586e0",
@@ -111,32 +107,32 @@
     },
     {
       "addr": "00608bc8",
-      "name": "DAT_00608bc8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IID_IDirectSound3DListener",
+      "type": "GUID",
+      "value": "IDirectSound3DListener 279afa84-4981-11ce-a521-0020af0be560"
     },
     {
       "addr": "02cf49c4",
-      "name": "DAT_02cf49c4",
-      "type": "undefined4",
+      "name": "g_DirectSound",
+      "type": "IDirectSound*",
       "value": null
     },
     {
       "addr": "02cf49c8",
-      "name": "DAT_02cf49c8",
-      "type": "undefined4",
+      "name": "g_DirectSoundPrimaryBuffer",
+      "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02cf49d0",
-      "name": "DAT_02cf49d0",
-      "type": "undefined4",
+      "name": "g_DirectSound3DListener",
+      "type": "IDirectSound3DListener*",
       "value": null
     },
     {
       "addr": "02d21b78",
-      "name": "DAT_02d21b78",
-      "type": "undefined4",
+      "name": "g_MainWindowHandle",
+      "type": "HWND",
       "value": null
     }
   ],
@@ -241,110 +237,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_02cf5468",
-      "severity": "mild",
-      "text": "iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_0055ac00((CDirectSoundDevice *)&DAT_02cf5468)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_02cf49c4",
-      "severity": "mild",
-      "text": "uVar2 = DirectSoundCreate(lp_guid,(LPDIRECTSOUND *)&DAT_02cf49c4,(LPUNKNOWN)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02cf49c4 + 0x18))(_DAT_02cf49c4,_DAT_02d21b78,2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_30,&DAT_02cf49c8,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_02cf49c8",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_30,&DAT_02cf49c8,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_30,&DAT_02cf49c8,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_02cf49c8",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_30,&DAT_02cf49c8,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&DAT_00608bc8,&DAT_02cf49d0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_00608bc8",
-      "severity": "mild",
-      "text": "(**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&DAT_00608bc8,&DAT_02cf49d0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_02cf49d0",
-      "severity": "mild",
-      "text": "(**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&DAT_00608bc8,&DAT_02cf49d0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_02cf5468",
-      "severity": "mild",
-      "text": "return (CDirectSoundDevice *)&DAT_02cf5468;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_02cf5468",
-      "severity": "mild",
-      "text": "sound_snddx_cpp_CDirectSoundDevice_close_FUN_0055ac00((CDirectSoundDevice *)&DAT_02cf5468);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

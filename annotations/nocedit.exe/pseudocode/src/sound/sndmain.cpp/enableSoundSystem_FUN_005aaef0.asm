@@ -237,11 +237,11 @@ section .text
     NOP                                 ; 005ab0bf
     CALL dword ptr [EBX + 0x24]         ; 005ab0c0
     ADD ESP,0xc                         ; 005ab0c3
-    PUSH dword ptr [0x03f693f0]         ; 005ab0c6 | g_DeferredOrientRight.z
+    PUSH dword ptr [0x03f693f0]         ; 005ab0c6 | g_CachedReverb.damping
     MOV EAX,[0x03f69268]                ; 005ab0cc | g_CSoundDevicePtr
-    PUSH dword ptr [0x03f693ec]         ; 005ab0d1 | g_DeferredOrientRight.y
+    PUSH dword ptr [0x03f693ec]         ; 005ab0d1 | g_CachedReverb.decay_time
     MOV EBX,dword ptr [EAX]             ; 005ab0d7
-    PUSH dword ptr [0x03f693e8]         ; 005ab0d9 | g_DeferredOrientRight
+    PUSH dword ptr [0x03f693e8]         ; 005ab0d9 | g_CachedReverb
     PUSH EAX                            ; 005ab0df
     CALL dword ptr [EBX + 0x28]         ; 005ab0e0
     ADD ESP,0x10                        ; 005ab0e3

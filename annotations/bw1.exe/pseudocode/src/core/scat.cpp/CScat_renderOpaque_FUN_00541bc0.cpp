@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00541bc0(CScat *this_ptr)
 
 {
@@ -34,7 +32,7 @@ int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00541bc0(CScat *this_ptr)
       }
       fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
                         ((CCharacter *)this_ptr,iVar2);
-      if ((float)_DAT_005ede97 < fVar3) {
+      if ((float)0.94999999999999996 < fVar3) {
         (*(((((CCharacter *)this_ptr->weapon_actor)->base).vtable._uc)->_uc).releaseFromGrab)
                   ((CCharacter *)this_ptr->weapon_actor);
         return 1;

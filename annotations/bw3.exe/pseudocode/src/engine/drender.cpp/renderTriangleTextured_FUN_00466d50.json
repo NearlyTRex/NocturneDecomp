@@ -1,0 +1,391 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 594,
+    "complexity_score": 275,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 23,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 275,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 869
+  },
+  "cross_references": [
+    {
+      "addr": "0046b160",
+      "from_addr": "0046b1ca",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046dbd0",
+      "from_addr": "0046dd61",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046d960",
+      "from_addr": "0046db0c",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0046d960",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00466d50",
+    "address_range": [
+      [
+        "00466d50",
+        "004673c1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_renderTriangleTextured_FUN_00466d50",
+    "signature": "void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00466d50(int *vertex_indices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00515ac0",
+      "is_variadic": false,
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0"
+    },
+    {
+      "addr": "00565c40",
+      "is_variadic": false,
+      "name": "engine_special.cpp_drawPolygon2_FUN_00565c40"
+    },
+    {
+      "addr": "00563257",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderScanline_FUN_00563257"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060b014",
+      "name": "g_SRenderVertex_ARRAY_0060b014",
+      "type": "SRenderVertex[20000]",
+      "value": null
+    },
+    {
+      "addr": "0060b01c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.transformed_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b020",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.inv_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b024",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.screen_x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b028",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.screen_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b02c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b030",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b034",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].r",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b038",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b03c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b040",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303f4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "007303fc",
+      "name": "g_CullingMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdcfd4",
+      "name": "g_RenderTriangleEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdcfd8",
+      "name": "g_SSoftwareEdge_ARRAY_01bdcfd8",
+      "type": "SSoftwareEdge[16]",
+      "value": null
+    },
+    {
+      "addr": "01bdd028",
+      "name": "g_SSoftwareEdge_ARRAY_01bdcfd8[1].base.y_min",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd4d8",
+      "name": "g_RenderTriangleMinScanlineY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdd4dc",
+      "name": "g_RenderTriangleMaxScanlineY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdd814",
+      "name": "g_RenderAbortFlag",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6cee8",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b5",
+      "name": "g_RenderStateFlags+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed3198",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0046b1ca",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0046db0c",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0046d960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046dd61",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.127490039840637,
+    "instruction_count": 502,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 131,
+      "BOOL_OR": 8,
+      "BRANCH": 9,
+      "CALL": 3,
+      "CBRANCH": 40,
+      "COPY": 417,
+      "INT_ADD": 245,
+      "INT_AND": 590,
+      "INT_CARRY": 42,
+      "INT_DIV": 1,
+      "INT_EQUAL": 317,
+      "INT_LEFT": 27,
+      "INT_LESS": 39,
+      "INT_MULT": 26,
+      "INT_NOTEQUAL": 107,
+      "INT_OR": 137,
+      "INT_REM": 1,
+      "INT_RIGHT": 36,
+      "INT_SBORROW": 39,
+      "INT_SCARRY": 53,
+      "INT_SEXT": 66,
+      "INT_SLESS": 190,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 94,
+      "INT_XOR": 36,
+      "INT_ZEXT": 3,
+      "LOAD": 149,
+      "POPCOUNT": 146,
+      "RETURN": 2,
+      "STORE": 72,
+      "SUBPIECE": 46
+    },
+    "pcode_op_count": 3076
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00461f70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0047a480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00483370",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00457a00",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_indices",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

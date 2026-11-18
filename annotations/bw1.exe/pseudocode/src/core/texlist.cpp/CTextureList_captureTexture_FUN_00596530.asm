@@ -11,8 +11,8 @@
 ;   core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004e7b70 at 004e7b96
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -31,8 +31,8 @@ section .text
     ADD EDX,0x4                         ; 0059654a
     ADD EAX,EDX                         ; 0059654d
     PUSH EAX                            ; 0059654f
-    MOV EDX,dword ptr [0x00612560]      ; 00596550 | DAT_00612560
-    PUSH EDX                            ; 00596556 | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 00596550 | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 00596556 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 00596557
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0059655c

@@ -9,9 +9,9 @@
 // Address: 004c6070
 void __cdecl staticInit(void);
 
-// Original: core_gabriela.cpp_FUN_004c6150
+// Original: core_gabriela.cpp_weaponDrawBlendWeightCallback_FUN_004c6150
 // Address: 004c6150
-float FUN_004c6150(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+float __cdecl weaponDrawBlendWeightCallback(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 
 // Original: core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004c6190
 // Address: 004c6190
@@ -41,13 +41,13 @@ void __cdecl CGabriella::setup(CGabriella *this_ptr);
 // Address: 004c65f0
 void __cdecl CGabriella::process(CGabriella *this_ptr,float delta_time);
 
-// Original: core_gabriela.cpp_FUN_004c7aa0
+// Original: core_gabriela.cpp_CGabriella_processAI_FUN_004c7aa0
 // Address: 004c7aa0
-void FUN_004c7aa0(CDemonActor *param_1);
+void __cdecl CGabriella::processAI(CGabriella *this_ptr,float delta_time);
 
-// Original: core_gabriela.cpp_FUN_004c83b0
+// Original: core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004c83b0
 // Address: 004c83b0
-void FUN_004c83b0(CGabriella *param_1,float param_2);
+void __cdecl CGabriella::processMotionEvents(CGabriella *this_ptr,float delta_time);
 
 // Original: core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004c88a0
 // Address: 004c88a0
@@ -57,9 +57,9 @@ float __cdecl CGabriella::getFlashlightMinAngle(CGabriella *this_ptr);
 // Address: 004c88f0
 float __cdecl CGabriella::getFlashlightMaxAngle(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c8900
+// Original: core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_004c8900
 // Address: 004c8900
-void FUN_004c8900(int param_1);
+CVector3f * __stack_esi CGabriella::getTorsoCenterPosition(CGabriella *this_ptr,CVector3f *out_position);
 
 // Original: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0
 // Address: 004c89c0
@@ -121,9 +121,9 @@ void __cdecl CGabriella::processDamage(CGabriella *this_ptr,SDamageInfo *damage_
 // Address: 004cad20
 void __cdecl CGabriella::updateClavicleCollisionAvoidance(CGabriella *this_ptr,float delta_time,int has_carried_objects);
 
-// Original: core_gabriela.cpp_FUN_004caff0
+// Original: core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0
 // Address: 004caff0
-void FUN_004caff0(int param_1,float param_2,float *param_3,int param_4,int param_5,undefined4 param_6);
+void __cdecl CGabriella::binarySearchClavicleBlend(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index,int blend_bone_index,CVector3f *probe_offset);
 
 // Original: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0
 // Address: 004cb1e0

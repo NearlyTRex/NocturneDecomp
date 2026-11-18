@@ -7,10 +7,10 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   engine_pod.cpp_FUN_0053b250 at 0053b665
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250 at 0053b665
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460 at 00570975
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_005702c0 at 005703ef
-;   support_codec.cpp_FUN_00442e10 at 00442e2f
+;   support_codec.cpp_CCodec_processFiles_FUN_00442e10 at 00442e2f
 ;
 ; *****************************************************************************
 

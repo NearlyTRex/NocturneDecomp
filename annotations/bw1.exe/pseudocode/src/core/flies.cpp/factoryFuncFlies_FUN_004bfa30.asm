@@ -15,7 +15,7 @@ section .text
     PUSH 0x2a20                         ; 004bfa30
         ;   Label: core_flies.cpp_factoryFuncFlies_FUN_004bfa30
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004bfa35
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004bfa3a
     TEST EAX,EAX                        ; 004bfa3d
     JNZ 0x004bfa42                      ; 004bfa3f

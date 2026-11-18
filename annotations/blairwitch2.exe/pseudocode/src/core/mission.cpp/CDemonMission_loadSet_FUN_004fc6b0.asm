@@ -11,7 +11,7 @@
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90 at 004fcaef
 ;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca3d
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00 at 004fcb5b
-;   core_mission.cpp_FUN_004fce00 at 004fcea2
+;   core_mission.cpp_CDemonMission_startMission_FUN_004fce00 at 004fcea2
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900
@@ -22,7 +22,7 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004bfa70
+;   core_game.cpp_CGame_onSetLoaded_FUN_004bfa70
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004fc4c0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350
 ;   core_set.cpp_CDemonSet_load_FUN_0052c0e0
@@ -91,8 +91,8 @@ section .text
     MOV EBP,dword ptr [0x00616494]      ; 004fc729 | g_CGamePtr
         ;   Label: LAB_004fc729
     PUSH EBP                            ; 004fc72f | g_CGameInstance
-    CALL core_game.cpp_FUN_004bfa70     ; 004fc730
-        ;   XREF to: 004bfa70 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bfa70()
+    CALL core_game.cpp_CGame_onSetLoaded_FUN_004bfa70 ; 004fc730
+        ;   XREF to: 004bfa70 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_onSetLoaded_FUN_004bfa70(CGame * this_ptr)
     ADD ESP,0x4                         ; 004fc735
     POP ESI                             ; 004fc738
     POP EBP                             ; 004fc739

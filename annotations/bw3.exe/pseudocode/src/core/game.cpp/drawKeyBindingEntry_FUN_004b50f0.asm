@@ -1,21 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(void)
+; void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(EInputCodeType key_code,char *action_name)
 ;
+; Parameters:
+; EInputCodeType   Stack[0x4]:4   key_code
+; char *           Stack[0x8]:4   action_name
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba18
-;   undefined4 DAT_005fba1c
-;   undefined4 DAT_01549aa8
-;   undefined4 DAT_01d22c54
-;   undefined4 DAT_01d22c58
-;   undefined4 DAT_01d22c5c
+;   int g_INT_005fba18 = 0x140
+;   int g_INT_005fba1c = 0xc8
+;   CBitFont* g_CBitFont_PTR_01549aa8
+;   int g_INT_01d22c54
+;   int g_INT_01d22c58
+;   int g_INT_01d22c5c
 ;
 ; Called Functions:
 ;   core_menu.cpp_getKeyDisplayName_FUN_004eaa60
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_font.cpp_FUN_004b0a20
+;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
 ;
 ; *****************************************************************************
 
@@ -42,37 +45,37 @@ section .text
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b5122
     PUSH -0x1                           ; 004b5125
-    MOV EAX,[0x01d22c58]                ; 004b5127 | DAT_01d22c58
+    MOV EAX,[0x01d22c58]                ; 004b5127 | g_INT_01d22c58
     PUSH 0x0                            ; 004b512c
     ADD EAX,0x2                         ; 004b512e
     PUSH EAX                            ; 004b5131
-    MOV EAX,[0x01d22c54]                ; 004b5132 | DAT_01d22c54
+    MOV EAX,[0x01d22c54]                ; 004b5132 | g_INT_01d22c54
     ADD EAX,0x2                         ; 004b5137
     PUSH EAX                            ; 004b513a
     LEA EAX,[ESP + 0x10]                ; 004b513b
     PUSH EAX                            ; 004b513f
-    MOV EBX,dword ptr [0x01549aa8]      ; 004b5140 | DAT_01549aa8
+    MOV EBX,dword ptr [0x01549aa8]      ; 004b5140 | g_CBitFont_PTR_01549aa8
     PUSH EBX                            ; 004b5146
-    CALL engine_font.cpp_FUN_004b0a20   ; 004b5147
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004b5147
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004b514c
     PUSH -0x1                           ; 004b514f
     PUSH 0x7                            ; 004b5151
-    MOV ESI,dword ptr [0x01d22c58]      ; 004b5153 | DAT_01d22c58
+    MOV ESI,dword ptr [0x01d22c58]      ; 004b5153 | g_INT_01d22c58
     PUSH ESI                            ; 004b5159
-    MOV EDI,dword ptr [0x01d22c54]      ; 004b515a | DAT_01d22c54
+    MOV EDI,dword ptr [0x01d22c54]      ; 004b515a | g_INT_01d22c54
     PUSH EDI                            ; 004b5160
     LEA EAX,[ESP + 0x10]                ; 004b5161
     PUSH EAX                            ; 004b5165
-    MOV EBP,dword ptr [0x01549aa8]      ; 004b5166 | DAT_01549aa8
+    MOV EBP,dword ptr [0x01549aa8]      ; 004b5166 | g_CBitFont_PTR_01549aa8
     PUSH EBP                            ; 004b516c
-    CALL engine_font.cpp_FUN_004b0a20   ; 004b516d
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
-    MOV EAX,[0x01d22c5c]                ; 004b5172 | DAT_01d22c5c
-    ADD dword ptr [0x01d22c58],EAX      ; 004b5177 | DAT_01d22c58
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004b0a20 ; 004b516d
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004b0a20(CBitFont * this_ptr, char * text, int x, int y, ...)
+    MOV EAX,[0x01d22c5c]                ; 004b5172 | g_INT_01d22c5c
+    ADD dword ptr [0x01d22c58],EAX      ; 004b5177 | g_INT_01d22c58
     SHL EAX,0x2                         ; 004b517d
-    MOV EDX,dword ptr [0x005fba1c]      ; 004b5180 | DAT_005fba1c
-    MOV ECX,dword ptr [0x01d22c58]      ; 004b5186 | DAT_01d22c58
+    MOV EDX,dword ptr [0x005fba1c]      ; 004b5180 | g_INT_005fba1c
+    MOV ECX,dword ptr [0x01d22c58]      ; 004b5186 | g_INT_01d22c58
     SUB EDX,EAX                         ; 004b518c
     ADD ESP,0x18                        ; 004b518e
     CMP EDX,ECX                         ; 004b5191
@@ -84,18 +87,18 @@ section .text
     POP ESI                             ; 004b519d
     POP EBX                             ; 004b519e
     RET                                 ; 004b519f
-    MOV EDX,dword ptr [0x01d22c5c]      ; 004b51a0 | DAT_01d22c5c
+    MOV EDX,dword ptr [0x01d22c5c]      ; 004b51a0 | g_INT_01d22c5c
         ;   Label: LAB_004b51a0
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b51a6
     SUB EAX,EDX                         ; 004b51ad
     ADD EAX,EAX                         ; 004b51af
-    MOV [0x01d22c58],EAX                ; 004b51b1 | DAT_01d22c58
-    MOV EAX,[0x005fba18]                ; 004b51b6 | DAT_005fba18
+    MOV [0x01d22c58],EAX                ; 004b51b1 | g_INT_01d22c58
+    MOV EAX,[0x005fba18]                ; 004b51b6 | g_INT_005fba18
     MOV EDX,EAX                         ; 004b51bb
     MOV ECX,0x3                         ; 004b51bd
     SAR EDX,0x1f                        ; 004b51c2
     IDIV ECX                            ; 004b51c5
-    ADD dword ptr [0x01d22c54],EAX      ; 004b51c7 | DAT_01d22c54
+    ADD dword ptr [0x01d22c54],EAX      ; 004b51c7 | g_INT_01d22c54
     ADD ESP,0x100                       ; 004b51cd
     POP EBP                             ; 004b51d3
     POP EDI                             ; 004b51d4

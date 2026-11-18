@@ -37,7 +37,7 @@ int FUN_005a8ae8(int param_1,int *param_2)
   local_24 = 0;
   while( true ) {
     iVar5 = FUN_005a82a0(param_1);
-    if (((&DAT_006074b8)[(byte)((char)iVar5 + 1)] & 2) == 0) break;
+    if ((g_CharacterClassificationTable[(byte)((char)iVar5 + 1)] & 2) == 0) break;
     local_24 = local_24 + 1;
   }
   if ((*(byte *)(param_1 + 0x10) & 2) != 0) goto LAB_005a8d1d;
@@ -52,11 +52,12 @@ int FUN_005a8ae8(int param_1,int *param_2)
       iVar5 = FUN_005a9288(param_1);
       if (iVar5 == -1) goto LAB_005a8d1d;
     }
-    if ((((&DAT_006074b8)[(byte)((char)iVar5 + 1)] & 0x20) != 0) || (iVar5 == 0x2e)) {
+    if (((g_CharacterClassificationTable[(byte)((char)iVar5 + 1)] & 0x20) != 0) || (iVar5 == 0x2e))
+    {
       local_1c._0_2_ = 0;
       local_1c._2_2_ = 0;
       local_28 = 0;
-      if (((&DAT_006074b8)[(byte)((char)iVar5 + 1)] & 0x20) != 0) {
+      if ((g_CharacterClassificationTable[(byte)((char)iVar5 + 1)] & 0x20) != 0) {
         local_28 = 1;
         do {
           *pcVar9 = (char)iVar5;
@@ -67,7 +68,7 @@ int FUN_005a8ae8(int param_1,int *param_2)
           iVar10 = iVar10 + 1;
           iVar5 = FUN_005a9288(param_1);
           if (iVar5 == -1) goto LAB_005a8d1d;
-        } while (((&DAT_006074b8)[(byte)((char)iVar5 + 1)] & 0x20) != 0);
+        } while ((g_CharacterClassificationTable[(byte)((char)iVar5 + 1)] & 0x20) != 0);
       }
       pcVar7 = pcVar9;
       iVar11 = iVar10;
@@ -76,11 +77,12 @@ int FUN_005a8ae8(int param_1,int *param_2)
         pcVar9 = pcVar9 + 1;
         iVar5 = FUN_005a9288(param_1);
         if (iVar5 == -1) goto LAB_005a8d1d;
-        if ((local_28 == 0) && (((&DAT_006074b8)[(byte)((char)iVar5 + 1)] & 0x20) == 0))
+        if ((local_28 == 0) &&
+           ((g_CharacterClassificationTable[(byte)((char)iVar5 + 1)] & 0x20) == 0))
         goto LAB_005a8d13;
         iVar10 = iVar10 + 1;
         do {
-          if (((&DAT_006074b8)[(byte)((char)iVar5 + 1)] & 0x20) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)((char)iVar5 + 1)] & 0x20) == 0) break;
           iVar10 = iVar10 + 1;
           *pcVar9 = (char)iVar5;
           pcVar9 = pcVar9 + 1;
@@ -121,7 +123,7 @@ int FUN_005a8ae8(int param_1,int *param_2)
           iVar5 = FUN_005a9288(param_1);
           if (iVar5 == -1) goto LAB_005a8d1d;
         }
-        if (((&DAT_006074b8)[(byte)((char)iVar5 + 1)] & 0x20) == 0) {
+        if ((g_CharacterClassificationTable[(byte)((char)iVar5 + 1)] & 0x20) == 0) {
           iVar10 = 0;
         }
         else {
@@ -131,7 +133,7 @@ int FUN_005a8ae8(int param_1,int *param_2)
             pcVar9 = pcVar9 + 1;
             iVar5 = FUN_005a9288(param_1);
             if (iVar5 == -1) goto LAB_005a8d1d;
-          } while (((&DAT_006074b8)[(byte)((char)iVar5 + 1)] & 0x20) != 0);
+          } while ((g_CharacterClassificationTable[(byte)((char)iVar5 + 1)] & 0x20) != 0);
         }
       }
     }

@@ -9,37 +9,37 @@
 // Address: 0041a590
 void __cdecl CBoundingBox3D::expand(CBoundingBox3D *this_ptr,CVector3f *point);
 
-// Original: core_box.cpp_FUN_0041a600
+// Original: core_box.cpp_CBoundingBox3D_getCorner_FUN_0041a600
 // Address: 0041a600
-void FUN_0041a600(undefined4 *param_1,uint param_2);
+CVector3f * __stack2_esi CBoundingBox3D::getCorner(CBoundingBox3D *this_ptr,uint corner_index,CVector3f *out_point);
 
 // Original: core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041a670
 // Address: 0041a670
 int __cdecl CBoundingBox3D::isVisibleWithShadow(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041a840
+// Original: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 // Address: 0041a840
-undefined4 FUN_0041a840(CBoundingBox3D *param_1,int param_2);
+int __cdecl CBoundingBox3D::isVisible(CBoundingBox3D *this_ptr,int skip_shadow_test);
 
-// Original: core_box.cpp_FUN_0041aa20
+// Original: core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041aa20
 // Address: 0041aa20
-undefined4 FUN_0041aa20(float *param_1);
+int __cdecl CBoundingBox3D::isVisibleWithCamera(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041ae50
+// Original: core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041ae50
 // Address: 0041ae50
-float __cdecl FUN_0041ae50(CBoundingBox3D *this_ptr);
+float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041af70
+// Original: core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70
 // Address: 0041af70
-float FUN_0041af70(float *param_1,float *param_2,float *param_3,float *param_4);
+float __cdecl CBoundingBox3D::doesRayIntersect(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_box.cpp_CBoundingBox3D_reset_FUN_0041b600
 // Address: 0041b600
 void __cdecl CBoundingBox3D::reset(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041b660
+// Original: core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660
 // Address: 0041b660
-int __cdecl FUN_0041b660(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
+int __cdecl CBoundingBox3D::doesBoxIntersect(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 
 // Original: core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_0041b6b0
 // Address: 0041b6b0
@@ -49,13 +49,13 @@ float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 // Address: 0041b700
 void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041bb80
+// Original: core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041bb80
 // Address: 0041bb80
-void FUN_0041bb80(float *param_1,float *param_2);
+CVector3f * __stack2_esi CBoundingBox3D::clampPoint(CBoundingBox3D *this_ptr,CVector3f *in_point,CVector3f *out_point);
 
-// Original: core_box.cpp_FUN_0041bc20
+// Original: core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041bc20
 // Address: 0041bc20
-bool FUN_0041bc20(undefined4 param_1,float *param_2,float param_3);
+int __cdecl CBoundingBox3D::doesSphereIntersect(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);
 
 // Original: core_box.cpp_CBoundingBox3D_ctor_FUN_00534d20
 // Address: 00534d20
@@ -73,13 +73,13 @@ CBox * __cdecl CBox::dtor(CBox *this_ptr,uint flags);
 // Address: 005b1c80
 void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
 
-// Original: core_box.cpp_FUN_005b1eb0
+// Original: core_box.cpp_CBox_setupN_FUN_005b1eb0
 // Address: 005b1eb0
-void FUN_005b1eb0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
+void __cdecl CBox::setupN(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume);
 
-// Original: core_box.cpp_FUN_005b2050
+// Original: core_box.cpp_CBox_updateTransform_FUN_005b2050
 // Address: 005b2050
-void __cdecl FUN_005b2050(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
+void __cdecl CBox::updateTransform(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 
 // Original: core_box.cpp_CBox_process_FUN_005b2290
 // Address: 005b2290

@@ -40,7 +40,7 @@ section .text
     PUSH ESI                            ; 0046a559
     MOV dword ptr [ESP + 0x100c],ECX    ; 0046a55a
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0 ; 0046a561
-        ;   XREF to: 0046a4d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0(CDrawSurface * this_ptr, char * param_2, int param_3)
+        ;   XREF to: 0046a4d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0(CDrawSurface * this_ptr, char * text, int y)
     ADD ESP,0xc                         ; 0046a566
     ADD ESP,0x1004                      ; 0046a569
     POP ESI                             ; 0046a56f

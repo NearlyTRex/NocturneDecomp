@@ -22,11 +22,11 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_004a1760 at 004a19c9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0868
-;   undefined4 DAT_005c0870
-;   undefined4 DAT_005c0878
-;   undefined4 DAT_005df908
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005c0868 = 0.9700000
+;   double g_DOUBLE_005c0870 = 0.200000000000000
+;   double g_DOUBLE_005c0878 = 0.5
+;   float g_FLOAT_005df908 = 15
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
@@ -71,7 +71,7 @@ section .text
     FMUL ST3                            ; 0049e3dc
     FXCH ST3                            ; 0049e3de
     FST double ptr [ESP]                ; 0049e3e0
-    FMUL double ptr [0x005c0870]        ; 0049e3e3 | DAT_005c0870
+    FMUL double ptr [0x005c0870]        ; 0049e3e3 | g_DOUBLE_005c0870
     LEA EDI,[ESP + 0xc]                 ; 0049e3e9
     LEA ESI,[ESP + 0x18]                ; 0049e3ed
     FXCH ST2                            ; 0049e3f1
@@ -96,7 +96,7 @@ section .text
     FXCH                                ; 0049e422
     FSTP float ptr [EBX + 0x4]          ; 0049e424
     FSTP float ptr [EBX + 0x8]          ; 0049e427
-    FLD float ptr [0x005c0868]          ; 0049e42a | DAT_005c0868
+    FLD float ptr [0x005c0868]          ; 0049e42a | g_FLOAT_005c0868
     FLD float ptr [EAX]                 ; 0049e430
     FMUL ST1                            ; 0049e432
     FLD float ptr [EAX + 0x4]           ; 0049e434
@@ -118,7 +118,7 @@ section .text
         ;   XREF to: 0049e495 (CONDITIONAL_JUMP)  ; LAB_0049e495
     FLD float ptr [ESP + 0x2c]          ; 0049e45b
         ;   Label: LAB_0049e45b
-    FMUL float ptr [0x005df908]         ; 0049e45f | DAT_005df908
+    FMUL float ptr [0x005df908]         ; 0049e45f | g_FLOAT_005df908
     FADD float ptr [EBX + 0x1c]         ; 0049e465
     FSTP float ptr [EBX + 0x1c]         ; 0049e468
         ;   Label: LAB_0049e468
@@ -145,7 +145,7 @@ section .text
     RET                                 ; 0049e494
     FLD double ptr [ESP]                ; 0049e495
         ;   Label: LAB_0049e495
-    FMUL double ptr [0x005c0878]        ; 0049e498 | DAT_005c0878
+    FMUL double ptr [0x005c0878]        ; 0049e498 | g_DOUBLE_005c0878
     SUB ESP,0x4                         ; 0049e49e
     FSTP float ptr [ESP]                ; 0049e4a1
     CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 0049e4a4
@@ -158,7 +158,7 @@ section .text
     PUSH 0x0                            ; 0049e4b5
     PUSH 0x3f000000                     ; 0049e4b7
     PUSH EBX                            ; 0049e4bc
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0049e4bd | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0049e4bd | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 0049e4c3
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560 ; 0049e4c4
         ;   XREF to: 004a2560 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

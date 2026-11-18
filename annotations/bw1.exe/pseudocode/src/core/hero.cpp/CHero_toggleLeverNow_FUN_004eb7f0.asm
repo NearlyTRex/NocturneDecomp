@@ -1,19 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero *this_ptr)
+; int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
 ;   core_colonel.cpp_CColonel_process_FUN_00444550 at 004449f5
-;   core_doc.cpp_FUN_0046bde0 at 0046c83f
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_0046bde0 at 0046c83f
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c7901
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e9727
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004ec640 at 004ec741
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f144c
-;   core_stranger.cpp_FUN_005881d0 at 00588877
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0 at 00588877
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 00593711
 ;
 ; Referenced Globals:

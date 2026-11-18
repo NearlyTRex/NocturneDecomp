@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_004df7c0(CLadder *this_ptr,CBoundingBox3D *out_box)
 
 {
@@ -24,10 +22,10 @@ CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_004df7c0(CLa
   bVar6 = 0;
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
   if (pCVar2->poly_count < 1) {
-    fVar1 = (float)_DAT_005c6855;
+    fVar1 = (float)0.5;
     CStack_38.min.y = -0.1;
     CStack_38.max.x = (this_ptr->ladder_size).x * fVar1;
-    CStack_38.max.y = (this_ptr->ladder_size).y + (float)_DAT_005c685d;
+    CStack_38.max.y = (this_ptr->ladder_size).y + (float)0.10000000000000001;
     CStack_38.max.z = (this_ptr->ladder_size).z * fVar1;
     iVar3 = 6;
     CStack_38.min.z = -(this_ptr->ladder_size).z * fVar1;

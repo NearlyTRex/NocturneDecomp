@@ -7,8 +7,8 @@
 ; CStairs *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5c80
-;   undefined4 DAT_005d5c85
+;   TerminatedCString s_rise_005d5c80
+;   TerminatedCString s_run_005d5c85
 ;   TerminatedCString s_width_005d5c89
 ;   TerminatedCString s_count_005d5c8f
 ;   TerminatedCString s_groundType_005d5c95
@@ -29,13 +29,13 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 005684d6
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005684db
-    PUSH 0x5d5c80                       ; 005684de | DAT_005d5c80
+    PUSH 0x5d5c80                       ; 005684de | = "rise"
     LEA EAX,[EBX + 0x158]               ; 005684e3
     PUSH EAX                            ; 005684e9
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 005684ea
         ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005684ef
-    PUSH 0x5d5c85                       ; 005684f2 | DAT_005d5c85
+    PUSH 0x5d5c85                       ; 005684f2 | = "run"
     LEA EAX,[EBX + 0x15c]               ; 005684f7
     PUSH EAX                            ; 005684fd
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 005684fe

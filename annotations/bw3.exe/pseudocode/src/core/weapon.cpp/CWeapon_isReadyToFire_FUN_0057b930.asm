@@ -7,8 +7,8 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_wp_nomana_wav_005d78de+1
-;   undefined4 DAT_006045f8
+;   TerminatedCString s_wp_nomana_wav_005d78df
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;
 ; Called Functions:
@@ -94,9 +94,9 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 0057b9d5
         ;   Label: LAB_0057b9d5
     PUSH EAX                            ; 0057b9d8
-    PUSH 0x5d78df                       ; 0057b9d9 | s_wp_nomana_wav_005d78de+1
+    PUSH 0x5d78df                       ; 0057b9d9 | = "wp_nomana.wav"
     PUSH EBX                            ; 0057b9de
-    MOV ECX,dword ptr [0x006045f8]      ; 0057b9df | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 0057b9df | g_CSound_PTR_006045f8
     PUSH ECX                            ; 0057b9e5
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0057b9e6
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

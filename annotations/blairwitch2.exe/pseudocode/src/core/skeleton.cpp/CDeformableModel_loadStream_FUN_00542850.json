@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 903,
-    "complexity_score": 336,
+    "complexity_score": 255,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 241,
-    "suspect_count": 8,
+    "pseudocode_lines": 240,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 1144
+    "total_lines": 1143
   },
   "cross_references": [
     {
@@ -40,7 +38,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "00541370",
@@ -71,8 +69,8 @@
   "globals": [
     {
       "addr": "005e6e5d",
-      "name": "DAT_005e6e5d",
-      "type": "undefined4",
+      "name": "s_d_005e6e5d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -143,8 +141,8 @@
     },
     {
       "addr": "005e6f5c",
-      "name": "DAT_005e6f5c",
-      "type": "undefined4",
+      "name": "s_d_005e6f5c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -161,14 +159,14 @@
     },
     {
       "addr": "005e6f79",
-      "name": "DAT_005e6f79",
-      "type": "undefined4",
+      "name": "s_d_005e6f79",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e6f7d",
-      "name": "DAT_005e6f7d",
-      "type": "undefined4",
+      "name": "s_d_005e6f7d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -185,8 +183,8 @@
     },
     {
       "addr": "005e6fb0",
-      "name": "DAT_005e6fb0",
-      "type": "undefined4",
+      "name": "s_d_005e6fb0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -215,8 +213,8 @@
     },
     {
       "addr": "005e6fd9",
-      "name": "DAT_005e6fd9",
-      "type": "undefined4",
+      "name": "s_d_005e6fd9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -233,20 +231,20 @@
     },
     {
       "addr": "0061bbd8",
-      "name": "DAT_0061bbd8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061bbd8",
+      "type": "int",
+      "value": "0x7"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -571,64 +569,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005e6e5d",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(file_handle,&DAT_005e6e5d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_005e6f79",
-      "severity": "mild",
-      "text": "iVar4 = _fscanf(file_handle,&DAT_005e6f79);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 126,
-      "match": "DAT_005e6f5c",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e6f5c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_005e6f7d",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(file_handle,&DAT_005e6f7d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 180,
-      "match": "DAT_005e6fb0",
-      "severity": "mild",
-      "text": "iVar4 = _fscanf(file_handle,&DAT_005e6fb0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 232,
-      "match": "DAT_005e6fd9",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e6fd9);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 215,
+      "line": 213,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->bias_used).z = 0.0;",

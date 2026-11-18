@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,void *param_2,int param_3)
+; int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,void *data,int size)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; void *           Stack[0x8]:4   data
+; int              Stack[0xc]:4   size
 ;
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610 at 0045372e
-;   core_game.cpp_FUN_004d6420 at 004d6767
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d6767
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a58
 ;
 ; Called Functions:

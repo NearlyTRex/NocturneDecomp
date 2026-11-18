@@ -39,7 +39,7 @@
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360 at 0042765b
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0 at 004280de
 ;   core_charactr.cpp_CCharacter_testDamageLine_FUN_00427c80 at 00427e6d
-;   core_doc.cpp_FUN_00453250 at 00453a30
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_00453250 at 00453a30
 ;   core_dracbrid.cpp_CDraculaBride_explode_FUN_00464700 at 004649eb
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 0048702d
 ;   core_enemy.cpp_CEnemy_testAttackLine_FUN_004881b0 at 00488234
@@ -156,7 +156,7 @@ section .text
         ;   Label: LAB_004c9922
     FLD float ptr [ESP + 0x40]          ; 004c9926
     CALL crt_math.c_atan2_FUN_005b9989  ; 004c992a
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     FLD float ptr [ESP + 0x48]          ; 004c992f
     FMUL ST0                            ; 004c9933
     FLD float ptr [ESP + 0x40]          ; 004c9935
@@ -165,7 +165,7 @@ section .text
     FSQRT                               ; 004c993d
     FLD float ptr [ESP + 0x44]          ; 004c993f
     CALL crt_math.c_atan2_FUN_005b9989  ; 004c9943
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     XOR EDI,EDI                         ; 004c9948
     XOR EBX,EBX                         ; 004c994a
     MOV dword ptr [ESP + 0x54],EDI      ; 004c994c

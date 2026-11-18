@@ -16,12 +16,12 @@
 ;   TerminatedCString s_CNetGame_applySimFrameHi_005ec334
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_slamDT_FUN_004d7f50
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -88,10 +88,10 @@ section .text
         ;   Label: LAB_00530630
     MOV EBX,0x9cd                       ; 00530635
     PUSH 0x5ec334                       ; 0053063a | = "CNetGame::applySimFrameHistory - I'm ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0053063f | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00530645 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053064b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0053063f | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00530645 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053064b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530650
     JMP 0x005305b5                      ; 00530653
         ;   XREF to: 005305b5 (UNCONDITIONAL_JUMP)  ; LAB_005305b5

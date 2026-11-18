@@ -12,11 +12,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f246c
 ;   TerminatedCString s_CDeformableModelInstance_005f2481
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModelInstance_free_FUN_005674d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
@@ -43,7 +43,7 @@ section .text
     SHL EAX,0x2                         ; 00567474
     PUSH EAX                            ; 00567477
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00567478
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 0056747d
     MOV dword ptr [EBX + 0x2324],EAX    ; 00567480
     TEST EAX,EAX                        ; 00567486
@@ -59,10 +59,10 @@ section .text
     MOV ECX,0x5f246c                    ; 00567499 | = "..\\core\\skeleton.cpp"
     MOV EDI,0x919                       ; 0056749e
     PUSH 0x5f2481                       ; 005674a3 | = "CDeformableModelInstance::allocPointL..."
-    MOV dword ptr [0x01d1d400],ECX      ; 005674a8 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 005674ae | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005674b4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 005674a8 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 005674ae | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005674b4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 005674b9
     POP EDI                             ; 005674bc
     MOV dword ptr [EBX + 0x2320],0xffffffff ; 005674bd

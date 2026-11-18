@@ -22,3 +22,12 @@ extern CMouse g_CMouseInstance;
 // CPathMap[12]
 extern CPathMap g_PathMapCache[12];
 
+// char*[500]
+extern char* g_CHAR_PTR_ARRAY_01d80930[500];
+
+// int
+extern int g_INT_01d81364;
+
+// int[499]
+extern int g_INT_ARRAY_01d80164[499];
+

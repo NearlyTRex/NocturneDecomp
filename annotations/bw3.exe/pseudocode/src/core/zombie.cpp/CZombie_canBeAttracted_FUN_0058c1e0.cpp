@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_0058c1e0(CZombie *this_ptr,CVector3f *out_attract_position)
 
 {
@@ -16,27 +13,28 @@ int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_0058c1e0(CZombie *this_pt
   float fVar1;
   byte bVar2;
   float afStackY_106c [1014];
-  float *pfVar3;
+  CVector3f *input_local_point;
   float fStack_84;
   float fStack_80;
   float fStack_7c;
   float fStack_78;
   float fStack_74;
   float fStack_70;
-  float fStack_6c;
+  CVector3f CStack_6c;
   CVector3f CStack_60;
   CVector3f CStack_54;
   float fStack_48;
   float afStack_44 [4];
   float fStack_34;
-  float fStack_30;
+  CVector3f CStack_30;
   CVector3f CStack_24;
   float fStack_18;
   float afStack_14 [3];
   
   bVar2 = 0;
   this_ptr_00 = &(this_ptr->base).base.model;
-  afStack_14[2] = (float)core_motion_cpp_FUN_004fc350(this_ptr_00,5);
+  afStack_14[2] =
+       core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004fc350(&this_ptr_00->base,5);
   if (afStack_14[2] <= 0.0) {
     return 0;
   }
@@ -61,20 +59,22 @@ int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_0058c1e0(CZombie *this_pt
   afStack_44[(uint)bVar2 * -2] = afStack_14[(uint)bVar2 * -2];
   afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
        afStack_14[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  pfVar3 = &stack0xffffff94;
-  fStack_78 = fStack_48 * _DAT_005d88f3;
-  fStack_74 = afStack_44[0] * _DAT_005d88f3;
-  fStack_70 = afStack_44[1] * _DAT_005d88f3;
-  fStack_6c = fStack_48 * _DAT_005d88f3;
-  *(uint *)((int)&stack0xffffff98 + (uint)bVar2 * 0xfffffffe * 4) =
+  input_local_point = &CStack_6c;
+  fStack_78 = fStack_48 * 0.5f;
+  fStack_74 = afStack_44[0] * 0.5f;
+  fStack_70 = afStack_44[1] * 0.5f;
+  CStack_6c.x = fStack_48 * 0.5f;
+  *(uint *)((int)&CStack_6c + (uint)bVar2 * -8 + 4) =
        *(uint *)((int)&stack0xffffff8c + (uint)bVar2 * -8);
-  afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -8] =
-       *(float *)((int)&stack0xffffff90 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  core_actor_cpp_FUN_00408b80(this_ptr,pfVar3);
-  CStack_60.x = fStack_30;
-  *(float *)((int)&CStack_60 + (uint)bVar2 * -8 + 4) = afStack_44[(uint)bVar2 * -2 + 6];
-  *(float *)((int)&CStack_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7];
+  *(uint *)((int)&CStack_6c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&stack0xffffff90 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+            ((CDemonActor *)this_ptr,input_local_point,&CStack_30);
+  CStack_60.x = CStack_30.x;
+  *(uint *)((int)&CStack_60 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&CStack_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   if (&CStack_60 != out_attract_position) {
     out_attract_position->x = CStack_60.x;
     out_attract_position->y = CStack_60.y;

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_hostage_cpp_CHostage_getActorType_FUN_004b69e0(CHostage *this_ptr)
 
 {
-  return &g_CHostageActorType_01cae1a4;
+  return &g_CHostageClassInfo;
 }

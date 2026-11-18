@@ -11,7 +11,8 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00418f60(CBoneGuy *this_p
 {
   int iVar1;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+  iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(g_CDemonRenderer_PTR_005f2afc)
+  ;
   if (iVar1 == 0) {
     return 0;
   }

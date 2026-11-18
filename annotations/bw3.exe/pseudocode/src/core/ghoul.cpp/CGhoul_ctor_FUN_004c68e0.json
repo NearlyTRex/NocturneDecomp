@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 58,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "raw_address_constant",
+      "suspect_float"
     ],
-    "total_lines": 108
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -64,21 +65,21 @@
   "globals": [
     {
       "addr": "005c405d",
-      "name": "DAT_005c405d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c405d",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "005e0a40",
-      "name": "DAT_005e0a40",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e0a40",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005e0a44",
-      "name": "DAT_005e0a44",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e0a44",
+      "type": "float",
+      "value": "100"
     }
   ],
   "param_estimates": {
@@ -172,12 +173,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Likely misinterpreted integer as float",
+      "line": 18,
+      "match": "7.017249e-39",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "fVar4 = 7.017249e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Raw hex address 0x4c6987 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 27,
+      "match": "0x4c6987",
+      "severity": "moderate",
+      "text": "iVar5 = 0x4c6987;",
+      "type": "raw_address_constant"
     }
   ],
   "vtable_info": {

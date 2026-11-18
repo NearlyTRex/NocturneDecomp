@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 133,
     "complexity_score": 154,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -20,6 +20,12 @@
       "addr": "0043d280",
       "from_addr": "0043d340",
       "name": "engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043d6e0",
+      "from_addr": "0043dc6c",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,7 +50,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 6,
     "call_sites": [
       {
         "call_addr": "0043e40e",
@@ -83,6 +89,28 @@
         "call_addr": "0043d393",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043dc6c",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043dcc2",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

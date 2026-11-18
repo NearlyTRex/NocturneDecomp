@@ -327,6 +327,10 @@
     "convention":"unknown",
     "param_bytes":8
   },
+  "CDemonActor_releaseResources":{
+    "convention":"unknown",
+    "param_bytes":4
+  },
   "CDemonActor_renderBackground":{
     "convention":"unknown",
     "param_bytes":8
@@ -545,11 +549,15 @@
   },
   "CSoundDevice_allocateSample":{
     "convention":"__cdecl",
-    "param_bytes":20
+    "param_bytes":8
   },
   "CSoundDevice_allocateSfx":{
     "convention":"__cdecl",
     "param_bytes":8
+  },
+  "CSoundDevice_applySfxChanges":{
+    "convention":"__cdecl",
+    "param_bytes":12
   },
   "CSoundDevice_close":{
     "convention":"__cdecl",
@@ -587,17 +595,21 @@
     "convention":"__cdecl",
     "param_bytes":12
   },
+  "CSoundDevice_pollPlayback":{
+    "convention":"__cdecl",
+    "param_bytes":4
+  },
   "CSoundDevice_reset":{
     "convention":"__cdecl",
     "param_bytes":4
   },
   "CSoundDevice_set3DListenerDistanceFactor":{
     "convention":"__cdecl",
-    "param_bytes":12
+    "param_bytes":8
   },
   "CSoundDevice_set3DListenerOrient":{
     "convention":"__cdecl",
-    "param_bytes":76
+    "param_bytes":40
   },
   "CSoundDevice_set3DListenerPos":{
     "convention":"__cdecl",
@@ -605,15 +617,15 @@
   },
   "CSoundDevice_set3DListenerVelocity":{
     "convention":"__cdecl",
-    "param_bytes":28
+    "param_bytes":16
   },
   "CSoundDevice_setMode":{
     "convention":"__cdecl",
     "param_bytes":20
   },
-  "CSoundDevice_setSfxPos":{
+  "CSoundDevice_setReverb":{
     "convention":"__cdecl",
-    "param_bytes":12
+    "param_bytes":16
   },
   "CSoundDevice_start":{
     "convention":"__cdecl",
@@ -625,7 +637,7 @@
   },
   "CSoundDevice_unlockSample":{
     "convention":"__cdecl",
-    "param_bytes":8
+    "param_bytes":16
   },
   "CStrList_clear":{
     "convention":"__cdecl",
@@ -682,6 +694,10 @@
   "CWeapon_updateLighting":{
     "convention":"unknown",
     "param_bytes":4
+  },
+  "ColorConversionFunc":{
+    "convention":"__cdecl",
+    "param_bytes":12
   },
   "CustomScanlineFunc":{
     "convention":"__cdecl",
@@ -899,6 +915,66 @@
     "convention":"__stdcall",
     "param_bytes":12
   },
+  "IDirectSound3DListener_CommitDeferredSettings":{
+    "convention":"__cdecl",
+    "param_bytes":4
+  },
+  "IDirectSound3DListener_GetAllParameters":{
+    "convention":"__cdecl",
+    "param_bytes":8
+  },
+  "IDirectSound3DListener_GetDistanceFactor":{
+    "convention":"__cdecl",
+    "param_bytes":8
+  },
+  "IDirectSound3DListener_GetDopplerFactor":{
+    "convention":"__cdecl",
+    "param_bytes":8
+  },
+  "IDirectSound3DListener_GetOrientation":{
+    "convention":"__cdecl",
+    "param_bytes":12
+  },
+  "IDirectSound3DListener_GetPosition":{
+    "convention":"__cdecl",
+    "param_bytes":8
+  },
+  "IDirectSound3DListener_GetRolloffFactor":{
+    "convention":"__cdecl",
+    "param_bytes":8
+  },
+  "IDirectSound3DListener_GetVelocity":{
+    "convention":"__cdecl",
+    "param_bytes":8
+  },
+  "IDirectSound3DListener_SetAllParameters":{
+    "convention":"__cdecl",
+    "param_bytes":12
+  },
+  "IDirectSound3DListener_SetDistanceFactor":{
+    "convention":"__cdecl",
+    "param_bytes":12
+  },
+  "IDirectSound3DListener_SetDopplerFactor":{
+    "convention":"__cdecl",
+    "param_bytes":12
+  },
+  "IDirectSound3DListener_SetOrientation":{
+    "convention":"__cdecl",
+    "param_bytes":32
+  },
+  "IDirectSound3DListener_SetPosition":{
+    "convention":"__cdecl",
+    "param_bytes":20
+  },
+  "IDirectSound3DListener_SetRolloffFactor":{
+    "convention":"__cdecl",
+    "param_bytes":12
+  },
+  "IDirectSound3DListener_SetVelocity":{
+    "convention":"__cdecl",
+    "param_bytes":20
+  },
   "IDirectSoundBuffer_GetCaps":{
     "convention":"__cdecl",
     "param_bytes":8
@@ -1003,6 +1079,18 @@
     "convention":"__cdecl",
     "param_bytes":8
   },
+  "IKsPropertySet_Get":{
+    "convention":"__cdecl",
+    "param_bytes":32
+  },
+  "IKsPropertySet_QuerySupport":{
+    "convention":"__cdecl",
+    "param_bytes":16
+  },
+  "IKsPropertySet_Set":{
+    "convention":"__cdecl",
+    "param_bytes":28
+  },
   "IUnknown_AddRef":{
     "convention":"__stdcall",
     "param_bytes":4
@@ -1018,6 +1106,10 @@
   "LPDSENUMCALLBACKA_FUNC":{
     "convention":"__stdcall",
     "param_bytes":16
+  },
+  "OptimizedMemcpyFunc":{
+    "convention":"__cdecl",
+    "param_bytes":12
   },
   "PHANDLER_ROUTINE_FUNC":{
     "convention":"unknown",

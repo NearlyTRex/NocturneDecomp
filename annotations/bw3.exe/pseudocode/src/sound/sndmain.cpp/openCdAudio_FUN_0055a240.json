@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 61,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 123
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 122
   },
   "cross_references": [],
   "function": {
@@ -43,14 +40,14 @@
   "globals": [
     {
       "addr": "02ce7214",
-      "name": "DAT_02ce7214",
-      "type": "undefined4",
+      "name": "g_INT_02ce7214",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02ce7218",
-      "name": "DAT_02ce7218",
-      "type": "undefined4",
+      "name": "g_INT_02ce7218",
+      "type": "int",
       "value": null
     }
   ],
@@ -111,22 +108,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x5d3f32 assigned to bare local `uStack_28`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_28` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 18,
-      "match": "0x5d3f32",
-      "severity": "moderate",
-      "text": "uStack_28 = 0x5d3f32;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

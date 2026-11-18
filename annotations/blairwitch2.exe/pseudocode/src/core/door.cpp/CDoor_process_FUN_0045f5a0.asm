@@ -9,13 +9,13 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0045f588 = 0045f5e9
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_004495a0
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
 ;   core_door.cpp_CDoor_reposition_FUN_0045f030
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
@@ -54,7 +54,7 @@ section .text
     LEA EAX,[EBP + 0x444]               ; 0045f5e9
         ;   Label: caseD_0
     PUSH EAX                            ; 0045f5ef
-    MOV EBX,dword ptr [0x006141f0]      ; 0045f5f0 | DAT_006141f0
+    MOV EBX,dword ptr [0x006141f0]      ; 0045f5f0 | g_CEventListPtr
     PUSH EBX                            ; 0045f5f6
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0045f5f7
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 0045f677 (CONDITIONAL_JUMP)  ; LAB_0045f677
     LEA EAX,[EBP + 0x50c]               ; 0045f661
     PUSH EAX                            ; 0045f667
-    MOV EDI,dword ptr [0x006141f0]      ; 0045f668 | DAT_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 0045f668 | g_CEventListPtr
     PUSH EDI                            ; 0045f66e
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 0045f66f
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)
@@ -151,7 +151,7 @@ section .text
     LEA EAX,[EBP + 0x4a8]               ; 0045f71b
         ;   Label: caseD_2
     PUSH EAX                            ; 0045f721
-    MOV EAX,[0x006141f0]                ; 0045f722 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 0045f722 | g_CEventListPtr
     PUSH EAX                            ; 0045f727
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0045f728
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -291,7 +291,7 @@ section .text
         ;   XREF to: 0045f677 (CONDITIONAL_JUMP)  ; LAB_0045f677
     LEA EAX,[EBP + 0x570]               ; 0045f910
     PUSH EAX                            ; 0045f916
-    MOV EAX,[0x006141f0]                ; 0045f917 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 0045f917 | g_CEventListPtr
     PUSH EAX                            ; 0045f91c
     JMP 0x0045f66f                      ; 0045f91d
         ;   XREF to: 0045f66f (UNCONDITIONAL_JUMP)  ; LAB_0045f66f
@@ -364,8 +364,8 @@ section .text
     PUSH ECX                            ; 0045f9ec
     LEA ESI,[ESP + 0x78]                ; 0045f9ed
     LEA EDI,[ESP + 0x90]                ; 0045f9f1
-    CALL core_dirmat.cpp_FUN_004495a0   ; 0045f9f8
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 0045f9f8
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x78]                ; 0045f9fd
     ADD ESP,0x8                         ; 0045fa01
     LEA EAX,[ESP + 0x58]                ; 0045fa04

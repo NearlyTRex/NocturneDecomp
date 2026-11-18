@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 65,
+    "complexity_score": 40,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 46
@@ -69,8 +68,8 @@
     },
     {
       "addr": "005c20d8",
-      "name": "DAT_005c20d8",
-      "type": "undefined4",
+      "name": "g_GlobalSignalHandlers",
+      "type": "SIGNAL_HANDLER_TYPE[26]",
       "value": null
     }
   ],
@@ -164,22 +163,6 @@
       "severity": "moderate",
       "text": "iVar2 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005c20d8",
-      "severity": "mild",
-      "text": "SVar1 = *(SIGNAL_HANDLER_TYPE *)(&DAT_005c20d8 + signal_number * 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005c20d8",
-      "severity": "mild",
-      "text": "*(SIGNAL_HANDLER_TYPE *)(&DAT_005c20d8 + signal_number * 8) = new_handler_type;",
-      "type": "undefined_data"
     }
   ]
 }

@@ -8,7 +8,7 @@
 ; EInputCodeType   Stack[0x8]:4   key_code
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02598
+;   char[4952] g_KeyboardState
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c4191
     XOR EAX,EAX                         ; 004c4195
     XOR BL,BL                           ; 004c4197
-    MOV AL,byte ptr [EDX + 0x1c02598]   ; 004c4199 | DAT_01c02598
-    MOV byte ptr [EDX + 0x1c02598],BL   ; 004c419f | DAT_01c02598
+    MOV AL,byte ptr [EDX + 0x1c02598]   ; 004c4199 | g_KeyboardState
+    MOV byte ptr [EDX + 0x1c02598],BL   ; 004c419f | g_KeyboardState
     POP EBX                             ; 004c41a5
     RET                                 ; 004c41a6
 

@@ -40,12 +40,12 @@ extern CGore g_CGoreInstance;
 extern CPickList g_CPickList;
 
 // CVector3f
-extern CVector3f CVector3f_02d832a8;
-extern CVector3f CVector3f_02d832b4;
+extern CVector3f g_GhoulOffsetMinusX;
+extern CVector3f g_GhoulOffsetPlusX;
 
 // CVector3i
 extern CVector3i g_ParticleCameraRotation;
-extern CVector3i CVector3i_02d8339c;
+extern CVector3i g_BloodParticleViewDirection;
 
 // SMRGLPrimitiveQuadIndex
 extern SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive;
@@ -67,7 +67,7 @@ extern float g_OverlayDisplayTimer;
 extern float g_IrisFadeRadius;
 
 // int
-extern int INT_02d82568;
+extern int g_ScreenshotIndex;
 extern int g_InputResetFlag;
 extern int g_StoredCameraValue;
 extern int g_ModalDialogActive;

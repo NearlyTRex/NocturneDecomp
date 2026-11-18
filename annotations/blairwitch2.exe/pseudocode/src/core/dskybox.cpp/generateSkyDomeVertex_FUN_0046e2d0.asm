@@ -22,22 +22,22 @@
 ;   core_dskybox.cpp_renderSkyDome_FUN_0046e410 at 0046e759
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d18ff
-;   undefined4 DAT_005d1903
-;   undefined4 DAT_005d190b
-;   undefined4 DAT_005d1913
-;   undefined4 DAT_005d191b
-;   undefined4 DAT_005d1923
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_0060d1f4
-;   undefined4 DAT_00622034
-;   undefined4 DAT_00622038
-;   undefined4 DAT_0062203c
-;   undefined4 DAT_00622040
+;   float g_SkyDomeUCoordToAngleScale = 0.0625
+;   float g_FLOAT_005d1903 = 3.141593
+;   double g_SkyDomeVScale1 = 2
+;   float g_SkyDomeVCoordToAngleScale = 0.25
+;   double g_SkyDomeVScale2 = 0.5
+;   double g_SkyDomeWorldRadius = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   float g_SkyDomeVertexScale = 5
+;   undefined4 g_SRenderVertex_ARRAY_00622014[0].r
+;   undefined4 g_SRenderVertex_ARRAY_00622014[0].g
+;   undefined4 g_SRenderVertex_ARRAY_00622014[0].b
+;   undefined4 g_SRenderVertex_ARRAY_00622014[0].a
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -56,9 +56,9 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 0046e2e2
     MOV dword ptr [ESP + 0x30],EDX      ; 0046e2e5
     FILD dword ptr [ESP + 0x30]         ; 0046e2e9
-    FMUL float ptr [0x005d18ff]         ; 0046e2ed | DAT_005d18ff
-    FMUL float ptr [0x005d1903]         ; 0046e2f3 | DAT_005d1903
-    FMUL double ptr [0x005d190b]        ; 0046e2f9 | DAT_005d190b
+    FMUL float ptr [0x005d18ff]         ; 0046e2ed | g_SkyDomeUCoordToAngleScale
+    FMUL float ptr [0x005d1903]         ; 0046e2f3 | g_FLOAT_005d1903
+    FMUL double ptr [0x005d190b]        ; 0046e2f9 | g_SkyDomeVScale1
     FSTP float ptr [ESP + 0x2c]         ; 0046e2ff
     TEST EAX,EAX                        ; 0046e303
     JNZ 0x0046e3e9                      ; 0046e305
@@ -76,7 +76,7 @@ section .text
     FCOS                                ; 0046e326
     FXCH                                ; 0046e328
     FCOS                                ; 0046e32a
-    FLD float ptr [0x0060d1f4]          ; 0046e32c | DAT_0060d1f4
+    FLD float ptr [0x0060d1f4]          ; 0046e32c | g_SkyDomeVertexScale
     FXCH ST4                            ; 0046e332
     FMUL ST4                            ; 0046e334
     FXCH ST2                            ; 0046e336
@@ -93,7 +93,7 @@ section .text
     FLD ST2                             ; 0046e358
     FMUL double ptr [ESP + 0x10]        ; 0046e35a
     FXCH ST4                            ; 0046e35e
-    FLD double ptr [0x005d1923]         ; 0046e360 | DAT_005d1923
+    FLD double ptr [0x005d1923]         ; 0046e360 | g_SkyDomeWorldRadius
     FXCH                                ; 0046e366
     FMUL ST1                            ; 0046e368
     FXCH ST2                            ; 0046e36a
@@ -106,20 +106,20 @@ section .text
     FMULP                               ; 0046e378
     MOV ESI,dword ptr [EBP + 0x20]      ; 0046e37a
     LEA EAX,[ESP + 0x4]                 ; 0046e37d
-    MOV EDX,dword ptr [0x0060b280]      ; 0046e381 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 0046e381 | g_CDemonRenderer_PTR_0060b280
     PUSH EAX                            ; 0046e387
     FXCH                                ; 0046e388
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046e38a
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     LEA EAX,[ESI*0x4 + 0x0]             ; 0046e38f
     FISTP dword ptr [ESP + 0xc]         ; 0046e396
     SUB EAX,ESI                         ; 0046e39a
     FXCH                                ; 0046e39c
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046e39e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0046e3a3
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046e3a5
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0046e3aa
     FISTP dword ptr [ESP + 0x8]         ; 0046e3ac
     MOV ESI,EAX                         ; 0046e3b0
@@ -128,15 +128,15 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0046e3b9
     ADD EAX,ESI                         ; 0046e3bb
     PUSH EAX                            ; 0046e3bd
-    CALL engine_special.cpp_FUN_0055d723 ; 0046e3be
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 0046e3be
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     MOV EAX,dword ptr [EDI]             ; 0046e3c3
-    MOV dword ptr [ESI + 0x622034],EAX  ; 0046e3c5 | DAT_00622034
-    MOV dword ptr [ESI + 0x622038],EAX  ; 0046e3cb | DAT_00622038
+    MOV dword ptr [ESI + 0x622034],EAX  ; 0046e3c5 | g_SRenderVertex_ARRAY_00622014[0].r
+    MOV dword ptr [ESI + 0x622038],EAX  ; 0046e3cb | g_SRenderVertex_ARRAY_00622014[0].g
     XOR ECX,ECX                         ; 0046e3d1
-    MOV dword ptr [ESI + 0x62203c],EAX  ; 0046e3d3 | DAT_0062203c
+    MOV dword ptr [ESI + 0x62203c],EAX  ; 0046e3d3 | g_SRenderVertex_ARRAY_00622014[0].b
     ADD ESP,0x8                         ; 0046e3d9
-    MOV dword ptr [ESI + 0x622040],ECX  ; 0046e3dc | DAT_00622040
+    MOV dword ptr [ESI + 0x622040],ECX  ; 0046e3dc | g_SRenderVertex_ARRAY_00622014[0].a
     MOV ESP,EBP                         ; 0046e3e2
     POP EBP                             ; 0046e3e4
     POP EDI                             ; 0046e3e5
@@ -146,9 +146,9 @@ section .text
     MOV dword ptr [ESP + 0x30],EAX      ; 0046e3e9
         ;   Label: LAB_0046e3e9
     FILD dword ptr [ESP + 0x30]         ; 0046e3ed
-    FMUL float ptr [0x005d1913]         ; 0046e3f1 | DAT_005d1913
-    FMUL float ptr [0x005d1903]         ; 0046e3f7 | DAT_005d1903
-    FMUL double ptr [0x005d191b]        ; 0046e3fd | DAT_005d191b
+    FMUL float ptr [0x005d1913]         ; 0046e3f1 | g_SkyDomeVCoordToAngleScale
+    FMUL float ptr [0x005d1903]         ; 0046e3f7 | g_FLOAT_005d1903
+    FMUL double ptr [0x005d191b]        ; 0046e3fd | g_SkyDomeVScale2
     FSTP float ptr [ESP]                ; 0046e403
     JMP 0x0046e312                      ; 0046e406
         ;   XREF to: 0046e312 (UNCONDITIONAL_JUMP)  ; LAB_0046e312

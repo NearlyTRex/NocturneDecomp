@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_kfm_00591036
-;   undefined4 DAT_005a1aec
+;   float g_FLOAT_005a1aec = 8
 ;   CWeapon_full_vtable g_CShotgunVTable
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     MOV dword ptr [EBX + 0x2d8],0x1     ; 00515d65
     MOV dword ptr [EBX + 0x2dc],0x1     ; 00515d6f
     MOV dword ptr [EBX + 0x2e0],0x41700000 ; 00515d79
-    FLD float ptr [0x005a1aec]          ; 00515d83 | DAT_005a1aec
+    FLD float ptr [0x005a1aec]          ; 00515d83 | g_FLOAT_005a1aec
     MOV dword ptr [EBX + 0x2e4],0x0     ; 00515d89
     ADD ESP,0x8                         ; 00515d93
     MOV dword ptr [EBX + 0x574],0x0     ; 00515d96

@@ -19,7 +19,7 @@
 ;   TerminatedCString s_pullWavName_0057a5fb
 ;   TerminatedCString s_moveWavName_0057a607
 ;   TerminatedCString s_groundCollideFlag_0057a613
-;   int g_INT_005ad250 = 0x4
+;   int g_CChainClassVersion = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -86,12 +86,12 @@ section .text
     PUSH EAX                            ; 0042cc65
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0042cc66
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005ad250]      ; 0042cc6b | g_INT_005ad250
+    MOV EDX,dword ptr [0x005ad250]      ; 0042cc6b | g_CChainClassVersion
     ADD ESP,0x8                         ; 0042cc71
     CMP EDX,0x2                         ; 0042cc74
     JGE 0x0042ccb5                      ; 0042cc77
         ;   XREF to: 0042ccb5 (CONDITIONAL_JUMP)  ; LAB_0042ccb5
-    CMP dword ptr [0x005ad250],0x3      ; 0042cc79 | g_INT_005ad250
+    CMP dword ptr [0x005ad250],0x3      ; 0042cc79 | g_CChainClassVersion
         ;   Label: LAB_0042cc79
     JL 0x0042ccaa                       ; 0042cc80
         ;   XREF to: 0042ccaa (CONDITIONAL_JUMP)  ; LAB_0042ccaa
@@ -107,7 +107,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0042cca2
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0042cca7
-    CMP dword ptr [0x005ad250],0x4      ; 0042ccaa | g_INT_005ad250
+    CMP dword ptr [0x005ad250],0x4      ; 0042ccaa | g_CChainClassVersion
         ;   Label: LAB_0042ccaa
     JGE 0x0042cccb                      ; 0042ccb1
         ;   XREF to: 0042cccb (CONDITIONAL_JUMP)  ; LAB_0042cccb

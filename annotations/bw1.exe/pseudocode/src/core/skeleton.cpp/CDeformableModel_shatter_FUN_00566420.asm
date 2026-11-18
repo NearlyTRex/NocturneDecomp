@@ -59,23 +59,23 @@
 ;   TerminatedCString s_core_skeleton_cpp_005f23d7
 ;   TerminatedCString s_CDeformableModel_shatter_005f23ec
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_00605890
-;   undefined4 DAT_0061c010
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_026af600
-;   undefined4 DAT_026af604
-;   undefined4 DAT_026af608
-;   undefined4 DAT_026af60c
-;   undefined4 DAT_026af610
-;   undefined4 DAT_026af614
-;   undefined4 DAT_026b82a0
+;   float g_FLOAT_00605890 = 0.00390625
+;   CFireEffect* g_CFireEffectPtr = 01c57074
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   CVector3f[3000] g_ShatterVertexArray
+;   undefined4 g_ShatterVertexArray[0].y
+;   undefined4 g_ShatterVertexArray[0].z
+;   undefined4 g_ShatterVertexArray[1].x
+;   undefined4 g_ShatterVertexArray[1].y
+;   undefined4 g_ShatterVertexArray[1].z
+;   uchar g_ShatterVertexArrayInitialized
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;
 ; *****************************************************************************
@@ -96,7 +96,7 @@ section .text
     MOV dword ptr [ESP + 0xec],EDX      ; 0056643c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 00566443
         ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-    MOV AH,byte ptr [0x026b82a0]        ; 00566448 | DAT_026b82a0
+    MOV AH,byte ptr [0x026b82a0]        ; 00566448 | g_ShatterVertexArrayInitialized
     ADD ESP,0x8                         ; 0056644e
     TEST AH,0x1                         ; 00566451
     JZ 0x005668bd                       ; 00566454
@@ -112,10 +112,10 @@ section .text
     MOV EDI,0x5f23d7                    ; 00566476 | = "..\\core\\skeleton.cpp"
     MOV EBP,0x767                       ; 0056647b
     PUSH 0x5f23ec                       ; 00566480 | = "CDeformableModel::shatter - too many ..."
-    MOV dword ptr [0x01d1d400],EDI      ; 00566485 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0056648b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00566491
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 00566485 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 0056648b | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00566491
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00566496
     XOR EAX,EAX                         ; 00566499
         ;   Label: LAB_00566499
@@ -136,21 +136,21 @@ section .text
         ;   Label: LAB_005664da
     MOV EBX,EBP                         ; 005664e1
     FILD dword ptr [EAX]                ; 005664e3
-    FMUL float ptr [0x00605890]         ; 005664e5 | DAT_00605890
-    FSTP float ptr [EBX]                ; 005664eb | DAT_026af600 | DAT_026af60c
+    FMUL float ptr [0x00605890]         ; 005664e5 | g_FLOAT_00605890
+    FSTP float ptr [EBX]                ; 005664eb | g_ShatterVertexArray | g_ShatterVertexArray[1].x
     FILD dword ptr [EAX + 0x4]          ; 005664ed
-    FMUL float ptr [0x00605890]         ; 005664f0 | DAT_00605890
-    FSTP float ptr [EBX + 0x4]          ; 005664f6 | DAT_026af604 | DAT_026af610
+    FMUL float ptr [0x00605890]         ; 005664f0 | g_FLOAT_00605890
+    FSTP float ptr [EBX + 0x4]          ; 005664f6 | g_ShatterVertexArray[0].y | g_ShatterVertexArray[1].y
     FILD dword ptr [EAX + 0x8]          ; 005664f9
-    FMUL float ptr [0x00605890]         ; 005664fc | DAT_00605890
-    FSTP float ptr [EBX + 0x8]          ; 00566502 | DAT_026af608 | DAT_026af614
-    PUSH EBP                            ; 00566505 | DAT_026af600 | DAT_026af60c
+    FMUL float ptr [0x00605890]         ; 005664fc | g_FLOAT_00605890
+    FSTP float ptr [EBX + 0x8]          ; 00566502 | g_ShatterVertexArray[0].z | g_ShatterVertexArray[1].z
+    PUSH EBP                            ; 00566505 | g_ShatterVertexArray | g_ShatterVertexArray[1].x
     LEA EAX,[ESP + 0x4]                 ; 00566506
     PUSH EAX                            ; 0056650a
     LEA ESI,[ESP + 0x78]                ; 0056650b
     LEA EDI,[ESP + 0x60]                ; 0056650f
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00566513
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00566513
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00566518
     LEA ESI,[ESP + 0x70]                ; 0056651b
     MOV EAX,dword ptr [ESP + 0x108]     ; 0056651f
@@ -179,11 +179,11 @@ section .text
     JZ 0x00566583                       ; 0056656c
         ;   XREF to: 00566583 (CONDITIONAL_JUMP)  ; LAB_00566583
     MOV EAX,dword ptr [ESP + 0x64]      ; 0056656e
-    MOV dword ptr [EBP],EAX             ; 00566572 | DAT_026af600
+    MOV dword ptr [EBP],EAX             ; 00566572 | g_ShatterVertexArray
     MOV EAX,dword ptr [ESP + 0x68]      ; 00566575
-    MOV dword ptr [EBP + 0x4],EAX       ; 00566579 | DAT_026af604
+    MOV dword ptr [EBP + 0x4],EAX       ; 00566579 | g_ShatterVertexArray[0].y
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0056657c
-    MOV dword ptr [EBP + 0x8],EAX       ; 00566580 | DAT_026af608
+    MOV dword ptr [EBP + 0x8],EAX       ; 00566580 | g_ShatterVertexArray[0].z
     MOV ECX,dword ptr [ESP + 0xb4]      ; 00566583
         ;   Label: LAB_00566583
     MOV EBX,dword ptr [ESP + 0xb8]      ; 0056658a
@@ -265,11 +265,11 @@ section .text
     CMP EAX,EBX                         ; 005666d9
     JZ 0x005666ed                       ; 005666db
         ;   XREF to: 005666ed (CONDITIONAL_JUMP)  ; LAB_005666ed
-    MOV EBP,dword ptr [EBX]             ; 005666dd | DAT_026af600
+    MOV EBP,dword ptr [EBX]             ; 005666dd | g_ShatterVertexArray
     MOV dword ptr [EAX],EBP             ; 005666df
-    MOV EBP,dword ptr [EBX + 0x4]       ; 005666e1 | DAT_026af604
+    MOV EBP,dword ptr [EBX + 0x4]       ; 005666e1 | g_ShatterVertexArray[0].y
     MOV dword ptr [EAX + 0x4],EBP       ; 005666e4
-    MOV EBP,dword ptr [EBX + 0x8]       ; 005666e7 | DAT_026af608
+    MOV EBP,dword ptr [EBX + 0x8]       ; 005666e7 | g_ShatterVertexArray[0].z
     MOV dword ptr [EAX + 0x8],EBP       ; 005666ea
     XOR EBX,EBX                         ; 005666ed
         ;   Label: LAB_005666ed
@@ -298,7 +298,7 @@ section .text
     PUSH EAX                            ; 0056673e
     LEA EAX,[ESP + 0x38]                ; 0056673f
     PUSH EAX                            ; 00566743
-    MOV EBX,dword ptr [0x0061c010]      ; 00566744 | DAT_0061c010
+    MOV EBX,dword ptr [0x0061c010]      ; 00566744 | g_CFireEffectPtr
     PUSH EBX                            ; 0056674a
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50 ; 0056674b
         ;   XREF to: 004b5d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
@@ -390,8 +390,8 @@ section .text
     MOV DL,AH                           ; 005668c2
     PUSH 0xbb8                          ; 005668c4
     OR DL,0x1                           ; 005668c9
-    PUSH 0x26af600                      ; 005668cc | DAT_026af600
-    MOV byte ptr [0x026b82a0],DL        ; 005668d1 | DAT_026b82a0
+    PUSH 0x26af600                      ; 005668cc | g_ShatterVertexArray
+    MOV byte ptr [0x026b82a0],DL        ; 005668d1 | g_ShatterVertexArrayInitialized
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 005668d7
         ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005668dc
@@ -437,11 +437,11 @@ section .text
     CMP EAX,EBX                         ; 0056696c
     JZ 0x00566980                       ; 0056696e
         ;   XREF to: 00566980 (CONDITIONAL_JUMP)  ; LAB_00566980
-    MOV EBP,dword ptr [EBX]             ; 00566970 | DAT_026af600
+    MOV EBP,dword ptr [EBX]             ; 00566970 | g_ShatterVertexArray
     MOV dword ptr [EAX],EBP             ; 00566972
-    MOV EBP,dword ptr [EBX + 0x4]       ; 00566974 | DAT_026af604
+    MOV EBP,dword ptr [EBX + 0x4]       ; 00566974 | g_ShatterVertexArray[0].y
     MOV dword ptr [EAX + 0x4],EBP       ; 00566977
-    MOV EBP,dword ptr [EBX + 0x8]       ; 0056697a | DAT_026af608
+    MOV EBP,dword ptr [EBX + 0x8]       ; 0056697a | g_ShatterVertexArray[0].z
     MOV dword ptr [EAX + 0x8],EBP       ; 0056697d
     XOR EBX,EBX                         ; 00566980
         ;   Label: LAB_00566980
@@ -473,7 +473,7 @@ section .text
     PUSH EAX                            ; 005669dd
     LEA EAX,[ESP + 0x38]                ; 005669de
     PUSH EAX                            ; 005669e2
-    MOV EBP,dword ptr [0x0061c010]      ; 005669e3 | DAT_0061c010
+    MOV EBP,dword ptr [0x0061c010]      ; 005669e3 | g_CFireEffectPtr
     PUSH EBP                            ; 005669e9
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50 ; 005669ea
         ;   XREF to: 004b5d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004b5d50(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)

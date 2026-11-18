@@ -12,7 +12,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bbab
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004461d2
 ;   core_djien.cpp_CDjien_process_FUN_00460230 at 004603e9
-;   core_event.cpp_FUN_004a1d00 at 004a6339
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a6339
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30 at 0051c030
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_00524620 at 0052469a
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00524ae0 at 00524b01
@@ -20,7 +20,7 @@
 ;   core_passngr.cpp_CPassenger_setup_FUN_00532930 at 00532adb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eaf57
+;   float g_MotionControllerTargetFrameEnd2 = -1
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_clearTweenState_FUN_00524b70
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x4                         ; 00524b11
     MOV EBX,dword ptr [ESP + 0xc]       ; 00524b14
     FLD float ptr [ESP + 0x14]          ; 00524b18
-    FCOMP float ptr [0x005eaf57]        ; 00524b1c | DAT_005eaf57
+    FCOMP float ptr [0x005eaf57]        ; 00524b1c | g_MotionControllerTargetFrameEnd2
     FNSTSW AX                           ; 00524b22
     SAHF                                ; 00524b24
     JZ 0x00524b4a                       ; 00524b25

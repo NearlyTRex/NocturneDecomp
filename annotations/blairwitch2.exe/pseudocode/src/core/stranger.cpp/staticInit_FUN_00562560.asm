@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264be14
-;   undefined4 DAT_0264be18
-;   undefined4 DAT_0264be1c
-;   undefined4 DAT_0264be20
-;   undefined4 DAT_0264be24
-;   undefined4 DAT_0264be28
+;   CVector3f g_StrangerWeaponEulerPlusX
+;   undefined4 g_StrangerWeaponEulerPlusX.y
+;   undefined4 g_StrangerWeaponEulerPlusX.z
+;   CVector3f g_StrangerWeaponEulerMinusX
+;   undefined4 g_StrangerWeaponEulerMinusX.y
+;   undefined4 g_StrangerWeaponEulerMinusX.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c450
@@ -30,14 +30,14 @@ section .text
     MOV EBX,0x3e010625                  ; 00562578
     MOV ESI,0xbf05e354                  ; 0056257d
     PUSH 0x5627c0                       ; 00562582
-    MOV dword ptr [0x0264be14],EDX      ; 00562587 | DAT_0264be14
-    MOV dword ptr [0x0264be18],ECX      ; 0056258d | DAT_0264be18
+    MOV dword ptr [0x0264be14],EDX      ; 00562587 | g_StrangerWeaponEulerPlusX
+    MOV dword ptr [0x0264be18],ECX      ; 0056258d | g_StrangerWeaponEulerPlusX.y
     PUSH 0x5eb195                       ; 00562593
-    MOV dword ptr [0x0264be1c],EBX      ; 00562598 | DAT_0264be1c
-    MOV dword ptr [0x0264be20],ESI      ; 0056259e | DAT_0264be20
+    MOV dword ptr [0x0264be1c],EBX      ; 00562598 | g_StrangerWeaponEulerPlusX.z
+    MOV dword ptr [0x0264be20],ESI      ; 0056259e | g_StrangerWeaponEulerMinusX
     PUSH 0x264be8c                      ; 005625a4
-    MOV dword ptr [0x0264be24],ECX      ; 005625a9 | DAT_0264be24
-    MOV dword ptr [0x0264be28],EBX      ; 005625af | DAT_0264be28
+    MOV dword ptr [0x0264be24],ECX      ; 005625a9 | g_StrangerWeaponEulerMinusX.y
+    MOV dword ptr [0x0264be28],EBX      ; 005625af | g_StrangerWeaponEulerMinusX.z
     CALL core_actor.cpp_registerActorClass_FUN_0040c450 ; 005625b5
         ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c450(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factory_func, int * max_version, ...)
     ADD ESP,0x18                        ; 005625ba

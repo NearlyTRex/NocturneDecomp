@@ -4,12 +4,20 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBulletTrail.h"
 #include "types/classes/CFireball.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CE0000
 // =============================================================================
 
+// CBulletTrail[10]
+extern CBulletTrail g_BulletTrailPool[10];
+
 // CFireball[64]
 extern CFireball g_FireballPool[64];
+
+// int
+extern int g_INT_01cefd10;
+extern int g_FireballAllocIndex;
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
 
 {
@@ -58,23 +56,19 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   pCVar1 = g_CDemonSetPtr;
   (g_CDemonSetPtr->light_direction).x = -0x4844;
   (pCVar1->light_direction).y = -0x4844;
-  iVar4 = DAT_005bb210;
+  iVar4 = g_MoonBatsEnabled;
   (pCVar1->light_direction).z = 0x4844;
   pCVar1->ambient_base_quick = 0x2000;
   if (iVar4 != 0) {
     iVar4 = 0;
     do {
-      if (0.0 <= *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {
+      if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar4)) {
         core_course_cpp_CCourse_evaluate_FUN_0043b800
-                  (g_MoonBatCourses + *(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4),
-                   *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4),&local_44,
-                   &local_50);
-        local_44.x = local_44.x + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.x + iVar4)
-        ;
-        local_44.y = local_44.y + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.y + iVar4)
-        ;
-        local_44.z = local_44.z + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.z + iVar4)
-        ;
+                  (g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar4),
+                   *(float *)((int)&g_MoonBats[0].course_position + iVar4),&local_44,&local_50);
+        local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar4);
+        local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar4);
+        local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar4);
         local_50.y = local_50.y + 1.570796f;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (g_CDemonRenderer_PTR_005ae704,&local_44);
@@ -82,17 +76,14 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
                   (g_CDemonRenderer_PTR_005ae704,&local_50,(CVector3f *)0x0);
         render_flags = 0x4dee29;
         dVar7 = round
-                          ((double)*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4
-                                             ));
+                          ((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar4));
         local_14 = (int)ROUND(dVar7);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
                   (&g_MoonBatModel,local_14,(CKeyFramedModelInstance *)0x0,render_flags);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
         pCVar1 = g_CDemonSetPtr;
-        local_14 = g_MoonBatCourses[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].
-                   len;
-        local_18 = *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) /
-                   (float)local_14;
+        local_14 = g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len;
+        local_18 = *(float *)((int)&g_MoonBats[0].course_position + iVar4) / (float)local_14;
         local_38 = (double)local_18;
         if ((float)0.5 <= local_18) {
           dVar7 = (local_38 + -0.5) * 8192;
@@ -111,8 +102,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   g_CDemonSetPtr->rendering_mode = 0;
   engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(&g_MoonCloudTexture);
   pcVar2 = g_MoonCloudTexture.raw;
-  local_30 = _DAT_01ccdebc >> 0x10;
-  local_24 = _DAT_01ccdec0 >> 0x10;
+  local_30 = g_MoonCloudScrollX >> 0x10;
+  local_24 = g_MoonCloudScrollY >> 0x10;
   local_2c = g_MoonCloudTexture.raw;
   local_28 = 0;
   do {
@@ -139,7 +130,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
     local_28 = local_28 + 1;
   } while ((int)local_28 < 0x1e0);
   engine_3d_c_setBlendMode_FUN_004083c0(1);
-  dVar7 = round((double)_DAT_01ccdec4);
+  dVar7 = round((double)g_MoonAnimationTimer);
   local_1c = (int)ROUND(dVar7);
   if (0x1d < local_1c) {
     local_1c = 0;

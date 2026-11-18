@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 88,
+    "complexity_score": 72,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 3,
+    "pseudocode_lines": 47,
+    "suspect_count": 2,
     "suspect_types": [
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 156
+    "total_lines": 155
   },
   "cross_references": [
     {
@@ -61,14 +60,14 @@
   "globals": [
     {
       "addr": "02dc9610",
-      "name": "g_CStrList_02dc9610",
+      "name": "g_SoundFileList",
       "type": "CStrList",
       "value": null
     },
     {
       "addr": "02dc9620",
-      "name": "DAT_02dc9620",
-      "type": "undefined4",
+      "name": "g_SoundMatchCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -209,16 +208,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -226,7 +217,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 40,
+      "line": 38,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

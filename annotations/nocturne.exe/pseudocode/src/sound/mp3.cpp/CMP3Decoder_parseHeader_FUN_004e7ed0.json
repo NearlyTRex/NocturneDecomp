@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 248,
+    "complexity_score": 167,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 138,
-    "suspect_count": 9,
+    "pseudocode_lines": 137,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
-      "undefined_data"
+      "raw_address_constant"
     ],
-    "total_lines": 464
+    "total_lines": 463
   },
   "cross_references": [
     {
@@ -145,14 +143,14 @@
     },
     {
       "addr": "005bbc48",
-      "name": "DAT_005bbc48",
-      "type": "undefined4",
+      "name": "g_MpegSampleRateTable",
+      "type": "double[2][4]",
       "value": null
     },
     {
       "addr": "005bbc88",
-      "name": "DAT_005bbc88",
-      "type": "undefined4",
+      "name": "g_MpegBitrateTable",
+      "type": "int[2][3][15]",
       "value": null
     },
     {
@@ -232,6 +230,24 @@
     "pcode_op_count": 1381
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00509db0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4309
+    },
+    "bw1.exe": {
+      "addr": "0052af80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4309
+    },
+    "bw3.exe": {
+      "addr": "00502890",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4309
+    },
     "nocedit.exe": {
       "addr": "00534630",
       "by": "name",
@@ -404,59 +420,11 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Out of memory.  File: %s\",&DAT_01cd8b28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_005bbc88",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)(&DAT_005bbc88 + local_28 * 4 + iVar6 * 0xb4 + local_2c * 0x3c) / local_38;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005bbc48",
-      "severity": "mild",
-      "text": "(*(double *)(&DAT_005bbc48 + local_48->sampling_rate_index * 8 + iVar6 * 0x20)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"MPEG Layer 2 - pick_table - can't load tables!  File: %s\",&DAT_01cd8b28)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "(\"js_bound bad layer/modext (%d/%d)  File: %s\",iVar6,iVar5,&DAT_01cd8b28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_005bbc48",
-      "severity": "mild",
-      "text": "(&DAT_005bbc48 + local_78.bitrate_index * 8 + (int)header_out * 0x20) *",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `header_out` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 135,
+      "line": 134,
       "match": "(int)header_out",
       "severity": "moderate",
-      "text": "(&DAT_005bbc48 + local_78.bitrate_index * 8 + (int)header_out * 0x20) *",
+      "text": "(g_MpegSampleRateTable[(int)header_out][local_78.bitrate_index] *",
       "type": "pointer_truncation"
     },
     {
@@ -466,14 +434,6 @@
       "severity": "moderate",
       "text": "iVar6 = 0x4e81c7;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 134,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": "(*(double *)",
-      "type": "pointer_cast"
     }
   ]
 }

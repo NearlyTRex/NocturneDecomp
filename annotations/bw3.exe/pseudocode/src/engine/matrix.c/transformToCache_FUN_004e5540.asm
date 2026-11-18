@@ -8,12 +8,12 @@
 ; CVector3i *      Stack[0x8]:4   inputPoint
 ;
 ; XREF[3]:
-;   shape_edittool.cpp_FUN_00480f00 at 00480faf
-;   shape_edittool.cpp_FUN_00481200 at 0048123e
-;   shape_edittool.cpp_FUN_00481350 at 0048148d
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00 at 00480faf
+;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350 at 0048148d
+;   shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200 at 0048123e
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_005632a3
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     SHL EAX,0x4                         ; 004e5553
     ADD EAX,0x60b014                    ; 004e5556
     PUSH EAX                            ; 004e555b
-    CALL engine_special.cpp_FUN_005632a3 ; 004e555c
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 004e555c
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004e5561
     POP EBX                             ; 004e5564
     RET                                 ; 004e5565

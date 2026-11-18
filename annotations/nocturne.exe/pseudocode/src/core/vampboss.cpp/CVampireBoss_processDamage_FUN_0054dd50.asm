@@ -15,12 +15,12 @@
 ;   TerminatedCString s_voicudeath_wav_2_5_005971ea
 ;   double DOUBLE_00597205 = 2
 ;   double DOUBLE_0059720d = 25
-;   undefined4 DAT_005b7650
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CEventList* g_CEventListPtr = 01c03a10
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 g_CHeroActorType_01cae0ec.name_hash
-;   undefined4 g_CMeleeActorType_01cc56a4.name_hash
+;   undefined4 g_CHeroClassInfo.name_hash
+;   undefined4 g_CMeleeClassInfo.name_hash
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -132,7 +132,7 @@ section .text
     PUSH 0x0                            ; 0054de27
     LEA EAX,[ESP + 0x14]                ; 0054de29
     PUSH EAX                            ; 0054de2d
-    MOV ECX,dword ptr [0x005b80f0]      ; 0054de2e | g_CFireEffect_PTR_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 0054de2e | g_CFireEffectPtr
     PUSH ECX                            ; 0054de34
     INC EBX                             ; 0054de35
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 0054de36
@@ -172,7 +172,7 @@ section .text
         ;   Label: LAB_0054de7e
     JNZ 0x0054dded                      ; 0054de82
         ;   XREF to: 0054dded (CONDITIONAL_JUMP)  ; LAB_0054dded
-    MOV EAX,[0x01cc56dc]                ; 0054de88 | g_CMeleeActorType_01cc56a4.name_hash
+    MOV EAX,[0x01cc56dc]                ; 0054de88 | g_CMeleeClassInfo.name_hash
     PUSH EAX                            ; 0054de8d
     MOV EDX,dword ptr [EDI + 0x34]      ; 0054de8e
     PUSH EDX                            ; 0054de91
@@ -205,7 +205,7 @@ section .text
     PUSH EDI                            ; 0054ded8
     CALL dword ptr [EAX + 0x88]         ; 0054ded9
     ADD ESP,0xc                         ; 0054dedf
-    MOV ECX,dword ptr [0x01cae124]      ; 0054dee2 | g_CHeroActorType_01cae0ec.name_hash
+    MOV ECX,dword ptr [0x01cae124]      ; 0054dee2 | g_CHeroClassInfo.name_hash
     PUSH ECX                            ; 0054dee8
     PUSH EDI                            ; 0054dee9
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0054deea
@@ -244,7 +244,7 @@ section .text
         ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time)
     ADD ESP,0x10                        ; 0054df34
     PUSH 0x5971d7                       ; 0054df37 | = "VampireBossBitesIt"
-    MOV EDI,dword ptr [0x005b7650]      ; 0054df3c | DAT_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 0054df3c | g_CEventListPtr
     PUSH EDI                            ; 0054df42
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 0054df43
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

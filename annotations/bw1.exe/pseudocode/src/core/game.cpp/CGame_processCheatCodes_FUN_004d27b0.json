@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4789,
-    "complexity_score": 4209,
+    "complexity_score": 4587,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 223,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2354,
-    "suspect_count": 179,
+    "pseudocode_lines": 2372,
+    "suspect_count": 216,
     "suspect_types": [
       "concat_reconstruction",
-      "derived_field_index_pun",
       "nonstandard_int",
       "pointer_cast",
-      "raw_address_constant",
-      "raw_address_pointer_store",
+      "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
-      "undefined_data",
+      "unknown_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
-      "warning_overlapping_globals"
+      "warning_type_propagation"
     ],
-    "total_lines": 7143
+    "total_lines": 7161
   },
   "cross_references": [
     {
@@ -99,6 +97,11 @@
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950"
     },
     {
+      "addr": "004a9a60",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60"
+    },
+    {
       "addr": "004a6c30",
       "is_variadic": false,
       "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
@@ -112,11 +115,6 @@
       "addr": "004a6cd0",
       "is_variadic": false,
       "name": "core_event.cpp_CEventList_validateCommands_FUN_004a6cd0"
-    },
-    {
-      "addr": "004a9a60",
-      "is_variadic": false,
-      "name": "core_event.cpp_FUN_004a9a60"
     },
     {
       "addr": "004cc190",
@@ -146,12 +144,12 @@
     {
       "addr": "004f7690",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004f7690"
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004f7690"
     },
     {
       "addr": "004f8c40",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004f8c40"
+      "name": "core_inv.cpp_CInventory_findItemByName_FUN_004f8c40"
     },
     {
       "addr": "0051bd60",
@@ -199,19 +197,19 @@
       "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
+      "addr": "004f4b00",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_ctor_FUN_004f4b00"
+    },
+    {
       "addr": "004f4b30",
       "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_dtor_FUN_004f4b30"
     },
     {
-      "addr": "004f4b00",
-      "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004f4b00"
-    },
-    {
       "addr": "004f4d70",
       "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004f4d70"
+      "name": "engine_ini.cpp_CIniFile_setInteger_FUN_004f4d70"
     },
     {
       "addr": "004fd270",
@@ -277,8 +275,8 @@
   "globals": [
     {
       "addr": "005e1290",
-      "name": "s_Enter_Movie_FPS_005e128f+1",
-      "type": "undefined4",
+      "name": "s_Enter_Movie_FPS_005e1290",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -337,8 +335,8 @@
     },
     {
       "addr": "005e1b78",
-      "name": "DAT_005e1b78",
-      "type": "undefined4",
+      "name": "g_CheatStr_DebugMode",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -355,8 +353,8 @@
     },
     {
       "addr": "005e1bd5",
-      "name": "DAT_005e1bd5",
-      "type": "undefined4",
+      "name": "g_CheatStr_ShowFPS",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -367,14 +365,14 @@
     },
     {
       "addr": "005e1c15",
-      "name": "DAT_005e1c15",
-      "type": "undefined4",
+      "name": "g_CheatStr_ProfileMode",
+      "type": "char[53]",
       "value": null
     },
     {
       "addr": "005e1c4a",
-      "name": "DAT_005e1c4a",
-      "type": "undefined4",
+      "name": "g_CheatStr_EventDebug",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -397,8 +395,8 @@
     },
     {
       "addr": "005e1ca8",
-      "name": "DAT_005e1ca8",
-      "type": "undefined4",
+      "name": "g_CheatStr_ScriptDebug",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -421,8 +419,8 @@
     },
     {
       "addr": "005e1d09",
-      "name": "DAT_005e1d09",
-      "type": "undefined4",
+      "name": "g_CheatStr_MemoryDebug",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -445,8 +443,8 @@
     },
     {
       "addr": "005e1d72",
-      "name": "DAT_005e1d72",
-      "type": "undefined4",
+      "name": "g_CheatStr_ManualAim",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -463,8 +461,8 @@
     },
     {
       "addr": "005e1dc5",
-      "name": "DAT_005e1dc5",
-      "type": "undefined4",
+      "name": "g_CheatStr_AutoAim",
+      "type": "char[50]",
       "value": null
     },
     {
@@ -481,20 +479,20 @@
     },
     {
       "addr": "005e1e14",
-      "name": "DAT_005e1e14",
-      "type": "undefined4",
+      "name": "g_CheatStr_MovieRecording",
+      "type": "char[51]",
       "value": null
     },
     {
       "addr": "005e1e47",
-      "name": "DAT_005e1e47",
-      "type": "undefined4",
+      "name": "g_CheatStr_CollisionDebug",
+      "type": "char[55]",
       "value": null
     },
     {
       "addr": "005e1e7e",
-      "name": "DAT_005e1e7e",
-      "type": "undefined4",
+      "name": "g_CheatStr_SkeletonKey",
+      "type": "char[57]",
       "value": null
     },
     {
@@ -547,8 +545,8 @@
     },
     {
       "addr": "005e1f01",
-      "name": "DAT_005e1f01",
-      "type": "undefined4",
+      "name": "g_CheatStr_GodMode",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -571,8 +569,8 @@
     },
     {
       "addr": "005e1f69",
-      "name": "DAT_005e1f69",
-      "type": "undefined4",
+      "name": "g_CheatStr_FreezeEnemies",
+      "type": "char[53]",
       "value": null
     },
     {
@@ -607,8 +605,8 @@
     },
     {
       "addr": "005e1fec",
-      "name": "DAT_005e1fec",
-      "type": "undefined4",
+      "name": "g_CheatStr_Crossbow",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -625,8 +623,8 @@
     },
     {
       "addr": "005e2049",
-      "name": "DAT_005e2049",
-      "type": "undefined4",
+      "name": "g_CheatStr_Dynamite",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -643,8 +641,8 @@
     },
     {
       "addr": "005e2096",
-      "name": "DAT_005e2096",
-      "type": "undefined4",
+      "name": "g_CheatStr_FlameThrower",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -661,8 +659,8 @@
     },
     {
       "addr": "005e20f0",
-      "name": "DAT_005e20f0",
-      "type": "undefined4",
+      "name": "g_CheatStr_TommyGun",
+      "type": "char[56]",
       "value": null
     },
     {
@@ -679,8 +677,8 @@
     },
     {
       "addr": "005e214d",
-      "name": "DAT_005e214d",
-      "type": "undefined4",
+      "name": "g_CheatStr_BaronWeapon",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -697,8 +695,8 @@
     },
     {
       "addr": "005e21b3",
-      "name": "DAT_005e21b3",
-      "type": "undefined4",
+      "name": "g_CheatStr_ElephantGun",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -715,8 +713,8 @@
     },
     {
       "addr": "005e2214",
-      "name": "DAT_005e2214",
-      "type": "undefined4",
+      "name": "g_CheatStr_LightGun",
+      "type": "char[53]",
       "value": null
     },
     {
@@ -733,32 +731,32 @@
     },
     {
       "addr": "005e227e",
-      "name": "DAT_005e227e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e227e",
+      "type": "char",
+      "value": "}"
     },
     {
       "addr": "005e22b4",
-      "name": "DAT_005e22b4",
-      "type": "undefined4",
+      "name": "g_CheatStr_AllWeapons",
+      "type": "char[54]",
       "value": null
     },
     {
       "addr": "005e22f0",
-      "name": "DAT_005e22f0",
-      "type": "undefined4",
+      "name": "s_CGun_005e22f0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e22f5",
-      "name": "DAT_005e22f5",
-      "type": "undefined4",
+      "name": "s_CGun_005e22f5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e22fa",
-      "name": "DAT_005e22fa",
-      "type": "undefined4",
+      "name": "s_CGun_005e22fa",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -829,8 +827,8 @@
     },
     {
       "addr": "005e2383",
-      "name": "DAT_005e2383",
-      "type": "undefined4",
+      "name": "g_CheatStr_MoreAmmo",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -847,8 +845,8 @@
     },
     {
       "addr": "005e23ea",
-      "name": "DAT_005e23ea",
-      "type": "undefined4",
+      "name": "g_CheatStr_RaiseEvent",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -865,8 +863,8 @@
     },
     {
       "addr": "005e2438",
-      "name": "DAT_005e2438",
-      "type": "undefined4",
+      "name": "g_CheatStr_KillNearby",
+      "type": "char[53]",
       "value": null
     },
     {
@@ -877,8 +875,8 @@
     },
     {
       "addr": "005e247a",
-      "name": "DAT_005e247a",
-      "type": "undefined4",
+      "name": "g_CheatStr_Dismemberment",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -901,8 +899,8 @@
     },
     {
       "addr": "005e2501",
-      "name": "DAT_005e2501",
-      "type": "undefined4",
+      "name": "g_CheatStr_TimeFactor",
+      "type": "char[50]",
       "value": null
     },
     {
@@ -919,8 +917,8 @@
     },
     {
       "addr": "005e2551",
-      "name": "DAT_005e2551",
-      "type": "undefined4",
+      "name": "g_CheatStr_NoD3D",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -931,8 +929,8 @@
     },
     {
       "addr": "005e2590",
-      "name": "DAT_005e2590",
-      "type": "undefined4",
+      "name": "g_CheatStr_ToggleRenderMode",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -943,8 +941,8 @@
     },
     {
       "addr": "005e25cf",
-      "name": "DAT_005e25cf",
-      "type": "undefined4",
+      "name": "g_CheatStr_FlamingAmmo",
+      "type": "char[58]",
       "value": null
     },
     {
@@ -979,8 +977,8 @@
     },
     {
       "addr": "005e267b",
-      "name": "DAT_005e267b",
-      "type": "undefined4",
+      "name": "g_CheatStr_ClearFramebuffer",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -991,14 +989,14 @@
     },
     {
       "addr": "005e26ba",
-      "name": "DAT_005e26ba",
-      "type": "undefined4",
+      "name": "g_CheatStr_ResetEffects",
+      "type": "char[50]",
       "value": null
     },
     {
       "addr": "005e26ec",
-      "name": "DAT_005e26ec",
-      "type": "undefined4",
+      "name": "g_CheatStr_SingleStep",
+      "type": "char[50]",
       "value": null
     },
     {
@@ -1015,8 +1013,8 @@
     },
     {
       "addr": "005e2747",
-      "name": "DAT_005e2747",
-      "type": "undefined4",
+      "name": "g_CheatStr_RestoreBattery",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -1033,20 +1031,20 @@
     },
     {
       "addr": "005e27a5",
-      "name": "DAT_005e27a5",
-      "type": "undefined4",
+      "name": "g_CheatStr_WeatherRain",
+      "type": "char[58]",
       "value": null
     },
     {
       "addr": "005e27df",
-      "name": "DAT_005e27df",
-      "type": "undefined4",
+      "name": "g_CheatStr_WeatherSnow",
+      "type": "char[55]",
       "value": null
     },
     {
       "addr": "005e2816",
-      "name": "DAT_005e2816",
-      "type": "undefined4",
+      "name": "g_CheatStr_BigHat",
+      "type": "char[53]",
       "value": null
     },
     {
@@ -1093,14 +1091,14 @@
     },
     {
       "addr": "005e289b",
-      "name": "DAT_005e289b",
-      "type": "undefined4",
+      "name": "g_CheatStr_GeometryDebug",
+      "type": "char[52]",
       "value": null
     },
     {
       "addr": "005e28d3",
-      "name": "DAT_005e28d3",
-      "type": "undefined4",
+      "name": "g_CheatStr_GasMask",
+      "type": "char[53]",
       "value": null
     },
     {
@@ -1111,8 +1109,8 @@
     },
     {
       "addr": "005e2923",
-      "name": "DAT_005e2923",
-      "type": "undefined4",
+      "name": "g_CheatStr_RestoreHealth",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -1123,9 +1121,9 @@
     },
     {
       "addr": "005e2978",
-      "name": "DAT_005e2978",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e2978",
+      "type": "char",
+      "value": "\u009f"
     },
     {
       "addr": "005e29ab",
@@ -1171,9 +1169,9 @@
     },
     {
       "addr": "005e2a53",
-      "name": "DAT_005e2a53",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e2a53",
+      "type": "char",
+      "value": "F"
     },
     {
       "addr": "005e2a8e",
@@ -1219,9 +1217,9 @@
     },
     {
       "addr": "005e2b36",
-      "name": "DAT_005e2b36",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e2b36",
+      "type": "char",
+      "value": "\u0015"
     },
     {
       "addr": "005e2b73",
@@ -1267,9 +1265,9 @@
     },
     {
       "addr": "005e2c1b",
-      "name": "DAT_005e2c1b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e2c1b",
+      "type": "char",
+      "value": "."
     },
     {
       "addr": "005e2c4e",
@@ -1315,9 +1313,9 @@
     },
     {
       "addr": "005e2cf6",
-      "name": "DAT_005e2cf6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e2cf6",
+      "type": "char",
+      "value": "\u00d5"
     },
     {
       "addr": "005e2d2f",
@@ -1327,8 +1325,8 @@
     },
     {
       "addr": "005e2d40",
-      "name": "DAT_005e2d40",
-      "type": "undefined4",
+      "name": "g_CheatStr_OldHat",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -1345,8 +1343,8 @@
     },
     {
       "addr": "005e2d8b",
-      "name": "DAT_005e2d8b",
-      "type": "undefined4",
+      "name": "g_CheatStr_SilverAmmo",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -1357,9 +1355,9 @@
     },
     {
       "addr": "005e2dc6",
-      "name": "DAT_005e2dc6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e2dc6",
+      "type": "char",
+      "value": "\u00e5"
     },
     {
       "addr": "005e2dfe",
@@ -1369,9 +1367,9 @@
     },
     {
       "addr": "005e2e03",
-      "name": "DAT_005e2e03",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005e2e03",
+      "type": "char",
+      "value": "\u00b6"
     },
     {
       "addr": "005e2e3c",
@@ -1381,27 +1379,27 @@
     },
     {
       "addr": "005e2e41",
-      "name": "DAT_005e2e41",
-      "type": "undefined4",
+      "name": "g_CheatStr_SoundDebug",
+      "type": "char[59]",
       "value": null
     },
     {
       "addr": "005e2e7c",
-      "name": "DAT_005e2e7c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e2e7c",
+      "type": "double",
+      "value": "0.0555555555555556"
     },
     {
       "addr": "005e2e84",
-      "name": "DAT_005e2e84",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e2e84",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005e2e8c",
-      "name": "DAT_005e2e8c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e2e8c",
+      "type": "double",
+      "value": "50"
     },
     {
       "addr": "0061abc0",
@@ -1411,20 +1409,20 @@
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "0061d8f0",
-      "name": "DAT_0061d8f0",
-      "type": "undefined4",
+      "name": "g_EventCommandBuffer",
+      "type": "char[100]",
       "value": null
     },
     {
@@ -1435,33 +1433,33 @@
     },
     {
       "addr": "0061d968",
-      "name": "DAT_0061d968",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MovieRecordingTargetFPS",
+      "type": "float",
+      "value": "30"
     },
     {
       "addr": "0061d96c",
-      "name": "DAT_0061d96c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MovieRecordingWidth",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "0061d970",
-      "name": "DAT_0061d970",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MovieRecordingHeight",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "00622c18",
@@ -1471,15 +1469,15 @@
     },
     {
       "addr": "006236b8",
-      "name": "DAT_006236b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006236b8",
+      "type": "CSound*",
+      "value": "02c82a60"
     },
     {
       "addr": "0062604c",
-      "name": "DAT_0062604c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWeatherPtr",
+      "type": "CWeather*",
+      "value": "02c997c0"
     },
     {
       "addr": "01ccf390",
@@ -1507,43 +1505,43 @@
     },
     {
       "addr": "01cd01f8",
-      "name": "DAT_01cd01f8",
-      "type": "undefined4",
+      "name": "g_INT_01cd01f8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c38",
-      "name": "DAT_01cd0c38",
-      "type": "undefined4",
+      "name": "g_MovieRecordingArmed",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c3c",
-      "name": "DAT_01cd0c3c",
-      "type": "undefined4",
+      "name": "g_MovieRecordingActive",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c40",
-      "name": "DAT_01cd0c40",
-      "type": "undefined4",
+      "name": "g_MovieRecordingMaxFrames",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c44",
-      "name": "DAT_01cd0c44",
-      "type": "undefined4",
+      "name": "g_MovieRecordingFrameCounter",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c48",
-      "name": "DAT_01cd0c48",
-      "type": "undefined4",
+      "name": "g_INT_01cd0c48",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c68",
-      "name": "DAT_01cd0c68",
+      "name": "g_CHero_PTR_ARRAY_01cd0c60[2]",
       "type": "undefined4",
       "value": null
     },
@@ -1567,14 +1565,14 @@
     },
     {
       "addr": "01d06ab4",
-      "name": "DAT_01d06ab4",
-      "type": "undefined4",
+      "name": "g_INT_01d06ab4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     },
     {
@@ -1682,6 +1680,12 @@
     "pcode_op_count": 19803
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b90d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3074
+    },
     "bw3.exe": {
       "addr": "004bb100",
       "by": "name",
@@ -1995,984 +1999,1296 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 34,
+      "line": 36,
       "match": "afStackY_12f8",
       "severity": "moderate",
       "text": "float afStackY_12f8 [391];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 272,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "(&DAT_01cd0c68)[iVar17] = uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 273,
-      "match": "int3",
-      "severity": "mild",
-      "text": "iVar7 = CONCAT31((int3)((uint)iVar10 >> 8),uVar3);",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 276,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)((uint)iVar10 >> 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 277,
-      "match": "DAT_005e1b78",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1b78);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 303,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 313,
-      "match": "DAT_005e1bd5",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1bd5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 338,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 356,
-      "match": "DAT_005e1c15",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1c15);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 381,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 390,
-      "match": "DAT_005e1c4a",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1c4a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 415,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 432,
-      "match": "DAT_005e1ca8",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1ca8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 457,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 466,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "iVar7 = DAT_0061b49c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 483,
-      "match": "DAT_005e1d09",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1d09);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 508,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)local_2bc ^ (byte)local_2c0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 524,
-      "match": "DAT_005e1d72",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1d72);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 549,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)((uint)local_2b4 >> 8) ^ (byte)((uint)local_2b8 >> 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 558,
-      "match": "DAT_005e1dc5",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1dc5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 584,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 593,
-      "match": "DAT_005e1e14",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1e14);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 618,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 622,
-      "match": "DAT_0061d968",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"?Enter Movie FPS\" + 1,(float *)&DAT_0061d968",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 627,
-      "match": "DAT_01cd0c40",
-      "severity": "mild",
-      "text": "(int *)&DAT_01cd0c40,1,0,99999,1), iVar7 != 0)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 629,
-      "match": "DAT_0061d96c",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Enter image width\",&DAT_0061d96c,1,1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 632,
-      "match": "DAT_0061d970",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Enter image height\",&DAT_0061d970,1,1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 641,
-      "match": "DAT_005e1e47",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1e47);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 666,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 670,
-      "match": "DAT_005e1e7e",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1e7e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 695,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 725,
-      "match": "DAT_005e1f01",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1f01);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 750,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 767,
-      "match": "DAT_005e1f69",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1f69);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 792,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 808,
-      "match": "DAT_005e1fec",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e1fec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 835,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)iStack_274 ^ (byte)iStack_278;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 842,
-      "match": "DAT_005e2049",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2049);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 869,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 876,
-      "match": "DAT_005e2096",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2096);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 903,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 910,
-      "match": "DAT_005e20f0",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e20f0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 937,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 945,
-      "match": "DAT_005e214d",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e214d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 972,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 980,
-      "match": "DAT_005e21b3",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e21b3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1007,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1015,
-      "match": "DAT_005e2214",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2214);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1042,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1050,
-      "match": "DAT_005e227e",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e227e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1077,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1083,
-      "match": "DAT_005e22b4",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e22b4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1108,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)iStack_1fc ^ (byte)iStack_200;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1119,
-      "match": "DAT_005e22f0",
-      "severity": "mild",
-      "text": "core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,&DAT_005e22f0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1135,
-      "match": "DAT_005e22f5",
-      "severity": "mild",
-      "text": "core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,&DAT_005e22f5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1151,
-      "match": "DAT_005e22fa",
-      "severity": "mild",
-      "text": "core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,&DAT_005e22fa);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1191,
-      "match": "DAT_005e2383",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2383);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1216,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)((uint)iStack_1f4 >> 8) ^ (byte)((uint)iStack_1f8 >> 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1230,
-      "match": "DAT_005e23ea",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e23ea);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1255,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1266,
-      "match": "DAT_0061d8f0",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Raise an event\",&DAT_0061d8f0,100,1),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1269,
-      "match": "DAT_0061d8f0",
-      "severity": "mild",
-      "text": "(0x01C51D80,&DAT_0061d8f0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1271,
-      "match": "DAT_0061d8f0",
-      "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,&DAT_0061d8f0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1278,
-      "match": "DAT_005e2438",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2438);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1303,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 275,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "uVar3 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar19 + 7);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1308,
+      "line": 276,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "*(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar19 + 8) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 277,
+      "match": "int3",
+      "severity": "mild",
+      "text": "iVar9 = CONCAT31((int3)((uint)iVar12 >> 8),uVar3);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 280,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = (byte)((uint)iVar12 >> 8);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 296,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 307,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 332,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 342,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 375,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 385,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 409,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 419,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 451,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 461,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 503,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 513,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = (byte)local_2bc ^ (byte)local_2c0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 544,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 554,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 579,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 590,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 614,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 624,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 662,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 672,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 691,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 701,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 745,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 755,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 788,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 798,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 831,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 841,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = (byte)iStack_274 ^ (byte)iStack_278;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 866,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 876,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 900,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 910,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 934,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 944,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 969,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 979,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1004,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1014,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1039,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1049,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1074,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1084,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1105,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1115,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = (byte)iStack_1fc ^ (byte)iStack_200;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1213,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1223,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1253,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1263,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1302,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1312,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1317,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar7 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_84);",
+      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_84);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1322,
+      "line": 1331,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar7 + 0x154) + 0x108))(iVar7,&SStack_34c);",
+      "text": "(**(code **)(*(int *)(iVar9 + 0x154) + 0x108))(iVar9,&SStack_34c);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 1327,
-      "match": "DAT_005e247a",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e247a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1352,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1368,
-      "match": "DAT_005e2501",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2501);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1393,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1402,
-      "match": "DAT_005e2551",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2551);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1427,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1432,
-      "match": "DAT_005e2590",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2590);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1457,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1462,
-      "match": "DAT_005e25cf",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e25cf);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1487,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)iStack_1b8 ^ (byte)iStack_1bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1522,
-      "match": "DAT_005e267b",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e267b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1547,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)((uint)iStack_1b0 >> 8) ^ (byte)((uint)iStack_1b4 >> 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1555,
-      "match": "DAT_005e26ba",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e26ba);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1580,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1587,
-      "match": "DAT_005e26ec",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e26ec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1612,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1626,
-      "match": "DAT_005e2747",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2747);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1652,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1660,
-      "match": "DAT_005e27a5",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e27a5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1685,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1688,
-      "match": "DAT_005e27df",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e27df);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1713,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1716,
-      "match": "DAT_005e2816",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2816);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1741,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 1756,
-      "match": "(int *)((int)g_CDemonSetPtr",
+      "line": 1351,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
       "severity": "moderate",
-      "text": "iVar7 = *(int *)((int)g_CDemonSetPtr->characters + iStack_54);",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 1831,
-      "match": "*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
+      "description": "Unknown/mangled field access",
+      "line": 1361,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1392,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4),",
-      "type": "raw_address_pointer_store"
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 1847,
-      "match": "DAT_005e289b",
+      "description": "Unknown/mangled field access",
+      "line": 1402,
+      "match": "._0_1_",
       "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e289b);",
-      "type": "undefined_data"
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 1872,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1876,
-      "match": "DAT_005e28d3",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e28d3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1901,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1917,
-      "match": "DAT_005e2923",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2923);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1942,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1958,
-      "match": "DAT_005e2978",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2978);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1983,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2000,
-      "match": "DAT_005e2a53",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2a53);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2025,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2042,
-      "match": "DAT_005e2b36",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2b36);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2067,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)iStack_120 ^ (byte)iStack_124;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2084,
-      "match": "DAT_005e2c1b",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2c1b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2109,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = (byte)((uint)iStack_118 >> 8) ^ (byte)((uint)iStack_11c >> 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2126,
-      "match": "DAT_005e2cf6",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2cf6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2152,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2157,
-      "match": "DAT_005e2d40",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2d40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2182,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 2184,
-      "match": "*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
+      "description": "Complex pointer cast",
+      "line": 1426,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4),",
-      "type": "raw_address_pointer_store"
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 2196,
-      "match": "DAT_005e2d8b",
+      "description": "Unknown/mangled field access",
+      "line": 1436,
+      "match": "._0_1_",
       "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2d8b);",
-      "type": "undefined_data"
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 2221,
-      "match": "DAT_01cd0c68",
+      "description": "Complex pointer cast",
+      "line": 1456,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1466,
+      "match": "._0_1_",
       "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
+      "line": 1486,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1496,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = (byte)iStack_1b8 ^ (byte)iStack_1bc;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1541,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1551,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1575,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1585,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1607,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1617,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1646,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1657,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1680,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1690,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1708,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1718,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1736,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1746,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1761,
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iStack_54);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1867,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1877,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1896,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1906,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1937,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1947,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1978,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 1988,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 2023,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2033,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 2068,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2078,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = (byte)iStack_120 ^ (byte)iStack_124;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 2113,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2123,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 2159,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2170,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 2190,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2200,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 2229,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 2239,
-      "match": "DAT_005e2dc6",
+      "match": "._0_1_",
       "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2dc6);",
-      "type": "undefined_data"
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 2264,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2282,
-      "match": "DAT_005e2e03",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2e03);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2307,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2326,
-      "match": "DAT_005e2e41",
-      "severity": "mild",
-      "text": "pbVar11 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00531110(&DAT_005e2e41);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 2351,
-      "match": "DAT_01cd0c68",
-      "severity": "mild",
-      "text": "DAT_01cd0c68 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0x2c82a60 assigned to bare local `this_ptr_01`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_01` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 1186,
-      "match": "0x2c82a60",
+      "description": "Complex pointer cast",
+      "line": 2272,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
       "severity": "moderate",
-      "text": "this_ptr_01 = 0x02C82A60;",
-      "type": "raw_address_constant"
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2282,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 2315,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2325,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 2359,
+      "match": "(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2369,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CHero_PTR_ARRAY_01cd0c60[2]._0_1_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 275,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "uVar3 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar19 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 276,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "*(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar19 + 8) = uVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 296,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 332,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 375,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 409,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 451,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 503,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 544,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 579,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 614,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 662,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 691,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 745,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 788,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 831,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 866,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 900,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 934,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 969,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1004,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1039,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1074,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1105,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1213,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1253,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1302,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1351,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1392,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1426,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1456,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1486,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1541,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1575,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1607,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1646,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1680,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1708,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1736,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1867,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1896,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1937,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1978,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2023,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2068,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2113,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2159,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2190,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2229,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2272,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2315,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01cd0c60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 2359,
+      "match": "(int)g_CHero_PTR_ARRAY_01cd0c60",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)g_CHero_PTR_ARRAY_01cd0c60 + iVar9 + 7);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 705,
+      "line": 711,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2980,47 +3296,39 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 273,
+      "line": 277,
       "match": "CONCAT31",
       "severity": "moderate",
-      "text": "iVar7 = CONCAT31((int3)((uint)iVar10 >> 8),uVar3);",
+      "text": "iVar9 = CONCAT31((int3)((uint)iVar12 >> 8),uVar3);",
       "type": "concat_reconstruction"
     },
     {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 1490,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar20` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar20->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1784,
+      "match": "pCVar20 = (T *)((pCVar20->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "if (*(int *)(pCVar12[4].actor_name + 0xc) == 5) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar18` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar18->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1779,
-      "match": "pCVar18 = (T *)((pCVar18->FIELD).ARRAY[N] + CONST)",
-      "severity": "moderate",
-      "text": "pCVar18 = (CSkeleton *)((pCVar18->motion_list).state_names[1] + 2);",
+      "text": "pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar18` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar18->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1801,
-      "match": "pCVar18 = (T *)((pCVar18->FIELD).ARRAY[N] + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar20` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar20->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1806,
+      "match": "pCVar20 = (T *)((pCVar20->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCVar18 = (CSkeleton *)((pCVar18->motion_list).state_names[1] + 2);",
+      "text": "pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar18` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar18->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1823,
-      "match": "pCVar18 = (T *)((pCVar18->FIELD).ARRAY[N] + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar20` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar20->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1828,
+      "match": "pCVar20 = (T *)((pCVar20->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCVar18 = (CSkeleton *)((pCVar18->motion_list).state_names[1] + 2);",
+      "text": "pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 280,
+      "line": 284,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3028,7 +3336,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 317,
+      "line": 321,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3036,7 +3344,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 359,
+      "line": 363,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3044,7 +3352,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 394,
+      "line": 398,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3052,7 +3360,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 435,
+      "line": 439,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3060,7 +3368,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 487,
+      "line": 492,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3068,7 +3376,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 527,
+      "line": 532,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3076,7 +3384,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 561,
+      "line": 567,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3084,7 +3392,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 597,
+      "line": 603,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3092,7 +3400,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 645,
+      "line": 651,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3100,7 +3408,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 674,
+      "line": 680,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3108,7 +3416,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 729,
+      "line": 734,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3116,7 +3424,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 770,
+      "line": 776,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3124,7 +3432,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 812,
+      "line": 818,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3132,7 +3440,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 847,
+      "line": 854,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3140,7 +3448,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 881,
+      "line": 888,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3148,7 +3456,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 914,
+      "line": 921,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3156,7 +3464,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 950,
+      "line": 957,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3164,7 +3472,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 985,
+      "line": 992,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3172,7 +3480,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1019,
+      "line": 1026,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3180,7 +3488,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1055,
+      "line": 1062,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3188,7 +3496,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1087,
+      "line": 1094,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3196,7 +3504,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1194,
+      "line": 1201,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3204,7 +3512,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1234,
+      "line": 1242,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3212,7 +3520,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1281,
+      "line": 1290,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3220,7 +3528,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1330,
+      "line": 1339,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3228,7 +3536,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1372,
+      "line": 1381,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3236,7 +3544,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1405,
+      "line": 1414,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3244,7 +3552,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1436,
+      "line": 1445,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3252,7 +3560,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1466,
+      "line": 1475,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3260,7 +3568,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1526,
+      "line": 1530,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3268,7 +3576,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1559,
+      "line": 1564,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3276,7 +3584,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1590,
+      "line": 1595,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3284,7 +3592,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1629,
+      "line": 1634,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3292,7 +3600,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1664,
+      "line": 1669,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3300,7 +3608,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1692,
+      "line": 1697,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3308,7 +3616,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1719,
+      "line": 1724,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3316,7 +3624,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1851,
+      "line": 1856,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3324,7 +3632,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1880,
+      "line": 1885,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3332,7 +3640,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1921,
+      "line": 1926,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3340,7 +3648,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1962,
+      "line": 1967,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3348,7 +3656,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2003,
+      "line": 2011,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3356,7 +3664,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2045,
+      "line": 2056,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3364,7 +3672,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2087,
+      "line": 2101,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3372,7 +3680,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2129,
+      "line": 2147,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3380,7 +3688,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2160,
+      "line": 2178,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3388,7 +3696,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2200,
+      "line": 2218,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3396,7 +3704,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2242,
+      "line": 2260,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3404,7 +3712,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2285,
+      "line": 2303,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3412,18 +3720,11 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2330,
+      "line": 2348,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
-    },
-    {
-      "description": "'pCVar12[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar12)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 1490,
-      "severity": "moderate",
-      "text": "if (*(int *)(pCVar12[4].actor_name + 0xc) == 5) {",
-      "type": "derived_field_index_pun"
     }
   ]
 }

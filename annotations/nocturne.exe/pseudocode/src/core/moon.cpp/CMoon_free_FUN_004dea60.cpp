@@ -18,7 +18,7 @@ void __cdecl core_moon_cpp_CMoon_free_FUN_004dea60(CMoon *this_ptr)
     do {
       engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(this_ptr_01);
       this_ptr_01 = this_ptr_01 + 1;
-    } while (this_ptr_01 != (CAlphaBitmap *)&DAT_01ccdebc);
+    } while (this_ptr_01 != g_MoonAnimTextures + sizeof(g_MoonAnimTextures) / sizeof(g_MoonAnimTextures[0]));
     this_ptr->is_loaded = 0;
   }
   this_ptr_00 = g_MoonBatCourses;

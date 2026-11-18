@@ -6,10 +6,15 @@
 #include "system/basetypes.h"
 #include "system/watcom.h"
 #include "types/classes/CBoneGuy_full_vtable.h"
+#include "types/classes/CCameraView_vtable.h"
 #include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CConstruct_full_vtable.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CParticle_vtable.h"
+#include "types/classes/CPickList_full_vtable.h"
+#include "types/classes/CStrList_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 
 // =============================================================================
@@ -23,6 +28,11 @@ extern CBoneGuy_full_vtable g_CSkeletonIndianVTable;
 extern CBoneGuy_full_vtable g_CSkeletonDemonVTable;
 extern CBoneGuy_full_vtable g_CBaalSkelVTable;
 
+// CCameraView_vtable
+extern CCameraView_vtable g_CCameraView_vtable_005dcef4;
+extern CCameraView_vtable g_CDemonCameraVTable;
+extern CCameraView_vtable g_CCameraView_vtable_005de514;
+
 // CCharacter_full_vtable
 extern CCharacter_full_vtable g_CBirdVTable;
 extern CCharacter_full_vtable g_CCharacterVTable;
@@ -31,6 +41,9 @@ extern CCharacter_full_vtable g_CCharacterVTable;
 extern CConstruct_full_vtable g_CConstructVTable;
 extern CConstruct_full_vtable g_CConstructBoneVTable;
 extern CConstruct_full_vtable g_CConstructRedVTable;
+
+// CDemonActor*
+extern CDemonActor* g_ActorNameSentinel;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;
@@ -68,6 +81,21 @@ extern CEnemy_full_vtable g_CDemonDogVTable;
 extern CEnemy_full_vtable g_CEtherealDogVTable;
 extern CEnemy_full_vtable g_CEnemyVTable;
 
+// CParticle_vtable
+extern CParticle_vtable g_CRainDropVTable;
+extern CParticle_vtable g_CPopcornVTable;
+extern CParticle_vtable g_CShellVTable;
+extern CParticle_vtable g_CGlassParticleVTable;
+extern CParticle_vtable g_CRockVTable;
+extern CParticle_vtable g_CFireballVTable;
+extern CParticle_vtable g_CSparkVTable;
+
+// CPickList_full_vtable
+extern CPickList_full_vtable g_CPickListVTable;
+
+// CStrList_vtable
+extern CStrList_vtable g_CStrListVTable;
+
 // CWeapon_full_vtable
 extern CWeapon_full_vtable g_CBindEvilVTable;
 extern CWeapon_full_vtable g_CBlunderbusVTable;
@@ -77,6 +105,9 @@ extern CWeapon_full_vtable g_CDynamiteVTable;
 extern CWeapon_full_vtable g_CElephantGunVTable;
 extern CWeapon_full_vtable g_CExorcismVTable;
 extern CWeapon_full_vtable g_CFirestaffVTable;
+
+// TerminatedCString
+extern TerminatedCString g_CChemPuzzleVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_005DBE00;
@@ -221,25 +252,35 @@ extern WatcomTypeInfo g_CRingTypeInfo;
 extern WatcomTypeInfo g_CDeformableModelInstanceTypeInfo;
 extern WatcomTypeInfo g_CFirestaffTypeInfo;
 
-// undefined1
-extern undefined1 DAT_005daf80;
+// char
+extern char g_SpaceCharacter;
 
-// undefined1*
-extern undefined1* g_CAudioRecPuzzleVTable;
-extern undefined1* g_CChemPuzzleVTable;
-extern undefined1* g_CAsciiArmorVTable;
-extern undefined1* g_CAsciiUnarmorVTable;
-extern undefined1* g_CInStreamPipeVTable;
-extern undefined1* g_CDemonCameraVTable;
-extern undefined1* g_CStrListVTable;
-extern undefined1* g_CPickListVTable;
-extern undefined1* g_CRainDropVTable;
-extern undefined1* g_CPopcornVTable;
-extern undefined1* g_CShellVTable;
-extern undefined1* g_CGlassParticleVTable;
-extern undefined1* g_CLeafVTable;
-extern undefined1* g_CRockVTable;
-extern undefined1* g_CFireballVTable;
-extern undefined1* g_CFireflyVTable;
-extern undefined1* g_CSparkVTable;
+// int
+extern int g_INT_005da7b0;
+extern int g_INT_005da7c0;
+extern int g_INT_005da7c4;
+extern int g_INT_005da7c8;
+extern int g_INT_005dcf48;
+extern int g_INT_005de058;
+
+// void*[10]
+extern void* g_ARRAY_PTR_005dbe54[10];
+
+// void*[23]
+extern void* g_CAudioRecPuzzleVTable[23];
+
+// void*[3]
+extern void* g_ARRAY_PTR_005dbfa4[3];
+
+// void*[4]
+extern void* g_CLeafVTable[4];
+extern void* g_CFireflyVTable[4];
+
+// void*[9]
+extern void* g_ARRAY_PTR_005dd464[9];
+extern void* g_ARRAY_PTR_005dd494[9];
+extern void* g_CAsciiArmorVTable[9];
+extern void* g_CAsciiUnarmorVTable[9];
+extern void* g_ARRAY_PTR_005dd524[9];
+extern void* g_CInStreamPipeVTable[9];
 

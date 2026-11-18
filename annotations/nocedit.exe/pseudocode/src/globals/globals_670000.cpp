@@ -177,11 +177,11 @@ SMRGLTextureBasic g_FireEffectRainDropTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINDRP1.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0067b0c8 = {
+SMRGLTextureBasic g_FlameGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "GLOW1.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0067b514 = {
+SMRGLTextureBasic g_FliesTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BBWHITE.RAW"
 };
@@ -209,7 +209,7 @@ SMRGLTextureBasic g_LoadingMoonGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "MOONGLOW.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0067d150 = {
+SMRGLTextureBasic g_MarqueeSparkTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SPARK.RAW"
 };
@@ -845,7 +845,7 @@ SMRGLTextureBasic g_FireEffectSmokeParticleTextures[40] = {
         .texture_name = "SPFB0089.RAW"
     }
 };
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067b100[40] = {
+SMRGLTextureBasic g_FlameFrameTextures[40] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "F0100.RAW"
@@ -1611,7 +1611,7 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_006703a0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065cd40,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&SFreaky_ARRAY_02c6d0c0
+    .object_instance = (void *)&g_FreakySounds
 };
 WatcomStaticDestructorNode g_CEditorToolsDestructorNode = {
     .next = nullptr,
@@ -2068,9 +2068,9 @@ int g_CMansionPuzzleCircleClassVersion = 0x3;
 int g_CMirrorHackClassVersion = 0x1;
 int g_CMarqueeClassVersion = 0x1;
 int g_CMeleeClassVersion = 0x7;
-int INT_0067d390 = -1;
+int g_LodPreviewLabelVertex = -1;
 int g_EnableMidpointSampling = 0x1;
-int INT_0067d39c = 0x1;
+int g_LodChooserSelectedLod = 0x1;
 int g_CMimicClassVersion = 0x3;
 int g_CMineCarClassVersion = 0x1;
 int g_CPUInfoBasicInfo2 = 0x1000C900;

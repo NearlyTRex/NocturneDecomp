@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004e4c70 at 004e4cb4
+;   core_main.c_finalizeGameSystems_FUN_004e4c70 at 004e4cb4
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004f76f0 at 004f76f5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b4b848
+;   int g_KeyframeModelCount
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_00460e10
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10
 ;
 ; *****************************************************************************
 
@@ -25,15 +25,15 @@ section .text
     LEA ESI,[EBX + 0x39800]             ; 004624d7
     PUSH EBX                            ; 004624dd
         ;   Label: LAB_004624dd
-    CALL core_dmodel.cpp_FUN_00460e10   ; 004624de
-        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00460e10()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10 ; 004624de
+        ;   XREF to: 00460e10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10(CKeyFramedModel * this_ptr)
     ADD EBX,0x398                       ; 004624e3
     ADD ESP,0x4                         ; 004624e9
     CMP EBX,ESI                         ; 004624ec
     JNZ 0x004624dd                      ; 004624ee
         ;   XREF to: 004624dd (CONDITIONAL_JUMP)  ; LAB_004624dd
     XOR EDX,EDX                         ; 004624f0
-    MOV dword ptr [0x01b4b848],EDX      ; 004624f2 | DAT_01b4b848
+    MOV dword ptr [0x01b4b848],EDX      ; 004624f2 | g_KeyframeModelCount
     POP ESI                             ; 004624f8
     POP EBX                             ; 004624f9
     RET                                 ; 004624fa

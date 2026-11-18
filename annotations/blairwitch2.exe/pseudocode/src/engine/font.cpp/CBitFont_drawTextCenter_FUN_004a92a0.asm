@@ -14,7 +14,7 @@
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70 at 0046809e
 ;   engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004a9330 at 004a9382
-;   shape_edittool.cpp_FUN_0047be90 at 0047bf37
+;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90 at 0047bf37
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0

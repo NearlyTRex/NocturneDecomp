@@ -2,24 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 71,
+    "complexity_score": 24,
     "cross_reference_count": 15,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 5,
-    "suspect_types": [
-      "fpu_register_input",
-      "register_param"
-    ],
-    "total_lines": 50
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
   },
   "cross_references": [
     {
       "addr": "004496e0",
       "from_addr": "00449a2c",
-      "name": "core_dirmat.cpp_FUN_004496e0",
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -29,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00453d80",
-      "from_addr": "00454368",
-      "name": "core_doc.cpp_FUN_00453d80",
+      "addr": "0045ab40",
+      "from_addr": "0045b06a",
+      "name": "core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045ab40",
-      "from_addr": "0045b06a",
-      "name": "core_doc.cpp_FUN_0045ab40",
+      "addr": "00453d80",
+      "from_addr": "00454368",
+      "name": "core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,19 +64,19 @@
     {
       "addr": "00565ff0",
       "from_addr": "005665cd",
-      "name": "core_stranger.cpp_FUN_00565ff0",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056bcc0",
       "from_addr": "0056bd0d",
-      "name": "core_stranger.cpp_FUN_0056bcc0",
+      "name": "core_stranger.cpp_adjustAimAngleForOffset_FUN_0056bcc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056bd50",
       "from_addr": "0056be10",
-      "name": "core_stranger.cpp_FUN_0056bd50",
+      "name": "core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0056bd50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -115,9 +112,9 @@
         "005b9960"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__fpustack_safe",
     "name": "crt_math.c_acos_FUN_005b9924",
-    "signature": "undefined2 crt_math_c_acos_FUN_005b9924(void)"
+    "signature": "double __fpustack_safe crt_math_c_acos_FUN_005b9924(double x)"
   },
   "function_calls": [
     {
@@ -134,11 +131,19 @@
   "globals": [
     {
       "addr": "0061eeac",
-      "name": "DAT_0061eeac",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PiOver2",
+      "type": "float10",
+      "value": "1.570796326794896558"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "skipped",
+    "declared_params": 1,
+    "estimated_params": 1,
+    "skip_reason": "fpu_or_no_param_convention"
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.814814814814815,
     "instruction_count": 27,
@@ -201,53 +206,12 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_AX",
-      "severity": "mild",
-      "text": "ushort in_AX;",
-      "type": "register_param"
-    },
-    {
-      "description": "FPU register input (calling convention issue)",
-      "line": 7,
-      "match": "in_ST0",
-      "severity": "mild",
-      "text": "float10 in_ST0;",
-      "type": "fpu_register_input"
-    },
-    {
-      "description": "FPU register input (calling convention issue)",
-      "line": 9,
-      "match": "in_ST0",
-      "severity": "mild",
-      "text": "if (((float10)1 - in_ST0 * in_ST0 != (float10)0) &&",
-      "type": "fpu_register_input"
-    },
-    {
-      "description": "FPU register input (calling convention issue)",
-      "line": 9,
-      "match": "in_ST0",
-      "severity": "mild",
-      "text": "if (((float10)1 - in_ST0 * in_ST0 != (float10)0) &&",
-      "type": "fpu_register_input"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_AX",
-      "severity": "mild",
-      "text": "return in_AX;",
-      "type": "register_param"
-    }
-  ]
+  "suspects": []
 }

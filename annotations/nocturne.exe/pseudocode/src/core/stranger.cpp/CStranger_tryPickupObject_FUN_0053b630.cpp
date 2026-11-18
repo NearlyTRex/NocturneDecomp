@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(CStranger *this_ptr,char *class_name)
 
 {
@@ -220,9 +218,9 @@ LAB_0053b782:
       }
       else {
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                  (pCVar1,&CStack_b8,_DAT_02dc9f88);
+                  (pCVar1,&CStack_b8,g_StrangerIndices[0xe]);
         core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                  (pCVar1,&CStack_ac,_DAT_02dc9f60);
+                  (pCVar1,&CStack_ac,g_StrangerIndices[4]);
         fStack_60 = CStack_b8.y - CStack_ac.y;
         fStack_64 = CStack_b8.x - CStack_ac.x;
         fStack_5c = CStack_b8.z - CStack_ac.z;

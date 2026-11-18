@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004accb0(CFrankenstienMachine *this_ptr)
 
 {
@@ -17,25 +14,23 @@ CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_
   CVector3i *pCVar2;
   uint *puVar3;
   byte bVar4;
-  float10 fVar5;
-  float afStackY_102c [1015];
-  float start_frame;
-  float end_frame;
+  double dVar5;
+  int aiStackY_1030 [1016];
   int frame_index;
-  float local_44;
+  float start_frame;
+  float fVar6;
+  int iStack_3c;
   int local_38;
-  int local_34 [2];
-  float local_2c;
-  float local_28;
-  float local_24;
-  CVector3f local_20;
-  int local_14;
+  int local_34;
+  CVector3f local_30;
+  CVector3f local_24;
+  int local_18;
   
   bVar4 = 0;
   switch(this_ptr->which_part) {
   case 0:
     start_frame = 0.0;
-    end_frame = 0x450FC000;
+    fVar6 = 2300.0f;
     goto LAB_004accd9;
   case 1:
     core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004aced0(this_ptr,131.0,671.0);
@@ -55,48 +50,48 @@ CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_
   case 6:
   case 7:
     start_frame = 1701.0;
-    end_frame = 1930.0;
+    fVar6 = 1930.0;
     goto LAB_004accd9;
   case 8:
     start_frame = 1949.0;
-    end_frame = 2300.0;
+    fVar6 = 2300.0;
 LAB_004accd9:
-    core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60
-              (this_ptr,start_frame,end_frame);
+    core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(this_ptr,start_frame,fVar6);
     break;
   default:
-    _DAT_01d046a0 = "..\\core\\frankgen.cpp";
-    _DAT_01d046a4 = 0x1bb;
-    core_main_c_FUN_004e4500(&DAT_005d6ce6);
+    g_CHAR_PTR_01d046a0 = "..\\core\\frankgen.cpp";
+    g_INT_01d046a4 = 0x1bb;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("WTF!");
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(&this_ptr->base);
-  fVar5 = (float10)this_ptr->part_frame;
-  round();
-  frame_index = (int)ROUND(fVar5);
+  fVar6 = 6.869353e-39;
+  dVar5 = round((double)this_ptr->part_frame);
+  frame_index = (int)ROUND(dVar5);
   iVar1 = this_ptr->anchor_vertex_index;
-  local_14 = frame_index;
+  local_18 = frame_index;
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
                           (&this_ptr->bed_model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0(this_ptr_00,frame_index);
   puVar3 = (uint *)((int)(pCVar2 + iVar1) + (uint)bVar4 * -8 + 4);
-  local_38 = pCVar2[iVar1].x;
-  *(uint *)((int)local_34 + (uint)bVar4 * -8) = *puVar3;
-  *(uint *)((int)local_34 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 1) * 4) =
+  iStack_3c = pCVar2[iVar1].x;
+  *(uint *)((int)&stack0xffffffc8 + (uint)bVar4 * -8) = *puVar3;
+  *(uint *)((int)&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        puVar3[(uint)bVar4 * -2 + 1];
-  local_2c = (float)local_38 * _DAT_005f71d8;
-  local_28 = (float)local_34[0] * _DAT_005f71d8;
-  local_24 = (float)local_34[1] * _DAT_005f71d8;
-  core_actor_cpp_FUN_00408d70(this_ptr,&local_2c);
-  local_20.x = local_44;
-  *(uint *)((int)&local_20 + (uint)bVar4 * -8 + 4) =
-       *(uint *)(&stack0xffffffc0 + (uint)bVar4 * 0xfffffff8);
-  *(uint *)((int)&local_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-       *(uint *)((int)&stack0xffffffc4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  if (&this_ptr->anchor_world_position != &local_20) {
-    (this_ptr->anchor_world_position).x = local_20.x;
-    (this_ptr->anchor_world_position).y = local_20.y;
-    (this_ptr->anchor_world_position).z = local_20.z;
-    return (CVector3f *)local_20.z;
+  local_30.x = (float)iStack_3c * 0.00390625f;
+  local_30.y = (float)local_38 * 0.00390625f;
+  local_30.z = (float)local_34 * 0.00390625f;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+            (&this_ptr->base,&local_30,(CVector3f *)&stack0xffffffb8);
+  local_24.x = fVar6;
+  *(uint *)((int)&local_24 + (uint)bVar4 * -8 + 4) =
+       *(uint *)(&stack0xffffffbc + (uint)bVar4 * -8);
+  *(uint *)((int)&local_24 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       *(uint *)(&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+  if (&this_ptr->anchor_world_position != &local_24) {
+    (this_ptr->anchor_world_position).x = local_24.x;
+    (this_ptr->anchor_world_position).y = local_24.y;
+    (this_ptr->anchor_world_position).z = local_24.z;
+    return (CVector3f *)local_24.z;
   }
-  return &local_20;
+  return &local_24;
 }

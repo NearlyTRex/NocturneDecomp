@@ -24,7 +24,7 @@ int __cdecl sound_sndmain_cpp_setSfxVelocity_FUN_005a9970(uint sfx_handle,double
   (this_ptr->options).velocity.z = vel_z;
   sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
   if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
-    iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,4);
+    iVar1 = (*g_CSoundDevicePtr->vtable->applySfxChanges)(g_CSoundDevicePtr,this_ptr,4);
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return iVar1;

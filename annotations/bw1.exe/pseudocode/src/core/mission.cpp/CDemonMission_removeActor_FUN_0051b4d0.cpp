@@ -12,7 +12,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_0051b4d0(CDemonMissi
   if (actor != (CDemonActor *)0x0) {
     core_mission_cpp_CDemonMission_removeActorFromList_FUN_0051b1d0(this_ptr,actor);
     if (should_delete != 0) {
-      core_actor_cpp_FUN_00408560(actor);
+      core_actor_cpp_deleteActor_FUN_00408560(actor);
       return;
     }
   }

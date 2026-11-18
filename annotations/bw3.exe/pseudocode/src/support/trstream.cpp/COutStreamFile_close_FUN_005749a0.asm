@@ -7,8 +7,8 @@
 ; COutStreamFile * Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004bda10 at 004bddfd
-;   core_game.cpp_FUN_004bdfb0 at 004be33f
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be33f
+;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bddfd
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a65
 ;   support_trstream.cpp_COutStreamFile_dtor_FUN_00574850 at 00574863
 ;
@@ -32,7 +32,7 @@ section .text
     PUSH EDX                            ; 005749b3
         ;   Label: LAB_005749b3
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 005749b4
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 005749b9
     MOV dword ptr [EBX + 0x4],0x0       ; 005749bc
     MOV EAX,0x1                         ; 005749c3

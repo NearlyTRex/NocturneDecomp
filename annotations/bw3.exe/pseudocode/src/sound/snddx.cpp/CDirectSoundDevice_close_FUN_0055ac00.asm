@@ -10,11 +10,11 @@
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_0055d470 at 0055d485
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf49c4
-;   undefined4 DAT_02cf49c8
-;   undefined4 DAT_02cf49cc
-;   undefined4 DAT_02cf49d0
-;   undefined4 DAT_02cf49d4
+;   IDirectSound* g_DirectSound
+;   IDirectSoundBuffer* g_DirectSoundPrimaryBuffer
+;   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+;   IDirectSound3DListener* g_DirectSound3DListener
+;   IKsPropertySet* g_DirectSoundPropertySet
 ;
 ; *****************************************************************************
 
@@ -46,7 +46,7 @@ section .text
     CMP EBX,0x41                        ; 0055ac2b
     JL 0x0055ac20                       ; 0055ac2e
         ;   XREF to: 0055ac20 (CONDITIONAL_JUMP)  ; LAB_0055ac20
-    MOV EDX,dword ptr [0x02cf49d0]      ; 0055ac30 | DAT_02cf49d0
+    MOV EDX,dword ptr [0x02cf49d0]      ; 0055ac30 | g_DirectSound3DListener
     TEST EDX,EDX                        ; 0055ac36
     JZ 0x0055ac48                       ; 0055ac38
         ;   XREF to: 0055ac48 (CONDITIONAL_JUMP)  ; LAB_0055ac48
@@ -54,8 +54,8 @@ section .text
     MOV EBX,dword ptr [EDX]             ; 0055ac3b
     CALL dword ptr [EBX + 0x8]          ; 0055ac3d
     XOR ECX,ECX                         ; 0055ac40
-    MOV dword ptr [0x02cf49d0],ECX      ; 0055ac42 | DAT_02cf49d0
-    MOV EBX,dword ptr [0x02cf49cc]      ; 0055ac48 | DAT_02cf49cc
+    MOV dword ptr [0x02cf49d0],ECX      ; 0055ac42 | g_DirectSound3DListener
+    MOV EBX,dword ptr [0x02cf49cc]      ; 0055ac48 | g_DirectSoundSecondaryBuffer
         ;   Label: LAB_0055ac48
     TEST EBX,EBX                        ; 0055ac4e
     JZ 0x0055ac62                       ; 0055ac50
@@ -65,8 +65,8 @@ section .text
     MOV EBX,dword ptr [EBX]             ; 0055ac55
     XOR ESI,ESI                         ; 0055ac57
     CALL dword ptr [EBX + 0x8]          ; 0055ac59
-    MOV dword ptr [0x02cf49cc],ESI      ; 0055ac5c | DAT_02cf49cc
-    MOV EBP,dword ptr [0x02cf49d4]      ; 0055ac62 | DAT_02cf49d4
+    MOV dword ptr [0x02cf49cc],ESI      ; 0055ac5c | g_DirectSoundSecondaryBuffer
+    MOV EBP,dword ptr [0x02cf49d4]      ; 0055ac62 | g_DirectSoundPropertySet
         ;   Label: LAB_0055ac62
     TEST EBP,EBP                        ; 0055ac68
     JZ 0x0055ac7a                       ; 0055ac6a
@@ -75,8 +75,8 @@ section .text
     MOV EBX,dword ptr [EBP]             ; 0055ac6d
     CALL dword ptr [EBX + 0x8]          ; 0055ac70
     XOR EAX,EAX                         ; 0055ac73
-    MOV [0x02cf49d4],EAX                ; 0055ac75 | DAT_02cf49d4
-    MOV EDX,dword ptr [0x02cf49c8]      ; 0055ac7a | DAT_02cf49c8
+    MOV [0x02cf49d4],EAX                ; 0055ac75 | g_DirectSoundPropertySet
+    MOV EDX,dword ptr [0x02cf49c8]      ; 0055ac7a | g_DirectSoundPrimaryBuffer
         ;   Label: LAB_0055ac7a
     TEST EDX,EDX                        ; 0055ac80
     JZ 0x0055ac92                       ; 0055ac82
@@ -85,8 +85,8 @@ section .text
     MOV EBX,dword ptr [EDX]             ; 0055ac85
     CALL dword ptr [EBX + 0x8]          ; 0055ac87
     XOR ECX,ECX                         ; 0055ac8a
-    MOV dword ptr [0x02cf49c8],ECX      ; 0055ac8c | DAT_02cf49c8
-    MOV EBX,dword ptr [0x02cf49c4]      ; 0055ac92 | DAT_02cf49c4
+    MOV dword ptr [0x02cf49c8],ECX      ; 0055ac8c | g_DirectSoundPrimaryBuffer
+    MOV EBX,dword ptr [0x02cf49c4]      ; 0055ac92 | g_DirectSound
         ;   Label: LAB_0055ac92
     TEST EBX,EBX                        ; 0055ac98
     JNZ 0x0055acaa                      ; 0055ac9a
@@ -107,7 +107,7 @@ section .text
     MOV EBX,dword ptr [EBX]             ; 0055acad
     XOR ESI,ESI                         ; 0055acaf
     CALL dword ptr [EBX + 0x8]          ; 0055acb1
-    MOV dword ptr [0x02cf49c4],ESI      ; 0055acb4 | DAT_02cf49c4
+    MOV dword ptr [0x02cf49c4],ESI      ; 0055acb4 | g_DirectSound
     MOV EAX,EDI                         ; 0055acba
     POP EBP                             ; 0055acbc
     POP EDI                             ; 0055acbd

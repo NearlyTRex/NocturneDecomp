@@ -13,7 +13,7 @@ void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_00572f90(CTentacle *this_pt
   
   core_enemy_cpp_CEnemy_archive_FUN_00487ec0(&this_ptr->base);
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0
-            (&(this_ptr->base).base.model,"0@modelName" + 2);
+            (&(this_ptr->base).base.model,"modelName");
   if (g_CTentacleClassVersion < 2) {
     core_actor_cpp_archiveFloat_FUN_0040b8e0
               (&(this_ptr->base).guard_distance,"guardDistance");

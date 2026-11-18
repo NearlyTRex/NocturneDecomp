@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 180,
+    "complexity_score": 165,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
-      "suspect_float",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
     "total_lines": 449
   },
@@ -170,7 +169,7 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "g_CKeys_01cc30e4",
+      "name": "g_CKeysInstance",
       "type": "CKeys",
       "value": null
     },
@@ -188,20 +187,20 @@
     },
     {
       "addr": "01cea3f4",
-      "name": "DAT_01cea3f4",
-      "type": "undefined4",
+      "name": "g_LastPingTime",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cea3f8",
-      "name": "DAT_01cea3f8",
-      "type": "undefined4",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01cea400",
-      "name": "DAT_01cea400",
-      "type": "undefined4",
+      "name": "g_RemoteSyncStage",
+      "type": "int",
       "value": null
     }
   ],
@@ -459,35 +458,27 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 50,
+      "line": 49,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_1c = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 64,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar4->vertices[0].a`). Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 63,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;",
+      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.fire;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 95,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar4->vertices[0].a`). Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 94,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;",
+      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.fire;",
       "type": "shadow_pointer_walk"
     }
   ]

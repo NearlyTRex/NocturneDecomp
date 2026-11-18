@@ -54,7 +54,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004ce590(CHero *this_ptr)
                 ((CDemonActor **)&this_ptr->pushed_object,"pushedObject");
     }
     if (g_CHeroClassVersion == 10) {
-      core_actor_cpp_archiveInteger_FUN_0040b960(&local_14,&DAT_005d9ade);
+      core_actor_cpp_archiveInteger_FUN_0040b960(&local_14,"keys");
     }
     if ((7 < g_CHeroClassVersion) && (g_CHeroClassVersion < 0xb)) {
       iVar1 = 0;
@@ -77,21 +77,21 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004ce590(CHero *this_ptr)
     }
     if (g_CHeroClassVersion < 0x11) {
       if (5 < g_CHeroClassVersion) {
-        if (DAT_007bc038 == 1) {
-          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories,DAT_007bc034);
+        if (g_ActorReadingMode == 1) {
+          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories,g_ActorDataFile);
         }
         else {
-          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories,DAT_007bc034);
+          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories,g_ActorDataFile);
         }
       }
       if (0xd < g_CHeroClassVersion) {
-        if (DAT_007bc038 == 1) {
-          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories + 1,DAT_007bc034);
-          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories + 2,DAT_007bc034);
+        if (g_ActorReadingMode == 1) {
+          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories + 1,g_ActorDataFile);
+          core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories + 2,g_ActorDataFile);
         }
         else {
-          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories + 1,DAT_007bc034);
-          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories + 2,DAT_007bc034);
+          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories + 1,g_ActorDataFile);
+          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories + 2,g_ActorDataFile);
         }
       }
       if (0xe < g_CHeroClassVersion) {
@@ -123,11 +123,11 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004ce590(CHero *this_ptr)
                   (&this_ptr->inventories[0].current_group,"InventoryIndex");
       }
       if (5 < g_CHeroClassVersion) {
-        if (DAT_007bc038 != 1) {
-          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories,DAT_007bc034);
+        if (g_ActorReadingMode != 1) {
+          core_inv_cpp_CInventory_save_FUN_004dc2c0(this_ptr->inventories,g_ActorDataFile);
           return;
         }
-        core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories,DAT_007bc034);
+        core_inv_cpp_CInventory_load_FUN_004dc4b0(this_ptr->inventories,g_ActorDataFile);
         return;
       }
     }

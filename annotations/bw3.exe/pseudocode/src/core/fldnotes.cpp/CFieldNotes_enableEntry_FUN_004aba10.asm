@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   entry_name
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_0048c2e0 at 0048caf2
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048caf2
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004ab9ec = 004aba61
@@ -16,14 +16,14 @@
 ;   TerminatedCString s_core_fldnotes_cpp_005c16af
 ;   TerminatedCString s_Field_note_s_has_invalid_005c16c4
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
-;   undefined4 DAT_005fe374
-;   undefined4 DAT_01d0d210
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_INT_005fe374 = 0x1
+;   int g_INT_01d0d210
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;
 ; *****************************************************************************
@@ -36,7 +36,7 @@ section .text
     PUSH EDI                            ; 004aba12
     PUSH EBP                            ; 004aba13
     MOV EDI,dword ptr [ESP + 0x18]      ; 004aba14
-    MOV EDX,dword ptr [0x01d0d210]      ; 004aba18 | DAT_01d0d210
+    MOV EDX,dword ptr [0x01d0d210]      ; 004aba18 | g_INT_01d0d210
     XOR EBP,EBP                         ; 004aba1e
     XOR EBX,EBX                         ; 004aba20
     TEST EDX,EDX                        ; 004aba22
@@ -78,19 +78,19 @@ section .text
     MOV ESI,0x5c16af                    ; 004aba69 | = "..\\core\\fldnotes.cpp"
     MOV EDI,0xa7f                       ; 004aba6e
     PUSH 0x5c16c4                       ; 004aba73 | = "Field note %s has invalid type %d"
-    MOV dword ptr [0x01d71de0],ESI      ; 004aba78 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004aba7e | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004aba84
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ESI      ; 004aba78 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 004aba7e | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aba84
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004aba89
-    MOV dword ptr [0x005fe374],0x1      ; 004aba8c | DAT_005fe374
+    MOV dword ptr [0x005fe374],0x1      ; 004aba8c | g_INT_005fe374
         ;   Label: caseD_1
     POP EBP                             ; 004aba96
     POP EDI                             ; 004aba97
     POP ESI                             ; 004aba98
     POP EBX                             ; 004aba99
     RET                                 ; 004aba9a
-    MOV ECX,dword ptr [0x01d0d210]      ; 004aba9b | DAT_01d0d210
+    MOV ECX,dword ptr [0x01d0d210]      ; 004aba9b | g_INT_01d0d210
         ;   Label: LAB_004aba9b
     INC EBX                             ; 004abaa1
     ADD ESI,0x2e4                       ; 004abaa2
@@ -110,7 +110,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40 ; 004abac1
         ;   XREF to: 0047cf40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004abac6
-    MOV dword ptr [0x005fe374],0x1      ; 004abac9 | DAT_005fe374
+    MOV dword ptr [0x005fe374],0x1      ; 004abac9 | g_INT_005fe374
     POP EBP                             ; 004abad3
     POP EDI                             ; 004abad4
     POP ESI                             ; 004abad5
@@ -118,7 +118,7 @@ section .text
     RET                                 ; 004abad7
     MOV dword ptr [EAX + 0x140],0x1     ; 004abad8
         ;   Label: caseD_0
-    MOV dword ptr [0x005fe374],0x1      ; 004abae2 | DAT_005fe374
+    MOV dword ptr [0x005fe374],0x1      ; 004abae2 | g_INT_005fe374
     POP EBP                             ; 004abaec
     POP EDI                             ; 004abaed
     POP ESI                             ; 004abaee
@@ -126,7 +126,7 @@ section .text
     RET                                 ; 004abaf0
     MOV dword ptr [EAX + 0x140],0x3     ; 004abaf1
         ;   Label: caseD_2
-    MOV dword ptr [0x005fe374],0x1      ; 004abafb | DAT_005fe374
+    MOV dword ptr [0x005fe374],0x1      ; 004abafb | g_INT_005fe374
     POP EBP                             ; 004abb05
     POP EDI                             ; 004abb06
     POP ESI                             ; 004abb07
@@ -134,7 +134,7 @@ section .text
     RET                                 ; 004abb09
     MOV dword ptr [EAX + 0x140],0x6     ; 004abb0a
         ;   Label: caseD_5
-    MOV dword ptr [0x005fe374],0x1      ; 004abb14 | DAT_005fe374
+    MOV dword ptr [0x005fe374],0x1      ; 004abb14 | g_INT_005fe374
     POP EBP                             ; 004abb1e
     POP EDI                             ; 004abb1f
     POP ESI                             ; 004abb20

@@ -11,14 +11,14 @@
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210 at 0040e265
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d3c61
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600 at 004d261b
-;   core_inv.cpp_FUN_004f8b70 at 004f8b94
+;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70 at 004f8b94
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bullet_kfm_005d303f
-;   undefined1 DAT_005d304a
-;   undefined1 DAT_005d304b
-;   undefined1 DAT_005d304c
-;   undefined1 DAT_005d304d
+;   TerminatedCString s_CGun_005d304a
+;   undefined4 s_Gun_005d304a+1
+;   undefined4 s_un_005d304a+2
+;   undefined4 s_n_005d304a+3
 ;   CDemonActor_vtable g_CAmmoVTable
 ;
 ; Called Functions:
@@ -52,16 +52,16 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950 ; 0040dbfa
         ;   XREF to: 00468950 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040dbff
-    MOV ESI,0x5d304a                    ; 0040dc02 | DAT_005d304a
+    MOV ESI,0x5d304a                    ; 0040dc02 | = "CGun"
     LEA EDI,[EBX + 0x2d4]               ; 0040dc07
     PUSH EDI                            ; 0040dc0d
-    MOV AL,byte ptr [ESI]               ; 0040dc0e | DAT_005d304a | DAT_005d304c
+    MOV AL,byte ptr [ESI]               ; 0040dc0e | = "CGun" | s_un_005d304a+2
         ;   Label: LAB_0040dc0e
     MOV byte ptr [EDI],AL               ; 0040dc10
     CMP AL,0x0                          ; 0040dc12
     JZ 0x0040dc26                       ; 0040dc14
         ;   XREF to: 0040dc26 (CONDITIONAL_JUMP)  ; LAB_0040dc26
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040dc16 | DAT_005d304b | DAT_005d304d
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040dc16 | s_Gun_005d304a+1 | s_n_005d304a+3
     ADD ESI,0x2                         ; 0040dc19
     MOV byte ptr [EDI + 0x1],AL         ; 0040dc1c
     ADD EDI,0x2                         ; 0040dc1f

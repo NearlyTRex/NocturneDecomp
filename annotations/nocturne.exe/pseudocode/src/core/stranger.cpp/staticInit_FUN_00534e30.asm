@@ -6,12 +6,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CStranger_005951c7
-;   CVector3f CVector3f_02dc9f34
-;   undefined4 CVector3f_02dc9f34.y
-;   undefined4 CVector3f_02dc9f34.z
-;   CVector3f CVector3f_02dc9f40
-;   undefined4 CVector3f_02dc9f40.y
-;   undefined4 CVector3f_02dc9f40.z
+;   CVector3f g_StrangerWeaponEulerPlusX
+;   undefined4 g_StrangerWeaponEulerPlusX.y
+;   undefined4 g_StrangerWeaponEulerPlusX.z
+;   CVector3f g_StrangerWeaponEulerMinusX
+;   undefined4 g_StrangerWeaponEulerMinusX.y
+;   undefined4 g_StrangerWeaponEulerMinusX.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040d3f0
@@ -31,14 +31,14 @@ section .text
     MOV EBX,0x3e010625                  ; 00534e48
     MOV ESI,0xbf05e354                  ; 00534e4d
     PUSH 0x535090                       ; 00534e52
-    MOV dword ptr [0x02dc9f34],EDX      ; 00534e57 | CVector3f_02dc9f34
-    MOV dword ptr [0x02dc9f38],ECX      ; 00534e5d | CVector3f_02dc9f34.y
+    MOV dword ptr [0x02dc9f34],EDX      ; 00534e57 | g_StrangerWeaponEulerPlusX
+    MOV dword ptr [0x02dc9f38],ECX      ; 00534e5d | g_StrangerWeaponEulerPlusX.y
     PUSH 0x5951c7                       ; 00534e63 | = "CStranger"
-    MOV dword ptr [0x02dc9f3c],EBX      ; 00534e68 | CVector3f_02dc9f34.z
-    MOV dword ptr [0x02dc9f40],ESI      ; 00534e6e | CVector3f_02dc9f40
+    MOV dword ptr [0x02dc9f3c],EBX      ; 00534e68 | g_StrangerWeaponEulerPlusX.z
+    MOV dword ptr [0x02dc9f40],ESI      ; 00534e6e | g_StrangerWeaponEulerMinusX
     PUSH 0x2dc9fac                      ; 00534e74
-    MOV dword ptr [0x02dc9f44],ECX      ; 00534e79 | CVector3f_02dc9f40.y
-    MOV dword ptr [0x02dc9f48],EBX      ; 00534e7f | CVector3f_02dc9f40.z
+    MOV dword ptr [0x02dc9f44],ECX      ; 00534e79 | g_StrangerWeaponEulerMinusX.y
+    MOV dword ptr [0x02dc9f48],EBX      ; 00534e7f | g_StrangerWeaponEulerMinusX.z
     CALL core_actor.cpp_registerActorClass_FUN_0040d3f0 ; 00534e85
         ;   XREF to: 0040d3f0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040d3f0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
     ADD ESP,0x18                        ; 00534e8a

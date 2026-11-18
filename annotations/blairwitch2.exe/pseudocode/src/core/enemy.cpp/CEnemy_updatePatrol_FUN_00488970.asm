@@ -22,12 +22,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Capture_005d2e0a
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00429f20
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;
 ; *****************************************************************************
@@ -42,7 +42,7 @@ section .text
     JNZ 0x0048899b                      ; 00488981
         ;   XREF to: 0048899b (CONDITIONAL_JUMP)  ; LAB_0048899b
     PUSH 0x5d2e0a                       ; 00488983 | = "Capture"
-    MOV ECX,dword ptr [0x006141f0]      ; 00488988 | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 00488988 | g_CEventListPtr
     PUSH ECX                            ; 0048898e
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0048898f
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_0048899b
     PUSH dword ptr [ESP + 0x10]         ; 0048899d
     PUSH EBX                            ; 004889a1
-    CALL core_charactr.cpp_FUN_00429f20 ; 004889a2
-        ;   XREF to: 00429f20 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00429f20()
+    CALL core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20 ; 004889a2
+        ;   XREF to: 00429f20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20(CCharacter * this_ptr, float delta_time, char * pattern)
     ADD ESP,0xc                         ; 004889a7
     POP EBX                             ; 004889aa
     RET                                 ; 004889ab
@@ -64,8 +64,8 @@ section .text
     PUSH EAX                            ; 004889b2
     PUSH dword ptr [ESP + 0x10]         ; 004889b3
     PUSH EBX                            ; 004889b7
-    CALL core_charactr.cpp_FUN_00429f20 ; 004889b8
-        ;   XREF to: 00429f20 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00429f20()
+    CALL core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20 ; 004889b8
+        ;   XREF to: 00429f20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00429f20(CCharacter * this_ptr, float delta_time, char * pattern)
     ADD ESP,0xc                         ; 004889bd
     POP EBX                             ; 004889c0
     RET                                 ; 004889c1

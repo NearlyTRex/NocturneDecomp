@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_freeAllModels_FUN_004624d0(void)
 
 {
-  CKeyFramedModel *pCVar1;
+  CKeyFramedModel *this_ptr;
   
-  pCVar1 = g_CKeyFramedModelPool;
+  this_ptr = g_CKeyFramedModelPool;
   do {
-    core_dmodel_cpp_FUN_00460e10(pCVar1);
-    pCVar1 = pCVar1 + 1;
-  } while (pCVar1 != g_CKeyFramedModelPool + sizeof(g_CKeyFramedModelPool) / sizeof(g_CKeyFramedModelPool[0]));
-  _DAT_01b4b848 = 0;
+    core_dmodel_cpp_CKeyFramedModel_free_FUN_00460e10(this_ptr);
+    this_ptr = this_ptr + 1;
+  } while (this_ptr != g_CKeyFramedModelPool + sizeof(g_CKeyFramedModelPool) / sizeof(g_CKeyFramedModelPool[0]));
+  g_KeyframeModelCount = 0;
   return;
 }

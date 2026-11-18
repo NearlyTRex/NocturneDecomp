@@ -39,7 +39,7 @@ int __cdecl CBackgroundActor::renderOpaque(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040f490
 // Address: 0040f490
-CBoundingBox3D * __cdecl CBackgroundActor::getBoundingBox(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBackgroundActor::getBoundingBox(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f4d0
 // Address: 0040f4d0

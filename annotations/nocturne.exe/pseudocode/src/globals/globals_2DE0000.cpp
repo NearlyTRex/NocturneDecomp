@@ -4,19 +4,137 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2DE0000
 // =============================================================================
 
+// BOOL
+BOOL g_UseMultimediaTimer = {};
+
+// BYTE
+BYTE g_SignalHandlingActive = {};
+
 // CDemonActorType
-CDemonActorType g_CWerewolfActorType_02de078c = {};
-CDemonActorType g_CZombieActorType_02de4940 = {};
+CDemonActorType g_CWerewolfClassInfo = {};
+CDemonActorType g_CZombieClassInfo = {};
 
 // CVector3f
-CVector3f CVector3f_02de0774 = {};
-CVector3f CVector3f_02de0780 = {};
+CVector3f g_WerewolfEyeGlowOffsetLeft = {};
+CVector3f g_WerewolfEyeGlowOffsetRight = {};
+
+// DWORD
+DWORD g_PreviousCounterLow = {};
+DWORD g_MovieHandle = {};
+
+// FileListNode*
+FileListNode* g_AllocatedListHead = {};
+FileListNode* g_FreeListHeadPointer = {};
+
+// HMODULE
+HMODULE g_WinmmDll = {};
 
 // HWND
-HWND g_HWND_02de2098 = {};
+HWND g_MainWindowHandle = {};
+HWND g_MovieWindowHandle = {};
+
+// SRenderVertex[32]
+SRenderVertex g_ClipVertexBufferStage2[32] = {};
+SRenderVertex g_ClipVertexBufferStage1[32] = {};
+SRenderVertex g_ClipVertexBufferStage3[32] = {};
+SRenderVertex g_ClipVertexBufferStage4[32] = {};
+
+// SSoftwareEdge[16]
+SSoftwareEdge g_RasterizerEdgeArray[16] = {};
+
+// WCHAR*
+WCHAR* g_CommandLineW = {};
+
+// _struct_19
+_struct_19 g_PerformanceCounter = {};
+_struct_19 g_PerformanceFrequency = {};
+
+// char*
+char* g_CHAR_PTR_02de2d14 = {};
+char* g_CommandLineA = {};
+
+// char**
+char** g_EnvironStringArea = {};
+char** g_EnvironmentBlock = {};
+
+// char[16]
+char g_CHAR_ARRAY_02de5460[16] = {};
+
+// char[1]
+char g_CHAR_ARRAY_02de5c40[1] = {};
+
+// char[200]
+char g_WeatherParticleHitGround[200] = {};
+char g_KeyNameBuffer[200] = {};
 
 // char[256]
 char g_CHAR_ARRAY_02de0860[256] = {};
+char g_LeadByteTable[256] = {};
+
+// char[260]
+char g_ExeFileNameBuffer_A[260] = {};
+char g_DllFileNameBuffer_A[260] = {};
+
+// double
+double g_TimerCalibration = {};
+
+// float[200]
+float g_WeatherParticleGroundHeights[200] = {};
+
+// int
+int g_PreviousCounterHigh = {};
+int g_AccumulatedGameTime = {};
+int g_InputReadIndex = {};
+int g_InputWriteIndex = {};
+int g_InputCountOld = {};
+int g_UnknownInputValue = {};
+int g_INT_02de0858 = {};
+int g_InputDisabled = {};
+int g_FocusRegained = {};
+int g_TotalPhysicalMemory = {};
+int g_AvailableSwapSpace = {};
+int g_INT_02de2d10 = {};
+int g_MoviePlaying = {};
+int g_FullscreenMovie = {};
+int g_ClipVertexCountStage1 = {};
+int g_ClipVertexCountStage2 = {};
+int g_ClipVertexCountStage3 = {};
+int g_ClipVertexCountStage4 = {};
+int g_RasterizerEdgeCount = {};
+int g_RasterizerMinY = {};
+int g_RasterizerMaxY = {};
+int g_INT_02de4e10 = {};
+int g_EmergencyExitFlag = {};
+int g_EnvironInitialized = {};
+int g_INT_02de5c10 = {};
+int g_INT_02de5c14 = {};
+int g_MultibyteLocaleActive = {};
+int g_BufferedCharacter = {};
+int g_BufferedVirtualKey = {};
+int g_BufferedRepeatCount = {};
+int g_INT_02de5d80 = {};
+int g_INT_02de5d84 = {};
+int g_INT_02de5d88 = {};
+
+// int[20]
+int g_InputBuffer[20] = {};
+
+// int[600]
+int g_MessageFlags[600] = {};
+
+// uint
+uint g_RainSoundHandle = {};
+
+// void*
+void* g_joyGetPosEx = {};
+void* g_CurrentThreadTlsBlock = {};
+void* g_PTR_02de5c18 = {};
+void* g_PTR_02de5d60 = {};
+void* g_PTR_02de5d70 = {};
+
+// wchar_t[260]
+wchar_t g_ExeFileNameBuffer_W[260] = {};
+wchar_t g_DllFileNameBuffer_W[260] = {};
 
 // word
 word DAT_02DE612A = 0;

@@ -7,7 +7,7 @@
 ; CSpiritBear *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005d9b97+1
+;   TerminatedCString s_modelName_005d9b98
 ;   TerminatedCString s_motion_state_005d9ba2
 ;   TerminatedCString s_shootMe_005d9baf
 ;   TerminatedCString s_poolMe_005d9bb7
@@ -32,7 +32,7 @@ section .text
     CALL core_npc.cpp_CNPC_archive_FUN_00509800 ; 0059b4a7
         ;   XREF to: 00509800 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_archive_FUN_00509800(CNPC * this_ptr)
     ADD ESP,0x4                         ; 0059b4ac
-    PUSH 0x5d9b98                       ; 0059b4af | s_modelName_005d9b97+1
+    PUSH 0x5d9b98                       ; 0059b4af | = "modelName"
     LEA ESI,[EBX + 0x158]               ; 0059b4b4
     PUSH ESI                            ; 0059b4ba
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30 ; 0059b4bb

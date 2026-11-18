@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_anvil_cpp_CAnvil_getBoundingBox_FUN_0040ed50(CAnvil *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_anvil_cpp_CAnvil_getBoundingBox_FUN_0040ed50(CAnvil *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CAnvil *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20

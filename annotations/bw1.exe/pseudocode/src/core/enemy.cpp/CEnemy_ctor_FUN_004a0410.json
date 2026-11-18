@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 68,
+    "complexity_score": 53,
     "cross_reference_count": 35,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 96
@@ -254,26 +253,26 @@
   "globals": [
     {
       "addr": "005dcac1",
-      "name": "DAT_005dcac1",
-      "type": "undefined1",
+      "name": "s_ene_005dcac1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005dcac2",
-      "name": "DAT_005dcac2",
-      "type": "undefined1",
+      "name": "s_ne_005dcac1+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005dcac3",
-      "name": "DAT_005dcac3",
-      "type": "undefined1",
+      "name": "s_e_005dcac1+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005dcac4",
-      "name": "DAT_005dcac4",
-      "type": "undefined1",
+      "name": "s__005dcac1+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -478,14 +477,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005dcac1",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_005dcac1;",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 30,

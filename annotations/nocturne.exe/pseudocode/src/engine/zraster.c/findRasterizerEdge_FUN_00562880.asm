@@ -8,9 +8,9 @@
 ; SSoftwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de497c
-;   undefined4 DAT_02de4980
-;   undefined4 DAT_02de49c8
+;   int g_RasterizerEdgeCount
+;   SSoftwareEdge[16] g_RasterizerEdgeArray
+;   undefined4 g_RasterizerEdgeArray[1].base.y_min
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     PUSH EBX                            ; 00562880
         ;   Label: engine_zraster.c_findRasterizerEdge_FUN_00562880
     PUSH ESI                            ; 00562881
-    MOV EBX,dword ptr [0x02de497c]      ; 00562882 | DAT_02de497c
+    MOV EBX,dword ptr [0x02de497c]      ; 00562882 | g_RasterizerEdgeCount
     MOV ECX,dword ptr [ESP + 0xc]       ; 00562888
     MOV ESI,dword ptr [ESP + 0x10]      ; 0056288c
     MOV EAX,0x2de4980                   ; 00562890
@@ -27,7 +27,7 @@ section .text
     TEST EBX,EBX                        ; 00562897
     JLE 0x005628ab                      ; 00562899
         ;   XREF to: 005628ab (CONDITIONAL_JUMP)  ; LAB_005628ab
-    CMP ECX,dword ptr [EAX]             ; 0056289b | DAT_02de4980 | DAT_02de49c8
+    CMP ECX,dword ptr [EAX]             ; 0056289b | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_0056289b
     JNZ 0x005628a3                      ; 0056289d
         ;   XREF to: 005628a3 (CONDITIONAL_JUMP)  ; LAB_005628a3
@@ -36,13 +36,13 @@ section .text
         ;   XREF to: 005628ad (CONDITIONAL_JUMP)  ; LAB_005628ad
     INC EDX                             ; 005628a3
         ;   Label: LAB_005628a3
-    ADD EAX,0x48                        ; 005628a4 | DAT_02de49c8
+    ADD EAX,0x48                        ; 005628a4 | g_RasterizerEdgeArray[1].base.y_min
     CMP EDX,EBX                         ; 005628a7
     JL 0x0056289b                       ; 005628a9
         ;   XREF to: 0056289b (CONDITIONAL_JUMP)  ; LAB_0056289b
     XOR EAX,EAX                         ; 005628ab
         ;   Label: LAB_005628ab
-    MOV dword ptr [0x02de497c],EBX      ; 005628ad | DAT_02de497c
+    MOV dword ptr [0x02de497c],EBX      ; 005628ad | g_RasterizerEdgeCount
         ;   Label: LAB_005628ad
     POP ESI                             ; 005628b3
     POP EBX                             ; 005628b4

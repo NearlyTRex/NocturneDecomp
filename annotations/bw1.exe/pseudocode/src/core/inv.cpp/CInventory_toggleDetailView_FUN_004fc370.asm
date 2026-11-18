@@ -7,11 +7,11 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004d0ee0 at 004d12ec
-;   core_game.cpp_FUN_004d9260 at 004d95ac
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0 at 004d12ec
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004d95ac
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d06ab4
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004fa710
@@ -24,7 +24,7 @@ section .text
     PUSH EBX                            ; 004fc370
         ;   Label: core_inv.cpp_CInventory_toggleDetailView_FUN_004fc370
     MOV EBX,dword ptr [ESP + 0x8]       ; 004fc371
-    MOV EDX,dword ptr [0x01d06ab4]      ; 004fc375 | DAT_01d06ab4
+    MOV EDX,dword ptr [0x01d06ab4]      ; 004fc375 | g_INT_01d06ab4
     MOV EAX,dword ptr [EBX + 0x4]       ; 004fc37b
     CMP EAX,dword ptr [EDX*0x4 + 0x1d06aa4] ; 004fc37e
     JNZ 0x004fc3ba                      ; 004fc385

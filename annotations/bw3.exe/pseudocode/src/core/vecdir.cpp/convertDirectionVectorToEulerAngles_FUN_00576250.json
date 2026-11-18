@@ -2,22 +2,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 265,
+    "complexity_score": 187,
     "cross_reference_count": 56,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 21,
+    "pseudocode_lines": 37,
+    "suspect_count": 13,
     "suspect_types": [
       "extra_output",
-      "param_count_too_few",
-      "unaffected_reg",
-      "unnamed_param"
+      "pointer_cast",
+      "pointer_truncation",
+      "suspect_float"
     ],
-    "total_lines": 103
+    "total_lines": 105
   },
   "cross_references": [
+    {
+      "addr": "00597700",
+      "from_addr": "0059776c",
+      "name": "core_baal.cpp_CBaal_chooseAttack_FUN_00597700",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "005968a0",
       "from_addr": "0059706a",
@@ -25,15 +31,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00597700",
-      "from_addr": "0059776c",
-      "name": "core_baal.cpp_FUN_00597700",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00422a00",
       "from_addr": "00422c43",
-      "name": "core_bugs.cpp_FUN_00422a00",
+      "name": "core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,6 +49,30 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004300e0",
+      "from_addr": "004302fc",
+      "name": "core_charactr.cpp_CCharacter_dismember_FUN_004300e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432330",
+      "from_addr": "00432894",
+      "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004310e0",
+      "from_addr": "00431268",
+      "name": "core_charactr.cpp_CCharacter_followActor_FUN_004310e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434190",
+      "from_addr": "0043429a",
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00431660",
       "from_addr": "004317ef",
       "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00431660",
@@ -58,30 +82,6 @@
       "addr": "0042b9e0",
       "from_addr": "0042ba2f",
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004300e0",
-      "from_addr": "004302fc",
-      "name": "core_charactr.cpp_FUN_004300e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004310e0",
-      "from_addr": "00431268",
-      "name": "core_charactr.cpp_FUN_004310e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00432330",
-      "from_addr": "00432894",
-      "name": "core_charactr.cpp_FUN_00432330",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00434190",
-      "from_addr": "0043429a",
-      "name": "core_charactr.cpp_FUN_00434190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -135,7 +135,7 @@
     {
       "addr": "004c07b0",
       "from_addr": "004c1c08",
-      "name": "core_game.cpp_FUN_004c07b0",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -147,7 +147,13 @@
     {
       "addr": "004c51a0",
       "from_addr": "004c52ad",
-      "name": "core_gargoyle.cpp_FUN_004c51a0",
+      "name": "core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004c51a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d3b20",
+      "from_addr": "004d3c3b",
+      "name": "core_hero.cpp_CHero_findItemUseTarget_FUN_004d3b20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -157,33 +163,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d3040",
+      "from_addr": "004d314a",
+      "name": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004d3040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d32d0",
       "from_addr": "004d33c9",
       "name": "core_hero.cpp_CHero_tryPullLever_FUN_004d32d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d3500",
+      "from_addr": "004d37f8",
+      "name": "core_hero.cpp_CHero_tryPushNearbyBox_FUN_004d3500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d2ea0",
       "from_addr": "004d2fcf",
       "name": "core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d3040",
-      "from_addr": "004d314a",
-      "name": "core_hero.cpp_FUN_004d3040",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d3500",
-      "from_addr": "004d37f8",
-      "name": "core_hero.cpp_FUN_004d3500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d3b20",
-      "from_addr": "004d3c3b",
-      "name": "core_hero.cpp_FUN_004d3b20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -231,13 +231,19 @@
     {
       "addr": "0050ae20",
       "from_addr": "0050ae6f",
-      "name": "core_path.cpp_FUN_0050ae20",
+      "name": "core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00523800",
       "from_addr": "00523b62",
       "name": "core_prye.cpp_CPrye_aimLeftPistol_FUN_00523800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522b00",
+      "from_addr": "005231a7",
+      "name": "core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -249,31 +255,25 @@
     {
       "addr": "00518cd0",
       "from_addr": "0051a129",
-      "name": "core_prye.cpp_FUN_00518cd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051c1c0",
-      "from_addr": "0051c46b",
-      "name": "core_prye.cpp_FUN_0051c1c0",
+      "name": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00520df0",
       "from_addr": "005212d8",
-      "name": "core_prye.cpp_FUN_00520df0",
+      "name": "core_prye.cpp_CPrye_tryClimbLadder_FUN_00520df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051c1c0",
+      "from_addr": "0051c46b",
+      "name": "core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00522950",
       "from_addr": "0052296b",
-      "name": "core_prye.cpp_FUN_00522950",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00522b00",
-      "from_addr": "005231a7",
-      "name": "core_prye.cpp_FUN_00522b00",
+      "name": "core_prye.cpp_calculateAimAnglesWithOffset_FUN_00522950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -291,7 +291,7 @@
     {
       "addr": "005438d0",
       "from_addr": "00544e24",
-      "name": "core_shadow.cpp_FUN_005438d0",
+      "name": "core_shadow.cpp_CShadow_process_FUN_005438d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -309,7 +309,7 @@
     {
       "addr": "005a0480",
       "from_addr": "005a053b",
-      "name": "core_styldemo.cpp_FUN_005a0480",
+      "name": "core_styldemo.cpp_CStylerDemon_tryAttack_FUN_005a0480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -343,15 +343,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058d960",
-      "from_addr": "0058e428",
-      "name": "core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960",
+      "addr": "0058e8d0",
+      "from_addr": "0058ea3a",
+      "name": "core_zombiepriest.cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058e8d0",
-      "from_addr": "0058ea3a",
-      "name": "core_zombiepriest.cpp_FUN_0058e8d0",
+      "addr": "0058d960",
+      "from_addr": "0058e428",
+      "name": "core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -363,9 +363,9 @@
         "005762e2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250",
-    "signature": "float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(uint *param_1)"
+    "signature": "CVector3f * __stack_esi core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f *in_direction_vector,CVector3f *out_euler_angles)"
   },
   "function_calls": [
     {
@@ -382,12 +382,11 @@
         "call_addr": "004938e4",
         "call_type": "direct",
         "caller": "core_event.cpp_CEventList_evaluateAtom_FUN_00491f40",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -396,12 +395,11 @@
         "call_addr": "0052f802",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_00529a70",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -410,12 +408,11 @@
         "call_addr": "0049ae7a",
         "call_type": "direct",
         "caller": "core_fire.cpp_CBulletTrail_render_FUN_0049ad20",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -424,12 +421,11 @@
         "call_addr": "0049b246",
         "call_type": "direct",
         "caller": "core_fire.cpp_CLaserBeam_render_FUN_0049b1d0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -442,7 +438,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -450,13 +446,12 @@
       {
         "call_addr": "004c1c08",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
-        "estimated_params": 3,
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -464,13 +459,12 @@
       {
         "call_addr": "004c1e9e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
-        "estimated_params": 3,
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -478,13 +472,12 @@
       {
         "call_addr": "004c30e8",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
-        "estimated_params": 3,
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -493,12 +486,11 @@
         "call_addr": "0050bb81",
         "call_type": "direct",
         "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -507,22 +499,21 @@
         "call_addr": "0050bcc4",
         "call_type": "direct",
         "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.189655172413793,
@@ -592,10 +583,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -625,6 +616,13 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "in_direction_vector",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -654,19 +652,11 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(uint *param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 5,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "float *extraout_ECX;",
+      "text": "CVector3f *extraout_ECX;",
       "type": "extra_output"
     },
     {
@@ -678,88 +668,32 @@
       "type": "extra_output"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*param_1 & 0x7fffffff) == 0) && ((param_1[2] & 0x7fffffff) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*param_1 & 0x7fffffff) == 0) && ((param_1[2] & 0x7fffffff) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < (float)param_1[1]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = afStack_1000[0x3fd];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "fVar2 = SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "fVar2 = SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Likely misinterpreted integer as float",
       "line": 29,
+      "match": "8.025096e-39",
+      "severity": "mild",
+      "text": "afStack_1008[0x3fb] = 8.025096e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "x = SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "x = SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 32,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]);",
@@ -767,34 +701,18 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
+      "line": 32,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "fVar3 = (float10)extraout_EDX[1];",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 33,
-      "match": "extraout_ECX",
+      "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "*extraout_ECX = (float)-fVar3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "extraout_ECX[(uint)bVar1 * -2 + 1] = afStack_1000[(uint)bVar1 * -2 + 0x3fb];",
+      "text": "fVar3 = atan2((float10)extraout_EDX[1],x);",
       "type": "extra_output"
     },
     {
@@ -802,27 +720,40 @@
       "line": 35,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "(extraout_ECX + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "text": "pfVar1 = (float *)((int)extraout_ECX + (uint)bVar2 * -8 + 4);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(float *)((int)extraout_ECX",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)((int)extraout_ECX + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 36,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "extraout_ECX->x = (float)-fVar3;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 37,
+      "line": 39,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "return extraout_ECX;",
       "type": "extra_output"
     },
     {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
+      "description": "Pointer value `extraout_ECX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)extraout_ECX",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)((int)extraout_ECX + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
     }
   ]
 }

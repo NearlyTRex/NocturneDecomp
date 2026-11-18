@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_00575760(CTommyGun *this_ptr)
 
 {
@@ -25,7 +23,7 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_00575760(CTommyGun *thi
   (pCVar2->base).bolt_velocity = 100.0;
   (pCVar2->base).fire_cooldown = 1;
   pCVar2->sfx_handles[0] = 0;
-  fVar1 = _DAT_005fce6c;
+  fVar1 = 8.0f;
   pCVar2->sfx_handles[1] = 0;
   pCVar2->fire_frames_remaining = 0;
   (pCVar2->base).weight = fVar1;

@@ -54,7 +54,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
     }
   }
   pcVar5 = &stack0xfffff8d8;
-  _freopen("stderr.txt","wt",(_FILE *)&DAT_005c18c8);
+  _freopen("stderr.txt","wt",&g_FILE_005c18c8);
   g_RenderingMode = 3;
   core_flattn_cpp_doNothing_FUN_0048ee80();
   core_inivar_cpp_readIniData_FUN_004bdb80();
@@ -83,7 +83,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
     core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_0044c560();
-  if (_DAT_02de20a8 < 0x3c00000) {
+  if (g_TotalPhysicalMemory < 0x3c00000) {
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
     pcVar7 = acStack_528;
     do {
@@ -95,7 +95,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_228,"%.1f",(double)((float)_DAT_02de20a8 * 9.536743e-07f));
+    _sprintf(acStack_228,"%.1f",(double)((float)g_TotalPhysicalMemory * 9.536743e-07f));
     pcVar7 = acStack_228;
     iVar6 = -1;
     pcVar8 = acStack_528;
@@ -311,7 +311,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
     } while (cVar2 != '\0');
     shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40(g_CEditorToolsPtr,acStack_528);
   }
-  if (_DAT_02de20ac < 0xc800000) {
+  if (g_AvailableSwapSpace < 0xc800000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
     do {
       cVar2 = *pcVar7;
@@ -322,7 +322,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_128,"%.1f",(double)((float)_DAT_02de20ac * 9.536743e-07f));
+    _sprintf(acStack_128,"%.1f",(double)((float)g_AvailableSwapSpace * 9.536743e-07f));
     pcVar5 = acStack_128;
     iVar6 = -1;
     pcVar7 = &stack0xfffff8d8;
@@ -453,9 +453,9 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
     shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40(g_CEditorToolsPtr,&stack0xfffff8d8);
   }
   pCVar4 = g_CGamePtr;
-  if (_DAT_01cae37c != 0) {
+  if (g_FirstTimeFlag != 0) {
     g_CGamePtr->game_pixx = 0x280;
-    _DAT_01cae37c = 0;
+    g_FirstTimeFlag = 0;
     pCVar4->game_pixy = 0x1e0;
     g_UseDirect3D = 0;
     pCVar4->game_bpp = 0x20;
@@ -474,8 +474,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
     pcVar5[1] = cVar2;
     pcVar5 = pcVar5 + 2;
   } while (cVar2 != '\0');
-  engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_CBitFont_PTR_014b9900,acStack_328);
-  engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_014b9900,0x58);
+  engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_ThemeFont,acStack_328);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_ThemeFont,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&CStack_28);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(&CStack_28,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(&CStack_28,0,0,0x8000);

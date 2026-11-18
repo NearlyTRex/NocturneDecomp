@@ -2,25 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 257,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 132,
-    "suspect_count": 11,
+    "pseudocode_lines": 131,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 484
+    "total_lines": 483
   },
   "cross_references": [
     {
       "addr": "00446df0",
       "from_addr": "00446e1f",
-      "name": "core_dcube.cpp_FUN_00446df0",
+      "name": "core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -41,7 +39,7 @@
     {
       "addr": "00444a40",
       "is_variadic": false,
-      "name": "core_dcube.cpp_FUN_00444a40"
+      "name": "core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40"
     },
     {
       "addr": "004454b0",
@@ -52,38 +50,38 @@
   "globals": [
     {
       "addr": "005ce7f6",
-      "name": "DAT_005ce7f6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CylinderCollisionMaxNormalY",
+      "type": "double",
+      "value": "-0.340000000000000"
     },
     {
       "addr": "005ce7fe",
-      "name": "DAT_005ce7fe",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CylinderCollisionMinNormal2D",
+      "type": "double",
+      "value": "0.0100000000000000"
     },
     {
       "addr": "0151082c",
-      "name": "DAT_0151082c",
-      "type": "undefined4",
+      "name": "g_CVector3f_0151082c",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "01510830",
-      "name": "DAT_01510830",
+      "name": "g_CVector3f_0151082c.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01510834",
-      "name": "DAT_01510834",
+      "name": "g_CVector3f_0151082c.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01510838",
-      "name": "DAT_01510838",
-      "type": "undefined4",
+      "name": "g_UCHAR_01510838",
+      "type": "uchar",
       "value": null
     }
   ],
@@ -93,7 +91,7 @@
       {
         "call_addr": "00446e1f",
         "call_type": "direct",
-        "caller": "core_dcube.cpp_FUN_00446df0",
+        "caller": "core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -407,56 +405,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_01510838",
-      "severity": "mild",
-      "text": "if ((DAT_01510838 & 1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_01510838",
-      "severity": "mild",
-      "text": "DAT_01510838 = DAT_01510838 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_01510838",
-      "severity": "mild",
-      "text": "DAT_01510838 = DAT_01510838 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_0151082c",
-      "severity": "mild",
-      "text": "fVar9 = (float)core_dcube_cpp_FUN_00444a40(triangle,&local_70,&DAT_0151082c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_0151082c",
-      "severity": "mild",
-      "text": "fVar9 = (float)core_dcube_cpp_FUN_00444a40(triangle,cylinder_center,&DAT_0151082c);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 41,
+      "line": 37,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_40.x = local_58.x;",
@@ -464,7 +414,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 61,
+      "line": 57,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_4c.x = local_58.x;",
@@ -472,7 +422,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 65,
+      "line": 61,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_58.x = local_64.x;",
@@ -480,7 +430,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 77,
+      "line": 73,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_7c.x = local_40.x;",
@@ -488,7 +438,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 81,
+      "line": 77,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_40.x = local_58.x;",

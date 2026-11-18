@@ -24,12 +24,12 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   SMRGLTextureBasic SMRGLTextureBasic_0067b514
+;   SMRGLTextureBasic g_FliesTexture
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_UseExternalRenderer
 ;   int g_PerspectiveReciprocal
-;   int INT_02d7a7c0
+;   int g_FliesInitialized
 ;   uint g_FlyBlendColor
 ;   uint g_FlyInvBlendColor
 ;   ... and 3 more
@@ -99,7 +99,7 @@ section .text
     TEST EAX,EAX                        ; 004cc366
     JZ 0x004cc5b8                       ; 004cc368
         ;   XREF to: 004cc5b8 (CONDITIONAL_JUMP)  ; LAB_004cc5b8
-    MOV ESI,dword ptr [0x02d7a7c0]      ; 004cc36e | INT_02d7a7c0
+    MOV ESI,dword ptr [0x02d7a7c0]      ; 004cc36e | g_FliesInitialized
     MOV dword ptr [EBX + 0x2a1c],0x1    ; 004cc374
     TEST ESI,ESI                        ; 004cc37e
     JNZ 0x004cc3c7                      ; 004cc380
@@ -123,7 +123,7 @@ section .text
     CMP EBX,0x40                        ; 004cc3b8
     JL 0x004cc389                       ; 004cc3bb
         ;   XREF to: 004cc389 (CONDITIONAL_JUMP)  ; LAB_004cc389
-    MOV dword ptr [0x02d7a7c0],0x1      ; 004cc3bd | INT_02d7a7c0
+    MOV dword ptr [0x02d7a7c0],0x1      ; 004cc3bd | g_FliesInitialized
     MOV EAX,[0x02d03e94]                ; 004cc3c7 | g_UseExternalRenderer
         ;   Label: LAB_004cc3c7
     TEST EAX,EAX                        ; 004cc3cc
@@ -175,7 +175,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 004cc493 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x5c],EDX      ; 004cc495
     MOV EAX,dword ptr [EAX]             ; 004cc498 | g_CDemonRendererInstance
-    PUSH 0x67b514                       ; 004cc49a | SMRGLTextureBasic_0067b514
+    PUSH 0x67b514                       ; 004cc49a | g_FliesTexture
     MOV dword ptr [EAX + 0x8c],EDX      ; 004cc49f
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_005dd800 ; 004cc4a5
         ;   XREF to: 005dd800 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic * texture)

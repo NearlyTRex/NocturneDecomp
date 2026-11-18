@@ -21,15 +21,15 @@
 ;   ... and 15 more
 ;
 ; Referenced Globals:
-;   undefined4 s_ShotInvulnerable_005bdc9d+2
-;   undefined4 DAT_005fba60
+;   TerminatedCString s_ShotInvulnerable_005bdc9f
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   undefined4 g_CBugsClassInfo.name_hash
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60
-;   core_charactr.cpp_FUN_0042ff70
+;   core_charactr.cpp_CCharacter_shatter_FUN_0042ff70
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
@@ -118,9 +118,9 @@ section .text
     POP ESI                             ; 00489c31
     POP EBX                             ; 00489c32
     RET                                 ; 00489c33
-    PUSH 0x5bdc9f                       ; 00489c34 | s_ShotInvulnerable_005bdc9d+2
+    PUSH 0x5bdc9f                       ; 00489c34 | = "ShotInvulnerable"
         ;   Label: LAB_00489c34
-    MOV EDX,dword ptr [0x005fba60]      ; 00489c39 | DAT_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 00489c39 | g_CEventListPtr
     PUSH EDX                            ; 00489c3f
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00489c40
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -143,8 +143,8 @@ section .text
         ;   XREF to: 00556be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00556be0(uint sfx_handle)
     ADD ESP,0x4                         ; 00489c75
     PUSH EBX                            ; 00489c78
-    CALL core_charactr.cpp_FUN_0042ff70 ; 00489c79
-        ;   XREF to: 0042ff70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042ff70()
+    CALL core_charactr.cpp_CCharacter_shatter_FUN_0042ff70 ; 00489c79
+        ;   XREF to: 0042ff70 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_shatter_FUN_0042ff70(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00489c7e
     POP EBP                             ; 00489c81
     POP EDI                             ; 00489c82

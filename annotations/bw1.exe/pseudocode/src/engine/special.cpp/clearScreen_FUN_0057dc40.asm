@@ -8,24 +8,24 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_00416620 at 0041662b
 ;   core_bmppuzzl.cpp_CChemPuzzle_render_FUN_00418140 at 00418148
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0 at 0044d0d5
-;   core_dlight.cpp_FUN_00466220 at 0046622f
+;   core_dlight.cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220 at 0046622f
 ;   core_game.cpp_CGame_displayActStats_FUN_004d8700 at 004d8739
 ;   core_game.cpp_CGame_finishAct_FUN_004d8a90 at 004d8b03
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce669
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8fda
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d027e
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530 at 004cf571
-;   core_game.cpp_FUN_004ce580 at 004ce669
 ;   ... and 16 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
-;   undefined4 DAT_0061b4a0
-;   undefined8 DAT_00623ddc
-;   undefined4 DAT_00623de4
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01c43550
-;   undefined4 DAT_01c50948
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
+;   int g_INT_0061b4a0 = 0x8
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   int g_INT_01c50948
 ;
 ; Called Functions:
 ;   engine_special.cpp_clear_FUN_00582790
@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 0057dc40
         ;   Label: engine_special.cpp_clearScreen_FUN_0057dc40
     PUSH EDI                            ; 0057dc41
-    CMP dword ptr [0x01c50948],0x0      ; 0057dc42 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 0057dc42 | g_INT_01c50948
     JZ 0x0057dc53                       ; 0057dc49
         ;   XREF to: 0057dc53 (CONDITIONAL_JUMP)  ; LAB_0057dc53
     CALL engine_special.cpp_clear_FUN_00582790 ; 0057dc4b
@@ -52,13 +52,13 @@ section .text
     POP ES                              ; 0057dc56
     MOV EAX,0x0                         ; 0057dc57
     MOV EBX,0x0                         ; 0057dc5c
-    MOV EAX,[0x0061b498]                ; 0057dc61 | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 0057dc61 | g_INT_0061b498
         ;   Label: LAB_0057dc61
-    IMUL dword ptr [0x0061b4a0]         ; 0057dc66 | DAT_0061b4a0
+    IMUL dword ptr [0x0061b4a0]         ; 0057dc66 | g_INT_0061b4a0
     SHR EAX,0x3                         ; 0057dc6c
     MOV ECX,EAX                         ; 0057dc6f
-    MOV EDI,dword ptr [EBX*0x4 + 0x1c4354c] ; 0057dc71 | DAT_01c4354c | DAT_01c43550
-    FLD double ptr [0x00623ddc]         ; 0057dc78 | DAT_00623ddc
+    MOV EDI,dword ptr [EBX*0x4 + 0x1c4354c] ; 0057dc71 | g_ScreenBufferArray | g_ScreenBufferArray[1]
+    FLD double ptr [0x00623ddc]         ; 0057dc78 | g_BufferFillZeroQword
     FST double ptr [EDI]                ; 0057dc7e
         ;   Label: LAB_0057dc7e
     FST double ptr [EDI + 0x8]          ; 0057dc80
@@ -68,9 +68,9 @@ section .text
     SUB ECX,0x20                        ; 0057dc8c
     JG 0x0057dc7e                       ; 0057dc8f
         ;   XREF to: 0057dc7e (CONDITIONAL_JUMP)  ; LAB_0057dc7e
-    FSTP double ptr [0x00623de4]        ; 0057dc91 | DAT_00623de4
+    FSTP double ptr [0x00623de4]        ; 0057dc91 | g_BufferFillFpuPopST0
     INC EBX                             ; 0057dc97
-    CMP EBX,dword ptr [0x0061b49c]      ; 0057dc98 | DAT_0061b49c
+    CMP EBX,dword ptr [0x0061b49c]      ; 0057dc98 | g_INT_0061b49c
     JL 0x0057dc61                       ; 0057dc9e
         ;   XREF to: 0057dc61 (CONDITIONAL_JUMP)  ; LAB_0057dc61
     POPAD                               ; 0057dca0

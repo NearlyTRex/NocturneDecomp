@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7C0000
@@ -22,32 +23,23 @@ extern CDemonActorType g_CZombieCowClassInfo;
 extern CDemonActorType g_CCrateClassInfo;
 extern CDemonActorType g_CCrossbowClassInfo;
 
-// undefined1
-extern undefined1 DAT_007c0310;
-extern undefined1 DAT_007c0340;
-extern undefined1 DAT_007c0f10;
+// SRenderVertex[16]
+extern SRenderVertex g_ClipperInputBuffer[16];
+extern SRenderVertex g_ClipperWorkingBuffer[16];
+extern SRenderVertex g_ClipperIntermediateBuffer[16];
 
-// undefined4
-extern undefined4 DAT_007c030c;
-extern undefined4 DAT_007c0314;
-extern undefined4 DAT_007c033c;
-extern undefined4 DAT_007c0344;
-extern undefined4 DAT_007c090c;
-extern undefined4 DAT_007c0910;
-extern undefined4 DAT_007c0914;
-extern undefined4 DAT_007c093c;
-extern undefined4 DAT_007c0940;
-extern undefined4 DAT_007c0944;
-extern undefined4 DAT_007c0f0c;
-extern undefined4 DAT_007c0f14;
-extern undefined4 DAT_007c0f40;
-extern undefined4 DAT_007c0f44;
-extern undefined4 DAT_007c150c;
-extern undefined4 DAT_007c254c;
-extern undefined4 DAT_007c2554;
-extern undefined4 DAT_007c2560;
-extern undefined4 DAT_007c2568;
-extern undefined4 DAT_007c256c;
-extern undefined4 DAT_007c2578;
-extern undefined4 DAT_007c2580;
+// char[500000]
+extern char g_CameraLoadImageReadBuffer[500000];
+
+// int
+extern int g_INT_007c254c;
+extern int g_INT_007c2554;
+extern int g_INT_007c2560;
+extern int g_INT_007c2568;
+extern int g_INT_007c256c;
+extern int g_INT_007c2578;
+extern int g_INT_007c2580;
+
+// int[17]
+extern int g_ColonelIndices[17];
 

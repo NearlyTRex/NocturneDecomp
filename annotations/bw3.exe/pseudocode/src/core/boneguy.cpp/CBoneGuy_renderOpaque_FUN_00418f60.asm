@@ -7,8 +7,8 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220
@@ -18,9 +18,9 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x005f2afc]      ; 00418f60 | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 00418f60 | g_CDemonRenderer_PTR_005f2afc
         ;   Label: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00418f60
-    PUSH EDX                            ; 00418f66 | DAT_01bdd7e4
+    PUSH EDX                            ; 00418f66 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 00418f67
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00418f6c

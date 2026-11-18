@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_0041d950(CBride *this_ptr)
 
 {
@@ -20,9 +18,9 @@ CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_0041d950(CBride *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(pCVar3->base).base.model,"bride.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.75;
-  fVar1 = _DAT_005f3c80;
+  fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
-  fVar2 = _DAT_005f3c84;
+  fVar2 = 100.0f;
   pCVar3->action_timer = 0.0;
   (pCVar3->base).base.turn_rate = 1.5707964;
   (pCVar3->base).base.ai_detection_range_min = fVar1;

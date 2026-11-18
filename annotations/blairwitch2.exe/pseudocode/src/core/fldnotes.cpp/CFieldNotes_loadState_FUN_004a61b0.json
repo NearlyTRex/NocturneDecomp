@@ -2,28 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 225,
+    "complexity_score": 166,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
-    "suspect_count": 10,
+    "pseudocode_lines": 96,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 317
+    "total_lines": 318
   },
   "cross_references": [
     {
       "addr": "004bbf70",
       "from_addr": "004bc770",
-      "name": "core_game.cpp_FUN_004bbf70",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +56,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8100",
@@ -68,11 +66,11 @@
     {
       "addr": "0040dd20",
       "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_0040dd20"
+      "name": "engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040dd20"
     },
     {
       "addr": "0047bdf0",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0"
     }
   ],
@@ -91,8 +89,8 @@
     },
     {
       "addr": "005d6470",
-      "name": "DAT_005d6470",
-      "type": "undefined4",
+      "name": "s_d_005d6470",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -121,8 +119,8 @@
     },
     {
       "addr": "005d64df",
-      "name": "DAT_005d64df",
-      "type": "undefined4",
+      "name": "s_anon_005d64df",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -133,8 +131,8 @@
     },
     {
       "addr": "005d64ea",
-      "name": "DAT_005d64ea",
-      "type": "undefined4",
+      "name": "s_d_005d64ea",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -187,26 +185,26 @@
     },
     {
       "addr": "01cab9f0",
-      "name": "DAT_01cab9f0",
-      "type": "undefined4",
+      "name": "g_INT_01cab9f0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cacb4c",
-      "name": "DAT_01cacb4c",
-      "type": "undefined4",
+      "name": "g_INT_01cacb4c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -216,7 +214,7 @@
       {
         "call_addr": "004bc770",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -342,48 +340,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005d6470",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005d6470);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
+      "line": 31,
       "match": "DAT_00616048",
       "severity": "mild",
       "text": "puVar4 = &DAT_00616048;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005d64df",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005d64df);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005d64ea",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005d64ea);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(char *)((int)pcVar6",
       "severity": "moderate",
       "text": "pcVar6 = (char *)((int)pcVar6 + ((uint)bVar7 * -2 + 1) * 4);",
@@ -391,23 +357,15 @@
     },
     {
       "description": "Pointer value `pcVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 54,
       "match": "(int)pcVar6",
       "severity": "moderate",
       "text": "pcVar6 = (char *)((int)pcVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0x1cacbd8 matches address of SNotesMap_ARRAY_01cacb50 (+136 bytes into) (type SNotesMap[4]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 90,
-      "match": "0x1cacbd8",
-      "severity": "moderate",
-      "text": "engine_alphabit_cpp_FUN_0040dd20(iVar3 + 0x1cacbd8,0xff);",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 35,
+      "line": 33,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -415,7 +373,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x40; iVar3 != 0; iVar3 = iVar3 + -1) {",

@@ -9,17 +9,17 @@
 // Address: 005ba700
 void __cdecl staticInit(void);
 
-// Original: core_zombie.cpp_FUN_005ba730
+// Original: core_zombie.cpp_getObjectHeightScale_FUN_005ba730
 // Address: 005ba730
-float FUN_005ba730(int param_1);
+float __cdecl getObjectHeightScale(CDemonActor *actor);
 
-// Original: core_zombie.cpp_FUN_005ba7d0
+// Original: core_zombie.cpp_getObjectGrabPointLocal_FUN_005ba7d0
 // Address: 005ba7d0
-void FUN_005ba7d0(int param_1);
+CVector3f * __stack_esi getObjectGrabPointLocal(CDemonActor *actor,CVector3f *out_point);
 
 // Original: core_zombie.cpp_getObjectGrabPointWorld_FUN_005ba890
 // Address: 005ba890
-void getObjectGrabPointWorld(int param_1);
+CVector3f * __stack_esi getObjectGrabPointWorld(CDemonActor *actor,CVector3f *out_point);
 
 // Original: core_zombie.cpp_classifyObjectShape_FUN_005ba990
 // Address: 005ba990
@@ -117,14 +117,6 @@ void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 // Address: 005bedf0
 CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint flags);
 
-// Original: core_zombie.cpp_FUN_005bee80
-// Address: 005bee80
-void FUN_005bee80(void);
-
-// Original: core_zombie.cpp_FUN_005bf0e0
+// Original: core_zombie.cpp_findRasterizerEdge_FUN_005bf0e0
 // Address: 005bf0e0
-int * FUN_005bf0e0(void);
-
-// Original: core_zombie.cpp_FUN_005bf120
-// Address: 005bf120
-void __cdecl FUN_005bf120(SRenderVertex *vertex_buffer,int vertex_count);
+SSoftwareEdge * __cdecl findRasterizerEdge(int y_start,SSoftwareEdge *exclude_edge);

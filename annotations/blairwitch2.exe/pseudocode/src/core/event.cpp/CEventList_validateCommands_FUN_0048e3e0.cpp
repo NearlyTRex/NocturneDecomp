@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_event_cpp_CEventList_validateCommands_FUN_0048e3e0(CEventList *this_ptr,char *commands)
 
 {
   int iVar1;
   
   if (*commands != '\0') {
-    _DAT_01c3dd0c = 1;
+    g_EventDryRun = 1;
     iVar1 = core_event_cpp_CEventList_executeCommandString_FUN_00489510(this_ptr,commands);
-    _DAT_01c3dd0c = 0;
+    g_EventDryRun = 0;
     if (iVar1 == 0) {
-      return &DAT_01c3dd10;
+      return g_EventErrorMessageBuffer;
     }
   }
   return (char *)0x0;

@@ -2,22 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 379,
+    "complexity_score": 539,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 199,
-    "suspect_count": 15,
+    "pseudocode_lines": 219,
+    "suspect_count": 28,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
+      "flattened_array_index",
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
-      "undefined_data",
-      "undefined_type",
-      "warning_overlapping_globals"
+      "unaffected_reg",
+      "undefined_type"
     ],
-    "total_lines": 654
+    "total_lines": 674
   },
   "cross_references": [
     {
@@ -63,7 +65,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3120",
@@ -83,7 +85,7 @@
     {
       "addr": "004659c0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004659c0"
+      "name": "engine_dosio.cpp_getFile_FUN_004659c0"
     },
     {
       "addr": "00440810",
@@ -91,9 +93,19 @@
       "name": "support_codec.cpp_CCodec_dtor_FUN_00440810"
     },
     {
+      "addr": "00440970",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_00440970"
+    },
+    {
       "addr": "004410f0",
       "is_variadic": false,
       "name": "support_codec.cpp_CLZWCompress_ctor_FUN_004410f0"
+    },
+    {
+      "addr": "00441290",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWCompress_finalize_FUN_00441290"
     },
     {
       "addr": "00441140",
@@ -104,16 +116,6 @@
       "addr": "00440bf0",
       "is_variadic": false,
       "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_00440bf0"
-    },
-    {
-      "addr": "00440970",
-      "is_variadic": false,
-      "name": "support_codec.cpp_FUN_00440970"
-    },
-    {
-      "addr": "00441290",
-      "is_variadic": false,
-      "name": "support_codec.cpp_FUN_00441290"
     },
     {
       "addr": "005747e0",
@@ -145,8 +147,8 @@
     },
     {
       "addr": "005b9f7d",
-      "name": "DAT_005b9f7d",
-      "type": "undefined4",
+      "name": "s_rb_005b9f7d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -163,8 +165,8 @@
     },
     {
       "addr": "005b9f95",
-      "name": "DAT_005b9f95",
-      "type": "undefined4",
+      "name": "s_wb_005b9f95",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -217,116 +219,116 @@
     },
     {
       "addr": "005ba056",
-      "name": "DAT_005ba056",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BackdropColorMultiplier",
+      "type": "double",
+      "value": "256"
     },
     {
       "addr": "005f184c",
-      "name": "DAT_005f184c",
-      "type": "undefined4",
+      "name": "s_EFD_005f184c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00b52f48",
-      "name": "DAT_00b52f48",
+      "name": "g_PrecomputedDepthBuffer[320]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b53448",
-      "name": "DAT_00b53448",
+      "name": "g_PrecomputedDepthBuffer[640]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00b5344c",
-      "name": "DAT_00b5344c",
+      "name": "g_PrecomputedDepthBuffer[641]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0134017c",
-      "name": "DAT_0134017c",
-      "type": "undefined4",
+      "name": "g_BackdropSaveActive",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0135ead0",
-      "name": "DAT_0135ead0",
-      "type": "undefined4",
+      "name": "g_CameraPlaneWorkBuffer",
+      "type": "SFogImagePlane",
       "value": null
     },
     {
       "addr": "0135ead1",
-      "name": "DAT_0135ead1",
+      "name": "g_CameraPlaneWorkBuffer.pixels[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ec10",
-      "name": "DAT_0135ec10",
+      "name": "g_CameraPlaneWorkBuffer.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ed50",
-      "name": "DAT_0135ed50",
+      "name": "g_CameraPlaneWorkBuffer.pixels[2][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0149d6d0",
-      "name": "DAT_0149d6d0",
-      "type": "undefined4",
+      "name": "g_ImageProcessingState1",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d4",
-      "name": "DAT_0149d6d4",
-      "type": "undefined4",
+      "name": "g_ImageProcessingState2",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d8",
-      "name": "DAT_0149d6d8",
-      "type": "undefined4",
+      "name": "g_ImageBytesPerPixel",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149e6e8",
-      "name": "DAT_0149e6e8",
+      "name": "g_CameraFogGrid.scroll_vector.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0149e6ec",
-      "name": "DAT_0149e6ec",
+      "name": "g_CameraFogGrid.scroll_vector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0149e6f0",
-      "name": "DAT_0149e6f0",
+      "name": "g_CameraFogGrid.scroll_vector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0149e6f8",
-      "name": "DAT_0149e6f8",
+      "name": "g_CameraFogGrid.density_multiplier",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -609,16 +611,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved type",
-      "line": 9,
+      "line": 7,
       "match": "undefined3 extraout_var",
       "severity": "moderate",
       "text": "undefined3 extraout_var;",
@@ -626,7 +620,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 7,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "undefined3 extraout_var;",
@@ -634,7 +628,7 @@
     },
     {
       "description": "Unresolved type",
-      "line": 14,
+      "line": 10,
       "match": "undefined3 extraout_var_00",
       "severity": "moderate",
       "text": "undefined3 extraout_var_00;",
@@ -642,79 +636,151 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 10,
       "match": "extraout_var_00",
       "severity": "moderate",
       "text": "undefined3 extraout_var_00;",
       "type": "extra_output"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005b9f7d",
-      "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_FUN_004659c0(\"backdrop\",local_20c,&DAT_005b9f7d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_005b9f95",
-      "severity": "mild",
-      "text": "support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005747e0(&local_5c,local_10c,&DAT_005b9f95);",
-      "type": "undefined_data"
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "CDemonCamera *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 64,
+      "line": 59,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 101,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_0135ead0 + local_40;",
-      "type": "undefined_data"
+      "description": "Unaffected register variable",
+      "line": 98,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if (1 < unaff_ESI->display_height) {",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "(&DAT_0135ead0)[iVar10] = (char)iVar5;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(int *)((int)g_PrecomputedDepthBuffer",
+      "severity": "moderate",
+      "text": "piVar7 = (int *)((int)g_PrecomputedDepthBuffer + local_50);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 175,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "iVar3 = support_codec_cpp_FUN_00440970(&local_a8,&DAT_0135ead0,&local_50,&local_5c);",
-      "type": "undefined_data"
+      "description": "Unaffected register variable",
+      "line": 107,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if (1 < unaff_ESI->display_width) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 125,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "} while (iVar11 < unaff_ESI->display_width);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 131,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "} while (local_3c < unaff_ESI->display_height);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 133,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_0044fdd0(unaff_ESI,local_24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 135,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if (0 < unaff_ESI->display_height) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 150,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if (0 < unaff_ESI->display_width) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 180,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "} while (iVar12 < unaff_ESI->display_width);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 185,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "} while (local_40 < unaff_ESI->display_height);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 187,
+      "line": 202,
       "match": "extraout_var_00",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Raw hex address 0x444645 assigned to bare local `local_54`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_54` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 71,
-      "match": "0x444645",
+      "description": "Pointer value `&g_PrecomputedWorldPositions[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 103,
+      "match": "(int)&g_PrecomputedWorldPositions[0].x",
       "severity": "moderate",
-      "text": "local_54 = 0x00444645;",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_48);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_5c.file[0xb89]._bufsize` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 208,
+      "match": "(int)&local_5c.file[0xb89]._bufsize",
+      "severity": "moderate",
+      "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x44f8c1 assigned to bare local `flags`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `flags` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 75,
+      "match": "0x44f8c1",
+      "severity": "moderate",
+      "text": "flags = 0x44f8c1;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x44f8ef assigned to bare local `iVar11`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar11` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 82,
+      "match": "0x44f8ef",
+      "severity": "moderate",
+      "text": "iVar11 = 0x44f8ef;",
       "type": "raw_address_constant"
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 64,
+      "line": 59,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
@@ -722,11 +788,50 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 187,
+      "line": 202,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
       "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 103,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 160,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "[(int)&(local_5c.file)->_ptr + local_38 + iVar12];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 174,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "[(int)&(local_5c.file)->_ptr + local_38 + iVar12];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 208,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "'g_CameraPlaneWorkBuffer.pixels[0][iVar8]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar8 is copied from local_38, which is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 169,
+      "severity": "major",
+      "text": "g_CameraPlaneWorkBuffer.pixels[0][iVar8] = (char)iVar3;",
+      "type": "flattened_array_index"
     }
   ]
 }

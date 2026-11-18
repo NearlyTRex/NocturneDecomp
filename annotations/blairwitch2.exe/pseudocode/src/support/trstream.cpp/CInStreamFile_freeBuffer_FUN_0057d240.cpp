@@ -10,7 +10,7 @@ void __cdecl support_trstream_cpp_CInStreamFile_freeBuffer_FUN_0057d240(CInStrea
 
 {
   if (this_ptr->buffer_alloc != (void *)0x0) {
-    FUN_005b86a0(this_ptr->buffer_alloc);
+    debugFree(this_ptr->buffer_alloc);
     this_ptr->buffer_alloc = (void *)0x0;
   }
   this_ptr->buffer_start = 0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_00514a30(char *filename)
 
 {
@@ -29,11 +27,11 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_00514a30(char *filename)
   short local_42;
   short local_40;
   
-  if (DAT_006141c0 == 0x10) {
+  if (g_INT_006141c0 == 0x10) {
     engine_pcx_c_saveScreenRaw16_FUN_005146c0(filename);
     return;
   }
-  if (DAT_006141c0 == 0x20) {
+  if (g_INT_006141c0 == 0x20) {
     engine_pcx_c_saveScreenRaw32_FUN_00514880(filename);
     return;
   }
@@ -42,35 +40,35 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_00514a30(char *filename)
   local_87 = 5;
   local_85 = 8;
   local_44 = 1;
-  local_80 = (short)DAT_006141b8 + -1;
+  local_80 = (short)g_INT_006141b8 + -1;
   local_86 = 1;
   local_47 = 1;
-  local_7e = (short)DAT_006141bc + -1;
+  local_7e = (short)g_INT_006141bc + -1;
   local_84 = 0;
-  local_46 = (short)DAT_006141b8;
-  local_42 = (short)DAT_006141b8;
+  local_46 = (short)g_INT_006141b8;
+  local_42 = (short)g_INT_006141b8;
   local_82 = 0;
-  local_40 = (short)DAT_006141bc;
-  if ((DAT_006141b8 == 0x280) && (DAT_006141bc == 0xf0)) {
+  local_40 = (short)g_INT_006141bc;
+  if ((g_INT_006141b8 == 0x280) && (g_INT_006141bc == 0xf0)) {
     local_40 = 0x1e0;
     local_7e = 0x1df;
   }
-  file = _fopen(filename,&DAT_005e19cd);
+  file = _fopen(filename,"wb");
   if (file == (_FILE *)0x0) {
-    _DAT_01d046a0 = "..\\engine\\pcx.c";
-    _DAT_01d046a4 = 0xed;
-    core_main_c_FUN_004e4500("Cannot write .PCX");
+    g_CHAR_PTR_01d046a0 = "..\\engine\\pcx.c";
+    g_INT_01d046a4 = 0xed;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Cannot write .PCX");
   }
   iVar2 = 0;
   _fwrite(&local_88,1,0x80,file);
-  if (0 < DAT_006141bc) {
+  if (0 < g_INT_006141bc) {
     do {
       engine_pcx_c_writePCXScanline_FUN_005145f0(iVar2,file);
-      if ((DAT_006141b8 == 0x280) && (DAT_006141bc == 0xf0)) {
+      if ((g_INT_006141b8 == 0x280) && (g_INT_006141bc == 0xf0)) {
         engine_pcx_c_writePCXScanline_FUN_005145f0(iVar2,file);
       }
       iVar2 = iVar2 + 1;
-    } while (iVar2 < DAT_006141bc);
+    } while (iVar2 < g_INT_006141bc);
   }
   if (((file->_flag & 0x400) == 0) && (1 < file->_bufsize - file->_cnt)) {
     *file->_ptr = '\f';
@@ -91,7 +89,7 @@ LAB_00514b9e:
   iVar2 = 0;
   do {
     if (((file->_flag & 0x400) == 0) && (1 < file->_bufsize - file->_cnt)) {
-      *file->_ptr = (&DAT_01c35838)[iVar2];
+      *file->_ptr = g_UCHAR_ARRAY_01c35838[iVar2];
       if (*file->_ptr == '\n') {
         character = 10;
         goto LAB_00514bb4;
@@ -102,7 +100,7 @@ LAB_00514b9e:
       *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
     }
     else {
-      character = (uint)(byte)(&DAT_01c35838)[iVar2];
+      character = (uint)g_UCHAR_ARRAY_01c35838[iVar2];
 LAB_00514bb4:
       _fputc(character,file);
     }

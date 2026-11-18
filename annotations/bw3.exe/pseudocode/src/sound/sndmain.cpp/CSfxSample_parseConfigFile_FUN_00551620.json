@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 538,
-    "complexity_score": 346,
+    "complexity_score": 258,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 39,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 211,
-    "suspect_count": 11,
+    "pseudocode_lines": 203,
+    "suspect_count": 4,
     "suspect_types": [
       "bit_int_float_compare",
       "shadow_pointer_walk",
-      "undefined_data",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 749
+    "total_lines": 741
   },
   "cross_references": [
     {
@@ -55,7 +53,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a5b9c",
@@ -116,14 +114,14 @@
   "globals": [
     {
       "addr": "005d253c",
-      "name": "DAT_005d253c",
-      "type": "undefined4",
+      "name": "s_anon_005d253c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d253f",
-      "name": "DAT_005d253f",
-      "type": "undefined4",
+      "name": "s_klp_005d253f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -134,8 +132,8 @@
     },
     {
       "addr": "005d2549",
-      "name": "DAT_005d2549",
-      "type": "undefined4",
+      "name": "s_sfx_005d2549",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -284,8 +282,8 @@
     },
     {
       "addr": "005d2858",
-      "name": "DAT_005d2858",
-      "type": "undefined4",
+      "name": "s_loop_005d2858",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -302,50 +300,50 @@
     },
     {
       "addr": "005e4850",
-      "name": "DAT_005e4850",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SoundDivisorConstant",
+      "type": "float",
+      "value": "4"
     },
     {
       "addr": "005e4854",
-      "name": "DAT_005e4854",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SoundReferenceDistanceConstant",
+      "type": "float",
+      "value": "20"
     },
     {
       "addr": "005e4858",
-      "name": "DAT_005e4858",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e4858",
+      "type": "float",
+      "value": "10000"
     },
     {
       "addr": "00604244",
-      "name": "DAT_00604244",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00604244",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "006074b8",
-      "name": "DAT_006074b8",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02ce7210",
-      "name": "DAT_02ce7210",
-      "type": "undefined4",
+      "name": "g_SoundReferenceVolumeDistance",
+      "type": "float",
       "value": null
     }
   ],
@@ -628,64 +626,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_005d253f",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_makePath_FUN_00465e80(local_258,(char *)0x0,(char *)0x0,local_158,&DAT_005d253f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005d2549",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_makePath_FUN_00465e80(local_358,(char *)0x0,(char *)0x0,local_158,&DAT_005d2549);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005d253c",
-      "severity": "mild",
-      "text": "pcVar7 = strstr(local_484,&DAT_005d253c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "while ((local_484 < pcVar7 && (((&DAT_006074b8)[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "while (((&DAT_006074b8)[(byte)(local_484[0] + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 181,
-      "match": "DAT_005d2858",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(local_484,&DAT_005d2858);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 209,
+      "line": 200,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar6 = (CSfxSample *)((pCVar6->sample_info).name + 4);",
@@ -693,7 +635,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 87,
+      "line": 88,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -709,7 +651,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3dcccccd is the IEEE 754 bit pattern of 0.1f. Rewrite in a .keep as a plain float compare against 0.1f.",
-      "line": 127,
+      "line": 124,
       "match": "(int)(this_ptr->sample_info).reference_volume_distance < 0x3dcccccd",
       "severity": "moderate",
       "text": "if ((int)(this_ptr->sample_info).reference_volume_distance < 0x3dcccccd) {",

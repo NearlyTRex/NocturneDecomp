@@ -39,7 +39,7 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004b5950(CHero *this_ptr)
     this_ptr_00 = (CActorDestination *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
                             (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
-                             g_CActorDestinationActorType_014b8a1c.name_hash);
+                             g_CActorDestinationClassInfo.name_hash);
     local_14 = this_ptr_00;
     if (this_ptr_00 != (CActorDestination *)0x0) {
       iVar2 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0

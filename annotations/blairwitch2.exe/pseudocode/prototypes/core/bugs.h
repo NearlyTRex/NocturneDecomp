@@ -39,7 +39,7 @@ void __cdecl CBugs::renderGroundHeightGrid(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_getBoundingBox_FUN_0041f790
 // Address: 0041f790
-CBoundingBox3D * __cdecl CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bugs.cpp_CBugs_archive_FUN_0041f7c0
 // Address: 0041f7c0
@@ -85,13 +85,13 @@ void __cdecl CBugs::attackSwarmTarget(CBugs *this_ptr,float delta_time);
 // Address: 00420830
 void __cdecl CBugs::updateBoundingBox(CBugs *this_ptr,float delta_time);
 
-// Original: core_bugs.cpp_FUN_00420840
+// Original: core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840
 // Address: 00420840
-undefined4 FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4);
+int __cdecl CBugs::updateBugPathfinding(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex);
 
-// Original: core_bugs.cpp_FUN_00420e90
+// Original: core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00420e90
 // Address: 00420e90
-void FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3);
+void __cdecl CBugs::updateBugRenderingData(CBugs *this_ptr,SBug *bug_data,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00421800
 // Address: 00421800
@@ -105,13 +105,13 @@ void __cdecl CBugs::recalculateBoundingBox(CBugs *this_ptr);
 // Address: 00421b10
 void __cdecl CBugs::setSwarmTarget(CBugs *this_ptr,CDemonActor *target);
 
-// Original: core_bugs.cpp_FUN_00421dd0
+// Original: core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00421dd0
 // Address: 00421dd0
-void FUN_00421dd0(int param_1,float *param_2);
+void __cdecl CBugs::applySwarmTranslation(CBugs *this_ptr,CVector3f *new_position);
 
-// Original: core_bugs.cpp_FUN_00421fe0
+// Original: core_bugs.cpp_normalizeVector_FUN_00421fe0
 // Address: 00421fe0
-void FUN_00421fe0(float *param_1);
+void __cdecl normalizeVector(CVector3f *dest);
 
 // Original: core_bugs.cpp_convertVector_FUN_00422050
 // Address: 00422050

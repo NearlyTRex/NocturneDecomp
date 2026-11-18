@@ -6,51 +6,51 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_hellhag_cpp_CHag_startBurn_FUN_005aad70(CHag *this_ptr,CVector3f *direction,float strength)
 
 {
-  SStateMachine *pSVar1;
-  CVector3f *pCVar2;
+  SStateMachine *this_ptr_00;
+  CVector3f *pCVar1;
+  float fVar2;
   float fVar3;
   float fVar4;
-  float fVar5;
-  int iVar6;
-  uint uVar7;
+  int iVar5;
+  char *state_name;
   
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
             (&(this_ptr->base).base.base.model.base,8,1);
-  pSVar1 = &(this_ptr->base).state_machine;
-  iVar6 = core_muzzle_cpp_FUN_0059daa0(pSVar1,&DAT_005f0c0e);
-  if (iVar6 == 0) {
-    uVar7 = core_muzzle_cpp_FUN_0059db70(pSVar1);
-    core_muzzle_cpp_FUN_0059d7f0(pSVar1,"BurnComplete",uVar7);
+  this_ptr_00 = &(this_ptr->base).state_machine;
+  iVar5 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Burn");
+  if (iVar5 == 0) {
+    state_name = core_muzzle_cpp_SStateMachine_getStateName_FUN_0059db70(this_ptr_00);
+    core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
+              (this_ptr_00,"BurnComplete",state_name);
   }
-  core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,&DAT_005f0c20);
-  pCVar2 = &(this_ptr->base).burn_direction;
-  (this_ptr->base).burn_timer = strength * _DAT_005f0c26;
-  if (pCVar2 != direction) {
-    pCVar2->x = direction->x;
+  core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
+            (&(this_ptr->base).state_machine,"Burn");
+  pCVar1 = &(this_ptr->base).burn_direction;
+  (this_ptr->base).burn_timer = strength * 2.0f;
+  if (pCVar1 != direction) {
+    pCVar1->x = direction->x;
     (this_ptr->base).burn_direction.y = direction->y;
     (this_ptr->base).burn_direction.z = direction->z;
   }
-  pCVar2 = &(this_ptr->base).burn_direction;
+  pCVar1 = &(this_ptr->base).burn_direction;
   (this_ptr->base).burn_direction.y = 0.0;
-  fVar3 = (this_ptr->base).burn_direction.y;
-  fVar4 = (this_ptr->base).burn_direction.z;
-  fVar3 = SQRT(fVar4 * fVar4 + pCVar2->x * pCVar2->x + fVar3 * fVar3);
-  if (0.0 < fVar3) {
-    fVar3 = 1.0 / fVar3;
-    fVar4 = (this_ptr->base).burn_direction.y;
-    fVar5 = (this_ptr->base).burn_direction.z;
-    pCVar2->x = pCVar2->x * fVar3;
-    (this_ptr->base).burn_direction.y = fVar4 * fVar3;
-    (this_ptr->base).burn_direction.z = fVar5 * fVar3;
+  fVar2 = (this_ptr->base).burn_direction.y;
+  fVar3 = (this_ptr->base).burn_direction.z;
+  fVar2 = SQRT(fVar3 * fVar3 + pCVar1->x * pCVar1->x + fVar2 * fVar2);
+  if (0.0 < fVar2) {
+    fVar2 = 1.0 / fVar2;
+    fVar3 = (this_ptr->base).burn_direction.y;
+    fVar4 = (this_ptr->base).burn_direction.z;
+    pCVar1->x = pCVar1->x * fVar2;
+    (this_ptr->base).burn_direction.y = fVar3 * fVar2;
+    (this_ptr->base).burn_direction.z = fVar4 * fVar2;
     return;
   }
   (this_ptr->base).burn_direction.z = 0.0;
   (this_ptr->base).burn_direction.y = (this_ptr->base).burn_direction.z;
-  pCVar2->x = (this_ptr->base).burn_direction.y;
+  pCVar1->x = (this_ptr->base).burn_direction.y;
   return;
 }

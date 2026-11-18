@@ -15,11 +15,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3bd8
 ;   TerminatedCString s_SfxSlot_seek_no_sample_005f3bed
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430
 ;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0
@@ -42,10 +42,10 @@ section .text
     MOV ECX,0x5f3bd8                    ; 00572261 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xd75                       ; 00572266
     PUSH 0x5f3bed                       ; 0057226b | = "SfxSlot::seek - no sample?!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00572270 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00572276 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0057227c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00572270 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00572276 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057227c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00572281
     PUSH 0x0                            ; 00572284
         ;   Label: LAB_00572284
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_00572302
     PUSH 0x0                            ; 00572305
     CALL crt_math.c_round_FUN_005c03a0  ; 00572307
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0057230c
     MOV ECX,dword ptr [ESP + 0xc]       ; 00572310
     PUSH ECX                            ; 00572314

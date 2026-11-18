@@ -6,6 +6,8 @@
 #include "system/basetypes.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SCollisionInfo.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7D0000
@@ -23,13 +25,25 @@ extern CDemonActorType g_CCrateClassInfo;
 extern CDemonActorType g_CCrossbowClassInfo;
 extern CDemonActorType g_CCurtainClassInfo;
 
-// undefined4
-extern undefined4 DAT_007db570;
-extern undefined4 DAT_007dc5b0;
-extern undefined4 DAT_007dc5b4;
-extern undefined4 DAT_007dc5b8;
-extern undefined4 DAT_007dc5c0;
-extern undefined4 DAT_007dc5e0;
-extern undefined4 DAT_007dc5e8;
-extern undefined4 DAT_007ddbb0;
+// CVector3f[100]
+extern CVector3f g_CVector3f_ARRAY_007dc71c[100];
+
+// SCollisionInfo[100]
+extern SCollisionInfo g_CurtainCollisionInfos[100];
+
+// char[500000]
+extern char g_CameraLoadImageReadBuffer[500000];
+
+// int
+extern int g_INT_007dc5b0;
+extern int g_INT_007dc5b4;
+extern int g_INT_007dc5b8;
+extern int g_INT_007dc5c0;
+extern int g_INT_007dc5e0;
+extern int g_INT_007dc5e8;
+extern int g_CurtainCollisionCount;
+extern int g_INT_007ddbb0;
+
+// int[17]
+extern int g_ColonelIndices[17];
 

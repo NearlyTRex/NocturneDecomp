@@ -10,25 +10,25 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[2]:
-;   sound_snddx.cpp_FUN_00555130 at 0055519a
-;   sound_snddx.cpp_FUN_00555a80 at 00555b42
+;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_00555a80 at 00555b42
+;   sound_snddx.cpp_CDirectSoundDevice_start_FUN_00555130 at 0055519a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005e9a3b
 ;   TerminatedCString s_Lock_secondary_buffer_005e9a5a
 ;   TerminatedCString s_Unlock_secondary_buffer_005e9a70
-;   undefined4 DAT_0264a5cc
-;   undefined4 DAT_0264a5d8
-;   undefined4 DAT_0264a5dc
-;   undefined4 DAT_0264a5e0
-;   undefined4 DAT_0264a5e4
-;   undefined4 DAT_0264a5e8
-;   undefined4 DAT_0264a5ec
-;   undefined4 DAT_0264a5f0
+;   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+;   int g_StreamBitsPerSample
+;   int g_StreamSampleRate
+;   int g_StreamChannelCount
+;   int g_StreamSamplesPerBlock
+;   int g_StreamBlockSizeBytes
+;   int g_StreamBlockCount
+;   int g_StreamCurrentBlock
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0
 ;
@@ -42,7 +42,7 @@ section .text
     PUSH EDI                            ; 00554c82
     PUSH EBP                            ; 00554c83
     SUB ESP,0x350                       ; 00554c84
-    MOV EDX,dword ptr [0x0264a5cc]      ; 00554c8a | DAT_0264a5cc
+    MOV EDX,dword ptr [0x0264a5cc]      ; 00554c8a | g_DirectSoundSecondaryBuffer
     TEST EDX,EDX                        ; 00554c90
     JNZ 0x00554ca1                      ; 00554c92
         ;   XREF to: 00554ca1 (CONDITIONAL_JUMP)  ; LAB_00554ca1
@@ -64,9 +64,9 @@ section .text
     LEA EAX,[ESP + 0x354]               ; 00554cb3
     PUSH EAX                            ; 00554cba
     LEA EAX,[ESP + 0x354]               ; 00554cbb
-    MOV EBX,dword ptr [0x0264a5e8]      ; 00554cc2 | DAT_0264a5e8
+    MOV EBX,dword ptr [0x0264a5e8]      ; 00554cc2 | g_StreamBlockSizeBytes
     PUSH EAX                            ; 00554cc8
-    MOV EAX,[0x0264a5f0]                ; 00554cc9 | DAT_0264a5f0
+    MOV EAX,[0x0264a5f0]                ; 00554cc9 | g_StreamCurrentBlock
     IMUL EAX,EBX                        ; 00554cce
     PUSH EBX                            ; 00554cd1
     PUSH EAX                            ; 00554cd2
@@ -80,10 +80,10 @@ section .text
     JNZ 0x00554c96                      ; 00554ce9
         ;   XREF to: 00554c96 (CONDITIONAL_JUMP)  ; LAB_00554c96
     MOV EAX,dword ptr [ESP + 0x348]     ; 00554ceb
-    CMP EAX,dword ptr [0x0264a5e8]      ; 00554cf2 | DAT_0264a5e8
+    CMP EAX,dword ptr [0x0264a5e8]      ; 00554cf2 | g_StreamBlockSizeBytes
     JNZ 0x00554c94                      ; 00554cf8
         ;   XREF to: 00554c94 (CONDITIONAL_JUMP)  ; LAB_00554c94
-    MOV EAX,[0x0264a5d8]                ; 00554cfa | DAT_0264a5d8
+    MOV EAX,[0x0264a5d8]                ; 00554cfa | g_StreamBitsPerSample
     MOV EDX,EAX                         ; 00554cff
     SAR EDX,0x1f                        ; 00554d01
     SHL EDX,0x3                         ; 00554d04
@@ -93,7 +93,7 @@ section .text
     MOV EBX,ESI                         ; 00554d0e
     IMUL EDX,ESI,0x0                    ; 00554d10
     ADD EDX,dword ptr [ESP + 0x344]     ; 00554d13
-    MOV ECX,dword ptr [0x0264a5e0]      ; 00554d1a | DAT_0264a5e0
+    MOV ECX,dword ptr [0x0264a5e0]      ; 00554d1a | g_StreamChannelCount
     SHL ECX,0x2                         ; 00554d20
     XOR EAX,EAX                         ; 00554d23
     TEST ECX,ECX                        ; 00554d25
@@ -108,31 +108,31 @@ section .text
         ;   XREF to: 00554d29 (CONDITIONAL_JUMP)  ; LAB_00554d29
     LEA EAX,[EAX]                       ; 00554d39
     NOP                                 ; 00554d3f
-    MOV EBX,dword ptr [0x0264a5e0]      ; 00554d40 | DAT_0264a5e0
+    MOV EBX,dword ptr [0x0264a5e0]      ; 00554d40 | g_StreamChannelCount
         ;   Label: LAB_00554d40
     IMUL ESI,EBX                        ; 00554d46
     PUSH ESI                            ; 00554d49
-    MOV ESI,dword ptr [0x0264a5e4]      ; 00554d4a | DAT_0264a5e4
+    MOV ESI,dword ptr [0x0264a5e4]      ; 00554d4a | g_StreamSamplesPerBlock
     PUSH ESI                            ; 00554d50
-    MOV EDI,dword ptr [0x0264a5dc]      ; 00554d51 | DAT_0264a5dc
+    MOV EDI,dword ptr [0x0264a5dc]      ; 00554d51 | g_StreamSampleRate
     PUSH EDI                            ; 00554d57
     PUSH EBX                            ; 00554d58
-    MOV EAX,[0x0264a5d8]                ; 00554d59 | DAT_0264a5d8
+    MOV EAX,[0x0264a5d8]                ; 00554d59 | g_StreamBitsPerSample
     PUSH EAX                            ; 00554d5e
     LEA EAX,[ESP + 0x334]               ; 00554d5f
     PUSH EAX                            ; 00554d66
     CALL sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0 ; 00554d67
         ;   XREF to: 005541f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, ...)
-    MOV EDX,dword ptr [0x0264a5f0]      ; 00554d6c | DAT_0264a5f0
-    MOV ECX,dword ptr [0x0264a5ec]      ; 00554d72 | DAT_0264a5ec
+    MOV EDX,dword ptr [0x0264a5f0]      ; 00554d6c | g_StreamCurrentBlock
+    MOV ECX,dword ptr [0x0264a5ec]      ; 00554d72 | g_StreamBlockCount
     INC EDX                             ; 00554d78
     ADD ESP,0x18                        ; 00554d79
-    MOV dword ptr [0x0264a5f0],EDX      ; 00554d7c | DAT_0264a5f0
+    MOV dword ptr [0x0264a5f0],EDX      ; 00554d7c | g_StreamCurrentBlock
     CMP EDX,ECX                         ; 00554d82
     JL 0x00554d8e                       ; 00554d84
         ;   XREF to: 00554d8e (CONDITIONAL_JUMP)  ; LAB_00554d8e
     XOR EBX,EBX                         ; 00554d86
-    MOV dword ptr [0x0264a5f0],EBX      ; 00554d88 | DAT_0264a5f0
+    MOV dword ptr [0x0264a5f0],EBX      ; 00554d88 | g_StreamCurrentBlock
     MOV ESI,dword ptr [ESP + 0x34c]     ; 00554d8e
         ;   Label: LAB_00554d8e
     PUSH ESI                            ; 00554d95
@@ -141,7 +141,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x350]     ; 00554d9e
     PUSH EBP                            ; 00554da5
     MOV ECX,dword ptr [ESP + 0x350]     ; 00554da6
-    MOV EAX,[0x0264a5cc]                ; 00554dad | DAT_0264a5cc
+    MOV EAX,[0x0264a5cc]                ; 00554dad | g_DirectSoundSecondaryBuffer
     PUSH ECX                            ; 00554db2
     MOV EDX,dword ptr [EAX]             ; 00554db3
     PUSH EAX                            ; 00554db5
@@ -158,8 +158,8 @@ section .text
     RET                                 ; 00554dcc
     PUSH EAX                            ; 00554dcd
         ;   Label: LAB_00554dcd
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00554dce
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00554dce
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00554dd3
     PUSH EAX                            ; 00554dd6
     PUSH 0x5e9a5a                       ; 00554dd7 | = "Lock secondary buffer"
@@ -183,8 +183,8 @@ section .text
     RET                                 ; 00554e05
     PUSH EAX                            ; 00554e06
         ;   Label: LAB_00554e06
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00554e07
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00554e07
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00554e0c
     PUSH EAX                            ; 00554e0f
     PUSH 0x5e9a70                       ; 00554e10 | = "Unlock secondary buffer"

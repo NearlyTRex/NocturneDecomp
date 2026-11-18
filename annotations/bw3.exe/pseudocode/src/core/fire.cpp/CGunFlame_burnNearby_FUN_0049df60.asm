@@ -25,20 +25,20 @@
 ;   core_fire.cpp_CGunFlame_process_FUN_0049e390 at 0049e4e7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0858
-;   undefined4 DAT_005c0860
-;   undefined4 DAT_005df900
-;   undefined4 DAT_01c74b68
-;   undefined4 DAT_01c74b6c
-;   undefined4 DAT_01c74c34
-;   undefined4 DAT_01c74c38
+;   float g_FLOAT_005c0858 = 100
+;   double g_DOUBLE_005c0860 = 25
+;   float g_FLOAT_005df900 = 2
+;   int g_GunFlameCandidateCount
+;   CCharacter*[50] g_GunFlameCandidates
+;   int g_FlameCanCount
+;   CFlameCan*[150] g_FlameCans
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
-;   core_charactr.cpp_FUN_0042fbd0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
@@ -57,7 +57,7 @@ section .text
     AND ESP,0xfffffff8                  ; 0049df69
     MOV EBX,dword ptr [EBP + 0x14]      ; 0049df6c
     XOR EDX,EDX                         ; 0049df6f
-    MOV ECX,dword ptr [0x01c74b68]      ; 0049df71 | DAT_01c74b68
+    MOV ECX,dword ptr [0x01c74b68]      ; 0049df71 | g_GunFlameCandidateCount
     MOV dword ptr [ESP + 0x68],EDX      ; 0049df77
     TEST ECX,ECX                        ; 0049df7b
     JLE 0x0049dfdb                      ; 0049df7d
@@ -65,7 +65,7 @@ section .text
     MOV dword ptr [ESP + 0x64],EDX      ; 0049df7f
     MOV EAX,dword ptr [ESP + 0x64]      ; 0049df83
         ;   Label: LAB_0049df83
-    MOV EAX,dword ptr [EAX + 0x1c74b6c] ; 0049df87 | DAT_01c74b6c
+    MOV EAX,dword ptr [EAX + 0x1c74b6c] ; 0049df87 | g_GunFlameCandidates
     FLD float ptr [EAX + 0x20]          ; 0049df8d
     FSUB float ptr [EBX]                ; 0049df90
     FMUL ST0                            ; 0049df92
@@ -79,7 +79,7 @@ section .text
     FMUL ST0                            ; 0049dfa6
     FADDP                               ; 0049dfa8
     MOV dword ptr [ESP + 0x6c],EAX      ; 0049dfaa
-    FCOMP float ptr [0x005c0858]        ; 0049dfae | DAT_005c0858
+    FCOMP float ptr [0x005c0858]        ; 0049dfae | g_FLOAT_005c0858
     FNSTSW AX                           ; 0049dfb4
     SAHF                                ; 0049dfb6
     JBE 0x0049e031                      ; 0049dfb7
@@ -87,7 +87,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x64]      ; 0049dfbd
         ;   Label: LAB_0049dfbd
     MOV EDI,dword ptr [ESP + 0x68]      ; 0049dfc1
-    MOV EDX,dword ptr [0x01c74b68]      ; 0049dfc5 | DAT_01c74b68
+    MOV EDX,dword ptr [0x01c74b68]      ; 0049dfc5 | g_GunFlameCandidateCount
     ADD ESI,0x4                         ; 0049dfcb
     INC EDI                             ; 0049dfce
     MOV dword ptr [ESP + 0x64],ESI      ; 0049dfcf
@@ -95,14 +95,14 @@ section .text
     CMP EDI,EDX                         ; 0049dfd7
     JL 0x0049df83                       ; 0049dfd9
         ;   XREF to: 0049df83 (CONDITIONAL_JUMP)  ; LAB_0049df83
-    MOV ECX,dword ptr [0x01c74c34]      ; 0049dfdb | DAT_01c74c34
+    MOV ECX,dword ptr [0x01c74c34]      ; 0049dfdb | g_FlameCanCount
         ;   Label: LAB_0049dfdb
     XOR EDI,EDI                         ; 0049dfe1
     TEST ECX,ECX                        ; 0049dfe3
     JLE 0x0049e02a                      ; 0049dfe5
         ;   XREF to: 0049e02a (CONDITIONAL_JUMP)  ; LAB_0049e02a
     XOR ESI,ESI                         ; 0049dfe7
-    MOV EDX,dword ptr [ESI + 0x1c74c38] ; 0049dfe9 | DAT_01c74c38
+    MOV EDX,dword ptr [ESI + 0x1c74c38] ; 0049dfe9 | g_FlameCans
         ;   Label: LAB_0049dfe9
     LEA EAX,[EDX + 0x20]                ; 0049dfef
     FLD float ptr [EAX]                 ; 0049dff2
@@ -117,12 +117,12 @@ section .text
     FSUB float ptr [EBX + 0x8]          ; 0049e007
     FMUL ST0                            ; 0049e00a
     FADDP                               ; 0049e00c
-    FCOMP double ptr [0x005c0860]       ; 0049e00e | DAT_005c0860
+    FCOMP double ptr [0x005c0860]       ; 0049e00e | g_DOUBLE_005c0860
     FNSTSW AX                           ; 0049e014
     SAHF                                ; 0049e016
     JBE 0x0049e15c                      ; 0049e017
         ;   XREF to: 0049e15c (CONDITIONAL_JUMP)  ; LAB_0049e15c
-    MOV EAX,[0x01c74c34]                ; 0049e01d | DAT_01c74c34
+    MOV EAX,[0x01c74c34]                ; 0049e01d | g_FlameCanCount
         ;   Label: LAB_0049e01d
     INC EDI                             ; 0049e022
     ADD ESI,0x4                         ; 0049e023
@@ -147,8 +147,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x70]      ; 0049e044
     PUSH EDI                            ; 0049e048
     LEA ESI,[ESP + 0x50]                ; 0049e049
-    CALL core_actor.cpp_FUN_00408bf0    ; 0049e04d
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 0049e04d
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 0049e052
     MOV EAX,[0x01d5ba70]                ; 0049e055 | g_CHeroClassInfo.name_hash
     LEA EDI,[ESP + 0x3c]                ; 0049e05a
@@ -181,7 +181,7 @@ section .text
     MOV dword ptr [ESP + 0x80],EAX      ; 0049e09f
     FLD float ptr [ESP + 0x80]          ; 0049e0a6
     FMUL float ptr [EBX + 0xc]          ; 0049e0ad
-    FDIV float ptr [0x005df900]         ; 0049e0b0 | DAT_005df900
+    FDIV float ptr [0x005df900]         ; 0049e0b0 | g_FLOAT_005df900
     LEA EDX,[ESP + 0x24]                ; 0049e0b6
     ADD ESP,0x8                         ; 0049e0ba
     LEA EAX,[ESP + 0x3c]                ; 0049e0bd
@@ -216,8 +216,8 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0049e11e
     PUSH EAX                            ; 0049e122
     PUSH ESI                            ; 0049e123
-    CALL core_charactr.cpp_FUN_0042fbd0 ; 0049e124
-        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042fbd0()
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0 ; 0049e124
+        ;   XREF to: 0042fbd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x1c                        ; 0049e129
     JMP 0x0049dfbd                      ; 0049e12c
         ;   XREF to: 0049dfbd (UNCONDITIONAL_JUMP)  ; LAB_0049dfbd

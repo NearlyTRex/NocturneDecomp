@@ -42,9 +42,9 @@
 ;   core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_00535ec0 at 00535ecf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1d27
-;   undefined4 DAT_005d1d2b
-;   undefined4 DAT_00613888
+;   float g_VoxelSizeReciprocal2 = 0.125
+;   float g_RaycastStepScale = 2.684355E+8
+;   uchar[8] g_VoxelYBitMasks
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
@@ -67,7 +67,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004764d5
     FLD float ptr [EDX]                 ; 004764d8
     FSUB float ptr [ECX + 0x10]         ; 004764da
-    FLD float ptr [0x005d1d27]          ; 004764dd | DAT_005d1d27
+    FLD float ptr [0x005d1d27]          ; 004764dd | g_VoxelSizeReciprocal2
     FLD float ptr [ECX + 0x28]          ; 004764e3
     FMUL ST1                            ; 004764e6
     FLD1                                ; 004764e8
@@ -127,13 +127,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00476572
     FSTP float ptr [ESP + 0x2c]         ; 00476573
     CALL crt_math.c_round_FUN_005b7ff0  ; 00476577
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 0047657c
     CALL crt_math.c_round_FUN_005b7ff0  ; 0047657e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 00476583
     CALL crt_math.c_round_FUN_005b7ff0  ; 00476585
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FLD float ptr [ESP + 0x28]          ; 0047658a
     FLD float ptr [ESP + 0x78]          ; 0047658e
     FLD float ptr [ESP + 0x2c]          ; 00476592
@@ -144,13 +144,13 @@ section .text
     FXCH                                ; 004765a2
     FISTP dword ptr [ESP + 0x30]        ; 004765a4
     CALL crt_math.c_round_FUN_005b7ff0  ; 004765a8
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 004765ad
     CALL crt_math.c_round_FUN_005b7ff0  ; 004765af
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST2                            ; 004765b4
     CALL crt_math.c_round_FUN_005b7ff0  ; 004765b6
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV EDX,dword ptr [ESP + 0x34]      ; 004765bb
     FXCH                                ; 004765bf
     FISTP dword ptr [ESP + 0x60]        ; 004765c1
@@ -189,7 +189,7 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 00476619
     FLD ST0                             ; 0047661d
     FABS                                ; 0047661f
-    FLD float ptr [0x005d1d2b]          ; 00476621 | DAT_005d1d2b
+    FLD float ptr [0x005d1d2b]          ; 00476621 | g_RaycastStepScale
     FDIV float ptr [ESP]                ; 00476627
     FXCH                                ; 0047662a
     FMUL ST1                            ; 0047662c
@@ -199,15 +199,15 @@ section .text
     FMULP                               ; 00476634
     FXCH ST3                            ; 00476636
     CALL crt_math.c_round_FUN_005b7ff0  ; 00476638
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x58]        ; 0047663d
     FLDZ                                ; 00476641
     FXCH ST2                            ; 00476643
     CALL crt_math.c_round_FUN_005b7ff0  ; 00476645
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST3                            ; 0047664a
     CALL crt_math.c_round_FUN_005b7ff0  ; 0047664c
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST3                            ; 00476651
     FISTP dword ptr [ESP + 0x5c]        ; 00476653
     FXCH ST2                            ; 00476657
@@ -294,18 +294,18 @@ section .text
     FMULP ST4                           ; 00476772
     FXCH ST4                            ; 00476774
     CALL crt_math.c_round_FUN_005b7ff0  ; 00476776
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH ST4                            ; 0047677b
     FSUBP ST2,ST0                       ; 0047677d
     FXCH ST3                            ; 0047677f
     FISTP dword ptr [ESP + 0x68]        ; 00476781
     CALL crt_math.c_round_FUN_005b7ff0  ; 00476785
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0047678a
     FSUBP ST2,ST0                       ; 0047678c
     FISTP dword ptr [ESP + 0x70]        ; 0047678e
     CALL crt_math.c_round_FUN_005b7ff0  ; 00476792
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x74]        ; 00476797
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0047679b
         ;   Label: LAB_0047679b
@@ -364,7 +364,7 @@ section .text
     XOR EDX,EDX                         ; 0047682a
     MOV DL,byte ptr [EAX]               ; 0047682c
     XOR EAX,EAX                         ; 0047682e
-    MOV AL,byte ptr [EDI + 0x613888]    ; 00476830 | DAT_00613888
+    MOV AL,byte ptr [EDI + 0x613888]    ; 00476830 | g_VoxelYBitMasks
     TEST EDX,EAX                        ; 00476836
     JNZ 0x0047694e                      ; 00476838
         ;   XREF to: 0047694e (CONDITIONAL_JUMP)  ; LAB_0047694e

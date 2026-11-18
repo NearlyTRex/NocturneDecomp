@@ -14,7 +14,7 @@ CSkeletonDemon * __cdecl core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkel
   pCVar1 = core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CSkeletonDemonVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(pCVar1->base).base.model,(char *)0x5b719a);
+            (&(pCVar1->base).base.model,"boneguy.dfm");
   (pCVar1->base).base.hit_points = 40.0;
   (pCVar1->base).attack_damage = 20.0;
   (pCVar1->base).pain_threshold = 10.0;

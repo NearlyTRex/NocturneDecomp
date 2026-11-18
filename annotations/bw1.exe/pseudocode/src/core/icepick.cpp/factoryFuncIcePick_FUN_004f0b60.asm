@@ -15,7 +15,7 @@ section .text
     PUSH 0x1ffdc                        ; 004f0b60
         ;   Label: core_icepick.cpp_factoryFuncIcePick_FUN_004f0b60
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004f0b65
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004f0b6a
     TEST EAX,EAX                        ; 004f0b6d
     JNZ 0x004f0b72                      ; 004f0b6f

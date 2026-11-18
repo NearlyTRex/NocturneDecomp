@@ -31,16 +31,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_bodypart_cpp_005cbd22
 ;   TerminatedCString s_Can_t_create_body_part_005cbd37
-;   undefined4 DAT_005cbd52
-;   undefined4 DAT_00618170
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005cbd52 = 10
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_004156e0
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
 ;   crt_memory.c_operator_new_FUN_005b8be2
@@ -60,7 +60,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x48]      ; 004154ff
     PUSH 0x1344                         ; 00415503
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00415508
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0041550d
     TEST EAX,EAX                        ; 00415510
     JNZ 0x004155f1                      ; 00415512
@@ -73,10 +73,10 @@ section .text
     MOV EDX,0x5cbd22                    ; 0041551e | = "..\\core\\bodypart.cpp"
     MOV ECX,0x32                        ; 00415523
     PUSH 0x5cbd37                       ; 00415528 | = "Can't create body part!"
-    MOV dword ptr [0x01d046a0],EDX      ; 0041552d | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00415533 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00415539
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 0041552d | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00415533 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00415539
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0041553e
     MOV EDX,dword ptr [ESP + 0x3c]      ; 00415541
         ;   Label: LAB_00415541
@@ -117,13 +117,13 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00415598
     PUSH EBX                            ; 0041559b
         ;   Label: LAB_0041559b
-    MOV ESI,dword ptr [0x00618170]      ; 0041559c | DAT_00618170
+    MOV ESI,dword ptr [0x00618170]      ; 0041559c | g_CDemonMission_PTR_00618170
     PUSH ESI                            ; 004155a2
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 ; 004155a3
         ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004155a8
     PUSH EBX                            ; 004155ab
-    MOV EBP,dword ptr [0x00618170]      ; 004155ac | DAT_00618170
+    MOV EBP,dword ptr [0x00618170]      ; 004155ac | g_CDemonMission_PTR_00618170
     PUSH EBP                            ; 004155b2
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 004155b3
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)
@@ -179,7 +179,7 @@ section .text
     FXCH                                ; 00415644
     FSIN                                ; 00415646
     FXCH ST2                            ; 00415648
-    FLD float ptr [0x005cbd52]          ; 0041564a | DAT_005cbd52
+    FLD float ptr [0x005cbd52]          ; 0041564a | g_FLOAT_005cbd52
     FXCH                                ; 00415650
     FMUL ST1                            ; 00415652
     FXCH ST2                            ; 00415654

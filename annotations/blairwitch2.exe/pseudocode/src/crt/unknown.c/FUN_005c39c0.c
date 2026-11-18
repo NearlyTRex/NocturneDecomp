@@ -13,14 +13,14 @@ uint FUN_005c39c0(int param_1)
   DWORD DVar2;
   
   (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2a8)(param_1);
-  if (DAT_0061f414 != (code *)0x0) {
-    iVar1 = (*DAT_0061f414)(param_1);
+  if (g_IsSpecialDeviceFuncPtr != (byte *)0x0) {
+    iVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1);
     if (iVar1 != 0) {
       (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1);
       return 1;
     }
   }
-  DVar2 = GetFileType(*(HANDLE *)(DAT_0061f4d8 + param_1 * 4));
+  DVar2 = GetFileType(g_IOControlBlock->standard_handles[param_1]);
   if (DVar2 == 2) {
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1);
     return 1;

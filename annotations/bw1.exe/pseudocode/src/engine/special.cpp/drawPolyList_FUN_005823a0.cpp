@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_drawPolyList_FUN_005823a0(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags)
 
 {
@@ -18,12 +16,12 @@ int __cdecl engine_special_cpp_drawPolyList_FUN_005823a0(SRenderVertex *vertex_b
   SRenderVertex *local_18;
   SRenderVertex *local_14;
   
-  if (_DAT_01c50948 == 0) {
+  if (g_INT_01c50948 == 0) {
     return 0;
   }
-  _DAT_01e7dac8 = _DAT_01e7dac8 + polygon_count;
-  if (_DAT_02c833cc != (code *)0x0) {
-    iVar2 = (*_DAT_02c833cc)(vertex_buffer,polygons,polygon_count,render_flags);
+  g_RenderedTriangleCount = g_RenderedTriangleCount + polygon_count;
+  if (g_APIDLL_drawPolyList != (byte *)0x0) {
+    iVar2 = (*(code *)g_APIDLL_drawPolyList)(vertex_buffer,polygons,polygon_count,render_flags);
     return iVar2;
   }
   iVar2 = 0;
@@ -48,7 +46,7 @@ int __cdecl engine_special_cpp_drawPolyList_FUN_005823a0(SRenderVertex *vertex_b
       }
       polygons = polygons + 1;
       iVar2 = iVar2 + 1;
-      (*_DAT_02c833c8)(&local_20,(pSVar1->base).base.count,render_flags);
+      (*(code *)g_APIDLL_drawPolygon2)(&local_20,(pSVar1->base).base.count,render_flags);
     } while (iVar2 < polygon_count);
   }
   return 1;

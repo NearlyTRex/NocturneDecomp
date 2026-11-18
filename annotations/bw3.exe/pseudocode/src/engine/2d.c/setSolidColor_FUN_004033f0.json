@@ -2,17 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 88,
+    "complexity_score": 18,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 18,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 72
   },
   "cross_references": [],
@@ -38,56 +35,56 @@
   "globals": [
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c6af74",
-      "name": "DAT_01c6af74",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af74",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af80",
-      "name": "DAT_01c6af80",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af80",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6af8c",
-      "name": "DAT_01c6af8c",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01c6af8c",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6cee8",
-      "name": "DAT_01c6cee8",
-      "type": "undefined4",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2bc",
-      "name": "DAT_01c6e2bc",
-      "type": "undefined4",
+      "name": "g_SolidColorMode",
+      "type": "ulong",
       "value": null
     },
     {
       "addr": "01c6e2c0",
-      "name": "DAT_01c6e2c0",
-      "type": "undefined4",
+      "name": "g_SolidRedComponent",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2c4",
-      "name": "DAT_01c6e2c4",
-      "type": "undefined4",
+      "name": "g_SolidGreenComponent",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2c8",
-      "name": "DAT_01c6e2c8",
-      "type": "undefined4",
+      "name": "g_SolidBlueComponent",
+      "type": "int",
       "value": null
     }
   ],
@@ -184,54 +181,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if ((DAT_005fba20 != 0x10) && (DAT_005fba20 == 0x20)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if ((DAT_005fba20 != 0x10) && (DAT_005fba20 == 0x20)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01c6af8c",
-      "severity": "mild",
-      "text": "blue_component << (DAT_01c6af8c & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01c6af74",
-      "severity": "mild",
-      "text": "red_component << (DAT_01c6af74 & 0x1f) | green_component << (DAT_01c6af80 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01c6af80",
-      "severity": "mild",
-      "text": "red_component << (DAT_01c6af74 & 0x1f) | green_component << (DAT_01c6af80 & 0x1f);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   collision_normal
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9452
+;   double g_DOUBLE_005d9452 = 0.900000000000000
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c7da2
     MOV ECX,dword ptr [ESP + 0x10]      ; 004c7da6
     FLD float ptr [ECX + 0x4]           ; 004c7daa
-    FCOMP double ptr [0x005d9452]       ; 004c7dad | DAT_005d9452
+    FCOMP double ptr [0x005d9452]       ; 004c7dad | g_DOUBLE_005d9452
     FNSTSW AX                           ; 004c7db3
     SAHF                                ; 004c7db5
     JBE 0x004c7dd4                      ; 004c7db6

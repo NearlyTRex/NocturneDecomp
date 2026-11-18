@@ -10,16 +10,16 @@
 ; int              Stack[0x10]:4   binary_mode
 ;
 ; XREF[15]:
-;   cockpit_ckptutil.c_FUN_00438ef0 at 00438f2e
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0 at 00435156
-;   engine_2d.c_FUN_00401590 at 004015af
+;   cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0 at 00438f2e
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010c0
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029dc
+;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015af
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004afabc
-;   engine_font.cpp_FUN_004afbf0 at 004afd71
-;   engine_font.cpp_FUN_004b01d0 at 004b0235
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004b01d0 at 004b0235
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004afbf0 at 004afd71
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 00569a8a
-;   engine_texture.cpp_FUN_0056ad60 at 0056ae5b
+;   engine_texture.cpp_cacheTextureAtFullSize_FUN_0056ad60 at 0056ae5b
 ;   ... and 5 more
 ;
 ; Referenced Globals:
@@ -27,8 +27,8 @@
 ;
 ; Called Functions:
 ;   CreateFileA
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660
 ;   engine_dosio.cpp_findFile_FUN_004656d0
-;   engine_dosio.cpp_FUN_00465660
 ;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00573fe7
     PUSH EAX                            ; 00573feb
     MOV dword ptr [EBX + 0x10],0x0      ; 00573fec
-    CALL engine_dosio.cpp_FUN_00465660  ; 00573ff3
-        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00465660()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660 ; 00573ff3
+        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 00573ff8
     MOV EAX,ESP                         ; 00573ffb
     PUSH EAX                            ; 00573ffd

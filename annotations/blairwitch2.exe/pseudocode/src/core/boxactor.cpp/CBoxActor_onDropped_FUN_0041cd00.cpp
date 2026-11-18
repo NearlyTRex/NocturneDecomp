@@ -12,7 +12,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_0041cd00(CBoxActor *this_
   CVector3f CStack_10;
   
   this_ptr->carrier_actor = (CDemonActor *)0x0;
-  core_boxactor_cpp_FUN_0041bf10(this_ptr);
+  core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10(this_ptr);
   if (drop_position == (CVector3f *)0x0) {
     return;
   }

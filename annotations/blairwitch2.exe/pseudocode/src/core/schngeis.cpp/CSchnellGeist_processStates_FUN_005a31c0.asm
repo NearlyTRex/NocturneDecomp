@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
-;   core_muzzle.cpp_FUN_0059d650
-;   core_muzzle.cpp_FUN_0059daa0
+;   core_muzzle.cpp_SStateMachine_addState_FUN_0059d650
+;   core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -59,23 +59,23 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 005a31f0
     PUSH ESI                            ; 005a31f4
     CALL core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 ; 005a31f5
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, undefined4 param_2, int param_3)
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a31fa
     JMP 0x005a31ce                      ; 005a31fd
         ;   XREF to: 005a31ce (UNCONDITIONAL_JUMP)  ; LAB_005a31ce
     PUSH 0x5f00eb                       ; 005a31ff | = "MeleeAttack"
         ;   Label: LAB_005a31ff
     PUSH EAX                            ; 005a3204
-    CALL core_muzzle.cpp_FUN_0059d650   ; 005a3205
-        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d650()
+    CALL core_muzzle.cpp_SStateMachine_addState_FUN_0059d650 ; 005a3205
+        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_addState_FUN_0059d650(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a320a
     JMP 0x005a31dd                      ; 005a320d
         ;   XREF to: 005a31dd (UNCONDITIONAL_JUMP)  ; LAB_005a31dd
     PUSH 0x5f00f7                       ; 005a320f | = "MeleeAttack"
         ;   Label: LAB_005a320f
     PUSH EAX                            ; 005a3214
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a3215
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a3215
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a321a
     TEST EAX,EAX                        ; 005a321d
     JZ 0x005a31dd                       ; 005a321f
@@ -91,8 +91,8 @@ section .text
     PUSH 0x5f0103                       ; 005a3238 | = "LeapAttack"
         ;   Label: LAB_005a3238
     PUSH EAX                            ; 005a323d
-    CALL core_muzzle.cpp_FUN_0059d650   ; 005a323e
-        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d650()
+    CALL core_muzzle.cpp_SStateMachine_addState_FUN_0059d650 ; 005a323e
+        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_addState_FUN_0059d650(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a3243
     POP ESI                             ; 005a3246
     POP EBX                             ; 005a3247
@@ -100,8 +100,8 @@ section .text
     PUSH 0x5f010e                       ; 005a3249 | = "LeapAttack"
         ;   Label: LAB_005a3249
     PUSH EAX                            ; 005a324e
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a324f
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a324f
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a3254
     TEST EAX,EAX                        ; 005a3257
     JZ 0x005a31ec                       ; 005a3259

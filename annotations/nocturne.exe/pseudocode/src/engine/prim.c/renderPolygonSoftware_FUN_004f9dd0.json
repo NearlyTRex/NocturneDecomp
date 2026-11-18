@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 510,
-    "complexity_score": 285,
+    "complexity_score": 245,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 220,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "sign_compare_idiom",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "sign_compare_idiom"
     ],
     "total_lines": 730
   },
@@ -87,13 +85,13 @@
     },
     {
       "addr": "005b7644",
-      "name": "INT_005b7644",
+      "name": "g_VertexProcessingEnabled",
       "type": "int",
       "value": "0x1"
     },
     {
       "addr": "005be1e4",
-      "name": "INT_005be1e4",
+      "name": "g_MaxViewportScanline",
       "type": "int",
       "value": "0x4b0"
     },
@@ -105,8 +103,8 @@
     },
     {
       "addr": "006b0280",
-      "name": "DAT_006b0280",
-      "type": "undefined4",
+      "name": "g_CullingMode",
+      "type": "int",
       "value": null
     },
     {
@@ -153,26 +151,26 @@
     },
     {
       "addr": "01e52a68",
-      "name": "DAT_01e52a68",
-      "type": "undefined4",
+      "name": "g_SoftwareEdgeCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e52a6c",
-      "name": "DAT_01e52a6c",
-      "type": "undefined4",
+      "name": "g_SoftwareEdgeBuffer",
+      "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "01e52eec",
-      "name": "DAT_01e52eec",
-      "type": "undefined4",
+      "name": "g_SoftwareMinScanline",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e52ef0",
-      "name": "DAT_01e52ef0",
-      "type": "undefined4",
+      "name": "g_SoftwareMaxScanline",
+      "type": "int",
       "value": null
     },
     {
@@ -330,40 +328,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_006b0280",
-      "severity": "mild",
-      "text": "if (DAT_006b0280 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_01e52a6c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e52a6c + iVar3) = iVar8;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 185,
+      "line": 184,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar12 = SBORROW4(_DAT_01e52eec,INT_005be1e4);",
+      "text": "bVar12 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);",
       "type": "sign_compare_idiom"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 220,
+      "line": 219,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar12 = SBORROW4(local_1c,iVar9);",

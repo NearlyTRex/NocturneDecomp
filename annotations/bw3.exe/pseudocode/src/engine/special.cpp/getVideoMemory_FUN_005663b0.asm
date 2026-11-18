@@ -9,17 +9,17 @@
 ; int *            Stack[0xc]:4   memory_type
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004e85a0 at 004e8644
+;   core_menu.cpp_configureGraphicsOptions_FUN_004e85a0 at 004e8644
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf606c
-;   undefined4 DAT_02cf6108
+;   void* g_APIDLL_getVideoMemory
+;   int g_INT_02cf6108
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x02cf6108],0x0      ; 005663b0 | DAT_02cf6108
+    CMP dword ptr [0x02cf6108],0x0      ; 005663b0 | g_INT_02cf6108
         ;   Label: engine_special.cpp_getVideoMemory_FUN_005663b0
     JNZ 0x005663bc                      ; 005663b7
         ;   XREF to: 005663bc (CONDITIONAL_JUMP)  ; LAB_005663bc
@@ -34,7 +34,7 @@ section .text
     PUSH EBX                            ; 005663c7
     MOV ESI,dword ptr [ESP + 0x14]      ; 005663c8
     PUSH ESI                            ; 005663cc
-    CALL dword ptr [0x02cf606c]         ; 005663cd | DAT_02cf606c
+    CALL dword ptr [0x02cf606c]         ; 005663cd | g_APIDLL_getVideoMemory
     ADD ESP,0xc                         ; 005663d3
     POP EBX                             ; 005663d6
     POP ESI                             ; 005663d7

@@ -45,9 +45,9 @@ float __cdecl CTurret::getCurFrame(CTurret *this_ptr,int model_index);
 // Address: 005a2bf0
 void __cdecl CTurret::archive(CTurret *this_ptr);
 
-// Original: core_turret.cpp_FUN_005a2d00
+// Original: core_turret.cpp_CTurret_updateTargeting_FUN_005a2d00
 // Address: 005a2d00
-void FUN_005a2d00(CCharacter *param_1,float param_2);
+void __cdecl CTurret::updateTargeting(CTurret *this_ptr,float delta_time);
 
 // Original: core_turret.cpp_CTurret_aimAtTarget_FUN_005a3350
 // Address: 005a3350
@@ -79,7 +79,7 @@ float __cdecl CTurret::getDamage(CTurret *this_ptr);
 
 // Original: core_turret.cpp_CTurret_getMuzzlePoint_FUN_005a3840
 // Address: 005a3840
-CVector3f * __cdecl CTurret::getMuzzlePoint(CTurret *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi CTurret::getMuzzlePoint(CTurret *this_ptr,CVector3f *out_point);
 
 // Original: core_turret.cpp_CTurret_fire_FUN_005a3870
 // Address: 005a3870

@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 101,
+    "complexity_score": 30,
     "cross_reference_count": 26,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 74
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -37,7 +34,7 @@
     {
       "addr": "00466220",
       "from_addr": "0046622f",
-      "name": "core_dlight.cpp_FUN_00466220",
+      "name": "core_dlight.cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,6 +47,12 @@
       "addr": "004d8a90",
       "from_addr": "004d8b03",
       "name": "core_game.cpp_CGame_finishAct_FUN_004d8a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ce580",
+      "from_addr": "004ce669",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004ce580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -71,27 +74,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ce580",
-      "from_addr": "004ce669",
-      "name": "core_game.cpp_FUN_004ce580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d77d0",
       "from_addr": "004d7999",
-      "name": "core_game.cpp_FUN_004d77d0",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fe840",
       "from_addr": "004fe983",
-      "name": "core_level.cpp_FUN_004fe840",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005031c0",
-      "from_addr": "005031d0",
-      "name": "core_main.c_FUN_005031c0",
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004fe840",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,9 +92,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005031c0",
+      "from_addr": "005031d0",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005031c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050d640",
       "from_addr": "0050e5c0",
-      "name": "core_menu.cpp_FUN_0050d640",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_0050d640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -139,13 +136,13 @@
     {
       "addr": "0054d3c0",
       "from_addr": "0054e380",
-      "name": "core_set.cpp_FUN_0054d3c0",
+      "name": "core_set.cpp_CDemonSet_load_FUN_0054d3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00550580",
       "from_addr": "00550d85",
-      "name": "core_set.cpp_FUN_00550580",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -195,50 +192,50 @@
   "globals": [
     {
       "addr": "0061b498",
-      "name": "DAT_0061b498",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "0061b4a0",
-      "name": "DAT_0061b4a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "00623ddc",
-      "name": "DAT_00623ddc",
-      "type": "undefined8",
-      "value": null
+      "name": "g_BufferFillZeroQword",
+      "type": "double",
+      "value": "0.0"
     },
     {
       "addr": "00623de4",
-      "name": "DAT_00623de4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BufferFillFpuPopST0",
+      "type": "double",
+      "value": "0.0"
     },
     {
       "addr": "01c4354c",
-      "name": "DAT_01c4354c",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c43550",
-      "name": "DAT_01c43550",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     }
   ],
@@ -308,54 +305,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_00623ddc",
-      "severity": "mild",
-      "text": "_DAT_00623de4 = DAT_00623ddc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "puVar5 = *(ulonglong **)(&DAT_01c4354c + iVar4 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "uVar2 = (uint)(DAT_0061b498 * DAT_0061b4a0) >> 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "uVar2 = (uint)(DAT_0061b498 * DAT_0061b4a0) >> 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "} while (iVar4 < DAT_0061b49c);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

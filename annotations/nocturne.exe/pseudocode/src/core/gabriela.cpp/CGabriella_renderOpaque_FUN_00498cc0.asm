@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_005821fa = 0.900000000000000
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
-;   undefined4 g_CDynamiteActorType_01bca088.name_hash
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   undefined4 g_CDynamiteClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 00437db0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_00437db0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 00498d0a
     MOV EDX,dword ptr [0x005ae704]      ; 00498d0d | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 00498d13 | DAT_01b4d738
+    PUSH EDX                            ; 00498d13 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00498d14
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00498d19
@@ -83,7 +83,7 @@ section .text
     SAHF                                ; 00498d39
     JBE 0x00498cec                      ; 00498d3a
         ;   XREF to: 00498cec (CONDITIONAL_JUMP)  ; LAB_00498cec
-    MOV ECX,dword ptr [0x01bca0c0]      ; 00498d3c | g_CDynamiteActorType_01bca088.name_hash
+    MOV ECX,dword ptr [0x01bca0c0]      ; 00498d3c | g_CDynamiteClassInfo.name_hash
     PUSH ECX                            ; 00498d42
     MOV EAX,dword ptr [EDI + 0x330]     ; 00498d43
     PUSH EAX                            ; 00498d49

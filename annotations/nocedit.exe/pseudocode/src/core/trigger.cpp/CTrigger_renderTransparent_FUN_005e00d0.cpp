@@ -136,7 +136,7 @@ LAB_005e0160:
   pCVar2->vertex_buffer_ptr->a = alpha << 8;
   pCVar2->vertex_buffer_ptr->u = 0x800000;
   pCVar2->vertex_buffer_ptr->v = 0x800000;
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar2,&SMRGLTextureBasic_0068434c);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar2,&g_TriggerTexture);
   CStack_50.x = (int)ROUND(256.0f * 0.0);
   CStack_50.y = (int)ROUND(fVar4 * 256.0f);
   CStack_50.z = (int)ROUND(256.0f * 0.0);

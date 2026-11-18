@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_ctor_FUN_0048bfb0 at 0048bfb6
 ;   core_event.cpp_CEventList_loadState_FUN_00495490 at 004954a9
-;   core_mission.cpp_FUN_004f7590 at 004f760a
+;   core_mission.cpp_CDemonMission_startMission_FUN_004f7590 at 004f760a
 ;
 ; *****************************************************************************
 

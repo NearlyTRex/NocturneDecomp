@@ -7,7 +7,7 @@
 ; CZombieForest *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_0058cd20 at 0058cd33
+;   core_zombie.cpp_factoryFuncZombieForest_FUN_0058cd20 at 0058cd33
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0

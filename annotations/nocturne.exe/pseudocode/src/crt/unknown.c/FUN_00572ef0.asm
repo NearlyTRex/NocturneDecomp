@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_00571718 at 0057176d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1794
+;   byte g_BYTE_005c1794 = 0x0
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
     SUB ESP,0x4                         ; 00572ef2
     MOV EBX,dword ptr [ESP + 0x14]      ; 00572ef5
     XOR EDX,EDX                         ; 00572ef9
-    MOV AH,byte ptr [0x005c1794]        ; 00572efb | DAT_005c1794
+    MOV AH,byte ptr [0x005c1794]        ; 00572efb | g_BYTE_005c1794
     MOV dword ptr [ESP],EDX             ; 00572f01
     TEST AH,AH                          ; 00572f04
     JZ 0x00572f32                       ; 00572f06

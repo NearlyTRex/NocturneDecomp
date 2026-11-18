@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 58,
+    "complexity_score": 17,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 68
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -38,20 +36,20 @@
     {
       "addr": "005a3140",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3140"
+      "name": "crt_stdio.c_fprintf_FUN_005a3140"
     }
   ],
   "globals": [
     {
       "addr": "005c899c",
-      "name": "DAT_005c899c",
-      "type": "undefined4",
+      "name": "s_s_08x_005c899c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c89a1",
-      "name": "DAT_005c89a1",
-      "type": "undefined4",
+      "name": "s_s_005c89a1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -62,8 +60,8 @@
     },
     {
       "addr": "005c89af",
-      "name": "DAT_005c89af",
-      "type": "undefined4",
+      "name": "s_anon_005c89af",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -189,30 +187,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005c89a1",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_005c89a1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005c899c",
-      "severity": "mild",
-      "text": "puVar2 = &DAT_005c899c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005c89af",
-      "severity": "mild",
-      "text": "FUN_005a3140(file,&DAT_005c89af);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

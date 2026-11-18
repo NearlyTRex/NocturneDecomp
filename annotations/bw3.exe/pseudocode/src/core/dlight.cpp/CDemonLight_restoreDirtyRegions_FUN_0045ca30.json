@@ -2,30 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 165,
+    "complexity_score": 280,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 135,
-    "suspect_count": 2,
+    "suspect_count": 14,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 415
   },
   "cross_references": [
     {
-      "addr": "00534890",
-      "from_addr": "005348f6",
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+      "addr": "00535da0",
+      "from_addr": "0053608a",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00535da0",
-      "from_addr": "0053608a",
-      "name": "core_set.cpp_FUN_00535da0",
+      "addr": "00534890",
+      "from_addr": "005348f6",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +54,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     }
   ],
   "globals": [
@@ -73,20 +72,20 @@
     },
     {
       "addr": "01b4aea4",
-      "name": "DAT_01b4aea4",
-      "type": "undefined4",
+      "name": "g_DirtySpanCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -129,7 +128,7 @@
       {
         "call_addr": "0053608a",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00535da0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -283,16 +282,112 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(int *)((int)g_DirtySpanStarts",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar7) <= pCVar4->x_max) &&",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 88,
+      "match": "(int *)((int)g_DirtySpanEnds",
+      "severity": "moderate",
+      "text": "(pCVar4->x_min <= *(int *)((int)g_DirtySpanEnds + iVar7))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(int *)((int)g_DirtySpanStarts",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar7) <= pCVar4->x_min) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(int *)((int)g_DirtySpanEnds",
+      "severity": "moderate",
+      "text": "(pCVar4->x_max <= *(int *)((int)g_DirtySpanEnds + iVar7))) goto LAB_0045cba9;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(int *)((int)g_DirtySpanStarts",
+      "severity": "moderate",
+      "text": "if (pCVar4->x_min < *(int *)((int)g_DirtySpanStarts + iVar7)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(int *)((int)g_DirtySpanStarts",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_DirtySpanStarts + iVar7) = pCVar4->x_min;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(int *)((int)g_DirtySpanEnds",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_DirtySpanEnds + iVar7) < pCVar4->x_max) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(int *)((int)g_DirtySpanEnds",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_DirtySpanEnds + iVar7) = pCVar4->x_max;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(int *)((int)g_DirtySpanStarts",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_DirtySpanStarts + local_14) = pCVar4->x_min;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(int *)((int)g_DirtySpanEnds",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_DirtySpanEnds + local_14) = pCVar4->x_max;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(int *)((int)g_DirtySpanStarts",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_DirtySpanStarts + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(int *)((int)g_DirtySpanStarts",
+      "severity": "moderate",
+      "text": "iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)((int)g_DirtySpanStarts + iVar7)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(int *)((int)g_DirtySpanEnds",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)g_DirtySpanEnds + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
       "match": "(void *)((int)this_ptr",
       "severity": "moderate",
       "text": "(void *)((int)this_ptr->master_zbuffer + iVar5 * 2),",

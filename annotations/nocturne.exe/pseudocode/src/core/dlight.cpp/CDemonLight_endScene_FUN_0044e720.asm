@@ -20,7 +20,7 @@
 ;   TerminatedCString s_CDemonLight_endScene_Sce_0057c6aa
 ;   double DOUBLE_0057c6d6 = 0.00390625
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CurrentFilename
@@ -83,12 +83,12 @@ section .text
     PUSH 0x0                            ; 0044e78a
         ;   Label: LAB_0044e78a
     MOV EDX,dword ptr [0x005ae704]      ; 0044e78c | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0044e792 | DAT_01b4d738
+    PUSH EDX                            ; 0044e792 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070 ; 0044e793
         ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044e798
     MOV ECX,dword ptr [0x005ae704]      ; 0044e79b | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 0044e7a1 | DAT_01b4d738
+    PUSH ECX                            ; 0044e7a1 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 0044e7a2
         ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0044e7a7

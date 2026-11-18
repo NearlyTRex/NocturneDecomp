@@ -14,7 +14,7 @@ int __cdecl core_spireagl_cpp_CSpiritEagle_renderOpaque_FUN_00599a70(CSpiritEagl
   if ((this_ptr->morph_time <= 1.0) && ((this_ptr->base).render_active == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
     if (ABS(this_ptr->morph_time) == 0.0) {
-      core_charactr_cpp_FUN_0042d8e0(this_ptr);
+      core_charactr_cpp_CCharacter_renderCharacter_FUN_0042d8e0(&this_ptr->base);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
       return 1;
     }

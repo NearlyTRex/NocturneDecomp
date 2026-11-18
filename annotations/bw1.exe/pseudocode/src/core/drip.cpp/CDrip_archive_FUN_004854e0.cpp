@@ -13,10 +13,10 @@ void __cdecl core_drip_cpp_CDrip_archive_FUN_004854e0(CDrip *this_ptr)
     core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
   }
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->type,&DAT_005db599);
+  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->type,"type");
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->auto_drop,"autoDrop");
   core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->home_pos,"homePos");
-  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->vel,&DAT_005db5af);
+  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->vel,"vel");
   if (2 < g_CDripClassVersion) {
     core_actor_cpp_archiveFloat_FUN_0040b5f0
               (&this_ptr->min_auto_drip_time,"minAutoDripTime");

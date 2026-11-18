@@ -15,7 +15,7 @@ section .text
     PUSH 0xa34                          ; 00584910
         ;   Label: core_stairs.cpp_factoryFuncStairs_FUN_00584910
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00584915
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0058491a
     TEST EAX,EAX                        ; 0058491d
     JNZ 0x00584922                      ; 0058491f

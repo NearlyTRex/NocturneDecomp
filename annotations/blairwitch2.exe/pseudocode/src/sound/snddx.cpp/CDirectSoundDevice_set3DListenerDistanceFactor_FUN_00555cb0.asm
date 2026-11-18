@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_00555cb0(CDirectSoundDevice *this_ptr,double distance_in_feet)
+; void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_00555cb0(CDirectSoundDevice *this_ptr,float distance_in_feet)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr
-; double           Stack[0x8]:8   distance_in_feet
+; float            Stack[0x8]:4   distance_in_feet
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e9bf9
-;   undefined4 DAT_0264a5d0
+;   float g_FLOAT_005e9bf9 = 0.3048000
+;   IDirectSound3DListener* g_DirectSound3DListener
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0264a5d0]      ; 00555cb0 | DAT_0264a5d0
+    MOV EDX,dword ptr [0x0264a5d0]      ; 00555cb0 | g_DirectSound3DListener
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_00555cb0
     TEST EDX,EDX                        ; 00555cb6
     JNZ 0x00555cbb                      ; 00555cb8
@@ -23,7 +23,7 @@ section .text
     RET                                 ; 00555cba
     FLD float ptr [ESP + 0x8]           ; 00555cbb
         ;   Label: LAB_00555cbb
-    FMUL float ptr [0x005e9bf9]         ; 00555cbf | DAT_005e9bf9
+    FMUL float ptr [0x005e9bf9]         ; 00555cbf | g_FLOAT_005e9bf9
     PUSH 0x0                            ; 00555cc5
     MOV EAX,EDX                         ; 00555cc7
     SUB ESP,0x4                         ; 00555cc9

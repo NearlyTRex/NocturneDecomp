@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 ulonglong FUN_00569928(byte *param_1,int *param_2,int param_3)
 
 {
@@ -289,9 +287,9 @@ LAB_00569cb5:
             *param_2 = (int)(puVar5 + 2);
             iVar8 = WideCharToSingleByte
                               ((wchar_t)&local_1c,(char *)(uint)*puVar5);
-            iVar10 = _DAT_02de5c30;
+            iVar10 = g_MultibyteLocaleActive;
             if (((iVar8 != -1) && (*param_1 = local_1c, iVar10 != 0)) &&
-               ((*(byte *)(local_1c + 0x2de5c41) & 1) != 0)) {
+               ((g_LeadByteTable[local_1c] & 1U) != 0)) {
               param_1[1] = local_1b;
               *(int *)(param_3 + 0x20) = *(int *)(param_3 + 0x20) + 1;
               return CONCAT44(local_18,param_1);

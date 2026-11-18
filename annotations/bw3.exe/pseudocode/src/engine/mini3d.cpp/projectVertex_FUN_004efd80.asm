@@ -10,10 +10,10 @@
 ;   engine_mini3d.cpp_userClipPolyList_FUN_004f2e30 at 004f31e2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d76c5c
-;   undefined4 DAT_01d76c60
-;   undefined4 DAT_01d76c64
-;   undefined4 DAT_01d76c68
+;   float g_FLOAT_01d76c5c
+;   float g_FLOAT_01d76c60
+;   float g_FLOAT_01d76c64
+;   float g_FLOAT_01d76c68
 ;
 ; *****************************************************************************
 
@@ -74,16 +74,16 @@ section .text
     FLD1                                ; 004efddf
     FDIVRP                              ; 004efde1
     FLD float ptr [EDX]                 ; 004efde3
-    FMUL float ptr [0x01d76c5c]         ; 004efde5 | DAT_01d76c5c
+    FMUL float ptr [0x01d76c5c]         ; 004efde5 | g_FLOAT_01d76c5c
     FLD float ptr [EDX + 0x4]           ; 004efdeb
-    FMUL float ptr [0x01d76c60]         ; 004efdee | DAT_01d76c60
+    FMUL float ptr [0x01d76c60]         ; 004efdee | g_FLOAT_01d76c60
     FXCH ST2                            ; 004efdf4
     FSTP float ptr [EDX + 0xc]          ; 004efdf6
     FMUL float ptr [EDX + 0xc]          ; 004efdf9
     FXCH                                ; 004efdfc
     FMUL float ptr [EDX + 0xc]          ; 004efdfe
-    FLD float ptr [0x01d76c68]          ; 004efe01 | DAT_01d76c68
-    FLD float ptr [0x01d76c64]          ; 004efe07 | DAT_01d76c64
+    FLD float ptr [0x01d76c68]          ; 004efe01 | g_FLOAT_01d76c68
+    FLD float ptr [0x01d76c64]          ; 004efe07 | g_FLOAT_01d76c64
     FADDP ST3,ST0                       ; 004efe0d
     FADDP                               ; 004efe0f
     FXCH                                ; 004efe11

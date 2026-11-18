@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_clearZBuffer_FUN_00582940(void)
 
 {
   int iVar1;
   
-  if (_DAT_01c50948 == 0) {
+  if (g_INT_01c50948 == 0) {
     return 0;
   }
-  iVar1 = (*_DAT_02c833f4)();
+  iVar1 = (*(code *)g_APIDLL_clearZBuffer)();
   return iVar1;
 }

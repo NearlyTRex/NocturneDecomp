@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha)
 
 {
@@ -48,12 +46,12 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
     (pCVar6->light_direction).y = -0x482b;
     (pCVar6->light_direction).z = 0x482b;
     pCVar6->ambient_base_quick = 32000;
-    _DAT_01cc30a4 =
-         _DAT_01cc30a4 +
-         ((int)((_DAT_01bd1d80 + (_DAT_01bd1d80 >> 0x1f) * -4) -
-               (uint)((_DAT_01bd1d80 >> 0x1f) << 1 < 0)) >> 2);
-    iVar7 = engine_matrix_c_interpolatedSin_FUN_004cca60(_DAT_01cc30a4);
-    iVar8 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(_DAT_01cc30a4);
+    g_InventoryLightAngle =
+         g_InventoryLightAngle +
+         ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
+               (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
+    iVar7 = engine_matrix_c_interpolatedSin_FUN_004cca60(g_InventoryLightAngle);
+    iVar8 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(g_InventoryLightAngle);
     (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar7 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar7 * 0x482b) >> 0x20) << 0x10;
@@ -101,7 +99,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
     local_3c = fVar2 + fVar5;
     local_5c.y = local_40 * -0.5f;
     local_5c.z = local_3c * -0.5f;
-    _DAT_01c038f4 = 0;
+    g_INT_01c038f4 = 0;
     local_38.x = 0.0;
     local_38.z = 0.0;
     local_38.y = rotation_y;
@@ -109,8 +107,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
     if (iVar7 != 0) {
       local_38.x = local_38.x + 1.570796f;
     }
-    pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890(item,g_CMeleeActorType_01cc56a4.name_hash)
-    ;
+    pCVar10 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040d890(item,g_CMeleeClassInfo.name_hash);
     if (pCVar10 != (CDemonActor *)0x0) {
       iVar7 = _stricmp(pCVar10[1].create_event,"axe1.kfm");
       if (iVar7 == 0) {

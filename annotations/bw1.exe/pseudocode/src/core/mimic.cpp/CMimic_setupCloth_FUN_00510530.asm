@@ -12,15 +12,15 @@
 ;   core_mimic.cpp_CMimic_process_FUN_0050f630 at 0050f78b
 ;
 ; Referenced Globals:
-;   undefined4 s_s_attacking_hero_005e89fe+2
+;   TerminatedCString s_s_attacking_hero_005e8a00
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CGabriellaClassInfo.name_hash
-;   undefined4 DAT_01d06ab4
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_cloth.cpp_FUN_0043eea0
+;   core_cloth.cpp_CCloth_setup_FUN_0043eea0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00524ae0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -43,11 +43,11 @@ section .text
     LEA ESI,[EBX + 0xc330]              ; 00510545
     PUSH ESI                            ; 0051054b
     MOV dword ptr [EBX + 0x46e60],0x2   ; 0051054c
-    CALL core_cloth.cpp_FUN_0043eea0    ; 00510556
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 00510556
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 0051055b
     MOV EDX,dword ptr [0x01cc9190]      ; 0051055e | g_CGabriellaClassInfo.name_hash
-    MOV EAX,[0x01d06ab4]                ; 00510564 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 00510564 | g_INT_01d06ab4
     PUSH EDX                            ; 00510569
     MOV ECX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051056a
     PUSH ECX                            ; 00510571
@@ -58,7 +58,7 @@ section .text
     TEST EAX,EAX                        ; 0051057c
     JNZ 0x005105db                      ; 0051057e
         ;   XREF to: 005105db (CONDITIONAL_JUMP)  ; LAB_005105db
-    MOV EAX,[0x01d06ab4]                ; 00510580 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 00510580 | g_INT_01d06ab4
         ;   Label: LAB_00510580
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 00510585
     SUB ESP,0x4                         ; 0051058c
@@ -82,7 +82,7 @@ section .text
         ;   XREF to: 005247c0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 005105c0
     PUSH EBX                            ; 005105c3
-    PUSH 0x5e8a00                       ; 005105c4 | s_s_attacking_hero_005e89fe+2
+    PUSH 0x5e8a00                       ; 005105c4 | = "%s attacking hero\n"
     MOV EBX,dword ptr [0x00611100]      ; 005105c9 | g_CConsolePtr
     PUSH EBX                            ; 005105cf | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 005105d0

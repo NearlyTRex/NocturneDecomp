@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CPlatformActorType_01e42894.name_hash
+;   undefined4 g_CPlatformClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.collision_normal.x
 ;   undefined4 g_CDemonSetInstance.collision_normal.y
@@ -66,7 +66,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 0040a191
     FLD float ptr [ESP + 0x10]          ; 0040a195
     ADD ESP,0xc                         ; 0040a199
-    MOV EAX,[0x01e428cc]                ; 0040a19c | g_CPlatformActorType_01e42894.name_hash
+    MOV EAX,[0x01e428cc]                ; 0040a19c | g_CPlatformClassInfo.name_hash
     PUSH EAX                            ; 0040a1a1
     MOV EAX,[0x005be368]                ; 0040a1a2 | g_CDemonSetPtr
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 0040a1a7 | g_CDemonSetInstance.collision_actor

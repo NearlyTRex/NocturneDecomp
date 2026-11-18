@@ -7,14 +7,14 @@
 ; CTawiscara *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005d93b8+1
+;   TerminatedCString s_speed_005d93b9
 ;   TerminatedCString s_modelName_005d93bf
 ;   TerminatedCString s_guardDistance_005d93c9
 ;   TerminatedCString s_motion_state_005d93d7
 ;   TerminatedCString s_lightUpEyes_005d93e4
 ;   TerminatedCString s_chainAnchor_005d93f0
 ;   TerminatedCString s_chainLength_005d93fc
-;   undefined4 DAT_005d9408
+;   TerminatedCString s_type_005d9408
 ;   TerminatedCString s_phase_005d940d
 ;   TerminatedCString s_phaseTimer_005d9413
 ;   TerminatedCString s_alpha1_005d941e
@@ -40,7 +40,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00489120 ; 00595e97
         ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00489120(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00595e9c
-    PUSH 0x5d93b9                       ; 00595e9f | s_speed_005d93b8+1
+    PUSH 0x5d93b9                       ; 00595e9f | = "speed"
     LEA ESI,[EBX + 0xcdcc]              ; 00595ea4
     PUSH ESI                            ; 00595eaa
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00595eab
@@ -81,7 +81,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00595f1d
         ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595f22
-    PUSH 0x5d9408                       ; 00595f25 | DAT_005d9408
+    PUSH 0x5d9408                       ; 00595f25 | = "type"
     LEA EAX,[EBX + 0xd054]              ; 00595f2a
     PUSH EAX                            ; 00595f30
     CALL core_actor.cpp_archiveInteger_FUN_0040b8b0 ; 00595f31

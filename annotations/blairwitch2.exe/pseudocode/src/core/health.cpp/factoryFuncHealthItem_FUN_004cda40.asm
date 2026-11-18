@@ -15,7 +15,7 @@ section .text
     PUSH 0x43c                          ; 004cda40
         ;   Label: core_health.cpp_factoryFuncHealthItem_FUN_004cda40
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004cda45
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004cda4a
     TEST EAX,EAX                        ; 004cda4d
     JNZ 0x004cda52                      ; 004cda4f

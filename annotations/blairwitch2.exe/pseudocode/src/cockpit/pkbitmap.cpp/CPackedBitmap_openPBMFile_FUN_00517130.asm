@@ -8,22 +8,23 @@
 ; char *           Stack[0x8]:4   filename
 ; int              Stack[0xc]:4   apply_palette_flag
 ;
-; XREF[1]:
+; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_005171e0 at 005171eb
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00517c40 at 00517cbc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_00516d60
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_00516270
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
 ; *****************************************************************************
 
@@ -47,8 +48,8 @@ section .text
     PUSH 0x5e1d60                       ; 00517150
     PUSH EBX                            ; 00517155
     PUSH 0x5e1d63                       ; 00517156
-    CALL engine_dosio.cpp_FUN_00460c70  ; 0051715b
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 0051715b
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00517160
     MOV ESI,EAX                         ; 00517163
     TEST EAX,EAX                        ; 00517165
@@ -66,10 +67,10 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00517182
     MOV ECX,0x5e1d82                    ; 00517186
     PUSH EAX                            ; 0051718b
-    MOV dword ptr [0x01d046a4],EDI      ; 0051718c | DAT_01d046a4
-    MOV dword ptr [0x01d046a0],ECX      ; 00517192 | DAT_01d046a0
-    CALL core_main.c_FUN_004e4500       ; 00517198
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a4],EDI      ; 0051718c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00517192 | g_CHAR_PTR_01d046a0
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00517198
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051719d
     POP EDI                             ; 005171a0
     PUSH 0x0                            ; 005171a1
@@ -81,7 +82,7 @@ section .text
     ADD ESP,0xc                         ; 005171aa
     PUSH ESI                            ; 005171ad
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 005171ae
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005171b3
     CMP dword ptr [ESP + 0x78],0x0      ; 005171b6
     JNZ 0x005171c3                      ; 005171bb

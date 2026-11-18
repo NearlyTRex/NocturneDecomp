@@ -93,17 +93,17 @@ void __cdecl CDemonCamera::calculateInverseTransform(CDemonCamera *this_ptr);
 // Address: 0043c5d0
 void __cdecl CDemonCamera::updateTransformMatrices(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_FUN_0043c6b0
+// Original: core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
 // Address: 0043c6b0
-void FUN_0043c6b0(undefined4 param_1,int param_2,int param_3);
+int __stack3_esi CDemonCamera::screenToWorldCoord(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
 // Address: 0043c780
 CVector3i * __stack2_esi CDemonCamera::screenToWorldTransform(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr);
 
-// Original: core_dcamera.cpp_FUN_0043c890
+// Original: core_dcamera.cpp_CDemonCamera_screenToWorldDirection_FUN_0043c890
 // Address: 0043c890
-float * FUN_0043c890(int param_1,int param_2,int param_3);
+CVector3f * __stack3_esi CDemonCamera::screenToWorldDirection(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3f *output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0043ca10
 // Address: 0043ca10
@@ -117,9 +117,9 @@ CVector3i * __stack2_esi CDemonCamera::worldToScreenWithFrustumCull(CDemonCamera
 // Address: 0043cea0
 CVector3i * __stack2_esi CDemonCamera::worldToCameraSpace(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector);
 
-// Original: core_dcamera.cpp_FUN_0043cfe0
+// Original: core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0043cfe0
 // Address: 0043cfe0
-void FUN_0043cfe0(void);
+CVector3i * __stack2_esi CDemonCamera::transformVectorWithAlpha(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector);
 
 // Original: core_dcamera.cpp_CDemonCamera_allocLight_FUN_0043d1f0
 // Address: 0043d1f0
@@ -129,9 +129,9 @@ char * __cdecl CDemonCamera::allocLight(CDemonCamera *this_ptr);
 // Address: 0043d220
 void __cdecl CDemonCamera::precomputeLight(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect);
 
-// Original: core_dcamera.cpp_FUN_0043d770
+// Original: core_dcamera.cpp_CDemonCamera_computeDirectionalLightMap_FUN_0043d770
 // Address: 0043d770
-void FUN_0043d770(int param_1,float *param_2,float param_3);
+void __cdecl CDemonCamera::computeDirectionalLightMap(CDemonCamera *this_ptr,CVector3f *light_dir,float intensity);
 
 // Original: core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870
 // Address: 0043d870
@@ -141,13 +141,17 @@ void __cdecl CDemonCamera::precomputeNormals(CDemonCamera *this_ptr);
 // Address: 0043dca0
 int __cdecl CDemonCamera::sampleLightingAntialiased(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 
-// Original: core_dcamera.cpp_FUN_0043e300
+// Original: core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0043e300
 // Address: 0043e300
-int FUN_0043e300(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4);
+int __cdecl CDemonCamera::calculateAttenuatedDirectionalLight(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
 
-// Original: core_dcamera.cpp_FUN_0043e7e0
+// Original: core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0043e450
+// Address: 0043e450
+void __cdecl CDemonCamera::saveCameraTransform(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix);
+
+// Original: core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0043e7e0
 // Address: 0043e7e0
-void FUN_0043e7e0(void);
+void __cdecl CDemonCamera::convertPaletteToDisplayFormat(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0043e860
 // Address: 0043e860
@@ -193,9 +197,9 @@ void __cdecl CDemonCamera::renderLightCoronas(CDemonCamera *this_ptr,CDemonLight
 // Address: 00440370
 void __cdecl CDemonCamera::addLightmapToCorona(CDemonCamera *this_ptr,CDemonLight *light_source);
 
-// Original: core_dcamera.cpp_FUN_00440500
+// Original: core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00440500
 // Address: 00440500
-void FUN_00440500(int param_1);
+void __cdecl CDemonCamera::addDirectionalLightMap(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00440560
 // Address: 00440560
@@ -217,9 +221,9 @@ int __cdecl CDemonCamera::lockAndRenderToBuffer(CDemonCamera *this_ptr);
 // Address: 004407f0
 int __cdecl testCoronaVisibility(int start_x,int start_y,int depth_reciprocal);
 
-// Original: core_dcamera.cpp_FUN_00440a50
+// Original: core_dcamera.cpp_processCoronaScanline_FUN_00440a50
 // Address: 00440a50
-void FUN_00440a50(void);
+void __cdecl processCoronaScanline(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 
 // Original: core_dcamera.cpp_blendCoronaTextureSpan_FUN_00440d90
 // Address: 00440d90
@@ -228,6 +232,10 @@ void __cdecl blendCoronaTextureSpan(int scanline_y,int x_start,int x_end,SCorona
 // Original: core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00440e90
 // Address: 00440e90
 void __cdecl CDemonCamera::renderGlobeCoronas(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
+
+// Original: core_dcamera.cpp_transformAndStoreVertex_FUN_004416b0
+// Address: 004416b0
+void __cdecl transformAndStoreVertex(int vertex_index,float x,float y,float z);
 
 // Original: core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720
 // Address: 00441720
@@ -241,9 +249,9 @@ int __cdecl CDemonCamera::isSphereVisible(CDemonCamera *this_ptr,CVector3f *posi
 // Address: 00441e80
 void __cdecl CDemonCamera::setEffectIntensity(CDemonCamera *this_ptr,float intensity);
 
-// Original: core_dcamera.cpp_FUN_00441ea0
+// Original: core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00441ea0
 // Address: 00441ea0
-void FUN_00441ea0(CDemonCamera *param_1,undefined4 param_2,undefined4 param_3);
+void __stack3_esi CDemonCamera::screenToWorldRay(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3f *output_ray);
 
 // Original: core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00441f40
 // Address: 00441f40
@@ -269,9 +277,9 @@ void __cdecl CDemonCamera::compositeLightmapToFramebuffer(CDemonCamera *this_ptr
 // Address: 00442bf0
 void __cdecl CDemonCamera::initCameraFog(CDemonCamera *this_ptr,SFog *fog_config);
 
-// Original: core_dcamera.cpp_FUN_00442cb0
+// Original: core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00442cb0
 // Address: 00442cb0
-int FUN_00442cb0(int param_1,int *param_2);
+int __cdecl CDemonCamera::getFogValueAtPosition(CDemonCamera *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
 
 // Original: core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80
 // Address: 00442d80
@@ -279,7 +287,7 @@ void __cdecl CDemonCamera::setupPerspectiveAndFog(CDemonCamera *this_ptr,CVector
 
 // Original: core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70
 // Address: 00442e70
-void __cdecl CDemonCamera::sampleFramebufferPixel(CDemonCamera *this_ptr,int param_2);
+void __cdecl CDemonCamera::sampleFramebufferPixel(CDemonCamera *this_ptr,int vertex);
 
 // Original: core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00442f00
 // Address: 00442f00
@@ -317,9 +325,9 @@ void __cdecl saveCameraFog(SFog *fog,_FILE *file_handle);
 // Address: 00443570
 void __cdecl CDemonCamera::initCameraShake(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time);
 
-// Original: core_dcamera.cpp_FUN_00443610
+// Original: core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00443610
 // Address: 00443610
-undefined4 * FUN_00443610(CDemonCamera *param_1);
+CVector3f * __stack_esi CDemonCamera::computeVisibleFrustumBounds(CDemonCamera *this_ptr,CVector3f *output_bounds);
 
 // Original: core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00443a50
 // Address: 00443a50

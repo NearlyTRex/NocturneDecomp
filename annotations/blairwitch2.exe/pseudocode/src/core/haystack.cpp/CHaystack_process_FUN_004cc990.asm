@@ -10,30 +10,30 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_004cc964 = 004ccd0c
 ;   TerminatedCString s_s_confused_while_walking_005d9907
-;   undefined4 DAT_005d9932
-;   undefined4 DAT_005d9936
-;   undefined4 DAT_005d993a
-;   undefined4 DAT_005d993e
+;   float g_FLOAT_005d9932 = -1.570796
+;   float g_FLOAT_005d9936 = 3.141593
+;   float g_FLOAT_005d993a = 1.570796
+;   float g_FLOAT_005d993e = -3.141593
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01cede20
+;   int[17] g_HaystackIndices
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_00423a60
-;   core_charactr.cpp_FUN_0042b2a0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
+;   core_hero.cpp_CHero_tryInteract_FUN_004cec50
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
-;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
-;   core_hero.cpp_FUN_004cec50
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     PUSH dword ptr [ESP + 0xc4]         ; 004cc9c6
         ;   Label: LAB_004cc9c6
     PUSH EBX                            ; 004cc9cd
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 004cc9ce
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 004cc9ce
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004cc9d3
     FLD float ptr [EBX + 0x10a60]       ; 004cc9d6
     FSUB float ptr [ESP + 0xc4]         ; 004cc9dc
@@ -125,8 +125,8 @@ section .text
     PUSH EBX                            ; 004cca86
     LEA ESI,[ESP + 0x70]                ; 004cca87
     LEA EDI,[ESP + 0x64]                ; 004cca8b
-    CALL core_actor.cpp_FUN_00408de0    ; 004cca8f
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 004cca8f
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x70]                ; 004cca94
     ADD ESP,0x8                         ; 004cca98
     LEA EAX,[ESP + 0x5c]                ; 004cca9b
@@ -137,7 +137,7 @@ section .text
     LEA ESI,[ESP + 0x78]                ; 004ccaa3
     LEA EDI,[ESP + 0x48]                ; 004ccaa7
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004ccaab
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x78]                ; 004ccab0
     ADD ESP,0x4                         ; 004ccab4
     MOVSD ES:EDI,ESI                    ; 004ccab7
@@ -150,27 +150,27 @@ section .text
     FLD float ptr [ESP + 0xac]          ; 004ccaca
     ADD ESP,0x4                         ; 004ccad1
     FST float ptr [ESP + 0xa0]          ; 004ccad4
-    FCOMP float ptr [0x005d9932]        ; 004ccadb | DAT_005d9932
+    FCOMP float ptr [0x005d9932]        ; 004ccadb | g_FLOAT_005d9932
     FNSTSW AX                           ; 004ccae1
     SAHF                                ; 004ccae3
     JNC 0x004ccafa                      ; 004ccae4
         ;   XREF to: 004ccafa (CONDITIONAL_JUMP)  ; LAB_004ccafa
     FLD float ptr [ESP + 0xa0]          ; 004ccae6
-    FADD float ptr [0x005d9936]         ; 004ccaed | DAT_005d9936
+    FADD float ptr [0x005d9936]         ; 004ccaed | g_FLOAT_005d9936
     FSTP float ptr [ESP + 0xa0]         ; 004ccaf3
     FLD float ptr [ESP + 0xa0]          ; 004ccafa
         ;   Label: LAB_004ccafa
-    FCOMP float ptr [0x005d993a]        ; 004ccb01 | DAT_005d993a
+    FCOMP float ptr [0x005d993a]        ; 004ccb01 | g_FLOAT_005d993a
     FNSTSW AX                           ; 004ccb07
     SAHF                                ; 004ccb09
     JBE 0x004ccb20                      ; 004ccb0a
         ;   XREF to: 004ccb20 (CONDITIONAL_JUMP)  ; LAB_004ccb20
     FLD float ptr [ESP + 0xa0]          ; 004ccb0c
-    FADD float ptr [0x005d993e]         ; 004ccb13 | DAT_005d993e
+    FADD float ptr [0x005d993e]         ; 004ccb13 | g_FLOAT_005d993e
     FSTP float ptr [ESP + 0xa0]         ; 004ccb19
     FLD float ptr [ESP + 0xc4]          ; 004ccb20
         ;   Label: LAB_004ccb20
-    FMUL float ptr [0x005d9936]         ; 004ccb27 | DAT_005d9936
+    FMUL float ptr [0x005d9936]         ; 004ccb27 | g_FLOAT_005d9936
     FLD float ptr [ESP + 0xa0]          ; 004ccb2d
     FXCH                                ; 004ccb34
     FST float ptr [ESP + 0x98]          ; 004ccb36
@@ -258,22 +258,22 @@ section .text
     JNZ 0x004ccc99                      ; 004ccc47
         ;   XREF to: 004ccc99 (CONDITIONAL_JUMP)  ; LAB_004ccc99
     PUSH EBP                            ; 004ccc49
-    CALL core_motion.cpp_FUN_005035c0   ; 004ccc4a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004ccc4a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004ccc4f
     ADD ESP,0x4                         ; 004ccc52
     CMP EAX,0x13                        ; 004ccc55
     JZ 0x004ccc99                       ; 004ccc58
         ;   XREF to: 004ccc99 (CONDITIONAL_JUMP)  ; LAB_004ccc99
     PUSH 0x544cc0                       ; 004ccc5a
-    MOV EDX,dword ptr [0x01cede20]      ; 004ccc5f | DAT_01cede20
+    MOV EDX,dword ptr [0x01cede20]      ; 004ccc5f | g_HaystackIndices
     PUSH EDX                            ; 004ccc65
     LEA EAX,[EBX + 0x25648]             ; 004ccc66
     PUSH dword ptr [EBX + 0x25654]      ; 004ccc6c
     PUSH EAX                            ; 004ccc72
     LEA ESI,[ESP + 0x10]                ; 004ccc73
-    CALL core_xform.cpp_FUN_00594380    ; 004ccc77
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 004ccc77
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 004ccc7c
     LEA EAX,[ESP + 0x1c]                ; 004ccc7f
     PUSH EAX                            ; 004ccc83
@@ -402,8 +402,8 @@ section .text
     FMUL float ptr [EBX + 0x2598]       ; 004ccdcc
     PUSH EBP                            ; 004ccdd2
     FSTP float ptr [EBX + 0x2578]       ; 004ccdd3
-    CALL core_motion.cpp_FUN_005035c0   ; 004ccdd9
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004ccdd9
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004ccdde
     ADD ESP,0x4                         ; 004ccde1
     CMP ESI,EAX                         ; 004ccde4
@@ -427,8 +427,8 @@ section .text
     JZ 0x004ccd9f                       ; 004cce0a
         ;   XREF to: 004ccd9f (CONDITIONAL_JUMP)  ; LAB_004ccd9f
     PUSH EBX                            ; 004cce0c
-    CALL core_hero.cpp_FUN_004cec50     ; 004cce0d
-        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cec50()
+    CALL core_hero.cpp_CHero_tryInteract_FUN_004cec50 ; 004cce0d
+        ;   XREF to: 004cec50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryInteract_FUN_004cec50(CHero * this_ptr)
     XOR EBP,EBP                         ; 004cce12
     ADD ESP,0x4                         ; 004cce14
     TEST EAX,EAX                        ; 004cce17
@@ -436,8 +436,8 @@ section .text
         ;   XREF to: 004ccd9f (CONDITIONAL_JUMP)  ; LAB_004ccd9f
     PUSH EAX                            ; 004cce1b
     PUSH EBX                            ; 004cce1c
-    CALL core_hero.cpp_FUN_004cf030     ; 004cce1d
-        ;   XREF to: 004cf030 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf030()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030 ; 004cce1d
+        ;   XREF to: 004cf030 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 004cce22
     MOV EDI,EAX                         ; 004cce25
     TEST EAX,EAX                        ; 004cce27
@@ -458,8 +458,8 @@ section .text
     JNZ 0x004ccd9f                      ; 004cce43
         ;   XREF to: 004ccd9f (CONDITIONAL_JUMP)  ; LAB_004ccd9f
     PUSH EBX                            ; 004cce49
-    CALL core_hero.cpp_FUN_004cf2b0     ; 004cce4a
-        ;   XREF to: 004cf2b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004cf2b0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0 ; 004cce4a
+        ;   XREF to: 004cf2b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004cce4f
     TEST EAX,EAX                        ; 004cce52
     JNZ 0x004cce66                      ; 004cce54
@@ -475,8 +475,8 @@ section .text
         ;   XREF to: 004cce30 (UNCONDITIONAL_JUMP)  ; LAB_004cce30
     PUSH EBX                            ; 004cce66
         ;   Label: LAB_004cce66
-    CALL core_hero.cpp_FUN_004cf440     ; 004cce67
-        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf440()
+    CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440 ; 004cce67
+        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440(CHero * this_ptr)
     ADD ESP,0x4                         ; 004cce6c
     JMP 0x004ccd9f                      ; 004cce6f
         ;   XREF to: 004ccd9f (UNCONDITIONAL_JUMP)  ; LAB_004ccd9f
@@ -486,8 +486,8 @@ section .text
         ;   XREF to: 004ccdc0 (UNCONDITIONAL_JUMP)  ; LAB_004ccdc0
     PUSH EAX                            ; 004cce7e
         ;   Label: LAB_004cce7e
-    CALL core_motion.cpp_FUN_005035c0   ; 004cce7f
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004cce7f
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004cce84
     ADD ESP,0x4                         ; 004cce87
     CMP EAX,0xa                         ; 004cce8a
@@ -512,8 +512,8 @@ section .text
         ;   Label: LAB_004ccebc
     PUSH EBX                            ; 004ccec3
     LEA EDI,[ESP + 0x40]                ; 004ccec4
-    CALL core_charactr.cpp_FUN_00423a10 ; 004ccec8
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 004ccec8
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x2508]              ; 004ccecd
     LEA ESI,[ESP + 0x34]                ; 004cced3
     ADD ESP,0x8                         ; 004cced7
@@ -546,8 +546,8 @@ section .text
     PUSH EAX                            ; 004ccf2b
     FST float ptr [EDX + 0x4]           ; 004ccf2c
     FSTP float ptr [EDX]                ; 004ccf2f
-    CALL core_motion.cpp_FUN_005035c0   ; 004ccf31
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004ccf31
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004ccf36
     ADD ESP,0x4                         ; 004ccf39
     CMP EAX,0xe                         ; 004ccf3c
@@ -594,8 +594,8 @@ section .text
     FSTP float ptr [ESP + 0x40]         ; 004ccfbd
     FSTP float ptr [ESP + 0x44]         ; 004ccfc1
     FSTP float ptr [ESP + 0x48]         ; 004ccfc5
-    CALL core_charactr.cpp_FUN_00423a60 ; 004ccfc9
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 004ccfc9
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004ccfce
     JMP 0x004ccc1d                      ; 004ccfd1
         ;   XREF to: 004ccc1d (UNCONDITIONAL_JUMP)  ; LAB_004ccc1d

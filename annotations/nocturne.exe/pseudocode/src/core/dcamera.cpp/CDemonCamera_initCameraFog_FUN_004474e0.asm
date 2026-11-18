@@ -14,15 +14,15 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057bae3 = 65536
 ;   double DOUBLE_0057baeb = 256
-;   undefined4 DAT_005ad450
-;   undefined4 DAT_005ad454
-;   undefined4 DAT_005ad458
-;   undefined4 DAT_00b0e1fc
-;   undefined4 g_SFogGrid_0140d784.scroll_vector.x
-;   undefined4 g_SFogGrid_0140d784.scroll_vector.y
-;   undefined4 g_SFogGrid_0140d784.scroll_vector.z
-;   undefined4 g_SFogGrid_0140d784.height_threshold
-;   undefined4 g_SFogGrid_0140d784.density_multiplier
+;   char[4] g_CHAR_ARRAY_005ad450
+;   int g_INT_005ad454 = 0x40
+;   int g_INT_005ad458 = 0x40
+;   uint[256] g_UINT_ARRAY_00b0e1fc
+;   undefined4 g_CameraFogGrid.scroll_vector.x
+;   undefined4 g_CameraFogGrid.scroll_vector.y
+;   undefined4 g_CameraFogGrid.scroll_vector.z
+;   undefined4 g_CameraFogGrid.height_threshold
+;   undefined4 g_CameraFogGrid.density_multiplier
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -38,20 +38,20 @@ section .text
     MOV EBP,ESP                         ; 004474e2
     MOV EBX,dword ptr [EBP + 0x10]      ; 004474e4
     MOV EAX,dword ptr [EBX]             ; 004474e7
-    MOV [0x005ad450],EAX                ; 004474e9 | DAT_005ad450
+    MOV [0x005ad450],EAX                ; 004474e9 | g_CHAR_ARRAY_005ad450
     MOV EAX,dword ptr [EBX + 0x4]       ; 004474ee
-    MOV [0x005ad454],EAX                ; 004474f1 | DAT_005ad454
+    MOV [0x005ad454],EAX                ; 004474f1 | g_INT_005ad454
     MOV EAX,dword ptr [EBX + 0x8]       ; 004474f6
-    MOV [0x005ad458],EAX                ; 004474f9 | DAT_005ad458
-    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 004474fe | DAT_00b0e1fc
+    MOV [0x005ad458],EAX                ; 004474f9 | g_INT_005ad458
+    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 004474fe | g_UINT_ARRAY_00b0e1fc
     AND EAX,0xff                        ; 00447505
     PUSH EAX                            ; 0044750a
     MOV EAX,dword ptr [EBX + 0x4]       ; 0044750b
-    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 0044750e | DAT_00b0e1fc
+    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 0044750e | g_UINT_ARRAY_00b0e1fc
     AND EAX,0xff                        ; 00447515
     PUSH EAX                            ; 0044751a
     MOV EAX,dword ptr [EBX]             ; 0044751b
-    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 0044751d | DAT_00b0e1fc
+    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 0044751d | g_UINT_ARRAY_00b0e1fc
     AND EAX,0xff                        ; 00447524
     PUSH EAX                            ; 00447529
     CALL engine_special.cpp_setFogColor_FUN_00532af0 ; 0044752a
@@ -84,13 +84,13 @@ section .text
     CALL crt_math.c_round_FUN_00563a30  ; 00447573
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00447578
-    FISTP dword ptr [0x0140e790]        ; 0044757a | g_SFogGrid_0140d784.scroll_vector.x
-    FISTP dword ptr [0x0140e794]        ; 00447580 | g_SFogGrid_0140d784.scroll_vector.y
+    FISTP dword ptr [0x0140e790]        ; 0044757a | g_CameraFogGrid.scroll_vector.x
+    FISTP dword ptr [0x0140e794]        ; 00447580 | g_CameraFogGrid.scroll_vector.y
     FXCH                                ; 00447586
-    FISTP dword ptr [0x0140e798]        ; 00447588 | g_SFogGrid_0140d784.scroll_vector.z
+    FISTP dword ptr [0x0140e798]        ; 00447588 | g_CameraFogGrid.scroll_vector.z
     FXCH                                ; 0044758e
-    FISTP dword ptr [0x0140e79c]        ; 00447590 | g_SFogGrid_0140d784.height_threshold
-    FISTP dword ptr [0x0140e7a0]        ; 00447596 | g_SFogGrid_0140d784.density_multiplier
+    FISTP dword ptr [0x0140e79c]        ; 00447590 | g_CameraFogGrid.height_threshold
+    FISTP dword ptr [0x0140e7a0]        ; 00447596 | g_CameraFogGrid.density_multiplier
     POP EBP                             ; 0044759c
     POP EBX                             ; 0044759d
     RET                                 ; 0044759e

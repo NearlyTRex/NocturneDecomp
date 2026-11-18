@@ -16,7 +16,8 @@ CGrave * __cdecl core_grave_cpp_CGrave_ctor_FUN_004e6930(CGrave *this_ptr)
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860
                           ((CKeyFramedModelInstance *)(pCVar1 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CGraveVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(this_ptr_00,(char *)0x5e4192);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
+            (this_ptr_00,"grave1.kfm");
   this_ptr_00[1].part_visibility_flags[0] = 0;
   this_ptr_00[1].part_visibility_flags[1] = 0x41f00000;
   this_ptr_00[1].part_visibility_flags[2] = 0;

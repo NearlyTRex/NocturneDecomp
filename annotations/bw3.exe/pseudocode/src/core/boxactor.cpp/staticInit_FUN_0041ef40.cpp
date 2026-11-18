@@ -10,14 +10,14 @@ void __cdecl core_boxactor_cpp_staticInit_FUN_0041ef40(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            (&g_CBoxActorClassInfo,"p?CBoxActor" + 2,
+            (&g_CBoxActorClassInfo,"CBoxActor",
              core_boxactor_cpp_factoryFuncBoxActor_FUN_0041efb0,&g_CBoxActorClassVersion,0x12,
              &g_CDemonActorClassInfo);
-  __arrinit(CDemonFilter_ARRAY_007e17b8,8,&g_CDemonFilterTypeInfo);
+  __arrinit(g_LightActorFilters,8,&g_CDemonFilterTypeInfo);
   _atexit(&WatcomStaticDestructorNode_005f0e28);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)&DAT_007e1a18,"CLightActor",
-             core_boxactor_cpp_factoryFuncLightActor_FUN_00420330,(int *)0x5f0e3c,2,
+            (&g_CDemonActorType_007e1a18,"CLightActor",
+             core_boxactor_cpp_factoryFuncLightActor_FUN_00420330,&g_INT_005f0e3c,2,
              &g_CBoxActorClassInfo);
   return;
 }

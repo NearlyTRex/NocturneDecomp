@@ -21,7 +21,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet *t
     if (0 < this_ptr->actor_count) {
       do {
         this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                (pCVar2->actors[0],g_CWaterActorActorType_02ddd598.name_hash);
+                                (pCVar2->actors[0],g_CWaterActorClassInfo.name_hash);
         if (this_ptr_00 != (CDemonActor *)0x0) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(this_ptr_00,&local_1c,point);
           (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_34);

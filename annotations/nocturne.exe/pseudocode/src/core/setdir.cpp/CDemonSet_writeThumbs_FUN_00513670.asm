@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet *this_ptr,char *param_2)
+; void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610 at 00513642

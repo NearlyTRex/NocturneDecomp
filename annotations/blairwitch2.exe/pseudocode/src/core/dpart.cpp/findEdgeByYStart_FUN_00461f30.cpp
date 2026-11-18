@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00461f30(int scanline_y,SSoftwareEdge *exclude_edge)
 
 {
@@ -16,14 +14,14 @@ SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00461f30(int scanlin
   
   pSVar1 = (SSoftwareEdge *)&DAT_01ba51cc;
   iVar2 = 0;
-  if (0 < _DAT_01ba51c8) {
+  if (0 < g_INT_01ba51c8) {
     do {
       if ((scanline_y == (pSVar1->base).y_min) && (pSVar1 != exclude_edge)) {
         return pSVar1;
       }
       iVar2 = iVar2 + 1;
       pSVar1 = pSVar1 + 1;
-    } while (iVar2 < _DAT_01ba51c8);
+    } while (iVar2 < g_INT_01ba51c8);
   }
   return (SSoftwareEdge *)0x0;
 }

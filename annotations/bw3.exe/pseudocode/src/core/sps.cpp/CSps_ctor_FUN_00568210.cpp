@@ -13,8 +13,8 @@ CSps * __cdecl core_sps_cpp_CSps_ctor_FUN_00568210(CSps *this_ptr)
   
   pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   (pCVar1->base).vtable._ub = &g_CSpsVTable._ub;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(&pCVar1->model,(char *)0x5d5c63)
-  ;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
+            (&pCVar1->model,"voodoo_d.kfm");
   pCVar1->is_spread_weapon = 0;
   pCVar1->fire_mode = FIRE_MODE_AUTOMATIC;
   pCVar1->can_penetrate = 1;

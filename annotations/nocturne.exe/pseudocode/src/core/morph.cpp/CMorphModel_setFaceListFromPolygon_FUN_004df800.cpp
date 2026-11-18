@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureModel *texture_list,int *texture_index_list,int start_face,int poly_count)
 
 {
@@ -53,7 +51,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMor
         pSVar8 = poly_data + 1;
         iVar6 = local_18 * 0x3c;
         do {
-          iVar4 = _DAT_01cd4314;
+          iVar4 = g_MorphReverseWinding;
           *(uint *)((int)this_ptr->faces->vertices + iVar6 + -0x14) = 3;
           if (iVar4 == 0) {
             piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);

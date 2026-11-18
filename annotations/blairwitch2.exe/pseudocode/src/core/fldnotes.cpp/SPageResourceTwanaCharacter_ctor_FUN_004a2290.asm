@@ -13,7 +13,7 @@
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0 at 004a2f1d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5a62
+;   TerminatedCString s_l_s_005d5a62
 ;   void* g_SPageResourceTwanaCharacterVTable = 004a2320
 ;
 ; Called Functions:
@@ -57,7 +57,7 @@ section .text
     POP EDI                             ; 004a22d7
         ;   Label: LAB_004a22d7
     PUSH EDX                            ; 004a22d8
-    PUSH 0x5d5a62                       ; 004a22d9 | DAT_005d5a62
+    PUSH 0x5d5a62                       ; 004a22d9 | = "l_%s"
     LEA EDX,[ESP + 0x8]                 ; 004a22de
     PUSH EDX                            ; 004a22e2
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a22e3

@@ -17,24 +17,24 @@
 ;   core_vehicle.cpp_CVehicle_setup_FUN_00583c40 at 00583ee2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ce019
-;   undefined4 DAT_005ce01c
+;   TerminatedCString s_rt_005ce019
+;   TerminatedCString s_data_005ce01c
 ;   TerminatedCString s_core_course_cpp_005ce021
 ;   TerminatedCString s_CCourse_load_can_t_open_005ce034
-;   undefined4 DAT_005ce057
+;   TerminatedCString s_d_005ce057
 ;   TerminatedCString s_d_d_005ce05b
 ;   TerminatedCString s_f_f_f_f_f_f_f_005ce062
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_allocMemory_FUN_00438a90
-;   core_course.cpp_FUN_00438c20
-;   core_main.c_FUN_004e4500
+;   core_course.cpp_CCourse_free_FUN_00438c20
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
 ; *****************************************************************************
 
@@ -49,14 +49,14 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 00438af7
     MOV EBX,dword ptr [ESP + 0x20]      ; 00438afb
     PUSH EDI                            ; 00438aff
-    CALL core_course.cpp_FUN_00438c20   ; 00438b00
-        ;   XREF to: 00438c20 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00438c20()
+    CALL core_course.cpp_CCourse_free_FUN_00438c20 ; 00438b00
+        ;   XREF to: 00438c20 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_00438c20(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00438b05
-    PUSH 0x5ce019                       ; 00438b08 | DAT_005ce019
+    PUSH 0x5ce019                       ; 00438b08 | = "rt"
     PUSH EBX                            ; 00438b0d
-    PUSH 0x5ce01c                       ; 00438b0e | DAT_005ce01c
-    CALL engine_dosio.cpp_FUN_00460c70  ; 00438b13
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    PUSH 0x5ce01c                       ; 00438b0e | = "data"
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00438b13
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00438b18
     MOV EBP,EAX                         ; 00438b1b
     TEST EAX,EAX                        ; 00438b1d
@@ -78,7 +78,7 @@ section .text
     MOV EAX,ESP                         ; 00438b39
         ;   Label: LAB_00438b39
     PUSH EAX                            ; 00438b3b
-    PUSH 0x5ce057                       ; 00438b3c | DAT_005ce057
+    PUSH 0x5ce057                       ; 00438b3c | = "%d\n"
     PUSH EBP                            ; 00438b41
     MOV EBX,EBP                         ; 00438b42
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00438b44
@@ -109,7 +109,7 @@ section .text
     PUSH EBX                            ; 00438b79
     PUSH EDI                            ; 00438b7a
     CALL core_course.cpp_CCourse_allocMemory_FUN_00438a90 ; 00438b7b
-        ;   XREF to: 00438a90 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00438a90(CCourse * this_ptr, int param_2)
+        ;   XREF to: 00438a90 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00438a90(CCourse * this_ptr, int count)
     MOV EBX,EBP                         ; 00438b80
     ADD ESP,0x8                         ; 00438b82
     PUSH EBX                            ; 00438b85
@@ -162,7 +162,7 @@ section .text
     PUSH EBP                            ; 00438be0
         ;   Label: LAB_00438be0
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00438be1
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00438be6
     ADD ESP,0x8                         ; 00438be9
     POP EBP                             ; 00438bec
@@ -175,10 +175,10 @@ section .text
     MOV EDX,0x5ce021                    ; 00438bf2 | = "..\\core\\course.cpp"
     MOV ECX,0x7c                        ; 00438bf7
     PUSH 0x5ce034                       ; 00438bfc | = "CCourse::load - can't open data\\%s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00438c01 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00438c07 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00438c0d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00438c01 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00438c07 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00438c0d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00438c12
     JMP 0x00438b25                      ; 00438c15
         ;   XREF to: 00438b25 (UNCONDITIONAL_JUMP)  ; LAB_00438b25

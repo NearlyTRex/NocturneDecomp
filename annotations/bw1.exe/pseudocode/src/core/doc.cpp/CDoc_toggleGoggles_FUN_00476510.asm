@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_inv.cpp_FUN_004f8c90
+;   core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH 0x5da66f                       ; 0047651b | = "CGoggles"
     ADD EAX,0x1fae8                     ; 00476520
     PUSH EAX                            ; 00476525
-    CALL core_inv.cpp_FUN_004f8c90      ; 00476526
-        ;   XREF to: 004f8c90 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f8c90(CInventory * this_ptr, char * class_name)
+    CALL core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90 ; 00476526
+        ;   XREF to: 004f8c90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemOfClass_FUN_004f8c90(CInventory * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 0047652b
     PUSH EAX                            ; 0047652e
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 0047652f

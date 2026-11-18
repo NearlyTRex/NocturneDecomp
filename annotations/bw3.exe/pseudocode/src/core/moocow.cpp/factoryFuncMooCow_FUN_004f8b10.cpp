@@ -11,7 +11,7 @@ CMooCow * __cdecl core_moocow_cpp_factoryFuncMooCow_FUN_004f8b10(void)
 {
   CMooCow *pCVar1;
   
-  pCVar1 = (CMooCow *)operator_new(0xcdf0);
+  pCVar1 = operator_new(0xcdf0);
   if (pCVar1 == (CMooCow *)0x0) {
     return (CMooCow *)0x0;
   }

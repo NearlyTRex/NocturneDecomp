@@ -12,7 +12,7 @@ void __cdecl core_kedward_cpp_CKedward_archive_FUN_005919f0(CKedward *this_ptr)
   CDeformableModelInstance *model_ptr;
   
   core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
-  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).speed,"@speed" + 1);
+  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).speed,"speed");
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30(model_ptr,"modelName");
   core_actor_cpp_archiveFloat_FUN_0040b830

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_cow_cpp_CZombieCow_getActorType_FUN_0043bbd0(CZombieCow *this_ptr)
 
 {
-  return &g_CZombieCowActorType_0077bd04;
+  return &g_CZombieCowClassInfo;
 }

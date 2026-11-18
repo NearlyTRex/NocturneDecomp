@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 25,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 44
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -48,7 +46,19 @@
     {
       "addr": "00444b70",
       "from_addr": "00444d68",
-      "name": "core_course.cpp_FUN_00444b70",
+      "name": "core_course.cpp_CCourse_interpolate_FUN_00444b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00474400",
+      "from_addr": "00474484",
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00474400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473cd0",
+      "from_addr": "00473d29",
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,18 +71,6 @@
       "addr": "00477ac0",
       "from_addr": "00477add",
       "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00473cd0",
-      "from_addr": "00473d29",
-      "name": "core_dtrace.cpp_FUN_00473cd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00474400",
-      "from_addr": "00474484",
-      "name": "core_dtrace.cpp_FUN_00474400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,15 +110,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055ab20",
-      "from_addr": "0055ab6c",
-      "name": "sound_snddx.cpp_FUN_0055ab20",
+      "addr": "0055c0f0",
+      "from_addr": "0055c39a",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055c0f0",
-      "from_addr": "0055c39a",
-      "name": "sound_snddx.cpp_FUN_0055c0f0",
+      "addr": "0055ab20",
+      "from_addr": "0055ab6c",
+      "name": "sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_0055ab20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -189,9 +187,9 @@
   "globals": [
     {
       "addr": "005da6b0",
-      "name": "DAT_005da6b0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MathDomainAdjustment",
+      "type": "double",
+      "value": "-1"
     }
   ],
   "param_estimates": {
@@ -222,7 +220,7 @@
       {
         "call_addr": "00473d29",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00473cd0",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -233,7 +231,7 @@
       {
         "call_addr": "00473d55",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00473cd0",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -244,7 +242,7 @@
       {
         "call_addr": "00473d81",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00473cd0",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -255,7 +253,7 @@
       {
         "call_addr": "00473dd8",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00473cd0",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -266,7 +264,7 @@
       {
         "call_addr": "00473e01",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00473cd0",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -277,7 +275,7 @@
       {
         "call_addr": "00473e2d",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00473cd0",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -411,14 +409,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

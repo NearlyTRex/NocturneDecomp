@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 66,
+    "complexity_score": 15,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 50
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -33,18 +30,18 @@
     ],
     "convention": "__cdecl",
     "name": "core_course.cpp_CCourse_allocMemory_FUN_00447d50",
-    "signature": "void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00447d50(CCourse *this_ptr,int param_2)"
+    "signature": "void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00447d50(CCourse *this_ptr,int count)"
   },
   "function_calls": [
     {
       "addr": "00447ee0",
       "is_variadic": false,
-      "name": "core_course.cpp_FUN_00447ee0"
+      "name": "core_course.cpp_CCourse_free_FUN_00447ee0"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c1268",
@@ -67,14 +64,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -136,7 +133,7 @@
     },
     "bw3.exe": {
       "addr": "00444910",
-      "by": "body",
+      "by": "name",
       "class": "identical",
       "ratio": 1.0
     },
@@ -169,45 +166,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "count",
         "offset": 8,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00447d50(CCourse *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->len = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar1 = (CCourseFrame *)operator_new_array(param_2 * 0x1c);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

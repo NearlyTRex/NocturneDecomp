@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   strstreambuf_vtable g_StrstreambufVTable
-;   WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a48b0
+;   WatcomVirtualBaseDescriptor g_Strstream_VirtualLayout
 ;   void* PTR_crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc = 0056b5ad
 ;   void* PTR_crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0056b491_005a48c4 = 0056b491
 ;
@@ -77,7 +77,7 @@ section .text
     POP ESI                             ; 0056b477
     POP EBX                             ; 0056b478
     RET                                 ; 0056b479
-    MOV dword ptr [EBX],0x5a48b0        ; 0056b47a | g_WatcomVirtualBaseDescriptor_005a48b0
+    MOV dword ptr [EBX],0x5a48b0        ; 0056b47a | g_Strstream_VirtualLayout
         ;   Label: LAB_0056b47a
     ADD EBX,0x4c                        ; 0056b480
     PUSH EBX                            ; 0056b483

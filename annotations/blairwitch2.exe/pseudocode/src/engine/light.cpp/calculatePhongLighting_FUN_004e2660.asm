@@ -16,21 +16,21 @@
 ;   engine_light.cpp_calculateAndStoreVertexLight_FUN_004e2980 at 004e2990
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00617e40
-;   undefined4 DAT_00617e44
-;   undefined4 DAT_00617e48
-;   undefined4 DAT_00617e4c
-;   undefined4 DAT_01c38b6c
-;   undefined4 DAT_01c38b70
-;   undefined4 DAT_01c38b74
-;   undefined4 DAT_01c38b90
-;   undefined4 DAT_01c38b94
-;   undefined4 DAT_01c38b98
-;   undefined4 DAT_01d03510
-;   undefined4 DAT_01d03514
-;   undefined4 DAT_01d03518
-;   undefined4 DAT_01d0351c
-;   undefined4 DAT_01d03520
+;   int g_AmbientLightLevel = 0x8000
+;   int g_SpecularEnabled = 0x1
+;   int g_DiffuseLightMultiplier = 0x10000
+;   int g_SpecularLightMultiplier = 0x10000
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
+;   CVector3i g_CachedViewPosition
+;   undefined4 g_CachedViewPosition.y
+;   undefined4 g_CachedViewPosition.z
+;   CVector3i g_NormalizedViewVector
+;   undefined4 g_NormalizedViewVector.y
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -48,16 +48,16 @@ section .text
     SUB ESP,0x14                        ; 004e2664
     MOV ESI,dword ptr [ESP + 0x28]      ; 004e2667
     MOV EDI,dword ptr [ESP + 0x30]      ; 004e266b
-    MOV EDX,dword ptr [0x01c38b90]      ; 004e266f | DAT_01c38b90
+    MOV EDX,dword ptr [0x01c38b90]      ; 004e266f | g_LightDirectionX
     MOV EAX,ESI                         ; 004e2675
     IMUL EDX                            ; 004e2677
     SHRD EAX,EDX,0x10                   ; 004e2679
-    MOV EDX,dword ptr [0x01c38b94]      ; 004e267d | DAT_01c38b94
+    MOV EDX,dword ptr [0x01c38b94]      ; 004e267d | g_LightDirectionY
     MOV ECX,EAX                         ; 004e2683
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004e2685
     IMUL EDX                            ; 004e2689
     SHRD EAX,EDX,0x10                   ; 004e268b
-    MOV EDX,dword ptr [0x01c38b98]      ; 004e268f | DAT_01c38b98
+    MOV EDX,dword ptr [0x01c38b98]      ; 004e268f | g_LightDirectionZ
     ADD ECX,EAX                         ; 004e2695
     MOV EAX,EDI                         ; 004e2697
     IMUL EDX                            ; 004e2699
@@ -74,12 +74,12 @@ section .text
     MOV EBX,0xffff                      ; 004e26b6
     MOV EDX,0xffff                      ; 004e26bb
         ;   Label: LAB_004e26bb
-    MOV EBP,dword ptr [0x00617e40]      ; 004e26c0 | DAT_00617e40
+    MOV EBP,dword ptr [0x00617e40]      ; 004e26c0 | g_AmbientLightLevel
     MOV EAX,EBX                         ; 004e26c6
     SUB EDX,EBP                         ; 004e26c8
     IMUL EDX                            ; 004e26ca
     SHRD EAX,EDX,0x10                   ; 004e26cc
-    MOV EBX,dword ptr [0x00617e40]      ; 004e26d0 | DAT_00617e40
+    MOV EBX,dword ptr [0x00617e40]      ; 004e26d0 | g_AmbientLightLevel
     ADD EBX,EAX                         ; 004e26d6
     TEST EBX,EBX                        ; 004e26d8
     JL 0x004e2849                       ; 004e26da
@@ -88,7 +88,7 @@ section .text
     JLE 0x004e26ed                      ; 004e26e6
         ;   XREF to: 004e26ed (CONDITIONAL_JUMP)  ; LAB_004e26ed
     MOV EBX,0xffff                      ; 004e26e8
-    CMP dword ptr [0x00617e44],0x0      ; 004e26ed | DAT_00617e44
+    CMP dword ptr [0x00617e44],0x0      ; 004e26ed | g_SpecularEnabled
         ;   Label: LAB_004e26ed
     JZ 0x004e2850                       ; 004e26f4
         ;   XREF to: 004e2850 (CONDITIONAL_JUMP)  ; LAB_004e2850
@@ -97,13 +97,13 @@ section .text
     IMUL EDX                            ; 004e26fe
     SHRD EAX,EDX,0x10                   ; 004e2700
     LEA EBP,[EAX + EAX*0x1]             ; 004e2704
-    MOV EDX,dword ptr [0x01c38b90]      ; 004e2707 | DAT_01c38b90
+    MOV EDX,dword ptr [0x01c38b90]      ; 004e2707 | g_LightDirectionX
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004e270d
     SUB EBP,EDX                         ; 004e2711
     MOV EDX,ECX                         ; 004e2713
     IMUL EDX                            ; 004e2715
     SHRD EAX,EDX,0x10                   ; 004e2717
-    MOV ESI,dword ptr [0x01c38b94]      ; 004e271b | DAT_01c38b94
+    MOV ESI,dword ptr [0x01c38b94]      ; 004e271b | g_LightDirectionY
     ADD EAX,EAX                         ; 004e2721
     SUB EAX,ESI                         ; 004e2723
     MOV EDX,ECX                         ; 004e2725
@@ -111,42 +111,42 @@ section .text
     MOV EAX,EDI                         ; 004e272b
     IMUL EDX                            ; 004e272d
     SHRD EAX,EDX,0x10                   ; 004e272f
-    MOV EDI,dword ptr [0x01c38b98]      ; 004e2733 | DAT_01c38b98
+    MOV EDI,dword ptr [0x01c38b98]      ; 004e2733 | g_LightDirectionZ
     ADD EAX,EAX                         ; 004e2739
     SUB EAX,EDI                         ; 004e273b
-    MOV EDX,dword ptr [0x01d03510]      ; 004e273d | DAT_01d03510
+    MOV EDX,dword ptr [0x01d03510]      ; 004e273d | g_CachedViewPosition
     MOV dword ptr [ESP + 0x10],EAX      ; 004e2743
-    CMP EDX,dword ptr [0x01c38b6c]      ; 004e2747 | DAT_01c38b6c
+    CMP EDX,dword ptr [0x01c38b6c]      ; 004e2747 | g_RelativeX
     JZ 0x004e2861                       ; 004e274d
         ;   XREF to: 004e2861 (CONDITIONAL_JUMP)  ; LAB_004e2861
-    MOV EAX,[0x01c38b6c]                ; 004e2753 | DAT_01c38b6c
+    MOV EAX,[0x01c38b6c]                ; 004e2753 | g_RelativeX
         ;   Label: LAB_004e2753
-    PUSH 0x1d03510                      ; 004e2758 | DAT_01d03510
-    MOV [0x01d03510],EAX                ; 004e275d | DAT_01d03510
-    MOV EAX,[0x01c38b70]                ; 004e2762 | DAT_01c38b70
+    PUSH 0x1d03510                      ; 004e2758 | g_CachedViewPosition
+    MOV [0x01d03510],EAX                ; 004e275d | g_CachedViewPosition
+    MOV EAX,[0x01c38b70]                ; 004e2762 | g_RelativeY
     LEA ESI,[ESP + 0x4]                 ; 004e2767
-    MOV [0x01d03514],EAX                ; 004e276b | DAT_01d03514
-    MOV EAX,[0x01c38b74]                ; 004e2770 | DAT_01c38b74
+    MOV [0x01d03514],EAX                ; 004e276b | g_CachedViewPosition.y
+    MOV EAX,[0x01c38b74]                ; 004e2770 | g_RelativeZ
     MOV EDI,0x1d0351c                   ; 004e2775
-    MOV [0x01d03518],EAX                ; 004e277a | DAT_01d03518
+    MOV [0x01d03518],EAX                ; 004e277a | g_CachedViewPosition.z
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_004e9ae0 ; 004e277f
-        ;   XREF to: 004e9ae0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFloat_FUN_004e9ae0()
+        ;   XREF to: 004e9ae0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_004e9ae0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x4]                 ; 004e2784
     ADD ESP,0x4                         ; 004e2788
-    MOVSD ES:EDI,ESI                    ; 004e278b | DAT_01d0351c
-    MOVSD ES:EDI,ESI                    ; 004e278c | DAT_01d03520
-    MOVSD ES:EDI,ESI                    ; 004e278d | DAT_01d03524
-    MOV EDX,dword ptr [0x01d0351c]      ; 004e278e | DAT_01d0351c
+    MOVSD ES:EDI,ESI                    ; 004e278b | g_NormalizedViewVector
+    MOVSD ES:EDI,ESI                    ; 004e278c | g_NormalizedViewVector.y
+    MOVSD ES:EDI,ESI                    ; 004e278d | g_NormalizedViewVector.z
+    MOV EDX,dword ptr [0x01d0351c]      ; 004e278e | g_NormalizedViewVector
         ;   Label: LAB_004e278e
     MOV EAX,EBP                         ; 004e2794
     IMUL EDX                            ; 004e2796
     SHRD EAX,EDX,0x10                   ; 004e2798
-    MOV EDX,dword ptr [0x01d03520]      ; 004e279c | DAT_01d03520
+    MOV EDX,dword ptr [0x01d03520]      ; 004e279c | g_NormalizedViewVector.y
     MOV ECX,EAX                         ; 004e27a2
     MOV EAX,dword ptr [ESP + 0xc]       ; 004e27a4
     IMUL EDX                            ; 004e27a8
     SHRD EAX,EDX,0x10                   ; 004e27aa
-    MOV EDX,dword ptr [0x01d03524]      ; 004e27ae | DAT_01d03524
+    MOV EDX,dword ptr [0x01d03524]      ; 004e27ae | g_NormalizedViewVector.z
     ADD ECX,EAX                         ; 004e27b4
     MOV EAX,dword ptr [ESP + 0x10]      ; 004e27b6
     IMUL EDX                            ; 004e27ba
@@ -178,14 +178,14 @@ section .text
     IMUL EDX                            ; 004e2801
     SHRD EAX,EDX,0x10                   ; 004e2803
     MOV ECX,EAX                         ; 004e2807
-    MOV EAX,[0x00617e48]                ; 004e2809 | DAT_00617e48
+    MOV EAX,[0x00617e48]                ; 004e2809 | g_DiffuseLightMultiplier
         ;   Label: LAB_004e2809
     MOV EDX,EBX                         ; 004e280e
     IMUL EDX                            ; 004e2810
     SHRD EAX,EDX,0x10                   ; 004e2812
     MOV EBX,EAX                         ; 004e2816
     MOV EDX,ECX                         ; 004e2818
-    MOV EAX,[0x00617e4c]                ; 004e281a | DAT_00617e4c
+    MOV EAX,[0x00617e4c]                ; 004e281a | g_SpecularLightMultiplier
     IMUL EDX                            ; 004e281f
     SHRD EAX,EDX,0x10                   ; 004e2821
     LEA EDX,[EBX + EAX*0x1]             ; 004e2825
@@ -210,7 +210,7 @@ section .text
         ;   Label: LAB_004e2849
     JMP 0x004e26ed                      ; 004e284b
         ;   XREF to: 004e26ed (UNCONDITIONAL_JUMP)  ; LAB_004e26ed
-    MOV EAX,[0x00617e48]                ; 004e2850 | DAT_00617e48
+    MOV EAX,[0x00617e48]                ; 004e2850 | g_DiffuseLightMultiplier
         ;   Label: LAB_004e2850
     MOV EDX,EBX                         ; 004e2855
     IMUL EDX                            ; 004e2857
@@ -218,13 +218,13 @@ section .text
     MOV EDX,EAX                         ; 004e285d
     JMP 0x004e2828                      ; 004e285f
         ;   XREF to: 004e2828 (UNCONDITIONAL_JUMP)  ; LAB_004e2828
-    MOV ECX,dword ptr [0x01d03514]      ; 004e2861 | DAT_01d03514
+    MOV ECX,dword ptr [0x01d03514]      ; 004e2861 | g_CachedViewPosition.y
         ;   Label: LAB_004e2861
-    CMP ECX,dword ptr [0x01c38b70]      ; 004e2867 | DAT_01c38b70
+    CMP ECX,dword ptr [0x01c38b70]      ; 004e2867 | g_RelativeY
     JNZ 0x004e2753                      ; 004e286d
         ;   XREF to: 004e2753 (CONDITIONAL_JUMP)  ; LAB_004e2753
-    MOV ESI,dword ptr [0x01d03518]      ; 004e2873 | DAT_01d03518
-    CMP ESI,dword ptr [0x01c38b74]      ; 004e2879 | DAT_01c38b74
+    MOV ESI,dword ptr [0x01d03518]      ; 004e2873 | g_CachedViewPosition.z
+    CMP ESI,dword ptr [0x01c38b74]      ; 004e2879 | g_RelativeZ
     JNZ 0x004e2753                      ; 004e287f
         ;   XREF to: 004e2753 (CONDITIONAL_JUMP)  ; LAB_004e2753
     JMP 0x004e278e                      ; 004e2885

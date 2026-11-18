@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_00504510(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_00504510(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; *****************************************************************************
 

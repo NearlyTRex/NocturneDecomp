@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 65,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
-    "suspect_count": 2,
+    "pseudocode_lines": 34,
+    "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 151
+    "total_lines": 150
   },
   "cross_references": [
     {
       "addr": "004a1d00",
       "from_addr": "004a37bd",
-      "name": "core_event.cpp_FUN_004a1d00",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -73,8 +72,8 @@
     },
     {
       "addr": "01cc4470",
-      "name": "DAT_01cc4470",
-      "type": "undefined4",
+      "name": "g_INT_01cc4470",
+      "type": "int",
       "value": null
     }
   ],
@@ -84,7 +83,7 @@
       {
         "call_addr": "004a37bd",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_004a1d00",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,14 +188,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004bdc23) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
     }
   ]
 }

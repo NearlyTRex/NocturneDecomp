@@ -10,18 +10,18 @@ void __cdecl core_fire_cpp_loadGunFlameAssets_FUN_004b2af0(void)
 
 {
   int iVar1;
-  int iVar2;
+  SMRGLTextureBasic *texture;
   char *buffer;
   
-  iVar2 = 0;
-  buffer = (char *)0x1c58590;
+  iVar1 = 0;
+  buffer = g_GunFlameTextures[0].texture_name;
   do {
-    iVar1 = iVar2 * 0x18;
+    texture = g_GunFlameTextures + iVar1;
     _sprintf(buffer,"fr46%03d.raw");
     buffer = buffer + 0x18;
-    iVar2 = iVar2 + 1;
+    iVar1 = iVar1 + 1;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (DAT_00612560,(SMRGLTextureBasic *)(iVar1 + 0x1c58588));
-  } while (iVar2 < 0x14);
+              (g_CDemonRenderer_PTR_00612560,texture);
+  } while (iVar1 < 0x14);
   return;
 }

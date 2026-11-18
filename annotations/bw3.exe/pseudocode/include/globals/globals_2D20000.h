@@ -4,7 +4,15 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "system/windef.h"
+#include "system/winnt.h"
+#include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2D20000
@@ -14,6 +22,11 @@
 extern CDemonActorType g_CWerewolfClassInfo;
 extern CDemonActorType g_CYowClassInfo;
 extern CDemonActorType g_CZombieClassInfo;
+extern CDemonActorType g_CDemonActorType_02d24844;
+extern CDemonActorType g_CDemonActorType_02d24880;
+extern CDemonActorType g_CDemonActorType_02d248bc;
+extern CDemonActorType g_CDemonActorType_02d248f8;
+extern CDemonActorType g_CDemonActorType_02d24934;
 extern CDemonActorType g_CZombiePriestClassInfo;
 extern CDemonActorType g_CKedwardClassInfo;
 extern CDemonActorType g_CMattanntoteClassInfo;
@@ -21,6 +34,7 @@ extern CDemonActorType g_CTawiscaraClassInfo;
 extern CDemonActorType g_CBaalClassInfo;
 extern CDemonActorType g_CHecaitomixClassInfo;
 extern CDemonActorType g_CDarkwolfClassInfo;
+extern CDemonActorType g_CDemonActorType_02d24b5c;
 extern CDemonActorType g_CSpiritEagleClassInfo;
 extern CDemonActorType g_CSpiritIndianClassInfo;
 extern CDemonActorType g_CSpiritBearClassInfo;
@@ -28,6 +42,155 @@ extern CDemonActorType g_CHinoClassInfo;
 extern CDemonActorType g_CStylerClassInfo;
 extern CDemonActorType g_CStylerDemonClassInfo;
 extern CDemonActorType g_CAsgayaClassInfo;
+
+// CVector3f
+extern CVector3f g_WerewolfEyeGlowOffsetLeft;
+extern CVector3f g_WerewolfEyeGlowOffsetRight;
+extern CVector3f g_CVector3f_02d24a54;
+extern CVector3f g_CVector3f_02d24a60;
+
+// CVector3i
+extern CVector3i g_TempProjectedCoord;
+
+// DWORD
+extern DWORD g_PreviousCounterLow;
+
+// FileListNode*
+extern FileListNode* g_AllocatedListHead;
+extern FileListNode* g_FreeListHeadPointer;
+
+// HMODULE
+extern HMODULE g_WinmmDll;
+
+// HWND
+extern HWND g_MainWindowHandle;
+
+// SRenderVertex[32]
+extern SRenderVertex g_ClipVertexBufferStage2[32];
+extern SRenderVertex g_ClipVertexBufferStage1[32];
+extern SRenderVertex g_ClipVertexBufferStage3[32];
+extern SRenderVertex g_ClipVertexBufferStage4[32];
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_02d24d84[16];
+
+// WCHAR*
+extern WCHAR* g_CommandLineW;
+
+// _struct_19
+extern _struct_19 g_PerformanceCounter;
+extern _struct_19 g_PerformanceFrequency;
+
+// byte
+extern byte g_BYTE_02d20334;
+extern byte g_SignalHandlingActive;
+
+// char*
+extern char* g_CHAR_PTR_02d2281c;
+extern char* g_CommandLineA;
+
+// char**
+extern char** g_EnvironStringArea;
+extern char** g_EnvironmentBlock;
+
+// char[16]
+extern char g_CHAR_ARRAY_02d258e0[16];
+
+// char[1]
+extern char g_CHAR_ARRAY_02d25940[1];
+
+// char[256]
+extern char g_LeadByteTable[256];
+
+// char[260]
+extern char g_ExeFileNameBuffer_A[260];
+extern char g_DllFileNameBuffer_A[260];
+
+// char[6200]
+extern char g_CHAR_ARRAY_02d20340[6200];
+
+// double
+extern double g_TimerCalibration;
+
+// float
+extern float g_FLOAT_02d224f0;
+extern float g_FLOAT_02d224f4;
+
+// int
+extern int g_PreviousCounterHigh;
+extern int g_AccumulatedGameTime;
+extern int g_InputReadIndex;
+extern int g_InputWriteIndex;
+extern int g_InputCountOld;
+extern int g_CrosshairBrightness;
+extern int g_INT_02d21b7c;
+extern int g_InputDisabled;
+extern int g_FocusRegained;
+extern int g_TotalPhysicalMemory;
+extern int g_AvailableSwapSpace;
+extern int g_INT_02d224f8;
+extern int g_INT_02d22818;
+extern int g_INT_02d22fa4;
+extern int g_MovieWindowHandle;
+extern int g_MovieHandle;
+extern int g_MoviePlaying;
+extern int g_FullscreenMovie;
+extern int g_ClipVertexCountStage1;
+extern int g_ClipVertexCountStage2;
+extern int g_ClipVertexCountStage3;
+extern int g_ClipVertexCountStage4;
+extern int g_INT_02d24970;
+extern int g_INT_02d24974;
+extern int g_INT_02d24978;
+extern int g_INT_02d24984;
+extern int g_INT_02d24988;
+extern int g_INT_02d24994;
+extern int g_INT_02d24998;
+extern int g_INT_02d2499c;
+extern int g_INT_02d24c4c;
+extern int g_INT_02d24c70;
+extern int g_INT_02d24c78;
+extern int g_INT_02d24cf4;
+extern int g_INT_02d24cf8;
+extern int g_INT_02d24cfc;
+extern int g_INT_02d24d00;
+extern int g_INT_02d24d04;
+extern int g_RasterizerEdgeCount;
+extern int g_RasterizerMinY;
+extern int g_RasterizerMaxY;
+extern int g_INT_02d25290;
+extern int g_EmergencyExitFlag;
+extern int g_EnvironInitialized;
+extern int g_MultibyteLocaleActive;
+extern int g_INT_02d261b0;
+extern int g_INT_02d261b4;
+extern int g_BufferedCharacter;
+extern int g_BufferedVirtualKey;
+extern int g_BufferedRepeatCount;
+
+// int[1]
+extern int g_UseMultimediaTimer[1];
+extern int g_INT_ARRAY_02d22ed4[1];
+
+// int[20]
+extern int g_InputBuffer[20];
+
+// int[600]
+extern int g_INT_ARRAY_02d21b90[600];
+
+// uint
+extern uint g_UINT_02d20258;
+
+// void*
+extern void* g_joyGetPosEx;
+extern void* g_CurrentThreadTlsBlock;
+extern void* g_PTR_02d261b8;
+extern void* g_PTR_02d261e0;
+extern void* g_PTR_02d261f0;
+
+// wchar_t[260]
+extern wchar_t g_ExeFileNameBuffer_W[260];
+extern wchar_t g_DllFileNameBuffer_W[260];
 
 // word
 extern word DAT_02D270D6;

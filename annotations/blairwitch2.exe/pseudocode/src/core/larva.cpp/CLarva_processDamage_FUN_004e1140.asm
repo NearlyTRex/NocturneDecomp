@@ -8,21 +8,21 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dbe81
-;   undefined4 DAT_005dbe85
-;   undefined4 DAT_005dbe89
+;   TerminatedCString s_sml_005dbe81
+;   TerminatedCString s_med_005dbe85
+;   TerminatedCString s_big_005dbe89
 ;   TerminatedCString s_l_s_die_wav_005dbe9e
 ;   TerminatedCString s_l_s_shot_wav_005dbeab
-;   undefined4 DAT_005dbebe
-;   undefined4 DAT_005dbec6
+;   double g_DOUBLE_005dbebe = 0.300000000000000
+;   double g_DOUBLE_005dbec6 = 0.700000000000000
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -53,8 +53,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 004e1171
     PUSH ESI                            ; 004e1177
     MOV dword ptr [EBX + 0x25a8],0x0    ; 004e1178
-    CALL core_motion.cpp_FUN_005035c0   ; 004e1182
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004e1182
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004e1187
     ADD ESP,0x4                         ; 004e118a
     CMP EAX,0x5                         ; 004e118d
@@ -84,13 +84,13 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 004e11c8
     FLD float ptr [ESP + 0x10]          ; 004e11cc
     FST double ptr [ESP + 0x8]          ; 004e11d0
-    FCOMP double ptr [0x005dbebe]       ; 004e11d4 | DAT_005dbebe
+    FCOMP double ptr [0x005dbebe]       ; 004e11d4 | g_DOUBLE_005dbebe
     FNSTSW AX                           ; 004e11da
     SAHF                                ; 004e11dc
     JNC 0x004e1274                      ; 004e11dd
         ;   XREF to: 004e1274 (CONDITIONAL_JUMP)  ; LAB_004e1274
-    MOV EAX,0x5dbe81                    ; 004e11e3 | DAT_005dbe81
-    PUSH EAX                            ; 004e11e8 | DAT_005dbe81 | DAT_005dbe85 | DAT_005dbe89
+    MOV EAX,0x5dbe81                    ; 004e11e3 | = "sml"
+    PUSH EAX                            ; 004e11e8 | = "sml" | s_med_005dbe85 | s_big_005dbe89
         ;   Label: LAB_004e11e8
     PUSH 0x5dbe9e                       ; 004e11e9 | = "l%s-die?.wav"
     LEA EAX,[ESP + 0x84]                ; 004e11ee
@@ -112,8 +112,8 @@ section .text
     PUSH EBX                            ; 004e121d
     LEA ESI,[ESP + 0xe8]                ; 004e121e
     LEA EDI,[ESP + 0xf4]                ; 004e1225
-    CALL core_actor.cpp_FUN_00408d70    ; 004e122c
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004e122c
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xe8]                ; 004e1231
     ADD ESP,0x8                         ; 004e1238
     MOVSD ES:EDI,ESI                    ; 004e123b
@@ -144,15 +144,15 @@ section .text
     RET                                 ; 004e1273
     FLD double ptr [ESP + 0x8]          ; 004e1274
         ;   Label: LAB_004e1274
-    FCOMP double ptr [0x005dbec6]       ; 004e1278 | DAT_005dbec6
+    FCOMP double ptr [0x005dbec6]       ; 004e1278 | g_DOUBLE_005dbec6
     FNSTSW AX                           ; 004e127e
     SAHF                                ; 004e1280
     JNC 0x004e128d                      ; 004e1281
         ;   XREF to: 004e128d (CONDITIONAL_JUMP)  ; LAB_004e128d
-    MOV EAX,0x5dbe85                    ; 004e1283 | DAT_005dbe85
+    MOV EAX,0x5dbe85                    ; 004e1283 | = "med"
     JMP 0x004e11e8                      ; 004e1288
         ;   XREF to: 004e11e8 (UNCONDITIONAL_JUMP)  ; LAB_004e11e8
-    MOV EAX,0x5dbe89                    ; 004e128d | DAT_005dbe89
+    MOV EAX,0x5dbe89                    ; 004e128d | = "big"
         ;   Label: LAB_004e128d
     JMP 0x004e11e8                      ; 004e1292
         ;   XREF to: 004e11e8 (UNCONDITIONAL_JUMP)  ; LAB_004e11e8
@@ -174,13 +174,13 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 004e12bf
     FLD float ptr [ESP + 0x14]          ; 004e12c3
     FST double ptr [ESP]                ; 004e12c7
-    FCOMP double ptr [0x005dbebe]       ; 004e12ca | DAT_005dbebe
+    FCOMP double ptr [0x005dbebe]       ; 004e12ca | g_DOUBLE_005dbebe
     FNSTSW AX                           ; 004e12d0
     SAHF                                ; 004e12d2
     JNC 0x004e131d                      ; 004e12d3
         ;   XREF to: 004e131d (CONDITIONAL_JUMP)  ; LAB_004e131d
-    MOV EAX,0x5dbe81                    ; 004e12d5 | DAT_005dbe81
-    PUSH EAX                            ; 004e12da | DAT_005dbe81 | DAT_005dbe85 | DAT_005dbe89
+    MOV EAX,0x5dbe81                    ; 004e12d5 | = "sml"
+    PUSH EAX                            ; 004e12da | = "sml" | s_med_005dbe85 | s_big_005dbe89
         ;   Label: LAB_004e12da
     PUSH 0x5dbeab                       ; 004e12db | = "l%s-shot?.wav"
     LEA EAX,[ESP + 0x20]                ; 004e12e0
@@ -207,15 +207,15 @@ section .text
         ;   XREF to: 004e1216 (UNCONDITIONAL_JUMP)  ; LAB_004e1216
     FLD double ptr [ESP]                ; 004e131d
         ;   Label: LAB_004e131d
-    FCOMP double ptr [0x005dbec6]       ; 004e1320 | DAT_005dbec6
+    FCOMP double ptr [0x005dbec6]       ; 004e1320 | g_DOUBLE_005dbec6
     FNSTSW AX                           ; 004e1326
     SAHF                                ; 004e1328
     JNC 0x004e1332                      ; 004e1329
         ;   XREF to: 004e1332 (CONDITIONAL_JUMP)  ; LAB_004e1332
-    MOV EAX,0x5dbe85                    ; 004e132b | DAT_005dbe85
+    MOV EAX,0x5dbe85                    ; 004e132b | = "med"
     JMP 0x004e12da                      ; 004e1330
         ;   XREF to: 004e12da (UNCONDITIONAL_JUMP)  ; LAB_004e12da
-    MOV EAX,0x5dbe89                    ; 004e1332 | DAT_005dbe89
+    MOV EAX,0x5dbe89                    ; 004e1332 | = "big"
         ;   Label: LAB_004e1332
     JMP 0x004e12da                      ; 004e1337
         ;   XREF to: 004e12da (UNCONDITIONAL_JUMP)  ; LAB_004e12da

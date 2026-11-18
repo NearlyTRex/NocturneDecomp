@@ -10,8 +10,8 @@
 ;   core_biggs.cpp_factoryFuncBiggs_FUN_00414ce0 at 00414cf3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f3508
-;   undefined4 DAT_005f350c
+;   float g_FLOAT_005f3508 = 50
+;   float g_FLOAT_005f350c = 100
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
@@ -58,9 +58,9 @@ section .text
     LEA EDI,[EBX + 0x118a8]             ; 00414d71
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70 ; 00414d77
         ;   XREF to: 0044fd70 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(CKeyFramedModelInstance * this_ptr, char * filename)
-    FLD float ptr [0x005f3508]          ; 00414d7c | DAT_005f3508
+    FLD float ptr [0x005f3508]          ; 00414d7c | g_FLOAT_005f3508
     MOV dword ptr [EBX + 0x3430],0x3f19999a ; 00414d82
-    FLD float ptr [0x005f350c]          ; 00414d8c | DAT_005f350c
+    FLD float ptr [0x005f350c]          ; 00414d8c | g_FLOAT_005f350c
     MOV dword ptr [EBX + 0x3434],0x3f666666 ; 00414d92
     ADD ESP,0x8                         ; 00414d9c
     FXCH                                ; 00414d9f

@@ -17,9 +17,9 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_releaseFromGrab_FUN_00431440
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_00524850
 ;   core_motion.cpp_CMotionList_findStateIndex_FUN_00524150
-;   core_motion.cpp_FUN_00524a40
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
         ;   XREF to: 004eaf9d (CONDITIONAL_JUMP)  ; LAB_004eaf9d
     PUSH EAX                            ; 004eaf72
     PUSH ESI                            ; 004eaf73
-    CALL core_motion.cpp_FUN_00524a40   ; 004eaf74
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 004eaf74
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 004eaf79
     FLD float ptr [ESP + 0x8]           ; 004eaf7d
     FLDZ                                ; 004eaf81

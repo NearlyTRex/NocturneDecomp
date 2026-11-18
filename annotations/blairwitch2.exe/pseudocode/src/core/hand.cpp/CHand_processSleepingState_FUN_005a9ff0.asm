@@ -8,14 +8,14 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_MeleeAttack_005f0a5a+1
-;   undefined4 DAT_0060088c
+;   TerminatedCString s_MeleeAttack_005f0a5b
+;   float g_FLOAT_0060088c = 5
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 005a9ff6
     LEA ESI,[EBX + 0x2b4]               ; 005a9ffa
     PUSH ESI                            ; 005aa000
-    CALL core_motion.cpp_FUN_005035c0   ; 005aa001
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005aa001
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     FLD float ptr [EBX + 0x11864]       ; 005aa006
     FLDZ                                ; 005aa00c
     ADD ESP,0x4                         ; 005aa00e
@@ -114,8 +114,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 005aa0d0
         ;   Label: LAB_005aa0d0
     PUSH ESI                            ; 005aa0d6
-    CALL core_motion.cpp_FUN_005035c0   ; 005aa0d7
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005aa0d7
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005aa0dc
     ADD ESP,0x4                         ; 005aa0df
     TEST EAX,EAX                        ; 005aa0e2
@@ -141,16 +141,16 @@ section .text
     FMUL ST0                            ; 005aa118
     FADDP                               ; 005aa11a
     FSQRT                               ; 005aa11c
-    FCOMP float ptr [0x0060088c]        ; 005aa11e | DAT_0060088c
+    FCOMP float ptr [0x0060088c]        ; 005aa11e | g_FLOAT_0060088c
     FNSTSW AX                           ; 005aa124
     SAHF                                ; 005aa126
     JNC 0x005aa034                      ; 005aa127
         ;   XREF to: 005aa034 (CONDITIONAL_JUMP)  ; LAB_005aa034
-    PUSH 0x5f0a5b                       ; 005aa12d | s_MeleeAttack_005f0a5a+1
+    PUSH 0x5f0a5b                       ; 005aa12d | = "MeleeAttack"
     ADD EBX,0x10af8                     ; 005aa132
     PUSH EBX                            ; 005aa138
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aa139
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aa139
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aa13e
     ADD ESP,0x8                         ; 005aa141
     POP EDI                             ; 005aa144

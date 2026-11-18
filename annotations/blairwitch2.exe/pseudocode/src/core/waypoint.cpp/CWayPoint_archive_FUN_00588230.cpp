@@ -15,7 +15,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_00588230(CWayPoint *this_pt
   
   core_trigger_cpp_CTrigger_archive_FUN_005780e0(&this_ptr->base);
   if (g_CWayPointClassVersion < 2) {
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&pCStack_14,"?nextWayPoint" + 1);
+    core_actor_cpp_archiveActor_FUN_0040b9e0(&pCStack_14,"nextWayPoint");
   }
   if (1 < g_CWayPointClassVersion) {
     iVar1 = 0;

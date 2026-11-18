@@ -21,6 +21,6 @@ CDemonPod * __cdecl CDemonPod::ctor(CDemonPod *this_ptr);
 // Address: 0051c130
 CDemonPod * __cdecl CDemonPod::dtor(CDemonPod *this_ptr,uint flags);
 
-// Original: core_podmain.cpp_FUN_0051c190
+// Original: core_podmain.cpp_setMaxViewportScanline_FUN_0051c190
 // Address: 0051c190
-void FUN_0051c190(void);
+void __cdecl setMaxViewportScanline(int max);

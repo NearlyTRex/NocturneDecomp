@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059f570
-;   core_basicene.cpp_FUN_005a01a0
+;   core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0
+;   core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;
 ; *****************************************************************************
@@ -47,12 +47,12 @@ section .text
     PUSH 0x0                            ; 005a40cc
     PUSH dword ptr [EBX + 0x113c4]      ; 005a40ce
     PUSH EBX                            ; 005a40d4
-    CALL core_basicene.cpp_FUN_005a01a0 ; 005a40d5
-        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a01a0()
+    CALL core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0 ; 005a40d5
+        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0(CBasicEnemy * this_ptr, float fade_start, float fade_end, float fade_time)
     ADD ESP,0x10                        ; 005a40da
     PUSH EBX                            ; 005a40dd
-    CALL core_basicene.cpp_FUN_0059f570 ; 005a40de
-        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f570()
+    CALL core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570 ; 005a40de
+        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a40e3
     POP EBX                             ; 005a40e6
     RET                                 ; 005a40e7

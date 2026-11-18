@@ -9,13 +9,13 @@
 // Address: 00416de0
 void __cdecl staticInit(void);
 
-// Original: core_boneguy.cpp_FUN_00416e90
+// Original: core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_00416e90
 // Address: 00416e90
-void FUN_00416e90(int param_1);
+CVector3f * __stack_esi getLocalBoundingBoxCenter(CDemonActor *actor,CVector3f *out);
 
 // Original: core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00416f50
 // Address: 00416f50
-void getWorldBoundingBoxCenter(int param_1);
+CVector3f * __stack_esi getWorldBoundingBoxCenter(CDemonActor *actor,CVector3f *out);
 
 // Original: core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417050
 // Address: 00417050
@@ -27,11 +27,11 @@ CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_rgbToHsv_FUN_00417080
 // Address: 00417080
-void rgbToHsv(void);
+CColor3f * __stack_esi rgbToHsv(CColor3f *in_rgb,CColor3f *out_hsv);
 
 // Original: core_boneguy.cpp_hsvToRgb_FUN_00417240
 // Address: 00417240
-void hsvToRgb(float *param_1);
+CColor3f * __stack_esi hsvToRgb(CColor3f *in_hsv,CColor3f *out_rgb);
 
 // Original: core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400
 // Address: 00417400
@@ -93,9 +93,9 @@ ECollisionType __cdecl CBoneGuy::getCollisionType(CBoneGuy *this_ptr,SCollisionI
 // Address: 00419880
 EDeathState __cdecl CBoneGuy::getDeathState(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_004198b0
+// Original: core_boneguy.cpp_factoryFuncSkeletonForest_FUN_004198b0
 // Address: 004198b0
-void FUN_004198b0(void);
+CSkeletonForest * __cdecl factoryFuncSkeletonForest(void);
 
 // Original: core_boneguy.cpp_CSkeletonForest_getActorType_FUN_004198d0
 // Address: 004198d0
@@ -105,9 +105,9 @@ CDemonActorType * __cdecl CSkeletonForest::getActorType(CSkeletonForest *this_pt
 // Address: 004198e0
 CSkeletonForest * __cdecl CSkeletonForest::ctor(CSkeletonForest *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_00419950
+// Original: core_boneguy.cpp_factoryFuncSkeletonIndian_FUN_00419950
 // Address: 00419950
-void FUN_00419950(void);
+CSkeletonIndian * __cdecl factoryFuncSkeletonIndian(void);
 
 // Original: core_boneguy.cpp_CSkeletonIndian_getActorType_FUN_00419970
 // Address: 00419970
@@ -117,9 +117,9 @@ CDemonActorType * __cdecl CSkeletonIndian::getActorType(CSkeletonIndian *this_pt
 // Address: 00419980
 CSkeletonIndian * __cdecl CSkeletonIndian::ctor(CSkeletonIndian *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_004199f0
+// Original: core_boneguy.cpp_factoryFuncSkeletonDemon_FUN_004199f0
 // Address: 004199f0
-void FUN_004199f0(void);
+CSkeletonDemon * __cdecl factoryFuncSkeletonDemon(void);
 
 // Original: core_boneguy.cpp_CSkeletonDemon_getActorType_FUN_00419a10
 // Address: 00419a10
@@ -129,9 +129,9 @@ CDemonActorType * __cdecl CSkeletonDemon::getActorType(CSkeletonDemon *this_ptr)
 // Address: 00419a20
 CSkeletonDemon * __cdecl CSkeletonDemon::ctor(CSkeletonDemon *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_00419a90
+// Original: core_boneguy.cpp_factoryFuncBaalSkel_FUN_00419a90
 // Address: 00419a90
-void FUN_00419a90(void);
+CBaalSkel * __cdecl factoryFuncBaalSkel(void);
 
 // Original: core_boneguy.cpp_CBaalSkel_getActorType_FUN_00419ab0
 // Address: 00419ab0

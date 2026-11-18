@@ -2,44 +2,39 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 134,
+    "complexity_score": 12,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 10,
-    "suspect_types": [
-      "param_count_too_few",
-      "unaffected_reg",
-      "unnamed_param",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 40
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
   },
   "cross_references": [
     {
       "addr": "005a0bd0",
       "from_addr": "005a0d20",
-      "name": "core_confedrt.cpp_FUN_005a0bd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00450c60",
-      "from_addr": "004516f9",
-      "name": "core_doc.cpp_FUN_00450c60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00455d10",
-      "from_addr": "00455de7",
-      "name": "core_doc.cpp_FUN_00455d10",
+      "name": "core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004562a0",
       "from_addr": "00456301",
-      "name": "core_doc.cpp_FUN_004562a0",
+      "name": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00450c60",
+      "from_addr": "004516f9",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00450c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00455d10",
+      "from_addr": "00455de7",
+      "name": "core_doc.cpp_CDoc_updateLantern_FUN_00455d10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,7 +52,7 @@
     {
       "addr": "00520140",
       "from_addr": "005201a9",
-      "name": "core_scat.cpp_FUN_00520140",
+      "name": "core_scat.cpp_CScat_blendAimBones_FUN_00520140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,7 +64,7 @@
     {
       "addr": "005a61f0",
       "from_addr": "005a63b7",
-      "name": "core_weaver.cpp_FUN_005a61f0",
+      "name": "core_weaver.cpp_CRobin_processAI_FUN_005a61f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -81,17 +76,17 @@
         "00594059"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "core_xform.cpp_quaternionFromAngleZ_FUN_00594020",
-    "signature": "void core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float param_1)"
+    "signature": "CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float angle_radians,CQuaternion4f *quat_out)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "005eedb2",
-      "name": "DAT_005eedb2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005eedb2",
+      "type": "float",
+      "value": "0.5"
     }
   ],
   "param_estimates": {
@@ -100,26 +95,23 @@
       {
         "call_addr": "004516f9",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00450c60",
-        "estimated_params": 2,
+        "caller": "core_doc.cpp_CDoc_processFrame_FUN_00450c60",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00455de7",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00455d10",
-        "estimated_params": 3,
+        "caller": "core_doc.cpp_CDoc_updateLantern_FUN_00455d10",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -127,12 +119,12 @@
       {
         "call_addr": "00456301",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004562a0",
+        "caller": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -140,13 +132,12 @@
       {
         "call_addr": "0045634f",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004562a0",
-        "estimated_params": 3,
+        "caller": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -154,12 +145,12 @@
       {
         "call_addr": "00456689",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004562a0",
+        "caller": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -167,13 +158,12 @@
       {
         "call_addr": "004566da",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004562a0",
-        "estimated_params": 3,
+        "caller": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -186,7 +176,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -194,12 +184,12 @@
       {
         "call_addr": "005201a9",
         "call_type": "direct",
-        "caller": "core_scat.cpp_FUN_00520140",
+        "caller": "core_scat.cpp_CScat_blendAimBones_FUN_00520140",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -207,12 +197,12 @@
       {
         "call_addr": "00520225",
         "call_type": "direct",
-        "caller": "core_scat.cpp_FUN_00520140",
+        "caller": "core_scat.cpp_CScat_blendAimBones_FUN_00520140",
         "estimated_params": 2,
         "instructions_analyzed": 10,
         "method": "push_count",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -225,17 +215,17 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.28,
@@ -291,10 +281,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -324,6 +314,13 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "angle_radians",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -344,89 +341,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (float10)fcos((float10)param_1 * (float10)_DAT_005eedb2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = (float10)fsin((float10)param_1 * (float10)_DAT_005eedb2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = (float)fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[3] = (float)fVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 14,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

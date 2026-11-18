@@ -15,7 +15,7 @@ section .text
     PUSH 0x59c                          ; 004d1930
         ;   Label: core_heal.cpp_factoryFuncHeal_FUN_004d1930
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004d1935
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004d193a
     TEST EAX,EAX                        ; 004d193d
     JNZ 0x004d1942                      ; 004d193f

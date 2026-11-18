@@ -10,7 +10,7 @@
 ; SCollisionInfo * Stack[0x10]:4   collision_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0e2d
+;   double g_DOUBLE_005f0e2d = -0.00100000000000000
 ;
 ; *****************************************************************************
 
@@ -64,7 +64,7 @@ section .text
     FSQRT                               ; 00557e8a
     FSUB double ptr [ESP + 0x48]        ; 00557e8c
     FST double ptr [ESP + 0x70]         ; 00557e90
-    FCOMP double ptr [0x005f0e2d]       ; 00557e94 | DAT_005f0e2d
+    FCOMP double ptr [0x005f0e2d]       ; 00557e94 | g_DOUBLE_005f0e2d
     FNSTSW AX                           ; 00557e9a
     SAHF                                ; 00557e9c
     JBE 0x00557eb1                      ; 00557e9d

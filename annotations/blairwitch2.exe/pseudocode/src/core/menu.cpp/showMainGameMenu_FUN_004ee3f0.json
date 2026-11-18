@@ -2,23 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 487,
-    "complexity_score": 516,
+    "complexity_score": 277,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 181,
-    "suspect_count": 30,
+    "pseudocode_lines": 182,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
-      "undefined_data",
-      "unresolved_funcptr",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 668
+    "total_lines": 669
   },
   "cross_references": [
     {
@@ -42,9 +38,19 @@
   },
   "function_calls": [
     {
+      "addr": "004bbf70",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70"
+    },
+    {
       "addr": "004b3000",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_saveClockTime_FUN_004b3000"
+    },
+    {
+      "addr": "004bc840",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004bc840"
     },
     {
       "addr": "004b3010",
@@ -52,29 +58,19 @@
       "name": "core_game.cpp_CGame_updateDT_FUN_004b3010"
     },
     {
-      "addr": "004bbf70",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004bbf70"
-    },
-    {
-      "addr": "004bc840",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004bc840"
-    },
-    {
       "addr": "004e45e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e45e0"
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_004e45e0"
     },
     {
       "addr": "004eb0e0",
       "is_variadic": false,
-      "name": "core_menu.cpp_FUN_004eb0e0"
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0"
     },
     {
       "addr": "004ee1a0",
       "is_variadic": false,
-      "name": "core_menu.cpp_FUN_004ee1a0"
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004ee1a0"
     },
     {
       "addr": "00502450",
@@ -134,7 +130,7 @@
     {
       "addr": "00575010",
       "is_variadic": false,
-      "name": "engine_texture.cpp_FUN_00575010"
+      "name": "engine_texture.cpp_clearTextureCache_FUN_00575010"
     },
     {
       "addr": "00550bc0",
@@ -220,9 +216,9 @@
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "00616494",
@@ -232,9 +228,9 @@
     },
     {
       "addr": "00617dd4",
-      "name": "DAT_00617dd4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d02f84"
     },
     {
       "addr": "00618088",
@@ -256,9 +252,9 @@
     },
     {
       "addr": "0061c068",
-      "name": "DAT_0061c068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
     },
     {
       "addr": "01cb6900",
@@ -280,103 +276,103 @@
     },
     {
       "addr": "01d02f84",
-      "name": "DAT_01d02f84",
-      "type": "undefined4",
+      "name": "g_PTR_01d02f84",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d082e0",
-      "name": "DAT_01d082e0",
-      "type": "undefined4",
+      "name": "g_MainMenuTextBuffers",
+      "type": "char[4][256]",
       "value": null
     },
     {
       "addr": "01d082e1",
-      "name": "DAT_01d082e1",
+      "name": "g_MainMenuTextBuffers[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d082e2",
-      "name": "DAT_01d082e2",
+      "name": "g_MainMenuTextBuffers[0][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d082e3",
-      "name": "DAT_01d082e3",
+      "name": "g_MainMenuTextBuffers[0][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d083e0",
-      "name": "DAT_01d083e0",
+      "name": "g_MainMenuTextBuffers[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d083e1",
-      "name": "DAT_01d083e1",
+      "name": "g_MainMenuTextBuffers[1][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d083e2",
-      "name": "DAT_01d083e2",
+      "name": "g_MainMenuTextBuffers[1][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d083e3",
-      "name": "DAT_01d083e3",
+      "name": "g_MainMenuTextBuffers[1][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d084e0",
-      "name": "DAT_01d084e0",
+      "name": "g_MainMenuTextBuffers[2][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d084e1",
-      "name": "DAT_01d084e1",
+      "name": "g_MainMenuTextBuffers[2][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d084e2",
-      "name": "DAT_01d084e2",
+      "name": "g_MainMenuTextBuffers[2][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d084e3",
-      "name": "DAT_01d084e3",
+      "name": "g_MainMenuTextBuffers[2][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d085e0",
-      "name": "DAT_01d085e0",
+      "name": "g_MainMenuTextBuffers[3][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d085e1",
-      "name": "DAT_01d085e1",
+      "name": "g_MainMenuTextBuffers[3][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d085e2",
-      "name": "DAT_01d085e2",
+      "name": "g_MainMenuTextBuffers[3][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d085e3",
-      "name": "DAT_01d085e3",
+      "name": "g_MainMenuTextBuffers[3][3]",
       "type": "undefined4",
       "value": null
     },
@@ -400,8 +396,8 @@
     },
     {
       "addr": "0264bba0",
-      "name": "DAT_0264bba0",
-      "type": "undefined4",
+      "name": "g_INT_0264bba0",
+      "type": "int",
       "value": null
     }
   ],
@@ -515,208 +511,32 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "if (DAT_006141bc < 0x1e0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_01d082e0",
-      "severity": "mild",
-      "text": "pcVar7 = &DAT_01d082e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_01d083e0",
-      "severity": "mild",
-      "text": "pcVar7 = &DAT_01d083e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_01d084e0",
-      "severity": "mild",
-      "text": "pcVar7 = &DAT_01d084e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_01d085e0",
-      "severity": "mild",
-      "text": "pcVar7 = &DAT_01d085e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_01d082e0",
-      "severity": "mild",
-      "text": "puVar5 = &DAT_01d082e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 105,
-      "match": "*(byte **)(iVar4 + 0x1d086e0",
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(char *)((int)pacVar6",
       "severity": "moderate",
-      "text": "*(byte **)(iVar4 + 0x1d086e0) = puVar5;",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 118,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)*0x01D02F84)(0x01D02F84,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 119,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((iVar4 == 0) || (iVar4 = (**(code **)*0x01D02F84)(0x01D02F84,0x1d), iVar4 == 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 120,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)*0x01D02F84)(0x01D02F84,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 152,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 152,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 156,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)*0x01D02F84)(0x01D02F84,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 157,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "if ((iVar4 != 0) && (iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x32), iVar4 != 0)) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 157,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((iVar4 != 0) && (iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x32), iVar4 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 162,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)*0x01D02F84)(0x01D02F84,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 164,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "((iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x20), iVar4 != 0 ||",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 164,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x20), iVar4 != 0 ||",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 165,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "(iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x26), iVar4 != 0)))) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 165,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x26), iVar4 != 0)))) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 170,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)*0x01D02F84)(0x01D02F84,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 172,
-      "match": "*(code **)(*0x01D02F84",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x21);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 172,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x21);",
-      "type": "unresolved_funcptr"
+      "text": "*(char *)((int)pacVar6 + 1) = cVar1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `&PTR_s_f0100_00618088` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 30,
       "match": "(int)&PTR_s_f0100_00618088",
       "severity": "moderate",
-      "text": "(this_ptr_00,*(char **)((int)&PTR_s_f0100_00618088 + iVar6),0x40,0x40);",
+      "text": "(this_ptr_00,*(char **)((int)&PTR_s_f0100_00618088 + iVar5),0x40,0x40);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_MenuTextPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 102,
+      "match": "(int)g_MenuTextPointers",
+      "severity": "moderate",
+      "text": "*(char (**) [256])((int)g_MenuTextPointers + iVar4) = pacVar6;",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 60,
+      "line": 57,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -724,7 +544,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 71,
+      "line": 68,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -732,7 +552,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 82,
+      "line": 79,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -740,7 +560,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 94,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -748,10 +568,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
+      "line": 30,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(this_ptr_00,*(char **)((int)&PTR_s_f0100_00618088 + iVar6),0x40,0x40);",
+      "text": "(this_ptr_00,*(char **)((int)&PTR_s_f0100_00618088 + iVar5),0x40,0x40);",
       "type": "pointer_cast"
     }
   ]

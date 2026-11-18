@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   button
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5fadc
-;   undefined4 DAT_01c5fae0
+;   int g_MouseX
+;   int g_MouseY
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00414345
     SHL EAX,0x2                         ; 00414349
     ADD EAX,EDX                         ; 0041434c
-    MOV ESI,dword ptr [0x01c5fadc]      ; 0041434e | DAT_01c5fadc
+    MOV ESI,dword ptr [0x01c5fadc]      ; 0041434e | g_MouseX
     MOV EDX,dword ptr [EAX + 0x88]      ; 00414354
     MOV EBX,dword ptr [EAX + 0x90]      ; 0041435a
     MOV ECX,dword ptr [EAX + 0x8c]      ; 00414360
@@ -40,7 +40,7 @@ section .text
     CMP EBX,ESI                         ; 00414374
     JL 0x0041438f                       ; 00414376
         ;   XREF to: 0041438f (CONDITIONAL_JUMP)  ; LAB_0041438f
-    MOV EBP,dword ptr [0x01c5fae0]      ; 00414378 | DAT_01c5fae0
+    MOV EBP,dword ptr [0x01c5fae0]      ; 00414378 | g_MouseY
     CMP ECX,EBP                         ; 0041437e
     JG 0x0041438f                       ; 00414380
         ;   XREF to: 0041438f (CONDITIONAL_JUMP)  ; LAB_0041438f

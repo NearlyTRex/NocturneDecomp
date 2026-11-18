@@ -49,9 +49,9 @@ int __cdecl CTentacle::attractActorToward(CTentacle *this_ptr,CDemonActor *actor
 // Address: 005732a0
 int __cdecl CTentacle::shouldIgnoreForTargeting(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_FUN_005732e0
+// Original: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005732e0
 // Address: 005732e0
-void FUN_005732e0(int param_1);
+CMatrix3x4f * __stack_esi CTentacle::computeGripBoneMatrix(CTentacle *this_ptr,CMatrix3x4f *out_matrix);
 
 // Original: core_tentacle.cpp_CTentacle_dtor_FUN_005733d0
 // Address: 005733d0

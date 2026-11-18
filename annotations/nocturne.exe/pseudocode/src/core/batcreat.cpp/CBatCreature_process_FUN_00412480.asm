@@ -74,7 +74,7 @@
 ;   float FLOAT_00599fb8 = 10
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CGore* g_CGorePtr = 01c78c7c
-;   undefined4 DAT_007645a4
+;   int g_INT_007645a4
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -365,7 +365,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00412767
     ADD ESP,0x8                         ; 0041276a
     LEA EAX,[EBP + 0xffffff4e]          ; 0041276d
-    MOV EDX,dword ptr [0x007645a4]      ; 00412773 | DAT_007645a4
+    MOV EDX,dword ptr [0x007645a4]      ; 00412773 | g_INT_007645a4
     PUSH EAX                            ; 00412779
     LEA EAX,[EDX*0x4 + 0x0]             ; 0041277a
     MOV dword ptr [EBP + -0x7e],EBX     ; 00412781

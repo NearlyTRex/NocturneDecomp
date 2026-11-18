@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSound_s_005d4eec
-;   undefined4 DAT_00604510
+;   int g_DirectSoundDeviceCount = -0x1
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundEnumerateA
@@ -28,14 +28,14 @@ section .text
     PUSH ESI                            ; 0055d3c1
     MOV ESI,dword ptr [ESP + 0xc]       ; 0055d3c2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0055d3c6
-    CMP dword ptr [0x00604510],0x0      ; 0055d3ca | DAT_00604510
+    CMP dword ptr [0x00604510],0x0      ; 0055d3ca | g_DirectSoundDeviceCount
     JL 0x0055d3e4                       ; 0055d3d1
         ;   XREF to: 0055d3e4 (CONDITIONAL_JUMP)  ; LAB_0055d3e4
     TEST ESI,ESI                        ; 0055d3d3
         ;   Label: LAB_0055d3d3
     JL 0x0055d3df                       ; 0055d3d5
         ;   XREF to: 0055d3df (CONDITIONAL_JUMP)  ; LAB_0055d3df
-    CMP ESI,dword ptr [0x00604510]      ; 0055d3d7 | DAT_00604510
+    CMP ESI,dword ptr [0x00604510]      ; 0055d3d7 | g_DirectSoundDeviceCount
     JL 0x0055d3f9                       ; 0055d3dd
         ;   XREF to: 0055d3f9 (CONDITIONAL_JUMP)  ; LAB_0055d3f9
     XOR EAX,EAX                         ; 0055d3df
@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_0055d3e4
     PUSH ECX                            ; 0055d3e6
     PUSH 0x55d0e0                       ; 0055d3e7
-    MOV dword ptr [0x00604510],ECX      ; 0055d3ec | DAT_00604510
+    MOV dword ptr [0x00604510],ECX      ; 0055d3ec | g_DirectSoundDeviceCount
     CALL crt_dsound.c_DirectSoundEnumerateA ; 0055d3f2
         ;   XREF to: 005b25ec (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundEnumerateA(LPDSENUMCALLBACKA lp_ds_enum_callback, LPVOID lp_context)
     JMP 0x0055d3d3                      ; 0055d3f7

@@ -2,18 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 78,
+    "complexity_score": 93,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "fpu_register_input",
       "unresolved_funcptr",
       "warning_indirect_jump",
-      "warning_jumptable"
+      "warning_jumptable",
+      "wrong_global"
     ],
     "total_lines": 11
   },
@@ -47,8 +48,8 @@
   "globals": [
     {
       "addr": "005c3f84",
-      "name": "PTR_crt_unknown.c_FUN_0056bf71_005c3f84",
-      "type": "undefined1*",
+      "name": "g_PTR_005c3f84",
+      "type": "void*",
       "value": "0056bf71"
     }
   ],
@@ -116,7 +117,7 @@
       "line": 9,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)(&PTR_crt_unknown_c_FUN_0056bf71_005c3f84)[function_index])();",
+      "text": "(*(code *)(&g_PTR_005c3f84)[function_index])();",
       "type": "unresolved_funcptr"
     },
     {
@@ -126,6 +127,14 @@
       "severity": "mild",
       "text": "return in_ST0;",
       "type": "fpu_register_input"
+    },
+    {
+      "description": "Scalar global g_PTR_005c3f84 accessed via (&g_PTR_005c3f84)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_ARRAY_PTR_005c4094 (at 0x005c4094, +272 bytes).",
+      "line": 9,
+      "match": "g_PTR_005c3f84",
+      "severity": "moderate",
+      "text": "(*(code *)(&g_PTR_005c3f84)[function_index])();",
+      "type": "wrong_global"
     }
   ]
 }

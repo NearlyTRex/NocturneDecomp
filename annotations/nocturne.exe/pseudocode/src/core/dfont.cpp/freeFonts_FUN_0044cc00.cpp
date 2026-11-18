@@ -6,61 +6,59 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfont_cpp_freeFonts_FUN_0044cc00(void)
 
 {
   CBitFont *pCVar1;
   
-  if (g_CBitFont_PTR_014b98f8 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b98f8,0);
+  if (g_MediumFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_MediumFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b98f8 = (CBitFont *)0x0;
-  if (g_CBitFont_PTR_014b98fc != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b98fc,0);
+  g_MediumFont = (CBitFont *)0x0;
+  if (g_TinyFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_TinyFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b98fc = (CBitFont *)0x0;
-  if (g_CBitFont_PTR_014b9900 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b9900,0);
+  g_TinyFont = (CBitFont *)0x0;
+  if (g_ThemeFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_ThemeFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b9900 = (CBitFont *)0x0;
-  if (g_CBitFont_PTR_014b9904 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b9904,0);
+  g_ThemeFont = (CBitFont *)0x0;
+  if (g_SmallEditorFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_SmallEditorFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b9904 = (CBitFont *)0x0;
+  g_SmallEditorFont = (CBitFont *)0x0;
   if (g_CBitFont_PTR_014b9908 != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b9908,0);
     operator_delete(pCVar1);
   }
-  _DAT_01bcd070 = 0;
+  g_CBitFont_PTR_01bcd070 = (CBitFont *)0x0;
   g_CBitFont_PTR_014b9908 = (CBitFont *)0x0;
-  if (g_CBitFont_PTR_014b990c != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_CBitFont_PTR_014b990c,0);
+  if (g_MicroFont != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_0048fe30(g_MicroFont,0);
     operator_delete(pCVar1);
   }
-  g_CBitFont_PTR_014b990c = (CBitFont *)0x0;
-  if (_DAT_01d16810 != 0) {
-    if (_DAT_014b9910 != (uint *)0x0) {
-      (**(code **)*_DAT_014b9910)(_DAT_014b9910,2);
+  g_MicroFont = (CBitFont *)0x0;
+  if (g_UseOSFonts != 0) {
+    if (g_CWinFont_PTR_014b9910 != (CWinFont *)0x0) {
+      (*((g_CWinFont_PTR_014b9910->base).vtable)->ctor)(&g_CWinFont_PTR_014b9910->base);
     }
-    _DAT_014b9910 = (uint *)0x0;
-    if (_DAT_014b9914 != (uint *)0x0) {
-      (**(code **)*_DAT_014b9914)(_DAT_014b9914,2);
+    g_CWinFont_PTR_014b9910 = (CWinFont *)0x0;
+    if (g_CWinFont_PTR_014b9914 != (CWinFont *)0x0) {
+      (*((g_CWinFont_PTR_014b9914->base).vtable)->ctor)(&g_CWinFont_PTR_014b9914->base);
     }
-    _DAT_014b9914 = (uint *)0x0;
-    if (_DAT_014b9918 != (uint *)0x0) {
-      (**(code **)*_DAT_014b9918)(_DAT_014b9918,2);
+    g_CWinFont_PTR_014b9914 = (CWinFont *)0x0;
+    if (g_CWinFont_PTR_014b9918 != (CWinFont *)0x0) {
+      (*((g_CWinFont_PTR_014b9918->base).vtable)->ctor)(&g_CWinFont_PTR_014b9918->base);
     }
-    _DAT_014b9918 = (uint *)0x0;
-    if (_DAT_014b991c != (uint *)0x0) {
-      (**(code **)*_DAT_014b991c)(_DAT_014b991c,2);
+    g_CWinFont_PTR_014b9918 = (CWinFont *)0x0;
+    if (g_CWinFont_PTR_014b991c != (CWinFont *)0x0) {
+      (*((g_CWinFont_PTR_014b991c->base).vtable)->ctor)(&g_CWinFont_PTR_014b991c->base);
     }
-    _DAT_014b991c = (uint *)0x0;
+    g_CWinFont_PTR_014b991c = (CWinFont *)0x0;
   }
   return;
 }

@@ -17,9 +17,9 @@ CWinFont * __cdecl CWinFont::dtor(CWinFont *this_ptr,uint flags);
 // Address: 005b1c00
 int __cdecl CWinFont::drawText(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color);
 
-// Original: engine_winfont.cpp_FUN_005b1c50
+// Original: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005b1c50
 // Address: 005b1c50
-void FUN_005b1c50(int param_1,undefined4 param_2,LPCSTR param_3,int param_4,int param_5,undefined4 param_6);
+void __cdecl CWinFont::setColorAndDrawText(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color);
 
 // Original: engine_winfont.cpp_CWinFont_createTextBackground_FUN_005b1e90
 // Address: 005b1e90
@@ -37,6 +37,6 @@ int __cdecl CWinFont::getStringWidth(CWinFont *this_ptr,char *text_string);
 // Address: 005b2160
 int __cdecl CWinFont::getStringHeight(CWinFont *this_ptr,char *text_string);
 
-// Original: engine_winfont.cpp_FUN_005b21d0
+// Original: engine_winfont.cpp_CWinFont_getLineSpacing_FUN_005b21d0
 // Address: 005b21d0
-undefined4 FUN_005b21d0(void);
+int __cdecl CWinFont::getLineSpacing(CWinFont *this_ptr);

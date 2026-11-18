@@ -2,19 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 170,
+    "complexity_score": 171,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 10,
+    "pseudocode_lines": 61,
+    "suspect_count": 9,
     "suspect_types": [
+      "raw_address_constant",
       "stack_alignment_array",
-      "undefined_data",
+      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 153
+    "total_lines": 159
   },
   "cross_references": [],
   "function": {
@@ -115,27 +116,27 @@
     },
     {
       "addr": "005992a4",
-      "name": "DAT_005992a4",
-      "type": "undefined4",
+      "name": "s_bgnthd_005992a4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005992a8",
-      "name": "DAT_005992a8",
+      "name": "s_bgnthd_005992a4+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005992ac",
-      "name": "DAT_005992ac",
-      "type": "undefined1",
+      "name": "s_bgnthd_005992a4+8",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c1ab8",
-      "name": "DAT_005c1ab8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1ab8",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
@@ -255,16 +256,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c1ab8",
-      "severity": "mild",
-      "text": "if (DAT_005c1ab8 == -1) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_2c = param_1;",
@@ -272,35 +265,35 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 33,
       "match": "param_3",
       "severity": "mild",
       "text": "uStack_28 = param_3;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005992a8",
-      "severity": "mild",
-      "text": "(&uStack_48)[(uint)bVar2 * -2] = (&DAT_005992a8)[(uint)bVar2 * -2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005992ac",
-      "severity": "mild",
-      "text": "(&DAT_005992ac)[(uint)bVar2 * -8 + (uint)bVar2 * -8];",
-      "type": "undefined_data"
+      "description": "Direct stack address reference",
+      "line": 47,
+      "match": "&stack0xffffffb4",
+      "severity": "moderate",
+      "text": "pvStack_20 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex literal 0xfffff0 matches address of g_LightBufferPool (+5183976 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 48,
+      "match": "0xfffff0",
+      "severity": "moderate",
+      "text": "hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,",
+      "type": "raw_address_constant"
     }
   ],
   "vtable_info": {

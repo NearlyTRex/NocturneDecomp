@@ -7,16 +7,16 @@
 ; CLocation *      Stack[0x4]:4   location
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00434190 at 0043424d
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190 at 0043424d
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00487c80 at 00487c9b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d5ba00
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_HeroCount
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     SUB ESP,0x14                        ; 004d22c4
     MOV EBX,dword ptr [ESP + 0x28]      ; 004d22c7
     MOV EDX,0x7149f2ca                  ; 004d22cb
-    MOV ECX,dword ptr [0x01d5ba00]      ; 004d22d0 | DAT_01d5ba00
+    MOV ECX,dword ptr [0x01d5ba00]      ; 004d22d0 | g_HeroCount
     XOR ESI,ESI                         ; 004d22d6
     MOV dword ptr [ESP + 0x8],EDX       ; 004d22d8
     TEST ECX,ECX                        ; 004d22dc
@@ -89,10 +89,10 @@ section .text
         ;   Label: LAB_004d2342
     MOV EDI,0x3a                        ; 004d2347
     PUSH 0x5c4b05                       ; 004d234c
-    MOV dword ptr [0x01d71de0],EBX      ; 004d2351 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004d2357 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004d235d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBX      ; 004d2351 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 004d2357 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d235d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d2362
     MOV EAX,ESI                         ; 004d2365
     ADD ESP,0x14                        ; 004d2367

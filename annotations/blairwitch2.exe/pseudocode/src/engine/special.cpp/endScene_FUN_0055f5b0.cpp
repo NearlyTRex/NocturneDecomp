@@ -1,0 +1,19 @@
+// Name: engine_special.cpp_endScene_FUN_0055f5b0
+// Address: 0055f5b0
+// Address Range: [[0055f5b0, 0055f5c2]]
+// Convention: __cdecl
+// Signature: int __cdecl engine_special_cpp_endScene_FUN_0055f5b0(void)
+
+#include "nocturne.h"
+
+int __cdecl engine_special_cpp_endScene_FUN_0055f5b0(void)
+
+{
+  int iVar1;
+  
+  if (g_INT_01c37788 == 0) {
+    return 0;
+  }
+  iVar1 = (*(code *)g_PTR_0264bbd4)();
+  return iVar1;
+}

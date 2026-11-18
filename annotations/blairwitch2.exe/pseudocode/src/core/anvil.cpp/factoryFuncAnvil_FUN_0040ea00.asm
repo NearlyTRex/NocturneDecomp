@@ -15,7 +15,7 @@ section .text
     PUSH 0x4a0                          ; 0040ea00
         ;   Label: core_anvil.cpp_factoryFuncAnvil_FUN_0040ea00
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0040ea05
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0040ea0a
     TEST EAX,EAX                        ; 0040ea0d
     JNZ 0x0040ea12                      ; 0040ea0f

@@ -29,8 +29,8 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   this_ptr->damage_decal_count = 0;
   this_ptr->closest_distance_threshold = fVar2;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            (&CKeyFramedModelInstance_00823a98,"stake_b.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&CKeyFramedModelInstance_00823a98);
+            (&g_StakeModelInstance,"stake_b.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&g_StakeModelInstance);
   for (iVar9 = 0; iVar9 < 2; iVar9 = iVar9 + 1) {
     this_ptr_01 = this_ptr->carry_hands[iVar9].carry_actor;
     if (this_ptr_01 != (CDemonActor *)0x0) {

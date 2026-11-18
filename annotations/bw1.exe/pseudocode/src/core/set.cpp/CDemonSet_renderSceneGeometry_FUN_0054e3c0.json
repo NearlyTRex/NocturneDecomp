@@ -2,25 +2,41 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 208,
+    "complexity_score": 129,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
-    "suspect_count": 9,
+    "pseudocode_lines": 104,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 376
+    "total_lines": 377
   },
   "cross_references": [
     {
       "addr": "0054ec60",
       "from_addr": "0054edd4",
       "name": "core_set.cpp_CDemonSet_initScene_FUN_0054ec60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e6a0",
+      "from_addr": "0054e9be",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0054e6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00550da0",
+      "from_addr": "00550f2c",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551170",
+      "from_addr": "00551304",
+      "name": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,27 +52,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0054e6a0",
-      "from_addr": "0054e9be",
-      "name": "core_set.cpp_FUN_0054e6a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00550da0",
-      "from_addr": "00550f2c",
-      "name": "core_set.cpp_FUN_00550da0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00551170",
-      "from_addr": "00551304",
-      "name": "core_set.cpp_FUN_00551170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0055b330",
       "from_addr": "0055b419",
-      "name": "core_setdir.cpp_FUN_0055b330",
+      "name": "core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_0055b330",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -162,33 +160,33 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "006144d0",
-      "name": "DAT_006144d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SkyDomeTexturePtr",
+      "type": "SMRGLSkyTexture*",
+      "value": "01beefbc"
     },
     {
       "addr": "00622c1c",
-      "name": "DAT_00622c1c",
-      "type": "undefined4",
+      "name": "g_GlobalLightDirection",
+      "type": "CVector3i",
       "value": null
     },
     {
       "addr": "00622c28",
-      "name": "DAT_00622c28",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RenderMirrorsFlag",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "00625bc0",
-      "name": "DAT_00625bc0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CTerrainPtr",
+      "type": "CTerrain*",
+      "value": "02c8ae68"
     },
     {
       "addr": "00625c90",
@@ -198,14 +196,14 @@
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
@@ -271,7 +269,7 @@
       {
         "call_addr": "00550f2c",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550da0",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -282,7 +280,7 @@
       {
         "call_addr": "0055111a",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550da0",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -293,7 +291,7 @@
       {
         "call_addr": "00551304",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00551170",
+        "caller": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -304,7 +302,7 @@
       {
         "call_addr": "0055b419",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0055b330",
+        "caller": "core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_0055b330",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -315,7 +313,7 @@
       {
         "call_addr": "0054e9be",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0054e6a0",
+        "caller": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0054e6a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -439,62 +437,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(CVector3i *)&DAT_00622c1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00622c1c",
-      "severity": "mild",
-      "text": "(DAT_00612560,(CVector3i *)&DAT_00622c1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_004839f0(DAT_00612560,0.25);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&local_1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_00622c28",
-      "severity": "mild",
-      "text": "else if ((DAT_00622c28 != 0) &&",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 86,

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041d350(CLightActor *this_ptr)
 
 {
@@ -95,7 +93,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041d350(CLightAc
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(this_ptr_00);
       (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
                 ((CDemonActor *)this_ptr,in_stack_fffffea0);
-      fVar2 = _DAT_005cc6f5;
+      fVar2 = 0.5f;
       puVar4 = auStack_130;
       puVar5 = auStack_f0;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -110,10 +108,10 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041d350(CLightAc
       afStack_cc[(uint)bVar6 * -2 + 0x12] = afStack_cc[(uint)bVar6 * -2 + 0xc];
       afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13] =
            afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
-      fStack_4c = fStack_88 * _DAT_005cc6f5;
-      fStack_48 = fStack_84 * _DAT_005cc6f5;
-      fStack_44 = fStack_80 * _DAT_005cc6f5;
-      fStack_7c = fStack_88 * _DAT_005cc6f5;
+      fStack_4c = fStack_88 * 0.5f;
+      fStack_48 = fStack_84 * 0.5f;
+      fStack_44 = fStack_80 * 0.5f;
+      fStack_7c = fStack_88 * 0.5f;
       afStack_cc[(uint)bVar6 * -2 + 0x15] = afStack_cc[(uint)bVar6 * -2 + 0x21];
       afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x16] =
            afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x22];
@@ -132,7 +130,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041d350(CLightAc
       afStack_cc[(uint)bVar6 * -2 + 0xf] = afStack_cc[(uint)bVar6 * -2 + 0x2a];
       afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10] =
            afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x2b];
-      fVar2 = (float)_DAT_005cc6f9;
+      fVar2 = (float)0.10000000000000001;
       (this_ptr->blight_pos).y = fStack_90;
       (this_ptr->blight_pos).z = fStack_d4 + fVar2;
       unaff_EDI[2] = 0;
@@ -150,7 +148,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041d350(CLightAc
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(this_ptr_00);
       (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
                 ((CDemonActor *)this_ptr,in_stack_fffffea0);
-      fVar2 = _DAT_005cc6f5;
+      fVar2 = 0.5f;
       puVar4 = auStack_100;
       puVar5 = auStack_120;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -165,10 +163,10 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041d350(CLightAc
       afStack_cc[(uint)bVar6 * -2 + 0x1e] = afStack_cc[(uint)bVar6 * -2 + 0x24];
       afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x1f] =
            afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x25];
-      fStack_34 = fStack_58 * _DAT_005cc6f5;
-      fStack_30 = fStack_54 * _DAT_005cc6f5;
-      fStack_2c = fStack_50 * _DAT_005cc6f5;
-      fStack_1c = fStack_58 * _DAT_005cc6f5;
+      fStack_34 = fStack_58 * 0.5f;
+      fStack_30 = fStack_54 * 0.5f;
+      fStack_2c = fStack_50 * 0.5f;
+      fStack_1c = fStack_58 * 0.5f;
       (&pCStack_18)[(uint)bVar6 * -2] = (CDemonLight *)afStack_cc[(uint)bVar6 * -2 + 0x27];
       (&pUStack_14)[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
            (UOrientationVector *)afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x28];
@@ -196,10 +194,10 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041d350(CLightAc
       (this_ptr->light).light_enabled_flag = 0;
       *(uint *)(unaff_EBP + 0x38) = 0x42600000;
       (this_ptr->light).base.max_distance = 32.0;
-      iVar3 = _DAT_007bc9ac;
+      iVar3 = g_LightActorFiltersInitialized;
       (this_ptr->base).pickup_type = BOX_PICKUP_CARRY;
       if (iVar3 == 0) {
-        this_ptr_01 = CDemonFilter_ARRAY_007bc9ec;
+        this_ptr_01 = g_LightActorFilters;
         iVar3 = 0;
         do {
           _sprintf(acStack_158,"lantern%d.raw");
@@ -207,10 +205,10 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041d350(CLightAc
           core_dfilter_cpp_CDemonFilter_load_FUN_004478d0(this_ptr_01,acStack_158);
           this_ptr_01 = this_ptr_01 + 1;
         } while (iVar3 < 8);
-        _DAT_007bc9ac = 1;
+        g_LightActorFiltersInitialized = 1;
       }
       core_dlight_cpp_CDemonLight_applyFilter_FUN_0044b600
-                (&this_ptr->light,CDemonFilter_ARRAY_007bc9ec,0,0,0);
+                (&this_ptr->light,g_LightActorFilters,0,0,0);
       return;
     }
   }

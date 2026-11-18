@@ -7,13 +7,13 @@
 ; CConveyor *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonActorType g_CConveyorActorType_0077bcc8
+;   CDemonActorType g_CConveyorClassInfo
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x77bcc8                    ; 0043b040 | g_CConveyorActorType_0077bcc8
+    MOV EAX,0x77bcc8                    ; 0043b040 | g_CConveyorClassInfo
         ;   Label: core_conveyor.cpp_CConveyor_getActorType_FUN_0043b040
     RET                                 ; 0043b045
 

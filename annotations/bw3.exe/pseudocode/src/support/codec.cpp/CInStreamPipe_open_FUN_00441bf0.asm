@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00441bf0(CInStreamPipe *this_ptr,CCodec *param_2,void *param_3,int param_4,ulong param_5)
+; void __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00441bf0(CInStreamPipe *this_ptr,CCodec *codec,void *source,int owns_streams,int buffer_size)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
-; ulong            Stack[0x14]:4   param_5
+; CCodec *         Stack[0x8]:4   codec
+; void *           Stack[0xc]:4   source
+; int              Stack[0x10]:4   owns_streams
+; int              Stack[0x14]:4   buffer_size
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   support_codec.cpp_CInStreamPipe_close_FUN_00441b60
 ;
@@ -68,10 +68,10 @@ section .text
     MOV ESI,0x5b9393                    ; 00441c57
     MOV EDI,0x881                       ; 00441c5c
     PUSH 0x5b93a8                       ; 00441c61
-    MOV dword ptr [0x01d71de0],ESI      ; 00441c66 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00441c6c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00441c72
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ESI      ; 00441c66 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 00441c6c | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00441c72
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00441c77
     POP ESI                             ; 00441c7a
     POP EDI                             ; 00441c7b

@@ -12,7 +12,7 @@
 ;   core_set.cpp_CDemonSet_clearLights_FUN_00551b90 at 00551c0a
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -42,15 +42,15 @@ section .text
     RET                                 ; 0044ce3e
     PUSH EDX                            ; 0044ce3f
         ;   Label: LAB_0044ce3f
-    CALL crt_unknown.c_FUN_005c09f0     ; 0044ce40
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0044ce40
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0044ce45
     JMP 0x0044ce00                      ; 0044ce48
         ;   XREF to: 0044ce00 (UNCONDITIONAL_JUMP)  ; LAB_0044ce00
     PUSH ESI                            ; 0044ce4a
         ;   Label: LAB_0044ce4a
-    CALL crt_unknown.c_FUN_005c09f0     ; 0044ce4b
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0044ce4b
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0044ce50
     JMP 0x0044ce1e                      ; 0044ce53
         ;   XREF to: 0044ce1e (UNCONDITIONAL_JUMP)  ; LAB_0044ce1e

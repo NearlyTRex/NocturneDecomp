@@ -14,20 +14,20 @@
 ;   TerminatedCString s_CDemonLight_beginBackgro_005bb3af
 ;   TerminatedCString s_core_dlight_cpp_005bb3e2
 ;   TerminatedCString s_CDemonLight_beginBackgro_005bb3f5
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01b49be0
-;   undefined4 DAT_01b49be4
-;   undefined4 DAT_01b49be8
-;   undefined4 DAT_01b49be9
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_01c5faec
-;   undefined4 DAT_01c5faf0
-;   undefined4 DAT_01c5faf1
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   int g_BackgroundSceneNestingCount
+;   void*[1200] g_SavedScreenBufferArray
+;   undefined4 g_SavedScreenBufferArray[1]
+;   undefined4 g_SavedScreenBufferArray[1]+1
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   undefined4 g_ScreenBufferArray[1]+1
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046d520
 ;
 ; *****************************************************************************
@@ -43,10 +43,10 @@ section .text
     CMP dword ptr [EBX + 0x11e4],0x0    ; 0045c8f8
     JZ 0x0045c9b6                       ; 0045c8ff
         ;   XREF to: 0045c9b6 (CONDITIONAL_JUMP)  ; LAB_0045c9b6
-    MOV EDI,dword ptr [0x01b49be0]      ; 0045c905 | DAT_01b49be0
+    MOV EDI,dword ptr [0x01b49be0]      ; 0045c905 | g_BackgroundSceneNestingCount
         ;   Label: LAB_0045c905
     INC EDI                             ; 0045c90b
-    MOV dword ptr [0x01b49be0],EDI      ; 0045c90c | DAT_01b49be0
+    MOV dword ptr [0x01b49be0],EDI      ; 0045c90c | g_BackgroundSceneNestingCount
     CMP EDI,0x1                         ; 0045c912
     JNZ 0x0045c9b1                      ; 0045c915
         ;   XREF to: 0045c9b1 (CONDITIONAL_JUMP)  ; LAB_0045c9b1
@@ -54,13 +54,13 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1cc4]    ; 0045c920
     MOV EDI,0x1b49be4                   ; 0045c926
     SHL ECX,0x2                         ; 0045c92b
-    PUSH EDI                            ; 0045c92e | DAT_01b49be4
+    PUSH EDI                            ; 0045c92e | g_SavedScreenBufferArray
     MOV EAX,ECX                         ; 0045c92f
     SHR ECX,0x2                         ; 0045c931
-    MOVSD.REP ES:EDI,ESI                ; 0045c934 | DAT_01c5faec | DAT_01b49be4 | DAT_01c5faf0
+    MOVSD.REP ES:EDI,ESI                ; 0045c934 | g_ScreenBufferArray | g_SavedScreenBufferArray | g_ScreenBufferArray[1]
     MOV CL,AL                           ; 0045c936
     AND CL,0x3                          ; 0045c938
-    MOVSB.REP ES:EDI,ESI                ; 0045c93b | DAT_01c5faf0 | DAT_01b49be8 | DAT_01c5faf1
+    MOVSB.REP ES:EDI,ESI                ; 0045c93b | g_ScreenBufferArray[1] | g_SavedScreenBufferArray[1] | g_ScreenBufferArray[1]+1
     POP EDI                             ; 0045c93d
     CMP dword ptr [EBX + 0x2f9c],0x0    ; 0045c93e
     JNZ 0x0045c96a                      ; 0045c945
@@ -68,10 +68,10 @@ section .text
     MOV EDX,0x5bb3e2                    ; 0045c947 | = "..\\core\\dlight.cpp"
     MOV ECX,0x1bc                       ; 0045c94c
     PUSH 0x5bb3f5                       ; 0045c951 | = "CDemonLight::beginBackgroundScene - N..."
-    MOV dword ptr [0x01d71de0],EDX      ; 0045c956 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0045c95c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0045c962
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 0045c956 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 0045c95c | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045c962
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045c967
     MOV ESI,dword ptr [EBX + 0x1cc4]    ; 0045c96a
         ;   Label: LAB_0045c96a
@@ -86,7 +86,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x2f9c]    ; 0045c981
     ADD ESI,ESI                         ; 0045c987
     ADD ECX,ESI                         ; 0045c989
-    MOV dword ptr [EDX + 0x1c5faec],ECX ; 0045c98b | DAT_01c5faec | DAT_01c5faf0
+    MOV dword ptr [EDX + 0x1c5faec],ECX ; 0045c98b | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 0045c991
     MOV EDI,dword ptr [EBX + 0x1cc4]    ; 0045c992
     ADD EDX,0x4                         ; 0045c998
@@ -96,8 +96,8 @@ section .text
     NOP                                 ; 0045c99f
     PUSH 0x1                            ; 0045c9a0
         ;   Label: LAB_0045c9a0
-    MOV EBP,dword ptr [0x005f2afc]      ; 0045c9a2 | DAT_005f2afc
-    PUSH EBP                            ; 0045c9a8 | DAT_01bdd7e4
+    MOV EBP,dword ptr [0x005f2afc]      ; 0045c9a2 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EBP                            ; 0045c9a8 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046d520 ; 0045c9a9
         ;   XREF to: 0046d520 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046d520(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0045c9ae
@@ -111,10 +111,10 @@ section .text
         ;   Label: LAB_0045c9b6
     MOV ESI,0x1af                       ; 0045c9bb
     PUSH 0x5bb3af                       ; 0045c9c0 | = "CDemonLight::beginBackgroundScene - S..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0045c9c5 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0045c9cb | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0045c9d1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 0045c9c5 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0045c9cb | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045c9d1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045c9d6
     JMP 0x0045c905                      ; 0045c9d9
         ;   XREF to: 0045c905 (UNCONDITIONAL_JUMP)  ; LAB_0045c905

@@ -8,16 +8,16 @@
 ;
 ; XREF[5]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00495280 at 00495350
-;   core_game.cpp_FUN_004b6f30 at 004b77f4
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b77f4
 ;   core_sound.cpp_CSound_getSoundDuration_FUN_00560b10 at 00560b21
 ;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056bea4
 ;   sound_sndmain.cpp_CSfxSample_ctor_FUN_00553310 at 00553315
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4854
-;   undefined4 DAT_005e4858
-;   undefined4 DAT_00604244
-;   undefined4 DAT_02ce7210
+;   float g_SoundReferenceDistanceConstant = 20
+;   float g_FLOAT_005e4858 = 10000
+;   float g_FLOAT_00604244 = 1
+;   float g_SoundReferenceVolumeDistance
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -34,12 +34,12 @@ section .text
     PUSH EBX                            ; 0055584c
     CALL crt_memory.c_memset_FUN_005a28f0 ; 0055584d
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
-    FLD float ptr [0x00604244]          ; 00555852 | DAT_00604244
-    FLD float ptr [0x005e4854]          ; 00555858 | DAT_005e4854
+    FLD float ptr [0x00604244]          ; 00555852 | g_FLOAT_00604244
+    FLD float ptr [0x005e4854]          ; 00555858 | g_SoundReferenceDistanceConstant
     FMUL ST1                            ; 0055585e
-    FLD float ptr [0x02ce7210]          ; 00555860 | DAT_02ce7210
+    FLD float ptr [0x02ce7210]          ; 00555860 | g_SoundReferenceVolumeDistance
     FMUL ST2                            ; 00555866
-    FLD float ptr [0x005e4858]          ; 00555868 | DAT_005e4858
+    FLD float ptr [0x005e4858]          ; 00555868 | g_FLOAT_005e4858
     FMULP ST3                           ; 0055586e
     ADD ESP,0xc                         ; 00555870
     MOV EAX,EBX                         ; 00555873

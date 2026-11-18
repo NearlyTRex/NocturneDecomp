@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 25,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 38
   },
   "cross_references": [],
@@ -47,8 +45,8 @@
   "globals": [
     {
       "addr": "005f0e7e",
-      "name": "DAT_005f0e7e",
-      "type": "undefined4",
+      "name": "s_Food_005f0e7e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -112,20 +110,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005f0e7e",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->food,&DAT_005f0e7e);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "00600c64"
       }

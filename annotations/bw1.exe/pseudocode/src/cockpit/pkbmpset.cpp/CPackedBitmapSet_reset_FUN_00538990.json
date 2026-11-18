@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 17,
     "complexity_score": 9,
-    "cross_reference_count": 3,
+    "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -14,21 +14,39 @@
   },
   "cross_references": [
     {
+      "addr": "005389c0",
+      "from_addr": "005389d7",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005389c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00538a60",
       "from_addr": "00538a7a",
       "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005389c0",
-      "from_addr": "005389d7",
-      "name": "cockpit_pkbmpset.cpp_FUN_005389c0",
+      "addr": "00538b30",
+      "from_addr": "00538b49",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00538b30",
-      "from_addr": "00538b49",
-      "name": "cockpit_pkbmpset.cpp_FUN_00538b30",
+      "addr": "00539040",
+      "from_addr": "00539048",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00539040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538f90",
+      "from_addr": "00538faa",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00538f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00539090",
+      "from_addr": "00539096",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00539090",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -53,17 +71,17 @@
     {
       "addr": "005c0336",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c0336"
+      "name": "crt_unknown.c_free_FUN_005c0336"
     }
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 3,
+    "call_site_count": 6,
     "call_sites": [
       {
         "call_addr": "005389d7",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_005389c0",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005389c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -85,7 +103,40 @@
       {
         "call_addr": "00538b49",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_00538b30",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00538faa",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00538f90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00539048",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00539040",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00539096",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00539090",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

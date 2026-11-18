@@ -1,0 +1,209 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 148,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 11,
+    "suspect_types": [
+      "pointer_cast",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 93
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0059e270",
+    "address_range": [
+      [
+        "0059e270",
+        "0059e304"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_httpRequestStart_FUN_0059e270",
+    "signature": "void __cdecl support_trisock_cpp_httpRequestStart_FUN_0059e270(void *request,char *url)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "0059ddc0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_dnsRequestLookupHost_FUN_0059ddc0"
+    },
+    {
+      "addr": "0059d9d0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_parseUrl_FUN_0059d9d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0181818181818185,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 48,
+      "INT_ADD": 28,
+      "INT_AND": 21,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 20,
+      "LOAD": 15,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 221
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057ac30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00571260",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "request",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "url",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "pcVar3 = (char *)((int)request + 0x200);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "((char *)((int)request + 0x200),(char *)((int)request + 0x400),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "((char *)((int)request + 0x200),(char *)((int)request + 0x400),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(ushort *)((int)request",
+      "severity": "moderate",
+      "text": "(ushort *)((int)request + 0x604),(char *)((int)request + 0x500),0x100);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "(ushort *)((int)request + 0x604),(char *)((int)request + 0x500),0x100);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(void *)((int)request",
+      "severity": "moderate",
+      "text": "((void *)((int)request + 0xd30),(char *)((int)request + 0x400));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "((void *)((int)request + 0xd30),(char *)((int)request + 0x400));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "_sprintf((char *)((int)request + 0xa18),\"Invalid URL: %s\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 10,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

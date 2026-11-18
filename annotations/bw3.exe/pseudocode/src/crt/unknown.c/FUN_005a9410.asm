@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005a33b0 at 005a340e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060796c
+;   int g_ConsoleInitializationFlag = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005ae798
@@ -21,7 +21,7 @@ section .text
     PUSH EBX                            ; 005a9410
         ;   Label: crt_unknown.c_FUN_005a9410
     PUSH ESI                            ; 005a9411
-    MOV ESI,dword ptr [0x0060796c]      ; 005a9412 | DAT_0060796c
+    MOV ESI,dword ptr [0x0060796c]      ; 005a9412 | g_ConsoleInitializationFlag
     CALL crt_unknown.c_FUN_005ae798     ; 005a9418
         ;   XREF to: 005ae798 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ae798()
     MOV EBX,EAX                         ; 005a941d

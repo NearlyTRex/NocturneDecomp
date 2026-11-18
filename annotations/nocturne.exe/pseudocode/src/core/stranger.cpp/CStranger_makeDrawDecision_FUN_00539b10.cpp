@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00539b10(CStranger *this_ptr)
 
@@ -141,16 +140,17 @@ LAB_00539cea:
   }
   local_24 = local_18;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-            (&(this_ptr->base).base.model,local_20,local_18,local_f8,_DAT_02dc9f94,
+            (&(this_ptr->base).base.model,local_20,local_18,local_f8,g_StrangerIndices[0x11],
              core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
   if ((this_ptr->base).base.layer_action_index == 0) {
     local_30 = (CDeformableModelInstance *)
                (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations;
     core_xform_cpp_slerpQuaternion_FUN_0055d2d0
-              ((CQuaternion4f *)((int)local_30 + _DAT_02dc9f88 * 0x10),
-               (CQuaternion4f *)((int)local_30 + _DAT_02dc9f68 * 0x10),
+              ((CQuaternion4f *)((int)local_30 + g_StrangerIndices[0xe] * 0x10),
+               (CQuaternion4f *)((int)local_30 + g_StrangerIndices[6] * 0x10),
                (this_ptr->base).base.layer_action_t,&local_c0);
-    pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_02dc9f88].w;
+    pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+              [g_StrangerIndices[0xe]].w;
     pfVar7 = pfVar4 + (uint)bVar10 * -2 + 1;
     *pfVar4 = local_c0.w;
     pfVar4 = (float *)((int)&local_c0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -159,11 +159,12 @@ LAB_00539cea:
     (pfVar7 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] = pfVar4[(uint)bVar10 * -2 + 1];
     core_xform_cpp_slerpQuaternion_FUN_0055d2d0
               ((CQuaternion4f *)
-               ((local_30->base).current_motion_name + _DAT_02dc9f84 * 0x10 + -0x30),
+               ((local_30->base).current_motion_name + g_StrangerIndices[0xd] * 0x10 + -0x30),
                (CQuaternion4f *)
-               ((local_30->base).current_motion_name + _DAT_02dc9f64 * 0x10 + -0x30),
+               ((local_30->base).current_motion_name + g_StrangerIndices[5] * 0x10 + -0x30),
                (this_ptr->base).base.layer_action_t,&local_f0);
-    pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_02dc9f84].w;
+    pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+              [g_StrangerIndices[0xd]].w;
     pfVar7 = pfVar4 + (uint)bVar10 * -2 + 1;
     *pfVar4 = local_f0.w;
     pfVar4 = (float *)((int)&local_f0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -188,7 +189,7 @@ LAB_00539cea:
     local_100 = (1.0 - local_18) * local_f8 * local_100;
     if (0.0 < local_100) {
       pcVar17 = core_stranger_cpp_motionBlendWeightFunc_FUN_00534e90;
-      iVar16 = _DAT_02dc9f94;
+      iVar16 = g_StrangerIndices[0x11];
       core_xform_cpp_quaternionFromAngleX_FUN_0055d4a0(fVar1,&local_90);
       pCVar14 = &local_70;
       pCVar12 = &(this_ptr->base).base.model;
@@ -204,8 +205,10 @@ LAB_00539cea:
     }
     core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0053a260(this_ptr,0);
     core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0053a260(this_ptr,1);
-    puVar5 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_02dc9f88].w;
-    puVar8 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_02dc9f68].w;
+    puVar5 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+              [g_StrangerIndices[0xe]].w;
+    puVar8 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+              [g_StrangerIndices[6]].w;
     puVar9 = puVar5 + (uint)bVar10 * -2 + 1;
     puVar6 = puVar8 + (uint)bVar10 * -2 + 1;
     *puVar5 = *puVar8;
@@ -213,8 +216,10 @@ LAB_00539cea:
     puVar9[(uint)bVar10 * -2 + 1] = puVar6[(uint)bVar10 * -2 + 1];
     (puVar9 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] =
          (puVar6 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
-    puVar5 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_02dc9f84].w;
-    puVar8 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_02dc9f64].w;
+    puVar5 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+              [g_StrangerIndices[0xd]].w;
+    puVar8 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+              [g_StrangerIndices[5]].w;
     puVar9 = puVar5 + (uint)bVar10 * -2 + 1;
     puVar6 = puVar8 + (uint)bVar10 * -2 + 1;
     *puVar5 = *puVar8;
@@ -241,7 +246,7 @@ LAB_00539cea:
     *(uint *)((int)&local_e0 + (uint)bVar10 * -8 + 4) =
          *(uint *)((int)&local_80 + (uint)bVar10 * -8 + 4);
     pCVar13 = pCVar12;
-    iVar16 = _DAT_02dc9f94;
+    iVar16 = g_StrangerIndices[0x11];
     *puVar8 = *puVar5;
     puVar8[(uint)bVar10 * -2 + 1] = puVar5[(uint)bVar10 * -2 + 1];
     local_30 = pCVar12;
@@ -257,7 +262,7 @@ LAB_00539cea:
     *puVar8 = *puVar5;
     puVar8[(uint)bVar10 * -2 + 1] = puVar5[(uint)bVar10 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-              (local_30,&local_50,local_38,_DAT_02dc9f94,
+              (local_30,&local_50,local_38,g_StrangerIndices[0x11],
                core_stranger_cpp_motionBlendWeightFunc_FUN_00534e90);
     if ((this_ptr->base).base.layer_action_index != 0xe) {
       return;
@@ -280,7 +285,7 @@ LAB_00539cea:
   *(uint *)((int)&local_a0 + (uint)bVar10 * -8 + 4) =
        *(uint *)((int)&local_d0 + (uint)bVar10 * -8 + 4);
   pCVar12 = pCVar13;
-  iVar16 = _DAT_02dc9f60;
+  iVar16 = g_StrangerIndices[4];
   *puVar8 = *puVar5;
   puVar8[(uint)bVar10 * -2 + 1] = puVar5[(uint)bVar10 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
@@ -294,7 +299,7 @@ LAB_00539cea:
   puVar5 = (uint *)((int)&local_b0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
   *(uint *)((int)&local_a0 + (uint)bVar10 * -8 + 4) =
        *(uint *)((int)&local_b0 + (uint)bVar10 * -8 + 4);
-  iVar16 = _DAT_02dc9f5c;
+  iVar16 = g_StrangerIndices[3];
   *puVar8 = *puVar5;
   puVar8[(uint)bVar10 * -2 + 1] = puVar5[(uint)bVar10 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0

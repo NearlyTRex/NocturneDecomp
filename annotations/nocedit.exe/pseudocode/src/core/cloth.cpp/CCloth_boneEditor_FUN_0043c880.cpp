@@ -57,12 +57,12 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
   local_48 = 0;
   local_44 = 0;
   local_24 = 0;
-  UNION_UVector3_00838e40.f.z = 0.0;
-  UNION_UVector3_00838e40.f.y = 0.0;
-  UNION_UVector3_00838e40.f.x = 0.0;
-  UNION_UVector3_00838e4c.f.z = 0.0;
-  UNION_UVector3_00838e4c.f.y = 0.0;
-  UNION_UVector3_00838e4c.f.x = 0.0;
+  g_ClothEditorPosition.f.z = 0.0;
+  g_ClothEditorPosition.f.y = 0.0;
+  g_ClothEditorPosition.f.x = 0.0;
+  g_ClothEditorEuler.f.z = 0.0;
+  g_ClothEditorEuler.f.y = 0.0;
+  g_ClothEditorEuler.f.x = 0.0;
   shape_spotview_cpp_CSpotView_reset_FUN_005b9620(g_CSpotViewPtr,0x1f);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
@@ -72,7 +72,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
   g_CDemonSetPtr->lighting_quality_mode = 1;
   pCStack_30 = pCVar1;
   core_cloth_cpp_CCloth_setup_FUN_00439710
-            (this_ptr,&UNION_UVector3_00838e40.f,&UNION_UVector3_00838e4c.f,
+            (this_ptr,&g_ClothEditorPosition.f,&g_ClothEditorEuler.f,
              &g_CDeformableModelInstanceInstance);
   local_40 = this_ptr->collide_bones;
   pSStack_5c = this_ptr->vertices;
@@ -112,7 +112,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     g_CDeformableModelInstanceInstance.accumulated_root_motion.x = 0.0;
     if (local_3c == 0) {
       core_cloth_cpp_CCloth_process_FUN_0043ab80
-                (this_ptr,&UNION_UVector3_00838e40.f,&UNION_UVector3_00838e4c.f,delta_time,0.0,
+                (this_ptr,&g_ClothEditorPosition.f,&g_ClothEditorEuler.f,delta_time,0.0,
                  &g_CDeformableModelInstanceInstance);
     }
     else {
@@ -145,9 +145,9 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
     engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,&UNION_UVector3_00838e40.f);
+              (g_CDemonRendererPtr2,&g_ClothEditorPosition.f);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,&UNION_UVector3_00838e4c.f,(CVector3f *)0x0);
+              (g_CDemonRendererPtr2,&g_ClothEditorEuler.f,(CVector3f *)0x0);
     if (local_4c != 0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                 (&g_CDeformableModelInstanceInstance,-1,0xffffffff,1,0);
@@ -372,7 +372,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Z);
     if (iVar2 != 0) {
       core_cloth_cpp_CCloth_setup_FUN_00439710
-                (this_ptr,&UNION_UVector3_00838e40.f,&UNION_UVector3_00838e4c.f,
+                (this_ptr,&g_ClothEditorPosition.f,&g_ClothEditorEuler.f,
                  &g_CDeformableModelInstanceInstance);
     }
     if (local_24 < 0) {

@@ -10,12 +10,12 @@ void __cdecl shape_edittool_cpp_CPickList_clear_FUN_00483d10(CPickList *this_ptr
 
 {
   if (this_ptr->enabled_array != (int *)0x0) {
-    FUN_005b86a0(this_ptr->enabled_array);
+    debugFree(this_ptr->enabled_array);
     this_ptr->enabled_array = (int *)0x0;
   }
   this_ptr->enabled_capacity = 0;
   if (this_ptr->hotkey_array != (int *)0x0) {
-    FUN_005b86a0(this_ptr->hotkey_array);
+    debugFree(this_ptr->hotkey_array);
     this_ptr->hotkey_array = (int *)0x0;
   }
   this_ptr->hotkey_capacity = 0;

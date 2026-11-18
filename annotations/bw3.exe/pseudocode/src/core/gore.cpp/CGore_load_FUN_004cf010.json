@@ -2,25 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 95,
+    "complexity_score": 30,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 5,
-    "suspect_types": [
-      "raw_address_constant",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 101
   },
   "cross_references": [
     {
       "addr": "004bdfb0",
       "from_addr": "004be6c0",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,14 +40,14 @@
   },
   "function_calls": [
     {
-      "addr": "004cdb50",
-      "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004cdb50"
-    },
-    {
       "addr": "004ce090",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ce090"
+      "name": "core_gore.cpp_CBloodPool_load_FUN_004ce090"
+    },
+    {
+      "addr": "004cdb50",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_load_FUN_004cdb50"
     },
     {
       "addr": "005a3f00",
@@ -67,26 +63,26 @@
   "globals": [
     {
       "addr": "005c4791",
-      "name": "DAT_005c4791",
-      "type": "undefined4",
+      "name": "s_d_005c4791",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c4795",
-      "name": "DAT_005c4795",
-      "type": "undefined4",
+      "name": "s_d_005c4795",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "01d276b8",
-      "name": "DAT_01d276b8",
-      "type": "undefined4",
+      "name": "g_BloodSplatCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d4a940",
-      "name": "DAT_01d4a940",
-      "type": "undefined4",
+      "name": "g_BloodPoolCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -96,7 +92,7 @@
       {
         "call_addr": "004be6c0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,46 +200,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005c4791",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005c4791);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005c4795",
-      "severity": "mild",
-      "text": "iVar3 = _fscanf(file_handle,&DAT_005c4795);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0x1d4a944 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 16,
-      "match": "0x1d4a944",
-      "severity": "moderate",
-      "text": "iVar1 = 0x1d4a944;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1d276bc assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 26,
-      "match": "0x1d276bc",
-      "severity": "moderate",
-      "text": "iVar2 = 0x1d276bc;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

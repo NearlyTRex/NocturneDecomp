@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_imp_cpp_CImp_process_FUN_004bbaf0(CImp *this_ptr,float delta_time)
 
@@ -133,7 +132,7 @@ LAB_004bbb59:
       }
       else {
         pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                            (pCVar1,&local_104,_DAT_01cae30c);
+                            (pCVar1,&local_104,g_ImpIndices[0]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_8c,pCVar10);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_164);
@@ -380,7 +379,7 @@ LAB_004bbb59:
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                           (&local_b0,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           _DAT_01cae314);
+                           g_ImpIndices[2]);
       pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                           ((CDemonActor *)this_ptr,&local_5c,pCVar10);
       iVar7 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0
@@ -391,7 +390,7 @@ LAB_004bbb59:
         while (iVar7 < g_CDemonSetPtr->enemy_count) {
           pCVar14 = (CImp *)core_actor_cpp_castToClassHash_FUN_0040d890
                                       (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar13),
-                                       g_CImpActorType_01cae33c.name_hash);
+                                       g_CImpClassInfo.name_hash);
           if (((pCVar14 == (CImp *)0x0) || (pCVar14 == this_ptr)) ||
              ((this_ptr->base).victim != (pCVar14->base).victim)) {
             iVar7 = iVar7 + 1;

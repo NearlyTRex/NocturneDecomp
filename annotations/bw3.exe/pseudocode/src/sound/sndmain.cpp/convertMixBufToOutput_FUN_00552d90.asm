@@ -28,15 +28,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d2ae9
 ;   TerminatedCString s_convertMixBufToOutput_in_005d2afe
-;   undefined4 DAT_005d2b2a
-;   undefined4 DAT_005d2b2e
-;   undefined4 DAT_005d2b32
-;   undefined4 DAT_005d2b3a
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   float g_FLOAT_005d2b2a = 32766
+;   float g_FLOAT_005d2b2e = 127
+;   double g_DOUBLE_005d2b32 = -1
+;   float g_FLOAT_005d2b3a = 128
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -72,7 +72,7 @@ section .text
     MOV dword ptr [EBP + -0xc],EAX      ; 00552dc7
     FLD float ptr [EBP + -0xc]          ; 00552dca
     FST double ptr [EBP + -0x34]        ; 00552dcd
-    FCOMP double ptr [0x005d2b32]       ; 00552dd0 | DAT_005d2b32
+    FCOMP double ptr [0x005d2b32]       ; 00552dd0 | g_DOUBLE_005d2b32
     FNSTSW AX                           ; 00552dd6
     SAHF                                ; 00552dd8
     JBE 0x00552ea3                      ; 00552dd9
@@ -118,7 +118,7 @@ section .text
     MOV dword ptr [EBP + -0x24],EAX     ; 00552e2a
     FLD float ptr [EBP + -0x24]         ; 00552e2d
     FST double ptr [EBP + -0x2c]        ; 00552e30
-    FCOMP double ptr [0x005d2b32]       ; 00552e33 | DAT_005d2b32
+    FCOMP double ptr [0x005d2b32]       ; 00552e33 | g_DOUBLE_005d2b32
     FNSTSW AX                           ; 00552e39
     SAHF                                ; 00552e3b
     JBE 0x00552e6d                      ; 00552e3c
@@ -153,8 +153,8 @@ section .text
         ;   XREF to: 00552e4e (UNCONDITIONAL_JUMP)  ; LAB_00552e4e
     FLD float ptr [EBP + -0x24]         ; 00552e75
         ;   Label: LAB_00552e75
-    FMUL float ptr [0x005d2b2e]         ; 00552e78 | DAT_005d2b2e
-    FADD float ptr [0x005d2b3a]         ; 00552e7e | DAT_005d2b3a
+    FMUL float ptr [0x005d2b2e]         ; 00552e78 | g_FLOAT_005d2b2e
+    FADD float ptr [0x005d2b3a]         ; 00552e7e | g_FLOAT_005d2b3a
     FSTP float ptr [EBP + -0x1c]        ; 00552e84
     FLD float ptr [EBP + 0xffffffe4]    ; 00552e87
     FISTP dword ptr [EBP + 0xffffffe8]  ; 00552e8d
@@ -170,7 +170,7 @@ section .text
         ;   XREF to: 00552df5 (UNCONDITIONAL_JUMP)  ; LAB_00552df5
     FLD float ptr [EBP + -0xc]          ; 00552eb0
         ;   Label: LAB_00552eb0
-    FMUL float ptr [0x005d2b2a]         ; 00552eb3 | DAT_005d2b2a
+    FMUL float ptr [0x005d2b2a]         ; 00552eb3 | g_FLOAT_005d2b2a
     FSTP float ptr [EBP + -0x14]        ; 00552eb9
     FLD float ptr [EBP + 0xffffffec]    ; 00552ebc
     FISTP dword ptr [EBP + 0xfffffff0]  ; 00552ec2
@@ -184,10 +184,10 @@ section .text
     MOV EDI,0x5d2ae9                    ; 00552ede | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x619                       ; 00552ee3
     PUSH 0x5d2afe                       ; 00552ee8 | = "convertMixBufToOutput - invalid bits: %d"
-    MOV dword ptr [0x01d71de0],EDI      ; 00552eed | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00552ef3 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00552ef9
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 00552eed | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 00552ef3 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00552ef9
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00552efe
     MOV ESP,EBP                         ; 00552f01
     POP EBP                             ; 00552f03

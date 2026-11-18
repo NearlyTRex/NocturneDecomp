@@ -29,13 +29,13 @@ void __cdecl plotPixelWithDepth(int x_coord,int y_coord,uint depth_value);
 // Address: 00401310
 void __cdecl drawLine3D(int x1,int y1,uint z1,int x2,int y2,uint z2);
 
-// Original: engine_2d.c_FUN_00401450
+// Original: engine_2d.c_findBestPaletteMatch_FUN_00401450
 // Address: 00401450
-int __cdecl FUN_00401450(int red,int green,int blue,int start_index,int end_index);
+int __cdecl findBestPaletteMatch(int red,int green,int blue,int start_index,int end_index);
 
-// Original: engine_2d.c_FUN_00401590
+// Original: engine_2d.c_loadPaletteFile_FUN_00401590
 // Address: 00401590
-void FUN_00401590(char *param_1);
+void __cdecl loadPaletteFile(char *filename);
 
 // Original: engine_2d.c_drawCharacter_FUN_00401620
 // Address: 00401620
@@ -55,7 +55,7 @@ int __cdecl getStringWidth(char *text);
 
 // Original: engine_2d.c_drawCharacterMasked_FUN_00401910
 // Address: 00401910
-int drawCharacterMasked(void);
+int __cdecl drawCharacterMasked(int char_code,int x_pos,int y_pos);
 
 // Original: engine_2d.c_drawCharacterMaskedColor_FUN_00401a20
 // Address: 00401a20
@@ -75,7 +75,7 @@ void __cdecl drawTextMultiline(char *text,int x_start,int y_start,int x_max,int 
 
 // Original: engine_2d.c_wrapTextToWidth_FUN_00401d90
 // Address: 00401d90
-void wrapTextToWidth(void);
+void __cdecl wrapTextToWidth(char *input_text,int max_width,char *output_buffer);
 
 // Original: engine_2d.c_drawTextWrappedColor_FUN_00401ec0
 // Address: 00401ec0
@@ -121,29 +121,29 @@ void __cdecl drawTextCenteredColor(char *text,int left_x,int right_x,int y);
 // Address: 00402710
 void __cdecl drawTextCenteredXYColor(int left_x,int right_x,int y,char *text);
 
-// Original: engine_2d.c_FUN_00402800
+// Original: engine_2d.c_getTextWrapEnabled_FUN_00402800
 // Address: 00402800
-int __cdecl FUN_00402800(void);
+int __cdecl getTextWrapEnabled(void);
 
-// Original: engine_2d.c_FUN_00402810
+// Original: engine_2d.c_setTextWrapEnabled_FUN_00402810
 // Address: 00402810
-void __cdecl FUN_00402810(int enabled);
+void __cdecl setTextWrapEnabled(int enabled);
 
-// Original: engine_2d.c_FUN_00402830
+// Original: engine_2d.c_disableTextWrap_FUN_00402830
 // Address: 00402830
-void __cdecl FUN_00402830(void);
+void __cdecl disableTextWrap(void);
 
-// Original: engine_2d.c_FUN_00402840
+// Original: engine_2d.c_getTextColor_FUN_00402840
 // Address: 00402840
-int __cdecl FUN_00402840(void);
+int __cdecl getTextColor(void);
 
-// Original: engine_2d.c_FUN_00402850
+// Original: engine_2d.c_setTextColor_FUN_00402850
 // Address: 00402850
-void __cdecl FUN_00402850(int color);
+void __cdecl setTextColor(int color);
 
-// Original: engine_2d.c_FUN_00402860
+// Original: engine_2d.c_resetTextColor_FUN_00402860
 // Address: 00402860
-void FUN_00402860(void);
+void __cdecl resetTextColor(void);
 
 // Original: engine_2d.c_buildColorLookupTable_FUN_00402880
 // Address: 00402880
@@ -163,7 +163,7 @@ void __cdecl reinitializeGraphicsSystem(void);
 
 // Original: engine_2d.c_draw320x200SizeDot_FUN_00402ae0
 // Address: 00402ae0
-void draw320x200SizeDot(void);
+void __cdecl draw320x200SizeDot(int x_3d,int y_3d,int z_depth);
 
 // Original: engine_2d.c_computeOutcode_FUN_00402c60
 // Address: 00402c60
@@ -203,7 +203,7 @@ void __cdecl clearInputAndWait(void);
 
 // Original: engine_2d.c_getInputWithPrompt_FUN_00403310
 // Address: 00403310
-uint getInputWithPrompt(void);
+int __cdecl getInputWithPrompt(char *buffer,int max_length,int x,int y,char *prompt);
 
 // Original: engine_2d.c_setSolidColor_FUN_004033f0
 // Address: 004033f0

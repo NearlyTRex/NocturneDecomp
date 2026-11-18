@@ -16,11 +16,11 @@ void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(CEnemy *this_ptr,S
   if (0.0 < damage_info->damage_amount) {
     pCVar1 = (CCharacter *)
              core_actor_cpp_castToClassHash_FUN_0040d890
-                       (damage_info->wielder,g_CCharacterActorType_00765a60.name_hash);
+                       (damage_info->wielder,g_CCharacterClassInfo.name_hash);
     if (pCVar1 == (CCharacter *)0x0) {
       pCVar1 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (damage_info->attacker,g_CCharacterActorType_00765a60.name_hash);
+                         (damage_info->attacker,g_CCharacterClassInfo.name_hash);
     }
     if (pCVar1 != (CCharacter *)0x0) {
       this_ptr->victim_search_timer = 15.0;

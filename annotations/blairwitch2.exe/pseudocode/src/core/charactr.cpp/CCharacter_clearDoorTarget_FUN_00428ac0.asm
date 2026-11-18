@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_door.cpp_FUN_0045efc0
+;   core_door.cpp_CDoor_onOpened_FUN_0045efc0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     RET                                 ; 00428ad0
     PUSH EDX                            ; 00428ad1
         ;   Label: LAB_00428ad1
-    CALL core_door.cpp_FUN_0045efc0     ; 00428ad2
-        ;   XREF to: 0045efc0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0045efc0(CDoor * this_ptr)
+    CALL core_door.cpp_CDoor_onOpened_FUN_0045efc0 ; 00428ad2
+        ;   XREF to: 0045efc0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_onOpened_FUN_0045efc0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00428ad7
     MOV dword ptr [EBX + 0x27b0],0x0    ; 00428ada
     POP EBX                             ; 00428ae4

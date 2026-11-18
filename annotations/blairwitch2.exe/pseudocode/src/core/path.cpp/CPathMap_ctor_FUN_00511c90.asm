@@ -7,16 +7,16 @@
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004ce240 at 004ce254
+;   core_hero.cpp_CHero_ctor_FUN_004ce240 at 004ce254
 ;   core_npc.cpp_CNPC_ctor_FUN_00510460 at 00510477
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_01e4fed8
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_PathMapCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_path.cpp_CPathMap_reset_FUN_00513eb0
 ;
 ; *****************************************************************************
@@ -34,16 +34,16 @@ section .text
     MOV dword ptr [EBX + 0x138b0],EAX   ; 00511cad
     CALL core_path.cpp_CPathMap_reset_FUN_00513eb0 ; 00511cb3
         ;   XREF to: 00513eb0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_00513eb0(CPathMap * this_ptr)
-    MOV EDX,dword ptr [0x01e4fed8]      ; 00511cb8 | DAT_01e4fed8
+    MOV EDX,dword ptr [0x01e4fed8]      ; 00511cb8 | g_PathMapCount
     ADD ESP,0x4                         ; 00511cbe
     CMP EDX,0xc8                        ; 00511cc1
     JGE 0x00511ce3                      ; 00511cc7
         ;   XREF to: 00511ce3 (CONDITIONAL_JUMP)  ; LAB_00511ce3
-    MOV EAX,[0x01e4fed8]                ; 00511cc9 | DAT_01e4fed8
+    MOV EAX,[0x01e4fed8]                ; 00511cc9 | g_PathMapCount
         ;   Label: LAB_00511cc9
     LEA EDI,[EAX + 0x1]                 ; 00511cce
     MOV dword ptr [EAX*0x4 + 0x1e4fedc],EBX ; 00511cd1
-    MOV dword ptr [0x01e4fed8],EDI      ; 00511cd8 | DAT_01e4fed8
+    MOV dword ptr [0x01e4fed8],EDI      ; 00511cd8 | g_PathMapCount
     MOV EAX,EBX                         ; 00511cde
     POP EDI                             ; 00511ce0
     POP EBX                             ; 00511ce1
@@ -53,10 +53,10 @@ section .text
     MOV ECX,0x5e16ab                    ; 00511ce4
     MOV ESI,0x123                       ; 00511ce9
     PUSH 0x5e16bc                       ; 00511cee
-    MOV dword ptr [0x01d046a0],ECX      ; 00511cf3 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00511cf9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00511cff
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00511cf3 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00511cf9 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00511cff
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00511d04
     POP ESI                             ; 00511d07
     JMP 0x00511cc9                      ; 00511d08

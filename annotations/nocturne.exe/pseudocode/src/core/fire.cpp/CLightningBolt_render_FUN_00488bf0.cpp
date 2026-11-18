@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CLightningBolt_render_FUN_00488bf0(CLightningBolt *this_ptr)
 
 {
@@ -48,8 +46,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_00488bf0(CLightningBolt *th
   }
   iVar7 = rand();
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)(&DAT_005b8b14 + (iVar7 % 6) * 0x18)
-            );
+            (g_CDemonRenderer_PTR_005ae704,g_FireEffectLightningBoltTextures + iVar7 % 6);
   local_dc.base.count = 4;
   local_dc.surface_normal.D.i = 0;
   local_dc.surface_normal.C.i = 0;
@@ -61,33 +58,33 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_00488bf0(CLightningBolt *th
   local_bc = 2;
   uVar8 = rand();
   if ((uVar8 & 1) == 0) {
-    _DAT_005c505c = 0x80000;
-    _DAT_005c508c = 0x80000;
-    _DAT_005c50bc = 0xf80000;
-    DAT_005c502c = 0xf80000;
+    g_SRenderVertex_ARRAY_005c5014[1].u = 0x80000;
+    g_SRenderVertex_ARRAY_005c5014[2].u = 0x80000;
+    g_SRenderVertex_ARRAY_005c5014[3].u = 0xf80000;
+    g_SRenderVertex_ARRAY_005c5014[0].u = 0xf80000;
   }
   else {
-    _DAT_005c505c = 0xf80000;
-    _DAT_005c508c = 0xf80000;
-    _DAT_005c50bc = 0x80000;
-    DAT_005c502c = 0x80000;
+    g_SRenderVertex_ARRAY_005c5014[1].u = 0xf80000;
+    g_SRenderVertex_ARRAY_005c5014[2].u = 0xf80000;
+    g_SRenderVertex_ARRAY_005c5014[3].u = 0x80000;
+    g_SRenderVertex_ARRAY_005c5014[0].u = 0x80000;
   }
-  _DAT_005c50c0 = 0xf80000;
-  _DAT_005c5090 = 0xf80000;
-  _DAT_005c5060 = 0x80000;
-  _DAT_005c5030 = 0x80000;
-  DAT_005c5034 = 0xffff;
-  DAT_005c5038 = 0xffff;
-  DAT_005c503c = 0xffff;
-  DAT_005c5064 = 0xffff;
-  DAT_005c5068 = 0xffff;
-  DAT_005c506c = 0xffff;
-  DAT_005c5094 = 0xffff;
-  DAT_005c5098 = 0xffff;
-  DAT_005c509c = 0xffff;
-  DAT_005c50c4 = 0xffff;
-  DAT_005c50c8 = 0xffff;
-  DAT_005c50cc = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[3].v = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[2].v = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[1].v = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[0].v = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[0].r = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[0].g = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[0].b = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[1].r = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[1].g = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[1].b = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[2].r = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[2].g = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[2].b = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[3].r = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[3].g = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[3].b = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,0xffff);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);

@@ -8,11 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c7162
+;   double g_DOUBLE_005c7162 = 1.15000000000000
 ;   CGore* g_CGorePtr = 01d22e44
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004ce8a0
 ;   core_weapon.cpp_CWeapon_process_FUN_0057b160
 ;
@@ -51,7 +51,7 @@ section .text
     PUSH ESI                            ; 004e741e
     FLD float ptr [EBX + 0x5b4]         ; 004e741f
     FLD ST0                             ; 004e7425
-    FMUL double ptr [0x005c7162]        ; 004e7427 | DAT_005c7162
+    FMUL double ptr [0x005c7162]        ; 004e7427 | g_DOUBLE_005c7162
     LEA ESI,[ESP + 0x8]                 ; 004e742d
     LEA EDI,[ESP + 0x20]                ; 004e7431
     MOV ECX,dword ptr [EBX + 0x5ac]     ; 004e7435
@@ -73,8 +73,8 @@ section .text
     PUSH EBX                            ; 004e746c
     LEA ESI,[ESP + 0x34]                ; 004e746d
     LEA EDI,[ESP + 0x1c]                ; 004e7471
-    CALL core_actor.cpp_FUN_00408b80    ; 004e7475
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004e7475
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x34]                ; 004e747a
     ADD ESP,0x8                         ; 004e747e
     MOVSD ES:EDI,ESI                    ; 004e7481

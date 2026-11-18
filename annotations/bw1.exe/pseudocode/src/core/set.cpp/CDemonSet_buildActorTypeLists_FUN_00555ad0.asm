@@ -7,8 +7,8 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_0051b7b0 at 0051b7f6
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_0051b420 at 0051b472
-;   core_mission.cpp_FUN_0051b7b0 at 0051b7f6
 ;
 ; Referenced Globals:
 ;   undefined4 g_CCharacterClassInfo.name_hash

@@ -1,0 +1,555 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 700,
+    "complexity_score": 811,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 351,
+    "suspect_count": 43,
+    "suspect_types": [
+      "alloc_magic_size",
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 1051
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042f750",
+    "address_range": [
+      [
+        "0042f750",
+        "0043020d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_traceConnectedEdges_FUN_0042f750",
+    "signature": "SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_0042f750(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "005b8ce0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005b8ce0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d046a0",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 9,
+    "declared_stack_bytes": 36,
+    "estimated_params": 9,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.503246753246753,
+    "instruction_count": 616,
+    "opcode_distribution": {
+      "BOOL_AND": 6,
+      "BOOL_NEGATE": 56,
+      "BOOL_OR": 8,
+      "BRANCH": 10,
+      "CALL": 7,
+      "CBRANCH": 41,
+      "COPY": 614,
+      "INT_ADD": 361,
+      "INT_AND": 557,
+      "INT_CARRY": 39,
+      "INT_EQUAL": 430,
+      "INT_LEFT": 16,
+      "INT_LESS": 34,
+      "INT_MULT": 16,
+      "INT_NOTEQUAL": 38,
+      "INT_OR": 75,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 43,
+      "INT_SCARRY": 49,
+      "INT_SEXT": 15,
+      "INT_SLESS": 219,
+      "INT_SUB": 86,
+      "INT_XOR": 26,
+      "INT_ZEXT": 4,
+      "LOAD": 255,
+      "POPCOUNT": 202,
+      "RETURN": 3,
+      "STORE": 168,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 3390
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0043a460",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00438070",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00434af0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9935
+    },
+    "nocturne.exe": {
+      "addr": "00430630",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 36,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "edge_lists",
+        "offset": 4,
+        "size": 4,
+        "type": "SEdgeList *"
+      },
+      {
+        "is_param": true,
+        "name": "scanline_data",
+        "offset": 8,
+        "size": 4,
+        "type": "SEdgeList *"
+      },
+      {
+        "is_param": true,
+        "name": "existing_edges",
+        "offset": 12,
+        "size": 4,
+        "type": "SEdge *"
+      },
+      {
+        "is_param": true,
+        "name": "max_x",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "max_y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "gap_tolerance_x",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "gap_tolerance_y",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "gap_tolerance_connected",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "gap_tolerance_horizontal",
+        "offset": 36,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(int *)((int)scanline_data",
+      "severity": "moderate",
+      "text": "piStack_34 = (int *)((int)scanline_data + iStack_dc * 0x84);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)piVar4 + iStack_e0 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iVar16 = *(int *)((int)piVar4 + iStack_e0 + 0x44) + iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(int *)(iStack_2c * 0x84 + (int)scanline_data",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)(iStack_2c * 0x84 + (int)scanline_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)piVar4 + iStack_c4 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iStack_74 = *(int *)((int)piVar4 + iStack_c4 + 0x44) + iVar6 + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 131,
+      "match": "pSStack_44[-1].",
+      "severity": "mild",
+      "text": "((int)&(pSStack_e4[8].edge_data)->x0 + (int)((int)&pSStack_44[-1].y1 + 1)",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 252,
+      "match": "(int *)(iStack_2c * 0x84 + (int)scanline_data",
+      "severity": "moderate",
+      "text": "for (iStack_b4 = 0; piVar4 = (int *)(iStack_2c * 0x84 + (int)scanline_data),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 254,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iStack_40 = *(int *)((int)piVar4 + iStack_50 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 258,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iVar6 = iStack_40 + *(int *)((int)piVar4 + iStack_50 + 0x44) + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 259,
+      "match": "(int *)((int)piVar10",
+      "severity": "moderate",
+      "text": "if ((iStack_20 < (int)pSStack_44) && (*(int *)((int)piVar10 + iStack_e0 + 8) < iVar6)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 283,
+      "match": "(int *)(iStack_2c * 0x84 + (int)scanline_data",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)(iStack_2c * 0x84 + (int)scanline_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 285,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "if ((iStack_b4 < (int)pSStack_44) && (*(int *)((int)piVar4 + iStack_50 + 8) < iVar17))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 349,
+      "match": "(uint *)((int)puVar15",
+      "severity": "moderate",
+      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar19 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 350,
+      "match": "(SEdge *)((int)pSVar18",
+      "severity": "moderate",
+      "text": "pSVar18 = (SEdge *)((int)pSVar18 + (uint)bVar19 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&scanline_data->edge_data` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 103,
+      "match": "(int)&scanline_data->edge_data",
+      "severity": "moderate",
+      "text": "for (iStack_20 = 0; piVar4 = (int *)((int)&scanline_data->edge_data + iStack_cc),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)piVar4 + iStack_e0 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iVar16 = *(int *)((int)piVar4 + iStack_e0 + 0x44) + iVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 125,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)piVar4 + iStack_c4 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 126,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iStack_74 = *(int *)((int)piVar4 + iStack_c4 + 0x44) + iVar6 + -1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pSStack_44[-1].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)&pSStack_44[-1].y1",
+      "severity": "moderate",
+      "text": "((int)&(pSStack_e4[8].edge_data)->x0 + (int)((int)&pSStack_44[-1].y1 + 1)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puStack_58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 133,
+      "match": "(int)puStack_58",
+      "severity": "moderate",
+      "text": "if (iVar6 < (int)puStack_58) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puStack_58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 145,
+      "match": "(int)puStack_58",
+      "severity": "moderate",
+      "text": "if (gap_tolerance_y < (iVar3 - (int)puStack_58) + -1) goto LAB_0042fbc0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puStack_58` truncated by cast to `ushort` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 148,
+      "match": "(ushort)puStack_58",
+      "severity": "moderate",
+      "text": "*puVar5 = (ushort)puStack_58;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSStack_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 182,
+      "match": "(int)pSStack_44",
+      "severity": "moderate",
+      "text": "iStack_18 = (int)pSStack_44 + piStack_a8[0x10] + -1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 254,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iStack_40 = *(int *)((int)piVar4 + iStack_50 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&scanline_data->edge_data` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 256,
+      "match": "(int)&scanline_data->edge_data",
+      "severity": "moderate",
+      "text": "piVar10 = (int *)((int)&scanline_data->edge_data + iStack_cc);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 258,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iVar6 = iStack_40 + *(int *)((int)piVar4 + iStack_50 + 0x44) + -1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSStack_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 259,
+      "match": "(int)pSStack_44",
+      "severity": "moderate",
+      "text": "if ((iStack_20 < (int)pSStack_44) && (*(int *)((int)piVar10 + iStack_e0 + 8) < iVar6)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 259,
+      "match": "(int)piVar10",
+      "severity": "moderate",
+      "text": "if ((iStack_20 < (int)pSStack_44) && (*(int *)((int)piVar10 + iStack_e0 + 8) < iVar6)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSStack_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 285,
+      "match": "(int)pSStack_44",
+      "severity": "moderate",
+      "text": "if ((iStack_b4 < (int)pSStack_44) && (*(int *)((int)piVar4 + iStack_50 + 8) < iVar17))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 285,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "if ((iStack_b4 < (int)pSStack_44) && (*(int *)((int)piVar4 + iStack_50 + 8) < iVar17))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 349,
+      "match": "(int)puVar15",
+      "severity": "moderate",
+      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar19 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 350,
+      "match": "(int)pSVar18",
+      "severity": "moderate",
+      "text": "pSVar18 = (SEdge *)((int)pSVar18 + (uint)bVar19 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 340,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar14 = (uVar12 & 0x1fffffff) << 1; iVar14 != 0; iVar14 = iVar14 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 347,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar14 = 0; iVar14 != 0; iVar14 = iVar14 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 103,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "for (iStack_20 = 0; piVar4 = (int *)((int)&scanline_data->edge_data + iStack_cc),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 131,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(pSStack_e4[8].edge_data)->x0 + (int)((int)&pSStack_44[-1].y1 + 1)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 256,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar10 = (int *)((int)&scanline_data->edge_data + iStack_cc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSStack_e4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSStack_e4->owner`). Replace `pSStack_e4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 316,
+      "match": "pSStack_e4 = (T *)&pSStack_e4->FIELD",
+      "severity": "moderate",
+      "text": "pSStack_e4 = (SEdgeList *)&pSStack_e4->edge_count;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSStack_e8` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pSStack_e8) + offsetof(subfield)` equals the real array stride. Replace `pSStack_e8->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 318,
+      "match": "pSStack_e8 = (T *)&pSStack_e8[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pSStack_e8 = (SEdgeList *)&pSStack_e8[0x10].edge_count;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Allocation size hardcodes 0x8 == sizeof(SEdge). Replace the magic with sizeof(SEdge) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 331,
+      "match": "(SEdge*) alloc stride 0x8",
+      "severity": "moderate",
+      "text": "(SEdge *)realloc(existing_edges,*max_x * 8 + uVar12 * 8)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004301e8, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 684,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004301e8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

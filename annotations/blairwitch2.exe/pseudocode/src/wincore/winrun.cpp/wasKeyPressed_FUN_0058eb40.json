@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 20,
+    "complexity_score": 4,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 12
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 11
   },
   "cross_references": [
     {
       "addr": "004b90d0",
       "from_addr": "004b916f",
-      "name": "core_game.cpp_FUN_004b90d0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bcbf0",
       "from_addr": "004bcfdc",
-      "name": "core_game.cpp_FUN_004bcbf0",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,15 +38,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047c0f0",
-      "from_addr": "0047c532",
-      "name": "shape_edittool.cpp_FUN_0047c0f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047b800",
       "from_addr": "0047b9ae",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c0f0",
+      "from_addr": "0047c532",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -80,14 +78,14 @@
   "globals": [
     {
       "addr": "02662dd8",
-      "name": "DAT_02662dd8",
-      "type": "undefined4",
+      "name": "g_InputReadIndex",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02662ddc",
-      "name": "DAT_02662ddc",
-      "type": "undefined4",
+      "name": "g_InputWriteIndex",
+      "type": "int",
       "value": null
     }
   ],
@@ -144,14 +142,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -8,28 +8,28 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_dtor_FUN_0047b690 at 0047b6a2
-;   shape_edittool.cpp_FUN_0047e760 at 0047e76f
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 at 0047e76f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d238e
 ;   TerminatedCString s_CEditorTools_popWindow_c_005d23a4
-;   undefined4 DAT_01c2559c
-;   undefined4 DAT_01c35e38
-;   undefined4 DAT_01c35e3c
-;   undefined4 DAT_01c35e40
-;   undefined4 DAT_01c35e44
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
-;   undefined4 DAT_01c35e58
-;   undefined4 DAT_01c35e5c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_WindowStackCount
+;   int g_INT_01c35e38
+;   int g_INT_01c35e3c
+;   int g_INT_01c35e40
+;   int g_INT_01c35e44
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
+;   int g_ClipRight
+;   int g_INT_01c35e54
+;   int g_ViewportWidth
+;   int g_ViewportHeight
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b86a0
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;   engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0
 ;
 ; *****************************************************************************
@@ -40,13 +40,13 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_popWindowState_FUN_0047e780
     PUSH ESI                            ; 0047e781
     PUSH EDI                            ; 0047e782
-    CMP dword ptr [0x01c2559c],0x1      ; 0047e783 | DAT_01c2559c
+    CMP dword ptr [0x01c2559c],0x1      ; 0047e783 | g_WindowStackCount
     JL 0x0047e827                       ; 0047e78a
         ;   XREF to: 0047e827 (CONDITIONAL_JUMP)  ; LAB_0047e827
-    MOV ESI,dword ptr [0x01c2559c]      ; 0047e790 | DAT_01c2559c
+    MOV ESI,dword ptr [0x01c2559c]      ; 0047e790 | g_WindowStackCount
         ;   Label: LAB_0047e790
     DEC ESI                             ; 0047e796
-    MOV dword ptr [0x01c2559c],ESI      ; 0047e797 | DAT_01c2559c
+    MOV dword ptr [0x01c2559c],ESI      ; 0047e797 | g_WindowStackCount
     LEA EBX,[ESI*0x8 + 0x0]             ; 0047e79d
     MOV EAX,EBX                         ; 0047e7a4
     SHL EBX,0x6                         ; 0047e7a6
@@ -64,26 +64,26 @@ section .text
     CALL engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0 ; 0047e7cb
         ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
     MOV EAX,dword ptr [EBX + 0x10]      ; 0047e7d0
-    MOV [0x01c35e48],EAX                ; 0047e7d3 | DAT_01c35e48
+    MOV [0x01c35e48],EAX                ; 0047e7d3 | g_INT_01c35e48
     MOV EAX,dword ptr [EBX + 0x14]      ; 0047e7d8
-    MOV [0x01c35e4c],EAX                ; 0047e7db | DAT_01c35e4c
+    MOV [0x01c35e4c],EAX                ; 0047e7db | g_INT_01c35e4c
     MOV EAX,dword ptr [EBX + 0x18]      ; 0047e7e0
-    MOV [0x01c35e50],EAX                ; 0047e7e3 | DAT_01c35e50
+    MOV [0x01c35e50],EAX                ; 0047e7e3 | g_ClipRight
     MOV EAX,dword ptr [EBX + 0x1c]      ; 0047e7e8
-    MOV [0x01c35e54],EAX                ; 0047e7eb | DAT_01c35e54
+    MOV [0x01c35e54],EAX                ; 0047e7eb | g_INT_01c35e54
     MOV EAX,dword ptr [EBX + 0x30]      ; 0047e7f0
-    MOV [0x01c35e38],EAX                ; 0047e7f3 | DAT_01c35e38
+    MOV [0x01c35e38],EAX                ; 0047e7f3 | g_INT_01c35e38
     MOV EAX,dword ptr [EBX + 0x34]      ; 0047e7f8
-    MOV [0x01c35e3c],EAX                ; 0047e7fb | DAT_01c35e3c
+    MOV [0x01c35e3c],EAX                ; 0047e7fb | g_INT_01c35e3c
     MOV EAX,dword ptr [EBX + 0x38]      ; 0047e800
-    MOV [0x01c35e40],EAX                ; 0047e803 | DAT_01c35e40
+    MOV [0x01c35e40],EAX                ; 0047e803 | g_INT_01c35e40
     MOV EAX,dword ptr [EBX + 0x3c]      ; 0047e808
-    MOV [0x01c35e44],EAX                ; 0047e80b | DAT_01c35e44
+    MOV [0x01c35e44],EAX                ; 0047e80b | g_INT_01c35e44
     MOV EAX,dword ptr [EBX + 0x40]      ; 0047e810
-    MOV [0x01c35e58],EAX                ; 0047e813 | DAT_01c35e58
+    MOV [0x01c35e58],EAX                ; 0047e813 | g_ViewportWidth
     MOV EAX,dword ptr [EBX + 0x44]      ; 0047e818
     ADD ESP,0x10                        ; 0047e81b
-    MOV [0x01c35e5c],EAX                ; 0047e81e | DAT_01c35e5c
+    MOV [0x01c35e5c],EAX                ; 0047e81e | g_ViewportHeight
     POP EDI                             ; 0047e823
     POP ESI                             ; 0047e824
     POP EBX                             ; 0047e825
@@ -92,17 +92,17 @@ section .text
         ;   Label: LAB_0047e827
     MOV EBX,0x8b5                       ; 0047e82c
     PUSH 0x5d23a4                       ; 0047e831 | = "CEditorTools::popWindow() called but ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0047e836 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0047e83c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0047e842
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0047e836 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 0047e83c | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047e842
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047e847
     JMP 0x0047e790                      ; 0047e84a
         ;   XREF to: 0047e790 (UNCONDITIONAL_JUMP)  ; LAB_0047e790
     PUSH EDI                            ; 0047e84f
         ;   Label: LAB_0047e84f
-    CALL crt_unknown.c_FUN_005b86a0     ; 0047e850
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 0047e850
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 0047e855
     MOV dword ptr [EBX + 0x1d8],0x0     ; 0047e858
     JMP 0x0047e7bf                      ; 0047e862

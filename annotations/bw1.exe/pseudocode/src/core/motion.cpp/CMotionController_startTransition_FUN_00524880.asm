@@ -14,7 +14,7 @@
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_00524620 at 005246e9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eaeef
+;   float g_MotionControllerAutoDetermineFrame = -1
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -35,7 +35,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0xc]       ; 0052488f
     MOV dword ptr [ESP],EAX             ; 00524892
     FLD float ptr [ESP]                 ; 00524895
-    FCOMP float ptr [0x005eaeef]        ; 00524898 | DAT_005eaeef
+    FCOMP float ptr [0x005eaeef]        ; 00524898 | g_MotionControllerAutoDetermineFrame
     FNSTSW AX                           ; 0052489e
     SAHF                                ; 005248a0
     JZ 0x005248e7                       ; 005248a1

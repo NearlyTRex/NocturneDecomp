@@ -9,11 +9,11 @@
 void __cdecl core_inv_cpp_freeInventory_FUN_004dacc0(void)
 
 {
-  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01cf01b0);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&g_InvBackgroundBitmap);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01cf01c4);
-  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01cf01d8);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&g_WeapBackgroundBitmap);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01cf01ec);
-  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01d02e08);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&g_BatteryIconBitmap);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01d02e1c);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01d02e30);
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01d02e44);

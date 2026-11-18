@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_00467920(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
@@ -37,33 +35,33 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_00467920(CDrawS
       iVar3 = this_ptr->clip_bottom;
     }
     if (iVar4 <= iVar3) {
-      if (_DAT_01ba5c34 == 0) {
+      if (g_UseRGBConversion == 0) {
         iVar3 = iVar3 * 4;
         iVar4 = iVar4 * 4;
-        if (DAT_006141c0 < 0x10) {
-          if (DAT_006141c0 == 8) {
+        if ((uint)g_INT_006141c0 < 0x10) {
+          if (g_INT_006141c0 == 8) {
             do {
-              piVar1 = (int *)(&DAT_01c2a38c + iVar4);
+              piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
               iVar4 = iVar4 + 4;
               memset
-                        ((void *)(*piVar1 + start_x),_DAT_01ba5c28,(end_x - start_x) + 1);
+                        ((void *)(*piVar1 + start_x),g_CurrentDrawColor,(end_x - start_x) + 1);
             } while (iVar4 <= iVar3);
             return;
           }
 LAB_00467a8e:
-          _DAT_01d046a0 = "..\\cockpit\\drawsurf.cpp";
-          _DAT_01d046a4 = 0x524;
-          core_main_c_FUN_004e4500("Invalid bitsPerPixel!");
+          g_CHAR_PTR_01d046a0 = "..\\cockpit\\drawsurf.cpp";
+          g_INT_01d046a4 = 0x524;
+          core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid bitsPerPixel!");
           return;
         }
-        if (DAT_006141c0 < 0x11) {
+        if ((uint)g_INT_006141c0 < 0x11) {
           do {
             if (start_x <= end_x) {
               iVar5 = start_x;
-              puVar2 = (ushort *)(start_x * 2 + *(int *)(&DAT_01c2a38c + iVar4));
+              puVar2 = (ushort *)(start_x * 2 + *(int *)((int)g_ScreenBufferArray + iVar4));
               do {
                 iVar5 = iVar5 + 1;
-                *puVar2 = _DAT_01ba5c28;
+                *puVar2 = (ushort)g_CurrentDrawColor;
                 puVar2 = puVar2 + 1;
               } while (iVar5 <= end_x);
             }
@@ -71,14 +69,14 @@ LAB_00467a8e:
           } while (iVar4 <= iVar3);
         }
         else {
-          if (DAT_006141c0 != 0x20) goto LAB_00467a8e;
+          if (g_INT_006141c0 != 0x20) goto LAB_00467a8e;
           do {
             if (start_x <= end_x) {
-              piVar1 = (int *)(start_x * 4 + *(int *)(&DAT_01c2a38c + iVar4));
+              piVar1 = (int *)(start_x * 4 + *(int *)((int)g_ScreenBufferArray + iVar4));
               iVar5 = start_x;
               do {
                 iVar5 = iVar5 + 1;
-                *piVar1 = _DAT_01ba5c28;
+                *piVar1 = g_CurrentDrawColor;
                 piVar1 = piVar1 + 1;
               } while (iVar5 <= end_x);
             }

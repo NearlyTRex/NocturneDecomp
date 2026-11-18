@@ -38,13 +38,13 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
   g_ParticleCameraRotation.x = local_18.x;
   g_ParticleCameraRotation.z = local_18.z;
   g_ParticleCameraRotation.y = 0;
-  CVector3i_02d8339c.x =
+  g_BloodParticleViewDirection.x =
        (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[0].z *
                         -65536));
-  CVector3i_02d8339c.y =
+  g_BloodParticleViewDirection.y =
        (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[1].z *
                         -65536));
-  CVector3i_02d8339c.z =
+  g_BloodParticleViewDirection.z =
        (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[2].z *
                         -65536));
   return;

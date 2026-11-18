@@ -56,15 +56,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00426730",
-      "from_addr": "0042675d",
-      "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730",
+      "addr": "00424c80",
+      "from_addr": "00424d86",
+      "name": "core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00424c80",
-      "from_addr": "00424d86",
-      "name": "core_charactr.cpp_FUN_00424c80",
+      "addr": "00426730",
+      "from_addr": "0042675d",
+      "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -124,7 +124,7 @@
     {
       "addr": "004b5190",
       "from_addr": "004b543b",
-      "name": "core_game.cpp_FUN_004b5190",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,6 +146,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004c7580",
+      "from_addr": "004c78fe",
+      "name": "core_gore.cpp_CBloodParticle_render_FUN_004c7580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c8800",
       "from_addr": "004c8893",
       "name": "core_gore.cpp_CBloodPool_setupRenderState_FUN_004c8800",
@@ -158,33 +164,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c7580",
-      "from_addr": "004c78fe",
-      "name": "core_gore.cpp_FUN_004c7580",
+      "addr": "004c9000",
+      "from_addr": "004c9089",
+      "name": "core_gore.cpp_CFootstep_render_FUN_004c9000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c9000",
-      "from_addr": "004c9089",
-      "name": "core_gore.cpp_FUN_004c9000",
+      "addr": "004dd9b0",
+      "from_addr": "004de975",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004dbd80",
       "from_addr": "004dc1d7",
       "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004da130",
-      "from_addr": "004da6b0",
-      "name": "core_inv.cpp_FUN_004da130",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dd9b0",
-      "from_addr": "004de975",
-      "name": "core_inv.cpp_FUN_004dd9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -200,6 +194,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004da130",
+      "from_addr": "004da6b0",
+      "name": "core_inv.cpp_renderCompass_FUN_004da130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004e8180",
       "from_addr": "004e81c2",
       "name": "core_marquee.cpp_CMarquee_renderTransparent_FUN_004e8180",
@@ -208,7 +208,7 @@
     {
       "addr": "004eaf30",
       "from_addr": "004eb03f",
-      "name": "core_menu.cpp_FUN_004eaf30",
+      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_004eaf30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -244,7 +244,7 @@
     {
       "addr": "005301d0",
       "from_addr": "00530352",
-      "name": "core_set.cpp_FUN_005301d0",
+      "name": "core_set.cpp_CDemonSet_renderOpaqueActors_FUN_005301d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -322,7 +322,7 @@
       {
         "call_addr": "004b543b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b5190",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b5190",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -366,7 +366,7 @@
       {
         "call_addr": "004de975",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -410,7 +410,7 @@
       {
         "call_addr": "004c9089",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004c9000",
+        "caller": "core_gore.cpp_CFootstep_render_FUN_004c9000",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

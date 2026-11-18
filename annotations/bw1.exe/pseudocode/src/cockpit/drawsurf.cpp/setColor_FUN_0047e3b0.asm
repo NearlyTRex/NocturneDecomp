@@ -15,23 +15,23 @@
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005dafed
 ;   TerminatedCString s_Invalid_bitsPerPixel_in_005db005
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01bc11e4
-;   undefined4 DAT_01bc11e8
-;   undefined4 DAT_01bc11f0
-;   undefined4 DAT_01bc11f4
-;   undefined4 DAT_01bc11f8
-;   undefined4 DAT_01bc11fc
-;   undefined4 DAT_01bc1200
-;   undefined4 DAT_01bc1204
-;   undefined4 DAT_01bc1208
-;   undefined4 DAT_01c4e9d4
-;   undefined4 DAT_01c4e9d8
-;   undefined4 DAT_01c4e9e0
+;   int g_INT_0061b4a0 = 0x8
+;   int g_CurrentDrawColor
+;   int g_PaletteColorIndex
+;   int g_UseRGBConversion
+;   int g_OriginalColorValue
+;   int g_ScaledRedComponent
+;   int g_ScaledGreenComponent
+;   int g_ScaledBlueComponent
+;   int g_PackedPixelColor
+;   int g_DuplicatedPixelColor
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -48,128 +48,128 @@ section .text
     JL 0x0047e3f6                       ; 0047e3bd
         ;   XREF to: 0047e3f6 (CONDITIONAL_JUMP)  ; LAB_0047e3f6
     XOR EDX,EDX                         ; 0047e3bf
-    MOV dword ptr [0x01bc11f0],EDX      ; 0047e3c1 | DAT_01bc11f0
+    MOV dword ptr [0x01bc11f0],EDX      ; 0047e3c1 | g_UseRGBConversion
     AND EAX,0xff                        ; 0047e3c7
         ;   Label: LAB_0047e3c7
-    MOV EDX,dword ptr [0x0061b4a0]      ; 0047e3cc | DAT_0061b4a0
-    MOV [0x01bc11e8],EAX                ; 0047e3d2 | DAT_01bc11e8
+    MOV EDX,dword ptr [0x0061b4a0]      ; 0047e3cc | g_INT_0061b4a0
+    MOV [0x01bc11e8],EAX                ; 0047e3d2 | g_PaletteColorIndex
     CMP EDX,0x10                        ; 0047e3d7
     JNC 0x0047e578                      ; 0047e3da
         ;   XREF to: 0047e578 (CONDITIONAL_JUMP)  ; LAB_0047e578
     CMP EDX,0x8                         ; 0047e3e0
     JNZ 0x0047e58f                      ; 0047e3e3
         ;   XREF to: 0047e58f (CONDITIONAL_JUMP)  ; LAB_0047e58f
-    MOV [0x01bc11e4],EAX                ; 0047e3e9 | DAT_01bc11e4
+    MOV [0x01bc11e4],EAX                ; 0047e3e9 | g_CurrentDrawColor
     ADD ESP,0x4                         ; 0047e3ee
     POP EBP                             ; 0047e3f1
     POP EDI                             ; 0047e3f2
     POP ESI                             ; 0047e3f3
     POP EBX                             ; 0047e3f4
     RET                                 ; 0047e3f5
-    MOV ESI,dword ptr [0x01c4e9d8]      ; 0047e3f6 | DAT_01c4e9d8
+    MOV ESI,dword ptr [0x01c4e9d8]      ; 0047e3f6 | g_RedScaleFactor
         ;   Label: LAB_0047e3f6
-    MOV [0x01bc11f4],EAX                ; 0047e3fc | DAT_01bc11f4
+    MOV [0x01bc11f4],EAX                ; 0047e3fc | g_OriginalColorValue
     MOV EBX,EAX                         ; 0047e401
     XOR EDX,EDX                         ; 0047e403
     MOV EAX,0xff                        ; 0047e405
     DIV ESI                             ; 0047e40a
     MOV ECX,0x1                         ; 0047e40c
     NEG EBX                             ; 0047e411
-    MOV dword ptr [0x01bc11f0],ECX      ; 0047e413 | DAT_01bc11f0
+    MOV dword ptr [0x01bc11f0],ECX      ; 0047e413 | g_UseRGBConversion
     MOV ECX,EBX                         ; 0047e419
-    MOV EDI,dword ptr [0x01c4e9e4]      ; 0047e41b | DAT_01c4e9e4
+    MOV EDI,dword ptr [0x01c4e9e4]      ; 0047e41b | g_GreenScaleFactor
     SHR EAX,CL                          ; 0047e421
     XOR EDX,EDX                         ; 0047e423
-    MOV [0x01bc11f8],EAX                ; 0047e425 | DAT_01bc11f8
+    MOV [0x01bc11f8],EAX                ; 0047e425 | g_ScaledRedComponent
     MOV EAX,0xff                        ; 0047e42a
     DIV EDI                             ; 0047e42f
-    MOV EBP,dword ptr [0x01c4e9f0]      ; 0047e431 | DAT_01c4e9f0
+    MOV EBP,dword ptr [0x01c4e9f0]      ; 0047e431 | g_BlueScaleFactor
     SHR EAX,CL                          ; 0047e437
     XOR EDX,EDX                         ; 0047e439
-    MOV [0x01bc11fc],EAX                ; 0047e43b | DAT_01bc11fc
+    MOV [0x01bc11fc],EAX                ; 0047e43b | g_ScaledGreenComponent
     MOV EAX,0xff                        ; 0047e440
     DIV EBP                             ; 0047e445
-    MOV EDX,dword ptr [0x01bc11f8]      ; 0047e447 | DAT_01bc11f8
+    MOV EDX,dword ptr [0x01bc11f8]      ; 0047e447 | g_ScaledRedComponent
     SHR EAX,CL                          ; 0047e44d
-    MOV CL,byte ptr [0x01c4e9d4]        ; 0047e44f | DAT_01c4e9d4
-    MOV [0x01bc1200],EAX                ; 0047e455 | DAT_01bc1200
-    MOV EAX,[0x01bc11fc]                ; 0047e45a | DAT_01bc11fc
+    MOV CL,byte ptr [0x01c4e9d4]        ; 0047e44f | g_RedBitPosition
+    MOV [0x01bc1200],EAX                ; 0047e455 | g_ScaledBlueComponent
+    MOV EAX,[0x01bc11fc]                ; 0047e45a | g_ScaledGreenComponent
     SHL EDX,CL                          ; 0047e45f
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0047e461 | DAT_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0047e461 | g_GreenBitPosition
     SHL EAX,CL                          ; 0047e467
-    MOV CL,byte ptr [0x01c4e9ec]        ; 0047e469 | DAT_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 0047e469 | g_BlueBitPosition
     OR EDX,EAX                          ; 0047e46f
-    MOV EAX,[0x01bc1200]                ; 0047e471 | DAT_01bc1200
+    MOV EAX,[0x01bc1200]                ; 0047e471 | g_ScaledBlueComponent
     SHL EAX,CL                          ; 0047e476
     OR EDX,EAX                          ; 0047e478
-    MOV dword ptr [0x01bc1204],EDX      ; 0047e47a | DAT_01bc1204
-    MOV EAX,[0x01bc1204]                ; 0047e480 | DAT_01bc1204
+    MOV dword ptr [0x01bc1204],EDX      ; 0047e47a | g_PackedPixelColor
+    MOV EAX,[0x01bc1204]                ; 0047e480 | g_PackedPixelColor
     SHL EDX,0x10                        ; 0047e485
     OR EAX,EDX                          ; 0047e488
-    MOV dword ptr [0x01bc11f4],EBX      ; 0047e48a | DAT_01bc11f4
-    MOV [0x01bc1208],EAX                ; 0047e490 | DAT_01bc1208
+    MOV dword ptr [0x01bc11f4],EBX      ; 0047e48a | g_OriginalColorValue
+    MOV [0x01bc1208],EAX                ; 0047e490 | g_DuplicatedPixelColor
     XOR EAX,EAX                         ; 0047e495
     JMP 0x0047e3c7                      ; 0047e497
         ;   XREF to: 0047e3c7 (UNCONDITIONAL_JUMP)  ; LAB_0047e3c7
     XOR EBX,EBX                         ; 0047e49c
         ;   Label: LAB_0047e49c
     XOR EAX,EAX                         ; 0047e49e
-    MOV BL,byte ptr [ECX + 0x1c4e9f9]   ; 0047e4a0 | DAT_01c4e9f9
-    MOV AL,byte ptr [ECX + 0x1c4e9f8]   ; 0047e4a6 | DAT_01c4e9f8
-    MOV CL,byte ptr [ECX + 0x1c4e9fa]   ; 0047e4ac | DAT_01c4e9fa
-    MOV ESI,dword ptr [0x01c4e9d8]      ; 0047e4b2 | DAT_01c4e9d8
+    MOV BL,byte ptr [ECX + 0x1c4e9f9]   ; 0047e4a0 | g_UCHAR_ARRAY_01c4e9f8+1
+    MOV AL,byte ptr [ECX + 0x1c4e9f8]   ; 0047e4a6 | g_UCHAR_ARRAY_01c4e9f8
+    MOV CL,byte ptr [ECX + 0x1c4e9fa]   ; 0047e4ac | g_UCHAR_ARRAY_01c4e9f8+2
+    MOV ESI,dword ptr [0x01c4e9d8]      ; 0047e4b2 | g_RedScaleFactor
     XOR EDX,EDX                         ; 0047e4b8
     DIV ESI                             ; 0047e4ba
-    MOV EDI,dword ptr [0x01c4e9e4]      ; 0047e4bc | DAT_01c4e9e4
+    MOV EDI,dword ptr [0x01c4e9e4]      ; 0047e4bc | g_GreenScaleFactor
     MOV ESI,EAX                         ; 0047e4c2
     XOR EDX,EDX                         ; 0047e4c4
     MOV EAX,EBX                         ; 0047e4c6
     DIV EDI                             ; 0047e4c8
-    MOV EBP,dword ptr [0x01c4e9f0]      ; 0047e4ca | DAT_01c4e9f0
+    MOV EBP,dword ptr [0x01c4e9f0]      ; 0047e4ca | g_BlueScaleFactor
     AND ECX,0xff                        ; 0047e4d0
     MOV EDI,EAX                         ; 0047e4d6
     XOR EDX,EDX                         ; 0047e4d8
     MOV EAX,ECX                         ; 0047e4da
     DIV EBP                             ; 0047e4dc
     MOV dword ptr [ESP],ECX             ; 0047e4de
-    MOV CL,byte ptr [0x01c4e9d4]        ; 0047e4e1 | DAT_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 0047e4e1 | g_RedBitPosition
     MOV dword ptr [ESP],EAX             ; 0047e4e7
     MOV EAX,ESI                         ; 0047e4ea
     SHL EAX,CL                          ; 0047e4ec
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0047e4ee | DAT_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0047e4ee | g_GreenBitPosition
     MOV EDX,dword ptr [ESP]             ; 0047e4f4
     SHL EDI,CL                          ; 0047e4f7
-    MOV CL,byte ptr [0x01c4e9ec]        ; 0047e4f9 | DAT_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 0047e4f9 | g_BlueBitPosition
     OR EAX,EDI                          ; 0047e4ff
     SHL EDX,CL                          ; 0047e501
     OR EAX,EDX                          ; 0047e503
     AND EAX,0xffff                      ; 0047e505
-    MOV [0x01bc11e4],EAX                ; 0047e50a | DAT_01bc11e4
+    MOV [0x01bc11e4],EAX                ; 0047e50a | g_CurrentDrawColor
     ADD ESP,0x4                         ; 0047e50f
     POP EBP                             ; 0047e512
     POP EDI                             ; 0047e513
     POP ESI                             ; 0047e514
     POP EBX                             ; 0047e515
     RET                                 ; 0047e516
-    MOVZX ESI,byte ptr [ECX + 0x1c4e9f8] ; 0047e517 | DAT_01c4e9f8
+    MOVZX ESI,byte ptr [ECX + 0x1c4e9f8] ; 0047e517 | g_UCHAR_ARRAY_01c4e9f8
         ;   Label: LAB_0047e517
     XOR EAX,EAX                         ; 0047e51e
     XOR EBX,EBX                         ; 0047e520
-    MOV AL,byte ptr [ECX + 0x1c4e9f9]   ; 0047e522 | DAT_01c4e9f9
-    MOV BL,byte ptr [ECX + 0x1c4e9fa]   ; 0047e528 | DAT_01c4e9fa
+    MOV AL,byte ptr [ECX + 0x1c4e9f9]   ; 0047e522 | g_UCHAR_ARRAY_01c4e9f8+1
+    MOV BL,byte ptr [ECX + 0x1c4e9fa]   ; 0047e528 | g_UCHAR_ARRAY_01c4e9f8+2
     CMP EDX,EDX                         ; 0047e52e
     JNZ 0x0047e55e                      ; 0047e530
         ;   XREF to: 0047e55e (CONDITIONAL_JUMP)  ; LAB_0047e55e
-    MOV CL,byte ptr [0x01c4e9d4]        ; 0047e532 | DAT_01c4e9d4
+    MOV CL,byte ptr [0x01c4e9d4]        ; 0047e532 | g_RedBitPosition
     SHL ESI,CL                          ; 0047e538
-    MOV CL,byte ptr [0x01c4e9e0]        ; 0047e53a | DAT_01c4e9e0
+    MOV CL,byte ptr [0x01c4e9e0]        ; 0047e53a | g_GreenBitPosition
     SHL EAX,CL                          ; 0047e540
-    MOV CL,byte ptr [0x01c4e9ec]        ; 0047e542 | DAT_01c4e9ec
+    MOV CL,byte ptr [0x01c4e9ec]        ; 0047e542 | g_BlueBitPosition
     SHL EBX,CL                          ; 0047e548
     OR EAX,ESI                          ; 0047e54a
     MOV ECX,EBX                         ; 0047e54c
     OR ECX,EAX                          ; 0047e54e
-    MOV dword ptr [0x01bc11e4],ECX      ; 0047e550 | DAT_01bc11e4
+    MOV dword ptr [0x01bc11e4],ECX      ; 0047e550 | g_CurrentDrawColor
     ADD ESP,0x4                         ; 0047e556
     POP EBP                             ; 0047e559
     POP EDI                             ; 0047e55a
@@ -182,7 +182,7 @@ section .text
     SHL ECX,0x8                         ; 0047e563
     OR ECX,ESI                          ; 0047e566
     OR ECX,EBX                          ; 0047e568
-    MOV dword ptr [0x01bc11e4],ECX      ; 0047e56a | DAT_01bc11e4
+    MOV dword ptr [0x01bc11e4],ECX      ; 0047e56a | g_CurrentDrawColor
     ADD ESP,0x4                         ; 0047e570
     POP EBP                             ; 0047e573
     POP EDI                             ; 0047e574
@@ -202,10 +202,10 @@ section .text
         ;   Label: LAB_0047e58f
     MOV EDX,0xf8                        ; 0047e594
     PUSH 0x5db005                       ; 0047e599 | = "Invalid bitsPerPixel in CDrawSurface:..."
-    MOV [0x01d1d400],EAX                ; 0047e59e | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0047e5a3 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0047e5a9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 0047e59e | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0047e5a3 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047e5a9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047e5ae
     ADD ESP,0x4                         ; 0047e5b1
     POP EBP                             ; 0047e5b4

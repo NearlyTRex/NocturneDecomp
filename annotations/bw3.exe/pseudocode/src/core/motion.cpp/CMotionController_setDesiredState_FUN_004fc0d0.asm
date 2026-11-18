@@ -10,11 +10,11 @@
 ;
 ; XREF[89]:
 ;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a10d7
+;   core_baal.cpp_CBaal_chooseAttack_FUN_00597700 at 005977d4
+;   core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0 at 00597c1f
 ;   core_baal.cpp_CBaal_processDamage_FUN_00597af0 at 00597b34
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596f9e
-;   core_baal.cpp_FUN_00597700 at 005977d4
-;   core_baal.cpp_FUN_00597be0 at 00597c1f
-;   core_bird.cpp_FUN_00410030 at 004100f1
+;   core_bird.cpp_setRandomMotionVariant_FUN_00410030 at 004100f1
 ;   core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810 at 0041a886
 ;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a523
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0 at 00419342
@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005c9cb4
 ;   TerminatedCString s_CMotionController_setDes_005c9cc7
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_004fbf20
 ;   core_motion.cpp_CMotionController_reverseTransition_FUN_004fc010
 ;
@@ -80,10 +80,10 @@ section .text
     MOV ECX,0x5c9cb4                    ; 004fc11b | = "..\\core\\motion.cpp"
     MOV EDI,0x2bd                       ; 004fc120
     PUSH 0x5c9cc7                       ; 004fc125 | = "CMotionController::setDesiredState - ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004fc12a | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004fc130 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fc136
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004fc12a | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 004fc130 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fc136
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fc13b
     POP EDI                             ; 004fc13e
     JMP 0x004fc0e4                      ; 004fc13f

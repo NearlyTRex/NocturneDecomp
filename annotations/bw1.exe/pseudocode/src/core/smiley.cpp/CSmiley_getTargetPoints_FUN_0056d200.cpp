@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_0056d200(CSmiley *this_ptr,CVector3f *out_points_array)
 
 {
@@ -29,7 +27,7 @@ int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_0056d200(CSmiley *this_p
     return 0;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_02c5fcd8,&CStack_64);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_02c5fcd8[0],&CStack_64);
   CStack_4c.x = CStack_64.x;
   *(uint *)((int)&CStack_4c + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_64 + (uint)bVar1 * -8 + 4);
@@ -41,7 +39,7 @@ int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_0056d200(CSmiley *this_p
     out_points_array->z = CStack_4c.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_02c5fcec,&CStack_40);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_02c5fcd8[5],&CStack_40);
   CStack_28.x = CStack_40.x;
   *(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_40 + (uint)bVar1 * -8 + 4);
@@ -53,7 +51,7 @@ int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_0056d200(CSmiley *this_p
     out_points_array[1].z = CStack_28.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_02c5fcf0,&CStack_10);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_02c5fcd8[6],&CStack_10);
   CStack_70.x = CStack_10.x;
   *(uint *)((int)&CStack_70 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_10 + (uint)bVar1 * -8 + 4);
@@ -65,7 +63,7 @@ int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_0056d200(CSmiley *this_p
     out_points_array[2].z = CStack_70.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_02c5fcfc,&CStack_7c);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_02c5fcd8[9],&CStack_7c);
   CStack_34.x = CStack_7c.x;
   *(uint *)((int)&CStack_34 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_7c + (uint)bVar1 * -8 + 4);
@@ -77,7 +75,7 @@ int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_0056d200(CSmiley *this_p
     out_points_array[3].z = CStack_34.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_02c5fd04,&CStack_58);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_02c5fcd8[0xb],&CStack_58);
   CStack_1c.x = CStack_58.x;
   *(uint *)((int)&CStack_1c + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_58 + (uint)bVar1 * -8 + 4);

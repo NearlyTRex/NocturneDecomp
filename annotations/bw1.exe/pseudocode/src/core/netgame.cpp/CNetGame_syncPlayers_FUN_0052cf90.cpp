@@ -6,20 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_ptr,int sync_stage)
 
 {
   float fVar1;
   int iVar2;
-  CNetGame *pCVar3;
+  int iVar3;
+  CNetGame *pCVar4;
   float local_198;
   char local_194 [256];
   char local_94 [100];
   SNetPacketHeader local_30;
   int local_2b;
-  int local_24;
+  uint local_24;
   SNetPlayer *local_20;
   float local_1c;
   int local_18;
@@ -27,27 +26,27 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
   
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   if (sync_stage < 1) {
-    _DAT_01d1d400 = "..\\core\\netgame.cpp";
-    _DAT_01d1d404 = 0x337;
-    core_main_c_FUN_005030e0("CNetGame::syncPlayers - don't use 0!");
+    g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
+    g_INT_01d1d404 = 0x337;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::syncPlayers - don't use 0!");
   }
   if (this_ptr->connection_type == CONNECTION_NONE) {
     return 1;
   }
   this_ptr->network_mode = NET_MODE_SYNCING;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();
-  _DAT_01d51d9c = iVar2 / 0x12 - _DAT_01d51d9c;
-  if (_DAT_01d51d9c < 0) {
-    _DAT_01d51d9c = 0;
+  iVar3 = iVar2 / 0x12 - g_LastPingTime;
+  if (iVar3 < 0) {
+    iVar3 = 0;
   }
-  else if (0x20000 < _DAT_01d51d9c) {
-    _DAT_01d51d9c = 0x20000;
+  else if (0x20000 < iVar3) {
+    iVar3 = 0x20000;
   }
-  _DAT_01d51da0 = _DAT_01d51da0 + _DAT_01d51d9c;
-  _DAT_01d51d9c = iVar2 / 0x12;
+  g_UINT_01d51da0 = g_UINT_01d51da0 + iVar3;
+  g_LastPingTime = iVar2 / 0x12;
   this_ptr->players[this_ptr->local_player_index].local_sync_stage = sync_stage;
   if (this_ptr->connection_type == CONNECTION_HOST) {
-    local_24 = _DAT_01d51da0 + -0x1e0000;
+    local_24 = g_UINT_01d51da0 - 0x1e0000;
     local_20 = this_ptr->players;
     while( true ) {
       engine_special_cpp_clearScreen_FUN_0057dc40();
@@ -57,53 +56,53 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
       local_1c = 1.4013e-45;
       local_18 = 0x21;
       iVar2 = 0;
-      pCVar3 = this_ptr;
+      pCVar4 = this_ptr;
       if (0 < this_ptr->player_count) {
         do {
-          if (pCVar3->players[0].local_sync_stage < sync_stage) {
+          if (pCVar4->players[0].local_sync_stage < sync_stage) {
             local_1c = 0.0;
             engine_2d_c_drawText_FUN_00401fe0(local_20[iVar2].name,0,local_18);
-            _sprintf(local_194,&DAT_005eb96a);
+            _sprintf(local_194,"%d");
             engine_2d_c_drawText_FUN_00401fe0(local_194,200,local_18);
             local_18 = local_18 + 0xb;
           }
           iVar2 = iVar2 + 1;
-          pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.use_item;
+          pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;
         } while (iVar2 < this_ptr->player_count);
       }
       fVar1 = local_1c;
       if (local_1c != 0.0) break;
       wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
       core_netgame_cpp_CNetGame_receivePackets_FUN_0052d360(this_ptr);
-      local_14 = _DAT_01d51da0 - local_24;
-      local_198 = (float)local_14 * (float)_DAT_005eba10;
+      local_14 = g_UINT_01d51da0 - local_24;
+      local_198 = (float)local_14 * (float)1.52587890625e-05;
       if (local_198 < 0.0) {
         local_198 = fVar1;
       }
-      if ((float)_DAT_005eba18 < local_198) {
+      if ((float)30 < local_198) {
         local_198 = 30.0;
       }
-      if ((float)_DAT_005eba20 < local_198) {
-        local_24 = _DAT_01d51da0;
+      if ((float)0.10000000000000001 < local_198) {
+        local_24 = g_UINT_01d51da0;
         local_30.type = PACKET_SYNC_STAGE_REQ;
         local_30.size = 9;
         local_2b = sync_stage;
         iVar2 = 0;
-        pCVar3 = this_ptr;
+        pCVar4 = this_ptr;
         if (0 < this_ptr->player_count) {
           do {
-            if (pCVar3->players[0].local_sync_stage < sync_stage) {
+            if (pCVar4->players[0].local_sync_stage < sync_stage) {
               core_netgame_cpp_CNetGame_send_FUN_0052df50(this_ptr,iVar2,&local_30);
             }
             else {
               core_netgame_cpp_CNetGame_updatePing_FUN_0052ea10(this_ptr,iVar2,2.0);
             }
             iVar2 = iVar2 + 1;
-            pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.use_item;
+            pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;
           } while (iVar2 < this_ptr->player_count);
         }
       }
-      iVar2 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);
+      iVar2 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_ESCAPE);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_004032b0();
         return 0;
@@ -114,13 +113,13 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
     if (3 < sync_stage) {
       return 1;
     }
-    while (_DAT_01d51da8 < sync_stage) {
+    while (g_RemoteSyncStage < sync_stage) {
       engine_special_cpp_clearScreen_FUN_0057dc40();
       _sprintf(local_94,"Waiting on sync code %d from server...");
       engine_2d_c_drawText_FUN_00401fe0(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
       core_netgame_cpp_CNetGame_receivePackets_FUN_0052d360(this_ptr);
-      iVar2 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);
+      iVar2 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_ESCAPE);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_004032b0();
         return 0;
@@ -128,9 +127,9 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(CNetGame *this_pt
     }
   }
   else {
-    _DAT_01d1d400 = "..\\core\\netgame.cpp";
-    _DAT_01d1d404 = 0x3c0;
-    core_main_c_FUN_005030e0("CNetGame::syncPlayers - invalid mode");
+    g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
+    g_INT_01d1d404 = 0x3c0;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::syncPlayers - invalid mode");
   }
   return 1;
 }

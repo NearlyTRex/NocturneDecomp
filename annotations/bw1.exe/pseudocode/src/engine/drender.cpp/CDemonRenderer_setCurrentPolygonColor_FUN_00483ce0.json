@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [
@@ -24,19 +22,19 @@
     {
       "addr": "004414b0",
       "from_addr": "004414c4",
-      "name": "core_cloth.cpp_FUN_004414b0",
+      "name": "core_cloth.cpp_CCloth_renderCollisionBones_FUN_004414b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00479f60",
       "from_addr": "0047a047",
-      "name": "core_dpart.cpp_FUN_00479f60",
+      "name": "core_dpart.cpp_CDemonPart_renderFaces_FUN_00479f60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0048c510",
       "from_addr": "0048c8c3",
-      "name": "core_dtrace.cpp_FUN_0048c510",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_0048c510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,8 +60,8 @@
   "globals": [
     {
       "addr": "00713a5c",
-      "name": "DAT_00713a5c",
-      "type": "undefined4",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
       "value": null
     }
   ],
@@ -95,7 +93,7 @@
       {
         "call_addr": "0048c8c3",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_0048c510",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_0048c510",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -106,7 +104,7 @@
       {
         "call_addr": "004414c4",
         "call_type": "direct",
-        "caller": "core_cloth.cpp_FUN_004414b0",
+        "caller": "core_cloth.cpp_CCloth_renderCollisionBones_FUN_004414b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,7 +115,7 @@
       {
         "call_addr": "0047a047",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00479f60",
+        "caller": "core_dpart.cpp_CDemonPart_renderFaces_FUN_00479f60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,14 +190,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_00713a5c",
-      "severity": "mild",
-      "text": "DAT_00713a5c = color;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

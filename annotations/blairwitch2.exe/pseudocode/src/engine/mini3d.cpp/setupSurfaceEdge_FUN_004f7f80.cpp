@@ -6,34 +6,33 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setupSurfaceEdge_FUN_004f7f80(float *v0,float *v1)
 
 {
   float fVar1;
   int iVar2;
-  float *pfVar3;
-  int iVar4;
-  int *piVar5;
+  int iVar3;
+  float *pfVar4;
+  SSoftwareEdge *pSVar5;
   float local_18;
   
-  pfVar3 = v1;
-  iVar4 = _DAT_01d17ab4 * 0x50;
-  piVar5 = (int *)(&DAT_01d17ab8 + iVar4);
+  pfVar4 = v1;
+  iVar3 = g_INT_01d17ab4;
+  pSVar5 = &g_SSoftwareEdge_01d17ab8 + g_INT_01d17ab4;
   if (v1[6] < v0[6]) {
     v1 = v0;
-    v0 = pfVar3;
+    v0 = pfVar4;
   }
-  *piVar5 = (int)ROUND(v0[6] - _DAT_00618118);
-  *(int *)(&DAT_01d17abc + iVar4) = (int)ROUND(v1[6] - _DAT_00618118);
-  iVar2 = *piVar5;
-  if (iVar2 != *(int *)(&DAT_01d17abc + iVar4)) {
-    if (iVar2 < _DAT_01d17fb8) {
-      _DAT_01d17fb8 = iVar2;
+  (pSVar5->base).y_min = (int)ROUND(v0[6] - 0.5f);
+  (&g_SSoftwareEdge_01d17ab8)[iVar3].base.y_max = (int)ROUND(v1[6] - 0.5f);
+  iVar2 = (pSVar5->base).y_min;
+  if (iVar2 != (&g_SSoftwareEdge_01d17ab8)[iVar3].base.y_max) {
+    if (iVar2 < g_INT_01d17fb8) {
+      g_INT_01d17fb8 = iVar2;
     }
-    if (_DAT_01d17fbc < *(int *)(&DAT_01d17abc + iVar4)) {
-      _DAT_01d17fbc = *(int *)(&DAT_01d17abc + iVar4);
+    iVar2 = (&g_SSoftwareEdge_01d17ab8)[iVar3].base.y_max;
+    if (g_INT_01d17fbc < iVar2) {
+      g_INT_01d17fbc = iVar2;
     }
     if ((int)(v1[6] - v0[6]) < 0x3f800000) {
       local_18 = 0.0;
@@ -42,13 +41,14 @@ void __cdecl engine_mini3d_cpp_setupSurfaceEdge_FUN_004f7f80(float *v0,float *v1
       local_18 = 1.0 / (v1[6] - v0[6]);
     }
     fVar1 = v0[6];
-    *(int *)(&DAT_01d17ac4 + iVar4) =
-         (int)ROUND(_DAT_00618120 * (v1[5] - v0[5]) * local_18 - _DAT_00618118);
-    *(int *)(&DAT_01d17ac0 + iVar4) =
-         (int)ROUND(_DAT_00618120 *
-                    ((v1[5] - v0[5]) * ((float)*piVar5 + (1.0 - fVar1)) * local_18 + v0[5]) -
-                    _DAT_00618118);
-    _DAT_01d17ab4 = _DAT_01d17ab4 + 1;
+    iVar2 = (pSVar5->base).y_min;
+    (&g_SSoftwareEdge_01d17ab8)[iVar3].base.x_gradient =
+         (int)ROUND(65536.0f * (v1[5] - v0[5]) * local_18 - 0.5f);
+    (&g_SSoftwareEdge_01d17ab8)[iVar3].base.x_current =
+         (int)ROUND(65536.0f *
+                    ((v1[5] - v0[5]) * ((float)iVar2 + (1.0 - fVar1)) * local_18 + v0[5]) -
+                    0.5f);
+    g_INT_01d17ab4 = g_INT_01d17ab4 + 1;
   }
   return;
 }

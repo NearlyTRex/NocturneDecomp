@@ -2,24 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 45,
+    "complexity_score": 6,
     "cross_reference_count": 20,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
-    "total_lines": 12
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
   },
   "cross_references": [
     {
       "addr": "00436400",
       "from_addr": "0043643b",
-      "name": "cockpit_ckptutil.c_FUN_00436400",
+      "name": "cockpit_ckptutil.c_generateScrollHeightMap_FUN_00436400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,7 +40,7 @@
     {
       "addr": "005106a0",
       "from_addr": "005106e3",
-      "name": "cockpit_pkbmpset.cpp_FUN_005106a0",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -55,13 +52,19 @@
     {
       "addr": "00444910",
       "from_addr": "0044492f",
-      "name": "core_course.cpp_FUN_00444910",
+      "name": "core_course.cpp_CCourse_allocMemory_FUN_00444910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00453d90",
       "from_addr": "00453da7",
       "name": "core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00453d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00461300",
+      "from_addr": "00461399",
+      "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00461300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -77,12 +80,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00461300",
-      "from_addr": "00461399",
-      "name": "core_dmodel.cpp_FUN_00461300",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004735c0",
       "from_addr": "004735ed",
       "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_004735c0",
@@ -91,7 +88,7 @@
     {
       "addr": "004737f0",
       "from_addr": "00473804",
-      "name": "core_dtrace.cpp_FUN_004737f0",
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_004737f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -121,7 +118,7 @@
     {
       "addr": "004b0510",
       "from_addr": "004b053a",
-      "name": "engine_font.cpp_FUN_004b0510",
+      "name": "engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004b0510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -145,9 +142,9 @@
         "005a40ec"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_memory.c_operator_new_array_FUN_005a40df",
-    "signature": "void crt_memory_c_operator_new_array_FUN_005a40df(undefined4 param_1)"
+    "signature": "void * __cdecl crt_memory_c_operator_new_array_FUN_005a40df(uint size)"
   },
   "function_calls": [
     {
@@ -174,15 +171,11 @@
       {
         "call_addr": "004b053a",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004b0510",
-        "estimated_params": 4,
+        "caller": "engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004b0510",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -190,13 +183,10 @@
         "call_addr": "0047d2be",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
-        "estimated_params": 3,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -204,81 +194,65 @@
         "call_addr": "00460d46",
         "call_type": "direct",
         "caller": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00460890",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00461399",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00461300",
-        "estimated_params": 3,
+        "caller": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00461300",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004613ba",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00461300",
-        "estimated_params": 3,
+        "caller": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00461300",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004613d2",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00461300",
-        "estimated_params": 2,
+        "caller": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00461300",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004613f3",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00461300",
-        "estimated_params": 3,
+        "caller": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00461300",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004614e0",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00461300",
-        "estimated_params": 3,
+        "caller": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00461300",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -286,24 +260,19 @@
         "call_addr": "00462078",
         "call_type": "direct",
         "caller": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00461fe0",
-        "estimated_params": 5,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.2,
@@ -340,40 +309,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void operator_new_array(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "operator_new(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 31,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

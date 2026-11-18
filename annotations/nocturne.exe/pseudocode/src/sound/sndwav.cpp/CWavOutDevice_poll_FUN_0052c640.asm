@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_WavOutDevice_poll_NULL_p_00594955
 ;   TerminatedCString s_WavOutDevice_poll_sendBu_00594979
-;   undefined4 DAT_02dc943c
+;   int g_WaveOutNumBuffers
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_00529980
@@ -27,7 +27,7 @@ section .text
     PUSH EDI                            ; 0052c642
     PUSH EBP                            ; 0052c643
     MOV EDI,0x1                         ; 0052c644
-    MOV EDX,dword ptr [0x02dc943c]      ; 0052c649 | DAT_02dc943c
+    MOV EDX,dword ptr [0x02dc943c]      ; 0052c649 | g_WaveOutNumBuffers
     XOR ESI,ESI                         ; 0052c64f
     TEST EDX,EDX                        ; 0052c651
     JLE 0x0052c67e                      ; 0052c653
@@ -44,7 +44,7 @@ section .text
     TEST byte ptr [EBP + 0x10],0x1      ; 0052c66a
     JNZ 0x0052c696                      ; 0052c66e
         ;   XREF to: 0052c696 (CONDITIONAL_JUMP)  ; LAB_0052c696
-    MOV ECX,dword ptr [0x02dc943c]      ; 0052c670 | DAT_02dc943c
+    MOV ECX,dword ptr [0x02dc943c]      ; 0052c670 | g_WaveOutNumBuffers
         ;   Label: LAB_0052c670
     INC ESI                             ; 0052c676
     ADD EBX,0x4                         ; 0052c677

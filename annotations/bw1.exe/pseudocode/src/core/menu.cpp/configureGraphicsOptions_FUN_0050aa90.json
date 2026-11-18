@@ -2,32 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 810,
-    "complexity_score": 949,
+    "complexity_score": 862,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 70,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 419,
-    "suspect_count": 48,
+    "pseudocode_lines": 417,
+    "suspect_count": 40,
     "suspect_types": [
       "dropped_loop_counter",
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
-      "raw_address_pointer_store",
       "undefined_data",
-      "unresolved_funcptr",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 1229
+    "total_lines": 1227
   },
   "cross_references": [
     {
       "addr": "0050c990",
       "from_addr": "0050cb3e",
-      "name": "core_menu.cpp_FUN_0050c990",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,7 +51,7 @@
     {
       "addr": "004cbf20",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004cbf20"
+      "name": "core_game.cpp_CGame_updateDT_FUN_004cbf20"
     },
     {
       "addr": "00509e20",
@@ -309,8 +308,8 @@
     },
     {
       "addr": "005e7e43",
-      "name": "DAT_005e7e43",
-      "type": "undefined4",
+      "name": "s_d_005e7e43",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -345,9 +344,9 @@
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "00622c18",
@@ -357,26 +356,26 @@
     },
     {
       "addr": "006257d0",
-      "name": "DAT_006257d0",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_006257d0",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "006257d1",
-      "name": "DAT_006257d1",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_006257d0+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "006257d2",
-      "name": "DAT_006257d2",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_006257d0+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "006257d3",
-      "name": "s_d3d_dll_006257d3",
-      "type": "TerminatedCString",
+      "name": "g_CHAR_ARRAY_006257d0+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -417,37 +416,37 @@
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d1ee8c",
-      "name": "DAT_01d1ee8c",
-      "type": "undefined4",
+      "name": "g_MenuLeftRightPressed",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1f1b8",
-      "name": "DAT_01d1f1b8",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01d1f1b8",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01d1f1b9",
-      "name": "DAT_01d1f1b9",
+      "name": "g_CHAR_ARRAY_01d1f1b8+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1f1ba",
-      "name": "DAT_01d1f1ba",
+      "name": "g_CHAR_ARRAY_01d1f1b8+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1f1bb",
-      "name": "DAT_01d1f1bb",
+      "name": "g_CHAR_ARRAY_01d1f1b8+3",
       "type": "undefined4",
       "value": null
     },
@@ -501,26 +500,26 @@
     },
     {
       "addr": "01d1f5d4",
-      "name": "DAT_01d1f5d4",
+      "name": "g_GraphicsMenuTextPointers[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1f5d8",
-      "name": "DAT_01d1f5d8",
+      "name": "g_GraphicsMenuTextPointers[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1f61c",
-      "name": "DAT_01d1f61c",
-      "type": "undefined4",
+      "name": "g_GraphicsCardNames",
+      "type": "char*[16]",
       "value": null
     },
     {
       "addr": "01d1f65c",
-      "name": "DAT_01d1f65c",
-      "type": "undefined4",
+      "name": "g_GraphicsCardVendorIDs",
+      "type": "int[16]",
       "value": null
     },
     {
@@ -537,8 +536,8 @@
     },
     {
       "addr": "02c83370",
-      "name": "DAT_02c83370",
-      "type": "undefined4",
+      "name": "g_INT_02c83370",
+      "type": "int",
       "value": null
     }
   ],
@@ -548,7 +547,7 @@
       {
         "call_addr": "0050cb3e",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050c990",
+        "caller": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -599,6 +598,18 @@
     "pcode_op_count": 2580
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ebf10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6078
+    },
+    "bw3.exe": {
+      "addr": "004e85a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8986
+    },
     "nocedit.exe": {
       "addr": "00510c80",
       "by": "name",
@@ -720,176 +731,16 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 5,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(char **)((int)g_GraphicsMenuTextPointers",
+      "severity": "moderate",
+      "text": "*(char **)((int)g_GraphicsMenuTextPointers + iVar3) = pcVar4;",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01d1f5d8",
-      "severity": "mild",
-      "text": "((int *)&DAT_01d1f5d8,(char **)0x1d1f5dc,(char **)&DAT_01d1f61c,(int *)&DAT_01d1f65c,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01d1f61c",
-      "severity": "mild",
-      "text": "((int *)&DAT_01d1f5d8,(char **)0x1d1f5dc,(char **)&DAT_01d1f61c,(int *)&DAT_01d1f65c,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01d1f65c",
-      "severity": "mild",
-      "text": "((int *)&DAT_01d1f5d8,(char **)0x1d1f5dc,(char **)&DAT_01d1f61c,(int *)&DAT_01d1f65c,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_006257d0",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_006257d0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_01d1f65c",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_01d1f65c + _DAT_01d1f5d4 * 4) == 0x121a) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_01d1f65c",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_01d1f65c + _DAT_01d1f5d4 * 4) == 0x8086) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_01d1f65c",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_01d1f65c + _DAT_01d1f5d4 * 4) == 0x12d2) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_01d1f65c",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_01d1f65c + _DAT_01d1f5d4 * 4) == 0x12d2) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 138,
-      "match": "DAT_006257d0",
-      "severity": "mild",
-      "text": "if (DAT_006257d0 == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 142,
-      "match": "DAT_006257d0",
-      "severity": "mild",
-      "text": "iVar4 = _stricmp(&DAT_006257d0,\"trid3d.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 147,
-      "match": "DAT_006257d0",
-      "severity": "mild",
-      "text": "iVar4 = _stricmp(&DAT_006257d0,\"tridx6.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 152,
-      "match": "DAT_006257d0",
-      "severity": "mild",
-      "text": "iVar4 = _stricmp(&DAT_006257d0,\"tridx7.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_006257d0",
-      "severity": "mild",
-      "text": "iVar4 = _stricmp(&DAT_006257d0,\"tri3dfx.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 173,
-      "match": "DAT_01d1f1b8",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01d1f1b8,pcVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 177,
-      "match": "DAT_01d1f1b8",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_01d1f1b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 187,
-      "match": "DAT_01d1f61c",
-      "severity": "mild",
-      "text": "pcVar6 = *(char **)(&DAT_01d1f61c + _DAT_01d1f5d4 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 189,
-      "match": "DAT_01d1f1b8",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_01d1f1b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 211,
-      "match": "DAT_01d1f1b8",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_01d1f1b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 232,
-      "match": "DAT_01d1f2b8",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_01d1f2b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 242,
-      "match": "DAT_005e7e43",
-      "severity": "mild",
-      "text": "_sprintf(local_140,&DAT_005e7e43);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 244,
+      "line": 230,
       "match": "DAT_01d1f2b8",
       "severity": "mild",
       "text": "pcVar6 = &DAT_01d1f2b8;",
@@ -897,79 +748,175 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 272,
+      "line": 242,
+      "match": "DAT_01d1f2b8",
+      "severity": "mild",
+      "text": "pcVar5 = &DAT_01d1f2b8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 270,
       "match": "DAT_01d1f4b8",
       "severity": "mild",
-      "text": "pcVar6 = &DAT_01d1f4b8;",
+      "text": "pcVar5 = &DAT_01d1f4b8;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 369,
-      "match": "DAT_01d1f5d8",
-      "severity": "mild",
-      "text": "((int *)&DAT_01d1f5d8,(char **)0x1d1f5dc,(char **)&DAT_01d1f61c,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 369,
-      "match": "DAT_01d1f61c",
-      "severity": "mild",
-      "text": "((int *)&DAT_01d1f5d8,(char **)0x1d1f5dc,(char **)&DAT_01d1f61c,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 370,
-      "match": "DAT_01d1f65c",
-      "severity": "mild",
-      "text": "(int *)&DAT_01d1f65c,(int *)0x1d1f69c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 376,
-      "match": "DAT_01d1f65c",
-      "severity": "mild",
-      "text": "if (*(int *)(&DAT_01d1f65c + _DAT_01d1f5d4 * 4) == 0x121a) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 397,
-      "match": "DAT_01d1f65c",
-      "severity": "mild",
-      "text": "if (*(int *)(&DAT_01d1f65c + _DAT_01d1f5d4 * 4) == 0x121a) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 418,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 418,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Raw hex address 0x1d1eeb8 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Pointer value `g_GraphicsMenuTextPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 30,
-      "match": "0x1d1eeb8",
+      "match": "(int)g_GraphicsMenuTextPointers",
       "severity": "moderate",
-      "text": "iVar5 = 0x1d1eeb8;",
+      "text": "*(char **)((int)g_GraphicsMenuTextPointers + iVar3) = pcVar4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[8]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)g_GraphicsMenuTextPointers[8]",
+      "severity": "moderate",
+      "text": "if ((int)g_GraphicsMenuTextPointers[8] <= (int)g_GraphicsMenuTextPointers[7]) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "if ((int)g_GraphicsMenuTextPointers[8] <= (int)g_GraphicsMenuTextPointers[7]) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[8]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(int)g_GraphicsMenuTextPointers[8]",
+      "severity": "moderate",
+      "text": "if ((0 < (int)g_GraphicsMenuTextPointers[8]) && (g_INT_02c83370 != 0)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "if ((g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x121a) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "(g_GraphicsCardDeviceIDs[(int)g_GraphicsMenuTextPointers[7]] < 6)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "if ((g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x8086) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 74,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "(g_GraphicsCardDeviceIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x7800)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "if ((g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x12d2) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "(g_GraphicsCardDeviceIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x18)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 87,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "if ((g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x12d2) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 88,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "(g_GraphicsCardDeviceIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x19)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 185,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "pcVar5 = g_GraphicsCardNames[(int)g_GraphicsMenuTextPointers[7]];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 374,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "if (g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x121a) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[8]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 390,
+      "match": "(int)g_GraphicsMenuTextPointers[8]",
+      "severity": "moderate",
+      "text": "if ((int)g_GraphicsMenuTextPointers[8] <= (int)g_GraphicsMenuTextPointers[7]) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 390,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "if ((int)g_GraphicsMenuTextPointers[8] <= (int)g_GraphicsMenuTextPointers[7]) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 393,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "engine_special_cpp_selectCard_FUN_00582b10((int)g_GraphicsMenuTextPointers[7]);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_GraphicsMenuTextPointers[7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 395,
+      "match": "(int)g_GraphicsMenuTextPointers[7]",
+      "severity": "moderate",
+      "text": "if (g_GraphicsCardVendorIDs[(int)g_GraphicsMenuTextPointers[7]] == 0x121a) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex literal 0xb71b01 matches address of g_PrecomputedDepthBuffer (+244073 bytes into) (type int[76800]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 346,
+      "match": "0xb71b01",
+      "severity": "moderate",
+      "text": "else if ((local_1c[0] < 0xb71b01) || (iVar3 != 0x1e0)) {",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 58,
+      "line": 55,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -977,7 +924,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 178,
+      "line": 176,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -985,7 +932,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 199,
+      "line": 197,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -993,7 +940,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 221,
+      "line": 219,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1001,7 +948,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 233,
+      "line": 231,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1009,7 +956,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 254,
+      "line": 252,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1017,7 +964,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 273,
+      "line": 271,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1025,7 +972,7 @@
     },
     {
       "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
-      "line": 422,
+      "line": 420,
       "match": "} while( true );",
       "severity": "moderate",
       "text": "} while( true );",
@@ -1033,7 +980,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 190,
+      "line": 188,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1041,7 +988,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 212,
+      "line": 210,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1049,7 +996,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 245,
+      "line": 243,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1057,7 +1004,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 190,
+      "line": 188,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1065,7 +1012,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 212,
+      "line": 210,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1073,7 +1020,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 245,
+      "line": 243,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

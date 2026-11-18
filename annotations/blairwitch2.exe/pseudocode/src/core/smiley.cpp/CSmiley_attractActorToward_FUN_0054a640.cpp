@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_0054a640(CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
@@ -15,13 +14,11 @@ int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_0054a640(CSmiley *thi
   EDeathState EVar1;
   byte bVar2;
   float afStackY_1020 [1013];
-  uint *puVar3;
-  CVector3f *new_orientation;
-  float fStack_38;
-  uint uStack_2c;
+  CVector3f *pCVar3;
+  CVector3f CStack_38;
+  CVector3f CStack_2c;
   CVector3f CStack_20;
-  uint uStack_14;
-  uint auStack_10 [2];
+  CVector3f CStack_14;
   
   bVar2 = 0;
   if (actor == (CDemonActor *)0x0) {
@@ -32,23 +29,25 @@ int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_0054a640(CSmiley *thi
     (*(((actor->vtable)._uc)->_uc).releaseFromGrab)((CCharacter *)actor);
     return 1;
   }
-  core_xform_cpp_FUN_00591530
-            (&DAT_0265370c,
-             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02628618);
-  puVar3 = &stack0xffffffd4;
-  uStack_2c = uStack_14;
-  *(uint *)((int)&stack0xffffffd8 + (uint)bVar2 * 0xfffffffe * 4) =
-       auStack_10[(uint)bVar2 * -2];
-  *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       auStack_10[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  core_actor_cpp_FUN_00408d70(this_ptr,puVar3);
-  new_orientation = (CVector3f *)&actor->orient;
-  CStack_20.x = fStack_38;
+  core_xform_cpp_transformVector3x4_FUN_00591530
+            (&g_ZeroVector,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+             g_INT_ARRAY_02628610[2],&CStack_14);
+  pCVar3 = &CStack_2c;
+  CStack_2c.x = CStack_14.x;
+  *(uint *)((int)&CStack_2c + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&CStack_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+            ((CDemonActor *)this_ptr,pCVar3,&CStack_38);
+  pCVar3 = (CVector3f *)&actor->orient;
+  CStack_20.x = CStack_38.x;
   *(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + 4) =
-       *(uint *)(&stack0xffffffcc + (uint)bVar2 * -8);
+       *(uint *)((int)&CStack_38 + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       *(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  CStack_20.y = CStack_20.y + _DAT_005e7805;
-  (*((actor->vtable)._ub)->setPositionAndOrientation)(actor,&CStack_20,new_orientation);
+       *(uint *)((int)&CStack_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  CStack_20.y = CStack_20.y + -4.0f;
+  (*((actor->vtable)._ub)->setPositionAndOrientation)(actor,&CStack_20,pCVar3);
   return 1;
 }
