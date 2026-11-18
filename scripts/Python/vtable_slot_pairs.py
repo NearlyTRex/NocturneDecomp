@@ -138,7 +138,7 @@ def placed_slots(len_a, len_b, anchors):
         ga, gb = i1 - i0 - 1, j1 - j0 - 1
         if ga == gb:
             placed += [(i0 + k, j0 + k) for k in range(1, gb + 1)]
-        elif ga or gb:
+        else:
             uneven.append((i0, j0, ga, gb))
     return sorted(placed), uneven
 

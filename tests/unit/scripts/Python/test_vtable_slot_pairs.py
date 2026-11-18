@@ -181,6 +181,14 @@ def test_a_known_insertion_places_a_gap_no_score_could():
     assert sorted(out["bd"]) == [(1, 1), (2, 3)] and unresolved == 0
 
 
+def test_the_walks_stop_after_their_rounds_even_while_settling():
+    slots_a, slots_b, img_a = gap_world()
+    gaps = [("bx", "sx", (1, 1, 0, 1)), ("bw", "sw", (0, 0, 3, 4))]
+    out, unresolved = vsp.resolve_gaps(gaps, slots_a, slots_b, img_a, lambda a, b: 0.0, min_margin = 10,
+                                       rounds = 1)
+    assert sorted(out["bw"]) == [(1, 1), (2, 3), (3, 4)] and unresolved == 0
+
+
 def test_a_gap_no_choice_wins_by_the_margin_stays_open():
     slots_a, slots_b, img_a = gap_world()
     gaps = [("bd", "sd", (0, 0, 2, 3))]
@@ -249,6 +257,14 @@ def test_a_target_function_placed_against_two_sources_is_inconsistent():
                                           [{"a": "ab", "b": "bc"}, {"a": "a8", "b": "bd"}])
     _, refused, _ = vsp.propose(img_a, img_b, mapping, similarity = no_similarity)
     assert refused["inconsistent"] == 1
+
+
+def test_an_empty_slot_places_nothing():
+    # ub's middle slot is empty on the source side, so b1 is only ever placed by tb
+    img_a, img_b, mapping = propose_world({"ua": ["ab", None, "a8"]}, {"ub": ["bc", "b1", "bd"]},
+                                          [{"a": "ab", "b": "bc"}, {"a": "a8", "b": "bd"}])
+    accepted, refused, _ = vsp.propose(img_a, img_b, mapping, {"tb": "CBox"}, {}, similarity = no_similarity)
+    assert [b for _, b, _ in accepted] == ["b1"] and refused["inconsistent"] == 0
 
 
 def test_a_source_function_placed_against_two_targets_is_taken():

@@ -247,15 +247,16 @@ def render_tree(report):
         lines.append("  %-15s %d" % (k, v))
     lines.append("")
 
-    def walk(t, depth, seen):
+    # Each table has one parent and the walk starts at parentless tables, so it never meets a
+    # table twice; a parent cycle has no root and is not printed.
+    def walk(t, depth):
         lines.append("  " * depth + label(t))
         for c in sorted(children[t], key=lambda x: (rows[x]["class"] or "~", x)):
-            if c not in seen:
-                walk(c, depth + 1, seen | {c})
+            walk(c, depth + 1)
 
     roots = [t for t in rows if children[t] and not rows[t]["parent"]]
     for t in sorted(roots, key=lambda x: (rows[x]["class"] or "~", x)):
-        walk(t, 0, {t})
+        walk(t, 0)
 
     bad = [r for r in rows.values() if r["actor_tree"] == "disagree"]
     if bad:
