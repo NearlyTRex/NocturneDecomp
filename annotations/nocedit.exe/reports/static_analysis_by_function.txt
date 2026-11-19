@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 460
-  Total diagnostics: 1230
+  Functions with findings: 459
+  Total diagnostics: 1229
   Functions flagged by multiple tools: 8
-  .keep.cpp files: 449, raw .cpp files: 11
+  .keep.cpp files: 449, raw .cpp files: 10
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -2431,12 +2431,6 @@ core_lever.cpp_CLever_propertyDisplayTypeCallback_FUN_00505100  [.keep] [Clang S
   File: core/lever.cpp  (1 diagnostics)
 
   Line   27: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-
-----------------------------------------------------------------------------------------------------
-core_lightgun.cpp_isLightVulnerable_FUN_00505a20  [.cpp] [Clang Static Analyzer (quick)]
-  File: core/lightgun.cpp  (1 diagnostics)
-
-  Line   16: [core.CallAndMessage] 2nd function call argument is an uninitialized value
 
 ----------------------------------------------------------------------------------------------------
 core_main.c_displayErrorAndQuit_FUN_00506f10  [.keep] [Clang Static Analyzer (quick)]
