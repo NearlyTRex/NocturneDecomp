@@ -158,11 +158,8 @@ Example:
     }
 """
 
-import os
-import json as json_module
 import re
 
-from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 from ghidra_annotations.annotations.pseudocode.render_flags_transform import transform_render_state_flags
 from ghidra_annotations.annotations.pseudocode.adjacency_sentinel_transform import (
@@ -191,14 +188,6 @@ UNDEFINED_PTR_CAST_REPLACEMENTS = {
     '(undefined4*)': '(uint*)',
     '(undefined8*)': '(ulonglong*)',
     '(undefined*)': '(byte*)',
-}
-
-# Suspect types that can be automatically fixed by transforms
-# Used by count_auto_fixable_suspects() and get_remaining_suspects_after_transforms()
-AUTO_FIXABLE_SUSPECT_TYPES = {
-    'undefined_ptr_cast',
-    'undefined_type',
-    'double_reconstruction',
 }
 
 
@@ -240,175 +229,13 @@ def transform_undefined_types(code):
     return result
 
 
-def transform_concat_artifacts(code):
-    """Add clarifying comments to CONCAT artifacts.
-
-    CONCAT44, CONCAT22, etc. are Ghidra artifacts where the decompiler
-    is combining two values into a larger type (like making a double from
-    two ints, or a longlong from two ints).
-
-    Args:
-        code: Decompiled code string
-
-    Returns:
-        Transformed code with CONCAT artifacts annotated
-    """
-    # Pattern matches CONCAT followed by digits (e.g., CONCAT44, CONCAT22)
-    pattern = r'\bCONCAT(\d+)\b'
-
-    def replace_concat(match):
-        full_match = match.group(0)
-        digits = match.group(1)
-        # Add inline comment explaining what this is
-        return '%s /* combine %d-byte values */' % (full_match, len(digits))
-
-    result = re.sub(pattern, replace_concat, code)
-    return result
-
-
-def transform_sub_artifacts(code):
-    """Add clarifying comments to SUB artifacts.
-
-    SUB84, SUB42, etc. are Ghidra artifacts where the decompiler
-    is extracting a smaller value from a larger type.
-
-    Args:
-        code: Decompiled code string
-
-    Returns:
-        Transformed code with SUB artifacts annotated
-    """
-    # Pattern matches SUB followed by digits (e.g., SUB84, SUB42)
-    pattern = r'\bSUB(\d+)\b'
-
-    def replace_sub(match):
-        full_match = match.group(0)
-        digits = match.group(1)
-        # Add inline comment explaining what this is
-        return '%s /* extract %d-byte value */' % (full_match, len(digits))
-
-    result = re.sub(pattern, replace_sub, code)
-    return result
-
-
-def transform_sborrow_artifacts(code):
-    """Add clarifying comments to SBORROW artifacts.
-
-    SBORROW is a Ghidra artifact for signed borrow detection in subtraction.
-
-    Args:
-        code: Decompiled code string
-
-    Returns:
-        Transformed code with SBORROW artifacts annotated
-    """
-    result = code.replace('SBORROW', 'SBORROW /* signed borrow */')
-    return result
-
-
-def transform_register_params(code):
-    """Add clarifying comments to inferred register parameters.
-
-    Patterns like in_EAX, in_ECX indicate Ghidra inferred register parameters
-    that aren't part of the standard calling convention.
-
-    Args:
-        code: Decompiled code string
-
-    Returns:
-        Transformed code with register param comments
-    """
-    # Pattern matches in_XX or in_XXX where XX/XXX is 2-3 uppercase letters
-    pattern = r'\b(in_[A-Z]{2,3})\b'
-
-    def replace_reg(match):
-        reg_name = match.group(1)
-        # Only add comment on first occurrence per line to avoid clutter
-        return reg_name
-
-    # We'll just leave these as-is for now since adding comments everywhere
-    # would be too noisy. The detection still marks them as suspects.
-    return code
-
-
 # =============================================================================
 # CRT FUNCTION TRANSFORMS
 # =============================================================================
 #
-# Maps CRT wrapper function calls to their standard C library equivalents.
+# Maps CRT wrapper function calls to clean names.
 # Pattern: crt_{category}_c_{funcname}_FUN_{addr} -> {funcname}
-#
-# Only well-known standard library functions are transformed.
-# Internal CRT implementation functions are left as-is.
-
-# Standard library functions to transform (by category)
-CRT_STANDARD_FUNCTIONS = {
-    # stdio.h
-    'stdio': {
-        'fread', 'fwrite', 'fopen', 'fclose', 'fseek', 'ftell', 'fflush', 'rewind',
-        'fprintf', 'printf', 'sprintf', 'snprintf', 'vsprintf', 'vfprintf', 'vsnprintf',
-        'fgetc', 'fputc', 'fgets', 'fputs', 'getc', 'putc', 'getchar', 'putchar',
-        'scanf', 'sscanf', 'fscanf', 'vfscanf', 'vsscanf',
-        'remove', 'rename', 'tmpfile', 'tmpnam',
-        'setvbuf', 'setbuf', 'ungetc', 'feof', 'ferror', 'clearerr', 'perror',
-    },
-    # string.h
-    'string': {
-        'strlen', 'strcpy', 'strncpy', 'strcat', 'strncat',
-        'strcmp', 'strncmp', 'stricmp', 'strnicmp', '_stricmp', '_strnicmp',
-        'strchr', 'strrchr', 'strstr', 'strpbrk', 'strspn', 'strcspn', 'strtok',
-        'memcpy', 'memset', 'memmove', 'memcmp', 'memchr',
-        'strdup', '_strdup', 'strlwr', 'strupr', '_strlwr', '_strupr',
-    },
-    # stdlib.h
-    'stdlib': {
-        'malloc', 'free', 'realloc', 'calloc',
-        'atoi', 'atol', 'atof', 'strtol', 'strtoul', 'strtod',
-        'abs', 'labs', 'div', 'ldiv',
-        'rand', 'srand',
-        'exit', 'atexit', 'abort', 'getenv', 'system',
-        'qsort', 'bsearch',
-    },
-    # math.h
-    'math': {
-        'sin', 'cos', 'tan', 'asin', 'acos', 'atan', 'atan2',
-        'sinh', 'cosh', 'tanh',
-        'sqrt', 'pow', 'exp', 'log', 'log10',
-        'ceil', 'floor', 'round', 'fabs', 'fmod',
-        'ldexp', 'frexp', 'modf',
-    },
-    # ctype.h
-    'ctype': {
-        'isalpha', 'isdigit', 'isalnum', 'isspace', 'isupper', 'islower',
-        'isprint', 'isgraph', 'iscntrl', 'ispunct', 'isxdigit',
-        'toupper', 'tolower',
-    },
-    # memory.h (often same as string.h but some compilers separate)
-    'memory': {
-        'memcpy', 'memset', 'memmove', 'memcmp', 'memchr',
-    },
-    # time.h
-    'time': {
-        'time', 'clock', 'difftime', 'mktime',
-        'localtime', 'gmtime', 'asctime', 'ctime', 'strftime',
-    },
-    # io.h / unistd.h
-    'io': {
-        'open', 'close', 'read', 'write', 'lseek',
-        'access', 'chmod', 'unlink', 'dup', 'dup2',
-        'isatty', 'filelength', 'tell', 'eof',
-        'getcwd', 'stat', 'utime',
-    },
-    # startup / internal CRT
-    'startup': {
-        'notifyAbnormalTermination',
-    },
-}
-
-# Build a flat set of all standard function names for quick lookup
-_ALL_CRT_STANDARD_FUNCTIONS = set()
-for funcs in CRT_STANDARD_FUNCTIONS.values():
-    _ALL_CRT_STANDARD_FUNCTIONS.update(funcs)
+# The clean names are declared by the prototypes/crt/*.h headers.
 
 
 def transform_crt_functions(code):
@@ -436,12 +263,7 @@ def transform_crt_functions(code):
     # The (?<!FUN) lookbehind prevents matching _HEXADDR when the captured name is "FUN",
     # which would incorrectly strip the address from unnamed functions like FUN_0060fa90.
     pattern = r'\bcrt_[a-z0-9]+_c_([a-zA-Z_][a-zA-Z0-9_]*?)(?:_FUN_[0-9a-fA-F]+|(?<!FUN)_[0-9a-fA-F]{8})?\b'
-
-    def replace_crt_call(match):
-        func_name = match.group(1)
-        return func_name
-
-    return re.sub(pattern, replace_crt_call, code)
+    return re.sub(pattern, lambda match: match.group(1), code)
 
 
 # =============================================================================
@@ -481,8 +303,9 @@ _VA_END_PATTERN = re.compile(
 def _find_last_named_param(code):
     """Extract the last named parameter before '...' from a variadic function signature.
 
-    Parses the function signature (first line starting with a return type) to find
-    the parameter just before the variadic '...' marker.
+    The signature is the first line with '...', '(' and ')'; the parameter
+    before the '...' gives its last word, with any '*' dropped ("char *format",
+    "char*format" and "char * format" all give "format").
 
     Args:
         code: Decompiled code string containing the function signature
@@ -490,29 +313,13 @@ def _find_last_named_param(code):
     Returns:
         The name of the last named parameter, or None if not found
     """
-    # Find the function signature line (contains '...')
-    for line in code.split('\n'):
-        if '...' in line and '(' in line:
-            # Extract the parameter list
-            paren_start = line.rfind('(')
-            paren_end = line.rfind(')')
-            if paren_start < 0 or paren_end < 0:
-                continue
-            params_str = line[paren_start + 1:paren_end]
-            # Split by comma, find the param before '...'
-            params = [p.strip() for p in params_str.split(',')]
-            for i, p in enumerate(params):
-                if p.startswith('...'):
-                    if i > 0:
-                        # Previous param: extract the name (last word)
-                        prev_param = params[i - 1].strip()
-                        # Handle "char *format" or "char * format_string"
-                        parts = prev_param.split()
-                        if parts:
-                            name = parts[-1].lstrip('*')
-                            return name
-            break
-    return None
+    line = next((ln for ln in code.split('\n') if '...' in ln and '(' in ln and ')' in ln), None)
+    if line is None:
+        return None
+    params = [p.strip() for p in line[line.rfind('(') + 1:line.rfind(')')].split(',')]
+    at = next((i for i, p in enumerate(params) if p.startswith('...')), 0)
+    names = re.findall(r'\w+', params[at - 1]) if at > 0 else []
+    return names[-1] if names else None
 
 
 def transform_variadic_functions(code):
@@ -542,41 +349,20 @@ def transform_variadic_functions(code):
         return code
 
     # Collect va_list_t variable names from VA_START pattern matches
-    va_list_vars = set()
-    for m in _VA_START_PATTERN.finditer(code):
-        va_list_vars.add(m.group(1))
-
+    va_list_vars = {m.group(1) for m in _VA_START_PATTERN.finditer(code)}
     if not va_list_vars:
         return code
 
-    # 1. Replace va_start pattern: local_XX.value[0] = (char * [1])&stack0x...;
-    #    -> VA_START_T(local_XX, last_param);
-    def replace_va_start(m):
-        var_name = m.group(1)
-        return 'VA_START_T(%s, %s);' % (var_name, last_param)
+    # 1. local_XX.value[0] = (char * [1])&stack0x...;  ->  VA_START_T(local_XX, last_param);
+    code = _VA_START_PATTERN.sub(lambda m: 'VA_START_T(%s, %s);' % (m.group(1), last_param), code)
 
-    code = _VA_START_PATTERN.sub(replace_va_start, code)
+    # 2. local_XX.value[0] = (char * [1])(char *)0x0;  ->  VA_END_T(local_XX);
+    code = _VA_END_PATTERN.sub(
+        lambda m: 'VA_END_T(%s);' % m.group(1) if m.group(1) in va_list_vars else m.group(0), code)
 
-    # 2. Replace va_end pattern: local_XX.value[0] = (char * [1])(char *)0x0;
-    #    -> VA_END_T(local_XX);
-    def replace_va_end(m):
-        var_name = m.group(1)
-        if var_name in va_list_vars:
-            return 'VA_END_T(%s);' % var_name
-        return m.group(0)
-
-    code = _VA_END_PATTERN.sub(replace_va_end, code)
-
-    # 3. Replace cast pattern: (va_list_t)&local_XX -> local_XX
-    def replace_va_cast(m):
-        var_name = m.group(1)
-        if var_name in va_list_vars:
-            return var_name
-        return m.group(0)
-
-    code = _VA_LIST_CAST_PATTERN.sub(replace_va_cast, code)
-
-    return code
+    # 3. (va_list_t)&local_XX  ->  local_XX
+    return _VA_LIST_CAST_PATTERN.sub(
+        lambda m: m.group(1) if m.group(1) in va_list_vars else m.group(0), code)
 
 
 # =============================================================================
@@ -605,6 +391,23 @@ _CAST_TO_CLASS_HASH_RE = re.compile(
 # Regex to extract class name from g_C<ClassName>ClassInfo
 _CLASS_INFO_ARG_RE = re.compile(r'g_(C\w+?)ClassInfo\b')
 
+# A local pointer declaration: `  TypeName *pVar1;`, `  unsigned int **ppVar2;`.
+# The type may hold spaces but not a line break, so a statement on the line
+# above can never become part of it.
+_POINTER_DECL_RE = re.compile(
+    r'^[ \t]+'                 # leading whitespace (indented = inside function body)
+    r'([\w:][\w: \t]*?)'      # type name (may include spaces for "unsigned int" etc.)
+    r'[ \t]*'
+    r'(\*{1,3})'              # pointer stars (1-3)
+    r'[ \t]*'
+    r'(\w+)'                  # variable name
+    r'[ \t]*;',               # semicolon
+    re.MULTILINE
+)
+
+# Statements that read like `T *name;` but declare nothing: `return *p;`.
+_STATEMENT_KEYWORDS = {'return', 'goto', 'case', 'else', 'do', 'sizeof'}
+
 
 def _parse_variable_types(code):
     """Parse variable declarations from the function body.
@@ -619,25 +422,12 @@ def _parse_variable_types(code):
         Dict mapping variable names to their declared type (e.g. "CAmmo *")
     """
     var_types = {}
-    # Match declarations like: TypeName *pVar1; or TypeName **ppVar2;
-    # Also handles: TypeName * pVar1; (space before var name)
-    # The type is everything before the last whitespace+varname;
-    decl_pattern = re.compile(
-        r'^\s+'                    # leading whitespace (indented = inside function body)
-        r'([\w:][\w:\s]*?)'       # type name (may include spaces for "unsigned int" etc.)
-        r'\s*'
-        r'(\*{1,3})'              # pointer stars (1-3)
-        r'\s*'
-        r'(\w+)'                  # variable name
-        r'\s*;',                   # semicolon
-        re.MULTILINE
-    )
-    for m in decl_pattern.finditer(code):
+    for m in _POINTER_DECL_RE.finditer(code):
         type_name = m.group(1).strip()
-        stars = m.group(2)
-        var_name = m.group(3)
+        if type_name.split()[0] in _STATEMENT_KEYWORDS:
+            continue
         # Store as "TypeName *" or "TypeName **"
-        var_types[var_name] = type_name + ' ' + stars
+        var_types[m.group(3)] = type_name + ' ' + m.group(2)
     return var_types
 
 
@@ -658,15 +448,7 @@ def transform_void_pointer_casts(code):
     var_types = _parse_variable_types(code)
     if not var_types:
         return code
-
-    lines = code.split('\n')
-    result = []
-
-    for line in lines:
-        new_line = _transform_void_cast_line(line, var_types)
-        result.append(new_line)
-
-    return '\n'.join(result)
+    return '\n'.join(_transform_void_cast_line(line, var_types) for line in code.split('\n'))
 
 
 def _transform_void_cast_line(line, var_types):
@@ -688,34 +470,40 @@ def _transform_void_cast_line(line, var_types):
         return line
 
     # Try castToClassHash first (it determines cast type from args, not LHS)
-    cast_match = _CAST_TO_CLASS_HASH_RE.search(line)
-    if cast_match:
-        # Check it's an assignment
-        assign_match = re.match(r'^(\s*\w+\s*=\s*)', line)
-        if assign_match:
-            # Extract class name from g_CXxxClassInfo argument
-            class_info_match = _CLASS_INFO_ARG_RE.search(line)
-            if class_info_match:
-                class_name = class_info_match.group(1)
-                prefix = assign_match.group(1)
-                rest = line[len(prefix):]
-                return prefix + '(%s *)' % class_name + rest
+    assign_match = re.match(r'^(\s*(\w+)\s*=\s*)', line)
+    if not assign_match:
+        return line
+    prefix = assign_match.group(1)
+    rest = line[len(prefix):]
+    if _CAST_TO_CLASS_HASH_RE.search(line):
+        class_info_match = _CLASS_INFO_ARG_RE.search(line)
+        if class_info_match:
+            return prefix + '(%s *)' % class_info_match.group(1) + rest
 
     # Try allocator functions
-    alloc_match = _ALLOCATOR_FUNC_RE.search(line)
-    if alloc_match:
-        # Must be an assignment: varName = func(...)
-        assign_match = re.match(r'^(\s*(\w+)\s*=\s*)', line)
-        if assign_match:
-            var_name = assign_match.group(2)
-            var_type = var_types.get(var_name)
-            if var_type and var_type != 'void *':
-                cast = '(%s)' % var_type
-                prefix = assign_match.group(1)
-                rest = line[len(prefix):]
-                return prefix + cast + rest
+    if _ALLOCATOR_FUNC_RE.search(line):
+        var_type = var_types.get(assign_match.group(2))
+        if var_type and var_type != 'void *':
+            return prefix + '(%s)' % var_type + rest
 
     return line
+
+
+# Stdio functions that the project shims behind a leading-underscore name
+# (mostly FILE*-taking, plus the sprintf/vsprintf printf-family entries
+# whose shim bridges the Watcom va_list_t → glibc va_list layout, and
+# remove/rename, whose shims resolve the path as fopen's does).
+_STDIO_SHIM_FUNCS = (
+    'fread', 'fwrite', 'fgets', 'fputs', 'fputc', 'fgetc', 'ungetc',
+    'fopen', 'freopen', 'fclose', 'ftell', 'fflush', 'feof', 'ferror', 'rewind',
+    'remove', 'rename',
+    'fprintf', 'fscanf', 'fseek', 'fsetpos', 'fgetpos', 'setvbuf', 'setbuf',
+    'sprintf', 'vsprintf',
+)
+
+# A call to one of them by its plain name: not `_fread(` already, and not a
+# member of the same name (`list->remove(`, `obj.rename(`), which is not the CRT's.
+_STDIO_CALL_RE = re.compile(r'(?<!_)(?<!->)(?<!\.)\b(%s)\s*\(' % '|'.join(_STDIO_SHIM_FUNCS))
 
 
 def transform_file_pointer_casts(code):
@@ -738,352 +526,7 @@ def transform_file_pointer_casts(code):
     Returns:
         Transformed code with stdio functions renamed to wrapper versions
     """
-    # Stdio functions that the project shims behind a leading-underscore name
-    # (mostly FILE*-taking, plus the sprintf/vsprintf printf-family entries
-    # whose shim bridges the Watcom va_list_t → glibc va_list layout, and
-    # remove/rename, whose shims resolve the path as fopen's does).
-    stdio_shim_funcs = [
-        'fread', 'fwrite', 'fgets', 'fputs', 'fputc', 'fgetc', 'ungetc',
-        'fopen', 'freopen', 'fclose', 'ftell', 'fflush', 'feof', 'ferror', 'rewind',
-        'remove', 'rename',
-        'fprintf', 'fscanf', 'fseek', 'fsetpos', 'fgetpos', 'setvbuf', 'setbuf',
-        'sprintf', 'vsprintf',
-    ]
-
-    result = code
-
-    # Rename each function call: func( -> _func(
-    # Use word boundary to avoid matching partial names or already-prefixed functions
-    for func in stdio_shim_funcs:
-        # Match function name followed by ( but not already prefixed with _
-        # Negative lookbehind ensures we don't match _fread, etc.
-        pattern = r'(?<!_)\b' + func + r'\s*\('
-        replacement = '_' + func + '('
-        result = re.sub(pattern, replacement, result)
-
-    return result
-
-
-# =============================================================================
-# PARTIAL ACCESS TRANSFORMS (split by access type)
-# =============================================================================
-#
-# Ghidra generates patterns like variable._1_2_ when accessing a portion of a
-# larger variable. The pattern ._X_Y_ means: access Y bytes starting at byte
-# offset X.
-#
-# These transforms are split by access type to ensure valid code generation:
-# - Read transforms can produce any rvalue (casts are safe)
-# - Write transforms must produce lvalues (no casts on LHS)
-# - Compound transforms handle read-modify-write patterns
-#
-# SAFETY (applies to all):
-# - Skips struct member access (e.g., struct.field._0_1_)
-# - Skips array variables (requires pointer arithmetic, not bit shifts)
-# - If access exceeds declared size, pattern is left unchanged
-
-
-def _get_partial_read_expr(var, offset, size):
-    """Generate a read expression for partial variable access.
-
-    Produces an rvalue expression - casts are safe here since this is
-    only used in read contexts.
-
-    Args:
-        var: Variable name
-        offset: Byte offset into the variable
-        size: Access size in bytes
-
-    Returns:
-        C expression string for reading the partial value
-    """
-    shift = offset * 8
-
-    # Special case: offset 0, can use simple cast
-    if offset == 0:
-        if size == 1:
-            return '((byte)(%s))' % var
-        elif size == 2:
-            return '((ushort)(%s))' % var
-        elif size == 4:
-            return '((uint)(%s))' % var
-        else:
-            # Unusual size, use mask
-            mask = (1 << (size * 8)) - 1
-            return '((%s) & 0x%X)' % (var, mask)
-
-    # Non-zero offset: use shift and mask
-    if size == 1:
-        return '(((uint)(%s) >> %d) & 0xFF)' % (var, shift)
-    elif size == 2:
-        return '(((uint)(%s) >> %d) & 0xFFFF)' % (var, shift)
-    elif size == 4:
-        return '(((uint)(%s) >> %d))' % (var, shift)
-    else:
-        mask = (1 << (size * 8)) - 1
-        return '(((uint)(%s) >> %d) & 0x%X)' % (var, shift, mask)
-
-
-def _get_partial_write_expr(var, offset, size, value_expr):
-    """Generate a write expression for partial variable access.
-
-    Uses mask-and-or pattern to preserve other bytes:
-        var = (var & clear_mask) | ((value & value_mask) << shift)
-
-    This produces valid lvalue code - the variable itself is assigned,
-    not a cast expression.
-
-    Args:
-        var: Variable name
-        offset: Byte offset into the variable
-        size: Access size in bytes
-        value_expr: The expression being assigned (the RHS value)
-
-    Returns:
-        C expression string for the RHS of the assignment
-    """
-    shift = offset * 8
-    value_mask = (1 << (size * 8)) - 1
-    clear_mask = ~(value_mask << shift) & 0xFFFFFFFF  # 32-bit assumption
-
-    if offset == 0:
-        # No shift needed for offset 0
-        return '((%s) & 0x%X) | ((%s) & 0x%X)' % (var, clear_mask, value_expr, value_mask)
-    else:
-        return '((%s) & 0x%X) | (((%s) & 0x%X) << %d)' % (
-            var, clear_mask, value_expr, value_mask, shift)
-
-
-def _check_partial_access_safety(var, offset, size, var_info):
-    """Check if a partial access transform is safe to apply.
-
-    Args:
-        var: Variable name
-        offset: Byte offset
-        size: Access size in bytes
-        var_info: Optional dict mapping variable names to info dicts
-
-    Returns:
-        True if safe to transform, False if should be skipped
-    """
-    # Heuristic checks based on Ghidra naming conventions
-    # These apply even without var_info
-
-    # Skip array variables - Ghidra prefixes: au (auto unsigned), ac (auto char),
-    # a followed by uppercase (generic array)
-    # Pattern: auStack_, acStack_, aStack_, auLocal_, etc.
-    if re.match(r'^a[uc]?[A-Z]', var):
-        return False
-
-    # Skip float/double variables - Ghidra prefixes: f (float), d (double)
-    # Pattern: fStack_, fLocal_, dStack_, dLocal_, etc.
-    if re.match(r'^[fd][A-Z]', var):
-        return False
-
-    # Sanity check: offset should be reasonable for 32-bit operations
-    # Shift amounts >= 32 are undefined behavior in C for 32-bit types
-    if offset >= 4:
-        return False
-
-    # Check var_info if provided
-    if var_info is not None:
-        info = var_info.get(var)
-        if info is not None:
-            # Skip array variables - bit shifting doesn't work for arrays
-            if info.get('is_array'):
-                return False
-
-            # Check if access is within bounds
-            declared_size = info.get('size', 0)
-            access_end = offset + size
-            if declared_size > 0 and access_end > declared_size:
-                # Access exceeds declared size - real type mismatch
-                return False
-
-    return True
-
-
-def _check_value_expr_safety(value_expr):
-    """Check if a value expression is safe for bitwise operations.
-
-    Args:
-        value_expr: The expression string being assigned
-
-    Returns:
-        True if safe to use in bitwise ops, False if should be skipped
-    """
-    # Skip float literals (contain decimal point or scientific notation)
-    if re.search(r'\d+\.\d*|\d*\.\d+|[eE][+-]?\d+', value_expr):
-        return False
-
-    # Skip float/double variable references
-    # Pattern: fStack_, fLocal_, dStack_, dLocal_, fVar, dVar, etc.
-    if re.search(r'\b[fd][A-Z]\w*', value_expr):
-        return False
-
-    # Skip pointer casts that suggest non-integer types
-    if re.search(r'\(\s*(?:float|double|CVector|CMatrix)', value_expr):
-        return False
-
-    return True
-
-
-def transform_partial_read(code, var_info=None):
-    """Transform partial access READS to bit operations.
-
-    Only transforms read contexts - expressions that are NOT on the left side
-    of any assignment. Safe to produce rvalue expressions including casts.
-
-    Examples:
-        x = var._0_1_  -> x = ((byte)(var))
-        x = var._1_1_  -> x = (((uint)(var) >> 8) & 0xFF)
-        x = var._2_2_  -> x = (((uint)(var) >> 16) & 0xFFFF)
-
-    Args:
-        code: Decompiled code string
-        var_info: Optional dict mapping variable names to info dicts
-
-    Returns:
-        Transformed code with partial reads converted to bit operations
-    """
-    # Pattern: var._X_Y_ NOT followed by any assignment operator
-    # Negative lookbehind: not preceded by '.' (skip struct.field._X_Y_)
-    # Negative lookahead: not followed by =, +=, -=, etc.
-    assignment_ops = r'(?:\+|-|\*|/|%|&|\||\^|<<|>>)?'
-    pattern = rf'(?<!\.)(\b\w+)\._(\d+)_(\d+)_(?!\s*{assignment_ops}=(?!=))'
-
-    def replace_read(match):
-        var = match.group(1)
-        offset = int(match.group(2))
-        size = int(match.group(3))
-
-        if not _check_partial_access_safety(var, offset, size, var_info):
-            return match.group(0)
-
-        return _get_partial_read_expr(var, offset, size)
-
-    return re.sub(pattern, replace_read, code)
-
-
-def transform_partial_write(code, var_info=None):
-    """Transform partial access WRITES to mask-and-or operations.
-
-    Only transforms simple assignments: var._X_Y_ = expr
-    Produces valid lvalue code - assigns to the variable, not a cast.
-
-    Examples:
-        var._0_1_ = x  -> var = ((var) & 0xFFFFFF00) | ((x) & 0xFF)
-        var._1_1_ = x  -> var = ((var) & 0xFFFF00FF) | (((x) & 0xFF) << 8)
-
-    Args:
-        code: Decompiled code string
-        var_info: Optional dict mapping variable names to info dicts
-
-    Returns:
-        Transformed code with partial writes converted to mask-and-or
-    """
-    # Pattern: var._X_Y_ = expr; (simple assignment only, not compound)
-    # The (?<![+\-*/%&|^]) prevents matching += -= etc.
-    # We also need to handle <<= and >>= specially
-    pattern = r'(?<!\.)(\b\w+)\._(\d+)_(\d+)_\s*(?<![+\-*/%&|^<>])=(?!=)\s*([^;]+);'
-
-    def replace_write(match):
-        var = match.group(1)
-        offset = int(match.group(2))
-        size = int(match.group(3))
-        value_expr = match.group(4).strip()
-
-        if not _check_partial_access_safety(var, offset, size, var_info):
-            return match.group(0)
-
-        # Check if value expression is safe for bitwise operations
-        if not _check_value_expr_safety(value_expr):
-            return match.group(0)
-
-        rhs = _get_partial_write_expr(var, offset, size, value_expr)
-        return '%s = %s;' % (var, rhs)
-
-    return re.sub(pattern, replace_write, code)
-
-
-def transform_partial_compound(code, var_info=None):
-    """Transform partial access COMPOUND assignments to read-modify-write.
-
-    Transforms patterns like: var._X_Y_ op= expr
-    Into: var = (var & clear_mask) | (((read_expr op value) & value_mask) << shift)
-
-    Examples:
-        var._0_1_ += x  -> var = ((var) & 0xFFFFFF00) | (((((byte)(var)) + x) & 0xFF))
-        var._1_1_ |= x  -> var = ((var) & 0xFFFF00FF) | ((((((uint)(var) >> 8) & 0xFF) | x) & 0xFF) << 8)
-
-    Args:
-        code: Decompiled code string
-        var_info: Optional dict mapping variable names to info dicts
-
-    Returns:
-        Transformed code with compound assignments converted
-    """
-    # Pattern: var._X_Y_ op= expr; where op is +, -, *, /, %, &, |, ^, <<, >>
-    pattern = r'(?<!\.)(\b\w+)\._(\d+)_(\d+)_\s*(\+|-|\*|/|%|&|\||\^|<<|>>)=\s*([^;]+);'
-
-    def replace_compound(match):
-        var = match.group(1)
-        offset = int(match.group(2))
-        size = int(match.group(3))
-        op = match.group(4)
-        value_expr = match.group(5).strip()
-
-        if not _check_partial_access_safety(var, offset, size, var_info):
-            return match.group(0)
-
-        # Check if value expression is safe for bitwise operations
-        if not _check_value_expr_safety(value_expr):
-            return match.group(0)
-
-        shift = offset * 8
-        value_mask = (1 << (size * 8)) - 1
-        clear_mask = ~(value_mask << shift) & 0xFFFFFFFF
-
-        # Read the current partial value
-        read_expr = _get_partial_read_expr(var, offset, size)
-
-        # Combine: (read_expr op value_expr), masked and shifted back
-        if offset == 0:
-            rhs = '((%s) & 0x%X) | (((%s %s %s) & 0x%X))' % (
-                var, clear_mask, read_expr, op, value_expr, value_mask)
-        else:
-            rhs = '((%s) & 0x%X) | ((((%s %s %s) & 0x%X) << %d))' % (
-                var, clear_mask, read_expr, op, value_expr, value_mask, shift)
-
-        return '%s = %s;' % (var, rhs)
-
-    return re.sub(pattern, replace_compound, code)
-
-
-def transform_partial_access(code, var_info=None):
-    """Transform all partial access patterns (reads, writes, compounds).
-
-    This is the main entry point that applies all three transform types
-    in the correct order: compound -> write -> read.
-
-    The order matters because:
-    - Compound (most specific) must run first to avoid write pattern matching op=
-    - Write runs next to handle simple assignments
-    - Read runs last for remaining (non-assignment) contexts
-
-    Args:
-        code: Decompiled code string
-        var_info: Optional dict mapping variable names to info dicts with:
-                  - 'size': declared size in bytes
-                  - 'is_array': True if variable is an array type
-
-    Returns:
-        Transformed code with all partial accesses converted
-    """
-    result = transform_partial_compound(code, var_info)
-    result = transform_partial_write(result, var_info)
-    result = transform_partial_read(result, var_info)
-    return result
+    return _STDIO_CALL_RE.sub(lambda m: '_%s(' % m.group(1), code)
 
 
 def transform_adjusted_pointer_types(code):
@@ -1105,18 +548,10 @@ def transform_adjusted_pointer_types(code):
     """
     # Find _ptr_N typed variable declarations to identify which vars need fixing
     decl_pattern = re.compile(r'^\s+\w+_ptr_\d+\s+(\w+)\s*;', re.MULTILINE)
-    ptr_vars = [m.group(1) for m in decl_pattern.finditer(code)]
-
-    if not ptr_vars:
-        return code
-
     result = code
-    for var_name in ptr_vars:
-        result = result.replace(
-            'ADJ(' + var_name + ').',
-            'ADJ(' + var_name + ')->'
-        )
-
+    for m in decl_pattern.finditer(code):
+        var_name = m.group(1)
+        result = result.replace('ADJ(' + var_name + ').', 'ADJ(' + var_name + ')->')
     return result
 
 
@@ -1163,14 +598,8 @@ def transform_funcptr_assignments(code):
     Returns:
         Transformed code with function pointer casts inserted
     """
-    def _insert_cast(match):
-        prefix = match.group(1)       # "g_ScanlineRenderFunc = "
-        global_name = match.group(2)   # "g_ScanlineRenderFunc"
-        func_ref = match.group(3)      # "renderDepthOnly_FUN_0049072f"
-        typedef_name = _FUNCPTR_GLOBAL_TYPES[global_name]
-        return '%s(%s *)%s;' % (prefix, typedef_name, func_ref)
-
-    return _FUNCPTR_ASSIGN_RE.sub(_insert_cast, code)
+    return _FUNCPTR_ASSIGN_RE.sub(
+        lambda m: '%s(%s *)%s;' % (m.group(1), _FUNCPTR_GLOBAL_TYPES[m.group(2)], m.group(3)), code)
 
 
 def _find_balanced_paren_end(code, start):
@@ -1184,15 +613,13 @@ def _find_balanced_paren_end(code, start):
         Index one past the matching ')' or -1 if not found
     """
     depth = 0
-    i = start
-    while i < len(code):
+    for i in range(start, len(code)):
         if code[i] == '(':
             depth += 1
         elif code[i] == ')':
             depth -= 1
             if depth == 0:
                 return i + 1
-        i += 1
     return -1
 
 
@@ -1222,42 +649,53 @@ def transform_float_concat_bitcast(code):
 
     result = []
     pos = 0
-
-    while pos < len(code):
-        match = pattern.search(code, pos)
-        if not match:
-            result.append(code[pos:])
-            break
-
-        # Append everything before the match
-        result.append(code[pos:match.start()])
-
-        cast_type = match.group(1)
-        concat_name = match.group(2)
-
-        # Find the opening paren of the CONCAT call
-        open_paren = match.end() - 1  # The '(' captured by the pattern
-
-        # Find matching close paren
+    for match in pattern.finditer(code):
+        if match.start() < pos:
+            continue  # inside a CONCAT already rewritten
+        # The '(' captured by the pattern opens the CONCAT call
+        open_paren = match.end() - 1
         close_paren_end = _find_balanced_paren_end(code, open_paren)
         if close_paren_end == -1:
-            # Unbalanced parens - leave unchanged
-            result.append(code[match.start():match.end()])
-            pos = match.end()
-            continue
-
-        # Extract the full CONCAT call including parens
-        concat_call = concat_name + code[open_paren:close_paren_end]
-
-        # Replace with bitcast helper
-        if cast_type == 'double':
-            result.append('__BITCAST_DOUBLE(%s)' % concat_call)
-        else:
-            result.append('__BITCAST_FLOAT(%s)' % concat_call)
-
+            continue  # Unbalanced parens - leave unchanged
+        result.append(code[pos:match.start()])
+        helper = '__BITCAST_DOUBLE' if match.group(1) == 'double' else '__BITCAST_FLOAT'
+        result.append('%s(%s%s)' % (helper, match.group(2), code[open_paren:close_paren_end]))
         pos = close_paren_end
-
+    result.append(code[pos:])
     return ''.join(result)
+
+
+# A floating-point local or parameter declaration: `  double dStack_5c;`.
+_FLOAT_DECL_RE = re.compile(r'(?:^[ \t]+|[(,][ \t]*)(double|float)[ \t]+(\w+)[ \t]*(?=[;,)])', re.MULTILINE)
+
+
+def _first_arg_bitcast(first_arg, float_vars):
+    """'__BITCAST_UINT64' / '__BITCAST_UINT32' for a double / float SUB argument, else None.
+
+    A double is Ghidra's dVarN name, any name declared `double` in the function
+    (dStack_5c, dLocal_10, a parameter), or an argument with a (double) cast in
+    it; a float is a name declared `float` or an argument that starts with a
+    (float) cast.
+    """
+    arg = first_arg.strip()
+    if re.match(r'^dVar\d+$', arg) or float_vars.get(arg) == 'double' or '(double)' in arg:
+        return '__BITCAST_UINT64'
+    if float_vars.get(arg) == 'float' or arg.startswith('(float)'):
+        return '__BITCAST_UINT32'
+    return None
+
+
+def _split_first_arg(args_str):
+    """The text before the first top-level comma, or None if there is none."""
+    depth = 0
+    for i, ch in enumerate(args_str):
+        if ch == '(':
+            depth += 1
+        elif ch == ')':
+            depth -= 1
+        elif ch == ',' and depth == 0:
+            return args_str[:i]
+    return None
 
 
 def transform_sub_float_bitcast(code):
@@ -1268,92 +706,43 @@ def transform_sub_float_bitcast(code):
     This transform wraps the first argument in __BITCAST_UINT64 (for doubles)
     or __BITCAST_UINT32 (for floats) so the shift operates on an integer.
 
-    Detection heuristics for "this argument is a double/float":
-      - Variable name matches dVar\\d+ (Ghidra's naming for double locals)
-      - First argument contains an explicit (double) or (float) cast
+    See _first_arg_bitcast for what counts as a double or a float.
 
     Examples:
         SUB84(dVar6, 0)              -> SUB84(__BITCAST_UINT64(dVar6), 0)
+        SUB84(dStack_5c, 0)          -> SUB84(__BITCAST_UINT64(dStack_5c), 0)   (double dStack_5c;)
         SUB82((double)fVar2, 0)      -> SUB82(__BITCAST_UINT64((double)fVar2), 0)
-        SUB84((double)local_468, 0)  -> SUB84(__BITCAST_UINT64((double)local_468), 0)
-        SUB84((float)x, 0)          -> SUB84(__BITCAST_UINT32((float)x), 0)
+        SUB84((float)x, 0)           -> SUB84(__BITCAST_UINT32((float)x), 0)
     """
-    # Match SUBxx( where xx are digits
-    pattern = re.compile(r'SUB(\d+)\(')
+    float_vars = {m.group(2): m.group(1) for m in _FLOAT_DECL_RE.finditer(code)}
+    return _sub_bitcast(code, float_vars)
 
+
+_SUB_CALL_RE = re.compile(r'\bSUB(\d+)\(')
+
+
+def _sub_bitcast(code, float_vars):
+    """transform_sub_float_bitcast's rewrite, with the declared float_vars."""
     result = []
     pos = 0
-
-    while pos < len(code):
-        match = pattern.search(code, pos)
-        if not match:
-            result.append(code[pos:])
-            break
-
-        # Append everything before the match
-        result.append(code[pos:match.start()])
-
-        sub_name = 'SUB' + match.group(1)
-        open_paren = match.end() - 1  # The '(' from the pattern
-
-        # Find matching close paren for the entire SUB call
+    for match in _SUB_CALL_RE.finditer(code):
+        if match.start() < pos:
+            continue  # inside a SUB call already rewritten
+        open_paren = match.end() - 1
         close_paren_end = _find_balanced_paren_end(code, open_paren)
         if close_paren_end == -1:
-            # Unbalanced parens - leave unchanged
-            result.append(code[match.start():match.end()])
-            pos = match.end()
-            continue
-
-        # Extract the arguments string (inside the parens)
+            continue  # Unbalanced parens - leave unchanged
         args_str = code[open_paren + 1:close_paren_end - 1]
-
-        # Find the first argument by scanning for the comma separator,
-        # respecting balanced parentheses
-        depth = 0
-        comma_pos = -1
-        for i, ch in enumerate(args_str):
-            if ch == '(':
-                depth += 1
-            elif ch == ')':
-                depth -= 1
-            elif ch == ',' and depth == 0:
-                comma_pos = i
-                break
-
-        if comma_pos == -1:
-            # No comma found - single-argument SUB, leave unchanged
-            result.append(code[match.start():close_paren_end])
-            pos = close_paren_end
-            continue
-
-        first_arg = args_str[:comma_pos]
-        rest_args = args_str[comma_pos:]  # includes leading comma
-
-        # Check if the first argument is a double/float type
-        first_arg_stripped = first_arg.strip()
-        is_double = False
-        is_float = False
-
-        # Check for dVar\d+ pattern (Ghidra's double variable naming)
-        if re.match(r'^dVar\d+$', first_arg_stripped):
-            is_double = True
-        # Check for explicit (double) cast anywhere in the argument
-        elif '(double)' in first_arg_stripped:
-            is_double = True
-        # Check for explicit (float) cast at the start (not a common case but handle it)
-        elif re.match(r'^\(float\)', first_arg_stripped):
-            is_float = True
-
-        if is_double:
-            result.append('%s(__BITCAST_UINT64(%s)%s)' % (sub_name, first_arg, rest_args))
-        elif is_float:
-            result.append('%s(__BITCAST_UINT32(%s)%s)' % (sub_name, first_arg, rest_args))
-        else:
-            # Not a float/double argument - leave unchanged
-            result.append(code[match.start():close_paren_end])
-
+        first_arg = _split_first_arg(args_str)
+        helper = _first_arg_bitcast(first_arg, float_vars) if first_arg is not None else None
+        if helper is None:
+            continue  # single-argument SUB, or not a float/double argument
+        result.append(code[pos:match.start()])
+        # The arguments are rewritten too, for a SUB nested inside this one
+        result.append('SUB%s(%s(%s)%s)' % (match.group(1), helper, _sub_bitcast(first_arg, float_vars),
+                                          _sub_bitcast(args_str[len(first_arg):], float_vars)))
         pos = close_paren_end
-
+    result.append(code[pos:])
     return ''.join(result)
 
 
@@ -1391,16 +780,13 @@ def transform_decimalize_line_numbers(code):
     return code
 
 
-def apply_all_transforms(code, transforms=None, var_info=None, func_name=None):
+def apply_all_transforms(code, transforms=None, func_name=None):
     """Apply all or specified transforms to decompiled code.
 
     Args:
         code: Decompiled code string
         transforms: Optional list of transform names to apply.
                    If None, applies all safe transforms.
-        var_info: Optional dict mapping variable names to info dicts with
-                  'size' and 'is_array' keys. Used by transform_partial_access
-                  for safety checks.
         func_name: Optional function name, used by transforms that log
                   per-function audit info (adjacency_sentinels).
 
@@ -1420,54 +806,15 @@ def apply_all_transforms(code, transforms=None, var_info=None, func_name=None):
         ('funcptr_assignments', transform_funcptr_assignments),
         ('adjusted_pointer_types', transform_adjusted_pointer_types),
         ('render_state_flags', transform_render_state_flags),
-        ('adjacency_sentinels', transform_adjacency_sentinels),
+        ('adjacency_sentinels', lambda c: transform_adjacency_sentinels(c, func_name=func_name)),
         ('decimalize_line_numbers', transform_decimalize_line_numbers),
     ]
 
-    if transforms is None:
-        transforms_to_apply = default_transforms
-    else:
-        transforms_to_apply = [
-            (name, func) for name, func in default_transforms
-            if name in transforms
-        ]
-
     result = code
-    for name, transform_func in transforms_to_apply:
-        # Special handling for transforms that need extra context
-        if name == 'partial_access':
-            result = transform_func(result, var_info=var_info)
-        elif name == 'adjacency_sentinels':
-            result = transform_func(result, func_name=func_name)
-        else:
+    for name, transform_func in default_transforms:
+        if transforms is None or name in transforms:
             result = transform_func(result)
-
     return result
-
-
-def count_auto_fixable_suspects(suspects):
-    """Count how many suspects can be auto-fixed by transforms.
-
-    Args:
-        suspects: List of suspect dictionaries
-
-    Returns:
-        Tuple of (auto_fixable_count, total_count)
-    """
-    auto_fixable = sum(1 for s in suspects if s.get('type') in AUTO_FIXABLE_SUSPECT_TYPES)
-    return (auto_fixable, len(suspects))
-
-
-def get_remaining_suspects_after_transforms(suspects):
-    """Get suspects that will remain after auto-transforms.
-
-    Args:
-        suspects: List of suspect dictionaries
-
-    Returns:
-        List of suspects that cannot be auto-fixed
-    """
-    return [s for s in suspects if s.get('type') not in AUTO_FIXABLE_SUSPECT_TYPES]
 
 
 def apply_custom_replacements(code, replacements):
@@ -1487,23 +834,16 @@ def apply_custom_replacements(code, replacements):
     Returns:
         Transformed code with custom replacements applied
     """
-    if not replacements:
-        return code
-
     result = code
-    for repl in replacements:
+    for repl in replacements or ():
         find_text = repl.get('find', '')
-        replace_text = repl.get('replace', '')
-        use_regex = repl.get('regex', False)
-
         if not find_text:
             continue
-
-        if use_regex:
+        replace_text = repl.get('replace', '')
+        if repl.get('regex', False):
             result = re.sub(find_text, replace_text, result)
         else:
             result = result.replace(find_text, replace_text)
-
     return result
 
 

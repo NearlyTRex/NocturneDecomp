@@ -508,42 +508,6 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 239,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar3->vertex_buffer_ptr->r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 244,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar3->vertex_buffer_ptr[1].r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 249,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar3->vertex_buffer_ptr[2].r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 254,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar3->vertex_buffer_ptr[3].r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
       "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 299,
       "match": "field-by-field struct copy",
@@ -554,65 +518,11 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 360,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[1].r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 363,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[2].r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 366,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[3].r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 408,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_9c.x = pCVar5->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 459,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[1].r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 462,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[2].r = (this_ptr->color).r;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 465,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[3].r = (this_ptr->color).r;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1275,6 +1185,68 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CLaserBeam_render_FUN_004c25c0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 85,
+          "message": "Value stored to 'bVar9' is never read",
+          "path_notes": [
+            {
+              "line": 85,
+              "message": "Value stored to 'bVar9' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.uninitialized.Assign",
+          "column": 13,
+          "line": 153,
+          "message": "Assigned value is garbage or undefined",
+          "path_notes": [
+            {
+              "line": 76,
+              "message": "'local_44' declared without an initial value"
+            },
+            {
+              "line": 112,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 112,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 144,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 144,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 144,
+              "message": "Assuming field 'halo_mode' is not equal to 0"
+            },
+            {
+              "line": 144,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 153,
+              "message": "Assigned value is garbage or undefined"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

@@ -278,5 +278,55 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "loadModelChunk_FUN_00528970.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 17,
+          "line": 41,
+          "message": "Dereference of null pointer",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "Assuming 'file' is not equal to null"
+            },
+            {
+              "line": 20,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 26,
+              "message": "Value assigned to 'buffer'"
+            },
+            {
+              "line": 28,
+              "message": "Assuming 'buffer' is equal to null"
+            },
+            {
+              "line": 28,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 35,
+              "message": "Assuming 'SVar2' is equal to 'model_size'"
+            },
+            {
+              "line": 35,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 41,
+              "message": "Dereference of null pointer"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

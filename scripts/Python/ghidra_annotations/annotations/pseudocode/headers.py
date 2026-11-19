@@ -1667,6 +1667,19 @@ EQUATE_VALUE_OVERRIDES = {
 }
 
 
+def missing_override_equates(equates):
+    """EQUATE_VALUE_OVERRIDES names a program has no equate for, as equates.
+
+    GLOBAL_TYPE_OVERRIDES sizes the same globals by these names in every
+    program, so defines.h must define them even where Ghidra holds no such
+    equate (the BW builds). With no binary value, there is nothing to compare.
+    """
+    present = {equate['name'] for equate in equates}
+    return [{'name': name, 'value': value, 'binary_value': value, 'refs': [],
+             'formatted_value': format_equate_value(value)}
+            for name, value in sorted(EQUATE_VALUE_OVERRIDES.items()) if name not in present]
+
+
 def organize_equates_by_category(currentProgram):
     """Organize equates into categories.
 
@@ -1715,6 +1728,7 @@ def organize_equates_by_category(currentProgram):
 
     log_info("Found %d equates in Ghidra (%d valid, %d skipped invalid names)" % (
         total_count, len(all_equates), skipped_count))
+    all_equates += missing_override_equates(all_equates)
 
     # Categorize equates based on usage patterns and names
     for equate_data in all_equates:
@@ -2230,6 +2244,7 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// Lowercase aliases (Ghidra sometimes uses these)")
     content.append("typedef unsigned int dword;      // 32-bit (Win32 DWORD width)")
     content.append("typedef unsigned short word;")
+    content.append("typedef unsigned long long qword;")
     content.append("")
     content.append("// Undefined types (placeholder bytes for unknown data)")
     content.append("typedef unsigned char undefined;")
@@ -2742,7 +2757,11 @@ def generate_winsock_runtime_inlines():
     lines.append("// Winsock Initialization")
     lines.append("// ---------------------------------------------------------------------------")
     lines.append("")
-    lines.append("extern int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData);")
+    # struct WSADATA * is what LPWSADATA names; spelled out, it needs no typedef a
+    # program's Ghidra types may lack (bw1 has none). Declared at file scope
+    # first, or C would scope the struct to this prototype alone.
+    lines.append("struct WSADATA;")
+    lines.append("extern int WSAStartup(WORD wVersionRequested, struct WSADATA* lpWSAData);")
     lines.append("extern int WSACleanup(void);")
     lines.append("")
     lines.append("// ---------------------------------------------------------------------------")

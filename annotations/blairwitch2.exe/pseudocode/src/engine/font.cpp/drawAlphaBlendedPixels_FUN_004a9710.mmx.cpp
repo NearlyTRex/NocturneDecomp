@@ -9,7 +9,6 @@
 void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004a9710(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)
 {
 __asm {
-        mov EBP,ESP
         mov EDI,dword ptr [EBP + 0x14]
         mov ESI,dword ptr [EBP + 0x18]
         mov EDX,dword ptr [EBP + 0x1c]
@@ -49,6 +48,5 @@ __asm {
         dec ECX
         jg LAB_004a9746
         emms
-        mov ESP,EBP
 }
 }

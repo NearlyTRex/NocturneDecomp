@@ -312,5 +312,39 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "giveHeroWeapon_FUN_004dd870.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 22,
+          "line": 25,
+          "message": "Access to field 'ammo_count' results in a dereference of a null pointer (loaded from variable 'pCVar1')",
+          "path_notes": [
+            {
+              "line": 18,
+              "message": "Value assigned to 'pCVar1'"
+            },
+            {
+              "line": 20,
+              "message": "Assuming 'pCVar1' is equal to null"
+            },
+            {
+              "line": 20,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 25,
+              "message": "Access to field 'ammo_count' results in a dereference of a null pointer (loaded from variable 'pCVar1')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": []
 }

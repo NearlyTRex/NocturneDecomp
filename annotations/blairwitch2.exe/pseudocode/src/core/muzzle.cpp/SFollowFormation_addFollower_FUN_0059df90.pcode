@@ -366,44 +366,44 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @0059e01b [ESP:-72]~  # JZ 0x0059e031
 CBRANCH (ram,0x59e031,4), (register,0x206,1)
 
-@0059e01d [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x10]
+@0059e01d [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x10]
 INT_ADD (unique,0x7600,4) = (const,0x10,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e021 [ESP:-64]~  # MOV dword ptr [ECX], EAX
+@0059e021 [ESP:-72]~  # MOV dword ptr [ECX], EAX
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (register,0x4,4) /* ECX */, (unique,0xa300,4)
 
-@0059e023 [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x14]
+@0059e023 [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x14]
 INT_ADD (unique,0x7600,4) = (const,0x14,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e027 [ESP:-64]~  # MOV dword ptr [ECX + 0x4], EAX
+@0059e027 [ESP:-72]~  # MOV dword ptr [ECX + 0x4], EAX
 INT_ADD (unique,0x6600,4) = (register,0x4,4) /* ECX */, (const,0x4,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e02a [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x18]
+@0059e02a [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x18]
 INT_ADD (unique,0x7600,4) = (const,0x18,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e02e [ESP:-64]~  # MOV dword ptr [ECX + 0x8], EAX
+@0059e02e [ESP:-72]~  # MOV dword ptr [ECX + 0x8], EAX
 INT_ADD (unique,0x6600,4) = (register,0x4,4) /* ECX */, (const,0x8,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e031 [ESP:-64]~  # LEA EAX, [ESP + 0x1c]
+@0059e031 [ESP:-72]~  # LEA EAX, [ESP + 0x1c]
 INT_ADD (unique,0x7600,4) = (const,0x1c,4), (register,0x10,4) /* ESP */
 COPY (register,0x0,4) /* EAX */ = (unique,0x7600,4)
 
-@0059e035 [ESP:-64]~  # LEA ECX, [EDX + 0x14]
+@0059e035 [ESP:-72]~  # LEA ECX, [EDX + 0x14]
 INT_ADD (unique,0x6600,4) = (register,0x8,4) /* EDX */, (const,0x14,4)
 COPY (register,0x4,4) /* ECX */ = (unique,0x6600,4)
 
-@0059e038 [ESP:-64]~  # CMP ECX, EAX
+@0059e038 [ESP:-72]~  # CMP ECX, EAX
 COPY (unique,0x66a00,4) = (register,0x4,4) /* ECX */
 INT_LESS (register,0x200,1) = (unique,0x66a00,4), (register,0x0,4) /* EAX */
 INT_SBORROW (register,0x20b,1) = (unique,0x66a00,4), (register,0x0,4) /* EAX */
@@ -415,114 +415,114 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0059e03a [ESP:-64]~  # JZ 0x0059e050
+@0059e03a [ESP:-72]~  # JZ 0x0059e050
 CBRANCH (ram,0x59e050,4), (register,0x206,1)
 
-@0059e03c [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x1c]
+@0059e03c [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x1c]
 INT_ADD (unique,0x7600,4) = (const,0x1c,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e040 [ESP:-64]~  # MOV dword ptr [ECX], EAX
+@0059e040 [ESP:-72]~  # MOV dword ptr [ECX], EAX
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (register,0x4,4) /* ECX */, (unique,0xa300,4)
 
-@0059e042 [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x20]
+@0059e042 [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x20]
 INT_ADD (unique,0x7600,4) = (const,0x20,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e046 [ESP:-64]~  # MOV dword ptr [ECX + 0x4], EAX
+@0059e046 [ESP:-72]~  # MOV dword ptr [ECX + 0x4], EAX
 INT_ADD (unique,0x6600,4) = (register,0x4,4) /* ECX */, (const,0x4,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e049 [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x24]
+@0059e049 [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x24]
 INT_ADD (unique,0x7600,4) = (const,0x24,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e04d [ESP:-64]~  # MOV dword ptr [ECX + 0x8], EAX
+@0059e04d [ESP:-72]~  # MOV dword ptr [ECX + 0x8], EAX
 INT_ADD (unique,0x6600,4) = (register,0x4,4) /* ECX */, (const,0x8,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e050 [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x28]
+@0059e050 [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x28]
 INT_ADD (unique,0x7600,4) = (const,0x28,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e054 [ESP:-64]~  # MOV dword ptr [EDX + 0x20], EAX
+@0059e054 [ESP:-72]~  # MOV dword ptr [EDX + 0x20], EAX
 INT_ADD (unique,0x6600,4) = (register,0x8,4) /* EDX */, (const,0x20,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e057 [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x2c]
+@0059e057 [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x2c]
 INT_ADD (unique,0x7600,4) = (const,0x2c,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e05b [ESP:-64]~  # MOV dword ptr [EDX + 0x24], EAX
+@0059e05b [ESP:-72]~  # MOV dword ptr [EDX + 0x24], EAX
 INT_ADD (unique,0x6600,4) = (register,0x8,4) /* EDX */, (const,0x24,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e05e [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x30]
+@0059e05e [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x30]
 INT_ADD (unique,0x7600,4) = (const,0x30,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e062 [ESP:-64]~  # MOV dword ptr [EDX + 0x28], EAX
+@0059e062 [ESP:-72]~  # MOV dword ptr [EDX + 0x28], EAX
 INT_ADD (unique,0x6600,4) = (register,0x8,4) /* EDX */, (const,0x28,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e065 [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x34]
+@0059e065 [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x34]
 INT_ADD (unique,0x7600,4) = (const,0x34,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e069 [ESP:-64]~  # MOV dword ptr [EDX + 0x2c], EAX
+@0059e069 [ESP:-72]~  # MOV dword ptr [EDX + 0x2c], EAX
 INT_ADD (unique,0x6600,4) = (register,0x8,4) /* EDX */, (const,0x2c,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e06c [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x38]
+@0059e06c [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x38]
 INT_ADD (unique,0x7600,4) = (const,0x38,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e070 [ESP:-64]~  # MOV dword ptr [EDX + 0x30], EAX
+@0059e070 [ESP:-72]~  # MOV dword ptr [EDX + 0x30], EAX
 INT_ADD (unique,0x6600,4) = (register,0x8,4) /* EDX */, (const,0x30,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e073 [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x3c]
+@0059e073 [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x3c]
 INT_ADD (unique,0x7600,4) = (const,0x3c,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e077 [ESP:-64]~  # MOV dword ptr [EDX + 0x34], EAX
+@0059e077 [ESP:-72]~  # MOV dword ptr [EDX + 0x34], EAX
 INT_ADD (unique,0x6600,4) = (register,0x8,4) /* EDX */, (const,0x34,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e07a [ESP:-64]~  # MOV EAX, dword ptr [ESP + 0x40]
+@0059e07a [ESP:-72]~  # MOV EAX, dword ptr [ESP + 0x40]
 INT_ADD (unique,0x7600,4) = (const,0x40,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0059e07e [ESP:-64]~  # MOV dword ptr [EDX + 0x38], EAX
+@0059e07e [ESP:-72]~  # MOV dword ptr [EDX + 0x38], EAX
 INT_ADD (unique,0x6600,4) = (register,0x8,4) /* EDX */, (const,0x38,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
-@0059e081 [ESP:-64]~  # MOV EDI, dword ptr [EBX + 0x3c4]
+@0059e081 [ESP:-72]~  # MOV EDI, dword ptr [EBX + 0x3c4]
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x3c4,4)
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0x17200,4)
 
-@0059e087 [ESP:-64]~  # INC EDI
+@0059e087 [ESP:-72]~  # INC EDI
 INT_SCARRY (register,0x20b,1) = (register,0x1c,4) /* EDI */, (const,0x1,4)
 INT_ADD (register,0x1c,4) /* EDI */ = (register,0x1c,4) /* EDI */, (const,0x1,4)
 INT_SLESS (register,0x207,1) = (register,0x1c,4) /* EDI */, (const,0x0,4)
@@ -532,27 +532,27 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0059e088 [ESP:-64]~  # MOV EAX, 0x2
+@0059e088 [ESP:-72]~  # MOV EAX, 0x2
 COPY (register,0x0,4) /* EAX */ = (const,0x2,4)
 
-@0059e08d [ESP:-64]~  # MOV dword ptr [EBX + 0x3c4], EDI
+@0059e08d [ESP:-72]~  # MOV dword ptr [EBX + 0x3c4], EDI
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x3c4,4)
 COPY (unique,0xa300,4) = (register,0x1c,4) /* EDI */
 STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
 
-@0059e093 [ESP:-60](+4)~  # POP ESI
+@0059e093 [ESP:-68](+4)~  # POP ESI
 COPY (unique,0x87300,4) = (const,0x0,4)
 LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0x87300,4)
 
-@0059e094 [ESP:-56](+4)~  # POP EDI
+@0059e094 [ESP:-64](+4)~  # POP EDI
 COPY (unique,0x87300,4) = (const,0x0,4)
 LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0x87300,4)
 
-@0059e095 [ESP:+4](+60)~  # ADD ESP, 0x3c
+@0059e095 [ESP:-4](+60)~  # ADD ESP, 0x3c
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x3c,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x3c,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x3c,4)
@@ -563,13 +563,13 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0059e098 [ESP:+8](+4)~  # POP EBX
+@0059e098 [ESP:+0](+4)~  # POP EBX
 COPY (unique,0x87300,4) = (const,0x0,4)
 LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0xc,4) /* EBX */ = (unique,0x87300,4)
 
-@0059e099 [ESP:+12](+4)~  # RET
+@0059e099 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

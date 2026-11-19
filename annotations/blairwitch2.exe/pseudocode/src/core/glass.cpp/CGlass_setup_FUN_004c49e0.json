@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 671,
+    "complexity_score": 696,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 311,
-    "suspect_count": 32,
+    "suspect_count": 34,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
+      "struct_field_overrun",
       "suspect_float",
       "unrolled_memcpy",
       "unrolled_strcpy"
@@ -486,6 +487,22 @@
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_12c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "*(...)(pcVar10 + 0x740): the pointer is based on a field at offset 0x0 (size 32 in CGlass) but the +0x740 byte offset lands in field texture_u (offset 0x740). Ghidra anchored on the wrong field \u2014 rewrite as direct access to texture_u (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 184,
+      "match": "*(...)(pcVar10 + 0x740)",
+      "severity": "moderate",
+      "text": "*(int *)(pcVar10 + 0x740) = (int)ROUND(dVar13);",
+      "type": "struct_field_overrun"
+    },
+    {
+      "description": "*(...)(pcVar10 + 0x7a4): the pointer is based on a field at offset 0x0 (size 32 in CGlass) but the +0x7a4 byte offset lands in field texture_v (offset 0x7a4). Ghidra anchored on the wrong field \u2014 rewrite as direct access to texture_v (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 191,
+      "match": "*(...)(pcVar10 + 0x7a4)",
+      "severity": "moderate",
+      "text": "*(int *)(pcVar10 + 0x7a4) = iVar4;",
+      "type": "struct_field_overrun"
     }
   ],
   "vtable_info": {

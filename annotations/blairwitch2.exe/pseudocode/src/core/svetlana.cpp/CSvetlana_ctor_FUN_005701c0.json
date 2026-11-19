@@ -172,7 +172,7 @@
       "type": "negative_offset"
     },
     {
-      "description": "'pCVar1[1].base.base.actor_name + 8' walks 1 x sizeof(CHero) (0x25640) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0x25648, which is exactly offsetof(CBaron, summon_event[8]). Ghidra had no CBaron type here and reached the field by index arithmetic; write it as ((CBaron *)pCVar1)->summon_event[8] (\u00a7de-pun/\u00a712). Ambiguous: CColonel::head_look_euler, CDoc::frame_cleared, CGabriella::draw_blend also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].base.base.actor_name + 8' walks 1 x sizeof(CHero) (0x25640) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0x25648, which is exactly offsetof(CSvetlana, cape_cloth). Ghidra had no CSvetlana type here and reached the field by index arithmetic; write it as ((CSvetlana *)pCVar1)->cape_cloth (\u00a7de-pun/\u00a712).",
       "line": 10,
       "severity": "moderate",
       "text": "pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_005adda0((CCloth *)(pCVar1[1].base.base.actor_name + 8));",

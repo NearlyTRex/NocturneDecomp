@@ -321,7 +321,7 @@ def build_function_signature(override_def, dtm):
     return func_def
 
 
-def register_proto_overrides(annotations_dir=None):
+def register_proto_overrides(annotations_dir=None, function_overrides=()):
     """Load and cache proto overrides for later application.
 
     This must be called after pyghidra.start() but before any decompilation.
@@ -329,6 +329,7 @@ def register_proto_overrides(annotations_dir=None):
 
     Args:
         annotations_dir: Directory containing proto_overrides.json, or direct path to JSON file
+        function_overrides: Overrides from the per-function JSONs, registered with the global ones
 
     Returns:
         Number of proto overrides loaded
@@ -341,15 +342,15 @@ def register_proto_overrides(annotations_dir=None):
     json_path = annotations_dir
     if json_path and not json_path.endswith('.json'):
         json_path = os.path.join(json_path, PROTO_OVERRIDES_FILENAME)
-    if not json_path or not os.path.exists(json_path):
+    overrides_list = []
+    if json_path and os.path.exists(json_path):
+        overrides_list = load_proto_overrides_json(json_path)
+        log_info("Loading proto overrides from %s" % json_path)
+    else:
         log_info("No proto_overrides.json found at %s" % json_path)
-        return 0
-
-    overrides_list = load_proto_overrides_json(json_path)
+    overrides_list = list(overrides_list) + list(function_overrides)
     if not overrides_list:
         return 0
-
-    log_info("Loading proto overrides from %s" % json_path)
 
     # Validate and cache overrides: a signature string, or the explicit
     # return_type/params form the module docstring describes

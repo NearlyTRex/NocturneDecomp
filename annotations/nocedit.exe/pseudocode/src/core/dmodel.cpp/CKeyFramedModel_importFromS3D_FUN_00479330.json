@@ -930,5 +930,51 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CKeyFramedModel_importFromS3D_FUN_00479330.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 180,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 180,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 256,
+          "message": "Value stored to 'local_1c' is never read",
+          "path_notes": [
+            {
+              "line": 256,
+              "message": "Value stored to 'local_1c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 259,
+          "message": "Value stored to 'local_1c' is never read",
+          "path_notes": [
+            {
+              "line": 259,
+              "message": "Value stored to 'local_1c' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

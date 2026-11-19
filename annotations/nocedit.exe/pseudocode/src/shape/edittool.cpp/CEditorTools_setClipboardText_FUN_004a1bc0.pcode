@@ -366,7 +366,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4a1c3f,4)
 CALLIND (unique,0x63500,4)
 
-@004a1c3f [ESP:???](-4)!?  # CALL dword ptr CS:[0x611490]
+@004a1c3f [ESP:-16](-4)  # CALL dword ptr CS:[0x611490]
 COPY (unique,0x63500,4) = (ram,0x611490,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4a1c46,4)
@@ -619,5 +619,4 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 81 instructions, 439 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

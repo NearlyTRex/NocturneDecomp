@@ -255,5 +255,87 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 9,
+          "line": 44,
+          "message": "Access to field 'voxel_buffer1' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')",
+          "path_notes": [
+            {
+              "line": 29,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 30,
+              "message": "Assuming 'local_28.x' is < '(this_ptr->grid_coord).x'"
+            },
+            {
+              "line": 30,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 30,
+              "message": "Assuming 'local_28.y' is < '(this_ptr->grid_coord).y'"
+            },
+            {
+              "line": 30,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 31,
+              "message": "Assuming 'local_28.z' is < '(this_ptr->grid_coord).z'"
+            },
+            {
+              "line": 29,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 37,
+              "message": "Value assigned to 'this_ptr_00'"
+            },
+            {
+              "line": 39,
+              "message": "Assuming 'this_ptr_00' is equal to null"
+            },
+            {
+              "line": 39,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Access to field 'voxel_buffer1' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": []
 }

@@ -790,5 +790,171 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CNetGame_applyNewGameSettings_FUN_00542470.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 3,
+          "line": 56,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 56,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 104,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 104,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 38,
+          "line": 135,
+          "message": "The left operand of '<' is a garbage value",
+          "path_notes": [
+            {
+              "line": 25,
+              "message": "Assuming field 'connection_type' is equal to CONNECTION_CLIENT"
+            },
+            {
+              "line": 25,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 25,
+              "message": "Assuming field 'network_mode' is equal to NET_MODE_LOBBY"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 36,
+              "message": "Assuming 0 is < field 'player_count'"
+            },
+            {
+              "line": 36,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 38,
+              "message": "Assuming 'localPkt.players[iVar13].addr.port' is equal to 'this_ptr->players[this_ptr->local_player_index].addr.port'"
+            },
+            {
+              "line": 38,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'localPkt.players[iVar13].addr.ip_address' is equal to 'this_ptr->players[this_ptr->local_player_index].addr.ip_address'"
+            },
+            {
+              "line": 38,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'localPkt.players[iVar13].addr.port' is equal to 'this_ptr->players[this_ptr->server_player_index].addr.port'"
+            },
+            {
+              "line": 44,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 46,
+              "message": "Assuming 'localPkt.players[iVar13].addr.ip_address' is equal to 'this_ptr->players[this_ptr->server_player_index].addr.ip_address'"
+            },
+            {
+              "line": 44,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'iVar13' is >= field 'player_count'"
+            },
+            {
+              "line": 37,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 53,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 53,
+              "message": "'iVar6' is >= 0"
+            },
+            {
+              "line": 53,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 58,
+              "message": "Assuming 0 is >= field 'player_count'"
+            },
+            {
+              "line": 58,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 116,
+              "message": "0 is < field 'player_count'"
+            },
+            {
+              "line": 116,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 118,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 118,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 118,
+              "message": "Execution continues on line 127"
+            },
+            {
+              "line": 130,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 130,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 133,
+              "message": "'local_1c' is > 0"
+            },
+            {
+              "line": 133,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 135,
+              "message": "The left operand of '<' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

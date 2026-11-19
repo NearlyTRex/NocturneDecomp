@@ -345,7 +345,8 @@ LAB_0050c8d9:
       pcVar12 = "You have been disconnected from the game";
       pcVar11 = &g_CHAR_005e09d4;
       iVar4 = 0;
-      support_trisock_cpp_createNetworkAddr_FUN_00578e60(&local_3c,(uint32_t *)g_AnyAddressIP,0);
+      sender_addr = support_trisock_cpp_createNetworkAddr_FUN_00578e60
+                              (&local_3c,(uint32_t *)g_AnyAddressIP,0);
       core_netgame_cpp_CNetGame_addChatHistory_FUN_0050df20
                 (this_ptr,sender_addr,iVar4,pcVar11,pcVar12);
       return;

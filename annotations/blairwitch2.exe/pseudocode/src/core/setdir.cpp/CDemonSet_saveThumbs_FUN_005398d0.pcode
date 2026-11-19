@@ -69,12 +69,12 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@005398e9 [ESP:???]!?  # MOV EAX, dword ptr [ESP + 0xa8]
+@005398e9 [ESP:-164]  # MOV EAX, dword ptr [ESP + 0xa8]
 INT_ADD (unique,0x7f00,4) = (const,0xa8,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7f00,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@005398f0 [ESP:???]!?  # CMP EBP, dword ptr [EAX]
+@005398f0 [ESP:-164]  # CMP EBP, dword ptr [EAX]
 LOAD (unique,0xa300,4) = (const,0x1a1,4), (register,0x0,4) /* EAX */
 COPY (unique,0x67600,4) = (unique,0xa300,4)
 INT_LESS (register,0x200,1) = (register,0x14,4) /* EBP */, (unique,0x67600,4)
@@ -87,7 +87,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@005398f2 [ESP:???]!?  # JGE 0x00539bd4
+@005398f2 [ESP:-164]  # JGE 0x00539bd4
 INT_EQUAL (unique,0x18900,1) = (register,0x20b,1), (register,0x207,1)
 CBRANCH (ram,0x539bd4,4), (unique,0x18900,1)
 
@@ -939,5 +939,4 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 113 instructions, 695 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

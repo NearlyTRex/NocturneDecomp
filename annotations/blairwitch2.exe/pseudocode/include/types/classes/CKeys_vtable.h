@@ -18,7 +18,7 @@ struct CKeys;
 typedef struct CKeys_vtable {
     CKeys_getKeyState* getKeyState; // 0x0
     CKeys_getAndClearKeyState* getAndClearKeyState; // 0x4
-    CKeys_clearKeypresses* clearKeyPresses; // 0x8
+    CKeys_clearKeypresses* clearKeypresses; // 0x8
 } CKeys_vtable;
 #pragma pack(pop)
 

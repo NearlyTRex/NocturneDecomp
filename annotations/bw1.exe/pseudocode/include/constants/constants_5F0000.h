@@ -5,7 +5,6 @@
 // Dependencies
 #include <math.h>
 #include "system/basetypes.h"
-#include "constants.h"
 #include "prototypes/prototypes_410000.h"
 #include "prototypes/prototypes_440000.h"
 

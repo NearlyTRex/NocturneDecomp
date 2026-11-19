@@ -3581,14 +3581,14 @@
       "type": "bit_int_float_compare"
     },
     {
-      "description": "'pCVar19[2].orient + 8' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(orient) (0x30) + 0x8 = 0x2e8, which is exactly offsetof(CAmmo, weapon_class_name[20]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar19)->weapon_class_name[20] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[20], CBoxActor::collision_wav_name, CCryptVessel::destroyed_event[8] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar19[2].orient + 8' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(orient) (0x30) + 0x8 = 0x2e8, which is exactly offsetof(CAmmo, weapon_class_name[20]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar19)->weapon_class_name[20] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[20], CBoxActor::collision_wav_name, CCryptVessel::destroyed_event[8], CDoor::open_condition, CDrip::drip_radius, CFilmReel::movie_name[16], CFlameCan::on_fire_condition[12], CGrave::start_condition, CLever::on_event[8], CPendulum::start_event[20], CPlatform::travel_time_to_end, CSimBox::trigger_event[12], CTrash::velocity, CTrigger::off_event[96], CWeapon::bolt_velocity also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 525,
       "severity": "moderate",
       "text": "(g_CEventListPtr,(char *)((int)&pCVar19[2].orient + 8)), iVar8 == 0))",
       "type": "derived_field_index_pun"
     },
     {
-      "description": "'pCVar16[2].orient + 8' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(orient) (0x30) + 0x8 = 0x2e8, which is exactly offsetof(CAmmo, weapon_class_name[20]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar16)->weapon_class_name[20] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[20], CBoxActor::collision_wav_name, CCryptVessel::destroyed_event[8] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar16[2].orient + 8' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(orient) (0x30) + 0x8 = 0x2e8, which is exactly offsetof(CAmmo, weapon_class_name[20]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar16)->weapon_class_name[20] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[20], CBoxActor::collision_wav_name, CCryptVessel::destroyed_event[8], CDoor::open_condition, CDrip::drip_radius, CFilmReel::movie_name[16], CFlameCan::on_fire_condition[12], CGrave::start_condition, CLever::on_event[8], CPendulum::start_event[20], CPlatform::travel_time_to_end, CSimBox::trigger_event[12], CTrash::velocity, CTrigger::off_event[96], CWeapon::bolt_velocity also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 768,
       "severity": "moderate",
       "text": "(g_CEventListPtr,(char *)((int)&pCVar16[2].orient + 8)), iVar8 == 0))",

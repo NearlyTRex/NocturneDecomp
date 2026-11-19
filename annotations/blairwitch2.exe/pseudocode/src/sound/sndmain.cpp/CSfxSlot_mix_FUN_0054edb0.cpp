@@ -128,7 +128,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_0054edb0(CSfxSlot *this_ptr,SMix
       uStack_d4 = (uint)((ulonglong)dVar14 >> 0x20);
       if (dVar14 <= 0.0) goto LAB_0054eefd;
       resample_delta = (double)pCVar3->streaming_buffer_size;
-      local_e0 = SUB84(resample_delta,0);
+      local_e0 = SUB84(__BITCAST_UINT64(resample_delta),0);
       uStack_dc = (uint)((ulonglong)resample_delta >> 0x20);
       local_5c = 0;
       local_c8 = mix_buffer.num_output_samples;

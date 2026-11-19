@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 64,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "stale_struct_offset_64bit",
       "unrolled_strcpy"
     ],
     "total_lines": 153
@@ -153,6 +154,22 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "*(...)(pcVar2 + 0x190) reaches field cloths (0x194) of CClothList via a baked 32-bit offset. CClothList is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CClothList * (\u00a7de-pun/\u00a712).",
+      "line": 40,
+      "match": "*(...)(pcVar2 + 0x190)",
+      "severity": "moderate",
+      "text": "*(uint *)(pcVar2 + 400) = *(uint *)(pcVar2 + 0x194);",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(pcVar2 + 0x194) reaches field cloths (0x194) of CClothList via a baked 32-bit offset. CClothList is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CClothList * (\u00a7de-pun/\u00a712).",
+      "line": 40,
+      "match": "*(...)(pcVar2 + 0x194)",
+      "severity": "moderate",
+      "text": "*(uint *)(pcVar2 + 400) = *(uint *)(pcVar2 + 0x194);",
+      "type": "stale_struct_offset_64bit"
     }
   ]
 }

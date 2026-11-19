@@ -212,5 +212,47 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CLodMesh_recordEdgeCollapse_FUN_0051d4a0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.CallAndMessage",
+          "column": 3,
+          "line": 27,
+          "message": "Called C++ object pointer is null",
+          "path_notes": [
+            {
+              "line": 18,
+              "message": "Value assigned to 'pCVar1'"
+            },
+            {
+              "line": 20,
+              "message": "The value of 'pCVar1' is assigned to field 'lod_levels_ptr'"
+            },
+            {
+              "line": 21,
+              "message": "Assuming 'pCVar1' is equal to null"
+            },
+            {
+              "line": 21,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 26,
+              "message": "Null pointer value stored to 'pCVar1'"
+            },
+            {
+              "line": 27,
+              "message": "Called C++ object pointer is null"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

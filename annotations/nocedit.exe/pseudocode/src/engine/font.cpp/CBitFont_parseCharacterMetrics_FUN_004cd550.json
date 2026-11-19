@@ -364,5 +364,95 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CBitFont_parseCharacterMetrics_FUN_004cd550.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 21,
+          "line": 72,
+          "message": "Dereference of null pointer (loaded from variable 'piVar3')",
+          "path_notes": [
+            {
+              "line": 34,
+              "message": "Value assigned to 'ptr'"
+            },
+            {
+              "line": 36,
+              "message": "Assuming 'ptr' is equal to null"
+            },
+            {
+              "line": 36,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 44,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 47,
+              "message": "Assuming 'local_20' is not equal to field 'load_flags'"
+            },
+            {
+              "line": 47,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 47,
+              "message": "Execution continues on line 53"
+            },
+            {
+              "line": 53,
+              "message": "Assuming 'local_20' is not equal to field 'load_flags'"
+            },
+            {
+              "line": 53,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 63,
+              "message": "Null pointer value stored to 'piVar3'"
+            },
+            {
+              "line": 64,
+              "message": "Assuming 'bitmap_height' is > 0"
+            },
+            {
+              "line": 64,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 68,
+              "message": "Assuming 'bitmap_width' is > 0"
+            },
+            {
+              "line": 68,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 70,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 70,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 72,
+              "message": "Dereference of null pointer (loaded from variable 'piVar3')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

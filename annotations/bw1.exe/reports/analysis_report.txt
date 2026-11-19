@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 5467
-Clean functions: 3159 (57.8%)
-Functions with suspects: 2308 (42.2%)
+Clean functions: 3151 (57.6%)
+Functions with suspects: 2316 (42.4%)
 
-Total suspect patterns: 33832
+Total suspect patterns: 33853
 Average suspects per function: 6.19
 
 Virtual files: 219 total, 8 at 100%, 10 at 90%+
@@ -18,13 +18,13 @@ Virtual files: 219 total, 8 at 100%, 10 at 90%+
 Pseudocode lines:
   Min: 4, Max: 3821, Average: 51.2
 
-Average complexity score: 119.4
+Average complexity score: 119.5
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   pointer_cast              10558
   pointer_truncation        9038
-  unrolled_memcpy           1858
+  unrolled_memcpy           1846
   stack_param               1697
   stack_ref                 1680
   unknown_field             1353
@@ -51,8 +51,8 @@ SUSPECT PATTERN BREAKDOWN
   bitcast_double_pair       73
   sub84_truncation          68
   signed_shift_global_idiom 67
+  derived_field_index_pun   57
   register_param            50
-  derived_field_index_pun   49
   pointer_stride_bytecount  45
   self_copy_guard           35
   displaced_global_access   35
@@ -65,22 +65,23 @@ SUSPECT PATTERN BREAKDOWN
   preinc_loop_idiom         22
   param_count_too_few       18
   fast_sqrt_inline          17
+  stale_struct_offset_64bit 17
   undefined_type            16
   unnamed_field             14
   raw_address_pointer_store 13
+  mem_magic_size            13
   fnstsw_flag_artifact      12
   suspicious_cast           12
   inline_exp_idiom          10
   tautological_addr_guard   9
   fast_inv_sqrt_inline      9
-  stale_struct_offset_64bit 9
+  struct_field_overrun      8
   unknown_param             6
   subfield_vector_pun       6
   unknown_type              5
   partial_struct_copy       5
   flattened_array_index     4
   dropped_self_copy         4
-  mem_magic_size            4
   warning_noreturn          4
   warning_deadcode_restart  3
   dropped_fyl2x             3
@@ -150,7 +151,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   004144f0: core_battery.cpp_CBattery_process_FUN_004144f0 (4 lines)
   004145f0: core_battery.cpp_CBattery_getCollisionType_FUN_004145f0 (4 lines)
   004146e0: core_beast.cpp_CBeast_getActorType_FUN_004146e0 (4 lines)
-  ... and 3109 more
+  ... and 3101 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -159,9 +160,9 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004a1d00: core_event.cpp_CEventList_executeCommand_FUN_004a1d00 (score: 4587, suspects: 92, lines: 3607)
   004d27b0: core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 (score: 4587, suspects: 216, lines: 2372)
   0046caa0: core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 (score: 4143, suspects: 300, lines: 1093)
-  005bafb0: core_zombie.cpp_CZombie_process_FUN_005bafb0 (score: 3917, suspects: 245, lines: 1397)
+  005bafb0: core_zombie.cpp_CZombie_process_FUN_005bafb0 (score: 3952, suspects: 248, lines: 1397)
   004de330: core_ghoul.cpp_CGhoul_process_FUN_004de330 (score: 3676, suspects: 234, lines: 1276)
-  00459100: core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 (score: 3630, suspects: 226, lines: 1310)
+  00459100: core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 (score: 3665, suspects: 229, lines: 1310)
   0041e130: core_box.cpp_CBox_processPhysics_FUN_0041e130 (score: 3497, suspects: 241, lines: 1042)
   005af4a0: core_werewolf.cpp_CWerewolf_process_FUN_005af4a0 (score: 3161, suspects: 217, lines: 941)
   00469550: core_doc.cpp_CDoc_processFrame_FUN_00469550 (score: 3133, suspects: 165, lines: 1423)
@@ -565,12 +566,7 @@ FUNCTIONS BY SUSPECT TYPE
     004ae300: core_fire.cpp_CFireball_process_FUN_004ae300
     ... and 26 more
 
-  register_param (3 functions):
-    0047f1b0: cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0047f1b0
-    0051c48c: core_mmx.c_detectIntelProcessor_FUN_0051c48c
-    0058012d: engine_special.cpp_renderScanlineSwapped_FUN_0058012d
-
-  derived_field_index_pun (35 functions):
+  derived_field_index_pun (38 functions):
     0040eeb0: core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040eeb0
     00410b50: core_bat.cpp_CBat_ctor_FUN_00410b50
     0041a200: core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200
@@ -581,7 +577,12 @@ FUNCTIONS BY SUSPECT TYPE
     0044a210: core_curtain.cpp_CCurtain_ctor_FUN_0044a210
     0045fe10: core_djien.cpp_CDjien_ctor_FUN_0045fe10
     00474400: core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400
-    ... and 25 more
+    ... and 28 more
+
+  register_param (3 functions):
+    0047f1b0: cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0047f1b0
+    0051c48c: core_mmx.c_detectIntelProcessor_FUN_0051c48c
+    0058012d: engine_special.cpp_renderScanlineSwapped_FUN_0058012d
 
   pointer_stride_bytecount (35 functions):
     00406f10: engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10
@@ -725,6 +726,12 @@ FUNCTIONS BY SUSPECT TYPE
     00513ca0: engine_mini3d.cpp_lightVertex_FUN_00513ca0
     ... and 5 more
 
+  stale_struct_offset_64bit (4 functions):
+    00441e60: core_cloth.cpp_CClothList_remove_FUN_00441e60
+    00459100: core_demnfolk.cpp_CDemnfolk_process_FUN_00459100
+    004c0fa0: engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0
+    005bafb0: core_zombie.cpp_CZombie_process_FUN_005bafb0
+
   undefined_type (12 functions):
     00442e10: support_codec.cpp_CCodec_processFiles_FUN_00442e10
     00453610: core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610
@@ -755,6 +762,19 @@ FUNCTIONS BY SUSPECT TYPE
     00572920: sound_sndmain.cpp_setNextSfxUserData_FUN_00572920
     005b27d0: wincore_winrun.cpp_mainWindowProc_FUN_005b27d0
     005bd560: core_zombie.cpp_CZombie_processPickup_FUN_005bd560
+
+  mem_magic_size (12 functions):
+    00441c60: core_cloth.cpp_CClothList_ctor_FUN_00441c60
+    00441d70: core_cloth.cpp_CClothList_reset_FUN_00441d70
+    005238c0: core_morph.cpp_CMotionList_ctor_FUN_005238c0
+    00523910: core_morph.cpp_CMotionList_free_FUN_00523910
+    0052ae40: sound_mp3.cpp_CMP3Decoder_ctor_FUN_0052ae40
+    0055c140: core_setutil.cpp_C3DSCamera_reset_FUN_0055c140
+    005726e0: sound_sndmain.cpp_CSfxOptions_reset_FUN_005726e0
+    00596560: engine_texture.cpp_CTextureCache_ctor_FUN_00596560
+    005965d0: engine_texture.cpp_CTextureCache_freeTextures_FUN_005965d0
+    00596680: engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00596680
+    ... and 2 more
 
   fnstsw_flag_artifact (6 functions):
     00513600: engine_mini3d.cpp_getClipFlags_FUN_00513600
@@ -795,8 +815,12 @@ FUNCTIONS BY SUSPECT TYPE
     0045ef00: core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0045ef00
     00553440: core_set.cpp_CDemonSet_lightVerticies_FUN_00553440
 
-  stale_struct_offset_64bit (1 functions):
+  struct_field_overrun (5 functions):
+    0043eea0: core_cloth.cpp_CCloth_setup_FUN_0043eea0
+    00441710: core_cloth.cpp_CCloth_saveJoinedLight_FUN_00441710
+    0049a9b0: shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0
     004c0fa0: engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0
+    004e1150: core_glass.cpp_CGlass_setup_FUN_004e1150
 
   unknown_param (6 functions):
     00415e70: core_bmppuzzl.cpp_CAudioRecPuzzle_reset_FUN_00415e70
@@ -835,11 +859,6 @@ FUNCTIONS BY SUSPECT TYPE
   dropped_self_copy (2 functions):
     004f3a50: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004f3a50
     00594ab0: core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_00594ab0
-
-  mem_magic_size (3 functions):
-    00596680: engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00596680
-    00596f30: engine_texture.cpp_CTextureCache_replacePalettedTexture_FUN_00596f30
-    00597000: engine_texture.cpp_CTextureCache_replaceTrueColorTexture_FUN_00597000
 
   warning_noreturn (3 functions):
     005b2d90: wincore_winrun.cpp_createMainWindow_FUN_005b2d90

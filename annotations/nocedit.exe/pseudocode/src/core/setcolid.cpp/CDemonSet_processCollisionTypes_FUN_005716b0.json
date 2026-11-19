@@ -833,5 +833,59 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_processCollisionTypes_FUN_005716b0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 39,
+          "line": 98,
+          "message": "The left operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 71,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 71,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 81,
+              "message": "Assuming field 'ground_type' is not equal to 0"
+            },
+            {
+              "line": 81,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 84,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 92,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 92,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 93,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 98,
+              "message": "The left operand of '-' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

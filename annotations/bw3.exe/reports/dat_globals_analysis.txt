@@ -4,15 +4,16 @@ DAT_ GLOBALS ANALYSIS REPORT
 
 Total DAT_ globals found: 380
 Filtered out (inside named data): 86
-Immediate constants (not real globals): 25
-Real globals remaining: 269
+Outside the program image: 2
+Immediate constants (not real globals): 22
+Real globals remaining: 270
 
 Current type breakdown:
-  undefined4                     256
+  undefined4                     257
   undefined1                     12
   undefined2                     1
 
-DAT_ globals with type hints: 76 / 269
+DAT_ globals with type hints: 76 / 270
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (38)
@@ -159,7 +160,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (193)
+NO TYPE HINTS (194)
 --------------------------------------------------------------------------------
   DAT_005df358                    addr=005df358    type=undefined4      refs=1  nearby: g_CEmitterTypeInfo at +56
   DAT_005e0a34                    addr=005e0a34    type=undefined4      refs=1  nearby: g_FLOAT_005e0a30 at +4
@@ -186,6 +187,7 @@ NO TYPE HINTS (193)
   DAT_005fc470                    addr=005fc470    type=undefined4      refs=1  nearby: switchdataD_005fc474 at -4
   DAT_005fcb2c                    addr=005fcb2c    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_005fcb14 at +24
   DAT_005fd09c                    addr=005fd09c    type=undefined4      refs=1
+  DAT_005fd804                    addr=005fd804    type=undefined4      refs=2
   DAT_005fd81c                    addr=005fd81c    type=undefined4      refs=2
   DAT_005fd834                    addr=005fd834    type=undefined4      refs=2
   DAT_005fd84c                    addr=005fd84c    type=undefined4      refs=2
@@ -383,6 +385,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_005fba64                    addr=005fba64    refs=2     type=undefined4      likely=int  nearby: g_CEventListPtr(+4)
   DAT_00780000                    addr=00780000    refs=2     type=undefined4    
   DAT_005fd084                    addr=005fd084    refs=2     type=undefined4      likely=SMRGLTextureBasic *
+  DAT_005fd804                    addr=005fd804    refs=2     type=undefined4    
   DAT_005fd81c                    addr=005fd81c    refs=2     type=undefined4    
   DAT_005fd834                    addr=005fd834    refs=2     type=undefined4    
   DAT_005fd84c                    addr=005fd84c    refs=2     type=undefined4    
@@ -407,10 +410,9 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_02d17d90                    addr=02d17d90    refs=2     type=undefined4      likely=float
   DAT_006079ec                    addr=006079ec    refs=2     type=undefined4      likely=byte  nearby: g_SpecialExitHandler(+4)
   DAT_00607684                    addr=00607684    refs=2     type=undefined1      likely=byte  nearby: g_StaticFilePoolStart(+12)
-  DAT_00607b88                    addr=00607b88    refs=2     type=undefined4      nearby: g_MaxHandleCount(+4)
 
 --------------------------------------------------------------------------------
-IMMEDIATE CONSTANTS - NOT REAL GLOBALS (25)
+IMMEDIATE CONSTANTS - NOT REAL GLOBALS (22)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values.
@@ -424,7 +426,6 @@ They appear only as inline constant values.
   DAT_005f1244                    value=0x5F1244        refs=2
   DAT_005f16dc                    value=0x5F16DC        refs=2
   DAT_005f16f4                    value=0x5F16F4        refs=2
-  DAT_005fd804                    value=0x5FD804        refs=2
   DAT_005fd8dc                    value=0x5FD8DC        refs=2
   DAT_005fde88                    value=0x5FDE88        refs=2
   DAT_00607880                    value=0x607880        refs=2
@@ -437,9 +438,16 @@ They appear only as inline constant values.
   DAT_005fca0c                    value=0x5FCA0C        refs=1
   DAT_005fca24                    value=0x5FCA24        refs=1
   DAT_006004c8                    value=0x6004C8        refs=1
-  DAT_00000065                    value=0x65            refs=1
-  DAT_00007f00                    value=0x7F00          refs=1
   DAT_02d22618                    value=0x2D22618       refs=1
+
+--------------------------------------------------------------------------------
+OUTSIDE THE PROGRAM IMAGE (2)
+--------------------------------------------------------------------------------
+No global lives at these addresses: they are constants, or addresses Ghidra
+computed from a register value.
+
+  DAT_00000065
+  DAT_00007f00
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (86)

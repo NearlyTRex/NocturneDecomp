@@ -182,5 +182,47 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonMission_getNextLoadedInventoryActor_FUN_00523520.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 36,
+          "line": 29,
+          "message": "Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar1')",
+          "path_notes": [
+            {
+              "line": 16,
+              "message": "Assuming field 'next_inventory_actor' is equal to null"
+            },
+            {
+              "line": 16,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 22,
+              "message": "Assuming 'iVar2' is equal to 0"
+            },
+            {
+              "line": 22,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 28,
+              "message": "Null pointer value stored to 'pCVar1'"
+            },
+            {
+              "line": 29,
+              "message": "Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar1')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -371,5 +371,67 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "createActorByName_FUN_0040c430.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 7,
+          "line": 21,
+          "message": "Access to field 'factory_func' results in a dereference of a null pointer (loaded from variable 'pCVar1')",
+          "path_notes": [
+            {
+              "line": 15,
+              "message": "Value assigned to 'pCVar1'"
+            },
+            {
+              "line": 16,
+              "message": "Assuming 'pCVar1' is equal to null"
+            },
+            {
+              "line": 16,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 21,
+              "message": "Access to field 'factory_func' results in a dereference of a null pointer (loaded from variable 'pCVar1')"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 12,
+          "line": 26,
+          "message": "Called function pointer is null (null dereference)",
+          "path_notes": [
+            {
+              "line": 16,
+              "message": "Assuming 'pCVar1' is not equal to null"
+            },
+            {
+              "line": 16,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 21,
+              "message": "Assuming field 'factory_func' is equal to null"
+            },
+            {
+              "line": 21,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 26,
+              "message": "Called function pointer is null (null dereference)"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": []
 }

@@ -440,6 +440,208 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDirectSoundDevice_applySfxChanges_FUN_005af750.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 53,
+          "line": 97,
+          "message": "The right operand of '*' is a garbage value",
+          "path_notes": [
+            {
+              "line": 21,
+              "message": "'local_cb8' declared without an initial value"
+            },
+            {
+              "line": 39,
+              "message": "Assuming 'iVar2' is < 1"
+            },
+            {
+              "line": 39,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'this_ptr_01' is not equal to null"
+            },
+            {
+              "line": 50,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'this_ptr_00' is not equal to null"
+            },
+            {
+              "line": 50,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 53,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 53,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 72,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 72,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 84,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 84,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 96,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 96,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 97,
+              "message": "The right operand of '*' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 13,
+          "line": 154,
+          "message": "2nd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 30,
+              "message": "'local_2c' declared without an initial value"
+            },
+            {
+              "line": 39,
+              "message": "Assuming 'iVar2' is >= 1"
+            },
+            {
+              "line": 39,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 39,
+              "message": "Assuming 'iVar2' is <= 30"
+            },
+            {
+              "line": 39,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 40,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 39,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 39,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'this_ptr_01' is not equal to null"
+            },
+            {
+              "line": 50,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'this_ptr_00' is not equal to null"
+            },
+            {
+              "line": 50,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 53,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 53,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 72,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 72,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 84,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 84,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 96,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 96,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 125,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 125,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 136,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 136,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 150,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 150,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 154,
+              "message": "2nd function call argument is an uninitialized value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [],
   "vtable_info": {
     "entries": [

@@ -149,7 +149,6 @@ __asm {
         add EDI,0x4
         sub ECX,0x2
         jg LAB_00465e94
-        pop EBP
         emms
 }
 }

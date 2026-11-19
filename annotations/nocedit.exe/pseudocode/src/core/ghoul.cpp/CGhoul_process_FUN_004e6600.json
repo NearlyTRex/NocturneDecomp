@@ -2309,6 +2309,124 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CGhoul_process_FUN_004e6600.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 9,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 13,
+          "line": 198,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 198,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 292,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 292,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 17,
+          "line": 453,
+          "message": "Value stored to 'local_44' is never read",
+          "path_notes": [
+            {
+              "line": 453,
+              "message": "Value stored to 'local_44' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 19,
+          "line": 475,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 475,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 13,
+          "line": 587,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 587,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 15,
+          "line": 682,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 682,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 15,
+          "line": 697,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 697,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 761,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 761,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 5,
+          "line": 901,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 901,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [],
   "vtable_info": {
     "entries": [

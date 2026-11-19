@@ -252,5 +252,59 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CStrList_copyToClipboard_FUN_004a3270.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 11,
+          "line": 51,
+          "message": "Dereference of null pointer (loaded from variable 'buffer')",
+          "path_notes": [
+            {
+              "line": 25,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 32,
+              "message": "Value assigned to 'text_data'"
+            },
+            {
+              "line": 34,
+              "message": "Assuming 'text_data' is equal to null"
+            },
+            {
+              "line": 34,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 41,
+              "message": "Null pointer value stored to 'buffer'"
+            },
+            {
+              "line": 42,
+              "message": "0 is >= field 'item_count'"
+            },
+            {
+              "line": 42,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Dereference of null pointer (loaded from variable 'buffer')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -509,6 +509,69 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x104) reaches field actor (0x104) of SScriptXRef via a baked 32-bit offset. SScriptXRef is 64-bit-unstable (grows past its first pointer/unstable field at 0x104); on the 64-bit build field offsets at/after 0x104 shift, so this reads/writes the wrong bytes (and the accessed value is itself a pointer). De-pun to named field access on a SScriptXRef * (\u00a7de-pun/\u00a712).",
+      "line": 92,
+      "match": "*(...)(pcVar8 + 0x104)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(CDemonActor **)(pcVar8 + 0x104) == (CDemonActor *)0x0) {",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x10c) reaches field line_number (0x10c) of SScriptXRef via a baked 32-bit offset. SScriptXRef is 64-bit-unstable (grows past its first pointer/unstable field at 0x104); on the 64-bit build field offsets at/after 0x104 shift, so this reads/writes the wrong bytes. De-pun to named field access on a SScriptXRef * (\u00a7de-pun/\u00a712).",
+      "line": 93,
+      "match": "*(...)(pcVar8 + 0x10c)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_sprintf(local_e4,\"Script\\tLn %d\",*(int *)(pcVar8 + 0x10c));",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x104) reaches field actor (0x104) of SScriptXRef via a baked 32-bit offset. SScriptXRef is 64-bit-unstable (grows past its first pointer/unstable field at 0x104); on the 64-bit build field offsets at/after 0x104 shift, so this reads/writes the wrong bytes (and the accessed value is itself a pointer). De-pun to named field access on a SScriptXRef * (\u00a7de-pun/\u00a712).",
+      "line": 97,
+      "match": "*(...)(pcVar8 + 0x104)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(((*(CDemonActor **)(pcVar8 + 0x104))->vtable)._ub)->getPropertyList)",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x104) reaches field actor (0x104) of SScriptXRef via a baked 32-bit offset. SScriptXRef is 64-bit-unstable (grows past its first pointer/unstable field at 0x104); on the 64-bit build field offsets at/after 0x104 shift, so this reads/writes the wrong bytes (and the accessed value is itself a pointer). De-pun to named field access on a SScriptXRef * (\u00a7de-pun/\u00a712).",
+      "line": 98,
+      "match": "*(...)(pcVar8 + 0x104)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(pcVar8 + 0x104),&CStack_2c4c);",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x104) reaches field actor (0x104) of SScriptXRef via a baked 32-bit offset. SScriptXRef is 64-bit-unstable (grows past its first pointer/unstable field at 0x104); on the 64-bit build field offsets at/after 0x104 shift, so this reads/writes the wrong bytes (and the accessed value is itself a pointer). De-pun to named field access on a SScriptXRef * (\u00a7de-pun/\u00a712).",
+      "line": 99,
+      "match": "*(...)(pcVar8 + 0x104)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_sprintf(local_e4,\"%s\\t%s\",*(CDemonActor **)(pcVar8 + 0x104),",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x108) reaches field property_index (0x108) of SScriptXRef via a baked 32-bit offset. SScriptXRef is 64-bit-unstable (grows past its first pointer/unstable field at 0x104); on the 64-bit build field offsets at/after 0x104 shift, so this reads/writes the wrong bytes. De-pun to named field access on a SScriptXRef * (\u00a7de-pun/\u00a712).",
+      "line": 100,
+      "match": "*(...)(pcVar8 + 0x108)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CStack_2c4c.properties[*(int *)(pcVar8 + 0x108)].name);",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x110) reaches field display_index (0x110) of SScriptXRef via a baked 32-bit offset. SScriptXRef is 64-bit-unstable (grows past its first pointer/unstable field at 0x104); on the 64-bit build field offsets at/after 0x104 shift, so this reads/writes the wrong bytes. De-pun to named field access on a SScriptXRef * (\u00a7de-pun/\u00a712).",
+      "line": 104,
+      "match": "*(...)(pcVar8 + 0x110)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(pcVar8 + 0x110) = iVar5;",
+      "type": "stale_struct_offset_64bit"
     }
   ],
   "stack_frame": {
@@ -596,6 +659,40 @@
         "type": "char *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CScript_browseEventXRefs_FUN_005677a0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 85,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 85,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 151,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 151,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

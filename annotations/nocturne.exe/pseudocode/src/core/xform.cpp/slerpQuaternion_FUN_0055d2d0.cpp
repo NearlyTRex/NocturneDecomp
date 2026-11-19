@@ -81,7 +81,7 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_0055d2d0(CQuater
       local_70 = SUB84(1.0 - local_18,0);
     }
     uStack_74 = (uint)((ulonglong)local_18 >> 0x20);
-    local_78 = SUB84(local_18,0);
+    local_78 = SUB84(__BITCAST_UINT64(local_18),0);
     fVar3 = (float)__BITCAST_DOUBLE(CONCAT44(local_70,uStack_74));
     fStack_64 = (float)((ulonglong)dVar1 >> 0x20);
     pfVar6 = &local_54;

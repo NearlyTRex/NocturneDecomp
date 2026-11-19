@@ -481,5 +481,191 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "synchronizeFilesToDirectory_FUN_004bc650.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 39,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 39,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 40,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 40,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 14,
+          "line": 73,
+          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file')",
+          "path_notes": [
+            {
+              "line": 32,
+              "message": "Assuming 0 is < field 'item_count'"
+            },
+            {
+              "line": 32,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 48,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 48,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 51,
+              "message": "Value assigned to 'file'"
+            },
+            {
+              "line": 53,
+              "message": "Assuming 'file' is equal to null"
+            },
+            {
+              "line": 53,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'file_ptr' is not equal to null"
+            },
+            {
+              "line": 61,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 68,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 70,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 70,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 70,
+              "message": "Execution continues on line 73"
+            },
+            {
+              "line": 73,
+              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file')"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 14,
+          "line": 78,
+          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')",
+          "path_notes": [
+            {
+              "line": 32,
+              "message": "Assuming 0 is < field 'item_count'"
+            },
+            {
+              "line": 32,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 48,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 48,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 53,
+              "message": "Assuming 'file' is not equal to null"
+            },
+            {
+              "line": 53,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 58,
+              "message": "Value assigned to 'file_ptr'"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'file_ptr' is equal to null"
+            },
+            {
+              "line": 61,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 68,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 70,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 70,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 70,
+              "message": "Execution continues on line 73"
+            },
+            {
+              "line": 73,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 73,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 78,
+              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

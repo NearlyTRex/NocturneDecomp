@@ -56,6 +56,15 @@ def test_the_directory_preload_keeps_each_functions_data_under_its_key(tmp_path,
     assert cache.load_for_function(str(unit / "c.json")) == {}
 
 
+def test_the_function_entries_come_out_in_path_order(tmp_path, monkeypatch):
+    logs(monkeypatch)
+    (tmp_path / "b.json").write_text(json.dumps({"o": [3]}))
+    (tmp_path / "a.json").write_text(json.dumps({"o": [1, 2]}))
+    cache = jc.JsonCacheManager("o", json_key = "o")
+    cache.preload_directory(str(tmp_path))
+    assert cache.function_entries() == [1, 2, 3]
+
+
 def test_a_function_load_falls_back_to_the_file_then_the_default(tmp_path, monkeypatch):
     logs(monkeypatch)
     cache = jc.JsonCacheManager("proto", json_key = "proto")

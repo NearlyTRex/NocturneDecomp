@@ -554,7 +554,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Struct-type local `local_12c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_12c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 31,
       "match": "CQuaternion4f local_12c; ... f(&local_12c, ...);",
       "resolution_source": "keep",
@@ -563,7 +563,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_11c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_11c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 32,
       "match": "CQuaternion4f local_11c; ... f(&local_11c, ...);",
       "resolution_source": "keep",
@@ -928,6 +928,40 @@
         "type": "float"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CBoneGuy_process_FUN_0041bf90.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 7,
+          "line": 260,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 260,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 307,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 307,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [],
   "vtable_info": {

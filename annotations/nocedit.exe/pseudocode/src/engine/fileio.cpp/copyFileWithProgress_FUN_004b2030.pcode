@@ -262,12 +262,12 @@ COPY (unique,0x41500,4) = (register,0x8,4) /* EDX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@004b20b4 [ESP:???](-4)!?  # CALL 0x00601470
+@004b20b4 [ESP:-524](-4)  # CALL 0x00601470
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4b20b9,4)
 CALL (ram,0x601470,4)
 
-@004b20b9 [ESP:???](+4)!?  # ADD ESP, 0x4
+@004b20b9 [ESP:-520](+4)?  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -278,7 +278,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@004b20bc [ESP:???]!?  # TEST EAX, EAX
+@004b20bc [ESP:-520]  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0xae400,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -289,7 +289,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@004b20be [ESP:???]!?  # JZ 0x004b20ee
+@004b20be [ESP:-520]  # JZ 0x004b20ee
 CBRANCH (ram,0x4b20ee,4), (register,0x206,1)
 
 @004b20c0 [ESP:-524](-4)  # PUSH EAX
@@ -942,5 +942,4 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 138 instructions, 648 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

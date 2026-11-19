@@ -398,7 +398,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Struct-type local `CStack_144` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `CStack_144` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 8 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 26,
       "match": "CQuaternion4f CStack_144; ... f(&CStack_144, ...);",
       "resolution_source": "keep",
@@ -407,7 +407,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_114` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_114` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 8 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 30,
       "match": "CQuaternion4f local_114; ... f(&local_114, ...);",
       "resolution_source": "keep",
@@ -416,7 +416,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_e4` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_e4` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 8 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 34,
       "match": "CQuaternion4f local_e4; ... f(&local_e4, ...);",
       "resolution_source": "keep",
@@ -425,12 +425,21 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_c4` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_c4` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 8 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 36,
       "match": "CQuaternion4f local_c4; ... f(&local_c4, ...);",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "CQuaternion4f local_c4;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_b4` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 8 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 37,
+      "match": "CQuaternion4f local_b4[]; ... f(local_b4, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_b4 [4];",
       "type": "missing_cave_copy"
     }
   ],
@@ -779,6 +788,80 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModelInstance_blendMotion_FUN_0059eb50.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 18,
+          "line": 108,
+          "message": "The right operand of '<' is a garbage value",
+          "path_notes": [
+            {
+              "line": 54,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 54,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 59,
+              "message": "Assuming field 'bone_update_mode' is not equal to 0"
+            },
+            {
+              "line": 59,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 80,
+              "message": "Assuming field 'bone_update_mode' is equal to 1"
+            },
+            {
+              "line": 80,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 82,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 82,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 97,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 97,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 103,
+              "message": "Assuming 0 is < field 'bone_count'"
+            },
+            {
+              "line": 103,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 105,
+              "message": "The value 0 is assigned to 'local_3c'"
+            },
+            {
+              "line": 108,
+              "message": "The right operand of '<' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

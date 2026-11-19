@@ -357,5 +357,71 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CScript_buildParsedLines_FUN_0055a370.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 71,
+          "line": 40,
+          "message": "Dereference of null pointer",
+          "path_notes": [
+            {
+              "line": 24,
+              "message": "Assuming 'iVar2' is > 'index'"
+            },
+            {
+              "line": 24,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 30,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 30,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 31,
+              "message": "Value assigned to 'pSVar4'"
+            },
+            {
+              "line": 34,
+              "message": "The value of 'pSVar4' is assigned to field 'parsed_lines'"
+            },
+            {
+              "line": 35,
+              "message": "Assuming 'pSVar4' is equal to null"
+            },
+            {
+              "line": 35,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 40,
+              "message": "Dereference of null pointer"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 48,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 48,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

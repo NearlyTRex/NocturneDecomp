@@ -148,7 +148,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x46b19b,4)
 CALL (ram,0x4673d0,4)
 
-@0046b19b [ESP:???](+8)!?  # ADD ESP, 0x8
+@0046b19b [ESP:-16](+8)?  # ADD ESP, 0x8
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x8,4)
@@ -514,5 +514,4 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 80 instructions, 336 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -882,16 +882,16 @@ FLOAT2FLOAT (register,0x1100,10) = (unique,0xaa00,8)
 @005b95bb [ESP:???]~!  # WAIT
 # (no p-code)
 
-@005b95bc [ESP:???]~!  # MOV ESP, EBP
+@005b95bc [ESP:-4]~>  # MOV ESP, EBP
 COPY (register,0x10,4) /* ESP */ = (register,0x14,4) /* EBP */
 
-@005b95be [ESP:???]~!  # POP EBP
+@005b95be [ESP:+0](+4)~>  # POP EBP
 COPY (unique,0x87300,4) = (const,0x0,4)
 LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x14,4) /* EBP */ = (unique,0x87300,4)
 
-@005b95bf [ESP:???]~!  # RET
+@005b95bf [ESP:+4](+4)~>  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

@@ -575,5 +575,111 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_crossReferencePodDuplicates_FUN_004b9f40.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 5,
+          "line": 37,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 37,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 15,
+          "line": 100,
+          "message": "Access to field 'file_count' results in a dereference of a null pointer (loaded from variable 'local_40')",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Assuming 'pod_filename' is equal to null"
+            },
+            {
+              "line": 33,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'iVar5' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming field 'item_count' is >= 1"
+            },
+            {
+              "line": 49,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 59,
+              "message": "Value assigned to 'object_ptr'"
+            },
+            {
+              "line": 60,
+              "message": "Assuming 'object_ptr' is equal to null"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 69,
+              "message": "0 is < field 'item_count'"
+            },
+            {
+              "line": 69,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 75,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 75,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 89,
+              "message": "Assuming 'iVar5' is >= field 'item_count'"
+            },
+            {
+              "line": 70,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 96,
+              "message": "Null pointer value stored to 'local_40'"
+            },
+            {
+              "line": 97,
+              "message": "Assuming 0 is < field 'item_count'"
+            },
+            {
+              "line": 97,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 100,
+              "message": "Access to field 'file_count' results in a dereference of a null pointer (loaded from variable 'local_40')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

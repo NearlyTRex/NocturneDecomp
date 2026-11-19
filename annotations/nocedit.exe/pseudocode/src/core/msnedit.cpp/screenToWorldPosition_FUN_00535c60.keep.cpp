@@ -23,6 +23,7 @@ CVector3f * __cdecl core_msnedit_cpp_screenToWorldPosition_FUN_00535c60(CVector3
   
   core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
             (&g_CDemonCameraInstance,screen_x,screen_y,local_5c);
+  local_38 = local_5c[0];
   core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
             (&g_CDemonCameraInstance,&local_38,&local_20);
   out_world_pos->x = (float)local_20.x * 0.00390625f;

@@ -9,8 +9,6 @@
 void __cdecl core_flies_cpp_drawFlyPixel_FUN_004add00(int screen_x,int screen_y,int z_depth)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x4
         mov EAX,dword ptr [EBP + 0x18]
         shl EAX,0x2
         mov EDX,dword ptr [EBP + 0x14]
@@ -49,6 +47,5 @@ __asm {
         packuswb MM0,MM7
         movd dword ptr [EDI],MM0
         emms
-        mov ESP,EBP
 }
 }

@@ -191,7 +191,7 @@
   },
   "suspects": [
     {
-      "description": "'(char *)&pCVar3[2].location.position.z' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.z) (0x28) + 0x0 = 0x2d8, which is exactly offsetof(CAmmo, weapon_class_name[4]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar3)->weapon_class_name[4] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[4], CBattery::recharge_time, CBoxActor::loop_wav_name[4] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'(char *)&pCVar3[2].location.position.z' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.z) (0x28) + 0x0 = 0x2d8, which is exactly offsetof(CAmmo, weapon_class_name[4]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar3)->weapon_class_name[4] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[4], CBattery::recharge_time, CBoxActor::loop_wav_name[4], CCrate::ground_check_radius, CCryptVessel::prey, CDoor::door_type, CDrip::auto_drop, CFilmReel::movie_name, CFlameCan::time_to_explode, CGrave::fps, CHealthItem::hp_restored, CKeyActor::rotation_angle, CLever::lever_type, CPendulum::start_event[4], CPlatform::ground_type, CSimBox::weight, CSpike::spike_state, CTrap::wolf_in_trap, CTrigger::off_event[80], CWeapon::is_spread_weapon also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 33,
       "severity": "moderate",
       "text": "(g_CFilterFXPtr,(char *)&pCVar3[2].location.position.z);",

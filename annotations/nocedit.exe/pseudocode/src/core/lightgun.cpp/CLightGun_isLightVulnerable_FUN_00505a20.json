@@ -125,5 +125,31 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CLightGun_isLightVulnerable_FUN_00505a20.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.CallAndMessage",
+          "column": 12,
+          "line": 16,
+          "message": "2nd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 14,
+              "message": "'local_e1' declared without an initial value"
+            },
+            {
+              "line": 16,
+              "message": "2nd function call argument is an uninitialized value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": []
 }

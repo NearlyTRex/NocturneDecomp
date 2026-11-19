@@ -23,29 +23,33 @@
 // CARRY - Unsigned carry (addition overflow)
 // =============================================================================
 // CARRY(a, b) returns 1 if (a + b) would overflow unsigned
+// The sum is cast back to the type: a narrower one is promoted to int, and
+// its sum would never wrap.
 
-#define CARRY1(a, b) ((uint8_t)(a) + (uint8_t)(b) < (uint8_t)(a))
-#define CARRY2(a, b) ((uint16_t)(a) + (uint16_t)(b) < (uint16_t)(a))
-#define CARRY4(a, b) ((uint32_t)(a) + (uint32_t)(b) < (uint32_t)(a))
-#define CARRY8(a, b) ((uint64_t)(a) + (uint64_t)(b) < (uint64_t)(a))
+#define CARRY1(a, b) ((uint8_t)((uint8_t)(a) + (uint8_t)(b)) < (uint8_t)(a))
+#define CARRY2(a, b) ((uint16_t)((uint16_t)(a) + (uint16_t)(b)) < (uint16_t)(a))
+#define CARRY4(a, b) ((uint32_t)((uint32_t)(a) + (uint32_t)(b)) < (uint32_t)(a))
+#define CARRY8(a, b) ((uint64_t)((uint64_t)(a) + (uint64_t)(b)) < (uint64_t)(a))
 
 // =============================================================================
 // SCARRY - Signed carry (addition overflow)
 // =============================================================================
 // SCARRY(a, b) returns 1 if (a + b) would overflow signed
+// The sum is taken unsigned and cast back, as SBORROW's difference is: a
+// narrower sum would never wrap, and a signed one that does is undefined.
 
 #define SCARRY1(a, b) \
     ((((int8_t)(a) ^ (int8_t)(b)) >= 0) && \
-     (((int8_t)(a) ^ ((int8_t)(a) + (int8_t)(b))) < 0))
+     (((int8_t)(a) ^ (int8_t)((uint8_t)(a) + (uint8_t)(b))) < 0))
 #define SCARRY2(a, b) \
     ((((int16_t)(a) ^ (int16_t)(b)) >= 0) && \
-     (((int16_t)(a) ^ ((int16_t)(a) + (int16_t)(b))) < 0))
+     (((int16_t)(a) ^ (int16_t)((uint16_t)(a) + (uint16_t)(b))) < 0))
 #define SCARRY4(a, b) \
     ((((int32_t)(a) ^ (int32_t)(b)) >= 0) && \
-     (((int32_t)(a) ^ ((int32_t)(a) + (int32_t)(b))) < 0))
+     (((int32_t)(a) ^ (int32_t)((uint32_t)(a) + (uint32_t)(b))) < 0))
 #define SCARRY8(a, b) \
     ((((int64_t)(a) ^ (int64_t)(b)) >= 0) && \
-     (((int64_t)(a) ^ ((int64_t)(a) + (int64_t)(b))) < 0))
+     (((int64_t)(a) ^ (int64_t)((uint64_t)(a) + (uint64_t)(b))) < 0))
 
 // =============================================================================
 // BORROW - Unsigned borrow (subtraction underflow)
@@ -80,39 +84,41 @@
 // CONCAT - Concatenate values into larger type
 // =============================================================================
 // CONCATxy(hi, lo) concatenates x-byte hi value with y-byte lo value
+// lo is masked to y bytes and the result to x + y, whatever wider value
+// the decompile passes for them
 
-#define CONCAT11(hi, lo) (((uint16_t)(hi) << 8) | ((uint8_t)(lo)))
-#define CONCAT12(hi, lo) (((uint32_t)(hi) << 16) | ((uint16_t)(lo)))
-#define CONCAT21(hi, lo) (((uint32_t)(hi) << 8) | ((uint8_t)(lo)))
-#define CONCAT13(hi, lo) (((uint32_t)(hi) << 24) | ((uint32_t)(lo)))
-#define CONCAT22(hi, lo) (((uint32_t)(hi) << 16) | ((uint16_t)(lo)))
-#define CONCAT31(hi, lo) (((uint32_t)(hi) << 8) | ((uint8_t)(lo)))
-#define CONCAT14(hi, lo) (((uint64_t)(hi) << 32) | ((uint32_t)(lo)))
-#define CONCAT23(hi, lo) (((uint64_t)(hi) << 24) | ((uint32_t)(lo)))
-#define CONCAT32(hi, lo) (((uint64_t)(hi) << 16) | ((uint16_t)(lo)))
-#define CONCAT41(hi, lo) (((uint64_t)(hi) << 8) | ((uint8_t)(lo)))
-#define CONCAT15(hi, lo) (((uint64_t)(hi) << 40) | ((uint64_t)(lo)))
-#define CONCAT24(hi, lo) (((uint64_t)(hi) << 32) | ((uint32_t)(lo)))
-#define CONCAT33(hi, lo) (((uint64_t)(hi) << 24) | ((uint32_t)(lo)))
-#define CONCAT42(hi, lo) (((uint64_t)(hi) << 16) | ((uint16_t)(lo)))
-#define CONCAT51(hi, lo) (((uint64_t)(hi) << 8) | ((uint8_t)(lo)))
-#define CONCAT16(hi, lo) (((uint64_t)(hi) << 48) | ((uint64_t)(lo)))
-#define CONCAT25(hi, lo) (((uint64_t)(hi) << 40) | ((uint64_t)(lo)))
-#define CONCAT34(hi, lo) (((uint64_t)(hi) << 32) | ((uint32_t)(lo)))
-#define CONCAT43(hi, lo) (((uint64_t)(hi) << 24) | ((uint32_t)(lo)))
-#define CONCAT52(hi, lo) (((uint64_t)(hi) << 16) | ((uint16_t)(lo)))
-#define CONCAT61(hi, lo) (((uint64_t)(hi) << 8) | ((uint8_t)(lo)))
-#define CONCAT17(hi, lo) (((uint64_t)(hi) << 56) | ((uint64_t)(lo)))
-#define CONCAT26(hi, lo) (((uint64_t)(hi) << 48) | ((uint64_t)(lo)))
-#define CONCAT35(hi, lo) (((uint64_t)(hi) << 40) | ((uint64_t)(lo)))
-#define CONCAT44(hi, lo) (((uint64_t)(hi) << 32) | ((uint32_t)(lo)))
-#define CONCAT53(hi, lo) (((uint64_t)(hi) << 24) | ((uint32_t)(lo)))
-#define CONCAT62(hi, lo) (((uint64_t)(hi) << 16) | ((uint16_t)(lo)))
-#define CONCAT71(hi, lo) (((uint64_t)(hi) << 8) | ((uint8_t)(lo)))
-#define CONCAT18(hi, lo) (((uint64_t)(hi) << 64) | ((uint64_t)(lo)))
-#define CONCAT19(hi, lo) (((uint64_t)(hi) << 72) | ((uint64_t)(lo)))
-#define CONCAT28(hi, lo) (((uint64_t)(hi) << 64) | ((uint64_t)(lo)))
-#define CONCAT64(hi, lo) (((uint64_t)(hi) << 32) | ((uint32_t)(lo)))
+#define CONCAT11(hi, lo) ((uint16_t)(((uint16_t)(hi) << 8) | (uint8_t)(lo)))
+#define CONCAT12(hi, lo) ((uint32_t)((((uint32_t)(hi) << 16) | (uint16_t)(lo)) & 0xFFFFFFULL))
+#define CONCAT21(hi, lo) ((uint32_t)((((uint32_t)(hi) << 8) | (uint8_t)(lo)) & 0xFFFFFFULL))
+#define CONCAT13(hi, lo) ((uint32_t)(((uint32_t)(hi) << 24) | ((uint32_t)(lo) & 0xFFFFFFULL)))
+#define CONCAT22(hi, lo) ((uint32_t)(((uint32_t)(hi) << 16) | (uint16_t)(lo)))
+#define CONCAT31(hi, lo) ((uint32_t)(((uint32_t)(hi) << 8) | (uint8_t)(lo)))
+#define CONCAT14(hi, lo) ((uint64_t)((((uint64_t)(hi) << 32) | (uint32_t)(lo)) & 0xFFFFFFFFFFULL))
+#define CONCAT23(hi, lo) ((uint64_t)((((uint64_t)(hi) << 24) | ((uint32_t)(lo) & 0xFFFFFFULL)) & 0xFFFFFFFFFFULL))
+#define CONCAT32(hi, lo) ((uint64_t)((((uint64_t)(hi) << 16) | (uint16_t)(lo)) & 0xFFFFFFFFFFULL))
+#define CONCAT41(hi, lo) ((uint64_t)((((uint64_t)(hi) << 8) | (uint8_t)(lo)) & 0xFFFFFFFFFFULL))
+#define CONCAT15(hi, lo) ((uint64_t)((((uint64_t)(hi) << 40) | ((uint64_t)(lo) & 0xFFFFFFFFFFULL)) & 0xFFFFFFFFFFFFULL))
+#define CONCAT24(hi, lo) ((uint64_t)((((uint64_t)(hi) << 32) | (uint32_t)(lo)) & 0xFFFFFFFFFFFFULL))
+#define CONCAT33(hi, lo) ((uint64_t)((((uint64_t)(hi) << 24) | ((uint32_t)(lo) & 0xFFFFFFULL)) & 0xFFFFFFFFFFFFULL))
+#define CONCAT42(hi, lo) ((uint64_t)((((uint64_t)(hi) << 16) | (uint16_t)(lo)) & 0xFFFFFFFFFFFFULL))
+#define CONCAT51(hi, lo) ((uint64_t)((((uint64_t)(hi) << 8) | (uint8_t)(lo)) & 0xFFFFFFFFFFFFULL))
+#define CONCAT16(hi, lo) ((uint64_t)((((uint64_t)(hi) << 48) | ((uint64_t)(lo) & 0xFFFFFFFFFFFFULL)) & 0xFFFFFFFFFFFFFFULL))
+#define CONCAT25(hi, lo) ((uint64_t)((((uint64_t)(hi) << 40) | ((uint64_t)(lo) & 0xFFFFFFFFFFULL)) & 0xFFFFFFFFFFFFFFULL))
+#define CONCAT34(hi, lo) ((uint64_t)((((uint64_t)(hi) << 32) | (uint32_t)(lo)) & 0xFFFFFFFFFFFFFFULL))
+#define CONCAT43(hi, lo) ((uint64_t)((((uint64_t)(hi) << 24) | ((uint32_t)(lo) & 0xFFFFFFULL)) & 0xFFFFFFFFFFFFFFULL))
+#define CONCAT52(hi, lo) ((uint64_t)((((uint64_t)(hi) << 16) | (uint16_t)(lo)) & 0xFFFFFFFFFFFFFFULL))
+#define CONCAT61(hi, lo) ((uint64_t)((((uint64_t)(hi) << 8) | (uint8_t)(lo)) & 0xFFFFFFFFFFFFFFULL))
+#define CONCAT17(hi, lo) ((uint64_t)(((uint64_t)(hi) << 56) | ((uint64_t)(lo) & 0xFFFFFFFFFFFFFFULL)))
+#define CONCAT26(hi, lo) ((uint64_t)(((uint64_t)(hi) << 48) | ((uint64_t)(lo) & 0xFFFFFFFFFFFFULL)))
+#define CONCAT35(hi, lo) ((uint64_t)(((uint64_t)(hi) << 40) | ((uint64_t)(lo) & 0xFFFFFFFFFFULL)))
+#define CONCAT44(hi, lo) ((uint64_t)(((uint64_t)(hi) << 32) | (uint32_t)(lo)))
+#define CONCAT53(hi, lo) ((uint64_t)(((uint64_t)(hi) << 24) | ((uint32_t)(lo) & 0xFFFFFFULL)))
+#define CONCAT62(hi, lo) ((uint64_t)(((uint64_t)(hi) << 16) | (uint16_t)(lo)))
+#define CONCAT71(hi, lo) ((uint64_t)(((uint64_t)(hi) << 8) | (uint8_t)(lo)))
+#define CONCAT18(hi, lo) ((uint64_t)(uint64_t)(lo))
+#define CONCAT19(hi, lo) ((uint64_t)(uint64_t)(lo))
+#define CONCAT28(hi, lo) ((uint64_t)(uint64_t)(lo))
+#define CONCAT64(hi, lo) ((uint64_t)(((uint64_t)(hi) << 32) | (uint32_t)(lo)))
 
 // =============================================================================
 // Bitcast Helpers (FPU double/float reconstruction)
@@ -171,8 +177,8 @@ static inline uint32_t __BITCAST_UINT32(float val) {
 #define _SUB84_1(x) ((uint32_t)(x))
 #define _SUB84_2(x, off) ((uint32_t)((x) >> ((off) * 8)))
 #define SUB84(...) _SUB_GET_MACRO(__VA_ARGS__, _SUB84_2, _SUB84_1)(__VA_ARGS__)
-#define _SUB86_1(x) ((uint64_t)(x))
-#define _SUB86_2(x, off) ((uint64_t)((x) >> ((off) * 8)))
+#define _SUB86_1(x) ((uint64_t)(x) & 0xFFFFFFFFFFFFULL)
+#define _SUB86_2(x, off) ((uint64_t)((x) >> ((off) * 8)) & 0xFFFFFFFFFFFFULL)
 #define SUB86(...) _SUB_GET_MACRO(__VA_ARGS__, _SUB86_2, _SUB86_1)(__VA_ARGS__)
 #define _SUB104_1(x) ((uint32_t)(x))
 #define _SUB104_2(x, off) ((uint32_t)((x) >> ((off) * 8)))

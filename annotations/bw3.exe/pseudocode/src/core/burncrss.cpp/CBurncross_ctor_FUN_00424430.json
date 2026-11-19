@@ -430,7 +430,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "'pCVar1[1].base.actor_name + 0x14' walks 1 x sizeof(CWeapon) (0x594) + offsetof(base.actor_name) (0x0) + 0x14 = 0x5a8, which is exactly offsetof(CBurncross, flames). Ghidra had no CBurncross type here and reached the field by index arithmetic; write it as ((CBurncross *)pCVar1)->flames (\u00a7de-pun/\u00a712). Ambiguous: CExorcism::fire_cooldown, CMelee::blood_gore_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].base.actor_name + 0x14' walks 1 x sizeof(CWeapon) (0x594) + offsetof(base.actor_name) (0x0) + 0x14 = 0x5a8, which is exactly offsetof(CBurncross, flames). Ghidra had no CBurncross type here and reached the field by index arithmetic; write it as ((CBurncross *)pCVar1)->flames (\u00a7de-pun/\u00a712).",
       "line": 11,
       "severity": "moderate",
       "text": "pvVar2 = __arrinit(pCVar1[1].base.actor_name + 0x14,8,&g_CFlameTypeInfo)",

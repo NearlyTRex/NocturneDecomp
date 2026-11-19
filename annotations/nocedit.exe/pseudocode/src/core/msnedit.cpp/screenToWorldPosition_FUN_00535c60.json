@@ -178,6 +178,24 @@
       "severity": "moderate",
       "text": "int aiStackY_1044 [1015];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Struct-type local `local_5c` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 9,
+      "match": "CVector3i local_5c[]; ... f(local_5c, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_5c [3];",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_38` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 10,
+      "match": "CVector3i local_38; ... f(&local_38, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_38;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {

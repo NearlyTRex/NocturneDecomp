@@ -52,6 +52,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this
   int local_68;
   int local_c4;
   int local_28;
+  int local_24;
   int local_1c;
   int local_18;
   int local_14;
@@ -202,12 +203,12 @@ void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this
       }
     }
   }
-  iVar9 = this_ptr->vertex_data[vertex_idx_2].adjacent_edge_count;
-  for (iVar5 = 0; iVar5 < iVar9; iVar5 = iVar5 + 1) {
+  local_24 = this_ptr->vertex_data[vertex_idx_2].adjacent_edge_count;
+  for (iVar5 = 0; iVar5 < local_24; iVar5 = iVar5 + 1) {
     aiStack_1c8[iVar5] = this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices[iVar5];
   }
-  if (0 < iVar9) {
-    for (local_28 = 0; local_28 < iVar9; local_28 = local_28 + 1) {
+  if (0 < local_24) {
+    for (local_28 = 0; local_28 < local_24; local_28 = local_28 + 1) {
       local_88 = aiStack_1c8[local_28];
       pCVar13 = this_ptr->edges_ptr + local_88;
       for (iVar7 = 0; iVar7 < pCVar13->adjacent_tri_count; iVar7 = iVar7 + 1) {

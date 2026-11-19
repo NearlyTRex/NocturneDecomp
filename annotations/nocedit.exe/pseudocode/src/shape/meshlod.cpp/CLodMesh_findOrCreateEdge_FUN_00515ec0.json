@@ -254,5 +254,67 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CLodMesh_findOrCreateEdge_FUN_00515ec0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 58,
+          "line": 46,
+          "message": "Dereference of null pointer",
+          "path_notes": [
+            {
+              "line": 18,
+              "message": "Assuming 'vertex_idx_2' is >= 'vertex_idx_1'"
+            },
+            {
+              "line": 18,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 23,
+              "message": "Assuming 0 is >= field 'edge_count'"
+            },
+            {
+              "line": 23,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 34,
+              "message": "Assuming 'create_if_missing' is not equal to 0"
+            },
+            {
+              "line": 34,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 37,
+              "message": "Value assigned to 'pCVar1'"
+            },
+            {
+              "line": 40,
+              "message": "The value of 'pCVar1' is assigned to field 'edges_ptr'"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'pCVar1' is equal to null"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 46,
+              "message": "Dereference of null pointer"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

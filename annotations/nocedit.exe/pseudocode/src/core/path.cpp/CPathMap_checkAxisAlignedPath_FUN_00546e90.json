@@ -230,5 +230,111 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CPathMap_checkAxisAlignedPath_FUN_00546e90.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 91,
+          "line": 86,
+          "message": "The left operand of '==' is a garbage value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_e1' declared without an initial value"
+            },
+            {
+              "line": 33,
+              "message": "Assuming 'uVar1' is >= 0"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 33,
+              "message": "'?' condition is false"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 34,
+              "message": "'uVar1' is >= 0"
+            },
+            {
+              "line": 34,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'uVar2' is >= 0"
+            },
+            {
+              "line": 40,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming 'local_2c' is <= 0"
+            },
+            {
+              "line": 49,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 64,
+              "message": "'local_2c' is equal to 0"
+            },
+            {
+              "line": 64,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 65,
+              "message": "'uVar2' is >= 0"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 65,
+              "message": "'?' condition is false"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 66,
+              "message": "Assuming 'local_30' is <= 0"
+            },
+            {
+              "line": 66,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 84,
+              "message": "'local_30' is equal to 0"
+            },
+            {
+              "line": 84,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 86,
+              "message": "The left operand of '==' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

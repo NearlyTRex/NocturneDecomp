@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 8,
+    "complexity_score": 23,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "mem_magic_size"
+    ],
     "total_lines": 24
   },
   "cross_references": [
@@ -157,7 +159,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "memset size hardcodes 0x2c == sizeof(CFileBitStream), whose dest resolves to that struct. CFileBitStream is 64-bit-unstable (contains a pointer), so the struct grows past 0x2c once pointers are 8 bytes and memset covers only its leading 0x2c bytes, leaving the grown tail untouched. Replace the magic with sizeof(CFileBitStream) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "memset(dest) size 0x2c == sizeof(CFileBitStream)",
+      "severity": "moderate",
+      "text": "memset(&this_ptr->file_bitstream,0,0x2c)",
+      "type": "mem_magic_size"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

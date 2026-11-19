@@ -485,7 +485,7 @@
       "description": "Compiler displaced index base: [reg*8 + 0x3342b48] lands in g_VertexNormalArray but intended target is g_SetDisplayListCount at 0x3342b4c (displaced by 4 bytes)",
       "displaced_from": "g_VertexNormalArray",
       "displacement": "0x3342b48",
-      "instruction_address": "",
+      "instruction_address": "0056fe49",
       "intended_global": "g_SetDisplayListCount",
       "line": 214,
       "match": "0x3342b48",
@@ -499,7 +499,7 @@
       "description": "Compiler displaced index base: [reg*8 + 0x3342b4c] lands in g_SetDisplayListCount but intended target is g_SetDisplayListSortBuffer at 0x3342b50 (displaced by 4 bytes)",
       "displaced_from": "g_SetDisplayListCount",
       "displacement": "0x3342b4c",
-      "instruction_address": "",
+      "instruction_address": "0056fe57",
       "intended_global": "g_SetDisplayListSortBuffer",
       "line": 217,
       "match": "0x3342b4c",
@@ -642,6 +642,88 @@
         "type": "uint"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_buildDisplayList_FUN_0056fbd0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 30,
+          "line": 146,
+          "message": "The right operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 22,
+              "message": "'local_2c' declared without an initial value"
+            },
+            {
+              "line": 33,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 33,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'g_DynamicLightCount' is not equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 45,
+              "message": "Assuming 'g_SpotLightCount' is equal to 0"
+            },
+            {
+              "line": 45,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming 0 is >= field 'renderable_actor_count'"
+            },
+            {
+              "line": 49,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 126,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 126,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 128,
+              "message": "Assuming 'iVar3' is >= 'g_SetDisplayListCount'"
+            },
+            {
+              "line": 128,
+              "message": "Loop condition is false. Execution continues on line 139"
+            },
+            {
+              "line": 140,
+              "message": "Assuming field 'profile_mode' is not equal to 0"
+            },
+            {
+              "line": 140,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 146,
+              "message": "The right operand of '-' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

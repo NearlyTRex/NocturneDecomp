@@ -1529,39 +1529,39 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @0058064f [ESP:-40]~  # JZ 0x005804ae
 CBRANCH (ram,0x5804ae,4), (register,0x206,1)
 
-@00580655 [ESP:-40](-4)~  # PUSH 0x31
+@00580655 [ESP:-44](-4)~  # PUSH 0x31
 COPY (unique,0x87b00,4) = (const,0x31,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
 
-@00580657 [ESP:-40]~  # MOV EBX, dword ptr [0x00607284]
+@00580657 [ESP:-44]~  # MOV EBX, dword ptr [0x00607284]
 COPY (register,0xc,4) /* EBX */ = (ram,0x607284,4)
 
-@0058065d [ESP:-44](-4)~  # PUSH EBX
+@0058065d [ESP:-48](-4)~  # PUSH EBX
 COPY (unique,0x41500,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@0058065e [ESP:-48](-4)~  # PUSH 0x5d7c2b
+@0058065e [ESP:-52](-4)~  # PUSH 0x5d7c2b
 COPY (unique,0x87f00,4) = (const,0x5d7c2b,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
 
-@00580663 [ESP:-48]~  # MOV ESI, dword ptr [0x02d21b78]
+@00580663 [ESP:-52]~  # MOV ESI, dword ptr [0x02d21b78]
 COPY (register,0x18,4) /* ESI */ = (ram,0x2d21b78,4)
 
-@00580669 [ESP:-52](-4)~  # PUSH ESI
+@00580669 [ESP:-56](-4)~  # PUSH ESI
 COPY (unique,0x41500,4) = (register,0x18,4) /* ESI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@0058066a [ESP:-52](-4)~  # CALL dword ptr CS:[0x5b34d8]
+@0058066a [ESP:-56](-4)~  # CALL dword ptr CS:[0x5b34d8]
 COPY (unique,0x63500,4) = (ram,0x5b34d8,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x580671,4)
 CALLIND (unique,0x63500,4)
 
-@00580671 [ESP:-52]~  # CMP EAX, 0x2
+@00580671 [ESP:-56]~  # CMP EAX, 0x2
 COPY (unique,0x66100,4) = (register,0x0,4) /* EAX */
 INT_LESS (register,0x200,1) = (unique,0x66100,4), (const,0x2,4)
 INT_SBORROW (register,0x20b,1) = (unique,0x66100,4), (const,0x2,4)
@@ -1573,14 +1573,14 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@00580674 [ESP:-52]~  # JNZ 0x005804ae
+@00580674 [ESP:-56]~  # JNZ 0x005804ae
 BOOL_NEGATE (unique,0x17c00,1) = (register,0x206,1)
 CBRANCH (ram,0x5804ae,4), (unique,0x17c00,1)
 
-@0058067a [ESP:-36]~  # MOV dword ptr [0x02d21b80], 0x1
+@0058067a [ESP:-56]~  # MOV dword ptr [0x02d21b80], 0x1
 COPY (ram,0x2d21b80,4) = (const,0x1,4)
 
-@00580684 [ESP:-36]~  # JMP 0x005804ae
+@00580684 [ESP:-56]~  # JMP 0x005804ae
 BRANCH (ram,0x5804ae,4)
 
 # ============================================================================

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4929
-Clean: 3114 (63.2%)
-With suspects: 1815
-Total suspects: 15435
+Clean: 3108 (63.1%)
+With suspects: 1821
+Total suspects: 15448
 
 ====================================================================================================
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042d100 (2 suspects)
@@ -367,7 +367,7 @@ cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0 (5 suspects)
   Line 25 [stack_ref]: } while (pbVar4 != &stack0xfffffffc);
 
 ====================================================================================================
-cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_0042cff2 (22 suspects)
+cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_0042cff2 (21 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
   Line 25 [pointer_cast]: src_buffer = (uint *)((int)src_buffer + 1);
@@ -391,10 +391,9 @@ cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_0042cff2 (22 suspects)
   Line 80 [pointer_cast]: src_buffer = (uint *)((int)src_buffer + 1);
   Line 81 [pointer_cast]: dest_buffer = (uint *)((int)dest_buffer + 1);
   Line 108 [unrolled_memcpy]: // 0042d0e3: MOVSD.REP ES:EDI,ESI
-  Line 115 [unrolled_memcpy]: // 0042d0ee: MOVSB.REP ES:EDI,ESI
 
 ====================================================================================================
-cockpit_ckptutil.c_optimizedMemcpy_FUN_0042cef8 (22 suspects)
+cockpit_ckptutil.c_optimizedMemcpy_FUN_0042cef8 (21 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
   Line 25 [pointer_cast]: src_buffer = (uint *)((int)src_buffer + 1);
@@ -418,7 +417,6 @@ cockpit_ckptutil.c_optimizedMemcpy_FUN_0042cef8 (22 suspects)
   Line 81 [pointer_cast]: src_buffer = (uint *)((int)src_buffer + 1);
   Line 82 [pointer_cast]: dest_buffer = (uint *)((int)dest_buffer + 1);
   Line 107 [unrolled_memcpy]: // 0042cfdd: MOVSD.REP ES:EDI,ESI
-  Line 114 [unrolled_memcpy]: // 0042cfe8: MOVSB.REP ES:EDI,ESI
 
 ====================================================================================================
 cockpit_ckptutil.c_putPixel_FUN_00430140 (6 suspects)
@@ -3685,6 +3683,12 @@ core_cloth.cpp_CClothList_applyRotation_FUN_00438620 (1 suspect)
   Line 14 [shadow_pointer_walk]: pCVar2 = (CClothList *)pCVar2->filenames;
 
 ====================================================================================================
+core_cloth.cpp_CClothList_ctor_FUN_00438210 (1 suspect)
+  File: core/cloth.cpp
+====================================================================================================
+  Line 7 [mem_magic_size]: memset(this_ptr->cloths,0,0x28)
+
+====================================================================================================
 core_cloth.cpp_CClothList_load_FUN_00438270 (1 suspect)
   File: core/cloth.cpp
 ====================================================================================================
@@ -3697,10 +3701,12 @@ core_cloth.cpp_CClothList_process_FUN_00438550 (1 suspect)
   Line 15 [shadow_pointer_walk]: pCVar2 = (CClothList *)pCVar2->filenames;
 
 ====================================================================================================
-core_cloth.cpp_CClothList_remove_FUN_00438410 (1 suspect)
+core_cloth.cpp_CClothList_remove_FUN_00438410 (3 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 31 [unrolled_strcpy]: do {
+  Line 40 [stale_struct_offset_64bit]: *(uint *)(pcVar2 + 400) = *(uint *)(pcVar2 + 0x194);
+  Line 40 [stale_struct_offset_64bit]: *(uint *)(pcVar2 + 400) = *(uint *)(pcVar2 + 0x194);
 
 ====================================================================================================
 core_cloth.cpp_CClothList_render_FUN_004385a0 (2 suspects)
@@ -3710,10 +3716,11 @@ core_cloth.cpp_CClothList_render_FUN_004385a0 (2 suspects)
   Line 22 [shadow_pointer_walk]: pCVar1 = (CClothList *)pCVar1->filenames;
 
 ====================================================================================================
-core_cloth.cpp_CClothList_reset_FUN_00438320 (1 suspect)
+core_cloth.cpp_CClothList_reset_FUN_00438320 (2 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 18 [shadow_pointer_walk]: pCVar2 = (CClothList *)pCVar2->filenames;
+  Line 23 [mem_magic_size]: memset(this_ptr->cloths,0,0x28)
 
 ====================================================================================================
 core_cloth.cpp_CClothList_setWindVelocity_FUN_00438660 (3 suspects)
@@ -3867,15 +3874,16 @@ core_cloth.cpp_CCloth_render_FUN_00437db0 (9 suspects)
   Line 130 [shadow_pointer_walk]: pSVar3 = (SMRGLPrimitiveQuad *)&(pSVar3->base).surface_normal.B;
 
 ====================================================================================================
-core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0 (3 suspects)
+core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0 (4 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 25 [pointer_truncation]: if (0 < (int)pCVar4) {
+  Line 30 [struct_field_overrun]: iVar1 = *(int *)(pcVar5 + 0x39e7c);
   Line 34 [shadow_pointer_walk]: pCVar4 = (CCloth *)((pCVar3->model).model_filename + 4);
   Line 41 [pointer_truncation]: return (int)pCVar4;
 
 ====================================================================================================
-core_cloth.cpp_CCloth_setup_FUN_004359e0 (37 suspects)
+core_cloth.cpp_CCloth_setup_FUN_004359e0 (38 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 87 [pointer_cast]: *(int *)((int)this_ptr->vertex_sort_buffer + iVar13) = iVar8;
@@ -3912,6 +3920,7 @@ core_cloth.cpp_CCloth_setup_FUN_004359e0 (37 suspects)
   Line 308 [pointer_truncation]: (&local_d8,pCVar12,local_58 + *(byte *)((int)pfVar19 + 1));
   Line 309 [pointer_cast]: pfVar19 = (float *)((int)pfVar19 + 1);
   Line 309 [pointer_truncation]: pfVar19 = (float *)((int)pfVar19 + 1);
+  Line 327 [struct_field_overrun]: *(int *)(local_3c + 0x39e7c) = local_64;
   Line 331 [shadow_pointer_walk]: local_34 = (CCloth *)((local_34->model).model_filename + 4);
   Line 343 [shadow_pointer_walk]: pCVar11 = (CCloth *)&(pCVar11->model).env_map_opac_list;
   Line 346 [unrolled_memset]: (this_ptr->wind_velocity).z = 0.0;
@@ -4600,7 +4609,7 @@ core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020 (2 suspects)
   Line 21 [unaffected_reg]: iVar1 = engine_special_cpp_unlockFrame_FUN_00532320(unaff_EDI);
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 (28 suspects)
+core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 (32 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
   Line 16 [stack_alignment_array]: int aiStackY_185c [1523];
@@ -4616,6 +4625,8 @@ core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 (28 suspects)
   Line 93 [pointer_truncation]: ((uint *)((int)&stack0xffffff88 + (uint)bVar11 * -8 + (uint)bVar11 * -8))
   Line 93 [pointer_cast]: ((uint *)((int)&stack0xffffff88 + (uint)bVar11 * -8 + (uint)bVar11 * -8))
   Line 102 [shadow_pointer_walk]: pCVar3 = (CDemonLight *)((pCVar3->base).camera_name + 4);
+  Line 109 [struct_field_overrun]: *(uint *)(pcVar4 + 0x14c8) = 999;
+  Line 110 [struct_field_overrun]: *(uint *)(pcVar4 + 0x1888) = 0;
   Line 126 [pointer_truncation]: local_30 = (CVector3i *)((int)&local_54->x + local_58);
   Line 126 [pointer_cast]: local_30 = (CVector3i *)((int)&local_54->x + local_58);
   Line 127 [pointer_truncation]: local_28 = (float *)((int)&local_4c->x + local_58);
@@ -4631,6 +4642,8 @@ core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 (28 suspects)
   Line 156 [pointer_cast]: *(uint *)((int)&local_64 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
   Line 157 [pointer_truncation]: *(uint *)((int)&local_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
   Line 157 [pointer_cast]: *(uint *)((int)&local_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 196 [struct_field_overrun]: *(int *)(local_48 + 0x14c8) = local_38;
+  Line 197 [struct_field_overrun]: *(int *)(local_48 + 0x1888) = local_34;
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0 (45 suspects)
@@ -7955,7 +7968,7 @@ core_fire.cpp_CLaserBeam_init_FUN_004858f0 (3 suspects)
   Line 18 [unrolled_memcpy]: (this_ptr->reflection_normal).x = reflection_normal->x;
 
 ====================================================================================================
-core_fire.cpp_CLaserBeam_render_FUN_00485a90 (79 suspects)
+core_fire.cpp_CLaserBeam_render_FUN_00485a90 (69 suspects)
   File: core/fire.cpp
 ====================================================================================================
   Line 126 [unknown_field]: local_2e0._0_4_ = this_ptr->beam_width;
@@ -7971,10 +7984,6 @@ core_fire.cpp_CLaserBeam_render_FUN_00485a90 (79 suspects)
   Line 199 [unknown_field]: local_1ac = local_220.m[1].z * (float)local_2e0._4_4_;
   Line 200 [unknown_field]: local_1a8 = local_220.m[2].z * (float)local_2e0._4_4_;
   Line 208 [unrolled_memcpy]: local_168.x = local_150.x;
-  Line 259 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr->r = (this_ptr->color).r;
-  Line 264 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[1].r = (this_ptr->color).r;
-  Line 269 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[2].r = (this_ptr->color).r;
-  Line 274 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[3].r = (this_ptr->color).r;
   Line 277 [raw_address_constant]: pCVar3->vertex_buffer_ptr->u = 0xf80000;
   Line 278 [raw_address_constant]: pCVar3->vertex_buffer_ptr->v = 0xf80000;
   Line 280 [raw_address_constant]: pCVar3->vertex_buffer_ptr[1].v = 0xf80000;
@@ -8012,9 +8021,6 @@ core_fire.cpp_CLaserBeam_render_FUN_00485a90 (79 suspects)
   Line 381 [unknown_field]: local_2e0._68_4_ = 0x800000;
   Line 382 [unknown_field]: local_2e0._72_4_ = 0x800000;
   Line 383 [unknown_field]: local_2e0._32_4_ = 0x800000;
-  Line 388 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[1].r = (this_ptr->color).r;
-  Line 391 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[2].r = (this_ptr->color).r;
-  Line 394 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[3].r = (this_ptr->color).r;
   Line 397 [unknown_field]: local_2e0._36_4_ = local_2e0._48_4_;
   Line 397 [unknown_field]: local_2e0._36_4_ = local_2e0._48_4_;
   Line 398 [unknown_field]: local_2e0._44_4_ = local_2e0._56_4_;
@@ -8032,9 +8038,6 @@ core_fire.cpp_CLaserBeam_render_FUN_00485a90 (79 suspects)
   Line 489 [raw_address_constant]: local_258 = 0xf80000;
   Line 489 [raw_address_constant]: local_258 = 0xf80000;
   Line 491 [raw_address_constant]: local_24c.base.type = 0xf80000;
-  Line 497 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[1].r = (this_ptr->color).r;
-  Line 500 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[2].r = (this_ptr->color).r;
-  Line 503 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[3].r = (this_ptr->color).r;
   Line 616 [unrolled_memcpy]: // 004863bf: MOVSD.REP ES:EDI,ESI
   Line 629 [unrolled_memcpy]: // 004863ed: MOVSD.REP ES:EDI,ESI
 
@@ -9598,7 +9601,7 @@ core_glass.cpp_CGlass_renderTransparent_FUN_004ac600 (1 suspect)
   Line 61 [shadow_pointer_walk]: pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
 
 ====================================================================================================
-core_glass.cpp_CGlass_setup_FUN_004abc90 (11 suspects)
+core_glass.cpp_CGlass_setup_FUN_004abc90 (13 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 52 [unrolled_memcpy]: local_48.x = local_78.x;
@@ -9606,7 +9609,9 @@ core_glass.cpp_CGlass_setup_FUN_004abc90 (11 suspects)
   Line 74 [unrolled_memcpy]: local_c0.x = local_cc.x;
   Line 85 [unrolled_memcpy]: local_b4.x = local_90.x;
   Line 126 [stack_ref]: if (pCVar5 != (CVector3f *)&stack0xffffff20) {
+  Line 137 [struct_field_overrun]: *(int *)(pcVar9 + 0x5dc) = (int)ROUND(dVar11);
   Line 139 [suspect_float]: fVar12 = 6.865027e-39;
+  Line 144 [struct_field_overrun]: *(int *)(pcVar9 + 0x640) = local_24;
   Line 158 [pointer_cast]: pSVar6 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);
   Line 206 [unrolled_strcpy]: do {
   Line 221 [unrolled_strcpy]: do {
@@ -11684,7 +11689,7 @@ core_mimic.cpp_CMimic_updatePose_FUN_004d4ba0 (54 suspects)
   Line 180 [unrolled_memcpy]: (pUVar13->vec).x = pCVar8->x;
 
 ====================================================================================================
-core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650 (53 suspects)
+core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650 (58 suspects)
   File: core/mirror.cpp
 ====================================================================================================
   Line 106 [self_copy_guard]: if (&local_194 != &local_b0) {
@@ -11740,6 +11745,11 @@ core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650 (53 suspect
   Line 355 [unrolled_memcpy]: local_a4.x = pCVar2->x;
   Line 361 [unrolled_memcpy]: local_bc.x = pCVar2->x;
   Line 370 [unrolled_memcpy]: local_98.x = pCVar2->x;
+  Line 375 [derived_field_index_pun]: ((SClipPlane *)&this_ptr[1].corner1.y,&local_170,&local_d4,&local_a4);
+  Line 377 [derived_field_index_pun]: ((SClipPlane *)&this_ptr[1].corner2.z,&local_98,&local_170,&local_d4);
+  Line 379 [derived_field_index_pun]: ((SClipPlane *)&this_ptr[1].corner4,&local_98,&local_d4,&local_a4);
+  Line 381 [derived_field_index_pun]: ((SClipPlane *)&this_ptr[1].mirror_transform_matrix.m[0].x,&local_98,&local_a4,&local_bc
+  Line 384 [derived_field_index_pun]: ((SClipPlane *)&this_ptr[1].mirror_transform_matrix.m[1].x,&local_98,&local_bc,
 
 ====================================================================================================
 core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0 (5 suspects)
@@ -12606,17 +12616,17 @@ core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 (26 suspects)
   Line 223 [pointer_cast]: while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar4 + -8) ==
   Line 225 [pointer_cast]: *(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar4 + uVar2 + -4) = 1;
   Line 286 [unrolled_strcpy]: do {
-  Line 356 [pointer_cast]: if (local_2c == *(uint *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc)) {
-  Line 358 [pointer_cast]: dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc);
-  Line 391 [unrolled_memcpy]: for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 393 [pointer_cast]: pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
-  Line 393 [pointer_truncation]: pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
-  Line 394 [pointer_cast]: pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
-  Line 394 [pointer_truncation]: pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
-  Line 397 [shadow_pointer_walk]: local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x13);
-  Line 411 [unrolled_memcpy]: for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 414 [pointer_cast]: pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
-  Line 414 [pointer_truncation]: pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
+  Line 357 [pointer_cast]: if (local_2c == *(uint *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc)) {
+  Line 359 [pointer_cast]: dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc);
+  Line 392 [unrolled_memcpy]: for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 394 [pointer_cast]: pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
+  Line 394 [pointer_truncation]: pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
+  Line 395 [pointer_cast]: pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
+  Line 395 [pointer_truncation]: pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
+  Line 398 [shadow_pointer_walk]: local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x13);
+  Line 412 [unrolled_memcpy]: for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 415 [pointer_cast]: pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
+  Line 415 [pointer_truncation]: pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
   Line 984 [unrolled_memcpy]: // 004eb22f: MOVSD.REP ES:EDI,ESI
   Line 1064 [unrolled_memcpy]: // 004eb321: MOVSD.REP ES:EDI,ESI
 
@@ -14901,6 +14911,12 @@ core_setutil.cpp_C3DSCamera_load_FUN_005144e0 (2 suspects)
   Line 50 [unrolled_memcpy]: (this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;
 
 ====================================================================================================
+core_setutil.cpp_C3DSCamera_reset_FUN_00514470 (1 suspect)
+  File: core/setutil.cpp
+====================================================================================================
+  Line 8 [mem_magic_size]: memset(this_ptr,0,0x1a0)
+
+====================================================================================================
 core_setutil.cpp_C3DSLight_addFilter_FUN_00515710 (1 suspect)
   File: core/setutil.cpp
 ====================================================================================================
@@ -16777,10 +16793,10 @@ core_stranger.cpp_CStranger_processFrame_FUN_00535900 (59 suspects)
   Line 519 [bitcast_double_pair]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pUVar27,this_ptr));
   Line 577 [stack_param]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pCStack_28,0x5368ab));
   Line 577 [bitcast_double_pair]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(pCStack_28,0x5368ab));
-  Line 581 [stack_param]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));
-  Line 581 [stack_param]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));
-  Line 581 [bitcast_double_pair]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));
-  Line 581 [sub84_truncation]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));
+  Line 581 [stack_param]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(__BITCAST_UINT64(in_stack_fffffd10),0)));
+  Line 581 [stack_param]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(__BITCAST_UINT64(in_stack_fffffd10),0)));
+  Line 581 [bitcast_double_pair]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(__BITCAST_UINT64(in_stack_fffffd10),0)));
+  Line 581 [sub84_truncation]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(__BITCAST_UINT64(in_stack_fffffd10),0)));
   Line 586 [stack_param]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x23,pCStack_28));
   Line 586 [bitcast_double_pair]: in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x23,pCStack_28));
   Line 594 [stack_param]: in_stack_fffffd10 = (double)ZEXT48(pCVar2);
@@ -16804,8 +16820,8 @@ core_stranger.cpp_CStranger_processFrame_FUN_00535900 (59 suspects)
   Line 817 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
   Line 948 [bit_int_float_compare]: if (0x42c80000 < (int)SStack_2bc.damage_amount) {
   Line 964 [stack_param]: in_stack_fffffd10 = 2.12199579936439e-314;
-  Line 967 [stack_param]: (&(this_ptr->base).base.model.base,SUB84(in_stack_fffffd10,0),
-  Line 967 [sub84_truncation]: (&(this_ptr->base).base.model.base,SUB84(in_stack_fffffd10,0),
+  Line 967 [stack_param]: (&(this_ptr->base).base.model.base,SUB84(__BITCAST_UINT64(in_stack_fffffd10),0),
+  Line 967 [sub84_truncation]: (&(this_ptr->base).base.model.base,SUB84(__BITCAST_UINT64(in_stack_fffffd10),0),
   Line 968 [stack_param]: (int)((ulonglong)in_stack_fffffd10 >> 0x20));
   Line 1008 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 1111 [unknown_field]: CStack_1dc.x = (float)auStack_110._0_4_ - CStack_194.x;
@@ -18688,7 +18704,7 @@ core_xform.cpp_slerpQuaternion_FUN_0055d2d0 (19 suspects)
   Line 69 [extra_output]: quat_out = extraout_ECX;
   Line 70 [extra_output]: quat1_in = extraout_EDX;
   Line 74 [sub84_truncation]: local_70 = SUB84(1.0 - local_18,0);
-  Line 77 [sub84_truncation]: local_78 = SUB84(local_18,0);
+  Line 77 [sub84_truncation]: local_78 = SUB84(__BITCAST_UINT64(local_18),0);
   Line 78 [bitcast_double_pair]: fVar3 = (float)__BITCAST_DOUBLE(CONCAT44(local_70,uStack_74));
   Line 82 [bitcast_double_pair]: aCStack_44[0].y = fStack_64 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->y * fVar3;
   Line 83 [bitcast_double_pair]: aCStack_44[0].z = local_58 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->z * fVar3;
@@ -20650,6 +20666,19 @@ engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 (8 suspects)
   Line 40 [pointer_truncation]: iVar2 = **(int **)((int)g_CapturedFacePointers + iVar5);
   Line 46 [pointer_cast]: piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);
   Line 46 [pointer_truncation]: piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);
+
+====================================================================================================
+engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0 (2 suspects)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 20 [derived_field_index_pun]: local_24.vertex_index_1 = *(ushort *)&quad_primitive[1].surface_normal.B;
+  Line 33 [derived_field_index_pun]: local_24.vertex_index_2 = *(ushort *)&quad_primitive[2].surface_normal.B;
+
+====================================================================================================
+engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30 (1 suspect)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 21 [derived_field_index_pun]: local_18.vertex_index_1 = *(ushort *)&primitive[1].surface_normal.B;
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8d0 (1 suspect)
@@ -22627,6 +22656,13 @@ shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 (3 suspects)
   Line 124 [unrolled_strlen]: do {
 
 ====================================================================================================
+shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0 (2 suspects)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 67 [struct_field_overrun]: x = x + *(int *)(pcVar4 + 0x7c);
+  Line 67 [stale_struct_offset_64bit]: x = x + *(int *)(pcVar4 + 0x7c);
+
+====================================================================================================
 shape_edittool.cpp_CStrList_allocate_FUN_00473de0 (1 suspect)
   File: shape/edittool.cpp
 ====================================================================================================
@@ -22826,6 +22862,12 @@ sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_004e33d0 (3 suspects)
   Line 17 [pointer_truncation]: puVar3 = (uint *)((int)&scalefactors->codes + local_14);
   Line 17 [pointer_cast]: puVar3 = (uint *)((int)&scalefactors->codes + local_14);
   Line 18 [pointer_cast]: piVar5 = (int *)((int)allocation_indices->bit_allocations + local_14);
+
+====================================================================================================
+sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90 (1 suspect)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 7 [mem_magic_size]: memset(&this_ptr->file_bitstream,0,0x2c)
 
 ====================================================================================================
 sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 (60 suspects)
@@ -23435,11 +23477,12 @@ sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00529de0 (1 suspect)
   Line 23 [unresolved_funcptr]: (**(code **)(*piVar1 + 8))(piVar1);
 
 ====================================================================================================
-sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0 (4 suspects)
+sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0 (5 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 9 [pointer_cast]: *(uint *)((int)&(this_ptr->position).z + 4) = 0;
   Line 13 [pointer_cast]: *(uint *)((int)&(this_ptr->velocity).z + 4) = 0;
+  Line 24 [mem_magic_size]: memset(this_ptr->userdata,0,8)
   Line 26 [pointer_truncation]: *(uint *)((int)&this_ptr->playback_position + 4) = 0;
   Line 26 [pointer_cast]: *(uint *)((int)&this_ptr->playback_position + 4) = 0;
 
@@ -23533,7 +23576,7 @@ sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 (56 suspects)
   Line 93 [pointer_stride_bytecount]: memset
   Line 97 [shadow_pointer_walk]: pCVar9 = (CSfxSlot *)&(pCVar9->options).position;
   Line 107 [sub84_truncation]: local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 111 [sub84_truncation]: local_b8 = SUB84(resample_delta,0);
+  Line 111 [sub84_truncation]: local_b8 = SUB84(__BITCAST_UINT64(resample_delta),0);
   Line 118 [sub84_truncation]: local_74 = SUB84(__BITCAST_UINT64(dVar11),0);
   Line 128 [pointer_truncation]: uStack_bc = *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4);
   Line 128 [pointer_cast]: uStack_bc = *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4);

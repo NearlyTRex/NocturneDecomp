@@ -248,7 +248,7 @@ int __cdecl support_trisock_cpp_parseIPComponents_FUN_0059c5d0(uint *result_ptr,
 int __cdecl support_trisock_cpp_buildIPAddress_FUN_0059c640(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4);
 void __cdecl support_trisock_cpp_extractIPOctets_FUN_0059c6b0(uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr);
 uint __cdecl support_trisock_cpp_getIPAddress_FUN_0059c700(SNetworkAddr *net_addr);
-void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port);
+SNetworkAddr * __cdecl support_trisock_cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port);
 SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_0059c760(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_0059c7d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer);
 void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(SNetworkAddr *network_addr,char *output_buffer);

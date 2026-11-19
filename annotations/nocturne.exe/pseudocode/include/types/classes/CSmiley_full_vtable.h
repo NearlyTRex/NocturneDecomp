@@ -13,7 +13,7 @@
 // Ghidra size: 0x144 (324 bytes)
 #pragma pack(push, 1)
 typedef struct CSmiley_full_vtable {
-    CDemonActor_vtable _ud; // 0x0
+    CDemonActor_vtable _ub; // 0x0
     CCharacter_vtable _uc; // 0xd0
     CEnemy_vtable _ue; // 0x138
     CSmiley_vtable _us; // 0x140

@@ -289,12 +289,12 @@ INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x2cf2678,4)
 COPY (unique,0xa100,1) = (register,0x8,1)
 STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa100,1)
 
-@0049da65 [ESP:???](-4)!?  # CALL 0x004cda80
+@0049da65 [ESP:-44](-4)  # CALL 0x004cda80
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x49da6a,4)
 CALL (ram,0x4cda80,4)
 
-@0049da6a [ESP:???](+24)!?  # ADD ESP, 0x18
+@0049da6a [ESP:-20](+24)?  # ADD ESP, 0x18
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x18,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x18,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x18,4)
@@ -305,12 +305,12 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0049da6d [ESP:???](-4)!?  # CALL 0x005f2dc0
+@0049da6d [ESP:-20](-4)  # CALL 0x005f2dc0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x49da72,4)
 CALL (ram,0x5f2dc0,4)
 
-@0049da72 [ESP:???]!?  # TEST EAX, 0x40000
+@0049da72 [ESP:-20]  # TEST EAX, 0x40000
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0xad800,4) = (register,0x0,4) /* EAX */, (const,0x40000,4)
@@ -321,7 +321,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0049da77 [ESP:???]!?  # JNZ 0x0049dada
+@0049da77 [ESP:-20]  # JNZ 0x0049dada
 BOOL_NEGATE (unique,0x17c00,1) = (register,0x206,1)
 CBRANCH (ram,0x49dada,4), (unique,0x17c00,1)
 
@@ -685,5 +685,4 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 114 instructions, 439 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -563,6 +563,36 @@
   },
   "static_analysis": {
     "analyzed_file": "CCharacter_moveOutOfHeroWay_FUN_0042ede0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "security.FloatLoopCounter",
+          "column": 9,
+          "line": 73,
+          "message": "Variable 'fStack_110' with floating point type 'float' should not be used as a loop counter",
+          "path_notes": [
+            {
+              "line": 73,
+              "message": "Variable 'fStack_110' with floating point type 'float' should not be used as a loop counter"
+            }
+          ]
+        },
+        {
+          "checker": "security.FloatLoopCounter",
+          "column": 9,
+          "line": 117,
+          "message": "Variable 'fStack_118' with floating point type 'float' should not be used as a loop counter",
+          "path_notes": [
+            {
+              "line": 117,
+              "message": "Variable 'fStack_118' with floating point type 'float' should not be used as a loop counter"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
     "clang_tidy_quick": {
       "diagnostic_count": 2,
       "diagnostics": [

@@ -103,6 +103,17 @@
     },
     "pcode_op_count": 62
   },
+  "resolved_suspects": [
+    {
+      "description": "memset size hardcodes 0x28 == the whole cloths field (10 x CCloth *), which the dest names. It is an array of pointers, so it grows once pointers are 8 bytes and memset covers only its leading 0x28 bytes. Use sizeof(<path>->cloths) (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "memset(dest) size 0x28 == sizeof(CCloth *[10])",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(this_ptr->cloths,0,0x28)",
+      "type": "mem_magic_size"
+    }
+  ],
   "siblings": {
     "blairwitch2.exe": {
       "addr": "005b1440",

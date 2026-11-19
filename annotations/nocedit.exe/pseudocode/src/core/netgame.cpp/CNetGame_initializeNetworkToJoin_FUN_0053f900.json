@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 118,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 19,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 118,
+    "pseudocode_lines": 119,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 406
+    "total_lines": 407
   },
   "cross_references": [
     {
@@ -270,7 +270,7 @@
   "resolved_suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 73,
+      "line": 74,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -420,6 +420,28 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CNetGame_initializeNetworkToJoin_FUN_0053f900.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 80,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 80,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

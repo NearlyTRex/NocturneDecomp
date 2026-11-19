@@ -16,7 +16,7 @@
 
 import re
 
-from ghidra_annotations.annotations.pseudocode.pass_by_value import BYVALUE_CALLEES
+from ghidra_annotations.annotations.pseudocode.pass_by_value import byvalue_callee
 
 
 # MMX instruction detection pattern (same mnemonics as the suspects package)
@@ -80,15 +80,15 @@ def _has_mmx_instructions(assembly_code):
 def _calls_byvalue_function(func_calls):
     """Check if function calls any known by-value struct passing function.
 
-    Matches against function addresses from BYVALUE_CALLEES (pass_by_value.py).
+    Matches the called names against BYVALUE_CALLEES (pass_by_value.py).
 
     Args:
-        func_calls: List of dicts with 'addr' keys from DecompileResult
+        func_calls: List of dicts with 'name' keys from DecompileResult
 
     Returns:
         True if any called function is in the known by-value set
     """
-    return any(_norm_addr(call.get('addr', '')) in BYVALUE_CALLEES for call in func_calls or ())
+    return any(byvalue_callee(call) for call in func_calls or ())
 
 
 def _parse_raw_assembly(assembly_code):

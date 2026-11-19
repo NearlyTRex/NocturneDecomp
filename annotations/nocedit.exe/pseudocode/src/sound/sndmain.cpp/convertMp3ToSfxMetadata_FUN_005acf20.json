@@ -510,5 +510,63 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "convertMp3ToSfxMetadata_FUN_005acf20.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 42,
+          "line": 60,
+          "message": "Access to field 'num_channels' results in a dereference of a null pointer (loaded from variable 'pCVar4')",
+          "path_notes": [
+            {
+              "line": 36,
+              "message": "Assuming 'iVar2' is >= 1"
+            },
+            {
+              "line": 36,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 43,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 50,
+              "message": "Null pointer value stored to 'pCVar4'"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'this_ptr' is equal to null"
+            },
+            {
+              "line": 51,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 54,
+              "message": "'pCVar4' is equal to null"
+            },
+            {
+              "line": 54,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 60,
+              "message": "Access to field 'num_channels' results in a dereference of a null pointer (loaded from variable 'pCVar4')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -580,7 +580,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "'pCVar6[1].base.create_event + 8' walks 1 x sizeof(CWeapon) (0x594) + offsetof(base.create_event) (0x78) + 0x8 = 0x614, which is exactly offsetof(CFirestaff, flames). Ghidra had no CFirestaff type here and reached the field by index arithmetic; write it as ((CFirestaff *)pCVar6)->flames (\u00a7de-pun/\u00a712). Ambiguous: CMelee::thrust_hit_character_sound[88] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar6[1].base.create_event + 8' walks 1 x sizeof(CWeapon) (0x594) + offsetof(base.create_event) (0x78) + 0x8 = 0x614, which is exactly offsetof(CFirestaff, flames). Ghidra had no CFirestaff type here and reached the field by index arithmetic; write it as ((CFirestaff *)pCVar6)->flames (\u00a7de-pun/\u00a712).",
       "line": 19,
       "severity": "moderate",
       "text": "(pCVar6[1].base.create_event + 8,0xc,&g_CFlameTypeInfo);",

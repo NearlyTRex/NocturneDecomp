@@ -1367,5 +1367,163 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonCamera_loadImage_FUN_0044f3e0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 9,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 3,
+          "line": 88,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 88,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 3,
+          "line": 96,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 90,
+              "message": "Value assigned to 'pcVar10'"
+            },
+            {
+              "line": 91,
+              "message": "Assuming 'pcVar10' is equal to null"
+            },
+            {
+              "line": 91,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 96,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 3,
+          "line": 96,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 96,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 5,
+          "line": 103,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 103,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 5,
+          "line": 111,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 91,
+              "message": "Assuming 'pcVar10' is not equal to null"
+            },
+            {
+              "line": 91,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 98,
+              "message": "Assuming 'p_Var5' is not equal to null"
+            },
+            {
+              "line": 98,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 105,
+              "message": "Value assigned to 'pcVar11'"
+            },
+            {
+              "line": 106,
+              "message": "Assuming 'pcVar11' is equal to null"
+            },
+            {
+              "line": 106,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 111,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 5,
+          "line": 111,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 111,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 15,
+          "line": 163,
+          "message": "Value stored to 'local_3c' is never read",
+          "path_notes": [
+            {
+              "line": 163,
+              "message": "Value stored to 'local_3c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 255,
+          "message": "Value stored to 'local_84' is never read",
+          "path_notes": [
+            {
+              "line": 255,
+              "message": "Value stored to 'local_84' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 15,
+          "line": 263,
+          "message": "Value stored to 'local_64' is never read",
+          "path_notes": [
+            {
+              "line": 263,
+              "message": "Value stored to 'local_64' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

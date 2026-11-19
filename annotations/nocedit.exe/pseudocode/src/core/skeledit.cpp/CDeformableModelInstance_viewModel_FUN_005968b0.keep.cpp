@@ -539,10 +539,10 @@ LAB_0059722b:
     engine_2d_c_drawText_FUN_00401fd0(local_46c,0,0x58);
     if (0 < g_SkeleditViewModel.poly_count) {
       _sprintf(local_46c," Item pos: X: %5.3f Y: %5.3f Z: %5.3f",
-               (double)local_174,(double)local_170,(double)local_16c.x);
+               (double)local_184.x,(double)local_184.y,(double)local_184.z);
       engine_2d_c_drawText_FUN_00401fd0(local_46c,0,99);
       _sprintf(local_46c," Item orient: P: %5.3f B: %5.3f H: %5.3f",
-               (double)local_190.y,(double)local_184.x,(double)local_190.z);
+               (double)local_19c.x,(double)local_19c.z,(double)local_19c.y);
       engine_2d_c_drawText_FUN_00401fd0(local_46c,0,0x6e);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -812,10 +812,10 @@ LAB_0059722b:
           _sprintf(local_46c,"Bone:\t%s",this_ptr_02->bone_list[local_64].bone_name);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,local_46c);
           _sprintf(local_46c,"Pos: %5.3f %5.3f %5.3f",
-                   (double)local_174,(double)local_170,(double)local_16c.x);
+                   (double)local_184.x,(double)local_184.y,(double)local_184.z);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,local_46c);
           _sprintf(local_46c,"Orient: %5.3f %5.3f %5.3f",
-                   (double)local_190.y,(double)local_184.x,(double)local_190.z);
+                   (double)local_19c.x,(double)local_19c.z,(double)local_19c.y);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,local_46c);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (&local_e08.base,"Paste position/orientation from clipboard");
@@ -911,8 +911,8 @@ LAB_0059722b:
         if (local_2c == 5) {
 
           _sprintf(local_46c,"CVector(%g,%g,%g), makePBH(%g,%g,%g)",
-                   (double)local_174,(double)local_170,(double)local_16c.x,
-                   (double)local_190.y,(double)local_184.x,(double)local_190.z);
+                   (double)local_184.x,(double)local_184.y,(double)local_184.z,
+                   (double)local_19c.x,(double)local_19c.z,(double)local_19c.y);
           shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(g_CEditorToolsPtr,local_46c)
           ;
           shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -1017,7 +1017,7 @@ LAB_0059722b:
       engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-    (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
+    (*g_CKeysPtr->vtable->clearKeypresses)(g_CKeysPtr);
   } while( true );
   if (((local_40 != 0) || (local_94 != 0)) &&
      (iVar7 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0

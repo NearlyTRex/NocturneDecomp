@@ -780,12 +780,12 @@ STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 @0048a5ca [ESP:-644]~  # MOV EBP, 0x3
 COPY (register,0x14,4) /* EBP */ = (const,0x3,4)
 
-@0048a5cf [ESP:-620](-4)~  # CALL 0x004a3af0
+@0048a5cf [ESP:-644](-4)~  # CALL 0x004a3af0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x48a5d4,4)
 CALL (ram,0x4a3af0,4)
 
-@0048a5d4 [ESP:-596](+24)~  # ADD ESP, 0x18
+@0048a5d4 [ESP:-620](+24)~  # ADD ESP, 0x18
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x18,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x18,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x18,4)
@@ -796,7 +796,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0048a5d7 [ESP:-596]~  # FLD float ptr [EBX + 0x5a4]
+@0048a5d7 [ESP:-620]~  # FLD float ptr [EBX + 0x5a4]
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x5a4,4)
 COPY (register,0x10ac,4) = (const,0x48a5d7,4)
 COPY (unique,0x52900,10) = (register,0x1170,10)
@@ -811,14 +811,14 @@ COPY (register,0x1100,10) = (unique,0x52900,10)
 LOAD (unique,0xa900,4) = (const,0x1a1,4), (unique,0x6800,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0xa900,4)
 
-@0048a5dd [ESP:-596]~  # FSUB float ptr [ESP + 0x274]
+@0048a5dd [ESP:-620]~  # FSUB float ptr [ESP + 0x274]
 INT_ADD (unique,0x7f00,4) = (const,0x274,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x48a5dd,4)
 LOAD (unique,0xa900,4) = (const,0x1a1,4), (unique,0x7f00,4)
 FLOAT2FLOAT (unique,0xc0900,10) = (unique,0xa900,4)
 FLOAT_SUB (register,0x1100,10) = (register,0x1100,10), (unique,0xc0900,10)
 
-@0048a5e4 [ESP:-596]~  # FLDZ
+@0048a5e4 [ESP:-620]~  # FLDZ
 COPY (register,0x10ac,4) = (const,0x48a5e4,4)
 INT2FLOAT (unique,0xb9900,10) = (const,0x0,4)
 COPY (register,0x1170,10) = (register,0x1160,10)
@@ -830,13 +830,13 @@ COPY (register,0x1120,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (unique,0xb9900,10)
 
-@0048a5e6 [ESP:-596]~  # FXCH
+@0048a5e6 [ESP:-620]~  # FXCH
 COPY (register,0x10ac,4) = (const,0x48a5e6,4)
 COPY (unique,0xc3700,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (unique,0xc3700,10)
 
-@0048a5e8 [ESP:-596]~  # FSTP float ptr [EBX + 0x5a4]
+@0048a5e8 [ESP:-620]~  # FSTP float ptr [EBX + 0x5a4]
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x5a4,4)
 COPY (register,0x10ac,4) = (const,0x48a5e8,4)
 FLOAT2FLOAT (unique,0xa900,4) = (register,0x1100,10)
@@ -849,7 +849,7 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@0048a5ee [ESP:-596]~  # FCOMP float ptr [EBX + 0x5a4]
+@0048a5ee [ESP:-620]~  # FCOMP float ptr [EBX + 0x5a4]
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x5a4,4)
 COPY (register,0x10ac,4) = (const,0x48a5ee,4)
 LOAD (unique,0xa900,4) = (const,0x1a1,4), (unique,0x6800,4)
@@ -881,10 +881,10 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@0048a5f4 [ESP:-596]~  # FNSTSW AX
+@0048a5f4 [ESP:-620]~  # FNSTSW AX
 COPY (register,0x0,2) = (register,0x10a2,2)
 
-@0048a5f6 [ESP:-596]~  # SAHF
+@0048a5f6 [ESP:-620]~  # SAHF
 INT_AND (unique,0xa0d00,1) = (register,0x1,1), (const,0x80,1)
 INT_NOTEQUAL (register,0x207,1) = (unique,0xa0d00,1), (const,0x0,1)
 INT_AND (unique,0xa0f00,1) = (register,0x1,1), (const,0x40,1)
@@ -896,7 +896,7 @@ INT_NOTEQUAL (register,0x202,1) = (unique,0xa1300,1), (const,0x0,1)
 INT_AND (unique,0xa1500,1) = (register,0x1,1), (const,0x1,1)
 INT_NOTEQUAL (register,0x200,1) = (unique,0xa1500,1), (const,0x0,1)
 
-@0048a5f7 [ESP:-596]~  # JC 0x0048ace0
+@0048a5f7 [ESP:-620]~  # JC 0x0048ace0
 CBRANCH (ram,0x48ace0,4), (register,0x200,1)
 
 @0048a5fd [ESP:-620]~  # LEA EDX, [ESP + 0xe4]

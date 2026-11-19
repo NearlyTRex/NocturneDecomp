@@ -369,5 +369,83 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "mergeAdjacentPolygons_FUN_00462b70.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 76,
+          "line": 53,
+          "message": "The right operand of '!=' is a garbage value",
+          "path_notes": [
+            {
+              "line": 29,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 28,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 32,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 31,
+              "message": "Loop condition is false. Execution continues on line 30"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 28,
+              "message": "Loop condition is false. Execution continues on line 50"
+            },
+            {
+              "line": 52,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 53,
+              "message": "The right operand of '!=' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 66,
+          "line": 61,
+          "message": "The right operand of '==' is a garbage value",
+          "path_notes": [
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 28,
+              "message": "Loop condition is false. Execution continues on line 50"
+            },
+            {
+              "line": 52,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 58,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 61,
+              "message": "The right operand of '==' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

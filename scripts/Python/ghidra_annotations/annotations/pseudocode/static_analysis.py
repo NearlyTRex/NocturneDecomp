@@ -9,7 +9,6 @@ import os
 import re
 import json
 import subprocess
-from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.compiler_config import (
@@ -65,6 +64,23 @@ _BASE_ANALYSIS_FLAGS = [
     '-std=gnu++11',
 ]
 
+def _clang_include_flags(include_dir):
+    """-I flags the build compiles a function with: the headers and the shims.
+
+    nocturne.h pulls in shim_config.h and the shim headers through
+    __has_include, so a keep calling a shim hook does not compile without the
+    shims directory, and clang analyzes nothing in a file that fails to compile.
+    """
+    flags = ['-I', include_dir]
+    shims_dir = os.path.join(os.path.dirname(include_dir), 'shims')
+    if os.path.isdir(shims_dir):
+        flags += ['-I', shims_dir]
+    return flags
+
+
+_COMPILE_ERROR_RE = re.compile(r'^[^:\n]+:\d+:(?:\d+:)?\s*(?:fatal )?error:\s*(.*)$', re.MULTILINE)
+
+
 # Tool name constants
 TOOL_CLANG_ANALYZER = 'clang_analyzer'
 TOOL_CPPCHECK = 'cppcheck'
@@ -98,18 +114,7 @@ def check_tool_available(tool_name):
         return False
 
     try:
-        if tool_name == TOOL_CLANG_ANALYZER:
-            # clang++ --analyze needs the compiler itself
-            result = subprocess.run([binary, '--version'],
-                                    capture_output=True, timeout=5)
-        elif tool_name == TOOL_CPPCHECK:
-            result = subprocess.run([binary, '--version'],
-                                    capture_output=True, timeout=5)
-        elif tool_name == TOOL_CLANG_TIDY:
-            result = subprocess.run([binary, '--version'],
-                                    capture_output=True, timeout=5)
-        else:
-            return False
+        result = subprocess.run([binary, '--version'], capture_output=True, timeout=5)
         return result.returncode == 0
     except (FileNotFoundError, subprocess.TimeoutExpired):
         return False
@@ -324,23 +329,22 @@ def run_clang_analyzer(cpp_path, include_dir, compiler=DEFAULT_COMPILER,
         max_nodes = '25000'
 
     try:
+        # --analyzer-no-default-checks, not -analyzer-disable-all-checks: the
+        # latter silences every checker, including the ones enabled after it.
         cmd = [
-            compiler, '--analyze',
+            compiler, '--analyze', '--analyzer-no-default-checks',
             '-Xanalyzer', '-analyzer-output=text',
-            '-Xanalyzer', '-analyzer-disable-all-checks',
             '-Xanalyzer', '-analyzer-checker=core',
             '-Xanalyzer', '-analyzer-checker=deadcode',
             '-Xanalyzer', '-analyzer-checker=security',
             '-Xanalyzer', '-analyzer-max-loop', '-Xanalyzer', max_loop,
             '-Xanalyzer', '-analyzer-inline-max-stack-depth', '-Xanalyzer', inline_depth,
-            '-Xanalyzer', '-analyzer-max-nodes', '-Xanalyzer', max_nodes,
+            '-Xanalyzer', '-analyzer-config', '-Xanalyzer', 'max-nodes=' + max_nodes,
         ] + _BASE_ANALYSIS_FLAGS + [
             '-x', 'c++',  # Force C++ mode even for .c files
             '-Wno-everything',
             '-fno-diagnostics-color',
-            '-I', include_dir,
-            cpp_path,
-        ]
+        ] + _clang_include_flags(include_dir) + [cpp_path]
 
         proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
 
@@ -349,9 +353,19 @@ def run_clang_analyzer(cpp_path, include_dir, compiler=DEFAULT_COMPILER,
         if repo_dir:
             stderr = normalize_path_in_message(stderr, repo_dir)
 
-        diagnostics = parse_clang_analyzer_output(stderr, cpp_path)
-        result['diagnostics'] = diagnostics
-        result['diagnostic_count'] = len(diagnostics)
+        # clang analyzes nothing in a file that fails to compile, so a compile
+        # error is a failed run, not a finding. A driver error (`error:
+        # unknown argument`) has no file:line; it fails the run the same way.
+        compile_error = _COMPILE_ERROR_RE.search(stderr)
+        if compile_error:
+            result['error'] = 'Does not compile: %s' % compile_error.group(1).strip()
+        elif proc.returncode != 0:
+            result['error'] = 'Analyzer failed: %s' % (stderr.strip().split('\n')[0] or
+                                                       'exit %d' % proc.returncode)
+        else:
+            diagnostics = parse_clang_analyzer_output(stderr, cpp_path)
+            result['diagnostics'] = diagnostics
+            result['diagnostic_count'] = len(diagnostics)
 
     except subprocess.TimeoutExpired:
         result['error'] = 'Analysis timed out after %ds' % timeout
@@ -440,7 +454,8 @@ def run_cppcheck_batch(cpp_paths, include_dir, num_threads=8, timeout=None,
         repo_dir: Optional repo root for normalizing paths
 
     Returns:
-        Dict mapping cpp_path -> result dict (only files with diagnostics)
+        Dict mapping cpp_path -> result dict (only files with diagnostics),
+        or None if the batch did not finish (timeout or error).
     """
     if not cpp_paths:
         return {}
@@ -449,7 +464,9 @@ def run_cppcheck_batch(cpp_paths, include_dir, num_threads=8, timeout=None,
         # ~60s per file / num_threads, with a generous minimum
         timeout = max(300, (len(cpp_paths) * 60) // max(num_threads, 1))
 
+    import shutil
     import tempfile
+    filelist_path = build_dir = None
     try:
         # Write file list to temp file (avoids command line length limits)
         with tempfile.NamedTemporaryFile(mode='w', suffix='.txt',
@@ -500,8 +517,10 @@ def run_cppcheck_batch(cpp_paths, include_dir, num_threads=8, timeout=None,
             message = match.group(5).strip()
             check_id = match.group(6)
 
-            # Normalize filepath to match input paths
-            filepath = os.path.abspath(filepath)
+            # Normalize filepath to match input paths. With repo_dir the
+            # message paths were made repo-relative above, so they resolve
+            # against the repo, not the process's working directory.
+            filepath = os.path.abspath(os.path.join(repo_dir or '', filepath))
 
             if filepath not in results:
                 results[filepath] = {
@@ -531,21 +550,19 @@ def run_cppcheck_batch(cpp_paths, include_dir, num_threads=8, timeout=None,
 
     except subprocess.TimeoutExpired:
         log_info("Cppcheck batch timed out after %ds" % timeout)
-        return {}
+        return None
     except Exception as e:
         log_info("Cppcheck batch error: %s" % str(e))
-        return {}
+        return None
     finally:
         # Cleanup temp files
-        try:
-            os.unlink(filelist_path)
-        except Exception:
-            pass
-        try:
-            import shutil
+        if filelist_path:
+            try:
+                os.unlink(filelist_path)
+            except OSError:
+                pass
+        if build_dir:
             shutil.rmtree(build_dir, ignore_errors=True)
-        except Exception:
-            pass
 
 
 def run_clang_tidy(cpp_path, include_dir, timeout=180, repo_dir=None, deep=False):
@@ -593,8 +610,7 @@ def run_clang_tidy(cpp_path, include_dir, timeout=180, repo_dir=None, deep=False
         ] + _BASE_ANALYSIS_FLAGS + [
             '-x', 'c++',  # Force C++ mode even for .c files
             '-Wno-everything',
-            '-I', include_dir,
-        ]
+        ] + _clang_include_flags(include_dir)
 
         proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
 
@@ -766,112 +782,79 @@ def analyze_all_functions(src_dir, include_dir, tools=None, num_threads=8,
         cppcheck_batch_results = run_cppcheck_batch(
             all_cpp_paths, include_dir, num_threads=num_threads,
             repo_dir=repo_dir)
+        if cppcheck_batch_results is None:
+            cppcheck_batch_results = {
+                path: {'diagnostics': [], 'diagnostic_count': 0,
+                       'error': 'Cppcheck batch did not finish'}
+                for path in all_cpp_paths}
         log_info("  Cppcheck batch complete: %d files with findings" % sum(
             1 for r in cppcheck_batch_results.values()
             if r.get('diagnostic_count', 0) > 0))
 
-    with ThreadPoolExecutor(max_workers=num_threads) as executor:
-        future_to_func = {}
+    pending_json_updates = []
+
+    def record(func_info, tool_results):
+        # Merge in cppcheck batch results if available
+        if func_info['cpp_path'] in cppcheck_batch_results:
+            tool_results[TOOL_CPPCHECK] = cppcheck_batch_results[func_info['cpp_path']]
+        results[func_info['name']] = {
+            'tool_results': tool_results,
+            'cpp_path': func_info['cpp_path'],
+            'json_path': func_info['json_path'],
+            'variant': func_info['variant'],
+        }
+        # JSON update payload — tool keys are suffixed with mode
+        analysis_data = {
+            'analyzed_file': os.path.basename(func_info['cpp_path']),
+            'file_variant': func_info['variant'],
+        }
+        unfinished = []
+        for tool in available_tools:
+            tool_result = tool_results.get(tool, {})
+            if tool_result.get('diagnostic_count', 0) > 0:
+                analysis_data[tool + '_' + mode] = tool_result
+            elif _did_not_finish(tool_result):
+                unfinished.append(tool + '_' + mode)
+        if unfinished:
+            analysis_data['unfinished'] = unfinished
+        pending_json_updates.append((func_info['json_path'], analysis_data, mode))
+
+    if not per_file_tools:
+        # Deep cppcheck alone: the batch already has every result
         for func_info in function_files:
-            if per_file_tools:
-                future = executor.submit(
-                    analyze_single_function,
-                    func_info['cpp_path'], include_dir, per_file_tools,
-                    repo_dir, deep=deep
-                )
-                future_to_func[future] = func_info
-            else:
-                # No per-file tools to run, just use batch results
-                future_to_func[None] = None  # sentinel, won't be used
-
-        pending_json_updates = []
-        # If no per-file tools, skip the executor loop
-        items = as_completed(future_to_func) if per_file_tools else []
-        if not per_file_tools:
-            # Process all functions directly with only batch results
-            for func_info in function_files:
-                tool_results = {}
-                if func_info['cpp_path'] in cppcheck_batch_results:
-                    tool_results[TOOL_CPPCHECK] = cppcheck_batch_results[func_info['cpp_path']]
-
-                results[func_info['name']] = {
-                    'tool_results': tool_results,
-                    'cpp_path': func_info['cpp_path'],
-                    'json_path': func_info['json_path'],
-                    'variant': func_info['variant'],
-                }
-
-                analysis_data = {
-                    'analyzed_file': os.path.basename(func_info['cpp_path']),
-                    'file_variant': func_info['variant'],
-                }
-                for tool in available_tools:
-                    tool_result = tool_results.get(tool, {
-                        'diagnostics': [], 'diagnostic_count': 0, 'error': None,
-                    })
-                    if tool_result.get('diagnostic_count', 0) > 0:
-                        analysis_data[tool + '_' + mode] = tool_result
-
-                pending_json_updates.append((func_info['json_path'], analysis_data, mode))
-                completed += 1
-        else:
-            for future in items:
-                func_info = future_to_func[future]
-
+            record(func_info, {})
+    else:
+        with ThreadPoolExecutor(max_workers=num_threads) as executor:
+            future_to_func = {
+                executor.submit(analyze_single_function, func_info['cpp_path'], include_dir,
+                                per_file_tools, repo_dir, deep=deep): func_info
+                for func_info in function_files
+            }
+            for future in as_completed(future_to_func):
                 try:
                     tool_results = future.result()
                 except Exception as e:
-                    tool_results = {}
-                    for tool in per_file_tools:
-                        tool_results[tool] = {
-                            'diagnostics': [],
-                            'diagnostic_count': 0,
-                            'error': 'Exception: %s' % str(e),
-                        }
-
-                # Merge in cppcheck batch results if available
-                if func_info['cpp_path'] in cppcheck_batch_results:
-                    tool_results[TOOL_CPPCHECK] = cppcheck_batch_results[func_info['cpp_path']]
-
-                results[func_info['name']] = {
-                    'tool_results': tool_results,
-                    'cpp_path': func_info['cpp_path'],
-                    'json_path': func_info['json_path'],
-                    'variant': func_info['variant'],
-                }
-
-                # Build JSON update payload — tool keys are suffixed with mode
-                analysis_data = {
-                    'analyzed_file': os.path.basename(func_info['cpp_path']),
-                    'file_variant': func_info['variant'],
-                }
-                for tool in available_tools:
-                    tool_result = tool_results.get(tool, {
-                        'diagnostics': [], 'diagnostic_count': 0, 'error': None,
-                    })
-                    if tool_result.get('diagnostic_count', 0) > 0:
-                        analysis_data[tool + '_' + mode] = tool_result
-
-                pending_json_updates.append((func_info['json_path'], analysis_data, mode))
-
+                    tool_results = {tool: {'diagnostics': [], 'diagnostic_count': 0,
+                                           'error': 'Exception: %s' % str(e)}
+                                    for tool in per_file_tools}
+                record(future_to_func[future], tool_results)
                 completed += 1
                 if completed % 100 == 0 or completed == total:
                     log_info("  Analyzed %d/%d functions..." % (completed, total))
 
     # Batch update JSON files (merge with existing findings from other mode)
-    if pending_json_updates:
-        log_info("  Updating %d JSON files with static analysis results..." % len(pending_json_updates))
-        with ThreadPoolExecutor(max_workers=num_threads) as json_executor:
-            json_futures = [
-                json_executor.submit(update_function_json_with_analysis,
-                                     json_path, data, mode)
-                for json_path, data, mode in pending_json_updates
-            ]
-            for future in as_completed(json_futures):
-                try:
-                    future.result()
-                except Exception:
-                    pass
+    log_info("  Updating %d JSON files with static analysis results..." % len(pending_json_updates))
+    with ThreadPoolExecutor(max_workers=num_threads) as json_executor:
+        json_futures = [
+            json_executor.submit(update_function_json_with_analysis,
+                                 json_path, data, mode)
+            for json_path, data, mode in pending_json_updates
+        ]
+        for future in as_completed(json_futures):
+            try:
+                future.result()
+            except Exception:
+                pass
 
     return results
 
@@ -879,6 +862,15 @@ def analyze_all_functions(src_dir, include_dir, tools=None, num_threads=8,
 # =============================================================================
 # JSON Update
 # =============================================================================
+
+def _did_not_finish(tool_result):
+    """True if a tool's run says nothing about the file (timeout, crash, failed batch).
+
+    A file that does not compile is a finished run: it has no findings to keep.
+    """
+    error = tool_result.get('error')
+    return bool(error) and not error.startswith('Does not compile')
+
 
 def update_function_json_with_analysis(json_path, analysis_data, mode):
     """Update a function's JSON file with static analysis results.
@@ -907,15 +899,17 @@ def update_function_json_with_analysis(json_path, analysis_data, mode):
         existing['file_variant'] = analysis_data.get('file_variant',
                                                      existing.get('file_variant', ''))
 
-        # Remove old keys for this mode (in case a tool no longer has findings)
+        # Remove old keys for this mode (in case a tool no longer has findings),
+        # except a tool's that did not finish this time: its last findings stand.
         mode_suffix = '_' + mode
+        unfinished = analysis_data.get('unfinished', ())
         for key in list(existing.keys()):
-            if key.endswith(mode_suffix):
+            if key.endswith(mode_suffix) and key not in unfinished:
                 del existing[key]
 
         # Add new findings for this mode
         for key, value in analysis_data.items():
-            if key not in ('analyzed_file', 'file_variant'):
+            if key not in ('analyzed_file', 'file_variant', 'unfinished'):
                 existing[key] = value
 
         # Check if there are any tool findings at all

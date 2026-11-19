@@ -9,8 +9,6 @@
 void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x25c
         sub EBP,0x7e
         push 0x648d37
         mov EDX,dword ptr [g_CEditorToolsPtr]

@@ -439,7 +439,7 @@ LAB_004b8594:
   core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_00411a40();
   core_game_cpp_freeCursorBitmaps_FUN_004c49f0();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0(this_ptr);
-  (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
+  (*g_CKeysPtr->vtable->clearKeypresses)(g_CKeysPtr);
   core_set_cpp_CDemonSet_clearLights_FUN_00537520(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_00484f10(&g_CPickList);

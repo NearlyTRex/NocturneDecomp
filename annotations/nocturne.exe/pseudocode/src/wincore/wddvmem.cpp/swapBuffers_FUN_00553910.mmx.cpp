@@ -9,8 +9,6 @@
 void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x7c
         mov EDX,dword ptr [g_UseExternalRenderer]
         test EDX,EDX
         jnz LAB_005539d2
@@ -195,6 +193,5 @@ __asm {
         xor ESI,ESI
         mov dword ptr [g_FlipPending],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0
-        mov ESP,EBP
 }
 }

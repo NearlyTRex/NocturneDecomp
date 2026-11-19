@@ -8,8 +8,8 @@
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 typedef struct CDeformableModel_determinePartsFromS3D_Ctx {
-    CDeformableModel *this_ptr;
-    CLodMeshPrecomputeEntry *entry;
+    CDeformableModel **this_ptr;
+    CLodMeshPrecomputeEntry **entry;
     ushort uVar1;
     ushort uVar5;
     char cVar6;
@@ -270,7 +270,7 @@ typedef struct CDeformableModel_determinePartsFromS3D_Ctx {
     double dVar7;
 } CDeformableModel_determinePartsFromS3D_Ctx;
 
-// Chunk return codes for cross-boundary gotos
+// Chunk return codes
 // 0 = normal continuation
 #define GOTO_LAB_0058f8e7 1
 #define GOTO_LAB_00590a70 2
@@ -278,7 +278,7 @@ typedef struct CDeformableModel_determinePartsFromS3D_Ctx {
 
 // Chunk: else_0_check_local_388_0 (lines 123-148 of original)
 static int CDeformableModel_determinePartsFromS3D_else_0_check_local_388_0(CDeformableModel_determinePartsFromS3D_Ctx *ctx) {
-    CDeformableModel *&this_ptr = ctx->this_ptr;
+    CDeformableModel *&this_ptr = *ctx->this_ptr;
     int &iVar18 = ctx->iVar18;
     int &iVar30 = ctx->iVar30;
     char *&pcVar38 = ctx->pcVar38;
@@ -338,7 +338,7 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_0_1(CDeformableMo
             iVar18 = _fscanf(local_ec,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",local_13c,&local_278,
                                 &local_194,&local_200,local_274,local_190,local_1fc,local_270,
                                 local_18c);
- return GOTO_LAB_00590a70;
+            if (iVar18 != 10) return GOTO_LAB_00590a70;
             pSVar21->edge_count = 3;
             iVar18 = 0;
             pSVar21->texture_index = local_13c[0];
@@ -500,7 +500,7 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_0_3(CDeformableMo
 
 // Chunk: else_0_check_0_4 (lines 415-456 of original)
 static int CDeformableModel_determinePartsFromS3D_else_0_check_0_4(CDeformableModel_determinePartsFromS3D_Ctx *ctx) {
-    CDeformableModel *&this_ptr = ctx->this_ptr;
+    CDeformableModel *&this_ptr = *ctx->this_ptr;
     float &fVar8 = ctx->fVar8;
     SVert *&pSVar9 = ctx->pSVar9;
     float &fVar12 = ctx->fVar12;
@@ -566,7 +566,7 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_0_4(CDeformableMo
 
 // Chunk: else_0_check_this_ptr_5_check_0_0 (lines 487-562 of original)
 static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_0(CDeformableModel_determinePartsFromS3D_Ctx *ctx) {
-    CDeformableModel *&this_ptr = ctx->this_ptr;
+    CDeformableModel *&this_ptr = *ctx->this_ptr;
     ushort &uVar7 = ctx->uVar7;
     float &fVar8 = ctx->fVar8;
     SVert *&pSVar9 = ctx->pSVar9;
@@ -681,7 +681,7 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_
 
 // Chunk: else_0_check_this_ptr_5_check_0_1 (lines 615-641 of original)
 static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_1(CDeformableModel_determinePartsFromS3D_Ctx *ctx) {
-    CDeformableModel *&this_ptr = ctx->this_ptr;
+    CDeformableModel *&this_ptr = *ctx->this_ptr;
     int &iVar18 = ctx->iVar18;
     SS3DFaceMatch *&pSVar21 = ctx->pSVar21;
     int &iVar24 = ctx->iVar24;
@@ -723,8 +723,8 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_
 
 // Chunk: else_0_check_this_ptr_5_check_local_154_2 (lines 692-860 of original)
 static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_local_154_2(CDeformableModel_determinePartsFromS3D_Ctx *ctx) {
-    CDeformableModel *&this_ptr = ctx->this_ptr;
-    CLodMeshPrecomputeEntry *&entry = ctx->entry;
+    CDeformableModel *&this_ptr = *ctx->this_ptr;
+    CLodMeshPrecomputeEntry *&entry = *ctx->entry;
     ushort &uVar1 = ctx->uVar1;
     ushort &uVar5 = ctx->uVar5;
     char &cVar6 = ctx->cVar6;
@@ -942,7 +942,7 @@ LAB_00591f48:
 
 // Chunk: else_0_check_this_ptr_5_check_0_3 (lines 934-1095 of original)
 static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_3(CDeformableModel_determinePartsFromS3D_Ctx *ctx) {
-    CDeformableModel *&this_ptr = ctx->this_ptr;
+    CDeformableModel *&this_ptr = *ctx->this_ptr;
     SVert *&pSVar9 = ctx->pSVar9;
     int &iVar18 = ctx->iVar18;
     CVector3f *&pCVar19 = ctx->pCVar19;
@@ -1156,8 +1156,8 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
 {
   CDeformableModel_determinePartsFromS3D_Ctx _ctx_storage = {};
   CDeformableModel_determinePartsFromS3D_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
-  ctx->entry = entry;
+  ctx->this_ptr = &this_ptr;
+  ctx->entry = &entry;
 
     ushort &uVar1 = ctx->uVar1;
     ushort &uVar5 = ctx->uVar5;
@@ -1417,8 +1417,6 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
     _FILE *&p_Var8 = ctx->p_Var8;
     CEditorTools *&this_ptr_00 = ctx->this_ptr_00;
     double &dVar7 = ctx->dVar7;
-  // param this_ptr aliased into ctx above
-  // param entry aliased into ctx above
 
   bVar39 = 0;
   if (this_ptr->num_lods != 1) {
@@ -1744,9 +1742,9 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
             } while (iVar30 < this_ptr->num_parts);
           }
           local_2c = 0;
-        if (0 < this_ptr->tri_count[0]) {
-          CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_0(ctx);
-        }
+          if (0 < this_ptr->tri_count[0]) {
+            CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_0(ctx);
+          }
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd1;
@@ -1800,10 +1798,10 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           iVar30 = 0;
           local_154 = 0;
           pSVar21 = local_184;
-        if (0 < (int)local_16c) {
-          int _rc = CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_1(ctx);
-          if (_rc == GOTO_LAB_0058f8da) goto LAB_0058f8da;
-        }
+          if (0 < (int)local_16c) {
+            int _rc = CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_1(ctx);
+            if (_rc == GOTO_LAB_0058f8da) goto LAB_0058f8da;
+          }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xe86;
           shape_memdbg_cpp_free_FUN_005fe659(local_170);
@@ -1855,9 +1853,9 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
             }
           }
           iVar30 = 2;
-        if (local_154 != this_ptr->tri_count[0]) {
-          CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_local_154_2(ctx);
-        }
+          if (local_154 != this_ptr->tri_count[0]) {
+            CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_local_154_2(ctx);
+          }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xf0c;
           shape_memdbg_cpp_free_FUN_005fe659(local_f0);
@@ -1932,10 +1930,10 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           }
           local_3c = 0;
           this_ptr->cap_tri_count[0] = 0;
-        if (0 < this_ptr->num_parts) {
-          int _rc = CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_3(ctx);
-          if (_rc == GOTO_LAB_0058f8e7) goto LAB_0058f8e7;
-        }
+          if (0 < this_ptr->num_parts) {
+            int _rc = CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_0_3(ctx);
+            if (_rc == GOTO_LAB_0058f8e7) goto LAB_0058f8e7;
+          }
           if (local_158 != this_ptr->cap_tri_count[0]) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
             g_CurrentLineNumber = 4030;

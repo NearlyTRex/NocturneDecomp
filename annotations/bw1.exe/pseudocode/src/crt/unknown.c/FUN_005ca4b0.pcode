@@ -108,15 +108,15 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @005ca4dc [ESP:-32]~  # JZ 0x005ca4df
 CBRANCH (ram,0x5ca4df,4), (register,0x206,1)
 
-@005ca4de [ESP:+4](+4)~  # RET
+@005ca4de [ESP:-28](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005ca4df [ESP:+0]~  # MOV EAX, 0xffffffff
+@005ca4df [ESP:-32]~  # MOV EAX, 0xffffffff
 COPY (register,0x0,4) /* EAX */ = (const,0xffffffff,4)
 
-@005ca4e4 [ESP:+4](+4)~  # RET
+@005ca4e4 [ESP:-28](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

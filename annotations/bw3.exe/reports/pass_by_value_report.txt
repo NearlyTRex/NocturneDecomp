@@ -2,7 +2,7 @@
 PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 ====================================================================================================
 
-7 functions with pass-by-value parameters (714 MOVSD.REP scanned, 32 are pass-by-value)
+5 functions with pass-by-value parameters (714 MOVSD.REP scanned, 29 are pass-by-value)
 
 ====================================================================================================
 
@@ -38,26 +38,11 @@ sound_mp3.cpp_calculateMainDataSize_FUN_00502190
 
 --------------------------------------------------------------------------------
 
-crt_stdio.c_fwrite_FUN_005a48e0
-  Params: arg1=?struct_28 (0x1c)
-  Call sites (2):
-    cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0050fe90 @ 0x0050feed   1x ?struct_28 (0x1c)
-    cockpit_pkbitmap.cpp_writePBGHeader_FUN_00510230 @ 0x00510267   1x ?struct_8 (0x8)
-
---------------------------------------------------------------------------------
-
 sound_sndmain.cpp_CSfxSlot_mix_FUN_00554920
   Params: arg1=?struct_44 (0x2c)
   Call sites (2):
     sound_sndmain.cpp_nextMixingBuffer_FUN_00552bd0 @ 0x00552d20   1x ?struct_44 (0x2c)
     sound_sndmain.cpp_pollAndMixSfx_FUN_00559d90 @ 0x00559f82   1x ?struct_44 (0x2c)
-
---------------------------------------------------------------------------------
-
-core_actor.cpp_archiveString_FUN_0040b680
-  Params: arg1=?struct_300 (0x12c)
-  Call sites (1):
-    core_actor.cpp_archiveLocalizedString_FUN_0040b7a0 @ 0x0040b7f5   1x ?struct_300 (0x12c)
 
 --------------------------------------------------------------------------------
 
@@ -75,7 +60,6 @@ CALLER FRAME SIZE FIXES
 These callers need their local frame size (SUB ESP) increased to cover
 the dynamic stack allocations for pass-by-value arguments.
 
-  core_actor.cpp_archiveLocalizedString_FUN_0040b7a0 current: 0x12c  required: 0x258  (+0x12c for by-value args)
   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005496c0 current: 0x64  required: 0xc4  (+0x60 for by-value args)
   engine_3d.c_drawLine2DFromIndices_FUN_00407ab0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLine3DFromIndices_FUN_00407db0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
@@ -87,6 +71,4 @@ the dynamic stack allocations for pass-by-value arguments.
   core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60 current: 0xa8  required: 0xfc  (+0x54 for by-value args)
   sound_sndmain.cpp_nextMixingBuffer_FUN_00552bd0    current: 0x30  required: 0x5c  (+0x2c for by-value args)
   sound_sndmain.cpp_pollAndMixSfx_FUN_00559d90       current: 0x5c  required: 0x88  (+0x2c for by-value args)
-  cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0050fe90 current: 0x1c  required: 0x38  (+0x1c for by-value args)
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 current: 0x60a0  required: 0x60bc  (+0x1c for by-value args)
-  cockpit_pkbitmap.cpp_writePBGHeader_FUN_00510230   current: 0x8  required: 0x10  (+0x8 for by-value args)

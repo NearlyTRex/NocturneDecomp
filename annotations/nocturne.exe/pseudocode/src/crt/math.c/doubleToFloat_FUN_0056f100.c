@@ -15,7 +15,7 @@ float __watcallRegister doubleToFloat(double val)
   uint uVar4;
   
   uVar3 = (uint)((ulonglong)val >> 0x20);
-  uVar4 = SUB84(val,0);
+  uVar4 = SUB84(__BITCAST_UINT64(val),0);
   if (((ulonglong)val & 0x7ff0000000000000) != 0) {
     uVar1 = (uint)(CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)CARRY4(uVar4,uVar4))) << 0x1f;
     uVar2 = uVar4 * 2 + 0x20000000;

@@ -535,12 +535,12 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @0044e585 [ESP:-16]  # JZ 0x0044e629
 CBRANCH (ram,0x44e629,4), (register,0x206,1)
 
-@0044e58b [ESP:-16]  # MOV EBP, dword ptr [EBX + 0x1cc4]
+@0044e58b [ESP:???]!?  # MOV EBP, dword ptr [EBX + 0x1cc4]
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x1cc4,4)
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
 COPY (register,0x14,4) /* EBP */ = (unique,0x17200,4)
 
-@0044e591 [ESP:-16]  # XOR EAX, EAX
+@0044e591 [ESP:???]!?  # XOR EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -551,7 +551,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0044e593 [ESP:-16]  # TEST EBP, EBP
+@0044e593 [ESP:???]!?  # TEST EBP, EBP
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0xae400,4) = (register,0x14,4) /* EBP */, (register,0x14,4) /* EBP */
@@ -562,7 +562,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0044e595 [ESP:-16]  # JLE 0x0044e5d0
+@0044e595 [ESP:???]!?  # JLE 0x0044e5d0
 INT_NOTEQUAL (unique,0x18a00,1) = (register,0x20b,1), (register,0x207,1)
 BOOL_OR (unique,0x18c00,1) = (register,0x206,1), (unique,0x18a00,1)
 CBRANCH (ram,0x44e5d0,4), (unique,0x18c00,1)
@@ -894,4 +894,5 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 127 instructions, 622 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

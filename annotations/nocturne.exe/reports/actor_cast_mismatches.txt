@@ -13,6 +13,1001 @@ accesses and vtable calls will be wrong.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total resolution calls found:  0
-  Type mismatches found:         0
-  Unresolved (indirect variable): 0
+  Total resolution calls found:  271
+  Type mismatches found:         125
+  Unresolved (indirect variable): 14
+
+  Calls by function:
+    castToClassHash                208 calls
+    createActorByName              7 calls
+    getActor                       34 calls
+    resolveActorByName             22 calls
+
+  Mismatches by expected class:
+    CHero                     15 mismatches
+    CWeapon                   15 mismatches
+    CCharacter                11 mismatches
+    CEnemy                    9 mismatches
+    CGlass                    5 mismatches
+    CCrate                    5 mismatches
+    CLightActor               5 mismatches
+    CDynamite                 5 mismatches
+    CMelee                    5 mismatches
+    CMobster                  4 mismatches
+    CStranger                 3 mismatches
+    CKeyActor                 3 mismatches
+    CBoxActor                 3 mismatches
+    CTommyGun                 3 mismatches
+    CHealthItem               3 mismatches
+    CBattery                  3 mismatches
+    CLightGun                 3 mismatches
+    CTrap                     3 mismatches
+    CFilmReel                 2 mismatches
+    CAmmo                     2 mismatches
+    CTrigger                  2 mismatches
+    CBatman                   1 mismatches
+    CDraculaBride             1 mismatches
+    CFlame                    1 mismatches
+    CFrankenstienMachine      1 mismatches
+    CWayPoint                 1 mismatches
+    CVehicle                  1 mismatches
+    CGun                      1 mismatches
+    CGasMask                  1 mismatches
+    CGabriella                1 mismatches
+    CHeroPlaceholder          1 mismatches
+    CElephantGun              1 mismatches
+    CBaronWeapon              1 mismatches
+    CWaterActor               1 mismatches
+    CSpike                    1 mismatches
+    CActorDestination         1 mismatches
+    CTVBat                    1 mismatches
+
+  Mismatches by actual cast type:
+    CDemonActor               105 times (should be: CActorDestination, CAmmo, CBaronWeapon, CBatman, CBattery, CBoxActor, CCharacter, CCrate, CDraculaBride, CDynamite, CElephantGun, CEnemy, CFilmReel, CFlame, CFrankenstienMachine, CGabriella, CGlass, CGun, CHealthItem, CHero, CHeroPlaceholder, CKeyActor, CLightActor, CLightGun, CMelee, CMobster, CStranger, CTommyGun, CTrap, CTrigger, CVehicle, CWaterActor, CWayPoint, CWeapon)
+    CCharacter                13 times (should be: CDynamite, CEnemy, CTVBat, CWeapon)
+    CDemonSet                 2 times (should be: CCharacter)
+    CLightGun                 1 times (should be: CGasMask)
+    CEnemy                    1 times (should be: CHero)
+    CDeformableModelInstance  1 times (should be: CSpike)
+    CFlameCan                 1 times (should be: CGlass)
+    CInventory                1 times (should be: CWeapon)
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+--------------------------------------------------------------------------------
+  core/batman.cpp/CBatman_process_FUN_00413800.cpp
+--------------------------------------------------------------------------------
+
+  Line 121: castToClassHash()
+    Expected class: CBatman              (CBatman -> CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/bugs.cpp/CBugs_setSwarmTarget_FUN_00423790.cpp
+--------------------------------------------------------------------------------
+
+  Line 29: castToClassHash()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/charactr.cpp/CCharacter_findSomethingToLookAt_FUN_00429730.cpp
+--------------------------------------------------------------------------------
+
+  Line 98: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/dracbrid.cpp/CDraculaBride_process_FUN_00458a90.cpp
+--------------------------------------------------------------------------------
+
+  Line 234: castToClassHash()
+    Expected class: CDraculaBride        (CDraculaBride -> CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/elephant.cpp/CElephantGun_fire_FUN_00477890.cpp
+--------------------------------------------------------------------------------
+
+  Line 118: castToClassHash()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonSet            (CDemonSet)
+
+  Line 128: castToClassHash()
+    Expected class: CGlass               (CGlass -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 134: castToClassHash()
+    Expected class: CCrate               (CCrate -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 136: castToClassHash()
+    Expected class: CCrate               (CCrate -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/event.cpp/CEventList_evaluateAtom_FUN_0047e0d0.cpp
+--------------------------------------------------------------------------------
+
+  Line 403: resolveActorByName()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 546: resolveActorByName()
+    Expected class: CGlass               (CGlass -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1133: resolveActorByName()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1172: resolveActorByName()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1266: resolveActorByName()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/event.cpp/CEventList_executeCommand_FUN_0047ac50.cpp
+--------------------------------------------------------------------------------
+
+  Line 1524: resolveActorByName()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1820: resolveActorByName()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/filmreel.cpp/CFilmProjector_process_FUN_00482010.cpp
+--------------------------------------------------------------------------------
+
+  Line 32: castToClassHash()
+    Expected class: CFilmReel            (CFilmReel -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/flame.cpp/CFlame_renderBackground_FUN_0048df20.cpp
+--------------------------------------------------------------------------------
+
+  Line 43: castToClassHash()
+    Expected class: CFlame               (CFlame -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/frankgen.cpp/findLeader_FUN_00495240.cpp
+--------------------------------------------------------------------------------
+
+  Line 25: castToClassHash()
+    Expected class: CFrankenstienMachine (CFrankenstienMachine -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/gabriela.cpp/CGabriella_getFlashlightMinAngle_FUN_00497810.cpp
+--------------------------------------------------------------------------------
+
+  Line 14: castToClassHash()
+    Expected class: CLightActor          (CLightActor -> CBoxActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/gabriela.cpp/CGabriella_processMotionEvents_FUN_00497410.cpp
+--------------------------------------------------------------------------------
+
+  Line 86: castToClassHash()
+    Expected class: CLightActor          (CLightActor -> CBoxActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 110: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/gabriela.cpp/CGabriella_process_FUN_00495a20.cpp
+--------------------------------------------------------------------------------
+
+  Line 460: castToClassHash()
+    Expected class: CLightActor          (CLightActor -> CBoxActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 642: castToClassHash()
+    Expected class: CDynamite            (CDynamite -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/gabriela.cpp/CGabriella_renderOpaque_FUN_00498cc0.cpp
+--------------------------------------------------------------------------------
+
+  Line 30: castToClassHash()
+    Expected class: CDynamite            (CDynamite -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/gabriela.cpp/CGabriella_scoreTargetVisibility_FUN_00498de0.cpp
+--------------------------------------------------------------------------------
+
+  Line 38: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/game.cpp/CGame_loadGame_FUN_004a4170.cpp
+--------------------------------------------------------------------------------
+
+  Line 265: castToClassHash()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/game.cpp/CGame_processCheatCodes_FUN_004a0550.cpp
+--------------------------------------------------------------------------------
+
+  Line 1848: castToClassHash()
+    Expected class: CStranger            (CStranger -> CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1993: castToClassHash()
+    Expected class: CStranger            (CStranger -> CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 717: createActorByName()
+    Expected class: CKeyActor            (CKeyActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/ghoul.cpp/CGhoul_findDarkWayPoint_FUN_004a9040.cpp
+--------------------------------------------------------------------------------
+
+  Line 33: castToClassHash()
+    Expected class: CWayPoint            (CWayPoint -> CTrigger -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/hero.cpp/CHero_closestEnemy_FUN_004b5d00.cpp
+--------------------------------------------------------------------------------
+
+  Line 32: castToClassHash()
+    Expected class: CVehicle             (CVehicle -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 35: castToClassHash()
+    Expected class: CMobster             (CMobster -> CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/hero.cpp/CHero_createDefaultWeapon_FUN_004b4dd0.cpp
+--------------------------------------------------------------------------------
+
+  Line 21: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 20: createActorByName()
+    Expected class: CGun                 (CGun -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/hero.cpp/CHero_stopPushingBox_FUN_004b56f0.cpp
+--------------------------------------------------------------------------------
+
+  Line 18: castToClassHash()
+    Expected class: CBoxActor            (CBoxActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/hero.cpp/CHero_tryPushNearbyBox_FUN_004b54c0.cpp
+--------------------------------------------------------------------------------
+
+  Line 77: castToClassHash()
+    Expected class: CBoxActor            (CBoxActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/hostage.cpp/CHostage_process_FUN_004b6d80.cpp
+--------------------------------------------------------------------------------
+
+  Line 625: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 670: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+  Line 683: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/icepick.cpp/CIcePick_findAndPickupGun_FUN_004ba8a0.cpp
+--------------------------------------------------------------------------------
+
+  Line 37: castToClassHash()
+    Expected class: CTommyGun            (CTommyGun -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/icepick.cpp/CIcePick_process_FUN_004b9fe0.cpp
+--------------------------------------------------------------------------------
+
+  Line 163: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+  Line 292: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_addItem_FUN_004bf360.cpp
+--------------------------------------------------------------------------------
+
+  Line 949: castToClassHash()
+    Expected class: CAmmo                (CAmmo -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 973: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 991: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1060: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1090: castToClassHash()
+    Expected class: CAmmo                (CAmmo -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1032: createActorByName()
+    Expected class: CDynamite            (CDynamite -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_autoUseHealthItem_FUN_004c3350.cpp
+--------------------------------------------------------------------------------
+
+  Line 17: castToClassHash()
+    Expected class: CHealthItem          (CHealthItem -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 24: castToClassHash()
+    Expected class: CHealthItem          (CHealthItem -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_calculateTotalBatteryCharge_FUN_004c1b20.cpp
+--------------------------------------------------------------------------------
+
+  Line 22: castToClassHash()
+    Expected class: CBattery             (CBattery -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_checkHasMatchingKey_FUN_004c31b0.cpp
+--------------------------------------------------------------------------------
+
+  Line 25: castToClassHash()
+    Expected class: CKeyActor            (CKeyActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_removeMatchingKeys_FUN_004c3280.cpp
+--------------------------------------------------------------------------------
+
+  Line 20: castToClassHash()
+    Expected class: CKeyActor            (CKeyActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_renderAllItems_FUN_004c2470.cpp
+--------------------------------------------------------------------------------
+
+  Line 100: castToClassHash()
+    Expected class: CLightGun            (CLightGun -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 261: castToClassHash()
+    Expected class: CHealthItem          (CHealthItem -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 272: castToClassHash()
+    Expected class: CFilmReel            (CFilmReel -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_select_FUN_004c1580.cpp
+--------------------------------------------------------------------------------
+
+  Line 36: castToClassHash()
+    Expected class: CGasMask             (CGasMask -> CDemonActor)
+    Actual cast:    CLightGun            (CLightGun -> CWeapon -> CDemonActor)
+
+  Line 45: castToClassHash()
+    Expected class: CBoxActor            (CBoxActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_updateInventory_FUN_004c1850.cpp
+--------------------------------------------------------------------------------
+
+  Line 24: castToClassHash()
+    Expected class: CLightGun            (CLightGun -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 37: castToClassHash()
+    Expected class: CBattery             (CBattery -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 59: castToClassHash()
+    Expected class: CBattery             (CBattery -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 79: castToClassHash()
+    Expected class: CLightGun            (CLightGun -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/lightgun.cpp/CLightGun_fire_FUN_004c71a0.cpp
+--------------------------------------------------------------------------------
+
+  Line 103: castToClassHash()
+    Expected class: CGlass               (CGlass -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mimic.cpp/CMimic_renderMirrored_FUN_004d5860.cpp
+--------------------------------------------------------------------------------
+
+  Line 51: castToClassHash()
+    Expected class: CStranger            (CStranger -> CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mimic.cpp/CMimic_setupCloth_FUN_004d5770.cpp
+--------------------------------------------------------------------------------
+
+  Line 27: castToClassHash()
+    Expected class: CGabriella           (CGabriella -> CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mimic.cpp/CMimic_setup_FUN_004d4650.cpp
+--------------------------------------------------------------------------------
+
+  Line 86: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mission.cpp/CDemonMission_countDamageableEnemies_FUN_004d9df0.cpp
+--------------------------------------------------------------------------------
+
+  Line 24: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mission.cpp/CDemonMission_ensureHeroPlaceholder_FUN_004d9c20.cpp
+--------------------------------------------------------------------------------
+
+  Line 72: castToClassHash()
+    Expected class: CHeroPlaceholder     (CHeroPlaceholder -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mobster.cpp/CMobster_aimTommyGun_FUN_004db6f0.cpp
+--------------------------------------------------------------------------------
+
+  Line 49: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 71: castToClassHash()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mobster.cpp/CMobster_getCarryObjToBodyXForm_FUN_004dba70.cpp
+--------------------------------------------------------------------------------
+
+  Line 33: castToClassHash()
+    Expected class: CElephantGun         (CElephantGun -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mobster.cpp/CMobster_playTaunt_FUN_004dc940.cpp
+--------------------------------------------------------------------------------
+
+  Line 56: castToClassHash()
+    Expected class: CMobster             (CMobster -> CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mobster.cpp/CMobster_processDamage_FUN_004dc690.cpp
+--------------------------------------------------------------------------------
+
+  Line 50: castToClassHash()
+    Expected class: CTommyGun            (CTommyGun -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/mobster.cpp/CMobster_process_FUN_004da790.cpp
+--------------------------------------------------------------------------------
+
+  Line 405: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+  Line 421: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+  Line 576: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 582: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/pendulum.cpp/CPendulum_process_FUN_004f3a20.cpp
+--------------------------------------------------------------------------------
+
+  Line 57: castToClassHash()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 66: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/scat.cpp/CScat_advanceMotionWithGrabDamage_FUN_004fca50.cpp
+--------------------------------------------------------------------------------
+
+  Line 21: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/scat.cpp/CScat_createDefaultWeapon_FUN_004fbe80.cpp
+--------------------------------------------------------------------------------
+
+  Line 21: createActorByName()
+    Expected class: CBaronWeapon         (CBaronWeapon -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/scat.cpp/CScat_scoreAimTarget_FUN_004fda20.cpp
+--------------------------------------------------------------------------------
+
+  Line 38: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/script.cpp/CScript_startDialogLine_FUN_005049b0.cpp
+--------------------------------------------------------------------------------
+
+  Line 54: getActor()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/script.cpp/CScript_step_FUN_004ff2c0.cpp
+--------------------------------------------------------------------------------
+
+  Line 389: getActor()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1096: getActor()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1326: getActor()
+    Expected class: CTrigger             (CTrigger -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1450: getActor()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+
+  Line 1888: getActor()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 1983: getActor()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 2033: getActor()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 2070: getActor()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 2257: getActor()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 2423: getActor()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 2680: getActor()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 2791: getActor()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/set.cpp/CDemonSet_buildActorTypeLists_FUN_0050e6b0.cpp
+--------------------------------------------------------------------------------
+
+  Line 48: castToClassHash()
+    Expected class: CTrigger             (CTrigger -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/set.cpp/CDemonSet_renderScene_FUN_00509a80.cpp
+--------------------------------------------------------------------------------
+
+  Line 218: castToClassHash()
+    Expected class: CGlass               (CGlass -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/setcolid.cpp/CDemonSet_isPointInWater_FUN_00511b50.cpp
+--------------------------------------------------------------------------------
+
+  Line 23: castToClassHash()
+    Expected class: CWaterActor          (CWaterActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/setcolid.cpp/CDemonSet_processCollisionTypes_FUN_0050ec80.cpp
+--------------------------------------------------------------------------------
+
+  Line 126: castToClassHash()
+    Expected class: CSpike               (CSpike -> CDemonActor)
+    Actual cast:    CDeformableModelInstance (CDeformableModelInstance -> CMotionController)
+
+--------------------------------------------------------------------------------
+  core/shotgun.cpp/CShotgun_fire_FUN_00515ea0.cpp
+--------------------------------------------------------------------------------
+
+  Line 119: castToClassHash()
+    Expected class: CCharacter           (CCharacter -> CDemonActor)
+    Actual cast:    CDemonSet            (CDemonSet)
+
+  Line 130: castToClassHash()
+    Expected class: CGlass               (CGlass -> CDemonActor)
+    Actual cast:    CFlameCan            (CFlameCan -> CDemonActor)
+
+  Line 136: castToClassHash()
+    Expected class: CCrate               (CCrate -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 138: castToClassHash()
+    Expected class: CCrate               (CCrate -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/stone.cpp/CTempleStone_canPickup_FUN_00534d60.cpp
+--------------------------------------------------------------------------------
+
+  Line 15: castToClassHash()
+    Expected class: CActorDestination    (CActorDestination -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/stranger.cpp/CStranger_computeWeaponAttachXForm_FUN_0053a760.cpp
+--------------------------------------------------------------------------------
+
+  Line 428: castToClassHash()
+    Expected class: CLightActor          (CLightActor -> CBoxActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/stranger.cpp/CStranger_getCarryLightIntensity_FUN_005383e0.cpp
+--------------------------------------------------------------------------------
+
+  Line 14: castToClassHash()
+    Expected class: CLightActor          (CLightActor -> CBoxActor -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/stranger.cpp/CStranger_processDamage_FUN_0053e860.cpp
+--------------------------------------------------------------------------------
+
+  Line 145: castToClassHash()
+    Expected class: CTommyGun            (CTommyGun -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/stranger.cpp/CStranger_processMotionEvents_FUN_00537cd0.cpp
+--------------------------------------------------------------------------------
+
+  Line 184: castToClassHash()
+    Expected class: CEnemy               (CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/stranger.cpp/CStranger_processWeaponTick_FUN_00540660.cpp
+--------------------------------------------------------------------------------
+
+  Line 22: castToClassHash()
+    Expected class: CDynamite            (CDynamite -> CWeapon -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/stranger.cpp/CStranger_tryPlaceObject_FUN_0053c800.cpp
+--------------------------------------------------------------------------------
+
+  Line 243: castToClassHash()
+    Expected class: CCrate               (CCrate -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/stranger.cpp/CStranger_updateWeaponLayerActions_FUN_0053f310.cpp
+--------------------------------------------------------------------------------
+
+  Line 53: castToClassHash()
+    Expected class: CWeapon              (CWeapon -> CDemonActor)
+    Actual cast:    CInventory           (CInventory)
+
+  Line 157: castToClassHash()
+    Expected class: CMelee               (CMelee -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 173: castToClassHash()
+    Expected class: CMelee               (CMelee -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 212: castToClassHash()
+    Expected class: CDynamite            (CDynamite -> CWeapon -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+  Line 273: castToClassHash()
+    Expected class: CMelee               (CMelee -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 309: castToClassHash()
+    Expected class: CMelee               (CMelee -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/tommygun.cpp/CTommyGun_fire_FUN_00545c30.cpp
+--------------------------------------------------------------------------------
+
+  Line 167: castToClassHash()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/vampboss.cpp/CVampireBoss_processDamage_FUN_0054dd50.cpp
+--------------------------------------------------------------------------------
+
+  Line 33: castToClassHash()
+    Expected class: CMelee               (CMelee -> CWeapon -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/vampboss.cpp/CVampireBoss_process_FUN_0054c690.cpp
+--------------------------------------------------------------------------------
+
+  Line 425: castToClassHash()
+    Expected class: CTVBat               (CTVBat -> CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CCharacter           (CCharacter -> CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/vehicle.cpp/CVehicle_process_FUN_0054eae0.cpp
+--------------------------------------------------------------------------------
+
+  Line 138: castToClassHash()
+    Expected class: CMobster             (CMobster -> CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 182: castToClassHash()
+    Expected class: CMobster             (CMobster -> CEnemy -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/weapon.cpp/CWeapon_renderAimBeam_FUN_00554750.cpp
+--------------------------------------------------------------------------------
+
+  Line 45: castToClassHash()
+    Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+--------------------------------------------------------------------------------
+  core/werewolf.cpp/CWerewolf_process_FUN_00555c60.cpp
+--------------------------------------------------------------------------------
+
+  Line 260: castToClassHash()
+    Expected class: CTrap                (CTrap -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 350: castToClassHash()
+    Expected class: CTrap                (CTrap -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+  Line 590: castToClassHash()
+    Expected class: CTrap                (CTrap -> CDemonActor)
+    Actual cast:    CDemonActor          (CDemonActor)
+
+====================================================================================================
+UNRESOLVED CALLS (class identity passed via variable)
+====================================================================================================
+
+These calls pass the class hash or name through an intermediate variable
+rather than directly from a ClassInfo global or string literal.
+Manual inspection is needed to determine the expected class.
+
+--------------------------------------------------------------------------------
+  core/event.cpp/CEventList_executeCommand_FUN_0047ac50.cpp
+--------------------------------------------------------------------------------
+
+  Line 357: castToClassHash()
+    355:           if ((pCVar5 != g_ActorNameSentinel) && (local_f0 != 0)) {
+    356:             pCVar5->lifecycle_state = ACTOR_DESTROYED;
+    357:             pCVar6 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar5,uVar11);
+    358:             if (pCVar6 != (CDemonActor *)0x0) {
+    359:               fVar2 = pCVar6[2].orient_matrix.m[2].x;
+    360:               *(byte *)&pCVar6[2].location.area_id = 0;
+
+--------------------------------------------------------------------------------
+  core/game.cpp/giveHeroWeapon_FUN_004a02e0.cpp
+--------------------------------------------------------------------------------
+
+  Line 15: createActorByName()
+    13:   CDemonActor *pCVar1;
+    14: 
+    15:   actor = core_actor_cpp_createActorByName_FUN_0040d540(class_name);
+    16:   core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(g_CDemonMission_PTR_005baf90,actor);
+    17:   (*((actor->vtable)._ub)->setup)(actor);
+    18:   pCVar1 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040d890(actor,g_CWeaponClassInfo.name_hash);
+
+--------------------------------------------------------------------------------
+  core/hero.cpp/CHeroPlaceholder_createHero_FUN_004b6080.cpp
+--------------------------------------------------------------------------------
+
+  Line 55: createActorByName()
+    53:   }
+    54:   class_name_hash = g_CHeroClassInfo.name_hash;
+    55:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040d540(class_name);
+    56:   actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash);
+    57: LAB_004b60b9:
+    58:   if (actor == (CHero *)0x0) {
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_addItem_FUN_004bf360.cpp
+--------------------------------------------------------------------------------
+
+  Line 1000: castToClassHash()
+    998:               pCVar5[4].location.position.x =
+    999:                    (float)((int)pCVar5[4].location.position.x + pCStack_24->ammo_count);
+    1000:               pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar5,uVar4);
+    1001:               if ((pCVar5 != (CDemonActor *)0x0) && (200 < (int)pCVar5[4].location.position.x)) {
+    1002:                 pCVar5[4].location.position.x = 2.8026e-43;
+    1003:               }
+
+  Line 1070: castToClassHash()
+    1068:             pCVar8[4].location.position.x =
+    1069:                  (float)((int)pCVar8[4].location.position.x + (int)pCVar5[4].location.position.x);
+    1070:             pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar8,uVar4);
+    1071:             if ((pCVar5 != (CDemonActor *)0x0) && (200 < (int)pCVar5[4].location.position.x)) {
+    1072:               pCVar5[4].location.position.x = 2.8026e-43;
+    1073:             }
+
+  Line 598: createActorByName()
+    596:     if (iVar9 != 0) {
+    597:       pCVar5 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040d890(item_actor,g_CAmmoClassInfo.name_hash);
+    598:       pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540((char *)&pCVar5[2].location.area_id);
+    599:       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("This ammo is for your ");
+    600:       pcVar11 = acStack_234;
+    601:       do {
+
+  Line 1015: createActorByName()
+    1013:         } while (iVar9 < this_ptr->item_count);
+    1014:       }
+    1015:       pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540(pcStack_28);
+    1016:       core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+    1017:                 (g_CDemonMission_PTR_005baf90,pCVar5);
+    1018:       (*((pCVar5->vtable)._ub)->setup)(pCVar5);
+
+  Line 1097: createActorByName()
+    1095:           if (iVar9 == 0) {
+    1096:             pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
+    1097:             actor = core_actor_cpp_createActorByName_FUN_0040d540(pcVar11);
+    1098:             core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+    1099:                       (g_CDemonMission_PTR_005baf90,actor);
+    1100:             (*((actor->vtable)._ub)->setup)(actor);
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_load_FUN_004c1190.cpp
+--------------------------------------------------------------------------------
+
+  Line 64: createActorByName()
+    62:       if (g_CDemonMission_PTR_005baf90->has_inventory_actors == 0) {
+    63:         pcVar9 = (char *)&local_78;
+    64:         pCVar3 = core_actor_cpp_createActorByName_FUN_0040d540((char *)local_dc);
+    65:         pCVar2 = pCVar3;
+    66:         do {
+    67:           cVar1 = *pcVar9;
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/getItemModel_FUN_004beb40.cpp
+--------------------------------------------------------------------------------
+
+  Line 40: castToClassHash()
+    38:     return (CKeyFramedModelInstance *)0x0;
+    39:   }
+    40:   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash);
+    41:   return (CKeyFramedModelInstance *)(pCVar2 + 1);
+    42: }
+    43: 
+
+--------------------------------------------------------------------------------
+  core/mimic.cpp/CMimic_setup_FUN_004d4650.cpp
+--------------------------------------------------------------------------------
+
+  Line 85: createActorByName()
+    83:              &(this_ptr->base).base.base.orient.vec,pCVar1);
+    84:   class_name_hash = g_CEnemyClassInfo.name_hash;
+    85:   pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540(this_ptr->morph_actor_type);
+    86:   pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar5,class_name_hash);
+    87:   this_ptr->morph_target_actor = pCVar5;
+    88:   if (pCVar5 == (CDemonActor *)0x0) {
+
+--------------------------------------------------------------------------------
+  core/mission.cpp/CDemonMission_readMissionFile_FUN_004d7fe0.cpp
+--------------------------------------------------------------------------------
+
+  Line 151: createActorByName()
+    149:     _fscanf((_FILE *)load_flags,"%s \"%[^\"]\"\n",acStack_8c,acStack_f0);
+    150:     pcVar8 = acStack_f0;
+    151:     pCVar4 = core_actor_cpp_createActorByName_FUN_0040d540(acStack_8c);
+    152:     local_14 = pCVar4;
+    153:     pCVar7 = pCVar4;
+    154:     do {
+
+--------------------------------------------------------------------------------
+  core/set.cpp/CDemonSet_buildActorTypeLists_FUN_0050e6b0.cpp
+--------------------------------------------------------------------------------
+
+  Line 55: castToClassHash()
+    53:       else {
+    54:         this_ptr->character_count = this_ptr->character_count + 1;
+    55:         pCVar2 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash);
+    56:         this_ptr->enemies[this_ptr->enemy_count] = pCVar2;
+    57:         if (this_ptr->enemies[this_ptr->enemy_count] != (CEnemy *)0x0) {
+    58:           this_ptr->enemy_count = this_ptr->enemy_count + 1;
+
+--------------------------------------------------------------------------------
+  core/weapon.cpp/CWeapon_updateLighting_FUN_005543c0.cpp
+--------------------------------------------------------------------------------
+
+  Line 41: castToClassHash()
+    39:   g_CDemonLightInstance.antialiasing_enabled = 1;
+    40:   pCVar2 = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
+    41:   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,in_stack_ffffffcc);
+    42:   if ((pCVar2 != (CDemonActor *)0x0) &&
+    43:      (fVar1 = pCVar2[0x17e].orient_matrix.m[0].y, fVar1 < 15.0f)) {
+    44:     unaff_ESI = fVar1 * 0.06666667f;

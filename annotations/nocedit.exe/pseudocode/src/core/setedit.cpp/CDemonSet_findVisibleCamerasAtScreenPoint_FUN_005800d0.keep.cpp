@@ -24,8 +24,10 @@ int __cdecl core_setedit_cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_00580
       (core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                  (&g_CDemonCameraInstance,screen_x,screen_y,&local_28), local_28.z < 0x40000000))))
   {
+    local_1c = local_28;
     core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
               (&g_CDemonCameraInstance,&local_1c,&local_40);
+    local_34 = local_40;
     camera_index_00 = 0;
     iVar2 = 0;
     if (0 < this_ptr->camera_count) {

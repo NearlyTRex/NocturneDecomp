@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2697,
-    "complexity_score": 3734,
+    "complexity_score": 3769,
     "cross_reference_count": 0,
     "function_call_count": 47,
     "global_count": 65,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1379,
-    "suspect_count": 229,
+    "suspect_count": 232,
     "suspect_types": [
       "fast_sqrt_inline",
       "pointer_cast",
@@ -17,6 +17,7 @@
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
+      "stale_struct_offset_64bit",
       "suspect_float",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -2579,6 +2580,30 @@
       "severity": "moderate",
       "text": "fStack_88 = (float)(((int)fStack_8c >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "*(...)(iVar8 + 0x20) reaches field bleedout_timer (0xd134) of CZombie via a baked 32-bit offset. CZombie is 64-bit-unstable (grows past its first pointer/unstable field at 0x0); on the 64-bit build field offsets at/after 0x0 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CZombie * (\u00a7de-pun/\u00a712).",
+      "line": 1063,
+      "match": "*(...)(iVar8 + 0x20)",
+      "severity": "moderate",
+      "text": "fStack_298 = *(float *)(iVar8 + 0x20) - (pCStack_80->position).x;",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(iVar8 + 0x24) reaches field sfx_handles (0xd138) of CZombie via a baked 32-bit offset. CZombie is 64-bit-unstable (grows past its first pointer/unstable field at 0x0); on the 64-bit build field offsets at/after 0x0 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CZombie * (\u00a7de-pun/\u00a712).",
+      "line": 1064,
+      "match": "*(...)(iVar8 + 0x24)",
+      "severity": "moderate",
+      "text": "afStack_294[0] = *(float *)(iVar8 + 0x24) - (pCStack_80->position).y;",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(iVar8 + 0x28) reaches field sfx_handles (0xd138) of CZombie via a baked 32-bit offset. CZombie is 64-bit-unstable (grows past its first pointer/unstable field at 0x0); on the 64-bit build field offsets at/after 0x0 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CZombie * (\u00a7de-pun/\u00a712).",
+      "line": 1065,
+      "match": "*(...)(iVar8 + 0x28)",
+      "severity": "moderate",
+      "text": "afStack_294[1] = *(float *)(iVar8 + 0x28) - (pCStack_80->position).z;",
+      "type": "stale_struct_offset_64bit"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 00589649, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

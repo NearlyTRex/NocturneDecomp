@@ -14,7 +14,7 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(CSmiley *this_ptr)
   CSmiley *pCVar3;
   
   pCVar3 = (CSmiley *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub = &g_CSmileyVTable._ud;
+  (pCVar3->base).base.base.vtable._ub = &g_CSmileyVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar3->base).base.model,"smiley.dfm");
   pCVar3->attack_cooldown = 0.0;

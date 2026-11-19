@@ -464,14 +464,14 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "'in_stack_0000000c[2].create_event + 0x4c' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x4c = 0x374, which is exactly offsetof(CBat, periodic_sound[96]). Ghidra had no CBat type here and reached the field by index arithmetic; write it as ((CBat *)in_stack_0000000c)->periodic_sound[96] (\u00a7de-pun/\u00a712). Ambiguous: CBoxActor::push_sound[72], CCryptVessel::win_event[48], CDoor::close_condition[40] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'in_stack_0000000c[2].create_event + 0x4c' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x4c = 0x374, which is exactly offsetof(CGlass, broken_texture). Ghidra had no CGlass type here and reached the field by index arithmetic; write it as ((CGlass *)in_stack_0000000c)->broken_texture (\u00a7de-pun/\u00a712).",
       "line": 42,
       "severity": "moderate",
       "text": "(SMRGLTextureBasic *)(in_stack_0000000c[2].create_event + 0x4c));",
       "type": "derived_field_index_pun"
     },
     {
-      "description": "'in_stack_0000000c[2].create_event + 0x4c' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x4c = 0x374, which is exactly offsetof(CBat, periodic_sound[96]). Ghidra had no CBat type here and reached the field by index arithmetic; write it as ((CBat *)in_stack_0000000c)->periodic_sound[96] (\u00a7de-pun/\u00a712). Ambiguous: CBoxActor::push_sound[72], CCryptVessel::win_event[48], CDoor::close_condition[40] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'in_stack_0000000c[2].create_event + 0x4c' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x4c = 0x374, which is exactly offsetof(CGlass, broken_texture). Ghidra had no CGlass type here and reached the field by index arithmetic; write it as ((CGlass *)in_stack_0000000c)->broken_texture (\u00a7de-pun/\u00a712).",
       "line": 48,
       "severity": "moderate",
       "text": "(SMRGLTextureBasic *)(in_stack_0000000c[2].create_event + 0x4c));",

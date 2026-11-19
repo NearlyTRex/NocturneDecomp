@@ -1459,5 +1459,427 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_managePodFiles_FUN_004b86b0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 12,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 58,
+          "message": "Value stored to 'bVar15' is never read",
+          "path_notes": [
+            {
+              "line": 58,
+              "message": "Value stored to 'bVar15' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 67,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 67,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 11,
+          "line": 107,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 64,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 64,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 66,
+              "message": "Assuming 'pod_directory_path' is equal to null"
+            },
+            {
+              "line": 66,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 71,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 71,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 74,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 74,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 71,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 79,
+              "message": "Assuming field 'item_count' is >= 1"
+            },
+            {
+              "line": 79,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 90,
+              "message": "Assuming 'local_44' is equal to null"
+            },
+            {
+              "line": 90,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 101,
+              "message": "0 is < field 'item_count'"
+            },
+            {
+              "line": 101,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 107,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 107,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 107,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 112,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 112,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 122,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 122,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 15,
+          "line": 162,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 162,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 188,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 188,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 13,
+          "line": 276,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 64,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 64,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 66,
+              "message": "Assuming 'pod_directory_path' is equal to null"
+            },
+            {
+              "line": 66,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 71,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 71,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 74,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 74,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 71,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 79,
+              "message": "Assuming field 'item_count' is >= 1"
+            },
+            {
+              "line": 79,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 90,
+              "message": "Assuming 'local_44' is not equal to null"
+            },
+            {
+              "line": 90,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 101,
+              "message": "0 is < field 'item_count'"
+            },
+            {
+              "line": 101,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 114,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 114,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 124,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 124,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 127,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 127,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 130,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 130,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 133,
+              "message": "Assuming 'local_b94.file_size' is not equal to 'local_fbc.file_size'"
+            },
+            {
+              "line": 133,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 141,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 145,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 145,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 159,
+              "message": "Assuming 0 is >= field 'file_count'"
+            },
+            {
+              "line": 159,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 184,
+              "message": "Assuming 'iVar2' is >= 0"
+            },
+            {
+              "line": 184,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 192,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 192,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 195,
+              "message": "Assuming 'iVar2' is equal to 0"
+            },
+            {
+              "line": 192,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 249,
+              "message": "Assuming 'local_64' is >= field 'item_count'"
+            },
+            {
+              "line": 102,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 253,
+              "message": "Assuming 0 is < field 'item_count'"
+            },
+            {
+              "line": 253,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 258,
+              "message": "'local_48' is > 0"
+            },
+            {
+              "line": 258,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 261,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 261,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 263,
+              "message": "Assuming 'iVar2' is >= 'local_48'"
+            },
+            {
+              "line": 259,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 265,
+              "message": "'local_48' is <= 'iVar2'"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 268,
+              "message": "Value assigned to 'local_44'"
+            },
+            {
+              "line": 270,
+              "message": "Assuming 'local_44' is equal to null"
+            },
+            {
+              "line": 270,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 275,
+              "message": "Null pointer value stored to 'rec'"
+            },
+            {
+              "line": 276,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 277,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 277,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 285,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 285,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 693,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 693,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

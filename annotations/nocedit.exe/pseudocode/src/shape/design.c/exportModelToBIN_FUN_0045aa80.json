@@ -949,5 +949,211 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "exportModelToBIN_FUN_0045aa80.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 12,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 42,
+          "line": 124,
+          "message": "The left operand of '*' is a garbage value",
+          "path_notes": [
+            {
+              "line": 44,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 49,
+              "message": "Assuming 'export_format' is not equal to 0"
+            },
+            {
+              "line": 49,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'local_1c' is not equal to null"
+            },
+            {
+              "line": 61,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 69,
+              "message": "Assuming 'scale_mode' is not equal to 49"
+            },
+            {
+              "line": 69,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 84,
+              "message": "Assuming 'scale_mode' is <= 49"
+            },
+            {
+              "line": 84,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 99,
+              "message": "'scale_mode' is not equal to 53"
+            },
+            {
+              "line": 99,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 102,
+              "message": "'scale_mode' is not equal to 54"
+            },
+            {
+              "line": 102,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 124,
+              "message": "The left operand of '*' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 5,
+          "line": 132,
+          "message": "Value stored to 'local_58' is never read",
+          "path_notes": [
+            {
+              "line": 132,
+              "message": "Value stored to 'local_58' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 5,
+          "line": 133,
+          "message": "Value stored to 'local_54' is never read",
+          "path_notes": [
+            {
+              "line": 133,
+              "message": "Value stored to 'local_54' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 7,
+          "line": 159,
+          "message": "Value stored to 'local_58' is never read",
+          "path_notes": [
+            {
+              "line": 159,
+              "message": "Value stored to 'local_58' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 7,
+          "line": 160,
+          "message": "Value stored to 'local_54' is never read",
+          "path_notes": [
+            {
+              "line": 160,
+              "message": "Value stored to 'local_54' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 164,
+          "message": "Value stored to 'local_64' is never read",
+          "path_notes": [
+            {
+              "line": 164,
+              "message": "Value stored to 'local_64' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 165,
+          "message": "Value stored to 'local_60' is never read",
+          "path_notes": [
+            {
+              "line": 165,
+              "message": "Value stored to 'local_60' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 7,
+          "line": 171,
+          "message": "Value stored to 'local_40' is never read",
+          "path_notes": [
+            {
+              "line": 171,
+              "message": "Value stored to 'local_40' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 7,
+          "line": 172,
+          "message": "Value stored to 'local_3c' is never read",
+          "path_notes": [
+            {
+              "line": 172,
+              "message": "Value stored to 'local_3c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 244,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 244,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 245,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 245,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 246,
+          "message": "Value stored to 'local_94' is never read",
+          "path_notes": [
+            {
+              "line": 246,
+              "message": "Value stored to 'local_94' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

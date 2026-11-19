@@ -1849,7 +1849,7 @@
       "type": "unrolled_strlen"
     },
     {
-      "description": "Struct-type local `local_404` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_404` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 89,
       "match": "CMatrix3x4f local_404; ... f(&local_404, ...);",
       "resolution_source": "keep",
@@ -1858,7 +1858,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_3d4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_3d4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 90,
       "match": "CMatrix3x4f local_3d4; ... f(&local_3d4, ...);",
       "resolution_source": "keep",
@@ -1867,7 +1867,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_374` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_374` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 92,
       "match": "CMatrix3x4f local_374; ... f(&local_374, ...);",
       "resolution_source": "keep",
@@ -1876,7 +1876,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_344` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_344` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 93,
       "match": "CMatrix3x4f local_344; ... f(&local_344, ...);",
       "resolution_source": "keep",
@@ -1885,7 +1885,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_314` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_314` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 94,
       "match": "CMatrix3x4f local_314; ... f(&local_314, ...);",
       "resolution_source": "keep",
@@ -1894,7 +1894,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_2e4` (CMatrix3x3f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_2e4` (CMatrix3x3f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 95,
       "match": "CMatrix3x3f local_2e4; ... f(&local_2e4, ...);",
       "resolution_source": "keep",
@@ -3388,6 +3388,4860 @@
   },
   "static_analysis": {
     "analyzed_file": "CSkeleton_importSkeletonFile_FUN_00592690.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 24,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 202,
+          "message": "Value stored to 'bVar26' is never read",
+          "path_notes": [
+            {
+              "line": 202,
+              "message": "Value stored to 'bVar26' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 398,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 398,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 13,
+          "line": 415,
+          "message": "Value stored to 'local_2c' is never read",
+          "path_notes": [
+            {
+              "line": 415,
+              "message": "Value stored to 'local_2c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 19,
+          "line": 463,
+          "message": "The right operand of '<' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Field 'motion_count' is < 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 411,
+              "message": "The value 0 is assigned to 'local_3c'"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 427,
+              "message": "The value 0 is assigned to 'iVar16'"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "The right operand of '<' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 76,
+          "line": 471,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 471,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 79,
+          "line": 494,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 484,
+              "message": "44 is >= field 'transition_count'"
+            },
+            {
+              "line": 484,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 494,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 23,
+          "line": 588,
+          "message": "Value stored to 'local_2c' is never read",
+          "path_notes": [
+            {
+              "line": 588,
+              "message": "Value stored to 'local_2c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 78,
+          "line": 656,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 654,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 654,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 656,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 29,
+          "line": 725,
+          "message": "Value stored to 'local_2c' is never read",
+          "path_notes": [
+            {
+              "line": 725,
+              "message": "Value stored to 'local_2c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 80,
+          "line": 836,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 654,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 654,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 834,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 834,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 836,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 85,
+          "line": 891,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 654,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 654,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 834,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 834,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 878,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 878,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 884,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 886,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 889,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 889,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 891,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 88,
+          "line": 939,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 654,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 654,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 834,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 834,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 878,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 878,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 884,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 886,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 889,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 889,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 937,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 937,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 939,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 90,
+          "line": 1011,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 654,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 654,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 834,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 834,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 878,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 878,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 884,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 886,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 889,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 889,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 937,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 937,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1002,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1002,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 1003,
+              "message": "0 is >= field 'marker_count'"
+            },
+            {
+              "line": 1003,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1011,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 92,
+          "line": 1069,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 654,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 654,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 834,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 834,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 878,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 878,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 884,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 886,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 889,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 889,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 937,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 937,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1002,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1002,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1067,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1067,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 1069,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 92,
+          "line": 1095,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 654,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 654,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 834,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 834,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 878,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 878,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 884,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 886,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 889,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 889,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 937,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 937,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1002,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1002,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1067,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1067,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1089,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1089,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 1095,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 96,
+          "line": 1222,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 304,
+              "message": "'iVar16' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 309,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 318,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 318,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 318,
+              "message": "Execution continues on line 320"
+            },
+            {
+              "line": 323,
+              "message": "'local_104' is <= 99998"
+            },
+            {
+              "line": 323,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "'local_100' is > 99998"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 329,
+              "message": "'local_104' is >= 0"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_100' is >= 'local_104'"
+            },
+            {
+              "line": 329,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 329,
+              "message": "Assuming 'local_58' is > 'local_100'"
+            },
+            {
+              "line": 329,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 337,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 337,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 352,
+              "message": "Assuming field 'motion_count' is >= 1"
+            },
+            {
+              "line": 352,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 357,
+              "message": "Assuming 0 is >= field 'item_count'"
+            },
+            {
+              "line": 357,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 391,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 391,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 408,
+              "message": "Assuming 0 is < field 'motion_count'"
+            },
+            {
+              "line": 408,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 421,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 421,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 428,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 419,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 463,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 463,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 467,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 467,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 483,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 483,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 654,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 654,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 834,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 834,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 878,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 878,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 884,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 886,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 884,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 889,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 889,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 937,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 937,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1002,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1002,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1067,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1067,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1089,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1089,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1198,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1198,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1204,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1204,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1213,
+              "message": "'local_c4' is equal to 0"
+            },
+            {
+              "line": 1213,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1222,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 19,
+          "line": 1324,
+          "message": "Value stored to 'local_164' is never read",
+          "path_notes": [
+            {
+              "line": 1324,
+              "message": "Value stored to 'local_164' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 19,
+          "line": 1325,
+          "message": "Value stored to 'local_160' is never read",
+          "path_notes": [
+            {
+              "line": 1325,
+              "message": "Value stored to 'local_160' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 17,
+          "line": 1338,
+          "message": "Value stored to 'local_1a4' is never read",
+          "path_notes": [
+            {
+              "line": 1338,
+              "message": "Value stored to 'local_1a4' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 17,
+          "line": 1342,
+          "message": "Value stored to 'local_1a0' is never read",
+          "path_notes": [
+            {
+              "line": 1342,
+              "message": "Value stored to 'local_1a0' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 17,
+          "line": 1346,
+          "message": "Value stored to 'local_19c' is never read",
+          "path_notes": [
+            {
+              "line": 1346,
+              "message": "Value stored to 'local_19c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 68,
+          "line": 1666,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 1625,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1625,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1652,
+              "message": "'local_108' is not equal to 0"
+            },
+            {
+              "line": 1652,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1664,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 1664,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 1666,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 70,
+          "line": 1702,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 207,
+              "message": "Assuming 'p_Var3' is not equal to null"
+            },
+            {
+              "line": 207,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 218,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 218,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 218,
+              "message": "Execution continues on line 220"
+            },
+            {
+              "line": 222,
+              "message": "Assuming 'local_114' is <= 80"
+            },
+            {
+              "line": 222,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 232,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 232,
+              "message": "Execution continues on line 234"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'local_114' is <= field 'state_count'"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 262,
+              "message": "Assuming 'iVar16' is < 0"
+            },
+            {
+              "line": 262,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 262,
+              "message": "Execution continues on line 264"
+            },
+            {
+              "line": 265,
+              "message": "Assuming 'iVar16' is equal to 1"
+            },
+            {
+              "line": 265,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 267,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 267,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 272,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 272,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'iVar4' is >= 0"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 285,
+              "message": "Assuming 'iVar4' is equal to 10"
+            },
+            {
+              "line": 285,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 282,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1724,
+              "message": "119 is >= field 'motion_count'"
+            },
+            {
+              "line": 1724,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1731,
+              "message": "Assuming 'iVar16' is equal to 2"
+            },
+            {
+              "line": 1731,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1738,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1738,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 1743,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 1743,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1753,
+              "message": "Assuming 'iVar16' is >= 0"
+            },
+            {
+              "line": 1753,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 299,
+              "message": "Loop condition is true. Execution continues on line 300"
+            },
+            {
+              "line": 302,
+              "message": "Assuming 'local_c8' is not equal to 0"
+            },
+            {
+              "line": 302,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 304,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 304,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 351,
+              "message": "'local_c8' is not equal to 0"
+            },
+            {
+              "line": 351,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1623,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1623,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 1625,
+              "message": "Assuming 'iVar16' is not equal to 0"
+            },
+            {
+              "line": 1625,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1652,
+              "message": "'local_108' is not equal to 0"
+            },
+            {
+              "line": 1652,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1664,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 1664,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 1700,
+              "message": "Assuming 'iVar16' is equal to 0"
+            },
+            {
+              "line": 1700,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 1702,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 1760,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 1760,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
     "cppcheck_quick": {
       "diagnostic_count": 13,
       "diagnostics": [

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1111,
-    "complexity_score": 1268,
+    "complexity_score": 1283,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 543,
-    "suspect_count": 67,
+    "suspect_count": 68,
     "suspect_types": [
       "fast_sqrt_inline",
       "pointer_cast",
@@ -17,6 +17,7 @@
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
+      "stale_struct_offset_64bit",
       "sub84_truncation",
       "suspect_float",
       "unknown_field",
@@ -992,6 +993,14 @@
       "severity": "moderate",
       "text": "fStack_50 = (float)(((int)fStack_44 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "*(...)(pCVar15 + 0x116f) reaches field fires (0x33ac) of CCharacter via a baked 32-bit offset. CCharacter is 64-bit-unstable (grows past its first pointer/unstable field at 0x0); on the 64-bit build field offsets at/after 0x0 shift, so this reads/writes the wrong bytes (and the accessed value is itself a pointer). De-pun to named field access on a CCharacter * (\u00a7de-pun/\u00a712).",
+      "line": 212,
+      "match": "*(...)(pCVar15 + 0x116f)",
+      "severity": "moderate",
+      "text": "(g_CDemonMission_PTR_00600530,&(*(CBodyPart **)(pCVar15 + 0x116f))->base,1);",
+      "type": "stale_struct_offset_64bit"
     }
   ],
   "vtable_info": {

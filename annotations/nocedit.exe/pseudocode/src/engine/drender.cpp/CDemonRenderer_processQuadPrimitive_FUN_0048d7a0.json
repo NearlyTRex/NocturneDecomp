@@ -116,6 +116,24 @@
     },
     "pcode_op_count": 621
   },
+  "resolved_suspects": [
+    {
+      "description": "'(ushort *)&quad_primitive[1].surface_normal.B' walks 1 x sizeof(SMRGLHeaderPrimitive) (0x18) + offsetof(surface_normal.B) (0xc) + 0x0 = 0x24, which is exactly offsetof(SMRGLPrimitiveBigPoly, vertices[1]). Ghidra had no SMRGLPrimitiveBigPoly type here and reached the field by index arithmetic; write it as ((SMRGLPrimitiveBigPoly *)quad_primitive)->vertices[1] (\u00a7de-pun/\u00a712). Ambiguous: SMRGLPrimitiveBigPolyIndex::vertices[3], SMRGLPrimitivePoly::vertices[1], SMRGLPrimitivePolyIndex::vertices[3], SMRGLPrimitiveQuad::vertices[1], SMRGLPrimitiveQuadIndex::vertices[3], SMRGLPrimitiveTriangle::vertices[1] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 14,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24.vertex_index_1 = *(ushort *)&quad_primitive[1].surface_normal.B;",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(ushort *)&quad_primitive[2].surface_normal.B' walks 2 x sizeof(SMRGLHeaderPrimitive) (0x18) + offsetof(surface_normal.B) (0xc) + 0x0 = 0x3c, which is exactly offsetof(SMRGLPrimitiveBigPoly, vertices[3]). Ghidra had no SMRGLPrimitiveBigPoly type here and reached the field by index arithmetic; write it as ((SMRGLPrimitiveBigPoly *)quad_primitive)->vertices[3] (\u00a7de-pun/\u00a712). Ambiguous: SMRGLPrimitiveBigPolyIndex::vertices[9], SMRGLPrimitivePoly::vertices[3], SMRGLPrimitiveQuad::vertices[3] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 21,
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24.vertex_index_2 = *(ushort *)&quad_primitive[2].surface_normal.B;",
+      "type": "derived_field_index_pun"
+    }
+  ],
   "siblings": {
     "blairwitch2.exe": {
       "addr": "0046c620",

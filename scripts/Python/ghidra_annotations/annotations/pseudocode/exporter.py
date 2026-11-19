@@ -415,22 +415,8 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
     # Replace constant references with their actual values
     decompiled_code = replace_constants_in_code(decompiled_code, constants_map)
 
-    # Build var_info dict for safe partial access transforms
-    # Maps variable names to {'size': int, 'is_array': bool}
-    var_info = {}
-    if result.stack_frame and result.stack_frame.get('variables'):
-        for var in result.stack_frame['variables']:
-            var_name = var.get('name')
-            var_size = var.get('size')
-            var_type = var.get('type', '')
-            if var_name and var_size:
-                # Detect array types by checking for '[' in type name (e.g., "byte[24]")
-                is_array = '[' in var_type
-                var_info[var_name] = {'size': var_size, 'is_array': is_array}
-
     # Apply post-processing transforms
-    decompiled_code = apply_all_transforms(
-        decompiled_code, var_info=var_info, func_name=func_name)
+    decompiled_code = apply_all_transforms(decompiled_code, func_name=func_name)
 
     # Generate MMX inline assembly version (kept separate from original pseudocode)
     from ghidra_annotations.annotations.pseudocode.asm_transform import generate_mmx_asm_cpp, generate_byval_asm_cpp
@@ -1081,7 +1067,7 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
     proto_overrides_json_path = generate_proto_overrides_file(pseudocode_dir)
 
     # Register proto overrides for variadic/ambiguous calls
-    proto_override_count = register_proto_overrides(proto_overrides_json_path)
+    proto_override_count = register_proto_overrides(proto_overrides_json_path, proto_cache.function_entries())
     apply_proto_overrides(currentProgram)
     if proto_override_count > 0:
         has_proto_overrides = HighFunction.hasRegisteredProtoOverrides()

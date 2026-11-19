@@ -120,7 +120,7 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
   }
   core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,0x1e0);
   do {
-    (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
+    (*g_CKeysPtr->vtable->clearKeypresses)(g_CKeysPtr);
     strobe_blink = (uint)(strobe_blink == 0);
     if ((backdrop_buf == (void *)0x0) ||
        (((strobe_enable == 0 || (strobe_blink == 0)) &&

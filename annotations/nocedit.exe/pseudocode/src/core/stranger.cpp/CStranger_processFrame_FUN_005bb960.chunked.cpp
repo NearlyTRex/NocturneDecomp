@@ -6,8 +6,8 @@
 
 #include "nocturne.h"
 typedef struct CStranger_processFrame_Ctx {
-    CStranger *this_ptr;
-    float delta_time;
+    CStranger **this_ptr;
+    float *delta_time;
     CLocation *pCVar1;
     CDeformableModelInstance *pCVar2;
     CVector3f *pCVar3;
@@ -111,13 +111,14 @@ typedef struct CStranger_processFrame_Ctx {
     int local_14;
 } CStranger_processFrame_Ctx;
 
-// Chunk return codes for cross-boundary gotos
+// Chunk return codes
 // 0 = normal continuation
-#define GOTO_LAB_005bc1a6 1
+#define GOTO_switchD_005bd22e_caseD_6 1
+#define GOTO_LAB_005bc1a6 2
 
 // Chunk: chunk_0 (lines 3-32 of original)
 static int CStranger_processFrame_chunk_0(CStranger_processFrame_Ctx *ctx) {
-    CStranger *&this_ptr = ctx->this_ptr;
+    CStranger *&this_ptr = *ctx->this_ptr;
     CDemonActor *&pCVar9 = ctx->pCVar9;
     CBoundingBox3D *&pCVar16 = ctx->pCVar16;
     CVector3f *&pCVar17 = ctx->pCVar17;
@@ -159,8 +160,8 @@ static int CStranger_processFrame_chunk_0(CStranger_processFrame_Ctx *ctx) {
 
 // Chunk: chunk_1_check_this_ptr_0_check_pCVar9_0_check_pCVar9_0 (lines 214-412 of original)
 static int CStranger_processFrame_chunk_1_check_this_ptr_0_check_pCVar9_0_check_pCVar9_0(CStranger_processFrame_Ctx *ctx) {
-    CStranger *&this_ptr = ctx->this_ptr;
-    float &delta_time = ctx->delta_time;
+    CStranger *&this_ptr = *ctx->this_ptr;
+    float &delta_time = *ctx->delta_time;
     CDeformableModelInstance *&pCVar2 = ctx->pCVar2;
     float &fVar4 = ctx->fVar4;
     float &fVar5 = ctx->fVar5;
@@ -385,7 +386,7 @@ LAB_005bd19f:
                 in_stack_fffffd10 = (UOrientationVector *)this_ptr;
                 core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0
                           ((CCharacter *)this_ptr,in_stack_fffffd14);
-                goto switchD_005bd22e_caseD_6;
+                return GOTO_switchD_005bd22e_caseD_6;
               }
             }
             if (local_78 == (CDemonActor *)0x0) {
@@ -399,8 +400,8 @@ LAB_005bd19f:
 
 // Chunk: chunk_1_check_this_ptr_0_check_pCVar9_0_else_1 (lines 412-480 of original)
 static int CStranger_processFrame_chunk_1_check_this_ptr_0_check_pCVar9_0_else_1(CStranger_processFrame_Ctx *ctx) {
-    CStranger *&this_ptr = ctx->this_ptr;
-    float &delta_time = ctx->delta_time;
+    CStranger *&this_ptr = *ctx->this_ptr;
+    float &delta_time = *ctx->delta_time;
     CDemonActor *&pCVar9 = ctx->pCVar9;
     CCharacter *&this_ptr_00 = ctx->this_ptr_00;
     CCharacter_full_vtable *&pCVar12 = ctx->pCVar12;
@@ -479,7 +480,7 @@ static int CStranger_processFrame_chunk_1_check_this_ptr_0_check_pCVar9_0_else_1
                 (this_ptr->base).player_input.action_state.fire = 0;
               }
             }
-            goto switchD_005bd22e_caseD_6;
+            return GOTO_switchD_005bd22e_caseD_6;
           }
           in_stack_fffffd14 = (UOrientationVector *)0x0;
           in_stack_fffffd10 = (UOrientationVector *)&(this_ptr->base).base.model;
@@ -490,8 +491,8 @@ static int CStranger_processFrame_chunk_1_check_this_ptr_0_check_pCVar9_0_else_1
 
 // Chunk: chunk_1_check_this_ptr_0_else_1 (lines 481-575 of original)
 static int CStranger_processFrame_chunk_1_check_this_ptr_0_else_1(CStranger_processFrame_Ctx *ctx) {
-    CStranger *&this_ptr = ctx->this_ptr;
-    float &delta_time = ctx->delta_time;
+    CStranger *&this_ptr = *ctx->this_ptr;
+    float &delta_time = *ctx->delta_time;
     CDemonActor *&pCVar9 = ctx->pCVar9;
     CVector3f *&pCVar17 = ctx->pCVar17;
     int &iVar21 = ctx->iVar21;
@@ -612,8 +613,8 @@ static int CStranger_processFrame_chunk_1_check_this_ptr_0_else_1(CStranger_proc
 
 // Chunk: chunk_1_else_1 (lines 576-621 of original)
 static int CStranger_processFrame_chunk_1_else_1(CStranger_processFrame_Ctx *ctx) {
-    CStranger *&this_ptr = ctx->this_ptr;
-    float &delta_time = ctx->delta_time;
+    CStranger *&this_ptr = *ctx->this_ptr;
+    float &delta_time = *ctx->delta_time;
     CLocation *&pCVar1 = ctx->pCVar1;
     float &fVar4 = ctx->fVar4;
     CVector3f *&pCVar17 = ctx->pCVar17;
@@ -671,8 +672,8 @@ static int CStranger_processFrame_chunk_1_else_1(CStranger_processFrame_Ctx *ctx
 
 // Chunk: else_2 (lines 622-664 of original)
 static int CStranger_processFrame_else_2(CStranger_processFrame_Ctx *ctx) {
-    CStranger *&this_ptr = ctx->this_ptr;
-    float &delta_time = ctx->delta_time;
+    CStranger *&this_ptr = *ctx->this_ptr;
+    float &delta_time = *ctx->delta_time;
     CLocation *&pCVar1 = ctx->pCVar1;
     float &fVar4 = ctx->fVar4;
     float &fVar5 = ctx->fVar5;
@@ -728,8 +729,8 @@ static int CStranger_processFrame_else_2(CStranger_processFrame_Ctx *ctx) {
 
 // Chunk: chunk_3 (lines 682-878 of original)
 static int CStranger_processFrame_chunk_3(CStranger_processFrame_Ctx *ctx) {
-    CStranger *&this_ptr = ctx->this_ptr;
-    float &delta_time = ctx->delta_time;
+    CStranger *&this_ptr = *ctx->this_ptr;
+    float &delta_time = *ctx->delta_time;
     CVector3f *&pCVar3 = ctx->pCVar3;
     float &fVar4 = ctx->fVar4;
     CCharacter_full_vtable *&pCVar12 = ctx->pCVar12;
@@ -755,7 +756,7 @@ static int CStranger_processFrame_chunk_3(CStranger_processFrame_Ctx *ctx) {
     float &local_44 = ctx->local_44;
     int &local_20 = ctx->local_20;
 
- return GOTO_LAB_005bc1a6;
+    if (local_80 == 0) return GOTO_LAB_005bc1a6;
     local_5c = &(this_ptr->base).base.model.base;
     pSVar19 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(local_5c);
     pCVar17 = &(this_ptr->base).base.model.accumulated_root_motion;
@@ -953,7 +954,7 @@ joined_r0x005bdb44:
 
 // Chunk: check_local_1c_4 (lines 898-924 of original)
 static int CStranger_processFrame_check_local_1c_4(CStranger_processFrame_Ctx *ctx) {
-    CStranger *&this_ptr = ctx->this_ptr;
+    CStranger *&this_ptr = *ctx->this_ptr;
     CWeapon *&pCVar10 = ctx->pCVar10;
     CGame *&pCVar15 = ctx->pCVar15;
     uint &uVar24 = ctx->uVar24;
@@ -990,8 +991,8 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
 {
   CStranger_processFrame_Ctx _ctx_storage = {};
   CStranger_processFrame_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
-  ctx->delta_time = delta_time;
+  ctx->this_ptr = &this_ptr;
+  ctx->delta_time = &delta_time;
 
     CLocation *&pCVar1 = ctx->pCVar1;
     CDeformableModelInstance *&pCVar2 = ctx->pCVar2;
@@ -1094,15 +1095,13 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
     int &local_1c = ctx->local_1c;
     int &local_18 = ctx->local_18;
     int &local_14 = ctx->local_14;
-  // param this_ptr aliased into ctx above
-  // param delta_time aliased into ctx above
 
   local_1c = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                        (g_CEventListPtr,"DebugActionPending");
   pCVar9 = (this_ptr->base).base.carry_hands[1].carry_actor;
-    if ((pCVar9 != (CDemonActor *)0x0) && ((this_ptr->carry_object_bbox).max.x < -999999.0f)) {
-      CStranger_processFrame_chunk_0(ctx);
-    }
+  if ((pCVar9 != (CDemonActor *)0x0) && ((this_ptr->carry_object_bbox).max.x < -999999.0f)) {
+    CStranger_processFrame_chunk_0(ctx);
+  }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40((CCharacter *)this_ptr,delta_time);
   core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,delta_time);
   fVar18 = (this_ptr->base).invincibility_timer - delta_time;
@@ -1286,23 +1285,25 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
       if (pCVar9 == (CDemonActor *)0x0) {
         pCVar9 = (this_ptr->base).base.grabbed_by;
         if (pCVar9 == (CDemonActor *)0x0) {
-          CStranger_processFrame_chunk_1_check_this_ptr_0_check_pCVar9_0_check_pCVar9_0(ctx);
+          int _rc = CStranger_processFrame_chunk_1_check_this_ptr_0_check_pCVar9_0_check_pCVar9_0(ctx);
+          if (_rc == GOTO_switchD_005bd22e_caseD_6) goto switchD_005bd22e_caseD_6;
         }
         else {
-          CStranger_processFrame_chunk_1_check_this_ptr_0_check_pCVar9_0_else_1(ctx);
+          int _rc = CStranger_processFrame_chunk_1_check_this_ptr_0_check_pCVar9_0_else_1(ctx);
+          if (_rc == GOTO_switchD_005bd22e_caseD_6) goto switchD_005bd22e_caseD_6;
         }
       }
-    else {
-      CStranger_processFrame_chunk_1_check_this_ptr_0_else_1(ctx);
-    }
+      else {
+        CStranger_processFrame_chunk_1_check_this_ptr_0_else_1(ctx);
+      }
     }
     else {
       CStranger_processFrame_chunk_1_else_1(ctx);
     }
   }
-    else {
-      CStranger_processFrame_else_2(ctx);
-    }
+  else {
+    CStranger_processFrame_else_2(ctx);
+  }
 switchD_005bd22e_caseD_6:
   local_68 = &(this_ptr->base).base.model.base;
   pSVar19 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(local_68);
@@ -1322,10 +1323,10 @@ switchD_005bd22e_caseD_6:
     (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
   }
   if (((this_ptr->base).ladder_to_climb == (CLadder *)0x0) &&
-    {
-      int _rc = CStranger_processFrame_chunk_3(ctx);
-      if (_rc == GOTO_LAB_005bc1a6) goto LAB_005bc1a6;
-    }
+     (this_ptr->ladder_to_descend == (CLadder *)0x0)) {
+    int _rc = CStranger_processFrame_chunk_3(ctx);
+    if (_rc == GOTO_LAB_005bc1a6) goto LAB_005bc1a6;
+  }
   else {
     local_7c = (float)&(this_ptr->base).base.model.accumulated_root_motion;
     pCVar17 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
@@ -1346,9 +1347,9 @@ LAB_005bc1a6:
   (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
   (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
   pCVar15 = g_CGamePtr;
-    if (local_1c != 0) {
-      CStranger_processFrame_check_local_1c_4(ctx);
-    }
+  if (local_1c != 0) {
+    CStranger_processFrame_check_local_1c_4(ctx);
+  }
   pCVar10 = (this_ptr->base).inventory.selected_weapon;
   if (pCVar10 == (CWeapon *)0x0) {
     g_CGamePtr->flashlight_active = 0;

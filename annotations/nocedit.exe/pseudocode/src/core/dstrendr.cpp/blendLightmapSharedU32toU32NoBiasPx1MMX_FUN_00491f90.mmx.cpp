@@ -36,7 +36,6 @@ __asm {
         psrlw MM0,0x4
         packuswb MM0,MM7
         movd dword ptr [EDI],MM0
-        pop EBP
         emms
 }
 }

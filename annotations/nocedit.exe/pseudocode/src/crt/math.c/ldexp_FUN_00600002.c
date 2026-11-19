@@ -52,7 +52,7 @@ double __cdecl ldexp(double x,int exp)
     }
     uStack_1e = uStack_1e & 0x800f | (short)iVar2 * 0x10;
   }
-  local_1c = SUB82(x,0);
+  local_1c = SUB82(__BITCAST_UINT64(x),0);
   uStack_1a = (ushort)((ulonglong)x >> 0x10);
   uStack_18 = CONCAT22(uStack_1e,local_20);
 LAB_006000b6:

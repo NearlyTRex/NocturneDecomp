@@ -1117,14 +1117,14 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "'local_20[1].actor_name + 0x1c' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x1c = 0x174, which is exactly offsetof(CActorDestination, dest_class[24]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)local_20)->dest_class[24] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[12], CBat::course_filename[28], CBodyPart::vertex_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'local_20[1].actor_name + 0x1c' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x1c = 0x174, which is exactly offsetof(CBodyPart, vertex_count). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)local_20)->vertex_count (\u00a7de-pun/\u00a712).",
       "line": 142,
       "severity": "moderate",
       "text": "} while (iVar19 < *(int *)(local_20[1].actor_name + 0x1c));",
       "type": "derived_field_index_pun"
     },
     {
-      "description": "'pCVar15[5].create_event + 0x1c' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x1c = 0x74c, which is exactly offsetof(CBodyPart, fire_count). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)pCVar15)->fire_count (\u00a7de-pun/\u00a712). Ambiguous: CFlies::flies[29] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar15[5].create_event + 0x1c' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x1c = 0x74c, which is exactly offsetof(CBodyPart, fire_count). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)pCVar15)->fire_count (\u00a7de-pun/\u00a712).",
       "line": 169,
       "severity": "moderate",
       "text": "if (0 < *(int *)(pCVar15[5].create_event + 0x1c)) {",
@@ -1138,14 +1138,14 @@
       "type": "derived_field_index_pun"
     },
     {
-      "description": "'local_20[5].create_event + 0x1c' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x1c = 0x74c, which is exactly offsetof(CBodyPart, fire_count). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)local_20)->fire_count (\u00a7de-pun/\u00a712). Ambiguous: CFlies::flies[29] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'local_20[5].create_event + 0x1c' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x1c = 0x74c, which is exactly offsetof(CBodyPart, fire_count). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)local_20)->fire_count (\u00a7de-pun/\u00a712).",
       "line": 194,
       "severity": "moderate",
       "text": "} while (iVar17 < *(int *)(local_20[5].create_event + 0x1c));",
       "type": "derived_field_index_pun"
     },
     {
-      "description": "'(CVector3f *)&local_20[1].previous_transform_state.orientation' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(previous_transform_state.orientation) (0x138) + 0x0 = 0x290, which is exactly offsetof(CBodyPart, attached_models). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)local_20)->attached_models (\u00a7de-pun/\u00a712). Ambiguous: CFlame::is_visible, CTrigger::off_event[8] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'(CVector3f *)&local_20[1].previous_transform_state.orientation' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(previous_transform_state.orientation) (0x138) + 0x0 = 0x290, which is exactly offsetof(CBodyPart, attached_models). Ghidra had no CBodyPart type here and reached the field by index arithmetic; write it as ((CBodyPart *)local_20)->attached_models (\u00a7de-pun/\u00a712).",
       "line": 198,
       "severity": "moderate",
       "text": "pCVar16 = (CVector3f *)&local_20[1].previous_transform_state.orientation;",

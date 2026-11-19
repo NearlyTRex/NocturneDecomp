@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 28,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "derived_field_index_pun"
+    ],
     "total_lines": 84
   },
   "cross_references": [
@@ -212,5 +214,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "'(ushort *)&primitive[1].surface_normal.B' walks 1 x sizeof(SMRGLHeaderPrimitive) (0x18) + offsetof(surface_normal.B) (0xc) + 0x0 = 0x24, which is exactly offsetof(SMRGLPrimitivePoly, vertices[1]). Ghidra had no SMRGLPrimitivePoly type here and reached the field by index arithmetic; write it as ((SMRGLPrimitivePoly *)primitive)->vertices[1] (\u00a7de-pun/\u00a712). Ambiguous: SMRGLPrimitivePolyIndex::vertices[3], SMRGLPrimitiveQuad::vertices[1], SMRGLPrimitiveQuadIndex::vertices[3], SMRGLPrimitiveTriangle::vertices[1] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 21,
+      "severity": "moderate",
+      "text": "local_18.vertex_index_1 = *(ushort *)&primitive[1].surface_normal.B;",
+      "type": "derived_field_index_pun"
+    }
+  ]
 }

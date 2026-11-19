@@ -9,8 +9,13 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 14
-  Functions flagged by multiple tools: 0
+  Functions with static analysis data: 527
+  Functions flagged by multiple tools: 8
+
+  Clang Static Analyzer (quick):
+    Files analyzed:      521
+    Files with findings: 521
+    Total diagnostics:   1344
 
   Clang-Tidy (quick):
     Files analyzed:      3
@@ -21,6 +26,21 @@ SUMMARY
     Files analyzed:      11
     Files with findings: 11
     Total diagnostics:   60
+
+====================================================================================================
+TOP FINDINGS - Clang Static Analyzer (quick)
+====================================================================================================
+
+  security.insecureAPI.strcpy                               731  [likely decompiler artifact]
+  deadcode.DeadStores                                       364  [likely decompiler artifact]
+  core.NullDereference                                      108
+  core.NonNullParamChecker                                   47
+  core.UndefinedBinaryOperatorResult                         41
+  core.CallAndMessage                                        31
+  core.uninitialized.Assign                                  14
+  core.uninitialized.ArraySubscript                           3
+  core.DivideZero                                             3
+  security.FloatLoopCounter                                   2
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)

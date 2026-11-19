@@ -5,6 +5,7 @@
 // Dependencies
 #include <math.h>
 #include "system/basetypes.h"
+#include "globals.h"
 
 // =============================================================================
 // CONSTANTS

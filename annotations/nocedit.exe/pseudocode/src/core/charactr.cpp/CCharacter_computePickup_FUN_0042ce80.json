@@ -199,7 +199,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Struct-type local `local_130` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_130` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 11,
       "match": "CMatrix3x4f local_130; ... f(&local_130, ...);",
       "resolution_source": "keep",
@@ -208,7 +208,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_a0` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_a0` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 14,
       "match": "CMatrix3x4f local_a0; ... f(&local_a0, ...);",
       "resolution_source": "keep",
@@ -217,7 +217,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_70` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_70` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 15,
       "match": "CMatrix3x4f local_70; ... f(&local_70, ...);",
       "resolution_source": "keep",
@@ -226,7 +226,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_40` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_40` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 16,
       "match": "CMatrix3x4f local_40; ... f(&local_40, ...);",
       "resolution_source": "keep",

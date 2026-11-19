@@ -182,6 +182,17 @@
     },
     "pcode_op_count": 45
   },
+  "resolved_suspects": [
+    {
+      "description": "memset size hardcodes 0x2c == sizeof(CFileBitStream), whose dest resolves to that struct. CFileBitStream is 64-bit-unstable (contains a pointer), so the struct grows past 0x2c once pointers are 8 bytes and memset covers only its leading 0x2c bytes, leaving the grown tail untouched. Replace the magic with sizeof(CFileBitStream) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "memset(dest) size 0x2c == sizeof(CFileBitStream)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(&this_ptr->file_bitstream,0,0x2c)",
+      "type": "mem_magic_size"
+    }
+  ],
   "siblings": {
     "blairwitch2.exe": {
       "addr": "00509c70",

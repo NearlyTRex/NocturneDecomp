@@ -247,6 +247,15 @@
       "severity": "moderate",
       "text": "(void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((uint)(ushort)this_ptr->height << 2,\"..\\\\shape\\\\quantize.cpp\",1181)",
       "type": "alloc_magic_size"
+    },
+    {
+      "description": "memset size hardcodes 0x28 == sizeof(CBitmap), whose dest resolves to that struct. CBitmap is 64-bit-unstable (contains a pointer), so the struct grows past 0x28 once pointers are 8 bytes and memset covers only its leading 0x28 bytes, leaving the grown tail untouched. Replace the magic with sizeof(CBitmap) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 13,
+      "match": "memset(dest) size 0x28 == sizeof(CBitmap)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(this_ptr,0,0x28)",
+      "type": "mem_magic_size"
     }
   ],
   "stack_frame": {
@@ -292,6 +301,80 @@
         "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CBitmap_ctor_FUN_00556a00.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 32,
+          "line": 78,
+          "message": "Array access (via field 'row_table') results in a null pointer dereference",
+          "path_notes": [
+            {
+              "line": 21,
+              "message": "Assuming 'bit_depth' is >= 16"
+            },
+            {
+              "line": 21,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 31,
+              "message": "Assuming 'bit_depth' is < 17"
+            },
+            {
+              "line": 31,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 34,
+              "message": "Control jumps to line 52"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'pvVar1' is not equal to null"
+            },
+            {
+              "line": 61,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 66,
+              "message": "Value assigned to 'ppvVar2'"
+            },
+            {
+              "line": 68,
+              "message": "The value of 'ppvVar2' is assigned to field 'row_table'"
+            },
+            {
+              "line": 69,
+              "message": "Assuming 'ppvVar2' is equal to null"
+            },
+            {
+              "line": 69,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 77,
+              "message": "Assuming 'iVar3' is < field 'height'"
+            },
+            {
+              "line": 77,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 78,
+              "message": "Array access (via field 'row_table') results in a null pointer dereference"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

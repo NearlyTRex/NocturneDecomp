@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "constants.h"
 
 // =============================================================================
 // CONSTANTS

@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 46,
+    "complexity_score": 61,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "mem_magic_size",
       "unresolved_funcptr"
     ],
     "total_lines": 111
@@ -185,6 +186,14 @@
       "severity": "moderate",
       "text": "(*(code *)g_PTR_02c8348c)();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "memset size hardcodes 0x18000 == the whole entries field (1024 x STextureCacheEntry), which the dest names. It is an array of STextureCacheEntry, which contains a pointer, so it grows once pointers are 8 bytes and memset covers only its leading 0x18000 bytes. Use sizeof(<path>->entries) (\u00a717/\u00a718).",
+      "line": 26,
+      "match": "memset(dest) size 0x18000 == sizeof(STextureCacheEntry[1024])",
+      "severity": "moderate",
+      "text": "memset(this_ptr->entries,0,0x18000)",
+      "type": "mem_magic_size"
     }
   ]
 }

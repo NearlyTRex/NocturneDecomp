@@ -301,6 +301,24 @@
       "severity": "moderate",
       "text": "g_RenderVertexBuffer[2].u = 0xf80000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Struct-type local `local_78` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 9,
+      "match": "CVector3i local_78; ... f(&local_78, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_78;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_60` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 11,
+      "match": "CVector3i local_60; ... f(&local_60, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_60;",
+      "type": "missing_cave_copy"
     }
   ],
   "siblings": {

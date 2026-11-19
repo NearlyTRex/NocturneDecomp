@@ -8,7 +8,7 @@
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 typedef struct CDeformableModelInstance_viewModel_Ctx {
-    CDeformableModelInstance *this_ptr;
+    CDeformableModelInstance **this_ptr;
     int *piVar1;
     char cVar2;
     SRenderVertex *pSVar3;
@@ -149,7 +149,7 @@ typedef struct CDeformableModelInstance_viewModel_Ctx {
 
 // Chunk: branch_0 (lines 71-107 of original)
 static int CDeformableModelInstance_viewModel_branch_0(CDeformableModelInstance_viewModel_Ctx *ctx) {
-    CDeformableModelInstance *&this_ptr = ctx->this_ptr;
+    CDeformableModelInstance *&this_ptr = *ctx->this_ptr;
     int *&piVar1 = ctx->piVar1;
     int &iVar7 = ctx->iVar7;
     SMotion *&pSVar11 = ctx->pSVar11;
@@ -193,9 +193,9 @@ static int CDeformableModelInstance_viewModel_branch_0(CDeformableModelInstance_
     return 0;
 }
 
-// Chunk: branch_0 (lines 115-209 of original)
-static int CDeformableModelInstance_viewModel_branch_0(CDeformableModelInstance_viewModel_Ctx *ctx) {
-    CDeformableModelInstance *&this_ptr = ctx->this_ptr;
+// Chunk: branch_0_1 (lines 115-209 of original)
+static int CDeformableModelInstance_viewModel_branch_0_1(CDeformableModelInstance_viewModel_Ctx *ctx) {
+    CDeformableModelInstance *&this_ptr = *ctx->this_ptr;
     float &fVar4 = ctx->fVar4;
     bool &bVar5 = ctx->bVar5;
     int &iVar7 = ctx->iVar7;
@@ -714,7 +714,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
 {
   CDeformableModelInstance_viewModel_Ctx _ctx_storage = {};
   CDeformableModelInstance_viewModel_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
+  ctx->this_ptr = &this_ptr;
 
     int *&piVar1 = ctx->piVar1;
     char &cVar2 = ctx->cVar2;
@@ -852,7 +852,6 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
     int &local_1c = ctx->local_1c;
     float &local_18 = ctx->local_18;
     auto &local_14 = ctx->local_14;
-  // param this_ptr aliased into ctx above
 
   core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
   core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
@@ -937,7 +936,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
       local_8c = 0.33333334;
     }
     if (local_a8 == 0) {
-      CDeformableModelInstance_viewModel_branch_0(ctx);
+      CDeformableModelInstance_viewModel_branch_0_1(ctx);
     }
     iVar7 = local_44;
     pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
@@ -1128,9 +1127,9 @@ LAB_005975b4:
       if (local_98 == 0) {
         shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(&local_35c,0x1f);
       }
-    else {
-      CDeformableModelInstance_viewModel_else_4(ctx);
-    }
+      else {
+        CDeformableModelInstance_viewModel_else_4(ctx);
+      }
     }
     else {
       core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_200);
@@ -1327,7 +1326,7 @@ LAB_005975b4:
     if (iVar7 != 0) {
       CDeformableModelInstance_viewModel_check_iVar7_7(ctx);
     }
-    (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
+    (*g_CKeysPtr->vtable->clearKeypresses)(g_CKeysPtr);
   } while( true );
   if (((local_40 != 0) || (local_94 != 0)) &&
      (iVar7 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0

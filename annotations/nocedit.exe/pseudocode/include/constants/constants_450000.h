@@ -2,6 +2,9 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Dependencies
+#include "globals.h"
+
 // =============================================================================
 // CONSTANTS
 // =============================================================================

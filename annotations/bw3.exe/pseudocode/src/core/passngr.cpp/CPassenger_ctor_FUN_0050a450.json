@@ -233,7 +233,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "'(CMorph *)&pCVar2[1].base.base.scale.y' walks 1 x sizeof(CNPC) (0x206c8) + offsetof(base.base.scale.y) (0x10c) + 0x0 = 0x207d4, which is exactly offsetof(CPassenger, morph). Ghidra had no CPassenger type here and reached the field by index arithmetic; write it as ((CPassenger *)pCVar2)->morph (\u00a7de-pun/\u00a712). Ambiguous: CPryeMorph::transform_wav[40] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'(CMorph *)&pCVar2[1].base.base.scale.y' walks 1 x sizeof(CNPC) (0x206c8) + offsetof(base.base.scale.y) (0x10c) + 0x0 = 0x207d4, which is exactly offsetof(CPassenger, morph). Ghidra had no CPassenger type here and reached the field by index arithmetic; write it as ((CPassenger *)pCVar2)->morph (\u00a7de-pun/\u00a712).",
       "line": 14,
       "severity": "moderate",
       "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].base.base.scale.y);",

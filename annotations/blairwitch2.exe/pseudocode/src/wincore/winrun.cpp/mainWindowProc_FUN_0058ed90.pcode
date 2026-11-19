@@ -555,15 +555,15 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @0058eea8 [ESP:-24]~  # JZ 0x0058ee14
 CBRANCH (ram,0x58ee14,4), (register,0x206,1)
 
-@0058eeae [ESP:-16](-4)~  # CALL 0x004032b0
+@0058eeae [ESP:-24](-4)~  # CALL 0x004032b0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x58eeb3,4)
 CALL (ram,0x4032b0,4)
 
-@0058eeb3 [ESP:-16]~  # MOV dword ptr [0x02664634], 0x1
+@0058eeb3 [ESP:-24]~  # MOV dword ptr [0x02664634], 0x1
 COPY (ram,0x2664634,4) = (const,0x1,4)
 
-@0058eebd [ESP:-16]~  # JMP 0x0058ee14
+@0058eebd [ESP:-24]~  # JMP 0x0058ee14
 BRANCH (ram,0x58ee14,4)
 
 @0058eec2 [ESP:-16](-4)~  # CALL 0x005897b0

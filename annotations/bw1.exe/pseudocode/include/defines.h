@@ -2,6 +2,12 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
-// No equates defined in Ghidra
-// Add equates in Ghidra (Window -> Equates) to populate this file
+// Equates / Constants
+
+// GAME Constants
+#define GAME_RECIPROCAL_TABLE_SIZE                3842  // 0xF02
+#define GAME_SCREEN_MAX_HEIGHT                    2160  // 0x870
+
+// Total equates: 2
+// Total references: 0
 

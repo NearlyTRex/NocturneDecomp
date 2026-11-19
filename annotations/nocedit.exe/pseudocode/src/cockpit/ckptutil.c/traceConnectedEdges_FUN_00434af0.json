@@ -1181,5 +1181,183 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "traceConnectedEdges_FUN_00434af0.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 46,
+          "message": "Value stored to 'bVar17' is never read",
+          "path_notes": [
+            {
+              "line": 46,
+              "message": "Value stored to 'bVar17' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 3,
+          "line": 250,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 48,
+              "message": "Assuming 'edge_lists' is not equal to null"
+            },
+            {
+              "line": 48,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 53,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 53,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 57,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 62,
+              "message": "'iVar11' is <= 511"
+            },
+            {
+              "line": 62,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 71,
+              "message": "Assuming 'iVar2' is <= 0"
+            },
+            {
+              "line": 71,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 169,
+              "message": "'iVar11' is <= 511"
+            },
+            {
+              "line": 169,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 176,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 176,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 178,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 177,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 183,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 183,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 186,
+              "message": "Assuming 'iVar4' is > 'iVar14'"
+            },
+            {
+              "line": 186,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 186,
+              "message": "Assuming 'iVar15' is >= 'iVar10'"
+            },
+            {
+              "line": 186,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 186,
+              "message": "'bVar5' is false"
+            },
+            {
+              "line": 186,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 178,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 177,
+              "message": "Loop condition is false. Execution continues on line 226"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is false. Execution continues on line 228"
+            },
+            {
+              "line": 230,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 54,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 232,
+              "message": "'iVar11' is not equal to 0"
+            },
+            {
+              "line": 232,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 238,
+              "message": "Assuming 'existing_edges' is not equal to null"
+            },
+            {
+              "line": 238,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 242,
+              "message": "Value assigned to 'pvVar5'"
+            },
+            {
+              "line": 244,
+              "message": "Assuming 'pvVar5' is equal to null"
+            },
+            {
+              "line": 244,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 250,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

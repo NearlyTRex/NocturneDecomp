@@ -1937,12 +1937,12 @@ COPY (unique,0x41500,4) = (register,0x4,4) /* ECX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@0049af41 [ESP:-368](-4)~  # CALL 0x00408370
+@0049af41 [ESP:-372](-4)~  # CALL 0x00408370
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x49af46,4)
 CALL (ram,0x408370,4)
 
-@0049af46 [ESP:-364](+4)~  # ADD ESP, 0x4
+@0049af46 [ESP:-368](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -1953,18 +1953,18 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0049af49 [ESP:-364]~  # MOV EAX, [0x014b9900]
+@0049af49 [ESP:-368]~  # MOV EAX, [0x014b9900]
 COPY (register,0x0,4) /* EAX */ = (ram,0x14b9900,4)
 
-@0049af4e [ESP:-364]~  # MOV dword ptr [ESP + 0x138], EAX
+@0049af4e [ESP:-368]~  # MOV dword ptr [ESP + 0x138], EAX
 INT_ADD (unique,0x7f00,4) = (const,0x138,4), (register,0x10,4) /* ESP */
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x7f00,4), (unique,0xa300,4)
 
-@0049af55 [ESP:-364]~  # MOV EAX, [0x01fb8644]
+@0049af55 [ESP:-368]~  # MOV EAX, [0x01fb8644]
 COPY (register,0x0,4) /* EAX */ = (ram,0x1fb8644,4)
 
-@0049af5a [ESP:-364]~  # CMP EAX, 0x1e0
+@0049af5a [ESP:-368]~  # CMP EAX, 0x1e0
 INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (const,0x1e0,4)
 INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (const,0x1e0,4)
 INT_SUB (unique,0x65400,4) = (register,0x0,4) /* EAX */, (const,0x1e0,4)
@@ -1975,7 +1975,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0049af5f [ESP:-364]~  # JGE 0x0049af6d
+@0049af5f [ESP:-368]~  # JGE 0x0049af6d
 INT_EQUAL (unique,0x18900,1) = (register,0x20b,1), (register,0x207,1)
 CBRANCH (ram,0x49af6d,4), (unique,0x18900,1)
 

@@ -183,6 +183,60 @@
       "severity": "moderate",
       "text": "pCVar1->w = local_34.w;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `local_74` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 13,
+      "match": "CQuaternion4f local_74; ... f(&local_74, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_74;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_64` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 14,
+      "match": "CQuaternion4f local_64; ... f(&local_64, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_64;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_54` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 15,
+      "match": "CQuaternion4f local_54; ... f(&local_54, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_54;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_44` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 16,
+      "match": "CQuaternion4f local_44; ... f(&local_44, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_44;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_24` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 18,
+      "match": "CQuaternion4f local_24; ... f(&local_24, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_24;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_14` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 19,
+      "match": "CQuaternion4f local_14; ... f(&local_14, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_14;",
+      "type": "missing_cave_copy"
     }
   ],
   "siblings": {

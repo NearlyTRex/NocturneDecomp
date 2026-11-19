@@ -857,12 +857,12 @@ INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x1c4,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
 
-@0049ba40 [ESP:???](-4)!?  # CALL 0x0049caa0
+@0049ba40 [ESP:-360](-4)  # CALL 0x0049caa0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x49ba45,4)
 CALL (ram,0x49caa0,4)
 
-@0049ba45 [ESP:???](+4)!?  # ADD ESP, 0x4
+@0049ba45 [ESP:-356](+4)?  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -2705,5 +2705,4 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 381 instructions, 1925 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

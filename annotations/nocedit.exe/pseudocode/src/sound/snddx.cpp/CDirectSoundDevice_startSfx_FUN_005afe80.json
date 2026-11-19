@@ -216,6 +216,56 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDirectSoundDevice_startSfx_FUN_005afe80.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 14,
+          "line": 37,
+          "message": "Access to field 'loop_marker_count' results in a dereference of a null pointer (loaded from field 'sample')",
+          "path_notes": [
+            {
+              "line": 21,
+              "message": "Assuming 'iVar1' is < 1"
+            },
+            {
+              "line": 21,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 28,
+              "message": "Value assigned to field 'sample'"
+            },
+            {
+              "line": 30,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 30,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 32,
+              "message": "Assuming field 'sample' is equal to null"
+            },
+            {
+              "line": 32,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 37,
+              "message": "Access to field 'loop_marker_count' results in a dereference of a null pointer (loaded from field 'sample')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [],
   "vtable_info": {
     "entries": [

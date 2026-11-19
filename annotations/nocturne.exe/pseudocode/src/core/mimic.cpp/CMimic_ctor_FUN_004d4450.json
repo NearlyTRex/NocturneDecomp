@@ -213,7 +213,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "'pCVar5[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.create_event) (0x78) + 0x50 = 0xbdec, which is exactly offsetof(CBoneGuy, boxes[1]). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar5)->boxes[1] (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs[3], CDraculaBride::part_list[6], CMimic::cloth also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar5[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0xbd24) + offsetof(base.base.create_event) (0x78) + 0x50 = 0xbdec, which is exactly offsetof(CMimic, cloth). Ghidra had no CMimic type here and reached the field by index arithmetic; write it as ((CMimic *)pCVar5)->cloth (\u00a7de-pun/\u00a712).",
       "line": 17,
       "severity": "moderate",
       "text": "((CCloth *)(pCVar5[1].base.base.create_event + 0x50));",

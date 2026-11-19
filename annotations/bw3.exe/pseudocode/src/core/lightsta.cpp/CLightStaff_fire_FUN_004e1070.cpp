@@ -217,7 +217,7 @@ int __cdecl core_lightsta_cpp_CLightStaff_fire_FUN_004e1070(CLightStaff *this_pt
       }
       else {
         (*((UActorVTable *)((int)CStack_34.y + 0x154))->_ub->getBoundingBox)
-                  ((CDemonActor *)CStack_34.y,SUB84(in_stack_fffffcec,0));
+                  ((CDemonActor *)CStack_34.y,SUB84(__BITCAST_UINT64(in_stack_fffffcec),0));
         pfVar4 = afStack_2b0;
         pfVar6 = &SStack_2f4.impact_direction.z;
         for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {

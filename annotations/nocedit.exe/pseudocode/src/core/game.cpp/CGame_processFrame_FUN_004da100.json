@@ -1028,6 +1028,24 @@
       "severity": "moderate",
       "text": "local_b0.orientation.vec.x = (pUVar18->vec).x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `local_88` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 36,
+      "match": "CVector3i local_88; ... f(&local_88, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_88;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_70` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 38,
+      "match": "CVector3i local_70; ... f(&local_70, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_70;",
+      "type": "missing_cave_copy"
     }
   ],
   "siblings": {
@@ -1281,6 +1299,424 @@
         "type": "CGame *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CGame_processFrame_FUN_004da100.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 24,
+          "line": 150,
+          "message": "The right operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 50,
+              "message": "'local_44' declared without an initial value"
+            },
+            {
+              "line": 76,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 76,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 81,
+              "message": "Assuming field 'cinematic_skip_in_progress' is equal to 0"
+            },
+            {
+              "line": 81,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 81,
+              "message": "Assuming field 'has_pending_sim_frame' is equal to 0"
+            },
+            {
+              "line": 81,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 82,
+              "message": "Assuming 'g_UseExternalRenderer' is equal to 0"
+            },
+            {
+              "line": 82,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 86,
+              "message": "Assuming field 'screen_clear_enabled' is equal to 0"
+            },
+            {
+              "line": 86,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 86,
+              "message": "Assuming field 'screen_clear_condition' is equal to 0"
+            },
+            {
+              "line": 86,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 92,
+              "message": "Assuming field 'goggles_active' is not equal to 0"
+            },
+            {
+              "line": 92,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 96,
+              "message": "Assuming field 'is_paused' is equal to 0"
+            },
+            {
+              "line": 96,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 98,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 98,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 140,
+              "message": "'goggles_at_frame_start' is not equal to 0"
+            },
+            {
+              "line": 140,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 140,
+              "message": "Assuming field 'goggles_active' is not equal to 0"
+            },
+            {
+              "line": 140,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 144,
+              "message": "Field 'goggles_active' is not equal to 0"
+            },
+            {
+              "line": 144,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 148,
+              "message": "Assuming field 'profile_mode' is not equal to 0"
+            },
+            {
+              "line": 148,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 150,
+              "message": "The right operand of '-' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.DivideZero",
+          "column": 39,
+          "line": 248,
+          "message": "Division by zero",
+          "path_notes": [
+            {
+              "line": 76,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 76,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 81,
+              "message": "Assuming field 'cinematic_skip_in_progress' is equal to 0"
+            },
+            {
+              "line": 81,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 81,
+              "message": "Assuming field 'has_pending_sim_frame' is equal to 0"
+            },
+            {
+              "line": 81,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 82,
+              "message": "Assuming 'g_UseExternalRenderer' is equal to 0"
+            },
+            {
+              "line": 82,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 86,
+              "message": "Assuming field 'screen_clear_enabled' is equal to 0"
+            },
+            {
+              "line": 86,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 86,
+              "message": "Assuming field 'screen_clear_condition' is equal to 0"
+            },
+            {
+              "line": 86,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 92,
+              "message": "Assuming field 'goggles_active' is not equal to 0"
+            },
+            {
+              "line": 92,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 96,
+              "message": "Assuming field 'is_paused' is not equal to 0"
+            },
+            {
+              "line": 96,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 119,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 119,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 140,
+              "message": "'goggles_at_frame_start' is not equal to 0"
+            },
+            {
+              "line": 140,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 140,
+              "message": "Assuming field 'goggles_active' is not equal to 0"
+            },
+            {
+              "line": 140,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 144,
+              "message": "Field 'goggles_active' is not equal to 0"
+            },
+            {
+              "line": 144,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 148,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 148,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 156,
+              "message": "Assuming field 'skip_frame_render' is equal to 0"
+            },
+            {
+              "line": 156,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 158,
+              "message": "Field 'goggles_active' is not equal to 0"
+            },
+            {
+              "line": 158,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 161,
+              "message": "Assuming field 'developer_mode_enabled' is equal to 0"
+            },
+            {
+              "line": 161,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 162,
+              "message": "Assuming 'pcVar7' is equal to null"
+            },
+            {
+              "line": 162,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 169,
+              "message": "Assuming 'g_ModalDialogActive' is equal to 0"
+            },
+            {
+              "line": 169,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 175,
+              "message": "Assuming field 'screen_clear_enabled' is equal to 0"
+            },
+            {
+              "line": 175,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 180,
+              "message": "Assuming 'g_ModalDialogActive' is equal to 0"
+            },
+            {
+              "line": 180,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 190,
+              "message": "Assuming 'g_MovieRecordingArmed' is not equal to 0"
+            },
+            {
+              "line": 190,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 192,
+              "message": "Assuming 'iVar5' is equal to 0"
+            },
+            {
+              "line": 192,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 203,
+              "message": "Assuming 'g_MovieRecordingMaxFrames' is < 1"
+            },
+            {
+              "line": 203,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 205,
+              "message": "Assuming 'g_MovieRecordingActive' is not equal to 0"
+            },
+            {
+              "line": 205,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 212,
+              "message": "Assuming 'local_34' is not equal to null"
+            },
+            {
+              "line": 212,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 214,
+              "message": "Assuming 'g_MovieRecordingHeight' is > 0"
+            },
+            {
+              "line": 214,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 217,
+              "message": "Assuming 'g_MovieRecordingWidth' is > 0"
+            },
+            {
+              "line": 217,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 225,
+              "message": "The value 0 is assigned to 'local_18'"
+            },
+            {
+              "line": 228,
+              "message": "Assuming 'iVar5' is >= 'iVar6'"
+            },
+            {
+              "line": 228,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 248,
+              "message": "Division by zero"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 318,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 318,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 378,
+          "message": "Value stored to 'death_message_y' is never read",
+          "path_notes": [
+            {
+              "line": 378,
+              "message": "Value stored to 'death_message_y' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 387,
+          "message": "Value stored to 'death_message_y' is never read",
+          "path_notes": [
+            {
+              "line": 387,
+              "message": "Value stored to 'death_message_y' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 9,
+          "line": 398,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 398,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

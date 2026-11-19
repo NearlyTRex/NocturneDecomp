@@ -317,5 +317,167 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CSfxSlot_updatePlaybackPos_FUN_005a8170.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 15,
+          "line": 25,
+          "message": "Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')",
+          "path_notes": [
+            {
+              "line": 19,
+              "message": "Assuming field 'sample' is equal to null"
+            },
+            {
+              "line": 19,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 24,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 24,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 25,
+              "message": "Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 24,
+          "line": 32,
+          "message": "Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')",
+          "path_notes": [
+            {
+              "line": 19,
+              "message": "Assuming field 'sample' is equal to null"
+            },
+            {
+              "line": 19,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 24,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 24,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 31,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 31,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 32,
+              "message": "Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 15,
+          "line": 35,
+          "message": "Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')",
+          "path_notes": [
+            {
+              "line": 19,
+              "message": "Assuming field 'sample' is equal to null"
+            },
+            {
+              "line": 19,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 24,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 24,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 31,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 31,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 34,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 34,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 35,
+              "message": "Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 16,
+          "line": 43,
+          "message": "Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')",
+          "path_notes": [
+            {
+              "line": 19,
+              "message": "Assuming field 'sample' is equal to null"
+            },
+            {
+              "line": 19,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 24,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 24,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 31,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 31,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 34,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 34,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 43,
+              "message": "Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

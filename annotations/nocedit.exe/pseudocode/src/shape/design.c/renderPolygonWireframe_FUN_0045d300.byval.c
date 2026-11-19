@@ -9,8 +9,6 @@
 void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x98
         mov EAX,dword ptr [EBP + 0x14]
         add EAX,0x18
         mov dword ptr [EBP + -0x4],EAX

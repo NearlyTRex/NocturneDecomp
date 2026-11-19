@@ -224,5 +224,79 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CStrList_insert_FUN_004a2bc0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 3,
+          "line": 38,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 17,
+              "message": "Assuming 'insert_index' is >= 0"
+            },
+            {
+              "line": 17,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 17,
+              "message": "Assuming 'insert_index' is <= field 'item_count'"
+            },
+            {
+              "line": 17,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar5' is <= field 'capacity'"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 31,
+              "message": "Value assigned to 'pcVar3'"
+            },
+            {
+              "line": 32,
+              "message": "Assigning the value of 'pcVar3'"
+            },
+            {
+              "line": 33,
+              "message": "Assuming pointer value is null"
+            },
+            {
+              "line": 33,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 38,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 3,
+          "line": 38,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 38,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

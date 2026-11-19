@@ -608,7 +608,7 @@ LAB_0046b2fb:
             pCStack_50 = pCVar4;
             if ((this_ptr->base).player_input.action_state.fire != 0) {
               (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
-                        (&this_ptr_00->base,SUB84(in_stack_fffffb20,0));
+                        (&this_ptr_00->base,SUB84(__BITCAST_UINT64(in_stack_fffffb20),0));
               puVar17 = auStack_420;
               puVar19 = auStack_410;
               for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {
@@ -763,7 +763,7 @@ LAB_0046b2fb:
               fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40
                                  (pCStack_38,0x28);
               if (fVar10 + (float)pCStack_60 <= 0.0) {
-                in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(0x46af7f,SUB84(in_stack_fffffb20,0)));
+                in_stack_fffffb20 = __BITCAST_DOUBLE(CONCAT44(0x46af7f,SUB84(__BITCAST_UINT64(in_stack_fffffb20),0)));
                 (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseFromGrab)
                           ((CCharacter *)this_ptr);
               }
@@ -1152,7 +1152,7 @@ LAB_0046b950:
         in_stack_fffffb20 = 2.12199580084659e-314;
 LAB_0046b941:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  (&(this_ptr->base).base.model.base,SUB84(in_stack_fffffb20,0),
+                  (&(this_ptr->base).base.model.base,SUB84(__BITCAST_UINT64(in_stack_fffffb20),0),
                    (int)((ulonglong)in_stack_fffffb20 >> 0x20));
         goto LAB_0046b950;
       }

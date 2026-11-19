@@ -247,5 +247,119 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "copyFile_FUN_00537dd0.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 10,
+          "line": 37,
+          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')",
+          "path_notes": [
+            {
+              "line": 19,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 19,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 20,
+              "message": "Value assigned to 'file_ptr'"
+            },
+            {
+              "line": 21,
+              "message": "Assuming 'file_ptr' is equal to null"
+            },
+            {
+              "line": 21,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 27,
+              "message": "Assuming 'file_ptr_00' is not equal to null"
+            },
+            {
+              "line": 27,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 32,
+              "message": "Assuming 'iVar1' is <= 0"
+            },
+            {
+              "line": 32,
+              "message": "Loop condition is false. Execution continues on line 37"
+            },
+            {
+              "line": 37,
+              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 10,
+          "line": 42,
+          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr_00')",
+          "path_notes": [
+            {
+              "line": 19,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 19,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 21,
+              "message": "Assuming 'file_ptr' is not equal to null"
+            },
+            {
+              "line": 21,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 26,
+              "message": "Value assigned to 'file_ptr_00'"
+            },
+            {
+              "line": 27,
+              "message": "Assuming 'file_ptr_00' is equal to null"
+            },
+            {
+              "line": 27,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 32,
+              "message": "Assuming 'iVar1' is <= 0"
+            },
+            {
+              "line": 32,
+              "message": "Loop condition is false. Execution continues on line 37"
+            },
+            {
+              "line": 37,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 37,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 42,
+              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr_00')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": []
 }

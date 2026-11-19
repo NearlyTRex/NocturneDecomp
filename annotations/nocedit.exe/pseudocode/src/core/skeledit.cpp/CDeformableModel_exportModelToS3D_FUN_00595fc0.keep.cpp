@@ -167,9 +167,9 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
     do {
       iVar5 = this_ptr->parts[iVar6].tri_counts[lod_level] +
               this_ptr->parts[iVar6].cap_tri_counts[lod_level];
-      iVar6 = iVar6 + 1;
       _fprintf(file,"%d,%d,%d,%d,\"%s\"\n",local_88,aiStack_140[iVar1],
                  local_8c,iVar5,this_ptr->parts[iVar6].part_name);
+      iVar6 = iVar6 + 1;
       local_88 = local_88 + aiStack_140[iVar1];
       local_8c = local_8c + iVar5;
       iVar1 = iVar1 + 1;

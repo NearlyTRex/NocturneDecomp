@@ -9,8 +9,6 @@
 void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0(void)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x7c
         cmp dword ptr [g_WindowActive],0x0
         jz LAB_0057a971
         mov ECX,dword ptr [g_INT_01c6cee8]

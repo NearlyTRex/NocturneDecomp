@@ -12,7 +12,6 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
 {
   uint uVar3;
   uint uVar2;
-  SNetworkAddr *sender_addr;
   int iVar5;
   SSimFrame *dest;
   SChatHistory *pSVar5;
@@ -291,7 +290,7 @@ LAB_00540df8:
       iVar5 = 0;
       support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_34,(uint32_t *)g_AnyAddressIP,0);
       core_netgame_cpp_CNetGame_addChatHistory_FUN_00542370
-                (this_ptr,sender_addr,iVar5,pcVar11,pcVar12);
+                (this_ptr,&local_34,iVar5,pcVar11,pcVar12);
       return;
     }
     break;

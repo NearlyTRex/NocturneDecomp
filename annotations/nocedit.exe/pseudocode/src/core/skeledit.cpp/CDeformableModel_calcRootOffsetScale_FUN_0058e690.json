@@ -396,5 +396,143 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModel_calcRootOffsetScale_FUN_0058e690.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "checker": "core.CallAndMessage",
+          "column": 9,
+          "line": 57,
+          "message": "Called C++ object pointer is null",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 33,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'this_ptr_00' is equal to null"
+            },
+            {
+              "line": 42,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 45,
+              "message": "'this_ptr_01' is equal to null"
+            },
+            {
+              "line": 45,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 52,
+              "message": "Assuming 0 is < field 'bone_count'"
+            },
+            {
+              "line": 52,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 54,
+              "message": "Null pointer value stored to 'pCVar2'"
+            },
+            {
+              "line": 56,
+              "message": "'pCVar2' is not equal to 'pCVar8'"
+            },
+            {
+              "line": 56,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 57,
+              "message": "Called C++ object pointer is null"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 12,
+          "line": 66,
+          "message": "Access to field 'skinned_vertices_buffer' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 33,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 41,
+              "message": "Null pointer value stored to 'this_ptr_01'"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'this_ptr_00' is equal to null"
+            },
+            {
+              "line": 42,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 45,
+              "message": "'this_ptr_01' is equal to null"
+            },
+            {
+              "line": 45,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 52,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 52,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 66,
+              "message": "Access to field 'skinned_vertices_buffer' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 90,
+          "message": "Value stored to 'local_1c' is never read",
+          "path_notes": [
+            {
+              "line": 90,
+              "message": "Value stored to 'local_1c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 91,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 91,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

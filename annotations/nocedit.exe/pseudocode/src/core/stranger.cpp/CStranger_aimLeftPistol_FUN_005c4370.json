@@ -297,5 +297,35 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CStranger_aimLeftPistol_FUN_005c4370.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 6,
+          "line": 38,
+          "message": "Dereference of null pointer",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Assuming field 'weapon' is equal to null"
+            },
+            {
+              "line": 33,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 38,
+              "message": "Dereference of null pointer"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

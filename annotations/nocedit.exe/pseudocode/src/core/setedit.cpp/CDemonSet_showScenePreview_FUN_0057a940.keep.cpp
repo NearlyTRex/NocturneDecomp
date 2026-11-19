@@ -45,7 +45,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   while( true ) {
-    (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
+    (*g_CKeysPtr->vtable->clearKeypresses)(g_CKeysPtr);
     saved_pos_x = (g_CSlewPtr->position).x;
     fVar2 = (g_CSlewPtr->position).y;
     fVar3 = (g_CSlewPtr->position).z;

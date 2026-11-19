@@ -563,5 +563,39 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "rasterizePolygonCustom_FUN_005fd4e0.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 199,
+          "message": "Value stored to 'edge_count' is never read",
+          "path_notes": [
+            {
+              "line": 199,
+              "message": "Value stored to 'edge_count' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 217,
+          "message": "Value stored to 'edge_count' is never read",
+          "path_notes": [
+            {
+              "line": 217,
+              "message": "Value stored to 'edge_count' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

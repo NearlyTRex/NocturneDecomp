@@ -18,6 +18,7 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004c0420(CSpark *this_ptr)
   int iVar6;
   SMRGLTextureBasic *texture;
   float fStack_d4;
+  float trail_scale;
   CVector3i local_d0;
   CVector3i local_a0;
   CVector3f spark_position;
@@ -32,6 +33,7 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004c0420(CSpark *this_ptr)
   float fStack_1c;
 
   vertex_ptr = g_CDemonRendererPtr2->vertex_buffer_ptr;
+  fStack_1c = 0.4;
   local_64.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_64.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   local_64.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
@@ -103,22 +105,22 @@ LAB_004c04af:
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   spark_position = (this_ptr->base).position;
   spark_velocity = (this_ptr->base).velocity;
-  local_d0.x = 0x3f800000;
+  trail_scale = 1.0;
   iVar6 = 0;
   fStack_d4 = 0.025;
   do {
     fStack_d4 = fStack_d4 * 0.7f;
-    local_d0.x = (int)(0.7f * (float)local_d0.x);
+    trail_scale = 0.7f * trail_scale;
     spark_velocity.y = spark_velocity.y - fStack_d4 * (this_ptr->base).gravity_acceleration;
-    local_a0.x = (int)(spark_velocity.z * fStack_d4);
     spark_position.x = spark_position.x - spark_velocity.x * fStack_d4;
     spark_position.y = spark_position.y - spark_velocity.y * fStack_d4;
+    spark_position.z = spark_position.z - spark_velocity.z * fStack_d4;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&spark_position);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
               (g_CDemonRendererPtr2,&g_BillboardCameraRight,(CVector3i *)0x0);
-    fVar4 = -fStack_1c * (float)local_d0.x;
-    fVar5 = fStack_1c * (float)local_d0.x;
+    fVar4 = -fStack_1c * trail_scale;
+    fVar5 = fStack_1c * trail_scale;
     quad_v0.x = (int)ROUND(fVar4 * 256.0f);
     quad_v0.y = (int)ROUND(fVar4 * 256.0f);
     quad_v0.z = 0;

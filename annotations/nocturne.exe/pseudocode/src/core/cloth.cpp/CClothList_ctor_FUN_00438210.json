@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 7,
+    "complexity_score": 22,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 7,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "mem_magic_size"
+    ],
     "total_lines": 28
   },
   "cross_references": [
@@ -140,5 +142,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "memset size hardcodes 0x28 == the whole cloths field (10 x CCloth *), which the dest names. It is an array of pointers, so it grows once pointers are 8 bytes and memset covers only its leading 0x28 bytes. Use sizeof(<path>->cloths) (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "memset(dest) size 0x28 == sizeof(CCloth *[10])",
+      "severity": "moderate",
+      "text": "memset(this_ptr->cloths,0,0x28)",
+      "type": "mem_magic_size"
+    }
+  ]
 }

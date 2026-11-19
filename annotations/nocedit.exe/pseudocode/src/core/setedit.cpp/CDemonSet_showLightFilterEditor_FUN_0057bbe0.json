@@ -459,6 +459,24 @@
       "severity": "moderate",
       "text": "pCVar4 = (C3DSLight *)pCVar4->name;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x16f4): the pointer is based on a field at offset 0x4 (size 256 in C3DSLight) but the +0x16f0 byte offset lands in field filter_durations (offset 0x16f4). Ghidra anchored on the wrong field \u2014 rewrite as direct access to filter_durations (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 175,
+      "match": "*(...)(pcVar8 + 0x16f4)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar8 + 0x16f4) = *(float *)(pcVar8 + 0x16f8);",
+      "type": "struct_field_overrun"
+    },
+    {
+      "description": "*(...)(pcVar8 + 0x16f8): the pointer is based on a field at offset 0x4 (size 256 in C3DSLight) but the +0x16f4 byte offset lands in field filter_durations (offset 0x16f4). Ghidra anchored on the wrong field \u2014 rewrite as direct access to filter_durations (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 175,
+      "match": "*(...)(pcVar8 + 0x16f8)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar8 + 0x16f4) = *(float *)(pcVar8 + 0x16f8);",
+      "type": "struct_field_overrun"
     }
   ],
   "stack_frame": {
@@ -633,6 +651,28 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_showLightFilterEditor_FUN_0057bbe0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 154,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 154,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

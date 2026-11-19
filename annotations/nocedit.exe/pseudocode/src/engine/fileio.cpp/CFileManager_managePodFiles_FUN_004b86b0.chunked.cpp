@@ -8,8 +8,8 @@
 /* WARNING: Removing unreachable block (ram,0x004b9ea1) */
 
 typedef struct CFileManager_managePodFiles_Ctx {
-    CFileManager *this_ptr;
-    char *pod_directory_path;
+    CFileManager **this_ptr;
+    char **pod_directory_path;
     int iVar2;
     char *pcVar3;
     int iVar4;
@@ -69,7 +69,7 @@ typedef struct CFileManager_managePodFiles_Ctx {
     char cVar1;
 } CFileManager_managePodFiles_Ctx;
 
-// Chunk return codes for cross-boundary gotos
+// Chunk return codes
 // 0 = normal continuation
 #define GOTO_LAB_004b901b 1
 #define GOTO_LAB_004b994d 2
@@ -77,7 +77,7 @@ typedef struct CFileManager_managePodFiles_Ctx {
 
 // Chunk: check_iVar2_0_check_0_0 (lines 58-263 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_0_0(CFileManager_managePodFiles_Ctx *ctx) {
-    CFileManager *&this_ptr = ctx->this_ptr;
+    CFileManager *&this_ptr = *ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;
     SPodManageRecord *&filename = ctx->filename;
@@ -432,7 +432,7 @@ LAB_004b8df1:
 
 // Chunk: check_iVar2_0_check_local_60_3 (lines 368-496 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_local_60_3(CFileManager_managePodFiles_Ctx *ctx) {
-    CFileManager *&this_ptr = ctx->this_ptr;
+    CFileManager *&this_ptr = *ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;
     int &iVar4 = ctx->iVar4;
@@ -574,7 +574,7 @@ LAB_004b9590:
 
 // Chunk: check_iVar2_0_check_0_4 (lines 501-674 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_managePodFiles_Ctx *ctx) {
-    CFileManager *&this_ptr = ctx->this_ptr;
+    CFileManager *&this_ptr = *ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;
     uint &uVar5 = ctx->uVar5;
@@ -814,8 +814,8 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
 {
   CFileManager_managePodFiles_Ctx _ctx_storage = {};
   CFileManager_managePodFiles_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
-  ctx->pod_directory_path = pod_directory_path;
+  ctx->this_ptr = &this_ptr;
+  ctx->pod_directory_path = &pod_directory_path;
 
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;
@@ -874,8 +874,6 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
     int &local_18 = ctx->local_18;
     auto &local_14 = ctx->local_14;
     char &cVar1 = ctx->cVar1;
-  // param this_ptr aliased into ctx above
-  // param pod_directory_path aliased into ctx above
 
   bVar15 = 0;
   local_5c = 0;
@@ -935,24 +933,24 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (g_CEditorToolsPtr,"Scanning pods");
       local_64 = 0;
-    if (0 < local_94.item_count) {
-      int _rc = CFileManager_managePodFiles_check_iVar2_0_check_0_0(ctx);
-      if (_rc == GOTO_LAB_004b901b) goto LAB_004b901b;
-    }
+      if (0 < local_94.item_count) {
+        int _rc = CFileManager_managePodFiles_check_iVar2_0_check_0_0(ctx);
+        if (_rc == GOTO_LAB_004b901b) goto LAB_004b901b;
+      }
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       local_1c = 0;
-    if (0 < local_84.item_count) {
-      CFileManager_managePodFiles_check_iVar2_0_check_0_1(ctx);
-    }
+      if (0 < local_84.item_count) {
+        CFileManager_managePodFiles_check_iVar2_0_check_0_1(ctx);
+      }
       local_60 = 0;
 LAB_004b8d5b:
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_170c);
       shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_170c,1);
       iVar2 = 0;
       filename = local_44;
-    if (0 < local_48) {
-      CFileManager_managePodFiles_check_iVar2_0_check_0_2(ctx);
-    }
+      if (0 < local_48) {
+        CFileManager_managePodFiles_check_iVar2_0_check_0_2(ctx);
+      }
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base,"Go!");
       local_60 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                            (&local_170c,"Select action for each pod, select \"Go!\" when you are done",local_60,0);
@@ -960,19 +958,19 @@ LAB_004b8d5b:
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_170c,0);
         goto LAB_004b901b;
       }
-    if (local_60 < local_170c.base.item_count + -1) {
-      int _rc = CFileManager_managePodFiles_check_iVar2_0_check_local_60_3(ctx);
-      if (_rc == GOTO_LAB_004b994d) goto LAB_004b994d;
-      if (_rc == GOTO_LAB_004b9978) goto LAB_004b9978;
-    }
+      if (local_60 < local_170c.base.item_count + -1) {
+        int _rc = CFileManager_managePodFiles_check_iVar2_0_check_local_60_3(ctx);
+        if (_rc == GOTO_LAB_004b994d) goto LAB_004b994d;
+        if (_rc == GOTO_LAB_004b9978) goto LAB_004b9978;
+      }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_170c,0);
       local_20 = 0;
       this_ptr->batch_mode = 1;
       g_VersionControlSession.overwrite_own_choice = 0;
       g_VersionControlSession.overwrite_writeable_choice = 0;
-    if (0 < local_48) {
-      CFileManager_managePodFiles_check_iVar2_0_check_0_4(ctx);
-    }
+      if (0 < local_48) {
+        CFileManager_managePodFiles_check_iVar2_0_check_0_4(ctx);
+      }
       this_ptr->batch_mode = 0;
       if ((0 < local_58) || (0 < local_50)) {
         engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(this_ptr,&local_84);
@@ -981,9 +979,9 @@ LAB_004b8d5b:
         pcVar3 = "PODs not changed.";
         pcVar12 = local_598;
       }
-    else {
-      CFileManager_managePodFiles_check_iVar2_0_else_5(ctx);
-    }
+      else {
+        CFileManager_managePodFiles_check_iVar2_0_else_5(ctx);
+      }
       do {
         cVar1 = *pcVar3;
         *pcVar12 = cVar1;

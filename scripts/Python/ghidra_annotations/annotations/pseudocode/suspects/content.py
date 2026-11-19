@@ -7394,7 +7394,7 @@ def identify_derived_field_index_pun(code, struct_layout_map=None,
                 alt = (' Ambiguous: %s also has a field there — confirm the '
                        'real class from the .asm before rewriting.'
                        % ', '.join('%s::%s' % (o, fn)
-                                   for o, f, fn in hits[1:4]))
+                                   for o, f, fn in hits[1:]))
 
             suspects.append({
                 'type': 'derived_field_index_pun',

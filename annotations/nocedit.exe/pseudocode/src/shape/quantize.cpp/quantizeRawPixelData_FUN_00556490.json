@@ -546,5 +546,343 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "quantizeRawPixelData_FUN_00556490.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 28,
+          "message": "Value stored to 'bVar9' is never read",
+          "path_notes": [
+            {
+              "line": 28,
+              "message": "Value stored to 'bVar9' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 29,
+          "line": 99,
+          "message": "Access to field 'progress_callback' results in a dereference of a null pointer (loaded from variable 'pCVar2')",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Assuming 'pCVar1' is not equal to null"
+            },
+            {
+              "line": 33,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 37,
+              "message": "Assuming 'local_14' is not equal to null"
+            },
+            {
+              "line": 37,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'bit_depth' is >= 16"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 54,
+              "message": "Assuming 'bit_depth' is < 17"
+            },
+            {
+              "line": 54,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 57,
+              "message": "Control jumps to line 76"
+            },
+            {
+              "line": 78,
+              "message": "Assuming 'show_progress' is equal to 0"
+            },
+            {
+              "line": 78,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 84,
+              "message": "Null pointer value stored to 'pCVar2'"
+            },
+            {
+              "line": 85,
+              "message": "Assuming 'this_ptr' is equal to null"
+            },
+            {
+              "line": 85,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 88,
+              "message": "'pCVar2' is equal to null"
+            },
+            {
+              "line": 88,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 93,
+              "message": "'show_progress' is equal to 0"
+            },
+            {
+              "line": 93,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 99,
+              "message": "Access to field 'progress_callback' results in a dereference of a null pointer (loaded from variable 'pCVar2')"
+            }
+          ]
+        },
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 5,
+          "line": 118,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Assuming 'pCVar1' is not equal to null"
+            },
+            {
+              "line": 33,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 37,
+              "message": "Assuming 'local_14' is not equal to null"
+            },
+            {
+              "line": 37,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'bit_depth' is >= 16"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 54,
+              "message": "Assuming 'bit_depth' is < 17"
+            },
+            {
+              "line": 54,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 57,
+              "message": "Control jumps to line 76"
+            },
+            {
+              "line": 78,
+              "message": "Assuming 'show_progress' is equal to 0"
+            },
+            {
+              "line": 78,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 85,
+              "message": "Assuming 'this_ptr' is not equal to null"
+            },
+            {
+              "line": 85,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 88,
+              "message": "Assuming 'pCVar2' is not equal to null"
+            },
+            {
+              "line": 88,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 93,
+              "message": "'show_progress' is equal to 0"
+            },
+            {
+              "line": 93,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 102,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 102,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 103,
+              "message": "'show_progress' is equal to 0"
+            },
+            {
+              "line": 103,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 110,
+              "message": "Value assigned to 'puVar4'"
+            },
+            {
+              "line": 112,
+              "message": "Assigning the value of 'puVar4'"
+            },
+            {
+              "line": 113,
+              "message": "Assuming 'puVar4' is equal to null"
+            },
+            {
+              "line": 113,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 118,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        },
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 5,
+          "line": 126,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Assuming 'pCVar1' is not equal to null"
+            },
+            {
+              "line": 33,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 37,
+              "message": "Assuming 'local_14' is not equal to null"
+            },
+            {
+              "line": 37,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'bit_depth' is >= 16"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 54,
+              "message": "Assuming 'bit_depth' is < 17"
+            },
+            {
+              "line": 54,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 57,
+              "message": "Control jumps to line 76"
+            },
+            {
+              "line": 78,
+              "message": "Assuming 'show_progress' is equal to 0"
+            },
+            {
+              "line": 78,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 85,
+              "message": "Assuming 'this_ptr' is not equal to null"
+            },
+            {
+              "line": 85,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 88,
+              "message": "Assuming 'pCVar2' is not equal to null"
+            },
+            {
+              "line": 88,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 93,
+              "message": "'show_progress' is equal to 0"
+            },
+            {
+              "line": 93,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 102,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 102,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 103,
+              "message": "'show_progress' is equal to 0"
+            },
+            {
+              "line": 103,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 113,
+              "message": "Assuming 'puVar4' is not equal to null"
+            },
+            {
+              "line": 113,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 119,
+              "message": "Value assigned to 'puVar1'"
+            },
+            {
+              "line": 120,
+              "message": "Assigning the value of 'puVar1'"
+            },
+            {
+              "line": 121,
+              "message": "Assuming 'puVar1' is equal to null"
+            },
+            {
+              "line": 121,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 126,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

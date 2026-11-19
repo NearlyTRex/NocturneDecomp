@@ -715,5 +715,283 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "loadModelBinary_FUN_00458170.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 87,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 87,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 71,
+          "line": 93,
+          "message": "The right operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 37,
+              "message": "Assuming 'local_38' is not equal to null"
+            },
+            {
+              "line": 37,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'local_18' is not equal to 0"
+            },
+            {
+              "line": 51,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'local_14' is not equal to -1"
+            },
+            {
+              "line": 51,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 52,
+              "message": "Assuming 'local_18' is < 20"
+            },
+            {
+              "line": 52,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 53,
+              "message": "Assuming 'local_18' is >= 6"
+            },
+            {
+              "line": 53,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 81,
+              "message": "Assuming 'local_18' is < 7"
+            },
+            {
+              "line": 81,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 90,
+              "message": "Assuming 'local_2c' is < field 'vertex_indices_count'"
+            },
+            {
+              "line": 90,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 93,
+              "message": "The right operand of '-' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.uninitialized.ArraySubscript",
+          "column": 22,
+          "line": 100,
+          "message": "Array subscript is undefined",
+          "path_notes": [
+            {
+              "line": 26,
+              "message": "'local_2c' declared without an initial value"
+            },
+            {
+              "line": 37,
+              "message": "Assuming 'local_38' is not equal to null"
+            },
+            {
+              "line": 37,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'local_18' is not equal to 0"
+            },
+            {
+              "line": 51,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'local_14' is not equal to -1"
+            },
+            {
+              "line": 51,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 52,
+              "message": "Assuming 'local_18' is < 20"
+            },
+            {
+              "line": 52,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 53,
+              "message": "Assuming 'local_18' is >= 6"
+            },
+            {
+              "line": 53,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 81,
+              "message": "Assuming 'local_18' is >= 7"
+            },
+            {
+              "line": 81,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 97,
+              "message": "Assuming 'local_18' is < 13"
+            },
+            {
+              "line": 97,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 98,
+              "message": "Assuming 'local_18' is equal to 10"
+            },
+            {
+              "line": 98,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 100,
+              "message": "Array subscript is undefined"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 109,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 109,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 9,
+          "line": 151,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 151,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 76,
+          "line": 156,
+          "message": "The right operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 37,
+              "message": "Assuming 'local_38' is not equal to null"
+            },
+            {
+              "line": 37,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'local_18' is not equal to 0"
+            },
+            {
+              "line": 51,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'local_14' is not equal to -1"
+            },
+            {
+              "line": 51,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 52,
+              "message": "Assuming 'local_18' is >= 20"
+            },
+            {
+              "line": 52,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 112,
+              "message": "Assuming 'local_18' is >= 21"
+            },
+            {
+              "line": 112,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 117,
+              "message": "Assuming 'local_18' is < 27"
+            },
+            {
+              "line": 117,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 118,
+              "message": "Assuming 'local_18' is >= 24"
+            },
+            {
+              "line": 118,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 123,
+              "message": "Assuming 'local_18' is <= 24"
+            },
+            {
+              "line": 123,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 153,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 153,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 156,
+              "message": "The right operand of '-' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

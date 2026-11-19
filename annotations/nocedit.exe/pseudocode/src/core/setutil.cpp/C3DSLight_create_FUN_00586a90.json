@@ -242,5 +242,107 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "C3DSLight_create_FUN_00586a90.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 37,
+          "line": 34,
+          "message": "Access to field 'shadow_bounds_mode' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')",
+          "path_notes": [
+            {
+              "line": 22,
+              "message": "Null pointer value stored to 'this_ptr_01'"
+            },
+            {
+              "line": 23,
+              "message": "Assuming 'this_ptr_00' is equal to null"
+            },
+            {
+              "line": 23,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 27,
+              "message": "'this_ptr_01' is equal to null"
+            },
+            {
+              "line": 27,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 33,
+              "message": "Assuming field 'filter_count' is < 1"
+            },
+            {
+              "line": 33,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 34,
+              "message": "Access to field 'shadow_bounds_mode' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 37,
+          "line": 37,
+          "message": "Access to field 'shadow_bounds_mode' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')",
+          "path_notes": [
+            {
+              "line": 22,
+              "message": "Null pointer value stored to 'this_ptr_01'"
+            },
+            {
+              "line": 23,
+              "message": "Assuming 'this_ptr_00' is equal to null"
+            },
+            {
+              "line": 23,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 27,
+              "message": "'this_ptr_01' is equal to null"
+            },
+            {
+              "line": 27,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 33,
+              "message": "Assuming field 'filter_count' is >= 1"
+            },
+            {
+              "line": 33,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 37,
+              "message": "Access to field 'shadow_bounds_mode' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 3,
+          "line": 57,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 57,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

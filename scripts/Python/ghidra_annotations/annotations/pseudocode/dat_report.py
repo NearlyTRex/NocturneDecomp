@@ -3,10 +3,27 @@
 
 import bisect
 import glob as glob_mod
+import json
 import os
 import re
 from collections import defaultdict
 from ghidra_annotations.util.log import log_info
+
+
+def _source_files(pseudocode_src_dir, *patterns):
+    """(path, lines) of each readable file under the tree matching a pattern, in path order.
+
+    The tree has directories named like files (drender.cpp/), which a glob for
+    *.cpp also returns; reading one fails, so it is skipped with the unreadable.
+    """
+    for pattern in patterns:
+        for path in sorted(glob_mod.glob(os.path.join(pseudocode_src_dir, '**', pattern), recursive=True)):
+            try:
+                with open(path) as f:
+                    lines = f.readlines()
+            except OSError:
+                continue
+            yield path, lines
 
 
 # =============================================================================
@@ -27,8 +44,6 @@ def build_struct_size_cache(pseudocode_src_dir):
 
     Returns dict: type_name -> size_in_bytes
     """
-    import json
-
     global _struct_size_cache, _struct_size_cache_dir
     if _struct_size_cache is not None and _struct_size_cache_dir == pseudocode_src_dir:
         return _struct_size_cache
@@ -36,9 +51,11 @@ def build_struct_size_cache(pseudocode_src_dir):
 
     # Derive data_types.json path: pseudocode_src_dir is .../pseudocode/src
     # so we need .../data_types/data_types.json
+    # The walk stops at the root, whose dirname is itself
     annotations_base = pseudocode_src_dir
     while annotations_base and os.path.basename(annotations_base) != 'pseudocode':
-        annotations_base = os.path.dirname(annotations_base)
+        parent = os.path.dirname(annotations_base)
+        annotations_base = '' if parent == annotations_base else parent
 
     cache = {}
     if not annotations_base:
@@ -48,16 +65,11 @@ def build_struct_size_cache(pseudocode_src_dir):
 
     exe_dir = os.path.dirname(annotations_base)
     data_types_path = os.path.join(exe_dir, 'data_types', 'data_types.json')
-    if not os.path.isfile(data_types_path):
-        log_info("data_types.json not found at %s" % data_types_path)
-        _struct_size_cache = cache
-        return cache
-
     try:
         with open(data_types_path) as f:
             data_types = json.load(f)
-    except (json.JSONDecodeError, IOError) as e:
-        log_info("Failed to load data_types.json: %s" % e)
+    except (OSError, ValueError) as e:
+        log_info("Failed to load %s: %s" % (data_types_path, e))
         _struct_size_cache = cache
         return cache
 
@@ -186,9 +198,7 @@ def find_nearby_named_globals(dat_addr_int, all_globals, range_bytes=256):
         except (ValueError, KeyError):
             continue
         distance = dat_addr_int - other_addr
-        if 0 < distance <= range_bytes:
-            nearby.append((name, info.get('type', '?'), distance))
-        elif 0 < -distance <= range_bytes:
+        if 0 < abs(distance) <= range_bytes:
             nearby.append((name, info.get('type', '?'), distance))
 
     nearby.sort(key=lambda x: abs(x[2]))
@@ -256,7 +266,9 @@ def estimate_global_size(gtype, struct_sizes=None):
 def _find_base_global_name(name, all_globals):
     """Find the base global for a sub-reference like g_Foo[0].bar or g_Foo[3].
 
-    Returns the base global name if found, None otherwise.
+    Returns the base global name if found, None otherwise. An offset label
+    (`s_x_00613578+1`) is kept: with no string lengths in the JSONs, it is
+    what bounds a string's 256-byte guess in is_inside_named_global.
     """
     # Strip trailing field accessors: g_Foo[0].bar.baz -> g_Foo[0]
     # Strip array indices: g_Foo[0] -> g_Foo
@@ -305,8 +317,22 @@ def build_global_address_map(all_globals):
         size, is_exact = estimate_global_size(gtype)
         entries.append((addr, name, gtype, size, is_exact))
 
+    # An offset label (g_Path+4) inside a base of known size is part of it,
+    # like g_Foo[3]. Inside a string, whose size is a guess, it stays: it is
+    # what bounds the guess.
+    exact_ends = {name: addr + size for addr, name, _, size, is_exact in entries if is_exact}
+    entries = [e for e in entries if not _inside_exact_base(e, exact_ends)]
     entries.sort()
     return entries
+
+
+_OFFSET_LABEL_RE = re.compile(r'(.+)\+(?:0x[0-9a-fA-F]+|\d+)$')
+
+
+def _inside_exact_base(entry, exact_ends):
+    """True if entry is an offset label `base+N` lying within base's known extent."""
+    m = _OFFSET_LABEL_RE.match(entry[1])
+    return bool(m) and m.group(1) in exact_ends and entry[0] < exact_ends[m.group(1)]
 
 
 def is_inside_named_global(dat_addr_int, all_globals, global_addr_map=None):
@@ -363,6 +389,28 @@ def is_inside_named_global(dat_addr_int, all_globals, global_addr_map=None):
 # Immediate constant detection
 # =============================================================================
 
+# `    MNEMONIC operands    ; ADDRESS | ...`
+_ASM_LINE_RE = re.compile(r'\s+(\S+)\s+(.*?)\s*;\s*[0-9a-f]+')
+
+
+def is_memory_reference(operands, addr_hex):
+    """True unless an instruction Ghidra tied to the address addr_hex only uses it as a value.
+
+    The literal inside brackets is a deref (`[0x00665f3a]`); bare, it is an
+    immediate (`MOV EDX,0xf80000`). With no literal at all, Ghidra tracked the
+    address in a register: a computed address (`[EAX + 0x14d144]` ->
+    0x032613bc) or a pointer the code holds (`PUSH EAX` after
+    `ADD EAX,0x5fd8f4`), both uses of a real global.
+
+    The literal must be the whole number: 0x18 is not in `[EAX + 0x180]`.
+    """
+    operands_lower = operands.lower()
+    literal = re.compile(r'(?<![0-9a-fx])(?:0x)?0*%s(?![0-9a-f])' % re.escape(addr_hex.lstrip('0') or '0'))
+    if not literal.search(operands_lower):
+        return True
+    return any(literal.search(content) for content in re.findall(r'\[([^\]]*)\]', operands_lower))
+
+
 def detect_immediate_references(pseudocode_src_dir, dat_globals):
     """Detect DAT_ globals that are used only as immediate values, not memory addresses.
 
@@ -394,36 +442,23 @@ def detect_immediate_references(pseudocode_src_dir, dat_globals):
         addr = info['addr'].lower()
         dat_addr_hex[name] = addr
 
-    asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
-    for asm_path in sorted(glob_mod.glob(asm_pattern, recursive=True)):
-        if os.path.isdir(asm_path):
-            continue
-
+    for asm_path, lines in _source_files(pseudocode_src_dir, '*.asm'):
         # Extract function display name from filename
         basename = os.path.splitext(os.path.basename(asm_path))[0]
         # Strip the FUN_xxx suffix for cleaner display
         func_display = re.sub(r'_FUN_[0-9a-f]+$', '', basename)
 
-        try:
-            with open(asm_path) as f:
-                lines = f.readlines()
-        except IOError:
-            continue
-
         for line in lines:
             if 'DAT_' not in line or '|' not in line:
                 continue
 
-            parts = line.split('|')
-            if len(parts) < 2:
-                continue
-
-            # Find all DAT_ references in the comment portion
-            comment_part = parts[1]
+            # Find all DAT_ references in the comment portion, every one Ghidra
+            # lists (`PUSH EAX | DAT_005f1004 | DAT_005f101c`)
+            comment_part = line.split('|', 1)[1]
             dat_refs = re.findall(r'(DAT_[0-9a-fA-F]+)', comment_part)
 
             # Parse the instruction
-            instr_m = re.match(r'\s+(\S+)\s+(.*?)\s*;\s*[0-9a-f]+', line)
+            instr_m = _ASM_LINE_RE.match(line)
             if not instr_m:
                 continue
 
@@ -437,35 +472,7 @@ def detect_immediate_references(pseudocode_src_dir, dat_globals):
                 if not addr_hex:
                     continue
 
-                # Determine if this is an immediate constant or memory reference.
-                # Build patterns to match: 0x00f80000, 0xf80000, etc.
-                addr_stripped = addr_hex.lstrip('0') or '0'
-                operands_lower = operands.lower()
-
-                # Check if the DAT_ address literal appears in the operand text.
-                # If it doesn't appear at all, Ghidra resolved it from a
-                # register+offset expression (e.g. [EAX + 0x14d144] -> 0x032613bc).
-                # That's a computed struct field access, not an immediate.
-                addr_in_operand = (
-                    ('0x' + addr_stripped) in operands_lower or
-                    ('0x' + addr_hex) in operands_lower or
-                    addr_hex in operands_lower
-                )
-
-                if not addr_in_operand:
-                    # Resolved/computed address — definitely a memory reference
-                    is_memory = True
-                else:
-                    # Address literal is in the operand — check if it's inside
-                    # brackets (memory deref) or bare (immediate)
-                    is_memory = False
-                    bracket_contents = re.findall(r'\[([^\]]*)\]', operands_lower)
-                    for content in bracket_contents:
-                        if addr_stripped in content or addr_hex in content:
-                            is_memory = True
-                            break
-
-                if is_memory:
+                if is_memory_reference(operands, addr_hex):
                     results[dat_ref]['memory_count'] += 1
                     results[dat_ref]['all_immediate'] = False
                 else:
@@ -481,143 +488,150 @@ def detect_immediate_references(pseudocode_src_dir, dat_globals):
 # Main report generation
 # =============================================================================
 
+def collect_globals(pseudocode_src_dir):
+    """name -> {'addr', 'type', 'funcs'} for every global the function JSONs reference.
+
+    The first JSON (in path order) to mention a global gives its address and
+    type; 'funcs' is the set of function names that reference it.
+    """
+    all_globals = {}
+    json_pattern = os.path.join(pseudocode_src_dir, '**', '*.json')
+    for json_path in sorted(glob_mod.glob(json_pattern, recursive=True)):
+        try:
+            with open(json_path) as f:
+                data = json.load(f)
+        except (OSError, ValueError):
+            continue
+        func_name = data.get('function', {}).get('name', '?')
+        for g in data.get('globals', []):
+            info = all_globals.setdefault(g.get('name', ''), {
+                'addr': g.get('addr', ''), 'type': g.get('type', 'unknown'), 'funcs': set()})
+            info['funcs'].add(func_name)
+    return all_globals
+
+
+def named_extent(global_addr_map):
+    """(start, end) of the address range the named globals cover, or None without any.
+
+    Every program names its IMAGE_DOS_HEADER at the image base and its
+    resources last, so this is the program image. A DAT_ outside it is a
+    constant or an address Ghidra computed from a register value; no global
+    lives there.
+    """
+    if not global_addr_map:
+        return None
+    return global_addr_map[0][0], max(addr + max(size, 1) for addr, _, _, size, _ in global_addr_map)
+
+
+def sort_dat_globals(pseudocode_src_dir, all_globals):
+    """Split the DAT_ globals of all_globals by what they really are.
+
+    Returns (real, inside, outside, immediates):
+      real       -- name -> a copy of its all_globals entry, standalone globals
+      inside     -- name -> the named global whose data it falls in
+      outside    -- sorted names whose address is outside the program image
+      immediates -- name -> detect_immediate_references result, for the ones
+                    the code only ever uses as a constant value
+    A DAT_ whose address does not parse is in none of them.
+    """
+    global_addr_map = build_global_address_map(all_globals)
+    extent = named_extent(global_addr_map)
+    real, inside, outside = {}, {}, []
+    for name, info in all_globals.items():
+        if not name.startswith('DAT_'):
+            continue
+        try:
+            addr = int(info['addr'], 16)
+        except ValueError:
+            continue
+        if extent and not extent[0] <= addr < extent[1]:
+            outside.append(name)
+            continue
+        containing = is_inside_named_global(addr, all_globals, global_addr_map)
+        if containing:
+            inside[name] = containing
+        else:
+            real[name] = dict(info)
+    immediates = {name: imm for name, imm in detect_immediate_references(pseudocode_src_dir, real).items()
+                  if imm['all_immediate'] and imm['immediate_count'] > 0}
+    for name in immediates:
+        del real[name]
+    log_info("DAT_ globals: %d real, %d inside named data, %d outside the image, %d immediates" % (
+        len(real), len(inside), len(outside), len(immediates)))
+    return real, inside, sorted(outside), immediates
+
+
+def dat_instructions(pseudocode_src_dir):
+    """(DAT_ name, mnemonic, operands) for each .asm instruction whose comment names a DAT_ first.
+
+    Lines look like `    MOV EAX,[0x00665f3a]   ; 00607b21 | DAT_00665f3a`.
+    """
+    for _, lines in _source_files(pseudocode_src_dir, '*.asm'):
+        for line in lines:
+            if 'DAT_' not in line or '|' not in line:
+                continue
+            words = line.split('|')[1].split()
+            m = _ASM_LINE_RE.match(line)
+            if words and words[0].startswith('DAT_') and m:
+                yield words[0], m.group(1), m.group(2).strip()
+
+
+def best_hint(hints):
+    """The hint to report from (type, confidence, ...) tuples: the first high,
+    else the first medium, else the first."""
+    for level in ('high', 'medium'):
+        for hint in hints:
+            if hint[1] == level:
+                return hint
+    return hints[0]
+
+
+def _outside_section(outside):
+    """Report lines listing the DAT_ globals outside the program image."""
+    if not outside:
+        return []
+    lines = ["-" * 80,
+             "OUTSIDE THE PROGRAM IMAGE (%d)" % len(outside),
+             "-" * 80,
+             "No global lives at these addresses: they are constants, or addresses Ghidra",
+             "computed from a register value.",
+             ""]
+    lines += ["  %s" % name for name in outside]
+    lines.append("")
+    return lines
+
+
 def generate_dat_report(pseudocode_src_dir, reports_dir):
     """Generate a report of unnamed DAT_ globals with type inference.
 
     Scans all function JSON and ASM files to collect DAT_ references,
     then infers likely types from usage patterns.
     """
-    import json
-    import glob
-
     log_info("Generating DAT_ globals analysis report...")
 
     # Build struct size cache from data_types.json
     build_struct_size_cache(pseudocode_src_dir)
 
-    # Collect all globals from function JSONs
-    all_globals = {}  # name -> {addr, type, funcs: []}
-    dat_globals = {}  # name -> {addr, type, funcs: [], asm_uses: [], cpp_uses: []}
-
-    json_pattern = os.path.join(pseudocode_src_dir, '**', '*.json')
-    for json_path in sorted(glob.glob(json_pattern, recursive=True)):
-        if os.path.isdir(json_path):
-            continue
-        try:
-            with open(json_path) as f:
-                data = json.load(f)
-        except (json.JSONDecodeError, IOError):
-            continue
-
-        func_name = data.get('function', {}).get('name', '?')
-
-        for g in data.get('globals', []):
-            name = g.get('name', '')
-            addr = g.get('addr', '')
-            gtype = g.get('type', 'unknown')
-
-            info = all_globals.setdefault(name, {
-                'addr': addr, 'type': gtype, 'funcs': []
-            })
-            info['funcs'].append(func_name)
-
-            if name.startswith('DAT_'):
-                dat_info = dat_globals.setdefault(name, {
-                    'addr': addr, 'type': gtype, 'funcs': [],
-                    'asm_uses': [], 'cpp_uses': [], 'type_hints': []
-                })
-                dat_info['funcs'].append(func_name)
-
-    log_info("Found %d unique DAT_ globals across %d total globals" % (
-        len(dat_globals), len(all_globals)))
-
-    # Filter out DAT_ globals that fall inside named globals (strings, arrays, structs)
-    global_addr_map = build_global_address_map(all_globals)
-    filtered_out = {}
-    for name in list(dat_globals.keys()):
-        try:
-            dat_addr_int = int(dat_globals[name]['addr'], 16)
-        except ValueError:
-            continue
-        containing = is_inside_named_global(dat_addr_int, all_globals, global_addr_map)
-        if containing:
-            filtered_out[name] = containing
-            del dat_globals[name]
-
-    log_info("Filtered out %d DAT_ globals inside named data (%d remaining)" % (
-        len(filtered_out), len(dat_globals)))
-
-    # Detect immediate constants and remove them from the main analysis
-    imm_results = detect_immediate_references(pseudocode_src_dir, dat_globals)
-    immediate_constants = {}
-    for name, imm_info in imm_results.items():
-        if name not in dat_globals:
-            continue
-        if imm_info['all_immediate'] and imm_info['immediate_count'] > 0:
-            immediate_constants[name] = imm_info
-
-    for name in immediate_constants:
-        del dat_globals[name]
-
-    log_info("Detected %d likely immediate constants (%d real globals remaining)" % (
-        len(immediate_constants), len(dat_globals)))
+    all_globals = collect_globals(pseudocode_src_dir)
+    dat_globals, filtered_out, outside, immediate_constants = sort_dat_globals(pseudocode_src_dir, all_globals)
+    for info in dat_globals.values():
+        info.update({'asm_uses': [], 'cpp_uses': [], 'type_hints': []})
 
     # Scan assembly files for DAT_ instruction patterns
-    asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
-    for asm_path in sorted(glob.glob(asm_pattern, recursive=True)):
-        if os.path.isdir(asm_path):
-            continue
-        try:
-            with open(asm_path) as f:
-                lines = f.readlines()
-        except IOError:
-            continue
-
-        for line in lines:
-            if 'DAT_' not in line or '|' not in line:
-                continue
-
-            # Extract instruction and DAT name from assembly line
-            # Format: "    MNEMONIC operands    ; ADDRESS | DAT_xxx"
-            parts = line.split('|')
-            if len(parts) < 2:
-                continue
-
-            dat_ref = parts[1].strip().split()[0] if parts[1].strip() else ''
-            if not dat_ref.startswith('DAT_'):
-                continue
-
-            m = re.match(r'\s+(\S+)\s+(.*?)\s*;\s*[0-9a-f]+', line)
-            if not m:
-                continue
-
-            mnemonic = m.group(1)
-            operands = m.group(2).strip()
-
-            if dat_ref in dat_globals:
-                dat_globals[dat_ref]['asm_uses'].append((mnemonic, operands))
-
-                hint, confidence = infer_type_from_asm(mnemonic, operands, dat_ref)
-                if hint:
-                    dat_globals[dat_ref]['type_hints'].append((hint, confidence, 'asm: %s %s' % (mnemonic, operands[:60])))
+    for dat_ref, mnemonic, operands in dat_instructions(pseudocode_src_dir):
+        if dat_ref in dat_globals:
+            dat_globals[dat_ref]['asm_uses'].append((mnemonic, operands))
+            hint, confidence = infer_type_from_asm(mnemonic, operands, dat_ref)
+            if hint:
+                dat_globals[dat_ref]['type_hints'].append((hint, confidence, 'asm: %s %s' % (mnemonic, operands[:60])))
 
     # Scan pseudocode files for DAT_ usage patterns
-    for ext in ('*.cpp', '*.c'):
-        cpp_pattern = os.path.join(pseudocode_src_dir, '**', ext)
-        for cpp_path in sorted(glob.glob(cpp_pattern, recursive=True)):
-            if os.path.isdir(cpp_path):
-                continue
-            try:
-                with open(cpp_path) as f:
-                    lines = f.readlines()
-            except IOError:
-                continue
-
-            for line in lines:
-                for m in re.finditer(r'(DAT_[0-9a-fA-F]+)', line):
-                    dat_name = m.group(1)
-                    if dat_name in dat_globals:
-                        dat_globals[dat_name]['cpp_uses'].append(line.strip())
+    for _, lines in _source_files(pseudocode_src_dir, '*.cpp', '*.c'):
+        for line in lines:
+            for m in re.finditer(r'(DAT_[0-9a-fA-F]+)', line):
+                dat_name = m.group(1)
+                if dat_name in dat_globals:
+                    dat_globals[dat_name]['cpp_uses'].append(line.strip())
 
     # Run pseudocode inference
     for name, info in dat_globals.items():
@@ -626,14 +640,9 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
             for hint, confidence in hints:
                 info['type_hints'].append((hint, confidence, 'pseudocode'))
 
-    # Find nearby named globals for context
-    for name, info in dat_globals.items():
-        try:
-            dat_addr_int = int(info['addr'], 16)
-        except ValueError:
-            continue
-        nearby = find_nearby_named_globals(dat_addr_int, all_globals)
-        info['nearby'] = nearby
+    # Find nearby named globals for context (sort_dat_globals kept only parseable addresses)
+    for info in dat_globals.values():
+        info['nearby'] = find_nearby_named_globals(int(info['addr'], 16), all_globals)
 
     # Build the report
     report_lines = []
@@ -641,9 +650,9 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
     report_lines.append("DAT_ GLOBALS ANALYSIS REPORT")
     report_lines.append("=" * 80)
     report_lines.append("")
-    total_found = len(dat_globals) + len(filtered_out) + len(immediate_constants)
-    report_lines.append("Total DAT_ globals found: %d" % total_found)
+    report_lines.append("Total DAT_ globals found: %d" % sum(1 for name in all_globals if name.startswith('DAT_')))
     report_lines.append("Filtered out (inside named data): %d" % len(filtered_out))
+    report_lines.append("Outside the program image: %d" % len(outside))
     report_lines.append("Immediate constants (not real globals): %d" % len(immediate_constants))
     report_lines.append("Real globals remaining: %d" % len(dat_globals))
     report_lines.append("")
@@ -674,17 +683,7 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
             no_hints.append((name, info))
             continue
 
-        # Pick best hint by confidence
-        best = None
-        for hint, conf, source in hints:
-            if conf == 'high':
-                best = (hint, conf, source)
-                break
-            elif conf == 'medium' and (best is None or best[1] != 'medium'):
-                best = (hint, conf, source)
-            elif best is None:
-                best = (hint, conf, source)
-
+        best = best_hint(hints)
         if best[1] == 'high':
             high_confidence.append((name, info, best))
         elif best[1] == 'medium':
@@ -692,79 +691,49 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
         else:
             low_confidence.append((name, info, best))
 
-    # High confidence section
-    report_lines.append("-" * 80)
-    report_lines.append("HIGH CONFIDENCE INFERENCES (%d)" % len(high_confidence))
-    report_lines.append("-" * 80)
-    for name, info, (hint, conf, source) in high_confidence:
-        ref_count = len(set(info['funcs']))
-        report_lines.append("  %-30s  addr=%-10s  current=%-14s  likely=%-14s  refs=%d" % (
-            name, info['addr'], info['type'], hint, ref_count))
-        # Show nearby context if useful
-        nearby = info.get('nearby', [])
-        if nearby:
-            closest = nearby[0]
-            report_lines.append("    nearby: %s (%s) at offset %+d" % (closest[0], closest[1], closest[2]))
-    report_lines.append("")
-
-    # Medium confidence section
-    report_lines.append("-" * 80)
-    report_lines.append("MEDIUM CONFIDENCE INFERENCES (%d)" % len(medium_confidence))
-    report_lines.append("-" * 80)
-    for name, info, (hint, conf, source) in medium_confidence:
-        ref_count = len(set(info['funcs']))
-        report_lines.append("  %-30s  addr=%-10s  current=%-14s  likely=%-14s  refs=%d" % (
-            name, info['addr'], info['type'], hint, ref_count))
-        nearby = info.get('nearby', [])
-        if nearby:
-            closest = nearby[0]
-            report_lines.append("    nearby: %s (%s) at offset %+d" % (closest[0], closest[1], closest[2]))
-    report_lines.append("")
-
-    # Low confidence section
-    report_lines.append("-" * 80)
-    report_lines.append("LOW CONFIDENCE INFERENCES (%d)" % len(low_confidence))
-    report_lines.append("-" * 80)
-    for name, info, (hint, conf, source) in low_confidence:
-        ref_count = len(set(info['funcs']))
-        report_lines.append("  %-30s  addr=%-10s  current=%-14s  maybe=%-14s  refs=%d" % (
-            name, info['addr'], info['type'], hint, ref_count))
-    report_lines.append("")
+    # Confidence sections; the high and medium ones show the nearest named global
+    for title, label, entries, show_nearby in (('HIGH', 'likely', high_confidence, True),
+                                               ('MEDIUM', 'likely', medium_confidence, True),
+                                               ('LOW', 'maybe', low_confidence, False)):
+        report_lines.append("-" * 80)
+        report_lines.append("%s CONFIDENCE INFERENCES (%d)" % (title, len(entries)))
+        report_lines.append("-" * 80)
+        for name, info, (hint, _, _) in entries:
+            report_lines.append("  %-30s  addr=%-10s  current=%-14s  %s=%-14s  refs=%d" % (
+                name, info['addr'], info['type'], label, hint, len(info['funcs'])))
+            if show_nearby and info['nearby']:
+                closest = info['nearby'][0]
+                report_lines.append("    nearby: %s (%s) at offset %+d" % (closest[0], closest[1], closest[2]))
+        report_lines.append("")
 
     # No hints section - just list with nearby context
     report_lines.append("-" * 80)
     report_lines.append("NO TYPE HINTS (%d)" % len(no_hints))
     report_lines.append("-" * 80)
     for name, info in no_hints:
-        ref_count = len(set(info['funcs']))
-        nearby = info.get('nearby', [])
         nearby_str = ""
-        if nearby:
-            closest = nearby[0]
+        if info['nearby']:
+            closest = info['nearby'][0]
             nearby_str = "  nearby: %s at %+d" % (closest[0], closest[2])
         report_lines.append("  %-30s  addr=%-10s  type=%-14s  refs=%d%s" % (
-            name, info['addr'], info['type'], ref_count, nearby_str))
+            name, info['addr'], info['type'], len(info['funcs']), nearby_str))
     report_lines.append("")
 
     # Frequently referenced DAT_ globals (most likely to be worth naming)
     report_lines.append("-" * 80)
     report_lines.append("MOST REFERENCED DAT_ GLOBALS (top 50)")
     report_lines.append("-" * 80)
-    by_refs = sorted(dat_globals.items(), key=lambda x: -len(set(x[1]['funcs'])))
+    by_refs = sorted(dat_globals.items(), key=lambda x: -len(x[1]['funcs']))
     for name, info in by_refs[:50]:
-        ref_count = len(set(info['funcs']))
-        hints = info.get('type_hints', [])
         hint_str = ""
-        if hints:
-            best_hint = hints[0][0]
-            hint_str = "  likely=%s" % best_hint
-        nearby = info.get('nearby', [])
+        if info['type_hints']:
+            hint_str = "  likely=%s" % best_hint(info['type_hints'])[0]
         nearby_str = ""
-        if nearby:
-            closest = nearby[0]
+        if info['nearby']:
+            closest = info['nearby'][0]
             nearby_str = "  nearby: %s(%+d)" % (closest[0], closest[2])
         report_lines.append("  %-30s  addr=%-10s  refs=%-4d  type=%-14s%s%s" % (
-            name, info['addr'], ref_count, info['type'], hint_str, nearby_str))
+            name, info['addr'], len(info['funcs']), info['type'], hint_str, nearby_str))
     report_lines.append("")
 
     # Immediate constants section
@@ -780,15 +749,11 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
             key=lambda x: -x[1]['immediate_count']
         )
         for name, imm_info in imm_sorted:
-            ref_count = imm_info['immediate_count']
-            addr_hex = imm_info.get('references', [('', '')])[0][1]  # just for display
-            try:
-                addr_int = int(name.replace('DAT_', ''), 16)
-                val_str = "0x%X" % addr_int
-            except ValueError:
-                val_str = name
-            report_lines.append("  %-30s  value=%-14s  refs=%d" % (name, val_str, ref_count))
+            val_str = "0x%X" % int(all_globals[name]['addr'], 16)
+            report_lines.append("  %-30s  value=%-14s  refs=%d" % (name, val_str, imm_info['immediate_count']))
         report_lines.append("")
+
+    report_lines += _outside_section(outside)
 
     # Filtered out section (summary only)
     if filtered_out:
@@ -814,15 +779,6 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
 # =============================================================================
 # Struct/Array detection report
 # =============================================================================
-
-# Known struct signatures: (size_bytes, field_pattern, name)
-# field_pattern is a list of (offset, likely_type) for key fields
-KNOWN_STRUCT_SIGNATURES = [
-    (12, 'CVector3i', [(0, 'int'), (4, 'int'), (8, 'int')]),
-    (12, 'CVector3f', [(0, 'float'), (4, 'float'), (8, 'float')]),
-    (16, 'CVector4f', [(0, 'float'), (4, 'float'), (8, 'float'), (12, 'float')]),
-]
-
 
 def detect_clusters(dat_addrs, max_gap=256):
     """Group DAT_ addresses into clusters where consecutive items are within max_gap bytes."""
@@ -1004,109 +960,27 @@ def classify_cluster(cluster, stride_info, type_hints, all_globals):
 
 def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
     """Generate a report detecting likely arrays and structs among DAT_ globals."""
-    import json
-    import glob
-
     log_info("Generating DAT_ struct/array detection report...")
 
     # Build struct size cache from data_types.json
     build_struct_size_cache(pseudocode_src_dir)
 
-    # Collect all globals and DAT_ globals (same as dat_report)
-    all_globals = {}
-    dat_globals = {}
-
-    json_pattern = os.path.join(pseudocode_src_dir, '**', '*.json')
-    for json_path in sorted(glob.glob(json_pattern, recursive=True)):
-        if os.path.isdir(json_path):
-            continue
-        try:
-            with open(json_path) as f:
-                data = json.load(f)
-        except (json.JSONDecodeError, IOError):
-            continue
-
-        func_name = data.get('function', {}).get('name', '?')
-        for g in data.get('globals', []):
-            name = g.get('name', '')
-            addr = g.get('addr', '')
-            gtype = g.get('type', 'unknown')
-
-            all_globals.setdefault(name, {'addr': addr, 'type': gtype, 'funcs': set()})
-            all_globals[name]['funcs'].add(func_name)
-
-            if name.startswith('DAT_'):
-                dat_globals.setdefault(name, {'addr': addr, 'type': gtype, 'funcs': set()})
-                dat_globals[name]['funcs'].add(func_name)
-
-    # Build sorted address map for improved containment checks
-    global_addr_map = build_global_address_map(all_globals)
-
-    # Filter out DAT_ inside named data (using improved gap-based detection)
-    filtered_out = {}
-    for name in list(dat_globals.keys()):
-        try:
-            dat_addr_int = int(dat_globals[name]['addr'], 16)
-        except ValueError:
-            del dat_globals[name]
-            continue
-        containing = is_inside_named_global(dat_addr_int, all_globals, global_addr_map)
-        if containing:
-            filtered_out[name] = containing
-            del dat_globals[name]
-
-    log_info("Filtered out %d DAT_ globals inside named data (%d remaining)" % (
-        len(filtered_out), len(dat_globals)))
-
-    # Detect immediate constants (DAT_ globals used only as inline values)
-    imm_results = detect_immediate_references(pseudocode_src_dir, dat_globals)
-    immediate_constants = {}
-    for name, imm_info in imm_results.items():
-        if name not in dat_globals:
-            continue
-        if imm_info['all_immediate'] and imm_info['immediate_count'] > 0:
-            immediate_constants[name] = imm_info
-
-    log_info("Detected %d likely immediate constants" % len(immediate_constants))
-
-    # Remove immediate constants from the main analysis pool
-    real_dat_globals = {k: v for k, v in dat_globals.items() if k not in immediate_constants}
+    all_globals = collect_globals(pseudocode_src_dir)
+    real_dat_globals, filtered_out, outside, immediate_constants = sort_dat_globals(pseudocode_src_dir, all_globals)
 
     # Collect assembly type hints (only for real globals)
     type_hints = defaultdict(list)
-    asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
-    for asm_path in sorted(glob.glob(asm_pattern, recursive=True)):
-        if os.path.isdir(asm_path):
-            continue
-        try:
-            with open(asm_path) as f:
-                asm_lines = f.readlines()
-        except IOError:
-            continue
-        for line in asm_lines:
-            if 'DAT_' not in line or '|' not in line:
-                continue
-            parts = line.split('|')
-            if len(parts) < 2:
-                continue
-            dat_ref = parts[1].strip().split()[0] if parts[1].strip() else ''
-            if not dat_ref.startswith('DAT_') or dat_ref not in real_dat_globals:
-                continue
-            m = re.match(r'\s+(\S+)\s+(.*?)\s*;\s*[0-9a-f]+', line)
-            if m:
-                hint, conf = infer_type_from_asm(m.group(1), m.group(2).strip(), dat_ref)
-                if hint:
-                    type_hints[dat_ref].append((hint, conf))
+    for dat_ref, mnemonic, operands in dat_instructions(pseudocode_src_dir):
+        if dat_ref in real_dat_globals:
+            hint, conf = infer_type_from_asm(mnemonic, operands, dat_ref)
+            if hint:
+                type_hints[dat_ref].append((hint, conf))
 
     # Sort by address and detect clusters (excluding immediates)
     dat_addrs = []
     for name, info in real_dat_globals.items():
-        try:
-            addr_int = int(info['addr'], 16)
-            info['_name'] = name
-            dat_addrs.append((addr_int, name, info))
-        except ValueError:
-            pass
+        info['_name'] = name
+        dat_addrs.append((int(info['addr'], 16), name, info))
     dat_addrs.sort()
 
     clusters = detect_clusters(dat_addrs)
@@ -1129,8 +1003,9 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
     lines.append("DAT_ STRUCT/ARRAY DETECTION REPORT")
     lines.append("=" * 80)
     lines.append("")
-    lines.append("Total DAT_ globals found: %d" % len(dat_globals))
+    lines.append("Total DAT_ globals found: %d" % sum(1 for name in all_globals if name.startswith('DAT_')))
     lines.append("Filtered out (inside named data): %d" % len(filtered_out))
+    lines.append("Outside the program image: %d" % len(outside))
     lines.append("Immediate constants (not real globals): %d" % len(immediate_constants))
     lines.append("Real globals remaining: %d" % len(real_dat_globals))
     lines.append("Clusters detected: %d" % len(clusters))
@@ -1165,19 +1040,14 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
         )
 
         for name, imm_info in imm_sorted:
-            info = dat_globals[name]
-            addr_hex = info['addr']
             ref_count = imm_info['immediate_count']
 
             # Show the constant value in useful formats
-            try:
-                addr_int = int(addr_hex, 16)
-                val_str = "0x%X" % addr_int
-                # Add decimal if it might be meaningful
-                if addr_int < 0x1000000:
-                    val_str += " (%d)" % addr_int
-            except ValueError:
-                val_str = addr_hex
+            addr_int = int(all_globals[name]['addr'], 16)
+            val_str = "0x%X" % addr_int
+            # Add decimal if it might be meaningful
+            if addr_int < 0x1000000:
+                val_str += " (%d)" % addr_int
 
             lines.append("  %s  value=%s  refs=%d" % (name, val_str, ref_count))
 
@@ -1236,8 +1106,7 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
             for addr_int, name, info in cluster[:6]:
                 hint_str = ""
                 if name in type_hints:
-                    best = type_hints[name][0]
-                    hint_str = " [%s]" % best[0]
+                    hint_str = " [%s]" % best_hint(type_hints[name])[0]
                 lines.append("      0x%08x  %s  %s%s" % (addr_int, name, info['type'], hint_str))
             if len(cluster) > 6:
                 lines.append("      ... +%d more" % (len(cluster) - 6))
@@ -1261,7 +1130,7 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
         ref_count = len(info['funcs'])
         hint_str = ""
         if name in type_hints:
-            hint_str = " [likely %s]" % type_hints[name][0][0]
+            hint_str = " [likely %s]" % best_hint(type_hints[name])[0]
         nearby = find_nearby_named_globals(int(info['addr'], 16), all_globals)
         nearby_str = ""
         if nearby:
@@ -1272,6 +1141,8 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
     if len(isolated) > 50:
         lines.append("  ... +%d more" % (len(isolated) - 50))
     lines.append("")
+
+    lines += _outside_section(outside)
 
     # Filtered out section (summary)
     if filtered_out:
@@ -1298,36 +1169,12 @@ def generate_globals_gap_report(pseudocode_src_dir, reports_dir):
     start of the next that are not covered by any known variable.  These may
     indicate unnamed data, padding, or Ghidra analysis misses.
     """
-    import json
-    import glob
-
     log_info("Generating globals gap report...")
 
     # Build struct size cache so estimate_global_size can resolve struct types
     build_struct_size_cache(pseudocode_src_dir)
 
-    # Collect all globals from function JSONs (same pattern as other reports)
-    all_globals = {}
-
-    json_pattern = os.path.join(pseudocode_src_dir, '**', '*.json')
-    for json_path in sorted(glob.glob(json_pattern, recursive=True)):
-        if os.path.isdir(json_path):
-            continue
-        try:
-            with open(json_path) as f:
-                data = json.load(f)
-        except (json.JSONDecodeError, IOError):
-            continue
-
-        for g in data.get('globals', []):
-            name = g.get('name', '')
-            addr = g.get('addr', '')
-            gtype = g.get('type', 'unknown')
-
-            existing = all_globals.get(name)
-            if existing is None:
-                all_globals[name] = {'addr': addr, 'type': gtype}
-
+    all_globals = collect_globals(pseudocode_src_dir)
     log_info("Collected %d unique globals for gap analysis" % len(all_globals))
 
     # Build sorted address map (filters to top-level named globals, skips DAT_)
@@ -1337,21 +1184,25 @@ def generate_globals_gap_report(pseudocode_src_dir, reports_dir):
         log_info("Not enough globals to compute gaps")
         return
 
-    # Also include DAT_ globals so they can fill gaps
+    # Also include DAT_ globals so they can fill gaps; one outside the
+    # program image is no global at all and would open a gap to it
+    start, end = named_extent(addr_map)
     dat_entries = []
     for name, info in all_globals.items():
         if not name.startswith('DAT_'):
             continue
         try:
             addr = int(info['addr'], 16)
-        except (ValueError, KeyError):
+        except ValueError:
             continue
-        gtype = info.get('type', '')
+        if not start <= addr < end:
+            continue
+        gtype = info['type']
         size, is_exact = estimate_global_size(gtype)
         dat_entries.append((addr, name, gtype, size, is_exact))
 
-    # Merge named globals and DAT_ globals into one sorted list
-    all_entries = sorted(addr_map + dat_entries)
+    # Merge named globals and DAT_ globals into one list by address, named first
+    all_entries = sorted(addr_map + dat_entries, key=lambda e: (e[0], e[1].startswith('DAT_'), e[1]))
 
     # Deduplicate by address (keep first occurrence = named over DAT_)
     seen_addrs = set()
@@ -1366,7 +1217,7 @@ def generate_globals_gap_report(pseudocode_src_dir, reports_dir):
     gaps = []
     for i in range(len(all_entries) - 1):
         addr_a, name_a, type_a, size_a, exact_a = all_entries[i]
-        addr_b, name_b, type_b, size_b, exact_b = all_entries[i + 1]
+        addr_b, name_b, type_b, _, _ = all_entries[i + 1]
 
         if size_a <= 0:
             # Can't determine end of this global, use minimum 1
@@ -1374,7 +1225,9 @@ def generate_globals_gap_report(pseudocode_src_dir, reports_dir):
             exact_end = False
         else:
             end_a = addr_a + size_a
-            exact_end = exact_a
+            # undefinedN is Ghidra's type for a label with no data defined
+            # (string interiors, unanalysed data): its size is a guess too
+            exact_end = exact_a and not type_a.startswith('undefined')
 
         gap_size = addr_b - end_a
         if gap_size < 0:
@@ -1397,8 +1250,9 @@ def generate_globals_gap_report(pseudocode_src_dir, reports_dir):
 
     # Separate into categories
     nonzero_gaps = [g for g in gaps if g['gap_size'] > 0]
-    overlaps = [g for g in gaps if g['gap_size'] == 0 and
-                g['before_addr'] + max(g['before_size'], 1) > g['after_addr']]
+    # Only a known size can overlap the next global: an estimate (a string's
+    # 256, an unknown struct's 0) says nothing about where it really ends
+    overlaps = [g for g in gaps if g['exact_end'] and g['gap_start'] > g['after_addr']]
     exact_gaps = [g for g in nonzero_gaps if g['exact_end']]
     estimated_gaps = [g for g in nonzero_gaps if not g['exact_end']]
 
@@ -1423,7 +1277,7 @@ def generate_globals_gap_report(pseudocode_src_dir, reports_dir):
     lines.append("  With estimated bounds:     %d" % len(estimated_gaps))
     lines.append("Total gap bytes:             %s" % '{:,}'.format(total_gap_bytes))
     lines.append("  Exact gap bytes:           %s" % '{:,}'.format(exact_gap_bytes))
-    lines.append("Overlaps (size <= 0):        %d" % len(overlaps))
+    lines.append("Overlaps (known sizes):      %d" % len(overlaps))
     lines.append("")
 
     # Size distribution
@@ -1482,12 +1336,10 @@ def generate_globals_gap_report(pseudocode_src_dir, reports_dir):
         lines.append("OVERLAPS (%d) - next global starts inside previous" % len(overlaps))
         lines.append("-" * 80)
         for g in overlaps:
-            overlap_bytes = (g['before_addr'] + max(g['before_size'], 1)) - g['after_addr']
-            exact_marker = "" if g['before_exact'] else " ~"
-            lines.append("  %d bytes overlap%s" % (overlap_bytes, exact_marker))
+            lines.append("  %d bytes overlap" % (g['gap_start'] - g['after_addr']))
             lines.append("    %-40s %-20s at 0x%08x  size=%s" % (
                 g['before_name'][:40], g['before_type'][:20], g['before_addr'],
-                '{:,}'.format(g['before_size']) if g['before_size'] > 0 else '?'))
+                '{:,}'.format(g['before_size'])))
             lines.append("    %-40s %-20s at 0x%08x" % (
                 g['after_name'][:40], g['after_type'][:20], g['after_addr']))
         lines.append("")

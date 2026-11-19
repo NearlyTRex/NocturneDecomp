@@ -2,9 +2,10 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 297
+Total DAT_ globals found: 343
 Filtered out (inside named data): 46
-Immediate constants (not real globals): 13
+Outside the program image: 2
+Immediate constants (not real globals): 11
 Real globals remaining: 284
 Clusters detected: 52
 DAT_ globals in clusters: 263
@@ -19,7 +20,7 @@ Classification summary:
   byte_blob            2 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (13)
+LIKELY IMMEDIATE CONSTANTS (11)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -74,14 +75,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_00480000  value=0x480000 (4718592)  refs=1
     CEditorTools_updatePercentage
       CMP EBX,0x480000                    ; 0049634b | DAT_00480000
-
-  DAT_00000065  value=0x65 (101)  refs=1
-    winMain
-      PUSH 0x65                           ; 005b2f6e | DAT_00000065
-
-  DAT_00007f00  value=0x7F00 (32512)  refs=1
-    winMain
-      PUSH 0x7f00                         ; 005b2f8e | DAT_00007f00
 
   DAT_02c9c908  value=0x2C9C908  refs=1
     winMain
@@ -689,6 +682,15 @@ ISOLATED DAT_ GLOBALS (21 - not part of any cluster)
   DAT_005e0aa0                    addr=005e0aa0    type=undefined1      refs=1 [likely byte]  near: s_engine_font_cpp_005e0aa1(-1)
   DAT_02c8a678                    addr=02c8a678    type=undefined4      refs=1  near: g_INT_02c8a67c(-4)
   DAT_005f4698                    addr=005f4698    type=undefined4      refs=1 [likely double]  near: g_FLOAT_005f4694(+4)
+
+--------------------------------------------------------------------------------
+OUTSIDE THE PROGRAM IMAGE (2)
+--------------------------------------------------------------------------------
+No global lives at these addresses: they are constants, or addresses Ghidra
+computed from a register value.
+
+  DAT_00000065
+  DAT_00007f00
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (46)

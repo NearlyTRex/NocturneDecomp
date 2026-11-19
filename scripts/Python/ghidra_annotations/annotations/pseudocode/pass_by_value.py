@@ -15,12 +15,17 @@ from collections import namedtuple, defaultdict
 # of these functions get broken decompilation and need inline asm replacement.
 # Keyed by address (lowercase, no 0x prefix) for reliable matching against
 # func_calls entries.
-BYVALUE_CALLEES = {
-    '407d70': 'clipAndDrawLine2D',
-    '408070': 'clipAndDrawLine3D',
-    '533c50': 'calculateMainDataSize',
-    '5a75e0': 'CSfxSlot_mix',
-}
+BYVALUE_CALLEES = ('clipAndDrawLine2D', 'clipAndDrawLine3D', 'calculateMainDataSize', 'CSfxSlot_mix')
+
+# A call's exported name is <unit>.cpp_<name>_FUN_<addr>; matched by name, the
+# callees are found in every program, not only at nocedit's addresses
+_BYVALUE_CALL_RE = re.compile(r'(?:^|\.(?:cpp|c)_)(%s)_FUN_[0-9a-fA-F]+$' % '|'.join(BYVALUE_CALLEES))
+
+
+def byvalue_callee(call):
+    """The by-value callee a function_calls entry names, or None."""
+    m = _BYVALUE_CALL_RE.search(call.get('name') or '')
+    return m.group(1) if m else None
 
 # Known struct sizes for labeling
 KNOWN_STRUCTS = {

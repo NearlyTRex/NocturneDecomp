@@ -149,6 +149,52 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDirectSoundDevice_setReverb_FUN_005b0340.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 20,
+          "message": "Value stored to 'fStack_c' is never read",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "Value stored to 'fStack_c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 21,
+          "message": "Value stored to 'fStack_8' is never read",
+          "path_notes": [
+            {
+              "line": 21,
+              "message": "Value stored to 'fStack_8' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 23,
+          "message": "Value stored to 'fStack_4' is never read",
+          "path_notes": [
+            {
+              "line": 23,
+              "message": "Value stored to 'fStack_4' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [],
   "vtable_info": {
     "entries": [

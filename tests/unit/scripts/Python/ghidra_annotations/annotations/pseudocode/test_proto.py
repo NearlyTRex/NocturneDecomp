@@ -142,6 +142,14 @@ def test_registering_needs_a_file_with_overrides(tmp_path):
     assert proto.register_proto_overrides(str(tmp_path)) == 0
 
 
+def test_a_functions_own_overrides_register_with_or_without_the_global_file(tmp_path):
+    own = [{"address": "0x401060", "signature": "int h(void)"}]
+    assert proto.register_proto_overrides(str(tmp_path), own) == 1 and proto._pending_proto_overrides == own
+    (tmp_path / "proto_overrides.json").write_text(json.dumps([{"address": "0x401000", "params": []}]))
+    assert proto.register_proto_overrides(str(tmp_path), own) == 2
+    assert [o["address"] for o in proto._pending_proto_overrides] == ["0x401000", "0x401060"]
+
+
 def test_registering_keeps_the_signature_and_explicit_overrides(tmp_path, warnings):
     path = tmp_path / "overrides.json"
     keep = [{"address": "0x401000", "signature": "void f(int x)"},

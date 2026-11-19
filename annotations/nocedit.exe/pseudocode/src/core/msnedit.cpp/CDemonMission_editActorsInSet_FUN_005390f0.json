@@ -1905,5 +1905,271 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonMission_editActorsInSet_FUN_005390f0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 98,
+          "message": "Value stored to 'bVar14' is never read",
+          "path_notes": [
+            {
+              "line": 98,
+              "message": "Value stored to 'bVar14' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 255,
+          "message": "Value stored to 'local_68' is never read",
+          "path_notes": [
+            {
+              "line": 255,
+              "message": "Value stored to 'local_68' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 39,
+          "line": 767,
+          "message": "Access to field 'is_editor_hidden' results in a dereference of a null pointer (loaded from variable 'pCVar11')",
+          "path_notes": [
+            {
+              "line": 119,
+              "message": "Assuming 'reset_cameras' is equal to 0"
+            },
+            {
+              "line": 119,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 130,
+              "message": "Assuming 'iVar14' is <= 400"
+            },
+            {
+              "line": 134,
+              "message": "Assuming 0 is >= field 'actor_count'"
+            },
+            {
+              "line": 134,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 172,
+              "message": "Assuming 'INT_02f7c634' is equal to 2"
+            },
+            {
+              "line": 172,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 441,
+              "message": "Assuming 'INT_02f7c634' is equal to 0"
+            },
+            {
+              "line": 441,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 445,
+              "message": "Assuming 'INT_02f7c634' is equal to 0"
+            },
+            {
+              "line": 445,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 454,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 454,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 458,
+              "message": "Assuming 'INT_02f7c634' is not equal to 0"
+            },
+            {
+              "line": 458,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 598,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 598,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 629,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 629,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 647,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 647,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 666,
+              "message": "Assuming 'INT_02f7c634' is not equal to 0"
+            },
+            {
+              "line": 666,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 667,
+              "message": "Assuming 'iVar14' is not equal to 0"
+            },
+            {
+              "line": 666,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 669,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 669,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 679,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 679,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 683,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 683,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 694,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 694,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 698,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 698,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 702,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 702,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 706,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 706,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 730,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 730,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 743,
+              "message": "Assuming 'iVar14' is not equal to 0"
+            },
+            {
+              "line": 743,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 745,
+              "message": "Assuming 'iVar14' is equal to 0"
+            },
+            {
+              "line": 745,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 747,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 749,
+              "message": "Assuming 'pCVar11' is equal to null"
+            },
+            {
+              "line": 749,
+              "message": "Loop condition is false. Execution continues on line 755"
+            },
+            {
+              "line": 755,
+              "message": "Assuming field 'item_count' is >= 1"
+            },
+            {
+              "line": 755,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 759,
+              "message": "Assuming 'iVar14' is >= 0"
+            },
+            {
+              "line": 759,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 761,
+              "message": "Value assigned to 'pCVar11'"
+            },
+            {
+              "line": 762,
+              "message": "Assuming 'pCVar11' is equal to null"
+            },
+            {
+              "line": 762,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 767,
+              "message": "Access to field 'is_editor_hidden' results in a dereference of a null pointer (loaded from variable 'pCVar11')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

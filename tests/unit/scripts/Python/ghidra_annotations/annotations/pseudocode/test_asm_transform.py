@@ -57,7 +57,8 @@ def test_a_watcom_frame_is_left_out_and_the_body_names_its_globals_and_labels():
 def test_a_label_on_the_last_instructions_left_out_closes_the_block():
     code = asm("00401000: PUSH EBP", "00401001: MOV EBP,ESP", "00401003: XOR EAX,EAX",
                "00401005: LEAVE", "//   Label: LAB_00401005", "00401006: RET")
-    assert at.generate_byval_asm_cpp(result(code, func_calls = [{"addr": "00407d70"}]), CODE).endswith(
+    calls = [{"name": "engine_line.cpp_clipAndDrawLine2D_FUN_00407d70"}]
+    assert at.generate_byval_asm_cpp(result(code, func_calls = calls), CODE).endswith(
         "        xor EAX,EAX\n    LAB_00401005:\n}\n}")
 
 
@@ -104,8 +105,11 @@ def test_names_in_comments_name_the_addresses_their_instruction_uses():
 def test_only_calls_to_the_by_value_functions_get_an_asm_version():
     code = asm("00401000: XOR EAX,EAX", "00401002: RET")
     assert at.generate_byval_asm_cpp(result(code, func_calls = None), CODE) == CODE
-    assert at.generate_byval_asm_cpp(result(code, func_calls = [{"name": "x"}, {"addr": "00401000"}]), CODE) == CODE
-    assert "xor EAX,EAX" in at.generate_byval_asm_cpp(result(code, func_calls = [{"addr": "005A75E0"}]), CODE)
+    others = [{"name": "x"}, {"addr": "00407d70"}, {"name": "core_a.cpp_notCSfxSlot_mix_FUN_00401000"}]
+    assert at.generate_byval_asm_cpp(result(code, func_calls = others), CODE) == CODE
+    # By name, so a sibling build's callee at its own address counts too
+    bw1 = [{"addr": "00571420", "name": "sound_sfx.cpp_CSfxSlot_mix_FUN_00571420"}]
+    assert "xor EAX,EAX" in at.generate_byval_asm_cpp(result(code, func_calls = bw1), CODE)
 
 
 @pytest.mark.parametrize("assembly, code", [
@@ -124,4 +128,5 @@ def test_the_mmx_version_is_only_made_for_mmx_code_with_a_body(assembly, code):
     asm("00401000: PUSH EBP", "00401001: POP EBP", "00401002: RET"),        # all frame
 ])
 def test_a_function_that_is_all_frame_keeps_its_pseudocode(assembly):
-    assert at.generate_byval_asm_cpp(result(assembly, func_calls = [{"addr": "00408070"}]), CODE) == CODE
+    calls = [{"name": "clipAndDrawLine3D_FUN_00408070"}]
+    assert at.generate_byval_asm_cpp(result(assembly, func_calls = calls), CODE) == CODE

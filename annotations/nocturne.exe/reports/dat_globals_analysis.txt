@@ -4,7 +4,8 @@ DAT_ GLOBALS ANALYSIS REPORT
 
 Total DAT_ globals found: 175
 Filtered out (inside named data): 6
-Immediate constants (not real globals): 3
+Outside the program image: 1
+Immediate constants (not real globals): 2
 Real globals remaining: 166
 
 Current type breakdown:
@@ -240,10 +241,10 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_005c1b08                    addr=005c1b08    refs=2     type=undefined4      likely=byte  nearby: g_SpecialExitHandler(+4)
   DAT_02de5be0                    addr=02de5be0    refs=2     type=undefined4      nearby: g_INT_02de5c10(-48)
   DAT_005c1f94                    addr=005c1f94    refs=2     type=undefined4      nearby: g_MaxHandleCount(+4)
-  DAT_00765c6c                    addr=00765c6c    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+4)
+  DAT_00765c6c                    addr=00765c6c    refs=1     type=undefined2      likely=uint *  nearby: g_CChainClassInfo.name_hash(+4)
   DAT_00765c6e                    addr=00765c6e    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+6)
   DAT_00765c70                    addr=00765c70    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+8)
-  DAT_00765c72                    addr=00765c72    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+10)
+  DAT_00765c72                    addr=00765c72    refs=1     type=undefined2      likely=int  nearby: g_CChainClassInfo.name_hash(+10)
   DAT_00765c72+1                  addr=00765c73    refs=1     type=undefined4      likely=byte  nearby: g_CChainClassInfo.name_hash(+11)
   DAT_00765c74                    addr=00765c74    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+12)
   DAT_00765c76                    addr=00765c76    refs=1     type=undefined2      likely=short  nearby: g_CChainClassInfo.name_hash(+14)
@@ -279,14 +280,21 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_00764618                    addr=00764618    refs=1     type=undefined4      nearby: g_INT_0076461c(-4)
 
 --------------------------------------------------------------------------------
-IMMEDIATE CONSTANTS - NOT REAL GLOBALS (3)
+IMMEDIATE CONSTANTS - NOT REAL GLOBALS (2)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values.
 
   DAT_005b84fc                    value=0x5B84FC        refs=2
   DAT_005c13cc                    value=0x5C13CC        refs=1
-  DAT_80000002                    value=0x80000002      refs=1
+
+--------------------------------------------------------------------------------
+OUTSIDE THE PROGRAM IMAGE (1)
+--------------------------------------------------------------------------------
+No global lives at these addresses: they are constants, or addresses Ghidra
+computed from a register value.
+
+  DAT_80000002
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (6)

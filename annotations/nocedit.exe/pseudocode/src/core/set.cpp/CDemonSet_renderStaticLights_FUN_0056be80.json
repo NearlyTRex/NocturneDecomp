@@ -502,5 +502,95 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_renderStaticLights_FUN_0056be80.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 34,
+          "line": 92,
+          "message": "The right operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 18,
+              "message": "'local_38' declared without an initial value"
+            },
+            {
+              "line": 27,
+              "message": "Assuming field 'shadow_flag' is not equal to 0"
+            },
+            {
+              "line": 27,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 28,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 28,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 32,
+              "message": "Assuming 'local_28' is < 'g_DynamicLightCount'"
+            },
+            {
+              "line": 32,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 34,
+              "message": "Assuming field 'light_enabled_flag' is not equal to 0"
+            },
+            {
+              "line": 34,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 38,
+              "message": "Assuming field 'antialiasing_enabled' is equal to 0"
+            },
+            {
+              "line": 38,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 32,
+              "message": "Assuming 'local_28' is >= 'g_DynamicLightCount'"
+            },
+            {
+              "line": 32,
+              "message": "Loop condition is false. Execution continues on line 62"
+            },
+            {
+              "line": 62,
+              "message": "Assuming 'local_24' is >= 'g_SpotLightCount'"
+            },
+            {
+              "line": 62,
+              "message": "Loop condition is false. Execution continues on line 88"
+            },
+            {
+              "line": 88,
+              "message": "Assuming field 'profile_mode' is not equal to 0"
+            },
+            {
+              "line": 88,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 92,
+              "message": "The right operand of '-' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

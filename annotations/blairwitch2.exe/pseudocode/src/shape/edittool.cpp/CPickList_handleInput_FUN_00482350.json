@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 411,
-    "complexity_score": 184,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 169,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "struct_field_overrun",
       "unrolled_strlen"
     ],
     "total_lines": 580
@@ -170,6 +171,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "this_ptr->cancel_button_text[uVar4 + 99]: index reaches last element (99) with a variable addend \u2014 Watcom 1-based base-shift; CPickList.cancel_button_text is [100]. overruns into search_text_buffer (offset 0x124). Likely the #15 adjacent-field artifact \u2014 the real target is the next field.",
+      "line": 151,
+      "match": "this_ptr->cancel_button_text[uVar4 + 99]",
+      "severity": "moderate",
+      "text": "this_ptr->cancel_button_text[uVar4 + 99] = (char)iVar2;",
+      "type": "struct_field_overrun"
     }
   ],
   "vtable_info": {

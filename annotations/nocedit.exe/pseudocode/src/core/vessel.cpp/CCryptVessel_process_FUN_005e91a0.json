@@ -307,6 +307,148 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CCryptVessel_process_FUN_005e91a0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 37,
+          "line": 183,
+          "message": "Access to field 'carrier' results in a dereference of a null pointer (loaded from variable 'pCVar7')",
+          "path_notes": [
+            {
+              "line": 42,
+              "message": "Value assigned to field 'prey'"
+            },
+            {
+              "line": 44,
+              "message": "Assuming field 'visual_type' is not equal to 1"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 55,
+              "message": "Assuming field 'visual_type' is not equal to 0"
+            },
+            {
+              "line": 55,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'fVar12' is < 16"
+            },
+            {
+              "line": 61,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 65,
+              "message": "Assuming field 'carrier' is equal to null"
+            },
+            {
+              "line": 65,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 66,
+              "message": "Assuming field 'init_frame' is equal to 0"
+            },
+            {
+              "line": 66,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 73,
+              "message": "Assuming 'iVar16' is not equal to 1"
+            },
+            {
+              "line": 73,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 118,
+              "message": "Assuming 'iVar16' is not equal to 2"
+            },
+            {
+              "line": 118,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 127,
+              "message": "Assuming 'iVar16' is not equal to 3"
+            },
+            {
+              "line": 127,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 151,
+              "message": "Assuming field 'triggered' is not equal to 0"
+            },
+            {
+              "line": 151,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 167,
+              "message": "Assuming 'pCVar5' is equal to null"
+            },
+            {
+              "line": 167,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 174,
+              "message": "Assuming 'pCVar7' is equal to null"
+            },
+            {
+              "line": 174,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 180,
+              "message": "Assuming 'local_18' is < field 'eat_distance'"
+            },
+            {
+              "line": 180,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 181,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 180,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 182,
+              "message": "Assuming 'local_14' is > field 'eat_distance'"
+            },
+            {
+              "line": 180,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 183,
+              "message": "Null pointer value stored to 'pCVar7'"
+            },
+            {
+              "line": 183,
+              "message": "Access to field 'carrier' results in a dereference of a null pointer (loaded from variable 'pCVar7')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [],
   "vtable_info": {
     "entries": [

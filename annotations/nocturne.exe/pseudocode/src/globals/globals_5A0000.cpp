@@ -2461,7 +2461,7 @@ CHero_full_vtable g_CSvetlanaVTable = {
 
 // CMobster_full_vtable
 CMobster_full_vtable g_CMobsterVTable = {
-    ._ud = {
+    ._ub = {
         .setup = (CDemonActor_setup *)core_mobster_cpp_CMobster_setup_FUN_004da290,
         .process = (CDemonActor_process *)core_mobster_cpp_CMobster_process_FUN_004da790,
         .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440,
@@ -2587,7 +2587,7 @@ CQuaternion4f g_IdentityQuaternion = {
 
 // CSmiley_full_vtable
 CSmiley_full_vtable g_CSmileyVTable = {
-    ._ud = {
+    ._ub = {
         .setup = (CDemonActor_setup *)core_smiley_cpp_CSmiley_setup_FUN_0051fd90,
         .process = (CDemonActor_process *)core_smiley_cpp_CSmiley_process_FUN_005200c0,
         .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440,

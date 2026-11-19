@@ -929,18 +929,18 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @005c328f [ESP:-24]~  # JZ 0x005c329a
 CBRANCH (ram,0x5c329a,4), (register,0x206,1)
 
-@005c3291 [ESP:-24](-4)~  # PUSH -0x1
+@005c3291 [ESP:-28](-4)~  # PUSH -0x1
 COPY (unique,0x87b00,4) = (const,0xffffffff,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
 
-@005c3293 [ESP:-24](-4)~  # CALL dword ptr CS:[0x5c8534]
+@005c3293 [ESP:-28](-4)~  # CALL dword ptr CS:[0x5c8534]
 COPY (unique,0x63500,4) = (ram,0x5c8534,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5c329a,4)
 CALLIND (unique,0x63500,4)
 
-@005c329a [ESP:-20]~  # MOV EAX, 0x1
+@005c329a [ESP:???]!?  # MOV EAX, 0x1
 COPY (register,0x0,4) /* EAX */ = (const,0x1,4)
 
 @005c329f [ESP:-12](+8)~  # ADD ESP, 0x8
@@ -979,4 +979,5 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 136 instructions, 689 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

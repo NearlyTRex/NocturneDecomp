@@ -484,5 +484,83 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CInventory_select_FUN_004ff800.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 75,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 75,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 77,
+          "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119",
+          "path_notes": [
+            {
+              "line": 77,
+              "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 79,
+          "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119",
+          "path_notes": [
+            {
+              "line": 79,
+              "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 83,
+          "line": 99,
+          "message": "Access to field 'ammo_type' results in a dereference of a null pointer (loaded from variable 'pCVar3')",
+          "path_notes": [
+            {
+              "line": 27,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 27,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 92,
+              "message": "Value assigned to 'pCVar3'"
+            },
+            {
+              "line": 94,
+              "message": "Assuming 'pCVar3' is equal to null"
+            },
+            {
+              "line": 94,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 99,
+              "message": "Access to field 'ammo_type' results in a dereference of a null pointer (loaded from variable 'pCVar3')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

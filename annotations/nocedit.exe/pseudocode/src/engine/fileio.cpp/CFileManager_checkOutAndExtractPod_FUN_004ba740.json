@@ -726,5 +726,275 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_checkOutAndExtractPod_FUN_004ba740.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 38,
+          "message": "Value stored to 'bVar12' is never read",
+          "path_notes": [
+            {
+              "line": 38,
+              "message": "Value stored to 'bVar12' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 5,
+          "line": 55,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 55,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 110,
+          "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119",
+          "path_notes": [
+            {
+              "line": 110,
+              "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 142,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 142,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 143,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 143,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 38,
+          "line": 240,
+          "message": "Dereference of null pointer",
+          "path_notes": [
+            {
+              "line": 40,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 40,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 47,
+              "message": "Assuming 'optional_pod_file' is equal to null"
+            },
+            {
+              "line": 47,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 50,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 61,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 67,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 67,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 73,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 73,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 90,
+              "message": "Assuming 'uVar4' is < 0"
+            },
+            {
+              "line": 90,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 99,
+              "message": "'iVar4' is > 0"
+            },
+            {
+              "line": 99,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 101,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 101,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 103,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 103,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 119,
+              "message": "Assuming 'stream_ptr' is not equal to null"
+            },
+            {
+              "line": 119,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 121,
+              "message": "Control jumps to line 130"
+            },
+            {
+              "line": 131,
+              "message": "'stream_ptr' is not equal to null"
+            },
+            {
+              "line": 131,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 139,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 139,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 141,
+              "message": "Assuming 'iVar4' is < 0"
+            },
+            {
+              "line": 141,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 145,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 145,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 157,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 157,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 158,
+              "message": "Assuming 'local_20' is equal to null"
+            },
+            {
+              "line": 158,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 168,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 168,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 175,
+              "message": "Assuming 'uVar7' is >= 0"
+            },
+            {
+              "line": 175,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 175,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 175,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 175,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 180,
+              "message": "Control jumps to line 233"
+            },
+            {
+              "line": 235,
+              "message": "Assuming 'iVar4' is not equal to 0"
+            },
+            {
+              "line": 235,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 240,
+              "message": "Dereference of null pointer"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

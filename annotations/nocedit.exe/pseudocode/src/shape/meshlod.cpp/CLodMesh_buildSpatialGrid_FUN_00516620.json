@@ -475,5 +475,43 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CLodMesh_buildSpatialGrid_FUN_00516620.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NullDereference",
+          "column": 86,
+          "line": 70,
+          "message": "Array access results in a null pointer dereference",
+          "path_notes": [
+            {
+              "line": 45,
+              "message": "Value assigned to 'pSVar8'"
+            },
+            {
+              "line": 47,
+              "message": "The value of 'pSVar8' is assigned to field 'spatial_grid_ptr'"
+            },
+            {
+              "line": 48,
+              "message": "Assuming 'pSVar8' is equal to null"
+            },
+            {
+              "line": 48,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 70,
+              "message": "Array access results in a null pointer dereference"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -583,5 +583,523 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonMission_readMissionFile_FUN_00522eb0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 34,
+          "message": "Value stored to 'bVar11' is never read",
+          "path_notes": [
+            {
+              "line": 34,
+              "message": "Value stored to 'bVar11' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 5,
+          "line": 140,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 140,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 16,
+          "line": 170,
+          "message": "Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar7')",
+          "path_notes": [
+            {
+              "line": 36,
+              "message": "Assuming 'load_flags' is not equal to 0"
+            },
+            {
+              "line": 36,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'iVar2' is < 0"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 41,
+              "message": "Execution continues on line 43"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 7 is >= field 'mission_version_num'"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'local_2c' is >= 4"
+            },
+            {
+              "line": 50,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 55,
+              "message": "Assuming field 'mission_version_num' is >= 2"
+            },
+            {
+              "line": 55,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 62,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 62,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 62,
+              "message": "Execution continues on line 64"
+            },
+            {
+              "line": 67,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 67,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 67,
+              "message": "Execution continues on line 69"
+            },
+            {
+              "line": 70,
+              "message": "Value assigned to field 'first_actor'"
+            },
+            {
+              "line": 71,
+              "message": "Assuming 0 is >= field 'num_sets'"
+            },
+            {
+              "line": 71,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 80,
+              "message": "Assuming 2 is < field 'mission_version_num'"
+            },
+            {
+              "line": 80,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 83,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 83,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 83,
+              "message": "Execution continues on line 86"
+            },
+            {
+              "line": 88,
+              "message": "Assuming 'local_20' is <= 0"
+            },
+            {
+              "line": 88,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 109,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 109,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 109,
+              "message": "Execution continues on line 112"
+            },
+            {
+              "line": 114,
+              "message": "Assuming field 'mission_version_num' is >= 6"
+            },
+            {
+              "line": 114,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 120,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 120,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 120,
+              "message": "Execution continues on line 123"
+            },
+            {
+              "line": 128,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 128,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 128,
+              "message": "Execution continues on line 130"
+            },
+            {
+              "line": 133,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 133,
+              "message": "Loop condition is false. Execution continues on line 156"
+            },
+            {
+              "line": 157,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 157,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 157,
+              "message": "Execution continues on line 159"
+            },
+            {
+              "line": 159,
+              "message": "Value assigned to 'pCVar7'"
+            },
+            {
+              "line": 161,
+              "message": "Assuming 'local_28' is > 0"
+            },
+            {
+              "line": 161,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 163,
+              "message": "Assuming 'pCVar7' is equal to null"
+            },
+            {
+              "line": 163,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 170,
+              "message": "Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar7')"
+            }
+          ]
+        },
+        {
+          "checker": "core.NullDereference",
+          "column": 18,
+          "line": 189,
+          "message": "Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar7')",
+          "path_notes": [
+            {
+              "line": 36,
+              "message": "Assuming 'load_flags' is not equal to 0"
+            },
+            {
+              "line": 36,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'iVar2' is < 0"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 41,
+              "message": "Execution continues on line 43"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 7 is >= field 'mission_version_num'"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'local_2c' is >= 4"
+            },
+            {
+              "line": 50,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 55,
+              "message": "Assuming field 'mission_version_num' is >= 2"
+            },
+            {
+              "line": 55,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 62,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 62,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 62,
+              "message": "Execution continues on line 64"
+            },
+            {
+              "line": 67,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 67,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 67,
+              "message": "Execution continues on line 69"
+            },
+            {
+              "line": 71,
+              "message": "Assuming 0 is >= field 'num_sets'"
+            },
+            {
+              "line": 71,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 80,
+              "message": "Assuming 2 is < field 'mission_version_num'"
+            },
+            {
+              "line": 80,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 83,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 83,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 83,
+              "message": "Execution continues on line 86"
+            },
+            {
+              "line": 88,
+              "message": "Assuming 'local_20' is <= 0"
+            },
+            {
+              "line": 88,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 109,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 109,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 109,
+              "message": "Execution continues on line 112"
+            },
+            {
+              "line": 114,
+              "message": "Assuming field 'mission_version_num' is >= 6"
+            },
+            {
+              "line": 114,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 120,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 120,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 120,
+              "message": "Execution continues on line 123"
+            },
+            {
+              "line": 128,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 128,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 128,
+              "message": "Execution continues on line 130"
+            },
+            {
+              "line": 133,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 133,
+              "message": "Loop condition is false. Execution continues on line 156"
+            },
+            {
+              "line": 157,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 157,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 157,
+              "message": "Execution continues on line 159"
+            },
+            {
+              "line": 161,
+              "message": "Assuming 'local_28' is > 0"
+            },
+            {
+              "line": 161,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 163,
+              "message": "Assuming 'pCVar7' is not equal to null"
+            },
+            {
+              "line": 163,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 171,
+              "message": "Assuming 'iVar3' is < 'local_28'"
+            },
+            {
+              "line": 162,
+              "message": "Loop condition is true. Execution continues on line 163"
+            },
+            {
+              "line": 163,
+              "message": "Assuming 'pCVar7' is not equal to null"
+            },
+            {
+              "line": 163,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 171,
+              "message": "Assuming 'iVar3' is >= 'local_28'"
+            },
+            {
+              "line": 162,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 173,
+              "message": "Field 'has_inventory_actors' is not equal to 0"
+            },
+            {
+              "line": 173,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 176,
+              "message": "'local_28' is > 0"
+            },
+            {
+              "line": 176,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 178,
+              "message": "'pCVar7' is not equal to null"
+            },
+            {
+              "line": 178,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 183,
+              "message": "Value assigned to field 'next_actor'"
+            },
+            {
+              "line": 185,
+              "message": "Assuming 'pCVar4' is equal to null"
+            },
+            {
+              "line": 185,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 189,
+              "message": "Value assigned to 'pCVar7'"
+            },
+            {
+              "line": 177,
+              "message": "Loop condition is true. Execution continues on line 178"
+            },
+            {
+              "line": 178,
+              "message": "Assuming 'pCVar7' is equal to null"
+            },
+            {
+              "line": 178,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 185,
+              "message": "Assuming 'pCVar4' is equal to null"
+            },
+            {
+              "line": 185,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 189,
+              "message": "Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar7')"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

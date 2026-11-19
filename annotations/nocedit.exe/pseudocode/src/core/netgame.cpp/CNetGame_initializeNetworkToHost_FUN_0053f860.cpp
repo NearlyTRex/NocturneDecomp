@@ -26,7 +26,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0053f860(CNetG
   aim_mode = pCVar1->aim_mode;
   hero_number = pCVar1->hero_number;
   name = this_ptr->player_name;
-  support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_10,(uint32_t *)g_AnyAddressIP,0x1ddf);
+  addr = support_trisock_cpp_createNetworkAddr_FUN_005e1940
+                   (&local_10,(uint32_t *)g_AnyAddressIP,0x1ddf);
   iVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(this_ptr,addr,name,hero_number,aim_mode);
   this_ptr->local_player_index = iVar2;
   this_ptr->server_player_index = iVar2;
