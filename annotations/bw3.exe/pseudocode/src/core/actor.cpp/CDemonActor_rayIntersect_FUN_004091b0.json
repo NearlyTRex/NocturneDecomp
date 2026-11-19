@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 410,
-    "complexity_score": 611,
+    "complexity_score": 626,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 206,
-    "suspect_count": 37,
+    "suspect_count": 38,
     "suspect_types": [
+      "memcpy_oversized_source",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
@@ -749,6 +750,14 @@
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_ac[4]` (declared size 4) \u2014 overruns by 2. Likely Ghidra dropped explicit `auStack_ac[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 106,
+      "match": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "memcpy_oversized_source"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",

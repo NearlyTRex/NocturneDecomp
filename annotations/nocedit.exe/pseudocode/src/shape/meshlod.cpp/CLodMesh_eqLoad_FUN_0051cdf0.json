@@ -548,59 +548,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CLodMesh_eqLoad_FUN_0051cdf0.keep.cpp",
-    "clang_analyzer_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "checker": "core.NullDereference",
-          "column": 11,
-          "line": 43,
-          "message": "Access to field 'collapse_cost' results in a dereference of a null pointer (loaded from variable 'record')",
-          "path_notes": [
-            {
-              "line": 25,
-              "message": "Value assigned to 'local_34'"
-            },
-            {
-              "line": 27,
-              "message": "Assuming 'local_34' is equal to null"
-            },
-            {
-              "line": 27,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 32,
-              "message": "Assuming 'local_38' is equal to field 'edge_count'"
-            },
-            {
-              "line": 32,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 36,
-              "message": "Assuming 'local_38' is > 0"
-            },
-            {
-              "line": 36,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 39,
-              "message": "Null pointer value stored to 'record'"
-            },
-            {
-              "line": 43,
-              "message": "Access to field 'collapse_cost' results in a dereference of a null pointer (loaded from variable 'record')"
-            }
-          ]
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": []
 }

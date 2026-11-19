@@ -7,7 +7,7 @@
 
 // Original: crt_locale.c_wchar_to_bytes_FUN_0056da30
 // Address: 0056da30
-void __watcallStack wchar::to_bytes(wchar_t character,char *output_buffer);
+void __watcallStack wchar_to_bytes(wchar_t character,char *output_buffer);
 
 // Original: crt_locale.c_mblen_FUN_0056da50
 // Address: 0056da50
@@ -19,11 +19,11 @@ int __watcallStack mbtowc(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes);
 
 // Original: crt_locale.c_fullwidth_toupper_FUN_00574520
 // Address: 00574520
-wchar_t __watcallStack fullwidth::toupper(wchar_t character);
+wchar_t __watcallStack fullwidth_toupper(wchar_t character);
 
 // Original: crt_locale.c_islower_multibyte_FUN_00574710
 // Address: 00574710
-int __watcallStack islower::multibyte(wchar_t character);
+int __watcallStack islower_multibyte(wchar_t character);
 
 // Original: crt_locale.c_ismultibyte_FUN_00574760
 // Address: 00574760

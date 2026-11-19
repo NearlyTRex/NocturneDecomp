@@ -7,19 +7,19 @@
 
 // Original: crt_string.c__stricmp_FUN_005a3260
 // Address: 005a3260
-int __cdecl ::stricmp(char *str1,char *str2);
+int __cdecl _stricmp(char *str1,char *str2);
 
 // Original: crt_string.c__strcmp_FUN_005a3d00
 // Address: 005a3d00
-int __cdecl ::strcmp(char *str1,char *str2);
+int __cdecl _strcmp(char *str1,char *str2);
 
 // Original: crt_string.c__strnicmp_FUN_005a3f90
 // Address: 005a3f90
-int __cdecl ::strnicmp(char *str1,char *str2,int count);
+int __cdecl _strnicmp(char *str1,char *str2,int count);
 
 // Original: crt_string.c__strlwr_FUN_005a3ff0
 // Address: 005a3ff0
-char * __cdecl ::strlwr(char *str);
+char * __cdecl _strlwr(char *str);
 
 // Original: crt_string.c_strstr_FUN_005a4010
 // Address: 005a4010
@@ -27,7 +27,7 @@ char * __cdecl strstr(char *haystack_str,char *needle_str);
 
 // Original: crt_string.c__strncpy_FUN_005a4ee0
 // Address: 005a4ee0
-char * __cdecl ::strncpy(char *dest,char *src,SIZE_T count);
+char * __cdecl _strncpy(char *dest,char *src,SIZE_T count);
 
 // Original: crt_string.c_splitpath_FUN_005a5128
 // Address: 005a5128
@@ -43,4 +43,4 @@ char * __cdecl strupr(char *string);
 
 // Original: crt_string.c__stricmp_FUN_005a5fd0
 // Address: 005a5fd0
-int __cdecl ::stricmp(char *str1,char *str2);
+int __cdecl _stricmp(char *str1,char *str2);

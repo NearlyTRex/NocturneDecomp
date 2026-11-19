@@ -211,40 +211,8 @@
   "static_analysis": {
     "analyzed_file": "CLodMesh_findOrAddLodTexture_FUN_00518790.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 3,
-          "line": 42,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 20,
-              "message": "Assuming 0 is >= field 'lod_texture_count'"
-            },
-            {
-              "line": 20,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 36,
-              "message": "Assuming 'pSVar3' is equal to null"
-            },
-            {
-              "line": 36,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 41,
-              "message": "Null pointer value stored to 'pcVar6'"
-            },
-            {
-              "line": 42,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
-            }
-          ]
-        },
         {
           "checker": "security.insecureAPI.strcpy",
           "column": 3,

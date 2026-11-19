@@ -106,7 +106,7 @@ FILES AT 50-89%
    80.0% | core/battery.cpp
          12/15 clean, 3 remaining
            - core_battery.cpp_CBattery_ctor_FUN_00414720 (14 lines) [negative_offset]
-           - core_battery.cpp_CBattery_renderOpaque_FUN_00414810 (32 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_battery.cpp_CBattery_renderOpaque_FUN_00414810 (32 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_battery.cpp_CBattery_getBoundingBox_FUN_00414910 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    80.0% | core/dimage.cpp
          4/5 clean, 1 remaining
@@ -155,17 +155,17 @@ FILES AT 50-89%
    76.9% | core/backgnd.cpp
          10/13 clean, 3 remaining
            - core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040f330 (15 lines) [derived_field_index_pun, negative_offset]
-           - core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0 (32 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0 (32 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040f490 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    76.9% | core/goggles.cpp
          10/13 clean, 3 remaining
            - core_goggles.cpp_CGoggles_ctor_FUN_0059c060 (13 lines) [negative_offset]
-           - core_goggles.cpp_CGoggles_renderOpaque_FUN_0059c100 (32 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_goggles.cpp_CGoggles_renderOpaque_FUN_0059c100 (32 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_goggles.cpp_CGoggles_getBoundingBox_FUN_0059c1e0 (27 lines) [pointer_cast, pointer_truncation, unaffected_reg, unrolled_memcpy]
    76.9% | core/keyactor.cpp
          10/13 clean, 3 remaining
            - core_keyactor.cpp_CKeyActor_ctor_FUN_004df140 (14 lines) [negative_offset]
-           - core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004df260 (29 lines) [stack_param, unrolled_memcpy]
+           - core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004df260 (29 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004df2e0 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    76.7% | core/baron.cpp
          23/30 clean, 7 remaining
@@ -205,11 +205,11 @@ FILES AT 50-89%
          9/12 clean, 3 remaining
            - core_dynamite.cpp_CDynamite_ctor_FUN_00479ff0 (22 lines) [unrolled_memset]
            - core_dynamite.cpp_CDynamite_fire_FUN_0047a0a0 (17 lines) [unrolled_memset]
-           - core_dynamite.cpp_CDynamite_process_FUN_0047a1e0 (92 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, sub84_truncation, tautological_addr_guard, unrolled_memcpy]
+           - core_dynamite.cpp_CDynamite_process_FUN_0047a1e0 (92 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, sub84_truncation, tautological_addr_guard, unrolled_memcpy]
    75.0% | core/gasmask.cpp
          9/12 clean, 3 remaining
            - core_gasmask.cpp_CGasMask_ctor_FUN_004c1340 (13 lines) [negative_offset]
-           - core_gasmask.cpp_CGasMask_renderOpaque_FUN_004c13e0 (32 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_gasmask.cpp_CGasMask_renderOpaque_FUN_004c13e0 (32 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004c14c0 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    75.0% | core/hpbox.cpp
          6/8 clean, 2 remaining
@@ -243,12 +243,12 @@ FILES AT 50-89%
            - core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 (28 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref]
            - core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 (26 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
            - core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408f90 (65 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
-           - core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0 (118 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, tautological_addr_guard, unaffected_reg, unrolled_memcpy]
-           - core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 (193 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unknown_field, unrolled_memcpy]
+           - core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0 (118 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, tautological_addr_guard, unaffected_reg, unrolled_memcpy]
+           - core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 (193 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unknown_field, unrolled_memcpy]
            - core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0 (90 lines) [pointer_cast, pointer_truncation]
            - core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409e70 (13 lines) [unrolled_memcpy]
            - core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409f20 (52 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
-           - core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 (453 lines) [bitcast_double_pair, pointer_cast, pointer_truncation, raw_address_constant, self_copy_guard, stack_alignment_array, stack_param, stack_ref, suspect_float, unaffected_reg, unknown_field, unresolved_funcptr, unrolled_memcpy, warning_type_propagation]
+           - core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 (453 lines) [bitcast_double_pair, memcpy_oversized_source, pointer_cast, pointer_truncation, raw_address_constant, self_copy_guard, stack_alignment_array, stack_param, stack_ref, suspect_float, unaffected_reg, unknown_field, unresolved_funcptr, unrolled_memcpy, warning_type_propagation]
            - core_actor.cpp_copyToActorDebugBuffer_FUN_0040ada0 (23 lines) [unrolled_memcpy]
            - core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040adf0 (93 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
            - core_actor.cpp_adjustIndentationLevel_FUN_0040b050 (24 lines) [undefined_data, unrolled_strlen]
@@ -291,8 +291,8 @@ FILES AT 50-89%
    73.3% | core/trap.cpp
          11/15 clean, 4 remaining
            - core_trap.cpp_CTrap_ctor_FUN_00576450 (13 lines) [negative_offset]
-           - core_trap.cpp_CTrap_process_FUN_00576530 (84 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unknown_field, unrolled_memcpy]
-           - core_trap.cpp_CTrap_renderOpaque_FUN_00576750 (39 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_trap.cpp_CTrap_process_FUN_00576530 (84 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unknown_field, unrolled_memcpy]
+           - core_trap.cpp_CTrap_renderOpaque_FUN_00576750 (39 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_trap.cpp_CTrap_getBoundingBox_FUN_00576840 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    72.7% | core/dest.cpp
          8/11 clean, 3 remaining
@@ -302,7 +302,7 @@ FILES AT 50-89%
    72.7% | core/litecone.cpp
          8/11 clean, 3 remaining
            - core_litecone.cpp_CLightCone_ctor_FUN_004e4190 (38 lines) [unrolled_strcpy]
-           - core_litecone.cpp_CLightCone_renderTransparent_FUN_004e42a0 (36 lines) [unaffected_reg, unrolled_memcpy]
+           - core_litecone.cpp_CLightCone_renderTransparent_FUN_004e42a0 (36 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_litecone.cpp_CLightCone_getBoundingBox_FUN_004e4340 (25 lines) [shadow_pointer_walk, unrolled_memcpy]
    72.7% | core/mine.cpp
          8/11 clean, 3 remaining
@@ -433,8 +433,8 @@ FILES AT 50-89%
    69.2% | core/grave.cpp
          9/13 clean, 4 remaining
            - core_grave.cpp_CGrave_ctor_FUN_004ca120 (19 lines) [negative_offset]
-           - core_grave.cpp_CGrave_renderOpaque_FUN_004ca290 (33 lines) [unaffected_reg, unrolled_memcpy]
-           - core_grave.cpp_CGrave_renderBackground_FUN_004ca340 (36 lines) [unaffected_reg, unrolled_memcpy]
+           - core_grave.cpp_CGrave_renderOpaque_FUN_004ca290 (33 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
+           - core_grave.cpp_CGrave_renderBackground_FUN_004ca340 (36 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_grave.cpp_CGrave_getBoundingBox_FUN_004ca540 (63 lines) [pointer_cast, pointer_truncation, stack_ref, unaffected_reg, unrolled_memcpy]
    68.8% | core/helldog.cpp
          11/16 clean, 5 remaining
@@ -454,12 +454,12 @@ FILES AT 50-89%
          17/25 clean, 8 remaining
            - core_filmreel.cpp_CFilmReel_ctor_FUN_00492920 (28 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_filmreel.cpp_CFilmReel_setup_FUN_00492990 (34 lines) [stack_param, stack_ref, unrolled_memcpy]
-           - core_filmreel.cpp_CFilmReel_renderOpaque_FUN_00492a90 (32 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_filmreel.cpp_CFilmReel_renderOpaque_FUN_00492a90 (32 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_filmreel.cpp_CFilmReel_getBoundingBox_FUN_00492ba0 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_filmreel.cpp_CFilmProjector_ctor_FUN_00492c10 (42 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_filmreel.cpp_CFilmProjector_process_FUN_00492d10 (51 lines) [derived_field_index_pun]
            - core_filmreel.cpp_CFilmProjector_getBoundingBox_FUN_00492ea0 (22 lines) [shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
-           - core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_00492ef0 (42 lines) [stack_param, unrolled_memcpy]
+           - core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_00492ef0 (42 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
    68.0% | engine/font.cpp
          34/50 clean, 16 remaining
            - engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 (80 lines) [unrolled_strcpy]
@@ -531,15 +531,15 @@ FILES AT 50-89%
          10/15 clean, 5 remaining
            - core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0 (33 lines) [negative_offset, pointer_cast]
            - core_ammo.cpp_CAmmo_process_FUN_0040ded0 (143 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
-           - core_ammo.cpp_CAmmo_renderOpaque_FUN_0040e0f0 (29 lines) [stack_param, unrolled_memcpy]
+           - core_ammo.cpp_CAmmo_renderOpaque_FUN_0040e0f0 (29 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040e170 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240 (90 lines) [unrolled_strcpy]
    66.7% | core/health.cpp
          10/15 clean, 5 remaining
            - core_health.cpp_CHealthItem_ctor_FUN_004cda70 (19 lines) [negative_offset]
            - core_health.cpp_CHealthItem_process_FUN_004cdb60 (132 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
-           - core_health.cpp_CHealthItem_renderOpaque_FUN_004cdda0 (29 lines) [stack_param, unrolled_memcpy]
-           - core_health.cpp_CHealthItem_renderTransparent_FUN_004cde20 (29 lines) [stack_param, unrolled_memcpy]
+           - core_health.cpp_CHealthItem_renderOpaque_FUN_004cdda0 (29 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
+           - core_health.cpp_CHealthItem_renderTransparent_FUN_004cde20 (29 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_health.cpp_CHealthItem_getBoundingBox_FUN_004cdea0 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    66.7% | core/hotdemon.cpp
          8/12 clean, 4 remaining
@@ -569,7 +569,7 @@ FILES AT 50-89%
          10/15 clean, 5 remaining
            - core_tvbat.cpp_CTVBat_ctor_FUN_005802f0 (45 lines) [derived_field_index_pun, negative_offset, pointer_cast]
            - core_tvbat.cpp_CTVBat_process_FUN_00580610 (410 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unknown_field, unrolled_memcpy, unrolled_memset]
-           - core_tvbat.cpp_CTVBat_renderOpaque_FUN_00581270 (32 lines) [unaffected_reg, unrolled_memcpy]
+           - core_tvbat.cpp_CTVBat_renderOpaque_FUN_00581270 (32 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_tvbat.cpp_CTVBat_getBoundingBox_FUN_00581300 (31 lines) [pointer_cast, pointer_truncation, suspect_float, unrolled_memcpy]
            - core_tvbat.cpp_CTVBat_dtor_FUN_00581430 (29 lines) [negative_offset]
    66.7% | engine/prim.c
@@ -592,7 +592,7 @@ FILES AT 50-89%
            - sound_sndmain.cpp_allocateHwSample_FUN_0054ccf0 (32 lines) [stack_ref]
            - sound_sndmain.cpp_allocMixBuffers_FUN_0054ce00 (53 lines) [pointer_cast, pointer_truncation]
            - sound_sndmain.cpp_freeMixBuffers_FUN_0054cfc0 (31 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_nextMixingBuffer_FUN_0054d060 (99 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_param, stack_ref, unknown_field, unrolled_memcpy]
+           - sound_sndmain.cpp_nextMixingBuffer_FUN_0054d060 (99 lines) [memcpy_oversized_source, pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_param, stack_ref, unknown_field, unrolled_memcpy]
            - sound_sndmain.cpp_convertMixBufToOutput_FUN_0054d220 (61 lines) [pointer_cast, pointer_truncation]
            - sound_sndmain.cpp_convertDoubleToFixed_FUN_0054d4c0 (14 lines) [bitcast_double_pair, unknown_field]
            - sound_sndmain.cpp_mixResampleMonoToStereo_FUN_0054d520 (52 lines) [carry_arith_idiom, unknown_field, warning_deadcode_restart]
@@ -639,7 +639,7 @@ FILES AT 50-89%
            - sound_sndmain.cpp_flushSoundChanges_FUN_00553380 (78 lines) [bitcast_double_pair, displaced_global_access, pointer_cast, pointer_truncation, suspicious_cast, warning_overlapping_globals]
            - sound_sndmain.cpp_readIni_FUN_00553680 (85 lines) [pointer_cast, unresolved_funcptr, unrolled_memcpy]
            - sound_sndmain.cpp_writeIni_FUN_00553980 (62 lines) [pointer_cast, pointer_truncation, unresolved_funcptr, unrolled_memcpy, unrolled_strcpy]
-           - sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0 (164 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_param, stack_ref, unknown_field, unrolled_memcpy]
+           - sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0 (164 lines) [memcpy_oversized_source, pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_param, stack_ref, unknown_field, unrolled_memcpy]
            - sound_sndmain.cpp_playCdTrack_FUN_00554780 (86 lines) [bitcast_double, bitcast_double_pair, concat_reconstruction, pointer_truncation, raw_address_constant, sub84_truncation, unknown_field, warning_overlapping_globals]
            - sound_sndmain.cpp_logSoundError_FUN_005549c0 (12 lines) [stack_ref, undefined_data]
    65.3% | core/fire.cpp
@@ -780,7 +780,7 @@ FILES AT 50-89%
    64.3% | core/ladder.cpp
          9/14 clean, 5 remaining
            - core_ladder.cpp_CLadder_ctor_FUN_004dff60 (23 lines) [negative_offset]
-           - core_ladder.cpp_CLadder_renderOpaque_FUN_004e0040 (33 lines) [unaffected_reg, unrolled_memcpy]
+           - core_ladder.cpp_CLadder_renderOpaque_FUN_004e0040 (33 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_ladder.cpp_CLadder_getBoundingBox_FUN_004e00d0 (45 lines) [pointer_cast, pointer_truncation, unaffected_reg, unrolled_memcpy]
            - core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004e0240 (61 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unaffected_reg, unrolled_memcpy]
            - core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004e0380 (65 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
@@ -851,13 +851,13 @@ FILES AT 50-89%
          7/11 clean, 4 remaining
            - core_anvil.cpp_CAnvil_ctor_FUN_0040ea30 (31 lines) [negative_offset, pointer_cast]
            - core_anvil.cpp_CAnvil_process_FUN_0040eae0 (47 lines) [unrolled_memcpy, warning_type_propagation]
-           - core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10 (34 lines) [unaffected_reg, unrolled_memcpy]
+           - core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10 (34 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_anvil.cpp_CAnvil_getBoundingBox_FUN_0040ed50 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    63.6% | core/bat.cpp
          7/11 clean, 4 remaining
            - core_bat.cpp_CBat_ctor_FUN_00410fd0 (42 lines) [derived_field_index_pun, negative_offset, unrolled_strcpy]
            - core_bat.cpp_CBat_process_FUN_00411200 (70 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref]
-           - core_bat.cpp_CBat_renderOpaque_FUN_004113f0 (30 lines) [stack_param, unrolled_memcpy]
+           - core_bat.cpp_CBat_renderOpaque_FUN_004113f0 (30 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_bat.cpp_CBat_getBoundingBox_FUN_00411480 (31 lines) [pointer_cast, pointer_truncation, suspect_float, unrolled_memcpy]
    63.6% | core/cow.cpp
          7/11 clean, 4 remaining
@@ -876,7 +876,7 @@ FILES AT 50-89%
            - core_shadow.cpp_staticInit_FUN_0053c170 (14 lines) [warning_overlapping_globals]
            - core_shadow.cpp_CShadow_process_FUN_0053c500 (955 lines) [pointer_cast, pointer_truncation, self_copy_guard, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, suspect_float, unrolled_memcpy, unrolled_memset]
            - core_shadow.cpp_CShadow_renderDebugMarker_FUN_0053e080 (192 lines) [raw_address_constant, stack_alignment_array]
-           - core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0 (72 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0 (72 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_shadow.cpp_CShadow_processDamage_FUN_0053ea00 (75 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
            - core_shadow.cpp_CShadow_getTargetPoints_FUN_0053ec70 (22 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_shadow.cpp_CShadow_processChainConstraint_FUN_0053ece0 (89 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, warning_type_propagation]
@@ -930,7 +930,7 @@ FILES AT 50-89%
    62.5% | core/marquee.cpp
          10/16 clean, 6 remaining
            - core_marquee.cpp_CMarquee_ctor_FUN_004e7c80 (34 lines) [derived_field_index_pun, negative_offset, pointer_cast, pointer_truncation]
-           - core_marquee.cpp_CMarquee_renderOpaque_FUN_004e7f70 (31 lines) [unaffected_reg, unrolled_memcpy]
+           - core_marquee.cpp_CMarquee_renderOpaque_FUN_004e7f70 (31 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_marquee.cpp_CMarquee_renderLightBulb_FUN_004e7ff0 (82 lines) [pointer_cast, pointer_truncation, raw_address_constant, unrolled_memcpy]
            - core_marquee.cpp_CMarquee_renderTransparent_FUN_004e8180 (135 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, tautological_addr_guard, unknown_field, unrolled_memcpy]
            - core_marquee.cpp_CMarquee_getBoundingBox_FUN_004e8530 (38 lines) [shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
@@ -942,7 +942,7 @@ FILES AT 50-89%
            - core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0 (111 lines) [pointer_cast]
            - core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00538970 (16 lines) [pointer_cast, pointer_truncation]
            - core_setdir.cpp_CZThumb_render_FUN_00538a60 (49 lines) [pointer_cast, pointer_truncation]
-           - core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 (407 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, undefined_data, unknown_field, unrolled_memcpy]
+           - core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 (407 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, undefined_data, unknown_field, unrolled_memcpy]
            - core_setdir.cpp_CDemonSet_saveThumbs_FUN_005398d0 (151 lines) [pointer_cast, pointer_truncation, raw_address_constant, stack_alignment_array, unaffected_reg]
            - core_setdir.cpp_CDemonSet_writeThumbs_FUN_00539c30 (48 lines) [shadow_pointer_walk]
            - core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00539d60 (97 lines) [pointer_cast]
@@ -1017,7 +1017,7 @@ FILES AT 50-89%
            - core_moloch.cpp_CMoloch_dtor_FUN_00501400 (24 lines) [negative_offset]
            - core_moloch.cpp_CMoloch_process_FUN_00501530 (287 lines) [pointer_cast, pointer_truncation, unrolled_memset]
            - core_moloch.cpp_CMoloch_processAI_FUN_00501c60 (160 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
-           - core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0 (60 lines) [unaffected_reg, unrolled_memcpy]
+           - core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0 (60 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
    61.5% | core/tentacle.cpp
          8/13 clean, 5 remaining
            - core_tentacle.cpp_CTentacle_process_FUN_005726c0 (305 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, warning_type_propagation]
@@ -1029,17 +1029,17 @@ FILES AT 50-89%
          11/18 clean, 7 remaining
            - core_crate.cpp_CCrate_ctor_FUN_00439d60 (14 lines) [negative_offset]
            - core_crate.cpp_CCrate_setup_FUN_00439dc0 (41 lines) [stack_param, stack_ref, unrolled_memcpy]
-           - core_crate.cpp_CCrate_process_FUN_00439f00 (104 lines) [unaffected_reg, unrolled_memcpy, unrolled_memset]
-           - core_crate.cpp_CCrate_renderOpaque_FUN_0043a130 (32 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_crate.cpp_CCrate_process_FUN_00439f00 (104 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy, unrolled_memset]
+           - core_crate.cpp_CCrate_renderOpaque_FUN_0043a130 (32 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_crate.cpp_CCrate_getBoundingBox_FUN_0043a240 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_crate.cpp_CCrate_getTargetPoints_FUN_0043a280 (48 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
-           - core_crate.cpp_CCrate_explode_FUN_0043a350 (35 lines) [unaffected_reg, unrolled_memcpy]
+           - core_crate.cpp_CCrate_explode_FUN_0043a350 (35 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
    61.1% | core/vessel.cpp
          11/18 clean, 7 remaining
            - core_vessel.cpp_CCryptVessel_ctor_FUN_00584ed0 (69 lines) [negative_offset, pointer_cast, unrolled_strcpy]
            - core_vessel.cpp_CCryptVessel_setup_FUN_00585030 (57 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_vessel.cpp_CCryptVessel_process_FUN_00585230 (233 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, warning_type_propagation]
-           - core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810 (56 lines) [pointer_cast, pointer_truncation, stack_param, unaffected_reg, unrolled_memcpy]
+           - core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810 (56 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_param, unaffected_reg, unrolled_memcpy]
            - core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00585990 (67 lines) [unrolled_strcpy]
            - core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_00585c90 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_vessel.cpp_CCryptVessel_dtor_FUN_00585cd0 (20 lines) [negative_offset]
@@ -1049,7 +1049,7 @@ FILES AT 50-89%
            - core_wateract.cpp_CWaterActor_setup_FUN_00586af0 (202 lines) [shadow_pointer_walk, unrolled_memset]
            - core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005870a0 (48 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array]
            - core_wateract.cpp_CWaterActor_updateLocalPositions_FUN_00587180 (56 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_ref, warning_type_propagation]
-           - core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400 (103 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
+           - core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400 (103 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
            - core_wateract.cpp_CWaterActor_getBoundingBox_FUN_00587650 (26 lines) [shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
            - core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00587900 (75 lines) [stack_alignment_array, stack_param, unrolled_memcpy]
    60.9% | core/dtri.cpp
@@ -1163,10 +1163,10 @@ FILES AT 50-89%
    59.1% | core/turret.cpp
          13/22 clean, 9 remaining
            - core_turret.cpp_CTurret_ctor_FUN_0057e3f0 (81 lines) [derived_field_index_pun, negative_offset, pointer_cast, pointer_truncation, stack_alignment_array, unrolled_strcpy]
-           - core_turret.cpp_CTurret_renderOpaque_FUN_0057e630 (49 lines) [stack_param, unrolled_memcpy]
+           - core_turret.cpp_CTurret_renderOpaque_FUN_0057e630 (49 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_turret.cpp_CTurret_process_FUN_0057e760 (196 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_turret.cpp_CTurret_getBoundingBox_FUN_0057ec70 (96 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unaffected_reg, unrolled_memcpy]
-           - core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 (218 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, suspect_float, unknown_field, unrolled_memcpy]
+           - core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 (218 lines) [bit_int_float_compare, memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, suspect_float, unknown_field, unrolled_memcpy]
            - core_turret.cpp_CTurret_aimAtTarget_FUN_0057f700 (67 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
            - core_turret.cpp_CTurret_updateInteraction_FUN_0057f970 (20 lines) [unaffected_reg, unrolled_memcpy]
            - core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00 (85 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
@@ -1176,7 +1176,7 @@ FILES AT 50-89%
            - core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_004ac1a0 (24 lines) [derived_field_index_pun, negative_offset]
            - core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004ac230 (104 lines) [unrolled_strcpy]
            - core_frankgen.cpp_CFrankenstienMachine_process_FUN_004ac4c0 (177 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unaffected_reg, unknown_field, unrolled_memcpy]
-           - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004aca90 (69 lines) [bit_int_float_compare, derived_field_index_pun, stack_param, unrolled_memcpy]
+           - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004aca90 (69 lines) [bit_int_float_compare, derived_field_index_pun, memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_004acc20 (31 lines) [pointer_cast, pointer_truncation, suspect_float, unrolled_memcpy]
            - core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004accb0 (87 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, suspect_float, unrolled_memcpy]
            - core_frankgen.cpp_findLeader_FUN_004ace60 (23 lines) [pointer_cast]
@@ -1191,16 +1191,16 @@ FILES AT 50-89%
          7/12 clean, 5 remaining
            - core_biggs.cpp_CBiggs_ctor_FUN_00414d10 (54 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_biggs.cpp_CBiggs_process_FUN_00414e50 (134 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memset]
-           - core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120 (61 lines) [unaffected_reg, unrolled_memcpy]
+           - core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120 (61 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_biggs.cpp_CBiggs_getTargetPoints_FUN_00415390 (22 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_biggs.cpp_CBiggs_dtor_FUN_00415410 (32 lines) [negative_offset]
    58.3% | core/door.cpp
          14/24 clean, 10 remaining
            - core_door.cpp_CDoor_ctor_FUN_0045ed60 (125 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_door.cpp_CDoor_reposition_FUN_0045f030 (218 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unrolled_memcpy]
-           - core_door.cpp_CDoor_process_FUN_0045f5a0 (224 lines) [pointer_cast, pointer_truncation, self_copy_guard, stack_alignment_array, stack_param, unresolved_funcptr, unrolled_memcpy]
-           - core_door.cpp_CDoor_renderOpaque_FUN_0045fd10 (56 lines) [stack_param, unaffected_reg, unrolled_memcpy]
-           - core_door.cpp_CDoor_renderBackground_FUN_0045fdf0 (32 lines) [unaffected_reg, unrolled_memcpy]
+           - core_door.cpp_CDoor_process_FUN_0045f5a0 (224 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, self_copy_guard, stack_alignment_array, stack_param, unresolved_funcptr, unrolled_memcpy]
+           - core_door.cpp_CDoor_renderOpaque_FUN_0045fd10 (56 lines) [memcpy_oversized_source, stack_param, unaffected_reg, unrolled_memcpy]
+           - core_door.cpp_CDoor_renderBackground_FUN_0045fdf0 (32 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_door.cpp_CDoor_getBoundingBox_FUN_0045fe80 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_door.cpp_CDoor_getHandlePosition_FUN_0045fec0 (36 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref]
            - core_door.cpp_CDoor_archive_FUN_0045ff80 (91 lines) [unrolled_strcpy]
@@ -1211,20 +1211,20 @@ FILES AT 50-89%
            - core_drip.cpp_CDrip_ctor_FUN_0046ce70 (38 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_drip.cpp_CDrip_setup_FUN_0046cf50 (17 lines) [unrolled_memcpy]
            - core_drip.cpp_CDrip_process_FUN_0046d110 (126 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unresolved_funcptr, unrolled_memcpy, unrolled_memset]
-           - core_drip.cpp_CDrip_renderOpaque_FUN_0046d570 (31 lines) [stack_param, unrolled_memcpy]
+           - core_drip.cpp_CDrip_renderOpaque_FUN_0046d570 (31 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_drip.cpp_CDrip_getBoundingBox_FUN_0046d610 (42 lines) [pointer_cast, pointer_truncation, unaffected_reg, unrolled_memcpy]
    58.3% | core/succubus.cpp
          7/12 clean, 5 remaining
            - core_succubus.cpp_CSuccubus_ctor_FUN_0056f2c0 (51 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0 (96 lines) [warning_overlapping_globals, warning_type_propagation]
            - core_succubus.cpp_CSuccubus_process_FUN_0056f6d0 (335 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_type_propagation, warning_unreachable]
-           - core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50 (71 lines) [unaffected_reg, unrolled_memcpy]
+           - core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50 (71 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_succubus.cpp_CSuccubus_dtor_FUN_00570090 (36 lines) [negative_offset]
    58.3% | core/weapon.cpp
          14/24 clean, 10 remaining
            - core_weapon.cpp_CWeapon_ctor_FUN_005899d0 (33 lines) [negative_offset, pointer_cast, suspect_float]
            - core_weapon.cpp_CWeapon_dtor_FUN_00589ae0 (21 lines) [negative_offset]
-           - core_weapon.cpp_CWeapon_renderOpaque_FUN_00589b90 (37 lines) [stack_param, unrolled_memcpy]
+           - core_weapon.cpp_CWeapon_renderOpaque_FUN_00589b90 (37 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_weapon.cpp_CWeapon_getBoundingBox_FUN_00589c40 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_weapon.cpp_CWeapon_process_FUN_00589c80 (32 lines) [unrolled_memcpy]
            - core_weapon.cpp_CWeapon_onDropped_FUN_00589f10 (38 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
@@ -1255,15 +1255,15 @@ FILES AT 50-89%
            - core_boxactor.cpp_CBoxActor_ctor_FUN_0041bd30 (42 lines) [negative_offset, pointer_cast, suspect_float, unrolled_memset]
            - core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10 (75 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unaffected_reg, undefined_data, unrolled_memcpy]
            - core_boxactor.cpp_CBoxActor_process_FUN_0041c090 (196 lines) [bitcast_double_pair, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unrolled_memcpy]
-           - core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 (44 lines) [unaffected_reg, unrolled_memcpy]
-           - core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 (44 lines) [unaffected_reg, unrolled_memcpy]
+           - core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 (44 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
+           - core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 (44 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_0041c790 (31 lines) [pointer_cast, pointer_truncation, suspect_float, unrolled_memcpy]
            - core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40 (73 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unknown_field, unrolled_memcpy]
-           - core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 (57 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unaffected_reg, unrolled_memcpy]
+           - core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 (57 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unaffected_reg, unrolled_memcpy]
            - core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90 (28 lines) [unrolled_memcpy]
            - core_boxactor.cpp_CLightActor_ctor_FUN_0041cf60 (19 lines) [derived_field_index_pun, negative_offset, suspect_float]
            - core_boxactor.cpp_CLightActor_process_FUN_0041d020 (90 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
-           - core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041d350 (206 lines) [stack_alignment_array, stack_param, unaffected_reg, unrolled_memcpy]
+           - core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041d350 (206 lines) [memcpy_oversized_source, stack_alignment_array, stack_param, unaffected_reg, unrolled_memcpy]
            - core_boxactor.cpp_CLightActor_dtor_FUN_0041d7b0 (23 lines) [negative_offset]
            - core_boxactor.cpp_CBoxActor_dtor_FUN_0041d830 (20 lines) [negative_offset]
    57.4% | core/hero.cpp
@@ -1523,7 +1523,7 @@ FILES AT 50-89%
            - core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_00514f40 (213 lines) [pointer_cast, pointer_truncation, raw_address_constant, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0 (175 lines) [inline_exp_idiom, pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, warning_type_propagation]
            - core_pendulum.cpp_CPendulum_process_FUN_00515cd0 (63 lines) [inline_exp_idiom, pointer_cast]
-           - core_pendulum.cpp_CPendulum_renderOpaque_FUN_00515e40 (29 lines) [stack_param, unrolled_memcpy]
+           - core_pendulum.cpp_CPendulum_renderOpaque_FUN_00515e40 (29 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_pendulum.cpp_CPendulum_getBoundingBox_FUN_00515ec0 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    53.3% | core/vehicle.cpp
          8/15 clean, 7 remaining
@@ -1532,7 +1532,7 @@ FILES AT 50-89%
            - core_vehicle.cpp_CVehicle_process_FUN_00583f20 (343 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_param, unaffected_reg, unknown_field, unrolled_memcpy]
            - core_vehicle.cpp_CVehicle_getBoundingBox_FUN_00584860 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_vehicle.cpp_CVehicle_archive_FUN_005848a0 (44 lines) [pointer_cast, shadow_pointer_walk]
-           - core_vehicle.cpp_CVehicle_renderOpaque_FUN_00584a40 (125 lines) [derived_field_index_pun, pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy, warning_type_propagation]
+           - core_vehicle.cpp_CVehicle_renderOpaque_FUN_00584a40 (125 lines) [derived_field_index_pun, memcpy_oversized_source, pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy, warning_type_propagation]
            - core_vehicle.cpp_CTire_ctor_FUN_00584e50 (6 lines) [negative_offset]
    52.8% | sound/sndwav.cpp
          19/36 clean, 17 remaining
@@ -1663,7 +1663,7 @@ FILES AT 50-89%
          7/14 clean, 7 remaining
            - core_batman.cpp_CBatman_ctor_FUN_00412b20 (36 lines) [unrolled_memset, unrolled_strcpy]
            - core_batman.cpp_CBatman_process_FUN_00412f40 (597 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy, unrolled_memset, warning_type_propagation]
-           - core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 (86 lines) [bitcast_double_pair, stack_param, unrolled_memcpy]
+           - core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 (86 lines) [bitcast_double_pair, memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_batman.cpp_CBatman_processDismemberment_FUN_00413f40 (139 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_type_propagation]
            - core_batman.cpp_CBatman_processDamage_FUN_00414290 (101 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
            - core_batman.cpp_CBatman_getTargetPoints_FUN_004144c0 (60 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
@@ -1680,7 +1680,7 @@ FILES AT 50-89%
          6/12 clean, 6 remaining
            - core_crossbow.cpp_CCrossbow_ctor_FUN_0043a4c0 (22 lines) [derived_field_index_pun, negative_offset]
            - core_crossbow.cpp_CCrossbow_process_FUN_0043a580 (42 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref]
-           - core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043a670 (34 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043a670 (34 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_crossbow.cpp_CCrossbow_getMuzzlePoint_FUN_0043a740 (34 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy]
            - core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 (228 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, sub84_truncation, suspect_float, unaffected_reg, unknown_field]
            - core_crossbow.cpp_CCrossbow_dtor_FUN_0043ae70 (20 lines) [negative_offset]
@@ -1713,7 +1713,7 @@ FILES AT 50-89%
            - core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00486a80 (79 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unknown_type, unrolled_memcpy]
            - core_emitter.cpp_CEmitter_process_FUN_00486cb0 (378 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unknown_field, unrolled_memcpy]
            - core_emitter.cpp_CEmitter_renderOpaque_FUN_00487790 (92 lines) [pointer_cast, pointer_truncation, raw_address_constant, stack_alignment_array, stack_param, stack_ref, suspect_float, unknown_field, unrolled_memcpy]
-           - core_emitter.cpp_CEmitter_renderBackground_FUN_004878a0 (28 lines) [unaffected_reg, unrolled_memcpy]
+           - core_emitter.cpp_CEmitter_renderBackground_FUN_004878a0 (28 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_emitter.cpp_CEmitter_getBoundingBox_FUN_00487910 (25 lines) [shadow_pointer_walk, unrolled_memcpy]
            - core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00487c80 (38 lines) [pointer_cast, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
    50.0% | core/flamecan.cpp
@@ -1721,7 +1721,7 @@ FILES AT 50-89%
            - core_flamecan.cpp_CFlameCan_ctor_FUN_004a06c0 (42 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_flamecan.cpp_CFlameCan_setup_FUN_004a0760 (82 lines) [stack_alignment_array, stack_param, stack_ref, unrolled_memcpy, warning_type_propagation]
            - core_flamecan.cpp_CFlameCan_process_FUN_004a0920 (31 lines) [unaffected_reg]
-           - core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004a09f0 (33 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004a09f0 (33 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_004a0ac0 (48 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_flamecan.cpp_CFlameCan_getBoundingBox_FUN_004a0c00 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_flamecan.cpp_CFlameCan_dtor_FUN_004a0c40 (20 lines) [negative_offset]
@@ -1739,10 +1739,10 @@ FILES AT 50-89%
            - core_passngr.cpp_CPassenger_dtor_FUN_005114f0 (41 lines) [negative_offset]
            - core_passngr.cpp_CPassenger_setup_FUN_005115e0 (71 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy, warning_type_propagation]
            - core_passngr.cpp_CPassenger_process_FUN_005117a0 (89 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, unrolled_memset, warning_type_propagation]
-           - core_passngr.cpp_CPassenger_renderOpaque_FUN_00511980 (42 lines) [unaffected_reg, unrolled_memcpy]
+           - core_passngr.cpp_CPassenger_renderOpaque_FUN_00511980 (42 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
    50.0% | core/setcolid.cpp
          16/32 clean, 16 remaining
-           - core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 (472 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unknown_field, unrolled_memcpy, warning_type_propagation]
+           - core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 (472 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unknown_field, unrolled_memcpy, warning_type_propagation]
            - core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0 (33 lines) [unrolled_memcpy]
            - core_setcolid.cpp_CDemonSet_raycast_FUN_00535ee0 (89 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, warning_type_propagation]
            - core_setcolid.cpp_CDemonSet_refinedRaycast_FUN_005360a0 (75 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, warning_type_propagation]
@@ -1763,7 +1763,7 @@ FILES AT 50-89%
            - core_spike.cpp_CSpike_ctor_FUN_00560540 (79 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_spike.cpp_CSpike_setup_FUN_00560680 (44 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref]
            - core_spike.cpp_CSpike_process_FUN_00560760 (142 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref]
-           - core_spike.cpp_CSpike_renderOpaque_FUN_00560a90 (29 lines) [stack_param, unrolled_memcpy]
+           - core_spike.cpp_CSpike_renderOpaque_FUN_00560a90 (29 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_spike.cpp_CSpike_getBoundingBox_FUN_00560b10 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0 (207 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unknown_field, unrolled_memcpy]
    50.0% | core/vecdir.cpp
@@ -1908,7 +1908,7 @@ FILES BELOW 50%
            - support_trisock.cpp_httpReceiveResponse_FUN_00579e40 (55 lines) [stack_param, stack_ref, unrolled_strcpy, warning_unreachable]
            - support_trisock.cpp_httpGetDocument_FUN_0057a0f0 (47 lines) [unrolled_strcpy, unrolled_strlen]
            - support_trisock.cpp_httpPostDocument_FUN_0057a1e0 (76 lines) [unresolved_funcptr, unrolled_strcpy, unrolled_strlen]
-           - support_trisock.cpp_dnsLookupThreadProc_FUN_0057a480 (95 lines) [stack_ref, unrolled_memcpy, unrolled_strcpy]
+           - support_trisock.cpp_dnsLookupThreadProc_FUN_0057a480 (95 lines) [memcpy_oversized_source, stack_ref, unrolled_memcpy, unrolled_strcpy]
            - support_trisock.cpp_initDnsRequest_FUN_0057a6d0 (11 lines) [pointer_cast, pointer_truncation]
            - support_trisock.cpp_dnsRequestLookupHost_FUN_0057a750 (19 lines) [stack_param, unrolled_strcpy]
            - support_trisock.cpp_dnsRequestLookupAddr_FUN_0057a790 (9 lines) [pointer_cast, stack_param]
@@ -1937,13 +1937,13 @@ FILES BELOW 50%
            - core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0 (120 lines) [shadow_pointer_walk]
            - core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80 (276 lines) [pointer_cast, pointer_truncation, self_copy_guard, stack_alignment_array, unrolled_strcpy]
            - core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 (170 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_renderBackground_FUN_00425a00 (30 lines) [unaffected_reg, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_renderBackground_FUN_00425a00 (30 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_charactr.cpp_CCharacter_renderAttachedModels_FUN_00425aa0 (54 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_00425bb0 (161 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, suspect_float]
            - core_charactr.cpp_CCharacter_processFire_FUN_00425fb0 (212 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array]
            - core_charactr.cpp_CCharacter_renderBurn_FUN_004264d0 (104 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, suspect_float]
            - core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 (50 lines) [pointer_cast, pointer_truncation, stack_ref]
-           - core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0 (37 lines) [stack_param, unrolled_memcpy, warning_unreachable]
+           - core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0 (37 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy, warning_unreachable]
            - core_charactr.cpp_CCharacter_renderFlames_FUN_00426990 (23 lines) [shadow_pointer_walk]
            - core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10 (167 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70 (33 lines) [shadow_pointer_walk]
@@ -1963,7 +1963,7 @@ FILES BELOW 50%
            - core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 (111 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_alignment_array]
            - core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0 (73 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00428d60 (33 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
-           - core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30 (149 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30 (149 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429120 (21 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390 (40 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420 (305 lines) [pointer_cast, pointer_truncation, self_copy_guard, stack_alignment_array]
@@ -2020,7 +2020,7 @@ FILES BELOW 50%
            - core_vampboss.cpp_CVampireBoss_ctor_FUN_00581530 (39 lines) [negative_offset]
            - core_vampboss.cpp_CVampireBoss_process_FUN_00581910 (732 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, unnamed_field, unrolled_memcpy, unrolled_memset, warning_type_propagation]
            - core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_00582c90 (51 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_type_propagation]
-           - core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0 (80 lines) [unaffected_reg, unrolled_memcpy]
+           - core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0 (80 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160 (97 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
            - core_vampboss.cpp_CVampireBoss_getTargetPoints_FUN_005833e0 (49 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_vampboss.cpp_CVampireBoss_summonBats_FUN_005834b0 (20 lines) [pointer_cast]
@@ -2050,7 +2050,7 @@ FILES BELOW 50%
            - core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 (104 lines) [shadow_pointer_walk]
            - core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 (205 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_ref, unaffected_reg, unrolled_memcpy]
            - core_set.cpp_CDemonSet_initScene_FUN_0052d980 (100 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy]
-           - core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 (51 lines) [phantom_float_to_int, pointer_cast, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
+           - core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 (51 lines) [memcpy_oversized_source, phantom_float_to_int, pointer_cast, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
            - core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0052dd80 (20 lines) [unrolled_memcpy]
            - core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 (370 lines) [partial_struct_copy, pointer_cast, pointer_truncation, raw_address_constant, shadow_pointer_walk, stack_alignment_array, stack_param, unaffected_reg, unknown_field, unrolled_memcpy, warning_overlapping_globals, wrong_global]
            - core_set.cpp_CDemonSet_processActors_FUN_0052e940 (248 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_ref, unrolled_memcpy]
@@ -2079,7 +2079,7 @@ FILES BELOW 50%
            - core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40 (41 lines) [unrolled_memcpy]
            - core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005340b0 (30 lines) [shadow_pointer_walk]
            - core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 (49 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref]
-           - core_set.cpp_CDemonSet_buildMirrorList_FUN_00534360 (55 lines) [pointer_truncation, shadow_pointer_walk, stack_param, stack_ref, unrolled_memcpy]
+           - core_set.cpp_CDemonSet_buildMirrorList_FUN_00534360 (55 lines) [memcpy_oversized_source, pointer_truncation, shadow_pointer_walk, stack_param, stack_ref, unrolled_memcpy]
            - core_set.cpp_CDemonSet_setGamma_FUN_00534580 (27 lines) [pointer_cast, suspect_float]
            - core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_005346c0 (17 lines) [shadow_pointer_walk]
            - core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00534720 (17 lines) [shadow_pointer_walk]
@@ -2089,10 +2089,10 @@ FILES BELOW 50%
          9/19 clean, 10 remaining
            - core_glass.cpp_CGlass_ctor_FUN_004c48a0 (61 lines) [derived_field_index_pun, pointer_cast, pointer_truncation, unrolled_strcpy]
            - core_glass.cpp_CGlass_setup_FUN_004c49e0 (311 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, struct_field_overrun, suspect_float, unrolled_memcpy, unrolled_strcpy]
-           - core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0 (79 lines) [shadow_pointer_walk, stack_param, stack_ref, unrolled_memcpy]
-           - core_glass.cpp_CGlass_renderTransparent_FUN_004c5470 (77 lines) [shadow_pointer_walk, stack_param, stack_ref, unrolled_memcpy]
+           - core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0 (79 lines) [memcpy_oversized_source, shadow_pointer_walk, stack_param, stack_ref, unrolled_memcpy]
+           - core_glass.cpp_CGlass_renderTransparent_FUN_004c5470 (77 lines) [memcpy_oversized_source, shadow_pointer_walk, stack_param, stack_ref, unrolled_memcpy]
            - core_glass.cpp_CGlass_renderBrokenGlass_FUN_004c5640 (90 lines) [derived_field_index_pun, pointer_cast, pointer_truncation, shadow_pointer_walk, stack_param, stack_ref, unnamed_field, unrolled_memcpy]
-           - core_glass.cpp_CGlass_renderBackground_FUN_004c5840 (79 lines) [shadow_pointer_walk, stack_param, stack_ref, unrolled_memcpy]
+           - core_glass.cpp_CGlass_renderBackground_FUN_004c5840 (79 lines) [memcpy_oversized_source, shadow_pointer_walk, stack_param, stack_ref, unrolled_memcpy]
            - core_glass.cpp_CGlass_getBoundingBox_FUN_004c5a00 (25 lines) [shadow_pointer_walk, unrolled_memcpy]
            - core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0 (608 lines) [stack_alignment_array, unrolled_memcpy]
            - core_glass.cpp_CGlass_shatter_FUN_004c6d40 (172 lines) [pointer_cast, pointer_truncation, raw_address_constant, stack_alignment_array, unrolled_strcpy]
@@ -2116,7 +2116,7 @@ FILES BELOW 50%
            - core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110 (36 lines) [pointer_cast, raw_address_constant, stack_alignment_array, unknown_field]
            - core_enemy.cpp_CEnemy_testAttackLine_FUN_004881b0 (25 lines) [raw_address_constant]
            - core_enemy.cpp_CEnemy_getTargetPoint_FUN_00488250 (56 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
-           - core_enemy.cpp_CEnemy_canSeeTarget_FUN_00488320 (80 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
+           - core_enemy.cpp_CEnemy_canSeeTarget_FUN_00488320 (80 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
            - core_enemy.cpp_CEnemy_updateVictim_FUN_00488450 (152 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unresolved_funcptr]
            - core_enemy.cpp_CEnemy_releaseVictim_FUN_004889d0 (22 lines) [undefined_data]
            - core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_00488ab0 (30 lines) [derived_field_index_pun, pointer_cast]
@@ -2149,7 +2149,7 @@ FILES BELOW 50%
            - core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004b1530 (211 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, suspect_float, unrolled_memcpy, unrolled_memset]
            - core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004b1e00 (121 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004b20d0 (88 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0 (203 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
+           - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0 (203 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
            - core_gabriela.cpp_CGabriella_dtor_FUN_004b2840 (20 lines) [negative_offset]
    46.9% | core/bugs.cpp
          15/32 clean, 17 remaining
@@ -2232,8 +2232,8 @@ FILES BELOW 50%
            - core_bodypart.cpp_CBodyPart_dtor_FUN_00415800 (25 lines) [negative_offset]
            - core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890 (32 lines) [alloc_magic_size]
            - core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 (51 lines) [pointer_cast]
-           - core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00415b60 (58 lines) [shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
-           - core_bodypart.cpp_CBodyPart_renderBackground_FUN_00415cd0 (51 lines) [unaffected_reg, unrolled_memcpy]
+           - core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00415b60 (58 lines) [memcpy_oversized_source, shadow_pointer_walk, unaffected_reg, unrolled_memcpy]
+           - core_bodypart.cpp_CBodyPart_renderBackground_FUN_00415cd0 (51 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_bodypart.cpp_CBodyPart_archive_FUN_00415f50 (83 lines) [pointer_cast]
            - core_bodypart.cpp_CBodyPart_process_FUN_004162b0 (88 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_bodypart.cpp_CBodyPart_processFires_FUN_004164b0 (55 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array]
@@ -2289,7 +2289,7 @@ FILES BELOW 50%
            - core_simbox.cpp_CSimBox_ctor_FUN_0053ffb0 (37 lines) [negative_offset, pointer_cast, pointer_truncation]
            - core_simbox.cpp_CSimBox_setup_FUN_00540070 (72 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_simbox.cpp_CSimBox_process_FUN_005401b0 (84 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, warning_type_propagation]
-           - core_simbox.cpp_CSimBox_renderOpaque_FUN_00540390 (29 lines) [stack_param, unrolled_memcpy]
+           - core_simbox.cpp_CSimBox_renderOpaque_FUN_00540390 (29 lines) [memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_simbox.cpp_CSimBox_getBoundingBox_FUN_00540410 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_simbox.cpp_CSimBox_dtor_FUN_00540510 (19 lines) [negative_offset]
    45.0% | core/menu.cpp
@@ -2314,7 +2314,7 @@ FILES BELOW 50%
            - core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 (433 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_mimic.cpp_CMimic_setupCloth_FUN_004f17a0 (44 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890 (129 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
-           - core_mimic.cpp_CMimic_renderBackground_FUN_004f1b80 (35 lines) [unaffected_reg, unrolled_memcpy]
+           - core_mimic.cpp_CMimic_renderBackground_FUN_004f1b80 (35 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_mimic.cpp_CMimic_getCollisionType_FUN_004f1cf0 (25 lines) [warning_type_propagation]
            - core_mimic.cpp_CMimic_beginMorph_FUN_004f1d70 (36 lines) [suspect_float, unrolled_memcpy, warning_type_propagation]
            - core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 (53 lines) [pointer_cast]
@@ -2327,7 +2327,7 @@ FILES BELOW 50%
            - core_zombie.cpp_CZombie_setup_FUN_00595c00 (100 lines) [warning_type_propagation]
            - core_zombie.cpp_CZombie_process_FUN_00595f30 (1399 lines) [fast_sqrt_inline, pointer_cast, pointer_truncation, raw_address_constant, self_copy_guard, stack_alignment_array, stack_param, stack_ref, stale_struct_offset_64bit, suspect_float, unresolved_funcptr, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_unreachable]
            - core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005980a0 (222 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
-           - core_zombie.cpp_CZombie_processPickup_FUN_005984e0 (361 lines) [pointer_cast, pointer_truncation, raw_address_pointer_store, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
+           - core_zombie.cpp_CZombie_processPickup_FUN_005984e0 (361 lines) [memcpy_oversized_source, pointer_cast, pointer_truncation, raw_address_pointer_store, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
            - core_zombie.cpp_CZombie_canPickupWithHand_FUN_00598ee0 (11 lines) [warning_type_propagation]
            - core_zombie.cpp_CZombie_renderTransparent_FUN_00598fa0 (122 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_zombie.cpp_CZombie_canBeAttracted_FUN_005992b0 (74 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy]
@@ -2355,17 +2355,17 @@ FILES BELOW 50%
            - core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0 (67 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
    44.2% | core/xform.cpp
          23/52 clean, 29 remaining
-           - core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 (50 lines) [unrolled_memcpy]
+           - core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 (50 lines) [memcpy_oversized_source, unrolled_memcpy]
            - core_xform.cpp_multiplyMatrix3x4InPlace_FUN_00591860 (18 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_xform.cpp_angleFromSinCos_FUN_00591d10 (30 lines) [bit_int_float_compare]
            - core_xform.cpp_matrixToEulerAngles_FUN_00591de0 (179 lines) [bit_int_float_compare, param_count_too_many, pointer_cast, pointer_truncation, unaffected_reg]
            - core_xform.cpp_matrixToEulerAnglesZYX_FUN_00592280 (179 lines) [bit_int_float_compare, param_count_too_many, pointer_cast, pointer_truncation, unaffected_reg]
            - core_xform.cpp_invertAndGetTranslation_FUN_00592760 (28 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_xform.cpp_inverse_FUN_00592830 (69 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_xform.cpp_buildRotationX_FUN_00593240 (41 lines) [unrolled_memcpy]
-           - core_xform.cpp_buildRotationY_FUN_005932c0 (38 lines) [unrolled_memcpy]
-           - core_xform.cpp_buildXFlipMatrix_FUN_005934e0 (35 lines) [unrolled_memcpy]
-           - core_xform.cpp_buildYFlipMatrix_FUN_00593540 (31 lines) [unrolled_memcpy]
+           - core_xform.cpp_buildRotationX_FUN_00593240 (41 lines) [memcpy_oversized_source, unrolled_memcpy]
+           - core_xform.cpp_buildRotationY_FUN_005932c0 (38 lines) [memcpy_oversized_source, unrolled_memcpy]
+           - core_xform.cpp_buildXFlipMatrix_FUN_005934e0 (35 lines) [memcpy_oversized_source, unrolled_memcpy]
+           - core_xform.cpp_buildYFlipMatrix_FUN_00593540 (31 lines) [memcpy_oversized_source, unrolled_memcpy]
            - core_xform.cpp_buildZFlipMatrix_FUN_005935a0 (27 lines) [unrolled_memcpy]
            - core_xform.cpp_lerpMatrix3x4_FUN_00593770 (77 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10 (19 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
@@ -2423,7 +2423,7 @@ FILES BELOW 50%
            - core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 (533 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, stack_param, stack_ref, sub84_truncation, suspect_float, unknown_field, unrolled_memcpy, unrolled_memset]
            - core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004192a0 (142 lines) [pointer_cast, pointer_truncation, self_copy_guard, stack_alignment_array, stack_param, stack_ref, unrolled_memcpy]
            - core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00419520 (219 lines) [bit_int_float_compare, phantom_float_to_int, pointer_cast, pointer_truncation, raw_address_pointer_store, stack_alignment_array, stack_param, stack_ref, unaffected_reg, unrolled_memcpy]
-           - core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80 (40 lines) [unaffected_reg, unrolled_memcpy]
+           - core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80 (40 lines) [memcpy_oversized_source, unaffected_reg, unrolled_memcpy]
            - core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 (58 lines) [shadow_pointer_walk]
            - core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_00419f30 (80 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0 (90 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
@@ -2497,7 +2497,7 @@ FILES BELOW 50%
            - core_platfrm.cpp_CPlatform_setup_FUN_00518280 (27 lines) [pointer_cast, shadow_pointer_walk]
            - core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310 (96 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_platfrm.cpp_CPlatform_process_FUN_005184c0 (378 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, stack_ref, suspect_float, unknown_field, unrolled_memcpy, unrolled_strcpy]
-           - core_platfrm.cpp_CPlatform_renderOpaque_FUN_00519080 (66 lines) [stack_param, stack_ref, unrolled_memcpy]
+           - core_platfrm.cpp_CPlatform_renderOpaque_FUN_00519080 (66 lines) [memcpy_oversized_source, stack_param, stack_ref, unrolled_memcpy]
            - core_platfrm.cpp_CPlatform_renderBackground_FUN_005191d0 (79 lines) [stack_ref, unaffected_reg, unrolled_memcpy]
            - core_platfrm.cpp_CPlatform_getBoundingBox_FUN_005193b0 (26 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_platfrm.cpp_CPlatform_archive_FUN_005193f0 (111 lines) [pointer_cast, shadow_pointer_walk]
@@ -2623,7 +2623,7 @@ FILES BELOW 50%
            - core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0 (954 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, unrolled_memset, warning_type_propagation]
            - core_dracbrid.cpp_CDraculaBride_explode_FUN_00464700 (124 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unknown_field, unrolled_memcpy]
            - core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00464a00 (22 lines) [warning_type_propagation]
-           - core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 (91 lines) [bitcast_double_pair, stack_param, unrolled_memcpy]
+           - core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 (91 lines) [bitcast_double_pair, memcpy_oversized_source, stack_param, unrolled_memcpy]
            - core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00464f60 (125 lines) [pointer_cast, pointer_truncation, stack_alignment_array]
            - core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00465270 (54 lines) [pointer_cast, pointer_truncation, stack_alignment_array, unrolled_memcpy]
            - core_dracbrid.cpp_randomizePosition_FUN_00465370 (26 lines) [pointer_cast, stack_alignment_array, stack_ref]

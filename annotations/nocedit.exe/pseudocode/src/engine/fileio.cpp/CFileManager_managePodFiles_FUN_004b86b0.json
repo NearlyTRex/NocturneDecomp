@@ -8,15 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 809,
+    "complexity_score": 810,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 809,
+    "pseudocode_lines": 810,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 2887
+    "total_lines": 2888
   },
   "cross_references": [],
   "function": {
@@ -1004,7 +1004,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 801,
+      "line": 802,
       "match": "(char **)((int)g_PodFileActionNames",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1085,7 +1085,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 775,
+      "line": 776,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1462,7 +1462,7 @@
   "static_analysis": {
     "analyzed_file": "CFileManager_managePodFiles_FUN_004b86b0.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 12,
+      "diagnostic_count": 10,
       "diagnostics": [
         {
           "checker": "deadcode.DeadStores",
@@ -1485,78 +1485,6 @@
             {
               "line": 67,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 11,
-          "line": 107,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 64,
-              "message": "Assuming 'iVar2' is not equal to 0"
-            },
-            {
-              "line": 64,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 66,
-              "message": "Assuming 'pod_directory_path' is equal to null"
-            },
-            {
-              "line": 66,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 71,
-              "message": "Assuming 'iVar2' is not equal to 0"
-            },
-            {
-              "line": 71,
-              "message": "Left side of '&&' is true"
-            },
-            {
-              "line": 74,
-              "message": "Assuming the condition is true"
-            },
-            {
-              "line": 74,
-              "message": "Left side of '||' is true"
-            },
-            {
-              "line": 71,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 79,
-              "message": "Assuming field 'item_count' is >= 1"
-            },
-            {
-              "line": 79,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 90,
-              "message": "Assuming 'local_44' is equal to null"
-            },
-            {
-              "line": 90,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 101,
-              "message": "0 is < field 'item_count'"
-            },
-            {
-              "line": 101,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 107,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
             }
           ]
         },
@@ -1617,226 +1545,6 @@
             {
               "line": 188,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 13,
-          "line": 276,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 64,
-              "message": "Assuming 'iVar2' is not equal to 0"
-            },
-            {
-              "line": 64,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 66,
-              "message": "Assuming 'pod_directory_path' is equal to null"
-            },
-            {
-              "line": 66,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 71,
-              "message": "Assuming 'iVar2' is not equal to 0"
-            },
-            {
-              "line": 71,
-              "message": "Left side of '&&' is true"
-            },
-            {
-              "line": 74,
-              "message": "Assuming the condition is true"
-            },
-            {
-              "line": 74,
-              "message": "Left side of '||' is true"
-            },
-            {
-              "line": 71,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 79,
-              "message": "Assuming field 'item_count' is >= 1"
-            },
-            {
-              "line": 79,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 90,
-              "message": "Assuming 'local_44' is not equal to null"
-            },
-            {
-              "line": 90,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 101,
-              "message": "0 is < field 'item_count'"
-            },
-            {
-              "line": 101,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 114,
-              "message": "Assuming 'iVar2' is not equal to 0"
-            },
-            {
-              "line": 114,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 124,
-              "message": "Assuming 'iVar2' is not equal to 0"
-            },
-            {
-              "line": 124,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 127,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 127,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 130,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 130,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 133,
-              "message": "Assuming 'local_b94.file_size' is not equal to 'local_fbc.file_size'"
-            },
-            {
-              "line": 133,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 141,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 145,
-              "message": "Assuming 'iVar2' is not equal to 0"
-            },
-            {
-              "line": 145,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 159,
-              "message": "Assuming 0 is >= field 'file_count'"
-            },
-            {
-              "line": 159,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 184,
-              "message": "Assuming 'iVar2' is >= 0"
-            },
-            {
-              "line": 184,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 192,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 192,
-              "message": "Left side of '||' is false"
-            },
-            {
-              "line": 195,
-              "message": "Assuming 'iVar2' is equal to 0"
-            },
-            {
-              "line": 192,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 249,
-              "message": "Assuming 'local_64' is >= field 'item_count'"
-            },
-            {
-              "line": 102,
-              "message": "Loop condition is false.  Exiting loop"
-            },
-            {
-              "line": 253,
-              "message": "Assuming 0 is < field 'item_count'"
-            },
-            {
-              "line": 253,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 258,
-              "message": "'local_48' is > 0"
-            },
-            {
-              "line": 258,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 261,
-              "message": "Assuming 'iVar4' is not equal to 0"
-            },
-            {
-              "line": 261,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 263,
-              "message": "Assuming 'iVar2' is >= 'local_48'"
-            },
-            {
-              "line": 259,
-              "message": "Loop condition is false.  Exiting loop"
-            },
-            {
-              "line": 265,
-              "message": "'local_48' is <= 'iVar2'"
-            },
-            {
-              "line": 265,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 268,
-              "message": "Value assigned to 'local_44'"
-            },
-            {
-              "line": 270,
-              "message": "Assuming 'local_44' is equal to null"
-            },
-            {
-              "line": 270,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 275,
-              "message": "Null pointer value stored to 'rec'"
-            },
-            {
-              "line": 276,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
             }
           ]
         },

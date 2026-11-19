@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4929
-Clean functions: 3116 (63.2%)
-Functions with suspects: 1813 (36.8%)
+Clean functions: 3117 (63.2%)
+Functions with suspects: 1812 (36.8%)
 
-Total suspect patterns: 15448
-Average suspects per function: 3.13
+Total suspect patterns: 15460
+Average suspects per function: 3.14
 
 Virtual files: 202 total, 16 at 100%, 18 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3317, Average: 44.3
 
-Average complexity score: 79.8
+Average complexity score: 79.9
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -64,6 +64,7 @@ SUSPECT PATTERN BREAKDOWN
   flattened_array_index     15
   fast_sqrt_inline          12
   phantom_float_to_int      12
+  memcpy_oversized_source   12
   fast_inv_sqrt_inline      11
   inline_exp_idiom          10
   preinc_loop_idiom         9
@@ -145,7 +146,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 3066 more
+  ... and 3067 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -686,6 +687,19 @@ FUNCTIONS BY SUSPECT TYPE
     0043d1c0: core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
     004537d0: core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
     0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
+
+  memcpy_oversized_source (12 functions):
+    0044dfb0: core_dirmat.cpp_CMatrix3x3f_multiply_FUN_0044dfb0
+    00523170: sound_sndmain.cpp_nextMixingBuffer_FUN_00523170
+    005294f0: sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0
+    0055aa00: core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
+    0055c730: core_xform.cpp_buildRotationX_FUN_0055c730
+    0055c7b0: core_xform.cpp_buildRotationY_FUN_0055c7b0
+    0055c830: core_xform.cpp_buildRotationZ_FUN_0055c830
+    0055c8b0: core_xform.cpp_buildTranslationMatrix_FUN_0055c8b0
+    0055c910: core_xform.cpp_buildUniformScaleMatrix_FUN_0055c910
+    0055c970: core_xform.cpp_buildScaleMatrix_FUN_0055c970
+    ... and 2 more
 
   fast_inv_sqrt_inline (8 functions):
     004366f0: core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0

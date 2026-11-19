@@ -397,43 +397,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_lightVertexColor_FUN_0056ddb0.keep.cpp",
-    "clang_analyzer_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "checker": "core.NullDereference",
-          "column": 65,
-          "line": 37,
-          "message": "Access to field 'x' results in a dereference of a null pointer (loaded from variable 'surface_normal')",
-          "path_notes": [
-            {
-              "line": 31,
-              "message": "Assuming field 'rendering_mode' is not equal to 0"
-            },
-            {
-              "line": 31,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 32,
-              "message": "Assuming 'surface_normal' is equal to null"
-            },
-            {
-              "line": 32,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 37,
-              "message": "Access to field 'x' results in a dereference of a null pointer (loaded from variable 'surface_normal')"
-            }
-          ]
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": []
 }

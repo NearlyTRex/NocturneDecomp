@@ -4,17 +4,20 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "keep.cpp",
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2,
-    "complexity_score": 7,
+    "complexity_score": 37,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_indirect_jump",
+      "warning_jumptable"
+    ],
     "total_lines": 9
   },
   "cross_references": [
@@ -97,26 +100,6 @@
     },
     "pcode_op_count": 1
   },
-  "resolved_suspects": [
-    {
-      "description": "Jump table recovery failed",
-      "line": 5,
-      "match": "WARNING: Could not recover jumptable",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "/* WARNING: Could not recover jumptable at 0x005b5710. Too many branches */",
-      "type": "warning_jumptable"
-    },
-    {
-      "description": "Indirect jump treated as call",
-      "line": 6,
-      "match": "WARNING: Treating indirect jump as call",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "/* WARNING: Treating indirect jump as call */",
-      "type": "warning_indirect_jump"
-    }
-  ],
   "siblings": {
     "blairwitch2.exe": {
       "addr": "0055d6d7",
@@ -151,5 +134,24 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Jump table recovery failed",
+      "line": 5,
+      "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
+      "tail_call": true,
+      "text": "/* WARNING: Could not recover jumptable at 0x005b5710. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 6,
+      "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
+      "tail_call": true,
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    }
+  ]
 }

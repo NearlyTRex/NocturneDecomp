@@ -352,32 +352,8 @@
   "static_analysis": {
     "analyzed_file": "CIni_getProfileString_FUN_004fb250.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 2,
       "diagnostics": [
-        {
-          "checker": "core.NullDereference",
-          "column": 11,
-          "line": 36,
-          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')",
-          "path_notes": [
-            {
-              "line": 27,
-              "message": "Value assigned to 'stream'"
-            },
-            {
-              "line": 29,
-              "message": "Assuming 'stream' is equal to null"
-            },
-            {
-              "line": 29,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 36,
-              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')"
-            }
-          ]
-        },
         {
           "checker": "core.NonNullParamChecker",
           "column": 11,

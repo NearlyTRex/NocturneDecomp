@@ -19,8 +19,8 @@ int __cdecl convertWindowsErrorToErrno(DWORD windows_error);
 
 // Original: crt_errno.c___set_errno_FUN_0056c73c
 // Address: 0056c73c
-DWORD __cdecl ::_set_errno(void);
+DWORD __cdecl __set_errno(void);
 
 // Original: crt_errno.c__errno_FUN_0056f1a0
 // Address: 0056f1a0
-int * __cdecl ::errno(void);
+int * __cdecl _errno(void);

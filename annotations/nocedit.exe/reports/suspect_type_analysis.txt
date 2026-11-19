@@ -4,8 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  warning_inlined_function          40 ( 75.5%)
-  warning_unreachable               13 ( 24.5%)
+  warning_inlined_function          40 ( 72.7%)
+  warning_unreachable               13 ( 23.6%)
+  warning_jumptable                  1 (  1.8%)
+  warning_indirect_jump              1 (  1.8%)
 
 ====================================================================================================
 TYPE: warning_inlined_function (40 occurrences)
@@ -69,3 +71,23 @@ Functions:
   core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880
   core_script.cpp_clearSelections_FUN_005644e0
   engine_font.cpp_setShadowColor_FUN_004ce0f0
+
+====================================================================================================
+TYPE: warning_jumptable (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  WARNING: Could not recover jumptable
+
+Functions:
+  engine_special.cpp_renderScanline_FUN_005b5710
+
+====================================================================================================
+TYPE: warning_indirect_jump (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  WARNING: Treating indirect jump as call
+
+Functions:
+  engine_special.cpp_renderScanline_FUN_005b5710

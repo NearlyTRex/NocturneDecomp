@@ -32,18 +32,9 @@ sealed_programs = [
     "ssh", "scp", "sftp",
     "gh",
 ]
-# The files not yet covered, which [tool.coverage.run] omit leaves out of the
-# floor; any other omit pattern fails the meta suite. Shrinks with that list and
-# [tool.ruff.lint.per-file-ignores], and unit/meta/test_uncovered_lists.py checks
-# the three agree.
-coverage_omit_allowed = [
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/analysis.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/exporter.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/functions.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/globals.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/headers.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/content.py",
-]
+# No file is left out of the coverage floor; unit/meta/test_uncovered_lists.py
+# keeps this and [tool.coverage.run] omit empty.
+coverage_omit_allowed = []
 
 [tool.coverage.run]
 branch = true
@@ -51,18 +42,7 @@ source = ["scripts/Python", "cmake", "recreation/cmake"]
 # The tests run in pytest-xdist workers, each writing its own data file
 parallel = true
 patch = ["subprocess"]
-# Not yet covered. Each file leaves this list when its tests land, and the same
-# file leaves [tool.ruff.lint.per-file-ignores] and [tool.testrex]
-# coverage_omit_allowed with it; the meta suite checks the three lists agree. The
-# list only shrinks.
-omit = [
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/analysis.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/exporter.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/functions.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/globals.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/headers.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/content.py",
-]
+omit = []
 
 [tool.coverage.report]
 skip_covered = true
@@ -77,12 +57,3 @@ builtins = ["currentProgram", "currentAddress", "currentSelection", "getSourceFi
 # The Workflows library's default set, pinned here so a library change is a
 # deliberate change in this repo
 select = ["E4", "E7", "E9", "F"]
-
-[tool.ruff.lint.per-file-ignores]
-# Not yet cleaned up; mirrors [tool.coverage.run] omit, and shrinks with it
-"scripts/Python/ghidra_annotations/annotations/pseudocode/analysis.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/exporter.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/functions.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/globals.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/headers.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/content.py" = ["E", "F"]

@@ -130,8 +130,8 @@ SUSPECT_SEVERITY = {
 # Ghidra warnings that only note what the decompiler did, with the code beside them
 # correct: a callee it inlined, or a block it dropped as unreachable. They are still
 # reported, but don't count against a function's "clean" status. The warnings that
-# mean the output may be wrong (an unrecovered jump table, type propagation not
-# settling, an indirect jump treated as a call) still count.
+# mean the output may be wrong (type propagation not settling, and an unrecovered
+# jump table or indirect jump other than the tail call below) still count.
 BENIGN_WARNINGS = frozenset({
     'warning_inlined_function',     # WARNING: Inlined function: <name>
     'warning_is_inlined',           # WARNING: This is an inlined function
@@ -150,7 +150,37 @@ EXIT_FUNCTIONS = frozenset({
     'displayMessageBoxAndQuit',     # nocedit/nocturne: MessageBoxA, ExitProcess(1)
 })
 
+# A function whose whole body is `JMP [ptr]` decompiles with an unrecovered-jumptable
+# and an indirect-jump warning above a single call through that pointer. When the
+# pointer is typed, the call carries the arguments and the output is exact. A
+# `(code *)` call has lost them, and a jump into a table of labels loses the code it
+# lands on; both still count.
+JUMP_WARNINGS = frozenset({'warning_jumptable', 'warning_indirect_jump'})
+_TYPED_POINTER_CALL_RE = re.compile(r'^\(\*\s*[A-Za-z_]\w*\s*\)\s*\(.*\)\s*;$')
+_CODE_TYPE_RE = re.compile(r'\bcode\b')
+
 _CALL_AT_START_RE = re.compile(r'^\s*([A-Za-z_]\w*)\s*\(')
+
+
+def _is_comment(stripped):
+    return stripped.startswith('/*') or stripped.startswith('//')
+
+
+def is_pointer_tail_call(lines, index):
+    """True when the function body around lines[index] is only comments and
+    `(*ptr)(args); return;` through a typed pointer."""
+    before = [s for s in (line.strip() for line in lines[:index]) if s]
+    after = [s for s in (line.strip() for line in lines[index + 1:]) if s and not _is_comment(s)]
+    opening = len(before) - 1
+    while opening >= 0 and _is_comment(before[opening]):
+        opening -= 1
+    if opening < 0 or before[opening] != '{' or len(after) != 3:
+        return False
+    call, ret, closing = after
+    return (bool(_TYPED_POINTER_CALL_RE.match(call)) and not _CODE_TYPE_RE.search(call)
+            and ret == 'return;' and closing == '}')
+
+
 _FUN_SUFFIX_RE = re.compile(r'_FUN_[0-9a-fA-F]{8}$')
 
 
@@ -185,6 +215,8 @@ def is_safe_suspect(suspect):
         return True
     if suspect.get('type') == 'warning_noreturn':
         return is_exit_function(suspect.get('callee'))
+    if suspect.get('type') in JUMP_WARNINGS:
+        return bool(suspect.get('tail_call'))
     return (suspect.get('type') == 'decompiler_intrinsic' and
             suspect.get('match') in SAFE_INTRINSICS)
 

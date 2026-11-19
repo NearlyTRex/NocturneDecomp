@@ -7132,12 +7132,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004ffeb0 (logic-change); [ ] bw2 0x004e2a20 (logic-change)
   - [ ] `isVampireType` 0x005059c0 (31)
     - BW: [ ] bw1 0x004fff70 (logic-change); [ ] bw2 0x004e2ae0 (logic-change)
-  - [ ] `isLightVulnerable` 0x00505a20 (56)
   - [ ] `canSeeTarget` 0x00505b70 (91)
 - free functions
   - [x] `factoryFuncLightGun` 0x005058c0 (12)
     - BW: [ ] bw1 0x004ffe80 (logic-change); [ ] bw2 0x004e29f0 (logic-change)
   - [x] `staticInit` 0x00505890 (9)
+  - [ ] `isLightVulnerable` 0x00505a20 (56)
 
 ### `core/litecone.cpp` (11 functions, 243 instructions, 7 done, 1 partial)
 - class `CLightCone`
@@ -9140,7 +9140,7 @@ the retail game has it too. Sizes are in instructions.
 | `core/kedward.cpp` | 11 | 11 | 2008 | 0 |
 | `core/lantern.cpp` | 15 | 15 | 398 | 0 |
 | `core/lightgun.cpp` | 2 | 2 | 86 | 0 |
-| `core/lightpis.cpp` | 13 | 13 | 1457 | 0 |
+| `core/lightpis.cpp` | 12 | 12 | 1401 | 0 |
 | `core/lightsta.cpp` | 11 | 11 | 2687 | 0 |
 | `core/marquee.cpp` | 1 | 1 | 1 | 0 |
 | `core/mattnntt.cpp` | 13 | 13 | 2292 | 0 |
@@ -9211,7 +9211,7 @@ the retail game has it too. Sizes are in instructions.
 | `support/trisock.cpp` | 32 | 32 | 2512 | 0 |
 | `support/trstream.cpp` | 80 | 80 | 3087 | 0 |
 | `wincore/winrun.cpp` | 16 | 16 | 874 | 0 |
-| **All** | **1859** | **1859** | **155593** | **0** |
+| **All** | **1858** | **1858** | **155537** | **0** |
 
 ### `core/actor.cpp`
 - [ ] `CDemonActor::markResourcesInUse` bw1 0x00408890, bw2 0x00408ac0, bw3 0x004088d0 (1)
@@ -10327,7 +10327,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CLightPis::getActorType` bw1 0x00501600 (2)
 - [ ] `CLightPis::ctor` bw1 0x00501610 (32)
 - [ ] `isVampireType` bw1 0x005016d0 (43)
-- [ ] `isLightVulnerable` bw1 0x00501750 (56)
 - [ ] `CLightPis::updateBeamLight` bw1 0x005017f0 (58)
 - [ ] `CLightPis::getMuzzlePoint` bw1 0x005018c0 (30)
 - [ ] `CLightPis::fire` bw1 0x00501a70 (652)

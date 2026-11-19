@@ -10,15 +10,15 @@ Total functions: 5183
 Clean functions: 2993 (57.7%)
 Functions with suspects: 2190 (42.3%)
 
-Total suspect patterns: 30258
-Average suspects per function: 5.84
+Total suspect patterns: 30345
+Average suspects per function: 5.85
 
 Virtual files: 205 total, 12 at 100%, 15 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 4012, Average: 50.1
 
-Average complexity score: 114.8
+Average complexity score: 115.0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -46,6 +46,7 @@ SUSPECT PATTERN BREAKDOWN
   extra_output              131
   wrong_global              113
   unrolled_strcat           91
+  memcpy_oversized_source   87
   carry_arith_idiom         77
   bit_int_float_compare     71
   signed_shift_global_idiom 67
@@ -181,7 +182,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004bb100: core_game.cpp_CGame_processCheatCodes_FUN_004bb100 (score: 2081, suspects: 46, lines: 1576)
   00560f31: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31 (score: 2056, suspects: 146, lines: 556)
   00538dd0: core_set.cpp_CDemonSet_lightVerticies_FUN_00538dd0 (score: 2044, suspects: 141, lines: 604)
-  0053bc80: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 (score: 2002, suspects: 148, lines: 472)
+  0053bc80: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 (score: 2017, suspects: 149, lines: 472)
   004da880: core_inv.cpp_CInventory_addItem_FUN_004da880 (score: 1979, suspects: 109, lines: 849)
   00590010: core_kedward.cpp_CKedward_process_FUN_00590010 (score: 1966, suspects: 103, lines: 896)
   00442a20: core_construc.cpp_CConstruct_process_FUN_00442a20 (score: 1866, suspects: 107, lines: 746)
@@ -500,6 +501,19 @@ FUNCTIONS BY SUSPECT TYPE
     004da880: core_inv.cpp_CInventory_addItem_FUN_004da880
     004dcb40: core_inv.cpp_CInventory_select_FUN_004dcb40
     ... and 10 more
+
+  memcpy_oversized_source (85 functions):
+    00408f00: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408f00
+    004091b0: core_actor.cpp_CDemonActor_rayIntersect_FUN_004091b0
+    00409f60: core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60
+    0040df20: core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20
+    0040f200: core_bat.cpp_CBat_renderOpaque_FUN_0040f200
+    0040f590: core_battery.cpp_CBattery_renderOpaque_FUN_0040f590
+    00414bd0: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0
+    00414d40: core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40
+    00418f90: core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90
+    0041f360: core_boxactor.cpp_CBoxActor_process_FUN_0041f360
+    ... and 75 more
 
   carry_arith_idiom (15 functions):
     004390c0: engine_clipper.c_interpolateVertexRightClip_FUN_004390c0

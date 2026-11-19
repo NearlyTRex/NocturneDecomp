@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_lightgun_cpp_CLightGun_isLightVulnerable_FUN_00505a20(CLightGun *this_ptr)
+; int __cdecl core_lightgun_cpp_isLightVulnerable_FUN_00505a20(CCharacter *target)
 ;
 ; Parameters:
-; CLightGun *      Stack[0x4]:4   this_ptr
+; CCharacter *     Stack[0x4]:4   target
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGhoul_00631487
@@ -21,7 +21,7 @@
 section .text
 
     PUSH EBX                            ; 00505a20
-        ;   Label: core_lightgun.cpp_CLightGun_isLightVulnerable_FUN_00505a20
+        ;   Label: core_lightgun.cpp_isLightVulnerable_FUN_00505a20
     MOV EBX,dword ptr [ESP + 0x8]       ; 00505a21
     PUSH EBX                            ; 00505a25
     MOV EAX,dword ptr [EBX + 0x154]     ; 00505a26

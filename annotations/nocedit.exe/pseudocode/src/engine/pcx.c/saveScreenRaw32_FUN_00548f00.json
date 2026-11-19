@@ -397,7 +397,7 @@
   "static_analysis": {
     "analyzed_file": "saveScreenRaw32_FUN_00548f00.keep.c",
     "clang_analyzer_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "checker": "security.insecureAPI.strcpy",
@@ -408,30 +408,6 @@
             {
               "line": 22,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 3,
-          "line": 29,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 23,
-              "message": "Value assigned to 'pcVar7'"
-            },
-            {
-              "line": 24,
-              "message": "Assuming 'pcVar7' is equal to null"
-            },
-            {
-              "line": 24,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 29,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
             }
           ]
         },

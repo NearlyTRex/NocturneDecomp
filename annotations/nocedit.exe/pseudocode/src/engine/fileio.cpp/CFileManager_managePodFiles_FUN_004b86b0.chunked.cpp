@@ -572,7 +572,7 @@ LAB_004b9590:
     return 0;
 }
 
-// Chunk: check_iVar2_0_check_0_4 (lines 501-674 of original)
+// Chunk: check_iVar2_0_check_0_4 (lines 501-675 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_managePodFiles_Ctx *ctx) {
     CFileManager *&this_ptr = *ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
@@ -743,8 +743,9 @@ LAB_004b9af4:
                           local_58 = local_58 + 1;
                         }
                         else if (uVar5 == 3) {
-                          (*this_ptr->vtable->extractPodFile)(this_ptr,local_44[local_20].pod_name);
-                          local_4c = local_4c + 1;
+                          (*this_ptr->vtable->extractPodFile)
+                                    (this_ptr,local_44[local_20].pod_name,1);
+                          local_48 = local_48 + 1;
                         }
                       }
                     }
@@ -769,7 +770,7 @@ LAB_004b8f32:
     return 0;
 }
 
-// Chunk: check_iVar2_0_else_5 (lines 682-710 of original)
+// Chunk: check_iVar2_0_else_5 (lines 683-711 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_else_5(CFileManager_managePodFiles_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;

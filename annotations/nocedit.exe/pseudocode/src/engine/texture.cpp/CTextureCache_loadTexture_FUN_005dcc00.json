@@ -550,7 +550,7 @@
   "static_analysis": {
     "analyzed_file": "CTextureCache_loadTexture_FUN_005dcc00.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 6,
+      "diagnostic_count": 4,
       "diagnostics": [
         {
           "checker": "security.insecureAPI.strcpy",
@@ -561,78 +561,6 @@
             {
               "line": 74,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 5,
-          "line": 84,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 24,
-              "message": "Assuming 'size' is >= 16384"
-            },
-            {
-              "line": 24,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 37,
-              "message": "Assuming 'size' is < 16385"
-            },
-            {
-              "line": 37,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 39,
-              "message": "Control jumps to line 65"
-            },
-            {
-              "line": 65,
-              "message": "Assuming the condition is true"
-            },
-            {
-              "line": 65,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 66,
-              "message": "Value assigned to 'pbVar2'"
-            },
-            {
-              "line": 67,
-              "message": "Assigning the value of 'pbVar2'"
-            },
-            {
-              "line": 68,
-              "message": "Assuming pointer value is null"
-            },
-            {
-              "line": 68,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 76,
-              "message": "Assuming 'pcVar7' is not equal to null"
-            },
-            {
-              "line": 76,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 83,
-              "message": "Assuming 'p_Var3' is equal to null"
-            },
-            {
-              "line": 83,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 84,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
             }
           ]
         },
@@ -657,122 +585,6 @@
             {
               "line": 111,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 5,
-          "line": 116,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 24,
-              "message": "Assuming 'size' is >= 16384"
-            },
-            {
-              "line": 24,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 37,
-              "message": "Assuming 'size' is >= 16385"
-            },
-            {
-              "line": 37,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 41,
-              "message": "Assuming 'size' is >= 262144"
-            },
-            {
-              "line": 41,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 48,
-              "message": "Assuming 'size' is < 262145"
-            },
-            {
-              "line": 48,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 50,
-              "message": "Control jumps to line 65"
-            },
-            {
-              "line": 65,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 65,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 76,
-              "message": "Assuming 'pcVar7' is not equal to null"
-            },
-            {
-              "line": 76,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 83,
-              "message": "Assuming 'p_Var3' is equal to null"
-            },
-            {
-              "line": 83,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 90,
-              "message": "Value assigned to field 'current_texture_count'"
-            },
-            {
-              "line": 91,
-              "message": "Assuming the condition is true"
-            },
-            {
-              "line": 91,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 92,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 92,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 103,
-              "message": "Value assigned to 'pvVar4'"
-            },
-            {
-              "line": 104,
-              "message": "Assigning the value of 'pvVar4'"
-            },
-            {
-              "line": 105,
-              "message": "Assuming pointer value is null"
-            },
-            {
-              "line": 105,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 115,
-              "message": "Assuming 'p_Var3' is equal to null"
-            },
-            {
-              "line": 115,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 116,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
             }
           ]
         },

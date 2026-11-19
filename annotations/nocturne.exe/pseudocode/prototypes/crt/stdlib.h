@@ -7,7 +7,7 @@
 
 // Original: crt_stdlib.c__qsort_FUN_00563db8
 // Address: 00563db8
-void __cdecl ::qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
+void __cdecl _qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
 
 // Original: crt_stdlib.c_rand_FUN_0056488c
 // Address: 0056488c
@@ -19,7 +19,7 @@ void __cdecl srand(uint seed);
 
 // Original: crt_stdlib.c__fullpath_FUN_00565d00
 // Address: 00565d00
-char * __cdecl ::fullpath(char *buffer,char *path,SIZE_T buffer_size);
+char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size);
 
 // Original: crt_stdlib.c_atoi_FUN_00566f30
 // Address: 00566f30
@@ -43,7 +43,7 @@ char * __cdecl utoa(uint value,char *buffer,int base);
 
 // Original: crt_stdlib.c_strtol_internal_FUN_00573720
 // Address: 00573720
-long __cdecl strtol::internal(char *str,char **endptr,int base,int is_signed);
+long __cdecl strtol_internal(char *str,char **endptr,int base,int is_signed);
 
 // Original: crt_stdlib.c_strtoul_FUN_00573890
 // Address: 00573890

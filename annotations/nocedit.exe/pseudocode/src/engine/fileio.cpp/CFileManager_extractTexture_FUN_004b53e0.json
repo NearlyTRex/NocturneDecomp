@@ -292,7 +292,7 @@
   "static_analysis": {
     "analyzed_file": "CFileManager_extractTexture_FUN_004b53e0.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "checker": "security.insecureAPI.strcpy",
@@ -303,30 +303,6 @@
             {
               "line": 18,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 3,
-          "line": 25,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 19,
-              "message": "Value assigned to 'pcVar5'"
-            },
-            {
-              "line": 20,
-              "message": "Assuming 'pcVar5' is equal to null"
-            },
-            {
-              "line": 20,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 25,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
             }
           ]
         },

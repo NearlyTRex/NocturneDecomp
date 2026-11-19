@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang Static Analyzer (quick) (1344 diagnostics)
+Clang Static Analyzer (quick) (1166 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1896,11 +1896,11 @@ security.insecureAPI.strcpy (731)
     File: core/skeledit.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 398
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 395
     File: core/skeledit.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1760
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1757
     File: core/skeledit.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
@@ -3856,39 +3856,39 @@ deadcode.DeadStores (364)
     File: core/skeledit.cpp
     Value stored to 'bVar8' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 202
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 199
     File: core/skeledit.cpp
     Value stored to 'bVar26' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 415
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 412
     File: core/skeledit.cpp
     Value stored to 'local_2c' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 588
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 585
     File: core/skeledit.cpp
     Value stored to 'local_2c' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 725
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 722
     File: core/skeledit.cpp
     Value stored to 'local_2c' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1324
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1321
     File: core/skeledit.cpp
     Value stored to 'local_164' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1325
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1322
     File: core/skeledit.cpp
     Value stored to 'local_160' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1338
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1335
     File: core/skeledit.cpp
     Value stored to 'local_1a4' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1342
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1339
     File: core/skeledit.cpp
     Value stored to 'local_1a0' is never read
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1346
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1343
     File: core/skeledit.cpp
     Value stored to 'local_19c' is never read
 
@@ -4397,635 +4397,7 @@ deadcode.DeadStores (364)
     Value stored to 'hThread' is never read
 
 ----------------------------------------------------------------------------------------------------
-core.NullDereference (108)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_ckptutil.c_generateScrollHeightMap_FUN_004 line 45
-    File: cockpit/ckptutil.c
-    Array access (from variable 'ptr') results in a null pointer dereference
-
-  cockpit_ckptutil.c_generateScrollHeightMap_FUN_004 line 62
-    File: cockpit/ckptutil.c
-    Array access (from variable 'ptr') results in a null pointer dereference
-
-  cockpit_ckptutil.c_generateScrollHeightMap_FUN_004 line 65
-    File: cockpit/ckptutil.c
-    Array access (from variable 'ptr') results in a null pointer dereference
-
-  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434 line 55
-    File: cockpit/ckptutil.c
-    Dereference of null pointer (loaded from variable 'pcVar2')
-
-  cockpit_ckptutil.c_rotateBitmap_FUN_00434870       line 48
-    File: cockpit/ckptutil.c
-    Dereference of null pointer (loaded from variable 'puVar4')
-
-  cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480   line 37
-    File: cockpit/ckptutil.c
-    Access to field 'edge_count' results in a dereference of a null pointer (loaded from variable 'local_18')
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b1 line 50
-    File: cockpit/pkbitmap.cpp
-    Array access (via field 'row_offsets') results in a null pointer dereference
-
-  core_actor.cpp_createActorByName_FUN_0040c430      line 21
-    File: core/actor.cpp
-    Access to field 'factory_func' results in a dereference of a null pointer (loaded from variable 'pCVar1')
-
-  core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411 line 37
-    File: core/ammobox.cpp
-    Access to field 'ammo_type' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  core_charactr.cpp_CCharacter_findSomethingToLookAt line 156
-    File: core/charactr.cpp
-    Dereference of null pointer
-
-  core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0 line 24
-    File: core/cloth.cpp
-    Access to field 'cached_skinned_lod_index' results in a dereference of a null pointer (loaded from variable 'model_ptr')
-
-  core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e1 line 104
-    File: core/dmodel.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file')
-
-  core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_ line 144
-    File: core/dmodel.cpp
-    Array access (via field 'env_map_opac_list') results in a null pointer dereference
-
-  core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnuse line 46
-    File: core/dmodel.cpp
-    Dereference of null pointer (loaded from variable 'piVar7')
-
-  core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnuse line 76
-    File: core/dmodel.cpp
-    Dereference of null pointer (loaded from variable 'local_30')
-
-  core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnuse line 123
-    File: core/dmodel.cpp
-    Array access (from variable 'ptr') results in a null pointer dereference
-
-  core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310 line 111
-    File: core/dtrace.cpp
-    Access to field 'triangle_index' results in a dereference of a null pointer (loaded from variable 'pSVar13')
-
-  core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310 line 168
-    File: core/dtrace.cpp
-    Dereference of null pointer
-
-  core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFro line 44
-    File: core/dtrace.cpp
-    Access to field 'voxel_buffer1' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb line 59
-    File: core/dtrace.cpp
-    Array access results in a null pointer dereference
-
-  core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_F line 37
-    File: core/dtrace.cpp
-    Access to field 'voxel_buffer1' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  core_game.cpp_giveHeroWeapon_FUN_004dd870          line 25
-    File: core/game.cpp
-    Access to field 'ammo_count' results in a dereference of a null pointer (loaded from variable 'pCVar1')
-
-  core_ground.cpp_CGround_load_FUN_004ef030          line 48
-    File: core/ground.cpp
-    Access to field '_cnt' results in a dereference of a null pointer (loaded from variable 'file')
-
-  core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_0 line 30
-    File: core/inv.cpp
-    Access to field 'ammo_count' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  core_inv.cpp_CInventory_select_FUN_004ff800        line 99
-    File: core/inv.cpp
-    Access to field 'ammo_type' results in a dereference of a null pointer (loaded from variable 'pCVar3')
-
-  core_main.c_displayErrorAndQuit_FUN_00506f10       line 44
-    File: core/main.c
-    Dereference of null pointer (loaded from variable 'pcVar1')
-
-  core_mimic.cpp_CMimic_setup_FUN_0051f3e0           line 126
-    File: core/mimic.cpp
-    Dereference of null pointer
-
-  core_mission.cpp_CDemonMission_getNextLoadedInvent line 29
-    File: core/mission.cpp
-    Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar1')
-
-  core_mission.cpp_CDemonMission_readMissionFile_FUN line 170
-    File: core/mission.cpp
-    Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar7')
-
-  core_mission.cpp_CDemonMission_readMissionFile_FUN line 189
-    File: core/mission.cpp
-    Access to field 'next_actor' results in a dereference of a null pointer (loaded from variable 'pCVar7')
-
-  core_msnedit.cpp_CDemonMission_editActorsInSet_FUN line 767
-    File: core/msnedit.cpp
-    Access to field 'is_editor_hidden' results in a dereference of a null pointer (loaded from variable 'pCVar11')
-
-  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e2 line 77
-    File: core/msnedit.cpp
-    Dereference of null pointer
-
-  core_msnedit.cpp_CDemonMission_hideActorsMenu_FUN_ line 54
-    File: core/msnedit.cpp
-    Access to field 'is_editor_hidden' results in a dereference of a null pointer (loaded from variable 'pCVar1')
-
-  core_msnedit.cpp_CDemonMission_importActors_FUN_00 line 80
-    File: core/msnedit.cpp
-    Access to field 'first_actor' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  core_msnedit.cpp_CDemonMission_importActors_FUN_00 line 106
-    File: core/msnedit.cpp
-    Access to field 'first_actor' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  core_msnedit.cpp_CDemonMission_importActors_FUN_00 line 141
-    File: core/msnedit.cpp
-    Access to field 'first_actor' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  core_msnedit.cpp_CDemonMission_saveWithNewName_FUN line 50
-    File: core/msnedit.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')
-
-  core_msnedit.cpp_CDemonMission_saveWithNewName_FUN line 55
-    File: core/msnedit.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr_00')
-
-  core_msnedit.cpp_copyFile_FUN_00537dd0             line 37
-    File: core/msnedit.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')
-
-  core_msnedit.cpp_copyFile_FUN_00537dd0             line 42
-    File: core/msnedit.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr_00')
-
-  core_script.cpp_CScript_buildParsedLines_FUN_0055a line 40
-    File: core/script.cpp
-    Dereference of null pointer
-
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 37
-    File: core/set.cpp
-    Access to field 'x' results in a dereference of a null pointer (loaded from variable 'surface_normal')
-
-  core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40 line 47
-    File: core/setdir.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_handle')
-
-  core_setedit.cpp_CDemonSet_buildCameraCoverageMap_ line 50
-    File: core/setedit.cpp
-    Access to field 'x' results in a dereference of a null pointer (loaded from variable 'pCVar3')
-
-  core_setedit.cpp_CDemonSet_buildCameraCoverageMap_ line 77
-    File: core/setedit.cpp
-    Access to field 'x' results in a dereference of a null pointer (loaded from variable 'pCVar3')
-
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 90
-    File: core/setedit.cpp
-    Dereference of null pointer (loaded from variable 'src_pixel')
-
-  core_setutil.cpp_C3DSLight_create_FUN_00586a90     line 34
-    File: core/setutil.cpp
-    Access to field 'shadow_bounds_mode' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')
-
-  core_setutil.cpp_C3DSLight_create_FUN_00586a90     line 37
-    File: core/setutil.cpp
-    Access to field 'shadow_bounds_mode' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')
-
-  core_setutil.cpp_C3DSLight_process_FUN_00586cb0    line 59
-    File: core/setutil.cpp
-    Access to field 'light_enabled_flag' results in a dereference of a null pointer (loaded from variable 'light')
-
-  core_setutil.cpp_C3DSLight_process_FUN_00586cb0    line 62
-    File: core/setutil.cpp
-    Access to field 'light_enabled_flag' results in a dereference of a null pointer (loaded from variable 'light')
-
-  core_setutil.cpp_C3DSLight_process_FUN_00586cb0    line 68
-    File: core/setutil.cpp
-    Access to field 'light_enabled_flag' results in a dereference of a null pointer (loaded from variable 'light')
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 253
-    File: core/skeledit.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')
-
-  core_skeledit.cpp_CDeformableModel_calcRootOffsetS line 66
-    File: core/skeledit.cpp
-    Access to field 'skinned_vertices_buffer' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 380
-    File: core/skeledit.cpp
-    Access to field 'edge_count' results in a dereference of a null pointer (loaded from variable 'pSVar21')
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 428
-    File: core/skeledit.cpp
-    Access to field 'x' results in a dereference of a null pointer (loaded from variable 'pCVar25')
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 639
-    File: core/skeledit.cpp
-    Access to field 'x' results in a dereference of a null pointer (loaded from variable 'pCVar19')
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 834
-    File: core/skeledit.cpp
-    Array access (from variable 'piVar29') results in a null pointer dereference
-
-  core_skeledit.cpp_CDeformableModel_groundBias_FUN_ line 36
-    File: core/skeledit.cpp
-    Access to field 'skinned_vertices_buffer' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')
-
-  core_skeleton.cpp_CDeformableModel_computeBoneDomi line 75
-    File: core/skeleton.cpp
-    Access to field 'skinned_vertices_buffer' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  core_skeleton.cpp_CDeformableModel_computePartDomi line 94
-    File: core/skeleton.cpp
-    Access to field 'skinned_vertices_buffer' results in a dereference of a null pointer (loaded from variable 'local_20')
-
-  core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c line 38
-    File: core/stranger.cpp
-    Dereference of null pointer
-
-  core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_ line 42
-    File: core/vampboss.cpp
-    Dereference of null pointer
-
-  core_vehicle.cpp_CVehicle_process_FUN_005e7e80     line 242
-    File: core/vehicle.cpp
-    Access to field 'vehicle' results in a dereference of a null pointer (loaded from variable 'this_ptr_01')
-
-  core_vessel.cpp_CCryptVessel_process_FUN_005e91a0  line 183
-    File: core/vessel.cpp
-    Access to field 'carrier' results in a dereference of a null pointer (loaded from variable 'pCVar7')
-
-  core_werewolf.cpp_CWerewolf_process_FUN_005efde0   line 271
-    File: core/werewolf.cpp
-    Dereference of null pointer
-
-  core_werewolf.cpp_CWerewolf_process_FUN_005efde0   line 276
-    File: core/werewolf.cpp
-    Dereference of null pointer
-
-  core_werewolf.cpp_CWerewolf_process_FUN_005efde0   line 294
-    File: core/werewolf.cpp
-    Dereference of null pointer
-
-  engine_3d.c_dispatchMRGLBlockChain_FUN_00407890    line 20
-    File: engine/3d.c
-    Dereference of null pointer
-
-  engine_3d.c_renderPrim_FUN_00407920                line 21
-    File: engine/3d.c
-    Dereference of null pointer
-
-  engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 line 83
-    File: engine/alphabit.cpp
-    Array access (via field 'act') results in a null pointer dereference
-
-  engine_fileio.cpp_CFileManager_checkOutAndExtractP line 240
-    File: engine/fileio.cpp
-    Dereference of null pointer
-
-  engine_fileio.cpp_CFileManager_crossReferencePodDu line 100
-    File: engine/fileio.cpp
-    Access to field 'file_count' results in a dereference of a null pointer (loaded from variable 'local_40')
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 231
-    File: engine/fileio.cpp
-    Dereference of null pointer (loaded from variable 'pSVar10')
-
-  engine_fileio.cpp_synchronizeFilesToDirectory_FUN_ line 73
-    File: engine/fileio.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file')
-
-  engine_fileio.cpp_synchronizeFilesToDirectory_FUN_ line 78
-    File: engine/fileio.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')
-
-  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN line 72
-    File: engine/font.cpp
-    Dereference of null pointer (loaded from variable 'piVar3')
-
-  engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_0 line 36
-    File: engine/ini.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')
-
-  engine_ini.cpp_CIni_getProfileString_FUN_004fb250  line 36
-    File: engine/ini.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')
-
-  engine_ini.cpp_CIni_writeProfileString_FUN_004fb66 line 53
-    File: engine/ini.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')
-
-  engine_ini.cpp_CIni_writeProfileString_FUN_004fb66 line 77
-    File: engine/ini.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')
-
-  engine_model.c_loadModelChunk_FUN_00528970         line 41
-    File: engine/model.c
-    Dereference of null pointer
-
-  engine_model.c_loadModelFile_FUN_00527ec0          line 62
-    File: engine/model.c
-    Dereference of null pointer
-
-  engine_palette.cpp_CPaletteManager_createOutputPal line 106
-    File: engine/palette.cpp
-    Access to field '_cnt' results in a dereference of a null pointer (loaded from variable 'p_Var3')
-
-  engine_pod.cpp_CPodFile_getAuditRecord_FUN_0055059 line 31
-    File: engine/pod.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file')
-
-  engine_pod.cpp_CPodFile_getDependencyRecord_FUN_00 line 31
-    File: engine/pod.cpp
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file')
-
-  shape_design.c_complexPolygonReduction_FUN_00463b3 line 62
-    File: shape/design.c
-    Dereference of null pointer (loaded from variable 'local_14')
-
-  shape_design.c_loadTextureData_FUN_0046b060        line 78
-    File: shape/design.c
-    Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'local_1c')
-
-  shape_design.c_loadTextureData_FUN_0046b060        line 88
-    File: shape/design.c
-    Array access (from variable 'dest') results in a null pointer dereference
-
-  shape_edittool.cpp_CPickList_enableItem_FUN_004a54 line 30
-    File: shape/edittool.cpp
-    Array access (via field 'enabled_array') results in a null pointer dereference
-
-  shape_edittool.cpp_CPickList_enableItem_FUN_004a54 line 34
-    File: shape/edittool.cpp
-    Array access (via field 'enabled_array') results in a null pointer dereference
-
-  shape_edittool.cpp_CPickList_setItemHotKey_FUN_004 line 30
-    File: shape/edittool.cpp
-    Array access (via field 'hotkey_array') results in a null pointer dereference
-
-  shape_edittool.cpp_CPickList_setItemHotKey_FUN_004 line 34
-    File: shape/edittool.cpp
-    Array access (via field 'hotkey_array') results in a null pointer dereference
-
-  shape_edittool.cpp_CStrList_copyToClipboard_FUN_00 line 51
-    File: shape/edittool.cpp
-    Dereference of null pointer (loaded from variable 'buffer')
-
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00 line 70
-    File: shape/meshlod.cpp
-    Array access results in a null pointer dereference
-
-  shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_ line 34
-    File: shape/meshlod.cpp
-    Access to field 'vertex_count' results in a dereference of a null pointer (loaded from variable 'pCVar1')
-
-  shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_ line 64
-    File: shape/meshlod.cpp
-    Dereference of null pointer
-
-  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0     line 43
-    File: shape/meshlod.cpp
-    Access to field 'collapse_cost' results in a dereference of a null pointer (loaded from variable 'record')
-
-  shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00 line 46
-    File: shape/meshlod.cpp
-    Dereference of null pointer
-
-  shape_quantize.cpp_CBitmap_ctor_FUN_00556a00       line 78
-    File: shape/quantize.cpp
-    Array access (via field 'row_table') results in a null pointer dereference
-
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 99
-    File: shape/quantize.cpp
-    Access to field 'progress_callback' results in a dereference of a null pointer (loaded from variable 'pCVar2')
-
-  sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 line 47
-    File: sound/mp3.cpp
-    Access to field 'num_channels' results in a dereference of a null pointer (loaded from variable 'local_24')
-
-  sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_00 line 37
-    File: sound/snddx.cpp
-    Access to field 'loop_marker_count' results in a dereference of a null pointer (loaded from field 'sample')
-
-  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390       line 32
-    File: sound/sndmain.cpp
-    Access to field 'streaming_slot_index' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')
-
-  sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_0 line 25
-    File: sound/sndmain.cpp
-    Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')
-
-  sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_0 line 32
-    File: sound/sndmain.cpp
-    Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')
-
-  sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_0 line 35
-    File: sound/sndmain.cpp
-    Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')
-
-  sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_0 line 43
-    File: sound/sndmain.cpp
-    Access to field 'streaming_buffer_size' results in a dereference of a null pointer (loaded from field 'sample')
-
-  sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005a line 60
-    File: sound/sndmain.cpp
-    Access to field 'num_channels' results in a dereference of a null pointer (loaded from variable 'pCVar4')
-
-----------------------------------------------------------------------------------------------------
-core.NonNullParamChecker (47)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_ckptutil.c_rotateBitmap_FUN_00434870       line 68
-    File: cockpit/ckptutil.c
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  cockpit_ckptutil.c_rotateBitmap_FUN_00434870       line 78
-    File: cockpit/ckptutil.c
-    Null pointer passed to 2nd parameter expecting 'nonnull'
-
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 250
-    File: cockpit/ckptutil.c
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_charactr.cpp_CCharacter_processWalking_FUN_00 line 42
-    File: core/charactr.cpp
-    Forming reference to null pointer
-
-  core_curtain.cpp_CCurtain_addFilesToExtract_FUN_00 line 26
-    File: core/curtain.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_dcamera.cpp_CDemonCamera_init_FUN_0044c190    line 45
-    File: core/dcamera.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_dcamera.cpp_CDemonCamera_init_FUN_0044c190    line 55
-    File: core/dcamera.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 96
-    File: core/dcamera.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 111
-    File: core/dcamera.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_dimage.cpp_CDemonImage_load_FUN_00471ad0      line 40
-    File: core/dimage.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00 line 30
-    File: core/dmodel.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_dmodel.cpp_CKeyFramedModel_removeUnusedVertic line 43
-    File: core/dmodel.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb6 line 26
-    File: core/glass.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb6 line 40
-    File: core/glass.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_ground.cpp_CGround_load_FUN_004ef030          line 35
-    File: core/ground.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_ground.cpp_CGround_load_FUN_004ef030          line 73
-    File: core/ground.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_ground.cpp_openFileWithExtension_FUN_004eebc0 line 25
-    File: core/ground.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a line 27
-    File: core/hero.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_mission.cpp_CDemonMission_ensureHeroPlacehold line 51
-    File: core/mission.cpp
-    Forming reference to null pointer
-
-  core_script.cpp_CScript_dbLoad_FUN_005603c0        line 87
-    File: core/script.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_script.cpp_CScript_editorAction_FUN_00564820  line 132
-    File: core/script.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 491
-    File: core/skeledit.cpp
-    Forming reference to null pointer
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 1002
-    File: core/skeledit.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 1008
-    File: core/skeledit.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_skeledit.cpp_CDeformableModel_exportModelToS3 line 61
-    File: core/skeledit.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_texlist.cpp_CTextureList_load_FUN_005dbe00    line 27
-    File: core/texlist.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  core_texlist.cpp_CTextureList_save_FUN_005dc0d0    line 25
-    File: core/texlist.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_fileio.cpp_CFileManager_extractTexture_FUN_ line 25
-    File: engine/fileio.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_ line 107
-    File: engine/fileio.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_ line 276
-    File: engine/fileio.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 235
-    File: engine/fileio.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_ini.cpp_CIni_getProfileString_FUN_004fb250  line 59
-    File: engine/ini.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_palette.cpp_CPaletteManager_createOutputPal line 59
-    File: engine/palette.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_pcx.c_saveScreenRaw16_FUN_00548d20          line 30
-    File: engine/pcx.c
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_pcx.c_saveScreenRaw32_FUN_00548f00          line 29
-    File: engine/pcx.c
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 line 93
-    File: engine/pod.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 line 225
-    File: engine/pod.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_texture.cpp_CTextureCache_loadTexture_FUN_0 line 84
-    File: engine/texture.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  engine_texture.cpp_CTextureCache_loadTexture_FUN_0 line 116
-    File: engine/texture.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  shape_design.c_cramTextureList_FUN_0046bb80        line 522
-    File: shape/design.c
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  shape_design.c_loadS3DModelFile_FUN_004593a0       line 119
-    File: shape/design.c
-    Null pointer passed to 2nd parameter expecting 'nonnull'
-
-  shape_design.c_loadTextureData_FUN_0046b060        line 93
-    File: shape/design.c
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  shape_edittool.cpp_CStrList_insert_FUN_004a2bc0    line 38
-    File: shape/edittool.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  shape_edittool.cpp_CStrList_setStringAt_FUN_004a31 line 31
-    File: shape/edittool.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN line 42
-    File: shape/meshlod.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 118
-    File: shape/quantize.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 126
-    File: shape/quantize.cpp
-    Null pointer passed to 1st parameter expecting 'nonnull'
-
-----------------------------------------------------------------------------------------------------
-core.UndefinedBinaryOperatorResult (41)
+core.UndefinedBinaryOperatorResult (27)
 ----------------------------------------------------------------------------------------------------
 
   core_cloth.cpp_CCloth_setup_FUN_00439710           line 177
@@ -5080,65 +4452,9 @@ core.UndefinedBinaryOperatorResult (41)
     File: core/setcolid.cpp
     The left operand of '-' is a garbage value
 
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 428
-    File: core/setedit.cpp
-    The left operand of '!=' is a garbage value
-
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 76
     File: core/skeledit.cpp
     The left operand of '-' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 463
-    File: core/skeledit.cpp
-    The right operand of '<' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 471
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 494
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 656
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 836
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 891
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 939
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1011
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1069
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1095
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1222
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1666
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1702
-    File: core/skeledit.cpp
-    The left operand of '+' is a garbage value
 
   core_skeleton.cpp_CDeformableModelInstance_blendMo line 108
     File: core/skeleton.cpp
@@ -5193,60 +4509,16 @@ core.UndefinedBinaryOperatorResult (41)
     The right operand of '*' is a garbage value
 
 ----------------------------------------------------------------------------------------------------
-core.CallAndMessage (31)
+core.CallAndMessage (17)
 ----------------------------------------------------------------------------------------------------
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 59
-    File: cockpit/pkbitmap.cpp
-    Called function pointer is an uninitialized pointer value
-
-  core_actor.cpp_createActorByName_FUN_0040c430      line 26
-    File: core/actor.cpp
-    Called function pointer is null (null dereference)
-
-  core_bodypart.cpp_createBodyPart_FUN_00418e10      line 35
-    File: core/bodypart.cpp
-    Called C++ object pointer is null
-
-  core_course.cpp_CCourse_importMatrices_FUN_00442ea line 34
-    File: core/course.cpp
-    6th function call argument is an uninitialized value
-
-  core_gore.cpp_CGore_spawnFlies_FUN_004edf30        line 30
-    File: core/gore.cpp
-    Called C++ object pointer is null
-
-  core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f line 66
-    File: core/hero.cpp
-    Called C++ object pointer is null
-
-  core_lightgun.cpp_CLightGun_isLightVulnerable_FUN_ line 16
+  core_lightgun.cpp_isLightVulnerable_FUN_00505a20   line 16
     File: core/lightgun.cpp
     2nd function call argument is an uninitialized value
-
-  core_mimic.cpp_CMimic_beginMorph_FUN_00520a80      line 22
-    File: core/mimic.cpp
-    Called C++ object pointer is null
-
-  core_script.cpp_CScript_addEventXRef_FUN_00567510  line 25
-    File: core/script.cpp
-    Called C++ object pointer is null
-
-  core_setedit.cpp_CDemonSet_buildCameraCoverageMap_ line 47
-    File: core/setedit.cpp
-    Called C++ object pointer is null
-
-  core_skeledit.cpp_CDeformableModel_calcRootOffsetS line 57
-    File: core/skeledit.cpp
-    Called C++ object pointer is null
 
   core_skeledit.cpp_CDeformableModel_exportModelToS3 line 170
     File: core/skeledit.cpp
     4th function call argument is an uninitialized value
-
-  core_vehicle.cpp_CVehicle_process_FUN_005e7e80     line 261
-    File: core/vehicle.cpp
-    Called C++ object pointer is null
 
   engine_2d.c_clipAndDrawLine_FUN_00402ca0           line 91
     File: engine/2d.c
@@ -5304,24 +4576,12 @@ core.CallAndMessage (31)
     File: shape/design.c
     2nd function call argument is an uninitialized value
 
-  shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_ line 52
-    File: shape/meshlod.cpp
-    Called C++ object pointer is null
-
-  shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_ line 77
-    File: shape/meshlod.cpp
-    Called C++ object pointer is null
-
-  shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_ line 27
-    File: shape/meshlod.cpp
-    Called C++ object pointer is null
-
   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges line 154
     File: sound/snddx.cpp
     2nd function call argument is an uninitialized value
 
 ----------------------------------------------------------------------------------------------------
-core.uninitialized.Assign (14)
+core.uninitialized.Assign (13)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_004 line 108
@@ -5356,10 +4616,6 @@ core.uninitialized.Assign (14)
     File: core/fire.cpp
     Assigned value is garbage or undefined
 
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 391
-    File: core/setedit.cpp
-    Assigned value is garbage or undefined
-
   shape_edittool.cpp_CEditorTools_backupScreen_FUN_0 line 38
     File: shape/edittool.cpp
     Assigned value is garbage or undefined
@@ -5379,6 +4635,22 @@ core.uninitialized.Assign (14)
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 line 328
     File: sound/mp3.cpp
     Assigned value is garbage or undefined
+
+----------------------------------------------------------------------------------------------------
+core.NonNullParamChecker (3)
+----------------------------------------------------------------------------------------------------
+
+  core_charactr.cpp_CCharacter_processWalking_FUN_00 line 42
+    File: core/charactr.cpp
+    Forming reference to null pointer
+
+  engine_ini.cpp_CIni_getProfileString_FUN_004fb250  line 59
+    File: engine/ini.cpp
+    Null pointer passed to 1st parameter expecting 'nonnull'
+
+  shape_design.c_loadS3DModelFile_FUN_004593a0       line 119
+    File: shape/design.c
+    Null pointer passed to 2nd parameter expecting 'nonnull'
 
 ----------------------------------------------------------------------------------------------------
 core.uninitialized.ArraySubscript (3)
@@ -5411,6 +4683,22 @@ core.DivideZero (3)
   shape_design.c_findClosestPolygonToMouse_FUN_00466 line 62
     File: shape/design.c
     Division by zero
+
+----------------------------------------------------------------------------------------------------
+core.NullDereference (3)
+----------------------------------------------------------------------------------------------------
+
+  core_main.c_displayErrorAndQuit_FUN_00506f10       line 44
+    File: core/main.c
+    Dereference of null pointer (loaded from variable 'pcVar1')
+
+  core_vessel.cpp_CCryptVessel_process_FUN_005e91a0  line 183
+    File: core/vessel.cpp
+    Access to field 'carrier' results in a dereference of a null pointer (loaded from variable 'pCVar7')
+
+  sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 line 47
+    File: sound/mp3.cpp
+    Access to field 'num_channels' results in a dereference of a null pointer (loaded from variable 'local_24')
 
 ----------------------------------------------------------------------------------------------------
 security.FloatLoopCounter (2)
@@ -5640,55 +4928,55 @@ invalidscanf (60)
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 496
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 493
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 543
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 540
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 569
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 566
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 680
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 677
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 706
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 703
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 737
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 734
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 846
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 843
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 944
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 941
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1144
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1141
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1626
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1623
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1669
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1666
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1706
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1703
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1730
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1727
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 

@@ -1370,7 +1370,7 @@
   "static_analysis": {
     "analyzed_file": "CDemonCamera_loadImage_FUN_0044f3e0.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 9,
+      "diagnostic_count": 7,
       "diagnostics": [
         {
           "checker": "security.insecureAPI.strcpy",
@@ -1381,30 +1381,6 @@
             {
               "line": 88,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 3,
-          "line": 96,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 90,
-              "message": "Value assigned to 'pcVar10'"
-            },
-            {
-              "line": 91,
-              "message": "Assuming 'pcVar10' is equal to null"
-            },
-            {
-              "line": 91,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 96,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
             }
           ]
         },
@@ -1429,46 +1405,6 @@
             {
               "line": 103,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 5,
-          "line": 111,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 91,
-              "message": "Assuming 'pcVar10' is not equal to null"
-            },
-            {
-              "line": 91,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 98,
-              "message": "Assuming 'p_Var5' is not equal to null"
-            },
-            {
-              "line": 98,
-              "message": "Left side of '||' is true"
-            },
-            {
-              "line": 105,
-              "message": "Value assigned to 'pcVar11'"
-            },
-            {
-              "line": 106,
-              "message": "Assuming 'pcVar11' is equal to null"
-            },
-            {
-              "line": 106,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 111,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
             }
           ]
         },

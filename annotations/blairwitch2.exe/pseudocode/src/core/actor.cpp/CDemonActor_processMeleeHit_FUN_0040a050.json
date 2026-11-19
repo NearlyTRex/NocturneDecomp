@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 960,
-    "complexity_score": 1673,
+    "complexity_score": 1688,
     "cross_reference_count": 0,
     "function_call_count": 20,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 453,
-    "suspect_count": 115,
+    "suspect_count": 116,
     "suspect_types": [
       "bitcast_double_pair",
+      "memcpy_oversized_source",
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
@@ -1251,6 +1252,14 @@
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_1ac[4]` (declared size 4) \u2014 overruns by 2. Likely Ghidra dropped explicit `auStack_1ac[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 225,
+      "match": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "memcpy_oversized_source"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&pvStack_110 != &pvStack_80)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",

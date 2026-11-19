@@ -11,11 +11,11 @@ void * __cdecl memset(void *dest,int value,ulong count);
 
 // Original: crt_memory.c___vec_delete_FUN_005a308f
 // Address: 005a308f
-void * __cdecl ::_vec_delete(void *object_ptr,WatcomTypeInfo *type_info);
+void * __cdecl __vec_delete(void *object_ptr,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___arrinit_FUN_005a30d7
 // Address: 005a30d7
-void * __cdecl ::_arrinit(void *array_start,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl __arrinit(void *array_start,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c_malloc_FUN_005a3650
 // Address: 005a3650
@@ -23,11 +23,11 @@ void * __cdecl malloc(ulong size);
 
 // Original: crt_memory.c_operator_new_FUN_005a3cb2
 // Address: 005a3cb2
-void * __cdecl operator::new(uint size);
+void * __cdecl operator_new(uint size);
 
 // Original: crt_memory.c___arrfini_FUN_005a3de6
 // Address: 005a3de6
-void * __cdecl ::_arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info);
+void * __cdecl __arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c_realloc_FUN_005a3e50
 // Address: 005a3e50
@@ -35,7 +35,7 @@ void * __cdecl realloc(void *ptr,ulong new_size);
 
 // Original: crt_memory.c_operator_new_array_FUN_005a40df
 // Address: 005a40df
-void * __cdecl operator::new_array(uint size);
+void * __cdecl operator_new_array(uint size);
 
 // Original: crt_memory.c_calloc_FUN_005a4b20
 // Address: 005a4b20
@@ -43,8 +43,8 @@ void * __cdecl calloc(uint count,uint size);
 
 // Original: crt_memory.c___vec_new_FUN_005a556a
 // Address: 005a556a
-void * __cdecl ::_vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl __vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___vec_new_FUN_005a5584
 // Address: 005a5584
-void * __cdecl ::_vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl __vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);

@@ -463,7 +463,7 @@
   "static_analysis": {
     "analyzed_file": "CCharacter_findSomethingToLookAt_FUN_0042d5a0.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "checker": "deadcode.DeadStores",
@@ -474,62 +474,6 @@
             {
               "line": 87,
               "message": "Although the value stored to 'fStack_24' is used in the enclosing expression, the value is never actually read from 'fStack_24'"
-            }
-          ]
-        },
-        {
-          "checker": "core.NullDereference",
-          "column": 16,
-          "line": 156,
-          "message": "Dereference of null pointer",
-          "path_notes": [
-            {
-              "line": 45,
-              "message": "Assuming 'EVar1' is equal to DEATH_STATE_ALIVE"
-            },
-            {
-              "line": 45,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 50,
-              "message": "Assuming 'disable_search' is equal to 0"
-            },
-            {
-              "line": 50,
-              "message": "Left side of '&&' is true"
-            },
-            {
-              "line": 51,
-              "message": "Assuming field 'look_at_target' is not equal to null"
-            },
-            {
-              "line": 50,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 142,
-              "message": "'pCStack_20' is not equal to null"
-            },
-            {
-              "line": 142,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 148,
-              "message": "Value assigned to 'pCVar4'"
-            },
-            {
-              "line": 151,
-              "message": "Assuming 'pCVar4' is equal to null"
-            },
-            {
-              "line": 151,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 156,
-              "message": "Dereference of null pointer"
             }
           ]
         }

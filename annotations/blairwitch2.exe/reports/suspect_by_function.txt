@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 5712
 Clean: 3321 (58.1%)
 With suspects: 2391
-Total suspects: 33053
+Total suspects: 33136
 
 ====================================================================================================
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042c3e0 (2 suspects)
@@ -1152,7 +1152,7 @@ core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408b40 (2 suspects)
   Line 21 [shadow_pointer_walk]: pCVar3 = (CBoundingBox3D *)&(pCVar3->min).y;
 
 ====================================================================================================
-core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0 (40 suspects)
+core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0 (41 suspects)
   File: core/actor.cpp
 ====================================================================================================
   Line 9 [unaffected_reg]: CBoundingBox3D *unaff_EDI;
@@ -1162,6 +1162,7 @@ core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0 (40 suspects)
   Line 36 [tautological_addr_guard]: if (&local_b0.min.y != (float *)&stack0xffffff48) {
   Line 44 [stack_param]: (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,in_stack_ffffff48);
   Line 47 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 47 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 55 [pointer_truncation]: *(uint *)((int)&CStack_2c + (uint)bVar6 * -8 + 4) =
   Line 55 [pointer_cast]: *(uint *)((int)&CStack_2c + (uint)bVar6 * -8 + 4) =
   Line 56 [pointer_truncation]: *(uint *)((int)&CStack_68 + (uint)bVar6 * -8 + 4);
@@ -1259,7 +1260,7 @@ core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40 (17 suspects)
   Line 33 [pointer_cast]: *(float *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
 
 ====================================================================================================
-core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 (115 suspects)
+core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 (116 suspects)
   File: core/actor.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -1331,6 +1332,7 @@ core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 (115 suspects)
   Line 221 [unaffected_reg]: (*((unaff_EBP->vtable)._ub)->getBoundingBox)
   Line 222 [unaffected_reg]: (unaff_EBP,(CBoundingBox3D *)(auStack_19c + 0xc));
   Line 225 [unrolled_memcpy]: for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 225 [memcpy_oversized_source]: for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 231 [stack_param]: (&CStack_1c4,(CVector3f *)in_stack_fffffc24,(float)in_stack_fffffc28
   Line 231 [stack_param]: (&CStack_1c4,(CVector3f *)in_stack_fffffc24,(float)in_stack_fffffc28
   Line 236 [stack_param]: in_stack_fffffc24 = auStack_2c4 + 0x34;
@@ -1379,7 +1381,7 @@ core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 (115 suspects)
   Line 446 [stack_ref]: (this_ptr,hit_type,(SDamageInfo *)&stack0xfffffc54,(CDemonActor *)hit_type);
 
 ====================================================================================================
-core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 (34 suspects)
+core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 (35 suspects)
   File: core/actor.cpp
 ====================================================================================================
   Line 14 [stack_alignment_array]: float afStackY_106c [976];
@@ -1403,6 +1405,7 @@ core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 (34 suspects)
   Line 92 [pointer_truncation]: *(uint *)((int)&local_54 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   Line 92 [pointer_cast]: *(uint *)((int)&local_54 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   Line 99 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 99 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 105 [stack_param]: ((CBoundingBox3D *)auStack_ac,pCVar8,(CVector3f *)in_stack_fffffee8,
   Line 106 [stack_param]: (CVector3f *)((ulonglong)in_stack_fffffee8 >> 0x20));
   Line 147 [pointer_truncation]: (this_ptr_00,(int)frame_index,&pCVar3->min,ray_direction_00,pCVar8);
@@ -1625,11 +1628,12 @@ core_ammo.cpp_CAmmo_process_FUN_0040ded0 (33 suspects)
   Line 137 [pointer_cast]: *(uint *)((int)&CStack_98 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
 
 ====================================================================================================
-core_ammo.cpp_CAmmo_renderOpaque_FUN_0040e0f0 (3 suspects)
+core_ammo.cpp_CAmmo_renderOpaque_FUN_0040e0f0 (4 suspects)
   File: core/ammo.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 18 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 18 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -1708,11 +1712,12 @@ core_anvil.cpp_CAnvil_process_FUN_0040eae0 (2 suspects)
   Line 19 [unrolled_memcpy]: (this_ptr->base).location.position.x = (pCVar1->base).base.location.position.x;
 
 ====================================================================================================
-core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10 (3 suspects)
+core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10 (4 suspects)
   File: core/anvil.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 25 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 25 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 30 [unaffected_reg]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_2c,unaff_EDI);
 
 ====================================================================================================
@@ -1766,12 +1771,13 @@ core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040f490 (7 suspects)
   Line 26 [pointer_truncation]: pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
 
 ====================================================================================================
-core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0 (4 suspects)
+core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0 (5 suspects)
   File: core/backgnd.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 21 [stack_ref]: puVar3 = (uint *)&stack0xffffffc8;
   Line 22 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 22 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 27 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_30,in_stack_ffffffc8);
 
 ====================================================================================================
@@ -2368,11 +2374,12 @@ core_bat.cpp_CBat_process_FUN_00411200 (11 suspects)
   Line 31 [pointer_cast]: *(uint *)((int)&stack0xffffffc8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
 
 ====================================================================================================
-core_bat.cpp_CBat_renderOpaque_FUN_004113f0 (3 suspects)
+core_bat.cpp_CBat_renderOpaque_FUN_004113f0 (4 suspects)
   File: core/bat.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 18 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 18 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -2717,11 +2724,12 @@ core_batman.cpp_CBatman_process_FUN_00412f40 (103 suspects)
   Line 587 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 (4 suspects)
+core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 (5 suspects)
   File: core/batman.cpp
 ====================================================================================================
   Line 11 [stack_param]: int in_stack_ffffffb4;
   Line 34 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 34 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 39 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_3c,in_stack_ffffffb4);
   Line 84 [bitcast_double_pair]: dStack_48 = __BITCAST_DOUBLE(CONCAT44(uStack_44,this_ptr));
 
@@ -2745,12 +2753,13 @@ core_battery.cpp_CBattery_getBoundingBox_FUN_00414910 (7 suspects)
   Line 26 [pointer_truncation]: pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
 
 ====================================================================================================
-core_battery.cpp_CBattery_renderOpaque_FUN_00414810 (4 suspects)
+core_battery.cpp_CBattery_renderOpaque_FUN_00414810 (5 suspects)
   File: core/battery.cpp
 ====================================================================================================
   Line 10 [stack_param]: int in_stack_ffffffc8;
   Line 22 [stack_ref]: puVar3 = (uint *)&stack0xffffffc4;
   Line 23 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_00,in_stack_ffffffc8);
 
 ====================================================================================================
@@ -2869,11 +2878,12 @@ core_biggs.cpp_CBiggs_process_FUN_00414e50 (34 suspects)
   Line 114 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120 (3 suspects)
+core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120 (4 suspects)
   File: core/biggs.cpp
 ====================================================================================================
   Line 9 [unaffected_reg]: int unaff_EDI;
   Line 26 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 26 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 32 [unaffected_reg]: ((CBoundingBox3D *)(auStack_20 + 2),unaff_EDI);
 
 ====================================================================================================
@@ -3316,11 +3326,12 @@ core_bodypart.cpp_CBodyPart_process_FUN_004162b0 (9 suspects)
   Line 57 [unrolled_memcpy]: (pUVar1->vec).x = pCVar2->x;
 
 ====================================================================================================
-core_bodypart.cpp_CBodyPart_renderBackground_FUN_00415cd0 (3 suspects)
+core_bodypart.cpp_CBodyPart_renderBackground_FUN_00415cd0 (4 suspects)
   File: core/bodypart.cpp
 ====================================================================================================
   Line 9 [unaffected_reg]: int unaff_EDI;
   Line 37 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 37 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 42 [unaffected_reg]: iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_2c,unaff_EDI);
 
 ====================================================================================================
@@ -3331,11 +3342,12 @@ core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 (2 suspects)
   Line 46 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
 
 ====================================================================================================
-core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00415b60 (4 suspects)
+core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00415b60 (5 suspects)
   File: core/bodypart.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_ESI;
   Line 22 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 22 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 28 [unaffected_reg]: ((CBoundingBox3D *)(auStack_20 + 2),unaff_ESI);
   Line 47 [shadow_pointer_walk]: euler_angles = (CVector3f *)&euler_angles[0x21].z;
 
@@ -3714,11 +3726,12 @@ core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 (98 suspects)
   Line 701 [unrolled_memcpy]: // 00418eab: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80 (3 suspects)
+core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80 (4 suspects)
   File: core/boneguy.cpp
 ====================================================================================================
   Line 8 [unaffected_reg]: int unaff_EDI;
   Line 24 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 24 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 29 [unaffected_reg]: iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_30,unaff_EDI);
 
 ====================================================================================================
@@ -4311,7 +4324,7 @@ core_box.cpp_CBox_updateTransform_FUN_005b2050 (35 suspects)
   Line 110 [shadow_pointer_walk]: pCVar12 = (CVector3f *)((int)(pCVar12 + 4) + 4);
 
 ====================================================================================================
-core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 (21 suspects)
+core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 (22 suspects)
   File: core/boxactor.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: CVector3f *unaff_EDI;
@@ -4322,6 +4335,7 @@ core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 (21 suspects)
   Line 29 [pointer_cast]: *(float *)((int)&local_10 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   Line 33 [stack_ref]: puVar3 = (uint *)&stack0xffffff84;
   Line 34 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 34 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 39 [unaffected_reg]: core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041bb80(&CStack_74,unaff_EDI,&CStack_20);
   Line 41 [pointer_truncation]: afStack_34[(uint)bVar4 * -2] = *(float *)((int)&CStack_20 + (uint)bVar4 * -8 + 4);
   Line 41 [pointer_cast]: afStack_34[(uint)bVar4 * -2] = *(float *)((int)&CStack_20 + (uint)bVar4 * -8 + 4);
@@ -4418,19 +4432,21 @@ core_boxactor.cpp_CBoxActor_process_FUN_0041c090 (28 suspects)
   Line 172 [pointer_cast]: *(float *)((int)&CStack_5c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
 
 ====================================================================================================
-core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 (3 suspects)
+core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 (4 suspects)
   File: core/boxactor.cpp
 ====================================================================================================
   Line 8 [unaffected_reg]: int unaff_EDI;
   Line 34 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 34 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 40 [unaffected_reg]: ((CBoundingBox3D *)(local_20 + 2),unaff_EDI);
 
 ====================================================================================================
-core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 (3 suspects)
+core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 (4 suspects)
   File: core/boxactor.cpp
 ====================================================================================================
   Line 8 [unaffected_reg]: int unaff_EDI;
   Line 26 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 26 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 32 [unaffected_reg]: ((CBoundingBox3D *)(auStack_20 + 2),unaff_EDI);
 
 ====================================================================================================
@@ -4532,7 +4548,7 @@ core_boxactor.cpp_CLightActor_process_FUN_0041d020 (15 suspects)
   Line 75 [pointer_cast]: *(float *)((int)&CStack_28 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
 
 ====================================================================================================
-core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041d350 (21 suspects)
+core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041d350 (23 suspects)
   File: core/boxactor.cpp
 ====================================================================================================
   Line 9 [unaffected_reg]: int unaff_EBP;
@@ -4542,6 +4558,7 @@ core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041d350 (21 suspects)
   Line 17 [stack_param]: CBoundingBox3D *in_stack_fffffea0;
   Line 88 [stack_param]: ((CDemonActor *)this_ptr,in_stack_fffffea0);
   Line 92 [unrolled_memcpy]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 92 [memcpy_oversized_source]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 129 [unaffected_reg]: unaff_EDI[2] = 0;
   Line 130 [unaffected_reg]: unaff_EDI[1] = unaff_EDI[2];
   Line 130 [unaffected_reg]: unaff_EDI[1] = unaff_EDI[2];
@@ -4550,6 +4567,7 @@ core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041d350 (21 suspects)
   Line 133 [unaffected_reg]: *(uint *)(unaff_EBP + 0x38) = 0x42600000;
   Line 143 [stack_param]: ((CDemonActor *)this_ptr,in_stack_fffffea0);
   Line 147 [unrolled_memcpy]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 147 [memcpy_oversized_source]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 183 [unaffected_reg]: unaff_EDI[2] = 0;
   Line 184 [unaffected_reg]: unaff_EDI[1] = unaff_EDI[2];
   Line 184 [unaffected_reg]: unaff_EDI[1] = unaff_EDI[2];
@@ -6502,11 +6520,12 @@ core_charactr.cpp_CCharacter_renderAttachedModels_FUN_00425aa0 (12 suspects)
   Line 44 [pointer_cast]: *(CMatrix3x4f **)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_renderBackground_FUN_00425a00 (3 suspects)
+core_charactr.cpp_CCharacter_renderBackground_FUN_00425a00 (4 suspects)
   File: core/charactr.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 21 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 21 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 27 [unaffected_reg]: ((CBoundingBox3D *)(local_1c + 2),unaff_EDI);
 
 ====================================================================================================
@@ -6656,12 +6675,13 @@ core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620 (17 suspects)
   Line 47 [pointer_cast]: *(uint *)((int)&local_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0 (4 suspects)
+core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0 (5 suspects)
   File: core/charactr.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00426937) */
   Line 11 [stack_param]: int in_stack_ffffffc4;
   Line 23 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 29 [stack_param]: ((CBoundingBox3D *)(local_28 + 2),in_stack_ffffffc4);
 
 ====================================================================================================
@@ -6865,7 +6885,7 @@ core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850 (9 suspects)
   Line 27 [pointer_cast]: *(float *)((int)&local_50 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30 (43 suspects)
+core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30 (44 suspects)
   File: core/charactr.cpp
 ====================================================================================================
   Line 15 [stack_alignment_array]: float afStackY_1034 [9];
@@ -6875,6 +6895,7 @@ core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30 (43 suspects)
   Line 55 [stack_param]: (this_ptr,(int)local_1c,in_stack_fffffd38);
   Line 55 [pointer_truncation]: (this_ptr,(int)local_1c,in_stack_fffffd38);
   Line 65 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 65 [memcpy_oversized_source]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 75 [pointer_cast]: ((CMatrix3x4f *)((int)pCVar3->x * 0x30 + iStack_14),&CStack_1cc);
   Line 78 [unrolled_memcpy]: for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 80 [pointer_cast]: pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
@@ -8137,12 +8158,13 @@ core_crate.cpp_CCrate_ctor_FUN_00439d60 (2 suspects)
   Line 16 [negative_offset]: return (CCrate *)(this_ptr_00[-2].part_visibility_flags + 0x11);
 
 ====================================================================================================
-core_crate.cpp_CCrate_explode_FUN_0043a350 (3 suspects)
+core_crate.cpp_CCrate_explode_FUN_0043a350 (4 suspects)
   File: core/crate.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: CBoundingBox3D *unaff_ESI;
   Line 20 [unaffected_reg]: (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);
   Line 24 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 24 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
 
 ====================================================================================================
 core_crate.cpp_CCrate_getBoundingBox_FUN_0043a240 (7 suspects)
@@ -8175,7 +8197,7 @@ core_crate.cpp_CCrate_getTargetPoints_FUN_0043a280 (13 suspects)
   Line 47 [unrolled_memcpy]: out_points_array->x = CStack_34.x;
 
 ====================================================================================================
-core_crate.cpp_CCrate_process_FUN_00439f00 (9 suspects)
+core_crate.cpp_CCrate_process_FUN_00439f00 (10 suspects)
   File: core/crate.cpp
 ====================================================================================================
   Line 11 [unaffected_reg]: CBoundingBox3D *unaff_ESI;
@@ -8187,14 +8209,16 @@ core_crate.cpp_CCrate_process_FUN_00439f00 (9 suspects)
   Line 86 [unrolled_memcpy]: (pUVar2->vec).x = (pUVar6->vec).x;
   Line 91 [unaffected_reg]: (*((pCVar4->base).vtable._ub)->getBoundingBox)(&pCVar4->base,unaff_ESI);
   Line 94 [unrolled_memcpy]: for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+  Line 94 [memcpy_oversized_source]: for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
 
 ====================================================================================================
-core_crate.cpp_CCrate_renderOpaque_FUN_0043a130 (4 suspects)
+core_crate.cpp_CCrate_renderOpaque_FUN_0043a130 (5 suspects)
   File: core/crate.cpp
 ====================================================================================================
   Line 10 [stack_param]: int in_stack_ffffffc8;
   Line 22 [stack_ref]: puVar3 = (uint *)&stack0xffffffc4;
   Line 23 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_00,in_stack_ffffffc8);
 
 ====================================================================================================
@@ -8472,7 +8496,7 @@ core_crossbow.cpp_CCrossbow_process_FUN_0043a580 (17 suspects)
   Line 42 [stack_param]: core_flame_cpp_CFlame_process_FUN_0049f2e0(&this_ptr->bolt_flame,in_stack_00000014);
 
 ====================================================================================================
-core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043a670 (7 suspects)
+core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043a670 (8 suspects)
   File: core/crossbow.cpp
 ====================================================================================================
   Line 11 [stack_param]: int in_stack_ffffffc4;
@@ -8480,6 +8504,7 @@ core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043a670 (7 suspects)
   Line 19 [stack_ref]: this_ptr_00 = (CBoundingBox3D *)&stack0xffffffc8;
   Line 21 [stack_ref]: puVar3 = (uint *)&stack0xffffffc0;
   Line 22 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 22 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 27 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_00,in_stack_ffffffc4);
   Line 34 [stack_param]: (&(this_ptr->base).model,animation_frame,(int)in_stack_ffffffc8);
 
@@ -12070,13 +12095,14 @@ core_door.cpp_CDoor_getOpenStandPos_FUN_00460350 (16 suspects)
   Line 105 [pointer_truncation]: pfVar1 = (float *)((int)local_10 + (uint)bVar2 * -8 + 4);
 
 ====================================================================================================
-core_door.cpp_CDoor_process_FUN_0045f5a0 (15 suspects)
+core_door.cpp_CDoor_process_FUN_0045f5a0 (16 suspects)
   File: core/door.cpp
 ====================================================================================================
   Line 12 [stack_alignment_array]: float afStackY_1084 [989];
   Line 14 [stack_param]: CBoundingBox3D *in_stack_fffffef8;
   Line 139 [stack_param]: (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_fffffef8);
   Line 143 [unrolled_memcpy]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 143 [memcpy_oversized_source]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 154 [pointer_cast]: iVar3 = *(int *)((int)g_CDemonSetPtr->characters + iStack_18);
   Line 156 [unresolved_funcptr]: iVar2 = (**(code **)(*(int *)(iVar3 + 0x2b0) + 0x44))(iVar3,&SStack_100);
   Line 168 [pointer_truncation]: *(float *)((int)&CStack_6c + (uint)bVar6 * -8 + 4) = afStack_98[(uint)bVar6 * -2];
@@ -12090,15 +12116,16 @@ core_door.cpp_CDoor_process_FUN_0045f5a0 (15 suspects)
   Line 177 [self_copy_guard]: if (&fStack_a8 != &fStack_78) {
 
 ====================================================================================================
-core_door.cpp_CDoor_renderBackground_FUN_0045fdf0 (3 suspects)
+core_door.cpp_CDoor_renderBackground_FUN_0045fdf0 (4 suspects)
   File: core/door.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 20 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 20 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 26 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
-core_door.cpp_CDoor_renderOpaque_FUN_0045fd10 (6 suspects)
+core_door.cpp_CDoor_renderOpaque_FUN_0045fd10 (7 suspects)
   File: core/door.cpp
 ====================================================================================================
   Line 9 [unaffected_reg]: int unaff_EDI;
@@ -12107,6 +12134,7 @@ core_door.cpp_CDoor_renderOpaque_FUN_0045fd10 (6 suspects)
   Line 33 [unaffected_reg]: iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_48,unaff_EDI);
   Line 39 [stack_param]: (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff98);
   Line 42 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 42 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
 core_door.cpp_CDoor_reposition_FUN_0045f030 (40 suspects)
@@ -12603,11 +12631,12 @@ core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0 (191 suspects)
   Line 941 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 (4 suspects)
+core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 (5 suspects)
   File: core/dracbrid.cpp
 ====================================================================================================
   Line 11 [stack_param]: int in_stack_ffffffb4;
   Line 34 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 34 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 39 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_3c,in_stack_ffffffb4);
   Line 88 [bitcast_double_pair]: dStack_48 = __BITCAST_DOUBLE(CONCAT44(uStack_44,this_ptr));
 
@@ -12745,11 +12774,12 @@ core_drip.cpp_CDrip_process_FUN_0046d110 (11 suspects)
   Line 119 [unresolved_funcptr]: (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x108))
 
 ====================================================================================================
-core_drip.cpp_CDrip_renderOpaque_FUN_0046d570 (3 suspects)
+core_drip.cpp_CDrip_renderOpaque_FUN_0046d570 (4 suspects)
   File: core/drip.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 19 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 19 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 25 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -14162,7 +14192,7 @@ core_dynamite.cpp_CDynamite_fire_FUN_0047a0a0 (1 suspect)
   Line 16 [unrolled_memset]: (this_ptr->toss_velocity).z = 0.0;
 
 ====================================================================================================
-core_dynamite.cpp_CDynamite_process_FUN_0047a1e0 (14 suspects)
+core_dynamite.cpp_CDynamite_process_FUN_0047a1e0 (15 suspects)
   File: core/dynamite.cpp
 ====================================================================================================
   Line 12 [stack_alignment_array]: float afStackY_1030 [17];
@@ -14175,6 +14205,7 @@ core_dynamite.cpp_CDynamite_process_FUN_0047a1e0 (14 suspects)
   Line 67 [pointer_cast]: *(float *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
   Line 70 [stack_param]: ((CDemonActor *)this_ptr_01,in_stack_ffffff50);
   Line 73 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 73 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 80 [stack_ref]: ((CDemonActor *)this_ptr_01,&CStack_34,(CVector3f *)&stack0xfffffffc);
   Line 81 [stack_ref]: afStack_18[(uint)bVar5 * -2] = *(float *)(&stack0x00000000 + (uint)bVar5 * -8);
   Line 84 [stack_ref]: if (&CStack_34 != (CVector3f *)&stack0xffffffe4) {
@@ -14424,11 +14455,12 @@ core_emitter.cpp_CEmitter_process_FUN_00486cb0 (51 suspects)
   Line 334 [pointer_cast]: *(uint *)((int)&CStack_a4 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4 + 8) =
 
 ====================================================================================================
-core_emitter.cpp_CEmitter_renderBackground_FUN_004878a0 (3 suspects)
+core_emitter.cpp_CEmitter_renderBackground_FUN_004878a0 (4 suspects)
   File: core/emitter.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 21 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 21 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 27 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
@@ -14487,7 +14519,7 @@ core_emitter.cpp_CEmitter_renderOpaque_FUN_00487790 (50 suspects)
   Line 87 [unknown_field]: laser_info.reflectivity = (float)in_stack_ffffff20._72_4_;
 
 ====================================================================================================
-core_enemy.cpp_CEnemy_canSeeTarget_FUN_00488320 (31 suspects)
+core_enemy.cpp_CEnemy_canSeeTarget_FUN_00488320 (32 suspects)
   File: core/enemy.cpp
 ====================================================================================================
   Line 8 [unaffected_reg]: CVector3f *unaff_ESI;
@@ -14509,6 +14541,7 @@ core_enemy.cpp_CEnemy_canSeeTarget_FUN_00488320 (31 suspects)
   Line 50 [pointer_cast]: *(uint *)((int)&CStack_78 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   Line 51 [stack_param]: (*((this_ptr_01->vtable)._ub)->getBoundingBox)(this_ptr_01,in_stack_ffffff50);
   Line 54 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 54 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 62 [pointer_truncation]: *(uint *)((int)&CStack_58 + (uint)bVar4 * -8 + 4) =
   Line 62 [pointer_cast]: *(uint *)((int)&CStack_58 + (uint)bVar4 * -8 + 4) =
   Line 63 [pointer_truncation]: *(uint *)((int)&CStack_28 + (uint)bVar4 * -8 + 4);
@@ -15053,11 +15086,12 @@ core_filmreel.cpp_CFilmProjector_process_FUN_00492d10 (1 suspect)
   Line 33 [derived_field_index_pun]: (g_CFilterFXPtr,(char *)&pCVar3[1].particle_systems[0].fade_duration);
 
 ====================================================================================================
-core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_00492ef0 (3 suspects)
+core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_00492ef0 (4 suspects)
   File: core/filmreel.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffac;
   Line 22 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 22 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 27 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_38,in_stack_ffffffac);
 
 ====================================================================================================
@@ -15085,12 +15119,13 @@ core_filmreel.cpp_CFilmReel_getBoundingBox_FUN_00492ba0 (7 suspects)
   Line 26 [pointer_truncation]: pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
 
 ====================================================================================================
-core_filmreel.cpp_CFilmReel_renderOpaque_FUN_00492a90 (4 suspects)
+core_filmreel.cpp_CFilmReel_renderOpaque_FUN_00492a90 (5 suspects)
   File: core/filmreel.cpp
 ====================================================================================================
   Line 10 [stack_param]: int in_stack_ffffffc8;
   Line 22 [stack_ref]: puVar3 = (uint *)&stack0xffffffc4;
   Line 23 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_00,in_stack_ffffffc8);
 
 ====================================================================================================
@@ -16343,12 +16378,13 @@ core_flamecan.cpp_CFlameCan_process_FUN_004a0920 (2 suspects)
   Line 30 [unaffected_reg]: (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);
 
 ====================================================================================================
-core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004a09f0 (4 suspects)
+core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004a09f0 (5 suspects)
   File: core/flamecan.cpp
 ====================================================================================================
   Line 10 [stack_param]: int in_stack_ffffffc8;
   Line 22 [stack_ref]: puVar3 = (uint *)&stack0xffffffc4;
   Line 23 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_00,in_stack_ffffffc8);
 
 ====================================================================================================
@@ -17122,13 +17158,14 @@ core_frankgen.cpp_CFrankenstienMachine_process_FUN_004ac4c0 (29 suspects)
   Line 125 [unknown_field]: CStack_4c.y = (float)auStack_34._4_4_;
 
 ====================================================================================================
-core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004aca90 (8 suspects)
+core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004aca90 (9 suspects)
   File: core/frankgen.cpp
 ====================================================================================================
   Line 14 [stack_param]: ulonglong in_stack_ffffffb0;
   Line 20 [stack_param]: iVar3 = (int)((ulonglong)in_stack_ffffffb0 >> 0x20);
   Line 24 [derived_field_index_pun]: this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
   Line 31 [unrolled_memcpy]: for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 31 [memcpy_oversized_source]: for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 42 [bit_int_float_compare]: if ((int)fVar1 < 0x4400c000) {
   Line 45 [bit_int_float_compare]: else if ((int)fVar1 < 0x44e10000) {
   Line 48 [bit_int_float_compare]: else if ((int)fVar1 < 0x44ed8000) {
@@ -17280,7 +17317,7 @@ core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004b05b0 (23 suspects
   Line 112 [pointer_cast]: *(float *)((int)&CStack_b8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0 (35 suspects)
+core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0 (36 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EBP;
@@ -17290,6 +17327,7 @@ core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0 (35 suspects)
   Line 16 [stack_param]: CVector3f *in_stack_fffffe20;
   Line 66 [stack_param]: (*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,in_stack_fffffe18);
   Line 69 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 69 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 89 [unrolled_memcpy]: CStack_a8.x = CStack_48.x;
   Line 93 [unaffected_reg]: iVar1 = *(int *)(unaff_EDI + 0x7d4);
   Line 114 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -18741,12 +18779,13 @@ core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004c14c0 (7 suspects)
   Line 26 [pointer_truncation]: pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
 
 ====================================================================================================
-core_gasmask.cpp_CGasMask_renderOpaque_FUN_004c13e0 (4 suspects)
+core_gasmask.cpp_CGasMask_renderOpaque_FUN_004c13e0 (5 suspects)
   File: core/gasmask.cpp
 ====================================================================================================
   Line 10 [stack_param]: int in_stack_ffffffc8;
   Line 22 [stack_ref]: puVar3 = (uint *)&stack0xffffffc4;
   Line 23 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_00,in_stack_ffffffc8);
 
 ====================================================================================================
@@ -19289,12 +19328,13 @@ core_glass.cpp_CGlass_getBoundingBox_FUN_004c5a00 (2 suspects)
   Line 32 [unrolled_memcpy]: // 004c5a6b: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_glass.cpp_CGlass_renderBackground_FUN_004c5840 (5 suspects)
+core_glass.cpp_CGlass_renderBackground_FUN_004c5840 (6 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 15 [stack_param]: int in_stack_ffffffc8;
   Line 33 [stack_ref]: puVar6 = (uint *)&stack0xffffffc4;
   Line 34 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 34 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 39 [stack_param]: core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_01,in_stack_ffffffc8);
   Line 74 [shadow_pointer_walk]: pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);
 
@@ -19330,22 +19370,24 @@ core_glass.cpp_CGlass_renderBrokenGlass_FUN_004c5640 (26 suspects)
   Line 91 [stack_param]: core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(in_stack_0000000c);
 
 ====================================================================================================
-core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0 (5 suspects)
+core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0 (6 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 17 [stack_param]: int in_stack_ffffffc0;
   Line 30 [stack_ref]: puVar8 = (uint *)&stack0xffffffc0;
   Line 31 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 31 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 36 [stack_param]: iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_38,in_stack_ffffffc0);
   Line 75 [shadow_pointer_walk]: pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
 
 ====================================================================================================
-core_glass.cpp_CGlass_renderTransparent_FUN_004c5470 (5 suspects)
+core_glass.cpp_CGlass_renderTransparent_FUN_004c5470 (6 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 17 [stack_param]: int in_stack_ffffffc0;
   Line 28 [stack_ref]: puVar8 = (uint *)&stack0xffffffc0;
   Line 29 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 29 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 34 [stack_param]: iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_38,in_stack_ffffffc0);
   Line 73 [shadow_pointer_walk]: pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
 
@@ -19448,12 +19490,13 @@ core_goggles.cpp_CGoggles_getBoundingBox_FUN_0059c1e0 (10 suspects)
   Line 29 [unaffected_reg]: return unaff_ESI;
 
 ====================================================================================================
-core_goggles.cpp_CGoggles_renderOpaque_FUN_0059c100 (4 suspects)
+core_goggles.cpp_CGoggles_renderOpaque_FUN_0059c100 (5 suspects)
   File: core/goggles.cpp
 ====================================================================================================
   Line 10 [stack_param]: int in_stack_ffffffc8;
   Line 22 [stack_ref]: puVar3 = (uint *)&stack0xffffffc4;
   Line 23 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_00,in_stack_ffffffc8);
 
 ====================================================================================================
@@ -19634,19 +19677,21 @@ core_grave.cpp_CGrave_getBoundingBox_FUN_004ca540 (16 suspects)
   Line 96 [unrolled_memcpy]: // 004ca638: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_grave.cpp_CGrave_renderBackground_FUN_004ca340 (3 suspects)
+core_grave.cpp_CGrave_renderBackground_FUN_004ca340 (4 suspects)
   File: core/grave.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 25 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 25 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 31 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
-core_grave.cpp_CGrave_renderOpaque_FUN_004ca290 (3 suspects)
+core_grave.cpp_CGrave_renderOpaque_FUN_004ca290 (4 suspects)
   File: core/grave.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 21 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 21 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 27 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
@@ -19992,19 +20037,21 @@ core_health.cpp_CHealthItem_process_FUN_004cdb60 (33 suspects)
   Line 133 [unrolled_memcpy]: // 004cdcd0: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_health.cpp_CHealthItem_renderOpaque_FUN_004cdda0 (3 suspects)
+core_health.cpp_CHealthItem_renderOpaque_FUN_004cdda0 (4 suspects)
   File: core/health.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 18 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 18 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
-core_health.cpp_CHealthItem_renderTransparent_FUN_004cde20 (3 suspects)
+core_health.cpp_CHealthItem_renderTransparent_FUN_004cde20 (4 suspects)
   File: core/health.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 18 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 18 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -21791,11 +21838,12 @@ core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004df2e0 (7 suspects)
   Line 26 [pointer_truncation]: pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
 
 ====================================================================================================
-core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004df260 (3 suspects)
+core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004df260 (4 suspects)
   File: core/keyactor.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 18 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 18 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -21834,11 +21882,12 @@ core_ladder.cpp_CLadder_getBoundingBox_FUN_004e00d0 (10 suspects)
   Line 47 [unrolled_memcpy]: // 004e0165: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_ladder.cpp_CLadder_renderOpaque_FUN_004e0040 (3 suspects)
+core_ladder.cpp_CLadder_renderOpaque_FUN_004e0040 (4 suspects)
   File: core/ladder.cpp
 ====================================================================================================
   Line 8 [unaffected_reg]: int unaff_EDI;
   Line 24 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 24 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 29 [unaffected_reg]: iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_2c,unaff_EDI);
 
 ====================================================================================================
@@ -22301,11 +22350,12 @@ core_litecone.cpp_CLightCone_getBoundingBox_FUN_004e4340 (2 suspects)
   Line 25 [unrolled_memcpy]: // 004e4392: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_litecone.cpp_CLightCone_renderTransparent_FUN_004e42a0 (3 suspects)
+core_litecone.cpp_CLightCone_renderTransparent_FUN_004e42a0 (4 suspects)
   File: core/litecone.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 22 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 22 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
@@ -22908,11 +22958,12 @@ core_marquee.cpp_CMarquee_renderLightBulb_FUN_004e7ff0 (22 suspects)
   Line 70 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;
 
 ====================================================================================================
-core_marquee.cpp_CMarquee_renderOpaque_FUN_004e7f70 (3 suspects)
+core_marquee.cpp_CMarquee_renderOpaque_FUN_004e7f70 (4 suspects)
   File: core/marquee.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 25 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 25 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 30 [unaffected_reg]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_2c,unaff_EDI);
 
 ====================================================================================================
@@ -23382,11 +23433,12 @@ core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 (2 suspects)
   Line 49 [pointer_cast]: -*(float *)((int)&(pSVar1->position).x + iVar4);
 
 ====================================================================================================
-core_mimic.cpp_CMimic_renderBackground_FUN_004f1b80 (3 suspects)
+core_mimic.cpp_CMimic_renderBackground_FUN_004f1b80 (4 suspects)
   File: core/mimic.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 23 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 29 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
@@ -24497,11 +24549,12 @@ core_moloch.cpp_CMoloch_process_FUN_00501530 (27 suspects)
   Line 211 [pointer_cast]: *(uint *)((int)&CStack_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
 
 ====================================================================================================
-core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0 (3 suspects)
+core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0 (4 suspects)
   File: core/moloch.cpp
 ====================================================================================================
   Line 9 [unaffected_reg]: int unaff_EDI;
   Line 27 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 27 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 33 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
@@ -25295,11 +25348,12 @@ core_passngr.cpp_CPassenger_process_FUN_005117a0 (15 suspects)
   Line 83 [unrolled_memcpy]: (pCVar5->base).base.base.location.position.x = (pCVar1->position).x;
 
 ====================================================================================================
-core_passngr.cpp_CPassenger_renderOpaque_FUN_00511980 (3 suspects)
+core_passngr.cpp_CPassenger_renderOpaque_FUN_00511980 (4 suspects)
   File: core/passngr.cpp
 ====================================================================================================
   Line 8 [unaffected_reg]: int unaff_EDI;
   Line 21 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 21 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 27 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
@@ -25666,11 +25720,12 @@ core_pendulum.cpp_CPendulum_process_FUN_00515cd0 (3 suspects)
   Line 48 [pointer_cast]: actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar3);
 
 ====================================================================================================
-core_pendulum.cpp_CPendulum_renderOpaque_FUN_00515e40 (3 suspects)
+core_pendulum.cpp_CPendulum_renderOpaque_FUN_00515e40 (4 suspects)
   File: core/pendulum.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 18 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 18 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -25976,7 +26031,7 @@ core_platfrm.cpp_CPlatform_renderBackground_FUN_005191d0 (4 suspects)
   Line 61 [unaffected_reg]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_24,unaff_EDI);
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_renderOpaque_FUN_00519080 (7 suspects)
+core_platfrm.cpp_CPlatform_renderOpaque_FUN_00519080 (8 suspects)
   File: core/platfrm.cpp
 ====================================================================================================
   Line 10 [stack_param]: int in_stack_ffffff94;
@@ -25986,6 +26041,7 @@ core_platfrm.cpp_CPlatform_renderOpaque_FUN_00519080 (7 suspects)
   Line 43 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_50,in_stack_ffffff94);
   Line 53 [stack_param]: (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff98);
   Line 56 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 56 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
 
 ====================================================================================================
 core_platfrm.cpp_CPlatform_setup_FUN_00518280 (4 suspects)
@@ -26881,12 +26937,13 @@ core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0 (45 suspects)
   Line 201 [shadow_pointer_walk]: pCVar5 = (CDemonSet *)pCVar5->cameras;
 
 ====================================================================================================
-core_set.cpp_CDemonSet_buildMirrorList_FUN_00534360 (7 suspects)
+core_set.cpp_CDemonSet_buildMirrorList_FUN_00534360 (8 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 11 [stack_param]: CDemonRenderer *in_stack_ffffffbc;
   Line 32 [stack_ref]: puVar3 = (uint *)&stack0xffffffb8;
   Line 33 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 33 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 39 [stack_param]: (this_ptr_01,(int)in_stack_ffffffbc);
   Line 39 [pointer_truncation]: (this_ptr_01,(int)in_stack_ffffffbc);
   Line 50 [stack_param]: in_stack_ffffffbc = g_CDemonRenderer_PTR_0060b280;
@@ -27474,7 +27531,7 @@ core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0 (7 suspects)
   Line 17 [pointer_truncation]: ((void *)((int)g_CoronaGlobes + iVar2),(void *)((int)g_CoronaGlobes + iVar2 + 4),
 
 ====================================================================================================
-core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 (14 suspects)
+core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 (15 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EBX;
@@ -27484,6 +27541,7 @@ core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 (14 suspects)
   Line 23 [phantom_float_to_int]: this_ptr_00 = *(CDemonActor **)((int)CStack_1c.y + 0x15f6fc);
   Line 25 [stack_param]: (this_ptr_00,(CBoundingBox3D *)in_stack_ffffffa0);
   Line 28 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 28 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 34 [unrolled_memcpy]: CStack_4c.x = CStack_1c.x;
   Line 40 [stack_ref]: (CVector3f *)&stack0xffffffa8,&CStack_4c,&this_ptr_00->orient_matrix);
   Line 45 [stack_param]: (*((this_ptr_00->vtable)._ub)->renderBackground)(this_ptr_00,in_stack_00000010);
@@ -27953,7 +28011,7 @@ core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00537c40 (8 suspects)
   Line 62 [unrolled_memcpy]: (this_ptr->collision_impact_position).x = g_RaytraceStateStack[iVar5].saved_collision_point.x;
 
 ====================================================================================================
-core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 (148 suspects)
+core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 (149 suspects)
   File: core/setcolid.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -27999,6 +28057,7 @@ core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 (148 suspects)
   Line 215 [stack_param]: (unaff_EBP,(CBoundingBox3D *)in_stack_fffffc50);
   Line 215 [unaffected_reg]: (unaff_EBP,(CBoundingBox3D *)in_stack_fffffc50);
   Line 219 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 219 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 228 [pointer_truncation]: *(uint *)((int)&CStack_74 + (uint)bVar21 * -8 + 4) =
   Line 228 [pointer_cast]: *(uint *)((int)&CStack_74 + (uint)bVar21 * -8 + 4) =
   Line 229 [pointer_truncation]: *(uint *)((int)&CStack_44 + (uint)bVar21 * -8 + 4);
@@ -28360,7 +28419,7 @@ core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610 (2 suspects)
   Line 35 [pointer_cast]: obb_a = (SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) + local_28);
 
 ====================================================================================================
-core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 (61 suspects)
+core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 (62 suspects)
   File: core/setdir.cpp
 ====================================================================================================
   Line 21 [stack_alignment_array]: float afStackY_10f8 [948];
@@ -28385,6 +28444,7 @@ core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10 (61 suspects)
   Line 147 [pointer_cast]: *(float *)((int)&CStack_110 + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 6) * 4 + 4) =
   Line 168 [undefined_data]: } while (pSVar3 != (SMRGLPrimitiveQuad *)&DAT_0061bb2c);
   Line 197 [unrolled_memcpy]: for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+  Line 197 [memcpy_oversized_source]: for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
   Line 204 [pointer_cast]: puVar8 = (uint *)((int)actor + (uint)bVar11 * -8 + 0x24);
   Line 206 [pointer_truncation]: *(uint *)((int)&CStack_d4 + (uint)bVar11 * -8 + 4) = *puVar8;
   Line 206 [pointer_cast]: *(uint *)((int)&CStack_d4 + (uint)bVar11 * -8 + 4) = *puVar8;
@@ -28881,12 +28941,13 @@ core_shadow.cpp_CShadow_renderDebugMarker_FUN_0053e080 (5 suspects)
   Line 175 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;
 
 ====================================================================================================
-core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0 (4 suspects)
+core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0 (5 suspects)
   File: core/shadow.cpp
 ====================================================================================================
   Line 15 [stack_param]: int in_stack_ffffffc4;
   Line 41 [stack_ref]: puVar6 = (uint *)&stack0xffffffc4;
   Line 42 [unrolled_memcpy]: for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 42 [memcpy_oversized_source]: for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 47 [stack_param]: iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_34,in_stack_ffffffc4);
 
 ====================================================================================================
@@ -29095,11 +29156,12 @@ core_simbox.cpp_CSimBox_process_FUN_005401b0 (16 suspects)
   Line 81 [unrolled_memcpy]: (pUVar1->vec).x = pCVar4->x;
 
 ====================================================================================================
-core_simbox.cpp_CSimBox_renderOpaque_FUN_00540390 (3 suspects)
+core_simbox.cpp_CSimBox_renderOpaque_FUN_00540390 (4 suspects)
   File: core/simbox.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 18 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 18 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -30863,11 +30925,12 @@ core_spike.cpp_CSpike_process_FUN_00560760 (24 suspects)
   Line 131 [pointer_cast]: *(float *)((int)&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
 
 ====================================================================================================
-core_spike.cpp_CSpike_renderOpaque_FUN_00560a90 (3 suspects)
+core_spike.cpp_CSpike_renderOpaque_FUN_00560a90 (4 suspects)
   File: core/spike.cpp
 ====================================================================================================
   Line 9 [stack_param]: int in_stack_ffffffc8;
   Line 18 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 18 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -32538,12 +32601,13 @@ core_succubus.cpp_CSuccubus_process_FUN_0056f6d0 (51 suspects)
   Line 290 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50 (5 suspects)
+core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50 (6 suspects)
   File: core/succubus.cpp
 ====================================================================================================
   Line 9 [unaffected_reg]: int unaff_EBX;
   Line 11 [unaffected_reg]: int unaff_EDI;
   Line 30 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 30 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 36 [unaffected_reg]: ((CBoundingBox3D *)(auStack_24 + 2),unaff_EDI);
   Line 40 [unaffected_reg]: if (unaff_EBX == 0) {
 
@@ -33065,13 +33129,14 @@ core_trap.cpp_CTrap_getBoundingBox_FUN_00576840 (7 suspects)
   Line 26 [pointer_truncation]: pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
 
 ====================================================================================================
-core_trap.cpp_CTrap_process_FUN_00576530 (12 suspects)
+core_trap.cpp_CTrap_process_FUN_00576530 (13 suspects)
   File: core/trap.cpp
 ====================================================================================================
   Line 12 [stack_alignment_array]: uint auStackY_1004 [975];
   Line 13 [stack_param]: CBoundingBox3D *in_stack_ffffff40;
   Line 40 [stack_param]: (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff40);
   Line 45 [unrolled_memcpy]: for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+  Line 45 [memcpy_oversized_source]: for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 53 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar8),
   Line 66 [stack_ref]: *(uint *)(&stack0xfffffff4 + (uint)bVar7 * -8) =
   Line 67 [pointer_truncation]: *(uint *)((int)&CStack_1c + (uint)bVar7 * -8 + 4);
@@ -33082,12 +33147,13 @@ core_trap.cpp_CTrap_process_FUN_00576530 (12 suspects)
   Line 76 [unknown_field]: auStack_b0._4_4_ = 10.0;
 
 ====================================================================================================
-core_trap.cpp_CTrap_renderOpaque_FUN_00576750 (4 suspects)
+core_trap.cpp_CTrap_renderOpaque_FUN_00576750 (5 suspects)
   File: core/trap.cpp
 ====================================================================================================
   Line 11 [stack_param]: int in_stack_ffffffc4;
   Line 23 [stack_ref]: puVar3 = (uint *)&stack0xffffffc0;
   Line 24 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 24 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 29 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(this_ptr_00,in_stack_ffffffc4);
 
 ====================================================================================================
@@ -33514,11 +33580,12 @@ core_turret.cpp_CTurret_process_FUN_0057e760 (35 suspects)
   Line 148 [unrolled_memcpy]: pCVar5->x = CStack_34.x;
 
 ====================================================================================================
-core_turret.cpp_CTurret_renderOpaque_FUN_0057e630 (3 suspects)
+core_turret.cpp_CTurret_renderOpaque_FUN_0057e630 (4 suspects)
   File: core/turret.cpp
 ====================================================================================================
   Line 11 [stack_param]: int in_stack_ffffffc0;
   Line 22 [unrolled_memcpy]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 22 [memcpy_oversized_source]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 28 [stack_param]: ((CBoundingBox3D *)(auStack_2c + 2),in_stack_ffffffc0);
 
 ====================================================================================================
@@ -33552,7 +33619,7 @@ core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00 (17 suspects)
   Line 85 [stack_param]: ((CCharacter *)this_ptr,in_stack_ffffff80);
 
 ====================================================================================================
-core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 (49 suspects)
+core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 (50 suspects)
   File: core/turret.cpp
 ====================================================================================================
   Line 14 [stack_alignment_array]: float afStackY_10cc [45];
@@ -33574,6 +33641,7 @@ core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 (49 suspects)
   Line 127 [suspect_float]: fStack_1e4 = 8.077047e-39;
   Line 128 [stack_param]: (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,(CBoundingBox3D *)in_stack_fffffe24);
   Line 131 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 131 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 136 [unknown_field]: auStack_ac._4_4_ = fStack_12c + *unaff_retaddr;
   Line 137 [unknown_field]: auStack_ac._8_4_ = fStack_128 + unaff_retaddr[1];
   Line 153 [unknown_field]: aCStack_1d4[0].z = (float)auStack_ac._0_4_;
@@ -33654,11 +33722,12 @@ core_tvbat.cpp_CTVBat_process_FUN_00580610 (14 suspects)
   Line 324 [unknown_field]: if (0.0 < (float)auStack_1e4._12_4_) {
 
 ====================================================================================================
-core_tvbat.cpp_CTVBat_renderOpaque_FUN_00581270 (3 suspects)
+core_tvbat.cpp_CTVBat_renderOpaque_FUN_00581270 (4 suspects)
   File: core/tvbat.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: int unaff_EDI;
   Line 22 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 22 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [unaffected_reg]: ((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);
 
 ====================================================================================================
@@ -33980,11 +34049,12 @@ core_vampboss.cpp_CVampireBoss_process_FUN_00581910 (65 suspects)
   Line 709 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0 (3 suspects)
+core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0 (4 suspects)
   File: core/vampboss.cpp
 ====================================================================================================
   Line 11 [unaffected_reg]: int unaff_EDI;
   Line 29 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 29 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 34 [unaffected_reg]: iStack_c = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_24,unaff_EDI);
 
 ====================================================================================================
@@ -34105,7 +34175,7 @@ core_vehicle.cpp_CVehicle_process_FUN_00583f20 (33 suspects)
   Line 318 [unrolled_memcpy]: (pUVar1->vec).x = (pUVar2->vec).x;
 
 ====================================================================================================
-core_vehicle.cpp_CVehicle_renderOpaque_FUN_00584a40 (54 suspects)
+core_vehicle.cpp_CVehicle_renderOpaque_FUN_00584a40 (55 suspects)
   File: core/vehicle.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -34137,6 +34207,7 @@ core_vehicle.cpp_CVehicle_renderOpaque_FUN_00584a40 (54 suspects)
   Line 79 [stack_param]: (*((in_stack_0000000c->vtable)._ub)->getBoundingBox)(in_stack_0000000c,in_stack_ffffff48);
   Line 81 [stack_ref]: puVar6 = (uint *)&stack0xffffff60;
   Line 82 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 82 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 90 [stack_param]: core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(in_stack_0000000c);
   Line 91 [stack_param]: if ((in_stack_0000000c[6].particle_systems[0].particles != (void *)0x0) &&
   Line 101 [stack_param]: (in_stack_0000000c,&CStack_40,&CStack_1c);
@@ -34292,12 +34363,13 @@ core_vessel.cpp_CCryptVessel_process_FUN_00585230 (46 suspects)
   Line 212 [pointer_cast]: *(uint *)((int)&stack0xffffffb0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
 
 ====================================================================================================
-core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810 (8 suspects)
+core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810 (9 suspects)
   File: core/vessel.cpp
 ====================================================================================================
   Line 7 [unaffected_reg]: CVector3f *unaff_EDI;
   Line 11 [stack_param]: int in_stack_ffffffb4;
   Line 26 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 26 [memcpy_oversized_source]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 29 [pointer_cast]: pdVar3 = (double *)((int)pdVar3 + (uint)bVar4 * -8 + 4);
   Line 29 [pointer_truncation]: pdVar3 = (double *)((int)pdVar3 + (uint)bVar4 * -8 + 4);
   Line 31 [stack_param]: iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_40,in_stack_ffffffb4);
@@ -34478,11 +34550,12 @@ core_wateract.cpp_CWaterActor_getBoundingBox_FUN_00587650 (5 suspects)
   Line 32 [unrolled_memcpy]: // 005876bb: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400 (16 suspects)
+core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400 (17 suspects)
   File: core/wateract.cpp
 ====================================================================================================
   Line 14 [unaffected_reg]: int unaff_EDI;
   Line 30 [unrolled_memcpy]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 30 [memcpy_oversized_source]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 35 [unaffected_reg]: iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041a840(&CStack_30,unaff_EDI);
   Line 66 [pointer_truncation]: lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)
   Line 66 [pointer_cast]: lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)
@@ -34753,11 +34826,12 @@ core_weapon.cpp_CWeapon_renderAimBeam_FUN_0058a440 (59 suspects)
   Line 106 [unknown_field]: laser_info.reflectivity = (float)in_stack_fffffef4._72_4_;
 
 ====================================================================================================
-core_weapon.cpp_CWeapon_renderOpaque_FUN_00589b90 (3 suspects)
+core_weapon.cpp_CWeapon_renderOpaque_FUN_00589b90 (4 suspects)
   File: core/weapon.cpp
 ====================================================================================================
   Line 11 [stack_param]: int in_stack_ffffffc8;
   Line 20 [unrolled_memcpy]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 20 [memcpy_oversized_source]: for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 26 [stack_param]: ((CBoundingBox3D *)(auStack_24 + 2),in_stack_ffffffc8);
 
 ====================================================================================================
@@ -35387,32 +35461,36 @@ core_xform.cpp_angleFromSinCos_FUN_00591d10 (1 suspect)
   Line 11 [bit_int_float_compare]: if ((-1.0f < cos_value) && ((int)cos_value < 0x3f800000)) {
 
 ====================================================================================================
-core_xform.cpp_buildRotationX_FUN_00593240 (2 suspects)
+core_xform.cpp_buildRotationX_FUN_00593240 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 35 [unrolled_memcpy]: // 005932ac: MOVSD.REP ES:EDI,ESI
   Line 38 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 38 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildRotationY_FUN_005932c0 (2 suspects)
+core_xform.cpp_buildRotationY_FUN_005932c0 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 34 [unrolled_memcpy]: // 0059332b: MOVSD.REP ES:EDI,ESI
   Line 35 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 35 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildXFlipMatrix_FUN_005934e0 (2 suspects)
+core_xform.cpp_buildXFlipMatrix_FUN_005934e0 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 25 [unrolled_memcpy]: // 00593534: MOVSD.REP ES:EDI,ESI
   Line 32 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 32 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildYFlipMatrix_FUN_00593540 (2 suspects)
+core_xform.cpp_buildYFlipMatrix_FUN_00593540 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 26 [unrolled_memcpy]: // 00593595: MOVSD.REP ES:EDI,ESI
   Line 28 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 28 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
 core_xform.cpp_buildZFlipMatrix_FUN_005935a0 (2 suspects)
@@ -35695,10 +35773,11 @@ core_xform.cpp_multiplyMatrix3x4InPlace_FUN_00591860 (6 suspects)
   Line 18 [unrolled_memcpy]: // 00591889: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 (2 suspects)
+core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 47 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 47 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 161 [unrolled_memcpy]: // 0059184f: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -36104,7 +36183,7 @@ core_zombie.cpp_CZombie_processDismemberment_FUN_00599400 (1 suspect)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-core_zombie.cpp_CZombie_processPickup_FUN_005984e0 (84 suspects)
+core_zombie.cpp_CZombie_processPickup_FUN_005984e0 (85 suspects)
   File: core/zombie.cpp
 ====================================================================================================
   Line 12 [unaffected_reg]: float *unaff_EBP;
@@ -36114,6 +36193,7 @@ core_zombie.cpp_CZombie_processPickup_FUN_005984e0 (84 suspects)
   Line 108 [pointer_cast]: this_ptr_00 = *(CZombie **)((int)g_CDemonSetPtr->actors + (int)local_28);
   Line 115 [stack_param]: ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)in_stack_fffffdd4);
   Line 118 [unrolled_memcpy]: for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+  Line 118 [memcpy_oversized_source]: for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 124 [unaffected_reg]: fStack_dc = *unaff_EBP - fStack_154;
   Line 125 [unaffected_reg]: afStack_d8[0] = unaff_EBP[1] - fStack_150;
   Line 126 [unaffected_reg]: afStack_d8[1] = unaff_EBP[2] - fStack_14c;
@@ -43277,7 +43357,7 @@ sound_sndmain.cpp_mixResampleStereoToStereo_FUN_0054d660 (6 suspects)
   Line 46 [carry_arith_idiom]: bVar11 = CARRY4(uVar8,(uint)local_34);
 
 ====================================================================================================
-sound_sndmain.cpp_nextMixingBuffer_FUN_0054d060 (33 suspects)
+sound_sndmain.cpp_nextMixingBuffer_FUN_0054d060 (34 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 14 [stack_param]: byte in_stack_ffffff94 [28];
@@ -43297,6 +43377,7 @@ sound_sndmain.cpp_nextMixingBuffer_FUN_0054d060 (33 suspects)
   Line 69 [raw_address_constant]: uVar8 = 0x54d187;
   Line 78 [stack_ref]: puVar6 = (uint *)&stack0xffffff94;
   Line 79 [unrolled_memcpy]: for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
+  Line 79 [memcpy_oversized_source]: for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 84 [stack_param]: mix_buffer.channel_buffers[7] = (float *)in_stack_ffffffb0;
   Line 85 [stack_param]: mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff94._0_4_;
   Line 85 [unknown_field]: mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff94._0_4_;
@@ -43352,7 +43433,7 @@ sound_sndmain.cpp_playCdTrack_FUN_00554780 (11 suspects)
   Line 57 [concat_reconstruction]: (uint)CONCAT21((ushort)uStack_34,(byte)uStack_30) << 0x10;
 
 ====================================================================================================
-sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0 (45 suspects)
+sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0 (46 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 17 [stack_param]: byte in_stack_ffffff68 [20];
@@ -43375,6 +43456,7 @@ sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0 (45 suspects)
   Line 108 [raw_address_constant]: uVar10 = 0x5543bf;
   Line 117 [stack_ref]: puVar8 = (uint *)&stack0xffffff68;
   Line 118 [unrolled_memcpy]: for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 118 [memcpy_oversized_source]: for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 123 [stack_param]: mix_buffer.channel_buffers[5] = (float *)in_stack_ffffff7c;
   Line 124 [stack_param]: mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff68._0_4_;
   Line 124 [unknown_field]: mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff68._0_4_;
@@ -44109,13 +44191,14 @@ support_trisock.cpp_copyHostent_FUN_00579550 (10 suspects)
   Line 75 [pointer_cast]: return (uint)(0 < *(int *)((int)host_info_out + 0x284));
 
 ====================================================================================================
-support_trisock.cpp_dnsLookupThreadProc_FUN_0057a480 (5 suspects)
+support_trisock.cpp_dnsLookupThreadProc_FUN_0057a480 (6 suspects)
   File: support/trisock.cpp
 ====================================================================================================
   Line 44 [unrolled_strcpy]: do {
   Line 58 [stack_ref]: iVar3 = support_trisock_cpp_lookupHostByAddr_FUN_005797b0(ip_address,&stack0xfffffb10);
   Line 64 [stack_ref]: iVar3 = support_trisock_cpp_lookupHostByName_FUN_00579720(acStack_238,&stack0xfffffb10);
   Line 88 [unrolled_memcpy]: for (iVar3 = 0xae; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 88 [memcpy_oversized_source]: for (iVar3 = 0xae; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 107 [unrolled_memcpy]: // 0057a5a8: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================

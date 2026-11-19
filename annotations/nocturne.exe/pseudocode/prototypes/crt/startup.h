@@ -7,7 +7,7 @@
 
 // Original: crt_startup.c_initialize_runtime_FUN_0056720c
 // Address: 0056720c
-void __cdecl initialize::runtime(HMODULE hModule,void *pThreadParam,int unused);
+void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused);
 
 // Original: crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458
 // Address: 00567458

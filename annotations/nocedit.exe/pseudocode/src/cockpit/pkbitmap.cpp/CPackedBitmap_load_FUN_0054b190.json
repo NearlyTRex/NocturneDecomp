@@ -394,7 +394,7 @@
   "static_analysis": {
     "analyzed_file": "CPackedBitmap_load_FUN_0054b190.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "checker": "deadcode.DeadStores",
@@ -405,42 +405,6 @@
             {
               "line": 30,
               "message": "Value stored to 'bVar11' is never read"
-            }
-          ]
-        },
-        {
-          "checker": "core.NullDereference",
-          "column": 37,
-          "line": 50,
-          "message": "Array access (via field 'row_offsets') results in a null pointer dereference",
-          "path_notes": [
-            {
-              "line": 34,
-              "message": "Assuming 'row_stride' is not equal to 0"
-            },
-            {
-              "line": 34,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 37,
-              "message": "Value assigned to 'ppvVar2'"
-            },
-            {
-              "line": 39,
-              "message": "The value of 'ppvVar2' is assigned to field 'row_offsets'"
-            },
-            {
-              "line": 40,
-              "message": "Assuming 'ppvVar2' is equal to null"
-            },
-            {
-              "line": 40,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 50,
-              "message": "Array access (via field 'row_offsets') results in a null pointer dereference"
             }
           ]
         }

@@ -5,10 +5,12 @@
 # Only analyzes .cpp and .keep.cpp files (skips .mmx.cpp and .byval.cpp
 # which are assembly wrappers with no meaningful C++ to analyze).
 
+import hashlib
 import os
 import re
 import json
 import subprocess
+import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.compiler_config import (
@@ -76,6 +78,47 @@ def _clang_include_flags(include_dir):
     if os.path.isdir(shims_dir):
         flags += ['-I', shims_dir]
     return flags
+
+
+# Functions that never return. Marking them noreturn in Ghidra breaks its other
+# analysis, so only the analyzer is told: without it every `if (!p)
+# displayErrorAndQuit(...)` guard leaves a path on which p is null.
+_FATAL_PROTOTYPE_RE = re.compile(r'^(\w.*_(?:displayErrorAndQuit|ExitProcess)_FUN_[0-9a-f]{8}\(.*\))[^)]*;\s*$')
+
+
+def _analyzer_hint_lines(include_dir):
+    """The program's fatal prototypes, redeclared analyzer_noreturn."""
+    lines = []
+    prototypes_dir = os.path.join(include_dir, 'prototypes')
+    if os.path.isdir(prototypes_dir):
+        for name in sorted(os.listdir(prototypes_dir)):
+            with open(os.path.join(prototypes_dir, name), encoding='utf-8', errors='replace') as f:
+                for line in f:
+                    match = _FATAL_PROTOTYPE_RE.match(line)
+                    if match:
+                        lines.append(match.group(1) + ' __attribute__((analyzer_noreturn));')
+    return lines
+
+
+def _analyzer_hint_flags(include_dir):
+    """-include of a header telling the analyzer which functions never return.
+
+    The header includes nocturne.h first, so the redeclarations follow the
+    prototypes they repeat. It is named by its content, so parallel runs
+    share one file and a changed program gets a new one.
+    """
+    lines = _analyzer_hint_lines(include_dir)
+    if not lines:
+        return []
+    text = '#pragma once\n#include "nocturne.h"\n' + '\n'.join(lines) + '\n'
+    digest = hashlib.sha1(text.encode('utf-8')).hexdigest()[:16]
+    path = os.path.join(tempfile.gettempdir(), 'analyzer_hints_%s.h' % digest)
+    if not os.path.exists(path):
+        with tempfile.NamedTemporaryFile('w', dir=os.path.dirname(path), delete=False,
+                                         suffix='.h', encoding='utf-8') as f:
+            f.write(text)
+        os.replace(f.name, path)
+    return ['-include', path]
 
 
 _COMPILE_ERROR_RE = re.compile(r'^[^:\n]+:\d+:(?:\d+:)?\s*(?:fatal )?error:\s*(.*)$', re.MULTILINE)
@@ -344,7 +387,7 @@ def run_clang_analyzer(cpp_path, include_dir, compiler=DEFAULT_COMPILER,
             '-x', 'c++',  # Force C++ mode even for .c files
             '-Wno-everything',
             '-fno-diagnostics-color',
-        ] + _clang_include_flags(include_dir) + [cpp_path]
+        ] + _clang_include_flags(include_dir) + _analyzer_hint_flags(include_dir) + [cpp_path]
 
         proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
 

@@ -355,7 +355,7 @@
   "static_analysis": {
     "analyzed_file": "CDemonMission_saveWithNewName_FUN_00537f60.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "checker": "security.insecureAPI.strcpy",
@@ -366,110 +366,6 @@
             {
               "line": 25,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NullDereference",
-          "column": 10,
-          "line": 50,
-          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')",
-          "path_notes": [
-            {
-              "line": 32,
-              "message": "Assuming the condition is true"
-            },
-            {
-              "line": 32,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 33,
-              "message": "Value assigned to 'file_ptr'"
-            },
-            {
-              "line": 34,
-              "message": "Assuming 'file_ptr' is equal to null"
-            },
-            {
-              "line": 34,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 40,
-              "message": "Assuming 'file_ptr_00' is not equal to null"
-            },
-            {
-              "line": 40,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 45,
-              "message": "Assuming 'iVar2' is <= 0"
-            },
-            {
-              "line": 45,
-              "message": "Loop condition is false. Execution continues on line 50"
-            },
-            {
-              "line": 50,
-              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr')"
-            }
-          ]
-        },
-        {
-          "checker": "core.NullDereference",
-          "column": 10,
-          "line": 55,
-          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr_00')",
-          "path_notes": [
-            {
-              "line": 32,
-              "message": "Assuming the condition is true"
-            },
-            {
-              "line": 32,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 34,
-              "message": "Assuming 'file_ptr' is not equal to null"
-            },
-            {
-              "line": 34,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 39,
-              "message": "Value assigned to 'file_ptr_00'"
-            },
-            {
-              "line": 40,
-              "message": "Assuming 'file_ptr_00' is equal to null"
-            },
-            {
-              "line": 40,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 45,
-              "message": "Assuming 'iVar2' is <= 0"
-            },
-            {
-              "line": 45,
-              "message": "Loop condition is false. Execution continues on line 50"
-            },
-            {
-              "line": 50,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 50,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 55,
-              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file_ptr_00')"
             }
           ]
         }

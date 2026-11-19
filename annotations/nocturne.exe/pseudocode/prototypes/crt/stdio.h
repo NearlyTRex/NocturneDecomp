@@ -83,11 +83,11 @@ int __watcallStack rename(char *old_filename,char *new_filename);
 
 // Original: crt_stdio.c___allocfp_FUN_00568560
 // Address: 00568560
-_FILE * __cdecl ::_allocfp(int unused_param);
+_FILE * __cdecl __allocfp(int unused_param);
 
 // Original: crt_stdio.c___freefp_FUN_00568620
 // Address: 00568620
-void __cdecl ::_freefp(_FILE *file_handle);
+void __cdecl __freefp(_FILE *file_handle);
 
 // Original: crt_stdio.c_lseek_FUN_005689c0
 // Address: 005689c0
@@ -95,7 +95,7 @@ int __watcallStack lseek(int file_handle_index,long distance_to_move,int move_me
 
 // Original: crt_stdio.c_stream_setup_FUN_0056b227
 // Address: 0056b227
-int __watcallStack stream::setup(_FILE *stream,int operation_type);
+int __watcallStack stream_setup(_FILE *stream,int operation_type);
 
 // Original: crt_stdio.c_fgetcInternal_FUN_0056b2b4
 // Address: 0056b2b4
@@ -107,11 +107,11 @@ void __cdecl reportStreamError(FileEmbeddedData *embedded_data,uint error_flags)
 
 // Original: crt_stdio.c_prepare_stream_for_write_FUN_0056b35c
 // Address: 0056b35c
-BOOL __cdecl prepare::stream_for_write(_FILE *stream);
+BOOL __cdecl prepare_stream_for_write(_FILE *stream);
 
 // Original: crt_stdio.c_stream_flush_FUN_0056b3c2
 // Address: 0056b3c2
-_FILE * __watcallStack stream::flush(_FILE *stream);
+_FILE * __watcallStack stream_flush(_FILE *stream);
 
 // Original: crt_stdio.c_CreateFileVariadic_FUN_0056b934
 // Address: 0056b934
@@ -159,7 +159,7 @@ void __watcallStack storeErrorState(uint *destination,uint error_state);
 
 // Original: crt_stdio.c_get_standard_file_handle_FUN_0056fdf0
 // Address: 0056fdf0
-_FILE * __cdecl get::standard_file_handle(int fd);
+_FILE * __cdecl get_standard_file_handle(int fd);
 
 // Original: crt_stdio.c_closeUnsupported_FUN_00570007
 // Address: 00570007
@@ -171,7 +171,7 @@ void __watcallRegister InitializeConsoleHandles(void);
 
 // Original: crt_stdio.c_fgetc_buffered_FUN_00571c60
 // Address: 00571c60
-int __watcallStack fgetc::buffered(_FILE *stream);
+int __watcallStack fgetc_buffered(_FILE *stream);
 
 // Original: crt_stdio.c_fputs_FUN_00573660
 // Address: 00573660

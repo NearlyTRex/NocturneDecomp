@@ -155,7 +155,7 @@ void __cdecl fflush(_FILE *stream);
 
 // Original: crt_unknown.c_ios_clear_FUN_005b9bf7
 // Address: 005b9bf7
-uint __cdecl ios::clear(ios *this_ptr,uint state_flags);
+uint __cdecl ios_clear(ios *this_ptr,uint state_flags);
 
 // Original: crt_unknown.c_openFile_FUN_005b9c39
 // Address: 005b9c39
@@ -163,11 +163,11 @@ void __cdecl openFile(void *stream_obj,char *filename,int open_mode,SIZE_T buffe
 
 // Original: crt_unknown.c_istream_seekg_FUN_005b9c98
 // Address: 005b9c98
-_istream * __cdecl istream::seekg(void *this_ptr,int offset);
+_istream * __cdecl istream_seekg(void *this_ptr,int offset);
 
 // Original: crt_unknown.c___I8D_FUN_005b9d26
 // Address: 005b9d26
-longlong ::_I8D(longlong dividend,longlong divisor);
+longlong __I8D(longlong dividend,longlong divisor);
 
 // Original: crt_unknown.c_FUN_005b9d7b
 // Address: 005b9d7b
@@ -191,7 +191,7 @@ void FUN_005ba274(undefined4 *param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: crt_unknown.c__getcwd_FUN_005ba2ce
 // Address: 005ba2ce
-char * __cdecl ::getcwd(char *buffer,SIZE_T size);
+char * __cdecl _getcwd(char *buffer,SIZE_T size);
 
 // Original: crt_unknown.c_FUN_005ba300
 // Address: 005ba300
@@ -235,7 +235,7 @@ void FUN_005badc6(void);
 
 // Original: crt_unknown.c___CHK_FUN_005badc7
 // Address: 005badc7
-void __stdcall ::_CHK(int stack_size);
+void __stdcall __CHK(int stack_size);
 
 // Original: crt_unknown.c_FUN_005badd7
 // Address: 005badd7
@@ -251,7 +251,7 @@ undefined4 FUN_005bae03(int param_1);
 
 // Original: crt_unknown.c__strtod_FUN_005bae68
 // Address: 005bae68
-double __cdecl ::strtod(char *str);
+double __cdecl _strtod(char *str);
 
 // Original: crt_unknown.c_FUN_005baf0c
 // Address: 005baf0c
@@ -1547,7 +1547,7 @@ int FUN_005c4310(undefined4 *param_1,short *param_2,uint param_3);
 
 // Original: crt_unknown.c__mktime_FUN_005c43e0
 // Address: 005c43e0
-time_t __cdecl ::mktime(_tm *timeptr);
+time_t __cdecl _mktime(_tm *timeptr);
 
 // Original: crt_unknown.c_FUN_005c45a0
 // Address: 005c45a0

@@ -219,39 +219,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CSfxSlot_seek_FUN_005a8390.keep.cpp",
-    "clang_analyzer_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "checker": "core.NullDereference",
-          "column": 7,
-          "line": 32,
-          "message": "Access to field 'streaming_slot_index' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')",
-          "path_notes": [
-            {
-              "line": 17,
-              "message": "Assuming field 'sample' is equal to null"
-            },
-            {
-              "line": 17,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 30,
-              "message": "Null pointer value stored to 'this_ptr_00'"
-            },
-            {
-              "line": 32,
-              "message": "Access to field 'streaming_slot_index' results in a dereference of a null pointer (loaded from variable 'this_ptr_00')"
-            }
-          ]
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": []
 }

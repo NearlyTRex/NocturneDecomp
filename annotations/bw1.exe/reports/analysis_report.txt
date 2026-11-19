@@ -10,15 +10,15 @@ Total functions: 5467
 Clean functions: 3151 (57.6%)
 Functions with suspects: 2316 (42.4%)
 
-Total suspect patterns: 33853
-Average suspects per function: 6.19
+Total suspect patterns: 33941
+Average suspects per function: 6.21
 
 Virtual files: 219 total, 8 at 100%, 10 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3821, Average: 51.2
 
-Average complexity score: 119.5
+Average complexity score: 119.7
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -46,6 +46,7 @@ SUSPECT PATTERN BREAKDOWN
   extra_output              127
   unrolled_strcat           111
   wrong_global              94
+  memcpy_oversized_source   88
   bit_int_float_compare     77
   carry_arith_idiom         77
   bitcast_double_pair       73
@@ -182,7 +183,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0042c080: core_charactr.cpp_CCharacter_ctor_FUN_0042c080 (score: 2112, suspects: 196, lines: 142)
   0057de01: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0057de01 (score: 2056, suspects: 146, lines: 556)
   00553440: core_set.cpp_CDemonSet_lightVerticies_FUN_00553440 (score: 2044, suspects: 141, lines: 604)
-  005562c0: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 (score: 2002, suspects: 148, lines: 472)
+  005562c0: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 (score: 2017, suspects: 149, lines: 472)
   004615b0: core_djien.cpp_CDjien_getSackTargetPoints_FUN_004615b0 (score: 1857, suspects: 135, lines: 467)
   0051ce40: core_mobster.cpp_CMobster_process_FUN_0051ce40 (score: 1826, suspects: 108, lines: 711)
 
@@ -500,6 +501,19 @@ FUNCTIONS BY SUSPECT TYPE
     00511a10: engine_mini3d.cpp_matrixPushAndTransform_FUN_00511a10
     00511d50: engine_mini3d.cpp_matrixPushAndTransformMatrix_FUN_00511d50
     ... and 15 more
+
+  memcpy_oversized_source (87 functions):
+    00408ec0: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0
+    00409170: core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
+    0040dc80: core_ammo.cpp_CAmmo_renderOpaque_FUN_0040dc80
+    0040e7b0: core_anvil.cpp_CAnvil_renderOpaque_FUN_0040e7b0
+    0040ef70: core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040ef70
+    00410f70: core_bat.cpp_CBat_renderOpaque_FUN_00410f70
+    00413970: core_batman.cpp_CBatman_renderOpaque_FUN_00413970
+    00414500: core_battery.cpp_CBattery_renderOpaque_FUN_00414500
+    00414e00: core_biggs.cpp_CBiggs_renderOpaque_FUN_00414e00
+    00418fc0: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00418fc0
+    ... and 77 more
 
   bit_int_float_compare (45 functions):
     0040fcf0: core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0

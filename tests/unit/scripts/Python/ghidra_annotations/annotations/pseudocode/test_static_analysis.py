@@ -151,6 +151,48 @@ def test_clang_sees_the_shims_the_build_compiles_with(tmp_path, shims, expected)
     assert flags == [f if f == "-I" else str(tmp_path / f) for f in expected]
 
 
+FATAL_PROTOTYPES = (
+    "void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...) __attribute__((format(printf, 1, 2)));\n"
+    "void __cdecl crt_exit_c_ExitProcess_FUN_00602700(int exit_code);\n"
+    "void __cdecl core_main_c_displayError_FUN_00506e00(char *format);\n"
+    "// core_main_c_displayErrorAndQuit_FUN_00506f10(x);\n")
+
+
+def with_prototypes(tmp_path, text = FATAL_PROTOTYPES):
+    include = pseudocode(tmp_path)
+    (tmp_path / "include" / "prototypes").mkdir()
+    (tmp_path / "include" / "prototypes" / "p_500000.h").write_text(text)
+    return include
+
+
+def test_the_analyzer_is_told_which_functions_never_return(tmp_path, monkeypatch):
+    monkeypatch.setattr(sa.tempfile, "gettempdir", lambda: str(tmp_path))
+    include = with_prototypes(tmp_path)
+    flags = sa._analyzer_hint_flags(include)
+    # The same program shares one header across runs
+    assert sa._analyzer_hint_flags(include) == flags and flags[0] == "-include"
+    with open(flags[1], encoding = "utf-8") as f:
+        assert f.read() == (
+            '#pragma once\n#include "nocturne.h"\n'
+            "void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...) "
+            "__attribute__((format(printf, 1, 2))) __attribute__((analyzer_noreturn));\n"
+            "void __cdecl crt_exit_c_ExitProcess_FUN_00602700(int exit_code) __attribute__((analyzer_noreturn));\n")
+
+
+@pytest.mark.parametrize("text", [None, "void __cdecl f_FUN_00401000(void);\n"])
+def test_a_program_without_a_fatal_function_has_no_hints(tmp_path, text):
+    include = pseudocode(tmp_path) if text is None else with_prototypes(tmp_path, text)
+    assert sa._analyzer_hint_flags(include) == []
+
+
+def test_the_analyzer_reads_the_hints_before_the_file(tmp_path, tools, monkeypatch):
+    monkeypatch.setattr(sa.tempfile, "gettempdir", lambda: str(tmp_path))
+    fake = tools(clang_ = None, **{"clang++": (0, "")})
+    sa.run_clang_analyzer("f.cpp", with_prototypes(tmp_path))
+    cmd = fake.calls[0]
+    assert cmd[-3] == "-include" and cmd[-2].startswith(str(tmp_path)) and cmd[-1] == "f.cpp"
+
+
 @pytest.mark.parametrize("deep, loop, nodes", [(False, "2", "max-nodes=25000"), (True, "4", "max-nodes=150000")])
 def test_the_analyzer_runs_its_checkers_at_the_asked_depth(tmp_path, tools, deep, loop, nodes):
     fake = tools(clang_ = None, **{"clang++": (0, "/repo/x/{cpp}:3:1: warning: Value stored is never read [deadcode.DeadStores]\n")})

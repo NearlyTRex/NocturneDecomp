@@ -11,11 +11,11 @@ int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__utime_FUN_00600c1e
 // Address: 00600c1e
-int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
+int __cdecl _utime(char *filename,WatcomUtimbuf *timestamps);
 
 // Original: crt_io.c__chmod_FUN_00600c30
 // Address: 00600c30
-int __cdecl ::chmod(char *path,int mode);
+int __cdecl _chmod(char *path,int mode);
 
 // Original: crt_io.c_chsize_FUN_00600cf0
 // Address: 00600cf0
@@ -27,11 +27,11 @@ int __cdecl chdir(char *path);
 
 // Original: crt_io.c__tempnam_FUN_00601f1c
 // Address: 00601f1c
-void __watcallStack ::tempnam(char *buffer,int file_handle);
+void __watcallStack _tempnam(char *buffer,int file_handle);
 
 // Original: crt_io.c__findfirst_FUN_006021f0
 // Address: 006021f0
-HANDLE __cdecl ::findfirst(char *filespec,_find_t *find_data);
+HANDLE __cdecl _findfirst(char *filespec,_find_t *find_data);
 
 // Original: crt_io.c_convertFileInfo_FUN_00602264
 // Address: 00602264
@@ -39,19 +39,19 @@ void __watcallStack convertFileInfo(LPWIN32_FIND_DATAA win32_data,_find_t *dos_i
 
 // Original: crt_io.c__findnext_FUN_00602300
 // Address: 00602300
-int __cdecl ::findnext(HANDLE find_handle,_find_t *find_data);
+int __cdecl _findnext(HANDLE find_handle,_find_t *find_data);
 
 // Original: crt_io.c__findclose_FUN_00602380
 // Address: 00602380
-int __cdecl ::findclose(HANDLE find_handle);
+int __cdecl _findclose(HANDLE find_handle);
 
 // Original: crt_io.c_register_handler_wrapper_FUN_00602438
 // Address: 00602438
-int __cdecl register::handler_wrapper(HANDLE file_handle);
+int __cdecl register_handler_wrapper(HANDLE file_handle);
 
 // Original: crt_io.c_invalidate_handle_wrapper_FUN_00602448
 // Address: 00602448
-void __cdecl invalidate::handle_wrapper(int handle_index);
+void __cdecl invalidate_handle_wrapper(int handle_index);
 
 // Original: crt_io.c_tell_FUN_00606720
 // Address: 00606720
@@ -59,7 +59,7 @@ long __watcallStack tell(int file_handle_index);
 
 // Original: crt_io.c_analyze_file_type_FUN_00607d50
 // Address: 00607d50
-uint __watcallStack analyze::file_type(uint open_flags,char *filename);
+uint __watcallStack analyze_file_type(uint open_flags,char *filename);
 
 // Original: crt_io.c_getFileStat_FUN_00607e64
 // Address: 00607e64
@@ -67,11 +67,11 @@ int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__utime_FUN_00608160
 // Address: 00608160
-int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
+int __cdecl _utime(char *filename,WatcomUtimbuf *timestamps);
 
 // Original: crt_io.c_extend_file_for_append_FUN_00608410
 // Address: 00608410
-int __cdecl extend::file_for_append(int fd);
+int __cdecl extend_file_for_append(int fd);
 
 // Original: crt_io.c_write_FUN_006084ec
 // Address: 006084ec
@@ -91,4 +91,4 @@ int __cdecl IsSpecialDevice(int handle_index);
 
 // Original: crt_io.c_get_handle_FUN_006109f0
 // Address: 006109f0
-HANDLE __cdecl get::handle(int fd);
+HANDLE __cdecl get_handle(int fd);

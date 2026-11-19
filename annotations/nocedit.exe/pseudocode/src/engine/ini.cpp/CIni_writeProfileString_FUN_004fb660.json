@@ -368,7 +368,7 @@
   "static_analysis": {
     "analyzed_file": "CIni_writeProfileString_FUN_004fb660.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "checker": "security.insecureAPI.strcpy",
@@ -379,110 +379,6 @@
             {
               "line": 39,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NullDereference",
-          "column": 19,
-          "line": 53,
-          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')",
-          "path_notes": [
-            {
-              "line": 29,
-              "message": "Assuming field 'initialized' is not equal to 0"
-            },
-            {
-              "line": 29,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 32,
-              "message": "Value assigned to 'stream'"
-            },
-            {
-              "line": 34,
-              "message": "Assuming 'stream' is equal to null"
-            },
-            {
-              "line": 34,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 46,
-              "message": "Assuming 'file' is not equal to null"
-            },
-            {
-              "line": 46,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 51,
-              "message": "Assuming 'iVar2' is equal to 0"
-            },
-            {
-              "line": 51,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 53,
-              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')"
-            }
-          ]
-        },
-        {
-          "checker": "core.NullDereference",
-          "column": 19,
-          "line": 77,
-          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')",
-          "path_notes": [
-            {
-              "line": 29,
-              "message": "Assuming field 'initialized' is not equal to 0"
-            },
-            {
-              "line": 29,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 32,
-              "message": "Value assigned to 'stream'"
-            },
-            {
-              "line": 34,
-              "message": "Assuming 'stream' is equal to null"
-            },
-            {
-              "line": 34,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 46,
-              "message": "Assuming 'file' is not equal to null"
-            },
-            {
-              "line": 46,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 51,
-              "message": "Assuming 'iVar2' is not equal to 0"
-            },
-            {
-              "line": 51,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 71,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 71,
-              "message": "Loop condition is false. Execution continues on line 75"
-            },
-            {
-              "line": 77,
-              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')"
             }
           ]
         }

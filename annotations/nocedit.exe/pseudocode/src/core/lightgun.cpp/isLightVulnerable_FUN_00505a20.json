@@ -27,8 +27,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_lightgun.cpp_CLightGun_isLightVulnerable_FUN_00505a20",
-    "signature": "int __cdecl core_lightgun_cpp_CLightGun_isLightVulnerable_FUN_00505a20(CLightGun *this_ptr)"
+    "name": "core_lightgun.cpp_isLightVulnerable_FUN_00505a20",
+    "signature": "int __cdecl core_lightgun_cpp_isLightVulnerable_FUN_00505a20(CCharacter *target)"
   },
   "function_calls": [
     {
@@ -102,6 +102,12 @@
     "pcode_op_count": 233
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "00501750",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
     "nocturne.exe": {
       "addr": "004c6f50",
       "by": "name",
@@ -118,15 +124,15 @@
     "variables": [
       {
         "is_param": true,
-        "name": "this_ptr",
+        "name": "target",
         "offset": 4,
         "size": 4,
-        "type": "CLightGun *"
+        "type": "CCharacter *"
       }
     ]
   },
   "static_analysis": {
-    "analyzed_file": "CLightGun_isLightVulnerable_FUN_00505a20.cpp",
+    "analyzed_file": "isLightVulnerable_FUN_00505a20.cpp",
     "clang_analyzer_quick": {
       "diagnostic_count": 1,
       "diagnostics": [

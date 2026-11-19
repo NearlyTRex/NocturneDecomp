@@ -11,4 +11,4 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
 
 // Original: crt_file.c___getfileattr_FUN_0056cce0
 // Address: 0056cce0
-DWORD __cdecl ::_getfileattr(char *filename);
+DWORD __cdecl __getfileattr(char *filename);

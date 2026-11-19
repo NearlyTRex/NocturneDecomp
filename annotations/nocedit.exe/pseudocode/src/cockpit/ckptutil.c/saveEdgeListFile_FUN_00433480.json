@@ -278,55 +278,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "saveEdgeListFile_FUN_00433480.keep.c",
-    "clang_analyzer_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "checker": "core.NullDereference",
-          "column": 28,
-          "line": 37,
-          "message": "Access to field 'edge_count' results in a dereference of a null pointer (loaded from variable 'local_18')",
-          "path_notes": [
-            {
-              "line": 20,
-              "message": "Assuming 'edge_lists' is equal to null"
-            },
-            {
-              "line": 20,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 26,
-              "message": "Assuming 'file' is not equal to null"
-            },
-            {
-              "line": 26,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 33,
-              "message": "Assuming 'edge_list_count' is > 0"
-            },
-            {
-              "line": 33,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 34,
-              "message": "Null pointer value stored to 'local_18'"
-            },
-            {
-              "line": 37,
-              "message": "Access to field 'edge_count' results in a dereference of a null pointer (loaded from variable 'local_18')"
-            }
-          ]
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": []
 }

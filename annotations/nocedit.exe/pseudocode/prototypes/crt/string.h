@@ -11,7 +11,7 @@ void * __cdecl memmove(void *dest,void *src,SIZE_T n);
 
 // Original: crt_string.c__stricmp_FUN_005fe7f0
 // Address: 005fe7f0
-int __cdecl ::stricmp(char *str1,char *str2);
+int __cdecl _stricmp(char *str1,char *str2);
 
 // Original: crt_string.c_strstr_FUN_005fedd0
 // Address: 005fedd0
@@ -19,19 +19,19 @@ char * __cdecl strstr(char *haystack_str,char *needle_str);
 
 // Original: crt_string.c__strcmp_FUN_005fef20
 // Address: 005fef20
-int __cdecl ::strcmp(char *str1,char *str2);
+int __cdecl _strcmp(char *str1,char *str2);
 
 // Original: crt_string.c__strnicmp_FUN_005ff070
 // Address: 005ff070
-int __cdecl ::strnicmp(char *str1,char *str2,int count);
+int __cdecl _strnicmp(char *str1,char *str2,int count);
 
 // Original: crt_string.c__strtod_FUN_005ff0f3
 // Address: 005ff0f3
-double __cdecl ::strtod(char *str);
+double __cdecl _strtod(char *str);
 
 // Original: crt_string.c_strncpy_safe_FUN_005ff130
 // Address: 005ff130
-void __watcallStack strncpy::safe(char *dest,char *src,int length,int maxlen);
+void __watcallStack strncpy_safe(char *dest,char *src,int length,int maxlen);
 
 // Original: crt_string.c_splitpath_FUN_005ff178
 // Address: 005ff178
@@ -47,7 +47,7 @@ char * __cdecl strupr(char *string);
 
 // Original: crt_string.c__strncpy_FUN_00600f40
 // Address: 00600f40
-char * __cdecl ::strncpy(char *dest,char *src,SIZE_T count);
+char * __cdecl _strncpy(char *dest,char *src,SIZE_T count);
 
 // Original: crt_string.c_strerror_FUN_00601470
 // Address: 00601470
@@ -59,19 +59,19 @@ char __watcallStack hexDigitToChar(int digit);
 
 // Original: crt_string.c__stricmp_FUN_006020fc
 // Address: 006020fc
-int __cdecl ::stricmp(char *str1,char *str2);
+int __cdecl _stricmp(char *str1,char *str2);
 
 // Original: crt_string.c_mbtowc_peek_FUN_006059e0
 // Address: 006059e0
-int __watcallStack mbtowc::peek(char *str);
+int __watcallStack mbtowc_peek(char *str);
 
 // Original: crt_string.c_mbtowc_next_FUN_00605a70
 // Address: 00605a70
-char * __watcallStack mbtowc::next(char *str);
+char * __watcallStack mbtowc_next(char *str);
 
 // Original: crt_string.c_mb_get_last_char_FUN_00605aa0
 // Address: 00605aa0
-char * __cdecl mb::get_last_char(char *start,char *end);
+char * __cdecl mb_get_last_char(char *start,char *end);
 
 // Original: crt_string.c_parseFloatString_FUN_00605b9b
 // Address: 00605b9b
@@ -79,7 +79,7 @@ int __cdecl parseFloatString(char *str,void *result,char **endptr);
 
 // Original: crt_string.c_strtod_main_FUN_00605d5d
 // Address: 00605d5d
-double __cdecl strtod::main(char *str,char **endptr);
+double __cdecl strtod_main(char *str,char **endptr);
 
 // Original: crt_string.c_mbstrnlen_FUN_00605e50
 // Address: 00605e50
@@ -95,19 +95,19 @@ int __watcallStack mbstrnbytes(char *str,int char_count);
 
 // Original: crt_string.c_parse_uint_FUN_00607318
 // Address: 00607318
-char * __cdecl parse::uint(char *str,int *result);
+char * __cdecl parse_uint(char *str,int *result);
 
 // Original: crt_string.c__mbstrnicmp_FUN_00608e50
 // Address: 00608e50
-int __cdecl ::mbstrnicmp(char *str1,char *str2,SIZE_T count);
+int __cdecl _mbstrnicmp(char *str1,char *str2,SIZE_T count);
 
 // Original: crt_string.c_mbstring_termination_check_FUN_0060b630
 // Address: 0060b630
-int __watcallStack mbstring::termination_check(char *str);
+int __watcallStack mbstring_termination_check(char *str);
 
 // Original: crt_string.c_mbstrncpy_core_FUN_0060b6d7
 // Address: 0060b6d7
-char * __watcallStack mbstrncpy::core(char *dest,char *src,int count);
+char * __watcallStack mbstrncpy_core(char *dest,char *src,int count);
 
 // Original: crt_string.c_wcstombs_FUN_0060c0c0
 // Address: 0060c0c0
@@ -119,11 +119,11 @@ char * __cdecl strpbrk(char *str,char *char_set);
 
 // Original: crt_string.c_char_in_set_FUN_0060e340
 // Address: 0060e340
-char * __cdecl char::in_set(char *charset,wchar_t wc);
+char * __cdecl char_in_set(char *charset,wchar_t wc);
 
 // Original: crt_string.c_strcpy_advance_FUN_00610240
 // Address: 00610240
-char * __cdecl strcpy::advance(char *dest,char *src);
+char * __cdecl strcpy_advance(char *dest,char *src);
 
 // Original: crt_string.c_strcpy_FUN_00610760
 // Address: 00610760

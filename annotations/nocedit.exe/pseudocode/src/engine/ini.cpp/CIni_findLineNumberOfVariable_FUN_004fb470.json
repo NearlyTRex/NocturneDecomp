@@ -301,39 +301,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CIni_findLineNumberOfVariable_FUN_004fb470.keep.cpp",
-    "clang_analyzer_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "checker": "core.NullDereference",
-          "column": 12,
-          "line": 36,
-          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')",
-          "path_notes": [
-            {
-              "line": 28,
-              "message": "Value assigned to 'stream'"
-            },
-            {
-              "line": 30,
-              "message": "Assuming 'stream' is equal to null"
-            },
-            {
-              "line": 30,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 36,
-              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'stream')"
-            }
-          ]
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": []
 }

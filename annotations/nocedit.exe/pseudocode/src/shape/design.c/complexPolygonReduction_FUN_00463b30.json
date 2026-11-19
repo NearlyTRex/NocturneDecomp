@@ -734,55 +734,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "complexPolygonReduction_FUN_00463b30.keep.c",
-    "clang_analyzer_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "checker": "core.NullDereference",
-          "column": 15,
-          "line": 62,
-          "message": "Dereference of null pointer (loaded from variable 'local_14')",
-          "path_notes": [
-            {
-              "line": 44,
-              "message": "Value assigned to 'local_14'"
-            },
-            {
-              "line": 46,
-              "message": "Assuming 'local_14' is equal to null"
-            },
-            {
-              "line": 46,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 51,
-              "message": "Assuming field 'vertex_indices_count' is >= 3"
-            },
-            {
-              "line": 51,
-              "message": "Left side of '||' is false"
-            },
-            {
-              "line": 52,
-              "message": "Assuming 4 is >= field 'vertex_indices_count'"
-            },
-            {
-              "line": 51,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 62,
-              "message": "Dereference of null pointer (loaded from variable 'local_14')"
-            }
-          ]
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": []
 }

@@ -630,7 +630,7 @@ LAB_004b9af4:
                           local_58 = local_58 + 1;
                         }
                         else if (uVar5 == 3) {
-                          (*this_ptr->vtable->extractPodFile)(this_ptr,local_44[local_20].pod_name);
+                          (*this_ptr->vtable->extractPodFile)(this_ptr,local_44[local_20].pod_name,1);
                           local_4c = local_4c + 1;
                         }
                       }

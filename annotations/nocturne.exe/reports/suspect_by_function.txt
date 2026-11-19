@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4929
 Clean: 3108 (63.1%)
 With suspects: 1821
-Total suspects: 15448
+Total suspects: 15460
 
 ====================================================================================================
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042d100 (2 suspects)
@@ -5355,10 +5355,11 @@ core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0 (8 suspects)
   Line 65 [bitcast_double_pair]: fVar3 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(uStack_94,uStack_98));
 
 ====================================================================================================
-core_dirmat.cpp_CMatrix3x3f_multiply_FUN_0044dfb0 (2 suspects)
+core_dirmat.cpp_CMatrix3x3f_multiply_FUN_0044dfb0 (3 suspects)
   File: core/dirmat.cpp
 ====================================================================================================
   Line 35 [unrolled_memcpy]: for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 35 [memcpy_oversized_source]: for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 116 [unrolled_memcpy]: // 0044e0db: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -18306,60 +18307,68 @@ core_xform.cpp_buildMirrorTransform_FUN_0055caf0 (21 suspects)
   Line 83 [unrolled_memcpy]: // 0055cc20: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildRotationX_FUN_0055c730 (2 suspects)
+core_xform.cpp_buildRotationX_FUN_0055c730 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 35 [unrolled_memcpy]: // 0055c79c: MOVSD.REP ES:EDI,ESI
   Line 38 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 38 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildRotationY_FUN_0055c7b0 (2 suspects)
+core_xform.cpp_buildRotationY_FUN_0055c7b0 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 34 [unrolled_memcpy]: // 0055c81b: MOVSD.REP ES:EDI,ESI
   Line 35 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 35 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildRotationZ_FUN_0055c830 (2 suspects)
+core_xform.cpp_buildRotationZ_FUN_0055c830 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 36 [unrolled_memcpy]: // 0055c89e: MOVSD.REP ES:EDI,ESI
   Line 39 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 39 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildScaleMatrix_FUN_0055c970 (2 suspects)
+core_xform.cpp_buildScaleMatrix_FUN_0055c970 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 26 [unrolled_memcpy]: // 0055c9bd: MOVSD.REP ES:EDI,ESI
   Line 30 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 30 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildTranslationMatrix_FUN_0055c8b0 (2 suspects)
+core_xform.cpp_buildTranslationMatrix_FUN_0055c8b0 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 27 [unrolled_memcpy]: // 0055c902: MOVSD.REP ES:EDI,ESI
   Line 32 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 32 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildUniformScaleMatrix_FUN_0055c910 (2 suspects)
+core_xform.cpp_buildUniformScaleMatrix_FUN_0055c910 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 24 [unrolled_memcpy]: // 0055c95a: MOVSD.REP ES:EDI,ESI
   Line 30 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 30 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildXFlipMatrix_FUN_0055c9d0 (2 suspects)
+core_xform.cpp_buildXFlipMatrix_FUN_0055c9d0 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 25 [unrolled_memcpy]: // 0055ca24: MOVSD.REP ES:EDI,ESI
   Line 32 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 32 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-core_xform.cpp_buildYFlipMatrix_FUN_0055ca30 (2 suspects)
+core_xform.cpp_buildYFlipMatrix_FUN_0055ca30 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 26 [unrolled_memcpy]: // 0055ca85: MOVSD.REP ES:EDI,ESI
   Line 28 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 28 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
 core_xform.cpp_buildZFlipMatrix_FUN_0055ca90 (2 suspects)
@@ -18655,10 +18664,11 @@ core_xform.cpp_multiplyMatrix3x4InPlace_FUN_0055abb0 (6 suspects)
   Line 18 [unrolled_memcpy]: // 0055abd9: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 (2 suspects)
+core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 47 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 47 [memcpy_oversized_source]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 161 [unrolled_memcpy]: // 0055ab9f: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -23970,7 +23980,7 @@ sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750 (6 suspects)
   Line 46 [carry_arith_idiom]: bVar11 = CARRY4(uVar8,(uint)local_34);
 
 ====================================================================================================
-sound_sndmain.cpp_nextMixingBuffer_FUN_00523170 (33 suspects)
+sound_sndmain.cpp_nextMixingBuffer_FUN_00523170 (34 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 14 [stack_param]: byte in_stack_ffffff94 [28];
@@ -23990,6 +24000,7 @@ sound_sndmain.cpp_nextMixingBuffer_FUN_00523170 (33 suspects)
   Line 69 [raw_address_constant]: uVar8 = 0x523297;
   Line 78 [stack_ref]: puVar6 = (uint *)&stack0xffffff94;
   Line 79 [unrolled_memcpy]: for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
+  Line 79 [memcpy_oversized_source]: for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 84 [stack_param]: mix_buffer.channel_buffers[7] = (float *)in_stack_ffffffb0;
   Line 85 [stack_param]: mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff94._0_4_;
   Line 85 [unknown_field]: mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff94._0_4_;
@@ -24019,7 +24030,7 @@ sound_sndmain.cpp_parseWavFile_FUN_00521830 (6 suspects)
   Line 106 [unknown_field]: (int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /
 
 ====================================================================================================
-sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 (45 suspects)
+sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 (46 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 17 [stack_param]: byte in_stack_ffffff68 [20];
@@ -24042,6 +24053,7 @@ sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 (45 suspects)
   Line 108 [raw_address_constant]: uVar10 = 0x5296bf;
   Line 117 [stack_ref]: puVar8 = (uint *)&stack0xffffff68;
   Line 118 [unrolled_memcpy]: for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 118 [memcpy_oversized_source]: for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 123 [stack_param]: mix_buffer.channel_buffers[5] = (float *)in_stack_ffffff7c;
   Line 124 [stack_param]: mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff68._0_4_;
   Line 124 [unknown_field]: mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff68._0_4_;

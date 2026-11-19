@@ -75,13 +75,12 @@
         "call_addr": "005b7b66",
         "call_type": "direct",
         "caller": "crt_stdlib.c__qsort_FUN_005b78b8",
-        "estimated_params": 7,
+        "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
           "EAX",
-          "ECX",
-          "EDX"
+          "ECX"
         ],
         "stack_bytes": 16,
         "stack_params": 4
@@ -105,7 +104,7 @@
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 7,
+    "estimated_params": 6,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -371,11 +370,11 @@
       "call_site_count": 4,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
+      "estimated_params": 6,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:7",
-      "param_delta": 7,
-      "text": "Function declares 0 params but call sites push 7 (7 missing)",
+      "match": "declared:0 vs estimated:6",
+      "param_delta": 6,
+      "text": "Function declares 0 params but call sites push 6 (6 missing)",
       "type": "param_count_too_few"
     }
   ]

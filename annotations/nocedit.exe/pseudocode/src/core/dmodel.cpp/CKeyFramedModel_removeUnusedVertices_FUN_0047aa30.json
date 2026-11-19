@@ -327,55 +327,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CKeyFramedModel_removeUnusedVertices_FUN_0047aa30.keep.cpp",
-    "clang_analyzer_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 5,
-          "line": 43,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 34,
-              "message": "Assuming 0 is < field 'vertex_count'"
-            },
-            {
-              "line": 34,
-              "message": "Left side of '&&' is true"
-            },
-            {
-              "line": 34,
-              "message": "Assuming 0 is < field 'frame_count'"
-            },
-            {
-              "line": 34,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 35,
-              "message": "Value assigned to 'dest'"
-            },
-            {
-              "line": 37,
-              "message": "Assuming 'dest' is equal to null"
-            },
-            {
-              "line": 37,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 43,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
-            }
-          ]
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": []
 }

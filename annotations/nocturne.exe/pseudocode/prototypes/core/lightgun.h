@@ -25,9 +25,9 @@ CLightGun * __cdecl CLightGun::ctor(CLightGun *this_ptr);
 // Address: 004c6ef0
 int __cdecl CLightGun::isVampireType(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_isLightVulnerable_FUN_004c6f50
+// Original: core_lightgun.cpp_isLightVulnerable_FUN_004c6f50
 // Address: 004c6f50
-int __cdecl CLightGun::isLightVulnerable(CLightGun *this_ptr);
+int __cdecl isLightVulnerable(CCharacter *target);
 
 // Original: core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0
 // Address: 004c6ff0

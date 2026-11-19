@@ -7,4 +7,4 @@
 
 // Original: crt_system.c__crtMessageBoxA_FUN_1000a950
 // Address: 1000a950
-int __cdecl ::crtMessageBoxA(LPCSTR lp_text,LPCSTR lp_caption,UINT u_type);
+int __cdecl _crtMessageBoxA(LPCSTR lp_text,LPCSTR lp_caption,UINT u_type);

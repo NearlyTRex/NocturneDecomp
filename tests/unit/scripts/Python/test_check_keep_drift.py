@@ -67,6 +67,25 @@ def test_compare_gives_the_shared_share_and_the_lines_that_differ():
     assert ckd.compare("int x;\nint y;\n", "int x;\n") == (0.6667, 1)
 
 
+def test_a_keep_clears_the_counted_warnings_it_drops():
+    export = ("/* WARNING: Type propagation algorithm not settling */\n"
+              "/* WARNING: Removing unreachable block (ram,0x00401000) */\n"
+              "/* WARNING: Restarted to delay deadcode elimination for space: stack */\n")
+    keep = "/* WARNING: Restarted to delay deadcode elimination for space: stack */\n"
+    assert ckd.cleared_warnings(keep, export) == ["Type propagation algorithm not settling"]
+    assert ckd.cleared_warnings(export, export) == []
+
+
+@pytest.mark.parametrize("row, redundant", [
+    ({"kind": "identical", "shim": False, "clears": []}, True),
+    ({"kind": "identical", "shim": True, "clears": []}, False),
+    ({"kind": "identical", "shim": False, "clears": ["Type propagation algorithm not settling"]}, False),
+    ({"kind": "near", "shim": False, "clears": []}, False),
+])
+def test_only_a_plain_identical_keep_that_clears_nothing_is_redundant(row, redundant):
+    assert ckd.is_redundant(row) is redundant
+
+
 def tree(tmp_path):
     unit = tmp_path / "src" / "core" / "a.cpp"
     unit.mkdir(parents = True)
@@ -89,9 +108,12 @@ def test_collect_reads_every_keep_and_marks_one_with_no_export(tmp_path):
                             "plain_FUN_00000004.keep.c", "same_FUN_00000001.keep.cpp",
                             "shim_FUN_00000003.keep.cpp"]
     assert rows["orphan_FUN_00000005.keep.cpp"] == {**rows["orphan_FUN_00000005.keep.cpp"], "ratio": 0.0,
-                                                   "kind": "no export", "shim": False, "changed": 5}
+                                                   "kind": "no export", "shim": False, "changed": 5,
+                                                   "clears": []}
+    # the export's inlined-function warning never counts, so dropping it clears nothing
     assert rows["same_FUN_00000001.keep.cpp"] == {**rows["same_FUN_00000001.keep.cpp"], "ratio": 1.0,
-                                                 "kind": "identical", "shim": False, "changed": 0}
+                                                 "kind": "identical", "shim": False, "changed": 0,
+                                                 "clears": []}
     assert rows["shim_FUN_00000003.keep.cpp"]["shim"]
     assert rows["edited_FUN_00000002.keep.cpp"]["kind"] == "partial"
 
@@ -105,9 +127,12 @@ def test_the_report_lists_every_keep_once_with_shim_ones_apart():
             {"keep": "/r/q.keep.cpp", "ratio": 0.85, "changed": 5, "kind": "partial", "shim": True},
             {"keep": "/r/w.keep.cpp", "ratio": 0.2, "changed": 9, "kind": "rewritten", "shim": False},
             {"keep": "/r/o.keep.cpp", "ratio": 0.0, "changed": 3, "kind": "no export", "shim": True}]
+    rows = [{**r, "clears": []} for r in rows]
+    rows.append({"keep": "/r/v.keep.cpp", "ratio": 1.0, "changed": 0, "kind": "identical", "shim": False,
+                 "clears": ["Type propagation algorithm not settling"]})
     lines = ckd.format_report(rows, relative_to = "/r").splitlines()
-    assert lines[:6] == ["8 .keep files, each compared with the export beside it",
-                         "  identical      1   (+1 using shim/AUTHENTIC switches)",
+    assert lines[:6] == ["9 .keep files, each compared with the export beside it",
+                         "  identical      2   (+1 using shim/AUTHENTIC switches)",
                          "  near           2   (+0 using shim/AUTHENTIC switches)",
                          "  partial        1   (+1 using shim/AUTHENTIC switches)",
                          "  rewritten      1   (+0 using shim/AUTHENTIC switches)",
@@ -120,6 +145,7 @@ def test_the_report_lists_every_keep_once_with_shim_ones_apart():
 
     assert section("REDUNDANT") == ("-- REDUNDANT: identical code, no shim switch - can be deleted --  1",
                                     ["  1.000    0 line(s) differ  a.keep.cpp"])
+    assert section("REVIEWED")[1] == ["  1.000    0 line(s) differ  v.keep.cpp"]
     assert section("NEAR")[1] == ["  0.990    1 line(s) differ  m.keep.cpp", "  0.960    2 line(s) differ  n.keep.cpp"]
     assert section("PARTIAL")[1] == ["  0.900    4 line(s) differ  p.keep.cpp"]
     assert section("REWRITTEN")[1] == ["  0.200    9 line(s) differ  w.keep.cpp"]

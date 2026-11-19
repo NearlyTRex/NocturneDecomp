@@ -10,15 +10,15 @@ Total functions: 5712
 Clean functions: 3338 (58.4%)
 Functions with suspects: 2374 (41.6%)
 
-Total suspect patterns: 33053
-Average suspects per function: 5.79
+Total suspect patterns: 33136
+Average suspects per function: 5.80
 
 Virtual files: 236 total, 10 at 100%, 13 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 4349, Average: 48.3
 
-Average complexity score: 112.3
+Average complexity score: 112.5
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -45,6 +45,7 @@ SUSPECT PATTERN BREAKDOWN
   extra_output              123
   warning_unreachable       121
   wrong_global              104
+  memcpy_oversized_source   83
   unnamed_field             77
   carry_arith_idiom         77
   bit_int_float_compare     74
@@ -178,12 +179,12 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0055bb93: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0055bb93 (score: 2155, suspects: 152, lines: 595)
   0055b3b1: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1 (score: 2056, suspects: 146, lines: 556)
   00532190: core_set.cpp_CDemonSet_lightVerticies_FUN_00532190 (score: 2044, suspects: 141, lines: 604)
+  00534ea0: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 (score: 2017, suspects: 149, lines: 472)
   004be8a0: core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 (score: 2009, suspects: 140, lines: 564)
-  00534ea0: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 (score: 2002, suspects: 148, lines: 472)
   004fde80: core_mobster.cpp_CMobster_process_FUN_004fde80 (score: 1826, suspects: 108, lines: 711)
   004562a0: core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0 (score: 1815, suspects: 152, lines: 275)
   004f9990: core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990 (score: 1813, suspects: 129, lines: 493)
-  0040a050: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 (score: 1673, suspects: 115, lines: 453)
+  0040a050: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 (score: 1688, suspects: 116, lines: 453)
   00412f40: core_batman.cpp_CBatman_process_FUN_00412f40 (score: 1657, suspects: 103, lines: 597)
 
 FUNCTIONS BY SUSPECT TYPE
@@ -487,6 +488,19 @@ FUNCTIONS BY SUSPECT TYPE
     004b90d0: core_game.cpp_CGame_processCheatCodes_FUN_004b90d0
     004ebf10: core_menu.cpp_configureGraphicsOptions_FUN_004ebf10
     ... and 17 more
+
+  memcpy_oversized_source (82 functions):
+    004090f0: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0
+    004093a0: core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0
+    0040a050: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050
+    0040e0f0: core_ammo.cpp_CAmmo_renderOpaque_FUN_0040e0f0
+    0040ec10: core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10
+    0040f3f0: core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0
+    004113f0: core_bat.cpp_CBat_renderOpaque_FUN_004113f0
+    00413c70: core_batman.cpp_CBatman_renderOpaque_FUN_00413c70
+    00414810: core_battery.cpp_CBattery_renderOpaque_FUN_00414810
+    00415120: core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120
+    ... and 72 more
 
   unnamed_field (36 functions):
     00417cd0: core_bodypart.cpp_SBodyPartFire_dtor_FUN_00417cd0

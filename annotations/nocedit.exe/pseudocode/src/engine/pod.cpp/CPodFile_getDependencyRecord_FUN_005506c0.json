@@ -287,55 +287,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CPodFile_getDependencyRecord_FUN_005506c0.keep.cpp",
-    "clang_analyzer_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "checker": "core.NullDereference",
-          "column": 8,
-          "line": 31,
-          "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file')",
-          "path_notes": [
-            {
-              "line": 16,
-              "message": "Assuming 'dependency_index' is >= 0"
-            },
-            {
-              "line": 16,
-              "message": "Left side of '||' is false"
-            },
-            {
-              "line": 16,
-              "message": "Assuming 'dependency_index' is < field 'dependency_count'"
-            },
-            {
-              "line": 16,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 21,
-              "message": "Value assigned to 'file'"
-            },
-            {
-              "line": 23,
-              "message": "Assuming 'file' is equal to null"
-            },
-            {
-              "line": 23,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 31,
-              "message": "Access to field '_flag' results in a dereference of a null pointer (loaded from variable 'file')"
-            }
-          ]
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": []
 }

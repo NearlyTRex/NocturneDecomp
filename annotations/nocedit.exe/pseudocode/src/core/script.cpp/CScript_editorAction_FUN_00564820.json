@@ -738,76 +738,8 @@
   "static_analysis": {
     "analyzed_file": "CScript_editorAction_FUN_00564820.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
-        {
-          "checker": "core.NonNullParamChecker",
-          "column": 9,
-          "line": 132,
-          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-          "path_notes": [
-            {
-              "line": 31,
-              "message": "Control jumps to 'case ACTION_TYPE_COPY:'  at line 100"
-            },
-            {
-              "line": 102,
-              "message": "Assuming 'g_SelectionStartLine' is >= 0"
-            },
-            {
-              "line": 102,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 105,
-              "message": "Assuming 'g_SelectionStartColumn' is >= 0"
-            },
-            {
-              "line": 105,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 111,
-              "message": "Assuming 'g_SelectionStartLine' is <= 'g_SelectionEndLine'"
-            },
-            {
-              "line": 111,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 118,
-              "message": "Assuming 'local_2c' is >= 0"
-            },
-            {
-              "line": 118,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 121,
-              "message": "Assuming 'uVar9' is >= 'local_28'"
-            },
-            {
-              "line": 121,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 125,
-              "message": "Value assigned to 'local_14'"
-            },
-            {
-              "line": 127,
-              "message": "Assuming 'local_14' is equal to null"
-            },
-            {
-              "line": 127,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 132,
-              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
-            }
-          ]
-        },
         {
           "checker": "security.insecureAPI.strcpy",
           "column": 7,

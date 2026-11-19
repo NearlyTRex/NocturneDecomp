@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 748,
+    "complexity_score": 763,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 218,
-    "suspect_count": 49,
+    "suspect_count": 50,
     "suspect_types": [
       "bit_int_float_compare",
+      "memcpy_oversized_source",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
@@ -638,6 +639,14 @@
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_144[4]` (declared size 4) \u2014 overruns by 2. Likely Ghidra dropped explicit `auStack_144[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 131,
+      "match": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "memcpy_oversized_source"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

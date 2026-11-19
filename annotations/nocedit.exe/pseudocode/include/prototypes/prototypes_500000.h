@@ -8,6 +8,7 @@
 #include "types/classes/CActorProperty.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFileManager.h"
@@ -165,7 +166,7 @@ CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_005058c0(void);
 CDemonActorType * __cdecl core_lightgun_cpp_CLightGun_getActorType_FUN_005058f0(CLightGun *this_ptr);
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_00505900(CLightGun *this_ptr);
 int __cdecl core_lightgun_cpp_CLightGun_isVampireType_FUN_005059c0(CLightGun *this_ptr);
-int __cdecl core_lightgun_cpp_CLightGun_isLightVulnerable_FUN_00505a20(CLightGun *this_ptr);
+int __cdecl core_lightgun_cpp_isLightVulnerable_FUN_00505a20(CCharacter *target);
 void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00505ac0(CLightGun *this_ptr);
 int __cdecl core_lightgun_cpp_CLightGun_canSeeTarget_FUN_00505b70(CLightGun *this_ptr,CDemonActor *target);
 int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr);

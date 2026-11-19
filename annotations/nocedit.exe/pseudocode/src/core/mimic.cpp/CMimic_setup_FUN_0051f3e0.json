@@ -593,7 +593,7 @@
   "static_analysis": {
     "analyzed_file": "CMimic_setup_FUN_0051f3e0.keep.cpp",
     "clang_analyzer_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "checker": "security.insecureAPI.strcpy",
@@ -604,62 +604,6 @@
             {
               "line": 54,
               "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
-            }
-          ]
-        },
-        {
-          "checker": "core.NullDereference",
-          "column": 5,
-          "line": 126,
-          "message": "Dereference of null pointer",
-          "path_notes": [
-            {
-              "line": 43,
-              "message": "Assuming 'mirror_hero' is not equal to null"
-            },
-            {
-              "line": 43,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 53,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 53,
-              "message": "Left side of '&&' is false"
-            },
-            {
-              "line": 61,
-              "message": "Taking false branch"
-            },
-            {
-              "line": 108,
-              "message": "Assuming the condition is false"
-            },
-            {
-              "line": 108,
-              "message": "Left side of '&&' is false"
-            },
-            {
-              "line": 119,
-              "message": "Value assigned to 'pCVar10'"
-            },
-            {
-              "line": 120,
-              "message": "The value of 'pCVar10' is assigned to field 'morph_target_actor'"
-            },
-            {
-              "line": 121,
-              "message": "Assuming 'pCVar10' is equal to null"
-            },
-            {
-              "line": 121,
-              "message": "Taking true branch"
-            },
-            {
-              "line": 126,
-              "message": "Dereference of null pointer"
             }
           ]
         }
