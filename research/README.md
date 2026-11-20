@@ -796,6 +796,59 @@ they are mounted and searched, nocedit's builder, and every shipped POD checked 
 
 ---
 
+### [26-cloth_body_collision/](26-cloth_body_collision/)
+
+Why character cloth clips through the body wearing it, and the options to fix it, ranked by cost.
+
+| File | Description |
+|------|-------------|
+| `README.md` | The cloth step, the collision math, the shipped bone sets, causes, options |
+
+**Key outcomes:**
+- **No port bug; the clipping is the original design.** Offsets and constants match the asm.
+- **Collision bones are cylinders with no end caps**, so every joint has a gap. Only vertices
+  collide, once per frame.
+- **Cheapest fixes:** end caps, a radius floor, extra collision passes.
+
+---
+
+### [27-cloth_motion_settling/](27-cloth_motion_settling/)
+
+Why character cloth keeps moving when the character stands still, and what would let it rest.
+
+| File | Description |
+|------|-------------|
+| `README.md` | The step's forces and corrections, the shipped settings, the experiment, options |
+| `settle_sim.cpp` | A standalone replica of the step for a still body, with switches for each suspect |
+
+**Key outcomes:**
+- **Cloth pressed against a body bone never settles; cloth with clearance does.** Measured in
+  the replica.
+- **Cause:** the springs' fast square root reads edges up to 6% long, pulling cloth tight onto
+  the body. Collision then pushes it 5% past the surface and turns the push into velocity, so
+  it bounces.
+- **Pushing out only to the surface settles it**, with everything else as shipped.
+
+---
+
+### [28-scripted_walk_pathfinding/](28-scripted_walk_pathfinding/)
+
+Why cutscene walkers get stuck, and options from a guaranteed finish up to obstacle-aware
+pathing.
+
+| File | Description |
+|------|-------------|
+| `README.md` | The walk and planner code path, failure modes, netplay constraints, options |
+
+**Key outcomes:**
+- **The planner is a BFS over floor height only.** Actors, props and doors are not in it, and
+  every failure falls back to walking straight at the target.
+- **A walk timeout that moves the actor to its target exists, and nothing ever switches it on.**
+- **Obstacle-aware A\* is feasible** on a scratch grid of our own, provided it stays clear of
+  the shared path-map cache, which netplay depends on.
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)
