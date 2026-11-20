@@ -244,6 +244,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // from CCharacter::walkToPoint and gated there by NOCTURNE_AUTHENTIC_WALK_TURN.
 #include "game/walk_turn.h"
 
+// Whether a looping platform is on its way back (nocturne_platform_loop_return),
+// reached from CPlatform::renderOpaque and gated there by
+// NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN.
+#include "game/platform_loop.h"
+
 // The pause menu's WARPS entry (nocturne_warps_*): the developer warps the
 // shipped mission scripts already listen for, raised the way RAISE raises them.
 // Reached from CGame::runGameSession, shown only when the Mission warps line in

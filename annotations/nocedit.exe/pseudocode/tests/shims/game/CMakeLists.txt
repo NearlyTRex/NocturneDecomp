@@ -1,8 +1,11 @@
 nocturne_test_suite(shims_game
-    TESTS test_walk_turn.cpp test_pad_tuning.cpp test_movie_audio.cpp test_movie_audio_saved.cpp
+    TESTS test_walk_turn.cpp test_platform_loop.cpp test_pad_tuning.cpp test_movie_audio.cpp
+          test_movie_audio_saved.cpp
     SUBJECTS
         # Arithmetic on two arguments; no engine state.
         shims/game/walk_turn.cpp
+        # A platform's state, events and travel times; no engine state.
+        shims/game/platform_loop.cpp
         # Read nocturne.ini through a stand-in for the engine's CIni.
         shims/game/pad_tuning.cpp
         shims/game/movie_audio.cpp

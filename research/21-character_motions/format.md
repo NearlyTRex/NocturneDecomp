@@ -153,6 +153,14 @@ resolves an alias request to the state that was actually entered.
 inside one. Classes use it for footstep loudness, push detection and movement: a
 strafe state's weight is what moves Gabriella sideways.
 
+It tests the target motion's state first, so a tween between two motions of the
+same state reports only the target's share: the state dips towards 0 at both ends
+of the tween instead of staying at 1. 55 motions in the shipped skeletons tween into
+their own state, most of them STAND, SPAR and BLIND loops; the Stranger's
+"deadDrown" self-loop is how a drowned Stranger with his guns out flashes into the
+guns-out pose each loop (`CStranger::makeDrawDecision` draws it at 1 minus the DIE
+and DEAD weights). The decomp fixes it under `NOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT`.
+
 ## Signals
 
 Fired when playback crosses their frame, in any motion including the source of a

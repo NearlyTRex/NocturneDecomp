@@ -567,6 +567,25 @@
 #define NOCTURNE_AUTHENTIC_MENU_BAT_WRAP 0
 #endif
 
+// NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN
+//   Whether a looping platform is drawn on its way back to the start.
+//
+//   TRAIN.MSN streams scenery past the train with two CPlatforms whose
+//   toStartEvent and toEndEvent are both "true": PlatformExtTerrain1, the
+//   telephone pole, and PlatformExtTerrain2, the windmill. Each crosses the set
+//   in 10 s and returns in 0.1 s, and the return is drawn like any move: the
+//   pole sweeps back past the camera for a few frames, more of them the higher
+//   the frame rate.
+//
+//   1: the platform is drawn on the return, as shipped.
+//   0: a platform whose events are both "true" is not drawn while it moves along
+//      its shorter leg (nocturne_platform_loop_return).
+//
+//   Override with -DNOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN=1.
+#ifndef NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN
+#define NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN 0
+#endif
+
 // NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE
 //   CDemonCamera::beginScene runs the camera-shake ADSR state machine once per
 //   rendered scene and traces the phase to the console on every one of them.
@@ -1757,6 +1776,28 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CUE_RETRIGGER=1.
 #ifndef NOCTURNE_AUTHENTIC_CUE_RETRIGGER
 #define NOCTURNE_AUTHENTIC_CUE_RETRIGGER 0
+#endif
+
+// NOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT
+//   How much of a state CMotionController::getStateBlendWeight reports during a
+//   tween between two motions of that same state.
+//
+//   Inside a tween it gives the target motion's state the tween's progress and
+//   the current motion's state the rest, testing the target first. When both
+//   motions are in the state asked about, only the target's share comes back, so
+//   the state's weight drops to near 0 at the start and end of the tween. The
+//   Stranger's "deadDrown" loops into itself through a 0.1 s tween, and
+//   CStranger::makeDrawDecision draws the guns-out pose at 1 minus the DIE and
+//   DEAD weights: each loop, a drowned Stranger with his guns out flashes upright
+//   with his aim beams on. 55 motions in the shipped skeletons tween into their
+//   own state (STAND, SPAR, BLIND, ...) and dip the same way.
+//
+//   1: shipped behaviour - the target motion's share alone.
+//   0: 1 when both motions are in the state.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT=1.
+#ifndef NOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT
+#define NOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME

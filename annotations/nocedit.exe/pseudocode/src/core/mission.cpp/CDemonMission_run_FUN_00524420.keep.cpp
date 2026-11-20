@@ -82,10 +82,14 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     if (color_value == 0) {
       text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Press any key to continue...")
       ;
+#if !NOCTURNE_AUTHENTIC_MENU
+      nocturne_continue_prompt(text);
+#else
       color_mode = 0xf8;
       iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
       engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
                 (g_ThemeFont,0x27f,0x1db - iVar1,color_mode,color_value,text);
+#endif
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

@@ -112,6 +112,25 @@ NOCTURNE_TEST(to_be_continued_is_scaled_with_the_layout) {
     CHECK_EQ(count("swap"), 1);
 }
 
+// The continue prompt after the stats: its right edge at column 639, its foot
+// at row 475, as CDemonMission::run draws it at 640x480.
+NOCTURNE_TEST(the_continue_prompt_is_at_the_lower_right) {
+    fresh();
+    nocturne_continue_prompt((char *)"Press any key to continue...");
+    CHECK_EQ(first("text"), std::string("text theme Press any key to continue... 416 465 248 1"));
+    CHECK_EQ(count("text"), 1);
+}
+
+// Larger, it keeps to the layout's lower right, not the screen's: on a wider
+// screen the layout is centred, and the prompt with it.
+NOCTURNE_TEST(the_continue_prompt_follows_the_layout) {
+    fresh();
+    screens_support::screen(1600, 960);
+    stand.layout = {2.0f, 160, 0};
+    nocturne_continue_prompt((char *)"Press any key to continue...");
+    CHECK_EQ(first("text"), std::string("text theme Press any key to continue... 992 930 248 2"));
+}
+
 // The credits roll up from the picture's foot: nothing shows on the first
 // frame, then the lines from row 448, the heading in its colour, between the
 // strips; Escape stops them. The bitmap font draws them, and the OS font

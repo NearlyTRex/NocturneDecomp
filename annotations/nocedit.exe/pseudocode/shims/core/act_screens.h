@@ -6,7 +6,8 @@
 //
 // CGame::displayActStats, CGame::finishAct and CGame::rollCredits under
 // NOCTURNE_AUTHENTIC_MENU=0, whose keeps call these at their top and carry the
-// shipped routines. Each does as that did with the front end's layout
+// shipped routines; and the continue prompt CDemonMission::run draws over the
+// stats. Each does as that did with the front end's layout
 // (core/front_end_layout.h): the stats picture where and as large as the
 // layout shows it, with its text scaled in the picture's column; "To be
 // continued..." scaled at the screen's centre. The credits' picture keeps to
@@ -25,6 +26,7 @@ extern "C" {
 void nocturne_act_stats(struct CGame *game);
 void nocturne_finish_act(struct CGame *game);
 void nocturne_roll_credits(struct CGame *game);
+void nocturne_continue_prompt(char *text);
 
 #ifdef __cplusplus
 }
