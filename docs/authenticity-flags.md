@@ -128,6 +128,7 @@ shipped", but it is not a bug in the retail game.
 | `MODAL_FIT` | a modal too wide for the screen is clamped rather than pushed off both edges |
 | `BURN_BONE_COUNT` | a burning character can reach fully-burned and die instead of burning forever |
 | `BURN_LOOP_SOUND` | the on-fire crackle stops when the fire does |
+| `SUCCUBUS` | an explosion blows the succubus apart instead of leaving her unharmed, and her voice stops when she dies or no hero is in range |
 | `GOD_MODE_FALL` | god mode survives a lethal-height fall |
 | `FATAL_FALL_HEAL` | a fall that was already fatal does not spend a health item to no effect |
 | `STREAM_LENGTH` | a streamed MP3 ends where the sample actually ends |

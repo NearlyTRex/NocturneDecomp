@@ -66,6 +66,7 @@
 // | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
 // | `NOCTURNE_AUTHENTIC_BURN_BONE_COUNT` | 0 | defect | a burning character can reach fully-burned and die |
 // | `NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND` | 0 | defect | the on-fire loop stops when the fire does |
+// | `NOCTURNE_AUTHENTIC_SUCCUBUS` | 0 | defect | an explosion can kill the succubus, and her voice stops when she dies or is out of range |
 // | `NOCTURNE_AUTHENTIC_GOD_MODE_FALL` | 0 | defect | god mode survives a lethal-height fall |
 // | `NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL` | 0 | defect | an already-fatal fall does not spend a health item |
 // | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
@@ -931,6 +932,36 @@
 //   Override with -DNOCTURNE_AUTHENTIC_BURN_LOOP_SOUND=1.
 #ifndef NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND
 #define NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SUCCUBUS
+//   How the succubus dies, and what stops her voice. Both show in CASTLE1's
+//   easter egg room, where she is tied up and never morphs.
+//
+//   CSuccubus::processDamage zeroes every hit (005c776a) and CCharacter::
+//   processDamage returns at once on zero damage, before its dismember
+//   dispatch, so nothing but burning ends her: not even the dynamite blast
+//   CDemonSet::processActors deals as DAMAGE_TYPE_FALL_APART.
+//
+//   CSuccubus::process keeps her "succubus-horny-?.wav" voice in
+//   CSuccubus::sfx_handle (+0xe32c, 005c7574), apart from CCharacter::
+//   sfx_handle (+0xb7d4), and replays it 5-10 s after each line until
+//   "succubusShutUp", which only MANSION.SCR raises. The two engine paths that
+//   silence a character kill only CCharacter's handle: CCharacter::dismember
+//   (0042b9fb), the end of burning to death, and processCharacter's cut when
+//   no hero is within the character's detection range. Her line plays on
+//   after she burns, and walking away never cuts it.
+//
+//   1: shipped behaviour - every hit is zeroed, and only succubusShutUp and
+//      the morph stop the voice.
+//   0: DAMAGE_TYPE_FALL_APART keeps its damage and blows her apart: an
+//      explosion, a smiley's blast or a vehicle; every other hit is still
+//      zeroed. The voice is killed when she is destroyed and when
+//      processCharacter skips her, as CCharacter's own sound is.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SUCCUBUS=1.
+#ifndef NOCTURNE_AUTHENTIC_SUCCUBUS
+#define NOCTURNE_AUTHENTIC_SUCCUBUS 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GOD_MODE_FALL
