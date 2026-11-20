@@ -230,6 +230,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // CGame::processFrame after the HUD. Inert under NOCTURNE_AUTHENTIC_CHEAT_MENU.
 #include "debug/perf_overlay.h"
 
+// The script and light debug views in a window of their own
+// (nocturne_debug_window_*), drawn from CGame::processFrame. Gated by
+// NOCTURNE_AUTHENTIC_DEBUG_WINDOW.
+#include "debug/debug_window.h"
+
 // The HQ missions' refusal of the draw and flashlight keys
 // (nocturne_hq_filter_input), applied in CGame::playerControls. Gated by
 // NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW.

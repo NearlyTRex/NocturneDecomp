@@ -7,7 +7,7 @@ set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/debug/perf_overlay
         "SDL_GetPerformanceCounter=debug_support_SDL_GetPerformanceCounter;SDL_GetPerformanceFrequency=debug_support_SDL_GetPerformanceFrequency")
 
 nocturne_test_suite(shims_debug
-    EXCLUDE "/test_dump\\.cpp$"
+    EXCLUDE "/test_(dump|debug_window)\\.cpp$"
     SUBJECTS
         shims/debug/focus_trace.cpp
         shims/debug/net_trace.cpp
@@ -34,5 +34,16 @@ nocturne_test_suite(shims_debug_dump
         shims/debug/dump.cpp
     SUPPORT
         dump_support.cpp
+    LIBRARIES ${SDL2_LIBRARIES}
+)
+
+# The debug window, on SDL's dummy video driver: the game's globals, the
+# frame-buffer mapping and the two views' renderers are debug_window_support.cpp's.
+nocturne_test_suite(shims_debug_window
+    TESTS test_debug_window.cpp
+    SUBJECTS
+        shims/debug/debug_window.cpp
+    SUPPORT
+        debug_window_support.cpp
     LIBRARIES ${SDL2_LIBRARIES}
 )

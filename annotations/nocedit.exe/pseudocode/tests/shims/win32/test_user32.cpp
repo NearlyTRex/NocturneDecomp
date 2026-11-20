@@ -273,6 +273,108 @@ NOCTURNE_TEST(window_events_are_destroy_and_activation) {
     CHECK_EQ(stand.focus_arms, arms + 1);
 }
 
+// With the debug window open its mouse and window events are not the game's,
+// its keys are; focus moving between it and the game window is no
+// deactivation, focus leaving both is one, and closing the game window is
+// WM_DESTROY, since SDL keeps SDL_QUIT for its last window.
+NOCTURNE_TEST(the_debug_window_keeps_its_mouse_and_shares_the_focus) {
+    start();
+    drain();
+    const Uint32 kDebug = 99;
+    stand.debug_window_id = kDebug;
+    SDL_Event ev;
+
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_MOUSEMOTION;
+    ev.motion.windowID = kDebug;
+    SDL_PushEvent(&ev);
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_MOUSEBUTTONDOWN;
+    ev.button.windowID = kDebug;
+    ev.button.button = SDL_BUTTON_LEFT;
+    SDL_PushEvent(&ev);
+    ev.type = SDL_MOUSEBUTTONUP;
+    SDL_PushEvent(&ev);
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_MOUSEWHEEL;
+    ev.wheel.windowID = kDebug;
+    ev.wheel.y = 1;
+    SDL_PushEvent(&ev);
+    CHECK(drain().empty());
+    // The game window's own button still is the game's.
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_MOUSEBUTTONDOWN;
+    ev.button.button = SDL_BUTTON_LEFT;
+    SDL_PushEvent(&ev);
+    CHECK_EQ(drain().size(), (size_t)1);
+    // A key pressed in the debug window is the game's.
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_KEYDOWN;
+    ev.key.windowID = kDebug;
+    ev.key.keysym.scancode = SDL_SCANCODE_F5;
+    ev.key.keysym.sym = SDLK_F5;
+    SDL_PushEvent(&ev);
+    bool f5 = false;
+    for (const MSG &m : drain())
+        f5 = f5 || (m.message == kKeyDown);
+    CHECK(f5);
+
+    auto window_event = [&](Uint32 window, Uint8 what) {
+        memset(&ev, 0, sizeof(ev));
+        ev.type = SDL_WINDOWEVENT;
+        ev.window.windowID = window;
+        ev.window.event = what;
+        SDL_PushEvent(&ev);
+    };
+    // Game window to debug window and back: nothing.
+    window_event(0, SDL_WINDOWEVENT_FOCUS_LOST);
+    window_event(kDebug, SDL_WINDOWEVENT_FOCUS_GAINED);
+    CHECK(drain().empty());
+    // Debug window to elsewhere, and back.
+    window_event(kDebug, SDL_WINDOWEVENT_FOCUS_LOST);
+    std::vector<MSG> got = drain();
+    CHECK_EQ(got.size(), (size_t)1);
+    if (!got.empty()) {
+        CHECK_EQ(got[0].message, kActivateApp);
+        CHECK_EQ(got[0].wParam, (WPARAM)0);
+    }
+    window_event(kDebug, SDL_WINDOWEVENT_FOCUS_GAINED);
+    got = drain();
+    CHECK_EQ(got.size(), (size_t)1);
+    if (!got.empty())
+        CHECK_EQ(got[0].wParam, (WPARAM)1);
+    const int arms = stand.focus_arms;
+    window_event(kDebug, SDL_WINDOWEVENT_FOCUS_LOST);
+    window_event(0, SDL_WINDOWEVENT_FOCUS_GAINED);
+    CHECK(drain().empty());
+    CHECK_EQ(stand.focus_arms, arms + 1);
+
+    // The debug window's other events are nothing; the game window's are its
+    // own, and closing it is WM_DESTROY.
+    window_event(kDebug, SDL_WINDOWEVENT_MOVED);
+    window_event(0, SDL_WINDOWEVENT_MOVED);
+    CHECK(drain().empty());
+    window_event(0, SDL_WINDOWEVENT_CLOSE);
+    got = drain();
+    CHECK_EQ(got.size(), (size_t)1);
+    if (!got.empty())
+        CHECK_EQ(got[0].message, kDestroy);
+
+    // Its close button closes it. Closed while it had the focus and the game
+    // window had not, the app is left inactive.
+    window_event(0, SDL_WINDOWEVENT_FOCUS_LOST);
+    window_event(kDebug, SDL_WINDOWEVENT_FOCUS_GAINED);
+    window_event(kDebug, SDL_WINDOWEVENT_CLOSE);
+    got = drain();
+    CHECK_EQ(stand.debug_closes, 1);
+    CHECK_EQ(stand.debug_window_id, 0u);
+    CHECK_EQ(got.size(), (size_t)1);
+    if (!got.empty())
+        CHECK_EQ(got[0].wParam, (WPARAM)0);
+    window_event(0, SDL_WINDOWEVENT_FOCUS_GAINED);
+    drain();
+}
+
 // -----------------------------------------------------------------------------
 // Keys
 // -----------------------------------------------------------------------------

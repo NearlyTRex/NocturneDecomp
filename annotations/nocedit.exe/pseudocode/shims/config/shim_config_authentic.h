@@ -117,6 +117,7 @@
 // | `NOCTURNE_AUTHENTIC_PUSH_SOUND` | 0 | addition | a pushed box scrapes on every shove, not only the first |
 // | `NOCTURNE_AUTHENTIC_MENU` | 0 | addition | the front end's screens are shim pages, with every menu addition |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
+// | `NOCTURNE_AUTHENTIC_DEBUG_WINDOW` | 0 | addition | the script and light debug views open in a window of their own |
 // | `NOCTURNE_AUTHENTIC_ATTRACT_MOVIES` | 0 | addition | the menu cycles NOC1..NOC4 after its music |
 // | `NOCTURNE_AUTHENTIC_ENVMAP_SHADING` | 0 | addition | reflections are shaded per pixel, not per facet |
 // | `NOCTURNE_AUTHENTIC_NETPLAY` | 0 | addition | netplay is reachable, with its fixes |
@@ -2630,6 +2631,30 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CONSOLE=1.
 #ifndef NOCTURNE_AUTHENTIC_CONSOLE
 #define NOCTURNE_AUTHENTIC_CONSOLE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_DEBUG_WINDOW
+//   Where the script and light debug views are drawn.
+//
+//   The SCRIPT cheat, the typed "script" cheat and F5 turn on the script view
+//   and the light view together, and Ctrl+W the light view alone. Each reinits
+//   the camera at 240 lines (CDemonSet::reinitCamera -> CDemonCamera::init),
+//   leaving CScript::renderEditor the rows below and
+//   CDemonSet::renderLightDebugView the columns beside it, at the six screen
+//   places g_LightDebugScreenX/Y give, which were laid out for 640x480. At
+//   any other size only the 3D layer shrinks into the top-left corner while
+//   the static backgrounds keep the whole screen, and a seventh shadow map
+//   lands on the first.
+//
+//   1: shipped behaviour - the views share the game's frame, and the camera
+//      shrinks to make room.
+//   0: the camera keeps the screen, and the views open in a second, resizable
+//      window, the shadow maps in a grid; closing it turns them off.
+//      See shims/debug/debug_window.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_DEBUG_WINDOW=1.
+#ifndef NOCTURNE_AUTHENTIC_DEBUG_WINDOW
+#define NOCTURNE_AUTHENTIC_DEBUG_WINDOW 0
 #endif
 
 // NOCTURNE_AUTHENTIC_ATTRACT_MOVIES

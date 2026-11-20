@@ -172,9 +172,11 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 #endif
       core_inv_cpp_CInventory_renderAllItems_FUN_00500690
                 (&g_HeroActors[g_LocalHeroIndex]->inventory);
+#if NOCTURNE_AUTHENTIC_DEBUG_WINDOW
       if (this_ptr->screen_clear_enabled != 0) {
         core_set_cpp_CDemonSet_renderLightDebugView_FUN_0056d190(g_CDemonSetPtr);
       }
+#endif
       core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(this_ptr);
 #if !NOCTURNE_AUTHENTIC_NETPLAY
       if (g_ModalDialogActive != 0) {
@@ -356,10 +358,14 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (this_ptr->event_processing_enabled != 0) {
         core_event_cpp_CEventList_render_FUN_004addf0(g_CEventListPtr);
       }
+#if NOCTURNE_AUTHENTIC_DEBUG_WINDOW
       if ((this_ptr->subtitle_system_enabled != 0) && (this_ptr->screen_clear_enabled != 0)) {
         core_script_cpp_CScript_renderEditor_FUN_00559d80
                   (g_CScriptPtr,0,0xf0,g_WindowWidth + -1,g_WindowHeight + -1);
       }
+#else
+      nocturne_debug_window_frame();
+#endif
       if (this_ptr->editor_tools_enabled != 0) {
         shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
                   (g_CEditorToolsPtr,local_2dc);

@@ -180,21 +180,17 @@ NOCTURNE_TEST(flag_lines_follow_the_line) {
     }
 }
 
-// Script debug sets its flag and the clear it needs, and shrinks the view to
-// 240 lines for the text, then gives the window its height back; with no set
-// there is no camera to tell.
-NOCTURNE_TEST(script_debug_shrinks_the_view) {
+// Script debug sets its flag and the clear it needs; the text goes to the
+// debug window (debug/debug_window.h), so the view keeps the screen.
+NOCTURNE_TEST(script_debug_leaves_the_view_whole) {
     fresh();
     step(NOCTURNE_CHEAT_SCRIPT_DEBUG);
     CHECK_EQ(game->subtitle_system_enabled, 1);
     CHECK_EQ(game->screen_clear_enabled, 1);
     step(NOCTURNE_CHEAT_SCRIPT_DEBUG);
     CHECK_EQ(game->subtitle_system_enabled, 0);
-    CHECK(stand.camera_heights == std::vector<int>({0xf0, 480}));
-
-    g_CDemonSetPtr = nullptr;
-    step(NOCTURNE_CHEAT_SCRIPT_DEBUG);
-    CHECK_EQ(stand.camera_heights.size(), (size_t)2);
+    CHECK_EQ(game->screen_clear_enabled, 0);
+    CHECK(stand.camera_heights.empty());
 }
 
 // The lines read where they take effect are armed and apply nothing.

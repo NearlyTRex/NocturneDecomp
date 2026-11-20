@@ -2,6 +2,7 @@
 
 #include "core/debug_log.h"
 #include "core/window_icon.h"
+#include "debug/debug_window.h"
 #include "debug/focus_trace.h"
 #include "game/gamepad.h"
 #include "gl/gl_present.h"
@@ -396,10 +397,97 @@ static void queueMouseWheel(MSG msg, const SDL_MouseWheelEvent &wheel) {
 #endif
 }
 
+// Whether the app has focus, as WM_ACTIVATEAPP last told the game.
+static bool s_appActive = true;
+
+static void queueActivateApp(bool active) {
+    MSG msg;
+    memset(&msg, 0, sizeof(msg));
+    msg.hwnd = (HWND)(intptr_t)g_sdlWindow;
+    msg.message = 0x001C; // WM_ACTIVATEAPP
+    msg.wParam = active ? 1 : 0;
+    s_msgQueue.push(msg);
+    s_appActive = active;
+}
+
+static void setWindowFocus(bool focused) {
+    s_windowFocused = focused;
+    if (focused)
+        nocturne_focus_trace_arm();
+    else
+        s_warpPending = false;
+}
+
+// The debug window (debug/debug_window.h). Its keys are the game's, so the
+// script debugger's F5, F9 and F10 work from either window; its mouse and its
+// window events are not. While it is open, focus moving between it and the
+// game window is no deactivation: WM_ACTIVATEAPP follows whether either window
+// has focus, settled once the queue is drained (settleAppFocus).
+static bool s_debugFocused = false;
+
+// Whether `ev` was the open debug window's, or the game window's focus or
+// close while it is open; each is handled here.
+static bool routeDebugWindowEvent(const SDL_Event &ev) {
+    const Uint32 debug_id = nocturne_debug_window_id();
+    if (debug_id == 0)
+        return false;
+    switch (ev.type) {
+    case SDL_MOUSEMOTION:
+        return ev.motion.windowID == debug_id;
+    case SDL_MOUSEBUTTONDOWN:
+    case SDL_MOUSEBUTTONUP:
+        return ev.button.windowID == debug_id;
+    case SDL_MOUSEWHEEL:
+        return ev.wheel.windowID == debug_id;
+    case SDL_WINDOWEVENT:
+        break;
+    default:
+        return false;
+    }
+    const Uint8 what = ev.window.event;
+    const bool focus_event =
+        (what == SDL_WINDOWEVENT_FOCUS_GAINED) || (what == SDL_WINDOWEVENT_FOCUS_LOST);
+    if (ev.window.windowID == debug_id) {
+        if (focus_event)
+            s_debugFocused = (what == SDL_WINDOWEVENT_FOCUS_GAINED);
+        else if (what == SDL_WINDOWEVENT_CLOSE)
+            nocturne_debug_window_close();
+        return true;
+    }
+    if (focus_event) {
+        setWindowFocus(what == SDL_WINDOWEVENT_FOCUS_GAINED);
+        return true;
+    }
+    // SDL sends SDL_QUIT only once its last window has closed.
+    if (what == SDL_WINDOWEVENT_CLOSE) {
+        MSG msg;
+        memset(&msg, 0, sizeof(msg));
+        msg.hwnd = (HWND)(intptr_t)g_sdlWindow;
+        msg.message = 0x0002; // WM_DESTROY
+        s_msgQueue.push(msg);
+        return true;
+    }
+    return false;
+}
+
+// After a drain, the one WM_ACTIVATEAPP the debug window's focus changes add
+// up to. A debug window that closed with the focus leaves the app inactive
+// unless the game window has it.
+static void settleAppFocus() {
+    if (nocturne_debug_window_id() == 0)
+        s_debugFocused = false;
+    const bool active = s_windowFocused || s_debugFocused;
+    if (active != s_appActive)
+        queueActivateApp(active);
+}
+
 static void translateSdlEvent(const SDL_Event &ev) {
     MSG msg;
     memset(&msg, 0, sizeof(msg));
     msg.hwnd = (HWND)(intptr_t)g_sdlWindow;
+
+    if (routeDebugWindowEvent(ev))
+        return;
 
     switch (ev.type) {
     case SDL_QUIT:
@@ -489,17 +577,11 @@ static void translateSdlEvent(const SDL_Event &ev) {
 
     case SDL_WINDOWEVENT:
         if (ev.window.event == SDL_WINDOWEVENT_FOCUS_GAINED) {
-            s_windowFocused = true;
-            nocturne_focus_trace_arm();
-            msg.message = 0x001C; // WM_ACTIVATEAPP
-            msg.wParam = 1;
-            s_msgQueue.push(msg);
+            setWindowFocus(true);
+            queueActivateApp(true);
         } else if (ev.window.event == SDL_WINDOWEVENT_FOCUS_LOST) {
-            s_windowFocused = false;
-            s_warpPending = false;
-            msg.message = 0x001C; // WM_ACTIVATEAPP
-            msg.wParam = 0;
-            s_msgQueue.push(msg);
+            setWindowFocus(false);
+            queueActivateApp(false);
         }
         break;
 
@@ -686,6 +768,7 @@ static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd, unsigned int wMsgFilterMin
     while (SDL_PollEvent(&ev)) {
         translateSdlEvent(ev);
     }
+    settleAppFocus();
     // Return next queued Win32 message
     if (!s_msgQueue.empty()) {
         if (lpMsg) {

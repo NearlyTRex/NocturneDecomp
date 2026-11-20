@@ -189,6 +189,7 @@ shipped", but it is not a bug in the retail game.
 | `PUSH_SOUND` | a pushed box scrapes on every shove of a long push, not only the first |
 | `MENU` | the front end's screens are shim pages carrying every menu addition: titles below the logo, a Gameplay page beside Graphic Options, PLAY and MULTIPLAYER, window mode, the resolution table applied at once with 16:9 modes and a 4:3 mode at each of their heights up to 3840x2160, widescreen pillarbox or pan-and-scan, a choice of upscaling filters (FSR, Lanczos, GSR, NIS, xBR), FXAA anti-aliasing, system text, Movie Vol, the gamepad's tuning, tank or camera movement, bindings that follow the control type, and the build's version in the corner |
 | `CONSOLE` | the console fills the window and keeps scrollback |
+| `DEBUG_WINDOW` | the script and light debug views open in a resizable window of their own, and the game's camera keeps the whole screen |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |
 | `ENVMAP_SHADING` | reflections are shaded per pixel rather than flat per facet |
 | `NETPLAY` | netplay is reachable, with its fixes |
