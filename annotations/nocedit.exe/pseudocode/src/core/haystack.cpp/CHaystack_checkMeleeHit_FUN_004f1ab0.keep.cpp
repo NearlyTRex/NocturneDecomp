@@ -45,7 +45,9 @@ void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(CHaystack *t
     iVar2 = iVar2 + 1;
   }
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
-  if (landed != 0) {
+  if ((landed != 0) &&
+      (_stricmp(core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
+                    (&(this_ptr->base).base.model.base),"SPAR") != 0)) {
     (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,"box-punch?.wav");
   }
 #endif

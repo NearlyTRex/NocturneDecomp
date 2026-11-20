@@ -1323,7 +1323,8 @@
 //      route, or is overridden by locomotion, is put into DIE rather than left
 //      standing at zero hit points, and a player Svetlana does not regenerate
 //      while dead (hero_death.h). Haystack's punch that lands plays his
-//      box-punch, and Moloch's IcePick's punch.
+//      box-punch, except in SPAR, whose motions sound their own blows; and
+//      Moloch's plays IcePick's punch.
 //
 //      Not included: object pickup for classes other than Gabriella, using
 //      items other than health for classes other than Gabriella, and box
