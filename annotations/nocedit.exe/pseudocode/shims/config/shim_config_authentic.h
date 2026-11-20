@@ -67,6 +67,7 @@
 // | `NOCTURNE_AUTHENTIC_BURN_BONE_COUNT` | 0 | defect | a burning character can reach fully-burned and die |
 // | `NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND` | 0 | defect | the on-fire loop stops when the fire does |
 // | `NOCTURNE_AUTHENTIC_SUCCUBUS` | 0 | defect | an explosion can kill the succubus, and her voice stops when she dies or is out of range |
+// | `NOCTURNE_AUTHENTIC_DESTROYED_HERO` | 0 | defect | a hero blown or torn apart is drawn as his parts, not frozen whole |
 // | `NOCTURNE_AUTHENTIC_GOD_MODE_FALL` | 0 | defect | god mode survives a lethal-height fall |
 // | `NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL` | 0 | defect | an already-fatal fall does not spend a health item |
 // | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
@@ -89,6 +90,7 @@
 // | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
 // | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
 // | `NOCTURNE_AUTHENTIC_CUE_RETRIGGER` | 0 | defect | a script music cue does not stack copies of itself while it plays |
+// | `NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS` | 0 | defect | listed defects in the shipped mission scripts are corrected as they run |
 // | `NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME` | 0 | defect | a cutscene that switches the goggles off does not flash the untextured room |
 // | `NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD` | 0 | defect | a script's timed camera hold runs out while the goggles are on |
 // | `NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD` | 0 | defect | the HQ projector keeps its briefing slides after a save load |
@@ -964,6 +966,28 @@
 #define NOCTURNE_AUTHENTIC_SUCCUBUS 0
 #endif
 
+// NOCTURNE_AUTHENTIC_DESTROYED_HERO
+//   Whether a hero who has been blown or torn apart is still drawn whole.
+//
+//   CCharacter::dismember detaches every body part and sets the hero
+//   ACTOR_DESTROYED, as the deleteActor command does without the parts; either
+//   drops him from the set's actor list, so he is never processed again.
+//   CDemonSet::buildDisplayList puts the local hero at the head of the draw
+//   list whatever his state, so the whole model stays drawn, frozen at its
+//   last pose, over his parts if he has any. TRAIN.SCR deletes a hero who
+//   falls from the train (see NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS): the werewolves
+//   come apart on the ground, the hero hangs in the air until the game-over
+//   screen.
+//
+//   1: shipped behaviour - the destroyed hero is drawn where he was.
+//   0: a destroyed hero is left off the draw list, as every other destroyed
+//      character is, and only his detached parts, if any, are drawn.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_DESTROYED_HERO=1.
+#ifndef NOCTURNE_AUTHENTIC_DESTROYED_HERO
+#define NOCTURNE_AUTHENTIC_DESTROYED_HERO 0
+#endif
+
 // NOCTURNE_AUTHENTIC_GOD_MODE_FALL
 //   Whether a lethal-height fall kills the hero while god mode is on.
 //
@@ -1811,6 +1835,35 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CUE_RETRIGGER=1.
 #ifndef NOCTURNE_AUTHENTIC_CUE_RETRIGGER
 #define NOCTURNE_AUTHENTIC_CUE_RETRIGGER 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS
+//   Whether the table of corrections to the shipped mission scripts is applied.
+//
+//   An unbraced if covers one command: CScript::step answers a false test
+//   with skipCommands(next_cmd, 0), which passes one line, one {} block or
+//   one nested if. TRAIN.SCR's :FallOffTrain gives its werewolf branch three
+//   commands without braces, so a hero falling off the train skips only the
+//   kill, is removed whole by deleteactor(@whotokill), and the else then
+//   skips his own fallapart kill: he vanishes instead of coming apart. Of the
+//   456 unbraced if and else in the 28 shipped scripts it is the only body
+//   meant as more than one command; THEATER.SCR:456 and TOWN.SCR:1103 indent
+//   lines after a goto that are not part of the body, so the rule itself
+//   stays as shipped and each case is listed.
+//
+//   The dbSay lines MINE.SCR's gas room gives `$` are the Stranger's
+//   recordings, which in a network game may be said by another hero.
+//
+//   1: shipped behaviour - every if covers one command, and every line plays
+//      the voice and caption it was recorded with.
+//   0: the entries in shims/game/script_quirks.cpp apply: TRAIN.SCR's
+//      werewolf branch covers its three commands, and the gas room's lines
+//      said by another hero are captioned with that hero's name, without the
+//      Stranger's voice.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SCRIPT_QUIRKS=1.
+#ifndef NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS
+#define NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS 0
 #endif
 
 // NOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT

@@ -58,6 +58,11 @@ int __cdecl sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle) {
     return stand.playing.count(sfx_handle) != 0 ? 1 : 0;
 }
 
+int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *, int direction, int) {
+    stand.skipped.push_back(direction);
+    return (direction == stand.skip_fails_at) ? -1 : direction + 1;
+}
+
 float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(CSound *, char *sound_name) {
     std::map<std::string, float>::const_iterator it = stand.durations.find(sound_name);
     return (it != stand.durations.end()) ? it->second : -1.0f;

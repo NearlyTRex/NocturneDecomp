@@ -201,10 +201,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // Gated by NOCTURNE_AUTHENTIC_CUE_RETRIGGER.
 #include "game/script_cue.h"
 
-// Caption and sound replacements for dialogue lines spoken by a hero they were
-// not recorded for (nocturne_dialogue_*), reached from script.cpp's
-// startDialogLine. Gated by NOCTURNE_AUTHENTIC_NETPLAY.
-#include "game/dialogue_override.h"
+// Corrections to the shipped mission scripts (nocturne_script_quirk_*): an
+// unbraced if with a multi-command body, reached from script.cpp's step, and
+// a dialogue line spoken by a hero it was not recorded for, reached from
+// startDialogLine. Gated by NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS.
+#include "game/script_quirks.h"
 
 // The detailed sound error console lines (nocturne_sound_report_*), reached
 // from snddx.cpp's allocateSfx. Gated by NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG.

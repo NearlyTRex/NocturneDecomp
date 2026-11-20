@@ -20,6 +20,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
   CVector3f CStack_50;
   CVector3f CStack_38;
   int local_2c;
+  int draw_hero;
   uint local_28;
   int local_24;
   UOrientationVector *pUVar5;
@@ -29,7 +30,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
   uint uVar4;
   UOrientationVector *pUVar2;
   CDemonActorTransformState *pCVar3;
-  
+
   if (g_CGamePtr->profile_mode != 0) {
     local_2c = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
@@ -121,10 +122,17 @@ LAB_0056fc73:
              core_set_cpp_qsortByDisplayListEntry_FUN_0056fba0);
   iVar1 = g_SetDisplayListCount;
 #if NOCTURNE_AUTHENTIC_NETPLAY
-  if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
+  draw_hero = (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0);
 #else
-  if (nocturne_net_respawn_hero_in_world(g_HeroActors[g_LocalHeroIndex]) == 0) {
+  draw_hero = nocturne_net_respawn_hero_in_world(g_HeroActors[g_LocalHeroIndex]);
 #endif
+#if !NOCTURNE_AUTHENTIC_DESTROYED_HERO
+  if ((draw_hero != 0) &&
+      ((g_HeroActors[g_LocalHeroIndex]->base).base.lifecycle_state == ACTOR_DESTROYED)) {
+    draw_hero = 0;
+  }
+#endif
+  if (draw_hero == 0) {
     for (iVar3 = 0; iVar3 < g_SetDisplayListCount; iVar3 = iVar3 + 1) {
       this_ptr->sorted_render_actors[iVar3] = g_SetDisplayListSortBuffer[iVar3].actor;
     }

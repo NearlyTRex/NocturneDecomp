@@ -180,7 +180,7 @@ void nocturne_net_sim_forget_trigger_hero(void);
 // simulation state, so every machine picks the same hero.
 //
 // The room's two dbSay lines are the Stranger's recordings; spoken by another
-// hero they take a caption from game/dialogue_override.h and play no sound.
+// hero they take a caption from game/script_quirks.h and play no sound.
 
 // The hero `$` means: the local hero outside a network game, as shipped, and
 // the choice above in one. Both resolvers call it — CScript's getActor and

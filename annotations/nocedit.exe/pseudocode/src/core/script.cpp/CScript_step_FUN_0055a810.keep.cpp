@@ -1468,9 +1468,14 @@ LAB_0055a97f:
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_444), iVar8 == 0)
                                                   ) {
+#if NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS
                                                     iVar8 =
                                                   core_script_cpp_CScript_skipCommands_FUN_005601c0
                                                             (this_ptr,this_ptr->next_cmd,0);
+#else
+                                                    iVar8 =
+                                                  nocturne_script_quirk_skip_if_body(this_ptr);
+#endif
                                                   if (iVar8 < 0) {
                                                     _sprintf
                                                               (g_ScriptErrorBuffer,
