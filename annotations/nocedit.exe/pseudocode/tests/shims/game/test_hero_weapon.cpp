@@ -97,6 +97,9 @@ NOCTURNE_TEST(scat_names_his_powder_and_gets_a_pistol_in_netplay) {
     CWeapon *pistol = (CWeapon *)hero->inventory.items[1];
     CHECK(selected(hero) != pistol);
     CHECK_EQ(pistol->ammo_count, 100);
+    // Named for its own slot text, not the Stranger's gat.kfm row.
+    CHECK_EQ(std::string(nocturne_hero_item_text(&pistol->base, "gat.kfm", 0)),
+             std::string("Scat's Pistol"));
 }
 
 // The Colonel's own pistol replaces the shipped one, and is selected.

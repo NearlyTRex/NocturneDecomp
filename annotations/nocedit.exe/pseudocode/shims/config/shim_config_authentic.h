@@ -1199,6 +1199,9 @@
 //                   she keeps ladder_to_climb and runs on without collision.
 //                   It takes a ladder only within 0.3 units of its centre
 //                   line, and her climb is about half the Stranger's speed.
+//     punch sounds  CHaystack::checkMeleeHit discards checkCylinderCollision-
+//                   World's result and plays nothing (004f1b36), where
+//                   CIcePick::performMeleeAttack plays a punch on a hit.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1263,7 +1266,8 @@
 //      (hero_colonel.h). A player hero killed while its DIE request has no
 //      route, or is overridden by locomotion, is put into DIE rather than left
 //      standing at zero hit points, and a player Svetlana does not regenerate
-//      while dead (hero_death.h).
+//      while dead (hero_death.h). Haystack's punch that lands plays his
+//      box-punch, and Moloch's IcePick's punch.
 //
 //      Not included: object pickup for classes other than Gabriella, using
 //      items other than health for classes other than Gabriella, and box

@@ -69,6 +69,7 @@ struct CDemonActor;
 // too. Names survive a save, where a pointer would not.
 #define NOCTURNE_COLONEL_SIDEARM_NAME "Colonel_sidearm"
 #define NOCTURNE_MOLOCH_AMULET_NAME "Moloch_amulet"
+#define NOCTURNE_SCAT_PISTOL_NAME "Scat_pistol"
 
 // What a player hero may hold, by class:
 //
