@@ -73,6 +73,8 @@ void CInventory::initialize(common::CWatcomRandom &crt_random) {
 // loadItems; here each comes off as it is claimed.
 // deferred: showing the held weapon's ammo, with CAmmo
 // nocedit 0x004ff400
+// bw1 0x004f97a0
+// bw3 0x004dc750
 // nocedit 0x004ff740
 void CInventory::load(CActorArchive &actor_archive) {
     common::CTextScanner &scanner = actor_archive.getScanner();

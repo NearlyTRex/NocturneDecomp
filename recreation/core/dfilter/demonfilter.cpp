@@ -41,12 +41,18 @@ CDemonFilter::CDemonFilter(int size, int count) : size_(size), count_(count) {}
 CDemonFilter::~CDemonFilter() = default;
 
 // nocedit 0x00470260
+// bw1 0x0045d9c0
+// bw2 0x00447860
+// bw3 0x00459910
 void CDemonFilter::allocMemory() {
     freeMemory();
     data_buffer_.assign(static_cast<std::size_t>(size_) * static_cast<std::size_t>(count_), 0);
 }
 
 // nocedit 0x004702c0
+// bw1 0x0045da10
+// bw2 0x004478b0
+// bw3 0x00459960
 void CDemonFilter::freeMemory() {
     data_buffer_.clear();
 }
@@ -97,6 +103,9 @@ const std::string &CDemonFilter::getName() const {
 // The width is the file's size's square root, chopped, and its height the size over that, so a
 // few bytes past a square are passed over.
 // nocedit 0x004702f0
+// bw1 0x0045da30
+// bw2 0x004478d0
+// bw3 0x00459980
 void CDemonFilter::load(const engine::CDosIo &dosio, std::string_view filename) {
     const std::optional<std::string> bytes = dosio.readFile("art", filename);
     if (!bytes) {

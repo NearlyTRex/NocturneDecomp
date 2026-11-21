@@ -141,6 +141,9 @@ void CDoor::reposition() {
 
 // A one-shot door that has moved is drawn into the backdrop from then on.
 // nocedit 0x004809e0
+// bw1 0x00478300
+// bw2 0x0045fdf0
+// bw3 0x00464b40
 void CDoor::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
     if (layer_flag == 0 || one_shot_ < EOneShotState::kDone) {
         return;
@@ -152,6 +155,9 @@ void CDoor::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
 }
 
 // nocedit 0x00480a50
+// bw1 0x00478390
+// bw2 0x0045fe80
+// bw3 0x00464bd0
 CBoundingBox3D *CDoor::getBoundingBox(CBoundingBox3D *out_box) {
     *out_box = model_.getModelPtr().getFrameBounds().front();
     return out_box;
@@ -177,6 +183,9 @@ const CDemonActorType &CDoor::getActorType() const {
 }
 
 // nocedit 0x0047fa90
+// bw1 0x00477240
+// bw2 0x0045ed30
+// bw3 0x00463a80
 std::unique_ptr<CDemonActor> CDoor::create(CActor &classes) {
     return std::make_unique<CDoor>(classes);
 }

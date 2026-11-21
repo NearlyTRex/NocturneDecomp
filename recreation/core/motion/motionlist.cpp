@@ -27,11 +27,15 @@ EMotionTransitionCmd toCommand(int number) {
 } // namespace
 
 // nocedit 0x0052cd50
+// bw1 0x005238c0
+// bw2 0x00502760
+// bw3 0x004fb1c0
 CMotionList::CMotionList() = default;
 
 // Each group of fields follows a comment line, which is passed over.
 // nocedit 0x0052cd70
 // bw1 0x00523980
+// bw2 0x00502820
 void CMotionList::load(common::CTextScanner &scanner) {
     scanner.skipLine();
     int version = -1;
@@ -117,6 +121,9 @@ void CMotionList::loadMotion(common::CTextScanner &scanner, int version, SMotion
 }
 
 // nocedit 0x0052d460
+// bw1 0x005240c0
+// bw2 0x00502f10
+// bw3 0x004fb9c0
 int CMotionList::findMotionIndex(std::string_view motion_name, bool error_on_not_found) const {
     for (std::size_t i = 0; i < motions_.size(); ++i) {
         if (common::equalsIgnoringAsciiCase(motions_[i].motion_name, motion_name)) {

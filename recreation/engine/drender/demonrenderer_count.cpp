@@ -58,6 +58,7 @@ void CDemonRenderer::setProjectionScaleSimple(float scale) {
 
 // deferred: refusing to count in the shadow pass, with setShadowPass's callers
 // nocedit 0x0048aa50
+// bw3 0x0046b470
 int CDemonRenderer::countVisiblePixelsPoly(const platform::SMRGLPrimitiveQuad &poly,
                                            std::span<std::uint32_t *const> depth_rows) {
     if (!isFacing(poly.surface_normal)) {

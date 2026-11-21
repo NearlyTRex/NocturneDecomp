@@ -44,6 +44,9 @@ X dotYXZ(const common::CVector3f &v, float x, float y, float z) {
 
 // The bone's frame within its parent bone as the model is now posed.
 // nocedit 0x0043a2b0
+// bw1 0x0043fbd0
+// bw2 0x005af3b0
+// bw3 0x0043d830
 void computeBoneTransform(SClothBone &bone, const CDeformableModelInstance &model) {
     const common::CMatrix3x4f in_parent = multiplyMatrix3x4(
         inverse(
@@ -208,6 +211,9 @@ void CCloth::applyFriction() {
 // unverified: the push out of a bone, as its assembly reads, not run against the original with a
 //   model
 // nocedit 0x0043a420
+// bw1 0x0043fd50
+// bw2 0x005af530
+// bw3 0x0043d9b0
 void CCloth::applyConstraints(SClothVertex &vertex) {
     if (vertex.position.y < floor_y_) {
         vertex.secondary_velocity.y = 0.0F;

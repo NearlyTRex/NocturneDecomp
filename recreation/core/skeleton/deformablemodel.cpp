@@ -20,9 +20,15 @@ namespace nocturne::core {
 using common::toCount;
 
 // nocedit 0x0059a160
+// bw1 0x00563690
+// bw2 0x00541020
+// bw3 0x00548230
 CDeformableModel::CDeformableModel(const SDeformableModelOwners &owners) : owners_(owners) {}
 
 // nocedit 0x0059a270
+// bw1 0x005637b0
+// bw2 0x00541140
+// bw3 0x00548350
 CDeformableModel::~CDeformableModel() = default;
 
 // The original kept the bone tables, as this does.
@@ -68,6 +74,9 @@ void CDeformableModel::allocMemory(int num_lods, int num_texture_sets, int num_t
 // The original quit when it couldn't allocate, which a failed allocation does here, and on a level
 // of detail it doesn't have, which loadStream never asks for.
 // nocedit 0x0059a510
+// bw1 0x005639e0
+// bw2 0x00541370
+// bw3 0x00548580
 void CDeformableModel::allocLOD(int lod_index, int vertex_count, int tri_count, int cap_tri_count) {
     SLodMesh &mesh = meshes_.at(static_cast<std::size_t>(lod_index));
     mesh.tri_count = tri_count;
@@ -79,6 +88,9 @@ void CDeformableModel::allocLOD(int lod_index, int vertex_count, int tri_count, 
 }
 
 // nocedit 0x0059a780
+// bw1 0x00563bb0
+// bw2 0x00541540
+// bw3 0x00548750
 void CDeformableModel::captureTextures() {
     bindSkeleton(owners_.models.loadSkeleton(model_name_));
     for (std::vector<platform::SMRGLTextureBasic> &set : texture_sets_) {
@@ -105,11 +117,17 @@ CSkeleton *CDeformableModel::getSkeletonPtr() {
 }
 
 // nocedit 0x0059a860
+// bw1 0x00563c90
+// bw2 0x00541620
+// bw3 0x00548830
 common::CVector3f *CDeformableModel::getVertexPoolPtr(int index) {
     return &bone_origins_.at(static_cast<std::size_t>(index));
 }
 
 // nocedit 0x0059c240
+// bw1 0x00565780
+// bw2 0x00543100
+// bw3 0x0054a310
 int CDeformableModel::findPartByName(std::string_view part_name, bool error_if_not_found) const {
     for (std::size_t i = 0; i < parts_.size(); ++i) {
         if (common::equalsIgnoringAsciiCase(parts_[i].part_name, part_name)) {

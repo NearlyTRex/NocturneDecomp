@@ -42,6 +42,9 @@ double length(const common::CVector3d &v) {
 // Nothing called it; computeChannelVolumes had its own copy. Nearer than the minimum, or NaN,
 // takes the minimum.
 // nocedit 0x005a56c0
+// bw1 0x0056f400
+// bw2 0x0054cd90
+// bw3 0x00552900
 float calculateDistanceGain(float distance, float reference_distance, float min_distance,
                             float max_distance) {
     if (!(distance >= min_distance)) {
@@ -139,6 +142,9 @@ void CSfxSlot::computeDistancesToSpeakers() {
 
 // The original also divided by the sample's full-scale value, which the mixer does itself.
 // nocedit 0x005a6f00
+// bw1 0x00570d50
+// bw2 0x0054e6e0
+// bw3 0x00554250
 void CSfxSlot::computeChannelVolumes() {
     const float volume =
         sound_main_.getSfxChannelVol(options.channel_index) * options.current_volume;

@@ -10,6 +10,9 @@
 namespace nocturne::cockpit {
 
 // nocedit 0x00431870
+// bw1 0x0043b2e0
+// bw2 0x0042c520
+// bw3 0x00438ef0
 std::vector<std::uint8_t> readBitmapFile(const engine::CDosIo &dosio, std::string_view filename,
                                          std::size_t size) {
     const std::optional<std::string> contents = dosio.readFile("art", filename);

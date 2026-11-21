@@ -38,6 +38,9 @@ const CDemonActorType &CLightCone::getActorType() const {
 }
 
 // nocedit 0x00506ad0
+// bw1 0x00502d40
+// bw2 0x004e4160
+// bw3 0x004e3f90
 std::unique_ptr<CDemonActor> CLightCone::create(CActor & /*classes*/) {
     return std::make_unique<CLightCone>();
 }
@@ -50,6 +53,9 @@ void CLightCone::setup() {
 // The cone points along z from its apex, as long as its falloff and as wide across as the
 // spread over its angle, at the x87's precision.
 // nocedit 0x00506cb0
+// bw1 0x00502f20
+// bw2 0x004e4340
+// bw3 0x004e4170
 CBoundingBox3D *CLightCone::getBoundingBox(CBoundingBox3D *out_box) {
     const float half_width = (common::CExtendedFloat(kSpreadDegrees) /
                               common::CExtendedFloat(fov_) * common::CExtendedFloat(falloff_))
@@ -60,6 +66,7 @@ CBoundingBox3D *CLightCone::getBoundingBox(CBoundingBox3D *out_box) {
 }
 
 // nocedit 0x00506d00
+// bw2 0x004e43a0
 void CLightCone::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveFloat(fov_, "fov");

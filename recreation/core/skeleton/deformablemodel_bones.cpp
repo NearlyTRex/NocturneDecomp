@@ -78,6 +78,9 @@ bool CDeformableModel::endsChain(const CSkeleton &skeleton, int bone_index) cons
 // unverified: comparing the children's distances in double where the x87 holds them at its
 //   extended precision, by running nocedit's code on children of near-equal distance
 // nocedit 0x0059dbe0
+// bw1 0x00567180
+// bw2 0x00544ae0
+// bw3 0x0054bd10
 void CDeformableModel::computeFarthestChildBones() {
     const std::span<const SBone> bones = getSkeletonPtr()->getBones();
     for (std::size_t i = 0; i < bones.size(); ++i) {
@@ -105,6 +108,9 @@ void CDeformableModel::computeFarthestChildBones() {
 //   the rest pose, to find its dominant bone and then each bone's part, for a model of more than
 //   one part, with CDeformableModelInstance::initializeFromModel and computeBoneDominantPart
 // nocedit 0x0059d460
+// bw1 0x00566a20
+// bw2 0x00544380
+// bw3 0x0054b5b0
 void CDeformableModel::computePartDominantBones() {
     if (parts_.size() < 2) {
         for (SPart &part : parts_) {

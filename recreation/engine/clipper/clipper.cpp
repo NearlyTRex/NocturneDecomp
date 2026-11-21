@@ -267,6 +267,9 @@ namespace {
 // deferred: adding the corner count less two to the rendered-triangle count before the hardware
 //  draw, with CGame::processFrame's statistics
 // nocedit 0x004366e0
+// bw1 0x0043c190
+// bw2 0x00431330
+// bw3 0x00439da0
 std::optional<std::vector<SRenderVertex>>
 clipPolygonToViewFrustum(std::span<SRenderVertex *> corners, const SPolygonState &state,
                          CSpecial &special, const C3d &three_d, const SCurrentTexture &texture) {

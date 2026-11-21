@@ -60,10 +60,15 @@ constinit const CDemonActorType CDemonActor::kType =
 //   rendering (but for the transparency), health and footstep fields, with the steps that read
 //   them
 // nocedit 0x004088b0
+// bw1 0x004085c0
+// bw3 0x00408600
 CDemonActor::CDemonActor() = default;
 
 // The original also marked the actor freed, for the editor build's check of actor pointers.
 // nocedit 0x00408a30
+// bw1 0x00408730
+// bw2 0x00408930
+// bw3 0x00408770
 CDemonActor::~CDemonActor() = default;
 
 // nocedit 0x00408b90
@@ -112,6 +117,9 @@ void CDemonActor::updateOrientationMatrix() {
 }
 
 // nocedit 0x00408e80
+// bw1 0x00408ac0
+// bw2 0x00408cf0
+// bw3 0x00408b00
 common::CVector3f *CDemonActor::transformVector(common::CVector3f *output,
                                                 common::CVector3f *input) {
     *output = orientation_matrix_.transformVector(*input);
@@ -121,6 +129,9 @@ common::CVector3f *CDemonActor::transformVector(common::CVector3f *output,
 // An actor with no shape of its own takes up a box eight across and eight high, standing on its
 // feet.
 // nocedit 0x00408c70
+// bw1 0x00408910
+// bw2 0x00408b40
+// bw3 0x00408950
 CBoundingBox3D *CDemonActor::getBoundingBox(CBoundingBox3D *out_box) {
     *out_box = {.min = {.x = -kDefaultHalfWidth, .y = 0.0F, .z = -kDefaultHalfWidth},
                 .max = {.x = kDefaultHalfWidth, .y = kDefaultHeight, .z = kDefaultHalfWidth}};
@@ -129,13 +140,22 @@ CBoundingBox3D *CDemonActor::getBoundingBox(CBoundingBox3D *out_box) {
 
 // The original checked the actor's pointers here in its debug builds.
 // nocedit 0x004098c0
+// bw1 0x004096a0
+// bw2 0x00409850
+// bw3 0x004096e0
 void CDemonActor::updateCollisionData(CDemonSet & /*set*/) {}
 
 // Most actors have no background. Retail's is empty; nocedit's checked the actor's pointers.
 // nocedit 0x00408ae0
+// bw1 0x004087a0
+// bw2 0x004089c0
+// bw3 0x004087e0
 void CDemonActor::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {}
 
 // nocedit 0x00408ec0
+// bw1 0x00408b40
+// bw2 0x00408d70
+// bw3 0x00408b80
 common::CVector3f *CDemonActor::localToWorldPoint(common::CVector3f *output_world_point,
                                                   common::CVector3f *input_local_point) {
     const common::CVector3f turned = orientation_matrix_.transformVector(*input_local_point);

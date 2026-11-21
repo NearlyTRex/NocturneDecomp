@@ -46,6 +46,9 @@ struct CDemonActorType {
 
 // Whether the class, or one it derives from, has the name's hash.
 // nocedit 0x0040c700
+// bw1 0x0040c580
+// bw2 0x0040c870
+// bw3 0x0040c7c0
 [[nodiscard]] constexpr bool checkNameHash(const CDemonActorType *type_ptr,
                                            std::uint32_t name_hash) noexcept {
     for (; type_ptr != nullptr; type_ptr = type_ptr->parent_type) {

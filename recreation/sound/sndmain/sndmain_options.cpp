@@ -12,6 +12,9 @@ CSfxOptions &CSndMain::getNextSfxOptions() {
 }
 
 // nocedit 0x005a88e0
+// bw1 0x00572780
+// bw2 0x00550110
+// bw3 0x00555c90
 void CSndMain::setNextSfxStaticPosition(double pos_x, double pos_y, double pos_z) {
     CSfxOptions &options = getNextSfxOptions();
     options.position = {.x = pos_x, .y = pos_y, .z = pos_z};
@@ -20,48 +23,75 @@ void CSndMain::setNextSfxStaticPosition(double pos_x, double pos_y, double pos_z
 
 // The original followed a null source too, reading through it; here it stops the following.
 // nocedit 0x005a8940
+// bw1 0x005727e0
+// bw2 0x00550170
+// bw3 0x00555cf0
 void CSndMain::setNextSfxTrackedFloatPosition(const common::CVector3f *position_source_ptr) {
     getNextSfxOptions().position_source_ptr = position_source_ptr;
 }
 
 // The original followed a null source too, reading through it; here it stops the following.
 // nocedit 0x005a8a00
+// bw1 0x00572880
+// bw2 0x00550210
+// bw3 0x00555d90
 void CSndMain::setNextSfxTrackedVelocity1(const common::CVector3f *velocity_source_ptr) {
     getNextSfxOptions().velocity_source_ptr = velocity_source_ptr;
 }
 
 // nocedit 0x005a8a60
+// bw1 0x005728e0
+// bw2 0x00550270
+// bw3 0x00555df0
 void CSndMain::setNextSfxVolume(float volume) {
     getNextSfxOptions().current_volume = volume;
 }
 
 // nocedit 0x005a8a80
+// bw1 0x00572900
+// bw2 0x00550290
+// bw3 0x00555e10
 void CSndMain::setNextSfxBaseFrequency(float base_frequency) {
     getNextSfxOptions().base_frequency = base_frequency;
 }
 
 // nocedit 0x005a8af0
+// bw1 0x00572980
+// bw2 0x00550310
+// bw3 0x00555e90
 void CSndMain::setNextSfxChannel(int channel_index) {
     checkSfxChannel("setNextSfxChannel", channel_index);
     getNextSfxOptions().channel_index = channel_index;
 }
 
 // nocedit 0x005a8b40
+// bw1 0x005729d0
+// bw2 0x00550360
+// bw3 0x00555ee0
 void CSndMain::setNextSfxDelay(double delay_seconds) {
     getNextSfxOptions().delay_remaining = delay_seconds;
 }
 
 // nocedit 0x005a8b70
+// bw1 0x005729f0
+// bw2 0x00550380
+// bw3 0x00555f00
 void CSndMain::setNextSfxFlags(std::uint32_t flags) {
     getNextSfxOptions().flags = flags;
 }
 
 // nocedit 0x005a8b90
+// bw1 0x00572a10
+// bw2 0x005503a0
+// bw3 0x00555f20
 void CSndMain::setNextSfxFlagBits(std::uint32_t flag_mask) {
     getNextSfxOptions().flags |= flag_mask;
 }
 
 // nocedit 0x005a8be0
+// bw1 0x00572a50
+// bw2 0x005503e0
+// bw3 0x00555f60
 void CSndMain::setNextSfxTriggerTime(double playback_position,
                                      EPlaybackPosType playback_position_type) {
     CSfxOptions &options = getNextSfxOptions();
@@ -70,6 +100,9 @@ void CSndMain::setNextSfxTriggerTime(double playback_position,
 }
 
 // nocedit 0x005a8c30
+// bw1 0x00572ac0
+// bw2 0x00550450
+// bw3 0x00555fd0
 void CSndMain::pushSfxOptions() {
     if (sfx_last_slot_ + 1 == sfx_options_.size()) {
         common::displayErrorAndQuit("pushSfxOptions - stack full");
@@ -121,6 +154,9 @@ void CSndMain::setNumberOfSfxChannels(int channel_count) {
 }
 
 // nocedit 0x005a9e20
+// bw1 0x00573c50
+// bw2 0x00551220
+// bw3 0x00556db0
 void CSndMain::enableSfxChannel(int channel_index, bool enable_state) {
     checkSfxChannel("enableSfxChannel", channel_index);
     sfx_channel_enabled_.at(static_cast<std::size_t>(channel_index)) = enable_state;

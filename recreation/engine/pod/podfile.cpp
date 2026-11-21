@@ -91,6 +91,9 @@ std::string nameAt(std::span<const std::byte> block, std::size_t offset) {
 } // namespace
 
 // nocedit 0x0054f5a0
+// bw1 0x0053b1a0
+// bw2 0x00519e50
+// bw3 0x00512f00
 CPodFile::CPodFile(platform::IFileSystem &file_system, const CDosIo &dosio)
     : file_system_(file_system), dosio_(dosio) {}
 
@@ -218,6 +221,9 @@ bool CPodFile::readPod1(platform::IFile &file) {
 
 // The original kept the description.
 // nocedit 0x00550090
+// bw1 0x0053be30
+// bw2 0x0051a8f0
+// bw3 0x00513b90
 void CPodFile::cleanup() {
     version_ = 0;
     filename_.clear();
@@ -229,6 +235,9 @@ void CPodFile::cleanup() {
 // The original drew the editor's progress and listed the failing files in a pick list; the
 // failure is the result instead. It also refused a pod with no filename, which a mounted one has.
 // nocedit 0x00550230
+// bw1 0x0053bfc0
+// bw2 0x0051aa80
+// bw3 0x00513d20
 std::expected<void, std::string> CPodFile::verifyChecksum() const {
     if (version_ == 0) {
         return std::unexpected("isn't mounted");
@@ -261,6 +270,9 @@ std::vector<std::string> CPodFile::findFilesFailingCrc(platform::IFile &file) co
 
 // Nothing when the file ends inside the entry. The original opened the pod again for each file.
 // nocedit 0x005507f0
+// bw1 0x0053c4c0
+// bw2 0x0051af80
+// bw3 0x00514220
 std::optional<std::uint32_t> CPodFile::computeFileCRC(platform::IFile &file,
                                                       const CPodDirectoryEntry &entry) {
     file.seek(entry.offset);
@@ -295,6 +307,9 @@ std::expected<void, std::string> CPodFile::verifyWholeFileCrc(platform::IFile &f
 // The original quit on an index outside the trail, a pod it couldn't open or a record it
 // couldn't read, and handed back any operation the record held.
 // nocedit 0x00550590
+// bw1 0x0053c290
+// bw2 0x0051ad50
+// bw3 0x00513ff0
 std::optional<CPodAuditRecord> CPodFile::getAuditRecord(int record_index) const {
     if (record_index < 0 || record_index >= audit_count_) {
         return std::nullopt;

@@ -130,6 +130,9 @@ void CMotionController::jumpToMotion(int target_motion_index, float target_frame
 }
 
 // nocedit 0x0052dab0
+// bw1 0x00524770
+// bw2 0x005035c0
+// bw3 0x004fc070
 const SMotion &CMotionController::getCurrentMotion() const {
     return motion_list_->getMotions()[static_cast<std::size_t>(current_motion_index_)];
 }
@@ -168,6 +171,9 @@ void CMotionController::setDesiredState(int desired_state_index, bool force_imme
 // is for another, which can't be: a new state drops the route, and keepState only changes the
 // state as a route lands, in the step that drops it. Nor can the route found be the one under way.
 // nocedit 0x0052d950
+// bw1 0x00524620
+// bw2 0x00503470
+// bw3 0x004fbf20
 bool CMotionController::findAndStartTransition() {
     const SMotion &motion = getCurrentMotion();
     if (state_index_ < 0 || state_index_ == motion.state_index) {
@@ -342,6 +348,7 @@ int CMotionController::stepTween(float &step_time) {
 // A NaN step runs the frame to NaN, before the motion's end.
 // nocedit 0x0052de70
 // bw1 0x00524ba0
+// bw2 0x00503a10
 int CMotionController::advanceFrameAndCheckSignals(int &motion_index, float &frame_number,
                                                    float delta_time, float scale_factor) {
     const SMotion &motion = motion_list_->getMotions()[static_cast<std::size_t>(motion_index)];
@@ -375,6 +382,7 @@ int CMotionController::advanceFrameAndCheckSignals(int &motion_index, float &fra
 // to the target of a route waiting for it. A NaN step counts as before the exit.
 // nocedit 0x0052e020
 // bw1 0x00524d70
+// bw2 0x00503bd0
 int CMotionController::advanceFrameToExitPoint(int motion_index, float current_frame,
                                                float &delta_time,
                                                SMotionTransition &out_transition) {
@@ -412,6 +420,9 @@ int CMotionController::advanceFrameToExitPoint(int motion_index, float current_f
 
 // The step cut short at the first signal it reaches, or at the motion's end.
 // nocedit 0x0052e1d0
+// bw1 0x00524f40
+// bw2 0x00503d80
+// bw3 0x004fc850
 void CMotionController::advanceTween(int motion_index, float current_frame,
                                      float &remaining_time) const {
     const SMotion &motion = motion_list_->getMotions()[static_cast<std::size_t>(motion_index)];
@@ -460,6 +471,7 @@ const CMotionList *CMotionController::getMotionList() const {
 // the frame itself until Blair Witch's frame resolutions.
 // nocedit 0x0052e4c0
 // bw1 0x00525240
+// bw2 0x00504080
 SInterpolationFrames CMotionController::getFramesForInterpolation(int motion_index,
                                                                   float frame_number) const {
     const std::span<const SMotion> motions = motion_list_->getMotions();

@@ -20,6 +20,9 @@ std::string formatFloat(float value) {
 
 // initIniFile's copy, which took a null filename as empty, is the member initialiser.
 // nocedit 0x004fba70
+// bw1 0x004f4b00
+// bw2 0x004d8910
+// bw3 0x004d8a20
 // nocedit 0x004fbaa0
 CIniFile::CIniFile(CIni &ini, std::string_view filename, std::string_view section)
     : ini_(ini), filename_(filename) {
@@ -46,23 +49,35 @@ void CIniFile::setString(std::string_view key, std::string_view value) {
 }
 
 // nocedit 0x004fbc30
+// bw1 0x004f4d10
+// bw2 0x004d8b20
+// bw3 0x004d8c30
 int CIniFile::getInteger(std::string_view key_name, int value) const {
     return common::scanInteger(getString(key_name, std::to_string(value), kNumberBufferSize))
         .value_or(value);
 }
 
 // nocedit 0x004fbc90
+// bw1 0x004f4d70
+// bw2 0x004d8b80
+// bw3 0x004d8c90
 void CIniFile::setInteger(std::string_view key, int value) {
     setString(key, std::to_string(value));
 }
 
 // A missing key still round-trips the value through "%g", which keeps six significant digits.
 // nocedit 0x004fbcd0
+// bw1 0x004f4db0
+// bw2 0x004d8bc0
+// bw3 0x004d8cd0
 float CIniFile::getFloat(std::string_view key, float value) const {
     return common::scanFloat(getString(key, formatFloat(value), kNumberBufferSize)).value_or(value);
 }
 
 // nocedit 0x004fbd30
+// bw1 0x004f4e20
+// bw2 0x004d8c30
+// bw3 0x004d8d40
 void CIniFile::setFloatValue(std::string_view key, float value) {
     setString(key, formatFloat(value));
 }

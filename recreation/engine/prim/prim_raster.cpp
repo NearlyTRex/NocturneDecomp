@@ -52,6 +52,9 @@ void rasterizeEdges(std::span<const SRenderVertex *const> corners, EDepthSource 
 } // namespace
 
 // nocedit 0x00551f70
+// bw1 0x0053db80
+// bw2 0x0051c580
+// bw3 0x005158e0
 SSoftwareEdge *findEdgeInBuffer(std::span<SSoftwareEdge> edges, int y_value,
                                 const SSoftwareEdge *edge_ptr) {
     const auto found = std::ranges::find_if(edges, [y_value, edge_ptr](const SSoftwareEdge &edge) {
@@ -119,6 +122,9 @@ void CPrim::renderIndexedPolygon(std::span<SRenderVertex> vertex_buffer,
 
 // deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00552510
+// bw1 0x0053e120
+// bw2 0x0051cb20
+// bw3 0x00515e80
 void CPrim::renderPolygonSoftware(std::span<SRenderVertex> vertices, const SPolygonState &state) {
     renderPolygon(vertices, state, EVariant::Simple);
 }
@@ -127,6 +133,9 @@ void CPrim::renderPolygonSoftware(std::span<SRenderVertex> vertices, const SPoly
 // other than 0, which neither build ever sets.
 // deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00552a40
+// bw1 0x0053e650
+// bw2 0x0051d050
+// bw3 0x005163b0
 void CPrim::renderIndexedPolygonSoftware(std::span<SRenderVertex> vertex_buffer,
                                          std::span<const int> vertex_indices,
                                          const SPolygonState &state) {
@@ -135,6 +144,9 @@ void CPrim::renderIndexedPolygonSoftware(std::span<SRenderVertex> vertex_buffer,
 
 // deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00553470
+// bw1 0x0053f080
+// bw2 0x0051da80
+// bw3 0x00516de0
 void CPrim::renderScanlinePolygon(std::span<SRenderVertex> vertices, const SPolygonState &state) {
     renderPolygon(vertices, state, EVariant::Advanced);
 }
@@ -143,6 +155,9 @@ void CPrim::renderScanlinePolygon(std::span<SRenderVertex> vertices, const SPoly
 // other than 0, which neither build ever sets.
 // deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00553b10
+// bw1 0x0053f720
+// bw2 0x0051e130
+// bw3 0x00517480
 void CPrim::renderIndexedPolygonAdvanced(std::span<SRenderVertex> vertex_buffer,
                                          std::span<const int> vertex_indices,
                                          const SPolygonState &state) {

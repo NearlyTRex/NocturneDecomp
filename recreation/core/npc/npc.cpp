@@ -39,6 +39,9 @@ void CNPC::setup() {
 }
 
 // nocedit 0x004f4700
+// bw1 0x004ed400
+// bw2 0x004d11c0
+// bw3 0x00509af0
 CNPC::~CNPC() = default;
 
 // nocedit 0x005447d0
@@ -47,6 +50,9 @@ const CDemonActorType &CNPC::getActorType() const {
 }
 
 // nocedit 0x005447a0
+// bw1 0x00531640
+// bw2 0x00510430
+// bw3 0x00508f10
 std::unique_ptr<CDemonActor> CNPC::create(CActor &classes) {
     return std::make_unique<CNPC>(classes);
 }

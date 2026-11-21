@@ -7,11 +7,17 @@
 namespace nocturne::shape {
 
 // nocedit 0x004a3b90
+// bw1 0x0049a620
+// bw2 0x00481fc0
+// bw3 0x004831c0
 CPickList::CPickList(const SPickListOwners &owners)
     : owners_(owners), scrollbar_(owners.controls) {}
 
 // The original cleared the list and freed the enable array by hand.
 // nocedit 0x004a3c80
+// bw1 0x0049a710
+// bw2 0x004820b0
+// bw3 0x004832b0
 CPickList::~CPickList() = default;
 
 void CPickList::requireNoneEnabled(std::string_view message) const {
@@ -45,6 +51,9 @@ void CPickList::swap(int index1, int index2) {
 }
 
 // nocedit 0x004a5770
+// bw1 0x0049c370
+// bw2 0x00483d10
+// bw3 0x00484f10
 void CPickList::clear() {
     enabled_array_.clear();
     CStrList::clear();

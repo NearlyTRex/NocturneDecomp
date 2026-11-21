@@ -31,6 +31,7 @@ CHealthItem::CHealthItem(CActor &classes) : model_(classes.getKeyFramedModels())
 }
 
 // nocedit 0x004f20d0
+// bw2 0x004cdb00
 CHealthItem::~CHealthItem() = default;
 
 // nocedit 0x004f1dc0
@@ -39,11 +40,17 @@ const CDemonActorType &CHealthItem::getActorType() const {
 }
 
 // nocedit 0x004f1d90
+// bw1 0x004ea300
+// bw2 0x004cda40
+// bw3 0x004d1d50
 std::unique_ptr<CDemonActor> CHealthItem::create(CActor &classes) {
     return std::make_unique<CHealthItem>(classes);
 }
 
 // nocedit 0x004f1e30
+// bw1 0x004ea390
+// bw2 0x004cdae0
+// bw3 0x004d1df0
 void CHealthItem::setup() {
     model_.preCache();
     CDemonActor::setup();
@@ -51,6 +58,7 @@ void CHealthItem::setup() {
 
 // Version 2 held a shown name, which is read and dropped.
 // nocedit 0x004f1f20
+// bw2 0x004cdee0
 void CHealthItem::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveKeyframedModelInstance(model_, "modelName");
@@ -66,6 +74,9 @@ void CHealthItem::archive(CActorArchive &actor_archive) {
 void CHealthItem::process(float /*delta_time*/) {}
 
 // nocedit 0x004f1ed0
+// bw1 0x004ea440
+// bw2 0x004cdea0
+// bw3 0x004d1fa0
 CBoundingBox3D *CHealthItem::getBoundingBox(CBoundingBox3D *out_box) {
     *out_box = model_.getModelPtr().getFrameBounds().front();
     return out_box;

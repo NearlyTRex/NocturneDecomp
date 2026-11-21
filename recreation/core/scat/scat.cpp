@@ -29,6 +29,7 @@ constinit const CDemonActorType CScat::kType =
 // deferred: the network pistol's reserve topped up after each shot (the decomp's hero_weapon.h
 //   nocturne_hero_reload_extra_gun), with CScat::process and CNetGame
 // nocedit 0x00556ed0
+// bw2 0x0051e9a0
 CScat::CScat(CActor &classes) : CHero(classes) {
     getModel().init("scat.dfm");
 }
@@ -47,6 +48,8 @@ void CScat::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x00556e90
+// bw1 0x00540aa0
+// bw2 0x0051e970
 std::unique_ptr<CDemonActor> CScat::create(CActor &classes) {
     return std::make_unique<CScat>(classes);
 }

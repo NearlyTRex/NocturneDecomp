@@ -28,6 +28,9 @@ int roundHalfUp(double value) {
 } // namespace
 
 // nocedit 0x004a0430
+// bw1 0x004961b0
+// bw2 0x0047db40
+// bw3 0x0047ed50
 void CEditorTools::showCenteredProgressDialog(std::string_view message_text) {
     initEditorFontMetrics();
     const int width = std::max(screen_.getWindowWidth() / 2,

@@ -39,6 +39,9 @@ void CKeyFramedModel::rotateAndLightVertices(int frame_index, CDemonSet &set) co
 // unverified: the diagonal's float roundings at the 250 threshold, by running the test against
 //   nocedit's own code with boxes either side of it
 // nocedit 0x00477980
+// bw1 0x004673a0
+// bw2 0x0044e7d0
+// bw3 0x00461050
 void CKeyFramedModel::submitToRenderer(int render_flags, engine::CDemonRenderer &renderer,
                                        CDemonSet &set) {
     if (disable_backface_culling_ != 0) {

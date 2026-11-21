@@ -37,12 +37,14 @@ constinit const CDemonActorType CWeapon::kType =
 // deferred: the defaults the constructor gives the firing, light, muzzle flash and rendering
 //   fields, with the steps that read them
 // nocedit 0x005ede70
+// bw2 0x005899d0
 CWeapon::CWeapon(CActor &classes) : model_(classes.getKeyFramedModels()) {
     setCollisionDisabled(true);
     model_.setModelName("gat.kfm");
 }
 
 // nocedit 0x005edf80
+// bw2 0x00589ae0
 CWeapon::~CWeapon() = default;
 
 // deferred: clearing is_rendered, with renderOpaque
@@ -56,6 +58,9 @@ void CWeapon::setup() {
 // The original also checked the actor hadn't been deleted and its model had been found; setup
 // finds the model first, and not finding it is fatal.
 // nocedit 0x005ee740
+// bw1 0x005ade40
+// bw2 0x0058a2f0
+// bw3 0x0057ba10
 void CWeapon::setupPhysicsBox() {
     CBoundingBox3D bounds;
     getBoundingBox(&bounds);
@@ -64,6 +69,9 @@ void CWeapon::setupPhysicsBox() {
 
 // The original read past the end of a model with no frames, which has no bounds here.
 // nocedit 0x005ee0c0
+// bw1 0x005ad730
+// bw2 0x00589c40
+// bw3 0x0057b120
 CBoundingBox3D *CWeapon::getBoundingBox(CBoundingBox3D *out_box) {
     const std::span<const CBoundingBox3D> bounds = model_.getModelPtr().getFrameBounds();
     *out_box = bounds.empty() ? CBoundingBox3D{} : bounds.front();
@@ -72,6 +80,7 @@ CBoundingBox3D *CWeapon::getBoundingBox(CBoundingBox3D *out_box) {
 
 // Version 5 held a shown name, which is read and dropped.
 // nocedit 0x005ee250
+// bw2 0x00589d60
 void CWeapon::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveKeyframedModelInstance(model_, "modelName");

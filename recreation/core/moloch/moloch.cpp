@@ -41,6 +41,8 @@ constinit const CDemonActorType CMoloch::kType =
 //   never reaches (the decomp's hero_interact.h nocturne_hero_fire_interact), with
 //   CMoloch::process
 // nocedit 0x00528b30
+// bw1 0x005202f0
+// bw2 0x00501340
 CMoloch::CMoloch(CActor &classes) : CHero(classes), other_form_model_(classes.getModels()) {
     getModel().init(kHumanModel);
 }
@@ -61,6 +63,8 @@ CDeformableModelInstance &CMoloch::getOtherFormModel() {
 }
 
 // nocedit 0x00528bf0
+// bw1 0x005203b0
+// bw2 0x00501400
 CMoloch::~CMoloch() = default;
 
 // nocedit 0x00528b20
@@ -69,6 +73,8 @@ const CDemonActorType &CMoloch::getActorType() const {
 }
 
 // nocedit 0x00529880
+// bw1 0x005211b0
+// bw2 0x00502200
 void CMoloch::archive(CActorArchive &actor_archive) {
     CHero::archive(actor_archive);
     actor_archive.archiveString(human_to_demon_condition_, "humanToDemonCond");
@@ -99,6 +105,8 @@ float CMoloch::getMorphTimer() const {
 }
 
 // nocedit 0x00528af0
+// bw1 0x005202c0
+// bw2 0x00501310
 std::unique_ptr<CDemonActor> CMoloch::create(CActor &classes) {
     return std::make_unique<CMoloch>(classes);
 }

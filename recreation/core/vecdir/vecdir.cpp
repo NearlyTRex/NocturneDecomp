@@ -8,6 +8,9 @@
 namespace nocturne::core {
 
 // nocedit 0x005e7830
+// bw1 0x005a7520
+// bw2 0x005838f0
+// bw3 0x00576250
 common::CVector3f
 convertDirectionVectorToEulerAngles(const common::CVector3f &in_direction_vector) {
     const auto x = static_cast<double>(in_direction_vector.x);

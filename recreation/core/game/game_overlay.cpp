@@ -104,6 +104,9 @@ int getBarColor(float value) {
 // The original copied the message into 256 bytes unchecked, where the script's display command
 // takes up to 1024.
 // nocedit 0x004d7f20
+// bw1 0x004cc190
+// bw2 0x004b31a0
+// bw3 0x004b46b0
 void CGame::displayMessage(std::string_view message, float duration) {
     if (message.empty()) {
         message_timer_ = 0.0F;
@@ -157,6 +160,8 @@ void CGame::setStatusDisplay(std::string_view name, float value, float duration)
 //   clear of the screen's right edge (the decomp's status_bar.h, STATUS_BAR_WIDTH), with
 //   CCharacter::processCharacter and processDamage, which record it
 // nocedit 0x004d8040
+// bw1 0x004cc2b0
+// bw2 0x004b32c0
 void CGame::renderOverlay(const SGameSessionOwners &session) {
     const common::SViewport frame =
         getHudFrame(session.display.getWidescreen(), owners_.screen.getWindowWidth(),

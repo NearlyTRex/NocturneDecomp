@@ -31,11 +31,17 @@ constexpr int kMaxGameTimeStep = 0x20000;
 // deferred: player_count 0, server_player_index -1 and has_pending_sim_frame 0, with
 //   CNetGame::addPlayer, CNetGame::processClientFrame and CNetGame::runLobby
 // nocedit 0x0053f6d0
+// bw1 0x0052c470
+// bw2 0x0050b290
+// bw3 0x00503d70
 CNetGame::CNetGame(const SNetGameOwners &owners)
     : owners_(owners), player_name_(kDefaultPlayerName) {}
 
 // deferred: destroying the CSocket, which closes it, with CNetGame::initializeNetworkToHost
 // nocedit 0x0053f760
+// bw1 0x0052c500
+// bw2 0x0050b320
+// bw3 0x00503e00
 CNetGame::~CNetGame() = default;
 
 // The original copied the name into 20 bytes without a bound.
@@ -62,6 +68,9 @@ void CNetGame::init() {
 // deferred: the client's wait for the host's code for the stage, up to stage 3, given up with
 //   Escape, with CNetGame::initializeNetworkToJoin
 // nocedit 0x005401e0
+// bw1 0x0052cf90
+// bw2 0x0050bdb0
+// bw3 0x00504890
 int CNetGame::syncPlayers(int sync_stage) {
     owners_.two_d.clearInputAndWait();
     if (sync_stage < 1) {
@@ -76,6 +85,9 @@ int CNetGame::syncPlayers(int sync_stage) {
 //   CNetGame::initializeNetworkToHost
 // deferred: keeping the seed for the sim frame to start from, with CGame::process
 // nocedit 0x00543150
+// bw1 0x0052fee0
+// bw2 0x0050ecb0
+// bw3 0x00507790
 void CNetGame::processServerFrame() {
     advanceGameTime();
     owners_.actor.setRandomSeed(static_cast<std::uint32_t>(owners_.crt_random.rand()));
@@ -84,6 +96,9 @@ void CNetGame::processServerFrame() {
 // deferred: a network player's controls, held for the frame it sends, and the error when this
 //   machine isn't in the player list, with CNetGame::addPlayer
 // nocedit 0x005438c0
+// bw1 0x00530660
+// bw2 0x0050f430
+// bw3 0x00507f10
 SPlayerInput &CNetGame::getMyControls() {
     return owners_.mission.getLocalHero()->getPlayerInput();
 }

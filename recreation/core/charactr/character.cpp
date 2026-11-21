@@ -51,6 +51,8 @@ CCharacter::CCharacter(CActor &classes)
     : model_(classes.getModels()), cloth_list_(classes.getDosIo(), classes.getKeyFramedModels()) {}
 
 // nocedit 0x0042f9f0
+// bw1 0x00415a90
+// bw3 0x00410290
 CCharacter::~CCharacter() = default;
 
 CDeformableModelInstance &CCharacter::getModel() {
@@ -143,6 +145,9 @@ void CCharacter::setRenderActive(bool render_active) {
 
 // deferred: drawing the character while its box is visible, with renderCharacter
 // nocedit 0x0042a390
+// bw1 0x0042f320
+// bw2 0x00425a00
+// bw3 0x0042e300
 void CCharacter::renderBackground(int /*layer_flag*/, const SActorRenderOwners &owners) {
     if (!render_active_) {
         return;
@@ -215,12 +220,18 @@ void CCharacter::setup() {
 }
 
 // nocedit 0x0042b8a0
+// bw1 0x00430c10
+// bw2 0x004271e0
+// bw3 0x0042ff40
 CBoundingBox3D *CCharacter::getBoundingBox(CBoundingBox3D *out_box) {
     *out_box = bounding_box_;
     return out_box;
 }
 
 // nocedit 0x0042d530
+// bw1 0x00432e80
+// bw2 0x00429390
+// bw3 0x004322a0
 void CCharacter::computeBoundingBox() {
     if (!model_.getModelName().empty()) {
         bounding_box_ = model_.computeBoundingBoxFromBones();
@@ -228,6 +239,9 @@ void CCharacter::computeBoundingBox() {
 }
 
 // nocedit 0x0042d360
+// bw1 0x00432c40
+// bw2 0x00429180
+// bw3 0x00432060
 bool CCharacter::isCarryingAnything() const {
     return std::ranges::any_of(carried_actors_,
                                [](const CDemonActor *actor) { return actor != nullptr; });

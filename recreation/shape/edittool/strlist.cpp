@@ -90,7 +90,13 @@ CStrList::~CStrList() = default;
 
 // allocate grew the array insert fills, which the vector grows itself.
 // nocedit 0x004a2bc0
+// bw1 0x00499510
+// bw2 0x00480eb0
+// bw3 0x004820b0
 // nocedit 0x004a2cc0
+// bw1 0x00499600
+// bw2 0x00480fa0
+// bw3 0x004821a0
 void CStrList::insert(int insert_index, std::string_view string_data) {
     if (insert_index < 0 || insert_index > getItemCount()) {
         common::displayErrorAndQuit("CStrList::insert - invalid index");
@@ -99,6 +105,9 @@ void CStrList::insert(int insert_index, std::string_view string_data) {
 }
 
 // nocedit 0x004a2e00
+// bw1 0x00499730
+// bw2 0x004810d0
+// bw3 0x004822d0
 void CStrList::remove(int start_index, int end_index) {
     if (start_index < 0 || end_index >= getItemCount() || end_index < start_index) {
         common::displayErrorAndQuit("CStrList::remove - invalid range");
@@ -131,6 +140,9 @@ void CStrList::swap(int index1, int index2) {
 }
 
 // nocedit 0x004a2b10
+// bw1 0x00499470
+// bw2 0x00480e10
+// bw3 0x00482010
 void CStrList::clear() {
     strings_.clear();
 }
@@ -172,6 +184,9 @@ int CStrList::findString(std::string_view search_string) const {
 }
 
 // nocedit 0x004a3270
+// bw1 0x00499ba0
+// bw2 0x00481540
+// bw3 0x00482740
 void CStrList::copyToClipboard(CEditorTools &editor_tools) const {
     std::string text;
     for (const std::string &item : strings_) {

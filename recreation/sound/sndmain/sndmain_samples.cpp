@@ -278,6 +278,9 @@ std::optional<CSampleInfo> CSndMain::getSampleInfo(std::string_view sample_name)
 }
 
 // nocedit 0x005aa660
+// bw1 0x005746a0
+// bw2 0x00551c70
+// bw3 0x00557800
 void CSndMain::freeAllSamples() {
     killAllSfx();
     for (CSfxSample &sample : sfx_samples_) {

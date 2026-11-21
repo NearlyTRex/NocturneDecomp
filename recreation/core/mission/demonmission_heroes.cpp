@@ -26,6 +26,7 @@ namespace nocturne::core {
 //   built (the decomp's hero_*_reset calls), with CColonel::process, CGabriella::process,
 //   CMoloch::process and the grab escape and shoves in CHero
 // nocedit 0x00524920
+// bw2 0x004fcf70
 bool CDemonMission::createOneHero(std::size_t index, EHeroType hero_type,
                                   std::unique_ptr<CHero> existing_hero) {
     const auto found = std::ranges::find_if(actors_, [index](const auto &actor) {
@@ -65,6 +66,9 @@ bool CDemonMission::createOneHero(std::size_t index, EHeroType hero_type,
 //   destroying death undone and STAND forced (the decomp's hero_death.h nocturne_hero_revive),
 //   with CCharacter::getDeathState
 // nocedit 0x00524a80
+// bw1 0x0051c0a0
+// bw2 0x004fd0e0
+// bw3 0x004f7880
 bool CDemonMission::createHeros(std::unique_ptr<CHero> existing_hero) {
     heroes_.fill(nullptr);
     hero_count_ = 1;

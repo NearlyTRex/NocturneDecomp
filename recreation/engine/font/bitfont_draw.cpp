@@ -120,6 +120,9 @@ int CBitFont::getWinFontTextWidth(CFont &font, std::string_view text) {
 
 // Text an OS font draws isn't scaled.
 // nocedit 0x004cfe80
+// bw1 0x004c3ea0
+// bw2 0x004aaf00
+// bw3 0x004b2a80
 int CBitFont::getTextWidth(std::string_view text, int scale) const {
     if (win_font_helper_ != nullptr) {
         return getWinFontTextWidth(*win_font_helper_, text);
@@ -295,6 +298,9 @@ std::optional<CBitFont::SGlyphBox> CBitFont::placeGlyph(std::size_t char_code, i
 }
 
 // nocedit 0x004ce7a0
+// bw1 0x004c2810
+// bw2 0x004a9870
+// bw3 0x004b1460
 int CBitFont::drawCharacter(int char_code, int x, int y, int color_mode, int color_value,
                             int scale) {
     if (char_code < 0 || char_code > 0xff) {

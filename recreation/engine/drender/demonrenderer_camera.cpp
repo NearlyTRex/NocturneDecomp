@@ -59,6 +59,9 @@ void CDemonRenderer::setupSceneRendering(const CVector3f &euler_angles) {
 }
 
 // nocedit 0x0048c200
+// bw1 0x00483560
+// bw2 0x0046b060
+// bw3 0x0046cc40
 void CDemonRenderer::setupCameraAndProjection(const common::CMatrix3x3f &transform_matrix) {
     const CVector3f angles = transform_matrix.getEulerAngles();
     common::CMatrix3x3i transform{.m = {toFixedRow(transform_matrix.m[0]),
@@ -114,12 +117,18 @@ void CDemonRenderer::setProjectionScale(float field_of_view) {
 }
 
 // nocedit 0x0048c760
+// bw1 0x00483ac0
+// bw2 0x0046b5c0
+// bw3 0x0046d1a0
 CVector3i CDemonRenderer::getCameraOriginFixed() const {
     return matrix_.getCameraOrigin();
 }
 
 // The origin's 24.8 coordinates over 256.
 // nocedit 0x0048c780
+// bw1 0x00483ae0
+// bw2 0x0046b5e0
+// bw3 0x0046d1c0
 CVector3f *CDemonRenderer::getCameraOriginWorld(CVector3f *output) {
     const CVector3i origin = matrix_.getCameraOrigin();
     const auto world = [](int fixed) {

@@ -66,6 +66,9 @@ std::optional<std::size_t> nearestVertex(const common::CVector3f &point,
 // unverified: the children's lengths and the radii's reciprocals, worked in double here, not run
 //   against the original with a model
 // nocedit 0x0043a110
+// bw1 0x0043fa20
+// bw2 0x005af200
+// bw3 0x0043d680
 void orientBoneToChild(SClothBone &bone, CDeformableModelInstance &model) {
     const CSkeleton &skeleton = *model.getSkeletonPtr();
     bone.parent_bone_index = skeleton.findBone(bone.name, true);
@@ -109,6 +112,9 @@ void orientBoneToChild(SClothBone &bone, CDeformableModelInstance &model) {
 // unverified: the pins' skinned sums and distances, worked in double here, not run against the
 //   original with a model
 // nocedit 0x00439710
+// bw1 0x0043eea0
+// bw2 0x005ae680
+// bw3 0x0043cb00
 void CCloth::setup(const common::CVector3f &position, const common::CVector3f &euler,
                    CDeformableModelInstance *model_ptr) {
     orderFromTheTop();

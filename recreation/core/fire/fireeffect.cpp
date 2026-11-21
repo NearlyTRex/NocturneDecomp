@@ -76,6 +76,7 @@ void CFireEffect::loadDynamiteAssets() {
 }
 
 // nocedit 0x004c4d50
+// bw3 0x0049e170
 void CFireEffect::loadGunFlameAssets() {
     for (std::size_t frame = 0; frame < gun_flame_textures_.size(); ++frame) {
         platform::SMRGLTextureBasic &texture = gun_flame_textures_.at(frame);

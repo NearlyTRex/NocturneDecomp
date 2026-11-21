@@ -37,6 +37,9 @@ int CSocket::receiveSocketData(std::span<std::byte> buffer, platform::SNetworkAd
 }
 
 // nocedit 0x005e1ca0
+// bw1 0x0059cbc0
+// bw2 0x005792e0
+// bw3 0x0056fbb0
 int CSocket::sendSocketData(std::span<const std::byte> data,
                             const platform::SNetworkAddr *dest_addr) {
     if (socket_ == nullptr || dest_addr == nullptr) {

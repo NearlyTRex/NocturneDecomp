@@ -178,6 +178,9 @@ SWalkAxes getWalkAxes(const CVector3i &forward) {
 // unverified: the walk's order and bounds against the original's code, by running both over a
 //   grid and comparing the cubes each draws
 // nocedit 0x00497e50
+// bw1 0x0048d4f0
+// bw2 0x00475000
+// bw3 0x00476070
 void CDemonRaytrace::renderFrustumCubes(float reach_distance, bool use_pvs,
                                         const SCubeDrawOwners &owners) {
     if (pvs_ready_ && use_pvs) {
@@ -278,6 +281,9 @@ void CDemonRaytrace::setPVS(std::span<const int> cube_indices) {
 // The original looked each drawn cube's index up again from its address, which a list of
 // indices already is.
 // nocedit 0x00498fb0
+// bw1 0x0048e640
+// bw2 0x00476150
+// bw3 0x004771c0
 std::vector<int> CDemonRaytrace::savePVS() const {
     if (!pvs_ready_) {
         common::displayErrorAndQuit("CDemonRenderer::getPVS - PVS is not valid!");

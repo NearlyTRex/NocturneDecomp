@@ -158,14 +158,23 @@ private:
 
 // init's defaults are the member initialisers.
 // nocedit 0x005a60f0
+// bw1 0x0056fe10
+// bw2 0x0054d7a0
+// bw3 0x00553310
 // nocedit 0x005a8480
 CSfxSample::CSfxSample() = default;
 
 // The original's freeMemory is the members' own destructors.
 // nocedit 0x005a6150
+// bw1 0x0056fe80
+// bw2 0x0054d810
+// bw3 0x00553380
 CSfxSample::~CSfxSample() = default;
 
 // nocedit 0x005a62c0
+// bw1 0x00570020
+// bw2 0x0054d9b0
+// bw3 0x00553520
 void CSfxSample::freeMemory() {
     if (ref_count != 0) {
         common::displayErrorAndQuit("SfxSample::freeMemory - freeing sample in use!");
@@ -177,6 +186,9 @@ void CSfxSample::freeMemory() {
 }
 
 // nocedit 0x005a6400
+// bw1 0x00570130
+// bw2 0x0054dac0
+// bw3 0x00553630
 void CSfxSample::freeSampleData() {
     sample_data = {};
 }

@@ -52,15 +52,24 @@ float distance(const common::CVector3f &a, const common::CVector3f &b) {
 
 // The original's fixed tables held 800 points, 50 bones and 900 pins; these take any number.
 // nocedit 0x00438ba0
+// bw1 0x0043e5c0
+// bw2 0x005adda0
+// bw3 0x0043c220
 CCloth::CCloth(const engine::CDosIo &dosio, IKeyFramedModels &models)
     : dosio_(dosio), models_(models), model_(dosio) {}
 
 // nocedit 0x00438c00
+// bw1 0x0043e620
+// bw2 0x005ade00
+// bw3 0x0043c280
 CCloth::~CCloth() = default;
 
 // Each read past the end leaves its field as it was, as the original's fscanf did. A version 1
 // or 2 file's physics are read and replaced by the defaults.
 // nocedit 0x00438cf0
+// bw1 0x0043e6d0
+// bw2 0x005adeb0
+// bw3 0x0043c330
 void CCloth::load(std::string_view filename) {
     const std::optional<std::string> text = dosio_.readFile("models", filename);
     if (!text) {
@@ -135,6 +144,9 @@ void CCloth::load(std::string_view filename) {
 
 // A point for each of the model's vertices, keeping those it had.
 // nocedit 0x00438c50
+// bw1 0x0043e640
+// bw2 0x005ade20
+// bw3 0x0043c2a0
 void CCloth::allocMemory() {
     vertices_.resize(static_cast<std::size_t>(model_.getVertexCount()));
     vertex_order_.assign(vertices_.size(), 0);
@@ -157,6 +169,9 @@ void CCloth::tie(SClothVertex &vertex, int other) {
 // Each point is tied to the corners it shares an edge with that are as high or higher, and its
 // pin is taken out. More than kMaxConnections is fatal.
 // nocedit 0x004394e0
+// bw1 0x0043ec40
+// bw2 0x005ae420
+// bw3 0x0043c8a0
 void CCloth::initializeConnections() {
     const std::span<const platform::SMRGLPrimitiveQuad> polygons = model_.getPolygons();
     for (std::size_t i = 0; i < vertices_.size(); ++i) {

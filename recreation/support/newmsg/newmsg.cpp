@@ -53,6 +53,9 @@ CNewMsg::CNewMsg(const engine::CDosIo &dosio) : dosio_(dosio), os_font_name_(kDe
 // text with an OS font, and that font's quoted name. Then come "key", "text" pairs. The shipped
 // game has no message file, so every key reads as itself.
 // nocedit 0x00543e40
+// bw1 0x00530bf0
+// bw2 0x0050f9e0
+// bw3 0x005084c0
 void CNewMsg::readMessageFile(std::string_view message_file) {
     const std::optional<std::string> text = dosio_.readFile("", message_file);
     if (!text || text->empty()) {

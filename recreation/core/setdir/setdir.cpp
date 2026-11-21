@@ -43,6 +43,9 @@ bool contains(const CBoundingBox3D &bounds, const common::CVector3f &point) {
 // The original also requires an edge's distance to be at most 1, which doesRayIntersect never
 // exceeds.
 // nocedit 0x005763a0
+// bw1 0x0055bab0
+// bw2 0x0053a1b0
+// bw3 0x00541470
 bool testOBBIntersection(const SVDBox &obb_a, const SVDBox &obb_b) {
     const CBoundingBox3D bounds{
         .min = {.x = -obb_b.extents.x, .y = -obb_b.extents.y, .z = -obb_b.extents.z},

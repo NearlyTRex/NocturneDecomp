@@ -42,6 +42,9 @@ std::byte *rowAt(std::span<void *> rows, int y) {
 //   and draw3DAxisLabels, with those functions
 // nocedit 0x0049d170
 // nocedit 0x0049df80
+// bw1 0x00493ba0
+// bw2 0x0047b660
+// bw3 0x0047c740
 // nocedit 0x0049e020
 CEditorTools::CEditorTools(const SEditorToolsOwners &owners)
     : two_d_(owners.two_d), matrix_(owners.matrix), three_d_(owners.three_d),
@@ -92,17 +95,23 @@ int CEditorTools::getEditorFontLineHeight() const {
 // The editor's message and warning open its one-button prompt; the game's draw this box
 // themselves. The caller formats the message.
 // nocedit 0x0049e6a0
+// bw1 0x004942e0
+// bw3 0x0047ce80
 void CEditorTools::showMessage(std::string_view message) {
     showPrompt(kMessageTitle, message, window_font_color_);
 }
 
 // nocedit 0x0049e6f0
+// bw1 0x00494340
+// bw3 0x0047cee0
 void CEditorTools::showWarning(std::string_view message) {
     showPrompt(kWarningTitle, message, warning_text_color_);
 }
 
 // Retail draws it as showWarning does, in the same colour.
 // nocedit 0x0049e740
+// bw1 0x004943a0
+// bw3 0x0047cf40
 void CEditorTools::showError(std::string_view message) {
     showPrompt(kErrorTitle, message, warning_text_color_);
 }
@@ -313,6 +322,9 @@ void CEditorTools::paintCurrentWindow() {
 // deferred: the copy of the text getClipboardText falls back on when the clipboard holds none,
 //   with getClipboardText
 // nocedit 0x004a1bc0
+// bw1 0x00498290
+// bw2 0x0047fc30
+// bw3 0x00480e30
 void CEditorTools::setClipboardText(std::string_view text_data) {
     clipboard_.setClipboardText(text_data);
 }

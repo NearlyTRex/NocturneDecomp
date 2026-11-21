@@ -29,6 +29,9 @@ void CDemonSet::skipDeprecatedVirtualDirectorData(common::CTextScanner &scanner)
 
 // The root of the box's group, with every box on the way pointed straight at it.
 // nocedit 0x00576820
+// bw1 0x0055c020
+// bw2 0x0053a720
+// bw3 0x005419e0
 int CDemonSet::findVdirBoxRoot(int box_index) {
     const auto parentOf = [this](int index) -> int & {
         return vdir_boxes_.at(static_cast<std::size_t>(index)).parent_index;
@@ -46,6 +49,9 @@ int CDemonSet::findVdirBoxRoot(int box_index) {
 }
 
 // nocedit 0x005762a0
+// bw1 0x0055b990
+// bw2 0x0053a090
+// bw3 0x00541350
 bool CDemonSet::isPointInVdirBox(std::size_t box_index, const common::CVector3f &point) const {
     const SVDBox &box = vdir_boxes_.at(box_index);
     const common::CVector3f local =
@@ -58,6 +64,8 @@ bool CDemonSet::isPointInVdirBox(std::size_t box_index, const common::CVector3f 
 
 // The group of the first box the point is in, or -1 when it is in none.
 // nocedit 0x00576870
+// bw1 0x0055c060
+// bw3 0x00541a20
 int CDemonSet::findVdirBoxAtPosition(const common::CVector3f &position) {
     for (std::size_t i = 0; i < vdir_boxes_.size(); ++i) {
         if (isPointInVdirBox(i, position)) {

@@ -93,6 +93,9 @@ CSkyDome::CSkyDome(engine::CDemonRenderer &renderer, const engine::CSpecial &spe
 
 // The overhead quad's corners and each row are a quarter turn apart, so the top row meets them.
 // nocedit 0x004901f0
+// bw1 0x00486900
+// bw2 0x0046e410
+// bw3 0x0046f480
 void CSkyDome::renderSkyDome(std::string_view texture_name, int brightness_factor) {
     texture_.texture_name = texture_name;
     brightness_ = brightness_factor;

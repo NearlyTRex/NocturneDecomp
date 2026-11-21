@@ -58,6 +58,9 @@ CEnemy::CEnemy(CActor &classes)
 }
 
 // nocedit 0x004125c0
+// bw1 0x0040ed50
+// bw2 0x0040f1c0
+// bw3 0x0041aba0
 CEnemy::~CEnemy() = default;
 
 // nocedit 0x004a9650
@@ -78,6 +81,8 @@ void CEnemy::renderBackground(int layer_flag, const SActorRenderOwners &owners) 
 }
 
 // nocedit 0x004a9660
+// bw1 0x004a0520
+// bw2 0x00487ec0
 void CEnemy::archive(CActorArchive &actor_archive) {
     const int version = actor_archive.getSavedVersion(kType);
     if (version < kCharacterVersion) {

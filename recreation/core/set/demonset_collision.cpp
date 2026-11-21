@@ -9,6 +9,9 @@ namespace nocturne::core {
 // deferred: resetting every path map around the new shadow, with resetAllPathMaps and the path
 //   maps
 // nocedit 0x00574440
+// bw1 0x00559440
+// bw2 0x00538020
+// bw3 0x0053ee00
 void CDemonSet::castVoxelShadow(CDemonActor &actor) {
     CBoundingBox3D box;
     actor.getBoundingBox(&box);

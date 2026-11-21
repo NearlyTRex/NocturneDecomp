@@ -105,6 +105,9 @@ void CHero::clearPushLeverAndLadder() {
 // The original also took the hero off the mission's heroes, which the mission does here as it
 // destroys one.
 // nocedit 0x004f2470
+// bw1 0x004ea980
+// bw2 0x004ce3d0
+// bw3 0x004d2620
 CHero::~CHero() = default;
 
 // Before version 4 a hero held only CDemonActor's fields of CCharacter's, with the motion state

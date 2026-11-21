@@ -73,6 +73,7 @@ void CKeyFramedModel::calcNormals() {
 
 // A frame without vertices keeps an empty box, where the original read past its list.
 // nocedit 0x00478010
+// bw1 0x00467a30
 void CKeyFramedModel::calculateFrameBounds() {
     for (int frame = 0; frame < frame_count_; ++frame) {
         CBoundingBox3D &box = frame_bounds_[static_cast<std::size_t>(frame)];
@@ -96,6 +97,9 @@ void CKeyFramedModel::calculateFrameBounds() {
 // A polygon of fewer than three corners makes no triangles; the original counted it as making
 // a negative number and overran the list.
 // nocedit 0x00478830
+// bw1 0x00468340
+// bw2 0x0044f760
+// bw3 0x00461fe0
 void CKeyFramedModel::buildCollisionTriList() {
     collision_triangles_.clear();
     collision_triangle_count_ = 0;
@@ -115,6 +119,9 @@ void CKeyFramedModel::buildCollisionTriList() {
 //   intersectCylinder compare to rebuild the list and intersectRay turns its ray by, with
 //   CKeyFramedModel::getFloorHeight, intersectCylinder and intersectRay
 // nocedit 0x00478950
+// bw1 0x00468420
+// bw2 0x0044f840
+// bw3 0x004620c0
 void CKeyFramedModel::populateCollisionList(const common::CVector3f &transform_vector) {
     common::CMatrix3x3f rotation;
     rotation.buildRotationMatrix(transform_vector);

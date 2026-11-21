@@ -47,6 +47,7 @@ constinit const CDemonActorType CMobster::kType =
 //   rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with
 //   CMobster::processDismemberment
 // nocedit 0x00525200
+// bw2 0x004fd810
 CMobster::CMobster(CActor &classes)
     : CEnemy(classes), idle_counter_(classes.getRandomInt(0, kMostIdleCounter)),
       voice_(static_cast<char>(classes.getRandomInt(kFirstVoice, kLastVoice))) {
@@ -55,6 +56,8 @@ CMobster::CMobster(CActor &classes)
 }
 
 // nocedit 0x00527c70
+// bw1 0x0051f4b0
+// bw2 0x005004f0
 CMobster::~CMobster() = default;
 
 // The original keeps the bones for every mobster in one global, looking five of them up twice;
@@ -91,12 +94,16 @@ const CDemonActorType &CMobster::getActorType() const {
 }
 
 // nocedit 0x005251c0
+// bw1 0x0051c7a0
+// bw2 0x004fd7e0
 std::unique_ptr<CDemonActor> CMobster::create(CActor &classes) {
     return std::make_unique<CMobster>(classes);
 }
 
 // The speed is saved again after CEnemy's.
 // nocedit 0x00527230
+// bw1 0x0051eb30
+// bw2 0x004ffb70
 void CMobster::archive(CActorArchive &actor_archive) {
     CEnemy::archive(actor_archive);
     archiveSpeed(actor_archive);

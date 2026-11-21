@@ -25,6 +25,9 @@ public:
     // deferred: the blood particle, splat, pool and footstep arrays, and emptying them, with
     //   reset and the steps that spawn them
     // nocedit 0x004eb8c0
+    // bw1 0x004e3d40
+    // bw2 0x004c7360
+    // bw3 0x004cc8d0
     explicit CGore(engine::CDemonRenderer &renderer);
 
     void reset();

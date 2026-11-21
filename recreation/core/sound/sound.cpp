@@ -51,6 +51,9 @@ CSound::~CSound() {
 // The original then set 16-bit stereo at 44.1 kHz for hardware 3D mixing, which the enhanced
 // game doesn't have.
 // nocedit 0x005b2d00
+// bw1 0x0057cb30
+// bw2 0x0055a100
+// bw3 0x0055fc60
 void CSound::findAllSoundFiles() {
     if (sound_file_list_.getItemCount() == 0) {
         sound_file_list_.populateFromFilesNoDuplicates(&pod_, file_system_, "sound", "*.wav");
@@ -69,6 +72,9 @@ void CSound::reset() {
 // The original also pointed the listener's right at the origin, which only the DirectSound
 // device read. The music plays without a position.
 // nocedit 0x005b3830
+// bw1 0x0057d6a0
+// bw2 0x0055ac50
+// bw3 0x005607d0
 void CSound::configure() {
     capChannelVolume(sound_main_, kMusicChannel, kMenuMusicVolume);
     capChannelVolume(sound_main_, kEffectsChannel, kMenuEffectsVolume);

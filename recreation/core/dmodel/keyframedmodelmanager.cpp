@@ -20,6 +20,9 @@ CKeyFramedModelManager::CKeyFramedModelManager(const engine::CDosIo &dosio,
 CKeyFramedModelManager::~CKeyFramedModelManager() = default;
 
 // nocedit 0x00478c00
+// bw1 0x00468780
+// bw2 0x0044fba0
+// bw3 0x00462420
 CKeyFramedModel &CKeyFramedModelManager::loadModel(std::string_view filename) {
     for (std::size_t i = 0; i < model_count_; ++i) {
         if (common::equalsIgnoringAsciiCase(models_[i]->getModelFilename(), filename)) {
@@ -46,6 +49,9 @@ void CKeyFramedModelManager::loadOwnedModel(CKeyFramedModel &model, std::string_
 }
 
 // nocedit 0x00478cb0
+// bw1 0x00468830
+// bw2 0x0044fc50
+// bw3 0x004624d0
 void CKeyFramedModelManager::freeAllModels() {
     for (const std::unique_ptr<CKeyFramedModel> &model : models_) {
         model->free();

@@ -15,6 +15,7 @@ namespace nocturne::core {
 // deferred: rendering every camera's thumb and writing the file when there is none, with
 //   renderSceneGeometry
 // nocedit 0x00575b40
+// bw2 0x00539860
 void CDemonSet::refreshThumbs(std::string_view filename) {
     thumbs_.assign(cameras_.size() * kThumbWidth * kThumbHeight, 0);
     const std::optional<std::string> data = owners_.dosio.readFile("data", filename);

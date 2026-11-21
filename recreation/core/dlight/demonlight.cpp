@@ -50,6 +50,9 @@ CDemonLight::~CDemonLight() = default;
 
 // The original left 16 bytes and 512 spare past the shadow map to align it.
 // nocedit 0x004727c0
+// bw1 0x00462590
+// bw2 0x00449d90
+// bw3 0x0045c2a0
 void CDemonLight::init() {
     free();
     const std::size_t texels =
@@ -62,6 +65,9 @@ void CDemonLight::init() {
 // The original went on pointing the beam at the filter buffer it had freed.
 // deferred: letting go of the master z-buffer, with allocMasterZBuffer
 // nocedit 0x004728b0
+// bw1 0x00462670
+// bw2 0x00449e70
+// bw3 0x0045c380
 void CDemonLight::free() {
     shadow_depth_buffer_.clear();
     lightmap_visibility_bits_.clear();
@@ -70,6 +76,9 @@ void CDemonLight::free() {
 }
 
 // nocedit 0x00474720
+// bw1 0x00463de0
+// bw2 0x0044b5b0
+// bw3 0x0045daf0
 void CDemonLight::allocateFilter() {
     filter_buffer_.assign(kFilterBufferSize, 0);
 }

@@ -50,6 +50,7 @@ constinit const CDemonActorType CTrigger::kType =
 CTrigger::CTrigger() = default;
 
 // nocedit 0x005e1660
+// bw2 0x00577840
 CTrigger::~CTrigger() = default;
 
 // nocedit 0x005df830
@@ -58,6 +59,9 @@ const CDemonActorType &CTrigger::getActorType() const {
 }
 
 // nocedit 0x005df800
+// bw1 0x0059af80
+// bw2 0x005776c0
+// bw3 0x0056df70
 std::unique_ptr<CDemonActor> CTrigger::create(CActor & /*classes*/) {
     return std::make_unique<CTrigger>();
 }
@@ -82,6 +86,9 @@ void CTrigger::setup() {
 }
 
 // nocedit 0x005e0630
+// bw1 0x0059b8d0
+// bw2 0x00578060
+// bw3 0x0056e8c0
 CBoundingBox3D *CTrigger::getBoundingBox(CBoundingBox3D *out_box) {
     const float half_width = trigger_size_.x * 0.5F;
     const float half_depth = trigger_size_.z * 0.5F;
@@ -95,6 +102,9 @@ CBoundingBox3D *CTrigger::getBoundingBox(CBoundingBox3D *out_box) {
 // unverified: the diagonal's x87 sum and square root, worked in double here, not run against
 //   nocedit's own code
 // nocedit 0x005e0ba0
+// bw1 0x0059bee0
+// bw2 0x00578650
+// bw3 0x0056eed0
 void CTrigger::calculateTestRadius() {
     if (trigger_cause_ != ETriggerCause::kHero && trigger_cause_ != ETriggerCause::kActor) {
         return;

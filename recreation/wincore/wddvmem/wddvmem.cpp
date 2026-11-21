@@ -46,6 +46,9 @@ CWddVMem::CWddVMem(platform::IDisplay &display, platform::IRenderer &renderer, C
 
 // The DirectDraw object it recreated belongs to the display adapter.
 // nocedit 0x005ecc10
+// bw1 0x005ac040
+// bw2 0x00588790
+// bw3 0x005798f0
 int CWddVMem::initializeGraphicsSystem(int /*width*/, int /*height*/) {
     allocateRenderBuffers();
     special_.loadExternalRenderer();
@@ -54,7 +57,13 @@ int CWddVMem::initializeGraphicsSystem(int /*width*/, int /*height*/) {
 
 // freeRenderBuffers released the old buffers first; assigning new ones does that here.
 // nocedit 0x005ecac0
+// bw1 0x005abf20
+// bw2 0x00588670
+// bw3 0x005797d0
 // nocedit 0x005ecba0
+// bw1 0x005abff0
+// bw2 0x00588740
+// bw3 0x005798a0
 void CWddVMem::allocateRenderBuffers() {
     const std::size_t pixels =
         static_cast<std::size_t>(window_width_) * static_cast<std::size_t>(window_height_);
@@ -77,6 +86,7 @@ void CWddVMem::initializeScanlinePointers() {
 // so a refusal left rows pointing into freed buffers; here the old mode stays whole. Its 24-bit
 // retry of a refused 32-bit mode never runs: the display takes all three depths.
 // nocedit 0x005ecef0
+// bw2 0x00588a50
 bool CWddVMem::setScreenResolution(int width, int height, int bits_per_pixel) {
     if (bits_per_pixel != 8 && bits_per_pixel != 16 && bits_per_pixel != 32) {
         return false;
@@ -148,6 +158,7 @@ void CWddVMem::closeScreenDevice() {
 // A frame drawn on the back surface is shown as it is; otherwise the back buffer is. The render
 // log's present trace and frame rate are the enhanced game's.
 // nocedit 0x005eda20
+// bw2 0x00589560
 void CWddVMem::swapBuffers() {
     const bool external = special_.getUseExternalRenderer();
     if (const std::optional<int> call = present_rate_.take()) {

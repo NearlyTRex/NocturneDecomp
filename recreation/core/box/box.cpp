@@ -22,6 +22,9 @@ void CBox::setupCorners(common::CVector3f *position, common::CVector3f *orientat
 // deferred: the turn, the mass from the volume, how hard it is to spin and the scrape points'
 //   places, with CBox::processPhysics
 // nocedit 0x0041e0e0
+// bw1 0x0041de90
+// bw2 0x005b2050
+// bw3 0x0041b1d0
 void CBox::updateTransform(const common::CVector3f &position, const common::CVector3f &orientation,
                            float /*volume*/) {
     position_ = position;
@@ -35,6 +38,9 @@ void CBox::updateTransform(const common::CVector3f &position, const common::CVec
 // velocities and validity, which setting the box up has cleared and made 1.
 // deferred: the velocity along the box's axes turned into the world's, with CBox::processPhysics
 // nocedit 0x0041fe90
+// bw1 0x00420140
+// bw2 0x005b4300
+// bw3 0x0041d480
 void CBox::loadFromFile(common::CTextScanner &scanner) {
     scanner.skipLine();
     int version = 0;
