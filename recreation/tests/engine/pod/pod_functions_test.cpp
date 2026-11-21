@@ -94,6 +94,10 @@ TEST(Crc32, ChecksTheStandardStringToTheMpeg2CheckValue) {
     EXPECT_EQ(crc32UpdateBuffer(bytesOf("123456789"), kCrc32Initial), 0x0376E6E7U);
 }
 
+TEST(Crc32, ABufferStartsFromTheInitialValueUnlessGivenOne) {
+    EXPECT_EQ(crc32UpdateBuffer(bytesOf("123456789")), 0x0376E6E7U);
+}
+
 TEST(Crc32, UpdateByteAgreesWithNoceditsCode) {
     for (const SByteCase &c : kNoceditByteCases) {
         EXPECT_EQ(crc32UpdateByte(c.crc, c.byte), c.result) << std::hex << c.crc << " " << +c.byte;

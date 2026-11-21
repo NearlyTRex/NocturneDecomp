@@ -61,6 +61,11 @@ std::expected<const CPodFile *, std::string> CPod::mountIfValid(std::string_view
     if (!pod->mountFromFile(pod_filename)) {
         return std::unexpected(std::format("Can't mount {}", pod_filename));
     }
+    if (settings_.verify_checksums) {
+        if (const std::expected<void, std::string> verified = pod->verifyChecksum(); !verified) {
+            return std::unexpected(std::format("{} {}", pod_filename, verified.error()));
+        }
+    }
     return pod_files_.emplace_back(std::move(pod)).get();
 }
 
@@ -156,6 +161,14 @@ const std::vector<std::unique_ptr<CPodFile>> &CPod::getPodFiles() const {
 
 void CPod::setDismountHandler(std::function<void()> handler) {
     dismount_handler_ = std::move(handler);
+}
+
+void CPod::setSettings(const SPodSettings &settings) {
+    settings_ = settings;
+}
+
+const SPodSettings &CPod::getSettings() const {
+    return settings_;
 }
 
 platform::IFileSystem &CPod::getFileSystem() {
