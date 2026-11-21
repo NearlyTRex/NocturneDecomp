@@ -234,7 +234,8 @@ private:
                                      .display = display_,
                                      .fonts = fonts_,
                                      .gamepad = gamepad_,
-                                     .messages = messages_};
+                                     .messages = messages_,
+                                     .pod = pod_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
                                .screen = screen_,

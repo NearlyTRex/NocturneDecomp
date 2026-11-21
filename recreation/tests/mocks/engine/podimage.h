@@ -1,8 +1,11 @@
 #pragma once
 
 #include "common/serial/binarywriter.h"
+#include "engine/pod/pod_functions.h"
 
+#include <cstddef>
 #include <cstdint>
+#include <span>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -22,6 +25,44 @@ inline std::string toText(const common::CBinaryWriter &writer) {
         text.push_back(static_cast<char>(b));
     }
     return text;
+}
+
+inline std::uint32_t crcOf(std::string_view bytes) {
+    return crc32UpdateBuffer(std::as_bytes(std::span(bytes)));
+}
+
+// The image with the CRC of [crc_start, end) in the 4 bytes before crc_start, as the editor's
+// computeAndStoreCRC writes it: 8 for POD2, 0x54 for POD1.
+inline std::string withStoredCrc(std::string image, std::size_t crc_start) {
+    common::CBinaryWriter writer;
+    writer.write(crcOf(std::string_view(image).substr(crc_start)));
+    image.replace(crc_start - 4, 4, toText(writer));
+    return image;
+}
+
+struct SPodImageAuditRecord {
+    std::string user_name{};
+    std::uint32_t timestamp = 0;
+    std::int32_t operation_type = 0;
+    std::string filename{};
+    std::uint32_t original_timestamp = 0;
+    std::uint32_t original_file_size = 0;
+    std::uint32_t new_timestamp = 0;
+    std::uint32_t new_file_size = 0;
+};
+
+// One 0x138-byte record of a POD2's audit trail, which follows the last file's data.
+inline std::string makeAuditRecord(const SPodImageAuditRecord &record) {
+    common::CBinaryWriter writer;
+    writer.writeString(record.user_name, 32);
+    writer.write(record.timestamp);
+    writer.write(record.operation_type);
+    writer.writeString(record.filename, 256);
+    writer.write(record.original_timestamp);
+    writer.write(record.original_file_size);
+    writer.write(record.new_timestamp);
+    writer.write(record.new_file_size);
+    return toText(writer);
 }
 
 // A POD2 archive: header, directory, name block, then the files' data.

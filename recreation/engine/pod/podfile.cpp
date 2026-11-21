@@ -4,12 +4,20 @@
 #include "common/text/ascii.h"
 #include "engine/dosio/dosio.h"
 #include "engine/dosio/foundfileinfo.h"
+#include "engine/pod/pod_functions.h"
 #include "platform/file.h"
 #include "platform/filesystem.h"
 
 #include <algorithm>
 #include <array>
+#include <cstdint>
+#include <expected>
+#include <limits>
+#include <memory>
 #include <optional>
+#include <ranges>
+#include <string>
+#include <vector>
 
 namespace nocturne::engine {
 namespace {
@@ -25,6 +33,42 @@ constexpr std::size_t kPod2MagicOffset = 8;
 // The POD2 name block holds at least one byte and at most 256 for each file.
 constexpr std::int64_t kMaxNameBytes = 256;
 constexpr std::array kPod2Magic = {std::byte{'P'}, std::byte{'O'}, std::byte{'D'}, std::byte{'2'}};
+// The whole-file CRC covers from here to the end, and is stored in the 4 bytes before it.
+constexpr std::int64_t kPod1CrcStart = kPod1HeaderSize;
+constexpr std::int64_t kPod2CrcStart = kPod2MagicOffset;
+constexpr std::int64_t kStoredCrcSize = 4;
+// nocedit's g_FileIOBuffer.
+constexpr std::size_t kCrcBlockSize = 0x10000;
+constexpr std::size_t kAuditRecordSize = 0x138;
+constexpr std::size_t kAuditUserNameSize = 32;
+constexpr std::size_t kAuditFilenameSize = 256;
+constexpr std::int32_t kFirstAuditOperation =
+    static_cast<std::int32_t>(EPodAuditOperation::POD_AUDIT_OPERATION_ADD);
+constexpr std::int32_t kLastAuditOperation =
+    static_cast<std::int32_t>(EPodAuditOperation::POD_AUDIT_OPERATION_CHANGE);
+
+// The CRC of up to limit bytes from the file's position, read a block at a time, and how many
+// bytes it covers: fewer than limit when the file ends first.
+struct SStreamCrc {
+    std::uint32_t crc = kCrc32Initial;
+    std::uint64_t length = 0;
+};
+
+SStreamCrc computeStreamCrc(platform::IFile &file, std::uint64_t limit) {
+    std::vector<std::byte> block(kCrcBlockSize);
+    SStreamCrc result;
+    while (result.length < limit) {
+        const auto wanted =
+            static_cast<std::size_t>(std::min<std::uint64_t>(block.size(), limit - result.length));
+        const std::size_t got = file.read(std::span(block).first(wanted));
+        result.crc = crc32UpdateBuffer(std::span(block).first(got), result.crc);
+        result.length += got;
+        if (got < wanted) {
+            break;
+        }
+    }
+    return result;
+}
 
 // Exactly count bytes, or nothing when the file ends first.
 std::optional<std::vector<std::byte>> readExactly(platform::IFile &file, std::size_t count) {
@@ -133,6 +177,7 @@ bool CPodFile::readPod2(platform::IFile &file, std::span<const std::byte> header
         entries_[i].name = nameAt(block, name_offsets[i]);
     }
     audit_count_ = audit_count;
+    audit_records_offset_ = entries_.back().offset + entries_.back().size;
     return true;
 }
 
@@ -167,6 +212,7 @@ bool CPodFile::readPod1(platform::IFile &file) {
         entry.timestamp = timestamp_;
     }
     audit_count_ = 0;
+    audit_records_offset_ = 0;
     return true;
 }
 
@@ -177,6 +223,108 @@ void CPodFile::cleanup() {
     filename_.clear();
     entries_.clear();
     audit_count_ = 0;
+    audit_records_offset_ = 0;
+}
+
+// The original drew the editor's progress and listed the failing files in a pick list; the
+// failure is the result instead. It also refused a pod with no filename, which a mounted one has.
+// nocedit 0x00550230
+std::expected<void, std::string> CPodFile::verifyChecksum() const {
+    if (version_ == 0) {
+        return std::unexpected("isn't mounted");
+    }
+    const std::unique_ptr<platform::IFile> file =
+        file_system_.openFile(filename_, platform::EFileMode::Read);
+    if (file == nullptr) {
+        return std::unexpected("can't be opened");
+    }
+    if (version_ == 2) {
+        const std::vector<std::string> failed = findFilesFailingCrc(*file);
+        if (!failed.empty()) {
+            return std::unexpected("fails its CRC check on " +
+                                   (failed | std::views::join_with(std::string_view(", ")) |
+                                    std::ranges::to<std::string>()));
+        }
+    }
+    return verifyWholeFileCrc(*file);
+}
+
+std::vector<std::string> CPodFile::findFilesFailingCrc(platform::IFile &file) const {
+    std::vector<std::string> failed;
+    for (const CPodDirectoryEntry &entry : entries_) {
+        if (computeFileCRC(file, entry) != entry.checksum) {
+            failed.push_back(entry.name);
+        }
+    }
+    return failed;
+}
+
+// Nothing when the file ends inside the entry. The original opened the pod again for each file.
+// nocedit 0x005507f0
+std::optional<std::uint32_t> CPodFile::computeFileCRC(platform::IFile &file,
+                                                      const CPodDirectoryEntry &entry) {
+    file.seek(entry.offset);
+    const SStreamCrc crc = computeStreamCrc(file, entry.size);
+    if (crc.length != entry.size) {
+        return std::nullopt;
+    }
+    return crc.crc;
+}
+
+// A POD1 storing 0 has no CRC: the builder never wrote one into tground.pod, the only POD1 that
+// ships, and the original's check failed it.
+std::expected<void, std::string> CPodFile::verifyWholeFileCrc(platform::IFile &file) const {
+    const std::int64_t start = version_ == 1 ? kPod1CrcStart : kPod2CrcStart;
+    file.seek(start - kStoredCrcSize);
+    const std::optional<std::vector<std::byte>> stored_bytes =
+        readExactly(file, static_cast<std::size_t>(kStoredCrcSize));
+    if (!stored_bytes) {
+        return std::unexpected("is cut short");
+    }
+    common::CBinaryReader reader(*stored_bytes);
+    const auto stored = reader.read<std::uint32_t>();
+    if (version_ == 1 && stored == 0) {
+        return {};
+    }
+    if (computeStreamCrc(file, std::numeric_limits<std::uint64_t>::max()).crc != stored) {
+        return std::unexpected("fails its CRC check");
+    }
+    return {};
+}
+
+// The original quit on an index outside the trail, a pod it couldn't open or a record it
+// couldn't read, and handed back any operation the record held.
+// nocedit 0x00550590
+std::optional<CPodAuditRecord> CPodFile::getAuditRecord(int record_index) const {
+    if (record_index < 0 || record_index >= audit_count_) {
+        return std::nullopt;
+    }
+    const std::unique_ptr<platform::IFile> file =
+        file_system_.openFile(filename_, platform::EFileMode::Read);
+    if (file == nullptr) {
+        return std::nullopt;
+    }
+    file->seek(audit_records_offset_ + (static_cast<std::int64_t>(record_index) *
+                                        static_cast<std::int64_t>(kAuditRecordSize)));
+    const std::optional<std::vector<std::byte>> bytes = readExactly(*file, kAuditRecordSize);
+    if (!bytes) {
+        return std::nullopt;
+    }
+    common::CBinaryReader reader(*bytes);
+    CPodAuditRecord record;
+    record.user_name = reader.readString(kAuditUserNameSize);
+    record.timestamp = reader.read<std::uint32_t>();
+    const auto operation = reader.read<std::int32_t>();
+    if (operation < kFirstAuditOperation || operation > kLastAuditOperation) {
+        return std::nullopt;
+    }
+    record.operation_type = static_cast<EPodAuditOperation>(operation);
+    record.filename = reader.readString(kAuditFilenameSize);
+    record.original_timestamp = reader.read<std::uint32_t>();
+    record.original_file_size = reader.read<std::uint32_t>();
+    record.new_timestamp = reader.read<std::uint32_t>();
+    record.new_file_size = reader.read<std::uint32_t>();
+    return record;
 }
 
 // nocedit 0x00550140

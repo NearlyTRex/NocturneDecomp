@@ -390,5 +390,62 @@ TEST_F(CDemonPodTest, APodUnmountedNoLongerAnswers) {
     EXPECT_THAT(notes_, Not(Contains(EndsWith("is missing"))));
 }
 
+class CDemonPodAuditTest : public CDemonPodTest {
+protected:
+    // A mod whose POD's trail holds the records, and claims count of them.
+    void givenTrail(const std::vector<engine::SPodImageAuditRecord> &records, std::int32_t count) {
+        givenMod("mods/extra", "id = \"extra\"\n[[pod]]\npath = \"EXTRA.POD\"\n");
+        std::string image = makePod2("", {{.name = "a.wav", .data = "A"}}, count);
+        for (const engine::SPodImageAuditRecord &record : records) {
+            image += engine::makeAuditRecord(record);
+        }
+        files_.givenFile("mods/extra/EXTRA.POD", image);
+    }
+
+    static engine::SPodImageAuditRecord change() {
+        return {.user_name = "jeffm",
+                .timestamp = 934387412,
+                .operation_type = 2,
+                .filename = "SOUND\\A.WAV",
+                .original_file_size = 140540,
+                .new_file_size = 153316};
+    }
+};
+
+TEST_F(CDemonPodAuditTest, EachPodsTrailIsLoggedWhenAsked) {
+    givenTrail(
+        {change(),
+         {.user_name = "mark", .timestamp = 934387412, .filename = "NEW.WAV", .new_file_size = 9},
+         {.user_name = "mark",
+          .operation_type = 1,
+          .filename = "OLD.WAV",
+          .original_file_size = 4}},
+        3);
+    pod().setSettings({.log_audit_trail = true});
+    load();
+    EXPECT_THAT(notes_,
+                ::testing::ElementsAre(EndsWith("mods/extra/EXTRA.POD: jeffm changed SOUND\\A.WAV "
+                                                "at 1999-08-11 16:03:32, 140540 to 153316 bytes"),
+                                       EndsWith("mods/extra/EXTRA.POD: mark added NEW.WAV at "
+                                                "1999-08-11 16:03:32, 0 to 9 bytes"),
+                                       EndsWith("mods/extra/EXTRA.POD: mark removed OLD.WAV at "
+                                                "1970-01-01 00:00:00, 4 to 0 bytes")));
+}
+
+TEST_F(CDemonPodAuditTest, NoTrailIsLoggedUnlessAsked) {
+    givenTrail({change()}, 1);
+    load();
+    EXPECT_TRUE(notes_.empty()) << notes_.front();
+}
+
+TEST_F(CDemonPodAuditTest, ATrailCutShortIsNoted) {
+    givenTrail({change()}, 3);
+    pod().setSettings({.log_audit_trail = true});
+    load();
+    EXPECT_THAT(notes_, ::testing::ElementsAre(::testing::HasSubstr("jeffm changed"),
+                                               EndsWith("mods/extra/EXTRA.POD's audit trail ends "
+                                                        "at record 1 of 3")));
+}
+
 } // namespace
 } // namespace nocturne::core
