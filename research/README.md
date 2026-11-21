@@ -847,6 +847,22 @@ pathing.
 - **Obstacle-aware A\* is feasible** on a scratch grid of our own, provided it stays clear of
   the shared path-map cache, which netplay depends on.
 
+### [29-blair_witch_engine_changes/](29-blair_witch_engine_changes/)
+
+Every behaviour change the Blair Witch builds made to a function the recreation ports, and the
+mechanism that selects it, so all four games run on one engine.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Sources, the theme index with approvals, shared roots |
+| `themes/*.md` | One table per theme: difference, port, evidence |
+| `classification.json` | Every item, as read twice against the `.asm` |
+
+**Key outcomes:**
+- **419 differences:** 61 gated on a file version, 105 manifest values, 57 front end, 45
+  superset, 64 Blair Witch actor features, 87 nothing to port.
+- **Nothing proposed changes Nocturne.**
+
 ---
 
 ## Standalone Documents
