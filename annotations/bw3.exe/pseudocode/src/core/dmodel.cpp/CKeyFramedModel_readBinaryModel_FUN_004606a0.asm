@@ -23,8 +23,8 @@
 ;   TerminatedCString s_Error_reading_keyframed_005bb64d
 ;   TerminatedCString s_core_dmodel_cpp_005bb670
 ;   TerminatedCString s_KFM_file_is_invalid_vers_005bb683
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00461300
@@ -67,8 +67,8 @@ section .text
     MOV EAX,0x5bb670                    ; 004606d2 | = "..\\core\\dmodel.cpp"
     MOV EDX,0xed                        ; 004606d7
     PUSH 0x5bb683                       ; 004606dc | = "KFM file is invalid version %d"
-    MOV [0x01d71de0],EAX                ; 004606e1 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004606e6 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 004606e1 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 004606e6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004606ec
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004606f1
@@ -94,8 +94,8 @@ section .text
         ;   Label: LAB_00460719
     MOV ECX,0xe7                        ; 0046071e
     PUSH 0x5bb64d                       ; 00460723 | = "Error reading keyframed model file"
-    MOV dword ptr [0x01d71de0],EDX      ; 00460728 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0046072e | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00460728 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 0046072e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00460734
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00460739

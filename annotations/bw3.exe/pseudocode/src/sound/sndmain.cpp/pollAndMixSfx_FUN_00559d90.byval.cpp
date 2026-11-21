@@ -69,8 +69,8 @@ __asm {
         mov ESI,0x5d2aa0
         mov EDI,0x599
         push 0x5d2ab5
-        mov dword ptr [g_CHAR_PTR_01d71de0],ESI
-        mov dword ptr [g_INT_01d71de4],EDI
+        mov dword ptr [g_CurrentFilename],ESI
+        mov dword ptr [g_CurrentLineNumber],EDI
         call core_main_c_displayErrorAndQuit_FUN_004e4330
         add ESP,0x4
     LAB_00559e91:
@@ -213,8 +213,8 @@ __asm {
         mov ECX,0x5d3ea6
         mov EBX,0x19ad
         push 0x5d3ebb
-        mov dword ptr [g_CHAR_PTR_01d71de0],ECX
-        mov dword ptr [g_INT_01d71de4],EBX
+        mov dword ptr [g_CurrentFilename],ECX
+        mov dword ptr [g_CurrentLineNumber],EBX
         call core_main_c_displayErrorAndQuit_FUN_004e4330
         add ESP,0x4
         jmp LAB_00559da4
@@ -222,8 +222,8 @@ __asm {
         mov EDX,0x5d2a6b
         mov ECX,0x595
         push 0x5d2a80
-        mov dword ptr [g_CHAR_PTR_01d71de0],EDX
-        mov dword ptr [g_INT_01d71de4],ECX
+        mov dword ptr [g_CurrentFilename],EDX
+        mov dword ptr [g_CurrentLineNumber],ECX
         call core_main_c_displayErrorAndQuit_FUN_004e4330
         add ESP,0x4
         jmp LAB_00559e65

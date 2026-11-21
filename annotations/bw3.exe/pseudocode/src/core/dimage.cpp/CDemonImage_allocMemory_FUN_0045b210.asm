@@ -10,8 +10,8 @@
 ;   core_dimage.cpp_CDemonImage_load_FUN_0045b300 at 0045b377
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dimage.cpp_CDemonImage_freeMemory_FUN_0045b270
@@ -46,8 +46,8 @@ section .text
     MOV EBX,0x5baff9                    ; 0045b241
     MOV ESI,0x31                        ; 0045b246
     PUSH 0x5bb00c                       ; 0045b24b
-    MOV dword ptr [0x01d71de0],EBX      ; 0045b250 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0045b256 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 0045b250 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0045b256 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045b25c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045b261

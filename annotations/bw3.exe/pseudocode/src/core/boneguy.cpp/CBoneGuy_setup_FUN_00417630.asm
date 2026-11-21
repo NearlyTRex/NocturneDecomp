@@ -177,8 +177,8 @@ section .text
     MOV ECX,0x5b6e76                    ; 004177be | = "..\\core\\boneguy.cpp"
     MOV ESI,0x136                       ; 004177c3
     PUSH 0x5b6e8a                       ; 004177c8 | = "CBoneGuy::explode - Not enough contai..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004177cd | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004177d3 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004177cd | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004177d3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004177d9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004177de

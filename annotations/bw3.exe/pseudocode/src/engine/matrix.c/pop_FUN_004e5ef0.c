@@ -11,8 +11,8 @@ void __cdecl engine_matrix_c_pop_FUN_004e5ef0(void)
 {
   g_MatrixStackIndex = g_MatrixStackIndex + -1;
   if (g_MatrixStackIndex < 0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";
-    g_INT_01d71de4 = 0x358;
+    g_CurrentFilename = "..\\engine\\matrix.c";
+    g_CurrentLineNumber = 856;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Matrix unbalance2");
   }
   g_INT_01c6e2fc = g_MatrixStack_M00[g_MatrixStackIndex];

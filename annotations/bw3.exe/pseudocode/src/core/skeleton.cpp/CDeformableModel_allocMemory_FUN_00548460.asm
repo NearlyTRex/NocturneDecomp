@@ -22,8 +22,8 @@
 ;   TerminatedCString s_Too_many_parts_in_CDefor_005d1948
 ;   TerminatedCString s_core_skeleton_cpp_005d1993
 ;   TerminatedCString s_Too_many_LODs_in_CDeform_005d19a8
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -59,8 +59,8 @@ section .text
     MOV ECX,0x5d18d0                    ; 00548492 | = "..\\core\\skeleton.cpp"
     MOV EAX,0x275                       ; 00548497
     PUSH 0x5d18e5                       ; 0054849c | = "Too many textures in CDeformableModel..."
-    MOV dword ptr [0x01d71de0],ECX      ; 005484a1 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 005484a7 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005484a1 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 005484a7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005484ac
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005484b1
@@ -73,8 +73,8 @@ section .text
     MOV EDX,0x5d1933                    ; 005484bc | = "..\\core\\skeleton.cpp"
     MOV ECX,0x279                       ; 005484c1
     PUSH 0x5d1948                       ; 005484c6 | = "Too many parts in CDeformableModel::a..."
-    MOV dword ptr [0x01d71de0],EDX      ; 005484cb | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 005484d1 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 005484cb | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 005484d1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005484d7
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005484dc
@@ -87,8 +87,8 @@ section .text
     MOV EAX,0x5d1993                    ; 005484e7 | = "..\\core\\skeleton.cpp"
     MOV EDX,0x27d                       ; 005484ec
     PUSH 0x5d19a8                       ; 005484f1 | = "Too many LODs in CDeformableModel::al..."
-    MOV [0x01d71de0],EAX                ; 005484f6 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 005484fb | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 005484f6 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 005484fb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00548501
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00548506
@@ -127,8 +127,8 @@ section .text
     MOV ECX,0x5d1869                    ; 00548558 | = "..\\core\\skeleton.cpp"
     MOV EAX,0x271                       ; 0054855d
     PUSH 0x5d187e                       ; 00548562 | = "Too many texture sets in CDeformableM..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00548567 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 0054856d | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00548567 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 0054856d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00548572
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00548577

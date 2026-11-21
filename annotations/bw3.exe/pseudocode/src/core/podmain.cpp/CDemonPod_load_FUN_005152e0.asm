@@ -16,8 +16,8 @@
 ;   TerminatedCString s_s_005cca3c
 ;   TerminatedCString s_core_podmain_cpp_005cca40
 ;   TerminatedCString s_Can_t_mount_s_s_005cca54
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -111,8 +111,8 @@ section .text
     MOV EDX,0x5cca11                    ; 00515391 | = "..\\core\\podmain.cpp"
     MOV ECX,0x39                        ; 00515396
     PUSH 0x5cca25                       ; 0051539b | = "Can't mount %s: %s"
-    MOV dword ptr [0x01d71de0],EDX      ; 005153a0 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 005153a6 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 005153a0 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 005153a6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005153ac
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005153b1
@@ -168,14 +168,14 @@ section .text
     POP ESI                             ; 00515432
     POP EBX                             ; 00515433
     RET                                 ; 00515434
-    MOV dword ptr [0x01d71de4],0x45     ; 00515435 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de4],0x45     ; 00515435 | g_CurrentLineNumber
         ;   Label: LAB_00515435
     LEA EAX,[ESP + 0x214]               ; 0051543f
     PUSH EAX                            ; 00515446
     LEA EAX,[ESP + 0x118]               ; 00515447
     PUSH EAX                            ; 0051544e
     PUSH 0x5cca54                       ; 0051544f | = "Can't mount %s: %s"
-    MOV dword ptr [0x01d71de0],EBP      ; 00515454 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de0],EBP      ; 00515454 | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0051545a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0051545f

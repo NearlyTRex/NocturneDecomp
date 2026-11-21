@@ -15,8 +15,8 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00547c20(CSkeleton *this_ptr,c
   
   file_handle = engine_dosio_cpp_getFile_FUN_004659c0("data",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
-    g_INT_01d71de4 = 0x101;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 257;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CSkeleton::load - Can't open %s");
   }
   core_skeleton_cpp_CSkeleton_loadStream_FUN_00547cb0(this_ptr,file_handle);

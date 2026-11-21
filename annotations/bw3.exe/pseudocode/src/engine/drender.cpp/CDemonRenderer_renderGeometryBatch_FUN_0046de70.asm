@@ -18,8 +18,8 @@
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   undefined4 g_RenderStateFlags+1
 ;   int g_VertexPreprocessMode
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -56,8 +56,8 @@ section .text
     MOV ECX,0x5bc645                    ; 0046de9b
     MOV EAX,0xa6a                       ; 0046dea0
     PUSH 0x5bc65b                       ; 0046dea5
-    MOV dword ptr [0x01d71de0],ECX      ; 0046deaa | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 0046deb0 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0046deaa | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 0046deb0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0046deb5
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046deba

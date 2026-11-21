@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005c9cb4
 ;   TerminatedCString s_CMotionController_setDes_005c9cc7
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -80,8 +80,8 @@ section .text
     MOV ECX,0x5c9cb4                    ; 004fc11b | = "..\\core\\motion.cpp"
     MOV EDI,0x2bd                       ; 004fc120
     PUSH 0x5c9cc7                       ; 004fc125 | = "CMotionController::setDesiredState - ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004fc12a | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004fc130 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004fc12a | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004fc130 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fc136
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fc13b

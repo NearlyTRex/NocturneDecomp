@@ -16,8 +16,8 @@
 ;   TerminatedCString s_CStrList_insert_invalid_005bd40b
 ;   TerminatedCString s_shape_edittool_cpp_005bd42c
 ;   TerminatedCString s_CStrList_insert_out_of_m_005bd442
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -46,8 +46,8 @@ section .text
         ;   Label: LAB_004820c4
     MOV ESI,0xc2e                       ; 004820c9
     PUSH 0x5bd40b                       ; 004820ce | = "CStrList::insert - invalid index"
-    MOV dword ptr [0x01d71de0],ECX      ; 004820d3 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004820d9 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004820d3 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004820d9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004820df
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004820e4
@@ -129,8 +129,8 @@ section .text
         ;   Label: LAB_00482178
     MOV EDI,0xc3c                       ; 0048217d
     PUSH 0x5bd442                       ; 00482182 | = "CStrList::insert - out of memory"
-    MOV dword ptr [0x01d71de0],ESI      ; 00482187 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0048218d | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 00482187 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 0048218d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00482193
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00482198

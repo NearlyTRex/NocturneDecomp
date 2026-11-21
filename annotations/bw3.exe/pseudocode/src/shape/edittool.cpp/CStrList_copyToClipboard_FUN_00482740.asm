@@ -16,8 +16,8 @@
 ;   TerminatedCString s_CStrList_copyToClipboard_005bd639
 ;   TerminatedCString s_s_005bd67a
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -82,8 +82,8 @@ section .text
     MOV ESI,0x5bd623                    ; 00482795 | = "..\\shape\\edittool.cpp"
     MOV EDI,0xd4d                       ; 0048279a
     PUSH 0x5bd639                       ; 0048279f | = "CStrList::copyToClipboard - out of me..."
-    MOV dword ptr [0x01d71de0],ESI      ; 004827a4 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004827aa | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004827a4 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004827aa | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004827b0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004827b5

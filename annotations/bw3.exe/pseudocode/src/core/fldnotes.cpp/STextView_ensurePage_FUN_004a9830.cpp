@@ -18,8 +18,8 @@ void __cdecl core_fldnotes_cpp_STextView_ensurePage_FUN_004a9830(STextView *this
       ;
       this_ptr->pages = pSVar1;
       if (pSVar1 == (STextPage *)0x0) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
-        g_INT_01d71de4 = 0x67d;
+        g_CurrentFilename = "..\\core\\fldnotes.cpp";
+        g_CurrentLineNumber = 1661;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
       }
       core_fldnotes_cpp_STextPage_init_FUN_004a8cb0(this_ptr->pages + this_ptr->page_count);

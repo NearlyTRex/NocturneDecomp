@@ -16,8 +16,8 @@
 ;   TerminatedCString s_pg_005c118d
 ;   TerminatedCString s_core_fldnotes_cpp_005c1192
 ;   TerminatedCString s_NotesMap_paginate_unable_005c11a7
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004aa780
@@ -51,8 +51,8 @@ section .text
     MOV ECX,0x5c116a                    ; 004aa6ec | = "..\\core\\fldnotes.cpp"
     MOV EDI,0x892                       ; 004aa6f1
     PUSH 0x5c117f                       ; 004aa6f6 | = "Out of memory"
-    MOV dword ptr [0x01d71de0],ECX      ; 004aa6fb | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004aa701 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004aa6fb | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004aa701 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aa707
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004aa70c
@@ -98,8 +98,8 @@ section .text
     MOV EBP,0x5c1192                    ; 004aa753 | = "..\\core\\fldnotes.cpp"
     MOV EAX,0x899                       ; 004aa758
     PUSH 0x5c11a7                       ; 004aa75d | = "NotesMap::paginate - unable to add re..."
-    MOV dword ptr [0x01d71de0],EBP      ; 004aa762 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004aa768 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004aa762 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004aa768 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aa76d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004aa772

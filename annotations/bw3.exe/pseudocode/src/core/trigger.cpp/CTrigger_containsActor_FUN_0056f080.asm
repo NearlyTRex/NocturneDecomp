@@ -21,8 +21,8 @@
 ;   float g_FLOAT_005d6807 = 0.5
 ;   double g_DOUBLE_005d680b = 0.25
 ;   undefined4 g_CCharacterClassInfo.name_hash
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -288,16 +288,16 @@ section .text
     MOV EDI,0x5d6797                    ; 0056f3ba | = "..\\core\\trigger.cpp"
     MOV EBP,0x38e                       ; 0056f3bf
     PUSH 0x5d67ab                       ; 0056f3c4 | = "CTrigger::containsActor - invalid tri..."
-    MOV dword ptr [0x01d71de0],EDI      ; 0056f3c9 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 0056f3cf | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 0056f3c9 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBP      ; 0056f3cf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0056f3d5
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0056f3da
     MOV EDX,0x5d67e5                    ; 0056f3dd | = "..\\core\\trigger.cpp"
     MOV ECX,0x394                       ; 0056f3e2
     PUSH 0x5d67f9                       ; 0056f3e7 | = "Hell froze..."
-    MOV dword ptr [0x01d71de0],EDX      ; 0056f3ec | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0056f3f2 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0056f3ec | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 0056f3f2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0056f3f8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0056f3fd

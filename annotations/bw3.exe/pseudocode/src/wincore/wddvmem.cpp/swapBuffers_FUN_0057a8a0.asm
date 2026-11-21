@@ -37,8 +37,8 @@
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c6cee8
 ;   int g_MMXSupported
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   int g_FlipPending
 ;   ... and 4 more
@@ -266,8 +266,8 @@ section .text
     MOV ECX,0x5d7779                    ; 0057aac6 | = "..\\wincore\\wddvmem.cpp"
     MOV EBX,0x381                       ; 0057aacb
     PUSH 0x5d7790                       ; 0057aad0 | = "Unable to unlock front buffer"
-    MOV dword ptr [0x01d71de0],ECX      ; 0057aad5 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0057aadb | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0057aad5 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 0057aadb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057aae1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057aae6

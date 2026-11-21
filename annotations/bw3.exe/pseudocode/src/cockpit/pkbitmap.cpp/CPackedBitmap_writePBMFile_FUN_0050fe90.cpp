@@ -39,8 +39,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0050fe90(CPacke
   if ((file_handle->_flag & 0x20) == 0) {
     return;
   }
-  g_CHAR_PTR_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
-  g_INT_01d71de4 = 0x49e;
+  g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+  g_CurrentLineNumber = 1182;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Error writing PBM");
   return;
 }

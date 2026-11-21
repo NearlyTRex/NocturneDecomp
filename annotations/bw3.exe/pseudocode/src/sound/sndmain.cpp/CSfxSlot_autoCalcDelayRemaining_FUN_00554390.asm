@@ -14,8 +14,8 @@
 ;   TerminatedCString s_SfxSlot_autoCalcDelayRem_005d309f
 ;   float g_FLOAT_005e4844 = 1116.400
 ;   float g_FLOAT_00604240 = 1
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   double g_DOUBLE_02cf2828
 ;   double g_DOUBLE_02cf2838
 ;   double g_DOUBLE_02cf2848
@@ -49,8 +49,8 @@ section .text
     MOV ECX,0x5d308a                    ; 005543b4 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xab8                       ; 005543b9
     PUSH 0x5d309f                       ; 005543be | = "SfxSlot::autoCalcDelayRemaining - mus..."
-    MOV dword ptr [0x01d71de0],ECX      ; 005543c3 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 005543c9 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005543c3 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 005543c9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005543cf
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005543d4

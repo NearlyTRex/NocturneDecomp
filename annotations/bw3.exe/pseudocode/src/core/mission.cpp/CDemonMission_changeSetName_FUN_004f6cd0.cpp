@@ -13,8 +13,8 @@ void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004f6cd0(CDemonMis
   char (*pacVar2) [256];
   
   if ((set_index < 0) || (this_ptr->num_sets <= set_index)) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
-    g_INT_01d71de4 = 0x3be;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 958;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::changeSetName - invalid index: %d, count = %d");
   }
   pacVar2 = this_ptr->set_names + set_index;
@@ -30,8 +30,8 @@ void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_004f6cd0(CDemonMis
   if (set_index != this_ptr->current_set_index) {
     return;
   }
-  g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
-  g_INT_01d71de4 = 0x3c8;
+  g_CurrentFilename = "..\\core\\mission.cpp";
+  g_CurrentLineNumber = 968;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Tried to change the set file for the set we are currently in.  Let's not allow this, OK?");
   return;
 }

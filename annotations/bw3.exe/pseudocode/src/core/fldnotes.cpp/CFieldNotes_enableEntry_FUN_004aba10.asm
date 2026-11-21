@@ -18,8 +18,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;   int g_INT_005fe374 = 0x1
 ;   int g_INT_01d0d210
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30
@@ -78,8 +78,8 @@ section .text
     MOV ESI,0x5c16af                    ; 004aba69 | = "..\\core\\fldnotes.cpp"
     MOV EDI,0xa7f                       ; 004aba6e
     PUSH 0x5c16c4                       ; 004aba73 | = "Field note %s has invalid type %d"
-    MOV dword ptr [0x01d71de0],ESI      ; 004aba78 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004aba7e | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004aba78 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004aba7e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aba84
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004aba89

@@ -22,8 +22,8 @@
 ;   TerminatedCString s_lockSound_unable_to_crea_005d3cca
 ;   TerminatedCString s_sound_sndmain_cpp_005d3cf4
 ;   TerminatedCString s_lockSound_lock_imbalance_005d3d09
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   HANDLE g_SoundMutex
 ;   int g_SoundLockCount
 ;
@@ -52,8 +52,8 @@ section .text
     MOV ECX,0x5d3cb5                    ; 00558eaa | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x17e7                      ; 00558eaf
     PUSH 0x5d3cca                       ; 00558eb4 | = "lockSound - unable to create mutex ob..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00558eb9 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00558ebf | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00558eb9 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 00558ebf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00558ec5
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00558eca
@@ -77,8 +77,8 @@ section .text
         ;   Label: LAB_00558ef2
     MOV EDX,0x17f2                      ; 00558ef7
     PUSH 0x5d3d09                       ; 00558efc | = "lockSound - lock imbalance?"
-    MOV [0x01d71de0],EAX                ; 00558f01 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00558f06 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00558f01 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00558f06 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00558f0c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00558f11

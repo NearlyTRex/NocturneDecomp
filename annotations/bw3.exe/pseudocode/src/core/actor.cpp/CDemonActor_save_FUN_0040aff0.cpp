@@ -16,8 +16,8 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040aff0(CDemonActor *this_ptr,
   core_actor_cpp_syncActorTypeIDs_FUN_0040c870();
   core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(this_ptr);
   if (this_ptr->actor_name[0] == '\0') {
-    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
-    g_INT_01d71de4 = 0x7e9;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 2025;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonActor::save - tried to save actor of class %s with no name");
   }
   _fprintf(file_handle,"%s{ %s \"%s\"\n");
@@ -32,8 +32,8 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040aff0(CDemonActor *this_ptr,
   core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(-1);
   _fprintf(file_handle,"%s} %s \"%s\"\n");
   if ((file_handle->_flag & 0x20) != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
-    g_INT_01d71de4 = 0x80b;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 2059;
     core_main_c_displayErrorAndQuit_FUN_004e4330("IO Error after writing actor of type %s");
   }
   g_ActorDataFile = p_Var1;

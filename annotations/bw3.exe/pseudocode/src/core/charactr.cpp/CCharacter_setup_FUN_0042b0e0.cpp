@@ -38,8 +38,8 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(CCharacter *this_pt
         (*((this_ptr_00->vtable)._ub)->pickup)(this_ptr_00,&this_ptr->base);
       }
       else if (pCVar6 != this_ptr) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\charactr.cpp";
-        g_INT_01d71de4 = 0x145;
+        g_CurrentFilename = "..\\core\\charactr.cpp";
+        g_CurrentLineNumber = 325;
         core_main_c_displayErrorAndQuit_FUN_004e4330("%s is carrying %s, but %s thinks it is being carried by %s");
       }
     }

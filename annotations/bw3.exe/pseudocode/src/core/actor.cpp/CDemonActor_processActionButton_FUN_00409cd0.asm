@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005b559e
 ;   TerminatedCString s_CDemonActor_processActio_005b55b0
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -23,8 +23,8 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_processActionButton_FUN_00409cd0
     MOV ECX,0x5ac                       ; 00409cd5
     PUSH 0x5b55b0                       ; 00409cda | = "CDemonActor::processActionButton - sh..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00409cdf | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00409ce5 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00409cdf | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00409ce5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00409ceb
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     MOV EAX,0x1                         ; 00409cf0

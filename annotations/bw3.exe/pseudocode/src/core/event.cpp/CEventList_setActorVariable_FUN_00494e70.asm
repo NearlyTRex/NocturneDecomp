@@ -19,8 +19,8 @@
 ;   TerminatedCString s_Tried_to_assign_actor_va_005bffd9
 ;   TerminatedCString s_core_event_cpp_005c0017
 ;   TerminatedCString s_CEventList_setActorVaria_005c0029
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
@@ -50,8 +50,8 @@ section .text
     MOV EDX,0x5bffc7                    ; 00494e8d | = "..\\core\\event.cpp"
     MOV ECX,0xf34                       ; 00494e92
     PUSH EBP                            ; 00494e97
-    MOV dword ptr [0x01d71de0],EDX      ; 00494e98 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00494e9e | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00494e98 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00494e9e | g_CurrentLineNumber
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 00494ea4
         ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00494ea9
@@ -140,8 +140,8 @@ section .text
     MOV ECX,0x5c0017                    ; 00494f4e | = "..\\core\\event.cpp"
     MOV ESI,0xf41                       ; 00494f53
     PUSH 0x5c0029                       ; 00494f58 | = "CEventList::setActorVariable - alread..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00494f5d | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00494f63 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00494f5d | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 00494f63 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00494f69
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00494f6e

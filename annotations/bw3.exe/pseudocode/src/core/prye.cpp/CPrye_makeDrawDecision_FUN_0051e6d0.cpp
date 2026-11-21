@@ -54,8 +54,8 @@ void __cdecl core_prye_cpp_CPrye_makeDrawDecision_FUN_0051e6d0(CPrye *this_ptr)
   bVar11 = 0;
   iVar15 = (this_ptr->base).base.layer_action_index;
   if ((iVar15 < 0) || (0x20 < iVar15)) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
-    g_INT_01d71de4 = 0xe24;
+    g_CurrentFilename = "..\\core\\prye.cpp";
+    g_CurrentLineNumber = 3620;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CPrye::makeDrawDecision - draw motion out of range!");
   }
   local_e8 = 1.0;

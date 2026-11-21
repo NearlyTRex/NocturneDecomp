@@ -12,8 +12,8 @@
 ;   core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0 at 005274d2
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_0043fa90
     MOV ESI,0x5de                       ; 0043fa95
     PUSH 0x5b9238                       ; 0043fa9a
-    MOV dword ptr [0x01d71de0],ECX      ; 0043fa9f | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0043faa5 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0043fa9f | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0043faa5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0043faab
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0043fab0

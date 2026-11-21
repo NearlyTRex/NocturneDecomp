@@ -63,8 +63,8 @@ void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr)
   
   bVar4 = 0;
   if (this_ptr->weapon == (CWeapon *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
-    g_INT_01d71de4 = 0x1405;
+    g_CurrentFilename = "..\\core\\prye.cpp";
+    g_CurrentLineNumber = 5125;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CPrye::aimLeftPistol - no weapon?");
   }
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isInvulnerable)

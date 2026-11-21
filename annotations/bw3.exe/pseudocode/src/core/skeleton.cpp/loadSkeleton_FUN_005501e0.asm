@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d2297
 ;   TerminatedCString s_Can_t_load_s_because_ske_005d22ac
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   char[196] g_CHAR_ARRAY_02cd28bc
 ;
 ; Called Functions:
@@ -109,8 +109,8 @@ section .text
     MOV EAX,0x5d2297                    ; 00550299 | = "..\\core\\skeleton.cpp"
     MOV EDX,0x10ac                      ; 0055029e
     PUSH 0x5d22ac                       ; 005502a3 | = "Can't load %s because skeleton manage..."
-    MOV [0x01d71de0],EAX                ; 005502a8 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 005502ad | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 005502a8 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 005502ad | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005502b3
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005502b8

@@ -12,8 +12,8 @@ void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0(char *pro
   if (g_CurrentActorBeingProcessed != (CDemonActor *)0x0) {
     core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(g_CurrentActorBeingProcessed);
   }
-  g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
-  g_INT_01d71de4 = 0x85d;
+  g_CurrentFilename = "..\\core\\actor.cpp";
+  g_CurrentLineNumber = 2141;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Error %sing actor property.\nActor name: %s\nActor type: %s\nProperty description: %s\nProperty type: %s\n");
   return;
 }

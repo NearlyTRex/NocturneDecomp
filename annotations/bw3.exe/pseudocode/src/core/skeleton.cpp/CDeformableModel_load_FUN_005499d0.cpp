@@ -15,8 +15,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005499d0(CDeformableMod
   
   file_handle = engine_dosio_cpp_getFile_FUN_004659c0("models",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
-    g_INT_01d71de4 = 0x4c1;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 1217;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::load - Can't open %s");
   }
   core_skeleton_cpp_CDeformableModel_loadStream_FUN_00549a60(this_ptr,file_handle);

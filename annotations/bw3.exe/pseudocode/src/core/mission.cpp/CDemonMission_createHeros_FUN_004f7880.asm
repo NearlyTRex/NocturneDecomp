@@ -22,8 +22,8 @@
 ;   undefined4 g_CGameInstance.aim_mode
 ;   int g_HeroCount
 ;   int g_INT_01d5ba14
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGameInstance
 ;   undefined4 g_CNetGameInstance.player_count
 ;   undefined4 g_CNetGameInstance.players[0].aim_mode
@@ -171,8 +171,8 @@ section .text
         ;   Label: LAB_004f79e3
     MOV EDI,0x69a                       ; 004f79e8
     PUSH 0x5c8d58                       ; 004f79ed | = "CDemonMission::createHeros - too many..."
-    MOV dword ptr [0x01d71de0],ESI      ; 004f79f2 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004f79f8 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004f79f2 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004f79f8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f79fe
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f7a03

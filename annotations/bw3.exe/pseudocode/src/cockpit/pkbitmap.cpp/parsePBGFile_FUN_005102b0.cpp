@@ -92,16 +92,16 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_005102b0(CPackedBi
       }
     }
     else {
-      g_CHAR_PTR_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
-      g_INT_01d71de4 = 0x573;
+      g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+      g_CurrentLineNumber = 1395;
       core_main_c_displayErrorAndQuit_FUN_004e4330("IO error reading PBG (possibly corrupt file).");
 LAB_005102f3:
-      g_CHAR_PTR_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
-      g_INT_01d71de4 = 0x574;
+      g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+      g_CurrentLineNumber = 1396;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Corrupt data detected reading PBG.");
     }
-    g_CHAR_PTR_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
-    g_INT_01d71de4 = 0x575;
+    g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+    g_CurrentLineNumber = 1397;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory reading PBG");
   } while( true );
 }

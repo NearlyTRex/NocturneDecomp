@@ -55,8 +55,8 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_0050da60(char *filename)
   }
   file = _fopen(filename,"wb");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\pcx.c";
-    g_INT_01d71de4 = 0xed;
+    g_CurrentFilename = "..\\engine\\pcx.c";
+    g_CurrentLineNumber = 237;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Cannot write .PCX");
   }
   iVar2 = 0;

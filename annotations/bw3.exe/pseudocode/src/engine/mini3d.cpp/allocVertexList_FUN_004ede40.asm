@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005c7f95
 ;   TerminatedCString s_CMini3D_allocVertexList_005c7faa
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_01d76f5c
 ;   float* g_FLOAT_PTR_01d76f60
 ;   float* g_FLOAT_PTR_01d76f64
@@ -46,8 +46,8 @@ section .text
     MOV ECX,0x5c7f95                    ; 004ede61 | = "..\\engine\\mini3d.cpp"
     MOV EBX,0x67d                       ; 004ede66
     PUSH 0x5c7faa                       ; 004ede6b | = "CMini3D::allocVertexList - Out of mem..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004ede70 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004ede76 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004ede70 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 004ede76 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ede7c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ede81

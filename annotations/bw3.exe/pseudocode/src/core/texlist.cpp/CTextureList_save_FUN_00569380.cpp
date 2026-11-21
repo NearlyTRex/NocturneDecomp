@@ -39,8 +39,8 @@ void __cdecl core_texlist_cpp_CTextureList_save_FUN_00569380(CTextureList *this_
   pcVar3 = (char *)0x0;
 LAB_005693d0:
   if (pcVar3 == (char *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\texlist.cpp";
-    g_INT_01d71de4 = 0xad;
+    g_CurrentFilename = "..\\core\\texlist.cpp";
+    g_CurrentLineNumber = 173;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureList::save - No extension found");
   }
   pcVar2 = ".tex";
@@ -55,8 +55,8 @@ LAB_005693d0:
   } while (cVar1 != '\0');
   p_Stack_14 = engine_dosio_cpp_getFile_FUN_004659c0("data",acStack_114,"wt");
   if (p_Stack_14 == (_FILE *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\texlist.cpp";
-    g_INT_01d71de4 = 0xb6;
+    g_CurrentFilename = "..\\core\\texlist.cpp";
+    g_CurrentLineNumber = 182;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureList::save - Bad filename!");
   }
   iVar4 = 0;

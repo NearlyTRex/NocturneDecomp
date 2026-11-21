@@ -14,8 +14,8 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void)
   
   iVar1 = _chmod(".\\system\\bw3.ini",0x180);
   if (iVar1 != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\inivar.cpp";
-    g_INT_01d71de4 = 0x57;
+    g_CurrentFilename = "..\\core\\inivar.cpp";
+    g_CurrentLineNumber = 87;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Please copy Blair Witch 3 to your hard drive");
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004d8a20(&local_210,".\\system\\bw3.ini",(char *)0x0);

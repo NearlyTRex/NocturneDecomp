@@ -24,8 +24,8 @@
 ;   TerminatedCString s_engine_ini_cpp_005c56b4
 ;   TerminatedCString s_cIni_FindLineNumberOfVar_005c56c6
 ;   TerminatedCString s_s_005c56fb
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -194,8 +194,8 @@ section .text
         ;   Label: LAB_004d85be
     MOV ESI,0xfd                        ; 004d85c3
     PUSH 0x5c56c6                       ; 004d85c8 | = "cIni::FindLineNumberOfVariable: Unabl..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004d85cd | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004d85d3 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004d85cd | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004d85d3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d85d9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d85de

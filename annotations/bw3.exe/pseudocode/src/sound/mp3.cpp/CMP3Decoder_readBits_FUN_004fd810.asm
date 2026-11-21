@@ -22,8 +22,8 @@
 ;   TerminatedCString s_Buffer_overflow_File_s_005c9fd6
 ;   uint[18] g_MpegBitMaskTableMultiBit
 ;   undefined4 g_MpegBitMaskTableMultiBit[8]
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -100,8 +100,8 @@ section .text
     MOV EBP,0x5c9fc5                    ; 004fd8c1 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x30a                       ; 004fd8c6
     PUSH 0x5c9fd6                       ; 004fd8cb | = "Buffer overflow!!  File: %s"
-    MOV dword ptr [0x01d71de0],EBP      ; 004fd8d0 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004fd8d6 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004fd8d0 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004fd8d6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fd8db
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004fd8e0

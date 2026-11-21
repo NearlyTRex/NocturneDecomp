@@ -18,8 +18,8 @@
 ;   TerminatedCString s_Out_of_memory_005c10e6
 ;   TerminatedCString s_core_fldnotes_cpp_005c10f5
 ;   TerminatedCString s_Entry_name_s_is_too_long_005c110a
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesEntry_ctor_FUN_004a98f0
@@ -60,8 +60,8 @@ section .text
     MOV EDI,0x5c10d1                    ; 004a9cb9 | = "..\\core\\fldnotes.cpp"
     MOV EAX,0x728                       ; 004a9cbe
     PUSH 0x5c10e6                       ; 004a9cc3 | = "Out of memory!"
-    MOV dword ptr [0x01d71de0],EDI      ; 004a9cc8 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004a9cce | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 004a9cc8 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004a9cce | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004a9cd3
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004a9cd8
@@ -113,8 +113,8 @@ section .text
     MOV ECX,0x5c1081                    ; 004a9d35 | = "..\\core\\fldnotes.cpp"
     MOV EBX,0x722                       ; 004a9d3a
     PUSH 0x5c1096                       ; 004a9d3f | = "Too many field note entries in sectio..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004a9d44 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004a9d4a | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004a9d44 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 004a9d4a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004a9d50
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004a9d55
@@ -125,8 +125,8 @@ section .text
     MOV EDX,0x5c10f5                    ; 004a9d5e | = "..\\core\\fldnotes.cpp"
     MOV ECX,0x72d                       ; 004a9d63
     PUSH 0x5c110a                       ; 004a9d68 | = "Entry name '%s' is too long"
-    MOV dword ptr [0x01d71de0],EDX      ; 004a9d6d | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004a9d73 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004a9d6d | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004a9d73 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004a9d79
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004a9d7e

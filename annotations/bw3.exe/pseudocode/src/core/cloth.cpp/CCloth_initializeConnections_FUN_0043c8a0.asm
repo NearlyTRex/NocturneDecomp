@@ -31,8 +31,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005b90b9
 ;   TerminatedCString s_Too_many_connecting_vert_005b90cb
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -268,8 +268,8 @@ section .text
     MOV EDI,0x5b90b9                    ; 0043cad3 | = "..\\core\\cloth.cpp"
     MOV EAX,0x1c3                       ; 0043cad8
     PUSH 0x5b90cb                       ; 0043cadd | = "Too many connecting verticies"
-    MOV dword ptr [0x01d71de0],EDI      ; 0043cae2 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 0043cae8 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 0043cae2 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 0043cae8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0043caed
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0043caf2

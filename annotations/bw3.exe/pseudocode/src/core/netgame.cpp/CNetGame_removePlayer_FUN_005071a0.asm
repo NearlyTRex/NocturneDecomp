@@ -18,8 +18,8 @@
 ;   TerminatedCString s_CNetGame_removePlayer_in_005cada4
 ;   TerminatedCString s_core_netgame_cpp_005cadd2
 ;   TerminatedCString s_CNetGame_removePlayer_tr_005cade6
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_ChatOutCount
 ;
 ; Called Functions:
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_005071b8
     MOV ESI,0x862                       ; 005071bd
     PUSH 0x5cada4                       ; 005071c2 | = "CNetGame::removePlayer - invalid play..."
-    MOV dword ptr [0x01d71de0],EBX      ; 005071c7 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 005071cd | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 005071c7 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 005071cd | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005071d3
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005071d8
@@ -62,8 +62,8 @@ section .text
     MOV EBP,0x5cadd2                    ; 005071eb | = "..\\core\\netgame.cpp"
     MOV EAX,0x869                       ; 005071f0
     PUSH 0x5cade6                       ; 005071f5 | = "CNetGame::removePlayer - tried to rem..."
-    MOV dword ptr [0x01d71de0],EBP      ; 005071fa | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00507200 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 005071fa | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00507200 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00507205
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050720a

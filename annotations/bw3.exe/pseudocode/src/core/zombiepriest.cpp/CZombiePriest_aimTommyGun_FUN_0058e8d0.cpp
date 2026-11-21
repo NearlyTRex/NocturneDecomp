@@ -57,8 +57,8 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_aimTommyGun_FUN_0058e8d0(CZombi
                          ((this_ptr->base).base.carry_hands[0].carry_actor,
                           g_CWeaponClassInfo.name_hash);
       if (pCVar3 == (CDemonActor *)0x0) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\zombiepriest.cpp";
-        g_INT_01d71de4 = 0x2aa;
+        g_CurrentFilename = "..\\core\\zombiepriest.cpp";
+        g_CurrentLineNumber = 682;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CZombiePriest::Aim Burning Cross - I'm not carrying one!");
       }
       local_b4 = 0.7853982;

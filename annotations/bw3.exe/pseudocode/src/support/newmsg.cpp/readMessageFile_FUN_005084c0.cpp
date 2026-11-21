@@ -46,8 +46,8 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
   _fgets(local_21c,0xff,file_handle);
   _fscanf(file_handle,"%d\n");
   if (local_1c != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\support\\newmsg.cpp";
-    g_INT_01d71de4 = 0x5b;
+    g_CurrentFilename = "..\\support\\newmsg.cpp";
+    g_CurrentLineNumber = 91;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Unknown message file version");
   }
   _fgets(local_21c,0xff,file_handle);
@@ -99,13 +99,13 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
     }
     iVar3 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n");
     if (iVar3 != 2) {
-      g_CHAR_PTR_01d71de0 = "..\\support\\newmsg.cpp";
-      g_INT_01d71de4 = 0x6f;
+      g_CurrentFilename = "..\\support\\newmsg.cpp";
+      g_CurrentLineNumber = 111;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Error reading %s");
     }
     if (499 < g_INT_01dd4898) {
-      g_CHAR_PTR_01d71de0 = "..\\support\\newmsg.cpp";
-      g_INT_01d71de4 = 0x74;
+      g_CurrentFilename = "..\\support\\newmsg.cpp";
+      g_CurrentLineNumber = 116;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Too many messages in %s");
     }
     uVar10 = 0xffffffff;
@@ -119,8 +119,8 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
     pvVar8 = malloc(~uVar10);
     g_INT_ARRAY_01dd583c[g_INT_01dd4898] = (int)pvVar8;
     if (pvVar8 == (void *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\support\\newmsg.cpp";
-      g_INT_01d71de4 = 0x77;
+      g_CurrentFilename = "..\\support\\newmsg.cpp";
+      g_CurrentLineNumber = 119;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory mallocing message tag : %s");
     }
     uVar10 = 0xffffffff;
@@ -134,8 +134,8 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_005084c0(char *message_file)
     pcVar9 = (char *)malloc(~uVar10);
     g_CHAR_PTR_ARRAY_01dd6008[g_INT_01dd4898 + 1] = pcVar9;
     if (pcVar9 == (char *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\support\\newmsg.cpp";
-      g_INT_01d71de4 = 0x7a;
+      g_CurrentFilename = "..\\support\\newmsg.cpp";
+      g_CurrentLineNumber = 122;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory mallocing message tag : %s");
     }
     pcVar9 = local_11c;

@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_005cc86f
 ;   TerminatedCString s_Can_t_re_mount_s_s_005cc881
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -80,7 +80,7 @@ section .text
     POP ESI                             ; 00514526
     POP EBX                             ; 00514527
     RET                                 ; 00514528
-    MOV dword ptr [0x01d71de4],0x474    ; 00514529 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de4],0x474    ; 00514529 | g_CurrentLineNumber
         ;   Label: LAB_00514529
     MOV EAX,ESP                         ; 00514533
     PUSH EAX                            ; 00514535
@@ -88,7 +88,7 @@ section .text
     PUSH EAX                            ; 0051453d
     MOV EDI,0x5cc86f                    ; 0051453e | = "..\\engine\\pod.cpp"
     PUSH 0x5cc881                       ; 00514543 | = "Can't re-mount %s: %s"
-    MOV dword ptr [0x01d71de0],EDI      ; 00514548 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de0],EDI      ; 00514548 | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0051454e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00514553

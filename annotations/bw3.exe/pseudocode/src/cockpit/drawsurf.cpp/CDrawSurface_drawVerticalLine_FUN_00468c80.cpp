@@ -56,16 +56,16 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00468c80(CDr
             return;
           }
         }
-        g_CHAR_PTR_01d71de0 = "..\\cockpit\\drawsurf.cpp";
-        g_INT_01d71de4 = 0x3fc;
+        g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
+        g_CurrentLineNumber = 1020;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel!");
         return;
       }
       if ((uint)g_INT_005fba20 < 0x10) {
         if (g_INT_005fba20 != 8) {
 LAB_00468d63:
-          g_CHAR_PTR_01d71de0 = "..\\cockpit\\drawsurf.cpp";
-          g_INT_01d71de4 = 0x3dc;
+          g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
+          g_CurrentLineNumber = 988;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel!");
           return;
         }

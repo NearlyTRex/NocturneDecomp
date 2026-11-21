@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -95,8 +95,8 @@ section .text
     MOV EBP,0x5d739e                    ; 00579354
     MOV EAX,0x81                        ; 00579359
     PUSH 0x5d73b3                       ; 0057935e
-    MOV dword ptr [0x01d71de0],EBP      ; 00579363 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00579369 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 00579363 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00579369 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057936e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00579373

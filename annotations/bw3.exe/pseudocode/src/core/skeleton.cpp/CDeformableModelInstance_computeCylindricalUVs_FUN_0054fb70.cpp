@@ -26,8 +26,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
   double dVar13;
   
   if (this_ptr->cached_skinned_lod_index < 0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
-    g_INT_01d71de4 = 0xfbd;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 4029;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModelInstance::computeCylindricalUVs - points not generated");
   }
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr);

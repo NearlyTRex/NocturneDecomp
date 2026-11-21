@@ -17,8 +17,8 @@ void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_0053e870(CDemonSe
   SRaytraceState *pSVar6;
   
   if (5 < g_RaytraceStateStackDepth) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\setcolid.cpp";
-    g_INT_01d71de4 = 0x406;
+    g_CurrentFilename = "..\\core\\setcolid.cpp";
+    g_CurrentLineNumber = 1030;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::pushRaytraceState - stack full");
   }
   iVar3 = g_RaytraceStateStackDepth;

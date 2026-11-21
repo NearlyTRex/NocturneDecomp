@@ -14,8 +14,8 @@ void __cdecl engine_mini3d_cpp_allocVertexList_FUN_004ede40(void)
   }
   g_INT_01d76f5c = (int)malloc(0x9c440);
   if ((void *)g_INT_01d76f5c == (void *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\mini3d.cpp";
-    g_INT_01d71de4 = 0x67d;
+    g_CurrentFilename = "..\\engine\\mini3d.cpp";
+    g_CurrentLineNumber = 1661;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CMini3D::allocVertexList - Out of memory!");
   }
   g_FLOAT_PTR_01d76f60 = (float *)(g_INT_01d76f5c + 0x3fU & 0xffffffc0);

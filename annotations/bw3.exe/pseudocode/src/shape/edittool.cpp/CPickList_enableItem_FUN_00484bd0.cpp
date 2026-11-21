@@ -12,8 +12,8 @@ void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(CPickList *thi
   int *piVar1;
   
   if ((item_index < 0) || ((this_ptr->base).item_count <= item_index)) {
-    g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
-    g_INT_01d71de4 = 0x116f;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 4463;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CPickList::enableItem - invalid index");
   }
   if (this_ptr->enabled_capacity <= item_index) {
@@ -24,8 +24,8 @@ void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(CPickList *thi
                        (this_ptr->enabled_array,(this_ptr->base).item_count << 2);
     this_ptr->enabled_array = piVar1;
     if (piVar1 == (int *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
-      g_INT_01d71de4 = 0x1177;
+      g_CurrentFilename = "..\\shape\\edittool.cpp";
+      g_CurrentLineNumber = 4471;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
     }
     while (this_ptr->enabled_capacity < (this_ptr->base).item_count) {

@@ -26,8 +26,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0055cc40(CDirectSoun
   iVar1 = slot->hardware_buffer_handle;
   if (((iVar1 < 1) || (0x1e < iVar1)) ||
      (g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9] == (IDirectSoundBuffer *)0x0)) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
-    g_INT_01d71de4 = 0x612;
+    g_CurrentFilename = "..\\sound\\snddx.cpp";
+    g_CurrentLineNumber = 1554;
     core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::startSfx - invalid handle: %d");
   }
   iVar2 = (*((this_ptr->base).vtable)->applySfxChanges)(&this_ptr->base,slot,-1);
@@ -35,13 +35,13 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0055cc40(CDirectSoun
   if (iVar2 != 0) {
     dwFlags = 0;
     if (slot->sample == (CSfxSample *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
-      g_INT_01d71de4 = 0x61c;
+      g_CurrentFilename = "..\\sound\\snddx.cpp";
+      g_CurrentLineNumber = 1564;
       core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::startSfx - no sample??");
     }
     if ((1 < slot->sample->loop_marker_count) || (0 < slot->sample->loop_destinations[0])) {
-      g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
-      g_INT_01d71de4 = 0x61e;
+      g_CurrentFilename = "..\\sound\\snddx.cpp";
+      g_CurrentLineNumber = 1566;
       core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::startSfx - exotic jump sequences not allowed for hardware mixed sounds");
     }
     if ((slot->sample->loop_marker_count == 1) && (-1 < slot->sample->loop_destinations[0])) {

@@ -10,8 +10,8 @@
 ;   uint g_VertexProcessingEnabled = 0x1
 ;   int g_RenderFaceCount
 ;   int g_INT_01c6cee8
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -182,8 +182,8 @@ section .text
     MOV EAX,0x5b536c                    ; 004079bc
     MOV EDX,0xccc                       ; 004079c1
     PUSH 0x5b537b                       ; 004079c6
-    MOV [0x01d71de0],EAX                ; 004079cb | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004079d0 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 004079cb | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 004079d0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004079d6
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004079db
@@ -247,8 +247,8 @@ section .text
     MOV EAX,ESP                         ; 00407a5e
     MOV ECX,0x5b53b2                    ; 00407a60
     PUSH EAX                            ; 00407a65
-    MOV dword ptr [0x01d71de4],EBX      ; 00407a66 | g_INT_01d71de4
-    MOV dword ptr [0x01d71de0],ECX      ; 00407a6c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00407a66 | g_CurrentLineNumber
+    MOV dword ptr [0x01d71de0],ECX      ; 00407a6c | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00407a72
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00407a77

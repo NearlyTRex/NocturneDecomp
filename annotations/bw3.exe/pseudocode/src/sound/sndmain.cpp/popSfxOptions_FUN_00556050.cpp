@@ -13,8 +13,8 @@ void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_00556050(void)
   if (-1 < g_SfxLastSlot) {
     return;
   }
-  g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-  g_INT_01d71de4 = 0xeaa;
+  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+  g_CurrentLineNumber = 3754;
   core_main_c_displayErrorAndQuit_FUN_004e4330("popSfxOptions - stack empty");
   return;
 }

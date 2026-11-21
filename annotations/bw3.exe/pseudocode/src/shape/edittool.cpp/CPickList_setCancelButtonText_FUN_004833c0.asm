@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bd709
 ;   TerminatedCString s_CPickList_setCancelButto_005bd71f
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -48,8 +48,8 @@ section .text
     MOV EDX,0x5bd709                    ; 004833e8 | = "..\\shape\\edittool.cpp"
     MOV ECX,0xec7                       ; 004833ed
     PUSH 0x5bd71f                       ; 004833f2 | = "CPickList::setCancelButtonText - too ..."
-    MOV dword ptr [0x01d71de0],EDX      ; 004833f7 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004833fd | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004833f7 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004833fd | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00483403
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00483408

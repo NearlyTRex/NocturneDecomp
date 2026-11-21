@@ -19,8 +19,8 @@ void __cdecl support_codec_cpp_CInStreamPipe_open_FUN_00441bf0(CInStreamPipe *th
   pcVar1 = (char *)malloc(buffer_size);
   this_ptr->buffer = pcVar1;
   if (pcVar1 == (char *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\support\\codec.cpp";
-    g_INT_01d71de4 = 0x881;
+    g_CurrentFilename = "..\\support\\codec.cpp";
+    g_CurrentLineNumber = 2177;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CInStreamPipe::open - out of memory for %d byte buffer");
   }
   this_ptr->buffer_length = 0;

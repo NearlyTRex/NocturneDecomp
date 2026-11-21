@@ -43,8 +43,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
                  core_actor_cpp_castToClassHash_FUN_0040c840
                            (actor_ptr,g_CHealthItemClassInfo.name_hash);
       if (local_14 == (CHealthItem *)0x0) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\inv.cpp";
-        g_INT_01d71de4 = 0x7c2;
+        g_CurrentFilename = "..\\core\\inv.cpp";
+        g_CurrentLineNumber = 1986;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CInventory::select - Catch 22");
       }
       if ((float)98 < (g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).hit_points)
@@ -116,8 +116,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
   else {
     pCVar3 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c840(actor_ptr,g_CAmmoClassInfo.name_hash);
     if (pCVar3 == (CDemonActor *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\inv.cpp";
-      g_INT_01d71de4 = 0x7bc;
+      g_CurrentFilename = "..\\core\\inv.cpp";
+      g_CurrentLineNumber = 1980;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CInventory::select - Catch 22");
     }
     core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0

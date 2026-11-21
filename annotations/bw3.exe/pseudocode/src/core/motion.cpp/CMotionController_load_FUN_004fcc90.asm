@@ -16,8 +16,8 @@
 ;   TerminatedCString s_f_005c9da4
 ;   TerminatedCString s_core_motion_cpp_005c9db1
 ;   TerminatedCString s_CMotionController_load_e_005c9dc4
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -86,8 +86,8 @@ section .text
     MOV EDX,0x5c9db1                    ; 004fccff | = "..\\core\\motion.cpp"
     MOV ECX,0x583                       ; 004fcd04
     PUSH 0x5c9dc4                       ; 004fcd09 | = "CMotionController::load - error parsi..."
-    MOV dword ptr [0x01d71de0],EDX      ; 004fcd0e | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004fcd14 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004fcd0e | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004fcd14 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fcd1a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fcd1f

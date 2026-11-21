@@ -41,8 +41,8 @@
 ;   TerminatedCString s_CDeformableModel_dismemb_005d1e23
 ;   TerminatedCString s_core_skeleton_cpp_005d1e4f
 ;   TerminatedCString s_CDeformableModel_dismemb_005d1e64
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_00416890
@@ -123,8 +123,8 @@ section .text
     MOV EAX,0x5d1dc8                    ; 0054a762 | = "..\\core\\skeleton.cpp"
     MOV EDX,0x662                       ; 0054a767
     PUSH 0x5d1ddd                       ; 0054a76c | = "CDeformableModel::dismember - too man..."
-    MOV [0x01d71de0],EAX                ; 0054a771 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0054a776 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 0054a771 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0054a776 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054a77c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054a781
@@ -231,8 +231,8 @@ section .text
         ;   Label: LAB_0054a8a6
     MOV ESI,0x64d                       ; 0054a8ab
     PUSH 0x5d1d8e                       ; 0054a8b0 | = "CDeformableModel::dismember - can't d..."
-    MOV dword ptr [0x01d71de0],EBX      ; 0054a8b5 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0054a8bb | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 0054a8b5 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0054a8bb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054a8c1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054a8c6
@@ -308,8 +308,8 @@ section .text
     MOV EDX,0x5d1e0e                    ; 0054a984 | = "..\\core\\skeleton.cpp"
     MOV ECX,0x698                       ; 0054a989
     PUSH 0x5d1e23                       ; 0054a98e | = "CDeformableModel::dismember - Hell fr..."
-    MOV dword ptr [0x01d71de0],EDX      ; 0054a993 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0054a999 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0054a993 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 0054a999 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054a99f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054a9a4
@@ -516,8 +516,8 @@ section .text
         ;   Label: LAB_0054ac20
     MOV EDI,0x6cf                       ; 0054ac25
     PUSH 0x5d1e64                       ; 0054ac2a | = "CDeformableModel::dismember - Hell fr..."
-    MOV dword ptr [0x01d71de0],ESI      ; 0054ac2f | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0054ac35 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0054ac2f | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 0054ac35 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054ac3b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054ac40

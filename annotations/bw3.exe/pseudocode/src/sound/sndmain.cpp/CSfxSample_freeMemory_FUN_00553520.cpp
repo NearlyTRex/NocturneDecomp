@@ -12,8 +12,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00553520(CSfxSample *th
   CMP3Decoder *ptr;
   
   if (this_ptr->ref_count != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d71de4 = 0x85a;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2138;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSample::freeMemory - freeing sample in use!");
   }
   sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00553760(this_ptr);

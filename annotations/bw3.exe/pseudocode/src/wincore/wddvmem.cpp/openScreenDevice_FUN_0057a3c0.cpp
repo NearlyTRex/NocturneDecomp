@@ -20,8 +20,8 @@ void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0(void)
     HVar1 = (*g_SoftwareRenderSurface->vtable->Lock)
                       (g_SoftwareRenderSurface,(RECT *)0x0,&local_7c,1,(void *)0x0);
     if (HVar1 != 0) {
-      g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
-      g_INT_01d71de4 = 0x262;
+      g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+      g_CurrentLineNumber = 610;
       core_main_c_displayErrorAndQuit_FUN_004e4330("openScreenDevice - Unable to lock screen!");
     }
     if (g_INT_02d0bcfc == 0) {

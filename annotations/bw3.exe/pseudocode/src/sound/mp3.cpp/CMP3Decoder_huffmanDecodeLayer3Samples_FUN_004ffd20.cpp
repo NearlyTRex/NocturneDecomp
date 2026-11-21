@@ -58,15 +58,15 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004ffd20(C
            (1 << (g_HuffmanTables[0].table_id[iVar8 + 0xc] & 0x1fU)) + -1;
       sscanf(pSVar4->table_id,"%u");
       if (iVar6 != local_38) {
-        g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-        g_INT_01d71de4 = 0xdfb;
+        g_CurrentFilename = "..\\sound\\mp3.cpp";
+        g_CurrentLineNumber = 3579;
         core_main_c_displayErrorAndQuit_FUN_004e4330("wrong table number %u.  File: %s");
       }
       iVar7 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_18);
       if (iVar7 < 0) {
         if (iVar7 != -1) {
-          g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-          g_INT_01d71de4 = 0xe1d;
+          g_CurrentFilename = "..\\sound\\mp3.cpp";
+          g_CurrentLineNumber = 3613;
           pcVar12 = "huffman decodertable error at table %d.  File: %s";
           goto LAB_005000b4;
         }
@@ -77,8 +77,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004ffd20(C
         pcVar12[2] = -1;
         pcVar12[3] = -1;
         if (0x400 < uVar9) {
-          g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-          g_INT_01d71de4 = 0xe0e;
+          g_CurrentFilename = "..\\sound\\mp3.cpp";
+          g_CurrentLineNumber = 3598;
           core_main_c_displayErrorAndQuit_FUN_004e4330("MP3 Huffman tree overflow!  File: %s");
         }
         uVar9 = 0;
@@ -112,8 +112,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004ffd20(C
              g_HuffmanTables[iVar7].table_size;
         if ((*(int *)(g_HuffmanTables[0].table_id + iVar8 + 4) != g_HuffmanTables[iVar7].xlen) ||
            (g_HuffmanTables[iVar7].ylen != *(int *)(g_HuffmanTables[0].table_id + iVar8 + 8))) {
-          g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-          g_INT_01d71de4 = 0xe06;
+          g_CurrentFilename = "..\\sound\\mp3.cpp";
+          g_CurrentLineNumber = 3590;
           pcVar12 = "wrong table %u reference.  File: %s";
 LAB_005000b4:
           core_main_c_displayErrorAndQuit_FUN_004e4330(pcVar12);
@@ -125,8 +125,8 @@ LAB_005000b4:
       local_1c = local_1c + 1;
     } while (iVar6 < 0x22);
     if (iVar6 != 0x22) {
-      g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-      g_INT_01d71de4 = 0xe32;
+      g_CurrentFilename = "..\\sound\\mp3.cpp";
+      g_CurrentLineNumber = 3634;
       core_main_c_displayErrorAndQuit_FUN_004e4330("decoder table read error.  File: %s");
     }
     g_HuffmanTablesInitialized = 1;

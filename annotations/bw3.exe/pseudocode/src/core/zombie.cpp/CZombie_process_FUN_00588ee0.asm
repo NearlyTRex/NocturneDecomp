@@ -581,8 +581,8 @@ section .text
         ;   Label: LAB_005894e6
     MOV ECX,0x21b                       ; 005894eb
     PUSH 0x5d8549                       ; 005894f0 | = "WTF!"
-    MOV dword ptr [0x01d71de0],EDX      ; 005894f5 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 005894fb | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 005894f5 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 005894fb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00589501
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00589506
@@ -658,8 +658,8 @@ section .text
         ;   Label: LAB_005895f7
     MOV ESI,0x232                       ; 005895fc
     PUSH 0x5d857c                       ; 00589601 | = "WTF!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00589606 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0058960c | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00589606 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0058960c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00589612
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00589617

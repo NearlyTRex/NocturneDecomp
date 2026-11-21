@@ -96,8 +96,8 @@ section .text
     MOV EBP,0x5bab01                    ; 004599ed | = "..\\core\\dfilter.cpp"
     MOV EAX,0xb7                        ; 004599f2
     PUSH 0x5bab15                       ; 004599f7 | = "CDemonFilter::load - Non-square filte..."
-    MOV dword ptr [0x01d71de0],EBP      ; 004599fc | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00459a02 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004599fc | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00459a02 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00459a07
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00459a0c
@@ -112,8 +112,8 @@ section .text
     MOV EAX,0x5bab42                    ; 00459a1d | = "..\\core\\dfilter.cpp"
     MOV EDX,0xb9                        ; 00459a22
     PUSH 0x5bab56                       ; 00459a27 | = "CDemonFilter::load - Bad filter size %d"
-    MOV [0x01d71de0],EAX                ; 00459a2c | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00459a31 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00459a2c | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00459a31 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00459a37
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00459a3c
@@ -128,8 +128,8 @@ section .text
     MOV EAX,0x5bab7e                    ; 00459a4f | = "..\\core\\dfilter.cpp"
     MOV EDX,0xbc                        ; 00459a54
     PUSH 0x5bab92                       ; 00459a59 | = "CDemonFilter::load - Bad filter size %d"
-    MOV [0x01d71de0],EAX                ; 00459a5e | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00459a63 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00459a5e | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00459a63 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00459a69
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00459a6e
@@ -188,8 +188,8 @@ section .text
     MOV EDX,0x5baac2                    ; 00459ae3 | = "..\\core\\dfilter.cpp"
     MOV ECX,0xab                        ; 00459ae8
     PUSH 0x5baad6                       ; 00459aed | = "CDemonFilter::load - Bad filename : %s"
-    MOV dword ptr [0x01d71de0],EDX      ; 00459af2 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00459af8 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00459af2 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00459af8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00459afe
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00459b03
@@ -211,8 +211,8 @@ section .text
         ;   Label: LAB_00459b2d
     MOV EAX,0xc6                        ; 00459b32
     PUSH 0x5babd5                       ; 00459b37 | = "CDemonFilter::load - Bad filename"
-    MOV dword ptr [0x01d71de0],EBP      ; 00459b3c | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00459b42 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 00459b3c | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00459b42 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00459b47
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00459b4c

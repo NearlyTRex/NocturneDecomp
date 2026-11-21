@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   int g_AudioChannelCount = 0x2
 ;   int g_AudioSampleRate = 0x5622
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_MixBufferReadIndex
 ;   int g_MixBufferWriteIndex
 ;   int g_MixBufferSize
@@ -43,8 +43,8 @@ section .text
     MOV EDI,0x5d2aa0                    ; 00552bed
     MOV EBP,0x599                       ; 00552bf2
     PUSH 0x5d2ab5                       ; 00552bf7
-    MOV dword ptr [0x01d71de0],EDI      ; 00552bfc | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 00552c02 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 00552bfc | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBP      ; 00552c02 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00552c08
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00552c0d
@@ -165,8 +165,8 @@ section .text
         ;   Label: LAB_00552d59
     MOV EBX,0x595                       ; 00552d5e
     PUSH 0x5d2a80                       ; 00552d63
-    MOV dword ptr [0x01d71de0],ECX      ; 00552d68 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00552d6e | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00552d68 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 00552d6e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00552d74
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00552d79

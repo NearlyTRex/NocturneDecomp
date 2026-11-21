@@ -66,8 +66,8 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
   
   bVar14 = 0;
   if ((index < 0) || (this_ptr->camera_count <= index)) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
-    g_INT_01d71de4 = 0x484;
+    g_CurrentFilename = "..\\core\\set.cpp";
+    g_CurrentLineNumber = 1156;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::setCameraView - invalid index: %d");
   }
   iVar3 = 0;
@@ -190,8 +190,8 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
           (&g_INT_0203b3ec)[g_INT_0203b3e8] = (int)(local_24 + iVar3);
           g_INT_0203b3e8 = g_INT_0203b3e8 + 1;
           if (199 < g_INT_0203b3e8) {
-            g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
-            g_INT_01d71de4 = 0x50e;
+            g_CurrentFilename = "..\\core\\set.cpp";
+            g_CurrentLineNumber = 1294;
             core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::setCameraView - Too many omni lights");
           }
         }

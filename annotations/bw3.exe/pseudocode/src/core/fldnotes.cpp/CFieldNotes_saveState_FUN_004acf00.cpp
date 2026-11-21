@@ -49,8 +49,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
             iVar3 = iVar3 + 1;
             break;
           default:
-            g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
-            g_INT_01d71de4 = 0xc38;
+            g_CurrentFilename = "..\\core\\fldnotes.cpp";
+            g_CurrentLineNumber = 3128;
             core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid entry item type");
           }
           iVar2 = iVar2 + 1;
@@ -84,8 +84,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
             _fprintf(file,"\"%s\", %d\n");
             break;
           default:
-            g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
-            g_INT_01d71de4 = 0xc50;
+            g_CurrentFilename = "..\\core\\fldnotes.cpp";
+            g_CurrentLineNumber = 3152;
             core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid entry item type");
           }
           iVar2 = iVar2 + 1;
@@ -96,8 +96,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
     } while (local_30 < g_INT_01d0d210);
   }
   if (iVar3 != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
-    g_INT_01d71de4 = 0xc54;
+    g_CurrentFilename = "..\\core\\fldnotes.cpp";
+    g_CurrentLineNumber = 3156;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
   }
   iVar3 = 0;
@@ -118,8 +118,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
     do {
       if (local_34->entry->kind == 6) {
         if (local_28 < 1) {
-          g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
-          g_INT_01d71de4 = 0xc67;
+          g_CurrentFilename = "..\\core\\fldnotes.cpp";
+          g_CurrentLineNumber = 3175;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
         }
         local_28 = local_28 + -1;
@@ -168,8 +168,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
           } while (iVar3 < local_34->annotation_count);
         }
         if (iVar4 != 0) {
-          g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
-          g_INT_01d71de4 = 0xc85;
+          g_CurrentFilename = "..\\core\\fldnotes.cpp";
+          g_CurrentLineNumber = 3205;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze.");
         }
       }
@@ -178,8 +178,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004acf00(CFieldNotes *t
     } while (local_38 < g_INT_01d0e36c);
   }
   if (local_28 != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
-    g_INT_01d71de4 = 0xc89;
+    g_CurrentFilename = "..\\core\\fldnotes.cpp";
+    g_CurrentLineNumber = 3209;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze");
   }
   _fprintf(file,"//-- END FIELD NOTES --------------------------------\n");

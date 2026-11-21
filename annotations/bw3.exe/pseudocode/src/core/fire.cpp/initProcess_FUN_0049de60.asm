@@ -16,8 +16,8 @@
 ;   int g_FlameCanCount
 ;   CFlameCan*[150] g_FlameCans
 ;   undefined4 g_CFlameCanClassInfo.name_hash
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -94,8 +94,8 @@ section .text
         ;   Label: LAB_0049def5
     MOV EDX,0x1043                      ; 0049defa
     PUSH 0x5c0827                       ; 0049deff | = "CGunFlame::initProcess - too many cha..."
-    MOV [0x01d71de0],EAX                ; 0049df04 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0049df09 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 0049df04 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0049df09 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0049df0f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0049df14

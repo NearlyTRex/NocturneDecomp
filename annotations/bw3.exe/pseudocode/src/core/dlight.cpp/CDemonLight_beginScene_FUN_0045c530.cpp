@@ -15,8 +15,8 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0045c530(CDemonLight *th
   CDemonLight *pCVar3;
   
   if ((this_ptr->base).scene_open_flag != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\dlight.cpp";
-    g_INT_01d71de4 = 0xf3;
+    g_CurrentFilename = "..\\core\\dlight.cpp";
+    g_CurrentLineNumber = 243;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonLight::beginScene - Scene already open");
   }
   (this_ptr->base).scene_open_flag = 1;

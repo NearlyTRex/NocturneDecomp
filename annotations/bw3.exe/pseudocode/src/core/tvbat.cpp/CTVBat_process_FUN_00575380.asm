@@ -221,8 +221,8 @@ section .text
     MOV ECX,0x5d6fbc                    ; 005755b9 | = "..\\core\\tvbat.cpp"
     MOV ESI,0x10a                       ; 005755be
     PUSH 0x5d6fce                       ; 005755c3 | = "CTVBat::process - can't follow orders..."
-    MOV dword ptr [0x01d71de0],ECX      ; 005755c8 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 005755ce | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005755c8 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 005755ce | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005755d4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005755d9

@@ -32,8 +32,8 @@
 ;   TerminatedCString s_streaming_sample_sfx_ind_005d3326
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CConsole g_CConsoleInstance
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CSoundDevice* g_CSoundDevicePtr
 ;   ... and 1 more
 ;
@@ -113,8 +113,8 @@ section .text
     MOV EAX,0x5d32da                    ; 00555323 | = "..\\sound\\sndmain.cpp"
     MOV EDX,0xcd3                       ; 00555328
     PUSH 0x5d32ef                       ; 0055532d | = "refCount for streaming Sfx %s > 1"
-    MOV [0x01d71de0],EAX                ; 00555332 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00555337 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00555332 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00555337 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055533d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00555342
@@ -133,8 +133,8 @@ section .text
     MOV EDI,0x5d3311                    ; 00555363 | = "..\\sound\\sndmain.cpp"
     MOV EBP,0xcd4                       ; 00555368
     PUSH 0x5d3326                       ; 0055536d | = "streaming sample sfx index mismatch o..."
-    MOV dword ptr [0x01d71de0],EDI      ; 00555372 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 00555378 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 00555372 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBP      ; 00555378 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055537e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00555383
@@ -160,8 +160,8 @@ section .text
         ;   Label: LAB_005553b2
     MOV ESI,0xca5                       ; 005553b7
     PUSH 0x5d325b                       ; 005553bc | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d71de0],ECX      ; 005553c1 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 005553c7 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005553c1 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 005553c7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005553cd
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005553d2
@@ -171,8 +171,8 @@ section .text
         ;   Label: LAB_005553da
     MOV EAX,0xcc4                       ; 005553df
     PUSH 0x5d32b0                       ; 005553e4 | = "SfxSlot::kill - ref count out of bala..."
-    MOV dword ptr [0x01d71de0],EBP      ; 005553e9 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 005553ef | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 005553e9 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 005553ef | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005553f4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005553f9

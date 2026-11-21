@@ -90,8 +90,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_00538dd0(CDemonSet *this_
   
   bVar23 = 0;
   if (25000 < vertex_count) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
-    g_INT_01d71de4 = 0xefd;
+    g_CurrentFilename = "..\\core\\set.cpp";
+    g_CurrentLineNumber = 3837;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d");
   }
   iVar12 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
@@ -156,11 +156,11 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_00538dd0(CDemonSet *this_
               }
               if (vertices_per_face < 1) {
                 if (4000 < tri_count) {
-                  g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
-                  g_INT_01d71de4 = 0xfc4;
+                  g_CurrentFilename = "..\\core\\set.cpp";
+                  g_CurrentLineNumber = 4036;
                   core_main_c_displayErrorAndQuit_FUN_004e4330("Too many normals on this packed tri list");
-                  g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
-                  g_INT_01d71de4 = 0xfc6;
+                  g_CurrentFilename = "..\\core\\set.cpp";
+                  g_CurrentLineNumber = 4038;
                   core_main_c_displayErrorAndQuit_FUN_004e4330("Need more normals for packed models");
                 }
                 iVar12 = 0;

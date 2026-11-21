@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   int g_ClipperTempCount
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -92,8 +92,8 @@ section .text
     MOV ECX,0x5b8f4a                    ; 004397a9
     MOV EAX,0x5e                        ; 004397ae
     PUSH 0x5b8f5e                       ; 004397b3
-    MOV dword ptr [0x01d71de0],ECX      ; 004397b8 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004397be | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004397b8 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004397be | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004397c3
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004397c8
@@ -123,8 +123,8 @@ section .text
     MOV EDX,0x5b8f4a                    ; 00439800
     MOV ECX,0x5e                        ; 00439805
     PUSH 0x5b8f5e                       ; 0043980a
-    MOV dword ptr [0x01d71de0],EDX      ; 0043980f | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00439815 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0043980f | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00439815 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0043981b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00439820

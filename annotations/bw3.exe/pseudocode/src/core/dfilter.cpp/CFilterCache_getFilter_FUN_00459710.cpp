@@ -30,8 +30,8 @@ CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00459710(CFil
     } while (iVar4 < this_ptr->filter_count);
   }
   if (0x3f < this_ptr->filter_count) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\dfilter.cpp";
-    g_INT_01d71de4 = 0x55;
+    g_CurrentFilename = "..\\core\\dfilter.cpp";
+    g_CurrentLineNumber = 85;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CFilterCache::getFilter - Too many filters");
   }
   pacVar5 = this_ptr->filter_names + iVar4;
@@ -53,8 +53,8 @@ CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00459710(CFil
   }
   this_ptr->filters[iVar4] = pCVar3;
   if (pCVar3 == (CDemonFilter *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\dfilter.cpp";
-    g_INT_01d71de4 = 0x59;
+    g_CurrentFilename = "..\\core\\dfilter.cpp";
+    g_CurrentLineNumber = 89;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CFilterCache::getFilter - Out of memory");
   }
   core_dfilter_cpp_CDemonFilter_load_FUN_00459980(this_ptr->filters[iVar4],filter_name);

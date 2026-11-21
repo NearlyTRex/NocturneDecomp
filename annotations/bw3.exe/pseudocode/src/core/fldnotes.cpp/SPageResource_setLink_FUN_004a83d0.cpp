@@ -38,8 +38,8 @@ void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource 
   pcVar2 = (char *)malloc(~uVar3);
   this_ptr->link = pcVar2;
   if (pcVar2 == (char *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\fldnotes.cpp";
-    g_INT_01d71de4 = 0x36c;
+    g_CurrentFilename = "..\\core\\fldnotes.cpp";
+    g_CurrentLineNumber = 876;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
   }
   pcVar2 = this_ptr->link;

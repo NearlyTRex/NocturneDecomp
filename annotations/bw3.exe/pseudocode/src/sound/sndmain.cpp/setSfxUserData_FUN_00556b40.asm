@@ -9,8 +9,8 @@
 ; void *           Stack[0xc]:4   value
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -36,8 +36,8 @@ section .text
     MOV EDX,0x5d3819                    ; 00556b50
     MOV ECX,0x10d5                      ; 00556b55
     PUSH 0x5d382e                       ; 00556b5a
-    MOV dword ptr [0x01d71de0],EDX      ; 00556b5f | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00556b65 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00556b5f | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00556b65 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00556b6b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00556b70

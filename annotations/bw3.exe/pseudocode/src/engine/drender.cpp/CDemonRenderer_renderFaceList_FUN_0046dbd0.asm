@@ -28,8 +28,8 @@
 ;   int g_INT_01c6cee8
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -280,8 +280,8 @@ section .text
     MOV ECX,0x5bc5e8                    ; 0046de0b | = "..\\engine\\drender.cpp"
     MOV EAX,0xa30                       ; 0046de10
     PUSH 0x5bc5fe                       ; 0046de15 | = "CDemonRenderer::demonGZFacetList - To..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0046de1a | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 0046de20 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0046de1a | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 0046de20 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0046de25
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0046de2a

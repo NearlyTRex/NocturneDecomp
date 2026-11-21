@@ -16,8 +16,8 @@
 ;   TerminatedCString s_Out_of_memory_loading_sc_005cde9f
 ;   TerminatedCString s_core_script_cpp_005cdec7
 ;   TerminatedCString s_Out_of_memory_loading_sc_005cdeda
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   char[2048] g_ScriptLineBuffer
 ;   undefined4 g_ScriptLineBuffer+1
 ;   undefined4 g_ScriptLineBuffer+2
@@ -94,12 +94,12 @@ section .text
     TEST EAX,EAX                        ; 00529655
     JNZ 0x0052967f                      ; 00529657
         ;   XREF to: 0052967f (CONDITIONAL_JUMP)  ; LAB_0052967f
-    MOV dword ptr [0x01d71de0],0x5cde8c ; 00529659 | g_CHAR_PTR_01d71de0 | = "..\\core\\script.cpp"
+    MOV dword ptr [0x01d71de0],0x5cde8c ; 00529659 | g_CurrentFilename | = "..\\core\\script.cpp"
     LEA EAX,[EBP + 0x1]                 ; 00529663
     PUSH EAX                            ; 00529666
     MOV EDX,0x3a4                       ; 00529667
     PUSH 0x5cde9f                       ; 0052966c | = "Out of memory loading script at line %d"
-    MOV dword ptr [0x01d71de4],EDX      ; 00529671 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de4],EDX      ; 00529671 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00529677
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0052967c
@@ -131,8 +131,8 @@ section .text
     MOV EDI,0x5cdec7                    ; 005296b6 | = "..\\core\\script.cpp"
     MOV EAX,0x3a7                       ; 005296bb
     PUSH 0x5cdeda                       ; 005296c0 | = "Out of memory loading script at line %d"
-    MOV dword ptr [0x01d71de0],EDI      ; 005296c5 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 005296cb | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 005296c5 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 005296cb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005296d0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005296d5

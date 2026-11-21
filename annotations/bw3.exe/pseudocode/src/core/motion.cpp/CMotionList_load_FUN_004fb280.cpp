@@ -37,8 +37,8 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_004fb280(CMotionList *this_ptr
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   _fscanf(file_handle,"%d\n");
-  g_CHAR_PTR_01d71de0 = "..\\core\\motion.cpp";
-  g_INT_01d71de4 = 0x81;
+  g_CurrentFilename = "..\\core\\motion.cpp";
+  g_CurrentLineNumber = 129;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Error reading motion list.");
   do {
     iVar1 = _fgetc(file_handle);
@@ -94,8 +94,8 @@ LAB_004fb383:
         pSVar2 = (SMotionTransition *)malloc(local_20->transition_count * 0x18);
         local_20->transitions = pSVar2;
         if (pSVar2 == (SMotionTransition *)0x0) {
-          g_CHAR_PTR_01d71de0 = "..\\core\\motion.cpp";
-          g_INT_01d71de4 = 0xc0;
+          g_CurrentFilename = "..\\core\\motion.cpp";
+          g_CurrentLineNumber = 192;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory");
         }
         local_14 = 0;

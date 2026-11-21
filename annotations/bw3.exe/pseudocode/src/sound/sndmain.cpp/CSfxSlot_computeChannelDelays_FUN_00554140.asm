@@ -19,8 +19,8 @@
 ;   int g_AudioChannelCount = 0x2
 ;   int g_AudioSampleRate = 0x5622
 ;   float g_FLOAT_00604240 = 1
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_SoundLockCount
 ;
 ; Called Functions:
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_0055419d
     MOV EBX,0xa6b                       ; 005541a2
     PUSH 0x5d302e                       ; 005541a7 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d71de0],ECX      ; 005541ac | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 005541b2 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005541ac | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 005541b2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005541b8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005541bd

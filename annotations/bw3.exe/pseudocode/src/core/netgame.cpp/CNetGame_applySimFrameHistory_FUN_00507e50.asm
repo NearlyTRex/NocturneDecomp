@@ -15,8 +15,8 @@
 ;   TerminatedCString s_core_netgame_cpp_005cb131
 ;   TerminatedCString s_CNetGame_applySimFrameHi_005cb145
 ;   CGame* g_CGamePtr = 01d2130c
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_slamDT_FUN_004bf3a0
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_00507ed9
     MOV EBX,0x9cd                       ; 00507ede
     PUSH 0x5cb145                       ; 00507ee3 | = "CNetGame::applySimFrameHistory - I'm ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00507ee8 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00507eee | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00507ee8 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 00507eee | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00507ef4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00507ef9

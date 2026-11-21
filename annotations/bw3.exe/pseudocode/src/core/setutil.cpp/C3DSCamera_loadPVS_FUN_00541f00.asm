@@ -15,8 +15,8 @@
 ;   TerminatedCString s_core_setutil_cpp_005d0dc2
 ;   TerminatedCString s_Out_of_memory_for_pvsLis_005d0dd6
 ;   TerminatedCString s_d_005d0df5
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -90,8 +90,8 @@ section .text
     MOV ESI,0x5d0dc2                    ; 00541f87 | = "..\\core\\setutil.cpp"
     MOV EAX,0xe4                        ; 00541f8c
     PUSH 0x5d0dd6                       ; 00541f91 | = "Out of memory for pvsList - %d"
-    MOV dword ptr [0x01d71de0],ESI      ; 00541f96 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00541f9c | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 00541f96 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00541f9c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00541fa1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00541fa6

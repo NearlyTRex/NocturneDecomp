@@ -34,8 +34,8 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_005295e0(CScript *this
                          (this_ptr->parsed_lines,(this_ptr->parsed_line_count + 1) * 8);
       this_ptr->parsed_lines = pSVar4;
       if (pSVar4 == (SScriptLine *)0x0) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\script.cpp";
-        g_INT_01d71de4 = 0x3a4;
+        g_CurrentFilename = "..\\core\\script.cpp";
+        g_CurrentLineNumber = 932;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory loading script at line %d");
       }
       this_ptr->parsed_lines[this_ptr->parsed_line_count].line_number = index + 1;
@@ -50,8 +50,8 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_005295e0(CScript *this
       pcVar3 = (char *)malloc(~uVar5);
       this_ptr->parsed_lines[this_ptr->parsed_line_count].text = pcVar3;
       if (this_ptr->parsed_lines == (SScriptLine *)0x0) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\script.cpp";
-        g_INT_01d71de4 = 0x3a7;
+        g_CurrentFilename = "..\\core\\script.cpp";
+        g_CurrentLineNumber = 935;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory loading script at line %d");
       }
       pcVar7 = g_ScriptLineBuffer;

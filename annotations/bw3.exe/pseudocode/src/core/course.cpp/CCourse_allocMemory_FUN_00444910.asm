@@ -11,8 +11,8 @@
 ;   core_course.cpp_CCourse_load_FUN_00444970 at 004449fb
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_free_FUN_00444aa0
@@ -50,8 +50,8 @@ section .text
         ;   Label: LAB_00444940
     MOV EBX,0x6e                        ; 00444945
     PUSH 0x5b9818                       ; 0044494a
-    MOV dword ptr [0x01d71de0],ECX      ; 0044494f | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00444955 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0044494f | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 00444955 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0044495b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00444960

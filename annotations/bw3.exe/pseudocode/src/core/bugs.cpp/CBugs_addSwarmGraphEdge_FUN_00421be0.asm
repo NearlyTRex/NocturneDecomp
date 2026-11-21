@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_bugs_cpp_005b77f0
 ;   TerminatedCString s_CBugs_addSwarmGraphEdge_005b7801
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -43,8 +43,8 @@ section .text
     MOV EBP,0x5b77f0                    ; 00421c04 | = "..\\core\\bugs.cpp"
     MOV EAX,0x20d                       ; 00421c09
     PUSH 0x5b7801                       ; 00421c0e | = "CBugs::addSwarmGraphEdge - Too many v..."
-    MOV dword ptr [0x01d71de0],EBP      ; 00421c13 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00421c19 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 00421c13 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00421c19 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00421c1e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00421c23

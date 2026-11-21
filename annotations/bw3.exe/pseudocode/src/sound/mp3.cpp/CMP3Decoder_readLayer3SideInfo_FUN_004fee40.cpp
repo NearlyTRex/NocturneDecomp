@@ -98,8 +98,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004fee40(CMP3Decod
           } while (uVar5 != 0xc);
           iVar10 = side_info_array->channels[local_30].granules[0].block_type;
           if (iVar10 == 0) {
-            g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-            g_INT_01d71de4 = 0x704;
+            g_CurrentFilename = "..\\sound\\mp3.cpp";
+            g_CurrentLineNumber = 1796;
             core_main_c_displayErrorAndQuit_FUN_004e4330("Side info bad: block_type == 0 in split block.  File: %s");
           }
           else if ((iVar10 == 2) &&
@@ -212,8 +212,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004fee40(CMP3Decod
             iVar10 = *(int *)((int)side_info_array->channels[local_34].granules[0].table_select +
                              local_58 + -8);
             if (iVar10 == 0) {
-              g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-              g_INT_01d71de4 = 0x6d5;
+              g_CurrentFilename = "..\\sound\\mp3.cpp";
+              g_CurrentLineNumber = 1749;
               core_main_c_displayErrorAndQuit_FUN_004e4330("Side info bad: block_type == 0 in split block.  File: %s");
             }
             else if ((iVar10 == 2) &&

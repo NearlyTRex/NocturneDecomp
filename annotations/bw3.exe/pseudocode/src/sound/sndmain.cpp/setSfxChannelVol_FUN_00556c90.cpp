@@ -14,8 +14,8 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(int channel_index,f
   CSfxSlot *pCVar3;
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d71de4 = 0x1116;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 4374;
     core_main_c_displayErrorAndQuit_FUN_004e4330("setSfxChannelVol - invalid channel index: %d");
   }
   pCVar1 = g_CSoundDevicePtr;

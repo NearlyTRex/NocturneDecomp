@@ -37,8 +37,8 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00482740(CStrList *
   }
   pcVar2 = operator_new_array(iVar4 + 1);
   if (pcVar2 == (char *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
-    g_INT_01d71de4 = 0xd4d;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 3405;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CStrList::copyToClipboard - out of memory for %d items, %d bytes");
   }
   iVar4 = 0;

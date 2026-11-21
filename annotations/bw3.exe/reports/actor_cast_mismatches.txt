@@ -272,11 +272,11 @@ DETAILED FINDINGS
     Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
     Actual cast:    CDemonActor          (CDemonActor)
 
-  Line 3024: resolveActorByName()
+  Line 3023: resolveActorByName()
     Expected class: CCharacter           (CCharacter -> CDemonActor)
     Actual cast:    CDemonActor          (CDemonActor)
 
-  Line 3385: resolveActorByName()
+  Line 3384: resolveActorByName()
     Expected class: CCharacter           (CCharacter -> CDemonActor)
     Actual cast:    CDemonActor          (CDemonActor)
 
@@ -1426,7 +1426,7 @@ Manual inspection is needed to determine the expected class.
     19:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c4f0(this_ptr->hero_name);
     20:   actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c840(actor_ptr,class_name_hash);
     21:   if (actor == (CHero *)0x0) {
-    22:     g_CHAR_PTR_01d71de0 = "..\\core\\hero.cpp";
+    22:     g_CurrentFilename = "..\\core\\hero.cpp";
 
 --------------------------------------------------------------------------------
   core/inv.cpp/CInventory_addItem_FUN_004da880.cpp
@@ -1485,8 +1485,8 @@ Manual inspection is needed to determine the expected class.
     63:   pCVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CLightActor");
     64:   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,uVar5);
     65:   if (pCVar2 == (CDemonActor *)0x0) {
-    66:     g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
-    67:     g_INT_01d71de4 = 0x3b3;
+    66:     g_CurrentFilename = "..\\core\\prye.cpp";
+    67:     g_CurrentLineNumber = 947;
 
 --------------------------------------------------------------------------------
   core/prye.cpp/CPrye_doHeroAction_FUN_00525a20.cpp

@@ -16,8 +16,8 @@ void __cdecl engine_2d_c_loadPaletteFile_FUN_00401590(char *filename)
   iVar1 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
                     (&local_2c,"art",filename,1);
   if (iVar1 == 0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\2d.c";
-    g_INT_01d71de4 = 0x29b;
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 667;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Unable to open VGA palette (probably need to mount startup.pod or delete pod.ini).");
   }
   support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_2c,g_UCHAR_ARRAY_01c6af98,0x300);

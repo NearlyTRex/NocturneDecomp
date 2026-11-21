@@ -110,8 +110,8 @@ section .text
     MOV EBX,0x5c6c08                    ; 004e4596 | = "..\\core\\main.c"
     MOV ESI,0x3df                       ; 004e459b
     PUSH 0x5c6c17                       ; 004e45a0 | = "This CPU does not have an MMX unit."
-    MOV dword ptr [0x01d71de0],EBX      ; 004e45a5 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004e45ab | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 004e45a5 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004e45ab | g_CurrentLineNumber
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004e45b1
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004e45b6
@@ -142,8 +142,8 @@ section .text
     MOV EDI,0x5c6c3b                    ; 004e45f3 | = "..\\core\\main.c"
     MOV EAX,0x3f7                       ; 004e45f8
     PUSH 0x5c6c4a                       ; 004e45fd | = "Unable to set 640x480x32bpp.  Please ..."
-    MOV dword ptr [0x01d71de0],EDI      ; 004e4602 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004e4608 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 004e4602 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004e4608 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e460d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004e4612
@@ -805,8 +805,8 @@ section .text
     MOV ESI,0x5c6bb2                    ; 004e4c14 | = "..\\core\\main.c"
     MOV EDI,0x3b8                       ; 004e4c19
     PUSH 0x5c6bc1                       ; 004e4c1e | = "Please copy Blair Witch 3 to your har..."
-    MOV dword ptr [0x01d71de0],ESI      ; 004e4c23 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004e4c29 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004e4c23 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004e4c29 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e4c2f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004e4c34

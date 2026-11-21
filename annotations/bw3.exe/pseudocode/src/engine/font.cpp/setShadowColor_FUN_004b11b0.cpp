@@ -25,8 +25,8 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_004b11b0(uint red,uint green,uin
            green << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
     }
     else {
-      g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
-      g_INT_01d71de4 = 0x4c0;
+      g_CurrentFilename = "..\\engine\\font.cpp";
+      g_CurrentLineNumber = 1216;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel in CBitFont::setTrueColor");
     }
   }

@@ -82,8 +82,8 @@ switchD_00449008_caseD_3:
     this_ptr->scene_open_flag = 1;
   }
   else {
-    g_CHAR_PTR_01d71de0 = "..\\core\\dcamera.cpp";
-    g_INT_01d71de4 = 0x2eb;
+    g_CurrentFilename = "..\\core\\dcamera.cpp";
+    g_CurrentLineNumber = 747;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonCamera::beginScene - Scene already open!");
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00448fa0(this_ptr,skip_clear_buffers);

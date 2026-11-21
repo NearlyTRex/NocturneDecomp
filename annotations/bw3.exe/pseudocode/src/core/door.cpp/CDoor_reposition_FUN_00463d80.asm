@@ -23,8 +23,8 @@
 ;   double g_DOUBLE_005bbd83 = -0.300000000000000
 ;   double g_DOUBLE_005bbd8b = 0.300000000000000
 ;   CEventList* g_CEventListPtr = 01c6e360
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
@@ -357,8 +357,8 @@ section .text
         ;   Label: default
     MOV ECX,0x117                       ; 004641e9
     PUSH 0x5bbd52                       ; 004641ee | = "CDoor::reposition - Unknown type"
-    MOV dword ptr [0x01d71de0],EDX      ; 004641f3 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004641f9 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004641f3 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004641f9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004641ff
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00464204

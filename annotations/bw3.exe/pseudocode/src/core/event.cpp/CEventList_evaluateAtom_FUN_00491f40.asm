@@ -856,8 +856,8 @@ section .text
         ;   Label: default
     MOV ECX,0xad9                       ; 0049256c
     PUSH 0x5bf5d2                       ; 00492571 | = "Hell froze."
-    MOV dword ptr [0x01d71de0],EDX      ; 00492576 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0049257c | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00492576 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 0049257c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00492582
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00492587

@@ -121,11 +121,11 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_0056f080(CTrigger *this_
       }
       else {
         if (this_ptr->trigger_shape != TRIGGER_SHAPE_CYLINDER) {
-          g_CHAR_PTR_01d71de0 = "..\\core\\trigger.cpp";
-          g_INT_01d71de4 = 0x38e;
+          g_CurrentFilename = "..\\core\\trigger.cpp";
+          g_CurrentLineNumber = 910;
           core_main_c_displayErrorAndQuit_FUN_004e4330("CTrigger::containsActor - invalid trigger shape %d for %s");
-          g_CHAR_PTR_01d71de0 = "..\\core\\trigger.cpp";
-          g_INT_01d71de4 = 0x394;
+          g_CurrentFilename = "..\\core\\trigger.cpp";
+          g_CurrentLineNumber = 916;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Hell froze...");
           return 0;
         }

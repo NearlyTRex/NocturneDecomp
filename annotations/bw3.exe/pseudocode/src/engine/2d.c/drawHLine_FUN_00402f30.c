@@ -27,8 +27,8 @@ void __cdecl engine_2d_c_drawHLine_FUN_00402f30(int x1,int y,int x2)
       if ((uint)g_INT_005fba20 < 0x10) {
         if (g_INT_005fba20 != 8) {
 LAB_00403012:
-          g_CHAR_PTR_01d71de0 = "..\\engine\\2d.c";
-          g_INT_01d71de4 = 0x8a1;
+          g_CurrentFilename = "..\\engine\\2d.c";
+          g_CurrentLineNumber = 2209;
           core_main_c_displayErrorAndQuit_FUN_004e4330("hLine - invalid bitsPerPixel");
           return;
         }

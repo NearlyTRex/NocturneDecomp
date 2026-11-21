@@ -18,8 +18,8 @@
 ;   TerminatedCString s_CDemonCamera_init_Unable_005bb20f
 ;   double g_DOUBLE_005bb244 = 7
 ;   CDemonFilter* g_GlobalFilters = 01548c00
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_0045db40
@@ -95,8 +95,8 @@ section .text
     MOV EDI,0x5bb1fc                    ; 0045c34d | = "..\\core\\dlight.cpp"
     MOV EBP,0x6c                        ; 0045c352
     PUSH 0x5bb20f                       ; 0045c357 | = "CDemonCamera::init - Unable to alloc ..."
-    MOV dword ptr [0x01d71de0],EDI      ; 0045c35c | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 0045c362 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 0045c35c | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBP      ; 0045c362 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045c368
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045c36d

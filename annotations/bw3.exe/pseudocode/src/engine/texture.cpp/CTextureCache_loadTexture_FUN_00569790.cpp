@@ -48,8 +48,8 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00569790(CTextureCa
     pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
   } while (cVar1 != '\0');
   if (0x3f < ~uVar7 - 1) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-    g_INT_01d71de4 = 0xfb;
+    g_CurrentFilename = "..\\engine\\texture.cpp";
+    g_CurrentLineNumber = 251;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Texture name is too big : %s");
   }
   memset(g_CHAR_ARRAY_02cfd0d8,0,0x214);
@@ -59,8 +59,8 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00569790(CTextureCa
             (g_CHAR_ARRAY_02cfd0d8,"art",texture_name);
   iVar5 = engine_dosio_cpp_findFile_FUN_004656d0((SFoundFileInfo *)g_CHAR_ARRAY_02cfd0d8);
   if (iVar5 == 0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-    g_INT_01d71de4 = 0x107;
+    g_CurrentFilename = "..\\engine\\texture.cpp";
+    g_CurrentLineNumber = 263;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureCache::load - Can't get file info on %s");
   }
   size = g_ULONG_02cfd2dc;
@@ -113,8 +113,8 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00569790(CTextureCa
       if (size < 0x1000) {
 LAB_00569e08:
         _sprintf(local_dc,"CTextureCache::load - Bad texture length : %s,%d");
-        g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-        g_INT_01d71de4 = 0x194;
+        g_CurrentFilename = "..\\engine\\texture.cpp";
+        g_CurrentLineNumber = 404;
         core_main_c_displayErrorAndQuit_FUN_004e4330(local_dc);
       }
       else if (size < 0x1001) {
@@ -143,8 +143,8 @@ LAB_00569e08:
     puVar6 = (uchar *)malloc(size);
     pSVar9->true_color_data = puVar6;
     if (puVar6 == (uchar *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-      g_INT_01d71de4 = 0x19e;
+      g_CurrentFilename = "..\\engine\\texture.cpp";
+      g_CurrentLineNumber = 414;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureCache::load - Out of memory");
     }
     support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
@@ -156,16 +156,16 @@ LAB_00569e08:
   puVar6 = (uchar *)malloc(0x300);
   pSVar9->palette_data = puVar6;
   if (puVar6 == (uchar *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-    g_INT_01d71de4 = 0x131;
+    g_CurrentFilename = "..\\engine\\texture.cpp";
+    g_CurrentLineNumber = 305;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureCache::load - Out of memory");
   }
   if (size < 0x4000) {
     if (size < 0x400) {
 LAB_005699c1:
       _sprintf(local_dc,"CTextureCache::load - Bad texture length : %s,%d");
-      g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-      g_INT_01d71de4 = 0x14a;
+      g_CurrentFilename = "..\\engine\\texture.cpp";
+      g_CurrentLineNumber = 330;
       core_main_c_displayErrorAndQuit_FUN_004e4330(local_dc);
     }
     else if (size < 0x401) {
@@ -194,16 +194,16 @@ LAB_005699c1:
   puVar6 = (uchar *)malloc(size);
   pSVar9->texture_data = puVar6;
   if (puVar6 == (uchar *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-    g_INT_01d71de4 = 0x154;
+    g_CurrentFilename = "..\\engine\\texture.cpp";
+    g_CurrentLineNumber = 340;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureCache::load - Out of memory");
   }
   if (iVar5 != 0) {
     puVar6 = (uchar *)malloc(size);
     pSVar9->opacity_data = puVar6;
     if (puVar6 == (uchar *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-      g_INT_01d71de4 = 0x15a;
+      g_CurrentFilename = "..\\engine\\texture.cpp";
+      g_CurrentLineNumber = 346;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureCache::load - Out of memory");
     }
   }

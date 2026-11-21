@@ -20,8 +20,8 @@
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CConsole g_CConsoleInstance
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSetInstance.min_ambient_value
 ;
 ; Called Functions:
@@ -115,8 +115,8 @@ section .text
     MOV ECX,0x5d0dfa                    ; 0054206e | = "..\\core\\setutil.cpp"
     MOV ESI,0xf7                        ; 00542073
     PUSH 0x5d0e0e                       ; 00542078 | = "C3DSCamera::apply - shouldn't ever do..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0054207d | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00542083 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0054207d | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 00542083 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00542089
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0054208e

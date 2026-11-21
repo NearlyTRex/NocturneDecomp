@@ -38,8 +38,8 @@
 ;   double g_DOUBLE_005cacf9 = 20
 ;   double g_DOUBLE_005cad01 = 2
 ;   double g_DOUBLE_005cad09 = 5
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_UINT_01da6478
 ;   int g_ChatOutCount
@@ -186,8 +186,8 @@ section .text
         ;   Label: LAB_00506841
     MOV EDX,0x107                       ; 00506846
     PUSH 0x5ca41d                       ; 0050684b | = "removeChatOut - invalid index"
-    MOV [0x01d71de0],EAX                ; 00506850 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00506855 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00506850 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00506855 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050685b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00506860

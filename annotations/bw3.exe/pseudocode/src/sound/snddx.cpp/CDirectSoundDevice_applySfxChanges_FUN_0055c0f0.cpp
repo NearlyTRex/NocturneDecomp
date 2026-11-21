@@ -51,8 +51,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0(CDir
   iVar2 = slot->hardware_buffer_handle;
   if (((iVar2 < 1) || (0x1e < iVar2)) ||
      (g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar2 * 9] == (IDirectSoundBuffer *)0x0)) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
-    g_INT_01d71de4 = 0x4ea;
+    g_CurrentFilename = "..\\sound\\snddx.cpp";
+    g_CurrentLineNumber = 1258;
     core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::setSfxPos - invalid handle");
   }
   uStack_1c = 1;

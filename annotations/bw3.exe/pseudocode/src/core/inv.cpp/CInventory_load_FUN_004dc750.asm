@@ -29,8 +29,8 @@
 ;   char[100] g_DefaultInventoryValue
 ;   undefined4 g_DefaultInventoryValue+4
 ;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01d81080
 ;   ... and 2 more
 ;
@@ -312,8 +312,8 @@ section .text
     MOV ECX,0x5c64b4                    ; 004dca61 | = "..\\core\\inv.cpp"
     MOV EBX,0x739                       ; 004dca66
     PUSH 0x5c64c4                       ; 004dca6b | = "CInventory::load - Can't find your we..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004dca70 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004dca76 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004dca70 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 004dca76 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004dca7c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004dca81

@@ -56,8 +56,8 @@ LAB_00552392:
     }
     sfx_sample->mp3_data = pCVar3;
     if (pCVar3 == (CMP3Decoder *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-      g_INT_01d71de4 = 0x463;
+      g_CurrentFilename = "..\\sound\\sndmain.cpp";
+      g_CurrentLineNumber = 1123;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory.");
     }
     sound_mp3_cpp_CMP3Decoder_openFile_FUN_005027b0(sfx_sample->mp3_data,filename);

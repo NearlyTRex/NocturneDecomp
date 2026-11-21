@@ -128,8 +128,8 @@ section .text
     MOV ESI,0x5cfb92                    ; 005306cd | = "..\\core\\script.cpp"
     MOV EDI,0x1062                      ; 005306d2
     PUSH 0x5cfba5                       ; 005306d7 | = "SCScipt::dbLoad - error parsing %s re..."
-    MOV dword ptr [0x01d71de0],ESI      ; 005306dc | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 005306e2 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 005306dc | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 005306e2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005306e8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005306ed
@@ -161,8 +161,8 @@ section .text
     MOV EDX,0x5cfc21                    ; 00530732 | = "..\\core\\script.cpp"
     MOV ECX,0x1070                      ; 00530737
     PUSH 0x5cfc34                       ; 0053073c | = "SCScipt::dbLoad - error parsing %s re..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00530741 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00530747 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00530741 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00530747 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053074d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00530752
@@ -280,8 +280,8 @@ section .text
     MOV ESI,0x5cfb61                    ; 00530874 | = "..\\core\\script.cpp"
     MOV EDI,0x104d                      ; 00530879
     PUSH 0x5cfb74                       ; 0053087e | = "Can't open world\\%s"
-    MOV dword ptr [0x01d71de0],ESI      ; 00530883 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00530889 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 00530883 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00530889 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053088f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00530894
@@ -310,8 +310,8 @@ section .text
     MOV ECX,0x5cfbd9                    ; 005308d1 | = "..\\core\\script.cpp"
     MOV ESI,0x106b                      ; 005308d6
     PUSH 0x5cfbec                       ; 005308db | = "SCScipt::dbLoad - error parsing %s re..."
-    MOV dword ptr [0x01d71de0],ECX      ; 005308e0 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 005308e6 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005308e0 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 005308e6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005308ec
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005308f1
@@ -359,8 +359,8 @@ section .text
         ;   Label: LAB_00530951
     MOV ECX,0x1091                      ; 00530956
     PUSH 0x5cfcbe                       ; 0053095b | = "SCScipt::dbLoad - out of memory"
-    MOV dword ptr [0x01d71de0],EDX      ; 00530960 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00530966 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00530960 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00530966 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053096c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00530971

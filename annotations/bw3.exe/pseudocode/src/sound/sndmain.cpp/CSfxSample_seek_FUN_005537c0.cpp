@@ -16,8 +16,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005537c0(CSfxSample *this_ptr
   int origin;
   
   if (this_ptr->streaming_slot_index < 0) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d71de4 = 0x8e0;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2272;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSample::seek - '%s' isn't streamed!");
   }
   dVar3 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00555aa0
@@ -28,8 +28,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005537c0(CSfxSample *this_ptr
     this_ptr->stream_read_position = 0;
   }
   if ((dest_buffer_offset < 0) || (this_ptr->streaming_buffer_size <= dest_buffer_offset)) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d71de4 = 0x8eb;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2283;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSample::seek - invalid destPtr");
   }
   this_ptr->stream_write_position = dest_buffer_offset;
@@ -39,8 +39,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005537c0(CSfxSample *this_ptr
     if (iVar2 != 0) {
       return;
     }
-    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d71de4 = 0x8f4;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2292;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Error seeking %s to %d");
     return;
   }
@@ -53,8 +53,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005537c0(CSfxSample *this_ptr
               (&this_ptr->file_stream,iVar2 + this_ptr->file_offset,origin);
     return;
   }
-  g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-  g_INT_01d71de4 = 0x8ff;
+  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+  g_CurrentLineNumber = 2303;
   core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSample::seek - no MP3 and no wavFile for sample '%s'");
   return;
 }

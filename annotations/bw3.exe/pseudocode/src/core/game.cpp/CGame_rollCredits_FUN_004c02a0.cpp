@@ -73,8 +73,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
     pvVar6 = malloc(~uVar7 + 9);
     *(void **)((int)local_154c + iVar9) = pvVar6;
     if (pvVar6 == (void *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\game.cpp";
-      g_INT_01d71de4 = 0x14af;
+      g_CurrentFilename = "..\\core\\game.cpp";
+      g_CurrentLineNumber = 5295;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CGame::rollCredits - Out of memory");
     }
     pcVar10 = local_14c;

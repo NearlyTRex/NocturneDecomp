@@ -20,8 +20,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004320d0(CCharacter *
   
   if (-1 < this_ptr->gesture_motion_index) {
     if (this_ptr->gesture_branch_root < -1) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\charactr.cpp";
-      g_INT_01d71de4 = 0xff7;
+      g_CurrentFilename = "..\\core\\charactr.cpp";
+      g_CurrentLineNumber = 4087;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CCharacter::applyGesture - never set gestureBranchRoot for actor %s");
     }
     iVar5 = 0;

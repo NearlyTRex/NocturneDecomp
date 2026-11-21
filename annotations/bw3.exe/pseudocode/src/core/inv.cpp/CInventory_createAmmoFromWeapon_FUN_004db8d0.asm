@@ -8,8 +8,8 @@
 ; CWeapon *        Stack[0x8]:4   weapon
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040de60
@@ -53,8 +53,8 @@ section .text
     MOV ECX,0x5c6287                    ; 004db904
     MOV EDI,0x498                       ; 004db909
     PUSH 0x5c6297                       ; 004db90e
-    MOV dword ptr [0x01d71de0],ECX      ; 004db913 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004db919 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004db913 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004db919 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004db91f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004db924

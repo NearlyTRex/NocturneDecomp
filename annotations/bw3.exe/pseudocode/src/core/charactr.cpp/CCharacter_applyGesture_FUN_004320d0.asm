@@ -19,8 +19,8 @@
 ;   TerminatedCString s_Bip01_spine1_005b8630
 ;   float g_FLOAT_005b863e = 0.3000000
 ;   float g_FLOAT_005b8642 = 0.8500000
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -130,8 +130,8 @@ section .text
     MOV ESI,0x5b85d7                    ; 004321e1 | = "..\\core\\charactr.cpp"
     MOV EDI,0xff7                       ; 004321e6
     PUSH 0x5b85ec                       ; 004321eb | = "CCharacter::applyGesture - never set ..."
-    MOV dword ptr [0x01d71de0],ESI      ; 004321f0 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004321f6 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004321f0 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004321f6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004321fc
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00432201

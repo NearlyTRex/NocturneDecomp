@@ -30,8 +30,8 @@
 ;   int g_PerspectiveReciprocal
 ;   int g_CameraOriginX
 ;   int g_CameraOriginZ
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
 ;   undefined4 g_IntensityToValueLookupTable[65535]
 ;   int g_ColorCorrectionCount
@@ -63,8 +63,8 @@ section .text
     MOV ESI,0x5d064f                    ; 005380c1 | = "..\\core\\set.cpp"
     MOV EBP,0xcb8                       ; 005380c6
     PUSH 0x5d065f                       ; 005380cb | = "CDemonSet::lightVertexColor - Quick l..."
-    MOV dword ptr [0x01d71de0],ESI      ; 005380d0 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 005380d6 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 005380d0 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBP      ; 005380d6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005380dc
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005380e1

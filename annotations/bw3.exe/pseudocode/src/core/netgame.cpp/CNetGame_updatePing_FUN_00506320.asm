@@ -29,8 +29,8 @@
 ;   double g_MaxPingTime = 30
 ;   double g_PingCheckThreshold = 0.400000000000000
 ;   double g_BadConnectionTime = 5
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_UINT_01da6478
 ;
@@ -63,8 +63,8 @@ section .text
         ;   Label: LAB_0050633b
     MOV EDI,0x735                       ; 00506340
     PUSH 0x5cac3d                       ; 00506345 | = "CNetGame::updatePing - invalid player..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0050634a | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00506350 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0050634a | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00506350 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00506356
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050635b

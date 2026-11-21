@@ -24,8 +24,8 @@
 ;   TerminatedCString s_cockpit_ckptutil_c_005b8efd
 ;   TerminatedCString s_Unable_to_read_bitmap_fi_005b8f13
 ;   TerminatedCString s_cockpit_ckptutil_c_005b8f34
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -78,11 +78,11 @@ section .text
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x994                       ; 00438f4a
     ADD ESP,0xc                         ; 00438f4f
-    MOV [0x01d71de4],EAX                ; 00438f52 | g_INT_01d71de4
+    MOV [0x01d71de4],EAX                ; 00438f52 | g_CurrentLineNumber
     MOV EAX,ESP                         ; 00438f57
     MOV EBP,0x5b8efd                    ; 00438f59 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 00438f5e
-    MOV dword ptr [0x01d71de0],EBP      ; 00438f5f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de0],EBP      ; 00438f5f | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00438f65
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00438f6a
@@ -137,8 +137,8 @@ section .text
     MOV EAX,ESP                         ; 00438fd2
     MOV ECX,0x98b                       ; 00438fd4
     PUSH EAX                            ; 00438fd9
-    MOV dword ptr [0x01d71de0],EDX      ; 00438fda | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00438fe0 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00438fda | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00438fe0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00438fe6
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00438feb
@@ -161,8 +161,8 @@ section .text
     MOV EAX,ESP                         ; 00439018
     MOV ECX,0x99c                       ; 0043901a
     PUSH EAX                            ; 0043901f
-    MOV dword ptr [0x01d71de0],EDX      ; 00439020 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00439026 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00439020 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00439026 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0043902c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00439031

@@ -146,8 +146,8 @@ section .text
     MOV EBP,0x5d73f1                    ; 00579ccb | = "..\\wincore\\wddvmem.cpp"
     MOV EAX,0xed                        ; 00579cd0
     PUSH 0x5d7408                       ; 00579cd5 | = "WDDVMEM: Fatal - out of frame buffer ..."
-    MOV dword ptr [0x01d71de0],EBP      ; 00579cda | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00579ce0 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 00579cda | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00579ce0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00579ce5
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00579cea
@@ -167,8 +167,8 @@ section .text
     MOV ECX,0x5d7434                    ; 00579d11 | = "..\\wincore\\wddvmem.cpp"
     MOV ESI,0xf2                        ; 00579d16
     PUSH 0x5d744b                       ; 00579d1b | = "WDDVMEM: Fatal - out of Z buffer memory"
-    MOV dword ptr [0x01d71de0],ECX      ; 00579d20 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00579d26 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00579d20 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 00579d26 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00579d2c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00579d31
@@ -412,8 +412,8 @@ section .text
     MOV EDX,0x5d74bb                    ; 00579fd8 | = "..\\wincore\\wddvmem.cpp"
     MOV ECX,0x1ec                       ; 00579fdd
     PUSH 0x5d74d2                       ; 00579fe2 | = "Clear of back buffer failed"
-    MOV dword ptr [0x01d71de0],EDX      ; 00579fe7 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00579fed | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00579fe7 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00579fed | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00579ff3
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00579ff8
@@ -458,8 +458,8 @@ section .text
     MOV ECX,0x5d74ee                    ; 0057a058 | = "..\\wincore\\wddvmem.cpp"
     MOV EBX,0x1f6                       ; 0057a05d
     PUSH 0x5d7505                       ; 0057a062 | = "Unlock of back buffer clear failed"
-    MOV dword ptr [0x01d71de0],ECX      ; 0057a067 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0057a06d | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0057a067 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 0057a06d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057a073
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057a078
@@ -483,8 +483,8 @@ section .text
         ;   Label: LAB_0057a0a3
     MOV EAX,0x1d1                       ; 0057a0a8
     PUSH 0x5d748a                       ; 0057a0ad | = "setScreenResolution - Create back buf..."
-    MOV dword ptr [0x01d71de0],EBP      ; 0057a0b2 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 0057a0b8 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 0057a0b2 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 0057a0b8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057a0bd
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057a0c2

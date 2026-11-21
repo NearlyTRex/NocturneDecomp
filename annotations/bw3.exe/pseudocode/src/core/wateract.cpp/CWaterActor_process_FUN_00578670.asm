@@ -11,8 +11,8 @@
 ;   double g_DOUBLE_005d7273 = 65536
 ;   double g_DOUBLE_005d727b = 8
 ;   CEventList* g_CEventListPtr = 01c6e360
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
@@ -130,8 +130,8 @@ section .text
         ;   Label: default
     MOV ESI,0x1b9                       ; 005787c7
     PUSH 0x5d7250                       ; 005787cc
-    MOV dword ptr [0x01d71de0],ECX      ; 005787d1 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 005787d7 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005787d1 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 005787d7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005787dd
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005787e2
