@@ -4,14 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EPodAuditOperation.h"
 
 // Structure: CPodAuditRecord
 // Ghidra size: 0x138 (312 bytes)
 #pragma pack(push, 1)
 typedef struct CPodAuditRecord {
-    char user_path[32]; // 0x0
+    char user_name[32]; // 0x0
     uint timestamp; // 0x20
-    int operation_type; // 0x24
+    EPodAuditOperation operation_type; // 0x24
     char filename[256]; // 0x28
     int original_timestamp; // 0x128
     int original_file_size; // 0x12c

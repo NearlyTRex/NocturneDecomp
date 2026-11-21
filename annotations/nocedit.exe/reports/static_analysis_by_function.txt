@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 459
-  Total diagnostics: 1229
+  Functions with findings: 460
+  Total diagnostics: 1231
   Functions flagged by multiple tools: 8
-  .keep.cpp files: 449, raw .cpp files: 10
+  .keep.cpp files: 450, raw .cpp files: 10
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -178,17 +178,17 @@ core_script.cpp_CScript_step_FUN_0055a810  [.keep] [Clang Static Analyzer (quick
   Line  838: [deadcode.DeadStores] Value stored to 'local_14' is never read
   Line  967: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
   Line 1008: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 1533: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 1868: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 2114: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 2372: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 2556: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 2626: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 2781: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 2821: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 2827: [security.insecureAPI.strcpy] Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119
-  Line 2882: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
-  Line 2896: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 1538: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 1873: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 2119: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 2377: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 2561: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 2631: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 2786: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 2826: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 2832: [security.insecureAPI.strcpy] Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119
+  Line 2887: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line 2901: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
 ----------------------------------------------------------------------------------------------------
 core_main.c_initializeGameSystems_FUN_00507a60  [.keep] [Clang Static Analyzer (quick)]
@@ -706,11 +706,11 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep] [Clang Static Analyzer (q
   File: core/game.cpp  (6 diagnostics)
 
   Line  150: [core.UndefinedBinaryOperatorResult] The right operand of '-' is a garbage value
-  Line  248: [core.DivideZero] Division by zero
-  Line  318: [deadcode.DeadStores] Value stored to 'local_14' is never read
-  Line  378: [deadcode.DeadStores] Value stored to 'death_message_y' is never read
-  Line  387: [deadcode.DeadStores] Value stored to 'death_message_y' is never read
-  Line  398: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line  250: [core.DivideZero] Division by zero
+  Line  320: [deadcode.DeadStores] Value stored to 'local_14' is never read
+  Line  384: [deadcode.DeadStores] Value stored to 'death_message_y' is never read
+  Line  393: [deadcode.DeadStores] Value stored to 'death_message_y' is never read
+  Line  404: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
 ----------------------------------------------------------------------------------------------------
 core_lightgun.cpp_CLightGun_renderAimBeam_FUN_005066b0  [.keep] [Clang Static Analyzer (quick)]
@@ -1276,7 +1276,7 @@ core_script.cpp_CScript_startDialogLine_FUN_0055ff00  [.keep] [Clang Static Anal
 
   Line   27: [deadcode.DeadStores] Value stored to 'local_14' is never read
   Line   31: [deadcode.DeadStores] Value stored to 'uStack_20' is never read
-  Line   73: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
+  Line   75: [security.insecureAPI.strcpy] Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
 ----------------------------------------------------------------------------------------------------
 core_script.cpp_parseConditionExpression_FUN_00561a30  [.keep] [Clang Static Analyzer (quick)]
@@ -1555,6 +1555,13 @@ core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870  [.keep] [Cl
 
   Line   64: [deadcode.DeadStores] Value stored to 'reach' is never read
   Line  119: [core.uninitialized.ArraySubscript] Array subscript is undefined
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processHotkeys_FUN_004dcee0  [.keep] [Clang Static Analyzer (quick)]
+  File: core/game.cpp  (2 diagnostics)
+
+  Line  102: [deadcode.DeadStores] Although the value stored to 'iVar4' is used in the enclosing expression, the value is never actually read from 'iVar4'
+  Line  106: [deadcode.DeadStores] Value stored to 'iVar4' is never read
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_promptLoadGame_FUN_004e36f0  [.keep] [Clang Static Analyzer (quick)]
@@ -2676,7 +2683,7 @@ core_script.cpp_trimLine_FUN_005592c0  [.keep] [Clang Static Analyzer (quick)]
 core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0  [.keep] [Clang Static Analyzer (quick)]
   File: core/set.cpp  (1 diagnostics)
 
-  Line  146: [core.UndefinedBinaryOperatorResult] The right operand of '-' is a garbage value
+  Line  154: [core.UndefinedBinaryOperatorResult] The right operand of '-' is a garbage value
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0  [.keep] [Clang Static Analyzer (quick)]

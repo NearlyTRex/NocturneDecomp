@@ -160,12 +160,12 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
       pCVar15 = &g_WorkingAuditRecord;
       do {
         cVar2 = pSVar11->primary_username[0];
-        pCVar15->user_path[0] = cVar2;
+        pCVar15->user_name[0] = cVar2;
         if (cVar2 == '\0') break;
         cVar2 = pSVar11->primary_username[1];
         pSVar11 = (SVersionControlSession *)(pSVar11->primary_username + 2);
-        pCVar15->user_path[1] = cVar2;
-        pCVar15 = (CPodAuditRecord *)(pCVar15->user_path + 2);
+        pCVar15->user_name[1] = cVar2;
+        pCVar15 = (CPodAuditRecord *)(pCVar15->user_name + 2);
       } while (cVar2 != '\0');
       _time((time_t *)&g_WorkingAuditRecord.timestamp);
       engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&local_1838);
@@ -180,7 +180,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             puVar15 = local_3c8;
             for (iVar8 = 0x4e; iVar8 != 0; iVar8 = iVar8 + -1) {
               puVar15 = puVar15 + (uint)bVar19 * -2 + 1;
-              *puVar15 = *(uint *)pCVar15->user_path;
+              *puVar15 = *(uint *)pCVar15->user_name;
               pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);
               puVar15 = puVar15;
             }
@@ -197,7 +197,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             puVar14 = local_3c8;
             pCVar15 = pCVar4;
             for (iVar7 = 0x4e; iVar7 != 0; iVar7 = iVar7 + -1) {
-              *(uint *)pCVar15->user_path = *puVar14;
+              *(uint *)pCVar15->user_name = *puVar14;
               puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
               pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
             }
@@ -252,7 +252,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               pcVar17 = g_WorkingAuditRecord.filename;
               iVar3 = 0x4e;
               pcVar11 = *(char **)((int)&(local_1838.directory_entries)->name + local_2c);
-              g_WorkingAuditRecord.operation_type = 1;
+              g_WorkingAuditRecord.operation_type = POD_AUDIT_OPERATION_REMOVE;
               do {
                 cVar2 = *pcVar11;
                 *pcVar17 = cVar2;
@@ -271,7 +271,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               pCVar15 = &g_WorkingAuditRecord;
               puVar14 = local_8a8;
               for (; iVar3 != 0; iVar3 = iVar3 + -1) {
-                *puVar14 = *(uint *)pCVar15->user_path;
+                *puVar14 = *(uint *)pCVar15->user_name;
                 pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);
                 puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
               }
@@ -289,7 +289,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               puVar14 = local_8a8;
               pCVar15 = pCVar5;
               for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-                *(uint *)pCVar15->user_path = *puVar14;
+                *(uint *)pCVar15->user_name = *puVar14;
                 puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
                 pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
               }
@@ -468,13 +468,13 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               iVar3 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(&local_1838,*pacVar10);
               iVar7 = g_AuditRecordCount + 1;
               if (iVar3 < 0) {
-                g_WorkingAuditRecord.operation_type = 0;
+                g_WorkingAuditRecord.operation_type = POD_AUDIT_OPERATION_ADD;
                 g_WorkingAuditRecord.original_timestamp = 0;
                 g_WorkingAuditRecord.original_file_size = 0;
                 pCVar15 = &g_WorkingAuditRecord;
                 puVar14 = local_638;
                 for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *puVar14 = *(uint *)pCVar15->user_path;
+                  *puVar14 = *(uint *)pCVar15->user_name;
                   pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);
                   puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
                 }
@@ -492,7 +492,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 puVar14 = local_638;
                 pCVar15 = pCVar5;
                 for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *(uint *)pCVar15->user_path = *puVar14;
+                  *(uint *)pCVar15->user_name = *puVar14;
                   puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
                   pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
                 }
@@ -514,11 +514,11 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 g_WorkingAuditRecord.original_timestamp =
                      local_1838.directory_entries[iVar3].timestamp;
                 g_WorkingAuditRecord.original_file_size = local_1838.directory_entries[iVar3].size;
-                g_WorkingAuditRecord.operation_type = 2;
+                g_WorkingAuditRecord.operation_type = POD_AUDIT_OPERATION_CHANGE;
                 pCVar15 = &g_WorkingAuditRecord;
                 puVar14 = local_770;
                 for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *puVar14 = *(uint *)pCVar15->user_path;
+                  *puVar14 = *(uint *)pCVar15->user_name;
                   pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);
                   puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
                 }
@@ -538,7 +538,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
                   pCVar18 = (CPodAuditRecord *)((int)pCVar18 + (uint)bVar19 * -8 + 4);
                   puVar13 = puVar13 + (uint)bVar19 * -2 + 1;
-                  *(uint *)pCVar18->user_path = *puVar13;
+                  *(uint *)pCVar18->user_name = *puVar13;
                   puVar13 = puVar13;
                   pCVar18 = pCVar18;
                 }

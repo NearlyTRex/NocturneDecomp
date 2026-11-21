@@ -33,7 +33,7 @@ void __cdecl engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950(CFile
   ppCVar4 = &this_ptr;
   pCVar6 = pCVar2;
   for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(CFileManager **)pCVar6->user_path = *ppCVar4;
+    *(CFileManager **)pCVar6->user_name = *ppCVar4;
     ppCVar4 = ppCVar4 + (uint)bVar8 * -2 + 1;
     pCVar6 = (CPodAuditRecord *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
   }

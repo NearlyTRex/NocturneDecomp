@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang Static Analyzer (quick) (1165 diagnostics)
+Clang Static Analyzer (quick) (1167 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -512,7 +512,7 @@ security.insecureAPI.strcpy (731)
     File: core/game.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_game.cpp_CGame_processFrame_FUN_004da100      line 398
+  core_game.cpp_CGame_processFrame_FUN_004da100      line 404
     File: core/game.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
@@ -1544,7 +1544,7 @@ security.insecureAPI.strcpy (731)
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_startDialogLine_FUN_0055ff line 73
+  core_script.cpp_CScript_startDialogLine_FUN_0055ff line 75
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
@@ -1580,47 +1580,47 @@ security.insecureAPI.strcpy (731)
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 1533
+  core_script.cpp_CScript_step_FUN_0055a810          line 1538
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 1868
+  core_script.cpp_CScript_step_FUN_0055a810          line 1873
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2114
+  core_script.cpp_CScript_step_FUN_0055a810          line 2119
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2372
+  core_script.cpp_CScript_step_FUN_0055a810          line 2377
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2556
+  core_script.cpp_CScript_step_FUN_0055a810          line 2561
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2626
+  core_script.cpp_CScript_step_FUN_0055a810          line 2631
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2781
+  core_script.cpp_CScript_step_FUN_0055a810          line 2786
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2821
+  core_script.cpp_CScript_step_FUN_0055a810          line 2826
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2827
+  core_script.cpp_CScript_step_FUN_0055a810          line 2832
     File: core/script.cpp
     Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2882
+  core_script.cpp_CScript_step_FUN_0055a810          line 2887
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
-  core_script.cpp_CScript_step_FUN_0055a810          line 2896
+  core_script.cpp_CScript_step_FUN_0055a810          line 2901
     File: core/script.cpp
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
@@ -2937,7 +2937,7 @@ security.insecureAPI.strcpy (731)
     Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119
 
 ----------------------------------------------------------------------------------------------------
-deadcode.DeadStores (364)
+deadcode.DeadStores (366)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870       line 28
@@ -3352,17 +3352,25 @@ deadcode.DeadStores (364)
     File: core/game.cpp
     Value stored to 'bVar22' is never read
 
-  core_game.cpp_CGame_processFrame_FUN_004da100      line 318
+  core_game.cpp_CGame_processFrame_FUN_004da100      line 320
     File: core/game.cpp
     Value stored to 'local_14' is never read
 
-  core_game.cpp_CGame_processFrame_FUN_004da100      line 378
+  core_game.cpp_CGame_processFrame_FUN_004da100      line 384
     File: core/game.cpp
     Value stored to 'death_message_y' is never read
 
-  core_game.cpp_CGame_processFrame_FUN_004da100      line 387
+  core_game.cpp_CGame_processFrame_FUN_004da100      line 393
     File: core/game.cpp
     Value stored to 'death_message_y' is never read
+
+  core_game.cpp_CGame_processHotkeys_FUN_004dcee0    line 102
+    File: core/game.cpp
+    Although the value stored to 'iVar4' is used in the enclosing expression, the value is never actually read from 'iVar4'
+
+  core_game.cpp_CGame_processHotkeys_FUN_004dcee0    line 106
+    File: core/game.cpp
+    Value stored to 'iVar4' is never read
 
   core_game.cpp_CGame_runGameSession_FUN_004daf80    line 54
     File: core/game.cpp
@@ -4420,7 +4428,7 @@ core.UndefinedBinaryOperatorResult (27)
     File: core/path.cpp
     The left operand of '==' is a garbage value
 
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 146
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 154
     File: core/set.cpp
     The right operand of '-' is a garbage value
 
@@ -4668,7 +4676,7 @@ core.uninitialized.ArraySubscript (3)
 core.DivideZero (3)
 ----------------------------------------------------------------------------------------------------
 
-  core_game.cpp_CGame_processFrame_FUN_004da100      line 248
+  core_game.cpp_CGame_processFrame_FUN_004da100      line 250
     File: core/game.cpp
     Division by zero
 

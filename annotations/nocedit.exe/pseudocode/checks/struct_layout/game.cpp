@@ -5714,8 +5714,8 @@ static_assert(__builtin_offsetof(CPod, vtable) == 404,
 // ---- CPodAuditRecord (312 bytes) ----
 static_assert(sizeof(CPodAuditRecord) == 312,
               "sizeof(CPodAuditRecord) != 312");
-static_assert(__builtin_offsetof(CPodAuditRecord, user_path) == 0,
-              "offsetof(CPodAuditRecord, user_path) != 0");
+static_assert(__builtin_offsetof(CPodAuditRecord, user_name) == 0,
+              "offsetof(CPodAuditRecord, user_name) != 0");
 static_assert(__builtin_offsetof(CPodAuditRecord, timestamp) == 32,
               "offsetof(CPodAuditRecord, timestamp) != 32");
 static_assert(__builtin_offsetof(CPodAuditRecord, operation_type) == 36,

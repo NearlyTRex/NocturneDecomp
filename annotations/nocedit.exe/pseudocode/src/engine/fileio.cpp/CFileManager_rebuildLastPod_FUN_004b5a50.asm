@@ -248,13 +248,13 @@ section .text
     PUSH EDI                            ; 004b5bca | g_WorkingAuditRecord
     MOV AL,byte ptr [ESI]               ; 004b5bcb | g_VersionControlSession | g_VersionControlSession.primary_username[2]
         ;   Label: LAB_004b5bcb
-    MOV byte ptr [EDI],AL               ; 004b5bcd | g_WorkingAuditRecord | g_WorkingAuditRecord.user_path[2]
+    MOV byte ptr [EDI],AL               ; 004b5bcd | g_WorkingAuditRecord | g_WorkingAuditRecord.user_name[2]
     CMP AL,0x0                          ; 004b5bcf
     JZ 0x004b5be3                       ; 004b5bd1
         ;   XREF to: 004b5be3 (CONDITIONAL_JUMP)  ; LAB_004b5be3
     MOV AL,byte ptr [ESI + 0x1]         ; 004b5bd3 | g_VersionControlSession.primary_username[1] | g_VersionControlSession.primary_username[3]
     ADD ESI,0x2                         ; 004b5bd6
-    MOV byte ptr [EDI + 0x1],AL         ; 004b5bd9 | g_WorkingAuditRecord.user_path[1] | g_WorkingAuditRecord.user_path[3]
+    MOV byte ptr [EDI + 0x1],AL         ; 004b5bd9 | g_WorkingAuditRecord.user_name[1] | g_WorkingAuditRecord.user_name[3]
     ADD EDI,0x2                         ; 004b5bdc
     CMP AL,0x0                          ; 004b5bdf
     JNZ 0x004b5bcb                      ; 004b5be1
@@ -477,7 +477,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x4]       ; 004b5e83
     MOV dword ptr [0x02d12ab8],EDX      ; 004b5e86 | g_WorkingAuditRecord.original_timestamp
     MOV [0x02d12abc],EAX                ; 004b5e8c | g_WorkingAuditRecord.original_file_size
-    MOVSD.REP ES:EDI,ESI                ; 004b5e91 | g_WorkingAuditRecord | g_WorkingAuditRecord.user_path[4]
+    MOVSD.REP ES:EDI,ESI                ; 004b5e91 | g_WorkingAuditRecord | g_WorkingAuditRecord.user_name[4]
     MOV EDI,dword ptr [0x02d12d30]      ; 004b5e93 | g_AuditRecordCount
     INC EDI                             ; 004b5e99
     MOV dword ptr [0x02d12d30],EDI      ; 004b5e9a | g_AuditRecordCount
@@ -1137,7 +1137,7 @@ section .text
     MOV ECX,0x4e                        ; 004b66de
     MOV dword ptr [0x02d129b4],EBP      ; 004b66e3 | g_WorkingAuditRecord.operation_type
     PUSH EAX                            ; 004b66e9
-    MOVSD.REP ES:EDI,ESI                ; 004b66ea | g_WorkingAuditRecord | g_WorkingAuditRecord.user_path[4]
+    MOVSD.REP ES:EDI,ESI                ; 004b66ea | g_WorkingAuditRecord | g_WorkingAuditRecord.user_name[4]
     CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004b66ec
         ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 004b66f1
@@ -1212,7 +1212,7 @@ section .text
     MOV dword ptr [0x02d12abc],ESI      ; 004b67d2 | g_WorkingAuditRecord.original_file_size
     MOV ESI,0x2d12990                   ; 004b67d8 | g_WorkingAuditRecord
     PUSH EAX                            ; 004b67dd
-    MOVSD.REP ES:EDI,ESI                ; 004b67de | g_WorkingAuditRecord | g_WorkingAuditRecord.user_path[4]
+    MOVSD.REP ES:EDI,ESI                ; 004b67de | g_WorkingAuditRecord | g_WorkingAuditRecord.user_name[4]
     CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004b67e0
         ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 004b67e5

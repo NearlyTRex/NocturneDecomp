@@ -1161,10 +1161,6 @@
       "type":"struct"
     },
     {
-      "name":"CPodAuditRecord",
-      "type":"struct"
-    },
-    {
       "name":"CPodDirectoryEntry",
       "type":"struct"
     },
@@ -2111,6 +2107,14 @@
     {
       "name":"EPlatformType",
       "type":"enum"
+    },
+    {
+      "name":"EPodAuditOperation",
+      "type":"enum"
+    },
+    {
+      "name":"CPodAuditRecord",
+      "type":"struct"
     },
     {
       "name":"ERenderStateFlagBits",
@@ -9519,6 +9523,27 @@
         {
           "name":"PLATFORM_TYPE_BOTH",
           "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EPodAuditOperation",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"POD_AUDIT_OPERATION_ADD",
+          "val":0
+        },
+        {
+          "name":"POD_AUDIT_OPERATION_REMOVE",
+          "val":1
+        },
+        {
+          "name":"POD_AUDIT_OPERATION_CHANGE",
+          "val":2
         }
       ]
     },
@@ -37229,7 +37254,7 @@
       "fields":[
         {
           "len":32,
-          "name":"user_path",
+          "name":"user_name",
           "offset":0,
           "type":"char[32]"
         },
@@ -37243,7 +37268,7 @@
           "len":4,
           "name":"operation_type",
           "offset":36,
-          "type":"int"
+          "type":"EPodAuditOperation"
         },
         {
           "len":256,
