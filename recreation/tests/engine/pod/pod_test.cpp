@@ -105,6 +105,31 @@ TEST_F(CPodTest, MountingIfValidGivesThePodOrWhyNot) {
     EXPECT_EQ(pod_.getPodFiles().size(), CPod::kMaxPods);
 }
 
+TEST_F(CPodTest, ThePodsArentVerifiedOrTheirTrailsLoggedUnlessAsked) {
+    EXPECT_FALSE(pod_.getSettings().verify_checksums);
+    EXPECT_FALSE(pod_.getSettings().log_audit_trail);
+    pod_.setSettings({.verify_checksums = true, .log_audit_trail = true});
+    EXPECT_TRUE(pod_.getSettings().verify_checksums);
+    EXPECT_TRUE(pod_.getSettings().log_audit_trail);
+}
+
+// ACT1.POD's directory CRCs are 0, which no file of its matches.
+TEST_F(CPodTest, APodFailingItsCrcsMountsOnlyWhileTheyArentVerified) {
+    EXPECT_TRUE(pod_.mountIfValid("ACT1.POD").has_value());
+    pod_.setSettings({.verify_checksums = true});
+    EXPECT_EQ(pod_.mountIfValid("ACT1.POD").error(),
+              "ACT1.POD fails its CRC check on door.wav, sky.raw");
+    EXPECT_EQ(pod_.getPodFiles().size(), 1U);
+}
+
+TEST_F(CPodTest, APodPassingItsCrcsMountsWhileTheyAreVerified) {
+    givenFile("GOOD.POD",
+              withStoredCrc(
+                  makePod2("", {{.name = "a.wav", .data = "AAA", .checksum = crcOf("AAA")}}), 8));
+    pod_.setSettings({.verify_checksums = true});
+    EXPECT_TRUE(pod_.mountIfValid("GOOD.POD").has_value());
+}
+
 TEST_F(CPodTest, TheFirstPodHoldingANameAnswersForIt) {
     pod_.mount("ACT2.POD");
     pod_.mount("ACT1.POD");

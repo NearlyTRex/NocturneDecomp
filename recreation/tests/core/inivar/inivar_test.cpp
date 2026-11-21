@@ -10,6 +10,7 @@
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
+#include "engine/pod/pod.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "platform/display.h"
@@ -106,6 +107,7 @@ protected:
     CGameParts game_parts_{game_clock_};
     CGame &game_ = game_parts_.getGame();
     engine::CIni ini_{file_system_};
+    engine::CPod pod_{file_system_, dosio_};
     SIniDataOwners owners_{.game = game_,
                            .sound_main = sound_,
                            .console = console_,
@@ -113,7 +115,8 @@ protected:
                            .display = display_,
                            .fonts = fonts_,
                            .gamepad = game_parts_.getGamepad().input,
-                           .messages = messages_};
+                           .messages = messages_,
+                           .pod = pod_};
 };
 
 TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
@@ -391,6 +394,37 @@ TEST_F(CInivarTest, ReadsTheDebugSection) {
     EXPECT_EQ(game_.head_of_horror_cheat, 1);
 }
 
+TEST_F(CInivarTest, ReadsThePodChecks) {
+    text_ = "[Debug]\r\npodVerifyChecksums=1\r\npodAuditLog=1\r\n";
+    read();
+    EXPECT_TRUE(pod_.getSettings().verify_checksums);
+    EXPECT_TRUE(pod_.getSettings().log_audit_trail);
+}
+
+TEST_F(CInivarTest, APodCheckWithoutItsLineKeepsItsSetting) {
+    pod_.setSettings({.verify_checksums = true, .log_audit_trail = true});
+    text_ = "[Debug]\r\npodVerifyChecksums=0\r\n";
+    read();
+    EXPECT_FALSE(pod_.getSettings().verify_checksums);
+    EXPECT_TRUE(pod_.getSettings().log_audit_trail);
+}
+
+TEST_F(CInivarTest, ThePodChecksAreOffWithoutTheirLines) {
+    read();
+    EXPECT_FALSE(pod_.getSettings().verify_checksums);
+    EXPECT_FALSE(pod_.getSettings().log_audit_trail);
+}
+
+TEST_F(CInivarTest, WritesThePodChecks) {
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("podVerifyChecksums=0\r\n"));
+    EXPECT_THAT(text_, HasSubstr("podAuditLog=0\r\n"));
+    pod_.setSettings({.verify_checksums = true, .log_audit_trail = true});
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("podVerifyChecksums=1\r\n"));
+    EXPECT_THAT(text_, HasSubstr("podAuditLog=1\r\n"));
+}
+
 TEST_F(CInivarTest, AnIniThatCantBeWrittenMeansTheGameIsOnTheCd) {
     ON_CALL(file_system_, setReadOnly(kIni, false)).WillByDefault(Return(false));
     EXPECT_THAT([this] { read(); }, ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
@@ -442,6 +476,7 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
     CGameParts copy_parts(game_clock_);
     CGame &copy = copy_parts.getGame();
     support::CNewMsg copy_messages(dosio_);
+    engine::CPod copy_pod(file_system_, dosio_);
     const SIniDataOwners reread{.game = copy,
                                 .sound_main = sound_,
                                 .console = console_,
@@ -449,7 +484,8 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
                                 .display = display_,
                                 .fonts = fonts_,
                                 .gamepad = copy_parts.getGamepad().input,
-                                .messages = copy_messages};
+                                .messages = copy_messages,
+                                .pod = copy_pod};
     readIniData(ini_, file_system_, reread);
     EXPECT_EQ(copy_messages.getLanguage(), "de");
     EXPECT_EQ(copy.game_control, EControlMode::CONTROL_MODE_GAMEPAD);

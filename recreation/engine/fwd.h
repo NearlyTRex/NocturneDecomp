@@ -35,6 +35,7 @@ class CWinFont;
 class CZRaster;
 enum class EInputCodeType : std::uint16_t;
 enum class EMenuAction : std::uint8_t;
+enum class EPodAuditOperation : std::uint8_t;
 enum class EPodState : std::uint8_t;
 class IGameClock;
 class IRawInput;

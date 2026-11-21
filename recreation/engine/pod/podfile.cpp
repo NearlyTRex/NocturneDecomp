@@ -1,16 +1,23 @@
 #include "engine/pod/podfile.h"
-#include "engine/pod/pod_functions.h"
 
 #include "common/serial/binaryreader.h"
 #include "common/text/ascii.h"
 #include "engine/dosio/dosio.h"
 #include "engine/dosio/foundfileinfo.h"
+#include "engine/pod/pod_functions.h"
 #include "platform/file.h"
 #include "platform/filesystem.h"
 
 #include <algorithm>
 #include <array>
+#include <cstdint>
+#include <expected>
+#include <limits>
+#include <memory>
 #include <optional>
+#include <ranges>
+#include <string>
+#include <vector>
 
 namespace nocturne::engine {
 namespace {
@@ -22,11 +29,46 @@ constexpr std::size_t kPod1HeaderSize = 0x54;
 constexpr std::size_t kPod1EntrySize = 0x28;
 constexpr std::size_t kDescriptionSize = 80;
 constexpr std::size_t kPod1NameSize = 32;
-constexpr std::size_t kPod2ChecksumOffset = 4;
-constexpr std::size_t kPod2ChecksumBegin = 8;
+constexpr std::size_t kPod2MagicOffset = 8;
 // The POD2 name block holds at least one byte and at most 256 for each file.
 constexpr std::int64_t kMaxNameBytes = 256;
 constexpr std::array kPod2Magic = {std::byte{'P'}, std::byte{'O'}, std::byte{'D'}, std::byte{'2'}};
+// The whole-file CRC covers from here to the end, and is stored in the 4 bytes before it.
+constexpr std::int64_t kPod1CrcStart = kPod1HeaderSize;
+constexpr std::int64_t kPod2CrcStart = kPod2MagicOffset;
+constexpr std::int64_t kStoredCrcSize = 4;
+// nocedit's g_FileIOBuffer.
+constexpr std::size_t kCrcBlockSize = 0x10000;
+constexpr std::size_t kAuditRecordSize = 0x138;
+constexpr std::size_t kAuditUserNameSize = 32;
+constexpr std::size_t kAuditFilenameSize = 256;
+constexpr std::int32_t kFirstAuditOperation =
+    static_cast<std::int32_t>(EPodAuditOperation::POD_AUDIT_OPERATION_ADD);
+constexpr std::int32_t kLastAuditOperation =
+    static_cast<std::int32_t>(EPodAuditOperation::POD_AUDIT_OPERATION_CHANGE);
+
+// The CRC of up to limit bytes from the file's position, read a block at a time, and how many
+// bytes it covers: fewer than limit when the file ends first.
+struct SStreamCrc {
+    std::uint32_t crc = kCrc32Initial;
+    std::uint64_t length = 0;
+};
+
+SStreamCrc computeStreamCrc(platform::IFile &file, std::uint64_t limit) {
+    std::vector<std::byte> block(kCrcBlockSize);
+    SStreamCrc result;
+    while (result.length < limit) {
+        const auto wanted =
+            static_cast<std::size_t>(std::min<std::uint64_t>(block.size(), limit - result.length));
+        const std::size_t got = file.read(std::span(block).first(wanted));
+        result.crc = crc32UpdateBuffer(std::span(block).first(got), result.crc);
+        result.length += got;
+        if (got < wanted) {
+            break;
+        }
+    }
+    return result;
+}
 
 // Exactly count bytes, or nothing when the file ends first.
 std::optional<std::vector<std::byte>> readExactly(platform::IFile &file, std::size_t count) {
@@ -55,78 +97,6 @@ CPodFile::CPodFile(platform::IFileSystem &file_system, const CDosIo &dosio)
 // nocedit 0x0054f610
 CPodFile::~CPodFile() = default;
 
-bool CPodFile::toggleVerify() {
-    verify_ = !verify_;
-    return verify_;
-}
-
-bool CPodFile::toggleAudit() {
-    read_audit_ = !read_audit_;
-    return read_audit_;
-}
-
-int CPodFile::verify(std::string_view pod_filename) const {
-    std::string filename = file_system_.getFullPath(pod_filename).value_or(std::string(pod_filename));
-
-    // read fileinfo
-    const std::optional<platform::SFileInfo> fileinfo = file_system_.getFileInfo(filename);
-    if (!fileinfo) {
-        return -1;
-    }
-
-    // open file
-    const std::unique_ptr<platform::IFile> file =
-        file_system_.openFile(filename, platform::EFileMode::Read);
-    if (file == nullptr) {
-        return -1;
-    }
-
-    // read magic ident and checksum
-    std::array<std::byte, kPod2ChecksumBegin> magic_checksum{};
-    if (file->read(magic_checksum) != kPod2ChecksumBegin) {
-        return -1;
-    }
-    common::CBinaryReader reader(magic_checksum);
-    reader.skip(kPod2ChecksumOffset);
-    const std::uint32_t checksum = reader.read<std::uint32_t>();
-
-    const bool is_pod2 = fileinfo->size >= kPod2HeaderSize &&
-        std::ranges::equal(std::span(magic_checksum).first(kPod2Magic.size()), kPod2Magic);
-
-    // if not a POD2 try POD1, accumulate sizes and range check offsets
-    if (!is_pod2) {
-        file->seek(kPod1HeaderSize);
-        const std::uint32_t count = checksum;
-
-        std::uint32_t accum = kPod1HeaderSize;
-        for (std::uint32_t i = 0; i < count; ++i) {
-            const std::optional<std::vector<std::byte>> record = readExactly(*file, kPod1EntrySize);
-            if (!record) {
-                return -1;
-            }
-            common::CBinaryReader fields(*record);
-            fields.skip(kPod1NameSize);
-            accum += fields.read<std::uint32_t>();
-            const std::uint32_t offset = fields.read<std::uint32_t>();
-            if (offset != std::clamp<std::uint32_t>(offset, kPod1HeaderSize, fileinfo->size - 1)) {
-                return 0;
-            }
-        }
-        return accum == fileinfo->size ? 1 : 0;
-    }
-
-    if (!verify_)
-        return 2;
-
-    // read file data starting at kPod2ChecksumBegin and verify checksum
-    const std::optional<std::vector<std::byte>> data = readExactly(*file, fileinfo->size - kPod2ChecksumBegin);
-    if (!data) {
-        return -1;
-    }
-
-    return checksum == crc32UpdateBuffer(*data) ? 2 : 0;
-}
-
 // The retail build reads POD1 and POD2 only, and sorts the directory with a stable sort. The
 // original also kept where a POD2's audit trail starts, for getAuditRecord, which retail never
 // calls.
@@ -135,31 +105,18 @@ bool CPodFile::mountFromFile(std::string_view pod_filename) {
     cleanup();
     filename_ = file_system_.getFullPath(pod_filename).value_or(std::string(pod_filename));
     timestamp_ = dosio_.getFileTimestamp({}, filename_);
-
-    // verify and identify version
-    const int pod_version = verify(filename_);
-    if (pod_version <= 0) {
-        return false;
-    }
-
-    // open file
     const std::unique_ptr<platform::IFile> file =
         file_system_.openFile(filename_, platform::EFileMode::Read);
     if (file == nullptr) {
         cleanup();
         return false;
     }
-    if (pod_version == 2) {
-        std::array<std::byte, kPod2HeaderSize> header{};
-        if (file->read(header) != kPod2HeaderSize) {
-            return -1;
-        }
-        if (!readPod2(*file, header)) {
-            cleanup();
-            return false;
-        }
-    }
-    else if (!readPod1(*file)) {
+    std::array<std::byte, kPod2HeaderSize> header{};
+    // The original took a file starting "POD2" but shorter than the header as POD2, its tail
+    // uninitialised.
+    const bool is_pod2 = file->read(header) == header.size() &&
+                         std::ranges::equal(std::span(header).first(kPod2Magic.size()), kPod2Magic);
+    if (!(is_pod2 ? readPod2(*file, header) : readPod1(*file))) {
         cleanup();
         return false;
     }
@@ -174,24 +131,19 @@ bool CPodFile::mountFromFile(std::string_view pod_filename) {
 // follows the names, so its offset gives the name block's size.
 bool CPodFile::readPod2(platform::IFile &file, std::span<const std::byte> header) {
     common::CBinaryReader reader(header);
-    reader.skip(kPod2ChecksumBegin);
+    reader.skip(kPod2MagicOffset);
     // The original copied a description with no NUL on past its 80 bytes.
     description_ = reader.readString(kDescriptionSize);
-    const std::uint32_t count = reader.read<std::uint32_t>();
-    const std::uint32_t audit_count = reader.read<std::uint32_t>();
+    const auto count = reader.read<std::int32_t>();
+    const auto audit_count = reader.read<std::int32_t>();
     // Retail's malloc gives null for an empty directory, which fails the mount.
     if (count <= 0) {
         return false;
     }
     version_ = 2;
-
-    std::uint32_t entries_beg = 0;
-    std::uint32_t entries_end = 0;
-    std::uint32_t nameoff_max = 0;
-    std::uint32_t nameoff_min = 0;
     std::vector<std::uint32_t> name_offsets;
     // The original read on past a short directory with the rest uninitialised.
-    for (std::uint32_t i = 0; i < count; ++i) {
+    for (std::int32_t i = 0; i < count; ++i) {
         const std::optional<std::vector<std::byte>> record = readExactly(file, kPod2EntrySize);
         if (!record) {
             return false;
@@ -203,31 +155,17 @@ bool CPodFile::readPod2(platform::IFile &file, std::span<const std::byte> header
         entry.offset = fields.read<std::uint32_t>();
         entry.timestamp = fields.read<std::uint32_t>();
         entry.checksum = fields.read<std::uint32_t>();
-
-        // determine entry range and max name offset
-        if (name_offsets.back() > nameoff_max) {
-            nameoff_max = i;
-        }
-        if (i == 0 || (name_offsets.back() < nameoff_min)) {
-            nameoff_min = i;
-        }
-        if ((entry.offset + entry.size) > entries_end) {
-            entries_end = entry.offset + entry.size;
-        }
-        if (i == 0 || (entry.offset < entries_beg)) {
-            entries_beg = entry.offset;
-        }
     }
-    std::uint32_t names_beg = kPod2HeaderSize + count * kPod2EntrySize;
-    std::uint32_t names_end = entries_beg;
-    std::uint32_t names_len = names_end - names_beg;
-
-    if (names_len < count || names_len > count * kMaxNameBytes) {
+    const std::int64_t names_size =
+        static_cast<std::int64_t>(entries_.front().offset) -
+        static_cast<std::int64_t>(kPod2HeaderSize) -
+        (static_cast<std::int64_t>(count) * static_cast<std::int64_t>(kPod2EntrySize));
+    if (names_size < count || names_size > count * kMaxNameBytes) {
         return false;
     }
     // The original read on past a short name block with the rest uninitialised.
     const std::optional<std::vector<std::byte>> names =
-        readExactly(file, static_cast<std::size_t>(names_len));
+        readExactly(file, static_cast<std::size_t>(names_size));
     if (!names) {
         return false;
     }
@@ -238,31 +176,8 @@ bool CPodFile::readPod2(platform::IFile &file, std::span<const std::byte> header
         }
         entries_[i].name = nameAt(block, name_offsets[i]);
     }
-
-    // read audit log if enabled
-    audit_offset_ = entries_end;
-    if (read_audit_) {
-        file.seek(audit_offset_);
-
-        for (size_t i = 0; i < audit_count; ++i) {
-            const std::optional<std::vector<std::byte>> audit = readExactly(file, sizeof(CPodAuditRecord));
-            if (!audit) {
-                return false;
-            }
-            common::CBinaryReader reader(*audit);
-            audits_.emplace_back();
-            std::string user = reader.readString(32);
-            strncpy(audits_.back().user,user.c_str(),32);
-            audits_.back().modification.uts = reader.read<std::int32_t>();
-            audits_.back().modification.act = static_cast<enum CPodAuditRecordAction>(reader.read<std::uint32_t>());
-            std::string path = reader.readString(256);
-            strncpy(audits_.back().path,path.c_str(),256);
-            audits_.back().before.uts = reader.read<std::int32_t>();
-            audits_.back().before.len = reader.read<std::uint32_t>();
-            audits_.back().after.uts = reader.read<std::int32_t>();
-            audits_.back().after.len = reader.read<std::uint32_t>();
-        }
-    }
+    audit_count_ = audit_count;
+    audit_records_offset_ = entries_.back().offset + entries_.back().size;
     return true;
 }
 
@@ -296,7 +211,8 @@ bool CPodFile::readPod1(platform::IFile &file) {
         entry.offset = fields.read<std::uint32_t>();
         entry.timestamp = timestamp_;
     }
-    audits_.clear();
+    audit_count_ = 0;
+    audit_records_offset_ = 0;
     return true;
 }
 
@@ -306,7 +222,109 @@ void CPodFile::cleanup() {
     version_ = 0;
     filename_.clear();
     entries_.clear();
-    audits_.clear();
+    audit_count_ = 0;
+    audit_records_offset_ = 0;
+}
+
+// The original drew the editor's progress and listed the failing files in a pick list; the
+// failure is the result instead. It also refused a pod with no filename, which a mounted one has.
+// nocedit 0x00550230
+std::expected<void, std::string> CPodFile::verifyChecksum() const {
+    if (version_ == 0) {
+        return std::unexpected("isn't mounted");
+    }
+    const std::unique_ptr<platform::IFile> file =
+        file_system_.openFile(filename_, platform::EFileMode::Read);
+    if (file == nullptr) {
+        return std::unexpected("can't be opened");
+    }
+    if (version_ == 2) {
+        const std::vector<std::string> failed = findFilesFailingCrc(*file);
+        if (!failed.empty()) {
+            return std::unexpected("fails its CRC check on " +
+                                   (failed | std::views::join_with(std::string_view(", ")) |
+                                    std::ranges::to<std::string>()));
+        }
+    }
+    return verifyWholeFileCrc(*file);
+}
+
+std::vector<std::string> CPodFile::findFilesFailingCrc(platform::IFile &file) const {
+    std::vector<std::string> failed;
+    for (const CPodDirectoryEntry &entry : entries_) {
+        if (computeFileCRC(file, entry) != entry.checksum) {
+            failed.push_back(entry.name);
+        }
+    }
+    return failed;
+}
+
+// Nothing when the file ends inside the entry. The original opened the pod again for each file.
+// nocedit 0x005507f0
+std::optional<std::uint32_t> CPodFile::computeFileCRC(platform::IFile &file,
+                                                      const CPodDirectoryEntry &entry) {
+    file.seek(entry.offset);
+    const SStreamCrc crc = computeStreamCrc(file, entry.size);
+    if (crc.length != entry.size) {
+        return std::nullopt;
+    }
+    return crc.crc;
+}
+
+// A POD1 storing 0 has no CRC: the builder never wrote one into tground.pod, the only POD1 that
+// ships, and the original's check failed it.
+std::expected<void, std::string> CPodFile::verifyWholeFileCrc(platform::IFile &file) const {
+    const std::int64_t start = version_ == 1 ? kPod1CrcStart : kPod2CrcStart;
+    file.seek(start - kStoredCrcSize);
+    const std::optional<std::vector<std::byte>> stored_bytes =
+        readExactly(file, static_cast<std::size_t>(kStoredCrcSize));
+    if (!stored_bytes) {
+        return std::unexpected("is cut short");
+    }
+    common::CBinaryReader reader(*stored_bytes);
+    const auto stored = reader.read<std::uint32_t>();
+    if (version_ == 1 && stored == 0) {
+        return {};
+    }
+    if (computeStreamCrc(file, std::numeric_limits<std::uint64_t>::max()).crc != stored) {
+        return std::unexpected("fails its CRC check");
+    }
+    return {};
+}
+
+// The original quit on an index outside the trail, a pod it couldn't open or a record it
+// couldn't read, and handed back any operation the record held.
+// nocedit 0x00550590
+std::optional<CPodAuditRecord> CPodFile::getAuditRecord(int record_index) const {
+    if (record_index < 0 || record_index >= audit_count_) {
+        return std::nullopt;
+    }
+    const std::unique_ptr<platform::IFile> file =
+        file_system_.openFile(filename_, platform::EFileMode::Read);
+    if (file == nullptr) {
+        return std::nullopt;
+    }
+    file->seek(audit_records_offset_ + (static_cast<std::int64_t>(record_index) *
+                                        static_cast<std::int64_t>(kAuditRecordSize)));
+    const std::optional<std::vector<std::byte>> bytes = readExactly(*file, kAuditRecordSize);
+    if (!bytes) {
+        return std::nullopt;
+    }
+    common::CBinaryReader reader(*bytes);
+    CPodAuditRecord record;
+    record.user_name = reader.readString(kAuditUserNameSize);
+    record.timestamp = reader.read<std::uint32_t>();
+    const auto operation = reader.read<std::int32_t>();
+    if (operation < kFirstAuditOperation || operation > kLastAuditOperation) {
+        return std::nullopt;
+    }
+    record.operation_type = static_cast<EPodAuditOperation>(operation);
+    record.filename = reader.readString(kAuditFilenameSize);
+    record.original_timestamp = reader.read<std::uint32_t>();
+    record.original_file_size = reader.read<std::uint32_t>();
+    record.new_timestamp = reader.read<std::uint32_t>();
+    record.new_file_size = reader.read<std::uint32_t>();
+    return record;
 }
 
 // nocedit 0x00550140
@@ -357,15 +375,11 @@ const std::string &CPodFile::getDescription() const {
 }
 
 int CPodFile::getAuditCount() const {
-    return audits_.size();
+    return audit_count_;
 }
 
 const std::vector<CPodDirectoryEntry> &CPodFile::getEntries() const {
     return entries_;
-}
-
-const std::vector<CPodAuditRecord> &CPodFile::getAuditRecords() const {
-    return audits_;
 }
 
 } // namespace nocturne::engine

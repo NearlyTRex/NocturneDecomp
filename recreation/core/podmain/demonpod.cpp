@@ -15,9 +15,13 @@
 #include "platform/log.h"
 
 #include <algorithm>
+#include <array>
+#include <chrono>
+#include <ctime>
 #include <expected>
 #include <format>
 #include <memory>
+#include <optional>
 #include <ranges>
 #include <span>
 #include <string>
@@ -28,7 +32,28 @@
 namespace nocturne::core {
 namespace {
 
+using engine::EPodAuditOperation;
 using engine::EPodState;
+
+// By EPodAuditOperation, which getAuditRecord holds to these three.
+constexpr std::array<std::string_view, 3> kAuditOperationVerbs = {"added", "removed", "changed"};
+
+std::string_view describeAuditOperation(EPodAuditOperation operation) {
+    return kAuditOperationVerbs.at(std::to_underlying(operation));
+}
+
+// In UTC, so a log reads the same wherever it was written.
+std::string formatAuditTime(std::time_t time) {
+    return std::format("{:%Y-%m-%d %H:%M:%S}",
+                       std::chrono::sys_seconds(std::chrono::seconds(time)));
+}
+
+std::string describeAuditRecord(std::string_view pod, const engine::CPodAuditRecord &record) {
+    return std::format("{}: {} {} {} at {}, {} to {} bytes", pod, record.user_name,
+                       describeAuditOperation(record.operation_type), record.filename,
+                       formatAuditTime(record.timestamp), record.original_file_size,
+                       record.new_file_size);
+}
 
 bool isPresent(EPodState state) {
     return state != EPodState::Missing && state != EPodState::Unreadable;
@@ -188,6 +213,22 @@ void CDemonPod::mountPods(const engine::SPackage &package,
         }
         loaded.pods.push_back((*pod)->getFilename());
         loaded.mounted.push_back(*pod);
+        if (getSettings().log_audit_trail) {
+            logAuditTrail(**pod);
+        }
+    }
+}
+
+// In the order the builder appended the records.
+void CDemonPod::logAuditTrail(const engine::CPodFile &pod) {
+    for (int i = 0; i < pod.getAuditCount(); ++i) {
+        const std::optional<engine::CPodAuditRecord> record = pod.getAuditRecord(i);
+        if (!record) {
+            report(std::format("{}'s audit trail ends at record {} of {}", pod.getFilename(), i,
+                               pod.getAuditCount()));
+            return;
+        }
+        report(describeAuditRecord(pod.getFilename(), *record));
     }
 }
 

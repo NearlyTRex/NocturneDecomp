@@ -229,7 +229,8 @@ protected:
                                .display = display_,
                                .fonts = fonts_,
                                .gamepad = gamepad_.input,
-                               .messages = messages_};
+                               .messages = messages_,
+                               .pod = pod_};
     CArchivesPod pod_{file_system_, dosio_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,

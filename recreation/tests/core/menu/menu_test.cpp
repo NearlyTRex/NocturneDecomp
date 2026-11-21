@@ -246,7 +246,8 @@ protected:
                                .display = display_,
                                .fonts = fonts_,
                                .gamepad = game_parts_.getGamepad().input,
-                               .messages = messages_};
+                               .messages = messages_,
+                               .pod = pod_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,

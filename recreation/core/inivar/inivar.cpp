@@ -7,6 +7,7 @@
 #include "engine/console/console.h"
 #include "engine/gamepadinput.h"
 #include "engine/ini/inifile.h"
+#include "engine/pod/pod.h"
 #include "engine/special/special.h"
 #include "platform/antialias.h"
 #include "platform/display.h"
@@ -105,55 +106,6 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
                       common::kWidescreenCount - 1)));
 }
 
-// The defaults for the control mode come first, then whatever the file binds over them.
-void readControls(const engine::CIniFile &file, CGame &game) {
-    game.game_control = static_cast<EControlMode>(
-        readEnumValue(file, "gameControl", static_cast<int>(game.game_control),
-                      static_cast<int>(EControlMode::CONTROL_MODE_GAMEPAD)));
-    game.restoreDefaultControls();
-    for (std::size_t index = 0; index < kGameActionCount; ++index) {
-        const auto action = static_cast<EGameAction>(index);
-        game.controls.parseBindings(action, file.getString(getGameActionInfo(action).ini_key,
-                                                           game.controls.formatBindings(action),
-                                                           kBindingsBufferSize));
-    }
-    readFlag(file, "mapZoom", game.map_zoom);
-    readFlag(file, "invertMouseYAxis", game.invert_mouse_y_axis);
-    readFlag(file, "alwaysRun", game.always_run);
-    readFlag(file, "xMouseSensitivity", game.x_mouse_sensitivity);
-    readFlag(file, "yMouseSensitivity", game.y_mouse_sensitivity);
-    readFlag(file, "xCenter", game.x_center);
-    readFlag(file, "yCenter", game.y_center);
-    readFlag(file, "xStickMin", game.x_stick_min);
-    readFlag(file, "xStickMax", game.x_stick_max);
-    readFlag(file, "yStickMin", game.y_stick_min);
-    readFlag(file, "yStickMax", game.y_stick_max);
-    game.aim_mode =
-        static_cast<EAimMode>(readEnumValue(file, "aimMode", static_cast<int>(game.aim_mode),
-                                            static_cast<int>(EAimMode::AIM_MODE_MANUAL)));
-    readFlag(file, "autoUseHealth", game.auto_use_health);
-}
-
-// A hand-edited value out of range is held to it, so the pad can't be left unusable.
-void readGamepadTuning(const engine::CIniFile &file, engine::SGamepadTuning &tuning) {
-    using Tuning = engine::SGamepadTuning;
-    tuning.deadzone = std::clamp(file.getInteger("padDeadzone", tuning.deadzone),
-                                 Tuning::kMinDeadzone, Tuning::kMaxDeadzone);
-    tuning.turn_rate = std::clamp(file.getInteger("padTurnRate", tuning.turn_rate),
-                                  Tuning::kMinRate, Tuning::kMaxRate);
-    tuning.look_rate = std::clamp(file.getInteger("padLookRate", tuning.look_rate),
-                                  Tuning::kMinRate, Tuning::kMaxRate);
-    tuning.invert_look =
-        file.getInteger("invertPadYAxis", static_cast<int>(tuning.invert_look)) != 0;
-}
-
-void writeGamepadTuning(engine::CIniFile &file, const engine::SGamepadTuning &tuning) {
-    file.setInteger("padDeadzone", tuning.deadzone);
-    file.setInteger("padTurnRate", tuning.turn_rate);
-    file.setInteger("padLookRate", tuning.look_rate);
-    file.setInteger("invertPadYAxis", static_cast<int>(tuning.invert_look));
-}
-
 // Shadows are only written for a game that isn't censored, as the original had it.
 void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     const CGame &game = owners.game;
@@ -188,6 +140,35 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("widescreen", static_cast<int>(owners.display.getWidescreen()));
 }
 
+// The defaults for the control mode come first, then whatever the file binds over them.
+void readControls(const engine::CIniFile &file, CGame &game) {
+    game.game_control = static_cast<EControlMode>(
+        readEnumValue(file, "gameControl", static_cast<int>(game.game_control),
+                      static_cast<int>(EControlMode::CONTROL_MODE_GAMEPAD)));
+    game.restoreDefaultControls();
+    for (std::size_t index = 0; index < kGameActionCount; ++index) {
+        const auto action = static_cast<EGameAction>(index);
+        game.controls.parseBindings(action, file.getString(getGameActionInfo(action).ini_key,
+                                                           game.controls.formatBindings(action),
+                                                           kBindingsBufferSize));
+    }
+    readFlag(file, "mapZoom", game.map_zoom);
+    readFlag(file, "invertMouseYAxis", game.invert_mouse_y_axis);
+    readFlag(file, "alwaysRun", game.always_run);
+    readFlag(file, "xMouseSensitivity", game.x_mouse_sensitivity);
+    readFlag(file, "yMouseSensitivity", game.y_mouse_sensitivity);
+    readFlag(file, "xCenter", game.x_center);
+    readFlag(file, "yCenter", game.y_center);
+    readFlag(file, "xStickMin", game.x_stick_min);
+    readFlag(file, "xStickMax", game.x_stick_max);
+    readFlag(file, "yStickMin", game.y_stick_min);
+    readFlag(file, "yStickMax", game.y_stick_max);
+    game.aim_mode =
+        static_cast<EAimMode>(readEnumValue(file, "aimMode", static_cast<int>(game.aim_mode),
+                                            static_cast<int>(EAimMode::AIM_MODE_MANUAL)));
+    readFlag(file, "autoUseHealth", game.auto_use_health);
+}
+
 void writeControls(engine::CIniFile &file, const CGame &game) {
     file.setInteger("gameControl", static_cast<int>(game.game_control));
     for (std::size_t index = 0; index < kGameActionCount; ++index) {
@@ -209,6 +190,41 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
     file.setInteger("autoUseHealth", game.auto_use_health);
 }
 
+// A hand-edited value out of range is held to it, so the pad can't be left unusable.
+void readGamepadTuning(const engine::CIniFile &file, engine::SGamepadTuning &tuning) {
+    using Tuning = engine::SGamepadTuning;
+    tuning.deadzone = std::clamp(file.getInteger("padDeadzone", tuning.deadzone),
+                                 Tuning::kMinDeadzone, Tuning::kMaxDeadzone);
+    tuning.turn_rate = std::clamp(file.getInteger("padTurnRate", tuning.turn_rate),
+                                  Tuning::kMinRate, Tuning::kMaxRate);
+    tuning.look_rate = std::clamp(file.getInteger("padLookRate", tuning.look_rate),
+                                  Tuning::kMinRate, Tuning::kMaxRate);
+    tuning.invert_look =
+        file.getInteger("invertPadYAxis", static_cast<int>(tuning.invert_look)) != 0;
+}
+
+void writeGamepadTuning(engine::CIniFile &file, const engine::SGamepadTuning &tuning) {
+    file.setInteger("padDeadzone", tuning.deadzone);
+    file.setInteger("padTurnRate", tuning.turn_rate);
+    file.setInteger("padLookRate", tuning.look_rate);
+    file.setInteger("invertPadYAxis", static_cast<int>(tuning.invert_look));
+}
+
+// Read before the pods mount, so their checks apply to every one.
+void readPodSettings(const engine::CIniFile &file, engine::CPod &pod) {
+    const engine::SPodSettings &settings = pod.getSettings();
+    pod.setSettings({
+        .verify_checksums =
+            file.getInteger("podVerifyChecksums", settings.verify_checksums ? 1 : 0) != 0,
+        .log_audit_trail = file.getInteger("podAuditLog", settings.log_audit_trail ? 1 : 0) != 0,
+    });
+}
+
+void writePodSettings(engine::CIniFile &file, const engine::SPodSettings &settings) {
+    file.setInteger("podVerifyChecksums", settings.verify_checksums ? 1 : 0);
+    file.setInteger("podAuditLog", settings.log_audit_trail ? 1 : 0);
+}
+
 } // namespace
 
 // The renderer DLL and AGP texturing the original also read have no reader in the game now, so
@@ -216,7 +232,7 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
 // resolution the game will run at, as the decomp's menu resolution change has it, on the
 // enhanced game's display, in its window mode and upscaler. The pad's tuning is read after the
 // controls (the decomp's pad_tuning.h). The language, which picks the packages' translations, is the
-// enhanced game's.
+// enhanced game's, as are the checks on the pods.
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners) {
@@ -234,6 +250,7 @@ void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
     file.readIniHeader("Debug");
     readFlag(file, "logConsoleFlag", owners.console.file_logging_enabled);
     readFlag(file, "headOfHorrorCheat", owners.game.head_of_horror_cheat);
+    readPodSettings(file, owners.pod);
 }
 
 // nocedit 0x004fc510
@@ -249,6 +266,7 @@ void writeIniData(engine::CIni &ini, const SIniDataOwners &owners) {
     file.readIniHeader("Debug");
     file.setInteger("logConsoleFlag", owners.console.file_logging_enabled);
     file.setInteger("headOfHorrorCheat", owners.game.head_of_horror_cheat);
+    writePodSettings(file, owners.pod.getSettings());
 }
 
 } // namespace nocturne::core

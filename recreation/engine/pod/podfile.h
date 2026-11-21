@@ -6,6 +6,8 @@
 #include <cstddef>
 #include <cstdint>
 #include <ctime>
+#include <expected>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -22,26 +24,23 @@ struct CPodDirectoryEntry {
     std::uint32_t checksum = 0;
 };
 
-enum CPodAuditRecordAction : std::uint32_t {
-    Add = 0,
-    Remove = 1,
-    Change = 2
+enum class EPodAuditOperation : std::uint8_t {
+    POD_AUDIT_OPERATION_ADD = 0,
+    POD_AUDIT_OPERATION_REMOVE = 1,
+    POD_AUDIT_OPERATION_CHANGE = 2,
 };
 
-struct CPodAuditRecordEntry {
-    std::int32_t uts;
-    union {
-        std::uint32_t len;
-        enum CPodAuditRecordAction act;
-    };
-};
-
+// One change the editor's builder made to a POD2: every record from one build shares its time.
+// An add has no original time or size, and a remove no new ones.
 struct CPodAuditRecord {
-    char user[32]; // modification author
-    CPodAuditRecordEntry modification; // modification time/action
-    char path[256]; // path/name of entry modified
-    CPodAuditRecordEntry before; // modification time/len before action
-    CPodAuditRecordEntry after; // modification time/len after  action
+    std::string user_name;
+    std::time_t timestamp = 0;
+    EPodAuditOperation operation_type = EPodAuditOperation::POD_AUDIT_OPERATION_ADD;
+    std::string filename;
+    std::time_t original_timestamp = 0;
+    std::uint32_t original_file_size = 0;
+    std::time_t new_timestamp = 0;
+    std::uint32_t new_file_size = 0;
 };
 
 // One mounted .POD archive: its directory, sorted by name ignoring case.
@@ -52,19 +51,17 @@ public:
     CPodFile(const CPodFile &) = delete;
     CPodFile &operator=(const CPodFile &) = delete;
 
-    [[nodiscard]] bool toggleVerify();
-    [[nodiscard]] bool toggleAudit();
-    // verify POD1/2 size/checksum and returns
-    // > 0 version number for correct POD1/2 integrity,
-    //   0 for failed size/checksum
-    // < 0 in case of an error/failure
-    [[nodiscard]] int verify(std::string_view pod_filename) const;
     // Reads the directory of a POD1 or POD2 file. False, and nothing mounted, when it can't.
     [[nodiscard]] bool mountFromFile(std::string_view pod_filename);
     void cleanup();
     // The entry's index, or -1.
     [[nodiscard]] int findFileIndex(std::string_view filename) const;
     void populateFileInfo(int file_index, SFoundFileInfo &output_info) const;
+    // What is wrong with the mounted pod's CRCs, as the end of a sentence naming the pod.
+    [[nodiscard]] std::expected<void, std::string> verifyChecksum() const;
+    // Nothing for an index outside the audit trail, or a record the file doesn't hold whole or
+    // whose operation the builder never writes.
+    [[nodiscard]] std::optional<CPodAuditRecord> getAuditRecord(int record_index) const;
 
     // 1 or 2 for the POD format mounted, 0 when nothing is.
     [[nodiscard]] int getVersion() const;
@@ -74,23 +71,26 @@ public:
     [[nodiscard]] const std::string &getDescription() const;
     [[nodiscard]] int getAuditCount() const;
     [[nodiscard]] const std::vector<CPodDirectoryEntry> &getEntries() const;
-    [[nodiscard]] const std::vector<CPodAuditRecord> &getAuditRecords() const;
 
 private:
     [[nodiscard]] bool readPod1(platform::IFile &file);
     [[nodiscard]] bool readPod2(platform::IFile &file, std::span<const std::byte> header);
+    // The names of the files whose bytes don't match their directory CRC.
+    [[nodiscard]] std::vector<std::string> findFilesFailingCrc(platform::IFile &file) const;
+    [[nodiscard]] static std::optional<std::uint32_t>
+    computeFileCRC(platform::IFile &file, const CPodDirectoryEntry &entry);
+    [[nodiscard]] std::expected<void, std::string> verifyWholeFileCrc(platform::IFile &file) const;
 
     platform::IFileSystem &file_system_;
     const CDosIo &dosio_;
     int version_ = 0;
-    bool verify_ = false;
-    bool read_audit_ = false;
-    std::uint32_t audit_offset_ = 0;
     std::string filename_;
     std::time_t timestamp_ = 0;
     std::string description_;
+    int audit_count_ = 0;
+    // Where the audit trail starts: straight after the last file's data, in file order.
+    std::uint32_t audit_records_offset_ = 0;
     std::vector<CPodDirectoryEntry> entries_;
-    std::vector<CPodAuditRecord> audits_;
 };
 
 } // namespace nocturne::engine

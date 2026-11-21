@@ -53,6 +53,7 @@ private:
                                        std::span<const engine::SPodCheck> checks);
     void mountPods(const engine::SPackage &package, std::span<const engine::SPodCheck> checks,
                    SLoadedPackage &loaded);
+    void logAuditTrail(const engine::CPodFile &pod);
     // The PODs each package mounted, found again among the mounted ones once a pod is unmounted.
     void refreshMounted();
     [[nodiscard]] bool findLooseFile(const SLoadedPackage &package,
