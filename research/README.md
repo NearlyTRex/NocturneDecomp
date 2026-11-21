@@ -859,6 +859,7 @@ mechanism that selects it, so all four games run on one engine.
 | `classification.json` | Every item |
 | `archive-histories.md` | Classes whose version numbers fork between games; the manifest's `[archive]` table |
 | `front-end-inventory.md` | Every front-end value the recreation hard-codes, the BW change, its manifest key |
+| `front-end-schema.md` | The manifest tables those values form, with Nocturne's |
 
 **Key outcomes:**
 - **419 differences:** 61 gated on a file version, 105 manifest values, 57 front end, 45

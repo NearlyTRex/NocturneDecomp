@@ -69,8 +69,9 @@ public:
     [[nodiscard]] int getCurrentIndex() const;
 
 private:
-    // The most tab-separated fields a string can have.
-    static constexpr std::size_t kMaxFields = 10;
+    // The most tab-separated fields a string can have: the Blair Witch builds' 16, where nocedit
+    // took 10.
+    static constexpr std::size_t kMaxFields = 16;
 
     // Which way the scroll bar runs, if the list has one.
     enum class EScrollMode : std::uint8_t { None, Vertical, Horizontal };

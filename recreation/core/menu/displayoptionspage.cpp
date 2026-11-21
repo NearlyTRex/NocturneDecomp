@@ -43,10 +43,10 @@ struct SResolution {
 };
 
 // By width, then height. Every mode the original's labels knew, with 400x300 and 1600x1200,
-// which they named but its stepping never reached, and the wider modes the presenter frames the
-// scene for, each past 1024 wide with a 4:3 mode at its height. Every width is a multiple of 16,
-// as clearScreen's rows need.
-constexpr std::array<SResolution, 17> kResolutions{{
+// which they named but its stepping never reached, 1280x960, which the Blair Witch builds list,
+// and the wider modes the presenter frames the scene for, each past 1024 wide with a 4:3 mode at
+// its height. Every width is a multiple of 16, as clearScreen's rows need.
+constexpr std::array<SResolution, 18> kResolutions{{
     {.width = 320, .height = 240},
     {.width = 400, .height = 300},
     {.width = 512, .height = 384},
@@ -55,6 +55,7 @@ constexpr std::array<SResolution, 17> kResolutions{{
     {.width = 1024, .height = 768},
     {.width = 1200, .height = 900},
     {.width = 1280, .height = 720},
+    {.width = 1280, .height = 960},
     {.width = 1280, .height = 1024},
     {.width = 1440, .height = 1080},
     {.width = 1600, .height = 900},

@@ -184,11 +184,11 @@ TEST_F(CPickListDialogTest, ATrailingTabAddsNoField) {
     EXPECT_EQ(clip().left, 82);
 }
 
-TEST_F(CPickListDialogTest, TenFieldsFitAndElevenAreFatal) {
-    list_.add("1\t2\t3\t4\t5\t6\t7\t8\t9\t10");
+TEST_F(CPickListDialogTest, SixteenFieldsFitAndSeventeenAreFatal) {
+    list_.add("1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t11\t12\t13\t14\t15\t16");
     list_.initializeDialog("", 0, 0);
     editor_tools_.restoreWindowAndCleanup();
-    list_.add("1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t11");
+    list_.add("1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t11\t12\t13\t14\t15\t16\t17");
     EXPECT_THAT([this] { list_.initializeDialog("", 0, 0); },
                 ThrowsMessage<common::CFatalError>(StrEq("Too many picklist columns!")));
 }

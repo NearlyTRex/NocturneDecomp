@@ -13,6 +13,7 @@ function. Each item's evidence cites the BW and nocedit `.asm` or pseudocode.
 different fields in different games, and the manifest's `[archive]` table.
 [front-end-inventory.md](front-end-inventory.md) lists every front-end value the recreation
 hard-codes for Nocturne, the BW rows that change it, and its manifest key.
+[front-end-schema.md](front-end-schema.md) gives the manifest tables those keys form.
 
 ## Sources
 
