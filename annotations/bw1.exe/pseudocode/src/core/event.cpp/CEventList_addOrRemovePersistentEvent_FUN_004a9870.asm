@@ -21,8 +21,8 @@
 ;   TerminatedCString s_Too_many_persistent_even_005dead8
 ;   TerminatedCString s_core_event_cpp_005deb06
 ;   TerminatedCString s_Event_name_s_too_long_005deb18
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findPersistentEvent_FUN_004a9eb0
@@ -90,8 +90,8 @@ section .text
     MOV EDI,0x5deb06                    ; 004a98d3 | = "..\\core\\event.cpp"
     MOV EAX,0xd3e                       ; 004a98d8
     PUSH 0x5deb18                       ; 004a98dd | = "Event name %s too long!"
-    MOV dword ptr [0x01d1d400],EDI      ; 004a98e2 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004a98e8 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 004a98e2 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004a98e8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a98ed
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004a98f2
@@ -171,8 +171,8 @@ section .text
         ;   Label: LAB_004a9999
     MOV ESI,0xd38                       ; 004a999e
     PUSH 0x5dead8                       ; 004a99a3 | = "Too many persistent events - check ev..."
-    MOV dword ptr [0x01d1d400],EBX      ; 004a99a8 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004a99ae | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 004a99a8 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 004a99ae | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a99b4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004a99b9

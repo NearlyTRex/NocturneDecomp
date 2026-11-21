@@ -27,8 +27,8 @@
 ;   TerminatedCString s_dynamitestick_kfm_005df38c
 ;   TerminatedCString s_core_fire_cpp_005df39e
 ;   TerminatedCString s_CToss_create_invalid_tos_005df3af
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dac0
@@ -61,8 +61,8 @@ section .text
     MOV EDX,0x5df39e                    ; 004b1c7f | = "..\\core\\fire.cpp"
     MOV ECX,0xd76                       ; 004b1c84
     PUSH 0x5df3af                       ; 004b1c89 | = "CToss::create - invalid toss type."
-    MOV dword ptr [0x01d1d400],EDX      ; 004b1c8e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004b1c94 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004b1c8e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 004b1c94 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004b1c9a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004b1c9f

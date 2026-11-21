@@ -63,8 +63,8 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0058f660(CStranger *t
   
   bVar4 = 0;
   if (this_ptr->weapon == (CWeapon *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\stranger.cpp";
-    g_INT_01d1d404 = 0x1125;
+    g_CurrentFilename = "..\\core\\stranger.cpp";
+    g_CurrentLineNumber = 4389;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CStranger::aimLeftPistol - no weapon?");
   }
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isInvulnerable)

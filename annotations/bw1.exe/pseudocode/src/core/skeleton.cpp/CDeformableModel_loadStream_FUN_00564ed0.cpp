@@ -48,13 +48,13 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00564ed0(CDeforma
   if (iVar2 == 1) goto LAB_00564f34;
 LAB_00564f11:
   do {
-    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
-    g_INT_01d1d404 = 0x4e0;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 1248;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Deformable model file is corrupt");
 LAB_00564f34:
     if (g_INT_00623228 < local_64) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
-      g_INT_01d1d404 = 0x4e3;
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 1251;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't load model of version %d, this .exe can only handle up to version %d");
     }
     if (local_64 < 3) {
@@ -241,8 +241,8 @@ LAB_00564f34:
     core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_00566a20(this_ptr);
   }
   if ((file_handle->_flag & 0x20) != 0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
-    g_INT_01d1d404 = 0x5af;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 1455;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDeformableModel::loadStream - error reading file!");
     return;
   }

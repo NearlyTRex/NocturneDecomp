@@ -542,8 +542,8 @@ section .text
     MOV ESI,0x5db96c                    ; 0048d1fc | = "..\\core\\dtrace.cpp"
     MOV EDI,0x792                       ; 0048d201
     PUSH 0x5db97f                       ; 0048d206 | = "Too many drawn cubes.  Need to recomp..."
-    MOV dword ptr [0x01d1d400],ESI      ; 0048d20b | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0048d211 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0048d20b | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0048d211 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048d217
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048d21c

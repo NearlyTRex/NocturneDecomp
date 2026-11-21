@@ -10,8 +10,8 @@ void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_0057db00(CSound *this_ptr
 
 {
   if ((index < 0) || (0x1a < index)) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\sound.cpp";
-    g_INT_01d1d404 = 0x402;
+    g_CurrentFilename = "..\\core\\sound.cpp";
+    g_CurrentLineNumber = 1026;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CSound::setReverbPreset - invalid index");
   }
   core_sound_cpp_CSound_setReverb_FUN_0057dad0

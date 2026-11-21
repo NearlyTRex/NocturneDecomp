@@ -37,8 +37,8 @@
 ;   TerminatedCString s_core_skeleton_cpp_005f2253
 ;   TerminatedCString s_Out_of_memory_005f2268
 ;   float g_FLOAT_00605890 = 0.00390625
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -97,8 +97,8 @@ section .text
     MOV EAX,0x5f2253                    ; 0056588e | = "..\\core\\skeleton.cpp"
     MOV EDX,0x609                       ; 00565893
     PUSH 0x5f2268                       ; 00565898 | = "Out of memory"
-    MOV [0x01d1d400],EAX                ; 0056589d | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 005658a2 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0056589d | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 005658a2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005658a8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005658ad

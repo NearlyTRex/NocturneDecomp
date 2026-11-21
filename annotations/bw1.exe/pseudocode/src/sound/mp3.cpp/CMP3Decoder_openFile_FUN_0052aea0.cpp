@@ -15,20 +15,20 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_0052aea0(CMP3Decoder *this_p
   
   iVar2 = engine_dosio_cpp_getFileSize_FUN_00478fb0("sound",filename);
   if (iVar2 < 1) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\mp3.cpp";
-    g_INT_01d1d404 = 0xea3;
+    g_CurrentFilename = "..\\sound\\mp3.cpp";
+    g_CurrentLineNumber = 3747;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open %s");
   }
   file_handle = engine_dosio_cpp_getFile_FUN_00479180("sound",filename,"rb");
   if (file_handle == (_FILE *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\mp3.cpp";
-    g_INT_01d1d404 = 0xea8;
+    g_CurrentFilename = "..\\sound\\mp3.cpp";
+    g_CurrentLineNumber = 3752;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open %s");
   }
   iVar2 = sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_0052af80(this_ptr,file_handle,iVar2);
   if (iVar2 == 0) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\mp3.cpp";
-    g_INT_01d1d404 = 0xead;
+    g_CurrentFilename = "..\\sound\\mp3.cpp";
+    g_CurrentLineNumber = 3757;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Error preparing to decode %s");
   }
   do {

@@ -12,8 +12,8 @@
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670 at 00531687
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_PathMapCount
 ;
 ; Called Functions:
@@ -54,8 +54,8 @@ section .text
     MOV ECX,0x5ec906                    ; 00533034
     MOV ESI,0x123                       ; 00533039
     PUSH 0x5ec917                       ; 0053303e
-    MOV dword ptr [0x01d1d400],ECX      ; 00533043 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00533049 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00533043 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00533049 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053304f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00533054

@@ -16,8 +16,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50(CSfxS
   float local_14;
   
   if (g_SoundLockCount < 1) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0xa98;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2712;
     core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::kill - must be locked!");
   }
   fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0((this_ptr->options).channel_index);

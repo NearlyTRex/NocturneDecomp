@@ -13,8 +13,8 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_0055b280(CDemonSet *this_
   
   file = engine_dosio_cpp_getFile_FUN_00479180("data",filename,"wb");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\setdir.cpp";
-    g_INT_01d1d404 = 0x2b5;
+    g_CurrentFilename = "..\\core\\setdir.cpp";
+    g_CurrentLineNumber = 693;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't create %s");
   }
   _fwrite(g_CHAR_ARRAY_020b28f4,0x3000,this_ptr->camera_count,file);
@@ -22,8 +22,8 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_0055b280(CDemonSet *this_
     _fclose(file);
     return;
   }
-  g_CHAR_PTR_01d1d400 = "..\\core\\setdir.cpp";
-  g_INT_01d1d404 = 0x2b7;
+  g_CurrentFilename = "..\\core\\setdir.cpp";
+  g_CurrentLineNumber = 695;
   core_main_c_displayErrorAndQuit_FUN_005030e0("Error writing %s");
   _fclose(file);
   return;

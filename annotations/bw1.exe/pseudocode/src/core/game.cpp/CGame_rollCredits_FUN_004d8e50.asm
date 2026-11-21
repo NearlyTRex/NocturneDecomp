@@ -34,8 +34,8 @@
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
 ;   CBitFont* g_ThemeFont
 ;   void* g_PTR_01d1bca0
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_UseOSFonts
 ;
 ; Called Functions:
@@ -348,8 +348,8 @@ section .text
         ;   Label: LAB_004d9190
     MOV EAX,0x147e                      ; 004d9195
     PUSH 0x5e35b4                       ; 004d919a | = "CGame::rollCredits - Out of memory"
-    MOV dword ptr [0x01d1d400],EDI      ; 004d919f | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004d91a5 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 004d919f | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004d91a5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004d91aa
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004d91af

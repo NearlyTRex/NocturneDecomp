@@ -11,8 +11,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005f8924
 ;   TerminatedCString s_COutStreamDebug_seek_inv_005f893c
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -25,8 +25,8 @@ section .text
         ;   Label: support_trstream.cpp_COutStreamDebug_seek_FUN_005a1f80
     MOV ECX,0xab7                       ; 005a1f85
     PUSH 0x5f893c                       ; 005a1f8a | = "COutStreamDebug::seek - invalid opera..."
-    MOV dword ptr [0x01d1d400],EDX      ; 005a1f8f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 005a1f95 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 005a1f8f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 005a1f95 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a1f9b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a1fa0

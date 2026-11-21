@@ -12,8 +12,8 @@ void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_0055d360(C3DSLight *th
   int iVar1;
   
   if (light == (CDemonLight *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\setutil.cpp";
-    g_INT_01d1d404 = 0x387;
+    g_CurrentFilename = "..\\core\\setutil.cpp";
+    g_CurrentLineNumber = 903;
     core_main_c_displayErrorAndQuit_FUN_005030e0("C3DSLight::advanceFilter - NULL CDemonLight pointer!");
   }
   if (0 < this_ptr->filter_count) {

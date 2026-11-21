@@ -74,8 +74,8 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0053bfc0(CPodFile *this_p
     if (iVar6 == 100) {
       return 0;
     }
-    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-    g_INT_01d1d404 = 0x388;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 904;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid pod version for %s: %d");
   }
   filename = this_ptr->filename;

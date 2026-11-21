@@ -73,8 +73,8 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_0055c1b0(C3DSCamera *this_ptr,
     _fgets(local_110,0xff,file_handle);
     _fscanf(file_handle,"%d\n");
     if (this_ptr->is_panning != 0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\setutil.cpp";
-      g_INT_01d1d404 = 0xd5;
+      g_CurrentFilename = "..\\core\\setutil.cpp";
+      g_CurrentLineNumber = 213;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Panning cameras not supported, bucko!");
       return;
     }

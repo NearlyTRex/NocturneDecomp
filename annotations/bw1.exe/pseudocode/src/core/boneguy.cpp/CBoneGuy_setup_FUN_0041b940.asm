@@ -190,8 +190,8 @@ section .text
         ;   Label: LAB_0041baf8
     MOV EBX,0x130                       ; 0041bafd
     PUSH 0x5d46a9                       ; 0041bb02 | = "CBoneGuy::explode - Not enough contai..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0041bb07 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0041bb0d | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0041bb07 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0041bb0d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0041bb13
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0041bb18

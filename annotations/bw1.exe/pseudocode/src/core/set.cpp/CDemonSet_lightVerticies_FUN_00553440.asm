@@ -134,8 +134,8 @@ section .text
     MOV ECX,0x5f0a75                    ; 00553460 | = "..\\core\\set.cpp"
     MOV EBX,0xee5                       ; 00553465
     PUSH 0x5f0a85                       ; 0055346a | = "CDemonSet::lightVerticies - tried to ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0055346f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00553475 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0055346f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00553475 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055347b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00553480
@@ -956,8 +956,8 @@ section .text
     MOV EDI,0x5f0ada                    ; 00553e29 | = "..\\core\\set.cpp"
     MOV EAX,0xfac                       ; 00553e2e
     PUSH 0x5f0aea                       ; 00553e33 | = "Too many normals on this packed tri list"
-    MOV dword ptr [0x01d1d400],EDI      ; 00553e38 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 00553e3e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00553e38 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 00553e3e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00553e43
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00553e48
@@ -968,8 +968,8 @@ section .text
     MOV ECX,0x5f0b13                    ; 00553e54 | = "..\\core\\set.cpp"
     MOV ESI,0xfae                       ; 00553e59
     PUSH 0x5f0b23                       ; 00553e5e | = "Need more normals for packed models"
-    MOV dword ptr [0x01d1d400],ECX      ; 00553e63 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00553e69 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00553e63 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00553e69 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00553e6f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00553e74

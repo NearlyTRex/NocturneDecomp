@@ -23,8 +23,8 @@
 ;   void* PTR_s_darkPoint_005e3e21_0061dc30 = 005e3e21
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CGhoulClassInfo.name_hash
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -150,8 +150,8 @@ section .text
     MOV ESI,0x5e3b68                    ; 004de20e | = "..\\core\\ghoul.cpp"
     MOV EAX,0x12d                       ; 004de213
     PUSH 0x5e3b7a                       ; 004de218 | = "CGhoul::findDarkWayPoint - Can't get ..."
-    MOV dword ptr [0x01d1d400],ESI      ; 004de21d | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004de223 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 004de21d | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004de223 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004de228
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004de22d

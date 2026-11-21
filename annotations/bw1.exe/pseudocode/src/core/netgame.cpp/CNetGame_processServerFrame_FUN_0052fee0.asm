@@ -35,8 +35,8 @@
 ;   TerminatedCString s_CNetGame_processServerFr_005ec267
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.delta_time_float
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   ... and 8 more
 ;
@@ -105,8 +105,8 @@ section .text
     MOV EBP,0x5ec1a4                    ; 0052ff6c | = "..\\core\\netgame.cpp"
     MOV EAX,0x8f7                       ; 0052ff71
     PUSH 0x5ec1b8                       ; 0052ff76 | = "CNetGame::processServerFrame - I'm no..."
-    MOV dword ptr [0x01d1d400],EBP      ; 0052ff7b | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0052ff81 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0052ff7b | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0052ff81 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052ff86
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052ff8b
@@ -305,8 +305,8 @@ section .text
         ;   Label: LAB_00530159
     MOV ESI,0x8f6                       ; 0053015e
     PUSH 0x5ec16d                       ; 00530163 | = "CNetGame::processServerFrame - I'm no..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00530168 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0053016e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00530168 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0053016e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00530174
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530179
@@ -331,8 +331,8 @@ section .text
     MOV EBP,0x5eb62a                    ; 005301a5 | = "..\\core\\netgame.cpp"
     MOV EAX,0x12b                       ; 005301aa
     PUSH 0x5eb63e                       ; 005301af | = "allocSimFrame - sim history list full"
-    MOV dword ptr [0x01d1d400],EBP      ; 005301b4 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 005301ba | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 005301b4 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 005301ba | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005301bf
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005301c4
@@ -370,8 +370,8 @@ section .text
     MOV ECX,0x5ec1fe                    ; 00530221 | = "..\\core\\netgame.cpp"
     MOV EDI,0x93b                       ; 00530226
     PUSH 0x5ec212                       ; 0053022b | = "CNetGame::processServerFrame - player..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00530230 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00530236 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00530230 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00530236 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053023c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530241
@@ -463,8 +463,8 @@ section .text
         ;   Label: LAB_00530312
     MOV EDX,0x94d                       ; 00530317
     PUSH 0x5ec267                       ; 0053031c | = "CNetGame::processServerFrame - client..."
-    MOV [0x01d1d400],EAX                ; 00530321 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00530326 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 00530321 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 00530326 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053032c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530331

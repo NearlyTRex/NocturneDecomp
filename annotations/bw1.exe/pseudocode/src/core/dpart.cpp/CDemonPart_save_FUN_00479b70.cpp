@@ -9,8 +9,8 @@
 void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00479b70(CDemonPart *this_ptr)
 
 {
-  g_CHAR_PTR_01d1d400 = "..\\core\\dpart.cpp";
-  g_INT_01d1d404 = 0x132;
+  g_CurrentFilename = "..\\core\\dpart.cpp";
+  g_CurrentLineNumber = 306;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonPart::save is no longer needed");
   return;
 }

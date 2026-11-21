@@ -496,8 +496,8 @@ __asm {
         mov EDX,0x5eb596
         mov ECX,0x1029
         push 0x5eb5a7
-        mov dword ptr [g_CHAR_PTR_01d1d400],EDX
-        mov dword ptr [g_INT_01d1d404],ECX
+        mov dword ptr [g_CurrentFilename],EDX
+        mov dword ptr [g_CurrentLineNumber],ECX
         call core_main_c_displayErrorAndQuit_FUN_005030e0
         add ESP,0x8
         jmp LAB_0052bb05

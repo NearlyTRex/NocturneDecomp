@@ -11,8 +11,8 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0 at 00505bad
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_00505f1a
     MOV ECX,0x554                       ; 00505f1f
     PUSH 0x5e7558                       ; 00505f24
-    MOV dword ptr [0x01d1d400],EDX      ; 00505f29 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00505f2f | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00505f29 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00505f2f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00505f35
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00505f3a

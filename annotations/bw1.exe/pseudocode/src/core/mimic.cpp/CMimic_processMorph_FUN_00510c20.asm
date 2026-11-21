@@ -18,8 +18,8 @@
 ;   TerminatedCString s_CMimic_processMorph_can_005e8b13
 ;   float g_FLOAT_006039d4 = 1
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_00510c80
     MOV ESI,0x4c9                       ; 00510c85
     PUSH 0x5e8b13                       ; 00510c8a | = "CMimic::processMorph - can't process ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00510c8f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00510c95 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00510c8f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00510c95 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00510c9b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00510ca0

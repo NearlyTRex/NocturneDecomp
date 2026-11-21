@@ -13,14 +13,14 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor
   int iVar2;
   
   if (this_ptr->next_inventory_actor == (CDemonActor *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-    g_INT_01d1d404 = 0x18d;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 397;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::getNextLoadedInventoryActor - no more!");
   }
   iVar2 = _stricmp(this_ptr->next_inventory_actor->actor_name,actor_name);
   if (iVar2 != 0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-    g_INT_01d1d404 = 0x192;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 402;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!");
   }
   pCVar1 = this_ptr->next_inventory_actor;

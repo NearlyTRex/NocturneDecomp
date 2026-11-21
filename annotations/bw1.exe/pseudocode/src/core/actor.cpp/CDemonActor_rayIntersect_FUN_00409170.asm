@@ -44,8 +44,8 @@
 ;   TerminatedCString s_core_actor_cpp_005d2520
 ;   TerminatedCString s_CDemonActor_rayIntersect_005d2532
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSetInstance.skip_exact_collisions
 ;   int g_INT_026b82a4
 ;   CVector3f g_DeformableModelRayHitNormal
@@ -372,8 +372,8 @@ section .text
         ;   Label: LAB_0040950b
     MOV ECX,0x4ac                       ; 00409510
     PUSH 0x5d2532                       ; 00409515 | = "CDemonActor::rayIntersect - Invalid c..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0040951a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00409520 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0040951a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00409520 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00409526
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0040952b

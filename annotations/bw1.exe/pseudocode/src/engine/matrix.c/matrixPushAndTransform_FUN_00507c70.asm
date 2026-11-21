@@ -555,8 +555,8 @@ section .text
         ;   Label: LAB_00508385
     MOV ESI,0x31f                       ; 0050838a
     PUSH 0x5e7701                       ; 0050838f | = "Matrix unbalance"
-    MOV dword ptr [0x01d1d400],EBX      ; 00508394 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0050839a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 00508394 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0050839a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005083a0
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005083a5

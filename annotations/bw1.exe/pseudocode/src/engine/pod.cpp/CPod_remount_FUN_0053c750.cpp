@@ -36,8 +36,8 @@ void __cdecl engine_pod_cpp_CPod_remount_FUN_0053c750(CPod *this_ptr)
       iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0053b250
                         (pCVar3->pod_files[0],acStack_110,acStack_310);
       if (iVar2 == 0) {
-        g_INT_01d1d404 = 0x474;
-        g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
+        g_CurrentLineNumber = 1140;
+        g_CurrentFilename = "..\\engine\\pod.cpp";
         core_main_c_displayErrorAndQuit_FUN_005030e0("Can't re-mount %s: %s");
       }
       iVar4 = iVar4 + 1;

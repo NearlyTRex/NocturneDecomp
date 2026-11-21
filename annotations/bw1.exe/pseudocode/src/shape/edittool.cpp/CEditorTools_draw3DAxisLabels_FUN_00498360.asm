@@ -21,8 +21,8 @@
 ;   int g_INT_01c3f544
 ;   int g_AxisLabelTextColor
 ;   int g_INT_01c4f020
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -191,8 +191,8 @@ section .text
         ;   Label: LAB_00498513
     MOV EBX,0xa4                        ; 00498518
     PUSH 0x5dbc7e                       ; 0049851d
-    MOV dword ptr [0x01d1d400],ECX      ; 00498522 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00498528 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00498522 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00498528 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049852e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00498533

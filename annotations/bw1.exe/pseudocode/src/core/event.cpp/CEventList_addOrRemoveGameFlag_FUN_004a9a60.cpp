@@ -44,8 +44,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventLi
           }
           _fclose(file);
         }
-        g_CHAR_PTR_01d1d400 = "..\\core\\event.cpp";
-        g_INT_01d1d404 = 0xd8e;
+        g_CurrentFilename = "..\\core\\event.cpp";
+        g_CurrentLineNumber = 3470;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many game flags - check events.txt!");
       }
       uVar3 = 0xffffffff;
@@ -57,8 +57,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventLi
         pcVar4 = pcVar4 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
       if (0x1f < ~uVar3 - 1) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\event.cpp";
-        g_INT_01d1d404 = 0xd94;
+        g_CurrentFilename = "..\\core\\event.cpp";
+        g_CurrentLineNumber = 3476;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Event name %s too long!");
       }
       pacVar5 = (this_ptr->game_flags).names + (this_ptr->game_flags).count;

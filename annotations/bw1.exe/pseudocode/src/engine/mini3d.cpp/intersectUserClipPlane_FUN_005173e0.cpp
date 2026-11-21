@@ -14,8 +14,8 @@ void __cdecl engine_mini3d_cpp_intersectUserClipPlane_FUN_005173e0(float *from,f
   fVar1 = (to[2] - from[2]) * g_FLOAT_01d25f24 +
           (*to - *from) * g_FLOAT_01d25f1c + (to[1] - from[1]) * g_FLOAT_01d25f20;
   if (ABS(fVar1) == 0.0) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\mini3d.cpp";
-    g_INT_01d1d404 = 0x1473;
+    g_CurrentFilename = "..\\engine\\mini3d.cpp";
+    g_CurrentLineNumber = 5235;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Bad clip!");
   }
   fVar1 = -(g_FLOAT_01d25f24 * from[2] +

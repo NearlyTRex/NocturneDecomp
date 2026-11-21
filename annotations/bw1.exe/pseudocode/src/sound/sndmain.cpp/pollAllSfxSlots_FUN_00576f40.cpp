@@ -16,8 +16,8 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00576f40(void)
   float local_18;
   
   if (g_SoundLockCount < 1) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0x19e3;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 6627;
     core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::pollSfx - must be locked!");
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();

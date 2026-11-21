@@ -57,8 +57,8 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_00524270(CMotionContro
         core_motion_cpp_CMotionController_startTransition_FUN_00524880(this_ptr,&local_44);
         break;
       default:
-        g_CHAR_PTR_01d1d400 = "..\\core\\motion.cpp";
-        g_INT_01d1d404 = 0x1f6;
+        g_CurrentFilename = "..\\core\\motion.cpp";
+        g_CurrentLineNumber = 502;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid transition command returned by CMotionControler::advanceComplex: %d");
       }
       goto LAB_00524411;
@@ -99,8 +99,8 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_00524270(CMotionContro
       local_14 = 1;
       goto LAB_0052438a;
     default:
-      g_CHAR_PTR_01d1d400 = "..\\core\\motion.cpp";
-      g_INT_01d1d404 = 0x1bd;
+      g_CurrentFilename = "..\\core\\motion.cpp";
+      g_CurrentLineNumber = 445;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CMotionController::advance: Tweening active but invalid tweenType: %d");
     }
 switchD_00524379_caseD_3:

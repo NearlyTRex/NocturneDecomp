@@ -49,6 +49,7 @@
 #include "types/enums/EOneShotState.h"
 #include "types/enums/EPlatformSlewMode.h"
 #include "types/enums/EPlatformStateType.h"
+#include "types/enums/EPodAuditOperation.h"
 #include "types/enums/EShadowBoundsMode.h"
 #include "types/enums/ESpikeState.h"
 #include "types/enums/ESpikeType.h"

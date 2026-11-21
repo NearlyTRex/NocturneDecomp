@@ -17,8 +17,8 @@
 ;   TerminatedCString s_shape_edittool_cpp_005dbcac
 ;   TerminatedCString s_CInputString_calcX_strin_005dbcc2
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -54,8 +54,8 @@ section .text
     MOV EDI,0x5dbcac                    ; 0049341c | = "..\\shape\\edittool.cpp"
     MOV EBP,0x20e                       ; 00493421
     PUSH 0x5dbcc2                       ; 00493426 | = "CInputString::calcX - string too big ..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0049342b | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00493431 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0049342b | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 00493431 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00493437
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049343c

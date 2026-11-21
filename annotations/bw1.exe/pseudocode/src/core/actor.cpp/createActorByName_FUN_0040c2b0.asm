@@ -26,8 +26,8 @@
 ;   TerminatedCString s_Can_t_create_instance_of_005d2ddc
 ;   TerminatedCString s_core_actor_cpp_005d2e06
 ;   TerminatedCString s_Not_enough_memory_to_cre_005d2e18
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_getActorClassByName_FUN_0040c240
@@ -58,8 +58,8 @@ section .text
     MOV EBP,0x5d2dca                    ; 0040c2cd | = "..\\core\\actor.cpp"
     MOV EAX,0xa98                       ; 0040c2d2
     PUSH 0x5d2ddc                       ; 0040c2d7 | = "Can't create instance of abstract typ..."
-    MOV dword ptr [0x01d1d400],EBP      ; 0040c2dc | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0040c2e2 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0040c2dc | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0040c2e2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040c2e7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0040c2ec
@@ -79,8 +79,8 @@ section .text
     MOV EDX,0x5d2d8b                    ; 0040c2ff | = "..\\core\\actor.cpp"
     MOV ECX,0xa92                       ; 0040c304
     PUSH 0x5d2d9d                       ; 0040c309 | = "Can't create actor of unknown class t..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0040c30e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040c314 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0040c30e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0040c314 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040c31a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0040c31f
@@ -91,8 +91,8 @@ section .text
     MOV EDX,0x5d2e06                    ; 0040c325 | = "..\\core\\actor.cpp"
     MOV ECX,0xaa1                       ; 0040c32a
     PUSH 0x5d2e18                       ; 0040c32f | = "Not enough memory to create %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0040c334 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040c33a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0040c334 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0040c33a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040c340
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0040c345

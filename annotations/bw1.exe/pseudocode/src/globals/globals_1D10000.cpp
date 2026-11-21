@@ -65,7 +65,7 @@ CVector3i g_NormalizedViewVector = {};
 SMRGLTextureBasic g_SMRGLTextureBasic_01d1baac = {};
 
 // char*
-char* g_CHAR_PTR_01d1d400 = {};
+char* g_CurrentFilename = {};
 char* g_CHAR_PTR_01d1ffe0 = {};
 
 // char*[16]
@@ -97,7 +97,7 @@ int g_InventoryLightAngle = {};
 int g_LightDirectionX2 = {};
 int g_LightDirectionY2 = {};
 int g_LightDirectionZ2 = {};
-int g_INT_01d1d404 = {};
+int g_CurrentLineNumber = {};
 int g_INT_01d1d408 = {};
 int g_INT_01d1dd18 = {};
 int g_INT_01d1dd1c = {};

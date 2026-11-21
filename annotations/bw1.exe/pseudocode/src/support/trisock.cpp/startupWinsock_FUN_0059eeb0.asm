@@ -11,8 +11,8 @@
 ;   TerminatedCString s_initSockets_005f8851
 ;   TerminatedCString s_support_trisock_cpp_005f885e
 ;   TerminatedCString s_Can_t_create_mutex_005f8875
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   HANDLE g_HANDLE_02c8ae58
 ;
 ; Called Functions:
@@ -53,8 +53,8 @@ section .text
     MOV ECX,0x5f885e                    ; 0059eeef | = "..\\support\\trisock.cpp"
     MOV EBX,0x927                       ; 0059eef4
     PUSH 0x5f8875                       ; 0059eef9 | = "Can't create mutex"
-    MOV dword ptr [0x01d1d400],ECX      ; 0059eefe | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0059ef04 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0059eefe | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0059ef04 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0059ef0a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0059ef0f

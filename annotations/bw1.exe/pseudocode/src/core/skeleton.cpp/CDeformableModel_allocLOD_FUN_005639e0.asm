@@ -19,8 +19,8 @@
 ;   TerminatedCString s_core_skeleton_cpp_005f1f3a
 ;   TerminatedCString s_Out_of_hunk_in_CDeformab_005f1f4f
 ;   WatcomTypeInfo g_SVertTypeInfo
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -51,8 +51,8 @@ section .text
     MOV ECX,0x5f1ef2                    ; 005639f5 | = "..\\core\\skeleton.cpp"
     MOV EBX,0x2a3                       ; 005639fa
     PUSH 0x5f1f07                       ; 005639ff | = "CDeformableModel::allocLOD - invalid ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00563a04 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00563a0a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00563a04 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00563a0a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563a10
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00563a15
@@ -173,8 +173,8 @@ section .text
     MOV EBX,0x5f1f3a                    ; 00563b42 | = "..\\core\\skeleton.cpp"
     MOV EDI,0x2c7                       ; 00563b47
     PUSH 0x5f1f4f                       ; 00563b4c | = "Out of hunk in CDeformableModel::allo..."
-    MOV dword ptr [0x01d1d400],EBX      ; 00563b51 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00563b57 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 00563b51 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00563b57 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00563b5d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 00563b62

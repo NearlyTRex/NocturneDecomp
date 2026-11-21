@@ -211,8 +211,8 @@ section .text
     MOV EBP,0x5dfa50                    ; 004bb875 | = "..\\core\\fldnotes.cpp"
     MOV EAX,0x60a                       ; 004bb87a
     PUSH 0x5dfa65                       ; 004bb87f | = "Out of memory"
-    MOV dword ptr [0x01d1d400],EBP      ; 004bb884 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004bb88a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 004bb884 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004bb88a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bb88f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bb894
@@ -297,8 +297,8 @@ section .text
     MOV EBP,0x5dfaa9                    ; 004bb95b | = "..\\core\\fldnotes.cpp"
     MOV EAX,0x620                       ; 004bb960
     PUSH 0x5dfabe                       ; 004bb965 | = "Out of memory"
-    MOV dword ptr [0x01d1d400],EBP      ; 004bb96a | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004bb970 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 004bb96a | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004bb970 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bb975
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bb97a
@@ -389,8 +389,8 @@ section .text
     MOV EDX,0x5dfad7                    ; 004bba33 | = "..\\core\\fldnotes.cpp"
     MOV ECX,0x638                       ; 004bba38
     PUSH 0x5dfaec                       ; 004bba3d | = "Out of memory"
-    MOV dword ptr [0x01d1d400],EDX      ; 004bba42 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004bba48 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004bba42 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 004bba48 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bba4e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bba53

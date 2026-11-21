@@ -624,8 +624,8 @@ section .text
         ;   Label: LAB_0055cf54
     MOV ECX,0x2d8                       ; 0055cf59
     PUSH 0x5f12a3                       ; 0055cf5e | = "Invalid camera number in visiblilty l..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0055cf63 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0055cf69 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0055cf63 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0055cf69 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055cf6f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055cf74

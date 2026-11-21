@@ -20,8 +20,8 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0045ddb0(CFilterFX *this_p
     _sprintf(acStack_108,"%s.txt");
     p_Var1 = engine_dosio_cpp_getFile_FUN_00479180(filename,acStack_108,"rt");
     if (p_Var1 == (_FILE *)0x0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\dfilter.cpp";
-      g_INT_01d1d404 = 0x15a;
+      g_CurrentFilename = "..\\core\\dfilter.cpp";
+      g_CurrentLineNumber = 346;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open movie %s.txt");
     }
     _fscanf(p_Var1,"%d\n");
@@ -31,8 +31,8 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0045ddb0(CFilterFX *this_p
     _sprintf(acStack_108,"%s.mov");
     p_Var1 = engine_dosio_cpp_getFile_FUN_00479180(filename,acStack_108,"rb");
     if (p_Var1 == (_FILE *)0x0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\dfilter.cpp";
-      g_INT_01d1d404 = 0x166;
+      g_CurrentFilename = "..\\core\\dfilter.cpp";
+      g_CurrentLineNumber = 358;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open movie %s.mov");
     }
     _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,p_Var1);

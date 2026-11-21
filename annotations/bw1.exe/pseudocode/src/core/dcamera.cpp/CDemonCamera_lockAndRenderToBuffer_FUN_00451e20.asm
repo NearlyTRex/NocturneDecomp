@@ -13,8 +13,8 @@
 ;   TerminatedCString s_core_dcamera_cpp_005d7897
 ;   TerminatedCString s_Unable_to_lock_hold_buff_005d78ab
 ;   int g_INT_0061b49c = 0xc8
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_02c83370
 ;
 ; Called Functions:
@@ -67,8 +67,8 @@ section .text
     MOV ECX,0x5d7897                    ; 00451e6b | = "..\\core\\dcamera.cpp"
     MOV EBX,0xe84                       ; 00451e70
     PUSH 0x5d78ab                       ; 00451e75 | = "Unable to lock hold buffer.   Please ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00451e7a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00451e80 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00451e7a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00451e80 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00451e86
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00451e8b

@@ -35,8 +35,8 @@
 ;   int g_AudioBitsPerSample = 0x10
 ;   int g_AudioChannelCount = 0x2
 ;   int g_AudioSampleRate = 0x5622
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index
 ;   int g_SfxLastSlot
 ;   int g_MixBufferReadIndex
@@ -136,8 +136,8 @@ section .text
     MOV ESI,0x5f31b6                    ; 00576cfe | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x597                       ; 00576d03
     PUSH 0x5f31cb                       ; 00576d08 | = "nextMixingBuffer - shouldn't have any..."
-    MOV dword ptr [0x01d1d400],ESI      ; 00576d0d | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00576d13 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00576d0d | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00576d13 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00576d19
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00576d1e
@@ -296,8 +296,8 @@ section .text
         ;   Label: LAB_00576edb
     MOV EBX,0x199a                      ; 00576ee0
     PUSH 0x5f45c1                       ; 00576ee5 | = "pollSfx - must be locked!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00576eea | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00576ef0 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00576eea | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00576ef0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00576ef6
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00576efb
@@ -307,8 +307,8 @@ section .text
         ;   Label: LAB_00576f03
     MOV ECX,0x593                       ; 00576f08
     PUSH 0x5f3196                       ; 00576f0d | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d1d400],EDX      ; 00576f12 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00576f18 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00576f12 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00576f18 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00576f1e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00576f23

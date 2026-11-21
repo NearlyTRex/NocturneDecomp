@@ -10,8 +10,8 @@ void __cdecl sound_sndmain_cpp_setNextSfxUserData_FUN_00572920(int index,void *u
 
 {
   if ((index < 0) || (1 < index)) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0xe6b;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 3691;
     core_main_c_displayErrorAndQuit_FUN_005030e0("setNextSfxUserData - invalid user data index: %d");
   }
   *(void **)(g_SfxLastSlot * 0x60 + 0x2c78d34 + index * 4) = userdata;

@@ -31,8 +31,8 @@
 ;   int g_GreenScaleFactor
 ;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -186,8 +186,8 @@ section .text
         ;   Label: LAB_004c478b
     MOV EDX,0x8e4                       ; 004c4790
     PUSH 0x5e0ab4                       ; 004c4795 | = "CBitFont::remapPalette - Invalid bits..."
-    MOV [0x01d1d400],EAX                ; 004c479a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 004c479f | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 004c479a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 004c479f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c47a5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004c47aa

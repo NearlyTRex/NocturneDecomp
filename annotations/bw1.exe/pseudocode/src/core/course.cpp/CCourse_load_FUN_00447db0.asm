@@ -24,8 +24,8 @@
 ;   TerminatedCString s_d_005d71c3
 ;   TerminatedCString s_d_d_005d71c7
 ;   TerminatedCString s_f_f_f_f_f_f_f_005d71ce
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_allocMemory_FUN_00447d50
@@ -175,8 +175,8 @@ section .text
     MOV EDX,0x5d718d                    ; 00447eb2 | = "..\\core\\course.cpp"
     MOV ECX,0x7c                        ; 00447eb7
     PUSH 0x5d71a0                       ; 00447ebc | = "CCourse::load - can't open data\\%s"
-    MOV dword ptr [0x01d1d400],EDX      ; 00447ec1 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00447ec7 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00447ec1 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00447ec7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00447ecd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00447ed2

@@ -93,8 +93,8 @@ void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_0043ec40(CCloth *th
                   iVar3 = pSVar1->connected_count + 1;
                   pSVar1->connected_count = iVar3;
                   if (0xf < iVar3) {
-                    g_CHAR_PTR_01d1d400 = "..\\core\\cloth.cpp";
-                    g_INT_01d1d404 = 0x1c3;
+                    g_CurrentFilename = "..\\core\\cloth.cpp";
+                    g_CurrentLineNumber = 451;
                     core_main_c_displayErrorAndQuit_FUN_005030e0
                               ("Too many connecting verticies");
                   }

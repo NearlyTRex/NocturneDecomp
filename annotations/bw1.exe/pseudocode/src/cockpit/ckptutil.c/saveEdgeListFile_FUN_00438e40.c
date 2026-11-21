@@ -18,15 +18,15 @@ void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00438e40(char *filename,SEd
   int iStack_14;
   
   if (edge_lists == (SEdgeList *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\cockpit\\ckptutil.c";
-    g_INT_01d1d404 = 0x4f7;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 1271;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Edge list array is empty!");
   }
   file = engine_dosio_cpp_getFile_FUN_00479180("art",filename,"wt");
   if (file == (_FILE *)0x0) {
     _sprintf(acStack_6c,"Could not create output file (%s).");
-    g_INT_01d1d404 = 0x4fe;
-    g_CHAR_PTR_01d1d400 = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 1278;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_6c);
   }
   _fprintf(file,"%d\n");

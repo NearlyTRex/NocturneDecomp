@@ -20,8 +20,8 @@
 ;   double g_DOUBLE_005f2731 = 2670176.85779676
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -132,8 +132,8 @@ section .text
         ;   Label: LAB_0056b0c4
     MOV EBX,0xfc6                       ; 0056b0c9
     PUSH 0x5f26ea                       ; 0056b0ce | = "CDeformableModelInstance::computeCyli..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0056b0d3 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0056b0d9 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0056b0d3 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0056b0d9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056b0df
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056b0e4

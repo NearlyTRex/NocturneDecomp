@@ -194,8 +194,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_co
           break;
         case 1:
           if (0xb < g_ClipperTempCount) {
-            g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
-            g_INT_01d1d404 = 0x5e;
+            g_CurrentFilename = "..\\engine\\clipper.c";
+            g_CurrentLineNumber = 94;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
           }
           pSVar19 = g_ClipperTempBuffer + g_ClipperTempCount;
@@ -209,8 +209,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_co
           iVar18 = iVar9 + 1;
           *(SRenderVertex **)(local_18 + iVar9 * 4) = pSVar15;
           if (0xb < iVar14) {
-            g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
-            g_INT_01d1d404 = 0x5e;
+            g_CurrentFilename = "..\\engine\\clipper.c";
+            g_CurrentLineNumber = 94;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
           }
           pSVar19 = g_ClipperTempBuffer + g_ClipperTempCount;
@@ -250,8 +250,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_co
             break;
           case 1:
             if (0xb < g_ClipperTempCount) {
-              g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
-              g_INT_01d1d404 = 0x5e;
+              g_CurrentFilename = "..\\engine\\clipper.c";
+              g_CurrentLineNumber = 94;
               core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
             }
             pSVar19 = g_ClipperTempBuffer + g_ClipperTempCount;
@@ -263,8 +263,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_co
           case 2:
             local_14c[iVar18] = (int)pSVar15;
             if (0xb < g_ClipperTempCount) {
-              g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
-              g_INT_01d1d404 = 0x5e;
+              g_CurrentFilename = "..\\engine\\clipper.c";
+              g_CurrentLineNumber = 94;
               core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
             }
             pSVar19 = g_ClipperTempBuffer + g_ClipperTempCount;
@@ -304,8 +304,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_co
               break;
             case 1:
               if (0xb < g_ClipperTempCount) {
-                g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
-                g_INT_01d1d404 = 0x5e;
+                g_CurrentFilename = "..\\engine\\clipper.c";
+                g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
               }
               pSVar19 = g_ClipperTempBuffer + g_ClipperTempCount;
@@ -317,8 +317,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_co
             case 2:
               (&uStack_d0)[iVar9 + 1] = pSVar15;
               if (0xb < g_ClipperTempCount) {
-                g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
-                g_INT_01d1d404 = 0x5e;
+                g_CurrentFilename = "..\\engine\\clipper.c";
+                g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
               }
               pSVar19 = g_ClipperTempBuffer + g_ClipperTempCount;
@@ -359,8 +359,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_co
                 break;
               case 1:
                 if (0xb < g_ClipperTempCount) {
-                  g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
-                  g_INT_01d1d404 = 0x5e;
+                  g_CurrentFilename = "..\\engine\\clipper.c";
+                  g_CurrentLineNumber = 94;
                   core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
                 }
                 pSVar19 = g_ClipperTempBuffer + g_ClipperTempCount;
@@ -372,8 +372,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_co
               case 2:
                 local_14c[iVar18] = (int)pSVar15;
                 if (0xb < g_ClipperTempCount) {
-                  g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
-                  g_INT_01d1d404 = 0x5e;
+                  g_CurrentFilename = "..\\engine\\clipper.c";
+                  g_CurrentLineNumber = 94;
                   core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
                 }
                 pSVar19 = g_ClipperTempBuffer + g_ClipperTempCount;

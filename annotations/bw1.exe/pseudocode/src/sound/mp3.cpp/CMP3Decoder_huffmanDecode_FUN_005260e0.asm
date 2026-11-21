@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005eb21a
 ;   TerminatedCString s_Illegal_Huffman_code_in_005eb22b
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_HuffmanTables[0].table_size
 ;
 ; Called Functions:
@@ -213,8 +213,8 @@ section .text
     MOV ECX,0x5eb21a                    ; 00526282 | = "..\\sound\\mp3.cpp"
     MOV EBX,0x36f                       ; 00526287
     PUSH 0x5eb22b                       ; 0052628c | = "Illegal Huffman code in data.  File: %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 00526291 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00526297 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00526291 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00526297 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052629d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 005262a2

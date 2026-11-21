@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f2539
 ;   TerminatedCString s_CDeformableModelInstance_005f254e
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -63,8 +63,8 @@ section .text
     MOV ECX,0x5f2539                    ; 00569a56 | = "..\\core\\skeleton.cpp"
     MOV ESI,0xd42                       ; 00569a5b
     PUSH 0x5f254e                       ; 00569a60 | = "CDeformableModelInstance::renderPolyg..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00569a65 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00569a6b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00569a65 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00569a6b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00569a71
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00569a76

@@ -19,8 +19,8 @@
 ;   float g_FLOAT_005fecd4 = 1.221730
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   int g_INT_01b68820
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -372,8 +372,8 @@ section .text
         ;   Label: LAB_0047360f
     MOV ESI,0x11e0                      ; 00473614
     PUSH 0x5da314                       ; 00473619 | = "CDoc::aimLeftPistol - no weapon?"
-    MOV dword ptr [0x01d1d400],ECX      ; 0047361e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00473624 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0047361e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00473624 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047362a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047362f

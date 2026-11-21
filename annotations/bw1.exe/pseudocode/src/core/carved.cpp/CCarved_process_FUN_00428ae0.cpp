@@ -389,8 +389,8 @@ LAB_00428bb4:
     else if (uVar8 < 0xc) {
       iVar7 = core_carved_cpp_CCarved_getPickupHandIndex_FUN_0042b290(this_ptr,2);
       if (iVar7 < 0) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\carved.cpp";
-        g_INT_01d1d404 = 0x1de;
+        g_CurrentFilename = "..\\core\\carved.cpp";
+        g_CurrentLineNumber = 478;
         core_main_c_displayErrorAndQuit_FUN_005030e0("WTF!");
       }
       if ((this_ptr->base).base.carry_hands[iVar7].carry_actor != (CDemonActor *)0x0) {
@@ -409,8 +409,8 @@ LAB_00428bb4:
     else if (uVar8 < 0xd) {
       iStack_30 = core_carved_cpp_CCarved_getPickupHandIndex_FUN_0042b290(this_ptr,3);
       if (iStack_30 < 0) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\carved.cpp";
-        g_INT_01d1d404 = 0x1f5;
+        g_CurrentFilename = "..\\core\\carved.cpp";
+        g_CurrentLineNumber = 501;
         core_main_c_displayErrorAndQuit_FUN_005030e0("WTF!");
       }
       pcStack_1c = (this_ptr->base).base.base.actor_name + iStack_30 * 0x78;

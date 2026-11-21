@@ -20,8 +20,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00567
     this_ptr->cached_skinned_lod_index = -1;
     return;
   }
-  g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
-  g_INT_01d1d404 = 0x919;
+  g_CurrentFilename = "..\\core\\skeleton.cpp";
+  g_CurrentLineNumber = 2329;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CDeformableModelInstance::allocPointList out of memory for %d points!");
   this_ptr->cached_skinned_lod_index = -1;
   return;

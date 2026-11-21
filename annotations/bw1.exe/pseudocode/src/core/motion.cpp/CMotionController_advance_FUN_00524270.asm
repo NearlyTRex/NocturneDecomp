@@ -51,8 +51,8 @@
 ;   double g_DOUBLE_005eae93 = 0.499900000000000
 ;   double g_DOUBLE_005eae9b = 0.000100000000000000
 ;   CEventList* g_CEventListPtr = 01c51d80
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
@@ -331,8 +331,8 @@ section .text
     MOV ECX,0x5eadc1                    ; 005244f4 | = "..\\core\\motion.cpp"
     MOV EAX,0x1bd                       ; 005244f9
     PUSH 0x5eadd4                       ; 005244fe | = "CMotionController::advance: Tweening ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00524503 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 00524509 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00524503 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 00524509 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052450e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00524513
@@ -395,8 +395,8 @@ section .text
     MOV EAX,0x5eae1a                    ; 005245aa | = "..\\core\\motion.cpp"
     MOV EDX,0x1f6                       ; 005245af
     PUSH 0x5eae2d                       ; 005245b4 | = "Invalid transition command returned b..."
-    MOV [0x01d1d400],EAX                ; 005245b9 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 005245be | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 005245b9 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 005245be | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005245c4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 005245c9

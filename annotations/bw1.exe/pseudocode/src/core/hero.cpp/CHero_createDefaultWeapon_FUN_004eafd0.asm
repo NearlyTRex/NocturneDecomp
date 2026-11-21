@@ -17,8 +17,8 @@
 ;   undefined4 s_our_weapon_005e4825+1
 ;   undefined4 s_ur_weapon_005e4825+2
 ;   undefined4 s_r_weapon_005e4825+3
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_004eb05c
     MOV ESI,0x1d3                       ; 004eb061
     PUSH 0x5e4816                       ; 004eb066 | = "Out of memory!"
-    MOV dword ptr [0x01d1d400],ECX      ; 004eb06b | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004eb071 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004eb06b | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 004eb071 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004eb077
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004eb07c

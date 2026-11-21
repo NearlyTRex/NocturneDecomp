@@ -13,8 +13,8 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00538f90 at 00538fc4
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00538990
@@ -76,8 +76,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00538a34
     MOV ECX,0x5ed160                    ; 00538a38
     PUSH EAX                            ; 00538a3d
-    MOV dword ptr [0x01d1d404],EDI      ; 00538a3e | g_INT_01d1d404
-    MOV dword ptr [0x01d1d400],ECX      ; 00538a44 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00538a3e | g_CurrentLineNumber
+    MOV dword ptr [0x01d1d400],ECX      ; 00538a44 | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00538a4a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00538a4f

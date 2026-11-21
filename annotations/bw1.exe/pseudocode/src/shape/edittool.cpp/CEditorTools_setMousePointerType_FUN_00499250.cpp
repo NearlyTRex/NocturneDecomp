@@ -24,8 +24,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00499250(CE
       goto LAB_00499286;
     }
     if (cursor_type != 2) {
-      g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
-      g_INT_01d1d404 = 0xb9a;
+      g_CurrentFilename = "..\\shape\\edittool.cpp";
+      g_CurrentLineNumber = 2970;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CEditorTools::setMousePointerType - invalid type!");
       g_CursorSizeHorizontal = width;
       g_CursorSizeVertical = height;

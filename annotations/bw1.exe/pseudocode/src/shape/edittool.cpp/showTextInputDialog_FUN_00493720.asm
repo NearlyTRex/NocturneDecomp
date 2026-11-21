@@ -347,8 +347,8 @@ section .text
         ;   Label: LAB_00493a49
     MOV EDI,0xa4                        ; 00493a4e
     PUSH 0x5dbc7e                       ; 00493a53 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d1d400],ECX      ; 00493a58 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00493a5e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00493a58 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00493a5e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00493a64
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00493a69

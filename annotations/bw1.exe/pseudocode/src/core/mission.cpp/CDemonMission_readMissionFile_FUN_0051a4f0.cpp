@@ -40,18 +40,18 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(CDemonM
   } while (iVar2 != 10);
   _fscanf((_FILE *)load_flags,"%d,%d\n");
   if (7 < this_ptr->mission_version_num) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-    g_INT_01d1d404 = 0xe9;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 233;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid mission version number: %d, current version is %d.  (You probably have an old .exe)");
   }
   if (local_28 < 4) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-    g_INT_01d1d404 = 0xec;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 236;
     core_main_c_displayErrorAndQuit_FUN_005030e0("This mission uses actor format version %d, which we don't support anymore!");
   }
   if (this_ptr->mission_version_num < 2) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-    g_INT_01d1d404 = 0xf1;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 241;
     core_main_c_displayErrorAndQuit_FUN_005030e0("No name in mission");
   }
   do {
@@ -92,8 +92,8 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(CDemonM
         pCVar3 = core_actor_cpp_getActorClassByName_FUN_0040c240(acStack_154);
         if (pCVar3 != (CDemonActorType *)0x0) {
           if (pCVar3->latest_version < local_18) {
-            g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-            g_INT_01d1d404 = 0x10f;
+            g_CurrentFilename = "..\\core\\mission.cpp";
+            g_CurrentLineNumber = 271;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!");
           }
           *pCVar3->archive_version = local_18;
@@ -159,8 +159,8 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(CDemonM
       this_ptr->next_inventory_actor = pCVar4;
     }
     if (5999 < this_ptr->actor_lookup_count) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-      g_INT_01d1d404 = 0x13c;
+      g_CurrentFilename = "..\\core\\mission.cpp";
+      g_CurrentLineNumber = 316;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many actors");
     }
     this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = local_14;
@@ -175,8 +175,8 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(CDemonM
   if (0 < local_24) {
     do {
       if (pCVar6 == (CDemonActor *)0x0) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-        g_INT_01d1d404 = 0x149;
+        g_CurrentFilename = "..\\core\\mission.cpp";
+        g_CurrentLineNumber = 329;
         core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::load - actor list count mismatch #1!");
       }
       core_actor_cpp_CDemonActor_load_FUN_0040aed0(pCVar6,(_FILE *)load_flags);
@@ -190,8 +190,8 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(CDemonM
     if (0 < local_24) {
       do {
         if (pCVar6 == (CDemonActor *)0x0) {
-          g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-          g_INT_01d1d404 = 0x155;
+          g_CurrentFilename = "..\\core\\mission.cpp";
+          g_CurrentLineNumber = 341;
           core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::load - actor list count mismatch #2!");
         }
         pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar6,g_CHeroClassInfo.name_hash);
@@ -206,13 +206,13 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_0051a4f0(CDemonM
     this_ptr->has_inventory_actors = 0;
   }
   if (pCVar6 != (CDemonActor *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-    g_INT_01d1d404 = 0x15c;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 348;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::load - actor list count mismatch #3!");
   }
   if (this_ptr->next_inventory_actor != (CDemonActor *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-    g_INT_01d1d404 = 0x15d;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 349;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonMission::load - actor list count mismatch #4!");
   }
   this_ptr->actor_lookup_count = 0;

@@ -24,8 +24,8 @@ CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_00597970(void)
       return g_TextureCacheInstance;
     }
   }
-  g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
-  g_INT_01d1d404 = 0x3c2;
+  g_CurrentFilename = "..\\engine\\texture.cpp";
+  g_CurrentLineNumber = 962;
   core_main_c_displayErrorAndQuit_FUN_005030e0("initTexture - out of memory!");
   return extraout_EAX;
 }

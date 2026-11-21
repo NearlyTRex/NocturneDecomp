@@ -20,7 +20,7 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_005030e0(char *format)
   g_INT_01d1d408 = 1;
   _vsprintf(g_CHAR_ARRAY_01d1c300,format,(va_list_t)&local_c);
   local_c = (byte *)0x0;
-  pcVar2 = g_CHAR_PTR_01d1d400;
+  pcVar2 = g_CurrentFilename;
   do {
     pcVar1 = pcVar2;
     if (*pcVar2 == '\\') goto LAB_00503146;
@@ -40,17 +40,17 @@ LAB_00503146:
         return;
       }
       do {
-        pcVar2 = g_CHAR_PTR_01d1d400;
-        if (*g_CHAR_PTR_01d1d400 == '\\') goto LAB_0050319e;
-        if (*g_CHAR_PTR_01d1d400 == '\0') break;
-        pcVar2 = g_CHAR_PTR_01d1d400 + 1;
+        pcVar2 = g_CurrentFilename;
+        if (*g_CurrentFilename == '\\') goto LAB_0050319e;
+        if (*g_CurrentFilename == '\0') break;
+        pcVar2 = g_CurrentFilename + 1;
         if (*pcVar2 == '\\') goto LAB_0050319e;
-        g_CHAR_PTR_01d1d400 = g_CHAR_PTR_01d1d400 + 2;
+        g_CurrentFilename = g_CurrentFilename + 2;
       } while (*pcVar2 != '\0');
       pcVar2 = (char *)0x0;
 LAB_0050319e:
       pcVar2 = pcVar2 + 1;
-      g_CHAR_PTR_01d1d400 = pcVar2;
+      g_CurrentFilename = pcVar2;
     }
   } while( true );
 }

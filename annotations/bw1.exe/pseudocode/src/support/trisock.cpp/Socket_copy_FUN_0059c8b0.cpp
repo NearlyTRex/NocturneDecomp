@@ -9,8 +9,8 @@
 SSocket * __cdecl support_trisock_cpp_Socket_copy_FUN_0059c8b0(SSocket *this_ptr,SSocket *other)
 
 {
-  g_CHAR_PTR_01d1d400 = "..\\support\\trisock.cpp";
-  g_INT_01d1d404 = 0x104;
+  g_CurrentFilename = "..\\support\\trisock.cpp";
+  g_CurrentLineNumber = 260;
   core_main_c_displayErrorAndQuit_FUN_005030e0("Should never be called!");
   return this_ptr;
 }

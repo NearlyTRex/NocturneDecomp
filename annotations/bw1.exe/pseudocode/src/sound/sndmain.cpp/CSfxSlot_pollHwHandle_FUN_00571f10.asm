@@ -13,8 +13,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005f3a66
 ;   TerminatedCString s_SfxSlot_pollHwHandle_no_005f3a7b
 ;   TerminatedCString s_Killing_looped_sfx_s_whi_005f3a9e
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
@@ -44,8 +44,8 @@ section .text
     MOV EDI,0x5f3a66                    ; 00571f30 | = "..\\sound\\sndmain.cpp"
     MOV EBP,0xcf9                       ; 00571f35
     PUSH 0x5f3a7b                       ; 00571f3a | = "SfxSlot::pollHwHandle - no sample?"
-    MOV dword ptr [0x01d1d400],EDI      ; 00571f3f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00571f45 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00571f3f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 00571f45 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00571f4b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00571f50

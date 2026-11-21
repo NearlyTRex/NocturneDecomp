@@ -39,14 +39,14 @@ void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005acec0(void)
                       (g_DirectDrawObject,4,g_DDPaletteBuffer,
                        (IDirectDrawPalette **)&g_DirectDrawUnknown,(IUnknown *)0x0);
     if (HVar3 != 0) {
-      g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
-      g_INT_01d1d404 = 0x301;
+      g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+      g_CurrentLineNumber = 769;
       core_main_c_displayErrorAndQuit_FUN_005030e0("setpal - Unable to create palette object");
     }
     HVar3 = (*g_DirectDrawSurface->vtable->SetPalette)(g_DirectDrawSurface,g_DirectDrawUnknown);
     if (HVar3 != 0) {
-      g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
-      g_INT_01d1d404 = 0x307;
+      g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+      g_CurrentLineNumber = 775;
       core_main_c_displayErrorAndQuit_FUN_005030e0("setpal - Unable to set front buffer palette");
     }
   }

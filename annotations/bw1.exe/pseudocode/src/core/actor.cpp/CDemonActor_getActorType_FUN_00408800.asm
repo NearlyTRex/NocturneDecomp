@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005d239e
 ;   TerminatedCString s_CDemonActor_getActorType_005d23b0
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -26,8 +26,8 @@ section .text
     MOV EDX,0x5d239e                    ; 00408806 | = "..\\core\\actor.cpp"
     MOV ECX,0x22b                       ; 0040880b
     PUSH 0x5d23b0                       ; 00408810 | = "CDemonActor::getActorType called for ..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00408815 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040881b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00408815 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0040881b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00408821
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00408826

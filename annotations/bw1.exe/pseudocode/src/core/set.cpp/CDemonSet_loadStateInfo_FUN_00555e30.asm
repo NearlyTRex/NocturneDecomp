@@ -30,8 +30,8 @@
 ;   TerminatedCString s_anon_005f0d39
 ;   TerminatedCString s_d_005f0d41
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -75,8 +75,8 @@ section .text
     MOV EBX,0x5f0c7e                    ; 00555e6f | = "..\\core\\set.cpp"
     MOV ESI,0x1494                      ; 00555e74
     PUSH 0x5f0c8e                       ; 00555e79 | = "Set saveState info is invalid version %d"
-    MOV dword ptr [0x01d1d400],EBX      ; 00555e7e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00555e84 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 00555e7e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00555e84 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00555e8a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00555e8f

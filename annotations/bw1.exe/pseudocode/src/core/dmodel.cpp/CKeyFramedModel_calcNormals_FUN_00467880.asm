@@ -20,8 +20,8 @@
 ;   TerminatedCString s_core_dmodel_cpp_005d95e4
 ;   TerminatedCString s_CKeyFramedModel_calcNorm_005d95f7
 ;   double g_NormalizeScale = 65535
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -163,8 +163,8 @@ section .text
         ;   Label: LAB_004679bf
     MOV ESI,0x2f1                       ; 004679c4
     PUSH 0x5d95f7                       ; 004679c9 | = "CKeyFramedModel::calcNormals() - vert..."
-    MOV dword ptr [0x01d1d400],EBX      ; 004679ce | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004679d4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 004679ce | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 004679d4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004679da
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004679df

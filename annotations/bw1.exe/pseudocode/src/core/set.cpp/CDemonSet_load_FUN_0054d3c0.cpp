@@ -49,8 +49,8 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_0054d3c0(CDemonSet *this_ptr,char *
   core_set_cpp_CDemonSet_clear_FUN_0054d370(this_ptr);
   p_Var5 = engine_dosio_cpp_getFile_FUN_00479180("models",filename,"rt");
   if (p_Var5 == (_FILE *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\set.cpp";
-    g_INT_01d1d404 = 0x15c;
+    g_CurrentFilename = "..\\core\\set.cpp";
+    g_CurrentLineNumber = 348;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::Unable to open %s");
   }
   _fscanf(p_Var5,"%d\n");

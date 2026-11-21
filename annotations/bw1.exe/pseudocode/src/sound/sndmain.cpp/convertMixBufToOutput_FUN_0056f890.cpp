@@ -19,8 +19,8 @@ void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0056f890(float *input_s
   local_30 = output_buffer;
   if ((uint)bits_per_sample < 8) {
 LAB_0056f9dd:
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0x617;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 1559;
     core_main_c_displayErrorAndQuit_FUN_005030e0("convertMixBufToOutput - invalid bits: %d");
     return;
   }

@@ -13,8 +13,8 @@
 ;   CEventList* g_CEventListPtr = 01c51d80
 ;   CNetGame* g_CNetGamePtr = 01d51c20
 ;   int g_INT_01d06ab4
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGameInstance
 ;
 ; Called Functions:
@@ -89,8 +89,8 @@ section .text
     MOV ECX,0x5e8962                    ; 0050f6c7 | = "..\\core\\mimic.cpp"
     MOV ESI,0x130                       ; 0050f6cc
     PUSH 0x5e8974                       ; 0050f6d1 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0050f6d6 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0050f6dc | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0050f6d6 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0050f6dc | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050f6e2
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050f6e7

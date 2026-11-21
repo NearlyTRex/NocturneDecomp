@@ -24,8 +24,8 @@
 ;   TerminatedCString s_engine_drender_cpp_005db526
 ;   TerminatedCString s_CDR_texture_Too_many_cap_005db53c
 ;   int g_CaptureTextureCount
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -57,8 +57,8 @@ section .text
     MOV EDI,0x5db526                    ; 00484f2c | = "..\\engine\\drender.cpp"
     MOV EBP,0xbf3                       ; 00484f31
     PUSH 0x5db53c                       ; 00484f36 | = "CDR::texture - Too many captured text..."
-    MOV dword ptr [0x01d1d400],EDI      ; 00484f3b | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00484f41 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00484f3b | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 00484f41 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00484f47
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00484f4c

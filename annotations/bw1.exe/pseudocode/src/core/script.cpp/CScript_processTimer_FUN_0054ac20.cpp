@@ -10,8 +10,8 @@ int __cdecl core_script_cpp_CScript_processTimer_FUN_0054ac20(CScript *this_ptr,
 
 {
   if (delta_time < 0.0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\script.cpp";
-    g_INT_01d1d404 = 0xf7d;
+    g_CurrentFilename = "..\\core\\script.cpp";
+    g_CurrentLineNumber = 3965;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CScript::processTimer - invalidTimeToWait");
   }
   if (this_ptr->cmd_timer < 0.0) {

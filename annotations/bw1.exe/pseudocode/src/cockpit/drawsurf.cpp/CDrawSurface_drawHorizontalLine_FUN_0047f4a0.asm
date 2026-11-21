@@ -19,8 +19,8 @@
 ;   int g_CurrentDrawColor
 ;   int g_UseRGBConversion
 ;   void*[1200] g_ScreenBufferArray
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0047e9d0
@@ -152,8 +152,8 @@ section .text
         ;   Label: LAB_0047f594
     MOV EAX,0x3a6                       ; 0047f599
     PUSH 0x5db136                       ; 0047f59e | = "Invalid bitsPerPixel!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0047f5a3 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0047f5a9 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0047f5a3 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0047f5a9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047f5ae
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047f5b3

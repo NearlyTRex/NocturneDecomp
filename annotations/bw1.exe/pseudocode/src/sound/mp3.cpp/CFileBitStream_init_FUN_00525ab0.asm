@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   stream_length
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -100,8 +100,8 @@ section .text
     MOV ESI,0x5eb13d                    ; 00525b63
     MOV EDI,0x23d                       ; 00525b68
     PUSH 0x5eb14e                       ; 00525b6d
-    MOV dword ptr [0x01d1d400],ESI      ; 00525b72 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00525b78 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00525b72 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00525b78 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00525b7e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00525b83

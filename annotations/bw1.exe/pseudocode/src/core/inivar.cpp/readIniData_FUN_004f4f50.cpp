@@ -14,8 +14,8 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)
   
   iVar1 = _chmod(".\\system\\nocturne.ini",0x180);
   if (iVar1 != 0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\inivar.cpp";
-    g_INT_01d1d404 = 0x57;
+    g_CurrentFilename = "..\\core\\inivar.cpp";
+    g_CurrentLineNumber = 87;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Please copy Nocturne to your hard drive");
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004f4b00(&local_210,".\\system\\nocturne.ini",(char *)0x0);

@@ -20,8 +20,8 @@
 ;   TerminatedCString s_Replaced_hero_OK_You_wil_005e9bd8
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   undefined4 g_CHeroPlaceholderClassInfo.name_hash
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
@@ -123,8 +123,8 @@ section .text
     MOV ECX,0x5e9bab                    ; 0051c2ee | = "..\\core\\mission.cpp"
     MOV EBX,0x6e4                       ; 0051c2f3
     PUSH 0x5e9bbf                       ; 0051c2f8 | = "Hell froze finding hero."
-    MOV dword ptr [0x01d1d400],ECX      ; 0051c2fd | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0051c303 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0051c2fd | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0051c303 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051c309
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051c30e

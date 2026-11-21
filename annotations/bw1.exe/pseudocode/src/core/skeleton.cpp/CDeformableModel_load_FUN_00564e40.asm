@@ -15,8 +15,8 @@
 ;   TerminatedCString s_models_005f2014
 ;   TerminatedCString s_core_skeleton_cpp_005f201b
 ;   TerminatedCString s_CDeformableModel_load_Ca_005f2030
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -80,8 +80,8 @@ section .text
     MOV EDX,0x5f201b                    ; 00564e9c | = "..\\core\\skeleton.cpp"
     MOV ECX,0x4ca                       ; 00564ea1
     PUSH 0x5f2030                       ; 00564ea6 | = "CDeformableModel::load - Can't open %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 00564eab | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00564eb1 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00564eab | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00564eb1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00564eb7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00564ebc

@@ -418,8 +418,8 @@ LAB_004591e5:
     else if (uVar11 < 0xc) {
       iVar10 = core_demnfolk_cpp_CDemnfolk_getPickupHandIndex_FUN_0045bec0(this_ptr,2);
       if (iVar10 < 0) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\demnfolk.cpp";
-        g_INT_01d1d404 = 0x24a;
+        g_CurrentFilename = "..\\core\\demnfolk.cpp";
+        g_CurrentLineNumber = 586;
         core_main_c_displayErrorAndQuit_FUN_005030e0("WTF!");
       }
       if ((this_ptr->base).base.carry_hands[iVar10].carry_actor != (CDemonActor *)0x0) {
@@ -438,8 +438,8 @@ LAB_004591e5:
       if (uVar11 == 0xc) {
         iStack_74 = core_demnfolk_cpp_CDemnfolk_getPickupHandIndex_FUN_0045bec0(this_ptr,3);
         if (iStack_74 < 0) {
-          g_CHAR_PTR_01d1d400 = "..\\core\\demnfolk.cpp";
-          g_INT_01d1d404 = 0x261;
+          g_CurrentFilename = "..\\core\\demnfolk.cpp";
+          g_CurrentLineNumber = 609;
           core_main_c_displayErrorAndQuit_FUN_005030e0("WTF!");
         }
         pcStack_64 = (this_ptr->base).base.base.actor_name + iStack_74 * 0x78;

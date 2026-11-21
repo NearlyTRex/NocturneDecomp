@@ -20,8 +20,8 @@
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;   int g_INT_01c50948
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_02c83370
 ;
 ; Called Functions:
@@ -107,8 +107,8 @@ section .text
         ;   Label: LAB_0044d6bc
     MOV ESI,0x3f2                       ; 0044d6c1
     PUSH 0x5d761c                       ; 0044d6c6 | = "CDemonCamera::endScene - Scene not open!"
-    MOV dword ptr [0x01d1d400],ECX      ; 0044d6cb | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0044d6d1 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0044d6cb | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0044d6d1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044d6d7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0044d6dc

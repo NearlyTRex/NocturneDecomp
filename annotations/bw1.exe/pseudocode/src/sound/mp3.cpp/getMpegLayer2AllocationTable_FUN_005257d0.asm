@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   mode_extension
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -49,8 +49,8 @@ section .text
     MOV EDX,0x5eb100                    ; 00525806
     MOV ECX,0x1ea                       ; 0052580b
     PUSH 0x5eb111                       ; 00525810
-    MOV dword ptr [0x01d1d400],EDX      ; 00525815 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0052581b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00525815 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0052581b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00525821
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 00525826

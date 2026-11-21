@@ -150,8 +150,8 @@ switchD_0053320f_caseD_4:
     case 8:
       return local_80 + (float)-2.356194490125;
     default:
-      g_CHAR_PTR_01d1d400 = "..\\core\\path.cpp";
-      g_INT_01d1d404 = 0x183;
+      g_CurrentFilename = "..\\core\\path.cpp";
+      g_CurrentLineNumber = 387;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CPathMap::getDirection - Should never get here either");
     }
   }

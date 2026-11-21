@@ -18,8 +18,8 @@
 ;   undefined4 g_UCHAR_ARRAY_01c4e9f8+1
 ;   undefined4 g_UCHAR_ARRAY_01c4e9f8+2
 ;   int g_INT_01c50948
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   void* g_APIDLL_setColorTable16
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
@@ -79,8 +79,8 @@ section .text
     MOV EDI,0x5f977d                    ; 005acf45 | = "..\\wincore\\wddvmem.cpp"
     MOV EBP,0x301                       ; 005acf4a
     PUSH 0x5f9794                       ; 005acf4f | = "setpal - Unable to create palette object"
-    MOV dword ptr [0x01d1d400],EDI      ; 005acf54 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 005acf5a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 005acf54 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 005acf5a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005acf60
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005acf65
@@ -98,8 +98,8 @@ section .text
     MOV EBX,0x5f97bd                    ; 005acf7f | = "..\\wincore\\wddvmem.cpp"
     MOV ESI,0x307                       ; 005acf84
     PUSH 0x5f97d4                       ; 005acf89 | = "setpal - Unable to set front buffer p..."
-    MOV dword ptr [0x01d1d400],EBX      ; 005acf8e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005acf94 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 005acf8e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 005acf94 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005acf9a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005acf9f

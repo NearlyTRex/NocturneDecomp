@@ -16,8 +16,8 @@
 ;   TerminatedCString s_C3DSLight_advanceFilter_005f13b1
 ;   TerminatedCString s_core_setutil_cpp_005f13e6
 ;   TerminatedCString s_C3DSLight_setFilterFrame_005f13fa
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_0055d43b
     MOV EDI,0x39f                       ; 0055d440
     PUSH 0x5f13b1                       ; 0055d445 | = "C3DSLight::advanceFilter - NULL CDemo..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0055d44a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0055d450 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0055d44a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0055d450 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055d456
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055d45b
@@ -77,8 +77,8 @@ section .text
         ;   Label: LAB_0055d460
     MOV EDX,0x3a3                       ; 0055d465
     PUSH 0x5f13fa                       ; 0055d46a | = "C3DSLight::setFilterFrame - invalid f..."
-    MOV [0x01d1d400],EAX                ; 0055d46f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0055d474 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0055d46f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0055d474 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055d47a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0055d47f

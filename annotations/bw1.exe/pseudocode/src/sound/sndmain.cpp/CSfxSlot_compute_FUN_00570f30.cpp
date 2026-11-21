@@ -20,8 +20,8 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00570f30(CSfxSlot *this_ptr,f
   float local_28;
   
   if (g_SoundLockCount < 1) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0xade;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2782;
     core_main_c_displayErrorAndQuit_FUN_005030e0("SfxSlot::compute - must be locked!");
   }
   if (this_ptr->sample == (CSfxSample *)0x0) {

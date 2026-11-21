@@ -103,8 +103,8 @@ section .text
     MOV EDX,0x5d6784                    ; 0043e74b | = "..\\core\\cloth.cpp"
     MOV ECX,0xa2                        ; 0043e750
     PUSH 0x5d6796                       ; 0043e755 | = "%s is version %d, this .EXE is old an..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0043e75a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0043e760 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0043e75a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0043e760 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043e766
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0043e76b
@@ -415,8 +415,8 @@ section .text
     MOV EDX,0x5d6748                    ; 0043ebcc | = "..\\core\\cloth.cpp"
     MOV ECX,0x9b                        ; 0043ebd1
     PUSH 0x5d675a                       ; 0043ebd6 | = "CCloth::load - Unable to open file %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0043ebdb | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0043ebe1 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0043ebdb | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0043ebe1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043ebe7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0043ebec

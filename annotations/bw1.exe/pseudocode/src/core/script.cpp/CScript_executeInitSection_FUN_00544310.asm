@@ -23,8 +23,8 @@
 ;   TerminatedCString s_Infinite_loop_detected_i_005ee395
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_01e810a8
 ;   int g_ScriptInputFlag
 ;
@@ -126,8 +126,8 @@ section .text
         ;   Label: LAB_005443ca
     MOV EAX,0x42a                       ; 005443cf
     PUSH 0x5ee2f3                       ; 005443d4 | = "Script has \"initSection\" label, but..."
-    MOV dword ptr [0x01d1d400],EDI      ; 005443d9 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 005443df | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 005443d9 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 005443df | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005443e4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005443e9
@@ -136,9 +136,9 @@ section .text
     MOV EAX,0x5ee332                    ; 005443f1 | = "..\\core\\script.cpp"
         ;   Label: LAB_005443f1
     MOV EDX,0x446                       ; 005443f6
-    MOV [0x01d1d400],EAX                ; 005443fb | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d400],EAX                ; 005443fb | g_CurrentFilename
     MOV EAX,dword ptr [EBX + 0x30]      ; 00544400
-    MOV dword ptr [0x01d1d404],EDX      ; 00544403 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 00544403 | g_CurrentLineNumber
     PUSH 0x1e810b0                      ; 00544409
     MOV ECX,dword ptr [EAX + EDI*0x8 + 0x4] ; 0054440e
     PUSH ECX                            ; 00544412
@@ -158,8 +158,8 @@ section .text
     MOV EDI,0x5ee382                    ; 00544436 | = "..\\core\\script.cpp"
     MOV EAX,0x458                       ; 0054443b
     PUSH 0x5ee395                       ; 00544440 | = "Infinite loop detected in initSection.\n"
-    MOV dword ptr [0x01d1d400],EDI      ; 00544445 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0054444b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00544445 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0054444b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00544450
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00544455

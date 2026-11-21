@@ -21,8 +21,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_005ec8dc
 ;   TerminatedCString s_queuePop_empty_queue_005ec8ed
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_PathfindingMaxClimbHeight
 ;   int g_PathfindingCurrentX
 ;   int g_PathfindingCurrentZ
@@ -198,8 +198,8 @@ section .text
         ;   Label: LAB_00535650
     MOV EAX,0xdf                        ; 00535655
     PUSH 0x5ec8ed                       ; 0053565a | = "queuePop - empty queue?!"
-    MOV dword ptr [0x01d1d400],ECX      ; 0053565f | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 00535665 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0053565f | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 00535665 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053566a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053566f

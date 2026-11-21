@@ -22,8 +22,8 @@
 ;   TerminatedCString s_CGame_slamDT_invalid_dt_005e338b
 ;   float g_DeltaTimeScale = 65536
 ;   int g_GlobalDeltaTimeInt
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_004d7f91
     MOV ECX,0x12e0                      ; 004d7f96
     PUSH 0x5e338b                       ; 004d7f9b | = "CGame::slamDT - invalid dt!"
-    MOV dword ptr [0x01d1d400],EDX      ; 004d7fa0 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004d7fa6 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004d7fa0 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 004d7fa6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004d7fac
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004d7fb1

@@ -8,8 +8,8 @@
 ; SMRGLTextureBasic * Stack[0x8]:4   texture
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   void* g_PTR_02c83488
 ;
 ; Called Functions:
@@ -57,8 +57,8 @@ section .text
     MOV ESI,0x5f7b56                    ; 0059766d
     MOV EDI,0x2e9                       ; 00597672
     PUSH 0x5f7b6c                       ; 00597677
-    MOV dword ptr [0x01d1d400],ESI      ; 0059767c | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00597682 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0059767c | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00597682 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00597688
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0059768d

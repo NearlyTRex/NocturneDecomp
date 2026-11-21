@@ -106,8 +106,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044fff0(CDemonCamera *
   pcVar21 = (char *)0x0;
 LAB_00450039:
   if (pcVar21 == (char *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
-    g_INT_01d1d404 = 0x9c1;
+    g_CurrentFilename = "..\\core\\dcamera.cpp";
+    g_CurrentLineNumber = 2497;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonCamera::loadImage - no extention");
   }
   pcVar25 = ".ACT";
@@ -149,8 +149,8 @@ LAB_00450039:
     pcVar25 = (char *)0x0;
 LAB_00450103:
     if (pcVar25 == (char *)0x0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
-      g_INT_01d1d404 = 0x9d4;
+      g_CurrentFilename = "..\\core\\dcamera.cpp";
+      g_CurrentLineNumber = 2516;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonCamera::loadImage - no ext");
     }
     pcVar21 = ".fog";
@@ -184,13 +184,13 @@ LAB_00450103:
           iVar6 = engine_dosio_cpp_getFileSize_FUN_00478fb0("backdrop",local_f4);
           local_9c = iVar6 - 0x1003;
           if ((int)local_9c < 1) {
-            g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
-            g_INT_01d1d404 = 0x9f4;
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 2548;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze loading %s");
           }
           if (500000 < local_9c) {
-            g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
-            g_INT_01d1d404 = 0x9fa;
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 2554;
             core_main_c_displayErrorAndQuit_FUN_005030e0("%s too big to fit in decompress buffer");
           }
           _fread(g_CameraLoadImageReadBuffer,local_9c,1,local_14);
@@ -200,8 +200,8 @@ LAB_00450103:
                             (&g_CLZWDecompressInstance.base,g_CameraLoadImageReadBuffer,
                              (int *)&local_9c,g_CameraImageDecompressBuffer,&local_98,1);
           if (iVar6 == 0) {
-            g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
-            g_INT_01d1d404 = 0xa03;
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 2563;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Error decompressing %s");
           }
           local_a4 = 0;

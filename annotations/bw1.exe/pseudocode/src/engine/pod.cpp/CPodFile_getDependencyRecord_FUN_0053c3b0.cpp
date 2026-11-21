@@ -18,21 +18,21 @@ CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_
   
   bVar4 = 0;
   if ((dependency_index < 0) || (this_ptr->dependency_count <= dependency_index)) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-    g_INT_01d1d404 = 0x3d8;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 984;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CPodFile::getDependencyRecord - invalid index.  Pod not mounted?");
   }
   file = _fopen(this_ptr->filename,"rb");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-    g_INT_01d1d404 = 0x3dd;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 989;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CPodFile::getDependencyRecord - can't open %s");
   }
   _fseek(file,dependency_index * 0x108 + this_ptr->dependency_records_offset,0);
   _fread(auStack_114,0x108,1,file);
   if ((file->_flag & 0x20) != 0) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-    g_INT_01d1d404 = 0x3ee;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 1006;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CPodFile::getDependencyRecord - error reading %s");
   }
   _fclose(file);

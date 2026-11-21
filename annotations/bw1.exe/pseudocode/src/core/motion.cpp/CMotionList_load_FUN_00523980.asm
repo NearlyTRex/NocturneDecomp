@@ -324,8 +324,8 @@ section .text
     MOV EDX,0x5eaa3a                    ; 00523bba | = "..\\core\\motion.cpp"
     MOV ECX,0xc0                        ; 00523bbf
     PUSH 0x5eaa4d                       ; 00523bc4 | = "Out of memory"
-    MOV dword ptr [0x01d1d400],EDX      ; 00523bc9 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00523bcf | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00523bc9 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00523bcf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00523bd5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00523bda
@@ -491,8 +491,8 @@ section .text
         ;   Label: LAB_00523d3a
     MOV EBP,0x81                        ; 00523d3f
     PUSH 0x5ea952                       ; 00523d44 | = "Error reading motion list."
-    MOV dword ptr [0x01d1d400],ESI      ; 00523d49 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00523d4f | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00523d49 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 00523d4f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00523d55
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00523d5a
@@ -504,8 +504,8 @@ section .text
     MOV EDX,0x5ea96d                    ; 00523d65 | = "..\\core\\motion.cpp"
     MOV ECX,0x83                        ; 00523d6a
     PUSH 0x5ea980                       ; 00523d6f | = "Can't read motion list - it's version..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00523d74 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00523d7a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00523d74 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00523d7a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00523d80
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00523d85

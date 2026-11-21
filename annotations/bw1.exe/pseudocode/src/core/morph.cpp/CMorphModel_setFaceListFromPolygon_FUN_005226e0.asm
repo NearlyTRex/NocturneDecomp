@@ -28,8 +28,8 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_005ea754
 ;   TerminatedCString s_core_morph_cpp_005ea782
 ;   TerminatedCString s_CMorphModel_setFaceList_005ea794
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_MorphReverseWinding
 ;
 ; Called Functions:
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_005226fb
     MOV EBP,0x152                       ; 00522700
     PUSH 0x5ea754                       ; 00522705 | = "CMorphModel::setFaceList - invalid pa..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0052270a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00522710 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0052270a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 00522710 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00522716
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052271b
@@ -79,8 +79,8 @@ section .text
     MOV EBP,0x5ea782                    ; 00522739 | = "..\\core\\morph.cpp"
     MOV EAX,0x159                       ; 0052273e
     PUSH 0x5ea794                       ; 00522743 | = "CMorphModel::setFaceList - invalid ve..."
-    MOV dword ptr [0x01d1d400],EBP      ; 00522748 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0052274e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 00522748 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0052274e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00522753
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00522758

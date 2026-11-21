@@ -109,8 +109,8 @@ section .text
     MOV EDI,0x5e911e                    ; 0051a563 | = "..\\core\\mission.cpp"
     MOV EBP,0xe9                        ; 0051a568
     PUSH 0x5e9132                       ; 0051a56d | = "Invalid mission version number: %d, c..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0051a572 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0051a578 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0051a572 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 0051a578 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a57e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0051a583
@@ -123,8 +123,8 @@ section .text
     MOV ECX,0x5e918e                    ; 0051a593 | = "..\\core\\mission.cpp"
     MOV ESI,0xec                        ; 0051a598
     PUSH 0x5e91a2                       ; 0051a59d | = "This mission uses actor format versio..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0051a5a2 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0051a5a8 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0051a5a2 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0051a5a8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a5ae
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0051a5b3
@@ -262,12 +262,12 @@ section .text
     MOV ESI,dword ptr [ESP + 0x140]     ; 0051a70d
     MOV EAX,0x5e922b                    ; 0051a714 | = "..\\core\\mission.cpp"
     PUSH ESI                            ; 0051a719
-    MOV [0x01d1d400],EAX                ; 0051a71a | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d400],EAX                ; 0051a71a | g_CurrentFilename
     LEA EAX,[ESP + 0x8]                 ; 0051a71f
     PUSH EAX                            ; 0051a723
     MOV EDX,0x10f                       ; 0051a724
     PUSH 0x5e923f                       ; 0051a729 | = "Actor type %s is saved in mission in ..."
-    MOV dword ptr [0x01d1d404],EDX      ; 0051a72e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 0051a72e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a734
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0051a739
@@ -382,8 +382,8 @@ section .text
     MOV EDX,0x5e92e0                    ; 0051a864 | = "..\\core\\mission.cpp"
     MOV ECX,0x149                       ; 0051a869
     PUSH 0x5e92f4                       ; 0051a86e | = "CDemonMission::load - actor list coun..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0051a873 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0051a879 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0051a873 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0051a879 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a87f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051a884
@@ -417,8 +417,8 @@ section .text
     MOV EAX,0x5e9328                    ; 0051a8ce | = "..\\core\\mission.cpp"
     MOV EDX,0x155                       ; 0051a8d3
     PUSH 0x5e933c                       ; 0051a8d8 | = "CDemonMission::load - actor list coun..."
-    MOV [0x01d1d400],EAX                ; 0051a8dd | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0051a8e2 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0051a8dd | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0051a8e2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a8e8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051a8ed
@@ -453,8 +453,8 @@ section .text
     MOV ESI,0x5e9370                    ; 0051a932 | = "..\\core\\mission.cpp"
     MOV EDI,0x15c                       ; 0051a937
     PUSH 0x5e9384                       ; 0051a93c | = "CDemonMission::load - actor list coun..."
-    MOV dword ptr [0x01d1d400],ESI      ; 0051a941 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0051a947 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0051a941 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0051a947 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a94d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051a952
@@ -465,8 +465,8 @@ section .text
     MOV EAX,0x5e93b8                    ; 0051a95e | = "..\\core\\mission.cpp"
     MOV EDX,0x15d                       ; 0051a963
     PUSH 0x5e93cc                       ; 0051a968 | = "CDemonMission::load - actor list coun..."
-    MOV [0x01d1d400],EAX                ; 0051a96d | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0051a972 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0051a96d | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0051a972 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051a978
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051a97d
@@ -529,8 +529,8 @@ section .text
         ;   Label: LAB_0051aa04
     MOV EDX,0xf1                        ; 0051aa09
     PUSH 0x5e9201                       ; 0051aa0e | = "No name in mission"
-    MOV [0x01d1d400],EAX                ; 0051aa13 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0051aa18 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0051aa13 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0051aa18 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051aa1e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051aa23
@@ -601,8 +601,8 @@ section .text
     MOV ESI,0x5e92bc                    ; 0051aae0 | = "..\\core\\mission.cpp"
     MOV EDI,0x13c                       ; 0051aae5
     PUSH 0x5e92d0                       ; 0051aaea | = "Too many actors"
-    MOV dword ptr [0x01d1d400],ESI      ; 0051aaef | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0051aaf5 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0051aaef | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0051aaf5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051aafb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051ab00

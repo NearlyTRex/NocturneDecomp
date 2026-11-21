@@ -53,8 +53,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00466be0(CKeyFram
     if (iVar2 < 0) break;
   } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   _fscanf(file,"%d\n");
-  g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
-  g_INT_01d1d404 = 0x128;
+  g_CurrentFilename = "..\\core\\dmodel.cpp";
+  g_CurrentLineNumber = 296;
   core_main_c_displayErrorAndQuit_FUN_005030e0("KFM file is invalid version %d");
   iVar3 = 1;
   do {
@@ -128,8 +128,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00466be0(CKeyFram
     } while (iVar3 < this_ptr->part_count);
   }
   if ((file->_flag & 0x20) != 0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\dmodel.cpp";
-    g_INT_01d1d404 = 0x197;
+    g_CurrentFilename = "..\\core\\dmodel.cpp";
+    g_CurrentLineNumber = 407;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Error reading KFM model");
   }
   if (local_48 == 0) {

@@ -77,8 +77,8 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   }
   pSVar21 = keyframe_model->base_keyframes;
   if ((pSVar21->header).child_count != 2) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\keyframe.c";
-    g_INT_01d1d404 = 0x16b;
+    g_CurrentFilename = "..\\engine\\keyframe.c";
+    g_CurrentLineNumber = 363;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Bad keyframe 1");
   }
   fVar15 = (float)uVar23 * (float)1.52587890625e-05;
@@ -149,8 +149,8 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
     } while (iStack_2c < *(int *)(uVar23 + 8));
   }
   if ((pSVar22->header).base.type != 0x17) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\keyframe.c";
-    g_INT_01d1d404 = 0x1a6;
+    g_CurrentFilename = "..\\engine\\keyframe.c";
+    g_CurrentLineNumber = 422;
     core_main_c_displayErrorAndQuit_FUN_005030e0("ZBP not found!");
   }
   pSVar21 = keyframe_model->base_keyframes;

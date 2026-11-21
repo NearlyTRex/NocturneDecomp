@@ -31,8 +31,8 @@
 ;   undefined4 g_UCHAR_ARRAY_01c4e9f8+1
 ;   undefined4 g_UCHAR_ARRAY_01c4e9f8+2
 ;   int g_INT_01c4f020
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -85,8 +85,8 @@ section .text
     MOV EDX,0x5dbcf8                    ; 00493518 | = "..\\shape\\edittool.cpp"
     MOV ECX,0x22e                       ; 0049351d
     PUSH 0x5dbd0e                       ; 00493522 | = "CInputString::draw - string too big f..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00493527 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0049352d | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00493527 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0049352d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00493533
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00493538

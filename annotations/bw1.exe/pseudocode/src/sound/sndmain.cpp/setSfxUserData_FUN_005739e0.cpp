@@ -12,8 +12,8 @@ int __cdecl sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint sfx_handle,int in
   CSfxSlot *pCVar1;
   
   if ((index < 0) || (1 < index)) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0x10c4;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 4292;
     core_main_c_displayErrorAndQuit_FUN_005030e0("setSfxUserData - invalid user data index: %d");
   }
   pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_0056fa10(sfx_handle,1);

@@ -872,8 +872,8 @@ section .text
     MOV EAX,0x5f6c82                    ; 0058cd74 | = "..\\core\\stranger.cpp"
     MOV EDX,0xda2                       ; 0058cd79
     PUSH 0x5f6c97                       ; 0058cd7e | = "Hell froze - invalid pickUpType: %d"
-    MOV [0x01d1d400],EAX                ; 0058cd83 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0058cd88 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0058cd83 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0058cd88 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0058cd8e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0058cd93

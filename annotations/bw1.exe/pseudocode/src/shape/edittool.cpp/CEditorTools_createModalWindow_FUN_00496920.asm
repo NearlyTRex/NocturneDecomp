@@ -88,8 +88,8 @@ section .text
     MOV EBP,0x5dc0f0                    ; 00496964 | = "..\\shape\\edittool.cpp"
     MOV EAX,0x864                       ; 00496969
     PUSH 0x5dc106                       ; 0049696e | = "Can't open another window!"
-    MOV dword ptr [0x01d1d400],EBP      ; 00496973 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 00496979 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 00496973 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 00496979 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049697e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00496983
@@ -431,8 +431,8 @@ section .text
         ;   Label: LAB_00496d8e
     MOV EBX,0xa4                        ; 00496d93
     PUSH 0x5dbc7e                       ; 00496d98 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d1d400],ECX      ; 00496d9d | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00496da3 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00496d9d | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00496da3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00496da9
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00496dae

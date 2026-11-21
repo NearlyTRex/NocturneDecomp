@@ -240,8 +240,8 @@ void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_00507c70(int rot_x,int r
   g_RelativeX = iVar5;
   g_MatrixStackIndex = g_MatrixStackIndex + 1;
   if (9 < g_MatrixStackIndex) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\matrix.c";
-    g_INT_01d1d404 = 799;
+    g_CurrentFilename = "..\\engine\\matrix.c";
+    g_CurrentLineNumber = 799;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance");
     return;
   }

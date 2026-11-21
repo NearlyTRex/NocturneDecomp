@@ -33,8 +33,8 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005a2ae0(CTurret *this_ptr
     }
     break;
   default:
-    g_CHAR_PTR_01d1d400 = "..\\core\\turret.cpp";
-    g_INT_01d1d404 = 0x1c1;
+    g_CurrentFilename = "..\\core\\turret.cpp";
+    g_CurrentLineNumber = 449;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CTurret::getCurFrame - invalid state");
   }
   if (local_18 < 0.0) {

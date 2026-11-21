@@ -17,8 +17,8 @@ void __cdecl engine_mini3d_cpp_matrixPush_FUN_00511fc0(void)
   bVar4 = 0;
   g_PTR_01d22580 = g_PTR_01d22580 + 1;
   if (9 < (int)g_PTR_01d22580) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\mini3d.cpp";
-    g_INT_01d1d404 = 0x4b7;
+    g_CurrentFilename = "..\\engine\\mini3d.cpp";
+    g_CurrentLineNumber = 1207;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance");
   }
   pfVar2 = (float *)g_PTR_01d2257c;

@@ -13,8 +13,8 @@
 ;   TerminatedCString s_core_dlight_cpp_005d8f34
 ;   TerminatedCString s_getRestoreMemory_Need_mo_005d8f47
 ;   uint g_ShadowRestoreAllocator
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -51,8 +51,8 @@ section .text
     MOV EBX,0x5d8f34                    ; 00462731 | = "..\\core\\dlight.cpp"
     MOV ESI,0xa3                        ; 00462736
     PUSH 0x5d8f47                       ; 0046273b | = "getRestoreMemory - Need more static m..."
-    MOV dword ptr [0x01d1d400],EBX      ; 00462740 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00462746 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 00462740 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00462746 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0046274c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00462751

@@ -18,8 +18,8 @@ uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_00443a80(CCheesyC
   if (this_ptr->mode == 1) {
     return (uint)(byte)((&DAT_00610eb8)[value] - (char)this_ptr->key_state);
   }
-  g_CHAR_PTR_01d1d400 = "..\\support\\codec.cpp";
-  g_INT_01d1d404 = 0x70b;
+  g_CurrentFilename = "..\\support\\codec.cpp";
+  g_CurrentLineNumber = 1803;
   core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid mode.");
   return extraout_EAX & 0xffffff00;
 }

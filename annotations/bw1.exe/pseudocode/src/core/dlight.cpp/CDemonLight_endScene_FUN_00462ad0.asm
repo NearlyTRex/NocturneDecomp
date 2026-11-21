@@ -24,8 +24,8 @@
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90
@@ -127,8 +127,8 @@ section .text
         ;   Label: LAB_00462baa
     MOV EBX,0x164                       ; 00462baf
     PUSH 0x5d9050                       ; 00462bb4 | = "CDemonLight::endScene - Scene not open"
-    MOV dword ptr [0x01d1d400],ECX      ; 00462bb9 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00462bbf | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00462bb9 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00462bbf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00462bc5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00462bca

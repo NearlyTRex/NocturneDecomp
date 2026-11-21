@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_construc_cpp_005d7095
 ;   TerminatedCString s_CConstruct_explode_Not_e_005d70aa
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -208,8 +208,8 @@ section .text
         ;   Label: LAB_0044747b
     MOV ESI,0x31d                       ; 00447480
     PUSH 0x5d70aa                       ; 00447485 | = "CConstruct::explode - Not enough cont..."
-    MOV dword ptr [0x01d1d400],EBX      ; 0044748a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00447490 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 0044748a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00447490 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00447496
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0044749b

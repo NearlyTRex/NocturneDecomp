@@ -17,8 +17,8 @@
 ;   int g_INT_0061b49c = 0xc8
 ;   int g_INT_0061b4a0 = 0x8
 ;   char[256] g_CHAR_ARRAY_006257d0
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_02c83370
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
@@ -179,8 +179,8 @@ section .text
     MOV EBP,0x5f9849                    ; 005ad41c | = "..\\wincore\\wddvmem.cpp"
     MOV EAX,0x3fe                       ; 005ad421
     PUSH 0x5f9860                       ; 005ad426 | = "videoRestore - Unable to set front bu..."
-    MOV dword ptr [0x01d1d400],EBP      ; 005ad42b | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 005ad431 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 005ad42b | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 005ad431 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005ad436
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005ad43b

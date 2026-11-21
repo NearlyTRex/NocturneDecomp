@@ -22,8 +22,8 @@
 ;   CFilterCache* g_CFilterCachePtr = 0152c72c
 ;   CLevelLoader* g_CLevelLoaderPtr = 01d1bd1c
 ;   CWeather* g_CWeatherPtr = 02c997c0
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_MasterLightCount
 ;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_01fe4cb8
 ;   int g_SpotLightCount
@@ -131,8 +131,8 @@ section .text
         ;   XREF to: 0054ed57 (CONDITIONAL_JUMP)  ; LAB_0054ed57
     MOV EAX,0x3e3                       ; 0054ed3a
     PUSH 0x5f074f                       ; 0054ed3f | = "CDemonSet::initScene - Memory leakage..."
-    MOV dword ptr [0x01d1d400],EBP      ; 0054ed44 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0054ed4a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0054ed44 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0054ed4a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054ed4f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0054ed54
@@ -272,8 +272,8 @@ section .text
     MOV EBP,0x5f0790                    ; 0054eec7 | = "..\\core\\set.cpp"
     MOV EAX,0x3fa                       ; 0054eecc
     PUSH 0x5f07a0                       ; 0054eed1 | = "CDemonSet::initScene - Too many spotl..."
-    MOV dword ptr [0x01d1d400],EBP      ; 0054eed6 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0054eedc | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0054eed6 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0054eedc | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054eee1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0054eee6

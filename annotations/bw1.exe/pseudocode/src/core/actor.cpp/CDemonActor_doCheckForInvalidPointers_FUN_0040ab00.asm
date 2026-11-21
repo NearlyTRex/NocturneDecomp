@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   float g_MaxValidPosition = 99999
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -45,8 +45,8 @@ section .text
     MOV EAX,0x5d267b                    ; 0040ab29
     MOV EDX,0x765                       ; 0040ab2e
     PUSH 0x5d268d                       ; 0040ab33
-    MOV [0x01d1d400],EAX                ; 0040ab38 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0040ab3d | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0040ab38 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0040ab3d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040ab43
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0040ab48
@@ -62,8 +62,8 @@ section .text
     MOV EDX,0x76f                       ; 0040ab60
     MOV ESI,EBX                         ; 0040ab65
     PUSH 0x7c2fc0                       ; 0040ab67
-    MOV [0x01d1d400],EAX                ; 0040ab6c | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0040ab71 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0040ab6c | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0040ab71 | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_005bfb70 ; 0040ab77
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040ab7c
@@ -118,8 +118,8 @@ section .text
     MOV EDX,0x77a                       ; 0040abf6
     MOV EDI,0x7c2fc0                    ; 0040abfb
     PUSH 0x7c2fc0                       ; 0040ac00
-    MOV [0x01d1d400],EAX                ; 0040ac05 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0040ac0a | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0040ac05 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0040ac0a | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_005bfb70 ; 0040ac10
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040ac15
@@ -170,8 +170,8 @@ section .text
     MOV ESI,0x5d279d                    ; 0040ac81
     MOV EDI,0x788                       ; 0040ac86
     PUSH 0x7c2fc0                       ; 0040ac8b
-    MOV dword ptr [0x01d1d400],ESI      ; 0040ac90 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0040ac96 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0040ac90 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0040ac96 | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_005bfb70 ; 0040ac9c
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040aca1
@@ -226,8 +226,8 @@ section .text
     MOV EDX,0x5d2641                    ; 0040ad06
     MOV ECX,0x761                       ; 0040ad0b
     PUSH 0x5d2653                       ; 0040ad10
-    MOV dword ptr [0x01d1d400],EDX      ; 0040ad15 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040ad1b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0040ad15 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0040ad1b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040ad21
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0040ad26

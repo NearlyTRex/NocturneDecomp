@@ -19,8 +19,8 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_005305a0(CNetGam
   
   bVar7 = 0;
   if (this_ptr->local_player_index < 0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
-    g_INT_01d1d404 = 0x9cd;
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 2509;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
   this_ptr->random_seed = sim_frame->random_seed;

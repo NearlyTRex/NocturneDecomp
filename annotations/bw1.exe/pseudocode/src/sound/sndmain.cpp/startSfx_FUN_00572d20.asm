@@ -46,7 +46,7 @@
 ;   TerminatedCString s_startSfx_can_t_get_sampl_005f3f0f
 ;   float g_FLOAT_00605b10 = 2
 ;   int g_INT_006232d0 = 0x1
-;   char* g_CHAR_PTR_01d1d400
+;   char* g_CurrentFilename
 ;   ... and 20 more
 ;
 ; Called Functions:
@@ -294,8 +294,8 @@ section .text
         ;   Label: LAB_00572fb9
     MOV EBP,0x249                       ; 00572fbe
     PUSH 0x5f2c32                       ; 00572fc3 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d1d400],EDI      ; 00572fc8 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00572fce | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00572fc8 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 00572fce | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00572fd4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00572fd9
@@ -456,8 +456,8 @@ section .text
     MOV ECX,0x5f30fb                    ; 00573197 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x461                       ; 0057319c
     PUSH 0x5f3110                       ; 005731a1 | = "Out of memory."
-    MOV dword ptr [0x01d1d400],ECX      ; 005731a6 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005731ac | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 005731a6 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 005731ac | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005731b2
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005731b7

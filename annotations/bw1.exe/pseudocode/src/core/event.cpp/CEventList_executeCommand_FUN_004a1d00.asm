@@ -516,8 +516,8 @@ section .text
         ;   Label: LAB_004a1edc
     MOV EDI,0x286                       ; 004a1ee1
     PUSH 0x5dcdd6                       ; 004a1ee6 | = "Too many events - check events.txt"
-    MOV dword ptr [0x01d1d400],ESI      ; 004a1eeb | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 004a1ef1 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 004a1eeb | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 004a1ef1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a1ef7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004a1efc
@@ -1324,8 +1324,8 @@ section .text
     MOV EBX,0x5dcf89                    ; 004a2630 | = "..\\core\\event.cpp"
     MOV ESI,0x337                       ; 004a2635
     PUSH 0x5dcf9b                       ; 004a263a | = "Can't find CDemonLight for light %s i..."
-    MOV dword ptr [0x01d1d400],EBX      ; 004a263f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004a2645 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 004a263f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 004a2645 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a264b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004a2650
@@ -6493,12 +6493,12 @@ section .text
     CMP dword ptr [EBP + 0x72],0x0      ; 004a56d7
     JNZ 0x004a5706                      ; 004a56db
         ;   XREF to: 004a5706 (CONDITIONAL_JUMP)  ; LAB_004a5706
-    MOV dword ptr [0x01d1d400],0x5ddca1 ; 004a56dd | g_CHAR_PTR_01d1d400 | = "..\\core\\event.cpp"
+    MOV dword ptr [0x01d1d400],0x5ddca1 ; 004a56dd | g_CurrentFilename | = "..\\core\\event.cpp"
     LEA EAX,[EBP + 0xfffff9c2]          ; 004a56e7
     PUSH EAX                            ; 004a56ed
     MOV EDX,0x75a                       ; 004a56ee
     PUSH 0x5ddcb3                       ; 004a56f3 | = "Can't find CDemonLight for light %s i..."
-    MOV dword ptr [0x01d1d404],EDX      ; 004a56f8 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 004a56f8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004a56fe
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004a5703

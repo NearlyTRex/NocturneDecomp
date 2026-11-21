@@ -140,8 +140,8 @@ __asm {
         mov ECX,0x5dbc68
         mov EBX,0xa4
         push 0x5dbc7e
-        mov dword ptr [g_CHAR_PTR_01d1d400],ECX
-        mov dword ptr [g_INT_01d1d404],EBX
+        mov dword ptr [g_CurrentFilename],ECX
+        mov dword ptr [g_CurrentLineNumber],EBX
         call core_main_c_displayErrorAndQuit_FUN_005030e0
         add ESP,0x4
         jmp LAB_00498378

@@ -25,8 +25,8 @@
 ;   _FILE* g_ActorDataFile
 ;   int g_ActorReadingMode
 ;   CDemonActor* g_CurrentActorBeingProcessed
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040ad60
@@ -62,8 +62,8 @@ section .text
     MOV EDX,0x5d2801                    ; 0040add6 | = "..\\core\\actor.cpp"
     MOV ECX,0x7cf                       ; 0040addb
     PUSH 0x5d2813                       ; 0040ade0 | = "CDemonActor::save - tried to save act..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0040ade5 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040adeb | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0040ade5 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0040adeb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040adf1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0040adf6
@@ -126,8 +126,8 @@ section .text
     MOV EDX,0x5d286e                    ; 0040ae9d | = "..\\core\\actor.cpp"
     MOV ECX,0x7f1                       ; 0040aea2
     PUSH 0x5d2880                       ; 0040aea7 | = "IO Error after writing actor of type %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0040aeac | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040aeb2 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0040aeac | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0040aeb2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040aeb8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0040aebd

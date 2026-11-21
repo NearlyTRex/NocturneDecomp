@@ -94,8 +94,8 @@ section .text
     MOV EAX,0x5e827d                    ; 0050d6ad | = "..\\core\\menu.cpp"
     MOV EDX,0x8af                       ; 0050d6b2
     PUSH 0x5e828e                       ; 0050d6b7 | = "Too many custom keys!"
-    MOV [0x01d1d400],EAX                ; 0050d6bc | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0050d6c1 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0050d6bc | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0050d6c1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050d6c7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050d6cc
@@ -137,8 +137,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050d72e | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050d733
     PUSH 0x5e828e                       ; 0050d738 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050d73d | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050d743 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050d73d | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050d743 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050d748
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050d74d
@@ -180,8 +180,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050d7af | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050d7b4
     PUSH 0x5e828e                       ; 0050d7b9 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050d7be | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050d7c4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050d7be | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050d7c4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050d7c9
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050d7ce
@@ -223,8 +223,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050d830 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050d835
     PUSH 0x5e828e                       ; 0050d83a | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050d83f | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050d845 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050d83f | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050d845 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050d84a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050d84f
@@ -266,8 +266,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050d8b1 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050d8b6
     PUSH 0x5e828e                       ; 0050d8bb | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050d8c0 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050d8c6 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050d8c0 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050d8c6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050d8cb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050d8d0
@@ -309,8 +309,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050d932 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050d937
     PUSH 0x5e828e                       ; 0050d93c | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050d941 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050d947 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050d941 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050d947 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050d94c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050d951
@@ -352,8 +352,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050d9b3 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050d9b8
     PUSH 0x5e828e                       ; 0050d9bd | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050d9c2 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050d9c8 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050d9c2 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050d9c8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050d9cd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050d9d2
@@ -395,8 +395,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050da34 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050da39
     PUSH 0x5e828e                       ; 0050da3e | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050da43 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050da49 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050da43 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050da49 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050da4e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050da53
@@ -438,8 +438,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050dab5 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050daba
     PUSH 0x5e828e                       ; 0050dabf | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050dac4 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050daca | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050dac4 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050daca | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050dacf
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050dad4
@@ -481,8 +481,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050db36 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050db3b
     PUSH 0x5e828e                       ; 0050db40 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050db45 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050db4b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050db45 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050db4b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050db50
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050db55
@@ -524,8 +524,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050dbb7 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050dbbc
     PUSH 0x5e828e                       ; 0050dbc1 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050dbc6 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050dbcc | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050dbc6 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050dbcc | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050dbd1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050dbd6
@@ -571,8 +571,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050dc43 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050dc48
     PUSH 0x5e828e                       ; 0050dc4d | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050dc52 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050dc58 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050dc52 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050dc58 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050dc5d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050dc62
@@ -612,8 +612,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050dcbd | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050dcc2
     PUSH 0x5e828e                       ; 0050dcc7 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050dccc | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050dcd2 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050dccc | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050dcd2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050dcd7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050dcdc
@@ -655,8 +655,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050dd3e | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050dd43
     PUSH 0x5e828e                       ; 0050dd48 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050dd4d | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050dd53 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050dd4d | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050dd53 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050dd58
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050dd5d
@@ -698,8 +698,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050ddbf | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050ddc4
     PUSH 0x5e828e                       ; 0050ddc9 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050ddce | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050ddd4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050ddce | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050ddd4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050ddd9
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050ddde
@@ -741,8 +741,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050de40 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050de45
     PUSH 0x5e828e                       ; 0050de4a | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050de4f | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050de55 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050de4f | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050de55 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050de5a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050de5f
@@ -784,8 +784,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050dec1 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050dec6
     PUSH 0x5e828e                       ; 0050decb | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050ded0 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050ded6 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050ded0 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050ded6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050dedb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050dee0
@@ -827,8 +827,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050df42 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050df47
     PUSH 0x5e828e                       ; 0050df4c | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050df51 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050df57 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050df51 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050df57 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050df5c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050df61
@@ -870,8 +870,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050dfc3 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050dfc8
     PUSH 0x5e828e                       ; 0050dfcd | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050dfd2 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050dfd8 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050dfd2 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050dfd8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050dfdd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050dfe2
@@ -913,8 +913,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e044 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e049
     PUSH 0x5e828e                       ; 0050e04e | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e053 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e059 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e053 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e059 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e05e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e063
@@ -956,8 +956,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e0c5 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e0ca
     PUSH 0x5e828e                       ; 0050e0cf | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e0d4 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e0da | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e0d4 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e0da | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e0df
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e0e4
@@ -999,8 +999,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e149 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e14e
     PUSH 0x5e828e                       ; 0050e153 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e158 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e15e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e158 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e15e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e163
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e168
@@ -1042,8 +1042,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e1cd | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e1d2
     PUSH 0x5e828e                       ; 0050e1d7 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e1dc | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e1e2 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e1dc | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e1e2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e1e7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e1ec
@@ -1085,8 +1085,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e251 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e256
     PUSH 0x5e828e                       ; 0050e25b | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e260 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e266 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e260 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e266 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e26b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e270
@@ -1128,8 +1128,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e2d5 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e2da
     PUSH 0x5e828e                       ; 0050e2df | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e2e4 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e2ea | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e2e4 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e2ea | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e2ef
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e2f4
@@ -1171,8 +1171,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e359 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e35e
     PUSH 0x5e828e                       ; 0050e363 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e368 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e36e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e368 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e36e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e373
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e378
@@ -1214,8 +1214,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e3dd | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e3e2
     PUSH 0x5e828e                       ; 0050e3e7 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e3ec | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e3f2 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e3ec | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e3f2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e3f7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e3fc
@@ -1257,8 +1257,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e461 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e466
     PUSH 0x5e828e                       ; 0050e46b | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e470 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e476 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e470 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e476 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e47b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e480
@@ -1300,8 +1300,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e4e5 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e4ea
     PUSH 0x5e828e                       ; 0050e4ef | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e4f4 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e4fa | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e4f4 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e4fa | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e4ff
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e504
@@ -1343,8 +1343,8 @@ section .text
     MOV EBP,0x5e827d                    ; 0050e569 | = "..\\core\\menu.cpp"
     MOV EAX,0x8af                       ; 0050e56e
     PUSH 0x5e828e                       ; 0050e573 | = "Too many custom keys!"
-    MOV dword ptr [0x01d1d400],EBP      ; 0050e578 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0050e57e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0050e578 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0050e57e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050e583
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050e588

@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Set_hardware_sfx_seconda_005f54d2
 ;   TerminatedCString s_Set_hardware_sfx_seconda_005f5506
 ;   TerminatedCString s_Play_hardware_sfx_second_005f552f
-;   char* g_CHAR_PTR_01d1d400
+;   char* g_CurrentFilename
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -56,8 +56,8 @@ section .text
     MOV ECX,0x5f5340                    ; 00579af9 | = "..\\sound\\snddx.cpp"
     MOV EDI,0x61a                       ; 00579afe
     PUSH 0x5f5353                       ; 00579b03 | = "DirectSoundDevice::startSfx - invalid..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00579b08 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00579b0e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00579b08 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00579b0e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00579b14
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00579b19
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_00579b55
     MOV EDX,0x626                       ; 00579b5a
     PUSH 0x5f53d4                       ; 00579b5f | = "DirectSoundDevice::startSfx - exotic ..."
-    MOV [0x01d1d400],EAX                ; 00579b64 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00579b69 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 00579b64 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 00579b69 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00579b6f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00579b74
@@ -149,8 +149,8 @@ section .text
         ;   Label: LAB_00579c1c
     MOV ECX,0x624                       ; 00579c21
     PUSH 0x5f5397                       ; 00579c26 | = "DirectSoundDevice::startSfx - no samp..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00579c2b | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00579c31 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00579c2b | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00579c31 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00579c37
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00579c3c

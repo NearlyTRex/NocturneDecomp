@@ -16,8 +16,8 @@
 ;   TerminatedCString s_engine_2d_c_005d2060
 ;   TerminatedCString s_Unable_to_open_VGA_palet_005d206f
 ;   uchar[768] g_UCHAR_ARRAY_01c4e9f8
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -76,8 +76,8 @@ section .text
     MOV ECX,0x5d2060                    ; 004015f1 | = "..\\engine\\2d.c"
     MOV EBX,0x29b                       ; 004015f6
     PUSH 0x5d206f                       ; 004015fb | = "Unable to open VGA palette"
-    MOV dword ptr [0x01d1d400],ECX      ; 00401600 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00401606 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00401600 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00401606 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040160c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00401611

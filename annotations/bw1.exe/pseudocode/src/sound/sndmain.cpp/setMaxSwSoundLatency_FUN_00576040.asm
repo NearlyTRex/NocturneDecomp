@@ -15,8 +15,8 @@
 ;   double g_MinLatencyThreshold = 0.0500000000000000
 ;   double g_MaxLatencyThreshold = 2
 ;   float g_MaxSoftwareLatency = 0.5
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_00576079
     MOV ECX,0x186e                      ; 0057607e
     PUSH 0x5f447d                       ; 00576083 | = "setMaxSwSoundLatency - can't do this ..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00576088 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0057608e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00576088 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0057608e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00576094
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00576099

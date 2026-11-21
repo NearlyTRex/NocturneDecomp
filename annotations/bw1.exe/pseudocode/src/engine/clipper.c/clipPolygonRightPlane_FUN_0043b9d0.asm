@@ -16,8 +16,8 @@
 ;   TerminatedCString s_Ran_out_of_clipped_verts_005d66ee
 ;   SRenderVertex[12] g_ClipperTempBuffer
 ;   int g_ClipperTempCount
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -95,8 +95,8 @@ section .text
     MOV ECX,0x5d66da                    ; 0043ba53 | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 0043ba58
     PUSH 0x5d66ee                       ; 0043ba5d | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d1d400],ECX      ; 0043ba62 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0043ba68 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0043ba62 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0043ba68 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043ba6d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043ba72
@@ -126,8 +126,8 @@ section .text
     MOV EDX,0x5d66da                    ; 0043baaa | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 0043baaf
     PUSH 0x5d66ee                       ; 0043bab4 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d1d400],EDX      ; 0043bab9 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0043babf | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0043bab9 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0043babf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043bac5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0043baca

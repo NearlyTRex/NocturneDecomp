@@ -120,8 +120,8 @@ section .text
         ;   Label: LAB_004ac12b
     MOV EBP,0x11d                       ; 004ac130
     PUSH 0x5df199                       ; 004ac135 | = "CSmokeParticle::render - Frame out of..."
-    MOV dword ptr [0x01d1d400],ESI      ; 004ac13a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 004ac140 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 004ac13a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 004ac140 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004ac146
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004ac14b

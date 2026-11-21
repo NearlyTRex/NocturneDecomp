@@ -7,8 +7,8 @@
 ; SMRGLPrimitiveTriangle * Stack[0x4]:4   primitive_list
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -52,8 +52,8 @@ section .text
     MOV EBP,0x5e6adb                    ; 004fd149
     MOV EAX,0x1f5                       ; 004fd14e
     PUSH 0x5e6af0                       ; 004fd153
-    MOV dword ptr [0x01d1d400],EBP      ; 004fd158 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004fd15e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 004fd158 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004fd15e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004fd163
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004fd168
@@ -117,8 +117,8 @@ section .text
         ;   Label: LAB_004fd1cf
     MOV ECX,0x1f6                       ; 004fd1d4
     PUSH 0x5e6b30                       ; 004fd1d9
-    MOV dword ptr [0x01d1d400],EDX      ; 004fd1de | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004fd1e4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004fd1de | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 004fd1e4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004fd1ea
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004fd1ef

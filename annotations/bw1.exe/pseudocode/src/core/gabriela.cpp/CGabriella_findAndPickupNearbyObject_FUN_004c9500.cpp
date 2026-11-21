@@ -168,8 +168,8 @@ LAB_004c970f:
   if (local_3c[2] < 2) {
     if (local_3c[2] != 1) {
 LAB_004c9956:
-      g_CHAR_PTR_01d1d400 = "..\\core\\gabriela.cpp";
-      g_INT_01d1d404 = 0x637;
+      g_CurrentFilename = "..\\core\\gabriela.cpp";
+      g_CurrentLineNumber = 1591;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze - invalid pickUpType: %d");
       return 1;
     }

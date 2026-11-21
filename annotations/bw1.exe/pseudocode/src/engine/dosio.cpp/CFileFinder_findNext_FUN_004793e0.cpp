@@ -13,8 +13,8 @@ int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_004793e0(CFileFinder *this
   _WIN32_FIND_DATAA _Stack_148;
   
   if (this_ptr->has_results == 0) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\dosio.c";
-    g_INT_01d1d404 = 0x28e;
+    g_CurrentFilename = "..\\engine\\dosio.c";
+    g_CurrentLineNumber = 654;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CFileFinder::open - search not opened!");
   }
   BVar1 = FindNextFileA(this_ptr->search_handle,&_Stack_148);

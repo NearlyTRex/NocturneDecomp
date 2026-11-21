@@ -337,8 +337,8 @@ section .text
     MOV ECX,0x5f2fb5                    ; 0056eb3f | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x36b                       ; 0056eb44
     PUSH 0x5f2fca                       ; 0056eb49 | = "Can't open %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0056eb4e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056eb54 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0056eb4e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0056eb54 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056eb5a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0056eb5f
@@ -462,8 +462,8 @@ section .text
     MOV ECX,0x5f3016                    ; 0056eca9 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x3dd                       ; 0056ecae
     PUSH 0x5f302b                       ; 0056ecb3 | = "Don't know length of sample %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0056ecb8 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056ecbe | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0056ecb8 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0056ecbe | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056ecc4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0056ecc9
@@ -539,8 +539,8 @@ section .text
     MOV ECX,0x5f3086                    ; 0056edb0 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x40d                       ; 0056edb5
     PUSH 0x5f309b                       ; 0056edba | = "Unknown sample file format extension: %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0056edbf | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056edc5 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0056edbf | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0056edc5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056edcb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     JMP 0x0056ebe8                      ; 0056edd0

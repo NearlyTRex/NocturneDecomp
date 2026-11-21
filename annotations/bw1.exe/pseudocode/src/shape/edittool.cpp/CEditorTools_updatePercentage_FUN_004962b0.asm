@@ -504,8 +504,8 @@ section .text
         ;   Label: LAB_0049678f
     MOV EBX,0x7ed                       ; 00496794
     PUSH 0x5dc05a                       ; 00496799 | = "CEditorTools::updatePercentageWindow ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0049679e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 004967a4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0049679e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 004967a4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004967aa
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004967af

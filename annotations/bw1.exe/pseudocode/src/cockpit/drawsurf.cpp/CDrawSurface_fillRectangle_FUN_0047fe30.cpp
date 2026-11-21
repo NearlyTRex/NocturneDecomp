@@ -49,8 +49,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0047fe30(CDrawS
             return;
           }
 LAB_0047ff9e:
-          g_CHAR_PTR_01d1d400 = "..\\cockpit\\drawsurf.cpp";
-          g_INT_01d1d404 = 0x525;
+          g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
+          g_CurrentLineNumber = 1317;
           core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid bitsPerPixel!");
           return;
         }

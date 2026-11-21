@@ -10,8 +10,8 @@
 ;   engine_matrix.c_normalizeVector3DFixed_FUN_00508700 at 00508722
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_005086c9
     MOV ECX,0x391                       ; 005086ce
     PUSH 0x5e776e                       ; 005086d3
-    MOV dword ptr [0x01d1d400],EDX      ; 005086d8 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 005086de | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 005086d8 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 005086de | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005086e4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005086e9

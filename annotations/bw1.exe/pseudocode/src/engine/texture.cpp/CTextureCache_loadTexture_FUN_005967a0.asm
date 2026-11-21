@@ -119,8 +119,8 @@ section .text
     MOV EBP,0x5f7969                    ; 00596843 | = "..\\engine\\texture.cpp"
     MOV EAX,0x107                       ; 00596848
     PUSH 0x5f797f                       ; 0059684d | = "CTextureCache::load - Can't get file ..."
-    MOV dword ptr [0x01d1d400],EBP      ; 00596852 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 00596858 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 00596852 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 00596858 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0059685d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00596862
@@ -241,8 +241,8 @@ section .text
     MOV EDI,0x5f79c1                    ; 00596997 | = "..\\engine\\texture.cpp"
     MOV EAX,0x131                       ; 0059699c
     PUSH 0x5f79d7                       ; 005969a1 | = "CTextureCache::load - Out of memory"
-    MOV dword ptr [0x01d1d400],EDI      ; 005969a6 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 005969ac | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 005969a6 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 005969ac | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005969b1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005969b6
@@ -264,11 +264,11 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x5f7a2c                    ; 005969ec | = "..\\engine\\texture.cpp"
     ADD ESP,0x10                        ; 005969f1
-    MOV [0x01d1d400],EAX                ; 005969f4 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d400],EAX                ; 005969f4 | g_CurrentFilename
     LEA EAX,[ESP + 0x100]               ; 005969f9
     MOV EDX,0x14a                       ; 00596a00
     PUSH EAX                            ; 00596a05
-    MOV dword ptr [0x01d1d404],EDX      ; 00596a06 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 00596a06 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596a0c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596a11
@@ -286,8 +286,8 @@ section .text
     MOV EDI,0x5f7a42                    ; 00596a2d | = "..\\engine\\texture.cpp"
     MOV EAX,0x154                       ; 00596a32
     PUSH 0x5f7a58                       ; 00596a37 | = "CTextureCache::load - Out of memory"
-    MOV dword ptr [0x01d1d400],EDI      ; 00596a3c | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 00596a42 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00596a3c | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 00596a42 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596a47
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596a4c
@@ -306,8 +306,8 @@ section .text
     MOV ECX,0x5f7a7c                    ; 00596a63 | = "..\\engine\\texture.cpp"
     MOV EDI,0x15a                       ; 00596a68
     PUSH 0x5f7a92                       ; 00596a6d | = "CTextureCache::load - Out of memory"
-    MOV dword ptr [0x01d1d400],ECX      ; 00596a72 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00596a78 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00596a72 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00596a78 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596a7e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596a83
@@ -449,8 +449,8 @@ section .text
     MOV EDX,0x5f7932                    ; 00596c35 | = "..\\engine\\texture.cpp"
     MOV ECX,0xfb                        ; 00596c3a
     PUSH 0x5f7948                       ; 00596c3f | = "Texture name is too big : %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 00596c44 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00596c4a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00596c44 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00596c4a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596c50
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00596c55
@@ -523,8 +523,8 @@ section .text
     MOV ESI,0x5f7b09                    ; 00596d1e | = "..\\engine\\texture.cpp"
     MOV EDI,0x19e                       ; 00596d23
     PUSH 0x5f7b1f                       ; 00596d28 | = "CTextureCache::load - Out of memory"
-    MOV dword ptr [0x01d1d400],ESI      ; 00596d2d | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00596d33 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00596d2d | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00596d33 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596d39
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596d3e
@@ -615,11 +615,11 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x5f7af3                    ; 00596e33 | = "..\\engine\\texture.cpp"
     ADD ESP,0x10                        ; 00596e38
-    MOV [0x01d1d400],EAX                ; 00596e3b | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d400],EAX                ; 00596e3b | g_CurrentFilename
     LEA EAX,[ESP + 0x100]               ; 00596e40
     MOV EDX,0x194                       ; 00596e47
     PUSH EAX                            ; 00596e4c
-    MOV dword ptr [0x01d1d404],EDX      ; 00596e4d | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 00596e4d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596e53
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00596e58

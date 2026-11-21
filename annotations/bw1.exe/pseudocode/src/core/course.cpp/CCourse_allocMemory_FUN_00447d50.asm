@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_course_cpp_005d714e
 ;   TerminatedCString s_CCourse_allocMemory_out_005d7161
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_free_FUN_00447ee0
@@ -52,8 +52,8 @@ section .text
         ;   Label: LAB_00447d80
     MOV EBX,0x6e                        ; 00447d85
     PUSH 0x5d7161                       ; 00447d8a | = "CCourse::allocMemory - out of hunk!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00447d8f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00447d95 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00447d8f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00447d95 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00447d9b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00447da0

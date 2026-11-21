@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_005f7c55
 ;   TerminatedCString s_initTexture_out_of_memor_005f7c6b
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
@@ -50,8 +50,8 @@ section .text
         ;   Label: LAB_0059799e
     MOV ECX,0x3c2                       ; 005979a3
     PUSH 0x5f7c6b                       ; 005979a8 | = "initTexture - out of memory!"
-    MOV dword ptr [0x01d1d400],EDX      ; 005979ad | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 005979b3 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 005979ad | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 005979b3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005979b9
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005979be

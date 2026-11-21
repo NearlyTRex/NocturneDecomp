@@ -31,8 +31,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0(CEdit
   int local_24;
   
   if (g_WindowStackCount < 1) {
-    g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
-    g_INT_01d1d404 = 0x7ed;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2029;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CEditorTools::updatePercentageWindow - no window open!");
   }
   local_54 = 0.0;
