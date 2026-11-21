@@ -74,6 +74,18 @@ def fixture_annotations(tmp_path, monkeypatch):
     return tmp_path
 
 
+def test_each_programs_line_number_global_is_found_by_name(annotations):
+    labels = annotations / "bw1.exe" / "symbols_label"
+    labels.mkdir()
+    (labels / "symbols_label_bucket_00.json").write_text(json.dumps([
+        {"addr": "01d1d400", "name": "g_CurrentFilename"},
+        {"name": "g_CurrentLineNumber"},
+        {"addr": "01d1d404", "name": "g_CurrentLineNumber"}]))
+    assert rss.line_number_global("bw1.exe") == 0x01D1D404
+    assert rss.line_number_global("nocedit.exe") is None
+    assert rss.program_image("bw1.exe").line_number_global == 0x01D1D404
+
+
 def test_names_shared_by_two_functions_take_their_file():
     assert rss.unit_file("core_fire.cpp") == "fire.cpp"
     assert rss.unit_file("plain.cpp") == "plain.cpp" and rss.unit_file(None) is None

@@ -6,8 +6,10 @@ sibling transfer carried over from nocedit. A name more than one function in a
 program carries (each unit's `staticInit`) is qualified by its file, and one
 still not unique is left out. Each pair of bodies is compared the way
 diff_functions.py compares them: raw PE bytes, relocations masked, with a class
-(identical, layout-drift, const-change, regalloc, operand-change, logic-change)
-and a ratio, the share of the instruction sequence the two have in common.
+(identical, layout-drift, frame-change, const-change, regalloc, operand-change,
+logic-change) and a ratio, the share of the instruction sequence the two have in
+common. Each program's g_CurrentLineNumber, found by name among its exported
+labels, lets a changed source line number read as no change.
 
 Each program's report answers two questions:
 
@@ -44,8 +46,9 @@ import sibling_match as sm  # noqa: E402
 
 REFERENCE = "nocedit.exe"
 DEFAULT_PROGRAMS = (REFERENCE, "nocturne.exe", "bw1.exe", "blairwitch2.exe", "bw3.exe")
-CLASSES = ("identical", "layout-drift", "const-change", "regalloc", "operand-change",
-           "logic-change", "undecodable")
+CLASSES = ("identical", "layout-drift", "frame-change", "const-change", "regalloc",
+           "operand-change", "logic-change", "undecodable")
+LINE_NUMBER_GLOBAL = "g_CurrentLineNumber"
 SHORT = {"nocedit.exe": "nocedit", "nocturne.exe": "nocturne", "bw1.exe": "bw1",
          "blairwitch2.exe": "bw2", "bw3.exe": "bw3"}
 REPORT = "sibling_similarity"
@@ -84,6 +87,19 @@ def match_keys(cores_by_program):
     return out
 
 
+def line_number_global(program):
+    """The address of the program's line-number global, from its exported labels, or None."""
+    for label in sm._load_buckets(program, "symbols_label"):  # pylint: disable=protected-access
+        if label.get("name") == LINE_NUMBER_GLOBAL and label.get("addr"):
+            return int(label["addr"], 16)
+    return None
+
+
+def program_image(program):
+    """The program's raw PE, with its line-number global known to diff_functions."""
+    return df.Image(sm.find_program_exe(program), line_number_global(program))
+
+
 def body_tokens(image, md, function):
     """diff_functions.tokens over the function's body ranges, or None when they hold no
     instruction (a range outside the file, or a 1-byte body Ghidra cut short)."""
@@ -93,7 +109,8 @@ def body_tokens(image, md, function):
         buf = image.range_bytes(start, end)
         if buf:
             parts.append(buf)
-    found = df.tokens(md, b"".join(parts), int(function["addr"], 16)) if parts else None
+    found = (df.tokens(md, b"".join(parts), int(function["addr"], 16), image.line_number_global)
+             if parts else None)
     return found if found and found[0] else None
 
 
@@ -201,7 +218,7 @@ def load(programs):
     keys_by_program = match_keys(cores)
     tokens_by_program = {}
     for p in programs:
-        image = df.Image(sm.find_program_exe(p))
+        image = program_image(p)
         tokens_by_program[p] = {k: body_tokens(image, md, f)
                                 for k, f in keys_by_program[p].items()}
     return keys_by_program, tokens_by_program

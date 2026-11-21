@@ -114,9 +114,120 @@ def test_an_image_without_a_readable_reloc_table_relocates_nothing(tmp_path):
 
 def test_tokens_mask_branch_targets_and_resync_past_undecodable_bytes():
     # ff ff does not decode; one byte on, ff 6a 07 is jmp [edx+7], and the call after it is still found.
-    ops, disps, imms, regs = df.tokens(md(), b"\x90\xff\xff" + b"\x6a\x07" + call_rel32(0x105, 0x200), 0x100)
+    ops, disps, imms, regs, frame_free = df.tokens(
+        md(), b"\x90\xff\xff" + b"\x6a\x07" + call_rel32(0x105, 0x200), 0x100)
     assert ops == ["nop:", "jmp:m", "call:i"]
     assert (disps, imms, regs) == ([7], [], [])
+    assert frame_free == [("nop", ()), ("jmp", (("m", "edx", None, 1, 7),)), ("call", (("i", None),))]
+
+
+# CVector3f::length as nocedit has it, and as the Blair Witch builds have it with a frame pointer.
+SUB_ESP_4, ADD_ESP_4 = b"\x83\xec\x04", b"\x83\xc4\x04"
+LENGTH_BODY = b"\xd9\x00" + b"\xd9\x1c\x24" + b"\x8b\x04\x24"          # fld [eax]; fstp [esp]; mov eax,[esp]
+NOCEDIT_LENGTH = SUB_ESP_4 + b"\x8b\x44\x24\x08" + LENGTH_BODY + ADD_ESP_4 + RET   # mov eax,[esp+8]
+FRAMED_PROLOGUE = b"\x55" + b"\x89\xe5" + SUB_ESP_4 + b"\x83\xe4\xf8"  # push ebp; mov ebp,esp; ...; and esp,-8
+FRAMED_LENGTH = FRAMED_PROLOGUE + b"\x8b\x45\x08" + LENGTH_BODY + b"\x89\xec" + b"\x5d" + RET  # [ebp+8]
+
+
+def test_a_body_built_with_a_frame_pointer_is_a_frame_change():
+    cls, _dist, detail = df.classify(NOCEDIT_LENGTH, FRAMED_LENGTH, md(), 0, 0)
+    assert (cls, detail) == ("frame-change", "7 vs 11 insns, frame code dropped")
+
+
+def test_leave_restores_the_stack_as_mov_and_pop_do():
+    with_leave = FRAMED_PROLOGUE + b"\x8b\x45\x08" + LENGTH_BODY + b"\xc9" + RET
+    assert df.classify(NOCEDIT_LENGTH, with_leave, md(), 0, 0)[0] == "frame-change"
+
+
+# An argument has one place whichever register reads it, so reading another one is a change.
+def test_reading_another_argument_through_the_frame_pointer_is_a_logic_change():
+    second_argument = FRAMED_PROLOGUE + b"\x8b\x45\x0c" + LENGTH_BODY + b"\x89\xec" + b"\x5d" + RET
+    assert df.classify(NOCEDIT_LENGTH, second_argument, md(), 0, 0)[0] == "logic-change"
+
+
+def test_pushes_move_where_esp_reads_an_argument():
+    # push ecx; mov eax,[esp+8]; pop ecx; ret reads the first argument, as mov eax,[esp+4] does.
+    pushed = b"\x51" + b"\x8b\x44\x24\x08" + b"\x59" + RET
+    plain = b"\x8b\x44\x24\x04" + RET
+    assert df.tokens(md(), pushed, 0)[4][1] == ("mov", (("r", "eax"), ("arg", 4)))
+    assert df.tokens(md(), plain, 0)[4][0] == ("mov", (("r", "eax"), ("arg", 4)))
+
+
+def test_after_esp_is_moved_some_other_way_its_reads_are_locals():
+    # mov esp,eax; mov eax,[esp+8]: nothing says where esp stands any more.
+    assert df.tokens(md(), b"\x89\xc4" + b"\x8b\x44\x24\x08" + RET, 0)[4][1] == ("mov", (("r", "eax"), ("local", 0)))
+    # A frame pointer never set up reads as a local too.
+    assert df.tokens(md(), b"\x8b\x45\x08" + RET, 0)[4][0] == ("mov", (("r", "eax"), ("local", 0)))
+    # leave with no frame pointer leaves esp unknown.
+    assert df.tokens(md(), b"\xc9" + b"\x8b\x44\x24\x08" + RET, 0)[4][0] == ("mov", (("r", "eax"), ("local", 0)))
+    # Past a ret, esp is unknown again.
+    assert df.tokens(md(), RET + b"\x8b\x44\x24\x08" + RET, 0)[4][1] == ("mov", (("r", "eax"), ("local", 0)))
+
+
+LINE_GLOBAL = 0x02F0CA4C
+STORE_LINE_ESI = b"\x89\x35" + struct.pack("<I", LINE_GLOBAL)      # mov [g_CurrentLineNumber], esi
+
+
+def mov_esi(value):
+    return b"\xbe" + struct.pack("<I", value)
+
+
+def store_line(value):
+    return b"\xc7\x05" + struct.pack("<I", LINE_GLOBAL) + struct.pack("<I", value)
+
+
+def test_a_line_number_stored_through_a_register_is_no_difference():
+    a = df.tokens(md(), mov_esi(105) + STORE_LINE_ESI + RET, 0, LINE_GLOBAL)
+    b = df.tokens(md(), mov_esi(108) + STORE_LINE_ESI + RET, 0, LINE_GLOBAL)
+    assert (a[1], a[2]) == ([df.LINE], [df.LINE])
+    assert df.classify_tokens(a, b)[0] == "identical"
+
+
+def test_a_line_number_stored_directly_is_no_difference():
+    a = df.tokens(md(), store_line(105) + RET, 0, LINE_GLOBAL)
+    b = df.tokens(md(), store_line(108) + RET, 0, LINE_GLOBAL)
+    assert df.classify_tokens(a, b)[0] == "identical"
+
+
+def test_without_the_line_number_global_a_line_number_is_a_constant():
+    a = df.tokens(md(), mov_esi(105) + STORE_LINE_ESI + RET, 0)
+    b = df.tokens(md(), mov_esi(108) + STORE_LINE_ESI + RET, 0)
+    assert df.classify_tokens(a, b)[0] == "const-change"
+
+
+@pytest.mark.parametrize("between", [
+    b"\x89\xc6",                                 # mov esi,eax: another value moved in
+    b"\x46",                                     # inc esi: changed in place
+])
+def test_a_register_written_since_its_constant_carries_no_line_number(between):
+    a = df.tokens(md(), mov_esi(105) + between + STORE_LINE_ESI + RET, 0, LINE_GLOBAL)
+    assert a[2] == [105]
+
+
+def test_a_call_leaves_no_constant_in_the_registers_it_clobbers():
+    mov_eax = b"\xb8" + struct.pack("<I", 105)
+    store_eax = b"\xa3" + struct.pack("<I", LINE_GLOBAL)             # mov [g_CurrentLineNumber], eax
+    a = df.tokens(md(), mov_eax + call_rel32(5, 0x200) + store_eax + RET, 0, LINE_GLOBAL)
+    assert a[2] == [105]
+    # esi survives the call.
+    b = df.tokens(md(), mov_esi(105) + call_rel32(5, 0x200) + STORE_LINE_ESI + RET, 0, LINE_GLOBAL)
+    assert b[2] == [df.LINE]
+
+
+def test_a_store_of_a_register_holding_no_constant_marks_nothing():
+    assert df.tokens(md(), STORE_LINE_ESI + RET, 0, LINE_GLOBAL)[2] == []
+
+
+def test_the_line_number_globals_address_is_left_unmasked(tmp_path):
+    path = tmp_path / "a.exe"
+    line_global = CODE + 0x80
+    code = mov_esi(105) + b"\x89\x35" + struct.pack("<I", line_global) + b"\x68" + struct.pack("<I", DATA) + RET
+    path.write_bytes(image({0x10: code}, relocs = (0x17, 0x1c)))
+    kept = df.Image(str(path), line_global)
+    assert kept.range_bytes(CODE + 0x10, CODE + 0x10 + len(code))[7:11] == struct.pack("<I", line_global)
+    assert kept.range_bytes(CODE + 0x10, CODE + 0x10 + len(code))[12:16] == b"\0\0\0\0"
+    assert kept.func_bytes(CODE + 0x10, CODE + 0x40)[7:11] == struct.pack("<I", line_global)
+    assert df.Image(str(path)).range_bytes(CODE + 0x10, CODE + 0x10 + len(code))[7:11] == b"\0\0\0\0"
 
 
 @pytest.mark.parametrize("offset, cls", [
