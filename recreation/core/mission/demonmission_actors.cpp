@@ -41,7 +41,8 @@ std::unique_ptr<CDemonActor> CDemonMission::removeActorFromList(const CDemonActo
 }
 
 // The original's flag to keep the actor is removeActorFromList here, which hands it back. Its
-// deleteActor checked the actor for corruption first in the editor build; retail doesn't. It
+// deleteActor checked the actor for corruption first (doCheckForInvalidPointers) in the editor
+// build; retail doesn't. It
 // also destroyed an actor that wasn't on the list, which here belongs to its caller.
 // deferred: clearing what the player heroes hold of the actor (the weapon in hand, both carry
 //   hands, the inventory's selected weapon and item), which the original left dangling (the

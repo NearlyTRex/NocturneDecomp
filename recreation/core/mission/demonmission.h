@@ -65,7 +65,8 @@ public:
     void freeAllAssets();
     // While the mission file is read, the carried items it lists, in order: one not named as asked,
     // or none left, is fatal.
-    [[nodiscard]] std::unique_ptr<CDemonActor> takeCarriedActor(std::string_view name) override;
+    [[nodiscard]] std::unique_ptr<CDemonActor>
+    getNextLoadedInventoryActor(std::string_view name) override;
     void writeFile(std::FILE *file_handle);
     // A reference that isn't quoted, as save files write a script's marker for no victim, quits
     // as not ported yet.

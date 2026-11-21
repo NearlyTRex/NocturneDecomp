@@ -59,7 +59,7 @@ int CActorArchive::getSavedVersion(const CDemonActorType &type) const {
 void CActorArchive::archiveLocation(CLocation &location, std::string_view description) {
     if (common::scanFormat(scanner_, "%d,%f,%f,%f", location.area_id, location.position.x,
                            location.position.y, location.position.z) != 4) {
-        quitOnPropertyError(kLocationType, description);
+        handleActorPropertyParseError(kLocationType, description);
     }
     archiveDescription(kLocationType, description);
 }
@@ -70,7 +70,7 @@ void CActorArchive::archiveOrientation(common::CVector3f &orientation,
                                        std::string_view description) {
     if (common::scanFormat(scanner_, "%f,%f,%f", orientation.x, orientation.z, orientation.y) !=
         3) {
-        quitOnPropertyError(kOrientationType, description);
+        handleActorPropertyParseError(kOrientationType, description);
     }
     archiveDescription(kOrientationType, description);
 }
@@ -79,7 +79,7 @@ void CActorArchive::archiveOrientation(common::CVector3f &orientation,
 // nocedit 0x0040b340
 void CActorArchive::archiveVector(common::CVector3f &vector, std::string_view description) {
     if (common::scanFormat(scanner_, "%f,%f,%f", vector.x, vector.y, vector.z) != 3) {
-        quitOnPropertyError(kVectorType, description);
+        handleActorPropertyParseError(kVectorType, description);
     }
     archiveDescription(kVectorType, description);
 }
@@ -90,7 +90,7 @@ void CActorArchive::archiveQuaternion(common::CQuaternion4f &quaternion,
                                       std::string_view description) {
     if (common::scanFormat(scanner_, "%f,%f,%f,%f", quaternion.w, quaternion.x, quaternion.y,
                            quaternion.z) != 4) {
-        quitOnPropertyError(kQuaternionType, description);
+        handleActorPropertyParseError(kQuaternionType, description);
     }
     archiveDescription(kQuaternionType, description);
 }
@@ -100,7 +100,7 @@ void CActorArchive::archiveQuaternion(common::CQuaternion4f &quaternion,
 void CActorArchive::archiveFloat(float &value, std::string_view description) {
     const std::optional<float> read = scanner_.scanFloat();
     if (!read) {
-        quitOnPropertyError(kFloatType, description);
+        handleActorPropertyParseError(kFloatType, description);
     }
     value = *read;
     archiveDescription(kFloatType, description);
@@ -111,7 +111,7 @@ void CActorArchive::archiveFloat(float &value, std::string_view description) {
 void CActorArchive::archiveInteger(int &value, std::string_view description) {
     const std::optional<int> read = scanner_.scanInteger();
     if (!read) {
-        quitOnPropertyError(kIntegerType, description);
+        handleActorPropertyParseError(kIntegerType, description);
     }
     value = *read;
     archiveDescription(kIntegerType, description);
@@ -129,14 +129,14 @@ void CActorArchive::archiveFlag(bool &value, std::string_view description) {
 void CActorArchive::archiveString(std::string &value, std::string_view description) {
     scanner_.skipWhitespace();
     if (!scanner_.expect('"')) {
-        quitOnPropertyError(kStringType, description);
+        handleActorPropertyParseError(kStringType, description);
     }
     if (scanner_.expect('"')) {
         value.clear();
     } else {
         const std::optional<std::string_view> text = scanner_.scanUntil('"');
         if (!text || !scanner_.expect('"')) {
-            quitOnPropertyError(kStringType, description);
+            handleActorPropertyParseError(kStringType, description);
         }
         value = *text;
     }
@@ -163,14 +163,14 @@ void CActorArchive::archiveClothList(CClothList &cloth_list, std::string_view de
     if (const std::optional<int> read = scanner_.scanInteger()) {
         count = *read;
     } else {
-        quitOnPropertyError("cloth count", description);
+        handleActorPropertyParseError("cloth count", description);
     }
     archiveDescription("clothCount", description);
     std::vector<std::string> filenames;
     for (int i = 0; i < count; ++i) {
         std::string filename;
         if (common::scanFormat(scanner_, " \"%[^\"]\"\n", filename) != 1) {
-            quitOnPropertyError("cloth filename entry", description);
+            handleActorPropertyParseError("cloth filename entry", description);
         }
         filenames.push_back(std::move(filename));
     }
@@ -202,7 +202,7 @@ void CActorArchive::archiveRules(CRuleList &rules, std::string_view description)
     archiveDescription("Rule list opening brace", description);
     const std::optional<int> count = scanner_.scanInteger();
     if (!count) {
-        quitOnPropertyError("rule count", description);
+        handleActorPropertyParseError("rule count", description);
     }
     archiveDescription("ruleCount", description);
     std::vector<SRule> read;
@@ -210,7 +210,7 @@ void CActorArchive::archiveRules(CRuleList &rules, std::string_view description)
         SRule rule;
         if (common::scanFormat(scanner_, " \"%[^\"]\" => \"%[^\"]\"\n", rule.condition,
                                rule.event) != 2) {
-            quitOnPropertyError("rule", description);
+            handleActorPropertyParseError("rule", description);
         }
         read.push_back(std::move(rule));
     }
@@ -252,7 +252,7 @@ void CActorArchive::archivePartStatus(CDeformableModelInstance &model,
         for (int i = 0; i < count; ++i) {
             const std::optional<int> value = scanner_.scanInteger();
             if (!value) {
-                quitOnPropertyError(type, "description");
+                handleActorPropertyParseError(type, "description");
             }
             set_part(static_cast<std::size_t>(i), *value);
         }
@@ -275,7 +275,7 @@ void CActorArchive::archivePartStatus(CDeformableModelInstance &model,
 void CActorArchive::archiveDescription(std::string_view type, std::string_view description) {
     static_cast<void>(scanner_.scanUntil('\n'));
     if (!scanner_.expect('\n')) {
-        quitOnPropertyError(type, description);
+        handleActorPropertyParseError(type, description);
     }
 }
 
@@ -283,7 +283,8 @@ void CActorArchive::archiveDescription(std::string_view type, std::string_view d
 // read, which an archive always is.
 // deferred: "saving" in the message, with CDemonActor::save
 // nocedit 0x0040b210
-void CActorArchive::quitOnPropertyError(std::string_view type, std::string_view description) const {
+void CActorArchive::handleActorPropertyParseError(std::string_view type,
+                                                  std::string_view description) const {
     common::displayErrorAndQuit(
         std::format("Error loading actor property.\nActor name: {}\nActor type: {}\nProperty "
                     "description: {}\nProperty type: {}\n",

@@ -69,7 +69,7 @@ CInventoryAssets::CInventoryAssets(const SInventoryAssetsOwners &owners) : owner
 
 // The square ends are read as tall as the inventory is, on both sides.
 // nocedit 0x004fd220
-void CInventoryAssets::load() {
+void CInventoryAssets::loadAssets() {
     screen_height_ = owners_.screen.getWindowHeight();
     if (const std::optional<std::string> size = owners_.dosio.readFile("data", "invsize.txt")) {
         const std::string lines = common::toTextMode(*size);
@@ -95,7 +95,7 @@ void CInventoryAssets::load() {
 }
 
 // Each a line of three quoted strings; the first line that isn't ends the list. The original's
-// list held 100 and ran past them.
+// list held 100 and ran past them. loadAssets' loop over the file, with loadItem reading each line.
 // nocedit 0x004fcfe0
 void CInventoryAssets::loadItems() {
     items_.clear();

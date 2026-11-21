@@ -32,7 +32,7 @@ TEST(CDemonMission, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonMission::freeAllAssets), void (CDemonMission::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CDemonMission::takeCarriedActor),
+        std::is_same_v<decltype(&CDemonMission::getNextLoadedInventoryActor),
                        std::unique_ptr<CDemonActor> (CDemonMission::*)(std::string_view)>);
     static_assert(
         std::is_same_v<decltype(&CDemonMission::writeFile), void (CDemonMission::*)(std::FILE *)>);

@@ -20,7 +20,8 @@ public:
                                                  std::string_view description) const = 0;
     // The next item the file lists as carried, handed over to its carrier; it must have the name.
     // Null when the file lists no carried items, which it then names only for its carriers.
-    [[nodiscard]] virtual std::unique_ptr<CDemonActor> takeCarriedActor(std::string_view name) = 0;
+    [[nodiscard]] virtual std::unique_ptr<CDemonActor>
+    getNextLoadedInventoryActor(std::string_view name) = 0;
 };
 
 } // namespace nocturne::core

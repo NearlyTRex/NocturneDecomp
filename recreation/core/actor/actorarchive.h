@@ -78,8 +78,8 @@ public:
 private:
     // The rest of the line; the end of the file before its newline is fatal.
     void archiveDescription(std::string_view type, std::string_view description);
-    [[noreturn]] void quitOnPropertyError(std::string_view type,
-                                          std::string_view description) const;
+    [[noreturn]] void handleActorPropertyParseError(std::string_view type,
+                                                    std::string_view description) const;
 
     common::CTextScanner &scanner_;
     const CDemonActor &actor_;

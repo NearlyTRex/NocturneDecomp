@@ -17,7 +17,7 @@ public:
                 (common::CTextScanner & scanner, const CDemonActor &owner,
                  std::string_view description),
                 (const, override));
-    MOCK_METHOD(std::unique_ptr<CDemonActor>, takeCarriedActor, (std::string_view name),
+    MOCK_METHOD(std::unique_ptr<CDemonActor>, getNextLoadedInventoryActor, (std::string_view name),
                 (override));
 };
 

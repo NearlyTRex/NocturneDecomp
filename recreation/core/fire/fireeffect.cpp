@@ -41,7 +41,7 @@ void CFireEffect::loadAssets() {
     owners_.renderer.captureTexture(spark_texture_);
     owners_.renderer.captureTexture(blue_spark_texture_);
     loadStakeAssets();
-    loadFireballAssets();
+    loadFireBallAssets();
     loadRockAssets();
     loadDynamiteAssets();
     loadGunFlameAssets();
@@ -57,7 +57,7 @@ void CFireEffect::loadStakeAssets() {
 }
 
 // nocedit 0x004c0ad0
-void CFireEffect::loadFireballAssets() {
+void CFireEffect::loadFireBallAssets() {
     fireball_model_.setModelName("fball.kfm");
     fireball_model_.preCache();
     small_fireball_model_.setModelName("smfball.kfm");

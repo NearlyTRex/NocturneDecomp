@@ -14,6 +14,7 @@ constexpr int kLeftButton = 1;
 
 CEdButton::CEdButton(CEdControls &controls) : controls_(controls) {}
 
+// clearActiveButtonIfMatch, all the destructor did, is here.
 // nocedit 0x004a6510
 // nocedit 0x004a6530
 CEdButton::~CEdButton() {

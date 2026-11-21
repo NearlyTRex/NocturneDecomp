@@ -27,6 +27,7 @@ constexpr int kTrackBorderColor = 7;
 // nocedit 0x004a5ae0
 CEdScrollBar::CEdScrollBar(CEdControls &controls) : controls_(controls) {}
 
+// clearActiveButtonIfMatch, all the destructor did, is here.
 // nocedit 0x004a5b20
 // nocedit 0x004a5b40
 CEdScrollBar::~CEdScrollBar() {

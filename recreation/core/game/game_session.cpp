@@ -179,7 +179,7 @@ void CGame::loadAssets(const SGameSessionOwners &session) {
     session.set.loadAssets();
     session.fire.loadAssets();
     session.gore.loadAssets();
-    session.inventory_assets.load();
+    session.inventory_assets.loadAssets();
 }
 
 } // namespace nocturne::core

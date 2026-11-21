@@ -103,7 +103,7 @@ void CInventory::load(CActorArchive &actor_archive) {
         std::string class_name;
         std::string actor_name;
         common::scanFormat(scanner, " %s \"%[^\"]\"\n", class_name, actor_name);
-        std::unique_ptr<CDemonActor> item = owners.actors.takeCarriedActor(actor_name);
+        std::unique_ptr<CDemonActor> item = owners.actors.getNextLoadedInventoryActor(actor_name);
         if (item == nullptr) {
             item = owners.actor_classes.createActorByName(class_name);
             item->setActorName(actor_name);

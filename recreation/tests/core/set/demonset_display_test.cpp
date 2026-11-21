@@ -116,6 +116,17 @@ TEST_F(CDemonSetDisplayTest, TheLocalHeroComesFirstWhereverItStands) {
     EXPECT_THAT(set_.getSortedRenderActors(), ElementsAre(&hero, &near));
 }
 
+// The original listed him whatever his state, so he hung frozen and whole beside his parts.
+TEST_F(CDemonSetDisplayTest, ALocalHeroBlownApartIsntListed) {
+    CBoxedActor near{{}};
+    CBoxedActor hero{{.x = 0.0F, .y = 0.0F, .z = 100.0F}};
+    hero.setLifecycleState(EActorLifecycleState::kDestroyed);
+    show({&near, &hero});
+    set_.setLocalHero(&hero);
+    set_.buildDisplayList(kShadowPass);
+    EXPECT_THAT(set_.getSortedRenderActors(), ElementsAre(&near));
+}
+
 TEST_F(CDemonSetDisplayTest, AnActorWithNoSolidOrLitPassDueIsLeftOut) {
     CBoxedActor drawn{{}};
     drawn.drawnHereWith(kShadowPass);

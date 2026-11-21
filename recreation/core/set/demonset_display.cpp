@@ -93,7 +93,10 @@ void CDemonSet::buildDisplayList(std::uint32_t dirty_flags_mask) {
     }
     std::ranges::sort(entries, {}, &SDisplayEntry::distance_squared);
     sorted_render_actors_.clear();
-    if (local_hero_ != nullptr) {
+    // The original drew a hero blown or torn apart frozen and whole where he died; his parts are
+    // actors of their own.
+    if (local_hero_ != nullptr &&
+        local_hero_->getLifecycleState() != EActorLifecycleState::kDestroyed) {
         sorted_render_actors_.push_back(local_hero_);
     }
     for (const SDisplayEntry &entry : entries) {

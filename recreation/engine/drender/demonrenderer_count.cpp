@@ -29,9 +29,10 @@ constexpr std::uint32_t kClipSides = 0x1fU;
 // depth, shifted down by 8, is nearer than the one in the row. The original kept the count in a
 // global.
 // nocedit 0x00490d35
-void countDepthPassingPixels(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge,
-                             std::uint32_t *row, std::span<const std::uint32_t> reciprocals,
-                             int &counter) {
+void renderDepthTestStatistics16xUnrolled(const SSoftwareEdge &left_edge,
+                                          const SSoftwareEdge &right_edge, std::uint32_t *row,
+                                          std::span<const std::uint32_t> reciprocals,
+                                          int &counter) {
     const SRowSpan span = getRowSpan(left_edge, right_edge);
     if (span.count <= 0) {
         return;
@@ -83,8 +84,8 @@ int CDemonRenderer::countVisiblePixelsPoly(const platform::SMRGLPrimitiveQuad &p
     state.vertex_processing = face_capture_enabled_;
     state.draw_scanline = [&counter, depth_rows, reciprocals = two_d_.getReciprocalLookupTable()](
                               const SSoftwareEdge &left, const SSoftwareEdge &right, int y) {
-        countDepthPassingPixels(left, right, depth_rows[static_cast<std::size_t>(y)], reciprocals,
-                                counter);
+        renderDepthTestStatistics16xUnrolled(left, right, depth_rows[static_cast<std::size_t>(y)],
+                                             reciprocals, counter);
         return false;
     };
     clipAndFillPoly(vertex_indices, state);

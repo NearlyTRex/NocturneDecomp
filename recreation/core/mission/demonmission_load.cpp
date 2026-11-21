@@ -149,7 +149,7 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
     for (int i = 0; i < set_count; ++i) {
         set_names_.emplace_back(readWord(scanner));
     }
-    owners_.actor.resetSavedVersions();
+    owners_.actor.resetActorTypeInfo();
     if (mission_version_num_ >= kTypedVersion) {
         readActorTypes(scanner);
     }
@@ -225,7 +225,7 @@ CDemonActor *CDemonMission::loadActor(CTextScanner &scanner, const CDemonActor &
 
 // Each claimed comes off the list, which leaves the next where the first was.
 // nocedit 0x00523520
-std::unique_ptr<CDemonActor> CDemonMission::takeCarriedActor(std::string_view name) {
+std::unique_ptr<CDemonActor> CDemonMission::getNextLoadedInventoryActor(std::string_view name) {
     if (!carried_start_) {
         return nullptr;
     }
