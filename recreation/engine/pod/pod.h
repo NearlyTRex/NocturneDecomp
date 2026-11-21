@@ -21,6 +21,13 @@ struct CPodSearchContext {
     SFoundFileInfo current_file_info;
 };
 
+// nocturne.ini's checks on the pods as they mount, both off by default: verifying reads every
+// byte of every pod.
+struct SPodSettings {
+    bool verify_checksums = false;
+    bool log_audit_trail = false;
+};
+
 // The mounted pods, searched in the order they were mounted: the first that holds a name wins.
 class CPod {
 public:
@@ -39,7 +46,8 @@ public:
     virtual void unpackArchives();
     virtual bool findFile(SFoundFileInfo &found_file_info);
     virtual void mount(std::string_view pod_filename);
-    // As mount, the pod mounted or why it couldn't be, rather than fatal.
+    // As mount, the pod mounted or why it couldn't be, rather than fatal. A pod failing its CRCs
+    // isn't mounted while the settings verify them.
     [[nodiscard]] std::expected<const CPodFile *, std::string>
     mountIfValid(std::string_view pod_filename);
     // Unmounts every pod mounted from the file, and tells the dismount handler.
@@ -57,6 +65,8 @@ public:
     [[nodiscard]] const std::vector<std::unique_ptr<CPodFile>> &getPodFiles() const;
     // Called after a dismount, so what was cached from the pods can go: the texture cache.
     void setDismountHandler(std::function<void()> handler);
+    void setSettings(const SPodSettings &settings);
+    [[nodiscard]] const SPodSettings &getSettings() const;
 
 protected:
     [[nodiscard]] platform::IFileSystem &getFileSystem();
@@ -66,6 +76,7 @@ private:
     const CDosIo &dosio_;
     std::vector<std::unique_ptr<CPodFile>> pod_files_;
     std::function<void()> dismount_handler_;
+    SPodSettings settings_;
 };
 
 } // namespace nocturne::engine

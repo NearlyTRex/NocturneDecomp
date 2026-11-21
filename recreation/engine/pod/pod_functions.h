@@ -17,7 +17,7 @@ inline constexpr std::uint32_t kCrc32Initial = 0xFFFFFFFF;
 
 [[nodiscard]] std::uint32_t crc32UpdateByte(std::uint32_t current_crc, std::uint8_t data_byte);
 [[nodiscard]] std::uint32_t crc32UpdateBuffer(std::span<const std::byte> data,
-                                              std::uint32_t initial_crc);
+                                              std::uint32_t initial_crc = kCrc32Initial);
 
 // The names, pod by pod, that end in extension (in upper case, as the pods store them); a name
 // an earlier pod also holds is skipped. At most max_results, each cut to result_string_length - 1

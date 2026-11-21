@@ -7,7 +7,12 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cstddef>
+#include <cstdint>
+#include <expected>
+#include <optional>
 #include <string>
+#include <string_view>
 #include <vector>
 
 namespace nocturne::engine {
@@ -219,6 +224,183 @@ TEST_F(CPodFileBadImageTest, AFileShorterThanAnyHeaderIsRefused) {
 TEST_F(CPodFileBadImageTest, APod2CutShortInItsHeaderIsntReadAsPod2) {
     EXPECT_FALSE(mount(withField(kCount, 2).substr(0, 0x5c)));
     EXPECT_EQ(pod_.getVersion(), 0);
+}
+
+// Images as the editor's builder leaves them: every CRC written.
+class CPodFileVerifyTest : public CPodFileTest {
+protected:
+    static constexpr std::size_t kPod2CrcStart = 8;
+    static constexpr std::size_t kPod1CrcStart = 0x54;
+
+    static std::string makeSignedPod2(const std::vector<SPodImageFile> &files) {
+        std::vector<SPodImageFile> signed_files = files;
+        for (SPodImageFile &file : signed_files) {
+            file.checksum = crcOf(file.data);
+        }
+        return withStoredCrc(makePod2("", signed_files), kPod2CrcStart);
+    }
+
+    std::expected<void, std::string> verify(const std::string &image) {
+        givenFile("ACT1.POD", image);
+        EXPECT_TRUE(pod_.mountFromFile("ACT1.POD"));
+        return pod_.verifyChecksum();
+    }
+};
+
+TEST_F(CPodFileVerifyTest, APod2WhoseCrcsAllMatchPasses) {
+    EXPECT_TRUE(verify(makeSignedPod2({{.name = "a", .data = "one"}, {.name = "b", .data = "2"}})));
+}
+
+// The original listed them in a pick list headed "!!!CRC CHECK FAILED!! on these files:".
+TEST_F(CPodFileVerifyTest, EachFileFailingItsOwnCrcIsNamed) {
+    const std::string image =
+        withStoredCrc(makePod2("", {{.name = "b", .data = "two", .checksum = 1},
+                                    {.name = "a", .data = "one", .checksum = crcOf("one")},
+                                    {.name = "c", .data = "six", .checksum = 2}}),
+                      kPod2CrcStart);
+    EXPECT_EQ(verify(image).error(), "fails its CRC check on b, c");
+}
+
+TEST_F(CPodFileVerifyTest, AFileTheImageEndsInsideFailsItsCrc) {
+    std::string image =
+        makeSignedPod2({{.name = "a", .data = "one"}, {.name = "b", .data = "two"}});
+    image.pop_back();
+    EXPECT_EQ(verify(image).error(), "fails its CRC check on b");
+}
+
+TEST_F(CPodFileVerifyTest, APod2WhoseWholeFileCrcIsWrongFails) {
+    std::string image = makeSignedPod2({{.name = "a", .data = "one"}});
+    image[0x10] = 'x';
+    EXPECT_EQ(verify(image).error(), "fails its CRC check");
+}
+
+// The CRC is read 64 KiB at a time, as nocedit's g_FileIOBuffer held it.
+TEST_F(CPodFileVerifyTest, ACrcRunsOnAcrossBlocks) {
+    const std::string big(0x10000 + 5, 'z');
+    std::string image = makeSignedPod2({{.name = "a", .data = big}, {.name = "b", .data = "two"}});
+    EXPECT_TRUE(verify(image));
+    image[image.size() - 3 - 2] = 'y';
+    EXPECT_EQ(verify(image).error(), "fails its CRC check on a");
+}
+
+TEST_F(CPodFileVerifyTest, APod1IsCheckedByItsWholeFileCrc) {
+    const std::string image =
+        withStoredCrc(makePod1("", {{.name = "a", .data = "one"}}), kPod1CrcStart);
+    EXPECT_TRUE(verify(image));
+    std::string changed = image;
+    changed.back() = 'x';
+    EXPECT_EQ(verify(changed).error(), "fails its CRC check");
+}
+
+// tground.pod, the one POD1 that ships, stores 0, which the original's check failed.
+TEST_F(CPodFileVerifyTest, APod1StoringNoCrcPasses) {
+    EXPECT_TRUE(verify(makePod1("", {{.name = "a", .data = "one"}})));
+}
+
+TEST_F(CPodFileVerifyTest, NothingMountedIsntVerified) {
+    EXPECT_EQ(pod_.verifyChecksum().error(), "isn't mounted");
+}
+
+TEST_F(CPodFileVerifyTest, APodGoneSinceItMountedCantBeVerified) {
+    givenFile("ACT1.POD", makeSignedPod2({{.name = "a"}}));
+    ASSERT_TRUE(pod_.mountFromFile("ACT1.POD"));
+    ON_CALL(file_system_, openFile(std::string_view("/game/ACT1.POD"), platform::EFileMode::Read))
+        .WillByDefault(::testing::ReturnNull());
+    EXPECT_EQ(pod_.verifyChecksum().error(), "can't be opened");
+}
+
+TEST_F(CPodFileVerifyTest, APodCutShortSinceItMountedFails) {
+    givenFile("OLD.POD", makePod1("", {{.name = "a", .data = "one"}}));
+    ASSERT_TRUE(pod_.mountFromFile("OLD.POD"));
+    givenFile("OLD.POD", "short");
+    EXPECT_EQ(pod_.verifyChecksum().error(), "is cut short");
+}
+
+class CPodFileAuditTest : public CPodFileTest {
+protected:
+    // Two files, the later in the file the earlier by name, then the trail.
+    void givenTrail(const std::vector<SPodImageAuditRecord> &records, std::int32_t audit_count) {
+        std::string image = makePod2(
+            "", {{.name = "zebra.wav", .data = "ZZ"}, {.name = "apple.wav", .data = "AAAA"}},
+            audit_count);
+        for (const SPodImageAuditRecord &record : records) {
+            image += makeAuditRecord(record);
+        }
+        givenFile("ACT1.POD", image);
+        ASSERT_TRUE(pod_.mountFromFile("ACT1.POD"));
+    }
+};
+
+// The trail starts after the last file in the file, not the last by name.
+TEST_F(CPodFileAuditTest, ReadsEachRecordOfTheTrail) {
+    givenTrail({{.user_name = "jeffm",
+                 .timestamp = 934387412,
+                 .operation_type = 2,
+                 .filename = "SOUND\\A2S2_SCAT01.WAV",
+                 .original_timestamp = 934254606,
+                 .original_file_size = 140540,
+                 .new_timestamp = 934387330,
+                 .new_file_size = 153316},
+                {.user_name = "mark", .operation_type = 1, .filename = "OLD.WAV"}},
+               2);
+    EXPECT_EQ(pod_.getAuditCount(), 2);
+    const std::optional<CPodAuditRecord> change = pod_.getAuditRecord(0);
+    ASSERT_TRUE(change);
+    EXPECT_EQ(change->user_name, "jeffm");
+    EXPECT_EQ(change->timestamp, 934387412);
+    EXPECT_EQ(change->operation_type, EPodAuditOperation::POD_AUDIT_OPERATION_CHANGE);
+    EXPECT_EQ(change->filename, "SOUND\\A2S2_SCAT01.WAV");
+    EXPECT_EQ(change->original_timestamp, 934254606);
+    EXPECT_EQ(change->original_file_size, 140540U);
+    EXPECT_EQ(change->new_timestamp, 934387330);
+    EXPECT_EQ(change->new_file_size, 153316U);
+    const std::optional<CPodAuditRecord> removal = pod_.getAuditRecord(1);
+    ASSERT_TRUE(removal);
+    EXPECT_EQ(removal->user_name, "mark");
+    EXPECT_EQ(removal->operation_type, EPodAuditOperation::POD_AUDIT_OPERATION_REMOVE);
+    EXPECT_EQ(removal->filename, "OLD.WAV");
+}
+
+// The original quit with "CPodFile::getAuditRecord - invalid index.  Pod not mounted?".
+TEST_F(CPodFileAuditTest, AnIndexOutsideTheTrailHasNoRecord) {
+    givenTrail({{.user_name = "jeffm"}}, 1);
+    EXPECT_EQ(pod_.getAuditRecord(-1), std::nullopt);
+    EXPECT_EQ(pod_.getAuditRecord(1), std::nullopt);
+}
+
+// The original quit with "CPodFile::getAuditRecord - error reading".
+TEST_F(CPodFileAuditTest, ARecordTheFileCutsShortIsntRead) {
+    givenTrail({{.user_name = "jeffm"}}, 2);
+    EXPECT_TRUE(pod_.getAuditRecord(0));
+    EXPECT_EQ(pod_.getAuditRecord(1), std::nullopt);
+}
+
+// The builder writes only 0 to 2; the original handed back whatever the record held.
+TEST_F(CPodFileAuditTest, ARecordWithAnOperationTheBuilderNeverWritesIsntRead) {
+    givenTrail({{.user_name = "a", .operation_type = -1},
+                {.user_name = "b", .operation_type = 3},
+                {.user_name = "c", .operation_type = 0}},
+               3);
+    EXPECT_EQ(pod_.getAuditRecord(0), std::nullopt);
+    EXPECT_EQ(pod_.getAuditRecord(1), std::nullopt);
+    const std::optional<CPodAuditRecord> add = pod_.getAuditRecord(2);
+    ASSERT_TRUE(add);
+    EXPECT_EQ(add->operation_type, EPodAuditOperation::POD_AUDIT_OPERATION_ADD);
+}
+
+// The original quit with "CPodFile::getAuditRecord - can't open".
+TEST_F(CPodFileAuditTest, APodGoneSinceItMountedHasNoRecords) {
+    givenTrail({{.user_name = "jeffm"}}, 1);
+    ON_CALL(file_system_, openFile(std::string_view("/game/ACT1.POD"), platform::EFileMode::Read))
+        .WillByDefault(::testing::ReturnNull());
+    EXPECT_EQ(pod_.getAuditRecord(0), std::nullopt);
+}
+
+TEST_F(CPodFileAuditTest, APod1HasNoTrail) {
+    givenFile("OLD.POD", makePod1("", {{.name = "a", .data = "one"}}));
+    ASSERT_TRUE(pod_.mountFromFile("OLD.POD"));
+    EXPECT_EQ(pod_.getAuditCount(), 0);
+    EXPECT_EQ(pod_.getAuditRecord(0), std::nullopt);
 }
 
 } // namespace
