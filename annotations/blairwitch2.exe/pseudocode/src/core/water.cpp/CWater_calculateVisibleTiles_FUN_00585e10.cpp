@@ -142,8 +142,8 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00585e10(CWater *th
                                  (SMRGLHeaderPrimitive *)&stack0xffffff34);
               if (iVar4 != 0) {
                 if (0xfff < g_VisibleWaterTileCount) {
-                  g_CHAR_PTR_01d046a0 = "..\\core\\water.cpp";
-                  g_INT_01d046a4 = 0x103;
+                  g_CurrentFilename = "..\\core\\water.cpp";
+                  g_CurrentLineNumber = 259;
                   core_main_c_displayErrorAndQuit_FUN_004e4500("Too many visible water tiles!");
                 }
                 g_VisibleWaterTilesX[g_VisibleWaterTileCount] = iVar7;

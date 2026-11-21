@@ -12,8 +12,8 @@ void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_00449f70(CDemonL
   void *pvVar1;
   
   if ((this_ptr->base).zbuffer_raw != (void *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dlight.cpp";
-    g_INT_01d046a4 = 0xce;
+    g_CurrentFilename = "..\\core\\dlight.cpp";
+    g_CurrentLineNumber = 206;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonLight::allocMasterZBuffer - We already have one!");
   }
   pvVar1 = core_dlight_cpp_getRestoreMemory_FUN_00449ef0

@@ -10,8 +10,8 @@ int __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_00483aa0(CPickList *t
 
 {
   if ((item_index < 0) || ((this_ptr->base).item_count <= item_index)) {
-    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
-    g_INT_01d046a4 = 0x1104;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 4356;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CPickList::isItemEnabled - invalid index");
   }
   if (this_ptr->enabled_capacity <= item_index) {

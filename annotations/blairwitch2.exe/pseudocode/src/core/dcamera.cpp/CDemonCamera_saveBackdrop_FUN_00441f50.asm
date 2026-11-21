@@ -149,8 +149,8 @@ section .text
     MOV EDX,0x5ce668                    ; 00442039 | = "..\\core\\dcamera.cpp"
     MOV ECX,0x1325                      ; 0044203e
     PUSH 0x5ce67c                       ; 00442043 | = "Can't create %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00442048 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0044204e | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00442048 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0044204e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00442054
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00442059
@@ -417,8 +417,8 @@ section .text
     MOV EBX,0x5ce6b5                    ; 00442461 | = "..\\core\\dcamera.cpp"
     MOV ESI,0x1394                      ; 00442466
     PUSH 0x5ce6c9                       ; 0044246b | = "Not all bytes consumed compressing %s"
-    MOV dword ptr [0x01d046a0],EBX      ; 00442470 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00442476 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00442470 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00442476 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044247c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00442481
@@ -505,13 +505,13 @@ section .text
     MOV EAX,0x3f                        ; 00442561
     JMP 0x00442378                      ; 00442566
         ;   XREF to: 00442378 (UNCONDITIONAL_JUMP)  ; LAB_00442378
-    MOV dword ptr [0x01d046a0],0x5ce68c ; 0044256b | g_CHAR_PTR_01d046a0 | = "..\\core\\dcamera.cpp"
+    MOV dword ptr [0x01d046a0],0x5ce68c ; 0044256b | g_CurrentFilename | = "..\\core\\dcamera.cpp"
         ;   Label: LAB_0044256b
     LEA EAX,[ESP + 0x100]               ; 00442575
     PUSH EAX                            ; 0044257c
     MOV EDX,0x1392                      ; 0044257d
     PUSH 0x5ce6a0                       ; 00442582 | = "Error compressing %s"
-    MOV dword ptr [0x01d046a4],EDX      ; 00442587 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a4],EDX      ; 00442587 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044258d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00442592
@@ -523,8 +523,8 @@ section .text
     MOV EDI,0x5ce6ef                    ; 004425a2 | = "..\\core\\dcamera.cpp"
     MOV EBP,0x1395                      ; 004425a7
     PUSH 0x5ce703                       ; 004425ac | = "Error writing compressed file %s"
-    MOV dword ptr [0x01d046a0],EDI      ; 004425b1 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004425b7 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004425b1 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 004425b7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004425bd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004425c2

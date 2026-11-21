@@ -389,8 +389,8 @@ section .text
     MOV ESI,0x5d85bb                    ; 004bc301 | = "..\\core\\game.cpp"
     MOV EDI,0x106f                      ; 004bc306
     PUSH 0x5d85cc                       ; 004bc30b | = "Can't reopen %s"
-    MOV dword ptr [0x01d046a0],ESI      ; 004bc310 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004bc316 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 004bc310 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 004bc316 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004bc31c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004bc321

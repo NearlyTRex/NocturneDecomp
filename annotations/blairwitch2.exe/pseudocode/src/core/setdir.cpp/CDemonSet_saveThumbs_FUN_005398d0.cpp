@@ -153,8 +153,8 @@ LAB_005398e9:
         goto LAB_005398e9;
       }
       if (uVar2 < 6) break;
-      g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
-      g_INT_01d046a4 = 0x3aa;
+      g_CurrentFilename = "..\\core\\setdir.cpp";
+      g_CurrentLineNumber = 938;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze");
     }
   } while( true );

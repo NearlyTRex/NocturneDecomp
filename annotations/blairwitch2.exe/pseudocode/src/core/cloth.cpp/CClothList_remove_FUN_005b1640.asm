@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f121a
 ;   TerminatedCString s_CClothList_remove_invali_005f122c
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_005ade00
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_005b1653
     MOV EBX,0x5f1                       ; 005b1658
     PUSH 0x5f122c                       ; 005b165d | = "CClothList::remove - invalid index"
-    MOV dword ptr [0x01d046a0],ECX      ; 005b1662 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 005b1668 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005b1662 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 005b1668 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b166e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b1673

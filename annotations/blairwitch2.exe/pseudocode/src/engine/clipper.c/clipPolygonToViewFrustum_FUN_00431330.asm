@@ -600,8 +600,8 @@ section .text
     MOV EAX,0x5cd962                    ; 00431885 | = "..\\engine\\clipper.c"
     MOV EDX,0x5e                        ; 0043188a
     PUSH 0x5cd976                       ; 0043188f | = "Ran out of clipped verts!"
-    MOV [0x01d046a0],EAX                ; 00431894 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00431899 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00431894 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00431899 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043189f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004318a4
@@ -637,8 +637,8 @@ section .text
     MOV EAX,0x5cd962                    ; 004318fc | = "..\\engine\\clipper.c"
     MOV EDX,0x5e                        ; 00431901
     PUSH 0x5cd976                       ; 00431906 | = "Ran out of clipped verts!"
-    MOV [0x01d046a0],EAX                ; 0043190b | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00431910 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0043190b | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00431910 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431916
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043191b
@@ -668,8 +668,8 @@ section .text
     MOV ECX,0x5cd962                    ; 0043195e | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 00431963
     PUSH 0x5cd976                       ; 00431968 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0043196d | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00431973 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0043196d | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00431973 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431978
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043197d
@@ -699,8 +699,8 @@ section .text
     MOV EDX,0x5cd962                    ; 004319b8 | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 004319bd
     PUSH 0x5cd976                       ; 004319c2 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004319c7 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004319cd | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004319c7 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004319cd | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004319d3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004319d8
@@ -727,8 +727,8 @@ section .text
     MOV ECX,0x5cd962                    ; 00431a0d | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 00431a12
     PUSH 0x5cd976                       ; 00431a17 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00431a1c | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00431a22 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00431a1c | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00431a22 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431a27
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431a2c
@@ -758,8 +758,8 @@ section .text
     MOV EDX,0x5cd962                    ; 00431a67 | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 00431a6c
     PUSH 0x5cd976                       ; 00431a71 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d046a0],EDX      ; 00431a76 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00431a7c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00431a76 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00431a7c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431a82
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431a87
@@ -786,8 +786,8 @@ section .text
     MOV ECX,0x5cd962                    ; 00431abc | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 00431ac1
     PUSH 0x5cd976                       ; 00431ac6 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00431acb | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00431ad1 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00431acb | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00431ad1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431ad6
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431adb
@@ -817,8 +817,8 @@ section .text
     MOV EDX,0x5cd962                    ; 00431b16 | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 00431b1b
     PUSH 0x5cd976                       ; 00431b20 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01d046a0],EDX      ; 00431b25 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00431b2b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00431b25 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00431b2b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00431b31
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00431b36

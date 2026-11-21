@@ -46,8 +46,8 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_005044c0(SMpegFrame 
   else if (frame->table_index == 4) {
     return iVar4;
   }
-  g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
-  g_INT_01d046a4 = 0x1d8;
+  g_CurrentFilename = "..\\sound\\mp3.cpp";
+  g_CurrentLineNumber = 472;
   core_main_c_displayErrorAndQuit_FUN_004e4500("MPEG Layer 2 - pick_table - can't load tables!  File: %s");
   return iVar4;
 }

@@ -175,8 +175,8 @@ __asm {
         mov EDI,0x5ee43c
         mov EAX,0x356
         push 0x5ee453
-        mov dword ptr [g_CHAR_PTR_01d046a0],EDI
-        mov [g_INT_01d046a4],EAX
+        mov dword ptr [g_CurrentFilename],EDI
+        mov [g_CurrentLineNumber],EAX
         call core_main_c_displayErrorAndQuit_FUN_004e4500
         add ESP,0x4
         xor EDI,EDI

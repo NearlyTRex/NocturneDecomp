@@ -21,8 +21,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005cd0de
 ;   TerminatedCString s_CCharacter_applyLookAt_n_005cd0f3
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -127,8 +127,8 @@ section .text
     MOV ECX,0x5cd0de                    ; 00429c2b | = "..\\core\\charactr.cpp"
     MOV ESI,0x105c                      ; 00429c30
     PUSH 0x5cd0f3                       ; 00429c35 | = "CCharacter::applyLookAt - never set l..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00429c3a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00429c40 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00429c3a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00429c40 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00429c46
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00429c4b

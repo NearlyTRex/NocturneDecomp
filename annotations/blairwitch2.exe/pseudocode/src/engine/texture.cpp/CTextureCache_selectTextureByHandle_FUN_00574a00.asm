@@ -8,8 +8,8 @@
 ; SMRGLTextureBasic * Stack[0x8]:4   texture
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   void* g_APIDLL_setAmbientLight
 ;
 ; Called Functions:
@@ -57,8 +57,8 @@ section .text
     MOV ESI,0x5ec8e2                    ; 00574a4d
     MOV EDI,0x2e9                       ; 00574a52
     PUSH 0x5ec8f8                       ; 00574a57
-    MOV dword ptr [0x01d046a0],ESI      ; 00574a5c | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00574a62 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00574a5c | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00574a62 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00574a68
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00574a6d

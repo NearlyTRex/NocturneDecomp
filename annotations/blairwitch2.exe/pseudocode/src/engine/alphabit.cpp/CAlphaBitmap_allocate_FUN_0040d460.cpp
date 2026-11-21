@@ -18,15 +18,15 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap
   pcVar1 = (char *)malloc(width * height);
   this_ptr->raw = pcVar1;
   if (pcVar1 == (char *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\alphabit.cpp";
-    g_INT_01d046a4 = 0xb0;
+    g_CurrentFilename = "..\\engine\\alphabit.cpp";
+    g_CurrentLineNumber = 176;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CAlphaBitmap::allocate - Out of memory");
   }
   pcVar1 = (char *)malloc(width * height);
   this_ptr->opa = pcVar1;
   if (pcVar1 == (char *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\alphabit.cpp";
-    g_INT_01d046a4 = 0xb3;
+    g_CurrentFilename = "..\\engine\\alphabit.cpp";
+    g_CurrentLineNumber = 179;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CAlphaBitmap::allocate - Out of memory");
   }
   puVar2 = (uint *)malloc(0x400);
@@ -34,8 +34,8 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(CAlphaBitmap
   if (puVar2 != (uint *)0x0) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\engine\\alphabit.cpp";
-  g_INT_01d046a4 = 0xb6;
+  g_CurrentFilename = "..\\engine\\alphabit.cpp";
+  g_CurrentLineNumber = 182;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CAlphaBitmap::allocate - Out of memory");
   return;
 }

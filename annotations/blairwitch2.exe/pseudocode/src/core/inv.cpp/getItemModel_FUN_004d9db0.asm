@@ -174,8 +174,8 @@ section .text
     MOV EDX,0x5db39a                    ; 004d9edb | = "..\\core\\inv.cpp"
     MOV ECX,0xa3                        ; 004d9ee0
     PUSH 0x5db3aa                       ; 004d9ee5 | = "getModel - Can't classify : %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 004d9eea | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004d9ef0 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004d9eea | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004d9ef0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004d9ef6
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004d9efb

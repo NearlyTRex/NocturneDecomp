@@ -22,18 +22,18 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040adf0(C
   
   bVar9 = 0;
   if (this_ptr == (CDemonActor *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
-    g_INT_01d046a4 = 0x77c;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 1916;
     core_main_c_displayErrorAndQuit_FUN_004e4500("NULL actor pointer detected, %s line %d");
   }
   if (((CDemonActor *)0xfeffffff < this_ptr) || ((int)this_ptr < 0x1000)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
-    g_INT_01d046a4 = 0x780;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 1920;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid actor pointer %08X detected at %s, line %d");
   }
   if ((byte *)this_ptr->validation_magic != &DAT_0078a123) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
-    g_INT_01d046a4 = 0x78a;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 1930;
     memset(g_ActorDebugBuffer,0,0x32);
     pCVar6 = this_ptr;
     pcVar8 = g_ActorDebugBuffer;
@@ -53,8 +53,8 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040adf0(C
   fVar2 = (this_ptr->location).position.x;
   fVar3 = (this_ptr->location).position.z;
   if (99999.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
-    g_INT_01d046a4 = 0x795;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 1941;
     memset(g_ActorDebugBuffer,0,0x32);
     pCVar6 = this_ptr;
     pcVar8 = g_ActorDebugBuffer;
@@ -76,8 +76,8 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040adf0(C
   while (cVar4 != '\0') {
     if ((0x1c < uStack_18) ||
        ((g_CharacterClassificationTable[(byte)(pCVar6->actor_name[0] + 1)] & 8) == 0)) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
-      g_INT_01d046a4 = 0x7a3;
+      g_CurrentFilename = "..\\core\\actor.cpp";
+      g_CurrentLineNumber = 1955;
       memset(g_ActorDebugBuffer,0,0x32);
       if (this_ptr != (CDemonActor *)0x0) {
         pCVar7 = this_ptr;

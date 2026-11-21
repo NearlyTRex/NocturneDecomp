@@ -10,8 +10,8 @@ void __cdecl engine_pod_cpp_CPod_init_FUN_0051b320(CPod *this_ptr)
 
 {
   if (this_ptr == (CPod *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
-    g_INT_01d046a4 = 0x432;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 1074;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CPod::init - No .POD to init!");
     if (iRam00000000 != 0) {
       return;

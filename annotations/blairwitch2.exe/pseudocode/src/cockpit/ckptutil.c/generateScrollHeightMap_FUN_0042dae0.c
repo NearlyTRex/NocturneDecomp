@@ -22,14 +22,14 @@ void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_0042dae0(void *bitma
   
   if (bitmap_data != (void *)0x0) {
     if (num_height_rows < (end_x - bitmap_height) + 1) {
-      g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-      g_INT_01d046a4 = 0x405;
+      g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+      g_CurrentLineNumber = 1029;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid height array size.");
     }
     ptr = operator_new_array(bitmap_height * 4);
     if (ptr == (int *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-      g_INT_01d046a4 = 0x40b;
+      g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+      g_CurrentLineNumber = 1035;
       core_main_c_displayErrorAndQuit_FUN_004e4500("No room for scroll bitmap height table.");
     }
     iVar5 = 0;

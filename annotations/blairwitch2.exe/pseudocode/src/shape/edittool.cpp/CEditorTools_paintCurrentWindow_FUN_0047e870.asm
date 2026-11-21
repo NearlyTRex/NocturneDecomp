@@ -102,8 +102,8 @@ section .text
     MOV EDI,0x5d23df                    ; 0047e8b0 | = "..\\shape\\edittool.cpp"
     MOV EBP,0x8ea                       ; 0047e8b5
     PUSH 0x5d23f5                       ; 0047e8ba | = "CEditorTools::paintWindow() called bu..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0047e8bf | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0047e8c5 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0047e8bf | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 0047e8c5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047e8cb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047e8d0
@@ -519,8 +519,8 @@ section .text
         ;   Label: LAB_0047ed4a
     MOV EBX,0xa0                        ; 0047ed4f
     PUSH 0x5d1e85                       ; 0047ed54 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d046a0],ECX      ; 0047ed59 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0047ed5f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0047ed59 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0047ed5f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047ed65
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047ed6a

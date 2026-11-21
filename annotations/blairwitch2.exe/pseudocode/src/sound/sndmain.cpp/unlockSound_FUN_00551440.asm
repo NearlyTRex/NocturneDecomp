@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e9231
 ;   TerminatedCString s_unlockSound_sound_was_no_005e9246
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   HANDLE g_SoundMutex
 ;   int g_SoundLockCount
 ;
@@ -61,8 +61,8 @@ section .text
     MOV ECX,0x5e9231                    ; 00553542 | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x1845                      ; 00553547
     PUSH 0x5e9246                       ; 0055354c | = "unlockSound - sound was not locked!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00553551 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00553557 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00553551 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 00553557 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0055355d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00553562

@@ -47,8 +47,8 @@ CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_00548fc0(char *filename)
     iVar3 = *(int *)(g_CHAR_ARRAY_02628554 + iVar1 + 4);
     iVar1 = iVar1 + 4;
   }
-  g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-  g_INT_01d046a4 = 0x10a5;
+  g_CurrentFilename = "..\\core\\skeleton.cpp";
+  g_CurrentLineNumber = 4261;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Can't load %s because skeleton manager is full.  (Size is %d)");
   return (CSkeleton *)0x0;
 }

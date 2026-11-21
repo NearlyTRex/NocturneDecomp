@@ -19,15 +19,15 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004614d0(CDemonPart *this_ptr)
     this_ptr->vertex_positions = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
       _sprintf(acStack_108,"CDemonPart::alloc - Out of vertex %d memory!");
-      g_INT_01d046a4 = 0x8b;
-      g_CHAR_PTR_01d046a0 = "..\\core\\dpart.cpp";
+      g_CurrentLineNumber = 139;
+      g_CurrentFilename = "..\\core\\dpart.cpp";
       core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_108);
     }
     pCVar1 = (CVector3i *)calloc(this_ptr->vertex_count,0xc);
     this_ptr->vertex_normals = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\dpart.cpp";
-      g_INT_01d046a4 = 0x91;
+      g_CurrentFilename = "..\\core\\dpart.cpp";
+      g_CurrentLineNumber = 145;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonPart::alloc - Out of normal memory!");
     }
   }
@@ -35,8 +35,8 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004614d0(CDemonPart *this_ptr)
     pSVar2 = (SSurfacePlane *)calloc(this_ptr->face_count,0x20);
     this_ptr->face_data = pSVar2;
     if (pSVar2 == (SSurfacePlane *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\dpart.cpp";
-      g_INT_01d046a4 = 0x99;
+      g_CurrentFilename = "..\\core\\dpart.cpp";
+      g_CurrentLineNumber = 153;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonPart::alloc - Out of face memory!");
       return;
     }

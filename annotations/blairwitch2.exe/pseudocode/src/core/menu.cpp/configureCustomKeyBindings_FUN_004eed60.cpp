@@ -62,8 +62,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Forward");
     piVar24 = &g_CGamePtr->key_walk;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -81,8 +81,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Back");
     piVar24 = &g_CGamePtr->key_backup;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -106,8 +106,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(pcVar2);
     piVar24 = &g_CGamePtr->key_run;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -125,8 +125,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Strafe on");
     piVar24 = &g_CGamePtr->key_strafe;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -144,8 +144,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Strafe left");
     piVar24 = &g_CGamePtr->key_strafe_left;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -163,8 +163,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Strafe right");
     piVar24 = &g_CGamePtr->key_strafe_right;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -182,8 +182,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Turn left");
     piVar24 = &g_CGamePtr->key_left;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -201,8 +201,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Turn right");
     piVar24 = &g_CGamePtr->key_right;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -220,8 +220,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Fire Gun/ Action");
     piVar24 = &g_CGamePtr->key_fire;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -239,8 +239,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Use item");
     piVar24 = &g_CGamePtr->key_use_item;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -258,8 +258,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Lantern");
     piVar24 = &g_CGamePtr->key_light;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -277,8 +277,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Draw Gun");
     piVar24 = &g_CGamePtr->key_draw;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -296,8 +296,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Point up");
     piVar24 = &g_CGamePtr->key_point_up;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -315,8 +315,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Point down");
     piVar24 = &g_CGamePtr->key_point_down;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -334,8 +334,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Select Revolver");
     piVar24 = &g_CGamePtr->key_weapon_1;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -353,8 +353,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Select Sword / Axe");
     piVar24 = &g_CGamePtr->key_weapon_2;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -372,8 +372,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Select Cross");
     piVar24 = &g_CGamePtr->key_weapon_3;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -391,8 +391,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Next weapon");
     piVar24 = &g_CGamePtr->key_next_weapon;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -410,8 +410,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Previous weapon");
     piVar24 = &g_CGamePtr->key_prev_weapon;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -429,8 +429,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Next item");
     piVar24 = &g_CGamePtr->key_next_item;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -448,8 +448,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Previous item");
     piVar24 = &g_CGamePtr->key_prev_item;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -467,8 +467,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Item description");
     piVar24 = &g_CGamePtr->key_item_desc;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -486,8 +486,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Next ammo");
     piVar24 = &g_CGamePtr->key_next_ammo;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];
@@ -505,8 +505,8 @@ LAB_004eed8e:
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Drop item or weapon");
     piVar24 = &g_CGamePtr->key_drop;
     if (0x25 < g_CustomKeyCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\menu.cpp";
-      g_INT_01d046a4 = 0x907;
+      g_CurrentFilename = "..\\core\\menu.cpp";
+      g_CurrentLineNumber = 2311;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many custom keys!");
     }
     pcVar28 = g_CustomKeyNames[g_CustomKeyCount];

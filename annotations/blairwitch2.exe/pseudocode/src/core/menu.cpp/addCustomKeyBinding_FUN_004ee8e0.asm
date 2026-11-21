@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   key_name
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_CustomKeyCount
 ;
 ; Called Functions:
@@ -61,8 +61,8 @@ section .text
     MOV ECX,0x5dd2ac                    ; 004ee934
     MOV EBX,0x907                       ; 004ee939
     PUSH 0x5dd2bd                       ; 004ee93e
-    MOV dword ptr [0x01d046a0],ECX      ; 004ee943 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 004ee949 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004ee943 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 004ee949 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ee94f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ee954

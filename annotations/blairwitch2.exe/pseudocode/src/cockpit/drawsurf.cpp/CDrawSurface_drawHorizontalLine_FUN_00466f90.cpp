@@ -58,8 +58,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00466f90(C
           return;
         }
       }
-      g_CHAR_PTR_01d046a0 = "..\\cockpit\\drawsurf.cpp";
-      g_INT_01d046a4 = 0x3a5;
+      g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
+      g_CurrentLineNumber = 933;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid bitsPerPixel!");
       return;
     }

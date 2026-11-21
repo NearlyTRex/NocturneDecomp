@@ -7,8 +7,8 @@
 ; SMRGLHeaderBasic * Stack[0x4]:4   mrgl_data
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -67,8 +67,8 @@ section .text
     MOV EAX,ESP                         ; 005009f7
     MOV EDI,0x177                       ; 005009f9
     PUSH EAX                            ; 005009fe
-    MOV dword ptr [0x01d046a0],ESI      ; 005009ff | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00500a05 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 005009ff | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00500a05 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00500a0b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00500a10
@@ -354,8 +354,8 @@ section .text
         ;   Label: LAB_00500df3
     MOV EBP,0x173                       ; 00500df8
     PUSH 0x5df056                       ; 00500dfd
-    MOV dword ptr [0x01d046a0],EDI      ; 00500e02 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 00500e08 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00500e02 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 00500e08 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00500e0e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00500e13

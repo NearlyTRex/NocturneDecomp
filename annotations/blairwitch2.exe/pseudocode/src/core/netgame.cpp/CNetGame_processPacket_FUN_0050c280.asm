@@ -59,8 +59,8 @@
 ;   double g_DOUBLE_005e0a4d = 0.0000152587890625
 ;   double g_DOUBLE_005e0a55 = -30
 ;   double g_DOUBLE_005e0a5d = 30
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 13 more
 ;
 ; Called Functions:
@@ -1039,8 +1039,8 @@ section .text
     MOV EDX,0x5e0a21                    ; 0050cc18 | = "..\\core\\netgame.cpp"
     MOV ECX,0x597                       ; 0050cc1d
     PUSH 0x5e0a35                       ; 0050cc22 | = "Player list mismatch!"
-    MOV dword ptr [0x01d046a0],EDX      ; 0050cc27 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0050cc2d | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0050cc27 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0050cc2d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050cc33
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050cc38
@@ -1076,8 +1076,8 @@ section .text
     MOV EDX,0x5e03cf                    ; 0050cc93 | = "..\\core\\netgame.cpp"
     MOV ECX,0x12b                       ; 0050cc98
     PUSH 0x5e03e3                       ; 0050cc9d | = "allocSimFrame - sim history list full"
-    MOV dword ptr [0x01d046a0],EDX      ; 0050cca2 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0050cca8 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0050cca2 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0050cca8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050ccae
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050ccb3
@@ -1107,8 +1107,8 @@ section .text
         ;   Label: LAB_0050ccfa
     MOV EAX,0x596                       ; 0050ccff
     PUSH 0x5e09e9                       ; 0050cd04 | = "Player list mismatch processing SimFr..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0050cd09 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0050cd0f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0050cd09 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0050cd0f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050cd14
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050cd19

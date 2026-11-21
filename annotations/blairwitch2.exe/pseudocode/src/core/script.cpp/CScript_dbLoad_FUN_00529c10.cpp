@@ -32,8 +32,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
   }
   file_handle = engine_dosio_cpp_getFile_FUN_00460c70("world",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
-    g_INT_01d046a4 = 0x11af;
+    g_CurrentFilename = "..\\core\\script.cpp";
+    g_CurrentLineNumber = 4527;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Can't open world\\%s");
   }
   lVar2 = _ftell(file_handle);
@@ -47,8 +47,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
     }
     iVar3 = _fscanf(file_handle,"%[^,], ");
     if (iVar3 != 1) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
-      g_INT_01d046a4 = 0x11c4;
+      g_CurrentFilename = "..\\core\\script.cpp";
+      g_CurrentLineNumber = 4548;
       core_main_c_displayErrorAndQuit_FUN_004e4500("SCScipt::dbLoad - error parsing %s record %d");
     }
     iVar3 = _fgetc(file_handle);
@@ -59,15 +59,15 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
       _ungetc(iVar3,file_handle);
       iVar3 = _fscanf(file_handle,"%[^,],");
       if (iVar3 != 1) {
-        g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
-        g_INT_01d046a4 = 0x11cd;
+        g_CurrentFilename = "..\\core\\script.cpp";
+        g_CurrentLineNumber = 4557;
         core_main_c_displayErrorAndQuit_FUN_004e4500("SCScipt::dbLoad - error parsing %s record %d");
       }
     }
     iVar3 = _fscanf(file_handle," %[^\n]\n");
     if (iVar3 != 1) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
-      g_INT_01d046a4 = 0x11d2;
+      g_CurrentFilename = "..\\core\\script.cpp";
+      g_CurrentLineNumber = 4562;
       core_main_c_displayErrorAndQuit_FUN_004e4500("SCScipt::dbLoad - error parsing %s record %d");
     }
     core_script_cpp_trimString_FUN_00521110(local_334);
@@ -114,8 +114,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
     pSVar4 = (SDialogEntry *)realloc(this_ptr->dialog_entries,iVar3 * 0x226);
     this_ptr->dialog_entries = pSVar4;
     if (pSVar4 == (SDialogEntry *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
-      g_INT_01d046a4 = 0x11f3;
+      g_CurrentFilename = "..\\core\\script.cpp";
+      g_CurrentLineNumber = 4595;
       core_main_c_displayErrorAndQuit_FUN_004e4500("SCScipt::dbLoad - out of memory");
     }
     pcVar6 = local_334;

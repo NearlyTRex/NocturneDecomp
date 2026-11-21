@@ -12,8 +12,8 @@
 ;   int g_RelativeX
 ;   int g_RelativeY
 ;   int g_RelativeZ
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_MatrixStackIndex
 ;
 ; Called Functions:
@@ -60,8 +60,8 @@ section .text
         ;   Label: LAB_004ea7ab
     MOV EAX,0x5cc                       ; 004ea7b0
     PUSH 0x5dc8d7                       ; 004ea7b5
-    MOV dword ptr [0x01d046a0],EBP      ; 004ea7ba | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004ea7c0 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004ea7ba | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004ea7c0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ea7c5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ea7ca

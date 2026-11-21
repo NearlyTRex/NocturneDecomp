@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f11e9
 ;   TerminatedCString s_CClothList_add_list_is_f_005f11fb
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -72,8 +72,8 @@ section .text
         ;   Label: LAB_005b1610
     MOV ESI,0x5de                       ; 005b1615
     PUSH 0x5f11fb                       ; 005b161a | = "CClothList::add - list is full"
-    MOV dword ptr [0x01d046a0],ECX      ; 005b161f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 005b1625 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005b161f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 005b1625 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b162b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b1630

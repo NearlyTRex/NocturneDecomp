@@ -17,8 +17,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00541370(CDeformabl
   WatcomTypeInfo *type_info;
   
   if ((lod_index < 0) || (this_ptr->num_lods <= lod_index)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-    g_INT_01d046a4 = 0x299;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 665;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModel::allocLOD - invalid lod number %d");
   }
   free(this_ptr->vertex_data_ptr[lod_index]);
@@ -54,8 +54,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00541370(CDeformabl
     return;
   }
   core_skeleton_cpp_CDeformableModel_free_FUN_00541160(this_ptr);
-  g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-  g_INT_01d046a4 = 0x2bd;
+  g_CurrentFilename = "..\\core\\skeleton.cpp";
+  g_CurrentLineNumber = 701;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d");
   return;
 }

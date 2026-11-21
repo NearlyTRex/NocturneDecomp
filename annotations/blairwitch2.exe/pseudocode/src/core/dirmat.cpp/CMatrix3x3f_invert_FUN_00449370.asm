@@ -7,8 +7,8 @@
 ; CMatrix3x3f *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -172,8 +172,8 @@ section .text
         ;   Label: LAB_004494fb
     MOV ESI,0x6c                        ; 00449500
     PUSH 0x5cf142                       ; 00449505
-    MOV dword ptr [0x01d046a0],ECX      ; 0044950a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00449510 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0044950a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00449510 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00449516
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044951b

@@ -16,8 +16,8 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_004fb490(CDemonMission *thi
   file_handle = engine_dosio_cpp_getFile_FUN_00460c70
                           ("world",mission_filename,"rt");
   if (file_handle == (_FILE *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
-    g_INT_01d046a4 = 0xa0;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 160;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::load - Unable to open file");
   }
   clear_screen = 0;

@@ -37,16 +37,16 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_005adeb0(CCloth *this_ptr,char *filen
   
   local_30 = engine_dosio_cpp_getFile_FUN_00460c70("models",filename,"rt");
   if (local_30 == (_FILE *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\cloth.cpp";
-    g_INT_01d046a4 = 0x9b;
+    g_CurrentFilename = "..\\core\\cloth.cpp";
+    g_CurrentLineNumber = 155;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CCloth::load - Unable to open file %s");
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
   _fscanf(p_Var8,"%d\n");
   if (3 < this_ptr->version_num) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\cloth.cpp";
-    g_INT_01d046a4 = 0xa2;
+    g_CurrentFilename = "..\\core\\cloth.cpp";
+    g_CurrentLineNumber = 162;
     core_main_c_displayErrorAndQuit_FUN_004e4500("%s is version %d, this .EXE is old and can only handle up to version %d");
   }
   p_Var8 = local_30;

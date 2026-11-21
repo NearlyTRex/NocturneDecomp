@@ -103,8 +103,8 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004dc4b0(CInventory *this_ptr,_FIL
                        (this_ptr->items[local_14],g_CWeaponClassInfo.name_hash);
     this_ptr->selected_weapons[this_ptr->current_group] = pCVar4;
     if (this_ptr->selected_weapons[this_ptr->current_group] == (CWeapon *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\inv.cpp";
-      g_INT_01d046a4 = 0x62b;
+      g_CurrentFilename = "..\\core\\inv.cpp";
+      g_CurrentLineNumber = 1579;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CInventory::load - Can't find your weapon");
     }
   }

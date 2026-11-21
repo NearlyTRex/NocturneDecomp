@@ -24,16 +24,16 @@ void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_0042e380(void *bitmap
         iVar1 = (int)edge_list->x0 + edge_list->y0 * buffer_width;
         if ((iVar1 < 0) || (iVar2 < iVar1)) {
           _sprintf(acStack_114,"Edge out of range: edge %d");
-          g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-          g_INT_01d046a4 = 0x578;
+          g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+          g_CurrentLineNumber = 1400;
           core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_114);
         }
         *(byte *)(iVar1 + (int)bitmap_buffer) = (byte)uStack_14;
         iVar1 = (int)edge_list->x1 + buffer_width * ((short)(edge_list->y1 * 2) >> 1);
         if ((iVar1 < 0) || (iVar2 < iVar1)) {
           _sprintf(acStack_114,"Edge out of range: edge %d");
-          g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-          g_INT_01d046a4 = 0x581;
+          g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+          g_CurrentLineNumber = 1409;
           core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_114);
         }
         edge_list = edge_list + 1;

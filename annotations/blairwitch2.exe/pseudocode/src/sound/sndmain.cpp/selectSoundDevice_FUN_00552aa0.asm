@@ -16,8 +16,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005e903e
 ;   TerminatedCString s_selectSoundDevice_device_005e9053
 ;   int g_CurrentSoundDevice = -0x1
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_00552ad0
     MOV ECX,0x156b                      ; 00552ad5
     PUSH 0x5e9053                       ; 00552ada | = "selectSoundDevice - device already open."
-    MOV dword ptr [0x01d046a0],EDX      ; 00552adf | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00552ae5 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00552adf | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00552ae5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00552aeb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00552af0

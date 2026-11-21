@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005ddf45
 ;   TerminatedCString s_Bad_clip_005ddf5a
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   float g_FLOAT_01d0d2bc
 ;   float g_FLOAT_01d0d2c0
 ;   float g_FLOAT_01d0d2c4
@@ -124,8 +124,8 @@ section .text
         ;   Label: LAB_004f85cd
     MOV EBP,0x1475                      ; 004f85d2
     PUSH 0x5ddf5a                       ; 004f85d7 | = "Bad clip!"
-    MOV dword ptr [0x01d046a0],ECX      ; 004f85dc | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004f85e2 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004f85dc | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 004f85e2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f85e8
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004f85ed

@@ -19,8 +19,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005e7f52
 ;   TerminatedCString s_allocMixBuffers_out_of_m_005e7f67
 ;   int g_AudioChannelCount = 0x2
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_MixBufferReadIndex
 ;   int g_MixBufferWriteIndex
 ;   int g_MixBufferSize
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_0054cebd
     MOV EAX,0x55f                       ; 0054cec2
     PUSH 0x5e7f67                       ; 0054cec7 | = "allocMixBuffers - out of memory"
-    MOV dword ptr [0x01d046a0],EBP      ; 0054cecc | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0054ced2 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 0054cecc | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0054ced2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054ced7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054cedc

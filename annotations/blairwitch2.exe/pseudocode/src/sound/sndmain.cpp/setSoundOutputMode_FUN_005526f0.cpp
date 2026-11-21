@@ -14,8 +14,8 @@ int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005526f0(int bits_per_sampl
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00552b20();
   if (iVar1 != 0) {
-    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d046a4 = 0x1482;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 5250;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setSoundOutputMode - can't do this while sound active!");
   }
   g_AudioBitsPerSample = bits_per_sample;

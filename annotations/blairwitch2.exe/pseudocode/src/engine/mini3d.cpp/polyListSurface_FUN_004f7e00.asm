@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005ddf04
 ;   TerminatedCString s_CMini3D_polyList_Too_man_005ddf19
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_01d09854
 ;   float* g_FLOAT_PTR_01d09b80
 ;   int g_INT_01d0d2b4
@@ -133,8 +133,8 @@ section .text
     MOV EBX,0x5ddf04                    ; 004f7ed9 | = "..\\engine\\mini3d.cpp"
     MOV ESI,0x12e4                      ; 004f7ede
     PUSH 0x5ddf19                       ; 004f7ee3 | = "CMini3D::polyList - Too many verticie..."
-    MOV dword ptr [0x01d046a0],EBX      ; 004f7ee8 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004f7eee | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004f7ee8 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004f7eee | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f7ef4
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004f7ef9

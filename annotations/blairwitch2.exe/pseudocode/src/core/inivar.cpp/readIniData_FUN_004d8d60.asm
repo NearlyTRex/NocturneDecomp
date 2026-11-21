@@ -649,8 +649,8 @@ section .text
         ;   Label: LAB_004d94a7
     MOV ECX,0x58                        ; 004d94ac
     PUSH 0x5dadb8                       ; 004d94b1 | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01d046a0],EDX      ; 004d94b6 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004d94bc | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004d94b6 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004d94bc | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004d94c2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004d94c7

@@ -21,8 +21,8 @@
 ;   void* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -87,8 +87,8 @@ section .text
     MOV EBX,0x5d151c                    ; 00469913 | = "..\\engine\\drender.cpp"
     MOV ESI,0x29d                       ; 00469918
     PUSH 0x5d1532                       ; 0046991d | = "Can't use demonZFacetCount in shadow ..."
-    MOV dword ptr [0x01d046a0],EBX      ; 00469922 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00469928 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00469922 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00469928 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0046992e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00469933

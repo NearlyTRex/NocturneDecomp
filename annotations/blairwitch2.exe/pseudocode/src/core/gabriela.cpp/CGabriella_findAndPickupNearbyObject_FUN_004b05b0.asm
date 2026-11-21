@@ -52,8 +52,8 @@
 ;   double g_DOUBLE_005d70bb = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -418,8 +418,8 @@ section .text
     MOV EDI,0x5d7075                    ; 004b0a0e | = "..\\core\\gabriela.cpp"
     MOV EAX,0x637                       ; 004b0a13
     PUSH 0x5d708a                       ; 004b0a18 | = "Hell froze - invalid pickUpType: %d"
-    MOV dword ptr [0x01d046a0],EDI      ; 004b0a1d | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004b0a23 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004b0a1d | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004b0a23 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b0a28
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004b0a2d

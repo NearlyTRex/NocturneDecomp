@@ -20,8 +20,8 @@ int __cdecl engine_mini3d_cpp_polyListSurface_FUN_004f7e00(float *vertices,int v
   g_INT_01d09854 = g_INT_01d09854 + vertex_count;
   engine_mini3d_cpp_allocVertexList_FUN_004f38c0();
   if (10000 < vertex_count) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
-    g_INT_01d046a4 = 0x12e4;
+    g_CurrentFilename = "..\\engine\\mini3d.cpp";
+    g_CurrentLineNumber = 4836;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::polyList - Too many verticies : %d");
   }
   iVar3 = 0;

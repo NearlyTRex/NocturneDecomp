@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   CFilterCache* g_CFilterCachePtr = 015111a8
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004478d0
@@ -68,8 +68,8 @@ section .text
     MOV EDX,0x5cecda                    ; 00447ca6
     MOV ECX,0x15a                       ; 00447cab
     PUSH 0x5cecee                       ; 00447cb0
-    MOV dword ptr [0x01d046a0],EDX      ; 00447cb5 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00447cbb | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00447cb5 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00447cbb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447cc1
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00447cc6
@@ -169,8 +169,8 @@ section .text
     MOV EBP,0x5ced14                    ; 00447d9e
     MOV EAX,0x166                       ; 00447da3
     PUSH 0x5ced28                       ; 00447da8
-    MOV dword ptr [0x01d046a0],EBP      ; 00447dad | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00447db3 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 00447dad | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00447db3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447db8
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00447dbd

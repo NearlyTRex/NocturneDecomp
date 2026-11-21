@@ -92,8 +92,8 @@ section .text
     MOV EDX,0x5d6474                    ; 004a6224 | = "..\\core\\fldnotes.cpp"
     MOV ECX,0xb30                       ; 004a6229
     PUSH 0x5d6489                       ; 004a622e | = "Invalid field notes file version: %d,..."
-    MOV dword ptr [0x01d046a0],EDX      ; 004a6233 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004a6239 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004a6233 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004a6239 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a623f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004a6244

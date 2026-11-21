@@ -469,8 +469,8 @@ section .text
         ;   Label: LAB_004897e9
     MOV EAX,0x26b                       ; 004897ee
     PUSH 0x5d302b                       ; 004897f3 | = "Too many events"
-    MOV dword ptr [0x01d046a0],EDI      ; 004897f8 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004897fe | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004897f8 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004897fe | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00489803
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00489808
@@ -1273,8 +1273,8 @@ section .text
     MOV EBX,0x5d31cb                    ; 00489f32 | = "..\\core\\event.cpp"
     MOV ESI,0x31c                       ; 00489f37
     PUSH 0x5d31dd                       ; 00489f3c | = "Can't find CDemonLight for light %s i..."
-    MOV dword ptr [0x01d046a0],EBX      ; 00489f41 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00489f47 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00489f41 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00489f47 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00489f4d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00489f52
@@ -6265,8 +6265,8 @@ section .text
     MOV ESI,0x5d3ea8                    ; 0048ce57 | = "..\\core\\event.cpp"
     MOV EDI,0x718                       ; 0048ce5c
     PUSH 0x5d3eba                       ; 0048ce61 | = "Can't find CDemonLight for light %s i..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0048ce66 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0048ce6c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0048ce66 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0048ce6c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0048ce72
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0048ce77

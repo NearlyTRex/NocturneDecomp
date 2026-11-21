@@ -53,8 +53,8 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004fbce0(CDemonMission
     core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(pCVar1);
     _fprintf(file_handle,"%s \"%s\"\n");
     if (2999 < this_ptr->actor_lookup_count) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
-      g_INT_01d046a4 = 0x1ed;
+      g_CurrentFilename = "..\\core\\mission.cpp";
+      g_CurrentLineNumber = 493;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Too many actors");
     }
     this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = pCVar1;
@@ -66,8 +66,8 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004fbce0(CDemonMission
       pCVar3 = (CVector3i *)&pCVar2[0xd6].process_disabled;
       for (iVar4 = 0; iVar4 < pCVar2[0xd6].blood_effect_timer; iVar4 = iVar4 + 1) {
         if (2999 < this_ptr->actor_lookup_count) {
-          g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
-          g_INT_01d046a4 = 0x1f8;
+          g_CurrentFilename = "..\\core\\mission.cpp";
+          g_CurrentLineNumber = 504;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Too many actors");
         }
         this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] =

@@ -25,8 +25,8 @@
 ;   float g_FLOAT_005dde34 = 0.003921569
 ;   int g_INT_01c37788
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_01d09854
 ;   float g_FLOAT_01d0987c
 ;   float g_FLOAT_01d09880
@@ -91,8 +91,8 @@ section .text
     MOV EDX,0x5dddf0                    ; 004f411d | = "..\\engine\\mini3d.cpp"
     MOV ECX,0x86b                       ; 004f4122
     PUSH 0x5dde05                       ; 004f4127 | = "CMini3D::polyList - Too many verticie..."
-    MOV dword ptr [0x01d046a0],EDX      ; 004f412c | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004f4132 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004f412c | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004f4132 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f4138
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004f413d

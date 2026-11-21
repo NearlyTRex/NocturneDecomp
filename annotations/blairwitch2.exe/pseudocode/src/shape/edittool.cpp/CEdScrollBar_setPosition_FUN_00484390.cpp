@@ -33,8 +33,8 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_00484390(CEdScrollB
   if (((3 < iVar1) && (3 < iVar2)) && (3 < this_ptr->track_end - this_ptr->track_start)) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
-  g_INT_01d046a4 = 0x11fb;
+  g_CurrentFilename = "..\\shape\\edittool.cpp";
+  g_CurrentLineNumber = 4603;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CEdScrollBar::setPosition - invalid dimensions.");
   return;
 }

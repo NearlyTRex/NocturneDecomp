@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   CSound* g_CSound_PTR_0061c068 = 0264b290
-;   char* g_CHAR_PTR_01d046a0
+;   char* g_CurrentFilename
 ;   int g_INT_01d046a8
 ;
 ; Called Functions:
@@ -64,7 +64,7 @@ section .text
     MOV dword ptr [ESP + 0x4],ESI       ; 004e4541
     MOV DL,DH                           ; 004e4545
     POP EBX                             ; 004e4547
-    MOV ESI,dword ptr [0x01d046a0]      ; 004e4548 | g_CHAR_PTR_01d046a0
+    MOV ESI,dword ptr [0x01d046a0]      ; 004e4548 | g_CurrentFilename
         ;   Label: LAB_004e4548
     MOV AL,byte ptr [ESI]               ; 004e454e
         ;   Label: LAB_004e454e
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_004e4596
     JMP 0x004e4512                      ; 004e459b
         ;   XREF to: 004e4512 (UNCONDITIONAL_JUMP)  ; LAB_004e4512
-    MOV ESI,dword ptr [0x01d046a0]      ; 004e45a0 | g_CHAR_PTR_01d046a0
+    MOV ESI,dword ptr [0x01d046a0]      ; 004e45a0 | g_CurrentFilename
         ;   Label: LAB_004e45a0
     MOV AL,byte ptr [ESI]               ; 004e45a6
         ;   Label: LAB_004e45a6
@@ -134,7 +134,7 @@ section .text
         ;   Label: LAB_004e45bc
     INC ESI                             ; 004e45be
         ;   Label: LAB_004e45be
-    MOV dword ptr [0x01d046a0],ESI      ; 004e45bf | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a0],ESI      ; 004e45bf | g_CurrentFilename
     JMP 0x004e4548                      ; 004e45c5
         ;   XREF to: 004e4548 (UNCONDITIONAL_JUMP)  ; LAB_004e4548
 

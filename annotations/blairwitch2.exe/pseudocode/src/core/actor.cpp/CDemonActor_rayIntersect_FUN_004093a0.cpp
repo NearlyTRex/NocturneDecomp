@@ -129,8 +129,8 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004093a0(CDemonActor *
       goto LAB_0040957e;
     }
   }
-  g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
-  g_INT_01d046a4 = 0x4ab;
+  g_CurrentFilename = "..\\core\\actor.cpp";
+  g_CurrentLineNumber = 1195;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonActor::rayIntersect - Invalid collision type!");
 LAB_0040957e:
   if ((local_100 < 0.0) || (1.0 < local_100)) {

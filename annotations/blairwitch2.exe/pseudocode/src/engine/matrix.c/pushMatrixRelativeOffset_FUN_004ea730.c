@@ -26,8 +26,8 @@ void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ea730(int offset_x,
   if (g_MatrixStackIndex < 10) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\engine\\matrix.c";
-  g_INT_01d046a4 = 0x5cc;
+  g_CurrentFilename = "..\\engine\\matrix.c";
+  g_CurrentLineNumber = 1484;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance3");
   return;
 }

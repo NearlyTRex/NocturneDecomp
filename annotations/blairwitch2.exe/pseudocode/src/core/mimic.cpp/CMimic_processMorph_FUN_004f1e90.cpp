@@ -16,8 +16,8 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(CMimic *this_ptr,fl
   float local_18 [2];
   
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\mimic.cpp";
-    g_INT_01d046a4 = 0x4c9;
+    g_CurrentFilename = "..\\core\\mimic.cpp";
+    g_CurrentLineNumber = 1225;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMimic::processMorph - can't process morph unless we've started morph!");
   }
   fVar2 = delta_time / 1.0f + this_ptr->morph_blend;

@@ -331,8 +331,8 @@ section .text
     MOV EBP,0x5e232d                    ; 0051972d | = "..\\core\\platfrm.cpp"
     MOV EAX,0x316                       ; 00519732
     PUSH 0x5e2341                       ; 00519737 | = "CPlatform::archive - too many attache..."
-    MOV dword ptr [0x01d046a0],EBP      ; 0051973c | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00519742 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 0051973c | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00519742 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00519747
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051974c

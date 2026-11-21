@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e6dad
 ;   TerminatedCString s_Tried_to_do_something_wi_005e6dc2
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -42,8 +42,8 @@ section .text
     MOV ECX,0x5e6dad                    ; 005415e9 | = "..\\core\\skeleton.cpp"
     MOV EBX,0x2f5                       ; 005415ee
     PUSH 0x5e6dc2                       ; 005415f3 | = "Tried to do something with the skelet..."
-    MOV dword ptr [0x01d046a0],ECX      ; 005415f8 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 005415fe | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005415f8 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 005415fe | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00541604
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00541609

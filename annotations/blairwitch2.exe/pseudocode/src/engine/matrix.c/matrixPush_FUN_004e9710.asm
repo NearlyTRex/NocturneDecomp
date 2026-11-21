@@ -78,8 +78,8 @@ section .text
     MOV EBX,0x5dc7c2                    ; 004e97e9 | = "..\\engine\\matrix.c"
     MOV ESI,0x34b                       ; 004e97ee
     PUSH 0x5dc7d5                       ; 004e97f3 | = "Matrix unbalance"
-    MOV dword ptr [0x01d046a0],EBX      ; 004e97f8 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004e97fe | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004e97f8 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004e97fe | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e9804
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e9809

@@ -14,8 +14,8 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(CMot
     return;
   }
   if (this_ptr->motion_list_ptr->state_count <= desired_state_index) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\motion.cpp";
-    g_INT_01d046a4 = 0x2a4;
+    g_CurrentFilename = "..\\core\\motion.cpp";
+    g_CurrentLineNumber = 676;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMotionController::setDesiredState - invalid state index");
   }
   if (desired_state_index != this_ptr->state_index) {

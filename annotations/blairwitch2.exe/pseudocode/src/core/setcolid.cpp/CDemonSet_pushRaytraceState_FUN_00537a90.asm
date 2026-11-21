@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005e5e5d
 ;   TerminatedCString s_CDemonSet_pushRaytraceSt_005e5e72
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_RaytraceStateStackDepth
 ;
 ; Called Functions:
@@ -153,8 +153,8 @@ section .text
         ;   Label: LAB_00537c06
     MOV ESI,0x406                       ; 00537c0b
     PUSH 0x5e5e72                       ; 00537c10 | = "CDemonSet::pushRaytraceState - stack ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00537c15 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00537c1b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00537c15 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00537c1b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00537c21
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00537c26

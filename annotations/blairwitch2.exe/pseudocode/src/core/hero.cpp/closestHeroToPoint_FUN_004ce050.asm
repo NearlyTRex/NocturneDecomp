@@ -17,8 +17,8 @@
 ;   TerminatedCString s_core_hero_cpp_005d9a13
 ;   TerminatedCString s_closestHeroToPoint_no_he_005d9a24
 ;   int g_HeroCount
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -94,8 +94,8 @@ section .text
         ;   Label: LAB_004ce0d2
     MOV EDI,0x3a                        ; 004ce0d7
     PUSH 0x5d9a24                       ; 004ce0dc | = "closestHeroToPoint - no heros!"
-    MOV dword ptr [0x01d046a0],EBX      ; 004ce0e1 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004ce0e7 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004ce0e1 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 004ce0e7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ce0ed
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ce0f2

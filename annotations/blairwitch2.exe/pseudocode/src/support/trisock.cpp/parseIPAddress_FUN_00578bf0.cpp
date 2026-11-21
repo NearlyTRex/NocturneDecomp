@@ -15,8 +15,8 @@ uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_00578bf0(uint *result_ptr,
   if (iVar1 != 0) {
     return result_ptr;
   }
-  g_CHAR_PTR_01d046a0 = "..\\support\\trisock.cpp";
-  g_INT_01d046a4 = 0x55;
+  g_CurrentFilename = "..\\support\\trisock.cpp";
+  g_CurrentLineNumber = 85;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid dotted decimal string: %s");
   return result_ptr;
 }

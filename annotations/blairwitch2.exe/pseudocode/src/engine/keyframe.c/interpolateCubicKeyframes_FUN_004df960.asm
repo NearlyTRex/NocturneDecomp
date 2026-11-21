@@ -20,8 +20,8 @@
 ;   float g_SplineCoeff_T2_W3 = 2
 ;   float g_SplineCoeff_T3_W3 = -1.5
 ;   int g_AnimationTimerValue
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -115,8 +115,8 @@ section .text
     MOV ECX,0x5dbc58                    ; 004dfa11 | = "..\\engine\\keyframe.c"
     MOV EAX,0x16b                       ; 004dfa16
     PUSH 0x5dbc6d                       ; 004dfa1b | = "Bad keyframe 1"
-    MOV dword ptr [0x01d046a0],ECX      ; 004dfa20 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004dfa26 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004dfa20 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004dfa26 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dfa2b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dfa30
@@ -377,8 +377,8 @@ section .text
         ;   Label: LAB_004dfd12
     MOV EAX,0x1a6                       ; 004dfd17
     PUSH 0x5dbc91                       ; 004dfd1c | = "ZBP not found!"
-    MOV dword ptr [0x01d046a0],EDI      ; 004dfd21 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004dfd27 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004dfd21 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004dfd27 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dfd2c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dfd31

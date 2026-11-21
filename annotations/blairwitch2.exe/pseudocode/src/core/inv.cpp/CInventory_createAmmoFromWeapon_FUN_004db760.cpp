@@ -23,8 +23,8 @@ void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004db760(CInventor
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_0040ddb0(pCVar2);
   }
   if (this_ptr_00 == (CAmmo *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\inv.cpp";
-    g_INT_01d046a4 = 0x3b9;
+    g_CurrentFilename = "..\\core\\inv.cpp";
+    g_CurrentLineNumber = 953;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
   }
   this_ptr_00->ammo_count = weapon->ammo_count;

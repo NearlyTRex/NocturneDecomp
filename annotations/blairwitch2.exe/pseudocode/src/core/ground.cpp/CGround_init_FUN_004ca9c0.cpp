@@ -17,8 +17,8 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004ca9c0(CGround *this_ptr)
   pSVar1 = (SGroundCell *)malloc(this_ptr->width * this_ptr->height * 4);
   this_ptr->terrain_data = pSVar1;
   if (pSVar1 == (SGroundCell *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\ground.cpp";
-    g_INT_01d046a4 = 0xe1;
+    g_CurrentFilename = "..\\core\\ground.cpp";
+    g_CurrentLineNumber = 225;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CGround::init - Out of memory");
   }
   this_ptr_00 = operator_new(0x6d64);
@@ -30,8 +30,8 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004ca9c0(CGround *this_ptr)
   if (pCVar2 != (CTextureList *)0x0) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\core\\ground.cpp";
-  g_INT_01d046a4 = 0xe6;
+  g_CurrentFilename = "..\\core\\ground.cpp";
+  g_CurrentLineNumber = 230;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CGround::init - Out of memory2");
   return;
 }

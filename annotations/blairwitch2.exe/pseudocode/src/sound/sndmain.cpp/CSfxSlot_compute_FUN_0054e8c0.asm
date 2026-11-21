@@ -317,8 +317,8 @@ section .text
         ;   Label: LAB_0054eb59
     MOV ESI,0xade                       ; 0054eb5e
     PUSH 0x5e8602                       ; 0054eb63 | = "SfxSlot::compute - must be locked!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0054eb68 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0054eb6e | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0054eb68 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0054eb6e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054eb74
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054eb79

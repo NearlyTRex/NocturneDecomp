@@ -16,8 +16,8 @@ void __cdecl engine_2d_c_loadPaletteFile_FUN_00401590(char *filename)
   iVar1 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
                     (&local_28,"art",filename);
   if (iVar1 == 0) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\2d.c";
-    g_INT_01d046a4 = 0x29b;
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 667;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to open VGA palette");
   }
   support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(&local_28,g_UCHAR_ARRAY_01c35838,0x300);

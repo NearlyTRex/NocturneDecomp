@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005cfa40
 ;   TerminatedCString s_CKeyFramedModel_buildCol_005cfa53
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
@@ -83,8 +83,8 @@ section .text
     MOV EBP,0x5cfa40                    ; 0044f80a | = "..\\core\\dmodel.cpp"
     MOV EAX,0x470                       ; 0044f80f
     PUSH 0x5cfa53                       ; 0044f814 | = "CKeyFramedModel::buildCollisionTriLis..."
-    MOV dword ptr [0x01d046a0],EBP      ; 0044f819 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0044f81f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 0044f819 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0044f81f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044f824
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044f829

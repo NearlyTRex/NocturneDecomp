@@ -15,8 +15,8 @@ void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041a510(SMRGLHeader
   int aiStack_3c [13];
   
   bVar3 = 0;
-  g_CHAR_PTR_01d046a0 = "..\\engine\\boss.c";
-  g_INT_01d046a4 = 0x44;
+  g_CurrentFilename = "..\\engine\\boss.c";
+  g_CurrentLineNumber = 68;
   core_main_c_displayErrorAndQuit_FUN_004e4500("modelStruct not supported");
   memset(aiStack_3c,0,0x34);
   piVar2 = aiStack_3c;

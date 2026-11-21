@@ -21,14 +21,14 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_00589270(void)
   HVar1 = (*g_SoftwareRenderSurface->vtable->Lock)
                     (g_SoftwareRenderSurface,(RECT *)0x0,&local_70,1,(void *)0x0);
   if (HVar1 != 0) {
-    g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
-    g_INT_01d046a4 = 0x294;
+    g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+    g_CurrentLineNumber = 660;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setColorTable16 - Unable to lock back buffer!");
   }
   HVar1 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
   if (HVar1 != 0) {
-    g_CHAR_PTR_01d046a0 = "..\\wincore\\wddvmem.cpp";
-    g_INT_01d046a4 = 0x296;
+    g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+    g_CurrentLineNumber = 662;
     core_main_c_displayErrorAndQuit_FUN_004e4500("setColorTable16 - Unable to unlock back buffer!");
   }
   g_RedBitPosition.dword = 0;

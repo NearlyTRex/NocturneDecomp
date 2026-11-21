@@ -18,8 +18,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00472470(CDemonRay
   if (pSVar1 != (SVoxelCubeMetadata *)0x0) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\core\\dtrace.cpp";
-  g_INT_01d046a4 = 0x88;
+  g_CurrentFilename = "..\\core\\dtrace.cpp";
+  g_CurrentLineNumber = 136;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonRaytrace::allocCubeList - Out of memory!");
   return;
 }

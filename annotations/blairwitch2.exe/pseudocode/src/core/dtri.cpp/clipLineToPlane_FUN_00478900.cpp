@@ -19,8 +19,8 @@ void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(CVector3f *point1_ptr,CV
   dVar1 = (double)fVar2;
   local_28 = SUB84(__BITCAST_UINT64(dVar1),0);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dtri.cpp";
-    g_INT_01d046a4 = 0x457;
+    g_CurrentFilename = "..\\core\\dtri.cpp";
+    g_CurrentLineNumber = 1111;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Bad clip!");
   }
   fVar2 = -(point1_ptr->z * (float)plane_nz +

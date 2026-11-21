@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005dfaf5
 ;   TerminatedCString s_Can_t_find_motion_s_in_m_005dfb08
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -85,8 +85,8 @@ section .text
     MOV ESI,0x5dfaf5                    ; 00502f66 | = "..\\core\\motion.cpp"
     MOV EDI,0x12b                       ; 00502f6b
     PUSH 0x5dfb08                       ; 00502f70 | = "Can't find motion \"%s\" in motion list"
-    MOV dword ptr [0x01d046a0],ESI      ; 00502f75 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00502f7b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00502f75 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00502f7b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00502f81
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00502f86

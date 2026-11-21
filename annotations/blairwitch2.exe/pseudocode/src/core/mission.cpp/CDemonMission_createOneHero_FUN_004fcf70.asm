@@ -25,8 +25,8 @@
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   int g_HeroCount
 ;   undefined4 g_CHeroPlaceholderClassInfo.name_hash
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -58,8 +58,8 @@ section .text
     MOV EAX,0x5de984                    ; 004fcf95 | = "..\\core\\mission.cpp"
     MOV EDX,0x641                       ; 004fcf9a
     PUSH 0x5de998                       ; 004fcf9f | = "CDemonMission::createOneHero - hero a..."
-    MOV [0x01d046a0],EAX                ; 004fcfa4 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 004fcfa9 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 004fcfa4 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 004fcfa9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fcfaf
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fcfb4
@@ -104,8 +104,8 @@ section .text
         ;   Label: LAB_004fd009
     MOV EBX,0x640                       ; 004fd00e
     PUSH 0x5de955                       ; 004fd013 | = "CDemonMission::createOneHero - too ma..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004fd018 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 004fd01e | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004fd018 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 004fd01e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fd024
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004fd029

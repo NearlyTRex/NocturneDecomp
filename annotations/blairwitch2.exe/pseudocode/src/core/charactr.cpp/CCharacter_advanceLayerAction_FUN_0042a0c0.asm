@@ -25,8 +25,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005cd14e
 ;   TerminatedCString s_CCharacter_advanceLayerA_005cd163
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_0042a0e1
     MOV EBP,0x114a                      ; 0042a0e6
     PUSH 0x5cd163                       ; 0042a0eb | = "CCharacter::advanceLayerAction - inva..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0042a0f0 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0042a0f6 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0042a0f0 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 0042a0f6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042a0fc
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042a101

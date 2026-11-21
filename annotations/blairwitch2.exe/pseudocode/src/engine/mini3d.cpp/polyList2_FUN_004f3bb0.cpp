@@ -18,8 +18,8 @@ void __cdecl engine_mini3d_cpp_polyList2_FUN_004f3bb0(float *vertices,int vertex
               (vertices,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
-  g_INT_01d046a4 = 0x73a;
+  g_CurrentFilename = "..\\engine\\mini3d.cpp";
+  g_CurrentLineNumber = 1850;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::polyList - Software does not suport multitexture");
   return;
 }

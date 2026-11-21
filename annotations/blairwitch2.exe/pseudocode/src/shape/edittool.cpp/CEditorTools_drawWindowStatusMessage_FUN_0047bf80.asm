@@ -14,8 +14,8 @@
 ;   int g_WindowStatusTextColor
 ;   int g_INT_01c35e48
 ;   int g_INT_01c35e4c
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_0047c035
     MOV EBX,0xa0                        ; 0047c03a
     PUSH 0x5d1e85                       ; 0047c03f
-    MOV dword ptr [0x01d046a0],ECX      ; 0047c044 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0047c04a | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0047c044 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0047c04a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047c050
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047c055

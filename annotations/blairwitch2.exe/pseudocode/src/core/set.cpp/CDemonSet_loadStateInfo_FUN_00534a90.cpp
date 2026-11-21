@@ -18,8 +18,8 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00534a90(CDemonSet *this_p
   _fscanf(file_handle,"%*[^\n]\n");
   _fscanf(file_handle,"%d\n");
   if (local_1c != 1) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\set.cpp";
-    g_INT_01d046a4 = 0x147b;
+    g_CurrentFilename = "..\\core\\set.cpp";
+    g_CurrentLineNumber = 5243;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Set saveState info is invalid version %d");
   }
   _fscanf(file_handle,"%*[^\n]\n");

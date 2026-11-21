@@ -22,8 +22,8 @@
 ;   TerminatedCString s_models_005cf5cd
 ;   TerminatedCString s_core_dmodel_cpp_005cf5d4
 ;   TerminatedCString s_Can_t_open_keyframed_mod_005cf5e7
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_0044ecb0
@@ -114,8 +114,8 @@ section .text
     MOV EAX,0x5cf5d4                    ; 0044dd6b | = "..\\core\\dmodel.cpp"
     MOV EDX,0xc5                        ; 0044dd70
     PUSH 0x5cf5e7                       ; 0044dd75 | = "Can't open keyframed model %s"
-    MOV [0x01d046a0],EAX                ; 0044dd7a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0044dd7f | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0044dd7a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0044dd7f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044dd85
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0044dd8a
@@ -165,8 +165,8 @@ section .text
     MOV ECX,0x5cf599                    ; 0044dde3 | = "..\\core\\dmodel.cpp"
     MOV ESI,0xb8                        ; 0044dde8
     PUSH 0x5cf5ac                       ; 0044dded | = "Can't open keyframed model %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 0044ddf2 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0044ddf8 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0044ddf2 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0044ddf8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044ddfe
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0044de03

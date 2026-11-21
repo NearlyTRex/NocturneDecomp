@@ -572,8 +572,8 @@ section .text
         ;   Label: LAB_005845f0
     MOV EDX,0x161                       ; 005845f5
     PUSH 0x5edcad                       ; 005845fa | = "CMobster::process - Out of memory!"
-    MOV [0x01d046a0],EAX                ; 005845ff | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00584604 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 005845ff | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00584604 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0058460a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0058460f

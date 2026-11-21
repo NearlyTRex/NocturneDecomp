@@ -9,8 +9,8 @@
 int __cdecl support_trstream_cpp_COutStreamDebug_tell_FUN_0057e360(COutStreamDebug *this_ptr)
 
 {
-  g_CHAR_PTR_01d046a0 = "..\\support\\trstream.cpp";
-  g_INT_01d046a4 = 0xa8d;
+  g_CurrentFilename = "..\\support\\trstream.cpp";
+  g_CurrentLineNumber = 2701;
   core_main_c_displayErrorAndQuit_FUN_004e4500("COutStreamDebug::tell - invalid operation");
   return -1;
 }

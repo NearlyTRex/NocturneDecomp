@@ -75,8 +75,8 @@
 ;   TerminatedCString s_core_morph_cpp_005f17cb
 ;   TerminatedCString s_CMorph_getReady_can_t_do_005f17dd
 ;   WatcomTypeInfo g_CBoundingBox3DTypeInfo
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041a590
@@ -162,8 +162,8 @@ section .text
         ;   Label: LAB_005b729f
     MOV ESI,0x31f                       ; 005b72a4
     PUSH 0x5f17dd                       ; 005b72a9 | = "CMorph::getReady - can't do this unle..."
-    MOV dword ptr [0x01d046a0],EBX      ; 005b72ae | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 005b72b4 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 005b72ae | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 005b72b4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b72ba
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b72bf

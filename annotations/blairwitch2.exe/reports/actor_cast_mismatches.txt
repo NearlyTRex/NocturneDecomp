@@ -323,11 +323,11 @@ DETAILED FINDINGS
     Expected class: CHero                (CHero -> CCharacter -> CDemonActor)
     Actual cast:    CDemonActor          (CDemonActor)
 
-  Line 2761: resolveActorByName()
+  Line 2760: resolveActorByName()
     Expected class: CCharacter           (CCharacter -> CDemonActor)
     Actual cast:    CDemonActor          (CDemonActor)
 
-  Line 3095: resolveActorByName()
+  Line 3094: resolveActorByName()
     Expected class: CCharacter           (CCharacter -> CDemonActor)
     Actual cast:    CDemonActor          (CDemonActor)
 
@@ -1193,7 +1193,7 @@ Manual inspection is needed to determine the expected class.
     19:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c5a0(this_ptr->hero_name);
     20:   actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c8f0(actor_ptr,class_name_hash);
     21:   if (actor == (CHero *)0x0) {
-    22:     g_CHAR_PTR_01d046a0 = "..\\core\\hero.cpp";
+    22:     g_CurrentFilename = "..\\core\\hero.cpp";
 
 --------------------------------------------------------------------------------
   core/inv.cpp/CInventory_addItem_FUN_004dadb0.cpp

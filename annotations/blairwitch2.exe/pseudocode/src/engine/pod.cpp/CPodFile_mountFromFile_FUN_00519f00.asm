@@ -79,8 +79,8 @@
 ;   TerminatedCString s_Out_of_memory_005e2488
 ;   TerminatedCString s_engine_pod_cpp_005e2497
 ;   TerminatedCString s_realloc_returns_NULL_shr_005e24a9
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -313,8 +313,8 @@ section .text
     MOV ECX,0x5e2413                    ; 0051a13f | = "..\\engine\\pod.cpp"
     MOV ESI,0x198                       ; 0051a144
     PUSH 0x5e2425                       ; 0051a149 | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0051a14e | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0051a154 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0051a14e | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0051a154 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a15a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a15f
@@ -397,8 +397,8 @@ section .text
     MOV ESI,0x5e2497                    ; 0051a262 | = "..\\engine\\pod.cpp"
     MOV EDI,0x27b                       ; 0051a267
     PUSH 0x5e24a9                       ; 0051a26c | = "realloc returns NULL shrinking filena..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0051a271 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0051a277 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0051a271 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0051a277 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a27d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a282
@@ -577,8 +577,8 @@ section .text
     MOV ECX,0x5e2455                    ; 0051a478 | = "..\\engine\\pod.cpp"
     MOV ESI,0x228                       ; 0051a47d
     PUSH 0x5e2467                       ; 0051a482 | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0051a487 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0051a48d | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0051a487 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0051a48d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a493
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a498
@@ -741,8 +741,8 @@ section .text
     MOV EDI,0x5e2434                    ; 0051a655 | = "..\\engine\\pod.cpp"
     MOV EAX,0x1ed                       ; 0051a65a
     PUSH 0x5e2446                       ; 0051a65f | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],EDI      ; 0051a664 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0051a66a | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0051a664 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0051a66a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a66f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a674
@@ -877,8 +877,8 @@ section .text
     MOV ESI,0x5e2476                    ; 0051a80d | = "..\\engine\\pod.cpp"
     MOV EDI,0x260                       ; 0051a812
     PUSH 0x5e2488                       ; 0051a817 | = "Out of memory!"
-    MOV dword ptr [0x01d046a0],ESI      ; 0051a81c | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0051a822 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0051a81c | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0051a822 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051a828
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051a82d

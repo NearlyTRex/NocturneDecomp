@@ -83,8 +83,8 @@ section .text
     MOV EDI,0x5db92f                    ; 004dc8fc | = "..\\core\\inv.cpp"
     MOV EAX,0x6a3                       ; 004dc901
     PUSH 0x5db93f                       ; 004dc906 | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01d046a0],EDI      ; 004dc90b | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004dc911 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004dc90b | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004dc911 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dc916
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dc91b
@@ -270,8 +270,8 @@ section .text
     MOV EDX,0x5db98b                    ; 004dcad6 | = "..\\core\\inv.cpp"
     MOV ECX,0x6c2                       ; 004dcadb
     PUSH 0x5db99b                       ; 004dcae0 | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01d046a0],EDX      ; 004dcae5 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004dcaeb | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004dcae5 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004dcaeb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dcaf1
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dcaf6

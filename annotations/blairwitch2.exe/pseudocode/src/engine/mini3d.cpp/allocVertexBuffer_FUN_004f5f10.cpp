@@ -18,8 +18,8 @@ void * __cdecl engine_mini3d_cpp_allocVertexBuffer_FUN_004f5f10(int vertex_count
     *(char *)((int)pvVar2 + -1) = (char)pvVar2 - (char)pvVar1;
     return pvVar2;
   }
-  g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
-  g_INT_01d046a4 = 0xdf2;
+  g_CurrentFilename = "..\\engine\\mini3d.cpp";
+  g_CurrentLineNumber = 3570;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::allocVertexBuffer - Allocation of %d vertex failed");
   uRam0000001f = 0x20;
   return (void *)0x20;

@@ -336,8 +336,8 @@ section .text
     MOV EAX,0x5e610b                    ; 0053ac34 | = "..\\core\\setutil.cpp"
     MOV EDX,0xd5                        ; 0053ac39
     PUSH 0x5e611f                       ; 0053ac3e | = "Panning cameras not supported, bucko!"
-    MOV [0x01d046a0],EAX                ; 0053ac43 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0053ac48 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0053ac43 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0053ac48 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053ac4e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0053ac53

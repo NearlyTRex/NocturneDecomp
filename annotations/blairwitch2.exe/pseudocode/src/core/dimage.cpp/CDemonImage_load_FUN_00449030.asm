@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   height
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dimage.cpp_CDemonImage_allocMemory_FUN_00448f40
@@ -113,8 +113,8 @@ section .text
     MOV EAX,0x5cf0a3                    ; 004490f3
     MOV EDX,0x7b                        ; 004490f8
     PUSH 0x5cf0b6                       ; 004490fd
-    MOV [0x01d046a0],EAX                ; 00449102 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00449107 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00449102 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00449107 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044910d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00449112
@@ -211,8 +211,8 @@ section .text
         ;   Label: LAB_00449223
     MOV ECX,0x68                        ; 00449228
     PUSH 0x5cf079                       ; 0044922d
-    MOV dword ptr [0x01d046a0],EDX      ; 00449232 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00449238 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00449232 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00449238 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044923e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00449243
@@ -222,8 +222,8 @@ section .text
         ;   Label: LAB_0044924b
     MOV ESI,0x7f                        ; 00449250
     PUSH 0x5cf103                       ; 00449255
-    MOV dword ptr [0x01d046a0],ECX      ; 0044925a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00449260 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0044925a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00449260 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00449266
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044926b

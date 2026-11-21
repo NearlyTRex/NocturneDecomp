@@ -169,8 +169,8 @@ LAB_0057e7f7:
     }
     break;
   default:
-    g_CHAR_PTR_01d046a0 = "..\\core\\turret.cpp";
-    g_INT_01d046a4 = 0x15a;
+    g_CurrentFilename = "..\\core\\turret.cpp";
+    g_CurrentLineNumber = 346;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CTurret::process - invalid state");
   }
   if (-1 < (this_ptr->base).muzzle_flash_color.r) {

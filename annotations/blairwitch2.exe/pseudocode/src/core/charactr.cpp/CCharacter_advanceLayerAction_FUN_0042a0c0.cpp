@@ -20,8 +20,8 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a0c0(CCharac
   
   if ((this_ptr->layer_action_index < 0) ||
      (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\charactr.cpp";
-    g_INT_01d046a4 = 0x114a;
+    g_CurrentFilename = "..\\core\\charactr.cpp";
+    g_CurrentLineNumber = 4426;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }
   pSVar6 = this_ptr->layer_actions + this_ptr->layer_action_index;

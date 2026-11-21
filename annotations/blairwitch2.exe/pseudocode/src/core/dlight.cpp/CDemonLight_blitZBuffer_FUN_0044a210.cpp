@@ -13,8 +13,8 @@ void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_0044a210(CDemonLight *t
   int iVar2;
   
   if (this_ptr->master_zbuffer == (void *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dlight.cpp";
-    g_INT_01d046a4 = 0x148;
+    g_CurrentFilename = "..\\core\\dlight.cpp";
+    g_CurrentLineNumber = 328;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonLight::blitZBuffer - No master Z buffer");
   }
   if (((((this_ptr->base).viewport_rect.x_min < source_rect->x_max) &&

@@ -21,8 +21,8 @@
 ;   int g_CaptureTextureCount
 ;   SFace[5000] g_CapturedFaces
 ;   undefined4 g_CapturedFaces[0].render_flags
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -78,8 +78,8 @@ section .text
     MOV EDI,0x5d16ec                    ; 0046c79d | = "..\\engine\\drender.cpp"
     MOV EAX,0xb78                       ; 0046c7a2
     PUSH 0x5d1702                       ; 0046c7a7 | = "CDR::captureFace - too many faces cap..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0046c7ac | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0046c7b2 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0046c7ac | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0046c7b2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0046c7b7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0046c7bc

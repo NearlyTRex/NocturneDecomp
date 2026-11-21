@@ -62,8 +62,8 @@ section .text
         ;   Label: LAB_00556572
     MOV EDI,0x4f3                       ; 00556577
     PUSH 0x5e9e3e                       ; 0055657c | = "DirectSoundDevice::setSfxPos - invali..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00556581 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00556587 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00556581 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00556587 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0055658d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00556592

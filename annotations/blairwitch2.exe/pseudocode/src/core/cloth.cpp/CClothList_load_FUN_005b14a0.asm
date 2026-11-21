@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f11a3
 ;   TerminatedCString s_CClothList_load_out_of_m_005f11b5
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_005adda0
@@ -67,8 +67,8 @@ section .text
     MOV ECX,0x5f11a3                    ; 005b14e8 | = "..\\core\\cloth.cpp"
     MOV EAX,0x5b6                       ; 005b14ed
     PUSH 0x5f11b5                       ; 005b14f2 | = "CClothList::load - out of memory for ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 005b14f7 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 005b14fd | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005b14f7 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 005b14fd | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b1502
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b1507

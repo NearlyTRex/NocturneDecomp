@@ -17,8 +17,8 @@
 ;   TerminatedCString s_core_game_cpp_005d86f6
 ;   TerminatedCString s_CGame_displayBitmap_trie_005d8707
 ;   int g_INT_01cb80cc
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -75,8 +75,8 @@ section .text
     MOV EDX,0x5d86f6                    ; 004bcbc3 | = "..\\core\\game.cpp"
     MOV ECX,0x1219                      ; 004bcbc8
     PUSH 0x5d8707                       ; 004bcbcd | = "CGame::displayBitmap - tried to queue..."
-    MOV dword ptr [0x01d046a0],EDX      ; 004bcbd2 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004bcbd8 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004bcbd2 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004bcbd8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004bcbde
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004bcbe3

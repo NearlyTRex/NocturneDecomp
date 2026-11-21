@@ -185,8 +185,8 @@ LAB_004bc1c9:
       support_trstream_cpp_COutStreamFile_close_FUN_0057dd60(&local_40);
       file_handle = _fopen("save\\$$SAVE$$.TMP","rt");
       if (file_handle == (_FILE *)0x0) {
-        g_CHAR_PTR_01d046a0 = "..\\core\\game.cpp";
-        g_INT_01d046a4 = 0x106f;
+        g_CurrentFilename = "..\\core\\game.cpp";
+        g_CurrentLineNumber = 4207;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Can't reopen %s");
       }
       support_codec_cpp_CLZWDictionary_dtor_FUN_00434270(&local_9c.lzw_dict,0);

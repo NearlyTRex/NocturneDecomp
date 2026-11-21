@@ -60,8 +60,8 @@
 ;   TerminatedCString s_core_skeleton_cpp_005e7221
 ;   TerminatedCString s_CDeformableModel_compute_005e7236
 ;   float g_FLOAT_005fb9a0 = 0.00390625
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -138,8 +138,8 @@ section .text
     MOV ESI,0x5e7221                    ; 0054440e | = "..\\core\\skeleton.cpp"
     MOV EDI,0x7e2                       ; 00544413
     PUSH 0x5e7236                       ; 00544418 | = "CDeformableModel::computePartDominant..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0054441d | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00544423 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0054441d | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00544423 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00544429
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054442e

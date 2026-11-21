@@ -53,8 +53,8 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00543
       local_24 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00544cd0(pCVar1);
     }
     if (local_24 == (CDeformableModelInstance *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-      g_INT_01d046a4 = 0x5ff;
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 1535;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
     }
     pCVar1 = local_24;

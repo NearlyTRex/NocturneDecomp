@@ -41,8 +41,8 @@ void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402940(char *filename)
   pcVar4 = (char *)0x0;
 LAB_00402994:
   if (pcVar4 == (char *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\2d.c";
-    g_INT_01d046a4 = 0x74f;
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 1871;
     core_main_c_displayErrorAndQuit_FUN_004e4500("hose!");
   }
   _sprintf(pcVar4,".map");
@@ -54,8 +54,8 @@ LAB_00402994:
     iVar2 = support_trstream_cpp_COutStreamFile_openInDirectory_FUN_0057ddd0
                       (&local_10,"fog",local_88,"wb");
     if (iVar2 == 0) {
-      g_CHAR_PTR_01d046a0 = "..\\engine\\2d.c";
-      g_INT_01d046a4 = 0x756;
+      g_CurrentFilename = "..\\engine\\2d.c";
+      g_CurrentLineNumber = 1878;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to write quick map!");
     }
     support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(&local_10,g_ColorCubeLookup,0x8000);

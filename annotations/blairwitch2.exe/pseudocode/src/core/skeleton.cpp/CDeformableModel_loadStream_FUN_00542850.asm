@@ -107,8 +107,8 @@ section .text
         ;   Label: LAB_00542891
     MOV ECX,0x4d6                       ; 00542896
     PUSH 0x5e6e76                       ; 0054289b | = "Deformable model file is corrupt"
-    MOV dword ptr [0x01d046a0],EDX      ; 005428a0 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 005428a6 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 005428a0 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 005428a6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005428ac
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005428b1
@@ -124,8 +124,8 @@ section .text
     MOV EBP,0x5e6e97                    ; 005428c8 | = "..\\core\\skeleton.cpp"
     MOV EAX,0x4d9                       ; 005428cd
     PUSH 0x5e6eac                       ; 005428d2 | = "Can't load model of version %d, this ..."
-    MOV dword ptr [0x01d046a0],EBP      ; 005428d7 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 005428dd | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 005428d7 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 005428dd | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005428e2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 005428e7
@@ -964,8 +964,8 @@ section .text
         ;   Label: LAB_00543081
     MOV ESI,0x5a5                       ; 00543086
     PUSH 0x5e6ff2                       ; 0054308b | = "CDeformableModel::loadStream - error ..."
-    MOV dword ptr [0x01d046a0],EBX      ; 00543090 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00543096 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00543090 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00543096 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054309c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005430a1

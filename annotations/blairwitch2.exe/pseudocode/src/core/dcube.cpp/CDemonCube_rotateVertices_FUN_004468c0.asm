@@ -39,8 +39,8 @@
 ;   uchar g_ColorConstantsInitialized
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CDemonRenderer_01ba5c50.advanced_culling_enabled
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
@@ -266,8 +266,8 @@ section .text
     MOV EBX,0x5ce9cb                    ; 00446ad4 | = "..\\core\\dcube.cpp"
     MOV ESI,0x7bb                       ; 00446ad9
     PUSH 0x5ce9dd                       ; 00446ade | = "CDemonCube::rotateVerticies - tried t..."
-    MOV dword ptr [0x01d046a0],EBX      ; 00446ae3 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00446ae9 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00446ae3 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00446ae9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00446aef
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00446af4

@@ -69,14 +69,14 @@ int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f8750(float *vertices,int 
   if (g_PTR_01d0d2cc == (byte *)0x0) {
     g_PTR_01d0d2cc = malloc(360000);
     if (g_PTR_01d0d2cc == (byte *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
-      g_INT_01d046a4 = 0x14e7;
+      g_CurrentFilename = "..\\engine\\mini3d.cpp";
+      g_CurrentLineNumber = 5351;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::userClipPolyList - Out of memory");
     }
     g_PTR_01d0d2d0 = malloc(60000);
     if (g_PTR_01d0d2d0 == (byte *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
-      g_INT_01d046a4 = 0x14eb;
+      g_CurrentFilename = "..\\engine\\mini3d.cpp";
+      g_CurrentLineNumber = 5355;
       core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::userClipPolyList - Out of memory");
     }
   }

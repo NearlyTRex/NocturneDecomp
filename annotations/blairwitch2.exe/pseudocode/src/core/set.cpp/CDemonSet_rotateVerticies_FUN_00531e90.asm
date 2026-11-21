@@ -27,8 +27,8 @@
 ;   TerminatedCString s_CDemonSet_rotateVerticie_005e59fa
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -111,8 +111,8 @@ section .text
     MOV ECX,0x5e59ea                    ; 00531f20 | = "..\\core\\set.cpp"
     MOV EBX,0xe95                       ; 00531f25
     PUSH 0x5e59fa                       ; 00531f2a | = "CDemonSet::rotateVerticies - tried to..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00531f2f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00531f35 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00531f2f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 00531f35 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00531f3b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00531f40

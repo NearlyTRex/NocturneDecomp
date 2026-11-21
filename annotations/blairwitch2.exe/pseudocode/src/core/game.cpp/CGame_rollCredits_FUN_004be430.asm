@@ -369,8 +369,8 @@ section .text
     MOV EAX,0x5d8a5d                    ; 004be7b1 | = "..\\core\\game.cpp"
     MOV EDX,0x14ad                      ; 004be7b6
     PUSH 0x5d8a6e                       ; 004be7bb | = "CGame::rollCredits - Out of memory"
-    MOV [0x01d046a0],EAX                ; 004be7c0 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 004be7c5 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 004be7c0 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 004be7c5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004be7cb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004be7d0

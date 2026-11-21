@@ -12,8 +12,8 @@ ushort * __cdecl engine_mini3d_cpp_mirrorFaces_FUN_004f34d0(ushort *faces,int fa
   int iVar1;
   
   if (3000 < face_count) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
-    g_INT_01d046a4 = 0x5ad;
+    g_CurrentFilename = "..\\engine\\mini3d.cpp";
+    g_CurrentLineNumber = 1453;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::mirrorFaces - Too many of them!!!");
   }
   if (0 < face_count) {

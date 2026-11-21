@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   sequence_number
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_SimFrameCount
 ;
 ; Called Functions:
@@ -61,8 +61,8 @@ section .text
     MOV EBP,0x5e03cf                    ; 0050b1ad
     MOV EAX,0x12b                       ; 0050b1b2
     PUSH 0x5e03e3                       ; 0050b1b7
-    MOV dword ptr [0x01d046a0],EBP      ; 0050b1bc | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0050b1c2 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 0050b1bc | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0050b1c2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050b1c7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050b1cc

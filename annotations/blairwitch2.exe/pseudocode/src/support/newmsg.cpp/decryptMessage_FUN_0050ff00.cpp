@@ -17,8 +17,8 @@ char * __cdecl support_newmsg_cpp_decryptMessage_FUN_0050ff00(char *encrypted_ms
   if (encrypted_msg[2] != '>') {
     bVar2 = *encrypted_msg;
     if ((byte)(encrypted_msg[2] ^ bVar2) != 0x3e) {
-      g_CHAR_PTR_01d046a0 = "..\\support\\newmsg.cpp";
-      g_INT_01d046a4 = 0xe2;
+      g_CurrentFilename = "..\\support\\newmsg.cpp";
+      g_CurrentLineNumber = 226;
       core_main_c_displayErrorAndQuit_FUN_004e4500("decryptMessage - invalid initial mask value!");
     }
     iVar4 = 2;
@@ -28,14 +28,14 @@ char * __cdecl support_newmsg_cpp_decryptMessage_FUN_0050ff00(char *encrypted_ms
       pbVar3 = pbVar3 + 1;
       iVar4 = iVar4 + 1;
       if (100000 < iVar4) {
-        g_CHAR_PTR_01d046a0 = "..\\support\\newmsg.cpp";
-        g_INT_01d046a4 = 0xed;
+        g_CurrentFilename = "..\\support\\newmsg.cpp";
+        g_CurrentLineNumber = 237;
         core_main_c_displayErrorAndQuit_FUN_004e4500("decryptMessage - error decrypting text!");
       }
     }
     if (iVar4 < 0x17) {
-      g_CHAR_PTR_01d046a0 = "..\\support\\newmsg.cpp";
-      g_INT_01d046a4 = 0x100;
+      g_CurrentFilename = "..\\support\\newmsg.cpp";
+      g_CurrentLineNumber = 256;
       core_main_c_displayErrorAndQuit_FUN_004e4500("decryptMessage - premature null terminator!");
       return encrypted_msg + 0x17;
     }

@@ -10,8 +10,8 @@ void __cdecl engine_mini3d_cpp_free32_FUN_004f5f70(void *ptr)
 
 {
   if (ptr == (void *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
-    g_INT_01d046a4 = 0xe11;
+    g_CurrentFilename = "..\\engine\\mini3d.cpp";
+    g_CurrentLineNumber = 3601;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMini3D::free32 - NULL pointer being freed");
   }
   debugFree((void *)((int)ptr - (uint)*(byte *)((int)ptr + -1)));

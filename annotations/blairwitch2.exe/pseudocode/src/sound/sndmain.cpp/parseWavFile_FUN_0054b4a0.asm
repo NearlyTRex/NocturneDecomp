@@ -28,7 +28,7 @@
 ;   TerminatedCString s_No_data_chunk_found_005e79ed
 ;   TerminatedCString s_sound_sndmain_cpp_005e7a03
 ;   TerminatedCString s_Hell_froze_005e7a18
-;   char* g_CHAR_PTR_01d046a0
+;   char* g_CurrentFilename
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -292,8 +292,8 @@ section .text
     MOV EDI,0x5e7a03                    ; 0054b718 | = "..\\sound\\sndmain.cpp"
     MOV EBP,0x236                       ; 0054b71d
     PUSH 0x5e7a18                       ; 0054b722 | = "Hell froze"
-    MOV dword ptr [0x01d046a0],EDI      ; 0054b727 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0054b72d | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0054b727 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 0054b72d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054b733
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054b738
@@ -391,8 +391,8 @@ section .text
         ;   Label: LAB_0054b851
     MOV EDX,0x211                       ; 0054b856
     PUSH 0x5e79e2                       ; 0054b85b | = "Hell froze"
-    MOV [0x01d046a0],EAX                ; 0054b860 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0054b865 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0054b860 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0054b865 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054b86b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054b870

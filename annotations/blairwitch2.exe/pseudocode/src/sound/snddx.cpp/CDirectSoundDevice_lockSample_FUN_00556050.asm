@@ -14,8 +14,8 @@
 ;   TerminatedCString s_sound_snddx_cpp_005e9c48
 ;   TerminatedCString s_DirectSoundDevice_lockSa_005e9c5b
 ;   TerminatedCString s_Lock_hw_sample_buffer_005e9c8b
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -69,8 +69,8 @@ section .text
     MOV EDI,0x5e9c48                    ; 005560ad | = "..\\sound\\snddx.cpp"
     MOV EBP,0x440                       ; 005560b2
     PUSH 0x5e9c5b                       ; 005560b7 | = "DirectSoundDevice::lockSample - alrea..."
-    MOV dword ptr [0x01d046a0],EDI      ; 005560bc | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 005560c2 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 005560bc | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 005560c2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005560c8
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005560cd

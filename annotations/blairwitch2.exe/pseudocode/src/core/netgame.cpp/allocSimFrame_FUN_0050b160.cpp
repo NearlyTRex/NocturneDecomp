@@ -29,8 +29,8 @@ SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0050b160(int sequence_num
     } while (iVar1 < g_SimFrameCount * 0x74);
   }
   if (0x1ff < g_SimFrameCount) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
-    g_INT_01d046a4 = 299;
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 299;
     core_main_c_displayErrorAndQuit_FUN_004e4500("allocSimFrame - sim history list full");
   }
   dest = g_SSimFrame_ARRAY_01d54644 + g_SimFrameCount;

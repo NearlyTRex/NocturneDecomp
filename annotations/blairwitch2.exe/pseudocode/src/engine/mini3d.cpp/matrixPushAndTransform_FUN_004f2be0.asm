@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   position
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   void* g_PTR_01d09918
 ;   void* g_PTR_01d0991c
 ;   int g_INT_01d0c398
@@ -39,8 +39,8 @@ section .text
     MOV EBX,0x5ddaf0                    ; 004f2c01
     MOV EBP,0x3cf                       ; 004f2c06
     PUSH 0x5ddb05                       ; 004f2c0b
-    MOV dword ptr [0x01d046a0],EBX      ; 004f2c10 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004f2c16 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004f2c10 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 004f2c16 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f2c1c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004f2c21

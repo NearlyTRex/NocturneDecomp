@@ -150,8 +150,8 @@ section .text
     MOV EAX,0x5d28ff                    ; 00482aeb | = "..\\shape\\edittool.cpp"
     MOV EDX,0xf9a                       ; 00482af0
     PUSH 0x5d2915                       ; 00482af5 | = "Too many picklist columns!"
-    MOV [0x01d046a0],EAX                ; 00482afa | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00482aff | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00482afa | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00482aff | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00482b05
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00482b0a
@@ -161,8 +161,8 @@ section .text
         ;   Label: LAB_00482b0f
     MOV EBX,0xa0                        ; 00482b14
     PUSH 0x5d1e85                       ; 00482b19 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d046a0],ECX      ; 00482b1e | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00482b24 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00482b1e | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 00482b24 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00482b2a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00482b2f

@@ -18,8 +18,8 @@
 ;   TerminatedCString s_Can_t_create_flies_005d955b
 ;   double g_DOUBLE_005d9572 = 60
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01d182f0
 ;
 ; Called Functions:
@@ -54,8 +54,8 @@ section .text
     MOV EDX,0x5d954a                    ; 004c9bf6 | = "..\\core\\gore.cpp"
     MOV ECX,0x681                       ; 004c9bfb
     PUSH 0x5d955b                       ; 004c9c00 | = "Can't create flies!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004c9c05 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004c9c0b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004c9c05 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004c9c0b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004c9c11
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004c9c16

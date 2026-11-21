@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_boss_c_005cc3fa
 ;   TerminatedCString s_modelStruct_not_supporte_005cc40b
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -23,8 +23,8 @@ section .text
         ;   Label: engine_boss.c_modelStructNotSupported1_FUN_0041a480
     MOV ECX,0x35                        ; 0041a485
     PUSH 0x5cc40b                       ; 0041a48a | = "modelStruct not supported"
-    MOV dword ptr [0x01d046a0],EDX      ; 0041a48f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0041a495 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0041a48f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0041a495 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0041a49b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0041a4a0

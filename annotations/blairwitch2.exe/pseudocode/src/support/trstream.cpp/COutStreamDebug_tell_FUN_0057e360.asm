@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005ed60a
 ;   TerminatedCString s_COutStreamDebug_tell_inv_005ed622
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -23,8 +23,8 @@ section .text
         ;   Label: support_trstream.cpp_COutStreamDebug_tell_FUN_0057e360
     MOV ECX,0xa8d                       ; 0057e365
     PUSH 0x5ed622                       ; 0057e36a | = "COutStreamDebug::tell - invalid opera..."
-    MOV dword ptr [0x01d046a0],EDX      ; 0057e36f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0057e375 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0057e36f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0057e375 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0057e37b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     MOV EAX,0xffffffff                  ; 0057e380

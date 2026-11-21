@@ -374,7 +374,7 @@
 ;   undefined4 g_CLightActorClassInfo.name_hash
 ;   int g_INT_01b4d28c
 ;   int g_INT_01b4d290
-;   char* g_CHAR_PTR_01d046a0
+;   char* g_CurrentFilename
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -2031,8 +2031,8 @@ section .text
     MOV ECX,0x5d028f                    ; 00457fe9 | = "..\\core\\doc.cpp"
     MOV ESI,0xe8f                       ; 00457fee
     PUSH 0x5d029f                       ; 00457ff3 | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00457ff8 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00457ffe | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00457ff8 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00457ffe | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00458004
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00458009

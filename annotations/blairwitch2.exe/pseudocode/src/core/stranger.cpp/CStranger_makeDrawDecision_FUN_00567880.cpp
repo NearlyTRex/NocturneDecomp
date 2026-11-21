@@ -55,8 +55,8 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00567880(CStranger
   bVar10 = 0;
   iVar16 = (this_ptr->base).base.layer_action_index;
   if ((iVar16 < 0) || (0x10 < iVar16)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\stranger.cpp";
-    g_INT_01d046a4 = 0xa78;
+    g_CurrentFilename = "..\\core\\stranger.cpp";
+    g_CurrentLineNumber = 2680;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CStranger::makeDrawDecision - draw motion out of range!");
   }
   local_f8 = 1.0;

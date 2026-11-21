@@ -9,8 +9,8 @@
 void __cdecl core_particle_cpp_CParticle_render_FUN_00511370(CParticle *this_ptr)
 
 {
-  g_CHAR_PTR_01d046a0 = "..\\core\\particle.cpp";
-  g_INT_01d046a4 = 200;
+  g_CurrentFilename = "..\\core\\particle.cpp";
+  g_CurrentLineNumber = 200;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Base class shouldn't render");
   return;
 }

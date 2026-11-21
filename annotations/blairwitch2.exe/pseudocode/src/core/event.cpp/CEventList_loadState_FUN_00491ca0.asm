@@ -334,8 +334,8 @@ section .text
     MOV ECX,0x5d4f97                    ; 00491fce | = "..\\core\\event.cpp"
     MOV EDI,0xf3e                       ; 00491fd3
     PUSH 0x5d4fa9                       ; 00491fd8 | = "CEventList::loadState - file version ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00491fdd | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00491fe3 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00491fdd | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00491fe3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00491fe9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00491fee

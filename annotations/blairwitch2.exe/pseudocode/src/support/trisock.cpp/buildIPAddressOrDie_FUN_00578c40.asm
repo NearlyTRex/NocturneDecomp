@@ -14,8 +14,8 @@
 ;   support_trisock.cpp_staticInit_FUN_00578b90 at 00578ba9
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -62,8 +62,8 @@ section .text
     MOV EBP,0x5ecfc3                    ; 00578c7c
     MOV EAX,0x60                        ; 00578c81
     PUSH 0x5ecfda                       ; 00578c86
-    MOV dword ptr [0x01d046a0],EBP      ; 00578c8b | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00578c91 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 00578c8b | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00578c91 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00578c96
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x14                        ; 00578c9b

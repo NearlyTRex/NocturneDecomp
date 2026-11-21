@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e7272
 ;   TerminatedCString s_CDeformableModelInstance_005e7287
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -59,8 +59,8 @@ section .text
     MOV ECX,0x5e7272                    ; 00544df9 | = "..\\core\\skeleton.cpp"
     MOV EDI,0x909                       ; 00544dfe
     PUSH 0x5e7287                       ; 00544e03 | = "CDeformableModelInstance::allocPointL..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00544e08 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00544e0e | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00544e08 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00544e0e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00544e14
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00544e19

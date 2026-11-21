@@ -16,14 +16,14 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_0051af80(CPodFile *this_
   uint current_crc;
   
   if ((file_index < 0) || (this_ptr->file_count <= file_index)) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
-    g_INT_01d046a4 = 0x3a5;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 933;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CPodFile::computeOneFileCRC - invalid index");
   }
   file = _fopen(this_ptr->filename,"rb");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
-    g_INT_01d046a4 = 0x3aa;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 938;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CPodFile::computeOneFileCRC - can't open %s");
   }
   _fseek(file,this_ptr->directory_entries[file_index].offset,0);

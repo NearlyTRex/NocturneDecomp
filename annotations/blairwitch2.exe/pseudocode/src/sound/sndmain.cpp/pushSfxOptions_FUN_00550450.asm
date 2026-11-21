@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e8c22
 ;   TerminatedCString s_pushSfxOptions_stack_ful_005e8c37
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_SfxLastSlot
 ;
 ; Called Functions:
@@ -61,8 +61,8 @@ section .text
     MOV EBX,0x5e8c22                    ; 0055049c | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xe98                       ; 005504a1
     PUSH 0x5e8c37                       ; 005504a6 | = "pushSfxOptions - stack full"
-    MOV dword ptr [0x01d046a0],EBX      ; 005504ab | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 005504b1 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 005504ab | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 005504b1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005504b7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005504bc

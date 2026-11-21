@@ -38,8 +38,8 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820
           pCVar1->lifecycle_state = ACTOR_CREATED;
 LAB_004fc89c:
           if (1999 < g_CDemonSetPtr->actor_count) {
-            g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
-            g_INT_01d046a4 = 0x48a;
+            g_CurrentFilename = "..\\core\\mission.cpp";
+            g_CurrentLineNumber = 1162;
             core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::buildActiveSetActorList - Too many actors in current set!");
           }
           pCVar2 = g_CDemonSetPtr;

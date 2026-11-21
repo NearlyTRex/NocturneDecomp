@@ -27,8 +27,8 @@
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
 ;   uint*[1200] g_ZBufferScanlineArrayBackup
 ;
@@ -99,8 +99,8 @@ section .text
     MOV EBX,0x5e5fc3                    ; 005384da | = "..\\core\\setdir.cpp"
     MOV EDI,0x9f                        ; 005384df
     PUSH 0x5e5fd6                       ; 005384e4 | = "Out of memory"
-    MOV dword ptr [0x01d046a0],EBX      ; 005384e9 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 005384ef | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 005384e9 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 005384ef | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005384f5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005384fa
@@ -129,8 +129,8 @@ section .text
     MOV EDX,0x5e5f5d                    ; 00538536 | = "..\\core\\setdir.cpp"
     MOV ECX,0x67                        ; 0053853b
     PUSH 0x5e5f70                       ; 00538540 | = "saveZBufferTable - already saved!"
-    MOV dword ptr [0x01d046a0],EDX      ; 00538545 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0053854b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00538545 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0053854b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00538551
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00538556
@@ -185,8 +185,8 @@ section .text
     MOV EDX,0x5e5f92                    ; 005385d6 | = "..\\core\\setdir.cpp"
     MOV ECX,0x70                        ; 005385db
     PUSH 0x5e5fa5                       ; 005385e0 | = "saveZBufferTable - not saved!"
-    MOV dword ptr [0x01d046a0],EDX      ; 005385e5 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 005385eb | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 005385e5 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 005385eb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005385f1
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005385f6

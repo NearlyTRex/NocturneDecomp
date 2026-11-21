@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -303,8 +303,8 @@ section .text
     MOV EDX,0x5e2526                    ; 0051ad21
     MOV ECX,0x32c                       ; 0051ad26
     PUSH 0x5e2538                       ; 0051ad2b
-    MOV dword ptr [0x01d046a0],EDX      ; 0051ad30 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0051ad36 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0051ad30 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0051ad36 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051ad3c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0051ad41

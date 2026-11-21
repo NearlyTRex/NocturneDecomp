@@ -15,8 +15,8 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004f08a0(CMimic *this_ptr,float d
   SMotion *pSVar4;
   
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\mimic.cpp";
-    g_INT_01d046a4 = 0x130;
+    g_CurrentFilename = "..\\core\\mimic.cpp";
+    g_CurrentLineNumber = 304;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar3 = g_INT_01cedef4;

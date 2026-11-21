@@ -27,8 +27,8 @@
 ;   TerminatedCString s_CCharacter_pickupObjectN_005ccf35
 ;   TerminatedCString s_core_charactr_cpp_005ccf66
 ;   TerminatedCString s_CCharacter_pickupObjectN_005ccf7b
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0
@@ -56,8 +56,8 @@ section .text
         ;   Label: LAB_00428b29
     MOV ECX,0xdfd                       ; 00428b2e
     PUSH 0x5ccf35                       ; 00428b33 | = "CCharacter::pickupObjectNow - invalid..."
-    MOV dword ptr [0x01d046a0],EDX      ; 00428b38 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00428b3e | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00428b38 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00428b3e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00428b44
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00428b49
@@ -85,8 +85,8 @@ section .text
     MOV EAX,0x5ccf66                    ; 00428b80 | = "..\\core\\charactr.cpp"
     MOV EDX,0xe15                       ; 00428b85
     PUSH 0x5ccf7b                       ; 00428b8a | = "CCharacter::pickupObjectNow - invalid..."
-    MOV [0x01d046a0],EAX                ; 00428b8f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00428b94 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00428b8f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00428b94 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00428b9a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00428b9f

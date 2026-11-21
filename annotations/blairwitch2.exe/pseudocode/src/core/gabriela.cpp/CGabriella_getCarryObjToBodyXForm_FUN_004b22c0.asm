@@ -14,8 +14,8 @@
 ;   double g_DOUBLE_005d7203 = 0.700000000000000
 ;   double g_DOUBLE_005d720b = 0.300000000000000
 ;   undefined4 g_CLightActorClassInfo.name_hash
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -334,8 +334,8 @@ section .text
     MOV EDI,0x5d71c3                    ; 004b2750 | = "..\\core\\gabriela.cpp"
     MOV EAX,0x944                       ; 004b2755
     PUSH 0x5d71d8                       ; 004b275a | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01d046a0],EDI      ; 004b275f | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004b2765 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004b275f | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004b2765 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b276a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004b276f

@@ -40,8 +40,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005eed4a
 ;   TerminatedCString s_inverse_Singular_matrix_005eed5c
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -240,8 +240,8 @@ section .text
         ;   Label: LAB_00592a32
     MOV ESI,0x23d                       ; 00592a37
     PUSH 0x5eed5c                       ; 00592a3c | = "inverse() - Singular matrix"
-    MOV dword ptr [0x01d046a0],ECX      ; 00592a41 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00592a47 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00592a41 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00592a47 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00592a4d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00592a52

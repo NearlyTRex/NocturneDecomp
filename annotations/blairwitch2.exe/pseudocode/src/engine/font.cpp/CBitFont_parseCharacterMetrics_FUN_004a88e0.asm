@@ -34,8 +34,8 @@
 ;   TerminatedCString s_engine_font_cpp_005d698f
 ;   TerminatedCString s_Too_many_chars_fontfile_005d69a2
 ;   TerminatedCString s_engine_font_cpp_005d69c8
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -106,8 +106,8 @@ section .text
     MOV EAX,ESP                         ; 004a899a
     MOV ECX,0x5d698f                    ; 004a899c | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 004a89a1
-    MOV dword ptr [0x01d046a4],EBX      ; 004a89a2 | g_INT_01d046a4
-    MOV dword ptr [0x01d046a0],ECX      ; 004a89a8 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 004a89a2 | g_CurrentLineNumber
+    MOV dword ptr [0x01d046a0],ECX      ; 004a89a8 | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a89ae
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a89b3
@@ -222,8 +222,8 @@ section .text
         ;   Label: LAB_004a8b51
     MOV EDI,0x2c6                       ; 004a8b56
     PUSH 0x5d6953                       ; 004a8b5b | = "Out of memory"
-    MOV dword ptr [0x01d046a0],ECX      ; 004a8b60 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004a8b66 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004a8b60 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 004a8b66 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a8b6c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a8b71
@@ -263,11 +263,11 @@ section .text
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x30f                       ; 004a8bd1
     ADD ESP,0x10                        ; 004a8bd6
-    MOV [0x01d046a4],EAX                ; 004a8bd9 | g_INT_01d046a4
+    MOV [0x01d046a4],EAX                ; 004a8bd9 | g_CurrentLineNumber
     MOV EAX,ESP                         ; 004a8bde
     MOV ECX,0x5d69c8                    ; 004a8be0 | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 004a8be5
-    MOV dword ptr [0x01d046a0],ECX      ; 004a8be6 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a0],ECX      ; 004a8be6 | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a8bec
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a8bf1

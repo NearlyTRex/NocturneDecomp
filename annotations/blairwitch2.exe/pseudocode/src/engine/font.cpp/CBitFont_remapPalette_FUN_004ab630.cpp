@@ -33,8 +33,8 @@ void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004ab630(CBitFont *this_p
         if ((uint)g_INT_006141c0 < 0x10) {
           if (g_INT_006141c0 != 8) {
 LAB_004ab7db:
-            g_CHAR_PTR_01d046a0 = "..\\engine\\font.cpp";
-            g_INT_01d046a4 = 0x8df;
+            g_CurrentFilename = "..\\engine\\font.cpp";
+            g_CurrentLineNumber = 2271;
             core_main_c_displayErrorAndQuit_FUN_004e4500("CBitFont::remapPalette - Invalid bitsPerPixel");
           }
         }

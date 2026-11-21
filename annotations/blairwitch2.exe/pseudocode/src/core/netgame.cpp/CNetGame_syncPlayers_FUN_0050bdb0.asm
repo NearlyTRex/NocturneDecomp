@@ -37,8 +37,8 @@
 ;   double g_SyncTimeout = 0.100000000000000
 ;   CKeys* g_CKeysPtr = 01d02f84
 ;   void* g_PTR_01d02f84
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -283,8 +283,8 @@ section .text
         ;   Label: LAB_0050c02d
     MOV EBX,0x337                       ; 0050c032
     PUSH 0x5e06b9                       ; 0050c037 | = "CNetGame::syncPlayers - don't use 0!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0050c03c | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0050c042 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0050c03c | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0050c042 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050c048
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050c04d
@@ -368,8 +368,8 @@ section .text
         ;   Label: LAB_0050c0f6
     MOV ECX,0x3c0                       ; 0050c0fb
     PUSH 0x5e078b                       ; 0050c100 | = "CNetGame::syncPlayers - invalid mode"
-    MOV dword ptr [0x01d046a0],EDX      ; 0050c105 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0050c10b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0050c105 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0050c10b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050c111
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050c116

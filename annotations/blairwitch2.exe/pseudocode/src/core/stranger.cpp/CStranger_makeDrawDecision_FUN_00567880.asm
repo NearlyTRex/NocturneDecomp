@@ -49,8 +49,8 @@
 ;   float g_FLOAT_005fc200 = -1.047198
 ;   float g_FLOAT_005fc204 = 1.221730
 ;   float g_FLOAT_005fc208 = 2.700000
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_StrangerIndices[3]
 ;   ... and 6 more
 ;
@@ -95,8 +95,8 @@ section .text
         ;   Label: LAB_005678a1
     MOV EDI,0xa78                       ; 005678a6
     PUSH 0x5eb8aa                       ; 005678ab | = "CStranger::makeDrawDecision - draw mo..."
-    MOV dword ptr [0x01d046a0],ESI      ; 005678b0 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 005678b6 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 005678b0 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 005678b6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005678bc
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005678c1
