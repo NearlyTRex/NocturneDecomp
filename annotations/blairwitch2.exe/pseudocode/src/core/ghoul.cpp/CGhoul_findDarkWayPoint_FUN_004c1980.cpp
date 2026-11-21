@@ -35,7 +35,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004c1980(CGhoul *this_pt
                                g_CWayPointClassInfo.name_hash);
       if ((this_ptr_00 != (CDemonActor *)0x0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_00485840
-                            (PTR_s_darkPoint_005d9266_1_00616780,this_ptr_00->actor_name,0),
+                            (PTR_s_darkPoint_005d9267_00616780,this_ptr_00->actor_name,0),
          iVar2 != 0)) {
         iVar2 = 0;
         local_20 = 1;

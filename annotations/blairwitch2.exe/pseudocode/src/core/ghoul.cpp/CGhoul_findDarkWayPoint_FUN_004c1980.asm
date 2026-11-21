@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_ghoul_cpp_005d8fae
 ;   TerminatedCString s_CGhoul_findDarkWayPoint_005d8fc0
-;   undefined4 s_darkPoint_005d9266+1
-;   void* PTR_s_darkPoint_005d9266+1_00616780 = 005d9267
+;   TerminatedCString s_darkPoint_005d9267
+;   void* PTR_s_darkPoint_005d9267_00616780 = 005d9267
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CGhoulClassInfo.name_hash
 ;   char* g_CurrentFilename
@@ -115,8 +115,8 @@ section .text
     PUSH 0x0                            ; 004c1a35
         ;   Label: LAB_004c1a35
     PUSH EAX                            ; 004c1a37
-    MOV EBX,dword ptr [0x00616780]      ; 004c1a38 | PTR_s_darkPoint_005d9266+1_00616780
-    PUSH EBX                            ; 004c1a3e | s_darkPoint_005d9266+1
+    MOV EBX,dword ptr [0x00616780]      ; 004c1a38 | PTR_s_darkPoint_005d9267_00616780
+    PUSH EBX                            ; 004c1a3e | = "darkPoint*"
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_00485840 ; 004c1a3f
         ;   XREF to: 00485840 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_00485840(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 004c1a44

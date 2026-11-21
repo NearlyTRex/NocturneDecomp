@@ -10,7 +10,7 @@ void __cdecl core_trigger_cpp_staticInit_FUN_0059af50(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CTriggerClassInfo,"?333?CTrigger" + 5,
+            (&g_CTriggerClassInfo,"CTrigger",
              core_trigger_cpp_factoryFuncTrigger_FUN_0059af80,&g_CTriggerClassVersion,0xd,
              &g_CDemonActorClassInfo);
   return;

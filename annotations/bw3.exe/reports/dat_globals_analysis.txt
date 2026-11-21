@@ -2,30 +2,32 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 380
+Total DAT_ globals found: 381
 Filtered out (inside named data): 86
 Outside the program image: 2
 Immediate constants (not real globals): 22
-Real globals remaining: 270
+Real globals remaining: 271
 
 Current type breakdown:
-  undefined4                     257
+  undefined4                     258
   undefined1                     12
   undefined2                     1
 
-DAT_ globals with type hints: 76 / 270
+DAT_ globals with type hints: 77 / 271
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (38)
+HIGH CONFIDENCE INFERENCES (39)
 --------------------------------------------------------------------------------
   DAT_005c4425                    addr=005c4425    current=undefined4      likely=double          refs=1
-    nearby: s_darkPoint_005c442c+1 (undefined4) at offset -8
+    nearby: s_darkPoint_005c442d (TerminatedCString) at offset -8
   DAT_005cd53f                    addr=005cd53f    current=undefined4      likely=double          refs=1
     nearby: g_DOUBLE_005cd537 (double) at offset +8
   DAT_005d3f92                    addr=005d3f92    current=undefined4      likely=double          refs=1
     nearby: g_FLOAT_005d3f8e (float) at offset +4
   DAT_005d65d7                    addr=005d65d7    current=undefined4      likely=double          refs=1
     nearby: g_DOUBLE_005d65cf (double) at offset +8
+  DAT_005d65df                    addr=005d65df    current=undefined4      likely=float           refs=1
+    nearby: g_DOUBLE_005d65cf (double) at offset +16
   DAT_005f2a20                    addr=005f2a20    current=undefined4      likely=SMRGLTextureBasic *  refs=1
     nearby: g_CZombieDogClassVersion (int) at offset -60
   DAT_005fba64                    addr=005fba64    current=undefined4      likely=int             refs=2

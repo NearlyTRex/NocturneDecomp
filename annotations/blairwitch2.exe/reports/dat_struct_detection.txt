@@ -2,16 +2,16 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 291
+Total DAT_ globals found: 292
 Filtered out (inside named data): 21
 Outside the program image: 2
 Immediate constants (not real globals): 10
-Real globals remaining: 258
-Clusters detected: 45
-DAT_ globals in clusters: 235
+Real globals remaining: 259
+Clusters detected: 46
+DAT_ globals in clusters: 237
 
 Classification summary:
-  unknown              16 clusters
+  unknown              17 clusters
   struct               10 clusters
   struct_array         7 clusters
   char_array           5 clusters
@@ -284,7 +284,7 @@ MEDIUM CONFIDENCE (13 clusters)
       0x0083e5e0  DAT_0083e5e0  undefined4
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (27 clusters)
+LOW CONFIDENCE (28 clusters)
 --------------------------------------------------------------------------------
 
   0x01d06750 - 0x01d06953  (12 items, 515 bytes span)
@@ -460,6 +460,15 @@ LOW CONFIDENCE (27 clusters)
       0x026807c8  DAT_026807c8  undefined4
       0x026807cc  DAT_026807cc  undefined4
 
+  0x005ecd4e - 0x005ecd56  (2 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=8 bytes
+    Referenced by: 1 functions
+     near: g_DOUBLE_005ecd46 (double) at +8
+      0x005ecd4e  DAT_005ecd4e  undefined4 [double]
+      0x005ecd56  DAT_005ecd56  undefined4 [float]
+
   0x005f5140 - 0x005f5144  (2 items, 4 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -577,7 +586,7 @@ LOW CONFIDENCE (27 clusters)
       0x02681044  DAT_02681044  undefined4
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (23 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (22 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_01c86058                    addr=01c86058    type=undefined4      refs=3  near: g_CMuzzleFlash_01c85ffc(+92)
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
@@ -589,12 +598,11 @@ ISOLATED DAT_ GLOBALS (23 - not part of any cluster)
   DAT_005f5328                    addr=005f5328    type=undefined4      refs=1  near: g_FLOAT_005f532c(-4)
   DAT_006166ac                    addr=006166ac    type=undefined4      refs=1  near: g_CGargoyleClassVersion(-164)
   DAT_006006b8                    addr=006006b8    type=undefined4      refs=1  near: g_FLOAT_006006b4(+4)
-  DAT_005d925f                    addr=005d925f    type=undefined4      refs=1 [likely double]  near: s_darkPoint_005d9266+1(-8)
+  DAT_005d925f                    addr=005d925f    type=undefined4      refs=1 [likely double]  near: s_darkPoint_005d9267(-8)
   DAT_005f78c4                    addr=005f78c4    type=undefined4      refs=1  near: g_FLOAT_005f78c0(+4)
   DAT_01d65400                    addr=01d65400    type=undefined4      refs=1  near: g_INT_01d653fc(+4)
   DAT_01fc9cdc                    addr=01fc9cdc    type=undefined4      refs=1  near: g_INT_01fc9cd8(+4)
   DAT_0061bb2c                    addr=0061bb2c    type=undefined4      refs=1  near: g_CShadowClassVersion(-64)
-  DAT_005ecd4e                    addr=005ecd4e    type=undefined4      refs=1 [likely double]  near: g_DOUBLE_005ecd46(+8)
   DAT_005ff8f8                    addr=005ff8f8    type=undefined4      refs=1  near: g_FLOAT_005ff8f4(+4)
   DAT_0061f6bc                    addr=0061f6bc    type=undefined4      refs=1  near: g_ARRAY_PTR_0061f6b4[1](+4)
   DAT_00614c00                    addr=00614c00    type=undefined4      refs=1  near: switchdataD_00614c04(-4)

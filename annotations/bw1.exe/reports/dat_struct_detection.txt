@@ -2,16 +2,16 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 343
+Total DAT_ globals found: 344
 Filtered out (inside named data): 46
 Outside the program image: 2
 Immediate constants (not real globals): 11
-Real globals remaining: 284
-Clusters detected: 52
-DAT_ globals in clusters: 263
+Real globals remaining: 285
+Clusters detected: 53
+DAT_ globals in clusters: 265
 
 Classification summary:
-  unknown              18 clusters
+  unknown              19 clusters
   struct               10 clusters
   char_array           8 clusters
   struct_array         6 clusters
@@ -362,7 +362,7 @@ MEDIUM CONFIDENCE (16 clusters)
       0x00859ae4  DAT_00859ae4  undefined4
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (28 clusters)
+LOW CONFIDENCE (29 clusters)
 --------------------------------------------------------------------------------
 
   0x006267dc - 0x00626888  (9 items, 172 bytes span)
@@ -550,6 +550,15 @@ LOW CONFIDENCE (28 clusters)
       0x02c9f6b8  DAT_02c9f6b8  undefined4
       0x02c9f6bc  DAT_02c9f6bc  undefined4
 
+  0x005f8068 - 0x005f8070  (2 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=8 bytes
+    Referenced by: 1 functions
+     near: g_DOUBLE_005f8060 (double) at +8
+      0x005f8068  DAT_005f8068  undefined4 [double]
+      0x005f8070  DAT_005f8070  undefined4 [float]
+
   0x00606090 - 0x00606098  (2 items, 8 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -659,7 +668,7 @@ LOW CONFIDENCE (28 clusters)
       0x02c9ff34  DAT_02c9ff34  undefined4
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (21 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (20 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_0202a390                    addr=0202a390    type=undefined4      refs=2  near: g_INT_0202a38c(+4)
@@ -674,7 +683,6 @@ ISOLATED DAT_ GLOBALS (21 - not part of any cluster)
   DAT_01fe5c90                    addr=01fe5c90    type=undefined4      refs=1  near: g_INT_01fe5c8c(+4)
   DAT_00605190                    addr=00605190    type=undefined4      refs=1  near: g_FLOAT_00605194(-4)
   DAT_0060533c                    addr=0060533c    type=undefined4      refs=1  near: g_FLOAT_00605340(-4)
-  DAT_005f8068                    addr=005f8068    type=undefined4      refs=1 [likely double]  near: g_DOUBLE_005f8060(+8)
   DAT_0060820c                    addr=0060820c    type=undefined4      refs=1  near: g_FLOAT_00608210(-4)
   DAT_00626a3c                    addr=00626a3c    type=undefined4      refs=1  near: g_ARRAY_PTR_00626a34[1](+4)
   DAT_0061bee0                    addr=0061bee0    type=undefined4      refs=1  near: switchdataD_0061bee4(-4)

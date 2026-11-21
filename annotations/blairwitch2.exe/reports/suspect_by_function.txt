@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 5712
 Clean: 3321 (58.1%)
 With suspects: 2391
-Total suspects: 33136
+Total suspects: 33133
 
 ====================================================================================================
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042c3e0 (2 suspects)
@@ -33183,7 +33183,7 @@ core_trash.cpp_CTrash_getBoundingBox_FUN_00577560 (14 suspects)
   Line 64 [unrolled_memcpy]: // 0057761e: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_trash.cpp_CTrash_process_FUN_00576ab0 (27 suspects)
+core_trash.cpp_CTrash_process_FUN_00576ab0 (24 suspects)
   File: core/trash.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -33200,9 +33200,6 @@ core_trash.cpp_CTrash_process_FUN_00576ab0 (27 suspects)
   Line 270 [pointer_truncation]: *(float *)((int)&CStack_188 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
   Line 270 [pointer_cast]: *(float *)((int)&CStack_188 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
   Line 295 [sub84_truncation]: pCVar12 = SUB84(__BITCAST_UINT64(dVar13),0);
-  Line 310 [unknown_field]: fVar2 = (this_ptr->acceleration).y * (float)"?333?CTrigger"._1_4_;
-  Line 311 [unknown_field]: fVar3 = (this_ptr->acceleration).z * (float)"?333?CTrigger"._1_4_;
-  Line 312 [unknown_field]: (this_ptr->acceleration).x = (this_ptr->acceleration).x * (float)"?333?CTrigger"._1_4_;
   Line 344 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
   Line 346 [pointer_cast]: pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
   Line 346 [pointer_truncation]: pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
