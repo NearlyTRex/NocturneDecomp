@@ -195,7 +195,7 @@ void CGame::renderMessageLine(const SGameSessionOwners &session, const common::S
     }
 }
 
-// The story's year and title at the frame's bottom left.
+// The story's year and title at the frame's bottom left; a story with no year shows its title.
 void CGame::renderChapterTitle(const common::SViewport &frame) {
     if (!(chapter_title_timer_ > 0.0F)) {
         return;
@@ -206,8 +206,10 @@ void CGame::renderChapterTitle(const common::SViewport &frame) {
     const auto gap =
         static_cast<int>(std::lround(static_cast<float>(font.getCharWidth(kMeasureChar)) * scale));
     owners_.three_d.setRenderAlpha(kFullAlpha);
-    font.drawTextScaled(std::format("{} - {}", chapter_year_, chapter_title_), frame.x + (gap * 2),
-                        frame.y + frame.height - height - gap, kTextColor, kShadowColor, scale);
+    const std::string text =
+        chapter_year_ != 0 ? std::format("{} - {}", chapter_year_, chapter_title_) : chapter_title_;
+    font.drawTextScaled(text, frame.x + (gap * 2), frame.y + frame.height - height - gap,
+                        kTextColor, kShadowColor, scale);
 }
 
 // Stacked up from the frame's bottom left, each named over its fill.

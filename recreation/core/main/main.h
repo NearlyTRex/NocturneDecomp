@@ -13,7 +13,8 @@
 namespace nocturne::core {
 
 // Everything startup brings up. play_movie plays directory\filename to its end, false when there
-// is no such file; it reaches wincore, which this module may not name.
+// is no such file; it and set_title, which names the window, reach wincore, which this module may
+// not name.
 struct SGameSystemOwners {
     engine::CIni &ini;
     platform::IFileSystem &file_system;
@@ -29,6 +30,7 @@ struct SGameSystemOwners {
     engine::CSpecial &special;
     engine::IRawInput &raw_input;
     std::function<bool(std::string_view, std::string_view)> play_movie;
+    std::function<void(std::string_view)> set_title;
     CSound &sound;
     CDemonMission &mission;
     std::span<CDemonFilter> global_filters;
@@ -42,8 +44,9 @@ struct SGameSystemOwners {
 using common::displayErrorAndQuit;
 // Reads the INI, mounts the pods, unpacking archives behind the fangs where any are left, and
 // brings up graphics at 640x480x32, then fonts, the first run's calibration, the opening movie, a
-// loading screen, sound, the light filters, the mouse and the network. The attract movies wait for the opening to have played. Packages that name
-// no front end this build has are fatal.
+// loading screen, sound, the light filters, the mouse and the network. The attract movies wait for
+// the opening to have played. A front-end part in a style this build doesn't draw is fatal; the
+// window takes the game's title once the packages give one.
 void initializeGameSystems(const SGameSystemOwners &owners);
 // The main menu, until it quits; showMainGameMenu's result.
 int enterMainGameMenu(CMenu &menu);

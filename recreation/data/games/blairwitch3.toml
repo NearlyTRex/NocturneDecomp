@@ -1,6 +1,10 @@
 # Blair Witch Volume III: The Elly Kedward Tale, on the Nocturne engine. Only what is known so
-# far: the rest (menu layout, loading screens, stories) comes from analysing its binary. This
-# build has no front end for it, so startup stops and says so.
+# far: the rest (menu layout, loading screens, stories) comes from analysing its binary.
+# Startup stops at the first front-end part this build doesn't have.
 
 title = "Blair Witch Volume III"
-front_end = "blairwitch3"
+
+# A tiled scrolling backdrop with a fading hand; an icon for each loading picture
+[front_end]
+title_backdrop = "tiled_scroll"
+loading_indicator = "icon"

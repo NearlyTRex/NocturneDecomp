@@ -97,6 +97,17 @@ struct SMenuLayout {
     bool operator==(const SMenuLayout &) const = default;
 };
 
+// The style each part of the front end is drawn in, by what it draws rather than by game, so a
+// game takes any mix of the parts this build has.
+struct SFrontEndParts {
+    // Behind the main menu.
+    std::optional<std::string> title_backdrop;
+    // What shows a level loading.
+    std::optional<std::string> loading_indicator;
+
+    bool operator==(const SFrontEndParts &) const = default;
+};
+
 // English text to a language's, as msglist.txt maps it.
 using TranslationTable = std::map<std::string, std::string, std::less<>>;
 
@@ -105,10 +116,8 @@ using TranslationTable = std::map<std::string, std::string, std::less<>>;
 struct SGameContent {
     // The game's name as its own folders spell it, such as the one in the user's cache.
     std::optional<std::string> title;
-    // The menus the game runs.
-    std::optional<std::string> front_end;
-    // What shows a level loading.
-    std::optional<std::string> loading_indicator;
+    // Each part set by the package that sets it last.
+    SFrontEndParts front_end;
     std::optional<std::string> copyright;
     // With the (c), which only the OS fonts have.
     std::optional<std::string> copyright_os_font;

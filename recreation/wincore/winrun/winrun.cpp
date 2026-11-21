@@ -42,7 +42,12 @@ int CWinRun::getTime() {
 void CWinRun::displayMessageBoxAndQuit(const common::CFatalError &error) {
     window_.showMessageBox(
         std::format("{}\n\nFile: {}\nLine: {}", error.what(), error.getFile(), error.getLine()),
-        kApplicationTitle);
+        title_);
+}
+
+void CWinRun::setTitle(std::string_view title) {
+    title_ = title;
+    window_.setTitle(title);
 }
 
 } // namespace nocturne::wincore

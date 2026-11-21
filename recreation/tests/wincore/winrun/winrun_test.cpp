@@ -30,6 +30,8 @@ TEST(CWinRun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CWinRun::getInputDisabled), bool (CWinRun::*)() const>);
     static_assert(std::is_same_v<decltype(&CWinRun::getFocusRegained), bool (CWinRun::*)() const>);
     static_assert(std::is_same_v<decltype(&CWinRun::setFocusRegained), void (CWinRun::*)(bool)>);
+    static_assert(
+        std::is_same_v<decltype(&CWinRun::setTitle), void (CWinRun::*)(std::string_view)>);
     static_assert(std::is_base_of_v<engine::IRawInput, CWinRun>);
 }
 
@@ -55,6 +57,13 @@ TEST_F(CWinRunTest, TheMessageBoxNamesTheFileAndLine) {
     EXPECT_CALL(window_,
                 showMessageBox(std::string_view("Out of memory\n\nFile: pod.cpp\nLine: 88"),
                                std::string_view("Nocturne")));
+    winrun_.displayMessageBoxAndQuit(common::CFatalError("Out of memory", "pod.cpp", 88, 0));
+}
+
+TEST_F(CWinRunTest, ATitleNamesTheWindowAndEveryMessageBoxAfter) {
+    EXPECT_CALL(window_, setTitle(std::string_view("Blair Witch Volume I")));
+    winrun_.setTitle("Blair Witch Volume I");
+    EXPECT_CALL(window_, showMessageBox(::testing::_, std::string_view("Blair Witch Volume I")));
     winrun_.displayMessageBoxAndQuit(common::CFatalError("Out of memory", "pod.cpp", 88, 0));
 }
 

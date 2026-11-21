@@ -26,6 +26,8 @@
 
 #include <cstddef>
 #include <format>
+#include <optional>
+#include <string>
 #include <string_view>
 
 namespace nocturne::core {
@@ -111,22 +113,22 @@ void unpackArchives(const SGameSystemOwners &owners) {
     owners.pod.unpackArchives();
 }
 
-// The packages choose the game's menus and loading indicator.
+// A part named in a style this build doesn't draw is fatal, whichever game names it.
+void checkFrontEndPart(std::string_view part, const std::optional<std::string> &style,
+                       std::string_view built) {
+    if (!style) {
+        displayErrorAndQuit(std::format("No package names the {}", part));
+    }
+    if (*style != built) {
+        displayErrorAndQuit(std::format("The {} {} isn't in this build", part, *style));
+    }
+}
+
+// The packages choose the style of each front-end part.
 void checkFrontEnd(const engine::SGameContent &content) {
-    if (!content.front_end) {
-        displayErrorAndQuit("No package names the game's front end");
-    }
-    if (*content.front_end != kNocturneFrontEnd) {
-        displayErrorAndQuit(
-            std::format("The front end {} isn't in this build", *content.front_end));
-    }
-    if (!content.loading_indicator) {
-        displayErrorAndQuit("No package names the loading indicator");
-    }
-    if (*content.loading_indicator != kMoonLoadingIndicator) {
-        displayErrorAndQuit(std::format("The loading indicator {} isn't in this build",
-                                        *content.loading_indicator));
-    }
+    checkFrontEndPart("title backdrop", content.front_end.title_backdrop, kSkySceneBackdrop);
+    checkFrontEndPart("loading indicator", content.front_end.loading_indicator,
+                      kMoonLoadingIndicator);
 }
 
 // Eight spots growing an eighth brighter each, and a larger one per player growing a quarter.
@@ -164,6 +166,9 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     });
     unpackArchives(owners);
     checkFrontEnd(owners.content);
+    if (owners.content.title) {
+        owners.set_title(*owners.content.title);
+    }
     owners.messages.readMessageFile("msglist.txt");
     if (const auto translations = owners.content.translations.find(owners.messages.getLanguage());
         translations != owners.content.translations.end()) {

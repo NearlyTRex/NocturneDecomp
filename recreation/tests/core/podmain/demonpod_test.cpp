@@ -262,15 +262,16 @@ TEST_F(CDemonPodTest, ALoadOrderTurningNothingOnIsFatal) {
 // The base game's content is its release's; a later mod's values win, and a mod left out
 // gives nothing.
 TEST_F(CDemonPodTest, TheLoadedPackagesContentIsMergedInLoadOrder) {
-    releases_.front().content.front_end = "nocturne";
+    releases_.front().content.front_end.title_backdrop = "sky_scene";
     releases_.front().content.copyright = "Base";
     givenMod("mods/extra", "id = \"extra\"\ncopyright = \"Extra\"\n"
                            "[[pod]]\npath = \"EXTRA.POD\"\n");
     givenPod("mods/extra/EXTRA.POD", {{.name = "data\\x.txt", .data = "x"}});
-    givenMod("mods/broken", "id = \"broken\"\nfront_end = \"bw1\"\nrequired = [\"GONE.POD\"]\n");
+    givenMod("mods/broken", "id = \"broken\"\nfront_end.title_backdrop = \"flipbook\"\n"
+                            "required = [\"GONE.POD\"]\n");
     load();
     const engine::SGameContent &content = pod().getGameContent();
-    EXPECT_EQ(content.front_end, "nocturne");
+    EXPECT_EQ(content.front_end.title_backdrop, "sky_scene");
     EXPECT_EQ(content.copyright, "Extra");
 }
 

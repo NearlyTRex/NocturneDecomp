@@ -13,6 +13,7 @@ public:
     MOCK_METHOD(std::string, getScancodeName, (std::uint16_t scancode), (override));
     MOCK_METHOD(void, showMessageBox, (std::string_view message, std::string_view title),
                 (override));
+    MOCK_METHOD(void, setTitle, (std::string_view title), (override));
 };
 
 } // namespace nocturne::platform

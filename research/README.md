@@ -854,13 +854,16 @@ mechanism that selects it, so all four games run on one engine.
 
 | File | Description |
 |------|-------------|
-| `README.md` | Sources, the theme index with approvals, shared roots |
+| `README.md` | Sources, the theme index, shared roots |
 | `themes/*.md` | One table per theme: difference, port, evidence |
-| `classification.json` | Every item, as read twice against the `.asm` |
+| `classification.json` | Every item |
+| `archive-histories.md` | Classes whose version numbers fork between games; the manifest's `[archive]` table |
+| `front-end-inventory.md` | Every front-end value the recreation hard-codes, the BW change, its manifest key |
 
 **Key outcomes:**
 - **419 differences:** 61 gated on a file version, 105 manifest values, 57 front end, 45
   superset, 64 Blair Witch actor features, 87 nothing to port.
+- **3 archive forks:** `CCharacter` v10, `CHero` v14, `CShadow` v2.
 - **Nothing proposed changes Nocturne.**
 
 ---

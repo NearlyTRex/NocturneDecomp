@@ -335,6 +335,10 @@ protected:
                      .set = set_,
                      .sound = game_sound_}};
     std::vector<std::string> movies_;
+    std::vector<std::string> titles_;
+    void addTitle(std::string_view title) {
+        titles_.emplace_back(title);
+    }
     SGameSystemOwners owners_{.ini = ini_,
                               .file_system = file_system_,
                               .ini_owners = ini_owners_,
@@ -352,6 +356,7 @@ protected:
                                       movies_.push_back(std::format("{}\\{}", directory, filename));
                                       return true;
                                   },
+                              .set_title = [this](std::string_view title) { addTitle(title); },
                               .sound = game_sound_,
                               .mission = mission_,
                               .global_filters = global_filters_,
@@ -620,14 +625,28 @@ TEST_P(CFrontEndCheckTest, WhatTheBuildCantRunIsFatalBeforeTheScreenIsSet) {
 
 INSTANTIATE_TEST_SUITE_P(
     Content, CFrontEndCheckTest,
-    ::testing::Values(SFrontEndCase{[](engine::SGameContent &c) { c.front_end.reset(); },
-                                    "No package names the game's front end"},
-                      SFrontEndCase{[](engine::SGameContent &c) { c.front_end = "bw1"; },
-                                    "The front end bw1 isn't in this build"},
-                      SFrontEndCase{[](engine::SGameContent &c) { c.loading_indicator.reset(); },
-                                    "No package names the loading indicator"},
-                      SFrontEndCase{[](engine::SGameContent &c) { c.loading_indicator = "bar"; },
-                                    "The loading indicator bar isn't in this build"}));
+    ::testing::Values(
+        SFrontEndCase{[](engine::SGameContent &c) { c.front_end.title_backdrop.reset(); },
+                      "No package names the title backdrop"},
+        SFrontEndCase{[](engine::SGameContent &c) { c.front_end.title_backdrop = "flipbook"; },
+                      "The title backdrop flipbook isn't in this build"},
+        SFrontEndCase{[](engine::SGameContent &c) { c.front_end.loading_indicator.reset(); },
+                      "No package names the loading indicator"},
+        SFrontEndCase{
+            [](engine::SGameContent &c) { c.front_end.loading_indicator = "progress_bar"; },
+            "The loading indicator progress_bar isn't in this build"}));
+
+TEST_F(CInitializeGameSystemsTest, TheWindowTakesTheGamesTitle) {
+    content_.title = "Blair Witch Volume I";
+    start();
+    EXPECT_THAT(titles_, ::testing::ElementsAre("Blair Witch Volume I"));
+}
+
+TEST_F(CInitializeGameSystemsTest, WithoutATitleTheWindowKeepsItsOwn) {
+    content_.title.reset();
+    start();
+    EXPECT_THAT(titles_, ::testing::IsEmpty());
+}
 
 } // namespace
 } // namespace nocturne::core

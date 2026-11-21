@@ -239,6 +239,15 @@ TEST_F(CChapterTitleTest, EachStoryHasItsYear) {
     game_.renderOverlay(session_);
 }
 
+TEST_F(CChapterTitleTest, AStoryWithNoYearShowsItsTitleAlone) {
+    game_parts_.getContent().stories.front().year = 0;
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    watchTitle();
+    EXPECT_CALL(medium_text_,
+                drawText(std::string_view("'Dark Reign of the Vampire King'"), _, _, _, _));
+    game_.renderOverlay(session_);
+}
+
 // Below 480 lines the tiny font, 5 tall and 1 wide, and below 384 the small editor font, the same.
 TEST_F(CChapterTitleTest, ShorterScreensTakeSmallerFonts) {
     chooseToStart(EChapterSelectMode::kStories, {kReturn});

@@ -8,9 +8,9 @@
 
 namespace nocturne::core {
 
-// The front end a package names to run Nocturne's menus.
-inline constexpr std::string_view kNocturneFrontEnd = "nocturne";
-// The loading indicator a package names for CLevelLoader's moon.
+// The front-end part styles this build draws, as a package's [front_end] names them: CMoon's 3D
+// sky scene behind the menus, and CLevelLoader's moon.
+inline constexpr std::string_view kSkySceneBackdrop = "sky_scene";
 inline constexpr std::string_view kMoonLoadingIndicator = "moon";
 
 // Every front-end screen is laid out for 640x480. With acceleration the front end runs at the

@@ -54,8 +54,8 @@ SMergedGameContent mergeGameContent(std::span<const SGameContent *const> in_orde
     SGameContent &content = merged.content;
     for (const SGameContent *from : in_order) {
         mergeValue(content.title, from->title);
-        mergeValue(content.front_end, from->front_end);
-        mergeValue(content.loading_indicator, from->loading_indicator);
+        mergeValue(content.front_end.title_backdrop, from->front_end.title_backdrop);
+        mergeValue(content.front_end.loading_indicator, from->front_end.loading_indicator);
         mergeValue(content.copyright, from->copyright);
         mergeValue(content.copyright_os_font, from->copyright_os_font);
         mergeValue(content.credits, from->credits);

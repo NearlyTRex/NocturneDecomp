@@ -4,9 +4,15 @@ What each Blair Witch build (bw1, bw2, bw3) changed in a function the recreation
 nocedit, and how the recreation selects it so all four games run on one engine with
 Nocturne unchanged. No code tests which game is running.
 
-Found by a review of every BW variant of an implemented function (`// bwN` lines tick the
-ones whose body only the compiler changed), then read a second time against the `.asm`.
-`classification.json` holds every item. Each theme's table is approved before it is ported.
+Each item is a BW variant of an implemented function whose body differs from nocedit's beyond
+what the compiler changed; a variant that differs only that way is a `// bwN` line on the
+function. Each item's evidence cites the BW and nocedit `.asm` or pseudocode.
+`classification.json` holds every item.
+
+[archive-histories.md](archive-histories.md) covers the classes whose version numbers mean
+different fields in different games, and the manifest's `[archive]` table.
+[front-end-inventory.md](front-end-inventory.md) lists every front-end value the recreation
+hard-codes for Nocturne, the BW rows that change it, and its manifest key.
 
 ## Sources
 
@@ -15,47 +21,45 @@ ones whose body only the compiler changed), then read a second time against the 
 | `version` | 61 | the data file's own version tells the formats apart; gate on it, older versions untouched |
 | `manifest` | 105 | a value, table, limit or name the binary hard-coded; it moves to the game's manifest, Nocturne's value included |
 | `front_end` | 57 | a menu or front-end screen; every value in the manifest, shared code, a feature flag for a screen built differently |
-| `superset` | 45 | a fix or extension Nocturne's data can't tell apart; runs for every game once approved |
+| `superset` | 45 | a fix or extension Nocturne's data can't tell apart; runs for every game |
 | `actor` | 64 | a BW-only gameplay field or feature in a shared class, ported with the BW actors and data that reach it |
 | `noop` | 87 | nothing to port: editor or debug paths the recreation drops, diagnostics, or the recreation already doing it the BW way |
 
-Second read: 304 confirmed, 109 corrected, 6 refuted (no difference the recreation notices; tagged), 0 unsure.
-
 ## Themes
 
-| Theme | Items | `version` | `manifest` | `front_end` | `superset` | `actor` | `noop` | Approved |
-|---|---|---|---|---|---|---|---|---|
-| [diagnostics](themes/diagnostics.md) | 2 |  |  |  |  |  | 2 | |
-| [editor-tools](themes/editor-tools.md) | 2 |  |  |  |  |  | 2 | |
-| [format-archive](themes/format-archive.md) | 51 | 46 | 5 |  |  |  |  | |
-| [format-ini](themes/format-ini.md) | 9 |  | 8 |  | 1 |  |  | |
-| [format-model](themes/format-model.md) | 14 |  | 2 |  | 11 |  | 1 | |
-| [format-other](themes/format-other.md) | 4 | 2 |  |  |  |  | 2 | |
-| [format-pod](themes/format-pod.md) | 7 | 2 | 1 |  | 1 |  | 3 | |
-| [front-end-bindings](themes/front-end-bindings.md) | 7 |  |  | 7 |  |  |  | |
-| [front-end-loading](themes/front-end-loading.md) | 10 |  |  | 10 |  |  |  | |
-| [front-end-menu](themes/front-end-menu.md) | 33 |  |  | 27 | 6 |  |  | |
-| [front-end-options](themes/front-end-options.md) | 13 |  |  | 13 |  |  |  | |
-| [game-character](themes/game-character.md) | 12 |  | 5 |  | 1 | 6 |  | |
-| [game-effects](themes/game-effects.md) | 21 |  | 12 |  | 2 | 5 | 2 | |
-| [game-hero](themes/game-hero.md) | 19 | 1 | 6 |  |  | 12 |  | |
-| [game-mission](themes/game-mission.md) | 10 |  | 8 |  |  | 1 | 1 | |
-| [game-npc](themes/game-npc.md) | 16 | 4 | 2 |  | 2 | 8 |  | |
-| [game-other](themes/game-other.md) | 24 | 2 | 9 |  |  | 10 | 3 | |
-| [game-script](themes/game-script.md) | 24 |  | 8 |  | 1 | 14 | 1 | |
-| [input](themes/input.md) | 16 |  | 4 |  | 2 | 8 | 2 | |
-| [inventory-hud](themes/inventory-hud.md) | 6 |  | 6 |  |  |  |  | |
-| [math](themes/math.md) | 5 |  | 4 |  |  |  | 1 | |
-| [platform](themes/platform.md) | 9 |  |  |  | 1 |  | 8 | |
-| [render-font](themes/render-font.md) | 11 |  | 7 |  | 1 |  | 3 | |
-| [render-mini3d](themes/render-mini3d.md) | 18 |  | 2 |  | 3 |  | 13 | |
-| [render-other](themes/render-other.md) | 18 |  | 6 |  | 7 |  | 5 | |
-| [render-set](themes/render-set.md) | 10 | 1 | 7 |  |  |  | 2 | |
-| [render-texture-cache](themes/render-texture-cache.md) | 10 |  | 2 |  | 6 |  | 2 | |
-| [sound-listener](themes/sound-listener.md) | 5 |  |  |  |  |  | 5 | |
-| [sound-other](themes/sound-other.md) | 5 |  | 1 |  |  |  | 4 | |
-| [sound-samples](themes/sound-samples.md) | 13 | 3 |  |  |  |  | 10 | |
-| [sound-voices](themes/sound-voices.md) | 15 |  |  |  |  |  | 15 | |
+| Theme | Items | `version` | `manifest` | `front_end` | `superset` | `actor` | `noop` |
+|---|---|---|---|---|---|---|---|
+| [diagnostics](themes/diagnostics.md) | 2 |  |  |  |  |  | 2 |
+| [editor-tools](themes/editor-tools.md) | 2 |  |  |  |  |  | 2 |
+| [format-archive](themes/format-archive.md) | 51 | 46 | 5 |  |  |  |  |
+| [format-ini](themes/format-ini.md) | 9 |  | 8 |  | 1 |  |  |
+| [format-model](themes/format-model.md) | 14 |  | 2 |  | 11 |  | 1 |
+| [format-other](themes/format-other.md) | 4 | 2 |  |  |  |  | 2 |
+| [format-pod](themes/format-pod.md) | 7 | 2 | 1 |  | 1 |  | 3 |
+| [front-end-bindings](themes/front-end-bindings.md) | 7 |  |  | 7 |  |  |  |
+| [front-end-loading](themes/front-end-loading.md) | 10 |  |  | 10 |  |  |  |
+| [front-end-menu](themes/front-end-menu.md) | 33 |  |  | 27 | 6 |  |  |
+| [front-end-options](themes/front-end-options.md) | 13 |  |  | 13 |  |  |  |
+| [game-character](themes/game-character.md) | 12 |  | 5 |  | 1 | 6 |  |
+| [game-effects](themes/game-effects.md) | 21 |  | 12 |  | 2 | 5 | 2 |
+| [game-hero](themes/game-hero.md) | 19 | 1 | 6 |  |  | 12 |  |
+| [game-mission](themes/game-mission.md) | 10 |  | 8 |  |  | 1 | 1 |
+| [game-npc](themes/game-npc.md) | 16 | 4 | 2 |  | 2 | 8 |  |
+| [game-other](themes/game-other.md) | 24 | 2 | 9 |  |  | 10 | 3 |
+| [game-script](themes/game-script.md) | 24 |  | 8 |  | 1 | 14 | 1 |
+| [input](themes/input.md) | 16 |  | 4 |  | 2 | 8 | 2 |
+| [inventory-hud](themes/inventory-hud.md) | 6 |  | 6 |  |  |  |  |
+| [math](themes/math.md) | 5 |  | 4 |  |  |  | 1 |
+| [platform](themes/platform.md) | 9 |  |  |  | 1 |  | 8 |
+| [render-font](themes/render-font.md) | 11 |  | 7 |  | 1 |  | 3 |
+| [render-mini3d](themes/render-mini3d.md) | 18 |  | 2 |  | 3 |  | 13 |
+| [render-other](themes/render-other.md) | 18 |  | 6 |  | 7 |  | 5 |
+| [render-set](themes/render-set.md) | 10 | 1 | 7 |  |  |  | 2 |
+| [render-texture-cache](themes/render-texture-cache.md) | 10 |  | 2 |  | 6 |  | 2 |
+| [sound-listener](themes/sound-listener.md) | 5 |  |  |  |  |  | 5 |
+| [sound-other](themes/sound-other.md) | 5 |  | 1 |  |  |  | 4 |
+| [sound-samples](themes/sound-samples.md) | 13 | 3 |  |  |  |  | 10 |
+| [sound-voices](themes/sound-voices.md) | 15 |  |  |  |  |  | 15 |
 
 ## Shared roots
 

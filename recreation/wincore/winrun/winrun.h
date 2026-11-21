@@ -10,6 +10,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <string>
 #include <string_view>
 
 namespace nocturne::wincore {
@@ -17,7 +18,7 @@ namespace nocturne::wincore {
 // The Windows front end's state: the main window and its input queues.
 class CWinRun : public engine::IRawInput, public engine::IGameClock {
 public:
-    // The retail build's title; the editor's is "Nocturne Editor".
+    // The window's and the message box's title until a package names the game's.
     static constexpr std::string_view kApplicationTitle = "Nocturne";
 
     CWinRun(platform::IWindow &window, platform::IClock &clock, engine::CGamepadInput &gamepad);
@@ -35,6 +36,8 @@ public:
     // pad, so every loop in the game, menus included, sees it once a frame.
     void processWindowMessages();
     void displayMessageBoxAndQuit(const common::CFatalError &error);
+    // The game's name, on the window and on every message box after.
+    void setTitle(std::string_view title);
     // The window was closed: waits for input give up, and menus take it as a cancel.
     [[nodiscard]] bool getInputDisabled() const override;
     // Set when the window regains focus; the game takes it to restore its camera view.
@@ -62,6 +65,7 @@ private:
     [[nodiscard]] std::size_t getInputCode(std::uint16_t scancode) const;
 
     platform::IWindow &window_;
+    std::string title_{kApplicationTitle};
     platform::IClock &clock_;
     engine::CGamepadInput &gamepad_;
     double timer_calibration_;

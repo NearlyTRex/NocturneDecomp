@@ -148,6 +148,7 @@ public:
                  [this](std::string_view directory, std::string_view filename) {
                      return wincore::playMovie(movie_owners_, directory, filename);
                  },
+             .set_title = [this](std::string_view title) { winrun_.setTitle(title); },
              .sound = sound_,
              .mission = mission_,
              .global_filters = global_filters_,

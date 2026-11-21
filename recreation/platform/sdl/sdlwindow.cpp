@@ -166,6 +166,10 @@ void CSdlWindow::showMessageBox(std::string_view message, std::string_view title
                              std::string(message).c_str(), window_.get());
 }
 
+void CSdlWindow::setTitle(std::string_view title) {
+    SDL_SetWindowTitle(window_.get(), std::string(title).c_str());
+}
+
 common::SPresentation CSdlWindow::getPresentation() const {
     common::SPresentation presentation{.window = {}, .drawable = {}, .logical = logical_};
     SDL_GetWindowSize(window_.get(), &presentation.window.width, &presentation.window.height);

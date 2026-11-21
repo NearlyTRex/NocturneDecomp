@@ -28,7 +28,7 @@ or a mod can change it without code. Nocturne's is `recreation/data/games/noctur
 | Key | What it sets |
 |---|---|
 | `title`, `copyright` | The game's name and copyright line |
-| `front_end`, `loading_indicator` | Which menu and loading animation the game uses (Nocturne's moon, BW2's bar) |
+| `[front_end]` | The style of each front-end part, named for how it is drawn: `title_backdrop` (Nocturne's `sky_scene`, BW1's `figure_scene`, BW2's `flipbook`, BW3's `tiled_scroll`) and `loading_indicator` (Nocturne's `moon`, BW2's `progress_bar`). A mod can change one part and keep the rest |
 | `[menu]` | Where the main menu and trademark sit on screen |
 | `[[loading]]` | Loading screens and their moon placement and tint |
 | `[[story]]`, `[[story.chapter]]` | The episodes, their chapters and missions, and unlock codes |
@@ -55,16 +55,18 @@ Done so far:
 - Per-game differences found so far (menu placement and loading indicator) are already keys in
   the manifest rather than code.
 - Each game's retail install is in `recreation/data/releases.toml`: its PODs, and every loose
-  file and executable it shipped. Each has a `data/games/` file with its title. An install is
-  recognised, then startup stops because this build has no front end for it.
+  file and executable it shipped. Each has a `data/games/` file with its title and its
+  front-end part styles. An install is recognised, then startup stops at the first part this
+  build doesn't draw.
 
 Still to do:
 
 - Structs, enums and typedefs the games use without class records. They hold back about 400–480
   signatures per game.
-- Decompiling each game's own units and porting them into the recreation behind its
-  `front_end`.
-- Each game's front end, loading indicator, menu layout and stories in its `data/games/` file.
+- Decompiling each game's own units and porting them into the recreation, selected by the data
+  that reaches them.
+- Each game's front-end part styles drawn, and its menu layout and stories in its
+  `data/games/` file.
 
 Progress per binary is on the [progress page](progress.md).
 

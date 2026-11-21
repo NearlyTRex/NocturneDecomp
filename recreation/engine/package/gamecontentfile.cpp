@@ -190,6 +190,34 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
     return menu;
 }
 
+// The style each part names, by key.
+auto getFrontEndParts(auto &parts) {
+    return std::array{std::pair{"title_backdrop", &parts.title_backdrop},
+                      std::pair{"loading_indicator", &parts.loading_indicator}};
+}
+
+// A part a package names can't be empty; one it leaves out an earlier package names.
+TomlResult<SFrontEndParts> readFrontEnd(const toml::table &table) {
+    constexpr std::string_view kWhere = "front_end: ";
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, kWhere, {"title_backdrop", "loading_indicator"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    SFrontEndParts parts;
+    for (const auto &[key, field] : getFrontEndParts(parts)) {
+        TomlResult<std::optional<std::string>> value = readString(table, kWhere, key);
+        if (!value) {
+            return std::unexpected(value.error());
+        }
+        if (*value && (*value)->empty()) {
+            return std::unexpected(std::format("{}{}: missing", kWhere, key));
+        }
+        *field = std::move(*value);
+    }
+    return parts;
+}
+
 // The [key] table read by read, or nothing without it.
 template <typename T, typename Read>
 TomlResult<std::optional<T>> readOptionalTable(const toml::table &table, std::string_view key,
@@ -394,13 +422,10 @@ TomlResult<void> readTranslations(const toml::table &table, SGameContent &conten
 // The content's own strings, by key.
 auto getGameStrings(auto &content) {
     return std::array{std::pair{"title", &content.title},
-                      std::pair{"front_end", &content.front_end},
-                      std::pair{"loading_indicator", &content.loading_indicator},
                       std::pair{"copyright", &content.copyright},
                       std::pair{"copyright_os_font", &content.copyright_os_font}};
 }
 
-// The code a front end or indicator names can't be empty.
 TomlResult<void> readGameStrings(const toml::table &table, SGameContent &content) {
     for (const auto &[key, field] : getGameStrings(content)) {
         TomlResult<std::optional<std::string>> value = readString(table, "", key);
@@ -408,12 +433,6 @@ TomlResult<void> readGameStrings(const toml::table &table, SGameContent &content
             return std::unexpected(value.error());
         }
         *field = std::move(*value);
-    }
-    for (const auto &[key, field] : {std::pair{"front_end", &content.front_end},
-                                     std::pair{"loading_indicator", &content.loading_indicator}}) {
-        if (*field && (*field)->empty()) {
-            return std::unexpected(std::format("{}: missing", key));
-        }
     }
     if (content.title && !isFolderName(*content.title)) {
         return std::unexpected("title: not a name a folder can have");
@@ -459,6 +478,12 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
     if (TomlResult<void> strings = readGameStrings(table, content); !strings) {
         return std::unexpected(strings.error());
     }
+    TomlResult<std::optional<SFrontEndParts>> front_end =
+        readOptionalTable<SFrontEndParts>(table, "front_end", readFrontEnd);
+    if (!front_end) {
+        return std::unexpected(front_end.error());
+    }
+    content.front_end = std::move(*front_end).value_or(SFrontEndParts{});
     TomlResult<std::optional<SGameCredits>> credits =
         readOptionalTable<SGameCredits>(table, "credits", readCredits);
     if (!credits) {
@@ -510,6 +535,14 @@ std::string formatGameContentKeys(const SGameContent &content) {
 
 std::string formatGameContentTables(const SGameContent &content) {
     std::string text;
+    if (content.front_end != SFrontEndParts{}) {
+        text += "\n[front_end]\n";
+        for (const auto &[key, field] : getFrontEndParts(content.front_end)) {
+            if (*field) {
+                text += std::format("{} = {}\n", key, quoteToml(**field));
+            }
+        }
+    }
     if (content.credits) {
         text += std::format("\n[credits]\ntext = {}\nimage = {}\n",
                             quoteToml(content.credits->text), quoteToml(content.credits->image));

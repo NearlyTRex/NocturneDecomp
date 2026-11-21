@@ -32,8 +32,7 @@ std::string errorOf(std::string_view text) {
 SGameContent fullContent() {
     SGameContent content;
     content.title = "Game 2.0_final-cut";
-    content.front_end = "nocturne";
-    content.loading_indicator = "moon";
+    content.front_end = {.title_backdrop = "sky_scene", .loading_indicator = "moon"};
     content.copyright = "Game \"1999\"";
     content.copyright_os_font = "Game (c) 1999";
     content.credits = SGameCredits{.text = "credits.txt", .image = "stats", .music = "m.mp3"};
@@ -90,13 +89,23 @@ TEST(GameContentFile, WritesOnlyWhatAStoryAndPictureHave) {
     EXPECT_EQ(parseGameContent(formatGameContentTables(content)), content);
 }
 
-TEST(GameContentFile, EveryShippedGamesFileReadsAndNamesItsOwnFrontEnd) {
+// A mod changing one part writes only that one; the rest come from the packages before it.
+TEST(GameContentFile, WritesOnlyTheFrontEndPartsSet) {
+    SGameContent content;
+    content.front_end.loading_indicator = "progress_bar";
+    EXPECT_EQ(formatGameContentTables(content),
+              "\n[front_end]\nloading_indicator = 'progress_bar'\n");
+    EXPECT_EQ(parseGameContent(formatGameContentTables(content)), content);
+}
+
+TEST(GameContentFile, EveryShippedGamesFileReadsAndNamesEveryFrontEndPart) {
     const auto games = getEmbeddedGames();
     ASSERT_THAT(games, ::testing::Contains(::testing::Field(&SEmbeddedGame::id, "nocturne")));
     for (const SEmbeddedGame &game : games) {
         const std::expected<SGameContent, std::string> content = parseGameContent(game.text);
         ASSERT_TRUE(content.has_value()) << game.id << ": " << content.error();
-        EXPECT_EQ(content->front_end, game.id);
+        EXPECT_TRUE(content->front_end.title_backdrop.has_value()) << game.id;
+        EXPECT_TRUE(content->front_end.loading_indicator.has_value()) << game.id;
         if (game.id == "nocturne") {
             EXPECT_EQ(content->stories.size(), 5U);
         }
@@ -116,22 +125,26 @@ TEST_P(CGameContentErrorTest, NamesWhatIsWrong) {
 
 INSTANTIATE_TEST_SUITE_P(
     TopLevel, CGameContentErrorTest,
-    ::testing::Values(SBadCase{"id = \"a\"", "id: not a key this file takes"},
-                      SBadCase{"front_end = 1", "front_end: not a string"},
-                      SBadCase{"front_end = \"\"", "front_end: missing"},
-                      SBadCase{"title = 1", "title: not a string"},
-                      SBadCase{"title = \"\"", "title: not a name a folder can have"},
-                      SBadCase{"title = \".game\"", "title: not a name a folder can have"},
-                      SBadCase{"title = \"game.\"", "title: not a name a folder can have"},
-                      SBadCase{"title = \"game \"", "title: not a name a folder can have"},
-                      SBadCase{"title = \"a/b\"", "title: not a name a folder can have"},
-                      SBadCase{"title = \"a:b\"", "title: not a name a folder can have"},
-                      SBadCase{"loading_indicator = \"\"", "loading_indicator: missing"},
-                      SBadCase{"credits = 1", "credits: not a [credits] table"},
-                      SBadCase{"menu = 1", "menu: not a [menu] table"},
-                      SBadCase{"loading = 1", "loading: not a list of [[loading]] tables"},
-                      SBadCase{"story = 1", "story: not a list of [[story]] tables"},
-                      SBadCase{"translation = 1", "translation: not a [translation] table"}));
+    ::testing::Values(
+        SBadCase{"id = \"a\"", "id: not a key this file takes"},
+        SBadCase{"front_end = 1", "front_end: not a [front_end] table"},
+        SBadCase{"front_end.title_backdrop = 1", "front_end: title_backdrop: not a string"},
+        SBadCase{"front_end.title_backdrop = \"\"", "front_end: title_backdrop: missing"},
+        SBadCase{"front_end.loading_indicator = \"\"", "front_end: loading_indicator: missing"},
+        SBadCase{"front_end.menus = \"nocturne\"", "front_end: menus: not a key this file takes"},
+        SBadCase{"loading_indicator = \"moon\"", "loading_indicator: not a key this file takes"},
+        SBadCase{"title = 1", "title: not a string"},
+        SBadCase{"title = \"\"", "title: not a name a folder can have"},
+        SBadCase{"title = \".game\"", "title: not a name a folder can have"},
+        SBadCase{"title = \"game.\"", "title: not a name a folder can have"},
+        SBadCase{"title = \"game \"", "title: not a name a folder can have"},
+        SBadCase{"title = \"a/b\"", "title: not a name a folder can have"},
+        SBadCase{"title = \"a:b\"", "title: not a name a folder can have"},
+        SBadCase{"credits = 1", "credits: not a [credits] table"},
+        SBadCase{"menu = 1", "menu: not a [menu] table"},
+        SBadCase{"loading = 1", "loading: not a list of [[loading]] tables"},
+        SBadCase{"story = 1", "story: not a list of [[story]] tables"},
+        SBadCase{"translation = 1", "translation: not a [translation] table"}));
 
 INSTANTIATE_TEST_SUITE_P(
     Credits, CGameContentErrorTest,
@@ -225,7 +238,7 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"[translation.de]\nYes = 1", "translation.de: Yes: not a string"}));
 
 TEST(GameContentFile, BadTomlNamesItsLine) {
-    EXPECT_THAT(errorOf("front_end = "), HasSubstr("line 1: "));
+    EXPECT_THAT(errorOf("title = "), HasSubstr("line 1: "));
 }
 
 } // namespace
