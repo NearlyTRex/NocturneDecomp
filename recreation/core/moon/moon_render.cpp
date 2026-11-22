@@ -259,12 +259,20 @@ void CMoon::renderTiled() {
     const int left = picture.left + toScreen(tile_columns_[0], picture.scale_x);
     const int top = picture.top + toScreen(tile_rows_[0], picture.scale_y);
     const engine::EBitmapFilter filter = getPictureArtFilter(upscaler, picture);
+    // The tiles reach past the picture; BW3's 4:3 screen hid them, so the bars beside a picture
+    // keeping its shape do.
+    const engine::CAlphaBitmap::SBounds within{
+        .left = picture.left,
+        .top = picture.top,
+        .right = picture.left + picture.getWidth(kFrontEndLayoutWidth),
+        .bottom = picture.top + picture.getHeight(kFrontEndHeight)};
     for (const double row : tile_rows_) {
         for (const double column : tile_columns_) {
-            backdrop_.displayScaled(left + toScreen(column - tile_columns_[0], picture.scale_x),
-                                    top + toScreen(row - tile_rows_[0], picture.scale_y),
-                                    picture.getWidth(kFrontEndLayoutWidth),
-                                    picture.getHeight(kFrontEndHeight), kFullAlpha, filter);
+            backdrop_.displayScaledWithin(
+                left + toScreen(column - tile_columns_[0], picture.scale_x),
+                top + toScreen(row - tile_rows_[0], picture.scale_y),
+                picture.getWidth(kFrontEndLayoutWidth), picture.getHeight(kFrontEndHeight),
+                kFullAlpha, filter, within);
         }
     }
     displayInPicture(hand_, picture,

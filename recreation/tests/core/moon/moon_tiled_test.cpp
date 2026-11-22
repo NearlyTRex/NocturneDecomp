@@ -122,6 +122,23 @@ TEST_F(CMoonTiledTest, AColumnPastTheRightGoesBackToTheLeft) {
     EXPECT_EQ(pixel(600, kOpenRow + 100), tileAt(600, 0));
 }
 
+// BW3's screen was 4:3: keeping its shape on a wide one, the tiles stay behind the bars, which
+// stay black; stretched, they fill the screen.
+TEST_F(CMoonTiledTest, OnAWideScreenTheTilesKeepToThePicture) {
+    givenWideScreen();
+    constexpr int kLeft = (kWideWidth - kWidth) / 2;
+    moon_.init();
+    drawFrame();
+    EXPECT_EQ(pixel(kLeft - 1, kOpenRow), 0U);
+    EXPECT_EQ(pixel(kLeft + kWidth, kOpenRow), 0U);
+    EXPECT_NE(pixel(kLeft, kOpenRow), 0U);
+    content_.tiled_scroll->fit = {.fit = engine::EPictureFit::Stretch,
+                                  .anchor = engine::EPictureAnchor::Centre};
+    drawFrame();
+    EXPECT_NE(pixel(kLeft - 1, kOpenRow), 0U);
+    EXPECT_NE(pixel(kWideWidth - 1, kOpenRow), 0U);
+}
+
 TEST_F(CMoonTiledTest, TheOverlayIsOnTop) {
     moon_.init();
     moon_.render();
