@@ -1,7 +1,9 @@
 #include "core/menu/graphicoptionspage.h"
 
+#include "core/frontend.h"
 #include "core/game/game.h"
 #include "core/menu/menu.h"
+#include "engine/package/gamecontent.h"
 #include "engine/special/special.h"
 #include "platform/antialias.h"
 #include "platform/display.h"
@@ -153,8 +155,10 @@ std::string CGraphicOptionsPage::getCardText() const {
         return label("graphic_no_card");
     }
     const int board = getOwners().special.getCurrentGraphicsBoard();
+    const auto length = static_cast<std::size_t>(getMenu().getMenuLayout().card_name_length);
     return std::format("{}{} ({})", label("graphic_card"),
-                       card_names_.at(static_cast<std::size_t>(board)), board);
+                       shortenToLength(card_names_.at(static_cast<std::size_t>(board)), length),
+                       board);
 }
 
 void CGraphicOptionsPage::listCards() {

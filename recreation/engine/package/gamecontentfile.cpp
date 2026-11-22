@@ -52,6 +52,8 @@ constexpr std::array<std::pair<std::string_view, EFooterEdge>, 2> kFooterEdges{
 constexpr int kMaxFramesPerSecond = 1000;
 // A hero type's flags fit a byte.
 constexpr int kMaxHeroType = 0xff;
+// Longer than any line the menus fit.
+constexpr int kMaxCardNameLength = 0xff;
 constexpr int kMaxLoadingFrames = 1000;
 // Far past any projection, depth, light or glow a scene takes.
 constexpr int kMaxProjection = 0x10000;
@@ -566,17 +568,15 @@ TomlResult<std::map<std::string, int, std::less<>>> readPageTops(const toml::tab
     return tops;
 }
 
-TomlResult<int> readMenuOptions(const toml::table &table) {
+TomlResult<void> readMenuOptions(const toml::table &table, SMenuLayout &menu) {
     constexpr std::string_view kWhere = "menu: options: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"hero"}); !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"hero", "card_name_length"});
+        !keys) {
         return std::unexpected(keys.error());
     }
-    int hero = 0;
-    if (TomlResult<void> read = readIntegers(table, kWhere, {{"hero", &hero, 0, kMaxHeroType}});
-        !read) {
-        return std::unexpected(read.error());
-    }
-    return hero;
+    return readIntegers(table, kWhere,
+                        {{"hero", &menu.options_hero, 0, kMaxHeroType},
+                         {"card_name_length", &menu.card_name_length, 1, kMaxCardNameLength}});
 }
 
 TomlResult<SMenuSpectrum> readMenuSpectrum(const toml::table &table) {
@@ -2020,11 +2020,13 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         return std::unexpected(page_tops.error());
     }
     menu.page_tops = std::move(*page_tops);
-    TomlResult<int> hero = readMenuPart<int>(table, "options", readMenuOptions);
-    if (!hero) {
-        return std::unexpected(hero.error());
+    const TomlResult<const toml::table *> options = readRequiredTable(table, kWhere, "options");
+    if (!options) {
+        return std::unexpected(options.error());
     }
-    menu.options_hero = *hero;
+    if (TomlResult<void> read = readMenuOptions(**options, menu); !read) {
+        return std::unexpected(read.error());
+    }
     const TomlResult<const toml::table *> sound = readRequiredTable(table, kWhere, "sound");
     if (!sound) {
         return std::unexpected(sound.error());
@@ -2407,7 +2409,8 @@ std::string formatMenu(const SMenuLayout &menu) {
             text += std::format("{} = {}\n", quoteToml(page), top);
         }
     }
-    text += std::format("\n[menu.options]\nhero = {}\n", menu.options_hero);
+    text += std::format("\n[menu.options]\nhero = {}\ncard_name_length = {}\n", menu.options_hero,
+                        menu.card_name_length);
     text += std::format("\n[menu.sound]\neffects_sample = {}\n", quoteToml(menu.effects_sample));
     if (const std::optional<SMenuSpectrum> &spectrum = menu.spectrum) {
         text += std::format("\n[menu.sound.spectrum]\nframes = {}\nfps = {}\npitch = {}\n"

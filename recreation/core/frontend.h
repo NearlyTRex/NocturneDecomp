@@ -31,6 +31,10 @@ inline constexpr std::string_view kDirectStartSelect = "direct_start";
 [[nodiscard]] std::string getLabel(const engine::SGameContent &content,
                                    const support::CNewMsg &messages, std::string_view id);
 
+// The text in at most length characters: whole, or its start with "..." for the rest and no
+// space left before the dots.
+[[nodiscard]] std::string shortenToLength(std::string_view text, std::size_t length);
+
 // A part, as a message names it ("title backdrop"), checked as it is first used: one no package
 // names, or names in a style this build doesn't draw, is fatal, whichever game names it. The
 // rest of the front end runs without it. The style, for a part built in more than one.

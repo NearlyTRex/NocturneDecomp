@@ -140,6 +140,17 @@ TEST_F(CGraphicOptionsPageTest, AntialiasingStepsBothWaysAndWraps) {
     EXPECT_EQ(page.choose(kAntialias, EMenuStep::On), EMenuOutcome::Stay);
 }
 
+// The game's card_name_length, dots and all; the list keeps the whole name.
+TEST_F(CGraphicOptionsPageTest, ACardNameLongerThanTheGamesLengthIsShortened) {
+    game_parts_.getContent().menu->card_name_length = 5;
+    loadRenderer();
+    special_.setCurrentGraphicsBoard(1);
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    EXPECT_EQ(text(page, kCard), "3D Card : Se... (1)");
+    special_.setCurrentGraphicsBoard(0);
+    EXPECT_EQ(text(page, kCard), "3D Card : First (0)");
+}
+
 TEST_F(CGraphicOptionsPageTest, ACardTheInisNoLongerListsGoesBackToTheFirst) {
     special_.setCurrentGraphicsBoard(5);
     loadRenderer();

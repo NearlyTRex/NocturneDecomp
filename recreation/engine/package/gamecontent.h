@@ -682,6 +682,9 @@ struct SMenuLayout {
     SMenuCalibration calibration;
     // The hero type the options pages show the controls of, whoever is playing.
     int options_hero = 0;
+    // The most characters of the 3D card's name the graphic page shows, "..." standing for the
+    // rest; its list shows the whole name.
+    int card_name_length = 0;
     // What the sound page plays as the effects volume changes.
     std::string effects_sample;
     // None draws no bars.

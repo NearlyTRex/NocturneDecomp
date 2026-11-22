@@ -32,4 +32,8 @@ CMenu &CMenuPage::getMenu() {
     return menu_;
 }
 
+const CMenu &CMenuPage::getMenu() const {
+    return menu_;
+}
+
 } // namespace nocturne::core

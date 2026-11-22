@@ -282,7 +282,7 @@ constexpr std::string_view kMenuCalibration =
     "[menu.calibration]\nimage = 'b'\nsteps = ['one']\ntitle = 't'\nprompt = 'p'\n"
     "font = 'small_editor'\ncolour = 1\ntitle_lines = 2\nprompt_lines = 3\n";
 
-constexpr std::string_view kMenuOptions = "[menu.options]\nhero = 2\n";
+constexpr std::string_view kMenuOptions = "[menu.options]\nhero = 2\ncard_name_length = 24\n";
 constexpr std::string_view kMenuSound = "[menu.sound]\neffects_sample = 's.wav'\n";
 constexpr std::string_view kMenuSlider =
     "[menu.slider]\nwidth_share = 3\nwidth_parts = 4\nheight = 44\nbar_colour = 4\n"
@@ -392,6 +392,10 @@ INSTANTIATE_TEST_SUITE_P(
                  "menu: options: hero: not from 0 to 255"},
         SBadCase{menuThen("[menu.options]\nname = 1\n"),
                  "menu: options: name: not a key this file takes"},
+        SBadCase{menuThen("[menu.options]\nhero = 2\n"),
+                 "menu: options: card_name_length: missing"},
+        SBadCase{menuThen("[menu.options]\nhero = 2\ncard_name_length = 0\n"),
+                 "menu: options: card_name_length: not from 1 to 255"},
         SBadCase{menuThen(std::string(kMenuOptions)), "menu: sound: missing"},
         SBadCase{menuThen(std::format("{}[menu.sound]\nvolume = 1\n", kMenuOptions)),
                  "menu: sound: volume: not a key this file takes"},

@@ -19,6 +19,21 @@ std::string getLabel(const engine::SGameContent &content, const support::CNewMsg
     return std::string(messages.getLocalizedString(found->second));
 }
 
+std::string shortenToLength(std::string_view text, std::size_t length) {
+    constexpr std::string_view kShortened = "...";
+    if (text.size() <= length) {
+        return std::string(text);
+    }
+    if (length <= kShortened.size()) {
+        return std::string(kShortened.substr(0, length));
+    }
+    std::string_view kept = text.substr(0, length - kShortened.size());
+    while (kept.ends_with(' ')) {
+        kept.remove_suffix(1);
+    }
+    return std::format("{}{}", kept, kShortened);
+}
+
 std::string_view requireFrontEndStyle(std::string_view part,
                                       const std::optional<std::string> &style,
                                       std::initializer_list<std::string_view> built) {

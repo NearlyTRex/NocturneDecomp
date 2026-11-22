@@ -59,6 +59,7 @@ public:
 
 protected:
     [[nodiscard]] CMenu &getMenu();
+    [[nodiscard]] const CMenu &getMenu() const;
 
 private:
     CMenu &menu_;

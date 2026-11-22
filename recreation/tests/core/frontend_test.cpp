@@ -32,6 +32,23 @@ TEST_F(CGetLabelTest, AnIdNoPackageGivesIsFatal) {
                     ::testing::StrEq("No package gives the label main_play")));
 }
 
+TEST(ShortenToLength, TextThatFitsIsWhole) {
+    EXPECT_EQ(shortenToLength("GeForce", 7), "GeForce");
+    EXPECT_EQ(shortenToLength("", 3), "");
+}
+
+// The dots count towards the length, and no space is left before them.
+TEST(ShortenToLength, LongerTextEndsInDotsWithinTheLength) {
+    EXPECT_EQ(shortenToLength("NVIDIA GeForce RTX", 10), "NVIDIA...");
+    EXPECT_EQ(shortenToLength("NVIDIA GeForce RTX", 12), "NVIDIA Ge...");
+    EXPECT_EQ(shortenToLength("NVIDIA", 4), "N...");
+}
+
+TEST(ShortenToLength, NoRoomPastTheDotsIsTheDotsThatFit) {
+    EXPECT_EQ(shortenToLength("NVIDIA", 3), "...");
+    EXPECT_EQ(shortenToLength("NVIDIA", 1), ".");
+}
+
 TEST(GetFrontEndMode, WithAccelerationItIsThePickedResolution) {
     EXPECT_EQ(getFrontEndMode(1920, 1080, true), (common::SExtent{.width = 1920, .height = 1080}));
     EXPECT_EQ(getFrontEndMode(640, 480, true), (common::SExtent{.width = 640, .height = 480}));

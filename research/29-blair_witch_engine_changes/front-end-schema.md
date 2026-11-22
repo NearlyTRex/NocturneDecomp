@@ -145,6 +145,7 @@ mouse_only = false                # not built: BW2's control mode
 
 [menu.options]
 hero = 2                          # the hero type whose controls the options pages show
+card_name_length = 24             # the 3D card's name on the graphic page, "..." past it
 
 [menu.slider]
 width_share = 3                   # three quarters of the screen wide
