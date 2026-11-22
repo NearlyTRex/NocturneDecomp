@@ -6,6 +6,7 @@
 #include "platform/antialias.h"
 #include "platform/display.h"
 #include "platform/upscaler.h"
+#include "shape/edittool/picklist.h"
 
 #include <algorithm>
 #include <array>
@@ -70,6 +71,10 @@ std::optional<std::string> CGraphicOptionsPage::title() {
     return localize("Graphic Options");
 }
 
+std::string_view CGraphicOptionsPage::getLayoutId() const {
+    return "graphic";
+}
+
 void CGraphicOptionsPage::build(std::vector<SMenuLine> &lines) {
     const SMenuOwners &owners = getOwners();
     const CGame &game = owners.game;
@@ -108,7 +113,7 @@ EMenuOutcome CGraphicOptionsPage::choose(int id, EMenuStep step) {
     case EGraphicLine::Api:
         break;
     case EGraphicLine::Card:
-        stepCard();
+        pickCard();
         break;
     case EGraphicLine::Bits:
         game.game_bpp = game.game_bpp == kLowBitDepth ? kHighBitDepth : kLowBitDepth;
@@ -215,17 +220,25 @@ void CGraphicOptionsPage::stepAntialias(EMenuStep step) {
         platform::kAntialiasCount));
 }
 
-// Always on, whichever way.
-void CGraphicOptionsPage::stepCard() {
+// Whichever way, a list of the cards by their whole names, as the sound page lists its devices;
+// the original stepped to the next card, its name often too long to read beside the menu.
+void CGraphicOptionsPage::pickCard() {
     engine::CSpecial &special = getOwners().special;
     if (card_names_.empty()) {
         special.setCurrentGraphicsBoard(0);
         return;
     }
-    const auto next = static_cast<int>(
-        (static_cast<std::size_t>(special.getCurrentGraphicsBoard()) + 1) % card_names_.size());
-    special.setCurrentGraphicsBoard(next);
-    special.selectCard(next);
+    shape::CPickList list(getOwners().pick_list);
+    for (const std::string &name : card_names_) {
+        list.add(name);
+    }
+    const int chosen = list.displayChoicesAndWaitForInput(localize("Select 3D card"),
+                                                          special.getCurrentGraphicsBoard());
+    if (chosen < 0) {
+        return;
+    }
+    special.setCurrentGraphicsBoard(chosen);
+    special.selectCard(chosen);
 }
 
 } // namespace nocturne::core

@@ -175,6 +175,22 @@ TEST_F(CMainMenuAttractTest, MutingInTheMiddleOfAPassStartsTheWaitAgain) {
     EXPECT_THAT(movies_, IsEmpty());
 }
 
+TEST_F(CMainMenuAttractTest, AGameWithoutAttractMoviesPlaysNone) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->attract.reset();
+    runFrames(12);
+    EXPECT_THAT(movies_, IsEmpty());
+}
+
+TEST_F(CMainMenuAttractTest, TheMoviesAreTheGamesOwn) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->attract = engine::SMenuAttract{.directory = "films", .movies = {"intro.avi"}};
+    runFrames(12);
+    EXPECT_THAT(movies_, ElementsAre("films\\intro.avi"));
+}
+
 TEST_F(CMainMenuAttractTest, WithoutTheOpeningNoMovieFollows) {
     attract_movies_.setOpeningPlayed(false);
     runFrames(15);

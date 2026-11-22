@@ -38,6 +38,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <ctime>
+#include <memory>
 #include <span>
 
 namespace nocturne::core {
@@ -61,6 +62,24 @@ public:
     // The packages' content the game reads, the shipped game's until a test changes it.
     engine::SGameContent &getContent() {
         return content_;
+    }
+
+    // Another game over these parts, reading the given content from the start.
+    [[nodiscard]] std::unique_ptr<CGame> makeGame(const engine::SGameContent &content) {
+        return std::make_unique<CGame>(SGameOwners{.clock = clock_,
+                                                   .dosio = dosio_,
+                                                   .screen = screen_,
+                                                   .special = special_,
+                                                   .two_d = two_d_,
+                                                   .three_d = three_d_,
+                                                   .menu_input = menu_input_,
+                                                   .fonts = fonts_,
+                                                   .sound_main = sound_main_,
+                                                   .keys = keys_,
+                                                   .raw_input = raw_input_,
+                                                   .gamepad = gamepad_.input,
+                                                   .content = content,
+                                                   .display = game_display_});
     }
 
     // The keys and buttons the game reads as held, by input code, and its mouse.
@@ -144,11 +163,13 @@ private:
                                        .raw_input = raw_input_,
                                        .game_clock = clock_,
                                        .clock = wall_clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = content_}};
     engine::CFontColors colors_;
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,   two_d_,        three_d_, colors_,
+                  os_fonts_, messages_, editor_tools_, content_};
     ::testing::NiceMock<platform::MockAudioDevice> audio_device_;
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,

@@ -41,6 +41,7 @@
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
@@ -176,6 +177,16 @@ protected:
         return -1;
     }
 
+    // The last pixel drawn along row y, or -1.
+    [[nodiscard]] int lastLit(int y) const {
+        for (int x = ScreenWidth - 1; x >= 0; --x) {
+            if (lit(x, y)) {
+                return x;
+            }
+        }
+        return -1;
+    }
+
     void press(EInputCodeType code) {
         keyboard_[static_cast<std::size_t>(code)] = 1;
     }
@@ -208,11 +219,14 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = game_clock_,
                                        .clock = clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = engine::getShippedGameContent()}};
     engine::CFontColors colors_;
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,       two_d_,
+                  three_d_,  colors_,       os_fonts_,
+                  messages_, editor_tools_, engine::getShippedGameContent()};
     NiceMock<engine::MockGameClock> game_clock_;
     CGameParts game_parts_{game_clock_};
     CGame &game_ = game_parts_.getGame();
@@ -425,6 +439,26 @@ TEST_F(CMenuTest, TheSelectedItemGlowsInTheTitleAnimationsFirstHalf) {
     EXPECT_TRUE(lit(158, letterRow(98)));
 }
 
+// A game whose glow doesn't flicker draws the selected item steady throughout.
+TEST_F(CMenuTest, WithoutFlickerTheSelectedItemIsSteadyInTheFirstHalfToo) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    int selected = 0;
+    choose({"XX"}, selected);
+    EXPECT_FALSE(lit(158, letterRow(98)));
+}
+
+TEST_F(CMenuTest, AFontNoneLoadsIsFatal) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.font = "gothic";
+    int selected = 0;
+    EXPECT_THAT([&] { static_cast<void>(choose({"XX"}, selected)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No font gothic is loaded")));
+}
+
 TEST_F(CMenuTest, InTheSecondHalfTheSelectedItemIsSteadyAndBrighter) {
     menu_.getMoon().update(2.5F);
     int selected = 0;
@@ -541,6 +575,31 @@ TEST_F(CMenuTest, TheItemsStartAtThePackagesLeftEdge) {
     int selected = 1;
     choose({"XX", "XX"}, selected);
     EXPECT_EQ(firstLit(letterRow(100)), 300);
+}
+
+// As a long device name makes one beside a menu on the right: it ends in "..." short of the edge,
+// where whole it would run off.
+TEST_F(CMenuTest, AnItemTooWideForTheRoomToTheRightIsShortened) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->left = 560;
+    int selected = 1;
+    choose({std::string(40, 'X'), "XX"}, selected);
+    const int row = letterRow(100);
+    EXPECT_EQ(firstLit(row), 560);
+    EXPECT_LT(lastLit(row), kWidth - 1);
+    EXPECT_GT(lastLit(row), 600);
+}
+
+TEST_F(CMenuTest, AnItemThatFitsIsDrawnWhole) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->left = 560;
+    int whole = 1;
+    choose({"XX", "XX"}, whole);
+    const int fitting = lastLit(letterRow(100));
+    EXPECT_GT(fitting, 560);
+    EXPECT_LT(fitting, 600);
 }
 
 TEST_F(CMenuTest, WithoutACopyrightOrTrademarkOnlyTheBuildIsInTheFooter) {

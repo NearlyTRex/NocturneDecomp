@@ -32,28 +32,31 @@ namespace {
 constexpr int kImageWidth = 640;
 constexpr int kImageHeight = 480;
 constexpr int kFullAlpha = 0xffff;
-constexpr int kTextColor = 0xf8;
 // The character whose height spaces the text.
 constexpr int kLineHeightChar = 'X';
-constexpr int kTitleColor = 7;
-constexpr int kTitleShadow = 0;
-constexpr int kGlowColor = 7;
-constexpr int kSelectedColor = 0xff;
-constexpr int kItemAlpha = 48000;
-constexpr int kGlowCopies = 5;
-constexpr int kFooterShadow = 0;
-constexpr int kTrademarkAlpha = 0x8000;
-// The trademark sign, in Windows-1252, beside the title art.
-constexpr std::string_view kTrademark = "\x99";
-constexpr int kVersionX = 4;
+static_assert(engine::kNoMenuShadow == engine::CBitFont::kNoShadow);
+constexpr std::string_view kShortened = "...";
 
-constexpr std::array<std::string_view, 5> kCalibrationSteps{
-    "1. Turn off all the lights in your room.",
-    "2. Turn your brightness up, so that you see 3 bars on the left side of the screen.",
-    "3. Turn down the brightness, so that the left 2 bars become the same color.",
-    "4. Turn your contrast all the way up.",
-    "You're done with calibration.",
-};
+// The text as it fits in width screen pixels: whole, or as much of its start as fits before
+// "...", with no space left before the dots.
+std::string fitToWidth(const engine::CBitFont &font, std::string_view text, int width,
+                       float scale) {
+    if (font.getTextWidthScaled(text, scale) <= width) {
+        return std::string(text);
+    }
+    std::string shortened(text);
+    while (!shortened.empty()) {
+        shortened.pop_back();
+        while (shortened.ends_with(' ')) {
+            shortened.pop_back();
+        }
+        std::string candidate = shortened + std::string(kShortened);
+        if (font.getTextWidthScaled(candidate, scale) <= width) {
+            return candidate;
+        }
+    }
+    return std::string(kShortened);
+}
 
 // The calibration image stretched over a screen of width by height.
 struct SStretch {
@@ -83,9 +86,9 @@ struct SStretch {
 // Centred on the screen at image row y as stretched, at the layout's text scale so the letters
 // keep their shape.
 void drawCentred(engine::CBitFont &font, std::string_view text, const SStretch &stretch,
-                 float scale, int y) {
+                 float scale, int y, int colour) {
     font.drawTextScaled(text, (stretch.width / 2) - (font.getTextWidthScaled(text, scale) / 2),
-                        stretch.getY(y), kTextColor, engine::CBitFont::kNoShadow, scale);
+                        stretch.getY(y), colour, engine::CBitFont::kNoShadow, scale);
 }
 
 } // namespace
@@ -103,7 +106,8 @@ CMenu::CMenu(const SMenuOwners &owners)
                                          .game = owners.game,
                                          .actor = owners.actor,
                                          .crt_random = owners.crt_random,
-                                         .display = owners.display}) {}
+                                         .display = owners.display,
+                                         .content = owners.content}) {}
 
 CMoon &CMenu::getMoon() {
     return moon_;
@@ -127,10 +131,10 @@ bool CMenu::getMenuLeftRightPressed() const {
 // nocedit 0x00510a50
 void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
                                        std::string_view message_text) {
-    engine::CBitFont &font = *owners_.fonts.getSmallEditorFont();
-    const std::string prompt =
-        std::string(message_text) +
-        std::string(owners_.messages.getLocalizedString("  Press any key to continue."));
+    const engine::SMenuCalibration &calibration = getMenuLayout().calibration;
+    engine::CBitFont &font = owners_.fonts.findFont(calibration.font);
+    const std::string prompt = std::string(message_text) +
+                               std::string(owners_.messages.getLocalizedString(calibration.prompt));
     const int line_height = font.getCharHeight(kLineHeightChar);
     const float scale = getScreenLayout().scale;
     const SStretch stretch{.width = owners_.screen.getWindowWidth(),
@@ -138,9 +142,10 @@ void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
     owners_.special.clearScreen();
     bitmap.displayScaled(0, 0, stretch.width, stretch.height, kFullAlpha,
                          stretch.getFilter(owners_.display.getUpscaler()));
-    drawCentred(font, prompt, stretch, scale, kImageHeight - (3 * line_height));
-    drawCentred(font, owners_.messages.getLocalizedString("Monitor calibration"), stretch, scale,
-                2 * line_height);
+    drawCentred(font, prompt, stretch, scale,
+                kImageHeight - (calibration.prompt_lines * line_height), calibration.colour);
+    drawCentred(font, owners_.messages.getLocalizedString(calibration.title), stretch, scale,
+                calibration.title_lines * line_height, calibration.colour);
     owners_.screen.swapBuffers();
     owners_.two_d.clearInputAndWait();
     owners_.raw_input.getNextKeypress(owners_.screen);
@@ -148,44 +153,50 @@ void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
 
 // nocedit 0x00510ba0
 void CMenu::showCalibrationTest() {
+    const engine::SMenuCalibration &calibration = getMenuLayout().calibration;
     engine::CAlphaBitmap bitmap(owners_.dosio, owners_.screen, owners_.special);
-    bitmap.load("brightness", kImageWidth, kImageHeight);
-    for (const std::string_view step : kCalibrationSteps) {
+    bitmap.load(calibration.image.c_str(), kImageWidth, kImageHeight);
+    for (const std::string &step : calibration.steps) {
         showCalibrationTestPattern(bitmap, owners_.messages.getLocalizedString(step));
     }
     owners_.two_d.clearInputAndWait();
 }
 
-// Without a title the items are double spaced. The original also measured each item, which
-// nothing read, and the editor's drew two lines naming its build at the top. The rows are the
-// layout's, drawn where and as large as the screen shows them.
+// The original also measured each item, which nothing read, and the editor's drew two lines
+// naming its build at the top. The rows are the layout's, drawn where and as large as the screen
+// shows them. A row wider than the room to the layout's right edge, as a long device name makes
+// one beside a menu on the right, is shortened to end in "..."; its line's list shows it whole.
 // nocedit 0x00510000
 int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selected_index,
                                   int y_position, std::optional<std::string_view> title) {
-    engine::CBitFont &font = *owners_.fonts.getThemeFont();
+    const engine::SMenuLayout &menu = getMenuLayout();
+    const engine::SMenuItems &style = menu.item;
+    engine::CBitFont &font = owners_.fonts.findFont(style.font);
     const SFrontEndLayout layout = getScreenLayout();
-    const int item_left = getMenuLayout().left;
+    const int line_height = font.getCharHeight(kLineHeightChar);
     if (title) {
-        font.drawTextScaled(*title, layout.getX(item_left), layout.getY(y_position), kTitleColor,
-                            kTitleShadow, layout.scale);
-        y_position += font.getCharHeight(kLineHeightChar) * 2;
+        font.drawTextScaled(*title, layout.getX(menu.left), layout.getY(y_position),
+                            menu.title.colour, menu.title.shadow, layout.scale);
+        y_position += line_height * menu.title.gap_lines;
     }
+    const int spacing = title ? style.spacing_titled : style.spacing_untitled;
+    const int room = layout.getX(kFrontEndLayoutWidth) - layout.getX(menu.left);
     for (std::size_t i = 0; i < items.size(); ++i) {
-        const int line_height = font.getCharHeight(kLineHeightChar);
-        int color = kTextColor;
+        const std::string item = fitToWidth(font, items[i], room, layout.scale);
+        int color = style.colour;
         if (std::cmp_equal(i, selected_index)) {
             // The glow pulses with the title animation, steady in its second half.
-            if (moon_.isAnimationFirstHalf() != 0) {
-                drawGlowingItem(font, items[i], item_left, y_position);
-                color = kGlowColor;
+            if (style.glow.flicker && moon_.isAnimationFirstHalf() != 0) {
+                drawGlowingItem(font, item, menu.left, y_position);
+                color = style.glow.colour;
             } else {
-                color = kSelectedColor;
+                color = style.selected_colour;
             }
         }
-        owners_.three_d.setRenderAlpha(kItemAlpha);
-        font.drawTextScaled(items[i], layout.getX(item_left), layout.getY(y_position), color,
-                            engine::CBitFont::kNoShadow, layout.scale);
-        y_position += title ? line_height : 2 * line_height;
+        owners_.three_d.setRenderAlpha(style.alpha);
+        font.drawTextScaled(item, layout.getX(menu.left), layout.getY(y_position), color,
+                            style.shadow, layout.scale);
+        y_position += spacing * line_height;
     }
     owners_.three_d.setRenderAlpha(kFullAlpha);
     drawFooter();
@@ -195,13 +206,14 @@ int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selec
 // Each copy is up to two layout pixels off in x and y, at a random part of the item's alpha.
 void CMenu::drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y) {
     const SFrontEndLayout layout = getScreenLayout();
-    for (int i = 0; i < kGlowCopies; ++i) {
+    const engine::SMenuItems &style = getMenuLayout().item;
+    for (int i = 0; i < style.glow.copies; ++i) {
         const int x_jitter = owners_.crt_random.rand() & 3;
         const int y_jitter = (owners_.crt_random.rand() & 3) - 2;
-        const int alpha = (owners_.crt_random.rand() * kItemAlpha) >> 16;
+        const int alpha = (owners_.crt_random.rand() * style.alpha) >> 16;
         owners_.three_d.setRenderAlpha(alpha);
         font.drawTextScaled(item, layout.getX(left - 2 + x_jitter), layout.getY(y + y_jitter),
-                            kGlowColor, engine::CBitFont::kNoShadow, layout.scale);
+                            style.glow.colour, style.shadow, layout.scale);
     }
 }
 
@@ -221,11 +233,12 @@ std::string_view CMenu::getCopyright() const {
     return content.copyright ? std::string_view(*content.copyright) : std::string_view();
 }
 
-// The build's line is the enhanced game's, in the bottom left at the trademark's alpha, on the
-// copyright's row, or its own without one. The copyright keeps to the screen's corner and the
-// trademark to the title art's.
+// The build's line is the enhanced game's, in the bottom left, on the copyright's row, or its own
+// without one. The copyright keeps to the screen's corner and the trademark to the title art's.
 void CMenu::drawFooter() {
-    engine::CBitFont &font = *owners_.fonts.getSmallEditorFont();
+    const engine::SMenuLayout &menu = getMenuLayout();
+    const engine::SMenuFooter &footer = menu.footer;
+    engine::CBitFont &font = owners_.fonts.findFont(footer.font);
     const SFrontEndLayout layout = getScreenLayout();
     const std::string_view copyright = getCopyright();
     const int bottom =
@@ -233,14 +246,16 @@ void CMenu::drawFooter() {
                     font.getTextHeight(copyright.empty() ? owners_.build_version : copyright));
     const int right = std::max(kImageWidth, owners_.screen.getWindowWidth()) - 1;
     font.drawTextScaled(copyright, right - font.getTextWidthScaled(copyright, layout.scale), bottom,
-                        kTextColor, kFooterShadow, layout.scale);
-    owners_.three_d.setRenderAlpha(kTrademarkAlpha);
-    if (const std::optional<engine::SLayoutPoint> &trademark = getMenuLayout().trademark) {
-        font.drawTextScaled(kTrademark, layout.getX(trademark->x), layout.getY(trademark->y),
-                            kTextColor, kFooterShadow, layout.scale);
+                        footer.colour, footer.shadow, layout.scale);
+    if (const std::optional<engine::SMenuTrademark> &trademark = menu.trademark) {
+        owners_.three_d.setRenderAlpha(trademark->alpha);
+        const std::string glyph(1, static_cast<char>(trademark->glyph));
+        font.drawTextScaled(glyph, layout.getX(trademark->x), layout.getY(trademark->y),
+                            footer.colour, footer.shadow, layout.scale);
     }
-    font.drawTextScaled(owners_.build_version, layout.getLength(kVersionX), bottom, kTextColor,
-                        kFooterShadow, layout.scale);
+    owners_.three_d.setRenderAlpha(footer.version_alpha);
+    font.drawTextScaled(owners_.build_version, layout.getLength(footer.version_x), bottom,
+                        footer.colour, footer.shadow, layout.scale);
     owners_.three_d.setRenderAlpha(kFullAlpha);
 }
 

@@ -3,6 +3,7 @@
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/menu/menu.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
@@ -28,7 +29,16 @@ enum class EGameplayLine : std::uint8_t {
     TextFont,
     MenuText,
     Rating,
+    PuzzleDifficulty,
+    CombatDifficulty,
 };
+
+// BW1's lines, a mode each: 0 normal, 1 hard.
+constexpr std::array<std::string_view, 2> kPuzzleDifficultyLabels{"Puzzle difficulty: Normal",
+                                                                  "Puzzle difficulty: Hard"};
+constexpr std::array<std::string_view, 2> kCombatDifficultyLabels{"Combat difficulty: Normal",
+                                                                  "Combat difficulty: Hard"};
+constexpr int kHardMode = 1;
 
 // By EAimMode.
 constexpr std::array<std::string_view, 3> kAimingLabels{"Aiming : Auto", "Aiming : Kindof auto",
@@ -51,6 +61,14 @@ int toggle(int flag) {
     return flag == 0 ? 1 : 0;
 }
 
+// Any mode but hard shows, and is kept, as normal, as BW1's page left it.
+std::size_t keepMode(int &mode) {
+    if (mode != kHardMode) {
+        mode = 0;
+    }
+    return static_cast<std::size_t>(mode);
+}
+
 void add(std::vector<SMenuLine> &lines, EGameplayLine line, std::string text) {
     lines.push_back({.id = std::to_underlying(line), .text = std::move(text)});
 }
@@ -62,6 +80,10 @@ CGameplayPage::CGameplayPage(CMenu &menu, const SMenuOwners &owners)
 
 std::optional<std::string> CGameplayPage::title() {
     return localize("Gameplay");
+}
+
+std::string_view CGameplayPage::getLayoutId() const {
+    return "gameplay";
 }
 
 void CGameplayPage::build(std::vector<SMenuLine> &lines) {
@@ -83,6 +105,12 @@ void CGameplayPage::build(std::vector<SMenuLine> &lines) {
     if (game.quimby_flag == 0) {
         add(lines, EGameplayLine::Rating,
             localize(game.nudity_flag != 0 ? "Rating: Mature" : "Rating: Teen"));
+    }
+    if (getMenu().getMenuLayout().features.difficulty) {
+        add(lines, EGameplayLine::PuzzleDifficulty,
+            localize(kPuzzleDifficultyLabels.at(keepMode(owners_.game.puzzle_difficulty_mode))));
+        add(lines, EGameplayLine::CombatDifficulty,
+            localize(kCombatDifficultyLabels.at(keepMode(owners_.game.combat_difficulty_mode))));
     }
 }
 
@@ -108,6 +136,13 @@ EMenuOutcome CGameplayPage::choose(int id, EMenuStep step) {
         break;
     case EGameplayLine::MenuText:
         stepMenuFont(step);
+        break;
+    // Either way, between normal and hard.
+    case EGameplayLine::PuzzleDifficulty:
+        game.puzzle_difficulty_mode = game.puzzle_difficulty_mode == kHardMode ? 0 : kHardMode;
+        break;
+    case EGameplayLine::CombatDifficulty:
+        game.combat_difficulty_mode = game.combat_difficulty_mode == kHardMode ? 0 : kHardMode;
         break;
     default:
         swapRating();

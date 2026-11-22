@@ -253,6 +253,40 @@ TEST_F(CDemonPodTest, APackageLoadsWithoutTheBaseGame) {
                                           "POD, so it isn't loaded")));
 }
 
+// So what it reads first, its ini among it, can be the game's.
+TEST_F(CDemonPodTest, TheGameIsChosenBeforeItsPodsMount) {
+    givenMod("mods/extra", "id = \"extra\"\n");
+    std::vector<engine::SChosenGame> chosen;
+    pod().setGameChosenHandler([this, &chosen](const engine::SChosenGame &game) {
+        EXPECT_TRUE(pod().getPodFiles().empty());
+        chosen.push_back(game);
+    });
+    load();
+    ASSERT_EQ(chosen.size(), 1U);
+    EXPECT_EQ(chosen[0].folder, "");
+    EXPECT_EQ(chosen[0].id, "nocturne");
+}
+
+// Without a game, the first package is the one the rest are loaded over. Its loose files are
+// then the disk's, which reads them from its folder, the user's copies first.
+TEST_F(CDemonPodTest, WithoutAGameTheFirstPackageIsTheGameAndItsLooseFilesTheDisks) {
+    givenMod("mods/game", "id = \"game\"\n[[pod]]\npath = \"GAME.POD\"\n");
+    givenPod("mods/game/GAME.POD", {{.name = "data\\menu.txt", .data = "game"}});
+    files_.givenFile("mods/game/data/loose.txt", "loose");
+    givenMod("mods/extra", "id = \"extra\"\n");
+    files_.givenFile("mods/extra/data/extra.txt", "extra");
+    files_.givenFile("loadorder.txt", "# nocturne\ngame\nextra\n");
+    std::optional<engine::SChosenGame> chosen;
+    pod().setGameChosenHandler([&chosen](const engine::SChosenGame &game) { chosen = game; });
+    load();
+    ASSERT_TRUE(chosen.has_value());
+    EXPECT_EQ(chosen->folder, "mods/game");
+    EXPECT_EQ(chosen->id, "game");
+    EXPECT_EQ(answer("data\\menu.txt"), "mods/game/GAME.POD");
+    EXPECT_EQ(answer("data/loose.txt"), std::nullopt);
+    EXPECT_EQ(answer("data/extra.txt"), "mods/extra/data/extra.txt");
+}
+
 TEST_F(CDemonPodTest, ALoadOrderTurningNothingOnIsFatal) {
     files_.givenFile("loadorder.txt", "# nocturne\n");
     EXPECT_THAT([this] { load(); }, ThrowsMessage<common::CFatalError>(

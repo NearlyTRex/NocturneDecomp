@@ -1,9 +1,22 @@
 #include "core/frontend.h"
 
+#include "common/error/error.h"
+
 #include <algorithm>
 #include <cmath>
+#include <format>
 
 namespace nocturne::core {
+
+void requireFrontEndStyle(std::string_view part, const std::optional<std::string> &style,
+                          std::initializer_list<std::string_view> built) {
+    if (!style) {
+        common::displayErrorAndQuit(std::format("No package names the {}", part));
+    }
+    if (!std::ranges::contains(built, *style)) {
+        common::displayErrorAndQuit(std::format("The {} {} isn't in this build", part, *style));
+    }
+}
 
 common::SExtent getFrontEndMode(int picked_width, int picked_height, bool accelerated) {
     if (!accelerated || picked_width < kFrontEndLayoutWidth || picked_height < kFrontEndHeight) {

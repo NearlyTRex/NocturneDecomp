@@ -111,6 +111,17 @@ TEST_F(CAudioSpectrumTest, WhileNothingPlaysThereAreNoBarsButTheFramesTurn) {
     expectFramesFromCounter(6);
 }
 
+// A game whose sound page has no spectrum draws no bars, whatever plays.
+TEST_F(CAudioSpectrumTest, WithoutASpectrumThereAreNoBars) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->spectrum.reset();
+    playMusic();
+    game_.updateDT();
+    menu_.drawAudioSpectrum();
+    EXPECT_TRUE(bars_.empty());
+}
+
 TEST_F(CAudioSpectrumTest, SilenceHasNoBars) {
     givenFile("sound\\splash-music-22.wav", sound::makeConstantWav(44100, 0));
     playMusic();

@@ -8,6 +8,7 @@
 #include <array>
 #include <cstdint>
 #include <memory>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -34,7 +35,7 @@ public:
     CDFont(const engine::CDosIo &dosio, engine::IScreenDevice &screen, const engine::C2d &two_d,
            const engine::C3d &three_d, const engine::CFontColors &colors,
            platform::IOsFontFactory &os_fonts, const support::CNewMsg &messages,
-           shape::CEditorTools &editor_tools);
+           shape::CEditorTools &editor_tools, const engine::SGameContent &content);
     CDFont(const CDFont &) = delete;
     CDFont &operator=(const CDFont &) = delete;
     CDFont(CDFont &&) = delete;
@@ -64,10 +65,17 @@ public:
     [[nodiscard]] engine::CBitFont *getSmallEditorFont() const;
     [[nodiscard]] engine::CBitFont *getConsoleFont() const;
     [[nodiscard]] engine::CBitFont *getMicroFont() const;
+    // The font a manifest names: medium, tiny, theme, small_editor, console or micro. Any other
+    // name is fatal.
+    [[nodiscard]] engine::CBitFont &findFont(std::string_view id) const;
 
 private:
-    [[nodiscard]] std::unique_ptr<engine::CBitFont> loadFont(const char *filename, int width,
-                                                             int height, int load_flags) const;
+    // The packages' spec for a role; without one, fatal.
+    [[nodiscard]] const engine::SFontSpec &getSpec(std::string_view id) const;
+    [[nodiscard]] std::unique_ptr<engine::CBitFont> loadFont(const engine::SFontSpec &spec) const;
+    // The role's OS font at scale times its size, or none when the role takes no OS text.
+    [[nodiscard]] std::unique_ptr<engine::CWinFont> makeOsFont(std::string_view id,
+                                                               float scale) const;
     [[nodiscard]] std::unique_ptr<engine::CWinFont> makeOsFont(int font_height, int y_offset1,
                                                                int y_offset2) const;
 
@@ -79,6 +87,7 @@ private:
     platform::IOsFontFactory &os_fonts_;
     const support::CNewMsg &messages_;
     shape::CEditorTools &editor_tools_;
+    const engine::SGameContent &content_;
     EOsFontChoice os_font_choice_ = EOsFontChoice::Auto;
     EMenuFontChoice menu_font_choice_ = EMenuFontChoice::Large;
     bool use_os_fonts_ = false;

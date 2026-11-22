@@ -17,7 +17,9 @@ namespace nocturne::core {
 // not name.
 struct SGameSystemOwners {
     engine::CIni &ini;
+    // The game's own files, which the ini is read through once the pod's load chooses the game.
     platform::IFileSystem &file_system;
+    engine::CGameFolders &game_folders;
     const SIniDataOwners &ini_owners;
     engine::CDosIo &dosio;
     engine::CPod &pod;
@@ -42,7 +44,8 @@ struct SGameSystemOwners {
 };
 
 using common::displayErrorAndQuit;
-// Reads the INI, mounts the pods, unpacking archives behind the fangs where any are left, and
+// Chooses the game, reads its INI from its folders, mounts the pods, unpacking archives behind the
+// fangs where any are left (a game they hold has its INI read again from its own), and
 // brings up graphics at 640x480x32, then fonts, the first run's calibration, the opening movie, a
 // loading screen, sound, the light filters, the mouse and the network. The attract movies wait for
 // the opening to have played. A front-end part in a style this build doesn't draw is fatal; the

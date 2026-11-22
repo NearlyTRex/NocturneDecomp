@@ -121,6 +121,17 @@ TEST_F(CKeyBindingsTest, PickingACodeRebindsIt) {
     EXPECT_EQ(frames_, 13);
 }
 
+// The rows are the game's, in its order.
+TEST_F(CKeyBindingsTest, TheRowsAreTheGames) {
+    game_parts_.getContent().controls.value().bindings = {{.action = "fire", .label = "Shoot"}};
+    std::vector<EStep> steps = openForward();
+    bindQ(steps);
+    leave(steps);
+    run(std::move(steps));
+    EXPECT_THAT(bindings(EGameAction::Fire), ElementsAre(EInputCodeType::DIK_Q));
+    EXPECT_THAT(bindings(EGameAction::Walk), ElementsAre(EInputCodeType::DIK_UP));
+}
+
 TEST_F(CKeyBindingsTest, AddBindingAddsOneAfterTheRest) {
     std::vector<EStep> steps = openForward();
     steps.push_back(tap(EInputCodeType::DIK_DOWN));

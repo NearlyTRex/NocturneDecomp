@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "common/math/vector3i.h"
 #include "core/color3i.h"
 #include "core/dfont/dfont.h"
@@ -157,11 +158,13 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = clock_,
                                        .clock = platform_clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = content_}};
     engine::CFontColors colors_;
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,   two_d_,        three_d_, colors_,
+                  os_fonts_, messages_, editor_tools_, content_};
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     // The shipped game's pictures, until a test changes them.
     engine::SGameContent content_ = engine::getShippedGameContent();
@@ -281,6 +284,37 @@ TEST_F(CLevelLoaderTest, AWindowPutsTheMoonInTheTopRightCornerWithNoStatus) {
     EXPECT_EQ(glows_[0].clip, moons_[0].clip);
     EXPECT_EQ(two_d_.getClipRect(), kFullScreen);
     EXPECT_EQ(pixel(kBoxLeft, kBoxTop), kBackground);
+}
+
+// A game's own corner window, tint and ambient.
+TEST_F(CLevelLoaderTest, TheCornerWindowTintAndAmbientAreTheGamesOwn) {
+    std::optional<engine::SMoonIndicator> &look = content_.moon_indicator;
+    ASSERT_TRUE(look.has_value());
+    look->corner_x = 10;
+    look->corner_y = 20;
+    look->corner_size = 100;
+    look->default_tint = {0x1000, 0x2000, 0x3000};
+    look->ambient = 0x123;
+    loader_.show(4, true, CLevelLoader::kRandomImage);
+    loader_.update("X", false);
+    ASSERT_EQ(moons_.size(), 1U);
+    EXPECT_EQ(moons_[0].clip, (SClipRect{.left = 10, .top = 20, .right = 110, .bottom = 120}));
+    EXPECT_EQ(set_.getFlatColor(), (CColor3i{.r = 0x1000, .g = 0x2000, .b = 0x3000}));
+    EXPECT_EQ(set_.getAmbientBaseQuick(), 0x123);
+}
+
+TEST_F(CLevelLoaderTest, AnIndicatorThisBuildDoesntDrawIsFatal) {
+    content_.front_end.loading_indicator = "progress_bar";
+    EXPECT_THAT([this] { loader_.show(4, false, CLevelLoader::kNoImage); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("The loading indicator progress_bar isn't in this build")));
+}
+
+TEST_F(CLevelLoaderTest, WithoutTheMoonsLookShowingIsFatal) {
+    content_.moon_indicator.reset();
+    EXPECT_THAT([this] { loader_.show(4, false, CLevelLoader::kNoImage); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the moon loading indicator's look")));
 }
 
 // The CRT's first draw from seed 1 is 16838, which picks the third of the shipped game's three.

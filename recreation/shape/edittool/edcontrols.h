@@ -21,12 +21,6 @@ struct SEdControlsOwners {
 // the release, and the drawing and sizing every control uses.
 class CEdControls {
 public:
-    // The controls' fixed colours: their edges lit and shaded, their face, and their marks.
-    static constexpr int kHighlightColor = 0xff;
-    static constexpr int kShadeColor = 0xf8;
-    static constexpr int kFaceColor = 7;
-    static constexpr int kMarkColor = 0;
-
     explicit CEdControls(const SEdControlsOwners &owners);
 
     [[nodiscard]] const SEdControlsOwners &getOwners() const;

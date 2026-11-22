@@ -133,9 +133,16 @@ void CNewMsg::sortMessages() {
     }
 }
 
+void CNewMsg::setLabels(const engine::TranslationTable &labels) {
+    labels_ = labels;
+}
+
+// A label in the engine's text is looked up in its place.
 // nocedit 0x005441f0
 std::string_view CNewMsg::getLocalizedString(std::string_view key) const {
-    return findLocalizedString(key, 0, static_cast<int>(messages_.size()) - 1);
+    const auto label = labels_.find(key);
+    const std::string_view text = label != labels_.end() ? std::string_view(label->second) : key;
+    return findLocalizedString(text, 0, static_cast<int>(messages_.size()) - 1);
 }
 
 bool CNewMsg::getUseOSFonts() const {

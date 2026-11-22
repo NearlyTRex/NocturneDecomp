@@ -4,6 +4,7 @@
 
 #include <gtest/gtest.h>
 
+#include <optional>
 #include <set>
 #include <string_view>
 
@@ -55,6 +56,22 @@ TEST(GameAction, ScriptDebugAndEditModeHaveContextsOfTheirOwn) {
     EXPECT_EQ(getGameActionInfo(EGameAction::ScriptResume).context, EActionContext::ScriptDebug);
     EXPECT_EQ(getGameActionInfo(EGameAction::ScriptResetDialog).context,
               EActionContext::ScriptDebug);
+}
+
+// A package names an action by its INI key, snake cased.
+TEST(GameAction, AnActionsIdIsItsIniKeySnakeCased) {
+    EXPECT_EQ(getGameActionId(EGameAction::Walk), "walk");
+    EXPECT_EQ(getGameActionId(EGameAction::StrafeLeft), "strafe_left");
+    EXPECT_EQ(getGameActionId(EGameAction::Weapon1), "weapon1");
+    EXPECT_EQ(getGameActionId(EGameAction::ScriptResetDialog), "script_reset_dialog");
+    EXPECT_EQ(findGameAction("next_ammo"), EGameAction::NextAmmo);
+    EXPECT_EQ(findGameAction("NextAmmo"), std::nullopt);
+}
+
+TEST(GameAction, TheHotkeysFollowThePlayActions) {
+    EXPECT_FALSE(isHotkeyAction(EGameAction::Map));
+    EXPECT_TRUE(isHotkeyAction(EGameAction::Mute));
+    EXPECT_TRUE(isHotkeyAction(EGameAction::ScriptResetDialog));
 }
 
 // The pad codes are frozen once a player's INI holds them.

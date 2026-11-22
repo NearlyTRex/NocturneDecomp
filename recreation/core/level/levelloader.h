@@ -57,6 +57,8 @@ public:
 private:
     // An index into the pictures, or kNoImage when none is marked random.
     [[nodiscard]] int pickRandomPicture();
+    // The packages' moon indicator; without one, fatal.
+    [[nodiscard]] const engine::SMoonIndicator &getMoonIndicator() const;
     void renderMoon();
     void renderGlow();
     void drawStatus(std::string_view text, int window_width, int window_height);

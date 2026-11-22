@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/sound/sound.h"
@@ -173,11 +174,13 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = game_clock_,
                                        .clock = clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = content_}};
     engine::CFontColors colors_;
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,   two_d_,        three_d_, colors_,
+                  os_fonts_, messages_, editor_tools_, content_};
     engine::SGameContent content_ = engine::getShippedGameContent();
     NiceMock<platform::MockDisplay> display_;
     CGame game_{{.clock = game_clock_,
@@ -429,6 +432,42 @@ TEST_F(CCreditsTest, ThePackagesNameTheCreditsFile) {
     game_.rollCredits();
     EXPECT_EQ(firstTextRow(), -1);
     EXPECT_EQ(screen_.swaps, 3);
+}
+
+TEST_F(CCreditsTest, CreditsThisBuildDoesntRollAreFatal) {
+    givenCredits("XX\r\nend\r\n");
+    content_.front_end.credits = "two_column";
+    EXPECT_THAT([this] { game_.rollCredits(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("The credits two_column isn't in this build")));
+}
+
+TEST_F(CCreditsTest, CreditsWithoutTheirColumnsLookAreFatal) {
+    givenCredits("XX\r\nend\r\n");
+    content_.credits->column_scroll.reset();
+    EXPECT_THAT([this] { game_.rollCredits(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the column_scroll credits' look")));
+}
+
+// A game's credits stop at its own end line: Nocturne's "end" is then a line like any other.
+TEST_F(CCreditsTest, TheEndLineIsTheGamesOwn) {
+    givenCredits("XX\nend\nXX\nstop\nXX\n");
+    content_.credits->column_scroll->end_line = "stop";
+    constexpr int kFrames = 20;
+    cancelAfterFrames(kFrames);
+    game_.rollCredits();
+    const int top = topAfterFrames(kFrames);
+    const auto lineAt = [this](int y) {
+        for (int x = kColumnLeft; x < kWidth; ++x) {
+            if (screen_.pixel(x, letterRow(y)) != kImage && screen_.pixel(x, letterRow(y)) != 0) {
+                return true;
+            }
+        }
+        return false;
+    };
+    EXPECT_TRUE(lineAt(top + (2 * lineHeight())));
+    EXPECT_FALSE(lineAt(top + (3 * lineHeight())));
 }
 
 TEST_F(CCreditsTest, AGameWithoutCreditsRollsNone) {

@@ -1,4 +1,5 @@
 #include "engine/package/gamecontent.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -39,16 +40,19 @@ TEST(GameContent, NothingMergedIsEmpty) {
 TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     SGameContent base;
     base.title = "Base";
-    base.front_end = {.title_backdrop = "sky_scene", .loading_indicator = "moon"};
+    base.front_end = getShippedGameContent().front_end;
     base.copyright = "Base";
     base.copyright_os_font = "(c) Base";
-    base.credits = SGameCredits{.text = "a.txt", .image = "a", .music = "a.mp3"};
-    base.menu = SMenuLayout{.left = 1, .top = 2, .titled_top = 3, .trademark = {}};
+    base.credits =
+        SGameCredits{.text = "a.txt", .image = "a", .music = "a.mp3", .column_scroll = {}};
+    base.menu = getShippedGameContent().menu;
+    base.menu->left = 1;
     SGameContent mod;
     mod.title = "Mod";
     mod.copyright = "Mod";
     mod.front_end.loading_indicator = "progress_bar";
-    mod.menu = SMenuLayout{.left = 4, .top = 5, .titled_top = 6, .trademark = {}};
+    mod.menu = getShippedGameContent().menu;
+    mod.menu->left = 4;
     const SGameContent merged = merge({&base, &mod}).content;
     EXPECT_EQ(merged.title, "Mod");
     EXPECT_EQ(merged.front_end.title_backdrop, "sky_scene");
@@ -82,6 +86,15 @@ TEST(GameContent, TranslationsMergeKeyByKeyPerLanguage) {
     const SGameContent merged = merge({&base, &mod}).content;
     EXPECT_EQ(merged.translations.at("de"), (TranslationTable{{"Yes", "Ja"}, {"No", "Nee"}}));
     EXPECT_EQ(merged.translations.at("fr"), (TranslationTable{{"Yes", "Oui"}}));
+}
+
+TEST(GameContent, LabelsMergeKeyByKey) {
+    SGameContent base;
+    base.labels = {{"S T A R T", "START"}, {"Q U I T", "QUIT"}};
+    SGameContent mod;
+    mod.labels = {{"Q U I T", "EXIT"}};
+    EXPECT_EQ(merge({&base, &mod}).content.labels,
+              (TranslationTable{{"S T A R T", "START"}, {"Q U I T", "EXIT"}}));
 }
 
 TEST(GameContent, AStoryNamingWhatNoPackageHasIsNoted) {

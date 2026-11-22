@@ -10,7 +10,8 @@
 namespace nocturne::engine {
 
 // One package id a line, first loaded first. "# id" is a package turned off; any other line
-// after a '#' is a comment. Without the file, the base game is turned on.
+// after a '#' is a comment. Each game is an entry like any mod's (nocturne, blairwitch1, ...);
+// without the file, the first game found is turned on.
 inline constexpr std::string_view kLoadOrderName = "loadorder.txt";
 
 struct SLoadOrder {
@@ -20,7 +21,8 @@ struct SLoadOrder {
 };
 
 // The packages loadorder.txt turns on, in its order. A package it doesn't name is added to it
-// turned off; a line naming one that isn't installed keeps its place and is noted. A package
+// turned off; a line naming one that isn't installed keeps its place and is noted. Only the first
+// game turned on loads. A package
 // needing one that isn't loaded before it isn't loaded, and a POD that is a file an earlier
 // package loads isn't loaded again.
 [[nodiscard]] SLoadOrder orderPackages(platform::IFileSystem &file_system,

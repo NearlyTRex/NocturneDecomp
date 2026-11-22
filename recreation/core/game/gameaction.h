@@ -6,6 +6,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <optional>
+#include <string>
 #include <string_view>
 
 namespace nocturne::core {
@@ -78,20 +79,24 @@ enum class EActionContext : std::uint8_t {
     EditMode,
 };
 
-// An action's INI key, its defaults per control mode, its context, and whether it is a
-// developer's. A mouse or gamepad default, when present, replaces the keyboard ones; INPUT_NONE
+inline constexpr EGameAction kFirstHotkey = EGameAction::Mute;
+
+// An action's INI key, its context, and whether it is a developer's. A hotkey's defaults are its
+// own, the same in every control mode; a play action's are the game's, by mode. INPUT_NONE
 // leaves the action unbound.
 struct SGameActionInfo {
     std::string_view ini_key;
-    SKeyChord keyboard;
-    std::optional<engine::EInputCodeType> mouse = std::nullopt;
-    std::optional<engine::EInputCodeType> gamepad = std::nullopt;
-    // A second keyboard default beside the first, or none.
+    SKeyChord keyboard{};
+    // A second default beside the first, or none.
     SKeyChord also{};
     EActionContext context = EActionContext::Play;
     bool developer = false;
 };
 
 [[nodiscard]] const SGameActionInfo &getGameActionInfo(EGameAction action);
+[[nodiscard]] bool isHotkeyAction(EGameAction action);
+// The action's name in a package: its INI key without "key", in snake case (strafe_left).
+[[nodiscard]] std::string getGameActionId(EGameAction action);
+[[nodiscard]] std::optional<EGameAction> findGameAction(std::string_view id);
 
 } // namespace nocturne::core

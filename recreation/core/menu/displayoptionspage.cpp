@@ -119,6 +119,10 @@ std::optional<std::string> CDisplayOptionsPage::title() {
     return localize("Display Options");
 }
 
+std::string_view CDisplayOptionsPage::getLayoutId() const {
+    return "display";
+}
+
 void CDisplayOptionsPage::build(std::vector<SMenuLine> &lines) {
     const SMenuOwners &owners = getOwners();
     recordResolution();

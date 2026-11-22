@@ -25,9 +25,13 @@ struct SIniDataOwners {
     engine::CPod &pod;
 };
 
-// A nocturne.ini that can't be made writable is fatal: the game was run from the CD.
+// A nocturne.ini that can't be made writable is fatal: the game was run from the CD. The control
+// mode and bindings are left to readIniControls.
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners);
+// The control mode, its defaults and the bindings over them. The defaults are the packages', so
+// this is read once they are loaded.
+void readIniControls(engine::CIni &ini, const SIniDataOwners &owners);
 void writeIniData(engine::CIni &ini, const SIniDataOwners &owners);
 
 } // namespace nocturne::core

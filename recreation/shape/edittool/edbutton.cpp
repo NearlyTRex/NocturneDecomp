@@ -1,6 +1,7 @@
 #include "shape/edittool/edbutton.h"
 
 #include "engine/font/bitfont.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
@@ -51,7 +52,8 @@ void CEdButton::paint() {
     const int scale = tools.getScale();
     const int x = (right_ + left_ - font.getTextWidth(button_text_, scale)) / 2;
     const int y = (top_ + bottom_ - font.getTextHeight(button_text_, scale)) / 2;
-    font.drawText(button_text_, x, y, CEdControls::kMarkColor, engine::CBitFont::kNoShadow, scale);
+    font.drawText(button_text_, x, y, tools.getDialogLook().bevel_mark_colour,
+                  engine::CBitFont::kNoShadow, scale);
 }
 
 // The original also refused the click while a flag nothing sets was set.

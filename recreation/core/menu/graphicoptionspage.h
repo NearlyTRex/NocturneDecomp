@@ -17,6 +17,7 @@ public:
     CGraphicOptionsPage(CMenu &menu, const SMenuOwners &owners);
 
     [[nodiscard]] std::optional<std::string> title() override;
+    [[nodiscard]] std::string_view getLayoutId() const override;
     void build(std::vector<SMenuLine> &lines) override;
     EMenuOutcome choose(int id, EMenuStep step) override;
 
@@ -28,7 +29,7 @@ private:
     void listCards();
     void stepHalo(EMenuStep step);
     void toggleAcceleration();
-    void stepCard();
+    void pickCard();
     void stepUpscaler(EMenuStep step);
     void stepSharpness(EMenuStep step);
     void stepAntialias(EMenuStep step);

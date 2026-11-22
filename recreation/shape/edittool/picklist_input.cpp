@@ -4,6 +4,7 @@
 #include "engine/gameclock.h"
 #include "engine/keys/keys.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
@@ -20,7 +21,6 @@ constexpr int kLeftButton = 1;
 constexpr int kBackspace = 8;
 // The original's buffer held 99 characters and its terminator.
 constexpr std::size_t kMaxSearchLength = 99;
-constexpr int kDoubleClickTicks = engine::IGameClock::kTicksPerSecond / 4;
 
 } // namespace
 
@@ -207,7 +207,8 @@ void CPickList::readMouse() {
         const int now = controls.clock.getTime();
         const int elapsed = common::wrappingSubtract(now, last_click_timestamp_);
         last_click_timestamp_ = now;
-        if (elapsed > 0 && elapsed < kDoubleClickTicks && last_click_item_index_ == item) {
+        if (elapsed > 0 && elapsed < controls.editor_tools.getListLook().double_click_ticks &&
+            last_click_item_index_ == item) {
             confirmed_flag_ = true;
         }
     }

@@ -18,6 +18,7 @@ public:
     CSoundOptionsPage(CMenu &menu, const SMenuOwners &owners);
 
     [[nodiscard]] std::optional<std::string> title() override;
+    [[nodiscard]] std::string_view getLayoutId() const override;
     void build(std::vector<SMenuLine> &lines) override;
     void decorate() override;
     EMenuOutcome choose(int id, EMenuStep step) override;

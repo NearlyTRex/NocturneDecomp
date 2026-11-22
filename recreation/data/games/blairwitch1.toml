@@ -1,6 +1,6 @@
-# Blair Witch Volume I: Rustin Parr, on the Nocturne engine. Only what is known so far: the
-# rest (menu layout, loading screens, stories) comes from analysing its binary. Startup stops
-# at the first front-end part this build doesn't have.
+# What Blair Witch Volume I: Rustin Parr's binary hard-coded about its own game, on the Nocturne
+# engine. Where a value is Nocturne's, BW1 kept it. What BW1 does that no key says yet is listed
+# in research/29-blair_witch_engine_changes/front-end-schema.md.
 
 title = "Blair Witch Volume I"
 # The binary's two copyright lines, the bitmap fonts' without the copyright sign
@@ -8,6 +8,570 @@ copyright = "Blair Witch Volume I: Rustin Parr 2000 Terminal Reality Inc.  Paten
 copyright_os_font = "Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending."
 
 # Three animated title models over a still backdrop, with title frames; Nocturne's loading moon
+# and credits column; a list of its story, then a difficulty
 [front_end]
 title_backdrop = "figure_scene"
 loading_indicator = "moon"
+credits = "column_scroll"
+story_select = "story_list"
+
+# titlescreen_bw over the layout; the three figures before a fixed camera, a frame on each time
+# it is drawn (head-of-horror code 666 shows Taylor's head alone); the title's 30 frames along
+# its foot, 12 a second
+[title_backdrop.figure_scene]
+backdrop = "titlescreen_bw"
+backdrop_alpha = 0xffff
+models = [{ file = "titletwana.kfm", frame_wrap = 60 }, { file = "titletwanb.kfm", frame_wrap = 45 },
+          { file = "titletwanc.kfm", frame_wrap = 75 }]
+cheat_model = "taylor_head.kfm"
+cheat_code = 666
+camera_rotation = [0.441335, 0.660356, -0.60758,
+                   -0.279881, 0.74461, 0.605989,
+                   0.852579, -0.097394, 0.513443]
+camera_origin = [3.16143, 7.6283, -7.03622]
+projection = 43.153214
+light = [-37000, -37000, 37000]
+flat = [50000, 50000, 0x10000]
+ambient = 0x1964
+frame_prefix = "blair_"
+frame_digits = 5
+frame_count = 30
+frame_x = 0
+frame_y = 315
+frame_width = 640
+frame_height = 165
+frame_alpha = 0xffff
+frame_rate = 12
+frame_wrap = 30
+
+[credits]
+text = "credits.txt"
+image = "stats"
+music = "splash-music-44.wav"
+
+[credits.column_scroll]
+font = "theme"
+column_left = 414
+top_strip_bottom = 30
+bottom_strip_top = 439
+strip_colour = 0x00
+text_colour = 0xf8
+heading_colour = 0x02
+shadow_colour = 0
+scroll_speed = 32
+start_y = 480
+end_line = "end"
+marker = "\\"
+heading = "b"
+
+[startup]
+picture = "fangs"
+picture_alpha = 0x8000
+label_x = 320
+label_y = 240
+label_font = "theme"
+label_colour = 0xf8
+movie_directory = "video"
+movie = "opening.avi"
+
+# Every line at x 400; the main menu and the Options, Graphic and Control pages at 50, Sound at 25
+[menu]
+left = 400
+top = 50
+titled_top = 25
+trademark = { x = 518, y = 399, glyph = 0x99, alpha = 0x8000 }
+
+[menu.page_tops]
+options = 50
+graphic = 50
+controls = 50
+
+[menu.title]
+colour = 0x07
+shadow = 0
+gap_lines = 2
+
+[menu.item]
+font = "theme"
+colour = 0xf8
+selected_colour = 0xff
+alpha = 48000
+shadow = -1
+spacing_titled = 1
+spacing_untitled = 2
+
+[menu.item.glow]
+colour = 0x07
+copies = 5
+flicker = true
+
+# BW1 has no build line; the recreation's is drawn where Nocturne's was
+[menu.footer]
+font = "small_editor"
+colour = 0xf8
+shadow = 0
+version_x = 4
+version_alpha = 0x8000
+
+[menu.calibration]
+image = "brightness"
+steps = [
+    "1. Turn off all the lights in your room.",
+    "2. Turn your brightness up, so that you see 3 bars on the left side of the screen.",
+    "3. Turn down the brightness, so that the left 2 bars become the same color.",
+    "4. Turn your contrast all the way up.",
+    "You're done with calibration.",
+]
+title = "Monitor calibration"
+prompt = "  Press any key to continue."
+font = "small_editor"
+colour = 0xf8
+title_lines = 2
+prompt_lines = 3
+
+[menu.options]
+hero = 9
+
+[menu.sound]
+effects_sample = "colt45-0.wav"
+
+[menu.sound.spectrum]
+frames = ["F0100.RAW", "F0300.RAW", "F0500.RAW", "F0700.RAW",
+          "F0900.RAW", "F1100.RAW", "F1300.RAW", "F1500.RAW"]
+fps = 24
+pitch = 4
+half_width = 16
+margin_divisor = 20
+height_percent = 25
+alpha = 0x8000
+
+[menu.slider]
+width_share = 3
+width_parts = 4
+height = 0x2c
+bar_colour = 0x04
+trough_colour = 0x00
+border_colour = 0xff
+text_colour = 0xff
+text_shadow = 0
+
+# Puzzle and combat difficulty lines on the Options page
+[menu.features]
+difficulty = true
+
+# No mode aims by hand. The keyboard binds Fire and Jump both to Space.
+[[controls.mode]]
+id = "keyboard"
+label = "Control : Keyboard"
+manual_aim = false
+[controls.mode.defaults]
+walk = [0x148]  # DIK_UP
+backup = [0x150]  # DIK_DOWN
+run = [0x2a]  # DIK_LSHIFT
+strafe = [0x38]  # DIK_LMENU
+strafe_left = [0x2c]  # DIK_Z
+strafe_right = [0x2d]  # DIK_X
+right = [0x14d]  # DIK_RIGHT
+left = [0x14b]  # DIK_LEFT
+fire = [0x39]  # DIK_SPACE
+use_item = [0x1c]  # DIK_RETURN
+light = [0x21]  # DIK_F
+infrared = [0x31]  # DIK_N
+draw = [0x20]  # DIK_D
+jump = [0x39]  # DIK_SPACE
+point_up = [0x10]  # DIK_Q
+point_down = [0x1e]  # DIK_A
+weapon1 = [0x2]  # DIK_1
+weapon2 = [0x3]  # DIK_2
+weapon3 = [0x4]  # DIK_3
+weapon4 = [0x6]  # DIK_5
+weapon5 = [0x5]  # DIK_4
+next_weapon = [0xd]  # DIK_EQUALS
+prev_weapon = [0xc]  # DIK_MINUS
+next_item = [0x1a]  # DIK_LBRACKET
+prev_item = [0x1b]  # DIK_RBRACKET
+item_desc = [0x19]  # DIK_P
+next_ammo = [0x29]  # DIK_GRAVE
+map = [0xf]  # DIK_TAB
+
+[[controls.mode]]
+id = "keyboard_mouse"
+label = "Control : Keyboard/Mouse"
+manual_aim = false
+[controls.mode.defaults]
+walk = [0x148]  # DIK_UP
+backup = [0x150]  # DIK_DOWN
+run = [0x36]  # DIK_RSHIFT
+strafe = [0x11d]  # DIK_RCONTROL
+strafe_left = [0x14b]  # DIK_LEFT
+strafe_right = [0x14d]  # DIK_RIGHT
+right = [0x255]  # DIM_XAXIS
+left = [0x255]  # DIM_XAXIS
+fire = [0x200]  # DIM_LBUTTON
+use_item = [0x1c]  # DIK_RETURN
+light = [0x21]  # DIK_F
+infrared = [0x31]  # DIK_N
+draw = [0x52]  # DIK_NUMPAD0
+jump = [0x39]  # DIK_SPACE
+point_up = [0x256]  # DIM_YAXIS
+point_down = [0x256]  # DIM_YAXIS
+weapon1 = [0x4f]  # DIK_NUMPAD1
+weapon2 = [0x50]  # DIK_NUMPAD2
+weapon3 = [0x51]  # DIK_NUMPAD3
+weapon4 = [0x6]  # DIK_5
+weapon5 = [0x4b]  # DIK_NUMPAD4
+next_weapon = [0xd]  # DIK_EQUALS
+prev_weapon = [0xc]  # DIK_MINUS
+next_item = [0x1a]  # DIK_LBRACKET
+prev_item = [0x1b]  # DIK_RBRACKET
+item_desc = [0x19]  # DIK_P
+next_ammo = [0x29]  # DIK_GRAVE
+map = [0xf]  # DIK_TAB
+
+# The enhanced game's pad, as Nocturne's; BW1's own joystick buttons are codes no pad sends
+[[controls.mode]]
+id = "gamepad"
+label = "Control : Gamepad"
+manual_aim = false
+[controls.mode.defaults]
+walk = [0x253]  # DIJ_UP
+backup = [0x254]  # DIJ_DOWN
+run = [0x167]  # PAD_LEFTSTICK
+strafe = []
+strafe_left = [0x251]  # DIJ_LEFT
+strafe_right = [0x252]  # DIJ_RIGHT
+right = [0x17f]  # PAD_RSTICK_RIGHT
+left = [0x17e]  # PAD_RSTICK_LEFT
+fire = [0x17b]  # PAD_RTRIGGER
+use_item = [0x161]  # PAD_B
+light = [0x162]  # PAD_X
+infrared = [0x163]  # PAD_Y
+draw = [0x17a]  # PAD_LTRIGGER
+jump = [0x160]  # PAD_A
+point_up = [0x17c]  # PAD_RSTICK_UP
+point_down = [0x17d]  # PAD_RSTICK_DOWN
+weapon1 = []
+weapon2 = []
+weapon3 = []
+weapon4 = []
+weapon5 = [0x16c]  # PAD_DPAD_DOWN
+next_weapon = [0x16a]  # PAD_RIGHTSHOULDER
+prev_weapon = [0x169]  # PAD_LEFTSHOULDER
+next_item = [0x16e]  # PAD_DPAD_RIGHT
+prev_item = [0x16d]  # PAD_DPAD_LEFT
+item_desc = [0x165]  # PAD_GUIDE
+next_ammo = [0x16b]  # PAD_DPAD_UP
+map = [0x164]  # PAD_BACK
+
+# BW1's rows, in its order; Jump and weapon4 have defaults and no row
+[[controls.binding]]
+action = "fire"
+label = "Fire / Action"
+
+[[controls.binding]]
+action = "walk"
+label = "Forward"
+
+[[controls.binding]]
+action = "backup"
+label = "Back"
+
+[[controls.binding]]
+action = "strafe"
+label = "Strafe on"
+
+[[controls.binding]]
+action = "strafe_left"
+label = "Strafe left"
+
+[[controls.binding]]
+action = "strafe_right"
+label = "Strafe right"
+
+[[controls.binding]]
+action = "left"
+label = "Turn left"
+
+[[controls.binding]]
+action = "right"
+label = "Turn right"
+
+[[controls.binding]]
+action = "point_up"
+label = "Point up"
+
+[[controls.binding]]
+action = "point_down"
+label = "Point down"
+
+[[controls.binding]]
+action = "run"
+label = "Run"
+
+[[controls.binding]]
+action = "use_item"
+label = "Use item"
+
+[[controls.binding]]
+action = "light"
+label = "Flashlight"
+
+[[controls.binding]]
+action = "infrared"
+label = "Night Vision"
+
+[[controls.binding]]
+action = "map"
+label = "Map"
+
+[[controls.binding]]
+action = "draw"
+label = "Draw"
+
+[[controls.binding]]
+action = "weapon1"
+label = "Select pistol weapons"
+
+[[controls.binding]]
+action = "weapon2"
+label = "Select assault weapons"
+
+[[controls.binding]]
+action = "weapon3"
+label = "Select energy weapons"
+
+[[controls.binding]]
+action = "weapon5"
+label = "Select melee weapons"
+
+[[controls.binding]]
+action = "next_weapon"
+label = "Next weapon"
+
+[[controls.binding]]
+action = "prev_weapon"
+label = "Previous weapon"
+
+[[controls.binding]]
+action = "next_item"
+label = "Next item"
+
+[[controls.binding]]
+action = "prev_item"
+label = "Previous item"
+
+[[controls.binding]]
+action = "item_desc"
+label = "Item description"
+
+[[controls.binding]]
+action = "next_ammo"
+label = "Next ammo"
+
+# Nocturne's six fonts, unchanged
+[[font]]
+id = "medium"
+file = "nocfont.raw"
+width = 0x136
+height = 0x1ae
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 1, first = 0xc0, last = 0xdf }]
+space_width = 8
+shadow_x = 2
+os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
+
+[[font]]
+id = "tiny"
+file = "nocsmall.raw"
+width = 0xf8
+height = 0x158
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 2, first = 0x20, last = 0x7e }]
+space_width = 5
+shadow_x = 2
+os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = "theme"
+file = "menufont.raw"
+width = 0xfa
+height = 0x23f
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 0, first = 0xc0, last = 0xdf },
+             { offset = 1, first = 0xe0, last = 0xff }]
+space_width = 8
+shadow_x = 2
+os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = "small_editor"
+file = "fnte_pfd.RAW"
+width = 0x94
+height = 0xec
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = "console"
+file = "fnte_f.RAW"
+width = 0x94
+height = 0xec
+transparent = 0xff
+own_colours = true
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+
+[[font]]
+id = "micro"
+file = "micro.raw"
+width = 0x94
+height = 0xec
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 1, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+
+[list]
+item_colour = 0xff
+disabled_colour = 0xf8
+selected_colour = 0x02
+confirmed_colour = 0xfa
+separator_colour = 0x07
+alpha = 0xffff
+shadow = -1
+column_padding = 8
+margin_width = 8
+margin_height = 6
+field_gap_divisor = 40
+row_extra = 1
+reserved_lines = 4
+width_share = 7
+width_parts = 8
+double_click_ticks = 0x48000
+
+# BW1 cycles palette indices 0, 0xff, 2 and 0xfd; until a key takes indices, the cube colours
+# nearest the same black, white, green and magenta
+[list.pointer]
+cube_colours = [0x0000, 0x7fff, 0x03e0, 0x7c1f]
+size = 9
+default_height = 11
+
+[list.scroll_bar]
+first_repeat_ticks = 0x48000
+repeat_ticks = 0x9999
+track_fill_colour = 0x00
+track_border_colour = 0x07
+
+[dialog]
+content_colour = 0x00
+border_colour = 0x07
+title_colour = 0xfb
+text_colour = 0xff
+warning_colour = 0xff
+window_status_colour = 0xff
+status_colour = 0xff
+progress_background_colour = 0x00
+progress_border_colour = 0xff
+progress_fill_colour = 0x04
+bevel_highlight_colour = 0xff
+bevel_shade_colour = 0xf8
+bevel_face_colour = 0x07
+bevel_mark_colour = 0x00
+margin_width_divisor = 128
+margin_height_divisor = 96
+grid_divisor = 48
+button_margin_divisor = 80
+prompt_padding_chars = 4
+prompt_padding_lines = 2
+
+# One picture, the moon in its top right
+[[loading]]
+id = "load1"
+moon = { x = 484, y = 22, tint = [0xd700, 0xdc00, 0xe000] }
+
+[loading_indicator.moon]
+model = "moon.kfm"
+glow_texture = "MOONGLOW.RAW"
+window_size = 60
+corner_x = 447
+corner_y = 0
+corner_size = 192
+default_tint = [0xff00, 0xff00, 0xff00]
+full_projection = 56
+window_projection = 84
+depth = 36
+light_reach = 37000
+ambient = 0x280
+glow_half_size = 1856
+status_box = [32, 448, 576, 24]
+status_box_colour = 0x00
+status_font = "theme"
+status_colour = 0xf8
+
+# The story, then a difficulty under its title; Cancel goes back to the story. The binary also
+# probes blairhero.pod, whose answer nothing uses, so every install is whole.
+[story_select.story_list]
+full_install_probe = "blairhero.pod"
+loading_frames = 10
+
+[[story_select.story_list.difficulty]]
+label = "Normal Puzzles, Normal Combat"
+puzzle = 0
+combat = 0
+
+[[story_select.story_list.difficulty]]
+label = "Normal Puzzles, Hard Combat"
+puzzle = 0
+combat = 1
+
+[[story_select.story_list.difficulty]]
+label = "Hard Puzzles, Normal Combat"
+puzzle = 1
+combat = 0
+
+[[story_select.story_list.difficulty]]
+label = "Hard Puzzles, Hard Combat"
+puzzle = 1
+combat = 1
+
+[chapter_title]
+seconds = 8
+format = "{year} - {title}"
+colour = 0xf8
+shadow = 0
+alpha = 0xffff
+inset_across = 2
+inset_up = 1
+
+[[chapter_title.font]]
+below_height = 384
+font = "small_editor"
+
+[[chapter_title.font]]
+below_height = 480
+font = "tiny"
+
+[[chapter_title.font]]
+font = "medium"
+
+# One story of one mission, never locked. The difficulty list's title is quoted; the chapter
+# title BW1 shows in play is not.
+[[story]]
+id = "rustin_parr"
+name = "The Rustin Parr Investigation"
+title = "'The Rustin Parr Investigation'"
+year = 1941
+loading = "load1"
+
+[[story.chapter]]
+name = "The Rustin Parr Investigation"
+mission = "hq-bw1.msn"

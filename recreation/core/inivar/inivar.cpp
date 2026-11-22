@@ -230,12 +230,18 @@ void writePodSettings(engine::CIniFile &file, const engine::SPodSettings &settin
 // The renderer DLL and AGP texturing the original also read have no reader in the game now, so
 // their lines are left as they are; retail has no Editor section. The window opens at the
 // resolution the game will run at, as the decomp's menu resolution change has it, on the
-// enhanced game's display, in its window mode and upscaler. The pad's tuning is read after the
-// controls (the decomp's pad_tuning.h). The language, which picks the packages' translations, is the
-// enhanced game's, as are the checks on the pods.
+// enhanced game's display, in its window mode and upscaler. The pad's tuning is the decomp's
+// (pad_tuning.h). The language, which picks the packages' translations, is the enhanced game's,
+// as are the checks on the pods. The controls wait for readIniControls, since their defaults
+// are the packages', which aren't loaded yet. A game whose folder ships no ini, as Blair Witch's
+// empty SYSTEM, is given an empty one, so it starts from the defaults the reads give; only one
+// that can't be made writable is fatal.
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners) {
+    if (!file_system.getFileInfo(kIniFilename)) {
+        file_system.writeFile(kIniFilename, "");
+    }
     if (!file_system.setReadOnly(kIniFilename, false)) {
         common::displayErrorAndQuit("Please copy Nocturne to your hard drive");
     }
@@ -245,12 +251,17 @@ void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
     file.readIniHeader("Sound");
     owners.sound_main.readIni(file);
     file.readIniHeader("Control");
-    readControls(file, owners.game);
     readGamepadTuning(file, owners.gamepad.tuning);
     file.readIniHeader("Debug");
     readFlag(file, "logConsoleFlag", owners.console.file_logging_enabled);
     readFlag(file, "headOfHorrorCheat", owners.game.head_of_horror_cheat);
     readPodSettings(file, owners.pod);
+}
+
+void readIniControls(engine::CIni &ini, const SIniDataOwners &owners) {
+    engine::CIniFile file(ini, kIniFilename);
+    file.readIniHeader("Control");
+    readControls(file, owners.game);
 }
 
 // nocedit 0x004fc510

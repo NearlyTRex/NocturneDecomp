@@ -18,6 +18,7 @@ public:
     CControlOptionsPage(CMenu &menu, const SMenuOwners &owners);
 
     [[nodiscard]] std::optional<std::string> title() override;
+    [[nodiscard]] std::string_view getLayoutId() const override;
     void build(std::vector<SMenuLine> &lines) override;
     EMenuOutcome choose(int id, EMenuStep step) override;
     // Cancel leaves, but a gamepad nobody has centred is calibrated first.

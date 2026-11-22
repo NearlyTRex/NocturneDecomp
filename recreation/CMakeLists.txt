@@ -257,6 +257,27 @@ if(NOCTURNE_RECREATION_GAME)
         PUBLIC nocturne_recreation
         PRIVATE SDL3::SDL3 SDL3_net::SDL3_net SDL3_ttf::SDL3_ttf nocturne_ffmpeg)
 
+    # Where a run reads the install from and writes to when neither the command line nor the
+    # environment says, as the shim lane's platform files set them (platform/pathroots.h).
+    set(NOCTURNE_DEFAULT_DATA_DIR "" CACHE STRING "The data directory compiled in")
+    set(NOCTURNE_DEFAULT_USER_DIR "" CACHE STRING "The user directory compiled in")
+    option(NOCTURNE_USER_DIR_FROM_SDL "The user directory is SDL_GetPrefPath's" OFF)
+    option(NOCTURNE_DATA_DIR_FROM_SDL "The data directory is SDL_GetPrefPath's, filled by hand" OFF)
+    if(NOCTURNE_DEFAULT_DATA_DIR)
+        target_compile_definitions(nocturne_platform_sdl
+            PRIVATE "NOCTURNE_DEFAULT_DATA_DIR=\"${NOCTURNE_DEFAULT_DATA_DIR}\"")
+    endif()
+    if(NOCTURNE_DEFAULT_USER_DIR)
+        target_compile_definitions(nocturne_platform_sdl
+            PRIVATE "NOCTURNE_DEFAULT_USER_DIR=\"${NOCTURNE_DEFAULT_USER_DIR}\"")
+    endif()
+    if(NOCTURNE_USER_DIR_FROM_SDL)
+        target_compile_definitions(nocturne_platform_sdl PRIVATE NOCTURNE_USER_DIR_FROM_SDL)
+    endif()
+    if(NOCTURNE_DATA_DIR_FROM_SDL)
+        target_compile_definitions(nocturne_platform_sdl PRIVATE NOCTURNE_DATA_DIR_FROM_SDL)
+    endif()
+
     file(GLOB _sdl_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
          "platform/sdl/*.h")
     set(_sdl_header_checks "")

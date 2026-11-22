@@ -1,10 +1,18 @@
+#include "common/error/fatalerror.h"
 #include "core/game/game.h"
+#include "engine/package/gamecontent.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/keychords.h"
 #include "tests/mocks/engine/mockgameclock.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
+
+#include <algorithm>
+#include <memory>
+#include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -131,6 +139,90 @@ TEST_F(CGameRestoreDefaultControls, ExtraBindingsAndMouseSettingsAreReset) {
     EXPECT_EQ(game.always_run, 0);
     EXPECT_EQ(game.x_mouse_sensitivity, 0x10000);
     EXPECT_EQ(game.y_mouse_sensitivity, 0x10000);
+}
+
+engine::SControlMode &modeOf(engine::SGameContent &content, std::string_view id) {
+    std::vector<engine::SControlMode> &modes = content.controls.value().modes;
+    return *std::ranges::find(modes, id, &engine::SControlMode::id);
+}
+
+// A game's defaults are its own; an action its mode doesn't list starts unbound, and the hotkeys
+// keep theirs.
+TEST_F(CGameRestoreDefaultControls, AModesDefaultsAndAimAreTheGamesOwn) {
+    engine::SControlMode &keyboard = modeOf(parts_.getContent(), "keyboard");
+    keyboard.defaults = {{.action = "walk", .codes = {0x11, 0x148}}};
+    keyboard.manual_aim = true;
+    const CGame &game = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
+    EXPECT_THAT(codesOf(game.controls.getBindings(EGameAction::Walk)),
+                ElementsAre(EInputCodeType::DIK_W, EInputCodeType::DIK_UP));
+    EXPECT_THAT(game.controls.getBindings(EGameAction::Fire), IsEmpty());
+    EXPECT_THAT(codesOf(game.controls.getBindings(EGameAction::Mute)),
+                ElementsAre(EInputCodeType::DIK_F5, EInputCodeType::DIK_M));
+    EXPECT_EQ(game.aim_mode, EAimMode::AIM_MODE_MANUAL);
+}
+
+// Every mode BW1's manifest lists is one this build reads, with actions it has.
+TEST_F(CGameRestoreDefaultControls, BlairWitchOnesControlsAreOnesThisBuildReads) {
+    parts_.getContent().controls = engine::getShippedGameContent("blairwitch1").controls;
+    const CGame &mouse = gameWith(EControlMode::CONTROL_MODE_MOUSE);
+    EXPECT_THAT(codesOf(mouse.controls.getBindings(EGameAction::Run)),
+                ElementsAre(EInputCodeType::DIK_RSHIFT));
+    EXPECT_EQ(mouse.aim_mode, EAimMode::AIM_MODE_AUTO);
+    const CGame &keyboard = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
+    EXPECT_THAT(codesOf(keyboard.controls.getBindings(EGameAction::Jump)),
+                ElementsAre(EInputCodeType::DIK_SPACE));
+    EXPECT_THAT(codesOf(keyboard.controls.getBindings(EGameAction::Weapon4)),
+                ElementsAre(EInputCodeType::DIK_5));
+    static_cast<void>(gameWith(EControlMode::CONTROL_MODE_GAMEPAD));
+}
+
+// Startup makes the game before it loads the packages, and restores the controls once it has.
+TEST_F(CGameRestoreDefaultControls, AGameMadeBeforeThePackagesAreLoadedBindsNothingYet) {
+    const engine::SGameContent before_loading;
+    const std::unique_ptr<CGame> game = parts_.makeGame(before_loading);
+    EXPECT_THAT(game->controls.getBindings(EGameAction::Walk), IsEmpty());
+}
+
+TEST_F(CGameRestoreDefaultControls, NoControlsIsFatal) {
+    parts_.getContent().controls.reset();
+    EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the controls")));
+}
+
+TEST_F(CGameRestoreDefaultControls, AModeTheGameDoesntOfferIsFatal) {
+    std::erase_if(parts_.getContent().controls.value().modes,
+                  [](const engine::SControlMode &mode) { return mode.id == "gamepad"; });
+    EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_GAMEPAD)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the gamepad control mode")));
+}
+
+TEST_F(CGameRestoreDefaultControls, AModeThisBuildDoesntReadIsFatal) {
+    modeOf(parts_.getContent(), "gamepad").id = "point_and_click";
+    EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
+                ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
+                    "The control mode point_and_click isn't one this build reads")));
+}
+
+TEST_F(CGameRestoreDefaultControls, ADefaultForAnUnknownActionOrAHotkeyIsFatal) {
+    engine::SControlMode &keyboard = modeOf(parts_.getContent(), "keyboard");
+    keyboard.defaults = {{.action = "voodoo_doll", .codes = {0x2f}}};
+    EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
+                ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
+                    "The keyboard control mode's defaults: voodoo_doll isn't an action")));
+    keyboard.defaults = {{.action = "mute", .codes = {0x3f}}};
+    EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
+                ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
+                    "The keyboard control mode's defaults: mute is a hotkey, the same in every "
+                    "game")));
+}
+
+TEST_F(CGameRestoreDefaultControls, ABindingsRowForAnUnknownActionIsFatal) {
+    parts_.getContent().controls.value().bindings.push_back({.action = "sps", .label = "SPS"});
+    EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("A bindings page row: sps isn't an action")));
 }
 
 } // namespace

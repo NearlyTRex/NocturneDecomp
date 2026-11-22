@@ -5,9 +5,11 @@
 #include "core/game/game.h"
 #include "core/menu/menu.h"
 #include "engine/gamepadinput.h"
+#include "engine/package/gamecontent.h"
 #include "support/newmsg/newmsg.h"
 
-#include <array>
+#include <algorithm>
+#include <cstddef>
 #include <cstdint>
 #include <format>
 #include <optional>
@@ -43,10 +45,6 @@ int stepTuning(int value, EMenuStep step, int least, int most) {
     return stepped < least ? most : stepped;
 }
 
-// By EControlMode.
-constexpr std::array<std::string_view, 3> kTypeLabels{
-    "Control : Keyboard", "Control : Keyboard/Mouse", "Control : Gamepad"};
-constexpr int kControlModeCount = static_cast<int>(kTypeLabels.size());
 // The sensitivities are 16.16.
 constexpr double kFixedOne = 65536.0;
 
@@ -63,10 +61,13 @@ std::optional<std::string> CControlOptionsPage::title() {
     return localize("Control Options");
 }
 
+std::string_view CControlOptionsPage::getLayoutId() const {
+    return "controls";
+}
+
 void CControlOptionsPage::build(std::vector<SMenuLine> &lines) {
     const CGame &game = owners_.game;
-    addLine(lines, EControlLine::Type,
-            localize(kTypeLabels.at(std::to_underlying(game.game_control))));
+    addLine(lines, EControlLine::Type, localize(game.getControlMode().label));
     addLine(lines, EControlLine::Keys, localize("Customize Keys"));
     addLine(lines, EControlLine::XSensitivity,
             getSensitivityText("X-axis sensitivity : ", game.x_mouse_sensitivity));
@@ -153,13 +154,18 @@ std::string CControlOptionsPage::getSensitivityText(std::string_view label, int 
 }
 
 // The original stepped on as well as back, but left the bindings as they were, so a type whose
-// defaults had never been applied took only Escape.
+// defaults had never been applied took only Escape. The types are the game's, in its order.
 void CControlOptionsPage::stepControlType(EMenuStep step) {
     CGame &game = owners_.game;
-    const int mode =
-        (std::to_underlying(game.game_control) + std::to_underlying(step) + kControlModeCount) %
-        kControlModeCount;
-    game.game_control = static_cast<EControlMode>(mode);
+    const std::vector<engine::SControlMode> &modes = game.getControls().modes;
+    const auto count = static_cast<int>(modes.size());
+    const auto current = static_cast<int>(
+        std::ranges::find(modes, game.getControlMode().id, &engine::SControlMode::id) -
+        modes.begin());
+    const int next = (current + std::to_underlying(step) + count) % count;
+    const std::string_view id = modes.at(static_cast<std::size_t>(next)).id;
+    game.game_control =
+        static_cast<EControlMode>(std::ranges::find(kControlModeIds, id) - kControlModeIds.begin());
     game.restoreDefaultControls();
 }
 

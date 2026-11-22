@@ -41,6 +41,7 @@
 #include "engine/3d/3d.h"
 #include "engine/console/console.h"
 #include "engine/dosio/dosio.h"
+#include "engine/dosio/gamefolders.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/font/font.h"
 #include "engine/gamepadinput.h"
@@ -58,6 +59,8 @@
 #include "engine/zraster/zraster.h"
 #include "platform/filelog.h"
 #include "platform/gl/glrenderer.h"
+#include "platform/layeredfilesystem.h"
+#include "platform/pathroots.h"
 #include "platform/rendervertex.h"
 #include "platform/sdl/sdlaudiodevice.h"
 #include "platform/sdl/sdlclipboard.h"
@@ -70,6 +73,7 @@
 #include "platform/sdl/sdlmovieplayer.h"
 #include "platform/sdl/sdlnetwork.h"
 #include "platform/sdl/sdlosfontfactory.h"
+#include "platform/sdl/sdlpathroots.h"
 #include "platform/sdl/sdlwindow.h"
 #include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
@@ -82,6 +86,7 @@
 #include "wincore/winrun/winrun.h"
 #include "wincore/winvideo/winvideo.h"
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdio>
@@ -89,7 +94,11 @@
 #include <exception>
 #include <format>
 #include <new>
+#include <optional>
+#include <span>
+#include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace {
@@ -122,8 +131,8 @@ std::tm getLocalTime() {
 // declared after them, so they live as members, in an order that lets each be built.
 class CGameSystems {
 public:
-    CGameSystems(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
-                 wincore::CWinRun &winrun, engine::CGamepadInput &gamepad)
+    CGameSystems(sdl::CSdlWindow &window, nocturne::platform::IFileSystem &file_system,
+                 sdl::CSdlClock &clock, wincore::CWinRun &winrun, engine::CGamepadInput &gamepad)
         : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun),
           gamepad_(gamepad) {
         sound_.setMusicHandler(
@@ -133,7 +142,8 @@ public:
     void initializeGameSystems() {
         core::initializeGameSystems(
             {.ini = ini_,
-             .file_system = file_system_,
+             .file_system = game_files_,
+             .game_folders = game_files_,
              .ini_owners = ini_owners_,
              .dosio = dosio_,
              .pod = pod_,
@@ -166,7 +176,11 @@ public:
 
 private:
     sdl::CSdlWindow &window_;
-    sdl::CSdlFileSystem &file_system_;
+    // The install's under the path roots, which the packages are found and mounted from and the
+    // logs are written to.
+    nocturne::platform::IFileSystem &file_system_;
+    // The running game's own files, from its folders.
+    engine::CGameFolders game_files_{file_system_};
     sdl::CSdlClock &clock_;
     wincore::CWinRun &winrun_;
     engine::CGamepadInput &gamepad_;
@@ -181,7 +195,7 @@ private:
     sdl::CSdlOsFontFactory os_fonts_;
     sdl::CSdlMoviePlayer movies_{display_, log_};
     sdl::CSdlEnvironment environment_;
-    engine::CDosIo dosio_{file_system_};
+    engine::CDosIo dosio_{game_files_};
     std::vector<engine::SRelease> releases_ =
         engine::loadReleaseCatalog(engine::getReleaseCatalogText(), engine::getEmbeddedGames());
     core::CDemonPod pod_{file_system_, dosio_, releases_, log_};
@@ -202,15 +216,17 @@ private:
                                                  .raw_input = winrun_,
                                                  .game_clock = winrun_,
                                                  .clock = clock_,
-                                                 .clipboard = clipboard_}};
+                                                 .clipboard = clipboard_,
+                                                 .content = pod_.getGameContent()}};
     engine::CFontColors colors_;
     nocturne::support::CNewMsg messages_{dosio_};
-    core::CDFont fonts_{dosio_,  screen_,   two_d_,    three_d_,
-                        colors_, os_fonts_, messages_, editor_tools_};
+    core::CDFont fonts_{dosio_,    screen_,       two_d_,
+                        three_d_,  colors_,       os_fonts_,
+                        messages_, editor_tools_, pod_.getGameContent()};
     // nocedit 0x004417e0
-    engine::CConsole console_{file_system_, engine::CConsole::kMaxColumns,
+    engine::CConsole console_{game_files_, engine::CConsole::kMaxColumns,
                               engine::CConsole::kMaxRows, 1, 1};
-    nocturne::sound::CSndMain sound_main_{dosio_, file_system_, audio_, console_, &getLocalTime};
+    nocturne::sound::CSndMain sound_main_{dosio_, game_files_, audio_, console_, &getLocalTime};
     engine::CMenuInput menu_input_{keys_, gamepad_};
     // nocedit 0x004d76d0
     core::CGame game_{{.clock = winrun_,
@@ -227,7 +243,7 @@ private:
                        .gamepad = gamepad_,
                        .content = pod_.getGameContent(),
                        .display = display_}};
-    engine::CIni ini_{file_system_};
+    engine::CIni ini_{game_files_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,
                                      .console = console_,
@@ -244,7 +260,7 @@ private:
                                .current_texture = current_texture_}};
     // deferred: the 10 train noises, with processTrainSounds
     // nocedit 0x005b1760
-    core::CSound sound_{sound_main_, pod_, file_system_};
+    core::CSound sound_{sound_main_, pod_, game_files_};
     core::CAttractMovies attract_movies_{clock_};
     // deferred: the filter cache and filter effects, with CFilterCache's and CFilterFX's
     //   constructors
@@ -257,14 +273,14 @@ private:
     // deferred: the receive packet's header, size 0x405 and PACKET_NONE, with
     //   CNetGame::receivePackets
     // nocedit 0x0053f310
-    core::CNetGame net_game_{{.file_system = file_system_,
+    core::CNetGame net_game_{{.file_system = game_files_,
                               .environment = environment_,
                               .clock = winrun_,
                               .two_d = two_d_,
                               .crt_random = crt_random_,
                               .actor = actor_,
                               .mission = mission_}};
-    wincore::SMovieOwners movie_owners_{.file_system = file_system_,
+    wincore::SMovieOwners movie_owners_{.file_system = game_files_,
                                         .movies = movies_,
                                         .window = window_,
                                         .clock = clock_,
@@ -412,7 +428,7 @@ private:
     nocturne::shape::CStrList::LocalTime local_time_ = &toLocalTime;
     nocturne::shape::SFileSelectionOwners file_selection_owners_{.pick_list = pick_list_owners_,
                                                                  .pod = &pod_,
-                                                                 .file_system = file_system_,
+                                                                 .file_system = game_files_,
                                                                  .local_time = local_time_,
                                                                  .messages = messages_};
     core::CFireEffect fire_effect_{
@@ -450,8 +466,8 @@ private:
 // Everything is gone by the time a fatal error is reported, as the original tore down its sound
 // and graphics before showing the box. The original quit "Out of memory" wherever an allocation
 // failed; a failed allocation here becomes that fatal error.
-int runGame(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
-            wincore::CWinRun &winrun, engine::CGamepadInput &gamepad) {
+int runGame(sdl::CSdlWindow &window, nocturne::platform::IFileSystem &file_system,
+            sdl::CSdlClock &clock, wincore::CWinRun &winrun, engine::CGamepadInput &gamepad) {
     try {
         CGameSystems systems(window, file_system, clock, winrun, gamepad);
         systems.initializeGameSystems();
@@ -462,11 +478,24 @@ int runGame(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdl
     }
 }
 
-int run() {
+int run(std::span<const std::string_view> args) {
     // Declared first so it outlives every adapter.
     const sdl::CSdlContext context;
+    // Before anything opens a file, the logs included.
+    sdl::CSdlFileSystem host;
+    sdl::CSdlEnvironment environment;
+    const nocturne::platform::SPathRoots roots =
+        nocturne::platform::choosePathRoots(args, environment, sdl::getPathRootDefaults(), host);
+    if (const std::optional<std::string> where = nocturne::platform::describePathRoots(roots)) {
+        std::fprintf(stderr, "nocturne: %s\n", where->c_str());
+    }
+    // Without it the game would stop deep in its start-up with nothing on screen to say why.
+    if (!nocturne::platform::hasGameData(host, roots)) {
+        sdl::reportMissingGameData(roots, nocturne::platform::describeMissingGameData(host, roots));
+        return 1;
+    }
+    nocturne::platform::CLayeredFileSystem file_system(host, roots.getFolders());
     sdl::CSdlWindow window(wincore::CWinRun::kApplicationTitle, kWidth, kHeight);
-    sdl::CSdlFileSystem file_system;
     sdl::CSdlClock clock;
     sdl::CSdlGamepad gamepad;
     engine::CGamepadInput gamepad_input(gamepad, file_system, clock);
@@ -474,7 +503,8 @@ int run() {
     try {
         return runGame(window, file_system, clock, winrun, gamepad_input);
     } catch (const nocturne::common::CFatalError &error) {
-        // Retail writes no gtfo.txt; nocedit's log is kept so a fatal error outlives its box.
+        // Retail writes no gtfo.txt; nocedit's log is kept so a fatal error outlives its box, where
+        // the logs are.
         file_system.appendFile("gtfo.txt", error.getLogEntry(getLocalTime()));
         winrun.displayMessageBoxAndQuit(error);
         return 1;
@@ -483,9 +513,10 @@ int run() {
 
 } // namespace
 
-int main() {
+int main(int argc, char *argv[]) {
     try {
-        return run();
+        const std::vector<std::string_view> args(argv + std::min(argc, 1), argv + argc);
+        return run(args);
     } catch (const std::exception &error) {
         // In pieces, so reporting the error can't throw another.
         std::fputs("nocturne: ", stderr);

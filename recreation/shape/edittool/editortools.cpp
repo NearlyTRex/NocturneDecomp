@@ -6,6 +6,7 @@
 #include "engine/font/uiscale.h"
 #include "engine/keys/keys.h"
 #include "engine/matrix/matrix.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "platform/clipboard.h"
@@ -37,7 +38,7 @@ std::byte *rowAt(std::span<void *> rows, int y) {
 } // namespace
 
 // staticInit built the global instance and init set its colours; the windows, prompts and
-// progress bar read these seven, and the status message its own.
+// progress bar take theirs from the packages' dialog look.
 // deferred: the six colours retail's init sets for CInputString::draw, showFilenameInputDialog
 //   and draw3DAxisLabels, with those functions
 // nocedit 0x0049d170
@@ -50,11 +51,23 @@ CEditorTools::CEditorTools(const SEditorToolsOwners &owners)
     : two_d_(owners.two_d), matrix_(owners.matrix), three_d_(owners.three_d),
       screen_(owners.screen), special_(owners.special), keys_(owners.keys),
       raw_input_(owners.raw_input), game_clock_(owners.game_clock), clock_(owners.clock),
-      clipboard_(owners.clipboard), window_border_highlight_color_(7), title_bar_color_(0xfb),
-      window_font_color_(0xff), warning_text_color_(0xff), window_status_text_color_(0xff),
-      status_text_color_(0xff), progress_bar_border_color_(0xff), progress_bar_fill_color_(4) {}
+      clipboard_(owners.clipboard), content_(owners.content) {}
 
 CEditorTools::~CEditorTools() = default;
+
+const engine::SListLook &CEditorTools::getListLook() const {
+    if (!content_.list) {
+        common::displayErrorAndQuit("No package gives the lists' look");
+    }
+    return *content_.list;
+}
+
+const engine::SDialogLook &CEditorTools::getDialogLook() const {
+    if (!content_.dialog) {
+        common::displayErrorAndQuit("No package gives the dialogs' look");
+    }
+    return *content_.dialog;
+}
 
 void CEditorTools::setEditorFont(engine::CBitFont *font) {
     editor_font_ = font;
@@ -98,14 +111,14 @@ int CEditorTools::getEditorFontLineHeight() const {
 // bw1 0x004942e0
 // bw3 0x0047ce80
 void CEditorTools::showMessage(std::string_view message) {
-    showPrompt(kMessageTitle, message, window_font_color_);
+    showPrompt(kMessageTitle, message, getDialogLook().text_colour);
 }
 
 // nocedit 0x0049e6f0
 // bw1 0x00494340
 // bw3 0x0047cee0
 void CEditorTools::showWarning(std::string_view message) {
-    showPrompt(kWarningTitle, message, warning_text_color_);
+    showPrompt(kWarningTitle, message, getDialogLook().warning_colour);
 }
 
 // Retail draws it as showWarning does, in the same colour.
@@ -113,7 +126,7 @@ void CEditorTools::showWarning(std::string_view message) {
 // bw1 0x004943a0
 // bw3 0x0047cf40
 void CEditorTools::showError(std::string_view message) {
-    showPrompt(kErrorTitle, message, warning_text_color_);
+    showPrompt(kErrorTitle, message, getDialogLook().warning_colour);
 }
 
 // The message is drawn at the font's own size, as the enhanced game leaves it.
@@ -123,7 +136,8 @@ void CEditorTools::displayCenteredStatusMessage(std::string_view message) {
     special_.clearScreen();
     three_d_.setRenderAlpha(kOpaqueAlpha);
     editor_font_->drawTextCenter(screen_.getWindowWidth() / 2, screen_.getWindowHeight() / 2,
-                                 status_text_color_, engine::CBitFont::kNoShadow, message);
+                                 getDialogLook().status_colour, engine::CBitFont::kNoShadow,
+                                 message);
     screen_.swapBuffers();
 }
 
@@ -134,8 +148,10 @@ void CEditorTools::showPrompt(std::string_view title, std::string_view message, 
     const int message_width = font.getTextWidth(message, scale);
     const int width = std::max(font.getTextWidth(title, scale), message_width);
     const int message_height = font.getTextHeight(message, scale);
-    createCenteredModal((editor_font_max_char_width_ * 4) + width,
-                        (editor_font_line_height_ * 2) + message_height, title, 0);
+    const engine::SDialogLook &look = getDialogLook();
+    createCenteredModal((editor_font_max_char_width_ * look.prompt_padding_chars) + width,
+                        (editor_font_line_height_ * look.prompt_padding_lines) + message_height,
+                        title, 0);
     paintCurrentWindow();
     three_d_.setRenderAlpha(kOpaqueAlpha);
     const engine::SClipRect clip = two_d_.getClipRect();
@@ -181,8 +197,8 @@ void CEditorTools::createModalWindow(int left, int top, int right, int bottom,
     }
     const int window_width = screen_.getWindowWidth();
     const int window_height = screen_.getWindowHeight();
-    const int margin_x = window_width / 128;
-    const int margin_y = window_height / 96;
+    const int margin_x = window_width / getDialogLook().margin_width_divisor;
+    const int margin_y = window_height / getDialogLook().margin_height_divisor;
     SWindow &window = window_stack_[window_stack_count_];
     ++window_stack_count_;
     left = std::max(left - margin_x, 0);
@@ -293,8 +309,9 @@ void CEditorTools::paintCurrentWindow() {
     const engine::SClipRect &rect = window.rect;
     matrix_.pushViewport(rect.left, rect.top, (rect.right - rect.left) + 1,
                          (rect.bottom - rect.top) + 1);
+    const engine::SDialogLook &look = getDialogLook();
     two_d_.fillRectWithBorder(rect.left + 1, rect.top + 1, rect.right - 2, rect.bottom - 2,
-                              window_content_color_, window_border_highlight_color_);
+                              look.content_colour, look.border_colour);
     matrix_.popViewport();
     if (window.text_buffer.empty()) {
         two_d_.setActiveRenderColor(saved_color);
@@ -309,9 +326,9 @@ void CEditorTools::paintCurrentWindow() {
     const int scale = getScale();
     const int text_width = editor_font_->getTextWidth(window.text_buffer, scale);
     editor_font_->drawText(window.text_buffer, ((rect.left + rect.right) - text_width) / 2,
-                           (editor_font_line_height_ / 2) + rect.top + 1, title_bar_color_,
+                           (editor_font_line_height_ / 2) + rect.top + 1, look.title_colour,
                            engine::CBitFont::kNoShadow, scale);
-    two_d_.setActiveRenderColor(window_border_highlight_color_);
+    two_d_.setActiveRenderColor(look.border_colour);
     const int text_height = editor_font_->getTextHeight(window.text_buffer, scale);
     two_d_.drawHLine(rect.left + 1, text_height + rect.top + editor_font_line_height_,
                      rect.right - 2);

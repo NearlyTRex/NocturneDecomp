@@ -1,5 +1,6 @@
 #include "core/level/levelloader.h"
 
+#include "common/error/error.h"
 #include "common/random/watcomrandom.h"
 #include "core/frontend.h"
 #include "engine/alphabit/alphabitmap.h"
@@ -21,18 +22,22 @@ namespace {
 constexpr int kPictureWidth = 640;
 constexpr int kPictureHeight = 480;
 constexpr int kOpaque = 0xffff;
-constexpr int kPictureWindowSize = 90;
-// The corner window the moon is given without a picture.
-constexpr int kCornerX = 447;
-constexpr int kCornerSize = 192;
-constexpr CColor3i kWhite{.r = 0xff00, .g = 0xff00, .b = 0xff00};
 
 } // namespace
 
-// What staticInit constructed is the members.
+// What staticInit constructed is the members; the glow's texture is named as the moon shows.
 // nocedit 0x00503d80
 CLevelLoader::CLevelLoader(const SLevelLoaderOwners &owners)
-    : owners_(owners), moon_(owners.dosio), glow_texture_{.texture_name = "MOONGLOW.RAW"} {}
+    : owners_(owners), moon_(owners.dosio) {}
+
+const engine::SMoonIndicator &CLevelLoader::getMoonIndicator() const {
+    requireFrontEndStyle("loading indicator", owners_.content.front_end.loading_indicator,
+                         {kMoonLoadingIndicator});
+    if (!owners_.content.moon_indicator) {
+        common::displayErrorAndQuit("No package gives the moon loading indicator's look");
+    }
+    return *owners_.content.moon_indicator;
+}
 
 // The original also set a version field that nothing reads, and a full-screen viewport that is
 // only read with a window.
@@ -41,20 +46,24 @@ void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_va
     // The 640x480 layout, as the screen shows it.
     const SFrontEndLayout layout =
         getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight());
+    const engine::SMoonIndicator &look = getMoonIndicator();
     enabled_ = true;
     current_frame_ = 0;
     total_frames_ = total_frames;
     use_custom_viewport_ = use_custom_viewport;
     if (use_custom_viewport) {
-        viewport_x_ = layout.getX(kCornerX);
-        viewport_y_ = layout.getY(0);
-        viewport_width_ = layout.getLength(kCornerSize);
-        viewport_height_ = layout.getLength(kCornerSize);
+        viewport_x_ = layout.getX(look.corner_x);
+        viewport_y_ = layout.getY(look.corner_y);
+        viewport_width_ = layout.getLength(look.corner_size);
+        viewport_height_ = layout.getLength(look.corner_size);
     } else {
         owners_.special.clearScreen();
     }
-    color_ = kWhite;
-    moon_.load("moon.kfm");
+    color_ = {.r = look.default_tint[0], .g = look.default_tint[1], .b = look.default_tint[2]};
+    moon_.load(look.model);
+    if (glow_texture_.texture_name != look.glow_texture) {
+        glow_texture_ = {.texture_name = look.glow_texture};
+    }
     owners_.renderer.captureTexture(glow_texture_);
     const std::vector<engine::SLoadingPicture> &pictures = owners_.content.loading;
     if (image_variant == kRandomImage && !use_custom_viewport) {
@@ -75,8 +84,8 @@ void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_va
     use_custom_viewport_ = true;
     viewport_x_ = layout.getX(picture.moon->x);
     viewport_y_ = layout.getY(picture.moon->y);
-    viewport_width_ = layout.getLength(kPictureWindowSize);
-    viewport_height_ = layout.getLength(kPictureWindowSize);
+    viewport_width_ = layout.getLength(look.window_size);
+    viewport_height_ = layout.getLength(look.window_size);
     color_ = {.r = picture.moon->tint[0], .g = picture.moon->tint[1], .b = picture.moon->tint[2]};
 }
 

@@ -6,6 +6,7 @@
 #include "core/menu/menupage.h"
 #include "engine/gamepadinput.h"
 #include "engine/keys/inputcodetype.h"
+#include "engine/package/gamecontent.h"
 #include "tests/mocks/core/menufixture.h"
 
 #include <gmock/gmock.h>
@@ -137,6 +138,20 @@ TEST_F(CControlOptionsPageTest, TheTypeStepsEitherWayWithItsDefaults) {
     EXPECT_EQ(game_.game_control, EControlMode::CONTROL_MODE_KEYBOARD);
     EXPECT_EQ(game_.aim_mode, EAimMode::AIM_MODE_AUTO);
     EXPECT_EQ(page_.choose(kType, EMenuStep::Back), EMenuOutcome::Stay);
+    EXPECT_EQ(game_.game_control, EControlMode::CONTROL_MODE_GAMEPAD);
+}
+
+// The types and their labels are the game's, in its order.
+TEST_F(CControlOptionsPageTest, TheTypesAreTheGamesInItsOrder) {
+    std::vector<engine::SControlMode> &modes = game_parts_.getContent().controls.value().modes;
+    std::swap(modes.at(0), modes.at(2));
+    modes.pop_back();
+    modes.at(0).label = "Control : Pad";
+    setControlMode(EControlMode::CONTROL_MODE_GAMEPAD);
+    EXPECT_EQ(texts().front(), "Control : Pad");
+    EXPECT_EQ(page_.choose(kType, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_EQ(game_.game_control, EControlMode::CONTROL_MODE_MOUSE);
+    EXPECT_EQ(page_.choose(kType, EMenuStep::On), EMenuOutcome::Stay);
     EXPECT_EQ(game_.game_control, EControlMode::CONTROL_MODE_GAMEPAD);
 }
 

@@ -10,6 +10,7 @@
 #include "engine/2d/2d.h"
 #include "engine/gamepadinput.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
@@ -39,9 +40,6 @@ constexpr int kSmallestWindowHeight = 480;
 // The largest game resolution the software renderer takes.
 constexpr int kSoftwareGameWidth = 640;
 constexpr int kSoftwareGameHeight = 480;
-// NOC1.AVI to NOC4.AVI.
-constexpr int kAttractMovieCount = 4;
-constexpr std::string_view kMovieDirectory = "video";
 
 enum class EMainLine : std::uint8_t {
     Play,
@@ -135,14 +133,19 @@ public:
     }
 
 private:
-    // Starting the music again sets the wait for the next.
+    // One of the menus' movies at random; starting the music again sets the wait for the next.
     void playAttractMovie() {
-        const std::string movie =
-            std::format("noc{}.avi", owners_.actor.getRandomInt(1, kAttractMovieCount));
+        const std::optional<engine::SMenuAttract> &attract = getMenu().getMenuLayout().attract;
+        if (!attract) {
+            return;
+        }
+        const auto count = static_cast<int>(attract->movies.size());
+        const std::string &movie =
+            attract->movies[static_cast<std::size_t>(owners_.actor.getRandomInt(1, count) - 1)];
         owners_.two_d.clearInputAndWait();
         owners_.sound.reset();
         owners_.attract_movies.pauseBeforeMovie();
-        owners_.play_movie(kMovieDirectory, movie);
+        owners_.play_movie(attract->directory, movie);
         owners_.sound.configure();
     }
 

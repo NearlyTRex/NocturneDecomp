@@ -2045,7 +2045,7 @@
   "function": "CGame::showChapterSelect",
   "builds": [
    "bw1"
-  ],  "difference": "One story, 'The Rustin Parr Investigation', starting hq_bw1.msn, with the chapter title shown 8 s. Picking it opens a second list of four puzzle/combat difficulties that set puzzle_difficulty_mode and combat_difficulty_mode (0/1 each). CFieldNotes::clear runs before resetGameFlags. The blairhero.pod probe has no effect: its handle is closed and overwritten by the pod.ini probe.",
+  ],  "difference": "One story, 'The Rustin Parr Investigation', starting hq-bw1.msn (the exe's string at 0x005e36ab; Ghidra's label spells it with an underscore), with the chapter title shown 8 s. Picking it opens a second list of four puzzle/combat difficulties that set puzzle_difficulty_mode and combat_difficulty_mode (0/1 each). CFieldNotes::clear runs before resetGameFlags. The blairhero.pod probe has no effect: its handle is closed and overwritten by the pod.ini probe.",
   "evidence": "bw1 004d7250: the two pick lists, the 'Normal/Hard Puzzles, Normal/Hard Combat' strings, PTR_s_hq_bw1_msn, CFieldNotes_clear_FUN_004bdaa0; p_Var2 reassigned by _fopen(\"pod.ini\").",
   "source": "front_end",
   "theme": "front-end-menu",
@@ -3153,7 +3153,7 @@
   "function": "CMenu::configureCustomKeyBindings",
   "builds": [
    "bw1"
-  ],  "difference": "The BW1 row table differs: it adds SPS, Map, Journal, Compass, Quick turn, Flashlight and 'Select energy weapons', and has no Jump, Light or 'Select flame weapons' rows. The overflow cap is 0x1f (nocedit 0x1d). In point&click mode the Fire/Action row is left out, mouse buttons cannot be bound ('Mouse buttons cannot be redefined'), and the pick list gets Select/Close button texts (setOkButtonText/setCancelButtonText). isKeyCodeValidForMode and the status-message steps are not changes: nocedit has both.",
+  ],  "difference": "The BW1 row table differs: it adds SPS, Map, Journal, Compass, Quick turn, Flashlight and 'Select energy weapons', and has no Jump, Light or 'Select flame weapons' rows. The overflow cap is 0x1f (nocedit 0x1d). In point&click mode the first 11 rows (Fire / Action, Forward, Back, Strafe on, Strafe left, Strafe right, Turn left, Turn right, Point up, Point down, Quick turn) are left out, mouse buttons cannot be bound ('Mouse buttons cannot be redefined'), and the pick list gets Select/Close button texts (setOkButtonText/setCancelButtonText). isKeyCodeValidForMode and the status-message steps are not changes: nocedit has both.",
   "evidence": "bw1 configureCustomKeyBindings_FUN_0050d640.cpp: 'if (0x1f < g_CustomKeyCount)', line 65 POINT_AND_CLICK guard, line 830 message, strings. nocedit cap 0x1d at line 79.",
   "source": "front_end",
   "theme": "front-end-bindings",

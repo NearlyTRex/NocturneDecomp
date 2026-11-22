@@ -96,6 +96,14 @@ The controller's deadzone, turn and look speeds and inverted look are read from 
 A delete or rename in the user directory cannot hide a shipped file; the game never needs it
 to, since everything it deletes is something it wrote.
 
+The recreation chooses its roots the same way, from the same options, variables, `data_dir.txt`
+and defines, which its CMake takes as cache settings (`recreation/platform/pathroots.h`,
+`platform/sdl/sdlpathroots.cpp`). Its data directory is the install: each game's folder under
+`games/`, `loadorder.txt` and the mods. The user directory also takes what the package loader
+writes there, `loadorder.txt` and the games' manifests. The running game's `system`, `save`,
+`video` and other folders are its package's, so with a user directory BW1's settings land in
+`<user>/games/blairwitch1/system/`, apart from every other game's.
+
 ## OpenGL ES
 
 `-DNOCTURNE_GLES=ON`, or `NOCTURNE_GLES=1` in a platform file's definitions, asks for an

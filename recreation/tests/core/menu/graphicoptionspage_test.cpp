@@ -163,13 +163,24 @@ TEST_F(CGraphicOptionsPageTest, ACardListTheRendererRefusesIsEmpty) {
     EXPECT_EQ(text(page, kCard), "No 3D Hardware detected");
 }
 
-TEST_F(CGraphicOptionsPageTest, TheCardStepsOnWhicheverWayAndWraps) {
+// Whichever way, a list of the cards by their whole names, opened on the current one: Down and
+// Confirm take the next.
+TEST_F(CGraphicOptionsPageTest, TheCardIsPickedFromAListOfTheirWholeNames) {
     loadRenderer();
     CGraphicOptionsPage page(menu_, menu_owners_);
+    on_frame_ = [&](int frame) {
+        press(frame == 1 ? engine::EInputCodeType::DIK_DOWN : engine::EInputCodeType::DIK_RETURN);
+    };
     EXPECT_CALL(renderer_, selectCard(1));
     EXPECT_EQ(page.choose(kCard, EMenuStep::Back), EMenuOutcome::Stay);
     EXPECT_EQ(text(page, kCard), "3D Card : Second (1)");
-    EXPECT_CALL(renderer_, selectCard(0));
+}
+
+TEST_F(CGraphicOptionsPageTest, CancellingTheCardListKeepsTheCard) {
+    loadRenderer();
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    on_frame_ = [&](int /*frame*/) { press(engine::EInputCodeType::DIK_ESCAPE); };
+    EXPECT_CALL(renderer_, selectCard(_)).Times(0);
     EXPECT_EQ(page.choose(kCard, EMenuStep::On), EMenuOutcome::Stay);
     EXPECT_EQ(special_.getCurrentGraphicsBoard(), 0);
 }

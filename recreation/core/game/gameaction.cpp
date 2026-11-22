@@ -1,13 +1,16 @@
 #include "core/game/gameaction.h"
 
 #include <array>
+#include <cctype>
+#include <cstddef>
+#include <optional>
+#include <string>
+#include <string_view>
 
 namespace nocturne::core {
 namespace {
 
 using engine::EInputCodeType;
-
-constexpr std::optional<EInputCodeType> kSame = std::nullopt;
 
 // The table's alone, made as it is compiled.
 consteval SKeyChord key(EInputCodeType code) {
@@ -22,122 +25,38 @@ consteval SKeyChord alt(EInputCodeType code) {
     return {.code = code, .alt = true};
 }
 
-// Keyboard and mouse defaults are restoreDefaultControls'; the gamepad column and the map key are
-// the enhanced game's. The hotkeys' are processHotkeys', the same in every control mode; motion
-// debug, which the original left to anyone, is a developer's. Rows are in EGameAction order.
+// The play actions' defaults are each game's, by control mode. The hotkeys' are processHotkeys',
+// the same in every control mode; motion debug, which the original left to anyone, is a
+// developer's. Rows are in EGameAction order.
 constexpr std::array<SGameActionInfo, kGameActionCount> kGameActions = {{
-    {.ini_key = "keyWalk",
-     .keyboard = key(EInputCodeType::DIK_UP),
-     .mouse = EInputCodeType::DIK_W,
-     .gamepad = EInputCodeType::DIJ_UP},
-    {.ini_key = "keyBackup",
-     .keyboard = key(EInputCodeType::DIK_DOWN),
-     .mouse = EInputCodeType::DIK_S,
-     .gamepad = EInputCodeType::DIJ_DOWN},
-    {.ini_key = "keyRun",
-     .keyboard = key(EInputCodeType::DIK_LSHIFT),
-     .mouse = EInputCodeType::DIK_CAPITAL,
-     .gamepad = EInputCodeType::PAD_LEFTSTICK},
-    {.ini_key = "keyStrafe",
-     .keyboard = key(EInputCodeType::DIK_LMENU),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::INPUT_NONE},
-    {.ini_key = "keyStrafeLeft",
-     .keyboard = key(EInputCodeType::DIK_Z),
-     .mouse = EInputCodeType::DIK_A,
-     .gamepad = EInputCodeType::DIJ_LEFT},
-    {.ini_key = "keyStrafeRight",
-     .keyboard = key(EInputCodeType::DIK_X),
-     .mouse = EInputCodeType::DIK_D,
-     .gamepad = EInputCodeType::DIJ_RIGHT},
-    {.ini_key = "keyRight",
-     .keyboard = key(EInputCodeType::DIK_RIGHT),
-     .mouse = EInputCodeType::DIM_XAXIS,
-     .gamepad = EInputCodeType::PAD_RSTICK_RIGHT},
-    {.ini_key = "keyLeft",
-     .keyboard = key(EInputCodeType::DIK_LEFT),
-     .mouse = EInputCodeType::DIM_XAXIS,
-     .gamepad = EInputCodeType::PAD_RSTICK_LEFT},
-    {.ini_key = "keyFire",
-     .keyboard = key(EInputCodeType::DIK_SPACE),
-     .mouse = EInputCodeType::DIM_LBUTTON,
-     .gamepad = EInputCodeType::PAD_RTRIGGER},
-    {.ini_key = "keyUseItem",
-     .keyboard = key(EInputCodeType::DIK_RETURN),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_B},
-    {.ini_key = "keyLight",
-     .keyboard = key(EInputCodeType::DIK_F),
-     .mouse = EInputCodeType::DIK_Q,
-     .gamepad = EInputCodeType::PAD_X},
-    {.ini_key = "keyInfrared",
-     .keyboard = key(EInputCodeType::DIK_I),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_Y},
-    {.ini_key = "keyDraw",
-     .keyboard = key(EInputCodeType::DIK_D),
-     .mouse = EInputCodeType::DIK_E,
-     .gamepad = EInputCodeType::PAD_LTRIGGER},
-    {.ini_key = "keyJump",
-     .keyboard = key(EInputCodeType::DIK_G),
-     .mouse = EInputCodeType::DIK_G,
-     .gamepad = EInputCodeType::PAD_A},
-    {.ini_key = "keyPointUp",
-     .keyboard = key(EInputCodeType::DIK_Q),
-     .mouse = EInputCodeType::DIM_YAXIS,
-     .gamepad = EInputCodeType::PAD_RSTICK_UP},
-    {.ini_key = "keyPointDown",
-     .keyboard = key(EInputCodeType::DIK_A),
-     .mouse = EInputCodeType::DIM_YAXIS,
-     .gamepad = EInputCodeType::PAD_RSTICK_DOWN},
-    {.ini_key = "keyWeapon1",
-     .keyboard = key(EInputCodeType::DIK_1),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::INPUT_NONE},
-    {.ini_key = "keyWeapon2",
-     .keyboard = key(EInputCodeType::DIK_2),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::INPUT_NONE},
-    {.ini_key = "keyWeapon3",
-     .keyboard = key(EInputCodeType::DIK_3),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::INPUT_NONE},
-    {.ini_key = "keyWeapon4",
-     .keyboard = key(EInputCodeType::DIK_4),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::INPUT_NONE},
-    {.ini_key = "keyWeapon5",
-     .keyboard = key(EInputCodeType::DIK_5),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_DPAD_DOWN},
-    {.ini_key = "keyNextWeapon",
-     .keyboard = key(EInputCodeType::DIK_EQUALS),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_RIGHTSHOULDER},
-    {.ini_key = "keyPrevWeapon",
-     .keyboard = key(EInputCodeType::DIK_MINUS),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_LEFTSHOULDER},
-    {.ini_key = "keyNextItem",
-     .keyboard = key(EInputCodeType::DIK_LBRACKET),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_DPAD_RIGHT},
-    {.ini_key = "keyPrevItem",
-     .keyboard = key(EInputCodeType::DIK_RBRACKET),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_DPAD_LEFT},
-    {.ini_key = "keyItemDesc",
-     .keyboard = key(EInputCodeType::DIK_SLASH),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_GUIDE},
-    {.ini_key = "keyNextAmmo",
-     .keyboard = key(EInputCodeType::DIK_GRAVE),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_DPAD_UP},
-    {.ini_key = "keyMap",
-     .keyboard = key(EInputCodeType::DIK_M),
-     .mouse = kSame,
-     .gamepad = EInputCodeType::PAD_BACK},
+    {.ini_key = "keyWalk"},
+    {.ini_key = "keyBackup"},
+    {.ini_key = "keyRun"},
+    {.ini_key = "keyStrafe"},
+    {.ini_key = "keyStrafeLeft"},
+    {.ini_key = "keyStrafeRight"},
+    {.ini_key = "keyRight"},
+    {.ini_key = "keyLeft"},
+    {.ini_key = "keyFire"},
+    {.ini_key = "keyUseItem"},
+    {.ini_key = "keyLight"},
+    {.ini_key = "keyInfrared"},
+    {.ini_key = "keyDraw"},
+    {.ini_key = "keyJump"},
+    {.ini_key = "keyPointUp"},
+    {.ini_key = "keyPointDown"},
+    {.ini_key = "keyWeapon1"},
+    {.ini_key = "keyWeapon2"},
+    {.ini_key = "keyWeapon3"},
+    {.ini_key = "keyWeapon4"},
+    {.ini_key = "keyWeapon5"},
+    {.ini_key = "keyNextWeapon"},
+    {.ini_key = "keyPrevWeapon"},
+    {.ini_key = "keyNextItem"},
+    {.ini_key = "keyPrevItem"},
+    {.ini_key = "keyItemDesc"},
+    {.ini_key = "keyNextAmmo"},
+    {.ini_key = "keyMap"},
     {.ini_key = "keyMute",
      .keyboard = key(EInputCodeType::DIK_F5),
      .also = ctrl(EInputCodeType::DIK_M)},
@@ -184,10 +103,42 @@ constexpr std::array<SGameActionInfo, kGameActionCount> kGameActions = {{
      .developer = true},
 }};
 
+constexpr std::string_view kIniKeyPrefix = "key";
+
 } // namespace
 
 const SGameActionInfo &getGameActionInfo(EGameAction action) {
     return kGameActions.at(static_cast<std::size_t>(action));
+}
+
+bool isHotkeyAction(EGameAction action) {
+    return action >= kFirstHotkey;
+}
+
+std::string getGameActionId(EGameAction action) {
+    const std::string_view name = getGameActionInfo(action).ini_key.substr(kIniKeyPrefix.size());
+    std::string id;
+    for (const char letter : name) {
+        if (std::isupper(static_cast<unsigned char>(letter)) != 0) {
+            if (!id.empty()) {
+                id += '_';
+            }
+            id += static_cast<char>(std::tolower(static_cast<unsigned char>(letter)));
+        } else {
+            id += letter;
+        }
+    }
+    return id;
+}
+
+std::optional<EGameAction> findGameAction(std::string_view id) {
+    for (std::size_t index = 0; index < kGameActionCount; ++index) {
+        const auto action = static_cast<EGameAction>(index);
+        if (getGameActionId(action) == id) {
+            return action;
+        }
+    }
+    return std::nullopt;
 }
 
 } // namespace nocturne::core

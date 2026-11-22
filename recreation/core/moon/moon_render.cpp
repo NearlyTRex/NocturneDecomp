@@ -1,4 +1,5 @@
 #include "common/math/fixed.h"
+#include "common/math/matrix3x3f.h"
 #include "common/math/vector3i.h"
 #include "core/color3i.h"
 #include "core/frontend.h"
@@ -7,13 +8,16 @@
 #include "core/set/demonset.h"
 #include "engine/3d/3d.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "platform/display.h"
 #include "platform/renderer.h"
 
 #include <algorithm>
+#include <array>
 #include <bit>
+#include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <optional>
@@ -24,21 +28,16 @@
 namespace nocturne::core {
 namespace {
 
-constexpr float kProjectionScale = 112.0F;
-constexpr double kMoonSwing = 48.0;
-constexpr float kMoonDepth = 72.0F;
-constexpr common::CVector3i kMoonLight{.x = -37000, .y = -37000, .z = 37000};
-constexpr int kMoonAmbient = 0x280;
-constexpr int kMoonFlatScale = 0x10000;
 constexpr int kMoonRenderFlags = 0x205;
-constexpr common::CVector3i kBatLight{.x = -0x4844, .y = -0x4844, .z = 0x4844};
-constexpr int kBatAmbient = 0x2000;
 // A quarter turn, as the original stores it.
 constexpr float kBatYawOffset = std::bit_cast<float>(0x3fc90fdbU);
 constexpr int kTrueColorDepth = 32;
 constexpr std::uint32_t kTexelMask = 0xff;
 constexpr std::uint32_t kCloudRowShift = 8;
-constexpr int kAnimationAlpha = 48000;
+
+common::CVector3i toVector(const std::array<int, 3> &light) {
+    return {.x = light[0], .y = light[1], .z = light[2]};
+}
 
 // PADDUSB on one pixel: each byte added, saturating at 0xff.
 std::uint32_t addSaturating(std::uint32_t a, std::uint32_t b) {
@@ -68,6 +67,11 @@ std::uint8_t cloudTexel(std::span<const std::uint8_t> texels, std::uint32_t x, s
 //   setRenderingMode
 // nocedit 0x00529ed0
 void CMoon::render() {
+    if (isFigureScene()) {
+        renderFigure();
+        return;
+    }
+    const engine::SSkyScene &sky = getSky();
     CDemonSet &set = owners_.set;
     const common::CVector3i light_direction = set.getLightDirection();
     const int ambient = set.getAmbientBaseQuick();
@@ -75,23 +79,23 @@ void CMoon::render() {
     owners_.special.clearScreen();
     owners_.special.clearZBufferNative();
     const std::optional<float> widened = beginWideScene();
-    renderMoon(kProjectionScale * widened.value_or(1.0F));
+    renderMoon(static_cast<float>(sky.projection) * widened.value_or(1.0F));
     renderBats();
     if (widened) {
         endWideScene();
     }
     renderClouds();
     owners_.three_d.setBlendMode(1);
-    // The timer runs to 60 over 30 frames; the second half holds the first frame.
+    // The timer runs to its wrap past the frames; past them, the first frame is held.
     int frame = common::truncateToInt(animation_timer_);
-    if (frame < 0 || std::cmp_greater_equal(frame, kAnimationFrameCount)) {
+    if (frame < 0 || std::cmp_greater_equal(frame, animation_textures_.size())) {
         frame = 0;
     }
     displayInLayout(
         animation_textures_[static_cast<std::size_t>(frame)],
         getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight()),
-        {.x = 0, .y = 0, .width = kAnimationWidth, .height = kAnimationHeight}, kAnimationAlpha,
-        owners_.display.getUpscaler());
+        {.x = sky.frame_x, .y = sky.frame_y, .width = sky.frame_width, .height = sky.frame_height},
+        sky.frame_alpha, owners_.display.getUpscaler());
     owners_.three_d.setBlendMode(0);
     set.setLightDirection(light_direction);
     set.setAmbientBaseQuick(ambient);
@@ -120,22 +124,111 @@ std::optional<float> CMoon::beginWideScene() {
     return widen;
 }
 
+// The models stand on the backdrop, so the 3D is scaled and centred with the layout rather than
+// widened.
+bool CMoon::beginLayoutScene() {
+    const int width = owners_.screen.getWindowWidth();
+    const int height = owners_.screen.getWindowHeight();
+    if ((width == kFrontEndLayoutWidth && height == kFrontEndHeight) ||
+        !owners_.special.getUseExternalRenderer()) {
+        return false;
+    }
+    const SFrontEndLayout layout = getFrontEndLayout(width, height);
+    owners_.renderer.pushViewport(0, 0, kFrontEndLayoutWidth, kFrontEndHeight);
+    if (!owners_.special.beginOverlay({.scale_x = layout.scale,
+                                       .scale_y = layout.scale,
+                                       .offset_x = static_cast<float>(layout.left),
+                                       .offset_y = static_cast<float>(layout.top)})) {
+        owners_.renderer.popViewport();
+        return false;
+    }
+    return true;
+}
+
+// The original also processed the sound queue here, which the audio device pulls on its own
+// thread, and cleared only the screen; the depth is cleared as the sky's is. The lighting it
+// found is put back. Each model steps a frame per drawing, not per second.
+// deferred: switching the set to quick lighting for the models and back again, with
+//   setRenderingMode
+// bw1 0x00521e40
+void CMoon::renderFigure() {
+    const engine::SFigureScene &figure = getFigure();
+    CDemonSet &set = owners_.set;
+    const common::CVector3i light_direction = set.getLightDirection();
+    const int ambient = set.getAmbientBaseQuick();
+    const CColor3i flat_color = set.getFlatColor();
+    owners_.special.clearScreen();
+    owners_.special.clearZBufferNative();
+    const SFrontEndLayout layout =
+        getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight());
+    const platform::EUpscaler upscaler = owners_.display.getUpscaler();
+    displayInLayout(backdrop_, layout,
+                    {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
+                    figure.backdrop_alpha, upscaler);
+    const bool placed = beginLayoutScene();
+    engine::CDemonRenderer &renderer = owners_.renderer;
+    const std::array<double, 3> &origin = figure.camera_origin;
+    renderer.setCameraOriginFromScaledPoint({.x = static_cast<float>(origin[0]),
+                                             .y = static_cast<float>(origin[1]),
+                                             .z = static_cast<float>(origin[2])});
+    renderer.setProjectionScale(static_cast<float>(figure.projection));
+    common::CMatrix3x3f rotation;
+    for (std::size_t row = 0; row < rotation.m.size(); ++row) {
+        rotation.m.at(row) = {.x = static_cast<float>(figure.camera_rotation.at(row * 3)),
+                              .y = static_cast<float>(figure.camera_rotation.at((row * 3) + 1)),
+                              .z = static_cast<float>(figure.camera_rotation.at((row * 3) + 2))};
+    }
+    renderer.setupCameraAndProjection(rotation);
+    renderer.processCameraRelativeVertex({});
+    set.setLightDirection(toVector(figure.light));
+    set.setFlatColor(figure.flat[0], figure.flat[1], figure.flat[2]);
+    set.setAmbientBaseQuick(figure.ambient);
+    for (std::size_t i = 0; i < figures_.size(); ++i) {
+        figures_[i]->prepareForRender(figure_frames_[i], kMoonRenderFlags, renderer, set);
+    }
+    if (placed) {
+        endWideScene();
+    }
+    for (std::size_t i = 0; i < figures_.size(); ++i) {
+        figure_frames_[i] =
+            figure_frames_[i] + 1 > figure.models[i].frame_wrap ? 0 : figure_frames_[i] + 1;
+    }
+    owners_.three_d.setBlendMode(1);
+    // The x87 rounds the timer to the nearest frame, an even one on a tie; past the frames, the
+    // first is shown.
+    auto frame = static_cast<int>(std::lrint(static_cast<double>(animation_timer_)));
+    if (frame < 0 || std::cmp_greater_equal(frame, animation_textures_.size())) {
+        frame = 0;
+    }
+    displayInLayout(animation_textures_[static_cast<std::size_t>(frame)], layout,
+                    {.x = figure.frame_x,
+                     .y = figure.frame_y,
+                     .width = figure.frame_width,
+                     .height = figure.frame_height},
+                    figure.frame_alpha, upscaler);
+    owners_.three_d.setBlendMode(0);
+    set.setLightDirection(light_direction);
+    set.setAmbientBaseQuick(ambient);
+    set.setFlatColor(flat_color.r, flat_color.g, flat_color.b);
+}
+
 void CMoon::endWideScene() {
     owners_.special.endOverlay();
     owners_.renderer.popViewport();
 }
 
 void CMoon::renderMoon(float projection_scale) {
+    const engine::SSkyScene &sky = getSky();
     engine::CDemonRenderer &renderer = owners_.renderer;
     renderer.setCameraOriginFromScaledPoint({});
     renderer.setProjectionScale(projection_scale);
     renderer.setupSceneRendering({});
-    const auto swing =
-        static_cast<float>((static_cast<double>(rotation_phase_) - 0.5) * kMoonSwing);
-    renderer.processCameraRelativeVertex({.x = swing, .y = swing, .z = kMoonDepth});
-    owners_.set.setLightDirection(kMoonLight);
-    owners_.set.setAmbientBaseQuick(kMoonAmbient);
-    owners_.set.setFlatColor(kMoonFlatScale, kMoonFlatScale, kMoonFlatScale);
+    const auto swing = static_cast<float>((static_cast<double>(rotation_phase_) - 0.5) * sky.swing);
+    renderer.processCameraRelativeVertex(
+        {.x = swing, .y = swing, .z = static_cast<float>(sky.depth)});
+    owners_.set.setLightDirection(toVector(sky.moon_light));
+    owners_.set.setAmbientBaseQuick(sky.moon_ambient);
+    owners_.set.setFlatColor(sky.moon_flat, sky.moon_flat, sky.moon_flat);
     moon_.prepareForRender(0, kMoonRenderFlags, renderer, owners_.set);
 }
 
@@ -143,8 +236,8 @@ void CMoon::renderMoon(float projection_scale) {
 // the ends, darkest halfway.
 void CMoon::renderBats() {
     CDemonSet &set = owners_.set;
-    set.setLightDirection(kBatLight);
-    set.setAmbientBaseQuick(kBatAmbient);
+    set.setLightDirection(toVector(getSky().bat_light));
+    set.setAmbientBaseQuick(getSky().bat_ambient);
     if (!bats_enabled_) {
         return;
     }

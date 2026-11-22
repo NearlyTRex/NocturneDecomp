@@ -12,7 +12,9 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <memory>
 #include <optional>
+#include <string_view>
 #include <vector>
 
 namespace nocturne::core {
@@ -30,10 +32,14 @@ struct SMoonOwners {
     common::CWatcomRandom &crt_random;
     // Its Upscaler, which the title's animation is enlarged as.
     const platform::IDisplay &display;
+    // The packages' content, whose sky_scene gives what the backdrop draws.
+    const engine::SGameContent &content;
 };
 
-// The menu's backdrop: the moon turning into place, bats flying their courses across it once it
-// has, two layers of cloud drifting over, and the title's animation on top.
+// The menu's title backdrop, in the style the packages' [front_end] names. sky_scene: the moon
+// turning into place, bats flying their courses across it once it has, two layers of cloud
+// drifting over, and the title's animation on top. figure_scene: a still picture with animated
+// models before a fixed camera, and the title's animation on top.
 class CMoon {
 public:
     explicit CMoon(const SMoonOwners &owners);
@@ -60,13 +66,19 @@ private:
         common::CVector3f random_offset;
     };
 
-    static constexpr std::size_t kBatCount = 30;
-    static constexpr std::size_t kAnimationFrameCount = 30;
-    // The title's animation, at the top of the layout.
-    static constexpr int kAnimationWidth = 640;
-    static constexpr int kAnimationHeight = 278;
-
+    // Whether the packages name figure_scene; any style but the two is fatal.
+    [[nodiscard]] bool isFigureScene() const;
+    // The packages' sky_scene or figure_scene; without it, fatal.
+    [[nodiscard]] const engine::SSkyScene &getSky() const;
+    [[nodiscard]] const engine::SFigureScene &getFigure() const;
     void load();
+    void loadFigure();
+    void loadFrames(std::string_view prefix, int digits, int count, int width, int height);
+    void updateFigure(float delta_time);
+    void renderFigure();
+    // The layout's 640x480 viewport placed where the layout is on the screen, once the pass that
+    // draws it there is begun; false when the screen is that viewport.
+    [[nodiscard]] bool beginLayoutScene();
     void scatterBat(SBat &bat);
     void advanceBat(SBat &bat, const common::CExtendedFloat &step);
     // How much wider than 4:3 the 3D is projected, once the pass that stretches the layout's
@@ -80,20 +92,24 @@ private:
 
     SMoonOwners owners_;
     bool is_loaded_ = false;
-    // The moon's turn, from 0.25 at the start to 0.58 where it stops.
+    // The moon's turn, from the scene's start phase to where it rests.
     float rotation_phase_ = 0.0F;
     CKeyFramedModel moon_;
     CKeyFramedModel bat_model_;
     engine::CAlphaBitmap cloud_texture_;
     std::vector<engine::CAlphaBitmap> animation_textures_;
     std::vector<CCourse> bat_courses_;
-    std::array<SBat, kBatCount> bats_{};
+    std::vector<SBat> bats_;
     bool bats_enabled_ = false;
-    // Animation frames, 12 a second, wrapping at 60.
+    // Animation frames, wrapping at the scene's frame_wrap.
     float animation_timer_ = 0.0F;
     // 16.16 texels.
     std::int32_t cloud_scroll_x_ = 0;
     std::int32_t cloud_scroll_y_ = 0;
+    // figure_scene's picture, its models and the frame each is at.
+    engine::CAlphaBitmap backdrop_;
+    std::vector<std::unique_ptr<CKeyFramedModel>> figures_;
+    std::vector<int> figure_frames_;
 };
 
 } // namespace nocturne::core

@@ -12,12 +12,15 @@ namespace nocturne::core {
 
 // The enhanced game's Gameplay options: the settings that are neither display nor device, moved
 // from the Graphics and Control Options of the original so that each page fits under the logo.
-// Always run, aiming, auto health, subtitles, the text and menu fonts, and the rating.
+// Always run, aiming, auto health, subtitles, the text and menu fonts, and the rating; then a
+// game with difficulties' puzzle and combat difficulty, which BW1 listed on its Options page and
+// only showed.
 class CGameplayPage final : public CMenuPage {
 public:
     CGameplayPage(CMenu &menu, const SMenuOwners &owners);
 
     [[nodiscard]] std::optional<std::string> title() override;
+    [[nodiscard]] std::string_view getLayoutId() const override;
     // A build that can never show more has no rating line.
     void build(std::vector<SMenuLine> &lines) override;
     EMenuOutcome choose(int id, EMenuStep step) override;

@@ -2,6 +2,7 @@
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/font/bitfont.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "shape/edittool/edcontrols.h"
@@ -21,18 +22,6 @@ namespace {
 constexpr int kDialogKeyMask = 0x7f;
 // No window flags: the window saves the screen under it.
 constexpr std::uint32_t kSavingWindow = 0;
-constexpr int kOpaqueAlpha = 0xffff;
-constexpr int kEnabledTextColor = 0xff;
-constexpr int kDisabledTextColor = 0xf8;
-constexpr int kSelectionHighlightColor = 2;
-constexpr int kConfirmedSelectionColor = 0xfa;
-constexpr int kPickListSeparatorColor = 7;
-// Either side of a column's text, at the HUD scale; then the window's room around the columns.
-constexpr int kColumnPadding = 8;
-constexpr int kExtraWidth = 8;
-constexpr int kExtraHeight = 6;
-// A field is followed by a gap of a fortieth of the screen's width.
-constexpr int kFieldGapDivisor = 40;
 
 // A tab at the end starts no field.
 std::vector<std::string_view> splitFields(std::string_view text) {
@@ -103,12 +92,13 @@ void CPickList::calculateLayoutAndCreateComponents(std::string_view dialog_title
     controls.editor_tools.initEditorFontMetrics();
     const int scale = controls.editor_tools.getScale();
     const int line_height = controls.editor_tools.getEditorFontLineHeight();
-    row_height_ = line_height + 1;
-    column_padding_ = kColumnPadding * scale;
+    const engine::SListLook &look = controls.editor_tools.getListLook();
+    row_height_ = line_height + look.row_extra;
+    column_padding_ = look.column_padding * scale;
     measureFields(scale);
     sizeColumns(line_height);
-    int width = (column_width_ * column_count_) + kExtraWidth;
-    int height = (rows_per_column_ * row_height_) + kExtraHeight;
+    int width = (column_width_ * column_count_) + look.margin_width;
+    int height = (rows_per_column_ * row_height_) + look.margin_height;
     if (scroll_mode_ == EScrollMode::Vertical) {
         width += owners_.controls.calculateGridWidth();
     } else if (scroll_mode_ == EScrollMode::Horizontal) {
@@ -139,22 +129,24 @@ void CPickList::measureFields(int scale) {
     }
 }
 
-// As many rows as fit the screen less four lines, and as many columns as fit seven eighths of
-// its width, or one when forced; the scroll bar runs the way the list overflows.
+// As many rows as fit the screen less the look's reserved lines, and as many columns as fit its
+// share of the width, or one when forced; the scroll bar runs the way the list overflows.
 void CPickList::sizeColumns(int line_height) {
+    const engine::SListLook &look = owners_.controls.getOwners().editor_tools.getListLook();
     const int window_width = owners_.screen.getWindowWidth();
     const auto field_count = static_cast<std::size_t>(tab_column_count_);
     for (std::size_t field = 0; field + 1 < field_count; ++field) {
-        tab_column_widths_[field] += window_width / kFieldGapDivisor;
+        tab_column_widths_[field] += window_width / look.field_gap_divisor;
     }
     column_width_ =
         std::accumulate(tab_column_widths_.begin(),
                         tab_column_widths_.begin() + static_cast<std::ptrdiff_t>(field_count), 0) +
         (column_padding_ * 2);
     const int count = getItemCount();
-    const int rows = (owners_.screen.getWindowHeight() - (line_height * 4)) / row_height_;
+    const int rows =
+        (owners_.screen.getWindowHeight() - (line_height * look.reserved_lines)) / row_height_;
     rows_per_column_ = std::min(std::max(rows, 1), count);
-    const int columns = ((window_width * 7) / 8) / column_width_;
+    const int columns = ((window_width * look.width_share) / look.width_parts) / column_width_;
     column_count_ = std::min(std::max(columns, 1), getColumnsNeeded());
     if (forced_column_count_) {
         column_count_ = 1;
@@ -232,7 +224,8 @@ void CPickList::renderDialog() {
         }
         if (column > 0) {
             const int saved_color = controls.two_d.getActiveRenderColor();
-            controls.two_d.setActiveRenderColor(kPickListSeparatorColor);
+            controls.two_d.setActiveRenderColor(
+                controls.editor_tools.getListLook().separator_colour);
             controls.two_d.drawLine(left, clip.top, left, clip.bottom);
             controls.two_d.setActiveRenderColor(saved_color);
         }
@@ -247,19 +240,20 @@ void CPickList::renderDialog() {
 
 void CPickList::drawItem(int index, int left, int top) {
     const SEdControlsOwners &controls = owners_.controls.getOwners();
+    const engine::SListLook &look = controls.editor_tools.getListLook();
     if (index == current_index_) {
         controls.two_d.fillRectColor(left, top, (left + column_width_) - 1, (top + row_height_) - 1,
-                                     confirmed_flag_ ? kConfirmedSelectionColor
-                                                     : kSelectionHighlightColor);
+                                     confirmed_flag_ ? look.confirmed_colour
+                                                     : look.selected_colour);
     }
-    const int color = isItemEnabled(index) ? kEnabledTextColor : kDisabledTextColor;
+    const int color = isItemEnabled(index) ? look.item_colour : look.disabled_colour;
     engine::CBitFont &font = controls.editor_tools.requireEditorFont();
     const int scale = controls.editor_tools.getScale();
     int x = left + column_padding_;
     std::size_t field = 0;
     for (const std::string_view text : splitFields(getStringAt(index))) {
-        owners_.three_d.setRenderAlpha(kOpaqueAlpha);
-        font.drawText(text, x, top, color, engine::CBitFont::kNoShadow, scale);
+        owners_.three_d.setRenderAlpha(look.alpha);
+        font.drawText(text, x, top, color, look.shadow, scale);
         x += tab_column_widths_[field];
         ++field;
     }

@@ -34,7 +34,15 @@ protected:
                              .pods = {},
                              .game = {}},
                 .folder = std::string(id),
-                .written_by_game = false};
+                .written_by_game = false,
+                .is_game = false};
+    }
+
+    // A game's own package, as discovery marks one.
+    static SPackage game(std::string_view id) {
+        SPackage found = package(id);
+        found.is_game = true;
+        return found;
     }
 
     [[nodiscard]] SLoadOrder order() {
@@ -48,8 +56,7 @@ protected:
     }
 
     CPackageFiles files_;
-    std::vector<SPackage> discovered_{package("nocturne"), package("a"), package("b"),
-                                      package("c")};
+    std::vector<SPackage> discovered_{game("nocturne"), package("a"), package("b"), package("c")};
 };
 
 // What else was found is listed turned off, and noted.
@@ -72,7 +79,7 @@ TEST_F(CLoadOrderTest, TheFileChoosesAndOrdersEveryPackage) {
 }
 
 TEST_F(CLoadOrderTest, WithOnlyTheBaseGameTheNewFileNamesIt) {
-    discovered_ = {package("nocturne")};
+    discovered_ = {game("nocturne")};
     const SLoadOrder ordered = order();
     EXPECT_EQ(ids(ordered), std::vector<std::string>{"nocturne"});
     EXPECT_EQ(files_.contents("loadorder.txt"), "nocturne\n");
@@ -94,6 +101,24 @@ TEST_F(CLoadOrderTest, APackageTheFileDoesntNameIsAddedTurnedOff) {
 
 // A comment after an id, blank lines and a '#' before anything but an id are passed over; an
 // id's first line counts, on or off.
+// Nocturne is a game like any other: without the file the first game found is the one turned on.
+TEST_F(CLoadOrderTest, WithoutTheFileTheFirstGameFoundIsTurnedOn) {
+    discovered_ = {package("a"), game("blairwitch1"), game("nocturne")};
+    EXPECT_EQ(ids(order()), std::vector<std::string>{"blairwitch1"});
+    EXPECT_EQ(files_.contents("loadorder.txt"), "blairwitch1\n# a\n# nocturne\n");
+}
+
+// The games share POD names, so the first turned on runs and the rest wait, its mods with it.
+TEST_F(CLoadOrderTest, OneGameRunsAtATime) {
+    discovered_ = {game("nocturne"), game("blairwitch1"), package("a")};
+    files_.givenFile("loadorder.txt", "blairwitch1\nnocturne\na\n");
+    const SLoadOrder ordered = order();
+    EXPECT_EQ(ids(ordered), (std::vector<std::string>{"blairwitch1", "a"}));
+    EXPECT_EQ(ordered.notes, std::vector<std::string>{
+                                 "nocturne is a game as blairwitch1 is, and one game runs at a "
+                                 "time, so it isn't loaded"});
+}
+
 TEST_F(CLoadOrderTest, OnlyEachIdsFirstLineCounts) {
     files_.givenFile("loadorder.txt",
                      "\nb # after\n# an id here\n#\n# c\nnocturne\na\nb\nc\n# a\n");
@@ -121,7 +146,7 @@ TEST_F(CLoadOrderTest, AFileThatCantBeWrittenIsNoted) {
 // What a package needs must be loaded before it: needing a later one, a missing one or one left
 // out keeps it out too.
 TEST_F(CLoadOrderTest, APackageWhoseNeedsArentLoadedBeforeItIsLeftOut) {
-    discovered_ = {package("nocturne"), package("a", {"nocturne"}), package("b", {"c"}),
+    discovered_ = {game("nocturne"),    package("a", {"nocturne"}), package("b", {"c"}),
                    package("c", {"a"}), package("d", {"gone"}),     package("e", {"d"})};
     files_.givenFile("loadorder.txt", "nocturne\na\nb\nc\nd\ne\n");
     const SLoadOrder ordered = order();
@@ -141,7 +166,7 @@ protected:
         files_.givenLink("a/STARTUP.POD", "nocturne/STARTUP.POD");
         files_.givenFile("a/MINE.POD", "mine");
         files_.givenLink("b/STARTUP.POD", "nocturne/STARTUP.POD");
-        discovered_ = {withPods(package("nocturne"), {"STARTUP.POD"}),
+        discovered_ = {withPods(game("nocturne"), {"STARTUP.POD"}),
                        withPods(package("a"), {"STARTUP.POD", "MINE.POD"}),
                        withPods(package("b"), {"STARTUP.POD", "GONE.POD"})};
         discovered_[1].written_by_game = true;

@@ -28,6 +28,13 @@ struct SPodSettings {
     bool log_audit_trail = false;
 };
 
+// The game a load runs, chosen before its pods mount: its package's folder, relative to the
+// install's ("" the install's own), and its id (empty when no package names one).
+struct SChosenGame {
+    std::string folder;
+    std::string id;
+};
+
 // The mounted pods, searched in the order they were mounted: the first that holds a name wins.
 class CPod {
 public:
@@ -54,7 +61,8 @@ public:
     virtual void dismount(std::string_view filename);
     virtual void remount();
 
-    // Loads the pods unless some are mounted already.
+    // Loads the pods unless some are mounted already. A load that chose no game runs the
+    // install's.
     void init();
     void cleanup();
     void initSearch(std::string_view search_pattern, CPodSearchContext &search_context);
@@ -67,15 +75,21 @@ public:
     void setDismountHandler(std::function<void()> handler);
     void setSettings(const SPodSettings &settings);
     [[nodiscard]] const SPodSettings &getSettings() const;
+    // Told the game each load chooses, before its pods mount, so what is read first, these
+    // settings among it, can be the game's.
+    void setGameChosenHandler(std::function<void(const SChosenGame &)> handler);
 
 protected:
     [[nodiscard]] platform::IFileSystem &getFileSystem();
+    void chooseGame(const SChosenGame &game);
 
 private:
     platform::IFileSystem &file_system_;
     const CDosIo &dosio_;
     std::vector<std::unique_ptr<CPodFile>> pod_files_;
     std::function<void()> dismount_handler_;
+    std::function<void(const SChosenGame &)> game_chosen_handler_;
+    bool game_chosen_ = false;
     SPodSettings settings_;
 };
 

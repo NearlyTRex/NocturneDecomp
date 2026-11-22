@@ -48,7 +48,6 @@ constexpr int kHighBitDepth = 16;
 constexpr int kLowBitDepth = 8;
 constexpr int kStereo = 2;
 constexpr int kMono = 1;
-constexpr std::string_view kEffectsSample = "colt45-0.wav";
 
 int getNextRate(int rate, EMenuStep step) {
     if (step == EMenuStep::Back) {
@@ -88,6 +87,10 @@ CSoundOptionsPage::CSoundOptionsPage(CMenu &menu, const SMenuOwners &owners)
 
 std::optional<std::string> CSoundOptionsPage::title() {
     return localize("Sound Options");
+}
+
+std::string_view CSoundOptionsPage::getLayoutId() const {
+    return "sound";
 }
 
 // The Movie Vol line is the enhanced game's. The original also checked the current device against
@@ -283,7 +286,7 @@ void CSoundOptionsPage::playEffectsSample() {
     sound::CSndMain &sound_main = owners_.sound_main;
     sound_main.pushSfxOptions();
     sound_main.setNextSfxFlags(sound::kSfxNonPositional);
-    static_cast<void>(sound_main.startSfx(kEffectsSample));
+    static_cast<void>(sound_main.startSfx(getMenu().getMenuLayout().effects_sample));
     sound_main.popSfxOptions();
 }
 

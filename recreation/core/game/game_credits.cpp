@@ -1,3 +1,4 @@
+#include "common/error/error.h"
 #include "common/text/textlines.h"
 #include "core/dfont/dfont.h"
 #include "core/frontend.h"
@@ -31,44 +32,30 @@ namespace {
 constexpr int kImageWidth = 640;
 constexpr int kImageHeight = 480;
 constexpr int kFullAlpha = 0xffff;
-// The credits roll up the right of the image, between black strips over its top and bottom.
-constexpr int kColumnLeft = 414;
-constexpr int kTopStripBottom = 30;
-constexpr int kBottomStripTop = 439;
 constexpr int kImageBottom = kImageHeight - 1;
-constexpr int kStripColor = 0;
-constexpr int kTextColor = 0xf8;
-constexpr int kHeadingColor = 2;
-constexpr int kShadowColor = 0;
 // The character whose height spaces the lines.
 constexpr int kLineHeightChar = 'X';
-// In pixels a second, from the foot of the image.
-constexpr float kScrollSpeed = 32.0F;
-constexpr float kStartTop = static_cast<float>(kImageHeight);
-constexpr std::string_view kEndLine = "end";
-// A line starting with a backslash drops it and the character after; "\b" is a heading.
-constexpr char kMarker = '\\';
-constexpr char kHeadingMarker = 'b';
 
 // The credits with their first line at layout row `top`, those on the image and above its foot,
 // centred between the column's left and the screen's `right`, as large as the layout shows them.
 void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines, int top,
-                 const SFrontEndLayout &layout, int right) {
+                 const SFrontEndLayout &layout, int right,
+                 const engine::SCreditsColumnScroll &scroll) {
     const int line_height = font.getCharHeight(kLineHeightChar);
-    const int left = layout.getX(kColumnLeft);
+    const int left = layout.getX(scroll.column_left);
     int y = top;
     for (std::string_view line : lines) {
-        int color = kTextColor;
-        if (line.starts_with(kMarker)) {
-            if (line.size() > 1 && line[1] == kHeadingMarker) {
-                color = kHeadingColor;
+        int color = scroll.text_colour;
+        if (line.starts_with(scroll.marker)) {
+            if (line.size() > 1 && line[1] == scroll.heading) {
+                color = scroll.heading_colour;
             }
             line.remove_prefix(std::min<std::size_t>(2, line.size()));
         }
         if (y >= 0 && y < kImageBottom - line_height) {
             const int width = font.getTextWidthScaled(line, layout.scale);
             font.drawTextScaled(line, ((left + right) / 2) - (width / 2), layout.getY(y), color,
-                                kShadowColor, layout.scale);
+                                scroll.shadow_colour, layout.scale);
         }
         y += line_height;
     }
@@ -87,6 +74,11 @@ void CGame::rollCredits() {
     if (!credits) {
         return;
     }
+    requireFrontEndStyle("credits", owners_.content.front_end.credits, {kColumnScrollCredits});
+    if (!credits->column_scroll) {
+        common::displayErrorAndQuit("No package gives the column_scroll credits' look");
+    }
+    const engine::SCreditsColumnScroll &scroll = *credits->column_scroll;
     const engine::IScreenDevice &screen = owners_.screen;
     SFrontEndLayout layout = getFrontEndLayout(screen.getWindowWidth(), screen.getWindowHeight());
     layout.left = 0;
@@ -100,7 +92,7 @@ void CGame::rollCredits() {
         return;
     }
     std::vector<std::string_view> lines = common::splitTextLines(*text);
-    lines.erase(std::ranges::find(lines, kEndLine), lines.end());
+    lines.erase(std::ranges::find(lines, scroll.end_line), lines.end());
     sound::CSndMain &sound_main = owners_.sound_main;
     sound_main.resetSoundDevice();
     static_cast<void>(sound_main.enableSoundSystem());
@@ -113,11 +105,11 @@ void CGame::rollCredits() {
         sound_main.popSfxOptions();
     }
     owners_.two_d.clearInputAndWait();
-    engine::CBitFont &font = *owners_.fonts.getThemeFont();
+    engine::CBitFont &font = owners_.fonts.findFont(scroll.font);
     engine::CFont *const os_font = font.releaseWinFont();
     saveClockTime();
     owners_.three_d.setRenderAlpha(kFullAlpha);
-    float scroll_top = kStartTop;
+    auto scroll_top = static_cast<float>(scroll.start_y);
     std::optional<int> drawn_top;
     while (true) {
         const auto top = static_cast<int>(std::lround(scroll_top));
@@ -127,15 +119,15 @@ void CGame::rollCredits() {
             displayInLayout(image, layout,
                             {.x = 0, .y = 0, .width = kImageWidth, .height = kImageHeight},
                             kFullAlpha, owners_.display.getUpscaler());
-            drawCredits(font, lines, top, layout, right);
+            drawCredits(font, lines, top, layout, right, scroll);
             if (music != 0 && !sound_main.isSfxPlaying(music)) {
                 break;
             }
-            const int column_left = layout.getX(kColumnLeft);
-            owners_.two_d.fillRectColor(column_left, 0, right, layout.getY(kTopStripBottom),
-                                        kStripColor);
-            owners_.two_d.fillRectColor(column_left, layout.getY(kBottomStripTop), right, bottom,
-                                        kStripColor);
+            const int column_left = layout.getX(scroll.column_left);
+            owners_.two_d.fillRectColor(column_left, 0, right, layout.getY(scroll.top_strip_bottom),
+                                        scroll.strip_colour);
+            owners_.two_d.fillRectColor(column_left, layout.getY(scroll.bottom_strip_top), right,
+                                        bottom, scroll.strip_colour);
             drawn_top = top;
         }
         owners_.screen.swapBuffers();
@@ -143,7 +135,7 @@ void CGame::rollCredits() {
             break;
         }
         updateDT();
-        scroll_top -= getDeltaTimeFloat() * kScrollSpeed;
+        scroll_top -= getDeltaTimeFloat() * static_cast<float>(scroll.scroll_speed);
     }
     if (os_font != nullptr) {
         font.setWinFont(*os_font);

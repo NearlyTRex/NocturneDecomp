@@ -104,6 +104,9 @@ void CPod::init() {
     if (pod_files_.empty()) {
         load();
     }
+    if (!game_chosen_) {
+        chooseGame({});
+    }
 }
 
 // nocedit 0x00550c80
@@ -178,8 +181,19 @@ const SPodSettings &CPod::getSettings() const {
     return settings_;
 }
 
+void CPod::setGameChosenHandler(std::function<void(const SChosenGame &)> handler) {
+    game_chosen_handler_ = std::move(handler);
+}
+
 platform::IFileSystem &CPod::getFileSystem() {
     return file_system_;
+}
+
+void CPod::chooseGame(const SChosenGame &game) {
+    game_chosen_ = true;
+    if (game_chosen_handler_) {
+        game_chosen_handler_(game);
+    }
 }
 
 } // namespace nocturne::engine

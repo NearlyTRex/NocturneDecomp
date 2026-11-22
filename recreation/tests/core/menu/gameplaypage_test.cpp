@@ -3,6 +3,7 @@
 #include "core/game/game.h"
 #include "core/menu/gameplaypage.h"
 #include "core/menu/menupage.h"
+#include "engine/package/gamecontent.h"
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/core/menufixture.h"
 
@@ -27,6 +28,8 @@ constexpr int kSubtitles = 3;
 constexpr int kTextFont = 4;
 constexpr int kMenuText = 5;
 constexpr int kRating = 6;
+constexpr int kPuzzleDifficulty = 7;
+constexpr int kCombatDifficulty = 8;
 
 TEST(CGameplayPage, PublicInterface) {
     static_assert(std::is_base_of_v<CMenuPage, CGameplayPage>);
@@ -80,6 +83,39 @@ TEST_F(CGameplayPageTest, TheLinesShowTheCurrentSettings) {
 TEST_F(CGameplayPageTest, AQuimbyBuildHasNoRating) {
     game_.quimby_flag = 1;
     EXPECT_EQ(texts().size(), 6U);
+}
+
+// BW1's: the puzzle and combat difficulties close the page, each stepping between normal and
+// hard whichever way.
+TEST_F(CGameplayPageTest, AGameWithDifficultiesStepsThemOnTheirLines) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->features.difficulty = true;
+    game_.combat_difficulty_mode = 1;
+    const std::vector<std::string> lines = texts();
+    ASSERT_EQ(lines.size(), 9U);
+    EXPECT_EQ(lines[7], "Puzzle difficulty: Normal");
+    EXPECT_EQ(lines[8], "Combat difficulty: Hard");
+    choose(kPuzzleDifficulty);
+    choose(kCombatDifficulty, EMenuStep::Back);
+    EXPECT_EQ(game_.puzzle_difficulty_mode, 1);
+    EXPECT_EQ(game_.combat_difficulty_mode, 0);
+    EXPECT_EQ(text(kPuzzleDifficulty), "Puzzle difficulty: Hard");
+}
+
+// Any mode but hard reads, and is kept, as normal.
+TEST_F(CGameplayPageTest, ADifficultyThatIsntHardIsNormal) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->features.difficulty = true;
+    game_.puzzle_difficulty_mode = 5;
+    EXPECT_EQ(text(kPuzzleDifficulty), "Puzzle difficulty: Normal");
+    EXPECT_EQ(game_.puzzle_difficulty_mode, 0);
+}
+
+TEST_F(CGameplayPageTest, AGameWithoutDifficultiesListsNone) {
+    EXPECT_EQ(text(kPuzzleDifficulty), "");
+    EXPECT_EQ(text(kCombatDifficulty), "");
 }
 
 TEST_F(CGameplayPageTest, AlwaysRunAutoHealthAndSubtitlesToggle) {

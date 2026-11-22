@@ -31,6 +31,10 @@ public:
         return page_title;
     }
 
+    [[nodiscard]] std::string_view getLayoutId() const override {
+        return layout_id;
+    }
+
     void beginFrame() override {
         events.emplace_back("begin");
     }
@@ -61,6 +65,7 @@ public:
     }
 
     std::optional<std::string> page_title;
+    std::string layout_id;
     std::function<std::vector<SMenuLine>(int)> lines_for_frame = [](int) {
         return std::vector<SMenuLine>{{.id = 7, .text = ""}, {.id = 8, .text = "XX"}};
     };
@@ -236,6 +241,24 @@ TEST_F(CMenuPageTest, ATitledPageStartsUnderTheLogo) {
     };
     menu_.runPage(page_);
     EXPECT_EQ(row, letterRow(225));
+}
+
+// A page the layout lists sits at its own top; one it doesn't list, at the titled pages' top.
+TEST_F(CMenuPageTest, APageTheLayoutListsTakesItsOwnTop) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->page_tops = {{"sound", 200}};
+    page_.page_title = "XXX";
+    std::vector<int> rows;
+    on_frame_ = [&](int /*frame*/) {
+        rows.push_back(firstTextRow());
+        press(EInputCodeType::DIK_ESCAPE);
+    };
+    page_.layout_id = "sound";
+    menu_.runPage(page_);
+    page_.layout_id = "gameplay";
+    menu_.runPage(page_);
+    EXPECT_EQ(rows, (std::vector<int>{letterRow(200), letterRow(225)}));
 }
 
 // Another game's menus sit where its packages put them, as Blair Witch's do in the top right.
