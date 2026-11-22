@@ -34,7 +34,7 @@ the `[[loading]]`, `[[story]]` and `[translation]` tables. The rest is design.
 
 ```toml
 [front_end]
-title_backdrop = "sky_scene"      # sky_scene | figure_scene | flipbook | tiled_scroll
+title_backdrop = "sky_scene"      # sky_scene | figure_scene | tiled_scroll (BW2 is figure_scene)
 loading_indicator = "moon"        # moon | progress_bar | icon
 credits = "column_scroll"         # column_scroll | fade_loop | two_column
 story_select = "story_list"       # story_list | direct_start
@@ -72,13 +72,14 @@ Not built: those ids, and a `[fonts]` table naming the Menu text setting's two c
 left = 160
 top = 250
 titled_top = 225
-align = "left"                    # not built: left | centre
+align = "left"                    # optional: left | centre (BW2's: each line about x 320)
 trademark = { x = 518, y = 99, glyph = 0x99, alpha = 0x8000 }
 
 [menu.title]
 colour = 7
 shadow = 0                        # -1 for none
 gap_lines = 2
+drop = { x = 1, y = 1, colour = 2 }  # optional: BW2's copy under the line, drawn first
 
 [menu.item]
 font = "theme"
@@ -88,6 +89,7 @@ alpha = 48000
 shadow = -1
 spacing_titled = 1
 spacing_untitled = 2
+drop = { x = 0, y = 1, colour = 4 }  # optional, as the title's (BW2's)
 positions = []                    # not built: a point per main-menu item
 
 [menu.item.glow]
@@ -101,8 +103,13 @@ colour = 0xf8
 shadow = 0
 version_x = 4
 version_alpha = 0x8000
+version_corner = "bottom_left"    # optional: bottom_left | top_right (BW2 drew "1.2" there)
 format = "{copyright}"            # not built: {copyright}, {version}
 right = 639                       # not built: the copyright's right edge (BW1 619)
+
+[menu.music]                      # what configure plays, by the output's rate (30000 and under)
+low_rate = "splash-music-22.wav"  # BW2: XBLAIRMENU.wav for both
+high_rate = "splash-music-44.wav"
 
 [menu.flat_set]                   # not built, optional: BW's flat-lit set behind each page
 colour = [50000, 50000, 0x10000]
@@ -144,7 +151,7 @@ half_width = 16
 margin_divisor = 20
 height_percent = 25
 alpha = 0x8000
-mirrored = false                  # not built: BW2's, mirrored about x 320
+mirrored = false                  # optional: BW2's, a bar right of x 320 drawn at 640 - (x - 320)
 
 [menu.calibration]
 image = "brightness"
@@ -284,9 +291,29 @@ heading = "b"                     # after; with heading after, the line is a hea
 ```
 
 `column_scroll` ends with its music or on Cancel and draws its image at the layout's top left.
-Not built: `fade_loop` (BW2) and `two_column` (BW3), with their own tables: BW2's image at
-10,7, its alpha by distance from y 240 and its loop points; BW3's columns at 100/300 and its
-`\1`/`\2` markers.
+
+```toml
+[credits.fade_loop]               # BW2's (bw2 CGame::rollCredits 0x004be430)
+font = "theme"
+image_x = 10                      # the image's top left
+image_y = 7
+text_colour = 0xf8
+heading_colour = 0x02
+shadow_colour = 0
+scroll_speed = 32
+start_y = 480
+loop_below = -2500                # once the top is above this, it starts again from restart_y
+restart_y = 500
+fade_centre = 240                 # alpha = (1 - |y - fade_centre| / fade_reach) * 0xffff
+fade_reach = 240
+end_line = "end"
+marker = "\\"
+heading = "b"
+```
+
+Every line is centred across the layout. As `column_scroll`, a line is drawn from row 0 to above
+479 less a line, and the screen is redrawn only when the rounded scroll moves.
+Not built: `two_column` (BW3), with its columns at 100/300 and its `\1`/`\2` markers.
 
 ## Stories and the chapter title
 
@@ -325,8 +352,11 @@ The story list's title ("Choose a story to play") is a label. The difficulty mod
 game's `puzzle_difficulty_mode` and `combat_difficulty_mode`; with `[menu.features]`
 `difficulty` the Gameplay page lists them last and steps each between normal and hard. BW1 listed
 them on its Options page before Credits, and only showed them.
-Not built: `direct_start` (BW2, BW3), where START begins the one story with no list, and the
-modes' ini keys (BW1's and BW2's puzzleDifficultyMode and combatDifficultyMode). A story has one
+`direct_start` (BW2's, bw2 `CGame::showChapterSelect` 0x004bc840) begins the first story's first
+chapter with no list, from `[story_select.direct_start]`'s `loading_frames`; Control alone still
+opens the mission browser. BW2's year for it, 0x795 (1941), is BW1's left in its table, and
+never shown, since BW2 shows no chapter title; its manifest gives the story's own year, 1886.
+Not built: the modes' ini keys (BW1's and BW2's puzzleDifficultyMode and combatDifficultyMode). A story has one
 `title` for its list and its chapter title; BW1 quotes the first and not the second
 (bw1 `CGame::showChapterSelect` 0x004d7250), and its manifest takes the quoted one.
 
@@ -414,8 +444,12 @@ sky_scene truncates. `isAnimationFirstHalf` tests the timer against the whole wr
 draws it; the recreation loads neither. The 3D is scaled and centred with the layout, so the
 models stay on the backdrop on a wide screen.
 
-Not built: `flipbook` (BW2): frames only. `tiled_scroll` (BW3): scroll image, steps and wraps,
-the hand image's position and alpha range and step, the overlay image.
+BW2's backdrop (bw2 `CMoon` 0x005023e0, 0x005024a0, 0x00502510) is this scene without the
+backdrop, models or cheat model, which are optional: the same camera, light, flat colour and
+ambient, and its 75 frames `blairwitch_00` to `_74`, 640x282 at 0,0, 12 a second, wrapping at 74.
+The cheat code is only cleared.
+Not built: `tiled_scroll` (BW3): scroll image, steps and wraps, the hand image's position and
+alpha range and step, the overlay image.
 
 ## Loading indicator: `[loading_indicator.moon]`
 

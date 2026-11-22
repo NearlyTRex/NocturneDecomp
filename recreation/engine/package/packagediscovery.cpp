@@ -91,14 +91,23 @@ std::string relativeTo(std::string_view folder, std::string_view path) {
 }
 
 // A folder's nocturne.toml: nothing when it has none, else the package or what is wrong with it.
+// One the game wrote that this build can't read, written by a build before a key it needs, is
+// removed, so the folder is searched as one without, and its manifest written again.
 std::optional<std::expected<SPackage, std::string>> readPackage(platform::IFileSystem &file_system,
-                                                                std::string_view folder) {
+                                                                std::string_view folder,
+                                                                std::vector<std::string> &notes) {
     const std::string path = common::joinPath(folder, kManifestName);
     const std::optional<std::string> text = file_system.readFile(path);
     if (!text) {
         return std::nullopt;
     }
     std::expected<SPackageManifest, std::string> manifest = parsePackageManifest(*text);
+    if (!manifest && text->starts_with(kWrittenByGame)) {
+        notes.push_back(std::format("{}: {}; the game wrote it, so it is written again", path,
+                                    manifest.error()));
+        static_cast<void>(file_system.removeFile(path));
+        return std::nullopt;
+    }
     if (!manifest) {
         return std::unexpected(std::format("{}: {}", path, manifest.error()));
     }
@@ -196,7 +205,7 @@ private:
     void searchFolder(const std::string &folder, const std::string &inner,
                       const std::string &archive) {
         std::optional<std::expected<SPackage, std::string>> read =
-            readPackage(file_system_, folder);
+            readPackage(file_system_, folder, found_.notes);
         folders_.push_back({.path = folder,
                             .inner = inner,
                             .archive = archive,

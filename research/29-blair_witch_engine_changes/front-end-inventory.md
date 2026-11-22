@@ -216,7 +216,7 @@ These need a new key or a style value; Nocturne's code has nothing to move.
 | Rows | What BW does | Key |
 |---|---|---|
 | fe-menu renderMenuAndGetChoice bw2, bw3 | centred, shadowed items (bw2); a position per item (bw3); version in the footer | menu.align, menu.item.shadow, menu.item.positions, menu.footer.format |
-| fe-menu CMoon::* bw1-3 | another title backdrop: bw1 models + frames, fixed camera; bw2 frame loop; bw3 tiled scroll, hand ping-pong 5000..0xffff step 500, overlay | front_end.title_backdrop = sky_scene \| figure_scene \| flipbook \| tiled_scroll, with its values |
+| fe-menu CMoon::* bw1-3 | another title backdrop: bw1 models + frames, fixed camera; bw2 frame loop; bw3 tiled scroll, hand ping-pong 5000..0xffff step 500, overlay | front_end.title_backdrop = sky_scene \| figure_scene \| tiled_scroll, with its values; bw2 is figure_scene without backdrop or models |
 | fe-menu rollCredits bw2, bw3 | fade-loop credits; two-column credits | credits.style |
 | fe-menu showChapterSelect bw1; bw2, bw3 | difficulty picker after the story; START begins the one story | stories.difficulty_picker, stories.direct_start |
 | fe-opt showOptionsScreen bw1 | Puzzle / Combat difficulty toggles | an options item type |

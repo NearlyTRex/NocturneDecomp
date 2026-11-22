@@ -11,6 +11,7 @@
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
@@ -207,6 +208,81 @@ using CCreditsTest = CCreditsFixture<kWidth>;
 // The front end at 16:9.
 constexpr int kWideWidth = 848;
 using CWideCreditsTest = CCreditsFixture<kWideWidth>;
+
+// BW2's credits over the fixture's image.
+class CFadeCreditsTest : public CCreditsTest {
+protected:
+    CFadeCreditsTest() {
+        content_.front_end.credits = "fade_loop";
+        content_.credits->fade_loop =
+            engine::getShippedGameContent("blairwitch2").credits->fade_loop;
+    }
+
+    // The first row and column where something other than the image or the black about it is.
+    [[nodiscard]] std::pair<int, int> firstText() const {
+        for (int y = 0; y < kHeight; ++y) {
+            for (int x = 0; x < kWidth; ++x) {
+                const std::uint32_t pixel = screen_.pixel(x, y);
+                if (pixel != kImage && pixel != 0) {
+                    return {y, x};
+                }
+            }
+        }
+        return {-1, -1};
+    }
+};
+
+// Thirty frames up, the line is at the fade's centre: opaque, and centred across the layout.
+TEST_F(CFadeCreditsTest, ALineAtTheMiddleIsOpaqueAndCentred) {
+    givenCredits("XX\nend\n");
+    constexpr int kFrames = 31;
+    cancelAfterFrames(kFrames);
+    game_.rollCredits();
+    ASSERT_EQ(topAfterFrames(kFrames), 240);
+    const auto [row, column] = firstText();
+    EXPECT_EQ(row, letterRow(240));
+    EXPECT_EQ(column, (kWidth / 2) - (fonts_.getThemeFont()->getTextWidth("XX") / 2));
+    EXPECT_EQ(screen_.pixel(column, row), kTextPixel);
+}
+
+// Further from the middle, fainter.
+TEST_F(CFadeCreditsTest, ALineAwayFromTheMiddleIsFainter) {
+    givenCredits("XX\nend\n");
+    constexpr int kFrames = 11;
+    cancelAfterFrames(kFrames);
+    game_.rollCredits();
+    const auto [row, column] = firstText();
+    EXPECT_EQ(row, letterRow(topAfterFrames(kFrames)));
+    EXPECT_NE(screen_.pixel(column, row), kTextPixel);
+}
+
+// Once its top passes loop_below, it comes round again from restart_y.
+TEST_F(CFadeCreditsTest, TheCreditsStartOverOncePastTheirLoop) {
+    content_.credits->fade_loop->loop_below = 400;
+    content_.credits->fade_loop->restart_y = 450;
+    givenCredits("XX\nend\n");
+    cancelAfterFrames(12);
+    game_.rollCredits();
+    EXPECT_EQ(firstText().first, letterRow(450));
+}
+
+// The image at BW2's point, the black above and beside it.
+TEST_F(CFadeCreditsTest, TheImageIsAtItsPoint) {
+    givenCredits("end\n");
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(9, 100), 0U);
+    EXPECT_EQ(screen_.pixel(10, 7), kImage);
+    EXPECT_EQ(screen_.pixel(100, 6), 0U);
+}
+
+TEST_F(CFadeCreditsTest, WithoutItsValuesTheyAreFatal) {
+    content_.credits->fade_loop.reset();
+    givenCredits("XX\nend\n");
+    EXPECT_THAT([this] { game_.rollCredits(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the fade_loop credits' look")));
+}
 
 TEST_F(CCreditsTest, WithoutTheCreditsFileNothingRolls) {
     EXPECT_CALL(raw_input_, clearInput()).Times(1);

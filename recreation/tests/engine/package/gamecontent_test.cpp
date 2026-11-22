@@ -43,8 +43,8 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     base.front_end = getShippedGameContent().front_end;
     base.copyright = "Base";
     base.copyright_os_font = "(c) Base";
-    base.credits =
-        SGameCredits{.text = "a.txt", .image = "a", .music = "a.mp3", .column_scroll = {}};
+    base.credits = SGameCredits{
+        .text = "a.txt", .image = "a", .music = "a.mp3", .column_scroll = {}, .fade_loop = {}};
     base.menu = getShippedGameContent().menu;
     base.menu->left = 1;
     SGameContent mod;

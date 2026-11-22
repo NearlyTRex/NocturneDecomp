@@ -89,8 +89,8 @@ TEST(PackageManifest, CarriesGameContentAroundItsPods) {
     SPackageManifest manifest = fullManifest();
     manifest.game.copyright = "Game";
     manifest.game.front_end.title_backdrop = "sky_scene";
-    manifest.game.credits =
-        SGameCredits{.text = "c.txt", .image = "i", .music = {}, .column_scroll = {}};
+    manifest.game.credits = SGameCredits{
+        .text = "c.txt", .image = "i", .music = {}, .column_scroll = {}, .fade_loop = {}};
     const std::string text = formatPackageManifest(manifest);
     EXPECT_LT(text.find("copyright"), text.find("[[pod]]"));
     EXPECT_GT(text.find("[front_end]"), text.find("[[pod]]"));

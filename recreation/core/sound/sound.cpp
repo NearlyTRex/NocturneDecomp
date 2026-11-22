@@ -1,5 +1,6 @@
 #include "core/sound/sound.h"
 
+#include "engine/package/gamecontent.h"
 #include "sound/sndmain/sampleinfo.h"
 #include "sound/sndmain/sfxoptions.h"
 #include "sound/sndmain/sndmain.h"
@@ -20,10 +21,8 @@ constexpr float kMenuEffectsVolume = 0.25F;
 constexpr float kMenuMusicVolume = 0.25F;
 constexpr float kMenuDialogVolume = 1.0F;
 
-// Above this the output takes the 44 kHz music.
+// From this the output takes the high-rate music.
 constexpr int kLowestHighSampleRate = 30001;
-constexpr std::string_view kLowRateMusic = "splash-music-22.wav";
-constexpr std::string_view kHighRateMusic = "splash-music-44.wav";
 // What ends the file in a sound's name.
 constexpr std::string_view kSoundNameEnds = "@* \t\n\v\f\r";
 
@@ -37,8 +36,9 @@ void capChannelVolume(sound::CSndMain &sound_main, int channel_index, float volu
 
 // The original also set a tag word nothing read.
 // nocedit 0x005b2ce0
-CSound::CSound(sound::CSndMain &sound_main, engine::CPod &pod, platform::IFileSystem &file_system)
-    : sound_main_(sound_main), pod_(pod), file_system_(file_system) {
+CSound::CSound(sound::CSndMain &sound_main, engine::CPod &pod, platform::IFileSystem &file_system,
+               const engine::SGameContent &content)
+    : sound_main_(sound_main), pod_(pod), file_system_(file_system), content_(content) {
     sound_main_.setNumberOfSfxChannels(kSoundChannelCount);
     sound_main_.resetSoundSystemDefaults();
 }
@@ -70,7 +70,8 @@ void CSound::reset() {
 }
 
 // The original also pointed the listener's right at the origin, which only the DirectSound
-// device read. The music plays without a position.
+// device read. The music plays without a position, and is the game's: Nocturne's and BW1's
+// splash music, BW2's XBLAIRMENU.wav at either rate.
 // nocedit 0x005b3830
 // bw1 0x0057d6a0
 // bw2 0x0055ac50
@@ -91,10 +92,16 @@ void CSound::configure() {
     sound_main_.pushSfxOptions();
     sound_main_.setNextSfxChannel(kMusicChannel);
     sound_main_.setNextSfxFlagBits(sound::kSfxNonPositional);
-    const std::string_view music =
-        sound_main_.getAudioSampleRate() < kLowestHighSampleRate ? kLowRateMusic : kHighRateMusic;
-    sound_main_.startSfx(music);
-    reportMusic(getSoundDuration(music));
+    // A game whose packages give no menus plays none.
+    if (const std::optional<engine::SMenuLayout> &menu = content_.menu) {
+        const std::string_view music = sound_main_.getAudioSampleRate() < kLowestHighSampleRate
+                                           ? menu->music.low_rate
+                                           : menu->music.high_rate;
+        sound_main_.startSfx(music);
+        reportMusic(getSoundDuration(music));
+    } else {
+        reportMusic(0.0F);
+    }
     sound_main_.popSfxOptions();
 }
 

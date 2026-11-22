@@ -171,6 +171,20 @@ TEST_F(CPackageDiscoveryTest, ABrokenBaseManifestIsNotedAndLeftAsItIs) {
     EXPECT_EQ(files_.contents("nocturne.toml"), "id = \n");
 }
 
+// As a build before a key it needs wrote one: the game's own copy, so it is written again.
+TEST_F(CPackageDiscoveryTest, AWrittenManifestThisBuildCantReadIsWrittenAgain) {
+    files_.givenFile("nocturne.toml", std::format("{}\nid = \n", kWrittenByGame));
+    const SPackageDiscovery found = discover();
+    ASSERT_EQ(found.packages.size(), 1U);
+    EXPECT_EQ(found.packages.front().manifest.release, "1999-en-nocturne");
+    ASSERT_FALSE(found.notes.empty());
+    EXPECT_THAT(found.notes[0], StartsWith("nocturne.toml: line 2: "));
+    EXPECT_THAT(found.notes[0], HasSubstr("the game wrote it, so it is written again"));
+    const std::optional<std::string> written = files_.contents("nocturne.toml");
+    ASSERT_TRUE(written.has_value());
+    EXPECT_EQ(parsePackageManifest(*written), found.packages.front().manifest);
+}
+
 // One the game wrote that has lost a POD it needs is written again from where the PODs are now;
 // the player's own is left as it is.
 TEST_F(CMovedInstallTest, AStaleBaseManifestIsWrittenAgain) {

@@ -147,9 +147,11 @@ bool CMoon::beginLayoutScene() {
 
 // The original also processed the sound queue here, which the audio device pulls on its own
 // thread, and cleared only the screen; the depth is cleared as the sky's is. The lighting it
-// found is put back. Each model steps a frame per drawing, not per second.
+// found is put back. Each model steps a frame per drawing, not per second. Without a backdrop,
+// as BW2's, the frames are over the cleared screen.
 // deferred: switching the set to quick lighting for the models and back again, with
 //   setRenderingMode
+// bw2 0x00502510
 // bw1 0x00521e40
 void CMoon::renderFigure() {
     const engine::SFigureScene &figure = getFigure();
@@ -162,9 +164,11 @@ void CMoon::renderFigure() {
     const SFrontEndLayout layout =
         getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight());
     const platform::EUpscaler upscaler = owners_.display.getUpscaler();
-    displayInLayout(backdrop_, layout,
-                    {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
-                    figure.backdrop_alpha, upscaler);
+    if (!figure.backdrop.empty()) {
+        displayInLayout(backdrop_, layout,
+                        {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
+                        figure.backdrop_alpha, upscaler);
+    }
     const bool placed = beginLayoutScene();
     engine::CDemonRenderer &renderer = owners_.renderer;
     const std::array<double, 3> &origin = figure.camera_origin;

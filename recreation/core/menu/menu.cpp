@@ -166,6 +166,8 @@ void CMenu::showCalibrationTest() {
 // naming its build at the top. The rows are the layout's, drawn where and as large as the screen
 // shows them. A row wider than the room to the layout's right edge, as a long device name makes
 // one beside a menu on the right, is shortened to end in "..."; its line's list shows it whole.
+// A game's menus centred each line and drew a copy under it, as BW2's, where its packages say.
+// bw2 0x004eb0e0
 // nocedit 0x00510000
 int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selected_index,
                                   int y_position, std::optional<std::string_view> title) {
@@ -175,32 +177,53 @@ int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selec
     const SFrontEndLayout layout = getScreenLayout();
     const int line_height = font.getCharHeight(kLineHeightChar);
     if (title) {
-        font.drawTextScaled(*title, layout.getX(menu.left), layout.getY(y_position),
-                            menu.title.colour, menu.title.shadow, layout.scale);
+        drawMenuLine(font, *title, y_position, menu.title.colour, menu.title.shadow,
+                     menu.title.drop);
         y_position += line_height * menu.title.gap_lines;
     }
     const int spacing = title ? style.spacing_titled : style.spacing_untitled;
-    const int room = layout.getX(kFrontEndLayoutWidth) - layout.getX(menu.left);
+    const int room = layout.getX(kFrontEndLayoutWidth) -
+                     layout.getX(menu.align == engine::EMenuAlign::Centre ? 0 : menu.left);
     for (std::size_t i = 0; i < items.size(); ++i) {
         const std::string item = fitToWidth(font, items[i], room, layout.scale);
         int color = style.colour;
         if (std::cmp_equal(i, selected_index)) {
             // The glow pulses with the title animation, steady in its second half.
             if (style.glow.flicker && moon_.isAnimationFirstHalf() != 0) {
-                drawGlowingItem(font, item, menu.left, y_position);
+                drawGlowingItem(font, item, getLineLeft(font, item), y_position);
                 color = style.glow.colour;
             } else {
                 color = style.selected_colour;
             }
         }
         owners_.three_d.setRenderAlpha(style.alpha);
-        font.drawTextScaled(item, layout.getX(menu.left), layout.getY(y_position), color,
-                            style.shadow, layout.scale);
+        drawMenuLine(font, item, y_position, color, style.shadow, style.drop);
         y_position += spacing * line_height;
     }
     owners_.three_d.setRenderAlpha(kFullAlpha);
     drawFooter();
     return readMenuActions(items, selected_index);
+}
+
+// The line's left edge on the layout: the menus' own, or the line centred about the middle.
+int CMenu::getLineLeft(const engine::CBitFont &font, std::string_view text) const {
+    const engine::SMenuLayout &menu = getMenuLayout();
+    if (menu.align == engine::EMenuAlign::Centre) {
+        return (kFrontEndLayoutWidth - font.getTextWidth(text)) / 2;
+    }
+    return menu.left;
+}
+
+// Its copy first, in the copy's colour and the line's shadow, then the line.
+void CMenu::drawMenuLine(engine::CBitFont &font, std::string_view text, int y, int colour,
+                         int shadow, const std::optional<engine::SMenuDrop> &drop) {
+    const SFrontEndLayout layout = getScreenLayout();
+    const int left = getLineLeft(font, text);
+    if (drop) {
+        font.drawTextScaled(text, layout.getX(left + drop->x), layout.getY(y + drop->y),
+                            drop->colour, shadow, layout.scale);
+    }
+    font.drawTextScaled(text, layout.getX(left), layout.getY(y), colour, shadow, layout.scale);
 }
 
 // Each copy is up to two layout pixels off in x and y, at a random part of the item's alpha.
@@ -254,8 +277,16 @@ void CMenu::drawFooter() {
                             footer.colour, footer.shadow, layout.scale);
     }
     owners_.three_d.setRenderAlpha(footer.version_alpha);
-    font.drawTextScaled(owners_.build_version, layout.getLength(footer.version_x), bottom,
-                        footer.colour, footer.shadow, layout.scale);
+    if (footer.version_corner == engine::EVersionCorner::TopRight) {
+        const std::string_view version = owners_.build_version;
+        font.drawTextScaled(version,
+                            right + 1 - layout.getLength(footer.version_x) -
+                                font.getTextWidthScaled(version, layout.scale),
+                            layout.getY(0), footer.colour, footer.shadow, layout.scale);
+    } else {
+        font.drawTextScaled(owners_.build_version, layout.getLength(footer.version_x), bottom,
+                            footer.colour, footer.shadow, layout.scale);
+    }
     owners_.three_d.setRenderAlpha(kFullAlpha);
 }
 

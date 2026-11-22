@@ -72,6 +72,7 @@ protected:
                      .moon_indicator = {},
                      .stories = {},
                      .story_select = {},
+                     .direct_start = {},
                      .chapter_title = {},
                      .labels = {},
                      .translations = {}}},

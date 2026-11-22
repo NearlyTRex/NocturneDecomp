@@ -260,7 +260,7 @@ private:
                                .current_texture = current_texture_}};
     // deferred: the 10 train noises, with processTrainSounds
     // nocedit 0x005b1760
-    core::CSound sound_{sound_main_, pod_, game_files_};
+    core::CSound sound_{sound_main_, pod_, game_files_, pod_.getGameContent()};
     core::CAttractMovies attract_movies_{clock_};
     // deferred: the filter cache and filter effects, with CFilterCache's and CFilterFX's
     //   constructors

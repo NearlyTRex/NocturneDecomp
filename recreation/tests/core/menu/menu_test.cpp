@@ -251,7 +251,7 @@ protected:
     CActor actor_{game_, crt_random_, models_, keyframed_models_, actor_events_};
     engine::CMenuInput menu_input_{keys_, game_parts_.getGamepad().input};
     engine::CPod pod_{file_system_, dosio_};
-    CSound game_sound_{sound_, pod_, file_system_};
+    CSound game_sound_{sound_, pod_, file_system_, game_parts_.getContent()};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
@@ -600,6 +600,55 @@ TEST_F(CMenuTest, AnItemThatFitsIsDrawnWhole) {
     const int fitting = lastLit(letterRow(100));
     EXPECT_GT(fitting, 560);
     EXPECT_LT(fitting, 600);
+}
+
+// BW2's: each line about the layout's middle, the title too.
+TEST_F(CMenuTest, CentredMenusCentreEachLine) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->align = engine::EMenuAlign::Centre;
+    menu->item.glow.flicker = false;
+    int selected = 1;
+    choose({"XX", "XXXXXX"}, selected, "XXXX");
+    EXPECT_EQ(firstLit(letterRow(100)), (kWidth - smallFont().getTextWidth("XXXX")) / 2);
+    const int first_item = 100 + (menu->title.gap_lines * lineHeight());
+    EXPECT_EQ(firstLit(letterRow(first_item)), (kWidth - smallFont().getTextWidth("XX")) / 2);
+    EXPECT_EQ(firstLit(letterRow(first_item + lineHeight())),
+              (kWidth - smallFont().getTextWidth("XXXXXX")) / 2);
+}
+
+// A copy one row down makes every line reach a row further.
+TEST_F(CMenuTest, ALinesDropCopyIsDrawnUnderIt) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    const auto lowest = [this] {
+        for (int y = 100 + lineHeight(); y >= 100; --y) {
+            if (firstLit(y) >= 0) {
+                return y;
+            }
+        }
+        return -1;
+    };
+    int selected = 1;
+    choose({"XX", "XX"}, selected);
+    const int without = lowest();
+    menu->item.drop = engine::SMenuDrop{.x = 0, .y = 1, .colour = 4};
+    choose({"XX", "XX"}, selected);
+    EXPECT_EQ(lowest(), without + 1);
+}
+
+// BW2 drew its "1.2" there.
+TEST_F(CMenuTest, TheBuildsLineCanBeInTheTopRight) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->footer.version_corner = engine::EVersionCorner::TopRight;
+    menu->footer.version_x = 0;
+    int selected = 0;
+    choose({"XX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(0)), kWidth - smallFont().getTextWidth("X"));
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
+    EXPECT_NE(firstLit(letterRow(bottom)), 4);
 }
 
 TEST_F(CMenuTest, WithoutACopyrightOrTrademarkOnlyTheBuildIsInTheFooter) {

@@ -301,7 +301,7 @@ TEST_F(CDemonPodTest, TheLoadedPackagesContentIsMergedInLoadOrder) {
     givenMod("mods/extra", "id = \"extra\"\ncopyright = \"Extra\"\n"
                            "[[pod]]\npath = \"EXTRA.POD\"\n");
     givenPod("mods/extra/EXTRA.POD", {{.name = "data\\x.txt", .data = "x"}});
-    givenMod("mods/broken", "id = \"broken\"\nfront_end.title_backdrop = \"flipbook\"\n"
+    givenMod("mods/broken", "id = \"broken\"\nfront_end.title_backdrop = \"no_such_style\"\n"
                             "required = [\"GONE.POD\"]\n");
     load();
     const engine::SGameContent &content = pod().getGameContent();

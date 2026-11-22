@@ -94,7 +94,8 @@ TEST(GameContentFile, NoContentWritesNothing) {
 
 TEST(GameContentFile, WritesOnlyWhatAStoryAndPictureHave) {
     SGameContent content;
-    content.credits = SGameCredits{.text = "c.txt", .image = "i", .music = {}, .column_scroll = {}};
+    content.credits = SGameCredits{
+        .text = "c.txt", .image = "i", .music = {}, .column_scroll = {}, .fade_loop = {}};
     content.menu = getShippedGameContent().menu;
     content.menu->trademark.reset();
     EXPECT_THAT(formatGameContentTables(content),
@@ -192,7 +193,11 @@ INSTANTIATE_TEST_SUITE_P(
     ::testing::Values(
         SBadCase{"story_select = 1", "story_select: not a [story_select] table"},
         SBadCase{"[story_select]\nprobe = 1", "story_select: probe: not a key this file takes"},
-        SBadCase{"[story_select]", "story_select: story_list: missing"},
+        SBadCase{"[story_select]", "story_select: missing a style's table"},
+        SBadCase{"[story_select.direct_start]\nframes = 1",
+                 "story_select: direct_start: frames: not a key this file takes"},
+        SBadCase{"[story_select.direct_start]",
+                 "story_select: direct_start: loading_frames: missing"},
         SBadCase{"[story_select.story_list]\nprobe = 1",
                  "story_select: story_list: probe: not a key this file takes"},
         SBadCase{"[story_select.story_list]\nloading_frames = 10",
@@ -268,7 +273,10 @@ constexpr std::string_view kMenuSlider =
     "[menu.slider]\nwidth_share = 3\nwidth_parts = 4\nheight = 44\nbar_colour = 4\n"
     "trough_colour = 0\nborder_colour = 255\ntext_colour = 255\ntext_shadow = 0\n";
 
-constexpr std::string_view kMenuFeatures = "[menu.features]\ndifficulty = false\n";
+// With the music, the table read last.
+constexpr std::string_view kMenuFeatures =
+    "[menu.features]\ndifficulty = false\n"
+    "[menu.music]\nlow_rate = 'low.wav'\nhigh_rate = 'high.wav'\n";
 
 std::string menuWith(std::string_view title, std::string_view item, std::string_view glow,
                      std::string_view footer, std::string_view calibration) {
@@ -423,7 +431,22 @@ INSTANTIATE_TEST_SUITE_P(
                  "menu: features: crosshair: not a key this file takes"},
         SBadCase{
             menuThen(std::format("{}{}{}[menu.features]\n", kMenuOptions, kMenuSound, kMenuSlider)),
-            "menu: features: difficulty: missing"}));
+            "menu: features: difficulty: missing"},
+        SBadCase{menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\n", kMenuOptions,
+                                      kMenuSound, kMenuSlider)),
+                 "menu: music: missing"},
+        SBadCase{menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\n"
+                                      "[menu.music]\nlow_rate = 'a.wav'\n",
+                                      kMenuOptions, kMenuSound, kMenuSlider)),
+                 "menu: music: high_rate: missing"},
+        SBadCase{menuKeyed("align = 'right'"), "menu: align: not one of left, centre"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
+                          std::format("{}version_corner = 'top_left'\n", kMenuFooter),
+                          kMenuCalibration),
+                 "menu: footer: version_corner: not one of bottom_left, top_right"},
+        SBadCase{menuWith(std::format("{}drop = {{ x = 9, y = 0, colour = 2 }}\n", kMenuTitle),
+                          kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration),
+                 "menu: title: drop: x: not from -8 to 8"}));
 
 // The moon indicator's table whole but for what a case adds after its strings.
 constexpr std::string_view kMoonStrings =
@@ -514,13 +537,19 @@ INSTANTIATE_TEST_SUITE_P(
     TitleBackdrop, CGameContentErrorTest,
     ::testing::Values(
         SBadCase{"title_backdrop = 1", "title_backdrop: not a [title_backdrop] table"},
-        SBadCase{"[title_backdrop]\nflipbook = 1",
-                 "title_backdrop: flipbook: not a key this file takes"},
+        SBadCase{"[title_backdrop]\nno_such_style = 1",
+                 "title_backdrop: no_such_style: not a key this file takes"},
         SBadCase{"[title_backdrop.figure_scene]\nmoon = 1",
                  "title_backdrop: figure_scene: moon: not a key this file takes"},
         SBadCase{"[title_backdrop.figure_scene]\nbackdrop = 'b'\ncheat_model = 'c'\n"
-                 "frame_prefix = 'f'",
+                 "frame_prefix = 'f'\nmodels = 1",
                  "title_backdrop: figure_scene: models: not a list of model tables"},
+        SBadCase{"[title_backdrop.figure_scene]\nbackdrop = 'b'\nframe_prefix = 'f'",
+                 "title_backdrop: figure_scene: backdrop_alpha: missing"},
+        SBadCase{"[title_backdrop.figure_scene]\nframe_prefix = 'f'\nbackdrop_alpha = 1",
+                 "title_backdrop: figure_scene: backdrop_alpha: there is no backdrop"},
+        SBadCase{"[title_backdrop.figure_scene]\nbackdrop = 'b'",
+                 "title_backdrop: figure_scene: frame_prefix: missing"},
         SBadCase{"[title_backdrop.figure_scene]\nbackdrop = 'b'\ncheat_model = 'c'\n"
                  "frame_prefix = 'f'\nmodels = [{ file = 'a.kfm' }]",
                  "title_backdrop: figure_scene: models 1: frame_wrap: missing"},
@@ -620,6 +649,52 @@ TEST(GameContentFile, BlairWitchOnesFrontEndReads) {
     EXPECT_EQ(content->stories.front().chapters.front().mission, "hq-bw1.msn");
     ASSERT_EQ(content->loading.size(), 1U);
     EXPECT_FALSE(content->loading.front().random);
+}
+
+TEST(GameContentFile, BlairWitchTwosFrontEndReads) {
+    const auto games = getEmbeddedGames();
+    const auto bw2 = std::ranges::find(games, "blairwitch2", &SEmbeddedGame::id);
+    ASSERT_NE(bw2, games.end());
+    const std::expected<SGameContent, std::string> content = parseGameContent(bw2->text);
+    ASSERT_TRUE(content.has_value()) << content.error();
+    ASSERT_TRUE(content->figure_scene.has_value());
+    EXPECT_TRUE(content->figure_scene->backdrop.empty());
+    EXPECT_TRUE(content->figure_scene->models.empty());
+    EXPECT_TRUE(content->figure_scene->cheat_model.empty());
+    EXPECT_EQ(content->figure_scene->frame_count, 75);
+    ASSERT_TRUE(content->menu.has_value());
+    const SMenuLayout &menu = *content->menu;
+    EXPECT_EQ(menu.align, EMenuAlign::Centre);
+    EXPECT_EQ(menu.top, 310);
+    EXPECT_EQ(menu.titled_top, 290);
+    EXPECT_EQ(menu.title.drop, (SMenuDrop{.x = 1, .y = 1, .colour = 2}));
+    EXPECT_EQ(menu.item.drop, (SMenuDrop{.x = 0, .y = 1, .colour = 4}));
+    EXPECT_EQ(menu.footer.version_corner, EVersionCorner::TopRight);
+    EXPECT_EQ(menu.music.high_rate, "XBLAIRMENU.wav");
+    ASSERT_TRUE(menu.spectrum.has_value());
+    EXPECT_TRUE(menu.spectrum->mirrored);
+    EXPECT_FALSE(menu.trademark.has_value());
+    ASSERT_TRUE(content->credits.has_value());
+    ASSERT_TRUE(content->credits->fade_loop.has_value());
+    EXPECT_EQ(content->credits->fade_loop->loop_below, -2500);
+    ASSERT_TRUE(content->direct_start.has_value());
+    EXPECT_EQ(content->direct_start->loading_frames, 10);
+    ASSERT_EQ(content->stories.size(), 1U);
+    EXPECT_EQ(content->stories.front().chapters.front().mission, "awakening.msn");
+    ASSERT_TRUE(content->controls.has_value());
+    EXPECT_EQ(content->controls->bindings.size(), 23U);
+}
+
+// What a written manifest holds of the new looks reads back the same.
+TEST(GameContentFile, BlairWitchTwosFrontEndWritesBack) {
+    const auto games = getEmbeddedGames();
+    const auto bw2 = std::ranges::find(games, "blairwitch2", &SEmbeddedGame::id);
+    ASSERT_NE(bw2, games.end());
+    const std::expected<SGameContent, std::string> content = parseGameContent(bw2->text);
+    ASSERT_TRUE(content.has_value()) << content.error();
+    const std::expected<SGameContent, std::string> again = parseGameContent(format(*content));
+    ASSERT_TRUE(again.has_value()) << again.error();
+    EXPECT_EQ(*again, *content);
 }
 
 TEST(GameContentFile, AWholeMenuReads) {

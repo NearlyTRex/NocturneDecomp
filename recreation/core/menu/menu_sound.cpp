@@ -105,8 +105,10 @@ void CMenu::drawAudioSpectrum() {
             const auto top = static_cast<int>(
                 std::lround(static_cast<float>(height) -
                             (level * static_cast<float>(height) * full_level_share)));
-            const auto column = static_cast<int>(std::lround(static_cast<float>(x) / scale));
-            bars.push_back({.x_center = x,
+            // Mirrored, a bar right of the middle is as far left of the right edge.
+            const int drawn_x = spectrum->mirrored && x > width / 2 ? width - (x - (width / 2)) : x;
+            const auto column = static_cast<int>(std::lround(static_cast<float>(drawn_x) / scale));
+            bars.push_back({.x_center = drawn_x,
                             .half_width = half_width,
                             .height_half = bottom - top + 1,
                             .frame = getAudioSpectrumFrame(column)});
@@ -127,7 +129,9 @@ int CMenu::getAudioSpectrumFrame(int column) const {
            static_cast<int>(audio_spectrum_textures_.size());
 }
 
-// Half transparent and added to what is under it.
+// Half transparent and added to what is under it. BW2's mirrored a bar right of the middle here;
+// drawAudioSpectrum does, where the frame is picked from the same column.
+// bw2 0x004eaf30
 // nocedit 0x0050fe70
 void CMenu::renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top, int alpha) {
     const int height_half = bar.height_half;

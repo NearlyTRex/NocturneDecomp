@@ -37,20 +37,20 @@ or a mod can change it without code. Nocturne's is `recreation/data/games/noctur
 | Key | What it sets |
 |---|---|
 | `title`, `copyright` | The game's name and copyright line |
-| `[front_end]` | The style of each front-end part, named for how it is drawn: `title_backdrop` (Nocturne's `sky_scene`, BW1's `figure_scene`, BW2's `flipbook`, BW3's `tiled_scroll`) and `loading_indicator` (Nocturne's `moon`, BW2's `progress_bar`), `credits` (Nocturne's `column_scroll`) and `story_select` (Nocturne's `story_list`, BW2's `direct_start`). A mod can change one part and keep the rest |
-| `[menu]` | Where the menus sit and how they look: colours, fonts, spacing, glow, footer, calibration, slider, sound page and attract movies |
+| `[front_end]` | The style of each front-end part, named for how it is drawn: `title_backdrop` (Nocturne's `sky_scene`, BW1's and BW2's `figure_scene`, BW3's `tiled_scroll`) and `loading_indicator` (Nocturne's `moon`, BW2's `progress_bar`), `credits` (Nocturne's `column_scroll`, BW2's `fade_loop`) and `story_select` (Nocturne's `story_list`, BW2's `direct_start`). A mod can change one part and keep the rest |
+| `[menu]` | Where the menus sit and how they look: alignment, colours, fonts, spacing, glow, a drop copy under each line, footer, calibration, slider, sound page, music and attract movies |
 | `[controls]` | The control modes the Control line steps through (`keyboard`, `keyboard_mouse`, `gamepad`), each with its label, aim and default codes per action, and the bindings page's rows. The hotkeys are the engine's |
 | `[[font]]` | Each bitmap font by role (`medium`, `tiny`, `theme`, `small_editor`, `console`, `micro`): its sheet, spacing, character offsets, shadow and OS font size. A mod's font replaces the one with its id |
 | `[list]`, `[dialog]` | How pick lists, dialog windows, prompts, the progress bar, scroll bars and buttons look |
 | `[labels]` | The game's text for the engine's English labels, before translation |
 | `[title_backdrop.sky_scene]` | The menus' moon, bats, clouds and title animation |
-| `[title_backdrop.figure_scene]` | A still backdrop with animated models before a fixed camera, and the title animation |
+| `[title_backdrop.figure_scene]` | A still backdrop with animated models before a fixed camera, and the title animation; the backdrop and models are optional |
 | `[startup]` | The picture and "Loading..." label while the game starts, and the opening movie |
 | `[[loading]]` | Loading screens and their moon placement and tint |
 | `[loading_indicator.moon]` | The loading moon's model, glow, windows, light and status line |
 | `[[story]]`, `[[story.chapter]]` | The episodes, their chapters and missions, and unlock codes |
-| `[story_select.story_list]`, `[chapter_title]` | How START picks a story and its difficulty, and how the chosen story's title shows over the game |
-| `[credits]` | Credits text, image and music, and in `[credits.column_scroll]` how the column scrolls and looks |
+| `[story_select.story_list]`, `[story_select.direct_start]`, `[chapter_title]` | How START picks a story and its difficulty, or starts the first story at once, and how the chosen story's title shows over the game |
+| `[credits]` | Credits text, image and music, and in `[credits.column_scroll]` or `[credits.fade_loop]` how they scroll and look |
 | `[translation.<lang>]` | Text translations, picked by `language=` in `nocturne.ini` |
 
 When several packages set these, a scalar takes the last value set, stories and loading screens

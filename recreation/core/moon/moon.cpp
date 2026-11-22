@@ -118,8 +118,10 @@ void CMoon::loadFrames(std::string_view prefix, int digits, int count, int width
     }
 }
 
-// The cheat model takes the first model's place, and the rest stay unloaded, drawing nothing. The
-// original also loaded the sky's cloud, which this style never draws.
+// The cheat model takes the first model's place, and the rest stay unloaded, drawing nothing; a
+// scene without one, as BW2's, only clears the code. The original also loaded the sky's cloud,
+// which this style never draws.
+// bw2 0x005023e0
 // bw1 0x00521c50
 void CMoon::loadFigure() {
     const engine::SFigureScene &figure = getFigure();
@@ -128,15 +130,20 @@ void CMoon::loadFigure() {
         // The original's counters start at 1.
         figure_frames_.push_back(1);
     }
-    if (owners_.game.head_of_horror_cheat == figure.cheat_code) {
-        figures_.front()->load(figure.cheat_model);
+    const bool cheat = owners_.game.head_of_horror_cheat == figure.cheat_code;
+    if (cheat) {
         owners_.game.head_of_horror_cheat = 0;
+    }
+    if (cheat && !figure.cheat_model.empty() && !figures_.empty()) {
+        figures_.front()->load(figure.cheat_model);
     } else {
         for (std::size_t i = 0; i < figure.models.size(); ++i) {
             figures_[i]->load(figure.models[i].file);
         }
     }
-    backdrop_.load(figure.backdrop, kFrontEndLayoutWidth, kFrontEndHeight);
+    if (!figure.backdrop.empty()) {
+        backdrop_.load(figure.backdrop, kFrontEndLayoutWidth, kFrontEndHeight);
+    }
     loadFrames(figure.frame_prefix, figure.frame_digits, figure.frame_count, figure.frame_width,
                figure.frame_height);
     is_loaded_ = true;
@@ -232,6 +239,7 @@ void CMoon::advanceBat(SBat &bat, const CExtendedFloat &step) {
 }
 
 // The title's timer alone; the original also scrolled the cloud this style never draws.
+// bw2 0x005024a0
 // bw1 0x00521dd0
 void CMoon::updateFigure(float delta_time) {
     const engine::SFigureScene &figure = getFigure();

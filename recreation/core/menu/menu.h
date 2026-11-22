@@ -174,6 +174,9 @@ private:
     // The 640x480 layout as this screen shows it.
     [[nodiscard]] SFrontEndLayout getScreenLayout() const;
     void drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y);
+    [[nodiscard]] int getLineLeft(const engine::CBitFont &font, std::string_view text) const;
+    void drawMenuLine(engine::CBitFont &font, std::string_view text, int y, int colour, int shadow,
+                      const std::optional<engine::SMenuDrop> &drop);
     [[nodiscard]] std::string_view getCopyright() const;
     void drawFooter();
     // The choice the menu actions make this frame, or -1.

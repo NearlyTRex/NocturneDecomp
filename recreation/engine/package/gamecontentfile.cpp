@@ -33,6 +33,15 @@ constexpr int kMaxAlpha = 0xffff;
 // Lines between menu rows or from a screen's edge, far more than a 480-line layout holds.
 constexpr int kMaxLines = 40;
 constexpr int kMaxGlowCopies = 16;
+// A line's copy under it, a few pixels off.
+constexpr int kMaxDropOffset = 8;
+// Far past where a credits' scroll starts or loops, a few thousand lines up.
+constexpr int kMaxScrollTop = 100000;
+
+constexpr std::array<std::pair<std::string_view, EMenuAlign>, 2> kMenuAligns{
+    {{"left", EMenuAlign::Left}, {"centre", EMenuAlign::Centre}}};
+constexpr std::array<std::pair<std::string_view, EVersionCorner>, 2> kVersionCorners{
+    {{"bottom_left", EVersionCorner::BottomLeft}, {"top_right", EVersionCorner::TopRight}}};
 constexpr int kMaxFramesPerSecond = 1000;
 // A hero type's flags fit a byte.
 constexpr int kMaxHeroType = 0xff;
@@ -218,9 +227,65 @@ TomlResult<std::optional<SMenuTrademark>> readTrademark(const toml::table &table
     return trademark;
 }
 
+// The keyword's value by its name, or fallback when the key is left out.
+template <typename TValue, std::size_t Count>
+TomlResult<TValue>
+readKeyword(const toml::table &table, std::string_view where, std::string_view key, TValue fallback,
+            const std::array<std::pair<std::string_view, TValue>, Count> &names) {
+    TomlResult<std::optional<std::string>> value = readString(table, where, key);
+    if (!value) {
+        return std::unexpected(value.error());
+    }
+    if (!*value) {
+        return fallback;
+    }
+    const auto found =
+        std::ranges::find(names, **value, &std::pair<std::string_view, TValue>::first);
+    if (found == names.end()) {
+        std::string known;
+        for (const auto &[name, choice] : names) {
+            known += std::format("{}{}", known.empty() ? "" : ", ", name);
+        }
+        return std::unexpected(std::format("{}{}: not one of {}", where, key, known));
+    }
+    return found->second;
+}
+
+template <typename TValue, std::size_t Count>
+std::string_view
+getKeywordName(TValue value, const std::array<std::pair<std::string_view, TValue>, Count> &names) {
+    return std::ranges::find(names, value, &std::pair<std::string_view, TValue>::second)->first;
+}
+
+// A line's copy under it, or none.
+TomlResult<std::optional<SMenuDrop>> readMenuDrop(const toml::table &table,
+                                                  std::string_view where) {
+    const TomlResult<const toml::table *> found = readTable(table, where, "drop");
+    if (!found) {
+        return std::unexpected(found.error());
+    }
+    if (*found == nullptr) {
+        return std::nullopt;
+    }
+    const std::string inner = std::format("{}drop: ", where);
+    if (TomlResult<void> keys = rejectUnknownKeys(**found, inner, {"x", "y", "colour"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    SMenuDrop drop;
+    if (TomlResult<void> read = readIntegers(**found, inner,
+                                             {{"x", &drop.x, -kMaxDropOffset, kMaxDropOffset},
+                                              {"y", &drop.y, -kMaxDropOffset, kMaxDropOffset},
+                                              {"colour", &drop.colour, 0, kMaxColour}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    return drop;
+}
+
 TomlResult<SMenuTitle> readMenuTitle(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: title: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"colour", "shadow", "gap_lines"});
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, kWhere, {"colour", "shadow", "gap_lines", "drop"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -232,6 +297,11 @@ TomlResult<SMenuTitle> readMenuTitle(const toml::table &table) {
         !read) {
         return std::unexpected(read.error());
     }
+    TomlResult<std::optional<SMenuDrop>> drop = readMenuDrop(table, kWhere);
+    if (!drop) {
+        return std::unexpected(drop.error());
+    }
+    title.drop = *drop;
     return title;
 }
 
@@ -261,7 +331,7 @@ TomlResult<SMenuItems> readMenuItems(const toml::table &table) {
     if (TomlResult<void> keys =
             rejectUnknownKeys(table, kWhere,
                               {"font", "colour", "selected_colour", "alpha", "shadow",
-                               "spacing_titled", "spacing_untitled", "glow"});
+                               "spacing_titled", "spacing_untitled", "glow", "drop"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -291,13 +361,19 @@ TomlResult<SMenuItems> readMenuItems(const toml::table &table) {
         return std::unexpected(read_glow.error());
     }
     items.glow = *read_glow;
+    TomlResult<std::optional<SMenuDrop>> drop = readMenuDrop(table, kWhere);
+    if (!drop) {
+        return std::unexpected(drop.error());
+    }
+    items.drop = *drop;
     return items;
 }
 
 TomlResult<SMenuFooter> readMenuFooter(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: footer: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
-            table, kWhere, {"font", "colour", "shadow", "version_x", "version_alpha"});
+            table, kWhere,
+            {"font", "colour", "shadow", "version_x", "version_alpha", "version_corner"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -316,6 +392,12 @@ TomlResult<SMenuFooter> readMenuFooter(const toml::table &table) {
         !read) {
         return std::unexpected(read.error());
     }
+    TomlResult<EVersionCorner> corner =
+        readKeyword(table, kWhere, "version_corner", EVersionCorner::BottomLeft, kVersionCorners);
+    if (!corner) {
+        return std::unexpected(corner.error());
+    }
+    footer.version_corner = *corner;
     return footer;
 }
 
@@ -393,9 +475,10 @@ TomlResult<int> readMenuOptions(const toml::table &table) {
 
 TomlResult<SMenuSpectrum> readMenuSpectrum(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: sound: spectrum: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(
-            table, kWhere,
-            {"frames", "fps", "pitch", "half_width", "margin_divisor", "height_percent", "alpha"});
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, kWhere,
+                              {"frames", "fps", "pitch", "half_width", "margin_divisor",
+                               "height_percent", "alpha", "mirrored"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -419,6 +502,11 @@ TomlResult<SMenuSpectrum> readMenuSpectrum(const toml::table &table) {
         !read) {
         return std::unexpected(read.error());
     }
+    const TomlResult<std::optional<bool>> mirrored = readBoolean(table, kWhere, "mirrored");
+    if (!mirrored) {
+        return std::unexpected(mirrored.error());
+    }
+    spectrum.mirrored = mirrored->value_or(false);
     return spectrum;
 }
 
@@ -496,6 +584,24 @@ TomlResult<SMenuAttract> readMenuAttract(const toml::table &table) {
     }
     attract.movies = std::move(*movies);
     return attract;
+}
+
+TomlResult<SMenuMusic> readMenuMusic(const toml::table &table) {
+    constexpr std::string_view kWhere = "menu: music: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"low_rate", "high_rate"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    SMenuMusic music;
+    for (const auto &[key, field] :
+         {std::pair{"low_rate", &music.low_rate}, std::pair{"high_rate", &music.high_rate}}) {
+        TomlResult<std::string> value = readRequiredString(table, kWhere, key);
+        if (!value) {
+            return std::unexpected(value.error());
+        }
+        *field = std::move(*value);
+    }
+    return music;
 }
 
 TomlResult<SPointerLook> readPointerLook(const toml::table &table) {
@@ -721,10 +827,56 @@ TomlResult<SCreditsColumnScroll> readCreditsColumnScroll(const toml::table &tabl
     return scroll;
 }
 
+TomlResult<SCreditsFadeLoop> readCreditsFadeLoop(const toml::table &table) {
+    constexpr std::string_view kWhere = "credits: fade_loop: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(
+            table, kWhere,
+            {"font", "image_x", "image_y", "text_colour", "heading_colour", "shadow_colour",
+             "scroll_speed", "start_y", "loop_below", "restart_y", "fade_centre", "fade_reach",
+             "end_line", "marker", "heading"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    SCreditsFadeLoop fade;
+    for (const auto &[key, field] :
+         {std::pair{"font", &fade.font}, std::pair{"end_line", &fade.end_line}}) {
+        TomlResult<std::string> value = readRequiredString(table, kWhere, key);
+        if (!value) {
+            return std::unexpected(value.error());
+        }
+        *field = std::move(*value);
+    }
+    if (TomlResult<void> read =
+            readIntegers(table, kWhere,
+                         {{"image_x", &fade.image_x, 0, kMaxPictureX},
+                          {"image_y", &fade.image_y, 0, kMaxPictureY},
+                          {"text_colour", &fade.text_colour, 0, kMaxColour},
+                          {"heading_colour", &fade.heading_colour, 0, kMaxColour},
+                          {"shadow_colour", &fade.shadow_colour, kNoMenuShadow, kMaxColour},
+                          {"scroll_speed", &fade.scroll_speed, 1, kMaxPictureY},
+                          {"start_y", &fade.start_y, 0, kMaxScrollTop},
+                          {"loop_below", &fade.loop_below, -kMaxScrollTop, kMaxPictureY},
+                          {"restart_y", &fade.restart_y, 0, kMaxScrollTop},
+                          {"fade_centre", &fade.fade_centre, 0, kMaxPictureY},
+                          {"fade_reach", &fade.fade_reach, 1, kMaxPictureY}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    for (const auto &[key, field] :
+         {std::pair{"marker", &fade.marker}, std::pair{"heading", &fade.heading}}) {
+        const TomlResult<char> value = readCharacter(table, kWhere, key);
+        if (!value) {
+            return std::unexpected(value.error());
+        }
+        *field = *value;
+    }
+    return fade;
+}
+
 TomlResult<SGameCredits> readCredits(const toml::table &table) {
     constexpr std::string_view kWhere = "credits: ";
-    if (TomlResult<void> keys =
-            rejectUnknownKeys(table, kWhere, {"text", "image", "music", "column_scroll"});
+    if (TomlResult<void> keys = rejectUnknownKeys(
+            table, kWhere, {"text", "image", "music", "column_scroll", "fade_loop"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -752,6 +904,17 @@ TomlResult<SGameCredits> readCredits(const toml::table &table) {
             return std::unexpected(read.error());
         }
         credits.column_scroll = std::move(*read);
+    }
+    const TomlResult<const toml::table *> fade = readTable(table, kWhere, "fade_loop");
+    if (!fade) {
+        return std::unexpected(fade.error());
+    }
+    if (*fade != nullptr) {
+        TomlResult<SCreditsFadeLoop> read = readCreditsFadeLoop(**fade);
+        if (!read) {
+            return std::unexpected(read.error());
+        }
+        credits.fade_loop = std::move(*read);
     }
     return credits;
 }
@@ -913,11 +1076,15 @@ TomlResult<std::array<double, Count>> readRealList(const toml::table &table, std
 
 TomlResult<std::vector<SFigureModel>> readFigureModels(const toml::table &table,
                                                        std::string_view where) {
+    std::vector<SFigureModel> models;
+    // BW2's has none: its frames alone.
+    if (!table.contains("models")) {
+        return models;
+    }
     const toml::array *array = table.get_as<toml::array>("models");
-    if (array == nullptr || array->empty()) {
+    if (array == nullptr) {
         return std::unexpected(std::format("{}models: not a list of model tables", where));
     }
-    std::vector<SFigureModel> models;
     for (const toml::node &node : *array) {
         const toml::table *entry = node.as_table();
         const std::string inner = std::format("{}models {}: ", where, models.size() + 1);
@@ -956,10 +1123,16 @@ TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
         return std::unexpected(keys.error());
     }
     SFigureScene figure;
+    TomlResult<std::string> prefix = readRequiredString(table, kWhere, "frame_prefix");
+    if (!prefix) {
+        return std::unexpected(prefix.error());
+    }
+    figure.frame_prefix = std::move(*prefix);
+    // Without a backdrop the screen is cleared behind the frames; without a cheat model the code
+    // only clears.
     for (const auto &[key, field] :
-         {std::pair{"backdrop", &figure.backdrop}, std::pair{"cheat_model", &figure.cheat_model},
-          std::pair{"frame_prefix", &figure.frame_prefix}}) {
-        TomlResult<std::string> value = readRequiredString(table, kWhere, key);
+         {std::pair{"backdrop", &figure.backdrop}, std::pair{"cheat_model", &figure.cheat_model}}) {
+        TomlResult<std::string> value = readOptionalString(table, kWhere, key);
         if (!value) {
             return std::unexpected(value.error());
         }
@@ -970,10 +1143,18 @@ TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
         return std::unexpected(models.error());
     }
     figure.models = std::move(*models);
+    if (!figure.backdrop.empty()) {
+        if (TomlResult<void> read = readIntegers(
+                table, kWhere, {{"backdrop_alpha", &figure.backdrop_alpha, 0, kMaxAlpha}});
+            !read) {
+            return std::unexpected(read.error());
+        }
+    } else if (table.contains("backdrop_alpha")) {
+        return std::unexpected(std::format("{}backdrop_alpha: there is no backdrop", kWhere));
+    }
     if (TomlResult<void> read =
             readIntegers(table, kWhere,
-                         {{"backdrop_alpha", &figure.backdrop_alpha, 0, kMaxAlpha},
-                          {"cheat_code", &figure.cheat_code, 0, kMaxCheatCode},
+                         {{"cheat_code", &figure.cheat_code, 0, kMaxCheatCode},
                           {"ambient", &figure.ambient, 0, kMaxLight},
                           {"frame_digits", &figure.frame_digits, 1, kMaxFrameDigits},
                           {"frame_count", &figure.frame_count, 1, kMaxFrames},
@@ -1418,16 +1599,53 @@ TomlResult<SStorySelect> readStoryList(const toml::table &table) {
 }
 
 // [story_select] holds a table for each style's values.
-TomlResult<SStorySelect> readStorySelect(const toml::table &table) {
-    constexpr std::string_view kWhere = "story_select: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"story_list"}); !keys) {
+TomlResult<SDirectStart> readDirectStart(const toml::table &table) {
+    constexpr std::string_view kWhere = "story_select: direct_start: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"loading_frames"}); !keys) {
         return std::unexpected(keys.error());
     }
-    const TomlResult<const toml::table *> list = readRequiredTable(table, kWhere, "story_list");
+    SDirectStart start;
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere, {{"loading_frames", &start.loading_frames, 0, kMaxLoadingFrames}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    return start;
+}
+
+// Each style's table, as many as the package gives.
+TomlResult<void> readStorySelect(const toml::table &table, SGameContent &content) {
+    constexpr std::string_view kWhere = "story_select: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"story_list", "direct_start"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    const TomlResult<const toml::table *> list = readTable(table, kWhere, "story_list");
     if (!list) {
         return std::unexpected(list.error());
     }
-    return readStoryList(**list);
+    if (*list != nullptr) {
+        TomlResult<SStorySelect> read = readStoryList(**list);
+        if (!read) {
+            return std::unexpected(read.error());
+        }
+        content.story_select = std::move(*read);
+    }
+    const TomlResult<const toml::table *> start = readTable(table, kWhere, "direct_start");
+    if (!start) {
+        return std::unexpected(start.error());
+    }
+    if (*start != nullptr) {
+        TomlResult<SDirectStart> read = readDirectStart(**start);
+        if (!read) {
+            return std::unexpected(read.error());
+        }
+        content.direct_start = *read;
+    }
+    if (*list == nullptr && *start == nullptr) {
+        return std::unexpected(std::format("{}missing a style's table", kWhere));
+    }
+    return {};
 }
 
 TomlResult<std::vector<SChapterTitleFont>> readChapterTitleFonts(const toml::table &table) {
@@ -1514,10 +1732,11 @@ TomlResult<T> readMenuPart(const toml::table &table, std::string_view key, Read 
 
 TomlResult<SMenuLayout> readMenu(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(
-            table, kWhere,
-            {"left", "top", "titled_top", "trademark", "page_tops", "title", "item", "footer",
-             "calibration", "options", "sound", "slider", "attract", "features"});
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, kWhere,
+                              {"left", "align", "top", "titled_top", "trademark", "page_tops",
+                               "title", "item", "footer", "calibration", "options", "sound",
+                               "slider", "attract", "features", "music"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -1529,6 +1748,12 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         !read) {
         return std::unexpected(read.error());
     }
+    TomlResult<EMenuAlign> align =
+        readKeyword(table, kWhere, "align", EMenuAlign::Left, kMenuAligns);
+    if (!align) {
+        return std::unexpected(align.error());
+    }
+    menu.align = *align;
     TomlResult<std::optional<SMenuTrademark>> trademark = readTrademark(table, kWhere);
     if (!trademark) {
         return std::unexpected(trademark.error());
@@ -1594,6 +1819,11 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         return std::unexpected(features.error());
     }
     menu.features = *features;
+    TomlResult<SMenuMusic> music = readMenuPart<SMenuMusic>(table, "music", readMenuMusic);
+    if (!music) {
+        return std::unexpected(music.error());
+    }
+    menu.music = std::move(*music);
     return menu;
 }
 
@@ -1869,21 +2099,34 @@ std::string formatTint(const std::array<int, 3> &tint) {
     return std::format("[0x{:x}, 0x{:x}, 0x{:x}]", tint[0], tint[1], tint[2]);
 }
 
+std::string formatDrop(const std::optional<SMenuDrop> &drop) {
+    if (!drop) {
+        return {};
+    }
+    return std::format("drop = {{ x = {}, y = {}, colour = 0x{:x} }}\n", drop->x, drop->y,
+                       drop->colour);
+}
+
 std::string formatMenu(const SMenuLayout &menu) {
-    std::string text = std::format("\n[menu]\nleft = {}\ntop = {}\ntitled_top = {}\n", menu.left,
-                                   menu.top, menu.titled_top);
+    std::string text = std::format("\n[menu]\nleft = {}\n", menu.left);
+    if (menu.align != EMenuAlign::Left) {
+        text += std::format("align = {}\n", quoteToml(getKeywordName(menu.align, kMenuAligns)));
+    }
+    text += std::format("top = {}\ntitled_top = {}\n", menu.top, menu.titled_top);
     if (menu.trademark) {
         text += std::format("trademark = {{ x = {}, y = {}, glyph = 0x{:x}, alpha = 0x{:x} }}\n",
                             menu.trademark->x, menu.trademark->y, menu.trademark->glyph,
                             menu.trademark->alpha);
     }
-    text += std::format("\n[menu.title]\ncolour = 0x{:x}\nshadow = {}\ngap_lines = {}\n",
-                        menu.title.colour, menu.title.shadow, menu.title.gap_lines);
+    text += std::format("\n[menu.title]\ncolour = 0x{:x}\nshadow = {}\ngap_lines = {}\n{}",
+                        menu.title.colour, menu.title.shadow, menu.title.gap_lines,
+                        formatDrop(menu.title.drop));
     const SMenuItems &item = menu.item;
-    text += std::format("\n[menu.item]\nfont = {}\ncolour = 0x{:x}\nselected_colour = 0x{:x}\n"
-                        "alpha = {}\nshadow = {}\nspacing_titled = {}\nspacing_untitled = {}\n",
-                        quoteToml(item.font), item.colour, item.selected_colour, item.alpha,
-                        item.shadow, item.spacing_titled, item.spacing_untitled);
+    text +=
+        std::format("\n[menu.item]\nfont = {}\ncolour = 0x{:x}\nselected_colour = 0x{:x}\n"
+                    "alpha = {}\nshadow = {}\nspacing_titled = {}\nspacing_untitled = {}\n{}",
+                    quoteToml(item.font), item.colour, item.selected_colour, item.alpha,
+                    item.shadow, item.spacing_titled, item.spacing_untitled, formatDrop(item.drop));
     text += std::format("\n[menu.item.glow]\ncolour = 0x{:x}\ncopies = {}\nflicker = {}\n",
                         item.glow.colour, item.glow.copies, item.glow.flicker);
     const SMenuFooter &footer = menu.footer;
@@ -1891,6 +2134,12 @@ std::string formatMenu(const SMenuLayout &menu) {
                         "version_x = {}\nversion_alpha = 0x{:x}\n",
                         quoteToml(footer.font), footer.colour, footer.shadow, footer.version_x,
                         footer.version_alpha);
+    if (footer.version_corner != EVersionCorner::BottomLeft) {
+        text += std::format("version_corner = {}\n",
+                            quoteToml(getKeywordName(footer.version_corner, kVersionCorners)));
+    }
+    text += std::format("\n[menu.music]\nlow_rate = {}\nhigh_rate = {}\n",
+                        quoteToml(menu.music.low_rate), quoteToml(menu.music.high_rate));
     const SMenuCalibration &calibration = menu.calibration;
     text += std::format("\n[menu.calibration]\nimage = {}\nsteps = {}\ntitle = {}\nprompt = {}\n"
                         "font = {}\ncolour = 0x{:x}\ntitle_lines = {}\nprompt_lines = {}\n",
@@ -1913,6 +2162,9 @@ std::string formatMenu(const SMenuLayout &menu) {
                             formatTomlList(spectrum->frames), spectrum->fps, spectrum->pitch,
                             spectrum->half_width, spectrum->margin_divisor,
                             spectrum->height_percent, spectrum->alpha);
+        if (spectrum->mirrored) {
+            text += "mirrored = true\n";
+        }
     }
     const SMenuSlider &slider = menu.slider;
     text += std::format("\n[menu.slider]\nwidth_share = {}\nwidth_parts = {}\nheight = {}\n"
@@ -2053,14 +2305,22 @@ std::string formatFigureScene(const SFigureScene &figure) {
         models += std::format("{}{{ file = {}, frame_wrap = {} }}", models.empty() ? "" : ", ",
                               quoteToml(model.file), model.frame_wrap);
     }
-    std::string text = std::format(
-        "\n[title_backdrop.figure_scene]\nbackdrop = {}\nbackdrop_alpha = 0x{:x}\nmodels = [{}]\n"
-        "cheat_model = {}\ncheat_code = {}\ncamera_rotation = {}\ncamera_origin = {}\n"
-        "projection = {}\nlight = {}\nflat = {}\nambient = 0x{:x}\n",
-        quoteToml(figure.backdrop), figure.backdrop_alpha, models, quoteToml(figure.cheat_model),
-        figure.cheat_code, formatNumbers(figure.camera_rotation),
-        formatNumbers(figure.camera_origin), figure.projection, formatNumbers(figure.light),
-        formatNumbers(figure.flat), figure.ambient);
+    std::string text = "\n[title_backdrop.figure_scene]\n";
+    if (!figure.backdrop.empty()) {
+        text += std::format("backdrop = {}\nbackdrop_alpha = 0x{:x}\n", quoteToml(figure.backdrop),
+                            figure.backdrop_alpha);
+    }
+    if (!figure.models.empty()) {
+        text += std::format("models = [{}]\n", models);
+    }
+    if (!figure.cheat_model.empty()) {
+        text += std::format("cheat_model = {}\n", quoteToml(figure.cheat_model));
+    }
+    text += std::format("cheat_code = {}\ncamera_rotation = {}\ncamera_origin = {}\n"
+                        "projection = {}\nlight = {}\nflat = {}\nambient = 0x{:x}\n",
+                        figure.cheat_code, formatNumbers(figure.camera_rotation),
+                        formatNumbers(figure.camera_origin), figure.projection,
+                        formatNumbers(figure.light), formatNumbers(figure.flat), figure.ambient);
     text += std::format("frame_prefix = {}\nframe_digits = {}\nframe_count = {}\nframe_x = {}\n"
                         "frame_y = {}\nframe_width = {}\nframe_height = {}\nframe_alpha = 0x{:x}\n"
                         "frame_rate = {}\nframe_wrap = {}\n",
@@ -2155,12 +2415,15 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
         return std::unexpected(moon_indicator.error());
     }
     content.moon_indicator = std::move(*moon_indicator);
-    TomlResult<std::optional<SStorySelect>> story_select =
-        readOptionalTable<SStorySelect>(table, "story_select", readStorySelect);
+    const TomlResult<const toml::table *> story_select = readTable(table, "", "story_select");
     if (!story_select) {
         return std::unexpected(story_select.error());
     }
-    content.story_select = std::move(*story_select);
+    if (*story_select != nullptr) {
+        if (TomlResult<void> read = readStorySelect(**story_select, content); !read) {
+            return std::unexpected(read.error());
+        }
+    }
     TomlResult<std::optional<SChapterTitle>> chapter_title =
         readOptionalTable<SChapterTitle>(table, "chapter_title", readChapterTitle);
     if (!chapter_title) {
@@ -2247,6 +2510,18 @@ std::string formatGameContentTables(const SGameContent &content) {
                 quoteToml(std::string(1, scroll->marker)),
                 quoteToml(std::string(1, scroll->heading)));
         }
+        if (const std::optional<SCreditsFadeLoop> &fade = content.credits->fade_loop) {
+            text += std::format(
+                "\n[credits.fade_loop]\nfont = {}\nimage_x = {}\nimage_y = {}\n"
+                "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
+                "scroll_speed = {}\nstart_y = {}\nloop_below = {}\nrestart_y = {}\n"
+                "fade_centre = {}\nfade_reach = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
+                quoteToml(fade->font), fade->image_x, fade->image_y, fade->text_colour,
+                fade->heading_colour, fade->shadow_colour, fade->scroll_speed, fade->start_y,
+                fade->loop_below, fade->restart_y, fade->fade_centre, fade->fade_reach,
+                quoteToml(fade->end_line), quoteToml(std::string(1, fade->marker)),
+                quoteToml(std::string(1, fade->heading)));
+        }
     }
     if (content.menu) {
         text += formatMenu(*content.menu);
@@ -2302,6 +2577,10 @@ std::string formatGameContentTables(const SGameContent &content) {
                 "\n[[story_select.story_list.difficulty]]\nlabel = {}\npuzzle = {}\ncombat = {}\n",
                 quoteToml(difficulty.label), difficulty.puzzle, difficulty.combat);
         }
+    }
+    if (const std::optional<SDirectStart> &start = content.direct_start) {
+        text += std::format("\n[story_select.direct_start]\nloading_frames = {}\n",
+                            start->loading_frames);
     }
     if (const std::optional<SChapterTitle> &title = content.chapter_title) {
         text += std::format("\n[chapter_title]\nseconds = {}\nformat = {}\ncolour = 0x{:x}\n"

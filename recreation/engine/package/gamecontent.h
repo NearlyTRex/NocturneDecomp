@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
 #include <functional>
 #include <map>
 #include <optional>
@@ -92,13 +93,39 @@ struct SCreditsColumnScroll {
     bool operator==(const SCreditsColumnScroll &) const = default;
 };
 
+// BW2's credits: the image at its point, every line centred across the layout and faded by how
+// far it is from the fade's centre, scrolling up and starting over until the music ends.
+struct SCreditsFadeLoop {
+    std::string font;
+    // The image's top left on the layout.
+    int image_x = 0;
+    int image_y = 0;
+    int text_colour = 0;
+    int heading_colour = 0;
+    int shadow_colour = 0;
+    // Layout pixels a second, from start_y; once the top is above loop_below, from restart_y.
+    int scroll_speed = 0;
+    int start_y = 0;
+    int loop_below = 0;
+    int restart_y = 0;
+    // A line at fade_centre is opaque, and fade_reach from it clear.
+    int fade_centre = 0;
+    int fade_reach = 0;
+    std::string end_line;
+    char marker = 0;
+    char heading = 0;
+
+    bool operator==(const SCreditsFadeLoop &) const = default;
+};
+
 struct SGameCredits {
     std::string text;
     std::string image;
     // Empty for none.
     std::string music;
-    // The column_scroll style's values.
+    // Each style's values.
     std::optional<SCreditsColumnScroll> column_scroll;
+    std::optional<SCreditsFadeLoop> fade_loop;
 
     bool operator==(const SGameCredits &) const = default;
 };
@@ -340,6 +367,15 @@ struct SStorySelect {
     bool operator==(const SStorySelect &) const = default;
 };
 
+// The direct_start story select, BW2's and BW3's: START plays the first story's first chapter,
+// with no list.
+struct SDirectStart {
+    // The loading screen's frames before the mission loads.
+    int loading_frames = 0;
+
+    bool operator==(const SDirectStart &) const = default;
+};
+
 // The font the chapter title takes on a screen shorter than below_height; 0 for any height.
 struct SChapterTitleFont {
     int below_height = 0;
@@ -368,11 +404,38 @@ struct SChapterTitle {
 // Colours are palette indices; a shadow of kNoMenuShadow draws none.
 inline constexpr int kNoMenuShadow = -1;
 
+// A copy of a line drawn under it, offset in layout pixels and in its own colour, as BW2 shadows
+// its menus.
+struct SMenuDrop {
+    int x = 0;
+    int y = 0;
+    int colour = 0;
+
+    bool operator==(const SMenuDrop &) const = default;
+};
+
+// Where a menu's title and items start across the layout.
+enum class EMenuAlign : std::uint8_t {
+    // At the layout's `left`.
+    Left,
+    // Each about the layout's middle, as BW2's are.
+    Centre,
+};
+
+// The corner the build's line is drawn in.
+enum class EVersionCorner : std::uint8_t {
+    // version_x in from the left, on the copyright's line.
+    BottomLeft,
+    // version_x in from the right, at the top, as BW2 drew its "1.2".
+    TopRight,
+};
+
 // A page's title, and the gap in lines between it and the page's lines.
 struct SMenuTitle {
     int colour = 0;
     int shadow = 0;
     int gap_lines = 0;
+    std::optional<SMenuDrop> drop;
 
     bool operator==(const SMenuTitle &) const = default;
 };
@@ -398,17 +461,19 @@ struct SMenuItems {
     int spacing_titled = 0;
     int spacing_untitled = 0;
     SMenuGlow glow;
+    std::optional<SMenuDrop> drop;
 
     bool operator==(const SMenuItems &) const = default;
 };
 
-// The copyright in the screen's bottom right and the build's line in its bottom left.
+// The copyright in the screen's bottom right and the build's line in a corner.
 struct SMenuFooter {
     std::string font;
     int colour = 0;
     int shadow = 0;
     int version_x = 0;
     int version_alpha = 0;
+    EVersionCorner version_corner = EVersionCorner::BottomLeft;
 
     bool operator==(const SMenuFooter &) const = default;
 };
@@ -453,6 +518,9 @@ struct SMenuSpectrum {
     // A full level's height, as a percentage of the screen's.
     int height_percent = 0;
     int alpha = 0;
+    // A bar right of the middle is drawn as far left of the screen's right edge, so the right
+    // half runs backwards, as BW2's does.
+    bool mirrored = false;
 
     bool operator==(const SMenuSpectrum &) const = default;
 };
@@ -488,11 +556,20 @@ struct SMenuFeatures {
     bool operator==(const SMenuFeatures &) const = default;
 };
 
+// What the menus play: one sample for an output rate of 30000Hz or less, one for the rest.
+struct SMenuMusic {
+    std::string low_rate;
+    std::string high_rate;
+
+    bool operator==(const SMenuMusic &) const = default;
+};
+
 // How the menus look and where their lists go on the front end's layout, a list moving up to fit
 // the screen.
 struct SMenuLayout {
-    // The items' left edge.
+    // The items' left edge, where they start unless centred.
     int left = 0;
+    EMenuAlign align = EMenuAlign::Left;
     // A list without a title, the main menu's among them.
     int top = 0;
     int titled_top = 0;
@@ -514,6 +591,7 @@ struct SMenuLayout {
     // None plays no movies.
     std::optional<SMenuAttract> attract;
     SMenuFeatures features;
+    SMenuMusic music;
 
     bool operator==(const SMenuLayout &) const = default;
 };
@@ -651,6 +729,8 @@ struct SGameContent {
     std::vector<SGameStory> stories;
     // The story_list style's values.
     std::optional<SStorySelect> story_select;
+    // The direct_start style's values.
+    std::optional<SDirectStart> direct_start;
     // None shows no title.
     std::optional<SChapterTitle> chapter_title;
     // The engine's English text to the game's, before translation; key by key over earlier

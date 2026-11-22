@@ -142,7 +142,7 @@ protected:
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
     engine::CPod pod_{file_system_, dosio_};
-    CSound sound_{sound_main_, pod_, file_system_};
+    CSound sound_{sound_main_, pod_, file_system_, game_parts_.getContent()};
     // What nocturne.ini holds, and what Options writes to it.
     std::string ini_text_ = "[Graphics]\r\n[Sound]\r\n[Control]\r\n[Debug]\r\n";
     engine::CIni ini_{file_system_};

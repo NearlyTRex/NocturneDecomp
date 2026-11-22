@@ -224,10 +224,40 @@ TEST_F(CChapterSelectTest, WithoutDifficultiesTheModesAreLeftAlone) {
 }
 
 TEST_F(CChapterSelectTest, AStorySelectThisBuildDoesntDrawIsFatal) {
+    game_parts_.getContent().front_end.story_select = "story_wheel";
+    EXPECT_THAT([this] { choose(EChapterSelectMode::kStories, {kReturn}); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("The story select story_wheel isn't in this build")));
+}
+
+// BW2's: no list, the first story's first chapter with the game's loading frames and picture,
+// with Control and Shift too.
+TEST_F(CChapterSelectTest, DirectStartPlaysTheFirstStorysFirstChapter) {
+    engine::SGameContent &content = game_parts_.getContent();
+    content.front_end.story_select = "direct_start";
+    content.direct_start = engine::SDirectStart{.loading_frames = 7};
+    EXPECT_CALL(loading_screen_, show(7, false, 0)).Times(2);
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    EXPECT_EQ(mission_.getMissionName(), "hq-act1");
+    chooseToStart(EChapterSelectMode::kChapters, {kReturn});
+    EXPECT_EQ(game_.getCurrentSaveFile(), "hq-act1.msn");
+}
+
+TEST_F(CChapterSelectTest, DirectStartWithoutAStoryIsFatal) {
+    engine::SGameContent &content = game_parts_.getContent();
+    content.front_end.story_select = "direct_start";
+    content.direct_start = engine::SDirectStart{.loading_frames = 7};
+    content.stories.clear();
+    EXPECT_THAT([this] { choose(EChapterSelectMode::kStories, {kReturn}); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives a story to start")));
+}
+
+TEST_F(CChapterSelectTest, DirectStartWithoutItsValuesIsFatal) {
     game_parts_.getContent().front_end.story_select = "direct_start";
     EXPECT_THAT([this] { choose(EChapterSelectMode::kStories, {kReturn}); },
                 ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("The story select direct_start isn't in this build")));
+                    ::testing::StrEq("No package gives the story select's values")));
 }
 
 TEST_F(CChapterSelectTest, WithoutStorySelectValuesStartIsFatal) {

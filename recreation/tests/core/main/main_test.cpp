@@ -240,7 +240,7 @@ protected:
                                .screen = screen_,
                                .special = special_,
                                .current_texture = current_texture_}};
-    CSound game_sound_{sound_, pod_, file_system_};
+    CSound game_sound_{sound_, pod_, file_system_, content_};
     std::array<CDemonFilter, 8> global_filters_;
     std::array<CDemonFilter, 4> player_filters_;
     engine::CMouse mouse_{dosio_, screen_, special_};
@@ -653,8 +653,8 @@ INSTANTIATE_TEST_SUITE_P(
     ::testing::Values(
         SFrontEndCase{[](engine::SGameContent &c) { c.front_end.title_backdrop.reset(); },
                       "No package names the title backdrop"},
-        SFrontEndCase{[](engine::SGameContent &c) { c.front_end.title_backdrop = "flipbook"; },
-                      "The title backdrop flipbook isn't in this build"}));
+        SFrontEndCase{[](engine::SGameContent &c) { c.front_end.title_backdrop = "no_such_style"; },
+                      "The title backdrop no_such_style isn't in this build"}));
 
 TEST_F(CInitializeGameSystemsTest, AFigureSceneBackdropStarts) {
     content_.front_end.title_backdrop = "figure_scene";

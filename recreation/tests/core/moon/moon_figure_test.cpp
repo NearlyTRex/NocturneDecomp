@@ -120,6 +120,28 @@ TEST_F(CMoonFigureTest, TheTitleIsAlwaysInItsFirstHalf) {
     EXPECT_EQ(moon_.isAnimationFirstHalf(), 1);
 }
 
+// BW2's: the title's frames alone, over the cleared screen.
+TEST_F(CMoonFigureTest, WithoutABackdropOrFiguresOnlyTheFramesAreDrawn) {
+    engine::SFigureScene &figure = content_.figure_scene.value();
+    figure.backdrop.clear();
+    figure.models.clear();
+    EXPECT_CALL(file_system_, openFile(_, _)).Times(AnyNumber());
+    EXPECT_CALL(file_system_, openFile(endsWith("models\\figure.kfm"), _)).Times(0);
+    EXPECT_CALL(file_system_, openFile(endsWith("back.raw"), _)).Times(0);
+    moon_.init();
+    moon_.render();
+    EXPECT_EQ(pixel(10, kBelowFrames), 0U);
+}
+
+// The code is only cleared, as BW2's was.
+TEST_F(CMoonFigureTest, WithoutACheatModelTheCheatLoadsTheFigures) {
+    content_.figure_scene->cheat_model.clear();
+    game_.head_of_horror_cheat = 666;
+    expectOpens("models\\figure.kfm", 3);
+    moon_.init();
+    EXPECT_EQ(game_.head_of_horror_cheat, 0);
+}
+
 // Thirty frames at 12 a second take two and a half seconds, which bring the first back.
 TEST_F(CMoonFigureTest, TheTitleWrapsAfterItsThirtyFrames) {
     moon_.init();
@@ -149,10 +171,10 @@ TEST_F(CMoonFigureTest, WithoutAFigureSceneTheBackdropIsFatal) {
 }
 
 TEST_F(CMoonFigureTest, ABackdropThisBuildDoesntDrawIsFatal) {
-    content_.front_end.title_backdrop = "flipbook";
+    content_.front_end.title_backdrop = "no_such_style";
     EXPECT_THAT([this] { moon_.init(); },
                 ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("The title backdrop flipbook isn't in this build")));
+                    ::testing::StrEq("The title backdrop no_such_style isn't in this build")));
 }
 
 } // namespace

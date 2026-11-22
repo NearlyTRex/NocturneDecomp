@@ -70,6 +70,7 @@ struct SMRGLPrimitivePoly;
 struct SMRGLPrimitiveTriangle;
 struct SMRGLPrimitiveTriangleIndex;
 struct SLoadOrder;
+struct SMenuDrop;
 struct SMenuLayout;
 struct SMergedGameContent;
 struct SMoonIndicator;

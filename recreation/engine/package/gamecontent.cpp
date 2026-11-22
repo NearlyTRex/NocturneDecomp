@@ -73,6 +73,7 @@ SMergedGameContent mergeGameContent(std::span<const SGameContent *const> in_orde
         mergeValue(content.moon_indicator, from->moon_indicator);
         mergeById(content.stories, from->stories);
         mergeValue(content.story_select, from->story_select);
+        mergeValue(content.direct_start, from->direct_start);
         mergeValue(content.chapter_title, from->chapter_title);
         for (const auto &[english, text] : from->labels) {
             content.labels.insert_or_assign(english, text);

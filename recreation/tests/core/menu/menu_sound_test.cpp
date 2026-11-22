@@ -143,6 +143,26 @@ TEST_F(CAudioSpectrumTest, EachChannelHasABarEveryFourColumnsAcrossItsHalf) {
     EXPECT_EQ(sortedCentres(), expected);
 }
 
+// BW2's: the right channel's bars are as far left of the right edge as they were right of the
+// middle, each in the frame its new column picks.
+TEST_F(CAudioSpectrumTest, AMirroredSpectrumRunsItsRightHalfBackwards) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->spectrum->mirrored = true;
+    playMusic();
+    menu_.drawAudioSpectrum();
+    std::vector<int> expected;
+    for (int x = 32; x < 32 + 256; x += 4) {
+        expected.push_back(x);
+    }
+    for (int x = 352; x < 352 + 256; x += 4) {
+        expected.push_back(640 - (x - 320));
+    }
+    std::ranges::sort(expected);
+    EXPECT_EQ(sortedCentres(), expected);
+    expectFramesFromCounter(0);
+}
+
 // At twice the layout the bars are twice as far apart and as wide, as many as at 640x480, and
 // each in the frame its 640x480 column picks.
 TEST_F(CAudioSpectrumTest, AtTwiceTheLayoutTheBarsAreTwiceAsWideAndApart) {

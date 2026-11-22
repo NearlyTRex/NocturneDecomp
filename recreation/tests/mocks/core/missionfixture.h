@@ -127,7 +127,7 @@ protected:
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
     engine::CPod pod_{file_system_, dosio_};
-    CSound sound_{sound_main_, pod_, file_system_};
+    CSound sound_{sound_main_, pod_, file_system_, game_parts_.getContent()};
     CScript script_{{.dosio = dosio_,
                      .editor_tools = editor_tools_,
                      .mission = mission_,

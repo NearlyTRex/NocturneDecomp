@@ -4,8 +4,6 @@ name = 'Nocturne (1999, English)'
 release = '1999-en-nocturne'
 required = ['STARTUP.POD']
 title = 'Nocturne'
-front_end = 'nocturne'
-loading_indicator = 'moon'
 copyright = 'Nocturne 1999 Terminal Reality Inc.  Patent Pending.'
 copyright_os_font = 'Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.'
 
@@ -255,16 +253,533 @@ size = 11550130
 modified = 946710000
 xxh3 = 'b8a086b973c62dd8e71eafb51015af35'
 
+[front_end]
+title_backdrop = 'sky_scene'
+loading_indicator = 'moon'
+credits = 'column_scroll'
+story_select = 'story_list'
+
 [credits]
 text = 'credits.txt'
 image = 'stats'
 music = 'faded-remix.mp3'
 
+[credits.column_scroll]
+font = 'theme'
+column_left = 414
+top_strip_bottom = 30
+bottom_strip_top = 439
+strip_colour = 0x0
+text_colour = 0xf8
+heading_colour = 0x2
+shadow_colour = 0
+scroll_speed = 32
+start_y = 480
+end_line = 'end'
+marker = '\'
+heading = 'b'
+
 [menu]
 left = 160
 top = 250
 titled_top = 225
-trademark = { x = 518, y = 99 }
+trademark = { x = 518, y = 99, glyph = 0x99, alpha = 0x8000 }
+
+[menu.title]
+colour = 0x7
+shadow = 0
+gap_lines = 2
+
+[menu.item]
+font = 'theme'
+colour = 0xf8
+selected_colour = 0xff
+alpha = 48000
+shadow = -1
+spacing_titled = 1
+spacing_untitled = 2
+
+[menu.item.glow]
+colour = 0x7
+copies = 5
+flicker = true
+
+[menu.footer]
+font = 'small_editor'
+colour = 0xf8
+shadow = 0
+version_x = 4
+version_alpha = 0x8000
+
+[menu.music]
+low_rate = 'splash-music-22.wav'
+high_rate = 'splash-music-44.wav'
+
+[menu.calibration]
+image = 'brightness'
+steps = ['1. Turn off all the lights in your room.', '2. Turn your brightness up, so that you see 3 bars on the left side of the screen.', '3. Turn down the brightness, so that the left 2 bars become the same color.', '4. Turn your contrast all the way up.', "You're done with calibration."]
+title = 'Monitor calibration'
+prompt = '  Press any key to continue.'
+font = 'small_editor'
+colour = 0xf8
+title_lines = 2
+prompt_lines = 3
+
+[menu.options]
+hero = 2
+
+[menu.sound]
+effects_sample = 'colt45-0.wav'
+
+[menu.sound.spectrum]
+frames = ['F0100.RAW', 'F0300.RAW', 'F0500.RAW', 'F0700.RAW', 'F0900.RAW', 'F1100.RAW', 'F1300.RAW', 'F1500.RAW']
+fps = 24
+pitch = 4
+half_width = 16
+margin_divisor = 20
+height_percent = 25
+alpha = 0x8000
+
+[menu.slider]
+width_share = 3
+width_parts = 4
+height = 44
+bar_colour = 0x4
+trough_colour = 0x0
+border_colour = 0xff
+text_colour = 0xff
+text_shadow = 0
+
+[menu.attract]
+directory = 'video'
+movies = ['noc1.avi', 'noc2.avi', 'noc3.avi', 'noc4.avi']
+
+[menu.features]
+difficulty = false
+
+[[font]]
+id = 'medium'
+file = 'nocfont.raw'
+width = 0x136
+height = 0x1ae
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 1, first = 0xc0, last = 0xdf }]
+space_width = 8
+shadow_x = 2
+os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
+
+[[font]]
+id = 'tiny'
+file = 'nocsmall.raw'
+width = 0xf8
+height = 0x158
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 2, first = 0x20, last = 0x7e }]
+space_width = 5
+shadow_x = 2
+os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = 'theme'
+file = 'menufont.raw'
+width = 0xfa
+height = 0x23f
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 0, first = 0xc0, last = 0xdf }, { offset = 1, first = 0xe0, last = 0xff }]
+space_width = 8
+shadow_x = 2
+os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = 'small_editor'
+file = 'fnte_pfd.RAW'
+width = 0x94
+height = 0xec
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = 'console'
+file = 'fnte_f.RAW'
+width = 0x94
+height = 0xec
+transparent = 0xff
+own_colours = true
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+
+[[font]]
+id = 'micro'
+file = 'micro.raw'
+width = 0x94
+height = 0xec
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 1, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+
+[[controls.mode]]
+id = 'keyboard'
+label = 'Control : Keyboard'
+manual_aim = false
+[controls.mode.defaults]
+'backup' = [0x150]
+'draw' = [0x20]
+'fire' = [0x39]
+'infrared' = [0x17]
+'item_desc' = [0x35]
+'jump' = [0x22]
+'left' = [0x14b]
+'light' = [0x21]
+'map' = [0x32]
+'next_ammo' = [0x29]
+'next_item' = [0x1a]
+'next_weapon' = [0xd]
+'point_down' = [0x1e]
+'point_up' = [0x10]
+'prev_item' = [0x1b]
+'prev_weapon' = [0xc]
+'right' = [0x14d]
+'run' = [0x2a]
+'strafe' = [0x38]
+'strafe_left' = [0x2c]
+'strafe_right' = [0x2d]
+'use_item' = [0x1c]
+'walk' = [0x148]
+'weapon1' = [0x2]
+'weapon2' = [0x3]
+'weapon3' = [0x4]
+'weapon4' = [0x5]
+'weapon5' = [0x6]
+
+[[controls.mode]]
+id = 'keyboard_mouse'
+label = 'Control : Keyboard/Mouse'
+manual_aim = true
+[controls.mode.defaults]
+'backup' = [0x1f]
+'draw' = [0x12]
+'fire' = [0x200]
+'infrared' = [0x17]
+'item_desc' = [0x35]
+'jump' = [0x22]
+'left' = [0x255]
+'light' = [0x10]
+'map' = [0x32]
+'next_ammo' = [0x29]
+'next_item' = [0x1a]
+'next_weapon' = [0xd]
+'point_down' = [0x256]
+'point_up' = [0x256]
+'prev_item' = [0x1b]
+'prev_weapon' = [0xc]
+'right' = [0x255]
+'run' = [0x3a]
+'strafe' = [0x38]
+'strafe_left' = [0x1e]
+'strafe_right' = [0x20]
+'use_item' = [0x1c]
+'walk' = [0x11]
+'weapon1' = [0x2]
+'weapon2' = [0x3]
+'weapon3' = [0x4]
+'weapon4' = [0x5]
+'weapon5' = [0x6]
+
+[[controls.mode]]
+id = 'gamepad'
+label = 'Control : Gamepad'
+manual_aim = false
+[controls.mode.defaults]
+'backup' = [0x254]
+'draw' = [0x17a]
+'fire' = [0x17b]
+'infrared' = [0x163]
+'item_desc' = [0x165]
+'jump' = [0x160]
+'left' = [0x17e]
+'light' = [0x162]
+'map' = [0x164]
+'next_ammo' = [0x16b]
+'next_item' = [0x16e]
+'next_weapon' = [0x16a]
+'point_down' = [0x17d]
+'point_up' = [0x17c]
+'prev_item' = [0x16d]
+'prev_weapon' = [0x169]
+'right' = [0x17f]
+'run' = [0x167]
+'strafe' = []
+'strafe_left' = [0x251]
+'strafe_right' = [0x252]
+'use_item' = [0x161]
+'walk' = [0x253]
+'weapon1' = []
+'weapon2' = []
+'weapon3' = []
+'weapon4' = []
+'weapon5' = [0x16c]
+
+[[controls.binding]]
+action = 'walk'
+label = 'Forward'
+
+[[controls.binding]]
+action = 'backup'
+label = 'Back'
+
+[[controls.binding]]
+action = 'run'
+label = 'Run'
+
+[[controls.binding]]
+action = 'strafe'
+label = 'Strafe on'
+
+[[controls.binding]]
+action = 'strafe_left'
+label = 'Strafe left'
+
+[[controls.binding]]
+action = 'strafe_right'
+label = 'Strafe right'
+
+[[controls.binding]]
+action = 'left'
+label = 'Turn left'
+
+[[controls.binding]]
+action = 'right'
+label = 'Turn right'
+
+[[controls.binding]]
+action = 'fire'
+label = 'Fire / Action'
+
+[[controls.binding]]
+action = 'use_item'
+label = 'Use item'
+
+[[controls.binding]]
+action = 'light'
+label = 'Light'
+
+[[controls.binding]]
+action = 'infrared'
+label = 'Night Vision'
+
+[[controls.binding]]
+action = 'draw'
+label = 'Draw'
+
+[[controls.binding]]
+action = 'point_up'
+label = 'Point up'
+
+[[controls.binding]]
+action = 'point_down'
+label = 'Point down'
+
+[[controls.binding]]
+action = 'jump'
+label = 'Jump'
+
+[[controls.binding]]
+action = 'weapon1'
+label = 'Select pistol weapons'
+
+[[controls.binding]]
+action = 'weapon2'
+label = 'Select assault weapons'
+
+[[controls.binding]]
+action = 'weapon3'
+label = 'Select flame weapons'
+
+[[controls.binding]]
+action = 'weapon4'
+label = 'Select grenade weapons'
+
+[[controls.binding]]
+action = 'weapon5'
+label = 'Select melee weapons'
+
+[[controls.binding]]
+action = 'next_weapon'
+label = 'Next weapon'
+
+[[controls.binding]]
+action = 'prev_weapon'
+label = 'Previous weapon'
+
+[[controls.binding]]
+action = 'next_item'
+label = 'Next item'
+
+[[controls.binding]]
+action = 'prev_item'
+label = 'Previous item'
+
+[[controls.binding]]
+action = 'item_desc'
+label = 'Item description'
+
+[[controls.binding]]
+action = 'next_ammo'
+label = 'Next ammo'
+
+[[controls.binding]]
+action = 'map'
+label = 'Map'
+
+[list]
+item_colour = 0xff
+disabled_colour = 0xf8
+selected_colour = 0x2
+confirmed_colour = 0xfa
+separator_colour = 0x7
+alpha = 0xffff
+shadow = -1
+column_padding = 8
+margin_width = 8
+margin_height = 6
+field_gap_divisor = 40
+row_extra = 1
+reserved_lines = 4
+width_share = 7
+width_parts = 8
+double_click_ticks = 294912
+
+[list.pointer]
+cube_colours = [0x0, 0x7fff, 0x3e0, 0x7c1f]
+size = 9
+default_height = 11
+
+[list.scroll_bar]
+first_repeat_ticks = 0x48000
+repeat_ticks = 0x9999
+track_fill_colour = 0x0
+track_border_colour = 0x7
+
+[dialog]
+content_colour = 0x0
+border_colour = 0x7
+title_colour = 0xfb
+text_colour = 0xff
+warning_colour = 0xff
+window_status_colour = 0xff
+status_colour = 0xff
+progress_background_colour = 0x0
+progress_border_colour = 0xff
+progress_fill_colour = 0x4
+bevel_highlight_colour = 0xff
+bevel_shade_colour = 0xf8
+bevel_face_colour = 0x7
+bevel_mark_colour = 0x0
+margin_width_divisor = 128
+margin_height_divisor = 96
+grid_divisor = 48
+button_margin_divisor = 80
+prompt_padding_chars = 4
+prompt_padding_lines = 2
+
+[title_backdrop.sky_scene]
+model = 'moon.kfm'
+cheat_model = 'taylor_head.kfm'
+cheat_code = 666
+start_phase = 0.25
+turn_per_second = 0.0125
+rest_phase = 0.58
+projection = 112
+swing = 48
+depth = 72
+moon_light = [-37000, -37000, 37000]
+moon_ambient = 0x280
+moon_flat = 0x10000
+bat_model = 'menubat.kfm'
+bat_courses = ['menu1.pth', 'menu2.pth', 'menu3.pth']
+bat_count = 30
+bat_speed = 20
+bat_animation_speed = 30
+bat_scatter = 5
+bat_light = [-18500, -18500, 18500]
+bat_ambient = 0x2000
+cloud_image = 'menucld2'
+cloud_size = 256
+cloud_shift_x = 5
+cloud_shift_y = 4
+frame_prefix = 'noc'
+frame_digits = 5
+frame_count = 30
+frame_x = 0
+frame_y = 0
+frame_width = 640
+frame_height = 278
+frame_alpha = 48000
+frame_rate = 12
+frame_wrap = 60
+
+[startup]
+picture = 'fangs'
+picture_alpha = 0x8000
+label_x = 320
+label_y = 240
+label_font = 'theme'
+label_colour = 0xf8
+movie_directory = 'video'
+movie = 'opening.avi'
+
+[loading_indicator.moon]
+model = 'moon.kfm'
+glow_texture = 'MOONGLOW.RAW'
+window_size = 90
+corner_x = 447
+corner_y = 0
+corner_size = 192
+default_tint = [0xff00, 0xff00, 0xff00]
+full_projection = 56
+window_projection = 84
+depth = 36
+light_reach = 37000
+ambient = 0x280
+glow_half_size = 1856
+status_box = [32, 448, 576, 24]
+status_box_colour = 0x0
+status_font = 'theme'
+status_colour = 0xf8
+
+[story_select.story_list]
+full_install_probe = 'enemy.pod'
+loading_frames = 10
+
+[chapter_title]
+seconds = 8
+format = '{year} - {title}'
+colour = 0xf8
+shadow = 0
+alpha = 0xffff
+inset_across = 2
+inset_up = 1
+
+[[chapter_title.font]]
+font = 'small_editor'
+below_height = 384
+
+[[chapter_title.font]]
+font = 'tiny'
+below_height = 480
+
+[[chapter_title.font]]
+font = 'medium'
 
 [[loading]]
 id = 'load1'

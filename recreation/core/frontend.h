@@ -18,13 +18,16 @@ inline constexpr std::string_view kSkySceneBackdrop = "sky_scene";
 inline constexpr std::string_view kFigureSceneBackdrop = "figure_scene";
 inline constexpr std::string_view kMoonLoadingIndicator = "moon";
 inline constexpr std::string_view kColumnScrollCredits = "column_scroll";
+inline constexpr std::string_view kFadeLoopCredits = "fade_loop";
 inline constexpr std::string_view kStoryListSelect = "story_list";
+inline constexpr std::string_view kDirectStartSelect = "direct_start";
 
 // A part, as a message names it ("title backdrop"), checked as it is first used: one no package
 // names, or names in a style this build doesn't draw, is fatal, whichever game names it. The
-// rest of the front end runs without it.
-void requireFrontEndStyle(std::string_view part, const std::optional<std::string> &style,
-                          std::initializer_list<std::string_view> built);
+// rest of the front end runs without it. The style, for a part built in more than one.
+std::string_view requireFrontEndStyle(std::string_view part,
+                                      const std::optional<std::string> &style,
+                                      std::initializer_list<std::string_view> built);
 
 // Every front-end screen is laid out for 640x480. With acceleration the front end runs at the
 // picked resolution, the one the missions run at, with that layout scaled to it and centred; the
