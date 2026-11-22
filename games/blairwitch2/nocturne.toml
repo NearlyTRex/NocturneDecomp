@@ -645,12 +645,23 @@ label_colour = 0xf8
 movie_directory = 'video'
 movie = 'opening.avi'
 
+[loading_indicator.progress_bar]
+height = 20
+frame_colour = 0x0
+trough_colour = 0x0
+bar_colour = 0x4
+status_box = [32, 448, 576, 24]
+status_box_colour = 0x0
+status_font = 'theme'
+status_colour = 0xf8
+
 [story_select.direct_start]
 loading_frames = 10
 
 [[loading]]
 id = 'loadscreen'
 fit = 'keep_aspect'
+moon = { x = 24, y = 405, tint = [0xd700, 0xdc00, 0xe000] }
 
 [[story]]
 id = 'coffin_rock'

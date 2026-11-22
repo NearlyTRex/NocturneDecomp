@@ -3,12 +3,15 @@
 #include "common/fwd.h"
 #include "core/color3i.h"
 #include "core/dmodel/keyframedmodel.h"
+#include "core/frontend.h"
 #include "core/fwd.h"
 #include "core/loadingscreen.h"
+#include "engine/alphabit/alphabitmap.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 #include "platform/mrgltexturebasic.h"
 
+#include <cstdint>
 #include <string_view>
 
 namespace nocturne::core {
@@ -57,11 +60,19 @@ public:
 private:
     // An index into the pictures, or kNoImage when none is marked random.
     [[nodiscard]] int pickRandomPicture();
-    // The packages' moon indicator; without one, fatal.
+    enum class EIndicator : std::uint8_t { Moon, ProgressBar, Icon };
+    // The packages' loading indicator; a style this build doesn't draw is fatal.
+    [[nodiscard]] EIndicator getIndicator() const;
+    // The packages' look for the style; without one, fatal.
     [[nodiscard]] const engine::SMoonIndicator &getMoonIndicator() const;
+    [[nodiscard]] const engine::SProgressBarIndicator &getProgressBarIndicator() const;
+    [[nodiscard]] const engine::SIconIndicator &getIconIndicator() const;
     void renderMoon();
     void renderGlow();
-    void drawStatus(std::string_view text, int window_width, int window_height);
+    void drawProgressBar(int window_width);
+    void drawIcon();
+    void drawStatus(const engine::SLoadingStatus &status, std::string_view text, int window_width,
+                    int window_height);
 
     SLevelLoaderOwners owners_;
     CKeyFramedModel moon_;
@@ -76,6 +87,10 @@ private:
     int viewport_height_ = 0;
     // The moon's and the glow's colour, each channel 0 to 0xff00.
     CColor3i color_;
+    // The icon indicator's: the picture's icon, if it has one, and where the picture is.
+    engine::CAlphaBitmap icon_;
+    bool has_icon_ = false;
+    SPictureArea icon_picture_;
 };
 
 } // namespace nocturne::core

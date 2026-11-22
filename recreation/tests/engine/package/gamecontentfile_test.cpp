@@ -53,11 +53,13 @@ SGameContent fullContent() {
     content.loading = {{.id = "load1",
                         .fit = {.fit = EPictureFit::KeepAspect, .anchor = EPictureAnchor::Right},
                         .moon = SMoonWindow{.x = 120, .y = 130, .tint = {0x8200, 0xc800, 0xf400}},
-                        .random = true},
+                        .random = true,
+                        .icon = "L_demon"},
                        {.id = "plain",
                         .fit = {.fit = EPictureFit::Stretch, .anchor = EPictureAnchor::Centre},
                         .moon = {},
-                        .random = false}};
+                        .random = false,
+                        .icon = {}}};
     content.stories = {
         {.id = "volume1",
          .name = "Volume 1",
@@ -639,7 +641,23 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"loading_indicator = 1", "loading_indicator: not a [loading_indicator] table"},
         SBadCase{"[loading_indicator]\nbar = 1",
                  "loading_indicator: bar: not a key this file takes"},
-        SBadCase{"[loading_indicator]", "loading_indicator: moon: missing"},
+        SBadCase{"[loading_indicator.icon]\nspin = 1",
+                 "loading_indicator: icon: spin: not a key this file takes"},
+        SBadCase{"[loading_indicator.icon]\nx = 75\ny = 298\nwidth = 128\nheight = 128\n"
+                 "alpha_start = 0\nalpha_end = 1\nframes = 0",
+                 "loading_indicator: icon: frames: not from 1 to 1000"},
+        SBadCase{"[loading_indicator.icon]\nx = 75\ny = 298\nwidth = 128\nheight = 128\n"
+                 "alpha_start = 0\nalpha_end = 1\nframes = 12",
+                 "loading_indicator: icon: always_random: missing"},
+        SBadCase{"[[loading]]\nid = \"a\"\nfit = 'stretch'\nicon = 1",
+                 "loading 1: icon: not a string"},
+        SBadCase{"[loading_indicator.progress_bar]\nwidth = 1",
+                 "loading_indicator: progress_bar: width: not a key this file takes"},
+        SBadCase{"[loading_indicator.progress_bar]\nheight = 3",
+                 "loading_indicator: progress_bar: height: not from 4 to 479"},
+        SBadCase{"[loading_indicator.progress_bar]\nheight = 20\nframe_colour = 0\n"
+                 "trough_colour = 0\nbar_colour = 4",
+                 "loading_indicator: progress_bar: status_font: missing"},
         SBadCase{"[loading_indicator.moon]\nspin = 1",
                  "loading_indicator: moon: spin: not a key this file takes"},
         SBadCase{"[loading_indicator.moon]\nglow_texture = 'G.RAW'",

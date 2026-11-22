@@ -540,6 +540,16 @@ label_colour = 0xf8
 movie_directory = 'video'
 movie = 'opening.avi'
 
+[loading_indicator.icon]
+x = 75
+y = 298
+width = 128
+height = 128
+alpha_start = 10000
+alpha_end = 0xffff
+frames = 12
+always_random = true
+
 [story_select.direct_start]
 loading_frames = 10
 
@@ -547,21 +557,25 @@ loading_frames = 10
 id = 'load_0'
 fit = 'keep_aspect'
 random = true
+icon = 'L_demon'
 
 [[loading]]
 id = 'load_1'
 fit = 'keep_aspect'
 random = true
+icon = 'L_cross'
 
 [[loading]]
 id = 'load_2'
 fit = 'keep_aspect'
 random = true
+icon = 'L_stick'
 
 [[loading]]
 id = 'load_3'
 fit = 'keep_aspect'
 random = true
+icon = 'L_shaman'
 
 [[story]]
 id = 'elly_kedward'

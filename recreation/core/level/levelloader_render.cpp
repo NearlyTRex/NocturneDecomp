@@ -3,6 +3,7 @@
 #include "common/math/vector3i.h"
 #include "common/render/renderstate.h"
 #include "core/dfont/dfont.h"
+#include "core/frontend.h"
 #include "core/level/levelloader.h"
 #include "core/set/demonset.h"
 #include "engine/2d/2d.h"
@@ -12,11 +13,13 @@
 #include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
+#include "platform/display.h"
 #include "platform/mrglheaderprimitive.h"
 #include "platform/rendervertex.h"
 
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <span>
@@ -61,8 +64,12 @@ constexpr std::size_t kFadingCorner = 1;
 
 } // namespace
 
+// BW2's progress bar is drawn before the frame counts on, and its moon never is: the original
+// set the moon's camera up for nothing. BW3's icon is drawn after, with no status line.
 // deferred: switching the set to quick lighting while the moon is drawn and back after, with
 //   setRenderingMode
+// bw3 0x004e0000
+// bw2 0x004e1600
 // nocedit 0x00504160
 void CLevelLoader::update(std::string_view text, bool clear_screen) {
     if (!enabled_) {
@@ -73,18 +80,69 @@ void CLevelLoader::update(std::string_view text, bool clear_screen) {
     if (clear_screen) {
         owners_.two_d.fillRectColor(0, 0, window_width - 1, window_height - 1, kBlack);
     }
-    if (use_custom_viewport_) {
-        owners_.renderer.pushViewport(viewport_x_, viewport_y_, viewport_width_, viewport_height_);
-    }
-    renderMoon();
-    if (use_custom_viewport_) {
-        owners_.renderer.popViewport();
-    }
-    current_frame_ = std::min(current_frame_ + 1, total_frames_);
-    if (!use_custom_viewport_) {
-        drawStatus(text, window_width, window_height);
+    switch (getIndicator()) {
+    case EIndicator::Moon:
+        if (use_custom_viewport_) {
+            owners_.renderer.pushViewport(viewport_x_, viewport_y_, viewport_width_,
+                                          viewport_height_);
+        }
+        renderMoon();
+        if (use_custom_viewport_) {
+            owners_.renderer.popViewport();
+        }
+        current_frame_ = std::min(current_frame_ + 1, total_frames_);
+        if (!use_custom_viewport_) {
+            drawStatus(getMoonIndicator().status, text, window_width, window_height);
+        }
+        break;
+    case EIndicator::ProgressBar:
+        drawProgressBar(window_width);
+        current_frame_ = std::min(current_frame_ + 1, total_frames_);
+        if (!use_custom_viewport_) {
+            drawStatus(getProgressBarIndicator().status, text, window_width, window_height);
+        }
+        break;
+    case EIndicator::Icon:
+        current_frame_ = std::min(current_frame_ + 1, total_frames_);
+        drawIcon();
+        break;
     }
     owners_.screen.swapBuffers();
+}
+
+// BW3's took the frames done over all of them in whole numbers, so its icon sat at the start's
+// alpha until the last update; it fades between the two as loading goes on. BW3 drew it only at
+// 480 lines; it is placed on the picture, as the screen shows it.
+void CLevelLoader::drawIcon() {
+    if (!has_icon_) {
+        return;
+    }
+    const engine::SIconIndicator &icon = getIconIndicator();
+    const int alpha = icon.alpha_start + (((icon.alpha_end - icon.alpha_start) * current_frame_) /
+                                          std::max(total_frames_, 1));
+    displayInPicture(icon_, icon_picture_,
+                     {.x = icon.x, .y = icon.y, .width = icon.width, .height = icon.height}, alpha,
+                     owners_.display.getUpscaler());
+}
+
+// Across the screen's top, the frame, then the trough a pixel in, then the bar from a pixel
+// further in, as far across as the frames done are of all of them; its rows scale with the
+// layout, the original's at 480 lines.
+void CLevelLoader::drawProgressBar(int window_width) {
+    const engine::SProgressBarIndicator &bar = getProgressBarIndicator();
+    const SFrontEndLayout layout =
+        getFrontEndLayout(window_width, owners_.screen.getWindowHeight());
+    const int inset = layout.getLength(1);
+    const int bottom = layout.getLength(bar.height);
+    owners_.two_d.fillRectColor(0, 0, window_width, bottom, bar.frame_colour);
+    owners_.two_d.fillRectColor(inset, inset, window_width - inset, bottom - inset,
+                                bar.trough_colour);
+    const float done = total_frames_ > 0
+                           ? static_cast<float>(current_frame_) / static_cast<float>(total_frames_)
+                           : 0.0F;
+    const int reach =
+        static_cast<int>(std::lround(static_cast<float>(window_width - (2 * inset)) * done));
+    owners_.two_d.fillRectColor(2 * inset, 2 * inset, reach, bottom - (2 * inset), bar.bar_colour);
 }
 
 void CLevelLoader::renderMoon() {
@@ -132,8 +190,8 @@ void CLevelLoader::renderGlow() {
 }
 
 // The look's box, the text centred in it, both placed in proportion to a 640x480 screen.
-void CLevelLoader::drawStatus(std::string_view text, int window_width, int window_height) {
-    const engine::SMoonIndicator &look = getMoonIndicator();
+void CLevelLoader::drawStatus(const engine::SLoadingStatus &look, std::string_view text,
+                              int window_width, int window_height) {
     const int left = (window_width * look.status_box[0]) / kStatusLayoutWidth;
     const int top = (window_height * look.status_box[1]) / kStatusLayoutHeight;
     const int width = (window_width * look.status_box[2]) / kStatusLayoutWidth;

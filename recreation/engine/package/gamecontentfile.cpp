@@ -160,7 +160,7 @@ TomlResult<SPictureFit> readPictureFit(const toml::table &table, std::string_vie
 
 TomlResult<SLoadingPicture> readLoading(const toml::table &table, std::string_view where) {
     if (TomlResult<void> keys =
-            rejectUnknownKeys(table, where, {"id", "fit", "anchor", "moon", "random"});
+            rejectUnknownKeys(table, where, {"id", "fit", "anchor", "moon", "random", "icon"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -180,8 +180,15 @@ TomlResult<SLoadingPicture> readLoading(const toml::table &table, std::string_vi
     if (!fit) {
         return std::unexpected(fit.error());
     }
-    return SLoadingPicture{
-        .id = std::move(*id), .fit = *fit, .moon = *moon, .random = random->value_or(false)};
+    TomlResult<std::string> icon = readOptionalString(table, where, "icon");
+    if (!icon) {
+        return std::unexpected(icon.error());
+    }
+    return SLoadingPicture{.id = std::move(*id),
+                           .fit = *fit,
+                           .moon = *moon,
+                           .random = random->value_or(false),
+                           .icon = std::move(*icon)};
 }
 
 // An integer field, and the range it must be in.
@@ -1830,6 +1837,94 @@ TomlResult<SStartup> readStartup(const toml::table &table) {
     return startup;
 }
 
+// A loading indicator's status line, from its own table.
+TomlResult<SLoadingStatus> readLoadingStatus(const toml::table &table, std::string_view where) {
+    SLoadingStatus status;
+    TomlResult<std::string> font = readRequiredString(table, where, "status_font");
+    if (!font) {
+        return std::unexpected(font.error());
+    }
+    status.status_font = std::move(*font);
+    if (TomlResult<void> read =
+            readIntegers(table, where,
+                         {{"status_box_colour", &status.status_box_colour, 0, kMaxColour},
+                          {"status_colour", &status.status_colour, 0, kMaxColour}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    TomlResult<std::array<int, 4>> box =
+        readIntegerList<4>(table, where, "status_box", 0, kMaxPictureX + 1);
+    if (!box) {
+        return std::unexpected(box.error());
+    }
+    status.status_box = *box;
+    return status;
+}
+
+std::string formatLoadingStatus(const SLoadingStatus &status) {
+    return std::format("status_box = [{}, {}, {}, {}]\nstatus_box_colour = 0x{:x}\n"
+                       "status_font = {}\nstatus_colour = 0x{:x}\n",
+                       status.status_box[0], status.status_box[1], status.status_box[2],
+                       status.status_box[3], status.status_box_colour,
+                       quoteToml(status.status_font), status.status_colour);
+}
+
+TomlResult<SProgressBarIndicator> readProgressBarIndicator(const toml::table &table) {
+    constexpr std::string_view kWhere = "loading_indicator: progress_bar: ";
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, kWhere,
+                              {"height", "frame_colour", "trough_colour", "bar_colour",
+                               "status_box", "status_box_colour", "status_font", "status_colour"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    SProgressBarIndicator bar;
+    // The trough and the bar inside the frame need at least its middle row.
+    constexpr int kInsetRows = 4;
+    if (TomlResult<void> read = readIntegers(table, kWhere,
+                                             {{"height", &bar.height, kInsetRows, kMaxPictureY},
+                                              {"frame_colour", &bar.frame_colour, 0, kMaxColour},
+                                              {"trough_colour", &bar.trough_colour, 0, kMaxColour},
+                                              {"bar_colour", &bar.bar_colour, 0, kMaxColour}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    TomlResult<SLoadingStatus> status = readLoadingStatus(table, kWhere);
+    if (!status) {
+        return std::unexpected(status.error());
+    }
+    bar.status = std::move(*status);
+    return bar;
+}
+
+TomlResult<SIconIndicator> readIconIndicator(const toml::table &table) {
+    constexpr std::string_view kWhere = "loading_indicator: icon: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(
+            table, kWhere,
+            {"x", "y", "width", "height", "alpha_start", "alpha_end", "frames", "always_random"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    SIconIndicator icon;
+    if (TomlResult<void> read = readIntegers(table, kWhere,
+                                             {{"x", &icon.x, 0, kMaxPictureX},
+                                              {"y", &icon.y, 0, kMaxPictureY},
+                                              {"width", &icon.width, 1, kMaxPictureSize},
+                                              {"height", &icon.height, 1, kMaxPictureSize},
+                                              {"alpha_start", &icon.alpha_start, 0, kMaxAlpha},
+                                              {"alpha_end", &icon.alpha_end, 0, kMaxAlpha},
+                                              {"frames", &icon.frames, 1, kMaxLoadingFrames}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    const TomlResult<bool> always = readRequiredBoolean(table, kWhere, "always_random");
+    if (!always) {
+        return std::unexpected(always.error());
+    }
+    icon.always_random = *always;
+    return icon;
+}
+
 TomlResult<SMoonIndicator> readMoonIndicator(const toml::table &table) {
     constexpr std::string_view kWhere = "loading_indicator: moon: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
@@ -1843,8 +1938,7 @@ TomlResult<SMoonIndicator> readMoonIndicator(const toml::table &table) {
     }
     SMoonIndicator moon;
     for (const auto &[key, field] :
-         {std::pair{"model", &moon.model}, std::pair{"glow_texture", &moon.glow_texture},
-          std::pair{"status_font", &moon.status_font}}) {
+         {std::pair{"model", &moon.model}, std::pair{"glow_texture", &moon.glow_texture}}) {
         TomlResult<std::string> value = readRequiredString(table, kWhere, key);
         if (!value) {
             return std::unexpected(value.error());
@@ -1862,9 +1956,7 @@ TomlResult<SMoonIndicator> readMoonIndicator(const toml::table &table) {
                           {"depth", &moon.depth, 1, kMaxProjection},
                           {"light_reach", &moon.light_reach, 0, kMaxLight},
                           {"ambient", &moon.ambient, 0, kMaxLight},
-                          {"glow_half_size", &moon.glow_half_size, 0, kMaxLight},
-                          {"status_box_colour", &moon.status_box_colour, 0, kMaxColour},
-                          {"status_colour", &moon.status_colour, 0, kMaxColour}});
+                          {"glow_half_size", &moon.glow_half_size, 0, kMaxLight}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1874,26 +1966,56 @@ TomlResult<SMoonIndicator> readMoonIndicator(const toml::table &table) {
         return std::unexpected(tint.error());
     }
     moon.default_tint = *tint;
-    TomlResult<std::array<int, 4>> box =
-        readIntegerList<4>(table, kWhere, "status_box", 0, kMaxPictureX + 1);
-    if (!box) {
-        return std::unexpected(box.error());
+    TomlResult<SLoadingStatus> status = readLoadingStatus(table, kWhere);
+    if (!status) {
+        return std::unexpected(status.error());
     }
-    moon.status_box = *box;
+    moon.status = std::move(*status);
     return moon;
 }
 
-// [loading_indicator] holds a table for each style's values.
-TomlResult<SMoonIndicator> readLoadingIndicator(const toml::table &table) {
+// [loading_indicator] holds a table for each style's values; the style the front end names is
+// checked for its own when a level loads.
+TomlResult<void> readLoadingIndicator(const toml::table &table, SGameContent &content) {
     constexpr std::string_view kWhere = "loading_indicator: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"moon"}); !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"moon", "progress_bar", "icon"});
+        !keys) {
         return std::unexpected(keys.error());
     }
-    const TomlResult<const toml::table *> moon = readRequiredTable(table, kWhere, "moon");
+    const TomlResult<const toml::table *> icon = readTable(table, kWhere, "icon");
+    if (!icon) {
+        return std::unexpected(icon.error());
+    }
+    if (*icon != nullptr) {
+        TomlResult<SIconIndicator> read = readIconIndicator(**icon);
+        if (!read) {
+            return std::unexpected(read.error());
+        }
+        content.icon_indicator = *read;
+    }
+    const TomlResult<const toml::table *> moon = readTable(table, kWhere, "moon");
     if (!moon) {
         return std::unexpected(moon.error());
     }
-    return readMoonIndicator(**moon);
+    if (*moon != nullptr) {
+        TomlResult<SMoonIndicator> read = readMoonIndicator(**moon);
+        if (!read) {
+            return std::unexpected(read.error());
+        }
+        content.moon_indicator = std::move(*read);
+    }
+    const TomlResult<const toml::table *> bar = readTable(table, kWhere, "progress_bar");
+    if (!bar) {
+        return std::unexpected(bar.error());
+    }
+    if (*bar != nullptr) {
+        TomlResult<SProgressBarIndicator> read = readProgressBarIndicator(**bar);
+        if (!read) {
+            return std::unexpected(read.error());
+        }
+        content.progress_bar_indicator = std::move(*read);
+    }
+    return {};
 }
 
 // A mode is normal or hard.
@@ -2806,12 +2928,15 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
         return std::unexpected(startup.error());
     }
     content.startup = std::move(*startup);
-    TomlResult<std::optional<SMoonIndicator>> moon_indicator =
-        readOptionalTable<SMoonIndicator>(table, "loading_indicator", readLoadingIndicator);
-    if (!moon_indicator) {
-        return std::unexpected(moon_indicator.error());
+    const TomlResult<const toml::table *> indicator = readTable(table, "", "loading_indicator");
+    if (!indicator) {
+        return std::unexpected(indicator.error());
     }
-    content.moon_indicator = std::move(*moon_indicator);
+    if (*indicator != nullptr) {
+        if (TomlResult<void> read = readLoadingIndicator(**indicator, content); !read) {
+            return std::unexpected(read.error());
+        }
+    }
     const TomlResult<const toml::table *> story_select = readTable(table, "", "story_select");
     if (!story_select) {
         return std::unexpected(story_select.error());
@@ -2977,15 +3102,26 @@ std::string formatGameContentTables(const SGameContent &content) {
             "corner_x = {}\ncorner_y = {}\ncorner_size = {}\n"
             "default_tint = [0x{:x}, 0x{:x}, 0x{:x}]\nfull_projection = {}\n"
             "window_projection = {}\ndepth = {}\nlight_reach = {}\nambient = 0x{:x}\n"
-            "glow_half_size = {}\nstatus_box = [{}, {}, {}, {}]\nstatus_box_colour = 0x{:x}\n"
-            "status_font = {}\nstatus_colour = 0x{:x}\n",
+            "glow_half_size = {}\n{}",
             quoteToml(moon->model), quoteToml(moon->glow_texture), moon->window_size,
             moon->corner_x, moon->corner_y, moon->corner_size, moon->default_tint[0],
             moon->default_tint[1], moon->default_tint[2], moon->full_projection,
             moon->window_projection, moon->depth, moon->light_reach, moon->ambient,
-            moon->glow_half_size, moon->status_box[0], moon->status_box[1], moon->status_box[2],
-            moon->status_box[3], moon->status_box_colour, quoteToml(moon->status_font),
-            moon->status_colour);
+            moon->glow_half_size, formatLoadingStatus(moon->status));
+    }
+    if (const std::optional<SProgressBarIndicator> &bar = content.progress_bar_indicator) {
+        text +=
+            std::format("\n[loading_indicator.progress_bar]\nheight = {}\n"
+                        "frame_colour = 0x{:x}\ntrough_colour = 0x{:x}\nbar_colour = 0x{:x}\n{}",
+                        bar->height, bar->frame_colour, bar->trough_colour, bar->bar_colour,
+                        formatLoadingStatus(bar->status));
+    }
+    if (const std::optional<SIconIndicator> &icon = content.icon_indicator) {
+        text += std::format("\n[loading_indicator.icon]\nx = {}\ny = {}\nwidth = {}\nheight = {}\n"
+                            "alpha_start = {}\nalpha_end = 0x{:x}\nframes = {}\n"
+                            "always_random = {}\n",
+                            icon->x, icon->y, icon->width, icon->height, icon->alpha_start,
+                            icon->alpha_end, icon->frames, icon->always_random);
     }
     if (const std::optional<SStorySelect> &select = content.story_select) {
         text += std::format(
@@ -3022,6 +3158,9 @@ std::string formatGameContentTables(const SGameContent &content) {
         }
         if (picture.random) {
             text += "random = true\n";
+        }
+        if (!picture.icon.empty()) {
+            text += std::format("icon = {}\n", quoteToml(picture.icon));
         }
     }
     for (const SGameStory &story : content.stories) {

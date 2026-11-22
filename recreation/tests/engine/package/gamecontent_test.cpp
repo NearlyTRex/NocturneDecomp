@@ -25,7 +25,7 @@ SGameStory story(std::string id, std::string name) {
 }
 
 SLoadingPicture picture(std::string id, bool random) {
-    return {.id = std::move(id), .fit = {}, .moon = {}, .random = random};
+    return {.id = std::move(id), .fit = {}, .moon = {}, .random = random, .icon = {}};
 }
 
 SMergedGameContent merge(std::initializer_list<const SGameContent *> in_order) {

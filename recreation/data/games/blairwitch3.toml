@@ -697,26 +697,41 @@ button_margin_divisor = 80
 prompt_padding_chars = 4
 prompt_padding_lines = 2
 
-# Four pictures, one at random for every level
+# Four pictures, one at random for every level, each with its icon
 [[loading]]
 fit = "keep_aspect"
 id = "load_0"
 random = true
+icon = "L_demon"
 
 [[loading]]
 fit = "keep_aspect"
 id = "load_1"
 random = true
+icon = "L_cross"
 
 [[loading]]
 fit = "keep_aspect"
 id = "load_2"
 random = true
+icon = "L_stick"
 
 [[loading]]
 fit = "keep_aspect"
 id = "load_3"
 random = true
+icon = "L_shaman"
+
+# The picture's 128x128 icon at 75, 298, fading in over BW3's 12 updates of any loading screen
+[loading_indicator.icon]
+x = 75
+y = 298
+width = 128
+height = 128
+alpha_start = 10000
+alpha_end = 0xffff
+frames = 12
+always_random = true
 
 [story_select.direct_start]
 loading_frames = 10

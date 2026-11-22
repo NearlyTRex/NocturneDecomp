@@ -71,6 +71,8 @@ protected:
                      .tiled_scroll = {},
                      .loading = {},
                      .moon_indicator = {},
+                     .progress_bar_indicator = {},
+                     .icon_indicator = {},
                      .stories = {},
                      .story_select = {},
                      .direct_start = {},

@@ -498,10 +498,24 @@ button_margin_divisor = 80
 prompt_padding_chars = 4
 prompt_padding_lines = 2
 
-# One picture for every level
+# One picture for every level. Its moon window is BW2's, where the progress bar draws no moon,
+# but which keeps the status line off the picture.
 [[loading]]
 fit = "keep_aspect"
 id = "loadscreen"
+moon = { x = 24, y = 405, tint = [0xd700, 0xdc00, 0xe000] }
+
+# Across the top: a black frame 20 rows deep, a black trough a pixel in, and the bar in colour 4
+# a pixel further in; Nocturne's status line when the screen is the indicator's
+[loading_indicator.progress_bar]
+height = 20
+frame_colour = 0x00
+trough_colour = 0x00
+bar_colour = 0x04
+status_box = [32, 448, 576, 24]
+status_box_colour = 0x00
+status_font = "theme"
+status_colour = 0xf8
 
 # Ten loading frames before the story's one mission
 [story_select.direct_start]

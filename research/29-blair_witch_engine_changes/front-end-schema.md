@@ -553,13 +553,38 @@ status_box = [32, 448, 576, 24]   # on a 640x480 screen, scaled to the screen's
 status_box_colour = 0x00
 status_font = "theme"
 status_colour = 0xf8
+
+[loading_indicator.progress_bar]  # BW2's (bw2 CLevelLoader::update 0x004e1600)
+height = 20                       # the frame's rows from the top, scaled with the layout
+frame_colour = 0x00               # the frame across the screen's top
+trough_colour = 0x00              # a pixel in
+bar_colour = 0x04                 # a pixel further in, as far across as the frames done
+status_box = [32, 448, 576, 24]   # the status line, as the moon's
+status_box_colour = 0x00
+status_font = "theme"
+status_colour = 0xf8
 ```
 
+```toml
+[loading_indicator.icon]          # BW3's (bw3 CLevelLoader::show 0x004dfc50, update 0x004e0000)
+x = 75                            # the picture's icon, at its point on the picture
+y = 298
+width = 128
+height = 128
+alpha_start = 10000               # faded in from this to alpha_end as loading goes on; BW3's
+alpha_end = 0xffff                # whole-number divide held it at the start until the last update
+frames = 12                       # the updates of any loading screen, whatever was asked
+always_random = true              # every loading screen picks a picture marked random
+```
+
+A `[[loading]]` picture names its `icon` (BW3's `L_demon`, `L_cross`, `L_stick`, `L_shaman`).
+The icon draws no moon and no status line.
+
 The `[[loading]]` pictures stay as they are, and a random pick draws from those marked
-`random`. Not built: BW3's pick of any of its four, `progress_bar` (BW2) with its rectangles and
-colour, and `icon` (BW3) with its position, alpha ramp, frame count and an `icon` on each
-picture. BW1 and BW3 draw the indicator only on a 480-line screen (bw1 `CLevelLoader::update`
-0x004fe9c0); no key says so yet.
+`random`. The progress bar draws no moon, but a picture's moon window still keeps the status
+line off the screen, as BW2's single picture's does. BW1 and BW3 drew the indicator only on a
+480-line screen (bw1 `CLevelLoader::update` 0x004fe9c0); the recreation draws it at any size,
+placed on the picture as the screen shows it.
 
 ## Startup
 

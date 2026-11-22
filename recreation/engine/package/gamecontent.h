@@ -86,6 +86,8 @@ struct SLoadingPicture {
     std::optional<SMoonWindow> moon;
     // One of those a mission without a story picks from.
     bool random = false;
+    // For the icon indicator, the picture it fades in over this one; empty for none.
+    std::string icon;
 
     bool operator==(const SLoadingPicture &) const = default;
 };
@@ -418,6 +420,51 @@ struct SStartup {
     bool operator==(const SStartup &) const = default;
 };
 
+// The status line a loading indicator shows over the whole screen: a box, and the loader's text
+// centred in it.
+struct SLoadingStatus {
+    // Left, top, width and height on a 640x480 screen, scaled to the screen's.
+    std::array<int, 4> status_box{};
+    int status_box_colour = 0;
+    std::string status_font;
+    int status_colour = 0;
+
+    bool operator==(const SLoadingStatus &) const = default;
+};
+
+// BW2's progress_bar loading indicator: across the top of the screen, a frame, a trough inside it
+// a pixel in, and the bar a pixel further in growing with the frames; then the status line.
+struct SProgressBarIndicator {
+    // The frame's rows from the top, on the layout.
+    int height = 0;
+    int frame_colour = 0;
+    int trough_colour = 0;
+    int bar_colour = 0;
+    SLoadingStatus status;
+
+    bool operator==(const SProgressBarIndicator &) const = default;
+};
+
+// BW3's icon loading indicator: a picture's icon at its point on it, fading in as loading goes
+// on, and nothing else drawn: no moon, no status line.
+struct SIconIndicator {
+    // The icon's top left and size on the picture.
+    int x = 0;
+    int y = 0;
+    int width = 0;
+    int height = 0;
+    // From none done to all of them.
+    int alpha_start = 0;
+    int alpha_end = 0;
+    // The updates a loading screen takes, whatever the loader asked for, as BW3's 12.
+    int frames = 0;
+    // Every loading screen picks one of the pictures marked random, as BW3's did, rather than
+    // the one it was given.
+    bool always_random = false;
+
+    bool operator==(const SIconIndicator &) const = default;
+};
+
 // The moon loading indicator: the moon turning in its light with a glow before it, in a picture's
 // window, in the corner window it is given, or over the whole screen above a status line.
 struct SMoonIndicator {
@@ -438,11 +485,7 @@ struct SMoonIndicator {
     int ambient = 0;
     // The glow's half side, 256 to a world unit.
     int glow_half_size = 0;
-    // Left, top, width and height on a 640x480 screen, scaled to the screen's.
-    std::array<int, 4> status_box{};
-    int status_box_colour = 0;
-    std::string status_font;
-    int status_colour = 0;
+    SLoadingStatus status;
 
     bool operator==(const SMoonIndicator &) const = default;
 };
@@ -873,6 +916,8 @@ struct SGameContent {
     std::vector<SLoadingPicture> loading;
     // The moon loading indicator's values.
     std::optional<SMoonIndicator> moon_indicator;
+    std::optional<SProgressBarIndicator> progress_bar_indicator;
+    std::optional<SIconIndicator> icon_indicator;
     std::vector<SGameStory> stories;
     // The story_list style's values.
     std::optional<SStorySelect> story_select;
