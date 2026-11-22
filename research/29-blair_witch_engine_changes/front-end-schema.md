@@ -21,9 +21,11 @@ the `[[loading]]`, `[[story]]` and `[translation]` tables. The rest is design.
 - **Units.** Positions are in the 640x480 layout. Colours are palette indices (0-0xff) unless
   named a cube colour. Alphas are 0-0xffff. Times are seconds.
 - **Fonts** are named by their `[[font]]` id.
-- **Labels** are written in the engine's English. `[labels]` maps an English label to the
-  game's text before translation, so a game lists only the labels it changes. It applies to all
-  of the engine's localized text, the menus' and the rest.
+- **Labels** are the menus' text, keyed by an id the code asks for (`main_play`,
+  `sound_effects`, `hotkey_pause`). Every game lists every id, so the four manifests' `[labels]`
+  have the same keys; the text is the game's own ("P L A Y" in Nocturne, BW1 and BW2, "PLAY" in
+  BW3), which the message file then translates. An id no package gives is fatal. Mission, set
+  and editor text isn't labelled; the message file translates it as written.
 - **Lines.** Each page's lines are one shared list in code, the recreation's lines and the
   originals' together. `[menu.features]` switches on the lines for a feature only some games
   have.
@@ -58,12 +60,14 @@ shadow_x = 2
 os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }   # left out: the font takes no OS text
 ```
 
-Each of the six ids is required; an id outside them is fatal. A later package's font replaces an
-earlier one's with the same id.
+Each of the six ids is required. Any other id is a game's own font, loaded beside them with no OS
+text and drawn by what names it, as BW3's `menu` and `small_menu` (BW3_font.raw, BW3_font2.raw,
+the theme font's size with palette index 2 clear). A later package's font replaces an earlier
+one's with the same id.
 
-BW1-3 add `hand` (dochand.raw); BW3 adds `menu` and `small_menu` (BW3_font.raw, BW3_font2.raw).
-Not built: those ids, and a `[fonts]` table naming the Menu text setting's two choices
-(`menu_large = "theme"`, `menu_small = "small_editor"` in Nocturne).
+Not built: BW1-3's `hand` (dochand.raw), which nothing draws yet, and a `[fonts]` table naming the
+Menu text setting's two choices (`menu_large = "theme"`, `menu_small = "small_editor"` in
+Nocturne).
 
 ## Menus
 
@@ -80,9 +84,10 @@ colour = 7
 shadow = 0                        # -1 for none
 gap_lines = 2
 drop = { x = 1, y = 1, colour = 2 }  # optional: BW2's copy under the line, drawn first
+font = "menu"                     # optional: the items' font when left out (BW3's own)
 
 [menu.item]
-font = "theme"
+font = "theme"                    # the lines under a title
 colour = 0xf8
 selected_colour = 0xff
 alpha = 48000
@@ -90,22 +95,34 @@ shadow = -1
 spacing_titled = 1
 spacing_untitled = 2
 drop = { x = 0, y = 1, colour = 4 }  # optional, as the title's (BW2's)
-positions = []                    # not built: a point per main-menu item
+untitled_font = "menu"            # optional: a list without a title, as BW3's main menu
+untitled_positions = [{ centre_x = 320, y = 234 }]  # optional: a point per line of such a list,
+                                  # its left edge (x) or its middle (centre_x); BW3's x 284, 269,
+                                  # 290 and 292 centred START, OPTIONS, LOAD and QUIT on about 320
 
 [menu.item.glow]
 colour = 7
 copies = 5
 flicker = true
+item_colour = 0x9a                # optional: the glowing line's own colour (BW3's); else colour
 
 [menu.footer]
 font = "small_editor"
 colour = 0xf8
 shadow = 0
-version_x = 4
 version_alpha = 0x8000
-version_corner = "bottom_left"    # optional: bottom_left | top_right (BW2 drew "1.2" there)
-format = "{copyright}"            # not built: {copyright}, {version}
-right = 639                       # not built: the copyright's right edge (BW1 619)
+
+[menu.footer.copyright]           # each line's outer edges x and y layout pixels in from a corner
+corner = "bottom_right"           # bottom_left | bottom_right | top_left | top_right
+edge = "screen"                   # screen (Nocturne, hugging a wide screen) | layout (BW1/BW3 619)
+x = 1
+y = 1
+
+[menu.footer.version]             # the build line, where the game drew its version (BW2's top
+corner = "bottom_left"            # right of the layout), else Nocturne's
+edge = "screen"
+x = 4
+y = 1
 
 [menu.music]                      # what configure plays, by the output's rate (30000 and under)
 low_rate = "splash-music-22.wav"  # BW2: XBLAIRMENU.wav for both
@@ -168,7 +185,7 @@ directory = "video"
 movies = ["noc1.avi", "noc2.avi", "noc3.avi", "noc4.avi"]
 
 
-[labels]                          # English = the game's text; Nocturne's is empty
+[labels]                          # id = the game's text, e.g. main_play = "P L A Y"
 ```
 
 Nocturne's manifest lists no page tops, so every titled page sits at `titled_top`, as the
@@ -262,7 +279,7 @@ prompt_padding_chars = 4
 prompt_padding_lines = 2
 ```
 
-The prompts' titles ("Message", "Warning", "Error") are labels. The list's font is the editor
+The prompts' titles ("Message", "Warning", "Error") are editor text the message file translates. The list's font is the editor
 font, `small_editor`. Not built: BW1 and BW3 cycle the pointer through palette indices
 (`palette_colours = [0, 0xff, 2, 0xfd]`) in place of `cube_colours`.
 
@@ -313,7 +330,29 @@ heading = "b"
 
 Every line is centred across the layout. As `column_scroll`, a line is drawn from row 0 to above
 479 less a line, and the screen is redrawn only when the rounded scroll moves.
-Not built: `two_column` (BW3), with its columns at 100/300 and its `\1`/`\2` markers.
+```toml
+[credits.two_column]              # BW3's (bw3 CGame::rollCredits 0x004c02a0); [credits] image
+font = "theme"                    # and music left out
+centre_left = 100                 # a line centred between these, as drawTextCenterInBounds
+centre_right = 400
+left_x = 100                      # "\1left\2right": the two parts at these
+right_x = 300
+left_column = "1"
+right_column = "2"
+top_strip_bottom = 30             # black across the whole width
+bottom_strip_top = 439
+strip_colour = 0x00
+text_colour = 0xf8
+heading_colour = 0x02
+shadow_colour = 0
+scroll_speed = 32
+start_y = 480                     # and again from it once a drawing had no line on the screen
+end_line = "end"                  # and the top was above it
+marker = "\\"
+heading = "b"                     # "\b" first; a line marked for columns without "\2" is skipped
+```
+
+BW3's credits leave the menu's music playing and end on Escape alone.
 
 ## Stories and the chapter title
 
@@ -448,8 +487,31 @@ BW2's backdrop (bw2 `CMoon` 0x005023e0, 0x005024a0, 0x00502510) is this scene wi
 backdrop, models or cheat model, which are optional: the same camera, light, flat colour and
 ambient, and its 75 frames `blairwitch_00` to `_74`, 640x282 at 0,0, 12 a second, wrapping at 74.
 The cheat code is only cleared.
-Not built: `tiled_scroll` (BW3): scroll image, steps and wraps, the hand image's position and
-alpha range and step, the overlay image.
+```toml
+[title_backdrop.tiled_scroll]     # BW3's (bw3 CMoon 0x004f94a0, 0x004f9670)
+tile = "bwp3_menu_scroll"         # 640x480, drawn at each column and row
+columns = [320, -320]
+rows = [0, 480]
+step_x = 2                        # each drawing, not each second, as BW3 stepped it
+step_y = -1
+wrap_x_above = 639                # a column past it goes to wrap_x_to
+wrap_x_to = -640
+wrap_y_below = -479               # a row under it goes to wrap_y_to
+wrap_y_to = 479
+hand = "bwp3_hand"
+hand_x = 64
+hand_y = 64
+hand_width = 512
+hand_height = 512
+hand_alpha_start = 0x10000        # falls by the step to the low, rises to the high, and falls
+hand_alpha_low = 5000
+hand_alpha_high = 0xffff
+hand_alpha_step = 500
+overlay = "BWP3_mainmenu"         # over everything
+```
+
+BW3 also loaded BW1's 30 `blair_` frames, never drew them, and set BW1's camera and light with
+nothing in 3D. Its timer wrapped at the half it was tested against, so its glow is always on.
 
 ## Loading indicator: `[loading_indicator.moon]`
 
@@ -494,7 +556,7 @@ movie_directory = "video"
 movie = "opening.avi"
 ```
 
-Every game draws the "Loading..." label, a label `[labels]` can change; the originals measured it
+Every game draws its `loading` label ("Loading..."); the originals measured it
 and never drew it.
 
 ## Continue prompt: `[continue_prompt]`

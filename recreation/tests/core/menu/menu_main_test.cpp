@@ -32,6 +32,20 @@ using ::testing::Return;
 
 using CMainMenuTest = CMenuFixture;
 
+// Each game's own words: Nocturne's spaced, another's as its labels give them.
+TEST_F(CMainMenuTest, TheMenusWordsAreTheGamesLabels) {
+    EXPECT_EQ(menu_.label("main_play"), "P L A Y");
+    EXPECT_EQ(menu_.label("multiplayer_host"), "H O S T   G A M E");
+    game_parts_.getContent().labels["main_play"] = "PLAY";
+    EXPECT_EQ(menu_.label("main_play"), "PLAY");
+}
+
+TEST_F(CMainMenuTest, ALabelNoPackageGivesIsFatal) {
+    EXPECT_THAT([this] { static_cast<void>(menu_.label("main_dance")); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the label main_dance")));
+}
+
 TEST_F(CMainMenuTest, AWindowUnder480RowsShowsNothing) {
     ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(479));
     EXPECT_EQ(menu_.showMainGameMenu(), 1);

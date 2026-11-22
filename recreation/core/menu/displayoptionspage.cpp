@@ -71,17 +71,18 @@ static_assert(std::ranges::all_of(kResolutions, [](const SResolution &mode) {
 }));
 constexpr int kTallest = std::ranges::max(kResolutions, {}, &SResolution::height).height;
 
-// By EWindowMode.
-constexpr std::array<std::string_view, 3> kWindowModeNames{"Windowed", "Fullscreen", "Borderless"};
+// By EWindowMode; the names' label ids.
+constexpr std::array<std::string_view, 3> kWindowModeNames{
+    "display_window_windowed", "display_window_fullscreen", "display_window_borderless"};
 constexpr int kWindowModeCount = static_cast<int>(kWindowModeNames.size());
 
 // By EFullscreenSize.
 constexpr std::array<std::string_view, platform::kFullscreenSizeCount> kFullscreenSizeNames{
-    "Game", "Desktop"};
+    "display_fullscreen_size_game", "display_fullscreen_size_desktop"};
 
 // By EWidescreen.
 constexpr std::array<std::string_view, common::kWidescreenCount> kWidescreenNames{
-    "Stretch", "Pillarbox", "Pan & scan"};
+    "display_widescreen_stretch", "display_widescreen_pillarbox", "display_widescreen_pan_scan"};
 
 // One step on or back through those that fit, wrapping; at least one must. A resolution not in
 // the list, or one that doesn't fit, goes to the nearest by height, then width, instead.
@@ -116,7 +117,7 @@ CDisplayOptionsPage::CDisplayOptionsPage(CMenu &menu, const SMenuOwners &owners)
     : CScreenModePage(menu, owners) {}
 
 std::optional<std::string> CDisplayOptionsPage::title() {
-    return localize("Display Options");
+    return label("display_title");
 }
 
 std::string_view CDisplayOptionsPage::getLayoutId() const {
@@ -130,30 +131,32 @@ void CDisplayOptionsPage::build(std::vector<SMenuLine> &lines) {
     const int height = owners.game.game_pixy;
     const std::vector<platform::SDisplayInfo> displays = owners.display.getDisplays();
     addLine(lines, EDisplayLine::Display, getDisplayText(displays));
-    addLine(
-        lines, EDisplayLine::Resolution,
-        std::format("Resolution : {}x{}{}", width, height,
-                    common::getScreenWide({.width = width, .height = height}) ? " (wide)" : ""));
+    addLine(lines, EDisplayLine::Resolution,
+            std::format("{}{}x{}{}", label("display_resolution"), width, height,
+                        common::getScreenWide({.width = width, .height = height})
+                            ? label("display_resolution_wide")
+                            : std::string()));
     addLine(lines, EDisplayLine::Window,
-            std::format("Window : {}", kWindowModeNames.at(static_cast<std::size_t>(
-                                           owners.display.getWindowMode()))));
+            label("display_window") + label(kWindowModeNames.at(static_cast<std::size_t>(
+                                          owners.display.getWindowMode()))));
     if (owners.display.getWindowMode() == platform::EWindowMode::Fullscreen) {
         addLine(lines, EDisplayLine::FullscreenSize,
-                std::format("Fullscreen size : {}",
-                            kFullscreenSizeNames.at(
-                                static_cast<std::size_t>(owners.display.getFullscreenSize()))));
+                label("display_fullscreen_size") +
+                    label(kFullscreenSizeNames.at(
+                        static_cast<std::size_t>(owners.display.getFullscreenSize()))));
         const int refresh_rate = owners.display.getRefreshRate();
         addLine(lines, EDisplayLine::RefreshRate,
                 refresh_rate == platform::kRefreshRateAuto
-                    ? std::string("Refresh rate : Auto")
-                    : std::format("Refresh rate : {} Hz", refresh_rate));
+                    ? label("display_refresh_rate_auto")
+                    : std::format("{}{}{}", label("display_refresh_rate"), refresh_rate,
+                                  label("display_refresh_rate_unit")));
     }
     addLine(lines, EDisplayLine::Vsync,
-            std::format("Vertical sync : {}", owners.display.getVsync() ? "On" : "Off"));
+            label(owners.display.getVsync() ? "display_vsync_on" : "display_vsync_off"));
     addLine(lines, EDisplayLine::Widescreen,
-            std::format("Widescreen : {}", kWidescreenNames.at(static_cast<std::size_t>(
-                                               owners.display.getWidescreen()))));
-    addLine(lines, EDisplayLine::Calibration, localize("Monitor calibration"));
+            label("display_widescreen") + label(kWidescreenNames.at(static_cast<std::size_t>(
+                                              owners.display.getWidescreen()))));
+    addLine(lines, EDisplayLine::Calibration, label("display_calibration"));
 }
 
 // The original stepped the resolution through a chain of its own, which video memory could
@@ -241,9 +244,9 @@ CDisplayOptionsPage::getDisplayText(const std::vector<platform::SDisplayInfo> &d
         platform::resolveDisplayIndex(getOwners().display.getDisplayIndex(), displays.size());
     const platform::SDisplayInfo *display = getChosenDisplay(displays);
     if (display == nullptr) {
-        return std::format("Display : {}", index + 1);
+        return std::format("{}{}", label("display_display"), index + 1);
     }
-    return std::format("Display : {} ({})", index + 1, display->name);
+    return std::format("{}{} ({})", label("display_display"), index + 1, display->name);
 }
 
 // The enhanced game's, as are the full screen size, refresh rate and vertical sync. With one

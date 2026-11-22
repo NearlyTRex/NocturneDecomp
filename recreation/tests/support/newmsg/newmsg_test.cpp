@@ -53,16 +53,6 @@ TEST_F(CNewMsgTest, TranslationsGoOverTheMessageFile) {
     EXPECT_EQ(messages_.getLocalizedString("Other"), "Other");
 }
 
-// A game's label for an engine key is its text, and the language's text for the label after.
-TEST_F(CNewMsgTest, ALabelStandsForItsKeyAndIsTranslatedInItsPlace) {
-    givenMessages("\"START\", \"DEMARRER\"\r\n\"S T A R T\", \"D E M A R R E R\"\r\n");
-    messages_.readMessageFile("msglist.txt");
-    messages_.setLabels({{"S T A R T", "START"}, {"Q U I T", "QUIT"}});
-    EXPECT_EQ(messages_.getLocalizedString("S T A R T"), "DEMARRER");
-    EXPECT_EQ(messages_.getLocalizedString("Q U I T"), "QUIT");
-    EXPECT_EQ(messages_.getLocalizedString("L O A D"), "L O A D");
-}
-
 TEST_F(CNewMsgTest, AMissingOrEmptyFileLoadsNothing) {
     messages_.readMessageFile("msglist.txt");
     givenFile("empty.txt", "");

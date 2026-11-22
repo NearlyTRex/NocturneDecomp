@@ -284,6 +284,107 @@ TEST_F(CFadeCreditsTest, WithoutItsValuesTheyAreFatal) {
                     ::testing::StrEq("No package gives the fade_loop credits' look")));
 }
 
+// BW3's credits, with no image.
+class CTwoColumnCreditsTest : public CCreditsTest {
+protected:
+    CTwoColumnCreditsTest() {
+        content_.front_end.credits = "two_column";
+        content_.credits = engine::getShippedGameContent("blairwitch3").credits;
+    }
+
+    // The first lit pixel's row and column, and the last column lit on that row.
+    struct SText {
+        int row = -1;
+        int first = -1;
+        int last = -1;
+    };
+
+    [[nodiscard]] SText firstText() const {
+        for (int y = 0; y < kHeight; ++y) {
+            SText text;
+            for (int x = 0; x < kWidth; ++x) {
+                if (screen_.pixel(x, y) != 0) {
+                    text.row = y;
+                    text.first = text.first < 0 ? x : text.first;
+                    text.last = x;
+                }
+            }
+            if (text.row >= 0) {
+                return text;
+            }
+        }
+        return {};
+    }
+
+    // Whether anything is lit on the row from x for a few columns.
+    [[nodiscard]] bool litFrom(int x, int y) const {
+        for (int column = x; column < x + 4; ++column) {
+            if (screen_.pixel(column, y) != 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+// Between 100 and 400, as drawTextCenterInBounds centres it.
+TEST_F(CTwoColumnCreditsTest, ALineIsCentredBetweenItsBounds) {
+    givenCredits("XX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    const SText text = firstText();
+    EXPECT_EQ(text.row, letterRow(topAfterFrames(11)));
+    EXPECT_EQ(text.first, (100 + 400 + 1 - fonts_.getThemeFont()->getTextWidth("XX")) / 2);
+}
+
+// "\1left\2right": the left at 100, the right at 300.
+TEST_F(CTwoColumnCreditsTest, AMarkedLineIsInTwoColumns) {
+    givenCredits("\\1XX\\2XX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    const int row = letterRow(topAfterFrames(11));
+    EXPECT_TRUE(litFrom(100, row));
+    EXPECT_TRUE(litFrom(300, row));
+    EXPECT_FALSE(litFrom(200, row));
+}
+
+TEST_F(CTwoColumnCreditsTest, ALineMarkedForColumnsWithoutTheSecondIsNotDrawn) {
+    givenCredits("\\1XXXX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    EXPECT_EQ(firstText().row, -1);
+}
+
+// "\b" makes it a heading, in its own colour, before its columns are looked for. With no image
+// there is no palette of its own, so the heading is only told from the line under it.
+TEST_F(CTwoColumnCreditsTest, AHeadingCanBeInColumns) {
+    givenCredits("\\b\\1XX\\2XX\n\\1XX\\2XX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    const int row = letterRow(topAfterFrames(11));
+    const auto firstLitIn = [this](int x, int y) {
+        for (int column = x; column < x + 20; ++column) {
+            if (screen_.pixel(column, y) != 0) {
+                return screen_.pixel(column, y);
+            }
+        }
+        return std::uint32_t{0};
+    };
+    const std::uint32_t heading = firstLitIn(300, row);
+    ASSERT_NE(heading, 0U);
+    EXPECT_EQ(firstLitIn(100, row), heading);
+    EXPECT_NE(firstLitIn(300, row + lineHeight()), heading);
+}
+
+// The line is drawn at 0 on frame 61 and gone on 62, so the credits start again from 480 and it
+// is at 424, clear of the bottom bar, on frame 70.
+TEST_F(CTwoColumnCreditsTest, OnceNoneIsLeftTheyStartAgain) {
+    givenCredits("XX\nend\n");
+    cancelAfterFrames(70);
+    game_.rollCredits();
+    EXPECT_EQ(firstText().row, letterRow(424));
+}
+
 TEST_F(CCreditsTest, WithoutTheCreditsFileNothingRolls) {
     EXPECT_CALL(raw_input_, clearInput()).Times(1);
     game_.rollCredits();
@@ -512,10 +613,10 @@ TEST_F(CCreditsTest, ThePackagesNameTheCreditsFile) {
 
 TEST_F(CCreditsTest, CreditsThisBuildDoesntRollAreFatal) {
     givenCredits("XX\r\nend\r\n");
-    content_.front_end.credits = "two_column";
+    content_.front_end.credits = "no_such_style";
     EXPECT_THAT([this] { game_.rollCredits(); },
                 ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("The credits two_column isn't in this build")));
+                    ::testing::StrEq("The credits no_such_style isn't in this build")));
 }
 
 TEST_F(CCreditsTest, CreditsWithoutTheirColumnsLookAreFatal) {

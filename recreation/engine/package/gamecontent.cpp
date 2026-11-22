@@ -69,6 +69,7 @@ SMergedGameContent mergeGameContent(std::span<const SGameContent *const> in_orde
         mergeValue(content.startup, from->startup);
         mergeValue(content.sky_scene, from->sky_scene);
         mergeValue(content.figure_scene, from->figure_scene);
+        mergeValue(content.tiled_scroll, from->tiled_scroll);
         mergeById(content.loading, from->loading);
         mergeValue(content.moon_indicator, from->moon_indicator);
         mergeById(content.stories, from->stories);

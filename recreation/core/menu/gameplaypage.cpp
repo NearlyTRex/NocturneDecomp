@@ -33,19 +33,21 @@ enum class EGameplayLine : std::uint8_t {
     CombatDifficulty,
 };
 
-// BW1's lines, a mode each: 0 normal, 1 hard.
-constexpr std::array<std::string_view, 2> kPuzzleDifficultyLabels{"Puzzle difficulty: Normal",
-                                                                  "Puzzle difficulty: Hard"};
-constexpr std::array<std::string_view, 2> kCombatDifficultyLabels{"Combat difficulty: Normal",
-                                                                  "Combat difficulty: Hard"};
+// BW1's lines, a mode each: 0 normal, 1 hard. The labels' ids.
+constexpr std::array<std::string_view, 2> kPuzzleDifficultyLabels{"gameplay_puzzle_normal",
+                                                                  "gameplay_puzzle_hard"};
+constexpr std::array<std::string_view, 2> kCombatDifficultyLabels{"gameplay_combat_normal",
+                                                                  "gameplay_combat_hard"};
 constexpr int kHardMode = 1;
 
 // By EAimMode.
-constexpr std::array<std::string_view, 3> kAimingLabels{"Aiming : Auto", "Aiming : Kindof auto",
-                                                        "Aiming : Manual"};
+constexpr std::array<std::string_view, 3> kAimingLabels{
+    "gameplay_aiming_auto", "gameplay_aiming_kindof_auto", "gameplay_aiming_manual"};
 // By EOsFontChoice and EMenuFontChoice.
-constexpr std::array<std::string_view, 3> kTextFontNames{"Auto", "Bitmap", "System"};
-constexpr std::array<std::string_view, 2> kMenuFontNames{"Large", "Small"};
+constexpr std::array<std::string_view, 3> kTextFontNames{
+    "gameplay_text_font_auto", "gameplay_text_font_bitmap", "gameplay_text_font_system"};
+constexpr std::array<std::string_view, 2> kMenuFontNames{"gameplay_menu_text_large",
+                                                         "gameplay_menu_text_small"};
 // A window this short keeps the font its dialogs have.
 constexpr int kTallestFixedFontWindow = 240;
 
@@ -79,7 +81,7 @@ CGameplayPage::CGameplayPage(CMenu &menu, const SMenuOwners &owners)
     : CMenuPage(menu), owners_(owners) {}
 
 std::optional<std::string> CGameplayPage::title() {
-    return localize("Gameplay");
+    return label("gameplay_title");
 }
 
 std::string_view CGameplayPage::getLayoutId() const {
@@ -89,28 +91,27 @@ std::string_view CGameplayPage::getLayoutId() const {
 void CGameplayPage::build(std::vector<SMenuLine> &lines) {
     const CGame &game = owners_.game;
     add(lines, EGameplayLine::AlwaysRun,
-        localize(game.always_run != 0 ? "Always run : ON" : "Always run : OFF"));
-    add(lines, EGameplayLine::Aiming,
-        localize(kAimingLabels.at(std::to_underlying(game.aim_mode))));
+        label(game.always_run != 0 ? "gameplay_always_run_on" : "gameplay_always_run_off"));
+    add(lines, EGameplayLine::Aiming, label(kAimingLabels.at(std::to_underlying(game.aim_mode))));
     add(lines, EGameplayLine::AutoHealth,
-        localize(game.auto_use_health != 0 ? "Auto use health : On" : "Auto use health : Off"));
+        label(game.auto_use_health != 0 ? "gameplay_auto_health_on" : "gameplay_auto_health_off"));
     add(lines, EGameplayLine::Subtitles,
-        localize(game.subtitle_mode != 0 ? "Subtitles : On" : "Subtitles : Off"));
+        label(game.subtitle_mode != 0 ? "gameplay_subtitles_on" : "gameplay_subtitles_off"));
     add(lines, EGameplayLine::TextFont,
-        std::format("Text font : {}",
-                    kTextFontNames.at(std::to_underlying(owners_.fonts.getOsFontChoice()))));
+        label("gameplay_text_font") +
+            label(kTextFontNames.at(std::to_underlying(owners_.fonts.getOsFontChoice()))));
     add(lines, EGameplayLine::MenuText,
-        std::format("Menu text : {}",
-                    kMenuFontNames.at(std::to_underlying(owners_.fonts.getMenuFontChoice()))));
+        label("gameplay_menu_text") +
+            label(kMenuFontNames.at(std::to_underlying(owners_.fonts.getMenuFontChoice()))));
     if (game.quimby_flag == 0) {
         add(lines, EGameplayLine::Rating,
-            localize(game.nudity_flag != 0 ? "Rating: Mature" : "Rating: Teen"));
+            label(game.nudity_flag != 0 ? "gameplay_rating_mature" : "gameplay_rating_teen"));
     }
     if (getMenu().getMenuLayout().features.difficulty) {
         add(lines, EGameplayLine::PuzzleDifficulty,
-            localize(kPuzzleDifficultyLabels.at(keepMode(owners_.game.puzzle_difficulty_mode))));
+            label(kPuzzleDifficultyLabels.at(keepMode(owners_.game.puzzle_difficulty_mode))));
         add(lines, EGameplayLine::CombatDifficulty,
-            localize(kCombatDifficultyLabels.at(keepMode(owners_.game.combat_difficulty_mode))));
+            label(kCombatDifficultyLabels.at(keepMode(owners_.game.combat_difficulty_mode))));
     }
 }
 
@@ -151,8 +152,8 @@ EMenuOutcome CGameplayPage::choose(int id, EMenuStep step) {
     return EMenuOutcome::Stay;
 }
 
-std::string CGameplayPage::localize(std::string_view key) const {
-    return std::string(owners_.messages.getLocalizedString(key));
+std::string CGameplayPage::label(std::string_view id) const {
+    return getLabel(owners_.content, owners_.messages, id);
 }
 
 void CGameplayPage::stepMenuFont(EMenuStep step) {

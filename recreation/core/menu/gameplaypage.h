@@ -26,7 +26,8 @@ public:
     EMenuOutcome choose(int id, EMenuStep step) override;
 
 private:
-    [[nodiscard]] std::string localize(std::string_view key) const;
+    // The game's text for a label id.
+    [[nodiscard]] std::string label(std::string_view id) const;
     // The text font takes effect from the next launch; the menu text at once.
     void stepMenuFont(EMenuStep step);
     // Teen and Mature: the three flags move together.

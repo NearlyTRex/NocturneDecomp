@@ -37,15 +37,29 @@ std::int32_t scrollBy(std::int32_t scroll, int delta_time_int, int shift) {
 CMoon::CMoon(const SMoonOwners &owners)
     : owners_(owners), moon_(owners.dosio), bat_model_(owners.dosio),
       cloud_texture_(owners.dosio, owners.screen, owners.special),
-      backdrop_(owners.dosio, owners.screen, owners.special) {}
+      backdrop_(owners.dosio, owners.screen, owners.special),
+      hand_(owners.dosio, owners.screen, owners.special),
+      overlay_(owners.dosio, owners.screen, owners.special) {}
+
+CMoon::EStyle CMoon::getStyle() const {
+    const std::string_view style =
+        requireFrontEndStyle("title backdrop", owners_.content.front_end.title_backdrop,
+                             {kSkySceneBackdrop, kFigureSceneBackdrop, kTiledScrollBackdrop});
+    if (style == kFigureSceneBackdrop) {
+        return EStyle::Figure;
+    }
+    return style == kTiledScrollBackdrop ? EStyle::Tiled : EStyle::Sky;
+}
 
 bool CMoon::isFigureScene() const {
-    const std::optional<std::string> &style = owners_.content.front_end.title_backdrop;
-    if (style == kFigureSceneBackdrop) {
-        return true;
+    return getStyle() == EStyle::Figure;
+}
+
+const engine::STiledScroll &CMoon::getTiled() const {
+    if (!owners_.content.tiled_scroll) {
+        common::displayErrorAndQuit("No package gives the tiled_scroll title backdrop's look");
     }
-    requireFrontEndStyle("title backdrop", style, {kSkySceneBackdrop});
-    return false;
+    return *owners_.content.tiled_scroll;
 }
 
 const engine::SSkyScene &CMoon::getSky() const {
@@ -72,7 +86,7 @@ void CMoon::init() {
     if (!is_loaded_) {
         load();
     }
-    if (isFigureScene()) {
+    if (getStyle() != EStyle::Sky) {
         return;
     }
     const engine::SSkyScene &sky = getSky();
@@ -85,9 +99,15 @@ void CMoon::init() {
 }
 
 void CMoon::load() {
-    if (isFigureScene()) {
+    switch (getStyle()) {
+    case EStyle::Figure:
         loadFigure();
         return;
+    case EStyle::Tiled:
+        loadTiled();
+        return;
+    case EStyle::Sky:
+        break;
     }
     const engine::SSkyScene &sky = getSky();
     if (owners_.game.head_of_horror_cheat == sky.cheat_code) {
@@ -149,6 +169,21 @@ void CMoon::loadFigure() {
     is_loaded_ = true;
 }
 
+// The tiles and the hand start where the scene says each time it is loaded. The original also
+// loaded the title's 30 frames, which this style never draws.
+// bw3 0x004f94a0
+void CMoon::loadTiled() {
+    const engine::STiledScroll &tiled = getTiled();
+    backdrop_.load(tiled.tile, kFrontEndLayoutWidth, kFrontEndHeight);
+    overlay_.load(tiled.overlay, kFrontEndLayoutWidth, kFrontEndHeight);
+    hand_.load(tiled.hand, tiled.hand_width, tiled.hand_height);
+    tile_columns_ = tiled.columns;
+    tile_rows_ = tiled.rows;
+    hand_alpha_ = tiled.hand_alpha_start;
+    hand_rising_ = false;
+    is_loaded_ = true;
+}
+
 // Each bat starts up to a course's length before its course, so they arrive one by one.
 void CMoon::scatterBat(SBat &bat) {
     bat.course_index = owners_.crt_random.rand() % static_cast<int>(bat_courses_.size());
@@ -168,6 +203,8 @@ void CMoon::free() {
     if (is_loaded_) {
         cloud_texture_.free();
         backdrop_.free();
+        hand_.free();
+        overlay_.free();
         for (engine::CAlphaBitmap &texture : animation_textures_) {
             texture.free();
         }
@@ -186,10 +223,17 @@ void CMoon::free() {
 // The phase, the timer and the frames are compared before they are rounded to float, as the x87
 // holds them.
 // nocedit 0x00529d60
+// tiled_scroll steps as it is drawn; its timer only ever kept the glow on.
+// bw3 0x004f9600
 void CMoon::update(float delta_time) {
-    if (isFigureScene()) {
+    switch (getStyle()) {
+    case EStyle::Figure:
         updateFigure(delta_time);
         return;
+    case EStyle::Tiled:
+        return;
+    case EStyle::Sky:
+        break;
     }
     const engine::SSkyScene &sky = getSky();
     const CExtendedFloat step(delta_time);
@@ -253,10 +297,15 @@ void CMoon::updateFigure(float delta_time) {
 }
 
 // A NaN timer counts as the first half, as the original's unordered compare does. figure_scene's
-// half is the whole wrap, so its glow never flickers (bw1 0x005220b0).
+// half is the whole wrap, so its glow never flickers (bw1 0x005220b0); tiled_scroll's timer
+// wrapped at the half it was tested against, so its glow is always on (bw3 0x004f99b0).
 // nocedit 0x0052a3f0
 int CMoon::isAnimationFirstHalf() const {
-    const double half = isFigureScene() ? getFigure().frame_wrap : getSky().frame_wrap / 2;
+    const EStyle style = getStyle();
+    if (style == EStyle::Tiled) {
+        return 1;
+    }
+    const double half = style == EStyle::Figure ? getFigure().frame_wrap : getSky().frame_wrap / 2;
     return animation_timer_ >= half ? 0 : 1;
 }
 

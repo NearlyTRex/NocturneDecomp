@@ -31,13 +31,13 @@ enum class EOptionsLine : std::uint8_t {
 };
 
 constexpr std::array<std::pair<EOptionsLine, std::string_view>, 7> kOptionsLines{{
-    {EOptionsLine::Gameplay, "Gameplay options"},
-    {EOptionsLine::Graphic, "Graphic options"},
-    {EOptionsLine::Display, "Display options"},
-    {EOptionsLine::Sound, "Sound options"},
-    {EOptionsLine::Control, "Control options"},
-    {EOptionsLine::Cheats, "Cheats"},
-    {EOptionsLine::Credits, "Credits"},
+    {EOptionsLine::Gameplay, "options_gameplay"},
+    {EOptionsLine::Graphic, "options_graphic"},
+    {EOptionsLine::Display, "options_display"},
+    {EOptionsLine::Sound, "options_sound"},
+    {EOptionsLine::Control, "options_controls"},
+    {EOptionsLine::Cheats, "options_cheats"},
+    {EOptionsLine::Credits, "options_credits"},
 }};
 
 } // namespace
@@ -48,7 +48,7 @@ public:
     COptionsPage(CMenu &menu, const SMenuOwners &owners) : CMenuPage(menu), owners_(owners) {}
 
     std::optional<std::string> title() override {
-        return std::string(owners_.messages.getLocalizedString("Option Menu"));
+        return getLabel(owners_.content, owners_.messages, "options_title");
     }
 
     [[nodiscard]] std::string_view getLayoutId() const override {
@@ -59,9 +59,9 @@ public:
     void build(std::vector<SMenuLine> &lines) override {
         const engine::SMenuLayout &menu = getMenu().getMenuLayout();
         owners_.game.hero_number = static_cast<EHeroType>(menu.options_hero);
-        for (const auto &[line, key] : kOptionsLines) {
+        for (const auto &[line, id] : kOptionsLines) {
             lines.push_back({.id = std::to_underlying(line),
-                             .text = std::string(owners_.messages.getLocalizedString(key))});
+                             .text = getLabel(owners_.content, owners_.messages, id)});
         }
     }
 

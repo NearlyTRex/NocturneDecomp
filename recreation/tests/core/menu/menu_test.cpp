@@ -617,6 +617,44 @@ TEST_F(CMenuTest, CentredMenusCentreEachLine) {
               (kWidth - smallFont().getTextWidth("XXXXXX")) / 2);
 }
 
+// BW3's main menu: each line at its own point; one past the last follows it; a titled list keeps
+// to the layout's left.
+TEST_F(CMenuTest, AListWithoutATitlePutsEachLineAtItsPoint) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    menu->item.untitled_positions = {{.x = 300, .y = 120}, {.x = 200, .y = 200}};
+    int selected = 0;
+    choose({"XX", "XX", "XX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(120)), 300);
+    EXPECT_EQ(firstLit(letterRow(200)), 200);
+    EXPECT_EQ(firstLit(letterRow(200 + (menu->item.spacing_untitled * lineHeight()))), 160);
+}
+
+// BW3's: each line's middle on the point.
+TEST_F(CMenuTest, ACentredPointCentresItsLine) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    menu->item.untitled_positions = {{.x = 320, .y = 120, .centred = true},
+                                     {.x = 320, .y = 200, .centred = true}};
+    int selected = 0;
+    choose({"XX", "XXXXXX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(120)), 320 - (smallFont().getTextWidth("XX") / 2));
+    EXPECT_EQ(firstLit(letterRow(200)), 320 - (smallFont().getTextWidth("XXXXXX") / 2));
+}
+
+TEST_F(CMenuTest, ATitledListTakesNoPoints) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    menu->item.untitled_positions = {{.x = 300, .y = 120}};
+    int selected = 0;
+    choose({"XX"}, selected, "XXX");
+    EXPECT_EQ(firstLit(letterRow(100)), 160);
+    EXPECT_EQ(firstLit(letterRow(100 + (menu->title.gap_lines * lineHeight()))), 160);
+}
+
 // A copy one row down makes every line reach a row further.
 TEST_F(CMenuTest, ALinesDropCopyIsDrawnUnderIt) {
     std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
@@ -642,13 +680,33 @@ TEST_F(CMenuTest, ALinesDropCopyIsDrawnUnderIt) {
 TEST_F(CMenuTest, TheBuildsLineCanBeInTheTopRight) {
     std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
     ASSERT_TRUE(menu.has_value());
-    menu->footer.version_corner = engine::EVersionCorner::TopRight;
-    menu->footer.version_x = 0;
+    menu->footer.version = {.corner = engine::EFooterCorner::TopRight,
+                            .edge = engine::EFooterEdge::Layout,
+                            .x = 0,
+                            .y = 0};
     int selected = 0;
     choose({"XX"}, selected);
     EXPECT_EQ(firstLit(letterRow(0)), kWidth - smallFont().getTextWidth("X"));
     const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
     EXPECT_NE(firstLit(letterRow(bottom)), 4);
+}
+
+// BW1's and BW3's end at 619 on the layout.
+TEST_F(CMenuTest, TheCopyrightIsPlacedFromItsCorner) {
+    engine::SGameContent &content = game_parts_.getContent();
+    content.copyright = "XX";
+    content.copyright_os_font.reset();
+    ASSERT_TRUE(content.menu.has_value());
+    content.menu->footer.copyright = {.corner = engine::EFooterCorner::BottomRight,
+                                      .edge = engine::EFooterEdge::Layout,
+                                      .x = 21,
+                                      .y = 1};
+    int selected = 0;
+    choose({"XX"}, selected);
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("XX");
+    EXPECT_EQ(firstLit(letterRow(bottom)), 4);
+    EXPECT_EQ(lastLit(letterRow(bottom)) < 619, true);
+    EXPECT_GT(lastLit(letterRow(bottom)), 600);
 }
 
 TEST_F(CMenuTest, WithoutACopyrightOrTrademarkOnlyTheBuildIsInTheFooter) {

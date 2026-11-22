@@ -49,19 +49,19 @@ enum class EMainLine : std::uint8_t {
 };
 
 constexpr std::array<std::pair<EMainLine, std::string_view>, 4> kMainLines{{
-    {EMainLine::Play, "P L A Y"},
-    {EMainLine::Multiplayer, "M U L T I P L A Y E R"},
-    {EMainLine::Options, "O P T I O N S"},
-    {EMainLine::Quit, "Q U I T"},
+    {EMainLine::Play, "main_play"},
+    {EMainLine::Multiplayer, "main_multiplayer"},
+    {EMainLine::Options, "main_options"},
+    {EMainLine::Quit, "main_quit"},
 }};
 
-constexpr std::array<std::string_view, 3> kPlayItems{"C O N T I N U E", "S T A R T", "L O A D"};
+// The labels' ids: each game's own words, "S T A R T" in Nocturne's, "START" in BW3's.
+constexpr std::array<std::string_view, 3> kPlayItems{"play_continue", "play_start", "play_load"};
 constexpr int kContinueItem = 0;
 constexpr int kStartItem = 1;
 constexpr int kLoadItem = 2;
 
-constexpr std::array<std::string_view, 2> kMultiplayerItems{"H O S T   G A M E",
-                                                            "J O I N   G A M E"};
+constexpr std::array<std::string_view, 2> kMultiplayerItems{"multiplayer_host", "multiplayer_join"};
 constexpr int kHostItem = 0;
 
 } // namespace
@@ -77,9 +77,8 @@ public:
     }
 
     void build(std::vector<SMenuLine> &lines) override {
-        for (const auto &[line, key] : kMainLines) {
-            lines.push_back({.id = std::to_underlying(line),
-                             .text = std::string(owners_.messages.getLocalizedString(key))});
+        for (const auto &[line, word] : kMainLines) {
+            lines.push_back({.id = std::to_underlying(line), .text = getMenu().label(word)});
         }
     }
 
@@ -157,14 +156,12 @@ private:
 // Chosen with a press of its item.
 class CMenu::CSubmenuPage final : public CMenuPage {
 public:
-    CSubmenuPage(CMenu &menu, const support::CNewMsg &messages,
-                 std::span<const std::string_view> items)
-        : CMenuPage(menu), messages_(messages), items_(items) {}
+    CSubmenuPage(CMenu &menu, std::span<const std::string_view> items)
+        : CMenuPage(menu), items_(items) {}
 
     void build(std::vector<SMenuLine> &lines) override {
         for (std::size_t i = 0; i < items_.size(); ++i) {
-            lines.push_back({.id = static_cast<int>(i),
-                             .text = std::string(messages_.getLocalizedString(items_[i]))});
+            lines.push_back({.id = static_cast<int>(i), .text = getMenu().label(items_[i])});
         }
     }
 
@@ -178,7 +175,6 @@ public:
     }
 
 private:
-    const support::CNewMsg &messages_;
     std::span<const std::string_view> items_;
     std::optional<int> chosen_;
 };
@@ -265,9 +261,13 @@ void CMenu::showMultiplayerMenu() {
 // The press that opened it may still be down.
 std::optional<int> CMenu::showSubmenu(std::span<const std::string_view> items) {
     owners_.two_d.clearInputAndWait();
-    CSubmenuPage page(*this, owners_.messages, items);
+    CSubmenuPage page(*this, items);
     runPage(page);
     return page.getChosen();
+}
+
+std::string CMenu::label(std::string_view id) const {
+    return getLabel(owners_.content, owners_.messages, id);
 }
 
 } // namespace nocturne::core

@@ -166,38 +166,49 @@ void CMenu::showCalibrationTest() {
 // naming its build at the top. The rows are the layout's, drawn where and as large as the screen
 // shows them. A row wider than the room to the layout's right edge, as a long device name makes
 // one beside a menu on the right, is shortened to end in "..."; its line's list shows it whole.
-// A game's menus centred each line and drew a copy under it, as BW2's, where its packages say.
+// A game's menus centred each line and drew a copy under it, as BW2's, or put a title in a font
+// of its own and a list without one at points of its own, as BW3's, where its packages say.
+// bw3 0x004e7860
 // bw2 0x004eb0e0
 // nocedit 0x00510000
 int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selected_index,
                                   int y_position, std::optional<std::string_view> title) {
     const engine::SMenuLayout &menu = getMenuLayout();
     const engine::SMenuItems &style = menu.item;
-    engine::CBitFont &font = owners_.fonts.findFont(style.font);
+    engine::CBitFont &font = owners_.fonts.findFont(
+        title || style.untitled_font.empty() ? style.font : style.untitled_font);
     const SFrontEndLayout layout = getScreenLayout();
     const int line_height = font.getCharHeight(kLineHeightChar);
     if (title) {
-        drawMenuLine(font, *title, y_position, menu.title.colour, menu.title.shadow,
-                     menu.title.drop);
-        y_position += line_height * menu.title.gap_lines;
+        engine::CBitFont &title_font =
+            menu.title.font.empty() ? font : owners_.fonts.findFont(menu.title.font);
+        drawMenuLine(title_font, *title, getLineLeft(title_font, *title), y_position,
+                     menu.title.colour, menu.title.shadow, menu.title.drop);
+        y_position += title_font.getCharHeight(kLineHeightChar) * menu.title.gap_lines;
     }
     const int spacing = title ? style.spacing_titled : style.spacing_untitled;
     const int room = layout.getX(kFrontEndLayoutWidth) -
                      layout.getX(menu.align == engine::EMenuAlign::Centre ? 0 : menu.left);
     for (std::size_t i = 0; i < items.size(); ++i) {
         const std::string item = fitToWidth(font, items[i], room, layout.scale);
+        int left = getLineLeft(font, item);
+        if (!title && i < style.untitled_positions.size()) {
+            const engine::SMenuPoint &point = style.untitled_positions[i];
+            left = point.centred ? point.x - (font.getTextWidth(item) / 2) : point.x;
+            y_position = point.y;
+        }
         int color = style.colour;
         if (std::cmp_equal(i, selected_index)) {
             // The glow pulses with the title animation, steady in its second half.
             if (style.glow.flicker && moon_.isAnimationFirstHalf() != 0) {
-                drawGlowingItem(font, item, getLineLeft(font, item), y_position);
-                color = style.glow.colour;
+                drawGlowingItem(font, item, left, y_position);
+                color = style.glow.item_colour.value_or(style.glow.colour);
             } else {
                 color = style.selected_colour;
             }
         }
         owners_.three_d.setRenderAlpha(style.alpha);
-        drawMenuLine(font, item, y_position, color, style.shadow, style.drop);
+        drawMenuLine(font, item, left, y_position, color, style.shadow, style.drop);
         y_position += spacing * line_height;
     }
     owners_.three_d.setRenderAlpha(kFullAlpha);
@@ -215,10 +226,9 @@ int CMenu::getLineLeft(const engine::CBitFont &font, std::string_view text) cons
 }
 
 // Its copy first, in the copy's colour and the line's shadow, then the line.
-void CMenu::drawMenuLine(engine::CBitFont &font, std::string_view text, int y, int colour,
+void CMenu::drawMenuLine(engine::CBitFont &font, std::string_view text, int left, int y, int colour,
                          int shadow, const std::optional<engine::SMenuDrop> &drop) {
     const SFrontEndLayout layout = getScreenLayout();
-    const int left = getLineLeft(font, text);
     if (drop) {
         font.drawTextScaled(text, layout.getX(left + drop->x), layout.getY(y + drop->y),
                             drop->colour, shadow, layout.scale);
@@ -256,20 +266,15 @@ std::string_view CMenu::getCopyright() const {
     return content.copyright ? std::string_view(*content.copyright) : std::string_view();
 }
 
-// The build's line is the enhanced game's, in the bottom left, on the copyright's row, or its own
-// without one. The copyright keeps to the screen's corner and the trademark to the title art's.
+// The build's line is the enhanced game's, where the game drew its version, or Nocturne's when it
+// drew none. Each line is placed from its corner, of the screen or of the layout, as its package
+// says; the trademark keeps to the title art.
 void CMenu::drawFooter() {
     const engine::SMenuLayout &menu = getMenuLayout();
     const engine::SMenuFooter &footer = menu.footer;
     engine::CBitFont &font = owners_.fonts.findFont(footer.font);
     const SFrontEndLayout layout = getScreenLayout();
-    const std::string_view copyright = getCopyright();
-    const int bottom =
-        layout.getY(kImageHeight - 1 -
-                    font.getTextHeight(copyright.empty() ? owners_.build_version : copyright));
-    const int right = std::max(kImageWidth, owners_.screen.getWindowWidth()) - 1;
-    font.drawTextScaled(copyright, right - font.getTextWidthScaled(copyright, layout.scale), bottom,
-                        footer.colour, footer.shadow, layout.scale);
+    drawFooterLine(font, getCopyright(), footer.copyright);
     if (const std::optional<engine::SMenuTrademark> &trademark = menu.trademark) {
         owners_.three_d.setRenderAlpha(trademark->alpha);
         const std::string glyph(1, static_cast<char>(trademark->glyph));
@@ -277,17 +282,35 @@ void CMenu::drawFooter() {
                             footer.colour, footer.shadow, layout.scale);
     }
     owners_.three_d.setRenderAlpha(footer.version_alpha);
-    if (footer.version_corner == engine::EVersionCorner::TopRight) {
-        const std::string_view version = owners_.build_version;
-        font.drawTextScaled(version,
-                            right + 1 - layout.getLength(footer.version_x) -
-                                font.getTextWidthScaled(version, layout.scale),
-                            layout.getY(0), footer.colour, footer.shadow, layout.scale);
-    } else {
-        font.drawTextScaled(owners_.build_version, layout.getLength(footer.version_x), bottom,
-                            footer.colour, footer.shadow, layout.scale);
-    }
+    drawFooterLine(font, owners_.build_version, footer.version);
     owners_.three_d.setRenderAlpha(kFullAlpha);
+}
+
+// The line's outer edges as far in from its corner as the place says, in layout pixels. The
+// screen is never narrower or shorter than the layout.
+void CMenu::drawFooterLine(engine::CBitFont &font, std::string_view text,
+                           const engine::SFooterPlace &place) {
+    using engine::EFooterCorner;
+    const engine::SMenuFooter &footer = getMenuLayout().footer;
+    const SFrontEndLayout layout = getScreenLayout();
+    const bool on_layout = place.edge == engine::EFooterEdge::Layout;
+    const int left = on_layout ? layout.getX(0) : 0;
+    const int top = on_layout ? layout.getY(0) : 0;
+    const int right = on_layout ? layout.getX(kImageWidth)
+                                : std::max(kImageWidth, owners_.screen.getWindowWidth());
+    const int bottom = on_layout ? layout.getY(kImageHeight)
+                                 : std::max(kImageHeight, owners_.screen.getWindowHeight());
+    const bool from_right =
+        place.corner == EFooterCorner::BottomRight || place.corner == EFooterCorner::TopRight;
+    const bool from_bottom =
+        place.corner == EFooterCorner::BottomLeft || place.corner == EFooterCorner::BottomRight;
+    const int x =
+        from_right ? right - layout.getLength(place.x) - font.getTextWidthScaled(text, layout.scale)
+                   : left + layout.getLength(place.x);
+    const int y = from_bottom ? bottom - layout.getLength(place.y) -
+                                    layout.getLength(font.getTextHeight(text))
+                              : top + layout.getLength(place.y);
+    font.drawTextScaled(text, x, y, footer.colour, footer.shadow, layout.scale);
 }
 
 // Up and down wrap at the ends. An item with a colon is a setting, which left and right change;

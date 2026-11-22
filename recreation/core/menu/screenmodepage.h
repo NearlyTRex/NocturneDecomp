@@ -26,7 +26,8 @@ protected:
 
     // The resolution this frame is built at, which endFrame compares against.
     void recordResolution();
-    [[nodiscard]] std::string localize(std::string_view key) const;
+    // The game's text for a label id.
+    [[nodiscard]] std::string label(std::string_view id) const;
     // Only the hardware renderer goes above 480 rows.
     [[nodiscard]] bool getHighResolutionAllowed() const;
     [[nodiscard]] const SMenuOwners &getOwners() const;

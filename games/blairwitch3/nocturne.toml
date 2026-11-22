@@ -4,6 +4,7 @@ name = 'Blair Witch Volume III: The Elly Kedward Tale (2000, English)'
 release = '2000-en-blairwitch3'
 required = ['STARTUP.POD']
 title = 'Blair Witch Volume III'
+copyright = 'Blair Witch Volume III: The Elly Kedward Tale (c) 2000 Ritual Entertainment'
 
 [[pod]]
 path = 'WORLD.POD'
@@ -58,3 +59,661 @@ title_backdrop = 'tiled_scroll'
 loading_indicator = 'icon'
 credits = 'two_column'
 story_select = 'direct_start'
+
+[credits]
+text = 'credits.txt'
+
+[credits.two_column]
+font = 'theme'
+centre_left = 100
+centre_right = 400
+left_x = 100
+right_x = 300
+left_column = '1'
+right_column = '2'
+top_strip_bottom = 30
+bottom_strip_top = 439
+strip_colour = 0x0
+text_colour = 0xf8
+heading_colour = 0x2
+shadow_colour = 0
+scroll_speed = 32
+start_y = 480
+end_line = 'end'
+marker = '\'
+heading = 'b'
+
+[menu]
+left = 175
+top = 200
+titled_top = 200
+
+[menu.title]
+colour = 0x9a
+shadow = 0
+gap_lines = 2
+font = 'menu'
+
+[menu.item]
+font = 'small_menu'
+colour = 0x9a
+selected_colour = 0x9a
+alpha = 48000
+shadow = -1
+spacing_titled = 1
+spacing_untitled = 2
+untitled_font = 'menu'
+untitled_positions = [{ centre_x = 320, y = 234 }, { centre_x = 320, y = 274 }, { centre_x = 320, y = 314 }, { centre_x = 320, y = 354 }]
+
+[menu.item.glow]
+colour = 0xab
+copies = 5
+flicker = true
+item_colour = 0x9a
+
+[menu.footer]
+font = 'small_editor'
+colour = 0xf8
+shadow = 0
+version_alpha = 0x8000
+
+[menu.footer.copyright]
+corner = 'bottom_right'
+edge = 'layout'
+x = 21
+y = 1
+
+[menu.footer.version]
+corner = 'bottom_left'
+edge = 'screen'
+x = 4
+y = 1
+
+[menu.music]
+low_rate = 'splash-music-22.wav'
+high_rate = 'splash.mp3'
+
+[menu.calibration]
+image = 'brightness'
+steps = ['1. Turn off all the lights in your room.', '2. Turn your brightness up, so that you see 3 bars on the left side of the screen.', '3. Turn down the brightness, so that the left 2 bars become the same color.', '4. Turn your contrast all the way up.', "You're done with calibration."]
+title = 'Monitor calibration'
+prompt = '  Press any key to continue.'
+font = 'small_editor'
+colour = 0xf8
+title_lines = 2
+prompt_lines = 3
+
+[menu.options]
+hero = 9
+
+[menu.sound]
+effects_sample = 'colt45-0.wav'
+
+[menu.slider]
+width_share = 3
+width_parts = 4
+height = 44
+bar_colour = 0x4
+trough_colour = 0x0
+border_colour = 0xff
+text_colour = 0xff
+text_shadow = 0
+
+[menu.features]
+difficulty = false
+
+[[font]]
+id = 'medium'
+file = 'nocfont.raw'
+width = 0x136
+height = 0x1ae
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 1, first = 0xc0, last = 0xdf }]
+space_width = 8
+shadow_x = 2
+os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
+
+[[font]]
+id = 'tiny'
+file = 'nocsmall.raw'
+width = 0xf8
+height = 0x158
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 2, first = 0x20, last = 0x7e }]
+space_width = 5
+shadow_x = 2
+os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = 'theme'
+file = 'menufont.raw'
+width = 0xfa
+height = 0x23f
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 0, first = 0xc0, last = 0xdf }, { offset = 1, first = 0xe0, last = 0xff }]
+space_width = 8
+shadow_x = 2
+os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = 'small_editor'
+file = 'fnte_pfd.RAW'
+width = 0x94
+height = 0xec
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = 'console'
+file = 'fnte_f.RAW'
+width = 0x94
+height = 0xec
+transparent = 0xff
+own_colours = true
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+
+[[font]]
+id = 'micro'
+file = 'micro.raw'
+width = 0x94
+height = 0xec
+transparent = 0x0
+own_colours = false
+y_offsets = [{ offset = 1, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+
+[[font]]
+id = 'menu'
+file = 'BW3_font.raw'
+width = 0xfa
+height = 0x23f
+transparent = 0x2
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 0, first = 0xc0, last = 0xdf }, { offset = 1, first = 0xe0, last = 0xff }]
+space_width = 8
+shadow_x = 2
+
+[[font]]
+id = 'small_menu'
+file = 'BW3_font2.raw'
+width = 0xfa
+height = 0x23f
+transparent = 0x2
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 0, first = 0xc0, last = 0xdf }, { offset = 1, first = 0xe0, last = 0xff }]
+space_width = 8
+shadow_x = 2
+
+[[controls.mode]]
+id = 'keyboard'
+label = 'Control : Keyboard'
+manual_aim = false
+[controls.mode.defaults]
+'backup' = [0x150]
+'draw' = [0x20]
+'fire' = [0x39]
+'infrared' = [0x31]
+'item_desc' = [0x19]
+'jump' = [0x39]
+'left' = [0x14b]
+'light' = [0x26]
+'map' = [0xf]
+'next_ammo' = [0x29]
+'next_item' = [0x1a]
+'next_weapon' = [0xd]
+'point_down' = [0x1e]
+'point_up' = [0x10]
+'prev_item' = [0x1b]
+'prev_weapon' = [0xc]
+'right' = [0x14d]
+'run' = [0x2a]
+'strafe' = [0x38]
+'strafe_left' = [0x2c]
+'strafe_right' = [0x2d]
+'use_item' = [0x1c]
+'walk' = [0x148]
+'weapon1' = [0x2]
+'weapon2' = [0x3]
+'weapon3' = [0x4]
+'weapon4' = [0x5]
+'weapon5' = [0x6]
+
+[[controls.mode]]
+id = 'keyboard_mouse'
+label = 'Control : Keyboard/Mouse'
+manual_aim = false
+[controls.mode.defaults]
+'backup' = [0x150]
+'draw' = [0x52]
+'fire' = [0x200]
+'infrared' = [0x31]
+'item_desc' = [0x19]
+'jump' = [0x39]
+'left' = [0x255]
+'light' = [0x26]
+'map' = [0xf]
+'next_ammo' = [0x29]
+'next_item' = [0x1a]
+'next_weapon' = [0xd]
+'point_down' = [0x256]
+'point_up' = [0x256]
+'prev_item' = [0x1b]
+'prev_weapon' = [0xc]
+'right' = [0x255]
+'run' = [0x36]
+'strafe' = [0x11d]
+'strafe_left' = [0x14b]
+'strafe_right' = [0x14d]
+'use_item' = [0x1c]
+'walk' = [0x148]
+'weapon1' = [0x2]
+'weapon2' = [0x3]
+'weapon3' = [0x4]
+'weapon4' = [0x5]
+'weapon5' = [0x6]
+
+[[controls.mode]]
+id = 'gamepad'
+label = 'Control : Gamepad'
+manual_aim = false
+[controls.mode.defaults]
+'backup' = [0x254]
+'draw' = [0x17a]
+'fire' = [0x17b]
+'infrared' = [0x163]
+'item_desc' = [0x165]
+'jump' = [0x160]
+'left' = [0x17e]
+'light' = [0x162]
+'map' = [0x164]
+'next_ammo' = [0x16b]
+'next_item' = [0x16e]
+'next_weapon' = [0x16a]
+'point_down' = [0x17d]
+'point_up' = [0x17c]
+'prev_item' = [0x16d]
+'prev_weapon' = [0x169]
+'right' = [0x17f]
+'run' = [0x167]
+'strafe' = []
+'strafe_left' = [0x251]
+'strafe_right' = [0x252]
+'use_item' = [0x161]
+'walk' = [0x253]
+'weapon1' = []
+'weapon2' = []
+'weapon3' = []
+'weapon4' = []
+'weapon5' = [0x16c]
+
+[[controls.binding]]
+action = 'fire'
+label = 'Fire'
+
+[[controls.binding]]
+action = 'walk'
+label = 'Forward'
+
+[[controls.binding]]
+action = 'backup'
+label = 'Back'
+
+[[controls.binding]]
+action = 'strafe'
+label = 'Strafe on'
+
+[[controls.binding]]
+action = 'strafe_left'
+label = 'Strafe left'
+
+[[controls.binding]]
+action = 'strafe_right'
+label = 'Strafe right'
+
+[[controls.binding]]
+action = 'left'
+label = 'Turn left'
+
+[[controls.binding]]
+action = 'right'
+label = 'Turn right'
+
+[[controls.binding]]
+action = 'point_up'
+label = 'Point up'
+
+[[controls.binding]]
+action = 'point_down'
+label = 'Point down'
+
+[[controls.binding]]
+action = 'run'
+label = 'Run'
+
+[[controls.binding]]
+action = 'use_item'
+label = 'Use item'
+
+[[controls.binding]]
+action = 'light'
+label = 'Lantern'
+
+[[controls.binding]]
+action = 'map'
+label = 'Map'
+
+[[controls.binding]]
+action = 'draw'
+label = 'Draw'
+
+[[controls.binding]]
+action = 'weapon1'
+label = 'Select conventional weapons'
+
+[[controls.binding]]
+action = 'weapon2'
+label = 'Select staves'
+
+[[controls.binding]]
+action = 'weapon3'
+label = 'Select Christian weapons'
+
+[[controls.binding]]
+action = 'weapon4'
+label = 'Select Shaman weapons'
+
+[[controls.binding]]
+action = 'weapon5'
+label = 'Select Pagan weapons'
+
+[[controls.binding]]
+action = 'next_weapon'
+label = 'Next weapon'
+
+[[controls.binding]]
+action = 'prev_weapon'
+label = 'Previous weapon'
+
+[[controls.binding]]
+action = 'next_item'
+label = 'Next item'
+
+[[controls.binding]]
+action = 'prev_item'
+label = 'Previous item'
+
+[list]
+item_colour = 0xff
+disabled_colour = 0xf8
+selected_colour = 0x2
+confirmed_colour = 0xfa
+separator_colour = 0x7
+alpha = 0xffff
+shadow = -1
+column_padding = 8
+margin_width = 8
+margin_height = 6
+field_gap_divisor = 40
+row_extra = 1
+reserved_lines = 4
+width_share = 7
+width_parts = 8
+double_click_ticks = 294912
+
+[list.pointer]
+cube_colours = [0x0, 0x7fff, 0x3e0, 0x7c1f]
+size = 9
+default_height = 11
+
+[list.scroll_bar]
+first_repeat_ticks = 0x48000
+repeat_ticks = 0x9999
+track_fill_colour = 0x0
+track_border_colour = 0x7
+
+[dialog]
+content_colour = 0x0
+border_colour = 0x7
+title_colour = 0xfb
+text_colour = 0xff
+warning_colour = 0xff
+window_status_colour = 0xff
+status_colour = 0xff
+progress_background_colour = 0x0
+progress_border_colour = 0xff
+progress_fill_colour = 0x4
+bevel_highlight_colour = 0xff
+bevel_shade_colour = 0xf8
+bevel_face_colour = 0x7
+bevel_mark_colour = 0x0
+margin_width_divisor = 128
+margin_height_divisor = 96
+grid_divisor = 48
+button_margin_divisor = 80
+prompt_padding_chars = 4
+prompt_padding_lines = 2
+
+[title_backdrop.tiled_scroll]
+tile = 'bwp3_menu_scroll'
+columns = [320, -320]
+rows = [0, 480]
+step_x = 2
+step_y = -1
+wrap_x_above = 639
+wrap_x_to = -640
+wrap_y_below = -479
+wrap_y_to = 479
+hand = 'bwp3_hand'
+hand_x = 64
+hand_y = 64
+hand_width = 512
+hand_height = 512
+hand_alpha_start = 0x10000
+hand_alpha_low = 5000
+hand_alpha_high = 0xffff
+hand_alpha_step = 500
+overlay = 'BWP3_mainmenu'
+
+[startup]
+picture = 'fangs'
+picture_alpha = 0x8000
+label_x = 320
+label_y = 240
+label_font = 'theme'
+label_colour = 0xf8
+movie_directory = 'video'
+movie = 'opening.avi'
+
+[story_select.direct_start]
+loading_frames = 10
+
+[[loading]]
+id = 'load_0'
+random = true
+
+[[loading]]
+id = 'load_1'
+random = true
+
+[[loading]]
+id = 'load_2'
+random = true
+
+[[loading]]
+id = 'load_3'
+random = true
+
+[[story]]
+id = 'elly_kedward'
+name = 'The Elly Kedward Tale'
+title = 'The Elly Kedward Tale'
+
+[[story.chapter]]
+name = 'The Elly Kedward Tale'
+mission = 'town_act1.msn'
+
+[labels]
+'bindings_add' = 'Add binding'
+'bindings_hotkeys' = 'Hotkeys'
+'bindings_invalid' = 'One or more keys not valid.  Restoring default controls.'
+'bindings_press_key' = 'Press new key or button for '
+'bindings_release_key' = 'OK - you can release the key now...'
+'bindings_restore_defaults' = 'Restore defaults'
+'bindings_title' = 'Edit key settings'
+'bindings_walk' = 'Walk'
+'choose_story' = 'Choose a story to play'
+'controls_adjust_x_sensitivity' = 'Adjust X-Axis Sensitivity'
+'controls_adjust_y_sensitivity' = 'Adjust Y-Axis Sensitivity'
+'controls_calibrate' = 'Calibrate'
+'controls_invert_y_off' = 'Invert Y Axis : Off'
+'controls_invert_y_on' = 'Invert Y Axis : On'
+'controls_keys' = 'Customize Keys'
+'controls_pad_deadzone' = 'Stick deadzone : '
+'controls_pad_invert_look_off' = 'Invert stick look : OFF'
+'controls_pad_invert_look_on' = 'Invert stick look : ON'
+'controls_pad_look_speed' = 'Stick look speed : '
+'controls_pad_turn_speed' = 'Stick turn speed : '
+'controls_title' = 'Control Options'
+'controls_x_sensitivity' = 'X-Axis Sensitivity : '
+'controls_y_sensitivity' = 'Y-Axis Sensitivity : '
+'display_calibration' = 'Monitor Calibration'
+'display_display' = 'Display : '
+'display_fullscreen_size' = 'Fullscreen size : '
+'display_fullscreen_size_desktop' = 'Desktop'
+'display_fullscreen_size_game' = 'Game'
+'display_refresh_rate' = 'Refresh rate : '
+'display_refresh_rate_auto' = 'Refresh rate : Auto'
+'display_refresh_rate_unit' = ' Hz'
+'display_resolution' = 'Resolution : '
+'display_resolution_wide' = ' (wide)'
+'display_title' = 'Display Options'
+'display_vsync_off' = 'Vertical sync : Off'
+'display_vsync_on' = 'Vertical sync : On'
+'display_widescreen' = 'Widescreen : '
+'display_widescreen_pan_scan' = 'Pan & scan'
+'display_widescreen_pillarbox' = 'Pillarbox'
+'display_widescreen_stretch' = 'Stretch'
+'display_window' = 'Window : '
+'display_window_borderless' = 'Borderless'
+'display_window_fullscreen' = 'Fullscreen'
+'display_window_windowed' = 'Windowed'
+'gameplay_aiming_auto' = 'Aiming : Auto'
+'gameplay_aiming_kindof_auto' = 'Aiming : Kindof auto'
+'gameplay_aiming_manual' = 'Aiming : Manual'
+'gameplay_always_run_off' = 'Always Run : Off'
+'gameplay_always_run_on' = 'Always Run : On'
+'gameplay_auto_health_off' = 'Auto use health : Off'
+'gameplay_auto_health_on' = 'Auto use health : On'
+'gameplay_combat_hard' = 'Combat difficulty: Hard'
+'gameplay_combat_normal' = 'Combat difficulty: Normal'
+'gameplay_menu_text' = 'Menu text : '
+'gameplay_menu_text_large' = 'Large'
+'gameplay_menu_text_small' = 'Small'
+'gameplay_puzzle_hard' = 'Puzzle difficulty: Hard'
+'gameplay_puzzle_normal' = 'Puzzle difficulty: Normal'
+'gameplay_rating_mature' = 'Rating: Mature'
+'gameplay_rating_teen' = 'Rating: Teen'
+'gameplay_subtitles_off' = 'Subtitles : Off'
+'gameplay_subtitles_on' = 'Subtitles : On'
+'gameplay_text_font' = 'Text font : '
+'gameplay_text_font_auto' = 'Auto'
+'gameplay_text_font_bitmap' = 'Bitmap'
+'gameplay_text_font_system' = 'System'
+'gameplay_title' = 'Gameplay'
+'graphic_acceleration_off' = 'Acceleration : Off'
+'graphic_acceleration_on' = 'Acceleration : On'
+'graphic_antialias' = 'Anti-aliasing : '
+'graphic_antialias_fxaa' = 'FXAA'
+'graphic_antialias_off' = 'Off'
+'graphic_api' = '3D API : '
+'graphic_api_none' = '3D API : None'
+'graphic_bits_per_pixel' = 'Bits Per Pixel : '
+'graphic_card' = '3D Card : '
+'graphic_halo_complex' = 'Flashlight halo : Complex'
+'graphic_halo_off' = 'Flashlight halo : Off'
+'graphic_halo_simple' = 'Flashlight halo : Simple'
+'graphic_no_card' = 'No 3D Hardware detected'
+'graphic_select_card' = 'Select 3D card'
+'graphic_sharpness' = 'Sharpness : '
+'graphic_title' = 'Graphic Options'
+'graphic_upscaler' = 'Upscaler : '
+'graphic_upscaler_fsr' = 'FSR'
+'graphic_upscaler_gsr' = 'GSR'
+'graphic_upscaler_lanczos' = 'Lanczos'
+'graphic_upscaler_nearest' = 'Nearest'
+'graphic_upscaler_nis' = 'NIS'
+'graphic_upscaler_smooth' = 'Smooth'
+'graphic_upscaler_standard' = 'Standard'
+'graphic_upscaler_xbr' = 'xBR'
+'hotkey_ambient_down' = 'Ambient light down'
+'hotkey_ambient_up' = 'Ambient light up'
+'hotkey_camera_debug' = 'Camera debug'
+'hotkey_camera_toggle' = 'Camera on/off'
+'hotkey_console' = 'Console'
+'hotkey_debug_display' = 'Debug display'
+'hotkey_edit_mode' = 'Edit mode'
+'hotkey_gamma_down' = 'Gamma down'
+'hotkey_gamma_up' = 'Gamma up'
+'hotkey_keys_help' = 'Keys help'
+'hotkey_load_game' = 'Load game'
+'hotkey_motion_debug' = 'Motion debug'
+'hotkey_mute' = 'Mute sound'
+'hotkey_next_camera' = 'Next camera (edit mode)'
+'hotkey_pause' = 'Pause'
+'hotkey_prev_camera' = 'Previous camera (edit mode)'
+'hotkey_quick_load' = 'Quick load'
+'hotkey_quick_save' = 'Quick save'
+'hotkey_save_game' = 'Save game'
+'hotkey_script_reset_dialog' = 'Reset dialog (script debug)'
+'hotkey_script_resume' = 'Resume script (script debug)'
+'hotkey_script_run' = 'Run or stop script (script debug)'
+'hotkey_script_view' = 'Script view'
+'loading' = 'Loading...'
+'main_multiplayer' = 'MULTIPLAYER'
+'main_options' = 'OPTIONS'
+'main_play' = 'PLAY'
+'main_quit' = 'QUIT'
+'multiplayer_host' = 'HOST GAME'
+'multiplayer_join' = 'JOIN GAME'
+'options_cheats' = 'Cheats'
+'options_controls' = 'Control Options'
+'options_credits' = 'Credits'
+'options_display' = 'Display Options'
+'options_gameplay' = 'Gameplay Options'
+'options_graphic' = 'Graphic Options'
+'options_sound' = 'Sound Options'
+'options_title' = 'Option Menu'
+'play_continue' = 'CONTINUE'
+'play_load' = 'LOAD'
+'play_start' = 'START'
+'sound_device' = 'Device : '
+'sound_dialog' = 'Dialog Volume : '
+'sound_dialog_off' = 'Dialog Volume : Off'
+'sound_effects' = 'Sound Effects Volume : '
+'sound_effects_off' = 'Sound Effects Volume : Off'
+'sound_mono' = 'Output Type : Mono'
+'sound_movie' = 'Movie Vol : '
+'sound_movie_off' = 'Movie Vol : Off'
+'sound_music' = 'Music Volume : '
+'sound_music_off' = 'Music Volume : Off'
+'sound_mute' = 'Sound : '
+'sound_muted' = 'Muted'
+'sound_on' = 'On'
+'sound_percent' = '%.'
+'sound_quality' = 'Output Quality : '
+'sound_quality_unit' = 'bit'
+'sound_rate' = 'Output Rate : '
+'sound_rate_unit' = 'hz'
+'sound_select_device' = 'Select sound device'
+'sound_stereo' = 'Output Type : Stereo'
+'sound_title' = 'Sound Options'

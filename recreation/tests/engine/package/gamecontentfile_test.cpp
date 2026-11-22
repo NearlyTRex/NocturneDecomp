@@ -94,8 +94,12 @@ TEST(GameContentFile, NoContentWritesNothing) {
 
 TEST(GameContentFile, WritesOnlyWhatAStoryAndPictureHave) {
     SGameContent content;
-    content.credits = SGameCredits{
-        .text = "c.txt", .image = "i", .music = {}, .column_scroll = {}, .fade_loop = {}};
+    content.credits = SGameCredits{.text = "c.txt",
+                                   .image = "i",
+                                   .music = {},
+                                   .column_scroll = {},
+                                   .fade_loop = {},
+                                   .two_column = {}};
     content.menu = getShippedGameContent().menu;
     content.menu->trademark.reset();
     EXPECT_THAT(formatGameContentTables(content),
@@ -166,7 +170,12 @@ INSTANTIATE_TEST_SUITE_P(
     Credits, CGameContentErrorTest,
     ::testing::Values(SBadCase{"[credits]\nfont = 1", "credits: font: not a key this file takes"},
                       SBadCase{"[credits]\nimage = \"i\"", "credits: text: missing"},
-                      SBadCase{"[credits]\ntext = \"t\"", "credits: image: missing"},
+                      SBadCase{"[credits]\ntext = \"t\"\nimage = 1",
+                               "credits: image: not a string"},
+                      SBadCase{"[credits]\ntext = 't'\n[credits.two_column]\nfont = 'f'",
+                               "credits: two_column: end_line: missing"},
+                      SBadCase{"[credits]\ntext = 't'\n[credits.two_column]\nwidth = 1",
+                               "credits: two_column: width: not a key this file takes"},
                       SBadCase{"[credits]\ntext = \"t\"\nimage = \"i\"\nmusic = 1",
                                "credits: music: not a string"},
                       SBadCase{"[credits]\ntext = 't'\nimage = 'i'\ncolumn_scroll = 1",
@@ -261,8 +270,14 @@ constexpr std::string_view kMenuItem =
     "[menu.item]\nfont = 'theme'\ncolour = 1\nselected_colour = 2\nalpha = 3\nshadow = -1\n"
     "spacing_titled = 1\nspacing_untitled = 2\n";
 constexpr std::string_view kMenuGlow = "[menu.item.glow]\ncolour = 7\ncopies = 5\nflicker = true\n";
-constexpr std::string_view kMenuFooter = "[menu.footer]\nfont = 'small_editor'\ncolour = 1\n"
-                                         "shadow = 0\nversion_x = 4\nversion_alpha = 5\n";
+constexpr std::string_view kMenuFooterKeys =
+    "[menu.footer]\nfont = 'small_editor'\ncolour = 1\nshadow = 0\nversion_alpha = 5\n";
+constexpr std::string_view kMenuFooterCopyright =
+    "[menu.footer.copyright]\ncorner = 'bottom_right'\nedge = 'screen'\nx = 1\ny = 1\n";
+constexpr std::string_view kMenuFooterVersion =
+    "[menu.footer.version]\ncorner = 'bottom_left'\nedge = 'screen'\nx = 4\ny = 1\n";
+const std::string kMenuFooter =
+    std::format("{}{}{}", kMenuFooterKeys, kMenuFooterCopyright, kMenuFooterVersion);
 constexpr std::string_view kMenuCalibration =
     "[menu.calibration]\nimage = 'b'\nsteps = ['one']\ntitle = 't'\nprompt = 'p'\n"
     "font = 'small_editor'\ncolour = 1\ntitle_lines = 2\nprompt_lines = 3\n";
@@ -440,10 +455,42 @@ INSTANTIATE_TEST_SUITE_P(
                                       kMenuOptions, kMenuSound, kMenuSlider)),
                  "menu: music: high_rate: missing"},
         SBadCase{menuKeyed("align = 'right'"), "menu: align: not one of left, centre"},
+        SBadCase{menuWith(kMenuTitle,
+                          std::format("{}untitled_positions = [{{ x = 1, centre_x = 2, y = 3 }}]\n",
+                                      kMenuItem),
+                          kMenuGlow, kMenuFooter, kMenuCalibration),
+                 "menu: item: untitled_positions 1: give one of x and centre_x"},
+        SBadCase{menuWith(kMenuTitle,
+                          std::format("{}untitled_positions = [{{ y = 3 }}]\n", kMenuItem),
+                          kMenuGlow, kMenuFooter, kMenuCalibration),
+                 "menu: item: untitled_positions 1: give one of x and centre_x"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
-                          std::format("{}version_corner = 'top_left'\n", kMenuFooter),
+                          std::format("{}{}", kMenuFooterKeys, kMenuFooterVersion),
                           kMenuCalibration),
-                 "menu: footer: version_corner: not one of bottom_left, top_right"},
+                 "menu: footer: copyright: missing"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
+                          std::format("{}{}", kMenuFooterKeys, kMenuFooterCopyright),
+                          kMenuCalibration),
+                 "menu: footer: version: missing"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
+                          std::format("{}{}[menu.footer.version]\ncorner = 'middle'\n"
+                                      "edge = 'screen'\nx = 0\ny = 0\n",
+                                      kMenuFooterKeys, kMenuFooterCopyright),
+                          kMenuCalibration),
+                 "menu: footer: version: corner: not one of bottom_left, bottom_right, top_left, "
+                 "top_right"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
+                          std::format("{}{}[menu.footer.version]\ncorner = 'top_left'\n"
+                                      "x = 0\ny = 0\n",
+                                      kMenuFooterKeys, kMenuFooterCopyright),
+                          kMenuCalibration),
+                 "menu: footer: version: edge: missing"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
+                          std::format("{}{}[menu.footer.version]\ncorner = 'top_left'\n"
+                                      "edge = 'window'\nx = 0\ny = 0\n",
+                                      kMenuFooterKeys, kMenuFooterCopyright),
+                          kMenuCalibration),
+                 "menu: footer: version: edge: not one of screen, layout"},
         SBadCase{menuWith(std::format("{}drop = {{ x = 9, y = 0, colour = 2 }}\n", kMenuTitle),
                           kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration),
                  "menu: title: drop: x: not from -8 to 8"}));
@@ -669,7 +716,9 @@ TEST(GameContentFile, BlairWitchTwosFrontEndReads) {
     EXPECT_EQ(menu.titled_top, 290);
     EXPECT_EQ(menu.title.drop, (SMenuDrop{.x = 1, .y = 1, .colour = 2}));
     EXPECT_EQ(menu.item.drop, (SMenuDrop{.x = 0, .y = 1, .colour = 4}));
-    EXPECT_EQ(menu.footer.version_corner, EVersionCorner::TopRight);
+    EXPECT_EQ(menu.footer.version,
+              (SFooterPlace{
+                  .corner = EFooterCorner::TopRight, .edge = EFooterEdge::Layout, .x = 0, .y = 0}));
     EXPECT_EQ(menu.music.high_rate, "XBLAIRMENU.wav");
     ASSERT_TRUE(menu.spectrum.has_value());
     EXPECT_TRUE(menu.spectrum->mirrored);
@@ -685,16 +734,49 @@ TEST(GameContentFile, BlairWitchTwosFrontEndReads) {
     EXPECT_EQ(content->controls->bindings.size(), 23U);
 }
 
-// What a written manifest holds of the new looks reads back the same.
-TEST(GameContentFile, BlairWitchTwosFrontEndWritesBack) {
+TEST(GameContentFile, BlairWitchThreesFrontEndReads) {
     const auto games = getEmbeddedGames();
-    const auto bw2 = std::ranges::find(games, "blairwitch2", &SEmbeddedGame::id);
-    ASSERT_NE(bw2, games.end());
-    const std::expected<SGameContent, std::string> content = parseGameContent(bw2->text);
+    const auto bw3 = std::ranges::find(games, "blairwitch3", &SEmbeddedGame::id);
+    ASSERT_NE(bw3, games.end());
+    const std::expected<SGameContent, std::string> content = parseGameContent(bw3->text);
     ASSERT_TRUE(content.has_value()) << content.error();
-    const std::expected<SGameContent, std::string> again = parseGameContent(format(*content));
-    ASSERT_TRUE(again.has_value()) << again.error();
-    EXPECT_EQ(*again, *content);
+    ASSERT_TRUE(content->tiled_scroll.has_value());
+    EXPECT_EQ(content->tiled_scroll->columns, (std::array<int, 2>{320, -320}));
+    EXPECT_EQ(content->tiled_scroll->hand_alpha_start, 0x10000);
+    ASSERT_TRUE(content->menu.has_value());
+    const SMenuLayout &menu = *content->menu;
+    EXPECT_EQ(menu.title.font, "menu");
+    EXPECT_EQ(menu.item.untitled_font, "menu");
+    ASSERT_EQ(menu.item.untitled_positions.size(), 4U);
+    EXPECT_EQ(menu.item.untitled_positions[1], (SMenuPoint{.x = 320, .y = 274, .centred = true}));
+    EXPECT_EQ(menu.item.glow.item_colour, 0x9a);
+    EXPECT_EQ(
+        menu.footer.copyright,
+        (SFooterPlace{
+            .corner = EFooterCorner::BottomRight, .edge = EFooterEdge::Layout, .x = 21, .y = 1}));
+    EXPECT_FALSE(menu.spectrum.has_value());
+    EXPECT_EQ(content->labels.at("main_play"), "PLAY");
+    EXPECT_EQ(content->labels.at("options_graphic"), "Graphic Options");
+    ASSERT_TRUE(content->credits.has_value());
+    EXPECT_TRUE(content->credits->image.empty());
+    ASSERT_TRUE(content->credits->two_column.has_value());
+    EXPECT_EQ(content->credits->two_column->right_x, 300);
+    EXPECT_EQ(content->stories.front().chapters.front().mission, "town_act1.msn");
+    EXPECT_EQ(std::ranges::count(content->fonts, "small_menu", &SFontSpec::id), 1);
+}
+
+// What a written manifest holds of each game's look reads back the same.
+TEST(GameContentFile, EachGamesFrontEndWritesBack) {
+    const auto games = getEmbeddedGames();
+    for (const std::string_view id : {"nocturne", "blairwitch1", "blairwitch2", "blairwitch3"}) {
+        const auto game = std::ranges::find(games, id, &SEmbeddedGame::id);
+        ASSERT_NE(game, games.end());
+        const std::expected<SGameContent, std::string> content = parseGameContent(game->text);
+        ASSERT_TRUE(content.has_value()) << content.error();
+        const std::expected<SGameContent, std::string> again = parseGameContent(format(*content));
+        ASSERT_TRUE(again.has_value()) << id << ": " << again.error();
+        EXPECT_EQ(*again, *content) << id;
+    }
 }
 
 TEST(GameContentFile, AWholeMenuReads) {
@@ -751,9 +833,11 @@ INSTANTIATE_TEST_SUITE_P(
                           kMenuCalibration),
                  "menu: footer: font: missing"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
-                          "[menu.footer]\nfont = 'f'\ncolour = 1\nshadow = 0\nversion_x = 640\n",
+                          std::format("{}{}[menu.footer.version]\ncorner = 'top_left'\n"
+                                      "edge = 'layout'\nx = 640\ny = 0\n",
+                                      kMenuFooterKeys, kMenuFooterCopyright),
                           kMenuCalibration),
-                 "menu: footer: version_x: not from 0 to 639"},
+                 "menu: footer: version: x: not from 0 to 639"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter, ""),
                  "menu: calibration: missing"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,

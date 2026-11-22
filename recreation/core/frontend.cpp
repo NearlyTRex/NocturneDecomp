@@ -1,12 +1,23 @@
 #include "core/frontend.h"
 
 #include "common/error/error.h"
+#include "engine/package/gamecontent.h"
+#include "support/newmsg/newmsg.h"
 
 #include <algorithm>
 #include <cmath>
 #include <format>
 
 namespace nocturne::core {
+
+std::string getLabel(const engine::SGameContent &content, const support::CNewMsg &messages,
+                     std::string_view id) {
+    const auto found = content.labels.find(id);
+    if (found == content.labels.end()) {
+        common::displayErrorAndQuit(std::format("No package gives the label {}", id));
+    }
+    return std::string(messages.getLocalizedString(found->second));
+}
 
 std::string_view requireFrontEndStyle(std::string_view part,
                                       const std::optional<std::string> &style,

@@ -100,10 +100,11 @@ void CDFont::initFonts() {
     use_os_fonts_ = os_font_choice_ == EOsFontChoice::Auto
                         ? messages_.getUseOSFonts()
                         : os_font_choice_ == EOsFontChoice::System;
+    // A font no role takes is the game's own, as BW3's menu fonts, drawn by what names it.
+    extra_fonts_.clear();
     for (const engine::SFontSpec &spec : content_.fonts) {
         if (!std::ranges::contains(kFontIds, spec.id)) {
-            common::displayErrorAndQuit(
-                std::format("The font {} isn't one this build draws", spec.id));
+            extra_fonts_.insert_or_assign(spec.id, loadFont(spec));
         }
     }
 
@@ -160,6 +161,7 @@ void CDFont::freeFonts() {
     console_font_.reset();
     editor_tools_.setEditorFont(nullptr);
     micro_font_.reset();
+    extra_fonts_.clear();
     medium_win_font_.reset();
     tiny_win_font_.reset();
     theme_win_font_.reset();
@@ -229,6 +231,9 @@ engine::CBitFont &CDFont::findFont(std::string_view id) const {
         if (id == name && font != nullptr) {
             return *font;
         }
+    }
+    if (const auto extra = extra_fonts_.find(id); extra != extra_fonts_.end()) {
+        return *extra->second;
     }
     common::displayErrorAndQuit(std::format("No font {} is loaded", id));
 }

@@ -7,7 +7,10 @@
 
 #include <array>
 #include <cstdint>
+#include <functional>
+#include <map>
 #include <memory>
+#include <string>
 #include <string_view>
 
 namespace nocturne::core {
@@ -65,8 +68,8 @@ public:
     [[nodiscard]] engine::CBitFont *getSmallEditorFont() const;
     [[nodiscard]] engine::CBitFont *getConsoleFont() const;
     [[nodiscard]] engine::CBitFont *getMicroFont() const;
-    // The font a manifest names: medium, tiny, theme, small_editor, console or micro. Any other
-    // name is fatal.
+    // The font a manifest names: medium, tiny, theme, small_editor, console or micro, or one of
+    // the game's own. Any other name is fatal.
     [[nodiscard]] engine::CBitFont &findFont(std::string_view id) const;
 
 private:
@@ -97,6 +100,8 @@ private:
     std::unique_ptr<engine::CBitFont> small_editor_font_;
     std::unique_ptr<engine::CBitFont> console_font_;
     std::unique_ptr<engine::CBitFont> micro_font_;
+    // The game's own fonts, which no role takes, by id; they take no OS text.
+    std::map<std::string, std::unique_ptr<engine::CBitFont>, std::less<>> extra_fonts_;
     std::unique_ptr<engine::CWinFont> medium_win_font_;
     std::unique_ptr<engine::CWinFont> theme_win_font_;
     std::unique_ptr<engine::CWinFont> tiny_win_font_;

@@ -198,13 +198,20 @@ TEST_F(CDFontTest, ARoleNoPackageGivesIsFatal) {
                     ::testing::StrEq("No package gives the micro font")));
 }
 
-TEST_F(CDFontTest, AFontNoRoleTakesIsFatal) {
+// BW3's menu fonts: found by their ids, with no OS text whatever the message file says.
+TEST_F(CDFontTest, AFontNoRoleTakesIsTheGamesOwn) {
     engine::SFontSpec gothic = content_.fonts.front();
     gothic.id = "gothic";
     content_.fonts.push_back(gothic);
-    EXPECT_THAT([this] { fonts_.initFonts(); },
+    fonts_.initFonts();
+    EXPECT_NE(&fonts_.findFont("gothic"), fonts_.getMediumFont());
+    EXPECT_THAT(
+        [this] { static_cast<void>(fonts_.findFont("serif")); },
+        ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq("No font serif is loaded")));
+    fonts_.freeFonts();
+    EXPECT_THAT([this] { static_cast<void>(fonts_.findFont("gothic")); },
                 ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("The font gothic isn't one this build draws")));
+                    ::testing::StrEq("No font gothic is loaded")));
 }
 
 // Only the console font draws its sheet's indices as they are; it is ready, so a glyph past the

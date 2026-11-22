@@ -1,5 +1,6 @@
 #include "core/menu/soundoptionspage.h"
 
+#include "core/frontend.h"
 #include "core/menu/menu.h"
 #include "core/sound/sound.h"
 #include "shape/edittool/picklist.h"
@@ -70,23 +71,22 @@ void addLine(std::vector<SMenuLine> &lines, ESoundLine line, std::string text) {
 
 constexpr CSoundOptionsPage::SChannel CSoundOptionsPage::kEffects{.index = CSound::kEffectsChannel,
                                                                   .scale = 0.25F,
-                                                                  .on_label = "Sound effects : ",
-                                                                  .off_label =
-                                                                      "Sound effects : Off"};
+                                                                  .on_label = "sound_effects",
+                                                                  .off_label = "sound_effects_off"};
 constexpr CSoundOptionsPage::SChannel CSoundOptionsPage::kDialog{.index = CSound::kDialogChannel,
                                                                  .scale = 1.0F,
-                                                                 .on_label = "Dialog : ",
-                                                                 .off_label = "Dialog : Off"};
+                                                                 .on_label = "sound_dialog",
+                                                                 .off_label = "sound_dialog_off"};
 constexpr CSoundOptionsPage::SChannel CSoundOptionsPage::kMusic{.index = CSound::kMusicChannel,
                                                                 .scale = 0.25F,
-                                                                .on_label = "Music Vol : ",
-                                                                .off_label = "Music Vol : Off"};
+                                                                .on_label = "sound_music",
+                                                                .off_label = "sound_music_off"};
 
 CSoundOptionsPage::CSoundOptionsPage(CMenu &menu, const SMenuOwners &owners)
     : CMenuPage(menu), owners_(owners) {}
 
 std::optional<std::string> CSoundOptionsPage::title() {
-    return localize("Sound Options");
+    return label("sound_title");
 }
 
 std::string_view CSoundOptionsPage::getLayoutId() const {
@@ -98,26 +98,25 @@ std::string_view CSoundOptionsPage::getLayoutId() const {
 void CSoundOptionsPage::build(std::vector<SMenuLine> &lines) {
     const sound::CSndMain &sound_main = owners_.sound_main;
     addLine(lines, ESoundLine::Mute,
-            localize("Sound : ") + localize(sound_main.isSoundMuted() ? "Muted" : "On"));
+            label("sound_mute") + label(sound_main.isSoundMuted() ? "sound_muted" : "sound_on"));
     addLine(lines, ESoundLine::Effects, getChannelText(kEffects));
     addLine(lines, ESoundLine::Dialog, getChannelText(kDialog));
     addLine(lines, ESoundLine::Music, getChannelText(kMusic));
     addLine(lines, ESoundLine::Movie, getMovieText());
     addLine(lines, ESoundLine::Rate,
-            std::format("{}{}{}", localize("Output rate : "), sound_main.getAudioSampleRate(),
-                        localize("hz")));
+            std::format("{}{}{}", label("sound_rate"), sound_main.getAudioSampleRate(),
+                        label("sound_rate_unit")));
     addLine(lines, ESoundLine::Quality,
-            std::format("{}{}{}", localize("Output quality : "), sound_main.getAudioBitDepth(),
-                        localize("bit")));
+            std::format("{}{}{}", label("sound_quality"), sound_main.getAudioBitDepth(),
+                        label("sound_quality_unit")));
     addLine(lines, ESoundLine::Type,
-            localize(sound_main.getAudioChannelCount() == kStereo ? "Output type : STEREO"
-                                                                  : "Output type : MONO"));
+            label(sound_main.getAudioChannelCount() == kStereo ? "sound_stereo" : "sound_mono"));
     const int device = sound_main.getCurrentSoundDevice();
     std::string device_name;
     if (device >= 0) {
         device_name = owners_.sound_main.getSoundDeviceInfo(device).device_name;
     }
-    addLine(lines, ESoundLine::Device, localize("Device : ") + device_name);
+    addLine(lines, ESoundLine::Device, label("sound_device") + device_name);
 }
 
 void CSoundOptionsPage::decorate() {
@@ -164,29 +163,29 @@ EMenuOutcome CSoundOptionsPage::choose(int id, EMenuStep step) {
     return EMenuOutcome::Stay;
 }
 
-std::string CSoundOptionsPage::localize(std::string_view key) const {
-    return std::string(owners_.messages.getLocalizedString(key));
+std::string CSoundOptionsPage::label(std::string_view id) const {
+    return getLabel(owners_.content, owners_.messages, id);
 }
 
 std::string CSoundOptionsPage::getChannelText(const SChannel &channel) const {
     const sound::CSndMain &sound_main = owners_.sound_main;
     if (!sound_main.isSfxChannelEnabled(channel.index)) {
-        return localize(channel.off_label);
+        return label(channel.off_label);
     }
     const float level = sound_main.getSfxChannelVol(channel.index);
-    return std::format("{}{}{}", localize(channel.on_label),
+    return std::format("{}{}{}", label(channel.on_label),
                        std::lround((level * kPercent / channel.scale) + kPercentRounding),
-                       localize("%."));
+                       label("sound_percent"));
 }
 
 // Off is a level of nothing, as a channel's line shows a channel switched off.
 std::string CSoundOptionsPage::getMovieText() const {
     const float level = owners_.sound_main.getMovieVolume();
     if (level <= 0.0F) {
-        return localize("Movie Vol : Off");
+        return label("sound_movie_off");
     }
-    return std::format("{}{}{}", localize("Movie Vol : "), std::lround(level * kPercent),
-                       localize("%."));
+    return std::format("{}{}{}", label("sound_movie"), std::lround(level * kPercent),
+                       label("sound_percent"));
 }
 
 // The music has to be started again to be heard once its channel is back on.
@@ -270,7 +269,7 @@ void CSoundOptionsPage::pickDevice() {
     for (int device = 0; device < sound_main.getSoundDeviceCount(); ++device) {
         list.add(sound_main.getSoundDeviceInfo(device).device_name);
     }
-    const int chosen = list.displayChoicesAndWaitForInput("Select sound device",
+    const int chosen = list.displayChoicesAndWaitForInput(label("sound_select_device"),
                                                           sound_main.getCurrentSoundDevice());
     if (chosen < 0) {
         return;

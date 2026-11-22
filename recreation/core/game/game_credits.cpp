@@ -92,6 +92,50 @@ void drawFadeCredits(engine::CBitFont &font, std::span<const std::string_view> l
     three_d.setRenderAlpha(kFullAlpha);
 }
 
+// BW3's, with their first line at layout row `top`: a line marked so in two columns, split where
+// the second's mark is (one without it, or with nothing before it, drawing nothing), else
+// centred between the bounds. True when any was on the screen.
+bool drawTwoColumnCredits(engine::CBitFont &font, std::span<const std::string_view> lines, int top,
+                          const SFrontEndLayout &layout, const engine::SCreditsTwoColumn &two) {
+    const int line_height = font.getCharHeight(kLineHeightChar);
+    const std::string heading{two.marker, two.heading};
+    const std::string left_mark{two.marker, two.left_column};
+    const std::string right_mark{two.marker, two.right_column};
+    const auto draw = [&](std::string_view text, int x, int y, int color) {
+        font.drawTextScaled(text, x, layout.getY(y), color, two.shadow_colour, layout.scale);
+    };
+    bool drawn = false;
+    int y = top;
+    for (std::string_view line : lines) {
+        int color = two.text_colour;
+        if (line.starts_with(heading)) {
+            color = two.heading_colour;
+            line.remove_prefix(heading.size());
+        }
+        if (y >= 0 && y < kImageBottom - line_height) {
+            drawn = true;
+            if (line.starts_with(left_mark)) {
+                line.remove_prefix(left_mark.size());
+                const std::size_t split = line.find(right_mark);
+                if (split != std::string_view::npos && split > 0) {
+                    draw(line.substr(0, split), layout.getX(two.left_x), y, color);
+                    draw(line.substr(split + right_mark.size()), layout.getX(two.right_x), y,
+                         color);
+                }
+            } else {
+                // As drawTextCenterInBounds centres it.
+                draw(line,
+                     (layout.getX(two.centre_left) + layout.getX(two.centre_right) + 1 -
+                      font.getTextWidthScaled(line, layout.scale)) /
+                         2,
+                     y, color);
+            }
+        }
+        y += line_height;
+    }
+    return drawn;
+}
+
 } // namespace
 
 // The original kept at most 1024 lines of 254 characters, and ended on Escape held rather than
@@ -99,7 +143,9 @@ void drawFadeCredits(engine::CBitFont &font, std::span<const std::string_view> l
 // kept to the left, so on a wider screen its text column, over the image's black right side, runs
 // on to the screen's right edge with its strips; the strips also cover the screen's top and foot.
 // BW2's fade_loop draws its image at its point on the layout and its lines over the middle,
-// starting over once they are far enough up, until the music ends.
+// starting over once they are far enough up, until the music ends. BW3's two_column draws no
+// image, leaves the menu's music playing, and starts over once its lines are all gone.
+// bw3 0x004c02a0
 // bw2 0x004be430
 // nocedit 0x004e4010
 void CGame::rollCredits() {
@@ -108,32 +154,49 @@ void CGame::rollCredits() {
     if (!credits) {
         return;
     }
-    const std::string_view style = requireFrontEndStyle(
-        "credits", owners_.content.front_end.credits, {kColumnScrollCredits, kFadeLoopCredits});
+    const std::string_view style =
+        requireFrontEndStyle("credits", owners_.content.front_end.credits,
+                             {kColumnScrollCredits, kFadeLoopCredits, kTwoColumnCredits});
     const bool fades = style == kFadeLoopCredits;
-    if (fades ? !credits->fade_loop : !credits->column_scroll) {
+    const bool columns = style == kTwoColumnCredits;
+    if (fades ? !credits->fade_loop : columns ? !credits->two_column : !credits->column_scroll) {
         common::displayErrorAndQuit(std::format("No package gives the {} credits' look", style));
     }
+    // What every style has.
+    const std::string font_id = fades     ? credits->fade_loop->font
+                                : columns ? credits->two_column->font
+                                          : credits->column_scroll->font;
+    const std::string end_line = fades     ? credits->fade_loop->end_line
+                                 : columns ? credits->two_column->end_line
+                                           : credits->column_scroll->end_line;
+    const int speed = fades     ? credits->fade_loop->scroll_speed
+                      : columns ? credits->two_column->scroll_speed
+                                : credits->column_scroll->scroll_speed;
+    const int start_y = fades     ? credits->fade_loop->start_y
+                        : columns ? credits->two_column->start_y
+                                  : credits->column_scroll->start_y;
     const engine::IScreenDevice &screen = owners_.screen;
     SFrontEndLayout layout = getFrontEndLayout(screen.getWindowWidth(), screen.getWindowHeight());
-    if (!fades) {
+    if (!fades && !columns) {
         layout.left = 0;
     }
     const int right = std::max(layout.getX(kImageWidth), screen.getWindowWidth()) - 1;
     const int bottom = std::max(layout.getY(kImageHeight), screen.getWindowHeight()) - 1;
     owners_.two_d.clearInputAndWait();
     engine::CAlphaBitmap image(owners_.dosio, owners_.screen, owners_.special);
-    image.load(credits->image, kImageWidth, kImageHeight);
+    if (!credits->image.empty()) {
+        image.load(credits->image, kImageWidth, kImageHeight);
+    }
     const std::optional<std::string> text = owners_.dosio.readFile("data", credits->text);
     if (!text) {
         return;
     }
     std::vector<std::string_view> lines = common::splitTextLines(*text);
-    const std::string &end_line =
-        fades ? credits->fade_loop->end_line : credits->column_scroll->end_line;
     lines.erase(std::ranges::find(lines, end_line), lines.end());
     sound::CSndMain &sound_main = owners_.sound_main;
-    sound_main.resetSoundDevice();
+    if (!columns) {
+        sound_main.resetSoundDevice();
+    }
     static_cast<void>(sound_main.enableSoundSystem());
     std::uint32_t music = 0;
     if (!credits->music.empty() && sound_main.isSfxChannelEnabled(CSound::kMusicChannel)) {
@@ -144,22 +207,27 @@ void CGame::rollCredits() {
         sound_main.popSfxOptions();
     }
     owners_.two_d.clearInputAndWait();
-    engine::CBitFont &font =
-        owners_.fonts.findFont(fades ? credits->fade_loop->font : credits->column_scroll->font);
+    engine::CBitFont &font = owners_.fonts.findFont(font_id);
     engine::CFont *const os_font = font.releaseWinFont();
     saveClockTime();
     owners_.three_d.setRenderAlpha(kFullAlpha);
-    const int speed =
-        fades ? credits->fade_loop->scroll_speed : credits->column_scroll->scroll_speed;
-    auto scroll_top =
-        static_cast<float>(fades ? credits->fade_loop->start_y : credits->column_scroll->start_y);
+    auto scroll_top = static_cast<float>(start_y);
     std::optional<int> drawn_top;
+    // Whether the last drawing had a line on the screen.
+    bool any_drawn = false;
     while (true) {
         const auto top = static_cast<int>(std::lround(scroll_top));
         // Redrawn only once the scroll reaches another row.
         if (top != drawn_top) {
             owners_.special.clearScreen();
-            if (fades) {
+            if (columns) {
+                const engine::SCreditsTwoColumn &two = *credits->two_column;
+                any_drawn = drawTwoColumnCredits(font, lines, top, layout, two);
+                owners_.two_d.fillRectColor(layout.getX(0), layout.getY(0), right,
+                                            layout.getY(two.top_strip_bottom), two.strip_colour);
+                owners_.two_d.fillRectColor(layout.getX(0), layout.getY(two.bottom_strip_top),
+                                            right, bottom, two.strip_colour);
+            } else if (fades) {
                 const engine::SCreditsFadeLoop &fade = *credits->fade_loop;
                 displayInLayout(image, layout,
                                 {.x = fade.image_x,
@@ -177,7 +245,7 @@ void CGame::rollCredits() {
             if (music != 0 && !sound_main.isSfxPlaying(music)) {
                 break;
             }
-            if (!fades) {
+            if (!fades && !columns) {
                 const engine::SCreditsColumnScroll &scroll = *credits->column_scroll;
                 const int column_left = layout.getX(scroll.column_left);
                 owners_.two_d.fillRectColor(column_left, 0, right,
@@ -199,11 +267,18 @@ void CGame::rollCredits() {
             scroll_top = static_cast<float>(credits->fade_loop->restart_y);
             drawn_top.reset();
         }
+        // BW3's: once a drawing had none on the screen and the top is above it, from the start.
+        if (columns && !any_drawn && scroll_top < 0.0F) {
+            scroll_top = static_cast<float>(start_y);
+            drawn_top.reset();
+        }
     }
     if (os_font != nullptr) {
         font.setWinFont(*os_font);
     }
-    sound_main.resetSoundDevice();
+    if (!columns) {
+        sound_main.resetSoundDevice();
+    }
     owners_.two_d.clearInputAndWait();
 }
 

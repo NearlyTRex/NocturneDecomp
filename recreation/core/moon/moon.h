@@ -39,7 +39,8 @@ struct SMoonOwners {
 // The menu's title backdrop, in the style the packages' [front_end] names. sky_scene: the moon
 // turning into place, bats flying their courses across it once it has, two layers of cloud
 // drifting over, and the title's animation on top. figure_scene: a still picture with animated
-// models before a fixed camera, and the title's animation on top.
+// models before a fixed camera, and the title's animation on top. tiled_scroll: a picture tiled
+// and scrolling, a fading picture over it and an overlay on top.
 class CMoon {
 public:
     explicit CMoon(const SMoonOwners &owners);
@@ -66,13 +67,19 @@ private:
         common::CVector3f random_offset;
     };
 
-    // Whether the packages name figure_scene; any style but the two is fatal.
+    enum class EStyle : std::uint8_t { Sky, Figure, Tiled };
+
+    // The style the packages name; any style but the three is fatal.
+    [[nodiscard]] EStyle getStyle() const;
     [[nodiscard]] bool isFigureScene() const;
-    // The packages' sky_scene or figure_scene; without it, fatal.
+    // The packages' values for the style; without them, fatal.
     [[nodiscard]] const engine::SSkyScene &getSky() const;
     [[nodiscard]] const engine::SFigureScene &getFigure() const;
+    [[nodiscard]] const engine::STiledScroll &getTiled() const;
     void load();
     void loadFigure();
+    void loadTiled();
+    void renderTiled();
     void loadFrames(std::string_view prefix, int digits, int count, int width, int height);
     void updateFigure(float delta_time);
     void renderFigure();
@@ -110,6 +117,14 @@ private:
     engine::CAlphaBitmap backdrop_;
     std::vector<std::unique_ptr<CKeyFramedModel>> figures_;
     std::vector<int> figure_frames_;
+    // tiled_scroll's pictures (the tile is the backdrop's), where its tiles are and its hand's
+    // alpha, and which way that is going.
+    engine::CAlphaBitmap hand_;
+    engine::CAlphaBitmap overlay_;
+    std::array<int, 2> tile_columns_{};
+    std::array<int, 2> tile_rows_{};
+    int hand_alpha_ = 0;
+    bool hand_rising_ = false;
 };
 
 } // namespace nocturne::core

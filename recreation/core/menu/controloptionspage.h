@@ -25,8 +25,9 @@ public:
     EMenuOutcome endFrame() override;
 
 private:
-    [[nodiscard]] std::string localize(std::string_view key) const;
-    [[nodiscard]] std::string getSensitivityText(std::string_view label, int sensitivity) const;
+    // The game's text for a label id.
+    [[nodiscard]] std::string label(std::string_view id) const;
+    [[nodiscard]] std::string getSensitivityText(std::string_view id, int sensitivity) const;
     // Either way, wrapping, with the new type's default bindings.
     void stepControlType(EMenuStep step);
 

@@ -1,11 +1,36 @@
+#include "common/error/fatalerror.h"
 #include "core/frontend.h"
+#include "engine/package/gamecontent.h"
+#include "support/newmsg/newmsg.h"
+#include "tests/mocks/engine/podfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 namespace nocturne::core {
 namespace {
 
 using platform::EUpscaler;
+
+class CGetLabelTest : public engine::CPodFixture {
+protected:
+    engine::SGameContent content_;
+    support::CNewMsg messages_{dosio_};
+};
+
+// The game's text for the id, then the language's for that text.
+TEST_F(CGetLabelTest, ALabelIsItsGamesTextTranslated) {
+    content_.labels = {{"main_play", "PLAY"}, {"main_quit", "QUIT"}};
+    messages_.addTranslations({{"PLAY", "JOUER"}});
+    EXPECT_EQ(getLabel(content_, messages_, "main_play"), "JOUER");
+    EXPECT_EQ(getLabel(content_, messages_, "main_quit"), "QUIT");
+}
+
+TEST_F(CGetLabelTest, AnIdNoPackageGivesIsFatal) {
+    EXPECT_THAT([this] { static_cast<void>(getLabel(content_, messages_, "main_play")); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the label main_play")));
+}
 
 TEST(GetFrontEndMode, WithAccelerationItIsThePickedResolution) {
     EXPECT_EQ(getFrontEndMode(1920, 1080, true), (common::SExtent{.width = 1920, .height = 1080}));

@@ -118,14 +118,45 @@ struct SCreditsFadeLoop {
     bool operator==(const SCreditsFadeLoop &) const = default;
 };
 
+// BW3's credits, with no image: a line centred between centre_left and centre_right, or one
+// split in two columns, between black strips across the whole width, starting over once none
+// is on the screen and its top is above the screen's.
+struct SCreditsTwoColumn {
+    std::string font;
+    int centre_left = 0;
+    int centre_right = 0;
+    // A line led by the marker and left_column is split where the marker and right_column are;
+    // one without them both draws nothing.
+    int left_x = 0;
+    int right_x = 0;
+    char left_column = 0;
+    char right_column = 0;
+    int top_strip_bottom = 0;
+    int bottom_strip_top = 0;
+    int strip_colour = 0;
+    int text_colour = 0;
+    int heading_colour = 0;
+    int shadow_colour = 0;
+    int scroll_speed = 0;
+    int start_y = 0;
+    std::string end_line;
+    // A line led by the marker and heading is a heading, and loses the two.
+    char marker = 0;
+    char heading = 0;
+
+    bool operator==(const SCreditsTwoColumn &) const = default;
+};
+
 struct SGameCredits {
     std::string text;
+    // Empty for none, as two_column draws none.
     std::string image;
     // Empty for none.
     std::string music;
     // Each style's values.
     std::optional<SCreditsColumnScroll> column_scroll;
     std::optional<SCreditsFadeLoop> fade_loop;
+    std::optional<SCreditsTwoColumn> two_column;
 
     bool operator==(const SGameCredits &) const = default;
 };
@@ -264,6 +295,37 @@ struct SFigureModel {
     int frame_wrap = 0;
 
     bool operator==(const SFigureModel &) const = default;
+};
+
+// The tiled_scroll title backdrop, BW3's: one picture tiled two by two, the tiles stepping each
+// drawing and wrapping, a picture over them whose alpha swings between two levels, and an
+// overlay on top. Positions are on the layout.
+struct STiledScroll {
+    std::string tile;
+    // The two tiles' starting columns and rows, and the step each drawing.
+    std::array<int, 2> columns{};
+    std::array<int, 2> rows{};
+    int step_x = 0;
+    int step_y = 0;
+    // A column past wrap_x_above goes to wrap_x_to; a row under wrap_y_below to wrap_y_to.
+    int wrap_x_above = 0;
+    int wrap_x_to = 0;
+    int wrap_y_below = 0;
+    int wrap_y_to = 0;
+    std::string hand;
+    int hand_x = 0;
+    int hand_y = 0;
+    int hand_width = 0;
+    int hand_height = 0;
+    // From hand_alpha_start the alpha falls by hand_alpha_step to hand_alpha_low, rises to
+    // hand_alpha_high, and falls again.
+    int hand_alpha_start = 0;
+    int hand_alpha_low = 0;
+    int hand_alpha_high = 0;
+    int hand_alpha_step = 0;
+    std::string overlay;
+
+    bool operator==(const STiledScroll &) const = default;
 };
 
 // The figure_scene title backdrop: a still picture, animated models before a fixed camera over
@@ -422,12 +484,29 @@ enum class EMenuAlign : std::uint8_t {
     Centre,
 };
 
-// The corner the build's line is drawn in.
-enum class EVersionCorner : std::uint8_t {
-    // version_x in from the left, on the copyright's line.
+// A corner a footer line is placed from.
+enum class EFooterCorner : std::uint8_t {
     BottomLeft,
-    // version_x in from the right, at the top, as BW2 drew its "1.2".
+    BottomRight,
+    TopLeft,
     TopRight,
+};
+
+// Whose corner: the screen's, as Nocturne's footer hugs a wide screen's edges, or the 640x480
+// layout's, as BW1's copyright ends at 619 on it.
+enum class EFooterEdge : std::uint8_t {
+    Screen,
+    Layout,
+};
+
+// Where a footer line goes: its outer edges x and y layout pixels in from the corner.
+struct SFooterPlace {
+    EFooterCorner corner = EFooterCorner::BottomLeft;
+    EFooterEdge edge = EFooterEdge::Screen;
+    int x = 0;
+    int y = 0;
+
+    bool operator==(const SFooterPlace &) const = default;
 };
 
 // A page's title, and the gap in lines between it and the page's lines.
@@ -436,6 +515,8 @@ struct SMenuTitle {
     int shadow = 0;
     int gap_lines = 0;
     std::optional<SMenuDrop> drop;
+    // A [[font]] id; empty for the items' font.
+    std::string font;
 
     bool operator==(const SMenuTitle &) const = default;
 };
@@ -446,13 +527,29 @@ struct SMenuGlow {
     int copies = 0;
     // Pulsing with the title backdrop's animation; without it the selected item is steady.
     bool flicker = false;
+    // The glowing item's own colour; none draws it in the copies' colour, as Nocturne did.
+    std::optional<int> item_colour;
 
     bool operator==(const SMenuGlow &) const = default;
 };
 
+// Where a menu line goes on the layout: its left edge at x, or its middle there when centred.
+struct SMenuPoint {
+    int x = 0;
+    int y = 0;
+    bool centred = false;
+
+    bool operator==(const SMenuPoint &) const = default;
+};
+
 struct SMenuItems {
-    // A [[font]] id.
+    // A [[font]] id, for the lines under a title.
     std::string font;
+    // Those of a list without a title, as BW3's main menu; empty for font.
+    std::string untitled_font;
+    // Each line of a list without a title at its own point, as BW3's main menu centres its
+    // lines on 320; lines past the last follow it as they would without them.
+    std::vector<SMenuPoint> untitled_positions;
     int colour = 0;
     int selected_colour = 0;
     int alpha = 0;
@@ -471,9 +568,11 @@ struct SMenuFooter {
     std::string font;
     int colour = 0;
     int shadow = 0;
-    int version_x = 0;
     int version_alpha = 0;
-    EVersionCorner version_corner = EVersionCorner::BottomLeft;
+    SFooterPlace copyright;
+    // The recreation's build line, where the game drew its version, or Nocturne's when it drew
+    // none.
+    SFooterPlace version;
 
     bool operator==(const SMenuFooter &) const = default;
 };
@@ -723,6 +822,8 @@ struct SGameContent {
     std::optional<SSkyScene> sky_scene;
     // The figure_scene title backdrop's values.
     std::optional<SFigureScene> figure_scene;
+    // The tiled_scroll title backdrop's values.
+    std::optional<STiledScroll> tiled_scroll;
     std::vector<SLoadingPicture> loading;
     // The moon loading indicator's values.
     std::optional<SMoonIndicator> moon_indicator;

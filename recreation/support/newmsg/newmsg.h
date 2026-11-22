@@ -30,14 +30,10 @@ public:
     void readMessageFile(std::string_view message_file);
     // A package's translations, over any text the table has for the same key.
     void addTranslations(const engine::TranslationTable &translations);
-    // The game's text for the engine's English keys, which the table then looks up in place of
-    // the key.
-    void setLabels(const engine::TranslationTable &labels);
     // The language code whose package translations are added; nocturne.ini keeps it.
     [[nodiscard]] const std::string &getLanguage() const;
     void setLanguage(std::string_view language);
-    // The key's text, or the key itself when the table doesn't have it; a labelled key is its
-    // label's.
+    // The key's text, or the key itself when the table doesn't have it.
     [[nodiscard]] std::string_view getLocalizedString(std::string_view key) const;
     [[nodiscard]] bool getUseOSFonts() const;
     // Windows-1252 or Shift-JIS bytes, as the message file has them.
@@ -53,7 +49,6 @@ private:
 
     const engine::CDosIo &dosio_;
     std::vector<SMessage> messages_;
-    engine::TranslationTable labels_;
     bool use_os_fonts_ = false;
     std::string os_font_name_;
     std::string language_{kDefaultLanguage};

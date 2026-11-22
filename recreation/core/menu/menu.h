@@ -114,6 +114,8 @@ public:
     [[nodiscard]] bool getInMission() const;
     // The packages' menus; without them, fatal.
     [[nodiscard]] const engine::SMenuLayout &getMenuLayout() const;
+    // The game's text for a label id.
+    [[nodiscard]] std::string label(std::string_view id) const;
 
 private:
     class CMainMenuPage;
@@ -175,8 +177,10 @@ private:
     [[nodiscard]] SFrontEndLayout getScreenLayout() const;
     void drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y);
     [[nodiscard]] int getLineLeft(const engine::CBitFont &font, std::string_view text) const;
-    void drawMenuLine(engine::CBitFont &font, std::string_view text, int y, int colour, int shadow,
-                      const std::optional<engine::SMenuDrop> &drop);
+    void drawFooterLine(engine::CBitFont &font, std::string_view text,
+                        const engine::SFooterPlace &place);
+    void drawMenuLine(engine::CBitFont &font, std::string_view text, int left, int y, int colour,
+                      int shadow, const std::optional<engine::SMenuDrop> &drop);
     [[nodiscard]] std::string_view getCopyright() const;
     void drawFooter();
     // The choice the menu actions make this frame, or -1.

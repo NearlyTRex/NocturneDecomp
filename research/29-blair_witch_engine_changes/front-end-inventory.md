@@ -77,10 +77,10 @@ front-end-bindings, fe-load = front-end-loading. Paths are relative to `recreati
 
 | Name | Nocturne | Where | BW change | Key |
 |---|---|---|---|---|
-| main items | P L A Y, M U L T I P L A Y E R, O P T I O N S, Q U I T (the original's S T A R T, O P T I O N S, L O A D, Q U I T) | menu_main.cpp:53-58 | — | stays in code |
-| play items | C O N T I N U E, S T A R T, L O A D (indices 0-2) | menu_main.cpp:60-63 | — | stays in code |
-| label text | letter-spaced ("S T A R T") | menu_main.cpp:53-66 | fe-menu showMainGameMenu bw3: unspaced ("START") | menu.labels |
-| multiplayer items | H O S T   G A M E, J O I N   G A M E | menu_main.cpp:65-67 | — | stays in code |
+| main items | P L A Y, M U L T I P L A Y E R, O P T I O N S, Q U I T (the original's S T A R T, O P T I O N S, L O A D, Q U I T) | menu_main.cpp | — | the lines in code, their text labels.main_* |
+| play items | C O N T I N U E, S T A R T, L O A D (indices 0-2) | menu_main.cpp | — | labels.play_* |
+| label text | letter-spaced ("S T A R T") | menu_main.cpp | fe-menu showMainGameMenu bw3: unspaced ("START") | each game's labels |
+| multiplayer items | H O S T   G A M E, J O I N   G A M E | menu_main.cpp | — | labels.multiplayer_* |
 | dialog font | menu font | menu_main.cpp:204 | bw3 own | menu.dialog.font |
 | attract movies | video/noc{1-4}.avi | menu_main.cpp:43-44, 141 | BW has none | menu.attract.movies, .directory |
 | stays in code | quit 99, too-small 1, 480 min height, 640x480 software, black first frame, Ctrl/Ctrl+Shift browsers, movie gaps 0.25/0.4/0.5 s | menu_main.cpp:36-41, 89-130, 245-252; attractmovies.cpp:13-16 | — | — |

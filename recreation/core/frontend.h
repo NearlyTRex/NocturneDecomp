@@ -2,7 +2,9 @@
 
 #include "common/video/presentation.h"
 #include "engine/alphabit/alphabitmap.h"
+#include "engine/fwd.h"
 #include "platform/upscaler.h"
+#include "support/fwd.h"
 
 #include <initializer_list>
 #include <optional>
@@ -16,11 +18,18 @@ namespace nocturne::core {
 // column, and showChapterSelect's list of stories and their chapters.
 inline constexpr std::string_view kSkySceneBackdrop = "sky_scene";
 inline constexpr std::string_view kFigureSceneBackdrop = "figure_scene";
+inline constexpr std::string_view kTiledScrollBackdrop = "tiled_scroll";
+inline constexpr std::string_view kTwoColumnCredits = "two_column";
 inline constexpr std::string_view kMoonLoadingIndicator = "moon";
 inline constexpr std::string_view kColumnScrollCredits = "column_scroll";
 inline constexpr std::string_view kFadeLoopCredits = "fade_loop";
 inline constexpr std::string_view kStoryListSelect = "story_list";
 inline constexpr std::string_view kDirectStartSelect = "direct_start";
+
+// The menus' text for a label id, as the packages' [labels] give it, then looked up in the
+// message file as any other text; an id no package gives is fatal.
+[[nodiscard]] std::string getLabel(const engine::SGameContent &content,
+                                   const support::CNewMsg &messages, std::string_view id);
 
 // A part, as a message names it ("title backdrop"), checked as it is first used: one no package
 // names, or names in a style this build doesn't draw, is fatal, whichever game names it. The

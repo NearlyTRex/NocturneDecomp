@@ -38,7 +38,8 @@ constexpr int kWidth = 640;
 constexpr int kHeight = 480;
 constexpr int kBitsPerPixel = 32;
 constexpr int kPlayerFilterSize = 0x100;
-constexpr std::string_view kLoadingText = "Loading...";
+// "Loading..." in every game.
+constexpr std::string_view kLoadingLabel = "loading";
 // The original measured the text's height by this character's.
 constexpr int kLoadingHeightChar = 'X';
 
@@ -94,7 +95,7 @@ void showFangs(const SGameSystemOwners &owners) {
 void showLoadingScreen(const SGameSystemOwners &owners) {
     showFangs(owners);
     const engine::SStartup &startup = getStartup(owners);
-    const std::string_view text = owners.messages.getLocalizedString(kLoadingText);
+    const std::string text = getLabel(owners.content, owners.messages, kLoadingLabel);
     engine::CBitFont &font = owners.ini_owners.fonts.findFont(startup.label_font);
     const SFrontEndLayout layout = getScreenLayout(owners);
     font.drawTextScaled(
@@ -164,12 +165,11 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     readIniControls(owners.ini, owners.ini_owners);
     // The menus are drawn over the title backdrop, so without it nothing can start.
     requireFrontEndStyle("title backdrop", owners.content.front_end.title_backdrop,
-                         {kSkySceneBackdrop, kFigureSceneBackdrop});
+                         {kSkySceneBackdrop, kFigureSceneBackdrop, kTiledScrollBackdrop});
     if (owners.content.title) {
         owners.set_title(*owners.content.title);
     }
     owners.messages.readMessageFile("msglist.txt");
-    owners.messages.setLabels(owners.content.labels);
     if (const auto translations = owners.content.translations.find(owners.messages.getLanguage());
         translations != owners.content.translations.end()) {
         owners.messages.addTranslations(translations->second);

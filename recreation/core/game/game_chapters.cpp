@@ -24,6 +24,7 @@
 #include <span>
 #include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace nocturne::core {
@@ -47,12 +48,13 @@ bool isUnlocked(const engine::CIniFile &file, const engine::SGameStory &story) {
 // What choosing a story and chapter reads, offers its lists with and remembers between them.
 class CChapterChooser {
 public:
+    // title is the stories list's.
     CChapterChooser(const SChapterSelectOwners &owners, const engine::CDosIo &dosio,
                     std::span<const engine::SGameStory> stories,
                     std::span<const engine::SStoryDifficulty> difficulties, bool full_install,
-                    bool show_chapters)
+                    bool show_chapters, std::string title)
         : owners_(owners), dosio_(dosio), stories_(stories), difficulties_(difficulties),
-          full_install_(full_install), show_chapters_(show_chapters) {
+          full_install_(full_install), show_chapters_(show_chapters), title_(std::move(title)) {
         const engine::CIniFile file(owners.ini, kIniFilename, kIniSection);
         for (const engine::SGameStory &story : stories) {
             unlocked_.push_back(isUnlocked(file, story));
@@ -125,8 +127,7 @@ private:
                 list.enableItem(static_cast<int>(line), false);
             }
         }
-        return list.displayChoicesAndWaitForInput(
-            owners_.messages.getLocalizedString("Choose a story to play"), kNoSelection);
+        return list.displayChoicesAndWaitForInput(title_, kNoSelection);
     }
 
     // The chapter's index in the story, or -1. The original took the line for the index, which
@@ -166,6 +167,7 @@ private:
     std::span<const engine::SStoryDifficulty> difficulties_;
     bool full_install_;
     bool show_chapters_;
+    std::string title_;
     std::vector<bool> unlocked_;
     // The stories the list offers, by index.
     std::vector<std::size_t> listed_;
@@ -236,7 +238,8 @@ void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelect
                                                             platform::EFileMode::Read) != nullptr;
             CChapterChooser chooser(owners, owners_.dosio, content.stories, select.difficulties,
                                     full_install,
-                                    select_mode != EChapterSelectMode::kStories || !full_install);
+                                    select_mode != EChapterSelectMode::kStories || !full_install,
+                                    getLabel(content, owners.messages, "choose_story"));
             const std::optional<SChoice> choice = chooser.choose();
             if (!choice) {
                 return;

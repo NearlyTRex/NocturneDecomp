@@ -29,6 +29,7 @@ namespace nocturne::core {
 namespace {
 
 constexpr int kMoonRenderFlags = 0x205;
+constexpr int kFullAlpha = 0xffff;
 // A quarter turn, as the original stores it.
 constexpr float kBatYawOffset = std::bit_cast<float>(0x3fc90fdbU);
 constexpr int kTrueColorDepth = 32;
@@ -67,9 +68,15 @@ std::uint8_t cloudTexel(std::span<const std::uint8_t> texels, std::uint32_t x, s
 //   setRenderingMode
 // nocedit 0x00529ed0
 void CMoon::render() {
-    if (isFigureScene()) {
+    switch (getStyle()) {
+    case EStyle::Figure:
         renderFigure();
         return;
+    case EStyle::Tiled:
+        renderTiled();
+        return;
+    case EStyle::Sky:
+        break;
     }
     const engine::SSkyScene &sky = getSky();
     CDemonSet &set = owners_.set;
@@ -214,6 +221,60 @@ void CMoon::renderFigure() {
     set.setLightDirection(light_direction);
     set.setAmbientBaseQuick(ambient);
     set.setFlatColor(flat_color.r, flat_color.g, flat_color.b);
+}
+
+// Each drawing steps the tiles and the hand's alpha, then draws the four tiles, the hand and the
+// overlay. The original also set BW1's camera and lit the set as it, with nothing to draw in 3D,
+// and left the set lit so.
+// bw3 0x004f9670
+void CMoon::renderTiled() {
+    const engine::STiledScroll &tiled = getTiled();
+    owners_.special.clearScreen();
+    for (int &column : tile_columns_) {
+        column += tiled.step_x;
+        if (column > tiled.wrap_x_above) {
+            column = tiled.wrap_x_to;
+        }
+    }
+    for (int &row : tile_rows_) {
+        row += tiled.step_y;
+        if (row < tiled.wrap_y_below) {
+            row = tiled.wrap_y_to;
+        }
+    }
+    if (hand_rising_) {
+        hand_alpha_ += tiled.hand_alpha_step;
+        if (hand_alpha_ > tiled.hand_alpha_high) {
+            hand_alpha_ = tiled.hand_alpha_high;
+            hand_rising_ = false;
+        }
+    } else {
+        hand_alpha_ -= tiled.hand_alpha_step;
+        if (hand_alpha_ < tiled.hand_alpha_low) {
+            hand_alpha_ = tiled.hand_alpha_low;
+            hand_rising_ = true;
+        }
+    }
+    const SFrontEndLayout layout =
+        getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight());
+    const platform::EUpscaler upscaler = owners_.display.getUpscaler();
+    for (const int row : tile_rows_) {
+        for (const int column : tile_columns_) {
+            displayInLayout(
+                backdrop_, layout,
+                {.x = column, .y = row, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
+                kFullAlpha, upscaler);
+        }
+    }
+    displayInLayout(hand_, layout,
+                    {.x = tiled.hand_x,
+                     .y = tiled.hand_y,
+                     .width = tiled.hand_width,
+                     .height = tiled.hand_height},
+                    hand_alpha_, upscaler);
+    displayInLayout(overlay_, layout,
+                    {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
+                    kFullAlpha, upscaler);
 }
 
 void CMoon::endWideScene() {

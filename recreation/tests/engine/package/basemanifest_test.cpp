@@ -68,6 +68,7 @@ protected:
                      .startup = {},
                      .sky_scene = {},
                      .figure_scene = {},
+                     .tiled_scroll = {},
                      .loading = {},
                      .moon_indicator = {},
                      .stories = {},

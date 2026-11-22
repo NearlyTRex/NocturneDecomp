@@ -621,10 +621,28 @@ TEST_F(CInitializeGameSystemsTest, TheLanguagesTranslationsAreAdded) {
     EXPECT_EQ(messages_.getLocalizedString("Yes"), "Yes");
 }
 
-TEST_F(CInitializeGameSystemsTest, TheGamesLabelsStandForTheEnginesText) {
-    content_.labels = {{"Loading...", "Wait..."}};
+// The loading screen's words are the game's loading label; one the message file hasn't is drawn
+// as it is.
+TEST_F(CInitializeGameSystemsTest, TheLoadingScreenSaysTheGamesLoadingLabel) {
+    givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
+        givenFile(name, contents);
+    });
+    two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
+    content_.labels.at("loading") = "Wait";
     start();
-    EXPECT_EQ(messages_.getLocalizedString("Loading..."), "Wait...");
+    int left = kWidth;
+    int right = -1;
+    for (int y = 0; y < kHeight; ++y) {
+        for (int x = 0; x < kWidth; ++x) {
+            if (screen_.pixel(x, y) != 0x636363U) {
+                left = std::min(left, x);
+                right = std::max(right, x);
+            }
+        }
+    }
+    const int width = fonts_.getThemeFont()->getTextWidth("Wait");
+    EXPECT_EQ(left, (kWidth / 2) - (width / 2));
+    EXPECT_EQ(right, left + width - 1);
 }
 
 TEST_F(CInitializeGameSystemsTest, ALanguageNoPackageTranslatesKeepsTheMessageFile) {
