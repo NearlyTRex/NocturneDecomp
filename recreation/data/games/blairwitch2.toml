@@ -15,6 +15,7 @@ story_select = "direct_start"
 # BW1's scene without its backdrop or figures: the title's 75 frames over the top of the cleared
 # screen, 12 a second, wrapping at 74 (head-of-horror code 666 is only cleared)
 [title_backdrop.figure_scene]
+fit = "keep_aspect"
 steps_per_second = 60
 cheat_code = 666
 camera_rotation = [0.441335, 0.660356, -0.60758,
@@ -40,6 +41,7 @@ frame_wrap = 74
 # second up from the foot, starting again from 500 once past -2500, until the music ends
 [credits]
 text = "credits.txt"
+fit = "keep_aspect"
 image = "title_bw"
 music = "XBLAIRMENU.WAV"
 
@@ -63,6 +65,7 @@ heading = "b"
 # test_logo opaque; BW2 measured "Loading..." and never drew it, as Nocturne did
 [startup]
 picture = "test_logo"
+fit = "keep_aspect"
 picture_alpha = 0xffff
 label_x = 320
 label_y = 240
@@ -128,6 +131,7 @@ high_rate = "XBLAIRMENU.wav"
 
 [menu.calibration]
 image = "brightness"
+fit = "stretch"
 steps = [
     "1. Turn off all the lights in your room.",
     "2. Turn your brightness up, so that you see 3 bars on the left side of the screen.",
@@ -496,6 +500,7 @@ prompt_padding_lines = 2
 
 # One picture for every level
 [[loading]]
+fit = "keep_aspect"
 id = "loadscreen"
 
 # Ten loading frames before the story's one mission

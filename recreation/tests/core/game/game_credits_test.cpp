@@ -57,6 +57,8 @@ constexpr std::uint32_t kImage = 0x112233U;
 // The default text colour, as the font colours give it, and colour 2.
 constexpr std::uint32_t kTextPixel = 0xf6f6f6U;
 constexpr std::uint32_t kHeadingPixel = 0x020202U;
+// A strip of colour 1.
+constexpr std::uint32_t kStripPixel = 0x010101U;
 // The column the credits roll up, and the band between its strips.
 constexpr int kColumnLeft = 414;
 constexpr int kBandTop = 31;
@@ -518,6 +520,44 @@ TEST_F(CWideCreditsTest, TheImageKeepsToTheLeftAndTheColumnRunsOnToTheRightEdge)
     EXPECT_EQ(screen_.pixel(kWidth, kBandTop), 0U);
     EXPECT_EQ(screen_.pixel(kWideWidth - 1, kBandTop - 1), 0U);
     EXPECT_EQ(screen_.pixel(kWideWidth - 1, kHeight - 1), 0U);
+}
+
+// Centred, the image has black either side; the column's strips, here in colour 1 so they show,
+// stop with it unless they run on to the screen's edge.
+TEST_F(CWideCreditsTest, ACentredImagesColumnEndsWithItUnlessItRunsToTheEdge) {
+    givenCredits("end\n");
+    content_.credits->fit = {.fit = engine::EPictureFit::KeepAspect,
+                             .anchor = engine::EPictureAnchor::Centre};
+    content_.credits->column_scroll->column_to_screen_edge = false;
+    content_.credits->column_scroll->strip_colour = 1;
+    constexpr int kLeft = (kWideWidth - kWidth) / 2;
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(kLeft - 1, kBandTop), 0U);
+    EXPECT_EQ(screen_.pixel(kLeft, kBandTop), kImage);
+    EXPECT_EQ(screen_.pixel(kLeft + kWidth - 1, 0), kStripPixel);
+    EXPECT_EQ(screen_.pixel(kLeft + kWidth, 0), 0U);
+}
+
+TEST_F(CWideCreditsTest, ACentredImagesColumnCanRunOnToTheScreensEdge) {
+    givenCredits("end\n");
+    content_.credits->fit = {.fit = engine::EPictureFit::KeepAspect,
+                             .anchor = engine::EPictureAnchor::Centre};
+    content_.credits->column_scroll->strip_colour = 1;
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(kWideWidth - 1, 0), kStripPixel);
+}
+
+// Stretched, the image fills the screen.
+TEST_F(CWideCreditsTest, AStretchedImageFillsTheScreen) {
+    givenCredits("end\n");
+    content_.credits->fit = {.fit = engine::EPictureFit::Stretch,
+                             .anchor = engine::EPictureAnchor::Centre};
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(0, kBandTop), kImage);
+    EXPECT_EQ(screen_.pixel(kWideWidth / 2, kBandTop), kImage);
 }
 
 // Centred between the column's left and the screen's right edge, so it starts further right.

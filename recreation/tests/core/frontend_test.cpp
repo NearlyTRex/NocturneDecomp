@@ -114,5 +114,66 @@ TEST(GetFrontEndArtFilter, FollowsTheUpscaler) {
     EXPECT_EQ(getFrontEndArtFilter(EUpscaler::Standard, 2.25F), EBitmapFilter::Smooth);
 }
 
+using engine::EPictureAnchor;
+using engine::EPictureFit;
+
+constexpr engine::SPictureFit kKeepCentred{.fit = EPictureFit::KeepAspect,
+                                           .anchor = EPictureAnchor::Centre};
+constexpr engine::SPictureFit kStretched{.fit = EPictureFit::Stretch,
+                                         .anchor = EPictureAnchor::Centre};
+
+// At 1920x1080 a picture keeping its shape is 1440 wide, 240 in from each side when centred.
+TEST(GetPictureArea, KeepingItsShapeItIsTheLayoutAgainstItsAnchor) {
+    EXPECT_EQ(getPictureArea(1920, 1080, kKeepCentred),
+              (SPictureArea{.scale_x = 2.25F, .scale_y = 2.25F, .left = 240, .top = 0}));
+    EXPECT_EQ(
+        getPictureArea(1920, 1080, {.fit = EPictureFit::KeepAspect, .anchor = EPictureAnchor::Left})
+            .left,
+        0);
+    EXPECT_EQ(getPictureArea(1920, 1080,
+                             {.fit = EPictureFit::KeepAspect, .anchor = EPictureAnchor::Right})
+                  .left,
+              480);
+}
+
+TEST(GetPictureArea, StretchedItIsTheWholeScreen) {
+    const SPictureArea picture = getPictureArea(1920, 1080, kStretched);
+    EXPECT_EQ(picture, (SPictureArea{.scale_x = 3.0F, .scale_y = 2.25F, .left = 0, .top = 0}));
+    EXPECT_EQ(picture.getX(640), 1920);
+    EXPECT_EQ(picture.getY(480), 1080);
+    EXPECT_EQ(picture.getWidth(1), 3);
+    EXPECT_EQ(picture.getHeight(0), 0);
+    // What keeps its shape on it goes by the height.
+    EXPECT_EQ(picture.getScale(), 2.25F);
+}
+
+TEST(GetPictureArea, NoScreenIsThePictureAsItIs) {
+    EXPECT_EQ(getPictureArea(0, 0, kStretched).scale_x, 1.0F);
+}
+
+// A pixel-keeping upscaler keeps a stretch's; Standard keeps them only where both ways are whole.
+TEST(GetPictureArtFilter, KeepsPixelsOnlyWhereBothWaysDo) {
+    using engine::EBitmapFilter;
+    const SPictureArea stretched = getPictureArea(1920, 1080, kStretched);
+    EXPECT_EQ(getPictureArtFilter(EUpscaler::Nearest, stretched), EBitmapFilter::Nearest);
+    EXPECT_EQ(getPictureArtFilter(EUpscaler::Standard, stretched), EBitmapFilter::Smooth);
+    EXPECT_EQ(getPictureArtFilter(EUpscaler::Standard, getPictureArea(1920, 960, kStretched)),
+              EBitmapFilter::Nearest);
+}
+
+TEST(GetTitleBackdropPicture, IsTheStillPicturesOrTheScreen) {
+    engine::SGameContent content;
+    content.front_end.title_backdrop = "sky_scene";
+    EXPECT_EQ(getTitleBackdropPicture(content, 1920, 1080), getPictureArea(1920, 1080, kStretched));
+    content.front_end.title_backdrop = "figure_scene";
+    content.figure_scene.emplace();
+    content.figure_scene->fit = kKeepCentred;
+    EXPECT_EQ(getTitleBackdropPicture(content, 1920, 1080).left, 240);
+    content.front_end.title_backdrop = "tiled_scroll";
+    content.tiled_scroll.emplace();
+    content.tiled_scroll->fit = kStretched;
+    EXPECT_EQ(getTitleBackdropPicture(content, 1920, 1080).scale_x, 3.0F);
+}
+
 } // namespace
 } // namespace nocturne::core

@@ -62,6 +62,7 @@ story_select = 'direct_start'
 
 [credits]
 text = 'credits.txt'
+fit = 'keep_aspect'
 
 [credits.two_column]
 font = 'theme'
@@ -119,13 +120,13 @@ version_alpha = 0x8000
 
 [menu.footer.copyright]
 corner = 'bottom_right'
-edge = 'layout'
+edge = 'backdrop'
 x = 21
 y = 1
 
 [menu.footer.version]
 corner = 'bottom_left'
-edge = 'screen'
+edge = 'backdrop'
 x = 4
 y = 1
 
@@ -135,6 +136,7 @@ high_rate = 'splash.mp3'
 
 [menu.calibration]
 image = 'brightness'
+fit = 'stretch'
 steps = ['1. Turn off all the lights in your room.', '2. Turn your brightness up, so that you see 3 bars on the left side of the screen.', '3. Turn down the brightness, so that the left 2 bars become the same color.', '4. Turn your contrast all the way up.', "You're done with calibration."]
 title = 'Monitor calibration'
 prompt = '  Press any key to continue.'
@@ -505,6 +507,7 @@ prompt_padding_chars = 4
 prompt_padding_lines = 2
 
 [title_backdrop.tiled_scroll]
+fit = 'keep_aspect'
 tile = 'bwp3_menu_scroll'
 columns = [320, -320]
 rows = [0, 480]
@@ -528,6 +531,7 @@ overlay = 'BWP3_mainmenu'
 
 [startup]
 picture = 'fangs'
+fit = 'keep_aspect'
 picture_alpha = 0x8000
 label_x = 320
 label_y = 240
@@ -541,18 +545,22 @@ loading_frames = 10
 
 [[loading]]
 id = 'load_0'
+fit = 'keep_aspect'
 random = true
 
 [[loading]]
 id = 'load_1'
+fit = 'keep_aspect'
 random = true
 
 [[loading]]
 id = 'load_2'
+fit = 'keep_aspect'
 random = true
 
 [[loading]]
 id = 'load_3'
+fit = 'keep_aspect'
 random = true
 
 [[story]]

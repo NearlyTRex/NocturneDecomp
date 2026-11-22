@@ -9,10 +9,12 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
 #include <string>
 #include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -86,6 +88,98 @@ TEST_F(CMoonFigureTest, TheFiguresStandBeforeTheFixedCamera) {
               (common::CVector3i{.x = static_cast<int>(3.16143 * 256),
                                  .y = static_cast<int>(7.6283 * 256),
                                  .z = static_cast<int>(-7.03622 * 256)}));
+}
+
+// The front end draws in software. On a wide screen the backdrop is centred, and the figures
+// stand on it as on a 4:3 screen: the whole of it is the 4:3 picture moved right.
+TEST_F(CMoonFigureTest, OnAWideScreenTheFiguresStayOnTheCentredBackdrop) {
+    // The camera square on to the figures, which stand before it as the sky's moon does.
+    content_.figure_scene->camera_rotation = {1, 0, 0, 0, 1, 0, 0, 0, 1};
+    content_.figure_scene->camera_origin = {0, 0, -72};
+    moon_.init();
+    moon_.render();
+    const std::vector<std::uint32_t> narrow = pixels_;
+    givenWideScreen();
+    std::ranges::fill(pixels_, 0U);
+    moon_.render();
+    constexpr int kLeft = (kWideWidth - kWidth) / 2;
+    int differing = 0;
+    for (int y = 0; y < kHeight; ++y) {
+        for (int x = 0; x < kWidth; ++x) {
+            const std::size_t at =
+                (static_cast<std::size_t>(y) * kWideWidth) + static_cast<std::size_t>(x);
+            differing += pixel(x + kLeft, y) != narrow[at] ? 1 : 0;
+        }
+    }
+    EXPECT_EQ(differing, 0);
+    // The figures drew something: without them the picture is another.
+    content_.figure_scene->models.clear();
+    moon_.free();
+    moon_.init();
+    std::ranges::fill(pixels_, 0U);
+    moon_.render();
+    int figure_pixels = 0;
+    for (int y = 0; y < kHeight; ++y) {
+        for (int x = 0; x < kWidth; ++x) {
+            const std::size_t at =
+                (static_cast<std::size_t>(y) * kWideWidth) + static_cast<std::size_t>(x);
+            figure_pixels += pixel(x + kLeft, y) != narrow[at] ? 1 : 0;
+        }
+    }
+    EXPECT_GT(figure_pixels, 0);
+}
+
+// Stretched, the backdrop fills the wide screen, and the figures stretch with it: as wide again
+// as the screen is wider, as tall as on 4:3.
+TEST_F(CMoonFigureTest, StretchedTheFiguresStretchWithTheBackdrop) {
+    engine::SFigureScene &figure = content_.figure_scene.value();
+    figure.camera_rotation = {1, 0, 0, 0, 1, 0, 0, 0, 1};
+    figure.camera_origin = {0, 0, -72};
+    figure.fit = {.fit = engine::EPictureFit::Stretch, .anchor = engine::EPictureAnchor::Centre};
+    // The columns and rows where the figures drew, against the scene drawn without them.
+    struct SBox {
+        int left = kWideWidth;
+        int right = -1;
+        int top = kHeight;
+        int bottom = -1;
+    };
+    const auto figureBox = [this](int width) {
+        const auto drawn = [this]() {
+            moon_.free();
+            moon_.init();
+            std::ranges::fill(pixels_, 0U);
+            moon_.render();
+            return pixels_;
+        };
+        const engine::SFigureScene saved = content_.figure_scene.value();
+        const std::vector<std::uint32_t> with = drawn();
+        content_.figure_scene->models.clear();
+        const std::vector<std::uint32_t> without = drawn();
+        content_.figure_scene = saved;
+        SBox box;
+        for (int y = 0; y < kHeight; ++y) {
+            for (int x = 0; x < width; ++x) {
+                const std::size_t at =
+                    (static_cast<std::size_t>(y) * kWideWidth) + static_cast<std::size_t>(x);
+                if (with[at] != without[at]) {
+                    box = {.left = std::min(box.left, x),
+                           .right = std::max(box.right, x),
+                           .top = std::min(box.top, y),
+                           .bottom = std::max(box.bottom, y)};
+                }
+            }
+        }
+        return box;
+    };
+    const SBox narrow = figureBox(kWidth);
+    givenWideScreen();
+    const SBox wide = figureBox(kWideWidth);
+    ASSERT_GE(narrow.right, narrow.left);
+    EXPECT_NEAR(wide.top, narrow.top, 1);
+    EXPECT_NEAR(wide.bottom, narrow.bottom, 1);
+    const double widen = static_cast<double>(kWideWidth) / kWidth;
+    EXPECT_NEAR(wide.right - wide.left + 1, (narrow.right - narrow.left + 1) * widen, 2.0);
+    EXPECT_NEAR(wide.left, narrow.left * widen, 2.0);
 }
 
 // The cheat model alone, in the first figure's place.

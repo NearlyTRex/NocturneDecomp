@@ -79,4 +79,42 @@ struct SFrontEndLayout {
 void displayInLayout(engine::CAlphaBitmap &bitmap, const SFrontEndLayout &layout,
                      const common::SViewport &area, int alpha, platform::EUpscaler upscaler);
 
+// Where a 640x480 picture is on the screen, as its fit puts it: what keeps its shape is the
+// layout, against the side its anchor names; what stretches is the whole screen.
+struct SPictureArea {
+    float scale_x = 1.0F;
+    float scale_y = 1.0F;
+    int left = 0;
+    int top = 0;
+
+    // A point on the picture on the screen.
+    [[nodiscard]] int getX(int picture_x) const;
+    [[nodiscard]] int getY(int picture_y) const;
+    // Lengths across and down, at least a pixel for one of at least a pixel.
+    [[nodiscard]] int getWidth(int picture_width) const;
+    [[nodiscard]] int getHeight(int picture_height) const;
+    // How much larger what keeps its shape on the picture is, text and the moon's window: by
+    // the picture's height.
+    [[nodiscard]] float getScale() const;
+    [[nodiscard]] bool operator==(const SPictureArea &) const = default;
+};
+
+[[nodiscard]] SPictureArea getPictureArea(int screen_width, int screen_height,
+                                          const engine::SPictureFit &fit);
+
+// Where the title backdrop's picture is: a figure_scene's or tiled_scroll's as its fit puts it;
+// a backdrop with no still picture, as the sky_scene, is the whole screen.
+[[nodiscard]] SPictureArea getTitleBackdropPicture(const engine::SGameContent &content,
+                                                   int screen_width, int screen_height);
+
+// How the picture's art is enlarged: as the layout's, its pixels kept only where they would be
+// kept both across and down.
+[[nodiscard]] engine::EBitmapFilter getPictureArtFilter(platform::EUpscaler upscaler,
+                                                        const SPictureArea &picture);
+
+// A bitmap at x, y and width by height on the picture, drawn where and as large as the screen
+// shows it, enlarged as getPictureArtFilter says.
+void displayInPicture(engine::CAlphaBitmap &bitmap, const SPictureArea &picture,
+                      const common::SViewport &area, int alpha, platform::EUpscaler upscaler);
+
 } // namespace nocturne::core

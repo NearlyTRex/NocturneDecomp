@@ -261,12 +261,15 @@ story_select = 'story_list'
 
 [credits]
 text = 'credits.txt'
+fit = 'keep_aspect'
+anchor = 'left'
 image = 'stats'
 music = 'faded-remix.mp3'
 
 [credits.column_scroll]
 font = 'theme'
 column_left = 414
+column_to_screen_edge = true
 top_strip_bottom = 30
 bottom_strip_top = 439
 strip_colour = 0x0
@@ -328,6 +331,7 @@ high_rate = 'splash-music-44.wav'
 
 [menu.calibration]
 image = 'brightness'
+fit = 'stretch'
 steps = ['1. Turn off all the lights in your room.', '2. Turn your brightness up, so that you see 3 bars on the left side of the screen.', '3. Turn down the brightness, so that the left 2 bars become the same color.', '4. Turn your contrast all the way up.', "You're done with calibration."]
 title = 'Monitor calibration'
 prompt = '  Press any key to continue.'
@@ -742,6 +746,7 @@ frame_wrap = 60
 
 [startup]
 picture = 'fangs'
+fit = 'keep_aspect'
 picture_alpha = 0x8000
 label_x = 320
 label_y = 240
@@ -795,21 +800,25 @@ font = 'medium'
 
 [[loading]]
 id = 'load1'
+fit = 'keep_aspect'
 moon = { x = 120, y = 130, tint = [0x8200, 0xc800, 0xf400] }
 random = true
 
 [[loading]]
 id = 'load2'
+fit = 'keep_aspect'
 moon = { x = 484, y = 66, tint = [0x8200, 0xbd00, 0xff00] }
 random = true
 
 [[loading]]
 id = 'load3'
+fit = 'keep_aspect'
 moon = { x = 159, y = 1, tint = [0x9e00, 0xe100, 0xff00] }
 random = true
 
 [[loading]]
 id = 'load4'
+fit = 'keep_aspect'
 moon = { x = 379, y = 68, tint = [0x6b00, 0x9a00, 0xff00] }
 
 [[story]]

@@ -17,6 +17,8 @@ story_select = "direct_start"
 # bwp3_menu_scroll tiled two by two, two pixels right and one up each drawing; bwp3_hand at 64,64
 # fading from opaque to 5000 and back, 500 a drawing; BWP3_mainmenu over them
 [title_backdrop.tiled_scroll]
+# "stretch" fills a wide screen, the hand and overlay stretching with the tiles
+fit = "keep_aspect"
 tile = "bwp3_menu_scroll"
 columns = [320, -320]
 rows = [0, 480]
@@ -44,6 +46,7 @@ overlay = "BWP3_mainmenu"
 # and 300; black bars over the top 31 and the bottom 41 rows; again from 480 once all are gone
 [credits]
 text = "credits.txt"
+fit = "keep_aspect"
 
 [credits.two_column]
 font = "theme"
@@ -67,6 +70,7 @@ heading = "b"
 
 [startup]
 picture = "fangs"
+fit = "keep_aspect"
 picture_alpha = 0x8000
 label_x = 320
 label_y = 240
@@ -115,18 +119,18 @@ colour = 0xf8
 shadow = 0
 version_alpha = 0x8000
 
-# The copyright ends at 619 on the layout
+# The copyright ends at 619 on the title backdrop, keeping its shape or stretched as it does
 [menu.footer.copyright]
 corner = "bottom_right"
-edge = "layout"
+edge = "backdrop"
 x = 21
 y = 1
 
 # BW3's version was in its copyright, with no number; the recreation's build line is drawn where
-# Nocturne's was
+# Nocturne's was, in the backdrop's corner
 [menu.footer.version]
 corner = "bottom_left"
-edge = "screen"
+edge = "backdrop"
 x = 4
 y = 1
 
@@ -137,6 +141,7 @@ high_rate = "splash.mp3"
 
 [menu.calibration]
 image = "brightness"
+fit = "stretch"
 steps = [
     "1. Turn off all the lights in your room.",
     "2. Turn your brightness up, so that you see 3 bars on the left side of the screen.",
@@ -694,18 +699,22 @@ prompt_padding_lines = 2
 
 # Four pictures, one at random for every level
 [[loading]]
+fit = "keep_aspect"
 id = "load_0"
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load_1"
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load_2"
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load_3"
 random = true
 

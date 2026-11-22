@@ -527,6 +527,28 @@ TEST_F(CWideMenuTest, TheFooterKeepsToTheScreensCorners) {
     EXPECT_TRUE(lit(kWideWidth - 1 - smallFont().getTextWidth(copyright), letterRow(bottom)));
 }
 
+// The title backdrop's corner: the sky has no still picture, so it is the screen's.
+TEST_F(CWideMenuTest, TheBuildsLineCanKeepToTheBackdropsCorner) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->footer.version.edge = engine::EFooterEdge::Backdrop;
+    int selected = 0;
+    choose({"XX"}, selected);
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
+    EXPECT_EQ(firstLit(letterRow(bottom)), 4);
+}
+
+// The layout's corner is the 4:3 picture's.
+TEST_F(CWideMenuTest, TheBuildsLineCanKeepToTheLayoutsCorner) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->footer.version.edge = engine::EFooterEdge::Layout;
+    int selected = 0;
+    choose({"XX"}, selected);
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
+    EXPECT_EQ(firstLit(letterRow(bottom)), kLeft + 4);
+}
+
 TEST_F(CWideMenuTest, TheGlowMovesWithTheItem) {
     int selected = 0;
     choose({"XX"}, selected);

@@ -76,6 +76,7 @@ struct SMenuLayout;
 struct SMergedGameContent;
 struct SMoonIndicator;
 struct SMoonWindow;
+struct SPictureFit;
 struct SSkyScene;
 struct STiledScroll;
 struct SPackage;

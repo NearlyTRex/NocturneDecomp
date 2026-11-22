@@ -90,9 +90,12 @@ private:
     void loadFrames(std::string_view prefix, int digits, int count, int width, int height);
     void updateFigure(float delta_time);
     void renderFigure();
-    // The layout's 640x480 viewport placed where the layout is on the screen, once the pass that
-    // draws it there is begun; false when the screen is that viewport.
-    [[nodiscard]] bool beginLayoutScene();
+    // How the 3D was put where the layout is on the screen, so the scene stands on what the
+    // layout draws: not at all, the screen being the layout; by the hardware renderer's pass over
+    // the layout's 640x480 viewport; or, in software, by a viewport the layout's size and place.
+    enum class ELayoutScene : std::uint8_t { Screen, Overlay, Viewport };
+    [[nodiscard]] ELayoutScene beginLayoutScene(const SPictureArea &picture);
+    void endLayoutScene(ELayoutScene placed);
     void scatterBat(SBat &bat);
     void advanceBat(SBat &bat, const common::CExtendedFloat &step);
     // How much wider than 4:3 the 3D is projected, once the pass that stretches the layout's

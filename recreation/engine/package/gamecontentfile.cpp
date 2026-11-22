@@ -47,8 +47,16 @@ constexpr std::array<std::pair<std::string_view, EFooterCorner>, 4> kFooterCorne
      {"bottom_right", EFooterCorner::BottomRight},
      {"top_left", EFooterCorner::TopLeft},
      {"top_right", EFooterCorner::TopRight}}};
-constexpr std::array<std::pair<std::string_view, EFooterEdge>, 2> kFooterEdges{
-    {{"screen", EFooterEdge::Screen}, {"layout", EFooterEdge::Layout}}};
+constexpr std::array<std::pair<std::string_view, EFooterEdge>, 3> kFooterEdges{
+    {{"screen", EFooterEdge::Screen},
+     {"layout", EFooterEdge::Layout},
+     {"backdrop", EFooterEdge::Backdrop}}};
+constexpr std::array<std::pair<std::string_view, EPictureFit>, 2> kPictureFits{
+    {{"keep_aspect", EPictureFit::KeepAspect}, {"stretch", EPictureFit::Stretch}}};
+constexpr std::array<std::pair<std::string_view, EPictureAnchor>, 3> kPictureAnchors{
+    {{"centre", EPictureAnchor::Centre},
+     {"left", EPictureAnchor::Left},
+     {"right", EPictureAnchor::Right}}};
 constexpr int kMaxFramesPerSecond = 1000;
 // A hero type's flags fit a byte.
 constexpr int kMaxHeroType = 0xff;
@@ -148,8 +156,12 @@ TomlResult<std::optional<SMoonWindow>> readMoon(const toml::table &table, std::s
     return SMoonWindow{.x = *x, .y = *y, .tint = *tint};
 }
 
+TomlResult<SPictureFit> readPictureFit(const toml::table &table, std::string_view where);
+
 TomlResult<SLoadingPicture> readLoading(const toml::table &table, std::string_view where) {
-    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"id", "moon", "random"}); !keys) {
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, where, {"id", "fit", "anchor", "moon", "random"});
+        !keys) {
         return std::unexpected(keys.error());
     }
     TomlResult<std::string> id = readId(table, where);
@@ -164,7 +176,12 @@ TomlResult<SLoadingPicture> readLoading(const toml::table &table, std::string_vi
     if (!random) {
         return std::unexpected(random.error());
     }
-    return SLoadingPicture{.id = std::move(*id), .moon = *moon, .random = random->value_or(false)};
+    const TomlResult<SPictureFit> fit = readPictureFit(table, where);
+    if (!fit) {
+        return std::unexpected(fit.error());
+    }
+    return SLoadingPicture{
+        .id = std::move(*id), .fit = *fit, .moon = *moon, .random = random->value_or(false)};
 }
 
 // An integer field, and the range it must be in.
@@ -264,6 +281,42 @@ template <typename TValue, std::size_t Count>
 std::string_view
 getKeywordName(TValue value, const std::array<std::pair<std::string_view, TValue>, Count> &names) {
     return std::ranges::find(names, value, &std::pair<std::string_view, TValue>::second)->first;
+}
+
+// A picture's fit and, keeping its shape, its anchor, in the picture's own table. The fit is
+// required; the anchor is centre when left out, and has no meaning for a stretch.
+TomlResult<SPictureFit> readPictureFit(const toml::table &table, std::string_view where) {
+    if (!table.contains("fit")) {
+        return std::unexpected(std::format("{}fit: missing", where));
+    }
+    SPictureFit picture;
+    TomlResult<EPictureFit> fit =
+        readKeyword(table, where, "fit", EPictureFit::KeepAspect, kPictureFits);
+    if (!fit) {
+        return std::unexpected(fit.error());
+    }
+    picture.fit = *fit;
+    if (picture.fit == EPictureFit::Stretch && table.contains("anchor")) {
+        return std::unexpected(std::format("{}anchor: a stretched picture has none", where));
+    }
+    TomlResult<EPictureAnchor> anchor =
+        readKeyword(table, where, "anchor", EPictureAnchor::Centre, kPictureAnchors);
+    if (!anchor) {
+        return std::unexpected(anchor.error());
+    }
+    picture.anchor = *anchor;
+    return picture;
+}
+
+// fit, and anchor when it isn't centre.
+std::string formatPictureFit(const SPictureFit &picture) {
+    std::string text =
+        std::format("fit = {}\n", quoteToml(getKeywordName(picture.fit, kPictureFits)));
+    if (picture.fit == EPictureFit::KeepAspect && picture.anchor != EPictureAnchor::Centre) {
+        text += std::format("anchor = {}\n",
+                            quoteToml(getKeywordName(picture.anchor, kPictureAnchors)));
+    }
+    return text;
 }
 
 // A list of { x, y } layout points, none when the key is left out.
@@ -511,9 +564,10 @@ TomlResult<SMenuFooter> readMenuFooter(const toml::table &table) {
 
 TomlResult<SMenuCalibration> readMenuCalibration(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: calibration: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(
-            table, kWhere,
-            {"image", "steps", "title", "prompt", "font", "colour", "title_lines", "prompt_lines"});
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, kWhere,
+                              {"image", "fit", "anchor", "steps", "title", "prompt", "font",
+                               "colour", "title_lines", "prompt_lines"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -543,6 +597,11 @@ TomlResult<SMenuCalibration> readMenuCalibration(const toml::table &table) {
         !read) {
         return std::unexpected(read.error());
     }
+    const TomlResult<SPictureFit> fit = readPictureFit(table, kWhere);
+    if (!fit) {
+        return std::unexpected(fit.error());
+    }
+    calibration.fit = *fit;
     return calibration;
 }
 
@@ -891,11 +950,11 @@ TomlResult<char> readCharacter(const toml::table &table, std::string_view where,
 
 TomlResult<SCreditsColumnScroll> readCreditsColumnScroll(const toml::table &table) {
     constexpr std::string_view kWhere = "credits: column_scroll: ";
-    if (TomlResult<void> keys =
-            rejectUnknownKeys(table, kWhere,
-                              {"font", "column_left", "top_strip_bottom", "bottom_strip_top",
-                               "strip_colour", "text_colour", "heading_colour", "shadow_colour",
-                               "scroll_speed", "start_y", "end_line", "marker", "heading"});
+    if (TomlResult<void> keys = rejectUnknownKeys(
+            table, kWhere,
+            {"font", "column_left", "column_to_screen_edge", "top_strip_bottom", "bottom_strip_top",
+             "strip_colour", "text_colour", "heading_colour", "shadow_colour", "scroll_speed",
+             "start_y", "end_line", "marker", "heading"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -930,6 +989,11 @@ TomlResult<SCreditsColumnScroll> readCreditsColumnScroll(const toml::table &tabl
         }
         *field = *value;
     }
+    const TomlResult<bool> to_edge = readRequiredBoolean(table, kWhere, "column_to_screen_edge");
+    if (!to_edge) {
+        return std::unexpected(to_edge.error());
+    }
+    scroll.column_to_screen_edge = *to_edge;
     return scroll;
 }
 
@@ -1031,8 +1095,9 @@ TomlResult<SCreditsTwoColumn> readCreditsTwoColumn(const toml::table &table) {
 
 TomlResult<SGameCredits> readCredits(const toml::table &table) {
     constexpr std::string_view kWhere = "credits: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(
-            table, kWhere, {"text", "image", "music", "column_scroll", "fade_loop", "two_column"});
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere,
+                                                  {"text", "image", "fit", "anchor", "music",
+                                                   "column_scroll", "fade_loop", "two_column"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -1083,6 +1148,11 @@ TomlResult<SGameCredits> readCredits(const toml::table &table) {
         }
         credits.two_column = std::move(*read);
     }
+    const TomlResult<SPictureFit> fit = readPictureFit(table, kWhere);
+    if (!fit) {
+        return std::unexpected(fit.error());
+    }
+    credits.fit = *fit;
     return credits;
 }
 
@@ -1278,12 +1348,30 @@ TomlResult<std::vector<SFigureModel>> readFigureModels(const toml::table &table,
     return models;
 }
 
-constexpr std::array<std::string_view, 22> kFigureSceneKeys{
-    "backdrop",   "backdrop_alpha",  "models",        "steps_per_second", "cheat_model",
-    "cheat_code", "camera_rotation", "camera_origin", "projection",       "light",
-    "flat",       "ambient",         "frame_prefix",  "frame_digits",     "frame_count",
-    "frame_x",    "frame_y",         "frame_width",   "frame_height",     "frame_alpha",
-    "frame_rate", "frame_wrap"};
+constexpr std::array<std::string_view, 24> kFigureSceneKeys{"fit",
+                                                            "anchor",
+                                                            "backdrop",
+                                                            "backdrop_alpha",
+                                                            "models",
+                                                            "steps_per_second",
+                                                            "cheat_model",
+                                                            "cheat_code",
+                                                            "camera_rotation",
+                                                            "camera_origin",
+                                                            "projection",
+                                                            "light",
+                                                            "flat",
+                                                            "ambient",
+                                                            "frame_prefix",
+                                                            "frame_digits",
+                                                            "frame_count",
+                                                            "frame_x",
+                                                            "frame_y",
+                                                            "frame_width",
+                                                            "frame_height",
+                                                            "frame_alpha",
+                                                            "frame_rate",
+                                                            "frame_wrap"};
 
 TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
     constexpr std::string_view kWhere = "title_backdrop: figure_scene: ";
@@ -1364,6 +1452,11 @@ TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
         }
         *field = *values;
     }
+    const TomlResult<SPictureFit> fit = readPictureFit(table, kWhere);
+    if (!fit) {
+        return std::unexpected(fit.error());
+    }
+    figure.fit = *fit;
     return figure;
 }
 
@@ -1371,7 +1464,9 @@ TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
 TomlResult<STiledScroll> readTiledScroll(const toml::table &table) {
     constexpr std::string_view kWhere = "title_backdrop: tiled_scroll: ";
     if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere,
-                                                  {"tile",
+                                                  {"fit",
+                                                   "anchor",
+                                                   "tile",
                                                    "columns",
                                                    "rows",
                                                    "step_x",
@@ -1437,6 +1532,11 @@ TomlResult<STiledScroll> readTiledScroll(const toml::table &table) {
     if (scroll.hand_alpha_low > scroll.hand_alpha_high) {
         return std::unexpected(std::format("{}hand_alpha_low: above hand_alpha_high", kWhere));
     }
+    const TomlResult<SPictureFit> fit = readPictureFit(table, kWhere);
+    if (!fit) {
+        return std::unexpected(fit.error());
+    }
+    scroll.fit = *fit;
     return scroll;
 }
 
@@ -1697,8 +1797,8 @@ TomlResult<SStartup> readStartup(const toml::table &table) {
     constexpr std::string_view kWhere = "startup: ";
     if (TomlResult<void> keys =
             rejectUnknownKeys(table, kWhere,
-                              {"picture", "picture_alpha", "label_x", "label_y", "label_font",
-                               "label_colour", "movie_directory", "movie"});
+                              {"picture", "fit", "anchor", "picture_alpha", "label_x", "label_y",
+                               "label_font", "label_colour", "movie_directory", "movie"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -1722,6 +1822,11 @@ TomlResult<SStartup> readStartup(const toml::table &table) {
         !read) {
         return std::unexpected(read.error());
     }
+    const TomlResult<SPictureFit> fit = readPictureFit(table, kWhere);
+    if (!fit) {
+        return std::unexpected(fit.error());
+    }
+    startup.fit = *fit;
     return startup;
 }
 
@@ -2415,12 +2520,12 @@ std::string formatMenu(const SMenuLayout &menu) {
     text += std::format("\n[menu.music]\nlow_rate = {}\nhigh_rate = {}\n",
                         quoteToml(menu.music.low_rate), quoteToml(menu.music.high_rate));
     const SMenuCalibration &calibration = menu.calibration;
-    text += std::format("\n[menu.calibration]\nimage = {}\nsteps = {}\ntitle = {}\nprompt = {}\n"
+    text += std::format("\n[menu.calibration]\nimage = {}\n{}steps = {}\ntitle = {}\nprompt = {}\n"
                         "font = {}\ncolour = 0x{:x}\ntitle_lines = {}\nprompt_lines = {}\n",
-                        quoteToml(calibration.image), formatTomlList(calibration.steps),
-                        quoteToml(calibration.title), quoteToml(calibration.prompt),
-                        quoteToml(calibration.font), calibration.colour, calibration.title_lines,
-                        calibration.prompt_lines);
+                        quoteToml(calibration.image), formatPictureFit(calibration.fit),
+                        formatTomlList(calibration.steps), quoteToml(calibration.title),
+                        quoteToml(calibration.prompt), quoteToml(calibration.font),
+                        calibration.colour, calibration.title_lines, calibration.prompt_lines);
     if (!menu.page_tops.empty()) {
         text += "\n[menu.page_tops]\n";
         for (const auto &[page, top] : menu.page_tops) {
@@ -2576,15 +2681,15 @@ std::string formatNumbers(const std::array<T, Count> &values) {
 
 std::string formatTiledScroll(const STiledScroll &scroll) {
     return std::format(
-        "\n[title_backdrop.tiled_scroll]\ntile = {}\ncolumns = [{}, {}]\nrows = [{}, {}]\n"
+        "\n[title_backdrop.tiled_scroll]\n{}tile = {}\ncolumns = [{}, {}]\nrows = [{}, {}]\n"
         "step_x = {}\nstep_y = {}\nsteps_per_second = {}\nwrap_x_above = {}\nwrap_x_to = {}\n"
         "wrap_y_below = {}\nwrap_y_to = {}\nhand = {}\nhand_x = {}\nhand_y = {}\nhand_width = {}\n"
         "hand_height = {}\nhand_alpha_start = 0x{:x}\nhand_alpha_low = {}\n"
         "hand_alpha_high = 0x{:x}\nhand_alpha_step = {}\noverlay = {}\n",
-        quoteToml(scroll.tile), scroll.columns[0], scroll.columns[1], scroll.rows[0],
-        scroll.rows[1], scroll.step_x, scroll.step_y, scroll.steps_per_second, scroll.wrap_x_above,
-        scroll.wrap_x_to, scroll.wrap_y_below, scroll.wrap_y_to, quoteToml(scroll.hand),
-        scroll.hand_x, scroll.hand_y, scroll.hand_width, scroll.hand_height,
+        formatPictureFit(scroll.fit), quoteToml(scroll.tile), scroll.columns[0], scroll.columns[1],
+        scroll.rows[0], scroll.rows[1], scroll.step_x, scroll.step_y, scroll.steps_per_second,
+        scroll.wrap_x_above, scroll.wrap_x_to, scroll.wrap_y_below, scroll.wrap_y_to,
+        quoteToml(scroll.hand), scroll.hand_x, scroll.hand_y, scroll.hand_width, scroll.hand_height,
         scroll.hand_alpha_start, scroll.hand_alpha_low, scroll.hand_alpha_high,
         scroll.hand_alpha_step, quoteToml(scroll.overlay));
 }
@@ -2595,7 +2700,8 @@ std::string formatFigureScene(const SFigureScene &figure) {
         models += std::format("{}{{ file = {}, frame_wrap = {} }}", models.empty() ? "" : ", ",
                               quoteToml(model.file), model.frame_wrap);
     }
-    std::string text = "\n[title_backdrop.figure_scene]\n";
+    std::string text =
+        std::format("\n[title_backdrop.figure_scene]\n{}", formatPictureFit(figure.fit));
     if (!figure.backdrop.empty()) {
         text += std::format("backdrop = {}\nbackdrop_alpha = 0x{:x}\n", quoteToml(figure.backdrop),
                             figure.backdrop_alpha);
@@ -2783,7 +2889,8 @@ std::string formatGameContentTables(const SGameContent &content) {
         }
     }
     if (content.credits) {
-        text += std::format("\n[credits]\ntext = {}\n", quoteToml(content.credits->text));
+        text += std::format("\n[credits]\ntext = {}\n{}", quoteToml(content.credits->text),
+                            formatPictureFit(content.credits->fit));
         if (!content.credits->image.empty()) {
             text += std::format("image = {}\n", quoteToml(content.credits->image));
         }
@@ -2792,14 +2899,15 @@ std::string formatGameContentTables(const SGameContent &content) {
         }
         if (const std::optional<SCreditsColumnScroll> &scroll = content.credits->column_scroll) {
             text += std::format(
-                "\n[credits.column_scroll]\nfont = {}\ncolumn_left = {}\ntop_strip_bottom = {}\n"
+                "\n[credits.column_scroll]\nfont = {}\ncolumn_left = {}\n"
+                "column_to_screen_edge = {}\ntop_strip_bottom = {}\n"
                 "bottom_strip_top = {}\nstrip_colour = 0x{:x}\ntext_colour = 0x{:x}\n"
                 "heading_colour = 0x{:x}\nshadow_colour = {}\nscroll_speed = {}\nstart_y = {}\n"
                 "end_line = {}\nmarker = {}\nheading = {}\n",
-                quoteToml(scroll->font), scroll->column_left, scroll->top_strip_bottom,
-                scroll->bottom_strip_top, scroll->strip_colour, scroll->text_colour,
-                scroll->heading_colour, scroll->shadow_colour, scroll->scroll_speed,
-                scroll->start_y, quoteToml(scroll->end_line),
+                quoteToml(scroll->font), scroll->column_left, scroll->column_to_screen_edge,
+                scroll->top_strip_bottom, scroll->bottom_strip_top, scroll->strip_colour,
+                scroll->text_colour, scroll->heading_colour, scroll->shadow_colour,
+                scroll->scroll_speed, scroll->start_y, quoteToml(scroll->end_line),
                 quoteToml(std::string(1, scroll->marker)),
                 quoteToml(std::string(1, scroll->heading)));
         }
@@ -2855,11 +2963,12 @@ std::string formatGameContentTables(const SGameContent &content) {
         text += formatTiledScroll(*tiled);
     }
     if (const std::optional<SStartup> &startup = content.startup) {
-        text += std::format("\n[startup]\npicture = {}\npicture_alpha = 0x{:x}\nlabel_x = {}\n"
+        text += std::format("\n[startup]\npicture = {}\n{}picture_alpha = 0x{:x}\nlabel_x = {}\n"
                             "label_y = {}\nlabel_font = {}\nlabel_colour = 0x{:x}\n"
                             "movie_directory = {}\nmovie = {}\n",
-                            quoteToml(startup->picture), startup->picture_alpha, startup->label_x,
-                            startup->label_y, quoteToml(startup->label_font), startup->label_colour,
+                            quoteToml(startup->picture), formatPictureFit(startup->fit),
+                            startup->picture_alpha, startup->label_x, startup->label_y,
+                            quoteToml(startup->label_font), startup->label_colour,
                             quoteToml(startup->movie_directory), quoteToml(startup->movie));
     }
     if (const std::optional<SMoonIndicator> &moon = content.moon_indicator) {
@@ -2905,7 +3014,8 @@ std::string formatGameContentTables(const SGameContent &content) {
         }
     }
     for (const SLoadingPicture &picture : content.loading) {
-        text += std::format("\n[[loading]]\nid = {}\n", quoteToml(picture.id));
+        text += std::format("\n[[loading]]\nid = {}\n{}", quoteToml(picture.id),
+                            formatPictureFit(picture.fit));
         if (picture.moon) {
             text += std::format("moon = {{ x = {}, y = {}, tint = {} }}\n", picture.moon->x,
                                 picture.moon->y, formatTint(picture.moon->tint));

@@ -16,6 +16,9 @@ story_select = "story_list"
 
 [credits]
 text = "credits.txt"
+# The image keeps its shape against the screen's left, its column running on to the right edge
+fit = "keep_aspect"
+anchor = "left"
 image = "stats"
 music = "faded-remix.mp3"
 
@@ -24,6 +27,7 @@ music = "faded-remix.mp3"
 [credits.column_scroll]
 font = "theme"
 column_left = 414
+column_to_screen_edge = true
 top_strip_bottom = 30
 bottom_strip_top = 439
 strip_colour = 0x00
@@ -78,6 +82,7 @@ frame_wrap = 60
 # them, then the opening movie
 [startup]
 picture = "fangs"
+fit = "keep_aspect"
 picture_alpha = 0x8000
 label_x = 320
 label_y = 240
@@ -143,6 +148,8 @@ high_rate = "splash-music-44.wav"
 
 [menu.calibration]
 image = "brightness"
+# Plain enough to stretch over a wide screen
+fit = "stretch"
 steps = [
     "1. Turn off all the lights in your room.",
     "2. Turn your brightness up, so that you see 3 bars on the left side of the screen.",
@@ -547,21 +554,25 @@ prompt_padding_chars = 4
 prompt_padding_lines = 2
 
 [[loading]]
+fit = "keep_aspect"
 id = "load1"
 moon = { x = 120, y = 130, tint = [0x8200, 0xc800, 0xf400] }
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load2"
 moon = { x = 484, y = 66, tint = [0x8200, 0xbd00, 0xff00] }
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load3"
 moon = { x = 159, y = 1, tint = [0x9e00, 0xe100, 0xff00] }
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load4"
 moon = { x = 379, y = 68, tint = [0x6b00, 0x9a00, 0xff00] }
 

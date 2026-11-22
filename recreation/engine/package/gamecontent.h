@@ -46,6 +46,28 @@ struct SGameStory {
     bool operator==(const SGameStory &) const = default;
 };
 
+// How a 640x480 picture fills a screen of another shape: stretched over all of it, or scaled to
+// fit whole, keeping its shape, against one side or in the middle with black beside it. What
+// stands on the picture goes with it.
+enum class EPictureFit : std::uint8_t {
+    KeepAspect,
+    Stretch,
+};
+
+enum class EPictureAnchor : std::uint8_t {
+    Centre,
+    Left,
+    Right,
+};
+
+struct SPictureFit {
+    EPictureFit fit = EPictureFit::KeepAspect;
+    // Only for KeepAspect.
+    EPictureAnchor anchor = EPictureAnchor::Centre;
+
+    bool operator==(const SPictureFit &) const = default;
+};
+
 // Where the moon indicator turns over a loading picture, and its tint.
 struct SMoonWindow {
     int x = 0;
@@ -59,6 +81,7 @@ struct SMoonWindow {
 // A 640x480 picture the loading screen shows.
 struct SLoadingPicture {
     std::string id;
+    SPictureFit fit;
     // For the moon indicator; without it the moon is drawn as it is without a picture.
     std::optional<SMoonWindow> moon;
     // One of those a mission without a story picks from.
@@ -72,8 +95,11 @@ struct SLoadingPicture {
 // foot, each line centred in it; the roll ends with the music or on Cancel.
 struct SCreditsColumnScroll {
     std::string font;
-    // The column's left edge, the top strip's foot and the bottom strip's top, on the layout.
+    // The column's left edge, the top strip's foot and the bottom strip's top, on the picture.
     int column_left = 0;
+    // The column, and its strips, run on to the screen's right edge, past a picture that keeps
+    // its shape, as Nocturne's and BW1's do; otherwise they end with the picture.
+    bool column_to_screen_edge = false;
     int top_strip_bottom = 0;
     int bottom_strip_top = 0;
     int strip_colour = 0;
@@ -151,6 +177,8 @@ struct SGameCredits {
     std::string text;
     // Empty for none, as two_column draws none.
     std::string image;
+    // How the image, and the lines over it, fill the screen.
+    SPictureFit fit;
     // Empty for none.
     std::string music;
     // Each style's values.
@@ -301,6 +329,8 @@ struct SFigureModel {
 // wrapping, a picture over them whose alpha swings between two levels, and an overlay on top.
 // Positions are on the layout.
 struct STiledScroll {
+    // How the tiles, hand and overlay fill the screen, together as one picture.
+    SPictureFit fit;
     std::string tile;
     // The two tiles' starting columns and rows, and BW3's step, which they move steps_per_second
     // times a second, smoothly in between. BW3 stepped once a drawing, so its speed followed the
@@ -334,7 +364,10 @@ struct STiledScroll {
 // The figure_scene title backdrop: a still picture, animated models before a fixed camera over
 // it, and the title's animation on top. The doubles are the binary's constants.
 struct SFigureScene {
-    // Over the whole layout.
+    // How the backdrop fills the screen; the models and the title's frames stand on it, and keep
+    // to where it would be without one.
+    SPictureFit fit;
+    // Over the whole picture.
     std::string backdrop;
     int backdrop_alpha = 0;
     std::vector<SFigureModel> models;
@@ -372,8 +405,9 @@ struct SFigureScene {
 // then the opening movie.
 struct SStartup {
     std::string picture;
+    SPictureFit fit;
     int picture_alpha = 0;
-    // The label's centre on the layout.
+    // The label's centre on the picture.
     int label_x = 0;
     int label_y = 0;
     std::string label_font;
@@ -498,11 +532,13 @@ enum class EFooterCorner : std::uint8_t {
     TopRight,
 };
 
-// Whose corner: the screen's, as Nocturne's footer hugs a wide screen's edges, or the 640x480
-// layout's, as BW1's copyright ends at 619 on it.
+// Whose corner: the screen's, as Nocturne's footer hugs a wide screen's edges; the 640x480
+// layout's, centred; or the title backdrop's, as BW1's copyright ends at 619 on its picture, which
+// is the layout's or the screen's as the picture keeps its shape or stretches.
 enum class EFooterEdge : std::uint8_t {
     Screen,
     Layout,
+    Backdrop,
 };
 
 // Where a footer line goes: its outer edges x and y layout pixels in from the corner.
@@ -597,6 +633,7 @@ struct SMenuTrademark {
 // The monitor calibration: each step over the image, the title above and the prompt below.
 struct SMenuCalibration {
     std::string image;
+    SPictureFit fit;
     std::vector<std::string> steps;
     std::string title;
     // After each step's text.

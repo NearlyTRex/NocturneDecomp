@@ -25,7 +25,7 @@ SGameStory story(std::string id, std::string name) {
 }
 
 SLoadingPicture picture(std::string id, bool random) {
-    return {.id = std::move(id), .moon = {}, .random = random};
+    return {.id = std::move(id), .fit = {}, .moon = {}, .random = random};
 }
 
 SMergedGameContent merge(std::initializer_list<const SGameContent *> in_order) {
@@ -45,6 +45,7 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     base.copyright_os_font = "(c) Base";
     base.credits = SGameCredits{.text = "a.txt",
                                 .image = "a",
+                                .fit = {},
                                 .music = "a.mp3",
                                 .column_scroll = {},
                                 .fade_loop = {},

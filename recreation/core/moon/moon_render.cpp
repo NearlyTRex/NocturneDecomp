@@ -132,24 +132,48 @@ std::optional<float> CMoon::beginWideScene() {
 }
 
 // The models stand on the backdrop, so the 3D is scaled and centred with the layout rather than
-// widened.
-bool CMoon::beginLayoutScene() {
+// widened. The front end draws in software, where the screen's own viewport would centre the
+// figures on the screen and project them as wide as it is; the layout's place and size keep them
+// on the backdrop, as the hardware renderer's pass does.
+CMoon::ELayoutScene CMoon::beginLayoutScene(const SPictureArea &picture) {
     const int width = owners_.screen.getWindowWidth();
     const int height = owners_.screen.getWindowHeight();
-    if ((width == kFrontEndLayoutWidth && height == kFrontEndHeight) ||
-        !owners_.special.getUseExternalRenderer()) {
-        return false;
+    if (width == kFrontEndLayoutWidth && height == kFrontEndHeight) {
+        return ELayoutScene::Screen;
     }
-    const SFrontEndLayout layout = getFrontEndLayout(width, height);
+    if (!owners_.special.getUseExternalRenderer()) {
+        // The viewport's right and bottom are its last pixels. A stretched picture's view keeps
+        // the layout's projection, so it stretches with the picture.
+        owners_.renderer.pushViewport(picture.left, picture.top,
+                                      picture.getWidth(kFrontEndLayoutWidth) - 1,
+                                      picture.getHeight(kFrontEndHeight) - 1);
+        if (picture.scale_x != picture.scale_y) {
+            owners_.renderer.setProjectionShape(kFrontEndLayoutWidth, kFrontEndHeight);
+        }
+        return ELayoutScene::Viewport;
+    }
     owners_.renderer.pushViewport(0, 0, kFrontEndLayoutWidth, kFrontEndHeight);
-    if (!owners_.special.beginOverlay({.scale_x = layout.scale,
-                                       .scale_y = layout.scale,
-                                       .offset_x = static_cast<float>(layout.left),
-                                       .offset_y = static_cast<float>(layout.top)})) {
+    if (!owners_.special.beginOverlay({.scale_x = picture.scale_x,
+                                       .scale_y = picture.scale_y,
+                                       .offset_x = static_cast<float>(picture.left),
+                                       .offset_y = static_cast<float>(picture.top)})) {
         owners_.renderer.popViewport();
-        return false;
+        return ELayoutScene::Screen;
     }
-    return true;
+    return ELayoutScene::Overlay;
+}
+
+void CMoon::endLayoutScene(ELayoutScene placed) {
+    switch (placed) {
+    case ELayoutScene::Overlay:
+        endWideScene();
+        return;
+    case ELayoutScene::Viewport:
+        owners_.renderer.popViewport();
+        return;
+    case ELayoutScene::Screen:
+        return;
+    }
 }
 
 // The original also processed the sound queue here, which the audio device pulls on its own
@@ -168,15 +192,15 @@ void CMoon::renderFigure() {
     const CColor3i flat_color = set.getFlatColor();
     owners_.special.clearScreen();
     owners_.special.clearZBufferNative();
-    const SFrontEndLayout layout =
-        getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight());
+    const SPictureArea picture = getPictureArea(owners_.screen.getWindowWidth(),
+                                                owners_.screen.getWindowHeight(), figure.fit);
     const platform::EUpscaler upscaler = owners_.display.getUpscaler();
     if (!figure.backdrop.empty()) {
-        displayInLayout(backdrop_, layout,
-                        {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
-                        figure.backdrop_alpha, upscaler);
+        displayInPicture(backdrop_, picture,
+                         {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
+                         figure.backdrop_alpha, upscaler);
     }
-    const bool placed = beginLayoutScene();
+    const ELayoutScene placed = beginLayoutScene(picture);
     engine::CDemonRenderer &renderer = owners_.renderer;
     const std::array<double, 3> &origin = figure.camera_origin;
     renderer.setCameraOriginFromScaledPoint({.x = static_cast<float>(origin[0]),
@@ -197,9 +221,7 @@ void CMoon::renderFigure() {
     for (std::size_t i = 0; i < figures_.size(); ++i) {
         figures_[i]->prepareForRender(figure_frames_[i], kMoonRenderFlags, renderer, set);
     }
-    if (placed) {
-        endWideScene();
-    }
+    endLayoutScene(placed);
     owners_.three_d.setBlendMode(1);
     // The x87 rounds the timer to the nearest frame, an even one on a tie; past the frames, the
     // first is shown.
@@ -207,12 +229,12 @@ void CMoon::renderFigure() {
     if (frame < 0 || std::cmp_greater_equal(frame, animation_textures_.size())) {
         frame = 0;
     }
-    displayInLayout(animation_textures_[static_cast<std::size_t>(frame)], layout,
-                    {.x = figure.frame_x,
-                     .y = figure.frame_y,
-                     .width = figure.frame_width,
-                     .height = figure.frame_height},
-                    figure.frame_alpha, upscaler);
+    displayInPicture(animation_textures_[static_cast<std::size_t>(frame)], picture,
+                     {.x = figure.frame_x,
+                      .y = figure.frame_y,
+                      .width = figure.frame_width,
+                      .height = figure.frame_height},
+                     figure.frame_alpha, upscaler);
     owners_.three_d.setBlendMode(0);
     set.setLightDirection(light_direction);
     set.setAmbientBaseQuick(ambient);
@@ -226,34 +248,34 @@ void CMoon::renderFigure() {
 void CMoon::renderTiled() {
     const engine::STiledScroll &tiled = getTiled();
     owners_.special.clearScreen();
-    const SFrontEndLayout layout =
-        getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight());
+    const SPictureArea picture = getPictureArea(owners_.screen.getWindowWidth(),
+                                                owners_.screen.getWindowHeight(), tiled.fit);
     const platform::EUpscaler upscaler = owners_.display.getUpscaler();
     // The first tile's corner is rounded to the screen once and the others kept their distance
     // from it, so the tiles move together a screen pixel at a time and stay edge to edge.
-    const auto toScreen = [&layout](double length) {
-        return static_cast<int>(std::lround(length * static_cast<double>(layout.scale)));
+    const auto toScreen = [](double length, float scale) {
+        return static_cast<int>(std::lround(length * static_cast<double>(scale)));
     };
-    const int left = layout.left + toScreen(tile_columns_[0]);
-    const int top = layout.top + toScreen(tile_rows_[0]);
-    const engine::EBitmapFilter filter = getFrontEndArtFilter(upscaler, layout.scale);
+    const int left = picture.left + toScreen(tile_columns_[0], picture.scale_x);
+    const int top = picture.top + toScreen(tile_rows_[0], picture.scale_y);
+    const engine::EBitmapFilter filter = getPictureArtFilter(upscaler, picture);
     for (const double row : tile_rows_) {
         for (const double column : tile_columns_) {
-            backdrop_.displayScaled(left + toScreen(column - tile_columns_[0]),
-                                    top + toScreen(row - tile_rows_[0]),
-                                    layout.getLength(kFrontEndLayoutWidth),
-                                    layout.getLength(kFrontEndHeight), kFullAlpha, filter);
+            backdrop_.displayScaled(left + toScreen(column - tile_columns_[0], picture.scale_x),
+                                    top + toScreen(row - tile_rows_[0], picture.scale_y),
+                                    picture.getWidth(kFrontEndLayoutWidth),
+                                    picture.getHeight(kFrontEndHeight), kFullAlpha, filter);
         }
     }
-    displayInLayout(hand_, layout,
-                    {.x = tiled.hand_x,
-                     .y = tiled.hand_y,
-                     .width = tiled.hand_width,
-                     .height = tiled.hand_height},
-                    static_cast<int>(std::lround(hand_alpha_)), upscaler);
-    displayInLayout(overlay_, layout,
-                    {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
-                    kFullAlpha, upscaler);
+    displayInPicture(hand_, picture,
+                     {.x = tiled.hand_x,
+                      .y = tiled.hand_y,
+                      .width = tiled.hand_width,
+                      .height = tiled.hand_height},
+                     static_cast<int>(std::lround(hand_alpha_)), upscaler);
+    displayInPicture(overlay_, picture,
+                     {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
+                     kFullAlpha, upscaler);
 }
 
 void CMoon::endWideScene() {

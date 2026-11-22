@@ -47,24 +47,25 @@ struct SScrollRows {
     int top = 0;
     int screen_top = 0;
 
-    SScrollRows(float scroll_top, const SFrontEndLayout &layout)
+    SScrollRows(float scroll_top, const SPictureArea &picture)
         : top(static_cast<int>(std::lround(scroll_top))),
-          screen_top(layout.top + static_cast<int>(std::lround(scroll_top * layout.scale))) {}
+          screen_top(picture.top + static_cast<int>(std::lround(scroll_top * picture.scale_y))) {}
 
-    // The screen row of the line at layout row y.
-    [[nodiscard]] int getScreenY(int y, const SFrontEndLayout &layout) const {
+    // The screen row of the line at picture row y.
+    [[nodiscard]] int getScreenY(int y, const SPictureArea &picture) const {
         return screen_top +
-               static_cast<int>(std::lround(static_cast<float>(y - top) * layout.scale));
+               static_cast<int>(std::lround(static_cast<float>(y - top) * picture.scale_y));
     }
 };
 
 // The credits from `rows`, those on the image and above its foot, centred between the column's
-// left and the screen's `right`, as large as the layout shows them.
+// left and `right`, as large as the picture's height shows them.
 void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines,
-                 const SScrollRows &rows, const SFrontEndLayout &layout, int right,
+                 const SScrollRows &rows, const SPictureArea &picture, int right,
                  const engine::SCreditsColumnScroll &scroll) {
     const int line_height = font.getCharHeight(kLineHeightChar);
-    const int left = layout.getX(scroll.column_left);
+    const int left = picture.getX(scroll.column_left);
+    const float scale = picture.getScale();
     int y = rows.top;
     for (std::string_view line : lines) {
         int color = scroll.text_colour;
@@ -75,21 +76,21 @@ void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines
             line.remove_prefix(std::min<std::size_t>(2, line.size()));
         }
         if (y >= 0 && y < kImageBottom - line_height) {
-            const int width = font.getTextWidthScaled(line, layout.scale);
+            const int width = font.getTextWidthScaled(line, scale);
             font.drawTextScaled(line, ((left + right) / 2) - (width / 2),
-                                rows.getScreenY(y, layout), color, scroll.shadow_colour,
-                                layout.scale);
+                                rows.getScreenY(y, picture), color, scroll.shadow_colour, scale);
         }
         y += line_height;
     }
 }
 
-// The credits from `rows`, each centred across the layout and as opaque as it is near the fade's
+// The credits from `rows`, each centred across the picture and as opaque as it is near the fade's
 // centre; only those above the image's foot are drawn.
 void drawFadeCredits(engine::CBitFont &font, std::span<const std::string_view> lines,
-                     const SScrollRows &rows, const SFrontEndLayout &layout, engine::C3d &three_d,
+                     const SScrollRows &rows, const SPictureArea &picture, engine::C3d &three_d,
                      const engine::SCreditsFadeLoop &fade) {
     const int line_height = font.getCharHeight(kLineHeightChar);
+    const float scale = picture.getScale();
     int y = rows.top;
     for (std::string_view line : lines) {
         int color = fade.text_colour;
@@ -104,10 +105,9 @@ void drawFadeCredits(engine::CBitFont &font, std::span<const std::string_view> l
             three_d.setRenderAlpha(std::max(
                 0, static_cast<int>(std::lround(
                        (1.0 - (distance / static_cast<double>(fade.fade_reach))) * kFullAlpha))));
-            const int width = font.getTextWidthScaled(line, layout.scale);
-            font.drawTextScaled(line, layout.getX(kImageWidth / 2) - (width / 2),
-                                rows.getScreenY(y, layout), color, fade.shadow_colour,
-                                layout.scale);
+            const int width = font.getTextWidthScaled(line, scale);
+            font.drawTextScaled(line, picture.getX(kImageWidth / 2) - (width / 2),
+                                rows.getScreenY(y, picture), color, fade.shadow_colour, scale);
         }
         y += line_height;
     }
@@ -118,15 +118,15 @@ void drawFadeCredits(engine::CBitFont &font, std::span<const std::string_view> l
 // the second's mark is (one without it, or with nothing before it, drawing nothing), else
 // centred between the bounds. True when any was on the screen.
 bool drawTwoColumnCredits(engine::CBitFont &font, std::span<const std::string_view> lines,
-                          const SScrollRows &rows, const SFrontEndLayout &layout,
+                          const SScrollRows &rows, const SPictureArea &picture,
                           const engine::SCreditsTwoColumn &two) {
     const int line_height = font.getCharHeight(kLineHeightChar);
+    const float scale = picture.getScale();
     const std::string heading{two.marker, two.heading};
     const std::string left_mark{two.marker, two.left_column};
     const std::string right_mark{two.marker, two.right_column};
     const auto draw = [&](std::string_view text, int x, int y, int color) {
-        font.drawTextScaled(text, x, rows.getScreenY(y, layout), color, two.shadow_colour,
-                            layout.scale);
+        font.drawTextScaled(text, x, rows.getScreenY(y, picture), color, two.shadow_colour, scale);
     };
     bool drawn = false;
     int y = rows.top;
@@ -142,15 +142,15 @@ bool drawTwoColumnCredits(engine::CBitFont &font, std::span<const std::string_vi
                 line.remove_prefix(left_mark.size());
                 const std::size_t split = line.find(right_mark);
                 if (split != std::string_view::npos && split > 0) {
-                    draw(line.substr(0, split), layout.getX(two.left_x), y, color);
-                    draw(line.substr(split + right_mark.size()), layout.getX(two.right_x), y,
+                    draw(line.substr(0, split), picture.getX(two.left_x), y, color);
+                    draw(line.substr(split + right_mark.size()), picture.getX(two.right_x), y,
                          color);
                 }
             } else {
                 // As drawTextCenterInBounds centres it.
                 draw(line,
-                     (layout.getX(two.centre_left) + layout.getX(two.centre_right) + 1 -
-                      font.getTextWidthScaled(line, layout.scale)) /
+                     (picture.getX(two.centre_left) + picture.getX(two.centre_right) + 1 -
+                      font.getTextWidthScaled(line, scale)) /
                          2,
                      y, color);
             }
@@ -163,12 +163,13 @@ bool drawTwoColumnCredits(engine::CBitFont &font, std::span<const std::string_vi
 } // namespace
 
 // The original kept at most 1024 lines of 254 characters, and ended on Escape held rather than
-// on Cancel. A column_scroll image is the front end's layout, scaled and centred up and down but
-// kept to the left, so on a wider screen its text column, over the image's black right side, runs
-// on to the screen's right edge with its strips; the strips also cover the screen's top and foot.
-// BW2's fade_loop draws its image at its point on the layout and its lines over the middle,
-// starting over once they are far enough up, until the music ends. BW3's two_column draws no
-// image, leaves the menu's music playing, and starts over once its lines are all gone.
+// on Cancel. The image, and the lines over it, are where the credits' fit puts the picture. A
+// column_scroll's column may run on past a picture that keeps its shape to the screen's right
+// edge, with its strips, over the image's black right side, as Nocturne's and BW1's kept to the
+// left do; the strips also cover the screen's top and foot. BW2's fade_loop draws its image at
+// its point on the picture and its lines over the middle, starting over once they are far enough
+// up, until the music ends. BW3's two_column draws no image, letterboxes the picture, leaves the
+// menu's music playing, and starts over once its lines are all gone.
 // bw3 0x004c02a0
 // bw2 0x004be430
 // nocedit 0x004e4010
@@ -200,12 +201,13 @@ void CGame::rollCredits() {
                         : columns ? credits->two_column->start_y
                                   : credits->column_scroll->start_y;
     const engine::IScreenDevice &screen = owners_.screen;
-    SFrontEndLayout layout = getFrontEndLayout(screen.getWindowWidth(), screen.getWindowHeight());
-    if (!fades && !columns) {
-        layout.left = 0;
-    }
-    const int right = std::max(layout.getX(kImageWidth), screen.getWindowWidth()) - 1;
-    const int bottom = std::max(layout.getY(kImageHeight), screen.getWindowHeight()) - 1;
+    const SPictureArea picture =
+        getPictureArea(screen.getWindowWidth(), screen.getWindowHeight(), credits->fit);
+    const bool to_screen_edge = !fades && !columns && credits->column_scroll->column_to_screen_edge;
+    const int right = (to_screen_edge ? std::max(picture.getX(kImageWidth), screen.getWindowWidth())
+                                      : picture.getX(kImageWidth)) -
+                      1;
+    const int bottom = std::max(picture.getY(kImageHeight), screen.getWindowHeight()) - 1;
     owners_.two_d.clearInputAndWait();
     engine::CAlphaBitmap image(owners_.dosio, owners_.screen, owners_.special);
     if (!credits->image.empty()) {
@@ -240,42 +242,42 @@ void CGame::rollCredits() {
     // Whether the last drawing had a line on the screen.
     bool any_drawn = false;
     while (true) {
-        const SScrollRows top(scroll_top, layout);
+        const SScrollRows top(scroll_top, picture);
         // Redrawn only once the scroll reaches another screen row.
         if (top.screen_top != drawn_top) {
             owners_.special.clearScreen();
             if (columns) {
                 const engine::SCreditsTwoColumn &two = *credits->two_column;
-                any_drawn = drawTwoColumnCredits(font, lines, top, layout, two);
-                owners_.two_d.fillRectColor(layout.getX(0), layout.getY(0), right,
-                                            layout.getY(two.top_strip_bottom), two.strip_colour);
-                owners_.two_d.fillRectColor(layout.getX(0), layout.getY(two.bottom_strip_top),
+                any_drawn = drawTwoColumnCredits(font, lines, top, picture, two);
+                owners_.two_d.fillRectColor(picture.getX(0), picture.getY(0), right,
+                                            picture.getY(two.top_strip_bottom), two.strip_colour);
+                owners_.two_d.fillRectColor(picture.getX(0), picture.getY(two.bottom_strip_top),
                                             right, bottom, two.strip_colour);
             } else if (fades) {
                 const engine::SCreditsFadeLoop &fade = *credits->fade_loop;
-                displayInLayout(image, layout,
-                                {.x = fade.image_x,
-                                 .y = fade.image_y,
-                                 .width = kImageWidth,
-                                 .height = kImageHeight},
-                                kFullAlpha, owners_.display.getUpscaler());
-                drawFadeCredits(font, lines, top, layout, owners_.three_d, fade);
+                displayInPicture(image, picture,
+                                 {.x = fade.image_x,
+                                  .y = fade.image_y,
+                                  .width = kImageWidth,
+                                  .height = kImageHeight},
+                                 kFullAlpha, owners_.display.getUpscaler());
+                drawFadeCredits(font, lines, top, picture, owners_.three_d, fade);
             } else {
-                displayInLayout(image, layout,
-                                {.x = 0, .y = 0, .width = kImageWidth, .height = kImageHeight},
-                                kFullAlpha, owners_.display.getUpscaler());
-                drawCredits(font, lines, top, layout, right, *credits->column_scroll);
+                displayInPicture(image, picture,
+                                 {.x = 0, .y = 0, .width = kImageWidth, .height = kImageHeight},
+                                 kFullAlpha, owners_.display.getUpscaler());
+                drawCredits(font, lines, top, picture, right, *credits->column_scroll);
             }
             if (music != 0 && !sound_main.isSfxPlaying(music)) {
                 break;
             }
             if (!fades && !columns) {
                 const engine::SCreditsColumnScroll &scroll = *credits->column_scroll;
-                const int column_left = layout.getX(scroll.column_left);
+                const int column_left = picture.getX(scroll.column_left);
                 owners_.two_d.fillRectColor(column_left, 0, right,
-                                            layout.getY(scroll.top_strip_bottom),
+                                            picture.getY(scroll.top_strip_bottom),
                                             scroll.strip_colour);
-                owners_.two_d.fillRectColor(column_left, layout.getY(scroll.bottom_strip_top),
+                owners_.two_d.fillRectColor(column_left, picture.getY(scroll.bottom_strip_top),
                                             right, bottom, scroll.strip_colour);
             }
             drawn_top = top.screen_top;

@@ -75,17 +75,20 @@ void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_va
     const engine::SLoadingPicture &picture = pictures[static_cast<std::size_t>(image_variant)];
     engine::CAlphaBitmap bitmap(owners_.dosio, owners_.screen, owners_.special);
     bitmap.load(picture.id, kPictureWidth, kPictureHeight);
-    displayInLayout(bitmap, layout,
-                    {.x = 0, .y = 0, .width = kPictureWidth, .height = kPictureHeight}, kOpaque,
-                    owners_.display.getUpscaler());
+    const SPictureArea area = getPictureArea(owners_.screen.getWindowWidth(),
+                                             owners_.screen.getWindowHeight(), picture.fit);
+    displayInPicture(bitmap, area,
+                     {.x = 0, .y = 0, .width = kPictureWidth, .height = kPictureHeight}, kOpaque,
+                     owners_.display.getUpscaler());
     if (!picture.moon) {
         return;
     }
+    // The moon's window stays square, at its point on the picture.
     use_custom_viewport_ = true;
-    viewport_x_ = layout.getX(picture.moon->x);
-    viewport_y_ = layout.getY(picture.moon->y);
-    viewport_width_ = layout.getLength(look.window_size);
-    viewport_height_ = layout.getLength(look.window_size);
+    viewport_x_ = area.getX(picture.moon->x);
+    viewport_y_ = area.getY(picture.moon->y);
+    viewport_width_ = area.getHeight(look.window_size);
+    viewport_height_ = area.getHeight(look.window_size);
     color_ = {.r = picture.moon->tint[0], .g = picture.moon->tint[1], .b = picture.moon->tint[2]};
 }
 

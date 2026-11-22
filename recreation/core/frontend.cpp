@@ -95,4 +95,81 @@ void displayInLayout(engine::CAlphaBitmap &bitmap, const SFrontEndLayout &layout
                          getFrontEndArtFilter(upscaler, layout.scale));
 }
 
+namespace {
+
+int scaleLength(int length, float scale) {
+    const auto scaled = static_cast<int>(std::lround(static_cast<float>(length) * scale));
+    return length > 0 ? std::max(scaled, 1) : scaled;
+}
+
+} // namespace
+
+int SPictureArea::getX(int picture_x) const {
+    return left + static_cast<int>(std::lround(static_cast<float>(picture_x) * scale_x));
+}
+
+int SPictureArea::getY(int picture_y) const {
+    return top + static_cast<int>(std::lround(static_cast<float>(picture_y) * scale_y));
+}
+
+int SPictureArea::getWidth(int picture_width) const {
+    return scaleLength(picture_width, scale_x);
+}
+
+int SPictureArea::getHeight(int picture_height) const {
+    return scaleLength(picture_height, scale_y);
+}
+
+float SPictureArea::getScale() const {
+    return scale_y;
+}
+
+SPictureArea getPictureArea(int screen_width, int screen_height, const engine::SPictureFit &fit) {
+    if (fit.fit == engine::EPictureFit::Stretch && screen_width > 0 && screen_height > 0) {
+        return {.scale_x = static_cast<float>(screen_width) / kFrontEndLayoutWidth,
+                .scale_y = static_cast<float>(screen_height) / kFrontEndHeight,
+                .left = 0,
+                .top = 0};
+    }
+    const SFrontEndLayout layout = getFrontEndLayout(screen_width, screen_height);
+    SPictureArea area{
+        .scale_x = layout.scale, .scale_y = layout.scale, .left = layout.left, .top = layout.top};
+    if (fit.anchor == engine::EPictureAnchor::Left) {
+        area.left = 0;
+    } else if (fit.anchor == engine::EPictureAnchor::Right) {
+        area.left = std::max(screen_width - layout.getLength(kFrontEndLayoutWidth), 0);
+    }
+    return area;
+}
+
+SPictureArea getTitleBackdropPicture(const engine::SGameContent &content, int screen_width,
+                                     int screen_height) {
+    const std::optional<std::string> &style = content.front_end.title_backdrop;
+    engine::SPictureFit fit{.fit = engine::EPictureFit::Stretch,
+                            .anchor = engine::EPictureAnchor::Centre};
+    if (style == kFigureSceneBackdrop && content.figure_scene) {
+        fit = content.figure_scene->fit;
+    } else if (style == kTiledScrollBackdrop && content.tiled_scroll) {
+        fit = content.tiled_scroll->fit;
+    }
+    return getPictureArea(screen_width, screen_height, fit);
+}
+
+engine::EBitmapFilter getPictureArtFilter(platform::EUpscaler upscaler,
+                                          const SPictureArea &picture) {
+    // Kept where both ways keep them, else mixed.
+    using engine::EBitmapFilter;
+    return getFrontEndArtFilter(upscaler, picture.scale_x) == EBitmapFilter::Nearest &&
+                   getFrontEndArtFilter(upscaler, picture.scale_y) == EBitmapFilter::Nearest
+               ? EBitmapFilter::Nearest
+               : EBitmapFilter::Smooth;
+}
+
+void displayInPicture(engine::CAlphaBitmap &bitmap, const SPictureArea &picture,
+                      const common::SViewport &area, int alpha, platform::EUpscaler upscaler) {
+    bitmap.displayScaled(picture.getX(area.x), picture.getY(area.y), picture.getWidth(area.width),
+                         picture.getHeight(area.height), alpha,
+                         getPictureArtFilter(upscaler, picture));
+}
+
 } // namespace nocturne::core

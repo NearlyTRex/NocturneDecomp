@@ -71,13 +71,15 @@ void CMatrix::pushViewport(int x, int y, int width, int height) {
                                               .light_direction = light_.getLightDirection(),
                                               .projection = two_d_.getProjection(),
                                               .projection_scale = projection_scale_,
-                                              .clip = two_d_.getClipRect()};
+                                              .clip = two_d_.getClipRect(),
+                                              .projection_aspect = projection_aspect_};
     ++viewport_stack_index_;
     if (viewport_stack_index_ == kViewportStackSize) {
         common::displayErrorAndQuit("Too many 3D windows");
     }
     two_d_.setupViewportAndClipping(x, y, x + width, y + height);
     projection_scale_ = kUnitProjectionScale;
+    projection_aspect_.reset();
 }
 
 // nocedit 0x0050e480
@@ -93,10 +95,19 @@ void CMatrix::popViewport() {
     two_d_.setProjection(saved.projection);
     projection_scale_ = saved.projection_scale;
     two_d_.setClipRect(saved.clip);
+    projection_aspect_ = saved.projection_aspect;
 }
 
 int CMatrix::getProjectionScale() const {
     return projection_scale_;
+}
+
+std::optional<std::int32_t> CMatrix::getProjectionAspect() const {
+    return projection_aspect_;
+}
+
+void CMatrix::setProjectionAspect(std::optional<std::int32_t> aspect) {
+    projection_aspect_ = aspect;
 }
 
 void CMatrix::setProjectionScale(int scale) {

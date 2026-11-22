@@ -261,12 +261,15 @@ story_select = 'story_list'
 
 [credits]
 text = 'credits.txt'
+fit = 'keep_aspect'
+anchor = 'left'
 image = 'stats'
 music = 'splash-music-44.wav'
 
 [credits.column_scroll]
 font = 'theme'
 column_left = 414
+column_to_screen_edge = true
 top_strip_bottom = 30
 bottom_strip_top = 439
 strip_colour = 0x0
@@ -312,13 +315,13 @@ version_alpha = 0x8000
 
 [menu.footer.copyright]
 corner = 'bottom_right'
-edge = 'layout'
+edge = 'backdrop'
 x = 21
 y = 1
 
 [menu.footer.version]
 corner = 'bottom_left'
-edge = 'screen'
+edge = 'backdrop'
 x = 4
 y = 1
 
@@ -328,6 +331,7 @@ high_rate = 'splash-music-44.wav'
 
 [menu.calibration]
 image = 'brightness'
+fit = 'stretch'
 steps = ['1. Turn off all the lights in your room.', '2. Turn your brightness up, so that you see 3 bars on the left side of the screen.', '3. Turn down the brightness, so that the left 2 bars become the same color.', '4. Turn your contrast all the way up.', "You're done with calibration."]
 title = 'Monitor calibration'
 prompt = '  Press any key to continue.'
@@ -698,6 +702,7 @@ prompt_padding_chars = 4
 prompt_padding_lines = 2
 
 [title_backdrop.figure_scene]
+fit = 'keep_aspect'
 backdrop = 'titlescreen_bw'
 backdrop_alpha = 0xffff
 models = [{ file = 'titletwana.kfm', frame_wrap = 60 }, { file = 'titletwanb.kfm', frame_wrap = 45 }, { file = 'titletwanc.kfm', frame_wrap = 75 }]
@@ -723,6 +728,7 @@ frame_wrap = 30
 
 [startup]
 picture = 'fangs'
+fit = 'keep_aspect'
 picture_alpha = 0x8000
 label_x = 320
 label_y = 240
@@ -796,6 +802,7 @@ font = 'medium'
 
 [[loading]]
 id = 'load1'
+fit = 'keep_aspect'
 moon = { x = 484, y = 22, tint = [0xd700, 0xdc00, 0xe000] }
 
 [[story]]

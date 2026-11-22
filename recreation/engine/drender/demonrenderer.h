@@ -96,6 +96,9 @@ public:
     // Draws into the rectangle as its own 3D window until the matching pop.
     void pushViewport(int x, int y, int width, int height);
     void popViewport();
+    // The open window's projection shaped as width by height, whatever the window's own shape,
+    // as CMatrix::setProjectionAspect has it.
+    void setProjectionShape(int width, int height);
     void renderCustomScanline(platform::SMRGLHeaderPrimitive *prim,
                               CustomScanlineFunc *scanline_renderer);
     void setCurrentPolygonColor(int color);

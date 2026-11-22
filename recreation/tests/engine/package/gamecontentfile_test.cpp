@@ -51,9 +51,13 @@ SGameContent fullContent() {
     content.list = getShippedGameContent().list;
     content.dialog = getShippedGameContent().dialog;
     content.loading = {{.id = "load1",
+                        .fit = {.fit = EPictureFit::KeepAspect, .anchor = EPictureAnchor::Right},
                         .moon = SMoonWindow{.x = 120, .y = 130, .tint = {0x8200, 0xc800, 0xf400}},
                         .random = true},
-                       {.id = "plain", .moon = {}, .random = false}};
+                       {.id = "plain",
+                        .fit = {.fit = EPictureFit::Stretch, .anchor = EPictureAnchor::Centre},
+                        .moon = {},
+                        .random = false}};
     content.stories = {
         {.id = "volume1",
          .name = "Volume 1",
@@ -96,6 +100,7 @@ TEST(GameContentFile, WritesOnlyWhatAStoryAndPictureHave) {
     SGameContent content;
     content.credits = SGameCredits{.text = "c.txt",
                                    .image = "i",
+                                   .fit = {},
                                    .music = {},
                                    .column_scroll = {},
                                    .fade_loop = {},
@@ -103,7 +108,8 @@ TEST(GameContentFile, WritesOnlyWhatAStoryAndPictureHave) {
     content.menu = getShippedGameContent().menu;
     content.menu->trademark.reset();
     EXPECT_THAT(formatGameContentTables(content),
-                ::testing::StartsWith("\n[credits]\ntext = 'c.txt'\nimage = 'i'\n\n[menu]\n"
+                ::testing::StartsWith("\n[credits]\ntext = 'c.txt'\nfit = 'keep_aspect'\n"
+                                      "image = 'i'\n\n[menu]\n"
                                       "left = 160\ntop = 250\ntitled_top = 225\n\n[menu.title]\n"));
     EXPECT_EQ(parseGameContent(formatGameContentTables(content)), content);
 }
@@ -280,7 +286,7 @@ const std::string kMenuFooter =
     std::format("{}{}{}", kMenuFooterKeys, kMenuFooterCopyright, kMenuFooterVersion);
 constexpr std::string_view kMenuCalibration =
     "[menu.calibration]\nimage = 'b'\nsteps = ['one']\ntitle = 't'\nprompt = 'p'\n"
-    "font = 'small_editor'\ncolour = 1\ntitle_lines = 2\nprompt_lines = 3\n";
+    "font = 'small_editor'\ncolour = 1\ntitle_lines = 2\nprompt_lines = 3\nfit = 'stretch'\n";
 
 constexpr std::string_view kMenuOptions = "[menu.options]\nhero = 2\ncard_name_length = 24\n";
 constexpr std::string_view kMenuSound = "[menu.sound]\neffects_sample = 's.wav'\n";
@@ -494,7 +500,7 @@ INSTANTIATE_TEST_SUITE_P(
                                       "edge = 'window'\nx = 0\ny = 0\n",
                                       kMenuFooterKeys, kMenuFooterCopyright),
                           kMenuCalibration),
-                 "menu: footer: version: edge: not one of screen, layout"},
+                 "menu: footer: version: edge: not one of screen, layout, backdrop"},
         SBadCase{menuWith(std::format("{}drop = {{ x = 9, y = 0, colour = 2 }}\n", kMenuTitle),
                           kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration),
                  "menu: title: drop: x: not from -8 to 8"}));
@@ -759,8 +765,9 @@ TEST(GameContentFile, BlairWitchThreesFrontEndReads) {
     EXPECT_EQ(
         menu.footer.copyright,
         (SFooterPlace{
-            .corner = EFooterCorner::BottomRight, .edge = EFooterEdge::Layout, .x = 21, .y = 1}));
+            .corner = EFooterCorner::BottomRight, .edge = EFooterEdge::Backdrop, .x = 21, .y = 1}));
     EXPECT_FALSE(menu.spectrum.has_value());
+    EXPECT_EQ(content->tiled_scroll->fit.fit, EPictureFit::KeepAspect);
     EXPECT_EQ(content->labels.at("main_play"), "PLAY");
     EXPECT_EQ(content->labels.at("options_graphic"), "Graphic Options");
     ASSERT_TRUE(content->credits.has_value());
@@ -887,8 +894,16 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"[[loading]]\nid = \"a\"\nmoon = { x = 1, y = 1, tint = [0xff01, 2, 3] }",
                  "loading 1: moon: tint: not from 0 to 0xff00"},
         SBadCase{"[[loading]]\nid = \"a\"\nrandom = 1", "loading 1: random: not true or false"},
-        SBadCase{"[[loading]]\nid = \"a\"\n[[loading]]\nid = \"a\"",
-                 "loading 2: id: a is another loading's"}));
+        SBadCase{"[[loading]]\nid = \"a\"\nfit = 'stretch'\n[[loading]]\nid = \"a\"\n"
+                 "fit = 'stretch'",
+                 "loading 2: id: a is another loading's"},
+        SBadCase{"[[loading]]\nid = \"a\"", "loading 1: fit: missing"},
+        SBadCase{"[[loading]]\nid = \"a\"\nfit = 'fill'",
+                 "loading 1: fit: not one of keep_aspect, stretch"},
+        SBadCase{"[[loading]]\nid = \"a\"\nfit = 'keep_aspect'\nanchor = 'top'",
+                 "loading 1: anchor: not one of centre, left, right"},
+        SBadCase{"[[loading]]\nid = \"a\"\nfit = 'stretch'\nanchor = 'left'",
+                 "loading 1: anchor: a stretched picture has none"}));
 
 INSTANTIATE_TEST_SUITE_P(
     Story, CGameContentErrorTest,

@@ -76,7 +76,8 @@ void CDemonRenderer::setupCameraAndProjection(const common::CMatrix3x3f &transfo
     // The width is shifted in 32 bits before the divide, as the original's SHL wraps it.
     const auto width =
         static_cast<std::int32_t>(static_cast<std::uint32_t>(clip.right - clip.left + 1) << 16U);
-    const std::int32_t aspect = width / (clip.bottom - clip.top + 1);
+    const std::int32_t aspect =
+        matrix_.getProjectionAspect().value_or(width / (clip.bottom - clip.top + 1));
     const auto y_scale = static_cast<std::int32_t>((std::int64_t{aspect} * 0x10000) / scale);
     for (CVector3i &row : transform.m) {
         row.x = common::fixedMultiply(x_scale, row.x);
@@ -146,6 +147,12 @@ void CDemonRenderer::pushViewport(int x, int y, int width, int height) {
 // nocedit 0x0048c8c0
 void CDemonRenderer::popViewport() {
     matrix_.popViewport();
+}
+
+// As setupCameraAndProjection works the clip's out, the rectangle one pixel wider and taller.
+void CDemonRenderer::setProjectionShape(int width, int height) {
+    const auto shifted = static_cast<std::int32_t>(static_cast<std::uint32_t>(width + 1) << 16U);
+    matrix_.setProjectionAspect(shifted / (height + 1));
 }
 
 } // namespace nocturne::engine

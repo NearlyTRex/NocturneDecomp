@@ -91,6 +91,7 @@ TEST(PackageManifest, CarriesGameContentAroundItsPods) {
     manifest.game.front_end.title_backdrop = "sky_scene";
     manifest.game.credits = SGameCredits{.text = "c.txt",
                                          .image = "i",
+                                         .fit = {},
                                          .music = {},
                                          .column_scroll = {},
                                          .fade_loop = {},

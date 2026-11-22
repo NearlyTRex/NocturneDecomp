@@ -19,6 +19,8 @@ story_select = "story_list"
 # it is drawn (head-of-horror code 666 shows Taylor's head alone); the title's 30 frames along
 # its foot, 12 a second
 [title_backdrop.figure_scene]
+# "stretch" fills a wide screen, the figures and title stretching with the backdrop
+fit = "keep_aspect"
 backdrop = "titlescreen_bw"
 backdrop_alpha = 0xffff
 models = [{ file = "titletwana.kfm", frame_wrap = 60 }, { file = "titletwanb.kfm", frame_wrap = 45 },
@@ -48,12 +50,16 @@ frame_wrap = 30
 
 [credits]
 text = "credits.txt"
+# The image keeps its shape against the screen's left, its column running on to the right edge
+fit = "keep_aspect"
+anchor = "left"
 image = "stats"
 music = "splash-music-44.wav"
 
 [credits.column_scroll]
 font = "theme"
 column_left = 414
+column_to_screen_edge = true
 top_strip_bottom = 30
 bottom_strip_top = 439
 strip_colour = 0x00
@@ -68,6 +74,7 @@ heading = "b"
 
 [startup]
 picture = "fangs"
+fit = "keep_aspect"
 picture_alpha = 0x8000
 label_x = 320
 label_y = 240
@@ -113,17 +120,18 @@ colour = 0xf8
 shadow = 0
 version_alpha = 0x8000
 
-# The copyright ends at 619 on the layout
+# The copyright ends at 619 on the title backdrop, keeping its shape or stretched as it does
 [menu.footer.copyright]
 corner = "bottom_right"
-edge = "layout"
+edge = "backdrop"
 x = 21
 y = 1
 
-# BW1 has no build line; the recreation's is drawn where Nocturne's was
+# BW1 has no build line; the recreation's is drawn where Nocturne's was, in the backdrop's
+# corner
 [menu.footer.version]
 corner = "bottom_left"
-edge = "screen"
+edge = "backdrop"
 x = 4
 y = 1
 
@@ -134,6 +142,7 @@ high_rate = "splash-music-44.wav"
 
 [menu.calibration]
 image = "brightness"
+fit = "stretch"
 steps = [
     "1. Turn off all the lights in your room.",
     "2. Turn your brightness up, so that you see 3 bars on the left side of the screen.",
@@ -515,6 +524,7 @@ prompt_padding_lines = 2
 
 # One picture, the moon in its top right
 [[loading]]
+fit = "keep_aspect"
 id = "load1"
 moon = { x = 484, y = 22, tint = [0xd700, 0xdc00, 0xe000] }
 

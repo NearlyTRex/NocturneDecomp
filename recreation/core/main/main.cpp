@@ -66,6 +66,11 @@ SFrontEndLayout getScreenLayout(const SGameSystemOwners &owners) {
     return getFrontEndLayout(owners.screen.getWindowWidth(), owners.screen.getWindowHeight());
 }
 
+SPictureArea getStartupPicture(const SGameSystemOwners &owners) {
+    return getPictureArea(owners.screen.getWindowWidth(), owners.screen.getWindowHeight(),
+                          getStartup(owners).fit);
+}
+
 // The first run starts in 640x480 without acceleration and shows the calibration screens once,
 // in the small editor font initFonts has just loaded.
 void showFirstRunCalibration(const SGameSystemOwners &owners) {
@@ -86,9 +91,9 @@ void showFangs(const SGameSystemOwners &owners) {
     owners.special.clearScreen();
     engine::CAlphaBitmap loading(owners.dosio, owners.screen, owners.special);
     loading.load(startup.picture, kWidth, kHeight);
-    displayInLayout(loading, getScreenLayout(owners),
-                    {.x = 0, .y = 0, .width = kWidth, .height = kHeight}, startup.picture_alpha,
-                    owners.ini_owners.display.getUpscaler());
+    displayInPicture(loading, getStartupPicture(owners),
+                     {.x = 0, .y = 0, .width = kWidth, .height = kHeight}, startup.picture_alpha,
+                     owners.ini_owners.display.getUpscaler());
 }
 
 // The original measured its "Loading..." to centre it, then never drew it; every game draws it.
@@ -97,12 +102,12 @@ void showLoadingScreen(const SGameSystemOwners &owners) {
     const engine::SStartup &startup = getStartup(owners);
     const std::string text = getLabel(owners.content, owners.messages, kLoadingLabel);
     engine::CBitFont &font = owners.ini_owners.fonts.findFont(startup.label_font);
-    const SFrontEndLayout layout = getScreenLayout(owners);
+    const SPictureArea picture = getStartupPicture(owners);
+    const float scale = picture.getScale();
     font.drawTextScaled(
-        text, layout.getX(startup.label_x) - (font.getTextWidthScaled(text, layout.scale) / 2),
-        layout.getY(startup.label_y) -
-            (font.getCharHeightScaled(kLoadingHeightChar, layout.scale) / 2),
-        startup.label_colour, engine::CBitFont::kNoShadow, layout.scale);
+        text, picture.getX(startup.label_x) - (font.getTextWidthScaled(text, scale) / 2),
+        picture.getY(startup.label_y) - (font.getCharHeightScaled(kLoadingHeightChar, scale) / 2),
+        startup.label_colour, engine::CBitFont::kNoShadow, scale);
     owners.screen.swapBuffers();
 }
 

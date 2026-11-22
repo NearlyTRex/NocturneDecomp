@@ -57,6 +57,12 @@ or a mod can change it without code. Nocturne's is `recreation/data/games/noctur
 When several packages set these, a scalar takes the last value set, stories and loading screens
 merge by id, and labels and translations merge per key.
 
+Each still picture's table (`[startup]`, `[[loading]]`, `[title_backdrop.figure_scene]`,
+`[title_backdrop.tiled_scroll]`, `[credits]`, `[menu.calibration]`) says how it fills a wide
+screen: `fit = "keep_aspect"` with an optional `anchor = "centre" | "left" | "right"`, or
+`fit = "stretch"`. What stands on the picture, such as BW1's figures or the credits' lines,
+moves with it. A footer line's `edge = "backdrop"` keeps it in the title picture's corner.
+
 ## The Blair Witch games
 
 Blair Witch Volume 1, 2 and 3 were built on the Nocturne engine. The goal is for each to run as

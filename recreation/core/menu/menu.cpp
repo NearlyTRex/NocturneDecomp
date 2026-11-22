@@ -59,36 +59,14 @@ std::string fitToWidth(const engine::CBitFont &font, std::string_view text, int 
 }
 
 // The calibration image stretched over a screen of width by height.
-struct SStretch {
-    int width = kImageWidth;
-    int height = kImageHeight;
-
-    [[nodiscard]] float getScaleX() const {
-        return static_cast<float>(width) / static_cast<float>(kImageWidth);
-    }
-    [[nodiscard]] float getScaleY() const {
-        return static_cast<float>(height) / static_cast<float>(kImageHeight);
-    }
-    // An image row on the screen.
-    [[nodiscard]] int getY(int image_y) const {
-        return static_cast<int>(std::lround(static_cast<float>(image_y) * getScaleY()));
-    }
-    // Its pixels kept where both stretches keep them, else mixed.
-    [[nodiscard]] engine::EBitmapFilter getFilter(platform::EUpscaler upscaler) const {
-        using engine::EBitmapFilter;
-        return getFrontEndArtFilter(upscaler, getScaleX()) == EBitmapFilter::Nearest &&
-                       getFrontEndArtFilter(upscaler, getScaleY()) == EBitmapFilter::Nearest
-                   ? EBitmapFilter::Nearest
-                   : EBitmapFilter::Smooth;
-    }
-};
-
-// Centred on the screen at image row y as stretched, at the layout's text scale so the letters
-// keep their shape.
-void drawCentred(engine::CBitFont &font, std::string_view text, const SStretch &stretch,
-                 float scale, int y, int colour) {
-    font.drawTextScaled(text, (stretch.width / 2) - (font.getTextWidthScaled(text, scale) / 2),
-                        stretch.getY(y), colour, engine::CBitFont::kNoShadow, scale);
+// Centred on the picture at its row y, at the picture's text scale so the letters keep their
+// shape.
+void drawCentred(engine::CBitFont &font, std::string_view text, const SPictureArea &picture, int y,
+                 int colour) {
+    const float scale = picture.getScale();
+    font.drawTextScaled(text,
+                        picture.getX(kImageWidth / 2) - (font.getTextWidthScaled(text, scale) / 2),
+                        picture.getY(y), colour, engine::CBitFont::kNoShadow, scale);
 }
 
 } // namespace
@@ -126,8 +104,8 @@ bool CMenu::getMenuLeftRightPressed() const {
 }
 
 // The original built the text in a 256-byte buffer, which a long translation overran. The image
-// is plain enough to stretch, so unlike the rest of the front end it fills a wide screen rather
-// than keeping its shape; its lines go where the stretch puts their rows.
+// fills the screen as its fit says, plain enough that the games stretch it; its lines go where
+// the picture puts their rows.
 // nocedit 0x00510a50
 void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
                                        std::string_view message_text) {
@@ -136,15 +114,15 @@ void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
     const std::string prompt = std::string(message_text) +
                                std::string(owners_.messages.getLocalizedString(calibration.prompt));
     const int line_height = font.getCharHeight(kLineHeightChar);
-    const float scale = getScreenLayout().scale;
-    const SStretch stretch{.width = owners_.screen.getWindowWidth(),
-                           .height = owners_.screen.getWindowHeight()};
+    const SPictureArea picture = getPictureArea(owners_.screen.getWindowWidth(),
+                                                owners_.screen.getWindowHeight(), calibration.fit);
     owners_.special.clearScreen();
-    bitmap.displayScaled(0, 0, stretch.width, stretch.height, kFullAlpha,
-                         stretch.getFilter(owners_.display.getUpscaler()));
-    drawCentred(font, prompt, stretch, scale,
-                kImageHeight - (calibration.prompt_lines * line_height), calibration.colour);
-    drawCentred(font, owners_.messages.getLocalizedString(calibration.title), stretch, scale,
+    displayInPicture(bitmap, picture,
+                     {.x = 0, .y = 0, .width = kImageWidth, .height = kImageHeight}, kFullAlpha,
+                     owners_.display.getUpscaler());
+    drawCentred(font, prompt, picture, kImageHeight - (calibration.prompt_lines * line_height),
+                calibration.colour);
+    drawCentred(font, owners_.messages.getLocalizedString(calibration.title), picture,
                 calibration.title_lines * line_height, calibration.colour);
     owners_.screen.swapBuffers();
     owners_.two_d.clearInputAndWait();
@@ -293,13 +271,25 @@ void CMenu::drawFooterLine(engine::CBitFont &font, std::string_view text,
     using engine::EFooterCorner;
     const engine::SMenuFooter &footer = getMenuLayout().footer;
     const SFrontEndLayout layout = getScreenLayout();
-    const bool on_layout = place.edge == engine::EFooterEdge::Layout;
-    const int left = on_layout ? layout.getX(0) : 0;
-    const int top = on_layout ? layout.getY(0) : 0;
-    const int right = on_layout ? layout.getX(kImageWidth)
-                                : std::max(kImageWidth, owners_.screen.getWindowWidth());
-    const int bottom = on_layout ? layout.getY(kImageHeight)
-                                 : std::max(kImageHeight, owners_.screen.getWindowHeight());
+    const int width = owners_.screen.getWindowWidth();
+    const int height = owners_.screen.getWindowHeight();
+    // The corner's area: the layout, the title backdrop's picture, or the screen.
+    int left = 0;
+    int top = 0;
+    int right = std::max(kImageWidth, width);
+    int bottom = std::max(kImageHeight, height);
+    if (place.edge == engine::EFooterEdge::Layout) {
+        left = layout.getX(0);
+        top = layout.getY(0);
+        right = layout.getX(kImageWidth);
+        bottom = layout.getY(kImageHeight);
+    } else if (place.edge == engine::EFooterEdge::Backdrop) {
+        const SPictureArea picture = getTitleBackdropPicture(owners_.content, width, height);
+        left = picture.getX(0);
+        top = picture.getY(0);
+        right = picture.getX(kImageWidth);
+        bottom = picture.getY(kImageHeight);
+    }
     const bool from_right =
         place.corner == EFooterCorner::BottomRight || place.corner == EFooterCorner::TopRight;
     const bool from_bottom =

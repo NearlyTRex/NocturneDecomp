@@ -20,6 +20,14 @@ the `[[loading]]`, `[[story]]` and `[translation]` tables. The rest is design.
   translations key by key.
 - **Units.** Positions are in the 640x480 layout. Colours are palette indices (0-0xff) unless
   named a cube colour. Alphas are 0-0xffff. Times are seconds.
+- **Pictures.** Each table holding a still 640x480 picture says how it fills a screen of another
+  shape: `fit = "keep_aspect"`, scaled to fit whole with black beside it, with `anchor` `centre`
+  (left out), `left` or `right`; or `fit = "stretch"`, over the whole screen, with no anchor.
+  What stands on the picture goes with it: positions given on it, the figures, the hand and
+  overlay, the loading moon's window and the credits' lines. Text and the moon's window keep
+  their shape, sized by the picture's height. The tables: `[startup]`, each `[[loading]]`,
+  `[title_backdrop.figure_scene]`, `[title_backdrop.tiled_scroll]`, `[credits]` and
+  `[menu.calibration]`. Every game keeps its pictures' shape, the calibration image stretched.
 - **Fonts** are named by their `[[font]]` id.
 - **Labels** are the menus' text, keyed by an id the code asks for (`main_play`,
   `sound_effects`, `hotkey_pause`). Every game lists every id, so the four manifests' `[labels]`
@@ -114,9 +122,10 @@ version_alpha = 0x8000
 
 [menu.footer.copyright]           # each line's outer edges x and y layout pixels in from a corner
 corner = "bottom_right"           # bottom_left | bottom_right | top_left | top_right
-edge = "screen"                   # screen (Nocturne, hugging a wide screen) | layout (BW1/BW3 619)
-x = 1
-y = 1
+edge = "screen"                   # screen (Nocturne, hugging a wide screen) | layout | backdrop
+x = 1                             # (BW1/BW3 619): the title backdrop's picture, the layout or
+y = 1                             # the screen as it keeps its shape or stretches; a backdrop
+                                  # with no still picture, as the sky, is the screen
 
 [menu.footer.version]             # the build line, where the game drew its version (BW2's top
 corner = "bottom_left"            # right of the layout), else Nocturne's
@@ -173,6 +182,7 @@ mirrored = false                  # optional: BW2's, a bar right of x 320 drawn 
 
 [menu.calibration]
 image = "brightness"
+fit = "stretch"                   # plain enough to stretch over a wide screen
 steps = ["1. Turn off all the lights in your room.", "...", "You're done with calibration."]
 title = "Monitor calibration"
 prompt = "  Press any key to continue."
@@ -290,11 +300,14 @@ font, `small_editor`. Not built: BW1 and BW3 cycle the pointer through palette i
 [credits]
 text = "credits.txt"
 image = "stats"
+fit = "keep_aspect"               # Nocturne's and BW1's kept against the screen's left
+anchor = "left"
 music = "faded-remix.mp3"
 
-[credits.column_scroll]           # the column runs from column_left to the screen's right
+[credits.column_scroll]           # the column runs from column_left to the picture's right
 font = "theme"
 column_left = 414
+column_to_screen_edge = true      # or on, with its strips, to the screen's (Nocturne, BW1)
 top_strip_bottom = 30
 bottom_strip_top = 439
 strip_colour = 0x00
@@ -450,7 +463,8 @@ BW1's (bw1 `CMoon::init` 0x00521c50, `update` 0x00521dd0, `render` 0x00521e40).
 
 ```toml
 [title_backdrop.figure_scene]
-backdrop = "titlescreen_bw"       # over the whole layout
+fit = "keep_aspect"               # the figures and title stand on the backdrop and go with it
+backdrop = "titlescreen_bw"       # over the whole picture
 backdrop_alpha = 0xffff
 models = [{ file = "titletwana.kfm", frame_wrap = 60 }, { file = "titletwanb.kfm", frame_wrap = 45 },
           { file = "titletwanc.kfm", frame_wrap = 75 }]
@@ -491,6 +505,7 @@ ambient, and its 75 frames `blairwitch_00` to `_74`, 640x282 at 0,0, 12 a second
 The cheat code is only cleared.
 ```toml
 [title_backdrop.tiled_scroll]     # BW3's (bw3 CMoon 0x004f94a0, 0x004f9670)
+fit = "keep_aspect"               # the tiles, hand and overlay as one picture
 tile = "bwp3_menu_scroll"         # 640x480, drawn at each column and row
 columns = [320, -320]
 rows = [0, 480]
@@ -551,6 +566,7 @@ picture. BW1 and BW3 draw the indicator only on a 480-line screen (bw1 `CLevelLo
 ```toml
 [startup]
 picture = "fangs"                 # while archives unpack and the game loads
+fit = "keep_aspect"               # the label at label_x, label_y on it
 picture_alpha = 0x8000
 label_x = 320                     # "Loading..." centred here, on the layout
 label_y = 240
