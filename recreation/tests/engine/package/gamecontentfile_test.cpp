@@ -606,6 +606,7 @@ INSTANTIATE_TEST_SUITE_P(
                  "title_backdrop: figure_scene: models 1: frame_wrap: missing"},
         SBadCase{"[title_backdrop.figure_scene]\nbackdrop = 'b'\ncheat_model = 'c'\n"
                  "frame_prefix = 'f'\nmodels = [{ file = 'a.kfm', frame_wrap = 1 }]\n"
+                 "steps_per_second = 1\n"
                  "backdrop_alpha = 0\ncheat_code = 0\nambient = 0\nframe_digits = 1\n"
                  "frame_count = 1\nframe_x = 0\nframe_y = 0\nframe_width = 1\nframe_height = 1\n"
                  "frame_alpha = 0\nprojection = 1\nframe_rate = 1\nframe_wrap = 1\n"
@@ -747,6 +748,7 @@ TEST(GameContentFile, BlairWitchThreesFrontEndReads) {
     ASSERT_TRUE(content->tiled_scroll.has_value());
     EXPECT_EQ(content->tiled_scroll->columns, (std::array<int, 2>{320, -320}));
     EXPECT_EQ(content->tiled_scroll->hand_alpha_start, 0x10000);
+    EXPECT_EQ(content->tiled_scroll->steps_per_second, 60);
     ASSERT_TRUE(content->menu.has_value());
     const SMenuLayout &menu = *content->menu;
     EXPECT_EQ(menu.title.font, "menu");

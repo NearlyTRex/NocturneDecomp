@@ -80,6 +80,13 @@ private:
     void loadFigure();
     void loadTiled();
     void renderTiled();
+    // The steps of a style that steps per_second times a second due in delta_time, the time left
+    // over kept for the next.
+    [[nodiscard]] int takeSteps(float delta_time, int per_second);
+    // tiled_scroll's tiles and hand's alpha moved on by delta_time.
+    void moveTiled(float delta_time);
+    // One of figure_scene's steps: each model's frame.
+    void stepFigureModels();
     void loadFrames(std::string_view prefix, int digits, int count, int width, int height);
     void updateFigure(float delta_time);
     void renderFigure();
@@ -121,10 +128,13 @@ private:
     // alpha, and which way that is going.
     engine::CAlphaBitmap hand_;
     engine::CAlphaBitmap overlay_;
-    std::array<int, 2> tile_columns_{};
-    std::array<int, 2> tile_rows_{};
-    int hand_alpha_ = 0;
+    // Layout pixels and alpha, kept whole and fractional so they move smoothly.
+    std::array<double, 2> tile_columns_{};
+    std::array<double, 2> tile_rows_{};
+    double hand_alpha_ = 0.0;
     bool hand_rising_ = false;
+    // Steps of a second since figure_scene's last step.
+    float step_time_ = 0.0F;
 };
 
 } // namespace nocturne::core

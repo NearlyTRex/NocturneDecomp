@@ -166,6 +166,7 @@ void CMoon::loadFigure() {
     }
     loadFrames(figure.frame_prefix, figure.frame_digits, figure.frame_count, figure.frame_width,
                figure.frame_height);
+    step_time_ = 0.0F;
     is_loaded_ = true;
 }
 
@@ -177,8 +178,10 @@ void CMoon::loadTiled() {
     backdrop_.load(tiled.tile, kFrontEndLayoutWidth, kFrontEndHeight);
     overlay_.load(tiled.overlay, kFrontEndLayoutWidth, kFrontEndHeight);
     hand_.load(tiled.hand, tiled.hand_width, tiled.hand_height);
-    tile_columns_ = tiled.columns;
-    tile_rows_ = tiled.rows;
+    for (std::size_t i = 0; i < tile_columns_.size(); ++i) {
+        tile_columns_[i] = tiled.columns[i];
+        tile_rows_[i] = tiled.rows[i];
+    }
     hand_alpha_ = tiled.hand_alpha_start;
     hand_rising_ = false;
     is_loaded_ = true;
@@ -223,7 +226,7 @@ void CMoon::free() {
 // The phase, the timer and the frames are compared before they are rounded to float, as the x87
 // holds them.
 // nocedit 0x00529d60
-// tiled_scroll steps as it is drawn; its timer only ever kept the glow on.
+// tiled_scroll's timer only ever kept the glow on; it steps here, where BW3 stepped as it drew.
 // bw3 0x004f9600
 void CMoon::update(float delta_time) {
     switch (getStyle()) {
@@ -231,6 +234,7 @@ void CMoon::update(float delta_time) {
         updateFigure(delta_time);
         return;
     case EStyle::Tiled:
+        moveTiled(delta_time);
         return;
     case EStyle::Sky:
         break;
@@ -282,11 +286,64 @@ void CMoon::advanceBat(SBat &bat, const CExtendedFloat &step) {
     }
 }
 
-// The title's timer alone; the original also scrolled the cloud this style never draws.
+int CMoon::takeSteps(float delta_time, int per_second) {
+    step_time_ += delta_time * static_cast<float>(per_second);
+    const int steps = common::truncateToInt(step_time_);
+    step_time_ -= static_cast<float>(steps);
+    return steps;
+}
+
+// BW3's steps, a step's worth each of steps_per_second, moved by as much of a step as the time
+// is. A column past wrap_x_above goes to wrap_x_to with what it went past, as a whole step that
+// reached just past it went there in BW3; the rows the same.
+void CMoon::moveTiled(float delta_time) {
+    const engine::STiledScroll &tiled = getTiled();
+    const double steps = static_cast<double>(delta_time) * tiled.steps_per_second;
+    for (double &column : tile_columns_) {
+        column += steps * tiled.step_x;
+        if (column > tiled.wrap_x_above) {
+            column += tiled.wrap_x_to - (tiled.wrap_x_above + 1);
+        }
+    }
+    for (double &row : tile_rows_) {
+        row += steps * tiled.step_y;
+        if (row < tiled.wrap_y_below) {
+            row += tiled.wrap_y_to - (tiled.wrap_y_below - 1);
+        }
+    }
+    const double alpha_step = steps * tiled.hand_alpha_step;
+    if (hand_rising_) {
+        hand_alpha_ += alpha_step;
+        if (hand_alpha_ > tiled.hand_alpha_high) {
+            hand_alpha_ = tiled.hand_alpha_high;
+            hand_rising_ = false;
+        }
+    } else {
+        hand_alpha_ -= alpha_step;
+        if (hand_alpha_ < tiled.hand_alpha_low) {
+            hand_alpha_ = tiled.hand_alpha_low;
+            hand_rising_ = true;
+        }
+    }
+}
+
+void CMoon::stepFigureModels() {
+    const engine::SFigureScene &figure = getFigure();
+    for (std::size_t i = 0; i < figures_.size(); ++i) {
+        figure_frames_[i] =
+            figure_frames_[i] + 1 > figure.models[i].frame_wrap ? 0 : figure_frames_[i] + 1;
+    }
+}
+
+// The title's timer, and the models' steps, where the originals stepped them as they drew. The
+// original also scrolled the cloud this style never draws.
 // bw2 0x005024a0
 // bw1 0x00521dd0
 void CMoon::updateFigure(float delta_time) {
     const engine::SFigureScene &figure = getFigure();
+    for (int steps = takeSteps(delta_time, figure.steps_per_second); steps > 0; --steps) {
+        stepFigureModels();
+    }
     const CExtendedFloat timer = (CExtendedFloat(delta_time) * CExtendedFloat(figure.frame_rate)) +
                                  CExtendedFloat(animation_timer_);
     animation_timer_ = timer.toFloat();

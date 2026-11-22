@@ -221,7 +221,7 @@ These need a new key or a style value; Nocturne's code has nothing to move.
 | fe-menu showChapterSelect bw1; bw2, bw3 | difficulty picker after the story; START begins the one story | stories.difficulty_picker, stories.direct_start |
 | fe-opt showOptionsScreen bw1 | Puzzle / Combat difficulty toggles | an options item type |
 | fe-opt configureGraphicsOptions bw2, bw3 | particle density slider; crosshair, health/mana numbers | menu.graphic.items entries |
-| fe-opt configureSoundOptions bw1-3 | Hardware mixing line | menu.sound.items entry |
+| fe-opt configureSoundOptions bw1-3 | Hardware mixing line | none: the recreation mixes every voice itself onto a miniaudio device, so the line would switch nothing; HwMixingEnabled is only kept in the ini |
 | fe-opt configureCustomKeys, fe-bind bw1-3 | Point & Click / Mouse modes; the first 11 rows (Fire / Action to Quick turn) hidden in point & click; mouse buttons locked; per-mode defaults with new actions | menu.controls.modes, menu.bindings.rows[].modes, .lock_mouse_buttons, controls.defaults.<mode> |
 | fe-load CLevelLoader::* bw2, bw3; bw1, bw3 | progress bar; icon per picture at (0x4b,0x12a) with alpha ramp, 12 frames; draws only at 480 lines | loading.style = moon \| progress_bar \| icon, loading[].icon, loading.draw_only_at_480 |
 | fe-load CDemonSet::initScene bw2 | clears the screen at scene start | loading.clear_at_scene_init |

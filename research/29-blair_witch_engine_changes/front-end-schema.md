@@ -454,6 +454,7 @@ backdrop = "titlescreen_bw"       # over the whole layout
 backdrop_alpha = 0xffff
 models = [{ file = "titletwana.kfm", frame_wrap = 60 }, { file = "titletwanb.kfm", frame_wrap = 45 },
           { file = "titletwanc.kfm", frame_wrap = 75 }]
+steps_per_second = 60             # the models' frame steps; BW1 and BW2 stepped once a drawing
 cheat_model = "taylor_head.kfm"   # loaded in the first model's place, the rest left unloaded
 cheat_code = 666
 camera_rotation = [0.441335, 0.660356, -0.60758,   # row by row
@@ -493,8 +494,10 @@ The cheat code is only cleared.
 tile = "bwp3_menu_scroll"         # 640x480, drawn at each column and row
 columns = [320, -320]
 rows = [0, 480]
-step_x = 2                        # each drawing, not each second, as BW3 stepped it
+step_x = 2                        # each step
 step_y = -1
+steps_per_second = 60             # BW3 stepped once a drawing, so its speed followed the frame
+                                  # rate; the recreation steps by time
 wrap_x_above = 639                # a column past it goes to wrap_x_to
 wrap_x_to = -640
 wrap_y_below = -479               # a row under it goes to wrap_y_to

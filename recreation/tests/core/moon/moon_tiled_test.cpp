@@ -30,6 +30,8 @@ protected:
     CMoonTiledTest() {
         content_.front_end.title_backdrop = "tiled_scroll";
         content_.tiled_scroll = engine::getShippedGameContent("blairwitch3").tiled_scroll;
+        // A step a second, so each frame below is a whole step.
+        content_.tiled_scroll->steps_per_second = 1;
         std::string tile(std::size_t{kWidth} * kHeight, '\0');
         for (std::size_t i = 0; i < tile.size(); ++i) {
             tile[i] = static_cast<char>(((i % kWidth) % kTileWrap) + 1);
@@ -56,30 +58,66 @@ protected:
         return grey(((x - left) % kTileWrap) + 1);
     }
 
-    void renderTimes(int count) {
+    // A step's time, then a drawing, as the menu's frames are.
+    void drawFrame() {
+        moon_.update(1.0F);
+        moon_.render();
+    }
+
+    void drawFrames(int count) {
         for (int i = 0; i < count; ++i) {
-            moon_.render();
+            drawFrame();
         }
     }
 };
 
-// Each drawing moves the tiles two to the right, so the first tile, from 320, is at 322.
-TEST_F(CMoonTiledTest, TheTilesStepEachDrawing) {
+// Each step moves the tiles two to the right, so the first tile, from 320, is at 322.
+TEST_F(CMoonTiledTest, TheTilesStepEachStep) {
     moon_.init();
-    moon_.render();
+    drawFrame();
     EXPECT_EQ(pixel(330, kOpenRow), tileAt(330, 322));
     EXPECT_EQ(pixel(10, kOpenRow), tileAt(10, -318));
-    moon_.render();
+    drawFrame();
     EXPECT_EQ(pixel(330, kOpenRow), tileAt(330, 324));
 }
 
-// Past 639 a column goes to -640: at 160 a drawing, two drawings take the first from 320 to 640
-// and so to -640, and the second from -320 to 0.
+// However often it is drawn, the scroll goes at steps_per_second: drawing alone doesn't move it,
+// a long frame moves it every step it was due, and part of a step's time part of the way.
+TEST_F(CMoonTiledTest, TheTilesMoveByTimeNotByDrawing) {
+    moon_.init();
+    moon_.render();
+    moon_.render();
+    EXPECT_EQ(pixel(330, kOpenRow), tileAt(330, 320));
+    moon_.update(3.0F);
+    moon_.render();
+    EXPECT_EQ(pixel(330, kOpenRow), tileAt(330, 326));
+    moon_.update(0.5F);
+    moon_.render();
+    EXPECT_EQ(pixel(330, kOpenRow), tileAt(330, 327));
+    moon_.update(0.5F);
+    moon_.render();
+    EXPECT_EQ(pixel(330, kOpenRow), tileAt(330, 328));
+}
+
+// Going past the right by part of a step, a column comes back from the left by as much, so the
+// two tiles stay edge to edge.
+TEST_F(CMoonTiledTest, AColumnPastTheRightKeepsWhatItWentPast) {
+    content_.tiled_scroll->step_y = 0;
+    moon_.init();
+    moon_.update(160.5F);
+    moon_.render();
+    // The first from 320 is at 641, so -639; the second from -320 at 1.
+    EXPECT_EQ(pixel(5, kOpenRow), tileAt(5, 1));
+    EXPECT_EQ(pixel(0, kOpenRow), tileAt(0, -639));
+}
+
+// Past 639 a column goes to -640: at 160 a step, two steps take the first from 320 to 640 and
+// so to -640, and the second from -320 to 0.
 TEST_F(CMoonTiledTest, AColumnPastTheRightGoesBackToTheLeft) {
     content_.tiled_scroll->step_x = 160;
     content_.tiled_scroll->step_y = 0;
     moon_.init();
-    renderTimes(2);
+    drawFrames(2);
     EXPECT_EQ(pixel(5, kOpenRow), tileAt(5, 0));
     EXPECT_EQ(pixel(600, kOpenRow + 100), tileAt(600, 0));
 }
@@ -90,7 +128,7 @@ TEST_F(CMoonTiledTest, TheOverlayIsOnTop) {
     EXPECT_EQ(pixel(1, 1), grey(kOverlayGrey));
 }
 
-// From opaque it fades a step a drawing, holds at its lowest once past it, and comes back. With
+// From opaque it fades a step at a time, holds at its lowest once past it, and comes back. With
 // the tiles held, at 20000 a step it is 45536, 25536, 5536, then 5000, 25000 and 45000; the hand
 // is brighter than the tile under it, so the pixel is brighter the more of it there is.
 TEST_F(CMoonTiledTest, TheHandFadesAndComesBack) {
@@ -100,7 +138,7 @@ TEST_F(CMoonTiledTest, TheHandFadesAndComesBack) {
     moon_.init();
     std::vector<std::uint32_t> blue;
     for (int i = 0; i < 6; ++i) {
-        moon_.render();
+        drawFrame();
         blue.push_back(pixel(100, 100) & 0xffU);
     }
     EXPECT_GT(blue[0], blue[1]);
@@ -119,9 +157,9 @@ TEST_F(CMoonTiledTest, TheTitleIsAlwaysInItsFirstHalf) {
 
 TEST_F(CMoonTiledTest, InitLoadsOnlyTheFirstTime) {
     moon_.init();
-    moon_.render();
+    drawFrame();
     moon_.init();
-    moon_.render();
+    drawFrame();
     EXPECT_EQ(pixel(330, kOpenRow), tileAt(330, 324));
 }
 

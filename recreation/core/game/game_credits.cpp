@@ -38,14 +38,34 @@ constexpr int kImageBottom = kImageHeight - 1;
 // The character whose height spaces the lines.
 constexpr int kLineHeightChar = 'X';
 
-// The credits with their first line at layout row `top`, those on the image and above its foot,
-// centred between the column's left and the screen's `right`, as large as the layout shows them.
-void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines, int top,
-                 const SFrontEndLayout &layout, int right,
+// Where the scrolling lines are. Which are drawn, and how faded, goes by their layout rows, as
+// the originals'; where on the screen by the first line's screen row, rounded once from the
+// scroll, and each line's fixed distance below it, so all the lines move together a screen
+// pixel at a time. Rounding each line's row on its own moved some a pixel more than others.
+struct SScrollRows {
+    // The first line's layout row.
+    int top = 0;
+    int screen_top = 0;
+
+    SScrollRows(float scroll_top, const SFrontEndLayout &layout)
+        : top(static_cast<int>(std::lround(scroll_top))),
+          screen_top(layout.top + static_cast<int>(std::lround(scroll_top * layout.scale))) {}
+
+    // The screen row of the line at layout row y.
+    [[nodiscard]] int getScreenY(int y, const SFrontEndLayout &layout) const {
+        return screen_top +
+               static_cast<int>(std::lround(static_cast<float>(y - top) * layout.scale));
+    }
+};
+
+// The credits from `rows`, those on the image and above its foot, centred between the column's
+// left and the screen's `right`, as large as the layout shows them.
+void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines,
+                 const SScrollRows &rows, const SFrontEndLayout &layout, int right,
                  const engine::SCreditsColumnScroll &scroll) {
     const int line_height = font.getCharHeight(kLineHeightChar);
     const int left = layout.getX(scroll.column_left);
-    int y = top;
+    int y = rows.top;
     for (std::string_view line : lines) {
         int color = scroll.text_colour;
         if (line.starts_with(scroll.marker)) {
@@ -56,20 +76,21 @@ void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines
         }
         if (y >= 0 && y < kImageBottom - line_height) {
             const int width = font.getTextWidthScaled(line, layout.scale);
-            font.drawTextScaled(line, ((left + right) / 2) - (width / 2), layout.getY(y), color,
-                                scroll.shadow_colour, layout.scale);
+            font.drawTextScaled(line, ((left + right) / 2) - (width / 2),
+                                rows.getScreenY(y, layout), color, scroll.shadow_colour,
+                                layout.scale);
         }
         y += line_height;
     }
 }
 
-// The credits with their first line at layout row `top`, each centred across the layout and as
-// opaque as it is near the fade's centre; only those above the image's foot are drawn.
-void drawFadeCredits(engine::CBitFont &font, std::span<const std::string_view> lines, int top,
-                     const SFrontEndLayout &layout, engine::C3d &three_d,
+// The credits from `rows`, each centred across the layout and as opaque as it is near the fade's
+// centre; only those above the image's foot are drawn.
+void drawFadeCredits(engine::CBitFont &font, std::span<const std::string_view> lines,
+                     const SScrollRows &rows, const SFrontEndLayout &layout, engine::C3d &three_d,
                      const engine::SCreditsFadeLoop &fade) {
     const int line_height = font.getCharHeight(kLineHeightChar);
-    int y = top;
+    int y = rows.top;
     for (std::string_view line : lines) {
         int color = fade.text_colour;
         if (line.starts_with(fade.marker)) {
@@ -84,28 +105,31 @@ void drawFadeCredits(engine::CBitFont &font, std::span<const std::string_view> l
                 0, static_cast<int>(std::lround(
                        (1.0 - (distance / static_cast<double>(fade.fade_reach))) * kFullAlpha))));
             const int width = font.getTextWidthScaled(line, layout.scale);
-            font.drawTextScaled(line, layout.getX(kImageWidth / 2) - (width / 2), layout.getY(y),
-                                color, fade.shadow_colour, layout.scale);
+            font.drawTextScaled(line, layout.getX(kImageWidth / 2) - (width / 2),
+                                rows.getScreenY(y, layout), color, fade.shadow_colour,
+                                layout.scale);
         }
         y += line_height;
     }
     three_d.setRenderAlpha(kFullAlpha);
 }
 
-// BW3's, with their first line at layout row `top`: a line marked so in two columns, split where
+// BW3's, from `rows`: a line marked so in two columns, split where
 // the second's mark is (one without it, or with nothing before it, drawing nothing), else
 // centred between the bounds. True when any was on the screen.
-bool drawTwoColumnCredits(engine::CBitFont &font, std::span<const std::string_view> lines, int top,
-                          const SFrontEndLayout &layout, const engine::SCreditsTwoColumn &two) {
+bool drawTwoColumnCredits(engine::CBitFont &font, std::span<const std::string_view> lines,
+                          const SScrollRows &rows, const SFrontEndLayout &layout,
+                          const engine::SCreditsTwoColumn &two) {
     const int line_height = font.getCharHeight(kLineHeightChar);
     const std::string heading{two.marker, two.heading};
     const std::string left_mark{two.marker, two.left_column};
     const std::string right_mark{two.marker, two.right_column};
     const auto draw = [&](std::string_view text, int x, int y, int color) {
-        font.drawTextScaled(text, x, layout.getY(y), color, two.shadow_colour, layout.scale);
+        font.drawTextScaled(text, x, rows.getScreenY(y, layout), color, two.shadow_colour,
+                            layout.scale);
     };
     bool drawn = false;
-    int y = top;
+    int y = rows.top;
     for (std::string_view line : lines) {
         int color = two.text_colour;
         if (line.starts_with(heading)) {
@@ -216,9 +240,9 @@ void CGame::rollCredits() {
     // Whether the last drawing had a line on the screen.
     bool any_drawn = false;
     while (true) {
-        const auto top = static_cast<int>(std::lround(scroll_top));
-        // Redrawn only once the scroll reaches another row.
-        if (top != drawn_top) {
+        const SScrollRows top(scroll_top, layout);
+        // Redrawn only once the scroll reaches another screen row.
+        if (top.screen_top != drawn_top) {
             owners_.special.clearScreen();
             if (columns) {
                 const engine::SCreditsTwoColumn &two = *credits->two_column;
@@ -254,7 +278,7 @@ void CGame::rollCredits() {
                 owners_.two_d.fillRectColor(column_left, layout.getY(scroll.bottom_strip_top),
                                             right, bottom, scroll.strip_colour);
             }
-            drawn_top = top;
+            drawn_top = top.screen_top;
         }
         owners_.screen.swapBuffers();
         if (owners_.menu_input.takeMenuAction(engine::EMenuAction::Cancel)) {

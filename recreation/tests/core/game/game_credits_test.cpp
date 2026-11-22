@@ -39,6 +39,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <functional>
+#include <set>
 #include <span>
 #include <string>
 #include <vector>
@@ -64,9 +65,9 @@ constexpr int kBandBottom = 438;
 constexpr int kQuarterSecond = 18 * 0x4000;
 constexpr int kRowsPerFrame = 8;
 
-// The credits on a screen 480 lines tall, over a one-colour stats image, the menus' block fonts
-// drawing them and the clock stepping a quarter second each time it is read.
-template <int ScreenWidth>
+// The credits on a screen 480 lines tall unless said, over a one-colour stats image, the menus'
+// block fonts drawing them and the clock stepping a quarter second each time it is read.
+template <int ScreenWidth, int ScreenHeight = kHeight>
 class CCreditsFixture : public sound::CSndMainFixture {
 protected:
     CCreditsFixture() {
@@ -76,7 +77,7 @@ protected:
         givenFile("msglist.txt", "; version\n0\n; use OS fonts\n0\n; font\n\"Arial\"\n");
         messages_.readMessageFile("msglist.txt");
         fonts_.initFonts();
-        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, kHeight - 1);
+        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, ScreenHeight - 1);
         givenFile("art\\stats.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
         givenFile("art\\stats.act", engine::makePalette({0, 0, 0, 0x11, 0x22, 0x33}));
         ON_CALL(raw_input_, getKeyboardState()).WillByDefault([this] {
@@ -113,7 +114,7 @@ protected:
 
     // The first row of the column where the predicate holds for a pixel, or -1.
     [[nodiscard]] int firstRowWhere(const std::function<bool(std::uint32_t)> &is_wanted) const {
-        for (int y = 0; y < kHeight; ++y) {
+        for (int y = 0; y < ScreenHeight; ++y) {
             for (int x = kColumnLeft; x < ScreenWidth; ++x) {
                 if (is_wanted(screen_.pixel(x, y))) {
                     return y;
@@ -151,7 +152,7 @@ protected:
     }
 
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
-    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, ScreenHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
@@ -208,6 +209,9 @@ using CCreditsTest = CCreditsFixture<kWidth>;
 // The front end at 16:9.
 constexpr int kWideWidth = 848;
 using CWideCreditsTest = CCreditsFixture<kWideWidth>;
+constexpr int kFullHdWidth = 1440;
+constexpr int kFullHdHeight = 1080;
+using CFullHdCreditsTest = CCreditsFixture<kFullHdWidth, kFullHdHeight>;
 
 // BW2's credits over the fixture's image.
 class CFadeCreditsTest : public CCreditsTest {
@@ -412,6 +416,44 @@ TEST_F(CCreditsTest, TheCreditsRiseThirtyTwoRowsASecond) {
     }
     EXPECT_EQ(rows, expected);
     EXPECT_EQ(screen_.swaps, kFrames);
+}
+
+// At 1080 lines the layout is 2.25 times as tall, so a row of scroll is two screen rows or three.
+// Each line still moves with the one above it: the gap between them never changes.
+TEST_F(CFullHdCreditsTest, LinesScrollTogetherAtAScaleBetweenWholePixels) {
+    givenCredits("XX\nXX\nend\n");
+    // On the screen from the start, a row of scroll a frame.
+    content_.credits->column_scroll->start_y = 200;
+    step_ = kQuarterSecond / kRowsPerFrame;
+    constexpr int kFrames = 20;
+    // The column, at the screen's scale.
+    constexpr int kFullHdColumnLeft = kColumnLeft * kFullHdHeight / kHeight;
+    std::set<int> gaps;
+    int samples = 0;
+    on_tick_ = [&](int tick) {
+        std::vector<int> starts;
+        bool in_line = false;
+        for (int y = 0; y < kFullHdHeight; ++y) {
+            bool lit = false;
+            for (int x = kFullHdColumnLeft; x < kFullHdWidth && !lit; ++x) {
+                lit = screen_.pixel(x, y) == kTextPixel;
+            }
+            if (lit && !in_line) {
+                starts.push_back(y);
+            }
+            in_line = lit;
+        }
+        if (starts.size() == 2) {
+            gaps.insert(starts[1] - starts[0]);
+            ++samples;
+        }
+        if (tick == kFrames) {
+            press(EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    game_.rollCredits();
+    EXPECT_GT(samples, 10);
+    EXPECT_EQ(gaps.size(), 1U);
 }
 
 // Each line a line below the last; nothing past "end" shows.

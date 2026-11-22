@@ -154,8 +154,8 @@ bool CMoon::beginLayoutScene() {
 
 // The original also processed the sound queue here, which the audio device pulls on its own
 // thread, and cleared only the screen; the depth is cleared as the sky's is. The lighting it
-// found is put back. Each model steps a frame per drawing, not per second. Without a backdrop,
-// as BW2's, the frames are over the cleared screen.
+// found is put back. The original stepped each model a frame per drawing; update steps them by
+// time. Without a backdrop, as BW2's, the frames are over the cleared screen.
 // deferred: switching the set to quick lighting for the models and back again, with
 //   setRenderingMode
 // bw2 0x00502510
@@ -200,10 +200,6 @@ void CMoon::renderFigure() {
     if (placed) {
         endWideScene();
     }
-    for (std::size_t i = 0; i < figures_.size(); ++i) {
-        figure_frames_[i] =
-            figure_frames_[i] + 1 > figure.models[i].frame_wrap ? 0 : figure_frames_[i] + 1;
-    }
     owners_.three_d.setBlendMode(1);
     // The x87 rounds the timer to the nearest frame, an even one on a tie; past the frames, the
     // first is shown.
@@ -223,47 +219,30 @@ void CMoon::renderFigure() {
     set.setFlatColor(flat_color.r, flat_color.g, flat_color.b);
 }
 
-// Each drawing steps the tiles and the hand's alpha, then draws the four tiles, the hand and the
-// overlay. The original also set BW1's camera and lit the set as it, with nothing to draw in 3D,
-// and left the set lit so.
+// The four tiles, the hand and the overlay. BW3 stepped the tiles and the hand's alpha here,
+// once a drawing; update steps them by time. The original also set BW1's camera and lit the set
+// as it, with nothing to draw in 3D, and left the set lit so.
 // bw3 0x004f9670
 void CMoon::renderTiled() {
     const engine::STiledScroll &tiled = getTiled();
     owners_.special.clearScreen();
-    for (int &column : tile_columns_) {
-        column += tiled.step_x;
-        if (column > tiled.wrap_x_above) {
-            column = tiled.wrap_x_to;
-        }
-    }
-    for (int &row : tile_rows_) {
-        row += tiled.step_y;
-        if (row < tiled.wrap_y_below) {
-            row = tiled.wrap_y_to;
-        }
-    }
-    if (hand_rising_) {
-        hand_alpha_ += tiled.hand_alpha_step;
-        if (hand_alpha_ > tiled.hand_alpha_high) {
-            hand_alpha_ = tiled.hand_alpha_high;
-            hand_rising_ = false;
-        }
-    } else {
-        hand_alpha_ -= tiled.hand_alpha_step;
-        if (hand_alpha_ < tiled.hand_alpha_low) {
-            hand_alpha_ = tiled.hand_alpha_low;
-            hand_rising_ = true;
-        }
-    }
     const SFrontEndLayout layout =
         getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight());
     const platform::EUpscaler upscaler = owners_.display.getUpscaler();
-    for (const int row : tile_rows_) {
-        for (const int column : tile_columns_) {
-            displayInLayout(
-                backdrop_, layout,
-                {.x = column, .y = row, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
-                kFullAlpha, upscaler);
+    // The first tile's corner is rounded to the screen once and the others kept their distance
+    // from it, so the tiles move together a screen pixel at a time and stay edge to edge.
+    const auto toScreen = [&layout](double length) {
+        return static_cast<int>(std::lround(length * static_cast<double>(layout.scale)));
+    };
+    const int left = layout.left + toScreen(tile_columns_[0]);
+    const int top = layout.top + toScreen(tile_rows_[0]);
+    const engine::EBitmapFilter filter = getFrontEndArtFilter(upscaler, layout.scale);
+    for (const double row : tile_rows_) {
+        for (const double column : tile_columns_) {
+            backdrop_.displayScaled(left + toScreen(column - tile_columns_[0]),
+                                    top + toScreen(row - tile_rows_[0]),
+                                    layout.getLength(kFrontEndLayoutWidth),
+                                    layout.getLength(kFrontEndHeight), kFullAlpha, filter);
         }
     }
     displayInLayout(hand_, layout,
@@ -271,7 +250,7 @@ void CMoon::renderTiled() {
                      .y = tiled.hand_y,
                      .width = tiled.hand_width,
                      .height = tiled.hand_height},
-                    hand_alpha_, upscaler);
+                    static_cast<int>(std::lround(hand_alpha_)), upscaler);
     displayInLayout(overlay_, layout,
                     {.x = 0, .y = 0, .width = kFrontEndLayoutWidth, .height = kFrontEndHeight},
                     kFullAlpha, upscaler);

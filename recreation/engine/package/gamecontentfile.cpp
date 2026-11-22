@@ -1278,11 +1278,12 @@ TomlResult<std::vector<SFigureModel>> readFigureModels(const toml::table &table,
     return models;
 }
 
-constexpr std::array<std::string_view, 21> kFigureSceneKeys{
-    "backdrop",      "backdrop_alpha", "models",    "cheat_model", "cheat_code",  "camera_rotation",
-    "camera_origin", "projection",     "light",     "flat",        "ambient",     "frame_prefix",
-    "frame_digits",  "frame_count",    "frame_x",   "frame_y",     "frame_width", "frame_height",
-    "frame_alpha",   "frame_rate",     "frame_wrap"};
+constexpr std::array<std::string_view, 22> kFigureSceneKeys{
+    "backdrop",   "backdrop_alpha",  "models",        "steps_per_second", "cheat_model",
+    "cheat_code", "camera_rotation", "camera_origin", "projection",       "light",
+    "flat",       "ambient",         "frame_prefix",  "frame_digits",     "frame_count",
+    "frame_x",    "frame_y",         "frame_width",   "frame_height",     "frame_alpha",
+    "frame_rate", "frame_wrap"};
 
 TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
     constexpr std::string_view kWhere = "title_backdrop: figure_scene: ";
@@ -1321,7 +1322,8 @@ TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
     }
     if (TomlResult<void> read =
             readIntegers(table, kWhere,
-                         {{"cheat_code", &figure.cheat_code, 0, kMaxCheatCode},
+                         {{"steps_per_second", &figure.steps_per_second, 1, kMaxFramesPerSecond},
+                          {"cheat_code", &figure.cheat_code, 0, kMaxCheatCode},
                           {"ambient", &figure.ambient, 0, kMaxLight},
                           {"frame_digits", &figure.frame_digits, 1, kMaxFrameDigits},
                           {"frame_count", &figure.frame_count, 1, kMaxFrames},
@@ -1368,12 +1370,27 @@ TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
 // [title_backdrop] holds a table for each style's values.
 TomlResult<STiledScroll> readTiledScroll(const toml::table &table) {
     constexpr std::string_view kWhere = "title_backdrop: tiled_scroll: ";
-    if (TomlResult<void> keys =
-            rejectUnknownKeys(table, kWhere,
-                              {"tile", "columns", "rows", "step_x", "step_y", "wrap_x_above",
-                               "wrap_x_to", "wrap_y_below", "wrap_y_to", "hand", "hand_x", "hand_y",
-                               "hand_width", "hand_height", "hand_alpha_start", "hand_alpha_low",
-                               "hand_alpha_high", "hand_alpha_step", "overlay"});
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere,
+                                                  {"tile",
+                                                   "columns",
+                                                   "rows",
+                                                   "step_x",
+                                                   "step_y",
+                                                   "steps_per_second",
+                                                   "wrap_x_above",
+                                                   "wrap_x_to",
+                                                   "wrap_y_below",
+                                                   "wrap_y_to",
+                                                   "hand",
+                                                   "hand_x",
+                                                   "hand_y",
+                                                   "hand_width",
+                                                   "hand_height",
+                                                   "hand_alpha_start",
+                                                   "hand_alpha_low",
+                                                   "hand_alpha_high",
+                                                   "hand_alpha_step",
+                                                   "overlay"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -1401,6 +1418,7 @@ TomlResult<STiledScroll> readTiledScroll(const toml::table &table) {
             table, kWhere,
             {{"step_x", &scroll.step_x, -kMaxPictureX, kMaxPictureX},
              {"step_y", &scroll.step_y, -kMaxPictureY, kMaxPictureY},
+             {"steps_per_second", &scroll.steps_per_second, 1, kMaxFramesPerSecond},
              {"wrap_x_above", &scroll.wrap_x_above, -kMaxPictureX - 1, kMaxPictureX + 1},
              {"wrap_x_to", &scroll.wrap_x_to, -kMaxPictureX - 1, kMaxPictureX + 1},
              {"wrap_y_below", &scroll.wrap_y_below, -kMaxPictureY - 1, kMaxPictureY + 1},
@@ -2559,15 +2577,16 @@ std::string formatNumbers(const std::array<T, Count> &values) {
 std::string formatTiledScroll(const STiledScroll &scroll) {
     return std::format(
         "\n[title_backdrop.tiled_scroll]\ntile = {}\ncolumns = [{}, {}]\nrows = [{}, {}]\n"
-        "step_x = {}\nstep_y = {}\nwrap_x_above = {}\nwrap_x_to = {}\nwrap_y_below = {}\n"
-        "wrap_y_to = {}\nhand = {}\nhand_x = {}\nhand_y = {}\nhand_width = {}\nhand_height = {}\n"
-        "hand_alpha_start = 0x{:x}\nhand_alpha_low = {}\nhand_alpha_high = 0x{:x}\n"
-        "hand_alpha_step = {}\noverlay = {}\n",
+        "step_x = {}\nstep_y = {}\nsteps_per_second = {}\nwrap_x_above = {}\nwrap_x_to = {}\n"
+        "wrap_y_below = {}\nwrap_y_to = {}\nhand = {}\nhand_x = {}\nhand_y = {}\nhand_width = {}\n"
+        "hand_height = {}\nhand_alpha_start = 0x{:x}\nhand_alpha_low = {}\n"
+        "hand_alpha_high = 0x{:x}\nhand_alpha_step = {}\noverlay = {}\n",
         quoteToml(scroll.tile), scroll.columns[0], scroll.columns[1], scroll.rows[0],
-        scroll.rows[1], scroll.step_x, scroll.step_y, scroll.wrap_x_above, scroll.wrap_x_to,
-        scroll.wrap_y_below, scroll.wrap_y_to, quoteToml(scroll.hand), scroll.hand_x, scroll.hand_y,
-        scroll.hand_width, scroll.hand_height, scroll.hand_alpha_start, scroll.hand_alpha_low,
-        scroll.hand_alpha_high, scroll.hand_alpha_step, quoteToml(scroll.overlay));
+        scroll.rows[1], scroll.step_x, scroll.step_y, scroll.steps_per_second, scroll.wrap_x_above,
+        scroll.wrap_x_to, scroll.wrap_y_below, scroll.wrap_y_to, quoteToml(scroll.hand),
+        scroll.hand_x, scroll.hand_y, scroll.hand_width, scroll.hand_height,
+        scroll.hand_alpha_start, scroll.hand_alpha_low, scroll.hand_alpha_high,
+        scroll.hand_alpha_step, quoteToml(scroll.overlay));
 }
 
 std::string formatFigureScene(const SFigureScene &figure) {
@@ -2584,6 +2603,7 @@ std::string formatFigureScene(const SFigureScene &figure) {
     if (!figure.models.empty()) {
         text += std::format("models = [{}]\n", models);
     }
+    text += std::format("steps_per_second = {}\n", figure.steps_per_second);
     if (!figure.cheat_model.empty()) {
         text += std::format("cheat_model = {}\n", quoteToml(figure.cheat_model));
     }

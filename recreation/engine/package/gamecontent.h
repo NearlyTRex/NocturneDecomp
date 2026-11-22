@@ -288,8 +288,8 @@ struct SSkyScene {
     bool operator==(const SSkyScene &) const = default;
 };
 
-// A figure_scene model: a frame further each frame the backdrop is drawn, from frame 1, back to
-// 0 once past frame_wrap.
+// A figure_scene model: a frame further each of the scene's steps, from frame 1, back to 0 once
+// past frame_wrap.
 struct SFigureModel {
     std::string file;
     int frame_wrap = 0;
@@ -297,16 +297,19 @@ struct SFigureModel {
     bool operator==(const SFigureModel &) const = default;
 };
 
-// The tiled_scroll title backdrop, BW3's: one picture tiled two by two, the tiles stepping each
-// drawing and wrapping, a picture over them whose alpha swings between two levels, and an
-// overlay on top. Positions are on the layout.
+// The tiled_scroll title backdrop, BW3's: one picture tiled two by two, the tiles stepping and
+// wrapping, a picture over them whose alpha swings between two levels, and an overlay on top.
+// Positions are on the layout.
 struct STiledScroll {
     std::string tile;
-    // The two tiles' starting columns and rows, and the step each drawing.
+    // The two tiles' starting columns and rows, and BW3's step, which they move steps_per_second
+    // times a second, smoothly in between. BW3 stepped once a drawing, so its speed followed the
+    // frame rate. The hand's alpha step goes the same.
     std::array<int, 2> columns{};
     std::array<int, 2> rows{};
     int step_x = 0;
     int step_y = 0;
+    int steps_per_second = 0;
     // A column past wrap_x_above goes to wrap_x_to; a row under wrap_y_below to wrap_y_to.
     int wrap_x_above = 0;
     int wrap_x_to = 0;
@@ -335,6 +338,9 @@ struct SFigureScene {
     std::string backdrop;
     int backdrop_alpha = 0;
     std::vector<SFigureModel> models;
+    // The models' frame steps a second. The originals stepped once a drawing, so their speed
+    // followed the frame rate.
+    int steps_per_second = 0;
     // The head-of-horror cheat code loads this in the first model's place, and none of the rest.
     std::string cheat_model;
     int cheat_code = 0;
