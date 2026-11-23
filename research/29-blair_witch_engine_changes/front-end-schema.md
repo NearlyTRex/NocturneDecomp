@@ -222,8 +222,12 @@ engine lacks is fatal at use, as is a hotkey in a mode's defaults or a row. The 
 defaults stay in code, the same in every game and mode. Actions are one engine-wide list, every
 game's together.
 
-Not built: BW's actions (`sps`, `compass`, `journal`, `voodoo_doll`, `drop`, `action`, ...), the
-`point_and_click` (BW1, BW3) and `mouse_only` (BW2) modes, a row shown only in some modes (BW1's
+BW's own actions are in the list: `compass`, `field_notes` (the Journal row), `quick_turn` and
+`sps` (BW1), `drop` (BW2), `action`, apart from Fire, and `voodoo_doll` (BW3). Each BW game lists
+their rows in its order and gives their keys, which the originals kept on the keyboard in every
+mode (BW3's Action is a face button on the pad). They are bound and kept in the INI; what they
+do comes with their games' code. Not built: the `point_and_click` (BW1, BW3) and `mouse_only`
+(BW2) modes, a row shown only in some modes (BW1's
 point & click leaves out its first 11 rows, Fire / Action to Quick turn), the point & click
 mouse-button lock. The bindings lists' buttons are the `bindings_select` and `bindings_close`
 labels, empty for none (Nocturne's), "Select" and "Close" in BW1-3. BW1's joystick defaults

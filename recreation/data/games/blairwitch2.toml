@@ -216,6 +216,7 @@ prev_item = [0x1b]  # DIK_RBRACKET
 item_desc = [0x19]  # DIK_P
 next_ammo = [0x29]  # DIK_GRAVE
 map = []
+drop = [0x12]  # DIK_E
 
 [[controls.mode]]
 id = "keyboard_mouse"
@@ -250,6 +251,7 @@ prev_item = [0x1b]  # DIK_RBRACKET
 item_desc = [0x19]  # DIK_P
 next_ammo = [0x29]  # DIK_GRAVE
 map = []
+drop = [0x12]  # DIK_E
 
 # The enhanced game's pad, as Nocturne's; BW2's own joystick buttons are codes no pad sends
 [[controls.mode]]
@@ -285,8 +287,10 @@ prev_item = [0x16d]  # PAD_DPAD_LEFT
 item_desc = [0x165]  # PAD_GUIDE
 next_ammo = [0x16b]  # PAD_DPAD_UP
 map = [0x164]  # PAD_BACK
+# BW2 kept its keyboard key for this in every mode
+drop = [0x12]  # DIK_E
 
-# BW2's rows, in its order, but for Drop item or weapon, its own action
+# BW2's rows, in its order
 [[controls.binding]]
 action = "walk"
 label = "Forward"
@@ -378,6 +382,10 @@ label = "Item description"
 [[controls.binding]]
 action = "next_ammo"
 label = "Next ammo"
+
+[[controls.binding]]
+action = "drop"
+label = "Drop item or weapon"
 
 # Nocturne's six fonts, unchanged; BW2's seventh, dochand.raw, nothing draws yet
 [[font]]

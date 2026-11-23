@@ -52,6 +52,28 @@ TEST_F(CGameRestoreDefaultControls, TheMapHasItsOwnKey) {
                 ElementsAre(EInputCodeType::DIK_M));
 }
 
+// BW's own actions take the keys its games gave them; Nocturne leaves them unbound.
+TEST_F(CGameRestoreDefaultControls, BlairWitchsOwnActionsTakeItsKeys) {
+    EXPECT_THAT(codesOf(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)
+                            .controls.getBindings(EGameAction::Compass)),
+                IsEmpty());
+    parts_.getContent().controls = engine::getShippedGameContent("blairwitch1").controls;
+    const CGame &bw1 = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
+    EXPECT_THAT(codesOf(bw1.controls.getBindings(EGameAction::Compass)),
+                ElementsAre(EInputCodeType::DIK_C));
+    EXPECT_THAT(codesOf(bw1.controls.getBindings(EGameAction::Sps)),
+                ElementsAre(EInputCodeType::DIK_S));
+    parts_.getContent().controls = engine::getShippedGameContent("blairwitch3").controls;
+    EXPECT_THAT(
+        codesOf(
+            gameWith(EControlMode::CONTROL_MODE_MOUSE).controls.getBindings(EGameAction::Action)),
+        ElementsAre(EInputCodeType::DIM_RBUTTON));
+    EXPECT_THAT(
+        codesOf(
+            gameWith(EControlMode::CONTROL_MODE_GAMEPAD).controls.getBindings(EGameAction::Jump)),
+        IsEmpty());
+}
+
 TEST_F(CGameRestoreDefaultControls, MouseModeMovesOntoWasdAndTheMouse) {
     const CGame &game = gameWith(EControlMode::CONTROL_MODE_MOUSE);
     EXPECT_THAT(codesOf(game.controls.getBindings(EGameAction::Walk)),
@@ -207,10 +229,10 @@ TEST_F(CGameRestoreDefaultControls, AModeThisBuildDoesntReadIsFatal) {
 
 TEST_F(CGameRestoreDefaultControls, ADefaultForAnUnknownActionOrAHotkeyIsFatal) {
     engine::SControlMode &keyboard = modeOf(parts_.getContent(), "keyboard");
-    keyboard.defaults = {{.action = "voodoo_doll", .codes = {0x2f}}};
+    keyboard.defaults = {{.action = "levitate", .codes = {0x2f}}};
     EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
                 ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
-                    "The keyboard control mode's defaults: voodoo_doll isn't an action")));
+                    "The keyboard control mode's defaults: levitate isn't an action")));
     keyboard.defaults = {{.action = "mute", .codes = {0x3f}}};
     EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
                 ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
@@ -219,10 +241,11 @@ TEST_F(CGameRestoreDefaultControls, ADefaultForAnUnknownActionOrAHotkeyIsFatal) 
 }
 
 TEST_F(CGameRestoreDefaultControls, ABindingsRowForAnUnknownActionIsFatal) {
-    parts_.getContent().controls.value().bindings.push_back({.action = "sps", .label = "SPS"});
+    parts_.getContent().controls.value().bindings.push_back(
+        {.action = "levitate", .label = "Levitate"});
     EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
                 ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("A bindings page row: sps isn't an action")));
+                    ::testing::StrEq("A bindings page row: levitate isn't an action")));
 }
 
 } // namespace

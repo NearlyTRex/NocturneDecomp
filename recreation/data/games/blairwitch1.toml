@@ -226,6 +226,10 @@ prev_item = [0x1b]  # DIK_RBRACKET
 item_desc = [0x19]  # DIK_P
 next_ammo = [0x29]  # DIK_GRAVE
 map = [0xf]  # DIK_TAB
+compass = [0x2e]  # DIK_C
+field_notes = [0x24]  # DIK_J
+quick_turn = [0x14f]  # DIK_END
+sps = [0x1f]  # DIK_S
 
 [[controls.mode]]
 id = "keyboard_mouse"
@@ -260,6 +264,10 @@ prev_item = [0x1b]  # DIK_RBRACKET
 item_desc = [0x19]  # DIK_P
 next_ammo = [0x29]  # DIK_GRAVE
 map = [0xf]  # DIK_TAB
+compass = [0x2e]  # DIK_C
+field_notes = [0x24]  # DIK_J
+quick_turn = [0x14f]  # DIK_END
+sps = [0x1f]  # DIK_S
 
 # The enhanced game's pad, as Nocturne's; BW1's own joystick buttons are codes no pad sends
 [[controls.mode]]
@@ -295,6 +303,11 @@ prev_item = [0x16d]  # PAD_DPAD_LEFT
 item_desc = [0x165]  # PAD_GUIDE
 next_ammo = [0x16b]  # PAD_DPAD_UP
 map = [0x164]  # PAD_BACK
+# BW1 kept its keyboard keys for these in every mode
+compass = [0x2e]  # DIK_C
+field_notes = [0x24]  # DIK_J
+quick_turn = [0x14f]  # DIK_END
+sps = [0x1f]  # DIK_S
 
 # BW1's rows, in its order; Jump and weapon4 have defaults and no row
 [[controls.binding]]
@@ -338,6 +351,10 @@ action = "point_down"
 label = "Point down"
 
 [[controls.binding]]
+action = "quick_turn"
+label = "Quick turn"
+
+[[controls.binding]]
 action = "run"
 label = "Run"
 
@@ -354,8 +371,20 @@ action = "infrared"
 label = "Night Vision"
 
 [[controls.binding]]
+action = "field_notes"
+label = "Journal"
+
+[[controls.binding]]
 action = "map"
 label = "Map"
+
+[[controls.binding]]
+action = "compass"
+label = "Compass"
+
+[[controls.binding]]
+action = "sps"
+label = "SPS"
 
 [[controls.binding]]
 action = "draw"

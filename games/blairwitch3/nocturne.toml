@@ -264,8 +264,10 @@ id = 'keyboard'
 label = 'Control : Keyboard'
 manual_aim = false
 [controls.mode.defaults]
+'action' = [0x138]
 'backup' = [0x150]
 'draw' = [0x20]
+'field_notes' = [0x24]
 'fire' = [0x39]
 'infrared' = [0x31]
 'item_desc' = [0x19]
@@ -280,12 +282,14 @@ manual_aim = false
 'point_up' = [0x10]
 'prev_item' = [0x1b]
 'prev_weapon' = [0xc]
+'quick_turn' = [0x14f]
 'right' = [0x14d]
 'run' = [0x2a]
 'strafe' = [0x38]
 'strafe_left' = [0x2c]
 'strafe_right' = [0x2d]
 'use_item' = [0x1c]
+'voodoo_doll' = [0x2f]
 'walk' = [0x148]
 'weapon1' = [0x2]
 'weapon2' = [0x3]
@@ -298,8 +302,10 @@ id = 'keyboard_mouse'
 label = 'Control : Keyboard/Mouse'
 manual_aim = false
 [controls.mode.defaults]
+'action' = [0x201]
 'backup' = [0x150]
 'draw' = [0x52]
+'field_notes' = [0x24]
 'fire' = [0x200]
 'infrared' = [0x31]
 'item_desc' = [0x19]
@@ -314,12 +320,14 @@ manual_aim = false
 'point_up' = [0x256]
 'prev_item' = [0x1b]
 'prev_weapon' = [0xc]
+'quick_turn' = [0x14f]
 'right' = [0x255]
 'run' = [0x36]
 'strafe' = [0x11d]
 'strafe_left' = [0x14b]
 'strafe_right' = [0x14d]
 'use_item' = [0x1c]
+'voodoo_doll' = [0x2f]
 'walk' = [0x148]
 'weapon1' = [0x2]
 'weapon2' = [0x3]
@@ -332,12 +340,14 @@ id = 'gamepad'
 label = 'Control : Gamepad'
 manual_aim = false
 [controls.mode.defaults]
+'action' = [0x160]
 'backup' = [0x254]
 'draw' = [0x17a]
+'field_notes' = [0x24]
 'fire' = [0x17b]
 'infrared' = [0x163]
 'item_desc' = [0x165]
-'jump' = [0x160]
+'jump' = []
 'left' = [0x17e]
 'light' = [0x162]
 'map' = [0x164]
@@ -348,12 +358,14 @@ manual_aim = false
 'point_up' = [0x17c]
 'prev_item' = [0x16d]
 'prev_weapon' = [0x169]
+'quick_turn' = [0x14f]
 'right' = [0x17f]
 'run' = [0x167]
 'strafe' = []
 'strafe_left' = [0x251]
 'strafe_right' = [0x252]
 'use_item' = [0x161]
+'voodoo_doll' = [0x2f]
 'walk' = [0x253]
 'weapon1' = []
 'weapon2' = []
@@ -364,6 +376,10 @@ manual_aim = false
 [[controls.binding]]
 action = 'fire'
 label = 'Fire'
+
+[[controls.binding]]
+action = 'action'
+label = 'Action'
 
 [[controls.binding]]
 action = 'walk'
@@ -402,6 +418,10 @@ action = 'point_down'
 label = 'Point down'
 
 [[controls.binding]]
+action = 'quick_turn'
+label = 'Quick turn'
+
+[[controls.binding]]
 action = 'run'
 label = 'Run'
 
@@ -414,8 +434,16 @@ action = 'light'
 label = 'Lantern'
 
 [[controls.binding]]
+action = 'field_notes'
+label = 'Journal'
+
+[[controls.binding]]
 action = 'map'
 label = 'Map'
+
+[[controls.binding]]
+action = 'voodoo_doll'
+label = 'Voodoo Doll'
 
 [[controls.binding]]
 action = 'draw'

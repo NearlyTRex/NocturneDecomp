@@ -64,6 +64,10 @@ TEST(GameAction, AnActionsIdIsItsIniKeySnakeCased) {
     EXPECT_EQ(getGameActionId(EGameAction::StrafeLeft), "strafe_left");
     EXPECT_EQ(getGameActionId(EGameAction::Weapon1), "weapon1");
     EXPECT_EQ(getGameActionId(EGameAction::ScriptResetDialog), "script_reset_dialog");
+    // A run of capitals is one word.
+    EXPECT_EQ(getGameActionId(EGameAction::Sps), "sps");
+    EXPECT_EQ(getGameActionId(EGameAction::VoodooDoll), "voodoo_doll");
+    EXPECT_EQ(findGameAction("field_notes"), EGameAction::FieldNotes);
     EXPECT_EQ(findGameAction("next_ammo"), EGameAction::NextAmmo);
     EXPECT_EQ(findGameAction("NextAmmo"), std::nullopt);
 }

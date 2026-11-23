@@ -352,8 +352,8 @@ hotkey_script_run = "Run or stop script (script debug)"
 hotkey_script_resume = "Resume script (script debug)"
 hotkey_script_reset_dialog = "Reset dialog (script debug)"
 
-# No mode aims by hand. Fire and Jump are both Space. BW3's Action, Journal, Compass, Voodoo Doll
-# and Quick turn are its own actions.
+# No mode aims by hand. Fire and Jump are both Space on the keyboard. Action, Journal, Voodoo Doll
+# and Quick turn are BW3's own actions, bound and kept; what they do comes with BW3's game.
 [[controls.mode]]
 id = "keyboard"
 label = "Control : Keyboard"
@@ -387,6 +387,10 @@ prev_item = [0x1b]  # DIK_RBRACKET
 item_desc = [0x19]  # DIK_P
 next_ammo = [0x29]  # DIK_GRAVE
 map = [0xf]  # DIK_TAB
+action = [0x138]  # DIK_RMENU
+field_notes = [0x24]  # DIK_J
+quick_turn = [0x14f]  # DIK_END
+voodoo_doll = [0x2f]  # DIK_V
 
 [[controls.mode]]
 id = "keyboard_mouse"
@@ -421,6 +425,10 @@ prev_item = [0x1b]  # DIK_RBRACKET
 item_desc = [0x19]  # DIK_P
 next_ammo = [0x29]  # DIK_GRAVE
 map = [0xf]  # DIK_TAB
+action = [0x201]  # DIM_RBUTTON
+field_notes = [0x24]  # DIK_J
+quick_turn = [0x14f]  # DIK_END
+voodoo_doll = [0x2f]  # DIK_V
 
 # The enhanced game's pad, as Nocturne's; BW3's own joystick buttons are codes no pad sends
 [[controls.mode]]
@@ -441,7 +449,8 @@ use_item = [0x161]  # PAD_B
 light = [0x162]  # PAD_X
 infrared = [0x163]  # PAD_Y
 draw = [0x17a]  # PAD_LTRIGGER
-jump = [0x160]  # PAD_A
+# BW3 has no jump; PAD_A is its Action
+jump = []
 point_up = [0x17c]  # PAD_RSTICK_UP
 point_down = [0x17d]  # PAD_RSTICK_DOWN
 weapon1 = []
@@ -456,11 +465,20 @@ prev_item = [0x16d]  # PAD_DPAD_LEFT
 item_desc = [0x165]  # PAD_GUIDE
 next_ammo = [0x16b]  # PAD_DPAD_UP
 map = [0x164]  # PAD_BACK
+# BW3's third button, beside Fire and Use item; the rest kept their keyboard keys
+action = [0x160]  # PAD_A
+field_notes = [0x24]  # DIK_J
+quick_turn = [0x14f]  # DIK_END
+voodoo_doll = [0x2f]  # DIK_V
 
-# BW3's rows, in its order, but for Action, Quick turn, Journal and Voodoo Doll, its own actions
+# BW3's rows, in its order
 [[controls.binding]]
 action = "fire"
 label = "Fire"
+
+[[controls.binding]]
+action = "action"
+label = "Action"
 
 [[controls.binding]]
 action = "walk"
@@ -499,6 +517,10 @@ action = "point_down"
 label = "Point down"
 
 [[controls.binding]]
+action = "quick_turn"
+label = "Quick turn"
+
+[[controls.binding]]
 action = "run"
 label = "Run"
 
@@ -511,8 +533,16 @@ action = "light"
 label = "Lantern"
 
 [[controls.binding]]
+action = "field_notes"
+label = "Journal"
+
+[[controls.binding]]
 action = "map"
 label = "Map"
+
+[[controls.binding]]
+action = "voodoo_doll"
+label = "Voodoo Doll"
 
 [[controls.binding]]
 action = "draw"

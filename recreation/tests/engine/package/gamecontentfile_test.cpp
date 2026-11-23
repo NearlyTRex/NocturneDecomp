@@ -773,7 +773,9 @@ TEST(GameContentFile, BlairWitchTwosFrontEndReads) {
     ASSERT_EQ(content->stories.size(), 1U);
     EXPECT_EQ(content->stories.front().chapters.front().mission, "awakening.msn");
     ASSERT_TRUE(content->controls.has_value());
-    EXPECT_EQ(content->controls->bindings.size(), 23U);
+    // BW2's 24 rows, Drop item or weapon its own last.
+    ASSERT_EQ(content->controls->bindings.size(), 24U);
+    EXPECT_EQ(content->controls->bindings.back().action, "drop");
 }
 
 TEST(GameContentFile, BlairWitchThreesFrontEndReads) {

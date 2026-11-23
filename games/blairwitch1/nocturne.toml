@@ -452,7 +452,9 @@ label = 'Control : Keyboard'
 manual_aim = false
 [controls.mode.defaults]
 'backup' = [0x150]
+'compass' = [0x2e]
 'draw' = [0x20]
+'field_notes' = [0x24]
 'fire' = [0x39]
 'infrared' = [0x31]
 'item_desc' = [0x19]
@@ -467,8 +469,10 @@ manual_aim = false
 'point_up' = [0x10]
 'prev_item' = [0x1b]
 'prev_weapon' = [0xc]
+'quick_turn' = [0x14f]
 'right' = [0x14d]
 'run' = [0x2a]
+'sps' = [0x1f]
 'strafe' = [0x38]
 'strafe_left' = [0x2c]
 'strafe_right' = [0x2d]
@@ -486,7 +490,9 @@ label = 'Control : Keyboard/Mouse'
 manual_aim = false
 [controls.mode.defaults]
 'backup' = [0x150]
+'compass' = [0x2e]
 'draw' = [0x52]
+'field_notes' = [0x24]
 'fire' = [0x200]
 'infrared' = [0x31]
 'item_desc' = [0x19]
@@ -501,8 +507,10 @@ manual_aim = false
 'point_up' = [0x256]
 'prev_item' = [0x1b]
 'prev_weapon' = [0xc]
+'quick_turn' = [0x14f]
 'right' = [0x255]
 'run' = [0x36]
+'sps' = [0x1f]
 'strafe' = [0x11d]
 'strafe_left' = [0x14b]
 'strafe_right' = [0x14d]
@@ -520,7 +528,9 @@ label = 'Control : Gamepad'
 manual_aim = false
 [controls.mode.defaults]
 'backup' = [0x254]
+'compass' = [0x2e]
 'draw' = [0x17a]
+'field_notes' = [0x24]
 'fire' = [0x17b]
 'infrared' = [0x163]
 'item_desc' = [0x165]
@@ -535,8 +545,10 @@ manual_aim = false
 'point_up' = [0x17c]
 'prev_item' = [0x16d]
 'prev_weapon' = [0x169]
+'quick_turn' = [0x14f]
 'right' = [0x17f]
 'run' = [0x167]
+'sps' = [0x1f]
 'strafe' = []
 'strafe_left' = [0x251]
 'strafe_right' = [0x252]
@@ -589,6 +601,10 @@ action = 'point_down'
 label = 'Point down'
 
 [[controls.binding]]
+action = 'quick_turn'
+label = 'Quick turn'
+
+[[controls.binding]]
 action = 'run'
 label = 'Run'
 
@@ -605,8 +621,20 @@ action = 'infrared'
 label = 'Night Vision'
 
 [[controls.binding]]
+action = 'field_notes'
+label = 'Journal'
+
+[[controls.binding]]
 action = 'map'
 label = 'Map'
+
+[[controls.binding]]
+action = 'compass'
+label = 'Compass'
+
+[[controls.binding]]
+action = 'sps'
+label = 'SPS'
 
 [[controls.binding]]
 action = 'draw'

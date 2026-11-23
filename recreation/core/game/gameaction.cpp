@@ -57,6 +57,13 @@ constexpr std::array<SGameActionInfo, kGameActionCount> kGameActions = {{
     {.ini_key = "keyItemDesc"},
     {.ini_key = "keyNextAmmo"},
     {.ini_key = "keyMap"},
+    {.ini_key = "keyCompass"},
+    {.ini_key = "keyFieldNotes"},
+    {.ini_key = "keyQuickTurn"},
+    {.ini_key = "keySPS"},
+    {.ini_key = "keyDrop"},
+    {.ini_key = "keyAction"},
+    {.ini_key = "keyVoodooDoll"},
     {.ini_key = "keyMute",
      .keyboard = key(EInputCodeType::DIK_F5),
      .also = ctrl(EInputCodeType::DIK_M)},
@@ -117,16 +124,20 @@ bool isHotkeyAction(EGameAction action) {
 
 std::string getGameActionId(EGameAction action) {
     const std::string_view name = getGameActionInfo(action).ini_key.substr(kIniKeyPrefix.size());
+    // A run of capitals is one word: keySPS is sps.
     std::string id;
+    bool after_capital = false;
     for (const char letter : name) {
-        if (std::isupper(static_cast<unsigned char>(letter)) != 0) {
-            if (!id.empty()) {
+        const bool capital = std::isupper(static_cast<unsigned char>(letter)) != 0;
+        if (capital) {
+            if (!id.empty() && !after_capital) {
                 id += '_';
             }
             id += static_cast<char>(std::tolower(static_cast<unsigned char>(letter)));
         } else {
             id += letter;
         }
+        after_capital = capital;
     }
     return id;
 }
