@@ -207,7 +207,7 @@ void CMenu::configureCustomKeyBindings() {
         // The rows' own labels are the game's, from its [[controls.binding]].
         std::vector<std::string> labels;
         for (const engine::SBindingRowSpec &spec : game.getControls().bindings) {
-            const EGameAction action = findGameAction(spec.action).value();
+            const EGameAction action = requirePlayAction(spec.action, "A bindings page row");
             rows.push_back({.action = action, .label = spec.label});
             const bool walks = action == EGameAction::Run && game.always_run != 0;
             labels.push_back(walks ? label("bindings_walk")

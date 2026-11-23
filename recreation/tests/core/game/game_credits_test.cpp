@@ -16,6 +16,7 @@
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/gamepadinputparts.h"
@@ -220,8 +221,8 @@ class CFadeCreditsTest : public CCreditsTest {
 protected:
     CFadeCreditsTest() {
         content_.front_end.credits = "fade_loop";
-        content_.credits->fade_loop =
-            engine::getShippedGameContent("blairwitch2").credits->fade_loop;
+        common::required(content_.credits).fade_loop =
+            common::required(engine::getShippedGameContent("blairwitch2").credits).fade_loop;
     }
 
     // The first row and column where something other than the image or the black about it is.
@@ -301,8 +302,8 @@ TEST_F(CFadeCreditsTest, ALineAwayFromTheMiddleIsFainter) {
 
 // Once its top passes loop_below, it comes round again from restart_y.
 TEST_F(CFadeCreditsTest, TheCreditsStartOverOncePastTheirLoop) {
-    content_.credits->fade_loop->loop_below = 400;
-    content_.credits->fade_loop->restart_y = 450;
+    common::required(common::required(content_.credits).fade_loop).loop_below = 400;
+    common::required(common::required(content_.credits).fade_loop).restart_y = 450;
     givenCredits("XX\nend\n");
     cancelAfterFrames(12);
     game_.rollCredits();
@@ -320,7 +321,7 @@ TEST_F(CFadeCreditsTest, TheImageIsAtItsPoint) {
 }
 
 TEST_F(CFadeCreditsTest, WithoutItsValuesTheyAreFatal) {
-    content_.credits->fade_loop.reset();
+    common::required(content_.credits).fade_loop.reset();
     givenCredits("XX\nend\n");
     EXPECT_THAT([this] { game_.rollCredits(); },
                 ::testing::ThrowsMessage<common::CFatalError>(
@@ -469,7 +470,7 @@ TEST_F(CCreditsTest, TheCreditsRiseThirtyTwoRowsASecond) {
 TEST_F(CFullHdCreditsTest, LinesScrollTogetherAtAScaleBetweenWholePixels) {
     givenCredits("XX\nXX\nend\n");
     // On the screen from the start, a row of scroll a frame.
-    content_.credits->column_scroll->start_y = 200;
+    common::required(common::required(content_.credits).column_scroll).start_y = 200;
     step_ = kQuarterSecond / kRowsPerFrame;
     constexpr int kFrames = 20;
     // The column, at the screen's scale.
@@ -570,10 +571,11 @@ TEST_F(CWideCreditsTest, TheImageKeepsToTheLeftAndTheColumnRunsOnToTheRightEdge)
 // stop with it unless they run on to the screen's edge.
 TEST_F(CWideCreditsTest, ACentredImagesColumnEndsWithItUnlessItRunsToTheEdge) {
     givenCredits("end\n");
-    content_.credits->fit = {.fit = engine::EPictureFit::KeepAspect,
-                             .anchor = engine::EPictureAnchor::Centre};
-    content_.credits->column_scroll->column_to_screen_edge = false;
-    content_.credits->column_scroll->strip_colour = 1;
+    common::required(content_.credits).fit = {.fit = engine::EPictureFit::KeepAspect,
+                                              .anchor = engine::EPictureAnchor::Centre};
+    common::required(common::required(content_.credits).column_scroll).column_to_screen_edge =
+        false;
+    common::required(common::required(content_.credits).column_scroll).strip_colour = 1;
     constexpr int kLeft = (kWideWidth - kWidth) / 2;
     cancelAfterFrames(1);
     game_.rollCredits();
@@ -585,9 +587,9 @@ TEST_F(CWideCreditsTest, ACentredImagesColumnEndsWithItUnlessItRunsToTheEdge) {
 
 TEST_F(CWideCreditsTest, ACentredImagesColumnCanRunOnToTheScreensEdge) {
     givenCredits("end\n");
-    content_.credits->fit = {.fit = engine::EPictureFit::KeepAspect,
-                             .anchor = engine::EPictureAnchor::Centre};
-    content_.credits->column_scroll->strip_colour = 1;
+    common::required(content_.credits).fit = {.fit = engine::EPictureFit::KeepAspect,
+                                              .anchor = engine::EPictureAnchor::Centre};
+    common::required(common::required(content_.credits).column_scroll).strip_colour = 1;
     cancelAfterFrames(1);
     game_.rollCredits();
     EXPECT_EQ(screen_.pixel(kWideWidth - 1, 0), kStripPixel);
@@ -596,8 +598,8 @@ TEST_F(CWideCreditsTest, ACentredImagesColumnCanRunOnToTheScreensEdge) {
 // Stretched, the image fills the screen.
 TEST_F(CWideCreditsTest, AStretchedImageFillsTheScreen) {
     givenCredits("end\n");
-    content_.credits->fit = {.fit = engine::EPictureFit::Stretch,
-                             .anchor = engine::EPictureAnchor::Centre};
+    common::required(content_.credits).fit = {.fit = engine::EPictureFit::Stretch,
+                                              .anchor = engine::EPictureAnchor::Centre};
     cancelAfterFrames(1);
     game_.rollCredits();
     EXPECT_EQ(screen_.pixel(0, kBandTop), kImage);
@@ -713,7 +715,7 @@ TEST_F(CCreditsTest, CreditsWithoutMusicRollSilentlyUntilCancel) {
     givenCredits("end\n");
     givenMusic(100);
     ASSERT_TRUE(content_.credits.has_value());
-    content_.credits->music.clear();
+    common::required(content_.credits).music.clear();
     std::vector<int> playing;
     on_tick_ = [&](int tick) {
         playing.push_back(sound_.countActiveSfx());
@@ -730,7 +732,7 @@ TEST_F(CCreditsTest, ThePackagesNameTheCreditsFile) {
     givenCredits("XX\r\nend\r\n");
     givenFile("data\\other.txt", "end\r\n");
     ASSERT_TRUE(content_.credits.has_value());
-    content_.credits->text = "other.txt";
+    common::required(content_.credits).text = "other.txt";
     cancelAfterFrames(3);
     game_.rollCredits();
     EXPECT_EQ(firstTextRow(), -1);
@@ -747,16 +749,25 @@ TEST_F(CCreditsTest, CreditsThisBuildDoesntRollAreFatal) {
 
 TEST_F(CCreditsTest, CreditsWithoutTheirColumnsLookAreFatal) {
     givenCredits("XX\r\nend\r\n");
-    content_.credits->column_scroll.reset();
+    common::required(content_.credits).column_scroll.reset();
     EXPECT_THAT([this] { game_.rollCredits(); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("No package gives the column_scroll credits' look")));
 }
 
+TEST_F(CCreditsTest, TwoColumnCreditsWithoutTheirLookAreFatal) {
+    givenCredits("XX\r\nend\r\n");
+    content_.front_end.credits = "two_column";
+    common::required(content_.credits).two_column.reset();
+    EXPECT_THAT([this] { game_.rollCredits(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the two_column credits' look")));
+}
+
 // A game's credits stop at its own end line: Nocturne's "end" is then a line like any other.
 TEST_F(CCreditsTest, TheEndLineIsTheGamesOwn) {
     givenCredits("XX\nend\nXX\nstop\nXX\n");
-    content_.credits->column_scroll->end_line = "stop";
+    common::required(common::required(content_.credits).column_scroll).end_line = "stop";
     constexpr int kFrames = 20;
     cancelAfterFrames(kFrames);
     game_.rollCredits();

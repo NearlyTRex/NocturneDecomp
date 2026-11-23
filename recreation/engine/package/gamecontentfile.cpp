@@ -2460,6 +2460,9 @@ TomlResult<T> readMenuPart(const toml::table &table, std::string_view key, Read 
     return read(**found);
 }
 
+TomlResult<void> readMenuPanels(const toml::table &table, SMenuLayout &menu);
+TomlResult<void> readMenuTextFonts(const toml::table &table, SMenuLayout &menu);
+
 TomlResult<SMenuLayout> readMenu(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
@@ -2516,6 +2519,23 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         return std::unexpected(page_tops.error());
     }
     menu.page_tops = std::move(*page_tops);
+    if (TomlResult<void> panels = readMenuPanels(table, menu); !panels) {
+        return std::unexpected(panels.error());
+    }
+    const TomlResult<bool> animate = readRequiredBoolean(table, kWhere, "animate_titled_backdrop");
+    if (!animate) {
+        return std::unexpected(animate.error());
+    }
+    menu.animate_titled_backdrop = *animate;
+    if (TomlResult<void> fonts = readMenuTextFonts(table, menu); !fonts) {
+        return std::unexpected(fonts.error());
+    }
+    return menu;
+}
+
+// The options, sound, slider, attract, features and music tables.
+TomlResult<void> readMenuPanels(const toml::table &table, SMenuLayout &menu) {
+    constexpr std::string_view kWhere = "menu: ";
     const TomlResult<const toml::table *> options = readRequiredTable(table, kWhere, "options");
     if (!options) {
         return std::unexpected(options.error());
@@ -2557,11 +2577,12 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         return std::unexpected(music.error());
     }
     menu.music = std::move(*music);
-    const TomlResult<bool> animate = readRequiredBoolean(table, kWhere, "animate_titled_backdrop");
-    if (!animate) {
-        return std::unexpected(animate.error());
-    }
-    menu.animate_titled_backdrop = *animate;
+    return {};
+}
+
+// The large and small fonts the menus' text is drawn in.
+TomlResult<void> readMenuTextFonts(const toml::table &table, SMenuLayout &menu) {
+    constexpr std::string_view kWhere = "menu: ";
     constexpr std::string_view kFontsWhere = "menu: text_fonts: ";
     const TomlResult<const toml::table *> fonts = readRequiredTable(table, kWhere, "text_fonts");
     if (!fonts) {
@@ -2579,7 +2600,7 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         }
         *field = std::move(*value);
     }
-    return menu;
+    return {};
 }
 
 // The style each part names, by key.
@@ -3153,13 +3174,195 @@ std::string formatStory(const SGameStory &story) {
     return text;
 }
 
-} // namespace
-
-TomlResult<SGameContent> readGameContent(const toml::table &table) {
-    SGameContent content;
-    if (TomlResult<void> strings = readGameStrings(table, content); !strings) {
-        return std::unexpected(strings.error());
+std::string formatFrontEndParts(const SFrontEndParts &parts) {
+    if (parts == SFrontEndParts{}) {
+        return {};
     }
+    std::string text = "\n[front_end]\n";
+    for (const auto &[key, field] : getFrontEndParts(parts)) {
+        if (*field) {
+            text += std::format("{} = {}\n", key, quoteToml(**field));
+        }
+    }
+    return text;
+}
+
+std::string formatColumnScroll(const SCreditsColumnScroll &scroll) {
+    return std::format(
+        "\n[credits.column_scroll]\nfont = {}\ncolumn_left = {}\n"
+        "column_to_screen_edge = {}\ntop_strip_bottom = {}\n"
+        "bottom_strip_top = {}\nstrip_colour = 0x{:x}\ntext_colour = 0x{:x}\n"
+        "heading_colour = 0x{:x}\nshadow_colour = {}\nscroll_speed = {}\nstart_y = {}\n"
+        "end_line = {}\nmarker = {}\nheading = {}\n",
+        quoteToml(scroll.font), scroll.column_left, scroll.column_to_screen_edge,
+        scroll.top_strip_bottom, scroll.bottom_strip_top, scroll.strip_colour, scroll.text_colour,
+        scroll.heading_colour, scroll.shadow_colour, scroll.scroll_speed, scroll.start_y,
+        quoteToml(scroll.end_line), quoteToml(std::string(1, scroll.marker)),
+        quoteToml(std::string(1, scroll.heading)));
+}
+
+std::string formatTwoColumn(const SCreditsTwoColumn &two) {
+    return std::format(
+        "\n[credits.two_column]\nfont = {}\ncentre_left = {}\ncentre_right = {}\n"
+        "left_x = {}\nright_x = {}\nleft_column = {}\nright_column = {}\n"
+        "top_strip_bottom = {}\nbottom_strip_top = {}\nstrip_colour = 0x{:x}\n"
+        "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
+        "scroll_speed = {}\nstart_y = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
+        quoteToml(two.font), two.centre_left, two.centre_right, two.left_x, two.right_x,
+        quoteToml(std::string(1, two.left_column)), quoteToml(std::string(1, two.right_column)),
+        two.top_strip_bottom, two.bottom_strip_top, two.strip_colour, two.text_colour,
+        two.heading_colour, two.shadow_colour, two.scroll_speed, two.start_y,
+        quoteToml(two.end_line), quoteToml(std::string(1, two.marker)),
+        quoteToml(std::string(1, two.heading)));
+}
+
+std::string formatFadeLoop(const SCreditsFadeLoop &fade) {
+    return std::format(
+        "\n[credits.fade_loop]\nfont = {}\nimage_x = {}\nimage_y = {}\n"
+        "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
+        "scroll_speed = {}\nstart_y = {}\nloop_below = {}\nrestart_y = {}\n"
+        "fade_centre = {}\nfade_reach = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
+        quoteToml(fade.font), fade.image_x, fade.image_y, fade.text_colour, fade.heading_colour,
+        fade.shadow_colour, fade.scroll_speed, fade.start_y, fade.loop_below, fade.restart_y,
+        fade.fade_centre, fade.fade_reach, quoteToml(fade.end_line),
+        quoteToml(std::string(1, fade.marker)), quoteToml(std::string(1, fade.heading)));
+}
+
+std::string formatCredits(const SGameCredits &credits) {
+    std::string text = std::format("\n[credits]\ntext = {}\n{}", quoteToml(credits.text),
+                                   formatPictureFit(credits.fit));
+    if (!credits.image.empty()) {
+        text += std::format("image = {}\n", quoteToml(credits.image));
+    }
+    if (!credits.music.empty()) {
+        text += std::format("music = {}\n", quoteToml(credits.music));
+    }
+    if (const std::optional<SCreditsColumnScroll> &scroll = credits.column_scroll) {
+        text += formatColumnScroll(*scroll);
+    }
+    if (const std::optional<SCreditsTwoColumn> &two = credits.two_column) {
+        text += formatTwoColumn(*two);
+    }
+    if (const std::optional<SCreditsFadeLoop> &fade = credits.fade_loop) {
+        text += formatFadeLoop(*fade);
+    }
+    return text;
+}
+
+std::string formatStartup(const SStartup &startup) {
+    return std::format("\n[startup]\npicture = {}\n{}picture_alpha = 0x{:x}\nlabel_x = {}\n"
+                       "label_y = {}\nlabel_font = {}\nlabel_colour = 0x{:x}\n"
+                       "movie_directory = {}\nmovie = {}\n",
+                       quoteToml(startup.picture), formatPictureFit(startup.fit),
+                       startup.picture_alpha, startup.label_x, startup.label_y,
+                       quoteToml(startup.label_font), startup.label_colour,
+                       quoteToml(startup.movie_directory), quoteToml(startup.movie));
+}
+
+// The moon, progress bar and icon indicators, those the game has.
+std::string formatLoadingIndicators(const SGameContent &content) {
+    std::string text;
+    if (const std::optional<SMoonIndicator> &moon = content.moon_indicator) {
+        text += std::format(
+            "\n[loading_indicator.moon]\nmodel = {}\nglow_texture = {}\nwindow_size = {}\n"
+            "corner_x = {}\ncorner_y = {}\ncorner_size = {}\n"
+            "default_tint = [0x{:x}, 0x{:x}, 0x{:x}]\nfull_projection = {}\n"
+            "window_projection = {}\ndepth = {}\nlight_reach = {}\nambient = 0x{:x}\n"
+            "glow_half_size = {}\n{}",
+            quoteToml(moon->model), quoteToml(moon->glow_texture), moon->window_size,
+            moon->corner_x, moon->corner_y, moon->corner_size, moon->default_tint[0],
+            moon->default_tint[1], moon->default_tint[2], moon->full_projection,
+            moon->window_projection, moon->depth, moon->light_reach, moon->ambient,
+            moon->glow_half_size, formatLoadingStatus(moon->status));
+    }
+    if (const std::optional<SProgressBarIndicator> &bar = content.progress_bar_indicator) {
+        text +=
+            std::format("\n[loading_indicator.progress_bar]\nheight = {}\n"
+                        "frame_colour = 0x{:x}\ntrough_colour = 0x{:x}\nbar_colour = 0x{:x}\n{}",
+                        bar->height, bar->frame_colour, bar->trough_colour, bar->bar_colour,
+                        formatLoadingStatus(bar->status));
+    }
+    if (const std::optional<SIconIndicator> &icon = content.icon_indicator) {
+        text += std::format("\n[loading_indicator.icon]\nx = {}\ny = {}\nwidth = {}\nheight = {}\n"
+                            "alpha_start = {}\nalpha_end = 0x{:x}\nframes = {}\n"
+                            "always_random = {}\n",
+                            icon->x, icon->y, icon->width, icon->height, icon->alpha_start,
+                            icon->alpha_end, icon->frames, icon->always_random);
+    }
+    return text;
+}
+
+// The story list with its difficulties, and the direct start, those the game has.
+std::string formatStoryStart(const SGameContent &content) {
+    std::string text;
+    if (const std::optional<SStorySelect> &select = content.story_select) {
+        text += std::format(
+            "\n[story_select.story_list]\nfull_install_probe = {}\nloading_frames = {}\n",
+            quoteToml(select->full_install_probe), select->loading_frames);
+        for (const SStoryDifficulty &difficulty : select->difficulties) {
+            text += std::format(
+                "\n[[story_select.story_list.difficulty]]\nlabel = {}\npuzzle = {}\ncombat = {}\n",
+                quoteToml(difficulty.label), difficulty.puzzle, difficulty.combat);
+        }
+    }
+    if (const std::optional<SDirectStart> &start = content.direct_start) {
+        text += std::format("\n[story_select.direct_start]\nloading_frames = {}\n",
+                            start->loading_frames);
+    }
+    return text;
+}
+
+std::string formatChapterTitle(const SChapterTitle &title) {
+    std::string text =
+        std::format("\n[chapter_title]\nseconds = {}\nformat = {}\ncolour = 0x{:x}\n"
+                    "shadow = {}\nalpha = 0x{:x}\ninset_across = {}\ninset_up = {}\n",
+                    title.seconds, quoteToml(title.format), title.colour, title.shadow, title.alpha,
+                    title.inset_across, title.inset_up);
+    for (const SChapterTitleFont &font : title.fonts) {
+        text += std::format("\n[[chapter_title.font]]\nfont = {}\n", quoteToml(font.font));
+        if (font.below_height != 0) {
+            text += std::format("below_height = {}\n", font.below_height);
+        }
+    }
+    return text;
+}
+
+std::string formatLoadingPicture(const SLoadingPicture &picture) {
+    std::string text = std::format("\n[[loading]]\nid = {}\n{}", quoteToml(picture.id),
+                                   formatPictureFit(picture.fit));
+    if (picture.moon) {
+        text += std::format("moon = {{ x = {}, y = {}, tint = {} }}\n", picture.moon->x,
+                            picture.moon->y, formatTint(picture.moon->tint));
+    }
+    if (picture.random) {
+        text += "random = true\n";
+    }
+    if (!picture.icon.empty()) {
+        text += std::format("icon = {}\n", quoteToml(picture.icon));
+    }
+    return text;
+}
+
+// The labels, then each language's translations.
+std::string formatTextTables(const SGameContent &content) {
+    std::string text;
+    if (!content.labels.empty()) {
+        text += "\n[labels]\n";
+        for (const auto &[english, label] : content.labels) {
+            text += std::format("{} = {}\n", quoteToml(english), quoteToml(label));
+        }
+    }
+    for (const auto &[language, translation] : content.translations) {
+        text += std::format("\n[translation.{}]\n", quoteToml(language));
+        for (const auto &[english, translated] : translation) {
+            text += std::format("{} = {}\n", quoteToml(english), quoteToml(translated));
+        }
+    }
+    return text;
+}
+
+// The front end, credits, menu, list and dialog tables.
+TomlResult<void> readGameLooks(const toml::table &table, SGameContent &content) {
     TomlResult<std::optional<SFrontEndParts>> front_end =
         readOptionalTable<SFrontEndParts>(table, "front_end", readFrontEnd);
     if (!front_end) {
@@ -3190,14 +3393,29 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
         return std::unexpected(dialog.error());
     }
     content.dialog = *dialog;
-    const TomlResult<const toml::table *> backdrop = readTable(table, "", "title_backdrop");
-    if (!backdrop) {
-        return std::unexpected(backdrop.error());
+    return {};
+}
+
+// A table the content reads only when it's there.
+TomlResult<void> readPresentTable(const toml::table &table, std::string_view key,
+                                  SGameContent &content,
+                                  TomlResult<void> (*read)(const toml::table &, SGameContent &)) {
+    const TomlResult<const toml::table *> found = readTable(table, "", key);
+    if (!found) {
+        return std::unexpected(found.error());
     }
-    if (*backdrop != nullptr) {
-        if (TomlResult<void> read = readTitleBackdrop(**backdrop, content); !read) {
-            return std::unexpected(read.error());
-        }
+    if (*found == nullptr) {
+        return {};
+    }
+    return read(**found, content);
+}
+
+// The title backdrop, startup, loading indicator, story select and chapter title tables.
+TomlResult<void> readGameScreens(const toml::table &table, SGameContent &content) {
+    if (TomlResult<void> read =
+            readPresentTable(table, "title_backdrop", content, readTitleBackdrop);
+        !read) {
+        return read;
     }
     TomlResult<std::optional<SStartup>> startup =
         readOptionalTable<SStartup>(table, "startup", readStartup);
@@ -3205,23 +3423,14 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
         return std::unexpected(startup.error());
     }
     content.startup = std::move(*startup);
-    const TomlResult<const toml::table *> indicator = readTable(table, "", "loading_indicator");
-    if (!indicator) {
-        return std::unexpected(indicator.error());
+    if (TomlResult<void> read =
+            readPresentTable(table, "loading_indicator", content, readLoadingIndicator);
+        !read) {
+        return read;
     }
-    if (*indicator != nullptr) {
-        if (TomlResult<void> read = readLoadingIndicator(**indicator, content); !read) {
-            return std::unexpected(read.error());
-        }
-    }
-    const TomlResult<const toml::table *> story_select = readTable(table, "", "story_select");
-    if (!story_select) {
-        return std::unexpected(story_select.error());
-    }
-    if (*story_select != nullptr) {
-        if (TomlResult<void> read = readStorySelect(**story_select, content); !read) {
-            return std::unexpected(read.error());
-        }
+    if (TomlResult<void> read = readPresentTable(table, "story_select", content, readStorySelect);
+        !read) {
+        return read;
     }
     TomlResult<std::optional<SChapterTitle>> chapter_title =
         readOptionalTable<SChapterTitle>(table, "chapter_title", readChapterTitle);
@@ -3229,6 +3438,22 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
         return std::unexpected(chapter_title.error());
     }
     content.chapter_title = std::move(*chapter_title);
+    return {};
+}
+
+} // namespace
+
+TomlResult<SGameContent> readGameContent(const toml::table &table) {
+    SGameContent content;
+    if (TomlResult<void> strings = readGameStrings(table, content); !strings) {
+        return std::unexpected(strings.error());
+    }
+    if (TomlResult<void> looks = readGameLooks(table, content); !looks) {
+        return std::unexpected(looks.error());
+    }
+    if (TomlResult<void> screens = readGameScreens(table, content); !screens) {
+        return std::unexpected(screens.error());
+    }
     TomlResult<std::vector<SFontSpec>> fonts = readListById<SFontSpec>(table, "font", readFont);
     if (!fonts) {
         return std::unexpected(fonts.error());
@@ -3281,64 +3506,9 @@ std::string formatGameContentKeys(const SGameContent &content) {
 }
 
 std::string formatGameContentTables(const SGameContent &content) {
-    std::string text;
-    if (content.front_end != SFrontEndParts{}) {
-        text += "\n[front_end]\n";
-        for (const auto &[key, field] : getFrontEndParts(content.front_end)) {
-            if (*field) {
-                text += std::format("{} = {}\n", key, quoteToml(**field));
-            }
-        }
-    }
+    std::string text = formatFrontEndParts(content.front_end);
     if (content.credits) {
-        text += std::format("\n[credits]\ntext = {}\n{}", quoteToml(content.credits->text),
-                            formatPictureFit(content.credits->fit));
-        if (!content.credits->image.empty()) {
-            text += std::format("image = {}\n", quoteToml(content.credits->image));
-        }
-        if (!content.credits->music.empty()) {
-            text += std::format("music = {}\n", quoteToml(content.credits->music));
-        }
-        if (const std::optional<SCreditsColumnScroll> &scroll = content.credits->column_scroll) {
-            text += std::format(
-                "\n[credits.column_scroll]\nfont = {}\ncolumn_left = {}\n"
-                "column_to_screen_edge = {}\ntop_strip_bottom = {}\n"
-                "bottom_strip_top = {}\nstrip_colour = 0x{:x}\ntext_colour = 0x{:x}\n"
-                "heading_colour = 0x{:x}\nshadow_colour = {}\nscroll_speed = {}\nstart_y = {}\n"
-                "end_line = {}\nmarker = {}\nheading = {}\n",
-                quoteToml(scroll->font), scroll->column_left, scroll->column_to_screen_edge,
-                scroll->top_strip_bottom, scroll->bottom_strip_top, scroll->strip_colour,
-                scroll->text_colour, scroll->heading_colour, scroll->shadow_colour,
-                scroll->scroll_speed, scroll->start_y, quoteToml(scroll->end_line),
-                quoteToml(std::string(1, scroll->marker)),
-                quoteToml(std::string(1, scroll->heading)));
-        }
-        if (const std::optional<SCreditsTwoColumn> &two = content.credits->two_column) {
-            text += std::format(
-                "\n[credits.two_column]\nfont = {}\ncentre_left = {}\ncentre_right = {}\n"
-                "left_x = {}\nright_x = {}\nleft_column = {}\nright_column = {}\n"
-                "top_strip_bottom = {}\nbottom_strip_top = {}\nstrip_colour = 0x{:x}\n"
-                "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
-                "scroll_speed = {}\nstart_y = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
-                quoteToml(two->font), two->centre_left, two->centre_right, two->left_x,
-                two->right_x, quoteToml(std::string(1, two->left_column)),
-                quoteToml(std::string(1, two->right_column)), two->top_strip_bottom,
-                two->bottom_strip_top, two->strip_colour, two->text_colour, two->heading_colour,
-                two->shadow_colour, two->scroll_speed, two->start_y, quoteToml(two->end_line),
-                quoteToml(std::string(1, two->marker)), quoteToml(std::string(1, two->heading)));
-        }
-        if (const std::optional<SCreditsFadeLoop> &fade = content.credits->fade_loop) {
-            text += std::format(
-                "\n[credits.fade_loop]\nfont = {}\nimage_x = {}\nimage_y = {}\n"
-                "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
-                "scroll_speed = {}\nstart_y = {}\nloop_below = {}\nrestart_y = {}\n"
-                "fade_centre = {}\nfade_reach = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
-                quoteToml(fade->font), fade->image_x, fade->image_y, fade->text_colour,
-                fade->heading_colour, fade->shadow_colour, fade->scroll_speed, fade->start_y,
-                fade->loop_below, fade->restart_y, fade->fade_centre, fade->fade_reach,
-                quoteToml(fade->end_line), quoteToml(std::string(1, fade->marker)),
-                quoteToml(std::string(1, fade->heading)));
-        }
+        text += formatCredits(*content.credits);
     }
     if (content.menu) {
         text += formatMenu(*content.menu);
@@ -3365,97 +3535,20 @@ std::string formatGameContentTables(const SGameContent &content) {
         text += formatTiledScroll(*tiled);
     }
     if (const std::optional<SStartup> &startup = content.startup) {
-        text += std::format("\n[startup]\npicture = {}\n{}picture_alpha = 0x{:x}\nlabel_x = {}\n"
-                            "label_y = {}\nlabel_font = {}\nlabel_colour = 0x{:x}\n"
-                            "movie_directory = {}\nmovie = {}\n",
-                            quoteToml(startup->picture), formatPictureFit(startup->fit),
-                            startup->picture_alpha, startup->label_x, startup->label_y,
-                            quoteToml(startup->label_font), startup->label_colour,
-                            quoteToml(startup->movie_directory), quoteToml(startup->movie));
+        text += formatStartup(*startup);
     }
-    if (const std::optional<SMoonIndicator> &moon = content.moon_indicator) {
-        text += std::format(
-            "\n[loading_indicator.moon]\nmodel = {}\nglow_texture = {}\nwindow_size = {}\n"
-            "corner_x = {}\ncorner_y = {}\ncorner_size = {}\n"
-            "default_tint = [0x{:x}, 0x{:x}, 0x{:x}]\nfull_projection = {}\n"
-            "window_projection = {}\ndepth = {}\nlight_reach = {}\nambient = 0x{:x}\n"
-            "glow_half_size = {}\n{}",
-            quoteToml(moon->model), quoteToml(moon->glow_texture), moon->window_size,
-            moon->corner_x, moon->corner_y, moon->corner_size, moon->default_tint[0],
-            moon->default_tint[1], moon->default_tint[2], moon->full_projection,
-            moon->window_projection, moon->depth, moon->light_reach, moon->ambient,
-            moon->glow_half_size, formatLoadingStatus(moon->status));
-    }
-    if (const std::optional<SProgressBarIndicator> &bar = content.progress_bar_indicator) {
-        text +=
-            std::format("\n[loading_indicator.progress_bar]\nheight = {}\n"
-                        "frame_colour = 0x{:x}\ntrough_colour = 0x{:x}\nbar_colour = 0x{:x}\n{}",
-                        bar->height, bar->frame_colour, bar->trough_colour, bar->bar_colour,
-                        formatLoadingStatus(bar->status));
-    }
-    if (const std::optional<SIconIndicator> &icon = content.icon_indicator) {
-        text += std::format("\n[loading_indicator.icon]\nx = {}\ny = {}\nwidth = {}\nheight = {}\n"
-                            "alpha_start = {}\nalpha_end = 0x{:x}\nframes = {}\n"
-                            "always_random = {}\n",
-                            icon->x, icon->y, icon->width, icon->height, icon->alpha_start,
-                            icon->alpha_end, icon->frames, icon->always_random);
-    }
-    if (const std::optional<SStorySelect> &select = content.story_select) {
-        text += std::format(
-            "\n[story_select.story_list]\nfull_install_probe = {}\nloading_frames = {}\n",
-            quoteToml(select->full_install_probe), select->loading_frames);
-        for (const SStoryDifficulty &difficulty : select->difficulties) {
-            text += std::format(
-                "\n[[story_select.story_list.difficulty]]\nlabel = {}\npuzzle = {}\ncombat = {}\n",
-                quoteToml(difficulty.label), difficulty.puzzle, difficulty.combat);
-        }
-    }
-    if (const std::optional<SDirectStart> &start = content.direct_start) {
-        text += std::format("\n[story_select.direct_start]\nloading_frames = {}\n",
-                            start->loading_frames);
-    }
+    text += formatLoadingIndicators(content);
+    text += formatStoryStart(content);
     if (const std::optional<SChapterTitle> &title = content.chapter_title) {
-        text += std::format("\n[chapter_title]\nseconds = {}\nformat = {}\ncolour = 0x{:x}\n"
-                            "shadow = {}\nalpha = 0x{:x}\ninset_across = {}\ninset_up = {}\n",
-                            title->seconds, quoteToml(title->format), title->colour, title->shadow,
-                            title->alpha, title->inset_across, title->inset_up);
-        for (const SChapterTitleFont &font : title->fonts) {
-            text += std::format("\n[[chapter_title.font]]\nfont = {}\n", quoteToml(font.font));
-            if (font.below_height != 0) {
-                text += std::format("below_height = {}\n", font.below_height);
-            }
-        }
+        text += formatChapterTitle(*title);
     }
     for (const SLoadingPicture &picture : content.loading) {
-        text += std::format("\n[[loading]]\nid = {}\n{}", quoteToml(picture.id),
-                            formatPictureFit(picture.fit));
-        if (picture.moon) {
-            text += std::format("moon = {{ x = {}, y = {}, tint = {} }}\n", picture.moon->x,
-                                picture.moon->y, formatTint(picture.moon->tint));
-        }
-        if (picture.random) {
-            text += "random = true\n";
-        }
-        if (!picture.icon.empty()) {
-            text += std::format("icon = {}\n", quoteToml(picture.icon));
-        }
+        text += formatLoadingPicture(picture);
     }
     for (const SGameStory &story : content.stories) {
         text += formatStory(story);
     }
-    if (!content.labels.empty()) {
-        text += "\n[labels]\n";
-        for (const auto &[english, label] : content.labels) {
-            text += std::format("{} = {}\n", quoteToml(english), quoteToml(label));
-        }
-    }
-    for (const auto &[language, translation] : content.translations) {
-        text += std::format("\n[translation.{}]\n", quoteToml(language));
-        for (const auto &[english, translated] : translation) {
-            text += std::format("{} = {}\n", quoteToml(english), quoteToml(translated));
-        }
-    }
-    return text;
+    return text + formatTextTables(content);
 }
 
 } // namespace nocturne::engine

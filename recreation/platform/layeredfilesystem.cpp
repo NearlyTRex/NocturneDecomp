@@ -115,7 +115,10 @@ std::vector<SFileInfo> CLayeredFileSystem::findFiles(std::string_view pattern) {
     std::map<std::string, SFileInfo> found;
     for (const std::string &folder : folders_) {
         for (SFileInfo &file : host_.findFiles(inFolder(folder, pattern))) {
-            found.try_emplace(lowerCase(file.name), std::move(file));
+            // The first folder holding the name keeps it.
+            if (std::string key = lowerCase(file.name); !found.contains(key)) {
+                found[std::move(key)] = std::move(file);
+            }
         }
     }
     std::vector<SFileInfo> files;

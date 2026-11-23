@@ -3,6 +3,7 @@
 #include "core/color3i.h"
 #include "core/moon/moon.h"
 #include "engine/package/gamecontent.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/moonfixture.h"
 #include "tests/mocks/engine/shippedgamecontent.h"
 
@@ -41,7 +42,7 @@ protected:
     CMoonFigureTest() {
         content_.front_end.title_backdrop = "figure_scene";
         content_.figure_scene = engine::getShippedGameContent("blairwitch1").figure_scene;
-        engine::SFigureScene &figure = content_.figure_scene.value();
+        engine::SFigureScene &figure = common::required(content_.figure_scene);
         givenMoonModel(given_file_, "figure.kfm", kFigureFrames);
         for (engine::SFigureModel &model : figure.models) {
             model.file = "figure.kfm";
@@ -95,8 +96,8 @@ TEST_F(CMoonFigureTest, TheFiguresStandBeforeTheFixedCamera) {
 // stand on it as on a 4:3 screen: the whole of it is the 4:3 picture moved right.
 TEST_F(CMoonFigureTest, OnAWideScreenTheFiguresStayOnTheCentredBackdrop) {
     // The camera square on to the figures, which stand before it as the sky's moon does.
-    content_.figure_scene->camera_rotation = {1, 0, 0, 0, 1, 0, 0, 0, 1};
-    content_.figure_scene->camera_origin = {0, 0, -72};
+    common::required(content_.figure_scene).camera_rotation = {1, 0, 0, 0, 1, 0, 0, 0, 1};
+    common::required(content_.figure_scene).camera_origin = {0, 0, -72};
     moon_.init();
     moon_.render();
     const std::vector<std::uint32_t> narrow = pixels_;
@@ -114,7 +115,7 @@ TEST_F(CMoonFigureTest, OnAWideScreenTheFiguresStayOnTheCentredBackdrop) {
     }
     EXPECT_EQ(differing, 0);
     // The figures drew something: without them the picture is another.
-    content_.figure_scene->models.clear();
+    common::required(content_.figure_scene).models.clear();
     moon_.free();
     moon_.init();
     std::ranges::fill(pixels_, 0U);
@@ -133,7 +134,7 @@ TEST_F(CMoonFigureTest, OnAWideScreenTheFiguresStayOnTheCentredBackdrop) {
 // Stretched, the backdrop fills the wide screen, and the figures stretch with it: as wide again
 // as the screen is wider, as tall as on 4:3.
 TEST_F(CMoonFigureTest, StretchedTheFiguresStretchWithTheBackdrop) {
-    engine::SFigureScene &figure = content_.figure_scene.value();
+    engine::SFigureScene &figure = common::required(content_.figure_scene);
     figure.camera_rotation = {1, 0, 0, 0, 1, 0, 0, 0, 1};
     figure.camera_origin = {0, 0, -72};
     figure.fit = {.fit = engine::EPictureFit::Stretch, .anchor = engine::EPictureAnchor::Centre};
@@ -145,16 +146,16 @@ TEST_F(CMoonFigureTest, StretchedTheFiguresStretchWithTheBackdrop) {
         int bottom = -1;
     };
     const auto figureBox = [this](int width) {
-        const auto drawn = [this]() {
+        const auto drawn = [this] {
             moon_.free();
             moon_.init();
             std::ranges::fill(pixels_, 0U);
             moon_.render();
             return pixels_;
         };
-        const engine::SFigureScene saved = content_.figure_scene.value();
+        const engine::SFigureScene saved = common::required(content_.figure_scene);
         const std::vector<std::uint32_t> with = drawn();
-        content_.figure_scene->models.clear();
+        common::required(content_.figure_scene).models.clear();
         const std::vector<std::uint32_t> without = drawn();
         content_.figure_scene = saved;
         SBox box;
@@ -217,7 +218,7 @@ TEST_F(CMoonFigureTest, TheTitleIsAlwaysInItsFirstHalf) {
 
 // BW2's: the title's frames alone, over the cleared screen.
 TEST_F(CMoonFigureTest, WithoutABackdropOrFiguresOnlyTheFramesAreDrawn) {
-    engine::SFigureScene &figure = content_.figure_scene.value();
+    engine::SFigureScene &figure = common::required(content_.figure_scene);
     figure.backdrop.clear();
     figure.models.clear();
     EXPECT_CALL(file_system_, openFile(_, _)).Times(AnyNumber());
@@ -230,7 +231,7 @@ TEST_F(CMoonFigureTest, WithoutABackdropOrFiguresOnlyTheFramesAreDrawn) {
 
 // The code is only cleared, as BW2's was.
 TEST_F(CMoonFigureTest, WithoutACheatModelTheCheatLoadsTheFigures) {
-    content_.figure_scene->cheat_model.clear();
+    common::required(content_.figure_scene).cheat_model.clear();
     game_.head_of_horror_cheat = 666;
     expectOpens("models\\figure.kfm", 3);
     moon_.init();
@@ -239,7 +240,7 @@ TEST_F(CMoonFigureTest, WithoutACheatModelTheCheatLoadsTheFigures) {
 
 // With no figures there is no first figure for the cheat's head to replace.
 TEST_F(CMoonFigureTest, WithoutFiguresTheCheatLoadsNothing) {
-    content_.figure_scene->models.clear();
+    common::required(content_.figure_scene).models.clear();
     game_.head_of_horror_cheat = 666;
     EXPECT_CALL(file_system_, openFile(_, _)).Times(AnyNumber());
     EXPECT_CALL(file_system_, openFile(endsWith("taylor_head.kfm"), _)).Times(0);

@@ -5,6 +5,7 @@
 #include "core/menu/menu.h"
 #include "engine/keys/inputcodetype.h"
 #include "platform/gamepad.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/keychords.h"
 #include "tests/mocks/core/menufixture.h"
 
@@ -123,7 +124,8 @@ TEST_F(CKeyBindingsTest, PickingACodeRebindsIt) {
 
 // The rows are the game's, in its order.
 TEST_F(CKeyBindingsTest, TheRowsAreTheGames) {
-    game_parts_.getContent().controls.value().bindings = {{.action = "fire", .label = "Shoot"}};
+    common::required(game_parts_.getContent().controls).bindings = {
+        {.action = "fire", .label = "Shoot"}};
     std::vector<EStep> steps = openForward();
     bindQ(steps);
     leave(steps);

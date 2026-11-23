@@ -1,8 +1,11 @@
 #include "core/game/gameaction.h"
 
+#include "common/error/error.h"
+
 #include <array>
 #include <cctype>
 #include <cstddef>
+#include <format>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -150,6 +153,18 @@ std::optional<EGameAction> findGameAction(std::string_view id) {
         }
     }
     return std::nullopt;
+}
+
+EGameAction requirePlayAction(std::string_view id, std::string_view where) {
+    const std::optional<EGameAction> action = findGameAction(id);
+    if (!action) {
+        common::displayErrorAndQuit(std::format("{}: {} isn't an action", where, id));
+    }
+    if (isHotkeyAction(*action)) {
+        common::displayErrorAndQuit(
+            std::format("{}: {} is a hotkey, the same in every game", where, id));
+    }
+    return *action;
 }
 
 } // namespace nocturne::core

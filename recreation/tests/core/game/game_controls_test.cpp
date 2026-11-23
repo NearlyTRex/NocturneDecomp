@@ -1,6 +1,7 @@
 #include "common/error/fatalerror.h"
 #include "core/game/game.h"
 #include "engine/package/gamecontent.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/keychords.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -164,7 +165,7 @@ TEST_F(CGameRestoreDefaultControls, ExtraBindingsAndMouseSettingsAreReset) {
 }
 
 engine::SControlMode &modeOf(engine::SGameContent &content, std::string_view id) {
-    std::vector<engine::SControlMode> &modes = content.controls.value().modes;
+    std::vector<engine::SControlMode> &modes = common::required(content.controls).modes;
     return *std::ranges::find(modes, id, &engine::SControlMode::id);
 }
 
@@ -213,7 +214,7 @@ TEST_F(CGameRestoreDefaultControls, NoControlsIsFatal) {
 }
 
 TEST_F(CGameRestoreDefaultControls, AModeTheGameDoesntOfferIsFatal) {
-    std::erase_if(parts_.getContent().controls.value().modes,
+    std::erase_if(common::required(parts_.getContent().controls).modes,
                   [](const engine::SControlMode &mode) { return mode.id == "gamepad"; });
     EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_GAMEPAD)); },
                 ::testing::ThrowsMessage<common::CFatalError>(
@@ -241,8 +242,8 @@ TEST_F(CGameRestoreDefaultControls, ADefaultForAnUnknownActionOrAHotkeyIsFatal) 
 }
 
 TEST_F(CGameRestoreDefaultControls, ABindingsRowForAnUnknownActionIsFatal) {
-    parts_.getContent().controls.value().bindings.push_back(
-        {.action = "levitate", .label = "Levitate"});
+    common::required(parts_.getContent().controls)
+        .bindings.push_back({.action = "levitate", .label = "Levitate"});
     EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("A bindings page row: levitate isn't an action")));

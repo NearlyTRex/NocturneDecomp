@@ -21,19 +21,6 @@ constexpr int kStickCenter = 0x8000;
 constexpr int kStickMax = 0xffff;
 constexpr int kUnitSensitivity = 0x10000;
 
-// A play action, as a package names it; any other name is fatal.
-EGameAction requirePlayAction(std::string_view id, std::string_view where) {
-    const std::optional<EGameAction> action = findGameAction(id);
-    if (!action) {
-        common::displayErrorAndQuit(std::format("{}: {} isn't an action", where, id));
-    }
-    if (isHotkeyAction(*action)) {
-        common::displayErrorAndQuit(
-            std::format("{}: {} is a hotkey, the same in every game", where, id));
-    }
-    return *action;
-}
-
 void checkControls(const engine::SControls &controls) {
     for (const engine::SControlMode &mode : controls.modes) {
         if (!std::ranges::contains(kControlModeIds, mode.id)) {
@@ -84,10 +71,13 @@ void CGame::restoreDefaultControls() {
     }
     for (const engine::SControlDefault &entry : mode.defaults) {
         std::vector<SKeyChord> chords;
+        chords.reserve(entry.codes.size());
         for (const int code : entry.codes) {
             chords.push_back({.code = static_cast<engine::EInputCodeType>(code)});
         }
-        controls.setBindings(*findGameAction(entry.action), std::move(chords));
+        controls.setBindings(
+            requirePlayAction(entry.action, std::format("The {} control mode's defaults", mode.id)),
+            std::move(chords));
     }
     invert_mouse_y_axis = 0;
     always_run = 0;

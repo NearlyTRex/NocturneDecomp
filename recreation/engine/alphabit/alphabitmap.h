@@ -40,7 +40,7 @@ public:
     };
     // As displayScaled, drawing only within the bounds, which are kept to the screen.
     void displayScaledWithin(int x, int y, int width, int height, int alpha, EBitmapFilter filter,
-                             const SBounds &bounds);
+                             const SBounds &within);
     void render(int dest_x, int dest_y, int left_x, int top_y, int right_x, int bottom_y,
                 int global_alpha);
     void scale(int scaleFactorX, int scaleFactorY);

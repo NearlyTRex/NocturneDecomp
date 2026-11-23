@@ -105,5 +105,7 @@ struct SGameActionInfo {
 // The action's name in a package: its INI key without "key", in snake case (strafe_left).
 [[nodiscard]] std::string getGameActionId(EGameAction action);
 [[nodiscard]] std::optional<EGameAction> findGameAction(std::string_view id);
+// A play action, as a package names it where it says; any other name is fatal.
+[[nodiscard]] EGameAction requirePlayAction(std::string_view id, std::string_view where);
 
 } // namespace nocturne::core

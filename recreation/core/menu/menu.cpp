@@ -133,7 +133,7 @@ void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
 void CMenu::showCalibrationTest() {
     const engine::SMenuCalibration &calibration = getMenuLayout().calibration;
     engine::CAlphaBitmap bitmap(owners_.dosio, owners_.screen, owners_.special);
-    bitmap.load(calibration.image.c_str(), kImageWidth, kImageHeight);
+    bitmap.load(calibration.image, kImageWidth, kImageHeight);
     for (const std::string &step : calibration.steps) {
         showCalibrationTestPattern(bitmap, owners_.messages.getLocalizedString(step));
     }

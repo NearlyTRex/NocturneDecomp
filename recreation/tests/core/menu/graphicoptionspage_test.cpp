@@ -6,6 +6,7 @@
 #include "engine/special/special.h"
 #include "platform/display.h"
 #include "platform/upscaler.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/menufixture.h"
 
 #include <gmock/gmock.h>
@@ -142,7 +143,7 @@ TEST_F(CGraphicOptionsPageTest, AntialiasingStepsBothWaysAndWraps) {
 
 // The game's card_name_length, dots and all; the list keeps the whole name.
 TEST_F(CGraphicOptionsPageTest, ACardNameLongerThanTheGamesLengthIsShortened) {
-    game_parts_.getContent().menu->card_name_length = 5;
+    common::required(game_parts_.getContent().menu).card_name_length = 5;
     loadRenderer();
     special_.setCurrentGraphicsBoard(1);
     CGraphicOptionsPage page(menu_, menu_owners_);

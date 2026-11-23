@@ -134,7 +134,7 @@ void CDemonPod::loadPackages(engine::EArchiveUnpacking unpacking) {
         report(note);
     }
     left_out_.clear();
-    engine::SChosenGame game = findGame(order.packages);
+    const engine::SChosenGame game = findGame(order.packages);
     game_folder_ = game.folder;
     chooseGame(game);
     std::vector<const engine::SGameContent *> content;

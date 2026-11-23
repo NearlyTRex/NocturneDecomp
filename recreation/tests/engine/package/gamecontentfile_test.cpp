@@ -1,6 +1,7 @@
 #include "engine/package/gamecontent.h"
 #include "engine/package/gamecontentfile.h"
 #include "engine/package/packagedata.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/engine/shippedgamecontent.h"
 
 #include <gmock/gmock.h>
@@ -40,13 +41,14 @@ SGameContent fullContent() {
     content.fonts = getShippedGameContent().fonts;
     content.controls = getShippedGameContent().controls;
     content.story_select = getShippedGameContent().story_select;
-    content.story_select->difficulties = {{.label = "Easy", .puzzle = 0, .combat = 0},
-                                          {.label = "Hard \"puzzles\"", .puzzle = 1, .combat = 0}};
+    common::required(content.story_select).difficulties = {
+        {.label = "Easy", .puzzle = 0, .combat = 0},
+        {.label = "Hard \"puzzles\"", .puzzle = 1, .combat = 0}};
     content.chapter_title = getShippedGameContent().chapter_title;
     content.copyright = "Game \"1999\"";
     content.copyright_os_font = "Game (c) 1999";
     content.credits = getShippedGameContent().credits;
-    content.credits->music = "m.mp3";
+    common::required(content.credits).music = "m.mp3";
     content.menu = getShippedGameContent().menu;
     content.list = getShippedGameContent().list;
     content.dialog = getShippedGameContent().dialog;
@@ -108,7 +110,7 @@ TEST(GameContentFile, WritesOnlyWhatAStoryAndPictureHave) {
                                    .fade_loop = {},
                                    .two_column = {}};
     content.menu = getShippedGameContent().menu;
-    content.menu->trademark.reset();
+    common::required(content.menu).trademark.reset();
     EXPECT_THAT(formatGameContentTables(content),
                 ::testing::StartsWith("\n[credits]\ntext = 'c.txt'\nfit = 'keep_aspect'\n"
                                       "image = 'i'\n\n[menu]\n"
@@ -333,8 +335,11 @@ constexpr std::string_view kMenuFooterCopyright =
     "[menu.footer.copyright]\ncorner = 'bottom_right'\nedge = 'screen'\nx = 1\ny = 1\n";
 constexpr std::string_view kMenuFooterVersion =
     "[menu.footer.version]\ncorner = 'bottom_left'\nedge = 'screen'\nx = 4\ny = 1\n";
-const std::string kMenuFooter =
-    std::format("{}{}{}", kMenuFooterKeys, kMenuFooterCopyright, kMenuFooterVersion);
+const std::string &menuFooter() {
+    static const std::string footer =
+        std::format("{}{}{}", kMenuFooterKeys, kMenuFooterCopyright, kMenuFooterVersion);
+    return footer;
+}
 constexpr std::string_view kMenuCalibration =
     "[menu.calibration]\nimage = 'b'\nsteps = ['one']\ntitle = 't'\nprompt = 'p'\n"
     "font = 'small_editor'\ncolour = 1\ntitle_lines = 2\nprompt_lines = 3\nfit = 'stretch'\n";
@@ -359,20 +364,20 @@ std::string menuWith(std::string_view title, std::string_view item, std::string_
 // The whole menu with the rest of the menu's tables after it, in place of options, sound and
 // slider when a case gives its own.
 std::string menuThen(std::string_view rest) {
-    return std::format("{}{}{}{}{}{}{}", kMenuTop, kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+    return std::format("{}{}{}{}{}{}{}", kMenuTop, kMenuTitle, kMenuItem, kMenuGlow, menuFooter(),
                        kMenuCalibration, rest);
 }
 
 // The whole menu with a key of [menu]'s own, which goes before its tables.
 std::string menuKeyed(std::string_view key) {
     return std::format("{}{}\n{}{}{}{}{}{}{}{}{}", kMenuTop, key, kMenuTitle, kMenuItem, kMenuGlow,
-                       kMenuFooter, kMenuCalibration, kMenuOptions, kMenuSound, kMenuSlider,
+                       menuFooter(), kMenuCalibration, kMenuOptions, kMenuSound, kMenuSlider,
                        kMenuFeatures);
 }
 
 // The whole menu's tables under [menu] keys of the case's own.
 std::string menuTopped(std::string_view top) {
-    return std::format("{}{}{}{}{}{}{}{}{}{}", top, kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+    return std::format("{}{}{}{}{}{}{}{}{}{}", top, kMenuTitle, kMenuItem, kMenuGlow, menuFooter(),
                        kMenuCalibration, kMenuOptions, kMenuSound, kMenuSlider, kMenuFeatures);
 }
 
@@ -380,7 +385,7 @@ constexpr std::string_view kMenuPosition = "[menu]\nleft = 1\ntop = 1\ntitled_to
 
 // The whole menu with keys added to [menu.item].
 std::string menuItemWith(std::string_view keys) {
-    return menuWith(kMenuTitle, std::format("{}{}\n", kMenuItem, keys), kMenuGlow, kMenuFooter,
+    return menuWith(kMenuTitle, std::format("{}{}\n", kMenuItem, keys), kMenuGlow, menuFooter(),
                     kMenuCalibration);
 }
 
@@ -394,12 +399,13 @@ std::string menuFooterVersion(std::string_view version) {
 
 TEST(GameContentFile, AMenusOptionalTablesAndPageTopsRead) {
     const std::expected<SGameContent, std::string> content = parseGameContent(
-        menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration) +
+        menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(), kMenuCalibration) +
         "[menu.page_tops]\nsound = 200\n"
         "[menu.sound.spectrum]\nframes = ['a', 'b']\nfps = 24\npitch = 4\nhalf_width = 16\n"
         "margin_divisor = 20\nheight_percent = 25\nalpha = 1\n"
         "[menu.attract]\ndirectory = 'video'\nmovies = ['a.avi']\n");
     ASSERT_TRUE(content.has_value()) << content.error();
+    ASSERT_TRUE(content->menu.has_value());
     EXPECT_EQ(content->menu->page_tops.at("sound"), 200);
     ASSERT_TRUE(content->menu->spectrum.has_value());
     EXPECT_EQ(content->menu->spectrum->frames.size(), 2U);
@@ -471,6 +477,7 @@ TEST(GameContentFile, AWholeListReads) {
     const std::expected<SGameContent, std::string> content =
         parseGameContent(std::format("{}{}{}", kListTop, kListPointer, kListScrollBar));
     ASSERT_TRUE(content.has_value()) << content.error();
+    ASSERT_TRUE(content->list.has_value());
     EXPECT_EQ(content->list->pointer.colours, (std::array<int, 4>{0, 1, 2, 3}));
     EXPECT_FALSE(content->list->pointer.palette_indices);
     EXPECT_EQ(content->list->scroll_bar.track_border_colour, 7);
@@ -488,7 +495,7 @@ INSTANTIATE_TEST_SUITE_P(
                  "menu: options: card_name_length: missing"},
         SBadCase{menuThen("[menu.options]\nhero = 2\ncard_name_length = 0\n"),
                  "menu: options: card_name_length: not from 1 to 255"},
-        SBadCase{menuThen(std::string(kMenuOptions)), "menu: sound: missing"},
+        SBadCase{menuThen(kMenuOptions), "menu: sound: missing"},
         SBadCase{menuThen(std::format("{}[menu.sound]\nvolume = 1\n", kMenuOptions)),
                  "menu: sound: volume: not a key this file takes"},
         SBadCase{menuThen(std::format("{}[menu.sound]\nspectrum = 1\n", kMenuOptions)),
@@ -554,11 +561,11 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{menuWith(kMenuTitle,
                           std::format("{}untitled_positions = [{{ x = 1, centre_x = 2, y = 3 }}]\n",
                                       kMenuItem),
-                          kMenuGlow, kMenuFooter, kMenuCalibration),
+                          kMenuGlow, menuFooter(), kMenuCalibration),
                  "menu: item: untitled_positions 1: give one of x and centre_x"},
         SBadCase{menuWith(kMenuTitle,
                           std::format("{}untitled_positions = [{{ y = 3 }}]\n", kMenuItem),
-                          kMenuGlow, kMenuFooter, kMenuCalibration),
+                          kMenuGlow, menuFooter(), kMenuCalibration),
                  "menu: item: untitled_positions 1: give one of x and centre_x"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
                           std::format("{}{}", kMenuFooterKeys, kMenuFooterVersion),
@@ -588,7 +595,7 @@ INSTANTIATE_TEST_SUITE_P(
                           kMenuCalibration),
                  "menu: footer: version: edge: not one of screen, layout, backdrop"},
         SBadCase{menuWith(std::format("{}drop = {{ x = 9, y = 0, colour = 2 }}\n", kMenuTitle),
-                          kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration),
+                          kMenuItem, kMenuGlow, menuFooter(), kMenuCalibration),
                  "menu: title: drop: x: not from -8 to 8"},
         SBadCase{menuKeyed("align = 1"), "menu: align: not a string"},
         SBadCase{menuFooterVersion("corner = 1\nedge = 'screen'\nx = 0\ny = 0"),
@@ -611,10 +618,10 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{menuItemWith("untitled_font = 1"), "menu: item: untitled_font: not a string"},
         SBadCase{menuItemWith("drop = 1"), "menu: item: drop: not a [drop] table"},
         SBadCase{menuWith(std::format("{}drop = {{ z = 1 }}\n", kMenuTitle), kMenuItem, kMenuGlow,
-                          kMenuFooter, kMenuCalibration),
+                          menuFooter(), kMenuCalibration),
                  "menu: title: drop: z: not a key this file takes"},
         SBadCase{menuWith(std::format("{}drop = 1\n", kMenuTitle), kMenuItem, kMenuGlow,
-                          kMenuFooter, kMenuCalibration),
+                          menuFooter(), kMenuCalibration),
                  "menu: title: drop: not a [drop] table"},
         SBadCase{menuThen(std::format("{}{}[menu.sound.spectrum]\nframes = ['a']\nfps = 24\n"
                                       "pitch = 4\nhalf_width = 16\nmargin_divisor = 20\n"
@@ -1129,7 +1136,7 @@ TEST(GameContentFile, EachGamesFrontEndWritesBack) {
 
 TEST(GameContentFile, ALeftEdgedPointAndAManyCodedDefaultWriteBack) {
     SGameContent content = fullContent();
-    content.menu->item.untitled_positions = {{.x = 5, .y = 6, .centred = false}};
+    common::required(content.menu).item.untitled_positions = {{.x = 5, .y = 6, .centred = false}};
     ASSERT_TRUE(content.controls.has_value());
     ASSERT_FALSE(content.controls->modes.empty());
     ASSERT_FALSE(content.controls->modes.front().defaults.empty());
@@ -1138,9 +1145,10 @@ TEST(GameContentFile, ALeftEdgedPointAndAManyCodedDefaultWriteBack) {
 }
 
 TEST(GameContentFile, AWholeMenuReads) {
-    const std::expected<SGameContent, std::string> content =
-        parseGameContent(menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration));
+    const std::expected<SGameContent, std::string> content = parseGameContent(
+        menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(), kMenuCalibration));
     ASSERT_TRUE(content.has_value()) << content.error();
+    ASSERT_TRUE(content->menu.has_value());
     EXPECT_EQ(content->menu->item.glow.copies, 5);
     EXPECT_EQ(content->menu->calibration.steps, std::vector<std::string>{"one"});
 }
@@ -1149,37 +1157,37 @@ INSTANTIATE_TEST_SUITE_P(
     MenuParts, CGameContentErrorTest,
     ::testing::Values(
         SBadCase{menuWith("[menu.title]\ncolour = 7\nshadow = -2\ngap_lines = 2\n", kMenuItem,
-                          kMenuGlow, kMenuFooter, kMenuCalibration),
+                          kMenuGlow, menuFooter(), kMenuCalibration),
                  "menu: title: shadow: not from -1 to 255"},
-        SBadCase{menuWith("[menu.title]\nsize = 1\n", kMenuItem, kMenuGlow, kMenuFooter,
+        SBadCase{menuWith("[menu.title]\nsize = 1\n", kMenuItem, kMenuGlow, menuFooter(),
                           kMenuCalibration),
                  "menu: title: size: not a key this file takes"},
-        SBadCase{menuWith(kMenuTitle, "", "", kMenuFooter, kMenuCalibration),
+        SBadCase{menuWith(kMenuTitle, "", "", menuFooter(), kMenuCalibration),
                  "menu: item: missing"},
         SBadCase{
-            menuWith(kMenuTitle, "[menu.item]\nwidth = 1\n", "", kMenuFooter, kMenuCalibration),
+            menuWith(kMenuTitle, "[menu.item]\nwidth = 1\n", "", menuFooter(), kMenuCalibration),
             "menu: item: width: not a key this file takes"},
         SBadCase{
-            menuWith(kMenuTitle, "[menu.item]\ncolour = 1\n", "", kMenuFooter, kMenuCalibration),
+            menuWith(kMenuTitle, "[menu.item]\ncolour = 1\n", "", menuFooter(), kMenuCalibration),
             "menu: item: font: missing"},
         SBadCase{menuWith(kMenuTitle,
                           "[menu.item]\nfont = 'theme'\ncolour = 1\nselected_colour = 2\n"
                           "alpha = 3\nshadow = -1\nspacing_titled = 0\nspacing_untitled = 2\n",
-                          kMenuGlow, kMenuFooter, kMenuCalibration),
+                          kMenuGlow, menuFooter(), kMenuCalibration),
                  "menu: item: spacing_titled: not from 1 to 40"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, "", kMenuFooter, kMenuCalibration),
+        SBadCase{menuWith(kMenuTitle, kMenuItem, "", menuFooter(), kMenuCalibration),
                  "menu: item: glow: missing"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, "[menu.item.glow]\nspeed = 1\n", kMenuFooter,
+        SBadCase{menuWith(kMenuTitle, kMenuItem, "[menu.item.glow]\nspeed = 1\n", menuFooter(),
                           kMenuCalibration),
                  "menu: item: glow: speed: not a key this file takes"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, "[menu.item.glow]\ncolour = 7\ncopies = 17\n",
-                          kMenuFooter, kMenuCalibration),
+                          menuFooter(), kMenuCalibration),
                  "menu: item: glow: copies: not from 0 to 16"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, "[menu.item.glow]\ncolour = 7\ncopies = 5\n",
-                          kMenuFooter, kMenuCalibration),
+                          menuFooter(), kMenuCalibration),
                  "menu: item: glow: flicker: missing"},
         SBadCase{menuWith(kMenuTitle, kMenuItem,
-                          "[menu.item.glow]\ncolour = 7\ncopies = 5\nflicker = 1\n", kMenuFooter,
+                          "[menu.item.glow]\ncolour = 7\ncopies = 5\nflicker = 1\n", menuFooter(),
                           kMenuCalibration),
                  "menu: item: glow: flicker: not true or false"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, "", kMenuCalibration),
@@ -1196,36 +1204,36 @@ INSTANTIATE_TEST_SUITE_P(
                                       kMenuFooterKeys, kMenuFooterCopyright),
                           kMenuCalibration),
                  "menu: footer: version: x: not from 0 to 639"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter, ""),
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(), ""),
                  "menu: calibration: missing"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(),
                           "[menu.calibration]\nsize = 1\n"),
                  "menu: calibration: size: not a key this file takes"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(),
                           "[menu.calibration]\nimage = 'b'\n"),
                  "menu: calibration: title: missing"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(),
                           "[menu.calibration]\nimage = 'b'\ntitle = 't'\nprompt = 'p'\n"
                           "font = 'f'\nsteps = 1\n"),
                  "menu: calibration: steps: not a list"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(),
                           "[menu.calibration]\nimage = 'b'\ntitle = 't'\nprompt = 'p'\n"
                           "font = 'f'\nsteps = []\n"),
                  "menu: calibration: steps: missing"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(),
                           "[menu.calibration]\nimage = 'b'\ntitle = 't'\nprompt = 'p'\n"
                           "font = 'f'\nsteps = ['s']\ncolour = 1\ntitle_lines = 41\n"),
                  "menu: calibration: title_lines: not from 0 to 40"},
-        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, menuFooter(),
                           "[menu.calibration]\nimage = 'b'\nsteps = ['one']\ntitle = 't'\n"
                           "prompt = 'p'\nfont = 'small_editor'\ncolour = 1\ntitle_lines = 2\n"
                           "prompt_lines = 3\n"),
                  "menu: calibration: fit: missing"},
         SBadCase{menuWith(std::format("{}font = 1\n", kMenuTitle), kMenuItem, kMenuGlow,
-                          kMenuFooter, kMenuCalibration),
+                          menuFooter(), kMenuCalibration),
                  "menu: title: font: not a string"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, std::format("{}item_colour = 256\n", kMenuGlow),
-                          kMenuFooter, kMenuCalibration),
+                          menuFooter(), kMenuCalibration),
                  "menu: item: glow: item_colour: not from 0 to 255"},
         SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
                           "[menu.footer]\nfont = 'small_editor'\ncolour = 256\n", kMenuCalibration),

@@ -7,6 +7,7 @@
 #include "engine/gamepadinput.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/package/gamecontent.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/menufixture.h"
 
 #include <gmock/gmock.h>
@@ -143,7 +144,8 @@ TEST_F(CControlOptionsPageTest, TheTypeStepsEitherWayWithItsDefaults) {
 
 // The types and their labels are the game's, in its order.
 TEST_F(CControlOptionsPageTest, TheTypesAreTheGamesInItsOrder) {
-    std::vector<engine::SControlMode> &modes = game_parts_.getContent().controls.value().modes;
+    std::vector<engine::SControlMode> &modes =
+        common::required(game_parts_.getContent().controls).modes;
     std::swap(modes.at(0), modes.at(2));
     modes.pop_back();
     modes.at(0).label = "Control : Pad";

@@ -12,6 +12,7 @@
 #include "platform/mrgltexturebasic.h"
 #include "shape/edittool/fileselection.h"
 #include "shape/edittool/strlist.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/mockloadingscreen.h"
 #include "tests/mocks/core/overlayscreen.h"
@@ -333,7 +334,7 @@ TEST_F(CChapterTitleTest, EachStoryHasItsYear) {
 }
 
 TEST_F(CChapterTitleTest, TheTitlesFormatIsTheGamesOwn) {
-    game_parts_.getContent().chapter_title->format = "{title} ({year})";
+    common::required(game_parts_.getContent().chapter_title).format = "{title} ({year})";
     chooseToStart(EChapterSelectMode::kStories, {kReturn});
     watchTitle();
     EXPECT_CALL(medium_text_,
@@ -360,7 +361,7 @@ TEST_F(CChapterTitleTest, AChapterTitleTakenAwayShowsNone) {
 
 // A screen at or over every font's height takes the last font.
 TEST_F(CChapterTitleTest, AScreenPastEveryFontsHeightTakesTheLast) {
-    engine::SChapterTitle &title = *game_parts_.getContent().chapter_title;
+    engine::SChapterTitle &title = common::required(game_parts_.getContent().chapter_title);
     title.fonts.back().below_height = 400;
     chooseToStart(EChapterSelectMode::kStories, {kReturn});
     watchTitle();

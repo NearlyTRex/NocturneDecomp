@@ -12,6 +12,7 @@
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -150,8 +151,9 @@ TEST_F(CDFontTest, TheMenuFontIsTheThemeFontLargeAndTheSmallEditorFontSmall) {
 // The game's menus name the two; either can be any [[font]].
 TEST_F(CDFontTest, TheMenuFontsAreTheOnesTheMenusName) {
     fonts_.initFonts();
-    content_.menu->text_font_large = "tiny";
-    content_.menu->text_font_small = "theme";
+    engine::SMenuLayout &menu = common::required(content_.menu);
+    menu.text_font_large = "tiny";
+    menu.text_font_small = "theme";
     EXPECT_EQ(fonts_.getMenuFont(), fonts_.getTinyFont());
     fonts_.setMenuFontChoice(EMenuFontChoice::Small);
     EXPECT_EQ(fonts_.getMenuFont(), fonts_.getThemeFont());

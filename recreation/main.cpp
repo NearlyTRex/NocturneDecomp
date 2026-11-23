@@ -95,6 +95,7 @@
 #include <format>
 #include <new>
 #include <optional>
+#include <print>
 #include <span>
 #include <string>
 #include <string_view>
@@ -490,7 +491,7 @@ int run(std::span<const std::string_view> args) {
     const nocturne::platform::SPathRoots roots =
         nocturne::platform::choosePathRoots(args, environment, sdl::getPathRootDefaults(), host);
     if (const std::optional<std::string> where = nocturne::platform::describePathRoots(roots)) {
-        std::fprintf(stderr, "nocturne: %s\n", where->c_str());
+        std::println(stderr, "nocturne: {}", *where);
     }
     // Without it the game would stop deep in its start-up with nothing on screen to say why.
     if (!nocturne::platform::hasGameData(host, roots)) {

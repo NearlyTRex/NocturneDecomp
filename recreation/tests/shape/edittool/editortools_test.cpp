@@ -9,6 +9,7 @@
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -169,14 +170,15 @@ TEST_F(CEditorToolsTest, WithoutAPackagesLookTheDialogsAndPointerAreFatal) {
 
 // A game's pointer cycles through the colours its packages give.
 TEST_F(CEditorToolsTest, ThePointerCyclesThroughTheLooksColours) {
-    content_.list->pointer.colours = {0x1f, 0x1f, 0x1f, 0x1f};
+    common::required(content_.list).pointer.colours = {0x1f, 0x1f, 0x1f, 0x1f};
     EXPECT_EQ(editor_tools_.getTimeCycledColorByte(), two_d_.getColorCubeLookup()[0x1f]);
 }
 
 // BW1's and BW3's are palette entries as they are.
 TEST_F(CEditorToolsTest, APointersPaletteColoursAreTheEntriesThemselves) {
-    content_.list->pointer.colours = {0xfd, 0xfd, 0xfd, 0xfd};
-    content_.list->pointer.palette_indices = true;
+    engine::SListLook &list = common::required(content_.list);
+    list.pointer.colours = {0xfd, 0xfd, 0xfd, 0xfd};
+    list.pointer.palette_indices = true;
     EXPECT_EQ(editor_tools_.getTimeCycledColorByte(), 0xfd);
 }
 
